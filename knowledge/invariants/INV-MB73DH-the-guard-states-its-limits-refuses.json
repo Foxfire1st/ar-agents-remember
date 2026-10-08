@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "The behavior guards a costly publication, restoration or refusal mistake that the sealed findings proved reachable."
+  },
+  "applicability": "Index modules and helper callers under the retirement guard.",
+  "conditions": [
+    "A retired dataset name is opened or reached."
+  ],
+  "exclusions": [
+    "Index caches and the citation package's own index."
+  ],
+  "id": "INV-MB73DH",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.evidence/focused-tests-admitted.log; notes/run3/L26-current-evidence-20261007/F08-retired-index-name-negative-current.log"
+      ],
+      "path": "handoff-stage1.json"
+    },
+    "handoffEntry": "R3 Finding 8",
+    "leaf": "260928-MIK-L26",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The guard states its limits, refuses retired names in index modules and pins helper callers.",
+  "status": "retired",
+  "supersedes": []
+}

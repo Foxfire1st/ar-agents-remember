@@ -7,7 +7,8 @@
   ],
   "exclusions": [
     "This admission rule does not retroactively rewrite historical stored scope.",
-    "A targetless ruling is not an invariant revision."
+    "A targetless ruling is not an invariant revision.",
+    "The retired database-era realization site; the obligation is recorded on converted memory only."
   ],
   "id": "INV-KBCKV7N1",
   "origin": {
@@ -15,7 +16,7 @@
     "legacyId": "178a2eef-acfa-4796-a96d-38fe6c5cf1ef",
     "task": "260921-ICR"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-invariant/v1",
   "statement": "An invariant ingested from a curator hand-off carries curator-authored semantic scope, and an unfilled scope refuses that entry before invariant writes.",
   "status": "proposed",

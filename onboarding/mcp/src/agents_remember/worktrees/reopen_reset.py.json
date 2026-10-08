@@ -1,0 +1,22 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/reopen_reset.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The file realizes its current contract at the corrected candidate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c08f0dd0dd501355eacf1089bf4011d44a0783e",
+            "content": "sha256:6085b330ab5b4fc6db305405d7023a189fbfabc28f0ec00e1cfb8d3d8d90eef6",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

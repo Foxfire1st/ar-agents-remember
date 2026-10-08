@@ -147,27 +147,15 @@
       ]
     },
     "13": {
-      "note": "The corpus shape checks every role file must satisfy, this one included.\n\nAnchor: \"Each role file is the developer-approved capsule shape, and nothing else.\"",
+      "note": "The current corpus check explicitly supersedes fixed section order and minimum length with concise, well-formed, self-contained source checks.",
       "targets": [
         {
           "anchor": {
-            "blob": "4ea77de07f6d7b752e1e4eaa236f74b89277fed1",
-            "content": "sha256:6d9416eb8947fc34b68e01a2826205d76a141b01173c6d2d4bd06e36d8eda8f3",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_every_role_source_is_a_capsule_shaped_function"
-            },
-            "path": "mcp/tests/test_role_instruction_corpus.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
             "blob": "d4914fd3234ca83c0ad58428c5b3f866ed3e07f5",
-            "content": "sha256:d78a14f8e2e81395c228cc0832cce6a71a04442ab1889a1b700e2d66d69e53a2",
+            "content": "sha256:9a353fca0a318b38ea5c755fec2f90ba068ffcb9698f91fac30ff0815a5ab974",
             "locator": {
               "kind": "symbol",
-              "name": "ROLE_ORDER"
+              "name": "test_every_role_source_is_concise_and_well_formed"
             },
             "path": "mcp/tests/test_role_instruction_corpus.py"
           },
@@ -481,7 +469,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a23f5b44e754e4da5bcee68076a04de1759893e1",
+            "blob": "9b1413a6f404cba5c341366857f6c5e7982fa6c7",
             "content": "sha256:0a167d25b360e154c02dd9fdac113e52bbb0b78f701733c88a7ceee773d3179f",
             "locator": {
               "end": 1,
@@ -499,12 +487,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3d328c32addf48d8925e1ab191d2521a55aa20ae",
+            "blob": "5118e0602bf994a24091a2105b11671eb74eadf0",
             "content": "sha256:4bfb1faa8a0a63c2e4f582f0a9df847b07f5a05768f278f6bf0b4543ad7c88da",
             "locator": {
-              "end": 517,
+              "end": 515,
               "kind": "line_range",
-              "start": 517
+              "start": 515
             },
             "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
           },

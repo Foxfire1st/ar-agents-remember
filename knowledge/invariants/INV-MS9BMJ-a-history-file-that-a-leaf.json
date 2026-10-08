@@ -15,7 +15,9 @@
   "exclusions": [
     "A wave or a crossing owner, which has one history file.",
     "A file closed only in the uncommitted candidate: it is still the write target and is refused by name.",
-    "A continued leaf landed through a commit other than its recorded closeout commit: nothing is frozen for it, and every row is checked against the landed tree."
+    "A continued leaf landed through a commit other than its recorded closeout commit: nothing is frozen for it, and every row is checked against the landed tree.",
+    "The retired database-era realization site; the obligation is recorded on converted memory only.",
+    "The retired dataset-era realization sites; the obligation is recorded on converted memory only."
   ],
   "id": "INV-MS9BMJ",
   "origin": {
@@ -30,7 +32,7 @@
     "leaf": "260928-MIK-L37",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-invariant/v1",
   "statement": "A history file that a leaf's recorded closeout closed is frozen, also while the parent line does not hold it yet: the leaf's later rows go to its next attempt file.",
   "status": "proposed",

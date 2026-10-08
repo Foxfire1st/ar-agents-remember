@@ -3,7 +3,24 @@
   "proves": [
     {
       "anchor": {
-        "blob": "023d1f462e7b1839dc594a930d879ba94398d92b",
+        "blob": "b4d78090a1383e85d720b881411db85e13cfb162",
+        "content": "sha256:79582a1947c85408de626e1c5eaa801a3e1a75433e409af9ee3f6185e5d25bdb",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_history_rows_are_found_by_the_row_subject_an_item_names"
+        }
+      },
+      "facet": "Once a leaf answers a subject again in its attempt-2 file, the reviewer's worklist view shows that row and not the first attempt's row of the same leaf, and still shows another owner's row about the subject.",
+      "id": "PRF-Z7R50C",
+      "invariant": "INV-MS9BMJ",
+      "origin": {
+        "handoffEntry": "L37-frozen-attempts",
+        "leaf": "260928-MIK-L37"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b4d78090a1383e85d720b881411db85e13cfb162",
         "content": "sha256:79582a1947c85408de626e1c5eaa801a3e1a75433e409af9ee3f6185e5d25bdb",
         "locator": {
           "kind": "symbol",

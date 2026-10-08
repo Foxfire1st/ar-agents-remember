@@ -14,7 +14,8 @@
   "exclusions": [
     "Unconverted memory, which has no judged tree and is staged from the working tree as before.",
     "Direct landing is outside this invariant: its commit is bound to its admission snapshot, not to the tree its gate judged.",
-    "The ledger memory.md, which the commit excludes. The cache preparation removes it from the repository's index before the judged-tree check; that is the one index write that precedes the memory commit's mutation."
+    "The ledger memory.md, which the commit excludes. The cache preparation removes it from the repository's index before the judged-tree check; that is the one index write that precedes the memory commit's mutation.",
+    "The retired database-era realization site; the obligation is recorded on converted memory only."
   ],
   "id": "INV-49E649",
   "origin": {
@@ -28,7 +29,7 @@
     "leaf": "260928-MIK-L37",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "The tree a converted leaf's closeout commits to memory is the tree its gate judged: every write the closeout itself makes to memory content -- the metadata refresh, the history closing and the ledger cache's ignore rule -- is on disk before the tree is read; a working tree or index that changed while the gate ran is refused before the memory commit's Git mutation; and the commit is staged from the judged tree object and proved against it, so a file written after that check stays an uncommitted change and is never committed unjudged.",
   "status": "proposed",

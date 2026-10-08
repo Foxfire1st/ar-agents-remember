@@ -32,8 +32,7 @@ sequences**, so the order is a stored fact of its own rather than a tuple inside
 
 ### Logic
 
-The module is pure data: it defines **no functions and no classes**. Its whole surface is seven module
-constants, and each is a member of the generation record `schema_generations.GENERATION_4` composes:
+The module is pure declaration data. Its APPENDED_* constants are consumed after schema_v3 by schema_generations._compose to build CURRENT_GENERATION, the one derived-index schema. The historical generation-4 grouping is the detection-order table block, not a separately openable schema.
 
 - `APPENDED_TABLES` — the ordered tuple `("detection_run_signal",)`, appended after generation 3's
   twenty so generation 4's manifest **begins with** generation 3's, unchanged. The order is
@@ -60,8 +59,7 @@ constants, and each is a member of the generation record `schema_generations.GEN
   recorded this signal". Index names are a local choice, not contract.
 - `APPENDED_TRIGGERS` — two triggers, `detection_run_signal_no_reorder` (BEFORE UPDATE OF `run_id`,
   `ordinal`, `signal_id`) and `detection_run_signal_no_delete` (BEFORE DELETE). Their messages share
-  the shipped `immutable_revision:` prefix, so `map_sqlite_error` steers a trigger-originated error to
-  that code. The idiom is the one generations 2 and 3 use: the operation's own preconditions exist to
+  the shipped `immutable_revision:` prefix, retained from the canonical database schema. The former map_sqlite_error mapper was retired; the triggers remain index-schema constraints. The idiom is the one generations 2 and 3 use: the operation's own preconditions exist to
   return a **typed refusal**, and the triggers exist so a changeset, a repair script or a future code
   path that forgot the rule still cannot rewrite a recorded run's sequence or drop one of its signals.
 - `APPENDED_FEATURES` — the **empty** tuple, declared rather than omitted. Generation 4 needs no SQLite
@@ -81,20 +79,14 @@ constants, and each is a member of the generation record `schema_generations.GEN
 
 ### Invariants And Boundaries
 
-- **Additive-only, structurally.** `GENERATION_4.tables[: len(GENERATION_3.tables)] ==
-  GENERATION_3.tables`, and generation 4's columns, primary keys and typed-JSON registries for each of
-  generation 3's twenty names are generation 3's declared ones. That prefix equality is the whole of
-  the additive rule; a new generation appends, and never retypes, reorders, renames or drops an earlier
-  one's.
+- The ordered _compose preserves earlier table declarations while appending this table block. Its complete result is checked against the pinned derived-index fingerprint. The former GENERATION_3 and GENERATION_4 records and their prefix-comparison API are retired.
 - **No detection row carries a content address, a logical digest or a fingerprint column, and none is
   added here.** The content digest belongs to `record_revision`, where `Doc13:85` already puts it — the
   signal *observed* a digest and does not become one.
 - **Immutability is enforced by the database, not only by the operation.** Requirement 3.4's "never
   overwrites the recorded one" is about the run, and a run's order is what a second write would have to
   move to present a re-execution as the recorded run.
-- **Boundary.** This module declares structure and nothing else: it writes no rows, performs no
-  validation, returns no refusal and owns no behaviour. Writing a run is
-  `memory/knowledge/detection.py`; deciding which generation a dataset is, is `schema_generations.py`.
+- This module declares derived-index structure only: no row writing, payload validation, refusal or migration. The former canonical database record writer associated with these tables was retired. schema_generations composes and validates the one supported index schema.
 - **Not admissible, recorded so it is not re-proposed:** a `detection_signal`/`detection_run` column
   group on this table. The payload models are the shape, and a second declaration as SQL columns would
   be a second place for the same field set to drift.
@@ -123,14 +115,18 @@ No configured domain documentation could be checked.
 - The one reverse-direction index, covering "which runs recorded this signal". [6]
 - **The two immutability triggers, with the shared `immutable_revision:` prefix and the two distinct refusals they raise.** [7]
 - The declared-but-empty feature tuple, so "no new SQLite feature" is stated rather than inferred. [8]
-- **The generation record this module's data is composed into, and the append that keeps generation 3's prefix intact.** [9]
-- **The registry whose last entry is the newest supported generation — generation 8 since `KS-R13@v1` renumbered its append, so the created store declares 8 while a generation-7 dataset keeps declaring 7 — and the created generation it names.** [10]
-- **The envelope registry the two detection payload shapes are registered in, which is why this generation appends one table and not a record group.** [11]
-- **The generation record this module's data is composed into, and the append that keeps generation 3's prefix intact.** [12]
-- The registry whose last entry is the newest supported generation, and the created generation it names. [13]
-- **The envelope registry the two detection payload shapes are registered in, which is why this generation appends one table and not a record group.** [14]
-- The write path that inserts the sequence rows under this table's composite keys. [15]
-- **The case that measures the additive rule, the append order, the `STRICT` shape, the key tuple and the two triggers.** [16]
+
+- The ordered appended declarations compose into the one pinned derived-index schema. [9]
+
+
+- This build creates and reads the single v9 derived-index schema; another declared database version is refused. [10]
+
+
+- The ordered appended declarations compose into the one pinned derived-index schema. [12]
+
+
+- This build creates and reads the single v9 derived-index schema; another declared database version is refused. [13]
+
 
 ### Cross-Repo References
 

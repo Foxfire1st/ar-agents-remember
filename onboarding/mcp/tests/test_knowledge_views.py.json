@@ -1,0 +1,22 @@
+{
+  "path": "mcp/tests/test_knowledge_views.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The file realizes its current contract at the corrected candidate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3d8f4596f8880015541db774395d55b51902b442",
+            "content": "sha256:1e88b9cfc231980fcb851503dc8011abef9a1687bf8fca2f6a1dfe19414cb732",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

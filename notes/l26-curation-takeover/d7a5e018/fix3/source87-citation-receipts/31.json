@@ -1,0 +1,83 @@
+{
+  "document": "mcp/tests/test_tool_entry_point_sweep.py.md",
+  "preview": {
+    "ok": true,
+    "tokens": 347,
+    "tokenizer": "tiktoken:o200k_base",
+    "tokenCountExact": true,
+    "operation": "citation_fix",
+    "repoId": "agents-remember",
+    "dryRun": true,
+    "servingBuild": {
+      "version": "3.0.0rc8",
+      "bootedAt": "2026-10-08T11:56:00.022030+00:00",
+      "sourceDigest": "sha256:6659adb8f968f82c8365bc031220a34c1984276112b5cb1dfd5e1c5db841d237",
+      "pythonExecutable": "/home/firefox/.local/share/agents-remember/python/cpython-3.14.8/bin/python3.14",
+      "packageRoot": "/home/firefox/projects/agents-remember/mcp/src/agents_remember",
+      "commit": "3f682987",
+      "dashboardBuild": "cb442492c4373d059462c5a2ad7715f3961bab6f21c1181b2ecf2674b768b4a6"
+    },
+    "status": "converted",
+    "refreshedAnchors": 0,
+    "rewrittenSidecars": [],
+    "unreadableSidecars": [],
+    "stale": [],
+    "authoring": {
+      "dryRun": true,
+      "authoredReferences": 0,
+      "reauthoredReferences": 0,
+      "removedReferences": 0,
+      "authoredCards": [],
+      "createdSidecars": [],
+      "unresolvedTargets": [],
+      "refused": [],
+      "authoredCardsCount": 0,
+      "createdSidecarsCount": 0,
+      "unresolvedTargetsCount": 0,
+      "refusedCount": 0
+    },
+    "staleCount": 0,
+    "rewrittenSidecarsCount": 0,
+    "unreadableSidecarsCount": 0
+  },
+  "applied": {
+    "ok": true,
+    "tokens": 347,
+    "tokenizer": "tiktoken:o200k_base",
+    "tokenCountExact": true,
+    "operation": "citation_fix",
+    "repoId": "agents-remember",
+    "dryRun": false,
+    "servingBuild": {
+      "version": "3.0.0rc8",
+      "bootedAt": "2026-10-08T11:56:00.022030+00:00",
+      "sourceDigest": "sha256:6659adb8f968f82c8365bc031220a34c1984276112b5cb1dfd5e1c5db841d237",
+      "pythonExecutable": "/home/firefox/.local/share/agents-remember/python/cpython-3.14.8/bin/python3.14",
+      "packageRoot": "/home/firefox/projects/agents-remember/mcp/src/agents_remember",
+      "commit": "3f682987",
+      "dashboardBuild": "cb442492c4373d059462c5a2ad7715f3961bab6f21c1181b2ecf2674b768b4a6"
+    },
+    "status": "converted",
+    "refreshedAnchors": 0,
+    "rewrittenSidecars": [],
+    "unreadableSidecars": [],
+    "stale": [],
+    "authoring": {
+      "dryRun": false,
+      "authoredReferences": 0,
+      "reauthoredReferences": 0,
+      "removedReferences": 0,
+      "authoredCards": [],
+      "createdSidecars": [],
+      "unresolvedTargets": [],
+      "refused": [],
+      "authoredCardsCount": 0,
+      "createdSidecarsCount": 0,
+      "unresolvedTargetsCount": 0,
+      "refusedCount": 0
+    },
+    "staleCount": 0,
+    "rewrittenSidecarsCount": 0,
+    "unreadableSidecarsCount": 0
+  }
+}

@@ -1,159 +1,84 @@
 {
   "path": "mcp/tests/test_knowledge_index_surfaces.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "694a9727c6739a654c8fec5abf47260e23bd77b5",
+        "content": "sha256:d6c6ce55222bc871ca33f8ebd27049ea27a1c88fe7524b089158e3b6eb617839",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_knowledge_diff_refuses_a_directory_inside_the_memory_repository"
+        }
+      },
+      "facet": "knowledge_diff refuses an inside directory and names the repository root.",
+      "id": "PRF-395E18",
+      "invariant": "INV-X23FME",
+      "origin": {
+        "handoffEntry": "R3 finding 5",
+        "leaf": "260928-MIK-L26"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
-    "1": {
-      "note": "The registered scope over the index equals the scope over the database.",
+    "10": {
+      "note": "`test_knowledge_diff_answers_within_the_read_threshold_and_names_what_it_leaves_out` owns the current boundary described above.",
       "targets": [
         {
           "anchor": {
-            "blob": "d8f68761727af2bccdd02ec39c86ee0156f52aad",
-            "content": "sha256:7a7e810e94b09682d52aa9afc58ce42f77b86858f13f7ec59305b629e0a7733c",
+            "blob": "694a9727c6739a654c8fec5abf47260e23bd77b5",
+            "content": "sha256:8f952dc24c9cf7520afa30cd626517410f3ff50614459a99ad1462fcb8036561",
             "locator": {
               "kind": "symbol",
-              "name": "test_the_registered_scope_constructs_the_same_scope_over_the_index"
+              "name": "test_knowledge_diff_answers_within_the_read_threshold_and_names_what_it_leaves_out"
             }
           },
           "kind": "test"
         }
       ]
     },
-    "2": {
-      "note": "Retired records are never live.",
+    "11": {
+      "note": "`test_every_knowledge_tool_refuses_legacy_memory_and_opens_no_database` owns the current boundary described above.",
       "targets": [
         {
           "anchor": {
-            "blob": "d8f68761727af2bccdd02ec39c86ee0156f52aad",
-            "content": "sha256:4be154412171cb8e4ec07dad7a2f9dd37772f0a5c2e41abc3e3ddd91d7a29cc3",
+            "blob": "694a9727c6739a654c8fec5abf47260e23bd77b5",
+            "content": "sha256:5bc3a8924f717e9a6d5081c853dbe84a471c3533bcc2f1ee6131c4f9802bbdc3",
             "locator": {
               "kind": "symbol",
-              "name": "test_a_retired_record_is_never_selected_as_live_and_is_answered_as_retired"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "d8f68761727af2bccdd02ec39c86ee0156f52aad",
-            "content": "sha256:ac87d0a2e38b1b64b1b02a28e18a0c52d2d7f710196ba4675a84fc3ed1ad6fd5",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_retired_family_is_never_selected_as_live"
+              "name": "test_every_knowledge_tool_refuses_legacy_memory_and_opens_no_database"
             }
           },
           "kind": "test"
         }
       ]
     },
-    "3": {
-      "note": "The mounted tools over converted and unconverted selections.",
+    "8": {
+      "note": "`test_knowledge_diff_serves_the_git_diff_of_the_knowledge_files` owns the current boundary described above.",
       "targets": [
         {
           "anchor": {
-            "blob": "d8f68761727af2bccdd02ec39c86ee0156f52aad",
-            "content": "sha256:155c29dd770b167bd565ee4214324c7a77062621b8366ade71c33d58a0aa053c",
+            "blob": "694a9727c6739a654c8fec5abf47260e23bd77b5",
+            "content": "sha256:66ac7f6876c0abd728a02532aaec87688c6b40b170fa46592ac832ea6ce7f482",
             "locator": {
               "kind": "symbol",
-              "name": "test_knowledge_read_resolves_a_converted_memory_tree_through_its_index"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "d8f68761727af2bccdd02ec39c86ee0156f52aad",
-            "content": "sha256:69982fcd93cc9ea3b38f2cf9ed2044a4b50f6daad7be46cc38bff71f145b0ef2",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_knowledge_diff_and_project_resolve_converted_trees"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "d8f68761727af2bccdd02ec39c86ee0156f52aad",
-            "content": "sha256:d2296c814b77f2b87ea1a345f6a057c2d41b28564eefc033cf6d699041e46152",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_an_unconverted_selection_keeps_the_database_path"
+              "name": "test_knowledge_diff_serves_the_git_diff_of_the_knowledge_files"
             }
           },
           "kind": "test"
         }
       ]
     },
-    "4": {
-      "note": "Partial and unbuildable indexes on every surface.",
+    "9": {
+      "note": "`test_knowledge_diff_with_no_after_revision_compares_with_the_working_tree` owns the current boundary described above.",
       "targets": [
         {
           "anchor": {
-            "blob": "d8f68761727af2bccdd02ec39c86ee0156f52aad",
-            "content": "sha256:113b537bd9b86bee902a1546e744d72a4bf3a72aa75e0bbcef17c24fcbd1674c",
+            "blob": "694a9727c6739a654c8fec5abf47260e23bd77b5",
+            "content": "sha256:2b037a47c104f2367c8b5d6c6d2fe222a33590d4580dee2881b8a87dca110a7c",
             "locator": {
               "kind": "symbol",
-              "name": "test_every_tool_surface_reports_a_partial_index_as_incomplete"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "d8f68761727af2bccdd02ec39c86ee0156f52aad",
-            "content": "sha256:e7fbfed4a40af1320581846f598e4b54d39591e1058074ecd664e9ffb713150d",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_an_unbuildable_index_is_refused_not_raised"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "5": {
-      "note": "A real database in an unconverted root reads identically.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d8f68761727af2bccdd02ec39c86ee0156f52aad",
-            "content": "sha256:03b66c237d5d9a86e983ac7f068068808704d741be5f5caa7782c348b42aa4a5",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_real_database_in_an_unconverted_root_reads_identically"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "6": {
-      "note": "The lane row.\n\nAnchor: \"mcp/tests/test_knowledge_index_surfaces.py\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "ad32196677d5800992fe4294b439f3e28af150ec",
-            "content": "sha256:222a6ff244f67693b41c16ff732f292d763843984688f77f46c8f03400b9bb92",
-            "locator": {
-              "end": 136,
-              "kind": "line_range",
-              "start": 136
-            },
-            "path": "mcp/tests/test-evidence-lanes.toml"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "7": {
-      "note": "A converted tree refuses a seed it does not hold, and a database read is unchanged.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d8f68761727af2bccdd02ec39c86ee0156f52aad",
-            "content": "sha256:b85e670eef150d1bd92b5d9169844298c0bb8e8ae7f3ef1db44163b3e0749816",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_converted_tree_refuses_a_seed_it_does_not_hold_and_a_database_read_is_unchanged"
+              "name": "test_knowledge_diff_with_no_after_revision_compares_with_the_working_tree"
             }
           },
           "kind": "test"

@@ -1,6 +1,25 @@
 {
   "path": "mcp/src/agents_remember/application/knowledge_writer/handoff.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "82c72eaef5103fa3175bf0a9b69ac48d4cb1061c",
+        "content": "sha256:7ca1f7acc94b90d8af64a053ccc714097fca79fa8bc33271fdd31770c400c2dc",
+        "locator": {
+          "kind": "symbol",
+          "name": "_entry"
+        }
+      },
+      "id": "RLZ-2WPJBP",
+      "invariant": "INV-KBCKV7N1",
+      "origin": {
+        "handoffEntry": "co:INV-KBCKV7N1",
+        "leaf": "260928-MIK-L26"
+      },
+      "rationale": "The file writer requires curator-authored semantic scope for a new invariant and refuses an unfilled scope before any write.",
+      "role": "primary-authority"
+    }
+  ],
   "references": {
     "1": {
       "note": "Both forms, the bare file, and expressions that are not read as one test.",

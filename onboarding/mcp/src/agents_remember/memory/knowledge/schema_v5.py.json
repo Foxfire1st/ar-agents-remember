@@ -40,23 +40,6 @@
         }
       ]
     },
-    "10": {
-      "note": "The boundary case that proves a generation-4 dataset is refused the binding table rather than widened.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "400c1752a5394493caa7f53b86909258b9b3c250",
-            "content": "sha256:156a77b96e6332aedd4b29d54a27e4e384c414f3940cd478d826d9dd69c3a78f",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_generation_4_dataset_is_refused_the_binding_table_rather_than_widened"
-            },
-            "path": "mcp/tests/test_knowledge_citation_boundaries.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
     "2": {
       "note": "The typed-JSON column registry, which is where the binding payload actually travels.",
       "targets": [
@@ -117,53 +100,15 @@
       ]
     },
     "5": {
-      "note": "**The composition that puts generation 5's table after generation 4's twenty-one and asserts the prefix equality.**",
+      "note": "The one schema composition appends retained definitions in order.",
       "targets": [
         {
           "anchor": {
-            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
-            "content": "sha256:a1325880c2d5c596b0c3fc8c9d85b64904722a1435c1b5477df83f25e6532296",
+            "blob": "ed80f22d9e0746a34756ea0717989fa6ad564df8",
+            "content": "sha256:8c190c46954d164edeb576a31cf9be1adfdc9fda8da8b1097bb7e3738ca298c3",
             "locator": {
               "kind": "symbol",
-              "name": "_compose_generation_5"
-            },
-            "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
-            "content": "sha256:2e6800dec23447bef0156789e003715c1581f9651a5b65111a0be9bf3dfe309a",
-            "locator": {
-              "kind": "symbol",
-              "name": "GENERATION_5"
-            },
-            "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
-            "content": "sha256:400904d4ca53cc2c9cf247be5d3941b360ac679f6a47190c327288de131efa49",
-            "locator": {
-              "end": 325,
-              "kind": "line_range",
-              "start": 321
-            },
-            "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
-            "content": "sha256:7e777ba0b0817baf680349d263c47c6a0b89fb296743375fe1de02b8a036961c",
-            "locator": {
-              "end": 352,
-              "kind": "line_range",
-              "start": 336
+              "name": "_compose"
             },
             "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
           },
@@ -172,15 +117,39 @@
       ]
     },
     "6": {
-      "note": "The schema name and version generation 5 declares, and its place in the registry.",
+      "note": "Single v9 schema, not an openable generation5.",
       "targets": [
         {
           "anchor": {
-            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
-            "content": "sha256:8d4884378145a6dace1fe98c31865651804bb8dfa8411b60401d0e8d44705fa8",
+            "blob": "ed80f22d9e0746a34756ea0717989fa6ad564df8",
+            "content": "sha256:0f0c918f3bf10a7250d7ac346475f3b54df375e1306b83aaca248426e5ff211e",
             "locator": {
               "kind": "symbol",
-              "name": "GENERATION_5_SCHEMA_NAME"
+              "name": "CURRENT_GENERATION"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ed80f22d9e0746a34756ea0717989fa6ad564df8",
+            "content": "sha256:0def1c776cf68967974e107fb20f37758ffbe71dba776990a086d2ac936f1c28",
+            "locator": {
+              "kind": "symbol",
+              "name": "SCHEMA_NAME"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ed80f22d9e0746a34756ea0717989fa6ad564df8",
+            "content": "sha256:476b18203261682bc30ac2f522311b7c17a882977b3807177fbb0f34e41559d4",
+            "locator": {
+              "kind": "symbol",
+              "name": "SCHEMA_USER_VERSION"
             },
             "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
           },
@@ -193,7 +162,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4b226f76c7b6e8b273666362c2edb3921c41c547",
+            "blob": "586ef34e79ed60e63be9ee8e82e713f68c2dc024",
             "content": "sha256:ff311b81180b8ac928357f45df628eda2a0f20ce5f3c84e85e5ec90fe3966968",
             "locator": {
               "kind": "symbol",
@@ -202,64 +171,6 @@
             "path": "mcp/src/agents_remember/memory/knowledge/schema_v2.py"
           },
           "kind": "code"
-        }
-      ]
-    },
-    "8": {
-      "note": "The generation the write path requires before a binding row may exist.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e5bdc578ab7dd7db66df221fddda7a962605002d",
-            "content": "sha256:69d7bede498b897e89a85c984440ea8cdd1d1a55de63e8e534735d17ff5526e2",
-            "locator": {
-              "kind": "symbol",
-              "name": "REQUIRED_BINDING_GENERATION"
-            },
-            "path": "mcp/src/agents_remember/memory/knowledge/citations.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "9": {
-      "note": "**The cases that measure the append without touching generation 4's names, the absent identity column, and the locator `CHECK` naming exactly the shipped union.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "36bb20fc518f3591fcb44efa0216f9229abff15d",
-            "content": "sha256:2c10f72cbc294f7009a5e9e744331ff2b1abdcc150c0aef930dbb3fd1a2c3bfa",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_generation_5_appends_to_generation_4_without_touching_its_twenty_one_tables"
-            },
-            "path": "mcp/tests/test_knowledge_citation_bindings.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "36bb20fc518f3591fcb44efa0216f9229abff15d",
-            "content": "sha256:1331361fd560dfcb9a9f526c18e88b8c05de8f8e01ce0f189971b55b329c18c8",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_the_binding_table_has_no_content_address_digest_or_fingerprint_column"
-            },
-            "path": "mcp/tests/test_knowledge_citation_bindings.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "36bb20fc518f3591fcb44efa0216f9229abff15d",
-            "content": "sha256:5915c16968df9d5ac2be8668a81dc4ea36017e2886a6d81dcc53c56a8249dba6",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_the_locator_check_names_exactly_the_shipped_source_locator_union"
-            },
-            "path": "mcp/tests/test_knowledge_citation_bindings.py"
-          },
-          "kind": "test"
         }
       ]
     }

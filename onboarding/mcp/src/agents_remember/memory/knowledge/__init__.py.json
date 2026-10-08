@@ -52,7 +52,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c14937bd02459de274f4bb96b0f500f895dbd44a",
+            "blob": "5330296baa8cabeac31286bb196c70bcf2763703",
             "content": "sha256:443116d5d7ec42b5e741759b495286c4fe4d15aa5f75ea5038f71c378f3fa3b5",
             "locator": {
               "kind": "symbol",
@@ -64,7 +64,7 @@
         },
         {
           "anchor": {
-            "blob": "c14937bd02459de274f4bb96b0f500f895dbd44a",
+            "blob": "5330296baa8cabeac31286bb196c70bcf2763703",
             "content": "sha256:0ade81c5cb9c5790671542b21896edaa0640f14246b71d2e3725870cb85e0926",
             "locator": {
               "kind": "symbol",
@@ -112,48 +112,6 @@
               "name": "schema_fingerprint"
             },
             "path": "mcp/src/agents_remember/memory/knowledge/schema.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "5": {
-      "note": "The composition seam that is this package's only consumer.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "b27b86aae575bd8d9d63d727f841fc0b4ab08fa3",
-            "content": "sha256:37f4a37358ef210f407f97714aa9b909beef0a851e2bffe84c2f6ce893d33386",
-            "locator": {
-              "kind": "symbol",
-              "name": "create_knowledge_revision"
-            },
-            "path": "mcp/src/agents_remember/application/knowledge.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "b27b86aae575bd8d9d63d727f841fc0b4ab08fa3",
-            "content": "sha256:cc0b3146f3436d6780f23c08ff7d324f408cdc1dd9cb87ee1d7fc58f3d969755",
-            "locator": {
-              "kind": "symbol",
-              "name": "open_admitted_knowledge_store"
-            },
-            "path": "mcp/src/agents_remember/application/knowledge.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "b27b86aae575bd8d9d63d727f841fc0b4ab08fa3",
-            "content": "sha256:cc32269c3b4ebd16686906f9e6aae64ea58dbe591c7e914928e4202cb544ac17",
-            "locator": {
-              "end": 204,
-              "kind": "line_range",
-              "start": 193
-            },
-            "path": "mcp/src/agents_remember/application/knowledge.py"
           },
           "kind": "code"
         }

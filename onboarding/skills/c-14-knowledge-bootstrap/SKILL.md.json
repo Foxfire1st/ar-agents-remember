@@ -1,0 +1,41 @@
+{
+  "path": "skills/c-14-knowledge-bootstrap/SKILL.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "8466ce2da70e85847ee8eecae9b1806fc8dbb301",
+        "content": "sha256:357029397303caafa5a8525a70af5df479a10f0ebe289fdb078afaf3a7756816",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-JJMGHW",
+      "invariant": "INV-K69R3M",
+      "origin": {
+        "handoffEntry": "L26-R1-F05",
+        "leaf": "260928-MIK-L26"
+      },
+      "rationale": "The bootstrap instructions describe each foundation state accurately.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "8466ce2da70e85847ee8eecae9b1806fc8dbb301",
+        "content": "sha256:357029397303caafa5a8525a70af5df479a10f0ebe289fdb078afaf3a7756816",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-N1HZEM",
+      "invariant": "INV-1BBPF3",
+      "origin": {
+        "handoffEntry": "R3 Finding 6",
+        "leaf": "260928-MIK-L26"
+      },
+      "rationale": "The bootstrap skill is the instruction that names the views a foundation read offers.",
+      "role": "presentation"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

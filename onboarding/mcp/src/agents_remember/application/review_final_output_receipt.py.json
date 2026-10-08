@@ -1,14 +1,48 @@
 {
   "path": "mcp/src/agents_remember/application/review_final_output_receipt.py",
+  "proves": [],
   "realizes": [],
   "references": {
-    "1": {
-      "note": "**The module's own statement of the gap it closes, the three things it owns, and why recording is not a gate.**",
+    "29": {
+      "note": "The old canonical published-dataset receipt channel was retired. Separately, ordinary published intent resolves a converted tree and its index; it is not a canonical receipt publication channel.",
       "targets": [
         {
           "anchor": {
-            "blob": "4db8e6d4458f6338c1acae8e981d08b86d2b1138",
-            "content": "sha256:a3f732d0a0b36661b24b2d39f84ef940383a06369bd9d36faf3281ab58a61bc0",
+            "blob": "bda6abac209b8bb555561b79169c66526d769437",
+            "content": "sha256:6918f2ee0d10bbb302b9a5825ac0309321a87cc5271af0ee5a2a11102e76be05",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_published_intent"
+            },
+            "path": "mcp/src/agents_remember/application/published_intent.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "33": {
+      "note": "`select_review_comparison` supplies the current exact-tree receipt boundary described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6a81a8342eae21ae87cc564a14db157d557fb56b",
+            "content": "sha256:1a8b0df3c0e4e39a752ac3f6ab9fbe5f24376bc19a9b4cdf5ccfb4901169f1f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "select_review_comparison"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "34": {
+      "note": "`record_final_output_receipt` supplies the current exact-tree receipt boundary described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6a81a8342eae21ae87cc564a14db157d557fb56b",
+            "content": "sha256:05efdacdc397a149b12bffb084cd3876672db3b1d546e9749087545656583ab2",
             "locator": {
               "kind": "symbol",
               "name": "record_final_output_receipt"
@@ -18,233 +52,29 @@
         }
       ]
     },
-    "10": {
-      "note": "**Measuring one phase and publishing it: the owners' values, the read-back, and `replaced_existing` rather than a hidden rewrite.**",
+    "35": {
+      "note": "`_read_receipt` supplies the current exact-tree receipt boundary described above.",
       "targets": [
         {
           "anchor": {
-            "blob": "4db8e6d4458f6338c1acae8e981d08b86d2b1138",
-            "content": "sha256:a3f732d0a0b36661b24b2d39f84ef940383a06369bd9d36faf3281ab58a61bc0",
+            "blob": "6a81a8342eae21ae87cc564a14db157d557fb56b",
+            "content": "sha256:c45b4f6d78818bbba394657501e65da599f8a9db1b886d146fda074e245beb9b",
             "locator": {
               "kind": "symbol",
-              "name": "record_final_output_receipt"
+              "name": "_read_receipt"
             }
           },
           "kind": "code"
         }
       ]
     },
-    "11": {
-      "note": "**The published-knowledge channel read through the route a later planner uses, with the owner's own three states and sentence.**",
+    "36": {
+      "note": "`final_output_selection_block` supplies the current exact-tree receipt boundary described above.",
       "targets": [
         {
           "anchor": {
-            "blob": "4db8e6d4458f6338c1acae8e981d08b86d2b1138",
-            "content": "sha256:99e522ead66b7d7fcc966a253b9deeb6fa952f7025defef17e992d2c19e766a6",
-            "locator": {
-              "kind": "symbol",
-              "name": "_PublishedKnowledge"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "4db8e6d4458f6338c1acae8e981d08b86d2b1138",
-            "content": "sha256:d1a4f700f0fa6120fdd497ebe39d46a340e5604998306da6c3120f50d652ae63",
-            "locator": {
-              "kind": "symbol",
-              "name": "_published_knowledge"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "12": {
-      "note": "The inputs one receipt is assembled from, and the delivered identities read out of the repositories that hold them.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4db8e6d4458f6338c1acae8e981d08b86d2b1138",
-            "content": "sha256:7b28f93acaad04a6b59b32f537108943fef471510a866a07eb62b81b2a96aa66",
-            "locator": {
-              "kind": "symbol",
-              "name": "_ReceiptInputs"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "4db8e6d4458f6338c1acae8e981d08b86d2b1138",
-            "content": "sha256:c674dac1122a9a6273edb2e692734954695ee0b77f8fc1bfe1edb23120062cf5",
-            "locator": {
-              "kind": "symbol",
-              "name": "_DeliveredOutput"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "4db8e6d4458f6338c1acae8e981d08b86d2b1138",
-            "content": "sha256:14a4989fed48b1a059acb8e471f05902813762e0b313ff2938734e7d6beb7df0",
-            "locator": {
-              "kind": "symbol",
-              "name": "_delivered_output"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "13": {
-      "note": "**Assembly that selects nothing and re-derives no identity, asking the vocabulary for the one verdict rule.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4db8e6d4458f6338c1acae8e981d08b86d2b1138",
-            "content": "sha256:95853b517509e6102a12ea5f0cbb4021ab18a6f18f818be0913dcd5a38e725e1",
-            "locator": {
-              "kind": "symbol",
-              "name": "_assemble_receipt"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "14": {
-      "note": "The tree of a commit, read from the repository that holds it.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4db8e6d4458f6338c1acae8e981d08b86d2b1138",
-            "content": "sha256:d8b7cbcaa68fa73e735dd76dfb9cdc40e73e4c5eae5e0d7d75062b8e37e7d837",
-            "locator": {
-              "kind": "symbol",
-              "name": "_commit_tree"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "15": {
-      "note": "**The reader, and the docstring that names the reopen owner as its consuming route.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4db8e6d4458f6338c1acae8e981d08b86d2b1138",
-            "content": "sha256:86dc22eebd4a88007a0dc8ae430a309128361cb28c46bda0eb2a0f4c3ae67fb8",
-            "locator": {
-              "kind": "symbol",
-              "name": "read_final_output_receipt"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "16": {
-      "note": "**Reading every phase in order, with the supersession set measured once.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4db8e6d4458f6338c1acae8e981d08b86d2b1138",
-            "content": "sha256:b338b350d3e5ff72dac116e171b83530d6124ce6ec23222f4dbe209a6ad0c45b",
-            "locator": {
-              "kind": "symbol",
-              "name": "read_final_output_receipts"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "17": {
-      "note": "**A missing file is `not-recorded` naming the location, a broken file is `unreadable` with the error — never conflated.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4db8e6d4458f6338c1acae8e981d08b86d2b1138",
-            "content": "sha256:1b1507aeed9cd797775078ab1521b9466b5a8b34382860ae72107ec2242a6dba",
-            "locator": {
-              "kind": "symbol",
-              "name": "_ReadDestination"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "4db8e6d4458f6338c1acae8e981d08b86d2b1138",
-            "content": "sha256:3074c36e7a9c3d9864e2c12783f109cdaa153d4d6b9bfd2a1fd49215168bbe85",
-            "locator": {
-              "kind": "symbol",
-              "name": "_read_destination"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "18": {
-      "note": "Every readable generation that came after the one a receipt names.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4db8e6d4458f6338c1acae8e981d08b86d2b1138",
-            "content": "sha256:cf519c39a63678c086d6b776584dca91f17875753d8857d3da8974951810f7fc",
-            "locator": {
-              "kind": "symbol",
-              "name": "_superseding_in"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "19": {
-      "note": "**The named reclamation owner, and the code's own plain statement that no shipped route calls it and why (routed to ICR-R25@v1, secondary R11).**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4db8e6d4458f6338c1acae8e981d08b86d2b1138",
-            "content": "sha256:2280d5d98d41a6e13320dee831cdf10b3d6678aa20a0862f7f571698d3378245",
-            "locator": {
-              "kind": "symbol",
-              "name": "discard_final_output_receipts"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "2": {
-      "note": "The published surface: the record re-export, both read directions, the projections and the three attachments.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4db8e6d4458f6338c1acae8e981d08b86d2b1138",
-            "content": "sha256:725cbfc78d72c86ff335cef4443023d28f6e1bb8cb3b89696ce14ec9b871d263",
-            "locator": {
-              "kind": "symbol",
-              "name": "__all__"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "20": {
-      "note": "**The prepared-work projection: the one comparison it makes, and `None` rather than `True` when either side is unknown.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4db8e6d4458f6338c1acae8e981d08b86d2b1138",
-            "content": "sha256:7b3896cb0f3b80ddabd05a09bc9d34093687cc3008dd0936ea9985fadf92bf21",
+            "blob": "6a81a8342eae21ae87cc564a14db157d557fb56b",
+            "content": "sha256:6eec436262588b5cffe89cb35db0908fb3f55a1197c4ccab8c114aa1f43188a2",
             "locator": {
               "kind": "symbol",
               "name": "final_output_selection_block"
@@ -254,67 +84,13 @@
         }
       ]
     },
-    "21": {
-      "note": "A manifest that cannot be read back is reported in the block itself rather than raised.",
+    "37": {
+      "note": "`final_output_result_block` supplies the current exact-tree receipt boundary described above.",
       "targets": [
         {
           "anchor": {
-            "blob": "4db8e6d4458f6338c1acae8e981d08b86d2b1138",
-            "content": "sha256:f3a6b6fee23f0201196c113ce311e29e5d25b03e23b1874eb5cd6eac9206061a",
-            "locator": {
-              "kind": "symbol",
-              "name": "_selected_manifest"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "22": {
-      "note": "**The three attachments and the `ok`-plus-a-real-commit gate that keeps a failed transaction from carrying a receipt.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4db8e6d4458f6338c1acae8e981d08b86d2b1138",
-            "content": "sha256:816c7d2a42487cbdec89de1551eb2f73f1efcbf97da41c986bcb60f5383d217b",
-            "locator": {
-              "kind": "symbol",
-              "name": "attach_prepared_selection"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "4db8e6d4458f6338c1acae8e981d08b86d2b1138",
-            "content": "sha256:e14fca6d3eb18bb349f5a9e22b92cd0b2404a47dafcb9df65e51ae79176235f4",
-            "locator": {
-              "kind": "symbol",
-              "name": "attach_closeout_receipt"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "4db8e6d4458f6338c1acae8e981d08b86d2b1138",
-            "content": "sha256:3b1bad51a6e7748417131a1e5847e00bc71b72d18cd3112c26dedcf98da361f3",
-            "locator": {
-              "kind": "symbol",
-              "name": "attach_integration_receipt"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "23": {
-      "note": "**The never-raising entry point and its three states, including `not-applicable` for a series contract.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4db8e6d4458f6338c1acae8e981d08b86d2b1138",
-            "content": "sha256:d6c5f3956448883b34a1e8a80ab63a14edd9869b04e6a553bf69671effb7943e",
+            "blob": "6a81a8342eae21ae87cc564a14db157d557fb56b",
+            "content": "sha256:0755bde72787c5f080f5975dfd50b516169d077e1850581222d265b563ae25aa",
             "locator": {
               "kind": "symbol",
               "name": "final_output_result_block"
@@ -324,425 +100,32 @@
         }
       ]
     },
-    "24": {
-      "note": "The wire projection of a published receipt, including the derived sentence.",
+    "38": {
+      "note": "`require_comparison_repositories` supplies the current exact-tree receipt boundary described above.",
       "targets": [
         {
           "anchor": {
-            "blob": "4db8e6d4458f6338c1acae8e981d08b86d2b1138",
-            "content": "sha256:8be71fb8b4ac5f8fa111107681e6dfc3864a2ba2b2cb68cb9147500386c37472",
+            "blob": "6a81a8342eae21ae87cc564a14db157d557fb56b",
+            "content": "sha256:f996618c6eb17187f94860a998516c32746044c9fa6b8763797ef4cffe4796b7",
             "locator": {
               "kind": "symbol",
-              "name": "_recording_block"
+              "name": "require_comparison_repositories"
             }
           },
           "kind": "code"
         }
       ]
     },
-    "25": {
-      "note": "**The three production call sites: closeout preview, closeout apply and integration.**\n\nAnchor: `attach_closeout_receipt`; `attach_integration_receipt`; `attach_prepared_selection`",
+    "39": {
+      "note": "`source_comparison_matches` supplies the current exact-tree receipt boundary described above.",
       "targets": [
         {
           "anchor": {
-            "blob": "e77dbabae8b914a6fd3fd7a8b12467c3c5055259",
-            "content": "sha256:a2502b49bbbcf522bc29be619f409f15001c0c32a9391fa2dd3849d31d20f74d",
-            "locator": {
-              "end": 460,
-              "kind": "line_range",
-              "start": 405
-            },
-            "path": "mcp/src/agents_remember/application/worktree_tools.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e77dbabae8b914a6fd3fd7a8b12467c3c5055259",
-            "content": "sha256:f93c813b1a66458b9632dad282744dc7f0741c545c1917c7de93be1a542f2088",
-            "locator": {
-              "end": 1016,
-              "kind": "line_range",
-              "start": 1016
-            },
-            "path": "mcp/src/agents_remember/application/worktree_tools.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e77dbabae8b914a6fd3fd7a8b12467c3c5055259",
-            "content": "sha256:b419d7e08f9f0add5be0ae490f9339aacb7053f6473099b8228503cf0534983a",
-            "locator": {
-              "end": 1013,
-              "kind": "line_range",
-              "start": 1013
-            },
-            "path": "mcp/src/agents_remember/application/worktree_tools.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "26": {
-      "note": "**The reopen owner's fourth channel, which is what makes the reader a production consumer.**\n\nAnchor: `ComparisonReopen.final_output`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "774f5a68ac28a9e06c64a50e6eb9fce95dd97b06",
-            "content": "sha256:b5ec0930b814ea044695b82562ed59a29c23d88f71955969397b00873ad5fc9e",
+            "blob": "6a81a8342eae21ae87cc564a14db157d557fb56b",
+            "content": "sha256:efc782f26839ea0dbe399f1672a77f8028104606ef5417c213ef51f3d978f1c3",
             "locator": {
               "kind": "symbol",
-              "name": "_read_and_measure"
-            },
-            "path": "mcp/src/agents_remember/application/review_comparison_reopen.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "27": {
-      "note": "The generation store's own order and the manifest this module reads and never rewrites.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "089d51d117d71e9f773b5d7297b03ddc037a9a97",
-            "content": "sha256:87757e4339e7c19f1a026e13d00e4aa193e7a0755fb81b60e184edf04ae29031",
-            "locator": {
-              "kind": "symbol",
-              "name": "read_generation_refs"
-            },
-            "path": "mcp/src/agents_remember/application/review_comparison_generation.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "089d51d117d71e9f773b5d7297b03ddc037a9a97",
-            "content": "sha256:b0cd4a2490fa79806b19d1b7854d5b9a05b2663b9aa5e3a6eccb3c3359e8f6c9",
-            "locator": {
-              "kind": "symbol",
-              "name": "read_manifest"
-            },
-            "path": "mcp/src/agents_remember/application/review_comparison_generation.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "089d51d117d71e9f773b5d7297b03ddc037a9a97",
-            "content": "sha256:43d8b4eaf6bf9079b006388a4e67430ea6fdf45046ded7933b30c27ed4c25ef1",
-            "locator": {
-              "kind": "symbol",
-              "name": "generation_directories"
-            },
-            "path": "mcp/src/agents_remember/application/review_comparison_generation.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "28": {
-      "note": "The freeze route that publishes the successor a `moved` receipt's remedy names.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "7f8632ed58fd13140ba8fb78dc33dfac2f12df94",
-            "content": "sha256:1a8ba2c5df7a581600dac122b98e8bbf092d78a69e8cc91bbddb12bb430223ae",
-            "locator": {
-              "kind": "symbol",
-              "name": "freeze_review_comparison"
-            },
-            "path": "mcp/src/agents_remember/application/review_comparison_freeze.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "7f8632ed58fd13140ba8fb78dc33dfac2f12df94",
-            "content": "sha256:d23b88bfe5806982c241f16ab82833e81ee4eba54fe4c519aa5684e7530d096c",
-            "locator": {
-              "kind": "symbol",
-              "name": "ComparisonFreezeOptions"
-            },
-            "path": "mcp/src/agents_remember/application/review_comparison_freeze.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "29": {
-      "note": "The publication route whose declared location the published channel is read at, and the read route that resolves it.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "501e0bd1224bd9910b2f445e7245277f8ed88105",
-            "content": "sha256:a26b10bf2b87b50893180b1b3246bbb2cb72f0062f8d956290b22857a1ca074e",
-            "locator": {
-              "kind": "symbol",
-              "name": "declared_publication_location"
-            },
-            "path": "mcp/src/agents_remember/application/knowledge_publication_route.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "c0231a8a7bfda8e3be26f3c673d794841f526879",
-            "content": "sha256:38c9b05133b665ee1d7d4cf015170877e31dbbef0cdc4a9462337c2b320137c2",
-            "locator": {
-              "kind": "symbol",
-              "name": "resolve_published_intent"
-            },
-            "path": "mcp/src/agents_remember/application/published_intent.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "501e0bd1224bd9910b2f445e7245277f8ed88105",
-            "content": "sha256:8069f92d1ccfc3aa18ba3921ac3453b6eede2a17e013f8f77220643affc07718",
-            "locator": {
-              "end": 80,
-              "kind": "line_range",
-              "start": 1
-            },
-            "path": "mcp/src/agents_remember/application/knowledge_publication_route.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "c0231a8a7bfda8e3be26f3c673d794841f526879",
-            "content": "sha256:a710593a2e2c4d8380d768017d72ef70b83da0a0ac2b6ac40908ba8daf84efa5",
-            "locator": {
-              "end": 80,
-              "kind": "line_range",
-              "start": 1
-            },
-            "path": "mcp/src/agents_remember/application/published_intent.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "The one durable file-name prefix, one file per leaf, generation and phase.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4db8e6d4458f6338c1acae8e981d08b86d2b1138",
-            "content": "sha256:98eb5c3cc7e8e33e862125f811e6ea1901d019b0a34f55d56f62e2108cafa8d9",
-            "locator": {
-              "kind": "symbol",
-              "name": "FINAL_OUTPUT_RECEIPTS_PREFIX"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "30": {
-      "note": "The durable-evidence pair every receipt is published and read back through.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "bcd26120e2d3769670e1bd3b4b1406ef094002aa",
-            "content": "sha256:97189e515d2b74227fd659bbd308186abc5b49de8171ba308d9b45a013742c38",
-            "locator": {
-              "kind": "symbol",
-              "name": "publish_durable_evidence"
-            },
-            "path": "mcp/src/agents_remember/memory/knowledge/durable_evidence.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "bcd26120e2d3769670e1bd3b4b1406ef094002aa",
-            "content": "sha256:20f6a12e1f175ebc7ff71806b44144f91251d45d92d4dbce191f95ccd3f2fd03",
-            "locator": {
-              "kind": "symbol",
-              "name": "read_back_evidence"
-            },
-            "path": "mcp/src/agents_remember/memory/knowledge/durable_evidence.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "bcd26120e2d3769670e1bd3b4b1406ef094002aa",
-            "content": "sha256:235530d66b6a614a5e796a88c1b1f12d0d19f8e1194a5a30e4e12454ce537b09",
-            "locator": {
-              "kind": "symbol",
-              "name": "durable_reports_root"
-            },
-            "path": "mcp/src/agents_remember/memory/knowledge/durable_evidence.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "31": {
-      "note": "**The cases that drive the real tools: the conforming pair, the non-conforming dataset, the moved candidate with a successor, the leaf with no generation that still closes, and the forged verdict.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "ba578936b90857e4f615618804d0d3797e5f69d6",
-            "content": "sha256:0ea4d59d9fc7db8a0fe44b9c517b1c3f003e2b3bc295db9e46782064dcf1d2c4",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_review_receipt_binds_the_delivered_pair_to_the_selected_generation"
-            },
-            "path": "mcp/tests/test_review_final_output_receipt.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "ba578936b90857e4f615618804d0d3797e5f69d6",
-            "content": "sha256:efa9668e22c6c27ae10f8c7108d65183ddaa319c3ee5e580216bb8d5cd8cf1db",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_moved_candidate_is_recorded_as_moved_and_superseded_not_relabelled"
-            },
-            "path": "mcp/tests/test_review_final_output_receipt.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "ba578936b90857e4f615618804d0d3797e5f69d6",
-            "content": "sha256:e4d3ede635a3e2d74b65c90ee2fc67ac6f88ef456f63311c51dbef31abbd9b71",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_closeout_records_no_receipt_without_a_generation_and_still_closes"
-            },
-            "path": "mcp/tests/test_review_final_output_receipt.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "ba578936b90857e4f615618804d0d3797e5f69d6",
-            "content": "sha256:a764619c4c076f151c795fa821022b7c288ed6ac56db8d789b3821e5e1e64eaa",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_forged_coverage_verdict_is_refused_when_read_back"
-            },
-            "path": "mcp/tests/test_review_final_output_receipt.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "32": {
-      "note": "**The case that measures reclamation and leaf scoping through the named owner.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "ba578936b90857e4f615618804d0d3797e5f69d6",
-            "content": "sha256:2f29cf0a4a67469b62e8f897bc0643213d563809ad24a4a1d43dfbc99b721a76",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_final_output_receipts_are_leaf_scoped_and_reclaimed"
-            },
-            "path": "mcp/tests/test_review_final_output_receipt.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "4": {
-      "note": "**The four selection states, and why \"never reviewed\" is not \"review lost\".**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4db8e6d4458f6338c1acae8e981d08b86d2b1138",
-            "content": "sha256:4bfef3efa561dd9175d392c09550695da92a6cc59cfb1c42d03a6d92a51ab294",
-            "locator": {
-              "kind": "symbol",
-              "name": "ReviewGenerationSelection"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "5": {
-      "note": "One published receipt: the durable artifact, the record, and the read-back that proves it.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4db8e6d4458f6338c1acae8e981d08b86d2b1138",
-            "content": "sha256:bb74518e17061dab59f3d3a75c42b2511b4dfd95b8969cdea0804762ad0aa73a",
-            "locator": {
-              "kind": "symbol",
-              "name": "FinalOutputReceiptPublication"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "6": {
-      "note": "**The read-back's three states beside the successors — supersession measured at read time, never written into the record.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4db8e6d4458f6338c1acae8e981d08b86d2b1138",
-            "content": "sha256:b226b05c907c727923e815eaaacc8e389340b1264965a57f2cf8aaec4c267bec",
-            "locator": {
-              "kind": "symbol",
-              "name": "FinalOutputReceiptRead"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "7": {
-      "note": "**The selection rule: the store's own order, with `unreadable` and `no-generation` as separate answers.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4db8e6d4458f6338c1acae8e981d08b86d2b1138",
-            "content": "sha256:79c27df0371f049e45c9d015082ecf8b53c806d7d72559f7fa9f73b28a7b04cd",
-            "locator": {
-              "kind": "symbol",
-              "name": "select_review_generation"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "8": {
-      "note": "**The refusal that keeps a tie from being resolved by directory order.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4db8e6d4458f6338c1acae8e981d08b86d2b1138",
-            "content": "sha256:fed100f88a2cb34227c73f5e5bb484feaef58af0211fa135aa2dc2b82f35f007",
-            "locator": {
-              "kind": "symbol",
-              "name": "_selected"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "9": {
-      "note": "The one durable destination a phase publishes to.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4db8e6d4458f6338c1acae8e981d08b86d2b1138",
-            "content": "sha256:c1daad58c2af7c9e1f6d18826b9f3a9d407cff8f0c6a10635216143ea45a379e",
-            "locator": {
-              "kind": "symbol",
-              "name": "receipt_file_name"
+              "name": "source_comparison_matches"
             }
           },
           "kind": "code"

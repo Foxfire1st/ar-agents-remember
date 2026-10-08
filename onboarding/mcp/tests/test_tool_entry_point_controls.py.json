@@ -1,0 +1,60 @@
+{
+  "path": "mcp/tests/test_tool_entry_point_controls.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "97795b8d20e56adf5262308cb24e2ae781ffc66e",
+        "content": "sha256:c2cd65b344c7053ffa21cea4447aaa2cc482a07488af879ea94b9e191db73b18",
+        "locator": {
+          "kind": "symbol",
+          "name": "ChokePointControlTests.test_a_tool_that_never_answers_fails_by_name_and_closes_its_handler"
+        }
+      },
+      "facet": "The control drives a registered never-answering tool through EntryPointWorld.call with a shortened response budget, asserts _ToolCallTimeout names the tool and response phase, and checks handler cleanup and a subsequent usable call. This is a recorded static test relationship, not evidence that this session executed the test.",
+      "id": "PRF-AGBGWK",
+      "invariant": "INV-W4XGR4",
+      "origin": {
+        "handoffEntry": "fix3-W4XGR4-typed-proof",
+        "leaf": "260928-MIK-L26"
+      }
+    }
+  ],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "97795b8d20e56adf5262308cb24e2ae781ffc66e",
+        "content": "sha256:c2cd65b344c7053ffa21cea4447aaa2cc482a07488af879ea94b9e191db73b18",
+        "locator": {
+          "kind": "symbol",
+          "name": "ChokePointControlTests.test_a_tool_that_never_answers_fails_by_name_and_closes_its_handler"
+        }
+      },
+      "id": "RLZ-BCFPZV",
+      "invariant": "INV-W4XGR4",
+      "origin": {
+        "handoffEntry": "co:INV-W4XGR4",
+        "leaf": "260928-MIK-L26"
+      },
+      "rationale": "The control drives a tool that never answers through the same world and asserts the named failure and handler close.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The file realizes its current contract at the corrected candidate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "97795b8d20e56adf5262308cb24e2ae781ffc66e",
+            "content": "sha256:b586fa4878ab18e7800427d86b08d224be9bf250b9d2235dd4d9ca8cce454292",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

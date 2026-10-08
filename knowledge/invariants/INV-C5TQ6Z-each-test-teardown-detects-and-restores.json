@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "A test that removes the guard hook would leave later tests unguarded and able to reopen the retired store."
+  },
+  "applicability": "The retirement guard's teardown over every test.",
+  "conditions": [
+    "A test removed the APSW hook during its run."
+  ],
+  "exclusions": [
+    "A hook the coverage owner installed; the guard's drain stays private to it."
+  ],
+  "id": "INV-C5TQ6Z",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "test_knowledge_database_retired.py::test_a_test_that_takes_the_guards_hook_out_fails_and_the_hook_is_put_back; N14-hook-presence.log; test_worktree_sync_knowledge_merge.py filtered events"
+      ],
+      "path": "handoff-stage1.json"
+    },
+    "handoffEntry": "R3 note 14",
+    "leaf": "260928-MIK-L26",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Each test teardown detects and restores a removed APSW hook, and the violation drain is private to the guard and its own tests.",
+  "status": "proposed",
+  "supersedes": []
+}

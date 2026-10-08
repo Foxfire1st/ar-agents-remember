@@ -1,0 +1,343 @@
+{
+  "ok": true,
+  "tokens": 2595,
+  "tokenizer": "tiktoken:o200k_base",
+  "tokenCountExact": true,
+  "operation": "knowledge_read",
+  "state": "page",
+  "view": "source_context",
+  "repositoryId": "7511e917-d5d3-584e-b0ce-44dcad666cfe",
+  "snapshot": "dd6357af2cf1f25345c7eb21008e9bcbcbe05942",
+  "completeWithinDeclaredScope": true,
+  "page": {
+    "threshold": {
+      "tokens": 8000,
+      "tokenizer": "tiktoken:o200k_base"
+    },
+    "memoryTreeId": "dd6357af2cf1f25345c7eb21008e9bcbcbe05942",
+    "selectionPolicy": "family-complete-leaf",
+    "selectionPolicyVersion": "v2",
+    "manifestDigest": "44262c298623cd1bfa64b57f68a42f57155811aad40736656797f52e9e928ca3",
+    "codeTreeId": "715ee46e34ef5c421c540314b882c04d1676e08d",
+    "start": 0,
+    "rowsOnPage": 15,
+    "total": 15,
+    "returned": 15,
+    "remaining": 0,
+    "enumerationComplete": true
+  },
+  "payload": {
+    "seed": {
+      "kind": "family",
+      "id": "FAM-TG3WK0"
+    },
+    "state": "page",
+    "memoryTreeId": "dd6357af2cf1f25345c7eb21008e9bcbcbe05942",
+    "manifestDigest": "44262c298623cd1bfa64b57f68a42f57155811aad40736656797f52e9e928ca3",
+    "rows": [
+      {
+        "kind": "family_header",
+        "id": "FAM-TG3WK0",
+        "revision": 1,
+        "status": "proposed",
+        "admission": {
+          "criteria": [
+            "joint_guarantee"
+          ],
+          "justification": "The reader fixture's own composition alone still leaves a wait that can hang, and a bounded wait alone still hangs when the request never reaches a dispatcher; only together do they promise that these protocol waits end at a limit and that the sweep's limit is a named failure rather than a raiser."
+        },
+        "title": "The reader and sweep protocol waits end at a limit",
+        "guarantee": "The reader protocol test composes its own server through the product factory instead of inheriting another test's process state. The protocol waits of the reader exercise and of the tool sweep — the reader's exchange and its Git status observations, and the sweep's session initialization, tool response and session cleanup — each end at a limit, and the sweep's limit is a named failure that is not classified as a product raiser. The fixtures' shared Git helpers — `git`/`init_repo` in `mcp/tests/test_worktree_support.py` and the sweep's `_git` — carry no timeout of their own and are outside this guarantee. Where the event-loop runner can shut down, no earlier test and no unanswered tool leaves these waits blocking the run; LIM-81M7T1 records where it cannot.",
+        "routes": [
+          "mcp/src/agents_remember/mcp/registration",
+          "mcp/tests"
+        ],
+        "memberCount": 3,
+        "members": [
+          "INV-2S0FEY",
+          "INV-W4XGR4",
+          "INV-X0BRG0"
+        ],
+        "staleMembers": 0
+      },
+      {
+        "kind": "member",
+        "id": "INV-2S0FEY",
+        "revision": 1,
+        "status": "proposed",
+        "admission": {
+          "criteria": [
+            "guarded_by_test"
+          ],
+          "justification": "The named deadline turns a missing protocol answer into an ordinary failure the run continues past, instead of the asyncio wait that never returned in the combined run; the late-response case proves the failure fires."
+        },
+        "statement": "The reader protocol exercise runs under one 60-second limit and its Git status observations under a subprocess limit, and a passed limit is an ordinary assertion failure saying that the reader protocol responses did not arrive, after which the same process goes on to its next test.",
+        "applicability": "The reader protocol exercise and its Git status observations, and the late-response regression beside them.",
+        "conditions": [
+          "The exercise runs through `_run_protocol` / `_await_protocol`.",
+          "A passed limit is an ordinary assertion failure naming the responses that did not arrive."
+        ],
+        "exclusions": [
+          "The limit's length is not part of the obligation; the late-response case deliberately shortens only its own response wait after session initialization."
+        ],
+        "state": "current",
+        "families": [
+          "FAM-TG3WK0"
+        ]
+      },
+      {
+        "kind": "realization",
+        "id": "RLZ-M9TE1D",
+        "invariant": "INV-2S0FEY",
+        "path": "mcp/tests/test_reader_task_context_protocol.py",
+        "locator": {
+          "kind": "symbol",
+          "name": "_git_status"
+        },
+        "role": "enforcement",
+        "state": "current"
+      },
+      {
+        "kind": "realization",
+        "id": "RLZ-X8ANCJ",
+        "invariant": "INV-2S0FEY",
+        "path": "mcp/tests/test_reader_task_context_protocol.py",
+        "locator": {
+          "kind": "symbol",
+          "name": "_run_protocol"
+        },
+        "role": "enforcement",
+        "state": "current"
+      },
+      {
+        "kind": "realization",
+        "id": "RLZ-Y48H2Y",
+        "invariant": "INV-2S0FEY",
+        "path": "mcp/tests/test_reader_task_context_protocol.py",
+        "locator": {
+          "kind": "symbol",
+          "name": "_await_protocol"
+        },
+        "role": "enforcement",
+        "state": "current"
+      },
+      {
+        "kind": "proof",
+        "id": "PRF-E8CQJR",
+        "invariant": "INV-2S0FEY",
+        "path": "mcp/tests/test_reader_task_context_protocol.py",
+        "locator": {
+          "kind": "symbol",
+          "name": "RegisteredTaskReaderContextProtocolTests.test_late_tool_list_response_times_out_and_closes_the_handler"
+        },
+        "facet": "Holds a `tools/list` handler until it is cancelled, requires the named failure from a three-second response deadline, and re-runs the primary case so the server with its patched handler is proven usable.",
+        "state": "current"
+      },
+      {
+        "kind": "member",
+        "id": "INV-W4XGR4",
+        "revision": 2,
+        "status": "proposed",
+        "admission": {
+          "criteria": [
+            "prevents_costly_mistake"
+          ],
+          "justification": "A phase budget that silently stops naming the tool and phase would leave the sweep hanging instead of failing by name."
+        },
+        "statement": "The existing sweep awaits initialization, response and cleanup with sixty-second phase budgets and surfaces its named deadline outside the product-raiser classifier.",
+        "applicability": "Every call the tool entry-point sweep makes through its one world.",
+        "conditions": [
+          "The sweep drives tools through the extracted world.",
+          "A passed phase limit names the tool and the phase in a `_ToolCallTimeout`."
+        ],
+        "exclusions": [
+          "The pins, the classifier's arms and the swept population are unchanged by the move.",
+          "The environment-dependent verdict remains a separate recorded limitation."
+        ],
+        "state": "current",
+        "families": [
+          "FAM-TG3WK0"
+        ]
+      },
+      {
+        "kind": "realization",
+        "id": "RLZ-BCFPZV",
+        "invariant": "INV-W4XGR4",
+        "path": "mcp/tests/test_tool_entry_point_controls.py",
+        "locator": {
+          "kind": "symbol",
+          "name": "ChokePointControlTests.test_a_tool_that_never_answers_fails_by_name_and_closes_its_handler"
+        },
+        "role": "support",
+        "state": "current"
+      },
+      {
+        "kind": "realization",
+        "id": "RLZ-3J2TZH",
+        "invariant": "INV-W4XGR4",
+        "path": "mcp/tests/tool_entry_point_world.py",
+        "locator": {
+          "kind": "symbol",
+          "name": "EntryPointWorld._call"
+        },
+        "role": "primary-authority",
+        "state": "current"
+      },
+      {
+        "kind": "proof",
+        "id": "PRF-AGBGWK",
+        "invariant": "INV-W4XGR4",
+        "path": "mcp/tests/test_tool_entry_point_controls.py",
+        "locator": {
+          "kind": "symbol",
+          "name": "ChokePointControlTests.test_a_tool_that_never_answers_fails_by_name_and_closes_its_handler"
+        },
+        "facet": "The control drives a registered never-answering tool through EntryPointWorld.call with a shortened response budget, asserts _ToolCallTimeout names the tool and response phase, and checks handler cleanup and a subsequent usable call. This is a recorded static test relationship, not evidence that this session executed the test.",
+        "state": "current"
+      },
+      {
+        "kind": "member",
+        "id": "INV-X0BRG0",
+        "revision": 1,
+        "status": "proposed",
+        "admission": {
+          "criteria": [
+            "spans_locations",
+            "guarded_by_test"
+          ],
+          "justification": "The coupling is realized in the reader fixture and in both halves of the extension in skills_extension.py; a server composed outside the factory receives only one half, which silently drops `tools/list` and hangs the call rather than failing it."
+        },
+        "statement": "The reader protocol test builds its server through the product factory `create_server`, so the process-wide request union that any product server installs always meets its per-server dispatcher and `tools/list` is answered whatever ran earlier in the process.",
+        "applicability": "Every MCP server the product composes in a process that may also run another server or test, and the reader protocol test's server in particular.",
+        "conditions": [
+          "The server is built through the product factory `create_server`, whose registrar chain installs the skills extension.",
+          "Another server in the same interpreter may already have installed the process-wide request union."
+        ],
+        "exclusions": [
+          "A server built directly from a bare `FastMCP` without the product registrars is outside the obligation; the reader fixture no longer does that.",
+          "The extension's two handlers and the skills catalog behavior are unchanged by this obligation."
+        ],
+        "state": "current",
+        "families": [
+          "FAM-TG3WK0"
+        ]
+      },
+      {
+        "kind": "realization",
+        "id": "RLZ-REXRPE",
+        "invariant": "INV-X0BRG0",
+        "path": "mcp/src/agents_remember/mcp/registration/skills_extension.py",
+        "locator": {
+          "kind": "symbol",
+          "name": "_install_dispatcher"
+        },
+        "role": "support",
+        "state": "current"
+      },
+      {
+        "kind": "realization",
+        "id": "RLZ-VTTMBC",
+        "invariant": "INV-X0BRG0",
+        "path": "mcp/src/agents_remember/mcp/registration/skills_extension.py",
+        "locator": {
+          "kind": "symbol",
+          "name": "_install_request_union"
+        },
+        "role": "support",
+        "state": "current"
+      },
+      {
+        "kind": "realization",
+        "id": "RLZ-Z4WCTE",
+        "invariant": "INV-X0BRG0",
+        "path": "mcp/tests/test_reader_task_context_protocol.py",
+        "locator": {
+          "kind": "symbol",
+          "name": "RegisteredTaskReaderContextProtocolTests.setUp"
+        },
+        "role": "enforcement",
+        "state": "current"
+      },
+      {
+        "kind": "proof",
+        "id": "PRF-X4GZX5",
+        "invariant": "INV-X0BRG0",
+        "path": "mcp/tests/test_reader_task_context_protocol.py",
+        "locator": {
+          "kind": "symbol",
+          "name": "RegisteredTaskReaderContextProtocolTests.test_registered_readers_use_call_local_admitted_leaf_context"
+        },
+        "facet": "Builds its server through the product factory and completes the protocol exchange in a process where the extended request union is installed, where the bare-FastMCP fixture dropped the request.",
+        "state": "current"
+      }
+    ],
+    "counts": {
+      "families": 1,
+      "members": 3,
+      "entries": 11,
+      "realizations": 8,
+      "proofs": 3,
+      "distinctPaths": 4,
+      "invariantsByState": {
+        "stale": 0,
+        "unverifiable": 0,
+        "unrealized": 0,
+        "current": 3
+      },
+      "advertisedFamilies": 0,
+      "chainFamilies": 0,
+      "rowsTotal": 15,
+      "rowsReturned": 15,
+      "rowsRemaining": 0
+    },
+    "hasMore": false,
+    "enumerationComplete": true,
+    "indexState": "complete",
+    "continuationOperation": "knowledge_read",
+    "continuationView": "source_context"
+  },
+  "memoryTree": {
+    "memoryRoot": "/home/firefox/projects/ar-coordination/worktrees/agents-remember/260928-mik-l26-ar/memory-260928-mik-l26",
+    "treeId": "dd6357af2cf1f25345c7eb21008e9bcbcbe05942",
+    "indexState": "complete",
+    "problems": []
+  },
+  "indexComplete": true,
+  "currentness": {
+    "codeTree": {
+      "repositoryRoot": "/home/firefox/projects/ar-coordination/worktrees/agents-remember/260928-mik-l26-ar/260928-mik-l26",
+      "treeId": "715ee46e34ef5c421c540314b882c04d1676e08d"
+    },
+    "counts": {
+      "stale": 0,
+      "unverifiable": 0,
+      "unrealized": 0,
+      "current": 3
+    },
+    "invariants": [
+      {
+        "id": "INV-2S0FEY",
+        "state": "current",
+        "entries": []
+      },
+      {
+        "id": "INV-W4XGR4",
+        "state": "current",
+        "entries": []
+      },
+      {
+        "id": "INV-X0BRG0",
+        "state": "current",
+        "entries": []
+      }
+    ],
+    "families": [
+      {
+        "id": "FAM-TG3WK0",
+        "members": 3,
+        "staleMembers": 0,
+        "stale": []
+      }
+    ]
+  }
+}

@@ -166,51 +166,13 @@ with `committed_changed_paths` keeping its deliberate `is_file` filter so a dele
 change. This route's closeout worklists are exactly what the family feeds, so the defect was a
 closeout-input defect as much as a change-set one; `ACCEPTANCE.md` A24 is the row that measures it.
 
-## 260921-ICR-L11 The Route Gains A Git-Object Retention Owner, And Custody Becomes A Measurement Over Named History
+## Historical code-object custody and release
 
-This route gained **one module**, `modules/code_object_retention.py`, and the leaf it belongs to
-(`260921-ICR-L11`, primary requirement ICR-R11@v1) needed it because a captured candidate tree is in
-**no commit**: it is written through a private index, so nothing points at it, `git gc` may delete it at
-any moment, and the only thing between "the comparison can be reopened" and "the tree is gone" is an
-object reference that survives reclamation.
+The module retains historical pin vocabulary, custody observations and explicit release; it creates no commit/ref and freezes no canonical generation. [12] [13]
 
-Three facts belong at this route's altitude, because each one is a decision rather than mechanics:
+Only named durable tips and recorded landed commits count. Absence remains a separate reader observation. Release measures custody, refuses a moved ref, deletes only the recorded commit and converges on absence; the caller owns policy and unavailable-history publication. [14] [15] [16]
 
-- **One commit and one ref keep both bound objects alive.** The retention commit's tree *is* the captured
-  tree and its parent *is* the recorded base commit, so the candidate tree and the baseline it is
-  compared against stay in one ancestry — reclamation cannot keep one and drop the other. The ref lives
-  under `refs/ar/retained-code/`, deliberately outside `refs/heads` and `refs/remotes`, which is what
-  makes `worktree remove`, `branch -D`, `worktree prune` and `gc --prune=now` leave it exactly where it
-  is, and what lets a reader find every pin with one `git for-each-ref` over that prefix.
-- **The retention commit's id is a function of the two objects it keeps.** Author, committer and both
-  timestamps are supplied explicitly and dated by the **base commit**, so a pin re-created after an
-  explicit release is the identical object. That is what makes an exact re-freeze converge instead of
-  producing two generations claiming one index for a comparison nobody changed.
-- **Custody is measured over the history the caller names, and the leaf's own work branch is not one of
-  the names.** An empty name set means *nothing durable holds the tree*, so the pin stays; the
-  measurement never walks ancestry, and a tree surviving only deeper in a named branch's past is still
-  reported `retained`, because keeping a redundant pin is the safe direction to be wrong in while
-  releasing the only reference is not. A ref that already names a different pin is refused rather than
-  re-pointed.
-
-The third observation belongs to the reader, not the record: `code_object_observation` answers `absent`
-when the object does not resolve at all, and `absent` is a **separate type** from the two custody values
-— an object that is gone is not held by anything, so reporting it as `retained` would claim a pin is
-holding bytes that are no longer there. That is exactly the state a released-and-reclaimed history is in.
-
-- One commit, one ref, and the recorded base as the commit's parent. [12]
-- **The commit whose id is a function of the retained objects, and the identity that makes it so.** [13]
-- **Custody over named history only, and the empty set as a statement.** [14]
-- **The third observation, which a record never stores.** [15]
-- The explicit release: a moved ref refused, an absent ref converged, and the custody measured before deletion. [16]
-- The typed failure every ref outcome raises. [17]
-- **The create-side consumer, which measures custody against the contract's names and pins only when they do not hold the tree.** [18]
-- **The cases that measure the pin against a real repository, including the control object that proves `git gc --prune=now` really reclaimed.** [19]
-
-**One boundary this route inherits and does not settle.** Whether a *landed* integration or closeout
-operation objects to the `refs/ar/retained-code/` namespace was **not measured** by this leaf, which
-cannot run those transactions; the pin was measured to survive `worktree remove`/`prune`, `branch -D`,
-gc-packing and `git fsck`, and the ref namespace question is recorded as open rather than assumed safe.
+The real reclamation suite drives refs and snapshot files without creating a database, checking exact release, named custody and moved-ref refusal. [19]
 
 ## IAS Frozen Public Lifecycle Composition
 
@@ -1549,6 +1511,15 @@ actually occupy, with no change of meaning. **`worktrees/modules/startup/`** lik
 `_independent_insert_refusal` still refuses two independent insertions of one identity with equal
 payloads.
 
+
+- Retained historical pin identities and exact reader check. [12]
+
+
+- Release checks the recorded ref instead of creating a deterministic pin. [13]
+
+
+- Real release guards over refs and named custody. [19]
+
 ## Closed-leaf agent archive (MIK-R76)
 
 The route gains three terminal-helper modules: `terminal_agents.archive_terminal_agents` is the
@@ -1556,4 +1527,3 @@ best-effort host-archive boundary, and `terminal_cleanup._cleanup_with_guard` /
 `terminal_abandon._abandon_with_guard` are the extracted admitted transactions that archive a leaf's
 recorded agents after terminal admission and before any destructive output. `cleanup.py` and
 `abandon.py` keep their public results and delegate the guarded transaction to those modules.
-

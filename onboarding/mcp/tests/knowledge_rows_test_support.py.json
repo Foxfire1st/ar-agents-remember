@@ -1,0 +1,22 @@
+{
+  "path": "mcp/tests/knowledge_rows_test_support.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The file realizes its current contract at the corrected candidate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "25497ca2fe27297d4ac750d338e86962058a76f1",
+            "content": "sha256:cb2a6bf51021bf4c37ba5015553a3eda609dd9d6fef9618b66029e2632965714",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

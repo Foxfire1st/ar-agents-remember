@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "Realized across 4 files that together perform the obligation."
+  },
+  "applicability": "Unconverted review descriptions.",
+  "conditions": [
+    "The review reads a source-only identity because the canonical dataset is unavailable."
+  ],
+  "exclusions": [
+    "A converted review, which reads tree comparisons."
+  ],
+  "id": "INV-YJZKYC",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.evidence/focused-tests-admitted.log; notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.evidence/diff-census.json"
+      ],
+      "path": "handoff-stage1.json"
+    },
+    "handoffEntry": "R3 Note 15",
+    "leaf": "260928-MIK-L26",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Unconverted review descriptions state source-only identities and unavailable retired knowledge.",
+  "status": "proposed",
+  "supersedes": []
+}

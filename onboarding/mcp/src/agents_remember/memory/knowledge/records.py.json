@@ -2,98 +2,13 @@
   "path": "mcp/src/agents_remember/memory/knowledge/records.py",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "The canonical JSON typed-column encoding used for every structured column.",
+    "12": {
+      "note": "`decode_revision_row` owns the current boundary described above.",
       "targets": [
         {
           "anchor": {
-            "blob": "121c4afa09ae47ad7908ca98c752895684e7232f",
-            "content": "sha256:4bef03d01301b036d7418c15d2aeb6ab05d3fdd7d3e99465be81e5d4bcd33e6a",
-            "locator": {
-              "kind": "symbol",
-              "name": "encode_typed_column"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "121c4afa09ae47ad7908ca98c752895684e7232f",
-            "content": "sha256:0d0003a9634dab7b1114263aa4687f10c3699db9aa9fada2c2cb95c738278508",
-            "locator": {
-              "kind": "symbol",
-              "name": "decode_typed_column"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "10": {
-      "note": "The digest the read path recomputes, for both payloads.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "0508e56c262c031606a2a86fd8ddba54f1cb6c33",
-            "content": "sha256:cf84d0f055b923f67d3f0c588b2aafff265032b51ca3642945d65da50bd9729d",
-            "locator": {
-              "kind": "symbol",
-              "name": "revision_payload_digest"
-            },
-            "path": "mcp/src/agents_remember/models/knowledge/digest.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "0508e56c262c031606a2a86fd8ddba54f1cb6c33",
-            "content": "sha256:50dd05ab638940b7a334858cebee588c309c288d58b283907bc2aafeb7e760eb",
-            "locator": {
-              "kind": "symbol",
-              "name": "family_revision_payload_digest"
-            },
-            "path": "mcp/src/agents_remember/models/knowledge/digest.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "11": {
-      "note": "The canonical encoder and duplicate-key-refusing decoder this module stores through.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "a939ca21bb16d7edca85c2bc76c955a42e67ad06",
-            "content": "sha256:2070a5a21194d1e0f587c26210c2ec9a7d094bb31f1d3279b93d2120492630ca",
-            "locator": {
-              "kind": "symbol",
-              "name": "canonical_json_bytes"
-            },
-            "path": "mcp/src/agents_remember/kernel/canonical_json.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "a939ca21bb16d7edca85c2bc76c955a42e67ad06",
-            "content": "sha256:70911acd3a56d6e8cf2c0328765cc8d3f10df70298f42b7987fa09123bd6c4cd",
-            "locator": {
-              "kind": "symbol",
-              "name": "decoded_json"
-            },
-            "path": "mcp/src/agents_remember/kernel/canonical_json.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "2": {
-      "note": "The read path re-derives the seal and treats a mismatch as a damaged store.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "121c4afa09ae47ad7908ca98c752895684e7232f",
-            "content": "sha256:f485c9e10fbdbf67fbb1f9abe067aa8ef97cd202d31a69d8bfc42e32e611f493",
+            "blob": "0ee5929321e3f7a958a51aecc7f15c63d890c86c",
+            "content": "sha256:11b77cf7357bb9e6ed51fc7a1c09f7f8ed251370838f7e0d6467f84a0d37d6e3",
             "locator": {
               "kind": "symbol",
               "name": "decode_revision_row"
@@ -103,191 +18,28 @@
         }
       ]
     },
-    "3": {
-      "note": "Sealing a draft, including the sorted predecessor set that enters the digest.",
+    "13": {
+      "note": "`decode_family_revision_row` owns the current boundary described above.",
       "targets": [
         {
           "anchor": {
-            "blob": "121c4afa09ae47ad7908ca98c752895684e7232f",
-            "content": "sha256:8a185d09b90b72864aa7651332f9fdeec9b015368b7474a5c746bd4a4bb1bf87",
-            "locator": {
-              "kind": "symbol",
-              "name": "sealed_revision_from_draft"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "4": {
-      "note": "The exact twelve-column revision tuple written by the operation.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "121c4afa09ae47ad7908ca98c752895684e7232f",
-            "content": "sha256:040ef73984800008d5a6e9240a77fac278df28ed494f1e6d0b7960897307d249",
-            "locator": {
-              "kind": "symbol",
-              "name": "revision_row"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "5": {
-      "note": "The predecessor edge rows and their sorted decode.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "121c4afa09ae47ad7908ca98c752895684e7232f",
-            "content": "sha256:aee04ba7d6be28704a39d8d440f7abf83957e8f4d2b9257df3a5a363dedff12a",
-            "locator": {
-              "kind": "symbol",
-              "name": "predecessor_rows"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "121c4afa09ae47ad7908ca98c752895684e7232f",
-            "content": "sha256:e9c1111ee6bf72be8101edf98ed111962667fec7a39cc1518757ec82902f2e62",
-            "locator": {
-              "kind": "symbol",
-              "name": "decode_predecessor_rows"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "6": {
-      "note": "The anchor codec, which derives the canonical identity text at the storage boundary.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "121c4afa09ae47ad7908ca98c752895684e7232f",
-            "content": "sha256:5febc8cc994f200d39cbf98135f80f69d9e89bc38781fbd5919cd5bf0dbb3b1e",
-            "locator": {
-              "kind": "symbol",
-              "name": "anchor_row"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "121c4afa09ae47ad7908ca98c752895684e7232f",
-            "content": "sha256:3f1942fb3b4c56caef11577956abb7a962cf60544b7a1a8db161bb7879497ff8",
-            "locator": {
-              "kind": "symbol",
-              "name": "anchor_row_digest"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "121c4afa09ae47ad7908ca98c752895684e7232f",
-            "content": "sha256:abefcc84253875ed98182787cf202efafd73b7f925d29e23f70e019c9a723348",
-            "locator": {
-              "kind": "symbol",
-              "name": "decode_anchor_row"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "7": {
-      "note": "The family identity and family revision codecs, including the seal-verifying decode that reads the stored edges.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "121c4afa09ae47ad7908ca98c752895684e7232f",
-            "content": "sha256:0c94fbba739f4344d3bd80edd5b58193df241273559f07fa7991f5e44f95e4c6",
-            "locator": {
-              "kind": "symbol",
-              "name": "family_row"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "121c4afa09ae47ad7908ca98c752895684e7232f",
-            "content": "sha256:9e628b2a4512e79cb25675140ad6a45f503660e16143b73bf6a1878436cf7db5",
-            "locator": {
-              "kind": "symbol",
-              "name": "family_revision_row"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "121c4afa09ae47ad7908ca98c752895684e7232f",
-            "content": "sha256:bfc23fffe2a216c0dd498e4993946354abcd205e0abee4302e83044f31bbfe9b",
-            "locator": {
-              "kind": "symbol",
-              "name": "sealed_family_revision_from_draft"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "121c4afa09ae47ad7908ca98c752895684e7232f",
-            "content": "sha256:4b0ed64815e7d60e1a581661f2c7c349172981afe5ddfc43689a1083643702da",
+            "blob": "0ee5929321e3f7a958a51aecc7f15c63d890c86c",
+            "content": "sha256:bd50e8d8c0e3c813bcc4211881a122e30b03650166e0c9697b1a7497bbbd4741",
             "locator": {
               "kind": "symbol",
               "name": "decode_family_revision_row"
             }
           },
           "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "121c4afa09ae47ad7908ca98c752895684e7232f",
-            "content": "sha256:f276ad0aeb8c5e9ffd206fefa4fa8802b05cfa2f78cb752f4e8fc91006c7ab6a",
-            "locator": {
-              "kind": "symbol",
-              "name": "family_predecessor_rows"
-            }
-          },
-          "kind": "code"
         }
       ]
     },
-    "8": {
-      "note": "The relation codecs and their table-scoped expected-row digests.",
+    "14": {
+      "note": "`decode_member_row` owns the current boundary described above.",
       "targets": [
         {
           "anchor": {
-            "blob": "121c4afa09ae47ad7908ca98c752895684e7232f",
-            "content": "sha256:74945936fd363af24bfafbba478b70e2c902a8b2bf4561dfd1e62f85dd349915",
-            "locator": {
-              "kind": "symbol",
-              "name": "member_row"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "121c4afa09ae47ad7908ca98c752895684e7232f",
-            "content": "sha256:b33ec55a76c3d3307e1192a3abc021318bd3792bdb5ad0ad85a8a2b11b15240f",
-            "locator": {
-              "kind": "symbol",
-              "name": "member_row_digest"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "121c4afa09ae47ad7908ca98c752895684e7232f",
+            "blob": "0ee5929321e3f7a958a51aecc7f15c63d890c86c",
             "content": "sha256:d998b44957e9916e459c94891ae7bee687849d435aeda6934eda2a31448e6946",
             "locator": {
               "kind": "symbol",
@@ -295,52 +47,19 @@
             }
           },
           "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "121c4afa09ae47ad7908ca98c752895684e7232f",
-            "content": "sha256:27c469cae3d8aeec382880990dd3f34cfb71c6a0c9d4a0ee3d99d355254ff594",
-            "locator": {
-              "kind": "symbol",
-              "name": "claim_row"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "121c4afa09ae47ad7908ca98c752895684e7232f",
-            "content": "sha256:53cdc8c7fdfe21450d4ca01c7598a7314b807964f2a20de41aebb87392bad6cd",
-            "locator": {
-              "kind": "symbol",
-              "name": "claim_row_digest"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "121c4afa09ae47ad7908ca98c752895684e7232f",
-            "content": "sha256:a7a1120daa9700456170cad5ad9dc043a461c39bd3a2ede9d10588b0d43ab7f5",
-            "locator": {
-              "kind": "symbol",
-              "name": "decode_claim_row"
-            }
-          },
-          "kind": "code"
         }
       ]
     },
-    "9": {
-      "note": "The closed stored-role vocabulary a stored row is narrowed against.",
+    "15": {
+      "note": "`decode_typed_column` owns the current boundary described above.",
       "targets": [
         {
           "anchor": {
-            "blob": "121c4afa09ae47ad7908ca98c752895684e7232f",
-            "content": "sha256:a18a6b586091a6e1cda19843e8915253d2339dbe30f10f189b2d9ce6536561ac",
+            "blob": "0ee5929321e3f7a958a51aecc7f15c63d890c86c",
+            "content": "sha256:0d0003a9634dab7b1114263aa4687f10c3699db9aa9fada2c2cb95c738278508",
             "locator": {
               "kind": "symbol",
-              "name": "stored_realization_role"
+              "name": "decode_typed_column"
             }
           },
           "kind": "code"

@@ -14,7 +14,7 @@ accepted-series work can use its recorded delegated authority.
 
 ### Logic
 
-The generated closeout guidance names the existing comparison producer and carries its written/reused generation or refusal. Comparison recording remains review evidence; closeout remains report-only for that result and gains no semantic gate.
+The current closeout guidance carries the curator's file-writer handoff as context. The reviewer compares the leaf's Git base and candidate; there is no separate comparison record, and closeout produces none. This does not grant closeout authority or create a semantic gate.
 
 c-12-closeout owns worktree-only closeout sequencing. It previews and applies the exact
 authorized code and memory-content Git transaction through the task contract, preserving
@@ -168,3 +168,5 @@ without its own worktree enclosure. It is not a substitute for ordinary master/s
 master-to-parent integration. Those lifecycle operations remain worktree/series operations and do
 not require `directExecutionEnabled`; the existence of a root series contract alone does not select
 the direct route.
+
+- The current closeout handoff uses Git base/candidate review and produces no separate comparison record. [17]

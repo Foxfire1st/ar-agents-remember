@@ -66,7 +66,7 @@ renamed or moved, this section is updated in the same onboarding pass.
 | File and entity onboarding maintenance | Creates and maintains file-level onboarding and the repository entity catalog, with strict one-to-one source mapping and governing-overview links; it routes create, refresh, move and delete cases of a package, module or source slice to the `c-03` skill. `route_index_refresh` regenerates the route indexes. | `c-05-create-or-update-onboarding-files` skill, `route_index_refresh`, `kernel/route_index.py`, `kernel/route_index_census.py` |
 | Findings capture | Captures confirmed findings, routes them to a durable task-local path, and propagates factual current-state clarifications into onboarding when allowed. | `c-01-findings-capture` skill |
 | Workflow modes | The build decision is taken at `decide`: a research-only exit for answers that change no code, otherwise a durable `w-02-light-task-workflow` task. Chat is never a build route. Small code work takes the minimal `w-02` artifact, and work that outgrows a single-page plan escalates to a master with a light sub-task series. | `AGENTS.md`, `l-01-agent-lifecycles` skill, `w-02-light-task-workflow` skill |
-| Agent lifecycles (one per role) | The `l-01-agent-lifecycles` skill is a role-capsule router: a role agent receives exactly one role file and one operation file, selected by the role and operation that the AR role launcher or the `role_start` tool supplies, with the canonical task references in the handover. The launcher offers seven roles: architect, investigator, orchestrator, manager, worker, reviewer and curator; the manifest keeps designer, strategist and bootstrap as entries that the router does not launch. Paseo hosts each role agent, and role agents start and message each other with `role_start` and `role_message`. An architect or a system specialist can be started without a task. `core/` is metadata for the capsule compiler and is not injected into a role capsule. The master-handover packet cites the candidate tree, code ancestry, memory ancestry and the accepted Git commit pair of every leaf. | `skills/l-01-agent-lifecycles/SKILL.md`, `composition-manifest.json`, `roles/`, `operations/`, `templates/master-handover-packet.md` |
+| Agent lifecycles (one per role) | The `l-01-agent-lifecycles` skill is a role-capsule router: a role agent receives exactly one role file and one operation file, selected by the role and operation that the AR role launcher or the `role_start` tool supplies, with the canonical task references in the handover. The launcher offers seven roles: architect, investigator, orchestrator, manager, worker, reviewer and curator; the manifest keeps designer, strategist and bootstrap as entries that the router does not launch. Paseo hosts each role agent, and role agents start and message each other with `role_start` and `role_message`. An architect or an investigator can be started without a task. `core/` is metadata for the capsule compiler and is not injected into a role capsule. The master-handover packet cites the candidate tree, code ancestry, memory ancestry and the accepted Git commit pair of every leaf. | `skills/l-01-agent-lifecycles/SKILL.md`, `composition-manifest.json`, `roles/`, `operations/`, `templates/master-handover-packet.md` |
 | Closeout | Closeout is worktree-only: every change that affects the code repository runs through a dual worktree (code and memory), and there is no direct-checkout closeout path. The apply tool takes an `intent_note` that records the authority, either explicit developer commit approval or delegated accepted-series authority, and every enabled commit leg needs its own commit message. `direct_landing` is the policy-gated, branch-addressed route for a leaf delivered without its own worktree enclosure. On converted memory the closeout preview and the apply ask the mandatory knowledge gate. | `c-12-closeout` skill, `worktree_closeout_preview`, `worktree_closeout_apply`, `direct_landing` |
 | Worktree lifecycle | Start, attach, status, sync, pause, closeout, integration, landing record, finalization, abandon and cleanup of worktree-backed tasks. `worktree_pause` releases one master's atomic-series activation selection and publishes nothing; `worktree_checkpoint_landing` is the separate, explicitly requested publication of an unfinished master. The activation record is one durable, replace-in-place snapshot per canonical series contract, so two atomic masters that share one protected source pair never share that state. A sync is a resumable transaction whose record is `reports/sync-operation.json` of the worktree group and whose commits are pinned by Git refs. | `c-09-git-worktree-manager` skill, `worktree_*` tools, `lifecycle_finalize_task`, `task_reopen`, `worktrees/` |
 | Observable session lifecycle | The observer holds the append-only `ar-observer-event/v1` event log, the ambient lifecycle with its `lifecycle_*` signals, and the reducer, which is the single owner of interpretation and folds events and file snapshots into the projection. `application/tool_response.py` completes each tool result: it selects the wire model, attaches lifecycle-wide state, finalizes the token count and records the call. A tool response can carry a `nextStep` hint computed from the projected lifecycle state. | `agents_remember.observer`, `application/tool_response.py`, `models/tools/tool_response.py`, `application/next_step.py` |
@@ -214,24 +214,9 @@ On converted memory a card states what its file does in present tense and has no
 
 ### Knowledge Records And The Closeout Gate
 
-The memory repository of this project is converted: `knowledge/layout.json` marks the tree, and
-knowledge is text. Prose is Markdown and structured facts are canonical JSON: cards and route
-overviews with their sidecars under `onboarding/`, and global records under `knowledge/`
-(invariants, families, decisions and assumptions). `knowledge/history/` holds one history file per
-owner, where an owner is a leaf, a migration wave or a crossing sync, and one more per attempt of a
-reopened leaf. The database file `knowledge.sqlite` that the tree still holds is frozen and is not
-read.
+The memory repository is converted: `knowledge/layout.json` marks the tree, and knowledge is text. Markdown carries prose and canonical JSON carries records, card relationships and history. Ordinary knowledge reads select this memory tree and its derived index. A legacy `knowledge.sqlite` retained as conversion input is never a current knowledge source.
 
-**Writing.** The curator file writer creates and updates records, realization and proof entries and
-history rows. `agents-remember knowledge-ingest` runs it on a leaf's enclosure contract, and
-`agents-remember knowledge-bootstrap` runs it for a repository's first records without a leaf;
-`knowledge-ingest --crossing` is the route of a master line's crossing sync. The writer takes a
-hand-off list, fills every mechanical field (identifiers, anchors with blob and content hash at the
-code candidate, revisions, canonical formatting), validates the whole resulting tree and only then
-writes. Without `--commit` a run plans, validates and reports, and writes nothing. The mounted
-`knowledge_change` tool writes nothing and names the write route. The references of a card are
-written by the citation fixer (`agents-remember memory-citations --fix`, or the `citation_fix` tool),
-and the closeout closes the leaf's history file.
+**Writing.** The curator file writer creates and updates records, realization and proof entries and history rows. `knowledge-ingest` addresses a leaf contract, `knowledge-bootstrap` addresses a repository foundation, and `knowledge-ingest --crossing` addresses master-line conflict history. It fills mechanical fields, validates the resulting tree and writes only with `--commit`; Git publication stays with closeout. The mounted knowledge family contains read, diff and integrity only. The former `knowledge_change` and `knowledge_project` tools are removed. Card references are authored by the citation fixer.
 
 **Admission.** Every new invariant, family and decision record states the admission criterion it
 meets with a justification in one sentence, and the knowledge validator refuses a new record without
@@ -539,7 +524,9 @@ not a recorded test execution.
 - The layering checker loads that one contract, rejects undeclared package directories and reports an invalid dependency direction. [32]
 - Text files in the memory repository are the source of truth for knowledge. [19]
 - The curator file writer refuses a memory tree that is not converted. [22]
-- The mounted `knowledge_change` tool refuses and names the write route. [30]
+
+- The registrar mounts only read, diff and integrity; change and project are removed. [30]
+
 - The hand-off template's file-writer section. [21]
 - The hand-off template's admission rule for new records. [9]
 - The hand-off template's decision-record section. [6]

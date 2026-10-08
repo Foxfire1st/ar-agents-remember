@@ -172,34 +172,34 @@
       ]
     },
     "16": {
-      "note": "The validator alone refuses a no_impact row that replaces a changed row at a recorded landing.",
+      "note": "Changed row remains governing in every attempt.",
       "targets": [
         {
           "anchor": {
-            "blob": "fc1eb060cfce0e2d96b18883ee6bd172f05166e1",
+            "blob": "3e5fee6e11a1a75881f6b906e164fc998ab050c8",
             "content": "sha256:043f5668cb5ae5a0b3ce51c90b551f588de79b91fe1fc7d9aaeb7433b446f570",
             "locator": {
               "kind": "symbol",
               "name": "test_a_changed_record_is_governed_by_its_changed_row_in_every_attempt"
             },
-            "path": "mcp/tests/test_knowledge_reopen.py"
+            "path": "mcp/tests/test_knowledge_reopen_governing_rows.py"
           },
           "kind": "test"
         }
       ]
     },
     "17": {
-      "note": "The rule's two limits.",
+      "note": "Parent-line change may be answered by any later row.",
       "targets": [
         {
           "anchor": {
-            "blob": "fc1eb060cfce0e2d96b18883ee6bd172f05166e1",
+            "blob": "3e5fee6e11a1a75881f6b906e164fc998ab050c8",
             "content": "sha256:eed46188fc2716f74becc34b0d56746240e72145e7dbab72e5518fd729886a65",
             "locator": {
               "kind": "symbol",
               "name": "test_a_change_on_the_parent_line_may_be_answered_by_any_later_row"
             },
-            "path": "mcp/tests/test_knowledge_reopen.py"
+            "path": "mcp/tests/test_knowledge_reopen_governing_rows.py"
           },
           "kind": "test"
         }
@@ -335,7 +335,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6de998c9451213b8db656a2271d6de25ae7c4b20",
+            "blob": "49c65d2f37ba8f90838a80838cec770b2b0e5848",
             "content": "sha256:ef8538598b8aee42a9457276d2d54cc12edf8860af6a1b50d66b4b8cbef5863d",
             "locator": {
               "kind": "symbol",

@@ -18,7 +18,7 @@ commit's tree and K_C the memory checkout's exact candidate tree. The worktree l
 ### Logic
 
 - **The leaf (ruling 2026-09-30T14:38:47, gap 2).** The route names no leaf, so the leaf is the owner of the one
-  open leaf history file in K_C (`open_leaf_owners`: `knowledge/history/*.json` with the history schema,
+  open leaf history file in K_C (`_open_histories`: `knowledge/history/*.json` with the history schema,
   `closed: false` and a string `leaf`; a file that does not parse is skipped, because the validator names it). None,
   or more than one, refuses: "it names no leaf, and the memory candidate holds N open leaf history file(s) …". A
   direct-mode leaf of a converted repository therefore records its rows, or an empty `rows`, in its own file, which
@@ -54,24 +54,8 @@ commit's tree and K_C the memory checkout's exact candidate tree. The worktree l
 
 ## Evidence
 
-### Docs References
-
-No domain documentation source is configured for this repository (`system/sources.md` carries no
-`Domain Documentation` entries). The design authority is `MIK-R09@v2` and `09_mandatory-invariant-closeout-gate.json`,
-outside the repositories.
-
-No configured live documentation source was available for this pass.
-
 ### Repo-Internal References
 
-- The module docstring: the four sides and the leaf a direct landing names. [1]
-- The open leaf history files of a candidate. [2]
-- The verdict; a replay is not gated; exactly one owner. [3]
-- The worklist over the series sides, failing closed. [4]
-- The route test. [5]
-
-### Cross-Repo References
-
-No meaningful cross-repo references found.
-
-No cross-repo boundary is crossed by this file.
+- `_open_histories` implements the retained boundary described above. [6]
+- `_source` implements the retained boundary described above. [7]
+- `direct_verdict` implements the retained boundary described above. [8]

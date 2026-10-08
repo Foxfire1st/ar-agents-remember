@@ -1,0 +1,43 @@
+{
+  "path": "mcp/test_support/agents_remember_test_support/testing/database_source_reading.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "af3315cdcae852e8bc958e2db86952199fa06eb5",
+        "content": "sha256:b5157e871e972434261b586771bda9d2840f4013feb6c042b566a9a726c0f702",
+        "locator": {
+          "kind": "symbol",
+          "name": "read_module"
+        }
+      },
+      "id": "RLZ-0WQ5HV",
+      "invariant": "INV-QQ6F52",
+      "origin": {
+        "handoffEntry": "R3 Finding 9",
+        "leaf": "260928-MIK-L26"
+      },
+      "rationale": "Classifies the observed source spellings for the enforcing tests.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "af3315cdcae852e8bc958e2db86952199fa06eb5",
+        "content": "sha256:b5157e871e972434261b586771bda9d2840f4013feb6c042b566a9a726c0f702",
+        "locator": {
+          "kind": "symbol",
+          "name": "read_module"
+        }
+      },
+      "id": "RLZ-BAVF2C",
+      "invariant": "INV-MFQW2H",
+      "origin": {
+        "handoffEntry": "R3 finding 9",
+        "leaf": "260928-MIK-L26"
+      },
+      "rationale": "This reader classifies the observed source spellings for the enforcing tests.",
+      "role": "support"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

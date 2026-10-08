@@ -1,479 +1,87 @@
 {
   "path": "mcp/src/agents_remember/mcp/tools/knowledge.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "12b2d18549a3d15a005d7fe16fc4b6f3dbc25be1",
+        "content": "sha256:c822f8bb3e797ed97516cc27dae6fc0bc0458221a5922f599c5e422e0d11b474",
+        "locator": {
+          "kind": "symbol",
+          "name": "_diff_result"
+        }
+      },
+      "id": "RLZ-JR2WE7",
+      "invariant": "INV-MT82AS",
+      "origin": {
+        "handoffEntry": "R3 Finding 5",
+        "leaf": "260928-MIK-L26"
+      },
+      "rationale": "Refuses the wrong Git-relative input before comparing.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "12b2d18549a3d15a005d7fe16fc4b6f3dbc25be1",
+        "content": "sha256:189617cc157fd8b77817e82037d7999046c9984854df77ff9cf2ca58b7ec7f6e",
+        "locator": {
+          "kind": "symbol",
+          "name": "_absent_selector"
+        }
+      },
+      "id": "RLZ-QN88JH",
+      "invariant": "INV-PPGGTW",
+      "origin": {
+        "handoffEntry": "R3 note 13",
+        "leaf": "260928-MIK-L26"
+      },
+      "rationale": "This owner distinguishes a held unchanged path from a path neither tree holds.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "12b2d18549a3d15a005d7fe16fc4b6f3dbc25be1",
+        "content": "sha256:c2d9b84b9b9f3c6ad4ff77b7f5b14ddba22cc17b6415d216141f3e4ce652b709",
+        "locator": {
+          "kind": "symbol",
+          "name": "_bounded_body"
+        }
+      },
+      "id": "RLZ-TR53WB",
+      "invariant": "INV-PPGGTW",
+      "origin": {
+        "handoffEntry": "R3 note 13",
+        "leaf": "260928-MIK-L26"
+      },
+      "rationale": "This owner counts the complete response against the shared threshold.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "12b2d18549a3d15a005d7fe16fc4b6f3dbc25be1",
+        "content": "sha256:c822f8bb3e797ed97516cc27dae6fc0bc0458221a5922f599c5e422e0d11b474",
+        "locator": {
+          "kind": "symbol",
+          "name": "_diff_result"
+        }
+      },
+      "id": "RLZ-ZPFNWA",
+      "invariant": "INV-X23FME",
+      "origin": {
+        "handoffEntry": "R3 finding 5",
+        "leaf": "260928-MIK-L26"
+      },
+      "rationale": "This boundary refuses the wrong Git-relative input before comparing.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
-      "note": "The read adds `proofs` only for a converted memory tree's page, prepared once per page since MIK-R02.\n\nAnchor: `tree_view_proofs`",
+      "note": "Read paging/source resolution.",
       "targets": [
         {
           "anchor": {
-            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
-            "content": "sha256:7fffdcb7bb12a477931fce751c44f0d545603e6735db5c1c9686e85f414e6491",
-            "locator": {
-              "kind": "symbol",
-              "name": "_tree_extras"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "10": {
-      "note": "A named tree flags the stale invariant and keeps it visible.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "01e3857e3cce0f6a7d1de75afd79360d3c65caef",
-            "content": "sha256:d4b9911b1395ec1a3b7268944d57fc41447f34349a1bbe67a23351679e305dcc",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_knowledge_read_flags_a_stale_invariant_and_keeps_it_visible"
-            },
-            "path": "mcp/tests/test_knowledge_currentness.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "11": {
-      "note": "Without `codeTreeId` it is unverifiable and never reads `HEAD`.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "01e3857e3cce0f6a7d1de75afd79360d3c65caef",
-            "content": "sha256:a5a23df64e8b4bd5366430a3e80d049b43770ee44894375733f350207e20d399",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_knowledge_read_without_a_named_tree_is_unverifiable_and_never_reads_head"
-            },
-            "path": "mcp/tests/test_knowledge_currentness.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "12": {
-      "note": "A failing step never refuses the view.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "01e3857e3cce0f6a7d1de75afd79360d3c65caef",
-            "content": "sha256:e183a2d74a57440dfd414fdac038941d816a450c2727f7809775ad31ab88d2a7",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_failing_currentness_step_degrades_to_a_reason_and_never_refuses_the_read"
-            },
-            "path": "mcp/tests/test_knowledge_currentness.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "13": {
-      "note": "A converted tree's read is handed to the paged tree read right after the selection.\n\nAnchor: `read_tree_page`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
-            "content": "sha256:5e7ac33228ee17a8c18324c58ba3477dad6354690b167215019bcab03a324902",
-            "locator": {
-              "kind": "symbol",
-              "name": "_read_result"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "14": {
-      "note": "The default ordering, applied only when the caller named none.\n\nAnchor: `DEFAULT_ORDERING`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
-            "content": "sha256:49791f57cd0f2e684f30c1fe2f9d6feb1f7dac52dcdfae6e4457cfdc5018975b",
-            "locator": {
-              "kind": "symbol",
-              "name": "_ordering"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "15": {
-      "note": "A converted-tree refusal states the threshold; a database refusal does not.\n\nAnchor: `threshold_block`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
-            "content": "sha256:745552c6972af802278ac3a046f03f8cc91e1405796f4b0e7e8c71be1a554ee2",
-            "locator": {
-              "kind": "symbol",
-              "name": "knowledge_read_payload"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "16": {
-      "note": "The paged tree read this module hands a converted selection to.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "b4fb3c6660f8614143e3526477bf733ef8f58d20",
-            "content": "sha256:5d5b0a1f3ef99ef70850f6c59d2ea1e778efc30f4d6e35bc27f7cd3121a28cae",
-            "locator": {
-              "kind": "symbol",
-              "name": "read_tree_page"
-            },
-            "path": "mcp/src/agents_remember/application/knowledge_paging/tree_read.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "17": {
-      "note": "A named root that resolves no code tree is its own error, refused `selected_input_unavailable` naming the root.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
-            "content": "sha256:fdb9ef8db381f88789d2d788db205da97ac71618dbb2d5ea10c39141240fab76",
-            "locator": {
-              "kind": "symbol",
-              "name": "_NoCodeTreeError"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
-            "content": "sha256:f1180471fd0347804bd270aeced3e698667044ffee9f812dd67dd59afef7afdb",
-            "locator": {
-              "kind": "symbol",
-              "name": "_selection_refusal"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "18": {
-      "note": "`_source_resolution` raises it for a caller-named root without a tree.\n\nAnchor: \"raise _NoCodeTreeError(root)\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
-            "content": "sha256:6354d58936045a3beceb53af300df3267dac492ccc03da567d6eb20b98b16c2f",
-            "locator": {
-              "end": 355,
-              "kind": "line_range",
-              "start": 352
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "19": {
-      "note": "The projection of a converted tree reads each view whole.\n\nAnchor: \"whole_views=selected.memory_tree is not None\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
-            "content": "sha256:469183ffe57bd60039572adf117b63abe81077b7784eabbbbacd1947a7411985",
-            "locator": {
-              "end": 1084,
-              "kind": "line_range",
-              "start": 1081
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "2": {
-      "note": "A key mismatch joins the selection failures.\n\nAnchor: `IndexMismatchError`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
-            "content": "sha256:006a7730b74ff929e59726f0223be05eb81fa3389d5c10e1b337bd619dadaf10",
-            "locator": {
-              "kind": "symbol",
-              "name": "_SELECTION_FAILURES"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "20": {
-      "note": "The leaf read the tree read routes a `source_context` path read to (and, since MIK-R05, a read naming only `familyRevisionId`, as a family seed).",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "b4fb3c6660f8614143e3526477bf733ef8f58d20",
-            "content": "sha256:5680bcd9eb0d97cf2dc07777b851539d05de60a0e94221f8549a48bda238e663",
-            "locator": {
-              "kind": "symbol",
-              "name": "_leaf_response"
-            },
-            "path": "mcp/src/agents_remember/application/knowledge_paging/tree_read.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "21": {
-      "note": "The module's own statement that nothing here decides anything, the list of decisions it refuses to make, and the unresolved-state rule that replaces them.\n\nAnchor: \"no classification is computed, no effect label is inferred, no draft is authored\"; \"unresolved state instead\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
-            "content": "sha256:ad055e2368b7691bf62fd0bb4b14ebf8a9387af511b2473de7533dadd97ceb0c",
-            "locator": {
-              "end": 18,
-              "kind": "line_range",
-              "start": 1
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "22": {
-      "note": "The public surface as the export list now reads it: five request value objects (the integrity check's own request value joined the four in MIK-R08) and the five payload builders, one per mounted operation family.\n\nAnchor: \"__all__ = [\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
-            "content": "sha256:ed4d77a0a5436bf22b0d8c7ff20f7ff77c4f1cb32c6a8c91d502d82ca66676b4",
-            "locator": {
-              "end": 95,
-              "kind": "line_range",
-              "start": 95
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "23": {
-      "note": "The declared set of record kinds this surface may be *asked for*, with the reason a kind outside it is refused rather than written by a second path -- and note the refusal is unconditional for every member, because this surface has no admitted write operation for any kind.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
-            "content": "sha256:cb3d1d273cf7165d753f0acf2654191033cc463af7459b176065666852e31102",
-            "locator": {
-              "kind": "symbol",
-              "name": "DECLARED_CHANGE_KINDS"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "24": {
-      "note": "The flat read request as one frozen value: the continuation, the two revision selectors, the optional source roots, and an ordering left `None` unless the caller names one.\n\nAnchor: \"class ReadToolRequest:\"; \"ordering_input: str\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
-            "content": "sha256:8e0bcb7ce74fa088c2a7d7881a119df416af77ff1af1929bbafe813973e4eae5",
-            "locator": {
-              "end": 175,
-              "kind": "line_range",
-              "start": 146
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "25": {
-      "note": "The closed set of record kinds this surface may be asked about, the unconditional refusal every one of them earns, and the constant naming the entry point that can actually write.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
-            "content": "sha256:cb3d1d273cf7165d753f0acf2654191033cc463af7459b176065666852e31102",
-            "locator": {
-              "kind": "symbol",
-              "name": "DECLARED_CHANGE_KINDS"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
-            "content": "sha256:0ad43644fc9bf02a3dc066324394d9dfb533074d8f69861c8672d1f52e5c639e",
-            "locator": {
-              "kind": "symbol",
-              "name": "WRITE_ENTRY_POINT"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "26": {
-      "note": "The flat read request's optional source-path seed, beside the unnamed-by-default ordering MIK-R02 introduced.\n\nAnchor: \"source_path: str\"; \"ordering_input: str\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
-            "content": "sha256:8e0bcb7ce74fa088c2a7d7881a119df416af77ff1af1929bbafe813973e4eae5",
-            "locator": {
-              "end": 175,
-              "kind": "line_range",
-              "start": 146
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "27": {
-      "note": "The boundary this surface cannot cross, stated where the caller meets it: the pair is the selection and the caller owns both, nothing the server holds can answer either one, and the schema keeps both required so a default cannot become an invented selection.\n\nAnchor: `database_path`; `repository_id`; \"the *selection*, and the caller owns both\"; \"supplied by the party that created or holds the dataset\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
-            "content": "sha256:de8bfbb6db3835d500790bdd255b8f7b60d9bc2a611fd8290f73e73b8015dee0",
-            "locator": {
-              "end": 162,
-              "kind": "line_range",
-              "start": 133
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
-            "content": "sha256:b492014dd1e334bb663b88e65b89cbd338b1d612c1492ddc2cea64c98ee6ec75",
-            "locator": {
-              "end": 152,
-              "kind": "line_range",
-              "start": 152
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "88b51250adf8ed53060e63f6aa8b7ae58d1e14db",
-            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
-            "locator": {
-              "end": 152,
-              "kind": "line_range",
-              "start": 152
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "28": {
-      "note": "The change, diff and project request values, including the per-path overwrite authorization the projection operation consumes.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
-            "content": "sha256:cc4f33940d6775d99f0b19ef9251f24d21ac15c5aa83680c861c070faa46a895",
-            "locator": {
-              "kind": "symbol",
-              "name": "ChangeToolRequest"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
-            "content": "sha256:f877601e24e50d6560ac1a03a7932a1790ab85df9cc75d5e753d859bb3294002",
-            "locator": {
-              "kind": "symbol",
-              "name": "DiffToolRequest"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
-            "content": "sha256:af3b6802869de2cbb7b48dd85c8fc5288c81fbaea51ad401c3a6de8acd5469b2",
-            "locator": {
-              "kind": "symbol",
-              "name": "ProjectToolRequest"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "29": {
-      "note": "The one refusal envelope the read operation returns for an unknown view and for a view the seam refused.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
-            "content": "sha256:18ff8e190e26412017ccf169053b9effdcfa8d8fa450644533a60b0841e4964c",
-            "locator": {
-              "kind": "symbol",
-              "name": "_refused_read"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "Invariant and family views of a tree carry their proofs; no pass or result key exists.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "c7aaa422f4382460c2d41f60a510ced85e6ff7d2",
-            "content": "sha256:56aad2e95f94971198ee2f83b8028706bd3e90b083bd5d0d640acf6a8e0b1896",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_the_invariant_and_family_views_carry_their_proofs"
-            },
-            "path": "mcp/tests/test_knowledge_proofs.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "30": {
-      "note": "The one refusal envelope the read operation returns for an unknown view and for a view the seam refused.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
-            "content": "sha256:18ff8e190e26412017ccf169053b9effdcfa8d8fa450644533a60b0841e4964c",
-            "locator": {
-              "kind": "symbol",
-              "name": "_refused_read"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "31": {
-      "note": "The read builder: the five-view closure, the shared dataset selection (a converted memory tree reads through its index), the resolver call, the seam call, and the payload returned as the view payload itself — with every completeness statement forced to `false` when that index is partial.\n\nAnchor: \"unknown_view\"; \"not one of the five named query views\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
-            "content": "sha256:745552c6972af802278ac3a046f03f8cc91e1405796f4b0e7e8c71be1a554ee2",
+            "blob": "12b2d18549a3d15a005d7fe16fc4b6f3dbc25be1",
+            "content": "sha256:62a1299117348503e6a6bf61e906eb424b3adc6a2942c73814d29d008255ad4d",
             "locator": {
               "kind": "symbol",
               "name": "knowledge_read_payload"
@@ -483,103 +91,7 @@
         },
         {
           "anchor": {
-            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
-            "content": "sha256:5e7ac33228ee17a8c18324c58ba3477dad6354690b167215019bcab03a324902",
-            "locator": {
-              "kind": "symbol",
-              "name": "_read_result"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
-            "content": "sha256:c9c6a8827999d5eaa233cc83594ce1a899530d44db70f524cf3b20c55b9a6544",
-            "locator": {
-              "end": 372,
-              "kind": "line_range",
-              "start": 360
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "32": {
-      "note": "The validated view request with its continuation reconstructed opaquely, its snapshot binding left to the seam.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
-            "content": "sha256:5e7e11ce4ed6ed403f62f23cab389ad07dfb461871bf1887e580e89bed9279a2",
-            "locator": {
-              "kind": "symbol",
-              "name": "_view_request"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "bc391045efe2a2c2210873a09c33e180ed9fdab0",
-            "content": "sha256:3cae35e67bbc183ad8ccd2be57dce006ff6f072ad2d4cbbbf96cb0480b06530c",
-            "locator": {
-              "kind": "symbol",
-              "name": "ViewContinuation"
-            },
-            "path": "mcp/src/agents_remember/models/knowledge/view.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "88b51250adf8ed53060e63f6aa8b7ae58d1e14db",
-            "content": "sha256:30c1f188f142ed7a824680b207172c5519bc614a48fda7cf167edb8ddf79956c",
-            "locator": {
-              "end": 408,
-              "kind": "line_range",
-              "start": 408
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "33": {
-      "note": "The record builder and its one `registration_absent` refusal, deliberately the same reason for a declared kind and for one this surface has never heard of -- the surface has nothing to add in either case, so the refusal names the entry point that owns the write.\n\nAnchor: \"registration_absent\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
-            "content": "sha256:9897369e3c1df81891550834f7dae67a43a274bc85df9b03f5d36c2878b0a99e",
-            "locator": {
-              "kind": "symbol",
-              "name": "knowledge_change_payload"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "88b51250adf8ed53060e63f6aa8b7ae58d1e14db",
-            "content": "sha256:cf2365bc7124bf9e7748d722d54f4ae9fafb5be052f994286768fe5332d11e82",
-            "locator": {
-              "end": 130,
-              "kind": "line_range",
-              "start": 129
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "34": {
-      "note": "The source-resolution pair completed rather than half-supplied: the caller's own root with its current tree (refused by name when it has none, since MIK-R01), the mount's workspace default used only when a tree can be resolved from it, and neither half when Git cannot answer for it.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
+            "blob": "12b2d18549a3d15a005d7fe16fc4b6f3dbc25be1",
             "content": "sha256:c39890d0dd786e7183906846ef5088590ef3164cef757103d3188f9ac1c5d123",
             "locator": {
               "kind": "symbol",
@@ -590,1136 +102,7 @@
         },
         {
           "anchor": {
-            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
-            "content": "sha256:6545e4c0c4a5556404205ec4dab2679cee49ff833743d48aa9f3dc429debf1ec",
-            "locator": {
-              "kind": "symbol",
-              "name": "_current_code_tree"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
-            "content": "sha256:939e6d9eaff8a6270f4c70f24225e6182e6bcfe85ed1dee861deeeb506376eee",
-            "locator": {
-              "kind": "symbol",
-              "name": "_TREE_ID_PATTERN"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
-            "content": "sha256:19ef15ed865127af02eb6becc4821162797c07a6a78019481f2b84334e95b08d",
-            "locator": {
-              "kind": "symbol",
-              "name": "_GIT_TIMEOUT_SECONDS"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "35": {
-      "note": "The validated view request with its continuation reconstructed opaquely and its source-path seed forwarded, its snapshot binding left to the seam.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
-            "content": "sha256:5e7e11ce4ed6ed403f62f23cab389ad07dfb461871bf1887e580e89bed9279a2",
-            "locator": {
-              "kind": "symbol",
-              "name": "_view_request"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "bc391045efe2a2c2210873a09c33e180ed9fdab0",
-            "content": "sha256:3cae35e67bbc183ad8ccd2be57dce006ff6f072ad2d4cbbbf96cb0480b06530c",
-            "locator": {
-              "kind": "symbol",
-              "name": "ViewContinuation"
-            },
-            "path": "mcp/src/agents_remember/models/knowledge/view.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
-            "content": "sha256:34fc4e61edecbd749363e7ade3b3fe95a8b698457121fcd44088e9fb435e2b67",
-            "locator": {
-              "kind": "symbol",
-              "name": "source_path"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
-            "content": "sha256:9337f916da08708621cd4995378514c00ae9215b66d959b555e8f55b64b0921f",
-            "locator": {
-              "end": 161,
-              "kind": "line_range",
-              "start": 161
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
-            "content": "sha256:759e5b25e8b664ff0ccb1641d33c4cd9d8ab5f64b19bd68dd1623edf810ade53",
-            "locator": {
-              "end": 158,
-              "kind": "line_range",
-              "start": 158
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
-            "content": "sha256:f9eb73d8bb5afa2d2acd2ac5b6061ea2c9ab0642aacd7994e979635879b5c060",
-            "locator": {
-              "end": 460,
-              "kind": "line_range",
-              "start": 460
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "88b51250adf8ed53060e63f6aa8b7ae58d1e14db",
-            "content": "sha256:30c1f188f142ed7a824680b207172c5519bc614a48fda7cf167edb8ddf79956c",
-            "locator": {
-              "end": 408,
-              "kind": "line_range",
-              "start": 408
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "bc391045efe2a2c2210873a09c33e180ed9fdab0",
-            "content": "sha256:7a01ea5bf9a7fc63245bdc4462f35fc02be7f83bbe977fe7b01692e948f5e563",
-            "locator": {
-              "end": 1130,
-              "kind": "line_range",
-              "start": 1130
-            },
-            "path": "mcp/src/agents_remember/models/knowledge/view.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "36": {
-      "note": "The record builder and its unconditional `registration_absent` refusal, naming the subcommand that owns the write and reporting no missing destination for a write this surface cannot make.\n\nAnchor: \"registration_absent\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
-            "content": "sha256:9897369e3c1df81891550834f7dae67a43a274bc85df9b03f5d36c2878b0a99e",
-            "locator": {
-              "kind": "symbol",
-              "name": "knowledge_change_payload"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
-            "content": "sha256:0ad43644fc9bf02a3dc066324394d9dfb533074d8f69861c8672d1f52e5c639e",
-            "locator": {
-              "kind": "symbol",
-              "name": "WRITE_ENTRY_POINT"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
-            "content": "sha256:6e5a460f1e3716ddf3c52105d9cf55dd39d1069518192d5fd9dd2281f6e2c93e",
-            "locator": {
-              "end": 528,
-              "kind": "line_range",
-              "start": 511
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "37": {
-      "note": "The record builder and its unconditional `registration_absent` refusal, naming the subcommand that owns the write and reporting no missing destination for a write this surface cannot make.\n\nAnchor: \"registration_absent\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
-            "content": "sha256:9897369e3c1df81891550834f7dae67a43a274bc85df9b03f5d36c2878b0a99e",
-            "locator": {
-              "kind": "symbol",
-              "name": "knowledge_change_payload"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
-            "content": "sha256:0ad43644fc9bf02a3dc066324394d9dfb533074d8f69861c8672d1f52e5c639e",
-            "locator": {
-              "kind": "symbol",
-              "name": "WRITE_ENTRY_POINT"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
-            "content": "sha256:6e5a460f1e3716ddf3c52105d9cf55dd39d1069518192d5fd9dd2281f6e2c93e",
-            "locator": {
-              "end": 528,
-              "kind": "line_range",
-              "start": 511
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "38": {
-      "note": "The integrity builder that returns `compatible: None` present beside its explicit unresolved list, and the recorded-conditions read with its connection closed in a `finally`.\n\nAnchor: \"compatible\": None",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
-            "content": "sha256:69e56216cfdcc2f473f6d4fd38c31d4bbe5ab314b316e3e0ba173f9b830957ac",
-            "locator": {
-              "kind": "symbol",
-              "name": "knowledge_integrity_check_payload"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
-            "content": "sha256:782c0db8b8adafaab821174516710e4fc30afdd1250da55f3d906dbcf433951f",
-            "locator": {
-              "kind": "symbol",
-              "name": "_recorded_conditions"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
-            "content": "sha256:18ada28eae645b8feb6dd6ab0c43bd1ac33e71cd7a78d83b6e9c445ea986c6d3",
-            "locator": {
-              "end": 654,
-              "kind": "line_range",
-              "start": 635
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
-            "content": "sha256:c82fb8e71c4ca606208645ea40711696179a5b1b35c6696215920a198109e0f2",
-            "locator": {
-              "end": 713,
-              "kind": "line_range",
-              "start": 657
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
-            "content": "sha256:8e312affb437ab4d50389479ae092bbc872a5303f4345010ed7bbde5e0710706",
-            "locator": {
-              "end": 787,
-              "kind": "line_range",
-              "start": 738
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "39": {
-      "note": "The comparison builder's one body (behind the thin public `knowledge_diff_payload` wrapper), which resolves each side's `databasePath` through the shared dataset selection (a converted memory tree reads through its index), relays the shipped diff result with `memoryTrees` and `indexComplete`, and carries only the labels the caller's body supplied.\n\nAnchor: \"before = _select(request.before_path, coordination_root)\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
-            "content": "sha256:103c0764125ce42d30e855ca857376f4040c88b104c4b5046c9922e4b9259498",
-            "locator": {
-              "kind": "symbol",
-              "name": "_diff_result"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "4": {
-      "note": "A database read and the other views carry no `proofs`.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "c7aaa422f4382460c2d41f60a510ced85e6ff7d2",
-            "content": "sha256:eb39b50b0d239145c6ac25fab4ec4a2cb247b8a7fa577a7aa1498a574b459bdd",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_database_read_and_other_views_carry_no_proofs"
-            },
-            "path": "mcp/tests/test_knowledge_proofs.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "40": {
-      "note": "The comparison request, validated from the caller's own body with the namespace injected.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
-            "content": "sha256:266df4f6015fefdfea15deaf68c28778a013bde373437dbd7c7920f151e30ef9",
-            "locator": {
-              "kind": "symbol",
-              "name": "_diff_request"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "41": {
-      "note": "The label filter that keeps only entries an identified agent or assessment supplied, quoting the requirement that they are \"inferred from the diff\" only when supplied.\n\nAnchor: \"supplied_by\"; \"inferred from the diff\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
-            "content": "sha256:7642601a79c9f289b32abf9f03a277b0ca40e204e8a7ddb100c7d84765ade3e0",
-            "locator": {
-              "kind": "symbol",
-              "name": "_supplied_effect_labels"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
-            "content": "sha256:fd297a0dbb95d83ac31cc0b825213507648a68ee4f4f037cb2d54c901cad6451",
-            "locator": {
-              "end": 16,
-              "kind": "line_range",
-              "start": 16
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "588e0a4b8048d178dd2034a1c182a89699f73330",
-            "content": "sha256:e573f5ee18d7dfd1fd56b7e58b57449f0cdd80b936cf15ace987f712bf7a7c33",
-            "locator": {
-              "end": 168,
-              "kind": "line_range",
-              "start": 168
-            },
-            "path": "mcp/src/agents_remember/mcp/registration/knowledge.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "7fce66805fc8dc67be43d1cbdcac8bdcc8d0030d",
-            "content": "sha256:acf4c2800be0502bf8d0505134b719bce5aac6f60548d355f9c319f9b41e403a",
-            "locator": {
-              "end": 110,
-              "kind": "line_range",
-              "start": 110
-            },
-            "path": "mcp/src/agents_remember/models/tools/knowledge_responses.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "dc82c4d991b241757083ab5dfaf12470ec56bc94",
-            "content": "sha256:bbb33d6495a3d875cd951d8983a509b1f16b73326d87f2e41c61ef2032d91049",
-            "locator": {
-              "end": 252,
-              "kind": "line_range",
-              "start": 252
-            },
-            "path": "mcp/src/agents_remember/certification/lifecycle_admission.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "42": {
-      "note": "The integrity builder that returns `compatible: None` present beside its explicit unresolved list, and the recorded-conditions read with its connection closed in a `finally`.\n\nAnchor: \"compatible\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
-            "content": "sha256:69e56216cfdcc2f473f6d4fd38c31d4bbe5ab314b316e3e0ba173f9b830957ac",
-            "locator": {
-              "kind": "symbol",
-              "name": "knowledge_integrity_check_payload"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
-            "content": "sha256:782c0db8b8adafaab821174516710e4fc30afdd1250da55f3d906dbcf433951f",
-            "locator": {
-              "kind": "symbol",
-              "name": "_recorded_conditions"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
-            "content": "sha256:18ada28eae645b8feb6dd6ab0c43bd1ac33e71cd7a78d83b6e9c445ea986c6d3",
-            "locator": {
-              "end": 654,
-              "kind": "line_range",
-              "start": 635
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
-            "content": "sha256:c82fb8e71c4ca606208645ea40711696179a5b1b35c6696215920a198109e0f2",
-            "locator": {
-              "end": 713,
-              "kind": "line_range",
-              "start": 657
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
-            "content": "sha256:8e312affb437ab4d50389479ae092bbc872a5303f4345010ed7bbde5e0710706",
-            "locator": {
-              "end": 787,
-              "kind": "line_range",
-              "start": 738
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "43": {
-      "note": "The honest report when no detection run is recorded, and the report of one run's conditions, limitations and unresolved items with no verdict either way.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
-            "content": "sha256:43a9c94bff010f65f3bfe406bd6620192ab0bb59bc1cde6e58e6d1270924a60d",
-            "locator": {
-              "kind": "symbol",
-              "name": "_no_detection_run"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
-            "content": "sha256:5a11eca1f0b0711e2351aea1e576d234c9da8d590cc1726a3d7926ebd893323f",
-            "locator": {
-              "kind": "symbol",
-              "name": "_condition_report"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "44": {
-      "note": "The integrity builder that returns `compatible: None` present beside its explicit unresolved list, carries the five run-binding fields, and reads the recorded conditions with its connection closed in a `finally`.\n\nAnchor: \"compatible\": None",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
-            "content": "sha256:69e56216cfdcc2f473f6d4fd38c31d4bbe5ab314b316e3e0ba173f9b830957ac",
-            "locator": {
-              "kind": "symbol",
-              "name": "knowledge_integrity_check_payload"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
-            "content": "sha256:782c0db8b8adafaab821174516710e4fc30afdd1250da55f3d906dbcf433951f",
-            "locator": {
-              "kind": "symbol",
-              "name": "_recorded_conditions"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
-            "content": "sha256:18ada28eae645b8feb6dd6ab0c43bd1ac33e71cd7a78d83b6e9c445ea986c6d3",
-            "locator": {
-              "end": 654,
-              "kind": "line_range",
-              "start": 635
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
-            "content": "sha256:c82fb8e71c4ca606208645ea40711696179a5b1b35c6696215920a198109e0f2",
-            "locator": {
-              "end": 713,
-              "kind": "line_range",
-              "start": 657
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
-            "content": "sha256:8e312affb437ab4d50389479ae092bbc872a5303f4345010ed7bbde5e0710706",
-            "locator": {
-              "end": 787,
-              "kind": "line_range",
-              "start": 738
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "45": {
-      "note": "The caller's exact input selector as one value, with the two spellings it carries and the `as_wire` echo that reports \"the caller named none\" as `None` rather than as a silent absence.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
-            "content": "sha256:e843dec1627d6238ba226fc56c0fcf3e2bbb7d34179a9d6352edead5f9bd82b8",
-            "locator": {
-              "kind": "symbol",
-              "name": "_ExactInputSelector"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
-            "content": "sha256:4507c72538a205930a4b9c60caa64be2aa42b8e24c43aadea69ee1a03c6444a2",
-            "locator": {
-              "kind": "symbol",
-              "name": "as_wire"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "46": {
-      "note": "The honest report when no detection run is recorded, the scope-and-selector run lookup that never reports another scope's conditions and never falls back to the first match, the run identities the requested scope holds, the report for a selection that matched nothing, and the report of one run's conditions, limitations and unresolved items with no verdict either way.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
-            "content": "sha256:43a9c94bff010f65f3bfe406bd6620192ab0bb59bc1cde6e58e6d1270924a60d",
-            "locator": {
-              "kind": "symbol",
-              "name": "_no_detection_run"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
-            "content": "sha256:f19c2d01d9a9f603581d1e095722ae8df6f85a86b088a54181d3c84e446517f1",
-            "locator": {
-              "kind": "symbol",
-              "name": "_run_for_scope"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
-            "content": "sha256:ee82773954c7d735952509e344e0510e7d717873846b2d2bb41dddf858adbd60",
-            "locator": {
-              "kind": "symbol",
-              "name": "_runs_in_scope"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
-            "content": "sha256:d558d55051d2f79481e6a003148f14964d3a9d482b6dc79058c879c49f1d2291",
-            "locator": {
-              "kind": "symbol",
-              "name": "_run_identity"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
-            "content": "sha256:ae3f9dbc51181373829a62dadd3917df01632dbb8679a56dc96edd2b852f5c1d",
-            "locator": {
-              "kind": "symbol",
-              "name": "_no_run_for_scope"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
-            "content": "sha256:96c1043afbbe3ad688bd92b40ba9a229d5b9a6e4b399dbe67cdae76b4de6aa4f",
-            "locator": {
-              "kind": "symbol",
-              "name": "_report_facts"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
-            "content": "sha256:5a11eca1f0b0711e2351aea1e576d234c9da8d590cc1726a3d7926ebd893323f",
-            "locator": {
-              "kind": "symbol",
-              "name": "_condition_report"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
-            "content": "sha256:6749a3b3c94a326c2642b3d1371d6802a8ecc3dcdb252d41b3981273233e4f37",
-            "locator": {
-              "end": 799,
-              "kind": "line_range",
-              "start": 790
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "47": {
-      "note": "The project builder's one body (behind the thin public `knowledge_project_payload` wrapper): the destination profile, the refusal when no view was named, the shared dataset selection (a converted memory tree reads through its index, and a selection that cannot be indexed is refused before any writer runs), the delegation to the projection operation (since MIK-R01 reading a converted tree's views whole), and the per-path report relayed back with the optional `memoryTree` binding.\n\nAnchor: \"def _project_result(\"; \"whole_views=selected.memory_tree is not None\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "88b51250adf8ed53060e63f6aa8b7ae58d1e14db",
-            "content": "sha256:d01f89c5386d0c5f1d8989b2ea39619e829d123a5cb33663c591d20ef7ccf714",
-            "locator": {
-              "end": 1104,
-              "kind": "line_range",
-              "start": 1054
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "48": {
-      "note": "The one refusal envelope both project refusal routes use, carrying the destination root and the renderer version.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
-            "content": "sha256:aaa25e0bf46da5bdecbeabfaa9b501b15c5eecf880549fac67484eb41eee6c48",
-            "locator": {
-              "kind": "symbol",
-              "name": "_refused_project"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "49": {
-      "note": "The view-and-identity pairs one projection request set resolves into, where the recorded identity rather than the destination path is what the artifact is about.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
-            "content": "sha256:bd739c4fd23e70e7522b14c8d53b501bf411c49c3c3ebf6ad67a36033eadb643",
-            "locator": {
-              "kind": "symbol",
-              "name": "_projection_requests"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "5": {
-      "note": "The integrity check's request value.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
-            "content": "sha256:166066bfc594da21468972f00396bcaeed8652d3dfb570399e595b8ee35eb1c0",
-            "locator": {
-              "kind": "symbol",
-              "name": "IntegrityCheckRequest"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "50": {
-      "note": "The view-and-identity pairs one projection request set resolves into, where the recorded identity rather than the destination path is what the artifact is about.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
-            "content": "sha256:bd739c4fd23e70e7522b14c8d53b501bf411c49c3c3ebf6ad67a36033eadb643",
-            "locator": {
-              "kind": "symbol",
-              "name": "_projection_requests"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "51": {
-      "note": "The strict response types these builders' payloads are validated against, with `compatible` typed `None`, the five run-binding fields declared beside the conditions, and the view payload travelling as the view's own JSON.\n\nAnchor: `compatible: None = None`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "7fce66805fc8dc67be43d1cbdcac8bdcc8d0030d",
-            "content": "sha256:71c574d5a34047213a3b5e3160f092dfb272ab331678c18551ab9623cfcde982",
-            "locator": {
-              "kind": "symbol",
-              "name": "KnowledgeIntegrityCheckResponse"
-            },
-            "path": "mcp/src/agents_remember/models/tools/knowledge_responses.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "7fce66805fc8dc67be43d1cbdcac8bdcc8d0030d",
-            "content": "sha256:cd0bb85b2d3107913e3eaf8924705f554fed961e044ae925d976bd7e75b28a0b",
-            "locator": {
-              "kind": "symbol",
-              "name": "KnowledgeReadResponse"
-            },
-            "path": "mcp/src/agents_remember/models/tools/knowledge_responses.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "7fce66805fc8dc67be43d1cbdcac8bdcc8d0030d",
-            "content": "sha256:2c6c67c951d50d3b1e3df0ac45d9b6efd64d0f793e15a8abf91e577d1586e819",
-            "locator": {
-              "kind": "symbol",
-              "name": "selectedRunId"
-            },
-            "path": "mcp/src/agents_remember/models/tools/knowledge_responses.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "52": {
-      "note": "**The one dataset resolution the read, diff and project builders share (MIK-R23 rule 6): `databasePath` keeps its meaning, and a path naming a converted memory tree — its root or its published `knowledge.sqlite` location — resolves to the index of that tree's current state; every other path is opened as before.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
-            "content": "sha256:332f7b79473dc6c398582497f5995186709cf808bc776a5276073be83b06b677",
-            "locator": {
-              "kind": "symbol",
-              "name": "_select"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "4be19bfc4f0db366151478c0195bb8e5278c7351",
-            "content": "sha256:84f17e36045a6cafa1d747e119c0e701016e8c78e1cd298a3115c8a6456ffbe5",
-            "locator": {
-              "kind": "symbol",
-              "name": "select_knowledge_dataset"
-            },
-            "path": "mcp/src/agents_remember/application/published_intent.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "53": {
-      "note": "**Every way resolving and opening a selection can fail, refused the same way on every handler: a named root with no code tree is `selected_input_unavailable` naming the root (MIK-R01), a tree, Git or cache failure is `snapshot_unavailable` naming the tree, anything else the dataset refusal it was before.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
-            "content": "sha256:006a7730b74ff929e59726f0223be05eb81fa3389d5c10e1b337bd619dadaf10",
-            "locator": {
-              "kind": "symbol",
-              "name": "_SELECTION_FAILURES"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
-            "content": "sha256:f1180471fd0347804bd270aeced3e698667044ffee9f812dd67dd59afef7afdb",
-            "locator": {
-              "kind": "symbol",
-              "name": "_selection_refusal"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
-            "content": "sha256:f14782ab7137f34162f174beda0b8a8e0dbd166457ac9ba2149ed71f660ccbde",
-            "locator": {
-              "kind": "symbol",
-              "name": "_unusable_dataset"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "54": {
-      "note": "**A partial index is never presented as complete: `_index_complete` reports it for the diff and projection responses, and since MIK-R02 a converted tree's read page forces the payload's completeness to `false` in the paged view and states `indexComplete` beside it.**\n\nAnchor: \"complete_within_declared_scope\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
-            "content": "sha256:cb469cf17bd4dc08dc7b2401c29aa1661adfb4107bf6ce2bb1d6a6d352d16795",
-            "locator": {
-              "kind": "symbol",
-              "name": "_index_complete"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "b4fb3c6660f8614143e3526477bf733ef8f58d20",
-            "content": "sha256:43e9c655a29b5d9fccede6aa85726d12d1eb226200ff17a3ba433f77822de0c1",
-            "locator": {
-              "kind": "symbol",
-              "name": "index_complete"
-            },
-            "path": "mcp/src/agents_remember/application/knowledge_paging/tree_read.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
-            "content": "sha256:0374004e25b72ab6a5d34a764454db874d2b8a813aac1b01a9d78ce0fe28086c",
-            "locator": {
-              "end": 300,
-              "kind": "line_range",
-              "start": 289
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "515bb4ccad5fce1778aeb34ae79460a9ca25c856",
-            "content": "sha256:a486b42f6a1b70468e92774a8dc88a1f11fd59731afa6eba43d018ae80470f84",
-            "locator": {
-              "end": 173,
-              "kind": "line_range",
-              "start": 136
-            },
-            "path": "mcp/src/agents_remember/application/knowledge_paging/view_pages.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "b4fb3c6660f8614143e3526477bf733ef8f58d20",
-            "content": "sha256:a73ebeda7489cb89006d83dea372ce6b96f0b534d52fae6681ec16680db94669",
-            "locator": {
-              "end": 176,
-              "kind": "line_range",
-              "start": 157
-            },
-            "path": "mcp/src/agents_remember/application/knowledge_paging/tree_read.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "55": {
-      "note": "**The memory-tree bindings the responses carry: `memoryTree` on read and project, `memoryTrees` (`before`/`after`) on diff, absent for a database.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
-            "content": "sha256:279a1dd7ada05914bfd5a90f563544e4859d7152f1b9687db99b9b30f414f4cd",
-            "locator": {
-              "kind": "symbol",
-              "name": "_memory_trees"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "4be19bfc4f0db366151478c0195bb8e5278c7351",
-            "content": "sha256:8f374369a9021ccfeb985ff9b4604f4c044a933f98b80deea89f65bc97dd1639",
-            "locator": {
-              "kind": "symbol",
-              "name": "memory_tree_block"
-            },
-            "path": "mcp/src/agents_remember/application/published_intent.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
-            "content": "sha256:6ed7a661fa39e54d1ba04676e547f75ab0657a430ee00966e2d9dd7731908234",
-            "locator": {
-              "end": 457,
-              "kind": "line_range",
-              "start": 456
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "88b51250adf8ed53060e63f6aa8b7ae58d1e14db",
-            "content": "sha256:75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
-            "locator": {
-              "end": 1043,
-              "kind": "line_range",
-              "start": 1042
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "56": {
-      "note": "**The MIK-R23 tool cases: read by root and by `knowledge.sqlite` spelling (and refused without a coordination root), diff and project between trees, an unconverted selection unchanged, every surface reporting a partial index as incomplete, and an unbuildable index refused rather than raised.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d8f68761727af2bccdd02ec39c86ee0156f52aad",
-            "content": "sha256:155c29dd770b167bd565ee4214324c7a77062621b8366ade71c33d58a0aa053c",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_knowledge_read_resolves_a_converted_memory_tree_through_its_index"
-            },
-            "path": "mcp/tests/test_knowledge_index_surfaces.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "d8f68761727af2bccdd02ec39c86ee0156f52aad",
-            "content": "sha256:69982fcd93cc9ea3b38f2cf9ed2044a4b50f6daad7be46cc38bff71f145b0ef2",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_knowledge_diff_and_project_resolve_converted_trees"
-            },
-            "path": "mcp/tests/test_knowledge_index_surfaces.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "d8f68761727af2bccdd02ec39c86ee0156f52aad",
-            "content": "sha256:d2296c814b77f2b87ea1a345f6a057c2d41b28564eefc033cf6d699041e46152",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_an_unconverted_selection_keeps_the_database_path"
-            },
-            "path": "mcp/tests/test_knowledge_index_surfaces.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "d8f68761727af2bccdd02ec39c86ee0156f52aad",
-            "content": "sha256:113b537bd9b86bee902a1546e744d72a4bf3a72aa75e0bbcef17c24fcbd1674c",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_every_tool_surface_reports_a_partial_index_as_incomplete"
-            },
-            "path": "mcp/tests/test_knowledge_index_surfaces.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "d8f68761727af2bccdd02ec39c86ee0156f52aad",
-            "content": "sha256:e7fbfed4a40af1320581846f598e4b54d39591e1058074ecd664e9ffb713150d",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_an_unbuildable_index_is_refused_not_raised"
-            },
-            "path": "mcp/tests/test_knowledge_index_surfaces.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "d8f68761727af2bccdd02ec39c86ee0156f52aad",
-            "content": "sha256:03b66c237d5d9a86e983ac7f068068808704d741be5f5caa7782c348b42aa4a5",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_real_database_in_an_unconverted_root_reads_identically"
-            },
-            "path": "mcp/tests/test_knowledge_index_surfaces.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "57": {
-      "note": "The dataset a projection reads, or the refusal of a seed the converted tree does not hold.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
-            "content": "sha256:a00dbff60c6c47b22cf1d530d48a5b1f53c1f40c987664664142cc80a107b269",
-            "locator": {
-              "kind": "symbol",
-              "name": "_projection_selection"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
-            "content": "sha256:1dc5df5c11abd2b68336c62b4e010a1cef4f7ad9f5f57a4a39c447e28538906d",
-            "locator": {
-              "kind": "symbol",
-              "name": "_tree_seeds_absent"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "6": {
-      "note": "Dataset, leaf, both or neither; the leaf's worklist fields added when a contract is named.\n\nAnchor: `leaf_worklist_fields`; \"selected_input_unavailable\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
-            "content": "sha256:69e56216cfdcc2f473f6d4fd38c31d4bbe5ab314b316e3e0ba173f9b830957ac",
-            "locator": {
-              "kind": "symbol",
-              "name": "knowledge_integrity_check_payload"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "7": {
-      "note": "The worklist fields read from the persisted file.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "93f9cc7b1e87fde3103b6798c2d8245be88d94a5",
-            "content": "sha256:246c2c53aa05e422046961c197ad4be6066796da8ece43467bb2014e9b31141a",
-            "locator": {
-              "kind": "symbol",
-              "name": "leaf_worklist_fields"
-            },
-            "path": "mcp/src/agents_remember/application/knowledge_worklist/surface.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "8": {
-      "note": "The tool returns the latest worklist.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "30a7a2a8d8ec537425cdc4652a376dea8effdce8",
-            "content": "sha256:39cd3e4bd5be71e49e30992579712cae4b348a04c4d7f5c9aae1e7ce439d1d73",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_the_tool_returns_the_latest_worklist_and_the_checklist_shows_it"
-            },
-            "path": "mcp/tests/test_knowledge_worklist_leaf.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "9": {
-      "note": "A converted tree's page carries `currentness` at the walk's code tree, computed once per page beside its proofs.\n\nAnchor: `WalkCurrentness`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
+            "blob": "12b2d18549a3d15a005d7fe16fc4b6f3dbc25be1",
             "content": "sha256:7fffdcb7bb12a477931fce751c44f0d545603e6735db5c1c9686e85f414e6491",
             "locator": {
               "kind": "symbol",
@@ -1727,6 +110,123 @@
             }
           },
           "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Bounded Git knowledge diff.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "12b2d18549a3d15a005d7fe16fc4b6f3dbc25be1",
+            "content": "sha256:56aaadd50653a2a36a2842a9f1ea917b9ce7d53e8f6ff3ae6301b3398b471f55",
+            "locator": {
+              "kind": "symbol",
+              "name": "knowledge_diff_payload"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "12b2d18549a3d15a005d7fe16fc4b6f3dbc25be1",
+            "content": "sha256:c2d9b84b9b9f3c6ad4ff77b7f5b14ddba22cc17b6415d216141f3e4ce652b709",
+            "locator": {
+              "kind": "symbol",
+              "name": "_bounded_body"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "12b2d18549a3d15a005d7fe16fc4b6f3dbc25be1",
+            "content": "sha256:342747979b1f1220776cb2cfe8c4f6ac0e9cc5caafff75c17c979c4709b0bbb3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_left_out"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Validator/worklist integrity answer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "12b2d18549a3d15a005d7fe16fc4b6f3dbc25be1",
+            "content": "sha256:0b24a3fa35f7dfa0f5991e96ab2739c7b83316b42a48b79aafedaad56bdca22f",
+            "locator": {
+              "kind": "symbol",
+              "name": "knowledge_integrity_check_payload"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Only admitted views carry proofs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "21f99aa076f020f6ff937e97fa2cec6f87d0c9fe",
+            "content": "sha256:3b6d81cb85bf5d0389b1f6d2ccb641126d4758769aa9a9d2e1b4b1310538f18a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_other_views_carry_no_proofs"
+            },
+            "path": "mcp/tests/test_knowledge_proofs.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "51": {
+      "note": "Current validator/worklist response, without selected-run identities.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b95b845d5f59e720f11bbf5f0f21d0f8d620ea5a",
+            "content": "sha256:485cfa3bb9afd5ca691bc3c15251a93b9dce8f2a1a756474ab312f717954cb3d",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeIntegrityCheckResponse"
+            },
+            "path": "mcp/src/agents_remember/models/tools/knowledge_responses.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "56": {
+      "note": "Legacy selections open no database; partial read stays incomplete.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "694a9727c6739a654c8fec5abf47260e23bd77b5",
+            "content": "sha256:5bc3a8924f717e9a6d5081c853dbe84a471c3533bcc2f1ee6131c4f9802bbdc3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_knowledge_tool_refuses_legacy_memory_and_opens_no_database"
+            },
+            "path": "mcp/tests/test_knowledge_index_surfaces.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "694a9727c6739a654c8fec5abf47260e23bd77b5",
+            "content": "sha256:85b6a10d42ca9ab50606b80eae6b36d76b3bdc6869ed836f27dcbeeaf6ca9a2b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_read_reports_a_partial_index_as_incomplete"
+            },
+            "path": "mcp/tests/test_knowledge_index_surfaces.py"
+          },
+          "kind": "test"
         }
       ]
     }

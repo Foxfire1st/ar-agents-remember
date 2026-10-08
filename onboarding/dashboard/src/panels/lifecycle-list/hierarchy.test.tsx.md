@@ -8,11 +8,8 @@
 
 The hierarchy/phase-grouping suite split from `LifecycleList.test.tsx` by the
 260731-EFA-L8 test split. Pins row grouping, phase ordering, and collapsible
-hierarchy behavior of the Operations list.
-
-Since 260921-ICR-L33 it also owns a second `describe` — **"LifecycleList landed leaves under their
-master (R33)"** — which is where the Operations list's landed-leaf admission and its default-collapse
-rule are measured.
+hierarchy behavior of the Operations list. The current suite holds one `describe`
+("LifecycleList task labels — hierarchy and phase grouping") with the live cases.
 
 ## Code Commentary
 
@@ -49,10 +46,11 @@ No cross-repository implementation source governs this file.
 
 No applicable cross-repository source was found.
 
-## 260921-ICR-L33 The Landed-Leaf Cases
+## 260921-ICR-L33 The Landed-Leaf Cases (reverted; historical account)
 
-Five cases, in a `describe` of their own, measure `ICR-R33` — and one of them is the only delivered
-protection the row-carries-rows exclusion has.
+**Historical only.** The landed-leaf `describe` and its five cases were reverted after L33: the
+current candidate suite has one `describe` and none of the cases below. The account is retained as
+the record of what the reverted tests measured, and it is not current suite documentation.
 
 - **`holds a fully landed master closed by default and reaches its leaf when opened (R33.1/R33.4)`**
   (`:416-448`) — a dead-worktree enclosure with a `Completed` leaf renders one closed master row

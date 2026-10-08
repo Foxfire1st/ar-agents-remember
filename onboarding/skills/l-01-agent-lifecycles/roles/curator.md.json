@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "bf1e2997e894d1ef157e3ca253db1bda030c53a6",
+        "blob": "7fe080db1e9e99b1f5eb2ffeea96fff983d9e801",
         "content": "sha256:8a4088c709bac5874ee149bc729069dcb0054b423e9ff911acbfee36827759ac",
         "locator": {
           "end": 28,
@@ -22,12 +22,12 @@
     },
     {
       "anchor": {
-        "blob": "bf1e2997e894d1ef157e3ca253db1bda030c53a6",
+        "blob": "7fe080db1e9e99b1f5eb2ffeea96fff983d9e801",
         "content": "sha256:a2a288dd989f6131292cb6ea8148355c9b71f1a9c4ea5bdeef7b06e319c97f42",
         "locator": {
-          "end": 260,
+          "end": 239,
           "kind": "line_range",
-          "start": 260
+          "start": 239
         }
       },
       "id": "RLZ-7B663Y",
@@ -41,8 +41,8 @@
     },
     {
       "anchor": {
-        "blob": "bf1e2997e894d1ef157e3ca253db1bda030c53a6",
-        "content": "sha256:1c09ebf360d3c3ac7e325132893378e341c49c2020a674f2f7f5d4fb372098af",
+        "blob": "7fe080db1e9e99b1f5eb2ffeea96fff983d9e801",
+        "content": "sha256:a591435ed3562cb56d271ae2cd800aadb1e95df74ce384b68e2839a7e19a7e6f",
         "locator": {
           "kind": "file"
         }
@@ -58,12 +58,12 @@
     },
     {
       "anchor": {
-        "blob": "bf1e2997e894d1ef157e3ca253db1bda030c53a6",
-        "content": "sha256:d0a097baec95501c22cc1b3134d39ef23722cf4ac0ead5ed5ef9ee6f30be04e1",
+        "blob": "7fe080db1e9e99b1f5eb2ffeea96fff983d9e801",
+        "content": "sha256:4c024eabad39e1e9db50b2c8e07f6c71c55665fa886c0948f5ce274a00279116",
         "locator": {
-          "end": 300,
+          "end": 219,
           "kind": "line_range",
-          "start": 294
+          "start": 217
         }
       },
       "id": "RLZ-DT71R6",
@@ -72,13 +72,13 @@
         "handoffEntry": "L72/MIK-R72@v2-curator-large-worklist-fanout",
         "leaf": "260928-MIK-L72"
       },
-      "rationale": "The worklist paragraph defines the deduplicated full-intake list and what stays with the seat, without prescribing the harness's sub-agent shape.",
+      "rationale": "This clause keeps the one-level read/search/reference allowance and the new paragraph defines the deduplicated list, the numeric threshold, what is handed out and what stays with the main Curator.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "bf1e2997e894d1ef157e3ca253db1bda030c53a6",
-        "content": "sha256:1c09ebf360d3c3ac7e325132893378e341c49c2020a674f2f7f5d4fb372098af",
+        "blob": "7fe080db1e9e99b1f5eb2ffeea96fff983d9e801",
+        "content": "sha256:a591435ed3562cb56d271ae2cd800aadb1e95df74ce384b68e2839a7e19a7e6f",
         "locator": {
           "kind": "file"
         }
@@ -94,8 +94,8 @@
     },
     {
       "anchor": {
-        "blob": "bf1e2997e894d1ef157e3ca253db1bda030c53a6",
-        "content": "sha256:1c09ebf360d3c3ac7e325132893378e341c49c2020a674f2f7f5d4fb372098af",
+        "blob": "7fe080db1e9e99b1f5eb2ffeea96fff983d9e801",
+        "content": "sha256:a591435ed3562cb56d271ae2cd800aadb1e95df74ce384b68e2839a7e19a7e6f",
         "locator": {
           "kind": "file"
         }
@@ -110,8 +110,8 @@
     },
     {
       "anchor": {
-        "blob": "bf1e2997e894d1ef157e3ca253db1bda030c53a6",
-        "content": "sha256:e0dc6932edd27af57f48c10414766f370b8a3b9598f2e8d1750dd0d371c1f9bc",
+        "blob": "7fe080db1e9e99b1f5eb2ffeea96fff983d9e801",
+        "content": "sha256:9a03fcdb919eee74718d24f0feb72d213ad1926e294bb45813387acc341e1673",
         "locator": {
           "end": 225,
           "kind": "line_range",
@@ -129,7 +129,7 @@
     },
     {
       "anchor": {
-        "blob": "bf1e2997e894d1ef157e3ca253db1bda030c53a6",
+        "blob": "7fe080db1e9e99b1f5eb2ffeea96fff983d9e801",
         "content": "sha256:c0c3299611edd64232856ead8fe17d6906699709eb295065e377740e36eb895c",
         "locator": {
           "end": 21,
@@ -148,8 +148,8 @@
     },
     {
       "anchor": {
-        "blob": "bf1e2997e894d1ef157e3ca253db1bda030c53a6",
-        "content": "sha256:1c09ebf360d3c3ac7e325132893378e341c49c2020a674f2f7f5d4fb372098af",
+        "blob": "7fe080db1e9e99b1f5eb2ffeea96fff983d9e801",
+        "content": "sha256:a591435ed3562cb56d271ae2cd800aadb1e95df74ce384b68e2839a7e19a7e6f",
         "locator": {
           "kind": "file"
         }
@@ -165,12 +165,12 @@
     },
     {
       "anchor": {
-        "blob": "bf1e2997e894d1ef157e3ca253db1bda030c53a6",
+        "blob": "7fe080db1e9e99b1f5eb2ffeea96fff983d9e801",
         "content": "sha256:e0dc6932edd27af57f48c10414766f370b8a3b9598f2e8d1750dd0d371c1f9bc",
         "locator": {
-          "end": 225,
+          "end": 204,
           "kind": "line_range",
-          "start": 223
+          "start": 202
         }
       },
       "id": "RLZ-V1AKR1",
@@ -184,8 +184,8 @@
     },
     {
       "anchor": {
-        "blob": "bf1e2997e894d1ef157e3ca253db1bda030c53a6",
-        "content": "sha256:1c09ebf360d3c3ac7e325132893378e341c49c2020a674f2f7f5d4fb372098af",
+        "blob": "7fe080db1e9e99b1f5eb2ffeea96fff983d9e801",
+        "content": "sha256:a591435ed3562cb56d271ae2cd800aadb1e95df74ce384b68e2839a7e19a7e6f",
         "locator": {
           "kind": "file"
         }

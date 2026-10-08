@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "3d5ab012645a59c43d66a805479a40ef63038e39",
-        "content": "sha256:96f64e290e130dcfb0d021c4bbb99822996be1e560c74d03807cfdda93e99b58",
+        "blob": "21d19e2ee5a33d08e72509f9442ab49751e30f1f",
+        "content": "sha256:9b489c9891393b3cbeb5b43f0486a0d5796d44c43ad1aa2f6cf6fdd0b2093aaa",
         "locator": {
           "kind": "symbol",
           "name": "test_every_route_refuses_unconverted_memory_once_the_repository_holds_converted_memory"
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "3d5ab012645a59c43d66a805479a40ef63038e39",
+        "blob": "21d19e2ee5a33d08e72509f9442ab49751e30f1f",
         "content": "sha256:9562e96fdf3bbfa214287193ff0d97a5c78cdee9dc78e8e37287cf4fc0138c22",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "3d5ab012645a59c43d66a805479a40ef63038e39",
+        "blob": "21d19e2ee5a33d08e72509f9442ab49751e30f1f",
         "content": "sha256:09bc52594a04902e96d6482a082ca175014285361638bf4a4c5fd7fdd1557248",
         "locator": {
           "kind": "symbol",
@@ -54,8 +54,8 @@
     },
     {
       "anchor": {
-        "blob": "3d5ab012645a59c43d66a805479a40ef63038e39",
-        "content": "sha256:eab6325c343f30543209edd0ceea70a71c300d8ba2b2e2969d3464cd90a236ad",
+        "blob": "21d19e2ee5a33d08e72509f9442ab49751e30f1f",
+        "content": "sha256:e9ba6eff80a4b51f831b83c7de639bb2c014cd4d57ae0af15f1ceb9f74b93e9d",
         "locator": {
           "kind": "symbol",
           "name": "test_no_read_selects_the_database_of_a_converted_tree"
@@ -71,24 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "3d5ab012645a59c43d66a805479a40ef63038e39",
-        "content": "sha256:3b6fe5185a2b640c3284f85aba451b53060a107a21f021326c4141f072351e10",
-        "locator": {
-          "kind": "symbol",
-          "name": "test_the_database_writer_is_frozen_on_a_converted_tree_and_names_the_file_writer"
-        }
-      },
-      "facet": "On a converted tree the database writer's admission raises naming knowledge-ingest and a publication is refused database_frozen with nothing written; an unconverted tree in a repository with no converted memory is still admitted.",
-      "id": "PRF-TMK4N3",
-      "invariant": "INV-1XKX9ERN",
-      "origin": {
-        "handoffEntry": "L37-frozen-database",
-        "leaf": "260928-MIK-L37"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "3d5ab012645a59c43d66a805479a40ef63038e39",
+        "blob": "21d19e2ee5a33d08e72509f9442ab49751e30f1f",
         "content": "sha256:c2b341a1b32b233ee06f2d9e5e1ca6f432e3512a98b01ca63e8e0989ab775859",
         "locator": {
           "kind": "symbol",
@@ -104,48 +87,34 @@
       }
     }
   ],
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "21d19e2ee5a33d08e72509f9442ab49751e30f1f",
+        "content": "sha256:09bc52594a04902e96d6482a082ca175014285361638bf4a4c5fd7fdd1557248",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_only_a_definite_non_repository_reads_as_holding_no_converted_memory"
+        }
+      },
+      "id": "RLZ-5SQ5SP",
+      "invariant": "INV-0RQS65",
+      "origin": {
+        "handoffEntry": "L26-CX-N02",
+        "leaf": "260928-MIK-L26"
+      },
+      "rationale": "The test's premise fails under the real ancestor marker in both states.",
+      "role": "support"
+    }
+  ],
   "references": {
-    "1": {
-      "note": "The module docstring: what the suite covers and where the CLI and MCP routes are tested.\n\nAnchor: \"The cutover's carried completions\"",
+    "11": {
+      "note": "`test_every_route_refuses_unconverted_memory_once_the_repository_holds_converted_memory` owns the current boundary described above.",
       "targets": [
         {
           "anchor": {
-            "blob": "3d5ab012645a59c43d66a805479a40ef63038e39",
-            "content": "sha256:3828e1999d448304e2838f428eda640979075d4b1bc6370a6b76346173bb4988",
-            "locator": {
-              "end": 13,
-              "kind": "line_range",
-              "start": 1
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "10": {
-      "note": "One unconverted commit under both branches.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "3d5ab012645a59c43d66a805479a40ef63038e39",
-            "content": "sha256:44fc3d4b551bc1610ec66f0b9dd8ca390d33832ead0f8e6fd17cd58dc0490c37",
-            "locator": {
-              "kind": "symbol",
-              "name": "_unconverted"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "2": {
-      "note": "Fourteen routes refuse while a branch is converted and return nothing once it is deleted.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "3d5ab012645a59c43d66a805479a40ef63038e39",
-            "content": "sha256:96f64e290e130dcfb0d021c4bbb99822996be1e560c74d03807cfdda93e99b58",
+            "blob": "21d19e2ee5a33d08e72509f9442ab49751e30f1f",
+            "content": "sha256:9b489c9891393b3cbeb5b43f0486a0d5796d44c43ad1aa2f6cf6fdd0b2093aaa",
             "locator": {
               "kind": "symbol",
               "name": "test_every_route_refuses_unconverted_memory_once_the_repository_holds_converted_memory"
@@ -155,93 +124,13 @@
         }
       ]
     },
-    "3": {
-      "note": "A converted worktree locks, and an unanswered probe refuses.",
+    "12": {
+      "note": "`test_no_read_selects_the_database_of_a_converted_tree` owns the current boundary described above.",
       "targets": [
         {
           "anchor": {
-            "blob": "3d5ab012645a59c43d66a805479a40ef63038e39",
-            "content": "sha256:c2b341a1b32b233ee06f2d9e5e1ca6f432e3512a98b01ca63e8e0989ab775859",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_converted_worktree_locks_too_and_an_unanswered_probe_refuses"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "4": {
-      "note": "Only a definite non-repository is unlocked.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "3d5ab012645a59c43d66a805479a40ef63038e39",
-            "content": "sha256:09bc52594a04902e96d6482a082ca175014285361638bf4a4c5fd7fdd1557248",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_only_a_definite_non_repository_reads_as_holding_no_converted_memory"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "5": {
-      "note": "A bare repository Git cannot open refuses by name.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "3d5ab012645a59c43d66a805479a40ef63038e39",
-            "content": "sha256:2bc2b425f0f364554aef6962bd40ccd62d750fab9c4f61ca5b294ab8a4369bea",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_bare_repository_git_cannot_open_refuses_by_name"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "6": {
-      "note": "The converting candidate is gated, never locked.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "3d5ab012645a59c43d66a805479a40ef63038e39",
-            "content": "sha256:9562e96fdf3bbfa214287193ff0d97a5c78cdee9dc78e8e37287cf4fc0138c22",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_the_converting_candidate_is_gated_never_locked"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "7": {
-      "note": "The database writer is frozen on a converted tree.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "3d5ab012645a59c43d66a805479a40ef63038e39",
-            "content": "sha256:3b6fe5185a2b640c3284f85aba451b53060a107a21f021326c4141f072351e10",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_the_database_writer_is_frozen_on_a_converted_tree_and_names_the_file_writer"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "8": {
-      "note": "No read selects the database of a converted tree.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "3d5ab012645a59c43d66a805479a40ef63038e39",
-            "content": "sha256:eab6325c343f30543209edd0ceea70a71c300d8ba2b2e2969d3464cd90a236ad",
+            "blob": "21d19e2ee5a33d08e72509f9442ab49751e30f1f",
+            "content": "sha256:e9ba6eff80a4b51f831b83c7de639bb2c014cd4d57ae0af15f1ceb9f74b93e9d",
             "locator": {
               "kind": "symbol",
               "name": "test_no_read_selects_the_database_of_a_converted_tree"
@@ -251,20 +140,19 @@
         }
       ]
     },
-    "9": {
-      "note": "The lock under test.",
+    "13": {
+      "note": "`test_a_converted_worktree_locks_too_and_an_unanswered_probe_refuses` owns the current boundary described above.",
       "targets": [
         {
           "anchor": {
-            "blob": "837b3fa7bfc2472ba7cde9635ab32e16a6319a94",
-            "content": "sha256:a7f9c48faf4f72c578dbc863e14dcbcaca7ea1d8f16fbdb2634512794cda9bd1",
+            "blob": "21d19e2ee5a33d08e72509f9442ab49751e30f1f",
+            "content": "sha256:c2b341a1b32b233ee06f2d9e5e1ca6f432e3512a98b01ca63e8e0989ab775859",
             "locator": {
               "kind": "symbol",
-              "name": "cutover_lock_refusal"
-            },
-            "path": "mcp/src/agents_remember/worktrees/cutover_lock.py"
+              "name": "test_a_converted_worktree_locks_too_and_an_unanswered_probe_refuses"
+            }
           },
-          "kind": "code"
+          "kind": "test"
         }
       ]
     }

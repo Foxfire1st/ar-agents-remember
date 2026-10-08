@@ -1,0 +1,189 @@
+[
+  {
+    "memoryDocument": "onboarding/mcp/src/agents_remember/application/knowledge_before_half.py.md",
+    "line": 17,
+    "text": "[`application/knowledge_baseline_generation.py`](knowledge_baseline_generation.py.md) \u2014 the fork point a",
+    "link": "knowledge_baseline_generation.py.md",
+    "resolvedTarget": "onboarding/mcp/src/agents_remember/application/knowledge_baseline_generation.py.md",
+    "targetExistedAtBase": true,
+    "targetAbsentAtCandidate": true,
+    "currentOldLiteralPresent": false,
+    "resolution": "old target/link retired; current historical or replacement prose retained"
+  },
+  {
+    "memoryDocument": "onboarding/mcp/src/agents_remember/application/knowledge_before_half.py.md",
+    "line": 23,
+    "text": "[`application/knowledge_first_generation.py`](knowledge_first_generation.py.md), which is the caller of",
+    "link": "knowledge_first_generation.py.md",
+    "resolvedTarget": "onboarding/mcp/src/agents_remember/application/knowledge_first_generation.py.md",
+    "targetExistedAtBase": true,
+    "targetAbsentAtCandidate": true,
+    "currentOldLiteralPresent": false,
+    "resolution": "old target/link retired; current historical or replacement prose retained"
+  },
+  {
+    "memoryDocument": "onboarding/mcp/src/agents_remember/application/knowledge_before_half.py.md",
+    "line": 59,
+    "text": "[`application/knowledge_baseline_generation.py`](knowledge_baseline_generation.py.md); a half carries",
+    "link": "knowledge_baseline_generation.py.md",
+    "resolvedTarget": "onboarding/mcp/src/agents_remember/application/knowledge_baseline_generation.py.md",
+    "targetExistedAtBase": true,
+    "targetAbsentAtCandidate": true,
+    "currentOldLiteralPresent": false,
+    "resolution": "old target/link retired; current historical or replacement prose retained"
+  },
+  {
+    "memoryDocument": "onboarding/mcp/src/agents_remember/application/knowledge_before_half.py.md",
+    "line": 140,
+    "text": "  ([`application/knowledge_baseline_generation.py`](knowledge_baseline_generation.py.md)), which is the",
+    "link": "knowledge_baseline_generation.py.md",
+    "resolvedTarget": "onboarding/mcp/src/agents_remember/application/knowledge_baseline_generation.py.md",
+    "targetExistedAtBase": true,
+    "targetAbsentAtCandidate": true,
+    "currentOldLiteralPresent": false,
+    "resolution": "old target/link retired; current historical or replacement prose retained"
+  },
+  {
+    "memoryDocument": "onboarding/mcp/src/agents_remember/application/overview.md",
+    "line": 33,
+    "text": "  and [`review_unchanged_knowledge.py`](review_unchanged_knowledge.py.md) refuses a converted leaf before it reads a",
+    "link": "review_unchanged_knowledge.py.md",
+    "resolvedTarget": "onboarding/mcp/src/agents_remember/application/review_unchanged_knowledge.py.md",
+    "targetExistedAtBase": true,
+    "targetAbsentAtCandidate": true,
+    "currentOldLiteralPresent": false,
+    "resolution": "old target/link retired; current historical or replacement prose retained"
+  },
+  {
+    "memoryDocument": "onboarding/mcp/src/agents_remember/application/overview.md",
+    "line": 192,
+    "text": "([`cli/review_comparison_record.py`](../cli/review_comparison_record.py.md)): it resolves the contract's",
+    "link": "../cli/review_comparison_record.py.md",
+    "resolvedTarget": "onboarding/mcp/src/agents_remember/cli/review_comparison_record.py.md",
+    "targetExistedAtBase": true,
+    "targetAbsentAtCandidate": true,
+    "currentOldLiteralPresent": false,
+    "resolution": "old target/link retired; current historical or replacement prose retained"
+  },
+  {
+    "memoryDocument": "onboarding/mcp/src/agents_remember/application/overview.md",
+    "line": 718,
+    "text": "   ([`cli/review_comparison_record.py`](../cli/review_comparison_record.py.md)), which composes the",
+    "link": "../cli/review_comparison_record.py.md",
+    "resolvedTarget": "onboarding/mcp/src/agents_remember/cli/review_comparison_record.py.md",
+    "targetExistedAtBase": true,
+    "targetAbsentAtCandidate": true,
+    "currentOldLiteralPresent": false,
+    "resolution": "old target/link retired; current historical or replacement prose retained"
+  },
+  {
+    "memoryDocument": "onboarding/mcp/src/agents_remember/application/overview.md",
+    "line": 3255,
+    "text": "- [`knowledge_projection.py`](knowledge_projection.py.md): a projection over the 20,000-character artifact",
+    "link": "knowledge_projection.py.md",
+    "resolvedTarget": "onboarding/mcp/src/agents_remember/application/knowledge_projection.py.md",
+    "targetExistedAtBase": true,
+    "targetAbsentAtCandidate": true,
+    "currentOldLiteralPresent": false,
+    "resolution": "old target/link retired; current historical or replacement prose retained"
+  },
+  {
+    "memoryDocument": "onboarding/mcp/src/agents_remember/application/overview.md",
+    "line": 3429,
+    "text": "- [`knowledge_projection.py`](knowledge_projection.py.md): `whole_views` projects a converted tree's view",
+    "link": "knowledge_projection.py.md",
+    "resolvedTarget": "onboarding/mcp/src/agents_remember/application/knowledge_projection.py.md",
+    "targetExistedAtBase": true,
+    "targetAbsentAtCandidate": true,
+    "currentOldLiteralPresent": false,
+    "resolution": "old target/link retired; current historical or replacement prose retained"
+  },
+  {
+    "memoryDocument": "onboarding/mcp/src/agents_remember/application/overview.md",
+    "line": 3555,
+    "text": "helpers) and [`review_comparison_freeze.py`](review_comparison_freeze.py.md) (a tree comparison is never frozen).",
+    "link": "review_comparison_freeze.py.md",
+    "resolvedTarget": "onboarding/mcp/src/agents_remember/application/review_comparison_freeze.py.md",
+    "targetExistedAtBase": true,
+    "targetAbsentAtCandidate": true,
+    "currentOldLiteralPresent": false,
+    "resolution": "old target/link retired; current historical or replacement prose retained"
+  },
+  {
+    "memoryDocument": "onboarding/mcp/src/agents_remember/application/review_candidate_resolution.py.md",
+    "line": 304,
+    "text": "[`knowledge_baseline_generation.py`](knowledge_baseline_generation.py.md). The read therefore fell",
+    "link": "knowledge_baseline_generation.py.md",
+    "resolvedTarget": "onboarding/mcp/src/agents_remember/application/knowledge_baseline_generation.py.md",
+    "targetExistedAtBase": true,
+    "targetAbsentAtCandidate": true,
+    "currentOldLiteralPresent": false,
+    "resolution": "old target/link retired; current historical or replacement prose retained"
+  },
+  {
+    "memoryDocument": "onboarding/mcp/src/agents_remember/cli/knowledge_ingest.py.md",
+    "line": 185,
+    "text": "[`application/knowledge_baseline_generation.py`](../application/knowledge_baseline_generation.py.md),",
+    "link": "../application/knowledge_baseline_generation.py.md",
+    "resolvedTarget": "onboarding/mcp/src/agents_remember/application/knowledge_baseline_generation.py.md",
+    "targetExistedAtBase": true,
+    "targetAbsentAtCandidate": true,
+    "currentOldLiteralPresent": false,
+    "resolution": "old target/link retired; current historical or replacement prose retained"
+  },
+  {
+    "memoryDocument": "onboarding/mcp/src/agents_remember/memory/overview.md",
+    "line": 22,
+    "text": "- **[`knowledge/publication.py`](knowledge/publication.py.md).** `publish_prepared_snapshot` refuses a destination",
+    "link": "knowledge/publication.py.md",
+    "resolvedTarget": "onboarding/mcp/src/agents_remember/memory/knowledge/publication.py.md",
+    "targetExistedAtBase": true,
+    "targetAbsentAtCandidate": true,
+    "currentOldLiteralPresent": false,
+    "resolution": "old target/link retired; current historical or replacement prose retained"
+  },
+  {
+    "memoryDocument": "onboarding/mcp/src/agents_remember/memory/overview.md",
+    "line": 1856,
+    "text": "- [`adapters.py`](knowledge_index/adapters.py.md) opens an index as a read-only `OpenedKnowledgeStore` for",
+    "link": "knowledge_index/adapters.py.md",
+    "resolvedTarget": "onboarding/mcp/src/agents_remember/memory/knowledge_index/adapters.py.md",
+    "targetExistedAtBase": true,
+    "targetAbsentAtCandidate": true,
+    "currentOldLiteralPresent": false,
+    "resolution": "old target/link retired; current historical or replacement prose retained"
+  },
+  {
+    "memoryDocument": "onboarding/mcp/src/agents_remember/models/overview.md",
+    "line": 291,
+    "text": "- [`knowledge/projection_manifest.py`](knowledge/projection_manifest.py.md): the projection refusal closure",
+    "link": "knowledge/projection_manifest.py.md",
+    "resolvedTarget": "onboarding/mcp/src/agents_remember/models/knowledge/projection_manifest.py.md",
+    "targetExistedAtBase": true,
+    "targetAbsentAtCandidate": true,
+    "currentOldLiteralPresent": false,
+    "resolution": "old target/link retired; current historical or replacement prose retained"
+  },
+  {
+    "memoryDocument": "onboarding/mcp/src/agents_remember/worktrees/overview.md",
+    "line": 35,
+    "text": "- **The stage copies of a knowledge conflict.** [`knowledge_conflict.py`](knowledge_conflict.py.md) materialises a",
+    "link": "knowledge_conflict.py.md",
+    "resolvedTarget": "onboarding/mcp/src/agents_remember/worktrees/knowledge_conflict.py.md",
+    "targetExistedAtBase": true,
+    "targetAbsentAtCandidate": true,
+    "currentOldLiteralPresent": false,
+    "resolution": "old target/link retired; current historical or replacement prose retained"
+  },
+  {
+    "memoryDocument": "onboarding/mcp/src/agents_remember/worktrees/overview.md",
+    "line": 325,
+    "text": "| `knowledge_conflict.py` | [`knowledge_conflict.py.md`](knowledge_conflict.py.md) | covered | Git half of the knowledge-dataset conflict settlement |",
+    "link": "knowledge_conflict.py.md",
+    "resolvedTarget": "onboarding/mcp/src/agents_remember/worktrees/knowledge_conflict.py.md",
+    "targetExistedAtBase": true,
+    "targetAbsentAtCandidate": true,
+    "currentOldLiteralPresent": false,
+    "resolution": "old target/link retired; current historical or replacement prose retained"
+  }
+]

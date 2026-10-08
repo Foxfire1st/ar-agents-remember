@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bc5e885909bc1a6d98b3285a861c6d4b9c8cfdf4",
+            "blob": "e0475c07db7f98c04497445589d9a2a30aa0089b",
             "content": "sha256:a330f64ec342f0c036e462a941297875faba03c80664030a3daf6ca5cffa1d6e",
             "locator": {
               "end": 6,
@@ -24,7 +24,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bc5e885909bc1a6d98b3285a861c6d4b9c8cfdf4",
+            "blob": "e0475c07db7f98c04497445589d9a2a30aa0089b",
             "content": "sha256:c897286f1f7d52613f14c07065ef24e729928f81689672330d079a572a86ada6",
             "locator": {
               "kind": "symbol",
@@ -35,7 +35,7 @@
         },
         {
           "anchor": {
-            "blob": "bc5e885909bc1a6d98b3285a861c6d4b9c8cfdf4",
+            "blob": "e0475c07db7f98c04497445589d9a2a30aa0089b",
             "content": "sha256:bdaa895a889a229e14bbf8c92b8ac051a7a4e74873fb7da0e42d0419584f0eab",
             "locator": {
               "kind": "symbol",
@@ -51,7 +51,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bc5e885909bc1a6d98b3285a861c6d4b9c8cfdf4",
+            "blob": "e0475c07db7f98c04497445589d9a2a30aa0089b",
             "content": "sha256:99f5823455a8859e6d9fbd3aa3336297d0c9ba5c4e054c11b8d432c5b9868acd",
             "locator": {
               "kind": "symbol",
@@ -67,7 +67,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bc5e885909bc1a6d98b3285a861c6d4b9c8cfdf4",
+            "blob": "e0475c07db7f98c04497445589d9a2a30aa0089b",
             "content": "sha256:f7dc8a9853d9b7f7760131731ccb7a767af8a95db9c8ad498153b9d7c9fc90f1",
             "locator": {
               "kind": "symbol",
@@ -111,7 +111,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0508e56c262c031606a2a86fd8ddba54f1cb6c33",
+            "blob": "f503fa94c4c7bed4f52d64b967754439519f5b6a",
             "content": "sha256:f987f04351f9a963408d04353decdced875c8d570d21bdeb16852ae8f8f75efc",
             "locator": {
               "kind": "symbol",
@@ -123,7 +123,7 @@
         },
         {
           "anchor": {
-            "blob": "0508e56c262c031606a2a86fd8ddba54f1cb6c33",
+            "blob": "f503fa94c4c7bed4f52d64b967754439519f5b6a",
             "content": "sha256:50dd05ab638940b7a334858cebee588c309c288d58b283907bc2aafeb7e760eb",
             "locator": {
               "kind": "symbol",
@@ -136,39 +136,15 @@
       ]
     },
     "7": {
-      "note": "The row codec and seal-verifying decode that turn these values into stored rows.",
+      "note": "The retained family revision decoder verifies the sealed aggregate and sorted predecessors.",
       "targets": [
         {
           "anchor": {
-            "blob": "121c4afa09ae47ad7908ca98c752895684e7232f",
-            "content": "sha256:9e628b2a4512e79cb25675140ad6a45f503660e16143b73bf6a1878436cf7db5",
-            "locator": {
-              "kind": "symbol",
-              "name": "family_revision_row"
-            },
-            "path": "mcp/src/agents_remember/memory/knowledge/records.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "121c4afa09ae47ad7908ca98c752895684e7232f",
-            "content": "sha256:4b0ed64815e7d60e1a581661f2c7c349172981afe5ddfc43689a1083643702da",
+            "blob": "0ee5929321e3f7a958a51aecc7f15c63d890c86c",
+            "content": "sha256:bd50e8d8c0e3c813bcc4211881a122e30b03650166e0c9697b1a7497bbbd4741",
             "locator": {
               "kind": "symbol",
               "name": "decode_family_revision_row"
-            },
-            "path": "mcp/src/agents_remember/memory/knowledge/records.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "121c4afa09ae47ad7908ca98c752895684e7232f",
-            "content": "sha256:bfc23fffe2a216c0dd498e4993946354abcd205e0abee4302e83044f31bbfe9b",
-            "locator": {
-              "kind": "symbol",
-              "name": "sealed_family_revision_from_draft"
             },
             "path": "mcp/src/agents_remember/memory/knowledge/records.py"
           },
@@ -177,15 +153,15 @@
       ]
     },
     "8": {
-      "note": "The storage owner that writes and reads these values.",
+      "note": "The production reader retrieves family identities and exact sealed revisions from the derived index; it writes nothing.",
       "targets": [
         {
           "anchor": {
-            "blob": "97f3ecd2e6c3d4e597f27b5a729aa39e45bef332",
-            "content": "sha256:c36694fae20edbd501fce9fbeaa8989e2d6b882d6a31e9e0efab3a44a87d8577",
+            "blob": "66102e9850b5f1c88cdba3b4cbd1af7d321197e8",
+            "content": "sha256:c51a165b94e9dd6de79384fdbe979368a7dc0a52f33cd560713ccc13b1c1a432",
             "locator": {
               "kind": "symbol",
-              "name": "create_family"
+              "name": "get_family"
             },
             "path": "mcp/src/agents_remember/memory/knowledge/families.py"
           },
@@ -193,23 +169,23 @@
         },
         {
           "anchor": {
-            "blob": "97f3ecd2e6c3d4e597f27b5a729aa39e45bef332",
-            "content": "sha256:0bfdf0a52c70aff88470589c1cbe3b28025ba688e1625c661594cdc85c568d38",
-            "locator": {
-              "kind": "symbol",
-              "name": "create_family_revision"
-            },
-            "path": "mcp/src/agents_remember/memory/knowledge/families.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "97f3ecd2e6c3d4e597f27b5a729aa39e45bef332",
+            "blob": "66102e9850b5f1c88cdba3b4cbd1af7d321197e8",
             "content": "sha256:be4b89a03071dfec313b2a235a46f08cf7115843cc9c516c6f0287f5b35be4c0",
             "locator": {
               "kind": "symbol",
               "name": "get_family_revision"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/families.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "66102e9850b5f1c88cdba3b4cbd1af7d321197e8",
+            "content": "sha256:8efde8a6ffa20dfab43f421de39f55bccfb3cd8f9f7b726e5a5c635dee4daf87",
+            "locator": {
+              "kind": "symbol",
+              "name": "list_family_revision_ids"
             },
             "path": "mcp/src/agents_remember/memory/knowledge/families.py"
           },

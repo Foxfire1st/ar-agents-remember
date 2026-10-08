@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "88c5ed9b298bc64b9856dec2638f2afd6d609fe1",
+            "blob": "80a46b4a973050dcbea27c42e098e302a0e8694f",
             "content": "sha256:312e549242e6e49a9af1129ab618ed4a46f1426f3443d134fc883f79cbd4d32d",
             "locator": {
               "kind": "symbol",
@@ -23,7 +23,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "88c5ed9b298bc64b9856dec2638f2afd6d609fe1",
+            "blob": "80a46b4a973050dcbea27c42e098e302a0e8694f",
             "content": "sha256:0cef87532e5cc6541fbb7d1652dc2a36b9f29f4378a98d30a728b27ed80abf2e",
             "locator": {
               "kind": "symbol",
@@ -39,7 +39,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "88c5ed9b298bc64b9856dec2638f2afd6d609fe1",
+            "blob": "80a46b4a973050dcbea27c42e098e302a0e8694f",
             "content": "sha256:f23f5071242b88c127aeec95593f1b682530e404cf118fb4f4a90e221986c5c8",
             "locator": {
               "kind": "symbol",
@@ -55,7 +55,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "88c5ed9b298bc64b9856dec2638f2afd6d609fe1",
+            "blob": "80a46b4a973050dcbea27c42e098e302a0e8694f",
             "content": "sha256:f530aab27ac6b86d596a74cab614bfa984216b53b0cefdb336c79589837c6341",
             "locator": {
               "kind": "symbol",
@@ -66,7 +66,7 @@
         },
         {
           "anchor": {
-            "blob": "88c5ed9b298bc64b9856dec2638f2afd6d609fe1",
+            "blob": "80a46b4a973050dcbea27c42e098e302a0e8694f",
             "content": "sha256:314d27c3b180d5b12b266a4638c420f9d948c3aaef7ab6dccf9e787e7f06c0b2",
             "locator": {
               "end": 50,
@@ -113,7 +113,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "88c5ed9b298bc64b9856dec2638f2afd6d609fe1",
+            "blob": "80a46b4a973050dcbea27c42e098e302a0e8694f",
             "content": "sha256:3fe24bc68fbb9b21dd3e18fdae27517045eaa3918df9bd748d8abf627a3125b3",
             "locator": {
               "kind": "symbol",
@@ -129,7 +129,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "88c5ed9b298bc64b9856dec2638f2afd6d609fe1",
+            "blob": "80a46b4a973050dcbea27c42e098e302a0e8694f",
             "content": "sha256:11ebdb9d1da9ffc8e779a0461ed16786920c2c1c83a83905b7d42c3a97838ecf",
             "locator": {
               "kind": "symbol",
@@ -145,7 +145,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "88c5ed9b298bc64b9856dec2638f2afd6d609fe1",
+            "blob": "80a46b4a973050dcbea27c42e098e302a0e8694f",
             "content": "sha256:640fa49e83eaa5e5443098cd700572883ce9c1733dcdd4e1b430d5230aa0019e",
             "locator": {
               "kind": "symbol",
@@ -157,15 +157,93 @@
       ]
     },
     "9": {
-      "note": "Facet fields equal today's payload fields.",
+      "note": "Text facet records declare their own fields, with current kind parsing and malformed-field checks.",
       "targets": [
         {
           "anchor": {
-            "blob": "f5299f8beb3f677859b2cdd393816c5309ff264d",
-            "content": "sha256:cc9d35abf7ab3724a31baab588e60084eabea02be08f386ce4af79a95b7a4555",
+            "blob": "80a46b4a973050dcbea27c42e098e302a0e8694f",
+            "content": "sha256:da6c7bcb6ed994c4fa14ff47680d68521b4472c82ea1335c080da6553f4eb2f4",
             "locator": {
               "kind": "symbol",
-              "name": "test_facet_records_carry_todays_payload_fields_plus_links"
+              "name": "AssumptionRecord"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "80a46b4a973050dcbea27c42e098e302a0e8694f",
+            "content": "sha256:b9f227e2f4d7a4d53d019088b912edc7e9fc134b175fe24513183d6a51114531",
+            "locator": {
+              "kind": "symbol",
+              "name": "LimitationRecord"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "80a46b4a973050dcbea27c42e098e302a0e8694f",
+            "content": "sha256:42738d783a12321715ddb2f9bfc7b3e86c4f7277e3a21c2fed326e122fc684cf",
+            "locator": {
+              "kind": "symbol",
+              "name": "FailureModeRecord"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "80a46b4a973050dcbea27c42e098e302a0e8694f",
+            "content": "sha256:d9fb7043f9042cce039907bebc0a019b0adbf6032ef65cb12118def0831155c2",
+            "locator": {
+              "kind": "symbol",
+              "name": "ScenarioRecord"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "80a46b4a973050dcbea27c42e098e302a0e8694f",
+            "content": "sha256:ad599edb38f37370164d80494f76523f04aabac37c8e0727a5ca80553f99c6c8",
+            "locator": {
+              "kind": "symbol",
+              "name": "DiagnosticRecord"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "80a46b4a973050dcbea27c42e098e302a0e8694f",
+            "content": "sha256:080c331dee719b9827d4cc64dae2e1af4a979f61db276393bfeee4a0804bb272",
+            "locator": {
+              "kind": "symbol",
+              "name": "TermRecord"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "86d10598e49ffb106e6f21bbcee3f7c2449a7cf2",
+            "content": "sha256:0ab5773b79ede7b51b8996691c2527befe0bf4c7668a80b1e02cddedc31cd88c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_record_kind_parses_round_trips_and_refuses_a_foreign_prefix"
+            },
+            "path": "mcp/tests/test_knowledge_file_formats.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "86d10598e49ffb106e6f21bbcee3f7c2449a7cf2",
+            "content": "sha256:29083ed2e21e9385f7abc772c5b15b1a4d299107f27779b7054593f2eb01ce4b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_records_refuse_second_owners_and_malformed_record_fields"
             },
             "path": "mcp/tests/test_knowledge_file_formats.py"
           },

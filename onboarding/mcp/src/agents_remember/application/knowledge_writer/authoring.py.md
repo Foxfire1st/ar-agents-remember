@@ -9,7 +9,7 @@
 **The edits: a read hand-off document applied to the memory tree with every mechanical field filled
 (MIK-R12 rules 1-3).** The curator authors meaning (statements, scope, admission, facets, links,
 dispositions, reasons); `Authoring` fills IDs, anchors, revisions, origin and history-row fields. Nothing
-here judges meaning, and nothing is written to disk.
+here judges meaning, and nothing is written to disk. History-row mechanics are implemented by the inherited `HistoryRowAuthoring` in `authoring_rows.py`; this implementation move changes neither authored dispositions nor worklist obligations.
 
 ## Code Commentary
 
@@ -251,7 +251,9 @@ Q6, 2026-09-29T21:49:19+02:00):
 - A row whose hand-off names no item lists the worklist items it answers. [47]
 - The items a row answers, by each kind's satisfying-row rule. [48]
 - A cover's rationale replaces the realization entry's rationale in place. [49]
-- The writer fills a row's items from the leaf's worklist. [50]
+
+- The writer fills row items from the worklist after the unchanged case moved to governing-row tests. [50]
+
 - A cover revises a realization entry's rationale in place. [51]
 
 ## Evidence

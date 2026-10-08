@@ -1,0 +1,256 @@
+{
+  "ok": true,
+  "tokens": 2112,
+  "tokenizer": "tiktoken:o200k_base",
+  "tokenCountExact": true,
+  "operation": "knowledge_read",
+  "state": "page",
+  "view": "source_context",
+  "repositoryId": "7511e917-d5d3-584e-b0ce-44dcad666cfe",
+  "snapshot": "4199497d1b5fc49263fca1c900d571eed23900b5",
+  "completeWithinDeclaredScope": true,
+  "page": {
+    "threshold": {
+      "tokens": 8000,
+      "tokenizer": "tiktoken:o200k_base"
+    },
+    "memoryTreeId": "4199497d1b5fc49263fca1c900d571eed23900b5",
+    "selectionPolicy": "family-complete-leaf",
+    "selectionPolicyVersion": "v2",
+    "manifestDigest": "7efc8a39d427a4440d77717243629083026c9c580af1402c9674359549b1b215",
+    "codeTreeId": "bf045a987679cc023f8fdfb8849d28cfcca1adb9",
+    "start": 0,
+    "rowsOnPage": 7,
+    "total": 7,
+    "returned": 7,
+    "remaining": 0,
+    "enumerationComplete": true
+  },
+  "payload": {
+    "seed": {
+      "kind": "path",
+      "path": "mcp/tests/tool_entry_point_controls.py"
+    },
+    "state": "page",
+    "memoryTreeId": "4199497d1b5fc49263fca1c900d571eed23900b5",
+    "manifestDigest": "7efc8a39d427a4440d77717243629083026c9c580af1402c9674359549b1b215",
+    "rows": [
+      {
+        "kind": "chain_family",
+        "id": "FAM-83BTBD",
+        "revision": 1,
+        "title": "The leaf's seats run their loop directly",
+        "guarantee": "A leaf's Worker, Reviewer and Curator run the leaf's work between their three seats: each hands the exact freeze, sealed verdict, producer list, memory candidate or code concern directly, each seat keeps its own ordinary bookkeeping lane and its own pending-and-retry discipline, and the Manager receives only its named occasions and relays none of a hand-over's contents.",
+        "routes": [
+          "mcp/src/agents_remember/cli",
+          "mcp/tests",
+          "skills/l-01-agent-lifecycles/operations",
+          "skills/l-01-agent-lifecycles/roles",
+          "skills/l-01-agent-lifecycles/templates"
+        ],
+        "memberCount": 6,
+        "via": [
+          "mcp/tests"
+        ],
+        "memberAtSeed": false,
+        "expand": {
+          "operation": "knowledge_read",
+          "view": "source_context",
+          "familyRevisionId": "FAM-83BTBD"
+        }
+      },
+      {
+        "kind": "chain_family",
+        "id": "FAM-DBX1PN",
+        "revision": 1,
+        "title": "Shared test catalogs merge without conflict and without an unchecked result",
+        "guarantee": "Two changes that extend the two test catalogs independently are merged by Git without a conflict. A merge result that holds a line twice, a list out of order, the line of a deleted file or two interleaved rows is refused by the loaders before a test run or a delivery relies on it. One command that makes no decision repairs order, duplicate lines, derived consumer lists and the lines of deleted files.",
+        "routes": [
+          ".",
+          "mcp/test_support/agents_remember_test_support/testing",
+          "mcp/tests"
+        ],
+        "memberCount": 3,
+        "via": [
+          "mcp/tests",
+          "."
+        ],
+        "memberAtSeed": false,
+        "expand": {
+          "operation": "knowledge_read",
+          "view": "source_context",
+          "familyRevisionId": "FAM-DBX1PN"
+        }
+      },
+      {
+        "kind": "chain_family",
+        "id": "FAM-SDS92V",
+        "revision": 1,
+        "title": "No production canonical knowledge database",
+        "guarantee": "The repository's retirement guard and static source check expose canonical-database access in their declared test/source scopes, and test teardown restores the guard when a test removes it. The reviewed copy-cleanup owner removes only eligible copies and preserves tracked or symlinked companions. Together these protect the database retirement's executable paths and cleanup boundary; they do not certify unrun tests, derived-index deletion, or elimination of every workspace copy.",
+        "routes": [
+          "mcp/src/agents_remember/application",
+          "mcp/test_support/agents_remember_test_support/testing",
+          "mcp/tests"
+        ],
+        "memberCount": 6,
+        "via": [
+          "mcp/tests"
+        ],
+        "memberAtSeed": false,
+        "expand": {
+          "operation": "knowledge_read",
+          "view": "source_context",
+          "familyRevisionId": "FAM-SDS92V"
+        }
+      },
+      {
+        "kind": "chain_family",
+        "id": "FAM-TG3WK0",
+        "revision": 1,
+        "title": "The reader and sweep protocol waits end at a limit",
+        "guarantee": "The reader protocol test composes its own server through the product factory instead of inheriting another test's process state. The protocol waits of the reader exercise and of the tool sweep — the reader's exchange and its Git status observations, and the sweep's session initialization, tool response and session cleanup — each end at a limit, and the sweep's limit is a named failure that is not classified as a product raiser. The fixtures' shared Git helpers — `git`/`init_repo` in `mcp/tests/test_worktree_support.py` and the sweep's `_git` — carry no timeout of their own and are outside this guarantee. Where the event-loop runner can shut down, no earlier test and no unanswered tool leaves these waits blocking the run; LIM-81M7T1 records where it cannot.",
+        "routes": [
+          "mcp/src/agents_remember/mcp/registration",
+          "mcp/tests"
+        ],
+        "memberCount": 3,
+        "via": [
+          "mcp/tests"
+        ],
+        "memberAtSeed": false,
+        "expand": {
+          "operation": "knowledge_read",
+          "view": "source_context",
+          "familyRevisionId": "FAM-TG3WK0"
+        }
+      },
+      {
+        "kind": "chain_family",
+        "id": "FAM-XYPE7N",
+        "revision": 1,
+        "title": "Truthful foundation inspection instructions",
+        "guarantee": "For a converted foundation, bootstrap instructions name the supported family, invariant and source_context views and distinguish complete-empty, complete-authored and partial knowledge from admission or legacy refusals. An instruction to inspect knowledge does not establish authoring, publication or repository acceptance.",
+        "routes": [
+          "mcp/tests",
+          "skills/c-14-knowledge-bootstrap"
+        ],
+        "memberCount": 2,
+        "via": [
+          "mcp/tests"
+        ],
+        "memberAtSeed": false,
+        "expand": {
+          "operation": "knowledge_read",
+          "view": "source_context",
+          "familyRevisionId": "FAM-XYPE7N"
+        }
+      },
+      {
+        "kind": "chain_family",
+        "id": "FAM-VNK792",
+        "revision": 1,
+        "title": "A closed leaf archives its recorded role agents and publishes no prepared start as running past the closing mark; an entered creation is archived on return",
+        "guarantee": "A closed leaf archives exactly its own recorded role agents before the worktrees are removed, whether idle or in a turn, and reports the truth about every archived, already-archived, gone, owed and left-alone target. A prepared start whose agent is not yet created is refused once its leaf's closing mark is present and its settlement says so; a start whose creation is already entered is not waited for — its minted target stays receipt-owned debt until the returned agent is archived and the start refused, without erasing the retirement record. The family does not promise an instantaneous no-live state while an entered creation's archival is still owed.",
+        "routes": [
+          "mcp",
+          "mcp/src/agents_remember/application",
+          "mcp/src/agents_remember/cli",
+          "mcp/src/agents_remember/models/lifecycles",
+          "mcp/src/agents_remember/serving",
+          "mcp/src/agents_remember/worktrees",
+          "mcp/src/agents_remember/worktrees/modules"
+        ],
+        "memberCount": 10,
+        "via": [
+          "mcp"
+        ],
+        "memberAtSeed": false,
+        "expand": {
+          "operation": "knowledge_read",
+          "view": "source_context",
+          "familyRevisionId": "FAM-VNK792"
+        }
+      },
+      {
+        "kind": "chain_family",
+        "id": "FAM-Z69A94",
+        "revision": 1,
+        "title": "One Python runtime stated and enforced",
+        "guarantee": "The product runs on Python 3.14 as one stated runtime: the built package admits every 3.14 release, the managed development and CI runtime follows one exact 3.14.8 contract, and the runtime checker refuses any other interpreter by name before it can import a newer standard-library module.",
+        "routes": [
+          ".",
+          "mcp",
+          "scripts"
+        ],
+        "memberCount": 3,
+        "via": [
+          "mcp",
+          "."
+        ],
+        "memberAtSeed": false,
+        "expand": {
+          "operation": "knowledge_read",
+          "view": "source_context",
+          "familyRevisionId": "FAM-Z69A94"
+        }
+      }
+    ],
+    "counts": {
+      "families": 0,
+      "members": 0,
+      "entries": 0,
+      "realizations": 0,
+      "proofs": 0,
+      "distinctPaths": 0,
+      "invariantsByState": {
+        "stale": 0,
+        "unverifiable": 0,
+        "unrealized": 0,
+        "current": 0
+      },
+      "advertisedFamilies": 0,
+      "chainFamilies": 7,
+      "rowsTotal": 7,
+      "rowsReturned": 7,
+      "rowsRemaining": 0
+    },
+    "hasMore": false,
+    "enumerationComplete": true,
+    "indexState": "complete",
+    "continuationOperation": "knowledge_read",
+    "continuationView": "source_context",
+    "routeChain": {
+      "directory": "mcp/tests",
+      "links": 3,
+      "derivation": "mechanical",
+      "state": "governed",
+      "families": 7
+    },
+    "registration": {
+      "state": "registration_absent",
+      "detail": "no realization or proof claim is recorded at 'mcp/tests/tool_entry_point_controls.py' in the selected snapshot, so this read reports absence rather than an empty scope"
+    }
+  },
+  "memoryTree": {
+    "memoryRoot": "/home/firefox/projects/ar-coordination/worktrees/agents-remember/260928-mik-l26-ar/memory-260928-mik-l26",
+    "treeId": "4199497d1b5fc49263fca1c900d571eed23900b5",
+    "indexState": "complete",
+    "problems": []
+  },
+  "indexComplete": true,
+  "currentness": {
+    "codeTree": {
+      "repositoryRoot": "/home/firefox/projects/ar-coordination/worktrees/agents-remember/260928-mik-l26-ar/260928-mik-l26",
+      "treeId": "bf045a987679cc023f8fdfb8849d28cfcca1adb9"
+    },
+    "counts": {
+      "stale": 0,
+      "unverifiable": 0,
+      "unrealized": 0,
+      "current": 0
+    },
+    "invariants": [],
+    "families": []
+  }
+}

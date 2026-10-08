@@ -89,29 +89,13 @@ changed.
 
 - The registrar's optional pair, `contractPath` and docstring. [6]
 
-## 260928-MIK-L12 The `knowledge_change` Description Names The File Route
+## Knowledge authoring command route
 
-One sentence, and nothing else on this route moves: the `knowledge_change` registrar's published docstring now
-says that on a converted memory tree (it holds `knowledge/layout.json`) both CLI entry points write knowledge
-files through the curator file writer (MIK-R12) instead of the database. The tool stays registered and refusing
-by architect ruling; removing it from the registered roster is MIK-R26's (leaf L26). No registered name, wire
-argument, response model or registration order changed.
+The mounted family has no write or refusal-only change entry. Curator authoring uses knowledge-ingest/knowledge-bootstrap; change and project were removed. [7]
 
-- The registrar's docstring sentence. [7]
+## Historical mounted write refusal
 
-## 260921-ICR-L32 The Mounted Refusal Names Both Shipped Entry Points, And Nothing Else On This Route Moves
-
-One route-level fact, and it is the completion of the L20 section above rather than a new surface. The
-`knowledge_change` registrar's published docstring now names **both** shipped CLI entry points that reach the
-one writer — `agents-remember knowledge-ingest` for a leaf enclosure's ordinary route and
-`agents-remember knowledge-bootstrap` for a repository with no enclosure in scope. No registered name, wire
-argument, response model or registration order changed, and the refusal itself is untouched: every record kind
-is still refused with `registration_absent` and nothing is written.
-**Why it was one name and is now two:** when `ICR-R20@v1` landed the sentence, `knowledge-ingest` **was** the
-only reachable entry point, so the singular form was true; `ICR-R29@v1` then shipped the second and left the
-sentence incomplete in the one place a model reads at the moment it decides. The correction is dated and
-attributed here because the earlier sentence was not false when it was written — it stopped being complete.
-No staleness marker for it was ever recorded in memory, so this section *is* the record.
+The earlier change entry only named the writer; MIK-R26 removed it. Registration now declares read, diff and integrity only. [17]
 
 ## 260915-KS-L41 The Knowledge Family Hands Over A Default Repository, Not Half A Resolution Pair
 
@@ -592,37 +576,9 @@ pure addition to the advertised schema rather than a signature change. And the r
 is reported in the result, so a reader can still see which patterns produced the population even
 when a caller narrowed it.
 
-## 260915-KS-L20 The Knowledge Operation Family, Appended As The Fourteenth Registrar
+## Knowledge operation family
 
-`mcp/registration/knowledge.py` is the family module `registration/__init__.py`'s docstring describes: one
-`register_knowledge_tools(server, config)` declaring its family against the server it is handed and
-delegating to the payload builders on `mcp/tools/knowledge.py`. It is **appended** to `TOOL_REGISTRARS` —
-the fourteenth entry, after the capsule-and-skill registrar — and never inserted, because FastMCP publishes
-tools in registration order and every existing name therefore keeps the position it was advertised at. The
-five operation families are spelled as `Doc13:181-187` spells them: `knowledge_read`, `knowledge_change`,
-`knowledge_diff`, `knowledge_integrity_check`, `knowledge_project`; the same five names were appended to
-`PUBLIC_TOOLS`' tail and given strict response models in the same change, so the roster, the registrar and
-the registry never disagreed.
-
-**The surface performs no domain reasoning, and that is the whole contract.** Each handler validates its
-wire request, delegates, and returns the typed shape the response model declares. `knowledge_read` returns
-recorded claims and assessments as attributed records; `knowledge_change` records a caller-authored
-proposal through an admitted operation **another leaf owns** and authors nothing; `knowledge_diff` carries
-only effect labels an identified agent or assessment supplied; `knowledge_integrity_check` reports
-conditions and their limits and produces no verdict; `knowledge_project` renders through the projection
-writer and writes no file itself. The runtime configuration supplies exactly one thing to this family — the
-workspace root a read resolves recorded source anchors against when the caller names none — because
-everything else a handler needs (the dataset path, the namespace, the destination) is caller-supplied: the
-substrate decides nothing about which dataset or which vault is meant.
-
-**Nothing is mounted for the reviewer, and the refusal of that is recorded rather than implied.**
-`KS-R22@v1` owns the Intent Reviewer, the cockpit route and the browser client. What this module publishes
-is the interface that leaf mounts — the five operations, the review-matrix view and the typed models behind
-them — and it adds no panel, no route and no client. The one honest partial in the leaf is here: a
-`knowledge_change` call for a record kind outside the two admitted kinds returns the shipped
-`registration_absent` refusal naming the absent admitted operation, rather than inventing a second write
-path, because constructing an admitted destination from a thin tool call needs candidate-resolution facts
-another owner supplies.
+register_knowledge_tools retains its composition position and registers read, diff and integrity. Read selects a converted memory root through its derived index; diff serves Git changes of knowledge files; integrity returns validator/worklist results. Legacy roots and database files refuse as legacy-format. The namespace belongs to the index. No handler writes or infers an effect label. [17]
 
 ## 260915-KS-L32 Route Impact — The Read Request Publishes A Source-Path Seed
 
@@ -640,59 +596,25 @@ so a caller that does not name it gets exactly the previous behaviour.
 The read side of that parameter — the seed it constructs and what the view does with it — belongs to the
 `mcp/src/agents_remember/application` and `models/knowledge` routes and is recorded there.
 
-## 260921-ICR-L20 The Mounted Refusal Names The Ordinary Publication, And Nothing Else On This Route Moves
+## Historical database publication advertisement
 
-One route-level fact, and it is deliberately the smallest one this route has ever carried: the
-knowledge family's *refusal* gained a sentence, and no registered name, no wire argument, no response
-model and no registration order changed.
+The publication-destination advertisement and mounted change refusal are retired. Current registration names converted memory roots, not canonical database paths and caller namespaces. [17]
 
-`knowledge_change` refuses every record kind with `registration_absent` and writes nothing — that is
-its whole body, and it is unchanged. What changed is what its published docstring tells a caller who
-reached it: the write plane's reachable entry point, `agents-remember knowledge-ingest`, no longer only
-"commits a whole curator hand-off list through the admitted batch" but, **on the curator's ordinary
-route, publishes that candidate to the repository's one declared published dataset location and reads
-the published identity back**. A caller that reads the refusal to learn where writing *does* happen now
-learns the whole route rather than half of it, which is `ICR-R20@v1`'s point: a mounted tool that can
-only name a writer would leave the publication half of the ordinary route undiscoverable from the
-surface a caller most likely consults.
+## Index cache authority
 
-**`260921-ICR-L32` completed that sentence's other half, which `ICR-R20@v1` could not have known about.**
-When L20 landed it, `knowledge-ingest` **was** the only reachable entry point, so naming it alone was
-true; `ICR-R29@v1` then shipped a second (`agents-remember knowledge-bootstrap`, the taskless
-repository-foundation route) and left the docstring singular, which made the sentence incomplete about
-the store in the one place a model reads at the moment it decides. L32 corrected **three** homes to name
-the one writer and **both** shipped CLI entry points that reach it — this registrar's docstring
-(`knowledge.md:125-127`), the module comment in `mcp/tools/knowledge.py` (`:90-93`) and the mounted
-refusal detail (`:425-426`), plus the two further homes `cli/knowledge_ingest.py` (`:112-115`) and
-`application/knowledge_ingest.py` (`:1-9`) that the hand sweep found. Every one was **completed, not
-deleted**, and a case (`test_the_write_plane_is_named_by_both_its_shipped_entry_points`) now pins it.
-**No staleness marker was ever written** for the old singular sentence: the curation that was told to
-record one as "what the surface said at its bytes" did not in fact record it, so a later seat reading
-the durable bytes (not the report) found the singular sentences standing unmarked and corrected them
-here — dated and attributed, so a reader can tell which revision each sentence was true at.
+The read registrar receives workspace default and coordination root; the latter keeps the derived index cache. Diff operates on memory Git trees and integrity on validator/contract inputs. No project registrar or database selection remains. [22]
 
-Three things this section deliberately does **not** claim: the family is still the fourteenth and last
-`TOOL_REGISTRARS` entry (five registrars, read → change → diff → integrity → projection); no handler
-computes anything new; and the publication itself is not reachable from this route at all — it lives in
-`application/knowledge_publication_route.py` and the CLI, and this module only names it.
 
-- **The refusal whose docstring now names the ordinary publication and its read-back, and the registrar that declares it.** [17]
-- The operation family entry point this leaf leaves exactly as it was: five registrars, declared order, appended at the tail. [18]
-- **The writer the refusal names for the write half, and the module that now owns the publication half the refusal also names.** [19]
-- The subcommand spelling the docstring carries, and the parser that registers it. [20]
 
-## 260928-MIK-L23 The Knowledge Family Hands Over The Coordination Root
+- The three-operation registrar removes change and project. [7]
 
-**Route impact (MIK-R23@v1).** In [`knowledge.py`](knowledge.py.md) the read, diff and project registrars now
-also pass `coordination_root=str(config.coordination_root)` to their builders: it is where a converted memory
-tree's derived index is cached when a caller's `databasePath` names such a tree. `_register_knowledge_diff`
-and `_register_knowledge_project` take `config` for this. The published input schemas are unchanged, the
-family's position in `TOOL_REGISTRARS` is unchanged, and no other family module moved.
 
-- The entry point, now handing `config` to the diff and project registrars. [21]
-- The three registrars that forward the coordination root. [22]
+- The three-operation registrar removes change and project. [17]
 
-## 260928-MIK-L96 The runtime_install description
+
+- Read receives runtime roots; diff and integrity retain their distinct delegates. [22]
+
+## Runtime installation description
 
 The `runtime_install` tool's description now states the host step, the named absent-block state and the host part of the result, and the tool still takes no parameter for the host.
 

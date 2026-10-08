@@ -16,7 +16,8 @@
     "Reads: read_ar_files marks an unconverted card legacy-format, and taskless reads of an unconverted dataset keep their answers.",
     "A managed sync already in flight when the lock begins to hold, which can still be continued or cancelled.",
     "Series closeout and baseline adoption, which commit no unconverted memory into a locked repository.",
-    "The onboarding card writers citation_fix, citation_migrate and route_index_refresh on an unconverted line: they commit nothing, and the closeout that would land their edits is locked."
+    "The onboarding card writers citation_fix, citation_migrate and route_index_refresh on an unconverted line: they commit nothing, and the closeout that would land their edits is locked.",
+    "The retired database-era realization site; the obligation is recorded on converted memory only."
   ],
   "id": "INV-JT28KJ",
   "origin": {
@@ -30,7 +31,7 @@
     "leaf": "260928-MIK-L37",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "Once a memory repository holds converted memory anywhere -- a local branch whose tip holds knowledge/layout.json or a registered worktree whose working tree does -- every route that writes, checks, syncs, closes out or lands memory refuses memory that is unconverted on every side, naming the crossing sync, while a route with a converted side is gated and never locked, a repository that holds no converted memory is not locked, and a probe Git cannot answer refuses by name.",
   "status": "proposed",

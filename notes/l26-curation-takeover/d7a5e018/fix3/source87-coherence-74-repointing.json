@@ -1,0 +1,520 @@
+[
+  {
+    "sourceFile": "mcp/tests/conftest.py",
+    "onboardingFile": "mcp/tests/conftest.py.md",
+    "beforeEvidenceRef": "task:notes/reports/role-launch/260928-MIK-L26-worker-391d2ccd-9832-4a74-9f35-e2b884946f2d.source107-sync-20261008/code-completed-working.diff",
+    "afterEvidenceRef": "memory:notes/l26-curation-takeover/d7a5e018/fix3/source87-coherence-shared74-evidence.json",
+    "why": "This entry contains this exact judgment's full current source and companion card, keyed by the same identity; the current contract and its cited surviving assertions can be checked together. It is actual evidence for this named judgment, not merely the existence of a deletion hunk."
+  },
+  {
+    "sourceFile": "mcp/tests/diff_scope_test_support.py",
+    "onboardingFile": "mcp/tests/diff_scope_test_support.py.md",
+    "beforeEvidenceRef": "task:notes/reports/role-launch/260928-MIK-L26-worker-391d2ccd-9832-4a74-9f35-e2b884946f2d.source107-sync-20261008/code-completed-working.diff",
+    "afterEvidenceRef": "memory:notes/l26-curation-takeover/d7a5e018/fix3/source87-coherence-shared74-evidence.json",
+    "why": "This entry contains this exact judgment's full current source and companion card, keyed by the same identity; the current contract and its cited surviving assertions can be checked together. It is actual evidence for this named judgment, not merely the existence of a deletion hunk."
+  },
+  {
+    "sourceFile": "mcp/tests/evidence-lifecycle.toml",
+    "onboardingFile": "mcp/tests/evidence-lifecycle.toml.md",
+    "beforeEvidenceRef": "task:notes/reports/role-launch/260928-MIK-L26-worker-391d2ccd-9832-4a74-9f35-e2b884946f2d.source107-sync-20261008/code-completed-working.diff",
+    "afterEvidenceRef": "memory:notes/l26-curation-takeover/d7a5e018/fix3/source87-coherence-shared74-evidence.json",
+    "why": "This entry contains this exact judgment's full current source and companion card, keyed by the same identity; the current contract and its cited surviving assertions can be checked together. It is actual evidence for this named judgment, not merely the existence of a deletion hunk."
+  },
+  {
+    "sourceFile": "mcp/tests/generation_test_support.py",
+    "onboardingFile": "mcp/tests/generation_test_support.py.md",
+    "beforeEvidenceRef": "task:notes/reports/role-launch/260928-MIK-L26-worker-391d2ccd-9832-4a74-9f35-e2b884946f2d.source107-sync-20261008/code-completed-working.diff",
+    "afterEvidenceRef": "memory:notes/l26-curation-takeover/d7a5e018/fix3/source87-coherence-shared74-evidence.json",
+    "why": "This entry contains this exact judgment's full current source and companion card, keyed by the same identity; the current contract and its cited surviving assertions can be checked together. It is actual evidence for this named judgment, not merely the existence of a deletion hunk."
+  },
+  {
+    "sourceFile": "mcp/tests/knowledge_fixture_test_support.py",
+    "onboardingFile": "mcp/tests/knowledge_fixture_test_support.py.md",
+    "beforeEvidenceRef": "task:notes/reports/role-launch/260928-MIK-L26-worker-391d2ccd-9832-4a74-9f35-e2b884946f2d.source107-sync-20261008/code-completed-working.diff",
+    "afterEvidenceRef": "memory:notes/l26-curation-takeover/d7a5e018/fix3/source87-coherence-shared74-evidence.json",
+    "why": "This entry contains this exact judgment's full current source and companion card, keyed by the same identity; the current contract and its cited surviving assertions can be checked together. It is actual evidence for this named judgment, not merely the existence of a deletion hunk."
+  },
+  {
+    "sourceFile": "mcp/tests/knowledge_index_test_support.py",
+    "onboardingFile": "mcp/tests/knowledge_index_test_support.py.md",
+    "beforeEvidenceRef": "task:notes/reports/role-launch/260928-MIK-L26-worker-391d2ccd-9832-4a74-9f35-e2b884946f2d.source107-sync-20261008/code-completed-working.diff",
+    "afterEvidenceRef": "memory:notes/l26-curation-takeover/d7a5e018/fix3/source87-coherence-shared74-evidence.json",
+    "why": "This entry contains this exact judgment's full current source and companion card, keyed by the same identity; the current contract and its cited surviving assertions can be checked together. It is actual evidence for this named judgment, not merely the existence of a deletion hunk."
+  },
+  {
+    "sourceFile": "mcp/tests/read_scope_test_support.py",
+    "onboardingFile": "mcp/tests/read_scope_test_support.py.md",
+    "beforeEvidenceRef": "task:notes/reports/role-launch/260928-MIK-L26-worker-391d2ccd-9832-4a74-9f35-e2b884946f2d.source107-sync-20261008/code-completed-working.diff",
+    "afterEvidenceRef": "memory:notes/l26-curation-takeover/d7a5e018/fix3/source87-coherence-shared74-evidence.json",
+    "why": "This entry contains this exact judgment's full current source and companion card, keyed by the same identity; the current contract and its cited surviving assertions can be checked together. It is actual evidence for this named judgment, not merely the existence of a deletion hunk."
+  },
+  {
+    "sourceFile": "mcp/tests/test-evidence-lanes.toml",
+    "onboardingFile": "mcp/tests/test-evidence-lanes.toml.md",
+    "beforeEvidenceRef": "task:notes/reports/role-launch/260928-MIK-L26-worker-391d2ccd-9832-4a74-9f35-e2b884946f2d.source107-sync-20261008/code-completed-working.diff",
+    "afterEvidenceRef": "memory:notes/l26-curation-takeover/d7a5e018/fix3/source87-coherence-shared74-evidence.json",
+    "why": "This entry contains this exact judgment's full current source and companion card, keyed by the same identity; the current contract and its cited surviving assertions can be checked together. It is actual evidence for this named judgment, not merely the existence of a deletion hunk."
+  },
+  {
+    "sourceFile": "mcp/tests/test_direct_landing.py",
+    "onboardingFile": "mcp/tests/test_direct_landing.py.md",
+    "beforeEvidenceRef": "task:notes/reports/role-launch/260928-MIK-L26-worker-391d2ccd-9832-4a74-9f35-e2b884946f2d.source107-sync-20261008/code-completed-working.diff",
+    "afterEvidenceRef": "memory:notes/l26-curation-takeover/d7a5e018/fix3/source87-coherence-shared74-evidence.json",
+    "why": "This entry contains this exact judgment's full current source and companion card, keyed by the same identity; the current contract and its cited surviving assertions can be checked together. It is actual evidence for this named judgment, not merely the existence of a deletion hunk."
+  },
+  {
+    "sourceFile": "mcp/tests/test_git_command.py",
+    "onboardingFile": "mcp/tests/test_git_command.py.md",
+    "beforeEvidenceRef": "task:notes/reports/role-launch/260928-MIK-L26-worker-391d2ccd-9832-4a74-9f35-e2b884946f2d.source107-sync-20261008/code-completed-working.diff",
+    "afterEvidenceRef": "memory:notes/l26-curation-takeover/d7a5e018/fix3/source87-coherence-shared74-evidence.json",
+    "why": "This entry contains this exact judgment's full current source and companion card, keyed by the same identity; the current contract and its cited surviving assertions can be checked together. It is actual evidence for this named judgment, not merely the existence of a deletion hunk."
+  },
+  {
+    "sourceFile": "mcp/tests/test_historical_committed_leaf_review.py",
+    "onboardingFile": "mcp/tests/test_historical_committed_leaf_review.py.md",
+    "beforeEvidenceRef": "task:notes/reports/role-launch/260928-MIK-L26-worker-391d2ccd-9832-4a74-9f35-e2b884946f2d.source107-sync-20261008/code-completed-working.diff",
+    "afterEvidenceRef": "memory:notes/l26-curation-takeover/d7a5e018/fix3/source87-coherence-shared74-evidence.json",
+    "why": "This entry contains this exact judgment's full current source and companion card, keyed by the same identity; the current contract and its cited surviving assertions can be checked together. It is actual evidence for this named judgment, not merely the existence of a deletion hunk."
+  },
+  {
+    "sourceFile": "mcp/tests/test_knowledge_bootstrap.py",
+    "onboardingFile": "mcp/tests/test_knowledge_bootstrap.py.md",
+    "beforeEvidenceRef": "task:notes/reports/role-launch/260928-MIK-L26-worker-391d2ccd-9832-4a74-9f35-e2b884946f2d.source107-sync-20261008/code-completed-working.diff",
+    "afterEvidenceRef": "memory:notes/l26-curation-takeover/d7a5e018/fix3/source87-coherence-shared74-evidence.json",
+    "why": "This entry contains this exact judgment's full current source and companion card, keyed by the same identity; the current contract and its cited surviving assertions can be checked together. It is actual evidence for this named judgment, not merely the existence of a deletion hunk."
+  },
+  {
+    "sourceFile": "mcp/tests/test_knowledge_conversion_toolchain.py",
+    "onboardingFile": "mcp/tests/test_knowledge_conversion_toolchain.py.md",
+    "beforeEvidenceRef": "task:notes/reports/role-launch/260928-MIK-L26-worker-391d2ccd-9832-4a74-9f35-e2b884946f2d.source107-sync-20261008/code-completed-working.diff",
+    "afterEvidenceRef": "memory:notes/l26-curation-takeover/d7a5e018/fix3/source87-coherence-shared74-evidence.json",
+    "why": "This entry contains this exact judgment's full current source and companion card, keyed by the same identity; the current contract and its cited surviving assertions can be checked together. It is actual evidence for this named judgment, not merely the existence of a deletion hunk."
+  },
+  {
+    "sourceFile": "mcp/tests/test_knowledge_crossing.py",
+    "onboardingFile": "mcp/tests/test_knowledge_crossing.py.md",
+    "beforeEvidenceRef": "task:notes/reports/role-launch/260928-MIK-L26-worker-391d2ccd-9832-4a74-9f35-e2b884946f2d.source107-sync-20261008/code-completed-working.diff",
+    "afterEvidenceRef": "memory:notes/l26-curation-takeover/d7a5e018/fix3/source87-coherence-shared74-evidence.json",
+    "why": "This entry contains this exact judgment's full current source and companion card, keyed by the same identity; the current contract and its cited surviving assertions can be checked together. It is actual evidence for this named judgment, not merely the existence of a deletion hunk."
+  },
+  {
+    "sourceFile": "mcp/tests/test_knowledge_currentness.py",
+    "onboardingFile": "mcp/tests/test_knowledge_currentness.py.md",
+    "beforeEvidenceRef": "task:notes/reports/role-launch/260928-MIK-L26-worker-391d2ccd-9832-4a74-9f35-e2b884946f2d.source107-sync-20261008/code-completed-working.diff",
+    "afterEvidenceRef": "memory:notes/l26-curation-takeover/d7a5e018/fix3/source87-coherence-shared74-evidence.json",
+    "why": "This entry contains this exact judgment's full current source and companion card, keyed by the same identity; the current contract and its cited surviving assertions can be checked together. It is actual evidence for this named judgment, not merely the existence of a deletion hunk."
+  },
+  {
+    "sourceFile": "mcp/tests/test_knowledge_cutover.py",
+    "onboardingFile": "mcp/tests/test_knowledge_cutover.py.md",
+    "beforeEvidenceRef": "task:notes/reports/role-launch/260928-MIK-L26-worker-391d2ccd-9832-4a74-9f35-e2b884946f2d.source107-sync-20261008/code-completed-working.diff",
+    "afterEvidenceRef": "memory:notes/l26-curation-takeover/d7a5e018/fix3/source87-coherence-shared74-evidence.json",
+    "why": "This entry contains this exact judgment's full current source and companion card, keyed by the same identity; the current contract and its cited surviving assertions can be checked together. It is actual evidence for this named judgment, not merely the existence of a deletion hunk."
+  },
+  {
+    "sourceFile": "mcp/tests/test_knowledge_diff_attribution.py",
+    "onboardingFile": "mcp/tests/test_knowledge_diff_attribution.py.md",
+    "beforeEvidenceRef": "task:notes/reports/role-launch/260928-MIK-L26-worker-391d2ccd-9832-4a74-9f35-e2b884946f2d.source107-sync-20261008/code-completed-working.diff",
+    "afterEvidenceRef": "memory:notes/l26-curation-takeover/d7a5e018/fix3/source87-coherence-shared74-evidence.json",
+    "why": "This entry contains this exact judgment's full current source and companion card, keyed by the same identity; the current contract and its cited surviving assertions can be checked together. It is actual evidence for this named judgment, not merely the existence of a deletion hunk."
+  },
+  {
+    "sourceFile": "mcp/tests/test_knowledge_diff_boundaries.py",
+    "onboardingFile": "mcp/tests/test_knowledge_diff_boundaries.py.md",
+    "beforeEvidenceRef": "task:notes/reports/role-launch/260928-MIK-L26-worker-391d2ccd-9832-4a74-9f35-e2b884946f2d.source107-sync-20261008/code-completed-working.diff",
+    "afterEvidenceRef": "memory:notes/l26-curation-takeover/d7a5e018/fix3/source87-coherence-shared74-evidence.json",
+    "why": "This entry contains this exact judgment's full current source and companion card, keyed by the same identity; the current contract and its cited surviving assertions can be checked together. It is actual evidence for this named judgment, not merely the existence of a deletion hunk."
+  },
+  {
+    "sourceFile": "mcp/tests/test_knowledge_file_formats.py",
+    "onboardingFile": "mcp/tests/test_knowledge_file_formats.py.md",
+    "beforeEvidenceRef": "task:notes/reports/role-launch/260928-MIK-L26-worker-391d2ccd-9832-4a74-9f35-e2b884946f2d.source107-sync-20261008/code-completed-working.diff",
+    "afterEvidenceRef": "memory:notes/l26-curation-takeover/d7a5e018/fix3/source87-coherence-shared74-evidence.json",
+    "why": "This entry contains this exact judgment's full current source and companion card, keyed by the same identity; the current contract and its cited surviving assertions can be checked together. It is actual evidence for this named judgment, not merely the existence of a deletion hunk."
+  },
+  {
+    "sourceFile": "mcp/tests/test_knowledge_gate_routes.py",
+    "onboardingFile": "mcp/tests/test_knowledge_gate_routes.py.md",
+    "beforeEvidenceRef": "task:notes/reports/role-launch/260928-MIK-L26-worker-391d2ccd-9832-4a74-9f35-e2b884946f2d.source107-sync-20261008/code-completed-working.diff",
+    "afterEvidenceRef": "memory:notes/l26-curation-takeover/d7a5e018/fix3/source87-coherence-shared74-evidence.json",
+    "why": "This entry contains this exact judgment's full current source and companion card, keyed by the same identity; the current contract and its cited surviving assertions can be checked together. It is actual evidence for this named judgment, not merely the existence of a deletion hunk."
+  },
+  {
+    "sourceFile": "mcp/tests/test_knowledge_history_files.py",
+    "onboardingFile": "mcp/tests/test_knowledge_history_files.py.md",
+    "beforeEvidenceRef": "task:notes/reports/role-launch/260928-MIK-L26-worker-391d2ccd-9832-4a74-9f35-e2b884946f2d.source107-sync-20261008/code-completed-working.diff",
+    "afterEvidenceRef": "memory:notes/l26-curation-takeover/d7a5e018/fix3/source87-coherence-shared74-evidence.json",
+    "why": "This entry contains this exact judgment's full current source and companion card, keyed by the same identity; the current contract and its cited surviving assertions can be checked together. It is actual evidence for this named judgment, not merely the existence of a deletion hunk."
+  },
+  {
+    "sourceFile": "mcp/tests/test_knowledge_index_reuse.py",
+    "onboardingFile": "mcp/tests/test_knowledge_index_reuse.py.md",
+    "beforeEvidenceRef": "task:notes/reports/role-launch/260928-MIK-L26-worker-391d2ccd-9832-4a74-9f35-e2b884946f2d.source107-sync-20261008/code-completed-working.diff",
+    "afterEvidenceRef": "memory:notes/l26-curation-takeover/d7a5e018/fix3/source87-coherence-shared74-evidence.json",
+    "why": "This entry contains this exact judgment's full current source and companion card, keyed by the same identity; the current contract and its cited surviving assertions can be checked together. It is actual evidence for this named judgment, not merely the existence of a deletion hunk."
+  },
+  {
+    "sourceFile": "mcp/tests/test_knowledge_index_surfaces.py",
+    "onboardingFile": "mcp/tests/test_knowledge_index_surfaces.py.md",
+    "beforeEvidenceRef": "task:notes/reports/role-launch/260928-MIK-L26-worker-391d2ccd-9832-4a74-9f35-e2b884946f2d.source107-sync-20261008/code-completed-working.diff",
+    "afterEvidenceRef": "memory:notes/l26-curation-takeover/d7a5e018/fix3/source87-coherence-shared74-evidence.json",
+    "why": "This entry contains this exact judgment's full current source and companion card, keyed by the same identity; the current contract and its cited surviving assertions can be checked together. It is actual evidence for this named judgment, not merely the existence of a deletion hunk."
+  },
+  {
+    "sourceFile": "mcp/tests/test_knowledge_leaf_read.py",
+    "onboardingFile": "mcp/tests/test_knowledge_leaf_read.py.md",
+    "beforeEvidenceRef": "task:notes/reports/role-launch/260928-MIK-L26-worker-391d2ccd-9832-4a74-9f35-e2b884946f2d.source107-sync-20261008/code-completed-working.diff",
+    "afterEvidenceRef": "memory:notes/l26-curation-takeover/d7a5e018/fix3/source87-coherence-shared74-evidence.json",
+    "why": "This entry contains this exact judgment's full current source and companion card, keyed by the same identity; the current contract and its cited surviving assertions can be checked together. It is actual evidence for this named judgment, not merely the existence of a deletion hunk."
+  },
+  {
+    "sourceFile": "mcp/tests/test_knowledge_paging.py",
+    "onboardingFile": "mcp/tests/test_knowledge_paging.py.md",
+    "beforeEvidenceRef": "task:notes/reports/role-launch/260928-MIK-L26-worker-391d2ccd-9832-4a74-9f35-e2b884946f2d.source107-sync-20261008/code-completed-working.diff",
+    "afterEvidenceRef": "memory:notes/l26-curation-takeover/d7a5e018/fix3/source87-coherence-shared74-evidence.json",
+    "why": "This entry contains this exact judgment's full current source and companion card, keyed by the same identity; the current contract and its cited surviving assertions can be checked together. It is actual evidence for this named judgment, not merely the existence of a deletion hunk."
+  },
+  {
+    "sourceFile": "mcp/tests/test_knowledge_proofs.py",
+    "onboardingFile": "mcp/tests/test_knowledge_proofs.py.md",
+    "beforeEvidenceRef": "task:notes/reports/role-launch/260928-MIK-L26-worker-391d2ccd-9832-4a74-9f35-e2b884946f2d.source107-sync-20261008/code-completed-working.diff",
+    "afterEvidenceRef": "memory:notes/l26-curation-takeover/d7a5e018/fix3/source87-coherence-shared74-evidence.json",
+    "why": "This entry contains this exact judgment's full current source and companion card, keyed by the same identity; the current contract and its cited surviving assertions can be checked together. It is actual evidence for this named judgment, not merely the existence of a deletion hunk."
+  },
+  {
+    "sourceFile": "mcp/tests/test_knowledge_read_boundaries.py",
+    "onboardingFile": "mcp/tests/test_knowledge_read_boundaries.py.md",
+    "beforeEvidenceRef": "task:notes/reports/role-launch/260928-MIK-L26-worker-391d2ccd-9832-4a74-9f35-e2b884946f2d.source107-sync-20261008/code-completed-working.diff",
+    "afterEvidenceRef": "memory:notes/l26-curation-takeover/d7a5e018/fix3/source87-coherence-shared74-evidence.json",
+    "why": "This entry contains this exact judgment's full current source and companion card, keyed by the same identity; the current contract and its cited surviving assertions can be checked together. It is actual evidence for this named judgment, not merely the existence of a deletion hunk."
+  },
+  {
+    "sourceFile": "mcp/tests/test_knowledge_read_paths.py",
+    "onboardingFile": "mcp/tests/test_knowledge_read_paths.py.md",
+    "beforeEvidenceRef": "task:notes/reports/role-launch/260928-MIK-L26-worker-391d2ccd-9832-4a74-9f35-e2b884946f2d.source107-sync-20261008/code-completed-working.diff",
+    "afterEvidenceRef": "memory:notes/l26-curation-takeover/d7a5e018/fix3/source87-coherence-shared74-evidence.json",
+    "why": "This entry contains this exact judgment's full current source and companion card, keyed by the same identity; the current contract and its cited surviving assertions can be checked together. It is actual evidence for this named judgment, not merely the existence of a deletion hunk."
+  },
+  {
+    "sourceFile": "mcp/tests/test_knowledge_read_scope.py",
+    "onboardingFile": "mcp/tests/test_knowledge_read_scope.py.md",
+    "beforeEvidenceRef": "task:notes/reports/role-launch/260928-MIK-L26-worker-391d2ccd-9832-4a74-9f35-e2b884946f2d.source107-sync-20261008/code-completed-working.diff",
+    "afterEvidenceRef": "memory:notes/l26-curation-takeover/d7a5e018/fix3/source87-coherence-shared74-evidence.json",
+    "why": "This entry contains this exact judgment's full current source and companion card, keyed by the same identity; the current contract and its cited surviving assertions can be checked together. It is actual evidence for this named judgment, not merely the existence of a deletion hunk."
+  },
+  {
+    "sourceFile": "mcp/tests/test_knowledge_reopen.py",
+    "onboardingFile": "mcp/tests/test_knowledge_reopen.py.md",
+    "beforeEvidenceRef": "task:notes/reports/role-launch/260928-MIK-L26-worker-391d2ccd-9832-4a74-9f35-e2b884946f2d.source107-sync-20261008/code-completed-working.diff",
+    "afterEvidenceRef": "memory:notes/l26-curation-takeover/d7a5e018/fix3/source87-coherence-shared74-evidence.json",
+    "why": "This entry contains this exact judgment's full current source and companion card, keyed by the same identity; the current contract and its cited surviving assertions can be checked together. It is actual evidence for this named judgment, not merely the existence of a deletion hunk."
+  },
+  {
+    "sourceFile": "mcp/tests/test_knowledge_requirement_reference_contract.py",
+    "onboardingFile": "mcp/tests/test_knowledge_requirement_reference_contract.py.md",
+    "beforeEvidenceRef": "task:notes/reports/role-launch/260928-MIK-L26-worker-391d2ccd-9832-4a74-9f35-e2b884946f2d.source107-sync-20261008/code-completed-working.diff",
+    "afterEvidenceRef": "memory:notes/l26-curation-takeover/d7a5e018/fix3/source87-coherence-shared74-evidence.json",
+    "why": "This entry contains this exact judgment's full current source and companion card, keyed by the same identity; the current contract and its cited surviving assertions can be checked together. It is actual evidence for this named judgment, not merely the existence of a deletion hunk."
+  },
+  {
+    "sourceFile": "mcp/tests/test_knowledge_review_attributed_source_content.py",
+    "onboardingFile": "mcp/tests/test_knowledge_review_attributed_source_content.py.md",
+    "beforeEvidenceRef": "task:notes/reports/role-launch/260928-MIK-L26-worker-391d2ccd-9832-4a74-9f35-e2b884946f2d.source107-sync-20261008/code-completed-working.diff",
+    "afterEvidenceRef": "memory:notes/l26-curation-takeover/d7a5e018/fix3/source87-coherence-shared74-evidence.json",
+    "why": "This entry contains this exact judgment's full current source and companion card, keyed by the same identity; the current contract and its cited surviving assertions can be checked together. It is actual evidence for this named judgment, not merely the existence of a deletion hunk."
+  },
+  {
+    "sourceFile": "mcp/tests/test_knowledge_review_attribution_precedence.py",
+    "onboardingFile": "mcp/tests/test_knowledge_review_attribution_precedence.py.md",
+    "beforeEvidenceRef": "task:notes/reports/role-launch/260928-MIK-L26-worker-391d2ccd-9832-4a74-9f35-e2b884946f2d.source107-sync-20261008/code-completed-working.diff",
+    "afterEvidenceRef": "memory:notes/l26-curation-takeover/d7a5e018/fix3/source87-coherence-shared74-evidence.json",
+    "why": "This entry contains this exact judgment's full current source and companion card, keyed by the same identity; the current contract and its cited surviving assertions can be checked together. It is actual evidence for this named judgment, not merely the existence of a deletion hunk."
+  },
+  {
+    "sourceFile": "mcp/tests/test_knowledge_review_comparison_generation.py",
+    "onboardingFile": "mcp/tests/test_knowledge_review_comparison_generation.py.md",
+    "beforeEvidenceRef": "task:notes/reports/role-launch/260928-MIK-L26-worker-391d2ccd-9832-4a74-9f35-e2b884946f2d.source107-sync-20261008/code-completed-working.diff",
+    "afterEvidenceRef": "memory:notes/l26-curation-takeover/d7a5e018/fix3/source87-coherence-shared74-evidence.json",
+    "why": "This entry contains this exact judgment's full current source and companion card, keyed by the same identity; the current contract and its cited surviving assertions can be checked together. It is actual evidence for this named judgment, not merely the existence of a deletion hunk."
+  },
+  {
+    "sourceFile": "mcp/tests/test_knowledge_review_evidence_channels.py",
+    "onboardingFile": "mcp/tests/test_knowledge_review_evidence_channels.py.md",
+    "beforeEvidenceRef": "task:notes/reports/role-launch/260928-MIK-L26-worker-391d2ccd-9832-4a74-9f35-e2b884946f2d.source107-sync-20261008/code-completed-working.diff",
+    "afterEvidenceRef": "memory:notes/l26-curation-takeover/d7a5e018/fix3/source87-coherence-shared74-evidence.json",
+    "why": "This entry contains this exact judgment's full current source and companion card, keyed by the same identity; the current contract and its cited surviving assertions can be checked together. It is actual evidence for this named judgment, not merely the existence of a deletion hunk."
+  },
+  {
+    "sourceFile": "mcp/tests/test_knowledge_review_one_sided_statements.py",
+    "onboardingFile": "mcp/tests/test_knowledge_review_one_sided_statements.py.md",
+    "beforeEvidenceRef": "task:notes/reports/role-launch/260928-MIK-L26-worker-391d2ccd-9832-4a74-9f35-e2b884946f2d.source107-sync-20261008/code-completed-working.diff",
+    "afterEvidenceRef": "memory:notes/l26-curation-takeover/d7a5e018/fix3/source87-coherence-shared74-evidence.json",
+    "why": "This entry contains this exact judgment's full current source and companion card, keyed by the same identity; the current contract and its cited surviving assertions can be checked together. It is actual evidence for this named judgment, not merely the existence of a deletion hunk."
+  },
+  {
+    "sourceFile": "mcp/tests/test_knowledge_review_relationship_line.py",
+    "onboardingFile": "mcp/tests/test_knowledge_review_relationship_line.py.md",
+    "beforeEvidenceRef": "task:notes/reports/role-launch/260928-MIK-L26-worker-391d2ccd-9832-4a74-9f35-e2b884946f2d.source107-sync-20261008/code-completed-working.diff",
+    "afterEvidenceRef": "memory:notes/l26-curation-takeover/d7a5e018/fix3/source87-coherence-shared74-evidence.json",
+    "why": "This entry contains this exact judgment's full current source and companion card, keyed by the same identity; the current contract and its cited surviving assertions can be checked together. It is actual evidence for this named judgment, not merely the existence of a deletion hunk."
+  },
+  {
+    "sourceFile": "mcp/tests/test_knowledge_review_relationship_movement.py",
+    "onboardingFile": "mcp/tests/test_knowledge_review_relationship_movement.py.md",
+    "beforeEvidenceRef": "task:notes/reports/role-launch/260928-MIK-L26-worker-391d2ccd-9832-4a74-9f35-e2b884946f2d.source107-sync-20261008/code-completed-working.diff",
+    "afterEvidenceRef": "memory:notes/l26-curation-takeover/d7a5e018/fix3/source87-coherence-shared74-evidence.json",
+    "why": "This entry contains this exact judgment's full current source and companion card, keyed by the same identity; the current contract and its cited surviving assertions can be checked together. It is actual evidence for this named judgment, not merely the existence of a deletion hunk."
+  },
+  {
+    "sourceFile": "mcp/tests/test_knowledge_review_relationship_reach.py",
+    "onboardingFile": "mcp/tests/test_knowledge_review_relationship_reach.py.md",
+    "beforeEvidenceRef": "task:notes/reports/role-launch/260928-MIK-L26-worker-391d2ccd-9832-4a74-9f35-e2b884946f2d.source107-sync-20261008/code-completed-working.diff",
+    "afterEvidenceRef": "memory:notes/l26-curation-takeover/d7a5e018/fix3/source87-coherence-shared74-evidence.json",
+    "why": "This entry contains this exact judgment's full current source and companion card, keyed by the same identity; the current contract and its cited surviving assertions can be checked together. It is actual evidence for this named judgment, not merely the existence of a deletion hunk."
+  },
+  {
+    "sourceFile": "mcp/tests/test_knowledge_review_resolution_and_route.py",
+    "onboardingFile": "mcp/tests/test_knowledge_review_resolution_and_route.py.md",
+    "beforeEvidenceRef": "task:notes/reports/role-launch/260928-MIK-L26-worker-391d2ccd-9832-4a74-9f35-e2b884946f2d.source107-sync-20261008/code-completed-working.diff",
+    "afterEvidenceRef": "memory:notes/l26-curation-takeover/d7a5e018/fix3/source87-coherence-shared74-evidence.json",
+    "why": "This entry contains this exact judgment's full current source and companion card, keyed by the same identity; the current contract and its cited surviving assertions can be checked together. It is actual evidence for this named judgment, not merely the existence of a deletion hunk."
+  },
+  {
+    "sourceFile": "mcp/tests/test_knowledge_review_revision_selection.py",
+    "onboardingFile": "mcp/tests/test_knowledge_review_revision_selection.py.md",
+    "beforeEvidenceRef": "task:notes/reports/role-launch/260928-MIK-L26-worker-391d2ccd-9832-4a74-9f35-e2b884946f2d.source107-sync-20261008/code-completed-working.diff",
+    "afterEvidenceRef": "memory:notes/l26-curation-takeover/d7a5e018/fix3/source87-coherence-shared74-evidence.json",
+    "why": "This entry contains this exact judgment's full current source and companion card, keyed by the same identity; the current contract and its cited surviving assertions can be checked together. It is actual evidence for this named judgment, not merely the existence of a deletion hunk."
+  },
+  {
+    "sourceFile": "mcp/tests/test_knowledge_review_source_endpoints.py",
+    "onboardingFile": "mcp/tests/test_knowledge_review_source_endpoints.py.md",
+    "beforeEvidenceRef": "task:notes/reports/role-launch/260928-MIK-L26-worker-391d2ccd-9832-4a74-9f35-e2b884946f2d.source107-sync-20261008/code-completed-working.diff",
+    "afterEvidenceRef": "memory:notes/l26-curation-takeover/d7a5e018/fix3/source87-coherence-shared74-evidence.json",
+    "why": "This entry contains this exact judgment's full current source and companion card, keyed by the same identity; the current contract and its cited surviving assertions can be checked together. It is actual evidence for this named judgment, not merely the existence of a deletion hunk."
+  },
+  {
+    "sourceFile": "mcp/tests/test_knowledge_review_subject_isolation.py",
+    "onboardingFile": "mcp/tests/test_knowledge_review_subject_isolation.py.md",
+    "beforeEvidenceRef": "task:notes/reports/role-launch/260928-MIK-L26-worker-391d2ccd-9832-4a74-9f35-e2b884946f2d.source107-sync-20261008/code-completed-working.diff",
+    "afterEvidenceRef": "memory:notes/l26-curation-takeover/d7a5e018/fix3/source87-coherence-shared74-evidence.json",
+    "why": "This entry contains this exact judgment's full current source and companion card, keyed by the same identity; the current contract and its cited surviving assertions can be checked together. It is actual evidence for this named judgment, not merely the existence of a deletion hunk."
+  },
+  {
+    "sourceFile": "mcp/tests/test_knowledge_revision_seals.py",
+    "onboardingFile": "mcp/tests/test_knowledge_revision_seals.py.md",
+    "beforeEvidenceRef": "task:notes/reports/role-launch/260928-MIK-L26-worker-391d2ccd-9832-4a74-9f35-e2b884946f2d.source107-sync-20261008/code-completed-working.diff",
+    "afterEvidenceRef": "memory:notes/l26-curation-takeover/d7a5e018/fix3/source87-coherence-shared74-evidence.json",
+    "why": "This entry contains this exact judgment's full current source and companion card, keyed by the same identity; the current contract and its cited surviving assertions can be checked together. It is actual evidence for this named judgment, not merely the existence of a deletion hunk."
+  },
+  {
+    "sourceFile": "mcp/tests/test_knowledge_store.py",
+    "onboardingFile": "mcp/tests/test_knowledge_store.py.md",
+    "beforeEvidenceRef": "task:notes/reports/role-launch/260928-MIK-L26-worker-391d2ccd-9832-4a74-9f35-e2b884946f2d.source107-sync-20261008/code-completed-working.diff",
+    "afterEvidenceRef": "memory:notes/l26-curation-takeover/d7a5e018/fix3/source87-coherence-shared74-evidence.json",
+    "why": "This entry contains this exact judgment's full current source and companion card, keyed by the same identity; the current contract and its cited surviving assertions can be checked together. It is actual evidence for this named judgment, not merely the existence of a deletion hunk."
+  },
+  {
+    "sourceFile": "mcp/tests/test_knowledge_worklist_leaf.py",
+    "onboardingFile": "mcp/tests/test_knowledge_worklist_leaf.py.md",
+    "beforeEvidenceRef": "task:notes/reports/role-launch/260928-MIK-L26-worker-391d2ccd-9832-4a74-9f35-e2b884946f2d.source107-sync-20261008/code-completed-working.diff",
+    "afterEvidenceRef": "memory:notes/l26-curation-takeover/d7a5e018/fix3/source87-coherence-shared74-evidence.json",
+    "why": "This entry contains this exact judgment's full current source and companion card, keyed by the same identity; the current contract and its cited surviving assertions can be checked together. It is actual evidence for this named judgment, not merely the existence of a deletion hunk."
+  },
+  {
+    "sourceFile": "mcp/tests/test_knowledge_writer.py",
+    "onboardingFile": "mcp/tests/test_knowledge_writer.py.md",
+    "beforeEvidenceRef": "task:notes/reports/role-launch/260928-MIK-L26-worker-391d2ccd-9832-4a74-9f35-e2b884946f2d.source107-sync-20261008/code-completed-working.diff",
+    "afterEvidenceRef": "memory:notes/l26-curation-takeover/d7a5e018/fix3/source87-coherence-shared74-evidence.json",
+    "why": "This entry contains this exact judgment's full current source and companion card, keyed by the same identity; the current contract and its cited surviving assertions can be checked together. It is actual evidence for this named judgment, not merely the existence of a deletion hunk."
+  },
+  {
+    "sourceFile": "mcp/tests/test_onboarding_trace_gate.py",
+    "onboardingFile": "mcp/tests/test_onboarding_trace_gate.py.md",
+    "beforeEvidenceRef": "task:notes/reports/role-launch/260928-MIK-L26-worker-391d2ccd-9832-4a74-9f35-e2b884946f2d.source107-sync-20261008/code-completed-working.diff",
+    "afterEvidenceRef": "memory:notes/l26-curation-takeover/d7a5e018/fix3/source87-coherence-shared74-evidence.json",
+    "why": "This entry contains this exact judgment's full current source and companion card, keyed by the same identity; the current contract and its cited surviving assertions can be checked together. It is actual evidence for this named judgment, not merely the existence of a deletion hunk."
+  },
+  {
+    "sourceFile": "mcp/tests/test_post_integration_cleanup_guidance.py",
+    "onboardingFile": "mcp/tests/test_post_integration_cleanup_guidance.py.md",
+    "beforeEvidenceRef": "task:notes/reports/role-launch/260928-MIK-L26-worker-391d2ccd-9832-4a74-9f35-e2b884946f2d.source107-sync-20261008/code-completed-working.diff",
+    "afterEvidenceRef": "memory:notes/l26-curation-takeover/d7a5e018/fix3/source87-coherence-shared74-evidence.json",
+    "why": "This entry contains this exact judgment's full current source and companion card, keyed by the same identity; the current contract and its cited surviving assertions can be checked together. It is actual evidence for this named judgment, not merely the existence of a deletion hunk."
+  },
+  {
+    "sourceFile": "mcp/tests/test_read_ar_files.py",
+    "onboardingFile": "mcp/tests/test_read_ar_files.py.md",
+    "beforeEvidenceRef": "task:notes/reports/role-launch/260928-MIK-L26-worker-391d2ccd-9832-4a74-9f35-e2b884946f2d.source107-sync-20261008/code-completed-working.diff",
+    "afterEvidenceRef": "memory:notes/l26-curation-takeover/d7a5e018/fix3/source87-coherence-shared74-evidence.json",
+    "why": "This entry contains this exact judgment's full current source and companion card, keyed by the same identity; the current contract and its cited surviving assertions can be checked together. It is actual evidence for this named judgment, not merely the existence of a deletion hunk."
+  },
+  {
+    "sourceFile": "mcp/tests/test_review_assessment_history.py",
+    "onboardingFile": "mcp/tests/test_review_assessment_history.py.md",
+    "beforeEvidenceRef": "task:notes/reports/role-launch/260928-MIK-L26-worker-391d2ccd-9832-4a74-9f35-e2b884946f2d.source107-sync-20261008/code-completed-working.diff",
+    "afterEvidenceRef": "memory:notes/l26-curation-takeover/d7a5e018/fix3/source87-coherence-shared74-evidence.json",
+    "why": "This entry contains this exact judgment's full current source and companion card, keyed by the same identity; the current contract and its cited surviving assertions can be checked together. It is actual evidence for this named judgment, not merely the existence of a deletion hunk."
+  },
+  {
+    "sourceFile": "mcp/tests/test_review_assessment_history_repairs.py",
+    "onboardingFile": "mcp/tests/test_review_assessment_history_repairs.py.md",
+    "beforeEvidenceRef": "task:notes/reports/role-launch/260928-MIK-L26-worker-391d2ccd-9832-4a74-9f35-e2b884946f2d.source107-sync-20261008/code-completed-working.diff",
+    "afterEvidenceRef": "memory:notes/l26-curation-takeover/d7a5e018/fix3/source87-coherence-shared74-evidence.json",
+    "why": "This entry contains this exact judgment's full current source and companion card, keyed by the same identity; the current contract and its cited surviving assertions can be checked together. It is actual evidence for this named judgment, not merely the existence of a deletion hunk."
+  },
+  {
+    "sourceFile": "mcp/tests/test_review_assessments.py",
+    "onboardingFile": "mcp/tests/test_review_assessments.py.md",
+    "beforeEvidenceRef": "task:notes/reports/role-launch/260928-MIK-L26-worker-391d2ccd-9832-4a74-9f35-e2b884946f2d.source107-sync-20261008/code-completed-working.diff",
+    "afterEvidenceRef": "memory:notes/l26-curation-takeover/d7a5e018/fix3/source87-coherence-shared74-evidence.json",
+    "why": "This entry contains this exact judgment's full current source and companion card, keyed by the same identity; the current contract and its cited surviving assertions can be checked together. It is actual evidence for this named judgment, not merely the existence of a deletion hunk."
+  },
+  {
+    "sourceFile": "mcp/tests/test_review_bounded_pagination.py",
+    "onboardingFile": "mcp/tests/test_review_bounded_pagination.py.md",
+    "beforeEvidenceRef": "task:notes/reports/role-launch/260928-MIK-L26-worker-391d2ccd-9832-4a74-9f35-e2b884946f2d.source107-sync-20261008/code-completed-working.diff",
+    "afterEvidenceRef": "memory:notes/l26-curation-takeover/d7a5e018/fix3/source87-coherence-shared74-evidence.json",
+    "why": "This entry contains this exact judgment's full current source and companion card, keyed by the same identity; the current contract and its cited surviving assertions can be checked together. It is actual evidence for this named judgment, not merely the existence of a deletion hunk."
+  },
+  {
+    "sourceFile": "mcp/tests/test_review_external_git_movement_read.py",
+    "onboardingFile": "mcp/tests/test_review_external_git_movement_read.py.md",
+    "beforeEvidenceRef": "task:notes/reports/role-launch/260928-MIK-L26-worker-391d2ccd-9832-4a74-9f35-e2b884946f2d.source107-sync-20261008/code-completed-working.diff",
+    "afterEvidenceRef": "memory:notes/l26-curation-takeover/d7a5e018/fix3/source87-coherence-shared74-evidence.json",
+    "why": "This entry contains this exact judgment's full current source and companion card, keyed by the same identity; the current contract and its cited surviving assertions can be checked together. It is actual evidence for this named judgment, not merely the existence of a deletion hunk."
+  },
+  {
+    "sourceFile": "mcp/tests/test_review_family_context.py",
+    "onboardingFile": "mcp/tests/test_review_family_context.py.md",
+    "beforeEvidenceRef": "task:notes/reports/role-launch/260928-MIK-L26-worker-391d2ccd-9832-4a74-9f35-e2b884946f2d.source107-sync-20261008/code-completed-working.diff",
+    "afterEvidenceRef": "memory:notes/l26-curation-takeover/d7a5e018/fix3/source87-coherence-shared74-evidence.json",
+    "why": "This entry contains this exact judgment's full current source and companion card, keyed by the same identity; the current contract and its cited surviving assertions can be checked together. It is actual evidence for this named judgment, not merely the existence of a deletion hunk."
+  },
+  {
+    "sourceFile": "mcp/tests/test_review_family_context_population.py",
+    "onboardingFile": "mcp/tests/test_review_family_context_population.py.md",
+    "beforeEvidenceRef": "task:notes/reports/role-launch/260928-MIK-L26-worker-391d2ccd-9832-4a74-9f35-e2b884946f2d.source107-sync-20261008/code-completed-working.diff",
+    "afterEvidenceRef": "memory:notes/l26-curation-takeover/d7a5e018/fix3/source87-coherence-shared74-evidence.json",
+    "why": "This entry contains this exact judgment's full current source and companion card, keyed by the same identity; the current contract and its cited surviving assertions can be checked together. It is actual evidence for this named judgment, not merely the existence of a deletion hunk."
+  },
+  {
+    "sourceFile": "mcp/tests/test_review_family_member_sources.py",
+    "onboardingFile": "mcp/tests/test_review_family_member_sources.py.md",
+    "beforeEvidenceRef": "task:notes/reports/role-launch/260928-MIK-L26-worker-391d2ccd-9832-4a74-9f35-e2b884946f2d.source107-sync-20261008/code-completed-working.diff",
+    "afterEvidenceRef": "memory:notes/l26-curation-takeover/d7a5e018/fix3/source87-coherence-shared74-evidence.json",
+    "why": "This entry contains this exact judgment's full current source and companion card, keyed by the same identity; the current contract and its cited surviving assertions can be checked together. It is actual evidence for this named judgment, not merely the existence of a deletion hunk."
+  },
+  {
+    "sourceFile": "mcp/tests/test_review_final_output_receipt.py",
+    "onboardingFile": "mcp/tests/test_review_final_output_receipt.py.md",
+    "beforeEvidenceRef": "task:notes/reports/role-launch/260928-MIK-L26-worker-391d2ccd-9832-4a74-9f35-e2b884946f2d.source107-sync-20261008/code-completed-working.diff",
+    "afterEvidenceRef": "memory:notes/l26-curation-takeover/d7a5e018/fix3/source87-coherence-shared74-evidence.json",
+    "why": "This entry contains this exact judgment's full current source and companion card, keyed by the same identity; the current contract and its cited surviving assertions can be checked together. It is actual evidence for this named judgment, not merely the existence of a deletion hunk."
+  },
+  {
+    "sourceFile": "mcp/tests/test_review_git_trees.py",
+    "onboardingFile": "mcp/tests/test_review_git_trees.py.md",
+    "beforeEvidenceRef": "task:notes/reports/role-launch/260928-MIK-L26-worker-391d2ccd-9832-4a74-9f35-e2b884946f2d.source107-sync-20261008/code-completed-working.diff",
+    "afterEvidenceRef": "memory:notes/l26-curation-takeover/d7a5e018/fix3/source87-coherence-shared74-evidence.json",
+    "why": "This entry contains this exact judgment's full current source and companion card, keyed by the same identity; the current contract and its cited surviving assertions can be checked together. It is actual evidence for this named judgment, not merely the existence of a deletion hunk."
+  },
+  {
+    "sourceFile": "mcp/tests/test_review_intent_summary.py",
+    "onboardingFile": "mcp/tests/test_review_intent_summary.py.md",
+    "beforeEvidenceRef": "task:notes/reports/role-launch/260928-MIK-L26-worker-391d2ccd-9832-4a74-9f35-e2b884946f2d.source107-sync-20261008/code-completed-working.diff",
+    "afterEvidenceRef": "memory:notes/l26-curation-takeover/d7a5e018/fix3/source87-coherence-shared74-evidence.json",
+    "why": "This entry contains this exact judgment's full current source and companion card, keyed by the same identity; the current contract and its cited surviving assertions can be checked together. It is actual evidence for this named judgment, not merely the existence of a deletion hunk."
+  },
+  {
+    "sourceFile": "mcp/tests/test_review_subject_catalogue.py",
+    "onboardingFile": "mcp/tests/test_review_subject_catalogue.py.md",
+    "beforeEvidenceRef": "task:notes/reports/role-launch/260928-MIK-L26-worker-391d2ccd-9832-4a74-9f35-e2b884946f2d.source107-sync-20261008/code-completed-working.diff",
+    "afterEvidenceRef": "memory:notes/l26-curation-takeover/d7a5e018/fix3/source87-coherence-shared74-evidence.json",
+    "why": "This entry contains this exact judgment's full current source and companion card, keyed by the same identity; the current contract and its cited surviving assertions can be checked together. It is actual evidence for this named judgment, not merely the existence of a deletion hunk."
+  },
+  {
+    "sourceFile": "mcp/tests/test_review_sync_movement_read.py",
+    "onboardingFile": "mcp/tests/test_review_sync_movement_read.py.md",
+    "beforeEvidenceRef": "task:notes/reports/role-launch/260928-MIK-L26-worker-391d2ccd-9832-4a74-9f35-e2b884946f2d.source107-sync-20261008/code-completed-working.diff",
+    "afterEvidenceRef": "memory:notes/l26-curation-takeover/d7a5e018/fix3/source87-coherence-shared74-evidence.json",
+    "why": "This entry contains this exact judgment's full current source and companion card, keyed by the same identity; the current contract and its cited surviving assertions can be checked together. It is actual evidence for this named judgment, not merely the existence of a deletion hunk."
+  },
+  {
+    "sourceFile": "mcp/tests/test_review_sync_rebinding.py",
+    "onboardingFile": "mcp/tests/test_review_sync_rebinding.py.md",
+    "beforeEvidenceRef": "task:notes/reports/role-launch/260928-MIK-L26-worker-391d2ccd-9832-4a74-9f35-e2b884946f2d.source107-sync-20261008/code-completed-working.diff",
+    "afterEvidenceRef": "memory:notes/l26-curation-takeover/d7a5e018/fix3/source87-coherence-shared74-evidence.json",
+    "why": "This entry contains this exact judgment's full current source and companion card, keyed by the same identity; the current contract and its cited surviving assertions can be checked together. It is actual evidence for this named judgment, not merely the existence of a deletion hunk."
+  },
+  {
+    "sourceFile": "mcp/tests/test_role_instruction_wording.py",
+    "onboardingFile": "mcp/tests/test_role_instruction_wording.py.md",
+    "beforeEvidenceRef": "task:notes/reports/role-launch/260928-MIK-L26-worker-391d2ccd-9832-4a74-9f35-e2b884946f2d.source107-sync-20261008/code-completed-working.diff",
+    "afterEvidenceRef": "memory:notes/l26-curation-takeover/d7a5e018/fix3/source87-coherence-shared74-evidence.json",
+    "why": "This entry contains this exact judgment's full current source and companion card, keyed by the same identity; the current contract and its cited surviving assertions can be checked together. It is actual evidence for this named judgment, not merely the existence of a deletion hunk."
+  },
+  {
+    "sourceFile": "mcp/tests/test_task_reopen.py",
+    "onboardingFile": "mcp/tests/test_task_reopen.py.md",
+    "beforeEvidenceRef": "task:notes/reports/role-launch/260928-MIK-L26-worker-391d2ccd-9832-4a74-9f35-e2b884946f2d.source107-sync-20261008/code-completed-working.diff",
+    "afterEvidenceRef": "memory:notes/l26-curation-takeover/d7a5e018/fix3/source87-coherence-shared74-evidence.json",
+    "why": "This entry contains this exact judgment's full current source and companion card, keyed by the same identity; the current contract and its cited surviving assertions can be checked together. It is actual evidence for this named judgment, not merely the existence of a deletion hunk."
+  },
+  {
+    "sourceFile": "mcp/tests/test_tool_entry_point_sweep.py",
+    "onboardingFile": "mcp/tests/test_tool_entry_point_sweep.py.md",
+    "beforeEvidenceRef": "task:notes/reports/role-launch/260928-MIK-L26-worker-391d2ccd-9832-4a74-9f35-e2b884946f2d.source107-sync-20261008/code-completed-working.diff",
+    "afterEvidenceRef": "memory:notes/l26-curation-takeover/d7a5e018/fix3/source87-coherence-shared74-evidence.json",
+    "why": "This entry contains this exact judgment's full current source and companion card, keyed by the same identity; the current contract and its cited surviving assertions can be checked together. It is actual evidence for this named judgment, not merely the existence of a deletion hunk."
+  },
+  {
+    "sourceFile": "mcp/tests/test_tool_refusal_conformance.py",
+    "onboardingFile": "mcp/tests/test_tool_refusal_conformance.py.md",
+    "beforeEvidenceRef": "task:notes/reports/role-launch/260928-MIK-L26-worker-391d2ccd-9832-4a74-9f35-e2b884946f2d.source107-sync-20261008/code-completed-working.diff",
+    "afterEvidenceRef": "memory:notes/l26-curation-takeover/d7a5e018/fix3/source87-coherence-shared74-evidence.json",
+    "why": "This entry contains this exact judgment's full current source and companion card, keyed by the same identity; the current contract and its cited surviving assertions can be checked together. It is actual evidence for this named judgment, not merely the existence of a deletion hunk."
+  },
+  {
+    "sourceFile": "mcp/tests/test_tool_response_conformance.py",
+    "onboardingFile": "mcp/tests/test_tool_response_conformance.py.md",
+    "beforeEvidenceRef": "task:notes/reports/role-launch/260928-MIK-L26-worker-391d2ccd-9832-4a74-9f35-e2b884946f2d.source107-sync-20261008/code-completed-working.diff",
+    "afterEvidenceRef": "memory:notes/l26-curation-takeover/d7a5e018/fix3/source87-coherence-shared74-evidence.json",
+    "why": "This entry contains this exact judgment's full current source and companion card, keyed by the same identity; the current contract and its cited surviving assertions can be checked together. It is actual evidence for this named judgment, not merely the existence of a deletion hunk."
+  },
+  {
+    "sourceFile": "mcp/tests/test_transaction_only_worktree_delivery.py",
+    "onboardingFile": "mcp/tests/test_transaction_only_worktree_delivery.py.md",
+    "beforeEvidenceRef": "task:notes/reports/role-launch/260928-MIK-L26-worker-391d2ccd-9832-4a74-9f35-e2b884946f2d.source107-sync-20261008/code-completed-working.diff",
+    "afterEvidenceRef": "memory:notes/l26-curation-takeover/d7a5e018/fix3/source87-coherence-shared74-evidence.json",
+    "why": "This entry contains this exact judgment's full current source and companion card, keyed by the same identity; the current contract and its cited surviving assertions can be checked together. It is actual evidence for this named judgment, not merely the existence of a deletion hunk."
+  },
+  {
+    "sourceFile": "mcp/tests/test_unexplained_change_disposition.py",
+    "onboardingFile": "mcp/tests/test_unexplained_change_disposition.py.md",
+    "beforeEvidenceRef": "task:notes/reports/role-launch/260928-MIK-L26-worker-391d2ccd-9832-4a74-9f35-e2b884946f2d.source107-sync-20261008/code-completed-working.diff",
+    "afterEvidenceRef": "memory:notes/l26-curation-takeover/d7a5e018/fix3/source87-coherence-shared74-evidence.json",
+    "why": "This entry contains this exact judgment's full current source and companion card, keyed by the same identity; the current contract and its cited surviving assertions can be checked together. It is actual evidence for this named judgment, not merely the existence of a deletion hunk."
+  },
+  {
+    "sourceFile": "mcp/tests/test_worktree_sync.py",
+    "onboardingFile": "mcp/tests/test_worktree_sync.py.md",
+    "beforeEvidenceRef": "task:notes/reports/role-launch/260928-MIK-L26-worker-391d2ccd-9832-4a74-9f35-e2b884946f2d.source107-sync-20261008/code-completed-working.diff",
+    "afterEvidenceRef": "memory:notes/l26-curation-takeover/d7a5e018/fix3/source87-coherence-shared74-evidence.json",
+    "why": "This entry contains this exact judgment's full current source and companion card, keyed by the same identity; the current contract and its cited surviving assertions can be checked together. It is actual evidence for this named judgment, not merely the existence of a deletion hunk."
+  },
+  {
+    "sourceFile": "mcp/tests/tool_entry_point_world.py",
+    "onboardingFile": "mcp/tests/tool_entry_point_world.py.md",
+    "beforeEvidenceRef": "task:notes/reports/role-launch/260928-MIK-L26-worker-391d2ccd-9832-4a74-9f35-e2b884946f2d.source107-sync-20261008/code-completed-working.diff",
+    "afterEvidenceRef": "memory:notes/l26-curation-takeover/d7a5e018/fix3/source87-coherence-shared74-evidence.json",
+    "why": "This entry contains this exact judgment's full current source and companion card, keyed by the same identity; the current contract and its cited surviving assertions can be checked together. It is actual evidence for this named judgment, not merely the existence of a deletion hunk."
+  },
+  {
+    "sourceFile": "mcp/tests/tool_refusal_census_support.py",
+    "onboardingFile": "mcp/tests/tool_refusal_census_support.py.md",
+    "beforeEvidenceRef": "task:notes/reports/role-launch/260928-MIK-L26-worker-391d2ccd-9832-4a74-9f35-e2b884946f2d.source107-sync-20261008/code-completed-working.diff",
+    "afterEvidenceRef": "memory:notes/l26-curation-takeover/d7a5e018/fix3/source87-coherence-shared74-evidence.json",
+    "why": "This entry contains this exact judgment's full current source and companion card, keyed by the same identity; the current contract and its cited surviving assertions can be checked together. It is actual evidence for this named judgment, not merely the existence of a deletion hunk."
+  }
+]

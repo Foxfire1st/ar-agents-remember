@@ -2,96 +2,51 @@
   "path": "mcp/src/agents_remember/application/knowledge_gate/direct.py",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "The module docstring: the four sides and the leaf a direct landing names.\n\nAnchor: \"The route names no leaf, so the leaf is the owner\"",
+    "6": {
+      "note": "`_open_histories` implements the retained boundary described above.",
       "targets": [
         {
           "anchor": {
-            "blob": "12b3fd6c418ab251cb49cde68c275699ce3ea31c",
-            "content": "sha256:5ff58a4999312dc66b9f030eabe122f5111a543451b8a08dc908d5305e61579a",
-            "locator": {
-              "end": 18,
-              "kind": "line_range",
-              "start": 1
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "2": {
-      "note": "The open leaf history files of a candidate.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "12b3fd6c418ab251cb49cde68c275699ce3ea31c",
-            "content": "sha256:b9f70fb4d900face504a9b20efc4b23a7c292f811bbeb7af137632ef7aa8460b",
+            "blob": "501e843eb81c280a37a2da43c76b36539bc126c0",
+            "content": "sha256:1a82503335dfe34106b68ebfc42a8b0a4b73c46da93b5a15cea929aba31ba7eb",
             "locator": {
               "kind": "symbol",
-              "name": "open_leaf_owners"
+              "name": "_open_histories"
             }
           },
           "kind": "code"
         }
       ]
     },
-    "3": {
-      "note": "The verdict; a replay is not gated; exactly one owner.",
+    "7": {
+      "note": "`_source` implements the retained boundary described above.",
       "targets": [
         {
           "anchor": {
-            "blob": "12b3fd6c418ab251cb49cde68c275699ce3ea31c",
-            "content": "sha256:a8cc3e9db20c9928171d2a408eefe03410e764cc6ab6b6107e32a59b32ab0975",
+            "blob": "501e843eb81c280a37a2da43c76b36539bc126c0",
+            "content": "sha256:bd873bdcf78298beecac19a1079f5bb2b6ff9f78c0eaac94855c3fa8fee2de71",
+            "locator": {
+              "kind": "symbol",
+              "name": "_source"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "`direct_verdict` implements the retained boundary described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "501e843eb81c280a37a2da43c76b36539bc126c0",
+            "content": "sha256:54b6cb7c466287f7ef2e9d5a01ae4b66601375e047d96cab34838ff7e1c6efa6",
             "locator": {
               "kind": "symbol",
               "name": "direct_verdict"
             }
           },
           "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "12b3fd6c418ab251cb49cde68c275699ce3ea31c",
-            "content": "sha256:7121f38ad86daf6e5ec0046dafac68c1fabb086db56eb263748cb796323881fa",
-            "locator": {
-              "kind": "symbol",
-              "name": "_verdict"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "4": {
-      "note": "The worklist over the series sides, failing closed.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "12b3fd6c418ab251cb49cde68c275699ce3ea31c",
-            "content": "sha256:0e49b4be19d35dc91f3c53b2777953d9cbe81b16fc4a50805dfb5a63a297bfe1",
-            "locator": {
-              "kind": "symbol",
-              "name": "_worklist"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "5": {
-      "note": "The route test.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "a7b02b18c6ba61cd62c0caf04e1fd45e3f685253",
-            "content": "sha256:9684007c3c4abd98a35440692ff27c4bfedc74612fd78ea7e019334e29471b59",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_direct_landing_gates_names_its_leaf_closes_its_history_and_restores_on_refusal"
-            },
-            "path": "mcp/tests/test_knowledge_closeout_gate.py"
-          },
-          "kind": "test"
         }
       ]
     }

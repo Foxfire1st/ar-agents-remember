@@ -2,93 +2,29 @@
   "path": "mcp/tests/test_knowledge_review_attribution_precedence.py",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "The module's own statement (one enclosure, only the knowledge halves vary, nothing injected), and the import of the sibling's enclosure fixture.\n\nAnchor: \"Attribution precedence across knowledge availability, over one real review enclosure.\"; \"from test_knowledge_review_source_endpoints import LEAF_ID, EndpointFixture, build_endpoint_fixture\"",
+    "10": {
+      "note": "`test_an_empty_converted_base_counts_as_completely_inspected_for_absence` owns the current boundary described above.",
       "targets": [
         {
           "anchor": {
-            "blob": "1915a371ae0c3267fb2861c85694cc38e72302c8",
-            "content": "sha256:aec5b018e1d2c5d8f35ba5801f65396c6fed6cbfa0b4f4012ec5699f8ad8fc47",
+            "blob": "db8e79f3cba6883a4b097081334a412465c01635",
+            "content": "sha256:c7830afe8bd8ac54ff56c7f3747d52847807474f9de8bded225366c4c17f1414",
             "locator": {
-              "end": 41,
-              "kind": "line_range",
-              "start": 1
+              "kind": "symbol",
+              "name": "test_an_empty_converted_base_counts_as_completely_inspected_for_absence"
             }
           },
           "kind": "test"
         }
       ]
     },
-    "2": {
-      "note": "The sibling's enclosure fixture these cases build on.",
+    "11": {
+      "note": "`test_a_damaged_knowledge_half_cannot_support_a_negative_attribution_conclusion` owns the current boundary described above.",
       "targets": [
         {
           "anchor": {
-            "blob": "ef7ea37ef8748fc8652f213eb82a099ffd4ad708",
-            "content": "sha256:0c798a95c1ada8c9446d651225169cbdde97b5be1b2d1607112c87ae41550075",
-            "locator": {
-              "kind": "symbol",
-              "name": "EndpointFixture"
-            },
-            "path": "mcp/tests/test_knowledge_review_source_endpoints.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "ef7ea37ef8748fc8652f213eb82a099ffd4ad708",
-            "content": "sha256:f59fd381d9ee91d2ea59af9a8a0b994f40668abf4fb2974151cc8fe06d754a8c",
-            "locator": {
-              "kind": "symbol",
-              "name": "build_endpoint_fixture"
-            },
-            "path": "mcp/tests/test_knowledge_review_source_endpoints.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "ef7ea37ef8748fc8652f213eb82a099ffd4ad708",
-            "content": "sha256:6b87ab51917703f6031b540c5698a88766e31f15f8f0caff830885c9e4e0e130",
-            "locator": {
-              "kind": "symbol",
-              "name": "LEAF_ID"
-            },
-            "path": "mcp/tests/test_knowledge_review_source_endpoints.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "3": {
-      "note": "**The precedence cases: one unreadable half leaves the readable side attributed and the rest unknown; the same pair read completely confirms absence where the lost half could not; a damaged half cannot support a negative conclusion.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1915a371ae0c3267fb2861c85694cc38e72302c8",
-            "content": "sha256:b71b7ebe5c0891b694d0cd4fd2a7a07bf5a1015d4c1cf7e1d71d93e0c7e8a13c",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_one_unreadable_knowledge_half_leaves_the_readable_side_attributed_and_the_rest_unknown"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "1915a371ae0c3267fb2861c85694cc38e72302c8",
-            "content": "sha256:cadac3e8afb8e722463ecd2cceb6d92fcfd924f9f6a4932e612ebcea06260c25",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_the_same_pair_read_completely_confirms_absence_where_the_lost_half_could_not"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "1915a371ae0c3267fb2861c85694cc38e72302c8",
-            "content": "sha256:41246294a5f928656b90c3a0e636485b59ad98308dbf232c138e6cd2579ed4fe",
+            "blob": "db8e79f3cba6883a4b097081334a412465c01635",
+            "content": "sha256:6984c5db6e9442ccd83da7cad9eeb5ecf6bcdb706e9b86af68b6dbe0ea10b1d9",
             "locator": {
               "kind": "symbol",
               "name": "test_a_damaged_knowledge_half_cannot_support_a_negative_attribution_conclusion"
@@ -98,120 +34,17 @@
         }
       ]
     },
-    "4": {
-      "note": "**The empty-generation case: an identified empty first generation counts as completely inspected for absence.**",
+    "9": {
+      "note": "`test_one_unreadable_knowledge_half_leaves_the_readable_side_attributed_and_the_rest_unknown` owns the current boundary described above.",
       "targets": [
         {
           "anchor": {
-            "blob": "1915a371ae0c3267fb2861c85694cc38e72302c8",
-            "content": "sha256:34c32427119268deaae539e9b63c81e15fb8734ad777b5e95a1609838eb6632c",
+            "blob": "db8e79f3cba6883a4b097081334a412465c01635",
+            "content": "sha256:bab86f608af5e7616a8171381280f06d69cc9aa26e631a371aecc709c0a27828",
             "locator": {
               "kind": "symbol",
-              "name": "test_an_identified_empty_first_generation_counts_as_completely_inspected_for_absence"
+              "name": "test_one_unreadable_knowledge_half_leaves_the_readable_side_attributed_and_the_rest_unknown"
             }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "5": {
-      "note": "**The receipt cases: an unreadable candidate receipt is stated on the task route and refused on the subject route; a receipt that breaks after the preflight is stated in the pane and the limits.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1915a371ae0c3267fb2861c85694cc38e72302c8",
-            "content": "sha256:97c451c20648dc57d7a656aaee0feb7b2796c854ec3361d18053047c61a8da11",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_an_unreadable_candidate_receipt_is_stated_on_the_task_route_and_refused_on_the_subject_route"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "1915a371ae0c3267fb2861c85694cc38e72302c8",
-            "content": "sha256:a120aa29c46358484359014c6dde2fc071d2ecee8f9c8db351f3105801f00eec",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_receipt_that_breaks_after_the_preflight_is_stated_in_the_pane_and_the_limits"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "6": {
-      "note": "The two knowledge states built by their owners' own writers.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1915a371ae0c3267fb2861c85694cc38e72302c8",
-            "content": "sha256:d962281fd140ca3d6c9324687a2a0d736cbbcd1fdb09194c302329e170b4f2fb",
-            "locator": {
-              "kind": "symbol",
-              "name": "_damaged_origin"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "1915a371ae0c3267fb2861c85694cc38e72302c8",
-            "content": "sha256:f88c7136a1623e6bda57ced49dc3c9748e9acad4aa1fe3d884326d6f50839744",
-            "locator": {
-              "kind": "symbol",
-              "name": "_identified_empty_first_generation"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "7": {
-      "note": "The unit-regression lane row, beside its sibling's.\n\nAnchor: \"mcp/tests/test_knowledge_review_attribution_precedence.py\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "ad32196677d5800992fe4294b439f3e28af150ec",
-            "content": "sha256:a030c166ca646be6ba8660755a3045e04d6f7e624177ca6a9292fb454ccf9e2c",
-            "locator": {
-              "end": 155,
-              "kind": "line_range",
-              "start": 155
-            },
-            "path": "mcp/tests/test-evidence-lanes.toml"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "8": {
-      "note": "The two support artifacts whose exact `consumers` lists declare this module (at `:1449` and `:1505`).\n\nAnchor: \"path = \\\"mcp/tests/diff_scope_test_support.py\\\"\"; \"path = \\\"mcp/tests/read_scope_test_support.py\\\"\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
-            "content": "sha256:10376b5b780b80146f40765243adc592b7964790854d13302bee55d14cefd9b4",
-            "locator": {
-              "end": 1470,
-              "kind": "line_range",
-              "start": 1425
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
-            "content": "sha256:e7118f76415412eb4a1bebac16ee47221367526e65f12eefdc33592700c9008d",
-            "locator": {
-              "end": 1529,
-              "kind": "line_range",
-              "start": 1473
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
           },
           "kind": "test"
         }

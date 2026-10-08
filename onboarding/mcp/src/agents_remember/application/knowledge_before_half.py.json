@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/application/knowledge_before_half.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -35,7 +36,7 @@
         },
         {
           "anchor": {
-            "blob": "44ff650727251b3cc91dabc145df00cae16057dc",
+            "blob": "9bd771868db3dd26d3ff90ea75cbbf5bdcf4a8f1",
             "content": "sha256:793a7cb2f90b6d7e9ffd268240928c1f4241714c1d1581cc59150741b7fdd51d",
             "locator": {
               "kind": "symbol",
@@ -160,7 +161,7 @@
         },
         {
           "anchor": {
-            "blob": "005c44f99677f29c3777322502b77b732a3a0252",
+            "blob": "5683da86fac298ce2749ce49ffd1f76c7528e964",
             "content": "sha256:d7bb856b30683703482162fa47440e480ed5957164a1923ea79f1d9fd4623268",
             "locator": {
               "kind": "symbol",
@@ -172,31 +173,14 @@
         },
         {
           "anchor": {
-            "blob": "005c44f99677f29c3777322502b77b732a3a0252",
+            "blob": "0cc1ed4aa2ead143a66f5ee6b69cf490138fd7ae",
             "content": "sha256:38de40ad37b224c19e974e2527893d02dd5d9687bc0f46003dc274dbcc50c254",
             "locator": {
-              "end": 965,
+              "end": 936,
               "kind": "line_range",
-              "start": 953
+              "start": 924
             },
             "path": "mcp/src/agents_remember/models/knowledge/review.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "16": {
-      "note": "The dataset name both halves take, imported rather than re-spelled, so a half's dataset is the file the review opens.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4c96c7b0432485c2421b9b950d55026436d2e887",
-            "content": "sha256:41f589742d293ea113b9383d3fdd5dd040a7fef94f875ea4a4115ac3da6cc2cd",
-            "locator": {
-              "kind": "symbol",
-              "name": "CANDIDATE_DATABASE_NAME"
-            },
-            "path": "mcp/src/agents_remember/models/knowledge/snapshot.py"
           },
           "kind": "code"
         }
@@ -296,66 +280,14 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e546b1b51357a040df3bf17f5546842f57c0867e",
-            "content": "sha256:ed0b1757671c569f93a5ecce887e3462143ef5ebd403a5b7913bf17289a76917",
+            "blob": "9b2bf18774207aaeb442ff737297b3233369a1f3",
+            "content": "sha256:27a9c873654488cf58f4c6ddc339961f7b78ae8d69501b9c260c79ac8cff6bb6",
             "locator": {
-              "kind": "symbol",
-              "name": "SnapshotIdentity"
+              "end": 42,
+              "kind": "line_range",
+              "start": 42
             },
             "path": "mcp/src/agents_remember/models/knowledge/candidate.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e6afe9a77ee0a7eea7186504dad2c51fe4af0f74",
-            "content": "sha256:6b5189598499ba537c38070fc64c971ccdf28085ae54e01da71c9f5e04e98181",
-            "locator": {
-              "kind": "symbol",
-              "name": "read_candidate_receipt"
-            },
-            "path": "mcp/src/agents_remember/memory/knowledge/candidate_receipt.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "19": {
-      "note": "The candidate files the establishing sibling reads to bind a half to the candidate's own admission — recorded here because that is the contract this module's readers are handed, not because this module reads them.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4c96c7b0432485c2421b9b950d55026436d2e887",
-            "content": "sha256:aa4f2dacfb2d536a664a6c5ec2ea8cd434e978cf9e11530822e0c49fb7425d03",
-            "locator": {
-              "kind": "symbol",
-              "name": "candidate_database_path"
-            },
-            "path": "mcp/src/agents_remember/models/knowledge/snapshot.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "4c96c7b0432485c2421b9b950d55026436d2e887",
-            "content": "sha256:c3ba3b3d58162370d3d8a55fd3614ec20ba8602383fd66881ac176c256d5e0c8",
-            "locator": {
-              "kind": "symbol",
-              "name": "candidate_receipt_path"
-            },
-            "path": "mcp/src/agents_remember/models/knowledge/snapshot.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "4c96c7b0432485c2421b9b950d55026436d2e887",
-            "content": "sha256:1b325bf19a812c589bbba0f6254d0253ea389717794a2b2e762efaef82cc4ba6",
-            "locator": {
-              "kind": "symbol",
-              "name": "CandidateReceipt"
-            },
-            "path": "mcp/src/agents_remember/models/knowledge/snapshot.py"
           },
           "kind": "code"
         }
@@ -415,7 +347,7 @@
         },
         {
           "anchor": {
-            "blob": "3be18b96855aa2d725ab80b99bc4c1c174cf18bc",
+            "blob": "dd22c4941955ad551d6ed094c6503a0289de477b",
             "content": "sha256:d4df5cb13df1b5433b35b395e0582f21a8ab5ac77b3c765684c24b74b1274fef",
             "locator": {
               "kind": "symbol",
@@ -528,8 +460,8 @@
         },
         {
           "anchor": {
-            "blob": "9ce7740f85e7f3960b8ffa126ace2ca2c770e244",
-            "content": "sha256:ce7c891bd0acb0bdef2e379547bb884fdc58ad8b6633f6b83480ca1110be5a98",
+            "blob": "ad90ae505610018f1c93533e8edfdecb6d23bc6a",
+            "content": "sha256:b470016a68582db5c76917cafe4e4f445bb7277aa60a1e328f7b52b61d6cde64",
             "locator": {
               "kind": "symbol",
               "name": "atomic_write_bytes"
@@ -568,7 +500,7 @@
         },
         {
           "anchor": {
-            "blob": "20fbf8f958c5f13380299d7733886cfa8e92087c",
+            "blob": "23b5c3a4d378d345aa0a00aa163d4f8a9d452341",
             "content": "sha256:b5b99d723dd9e5dbdb29b03039cd159a5c704387f61a01abc7b9953e52d828e0",
             "locator": {
               "kind": "symbol",

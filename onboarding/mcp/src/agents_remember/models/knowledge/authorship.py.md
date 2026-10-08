@@ -35,9 +35,7 @@ would make two equal instants compare as different stored text.
 
 - Authorship is **authored input**: the store never manufactures an author, and importing a payload preserves the
   original envelope instead of replacing it with the importer.
-- The admitted application assigns `operation_id` and `recorded_at`
-  (`application.knowledge.write_authorship`), so a caller cannot back-date a record or claim an operation that
-  never happened.
+- Historical canonical-database admission assigned operation_id and recorded_at through application.knowledge.write_authorship. That module and writer were retired by MIK-R26. Authorship remains the validated provenance value index readers decode and include in revision payload verification; this model manufactures no author, operation or timestamp.
 - An empty `origin_refs` tuple means no source was declared — a fact about the record, not permission to infer one.
 - This envelope is the shared provenance vocabulary the read/diff contributor is declared to consume; it is not
   the Git commit attribution owner (`kernel/memory_attribution.py` remains that owner, and this leaf copied
@@ -59,8 +57,9 @@ No configured domain documentation could be checked.
 ### Repo-Internal References
 
 - The provenance envelope, its three validators and the normalized-UTC rule. [1]
-- The application assigns the operation identity and the recorded instant instead of accepting them. [2]
-- The envelope is stored as a canonical JSON typed column. [3]
+
+- The retained typed-JSON provenance decoder reads Authorship; its former encoder is fixture support only. [3]
+
 - The envelope is part of the sealed revision payload, so provenance is inside the digest. [4]
 - Git commit attribution stays with its existing owner; this leaf read it for context and copied nothing. [5]
 

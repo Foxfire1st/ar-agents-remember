@@ -20,8 +20,10 @@ No Domain Documentation entries are configured in this memory line's system/sour
 
 
 - The state matrix compares exact trees and original-index state. [1]
-- Same-size same-second rewrite changes the captured tree. [2]
+
 - Changed conversion rule alone follows actual indexed staging. [3]
 - Unusable copied-index capture recovers through the original full owner. [4]
 
 - The shared owner establishes a same-size rewrite in the index-write second. [5]
+
+- Same-size same-second rewrite changes the captured tree. [2]

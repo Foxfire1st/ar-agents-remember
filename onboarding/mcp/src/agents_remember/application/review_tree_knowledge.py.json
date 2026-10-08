@@ -1,9 +1,10 @@
 {
   "path": "mcp/src/agents_remember/application/review_tree_knowledge.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
-        "blob": "4da7ae4b0b7fef8d26bf4f0e5f6fb149b0315dc2",
+        "blob": "8a178d876684d0169dafd905b8770b7cc6730ff7",
         "content": "sha256:b905f32447788cc095fb8b6f9edc20b971fd2f36be44dc277c8526abcfdb45e2",
         "locator": {
           "kind": "symbol",
@@ -21,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "4da7ae4b0b7fef8d26bf4f0e5f6fb149b0315dc2",
+        "blob": "8a178d876684d0169dafd905b8770b7cc6730ff7",
         "content": "sha256:b905f32447788cc095fb8b6f9edc20b971fd2f36be44dc277c8526abcfdb45e2",
         "locator": {
           "kind": "symbol",
@@ -34,12 +35,12 @@
         "handoffEntry": "L40-actual-read-memo",
         "leaf": "260928-MIK-L40"
       },
-      "rationale": "For a live comparison hands the comparison's captured candidate trees, its base commits and the tree the before side is read as to the isolated worklist computation, which runs the one worklist owner without persisting, and reports whether the result is a computed complete worklist, the only kind the memo may keep. It captures nothing itself.",
+      "rationale": "Passes the comparison's captured code/memory CandidateTrees into the existing worklist owner with persist=False, and exposes completeness to parent memo admission without capturing again.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "4da7ae4b0b7fef8d26bf4f0e5f6fb149b0315dc2",
+        "blob": "8a178d876684d0169dafd905b8770b7cc6730ff7",
         "content": "sha256:4f733e1ab6cf07fee26124289daf5aab92148b2bb0c5bf7a8333e3e06e418082",
         "locator": {
           "kind": "symbol",
@@ -57,8 +58,8 @@
     },
     {
       "anchor": {
-        "blob": "4da7ae4b0b7fef8d26bf4f0e5f6fb149b0315dc2",
-        "content": "sha256:aee8ef3cdfd3b24f82fc89d08f9f6279d7b14e7ef8dc27d56736b50c525d97c4",
+        "blob": "8a178d876684d0169dafd905b8770b7cc6730ff7",
+        "content": "sha256:b68adbcba4f772f549b2e6e9540d15881adc327c8f53ae204ff7d4bf6d4ba0ea",
         "locator": {
           "kind": "symbol",
           "name": "_patches"
@@ -75,7 +76,7 @@
     },
     {
       "anchor": {
-        "blob": "4da7ae4b0b7fef8d26bf4f0e5f6fb149b0315dc2",
+        "blob": "8a178d876684d0169dafd905b8770b7cc6730ff7",
         "content": "sha256:4f733e1ab6cf07fee26124289daf5aab92148b2bb0c5bf7a8333e3e06e418082",
         "locator": {
           "kind": "symbol",
@@ -93,7 +94,24 @@
     },
     {
       "anchor": {
-        "blob": "4da7ae4b0b7fef8d26bf4f0e5f6fb149b0315dc2",
+        "blob": "e519bc0d2d773cee130aca4461fcedd473af79f7",
+        "content": "sha256:ae77e0216a45c5a17ea5eef43071dfd539748dfbf148a80db166d4d1b2f91d86",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-9YB1ER",
+      "invariant": "INV-5FC4T6",
+      "origin": {
+        "handoffEntry": "R3 Finding 10",
+        "leaf": "260928-MIK-L26"
+      },
+      "rationale": "The module that re-exported the worklist view; absence is the evidence.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "8a178d876684d0169dafd905b8770b7cc6730ff7",
         "content": "sha256:1ef2673b255d1e5062fd4f55873d76caf46ae73cc295396a298aac348959de3c",
         "locator": {
           "kind": "symbol",
@@ -106,13 +124,13 @@
         "handoffEntry": "L40-actual-read-memo",
         "leaf": "260928-MIK-L40"
       },
-      "rationale": "Returns kept parts only through the memo's recheck, keeps computed parts only when they are settled and no recorded input moved, computes once more when one moved and answers inputs_changing when one moved again, and turns a worklist process failure into a refusal. Nothing is kept in the moved-input and failed-process cases; a settled computation whose parts are unchanged is kept.",
+      "rationale": "Checks actual consumed task/dependency identities before successful return and keeps only fully settled parts; raced inputs become the existing candidate_unresolved refusal.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "4da7ae4b0b7fef8d26bf4f0e5f6fb149b0315dc2",
-        "content": "sha256:f549cc2ca8e1e31c8458825e6826764712fcbe8dc8997791757d664a74f8db7a",
+        "blob": "8a178d876684d0169dafd905b8770b7cc6730ff7",
+        "content": "sha256:b9198d9a7c6853fc912135bab8e52985a17a1a7658279c7bb618adfc3f1ceaf1",
         "locator": {
           "kind": "symbol",
           "name": "_Listed"
@@ -129,7 +147,7 @@
     },
     {
       "anchor": {
-        "blob": "4da7ae4b0b7fef8d26bf4f0e5f6fb149b0315dc2",
+        "blob": "8a178d876684d0169dafd905b8770b7cc6730ff7",
         "content": "sha256:1a7b83b1b277da4dc2a0726815efebb30b59ed14939d84e23f14bdf8384c5a52",
         "locator": {
           "kind": "symbol",
@@ -147,7 +165,7 @@
     },
     {
       "anchor": {
-        "blob": "4da7ae4b0b7fef8d26bf4f0e5f6fb149b0315dc2",
+        "blob": "8a178d876684d0169dafd905b8770b7cc6730ff7",
         "content": "sha256:1ef2673b255d1e5062fd4f55873d76caf46ae73cc295396a298aac348959de3c",
         "locator": {
           "kind": "symbol",
@@ -165,7 +183,7 @@
     },
     {
       "anchor": {
-        "blob": "4da7ae4b0b7fef8d26bf4f0e5f6fb149b0315dc2",
+        "blob": "8a178d876684d0169dafd905b8770b7cc6730ff7",
         "content": "sha256:1ef2673b255d1e5062fd4f55873d76caf46ae73cc295396a298aac348959de3c",
         "locator": {
           "kind": "symbol",
@@ -183,7 +201,7 @@
     },
     {
       "anchor": {
-        "blob": "4da7ae4b0b7fef8d26bf4f0e5f6fb149b0315dc2",
+        "blob": "8a178d876684d0169dafd905b8770b7cc6730ff7",
         "content": "sha256:084c889820ac13c41ce829ca9da28cc8fd479201ebea643531cd56cf76ae4d5a",
         "locator": {
           "kind": "symbol",
@@ -201,7 +219,7 @@
     },
     {
       "anchor": {
-        "blob": "4da7ae4b0b7fef8d26bf4f0e5f6fb149b0315dc2",
+        "blob": "8a178d876684d0169dafd905b8770b7cc6730ff7",
         "content": "sha256:87dd950d41bd76c27e6902f17c94851c7df49d6461b0ad89a7152dbfcf77cc9f",
         "locator": {
           "kind": "symbol",
@@ -219,7 +237,7 @@
     },
     {
       "anchor": {
-        "blob": "4da7ae4b0b7fef8d26bf4f0e5f6fb149b0315dc2",
+        "blob": "8a178d876684d0169dafd905b8770b7cc6730ff7",
         "content": "sha256:e200e27baf7751db02fa235dc8a91645ba22b12435d461cc9480410fbe18a6b6",
         "locator": {
           "kind": "symbol",
@@ -237,8 +255,8 @@
     },
     {
       "anchor": {
-        "blob": "4da7ae4b0b7fef8d26bf4f0e5f6fb149b0315dc2",
-        "content": "sha256:aee8ef3cdfd3b24f82fc89d08f9f6279d7b14e7ef8dc27d56736b50c525d97c4",
+        "blob": "8a178d876684d0169dafd905b8770b7cc6730ff7",
+        "content": "sha256:b68adbcba4f772f549b2e6e9540d15881adc327c8f53ae204ff7d4bf6d4ba0ea",
         "locator": {
           "kind": "symbol",
           "name": "_patches"
@@ -255,7 +273,7 @@
     },
     {
       "anchor": {
-        "blob": "4da7ae4b0b7fef8d26bf4f0e5f6fb149b0315dc2",
+        "blob": "8a178d876684d0169dafd905b8770b7cc6730ff7",
         "content": "sha256:251682e00048ea1933419d2aa8f4afb644fec374898474412a95126355e775dd",
         "locator": {
           "kind": "symbol",
@@ -273,8 +291,8 @@
     },
     {
       "anchor": {
-        "blob": "4da7ae4b0b7fef8d26bf4f0e5f6fb149b0315dc2",
-        "content": "sha256:0a5d60c4071eacd09af72106062521fa47da31547ee1bbd4fcf22a36036d8855",
+        "blob": "8a178d876684d0169dafd905b8770b7cc6730ff7",
+        "content": "sha256:4d5f3d4404e73b9a2d98a1d32fdf620ec0e979658e3cb027771e1b082675ec4f",
         "locator": {
           "kind": "symbol",
           "name": "_measured_tree_diff"
@@ -291,7 +309,7 @@
     },
     {
       "anchor": {
-        "blob": "4da7ae4b0b7fef8d26bf4f0e5f6fb149b0315dc2",
+        "blob": "8a178d876684d0169dafd905b8770b7cc6730ff7",
         "content": "sha256:a34c3bd77bbe15008b545f8503dc8bc80cb114df4db12be51f81a62a68847954",
         "locator": {
           "kind": "symbol",
@@ -304,7 +322,7 @@
         "handoffEntry": "L40-leaf-view-refusal-propagation",
         "leaf": "260928-MIK-L40"
       },
-      "rationale": "Returns a refusal of the leaf-wide parts (inputs that kept changing, or a worklist process failure) as the owner's refused result before it composes a tree answer, and takes the knowledge diff and the worklist from the same LeafViewParts instead of computing either again.",
+      "rationale": "Propagates a moved-actual-input refusal as the owner's refused result before composing a tree answer, and supplies diff/worklist from the same admitted LeafViewParts rather than independently recomputing either.",
       "role": "propagation-persistence"
     }
   ],
@@ -314,7 +332,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4da7ae4b0b7fef8d26bf4f0e5f6fb149b0315dc2",
+            "blob": "8a178d876684d0169dafd905b8770b7cc6730ff7",
             "content": "sha256:b482c150136dd46076ee8b4d2ce79e6103b01f0c24181296ee7ae3fe1f0b438a",
             "locator": {
               "kind": "symbol",
@@ -330,7 +348,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4da7ae4b0b7fef8d26bf4f0e5f6fb149b0315dc2",
+            "blob": "8a178d876684d0169dafd905b8770b7cc6730ff7",
             "content": "sha256:9c92527674d0f47ceab571fe67aff14f40ef8cc8f72a2b31257832bab3ab686d",
             "locator": {
               "kind": "symbol",
@@ -346,7 +364,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4da7ae4b0b7fef8d26bf4f0e5f6fb149b0315dc2",
+            "blob": "8a178d876684d0169dafd905b8770b7cc6730ff7",
             "content": "sha256:a34c3bd77bbe15008b545f8503dc8bc80cb114df4db12be51f81a62a68847954",
             "locator": {
               "kind": "symbol",
@@ -378,7 +396,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4da7ae4b0b7fef8d26bf4f0e5f6fb149b0315dc2",
+            "blob": "8a178d876684d0169dafd905b8770b7cc6730ff7",
             "content": "sha256:e200e27baf7751db02fa235dc8a91645ba22b12435d461cc9480410fbe18a6b6",
             "locator": {
               "kind": "symbol",
@@ -394,7 +412,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4da7ae4b0b7fef8d26bf4f0e5f6fb149b0315dc2",
+            "blob": "8a178d876684d0169dafd905b8770b7cc6730ff7",
             "content": "sha256:dc0ec326b53c9081e2c7254de6fc1c598dcfa41fe0795d2d0d41243cab2c3146",
             "locator": {
               "kind": "symbol",
@@ -426,7 +444,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4da7ae4b0b7fef8d26bf4f0e5f6fb149b0315dc2",
+            "blob": "8a178d876684d0169dafd905b8770b7cc6730ff7",
             "content": "sha256:4f733e1ab6cf07fee26124289daf5aab92148b2bb0c5bf7a8333e3e06e418082",
             "locator": {
               "kind": "symbol",
@@ -458,7 +476,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4da7ae4b0b7fef8d26bf4f0e5f6fb149b0315dc2",
+            "blob": "8a178d876684d0169dafd905b8770b7cc6730ff7",
             "content": "sha256:87dd950d41bd76c27e6902f17c94851c7df49d6461b0ad89a7152dbfcf77cc9f",
             "locator": {
               "kind": "symbol",
@@ -474,7 +492,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4da7ae4b0b7fef8d26bf4f0e5f6fb149b0315dc2",
+            "blob": "8a178d876684d0169dafd905b8770b7cc6730ff7",
             "content": "sha256:1a7b83b1b277da4dc2a0726815efebb30b59ed14939d84e23f14bdf8384c5a52",
             "locator": {
               "kind": "symbol",
@@ -490,7 +508,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4da7ae4b0b7fef8d26bf4f0e5f6fb149b0315dc2",
+            "blob": "8a178d876684d0169dafd905b8770b7cc6730ff7",
             "content": "sha256:251682e00048ea1933419d2aa8f4afb644fec374898474412a95126355e775dd",
             "locator": {
               "kind": "symbol",
@@ -506,7 +524,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4da7ae4b0b7fef8d26bf4f0e5f6fb149b0315dc2",
+            "blob": "8a178d876684d0169dafd905b8770b7cc6730ff7",
             "content": "sha256:370521d079a27e69aaf5c328e1aa7fc7a5a79b9ad80b4286168b13671337463d",
             "locator": {
               "kind": "symbol",
@@ -522,7 +540,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4da7ae4b0b7fef8d26bf4f0e5f6fb149b0315dc2",
+            "blob": "8a178d876684d0169dafd905b8770b7cc6730ff7",
             "content": "sha256:b905f32447788cc095fb8b6f9edc20b971fd2f36be44dc277c8526abcfdb45e2",
             "locator": {
               "kind": "symbol",
@@ -538,7 +556,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4da7ae4b0b7fef8d26bf4f0e5f6fb149b0315dc2",
+            "blob": "8a178d876684d0169dafd905b8770b7cc6730ff7",
             "content": "sha256:901fc7b7c8e793dab6b858e52522ccb9fca45874e19d565876dddbbd2aab851c",
             "locator": {
               "kind": "symbol",
@@ -554,7 +572,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4da7ae4b0b7fef8d26bf4f0e5f6fb149b0315dc2",
+            "blob": "8a178d876684d0169dafd905b8770b7cc6730ff7",
             "content": "sha256:4bb61c4f3b659460ea93acbb34a7ffee26b269cd9cd1522098415802ffa9b5b3",
             "locator": {
               "kind": "symbol",
@@ -570,7 +588,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4da7ae4b0b7fef8d26bf4f0e5f6fb149b0315dc2",
+            "blob": "8a178d876684d0169dafd905b8770b7cc6730ff7",
             "content": "sha256:084c889820ac13c41ce829ca9da28cc8fd479201ebea643531cd56cf76ae4d5a",
             "locator": {
               "kind": "symbol",
@@ -705,7 +723,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "023d1f462e7b1839dc594a930d879ba94398d92b",
+            "blob": "b4d78090a1383e85d720b881411db85e13cfb162",
             "content": "sha256:5e335ba532c7a2b2bdfeb0230be82352af288a6c40cb260c0dccfecfb72cfb9d",
             "locator": {
               "kind": "symbol",
@@ -722,7 +740,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "023d1f462e7b1839dc594a930d879ba94398d92b",
+            "blob": "b4d78090a1383e85d720b881411db85e13cfb162",
             "content": "sha256:79582a1947c85408de626e1c5eaa801a3e1a75433e409af9ee3f6185e5d25bdb",
             "locator": {
               "kind": "symbol",
@@ -739,7 +757,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "023d1f462e7b1839dc594a930d879ba94398d92b",
+            "blob": "b4d78090a1383e85d720b881411db85e13cfb162",
             "content": "sha256:9e50c83bb33d5d0206d2fcd5078e536bf7c5471b2d11edfa30f151bc51983cb2",
             "locator": {
               "kind": "symbol",

@@ -1,0 +1,1785 @@
+[
+  {
+    "id": "L26-MR1-K01",
+    "statement": "INV-0T84PZ's current costly-error admission reverses the tip-movement condition required by its own statement and actual ref-update owner.",
+    "kind": "finding",
+    "target": [
+      {
+        "path": "knowledge/invariants/INV-0T84PZ-a-failed-ref-update-reports-a.json",
+        "locator": {
+          "kind": "line_range",
+          "start": 6,
+          "end": 6
+        },
+        "rationale": "This authored admission justification is the retained costly-error explanation whose condition contradicts the invariant and actual ref-update branch.",
+        "role": "support"
+      }
+    ],
+    "found_at": [
+      {
+        "path": "notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.memory-r2.md",
+        "locator": null,
+        "commit": null
+      },
+      {
+        "path": "notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.memory-r2.evidence/finding-adjudications.json",
+        "locator": null,
+        "commit": null
+      }
+    ],
+    "disposition": "rejected; implementation defect; original sealed repair remains outstanding",
+    "disposition_source": "notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.memory-r2.md",
+    "evidence": "INV-0T84PZ@1 admission.justification: \"Reporting a moved branch when only the tip changed would hide the real Git refusal and mislead the operator.\" Paired git.py _move_admitted_ref lines740-760 returns moved when the re-read tip differs and otherwise preserves Git refusal text.",
+    "authority": {
+      "task_document": "260928_maintained-invariant-knowledge/26_retire-the-canonical-database.json",
+      "requirement": "MIK-R26@v1",
+      "owner_case": "/home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/notes/run3/L26-SOURCE107-ONLY14-MEMFIX2-879378fb/owner-memory-fix2-case.json",
+      "owner_case_sha256": "77d3e843fe9d79051ed32080d5052ba023789cb44ed3a2de40e63ad44f60f7c5",
+      "delivery": "260928-MIK-L26-curation-d7a5e018-source107-original14",
+      "code_candidate_tree": "bf045a987679cc023f8fdfb8849d28cfcca1adb9",
+      "memory_candidate_tree": "7a750e36785a43b7a8eaafd6573fc70537edcb81"
+    },
+    "resolution": {
+      "state": "curator-authored-pending-only6-fix3-verification",
+      "judgment": "Admission now distinguishes an unchanged admitted tip/real Git refusal from actual tip movement; statement/scope/revision unchanged.",
+      "codeTree": "715ee46e34ef5c421c540314b882c04d1676e08d",
+      "sourceChangeSHA256": "60906382a032543186e2728c62275a857f7bdcd7ab06932a9fa1d21acb9fa4e5",
+      "evidenceRefs": [
+        "memory:notes/l26-curation-takeover/d7a5e018/fix3/K01-K03-K04.commit.json",
+        "memory:notes/l26-curation-takeover/d7a5e018/fix3/INV-0T84PZ-readback-v2.json",
+        "task:notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.memory-r2.md"
+      ],
+      "R2ProducerFieldsVerbatim": true,
+      "originalR1ProducerListPreserved": true,
+      "independentAcceptanceClaimed": false
+    },
+    "validated_at": "2026-10-08T15:39:39.945649+00:00",
+    "record_action": "revise",
+    "supersedes": null
+  },
+  {
+    "id": "L26-MR1-K02",
+    "statement": "The ten sealed duplicate clusters retain one effective identity each, and the newer D18 decision supersedes its prior identity.",
+    "kind": "finding",
+    "target": [
+      {
+        "path": "knowledge/decisions/DEC-YZA7E4-text-files-in-git-are-the-source-of-truth.json",
+        "locator": {
+          "kind": "file"
+        },
+        "rationale": "All ten sealed duplicate clusters now have one retained proposed identity. DEC-YZA7E4@3 supersedes DEC-4CTNXE, so the old decision is no longer effective even though its encoded status is active. The baseline distinctions between aggregate, primitive and documentary obligations remain credited.",
+        "role": "support"
+      }
+    ],
+    "found_at": [
+      {
+        "path": "notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.memory-r2.md",
+        "locator": null,
+        "commit": null
+      },
+      {
+        "path": "notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.memory-r2.evidence/finding-adjudications.json",
+        "locator": null,
+        "commit": null
+      }
+    ],
+    "disposition": "accepted; repair verified within sealed scope",
+    "disposition_source": "notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.memory-r2.md",
+    "evidence": "k02-ten-duplicate-cluster-successors.json independently reads all ten exact clusters and the effective D18 supersession.",
+    "authority": {
+      "task_document": "260928_maintained-invariant-knowledge/26_retire-the-canonical-database.json",
+      "requirement": "MIK-R26@v1",
+      "owner_case": "/home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/notes/run3/L26-SOURCE107-ONLY14-MEMFIX2-879378fb/owner-memory-fix2-case.json",
+      "owner_case_sha256": "77d3e843fe9d79051ed32080d5052ba023789cb44ed3a2de40e63ad44f60f7c5",
+      "delivery": "260928-MIK-L26-curation-d7a5e018-source107-original14",
+      "code_candidate_tree": "bf045a987679cc023f8fdfb8849d28cfcca1adb9",
+      "memory_candidate_tree": "7a750e36785a43b7a8eaafd6573fc70537edcb81"
+    },
+    "resolution": {
+      "state": "accepted-in-sealed-R2-retained",
+      "judgment": "Retain sealed R2 acceptance with its historical qualification and evidence gaps. No current semantic acceptance is inferred from sync, MQC or this response.",
+      "codeTree": "715ee46e34ef5c421c540314b882c04d1676e08d",
+      "sourceChangeSHA256": "60906382a032543186e2728c62275a857f7bdcd7ab06932a9fa1d21acb9fa4e5",
+      "evidenceRefs": [
+        "task:notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.memory-r2.md"
+      ],
+      "R2ProducerFieldsVerbatim": true,
+      "originalR1ProducerListPreserved": true,
+      "independentAcceptanceClaimed": false
+    },
+    "validated_at": "2026-10-08T15:39:39.945649+00:00",
+    "record_action": "retain",
+    "supersedes": null
+  },
+  {
+    "id": "L26-MR1-K03",
+    "statement": "RLZ-K64BDQNF's current published-intent rationale still asserts retired database selection instead of the converted reader and legacy refusal.",
+    "kind": "finding",
+    "target": [
+      {
+        "path": "onboarding/mcp/src/agents_remember/application/published_intent.py.json",
+        "locator": {
+          "kind": "line_range",
+          "start": 18,
+          "end": 18
+        },
+        "rationale": "This realization rationale attributes obsolete database-selection behavior to the current converted-memory reader.",
+        "role": "support"
+      }
+    ],
+    "found_at": [
+      {
+        "path": "notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.memory-r2.md",
+        "locator": null,
+        "commit": null
+      },
+      {
+        "path": "notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.memory-r2.evidence/finding-adjudications.json",
+        "locator": null,
+        "commit": null
+      }
+    ],
+    "disposition": "rejected; implementation defect; original sealed repair remains outstanding",
+    "disposition_source": "notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.memory-r2.md",
+    "evidence": "RLZ-K64BDQNF, anchored at current blob bda6abac209b8bb555561b79169c66526d769437, says converted memory answers not-recorded and unconverted memory reads published_dataset_path. Paired published_intent.py168-207 instead reads converted derived-index intent and refuses the legacy format. INV-753SKJFF@3 has already been revised.",
+    "authority": {
+      "task_document": "260928_maintained-invariant-knowledge/26_retire-the-canonical-database.json",
+      "requirement": "MIK-R26@v1",
+      "owner_case": "/home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/notes/run3/L26-SOURCE107-ONLY14-MEMFIX2-879378fb/owner-memory-fix2-case.json",
+      "owner_case_sha256": "77d3e843fe9d79051ed32080d5052ba023789cb44ed3a2de40e63ad44f60f7c5",
+      "delivery": "260928-MIK-L26-curation-d7a5e018-source107-original14",
+      "code_candidate_tree": "bf045a987679cc023f8fdfb8849d28cfcca1adb9",
+      "memory_candidate_tree": "7a750e36785a43b7a8eaafd6573fc70537edcb81"
+    },
+    "resolution": {
+      "state": "curator-authored-pending-only6-fix3-verification",
+      "judgment": "RLZ-K64BDQNF now names converted-tree index selection and legacy-format refusal; no canonical dataset selection/not-recorded inversion.",
+      "codeTree": "715ee46e34ef5c421c540314b882c04d1676e08d",
+      "sourceChangeSHA256": "60906382a032543186e2728c62275a857f7bdcd7ab06932a9fa1d21acb9fa4e5",
+      "evidenceRefs": [
+        "memory:notes/l26-curation-takeover/d7a5e018/fix3/K01-K03-K04.commit.json",
+        "memory:notes/l26-curation-takeover/d7a5e018/fix3/INV-753SKJFF-readback-v2.json",
+        "task:notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.memory-r2.md"
+      ],
+      "R2ProducerFieldsVerbatim": true,
+      "originalR1ProducerListPreserved": true,
+      "independentAcceptanceClaimed": false
+    },
+    "validated_at": "2026-10-08T15:39:39.945649+00:00",
+    "record_action": "revise",
+    "supersedes": null
+  },
+  {
+    "id": "L26-MR1-K04",
+    "statement": "W4XGR4's surviving deadline guarantee has a support realization for the moved control and no typed proof, while its primary-authority anchor points only to the exception declaration.",
+    "kind": "finding",
+    "target": [
+      {
+        "path": "onboarding/mcp/tests/tool_entry_point_world.py.json",
+        "locator": {
+          "kind": "line_range",
+          "start": 10,
+          "end": 10
+        },
+        "rationale": "This primary-authority anchor selects the exception declaration instead of the owner that enforces the phase budgets.",
+        "role": "support"
+      },
+      {
+        "path": "onboarding/mcp/tests/test_tool_entry_point_controls.py.json",
+        "locator": {
+          "kind": "file"
+        },
+        "rationale": "The moved control sidecar retains a support realization, but its whole parsed proves plane contains no proof for W4XGR4.",
+        "role": "support"
+      },
+      {
+        "path": "knowledge/history/260928-MIK-L26.json",
+        "locator": {
+          "kind": "file"
+        },
+        "rationale": "The W4XGR4 history row says the proof was re-anchored while the typed proof is absent.",
+        "role": "support"
+      }
+    ],
+    "found_at": [
+      {
+        "path": "notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.memory-r2.md",
+        "locator": null,
+        "commit": null
+      },
+      {
+        "path": "notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.memory-r2.evidence/finding-adjudications.json",
+        "locator": null,
+        "commit": null
+      }
+    ],
+    "disposition": "rejected; implementation defect; original sealed repair remains outstanding",
+    "disposition_source": "notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.memory-r2.md",
+    "evidence": "No proves entry for INV-W4XGR4 exists in the current onboarding plane. test_tool_entry_point_controls.py.json has only support realization RLZ-BCFPZV for the retained never-answer control. RLZ-3J2TZH anchors _ToolCallTimeout38-39 while its rationale promises phase budgets/enforcement implemented in _call341-360 and call362-370. ROW-204RN8 says the proof was re-anchored.",
+    "authority": {
+      "task_document": "260928_maintained-invariant-knowledge/26_retire-the-canonical-database.json",
+      "requirement": "MIK-R26@v1",
+      "owner_case": "/home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/notes/run3/L26-SOURCE107-ONLY14-MEMFIX2-879378fb/owner-memory-fix2-case.json",
+      "owner_case_sha256": "77d3e843fe9d79051ed32080d5052ba023789cb44ed3a2de40e63ad44f60f7c5",
+      "delivery": "260928-MIK-L26-curation-d7a5e018-source107-original14",
+      "code_candidate_tree": "bf045a987679cc023f8fdfb8849d28cfcca1adb9",
+      "memory_candidate_tree": "7a750e36785a43b7a8eaafd6573fc70537edcb81"
+    },
+    "resolution": {
+      "state": "curator-authored-pending-only6-fix3-verification",
+      "judgment": "PRF-AGBGWK is a typed static test facet; RLZ-3J2TZH anchors EntryPointWorld._call phase-budget enforcement.",
+      "codeTree": "715ee46e34ef5c421c540314b882c04d1676e08d",
+      "sourceChangeSHA256": "60906382a032543186e2728c62275a857f7bdcd7ab06932a9fa1d21acb9fa4e5",
+      "evidenceRefs": [
+        "memory:notes/l26-curation-takeover/d7a5e018/fix3/K04-family-proof-readback.json",
+        "memory:notes/l26-curation-takeover/d7a5e018/fix3/K01-K03-K04.commit.json",
+        "task:notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.memory-r2.md"
+      ],
+      "R2ProducerFieldsVerbatim": true,
+      "originalR1ProducerListPreserved": true,
+      "independentAcceptanceClaimed": false
+    },
+    "validated_at": "2026-10-08T15:39:39.945649+00:00",
+    "record_action": "revise",
+    "supersedes": null
+  },
+  {
+    "id": "L26-MR1-K05",
+    "statement": "The original47 family examination supplies current memberships and individual no-family outcomes but leaves the retained new obligations' comparison with one another unsupported.",
+    "kind": "finding",
+    "target": [
+      {
+        "path": "notes/l26-curation-takeover/d7a5e018/original47-family-examination.json",
+        "locator": {
+          "kind": "file"
+        },
+        "rationale": "All47 now have family outcomes:18 retired,20 members,9 examined-no-family, with current affected family guarantees and siblings. The sealed comparison-against-one-another duty remains unsupported: the no-family reasons discuss existing families but omit the retained new obligations' joint interactions.",
+        "role": "support"
+      }
+    ],
+    "found_at": [
+      {
+        "path": "notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.memory-r2.md",
+        "locator": null,
+        "commit": null
+      },
+      {
+        "path": "notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.memory-r2.evidence/finding-adjudications.json",
+        "locator": null,
+        "commit": null
+      }
+    ],
+    "disposition": "rejected; evidence gap; original sealed repair remains outstanding",
+    "disposition_source": "notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.memory-r2.md",
+    "evidence": "INV-JM868W and INV-PPGGTW both promise bounded knowledge_diff with named omissions and absent-selector refusal. Each no-family basis distinguishes existing reviewer/publication families, but neither compares these retained new obligations with one another. No retained comparative judgment was identified in the delivered report/47-row artifact.",
+    "authority": {
+      "task_document": "260928_maintained-invariant-knowledge/26_retire-the-canonical-database.json",
+      "requirement": "MIK-R26@v1",
+      "owner_case": "/home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/notes/run3/L26-SOURCE107-ONLY14-MEMFIX2-879378fb/owner-memory-fix2-case.json",
+      "owner_case_sha256": "77d3e843fe9d79051ed32080d5052ba023789cb44ed3a2de40e63ad44f60f7c5",
+      "delivery": "260928-MIK-L26-curation-d7a5e018-source107-original14",
+      "code_candidate_tree": "bf045a987679cc023f8fdfb8849d28cfcca1adb9",
+      "memory_candidate_tree": "7a750e36785a43b7a8eaafd6573fc70537edcb81"
+    },
+    "resolution": {
+      "state": "curator-authored-pending-only6-fix3-verification",
+      "judgment": "Original47 retained obligations have406 pair comparisons:20 existing placements kept, two new justified families/five members, four deliberate no-family outcomes. Foundation route now names only the skill carrying the two realizations.",
+      "codeTree": "715ee46e34ef5c421c540314b882c04d1676e08d",
+      "sourceChangeSHA256": "60906382a032543186e2728c62275a857f7bdcd7ab06932a9fa1d21acb9fa4e5",
+      "evidenceRefs": [
+        "memory:notes/l26-curation-takeover/d7a5e018/fix3/K05-original47-comparative-examination.json",
+        "memory:notes/l26-curation-takeover/d7a5e018/fix3/K05-family.commit.json",
+        "memory:notes/l26-curation-takeover/d7a5e018/fix3/source87-foundation-family-readback.json",
+        "task:notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.memory-r2.md"
+      ],
+      "R2ProducerFieldsVerbatim": true,
+      "originalR1ProducerListPreserved": true,
+      "independentAcceptanceClaimed": false
+    },
+    "validated_at": "2026-10-08T15:39:39.945649+00:00",
+    "record_action": "revise",
+    "supersedes": null
+  },
+  {
+    "id": "L26-MR1-K06",
+    "statement": "The current report names persisted LIM-M6ZRE6 and the exact4084-item worklist while preserving the missing formal attempt-journal limitation.",
+    "kind": "finding",
+    "target": [
+      {
+        "path": "knowledge/limitations/LIM-M6ZRE6-no-physical-worker-attempt-anchor.json",
+        "locator": {
+          "kind": "file"
+        },
+        "rationale": "The report now names actual LIM-M6ZRE6 and the current persisted worklist; old planning/baseline counts are explicitly dated. The formal attempt-journal gap is preserved rather than fabricated away.",
+        "role": "support"
+      }
+    ],
+    "found_at": [
+      {
+        "path": "notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.memory-r2.md",
+        "locator": null,
+        "commit": null
+      },
+      {
+        "path": "notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.memory-r2.evidence/finding-adjudications.json",
+        "locator": null,
+        "commit": null
+      }
+    ],
+    "disposition": "accepted; repair verified within sealed scope",
+    "disposition_source": "notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.memory-r2.md",
+    "evidence": "LIM-M6ZRE6@1 is present; current full MQC/worklist is4084 unique items, digest126a0380a54860d42f570e008a082c9bc36a23aa470a065c4c27cf48cea2ab55.",
+    "authority": {
+      "task_document": "260928_maintained-invariant-knowledge/26_retire-the-canonical-database.json",
+      "requirement": "MIK-R26@v1",
+      "owner_case": "/home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/notes/run3/L26-SOURCE107-ONLY14-MEMFIX2-879378fb/owner-memory-fix2-case.json",
+      "owner_case_sha256": "77d3e843fe9d79051ed32080d5052ba023789cb44ed3a2de40e63ad44f60f7c5",
+      "delivery": "260928-MIK-L26-curation-d7a5e018-source107-original14",
+      "code_candidate_tree": "bf045a987679cc023f8fdfb8849d28cfcca1adb9",
+      "memory_candidate_tree": "7a750e36785a43b7a8eaafd6573fc70537edcb81"
+    },
+    "resolution": {
+      "state": "accepted-in-sealed-R2-retained",
+      "judgment": "Retain sealed R2 acceptance with its historical qualification and evidence gaps. No current semantic acceptance is inferred from sync, MQC or this response.",
+      "codeTree": "715ee46e34ef5c421c540314b882c04d1676e08d",
+      "sourceChangeSHA256": "60906382a032543186e2728c62275a857f7bdcd7ab06932a9fa1d21acb9fa4e5",
+      "evidenceRefs": [
+        "task:notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.memory-r2.md"
+      ],
+      "R2ProducerFieldsVerbatim": true,
+      "originalR1ProducerListPreserved": true,
+      "independentAcceptanceClaimed": false
+    },
+    "validated_at": "2026-10-08T15:39:39.945649+00:00",
+    "record_action": "retain",
+    "supersedes": null
+  },
+  {
+    "id": "L26-MR1-O01",
+    "statement": "Sealed current cards continue to present removed writers, payloads and tests as shipped behavior after partial body repair.",
+    "kind": "finding",
+    "target": [
+      {
+        "path": "onboarding/mcp/src/agents_remember/application/knowledge_before_half.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 7,
+          "end": 157
+        },
+        "rationale": "This exact original84 card carries the body/moved-owner/history account examined in o01-sealed84-coverage.json; its per-card disposition is credited explicit retired/historical boundary.",
+        "role": "support"
+      },
+      {
+        "path": "onboarding/mcp/src/agents_remember/application/knowledge_bootstrap_admission.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 7,
+          "end": 108
+        },
+        "rationale": "This exact original84 card carries the body/moved-owner/history account examined in o01-sealed84-coverage.json; its per-card disposition is not closed: retained named-current claim.",
+        "role": "support"
+      },
+      {
+        "path": "onboarding/mcp/src/agents_remember/application/knowledge_view_render.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 7,
+          "end": 28
+        },
+        "rationale": "This exact original84 card carries the body/moved-owner/history account examined in o01-sealed84-coverage.json; its per-card disposition is credited repaired current body.",
+        "role": "support"
+      },
+      {
+        "path": "onboarding/mcp/src/agents_remember/application/knowledge_views.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 7,
+          "end": 24
+        },
+        "rationale": "This exact original84 card carries the body/moved-owner/history account examined in o01-sealed84-coverage.json; its per-card disposition is credited repaired current body.",
+        "role": "support"
+      },
+      {
+        "path": "onboarding/mcp/src/agents_remember/application/knowledge_write_admission.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 7,
+          "end": 24
+        },
+        "rationale": "This exact original84 card carries the body/moved-owner/history account examined in o01-sealed84-coverage.json; its per-card disposition is credited repaired current body.",
+        "role": "support"
+      },
+      {
+        "path": "onboarding/mcp/src/agents_remember/application/knowledge_writer/authoring.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 7,
+          "end": 258
+        },
+        "rationale": "This exact original84 card carries the body/moved-owner/history account examined in o01-sealed84-coverage.json; its per-card disposition is credited declared implementation move.",
+        "role": "support"
+      },
+      {
+        "path": "onboarding/mcp/src/agents_remember/application/published_intent.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 7,
+          "end": 26
+        },
+        "rationale": "This exact original84 card carries the body/moved-owner/history account examined in o01-sealed84-coverage.json; its per-card disposition is credited repaired current body.",
+        "role": "support"
+      },
+      {
+        "path": "onboarding/mcp/src/agents_remember/application/review_candidate_resolution.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 7,
+          "end": 205
+        },
+        "rationale": "This exact original84 card carries the body/moved-owner/history account examined in o01-sealed84-coverage.json; its per-card disposition is not closed: retained named-current claim.",
+        "role": "support"
+      },
+      {
+        "path": "onboarding/mcp/src/agents_remember/application/review_committed_leaf.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 7,
+          "end": 237
+        },
+        "rationale": "This exact original84 card carries the body/moved-owner/history account examined in o01-sealed84-coverage.json; its per-card disposition is not closed: retained named-current claim.",
+        "role": "support"
+      },
+      {
+        "path": "onboarding/mcp/src/agents_remember/application/review_comparison_generation.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 7,
+          "end": 26
+        },
+        "rationale": "This exact original84 card carries the body/moved-owner/history account examined in o01-sealed84-coverage.json; its per-card disposition is credited repaired current body.",
+        "role": "support"
+      },
+      {
+        "path": "onboarding/mcp/src/agents_remember/application/review_evidence_records.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 7,
+          "end": 107
+        },
+        "rationale": "This exact original84 card carries the body/moved-owner/history account examined in o01-sealed84-coverage.json; its per-card disposition is not closed: retained named-current claim.",
+        "role": "support"
+      },
+      {
+        "path": "onboarding/mcp/src/agents_remember/application/review_final_output_receipt.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 7,
+          "end": 26
+        },
+        "rationale": "This exact original84 card carries the body/moved-owner/history account examined in o01-sealed84-coverage.json; its per-card disposition is credited repaired current body.",
+        "role": "support"
+      },
+      {
+        "path": "onboarding/mcp/src/agents_remember/application/review_governing_route.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 7,
+          "end": 26
+        },
+        "rationale": "This exact original84 card carries the body/moved-owner/history account examined in o01-sealed84-coverage.json; its per-card disposition is credited repaired current body.",
+        "role": "support"
+      },
+      {
+        "path": "onboarding/mcp/src/agents_remember/application/review_sync_rebinding.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 7,
+          "end": 26
+        },
+        "rationale": "This exact original84 card carries the body/moved-owner/history account examined in o01-sealed84-coverage.json; its per-card disposition is credited repaired current body.",
+        "role": "support"
+      },
+      {
+        "path": "onboarding/mcp/src/agents_remember/cli/knowledge_bootstrap.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 7,
+          "end": 117
+        },
+        "rationale": "This exact original84 card carries the body/moved-owner/history account examined in o01-sealed84-coverage.json; its per-card disposition is not closed: retained named-current claim.",
+        "role": "support"
+      },
+      {
+        "path": "onboarding/mcp/src/agents_remember/cli/knowledge_ingest.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 7,
+          "end": 24
+        },
+        "rationale": "This exact original84 card carries the body/moved-owner/history account examined in o01-sealed84-coverage.json; its per-card disposition is credited repaired current body.",
+        "role": "support"
+      },
+      {
+        "path": "onboarding/mcp/src/agents_remember/cli/knowledge_write_route.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 7,
+          "end": 84
+        },
+        "rationale": "This exact original84 card carries the body/moved-owner/history account examined in o01-sealed84-coverage.json; its per-card disposition is not closed: retained named-current claim.",
+        "role": "support"
+      },
+      {
+        "path": "onboarding/mcp/src/agents_remember/kernel/atomic_write.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 7,
+          "end": 67
+        },
+        "rationale": "This exact original84 card carries the body/moved-owner/history account examined in o01-sealed84-coverage.json; its per-card disposition is not closed: retained named-current claim.",
+        "role": "support"
+      },
+      {
+        "path": "onboarding/mcp/src/agents_remember/mcp/registration/knowledge.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 7,
+          "end": 139
+        },
+        "rationale": "This exact original84 card carries the body/moved-owner/history account examined in o01-sealed84-coverage.json; its per-card disposition is credited explicit retired/historical boundary.",
+        "role": "support"
+      },
+      {
+        "path": "onboarding/mcp/src/agents_remember/mcp/tools/knowledge.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 7,
+          "end": 26
+        },
+        "rationale": "This exact original84 card carries the body/moved-owner/history account examined in o01-sealed84-coverage.json; its per-card disposition is credited repaired current body.",
+        "role": "support"
+      },
+      {
+        "path": "onboarding/mcp/src/agents_remember/memory/knowledge/connection.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 7,
+          "end": 125
+        },
+        "rationale": "This exact original84 card carries the body/moved-owner/history account examined in o01-sealed84-coverage.json; its per-card disposition is not closed: retained named-current claim.",
+        "role": "support"
+      },
+      {
+        "path": "onboarding/mcp/src/agents_remember/memory/knowledge/durable_evidence.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 7,
+          "end": 64
+        },
+        "rationale": "This exact original84 card carries the body/moved-owner/history account examined in o01-sealed84-coverage.json; its per-card disposition is not closed: retained named-current claim.",
+        "role": "support"
+      },
+      {
+        "path": "onboarding/mcp/src/agents_remember/memory/knowledge/families.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 7,
+          "end": 27
+        },
+        "rationale": "This exact original84 card carries the body/moved-owner/history account examined in o01-sealed84-coverage.json; its per-card disposition is credited explicit retired/historical boundary.",
+        "role": "support"
+      },
+      {
+        "path": "onboarding/mcp/src/agents_remember/memory/knowledge/logical.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 7,
+          "end": 163
+        },
+        "rationale": "This exact original84 card carries the body/moved-owner/history account examined in o01-sealed84-coverage.json; its per-card disposition is not closed: retained named-current claim.",
+        "role": "support"
+      },
+      {
+        "path": "onboarding/mcp/src/agents_remember/memory/knowledge/memberships.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 7,
+          "end": 27
+        },
+        "rationale": "This exact original84 card carries the body/moved-owner/history account examined in o01-sealed84-coverage.json; its per-card disposition is credited explicit retired/historical boundary.",
+        "role": "support"
+      },
+      {
+        "path": "onboarding/mcp/src/agents_remember/memory/knowledge/refusals.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 7,
+          "end": 28
+        },
+        "rationale": "This exact original84 card carries the body/moved-owner/history account examined in o01-sealed84-coverage.json; its per-card disposition is credited explicit retired/historical boundary.",
+        "role": "support"
+      },
+      {
+        "path": "onboarding/mcp/src/agents_remember/memory/knowledge/schema_generations.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 7,
+          "end": 26
+        },
+        "rationale": "This exact original84 card carries the body/moved-owner/history account examined in o01-sealed84-coverage.json; its per-card disposition is not closed: retained named-current claim.",
+        "role": "support"
+      },
+      {
+        "path": "onboarding/mcp/src/agents_remember/memory/knowledge/store.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 7,
+          "end": 32
+        },
+        "rationale": "This exact original84 card carries the body/moved-owner/history account examined in o01-sealed84-coverage.json; its per-card disposition is credited explicit retired/historical boundary.",
+        "role": "support"
+      },
+      {
+        "path": "onboarding/mcp/src/agents_remember/models/knowledge/candidate.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 7,
+          "end": 117
+        },
+        "rationale": "This exact original84 card carries the body/moved-owner/history account examined in o01-sealed84-coverage.json; its per-card disposition is not closed: retained named-current claim.",
+        "role": "support"
+      },
+      {
+        "path": "onboarding/mcp/src/agents_remember/models/knowledge/context.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 7,
+          "end": 38
+        },
+        "rationale": "This exact original84 card carries the body/moved-owner/history account examined in o01-sealed84-coverage.json; its per-card disposition is credited repaired current body.",
+        "role": "support"
+      },
+      {
+        "path": "onboarding/mcp/src/agents_remember/models/knowledge/detection.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 7,
+          "end": 154
+        },
+        "rationale": "This exact original84 card carries the body/moved-owner/history account examined in o01-sealed84-coverage.json; its per-card disposition is not closed: retained named-current claim.",
+        "role": "support"
+      },
+      {
+        "path": "onboarding/mcp/src/agents_remember/models/knowledge/evidence.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 7,
+          "end": 74
+        },
+        "rationale": "This exact original84 card carries the body/moved-owner/history account examined in o01-sealed84-coverage.json; its per-card disposition is not closed: retained named-current claim.",
+        "role": "support"
+      },
+      {
+        "path": "onboarding/mcp/src/agents_remember/models/knowledge/facet.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 7,
+          "end": 27
+        },
+        "rationale": "This exact original84 card carries the body/moved-owner/history account examined in o01-sealed84-coverage.json; its per-card disposition is credited repaired current body.",
+        "role": "support"
+      },
+      {
+        "path": "onboarding/mcp/src/agents_remember/models/knowledge/graph.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 7,
+          "end": 30
+        },
+        "rationale": "This exact original84 card carries the body/moved-owner/history account examined in o01-sealed84-coverage.json; its per-card disposition is credited explicit retired/historical boundary.",
+        "role": "support"
+      },
+      {
+        "path": "onboarding/mcp/src/agents_remember/models/knowledge/read_anchor.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 7,
+          "end": 61
+        },
+        "rationale": "This exact original84 card carries the body/moved-owner/history account examined in o01-sealed84-coverage.json; its per-card disposition is not closed: retained named-current claim.",
+        "role": "support"
+      },
+      {
+        "path": "onboarding/mcp/src/agents_remember/models/knowledge/requirement.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 7,
+          "end": 112
+        },
+        "rationale": "This exact original84 card carries the body/moved-owner/history account examined in o01-sealed84-coverage.json; its per-card disposition is not closed: retained named-current claim.",
+        "role": "support"
+      },
+      {
+        "path": "onboarding/mcp/src/agents_remember/models/knowledge/result.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 7,
+          "end": 29
+        },
+        "rationale": "This exact original84 card carries the body/moved-owner/history account examined in o01-sealed84-coverage.json; its per-card disposition is credited repaired current body.",
+        "role": "support"
+      },
+      {
+        "path": "onboarding/mcp/src/agents_remember/models/knowledge/review_sync_rebinding.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 7,
+          "end": 31
+        },
+        "rationale": "This exact original84 card carries the body/moved-owner/history account examined in o01-sealed84-coverage.json; its per-card disposition is credited repaired current body.",
+        "role": "support"
+      },
+      {
+        "path": "onboarding/mcp/src/agents_remember/models/knowledge/source.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 7,
+          "end": 24
+        },
+        "rationale": "This exact original84 card carries the body/moved-owner/history account examined in o01-sealed84-coverage.json; its per-card disposition is credited repaired current body.",
+        "role": "support"
+      },
+      {
+        "path": "onboarding/mcp/src/agents_remember/worktrees/integration/mutation_evidence.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 10,
+          "end": 63
+        },
+        "rationale": "This exact original84 card carries the body/moved-owner/history account examined in o01-sealed84-coverage.json; its per-card disposition is not closed: retained named-current claim.",
+        "role": "support"
+      },
+      {
+        "path": "onboarding/mcp/src/agents_remember/worktrees/knowledge_crossing.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 7,
+          "end": 82
+        },
+        "rationale": "This exact original84 card carries the body/moved-owner/history account examined in o01-sealed84-coverage.json; its per-card disposition is not closed: retained named-current claim.",
+        "role": "support"
+      },
+      {
+        "path": "onboarding/mcp/src/agents_remember/worktrees/modules/args.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 3,
+          "end": 73
+        },
+        "rationale": "This exact original84 card carries the body/moved-owner/history account examined in o01-sealed84-coverage.json; its per-card disposition is not closed: retained named-current claim.",
+        "role": "support"
+      },
+      {
+        "path": "onboarding/mcp/src/agents_remember/worktrees/modules/closeout_external.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 7,
+          "end": 130
+        },
+        "rationale": "This exact original84 card carries the body/moved-owner/history account examined in o01-sealed84-coverage.json; its per-card disposition is not closed: retained named-current claim.",
+        "role": "support"
+      },
+      {
+        "path": "onboarding/mcp/src/agents_remember/worktrees/modules/code_object_retention.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 7,
+          "end": 26
+        },
+        "rationale": "This exact original84 card carries the body/moved-owner/history account examined in o01-sealed84-coverage.json; its per-card disposition is credited repaired current body.",
+        "role": "support"
+      },
+      {
+        "path": "onboarding/mcp/src/agents_remember/worktrees/modules/git.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 7,
+          "end": 74
+        },
+        "rationale": "This exact original84 card carries the body/moved-owner/history account examined in o01-sealed84-coverage.json; its per-card disposition is not closed: retained named-current claim.",
+        "role": "support"
+      },
+      {
+        "path": "onboarding/mcp/src/agents_remember/worktrees/sync_transaction.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 7,
+          "end": 26
+        },
+        "rationale": "This exact original84 card carries the body/moved-owner/history account examined in o01-sealed84-coverage.json; its per-card disposition is credited repaired current body.",
+        "role": "support"
+      },
+      {
+        "path": "onboarding/mcp/src/agents_remember/worktrees/sync_transaction_git.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 7,
+          "end": 26
+        },
+        "rationale": "This exact original84 card carries the body/moved-owner/history account examined in o01-sealed84-coverage.json; its per-card disposition is credited repaired current body.",
+        "role": "support"
+      },
+      {
+        "path": "onboarding/mcp/tests/test_historical_committed_leaf_review.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 7,
+          "end": 23
+        },
+        "rationale": "This exact original84 card carries the body/moved-owner/history account examined in o01-sealed84-coverage.json; its per-card disposition is credited repaired current body.",
+        "role": "support"
+      },
+      {
+        "path": "onboarding/mcp/tests/test_knowledge_bootstrap.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 7,
+          "end": 166
+        },
+        "rationale": "This exact original84 card carries the body/moved-owner/history account examined in o01-sealed84-coverage.json; its per-card disposition is not closed: retained named-current claim.",
+        "role": "support"
+      },
+      {
+        "path": "onboarding/mcp/tests/test_knowledge_cutover.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 7,
+          "end": 66
+        },
+        "rationale": "This exact original84 card carries the body/moved-owner/history account examined in o01-sealed84-coverage.json; its per-card disposition is not closed: retained named-current claim.",
+        "role": "support"
+      },
+      {
+        "path": "onboarding/mcp/tests/test_knowledge_index_surfaces.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 7,
+          "end": 36
+        },
+        "rationale": "This exact original84 card carries the body/moved-owner/history account examined in o01-sealed84-coverage.json; its per-card disposition is not closed: retained named-current claim.",
+        "role": "support"
+      },
+      {
+        "path": "onboarding/mcp/tests/test_knowledge_reopen.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 7,
+          "end": 98
+        },
+        "rationale": "This exact original84 card carries the body/moved-owner/history account examined in o01-sealed84-coverage.json; its per-card disposition is not closed: retained named-current claim.",
+        "role": "support"
+      },
+      {
+        "path": "onboarding/mcp/tests/test_review_sync_movement_read.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 7,
+          "end": 25
+        },
+        "rationale": "This exact original84 card carries the body/moved-owner/history account examined in o01-sealed84-coverage.json; its per-card disposition is credited repaired current body.",
+        "role": "support"
+      },
+      {
+        "path": "onboarding/mcp/tests/test_review_sync_rebinding.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 7,
+          "end": 25
+        },
+        "rationale": "This exact original84 card carries the body/moved-owner/history account examined in o01-sealed84-coverage.json; its per-card disposition is credited repaired current body.",
+        "role": "support"
+      },
+      {
+        "path": "onboarding/mcp/tests/test_tool_entry_point_sweep.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 7,
+          "end": 158
+        },
+        "rationale": "This exact original84 card carries the body/moved-owner/history account examined in o01-sealed84-coverage.json; its per-card disposition is not closed: retained named-current claim.",
+        "role": "support"
+      },
+      {
+        "path": "onboarding/mcp/tests/test_worktree_sync.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 12,
+          "end": 59
+        },
+        "rationale": "This exact original84 card carries the body/moved-owner/history account examined in o01-sealed84-coverage.json; its per-card disposition is not closed: retained named-current claim.",
+        "role": "support"
+      },
+      {
+        "path": "onboarding/mcp/src/agents_remember/application/knowledge_gate/direct.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 7,
+          "end": 54
+        },
+        "rationale": "This exact original84 card carries the body/moved-owner/history account examined in o01-sealed84-coverage.json; its per-card disposition is not closed: retained named-current claim.",
+        "role": "support"
+      },
+      {
+        "path": "onboarding/mcp/src/agents_remember/application/review_attribution.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 7,
+          "end": 101
+        },
+        "rationale": "This exact original84 card carries the body/moved-owner/history account examined in o01-sealed84-coverage.json; its per-card disposition is not closed: retained named-current claim.",
+        "role": "support"
+      },
+      {
+        "path": "onboarding/mcp/src/agents_remember/application/review_comparison_reopen.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 7,
+          "end": 50
+        },
+        "rationale": "This exact original84 card carries the body/moved-owner/history account examined in o01-sealed84-coverage.json; its per-card disposition is not closed: retained named-current claim.",
+        "role": "support"
+      },
+      {
+        "path": "onboarding/mcp/src/agents_remember/application/review_rename_inference.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 7,
+          "end": 40
+        },
+        "rationale": "This exact original84 card carries the body/moved-owner/history account examined in o01-sealed84-coverage.json; its per-card disposition is not closed: retained named-current claim.",
+        "role": "support"
+      },
+      {
+        "path": "onboarding/mcp/src/agents_remember/application/review_sync_movement.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 7,
+          "end": 24
+        },
+        "rationale": "This exact original84 card carries the body/moved-owner/history account examined in o01-sealed84-coverage.json; its per-card disposition is credited repaired current body.",
+        "role": "support"
+      },
+      {
+        "path": "onboarding/mcp/src/agents_remember/memory/conversion/crossing_sync.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 7,
+          "end": 71
+        },
+        "rationale": "This exact original84 card carries the body/moved-owner/history account examined in o01-sealed84-coverage.json; its per-card disposition is not closed: retained named-current claim.",
+        "role": "support"
+      },
+      {
+        "path": "onboarding/mcp/src/agents_remember/memory/knowledge/records.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 7,
+          "end": 79
+        },
+        "rationale": "This exact original84 card carries the body/moved-owner/history account examined in o01-sealed84-coverage.json; its per-card disposition is not closed: retained named-current claim.",
+        "role": "support"
+      },
+      {
+        "path": "onboarding/mcp/src/agents_remember/memory/knowledge/view_source.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 7,
+          "end": 176
+        },
+        "rationale": "This exact original84 card carries the body/moved-owner/history account examined in o01-sealed84-coverage.json; its per-card disposition is not closed: retained named-current claim.",
+        "role": "support"
+      },
+      {
+        "path": "onboarding/mcp/src/agents_remember/memory_quality/style/citations/extents.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 7,
+          "end": 75
+        },
+        "rationale": "This exact original84 card carries the body/moved-owner/history account examined in o01-sealed84-coverage.json; its per-card disposition is not closed: retained named-current claim.",
+        "role": "support"
+      },
+      {
+        "path": "onboarding/mcp/src/agents_remember/models/knowledge/digest.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 7,
+          "end": 29
+        },
+        "rationale": "This exact original84 card carries the body/moved-owner/history account examined in o01-sealed84-coverage.json; its per-card disposition is credited explicit retired/historical boundary.",
+        "role": "support"
+      },
+      {
+        "path": "onboarding/mcp/src/agents_remember/models/knowledge/effect.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 7,
+          "end": 96
+        },
+        "rationale": "This exact original84 card carries the body/moved-owner/history account examined in o01-sealed84-coverage.json; its per-card disposition is not closed: retained named-current claim.",
+        "role": "support"
+      },
+      {
+        "path": "onboarding/mcp/src/agents_remember/models/knowledge/review_final_output_receipt.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 7,
+          "end": 32
+        },
+        "rationale": "This exact original84 card carries the body/moved-owner/history account examined in o01-sealed84-coverage.json; its per-card disposition is not closed: retained named-current claim.",
+        "role": "support"
+      },
+      {
+        "path": "onboarding/mcp/src/agents_remember/models/knowledge_files/planned.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 7,
+          "end": 50
+        },
+        "rationale": "This exact original84 card carries the body/moved-owner/history account examined in o01-sealed84-coverage.json; its per-card disposition is not closed: retained named-current claim.",
+        "role": "support"
+      },
+      {
+        "path": "onboarding/mcp/src/agents_remember/models/lifecycles/review_assessment_binding.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 7,
+          "end": 76
+        },
+        "rationale": "This exact original84 card carries the body/moved-owner/history account examined in o01-sealed84-coverage.json; its per-card disposition is not closed: retained named-current claim.",
+        "role": "support"
+      },
+      {
+        "path": "onboarding/mcp/src/agents_remember/models/tools/knowledge_responses.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 7,
+          "end": 37
+        },
+        "rationale": "This exact original84 card carries the body/moved-owner/history account examined in o01-sealed84-coverage.json; its per-card disposition is credited explicit retired/historical boundary.",
+        "role": "support"
+      },
+      {
+        "path": "onboarding/mcp/src/agents_remember/models/worktree.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 12,
+          "end": 373
+        },
+        "rationale": "This exact original84 card carries the body/moved-owner/history account examined in o01-sealed84-coverage.json; its per-card disposition is not closed: retained named-current claim.",
+        "role": "support"
+      },
+      {
+        "path": "onboarding/mcp/src/agents_remember/worktrees/reopen.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 13,
+          "end": 80
+        },
+        "rationale": "This exact original84 card carries the body/moved-owner/history account examined in o01-sealed84-coverage.json; its per-card disposition is not closed: retained named-current claim.",
+        "role": "support"
+      },
+      {
+        "path": "onboarding/mcp/src/agents_remember/worktrees/sync_transaction_results.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 7,
+          "end": 26
+        },
+        "rationale": "This exact original84 card carries the body/moved-owner/history account examined in o01-sealed84-coverage.json; its per-card disposition is credited repaired current body.",
+        "role": "support"
+      },
+      {
+        "path": "onboarding/mcp/src/agents_remember/worktrees/sync_transaction_state.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 7,
+          "end": 25
+        },
+        "rationale": "This exact original84 card carries the body/moved-owner/history account examined in o01-sealed84-coverage.json; its per-card disposition is credited explicit retired/historical boundary.",
+        "role": "support"
+      },
+      {
+        "path": "onboarding/mcp/tests/test_knowledge_leaf_read.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 7,
+          "end": 44
+        },
+        "rationale": "This exact original84 card carries the body/moved-owner/history account examined in o01-sealed84-coverage.json; its per-card disposition is not closed: retained named-current claim.",
+        "role": "support"
+      },
+      {
+        "path": "onboarding/mcp/tests/test_knowledge_review_attributed_source_content.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 7,
+          "end": 71
+        },
+        "rationale": "This exact original84 card carries the body/moved-owner/history account examined in o01-sealed84-coverage.json; its per-card disposition is not closed: retained named-current claim.",
+        "role": "support"
+      },
+      {
+        "path": "onboarding/mcp/tests/test_knowledge_review_attribution_precedence.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 7,
+          "end": 72
+        },
+        "rationale": "This exact original84 card carries the body/moved-owner/history account examined in o01-sealed84-coverage.json; its per-card disposition is not closed: retained named-current claim.",
+        "role": "support"
+      },
+      {
+        "path": "onboarding/mcp/tests/test_knowledge_review_comparison_generation.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 7,
+          "end": 111
+        },
+        "rationale": "This exact original84 card carries the body/moved-owner/history account examined in o01-sealed84-coverage.json; its per-card disposition is not closed: retained named-current claim.",
+        "role": "support"
+      },
+      {
+        "path": "onboarding/mcp/tests/test_knowledge_review_evidence_channels.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 7,
+          "end": 125
+        },
+        "rationale": "This exact original84 card carries the body/moved-owner/history account examined in o01-sealed84-coverage.json; its per-card disposition is not closed: retained named-current claim.",
+        "role": "support"
+      },
+      {
+        "path": "onboarding/mcp/tests/test_knowledge_review_relationship_movement.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 7,
+          "end": 93
+        },
+        "rationale": "This exact original84 card carries the body/moved-owner/history account examined in o01-sealed84-coverage.json; its per-card disposition is not closed: retained named-current claim.",
+        "role": "support"
+      },
+      {
+        "path": "onboarding/mcp/tests/test_knowledge_review_resolution_and_route.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 7,
+          "end": 151
+        },
+        "rationale": "This exact original84 card carries the body/moved-owner/history account examined in o01-sealed84-coverage.json; its per-card disposition is not closed: retained named-current claim.",
+        "role": "support"
+      },
+      {
+        "path": "onboarding/mcp/tests/test_knowledge_review_subject_isolation.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 7,
+          "end": 144
+        },
+        "rationale": "This exact original84 card carries the body/moved-owner/history account examined in o01-sealed84-coverage.json; its per-card disposition is not closed: retained named-current claim.",
+        "role": "support"
+      },
+      {
+        "path": "onboarding/mcp/tests/test_knowledge_store.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 7,
+          "end": 23
+        },
+        "rationale": "This exact original84 card carries the body/moved-owner/history account examined in o01-sealed84-coverage.json; its per-card disposition is credited repaired current body.",
+        "role": "support"
+      }
+    ],
+    "found_at": [
+      {
+        "path": "notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.memory-r2.md",
+        "locator": null,
+        "commit": null
+      },
+      {
+        "path": "notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.memory-r2.evidence/finding-adjudications.json",
+        "locator": null,
+        "commit": null
+      }
+    ],
+    "disposition": "rejected; implementation defect; original sealed repair remains outstanding",
+    "disposition_source": "notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.memory-r2.md",
+    "evidence": "candidate.py.md9-48 still declares ChangeBatch, eighteen commands and MutationResult; paired candidate.py1-10 retires that write boundary and exports only read identities. effect.py.md9-68 still describes removed effect/preservation/question payloads and commands; current effect.py1-12 retains only labels. subject_isolation.py.md9/107-109 says13 cases and removed detection/claim/observation/effect producers; paired source has12 cases and curator assessments only. Exact84 coverage and each74 shared-diff applicability/disposition are retained in own evidence.",
+    "authority": {
+      "task_document": "260928_maintained-invariant-knowledge/26_retire-the-canonical-database.json",
+      "requirement": "MIK-R26@v1",
+      "owner_case": "/home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/notes/run3/L26-SOURCE107-ONLY14-MEMFIX2-879378fb/owner-memory-fix2-case.json",
+      "owner_case_sha256": "77d3e843fe9d79051ed32080d5052ba023789cb44ed3a2de40e63ad44f60f7c5",
+      "delivery": "260928-MIK-L26-curation-d7a5e018-source107-original14",
+      "code_candidate_tree": "bf045a987679cc023f8fdfb8849d28cfcca1adb9",
+      "memory_candidate_tree": "7a750e36785a43b7a8eaafd6573fc70537edcb81"
+    },
+    "resolution": {
+      "state": "curator-authored-pending-only6-fix3-verification",
+      "judgment": "Original84 population is fully accounted:49 corrected/35 retained,83 paired examinations reused by exact current source/card byte equality, one Source87 reopen composition paired-read and re-cited. Former91 is not substituted.",
+      "codeTree": "715ee46e34ef5c421c540314b882c04d1676e08d",
+      "sourceChangeSHA256": "60906382a032543186e2728c62275a857f7bdcd7ab06932a9fa1d21acb9fa4e5",
+      "evidenceRefs": [
+        "memory:notes/l26-curation-takeover/d7a5e018/fix3/source87-O01-original84-current-dispositions.json",
+        "memory:notes/l26-curation-takeover/d7a5e018/fix3/source87-coherence-74-repointing.json",
+        "task:notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.memory-r2.md"
+      ],
+      "R2ProducerFieldsVerbatim": true,
+      "originalR1ProducerListPreserved": true,
+      "independentAcceptanceClaimed": false
+    },
+    "validated_at": "2026-10-08T15:39:39.945649+00:00",
+    "record_action": "revise",
+    "supersedes": null
+  },
+  {
+    "id": "L26-MR1-O02",
+    "statement": "The sealed mixed-reference population still includes a deleted current-caller claim and stale construct anchors.",
+    "kind": "finding",
+    "target": [
+      {
+        "path": "onboarding/mcp/overview.json",
+        "locator": {
+          "kind": "file"
+        },
+        "rationale": "The whole references plane of this sidecar belongs to the sealed27-reference/49-deleted-leg population; detailed original-to-successor notes/constructs are in o02-original27-current-targets.json.",
+        "role": "support"
+      },
+      {
+        "path": "onboarding/mcp/src/agents_remember/application/knowledge_views.py.json",
+        "locator": {
+          "kind": "file"
+        },
+        "rationale": "The whole references plane of this sidecar belongs to the sealed27-reference/49-deleted-leg population; detailed original-to-successor notes/constructs are in o02-original27-current-targets.json.",
+        "role": "support"
+      },
+      {
+        "path": "onboarding/mcp/src/agents_remember/application/overview.json",
+        "locator": {
+          "kind": "file"
+        },
+        "rationale": "The whole references plane of this sidecar belongs to the sealed27-reference/49-deleted-leg population; detailed original-to-successor notes/constructs are in o02-original27-current-targets.json.",
+        "role": "support"
+      },
+      {
+        "path": "onboarding/mcp/src/agents_remember/application/review_final_output_receipt.py.json",
+        "locator": {
+          "kind": "file"
+        },
+        "rationale": "The whole references plane of this sidecar belongs to the sealed27-reference/49-deleted-leg population; detailed original-to-successor notes/constructs are in o02-original27-current-targets.json.",
+        "role": "support"
+      },
+      {
+        "path": "onboarding/mcp/src/agents_remember/cli/knowledge_ingest.py.json",
+        "locator": {
+          "kind": "file"
+        },
+        "rationale": "The whole references plane of this sidecar belongs to the sealed27-reference/49-deleted-leg population; detailed original-to-successor notes/constructs are in o02-original27-current-targets.json.",
+        "role": "support"
+      },
+      {
+        "path": "onboarding/mcp/src/agents_remember/memory/knowledge/connection.py.json",
+        "locator": {
+          "kind": "file"
+        },
+        "rationale": "The whole references plane of this sidecar belongs to the sealed27-reference/49-deleted-leg population; detailed original-to-successor notes/constructs are in o02-original27-current-targets.json.",
+        "role": "support"
+      },
+      {
+        "path": "onboarding/mcp/src/agents_remember/memory/knowledge/refusals.py.json",
+        "locator": {
+          "kind": "file"
+        },
+        "rationale": "The whole references plane of this sidecar belongs to the sealed27-reference/49-deleted-leg population; detailed original-to-successor notes/constructs are in o02-original27-current-targets.json.",
+        "role": "support"
+      },
+      {
+        "path": "onboarding/mcp/src/agents_remember/memory/knowledge/store.py.json",
+        "locator": {
+          "kind": "file"
+        },
+        "rationale": "The whole references plane of this sidecar belongs to the sealed27-reference/49-deleted-leg population; detailed original-to-successor notes/constructs are in o02-original27-current-targets.json.",
+        "role": "support"
+      },
+      {
+        "path": "onboarding/mcp/src/agents_remember/memory/overview.json",
+        "locator": {
+          "kind": "file"
+        },
+        "rationale": "The whole references plane of this sidecar belongs to the sealed27-reference/49-deleted-leg population; detailed original-to-successor notes/constructs are in o02-original27-current-targets.json.",
+        "role": "support"
+      },
+      {
+        "path": "onboarding/mcp/src/agents_remember/models/knowledge/result.py.json",
+        "locator": {
+          "kind": "file"
+        },
+        "rationale": "The whole references plane of this sidecar belongs to the sealed27-reference/49-deleted-leg population; detailed original-to-successor notes/constructs are in o02-original27-current-targets.json.",
+        "role": "support"
+      },
+      {
+        "path": "onboarding/mcp/src/agents_remember/models/knowledge/view.py.json",
+        "locator": {
+          "kind": "file"
+        },
+        "rationale": "The whole references plane of this sidecar belongs to the sealed27-reference/49-deleted-leg population; detailed original-to-successor notes/constructs are in o02-original27-current-targets.json.",
+        "role": "support"
+      },
+      {
+        "path": "onboarding/mcp/src/agents_remember/models/overview.json",
+        "locator": {
+          "kind": "file"
+        },
+        "rationale": "The whole references plane of this sidecar belongs to the sealed27-reference/49-deleted-leg population; detailed original-to-successor notes/constructs are in o02-original27-current-targets.json.",
+        "role": "support"
+      },
+      {
+        "path": "onboarding/mcp/src/agents_remember/models/tools/knowledge_responses.py.json",
+        "locator": {
+          "kind": "file"
+        },
+        "rationale": "The whole references plane of this sidecar belongs to the sealed27-reference/49-deleted-leg population; detailed original-to-successor notes/constructs are in o02-original27-current-targets.json.",
+        "role": "support"
+      },
+      {
+        "path": "onboarding/mcp/src/agents_remember/worktrees/overview.json",
+        "locator": {
+          "kind": "file"
+        },
+        "rationale": "The whole references plane of this sidecar belongs to the sealed27-reference/49-deleted-leg population; detailed original-to-successor notes/constructs are in o02-original27-current-targets.json.",
+        "role": "support"
+      },
+      {
+        "path": "onboarding/mcp/tests/knowledge_fixture_test_support.py.json",
+        "locator": {
+          "kind": "file"
+        },
+        "rationale": "The whole references plane of this sidecar belongs to the sealed27-reference/49-deleted-leg population; detailed original-to-successor notes/constructs are in o02-original27-current-targets.json.",
+        "role": "support"
+      }
+    ],
+    "found_at": [
+      {
+        "path": "notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.memory-r2.md",
+        "locator": null,
+        "commit": null
+      },
+      {
+        "path": "notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.memory-r2.evidence/finding-adjudications.json",
+        "locator": null,
+        "commit": null
+      }
+    ],
+    "disposition": "rejected; implementation defect; original sealed repair remains outstanding",
+    "disposition_source": "notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.memory-r2.md",
+    "evidence": "references.15 still says there are two real callers, MCP and projection writer, both importing read_knowledge_view. The projection writer is retired; the surviving tools/knowledge.py targets at37 and158 are a dataclass import and a blank line. The exact27-row readback has32 code legs,26 exact current blobs and6 stale blobs across references15/4 of views,29 of final-output-receipt and11 of models/view.",
+    "authority": {
+      "task_document": "260928_maintained-invariant-knowledge/26_retire-the-canonical-database.json",
+      "requirement": "MIK-R26@v1",
+      "owner_case": "/home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/notes/run3/L26-SOURCE107-ONLY14-MEMFIX2-879378fb/owner-memory-fix2-case.json",
+      "owner_case_sha256": "77d3e843fe9d79051ed32080d5052ba023789cb44ed3a2de40e63ad44f60f7c5",
+      "delivery": "260928-MIK-L26-curation-d7a5e018-source107-original14",
+      "code_candidate_tree": "bf045a987679cc023f8fdfb8849d28cfcca1adb9",
+      "memory_candidate_tree": "7a750e36785a43b7a8eaafd6573fc70537edcb81"
+    },
+    "resolution": {
+      "state": "curator-authored-pending-only6-fix3-verification",
+      "judgment": "Original27 references/49 legs and their deleted-caller meaning are retained; six stale present-code anchors corrected. Named current Source87 refresh is separate mechanical composition.",
+      "codeTree": "715ee46e34ef5c421c540314b882c04d1676e08d",
+      "sourceChangeSHA256": "60906382a032543186e2728c62275a857f7bdcd7ab06932a9fa1d21acb9fa4e5",
+      "evidenceRefs": [
+        "memory:notes/l26-curation-takeover/d7a5e018/fix3/O02-original27-current-dispositions.json",
+        "memory:notes/l26-curation-takeover/d7a5e018/fix3/source87-required-reference-reauthoring.json",
+        "task:notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.memory-r2.md"
+      ],
+      "R2ProducerFieldsVerbatim": true,
+      "originalR1ProducerListPreserved": true,
+      "independentAcceptanceClaimed": false
+    },
+    "validated_at": "2026-10-08T15:39:39.945649+00:00",
+    "record_action": "revise",
+    "supersedes": null
+  },
+  {
+    "id": "L26-MR1-O03",
+    "statement": "Both required N3 cards now describe current ownership and behavior with superseded accounts explicitly bounded as history.",
+    "kind": "finding",
+    "target": [
+      {
+        "path": "onboarding/dashboard/src/panels/lifecycle-list/hierarchy.test.tsx.md",
+        "locator": {
+          "kind": "file"
+        },
+        "rationale": "Both explicit N3 corrections are now present. The actual lifecycle-list hierarchy card describes the current single suite rather than L33's old five cases. The review-intent-summary card identifies the current presentation owner and explicitly dates superseded ICR ownership.",
+        "role": "support"
+      }
+    ],
+    "found_at": [
+      {
+        "path": "notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.memory-r2.md",
+        "locator": null,
+        "commit": null
+      },
+      {
+        "path": "notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.memory-r2.evidence/finding-adjudications.json",
+        "locator": null,
+        "commit": null
+      }
+    ],
+    "disposition": "accepted; repair verified within sealed scope",
+    "disposition_source": "notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.memory-r2.md",
+    "evidence": "Paired current hierarchy.test.tsx and review_intent_summary.py reads match the corrected current cards and historical qualifications.",
+    "authority": {
+      "task_document": "260928_maintained-invariant-knowledge/26_retire-the-canonical-database.json",
+      "requirement": "MIK-R26@v1",
+      "owner_case": "/home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/notes/run3/L26-SOURCE107-ONLY14-MEMFIX2-879378fb/owner-memory-fix2-case.json",
+      "owner_case_sha256": "77d3e843fe9d79051ed32080d5052ba023789cb44ed3a2de40e63ad44f60f7c5",
+      "delivery": "260928-MIK-L26-curation-d7a5e018-source107-original14",
+      "code_candidate_tree": "bf045a987679cc023f8fdfb8849d28cfcca1adb9",
+      "memory_candidate_tree": "7a750e36785a43b7a8eaafd6573fc70537edcb81"
+    },
+    "resolution": {
+      "state": "accepted-in-sealed-R2-retained",
+      "judgment": "Retain sealed R2 acceptance with its historical qualification and evidence gaps. No current semantic acceptance is inferred from sync, MQC or this response.",
+      "codeTree": "715ee46e34ef5c421c540314b882c04d1676e08d",
+      "sourceChangeSHA256": "60906382a032543186e2728c62275a857f7bdcd7ab06932a9fa1d21acb9fa4e5",
+      "evidenceRefs": [
+        "task:notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.memory-r2.md"
+      ],
+      "R2ProducerFieldsVerbatim": true,
+      "originalR1ProducerListPreserved": true,
+      "independentAcceptanceClaimed": false
+    },
+    "validated_at": "2026-10-08T15:39:39.945649+00:00",
+    "record_action": "retain",
+    "supersedes": null
+  },
+  {
+    "id": "L26-MR1-O04",
+    "statement": "The seventeen sealed Markdown destinations are reconciled and the whole-memory census finds no newly caused local links to the deleted cards.",
+    "kind": "finding",
+    "target": [
+      {
+        "path": "onboarding/mcp/src/agents_remember/application/knowledge_before_half.py.md",
+        "locator": {
+          "kind": "file"
+        },
+        "rationale": "This exact document belongs to the original17-link population; current text removes or qualifies the deleted-card destinations.",
+        "role": "support"
+      },
+      {
+        "path": "onboarding/mcp/src/agents_remember/application/overview.md",
+        "locator": {
+          "kind": "file"
+        },
+        "rationale": "This exact document belongs to the original17-link population; current text removes or qualifies the deleted-card destinations.",
+        "role": "support"
+      },
+      {
+        "path": "onboarding/mcp/src/agents_remember/application/review_candidate_resolution.py.md",
+        "locator": {
+          "kind": "file"
+        },
+        "rationale": "This exact document belongs to the original17-link population; current text removes or qualifies the deleted-card destinations.",
+        "role": "support"
+      },
+      {
+        "path": "onboarding/mcp/src/agents_remember/cli/knowledge_ingest.py.md",
+        "locator": {
+          "kind": "file"
+        },
+        "rationale": "This exact document belongs to the original17-link population; current text removes or qualifies the deleted-card destinations.",
+        "role": "support"
+      },
+      {
+        "path": "onboarding/mcp/src/agents_remember/memory/overview.md",
+        "locator": {
+          "kind": "file"
+        },
+        "rationale": "This exact document belongs to the original17-link population; current text removes or qualifies the deleted-card destinations.",
+        "role": "support"
+      },
+      {
+        "path": "onboarding/mcp/src/agents_remember/models/overview.md",
+        "locator": {
+          "kind": "file"
+        },
+        "rationale": "This exact document belongs to the original17-link population; current text removes or qualifies the deleted-card destinations.",
+        "role": "support"
+      },
+      {
+        "path": "onboarding/mcp/src/agents_remember/worktrees/overview.md",
+        "locator": {
+          "kind": "file"
+        },
+        "rationale": "This exact document belongs to the original17-link population; current text removes or qualifies the deleted-card destinations.",
+        "role": "support"
+      }
+    ],
+    "found_at": [
+      {
+        "path": "notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.memory-r2.md",
+        "locator": null,
+        "commit": null
+      },
+      {
+        "path": "notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.memory-r2.evidence/finding-adjudications.json",
+        "locator": null,
+        "commit": null
+      }
+    ],
+    "disposition": "accepted; repair verified within sealed scope",
+    "disposition_source": "notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.memory-r2.md",
+    "evidence": "3053 Markdown files checked: ordinary local inline-link census newlyCausedLinks=[], complementary reference-definition census finds0 definitions/0 newly-caused targets. All17 exact baseline destinations and current successors are in the evidence.",
+    "authority": {
+      "task_document": "260928_maintained-invariant-knowledge/26_retire-the-canonical-database.json",
+      "requirement": "MIK-R26@v1",
+      "owner_case": "/home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/notes/run3/L26-SOURCE107-ONLY14-MEMFIX2-879378fb/owner-memory-fix2-case.json",
+      "owner_case_sha256": "77d3e843fe9d79051ed32080d5052ba023789cb44ed3a2de40e63ad44f60f7c5",
+      "delivery": "260928-MIK-L26-curation-d7a5e018-source107-original14",
+      "code_candidate_tree": "bf045a987679cc023f8fdfb8849d28cfcca1adb9",
+      "memory_candidate_tree": "7a750e36785a43b7a8eaafd6573fc70537edcb81"
+    },
+    "resolution": {
+      "state": "accepted-in-sealed-R2-retained",
+      "judgment": "Retain sealed R2 acceptance with its historical qualification and evidence gaps. No current semantic acceptance is inferred from sync, MQC or this response.",
+      "codeTree": "715ee46e34ef5c421c540314b882c04d1676e08d",
+      "sourceChangeSHA256": "60906382a032543186e2728c62275a857f7bdcd7ab06932a9fa1d21acb9fa4e5",
+      "evidenceRefs": [
+        "task:notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.memory-r2.md"
+      ],
+      "R2ProducerFieldsVerbatim": true,
+      "originalR1ProducerListPreserved": true,
+      "independentAcceptanceClaimed": false
+    },
+    "validated_at": "2026-10-08T15:39:39.945649+00:00",
+    "record_action": "retain",
+    "supersedes": null
+  },
+  {
+    "id": "L26-MR1-E01",
+    "statement": "Retirement evidence correctly distinguishes66 datasets,8 companions and122 directories while preserving removed bytes and disclosing498 outside-scope copies.",
+    "kind": "finding",
+    "target": [
+      {
+        "path": "notes/reports/role-launch/260928-MIK-L26-curator-d7a5e018-b7ac-441b-86b0-e147b890d32c.md",
+        "locator": {
+          "kind": "file"
+        },
+        "rationale": "This current report carries the corrected physical-removal unit accounting; the retained native artifact supplies the measurement without adding semantic acceptance.",
+        "role": "support"
+      }
+    ],
+    "found_at": [
+      {
+        "path": "notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.memory-r2.md",
+        "locator": null,
+        "commit": null
+      },
+      {
+        "path": "notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.memory-r2.evidence/finding-adjudications.json",
+        "locator": null,
+        "commit": null
+      }
+    ],
+    "disposition": "accepted; repair verified within sealed scope",
+    "disposition_source": "notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.memory-r2.md",
+    "evidence": "Retained74-member preserved archive SHA c4074b096c10a1dfe9c45c20ff4dfd6c034370c7fb6168e941134a6cea36a153 contains1460228 bytes; scoped raw apply deleted66/removedWithThem130/failures0 means8 companions+122 directories, not130 directories. DB+empty-lock preservation and current absence verified.",
+    "authority": {
+      "task_document": "260928_maintained-invariant-knowledge/26_retire-the-canonical-database.json",
+      "requirement": "MIK-R26@v1",
+      "owner_case": "/home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/notes/run3/L26-SOURCE107-ONLY14-MEMFIX2-879378fb/owner-memory-fix2-case.json",
+      "owner_case_sha256": "77d3e843fe9d79051ed32080d5052ba023789cb44ed3a2de40e63ad44f60f7c5",
+      "delivery": "260928-MIK-L26-curation-d7a5e018-source107-original14",
+      "code_candidate_tree": "bf045a987679cc023f8fdfb8849d28cfcca1adb9",
+      "memory_candidate_tree": "7a750e36785a43b7a8eaafd6573fc70537edcb81"
+    },
+    "resolution": {
+      "state": "accepted-in-sealed-R2-retained",
+      "judgment": "Retain sealed R2 acceptance with its historical qualification and evidence gaps. No current semantic acceptance is inferred from sync, MQC or this response.",
+      "codeTree": "715ee46e34ef5c421c540314b882c04d1676e08d",
+      "sourceChangeSHA256": "60906382a032543186e2728c62275a857f7bdcd7ab06932a9fa1d21acb9fa4e5",
+      "evidenceRefs": [
+        "task:notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.memory-r2.md"
+      ],
+      "R2ProducerFieldsVerbatim": true,
+      "originalR1ProducerListPreserved": true,
+      "independentAcceptanceClaimed": false
+    },
+    "validated_at": "2026-10-08T15:39:39.945649+00:00",
+    "record_action": "retain",
+    "supersedes": null
+  },
+  {
+    "id": "L26-MR1-E02",
+    "statement": "The current report and full persisted worklist agree on4084 unique items, their exact digest and closed structural coverage.",
+    "kind": "finding",
+    "target": [
+      {
+        "path": "notes/reports/role-launch/260928-MIK-L26-curator-d7a5e018-b7ac-441b-86b0-e147b890d32c.md",
+        "locator": {
+          "kind": "file"
+        },
+        "rationale": "This current report carries the corrected exact-pair persisted worklist count/digest; the retained native artifact supplies the measurement without adding semantic acceptance.",
+        "role": "support"
+      }
+    ],
+    "found_at": [
+      {
+        "path": "notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.memory-r2.md",
+        "locator": null,
+        "commit": null
+      },
+      {
+        "path": "notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.memory-r2.evidence/finding-adjudications.json",
+        "locator": null,
+        "commit": null
+      }
+    ],
+    "disposition": "accepted; repair verified within sealed scope",
+    "disposition_source": "notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.memory-r2.md",
+    "evidence": "Final whole MQC4d5116891582452f and parsed worklist agree:4084 unique IDs, digest126a0380a54860d42f570e008a082c9bc36a23aa470a065c4c27cf48cea2ab55,complete/open0/gatepass. This is structural evidence, not acceptance of the semantic repairs.",
+    "authority": {
+      "task_document": "260928_maintained-invariant-knowledge/26_retire-the-canonical-database.json",
+      "requirement": "MIK-R26@v1",
+      "owner_case": "/home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/notes/run3/L26-SOURCE107-ONLY14-MEMFIX2-879378fb/owner-memory-fix2-case.json",
+      "owner_case_sha256": "77d3e843fe9d79051ed32080d5052ba023789cb44ed3a2de40e63ad44f60f7c5",
+      "delivery": "260928-MIK-L26-curation-d7a5e018-source107-original14",
+      "code_candidate_tree": "bf045a987679cc023f8fdfb8849d28cfcca1adb9",
+      "memory_candidate_tree": "7a750e36785a43b7a8eaafd6573fc70537edcb81"
+    },
+    "resolution": {
+      "state": "accepted-in-sealed-R2-retained",
+      "judgment": "Retain sealed R2 acceptance with its historical qualification and evidence gaps. No current semantic acceptance is inferred from sync, MQC or this response.",
+      "codeTree": "715ee46e34ef5c421c540314b882c04d1676e08d",
+      "sourceChangeSHA256": "60906382a032543186e2728c62275a857f7bdcd7ab06932a9fa1d21acb9fa4e5",
+      "evidenceRefs": [
+        "task:notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.memory-r2.md"
+      ],
+      "R2ProducerFieldsVerbatim": true,
+      "originalR1ProducerListPreserved": true,
+      "independentAcceptanceClaimed": false
+    },
+    "validated_at": "2026-10-08T15:39:39.945649+00:00",
+    "record_action": "retain",
+    "supersedes": null
+  },
+  {
+    "id": "L26-MR1-E03",
+    "statement": "The unrecovered original pre-removal observer transcript remains an explicitly unverified historical gap under the canonical Owner disposition.",
+    "kind": "finding",
+    "target": [
+      {
+        "path": "notes/run3/L26-SOURCE95-COMPOSITE-INPUT-879378fb/owner-E03-historical-gap-disposition.json",
+        "locator": {
+          "kind": "file"
+        },
+        "rationale": "The missing original pre-removal observer transcript remains explicitly unverified. The current dated report and canonical cc9634c2 Owner disposition accept that disclosed historical gap; no fresh scan, timestamp or recollection is used as independent pre-removal proof.",
+        "role": "support"
+      }
+    ],
+    "found_at": [
+      {
+        "path": "notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.memory-r2.md",
+        "locator": null,
+        "commit": null
+      },
+      {
+        "path": "notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.memory-r2.evidence/finding-adjudications.json",
+        "locator": null,
+        "commit": null
+      }
+    ],
+    "disposition": "accepted; repair verified within sealed scope",
+    "disposition_source": "notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.memory-r2.md",
+    "evidence": "Exact Owner artifact SHA cc9634c278351e6a574b364c9556d017bd178aea506361efd4596d1b30366a08 and current Curator report preserve placeholders/recollection as history and the missing original observer output as unverified.",
+    "authority": {
+      "task_document": "260928_maintained-invariant-knowledge/26_retire-the-canonical-database.json",
+      "requirement": "MIK-R26@v1",
+      "owner_case": "/home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/notes/run3/L26-SOURCE107-ONLY14-MEMFIX2-879378fb/owner-memory-fix2-case.json",
+      "owner_case_sha256": "77d3e843fe9d79051ed32080d5052ba023789cb44ed3a2de40e63ad44f60f7c5",
+      "delivery": "260928-MIK-L26-curation-d7a5e018-source107-original14",
+      "code_candidate_tree": "bf045a987679cc023f8fdfb8849d28cfcca1adb9",
+      "memory_candidate_tree": "7a750e36785a43b7a8eaafd6573fc70537edcb81"
+    },
+    "resolution": {
+      "state": "accepted-in-sealed-R2-retained",
+      "judgment": "Retain sealed R2 acceptance with its historical qualification and evidence gaps. No current semantic acceptance is inferred from sync, MQC or this response.",
+      "codeTree": "715ee46e34ef5c421c540314b882c04d1676e08d",
+      "sourceChangeSHA256": "60906382a032543186e2728c62275a857f7bdcd7ab06932a9fa1d21acb9fa4e5",
+      "evidenceRefs": [
+        "task:notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.memory-r2.md"
+      ],
+      "R2ProducerFieldsVerbatim": true,
+      "originalR1ProducerListPreserved": true,
+      "independentAcceptanceClaimed": false
+    },
+    "validated_at": "2026-10-08T15:39:39.945649+00:00",
+    "record_action": "retain",
+    "supersedes": null
+  },
+  {
+    "id": "L26-MR1-C01",
+    "statement": "The current context module and card describe only schema identity, and the bounded source correction preserves executable AST identity.",
+    "kind": "finding",
+    "target": [
+      {
+        "path": "mcp/src/agents_remember/models/knowledge/context.py",
+        "locator": {
+          "kind": "file"
+        },
+        "rationale": "The source docstring and current card now describe only KnowledgeSchemaIdentity/schema name. The bounded correction changes the module docstring alone and leaves executable AST identity intact.",
+        "role": "support"
+      }
+    ],
+    "found_at": [
+      {
+        "path": "notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.memory-r2.md",
+        "locator": null,
+        "commit": null
+      },
+      {
+        "path": "notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.memory-r2.evidence/finding-adjudications.json",
+        "locator": null,
+        "commit": null
+      }
+    ],
+    "disposition": "accepted; repair verified within sealed scope",
+    "disposition_source": "notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.memory-r2.md",
+    "evidence": "Current source SHA1b42a27597613b7b4d057d527fa49b80b5bb7ef809fb8552d6fa828c547afe70 matches the retained documentary successor; before/after AST equality excluding only module-docstring value is independently confirmed.",
+    "authority": {
+      "task_document": "260928_maintained-invariant-knowledge/26_retire-the-canonical-database.json",
+      "requirement": "MIK-R26@v1",
+      "owner_case": "/home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/notes/run3/L26-SOURCE107-ONLY14-MEMFIX2-879378fb/owner-memory-fix2-case.json",
+      "owner_case_sha256": "77d3e843fe9d79051ed32080d5052ba023789cb44ed3a2de40e63ad44f60f7c5",
+      "delivery": "260928-MIK-L26-curation-d7a5e018-source107-original14",
+      "code_candidate_tree": "bf045a987679cc023f8fdfb8849d28cfcca1adb9",
+      "memory_candidate_tree": "7a750e36785a43b7a8eaafd6573fc70537edcb81"
+    },
+    "resolution": {
+      "state": "accepted-in-sealed-R2-retained",
+      "judgment": "Retain sealed R2 acceptance with its historical qualification and evidence gaps. No current semantic acceptance is inferred from sync, MQC or this response.",
+      "codeTree": "715ee46e34ef5c421c540314b882c04d1676e08d",
+      "sourceChangeSHA256": "60906382a032543186e2728c62275a857f7bdcd7ab06932a9fa1d21acb9fa4e5",
+      "evidenceRefs": [
+        "task:notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.memory-r2.md"
+      ],
+      "R2ProducerFieldsVerbatim": true,
+      "originalR1ProducerListPreserved": true,
+      "independentAcceptanceClaimed": false
+    },
+    "validated_at": "2026-10-08T15:39:39.945649+00:00",
+    "record_action": "retain",
+    "supersedes": null
+  }
+]

@@ -3,16 +3,37 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "**The module's own statement of the three questions it owns, why it is its own module, and the one-implementation rule.**\n\nAnchor: \"There is one implementation of each rule and it lives here.\"",
+      "note": "The three retained review display/currentness models.",
       "targets": [
         {
           "anchor": {
-            "blob": "bd66eb3576aa6605929a1dcc30616584b3563cb1",
-            "content": "sha256:59ee00f0098e01a7089aa33768117660bf741f8c87cd37f52416e24db3512272",
+            "blob": "ce64a977e926846a0ca408bf1aceecec8a22ea85",
+            "content": "sha256:34a5d8e83a0088df46de2f68d8e6d8bd7d500c25c4923ae17a06f012ca617d95",
             "locator": {
-              "end": 20,
-              "kind": "line_range",
-              "start": 1
+              "kind": "symbol",
+              "name": "ReviewStaleness"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ce64a977e926846a0ca408bf1aceecec8a22ea85",
+            "content": "sha256:0a73c374ac5c8e30f16a41de3bf760f5b0448916ab28caeee7e6d168978d7ba0",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewSyncMovement"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ce64a977e926846a0ca408bf1aceecec8a22ea85",
+            "content": "sha256:d904949668541caf0010fa94cebce276e8833c105662025001251df021211bed",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewSubmission"
             }
           },
           "kind": "code"
@@ -64,12 +85,12 @@
         },
         {
           "anchor": {
-            "blob": "005c44f99677f29c3777322502b77b732a3a0252",
+            "blob": "0cc1ed4aa2ead143a66f5ee6b69cf490138fd7ae",
             "content": "sha256:8980e37eb52f85329d39409e1121708f681cfa2a94fe60232b5518f5bdb87c9e",
             "locator": {
-              "end": 64,
+              "end": 66,
               "kind": "line_range",
-              "start": 61
+              "start": 63
             },
             "path": "mcp/src/agents_remember/models/knowledge/review.py"
           },
@@ -77,12 +98,12 @@
         },
         {
           "anchor": {
-            "blob": "005c44f99677f29c3777322502b77b732a3a0252",
+            "blob": "0cc1ed4aa2ead143a66f5ee6b69cf490138fd7ae",
             "content": "sha256:98d609340f47245f52af514a299b39a137d28ef6c149edc71e4831f904503dce",
             "locator": {
-              "end": 65,
+              "end": 67,
               "kind": "line_range",
-              "start": 62
+              "start": 64
             },
             "path": "mcp/src/agents_remember/models/knowledge/review.py"
           },
@@ -95,7 +116,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "005c44f99677f29c3777322502b77b732a3a0252",
+            "blob": "0cc1ed4aa2ead143a66f5ee6b69cf490138fd7ae",
             "content": "sha256:60f8245e26872ab7d3cc717591296fbc7b92122d500d501f0056eed402c42b2d",
             "locator": {
               "kind": "symbol",
@@ -107,7 +128,7 @@
         },
         {
           "anchor": {
-            "blob": "005c44f99677f29c3777322502b77b732a3a0252",
+            "blob": "0cc1ed4aa2ead143a66f5ee6b69cf490138fd7ae",
             "content": "sha256:9de3ecb13f26f40a6609ccbb99916e3f0d4f2ce3ecdf4e96249c62d1129e9d5b",
             "locator": {
               "kind": "symbol",
@@ -171,7 +192,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "23d8f9881b56e27d64d08f9d0a414d422de3801b",
+            "blob": "e824e6ccecef1fd4afa834be30a9359c7cac5045",
             "content": "sha256:b5d9ba51fb12b3d8f75f56225b0ad35b2e9b276a7a749d2bb8359a3e32ef608d",
             "locator": {
               "kind": "symbol",
@@ -200,7 +221,7 @@
         },
         {
           "anchor": {
-            "blob": "4ec2a40b7a16de3a039669fc3091bc2b280706a4",
+            "blob": "a3c76aa75aa29226350c1d16fe7d5613c131e5ab",
             "content": "sha256:efa1fb7875aa490893ce95abf51dcc13ce0aa7b3fffbcca55e299881f9cec8e5",
             "locator": {
               "kind": "symbol",
@@ -226,15 +247,15 @@
       ]
     },
     "17": {
-      "note": "**The case that pins the four validator clauses one forgery each, with the real published movement as the accepted control.**",
+      "note": "The current forgery sweep verifies measured movement and complete source-record binding.",
       "targets": [
         {
           "anchor": {
-            "blob": "1f7a5c00243c61772ffbe8b1a4e92b8d0130ec0e",
-            "content": "sha256:407cb44f0690abe7b6049f7c2b76e1421651d1580bdeafb4c9228665773bdfb1",
+            "blob": "c92a9621f5a0f54288f3d50ab9ff24dfe15ca1ac",
+            "content": "sha256:0a89b4bff040f62d033e07205633693a8cb9ce8a0a297a4977082ee5ca14b427",
             "locator": {
               "kind": "symbol",
-              "name": "test_the_movement_validator_refuses_each_false_shape"
+              "name": "test_a_sync_movement_refuses_a_state_its_own_fields_contradict"
             },
             "path": "mcp/tests/test_review_sync_movement_read.py"
           },
@@ -243,28 +264,15 @@
       ]
     },
     "18": {
-      "note": "**The case that pins the two `unavailable` sub-cases and records the `record_readable` hold in place.**",
+      "note": "Unreadable or forged rebinding is unavailable and never current.",
       "targets": [
         {
           "anchor": {
-            "blob": "1f7a5c00243c61772ffbe8b1a4e92b8d0130ec0e",
-            "content": "sha256:0562d796fe6412d011be686f4d321121bdc60e4497c8eb0bed0824630851b323",
+            "blob": "c92a9621f5a0f54288f3d50ab9ff24dfe15ca1ac",
+            "content": "sha256:fce1f589c16e9c25eb11776f946d02e633feb412ec64238bbb9bbcded16a91c6",
             "locator": {
               "kind": "symbol",
-              "name": "test_a_record_that_cannot_be_used_is_reported_unavailable"
-            },
-            "path": "mcp/tests/test_review_sync_movement_read.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "1f7a5c00243c61772ffbe8b1a4e92b8d0130ec0e",
-            "content": "sha256:3637be2605b45806a7637eb0c2944c5edfe328dbb15bd9628deb961625830922",
-            "locator": {
-              "end": 226,
-              "kind": "line_range",
-              "start": 169
+              "name": "test_unreadable_or_forged_rebinding_is_unavailable_and_never_current"
             },
             "path": "mcp/tests/test_review_sync_movement_read.py"
           },
@@ -294,7 +302,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bd66eb3576aa6605929a1dcc30616584b3563cb1",
+            "blob": "ce64a977e926846a0ca408bf1aceecec8a22ea85",
             "content": "sha256:0395123e45c2a8402f70e335b3361c3636922d8a80ae1aa477a9b3353c134034",
             "locator": {
               "kind": "symbol",
@@ -306,11 +314,11 @@
       ]
     },
     "4": {
-      "note": "**The four measured states declared once, with `current` as the only one that claims agreement.**",
+      "note": "The movement-state Literal distinguishes measurements from explained absences.",
       "targets": [
         {
           "anchor": {
-            "blob": "bd66eb3576aa6605929a1dcc30616584b3563cb1",
+            "blob": "ce64a977e926846a0ca408bf1aceecec8a22ea85",
             "content": "sha256:648875f435ba138f9762884dfbf9592574b05c52d8ff1c1caa0658c1c331df04",
             "locator": {
               "kind": "symbol",
@@ -322,11 +330,11 @@
       ]
     },
     "5": {
-      "note": "**The stale comparison, its three-member state union, and the three causes of a stale state the statement names.**",
+      "note": "Staleness includes task-context and not-measured states.",
       "targets": [
         {
           "anchor": {
-            "blob": "bd66eb3576aa6605929a1dcc30616584b3563cb1",
+            "blob": "ce64a977e926846a0ca408bf1aceecec8a22ea85",
             "content": "sha256:34a5d8e83a0088df46de2f68d8e6d8bd7d500c25c4923ae17a06f012ca617d95",
             "locator": {
               "kind": "symbol",
@@ -338,15 +346,16 @@
       ]
     },
     "6": {
-      "note": "**The bilateral previous-input rule: a stale comparison must label one, and no other state may carry one.**",
+      "note": "Only a stale comparison labels an actual previous comparison.\n\nAnchor: `ReviewStaleness._require_the_previous_input_to_be_labelled`",
       "targets": [
         {
           "anchor": {
-            "blob": "bd66eb3576aa6605929a1dcc30616584b3563cb1",
-            "content": "sha256:13284bfe39f1769ed7524e14a03b3fff35435c7de98f6fd8df6d708af266e825",
+            "blob": "ce64a977e926846a0ca408bf1aceecec8a22ea85",
+            "content": "sha256:f7a033ae802794f3b2beedc27621447f6411e4fb9ea3791491bedff3b7a778ea",
             "locator": {
-              "kind": "symbol",
-              "name": "_require_the_previous_input_to_be_labelled"
+              "end": 93,
+              "kind": "line_range",
+              "start": 86
             }
           },
           "kind": "code"
@@ -354,27 +363,15 @@
       ]
     },
     "7": {
-      "note": "**The measured movement: its field set, the resolved identities present exactly on the channel that moved, and the record_readable/reuse_permitted/reinterpreted_for_new_inputs flags.**",
+      "note": "The v2 movement carries its complete source comparison and exact code/memory tree facts.",
       "targets": [
         {
           "anchor": {
-            "blob": "bd66eb3576aa6605929a1dcc30616584b3563cb1",
-            "content": "sha256:32e759ddeff1713b2c257983248ed0d623b1d3c56babd35a02ada80c9df93252",
+            "blob": "ce64a977e926846a0ca408bf1aceecec8a22ea85",
+            "content": "sha256:0a73c374ac5c8e30f16a41de3bf760f5b0448916ab28caeee7e6d168978d7ba0",
             "locator": {
               "kind": "symbol",
               "name": "ReviewSyncMovement"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "bd66eb3576aa6605929a1dcc30616584b3563cb1",
-            "content": "sha256:35d05db8ee86407a6a7367a0667a41185f85d0abefaf007818f58d8f27e54fcf",
-            "locator": {
-              "end": 187,
-              "kind": "line_range",
-              "start": 85
             }
           },
           "kind": "code"
@@ -382,27 +379,28 @@
       ]
     },
     "8": {
-      "note": "**The `after` validator that refuses every false movement shape — state against moved identities, absence against reason, and `record_readable` against `unavailable`.**",
+      "note": "Movement state, source binding, absence and resolved identities are self-validated.\n\nAnchor: `ReviewSyncMovement._validate_source_comparison`; `ReviewSyncMovement._the_state_follows_from_what_was_measured`",
       "targets": [
         {
           "anchor": {
-            "blob": "bd66eb3576aa6605929a1dcc30616584b3563cb1",
-            "content": "sha256:d70780b9ab23f1ae57de6b7e2812a00b62d0eb719b2117bd46813bf9a729b172",
+            "blob": "ce64a977e926846a0ca408bf1aceecec8a22ea85",
+            "content": "sha256:7b554551a5f676b3ff4f3a891b955898ba23323e7f46639081b3a85ae1ff4452",
             "locator": {
-              "kind": "symbol",
-              "name": "_the_state_follows_from_what_was_measured"
+              "end": 138,
+              "kind": "line_range",
+              "start": 129
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "bd66eb3576aa6605929a1dcc30616584b3563cb1",
-            "content": "sha256:78ef2a3194e321717417fc35cfde1dd61fc61b478c6be0993f1940d11cc67b6f",
+            "blob": "ce64a977e926846a0ca408bf1aceecec8a22ea85",
+            "content": "sha256:568408fd0ad89e2ad6556fa6f6d6ecb32a241103e3f0ae469d5031b18863f675",
             "locator": {
-              "end": 187,
+              "end": 196,
               "kind": "line_range",
-              "start": 131
+              "start": 141
             }
           },
           "kind": "code"
@@ -410,27 +408,15 @@
       ]
     },
     "9": {
-      "note": "**The submission boundary carried as data: two unfavourable states, and `none_is_approval`.**",
+      "note": "Submission remains a display-only boundary, with no approval disposition.",
       "targets": [
         {
           "anchor": {
-            "blob": "bd66eb3576aa6605929a1dcc30616584b3563cb1",
+            "blob": "ce64a977e926846a0ca408bf1aceecec8a22ea85",
             "content": "sha256:d904949668541caf0010fa94cebce276e8833c105662025001251df021211bed",
             "locator": {
               "kind": "symbol",
               "name": "ReviewSubmission"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "bd66eb3576aa6605929a1dcc30616584b3563cb1",
-            "content": "sha256:e8e4cc7090024a2d9f42192af541da9c50bf9ce134c1ea2ba9c10a6f0fc9d571",
-            "locator": {
-              "end": 204,
-              "kind": "line_range",
-              "start": 190
             }
           },
           "kind": "code"

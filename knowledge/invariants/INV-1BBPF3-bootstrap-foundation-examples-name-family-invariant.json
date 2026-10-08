@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Foundation examples must name supported read views; otherwise a new project's first inspection is routed to an operation that cannot demonstrate its recorded knowledge."
+  },
+  "applicability": "The c-14 bootstrap skill's foundation examples.",
+  "conditions": [
+    "The repository holds a converted foundation."
+  ],
+  "exclusions": [
+    "An unconverted foundation, which the conversion command handles first."
+  ],
+  "id": "INV-1BBPF3",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.evidence/focused-tests-admitted.log; notes/run3/L26-current-evidence-20261007/F06-bootstrap-view-negative-current.log"
+      ],
+      "path": "handoff-stage1.json"
+    },
+    "handoffEntry": "R3 Finding 6",
+    "leaf": "260928-MIK-L26",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Bootstrap foundation examples name family, invariant and source_context views.",
+  "status": "proposed",
+  "supersedes": []
+}

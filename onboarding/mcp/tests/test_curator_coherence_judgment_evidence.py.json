@@ -1,0 +1,22 @@
+{
+  "path": "mcp/tests/test_curator_coherence_judgment_evidence.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The file realizes its current contract at the corrected candidate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aca42eda5f218bb88734d11e4667a69d620be1e9",
+            "content": "sha256:89fdd6c36b583adb33e0a21d2b772bc28f944cdcb23dad840ac9f4bfd75d9a88",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

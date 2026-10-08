@@ -58,15 +58,7 @@ fabricated task.
 sequence a caller pages over without discriminating a second union. Every item carries `item_id` and
 `selection_reasons`; a `realization_claim` item carries `anchor: AnchorResolution | None`.
 
-**The anchor-observation vocabulary lives in `read_anchor.py` and is re-exported here unchanged.**
-`AnchorResolutionState`, `ANCHOR_RESOLUTIONS` and `AnchorResolution` are imported from
-`models/knowledge/read_anchor.py` and stay in this module's `__all__`, so every existing
-`from agents_remember.models.knowledge.read import AnchorResolution` keeps working; the move kept this
-module under the 600-line pressure line and is a pure relocation. The observation gained one additive field
-there, `resolved_ranges` — the structured one-based line ranges the resolver placed an exact recorded blob's
-locator on — and because `ReadItem.anchor` carries the observation, **every realization-claim item on every
-read page (knowledge read, diff, the family roster) now carries that field**. It adds bytes to byte-budgeted
-pages, so a page cut can move marginally; selection, counts and ordering are unchanged.
+AnchorResolutionState and AnchorResolution are declared in models/knowledge/read_anchor.py and imported/re-exported here. The seven resolution states remain on the Literal; the former ANCHOR_RESOLUTIONS tuple was retired. resolved_ranges states the exact blob regions observed and is carried on read items without changing the selection contract.
 
 ### Three model-level invariants a consumer may rely on
 
@@ -136,7 +128,9 @@ No configured domain documentation could be checked.
 - **The cursor's binding fields, and the only encoder/decoder pair.** [6]
 - The one homogeneous item model and the advertised frontier entry. [7]
 - **The anchor observation, now declared in its own module with the structured `resolved_ranges` field, and the import that re-exports it here.** [8]
-- The seven-member anchor vocabulary, declared in `read_anchor.py` and still published through this module's `__all__`. [9]
+
+- The seven states are the retained AnchorResolutionState Literal re-exported through read.py. [9]
+
 - The digest binding one seed into a selection identity. [10]
 - The digest sealing one read context's whole resolved identity. [11]
 - The one snapshot a page declares, sealed with that digest. [12]

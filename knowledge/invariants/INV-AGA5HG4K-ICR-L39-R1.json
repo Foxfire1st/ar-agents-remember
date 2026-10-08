@@ -19,6 +19,6 @@
   "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "The curator explicitly selects retained siblings by exact stored membership identity and an authored basis; omission retains none rather than copying a predecessor roster.",
-  "status": "proposed",
+  "status": "retired",
   "supersedes": []
 }

@@ -20,6 +20,6 @@
   "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "Curator coverage distinguishes newly added membership edges from retained invariant revisions and leaves uncommitted member counts unmeasured.",
-  "status": "proposed",
+  "status": "retired",
   "supersedes": []
 }

@@ -1,0 +1,643 @@
+  "after_observation": {
+              "kind": "realization_claim",
+              "item_id": "3ed32719-7dc5-5697-98e0-65cc622c8747",
+              "selection_reasons": [
+                {
+                  "stage": "member_of_selected_family",
+                  "via_id": "d92c4e42-3390-580c-aead-9ca53b708538"
+                }
+              ],
+              "invariant_id": null,
+              "family_id": null,
+              "record_id": "d92c4e42-3390-580c-aead-9ca53b708538",
+              "revision_id": null,
+              "display_version": null,
+              "display_label": null,
+              "statement": null,
+              "applicability": null,
+              "essential_conditions": [],
+              "exclusions": [],
+              "joint_guarantee": null,
+              "lifecycle": null,
+              "acceptance_ref": null,
+              "provenance": {
+                "actor_ref": "unrecorded",
+                "authorization_ref": "text-knowledge:onboarding/mcp/src/agents_remember/cli/knowledge_bootstrap.py.json",
+                "operation_id": "d173fdf8-de76-5878-b883-4769d6e44df5",
+                "origin_refs": [],
+                "recorded_at": "1970-01-01T00:00:00+00:00"
+              },
+              "payload_digest": null,
+              "member_id": null,
+              "family_revision_id": null,
+              "invariant_revision_id": "d92c4e42-3390-580c-aead-9ca53b708538",
+              "claim_id": "3ed32719-7dc5-5697-98e0-65cc622c8747",
+              "role": "primary-authority",
+              "rationale": "The successor keeps the batch-writer realization and adds the loading condition's own owner, because the refined obligation is precisely that reachability is a property of the process rather than of the argument list.",
+              "anchor": {
+                "anchor_id": "87363c7c-989d-5838-a6e5-8201dee3f097",
+                "path": "mcp/src/agents_remember/cli/knowledge_bootstrap.py",
+                "recorded_source_identity": "ac95d9ba546fa91777026e0b623d55226d7a3da0",
+                "observed_source_identity": null,
+                "locator": {
+                  "kind": "symbol",
+                  "language": "python",
+                  "qualified_name": "_run"
+                },
+                "resolution": "not_requested",
+                "detail": "this read named no code tree, so no source resolution was requested; the recorded claim and its blob identity are reported as authored",
+                "resolved_ranges": []
+              }
+            },
+            "record_field_changed": false,
+            "source_observation_changed": true,
+            "source_change_only": true,
+            "record_change_only": false,
+            "missing_side": null
+          }
+        },
+        {
+          "item_id": "437e9048-66b2-5767-90d2-fc8889cfd340",
+          "kind": "realization",
+          "coverage": "absent_from_snapshot",
+          "record_transition": "removed",
+          "before": {
+            "kind": "realization_claim",
+            "item_id": "437e9048-66b2-5767-90d2-fc8889cfd340",
+            "selection_reasons": [
+              {
+                "stage": "seed_selected",
+                "via_id": "f08b297f-7d4e-5ae6-ba92-26f57faf5087"
+              }
+            ],
+            "invariant_id": null,
+            "family_id": null,
+            "record_id": "f08b297f-7d4e-5ae6-ba92-26f57faf5087",
+            "revision_id": null,
+            "display_version": null,
+            "display_label": null,
+            "statement": null,
+            "applicability": null,
+            "essential_conditions": [],
+            "exclusions": [],
+            "joint_guarantee": null,
+            "lifecycle": null,
+            "acceptance_ref": null,
+            "provenance": {
+              "actor_ref": "unrecorded",
+              "authorization_ref": "text-knowledge:onboarding/mcp/src/agents_remember/application/published_intent.py.json",
+              "operation_id": "bc3cd476-9c27-5602-b4dd-b2002c716c8d",
+              "origin_refs": [],
+              "recorded_at": "1970-01-01T00:00:00+00:00"
+            },
+            "payload_digest": null,
+            "member_id": null,
+            "family_revision_id": null,
+            "invariant_revision_id": "f08b297f-7d4e-5ae6-ba92-26f57faf5087",
+            "claim_id": "437e9048-66b2-5767-90d2-fc8889cfd340",
+            "role": "primary-authority",
+            "rationale": "The read route owns the spelling of the location and the write route consumes that same owner, which is what makes the two halves one location rather than two conventions.",
+            "anchor": {
+              "anchor_id": "dfbb14d4-52ea-55e2-9ffc-8d25d0799775",
+              "path": "mcp/src/agents_remember/application/published_intent.py",
+              "recorded_source_identity": "4be19bfc4f0db366151478c0195bb8e5278c7351",
+              "observed_source_identity": null,
+              "locator": {
+                "kind": "symbol",
+                "language": "python",
+                "qualified_name": "published_dataset_path"
+              },
+              "resolution": "not_requested",
+              "detail": "this read named no code tree, so no source resolution was requested; the recorded claim and its blob identity are reported as authored",
+              "resolved_ranges": []
+            }
+          },
+          "after": null,
+          "before_selected": true,
+          "after_selected": false,
+          "record_id": "f08b297f-7d4e-5ae6-ba92-26f57faf5087",
+          "revision_id": null,
+          "changed_fields": [],
+          "reached_via": [
+            "seed_selected:f08b297f-7d4e-5ae6-ba92-26f57faf5087"
+          ],
+          "source_change": {
+            "claim_id": "437e9048-66b2-5767-90d2-fc8889cfd340",
+            "before_observation": {
+              "kind": "realization_claim",
+              "item_id": "437e9048-66b2-5767-90d2-fc8889cfd340",
+              "selection_reasons": [
+                {
+                  "stage": "seed_selected",
+                  "via_id": "f08b297f-7d4e-5ae6-ba92-26f57faf5087"
+                }
+              ],
+              "invariant_id": null,
+              "family_id": null,
+              "record_id": "f08b297f-7d4e-5ae6-ba92-26f57faf5087",
+              "revision_id": null,
+              "display_version": null,
+              "display_label": null,
+              "statement": null,
+              "applicability": null,
+              "essential_conditions": [],
+              "exclusions": [],
+              "joint_guarantee": null,
+              "lifecycle": null,
+              "acceptance_ref": null,
+              "provenance": {
+                "actor_ref": "unrecorded",
+                "authorization_ref": "text-knowledge:onboarding/mcp/src/agents_remember/application/published_intent.py.json",
+                "operation_id": "bc3cd476-9c27-5602-b4dd-b2002c716c8d",
+                "origin_refs": [],
+                "recorded_at": "1970-01-01T00:00:00+00:00"
+              },
+              "payload_digest": null,
+              "member_id": null,
+              "family_revision_id": null,
+              "invariant_revision_id": "f08b297f-7d4e-5ae6-ba92-26f57faf5087",
+              "claim_id": "437e9048-66b2-5767-90d2-fc8889cfd340",
+              "role": "primary-authority",
+              "rationale": "The read route owns the spelling of the location and the write route consumes that same owner, which is what makes the two halves one location rather than two conventions.",
+              "anchor": {
+                "anchor_id": "dfbb14d4-52ea-55e2-9ffc-8d25d0799775",
+                "path": "mcp/src/agents_remember/application/published_intent.py",
+                "recorded_source_identity": "4be19bfc4f0db366151478c0195bb8e5278c7351",
+                "observed_source_identity": null,
+                "locator": {
+                  "kind": "symbol",
+                  "language": "python",
+                  "qualified_name": "published_dataset_path"
+                },
+                "resolution": "not_requested",
+                "detail": "this read named no code tree, so no source resolution was requested; the recorded claim and its blob identity are reported as authored",
+                "resolved_ranges": []
+              }
+            },
+            "after_observation": null,
+            "record_field_changed": false,
+            "source_observation_changed": false,
+            "source_change_only": false,
+            "record_change_only": false,
+            "missing_side": "after"
+          }
+        },
+        {
+          "item_id": "4ab372a0-c1c1-56dd-9eb9-aa5a5dd15d55",
+          "kind": "realization",
+          "coverage": "absent_from_snapshot",
+          "record_transition": "added",
+          "before": null,
+          "after": {
+            "kind": "realization_claim",
+            "item_id": "4ab372a0-c1c1-56dd-9eb9-aa5a5dd15d55",
+            "selection_reasons": [
+              {
+                "stage": "member_of_selected_family",
+                "via_id": "d92c4e42-3390-580c-aead-9ca53b708538"
+              }
+            ],
+            "invariant_id": null,
+            "family_id": null,
+            "record_id": "d92c4e42-3390-580c-aead-9ca53b708538",
+            "revision_id": null,
+            "display_version": null,
+            "display_label": null,
+            "statement": null,
+            "applicability": null,
+            "essential_conditions": [],
+            "exclusions": [],
+            "joint_guarantee": null,
+            "lifecycle": null,
+            "acceptance_ref": null,
+            "provenance": {
+              "actor_ref": "unrecorded",
+              "authorization_ref": "text-knowledge:onboarding/mcp/src/agents_remember/cli/knowledge_bootstrap.py.json",
+              "operation_id": "d173fdf8-de76-5878-b883-4769d6e44df5",
+              "origin_refs": [],
+              "recorded_at": "1970-01-01T00:00:00+00:00"
+            },
+            "payload_digest": null,
+            "member_id": null,
+            "family_revision_id": null,
+            "invariant_revision_id": "d92c4e42-3390-580c-aead-9ca53b708538",
+            "claim_id": "4ab372a0-c1c1-56dd-9eb9-aa5a5dd15d55",
+            "role": "primary-authority",
+            "rationale": "The taskless entry refuses a tree without the conversion marker and writes the converted tree through the file writer.",
+            "anchor": {
+              "anchor_id": "4d3e4928-b7fb-5d62-81b5-2edc25fc976d",
+              "path": "mcp/src/agents_remember/cli/knowledge_bootstrap.py",
+              "recorded_source_identity": "ac95d9ba546fa91777026e0b623d55226d7a3da0",
+              "observed_source_identity": null,
+              "locator": {
+                "kind": "symbol",
+                "language": "python",
+                "qualified_name": "_run"
+              },
+              "resolution": "not_requested",
+              "detail": "this read named no code tree, so no source resolution was requested; the recorded claim and its blob identity are reported as authored",
+              "resolved_ranges": []
+            }
+          },
+          "before_selected": false,
+          "after_selected": true,
+          "record_id": "d92c4e42-3390-580c-aead-9ca53b708538",
+          "revision_id": null,
+          "changed_fields": [],
+          "reached_via": [
+            "member_of_selected_family:d92c4e42-3390-580c-aead-9ca53b708538"
+          ],
+          "source_change": {
+            "claim_id": "4ab372a0-c1c1-56dd-9eb9-aa5a5dd15d55",
+            "before_observation": null,
+            "after_observation": {
+              "kind": "realization_claim",
+              "item_id": "4ab372a0-c1c1-56dd-9eb9-aa5a5dd15d55",
+              "selection_reasons": [
+                {
+                  "stage": "member_of_selected_family",
+                  "via_id": "d92c4e42-3390-580c-aead-9ca53b708538"
+                }
+              ],
+              "invariant_id": null,
+              "family_id": null,
+              "record_id": "d92c4e42-3390-580c-aead-9ca53b708538",
+              "revision_id": null,
+              "display_version": null,
+              "display_label": null,
+              "statement": null,
+              "applicability": null,
+              "essential_conditions": [],
+              "exclusions": [],
+              "joint_guarantee": null,
+              "lifecycle": null,
+              "acceptance_ref": null,
+              "provenance": {
+                "actor_ref": "unrecorded",
+                "authorization_ref": "text-knowledge:onboarding/mcp/src/agents_remember/cli/knowledge_bootstrap.py.json",
+                "operation_id": "d173fdf8-de76-5878-b883-4769d6e44df5",
+                "origin_refs": [],
+                "recorded_at": "1970-01-01T00:00:00+00:00"
+              },
+              "payload_digest": null,
+              "member_id": null,
+              "family_revision_id": null,
+              "invariant_revision_id": "d92c4e42-3390-580c-aead-9ca53b708538",
+              "claim_id": "4ab372a0-c1c1-56dd-9eb9-aa5a5dd15d55",
+              "role": "primary-authority",
+              "rationale": "The taskless entry refuses a tree without the conversion marker and writes the converted tree through the file writer.",
+              "anchor": {
+                "anchor_id": "4d3e4928-b7fb-5d62-81b5-2edc25fc976d",
+                "path": "mcp/src/agents_remember/cli/knowledge_bootstrap.py",
+                "recorded_source_identity": "ac95d9ba546fa91777026e0b623d55226d7a3da0",
+                "observed_source_identity": null,
+                "locator": {
+                  "kind": "symbol",
+                  "language": "python",
+                  "qualified_name": "_run"
+                },
+                "resolution": "not_requested",
+                "detail": "this read named no code tree, so no source resolution was requested; the recorded claim and its blob identity are reported as authored",
+                "resolved_ranges": []
+              }
+            },
+            "record_field_changed": false,
+            "source_observation_changed": false,
+            "source_change_only": false,
+            "record_change_only": false,
+            "missing_side": "before"
+          }
+        },
+        {
+          "item_id": "59090487-5f66-5d41-9c6f-bd47c24f439c",
+          "kind": "realization",
+          "coverage": "absent_from_snapshot",
+          "record_transition": "removed",
+          "before": {
+            "kind": "realization_claim",
+            "item_id": "59090487-5f66-5d41-9c6f-bd47c24f439c",
+            "selection_reasons": [
+              {
+                "stage": "seed_selected",
+                "via_id": "f08b297f-7d4e-5ae6-ba92-26f57faf5087"
+              }
+            ],
+            "invariant_id": null,
+            "family_id": null,
+            "record_id": "f08b297f-7d4e-5ae6-ba92-26f57faf5087",
+            "revision_id": null,
+            "display_version": null,
+            "display_label": null,
+            "statement": null,
+            "applicability": null,
+            "essential_conditions": [],
+            "exclusions": [],
+            "joint_guarantee": null,
+            "lifecycle": null,
+            "acceptance_ref": null,
+            "provenance": {
+              "actor_ref": "unrecorded",
+              "authorization_ref": "text-knowledge:onboarding/mcp/src/agents_remember/application/knowledge_publication_route.py.json",
+              "operation_id": "c95aee82-c54e-5ce1-87e8-53635a9793eb",
+              "origin_refs": [],
+              "recorded_at": "1970-01-01T00:00:00+00:00"
+            },
+            "payload_digest": null,
+            "member_id": null,
+            "family_revision_id": null,
+            "invariant_revision_id": "f08b297f-7d4e-5ae6-ba92-26f57faf5087",
+            "claim_id": "59090487-5f66-5d41-9c6f-bd47c24f439c",
+            "role": "primary-authority",
+            "rationale": "The read route owns the spelling of the location and the write route consumes that same owner, which is what makes the two halves one location rather than two conventions.",
+            "anchor": {
+              "anchor_id": "d143745e-66cc-508d-8151-c523040d5768",
+              "path": "mcp/src/agents_remember/application/knowledge_publication_route.py",
+              "recorded_source_identity": "501e0bd1224bd9910b2f445e7245277f8ed88105",
+              "observed_source_identity": null,
+              "locator": {
+                "kind": "symbol",
+                "language": "python",
+                "qualified_name": "declared_publication_location"
+              },
+              "resolution": "not_requested",
+              "detail": "this read named no code tree, so no source resolution was requested; the recorded claim and its blob identity are reported as authored",
+              "resolved_ranges": []
+            }
+          },
+          "after": null,
+          "before_selected": true,
+          "after_selected": false,
+          "record_id": "f08b297f-7d4e-5ae6-ba92-26f57faf5087",
+          "revision_id": null,
+          "changed_fields": [],
+          "reached_via": [
+            "seed_selected:f08b297f-7d4e-5ae6-ba92-26f57faf5087"
+          ],
+          "source_change": {
+            "claim_id": "59090487-5f66-5d41-9c6f-bd47c24f439c",
+            "before_observation": {
+              "kind": "realization_claim",
+              "item_id": "59090487-5f66-5d41-9c6f-bd47c24f439c",
+              "selection_reasons": [
+                {
+                  "stage": "seed_selected",
+                  "via_id": "f08b297f-7d4e-5ae6-ba92-26f57faf5087"
+                }
+              ],
+              "invariant_id": null,
+              "family_id": null,
+              "record_id": "f08b297f-7d4e-5ae6-ba92-26f57faf5087",
+              "revision_id": null,
+              "display_version": null,
+              "display_label": null,
+              "statement": null,
+              "applicability": null,
+              "essential_conditions": [],
+              "exclusions": [],
+              "joint_guarantee": null,
+              "lifecycle": null,
+              "acceptance_ref": null,
+              "provenance": {
+                "actor_ref": "unrecorded",
+                "authorization_ref": "text-knowledge:onboarding/mcp/src/agents_remember/application/knowledge_publication_route.py.json",
+                "operation_id": "c95aee82-c54e-5ce1-87e8-53635a9793eb",
+                "origin_refs": [],
+                "recorded_at": "1970-01-01T00:00:00+00:00"
+              },
+              "payload_digest": null,
+              "member_id": null,
+              "family_revision_id": null,
+              "invariant_revision_id": "f08b297f-7d4e-5ae6-ba92-26f57faf5087",
+              "claim_id": "59090487-5f66-5d41-9c6f-bd47c24f439c",
+              "role": "primary-authority",
+              "rationale": "The read route owns the spelling of the location and the write route consumes that same owner, which is what makes the two halves one location rather than two conventions.",
+              "anchor": {
+                "anchor_id": "d143745e-66cc-508d-8151-c523040d5768",
+                "path": "mcp/src/agents_remember/application/knowledge_publication_route.py",
+                "recorded_source_identity": "501e0bd1224bd9910b2f445e7245277f8ed88105",
+                "observed_source_identity": null,
+                "locator": {
+                  "kind": "symbol",
+                  "language": "python",
+                  "qualified_name": "declared_publication_location"
+                },
+                "resolution": "not_requested",
+                "detail": "this read named no code tree, so no source resolution was requested; the recorded claim and its blob identity are reported as authored",
+                "resolved_ranges": []
+              }
+            },
+            "after_observation": null,
+            "record_field_changed": false,
+            "source_observation_changed": false,
+            "source_change_only": false,
+            "record_change_only": false,
+            "missing_side": "after"
+          }
+        },
+        {
+          "item_id": "5a6d2bdb-7939-5551-bd51-351ae377a835",
+          "kind": "realization",
+          "coverage": "selected_both",
+          "record_transition": "unchanged",
+          "before": {
+            "kind": "realization_claim",
+            "item_id": "5a6d2bdb-7939-5551-bd51-351ae377a835",
+            "selection_reasons": [
+              {
+                "stage": "member_of_selected_family",
+                "via_id": "ee4052e3-a8b7-5289-9399-d609257cc16a"
+              }
+            ],
+            "invariant_id": null,
+            "family_id": null,
+            "record_id": "ee4052e3-a8b7-5289-9399-d609257cc16a",
+            "revision_id": null,
+            "display_version": null,
+            "display_label": null,
+            "statement": null,
+            "applicability": null,
+            "essential_conditions": [],
+            "exclusions": [],
+            "joint_guarantee": null,
+            "lifecycle": null,
+            "acceptance_ref": null,
+            "provenance": {
+              "actor_ref": "unrecorded",
+              "authorization_ref": "text-knowledge:onboarding/mcp/src/agents_remember/cli/knowledge_ingest.py.json",
+              "operation_id": "43175097-cfd8-5183-a40d-2e9393d94ef3",
+              "origin_refs": [],
+              "recorded_at": "1970-01-01T00:00:00+00:00"
+            },
+            "payload_digest": null,
+            "member_id": null,
+            "family_revision_id": null,
+            "invariant_revision_id": "ee4052e3-a8b7-5289-9399-d609257cc16a",
+            "claim_id": "5a6d2bdb-7939-5551-bd51-351ae377a835",
+            "role": "primary-authority",
+            "rationale": "The successor keeps the batch-writer realization and adds the loading condition's own owner, because the refined obligation is precisely that reachability is a property of the process rather than of the argument list.",
+            "anchor": {
+              "anchor_id": "0e026d99-7be0-5720-b358-d4c7f68dc855",
+              "path": "mcp/src/agents_remember/cli/knowledge_ingest.py",
+              "recorded_source_identity": "5dd8b04a0ac5cc0a5ba63ede47b7a6ead7a860ba",
+              "observed_source_identity": null,
+              "locator": {
+                "kind": "symbol",
+                "language": "python",
+                "qualified_name": "run"
+              },
+              "resolution": "not_requested",
+              "detail": "this read named no code tree, so no source resolution was requested; the recorded claim and its blob identity are reported as authored",
+              "resolved_ranges": []
+            }
+          },
+          "after": {
+            "kind": "realization_claim",
+            "item_id": "5a6d2bdb-7939-5551-bd51-351ae377a835",
+            "selection_reasons": [
+              {
+                "stage": "member_of_selected_family",
+                "via_id": "d92c4e42-3390-580c-aead-9ca53b708538"
+              }
+            ],
+            "invariant_id": null,
+            "family_id": null,
+            "record_id": "d92c4e42-3390-580c-aead-9ca53b708538",
+            "revision_id": null,
+            "display_version": null,
+            "display_label": null,
+            "statement": null,
+            "applicability": null,
+            "essential_conditions": [],
+            "exclusions": [],
+            "joint_guarantee": null,
+            "lifecycle": null,
+            "acceptance_ref": null,
+            "provenance": {
+              "actor_ref": "unrecorded",
+              "authorization_ref": "text-knowledge:onboarding/mcp/src/agents_remember/cli/knowledge_ingest.py.json",
+              "operation_id": "43175097-cfd8-5183-a40d-2e9393d94ef3",
+              "origin_refs": [],
+              "recorded_at": "1970-01-01T00:00:00+00:00"
+            },
+            "payload_digest": null,
+            "member_id": null,
+            "family_revision_id": null,
+            "invariant_revision_id": "d92c4e42-3390-580c-aead-9ca53b708538",
+            "claim_id": "5a6d2bdb-7939-5551-bd51-351ae377a835",
+            "role": "primary-authority",
+            "rationale": "The successor keeps the batch-writer realization and adds the loading condition's own owner, because the refined obligation is precisely that reachability is a property of the process rather than of the argument list.",
+            "anchor": {
+              "anchor_id": "0e026d99-7be0-5720-b358-d4c7f68dc855",
+              "path": "mcp/src/agents_remember/cli/knowledge_ingest.py",
+              "recorded_source_identity": "1380179eda1ec1b9ba3615182ae59bfb91d1394f",
+              "observed_source_identity": null,
+              "locator": {
+                "kind": "symbol",
+                "language": "python",
+                "qualified_name": "run"
+              },
+              "resolution": "not_requested",
+              "detail": "this read named no code tree, so no source resolution was requested; the recorded claim and its blob identity are reported as authored",
+              "resolved_ranges": []
+            }
+          },
+          "before_selected": true,
+          "after_selected": true,
+          "record_id": "ee4052e3-a8b7-5289-9399-d609257cc16a",
+          "revision_id": null,
+          "changed_fields": [],
+          "reached_via": [
+            "member_of_selected_family:ee4052e3-a8b7-5289-9399-d609257cc16a",
+            "member_of_selected_family:d92c4e42-3390-580c-aead-9ca53b708538"
+          ],
+          "source_change": {
+            "claim_id": "5a6d2bdb-7939-5551-bd51-351ae377a835",
+            "before_observation": {
+              "kind": "realization_claim",
+              "item_id": "5a6d2bdb-7939-5551-bd51-351ae377a835",
+              "selection_reasons": [
+                {
+                  "stage": "member_of_selected_family",
+                  "via_id": "ee4052e3-a8b7-5289-9399-d609257cc16a"
+                }
+              ],
+              "invariant_id": null,
+              "family_id": null,
+              "record_id": "ee4052e3-a8b7-5289-9399-d609257cc16a",
+              "revision_id": null,
+              "display_version": null,
+              "display_label": null,
+              "statement": null,
+              "applicability": null,
+              "essential_conditions": [],
+              "exclusions": [],
+              "joint_guarantee": null,
+              "lifecycle": null,
+              "acceptance_ref": null,
+              "provenance": {
+                "actor_ref": "unrecorded",
+                "authorization_ref": "text-knowledge:onboarding/mcp/src/agents_remember/cli/knowledge_ingest.py.json",
+                "operation_id": "43175097-cfd8-5183-a40d-2e9393d94ef3",
+                "origin_refs": [],
+                "recorded_at": "1970-01-01T00:00:00+00:00"
+              },
+              "payload_digest": null,
+              "member_id": null,
+              "family_revision_id": null,
+              "invariant_revision_id": "ee4052e3-a8b7-5289-9399-d609257cc16a",
+              "claim_id": "5a6d2bdb-7939-5551-bd51-351ae377a835",
+              "role": "primary-authority",
+              "rationale": "The successor keeps the batch-writer realization and adds the loading condition's own owner, because the refined obligation is precisely that reachability is a property of the process rather than of the argument list.",
+              "anchor": {
+                "anchor_id": "0e026d99-7be0-5720-b358-d4c7f68dc855",
+                "path": "mcp/src/agents_remember/cli/knowledge_ingest.py",
+                "recorded_source_identity": "5dd8b04a0ac5cc0a5ba63ede47b7a6ead7a860ba",
+                "observed_source_identity": null,
+                "locator": {
+                  "kind": "symbol",
+                  "language": "python",
+                  "qualified_name": "run"
+                },
+                "resolution": "not_requested",
+                "detail": "this read named no code tree, so no source resolution was requested; the recorded claim and its blob identity are reported as authored",
+                "resolved_ranges": []
+              }
+            },
+            "after_observation": {
+              "kind": "realization_claim",
+              "item_id": "5a6d2bdb-7939-5551-bd51-351ae377a835",
+              "selection_reasons": [
+                {
+                  "stage": "member_of_selected_family",
+                  "via_id": "d92c4e42-3390-580c-aead-9ca53b708538"
+                }
+              ],
+              "invariant_id": null,
+              "family_id": null,
+              "record_id": "d92c4e42-3390-580c-aead-9ca53b708538",
+              "revision_id": null,
+              "display_version": null,
+              "display_label": null,
+              "statement": null,
+              "applicability": null,
+              "essential_conditions": [],
+              "exclusions": [],
+              "joint_guarantee": null,
+              "lifecycle": null,
+              "acceptance_ref": null,
+              "provenance": {
+                "actor_ref": "unrecorded",
+                "authorization_ref": "text-knowledge:onboarding/mcp/src/agents_remember/cli/knowledge_ingest.py.json",
+                "operation_id": "43175097-cfd8-5183-a40d-2e9393d94ef3",
+                "origin_refs": [],
+                "recorded_at": "1970-01-01T00:00:00+00:00"
+              },
+              "payload_digest": null,
+              "member_id": null,
+              "family_revision_id": null,
+              "invariant_revision_id": "d92c4e42-3390-580c-aead-9ca53b708538",
+              "claim_id": "5a6d2bdb-7939-5551-bd51-351ae377a835",
+              "role": "primary-authority",
+              "rationale": "The successor keeps the batch-writer realization and adds the loading condition's own owner, because the refined obligation is precisely that reachability is a property of the process rather than of the argument list.",
+              "anchor": {
+                "anchor_id": "0e026d99-7be0-5720-b358-d4c7f68dc855",

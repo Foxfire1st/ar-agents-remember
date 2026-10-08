@@ -1,0 +1,591 @@
+{
+  "ok": true,
+  "tokens": 31537,
+  "tokenizer": "tiktoken:o200k_base",
+  "tokenCountExact": true,
+  "operation": "knowledge_diff",
+  "state": "compared",
+  "repositoryId": "7511e917-d5d3-584e-b0ce-44dcad666cfe",
+  "semanticEffectLabels": [],
+  "payload": {
+    "state": "page",
+    "operation": "diff_knowledge_scope",
+    "repository_id": "7511e917-d5d3-584e-b0ce-44dcad666cfe",
+    "policy_version": "recorded-two-snapshot-union/v1",
+    "binding": {
+      "policy_version": "recorded-two-snapshot-union/v1",
+      "before": {
+        "repository_id": "7511e917-d5d3-584e-b0ce-44dcad666cfe",
+        "schema_version": "ar-knowledge-sqlite/v9",
+        "logical_digest": "a8b3099244ffa7fc52edb6bb0a5ac0bb7913721f8b5350b407375d725e01a452"
+      },
+      "after": {
+        "repository_id": "7511e917-d5d3-584e-b0ce-44dcad666cfe",
+        "schema_version": "ar-knowledge-sqlite/v9",
+        "logical_digest": "c9c2f99372dffb96a71f7f6aaeedce256a41b12e2aac6c945e1025413e1289ef"
+      },
+      "before_context_digest": "ff3d7a2bc65aaf28b67b4c07a14c10f66757ab0b263680b0ced918ca823f550c",
+      "after_context_digest": "d4984a53f023751c751432bc90de83b9bf92e53483f2858293852a34716b5e18",
+      "before_selector_digest": "9d0037a3a8a8adf839e5e803de775c0a1929f06aef33c7ec0b53b13093675994",
+      "after_selector_digest": "9d0037a3a8a8adf839e5e803de775c0a1929f06aef33c7ec0b53b13093675994",
+      "before_code_tree_id": null,
+      "after_code_tree_id": null
+    },
+    "binding_digest": "487c2972a7e83be440525fc9638de876ae0e58c40677f633dc6bdfe06aa384ce",
+    "selector_digest": "9d0037a3a8a8adf839e5e803de775c0a1929f06aef33c7ec0b53b13093675994",
+    "policy": "roles:<none>",
+    "summary": {
+      "before": {
+        "invariant_revisions_total": 3,
+        "family_revisions_total": 1,
+        "memberships_total": 3,
+        "realization_claims_total": 11,
+        "advertised_expansions_total": 0,
+        "primary_items_total": 18,
+        "primary_items_returned": 0,
+        "primary_items_remaining": 18,
+        "distinct_source_locations_total": 11,
+        "distinct_source_paths_total": 9,
+        "unresolved_anchor_total": 11
+      },
+      "after": {
+        "invariant_revisions_total": 3,
+        "family_revisions_total": 1,
+        "memberships_total": 3,
+        "realization_claims_total": 8,
+        "advertised_expansions_total": 0,
+        "primary_items_total": 15,
+        "primary_items_returned": 0,
+        "primary_items_remaining": 15,
+        "distinct_source_locations_total": 6,
+        "distinct_source_paths_total": 6,
+        "unresolved_anchor_total": 8
+      }
+    },
+    "revision_groups": {
+      "before": [
+        {
+          "record_id": "6ec03cae-83a4-5f63-9fa4-66b135506c2a",
+          "selected_revision_count": 1
+        },
+        {
+          "record_id": "8b1a17ca-96ba-5ede-a09f-abfb11ada0a5",
+          "selected_revision_count": 1
+        },
+        {
+          "record_id": "c88cc287-0469-556c-9f42-b742b2377478",
+          "selected_revision_count": 1
+        },
+        {
+          "record_id": "fa2aac3a-f406-595a-a1e6-b50c656704ca",
+          "selected_revision_count": 1
+        }
+      ],
+      "after": [
+        {
+          "record_id": "6ec03cae-83a4-5f63-9fa4-66b135506c2a",
+          "selected_revision_count": 1
+        },
+        {
+          "record_id": "8b1a17ca-96ba-5ede-a09f-abfb11ada0a5",
+          "selected_revision_count": 1
+        },
+        {
+          "record_id": "c88cc287-0469-556c-9f42-b742b2377478",
+          "selected_revision_count": 1
+        },
+        {
+          "record_id": "fa2aac3a-f406-595a-a1e6-b50c656704ca",
+          "selected_revision_count": 1
+        }
+      ]
+    },
+    "limitations": [
+      "records_present_outside_the_selection",
+      "unknown_attribution_changed_paths",
+      "no_semantic_assessment_performed"
+    ],
+    "omissions": [
+      {
+        "reason": "present_outside_the_declared_selection",
+        "item_kind": "invariant",
+        "omitted_count": 6,
+        "detail": "6 invariant revisions the other snapshot holds and its declared selection did not reach; this is a fact about the two selections and not a deletion, and selecting the path that reaches it brings the record into the union"
+      },
+      {
+        "reason": "present_outside_the_declared_selection",
+        "item_kind": "family",
+        "omitted_count": 2,
+        "detail": "2 family revisions the other snapshot holds and its declared selection did not reach; this is a fact about the two selections and not a deletion, and selecting the path that reaches it brings the record into the union"
+      }
+    ],
+    "side_absences": [],
+    "expansion": {
+      "reference": "diff_knowledge_scope:full-selected-candidate-source-diff",
+      "command": "git diff --no-color --no-ext-diff --src-prefix=a/ --dst-prefix=b/ --raw -z --no-renames <no baseline tree requested> <no candidate tree requested>",
+      "before_root": null,
+      "after_root": null,
+      "before_code_tree_id": null,
+      "after_code_tree_id": null,
+      "attributed_changed_paths": [],
+      "unattributed_changed_paths": [],
+      "unknown_attribution_changed_paths": [],
+      "attribution": {
+        "state": "unavailable",
+        "granularity": "changed_path",
+        "changed_total": null,
+        "attributed_total": null,
+        "confirmed_unregistered_total": null,
+        "unknown_attribution_total": null,
+        "complete": null,
+        "subject_scope_complete": null,
+        "sides": [],
+        "paths": [],
+        "detail": "the source observation this partition is the denominator of was not made. The source observation beside this value says: at least one side named no exact code tree, so no source expansion was observed; the record half of this comparison is complete and the source half was not requested for every side. No total is reported and none is reported as zero: an unmeasured change population has no denominator, so no path can be called attributed, confirmed unregistered or of undetermined attribution"
+      },
+      "detail": "at least one side named no exact code tree, so no source expansion was observed; the record half of this comparison is complete and the source half was not requested for every side"
+    },
+    "page": {
+      "items": [
+        {
+          "item_id": "73e4d91d-5599-50a6-804e-6acf2fe341df",
+          "kind": "invariant",
+          "coverage": "present_outside_selection",
+          "record_transition": "removed",
+          "before": {
+            "kind": "invariant_revision",
+            "item_id": "73e4d91d-5599-50a6-804e-6acf2fe341df",
+            "selection_reasons": [
+              {
+                "stage": "member_of_selected_family",
+                "via_id": null
+              }
+            ],
+            "invariant_id": "6ec03cae-83a4-5f63-9fa4-66b135506c2a",
+            "family_id": null,
+            "record_id": "6ec03cae-83a4-5f63-9fa4-66b135506c2a",
+            "revision_id": "73e4d91d-5599-50a6-804e-6acf2fe341df",
+            "display_version": "r1",
+            "display_label": "INV-QN53GPRB",
+            "statement": "A taskless knowledge bootstrap is admitted only from real setup authority, namely the MCP settings document's repository entry, the memory layer the ordinary read route resolves and the exact code and memory revisions the two real checkouts answer for HEAD, so no client-supplied boolean, fabricated enclosure contract or caller-typed revision can grant a knowledge write.",
+            "applicability": "Every curator entry ingested from the orchestrator's hand-off list.",
+            "essential_conditions": [],
+            "exclusions": [],
+            "joint_guarantee": null,
+            "lifecycle": "proposed",
+            "acceptance_ref": null,
+            "provenance": {
+              "actor_ref": "260921-ICR/260921-ICR-L30",
+              "authorization_ref": "text-knowledge:knowledge/invariants/INV-QN53GPRB-ICR30-I-3.json",
+              "operation_id": "353de9d7-0761-5272-bee4-a521b9b5bed8",
+              "origin_refs": [],
+              "recorded_at": "1970-01-01T00:00:00+00:00"
+            },
+            "payload_digest": "77c2830d852a6e3327fd65243aa038b20b219d87b1e44256ae4d798ab9d82260",
+            "member_id": null,
+            "family_revision_id": null,
+            "invariant_revision_id": null,
+            "claim_id": null,
+            "role": null,
+            "rationale": null,
+            "anchor": null
+          },
+          "after": null,
+          "before_selected": true,
+          "after_selected": false,
+          "record_id": "6ec03cae-83a4-5f63-9fa4-66b135506c2a",
+          "revision_id": "73e4d91d-5599-50a6-804e-6acf2fe341df",
+          "changed_fields": [],
+          "reached_via": [
+            "member_of_selected_family"
+          ],
+          "source_change": null
+        },
+        {
+          "item_id": "98ef298b-2f8f-5ff5-8fbe-04c237459096",
+          "kind": "invariant",
+          "coverage": "present_outside_selection",
+          "record_transition": "added",
+          "before": null,
+          "after": {
+            "kind": "invariant_revision",
+            "item_id": "98ef298b-2f8f-5ff5-8fbe-04c237459096",
+            "selection_reasons": [
+              {
+                "stage": "member_of_selected_family",
+                "via_id": null
+              }
+            ],
+            "invariant_id": "6ec03cae-83a4-5f63-9fa4-66b135506c2a",
+            "family_id": null,
+            "record_id": "6ec03cae-83a4-5f63-9fa4-66b135506c2a",
+            "revision_id": "98ef298b-2f8f-5ff5-8fbe-04c237459096",
+            "display_version": "r2",
+            "display_label": "INV-QN53GPRB",
+            "statement": "A taskless knowledge bootstrap is admitted only from real setup authority, namely the MCP settings document's repository entry, the memory layer the ordinary read route resolves and the exact code and memory revisions the two real checkouts answer for HEAD, so no client-supplied boolean, fabricated enclosure contract or caller-typed revision can grant a knowledge write.",
+            "applicability": "Taskless knowledge-bootstrap admission from the declared MCP repository entry and its resolved code/memory checkouts.",
+            "essential_conditions": [
+              "No enclosure is in scope.",
+              "The repository settings, resolved roots and exact checkout HEAD observations supply the setup admission."
+            ],
+            "exclusions": [
+              "Leaf knowledge-ingest, which is admitted through its canonical enclosure contract.",
+              "A caller assertion of authority or a fabricated task/checkout identity."
+            ],
+            "joint_guarantee": null,
+            "lifecycle": "proposed",
+            "acceptance_ref": null,
+            "provenance": {
+              "actor_ref": "260921-ICR/260921-ICR-L30",
+              "authorization_ref": "text-knowledge:knowledge/invariants/INV-QN53GPRB-ICR30-I-3.json",
+              "operation_id": "353de9d7-0761-5272-bee4-a521b9b5bed8",
+              "origin_refs": [],
+              "recorded_at": "1970-01-01T00:00:00+00:00"
+            },
+            "payload_digest": "292b185030842493af88df7d64b8445aeb068685e9f25022a1a8898149d1b051",
+            "member_id": null,
+            "family_revision_id": null,
+            "invariant_revision_id": null,
+            "claim_id": null,
+            "role": null,
+            "rationale": null,
+            "anchor": null
+          },
+          "before_selected": false,
+          "after_selected": true,
+          "record_id": "6ec03cae-83a4-5f63-9fa4-66b135506c2a",
+          "revision_id": "98ef298b-2f8f-5ff5-8fbe-04c237459096",
+          "changed_fields": [],
+          "reached_via": [
+            "member_of_selected_family"
+          ],
+          "source_change": null
+        },
+        {
+          "item_id": "d92c4e42-3390-580c-aead-9ca53b708538",
+          "kind": "invariant",
+          "coverage": "present_outside_selection",
+          "record_transition": "added",
+          "before": null,
+          "after": {
+            "kind": "invariant_revision",
+            "item_id": "d92c4e42-3390-580c-aead-9ca53b708538",
+            "selection_reasons": [
+              {
+                "stage": "member_of_selected_family",
+                "via_id": null
+              }
+            ],
+            "invariant_id": "8b1a17ca-96ba-5ede-a09f-abfb11ada0a5",
+            "family_id": null,
+            "record_id": "8b1a17ca-96ba-5ede-a09f-abfb11ada0a5",
+            "revision_id": "d92c4e42-3390-580c-aead-9ca53b708538",
+            "display_version": "r5",
+            "display_label": "INV-1XKX9ERN",
+            "statement": "Every authored knowledge write -- a record, a realization or proof entry, or a history row that a curator hands in -- goes through one of the two admitted command lines, the leaf-scoped knowledge-ingest and the taskless knowledge-bootstrap, and each writes a converted memory tree through the curator file writer; a tree without the conversion marker is refused as legacy-format, naming the crossing sync. The mounted MCP tool surface exposes no authoring writer of its own.",
+            "applicability": "Every authored write of knowledge through the two admitted command lines.",
+            "essential_conditions": [
+              "The memory tree holds the conversion marker; a tree without it is refused as legacy-format and names the crossing sync."
+            ],
+            "exclusions": [
+              "The mechanical writers (conversion, crossing sync, formatter) and the closeout routes, which set flags rather than author knowledge.",
+              "The mounted MCP tool surface, which exposes no authoring writer."
+            ],
+            "joint_guarantee": null,
+            "lifecycle": "proposed",
+            "acceptance_ref": null,
+            "provenance": {
+              "actor_ref": "260921-ICR/260921-ICR-L30",
+              "authorization_ref": "text-knowledge:knowledge/invariants/INV-1XKX9ERN-ICR30-I-1.json",
+              "operation_id": "5989195a-a906-5059-bb16-c59295754e0a",
+              "origin_refs": [],
+              "recorded_at": "1970-01-01T00:00:00+00:00"
+            },
+            "payload_digest": "35162451c2c6f5d79e48f2fd766b533b3047cf388a07ea64863d2e3039efbc25",
+            "member_id": null,
+            "family_revision_id": null,
+            "invariant_revision_id": null,
+            "claim_id": null,
+            "role": null,
+            "rationale": null,
+            "anchor": null
+          },
+          "before_selected": false,
+          "after_selected": true,
+          "record_id": "8b1a17ca-96ba-5ede-a09f-abfb11ada0a5",
+          "revision_id": "d92c4e42-3390-580c-aead-9ca53b708538",
+          "changed_fields": [],
+          "reached_via": [
+            "member_of_selected_family"
+          ],
+          "source_change": null
+        },
+        {
+          "item_id": "ee4052e3-a8b7-5289-9399-d609257cc16a",
+          "kind": "invariant",
+          "coverage": "present_outside_selection",
+          "record_transition": "removed",
+          "before": {
+            "kind": "invariant_revision",
+            "item_id": "ee4052e3-a8b7-5289-9399-d609257cc16a",
+            "selection_reasons": [
+              {
+                "stage": "member_of_selected_family",
+                "via_id": null
+              }
+            ],
+            "invariant_id": "8b1a17ca-96ba-5ede-a09f-abfb11ada0a5",
+            "family_id": null,
+            "record_id": "8b1a17ca-96ba-5ede-a09f-abfb11ada0a5",
+            "revision_id": "ee4052e3-a8b7-5289-9399-d609257cc16a",
+            "display_version": "r4",
+            "display_label": "INV-1XKX9ERN",
+            "statement": "Every authored knowledge write -- a record, a realization or proof entry, or a history row that a curator hands in -- goes through one of two command lines, the leaf-scoped knowledge-ingest and the taskless knowledge-bootstrap, and the mounted MCP tool surface exposes no authoring writer of its own. Each command line selects its writer by the memory tree it writes: a converted tree (one that holds knowledge/layout.json) is written as knowledge files by the curator file writer, and an unconverted tree is written as one admitted batch by the single knowledge batch writer, which refuses a converted tree and is locked once its memory repository holds converted memory. Which of the two command-line entries a run can actually use is decided by how its process was loaded, because an undeclared process whose package came from a Git checkout is confined to that checkout's own disposable coordination root and undeclared execution from the primary checkout is refused, so the taskless entry is reachable from an installed package or from a declared daemon surface rather than from the checkout it was built in.",
+            "applicability": "Every authored write of knowledge: the records, the realization and proof entries, and the history rows that a hand-off list carries.",
+            "essential_conditions": [
+              "The write authors or changes knowledge content: a record, an entry or a judgment row."
+            ],
+            "exclusions": [
+              "The mechanical writers of knowledge files, which author nothing: the conversion (knowledge-convert) and the crossing sync (worktree_sync), which write the knowledge tree from existing memory; the formatter (knowledge-format), which rewrites a file in canonical formatting; and the closeout routes, which set the closed flag of the leaf's history file.",
+              "The onboarding card writers, which write a card's sidecar references and no record, entry or row."
+            ],
+            "joint_guarantee": null,
+            "lifecycle": "proposed",
+            "acceptance_ref": null,
+            "provenance": {
+              "actor_ref": "260921-ICR/260921-ICR-L30",
+              "authorization_ref": "text-knowledge:knowledge/invariants/INV-1XKX9ERN-ICR30-I-1.json",
+              "operation_id": "5989195a-a906-5059-bb16-c59295754e0a",
+              "origin_refs": [],
+              "recorded_at": "1970-01-01T00:00:00+00:00"
+            },
+            "payload_digest": "ad51cd367f8845fb40008f74975dc3ed664359fa21ce27c6ff0d5184503e759b",
+            "member_id": null,
+            "family_revision_id": null,
+            "invariant_revision_id": null,
+            "claim_id": null,
+            "role": null,
+            "rationale": null,
+            "anchor": null
+          },
+          "after": null,
+          "before_selected": true,
+          "after_selected": false,
+          "record_id": "8b1a17ca-96ba-5ede-a09f-abfb11ada0a5",
+          "revision_id": "ee4052e3-a8b7-5289-9399-d609257cc16a",
+          "changed_fields": [],
+          "reached_via": [
+            "member_of_selected_family"
+          ],
+          "source_change": null
+        },
+        {
+          "item_id": "f08b297f-7d4e-5ae6-ba92-26f57faf5087",
+          "kind": "invariant",
+          "coverage": "present_outside_selection",
+          "record_transition": "removed",
+          "before": {
+            "kind": "invariant_revision",
+            "item_id": "f08b297f-7d4e-5ae6-ba92-26f57faf5087",
+            "selection_reasons": [
+              {
+                "stage": "seed_selected",
+                "via_id": "c88cc287-0469-556c-9f42-b742b2377478"
+              }
+            ],
+            "invariant_id": "c88cc287-0469-556c-9f42-b742b2377478",
+            "family_id": null,
+            "record_id": "c88cc287-0469-556c-9f42-b742b2377478",
+            "revision_id": "f08b297f-7d4e-5ae6-ba92-26f57faf5087",
+            "display_version": "r2",
+            "display_label": "INV-753SKJFF",
+            "statement": "A repository's published knowledge has exactly one declared location per memory layer, and that memory layer is the canonical external memory root when no enclosure is in scope and the task's own memory worktree inside a leaf. For an unconverted memory layer the location is the dataset the ordinary read route's own owner names, the memory layer's knowledge.sqlite. A converted memory layer (one that holds knowledge/layout.json) publishes no dataset: its knowledge is the tree's text files, read through that tree's derived index, and the database file frozen there is never selected -- the resolution answers not-recorded, naming the tree.",
+            "applicability": "The resolution of a repository's published knowledge, for the ordinary read route and for the write route that consumes the same owner.",
+            "essential_conditions": [],
+            "exclusions": [],
+            "joint_guarantee": null,
+            "lifecycle": "proposed",
+            "acceptance_ref": null,
+            "provenance": {
+              "actor_ref": "260921-ICR/260921-ICR-L30",
+              "authorization_ref": "text-knowledge:knowledge/invariants/INV-753SKJFF-ICR30-I-2.json",
+              "operation_id": "39294acd-31cb-5b0c-bd63-919f26abd7b2",
+              "origin_refs": [],
+              "recorded_at": "1970-01-01T00:00:00+00:00"
+            },
+            "payload_digest": "8347401e826eb55b53c55b27214c4417c745337198dfed27ae70fee2995356ab",
+            "member_id": null,
+            "family_revision_id": null,
+            "invariant_revision_id": null,
+            "claim_id": null,
+            "role": null,
+            "rationale": null,
+            "anchor": null
+          },
+          "after": null,
+          "before_selected": true,
+          "after_selected": false,
+          "record_id": "c88cc287-0469-556c-9f42-b742b2377478",
+          "revision_id": "f08b297f-7d4e-5ae6-ba92-26f57faf5087",
+          "changed_fields": [],
+          "reached_via": [
+            "seed_selected:c88cc287-0469-556c-9f42-b742b2377478"
+          ],
+          "source_change": null
+        },
+        {
+          "item_id": "fa0ed241-a319-5736-8ca6-c9e25b3f8148",
+          "kind": "invariant",
+          "coverage": "present_outside_selection",
+          "record_transition": "added",
+          "before": null,
+          "after": {
+            "kind": "invariant_revision",
+            "item_id": "fa0ed241-a319-5736-8ca6-c9e25b3f8148",
+            "selection_reasons": [
+              {
+                "stage": "seed_selected",
+                "via_id": "c88cc287-0469-556c-9f42-b742b2377478"
+              }
+            ],
+            "invariant_id": "c88cc287-0469-556c-9f42-b742b2377478",
+            "family_id": null,
+            "record_id": "c88cc287-0469-556c-9f42-b742b2377478",
+            "revision_id": "fa0ed241-a319-5736-8ca6-c9e25b3f8148",
+            "display_version": "r3",
+            "display_label": "INV-753SKJFF",
+            "statement": "Published intent is selected from the one resolved converted memory root: the official external memory root outside an enclosure and the leaf's memory worktree inside it. Its text records are canonical; reads select the derived index of that exact tree. An unconverted root is refused as legacy-format, and no canonical knowledge database publication destination is selected.",
+            "applicability": "Ordinary published-intent selection for the resolved repository or canonical leaf.",
+            "essential_conditions": [
+              "The resolved memory root holds knowledge/layout.json.",
+              "The derived index can be built or read for the selected memory tree; failure remains an explicit unusable selection."
+            ],
+            "exclusions": [
+              "Historical canonical database publication and its former not-recorded converted result.",
+              "A sibling memory layer or derived index cache as an alternative source of truth."
+            ],
+            "joint_guarantee": null,
+            "lifecycle": "proposed",
+            "acceptance_ref": null,
+            "provenance": {
+              "actor_ref": "260921-ICR/260921-ICR-L30",
+              "authorization_ref": "text-knowledge:knowledge/invariants/INV-753SKJFF-ICR30-I-2.json",
+              "operation_id": "39294acd-31cb-5b0c-bd63-919f26abd7b2",
+              "origin_refs": [],
+              "recorded_at": "1970-01-01T00:00:00+00:00"
+            },
+            "payload_digest": "5bf140fdb3195c5783eaa369af8cacfa3dc2a8dcd91dbcdedafa41d612f7c249",
+            "member_id": null,
+            "family_revision_id": null,
+            "invariant_revision_id": null,
+            "claim_id": null,
+            "role": null,
+            "rationale": null,
+            "anchor": null
+          },
+          "before_selected": false,
+          "after_selected": true,
+          "record_id": "c88cc287-0469-556c-9f42-b742b2377478",
+          "revision_id": "fa0ed241-a319-5736-8ca6-c9e25b3f8148",
+          "changed_fields": [],
+          "reached_via": [
+            "seed_selected:c88cc287-0469-556c-9f42-b742b2377478"
+          ],
+          "source_change": null
+        },
+        {
+          "item_id": "604cabc0-e509-5e12-aac9-4a8ec331c157",
+          "kind": "family",
+          "coverage": "present_outside_selection",
+          "record_transition": "added",
+          "before": null,
+          "after": {
+            "kind": "family_revision",
+            "item_id": "604cabc0-e509-5e12-aac9-4a8ec331c157",
+            "selection_reasons": [
+              {
+                "stage": "member_of_selected_family",
+                "via_id": "fa0ed241-a319-5736-8ca6-c9e25b3f8148"
+              }
+            ],
+            "invariant_id": null,
+            "family_id": "fa2aac3a-f406-595a-a1e6-b50c656704ca",
+            "record_id": "fa2aac3a-f406-595a-a1e6-b50c656704ca",
+            "revision_id": "604cabc0-e509-5e12-aac9-4a8ec331c157",
+            "display_version": "r4",
+            "display_label": "knowledge-write-and-publication-foundation",
+            "statement": null,
+            "applicability": null,
+            "essential_conditions": [],
+            "exclusions": [],
+            "joint_guarantee": "Authored knowledge writes use the admitted leaf knowledge-ingest or taskless knowledge-bootstrap command and the single converted file writer. Writer admission and ordinary readers resolve the same repository or leaf memory root, whose text files are canonical. An unconverted root is refused and no canonical dataset is published. Mechanical conversion, crossing merge, formatting and closeout flags are outside this authoring guarantee.",
+            "lifecycle": "proposed",
+            "acceptance_ref": null,
+            "provenance": {
+              "actor_ref": "260921-ICR/260921-ICR-L30",
+              "authorization_ref": "text-knowledge:knowledge/families/FAM-7B6N3Y4Q-knowledge-write-and-publication-foundation.json",
+              "operation_id": "fdbd894f-0c4c-57e2-bd41-c5995ef110e3",
+              "origin_refs": [],
+              "recorded_at": "1970-01-01T00:00:00+00:00"
+            },
+            "payload_digest": "e80b773587510aad114eb4a1da959d5f63e87fc1a0f10a3ef63a8fcabe4c843a",
+            "member_id": null,
+            "family_revision_id": null,
+            "invariant_revision_id": null,
+            "claim_id": null,
+            "role": null,
+            "rationale": null,
+            "anchor": null
+          },
+          "before_selected": false,
+          "after_selected": true,
+          "record_id": "fa2aac3a-f406-595a-a1e6-b50c656704ca",
+          "revision_id": "604cabc0-e509-5e12-aac9-4a8ec331c157",
+          "changed_fields": [],
+          "reached_via": [
+            "member_of_selected_family:fa0ed241-a319-5736-8ca6-c9e25b3f8148"
+          ],
+          "source_change": null
+        },
+        {
+          "item_id": "c90b49d3-c3bd-5399-9478-25eecd7a6468",
+          "kind": "family",
+          "coverage": "present_outside_selection",
+          "record_transition": "removed",
+          "before": {
+            "kind": "family_revision",
+            "item_id": "c90b49d3-c3bd-5399-9478-25eecd7a6468",
+            "selection_reasons": [
+              {
+                "stage": "member_of_selected_family",
+                "via_id": "f08b297f-7d4e-5ae6-ba92-26f57faf5087"
+              }
+            ],
+            "invariant_id": null,
+            "family_id": "fa2aac3a-f406-595a-a1e6-b50c656704ca",
+            "record_id": "fa2aac3a-f406-595a-a1e6-b50c656704ca",
+            "revision_id": "c90b49d3-c3bd-5399-9478-25eecd7a6468",
+            "display_version": "r3",
+            "display_label": "knowledge-write-and-publication-foundation",
+            "statement": null,
+            "applicability": null,
+            "essential_conditions": [],
+            "exclusions": [],
+            "joint_guarantee": "Every authored knowledge write -- a record, an entry or a history row -- goes through the two admitted command lines and the one writer of the memory tree's format, the curator file writer for a converted tree and the knowledge batch writer for an unconverted one; it lands in the repository's one declared knowledge location and is admitted only from real setup authority, so a writer and a reader of the same repository's knowledge can never disagree about where it lives or by what right it was written. The mechanical writers author nothing and are outside this guarantee: the conversion and the crossing sync, the formatter, and the closeout's closed flag.",
+            "lifecycle": "proposed",
+            "acceptance_ref": null,
+            "provenance": {
+              "actor_ref": "260921-ICR/260921-ICR-L30",
+              "authorization_ref": "text-knowledge:knowledge/families/FAM-7B6N3Y4Q-knowledge-write-and-publication-foundation.json",
+              "operation_id": "fdbd894f-0c4c-57e2-bd41-c5995ef110e3",
+              "origin_refs": [],
+              "recorded_at": "1970-01-01T00:00:00+00:00"
+            },
+            "payload_digest": "dcdb330717d6d1464cbf8a3f18740aab0c87310def535f1a96e40e39ada98422",
+            "member_id": null,
+            "family_revision_id": null,
+            "invariant_revision_id": null,
+            "claim_id": null,
+            "role": null,
+            "rationale": null,
+          

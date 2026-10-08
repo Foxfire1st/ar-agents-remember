@@ -2,115 +2,12 @@
   "path": "mcp/tests/test_knowledge_paging.py",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "The module statement.\n\nAnchor: \"Bounded continuation accepted by the mounted read (MIK-R02).\"",
+    "13": {
+      "note": "`test_a_forty_member_family_pages_from_read_ar_files_through_knowledge_read_exactly_once` supplies the current fixture or assertion described above.",
       "targets": [
         {
           "anchor": {
-            "blob": "710cb700c3e25d841d298a4439f21b836455ab59",
-            "content": "sha256:1d1dfe87da1637462ca47dbfa61b7a843f15cf38c34ddfc1438eb245c874870c",
-            "locator": {
-              "end": 17,
-              "kind": "line_range",
-              "start": 1
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "10": {
-      "note": "Resumed pages stay at page 1's code tree: a leaf walk's entries are current at T1 and stale at T2, and a named view walk keeps its tree.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "710cb700c3e25d841d298a4439f21b836455ab59",
-            "content": "sha256:300a4289ad4787259981d02f0229ea8254116af868d81b56b463f32a23e5084f",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_resumed_leaf_walk_observes_entries_at_page_one_code_tree"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "710cb700c3e25d841d298a4439f21b836455ab59",
-            "content": "sha256:3856a4399522bc17dff9b60b749779cb0c164294f420a5a9cb1966188ce964e4",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_view_walk_is_bound_to_its_named_code_tree"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "11": {
-      "note": "The leaf-row helpers: the counted rows, and the key that identifies each row once.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "710cb700c3e25d841d298a4439f21b836455ab59",
-            "content": "sha256:e91fd1eecbf0bba9dc72be92c6c6dac0849439d3ebdd209c557d21a309d697f1",
-            "locator": {
-              "kind": "symbol",
-              "name": "_counted"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "710cb700c3e25d841d298a4439f21b836455ab59",
-            "content": "sha256:e294be18cb6137ae2187fb18838b4f187b3f2227973b731898687245b535d1d7",
-            "locator": {
-              "kind": "symbol",
-              "name": "_leaf_key"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "12": {
-      "note": "An empty ordering is refused on every path.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "710cb700c3e25d841d298a4439f21b836455ab59",
-            "content": "sha256:58f1ed03b953338c26e09ec68174101c307de35c2847f4933b707efc06682da1",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_an_empty_ordering_is_refused_not_defaulted_on_every_path"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "2": {
-      "note": "Seeded, bounded randomized trials.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "710cb700c3e25d841d298a4439f21b836455ab59",
-            "content": "sha256:2301bef3491f4515f105477c32ae5f557359e2a381e2e6f8f28f80563998a1c1",
-            "locator": {
-              "kind": "symbol",
-              "name": "RANDOMIZED_TRIALS"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "3": {
-      "note": "The cross-surface 40-member walk, exactly once.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "710cb700c3e25d841d298a4439f21b836455ab59",
+            "blob": "52704d1ab5f7b91195928d56442b5ed0246bc689",
             "content": "sha256:6cafc2738e20e584d62fa7b0726e02d38222a4ae6bf59062282ff30f0debf692",
             "locator": {
               "kind": "symbol",
@@ -121,28 +18,12 @@
         }
       ]
     },
-    "4": {
-      "note": "Threshold adherence over randomized families.",
+    "14": {
+      "note": "`test_a_row_larger_than_the_threshold_is_returned_alone_and_flagged` supplies the current fixture or assertion described above.",
       "targets": [
         {
           "anchor": {
-            "blob": "710cb700c3e25d841d298a4439f21b836455ab59",
-            "content": "sha256:f8205d3ffb4c56bbfbfc8f365bf0d5e70d9e6e8184f1b004e736bbf106906aaa",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_pages_stay_within_the_threshold_over_randomized_families"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "5": {
-      "note": "An oversized row alone and flagged, as the page's one counted leaf row.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "710cb700c3e25d841d298a4439f21b836455ab59",
+            "blob": "52704d1ab5f7b91195928d56442b5ed0246bc689",
             "content": "sha256:e3188f67f72458c4153592d60a58a4b1ef8e9963fd0f78e3f940fbec2a199b95",
             "locator": {
               "kind": "symbol",
@@ -153,44 +34,12 @@
         }
       ]
     },
-    "6": {
-      "note": "Binding refusals with no page.",
+    "15": {
+      "note": "`test_the_whole_knowledge_block_of_several_seeds_stays_within_the_threshold` supplies the current fixture or assertion described above.",
       "targets": [
         {
           "anchor": {
-            "blob": "710cb700c3e25d841d298a4439f21b836455ab59",
-            "content": "sha256:a0c773f95a4dc62a494b3c2b6cc3f496405b5b48fa2f47087e4a8b084e66f6c3",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_continuation_whose_binding_does_not_hold_is_refused_with_no_page"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "7": {
-      "note": "The projection continues in parts and never raises.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "710cb700c3e25d841d298a4439f21b836455ab59",
-            "content": "sha256:da00aa5df3311f9d284c4310c8a2cb406c496b761ca22f60488334a576da2460",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_projection_over_the_artifact_limit_continues_in_parts_and_never_raises"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "8": {
-      "note": "The whole block within the threshold, 5 and 16 seeds.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "710cb700c3e25d841d298a4439f21b836455ab59",
+            "blob": "52704d1ab5f7b91195928d56442b5ed0246bc689",
             "content": "sha256:2e791477c5199f2490f0f9284663d749d122e7b5408f311b36146e4beca90cae",
             "locator": {
               "kind": "symbol",
@@ -201,16 +50,16 @@
         }
       ]
     },
-    "9": {
-      "note": "A view walk keeps its ordering.",
+    "16": {
+      "note": "`test_a_view_walk_is_bound_to_its_named_code_tree` supplies the current fixture or assertion described above.",
       "targets": [
         {
           "anchor": {
-            "blob": "710cb700c3e25d841d298a4439f21b836455ab59",
-            "content": "sha256:26efc006f9757c2bf3280e96723b520d08e0835c304b9e207f7476789a3747bd",
+            "blob": "52704d1ab5f7b91195928d56442b5ed0246bc689",
+            "content": "sha256:3856a4399522bc17dff9b60b749779cb0c164294f420a5a9cb1966188ce964e4",
             "locator": {
               "kind": "symbol",
-              "name": "test_a_view_walk_resumes_in_its_own_ordering_and_refuses_another"
+              "name": "test_a_view_walk_is_bound_to_its_named_code_tree"
             }
           },
           "kind": "test"

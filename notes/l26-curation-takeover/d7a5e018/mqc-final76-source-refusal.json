@@ -1,0 +1,33 @@
+{
+  "ok": false,
+  "tokens": 413,
+  "tokenizer": "tiktoken:o200k_base",
+  "tokenCountExact": true,
+  "operation": "memory_quality_check",
+  "repoId": "agents-remember",
+  "status": "scope-refused",
+  "servingBuild": {
+    "version": "3.0.0rc8",
+    "bootedAt": "2026-10-08T08:26:53.180889+00:00",
+    "sourceDigest": "sha256:6a050af37bcc152151a56e1635ac42ddd1ddfa20aaf3c63df377e09fcb7a51d4",
+    "pythonExecutable": "/home/firefox/.local/share/agents-remember/python/cpython-3.14.8/bin/python3.14",
+    "packageRoot": "/home/firefox/projects/agents-remember/mcp/src/agents_remember",
+    "commit": "b35b38bd",
+    "dashboardBuild": "cb442492c4373d059462c5a2ad7715f3961bab6f21c1181b2ecf2674b768b4a6"
+  },
+  "contractPath": "/home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/enclosures/260928-mik-l26/series-contract.md",
+  "pairStatus": "memory-candidate-pair-base-stale",
+  "pairField": "codeBaseCommit",
+  "detail": "the recorded code base no longer equals its source branch",
+  "expected": {
+    "baseCommit": "b35b38bd46aa449704f0e69996879cc8b927faa3"
+  },
+  "observed": {
+    "sourceCommit": "0ce6f56e5ddef7989bad279101b42b34d9d3bd56"
+  },
+  "nextAction": "worktree_sync",
+  "nextArgs": {
+    "contract_path": "/home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/enclosures/260928-mik-l26/series-contract.md",
+    "dry_run": true
+  }
+}

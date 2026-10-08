@@ -1,15 +1,13 @@
 {
   "admission": "legacy-unassessed",
-  "applicability": "Normal comparison capture and explicitly supplied record inputs for one exact resolved source/knowledge pair.",
+  "applicability": "review_records_for_resolution and its exact candidate-bound owner collections.",
   "conditions": [
-    "Normal capture collects records from their existing owners for that already resolved pair.",
-    "Positive assessment inputs equal the complete immutable owner collection, reserved artifacts and one exact assessment channel; optional low-level currentness is independent.",
-    "A named expected artifact that fails validation refuses before retention/publication.",
-    "A genuinely non-applicable curator plane remains explicit unavailable metadata while valid source/knowledge can be captured; explicit empty inputs never cause implicit live-owner lookup."
+    "The comparison is resolved once and supplied to the collector.",
+    "Each collection reports its own availability; curator assessments are read through their generation integrity owner."
   ],
   "exclusions": [
-    "Generic evidence impersonating reserved curator owner pins.",
-    "Inferring record availability from counts or manufacturing a favorable empty assessment read."
+    "The retired dataset comparison publication producer and its explicit-positive-input admission protocol.",
+    "A mutable current pointer, generic evidence citation or invented empty collection as replacement for an unread owner input."
   ],
   "id": "INV-7W11WKKN",
   "origin": {
@@ -17,9 +15,9 @@
     "legacyId": "0325c4e7-160e-4871-abb1-512cda4b923f",
     "task": "260921-ICR"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-invariant/v1",
-  "statement": "The ordinary comparison producer collects owner records for its exact resolved pair and binds validated immutable curator references through the existing comparison artifact vocabulary. Generic evidence citations cannot impersonate those reserved owner pins. Explicit positive inputs must match the complete owner artifact collection and assessment-channel provenance before retention/publication; optional low-level currentness is independent. Explicit empty inputs and honest unavailable channels retain their existing meaning.",
+  "statement": "The review evidence collector reads owner records for the exact resolved comparison it is rendering, preserving explicit collection availability and immutable curator-generation provenance. Retired canonical detection, verification and evidence collections remain unavailable; an unread or uncaptured collection never becomes a favorable empty result.",
   "status": "proposed",
   "supersedes": []
 }

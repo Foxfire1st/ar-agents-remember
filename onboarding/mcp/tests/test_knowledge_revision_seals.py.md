@@ -85,7 +85,6 @@ No configured domain documentation could be checked.
 - The field-isolating digest node for the invariant payload. [3]
 - The two family read nodes (added and removed edge behind the seal). [4]
 - The two invariant read nodes (added and removed edge behind the seal). [5]
-- The field-isolating family digest node this module's invariant sibling mirrors. [6]
 - The payloads that seal the predecessor set, one per revision kind. [7]
 - The read-path recomputation that turns a tampered edge into a storage defect. [8]
 - The unit-regression lane row this module is registered by. [9]

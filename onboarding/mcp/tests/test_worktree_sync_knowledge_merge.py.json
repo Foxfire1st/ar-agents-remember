@@ -1,0 +1,22 @@
+{
+  "path": "mcp/tests/test_worktree_sync_knowledge_merge.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The file realizes its current contract at the corrected candidate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2a9b0d405d703b83e78b9e9661eb2a00f54e7a1d",
+            "content": "sha256:a83ca4f04c88eeb3adc5e42f27847d7a4d65bfc95262df65501639d9eadabe84",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

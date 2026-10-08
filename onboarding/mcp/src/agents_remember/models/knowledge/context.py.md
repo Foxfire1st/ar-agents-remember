@@ -6,9 +6,8 @@
 
 ## Purpose
 
-Declares the two runtime handles the storage operation receives: the schema generation a store was opened as
-(`KNOWLEDGE_SCHEMA_NAME` plus `KnowledgeSchemaIdentity`) and the already-authorized
-`AdmittedKnowledgeDestination`.
+Declares the schema name and the structural identity of a knowledge SQLite shape:
+`KNOWLEDGE_SCHEMA_NAME` plus `KnowledgeSchemaIdentity`.
 
 ## Code Commentary
 
@@ -16,31 +15,26 @@ Declares the two runtime handles the storage operation receives: the schema gene
 
 `KNOWLEDGE_SCHEMA_NAME = "ar-knowledge-sqlite/v1"` is the application-owned schema version string, kept
 separate from SQLite's own integer `user_version` so a reader names the shape it expects instead of comparing
-bare numbers. `knowledge/store.py` writes `schema_name` into `KnowledgeSchemaIdentity` at every open, and
-`memory/knowledge/schema.py` reports the matching fingerprint.
-
-`KnowledgeSchemaIdentity` carries `schema_name` (bounded by `LABEL_MAX_LENGTH`), `user_version` (`ge=1`) and
-`fingerprint`. `AdmittedKnowledgeDestination` carries `database_path`, the `RepositoryIdentity` namespace and the
-`Authorship` envelope to be used for writes.
+bare numbers. `KnowledgeSchemaIdentity` carries `schema_name` (bounded by `LABEL_MAX_LENGTH`), `user_version`
+(`ge=1`) and `fingerprint`, the structural identity a reader records for the shape it opened.
 
 ### Conventions
 
-A destination is constructed through `application.knowledge.admitted_knowledge_destination` after the
-application's own authority checks. The model deliberately carries no `authorized: bool` and no self-asserted
-authority: a deserialized request cannot mint one by claiming to be authorized.
+The module holds declared data only: no path, authority, admission or write destination. A store's open-time
+schema validation lives in `memory/knowledge/connection.py`, which compares the declared name and the structural
+identity against the shape it actually opens.
 
 ### Invariants And Boundaries
 
 - The schema name is a declared constant rather than a derived string, so a store that opens a different
   generation is detected instead of described.
-- `AdmittedKnowledgeDestination` is a typed runtime handle; it confers no authority by itself and holds no
-  durable state.
-- The destination's `repository` is the single source of the namespace used by every read and write through the
-  opened store, so a request addressed elsewhere is refusable by comparison rather than by trust.
+- The identity is the open-time statement of the shape: name, integer user version and structural fingerprint.
+- The module confers no authority by itself and holds no durable state; a later schema check is what refuses a
+  mismatched generation.
 
 ### Todos
 
-None recorded. `AdmittedKnowledgeDestination` is the seam later leaves extend for read/diff surfaces.
+None recorded.
 
 ## Evidence
 
@@ -55,9 +49,7 @@ No configured domain documentation could be checked.
 
 - The declared schema name and its separation from SQLite's integer user version. [1]
 - The schema identity a store is opened as, including its structural fingerprint. [2]
-- The authorized-destination handle the store receives instead of a bare path. [3]
 - The schema generation this name is validated against at open and on reopen. [4]
-- The application constructor that binds a resolved destination. [5]
 
 ### Cross-Repo References
 

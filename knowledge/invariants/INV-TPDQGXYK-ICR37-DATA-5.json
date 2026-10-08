@@ -7,7 +7,8 @@
   ],
   "exclusions": [
     "An exact byte-equivalent retry remains a replay.",
-    "No in-place migration of historical applicability is authorized."
+    "No in-place migration of historical applicability is authorized.",
+    "The retired database-era realization site; the obligation is recorded on converted memory only."
   ],
   "id": "INV-TPDQGXYK",
   "origin": {
@@ -15,9 +16,9 @@
     "legacyId": "88335d69-2675-4902-bcce-2f6eb0115688",
     "task": "260921-ICR"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-invariant/v1",
   "statement": "Changing an already allocated entry's semantic scope is a content conflict requiring an explicit successor rather than an exact retry.",
-  "status": "proposed",
+  "status": "retired",
   "supersedes": []
 }

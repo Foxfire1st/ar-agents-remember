@@ -1,8 +1,14 @@
 {
   "admission": "legacy-unassessed",
-  "applicability": "Every curator entry ingested from the orchestrator's hand-off list.",
-  "conditions": [],
-  "exclusions": [],
+  "applicability": "Taskless knowledge-bootstrap admission from the declared MCP repository entry and its resolved code/memory checkouts.",
+  "conditions": [
+    "No enclosure is in scope.",
+    "The repository settings, resolved roots and exact checkout HEAD observations supply the setup admission."
+  ],
+  "exclusions": [
+    "Leaf knowledge-ingest, which is admitted through its canonical enclosure contract.",
+    "A caller assertion of authority or a fabricated task/checkout identity."
+  ],
   "id": "INV-QN53GPRB",
   "origin": {
     "handoff": {
@@ -16,7 +22,7 @@
     "legacyId": "f9dd5e19-6903-493a-ad84-99d284782ded",
     "task": "260921-ICR"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "A taskless knowledge bootstrap is admitted only from real setup authority, namely the MCP settings document's repository entry, the memory layer the ordinary read route resolves and the exact code and memory revisions the two real checkouts answer for HEAD, so no client-supplied boolean, fabricated enclosure contract or caller-typed revision can grant a knowledge write.",
   "status": "proposed",

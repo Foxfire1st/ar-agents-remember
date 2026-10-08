@@ -20,6 +20,6 @@
   "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "An admitted leaf candidate may advance only its code-tree binding against an exact predecessor receipt and logical dataset under its existing candidate lock, preserving all non-code scope and existing knowledge.",
-  "status": "proposed",
+  "status": "retired",
   "supersedes": []
 }

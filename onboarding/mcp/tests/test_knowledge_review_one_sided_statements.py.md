@@ -6,13 +6,7 @@
 
 ## Purpose
 
-The **production-composition half** of ICR-R06@v1, in six cases. They drive the real
-`compose_review` over **two real datasets**, each built through the public store operations by
-`read_scope_test_support.build_read_scope_fixture` and then extended with one authored invariant
-apiece. Nothing here substitutes a payload, edits a stored row or deletes a record to manufacture a
-case: the after snapshot simply holds an invariant the before snapshot does not, and the before
-snapshot holds one the after snapshot does not. Those two snapshots are what an addition and a
-removal **are**, and the reviewed subject is selected from each side in turn.
+The one-sided statement contract drives real compose_review over two independently built read-side datasets. Their rows are assembled by knowledge_rows_test_support, the test-only builder; no production canonical database writer is involved. The after half holds an addition and the before half a removal, each selected by its own identity. [15]
 
 The renderer half of the same requirement is `dashboard/src/panels/review/KnowledgeStatements.test.tsx`,
 which uses these same values. A change to either half's contract fails in one of the two.
@@ -32,14 +26,7 @@ Module scope is documented in the fixture's own docstring: both datasets are rea
 case writes after the fixture is built, and a per-case rebuild would pay for two fixture trees to
 measure the same bytes.
 
-**`author_invariant` writes through the store's own operations and refuses quietly never.** It opens
-the fixture's database with `open_knowledge_store`, calls `create_invariant` and then
-`create_revision`, and raises an `AssertionError` carrying the store's own refusal when either
-answers anything but `"created"`. The acceptance reference is **not** a free argument:
-`SHARED_ACCEPTANCE_REF` is attached only when the authored origin state is `accepted`, because the
-vocabulary refuses a *proposed* revision that claims an acceptance — a proposal claiming an event
-that did not happen. That single rule is what makes the shared subject's `acceptance_ref` transition
-real rather than fabricated.
+author_invariant uses the test-only RowStore builder to insert fixture identities and revisions and raises when its insert answer is not created. Production digest code seals the rows. The builder implements no retired label, lineage, duplicate or endpoint write rules. Only accepted origin data receives an acceptance reference. This constructs read-side data and proves no production write refusal. [5] [15]
 
 **`review` is the one composition call, and it fails loudly on a refusal.** It hands `compose_review`
 a hand-assembled `ReviewCandidateResolution` (the two databases, the two `git_root`s and the two
@@ -137,7 +124,9 @@ it.
 - The module's whole lane declaration. [2]
 - The authored identities and words every case asserts against, drawn once in the builder. [3]
 - **The two frozen fixture values: one invariant to author (with the origin state that alone decides its acceptance reference) and the pair of snapshots plus the identities cases select by.** [4]
-- **The authoring helper: the store's own `create_invariant`/`create_revision`, the refusal carried into an `AssertionError`, and the rule that only an accepted origin state carries the acceptance reference.** [5]
+
+- Fixture insertion through test-only builder, with acceptance provenance tied to accepted origin. [5]
+
 - **The fixture: two independently built snapshots under one namespace, and the four authored revisions that make an addition, a removal and a real transition.** [6]
 - The one composition call, with the hand-assembled resolution and the loud failure on a refusal. [7]
 - **The addition and the removal: the complete present-side statement, the named absent side with `text is None`, and the comparison's own side-absence code.** [8]
@@ -147,7 +136,9 @@ it.
 - **The task-context case: no comparison, both sides unresolved with the same reason and no text, and no roster.** [12]
 - **The projection owner whose markers and canonicality this module asserts.** [13]
 - The adapter entry point the cases drive, and the one-sided contract its pane values carry. [14]
-- **The fixture this module builds on, and the public store operations it authors through.** [15]
+
+- Read fixture and test-only row builder supply both datasets. [15]
+
 - **The lane row that selects this module, and the artifact consumer row that registers it against the fixture it consumes.** [16]
 - The `consumer_scope = "exact"` artifact whose list this module joined. [17]
 - **The renderer half that uses these same values, which is what makes a change to either half fail in one of the two.** [18]

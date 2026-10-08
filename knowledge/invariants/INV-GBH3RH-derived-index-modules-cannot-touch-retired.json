@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "A retired dataset name reached through an index module would regress the retirement without a failing test."
+  },
+  "applicability": "The derived-index modules and the helper-caller census.",
+  "conditions": [
+    "The index modules may open their own cache only."
+  ],
+  "exclusions": [
+    "The citation package, which reads its own source index."
+  ],
+  "id": "INV-GBH3RH",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "test_knowledge_database_retired.py; F08-retired-index-name.log; F08-exemption-list.log"
+      ],
+      "path": "handoff-stage1.json"
+    },
+    "handoffEntry": "R3 finding 8",
+    "leaf": "260928-MIK-L26",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Derived-index modules cannot touch retired dataset names, helper callers are pinned and only the citation package is exempt from other-store source rules.",
+  "status": "proposed",
+  "supersedes": []
+}

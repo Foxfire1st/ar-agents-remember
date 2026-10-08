@@ -1,0 +1,77 @@
+{
+  "entries": [],
+  "records": [
+    {
+      "key": "fix3-bounded-diff",
+      "kind": "family",
+      "fields": {
+        "status": "proposed",
+        "title": "Explicit scope and limits of mechanical knowledge diff",
+        "guarantee": "For the declared converted knowledge_diff requests, root admission and an absent-selector refusal prevent a falsely empty comparison. The response stays within the shared knowledge-read threshold and states omitted files and patch cuts; within the recorded capture obligation's scope, loose-object capture is disclosed. This is a mechanical file comparison, not a semantic verdict or canonical-dataset comparison.",
+        "members": [
+          "INV-JM868W",
+          "INV-PPGGTW",
+          "INV-X23FME"
+        ],
+        "routes": [
+          "mcp/src/agents_remember/application",
+          "mcp/src/agents_remember/mcp/tools"
+        ],
+        "admission": {
+          "criteria": [
+            "joint_guarantee"
+          ],
+          "justification": "Root selection, bounded response and disclosed omissions/capture address different ways the same mechanical comparison could appear complete or side-effect-free when it is not. JM868W adds capture disclosure to the overlap with PPGGTW; X23FME supplies scope admission. Their actual scopes remain unchanged; one member does not establish all three parts."
+        }
+      },
+      "slug": "explicit-scope-and-limits-of-mechanical-knowledge-diff"
+    },
+    {
+      "key": "fix3-foundation-inspection",
+      "kind": "family",
+      "fields": {
+        "status": "proposed",
+        "title": "Truthful foundation inspection instructions",
+        "guarantee": "For a converted foundation, bootstrap instructions name the supported family, invariant and source_context views and distinguish complete-empty, complete-authored and partial knowledge from admission or legacy refusals. An instruction to inspect knowledge does not establish authoring, publication or repository acceptance.",
+        "members": [
+          "INV-1BBPF3",
+          "INV-K69R3M"
+        ],
+        "routes": [
+          "skills/c-14-knowledge-bootstrap",
+          "mcp/tests"
+        ],
+        "admission": {
+          "criteria": [
+            "joint_guarantee"
+          ],
+          "justification": "The examples must lead to supported reads and the state explanation must let the same instructed session interpret what it read. Either alone can misroute or misdescribe the foundation. This is a joint instructional contract, separate from write admission and storage location."
+        }
+      },
+      "slug": "truthful-foundation-inspection-instructions"
+    }
+  ],
+  "history": [
+    {
+      "subject": "handoff:fix3-bounded-diff",
+      "disposition": "changed",
+      "effect": "add",
+      "reason": "Root selection, bounded response and disclosed omissions/capture address different ways the same mechanical comparison could appear complete or side-effect-free when it is not. JM868W adds capture disclosure to the overlap with PPGGTW; X23FME supplies scope admission. Their actual scopes remain unchanged; one member does not establish all three parts.",
+      "examined": [
+        "INV-JM868W",
+        "INV-PPGGTW",
+        "INV-X23FME"
+      ]
+    },
+    {
+      "subject": "handoff:fix3-foundation-inspection",
+      "disposition": "changed",
+      "effect": "add",
+      "reason": "The examples must lead to supported reads and the state explanation must let the same instructed session interpret what it read. Either alone can misroute or misdescribe the foundation. This is a joint instructional contract, separate from write admission and storage location.",
+      "examined": [
+        "INV-1BBPF3",
+        "INV-K69R3M"
+      ]
+    }
+  ]
+}

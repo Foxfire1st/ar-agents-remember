@@ -1,6 +1,24 @@
 {
   "path": "mcp/src/agents_remember/models/knowledge/review_trees.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "c40d7cca79ecb686a6d8bb8c52405e801d972d9a",
+        "content": "sha256:d18cf75ab9bd248dc06a1e80374791cbbabbfe7e2b6583a3b200efe2b0c364d3",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-ZHZJNK",
+      "invariant": "INV-YJZKYC",
+      "origin": {
+        "handoffEntry": "R3 Note 15",
+        "leaf": "260928-MIK-L26"
+      },
+      "rationale": "The model describes the source-only review identity.",
+      "role": "presentation"
+    }
+  ],
   "references": {
     "1": {
       "note": "The record schema and the one ref namespace pins live under.",

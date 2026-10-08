@@ -18,8 +18,7 @@ leaves:
   the four recorded committed trees are the comparison (number `0`, no ref, since committed endpoints need none);
   otherwise the code sides are kept and the knowledge sides are `legacy-unavailable`.
 
-It is reached only from `review_committed_leaf._converted_repository_resolution`, gated on
-`official_line_converted`, so an unconverted repository's closed leaf keeps the dataset path unchanged.
+`review_committed_leaf.resolve_committed_leaf_review` reaches this owner when no retained tree comparison answers the closed leaf. Unconverted recorded knowledge is `legacy-unavailable`; no canonical dataset is reopened or substituted.
 
 ## Code Commentary
 
@@ -78,7 +77,9 @@ No configured live documentation source was available for this pass.
 - Converted recorded endpoints become a committed four-tree comparison named by the task directory. [4]
 - The code sides kept and both knowledge sides `legacy-unavailable`, naming no file. [5]
 - The refusal, declared facts and detail of a legacy or partly unavailable comparison. [6]
-- The closed-leaf branch that reaches this module only for a converted official line. [7]
+
+- The closed-leaf route reopens exact tree records first and then preserves legacy source without opening datasets. [7]
+
 - Code sides kept, knowledge `legacy-unavailable`, zero database opens. [8]
 
 ### Cross-Repo References

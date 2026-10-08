@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Take-back that overwrites a concurrent foreign commit would destroy another writer's commit."
+  },
+  "applicability": "Take-back and replacement of publication attempts.",
+  "conditions": [
+    "The expected-old value was captured with the admitted parent."
+  ],
+  "exclusions": [
+    "An unpublished refusal, which may replace itself with the same request."
+  ],
+  "id": "INV-BEYEV2",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "N12-takeback-CAS.log; N12-cancelled-selection.log; N12-any-terminal.log; N12-invalid-cleanup.log"
+      ],
+      "path": "handoff-stage1.json"
+    },
+    "handoffEntry": "R3 note 12, publication half",
+    "leaf": "260928-MIK-L26",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Take-back retains an expected-old compare-and-swap and only unpublished refusal cancellations can replace themselves with the same request.",
+  "status": "proposed",
+  "supersedes": []
+}

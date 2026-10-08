@@ -6,7 +6,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f691898dcd00ca9d02cd290832852fa2be5c2c42",
+            "blob": "5b2a4ae3f3757a7c03f71c2afdd2082c5bf38392",
             "content": "sha256:6733de358d09058db7ab9672204df11f721366208bfd9ed54924fe325d71e265",
             "locator": {
               "kind": "symbol",
@@ -77,15 +77,15 @@
       ]
     },
     "12": {
-      "note": "One commit, one ref, and the recorded base as the commit's parent.",
+      "note": "Retained historical pin identities and exact reader check.",
       "targets": [
         {
           "anchor": {
-            "blob": "e56036b983a88cecfd9553c96ecd7bea613c3fa0",
-            "content": "sha256:c27fc00460c90c4a2bf15e0ff0c1cc4f62f4692b8a029ca1f8607ef2744de7dc",
+            "blob": "912d1707bae355645c256a55af1b52aeb7276c9f",
+            "content": "sha256:e89b7667e78f4ab4a0fb17204ec719f8acd854a2d7618481061120cca515c9f4",
             "locator": {
               "kind": "symbol",
-              "name": "retain_code_object"
+              "name": "RetainedCodeObject"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/code_object_retention.py"
           },
@@ -93,23 +93,11 @@
         },
         {
           "anchor": {
-            "blob": "e56036b983a88cecfd9553c96ecd7bea613c3fa0",
-            "content": "sha256:e76f9ad5dc9f46c8d16618b86de70915f91eb60be55203d6cf276cb616328271",
+            "blob": "912d1707bae355645c256a55af1b52aeb7276c9f",
+            "content": "sha256:f9bf8dc42f67156b384de43f6486c23156208dad567ec64c19f26716ad28c76f",
             "locator": {
               "kind": "symbol",
-              "name": "retention_ref"
-            },
-            "path": "mcp/src/agents_remember/worktrees/modules/code_object_retention.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e56036b983a88cecfd9553c96ecd7bea613c3fa0",
-            "content": "sha256:3717da8981d0036f920a613473af5b65b0ee294d7480ac558a565c91ccdb43c7",
-            "locator": {
-              "kind": "symbol",
-              "name": "RETAINED_CODE_REF_NAMESPACE"
+              "name": "retained_object_readable"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/code_object_retention.py"
           },
@@ -118,27 +106,15 @@
       ]
     },
     "13": {
-      "note": "**The commit whose id is a function of the retained objects, and the identity that makes it so.**",
+      "note": "Release checks the recorded ref instead of creating a deterministic pin.",
       "targets": [
         {
           "anchor": {
-            "blob": "e56036b983a88cecfd9553c96ecd7bea613c3fa0",
-            "content": "sha256:b23f34db5b3a1d584b9072644a6f88ca4295250b350866ad1fc27a7fbfca88ff",
+            "blob": "912d1707bae355645c256a55af1b52aeb7276c9f",
+            "content": "sha256:76e1344c022398ef8d50dd167e4a7ea60196db6ebcd824cd1664f9a2729d6cbf",
             "locator": {
               "kind": "symbol",
-              "name": "_retention_commit"
-            },
-            "path": "mcp/src/agents_remember/worktrees/modules/code_object_retention.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e56036b983a88cecfd9553c96ecd7bea613c3fa0",
-            "content": "sha256:7844d23972d841741930e4a0433d7c26a786dc3106d5201427711c4a8479772c",
-            "locator": {
-              "kind": "symbol",
-              "name": "_retention_identity"
+              "name": "release_retained_code_object"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/code_object_retention.py"
           },
@@ -151,7 +127,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e56036b983a88cecfd9553c96ecd7bea613c3fa0",
+            "blob": "912d1707bae355645c256a55af1b52aeb7276c9f",
             "content": "sha256:8a42dc6b7bcee527e6e8e183306a265ac7762ed3aebdab6174cd9937bd3b9951",
             "locator": {
               "kind": "symbol",
@@ -163,7 +139,7 @@
         },
         {
           "anchor": {
-            "blob": "e56036b983a88cecfd9553c96ecd7bea613c3fa0",
+            "blob": "912d1707bae355645c256a55af1b52aeb7276c9f",
             "content": "sha256:4456ef183916291ef3c37b7ada50bc861b0104429880e05e092a9e5835cc34c1",
             "locator": {
               "kind": "symbol",
@@ -180,7 +156,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e56036b983a88cecfd9553c96ecd7bea613c3fa0",
+            "blob": "912d1707bae355645c256a55af1b52aeb7276c9f",
             "content": "sha256:874ace4ceb964e42fca51d95238b53398b65e9f281bde01d0ddb915da2497f06",
             "locator": {
               "kind": "symbol",
@@ -192,7 +168,7 @@
         },
         {
           "anchor": {
-            "blob": "e56036b983a88cecfd9553c96ecd7bea613c3fa0",
+            "blob": "912d1707bae355645c256a55af1b52aeb7276c9f",
             "content": "sha256:8768acdd73aa2c484fe84053de67feec4a3b281229f396b7ae20887ce80940f9",
             "locator": {
               "kind": "symbol",
@@ -209,7 +185,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e56036b983a88cecfd9553c96ecd7bea613c3fa0",
+            "blob": "912d1707bae355645c256a55af1b52aeb7276c9f",
             "content": "sha256:76e1344c022398ef8d50dd167e4a7ea60196db6ebcd824cd1664f9a2729d6cbf",
             "locator": {
               "kind": "symbol",
@@ -221,7 +197,7 @@
         },
         {
           "anchor": {
-            "blob": "e56036b983a88cecfd9553c96ecd7bea613c3fa0",
+            "blob": "912d1707bae355645c256a55af1b52aeb7276c9f",
             "content": "sha256:8a8afcc589d9634366247b3a7daedb65a5f7b7ef547762d8200bfe01751cfd74",
             "locator": {
               "kind": "symbol",
@@ -233,88 +209,42 @@
         }
       ]
     },
-    "17": {
-      "note": "The typed failure every ref outcome raises.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e21353f470d1e68a80a490a4f964aa81289de43f",
-            "content": "sha256:2274d2c732dc02f1a1446d8b254aa836da88e671b3b6ad42de1656eb83fead61",
-            "locator": {
-              "kind": "symbol",
-              "name": "CodeObjectRetentionError"
-            },
-            "path": "mcp/src/agents_remember/errors.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "18": {
-      "note": "**The create-side consumer, which measures custody against the contract's names and pins only when they do not hold the tree.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "87c7c5dcefcbaf93baf68a0c8eec34ad2dd11703",
-            "content": "sha256:b434548ce5950f69923fdeab1d86c7ddf29758e41725532ecd2ed67b1e018415",
-            "locator": {
-              "kind": "symbol",
-              "name": "custody_names"
-            },
-            "path": "mcp/src/agents_remember/application/review_comparison_retention.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "87c7c5dcefcbaf93baf68a0c8eec34ad2dd11703",
-            "content": "sha256:b36a7bc722f8ba102a35f8098e3f012a9f231f68bd262db28825a0043cd6f580",
-            "locator": {
-              "kind": "symbol",
-              "name": "_pinned_outcome"
-            },
-            "path": "mcp/src/agents_remember/application/review_comparison_retention.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "19": {
-      "note": "**The cases that measure the pin against a real repository, including the control object that proves `git gc --prune=now` really reclaimed.**",
+      "note": "Real release guards over refs and named custody.",
       "targets": [
         {
           "anchor": {
-            "blob": "51c4dbe5cc61a427f31d6564ea2f5f6f211a586f",
-            "content": "sha256:3ab2c7c416950b356ec46d542b66412e6beae23aa37014881761dd974d6dc48b",
+            "blob": "f2eee0165616a4c68d691f8656c4a74e49c18bdd",
+            "content": "sha256:1565cc9ceb70c7b5be458cebede2c2b6c00df134d926503d9610216da9558b2d",
             "locator": {
               "kind": "symbol",
-              "name": "test_the_leaf_s_own_work_branch_is_not_custody_and_the_pin_survives_losing_it"
+              "name": "test_a_release_deletes_only_its_own_ref_and_records_the_custody_it_measured"
             },
-            "path": "mcp/tests/test_knowledge_review_comparison_generation.py"
+            "path": "mcp/tests/test_review_comparison_reclamation_real.py"
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "51c4dbe5cc61a427f31d6564ea2f5f6f211a586f",
-            "content": "sha256:5b50a133f74f13c3d98febd5ee526b2fe75346f8a6d11957dba36cbcdd32828d",
+            "blob": "f2eee0165616a4c68d691f8656c4a74e49c18bdd",
+            "content": "sha256:9678d17dc9cb2dce14af6ba4e3bdb685992199d968fad58076cf18bd67a2c558",
             "locator": {
               "kind": "symbol",
-              "name": "test_protected_history_taking_custody_stops_the_pin_and_the_generation_still_reopens"
+              "name": "test_a_release_reports_committed_history_once_a_named_branch_holds_the_tree"
             },
-            "path": "mcp/tests/test_knowledge_review_comparison_generation.py"
+            "path": "mcp/tests/test_review_comparison_reclamation_real.py"
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "51c4dbe5cc61a427f31d6564ea2f5f6f211a586f",
-            "content": "sha256:1250e3851a53dfd9512df6c9a57649f32b3ca388ce0aeacc4753145611e122d5",
+            "blob": "f2eee0165616a4c68d691f8656c4a74e49c18bdd",
+            "content": "sha256:a31e01452fe4deee0377c0aee9a16eb12023a4f7c8a1e41bd4dac4a147291a97",
             "locator": {
               "kind": "symbol",
-              "name": "test_a_frozen_comparison_reopens_the_exact_content_after_restart_and_reclamation"
+              "name": "test_a_ref_that_moved_is_never_deleted_and_no_record_is_left"
             },
-            "path": "mcp/tests/test_knowledge_review_comparison_generation.py"
+            "path": "mcp/tests/test_review_comparison_reclamation_real.py"
           },
           "kind": "test"
         }
@@ -508,12 +438,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7857d0160aedd94f75387bdfec39592e8cbb316a",
+            "blob": "6d887d74ea146178a0f34836a4a256d9d754071e",
             "content": "sha256:04d86805fe7f02d3596ffcbcad248910dc1ddcfb56a5a965023c98a8413cc9e2",
             "locator": {
-              "end": 333,
+              "end": 291,
               "kind": "line_range",
-              "start": 333
+              "start": 291
             },
             "path": "mcp/src/agents_remember/models/worktree.py"
           },
@@ -521,12 +451,12 @@
         },
         {
           "anchor": {
-            "blob": "7857d0160aedd94f75387bdfec39592e8cbb316a",
+            "blob": "6d887d74ea146178a0f34836a4a256d9d754071e",
             "content": "sha256:6ec06a7803b29cd2a5ce32ccef80a6b0cfefd4478eb4d47b67604f7075e795a4",
             "locator": {
-              "end": 55,
+              "end": 47,
               "kind": "line_range",
-              "start": 46
+              "start": 38
             },
             "path": "mcp/src/agents_remember/models/worktree.py"
           },
@@ -609,7 +539,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f691898dcd00ca9d02cd290832852fa2be5c2c42",
+            "blob": "5b2a4ae3f3757a7c03f71c2afdd2082c5bf38392",
             "content": "sha256:0ebf4a5e3e684b912685fc0c90666637f1884a59f1ae8c895d4b53db53e665d1",
             "locator": {
               "kind": "symbol",
@@ -643,7 +573,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d1f69d8d3c1559f18bf2e2f5467b9184b4e79f74",
+            "blob": "ca3f003e5ddefb98b80aea04bce900f75eb2067a",
             "content": "sha256:29e3637539d1baca5fa93c83090eeb2ca62ea0b2b26efd5056c91eced5a69367",
             "locator": {
               "kind": "symbol",
@@ -660,7 +590,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2e1832a7e5f574066e78c4bf63f69851a912ddf2",
+            "blob": "5841f05a99a45b73c2061c46de06ba14898a5d65",
             "content": "sha256:ecf13dc8ed059a3e33a54b93596d18e2ef1b67905eac792832e52a61c0cb41d9",
             "locator": {
               "kind": "symbol",
@@ -946,7 +876,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "26ae19313dadce07e9f83c63872f56e21e849125",
+            "blob": "83cbb3e2850db9f103830039db0c7f31b8b1119f",
             "content": "sha256:e67608ef3e22a8d7ddd156e69730fec525609bd9bf146a7c42a250b1511007fa",
             "locator": {
               "kind": "symbol",
@@ -1195,7 +1125,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f691898dcd00ca9d02cd290832852fa2be5c2c42",
+            "blob": "5b2a4ae3f3757a7c03f71c2afdd2082c5bf38392",
             "content": "sha256:0ebf4a5e3e684b912685fc0c90666637f1884a59f1ae8c895d4b53db53e665d1",
             "locator": {
               "kind": "symbol",
@@ -1263,7 +1193,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f691898dcd00ca9d02cd290832852fa2be5c2c42",
+            "blob": "5b2a4ae3f3757a7c03f71c2afdd2082c5bf38392",
             "content": "sha256:6733de358d09058db7ab9672204df11f721366208bfd9ed54924fe325d71e265",
             "locator": {
               "kind": "symbol",
@@ -1280,7 +1210,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "26ae19313dadce07e9f83c63872f56e21e849125",
+            "blob": "83cbb3e2850db9f103830039db0c7f31b8b1119f",
             "content": "sha256:e67608ef3e22a8d7ddd156e69730fec525609bd9bf146a7c42a250b1511007fa",
             "locator": {
               "kind": "symbol",

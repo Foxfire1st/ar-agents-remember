@@ -33,7 +33,7 @@
   returns `selector_absent`, naming where current seeds come from. A `source_context` family seed keeps its own
   spellings and is judged by `_revision_absent`, which now also refuses a family the tree does not hold (it used
   to answer `None` for a bare unknown family ID). After the cutover every remembered database-era revision ID is
-  such a seed. A continuation and a database read are unchanged.
+  such a seed. The converted-tree continuation contract is unchanged; mounted database reads are retired and refuse legacy format before opening a database.
 
 ### Conventions
 
@@ -83,7 +83,9 @@ No configured live documentation source was available for this pass.
 
 - Page 1 of a fresh read, or the refusal of a seed the tree does not hold. [14]
 - A family or revision the tree does not hold is refused selector_absent. [15]
-- A converted tree refuses a seed it does not hold, and a database read is unchanged. [16]
+
+- Converted trees refuse unheld seeds; mounted tools refuse legacy memory without opening a database. [16]
+
 
 ### Cross-Repo References
 

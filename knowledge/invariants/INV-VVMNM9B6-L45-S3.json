@@ -5,7 +5,8 @@
     "The operation's allocation is recorded in the candidate's allocation journal."
   ],
   "exclusions": [
-    "Different entry ids or different enclosures, which are different operations."
+    "Different entry ids or different enclosures, which are different operations.",
+    "The retired database-era realization site; the obligation is recorded on converted memory only."
   ],
   "id": "INV-VVMNM9B6",
   "origin": {
@@ -13,9 +14,9 @@
     "legacyId": "11c07ddd-0d3b-4f55-bd7c-a5da158df34d",
     "task": "260921-ICR"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "A target's own stated rationale and role are part of its entry's retry content digest, while a target that states neither digests exactly as before, so an exact replay stays idempotent, a reworded per-target rationale under one key is refused as allocation_content_conflict, and allocation journals written before this change still replay.",
-  "status": "proposed",
+  "status": "retired",
   "supersedes": []
 }

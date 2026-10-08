@@ -1,6 +1,25 @@
 {
   "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "3943a2ae7bbe9ec56dc4bade810e88ecfe77ba86",
+        "content": "sha256:55189ffb8ab8268ad7dd79b1e6ceb3604be043fd82c038fe3095e91c7f857e83",
+        "locator": {
+          "kind": "symbol",
+          "name": "LifecycleOperationStore.replace_terminal"
+        }
+      },
+      "id": "RLZ-V04B7M",
+      "invariant": "INV-ZGFZXT",
+      "origin": {
+        "handoffEntry": "R3 finding 1",
+        "leaf": "260928-MIK-L26"
+      },
+      "rationale": "This store must not replay a terminal record as its own active successor.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "The current `_validate_private_preparation_transition` boundary implements the preparation contract above.",

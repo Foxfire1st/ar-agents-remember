@@ -1,0 +1,23 @@
+{
+  "failedChecks": [
+    {
+      "tool": "memory_quality_check poll",
+      "state": "schema-refused",
+      "exact": "request.poll.detail_limit Extra inputs are not permitted",
+      "corrected": "poll without detail_limit; same run d2e887b3 completed full raw ready/actionable0"
+    },
+    {
+      "tool": "curator_coherence prepare",
+      "state": "refused",
+      "code": "memory-quality-attestation-dependencies-stale",
+      "exact": "memory-quality attestation dependencies do not match its canonical inputs",
+      "nextAction": "memory_quality_check",
+      "noBypass": true
+    },
+    {
+      "step": "new-three-reference native validation",
+      "state": "first inspector failed KeyError path",
+      "corrected": "use actual sidecar.path when same-file anchor omits path; all3 references rechecked exact blob/content; no source/index mutation"
+    }
+  ]
+}

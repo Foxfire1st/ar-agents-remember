@@ -1,0 +1,427 @@
+{
+  "source": "memory-260928-mik-l26/notes/l26-curation-takeover/d7a5e018/o01-b-curator-checked.json",
+  "errors": [],
+  "cards": [
+    {
+      "card": "onboarding/mcp/src/agents_remember/memory/knowledge/schema_v3.py.md",
+      "changed": true,
+      "beforeSha256": "2fccd753e7e524e2284b9cdabd8e88862d575a71ba058b6fbabc3249cbd4a1f5",
+      "afterSha256": "327802d80f3bc72e4052d69acce175ee9219587a25c3a05af17e03331eedc940",
+      "bodyReplacements": 9,
+      "updatedReferences": 4,
+      "retiredReferences": []
+    },
+    {
+      "card": "onboarding/mcp/src/agents_remember/memory/knowledge/schema_v9.py.md",
+      "changed": true,
+      "beforeSha256": "0ed099663835a0cd6ce271e45a5efeb179fbbeee7ae7bb419914b128574749d9",
+      "afterSha256": "44127452469a48bdd5a3e6207bdbacf2d4bbef5fb5e8e2d0bd697b06c88209d4",
+      "bodyReplacements": 8,
+      "updatedReferences": 4,
+      "retiredReferences": []
+    },
+    {
+      "card": "onboarding/mcp/src/agents_remember/memory/knowledge/schema_v2.py.md",
+      "changed": true,
+      "beforeSha256": "05150d493d7600aac03606e75adcebdddeae1578602cb735e85b8c0b983aab3c",
+      "afterSha256": "d686b37355dd456a11942fce13308abda3574648dd1230bd20672149c31e0c48",
+      "bodyReplacements": 5,
+      "updatedReferences": 1,
+      "retiredReferences": []
+    },
+    {
+      "card": "onboarding/mcp/src/agents_remember/memory/knowledge/refusals.py.md",
+      "changed": true,
+      "beforeSha256": "4116e64315e8bea2857dfdc084e90eeee9d051949c5ac1d3935cb3615765d6a6",
+      "afterSha256": "9e8b52f93bb5f09d79db64609d2c5925f906f867e45fb6c3b935f429b9bcdb57",
+      "bodyReplacements": 15,
+      "updatedReferences": 4,
+      "retiredReferences": [
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "12",
+        "13"
+      ]
+    },
+    {
+      "card": "onboarding/mcp/src/agents_remember/memory/knowledge/schema_v4.py.md",
+      "changed": true,
+      "beforeSha256": "0142a5b93bd62ead374cd91a7fe4ee9efa7db5ef7d2f608f4fa571855ae6417e",
+      "afterSha256": "53100cb2368dc246317b9a1c12046a3d64a12bee893bc659f3b1ada332eb7521",
+      "bodyReplacements": 8,
+      "updatedReferences": 4,
+      "retiredReferences": []
+    },
+    {
+      "card": "onboarding/mcp/src/agents_remember/memory/knowledge/families.py.md",
+      "changed": true,
+      "beforeSha256": "69fa7b123b60926f89c6d210d4aec7022c92305071e11960815c4b084cb7ddfb",
+      "afterSha256": "5a7c73ab23d67099e43928a8d580d06e8afb07e0eea7a9b1a46b7188d26f0ecf",
+      "bodyReplacements": 14,
+      "updatedReferences": 4,
+      "retiredReferences": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "11",
+        "14"
+      ]
+    },
+    {
+      "card": "onboarding/mcp/src/agents_remember/memory/knowledge/schema_v8.py.md",
+      "changed": true,
+      "beforeSha256": "02b3e74e9e45668c71ee21d943e780a97a0f53ccf14a29250fa74029dcaeea9a",
+      "afterSha256": "7ff93f4e4228823618f4775f8c03f77af5daa2f917e56d603ca5637185b732da",
+      "bodyReplacements": 7,
+      "updatedReferences": 2,
+      "retiredReferences": [
+        "10"
+      ]
+    },
+    {
+      "card": "onboarding/mcp/src/agents_remember/memory/knowledge/schema_v6.py.md",
+      "changed": true,
+      "beforeSha256": "643577bc3e746e9e9a71bf87f248d2be366591d78499c5b03b8619d398e523dd",
+      "afterSha256": "2a38a66439280210649beba2bba1047eaae1c9da65bdf970cad501b2083fa009",
+      "bodyReplacements": 10,
+      "updatedReferences": 4,
+      "retiredReferences": []
+    },
+    {
+      "card": "onboarding/mcp/src/agents_remember/memory/knowledge/store.py.md",
+      "changed": true,
+      "beforeSha256": "67d23ada6ad13031a80775550defa76fdeeb610fd1cc89f4431c7738a8896d5e",
+      "afterSha256": "726b74450e35a2c260d44cfbf932b7ce1ca00e0e76f00cf019ba830d941ca450",
+      "bodyReplacements": 16,
+      "updatedReferences": 6,
+      "retiredReferences": [
+        "5",
+        "6",
+        "7",
+        "8",
+        "10",
+        "11",
+        "12",
+        "16",
+        "17"
+      ]
+    },
+    {
+      "card": "onboarding/mcp/src/agents_remember/memory/knowledge/schema_v7.py.md",
+      "changed": true,
+      "beforeSha256": "be586858f9b40d19bc9c7f0cf85572e0f55639bfb030a554e3ea58e4b1ea8ebc",
+      "afterSha256": "9bcbeb6ff4cd4d117122b577518e9f6b662a8b34f6472d64d000c7b95a2a0e27",
+      "bodyReplacements": 6,
+      "updatedReferences": 2,
+      "retiredReferences": []
+    },
+    {
+      "card": "onboarding/mcp/src/agents_remember/memory/knowledge/memberships.py.md",
+      "changed": true,
+      "beforeSha256": "665d4792d2e5128598c2e1136f5b50c46b2e636116b62c9c4383f159d0acd61f",
+      "afterSha256": "866259ffbfe37d8e9bc5a060db645f695b9a8de512cd43aa1c3f19a677900506",
+      "bodyReplacements": 12,
+      "updatedReferences": 5,
+      "retiredReferences": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "17"
+      ]
+    },
+    {
+      "card": "onboarding/mcp/src/agents_remember/models/overview.md",
+      "changed": true,
+      "beforeSha256": "c8a435c385fda4bb4f2aa31259b26656f5d8e8fa139b6a520d0e44252449599f",
+      "afterSha256": "ad013dee3a8dd1937917e3067c8ff4b8c677af9c844c865ab20eb8dfdf2b53f0",
+      "bodyReplacements": 69,
+      "updatedReferences": 8,
+      "retiredReferences": [
+        "99",
+        "101",
+        "110",
+        "114",
+        "115",
+        "125",
+        "126",
+        "127",
+        "129",
+        "133",
+        "134",
+        "137",
+        "140",
+        "198",
+        "200",
+        "203",
+        "206",
+        "213",
+        "214",
+        "215",
+        "218",
+        "219",
+        "225"
+      ]
+    },
+    {
+      "card": "onboarding/mcp/src/agents_remember/models/lifecycles/operation_wait.py.md",
+      "changed": true,
+      "beforeSha256": "f83807d9aa51ed9d84ceaa4f0c66670ece1503a7fd815fdd31624488ed5c8899",
+      "afterSha256": "da2a9bf2601e8b2f0eea47228932293598263bbcaf5dc003771932bc950f5ddc",
+      "bodyReplacements": 2,
+      "updatedReferences": 0,
+      "retiredReferences": [
+        "3"
+      ]
+    },
+    {
+      "card": "onboarding/mcp/src/agents_remember/models/lifecycles/review_assessment_binding.py.md",
+      "changed": true,
+      "beforeSha256": "cdce3729d40626b603a00869b04e8bad23ebbeba10e8012b659e384cb3c471cf",
+      "afterSha256": "62926f68a60873782b19771bf0188ac2d52f90380f3ad48ec69c08d966157a0f",
+      "bodyReplacements": 3,
+      "updatedReferences": 1,
+      "retiredReferences": []
+    },
+    {
+      "card": "onboarding/mcp/src/agents_remember/models/knowledge_files/records.py.md",
+      "changed": true,
+      "beforeSha256": "e84917bc12429668f0f1d8e25c928ec5d70c7d97f5c47a8b1a32eeb1417190b2",
+      "afterSha256": "4865931be924656e2e406eaa0c23faa047133d36bf0bcbbf9d4d3b4673a21a41",
+      "bodyReplacements": 2,
+      "updatedReferences": 1,
+      "retiredReferences": []
+    },
+    {
+      "card": "onboarding/mcp/src/agents_remember/models/tools/knowledge_responses.py.md",
+      "changed": true,
+      "beforeSha256": "18a410f85e9360de1017d6e74835ab4ec0d3d41ca807b46893df654c8315e1b3",
+      "afterSha256": "4521dfd98a1549fcb7c947c979245f89b0482460c3ec08adece15745d354d410",
+      "bodyReplacements": 25,
+      "updatedReferences": 19,
+      "retiredReferences": [
+        "7",
+        "12",
+        "15",
+        "18",
+        "21",
+        "29",
+        "31",
+        "32"
+      ]
+    },
+    {
+      "card": "onboarding/mcp/src/agents_remember/models/knowledge/base.py.md",
+      "changed": true,
+      "beforeSha256": "a2988f7c42b3cb84d876e9aa9694473b54380363c8f22043c74eeeb77a36713a",
+      "afterSha256": "5963e67a218ecba8b658834891bd7120d57aab03ae935f0728f820615bffcdad",
+      "bodyReplacements": 2,
+      "updatedReferences": 1,
+      "retiredReferences": []
+    },
+    {
+      "card": "onboarding/mcp/src/agents_remember/models/knowledge/digest.py.md",
+      "changed": true,
+      "beforeSha256": "95f8d07337d4b1e8abf9370ee32d94466463908e765deeb4a8c091d7b7faf02a",
+      "afterSha256": "9d17980b8c612ea5680a07c5ad64efe86be3fb4a80eb5cae90e60465bbba5d58",
+      "bodyReplacements": 6,
+      "updatedReferences": 5,
+      "retiredReferences": []
+    },
+    {
+      "card": "onboarding/mcp/src/agents_remember/models/knowledge/review_final_output_receipt.py.md",
+      "changed": true,
+      "beforeSha256": "6ea0a6d4e64322d5fc732b38d3f22222bfa0bcc8d9895b30d4f668111df7d457",
+      "afterSha256": "1bba79e1d224815aa3ee02bbe6e9ddb7323a873d676cb32f1278eefb948ac45c",
+      "bodyReplacements": 18,
+      "updatedReferences": 7,
+      "retiredReferences": [
+        "2",
+        "3",
+        "4",
+        "6",
+        "8",
+        "9",
+        "10",
+        "11",
+        "14",
+        "15"
+      ]
+    },
+    {
+      "card": "onboarding/mcp/src/agents_remember/models/knowledge/invariant.py.md",
+      "changed": true,
+      "beforeSha256": "e1fda99b323b9db2e33c3ac06b4ade55ce5cc21f2a8fbb625e6924f8d575ab77",
+      "afterSha256": "49f48aff393437a4777e8b9f81d4eaa8d9dcf511a29ec3969babe784e505be15",
+      "bodyReplacements": 3,
+      "updatedReferences": 1,
+      "retiredReferences": []
+    },
+    {
+      "card": "onboarding/mcp/src/agents_remember/models/knowledge/review_sync_rebinding.py.md",
+      "changed": true,
+      "beforeSha256": "16609441b1dd612c5b8620f3bd515c763978ac7b57e47354aae22d35b996d739",
+      "afterSha256": "e45dcf6377ec7e151fba4646b8004053e7824a870fa784c56bb9e1c1085b649c",
+      "bodyReplacements": 20,
+      "updatedReferences": 7,
+      "retiredReferences": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "11",
+        "12",
+        "16",
+        "17"
+      ]
+    },
+    {
+      "card": "onboarding/mcp/src/agents_remember/models/knowledge/facet.py.md",
+      "changed": true,
+      "beforeSha256": "0b3b72db074fa5f0236a952a325af03f06812a79a57652aec917aa42ff45307f",
+      "afterSha256": "42c12f4682c389758ecc709c990135a750bd6d843a8b4d39f687e2a05854ec91",
+      "bodyReplacements": 15,
+      "updatedReferences": 3,
+      "retiredReferences": [
+        "2",
+        "3",
+        "4",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "16",
+        "18",
+        "22"
+      ]
+    },
+    {
+      "card": "onboarding/mcp/src/agents_remember/models/knowledge/result.py.md",
+      "changed": true,
+      "beforeSha256": "0f2578a0e5a83ed9b502829bdfa2bd1ba02ed8187bf852e0b806e6b1c47ac498",
+      "afterSha256": "5b163c693e5aafbc241e818c2d4803d12dc547df76e347dc82357ccaa5c46e5c",
+      "bodyReplacements": 40,
+      "updatedReferences": 7,
+      "retiredReferences": [
+        "2",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "13",
+        "15",
+        "16",
+        "17",
+        "18",
+        "19",
+        "20",
+        "21",
+        "22",
+        "23",
+        "24",
+        "25",
+        "26",
+        "27",
+        "28",
+        "29",
+        "30",
+        "31",
+        "32",
+        "33",
+        "35",
+        "42",
+        "43"
+      ]
+    },
+    {
+      "card": "onboarding/mcp/src/agents_remember/models/knowledge/repository.py.md",
+      "changed": true,
+      "beforeSha256": "719aade122c79d43161d60c97d08bc26cb54ada6a0fe1b33312870395ad5e2d8",
+      "afterSha256": "f6d4e269da34851a9942f58800f6461a37b94fdf129e96b45683751ab2b29312",
+      "bodyReplacements": 4,
+      "updatedReferences": 2,
+      "retiredReferences": []
+    },
+    {
+      "card": "onboarding/mcp/src/agents_remember/models/knowledge/read.py.md",
+      "changed": true,
+      "beforeSha256": "0de082daaa50f3d261fd2964071bbd5e69330e76873994c1ff3a49f6befeff32",
+      "afterSha256": "788aec8724f6d09f14d34489a2b58b4d59023d44cfe0bdb46cdb5d8e37b11d9a",
+      "bodyReplacements": 2,
+      "updatedReferences": 1,
+      "retiredReferences": []
+    },
+    {
+      "card": "onboarding/mcp/src/agents_remember/models/knowledge/graph.py.md",
+      "changed": true,
+      "beforeSha256": "b1a2bf03460b51f43216d1702eaa3f00ad275296823b68e6ba73d75c5ee126eb",
+      "afterSha256": "028a8031a28d8bb5c0e597c09f724e28f5f5c7db35174b30fa1799ab6099f8d0",
+      "bodyReplacements": 10,
+      "updatedReferences": 6,
+      "retiredReferences": [
+        "4",
+        "5",
+        "10"
+      ]
+    },
+    {
+      "card": "onboarding/mcp/src/agents_remember/models/knowledge/review_staleness.py.md",
+      "changed": true,
+      "beforeSha256": "1a6b63a740e86245f8e67b6a89e7f377678149bbde6b1c294438a62c1bd3590e",
+      "afterSha256": "617e4ad564a2653d439ee057cb88eb21872b878713b9d96e8990b825a81e6521",
+      "bodyReplacements": 10,
+      "updatedReferences": 9,
+      "retiredReferences": []
+    },
+    {
+      "card": "onboarding/mcp/src/agents_remember/models/knowledge/authorship.py.md",
+      "changed": true,
+      "beforeSha256": "dfaa0420d11d85a0d393a344c62ead2fbd7e314f5cf80147c39518c8ac11a0a7",
+      "afterSha256": "fde2a81aa6e828cbf3e784cc05d3ed740698be81253c1db9e14bdae402cc6518",
+      "bodyReplacements": 2,
+      "updatedReferences": 1,
+      "retiredReferences": []
+    },
+    {
+      "card": "onboarding/mcp/src/agents_remember/models/knowledge/__init__.py.md",
+      "changed": true,
+      "beforeSha256": "ad731ae835a740ae2d764a3fda2abb6bfc33b74753440925e58961b652e4f69f",
+      "afterSha256": "43d4bcfa7a11846b2ca8d8540180a0cf4d3c1bace21c352547cff245ef50883b",
+      "bodyReplacements": 7,
+      "updatedReferences": 5,
+      "retiredReferences": [
+        "9"
+      ]
+    },
+    {
+      "card": "onboarding/mcp/src/agents_remember/models/knowledge/review_external_movement.py.md",
+      "changed": true,
+      "beforeSha256": "0e3ecb1a4230127f49122a54b43a0d986c1e08279acbc2fc769708e40c3046c1",
+      "afterSha256": "84a2e1eea1cc0e9016215eb8e4734e2ddcaf6dddc969cae27c3c5fa2ef847eb8",
+      "bodyReplacements": 10,
+      "updatedReferences": 9,
+      "retiredReferences": []
+    }
+  ],
+  "applied": true
+}

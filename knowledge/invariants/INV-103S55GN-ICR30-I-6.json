@@ -2,7 +2,9 @@
   "admission": "legacy-unassessed",
   "applicability": "Every curator entry ingested from the orchestrator's hand-off list.",
   "conditions": [],
-  "exclusions": [],
+  "exclusions": [
+    "The retired database-era realization site; the obligation is recorded on converted memory only."
+  ],
   "id": "INV-103S55GN",
   "origin": {
     "handoff": {
@@ -16,7 +18,7 @@
     "legacyId": "361ea08d-3661-4d15-98dd-fb04dc37c100",
     "task": "260921-ICR"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "A stored statement's code realization is a repository-relative path together with the exact blob the recorded tree holds, while a source that is not a repository file is retained as an explicit origin reference and a bounded manifest entry instead of being written as a Git anchor.",
   "status": "proposed",

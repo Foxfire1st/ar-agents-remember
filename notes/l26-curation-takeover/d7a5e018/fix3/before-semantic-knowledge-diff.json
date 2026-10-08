@@ -1,0 +1,3140 @@
+{
+  "ok": true,
+  "tokens": 31537,
+  "tokenizer": "tiktoken:o200k_base",
+  "tokenCountExact": true,
+  "operation": "knowledge_diff",
+  "state": "compared",
+  "repositoryId": "7511e917-d5d3-584e-b0ce-44dcad666cfe",
+  "semanticEffectLabels": [],
+  "payload": {
+    "state": "page",
+    "operation": "diff_knowledge_scope",
+    "repository_id": "7511e917-d5d3-584e-b0ce-44dcad666cfe",
+    "policy_version": "recorded-two-snapshot-union/v1",
+    "binding": {
+      "policy_version": "recorded-two-snapshot-union/v1",
+      "before": {
+        "repository_id": "7511e917-d5d3-584e-b0ce-44dcad666cfe",
+        "schema_version": "ar-knowledge-sqlite/v9",
+        "logical_digest": "a8b3099244ffa7fc52edb6bb0a5ac0bb7913721f8b5350b407375d725e01a452"
+      },
+      "after": {
+        "repository_id": "7511e917-d5d3-584e-b0ce-44dcad666cfe",
+        "schema_version": "ar-knowledge-sqlite/v9",
+        "logical_digest": "c9c2f99372dffb96a71f7f6aaeedce256a41b12e2aac6c945e1025413e1289ef"
+      },
+      "before_context_digest": "ff3d7a2bc65aaf28b67b4c07a14c10f66757ab0b263680b0ced918ca823f550c",
+      "after_context_digest": "d4984a53f023751c751432bc90de83b9bf92e53483f2858293852a34716b5e18",
+      "before_selector_digest": "9d0037a3a8a8adf839e5e803de775c0a1929f06aef33c7ec0b53b13093675994",
+      "after_selector_digest": "9d0037a3a8a8adf839e5e803de775c0a1929f06aef33c7ec0b53b13093675994",
+      "before_code_tree_id": null,
+      "after_code_tree_id": null
+    },
+    "binding_digest": "487c2972a7e83be440525fc9638de876ae0e58c40677f633dc6bdfe06aa384ce",
+    "selector_digest": "9d0037a3a8a8adf839e5e803de775c0a1929f06aef33c7ec0b53b13093675994",
+    "policy": "roles:<none>",
+    "summary": {
+      "before": {
+        "invariant_revisions_total": 3,
+        "family_revisions_total": 1,
+        "memberships_total": 3,
+        "realization_claims_total": 11,
+        "advertised_expansions_total": 0,
+        "primary_items_total": 18,
+        "primary_items_returned": 0,
+        "primary_items_remaining": 18,
+        "distinct_source_locations_total": 11,
+        "distinct_source_paths_total": 9,
+        "unresolved_anchor_total": 11
+      },
+      "after": {
+        "invariant_revisions_total": 3,
+        "family_revisions_total": 1,
+        "memberships_total": 3,
+        "realization_claims_total": 8,
+        "advertised_expansions_total": 0,
+        "primary_items_total": 15,
+        "primary_items_returned": 0,
+        "primary_items_remaining": 15,
+        "distinct_source_locations_total": 6,
+        "distinct_source_paths_total": 6,
+        "unresolved_anchor_total": 8
+      }
+    },
+    "revision_groups": {
+      "before": [
+        {
+          "record_id": "6ec03cae-83a4-5f63-9fa4-66b135506c2a",
+          "selected_revision_count": 1
+        },
+        {
+          "record_id": "8b1a17ca-96ba-5ede-a09f-abfb11ada0a5",
+          "selected_revision_count": 1
+        },
+        {
+          "record_id": "c88cc287-0469-556c-9f42-b742b2377478",
+          "selected_revision_count": 1
+        },
+        {
+          "record_id": "fa2aac3a-f406-595a-a1e6-b50c656704ca",
+          "selected_revision_count": 1
+        }
+      ],
+      "after": [
+        {
+          "record_id": "6ec03cae-83a4-5f63-9fa4-66b135506c2a",
+          "selected_revision_count": 1
+        },
+        {
+          "record_id": "8b1a17ca-96ba-5ede-a09f-abfb11ada0a5",
+          "selected_revision_count": 1
+        },
+        {
+          "record_id": "c88cc287-0469-556c-9f42-b742b2377478",
+          "selected_revision_count": 1
+        },
+        {
+          "record_id": "fa2aac3a-f406-595a-a1e6-b50c656704ca",
+          "selected_revision_count": 1
+        }
+      ]
+    },
+    "limitations": [
+      "records_present_outside_the_selection",
+      "unknown_attribution_changed_paths",
+      "no_semantic_assessment_performed"
+    ],
+    "omissions": [
+      {
+        "reason": "present_outside_the_declared_selection",
+        "item_kind": "invariant",
+        "omitted_count": 6,
+        "detail": "6 invariant revisions the other snapshot holds and its declared selection did not reach; this is a fact about the two selections and not a deletion, and selecting the path that reaches it brings the record into the union"
+      },
+      {
+        "reason": "present_outside_the_declared_selection",
+        "item_kind": "family",
+        "omitted_count": 2,
+        "detail": "2 family revisions the other snapshot holds and its declared selection did not reach; this is a fact about the two selections and not a deletion, and selecting the path that reaches it brings the record into the union"
+      }
+    ],
+    "side_absences": [],
+    "expansion": {
+      "reference": "diff_knowledge_scope:full-selected-candidate-source-diff",
+      "command": "git diff --no-color --no-ext-diff --src-prefix=a/ --dst-prefix=b/ --raw -z --no-renames <no baseline tree requested> <no candidate tree requested>",
+      "before_root": null,
+      "after_root": null,
+      "before_code_tree_id": null,
+      "after_code_tree_id": null,
+      "attributed_changed_paths": [],
+      "unattributed_changed_paths": [],
+      "unknown_attribution_changed_paths": [],
+      "attribution": {
+        "state": "unavailable",
+        "granularity": "changed_path",
+        "changed_total": null,
+        "attributed_total": null,
+        "confirmed_unregistered_total": null,
+        "unknown_attribution_total": null,
+        "complete": null,
+        "subject_scope_complete": null,
+        "sides": [],
+        "paths": [],
+        "detail": "the source observation this partition is the denominator of was not made. The source observation beside this value says: at least one side named no exact code tree, so no source expansion was observed; the record half of this comparison is complete and the source half was not requested for every side. No total is reported and none is reported as zero: an unmeasured change population has no denominator, so no path can be called attributed, confirmed unregistered or of undetermined attribution"
+      },
+      "detail": "at least one side named no exact code tree, so no source expansion was observed; the record half of this comparison is complete and the source half was not requested for every side"
+    },
+    "page": {
+      "items": [
+        {
+          "item_id": "73e4d91d-5599-50a6-804e-6acf2fe341df",
+          "kind": "invariant",
+          "coverage": "present_outside_selection",
+          "record_transition": "removed",
+          "before": {
+            "kind": "invariant_revision",
+            "item_id": "73e4d91d-5599-50a6-804e-6acf2fe341df",
+            "selection_reasons": [
+              {
+                "stage": "member_of_selected_family",
+                "via_id": null
+              }
+            ],
+            "invariant_id": "6ec03cae-83a4-5f63-9fa4-66b135506c2a",
+            "family_id": null,
+            "record_id": "6ec03cae-83a4-5f63-9fa4-66b135506c2a",
+            "revision_id": "73e4d91d-5599-50a6-804e-6acf2fe341df",
+            "display_version": "r1",
+            "display_label": "INV-QN53GPRB",
+            "statement": "A taskless knowledge bootstrap is admitted only from real setup authority, namely the MCP settings document's repository entry, the memory layer the ordinary read route resolves and the exact code and memory revisions the two real checkouts answer for HEAD, so no client-supplied boolean, fabricated enclosure contract or caller-typed revision can grant a knowledge write.",
+            "applicability": "Every curator entry ingested from the orchestrator's hand-off list.",
+            "essential_conditions": [],
+            "exclusions": [],
+            "joint_guarantee": null,
+            "lifecycle": "proposed",
+            "acceptance_ref": null,
+            "provenance": {
+              "actor_ref": "260921-ICR/260921-ICR-L30",
+              "authorization_ref": "text-knowledge:knowledge/invariants/INV-QN53GPRB-ICR30-I-3.json",
+              "operation_id": "353de9d7-0761-5272-bee4-a521b9b5bed8",
+              "origin_refs": [],
+              "recorded_at": "1970-01-01T00:00:00+00:00"
+            },
+            "payload_digest": "77c2830d852a6e3327fd65243aa038b20b219d87b1e44256ae4d798ab9d82260",
+            "member_id": null,
+            "family_revision_id": null,
+            "invariant_revision_id": null,
+            "claim_id": null,
+            "role": null,
+            "rationale": null,
+            "anchor": null
+          },
+          "after": null,
+          "before_selected": true,
+          "after_selected": false,
+          "record_id": "6ec03cae-83a4-5f63-9fa4-66b135506c2a",
+          "revision_id": "73e4d91d-5599-50a6-804e-6acf2fe341df",
+          "changed_fields": [],
+          "reached_via": [
+            "member_of_selected_family"
+          ],
+          "source_change": null
+        },
+        {
+          "item_id": "98ef298b-2f8f-5ff5-8fbe-04c237459096",
+          "kind": "invariant",
+          "coverage": "present_outside_selection",
+          "record_transition": "added",
+          "before": null,
+          "after": {
+            "kind": "invariant_revision",
+            "item_id": "98ef298b-2f8f-5ff5-8fbe-04c237459096",
+            "selection_reasons": [
+              {
+                "stage": "member_of_selected_family",
+                "via_id": null
+              }
+            ],
+            "invariant_id": "6ec03cae-83a4-5f63-9fa4-66b135506c2a",
+            "family_id": null,
+            "record_id": "6ec03cae-83a4-5f63-9fa4-66b135506c2a",
+            "revision_id": "98ef298b-2f8f-5ff5-8fbe-04c237459096",
+            "display_version": "r2",
+            "display_label": "INV-QN53GPRB",
+            "statement": "A taskless knowledge bootstrap is admitted only from real setup authority, namely the MCP settings document's repository entry, the memory layer the ordinary read route resolves and the exact code and memory revisions the two real checkouts answer for HEAD, so no client-supplied boolean, fabricated enclosure contract or caller-typed revision can grant a knowledge write.",
+            "applicability": "Taskless knowledge-bootstrap admission from the declared MCP repository entry and its resolved code/memory checkouts.",
+            "essential_conditions": [
+              "No enclosure is in scope.",
+              "The repository settings, resolved roots and exact checkout HEAD observations supply the setup admission."
+            ],
+            "exclusions": [
+              "Leaf knowledge-ingest, which is admitted through its canonical enclosure contract.",
+              "A caller assertion of authority or a fabricated task/checkout identity."
+            ],
+            "joint_guarantee": null,
+            "lifecycle": "proposed",
+            "acceptance_ref": null,
+            "provenance": {
+              "actor_ref": "260921-ICR/260921-ICR-L30",
+              "authorization_ref": "text-knowledge:knowledge/invariants/INV-QN53GPRB-ICR30-I-3.json",
+              "operation_id": "353de9d7-0761-5272-bee4-a521b9b5bed8",
+              "origin_refs": [],
+              "recorded_at": "1970-01-01T00:00:00+00:00"
+            },
+            "payload_digest": "292b185030842493af88df7d64b8445aeb068685e9f25022a1a8898149d1b051",
+            "member_id": null,
+            "family_revision_id": null,
+            "invariant_revision_id": null,
+            "claim_id": null,
+            "role": null,
+            "rationale": null,
+            "anchor": null
+          },
+          "before_selected": false,
+          "after_selected": true,
+          "record_id": "6ec03cae-83a4-5f63-9fa4-66b135506c2a",
+          "revision_id": "98ef298b-2f8f-5ff5-8fbe-04c237459096",
+          "changed_fields": [],
+          "reached_via": [
+            "member_of_selected_family"
+          ],
+          "source_change": null
+        },
+        {
+          "item_id": "d92c4e42-3390-580c-aead-9ca53b708538",
+          "kind": "invariant",
+          "coverage": "present_outside_selection",
+          "record_transition": "added",
+          "before": null,
+          "after": {
+            "kind": "invariant_revision",
+            "item_id": "d92c4e42-3390-580c-aead-9ca53b708538",
+            "selection_reasons": [
+              {
+                "stage": "member_of_selected_family",
+                "via_id": null
+              }
+            ],
+            "invariant_id": "8b1a17ca-96ba-5ede-a09f-abfb11ada0a5",
+            "family_id": null,
+            "record_id": "8b1a17ca-96ba-5ede-a09f-abfb11ada0a5",
+            "revision_id": "d92c4e42-3390-580c-aead-9ca53b708538",
+            "display_version": "r5",
+            "display_label": "INV-1XKX9ERN",
+            "statement": "Every authored knowledge write -- a record, a realization or proof entry, or a history row that a curator hands in -- goes through one of the two admitted command lines, the leaf-scoped knowledge-ingest and the taskless knowledge-bootstrap, and each writes a converted memory tree through the curator file writer; a tree without the conversion marker is refused as legacy-format, naming the crossing sync. The mounted MCP tool surface exposes no authoring writer of its own.",
+            "applicability": "Every authored write of knowledge through the two admitted command lines.",
+            "essential_conditions": [
+              "The memory tree holds the conversion marker; a tree without it is refused as legacy-format and names the crossing sync."
+            ],
+            "exclusions": [
+              "The mechanical writers (conversion, crossing sync, formatter) and the closeout routes, which set flags rather than author knowledge.",
+              "The mounted MCP tool surface, which exposes no authoring writer."
+            ],
+            "joint_guarantee": null,
+            "lifecycle": "proposed",
+            "acceptance_ref": null,
+            "provenance": {
+              "actor_ref": "260921-ICR/260921-ICR-L30",
+              "authorization_ref": "text-knowledge:knowledge/invariants/INV-1XKX9ERN-ICR30-I-1.json",
+              "operation_id": "5989195a-a906-5059-bb16-c59295754e0a",
+              "origin_refs": [],
+              "recorded_at": "1970-01-01T00:00:00+00:00"
+            },
+            "payload_digest": "35162451c2c6f5d79e48f2fd766b533b3047cf388a07ea64863d2e3039efbc25",
+            "member_id": null,
+            "family_revision_id": null,
+            "invariant_revision_id": null,
+            "claim_id": null,
+            "role": null,
+            "rationale": null,
+            "anchor": null
+          },
+          "before_selected": false,
+          "after_selected": true,
+          "record_id": "8b1a17ca-96ba-5ede-a09f-abfb11ada0a5",
+          "revision_id": "d92c4e42-3390-580c-aead-9ca53b708538",
+          "changed_fields": [],
+          "reached_via": [
+            "member_of_selected_family"
+          ],
+          "source_change": null
+        },
+        {
+          "item_id": "ee4052e3-a8b7-5289-9399-d609257cc16a",
+          "kind": "invariant",
+          "coverage": "present_outside_selection",
+          "record_transition": "removed",
+          "before": {
+            "kind": "invariant_revision",
+            "item_id": "ee4052e3-a8b7-5289-9399-d609257cc16a",
+            "selection_reasons": [
+              {
+                "stage": "member_of_selected_family",
+                "via_id": null
+              }
+            ],
+            "invariant_id": "8b1a17ca-96ba-5ede-a09f-abfb11ada0a5",
+            "family_id": null,
+            "record_id": "8b1a17ca-96ba-5ede-a09f-abfb11ada0a5",
+            "revision_id": "ee4052e3-a8b7-5289-9399-d609257cc16a",
+            "display_version": "r4",
+            "display_label": "INV-1XKX9ERN",
+            "statement": "Every authored knowledge write -- a record, a realization or proof entry, or a history row that a curator hands in -- goes through one of two command lines, the leaf-scoped knowledge-ingest and the taskless knowledge-bootstrap, and the mounted MCP tool surface exposes no authoring writer of its own. Each command line selects its writer by the memory tree it writes: a converted tree (one that holds knowledge/layout.json) is written as knowledge files by the curator file writer, and an unconverted tree is written as one admitted batch by the single knowledge batch writer, which refuses a converted tree and is locked once its memory repository holds converted memory. Which of the two command-line entries a run can actually use is decided by how its process was loaded, because an undeclared process whose package came from a Git checkout is confined to that checkout's own disposable coordination root and undeclared execution from the primary checkout is refused, so the taskless entry is reachable from an installed package or from a declared daemon surface rather than from the checkout it was built in.",
+            "applicability": "Every authored write of knowledge: the records, the realization and proof entries, and the history rows that a hand-off list carries.",
+            "essential_conditions": [
+              "The write authors or changes knowledge content: a record, an entry or a judgment row."
+            ],
+            "exclusions": [
+              "The mechanical writers of knowledge files, which author nothing: the conversion (knowledge-convert) and the crossing sync (worktree_sync), which write the knowledge tree from existing memory; the formatter (knowledge-format), which rewrites a file in canonical formatting; and the closeout routes, which set the closed flag of the leaf's history file.",
+              "The onboarding card writers, which write a card's sidecar references and no record, entry or row."
+            ],
+            "joint_guarantee": null,
+            "lifecycle": "proposed",
+            "acceptance_ref": null,
+            "provenance": {
+              "actor_ref": "260921-ICR/260921-ICR-L30",
+              "authorization_ref": "text-knowledge:knowledge/invariants/INV-1XKX9ERN-ICR30-I-1.json",
+              "operation_id": "5989195a-a906-5059-bb16-c59295754e0a",
+              "origin_refs": [],
+              "recorded_at": "1970-01-01T00:00:00+00:00"
+            },
+            "payload_digest": "ad51cd367f8845fb40008f74975dc3ed664359fa21ce27c6ff0d5184503e759b",
+            "member_id": null,
+            "family_revision_id": null,
+            "invariant_revision_id": null,
+            "claim_id": null,
+            "role": null,
+            "rationale": null,
+            "anchor": null
+          },
+          "after": null,
+          "before_selected": true,
+          "after_selected": false,
+          "record_id": "8b1a17ca-96ba-5ede-a09f-abfb11ada0a5",
+          "revision_id": "ee4052e3-a8b7-5289-9399-d609257cc16a",
+          "changed_fields": [],
+          "reached_via": [
+            "member_of_selected_family"
+          ],
+          "source_change": null
+        },
+        {
+          "item_id": "f08b297f-7d4e-5ae6-ba92-26f57faf5087",
+          "kind": "invariant",
+          "coverage": "present_outside_selection",
+          "record_transition": "removed",
+          "before": {
+            "kind": "invariant_revision",
+            "item_id": "f08b297f-7d4e-5ae6-ba92-26f57faf5087",
+            "selection_reasons": [
+              {
+                "stage": "seed_selected",
+                "via_id": "c88cc287-0469-556c-9f42-b742b2377478"
+              }
+            ],
+            "invariant_id": "c88cc287-0469-556c-9f42-b742b2377478",
+            "family_id": null,
+            "record_id": "c88cc287-0469-556c-9f42-b742b2377478",
+            "revision_id": "f08b297f-7d4e-5ae6-ba92-26f57faf5087",
+            "display_version": "r2",
+            "display_label": "INV-753SKJFF",
+            "statement": "A repository's published knowledge has exactly one declared location per memory layer, and that memory layer is the canonical external memory root when no enclosure is in scope and the task's own memory worktree inside a leaf. For an unconverted memory layer the location is the dataset the ordinary read route's own owner names, the memory layer's knowledge.sqlite. A converted memory layer (one that holds knowledge/layout.json) publishes no dataset: its knowledge is the tree's text files, read through that tree's derived index, and the database file frozen there is never selected -- the resolution answers not-recorded, naming the tree.",
+            "applicability": "The resolution of a repository's published knowledge, for the ordinary read route and for the write route that consumes the same owner.",
+            "essential_conditions": [],
+            "exclusions": [],
+            "joint_guarantee": null,
+            "lifecycle": "proposed",
+            "acceptance_ref": null,
+            "provenance": {
+              "actor_ref": "260921-ICR/260921-ICR-L30",
+              "authorization_ref": "text-knowledge:knowledge/invariants/INV-753SKJFF-ICR30-I-2.json",
+              "operation_id": "39294acd-31cb-5b0c-bd63-919f26abd7b2",
+              "origin_refs": [],
+              "recorded_at": "1970-01-01T00:00:00+00:00"
+            },
+            "payload_digest": "8347401e826eb55b53c55b27214c4417c745337198dfed27ae70fee2995356ab",
+            "member_id": null,
+            "family_revision_id": null,
+            "invariant_revision_id": null,
+            "claim_id": null,
+            "role": null,
+            "rationale": null,
+            "anchor": null
+          },
+          "after": null,
+          "before_selected": true,
+          "after_selected": false,
+          "record_id": "c88cc287-0469-556c-9f42-b742b2377478",
+          "revision_id": "f08b297f-7d4e-5ae6-ba92-26f57faf5087",
+          "changed_fields": [],
+          "reached_via": [
+            "seed_selected:c88cc287-0469-556c-9f42-b742b2377478"
+          ],
+          "source_change": null
+        },
+        {
+          "item_id": "fa0ed241-a319-5736-8ca6-c9e25b3f8148",
+          "kind": "invariant",
+          "coverage": "present_outside_selection",
+          "record_transition": "added",
+          "before": null,
+          "after": {
+            "kind": "invariant_revision",
+            "item_id": "fa0ed241-a319-5736-8ca6-c9e25b3f8148",
+            "selection_reasons": [
+              {
+                "stage": "seed_selected",
+                "via_id": "c88cc287-0469-556c-9f42-b742b2377478"
+              }
+            ],
+            "invariant_id": "c88cc287-0469-556c-9f42-b742b2377478",
+            "family_id": null,
+            "record_id": "c88cc287-0469-556c-9f42-b742b2377478",
+            "revision_id": "fa0ed241-a319-5736-8ca6-c9e25b3f8148",
+            "display_version": "r3",
+            "display_label": "INV-753SKJFF",
+            "statement": "Published intent is selected from the one resolved converted memory root: the official external memory root outside an enclosure and the leaf's memory worktree inside it. Its text records are canonical; reads select the derived index of that exact tree. An unconverted root is refused as legacy-format, and no canonical knowledge database publication destination is selected.",
+            "applicability": "Ordinary published-intent selection for the resolved repository or canonical leaf.",
+            "essential_conditions": [
+              "The resolved memory root holds knowledge/layout.json.",
+              "The derived index can be built or read for the selected memory tree; failure remains an explicit unusable selection."
+            ],
+            "exclusions": [
+              "Historical canonical database publication and its former not-recorded converted result.",
+              "A sibling memory layer or derived index cache as an alternative source of truth."
+            ],
+            "joint_guarantee": null,
+            "lifecycle": "proposed",
+            "acceptance_ref": null,
+            "provenance": {
+              "actor_ref": "260921-ICR/260921-ICR-L30",
+              "authorization_ref": "text-knowledge:knowledge/invariants/INV-753SKJFF-ICR30-I-2.json",
+              "operation_id": "39294acd-31cb-5b0c-bd63-919f26abd7b2",
+              "origin_refs": [],
+              "recorded_at": "1970-01-01T00:00:00+00:00"
+            },
+            "payload_digest": "5bf140fdb3195c5783eaa369af8cacfa3dc2a8dcd91dbcdedafa41d612f7c249",
+            "member_id": null,
+            "family_revision_id": null,
+            "invariant_revision_id": null,
+            "claim_id": null,
+            "role": null,
+            "rationale": null,
+            "anchor": null
+          },
+          "before_selected": false,
+          "after_selected": true,
+          "record_id": "c88cc287-0469-556c-9f42-b742b2377478",
+          "revision_id": "fa0ed241-a319-5736-8ca6-c9e25b3f8148",
+          "changed_fields": [],
+          "reached_via": [
+            "seed_selected:c88cc287-0469-556c-9f42-b742b2377478"
+          ],
+          "source_change": null
+        },
+        {
+          "item_id": "604cabc0-e509-5e12-aac9-4a8ec331c157",
+          "kind": "family",
+          "coverage": "present_outside_selection",
+          "record_transition": "added",
+          "before": null,
+          "after": {
+            "kind": "family_revision",
+            "item_id": "604cabc0-e509-5e12-aac9-4a8ec331c157",
+            "selection_reasons": [
+              {
+                "stage": "member_of_selected_family",
+                "via_id": "fa0ed241-a319-5736-8ca6-c9e25b3f8148"
+              }
+            ],
+            "invariant_id": null,
+            "family_id": "fa2aac3a-f406-595a-a1e6-b50c656704ca",
+            "record_id": "fa2aac3a-f406-595a-a1e6-b50c656704ca",
+            "revision_id": "604cabc0-e509-5e12-aac9-4a8ec331c157",
+            "display_version": "r4",
+            "display_label": "knowledge-write-and-publication-foundation",
+            "statement": null,
+            "applicability": null,
+            "essential_conditions": [],
+            "exclusions": [],
+            "joint_guarantee": "Authored knowledge writes use the admitted leaf knowledge-ingest or taskless knowledge-bootstrap command and the single converted file writer. Writer admission and ordinary readers resolve the same repository or leaf memory root, whose text files are canonical. An unconverted root is refused and no canonical dataset is published. Mechanical conversion, crossing merge, formatting and closeout flags are outside this authoring guarantee.",
+            "lifecycle": "proposed",
+            "acceptance_ref": null,
+            "provenance": {
+              "actor_ref": "260921-ICR/260921-ICR-L30",
+              "authorization_ref": "text-knowledge:knowledge/families/FAM-7B6N3Y4Q-knowledge-write-and-publication-foundation.json",
+              "operation_id": "fdbd894f-0c4c-57e2-bd41-c5995ef110e3",
+              "origin_refs": [],
+              "recorded_at": "1970-01-01T00:00:00+00:00"
+            },
+            "payload_digest": "e80b773587510aad114eb4a1da959d5f63e87fc1a0f10a3ef63a8fcabe4c843a",
+            "member_id": null,
+            "family_revision_id": null,
+            "invariant_revision_id": null,
+            "claim_id": null,
+            "role": null,
+            "rationale": null,
+            "anchor": null
+          },
+          "before_selected": false,
+          "after_selected": true,
+          "record_id": "fa2aac3a-f406-595a-a1e6-b50c656704ca",
+          "revision_id": "604cabc0-e509-5e12-aac9-4a8ec331c157",
+          "changed_fields": [],
+          "reached_via": [
+            "member_of_selected_family:fa0ed241-a319-5736-8ca6-c9e25b3f8148"
+          ],
+          "source_change": null
+        },
+        {
+          "item_id": "c90b49d3-c3bd-5399-9478-25eecd7a6468",
+          "kind": "family",
+          "coverage": "present_outside_selection",
+          "record_transition": "removed",
+          "before": {
+            "kind": "family_revision",
+            "item_id": "c90b49d3-c3bd-5399-9478-25eecd7a6468",
+            "selection_reasons": [
+              {
+                "stage": "member_of_selected_family",
+                "via_id": "f08b297f-7d4e-5ae6-ba92-26f57faf5087"
+              }
+            ],
+            "invariant_id": null,
+            "family_id": "fa2aac3a-f406-595a-a1e6-b50c656704ca",
+            "record_id": "fa2aac3a-f406-595a-a1e6-b50c656704ca",
+            "revision_id": "c90b49d3-c3bd-5399-9478-25eecd7a6468",
+            "display_version": "r3",
+            "display_label": "knowledge-write-and-publication-foundation",
+            "statement": null,
+            "applicability": null,
+            "essential_conditions": [],
+            "exclusions": [],
+            "joint_guarantee": "Every authored knowledge write -- a record, an entry or a history row -- goes through the two admitted command lines and the one writer of the memory tree's format, the curator file writer for a converted tree and the knowledge batch writer for an unconverted one; it lands in the repository's one declared knowledge location and is admitted only from real setup authority, so a writer and a reader of the same repository's knowledge can never disagree about where it lives or by what right it was written. The mechanical writers author nothing and are outside this guarantee: the conversion and the crossing sync, the formatter, and the closeout's closed flag.",
+            "lifecycle": "proposed",
+            "acceptance_ref": null,
+            "provenance": {
+              "actor_ref": "260921-ICR/260921-ICR-L30",
+              "authorization_ref": "text-knowledge:knowledge/families/FAM-7B6N3Y4Q-knowledge-write-and-publication-foundation.json",
+              "operation_id": "fdbd894f-0c4c-57e2-bd41-c5995ef110e3",
+              "origin_refs": [],
+              "recorded_at": "1970-01-01T00:00:00+00:00"
+            },
+            "payload_digest": "dcdb330717d6d1464cbf8a3f18740aab0c87310def535f1a96e40e39ada98422",
+            "member_id": null,
+            "family_revision_id": null,
+            "invariant_revision_id": null,
+            "claim_id": null,
+            "role": null,
+            "rationale": null,
+            "anchor": null
+          },
+          "after": null,
+          "before_selected": true,
+          "after_selected": false,
+          "record_id": "fa2aac3a-f406-595a-a1e6-b50c656704ca",
+          "revision_id": "c90b49d3-c3bd-5399-9478-25eecd7a6468",
+          "changed_fields": [],
+          "reached_via": [
+            "member_of_selected_family:f08b297f-7d4e-5ae6-ba92-26f57faf5087"
+          ],
+          "source_change": null
+        },
+        {
+          "item_id": "4fbb0a87-3281-5366-84c5-81676803cadd",
+          "kind": "membership",
+          "coverage": "selected_both",
+          "record_transition": "unchanged",
+          "before": {
+            "kind": "family_membership",
+            "item_id": "4fbb0a87-3281-5366-84c5-81676803cadd",
+            "selection_reasons": [
+              {
+                "stage": "member_of_selected_family",
+                "via_id": "c90b49d3-c3bd-5399-9478-25eecd7a6468"
+              }
+            ],
+            "invariant_id": null,
+            "family_id": "fa2aac3a-f406-595a-a1e6-b50c656704ca",
+            "record_id": "c90b49d3-c3bd-5399-9478-25eecd7a6468",
+            "revision_id": null,
+            "display_version": null,
+            "display_label": null,
+            "statement": null,
+            "applicability": null,
+            "essential_conditions": [],
+            "exclusions": [],
+            "joint_guarantee": null,
+            "lifecycle": null,
+            "acceptance_ref": null,
+            "provenance": {
+              "actor_ref": "260921-ICR/260921-ICR-L30",
+              "authorization_ref": "text-knowledge:knowledge/families/FAM-7B6N3Y4Q-knowledge-write-and-publication-foundation.json",
+              "operation_id": "fdbd894f-0c4c-57e2-bd41-c5995ef110e3",
+              "origin_refs": [],
+              "recorded_at": "1970-01-01T00:00:00+00:00"
+            },
+            "payload_digest": null,
+            "member_id": "4fbb0a87-3281-5366-84c5-81676803cadd",
+            "family_revision_id": "c90b49d3-c3bd-5399-9478-25eecd7a6468",
+            "invariant_revision_id": "f08b297f-7d4e-5ae6-ba92-26f57faf5087",
+            "claim_id": null,
+            "role": null,
+            "rationale": null,
+            "anchor": null
+          },
+          "after": {
+            "kind": "family_membership",
+            "item_id": "4fbb0a87-3281-5366-84c5-81676803cadd",
+            "selection_reasons": [
+              {
+                "stage": "member_of_selected_family",
+                "via_id": "604cabc0-e509-5e12-aac9-4a8ec331c157"
+              }
+            ],
+            "invariant_id": null,
+            "family_id": "fa2aac3a-f406-595a-a1e6-b50c656704ca",
+            "record_id": "604cabc0-e509-5e12-aac9-4a8ec331c157",
+            "revision_id": null,
+            "display_version": null,
+            "display_label": null,
+            "statement": null,
+            "applicability": null,
+            "essential_conditions": [],
+            "exclusions": [],
+            "joint_guarantee": null,
+            "lifecycle": null,
+            "acceptance_ref": null,
+            "provenance": {
+              "actor_ref": "260921-ICR/260921-ICR-L30",
+              "authorization_ref": "text-knowledge:knowledge/families/FAM-7B6N3Y4Q-knowledge-write-and-publication-foundation.json",
+              "operation_id": "fdbd894f-0c4c-57e2-bd41-c5995ef110e3",
+              "origin_refs": [],
+              "recorded_at": "1970-01-01T00:00:00+00:00"
+            },
+            "payload_digest": null,
+            "member_id": "4fbb0a87-3281-5366-84c5-81676803cadd",
+            "family_revision_id": "604cabc0-e509-5e12-aac9-4a8ec331c157",
+            "invariant_revision_id": "fa0ed241-a319-5736-8ca6-c9e25b3f8148",
+            "claim_id": null,
+            "role": null,
+            "rationale": null,
+            "anchor": null
+          },
+          "before_selected": true,
+          "after_selected": true,
+          "record_id": "c90b49d3-c3bd-5399-9478-25eecd7a6468",
+          "revision_id": null,
+          "changed_fields": [],
+          "reached_via": [
+            "member_of_selected_family:c90b49d3-c3bd-5399-9478-25eecd7a6468",
+            "member_of_selected_family:604cabc0-e509-5e12-aac9-4a8ec331c157"
+          ],
+          "source_change": null
+        },
+        {
+          "item_id": "7b361b40-14fa-5da3-aa72-8ced00e84702",
+          "kind": "membership",
+          "coverage": "selected_both",
+          "record_transition": "unchanged",
+          "before": {
+            "kind": "family_membership",
+            "item_id": "7b361b40-14fa-5da3-aa72-8ced00e84702",
+            "selection_reasons": [
+              {
+                "stage": "member_of_selected_family",
+                "via_id": "c90b49d3-c3bd-5399-9478-25eecd7a6468"
+              }
+            ],
+            "invariant_id": null,
+            "family_id": "fa2aac3a-f406-595a-a1e6-b50c656704ca",
+            "record_id": "c90b49d3-c3bd-5399-9478-25eecd7a6468",
+            "revision_id": null,
+            "display_version": null,
+            "display_label": null,
+            "statement": null,
+            "applicability": null,
+            "essential_conditions": [],
+            "exclusions": [],
+            "joint_guarantee": null,
+            "lifecycle": null,
+            "acceptance_ref": null,
+            "provenance": {
+              "actor_ref": "260921-ICR/260921-ICR-L30",
+              "authorization_ref": "text-knowledge:knowledge/families/FAM-7B6N3Y4Q-knowledge-write-and-publication-foundation.json",
+              "operation_id": "fdbd894f-0c4c-57e2-bd41-c5995ef110e3",
+              "origin_refs": [],
+              "recorded_at": "1970-01-01T00:00:00+00:00"
+            },
+            "payload_digest": null,
+            "member_id": "7b361b40-14fa-5da3-aa72-8ced00e84702",
+            "family_revision_id": "c90b49d3-c3bd-5399-9478-25eecd7a6468",
+            "invariant_revision_id": "ee4052e3-a8b7-5289-9399-d609257cc16a",
+            "claim_id": null,
+            "role": null,
+            "rationale": null,
+            "anchor": null
+          },
+          "after": {
+            "kind": "family_membership",
+            "item_id": "7b361b40-14fa-5da3-aa72-8ced00e84702",
+            "selection_reasons": [
+              {
+                "stage": "member_of_selected_family",
+                "via_id": "604cabc0-e509-5e12-aac9-4a8ec331c157"
+              }
+            ],
+            "invariant_id": null,
+            "family_id": "fa2aac3a-f406-595a-a1e6-b50c656704ca",
+            "record_id": "604cabc0-e509-5e12-aac9-4a8ec331c157",
+            "revision_id": null,
+            "display_version": null,
+            "display_label": null,
+            "statement": null,
+            "applicability": null,
+            "essential_conditions": [],
+            "exclusions": [],
+            "joint_guarantee": null,
+            "lifecycle": null,
+            "acceptance_ref": null,
+            "provenance": {
+              "actor_ref": "260921-ICR/260921-ICR-L30",
+              "authorization_ref": "text-knowledge:knowledge/families/FAM-7B6N3Y4Q-knowledge-write-and-publication-foundation.json",
+              "operation_id": "fdbd894f-0c4c-57e2-bd41-c5995ef110e3",
+              "origin_refs": [],
+              "recorded_at": "1970-01-01T00:00:00+00:00"
+            },
+            "payload_digest": null,
+            "member_id": "7b361b40-14fa-5da3-aa72-8ced00e84702",
+            "family_revision_id": "604cabc0-e509-5e12-aac9-4a8ec331c157",
+            "invariant_revision_id": "d92c4e42-3390-580c-aead-9ca53b708538",
+            "claim_id": null,
+            "role": null,
+            "rationale": null,
+            "anchor": null
+          },
+          "before_selected": true,
+          "after_selected": true,
+          "record_id": "c90b49d3-c3bd-5399-9478-25eecd7a6468",
+          "revision_id": null,
+          "changed_fields": [],
+          "reached_via": [
+            "member_of_selected_family:c90b49d3-c3bd-5399-9478-25eecd7a6468",
+            "member_of_selected_family:604cabc0-e509-5e12-aac9-4a8ec331c157"
+          ],
+          "source_change": null
+        },
+        {
+          "item_id": "eeb7b272-3c36-5127-ae3d-5d01335dcc2f",
+          "kind": "membership",
+          "coverage": "selected_both",
+          "record_transition": "unchanged",
+          "before": {
+            "kind": "family_membership",
+            "item_id": "eeb7b272-3c36-5127-ae3d-5d01335dcc2f",
+            "selection_reasons": [
+              {
+                "stage": "member_of_selected_family",
+                "via_id": "c90b49d3-c3bd-5399-9478-25eecd7a6468"
+              }
+            ],
+            "invariant_id": null,
+            "family_id": "fa2aac3a-f406-595a-a1e6-b50c656704ca",
+            "record_id": "c90b49d3-c3bd-5399-9478-25eecd7a6468",
+            "revision_id": null,
+            "display_version": null,
+            "display_label": null,
+            "statement": null,
+            "applicability": null,
+            "essential_conditions": [],
+            "exclusions": [],
+            "joint_guarantee": null,
+            "lifecycle": null,
+            "acceptance_ref": null,
+            "provenance": {
+              "actor_ref": "260921-ICR/260921-ICR-L30",
+              "authorization_ref": "text-knowledge:knowledge/families/FAM-7B6N3Y4Q-knowledge-write-and-publication-foundation.json",
+              "operation_id": "fdbd894f-0c4c-57e2-bd41-c5995ef110e3",
+              "origin_refs": [],
+              "recorded_at": "1970-01-01T00:00:00+00:00"
+            },
+            "payload_digest": null,
+            "member_id": "eeb7b272-3c36-5127-ae3d-5d01335dcc2f",
+            "family_revision_id": "c90b49d3-c3bd-5399-9478-25eecd7a6468",
+            "invariant_revision_id": "73e4d91d-5599-50a6-804e-6acf2fe341df",
+            "claim_id": null,
+            "role": null,
+            "rationale": null,
+            "anchor": null
+          },
+          "after": {
+            "kind": "family_membership",
+            "item_id": "eeb7b272-3c36-5127-ae3d-5d01335dcc2f",
+            "selection_reasons": [
+              {
+                "stage": "member_of_selected_family",
+                "via_id": "604cabc0-e509-5e12-aac9-4a8ec331c157"
+              }
+            ],
+            "invariant_id": null,
+            "family_id": "fa2aac3a-f406-595a-a1e6-b50c656704ca",
+            "record_id": "604cabc0-e509-5e12-aac9-4a8ec331c157",
+            "revision_id": null,
+            "display_version": null,
+            "display_label": null,
+            "statement": null,
+            "applicability": null,
+            "essential_conditions": [],
+            "exclusions": [],
+            "joint_guarantee": null,
+            "lifecycle": null,
+            "acceptance_ref": null,
+            "provenance": {
+              "actor_ref": "260921-ICR/260921-ICR-L30",
+              "authorization_ref": "text-knowledge:knowledge/families/FAM-7B6N3Y4Q-knowledge-write-and-publication-foundation.json",
+              "operation_id": "fdbd894f-0c4c-57e2-bd41-c5995ef110e3",
+              "origin_refs": [],
+              "recorded_at": "1970-01-01T00:00:00+00:00"
+            },
+            "payload_digest": null,
+            "member_id": "eeb7b272-3c36-5127-ae3d-5d01335dcc2f",
+            "family_revision_id": "604cabc0-e509-5e12-aac9-4a8ec331c157",
+            "invariant_revision_id": "98ef298b-2f8f-5ff5-8fbe-04c237459096",
+            "claim_id": null,
+            "role": null,
+            "rationale": null,
+            "anchor": null
+          },
+          "before_selected": true,
+          "after_selected": true,
+          "record_id": "c90b49d3-c3bd-5399-9478-25eecd7a6468",
+          "revision_id": null,
+          "changed_fields": [],
+          "reached_via": [
+            "member_of_selected_family:c90b49d3-c3bd-5399-9478-25eecd7a6468",
+            "member_of_selected_family:604cabc0-e509-5e12-aac9-4a8ec331c157"
+          ],
+          "source_change": null
+        },
+        {
+          "item_id": "05bf4c4a-083c-5c13-9cba-38bf4e397200",
+          "kind": "realization",
+          "coverage": "selected_both",
+          "record_transition": "unchanged",
+          "before": {
+            "kind": "realization_claim",
+            "item_id": "05bf4c4a-083c-5c13-9cba-38bf4e397200",
+            "selection_reasons": [
+              {
+                "stage": "member_of_selected_family",
+                "via_id": "73e4d91d-5599-50a6-804e-6acf2fe341df"
+              }
+            ],
+            "invariant_id": null,
+            "family_id": null,
+            "record_id": "73e4d91d-5599-50a6-804e-6acf2fe341df",
+            "revision_id": null,
+            "display_version": null,
+            "display_label": null,
+            "statement": null,
+            "applicability": null,
+            "essential_conditions": [],
+            "exclusions": [],
+            "joint_guarantee": null,
+            "lifecycle": null,
+            "acceptance_ref": null,
+            "provenance": {
+              "actor_ref": "unrecorded",
+              "authorization_ref": "text-knowledge:onboarding/mcp/src/agents_remember/application/knowledge_write_admission.py.json",
+              "operation_id": "88f3a489-1fbd-5a3e-b0a0-43b888346aad",
+              "origin_refs": [],
+              "recorded_at": "1970-01-01T00:00:00+00:00"
+            },
+            "payload_digest": null,
+            "member_id": null,
+            "family_revision_id": null,
+            "invariant_revision_id": "73e4d91d-5599-50a6-804e-6acf2fe341df",
+            "claim_id": "05bf4c4a-083c-5c13-9cba-38bf4e397200",
+            "role": "primary-authority",
+            "rationale": "The admission resolver is where 'authority is derived, never asserted' is made a property of the control flow rather than a promise.",
+            "anchor": {
+              "anchor_id": "2a4a658d-2a87-5a0e-8bab-23a332125b87",
+              "path": "mcp/src/agents_remember/application/knowledge_write_admission.py",
+              "recorded_source_identity": "f1835f850e272e93c572dee8c07d07f8680882af",
+              "observed_source_identity": null,
+              "locator": {
+                "kind": "symbol",
+                "language": "python",
+                "qualified_name": "KnowledgeWriteAdmission"
+              },
+              "resolution": "not_requested",
+              "detail": "this read named no code tree, so no source resolution was requested; the recorded claim and its blob identity are reported as authored",
+              "resolved_ranges": []
+            }
+          },
+          "after": {
+            "kind": "realization_claim",
+            "item_id": "05bf4c4a-083c-5c13-9cba-38bf4e397200",
+            "selection_reasons": [
+              {
+                "stage": "member_of_selected_family",
+                "via_id": "98ef298b-2f8f-5ff5-8fbe-04c237459096"
+              }
+            ],
+            "invariant_id": null,
+            "family_id": null,
+            "record_id": "98ef298b-2f8f-5ff5-8fbe-04c237459096",
+            "revision_id": null,
+            "display_version": null,
+            "display_label": null,
+            "statement": null,
+            "applicability": null,
+            "essential_conditions": [],
+            "exclusions": [],
+            "joint_guarantee": null,
+            "lifecycle": null,
+            "acceptance_ref": null,
+            "provenance": {
+              "actor_ref": "unrecorded",
+              "authorization_ref": "text-knowledge:onboarding/mcp/src/agents_remember/application/knowledge_write_admission.py.json",
+              "operation_id": "88f3a489-1fbd-5a3e-b0a0-43b888346aad",
+              "origin_refs": [],
+              "recorded_at": "1970-01-01T00:00:00+00:00"
+            },
+            "payload_digest": null,
+            "member_id": null,
+            "family_revision_id": null,
+            "invariant_revision_id": "98ef298b-2f8f-5ff5-8fbe-04c237459096",
+            "claim_id": "05bf4c4a-083c-5c13-9cba-38bf4e397200",
+            "role": "primary-authority",
+            "rationale": "The admission resolver is where 'authority is derived, never asserted' is made a property of the control flow rather than a promise.",
+            "anchor": {
+              "anchor_id": "2a4a658d-2a87-5a0e-8bab-23a332125b87",
+              "path": "mcp/src/agents_remember/application/knowledge_write_admission.py",
+              "recorded_source_identity": "0c25de5b43f8d9eab093ba267292a378cddb9137",
+              "observed_source_identity": null,
+              "locator": {
+                "kind": "symbol",
+                "language": "python",
+                "qualified_name": "KnowledgeWriteAdmission"
+              },
+              "resolution": "not_requested",
+              "detail": "this read named no code tree, so no source resolution was requested; the recorded claim and its blob identity are reported as authored",
+              "resolved_ranges": []
+            }
+          },
+          "before_selected": true,
+          "after_selected": true,
+          "record_id": "73e4d91d-5599-50a6-804e-6acf2fe341df",
+          "revision_id": null,
+          "changed_fields": [],
+          "reached_via": [
+            "member_of_selected_family:73e4d91d-5599-50a6-804e-6acf2fe341df",
+            "member_of_selected_family:98ef298b-2f8f-5ff5-8fbe-04c237459096"
+          ],
+          "source_change": {
+            "claim_id": "05bf4c4a-083c-5c13-9cba-38bf4e397200",
+            "before_observation": {
+              "kind": "realization_claim",
+              "item_id": "05bf4c4a-083c-5c13-9cba-38bf4e397200",
+              "selection_reasons": [
+                {
+                  "stage": "member_of_selected_family",
+                  "via_id": "73e4d91d-5599-50a6-804e-6acf2fe341df"
+                }
+              ],
+              "invariant_id": null,
+              "family_id": null,
+              "record_id": "73e4d91d-5599-50a6-804e-6acf2fe341df",
+              "revision_id": null,
+              "display_version": null,
+              "display_label": null,
+              "statement": null,
+              "applicability": null,
+              "essential_conditions": [],
+              "exclusions": [],
+              "joint_guarantee": null,
+              "lifecycle": null,
+              "acceptance_ref": null,
+              "provenance": {
+                "actor_ref": "unrecorded",
+                "authorization_ref": "text-knowledge:onboarding/mcp/src/agents_remember/application/knowledge_write_admission.py.json",
+                "operation_id": "88f3a489-1fbd-5a3e-b0a0-43b888346aad",
+                "origin_refs": [],
+                "recorded_at": "1970-01-01T00:00:00+00:00"
+              },
+              "payload_digest": null,
+              "member_id": null,
+              "family_revision_id": null,
+              "invariant_revision_id": "73e4d91d-5599-50a6-804e-6acf2fe341df",
+              "claim_id": "05bf4c4a-083c-5c13-9cba-38bf4e397200",
+              "role": "primary-authority",
+              "rationale": "The admission resolver is where 'authority is derived, never asserted' is made a property of the control flow rather than a promise.",
+              "anchor": {
+                "anchor_id": "2a4a658d-2a87-5a0e-8bab-23a332125b87",
+                "path": "mcp/src/agents_remember/application/knowledge_write_admission.py",
+                "recorded_source_identity": "f1835f850e272e93c572dee8c07d07f8680882af",
+                "observed_source_identity": null,
+                "locator": {
+                  "kind": "symbol",
+                  "language": "python",
+                  "qualified_name": "KnowledgeWriteAdmission"
+                },
+                "resolution": "not_requested",
+                "detail": "this read named no code tree, so no source resolution was requested; the recorded claim and its blob identity are reported as authored",
+                "resolved_ranges": []
+              }
+            },
+            "after_observation": {
+              "kind": "realization_claim",
+              "item_id": "05bf4c4a-083c-5c13-9cba-38bf4e397200",
+              "selection_reasons": [
+                {
+                  "stage": "member_of_selected_family",
+                  "via_id": "98ef298b-2f8f-5ff5-8fbe-04c237459096"
+                }
+              ],
+              "invariant_id": null,
+              "family_id": null,
+              "record_id": "98ef298b-2f8f-5ff5-8fbe-04c237459096",
+              "revision_id": null,
+              "display_version": null,
+              "display_label": null,
+              "statement": null,
+              "applicability": null,
+              "essential_conditions": [],
+              "exclusions": [],
+              "joint_guarantee": null,
+              "lifecycle": null,
+              "acceptance_ref": null,
+              "provenance": {
+                "actor_ref": "unrecorded",
+                "authorization_ref": "text-knowledge:onboarding/mcp/src/agents_remember/application/knowledge_write_admission.py.json",
+                "operation_id": "88f3a489-1fbd-5a3e-b0a0-43b888346aad",
+                "origin_refs": [],
+                "recorded_at": "1970-01-01T00:00:00+00:00"
+              },
+              "payload_digest": null,
+              "member_id": null,
+              "family_revision_id": null,
+              "invariant_revision_id": "98ef298b-2f8f-5ff5-8fbe-04c237459096",
+              "claim_id": "05bf4c4a-083c-5c13-9cba-38bf4e397200",
+              "role": "primary-authority",
+              "rationale": "The admission resolver is where 'authority is derived, never asserted' is made a property of the control flow rather than a promise.",
+              "anchor": {
+                "anchor_id": "2a4a658d-2a87-5a0e-8bab-23a332125b87",
+                "path": "mcp/src/agents_remember/application/knowledge_write_admission.py",
+                "recorded_source_identity": "0c25de5b43f8d9eab093ba267292a378cddb9137",
+                "observed_source_identity": null,
+                "locator": {
+                  "kind": "symbol",
+                  "language": "python",
+                  "qualified_name": "KnowledgeWriteAdmission"
+                },
+                "resolution": "not_requested",
+                "detail": "this read named no code tree, so no source resolution was requested; the recorded claim and its blob identity are reported as authored",
+                "resolved_ranges": []
+              }
+            },
+            "record_field_changed": false,
+            "source_observation_changed": true,
+            "source_change_only": true,
+            "record_change_only": false,
+            "missing_side": null
+          }
+        },
+        {
+          "item_id": "0d567bba-2a51-517b-8fde-44efd8aaa679",
+          "kind": "realization",
+          "coverage": "selected_both",
+          "record_transition": "unchanged",
+          "before": {
+            "kind": "realization_claim",
+            "item_id": "0d567bba-2a51-517b-8fde-44efd8aaa679",
+            "selection_reasons": [
+              {
+                "stage": "seed_selected",
+                "via_id": "f08b297f-7d4e-5ae6-ba92-26f57faf5087"
+              }
+            ],
+            "invariant_id": null,
+            "family_id": null,
+            "record_id": "f08b297f-7d4e-5ae6-ba92-26f57faf5087",
+            "revision_id": null,
+            "display_version": null,
+            "display_label": null,
+            "statement": null,
+            "applicability": null,
+            "essential_conditions": [],
+            "exclusions": [],
+            "joint_guarantee": null,
+            "lifecycle": null,
+            "acceptance_ref": null,
+            "provenance": {
+              "actor_ref": "unrecorded",
+              "authorization_ref": "text-knowledge:onboarding/mcp/src/agents_remember/application/published_intent.py.json",
+              "operation_id": "bc3cd476-9c27-5602-b4dd-b2002c716c8d",
+              "origin_refs": [],
+              "recorded_at": "1970-01-01T00:00:00+00:00"
+            },
+            "payload_digest": null,
+            "member_id": null,
+            "family_revision_id": null,
+            "invariant_revision_id": "f08b297f-7d4e-5ae6-ba92-26f57faf5087",
+            "claim_id": "0d567bba-2a51-517b-8fde-44efd8aaa679",
+            "role": "primary-authority",
+            "rationale": "Resolves the repository's published dataset at the one path published_dataset_path names, or names why it cannot be read. For a converted memory tree it answers not-recorded, naming the tree, without opening the database file frozen there. For an unconverted layer it reads the dataset's identity at that one location: a location with no entry answers not-recorded, and an entry that is not a regular file, bytes that are not a dataset this code can read, or a dataset bound to another repository's authority home answers unusable, so no other repository's publication is ever selected.",
+            "anchor": {
+              "anchor_id": "7137b29b-bb33-5f4b-b970-de78f913f810",
+              "path": "mcp/src/agents_remember/application/published_intent.py",
+              "recorded_source_identity": "4be19bfc4f0db366151478c0195bb8e5278c7351",
+              "observed_source_identity": null,
+              "locator": {
+                "kind": "symbol",
+                "language": "python",
+                "qualified_name": "resolve_published_intent"
+              },
+              "resolution": "not_requested",
+              "detail": "this read named no code tree, so no source resolution was requested; the recorded claim and its blob identity are reported as authored",
+              "resolved_ranges": []
+            }
+          },
+          "after": {
+            "kind": "realization_claim",
+            "item_id": "0d567bba-2a51-517b-8fde-44efd8aaa679",
+            "selection_reasons": [
+              {
+                "stage": "seed_selected",
+                "via_id": "fa0ed241-a319-5736-8ca6-c9e25b3f8148"
+              }
+            ],
+            "invariant_id": null,
+            "family_id": null,
+            "record_id": "fa0ed241-a319-5736-8ca6-c9e25b3f8148",
+            "revision_id": null,
+            "display_version": null,
+            "display_label": null,
+            "statement": null,
+            "applicability": null,
+            "essential_conditions": [],
+            "exclusions": [],
+            "joint_guarantee": null,
+            "lifecycle": null,
+            "acceptance_ref": null,
+            "provenance": {
+              "actor_ref": "unrecorded",
+              "authorization_ref": "text-knowledge:onboarding/mcp/src/agents_remember/application/published_intent.py.json",
+              "operation_id": "bc3cd476-9c27-5602-b4dd-b2002c716c8d",
+              "origin_refs": [],
+              "recorded_at": "1970-01-01T00:00:00+00:00"
+            },
+            "payload_digest": null,
+            "member_id": null,
+            "family_revision_id": null,
+            "invariant_revision_id": "fa0ed241-a319-5736-8ca6-c9e25b3f8148",
+            "claim_id": "0d567bba-2a51-517b-8fde-44efd8aaa679",
+            "role": "primary-authority",
+            "rationale": "Resolves the repository's published dataset at the one path published_dataset_path names, or names why it cannot be read. For a converted memory tree it answers not-recorded, naming the tree, without opening the database file frozen there. For an unconverted layer it reads the dataset's identity at that one location: a location with no entry answers not-recorded, and an entry that is not a regular file, bytes that are not a dataset this code can read, or a dataset bound to another repository's authority home answers unusable, so no other repository's publication is ever selected.",
+            "anchor": {
+              "anchor_id": "7137b29b-bb33-5f4b-b970-de78f913f810",
+              "path": "mcp/src/agents_remember/application/published_intent.py",
+              "recorded_source_identity": "bda6abac209b8bb555561b79169c66526d769437",
+              "observed_source_identity": null,
+              "locator": {
+                "kind": "symbol",
+                "language": "python",
+                "qualified_name": "resolve_published_intent"
+              },
+              "resolution": "not_requested",
+              "detail": "this read named no code tree, so no source resolution was requested; the recorded claim and its blob identity are reported as authored",
+              "resolved_ranges": []
+            }
+          },
+          "before_selected": true,
+          "after_selected": true,
+          "record_id": "f08b297f-7d4e-5ae6-ba92-26f57faf5087",
+          "revision_id": null,
+          "changed_fields": [],
+          "reached_via": [
+            "seed_selected:f08b297f-7d4e-5ae6-ba92-26f57faf5087",
+            "seed_selected:fa0ed241-a319-5736-8ca6-c9e25b3f8148"
+          ],
+          "source_change": {
+            "claim_id": "0d567bba-2a51-517b-8fde-44efd8aaa679",
+            "before_observation": {
+              "kind": "realization_claim",
+              "item_id": "0d567bba-2a51-517b-8fde-44efd8aaa679",
+              "selection_reasons": [
+                {
+                  "stage": "seed_selected",
+                  "via_id": "f08b297f-7d4e-5ae6-ba92-26f57faf5087"
+                }
+              ],
+              "invariant_id": null,
+              "family_id": null,
+              "record_id": "f08b297f-7d4e-5ae6-ba92-26f57faf5087",
+              "revision_id": null,
+              "display_version": null,
+              "display_label": null,
+              "statement": null,
+              "applicability": null,
+              "essential_conditions": [],
+              "exclusions": [],
+              "joint_guarantee": null,
+              "lifecycle": null,
+              "acceptance_ref": null,
+              "provenance": {
+                "actor_ref": "unrecorded",
+                "authorization_ref": "text-knowledge:onboarding/mcp/src/agents_remember/application/published_intent.py.json",
+                "operation_id": "bc3cd476-9c27-5602-b4dd-b2002c716c8d",
+                "origin_refs": [],
+                "recorded_at": "1970-01-01T00:00:00+00:00"
+              },
+              "payload_digest": null,
+              "member_id": null,
+              "family_revision_id": null,
+              "invariant_revision_id": "f08b297f-7d4e-5ae6-ba92-26f57faf5087",
+              "claim_id": "0d567bba-2a51-517b-8fde-44efd8aaa679",
+              "role": "primary-authority",
+              "rationale": "Resolves the repository's published dataset at the one path published_dataset_path names, or names why it cannot be read. For a converted memory tree it answers not-recorded, naming the tree, without opening the database file frozen there. For an unconverted layer it reads the dataset's identity at that one location: a location with no entry answers not-recorded, and an entry that is not a regular file, bytes that are not a dataset this code can read, or a dataset bound to another repository's authority home answers unusable, so no other repository's publication is ever selected.",
+              "anchor": {
+                "anchor_id": "7137b29b-bb33-5f4b-b970-de78f913f810",
+                "path": "mcp/src/agents_remember/application/published_intent.py",
+                "recorded_source_identity": "4be19bfc4f0db366151478c0195bb8e5278c7351",
+                "observed_source_identity": null,
+                "locator": {
+                  "kind": "symbol",
+                  "language": "python",
+                  "qualified_name": "resolve_published_intent"
+                },
+                "resolution": "not_requested",
+                "detail": "this read named no code tree, so no source resolution was requested; the recorded claim and its blob identity are reported as authored",
+                "resolved_ranges": []
+              }
+            },
+            "after_observation": {
+              "kind": "realization_claim",
+              "item_id": "0d567bba-2a51-517b-8fde-44efd8aaa679",
+              "selection_reasons": [
+                {
+                  "stage": "seed_selected",
+                  "via_id": "fa0ed241-a319-5736-8ca6-c9e25b3f8148"
+                }
+              ],
+              "invariant_id": null,
+              "family_id": null,
+              "record_id": "fa0ed241-a319-5736-8ca6-c9e25b3f8148",
+              "revision_id": null,
+              "display_version": null,
+              "display_label": null,
+              "statement": null,
+              "applicability": null,
+              "essential_conditions": [],
+              "exclusions": [],
+              "joint_guarantee": null,
+              "lifecycle": null,
+              "acceptance_ref": null,
+              "provenance": {
+                "actor_ref": "unrecorded",
+                "authorization_ref": "text-knowledge:onboarding/mcp/src/agents_remember/application/published_intent.py.json",
+                "operation_id": "bc3cd476-9c27-5602-b4dd-b2002c716c8d",
+                "origin_refs": [],
+                "recorded_at": "1970-01-01T00:00:00+00:00"
+              },
+              "payload_digest": null,
+              "member_id": null,
+              "family_revision_id": null,
+              "invariant_revision_id": "fa0ed241-a319-5736-8ca6-c9e25b3f8148",
+              "claim_id": "0d567bba-2a51-517b-8fde-44efd8aaa679",
+              "role": "primary-authority",
+              "rationale": "Resolves the repository's published dataset at the one path published_dataset_path names, or names why it cannot be read. For a converted memory tree it answers not-recorded, naming the tree, without opening the database file frozen there. For an unconverted layer it reads the dataset's identity at that one location: a location with no entry answers not-recorded, and an entry that is not a regular file, bytes that are not a dataset this code can read, or a dataset bound to another repository's authority home answers unusable, so no other repository's publication is ever selected.",
+              "anchor": {
+                "anchor_id": "7137b29b-bb33-5f4b-b970-de78f913f810",
+                "path": "mcp/src/agents_remember/application/published_intent.py",
+                "recorded_source_identity": "bda6abac209b8bb555561b79169c66526d769437",
+                "observed_source_identity": null,
+                "locator": {
+                  "kind": "symbol",
+                  "language": "python",
+                  "qualified_name": "resolve_published_intent"
+                },
+                "resolution": "not_requested",
+                "detail": "this read named no code tree, so no source resolution was requested; the recorded claim and its blob identity are reported as authored",
+                "resolved_ranges": []
+              }
+            },
+            "record_field_changed": false,
+            "source_observation_changed": true,
+            "source_change_only": true,
+            "record_change_only": false,
+            "missing_side": null
+          }
+        },
+        {
+          "item_id": "0eda0cf4-1f56-580a-ad81-0fbcd0970d4e",
+          "kind": "realization",
+          "coverage": "selected_both",
+          "record_transition": "unchanged",
+          "before": {
+            "kind": "realization_claim",
+            "item_id": "0eda0cf4-1f56-580a-ad81-0fbcd0970d4e",
+            "selection_reasons": [
+              {
+                "stage": "member_of_selected_family",
+                "via_id": "ee4052e3-a8b7-5289-9399-d609257cc16a"
+              }
+            ],
+            "invariant_id": null,
+            "family_id": null,
+            "record_id": "ee4052e3-a8b7-5289-9399-d609257cc16a",
+            "revision_id": null,
+            "display_version": null,
+            "display_label": null,
+            "statement": null,
+            "applicability": null,
+            "essential_conditions": [],
+            "exclusions": [],
+            "joint_guarantee": null,
+            "lifecycle": null,
+            "acceptance_ref": null,
+            "provenance": {
+              "actor_ref": "unrecorded",
+              "authorization_ref": "text-knowledge:onboarding/mcp/src/agents_remember/kernel/primitives/checkout_coordination.py.json",
+              "operation_id": "4386073b-78e0-5105-aee9-e5401928aa5f",
+              "origin_refs": [],
+              "recorded_at": "1970-01-01T00:00:00+00:00"
+            },
+            "payload_digest": null,
+            "member_id": null,
+            "family_revision_id": null,
+            "invariant_revision_id": "ee4052e3-a8b7-5289-9399-d609257cc16a",
+            "claim_id": "0eda0cf4-1f56-580a-ad81-0fbcd0970d4e",
+            "role": "primary-authority",
+            "rationale": "The successor keeps the batch-writer realization and adds the loading condition's own owner, because the refined obligation is precisely that reachability is a property of the process rather than of the argument list.",
+            "anchor": {
+              "anchor_id": "63cda5b5-c3ce-5804-85ed-f989763c7c43",
+              "path": "mcp/src/agents_remember/kernel/primitives/checkout_coordination.py",
+              "recorded_source_identity": "b34c1e5974f6955bad288d8dd1a542473be46f29",
+              "observed_source_identity": null,
+              "locator": {
+                "kind": "symbol",
+                "language": "python",
+                "qualified_name": "checkout_cli_location"
+              },
+              "resolution": "not_requested",
+              "detail": "this read named no code tree, so no source resolution was requested; the recorded claim and its blob identity are reported as authored",
+              "resolved_ranges": []
+            }
+          },
+          "after": {
+            "kind": "realization_claim",
+            "item_id": "0eda0cf4-1f56-580a-ad81-0fbcd0970d4e",
+            "selection_reasons": [
+              {
+                "stage": "member_of_selected_family",
+                "via_id": "d92c4e42-3390-580c-aead-9ca53b708538"
+              }
+            ],
+            "invariant_id": null,
+            "family_id": null,
+            "record_id": "d92c4e42-3390-580c-aead-9ca53b708538",
+            "revision_id": null,
+            "display_version": null,
+            "display_label": null,
+            "statement": null,
+            "applicability": null,
+            "essential_conditions": [],
+            "exclusions": [],
+            "joint_guarantee": null,
+            "lifecycle": null,
+            "acceptance_ref": null,
+            "provenance": {
+              "actor_ref": "unrecorded",
+              "authorization_ref": "text-knowledge:onboarding/mcp/src/agents_remember/kernel/primitives/checkout_coordination.py.json",
+              "operation_id": "4386073b-78e0-5105-aee9-e5401928aa5f",
+              "origin_refs": [],
+              "recorded_at": "1970-01-01T00:00:00+00:00"
+            },
+            "payload_digest": null,
+            "member_id": null,
+            "family_revision_id": null,
+            "invariant_revision_id": "d92c4e42-3390-580c-aead-9ca53b708538",
+            "claim_id": "0eda0cf4-1f56-580a-ad81-0fbcd0970d4e",
+            "role": "primary-authority",
+            "rationale": "The successor keeps the batch-writer realization and adds the loading condition's own owner, because the refined obligation is precisely that reachability is a property of the process rather than of the argument list.",
+            "anchor": {
+              "anchor_id": "63cda5b5-c3ce-5804-85ed-f989763c7c43",
+              "path": "mcp/src/agents_remember/kernel/primitives/checkout_coordination.py",
+              "recorded_source_identity": "b34c1e5974f6955bad288d8dd1a542473be46f29",
+              "observed_source_identity": null,
+              "locator": {
+                "kind": "symbol",
+                "language": "python",
+                "qualified_name": "checkout_cli_location"
+              },
+              "resolution": "not_requested",
+              "detail": "this read named no code tree, so no source resolution was requested; the recorded claim and its blob identity are reported as authored",
+              "resolved_ranges": []
+            }
+          },
+          "before_selected": true,
+          "after_selected": true,
+          "record_id": "ee4052e3-a8b7-5289-9399-d609257cc16a",
+          "revision_id": null,
+          "changed_fields": [],
+          "reached_via": [
+            "member_of_selected_family:ee4052e3-a8b7-5289-9399-d609257cc16a",
+            "member_of_selected_family:d92c4e42-3390-580c-aead-9ca53b708538"
+          ],
+          "source_change": {
+            "claim_id": "0eda0cf4-1f56-580a-ad81-0fbcd0970d4e",
+            "before_observation": {
+              "kind": "realization_claim",
+              "item_id": "0eda0cf4-1f56-580a-ad81-0fbcd0970d4e",
+              "selection_reasons": [
+                {
+                  "stage": "member_of_selected_family",
+                  "via_id": "ee4052e3-a8b7-5289-9399-d609257cc16a"
+                }
+              ],
+              "invariant_id": null,
+              "family_id": null,
+              "record_id": "ee4052e3-a8b7-5289-9399-d609257cc16a",
+              "revision_id": null,
+              "display_version": null,
+              "display_label": null,
+              "statement": null,
+              "applicability": null,
+              "essential_conditions": [],
+              "exclusions": [],
+              "joint_guarantee": null,
+              "lifecycle": null,
+              "acceptance_ref": null,
+              "provenance": {
+                "actor_ref": "unrecorded",
+                "authorization_ref": "text-knowledge:onboarding/mcp/src/agents_remember/kernel/primitives/checkout_coordination.py.json",
+                "operation_id": "4386073b-78e0-5105-aee9-e5401928aa5f",
+                "origin_refs": [],
+                "recorded_at": "1970-01-01T00:00:00+00:00"
+              },
+              "payload_digest": null,
+              "member_id": null,
+              "family_revision_id": null,
+              "invariant_revision_id": "ee4052e3-a8b7-5289-9399-d609257cc16a",
+              "claim_id": "0eda0cf4-1f56-580a-ad81-0fbcd0970d4e",
+              "role": "primary-authority",
+              "rationale": "The successor keeps the batch-writer realization and adds the loading condition's own owner, because the refined obligation is precisely that reachability is a property of the process rather than of the argument list.",
+              "anchor": {
+                "anchor_id": "63cda5b5-c3ce-5804-85ed-f989763c7c43",
+                "path": "mcp/src/agents_remember/kernel/primitives/checkout_coordination.py",
+                "recorded_source_identity": "b34c1e5974f6955bad288d8dd1a542473be46f29",
+                "observed_source_identity": null,
+                "locator": {
+                  "kind": "symbol",
+                  "language": "python",
+                  "qualified_name": "checkout_cli_location"
+                },
+                "resolution": "not_requested",
+                "detail": "this read named no code tree, so no source resolution was requested; the recorded claim and its blob identity are reported as authored",
+                "resolved_ranges": []
+              }
+            },
+            "after_observation": {
+              "kind": "realization_claim",
+              "item_id": "0eda0cf4-1f56-580a-ad81-0fbcd0970d4e",
+              "selection_reasons": [
+                {
+                  "stage": "member_of_selected_family",
+                  "via_id": "d92c4e42-3390-580c-aead-9ca53b708538"
+                }
+              ],
+              "invariant_id": null,
+              "family_id": null,
+              "record_id": "d92c4e42-3390-580c-aead-9ca53b708538",
+              "revision_id": null,
+              "display_version": null,
+              "display_label": null,
+              "statement": null,
+              "applicability": null,
+              "essential_conditions": [],
+              "exclusions": [],
+              "joint_guarantee": null,
+              "lifecycle": null,
+              "acceptance_ref": null,
+              "provenance": {
+                "actor_ref": "unrecorded",
+                "authorization_ref": "text-knowledge:onboarding/mcp/src/agents_remember/kernel/primitives/checkout_coordination.py.json",
+                "operation_id": "4386073b-78e0-5105-aee9-e5401928aa5f",
+                "origin_refs": [],
+                "recorded_at": "1970-01-01T00:00:00+00:00"
+              },
+              "payload_digest": null,
+              "member_id": null,
+              "family_revision_id": null,
+              "invariant_revision_id": "d92c4e42-3390-580c-aead-9ca53b708538",
+              "claim_id": "0eda0cf4-1f56-580a-ad81-0fbcd0970d4e",
+              "role": "primary-authority",
+              "rationale": "The successor keeps the batch-writer realization and adds the loading condition's own owner, because the refined obligation is precisely that reachability is a property of the process rather than of the argument list.",
+              "anchor": {
+                "anchor_id": "63cda5b5-c3ce-5804-85ed-f989763c7c43",
+                "path": "mcp/src/agents_remember/kernel/primitives/checkout_coordination.py",
+                "recorded_source_identity": "b34c1e5974f6955bad288d8dd1a542473be46f29",
+                "observed_source_identity": null,
+                "locator": {
+                  "kind": "symbol",
+                  "language": "python",
+                  "qualified_name": "checkout_cli_location"
+                },
+                "resolution": "not_requested",
+                "detail": "this read named no code tree, so no source resolution was requested; the recorded claim and its blob identity are reported as authored",
+                "resolved_ranges": []
+              }
+            },
+            "record_field_changed": false,
+            "source_observation_changed": false,
+            "source_change_only": false,
+            "record_change_only": false,
+            "missing_side": null
+          }
+        },
+        {
+          "item_id": "18dbcbfc-ea99-5737-9f8a-3ee49900b7ff",
+          "kind": "realization",
+          "coverage": "absent_from_snapshot",
+          "record_transition": "removed",
+          "before": {
+            "kind": "realization_claim",
+            "item_id": "18dbcbfc-ea99-5737-9f8a-3ee49900b7ff",
+            "selection_reasons": [
+              {
+                "stage": "member_of_selected_family",
+                "via_id": "ee4052e3-a8b7-5289-9399-d609257cc16a"
+              }
+            ],
+            "invariant_id": null,
+            "family_id": null,
+            "record_id": "ee4052e3-a8b7-5289-9399-d609257cc16a",
+            "revision_id": null,
+            "display_version": null,
+            "display_label": null,
+            "statement": null,
+            "applicability": null,
+            "essential_conditions": [],
+            "exclusions": [],
+            "joint_guarantee": null,
+            "lifecycle": null,
+            "acceptance_ref": null,
+            "provenance": {
+              "actor_ref": "unrecorded",
+              "authorization_ref": "text-knowledge:onboarding/mcp/src/agents_remember/memory/knowledge/publication.py.json",
+              "operation_id": "a5ea30e5-fbee-56e8-af9f-61f1d0f0595d",
+              "origin_refs": [],
+              "recorded_at": "1970-01-01T00:00:00+00:00"
+            },
+            "payload_digest": null,
+            "member_id": null,
+            "family_revision_id": null,
+            "invariant_revision_id": "ee4052e3-a8b7-5289-9399-d609257cc16a",
+            "claim_id": "18dbcbfc-ea99-5737-9f8a-3ee49900b7ff",
+            "role": "enforcement",
+            "rationale": "Refuses, as database_frozen, every publication whose destination lies in a converted memory tree at the one install sink that ingest, import and merge share, so the frozen database file is never rewritten.",
+            "anchor": {
+              "anchor_id": "0b787979-2b73-5032-b084-ee767df71ce4",
+              "path": "mcp/src/agents_remember/memory/knowledge/publication.py",
+              "recorded_source_identity": "32e12e6260e6ac8d919a555b2802d33ea4a26afd",
+              "observed_source_identity": null,
+              "locator": {
+                "kind": "symbol",
+                "language": "python",
+                "qualified_name": "frozen_database_refusal"
+              },
+              "resolution": "not_requested",
+              "detail": "this read named no code tree, so no source resolution was requested; the recorded claim and its blob identity are reported as authored",
+              "resolved_ranges": []
+            }
+          },
+          "after": null,
+          "before_selected": true,
+          "after_selected": false,
+          "record_id": "ee4052e3-a8b7-5289-9399-d609257cc16a",
+          "revision_id": null,
+          "changed_fields": [],
+          "reached_via": [
+            "member_of_selected_family:ee4052e3-a8b7-5289-9399-d609257cc16a"
+          ],
+          "source_change": {
+            "claim_id": "18dbcbfc-ea99-5737-9f8a-3ee49900b7ff",
+            "before_observation": {
+              "kind": "realization_claim",
+              "item_id": "18dbcbfc-ea99-5737-9f8a-3ee49900b7ff",
+              "selection_reasons": [
+                {
+                  "stage": "member_of_selected_family",
+                  "via_id": "ee4052e3-a8b7-5289-9399-d609257cc16a"
+                }
+              ],
+              "invariant_id": null,
+              "family_id": null,
+              "record_id": "ee4052e3-a8b7-5289-9399-d609257cc16a",
+              "revision_id": null,
+              "display_version": null,
+              "display_label": null,
+              "statement": null,
+              "applicability": null,
+              "essential_conditions": [],
+              "exclusions": [],
+              "joint_guarantee": null,
+              "lifecycle": null,
+              "acceptance_ref": null,
+              "provenance": {
+                "actor_ref": "unrecorded",
+                "authorization_ref": "text-knowledge:onboarding/mcp/src/agents_remember/memory/knowledge/publication.py.json",
+                "operation_id": "a5ea30e5-fbee-56e8-af9f-61f1d0f0595d",
+                "origin_refs": [],
+                "recorded_at": "1970-01-01T00:00:00+00:00"
+              },
+              "payload_digest": null,
+              "member_id": null,
+              "family_revision_id": null,
+              "invariant_revision_id": "ee4052e3-a8b7-5289-9399-d609257cc16a",
+              "claim_id": "18dbcbfc-ea99-5737-9f8a-3ee49900b7ff",
+              "role": "enforcement",
+              "rationale": "Refuses, as database_frozen, every publication whose destination lies in a converted memory tree at the one install sink that ingest, import and merge share, so the frozen database file is never rewritten.",
+              "anchor": {
+                "anchor_id": "0b787979-2b73-5032-b084-ee767df71ce4",
+                "path": "mcp/src/agents_remember/memory/knowledge/publication.py",
+                "recorded_source_identity": "32e12e6260e6ac8d919a555b2802d33ea4a26afd",
+                "observed_source_identity": null,
+                "locator": {
+                  "kind": "symbol",
+                  "language": "python",
+                  "qualified_name": "frozen_database_refusal"
+                },
+                "resolution": "not_requested",
+                "detail": "this read named no code tree, so no source resolution was requested; the recorded claim and its blob identity are reported as authored",
+                "resolved_ranges": []
+              }
+            },
+            "after_observation": null,
+            "record_field_changed": false,
+            "source_observation_changed": false,
+            "source_change_only": false,
+            "record_change_only": false,
+            "missing_side": "after"
+          }
+        },
+        {
+          "item_id": "3ed32719-7dc5-5697-98e0-65cc622c8747",
+          "kind": "realization",
+          "coverage": "selected_both",
+          "record_transition": "unchanged",
+          "before": {
+            "kind": "realization_claim",
+            "item_id": "3ed32719-7dc5-5697-98e0-65cc622c8747",
+            "selection_reasons": [
+              {
+                "stage": "member_of_selected_family",
+                "via_id": "ee4052e3-a8b7-5289-9399-d609257cc16a"
+              }
+            ],
+            "invariant_id": null,
+            "family_id": null,
+            "record_id": "ee4052e3-a8b7-5289-9399-d609257cc16a",
+            "revision_id": null,
+            "display_version": null,
+            "display_label": null,
+            "statement": null,
+            "applicability": null,
+            "essential_conditions": [],
+            "exclusions": [],
+            "joint_guarantee": null,
+            "lifecycle": null,
+            "acceptance_ref": null,
+            "provenance": {
+              "actor_ref": "unrecorded",
+              "authorization_ref": "text-knowledge:onboarding/mcp/src/agents_remember/cli/knowledge_bootstrap.py.json",
+              "operation_id": "d173fdf8-de76-5878-b883-4769d6e44df5",
+              "origin_refs": [],
+              "recorded_at": "1970-01-01T00:00:00+00:00"
+            },
+            "payload_digest": null,
+            "member_id": null,
+            "family_revision_id": null,
+            "invariant_revision_id": "ee4052e3-a8b7-5289-9399-d609257cc16a",
+            "claim_id": "3ed32719-7dc5-5697-98e0-65cc622c8747",
+            "role": "primary-authority",
+            "rationale": "The successor keeps the batch-writer realization and adds the loading condition's own owner, because the refined obligation is precisely that reachability is a property of the process rather than of the argument list.",
+            "anchor": {
+              "anchor_id": "87363c7c-989d-5838-a6e5-8201dee3f097",
+              "path": "mcp/src/agents_remember/cli/knowledge_bootstrap.py",
+              "recorded_source_identity": "73eecf58061cb3ef3f87695242319bb9d426e63c",
+              "observed_source_identity": null,
+              "locator": {
+                "kind": "symbol",
+                "language": "python",
+                "qualified_name": "_run"
+              },
+              "resolution": "not_requested",
+              "detail": "this read named no code tree, so no source resolution was requested; the recorded claim and its blob identity are reported as authored",
+              "resolved_ranges": []
+            }
+          },
+          "after": {
+            "kind": "realization_claim",
+            "item_id": "3ed32719-7dc5-5697-98e0-65cc622c8747",
+            "selection_reasons": [
+              {
+                "stage": "member_of_selected_family",
+                "via_id": "d92c4e42-3390-580c-aead-9ca53b708538"
+              }
+            ],
+            "invariant_id": null,
+            "family_id": null,
+            "record_id": "d92c4e42-3390-580c-aead-9ca53b708538",
+            "revision_id": null,
+            "display_version": null,
+            "display_label": null,
+            "statement": null,
+            "applicability": null,
+            "essential_conditions": [],
+            "exclusions": [],
+            "joint_guarantee": null,
+            "lifecycle": null,
+            "acceptance_ref": null,
+            "provenance": {
+              "actor_ref": "unrecorded",
+              "authorization_ref": "text-knowledge:onboarding/mcp/src/agents_remember/cli/knowledge_bootstrap.py.json",
+              "operation_id": "d173fdf8-de76-5878-b883-4769d6e44df5",
+              "origin_refs": [],
+              "recorded_at": "1970-01-01T00:00:00+00:00"
+            },
+            "payload_digest": null,
+            "member_id": null,
+            "family_revision_id": null,
+            "invariant_revision_id": "d92c4e42-3390-580c-aead-9ca53b708538",
+            "claim_id": "3ed32719-7dc5-5697-98e0-65cc622c8747",
+            "role": "primary-authority",
+            "rationale": "The successor keeps the batch-writer realization and adds the loading condition's own owner, because the refined obligation is precisely that reachability is a property of the process rather than of the argument list.",
+            "anchor": {
+              "anchor_id": "87363c7c-989d-5838-a6e5-8201dee3f097",
+              "path": "mcp/src/agents_remember/cli/knowledge_bootstrap.py",
+              "recorded_source_identity": "ac95d9ba546fa91777026e0b623d55226d7a3da0",
+              "observed_source_identity": null,
+              "locator": {
+                "kind": "symbol",
+                "language": "python",
+                "qualified_name": "_run"
+              },
+              "resolution": "not_requested",
+              "detail": "this read named no code tree, so no source resolution was requested; the recorded claim and its blob identity are reported as authored",
+              "resolved_ranges": []
+            }
+          },
+          "before_selected": true,
+          "after_selected": true,
+          "record_id": "ee4052e3-a8b7-5289-9399-d609257cc16a",
+          "revision_id": null,
+          "changed_fields": [],
+          "reached_via": [
+            "member_of_selected_family:ee4052e3-a8b7-5289-9399-d609257cc16a",
+            "member_of_selected_family:d92c4e42-3390-580c-aead-9ca53b708538"
+          ],
+          "source_change": {
+            "claim_id": "3ed32719-7dc5-5697-98e0-65cc622c8747",
+            "before_observation": {
+              "kind": "realization_claim",
+              "item_id": "3ed32719-7dc5-5697-98e0-65cc622c8747",
+              "selection_reasons": [
+                {
+                  "stage": "member_of_selected_family",
+                  "via_id": "ee4052e3-a8b7-5289-9399-d609257cc16a"
+                }
+              ],
+              "invariant_id": null,
+              "family_id": null,
+              "record_id": "ee4052e3-a8b7-5289-9399-d609257cc16a",
+              "revision_id": null,
+              "display_version": null,
+              "display_label": null,
+              "statement": null,
+              "applicability": null,
+              "essential_conditions": [],
+              "exclusions": [],
+              "joint_guarantee": null,
+              "lifecycle": null,
+              "acceptance_ref": null,
+              "provenance": {
+                "actor_ref": "unrecorded",
+                "authorization_ref": "text-knowledge:onboarding/mcp/src/agents_remember/cli/knowledge_bootstrap.py.json",
+                "operation_id": "d173fdf8-de76-5878-b883-4769d6e44df5",
+                "origin_refs": [],
+                "recorded_at": "1970-01-01T00:00:00+00:00"
+              },
+              "payload_digest": null,
+              "member_id": null,
+              "family_revision_id": null,
+              "invariant_revision_id": "ee4052e3-a8b7-5289-9399-d609257cc16a",
+              "claim_id": "3ed32719-7dc5-5697-98e0-65cc622c8747",
+              "role": "primary-authority",
+              "rationale": "The successor keeps the batch-writer realization and adds the loading condition's own owner, because the refined obligation is precisely that reachability is a property of the process rather than of the argument list.",
+              "anchor": {
+                "anchor_id": "87363c7c-989d-5838-a6e5-8201dee3f097",
+                "path": "mcp/src/agents_remember/cli/knowledge_bootstrap.py",
+                "recorded_source_identity": "73eecf58061cb3ef3f87695242319bb9d426e63c",
+                "observed_source_identity": null,
+                "locator": {
+                  "kind": "symbol",
+                  "language": "python",
+                  "qualified_name": "_run"
+                },
+                "resolution": "not_requested",
+                "detail": "this read named no code tree, so no source resolution was requested; the recorded claim and its blob identity are reported as authored",
+                "resolved_ranges": []
+              }
+            },
+            "after_observation": {
+              "kind": "realization_claim",
+              "item_id": "3ed32719-7dc5-5697-98e0-65cc622c8747",
+              "selection_reasons": [
+                {
+                  "stage": "member_of_selected_family",
+                  "via_id": "d92c4e42-3390-580c-aead-9ca53b708538"
+                }
+              ],
+              "invariant_id": null,
+              "family_id": null,
+              "record_id": "d92c4e42-3390-580c-aead-9ca53b708538",
+              "revision_id": null,
+              "display_version": null,
+              "display_label": null,
+              "statement": null,
+              "applicability": null,
+              "essential_conditions": [],
+              "exclusions": [],
+              "joint_guarantee": null,
+              "lifecycle": null,
+              "acceptance_ref": null,
+              "provenance": {
+                "actor_ref": "unrecorded",
+                "authorization_ref": "text-knowledge:onboarding/mcp/src/agents_remember/cli/knowledge_bootstrap.py.json",
+                "operation_id": "d173fdf8-de76-5878-b883-4769d6e44df5",
+                "origin_refs": [],
+                "recorded_at": "1970-01-01T00:00:00+00:00"
+              },
+              "payload_digest": null,
+              "member_id": null,
+              "family_revision_id": null,
+              "invariant_revision_id": "d92c4e42-3390-580c-aead-9ca53b708538",
+              "claim_id": "3ed32719-7dc5-5697-98e0-65cc622c8747",
+              "role": "primary-authority",
+              "rationale": "The successor keeps the batch-writer realization and adds the loading condition's own owner, because the refined obligation is precisely that reachability is a property of the process rather than of the argument list.",
+              "anchor": {
+                "anchor_id": "87363c7c-989d-5838-a6e5-8201dee3f097",
+                "path": "mcp/src/agents_remember/cli/knowledge_bootstrap.py",
+                "recorded_source_identity": "ac95d9ba546fa91777026e0b623d55226d7a3da0",
+                "observed_source_identity": null,
+                "locator": {
+                  "kind": "symbol",
+                  "language": "python",
+                  "qualified_name": "_run"
+                },
+                "resolution": "not_requested",
+                "detail": "this read named no code tree, so no source resolution was requested; the recorded claim and its blob identity are reported as authored",
+                "resolved_ranges": []
+              }
+            },
+            "record_field_changed": false,
+            "source_observation_changed": true,
+            "source_change_only": true,
+            "record_change_only": false,
+            "missing_side": null
+          }
+        },
+        {
+          "item_id": "437e9048-66b2-5767-90d2-fc8889cfd340",
+          "kind": "realization",
+          "coverage": "absent_from_snapshot",
+          "record_transition": "removed",
+          "before": {
+            "kind": "realization_claim",
+            "item_id": "437e9048-66b2-5767-90d2-fc8889cfd340",
+            "selection_reasons": [
+              {
+                "stage": "seed_selected",
+                "via_id": "f08b297f-7d4e-5ae6-ba92-26f57faf5087"
+              }
+            ],
+            "invariant_id": null,
+            "family_id": null,
+            "record_id": "f08b297f-7d4e-5ae6-ba92-26f57faf5087",
+            "revision_id": null,
+            "display_version": null,
+            "display_label": null,
+            "statement": null,
+            "applicability": null,
+            "essential_conditions": [],
+            "exclusions": [],
+            "joint_guarantee": null,
+            "lifecycle": null,
+            "acceptance_ref": null,
+            "provenance": {
+              "actor_ref": "unrecorded",
+              "authorization_ref": "text-knowledge:onboarding/mcp/src/agents_remember/application/published_intent.py.json",
+              "operation_id": "bc3cd476-9c27-5602-b4dd-b2002c716c8d",
+              "origin_refs": [],
+              "recorded_at": "1970-01-01T00:00:00+00:00"
+            },
+            "payload_digest": null,
+            "member_id": null,
+            "family_revision_id": null,
+            "invariant_revision_id": "f08b297f-7d4e-5ae6-ba92-26f57faf5087",
+            "claim_id": "437e9048-66b2-5767-90d2-fc8889cfd340",
+            "role": "primary-authority",
+            "rationale": "The read route owns the spelling of the location and the write route consumes that same owner, which is what makes the two halves one location rather than two conventions.",
+            "anchor": {
+              "anchor_id": "dfbb14d4-52ea-55e2-9ffc-8d25d0799775",
+              "path": "mcp/src/agents_remember/application/published_intent.py",
+              "recorded_source_identity": "4be19bfc4f0db366151478c0195bb8e5278c7351",
+              "observed_source_identity": null,
+              "locator": {
+                "kind": "symbol",
+                "language": "python",
+                "qualified_name": "published_dataset_path"
+              },
+              "resolution": "not_requested",
+              "detail": "this read named no code tree, so no source resolution was requested; the recorded claim and its blob identity are reported as authored",
+              "resolved_ranges": []
+            }
+          },
+          "after": null,
+          "before_selected": true,
+          "after_selected": false,
+          "record_id": "f08b297f-7d4e-5ae6-ba92-26f57faf5087",
+          "revision_id": null,
+          "changed_fields": [],
+          "reached_via": [
+            "seed_selected:f08b297f-7d4e-5ae6-ba92-26f57faf5087"
+          ],
+          "source_change": {
+            "claim_id": "437e9048-66b2-5767-90d2-fc8889cfd340",
+            "before_observation": {
+              "kind": "realization_claim",
+              "item_id": "437e9048-66b2-5767-90d2-fc8889cfd340",
+              "selection_reasons": [
+                {
+                  "stage": "seed_selected",
+                  "via_id": "f08b297f-7d4e-5ae6-ba92-26f57faf5087"
+                }
+              ],
+              "invariant_id": null,
+              "family_id": null,
+              "record_id": "f08b297f-7d4e-5ae6-ba92-26f57faf5087",
+              "revision_id": null,
+              "display_version": null,
+              "display_label": null,
+              "statement": null,
+              "applicability": null,
+              "essential_conditions": [],
+              "exclusions": [],
+              "joint_guarantee": null,
+              "lifecycle": null,
+              "acceptance_ref": null,
+              "provenance": {
+                "actor_ref": "unrecorded",
+                "authorization_ref": "text-knowledge:onboarding/mcp/src/agents_remember/application/published_intent.py.json",
+                "operation_id": "bc3cd476-9c27-5602-b4dd-b2002c716c8d",
+                "origin_refs": [],
+                "recorded_at": "1970-01-01T00:00:00+00:00"
+              },
+              "payload_digest": null,
+              "member_id": null,
+              "family_revision_id": null,
+              "invariant_revision_id": "f08b297f-7d4e-5ae6-ba92-26f57faf5087",
+              "claim_id": "437e9048-66b2-5767-90d2-fc8889cfd340",
+              "role": "primary-authority",
+              "rationale": "The read route owns the spelling of the location and the write route consumes that same owner, which is what makes the two halves one location rather than two conventions.",
+              "anchor": {
+                "anchor_id": "dfbb14d4-52ea-55e2-9ffc-8d25d0799775",
+                "path": "mcp/src/agents_remember/application/published_intent.py",
+                "recorded_source_identity": "4be19bfc4f0db366151478c0195bb8e5278c7351",
+                "observed_source_identity": null,
+                "locator": {
+                  "kind": "symbol",
+                  "language": "python",
+                  "qualified_name": "published_dataset_path"
+                },
+                "resolution": "not_requested",
+                "detail": "this read named no code tree, so no source resolution was requested; the recorded claim and its blob identity are reported as authored",
+                "resolved_ranges": []
+              }
+            },
+            "after_observation": null,
+            "record_field_changed": false,
+            "source_observation_changed": false,
+            "source_change_only": false,
+            "record_change_only": false,
+            "missing_side": "after"
+          }
+        },
+        {
+          "item_id": "4ab372a0-c1c1-56dd-9eb9-aa5a5dd15d55",
+          "kind": "realization",
+          "coverage": "absent_from_snapshot",
+          "record_transition": "added",
+          "before": null,
+          "after": {
+            "kind": "realization_claim",
+            "item_id": "4ab372a0-c1c1-56dd-9eb9-aa5a5dd15d55",
+            "selection_reasons": [
+              {
+                "stage": "member_of_selected_family",
+                "via_id": "d92c4e42-3390-580c-aead-9ca53b708538"
+              }
+            ],
+            "invariant_id": null,
+            "family_id": null,
+            "record_id": "d92c4e42-3390-580c-aead-9ca53b708538",
+            "revision_id": null,
+            "display_version": null,
+            "display_label": null,
+            "statement": null,
+            "applicability": null,
+            "essential_conditions": [],
+            "exclusions": [],
+            "joint_guarantee": null,
+            "lifecycle": null,
+            "acceptance_ref": null,
+            "provenance": {
+              "actor_ref": "unrecorded",
+              "authorization_ref": "text-knowledge:onboarding/mcp/src/agents_remember/cli/knowledge_bootstrap.py.json",
+              "operation_id": "d173fdf8-de76-5878-b883-4769d6e44df5",
+              "origin_refs": [],
+              "recorded_at": "1970-01-01T00:00:00+00:00"
+            },
+            "payload_digest": null,
+            "member_id": null,
+            "family_revision_id": null,
+            "invariant_revision_id": "d92c4e42-3390-580c-aead-9ca53b708538",
+            "claim_id": "4ab372a0-c1c1-56dd-9eb9-aa5a5dd15d55",
+            "role": "primary-authority",
+            "rationale": "The taskless entry refuses a tree without the conversion marker and writes the converted tree through the file writer.",
+            "anchor": {
+              "anchor_id": "4d3e4928-b7fb-5d62-81b5-2edc25fc976d",
+              "path": "mcp/src/agents_remember/cli/knowledge_bootstrap.py",
+              "recorded_source_identity": "ac95d9ba546fa91777026e0b623d55226d7a3da0",
+              "observed_source_identity": null,
+              "locator": {
+                "kind": "symbol",
+                "language": "python",
+                "qualified_name": "_run"
+              },
+              "resolution": "not_requested",
+              "detail": "this read named no code tree, so no source resolution was requested; the recorded claim and its blob identity are reported as authored",
+              "resolved_ranges": []
+            }
+          },
+          "before_selected": false,
+          "after_selected": true,
+          "record_id": "d92c4e42-3390-580c-aead-9ca53b708538",
+          "revision_id": null,
+          "changed_fields": [],
+          "reached_via": [
+            "member_of_selected_family:d92c4e42-3390-580c-aead-9ca53b708538"
+          ],
+          "source_change": {
+            "claim_id": "4ab372a0-c1c1-56dd-9eb9-aa5a5dd15d55",
+            "before_observation": null,
+            "after_observation": {
+              "kind": "realization_claim",
+              "item_id": "4ab372a0-c1c1-56dd-9eb9-aa5a5dd15d55",
+              "selection_reasons": [
+                {
+                  "stage": "member_of_selected_family",
+                  "via_id": "d92c4e42-3390-580c-aead-9ca53b708538"
+                }
+              ],
+              "invariant_id": null,
+              "family_id": null,
+              "record_id": "d92c4e42-3390-580c-aead-9ca53b708538",
+              "revision_id": null,
+              "display_version": null,
+              "display_label": null,
+              "statement": null,
+              "applicability": null,
+              "essential_conditions": [],
+              "exclusions": [],
+              "joint_guarantee": null,
+              "lifecycle": null,
+              "acceptance_ref": null,
+              "provenance": {
+                "actor_ref": "unrecorded",
+                "authorization_ref": "text-knowledge:onboarding/mcp/src/agents_remember/cli/knowledge_bootstrap.py.json",
+                "operation_id": "d173fdf8-de76-5878-b883-4769d6e44df5",
+                "origin_refs": [],
+                "recorded_at": "1970-01-01T00:00:00+00:00"
+              },
+              "payload_digest": null,
+              "member_id": null,
+              "family_revision_id": null,
+              "invariant_revision_id": "d92c4e42-3390-580c-aead-9ca53b708538",
+              "claim_id": "4ab372a0-c1c1-56dd-9eb9-aa5a5dd15d55",
+              "role": "primary-authority",
+              "rationale": "The taskless entry refuses a tree without the conversion marker and writes the converted tree through the file writer.",
+              "anchor": {
+                "anchor_id": "4d3e4928-b7fb-5d62-81b5-2edc25fc976d",
+                "path": "mcp/src/agents_remember/cli/knowledge_bootstrap.py",
+                "recorded_source_identity": "ac95d9ba546fa91777026e0b623d55226d7a3da0",
+                "observed_source_identity": null,
+                "locator": {
+                  "kind": "symbol",
+                  "language": "python",
+                  "qualified_name": "_run"
+                },
+                "resolution": "not_requested",
+                "detail": "this read named no code tree, so no source resolution was requested; the recorded claim and its blob identity are reported as authored",
+                "resolved_ranges": []
+              }
+            },
+            "record_field_changed": false,
+            "source_observation_changed": false,
+            "source_change_only": false,
+            "record_change_only": false,
+            "missing_side": "before"
+          }
+        },
+        {
+          "item_id": "59090487-5f66-5d41-9c6f-bd47c24f439c",
+          "kind": "realization",
+          "coverage": "absent_from_snapshot",
+          "record_transition": "removed",
+          "before": {
+            "kind": "realization_claim",
+            "item_id": "59090487-5f66-5d41-9c6f-bd47c24f439c",
+            "selection_reasons": [
+              {
+                "stage": "seed_selected",
+                "via_id": "f08b297f-7d4e-5ae6-ba92-26f57faf5087"
+              }
+            ],
+            "invariant_id": null,
+            "family_id": null,
+            "record_id": "f08b297f-7d4e-5ae6-ba92-26f57faf5087",
+            "revision_id": null,
+            "display_version": null,
+            "display_label": null,
+            "statement": null,
+            "applicability": null,
+            "essential_conditions": [],
+            "exclusions": [],
+            "joint_guarantee": null,
+            "lifecycle": null,
+            "acceptance_ref": null,
+            "provenance": {
+              "actor_ref": "unrecorded",
+              "authorization_ref": "text-knowledge:onboarding/mcp/src/agents_remember/application/knowledge_publication_route.py.json",
+              "operation_id": "c95aee82-c54e-5ce1-87e8-53635a9793eb",
+              "origin_refs": [],
+              "recorded_at": "1970-01-01T00:00:00+00:00"
+            },
+            "payload_digest": null,
+            "member_id": null,
+            "family_revision_id": null,
+            "invariant_revision_id": "f08b297f-7d4e-5ae6-ba92-26f57faf5087",
+            "claim_id": "59090487-5f66-5d41-9c6f-bd47c24f439c",
+            "role": "primary-authority",
+            "rationale": "The read route owns the spelling of the location and the write route consumes that same owner, which is what makes the two halves one location rather than two conventions.",
+            "anchor": {
+              "anchor_id": "d143745e-66cc-508d-8151-c523040d5768",
+              "path": "mcp/src/agents_remember/application/knowledge_publication_route.py",
+              "recorded_source_identity": "501e0bd1224bd9910b2f445e7245277f8ed88105",
+              "observed_source_identity": null,
+              "locator": {
+                "kind": "symbol",
+                "language": "python",
+                "qualified_name": "declared_publication_location"
+              },
+              "resolution": "not_requested",
+              "detail": "this read named no code tree, so no source resolution was requested; the recorded claim and its blob identity are reported as authored",
+              "resolved_ranges": []
+            }
+          },
+          "after": null,
+          "before_selected": true,
+          "after_selected": false,
+          "record_id": "f08b297f-7d4e-5ae6-ba92-26f57faf5087",
+          "revision_id": null,
+          "changed_fields": [],
+          "reached_via": [
+            "seed_selected:f08b297f-7d4e-5ae6-ba92-26f57faf5087"
+          ],
+          "source_change": {
+            "claim_id": "59090487-5f66-5d41-9c6f-bd47c24f439c",
+            "before_observation": {
+              "kind": "realization_claim",
+              "item_id": "59090487-5f66-5d41-9c6f-bd47c24f439c",
+              "selection_reasons": [
+                {
+                  "stage": "seed_selected",
+                  "via_id": "f08b297f-7d4e-5ae6-ba92-26f57faf5087"
+                }
+              ],
+              "invariant_id": null,
+              "family_id": null,
+              "record_id": "f08b297f-7d4e-5ae6-ba92-26f57faf5087",
+              "revision_id": null,
+              "display_version": null,
+              "display_label": null,
+              "statement": null,
+              "applicability": null,
+              "essential_conditions": [],
+              "exclusions": [],
+              "joint_guarantee": null,
+              "lifecycle": null,
+              "acceptance_ref": null,
+              "provenance": {
+                "actor_ref": "unrecorded",
+                "authorization_ref": "text-knowledge:onboarding/mcp/src/agents_remember/application/knowledge_publication_route.py.json",
+                "operation_id": "c95aee82-c54e-5ce1-87e8-53635a9793eb",
+                "origin_refs": [],
+                "recorded_at": "1970-01-01T00:00:00+00:00"
+              },
+              "payload_digest": null,
+              "member_id": null,
+              "family_revision_id": null,
+              "invariant_revision_id": "f08b297f-7d4e-5ae6-ba92-26f57faf5087",
+              "claim_id": "59090487-5f66-5d41-9c6f-bd47c24f439c",
+              "role": "primary-authority",
+              "rationale": "The read route owns the spelling of the location and the write route consumes that same owner, which is what makes the two halves one location rather than two conventions.",
+              "anchor": {
+                "anchor_id": "d143745e-66cc-508d-8151-c523040d5768",
+                "path": "mcp/src/agents_remember/application/knowledge_publication_route.py",
+                "recorded_source_identity": "501e0bd1224bd9910b2f445e7245277f8ed88105",
+                "observed_source_identity": null,
+                "locator": {
+                  "kind": "symbol",
+                  "language": "python",
+                  "qualified_name": "declared_publication_location"
+                },
+                "resolution": "not_requested",
+                "detail": "this read named no code tree, so no source resolution was requested; the recorded claim and its blob identity are reported as authored",
+                "resolved_ranges": []
+              }
+            },
+            "after_observation": null,
+            "record_field_changed": false,
+            "source_observation_changed": false,
+            "source_change_only": false,
+            "record_change_only": false,
+            "missing_side": "after"
+          }
+        },
+        {
+          "item_id": "5a6d2bdb-7939-5551-bd51-351ae377a835",
+          "kind": "realization",
+          "coverage": "selected_both",
+          "record_transition": "unchanged",
+          "before": {
+            "kind": "realization_claim",
+            "item_id": "5a6d2bdb-7939-5551-bd51-351ae377a835",
+            "selection_reasons": [
+              {
+                "stage": "member_of_selected_family",
+                "via_id": "ee4052e3-a8b7-5289-9399-d609257cc16a"
+              }
+            ],
+            "invariant_id": null,
+            "family_id": null,
+            "record_id": "ee4052e3-a8b7-5289-9399-d609257cc16a",
+            "revision_id": null,
+            "display_version": null,
+            "display_label": null,
+            "statement": null,
+            "applicability": null,
+            "essential_conditions": [],
+            "exclusions": [],
+            "joint_guarantee": null,
+            "lifecycle": null,
+            "acceptance_ref": null,
+            "provenance": {
+              "actor_ref": "unrecorded",
+              "authorization_ref": "text-knowledge:onboarding/mcp/src/agents_remember/cli/knowledge_ingest.py.json",
+              "operation_id": "43175097-cfd8-5183-a40d-2e9393d94ef3",
+              "origin_refs": [],
+              "recorded_at": "1970-01-01T00:00:00+00:00"
+            },
+            "payload_digest": null,
+            "member_id": null,
+            "family_revision_id": null,
+            "invariant_revision_id": "ee4052e3-a8b7-5289-9399-d609257cc16a",
+            "claim_id": "5a6d2bdb-7939-5551-bd51-351ae377a835",
+            "role": "primary-authority",
+            "rationale": "The successor keeps the batch-writer realization and adds the loading condition's own owner, because the refined obligation is precisely that reachability is a property of the process rather than of the argument list.",
+            "anchor": {
+              "anchor_id": "0e026d99-7be0-5720-b358-d4c7f68dc855",
+              "path": "mcp/src/agents_remember/cli/knowledge_ingest.py",
+              "recorded_source_identity": "5dd8b04a0ac5cc0a5ba63ede47b7a6ead7a860ba",
+              "observed_source_identity": null,
+              "locator": {
+                "kind": "symbol",
+                "language": "python",
+                "qualified_name": "run"
+              },
+              "resolution": "not_requested",
+              "detail": "this read named no code tree, so no source resolution was requested; the recorded claim and its blob identity are reported as authored",
+              "resolved_ranges": []
+            }
+          },
+          "after": {
+            "kind": "realization_claim",
+            "item_id": "5a6d2bdb-7939-5551-bd51-351ae377a835",
+            "selection_reasons": [
+              {
+                "stage": "member_of_selected_family",
+                "via_id": "d92c4e42-3390-580c-aead-9ca53b708538"
+              }
+            ],
+            "invariant_id": null,
+            "family_id": null,
+            "record_id": "d92c4e42-3390-580c-aead-9ca53b708538",
+            "revision_id": null,
+            "display_version": null,
+            "display_label": null,
+            "statement": null,
+            "applicability": null,
+            "essential_conditions": [],
+            "exclusions": [],
+            "joint_guarantee": null,
+            "lifecycle": null,
+            "acceptance_ref": null,
+            "provenance": {
+              "actor_ref": "unrecorded",
+              "authorization_ref": "text-knowledge:onboarding/mcp/src/agents_remember/cli/knowledge_ingest.py.json",
+              "operation_id": "43175097-cfd8-5183-a40d-2e9393d94ef3",
+              "origin_refs": [],
+              "recorded_at": "1970-01-01T00:00:00+00:00"
+            },
+            "payload_digest": null,
+            "member_id": null,
+            "family_revision_id": null,
+            "invariant_revision_id": "d92c4e42-3390-580c-aead-9ca53b708538",
+            "claim_id": "5a6d2bdb-7939-5551-bd51-351ae377a835",
+            "role": "primary-authority",
+            "rationale": "The successor keeps the batch-writer realization and adds the loading condition's own owner, because the refined obligation is precisely that reachability is a property of the process rather than of the argument list.",
+            "anchor": {
+              "anchor_id": "0e026d99-7be0-5720-b358-d4c7f68dc855",
+              "path": "mcp/src/agents_remember/cli/knowledge_ingest.py",
+              "recorded_source_identity": "1380179eda1ec1b9ba3615182ae59bfb91d1394f",
+              "observed_source_identity": null,
+              "locator": {
+                "kind": "symbol",
+                "language": "python",
+                "qualified_name": "run"
+              },
+              "resolution": "not_requested",
+              "detail": "this read named no code tree, so no source resolution was requested; the recorded claim and its blob identity are reported as authored",
+              "resolved_ranges": []
+            }
+          },
+          "before_selected": true,
+          "after_selected": true,
+          "record_id": "ee4052e3-a8b7-5289-9399-d609257cc16a",
+          "revision_id": null,
+          "changed_fields": [],
+          "reached_via": [
+            "member_of_selected_family:ee4052e3-a8b7-5289-9399-d609257cc16a",
+            "member_of_selected_family:d92c4e42-3390-580c-aead-9ca53b708538"
+          ],
+          "source_change": {
+            "claim_id": "5a6d2bdb-7939-5551-bd51-351ae377a835",
+            "before_observation": {
+              "kind": "realization_claim",
+              "item_id": "5a6d2bdb-7939-5551-bd51-351ae377a835",
+              "selection_reasons": [
+                {
+                  "stage": "member_of_selected_family",
+                  "via_id": "ee4052e3-a8b7-5289-9399-d609257cc16a"
+                }
+              ],
+              "invariant_id": null,
+              "family_id": null,
+              "record_id": "ee4052e3-a8b7-5289-9399-d609257cc16a",
+              "revision_id": null,
+              "display_version": null,
+              "display_label": null,
+              "statement": null,
+              "applicability": null,
+              "essential_conditions": [],
+              "exclusions": [],
+              "joint_guarantee": null,
+              "lifecycle": null,
+              "acceptance_ref": null,
+              "provenance": {
+                "actor_ref": "unrecorded",
+                "authorization_ref": "text-knowledge:onboarding/mcp/src/agents_remember/cli/knowledge_ingest.py.json",
+                "operation_id": "43175097-cfd8-5183-a40d-2e9393d94ef3",
+                "origin_refs": [],
+                "recorded_at": "1970-01-01T00:00:00+00:00"
+              },
+              "payload_digest": null,
+              "member_id": null,
+              "family_revision_id": null,
+              "invariant_revision_id": "ee4052e3-a8b7-5289-9399-d609257cc16a",
+              "claim_id": "5a6d2bdb-7939-5551-bd51-351ae377a835",
+              "role": "primary-authority",
+              "rationale": "The successor keeps the batch-writer realization and adds the loading condition's own owner, because the refined obligation is precisely that reachability is a property of the process rather than of the argument list.",
+              "anchor": {
+                "anchor_id": "0e026d99-7be0-5720-b358-d4c7f68dc855",
+                "path": "mcp/src/agents_remember/cli/knowledge_ingest.py",
+                "recorded_source_identity": "5dd8b04a0ac5cc0a5ba63ede47b7a6ead7a860ba",
+                "observed_source_identity": null,
+                "locator": {
+                  "kind": "symbol",
+                  "language": "python",
+                  "qualified_name": "run"
+                },
+                "resolution": "not_requested",
+                "detail": "this read named no code tree, so no source resolution was requested; the recorded claim and its blob identity are reported as authored",
+                "resolved_ranges": []
+              }
+            },
+            "after_observation": {
+              "kind": "realization_claim",
+              "item_id": "5a6d2bdb-7939-5551-bd51-351ae377a835",
+              "selection_reasons": [
+                {
+                  "stage": "member_of_selected_family",
+                  "via_id": "d92c4e42-3390-580c-aead-9ca53b708538"
+                }
+              ],
+              "invariant_id": null,
+              "family_id": null,
+              "record_id": "d92c4e42-3390-580c-aead-9ca53b708538",
+              "revision_id": null,
+              "display_version": null,
+              "display_label": null,
+              "statement": null,
+              "applicability": null,
+              "essential_conditions": [],
+              "exclusions": [],
+              "joint_guarantee": null,
+              "lifecycle": null,
+              "acceptance_ref": null,
+              "provenance": {
+                "actor_ref": "unrecorded",
+                "authorization_ref": "text-knowledge:onboarding/mcp/src/agents_remember/cli/knowledge_ingest.py.json",
+                "operation_id": "43175097-cfd8-5183-a40d-2e9393d94ef3",
+                "origin_refs": [],
+                "recorded_at": "1970-01-01T00:00:00+00:00"
+              },
+              "payload_digest": null,
+              "member_id": null,
+              "family_revision_id": null,
+              "invariant_revision_id": "d92c4e42-3390-580c-aead-9ca53b708538",
+              "claim_id": "5a6d2bdb-7939-5551-bd51-351ae377a835",
+              "role": "primary-authority",
+              "rationale": "The successor keeps the batch-writer realization and adds the loading condition's own owner, because the refined obligation is precisely that reachability is a property of the process rather than of the argument list.",
+              "anchor": {
+                "anchor_id": "0e026d99-7be0-5720-b358-d4c7f68dc855",
+                "path": "mcp/src/agents_remember/cli/knowledge_ingest.py",
+                "recorded_source_identity": "1380179eda1ec1b9ba3615182ae59bfb91d1394f",
+                "observed_source_identity": null,
+                "locator": {
+                  "kind": "symbol",
+                  "language": "python",
+                  "qualified_name": "run"
+                },
+                "resolution": "not_requested",
+                "detail": "this read named no code tree, so no source resolution was requested; the recorded claim and its blob identity are reported as authored",
+                "resolved_ranges": []
+              }
+            },
+            "record_field_changed": false,
+            "source_observation_changed": true,
+            "source_change_only": true,
+            "record_change_only": false,
+            "missing_side": null
+          }
+        },
+        {
+          "item_id": "71399e5c-4ea8-5269-9ec6-d0bcc764551f",
+          "kind": "realization",
+          "coverage": "absent_from_snapshot",
+          "record_transition": "added",
+          "before": null,
+          "after": {
+            "kind": "realization_claim",
+            "item_id": "71399e5c-4ea8-5269-9ec6-d0bcc764551f",
+            "selection_reasons": [
+              {
+                "stage": "member_of_selected_family",
+                "via_id": "d92c4e42-3390-580c-aead-9ca53b708538"
+              }
+            ],
+            "invariant_id": null,
+            "family_id": null,
+            "record_id": "d92c4e42-3390-580c-aead-9ca53b708538",
+            "revision_id": null,
+            "display_version": null,
+            "display_label": null,
+            "statement": null,
+            "applicability": null,
+            "essential_conditions": [],
+            "exclusions": [],
+            "joint_guarantee": null,
+            "lifecycle": null,
+            "acceptance_ref": null,
+            "provenance": {
+              "actor_ref": "unrecorded",
+              "authorization_ref": "text-knowledge:onboarding/mcp/src/agents_remember/cli/knowledge_ingest.py.json",
+              "operation_id": "43175097-cfd8-5183-a40d-2e9393d94ef3",
+              "origin_refs": [],
+              "recorded_at": "1970-01-01T00:00:00+00:00"
+            },
+            "payload_digest": null,
+            "member_id": null,
+            "family_revision_id": null,
+            "invariant_revision_id": "d92c4e42-3390-580c-aead-9ca53b708538",
+            "claim_id": "71399e5c-4ea8-5269-9ec6-d0bcc764551f",
+            "role": "primary-authority",
+            "rationale": "The leaf entry refuses a tree without the conversion marker and writes the converted tree through the file writer.",
+            "anchor": {
+              "anchor_id": "fb909ef2-02bb-50d7-b410-eccf2611ff60",
+              "path": "mcp/src/agents_remember/cli/knowledge_ingest.py",
+              "recorded_source_identity": "1380179eda1ec1b9ba3615182ae59bfb91d1394f",
+              "observed_source_identity": null,
+              "locator": {
+                "kind": "symbol",
+                "language": "python",
+                "qualified_name": "run"
+              },
+              "resolution": "not_requested",
+              "detail": "this read named no code tree, so no source resolution was requested; the recorded claim and its blob identity are reported as authored",
+              "resolved_ranges": []
+            }
+          },
+          "before_selected": false,
+          "after_selected": true,
+          "record_id": "d92c4e42-3390-580c-aead-9ca53b708538",
+          "revision_id": null,
+          "changed_fields": [],
+          "reached_via": [
+            "member_of_selected_family:d92c4e42-3390-580c-aead-9ca53b708538"
+          ],
+          "source_change": {
+            "claim_id": "71399e5c-4ea8-5269-9ec6-d0bcc764551f",
+            "before_observation": null,
+            "after_observation": {
+              "kind": "realization_claim",
+              "item_id": "71399e5c-4ea8-5269-9ec6-d0bcc764551f",
+              "selection_reasons": [
+                {
+                  "stage": "member_of_selected_family",
+                  "via_id": "d92c4e42-3390-580c-aead-9ca53b708538"
+                }
+              ],
+              "invariant_id": null,
+              "family_id": null,
+              "record_id": "d92c4e42-3390-580c-aead-9ca53b708538",
+              "revision_id": null,
+              "display_version": null,
+              "display_label": null,
+              "statement": null,
+              "applicability": null,
+              "essential_conditions": [],
+              "exclusions": [],
+              "joint_guarantee": null,
+              "lifecycle": null,
+              "acceptance_ref": null,
+              "provenance": {
+                "actor_ref": "unrecorded",
+                "authorization_ref": "text-knowledge:onboarding/mcp/src/agents_remember/cli/knowledge_ingest.py.json",
+                "operation_id": "43175097-cfd8-5183-a40d-2e9393d94ef3",
+                "origin_refs": [],
+                "recorded_at": "1970-01-01T00:00:00+00:00"
+              },
+              "payload_digest": null,
+              "member_id": null,
+              "family_revision_id": null,
+              "invariant_revision_id": "d92c4e42-3390-580c-aead-9ca53b708538",
+              "claim_id": "71399e5c-4ea8-5269-9ec6-d0bcc764551f",
+              "role": "primary-authority",
+              "rationale": "The leaf entry refuses a tree without the conversion marker and writes the converted tree through the file writer.",
+              "anchor": {
+                "anchor_id": "fb909ef2-02bb-50d7-b410-eccf2611ff60",
+                "path": "mcp/src/agents_remember/cli/knowledge_ingest.py",
+                "recorded_source_identity": "1380179eda1ec1b9ba3615182ae59bfb91d1394f",
+                "observed_source_identity": null,
+                "locator": {
+                  "kind": "symbol",
+                  "language": "python",
+                  "qualified_name": "run"
+                },
+                "resolution": "not_requested",
+                "detail": "this read named no code tree, so no source resolution was requested; the recorded claim and its blob identity are reported as authored",
+                "resolved_ranges": []
+              }
+            },
+            "record_field_changed": false,
+            "source_observation_changed": false,
+            "source_change_only": false,
+            "record_change_only": false,
+            "missing_side": "before"
+          }
+        },
+        {
+          "item_id": "9b79ad4d-185e-5e64-b650-72004829e3b2",
+          "kind": "realization",
+          "coverage": "absent_from_snapshot",
+          "record_transition": "removed",
+          "before": {
+            "kind": "realization_claim",
+            "item_id": "9b79ad4d-185e-5e64-b650-72004829e3b2",
+            "selection_reasons": [
+              {
+                "stage": "member_of_selected_family",
+                "via_id": "ee4052e3-a8b7-5289-9399-d609257cc16a"
+              }
+            ],
+            "invariant_id": null,
+            "family_id": null,
+            "record_id": "ee4052e3-a8b7-5289-9399-d609257cc16a",
+            "revision_id": null,
+            "display_version": null,
+            "display_label": null,
+            "statement": null,
+            "applicability": null,
+            "essential_conditions": [],
+            "exclusions": [],
+            "joint_guarantee": null,
+            "lifecycle": null,
+            "acceptance_ref": null,
+            "provenance": {
+              "actor_ref": "unrecorded",
+              "authorization_ref": "text-knowledge:onboarding/mcp/src/agents_remember/application/knowledge_curator_ingest.py.json",
+              "operation_id": "17805446-f49b-5237-9455-913583c8f80d",
+              "origin_refs": [],
+              "recorded_at": "1970-01-01T00:00:00+00:00"
+            },
+            "payload_digest": null,
+            "member_id": null,
+            "family_revision_id": null,
+            "invariant_revision_id": "ee4052e3-a8b7-5289-9399-d609257cc16a",
+            "claim_id": "9b79ad4d-185e-5e64-b650-72004829e3b2",
+            "role": "primary-authority",
+            "rationale": "The successor keeps the batch-writer realization and adds the loading condition's own owner, because the refined obligation is precisely that reachability is a property of the process rather than of the argument list.",
+            "anchor": {
+              "anchor_id": "b52f1770-4416-5654-a9ec-ae3bd7d6c8e7",
+              "path": "mcp/src/agents_remember/application/knowledge_curator_ingest.py",
+              "recorded_source_identity": "6c264ad4baa933504af480b247b65dd3c5a52ea3",
+              "observed_source_identity": null,
+              "locator": {
+                "kind": "symbol",
+                "language": "python",
+                "qualified_name": "ingest_curator_list"
+              },
+              "resolution": "not_requested",
+              "detail": "this read named no code tree, so no source resolution was requested; the recorded claim and its blob identity are reported as authored",
+              "resolved_ranges": []
+            }
+          },
+          "after": null,
+          "before_selected": true,
+          "after_selected": false,
+          "record_id": "ee4052e3-a8b7-5289-9399-d609257cc16a",
+          "revision_id": null,
+          "changed_fields": [],
+          "reached_via": [
+            "member_of_selected_family:ee4052e3-a8b7-5289-9399-d609257cc16a"
+          ],
+          "source_change": {
+            "claim_id": "9b79ad4d-185e-5e64-b650-72004829e3b2",
+            "before_observation": {
+              "kind": "realization_claim",
+              "item_id": "9b79ad4d-185e-5e64-b650-72004829e3b2",
+              "selection_reasons": [
+                {
+                  "stage": "member_of_selected_family",
+                  "via_id": "ee4052e3-a8b7-5289-9399-d609257cc16a"
+                }
+              ],
+              "invariant_id": null,
+              "family_id": null,
+              "record_id": "ee4052e3-a8b7-5289-9399-d609257cc16a",
+              "revision_id": null,
+              "display_version": null,
+              "display_label": null,
+              "statement": null,
+              "applicability": null,
+              "essential_conditions": [],
+              "exclusions": [],
+              "joint_guarantee": null,
+              "lifecycle": null,
+              "acceptance_ref": null,
+              "provenance": {
+                "actor_ref": "unrecorded",
+                "authorization_ref": "text-knowledge:onboarding/mcp/src/agents_remember/application/knowledge_curator_ingest.py.json",
+                "operation_id": "17805446-f49b-5237-9455-913583c8f80d",
+                "origin_refs": [],
+                "recorded_at": "1970-01-01T00:00:00+00:00"
+              },
+              "payload_digest": null,
+              "member_id": null,
+              "family_revision_id": null,
+              "invariant_revision_id": "ee4052e3-a8b7-5289-9399-d609257cc16a",
+              "claim_id": "9b79ad4d-185e-5e64-b650-72004829e3b2",
+              "role": "primary-authority",
+              "rationale": "The successor keeps the batch-writer realization and adds the loading condition's own owner, because the refined obligation is precisely that reachability is a property of the process rather than of the argument list.",
+              "anchor": {
+                "anchor_id": "b52f1770-4416-5654-a9ec-ae3bd7d6c8e7",
+                "path": "mcp/src/agents_remember/application/knowledge_curator_ingest.py",
+                "recorded_source_identity": "6c264ad4baa933504af480b247b65dd3c5a52ea3",
+                "observed_source_identity": null,
+                "locator": {
+                  "kind": "symbol",
+                  "language": "python",
+                  "qualified_name": "ingest_curator_list"
+                },
+                "resolution": "not_requested",
+                "detail": "this read named no code tree, so no source resolution was requested; the recorded claim and its blob identity are reported as authored",
+                "resolved_ranges": []
+              }
+            },
+            "after_observation": null,
+            "record_field_changed": false,
+            "source_observation_changed": false,
+            "source_change_only": false,
+            "record_change_only": false,
+            "missing_side": "after"
+          }
+        },
+        {
+          "item_id": "ebe59084-6c62-58aa-8902-0a72cd6f4fec",
+          "kind": "realization",
+          "coverage": "selected_both",
+          "record_transition": "unchanged",
+          "before": {
+            "kind": "realization_claim",
+            "item_id": "ebe59084-6c62-58aa-8902-0a72cd6f4fec",
+            "selection_reasons": [
+              {
+                "stage": "member_of_selected_family",
+                "via_id": "73e4d91d-5599-50a6-804e-6acf2fe341df"
+              }
+            ],
+            "invariant_id": null,
+            "family_id": null,
+            "record_id": "73e4d91d-5599-50a6-804e-6acf2fe341df",
+            "revision_id": null,
+            "display_version": null,
+            "display_label": null,
+            "statement": null,
+            "applicability": null,
+            "essential_conditions": [],
+            "exclusions": [],
+            "joint_guarantee": null,
+            "lifecycle": null,
+            "acceptance_ref": null,
+            "provenance": {
+              "actor_ref": "unrecorded",
+              "authorization_ref": "text-knowledge:onboarding/mcp/src/agents_remember/application/knowledge_bootstrap_admission.py.json",
+              "operation_id": "3653996c-dab2-56ca-8dad-60974a1e0750",
+              "origin_refs": [],
+              "recorded_at": "1970-01-01T00:00:00+00:00"
+            },
+            "payload_digest": null,
+            "member_id": null,
+            "family_revision_id": null,
+            "invariant_revision_id": "73e4d91d-5599-50a6-804e-6acf2fe341df",
+            "claim_id": "ebe59084-6c62-58aa-8902-0a72cd6f4fec",
+            "role": "primary-authority",
+            "rationale": "The admission resolver is where 'authority is derived, never asserted' is made a property of the control flow rather than a promise.",
+            "anchor": {
+              "anchor_id": "4fd69d47-9ecb-547d-a41e-8120e9b41505",
+              "path": "mcp/src/agents_remember/application/knowledge_bootstrap_admission.py",
+              "recorded_source_identity": "d3d4425dcd8a920e7f8a5ffad2a735244f0b4d54",
+              "observed_source_identity": null,
+              "locator": {
+                "kind": "symbol",
+                "language": "python",
+                "qualified_name": "admit_bootstrap_context"
+              },
+              "resolution": "not_requested",
+              "detail": "this read named no code tree, so no source resolution was requested; the recorded claim and its blob identity are reported as authored",
+              "resolved_ranges": []
+            }
+          },
+          "after": {
+            "kind": "realization_claim",
+            "item_id": "ebe59084-6c62-58aa-8902-0a72cd6f4fec",
+            "selection_reasons": [
+              {
+                "stage": "member_of_selected_family",
+                "via_id": "98ef298b-2f8f-5ff5-8fbe-04c237459096"
+              }
+            ],
+            "invariant_id": null,
+            "family_id": null,
+            "record_id": "98ef298b-2f8f-5ff5-8fbe-04c237459096",
+            "revision_id": null,
+            "display_version": null,
+            "display_label": null,
+            "statement": null,
+            "applicability": null,
+            "essential_conditions": [],
+            "exclusions": [],
+            "joint_guarantee": null,
+            "lifecycle": null,
+            "acceptance_ref": null,
+            "provenance": {
+              "actor_ref": "unrecorded",
+              "authorization_ref": "text-knowledge:onboarding/mcp/src/agents_remember/application/knowledge_bootstrap_admission.py.json",
+              "operation_id": "3653996c-dab2-56ca-8dad-60974a1e0750",
+              "origin_refs": [],
+              "recorded_at": "1970-01-01T00:00:00+00:00"
+            },
+            "payload_digest": null,
+            "member_id": null,
+            "family_revision_id": null,
+            "invariant_revision_id": "98ef298b-2f8f-5ff5-8fbe-04c237459096",
+            "claim_id": "ebe59084-6c62-58aa-8902-0a72cd6f4fec",
+            "role": "primary-authority",
+            "rationale": "The admission resolver is where 'authority is derived, never asserted' is made a property of the control flow rather than a promise.",
+            "anchor": {
+              "anchor_id": "4fd69d47-9ecb-547d-a41e-8120e9b41505",
+              "path": "mcp/src/agents_remember/application/knowledge_bootstrap_admission.py",
+              "recorded_source_identity": "c6f19d716614b209612597c6edbf85090014aac3",
+              "observed_source_identity": null,
+              "locator": {
+                "kind": "symbol",
+                "language": "python",
+                "qualified_name": "admit_bootstrap_context"
+              },
+              "resolution": "not_requested",
+              "detail": "this read named no code tree, so no source resolution was requested; the recorded claim and its blob identity are reported as authored",
+              "resolved_ranges": []
+            }
+          },
+          "before_selected": true,
+          "after_selected": true,
+          "record_id": "73e4d91d-5599-50a6-804e-6acf2fe341df",
+          "revision_id": null,
+          "changed_fields": [],
+          "reached_via": [
+            "member_of_selected_family:73e4d91d-5599-50a6-804e-6acf2fe341df",
+            "member_of_selected_family:98ef298b-2f8f-5ff5-8fbe-04c237459096"
+          ],
+          "source_change": {
+            "claim_id": "ebe59084-6c62-58aa-8902-0a72cd6f4fec",
+            "before_observation": {
+              "kind": "realization_claim",
+              "item_id": "ebe59084-6c62-58aa-8902-0a72cd6f4fec",
+              "selection_reasons": [
+                {
+                  "stage": "member_of_selected_family",
+                  "via_id": "73e4d91d-5599-50a6-804e-6acf2fe341df"
+                }
+              ],
+              "invariant_id": null,
+              "family_id": null,
+              "record_id": "73e4d91d-5599-50a6-804e-6acf2fe341df",
+              "revision_id": null,
+              "display_version": null,
+              "display_label": null,
+              "statement": null,
+              "applicability": null,
+              "essential_conditions": [],
+              "exclusions": [],
+              "joint_guarantee": null,
+              "lifecycle": null,
+              "acceptance_ref": null,
+              "provenance": {
+                "actor_ref": "unrecorded",
+                "authorization_ref": "text-knowledge:onboarding/mcp/src/agents_remember/application/knowledge_bootstrap_admission.py.json",
+                "operation_id": "3653996c-dab2-56ca-8dad-60974a1e0750",
+                "origin_refs": [],
+                "recorded_at": "1970-01-01T00:00:00+00:00"
+              },
+              "payload_digest": null,
+              "member_id": null,
+              "family_revision_id": null,
+              "invariant_revision_id": "73e4d91d-5599-50a6-804e-6acf2fe341df",
+              "claim_id": "ebe59084-6c62-58aa-8902-0a72cd6f4fec",
+              "role": "primary-authority",
+              "rationale": "The admission resolver is where 'authority is derived, never asserted' is made a property of the control flow rather than a promise.",
+              "anchor": {
+                "anchor_id": "4fd69d47-9ecb-547d-a41e-8120e9b41505",
+                "path": "mcp/src/agents_remember/application/knowledge_bootstrap_admission.py",
+                "recorded_source_identity": "d3d4425dcd8a920e7f8a5ffad2a735244f0b4d54",
+                "observed_source_identity": null,
+                "locator": {
+                  "kind": "symbol",
+                  "language": "python",
+                  "qualified_name": "admit_bootstrap_context"
+                },
+                "resolution": "not_requested",
+                "detail": "this read named no code tree, so no source resolution was requested; the recorded claim and its blob identity are reported as authored",
+                "resolved_ranges": []
+              }
+            },
+            "after_observation": {
+              "kind": "realization_claim",
+              "item_id": "ebe59084-6c62-58aa-8902-0a72cd6f4fec",
+              "selection_reasons": [
+                {
+                  "stage": "member_of_selected_family",
+                  "via_id": "98ef298b-2f8f-5ff5-8fbe-04c237459096"
+                }
+              ],
+              "invariant_id": null,
+              "family_id": null,
+              "record_id": "98ef298b-2f8f-5ff5-8fbe-04c237459096",
+              "revision_id": null,
+              "display_version": null,
+              "display_label": null,
+              "statement": null,
+              "applicability": null,
+              "essential_conditions": [],
+              "exclusions": [],
+              "joint_guarantee": null,
+              "lifecycle": null,
+              "acceptance_ref": null,
+              "provenance": {
+                "actor_ref": "unrecorded",
+                "authorization_ref": "text-knowledge:onboarding/mcp/src/agents_remember/application/knowledge_bootstrap_admission.py.json",
+                "operation_id": "3653996c-dab2-56ca-8dad-60974a1e0750",
+                "origin_refs": [],
+                "recorded_at": "1970-01-01T00:00:00+00:00"
+              },
+              "payload_digest": null,
+              "member_id": null,
+              "family_revision_id": null,
+              "invariant_revision_id": "98ef298b-2f8f-5ff5-8fbe-04c237459096",
+              "claim_id": "ebe59084-6c62-58aa-8902-0a72cd6f4fec",
+              "role": "primary-authority",
+              "rationale": "The admission resolver is where 'authority is derived, never asserted' is made a property of the control flow rather than a promise.",
+              "anchor": {
+                "anchor_id": "4fd69d47-9ecb-547d-a41e-8120e9b41505",
+                "path": "mcp/src/agents_remember/application/knowledge_bootstrap_admission.py",
+                "recorded_source_identity": "c6f19d716614b209612597c6edbf85090014aac3",
+                "observed_source_identity": null,
+                "locator": {
+                  "kind": "symbol",
+                  "language": "python",
+                  "qualified_name": "admit_bootstrap_context"
+                },
+                "resolution": "not_requested",
+                "detail": "this read named no code tree, so no source resolution was requested; the recorded claim and its blob identity are reported as authored",
+                "resolved_ranges": []
+              }
+            },
+            "record_field_changed": false,
+            "source_observation_changed": true,
+            "source_change_only": true,
+            "record_change_only": false,
+            "missing_side": null
+          }
+        },
+        {
+          "item_id": "fa592c21-a052-58ca-b6ea-89aedf66c3ce",
+          "kind": "realization",
+          "coverage": "absent_from_snapshot",
+          "record_transition": "removed",
+          "before": {
+            "kind": "realization_claim",
+            "item_id": "fa592c21-a052-58ca-b6ea-89aedf66c3ce",
+            "selection_reasons": [
+              {
+                "stage": "member_of_selected_family",
+                "via_id": "ee4052e3-a8b7-5289-9399-d609257cc16a"
+              }
+            ],
+            "invariant_id": null,
+            "family_id": null,
+            "record_id": "ee4052e3-a8b7-5289-9399-d609257cc16a",
+            "revision_id": null,
+            "display_version": null,
+            "display_label": null,
+            "statement": null,
+            "applicability": null,
+            "essential_conditions": [],
+            "exclusions": [],
+            "joint_guarantee": null,
+            "lifecycle": null,
+            "acceptance_ref": null,
+            "provenance": {
+              "actor_ref": "unrecorded",
+              "authorization_ref": "text-knowledge:onboarding/mcp/src/agents_remember/application/knowledge_write_admission.py.json",
+              "operation_id": "88f3a489-1fbd-5a3e-b0a0-43b888346aad",
+              "origin_refs": [],
+              "recorded_at": "1970-01-01T00:00:00+00:00"
+            },
+            "payload_digest": null,
+            "member_id": null,
+            "family_revision_id": null,
+            "invariant_revision_id": "ee4052e3-a8b7-5289-9399-d609257cc16a",
+            "claim_id": "fa592c21-a052-58ca-b6ea-89aedf66c3ce",
+            "role": "enforcement",
+            "rationale": "Is the database batch writer's front door: it refuses an admission whose memory tree is converted, naming the curator file writer, and asks the cutover lock for an unconverted tree, so the batch writer writes nothing for either.",
+            "anchor": {
+              "anchor_id": "e0cde010-be4b-5950-861a-77dd2898e958",
+              "path": "mcp/src/agents_remember/application/knowledge_write_admission.py",
+              "recorded_source_identity": "f1835f850e272e93c572dee8c07d07f8680882af",
+              "observed_source_identity": null,
+              "locator": {
+                "kind": "symbol",
+                "language": "python",
+                "qualified_name": "_require_unfrozen_database"
+              },
+              "resolution": "not_requested",
+              "detail": "this read named no code tree, so no source resolution was requested; the recorded claim and its blob identity are reported as authored",
+              "resolved_ranges": []
+            }
+          },
+          "after": null,
+          "before_selected": true,
+          "after_selected": false,
+          "record_id": "ee4052e3-a8b7-5289-9399-d609257cc16a",
+          "revision_id": null,
+          "changed_fields": [],
+          "reached_via": [
+            "member_of_selected_family:ee4052e3-a8b7-5289-9399-d609257cc16a"
+          ],
+          "source_change": {
+            "claim_id": "fa592c21-a052-58ca-b6ea-89aedf66c3ce",
+            "before_observation": {
+              "kind": "realization_claim",
+              "item_id": "fa592c21-a052-58ca-b6ea-89aedf66c3ce",
+              "selection_reasons": [
+                {
+                  "stage": "member_of_selected_family",
+                  "via_id": "ee4052e3-a8b7-5289-9399-d609257cc16a"
+                }
+              ],
+              "invariant_id": null,
+              "family_id": null,
+              "record_id": "ee4052e3-a8b7-5289-9399-d609257cc16a",
+              "revision_id": null,
+              "display_version": null,
+              "display_label": null,
+              "statement": null,
+              "applicability": null,
+              "essential_conditions": [],
+              "exclusions": [],
+              "joint_guarantee": null,
+              "lifecycle": null,
+              "acceptance_ref": null,
+              "provenance": {
+                "actor_ref": "unrecorded",
+                "authorization_ref": "text-knowledge:onboarding/mcp/src/agents_remember/application/knowledge_write_admission.py.json",
+                "operation_id": "88f3a489-1fbd-5a3e-b0a0-43b888346aad",
+                "origin_refs": [],
+                "recorded_at": "1970-01-01T00:00:00+00:00"
+              },
+              "payload_digest": null,
+              "member_id": null,
+              "family_revision_id": null,
+              "invariant_revision_id": "ee4052e3-a8b7-5289-9399-d609257cc16a",
+              "claim_id": "fa592c21-a052-58ca-b6ea-89aedf66c3ce",
+              "role": "enforcement",
+              "rationale": "Is the database batch writer's front door: it refuses an admission whose memory tree is converted, naming the curator file writer, and asks the cutover lock for an unconverted tree, so the batch writer writes nothing for either.",
+              "anchor": {
+                "anchor_id": "e0cde010-be4b-5950-861a-77dd2898e958",
+                "path": "mcp/src/agents_remember/application/knowledge_write_admission.py",
+                "recorded_source_identity": "f1835f850e272e93c572dee8c07d07f8680882af",
+                "observed_source_identity": null,
+                "locator": {
+                  "kind": "symbol",
+                  "language": "python",
+                  "qualified_name": "_require_unfrozen_database"
+                },
+                "resolution": "not_requested",
+                "detail": "this read named no code tree, so no source resolution was requested; the recorded claim and its blob identity are reported as authored",
+                "resolved_ranges": []
+              }
+            },
+            "after_observation": null,
+            "record_field_changed": false,
+            "source_observation_changed": false,
+            "source_change_only": false,
+            "record_change_only": false,
+            "missing_side": "after"
+          }
+        }
+      ],
+      "counts": {
+        "items_total": 24,
+        "items_returned": 24,
+        "items_remaining": 0,
+        "displayed_total": 24,
+        "suppressed_total": 0,
+        "changed_field_count": 0,
+        "changed_source_observation_count": 5
+      },
+      "has_more": false,
+      "enumeration_complete": true,
+      "continuation": null
+    },
+    "refusal": null
+  }
+}

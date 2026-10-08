@@ -18,7 +18,8 @@
     "Direct landing and the certified (prepared) closeout, which have their own gate and their own refusal.",
     "A recorded landing: it runs the validator and checks that the leaf's history file is closed, and does not recompute the worklist.",
     "A leaf's integration: it lands the commit the closeout recorded and does not judge it again.",
-    "The memory-quality suite and the curator-coherence record: the closeout neither runs the one nor requires the other."
+    "The memory-quality suite and the curator-coherence record: the closeout neither runs the one nor requires the other.",
+    "The retired database-era realization site; the obligation is recorded on converted memory only."
   ],
   "id": "INV-HWAWFT",
   "origin": {
@@ -32,7 +33,7 @@
     "leaf": "260928-MIK-L37",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "On converted memory the worktree closeout commits or records a leaf's memory only after the knowledge validator and the mandatory invariant gate have passed over the closeout's verified code commit and the exact memory tree, with the history closing applied: the tree it is about to commit, the HEAD commit it records when nothing is left to commit, and the memory commit a resumed closeout recovers. An open worklist item, an incomplete run or a validator failure refuses and names every finding: no memory is committed, the contract records no closeout, and the history closing and the ignore file are restored. The same gate is asked over the candidate before the closeout claims its approval or commits the code, so a refusal there leaves both sides uncommitted. The closeout commits the code before the memory, so a refusal at the memory commit leaves the code commit made; a rerun takes that commit as it is and completes once the gate passes.",
   "status": "proposed",

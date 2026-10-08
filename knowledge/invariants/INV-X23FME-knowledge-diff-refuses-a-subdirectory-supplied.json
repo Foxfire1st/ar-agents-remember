@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "A knowledge diff run against a subdirectory would compare the wrong scope and can report a false clean result."
+  },
+  "applicability": "knowledge_diff selector handling on a converted memory repository.",
+  "conditions": [
+    "The selector is a path inside the memory repository."
+  ],
+  "exclusions": [
+    "A selector outside the memory repository, which the Git route cannot compare."
+  ],
+  "id": "INV-X23FME",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "test_knowledge_index_surfaces.py::test_knowledge_diff_refuses_a_directory_inside_the_memory_repository; F05-subdirectory.log"
+      ],
+      "path": "handoff-stage1.json"
+    },
+    "handoffEntry": "R3 finding 5",
+    "leaf": "260928-MIK-L26",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Knowledge diff refuses a subdirectory supplied as the memory root and names the repository root to use.",
+  "status": "proposed",
+  "supersedes": []
+}

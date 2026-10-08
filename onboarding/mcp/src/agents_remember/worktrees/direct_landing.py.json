@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "4c12320737a261f83da37ee21e7897a5739d4d4e",
+        "blob": "ad3cd305cef9d6f8af36956a3091ff780134057d",
         "content": "sha256:a556c9d631cc7b7ddd6a9d5a9d33c4b0a769fc0caad09453666329c49b429836",
         "locator": {
           "kind": "symbol",
@@ -18,6 +18,60 @@
       },
       "rationale": "Probes the memory checkout before anything is captured or written and raises the lock's refusal for unconverted memory in a locked repository, for a preview and an apply alike.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "ad3cd305cef9d6f8af36956a3091ff780134057d",
+        "content": "sha256:d85e7f6536918fdb6c270a6f9b47dc8188d65a098f09f248a88ba19d785dd45c",
+        "locator": {
+          "kind": "symbol",
+          "name": "_create_direct_landing"
+        }
+      },
+      "id": "RLZ-B2Q04N",
+      "invariant": "INV-BEYEV2",
+      "origin": {
+        "handoffEntry": "R3 note 12, publication half",
+        "leaf": "260928-MIK-L26"
+      },
+      "rationale": "This selection preserves control cancellations and completed replay.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "ad3cd305cef9d6f8af36956a3091ff780134057d",
+        "content": "sha256:d85e7f6536918fdb6c270a6f9b47dc8188d65a098f09f248a88ba19d785dd45c",
+        "locator": {
+          "kind": "symbol",
+          "name": "_create_direct_landing"
+        }
+      },
+      "id": "RLZ-ECBACM",
+      "invariant": "INV-0JMW0S",
+      "origin": {
+        "handoffEntry": "R3 Finding 1",
+        "leaf": "260928-MIK-L26"
+      },
+      "rationale": "Selects the fresh successor for every unpublished refusal of one request.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "ad3cd305cef9d6f8af36956a3091ff780134057d",
+        "content": "sha256:d85e7f6536918fdb6c270a6f9b47dc8188d65a098f09f248a88ba19d785dd45c",
+        "locator": {
+          "kind": "symbol",
+          "name": "_create_direct_landing"
+        }
+      },
+      "id": "RLZ-XM924V",
+      "invariant": "INV-ZGFZXT",
+      "origin": {
+        "handoffEntry": "R3 finding 1",
+        "leaf": "260928-MIK-L26"
+      },
+      "rationale": "This function selects the fresh successor of a cancelled unpublished request.",
+      "role": "primary-authority"
     }
   ],
   "references": {

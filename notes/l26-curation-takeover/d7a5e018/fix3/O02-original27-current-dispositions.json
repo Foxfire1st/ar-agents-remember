@@ -1,0 +1,533 @@
+{
+  "schema": "l26-o02-original27-current-dispositions/v1",
+  "population": 27,
+  "originalLegs": 49,
+  "rows": [
+    {
+      "originalSidecar": "onboarding/mcp/overview.json",
+      "originalReference": "109",
+      "originalTargetCount": 2,
+      "currentReference": {
+        "note": "Current curator records and explicit retired-channel unavailability",
+        "targets": [
+          {
+            "anchor": {
+              "blob": "16e7c29f57b7814c6ee69615335aac14aa466a1e",
+              "content": "sha256:fbb49a9450e87dda67fc7e549d6b78f44d160884ef5a1886e724b900aab4b925",
+              "locator": {
+                "kind": "symbol",
+                "name": "review_records_for_resolution"
+              },
+              "path": "mcp/src/agents_remember/application/review_evidence_records.py"
+            },
+            "kind": "code"
+          },
+          {
+            "anchor": {
+              "blob": "16e7c29f57b7814c6ee69615335aac14aa466a1e",
+              "content": "sha256:5d14090b1a207dda5ca6f77a2cea408ca02c8f4509612a548bd14381371ef2eb",
+              "locator": {
+                "kind": "symbol",
+                "name": "_retired_channel"
+              },
+              "path": "mcp/src/agents_remember/application/review_evidence_records.py"
+            },
+            "kind": "code"
+          }
+        ]
+      },
+      "outcome": "current-reference",
+      "basis": "Current finding and targets are read back from the citation authoring owner. Historical text target remains explicitly historical."
+    },
+    {
+      "originalSidecar": "onboarding/mcp/overview.json",
+      "originalReference": "128",
+      "originalTargetCount": 2,
+      "currentReference": {
+        "note": "Published intent selects converted memory and its derived index",
+        "targets": [
+          {
+            "anchor": {
+              "blob": "bda6abac209b8bb555561b79169c66526d769437",
+              "content": "sha256:3f1eb06bc6c22dfba7737013ff6fbe9017836fa91db8afecfaa0ea24e85a0e13",
+              "locator": {
+                "kind": "symbol",
+                "name": "resolve_published_memory_tree"
+              },
+              "path": "mcp/src/agents_remember/application/published_intent.py"
+            },
+            "kind": "code"
+          },
+          {
+            "anchor": {
+              "blob": "bda6abac209b8bb555561b79169c66526d769437",
+              "content": "sha256:59a7a3ebd4555efbb9b81010b0e796b0c6f499f5c97fc9426cfb178d5963b702",
+              "locator": {
+                "kind": "symbol",
+                "name": "select_knowledge_dataset"
+              },
+              "path": "mcp/src/agents_remember/application/published_intent.py"
+            },
+            "kind": "code"
+          }
+        ]
+      },
+      "outcome": "current-reference",
+      "basis": "Current finding and targets are read back from the citation authoring owner. Historical text target remains explicitly historical."
+    },
+    {
+      "originalSidecar": "onboarding/mcp/overview.json",
+      "originalReference": "129",
+      "originalTargetCount": 0,
+      "currentReference": null,
+      "outcome": "reference-retired",
+      "basis": "Original retired reference remains retired."
+    },
+    {
+      "originalSidecar": "onboarding/mcp/overview.json",
+      "originalReference": "130",
+      "originalTargetCount": 0,
+      "currentReference": null,
+      "outcome": "reference-retired",
+      "basis": "Original retired reference remains retired."
+    },
+    {
+      "originalSidecar": "onboarding/mcp/overview.json",
+      "originalReference": "147",
+      "originalTargetCount": 1,
+      "currentReference": {
+        "note": "Current four-tree capture",
+        "targets": [
+          {
+            "anchor": {
+              "blob": "516f2eb5d188ee09a0a6c60d87a063a42f913c4e",
+              "content": "sha256:e0dd90e9fda341d2ed3d92c30d6326582d149cf1f7dcb6a574c925c77f49fa4a",
+              "locator": {
+                "kind": "symbol",
+                "name": "live_review_trees"
+              },
+              "path": "mcp/src/agents_remember/application/review_tree_comparison.py"
+            },
+            "kind": "code"
+          }
+        ]
+      },
+      "outcome": "current-reference",
+      "basis": "Current finding and targets are read back from the citation authoring owner. Historical text target remains explicitly historical."
+    },
+    {
+      "originalSidecar": "onboarding/mcp/overview.json",
+      "originalReference": "187",
+      "originalTargetCount": 0,
+      "currentReference": null,
+      "outcome": "reference-retired",
+      "basis": "Original retired reference remains retired."
+    },
+    {
+      "originalSidecar": "onboarding/mcp/src/agents_remember/application/knowledge_views.py.json",
+      "originalReference": "15",
+      "originalTargetCount": 2,
+      "currentReference": {
+        "note": "The former projection writer and MCP seam call were retired. The current public knowledge tool reads a converted tree through read_tree_page, rather than calling read_knowledge_view.",
+        "targets": [
+          {
+            "anchor": {
+              "blob": "12b2d18549a3d15a005d7fe16fc4b6f3dbc25be1",
+              "content": "sha256:62a1299117348503e6a6bf61e906eb424b3adc6a2942c73814d29d008255ad4d",
+              "locator": {
+                "kind": "symbol",
+                "name": "knowledge_read_payload"
+              },
+              "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
+            },
+            "kind": "code"
+          },
+          {
+            "anchor": {
+              "blob": "12b2d18549a3d15a005d7fe16fc4b6f3dbc25be1",
+              "content": "sha256:3e2727fb0993b347c3826f27dcf1f18beb611f1296087f36aa0312a4d73596d0",
+              "locator": {
+                "kind": "symbol",
+                "name": "_read_result"
+              },
+              "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
+            },
+            "kind": "code"
+          }
+        ]
+      },
+      "outcome": "current-reference",
+      "basis": "Current finding and targets are read back from the citation authoring owner. Historical text target remains explicitly historical."
+    },
+    {
+      "originalSidecar": "onboarding/mcp/src/agents_remember/application/knowledge_views.py.json",
+      "originalReference": "4",
+      "originalTargetCount": 6,
+      "currentReference": {
+        "note": "The derived-index seam checks ordering, namespace and continuation binding before reading rows and returns a typed refusal.",
+        "targets": [
+          {
+            "anchor": {
+              "blob": "37f41084b20d44aa6b734698e5cde4bd26d9ae63",
+              "content": "sha256:3e94692ef31c0f277434ec65433a6db34a74db56f5c1b01d8f341b5a948c78fd",
+              "locator": {
+                "kind": "symbol",
+                "name": "_admit"
+              }
+            },
+            "kind": "code"
+          },
+          {
+            "anchor": {
+              "blob": "37f41084b20d44aa6b734698e5cde4bd26d9ae63",
+              "content": "sha256:207b3ca87f31b2fd024d7fa9662c29ff9e9ca0fe1df522681a0f075534f529e7",
+              "locator": {
+                "kind": "symbol",
+                "name": "_refused"
+              }
+            },
+            "kind": "code"
+          }
+        ]
+      },
+      "outcome": "current-reference",
+      "basis": "Current finding and targets are read back from the citation authoring owner. Historical text target remains explicitly historical."
+    },
+    {
+      "originalSidecar": "onboarding/mcp/src/agents_remember/application/knowledge_views.py.json",
+      "originalReference": "8",
+      "originalTargetCount": 6,
+      "currentReference": {
+        "note": "The continuation that binds a token to one snapshot, its minter, and the both-identities check the seam calls first.",
+        "targets": [
+          {
+            "anchor": {
+              "blob": "bc391045efe2a2c2210873a09c33e180ed9fdab0",
+              "content": "sha256:3cae35e67bbc183ad8ccd2be57dce006ff6f072ad2d4cbbbf96cb0480b06530c",
+              "locator": {
+                "kind": "symbol",
+                "name": "ViewContinuation"
+              },
+              "path": "mcp/src/agents_remember/models/knowledge/view.py"
+            },
+            "kind": "code"
+          },
+          {
+            "anchor": {
+              "blob": "bc391045efe2a2c2210873a09c33e180ed9fdab0",
+              "content": "sha256:e295bef9c435ecafa63062e8c522ce3746b858de763a03f9d434ffd0b2abb9fc",
+              "locator": {
+                "kind": "symbol",
+                "name": "continuation_for"
+              },
+              "path": "mcp/src/agents_remember/models/knowledge/view.py"
+            },
+            "kind": "code"
+          },
+          {
+            "anchor": {
+              "blob": "bc391045efe2a2c2210873a09c33e180ed9fdab0",
+              "content": "sha256:7f93145bd948d6c405de9361898a7c2d374c9be1e5b917f32e633f05c16853e3",
+              "locator": {
+                "kind": "symbol",
+                "name": "require_continuation_snapshot"
+              },
+              "path": "mcp/src/agents_remember/models/knowledge/view.py"
+            },
+            "kind": "code"
+          },
+          {
+            "anchor": {
+              "blob": "37f41084b20d44aa6b734698e5cde4bd26d9ae63",
+              "content": "sha256:9faf4b6eabb16beee3f08f86c268a169ac0e8eeb31888bb7eacc7f35b279ee17",
+              "locator": {
+                "end": 63,
+                "kind": "line_range",
+                "start": 63
+              }
+            },
+            "kind": "code"
+          },
+          {
+            "anchor": {
+              "blob": "37f41084b20d44aa6b734698e5cde4bd26d9ae63",
+              "content": "sha256:ab32fcae377f2a8e737a877c0de24502840d07250326c7a7437b376066a8c407",
+              "locator": {
+                "end": 140,
+                "kind": "line_range",
+                "start": 140
+              }
+            },
+            "kind": "code"
+          },
+          {
+            "anchor": {
+              "blob": "bc391045efe2a2c2210873a09c33e180ed9fdab0",
+              "content": "sha256:cd6285f143a0c60181f1f433083e2b5e81ad85970be45852c0a55fbbe79294a3",
+              "locator": {
+                "end": 552,
+                "kind": "line_range",
+                "start": 552
+              },
+              "path": "mcp/src/agents_remember/models/knowledge/view.py"
+            },
+            "kind": "code"
+          }
+        ]
+      },
+      "outcome": "current-reference",
+      "basis": "Current finding and targets are read back from the citation authoring owner. Historical text target remains explicitly historical."
+    },
+    {
+      "originalSidecar": "onboarding/mcp/src/agents_remember/application/knowledge_views.py.json",
+      "originalReference": "9",
+      "originalTargetCount": 2,
+      "currentReference": {
+        "note": "The completeness scope and the payload that refuses rows-remaining-without-a-continuation.",
+        "targets": [
+          {
+            "anchor": {
+              "blob": "bc391045efe2a2c2210873a09c33e180ed9fdab0",
+              "content": "sha256:a82705f1540ce1ba058c083942e0fd9d1261f4b1a29ed167bb7b588a71c8cf83",
+              "locator": {
+                "kind": "symbol",
+                "name": "ViewScope"
+              },
+              "path": "mcp/src/agents_remember/models/knowledge/view.py"
+            },
+            "kind": "code"
+          },
+          {
+            "anchor": {
+              "blob": "bc391045efe2a2c2210873a09c33e180ed9fdab0",
+              "content": "sha256:aff482448a3b603ee7de02dc7042aa6cca6ad453dc35d25db526a57ad4803533",
+              "locator": {
+                "kind": "symbol",
+                "name": "ViewPayload"
+              },
+              "path": "mcp/src/agents_remember/models/knowledge/view.py"
+            },
+            "kind": "code"
+          }
+        ]
+      },
+      "outcome": "current-reference",
+      "basis": "Current finding and targets are read back from the citation authoring owner. Historical text target remains explicitly historical."
+    },
+    {
+      "originalSidecar": "onboarding/mcp/src/agents_remember/application/overview.json",
+      "originalReference": "144",
+      "originalTargetCount": 0,
+      "currentReference": null,
+      "outcome": "reference-retired",
+      "basis": "Original retired reference remains retired."
+    },
+    {
+      "originalSidecar": "onboarding/mcp/src/agents_remember/application/overview.json",
+      "originalReference": "48",
+      "originalTargetCount": 0,
+      "currentReference": null,
+      "outcome": "reference-retired",
+      "basis": "Original retired reference remains retired."
+    },
+    {
+      "originalSidecar": "onboarding/mcp/src/agents_remember/application/overview.json",
+      "originalReference": "90",
+      "originalTargetCount": 0,
+      "currentReference": null,
+      "outcome": "reference-retired",
+      "basis": "Original retired reference remains retired."
+    },
+    {
+      "originalSidecar": "onboarding/mcp/src/agents_remember/application/overview.json",
+      "originalReference": "97",
+      "originalTargetCount": 0,
+      "currentReference": null,
+      "outcome": "reference-retired",
+      "basis": "Original retired reference remains retired."
+    },
+    {
+      "originalSidecar": "onboarding/mcp/src/agents_remember/application/review_final_output_receipt.py.json",
+      "originalReference": "29",
+      "originalTargetCount": 2,
+      "currentReference": {
+        "note": "The old canonical published-dataset receipt channel was retired. Separately, ordinary published intent resolves a converted tree and its index; it is not a canonical receipt publication channel.",
+        "targets": [
+          {
+            "anchor": {
+              "blob": "bda6abac209b8bb555561b79169c66526d769437",
+              "content": "sha256:6918f2ee0d10bbb302b9a5825ac0309321a87cc5271af0ee5a2a11102e76be05",
+              "locator": {
+                "kind": "symbol",
+                "name": "resolve_published_intent"
+              },
+              "path": "mcp/src/agents_remember/application/published_intent.py"
+            },
+            "kind": "code"
+          }
+        ]
+      },
+      "outcome": "current-reference",
+      "basis": "Current finding and targets are read back from the citation authoring owner. Historical text target remains explicitly historical."
+    },
+    {
+      "originalSidecar": "onboarding/mcp/src/agents_remember/cli/knowledge_ingest.py.json",
+      "originalReference": "29",
+      "originalTargetCount": 0,
+      "currentReference": null,
+      "outcome": "reference-retired",
+      "basis": "Original retired reference remains retired."
+    },
+    {
+      "originalSidecar": "onboarding/mcp/src/agents_remember/memory/knowledge/connection.py.json",
+      "originalReference": "10",
+      "originalTargetCount": 1,
+      "currentReference": null,
+      "outcome": "reference-retired",
+      "basis": "The canonical graph reader/helper claim was retired; the connection card now cites its actual read-only/schema/transaction owners."
+    },
+    {
+      "originalSidecar": "onboarding/mcp/src/agents_remember/memory/knowledge/refusals.py.json",
+      "originalReference": "9",
+      "originalTargetCount": 0,
+      "currentReference": null,
+      "outcome": "reference-retired",
+      "basis": "Original retired reference remains retired."
+    },
+    {
+      "originalSidecar": "onboarding/mcp/src/agents_remember/memory/knowledge/store.py.json",
+      "originalReference": "14",
+      "originalTargetCount": 0,
+      "currentReference": null,
+      "outcome": "reference-retired",
+      "basis": "Original retired reference remains retired."
+    },
+    {
+      "originalSidecar": "onboarding/mcp/src/agents_remember/memory/overview.json",
+      "originalReference": "28",
+      "originalTargetCount": 2,
+      "currentReference": {
+        "note": "Current record owner marks retired classes unavailable.",
+        "targets": [
+          {
+            "anchor": {
+              "blob": "16e7c29f57b7814c6ee69615335aac14aa466a1e",
+              "content": "sha256:fbb49a9450e87dda67fc7e549d6b78f44d160884ef5a1886e724b900aab4b925",
+              "locator": {
+                "kind": "symbol",
+                "name": "review_records_for_resolution"
+              },
+              "path": "mcp/src/agents_remember/application/review_evidence_records.py"
+            },
+            "kind": "code"
+          },
+          {
+            "anchor": {
+              "blob": "16e7c29f57b7814c6ee69615335aac14aa466a1e",
+              "content": "sha256:5d14090b1a207dda5ca6f77a2cea408ca02c8f4509612a548bd14381371ef2eb",
+              "locator": {
+                "kind": "symbol",
+                "name": "_retired_channel"
+              },
+              "path": "mcp/src/agents_remember/application/review_evidence_records.py"
+            },
+            "kind": "code"
+          }
+        ]
+      },
+      "outcome": "current-reference",
+      "basis": "Current finding and targets are read back from the citation authoring owner. Historical text target remains explicitly historical."
+    },
+    {
+      "originalSidecar": "onboarding/mcp/src/agents_remember/models/knowledge/result.py.json",
+      "originalReference": "20",
+      "originalTargetCount": 0,
+      "currentReference": null,
+      "outcome": "reference-retired",
+      "basis": "Original retired reference remains retired."
+    },
+    {
+      "originalSidecar": "onboarding/mcp/src/agents_remember/models/knowledge/result.py.json",
+      "originalReference": "35",
+      "originalTargetCount": 0,
+      "currentReference": null,
+      "outcome": "reference-retired",
+      "basis": "Original retired reference remains retired."
+    },
+    {
+      "originalSidecar": "onboarding/mcp/src/agents_remember/models/knowledge/view.py.json",
+      "originalReference": "11",
+      "originalTargetCount": 6,
+      "currentReference": {
+        "note": "Ordering admits only the four declared inputs; the request validator refuses other spellings and order_candidates raises its named error rather than choosing a fallback.",
+        "targets": [
+          {
+            "anchor": {
+              "blob": "bc391045efe2a2c2210873a09c33e180ed9fdab0",
+              "content": "sha256:be517487a621be36c5658f26254c7aec6e480822b820e173cc1b14aae34e0282",
+              "locator": {
+                "kind": "symbol",
+                "name": "require_admitted_ordering_input"
+              }
+            },
+            "kind": "code"
+          },
+          {
+            "anchor": {
+              "blob": "85cc2936642a3ec37ee69966adc55c9877cb37e0",
+              "content": "sha256:8fcf10cdf738b916894cc21e2c4c0214ebf1e8530e93d25def5cdcce0741afce",
+              "locator": {
+                "kind": "symbol",
+                "name": "order_candidates"
+              },
+              "path": "mcp/src/agents_remember/application/knowledge_view_render.py"
+            },
+            "kind": "code"
+          }
+        ]
+      },
+      "outcome": "current-reference",
+      "basis": "Current finding and targets are read back from the citation authoring owner. Historical text target remains explicitly historical."
+    },
+    {
+      "originalSidecar": "onboarding/mcp/src/agents_remember/models/overview.json",
+      "originalReference": "199",
+      "originalTargetCount": 1,
+      "currentReference": {
+        "note": "**The six authored commands and the union they join, which is the operation's widened reach.**",
+        "targets": [
+          {
+            "kind": "unresolved",
+            "text": "mcp/src/agents_remember/models/knowledge/candidate.py:628-635"
+          }
+        ]
+      },
+      "outcome": "current-reference",
+      "basis": "Current finding and targets are read back from the citation authoring owner. Historical text target remains explicitly historical."
+    },
+    {
+      "originalSidecar": "onboarding/mcp/src/agents_remember/models/tools/knowledge_responses.py.json",
+      "originalReference": "32",
+      "originalTargetCount": 0,
+      "currentReference": null,
+      "outcome": "reference-retired",
+      "basis": "Original retired reference remains retired."
+    },
+    {
+      "originalSidecar": "onboarding/mcp/src/agents_remember/worktrees/overview.json",
+      "originalReference": "23",
+      "originalTargetCount": 0,
+      "currentReference": null,
+      "outcome": "reference-retired",
+      "basis": "Original retired reference remains retired."
+    },
+    {
+      "originalSidecar": "onboarding/mcp/tests/knowledge_fixture_test_support.py.json",
+      "originalReference": "8",
+      "originalTargetCount": 0,
+      "currentReference": null,
+      "outcome": "reference-retired",
+      "basis": "Original retired reference remains retired."
+    }
+  ]
+}

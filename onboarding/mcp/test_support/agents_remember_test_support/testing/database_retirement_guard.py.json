@@ -1,0 +1,115 @@
+{
+  "path": "mcp/test_support/agents_remember_test_support/testing/database_retirement_guard.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "cdf526e45b0dd29b743d061c7b228ce442faa255",
+        "content": "sha256:219b6a98cca7a4640744f2f372ca4b8c0fc53e237f6b61b25a44680e22da14ca",
+        "locator": {
+          "kind": "symbol",
+          "name": "_index_on_retired_name"
+        }
+      },
+      "id": "RLZ-07TQ33",
+      "invariant": "INV-MB73DH",
+      "origin": {
+        "handoffEntry": "R3 Finding 8",
+        "leaf": "260928-MIK-L26"
+      },
+      "rationale": "Prevents a permitted index opener from accepting a retired dataset name.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "cdf526e45b0dd29b743d061c7b228ce442faa255",
+        "content": "sha256:d611ab4d02269483a7cb4759d3d141536a3fda98f52bf02d5f28178d133b5fc9",
+        "locator": {
+          "kind": "symbol",
+          "name": "pytest_runtest_teardown"
+        }
+      },
+      "id": "RLZ-8EZ47K",
+      "invariant": "INV-C5TQ6Z",
+      "origin": {
+        "handoffEntry": "R3 note 14",
+        "leaf": "260928-MIK-L26"
+      },
+      "rationale": "This wrapper judges events and hook presence after test finalizers.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "cdf526e45b0dd29b743d061c7b228ce442faa255",
+        "content": "sha256:219b6a98cca7a4640744f2f372ca4b8c0fc53e237f6b61b25a44680e22da14ca",
+        "locator": {
+          "kind": "symbol",
+          "name": "_index_on_retired_name"
+        }
+      },
+      "id": "RLZ-9SRJR8",
+      "invariant": "INV-GBH3RH",
+      "origin": {
+        "handoffEntry": "R3 finding 8",
+        "leaf": "260928-MIK-L26"
+      },
+      "rationale": "This check prevents a permitted index opener from accepting a retired dataset name.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "cdf526e45b0dd29b743d061c7b228ce442faa255",
+        "content": "sha256:d611ab4d02269483a7cb4759d3d141536a3fda98f52bf02d5f28178d133b5fc9",
+        "locator": {
+          "kind": "symbol",
+          "name": "pytest_runtest_teardown"
+        }
+      },
+      "id": "RLZ-C3YSK7",
+      "invariant": "INV-0RA5RQ",
+      "origin": {
+        "handoffEntry": "R3 Note 14",
+        "leaf": "260928-MIK-L26"
+      },
+      "rationale": "Judges events and hook presence after test finalizers.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "cdf526e45b0dd29b743d061c7b228ce442faa255",
+        "content": "sha256:b1146ee2b07b064fad57ca3c0c6bb3bed224fe92acb7b6c9a8d79d36d6130dd1",
+        "locator": {
+          "kind": "symbol",
+          "name": "_allowed"
+        }
+      },
+      "id": "RLZ-F4AENX",
+      "invariant": "INV-SY5Z3P",
+      "origin": {
+        "handoffEntry": "R3 Finding 7",
+        "leaf": "260928-MIK-L26"
+      },
+      "rationale": "Distinguishes unowned connections and file operations from coverage connections.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "cdf526e45b0dd29b743d061c7b228ce442faa255",
+        "content": "sha256:b1146ee2b07b064fad57ca3c0c6bb3bed224fe92acb7b6c9a8d79d36d6130dd1",
+        "locator": {
+          "kind": "symbol",
+          "name": "_allowed"
+        }
+      },
+      "id": "RLZ-JED6PW",
+      "invariant": "INV-54J62R",
+      "origin": {
+        "handoffEntry": "R3 finding 7",
+        "leaf": "260928-MIK-L26"
+      },
+      "rationale": "This decision distinguishes unowned connections and file operations from coverage connections.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

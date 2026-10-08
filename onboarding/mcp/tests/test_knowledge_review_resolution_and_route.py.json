@@ -2,150 +2,12 @@
   "path": "mcp/tests/test_knowledge_review_resolution_and_route.py",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "The module's own statement of the boundary it measures, and the import of the surface helpers it reuses.\n\nAnchor: \"The Intent Reviewer surface's resolution and transport: the pair it serves and how it refuses.\"; \"from test_knowledge_review_surface import (\"",
+    "13": {
+      "note": "`test_the_candidate_is_resolved_from_task_context_and_never_from_a_browser_chosen_path` owns the current boundary described above.",
       "targets": [
         {
           "anchor": {
-            "blob": "67d7f42f3346e5e5611f092da043a170523f933a",
-            "content": "sha256:40cd8a3fdbed4da368f3dc06b633cdc38150e800adcb8162c7d3c41455f4aa08",
-            "locator": {
-              "end": 42,
-              "kind": "line_range",
-              "start": 1
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "10": {
-      "note": "**The loader case: an unresolvable candidate yields no fabricated assessment, and its entry list refuses with the review's own code rather than answering empty.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "67d7f42f3346e5e5611f092da043a170523f933a",
-            "content": "sha256:d14cd6b445dcc0e65d14d451151dadb3b00ee7d4015fac101ac4cff58f2ecb4d",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_the_published_assessment_loader_returns_nothing_for_an_unresolvable_candidate"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "11": {
-      "note": "The unit-regression lane row, beside its sibling's.\n\nAnchor: \"mcp/tests/test_knowledge_review_resolution_and_route.py\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "ad32196677d5800992fe4294b439f3e28af150ec",
-            "content": "sha256:c6ed336e675c9b0ea21bce0af57d9629a65289c35d2c34e0da466207c712cde5",
-            "locator": {
-              "end": 162,
-              "kind": "line_range",
-              "start": 162
-            },
-            "path": "mcp/tests/test-evidence-lanes.toml"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "12": {
-      "note": "The two support artifacts whose exact `consumers` lists declare this module (at `:1447` and `:1503`).\n\nAnchor: \"path = \\\"mcp/tests/diff_scope_test_support.py\\\"\"; \"path = \\\"mcp/tests/read_scope_test_support.py\\\"\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
-            "content": "sha256:10376b5b780b80146f40765243adc592b7964790854d13302bee55d14cefd9b4",
-            "locator": {
-              "end": 1470,
-              "kind": "line_range",
-              "start": 1425
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
-            "content": "sha256:e7118f76415412eb4a1bebac16ee47221367526e65f12eefdc33592700c9008d",
-            "locator": {
-              "end": 1529,
-              "kind": "line_range",
-              "start": 1473
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "2": {
-      "note": "The unit marker and the per-case fixture.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "67d7f42f3346e5e5611f092da043a170523f933a",
-            "content": "sha256:0753257dc2b79f881f380b8681aa5ded3b4e356b794086776ece0c5b7a215bb4",
-            "locator": {
-              "kind": "symbol",
-              "name": "pytestmark"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "67d7f42f3346e5e5611f092da043a170523f933a",
-            "content": "sha256:569502bf735b86e9d8cd035fd0e1c66865de363e3f3ada6a426801b336a9f01b",
-            "locator": {
-              "kind": "symbol",
-              "name": "fixture"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "3": {
-      "note": "The surface module's config that names no real root, and the render helper that puts the previous identity on the request.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "02f29acb662ca678a1c2f6997c6c88f631ec55ca",
-            "content": "sha256:b3290840b99d08ae6a117d1c7919fb91f00139d0bccaded62a144e46cd57c223",
-            "locator": {
-              "kind": "symbol",
-              "name": "review_config"
-            },
-            "path": "mcp/tests/test_knowledge_review_surface.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "02f29acb662ca678a1c2f6997c6c88f631ec55ca",
-            "content": "sha256:ad3964881ac8149dd2c45ddc283849855f22c28d1fd4ad022fa96889f004a18a",
-            "locator": {
-              "kind": "symbol",
-              "name": "render"
-            },
-            "path": "mcp/tests/test_knowledge_review_surface.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "4": {
-      "note": "The two resolution cases: the candidate comes from task context rather than a browser-chosen path, and an absent dataset refuses by name.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "67d7f42f3346e5e5611f092da043a170523f933a",
+            "blob": "8f853c4002c1d8c1779c4a72322db46fe09e058f",
             "content": "sha256:56299469c3e2434944f5157681e18984be911b07bc2e0a9f54fe35a9082b58da",
             "locator": {
               "kind": "symbol",
@@ -153,96 +15,31 @@
             }
           },
           "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "67d7f42f3346e5e5611f092da043a170523f933a",
-            "content": "sha256:9c07522003cc79886b73906cabb1c52ebcb0c0d366e2f947698688acb73af504",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_an_absent_candidate_dataset_refuses_by_name_rather_than_substituting_one"
-            }
-          },
-          "kind": "test"
         }
       ]
     },
-    "5": {
-      "note": "**The absent before half refuses by name and the refused review creates nothing: the sibling leaf `260921-ICR-L5`'s case beside the absent-candidate one above, differing in *which* half is missing — the two halves are different facts and have different next actions.**",
+    "14": {
+      "note": "`test_the_entry_route_refuses_a_damaged_before_half_instead_of_raising` owns the current boundary described above.",
       "targets": [
         {
           "anchor": {
-            "blob": "67d7f42f3346e5e5611f092da043a170523f933a",
-            "content": "sha256:96eac29a5eb0201e3cf3c107bcf5ae1414ca1ff73f3cf73c07bdfb55ef7a2ffd",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_an_absent_baseline_half_refuses_by_name_rather_than_substituting_an_empty_one"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "6": {
-      "note": "**The corrupt before half is a typed refusal rather than an `apsw.NotADBError` raised from inside the read, and the refusal names the baseline rather than the candidate — only one of the two sides can be repaired by authoring knowledge again.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "67d7f42f3346e5e5611f092da043a170523f933a",
-            "content": "sha256:c516f5b1c2ffc7c0fd1c5e7acb5cf988860161a76cc2e505b525aaf1ddc2915d",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_before_side_that_is_present_but_unreadable_refuses_by_name"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "7": {
-      "note": "**The entry route states the pair refusals before any subject is compared, proved against the damage rather than against the fixture: the same route that refuses the corrupted side returns an entry list once the dataset that belongs there is written back.** This is the route `_entry_route_config` builds a real task context for, because the route resolves its pair from canonical task context and the browser never names a dataset.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "67d7f42f3346e5e5611f092da043a170523f933a",
-            "content": "sha256:5e465a3acf376f5e5cdbd1e4a715d2ae8db2e631f1d89afa5632d88de540c1e1",
+            "blob": "8f853c4002c1d8c1779c4a72322db46fe09e058f",
+            "content": "sha256:c505791bb2ec46a640c4985ecb40eacd57c968ca109f4afba94bef7df9318883",
             "locator": {
               "kind": "symbol",
               "name": "test_the_entry_route_refuses_a_damaged_before_half_instead_of_raising"
             }
           },
           "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "67d7f42f3346e5e5611f092da043a170523f933a",
-            "content": "sha256:1d5353fb2ea4dcc75813d7955d29bb31615ea3def1de39283e7be156faff70a3",
-            "locator": {
-              "kind": "symbol",
-              "name": "_entry_route_config"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "67d7f42f3346e5e5611f092da043a170523f933a",
-            "content": "sha256:a45d742660c24d39fe6ffe3a14229aab4f174eb642ae479b7374b0154b83be5c",
-            "locator": {
-              "kind": "symbol",
-              "name": "ENTRY_MASTER"
-            }
-          },
-          "kind": "test"
         }
       ]
     },
-    "8": {
-      "note": "The two transport cases: exactly the two reviewable selector kinds are admitted and every other spelling refused, and the route serves the typed result and refuses by name with no adapter.",
+    "15": {
+      "note": "`test_the_transport_admits_exactly_the_two_reviewable_selector_kinds` owns the current boundary described above.",
       "targets": [
         {
           "anchor": {
-            "blob": "67d7f42f3346e5e5611f092da043a170523f933a",
+            "blob": "8f853c4002c1d8c1779c4a72322db46fe09e058f",
             "content": "sha256:d86784400b4e517a756a4981dd0f2dc9c26fceca88faf2b966d6387c599bb099",
             "locator": {
               "kind": "symbol",
@@ -250,26 +47,15 @@
             }
           },
           "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "67d7f42f3346e5e5611f092da043a170523f933a",
-            "content": "sha256:fd1d43d8487c049be030869272d61fdda97cd80e010cdd967f758db426fa1740",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_the_route_serves_the_typed_result_and_refuses_by_name_with_no_adapter"
-            }
-          },
-          "kind": "test"
         }
       ]
     },
-    "9": {
-      "note": "**The previous identity driven through every hop: carried by a refresh to the port and compared, absent on a plain read, and refused by name when malformed.**",
+    "16": {
+      "note": "`test_the_previous_binding_identity_reaches_the_port_and_is_compared_against_the_read` owns the current boundary described above.",
       "targets": [
         {
           "anchor": {
-            "blob": "67d7f42f3346e5e5611f092da043a170523f933a",
+            "blob": "8f853c4002c1d8c1779c4a72322db46fe09e058f",
             "content": "sha256:8fe120d7bb051aba2c92f4910cbb0b9d7d9c0c348620cb4b3dc916fa5b941bc2",
             "locator": {
               "kind": "symbol",

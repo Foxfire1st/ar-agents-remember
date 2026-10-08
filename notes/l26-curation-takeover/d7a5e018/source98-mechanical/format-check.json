@@ -1,0 +1,14 @@
+{
+  "argv": [
+    "/home/firefox/projects/agents-remember/mcp/.venv/bin/python",
+    "-m",
+    "agents_remember.cli",
+    "knowledge-format",
+    "--check",
+    "/home/firefox/projects/ar-coordination/worktrees/agents-remember/260928-mik-l26-ar/memory-260928-mik-l26/onboarding/mcp/tests/test_role_instruction_wording.py.json",
+    "/home/firefox/projects/ar-coordination/worktrees/agents-remember/260928-mik-l26-ar/memory-260928-mik-l26/onboarding/skills/l-01-agent-lifecycles/composition-manifest.json.json"
+  ],
+  "exitCode": 0,
+  "stdout": "",
+  "stderr": ""
+}

@@ -1,0 +1,289 @@
+{
+  "document": "overview.md",
+  "preview": {
+    "ok": true,
+    "tokens": 1582,
+    "tokenizer": "tiktoken:o200k_base",
+    "tokenCountExact": true,
+    "operation": "citation_fix",
+    "repoId": "agents-remember",
+    "dryRun": true,
+    "servingBuild": {
+      "version": "3.0.0rc8",
+      "bootedAt": "2026-10-08T11:56:00.022030+00:00",
+      "sourceDigest": "sha256:6659adb8f968f82c8365bc031220a34c1984276112b5cb1dfd5e1c5db841d237",
+      "pythonExecutable": "/home/firefox/.local/share/agents-remember/python/cpython-3.14.8/bin/python3.14",
+      "packageRoot": "/home/firefox/projects/agents-remember/mcp/src/agents_remember",
+      "commit": "3f682987",
+      "dashboardBuild": "cb442492c4373d059462c5a2ad7715f3961bab6f21c1181b2ecf2674b768b4a6"
+    },
+    "status": "converted",
+    "refreshedAnchors": 3,
+    "rewrittenSidecars": [
+      "onboarding/overview.json"
+    ],
+    "unreadableSidecars": [],
+    "stale": [
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/overview.json",
+        "field": "references.102.targets.0",
+        "target": "mcp/src/agents_remember/application/review_tree_comparison.py",
+        "state": "stale",
+        "message": "onboarding/overview.json: references.102.targets.0: reference target mcp/src/agents_remember/application/review_tree_comparison.py is stale; refresh it through the onboarding gate (MIK-R30)"
+      },
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/overview.json",
+        "field": "references.104.targets.0",
+        "target": "mcp/src/agents_remember/cli/knowledge_write_route.py",
+        "state": "stale",
+        "message": "onboarding/overview.json: references.104.targets.0: reference target mcp/src/agents_remember/cli/knowledge_write_route.py is stale; refresh it through the onboarding gate (MIK-R30)"
+      },
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/overview.json",
+        "field": "references.139.targets.0",
+        "target": "mcp/src/agents_remember/cli/__main__.py",
+        "state": "stale",
+        "message": "onboarding/overview.json: references.139.targets.0: reference target mcp/src/agents_remember/cli/__main__.py is stale; refresh it through the onboarding gate (MIK-R30)"
+      },
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/overview.json",
+        "field": "references.14.targets.0",
+        "target": "skills/c-04-retrieval-strategy-router/SKILL.md",
+        "state": "stale",
+        "message": "onboarding/overview.json: references.14.targets.0: reference target skills/c-04-retrieval-strategy-router/SKILL.md is stale; refresh it through the onboarding gate (MIK-R30)"
+      },
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/overview.json",
+        "field": "references.145.targets.1",
+        "target": "mcp/src/agents_remember/serving/paseo/paseo_start.py",
+        "state": "stale",
+        "message": "onboarding/overview.json: references.145.targets.1: reference target mcp/src/agents_remember/serving/paseo/paseo_start.py is stale; refresh it through the onboarding gate (MIK-R30)"
+      },
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/overview.json",
+        "field": "references.21.targets.0",
+        "target": "skills/l-01-agent-lifecycles/templates/curator-handoff-list.md",
+        "state": "stale",
+        "message": "onboarding/overview.json: references.21.targets.0: reference target skills/l-01-agent-lifecycles/templates/curator-handoff-list.md is stale; refresh it through the onboarding gate (MIK-R30)"
+      },
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/overview.json",
+        "field": "references.25.targets.0",
+        "target": "mcp/src/agents_remember/application/published_intent.py",
+        "state": "stale",
+        "message": "onboarding/overview.json: references.25.targets.0: reference target mcp/src/agents_remember/application/published_intent.py is stale; refresh it through the onboarding gate (MIK-R30)"
+      },
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/overview.json",
+        "field": "references.46.targets.2",
+        "target": "mcp/src/agents_remember/application/memory_quality/controller.py",
+        "state": "stale",
+        "message": "onboarding/overview.json: references.46.targets.2: reference target mcp/src/agents_remember/application/memory_quality/controller.py is stale; refresh it through the onboarding gate (MIK-R30)"
+      },
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/overview.json",
+        "field": "references.51.targets.1",
+        "target": "mcp/src/agents_remember/worktrees/modules/closeout_external.py",
+        "state": "stale",
+        "message": "onboarding/overview.json: references.51.targets.1: reference target mcp/src/agents_remember/worktrees/modules/closeout_external.py is stale; refresh it through the onboarding gate (MIK-R30)"
+      },
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/overview.json",
+        "field": "references.68.targets.0",
+        "target": "skills/l-01-agent-lifecycles/roles/curator.md",
+        "state": "stale",
+        "message": "onboarding/overview.json: references.68.targets.0: reference target skills/l-01-agent-lifecycles/roles/curator.md is stale; refresh it through the onboarding gate (MIK-R30)"
+      },
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/overview.json",
+        "field": "references.72.targets.0",
+        "target": "mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md",
+        "state": "stale",
+        "message": "onboarding/overview.json: references.72.targets.0: reference target mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md is stale; refresh it through the onboarding gate (MIK-R30)"
+      },
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/overview.json",
+        "field": "references.8.targets.0",
+        "target": "skills/c-04-retrieval-strategy-router/SKILL.md",
+        "state": "stale",
+        "message": "onboarding/overview.json: references.8.targets.0: reference target skills/c-04-retrieval-strategy-router/SKILL.md is stale; refresh it through the onboarding gate (MIK-R30)"
+      },
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/overview.json",
+        "field": "references.88.targets.0",
+        "target": "skills/c-12-closeout/SKILL.md",
+        "state": "stale",
+        "message": "onboarding/overview.json: references.88.targets.0: reference target skills/c-12-closeout/SKILL.md is stale; refresh it through the onboarding gate (MIK-R30)"
+      }
+    ],
+    "authoring": {
+      "dryRun": true,
+      "authoredReferences": 0,
+      "reauthoredReferences": 0,
+      "removedReferences": 0,
+      "authoredCards": [],
+      "createdSidecars": [],
+      "unresolvedTargets": [],
+      "refused": [],
+      "authoredCardsCount": 0,
+      "createdSidecarsCount": 0,
+      "unresolvedTargetsCount": 0,
+      "refusedCount": 0
+    },
+    "staleCount": 13,
+    "rewrittenSidecarsCount": 1,
+    "unreadableSidecarsCount": 0
+  },
+  "apply": {
+    "ok": true,
+    "tokens": 1475,
+    "tokenizer": "tiktoken:o200k_base",
+    "tokenCountExact": true,
+    "operation": "citation_fix",
+    "repoId": "agents-remember",
+    "dryRun": false,
+    "servingBuild": {
+      "version": "3.0.0rc8",
+      "bootedAt": "2026-10-08T11:56:00.022030+00:00",
+      "sourceDigest": "sha256:6659adb8f968f82c8365bc031220a34c1984276112b5cb1dfd5e1c5db841d237",
+      "pythonExecutable": "/home/firefox/.local/share/agents-remember/python/cpython-3.14.8/bin/python3.14",
+      "packageRoot": "/home/firefox/projects/agents-remember/mcp/src/agents_remember",
+      "commit": "3f682987",
+      "dashboardBuild": "cb442492c4373d059462c5a2ad7715f3961bab6f21c1181b2ecf2674b768b4a6"
+    },
+    "status": "converted",
+    "refreshedAnchors": 3,
+    "rewrittenSidecars": [
+      "onboarding/overview.json"
+    ],
+    "unreadableSidecars": [],
+    "stale": [
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/overview.json",
+        "field": "references.102.targets.0",
+        "target": "mcp/src/agents_remember/application/review_tree_comparison.py",
+        "state": "stale",
+        "message": "onboarding/overview.json: references.102.targets.0: reference target mcp/src/agents_remember/application/review_tree_comparison.py is stale; refresh it through the onboarding gate (MIK-R30)"
+      },
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/overview.json",
+        "field": "references.104.targets.0",
+        "target": "mcp/src/agents_remember/cli/knowledge_write_route.py",
+        "state": "stale",
+        "message": "onboarding/overview.json: references.104.targets.0: reference target mcp/src/agents_remember/cli/knowledge_write_route.py is stale; refresh it through the onboarding gate (MIK-R30)"
+      },
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/overview.json",
+        "field": "references.139.targets.0",
+        "target": "mcp/src/agents_remember/cli/__main__.py",
+        "state": "stale",
+        "message": "onboarding/overview.json: references.139.targets.0: reference target mcp/src/agents_remember/cli/__main__.py is stale; refresh it through the onboarding gate (MIK-R30)"
+      },
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/overview.json",
+        "field": "references.14.targets.0",
+        "target": "skills/c-04-retrieval-strategy-router/SKILL.md",
+        "state": "stale",
+        "message": "onboarding/overview.json: references.14.targets.0: reference target skills/c-04-retrieval-strategy-router/SKILL.md is stale; refresh it through the onboarding gate (MIK-R30)"
+      },
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/overview.json",
+        "field": "references.145.targets.1",
+        "target": "mcp/src/agents_remember/serving/paseo/paseo_start.py",
+        "state": "stale",
+        "message": "onboarding/overview.json: references.145.targets.1: reference target mcp/src/agents_remember/serving/paseo/paseo_start.py is stale; refresh it through the onboarding gate (MIK-R30)"
+      },
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/overview.json",
+        "field": "references.21.targets.0",
+        "target": "skills/l-01-agent-lifecycles/templates/curator-handoff-list.md",
+        "state": "stale",
+        "message": "onboarding/overview.json: references.21.targets.0: reference target skills/l-01-agent-lifecycles/templates/curator-handoff-list.md is stale; refresh it through the onboarding gate (MIK-R30)"
+      },
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/overview.json",
+        "field": "references.25.targets.0",
+        "target": "mcp/src/agents_remember/application/published_intent.py",
+        "state": "stale",
+        "message": "onboarding/overview.json: references.25.targets.0: reference target mcp/src/agents_remember/application/published_intent.py is stale; refresh it through the onboarding gate (MIK-R30)"
+      },
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/overview.json",
+        "field": "references.46.targets.2",
+        "target": "mcp/src/agents_remember/application/memory_quality/controller.py",
+        "state": "stale",
+        "message": "onboarding/overview.json: references.46.targets.2: reference target mcp/src/agents_remember/application/memory_quality/controller.py is stale; refresh it through the onboarding gate (MIK-R30)"
+      },
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/overview.json",
+        "field": "references.51.targets.1",
+        "target": "mcp/src/agents_remember/worktrees/modules/closeout_external.py",
+        "state": "stale",
+        "message": "onboarding/overview.json: references.51.targets.1: reference target mcp/src/agents_remember/worktrees/modules/closeout_external.py is stale; refresh it through the onboarding gate (MIK-R30)"
+      },
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/overview.json",
+        "field": "references.68.targets.0",
+        "target": "skills/l-01-agent-lifecycles/roles/curator.md",
+        "state": "stale",
+        "message": "onboarding/overview.json: references.68.targets.0: reference target skills/l-01-agent-lifecycles/roles/curator.md is stale; refresh it through the onboarding gate (MIK-R30)"
+      },
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/overview.json",
+        "field": "references.8.targets.0",
+        "target": "skills/c-04-retrieval-strategy-router/SKILL.md",
+        "state": "stale",
+        "message": "onboarding/overview.json: references.8.targets.0: reference target skills/c-04-retrieval-strategy-router/SKILL.md is stale; refresh it through the onboarding gate (MIK-R30)"
+      },
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/overview.json",
+        "field": "references.88.targets.0",
+        "target": "skills/c-12-closeout/SKILL.md",
+        "state": "stale",
+        "message": "onboarding/overview.json: references.88.targets.0: reference target skills/c-12-closeout/SKILL.md is stale; refresh it through the onboarding gate (MIK-R30)"
+      }
+    ],
+    "authoring": {
+      "dryRun": false,
+      "authoredReferences": 0,
+      "reauthoredReferences": 0,
+      "removedReferences": 0,
+      "authoredCards": [],
+      "createdSidecars": [],
+      "unresolvedTargets": [],
+      "refused": [],
+      "authoredCardsCount": 0,
+      "createdSidecarsCount": 0,
+      "unresolvedTargetsCount": 0,
+      "refusedCount": 0
+    },
+    "staleCount": 12,
+    "rewrittenSidecarsCount": 1,
+    "unreadableSidecarsCount": 0
+  }
+}

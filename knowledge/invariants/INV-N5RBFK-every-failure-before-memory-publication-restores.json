@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "A refused publication that leaves the history closing or ignore preparation behind would dirty the memory tree for the next attempt and could commit them later."
+  },
+  "applicability": "Every failure between preparation and memory publication in ordinary closeout.",
+  "conditions": [
+    "The route owns the history closing and the ignore preparation it restores."
+  ],
+  "exclusions": [
+    "Concurrent edits a foreign writer made while the route held the lock; those are preserved, not restored over."
+  ],
+  "id": "INV-N5RBFK",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "test_transaction_only_worktree_delivery.py::test_the_publication_is_bound_to_the_branch_and_the_head_the_closeout_admitted; F03-restoration.log; real-out/snapshot-*.json"
+      ],
+      "path": "handoff-stage1.json"
+    },
+    "handoffEntry": "R3 finding 3",
+    "leaf": "260928-MIK-L26",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Every failure before memory publication restores route-owned history and ignore preparations while preserving concurrent content.",
+  "status": "proposed",
+  "supersedes": []
+}

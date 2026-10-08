@@ -2,93 +2,45 @@
   "path": "mcp/tests/test_read_ar_files.py",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "Range request returns exact slice",
+    "21": {
+      "note": "`test_the_ordinary_read_returns_source_and_the_selected_tree_index` supplies the current fixture or assertion described above.",
       "targets": [
         {
           "anchor": {
-            "blob": "f3775ac25c5e32bb5efe59b7179717d7549271a7",
-            "content": "sha256:264b88cc08c49c0fbe2623e8818cbf5fd0256d5bd55de195c0bf80308216ab0d",
+            "blob": "7e43d2693854c899b2a500728aa51e2d2676c2d1",
+            "content": "sha256:70a42142e1272a785b0ad9e26e602f059a48a4b9d749a05d8ec1c34c46cea993",
             "locator": {
               "kind": "symbol",
-              "name": "test_range_request_returns_exact_slice"
+              "name": "test_the_ordinary_read_returns_source_and_the_selected_tree_index"
             }
           },
           "kind": "test"
         }
       ]
     },
-    "10": {
-      "note": "Refresh forces reserve",
+    "22": {
+      "note": "`test_an_unconverted_root_cannot_open_a_legacy_database` supplies the current fixture or assertion described above.",
       "targets": [
         {
           "anchor": {
-            "blob": "f3775ac25c5e32bb5efe59b7179717d7549271a7",
-            "content": "sha256:e4be123e4bac7a222dd9c92283d0cf0bf92854bf39e6fda948a36bc9e273b1d6",
+            "blob": "7e43d2693854c899b2a500728aa51e2d2676c2d1",
+            "content": "sha256:ee617b986dc5561eef4d7c9ed4c2369e41e6800118a3b787afa156371a2d7438",
             "locator": {
               "kind": "symbol",
-              "name": "test_refresh_forces_reserve"
+              "name": "test_an_unconverted_root_cannot_open_a_legacy_database"
             }
           },
           "kind": "test"
         }
       ]
     },
-    "11": {
-      "note": "Compact marker resets served",
+    "23": {
+      "note": "`test_the_carrier_uses_the_field_spellings_the_payload_actually_returns` supplies the current fixture or assertion described above.",
       "targets": [
         {
           "anchor": {
-            "blob": "f3775ac25c5e32bb5efe59b7179717d7549271a7",
-            "content": "sha256:b74048c81a8790a36f49b59215c59ac6c10c56b29a43dddfb80923e013d85db5",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_compact_marker_resets_served"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "12": {
-      "note": "Payload reads committed source",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f3775ac25c5e32bb5efe59b7179717d7549271a7",
-            "content": "sha256:af38b6cbae9812fedfef35006109761249b8924052fc0105bf79f2930b310eb8",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_payload_reads_committed_source"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "13": {
-      "note": "**The published-intent half's headline case: the ordinary read returns the repository's published intent at its exact identities, and the source bytes ride in the same payload.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f3775ac25c5e32bb5efe59b7179717d7549271a7",
-            "content": "sha256:b308d52b4802de13375700d8fc6d9bdab663bc534b365983b08ea9259f5df69d",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_the_ordinary_read_returns_the_published_intent_at_its_exact_identities"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "14": {
-      "note": "**The carrier-parity case: the payload's real field spellings are derived from a real page, and the camelCase variants are rejected.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f3775ac25c5e32bb5efe59b7179717d7549271a7",
-            "content": "sha256:65834d3f907eca8375c6601717d851557c5ff09ec2a380aec51e31208717bc87",
+            "blob": "7e43d2693854c899b2a500728aa51e2d2676c2d1",
+            "content": "sha256:0448f524c5e5be9fed1ea50d293d98fcb32086c3d0da27aba7e4d9fbcd3514c7",
             "locator": {
               "kind": "symbol",
               "name": "test_the_carrier_uses_the_field_spellings_the_payload_actually_returns"
@@ -98,346 +50,16 @@
         }
       ]
     },
-    "15": {
-      "note": "**The four named absences and refusals: nothing published, bytes that are not a dataset, a directory at the publication path, and a seed that is not a typed seed.**",
+    "24": {
+      "note": "`test_the_mounted_route_returns_no_knowledge_section_for_unconverted_memory` supplies the current fixture or assertion described above.",
       "targets": [
         {
           "anchor": {
-            "blob": "f3775ac25c5e32bb5efe59b7179717d7549271a7",
-            "content": "sha256:49850fffbf29a3d4bbda2f3cb864baa593cc0360da1601184951db73ae8175ca",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_repository_that_publishes_nothing_reports_not_recorded"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "f3775ac25c5e32bb5efe59b7179717d7549271a7",
-            "content": "sha256:aa1aa6657f1c3b60aa1886112ca9408f3aec57a3af5e5ab807e443831eb91634",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_dataset_that_is_not_a_dataset_names_the_failed_binding"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "f3775ac25c5e32bb5efe59b7179717d7549271a7",
-            "content": "sha256:433cd26b40fba4c350f1c5ca92af7c76480a44e332ef6cccc31d211a9a3adb04",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_directory_at_the_publication_path_is_not_reported_as_nothing_recorded"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "f3775ac25c5e32bb5efe59b7179717d7549271a7",
-            "content": "sha256:65f2f121ba1030348ca5952302bf81041dd0bdcdd94dadb3a40edd33848bf383",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_seed_that_is_not_a_typed_seed_is_refused_rather_than_raising"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "16": {
-      "note": "**The four selection and identity refusals: another repository's dataset, a path the snapshot records nothing about, an identity the snapshot does not hold, and a path no recorded anchor could carry.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f3775ac25c5e32bb5efe59b7179717d7549271a7",
-            "content": "sha256:ab6fe2630eb9e90d73a76f179b620fd6647e52f1fe2f38c32ddd125194d2173b",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_dataset_bound_to_another_repository_is_never_silently_read"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "f3775ac25c5e32bb5efe59b7179717d7549271a7",
-            "content": "sha256:ad49d9c03adbc57945ae461b090a856956947fdf1dcd461acce62473ba48468c",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_path_the_snapshot_records_nothing_about_is_a_named_absence"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "f3775ac25c5e32bb5efe59b7179717d7549271a7",
-            "content": "sha256:5aa2f47a2147101fe78e573b4b567f72ea23f15f8539cc7625b8afd486af9dac",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_an_identity_the_snapshot_does_not_hold_is_a_named_absence"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "f3775ac25c5e32bb5efe59b7179717d7549271a7",
-            "content": "sha256:926c69e721a93454cd7dc2dbbe60d3a398281966771e14556a8d1a3b4e5f831f",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_path_no_recorded_anchor_could_carry_is_refused_as_a_seed"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "17": {
-      "note": "**The source pair and the identity seed: the resolved pair is what recorded anchors are observed against, and an identity-seeded page carries the exact retained revisions.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f3775ac25c5e32bb5efe59b7179717d7549271a7",
-            "content": "sha256:bd68cf8ba8b488a7e00b2ccaaef2afea6e977f5b4f6403d61246d65ddb55d5f6",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_the_resolved_source_pair_is_what_recorded_anchors_are_observed_against"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "f3775ac25c5e32bb5efe59b7179717d7549271a7",
-            "content": "sha256:8da90b420171c552f96613e7715e6471b9f2bbb7e48024c8978e0df52cbe83b1",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_an_identity_seeded_page_carries_exact_retained_revisions"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "f3775ac25c5e32bb5efe59b7179717d7549271a7",
-            "content": "sha256:21f1de82e4c1e5b32c94edfb6a466f4c8b7ac8b777cd773b7a195e845dcb8238",
-            "locator": {
-              "kind": "symbol",
-              "name": "_identity_seeded_page"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "18": {
-      "note": "**The mounted route, which is the call an agent actually makes: on unconverted memory it returns no knowledge section and names the legacy format, with and without a database.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f3775ac25c5e32bb5efe59b7179717d7549271a7",
+            "blob": "7e43d2693854c899b2a500728aa51e2d2676c2d1",
             "content": "sha256:434c9110600d5342cf7ef4de83705f6b672435e7ffa9912d9a1f1564ed47014a",
             "locator": {
               "kind": "symbol",
               "name": "test_the_mounted_route_returns_no_knowledge_section_for_unconverted_memory"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "f3775ac25c5e32bb5efe59b7179717d7549271a7",
-            "content": "sha256:2e11236d5d5a66eebb793a2b5fa9f5ab0c50a9dc665a2e60651d00180f6ec9ee",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_the_mounted_route_names_the_legacy_format_before_anything_is_published"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "19": {
-      "note": "The route-class read helper asserts `legacy-format`, then measures the database block directly.\n\nAnchor: `_read`; `published_intent_block`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f3775ac25c5e32bb5efe59b7179717d7549271a7",
-            "content": "sha256:f5753d2b757e37be6d65305bdd5d98b3b50a6e182fce0c3e32be7f4bf196b274",
-            "locator": {
-              "end": 457,
-              "kind": "line_range",
-              "start": 447
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "2": {
-      "note": "Full read is not truncated",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f3775ac25c5e32bb5efe59b7179717d7549271a7",
-            "content": "sha256:71ad46025630d9c65fb2582f04c2506fc0691f522c51d4a0852e72a9af86c7e4",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_full_read_is_not_truncated"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "20": {
-      "note": "The published-intent fixtures, including the `_selection()` narrowing helper the type-checked call sites need.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f3775ac25c5e32bb5efe59b7179717d7549271a7",
-            "content": "sha256:db2892952341e6c30fd1fc49ad3aff78c3ee034440f23372c32625bceb91bdfa",
-            "locator": {
-              "kind": "symbol",
-              "name": "PublishedIntentRouteTests"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "f3775ac25c5e32bb5efe59b7179717d7549271a7",
-            "content": "sha256:8150a43453204249ed234c3434f4599286859d1500ddc8cde6838efcd7f8259f",
-            "locator": {
-              "kind": "symbol",
-              "name": "_selection"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "f3775ac25c5e32bb5efe59b7179717d7549271a7",
-            "content": "sha256:9581fa24e4bca465feebcae47ae7a4bb43ff5b69db37bb451c70b553a525380f",
-            "locator": {
-              "kind": "symbol",
-              "name": "PublishedIntentMountedRouteTests"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "3": {
-      "note": "Binary source is omitted",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f3775ac25c5e32bb5efe59b7179717d7549271a7",
-            "content": "sha256:368d96285dc34f2fa8b996f6c2b5a9719a3778d4d39d701c08bdc206f18fbb48",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_binary_source_is_omitted"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "4": {
-      "note": "Path confinement rejects escape",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f3775ac25c5e32bb5efe59b7179717d7549271a7",
-            "content": "sha256:7cacc6e2470d7e6488102f28c72aa4193d8752083b1b4839679e8c1ff784deeb",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_path_confinement_rejects_escape"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "5": {
-      "note": "Symlink file escape rejected",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f3775ac25c5e32bb5efe59b7179717d7549271a7",
-            "content": "sha256:63d09b02deba9fe1129e14970fb48c6d11c9d263e512e39837afc3116cda855e",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_symlink_file_escape_rejected"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "6": {
-      "note": "Symlink dir escape rejected",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f3775ac25c5e32bb5efe59b7179717d7549271a7",
-            "content": "sha256:2f0ff329a8dbfbf509030f26db87acfe849fc63b1c003c38e65e6120b91418be",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_symlink_dir_escape_rejected"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "7": {
-      "note": "First read attaches overview and route chain",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f3775ac25c5e32bb5efe59b7179717d7549271a7",
-            "content": "sha256:79c69c3fd506c6ea4f479ef5dfab6d7790545065a6a5cf76ea89acc61c2e07b3",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_first_read_attaches_overview_and_route_chain"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "8": {
-      "note": "Second read dedups unchanged pieces",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f3775ac25c5e32bb5efe59b7179717d7549271a7",
-            "content": "sha256:a1d1c3edec2a93d9ea2d974eeb6285082ba4d14fc4634011f70948f9cf0af4e0",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_second_read_dedups_unchanged_pieces"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "9": {
-      "note": "Changed overview is reserved",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f3775ac25c5e32bb5efe59b7179717d7549271a7",
-            "content": "sha256:c95cfe5801707217af2194e547c6c7a4ca30642bd06cf830ec3707f77a3fb340",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_changed_overview_is_reserved"
             }
           },
           "kind": "test"

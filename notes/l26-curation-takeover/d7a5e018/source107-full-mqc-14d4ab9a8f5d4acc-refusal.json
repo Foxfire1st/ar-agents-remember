@@ -1,0 +1,36 @@
+{
+  "ok": false,
+  "tokens": 482,
+  "tokenizer": "tiktoken:o200k_base",
+  "tokenCountExact": true,
+  "operation": "memory_quality_check",
+  "repoId": "agents-remember",
+  "status": "scope-refused",
+  "runId": "14d4ab9a8f5d4acc",
+  "servingBuild": {
+    "version": "3.0.0rc8",
+    "bootedAt": "2026-10-08T11:56:00.022030+00:00",
+    "sourceDigest": "sha256:6659adb8f968f82c8365bc031220a34c1984276112b5cb1dfd5e1c5db841d237",
+    "pythonExecutable": "/home/firefox/.local/share/agents-remember/python/cpython-3.14.8/bin/python3.14",
+    "packageRoot": "/home/firefox/projects/agents-remember/mcp/src/agents_remember",
+    "commit": "3f682987",
+    "dashboardBuild": "cb442492c4373d059462c5a2ad7715f3961bab6f21c1181b2ecf2674b768b4a6"
+  },
+  "contractPath": "/home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/enclosures/260928-mik-l26/series-contract.md",
+  "pairStatus": "memory-quality-candidate-changed",
+  "pairField": "candidateTrees",
+  "detail": "the exact code or memory candidate changed while memory quality was running",
+  "expected": {
+    "codeCandidateTree": "bf045a987679cc023f8fdfb8849d28cfcca1adb9",
+    "memoryCandidateTree": "e4ef3cdc4ff9d4c23619c875d9e9f073641dab6c"
+  },
+  "observed": {
+    "codeCandidateTree": "bf045a987679cc023f8fdfb8849d28cfcca1adb9",
+    "memoryCandidateTree": "65af50ff0ebe625a70aad83dd503cdba37542edd"
+  },
+  "nextAction": "memory_quality_check",
+  "nextArgs": {
+    "repo_id": "agents-remember",
+    "contract_path": "/home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/enclosures/260928-mik-l26/series-contract.md"
+  }
+}

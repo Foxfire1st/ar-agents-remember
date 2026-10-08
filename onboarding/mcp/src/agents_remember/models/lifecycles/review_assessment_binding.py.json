@@ -2,50 +2,28 @@
   "path": "mcp/src/agents_remember/models/lifecycles/review_assessment_binding.py",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "The equality comparison over declared-dependency identities, and the gap it reports.",
+    "6": {
+      "note": "`measured_binding_status` owns the current boundary described above.",
       "targets": [
         {
           "anchor": {
-            "blob": "05509e52a557a2b316d92a2dfe5732012e426202",
-            "content": "sha256:c488228a3c443a2a3b725a9e499919f5bde7a9aeaf17f33a8f44de3694df7d8a",
+            "blob": "622cc21b42bb21eb6ddf65f5c76376a6b460ff4f",
+            "content": "sha256:75b628a1a2c32d5ba341c2565dde5cda98ab23bda0287b0fdf6841abf49b434c",
             "locator": {
               "kind": "symbol",
-              "name": "disputed_dependencies"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "05509e52a557a2b316d92a2dfe5732012e426202",
-            "content": "sha256:9234f83c4bc7c5b446384be41474d72881fca825692e69fe641910bb536b15f1",
-            "locator": {
-              "kind": "symbol",
-              "name": "BindingGap"
+              "name": "measured_binding_status"
             }
           },
           "kind": "code"
         }
       ]
     },
-    "2": {
-      "note": "The two-member currentness state and the derivation that produces it.",
+    "7": {
+      "note": "`assessment_currentness` owns the current boundary described above.",
       "targets": [
         {
           "anchor": {
-            "blob": "05509e52a557a2b316d92a2dfe5732012e426202",
-            "content": "sha256:d4733fc7de6ff3d3b2069e81728f8ea3edff467fc5c1acf3ddd50b4225bcd2cc",
-            "locator": {
-              "kind": "symbol",
-              "name": "AssessmentCurrentness"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "05509e52a557a2b316d92a2dfe5732012e426202",
+            "blob": "622cc21b42bb21eb6ddf65f5c76376a6b460ff4f",
             "content": "sha256:f6264e233ed510ee1f0b90c9448eb03aebe039860d41c935813f8f4bb09f38b0",
             "locator": {
               "kind": "symbol",
@@ -53,111 +31,20 @@
             }
           },
           "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "05509e52a557a2b316d92a2dfe5732012e426202",
-            "content": "sha256:1823ce541266581be1548bc963ff57c3a286860179d324eeb45d355a4b0d1072",
-            "locator": {
-              "kind": "symbol",
-              "name": "subject_state"
-            }
-          },
-          "kind": "code"
         }
       ]
     },
-    "3": {
-      "note": "The refusal that names the recorded digest, the observed state and the exact identity.",
+    "8": {
+      "note": "`require_assessment_dependencies` owns the current boundary described above.",
       "targets": [
         {
           "anchor": {
-            "blob": "05509e52a557a2b316d92a2dfe5732012e426202",
-            "content": "sha256:b473336b40583d544b8595f92a8bd3214fecc8c6880477cfb1a86c66c8c6c197",
+            "blob": "622cc21b42bb21eb6ddf65f5c76376a6b460ff4f",
+            "content": "sha256:fb68d6648a858b00053ddfe81fd628b0e8a8cc139e0d59b5b75d1445d4daed5d",
             "locator": {
               "kind": "symbol",
-              "name": "require_current_assessment_binding"
+              "name": "require_assessment_dependencies"
             }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "05509e52a557a2b316d92a2dfe5732012e426202",
-            "content": "sha256:24a7213c1a5952003996d10549e7fe47d6c929ec72bfc083c8b81e5949869161",
-            "locator": {
-              "kind": "symbol",
-              "name": "AssessmentBindingStaleError"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "05509e52a557a2b316d92a2dfe5732012e426202",
-            "content": "sha256:2d3afe5d3f780d13656ab969fd1ca6e4a52f9e903d2f438105484845cddc7d96",
-            "locator": {
-              "end": 188,
-              "kind": "line_range",
-              "start": 162
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "05509e52a557a2b316d92a2dfe5732012e426202",
-            "content": "sha256:213b392ed40145046af899c1539e3440b1303f6520bec4eecb5ac8645b546e6f",
-            "locator": {
-              "end": 248,
-              "kind": "line_range",
-              "start": 212
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "4": {
-      "note": "The one edge kind excluded from the comparison, and why the exclusion is structural.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "05509e52a557a2b316d92a2dfe5732012e426202",
-            "content": "sha256:95f9e087a10e051391ba60a04f0af499e06b4ad5c5aff51f523c3b31b65f5fc8",
-            "locator": {
-              "kind": "symbol",
-              "name": "SELF_REFERENTIAL_KINDS"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "5": {
-      "note": "The shipped precedent whose exact spelling this field reuses.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "36930b807fd0f24bc978c6c8f0f3c57ee03f3b89",
-            "content": "sha256:85fa8535c0f7ce65457476daf4e9b5bc75d68f85a7bba752ec70de492b4f72b9",
-            "locator": {
-              "kind": "symbol",
-              "name": "DetectionRunCurrentness"
-            },
-            "path": "mcp/src/agents_remember/models/knowledge/detection.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "36930b807fd0f24bc978c6c8f0f3c57ee03f3b89",
-            "content": "sha256:27e642edb527e9d0a5c63dfdb5921ddfbd5df46f7a681c717f115bdc11783c1b",
-            "locator": {
-              "kind": "symbol",
-              "name": "binding_state"
-            },
-            "path": "mcp/src/agents_remember/models/knowledge/detection.py"
           },
           "kind": "code"
         }

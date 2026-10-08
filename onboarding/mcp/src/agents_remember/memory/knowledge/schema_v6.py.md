@@ -25,7 +25,7 @@ mechanism, and `KS-R10@v1` §1.3 makes appending the only sanctioned way to add 
 generation 5; a sibling leaf (`KS-R18@v1`) landed its own generation 5 first on the accumulated line,
 so this append was renumbered to 6 and now descends from *that* generation rather than from generation
 4. The append's content is unchanged by the renumber: only the module name, the constant, the schema
-name and the base argument moved. That is exactly the property `_append_generation` exists to give.
+name and the base argument moved. That explains the historical renumbering. The former _append_generation mechanism was retired; _compose now consumes these declarations as part of the one derived-index schema.
 
 **Why these are new tables and not columns on an existing one.** Three facts drive the shape, and each
 is a refusal of the convenient alternative:
@@ -48,8 +48,7 @@ is a refusal of the convenient alternative:
 
 ### Logic
 
-The module is pure data: it defines **no functions and no classes**. Its whole surface is eight module
-constants, each a member of the generation record `schema_generations.GENERATION_6` composes:
+The module is pure declaration data. Its eight APPENDED_* constants are consumed after schema_v5 by schema_generations._compose to build CURRENT_GENERATION. The historical generation-6 grouping identifies the six composition tables; it is not a separately openable schema.
 
 - `APPENDED_TABLES` — the ordered six-name tuple, appended after generation 5's twenty-two, so
   generation 6's manifest **begins with** generation 5's, unchanged. The order is load-bearing: it is
@@ -104,28 +103,20 @@ constants, each a member of the generation record `schema_generations.GENERATION
 
 ### Invariants And Boundaries
 
-- **Additive-only, structurally.** `descends_from(GENERATION_6, GENERATION_5, GENERATION_5.tables)`
-  is the published predicate: the appended tables follow generation 5's exactly, and every one of
-  generation 5's names keeps the exact column tuple, primary key and typed-JSON set it declared. A new
-  generation appends, and never retypes, reorders, renames or drops an earlier one's.
-- **Generation 1 does not move.** Generation 1's fingerprint is pinned and recomputed by the registry's
-  own case; this module adds nothing to any of generation 1's tables and states no `ALTER TABLE`.
+- The ordered _compose preserves earlier table declarations while appending this block, and require_pinned_schema_unchanged verifies the full derived-index schema. The former descends_from predicate and GENERATION_5/GENERATION_6 records were retired.
+- The base-table declarations remain unchanged by this module. Current verification pins the complete single derived-index schema; the old generation-1 fingerprint and per-generation registry tests are historical.
 - **No composition row carries a content address, a logical digest or a fingerprint column.** The
   context's identity is the key pair the substrate already uses for an authored row.
 - **No row and no table here duplicates task status, seat ownership, lifecycle gates or approval
   authority.** Nothing here becomes an independently editable competing contract.
-- **Boundary.** This module declares structure and nothing else: it writes no rows, performs no
-  validation, returns no refusal and owns no behaviour. Writing an edge is
-  `memory/knowledge/compositions.py`; deciding which generation a dataset is, is
-  `schema_generations.py`.
+- This module declares derived-index structure only: no row writing, payload validation, refusal or migration. The former canonical database record writer associated with these tables was retired. schema_generations composes and validates the one supported index schema.
 - **Not admissible, recorded so it is not re-proposed:** a recursive CTE for the composition cycle
   check. `KS-R17@v1` §4.4 requires the shipped shared lineage rule to be reused, and a second walk
   beside it is exactly the drift the rule exists to prevent.
 
 ### Todos
 
-None recorded. This generation's own fingerprint is computed by composition in
-`schema_generations.py` rather than recorded here.
+None recorded. The one derived-index schema has a recorded structural fingerprint verified against _compose. There is no current separately composed generation-6 fingerprint.
 
 ## Evidence
 
@@ -148,11 +139,18 @@ No configured domain documentation could be checked.
 - **The declared unique tuple as two partial unique indexes, because a table `UNIQUE` over a nullable column does not enforce uniqueness for `NULL`s.** [8]
 - The twelve immutability triggers, a no-repoint and a no-delete pair per table. [9]
 - The declared-but-empty feature tuple, so "no new SQLite feature" is stated rather than inferred. [10]
-- **The one generic append that composes every generation, and generation 6's own one-line call naming `GENERATION_5` as its base.** [11]
-- **The published additive predicate the generation case uses.** [12]
-- The registry whose last entry is the newest supported generation — generation 8 since `KS-R13@v1` renumbered its append — and the created generation it names. [13]
-- The created store's own schema name, so a created dataset declares `ar-knowledge-sqlite/v6`. [14]
-- **The case that measures the append, the six names, `descends_from` and the created generation.** [15]
+
+- The ordered appended declarations compose into the one pinned derived-index schema. [11]
+
+
+- The ordered appended declarations compose into the one pinned derived-index schema. [12]
+
+
+- This build creates and reads the single v9 derived-index schema; another declared database version is refused. [13]
+
+
+- This build creates and reads the single v9 derived-index schema; another declared database version is refused. [14]
+
 
 ### Cross-Repo References
 

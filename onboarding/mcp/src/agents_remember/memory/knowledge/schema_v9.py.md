@@ -30,16 +30,7 @@ require.
 
 ### Logic
 
-**The append is one tuple and one protocol, not a second schema.** `APPENDED_TABLES` names exactly the
-six tables in the order the encoder serializes them, and it is the only place the generation's table set
-is spelled. `schema_generations._append_generation` reads it together with `APPENDED_COLUMNS`,
-`APPENDED_PRIMARY_KEYS`, `APPENDED_JSON_COLUMNS`, `APPENDED_FEATURES`, `APPENDED_TABLE_DDL`,
-`APPENDED_INDEX_DDL` and `APPENDED_TRIGGERS` — the eight names `_AppendedGeneration` declares — and
-composes generation 9 as `base.tables + appended.APPENDED_TABLES`, `{**base.columns, **appended.…}` for
-the four mappings, and `base.index_ddl + appended.APPENDED_INDEX_DDL`, so every earlier declaration
-survives by construction. **The number is the composition's, not this module's**: the file declares no
-`GENERATION_N` constant and no schema-name string of its own, which is what lets a parallel leaf that
-must renumber change a name and a base argument rather than re-derive an append.
+APPENDED_TABLES names the six tables in serialization order. The eight APPENDED_* declarations satisfy schema_generations._AppendedTables. _compose appends this module last after schema.py and schema_v2 through schema_v8, preserving earlier declarations and producing CURRENT_GENERATION. This module has no schema-name string or generation-number constant; there is one supported derived-index schema rather than a registry of openable generations.
 
 **Six tables in one declared column order, and three of the columns are recorded facts rather than
 derivations.** Each entry of `APPENDED_COLUMNS` is the exact order the generation's encoder orders rows
@@ -101,7 +92,7 @@ declaration for two consumers each: `_vocabulary_closes` renders them into `CHEC
 and `census_records` imports the same tuples to decode a stored value against the vocabulary its own
 `CHECK` enforces, while `memory/migration/parse.py` and `memory/migration/inventory.py` assert their own
 closed vocabularies are subsets of these at import. Names are split by role: the `APPENDED_*` mappings
-are the composition contract `_AppendedGeneration` reads, the `CENSUS_*` tuples are the vocabularies,
+are the composition contract `_AppendedTables` reads, the `CENSUS_*` tuples are the vocabularies,
 and the three private helpers (`_vocabulary_closes`, `_record_table_ddl`, `_claim_parent`) exist only to
 render the DDL mapping and are never imported elsewhere. The DDL text is written so the leading key
 column is spelled exactly once — `key_columns.split(",", maxsplit=1)[0].strip()` — with the comment
@@ -112,10 +103,7 @@ re-exported.
 
 ### Invariants And Boundaries
 
-- **Append-only, and the append is the only sanctioned way to add a table.** Generation 9's tables follow
-  generation 8's exactly, every earlier name keeps the exact column tuple, primary key and typed-JSON
-  set it declared, and no `ALTER TABLE` against an earlier generation's table appears in the module — the
-  rule is `KS-R10@v1` §1.3's, and `schema_generations.descends_from` is its one predicate.
+- Earlier table definitions are preserved by the one ordered schema composition. _compose adds these declarations after the earlier modules, and require_pinned_schema_unchanged verifies the complete structural fingerprint. The former descends_from predicate and generation registry were retired with the canonical database.
 - **No second identity authority.** There is no content-address, logical digest or fingerprint column on
   any of the six tables, and the content digest stays on `record_revision`; identity is the declared
   primary key and nothing else.
@@ -135,9 +123,7 @@ re-exported.
 - **Generation 9 requires no new SQLite feature.** `APPENDED_FEATURES` is the empty tuple declared rather
   than omitted, because checked vocabularies, composite foreign-key groups, indexes and trigger aborts
   are all covered by what generation 8 already declares.
-- **This module holds no generation number and no schema name.** The number, the schema-name string and
-  the base argument live in `schema_generations.__compose_generation_9`, so the append's content is the
-  only thing this file owns.
+- This module holds no schema name or number. SCHEMA_NAME, SCHEMA_USER_VERSION and CURRENT_GENERATION identify the one derived-index schema in schema_generations.py; _compose consumes this module as its final appended block.
 
 ## Evidence
 
@@ -155,7 +141,9 @@ rendering and triggers, and the composition function in the registry that turns 
 into generation 9.
 
 - The module's own statement of what it appends and why: six tables, an additive-only file, and the refusal of a wide row because each census entry is a record kind with its own identity. [1]
-- The six tables generation 9 appends, in the order the encoder serializes them, appended after generation 8's thirty-four. [2]
+
+- The ordered appended declarations compose into the one pinned derived-index schema. [2]
+
 - The declared column order of each appended table, which is what the encoder orders rows by and what the record group's INSERT statements are written against. [3]
 - The declared primary keys: one identity column per record table, and a relation keyed by its whole recorded content so re-recording one relation is one row. [4]
 - The typed-JSON columns: provenance in all six tables and the exact unparsed content on the inventory row, held as a document so a reader can compare it byte for byte with the artifact. [5]
@@ -167,11 +155,15 @@ into generation 9.
 - The seven declared indexes, each covering the reverse direction of a declared lookup rather than a forward scan. [11]
 - The trigger pair every appended table gets, with the reason nothing is exempt: a census row has no lifecycle field a later operation is entitled to move. [12]
 - The declared-empty feature tuple, present so this generation states the same fact its predecessor does. [13]
-- The composition function that turns this module's literals into generation 9, as generation 8 with one module's declarations appended. [14]
-- Generation 9's own identity in the registry, and the created generation a new store declares. [15]
-- The additive rule as one predicate — the appended tables follow the base's exactly and every earlier name keeps its column tuple, its primary key and its typed-JSON set — and the composition commentary that spells the rule out as a generation appending tables and never retyping, reordering or dropping an earlier generation's, with each successor's own composer beside it. [16]
-- Where the census record kinds and their relations are registered as payload shapes, which is why this generation appends relations rather than a wide table. [17]
-- Where the write path takes its column order and its vocabulary closes from, so a column added to a table without a statement is a storage error rather than a mis-ordered write. [18]
+
+- The ordered appended declarations compose into the one pinned derived-index schema. [14]
+
+
+- This build creates and reads the single v9 derived-index schema; another declared database version is refused. [15]
+
+
+- The ordered appended declarations compose into the one pinned derived-index schema. [16]
+
 
 ### Cross-Repo References
 

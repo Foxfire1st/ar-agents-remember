@@ -51,30 +51,28 @@
       ]
     },
     "4": {
-      "note": "**The write-path boundary that applies it, so a malformed anchor cannot be authored.**",
+      "note": "The retained PathSeed uses the shared plain-Git-path rule; the old stored-anchor writer boundary is retired.",
       "targets": [
         {
           "anchor": {
-            "blob": "26d29178fa3d9db0a179257bcf598df2ec146a14",
-            "content": "sha256:12b3301d68fc80d98a6414b732ea425dcc979f5d77ce818f246cad5a965010c9",
+            "blob": "1ef674f62b3c34b50d5240cd30a305b45f19b747",
+            "content": "sha256:c9bae576442e9ed3c038b1f056f35e178a320f84b9c96b858f33f086e7154ed6",
             "locator": {
               "kind": "symbol",
-              "name": "SourceAnchorDraft"
+              "name": "PathSeed"
             },
-            "path": "mcp/src/agents_remember/models/knowledge/source.py"
+            "path": "mcp/src/agents_remember/models/knowledge/read.py"
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "26d29178fa3d9db0a179257bcf598df2ec146a14",
-            "content": "sha256:7f4b1750b9cffcfd1b014242d2953466a6002d673c71f33dc330fe417a93e3db",
+            "blob": "138358a5feab44724703f06dfe3ff24c231ee322",
+            "content": "sha256:715e7df48deebd5b3adef0d28b2c124ccca66442005bd3f27ddc5cab9e0cf8c9",
             "locator": {
-              "end": 127,
-              "kind": "line_range",
-              "start": 82
-            },
-            "path": "mcp/src/agents_remember/models/knowledge/source.py"
+              "kind": "symbol",
+              "name": "require_plain_git_path"
+            }
           },
           "kind": "code"
         }
@@ -85,7 +83,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dfa378b1ad0369db827cbb8fe6d9b2e38296e7a4",
+            "blob": "1ef674f62b3c34b50d5240cd30a305b45f19b747",
             "content": "sha256:c9bae576442e9ed3c038b1f056f35e178a320f84b9c96b858f33f086e7154ed6",
             "locator": {
               "kind": "symbol",
@@ -205,7 +203,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3b7ad1362b3430ee3f4feb81ed08bec1b5cd75b5",
+            "blob": "8bb5ffe981f83aa58ff262974a165fd286c14bef",
             "content": "sha256:a5149a9a6c73e01baad0c1c1141feaada9913738ad9530481dcd957649afe0fe",
             "locator": {
               "kind": "symbol",
@@ -217,7 +215,7 @@
         },
         {
           "anchor": {
-            "blob": "bc5e885909bc1a6d98b3285a861c6d4b9c8cfdf4",
+            "blob": "e0475c07db7f98c04497445589d9a2a30aa0089b",
             "content": "sha256:99f5823455a8859e6d9fbd3aa3336297d0c9ba5c4e054c11b8d432c5b9868acd",
             "locator": {
               "kind": "symbol",

@@ -1,0 +1,38 @@
+{
+  "ok": true,
+  "tokens": 652,
+  "tokenizer": "tiktoken:o200k_base",
+  "tokenCountExact": true,
+  "operation": "memory_quality_check",
+  "repoId": "agents-remember",
+  "status": "started",
+  "runId": "b8a25f1ae1614909",
+  "scopeAuthority": "leaf-candidate",
+  "servingBuild": {
+    "version": "3.0.0rc8",
+    "bootedAt": "2026-10-08T11:56:00.022030+00:00",
+    "sourceDigest": "sha256:6659adb8f968f82c8365bc031220a34c1984276112b5cb1dfd5e1c5db841d237",
+    "pythonExecutable": "/home/firefox/.local/share/agents-remember/python/cpython-3.14.8/bin/python3.14",
+    "packageRoot": "/home/firefox/projects/agents-remember/mcp/src/agents_remember",
+    "commit": "3f682987",
+    "dashboardBuild": "cb442492c4373d059462c5a2ad7715f3961bab6f21c1181b2ecf2674b768b4a6"
+  },
+  "acceptanceEligible": true,
+  "contractPath": "/home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/enclosures/260928-mik-l26/series-contract.md",
+  "pairIdentity": {
+    "schemaVersion": "ar-memory-candidate-pair/v1",
+    "repoId": "agents-remember",
+    "contractPath": "/home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/enclosures/260928-mik-l26/series-contract.md",
+    "contractDigest": "cc0505905f1b5613eb5edd557f4afac4ce3853411619433c37a80819b8735702",
+    "codeRoot": "/home/firefox/projects/ar-coordination/worktrees/agents-remember/260928-mik-l26-ar/260928-mik-l26",
+    "memoryRoot": "/home/firefox/projects/ar-coordination/worktrees/agents-remember/260928-mik-l26-ar/memory-260928-mik-l26",
+    "codeSourceBranch": "ar/260928_maintained-invariant-knowledge",
+    "codeWorkBranch": "ar/260928-mik-l26",
+    "codeBaseCommit": "4cdd7fbc1fd9f71fe087ca7688681a9f62865569",
+    "memorySourceBranch": "ar/260928_maintained-invariant-knowledge",
+    "memoryWorkBranch": "ar/260928-mik-l26",
+    "memoryBaseCommit": "7bb1e982f4c8e93a08edc3494c7a6e936be6f081",
+    "onboardingRoot": "/home/firefox/projects/ar-coordination/worktrees/agents-remember/260928-mik-l26-ar/memory-260928-mik-l26/onboarding",
+    "ledgerPath": "/home/firefox/projects/ar-coordination/worktrees/agents-remember/260928-mik-l26-ar/memory-260928-mik-l26/memory.md"
+  }
+}

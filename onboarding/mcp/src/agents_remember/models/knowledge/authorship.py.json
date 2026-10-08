@@ -69,54 +69,12 @@
         }
       ]
     },
-    "2": {
-      "note": "The application assigns the operation identity and the recorded instant instead of accepting them.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "b27b86aae575bd8d9d63d727f841fc0b4ab08fa3",
-            "content": "sha256:cc0c1ded77cd743de6c33b0f1a4c1e76796770eef09dbb355133c1f5af24a461",
-            "locator": {
-              "kind": "symbol",
-              "name": "write_authorship"
-            },
-            "path": "mcp/src/agents_remember/application/knowledge.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "b27b86aae575bd8d9d63d727f841fc0b4ab08fa3",
-            "content": "sha256:4eed48a472a383b7d76c62d3965f8cc9ad599245d919c8fbf4dc41123ac2bb79",
-            "locator": {
-              "end": 122,
-              "kind": "line_range",
-              "start": 102
-            },
-            "path": "mcp/src/agents_remember/application/knowledge.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "3": {
-      "note": "The envelope is stored as a canonical JSON typed column.",
+      "note": "The retained typed-JSON provenance decoder reads Authorship; its former encoder is fixture support only.",
       "targets": [
         {
           "anchor": {
-            "blob": "121c4afa09ae47ad7908ca98c752895684e7232f",
-            "content": "sha256:d6dbd1590d2cd59d0430a60a931f333425a6b26b4c33d4fffdb5ed0c691d6277",
-            "locator": {
-              "kind": "symbol",
-              "name": "encode_authorship"
-            },
-            "path": "mcp/src/agents_remember/memory/knowledge/records.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "121c4afa09ae47ad7908ca98c752895684e7232f",
+            "blob": "0ee5929321e3f7a958a51aecc7f15c63d890c86c",
             "content": "sha256:8f467da48ad8a1f6adab6026e82992f0462f62f2b4e501b7785f305b2acea92a",
             "locator": {
               "kind": "symbol",
@@ -133,7 +91,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0508e56c262c031606a2a86fd8ddba54f1cb6c33",
+            "blob": "f503fa94c4c7bed4f52d64b967754439519f5b6a",
             "content": "sha256:bf82a17c91fe9724b782c711419f091eeecdebe93cc2087b9d7194c9a48bdce3",
             "locator": {
               "kind": "symbol",
@@ -145,7 +103,7 @@
         },
         {
           "anchor": {
-            "blob": "0508e56c262c031606a2a86fd8ddba54f1cb6c33",
+            "blob": "f503fa94c4c7bed4f52d64b967754439519f5b6a",
             "content": "sha256:4865172139f2d96b7e8b25245ac70e26384f19b5644994ac35c26de2628906e8",
             "locator": {
               "end": 45,

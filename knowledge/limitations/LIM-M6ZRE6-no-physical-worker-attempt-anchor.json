@@ -1,0 +1,23 @@
+{
+  "boundary": "The gap is an evidence limitation at the atomic-master certificate, not a code-stage rejection and not permission to fabricate an anchor.",
+  "id": "LIM-M6ZRE6",
+  "limited": "The formal worker-attempt anchor for this leaf's atomic-master certificate.",
+  "links": [],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.md; owner disk brief formal certificate boundary"
+      ],
+      "path": "handoff-stage1.json"
+    },
+    "handoffEntry": "L26-CX-N04",
+    "leaf": "260928-MIK-L26",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-limitation/v1",
+  "status": "proposed",
+  "unsupported": [
+    "No launch request, source digest, producer list or verdict substitutes for the missing physical attempt journal anchor."
+  ]
+}

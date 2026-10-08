@@ -6,7 +6,7 @@ agent_binding and task_scoped_mcp retain actor, role, canonical task, request an
 
 - A replacement preserves the previous receipt under its own attempt number; an unchanged recorded repeat writes none. [385]
 - Current imported source owns this scoped route boundary. [386]
-
+- Current imported source owns this scoped route boundary. [387]
 - Current imported source owns this scoped route boundary. [388]
 - Current imported source owns this scoped route boundary. [389]
 
@@ -16,8 +16,7 @@ agent_binding and task_scoped_mcp retain actor, role, canonical task, request an
 
 ## 260928-MIK-L37 The Cutover: One Converted Base For Every Reader, The Frozen Database, And Reads That Refuse An Unheld Seed
 
-`260928-MIK-L37` (MIK-R37). What earlier sections of this overview call "inert until the cutover" is what the code does on converted memory: a
-memory tree that holds `knowledge/layout.json`. This route gains four modules and changes twenty-five.
+`260928-MIK-L37` (MIK-R37) records the delivered cutover boundary. Its canonical database freeze/admission statements are historical and superseded by MIK-R26: current readers select converted text trees through derived indexes and leaf writes use the file writer. The converted-base, history, worklist and gate obligations remain with their named current owners.
 
 - **One converted base (MIK-R24 rule 7).** [`knowledge_writer/base_side.py`](knowledge_writer/base_side.py.md) (new)
   gives the writer `HEAD`'s conversion as its base when `HEAD` is unconverted and the candidate is converted; it
@@ -30,7 +29,7 @@ memory tree that holds `knowledge/layout.json`. This route gains four modules an
 - **The frozen database (rule 3).** [`knowledge_write_admission.py`](knowledge_write_admission.py.md)'s
   `as_write_admission` refuses a converted memory tree, naming the file writer, and takes the cutover lock for an
   unconverted one. [`published_intent.py`](published_intent.py.md) never selects the database of a converted tree,
-  and [`review_unchanged_knowledge.py`](review_unchanged_knowledge.py.md) refuses a converted leaf before it reads a
+  and `review_unchanged_knowledge.py` (retired) refuses a converted leaf before it reads a
   dataset.
 - **The writer.** [`knowledge_writer/memory_state.py`](knowledge_writer/memory_state.py.md) adds the `crossing`
   owner, the history target of a reopened leaf (`<leaf-id>-attempt-<n>.json`) and the higher merge side's revision
@@ -76,8 +75,12 @@ memory tree that holds `knowledge/layout.json`. This route gains four modules an
 
 - The gate reads the leaf's memory HEAD and keys its memo on it. [380]
 - An invariant the leaf changed is answered only by its changed row. [381]
-- A row whose hand-off names no item lists the worklist items it answers. [382]
-- A cover's rationale replaces the entry's rationale in place. [383]
+
+- The inherited row owner fills item IDs from the worklist. [382]
+
+
+- The inherited row owner updates an entry rationale from its authored cover. [383]
+
 - Each owner's row about a subject from its latest attempt file. [384]
 
 
@@ -102,8 +105,6 @@ range.
 
 The family authoring plane accepts explicit stored-membership references on a successor declaration. The selected rows must belong to declared predecessors of the same family; no roster is inferred. The planner adds successor edges to unchanged invariant revisions through the existing batch writer, binds the retention set and bases into the declaration’s retry content, and checks contradictory retirement only among eligible effects, preserving original refused-entry reasons. Coverage distinguishes retained revisions from added edges and leaves projected counts unmeasured.
 
-- Validate explicit retained endpoints before composing existing family commands. [3]
-- Measure unchanged siblings separately from added edges. [4]
 
 ## Governing Overview
 
@@ -119,7 +120,6 @@ Known roster limit: a continuation made only of realization items can complete i
 
 Closed leaves with no frozen generation read exact recorded memory endpoints through review_recorded_knowledge and label reconstructed history. Frozen reviews retain their own operands. review_unchanged_knowledge prepares a normal code-only comparison through existing candidate/baseline/freeze owners. curator_scope requires explicit applicability, conditions and exclusions and knowledge_curator_ingest binds that meaning into retry identity.
 
-- `read_recorded_knowledge` owns the behavior described above. [5]
 
 ## Authored realization rationale per target, required at admission
 
@@ -155,9 +155,6 @@ rewritten; replacing them needs authored successors. This supersedes the earlier
 that the ingest introduced "no new required producer input".
 
 - Per-target resolution and the ordered admission checks. [6]
-- The admission call before minting, with the committed-allocation exemption. [7]
-- The citation carries the resolved rationale with no generated fallback. [8]
-- The committed set read from the candidate's own rows. [9]
 
 ## Comparison-bound attributed unchanged source content
 
@@ -195,7 +192,7 @@ operation with no caller outside the test suite, so no leaf could publish a gene
 closed leaf's review reopened from `history:recorded-source-range` while the reviewer's whole knowledge
 column rendered its empty state. The caller this leaf adds is
 `agents-remember review-record-comparison`
-([`cli/review_comparison_record.py`](../cli/review_comparison_record.py.md)): it resolves the contract's
+(`cli/review_comparison_record.py` (retired)): it resolves the contract's
 own task context, composes through the surface's own resolution and composition, names the leaf's
 standing generation as the successor's predecessor, and publishes only what that composition bound. Ordinary capture runs through the CLI while the leaf enclosure is live. Explicit L41 recovery also uses that CLI, naming the retained parent generation and original curator digest; it does not create a live candidate. The L11
 section below records the boundary this supersedes; it is corrected in place there.
@@ -232,10 +229,8 @@ out-of-checkout install and re-run independently by the orchestrator; the contra
 **either side of `worktree_cleanup`**, because cleanup removes the worktree group and not
 `tasks/<repository>/<master>/enclosures/`.
 
-- **The producer: the freeze's own production entry, and the caller this leaf gave it.** [13]
+
 - **The record-beside-the-bytes namespace: the candidate's receipt when there is one, otherwise the before half's own generation record, otherwise (since MIK-R25) a derived knowledge index's own namespace, and the requested repository only when none of these answers.** [14]
-- Ordinary publication requires a live capture; explicit recovery revalidates the named retained parent capture without inventing a live identity. [15]
-- The case that measures the corrected rule on the real placed-baseline journey, and bites when it is reverted. [16]
 - The closed-leaf resolution the record now feeds: the generation path first, the recorded source range only when no generation exists. [17]
 
 ## 260921-ICR-L32 The Family Plane Is Read After The Candidate Is Admitted, And Two Owners Gain A Sibling
@@ -455,8 +450,11 @@ Mounting the collection in the browser pane is `ICR-R24`'s and the A06/A07/A24 j
 - **The whole authored line is read, and the pairing rules: member-wise family pairing, the strict successor form, the withdrawal half.** [19]
 - **The display's tested search value, the two-sided and one-sided movements, and the basis sentences that reserve "head" for a row that is one.** [20]
 - **The reach: the head rule called from ICR-R07, the whole-line read, and the owner chosen by the kind of revision.** [21]
-- The route association, with the existence question asked before the route question. [22]
 
+- The plural text-route owner reads each declared route and its exact snapshot state. [22]
+
+
+- **The labelled Git inference: the exact command, the three states, and the sentence that says it is not proof that the invariant moved.** [23]
 
 - **The adapter's one call, and the pane that composes the traversal's own address view.** [24]
 
@@ -646,11 +644,10 @@ every non-answer must state what would produce one.
 or related context (that is `ICR-R26@v1`'s applicability classification, and the bundle supplies the
 records unfiltered), and what dependency currentness is (R15's measurement).
 
-
-- **The per-record guard that makes a damaged record survivable, and the two owner reads it composes.** [48]
+- **The new production owner: the five collections plus the non-measurement, each read through its owner with its availability fact.** [47]
 - **The availability vocabulary, and the validator that refuses a count no owner measured.** [49]
 - **The selection channels, added where the matrix's own answer is; and the task-context position that never asked.** [50]
-
+- **The adapter that lost the private resolver and re-exports the owner's, and the port the production app reads it through.** [51]
 - **The cases that measure the whole thing through the production port, including the two per-record damage cases.** [52]
 ## 260921-ICR-L4 The Attribution Accounting Gets An Acquisition Owner, And Every Route Reads One Partition
 
@@ -680,6 +677,7 @@ split and the two rules that keep the routes from disagreeing.
 - **The task-context pair measurement and the receipt asked twice, so a record that breaks mid-read is stated, never raised.** [54]
 - **The comparison's reader over its own two open snapshots, and the adapter's verbatim carry.** [55]
 - **The one refusal owner the three routes read.** [56]
+- **The pane that reads the partition instead of recomputing it, with every count scoped or reasoned.** [57]
 
 ## 260921-ICR-L11 The Durable Comparison Generation: Five New Owners, One Keystone Record, And A Freeze Nothing Calls Yet
 
@@ -723,7 +721,7 @@ sidecars; what belongs at this route's altitude is the split and the two boundar
    (a receipt and a fourth reopen channel) without calling the freeze; and **`260921-ICR-L34`** gave
    the freeze its first shipped caller outside the test suite, the CLI subcommand
    `agents-remember review-record-comparison`
-   ([`cli/review_comparison_record.py`](../cli/review_comparison_record.py.md)), which composes the
+   (`cli/review_comparison_record.py` (retired)), which composes the
    review exactly as the surface does and publishes what that composition bound. The freeze is
    therefore **still** not wired to a route, a pane or a closeout path — it is a command an operator
    runs while the leaf's enclosure is live — but "no caller" is no longer true, and a leaf that has
@@ -739,11 +737,6 @@ the leaf that made it**, and what survives is a record of owner-produced identit
 measurement, not a second store, and not a new source of authored truth.
 
 - **The keystone record: the manifest, the layout under the one durable root, the deletion record, the re-derived id and the directory-name agreement.** [58]
-- **The production entry: resolve and compose exactly as the surface does, then freeze only what that composition bound.** [59]
-
-- **The sweep that reclaims only from the dead, scoped to the one leaf directory the record names.** [61]
-- **The whole definition of durable history for this feature — the protected source branch plus the recorded landed commits — and the reason the work branch is absent.** [62]
-- **Both halves copied through the storage snapshot owner, under the dataset's own bound namespace, with the two refusals that keep a storage error out of the freeze.** [63]
 - **The two deletion owners: the record written before the deletion, the measured digest, and the refusal that removes nothing.** [64]
 - **The read-back: one state per channel (four of them since ICR-R21@v1), `unavailable_channels()`, and the live pin measurement leading the release history.** [65]
 - **The one durable-root owner the layout asks instead of restating `<task_root>/notes/reports`.** [66]
@@ -799,7 +792,7 @@ longer be displayed as two absences.
 - The one-sided statement cases: the complete present-side statement beside the named absent side, with the comparison's own side-absence code. [74]
 - The renderer that owns how the two sides are drawn, and the four branches it decides from declared state. [75]
 
-## 260921-ICR-L20 The Ordinary Publication Route Gets An Owner, And The Write Side Reaches The Read Side's Location
+## 260921-ICR-L20 The Ordinary Publication Route Gets An Owner, And The Write Side Reaches The Read Side's Location — Historical Canonical Route, Superseded By MIK-R26
 
 This route gained **one module and one seam**, and the leaf they belong to (`260921-ICR-L20`, primary
 requirement ICR-R20@v1) is about a single question: where does a curator's *ordinary* run publish, and
@@ -836,16 +829,12 @@ The one route-level consequence a reader should carry: this repository's publish
 declared location, the ordinary write side publishes there through `--publish`, and the run states what
 a *reader* will find there rather than leaving a successful exit to imply it.
 
-- **The three decisions the new module owns: the declared location, the admission derived from the run's own captured baseline, and the read-back through the reader's owner.** [76]
-- **The three values those decisions travel as, and the exports that make them this module's public surface.** [77]
-
+- The declaration this module resolves against, and the reader's owner the read-back goes through — both reused unchanged. [78]
 - The context owner that decides *which* memory root the declared location is. [79]
 - **The CLI side of the seam: the destination selection it now owns, its three refusals, and the route line it completes from the report.** [80]
-- **The renderer that left the CLI, carrying the two facts the route added to the run's answer.** [81]
 - The consequence repair this landing forced, stated on the card where the claims live. [82]
-- **The cases that drive the whole route through the shipped CLI over a production-shaped enclosure.** [83]
 
-## 260921-ICR-L18 The Comparison Baseline Gets An Owner, And The Half Is Filled Once
+## 260921-ICR-L18 The Comparison Baseline Gets An Owner, And The Half Is Filled Once — Historical Canonical Route, Superseded By MIK-R26
 
 This route gained **one module and one boundary**, and the leaf they belong to (`260921-ICR-L18`,
 primary requirement ICR-R18@v1) is about a single question: what is a comparison's before side when the
@@ -884,17 +873,10 @@ the leaf forked from or an explicit record of the generation it began from, it i
 re-pointed behind the identity it already had, and a generation's id is **derived** from the facts its
 record names, so a verifier can recompute it.
 
-- **The generation owner: the record, the four-state read, the one first placement, and the deliberate rebase with lineage.** [84]
-- **The one decision the module owns, and the four ordered answers behind it.** [85]
-- **The two publication legs whose order is the failure contract, and the read-back that states the outcome.** [86]
-- **The derived rather than minted generation id a reader can recompute, and the lineage validator that refuses a record whose fields contradict each other.** [87]
 - **The CLI side of the seam: the one gate that decides whether the run may fill the half, and the handoff that delegates what the half then is.** [88]
+- The new argument, and the invocation refusal that fires before the contract is read. [89]
 
-- The two sibling owners this module composes rather than reimplements. [90]
-- The successful journey, the two retries and the deliberate rebase, driven through the shipped CLI on a real enclosure. [91]
-- **Every way a placement refuses or loses a leg without losing the baseline, including the two flush windows that forced the "did not report success" wording.** [92]
-
-## 260921-ICR-L5 The Review's Before Half Becomes A Named Module, And A First Generation Becomes Establishable
+## 260921-ICR-L5 The Review's Before Half Becomes A Named Module, And A First Generation Becomes Establishable — Historical Canonical Route, Superseded By MIK-R26
 
 This route gained **two modules and one seam**, and the leaf they belong to (`260921-ICR-L5`,
 primary requirement ICR-R05@v1) is about a single question: what is a comparison's *before* side when
@@ -940,10 +922,10 @@ shipped `selected_input_unavailable` refusal naming the path and the reason, che
 as well as on the clone path.
 
 - The before half's layout, its origin record, and the four states a writer must consult before it writes anything. [93]
-- The establishment: read the half first, take the admission from the committed candidate's own record, build privately, promote once. [94]
 - **The two call sites this leaf added to the adapter, and the one refusal they state.** [95]
+
 - The admission's own check of a selected baseline, which reads it on every run, resume included. [96]
-- The CLI's two filling paths, the one gate they share, and the cold-start branch that reaches the establishment. [97]
+
 - The cases that measure the operation at the CLI, and one that measures the review surface's before half. [98]
 
 ## 260915-KS-L41 The View Front Door: One Seed Frontier, Membership From Its Own Table, And A Pair That Is Completed
@@ -1029,7 +1011,7 @@ Two cross-route facts a reader of this route should carry:
 The route's ordinary boundary holds unchanged: no MCP or protocol types are read at this layer, and the
 `mcp` registration layer owns turning these values into tools and resources.
 
-
+- The capsule operation's four refusal-capable steps, each returning a value rather than raising. [99]
 - The seat is derived from the task document and the declared role is validated against it. [100]
 - Discovery is separated from delivery: the listing carries no body and one read is re-checked. [101]
 - The served tree is the packaged runtime skills copy, and a corpus travels with its origin. [102]
@@ -1153,11 +1135,11 @@ Three facts a reader of this route needs:
    `routed_admission_for`, for a caller that has no task document and therefore no
    `CapsuleCompileRequest` to hand over — and must still use the one routing rule.
 
-
-
+- The launch compiler: the entry point the serving port is bound to, its named refusals, and the two admittances. [104]
+- The eve carrier path, which materializes L7's carrier and reads the admitted workspace back out of it. [105]
 - The free agent's named absence and its own content address; the only producer of a taskless admitted-facts value. [106]
 - D13's dual repair: the root read out of the named contract, and the same root carried onto the projection request. [107]
-
+- The seat-addressed routing rule and its address type, for a caller with no task document. [108]
 - The declared exports that make the new names this route's public surface. [109]
 - The registered MCP boundary the repair had to make usable, and the case that fails if the declared schema loses the field the resolution depends on. [110]
 - The two production launch points that reach this member through the port. [111]
@@ -1236,27 +1218,27 @@ The leaf-wide view of a live comparison holds the knowledge diff, the currentnes
 - **The knowledge diff.** It asks Git three questions whatever the number of changed files: the raw listing, one patch
   of the two trees and one batch of blobs. Each section of the patch is bound to its listed path.
 
-
+- The leaf-wide parts: memo, one recorded computation, one more when an input moved, then the inputs_changing refusal; a process failure is refused and not kept. [409]
 - A live comparison's worklist comes from the isolated computation over the captured trees. [410]
 - The parent side: one request to the process owner, the reply's rows replayed, an error raised. [411]
 - The child side: the one worklist implementation over the given trees, inside a recording block, nothing persisted. [412]
 - The limits: two children, eight computations, sixty seconds, and the child's own deadline. [413]
-
+- Joining a computation in flight; the bound applies only to a new one. [390]
 - The child's handlers, alarm, parent-death signal and parent check. [391]
 - The memo's key of exact identities. [392]
 - A kept view is served only while its recorded rows hold. [393]
 - Which inputs moved: a read task document that differs or is unnamed, and every recorded row that changed. [394]
-
+- Recorded rows are rechecked with path selections first. [395]
 - Recording a new comparison takes turns inside one process. [396]
-
+- One pin: the same tree is success, another tree is refused, a held lock is retried. [397]
 - The options every parsed diff passes. [398]
 - Three Git questions for the knowledge diff. [399]
 - The child's answer equals the in-process worklist, with its source reads, at two result sizes. [400]
 - Transport failures are explicit, not kept, and the next read recovers. [401]
-
-
-
-
+- Identical requests share one child and others wait for one of two slots. [402]
+- The waiting bound counts computations, not the requests sharing them. [403]
+- A killed dashboard takes the child and its Git process with it. [404]
+- Four concurrent first reads answer alike from one child. [405]
 - The reviewer's diff reads do not depend on the user's Git configuration. [406]
 - A kept view ignores every task document it did not read. [407]
 - A task document that changes while the view is computed makes it compute again. [408]
@@ -1266,7 +1248,7 @@ The leaf-wide view of a live comparison holds the knowledge diff, the currentnes
 `application/` owns operation-level MCP composition. Application entry points translate
 trusted MCP runtime config plus typed tool arguments into package service calls
 and JSON-compatible payload dictionaries. Domain placement follows what a tool
-operates on: `task_reopen_tool` cit:([`task_reopen_tool`], mcp/src/agents_remember/application/task_docs/task_reopen.py:1-41) sits beside the task_doc application entry point because it
+operates on: `task_reopen_tool` cit:([`task_reopen_tool`], mcp/src/agents_remember/application/task_docs/task_reopen.py:20-41) sits beside the task_doc application entry point because it
 reopens a task, while worktree_tools keeps only genuine worktree operations (its
 abandon now also ends the ambient lifecycle it anchors).
 
@@ -1469,7 +1451,7 @@ sync/start/poll object and Pydantic rejects mixed mode fields.
   whereas a type mismatch at the producer is a pyright error before the code ships.
 - A vocabulary an application entry point decides is declared in the owning model/module and imported
   by the consumer, not retyped there (260731-EFA-L4; `FileReadStatus` is the worked example).
-  cit:(["FileReadStatus = Literal["], mcp/src/agents_remember/models/read_files.py:1-81; mcp/src/agents_remember/application/read_files.py:1-463)
+  cit:(["FileReadStatus = Literal["], mcp/src/agents_remember/models/read_files.py:20-32; mcp/src/agents_remember/application/read_files.py:44-46)
 
 ## Invariants And Boundaries
 
@@ -1508,7 +1490,7 @@ A replacement preserves the previous receipt under its own attempt number; an un
 
 - The two MCP payload builders are declared at these entry points. [112]
 - `ResponseModel` is the public response-model base. [113]
-
+- `TOOL_RESPONSE_MODELS` is the registry of public response models. [114]
 - Canonical memory scope freezes official/leaf authority, both trees, and optional unstamped comparison provenance. [115]
 - The typed quality controller owns sync/start/poll execution and checklist publication without changing verification metadata. [116]
 - `route_index_refresh_tool` resolves context and supplies repository/storage authority. [117]
@@ -1584,9 +1566,9 @@ are checked against the shape `models/drift.py` expects.
 (`Literal["found", "missing", "disabled", "unsupported", "not_requested"]`).
 `application/read_files.py` imports that alias, and `_resolve_onboarding` is the only function that
 decides the value and returns `tuple[FileReadStatus, str | None, bool]`.
-cit:([`FileReadStatus`], mcp/src/agents_remember/models/read_files.py:1-81)
-cit:(["from agents_remember.models.read_files import FileReadStatus"], mcp/src/agents_remember/application/read_files.py:1-463)
-cit:([`_resolve_onboarding`], mcp/src/agents_remember/application/read_files.py:1-463)
+cit:([`FileReadStatus`], mcp/src/agents_remember/models/read_files.py:29-29)
+cit:(["from agents_remember.models.read_files import FileReadStatus"], mcp/src/agents_remember/application/read_files.py:73-73)
+cit:([`_resolve_onboarding`], mcp/src/agents_remember/application/read_files.py:262-291)
 `VALID_FILE_READ_STATUSES = frozenset(get_args(FileReadStatus))` is the runtime half, derived from the
 alias. The import direction is application → models, so the producer uses the single declared alias
 without maintaining a second copy.
@@ -1821,19 +1803,14 @@ production caller, verified at the consumer's gate" — while the **live-seat** 
 seat still waits on the inherited settings-chain gate (**D22**, owner **L17**). The test fixture is no
 longer the only caller, and neither half should be read as the other.
 
-- The provenance envelope is assigned here, not accepted from a payload. [127]
-- The admitted-destination constructor that confers no authority by itself. [128]
-- Provenance and namespace come from the destination rather than from the request. [129]
-- Initialization refuses an occupied destination as a resume attempt. [130]
-- The read open and the delegating insert, both closing in a `finally`. [131]
 - The layer charter paragraph that fixes the one-way direction this seam implements. [132]
 - The storage operation this seam delegates to. [133]
 - The produce side added to this route, and the read-back-equals-written and no-carrier-on-refusal rules. [134]
 - The projection agreement check that makes the re-derivation a check rather than a second opinion. [135]
 - The role-authority write surfaces and the smallest-set fallback. [136]
-
+- The capsule surface this package consumes and does not re-implement. [137]
 - The launch-time proof and the in-process reader that consume the carrier this route produces. [138]
-
+- The production caller the produce side gained: an eve launch through the wired launch points materializes this carrier, and the launch runs in the workspace the carrier admits. [139]
 - The test fixture that supplied this seam's inputs before a production caller existed. [140]
 - The production-chain evidence: the consumer's own gate accepts the launch point's carrier, and the live runtime's system block carries it. [141]
 
@@ -1852,10 +1829,6 @@ in `mcp/src`.** Its only importers are `mcp/tests/test_knowledge_store.py` and
 behaviour, not evidence that the seam is wired into any registered tool or entry point. The typed write boundary
 that will consume it is `KS-R03`'s.
 
-- The graph request builders, all attaching the destination's provenance and namespace. [142]
-- The eight graph operations, each open-delegate-close. [143]
-- The graph modules the new operations delegate to. [144]
-- The composed-path case that drives admit -> create -> reopen -> read through this seam. [145]
 - The closeout certification's own source index, or a named refusal with the operator move. [146]
 - The candidate route that index is acquired over, so the gate sees the register the route records. [147]
 
@@ -1884,13 +1857,7 @@ importer — a `grep` for one is still empty — so the seam's composed-path cas
 boundary and not evidence that it is wired into any tool. The packet makes transport wiring an explicit later
 extension, and the worker report's claim that `KS-R03` "resolved" that observation was withdrawn in review.
 
-- The two label operations the seam exposes. [148]
-- The context resolution and its pure sealing step. [149]
-- The batch operation that takes its provenance from the destination. [150]
 - The resolution shape whose missing dataset-identity field makes the read the only source of that value. [151]
-- The lane rules the seam's entry point reaches, and the operation that applies them. [152]
-- The composed-path case that drives the boundary end to end through this seam. [153]
-- The case that proves the operation refuses a context smuggled past the model seal. [154]
 
 ## 260918-TSIP-L6 Three Application Entry Points Stop Losing The Envelope
 
@@ -1948,14 +1915,6 @@ candidate belongs to the experimental master. And the wiring boundary did **not*
 `application/knowledge.py`, this module has **no non-test importer in `mcp/src`**, so its composed-path cases are
 behaviour evidence about the boundary and not evidence that any tool is wired to it.
 
-- The admitted-destination constructor that confers no authority by itself. [155]
-- The write destination derived from the candidate layout rather than passed twice. [156]
-- The three lifecycle delegations. [157]
-- The two publication entry points that share one contract. [158]
-- The read-side publication gate exposed rather than decided. [159]
-- The storage operations the seam delegates to, including the two locks that are never nested. [160]
-- The disposal verdict whose authority the caller owns. [161]
-- The composed-path harness that drives the seam end to end through the public operations. [162]
 
 ## 260915-KS-L5 The Merge Joins As A Third Seam
 
@@ -1988,13 +1947,6 @@ behaviour evidence about the boundary and not evidence that any tool is wired to
 `260915-KS-L31`**: exactly one non-test importer exists now, and the L31 section names it and the structural
 reason the driver half could not live in the worktree module that calls it.)*
 
-- The base-resolution entry point and its refusal-or-resolution contract. [163]
-- The merge entry point, including the carried statement that the result holds no compatibility verdict. [164]
-- The defect the layer below makes unreachable. [165]
-- The two storage operations this seam delegates to, in the order the seam exposes them. [166]
-- The vocabulary the seam takes and returns unchanged. [167]
-- The unit node that drives the conforming merge end to end through the public operations. [168]
-- The published-file freeze and install contract the merge's last step reuses rather than duplicating. [169]
 
 ## 260915-KS-L6 The Portable Export/Import Joins As A Fourth Seam
 
@@ -2024,11 +1976,6 @@ The wiring boundary did **not** move: like its three siblings, this module has *
 `mcp/src`**, so its evidence is behaviour evidence about the boundary and not evidence that any tool is wired
 to it.
 
-- The seam's five entry points and the non-claims it carries in its own docstring. [170]
-- The defect the layer below makes unreachable. [171]
-- The storage operations this seam delegates to. [172]
-- The vocabulary this seam takes and returns unchanged. [173]
-- The nodes that drive the conforming round trip and the filtered-response refusal through the public seam. [174]
 
 ## 260915-KS-L7 The Selective Read Joins As A Fifth Seam
 
@@ -2171,8 +2118,9 @@ lacks.
 - **The declaration a created store makes, which is the registry's last entry rather than a second literal — generation 5 since `KS-R18@v1` appended it.** [196]
 - **The generation selector this route's read and diff helpers call, which reads the dataset's own declared version and refuses an unregistered one rather than widening.** [197]
 - **The declaration a created store makes: the registry's last entry, which is generation 5 since `KS-R18@v1`.** [198]
-- **The registry whose tip that entry is, ordered oldest first so the newest supported generation is its last member rather than a second literal that could drift from the tuple.** [199]
-- **The generation gate the binding write applies before any row exists: a dataset that predates the table is refused with the observed generation as a fact, never migrated or widened.** [200]
+
+- One pinned derived-index schema replaces the retired registry of openable canonical generations. [199]
+
 - **The two members this leaf registered on the shared operation vocabulary.** [201]
 - The generation selector both now call, and the declaration a created store makes. [202]
 
@@ -2244,11 +2192,6 @@ Three boundaries the module owns, and the reason each is the shape it is:
   identity or version, a not-permitted edge, a step past the declared bound and a missing family
   revision all arrive as `KnowledgeRefusal` values; a traversal that cannot be reported as a
   *complete* scope returns the refusal rather than a truncated scope.
-- The traversal seam: it carries its own operation and opens through the read-only handle. [203]
-- **The projection seam: a family revision this namespace does not hold is refused, not reported empty.** [204]
-- The one open path, whose handle is the shipped read-only connection and whose schema is the one the file declares. [205]
-- The published seam surface: two operations and their two value types. [206]
-- **The case that stamps the seam: read-only, its own operation, and no movement of the retrieval selection.** [207]
 
 ## 260915-KS-L12 The Supporting-Record Read Joins As A Seventh Seam
 `KS-R12@v1` adds the route's seventh application seam, `application/knowledge_evidence.py`, beside the
@@ -2465,15 +2408,15 @@ supplied, so the shipped projection reports an unmeasured assessment stale rathe
 - The shipped comparison it composes and adds nothing to, and the adapter call that invokes it — now one step of a composition that measures the inventory first and branches on the selector. [209]
 - L20's review-matrix view, asked for the five record kinds, and the extracted step that reads it. [210]
 
-| The candidate resolved from task context, never from a caller's path — now the sibling module's operation, which this adapter delegates to and re-exports. | "def resolve_review_candidate(" | mcp/src/agents_remember/application/review_candidate_resolution.py:1-575 |
-| The published assessment collection as the renderer's input. | "def review_records_for(" | mcp/src/agents_remember/application/knowledge_review.py:1-1106 |
-| The rank that puts the composition at this tier rather than in `serving/`. | `application`; `application` | layers.toml:1-413 |
-| The disposable candidate root the two datasets are read from — defined in the sibling module and re-exported here so the ingest CLI keeps one spelling. | `REVIEW_CANDIDATE_RELATIVE_ROOT` | mcp/src/agents_remember/application/review_candidate_resolution.py:1-575; mcp/src/agents_remember/application/knowledge_review.py:1-1106 |
-| **The two published half-names, defined in the sibling module and re-exported here because the ingest CLI authors into the same root this adapter reads.** | `REVIEW_BASELINE_DIRECTORY`; `REVIEW_CANDIDATE_DIRECTORY` | mcp/src/agents_remember/application/review_candidate_resolution.py:1-575; mcp/src/agents_remember/application/review_candidate_resolution.py:1-575; mcp/src/agents_remember/application/knowledge_review.py:1-1106 |
-| **The pair preflight: the absent half named as `baseline` or `candidate`, so the refusal says which dataset to author and which to place — reached only when a subject was named, because a task-context review compares no dataset — and, since leaf `260921-ICR-L5`, the sibling fact beside it, a side that is present but cannot be read.** | `missing_dataset_half`; `unreadable_half_refusal` | mcp/src/agents_remember/application/review_candidate_resolution.py:1-575; mcp/src/agents_remember/application/knowledge_before_half.py:1-395 |
-| **The namespace read from the record beside the bytes — the candidate's sealed receipt when there is one, otherwise the before half's own `baseline-generation.json` — with a derived knowledge index's own namespace next (since MIK-R25), the requested repository used only when none of these answers, and an unreadable record refused rather than guessed past. Corrected in place by `260921-ICR-L34`: the receipt-only rule made every `knowledge-ingest --baseline` leaf unfreezable.** | `review_namespace`; `CANDIDATE_RECEIPT_NAME`; `read_baseline_generation` | mcp/src/agents_remember/application/review_candidate_resolution.py:1-575; mcp/src/agents_remember/models/knowledge/snapshot.py:1-375; mcp/src/agents_remember/application/knowledge_baseline_generation.py:1-864 |
-| **The entry operation: the same resolution, one comparison per recorded identity, and a refused subject dropped instead of listed with a zero — with the unreadable-half refusal stated before that loop.** | `list_knowledge_review_entries`; `_reviewable_entries`; `_selected_item_count`; `unreadable_half_refusal` | mcp/src/agents_remember/application/knowledge_review.py:1-1106; mcp/src/agents_remember/application/knowledge_before_half.py:1-395 |
-| **The identities the entry list enumerates, read through the store's own two list operations rather than a query written here.** | `_recorded_identities`; `list_invariants`; `list_families` | mcp/src/agents_remember/application/knowledge_review.py:1-1106; mcp/src/agents_remember/memory/knowledge/store.py:1-800; mcp/src/agents_remember/memory/knowledge/store.py:1-800 |
+| The candidate resolved from task context, never from a caller's path — now the sibling module's operation, which this adapter delegates to and re-exports. | "def resolve_review_candidate(" | mcp/src/agents_remember/application/review_candidate_resolution.py:139-211 |
+| The published assessment collection as the renderer's input. | "def review_records_for(" | mcp/src/agents_remember/application/knowledge_review.py:806-831 |
+| The rank that puts the composition at this tier rather than in `serving/`. | `application`; `application` | layers.toml:44-56 |
+| The disposable candidate root the two datasets are read from — defined in the sibling module and re-exported here so the ingest CLI keeps one spelling. | `REVIEW_CANDIDATE_RELATIVE_ROOT` | mcp/src/agents_remember/application/review_candidate_resolution.py:104-109; mcp/src/agents_remember/application/knowledge_review.py:132-158 |
+| **The two published half-names, defined in the sibling module and re-exported here because the ingest CLI authors into the same root this adapter reads.** | `REVIEW_BASELINE_DIRECTORY`; `REVIEW_CANDIDATE_DIRECTORY` | mcp/src/agents_remember/application/review_candidate_resolution.py:110-114; mcp/src/agents_remember/application/review_candidate_resolution.py:96-96; mcp/src/agents_remember/application/knowledge_review.py:136-151 |
+| **The pair preflight: the absent half named as `baseline` or `candidate`, so the refusal says which dataset to author and which to place — reached only when a subject was named, because a task-context review compares no dataset — and, since leaf `260921-ICR-L5`, the sibling fact beside it, a side that is present but cannot be read.** | `missing_dataset_half`; `unreadable_half_refusal` | mcp/src/agents_remember/application/review_candidate_resolution.py:367-387; mcp/src/agents_remember/application/knowledge_before_half.py:347-379 |
+| **The namespace read from the record beside the bytes — the candidate's sealed receipt when there is one, otherwise the before half's own `baseline-generation.json` — with a derived knowledge index's own namespace next (since MIK-R25), the requested repository used only when none of these answers, and an unreadable record refused rather than guessed past. Corrected in place by `260921-ICR-L34`: the receipt-only rule made every `knowledge-ingest --baseline` leaf unfreezable.** | `review_namespace`; `CANDIDATE_RECEIPT_NAME`; `read_baseline_generation` | mcp/src/agents_remember/application/review_candidate_resolution.py:391-457; mcp/src/agents_remember/models/knowledge/snapshot.py:53-53; mcp/src/agents_remember/application/knowledge_baseline_generation.py:285-316 |
+| **The entry operation: the same resolution, one comparison per recorded identity, and a refused subject dropped instead of listed with a zero — with the unreadable-half refusal stated before that loop.** | `list_knowledge_review_entries`; `_reviewable_entries`; `_selected_item_count`; `unreadable_half_refusal` | mcp/src/agents_remember/application/knowledge_review.py:250-305; mcp/src/agents_remember/application/knowledge_before_half.py:347-379 |
+| **The identities the entry list enumerates, read through the store's own two list operations rather than a query written here.** | `_recorded_identities`; `list_invariants`; `list_families` | mcp/src/agents_remember/application/knowledge_review.py:296-308; mcp/src/agents_remember/memory/knowledge/store.py:181-197; mcp/src/agents_remember/memory/knowledge/store.py:199-214 |
 
 
 ## 260915-KS-L32 The Front Door's Path Seed, And The One Frontier Both Selections Share
@@ -2545,13 +2488,7 @@ merge after.
 The route boundary is unchanged: no symbol extractor of its own, no onboarding write, no third root, no export,
 no lane parameter, and no new required producer input — a producer supplies exactly what it supplied before. *(Since leaf `260921-ICR-L45` a producer must also author a realization rationale per new target; see* Authored realization rationale per target, required at admission *above.)*
 
-- The allocation: a fresh `uuid4` pair per creation operation, and the journal the retry is found by. [211]
-- The idempotency key, the content guard, and the replay decided from the dataset. [212]
-- The one derivation, now taking a discriminator that names what each citation identity is about. [213]
-- The route, anchor and claim identities minted together, each keyed on what it is: the path, the allocated revision, and the revision-plus-anchor edge. [214]
-- The explicit-reuse input on a target, and the write module field that carries it. [215]
 - The recovery's journaled decisions and its bounded cycling refusal. [216]
-- The case that measures the ruled semantics at the public boundary: two sibling enclosures, one reused label, two statements, distinct stored identities, and continuity by naming the stored id. [217]
 
 
 ## 260915-KS-L39 The Ingest's Identities Move To The Repository, And The Front Door Reaches The Baseline
@@ -2599,12 +2536,7 @@ resolved through the shipped `bound_definitions`), no onboarding write, no third
 lane parameter; the two-leg route transaction and the publication step keep the shapes the L30 and L32
 sections describe.
 
-- The one derivation, keyed on the repository's own id rather than the enclosure's base commit. [218]
-- The route, anchor and claim identities minted together, discriminated by the locator's qualified name. [219]
-- The operation that resolves the repository identity before planning, and the selection value the front door hands it. [220]
-- The admission that forks a selected baseline instead of creating an empty candidate. [221]
 - **The adapter that declares the baseline argument and passes it into that selection — and, since 260915-KS-L45, derives its candidate directory from the contract and places the baseline into the review's own half.** [222]
-- The route, anchor and claim identities minted together, each keyed on what it is — L43's split lives in the section above. [223]
 - The adapter that now declares the baseline argument and passes it into that selection. [224]
 
 
@@ -2671,10 +2603,7 @@ change is one module's worth of new surface in `application/knowledge_merge.py` 
   `False`, so the path stays conflicted for the agent. The routing narrows the agent's work instead of
   hiding any of it.
 
-- The driving entry point: three materialised stages in, one settled-or-not boolean out, and the identity read only this layer may perform. [225]
-- The three commits one conflicted merge spans, grouped because the adapter's base claim needs them together. [226]
 
-- The one non-test importer this module gained, the Git half that cannot live here, and the single-path entry point the authored retry re-enters. [227]
 
 - The transaction seam that routes the conflict and narrows the agent's list. [228]
 - The layer rule that forces the split, enforced by a test rather than documented. [229]
@@ -2764,11 +2693,11 @@ keeps "the candidate the leaf authored" and "the candidate the review resolved" 
 - **The capture is the shipped owner's, wrapped rather than re-implemented, and its own mid-capture head check is what makes a moved head a named state.** [233]
 - **The pre-publication recheck (for a tree comparison, the memory candidate is recaptured first, MIK-R25) and the refusal that carries both identities, with the one recapture action.** [234]
 - **The adapter's new call site: the recheck runs after the reads and before the payload, and a moved input refuses the whole render.** [235]
-
+- The adapter's re-export of the sibling surface, which is what keeps the ingest CLI's import resolving. [236]
 - **The pair preflight and the record-beside-the-bytes namespace remain the sibling module's, and this route's two operations still call them. The namespace rows' ranges and their wording were corrected by `260921-ICR-L34`, which made the second record answer.** [237]
 - **The case module that measures this route's half of the change through the real resolution, the real capture, the real comparison and the served payload.** [238]
 
-## 260921-ICR-L19 The Ordinary Read Selects And Reads The Repository's Published Intent
+## 260921-ICR-L19 The Ordinary Read Selects And Reads The Repository's Published Intent — Historical Canonical Route, Superseded By MIK-R26
 
 **This route gained one module and one returned half, and the leaf they belong to (`260921-ICR-L19`,
 primary requirement ICR-R19@v1) answers a question the paired read could not: "what did this repository
@@ -2803,7 +2732,7 @@ route exists to return: the block is attached on every call, including when the 
 nothing yet, because an omitted block is indistinguishable from a route that never ran.
 
 - **The new module's public surface: resolve the repository's publication, seed it with the requested paths, and read one bounded page per path.** [239]
-
+- **The named states the route answers with, and the guard that makes "never silently select another repository" a verified fact.** [240]
 - **The shipped read the new route delegates to, reused unchanged by this leaf.** [241]
 - **The ordinary read's attach point, and the response field the block travels on.** [242]
 - **The cases that measure this route's half of the change: the application-layer route, and the named absence a repository that publishes nothing reports. Since MIK-R24 both measure the database block through `published_intent_block` directly, and the two mounted-route cases assert that an unconverted tree is read as `legacy-format`.** [243]
@@ -2844,6 +2773,7 @@ than two implementations that could disagree about which paths changed.
 
 - **The route's new owner of the source half: the inventory's own statement of why it is measured from the pair, why the Git interface is delimiter-safe, and why a failed measurement is a state rather than an empty list.** [244]
 
+- **The one observation both the review's inventory and the comparison's expansion read, with the two Git questions it asks.** [245]
 
 - **The inventory value and the two honesty rules: the count is the list's own length, and a name that is not valid text is carried by its byte form in a measured, partial inventory.** [246]
 - **The source pane: the inventory first and unconditionally, then the comparison's own attribution facts carried verbatim or stated as not measured.** [247]
@@ -2852,6 +2782,7 @@ than two implementations that could disagree about which paths changed.
 - **The composition that measures first and branches second, so no knowledge availability can remove a source change from the list.** [250]
 - **The declaration of the inventory's own limit at the top level of the response.** [251]
 
+- **The comparison's expansion seam is a delegation, so this route has one implementation of "what did these two trees change".** [252]
 
 - **The cases that measure the route's new entry and the source half through the real composition and the real route.** [253]
 
@@ -3063,7 +2994,7 @@ The roster owner still reads each selected family revision’s own guarantee, ex
 - Both family sides use the existing family/head/roster owners. [255]
 - Ambiguity remains explicit rather than selecting a membership-bearing head. [256]
 
-## 260921-ICR-L29 The Write Plane Is Bound To An Admission, And A Repository With No Task Can Be Bootstrapped
+## 260921-ICR-L29 The Write Plane Is Bound To An Admission, And A Repository With No Task Can Be Bootstrapped — Historical Canonical Route, Superseded By MIK-R26
 
 `260921-ICR-L29` (`ICR-R29@v1`, knowledge bootstrap initialization publication and recovery) closes the
 gap the packet states exactly: *the normal memory initializer never creates knowledge storage, while the
@@ -3166,7 +3097,7 @@ composition root is the only place it is bound; a process whose bundle lacks it 
 commit instead of skipping validation. Before MIK-R37 no production memory tree is converted, so binding
 it changes no behaviour today.
 
-
+- The default bundle binds the knowledge validator. [260]
 - The port it satisfies. [261]
 
 ## 260928-MIK-L23 The Published-Memory Selection Selects A Converted Tree
@@ -3252,6 +3183,7 @@ route:
 - The format switch in the read tool. [269]
 - Citation tools route by format. [270]
 - The rule 9 refusal in the quality controller. [271]
+- The composition binds the base converter and the crossing. [272]
 
 ## 260928-MIK-L28 Test Proofs Are Read Back, Named In Two Forms, And Listed When Missing
 
@@ -3383,7 +3315,7 @@ onboarding refresh gate on history files for converted memory trees (the rule it
 - The sides, refusing mixed formats. [287]
 
 - The curator run's dispatch between the history-file gate and today's gate. [288]
-
+- The closeout validator's dispatch. [289]
 - The cache path shared by the worklist and the gate. [290]
 
 ## 260928-MIK-L02 Bounded Continuation Accepted By The Mounted Read: The Paging Package
@@ -3409,7 +3341,7 @@ one continuation the mounted `knowledge_read` resumes, whichever surface minted 
   is cut from, under the same guard as `read_knowledge_scope`.
 - [`knowledge_currentness/surface.py`](knowledge_currentness/surface.py.md): the once-per-page seam
   (`evaluate_answer`, `record_of`, `named_uuids`, `failure_document`, public `CURRENTNESS_FAILURES`).
-- [`knowledge_projection.py`](knowledge_projection.py.md): a projection over the 20,000-character artifact
+- **Historical:** `knowledge_projection.py` (retired): a projection over the 20,000-character artifact
   bound continues in parts, or refuses `oversized_row`, and never raises.
 
 **Architect rulings recorded on the cards (2026-09-29):**
@@ -3440,7 +3372,6 @@ reaches the new code, and unconverted reads were measured byte-identical to base
 - One bound for a whole `read_ar_files` knowledge block, whose tail collapses per seed kind (leaf or scope) since MIK-R01. [294]
 - The converted-tree branch of `knowledge_read`. [295]
 - The whole verified selection a page is cut from. [296]
-- A projection continues in parts or refuses by name. [297]
 
 ## 260928-MIK-L11 Planned Invariant Effects Reconciliation: Declared Effects Against Delivered Rows
 
@@ -3499,7 +3430,9 @@ the declaration is read only after the applicability probe.
 - The reconciliation and its matching. [299]
 - Step 5 of the run. [300]
 - The declaration read fail-closed. [301]
-- The planned row through the writer, and its ref check. [302]
+
+- Planned history rows and their reference resolution moved to the inherited history-row owner. [302]
+
 
 ## 260928-MIK-L06 Family Route Maintenance: The Route Conditions In The Worklist, And A Moved Row That Relocates
 
@@ -3556,7 +3489,9 @@ agree; the writer refuses a malformed cover path rather than crashing; retired f
 - Reached families on all four conditions, others only on a killed route. [305]
 - Step 6 of the run. [306]
 - The cover path, checked at parse time. [307]
-- The moved row's relocation. [308]
+
+- The inherited row owner preserves entry identity while relocating its source path. [308]
+
 
 ## 260928-MIK-L01 The Family-Complete Leaf Read: One Path, Its Whole Family Neighbourhood
 
@@ -3584,7 +3519,7 @@ modules on this route carry it:
   fresh `source_context` path read and every `leaf` token to `_leaf_response`, adds `families` to the
   `invariant` view and names the memory tree on every refusal; `currentness` exposes `subset`; the package
   docstring names three paged responses.
-- [`knowledge_projection.py`](knowledge_projection.py.md): `whole_views` projects a converted tree's view
+- **Historical:** `knowledge_projection.py` (retired): `whole_views` projects a converted tree's view
   whole, with no 64-row cap.
 
 **Carried obligations, each met (recorded on the cards):**
@@ -3641,7 +3576,6 @@ modules on this route carry it:
 - The block's policy follows the seeds asked. [313]
 - Each kind's tail, or the named queue refusal. [314]
 - The leaf response of the mounted read (since MIK-R05 of a path or a family seed), and refusals that name the tree. [315]
-- A converted tree's view projected whole. [316]
 
 ## 260928-MIK-L13 Decision Records: The Writer Reports Requirement Endpoints
 
@@ -3712,7 +3646,7 @@ Four new modules, each carded and governed by this overview:
 Touched: [`review_candidate_resolution.py`](review_candidate_resolution.py.md) (`_live_resolution`, `trees`,
 `knowledge_unavailable`, the memory recheck, `_index_namespace`),
 [`review_committed_leaf.py`](review_committed_leaf.py.md) (`_converted_repository_resolution` and the declaration
-helpers) and [`review_comparison_freeze.py`](review_comparison_freeze.py.md) (a tree comparison is never frozen).
+helpers) and `review_comparison_freeze.py` (retired) (a tree comparison is never frozen).
 
 - **Architect rulings.** 2026-09-29T22:22:37: Q1 no knowledge dataset or copy is opened; Q2 the panel for rules 2
   and 3 is carried to L31/L32; Q3 the report at `notes/reports/review-artifact-cleanup.json` and
@@ -3789,7 +3723,9 @@ memory reads are unchanged (no worklist while both memory sides are unconverted)
 - A delete-only hunk is linked only by a K_B range (and, since MIK-R09, an insertion-only hunk only by a K_C range). [329]
 - The leaf route settles uncovered items and keeps needed rows. [330]
 - The checklist keeps needed onboarding rows out of the unnecessary report. [331]
-- The no_invariant row and the retired-attach refusal. [332]
+
+- The inherited row owner authors explicit no-invariant dispositions. [332]
+
 
 ## 260928-MIK-L05 Route-Chain Family Retrieval: A Path Sees Every Family Whose Territory It Lies In
 
@@ -4055,7 +3991,9 @@ Touched modules: `knowledge_worklist/compute.py` (step 8, the classifier bound o
 - The registrant's docstring: what is read, the triggers and the items. [349]
 - Step 8 in the run, with the run's own classifier. [350]
 - The link states a fired link is judged by. [351]
-- The `still_rejected` refresh and the `raise` in the authoring step. [352]
+
+- The inherited row owner refreshes entries and raises reconsideration through existing ports. [352]
+
 - The question through `task_doc`. [353]
 - The questions reach the task document before any file. [354]
 - The carry's mapping, reused by the refresh. [355]
@@ -4264,6 +4202,7 @@ Touched modules:
 the default bundle; the MCP server and dashboard entry points supply the service. Composition only:
 the archive behavior lives in the CLI service and the admitted terminal transactions.
 
+
 ## Scoped investigation and exact execution identity
 
 The native Investigator launch resolver admits Projects, sprint and sprint/master selections and refuses leaf scope before launch preparation. Read alias normalization retains recorded identity, and caller/task topology remains the authority for all references. This adds a scoped concern role without granting mutation or deriving a task from the Projects folder.
@@ -4271,43 +4210,4 @@ The native Investigator launch resolver admits Projects, sprint and sprint/maste
 
 - This source owns the route’s Investigator selection or execution boundary. [414]
 
-
-## Refreshed current evidence
-
-- **The labelled Git inference: the exact command, the three states, and the sentence that says it is not proof that the invariant moved.** [23]
-- **The new production owner: the five collections plus the non-measurement, each read through its owner with its availability fact.** [47]
-- **The adapter that lost the private resolver and re-exports the owner's, and the port the production app reads it through.** [51]
-- **The pane that reads the partition instead of recomputing it, with every count scoped or reasoned.** [57]
-- **The one-rename publication, the convergence on an already-published record, and the reclaim paths that leave no stage and no unpublished pin.** [60]
-- The declaration this module resolves against, and the reader's owner the read-back goes through — both reused unchanged. [78]
-- The new argument, and the invocation refusal that fires before the contract is read. [89]
-- The capsule operation's four refusal-capable steps, each returning a value rather than raising. [99]
-- The launch compiler: the entry point the serving port is bound to, its named refusals, and the two admittances. [104]
-- The eve carrier path, which materializes L7's carrier and reads the admitted workspace back out of it. [105]
-- The seat-addressed routing rule and its address type, for a caller with no task document. [108]
-- `TOOL_RESPONSE_MODELS` is the registry of public response models. [114]
-- The capsule surface this package consumes and does not re-implement. [137]
-- The production caller the produce side gained: an eve launch through the wired launch points materializes this carrier, and the launch runs in the workspace the carrier admits. [139]
-- The adapter's re-export of the sibling surface, which is what keeps the ingest CLI's import resolving. [236]
-- **The named states the route answers with, and the guard that makes "never silently select another repository" a verified fact.** [240]
-- **The one observation both the review's inventory and the comparison's expansion read, with the two Git questions it asks.** [245]
-- **The comparison's expansion seam is a delegation, so this route has one implementation of "what did these two trees change".** [252]
-- The default bundle binds the knowledge validator. [260]
-- The composition binds the base converter and the crossing. [272]
-- The closeout validator's dispatch. [289]
 - Current imported source owns this scoped route boundary. [415]
-- Current imported source owns this scoped route boundary. [387]
-- Joining a computation in flight; the bound applies only to a new one. [390]
-- Recorded rows are rechecked with path selections first. [395]
-- One pin: the same tree is success, another tree is refused, a held lock is retried. [397]
-
-
-- The leaf-wide parts: memo, one recorded computation, one more when an input moved, then the inputs_changing refusal; a process failure is refused and not kept. [409]
-
-
-## Refreshed current evidence
-
-- Identical requests share one child and others wait for one of two slots. [402]
-- The waiting bound counts computations, not the requests sharing them. [403]
-- A killed dashboard takes the child and its Git process with it. [404]
-- Four concurrent first reads answer alike from one child. [405]

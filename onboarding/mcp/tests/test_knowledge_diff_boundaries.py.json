@@ -2,695 +2,115 @@
   "path": "mcp/tests/test_knowledge_diff_boundaries.py",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "The integration marker, the fixture, the request builder and the public-seam driver.\n\nAnchor: `fixture`",
+    "26": {
+      "note": "`test_a_small_display_budget_pages_the_comparison_without_shrinking_its_totals` supplies the current fixture or assertion described above.",
       "targets": [
         {
           "anchor": {
-            "blob": "16d9115005b531950418960f3030fb71e5e46490",
-            "content": "sha256:cef7f773ba983abbab18d3fedff66bb85806f063456038e8bd00c0562718af00",
+            "blob": "73551cfb002f1420c4431ddb8a46eade70ddfa88",
+            "content": "sha256:f4d312062a40b56bf0941b217f1e096a7cd4b59d128aa52edba409e2d4f34484",
             "locator": {
               "kind": "symbol",
-              "name": "pytestmark"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "16d9115005b531950418960f3030fb71e5e46490",
-            "content": "sha256:a5268bd4e5613303e5ef42cfb3c26197c6a6fa3d7e9bc04ba6957fca175353d3",
-            "locator": {
-              "kind": "symbol",
-              "name": "request_for"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "16d9115005b531950418960f3030fb71e5e46490",
-            "content": "sha256:b569451c58315cb20b202168fbc2591c38372fb5f27ce9dcd5d8f69f8a03deb3",
-            "locator": {
-              "kind": "symbol",
-              "name": "run_diff"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "16d9115005b531950418960f3030fb71e5e46490",
-            "content": "sha256:7a3762a02f9b8f07d7daa3944b1c3c52307b877797c8b53f7940e828d7e31076",
-            "locator": {
-              "end": 73,
-              "kind": "line_range",
-              "start": 68
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "16d9115005b531950418960f3030fb71e5e46490",
-            "content": "sha256:5d0763ded942f3ff337fe7a17ce6e9691076dba18ed2b975d62e04660176bfa9",
-            "locator": {
-              "end": 106,
-              "kind": "line_range",
-              "start": 76
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "16d9115005b531950418960f3030fb71e5e46490",
-            "content": "sha256:f78716e4712a981e91331549a849b62a3276d5b1b59071b56ee785218af53982",
-            "locator": {
-              "end": 122,
-              "kind": "line_range",
-              "start": 109
+              "name": "test_a_small_display_budget_pages_the_comparison_without_shrinking_its_totals"
             }
           },
           "kind": "test"
         }
       ]
     },
-    "10": {
-      "note": "**A side naming another snapshot of its own file refused before any page — the node the review's `R22` form kills.**\n\nAnchor: \"test_a_side_naming_another_snapshot_of_its_own_file_refuses_before_any_page\"",
+    "27": {
+      "note": "`test_the_record_comparison_reports_exactly_the_payload_field_that_changed` supplies the current fixture or assertion described above.",
       "targets": [
         {
           "anchor": {
-            "blob": "16d9115005b531950418960f3030fb71e5e46490",
-            "content": "sha256:40bc2ad21154ca95abd1e35beae9dd537aefdc99ad6de4ad031db161dd50cf97",
-            "locator": {
-              "end": 475,
-              "kind": "line_range",
-              "start": 438
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "11": {
-      "note": "**The forbidden-overreach case: nine verdict words searched over the serialized response, with a positive control.**\n\nAnchor: \"test_no_field_of_a_comparison_can_carry_a_strengthening_or_harmlessness_verdict\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "16d9115005b531950418960f3030fb71e5e46490",
-            "content": "sha256:3de618a2e3240cb724e6f306b007b089d8664bce67fca3f6bd1037ec5cd7799d",
-            "locator": {
-              "end": 507,
-              "kind": "line_range",
-              "start": 481
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "12": {
-      "note": "**The two change statements kept apart, and the record comparison reporting exactly the field that changed.**\n\nAnchor: \"test_the_two_change_statements_are_separate_fields_and_neither_implies_the_other\"; \"test_the_record_comparison_reports_exactly_the_payload_field_that_changed\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "16d9115005b531950418960f3030fb71e5e46490",
-            "content": "sha256:91c18b6ad791054cd4ccf163dcf2706f62451c3c85fea6bd6da183ba515a2385",
-            "locator": {
-              "end": 540,
-              "kind": "line_range",
-              "start": 510
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "16d9115005b531950418960f3030fb71e5e46490",
-            "content": "sha256:42e9a906fb6a605b2f9c1711801e560ee4c4c3548ada3b1a9e5ef699fe41442a",
-            "locator": {
-              "end": 597,
-              "kind": "line_range",
-              "start": 543
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "13": {
-      "note": "The input-substitution and scope-rewording helpers the last group of cases uses.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "16d9115005b531950418960f3030fb71e5e46490",
-            "content": "sha256:3a2ae0ee476b16bd406912a24291bf877365d11bdface57055bcf15bc0e69364",
+            "blob": "73551cfb002f1420c4431ddb8a46eade70ddfa88",
+            "content": "sha256:7ed33191ace74f5b6fe429e09a8d91b105f4238f792fc8de7e3dad9a69ccae8f",
             "locator": {
               "kind": "symbol",
-              "name": "_substitute"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "16d9115005b531950418960f3030fb71e5e46490",
-            "content": "sha256:87483d6856bcd115f1ac631d29a1ee61a861829eada9f8c1c616e854259a5abc",
-            "locator": {
-              "kind": "symbol",
-              "name": "_substituting"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "16d9115005b531950418960f3030fb71e5e46490",
-            "content": "sha256:a0534b9385ea6340d4e1f09b269f4ac9c9cc9650c6d22c784804911ad5ad4420",
-            "locator": {
-              "kind": "symbol",
-              "name": "selected_scopes"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "16d9115005b531950418960f3030fb71e5e46490",
-            "content": "sha256:65d423c8937f25b413d896f89001a038a4c3ddf0d1b5022f42403cec91f841d1",
-            "locator": {
-              "kind": "symbol",
-              "name": "_rewording"
+              "name": "test_the_record_comparison_reports_exactly_the_payload_field_that_changed"
             }
           },
           "kind": "test"
         }
       ]
     },
-    "14": {
-      "note": "**A page of a selection being what the comparison displays and not what it selected.**\n\nAnchor: \"test_a_page_of_a_selection_is_what_the_comparison_displays_not_what_it_selected\"",
+    "28": {
+      "note": "`test_a_page_of_a_selection_is_what_the_comparison_displays_not_what_it_selected` supplies the current fixture or assertion described above.",
       "targets": [
         {
           "anchor": {
-            "blob": "16d9115005b531950418960f3030fb71e5e46490",
-            "content": "sha256:79cff0facd4862fe2697cc884fdd2b581da8c636498d817c084e55c7a572102b",
+            "blob": "73551cfb002f1420c4431ddb8a46eade70ddfa88",
+            "content": "sha256:9208103b48fdeeb0b58d3f182f591d4b2694768f1b0b6c2888ff57b0ea0c931a",
             "locator": {
-              "end": 749,
-              "kind": "line_range",
-              "start": 708
+              "kind": "symbol",
+              "name": "test_a_page_of_a_selection_is_what_the_comparison_displays_not_what_it_selected"
             }
           },
           "kind": "test"
         }
       ]
     },
-    "15": {
-      "note": "The two non-claims: no mounted UI and no approval, and an unavailable observation never reported as a change set — now with the partition asserted too (no total at all, empty third list, the undetermined limit declared and no counted omission).\n\nAnchor: \"test_a_comparison_names_no_mounted_ui_and_no_approval_it_cannot_make\"; \"test_an_unavailable_observation_is_reported_as_unavailable_and_never_as_a_change_set\"",
+    "29": {
+      "note": "`test_an_unavailable_observation_is_reported_as_unavailable_and_never_as_a_change_set` supplies the current fixture or assertion described above.",
       "targets": [
         {
           "anchor": {
-            "blob": "16d9115005b531950418960f3030fb71e5e46490",
-            "content": "sha256:6ee78c11c3c0d84f12fcacad355068578bd7c1c0fa9ef05468222155288b0610",
-            "locator": {
-              "end": 788,
-              "kind": "line_range",
-              "start": 769
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "16d9115005b531950418960f3030fb71e5e46490",
+            "blob": "73551cfb002f1420c4431ddb8a46eade70ddfa88",
             "content": "sha256:5d7f82afa9edce61929ce9e9b14a3d328807191ddc3f7298079fe0625d5227ac",
             "locator": {
-              "end": 847,
-              "kind": "line_range",
-              "start": 791
+              "kind": "symbol",
+              "name": "test_an_unavailable_observation_is_reported_as_unavailable_and_never_as_a_change_set"
             }
           },
           "kind": "test"
         }
       ]
     },
-    "16": {
-      "note": "**The probe that measured the trees being what makes a gap visible.**\n\nAnchor: \"test_a_probe_that_measured_the_trees_is_what_makes_a_gap_visible\"",
+    "30": {
+      "note": "`test_a_probe_that_measured_the_trees_is_what_makes_a_gap_visible` supplies the current fixture or assertion described above.",
       "targets": [
         {
           "anchor": {
-            "blob": "16d9115005b531950418960f3030fb71e5e46490",
-            "content": "sha256:bf423cadf92bba52e1ebc26de5e9653afb8a42860c6d484059142f762ed13d17",
-            "locator": {
-              "end": 912,
-              "kind": "line_range",
-              "start": 850
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "17": {
-      "note": "The production probe these cases drive rather than substitute.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "5e1dc9aed3f09bf6a0af1b7b09c4bf5770425a6e",
-            "content": "sha256:75cc4fbd0593f56af28ddcc9b8b65c1b4de6c05e2440466710bdefdcda3336e2",
+            "blob": "73551cfb002f1420c4431ddb8a46eade70ddfa88",
+            "content": "sha256:155ecab90583890cccafa8fe89d7814a351addca813226746f4cff6a258b5e31",
             "locator": {
               "kind": "symbol",
-              "name": "git_tree_difference_probe"
-            },
-            "path": "mcp/src/agents_remember/application/knowledge_diff.py"
+              "name": "test_a_probe_that_measured_the_trees_is_what_makes_a_gap_visible"
+            }
           },
-          "kind": "code"
+          "kind": "test"
         }
       ]
     },
-    "18": {
-      "note": "The fixture these cases run on, and the governed contract it is registered under.\n\nAnchor: `knowledge-diff-cases`",
+    "31": {
+      "note": "Fixture construction imports test-only row constructors; it does not call the retired canonical writer.",
       "targets": [
         {
           "anchor": {
-            "blob": "a3b58d726cbf892f17bbd2cea4b738d4ed605cb0",
-            "content": "sha256:0e33a6818449f12402a8bb83520c99d0fd294d8c353a6afe9f326d22e3665449",
+            "blob": "73551cfb002f1420c4431ddb8a46eade70ddfa88",
+            "content": "sha256:cdfa4b86ef236f913f8fabfb6a50acc7a1b6649dfdc332ab9701523fa65c91a4",
+            "locator": {
+              "end": 56,
+              "kind": "line_range",
+              "start": 53
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "32": {
+      "note": "RowStore inserts index-shaped fixture rows without the retired production admission plane.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "25497ca2fe27297d4ac750d338e86962058a76f1",
+            "content": "sha256:041b3cc8ba5b2d4ef617d3c837e60d9fdc1aca5a8c4787a0854ce08e91e91eee",
             "locator": {
               "kind": "symbol",
-              "name": "build_diff_fixture"
+              "name": "RowStore"
             },
-            "path": "mcp/tests/diff_scope_test_support.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
-            "content": "sha256:e10108ca4545e3e35eb8559c634f49dc13bd2ef29ed4c87ba48f79c8b1a1cfaa",
-            "locator": {
-              "end": 1426,
-              "kind": "line_range",
-              "start": 1270
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
-            "content": "sha256:7e027222c96ad14c1c4341d24a8b3af6f32f8c3230040db2e2f1ff07eddd9be8",
-            "locator": {
-              "end": 1276,
-              "kind": "line_range",
-              "start": 1276
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "19": {
-      "note": "**The integration-lane row this module occupies, and the read-scope artifact whose consumer list it joined.**\n\nAnchor: \"integration = [\"; \"owner = \\\"knowledge-read-scope-cases\\\"\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "b40e230c8c442fa5db08533ba34af91c391d0454",
-            "content": "sha256:70cef63ede8a20e6b3945ac0a9ddd5ebe7224f89d21584170545742c4abb33b9",
-            "locator": {
-              "end": 1943,
-              "kind": "line_range",
-              "start": 1943
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "ad32196677d5800992fe4294b439f3e28af150ec",
-            "content": "sha256:313ed0aea69f94d6889c191e0ef012ae79630aae743f75e7373d0b3122379659",
-            "locator": {
-              "end": 330,
-              "kind": "line_range",
-              "start": 330
-            },
-            "path": "mcp/tests/test-evidence-lanes.toml"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "2": {
-      "note": "The two readers that let a case name a record rather than a position.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "16d9115005b531950418960f3030fb71e5e46490",
-            "content": "sha256:23136c191d329bad8378a9b2c45e29808ca14e28223091197d79e58b17e526ea",
-            "locator": {
-              "kind": "symbol",
-              "name": "items_of"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "16d9115005b531950418960f3030fb71e5e46490",
-            "content": "sha256:272dee2f98206f922fd21ace3f23729425f1313f93ae39e29f8528040684761c",
-            "locator": {
-              "kind": "symbol",
-              "name": "item_for"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "20": {
-      "note": "**The integration-lane row this module occupies, and the read-scope artifact whose consumer list it joined.**\n\nAnchor: \"integration = [\"; \"owner = \\\"knowledge-read-scope-cases\\\"\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "b40e230c8c442fa5db08533ba34af91c391d0454",
-            "content": "sha256:70cef63ede8a20e6b3945ac0a9ddd5ebe7224f89d21584170545742c4abb33b9",
-            "locator": {
-              "end": 1943,
-              "kind": "line_range",
-              "start": 1943
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "ad32196677d5800992fe4294b439f3e28af150ec",
-            "content": "sha256:313ed0aea69f94d6889c191e0ef012ae79630aae743f75e7373d0b3122379659",
-            "locator": {
-              "end": 330,
-              "kind": "line_range",
-              "start": 330
-            },
-            "path": "mcp/tests/test-evidence-lanes.toml"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "21": {
-      "note": "The fixture these cases run on, and the governed contract it is registered under.\n\nAnchor: `knowledge-diff-cases`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "a3b58d726cbf892f17bbd2cea4b738d4ed605cb0",
-            "content": "sha256:0e33a6818449f12402a8bb83520c99d0fd294d8c353a6afe9f326d22e3665449",
-            "locator": {
-              "kind": "symbol",
-              "name": "build_diff_fixture"
-            },
-            "path": "mcp/tests/diff_scope_test_support.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
-            "content": "sha256:952f14deb7de3e9a12badbe329d0e8c1ca0aa91d3b01476237e11337f1dd63e6",
-            "locator": {
-              "end": 1426,
-              "kind": "line_range",
-              "start": 1212
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "22": {
-      "note": "**The integration-lane row this module occupies, and the read-scope artifact whose consumer list it joined.**\n\nAnchor: \"integration = [\"; \"owner = \\\"knowledge-read-scope-cases\\\"\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "b40e230c8c442fa5db08533ba34af91c391d0454",
-            "content": "sha256:70cef63ede8a20e6b3945ac0a9ddd5ebe7224f89d21584170545742c4abb33b9",
-            "locator": {
-              "end": 1943,
-              "kind": "line_range",
-              "start": 1943
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "ad32196677d5800992fe4294b439f3e28af150ec",
-            "content": "sha256:313ed0aea69f94d6889c191e0ef012ae79630aae743f75e7373d0b3122379659",
-            "locator": {
-              "end": 330,
-              "kind": "line_range",
-              "start": 330
-            },
-            "path": "mcp/tests/test-evidence-lanes.toml"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "23": {
-      "note": "**The integration-lane row this module occupies, and the read-scope artifact whose consumer list it joined.**\n\nAnchor: \"integration = [\"; \"owner = \\\"knowledge-read-scope-cases\\\"\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "b40e230c8c442fa5db08533ba34af91c391d0454",
-            "content": "sha256:70cef63ede8a20e6b3945ac0a9ddd5ebe7224f89d21584170545742c4abb33b9",
-            "locator": {
-              "end": 1943,
-              "kind": "line_range",
-              "start": 1943
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "ad32196677d5800992fe4294b439f3e28af150ec",
-            "content": "sha256:313ed0aea69f94d6889c191e0ef012ae79630aae743f75e7373d0b3122379659",
-            "locator": {
-              "end": 330,
-              "kind": "line_range",
-              "start": 330
-            },
-            "path": "mcp/tests/test-evidence-lanes.toml"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "24": {
-      "note": "The fixture these cases run on, and the governed contract it is registered under.\n\nAnchor: `knowledge-diff-cases`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "a3b58d726cbf892f17bbd2cea4b738d4ed605cb0",
-            "content": "sha256:0e33a6818449f12402a8bb83520c99d0fd294d8c353a6afe9f326d22e3665449",
-            "locator": {
-              "kind": "symbol",
-              "name": "build_diff_fixture"
-            },
-            "path": "mcp/tests/diff_scope_test_support.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "b40e230c8c442fa5db08533ba34af91c391d0454",
-            "content": "sha256:4b8910f4afb7d73e11903f86261a2f55b15fd413733d559569d5b182502dcac8",
-            "locator": {
-              "end": 2053,
-              "kind": "line_range",
-              "start": 2049
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
-            "content": "sha256:5e68ba7a499a73089c75397f29028f5b1c9dc05e5759c8914b236eb50796338c",
-            "locator": {
-              "end": 1426,
-              "kind": "line_range",
-              "start": 1276
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "25": {
-      "note": "**The integration-lane row this module occupies, and the read-scope artifact whose consumer list it joined.**\n\nAnchor: \"integration = [\"; \"owner = \\\"knowledge-read-scope-cases\\\"\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "b40e230c8c442fa5db08533ba34af91c391d0454",
-            "content": "sha256:70cef63ede8a20e6b3945ac0a9ddd5ebe7224f89d21584170545742c4abb33b9",
-            "locator": {
-              "end": 1943,
-              "kind": "line_range",
-              "start": 1943
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "ad32196677d5800992fe4294b439f3e28af150ec",
-            "content": "sha256:313ed0aea69f94d6889c191e0ef012ae79630aae743f75e7373d0b3122379659",
-            "locator": {
-              "end": 330,
-              "kind": "line_range",
-              "start": 330
-            },
-            "path": "mcp/tests/test-evidence-lanes.toml"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "3": {
-      "note": "**The expansion naming both requested trees and every path they differ at, with the reproducing command and no `HEAD`.**\n\nAnchor: \"test_the_expansion_names_both_requested_trees_and_every_path_they_differ_at\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "16d9115005b531950418960f3030fb71e5e46490",
-            "content": "sha256:ca55060dabee397d22bf4771569f14120fd68fa50027affc2efe2ac880d32657",
-            "locator": {
-              "end": 182,
-              "kind": "line_range",
-              "start": 145
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "4": {
-      "note": "**The changed path no recorded realization attributes, listed as a visible gap that survives a filter.**\n\nAnchor: \"test_a_changed_path_no_recorded_realization_attributes_is_listed_as_a_visible_gap\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "16d9115005b531950418960f3030fb71e5e46490",
-            "content": "sha256:5975eca098d2bbabff96ce09ae5ea80989ce01b8f93d067600bf4421b085cb1d",
-            "locator": {
-              "end": 218,
-              "kind": "line_range",
-              "start": 185
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "5": {
-      "note": "The moved obligation's source observed on the side that claims it.\n\nAnchor: \"test_the_attributed_source_of_a_moved_obligation_is_observed_on_the_side_that_claims_it\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "16d9115005b531950418960f3030fb71e5e46490",
-            "content": "sha256:dceed58fde364c699851eac1ba7c4e722f5db9774bd4af0d5a7ccce2db05607f",
-            "locator": {
-              "end": 251,
-              "kind": "line_range",
-              "start": 221
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "6": {
-      "note": "**A small display budget paging the comparison without shrinking its totals.**\n\nAnchor: \"test_a_small_display_budget_pages_the_comparison_without_shrinking_its_totals\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "16d9115005b531950418960f3030fb71e5e46490",
-            "content": "sha256:f5349844e4bf7e350dde15da6346c243e52072f32c9a93d0e5823ceed405f130",
-            "locator": {
-              "end": 297,
-              "kind": "line_range",
-              "start": 257
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "7": {
-      "note": "**A missing side refusing and substituting no other snapshot.**\n\nAnchor: \"test_a_missing_side_refuses_and_substitutes_no_other_snapshot\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "16d9115005b531950418960f3030fb71e5e46490",
-            "content": "sha256:baf1381d29613c5fb3b3648f7398a75474925f9185b69a84fadc6d795f9d8776",
-            "locator": {
-              "end": 322,
-              "kind": "line_range",
-              "start": 303
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "8": {
-      "note": "**The real candidate write that moves the logical digest and refuses the continuation, and the helper that makes the write through the public store.**\n\nAnchor: \"test_a_candidate_that_changed_after_a_continuation_refuses_the_continuation\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "16d9115005b531950418960f3030fb71e5e46490",
-            "content": "sha256:b3d284dc5d526fb18451c09fb6daaead3f4cf39f2a3670e5773dbd7c203169da",
-            "locator": {
-              "kind": "symbol",
-              "name": "add_unrelated_revision"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "16d9115005b531950418960f3030fb71e5e46490",
-            "content": "sha256:adfbf65ef24c1db9a03a24d84e8a91e93b6ee9c4b93f091ddfd1bdb2b387b18d",
-            "locator": {
-              "end": 342,
-              "kind": "line_range",
-              "start": 342
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "9": {
-      "note": "**A continuation against another selector refusing and returning no page.**\n\nAnchor: \"test_a_continuation_presented_against_another_selector_refuses_and_returns_no_page\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "16d9115005b531950418960f3030fb71e5e46490",
-            "content": "sha256:e6cc5b87fbc410994f7a82001e09237da0d94e700d8e2f98795edd9043ffe8c2",
-            "locator": {
-              "end": 435,
-              "kind": "line_range",
-              "start": 408
-            }
+            "path": "mcp/tests/knowledge_rows_test_support.py"
           },
           "kind": "test"
         }

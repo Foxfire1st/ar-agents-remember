@@ -7,12 +7,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "22883742dc94023e998239675800e90df206293a",
+            "blob": "fb7ee6c541ff12537f5e1e9722aef9979c56423d",
             "content": "sha256:ee31ecbd38a7cb0d68509d7cbc9f6980e34e8938744fc95462c2b32c58305607",
             "locator": {
-              "end": 236,
+              "end": 234,
               "kind": "line_range",
-              "start": 228
+              "start": 226
             }
           },
           "kind": "code"
@@ -76,7 +76,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "22883742dc94023e998239675800e90df206293a",
+            "blob": "fb7ee6c541ff12537f5e1e9722aef9979c56423d",
             "content": "sha256:2df36e1b981a0272f8013f86cf7cec6bf4b68ee2a99e1f4b41998207b496a173",
             "locator": {
               "end": 123,
@@ -93,7 +93,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "22883742dc94023e998239675800e90df206293a",
+            "blob": "fb7ee6c541ff12537f5e1e9722aef9979c56423d",
             "content": "sha256:05e4b46c8a37b2777e4cb6ddfe700bb8a41382fb2563af1657b250ac86288f29",
             "locator": {
               "end": 185,
@@ -111,7 +111,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "22883742dc94023e998239675800e90df206293a",
+            "blob": "fb7ee6c541ff12537f5e1e9722aef9979c56423d",
             "content": "sha256:dd052653f02d83be41dbe24ee29cc5d4c4deee5c12843fedc88ece133ec32204",
             "locator": {
               "end": 63,
@@ -138,6 +138,23 @@
         }
       ]
     },
+    "17": {
+      "note": "The current closeout handoff uses Git base/candidate review and produces no separate comparison record.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fb7ee6c541ff12537f5e1e9722aef9979c56423d",
+            "content": "sha256:4282df6b178eb0b39554e7a59ef7fb0546b8df982fe8594446d2229f40c31b1c",
+            "locator": {
+              "end": 208,
+              "kind": "line_range",
+              "start": 206
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "The closeout skill defines public tool usage and the authorized code/memory-content transaction.",
       "targets": [
@@ -158,7 +175,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "22883742dc94023e998239675800e90df206293a",
+            "blob": "fb7ee6c541ff12537f5e1e9722aef9979c56423d",
             "content": "sha256:f1788bc7b983fdd929f3bc832bf0cb58aa3e5c609b59d8c5ac87dedd1d2b6842",
             "locator": {
               "end": 106,
@@ -176,7 +193,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "22883742dc94023e998239675800e90df206293a",
+            "blob": "fb7ee6c541ff12537f5e1e9722aef9979c56423d",
             "content": "sha256:d241207d24b67b101ec723e8fd577f79e3d5cf1da72f59190e37a4c8f5eea050",
             "locator": {
               "end": 156,
@@ -188,7 +205,7 @@
         },
         {
           "anchor": {
-            "blob": "22883742dc94023e998239675800e90df206293a",
+            "blob": "fb7ee6c541ff12537f5e1e9722aef9979c56423d",
             "content": "sha256:d29ff8f9f7e1931a5904b21b28cdb2920607cdcb6e60e7e845e3dc605d927870",
             "locator": {
               "end": 169,
@@ -205,7 +222,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "22883742dc94023e998239675800e90df206293a",
+            "blob": "fb7ee6c541ff12537f5e1e9722aef9979c56423d",
             "content": "sha256:6d19567445ea2ee62c35dd21765b0f731f02ddd1ba099476ace08f87b8acd7b0",
             "locator": {
               "end": 197,
@@ -241,24 +258,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "22883742dc94023e998239675800e90df206293a",
+            "blob": "fb7ee6c541ff12537f5e1e9722aef9979c56423d",
             "content": "sha256:a0b62d45ca0d28fbfc7b234df4049920f840b16e33734de764c38146f7cb6a44",
             "locator": {
-              "end": 229,
+              "end": 227,
               "kind": "line_range",
-              "start": 229
+              "start": 227
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "22883742dc94023e998239675800e90df206293a",
+            "blob": "fb7ee6c541ff12537f5e1e9722aef9979c56423d",
             "content": "sha256:89fd1a502b17ac99ce596cba38da71a0b879995a2b59d0556b017d95ee7336b5",
             "locator": {
-              "end": 234,
+              "end": 232,
               "kind": "line_range",
-              "start": 234
+              "start": 232
             }
           },
           "kind": "code"
@@ -270,7 +287,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "22883742dc94023e998239675800e90df206293a",
+            "blob": "fb7ee6c541ff12537f5e1e9722aef9979c56423d",
             "content": "sha256:f1788bc7b983fdd929f3bc832bf0cb58aa3e5c609b59d8c5ac87dedd1d2b6842",
             "locator": {
               "end": 106,
@@ -288,7 +305,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "22883742dc94023e998239675800e90df206293a",
+            "blob": "fb7ee6c541ff12537f5e1e9722aef9979c56423d",
             "content": "sha256:fbbfdeba68dbde8f189c9c1068d354fe2cf194d9084ba25ca32549e18b9eebb4",
             "locator": {
               "end": 127,
@@ -300,12 +317,12 @@
         },
         {
           "anchor": {
-            "blob": "22883742dc94023e998239675800e90df206293a",
+            "blob": "fb7ee6c541ff12537f5e1e9722aef9979c56423d",
             "content": "sha256:f1ed709efab6017546419cade58c8fb43486b179993c0b78343eb386e73fed70",
             "locator": {
-              "end": 351,
+              "end": 366,
               "kind": "line_range",
-              "start": 351
+              "start": 366
             }
           },
           "kind": "code"

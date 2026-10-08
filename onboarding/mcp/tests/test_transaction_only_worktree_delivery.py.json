@@ -1,5 +1,41 @@
 {
   "path": "mcp/tests/test_transaction_only_worktree_delivery.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "3cb51d6a619167b107b8c8836f89bd51831af1ed",
+        "content": "sha256:20089bdfe8636fa7c3caaf6baa8842fae8047e6ba616f7f3c7e406c18b0937e3",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_publication_is_bound_to_the_branch_and_the_head_the_closeout_admitted"
+        }
+      },
+      "facet": "Publication refuses a moved branch or head and lands on the admitted pair.",
+      "id": "PRF-62XTKR",
+      "invariant": "INV-KTMBMN",
+      "origin": {
+        "handoffEntry": "R3 finding 2",
+        "leaf": "260928-MIK-L26"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "3cb51d6a619167b107b8c8836f89bd51831af1ed",
+        "content": "sha256:778cd5126befa5baac53c5508cfa665be50c25a15c493990fdf5d4b52c478774",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_refused_converted_memory_publication_gives_back_every_preparation"
+        }
+      },
+      "facet": "A refused converted-memory publication restores every route-owned preparation.",
+      "id": "PRF-Q78QT3",
+      "invariant": "INV-N5RBFK",
+      "origin": {
+        "handoffEntry": "R3 finding 3",
+        "leaf": "260928-MIK-L26"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "1": {

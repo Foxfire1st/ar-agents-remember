@@ -14,7 +14,7 @@
 
 - Constants name the fixture's paths and IDs (`REVIEW_PATH`, `SIBLING_PATHS`, `TEST_PATH`, `REVIEW_INVARIANT`, `FAMILY`, `DECISION`, `INCIDENT`, `LEAF`, …); `anchor`, `write_document`, `git`, `init_repository` and `commit_all` are the shared helpers.
 - `convert_dataset(database_path, destination)` writes the layout marker and converts heads (`_heads`, which refuses a lineage with several heads), mapping legacy locators with `_new_locator` and returning the legacy-ID → text-ID map.
-- `build_parity_dataset` authors a store database through the shipped writers (`P→I`, `F{I,J}`, `G{J,K}`, `H{I,L}`, six claims over five paths); `add_parity_claim` adds one claim for the candidate-changed parity case.
+- `build_parity_dataset` authors a fixture database through the test-only `knowledge_rows_test_support` row builders (`P→I`, `F{I,J}`, `G{J,K}`, `H{I,L}`, six claims over five paths); `add_parity_claim` adds one claim for the candidate-changed parity case.
 - `rewrite_in_the_second_of_the_index_write(repository, target, text)` (L37) records `target` in the repository's
   index and then rewrites it in place with `text`, same size, in the same clock second, retrying until both fall
   in one second. The one canonical helper is shared by index, capture, reopen and reviewer-currentness tests.
@@ -46,17 +46,18 @@ No configured live documentation source was available for this pass.
 
 ### Repo-Internal References
 
-The fixture writers and the converter.
+The test-only fixture row builders and the converter.
 
 - The two fixture kinds and the converter's limits. [1]
 - The conforming-example tree. [2]
 - The fixture converter and its head selection. [3]
-- The store-authored parity database and the extra candidate claim. [4]
 
-- A same-size rewrite placed in the second of the index write. [5]
 
 ### Cross-Repo References
 
-No meaningful cross-repo references found: the fixtures are written under the caller's `tmp_path`.
+No meaningful cross-repo references found: the fixtures are written under the caller's `tmp_path`. Production canonical-database mutation routes are retired; these fixture builders do not restore them.
 
 No cross-repo boundary is crossed by this file.
+
+- The test-row-builder parity database and the extra candidate claim. [4]
+- A same-size rewrite placed in the second of the index write. [5]

@@ -3,22 +3,22 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Exact refs, worktree identity, and authority-safe cleanup.",
+      "note": "Pinned refs/checkouts.",
       "targets": [
         {
           "anchor": {
-            "blob": "275847ecea525f425b8c6c5f28b5c3ed8c461439",
-            "content": "sha256:84580a01bb3869b8ec141c3c2d55a44b42eecd9a55c9637f2c2e766d93762cbf",
+            "blob": "f98146eb55d96bc7a490bf0d5761a39fa74e93ae",
+            "content": "sha256:6b9626d58796145bd7249a358484606d3bc91ce5943d679da63783eb87ef11ba",
             "locator": {
               "kind": "symbol",
-              "name": "read_ref"
+              "name": "create_pinned_ref"
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "275847ecea525f425b8c6c5f28b5c3ed8c461439",
+            "blob": "f98146eb55d96bc7a490bf0d5761a39fa74e93ae",
             "content": "sha256:50793bd524b8366861a7d51098ec3b5e27accb5316b191a02fc027152176e2e4",
             "locator": {
               "kind": "symbol",
@@ -26,168 +26,35 @@
             }
           },
           "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "275847ecea525f425b8c6c5f28b5c3ed8c461439",
-            "content": "sha256:47aa641bccfabe5cc8004ec3565d23276201b12c6f9ff3afd39fa63e70ad5a2a",
-            "locator": {
-              "kind": "symbol",
-              "name": "delete_pinned_ref"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "10": {
-      "note": "The crossing helpers this module drives.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d137af1a77fb633b90407595c57af9b5794458ad",
-            "content": "sha256:b16b8d49e386b1c5d9367506dc344d2c122ff64b3f0e084e51feeb972c42e31c",
-            "locator": {
-              "kind": "symbol",
-              "name": "crossing_plan"
-            },
-            "path": "mcp/src/agents_remember/worktrees/knowledge_crossing.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d137af1a77fb633b90407595c57af9b5794458ad",
-            "content": "sha256:9cee7d39379888cd18794013dfc40a3cf9db0a4917edfdcb14e84e2cc389c7d9",
-            "locator": {
-              "kind": "symbol",
-              "name": "apply_crossing"
-            },
-            "path": "mcp/src/agents_remember/worktrees/knowledge_crossing.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d137af1a77fb633b90407595c57af9b5794458ad",
-            "content": "sha256:f3f0c7ee1f793ec67ce30436950163e72dd40e0a71753c28fe1c62ede4ff2921",
-            "locator": {
-              "kind": "symbol",
-              "name": "write_crossing_report"
-            },
-            "path": "mcp/src/agents_remember/worktrees/knowledge_crossing.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d137af1a77fb633b90407595c57af9b5794458ad",
-            "content": "sha256:3302222db837b98bf5fef2034d41306d014a5ba2a0f0829d178b3ca479d7dab3",
-            "locator": {
-              "kind": "symbol",
-              "name": "close_crossing_history"
-            },
-            "path": "mcp/src/agents_remember/worktrees/knowledge_crossing.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "11": {
-      "note": "The managed sync crosses an unconverted leaf into a converted line, and leaves overlapping edits to the curator.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "332a4fe6740f125bc2af30e9559bf2dd068bed92",
-            "content": "sha256:4155b6613b84a2bf73d9a5f22ebfb03be0b4e8c884b1b77be2c5d39dcef09b0f",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_the_managed_sync_crosses_an_unconverted_leaf_into_a_converted_line"
-            },
-            "path": "mcp/tests/test_knowledge_crossing.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "332a4fe6740f125bc2af30e9559bf2dd068bed92",
-            "content": "sha256:8b10ca1ba2ebc9c88eddf1af2e8eca524cf748d654c64fd7891b7a1d626b4595",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_crossing_leaves_overlapping_edits_to_the_curator_and_a_failed_step_changes_nothing"
-            },
-            "path": "mcp/tests/test_knowledge_crossing.py"
-          },
-          "kind": "test"
         }
       ]
     },
     "12": {
-      "note": "The staged memory tree is validated against both parents before the commit; a refusal raises and leaves the merge staged.\n\nAnchor: `memory_commit_refusal`",
+      "note": "Exact staged validator before commit.",
       "targets": [
         {
           "anchor": {
-            "blob": "275847ecea525f425b8c6c5f28b5c3ed8c461439",
-            "content": "sha256:10d691ea942699bad6c7ea325310a36c8b56eef36d52dcb8454c95907ce7aadf",
+            "blob": "f98146eb55d96bc7a490bf0d5761a39fa74e93ae",
+            "content": "sha256:3a20c476b4a05e39bde63fb4fdfa2181f4fc1b6ef772829bf6e7a2c479190ca6",
             "locator": {
               "kind": "symbol",
-              "name": "SyncKnowledgeValidationError"
+              "name": "_finish_staged_memory_merge"
             }
           },
           "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "275847ecea525f425b8c6c5f28b5c3ed8c461439",
-            "content": "sha256:c1a63dff202ec41064427875a0ba31179ab80236ea9a4d0245a1b31ce25113d5",
-            "locator": {
-              "end": 592,
-              "kind": "line_range",
-              "start": 581
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "13": {
-      "note": "The managed sync refuses a merge with duplicate IDs, keeps it staged, and syncs after the repair.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "0aa022ec4b45b059754a8f3b1252fa8d25b69384",
-            "content": "sha256:d73742d5ac37b6faa2d79865d288edaae714ac2231a2e8147bdc911c5fd9e969",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_the_managed_sync_refuses_a_merge_with_duplicate_ids_until_it_is_repaired"
-            },
-            "path": "mcp/tests/test_knowledge_validator_routes.py"
-          },
-          "kind": "test"
         }
       ]
     },
     "14": {
-      "note": "Rollback and created-head proof retain exact operation ownership.",
+      "note": "Attributable rollback.",
       "targets": [
         {
           "anchor": {
-            "blob": "275847ecea525f425b8c6c5f28b5c3ed8c461439",
+            "blob": "f98146eb55d96bc7a490bf0d5761a39fa74e93ae",
             "content": "sha256:d97b331539bed08d8bb17a4fe08fb8c7706ee94b36bf4048fe03eedbc4a5800d",
             "locator": {
               "kind": "symbol",
               "name": "rollback_side"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "275847ecea525f425b8c6c5f28b5c3ed8c461439",
-            "content": "sha256:fa1ca326117de93fc4febaebe1e7802714efa4d373dcef16fdc132ab769eae5d",
-            "locator": {
-              "kind": "symbol",
-              "name": "exact_created_head"
             }
           },
           "kind": "code"
@@ -195,165 +62,29 @@
       ]
     },
     "15": {
-      "note": "**Public regression covers cache-only success, true content conflict/continue, preserved WIP, and the structured diagnosis with its authored reconcile.**",
+      "note": "Current public content-conflict scenario.\n\nAnchor: `WorktreeSyncTests.test_memory_merge_settles_content_conflicts_in_the_transaction`",
       "targets": [
         {
           "anchor": {
-            "blob": "ff126f9b30915781edf6095804550e121abbc7cf",
-            "content": "sha256:20b6465acb9ecadd287f52285ee0fb482674d070de9454a54ec2cf439e92bce3",
+            "blob": "10f851e4484874f5350945cc4b10e60e22644f55",
+            "content": "sha256:3b0303542991bb45b8c52d7aa4a80fafe5aab7c09493db6cf8512947d8413af0",
             "locator": {
-              "kind": "symbol",
-              "name": "test_memory_merge_settles_content_and_knowledge_conflicts_in_the_transaction"
+              "end": 417,
+              "kind": "line_range",
+              "start": 331
             },
             "path": "mcp/tests/test_worktree_sync.py"
           },
           "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "ff126f9b30915781edf6095804550e121abbc7cf",
-            "content": "sha256:dfc2bdb9c57686d48af729cb029f1f26d2567096091bee74a3cb4e8af536f27f",
-            "locator": {
-              "kind": "symbol",
-              "name": "_assert_knowledge_conflict_scenarios"
-            },
-            "path": "mcp/tests/test_worktree_sync.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "ff126f9b30915781edf6095804550e121abbc7cf",
-            "content": "sha256:36a53060aeff1ddae226f99bafc0b72756ab013ae4944da9de5485f5515ba72e",
-            "locator": {
-              "kind": "symbol",
-              "name": "_assert_memory_content_conflict_scenarios"
-            },
-            "path": "mcp/tests/test_worktree_sync.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "16": {
-      "note": "**The real two-sided dataset case that proves the sync completes, both sides survive, and the caller invoked no merge entry point.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "ff126f9b30915781edf6095804550e121abbc7cf",
-            "content": "sha256:21acbdc267adebaf0d858e87021d6b8b1a14462795d6f74e83faa28999c54701",
-            "locator": {
-              "kind": "symbol",
-              "name": "_assert_knowledge_database_conflict_settles"
-            },
-            "path": "mcp/tests/test_worktree_sync.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "17": {
-      "note": "**The cases that assert the diagnosis reaches the public response, that one authored decision settles it, that the row-less shape is retracted, that the orientation with nothing to retract advertises only a route that works, and that a schema disagreement is reported rather than reconciled.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "ff126f9b30915781edf6095804550e121abbc7cf",
-            "content": "sha256:35cdf35cb9d332ababf21f508eadc3cbec1e5489997036531d131e143442ff43",
-            "locator": {
-              "kind": "symbol",
-              "name": "_assert_knowledge_conflict_is_diagnosed_and_reconciled"
-            },
-            "path": "mcp/tests/test_worktree_sync.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "ff126f9b30915781edf6095804550e121abbc7cf",
-            "content": "sha256:90ffb809ef139a3aaae5cd15901c789719d74a935bcfa5531b72a92341d249eb",
-            "locator": {
-              "kind": "symbol",
-              "name": "_assert_delete_reference_conflict_is_retracted"
-            },
-            "path": "mcp/tests/test_worktree_sync.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "ff126f9b30915781edf6095804550e121abbc7cf",
-            "content": "sha256:5a279d335ee691000f851cf4607ed048b6e81784fede2960b20c3f5cd60132e8",
-            "locator": {
-              "kind": "symbol",
-              "name": "_assert_unretractable_delete_reference_advertises_its_real_route"
-            },
-            "path": "mcp/tests/test_worktree_sync.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "ff126f9b30915781edf6095804550e121abbc7cf",
-            "content": "sha256:783214fdc6941666eda5045fe82a81ee414df897c46b32fd77568e2937c1a1ee",
-            "locator": {
-              "kind": "symbol",
-              "name": "_assert_schema_disagreement_is_reported_not_reconciled"
-            },
-            "path": "mcp/tests/test_worktree_sync.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "18": {
-      "note": "The rollback restores the cache before the merge abort.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "275847ecea525f425b8c6c5f28b5c3ed8c461439",
-            "content": "sha256:d97b331539bed08d8bb17a4fe08fb8c7706ee94b36bf4048fe03eedbc4a5800d",
-            "locator": {
-              "kind": "symbol",
-              "name": "rollback_side"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "19": {
-      "note": "A failed abort names Git's reason.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "275847ecea525f425b8c6c5f28b5c3ed8c461439",
-            "content": "sha256:1198290d616fa0d6414dae46011c099e7e7c84ef584a23fba0f455f9dd780a76",
-            "locator": {
-              "kind": "symbol",
-              "name": "_abort_failure"
-            }
-          },
-          "kind": "code"
         }
       ]
     },
     "2": {
-      "note": "Typed dirty/WIP and restore proof exclude only the memory cache.",
+      "note": "Exact WIP park/restore proof.",
       "targets": [
         {
           "anchor": {
-            "blob": "275847ecea525f425b8c6c5f28b5c3ed8c461439",
-            "content": "sha256:e40546cac2457fb2f2a305608082d7b4e66af5ca95a74c80a43eb6f71a61cb95",
-            "locator": {
-              "kind": "symbol",
-              "name": "worktree_dirty_paths"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "275847ecea525f425b8c6c5f28b5c3ed8c461439",
+            "blob": "f98146eb55d96bc7a490bf0d5761a39fa74e93ae",
             "content": "sha256:e96929ca9176ec1f318d2193a4fdf656c43fd1f35ffd6d2dbc65c1ddb9722ea5",
             "locator": {
               "kind": "symbol",
@@ -364,7 +95,7 @@
         },
         {
           "anchor": {
-            "blob": "275847ecea525f425b8c6c5f28b5c3ed8c461439",
+            "blob": "f98146eb55d96bc7a490bf0d5761a39fa74e93ae",
             "content": "sha256:a8d5c04f5077bf0a3a49869b23a27b0541df5d39eb33799b468ace30092d11e5",
             "locator": {
               "kind": "symbol",
@@ -375,62 +106,13 @@
         }
       ]
     },
-    "20": {
-      "note": "Cancel after a memory conflict restores the branch and its tracked cache.",
+    "8": {
+      "note": "Supported staged continuation.",
       "targets": [
         {
           "anchor": {
-            "blob": "ff126f9b30915781edf6095804550e121abbc7cf",
-            "content": "sha256:7641ca0bc19096ed37cd771b996d024e734975642b0c58e621c4ae98c302c37e",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_cancel_after_a_memory_conflict_restores_the_branch_and_its_tracked_cache"
-            },
-            "path": "mcp/tests/test_worktree_sync.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "3": {
-      "note": "Content-domain conflicts and narrowly scoped cache state handling.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "275847ecea525f425b8c6c5f28b5c3ed8c461439",
-            "content": "sha256:2c2428c20f8fd2a74d830ef280a4858a3bf5701b7895bc98b9b0127fd445861f",
-            "locator": {
-              "kind": "symbol",
-              "name": "content_conflicts"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "4": {
-      "note": "**The typed merge outcome that replaced the three-tuple, and the adapter's refusal and (since MIK-R24) the crossing report path it carries out of the merge.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "275847ecea525f425b8c6c5f28b5c3ed8c461439",
-            "content": "sha256:0a53fe45579b8493120d4cc8287e34fdb50c2835cc85a80787ed5052cc972af1",
-            "locator": {
-              "kind": "symbol",
-              "name": "SideMergeOutcome"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "5": {
-      "note": "**The conflict routing: knowledge datasets settle in the transaction, the undecided remainder reaches the agent, and the explanation travels with it.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "275847ecea525f425b8c6c5f28b5c3ed8c461439",
-            "content": "sha256:df7bca7aceaa9ac4de87839def636a2e905f8b9a8a12e1e14bc204c389fe86e2",
+            "blob": "f98146eb55d96bc7a490bf0d5761a39fa74e93ae",
+            "content": "sha256:50d5b06c31cb023b0dfded274d5fc9592ac6c8fd0576486aea7d7575bd4b9712",
             "locator": {
               "kind": "symbol",
               "name": "_continue_memory_merge"
@@ -440,91 +122,7 @@
         },
         {
           "anchor": {
-            "blob": "ff073dcd6884e86bfda0d682259a88056d0e5211",
-            "content": "sha256:a0235a2922b79213f88c1e5be423f11cf0de80d13d6a32f2c10bb98983ec4cf0",
-            "locator": {
-              "kind": "symbol",
-              "name": "settle_knowledge_conflicts"
-            },
-            "path": "mcp/src/agents_remember/worktrees/knowledge_conflict.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "6": {
-      "note": "**The authored retry's Git half, which is the same route the automatic pass takes.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "275847ecea525f425b8c6c5f28b5c3ed8c461439",
-            "content": "sha256:649035dbc3509fae16fc616afc9a9bdb9cf519318e93303d3580fb64777724d6",
-            "locator": {
-              "kind": "symbol",
-              "name": "reconcile_side_merge"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "ff073dcd6884e86bfda0d682259a88056d0e5211",
-            "content": "sha256:7835a23f1d9547ef9216d0168ae62a6e417ad652af09def0df55efc1f0d2f113",
-            "locator": {
-              "kind": "symbol",
-              "name": "settle_knowledge_conflict"
-            },
-            "path": "mcp/src/agents_remember/worktrees/knowledge_conflict.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "7": {
-      "note": "**The adapter the routing calls, and the one importer that makes this module depend on the application layer rather than on the memory domain.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "98aec610624c132745372b672210694450dd6cfd",
-            "content": "sha256:52429675b19ceaf3643a506e1ba9bbf74ccdc023361e04c03b7be7ffc5b4e9b8",
-            "locator": {
-              "kind": "symbol",
-              "name": "merge_conflicted_stages"
-            },
-            "path": "mcp/src/agents_remember/application/knowledge_merge.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "8": {
-      "note": "Native merge, exact continuation, and cache-free merge output; both entry points carry the paired code commit to the final memory merge, which first closes any master-line crossing history file the merge adds.\n\nAnchor: \"close_crossing_history\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "275847ecea525f425b8c6c5f28b5c3ed8c461439",
-            "content": "sha256:da3f38a40f06f5a2b38354c0dd9206c2e3eef2ae7866a550b395f309c7344df2",
-            "locator": {
-              "kind": "symbol",
-              "name": "start_side_merge"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "275847ecea525f425b8c6c5f28b5c3ed8c461439",
-            "content": "sha256:3a20c476b4a05e39bde63fb4fdfa2181f4fc1b6ef772829bf6e7a2c479190ca6",
-            "locator": {
-              "kind": "symbol",
-              "name": "_finish_staged_memory_merge"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "275847ecea525f425b8c6c5f28b5c3ed8c461439",
+            "blob": "f98146eb55d96bc7a490bf0d5761a39fa74e93ae",
             "content": "sha256:a58de0c68499a1c7e744f240a8a00072cc8d27f4f61bf8e73b5392afaf2d7463",
             "locator": {
               "kind": "symbol",
@@ -536,38 +134,26 @@
       ]
     },
     "9": {
-      "note": "**The crossing branch of the memory merge (MIK-R24 rule 8): the plan is computed before Git merges, then replaces the merge's knowledge and onboarding paths, and the report path rides the outcome.**\n\nAnchor: \"crossing_report\"",
+      "note": "Structural merge for every converted side.",
       "targets": [
         {
           "anchor": {
-            "blob": "275847ecea525f425b8c6c5f28b5c3ed8c461439",
-            "content": "sha256:202bf02a771fb97aa7f33e1caaa2d8883147ab6f5b1342a4c47c45ae3c382e09",
+            "blob": "f98146eb55d96bc7a490bf0d5761a39fa74e93ae",
+            "content": "sha256:eb1fed75ae6bdd3627ae2f50b590865656ddb09e3c7080e05ebe45dd8aec1ea5",
             "locator": {
               "kind": "symbol",
-              "name": "_crossing"
+              "name": "_knowledge_merge"
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "275847ecea525f425b8c6c5f28b5c3ed8c461439",
-            "content": "sha256:6d999f6c98c5499aa8a1e0becaa0559abdfad91facb9b3e0998fdc06667bf225",
+            "blob": "f98146eb55d96bc7a490bf0d5761a39fa74e93ae",
+            "content": "sha256:341d161d2c6ffe985b6d6b0e1abd821eb8391e8ef41aed5d17780e8caa5f0b15",
             "locator": {
               "kind": "symbol",
-              "name": "_apply_crossing_merge"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "275847ecea525f425b8c6c5f28b5c3ed8c461439",
-            "content": "sha256:c071cf1bf1ce49f701c5ebf06138296006b9def6ca3bdc374181bad9e05fb120",
-            "locator": {
-              "end": 67,
-              "kind": "line_range",
-              "start": 67
+              "name": "_apply_knowledge_merge"
             }
           },
           "kind": "code"

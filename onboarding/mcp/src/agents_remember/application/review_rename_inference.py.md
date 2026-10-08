@@ -35,18 +35,12 @@ which recorded old path looks like the file that moved. It creates, moves and at
   {before_tree} {after_tree}`, with the two tree IDs, or with `<no such tree requested>` for a side
   without one. The text is built from the same `_RENAME_ARGS` tuple the measurement passes to Git,
   `PARSED_DIFF_OPTIONS` included.
-- `RenameInferenceSources` carries the two trees and the probe together; `no_rename_inference` is the
-  probe for a caller that must run no Git command.
+- `RenameInferenceSources` carries the two exact trees and an optional probe. `_inference_for` reports the absence of a measurement when the probe is absent; it does not run a substitute Git command. The former `no_rename_inference` factory is removed.
 
 ## Evidence
 
-- The module docstring: an inference about the source, never proof that an invariant moved. [15]
-- The published command text. [16]
-- A measurement, or the reason there is none. [17]
-- The Git call with the parsed-diff options, and its unavailable answers. [18]
-- The inference is asked once and only for movements with two different paths. [19]
-- The command text with the two tree IDs. [20]
-- The recorded path pairs of one movement. [21]
-- The three states of an attached inference. [22]
-- The record walk that refuses a malformed stream. [23]
-- The option tuple for parsed diffs. [24]
+### Repo-Internal References
+
+- `with_rename_inferences` implements the retained boundary described above. [25]
+- `_inference_for` implements the retained boundary described above. [26]
+- `git_rename_inference` implements the retained boundary described above. [27]

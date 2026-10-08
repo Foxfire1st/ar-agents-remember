@@ -1,58 +1,14 @@
 {
   "path": "mcp/src/agents_remember/models/knowledge/source.py",
-  "realizes": [
-    {
-      "anchor": {
-        "blob": "26d29178fa3d9db0a179257bcf598df2ec146a14",
-        "content": "sha256:12b3301d68fc80d98a6414b732ea425dcc979f5d77ce818f246cad5a965010c9",
-        "locator": {
-          "kind": "symbol",
-          "name": "SourceAnchorDraft"
-        }
-      },
-      "id": "RLZ-NSDH0DR7",
-      "invariant": "INV-103S55GN",
-      "origin": {
-        "leaf": "260921-ICR-L30"
-      },
-      "rationale": "The anchor draft is the Git-bound half and the authorship origin references plus the manifest are the non-Git half; both are named because the obligation is that the two never merge.",
-      "role": "primary-authority"
-    }
-  ],
+  "proves": [],
+  "realizes": [],
   "references": {
-    "1": {
-      "note": "The single v1 source identity and the alias a caller may name.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "26d29178fa3d9db0a179257bcf598df2ec146a14",
-            "content": "sha256:1e298dac283758ed66928be2d0810155c551774df245b80edc3380e4b4e55a50",
-            "locator": {
-              "kind": "symbol",
-              "name": "GitBlobIdentity"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "26d29178fa3d9db0a179257bcf598df2ec146a14",
-            "content": "sha256:0393c91a146e99f6d5348d47d95abce85f696bd06accfd7cd987cfd56d63f2aa",
-            "locator": {
-              "kind": "symbol",
-              "name": "SourceIdentity"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "2": {
-      "note": "The three locators and the discriminated union over them.",
+      "note": "The three source locator values and their discriminated union.",
       "targets": [
         {
           "anchor": {
-            "blob": "26d29178fa3d9db0a179257bcf598df2ec146a14",
+            "blob": "c97e0d9b28c13ea873c21c1b90f320505f736621",
             "content": "sha256:cd62c80383c06ea6d0fdf6d3cc765e8810a3cf4e42979c3dc2fa7ebabdf4aedf",
             "locator": {
               "kind": "symbol",
@@ -63,7 +19,7 @@
         },
         {
           "anchor": {
-            "blob": "26d29178fa3d9db0a179257bcf598df2ec146a14",
+            "blob": "c97e0d9b28c13ea873c21c1b90f320505f736621",
             "content": "sha256:4b2f431ea69379a415912a641b12cc4e703ee418cda7b983c2be11639ee703a3",
             "locator": {
               "kind": "symbol",
@@ -74,7 +30,7 @@
         },
         {
           "anchor": {
-            "blob": "26d29178fa3d9db0a179257bcf598df2ec146a14",
+            "blob": "c97e0d9b28c13ea873c21c1b90f320505f736621",
             "content": "sha256:828d9a42d7a261e7c3adfb7cb474a01c9f7af1db127ae1332d03471474f2f958",
             "locator": {
               "kind": "symbol",
@@ -85,7 +41,7 @@
         },
         {
           "anchor": {
-            "blob": "26d29178fa3d9db0a179257bcf598df2ec146a14",
+            "blob": "c97e0d9b28c13ea873c21c1b90f320505f736621",
             "content": "sha256:c662fc6a00aff8273f3c58deea591eb8f0e1ece21f074fb9476d22cddaf8786c",
             "locator": {
               "kind": "symbol",
@@ -93,147 +49,19 @@
             }
           },
           "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "26d29178fa3d9db0a179257bcf598df2ec146a14",
-            "content": "sha256:545319e02aa1c3016fe41165f3fe7d89f26296a1a666c2d0caf688941dd67270",
-            "locator": {
-              "end": 79,
-              "kind": "line_range",
-              "start": 59
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "The draft/stored split, the repository-relative POSIX path rule, and the repaired `UUID` identifier field.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "26d29178fa3d9db0a179257bcf598df2ec146a14",
-            "content": "sha256:12b3301d68fc80d98a6414b732ea425dcc979f5d77ce818f246cad5a965010c9",
-            "locator": {
-              "kind": "symbol",
-              "name": "SourceAnchorDraft"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "26d29178fa3d9db0a179257bcf598df2ec146a14",
-            "content": "sha256:245b19ca6934e10660cc62530cbf01091637a557f2db9c43de0c3a9474ad910b",
-            "locator": {
-              "kind": "symbol",
-              "name": "SourceAnchor"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "26d29178fa3d9db0a179257bcf598df2ec146a14",
-            "content": "sha256:f536e7b541eb48ac4b8df468309cdf4d3f28db235482a1adf2ca476c6b3bb5d5",
-            "locator": {
-              "kind": "symbol",
-              "name": "_require_confined_relative_posix_path"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "26d29178fa3d9db0a179257bcf598df2ec146a14",
-            "content": "sha256:7f4b1750b9cffcfd1b014242d2953466a6002d673c71f33dc330fe417a93e3db",
-            "locator": {
-              "end": 127,
-              "kind": "line_range",
-              "start": 82
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "4": {
-      "note": "**The Git-pathspec half of the path rule, delegated to the one shared validator so the write path and the seed path cannot disagree.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "138358a5feab44724703f06dfe3ff24c231ee322",
-            "content": "sha256:715e7df48deebd5b3adef0d28b2c124ccca66442005bd3f27ddc5cab9e0cf8c9",
-            "locator": {
-              "kind": "symbol",
-              "name": "require_plain_git_path"
-            },
-            "path": "mcp/src/agents_remember/models/knowledge/base.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "5": {
-      "note": "**The node that measures a pathspec-magic spelling being refused at this boundary and never answered as an absence.**\n\nAnchor: \"test_a_pathspec_magic_spelling_is_refused_by_the_typed_path_and_never_answered_as_absence\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "696967d803d343179746b6660e6098a8ee1446d2",
-            "content": "sha256:b792a395b1578099e42babfcc2585b251d50ae4038f20e91f3faa4e37ee89dff",
-            "locator": {
-              "end": 255,
-              "kind": "line_range",
-              "start": 178
-            },
-            "path": "mcp/tests/test_knowledge_read_paths.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "6": {
-      "note": "The stored `source_anchor` table, its immutability trigger and its canonical column order.\n\nAnchor: `source_anchor`; `source_anchor_no_rewrite`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "5e27550d32bfd12f38a8b3393ad8622114eb677a",
-            "content": "sha256:d4b4b47a78017827d8c1760069d497d80cff41cca291c7c0b9df9ecb029155eb",
-            "locator": {
-              "end": 279,
-              "kind": "line_range",
-              "start": 267
-            },
-            "path": "mcp/src/agents_remember/memory/knowledge/schema.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "5e27550d32bfd12f38a8b3393ad8622114eb677a",
-            "content": "sha256:e4405452457f76b28c129d93570bdf5e3117502efbd84025ed092779e3e2c6df",
-            "locator": {
-              "end": 389,
-              "kind": "line_range",
-              "start": 385
-            },
-            "path": "mcp/src/agents_remember/memory/knowledge/schema.py"
-          },
-          "kind": "code"
         }
       ]
     },
     "7": {
-      "note": "The codec that derives the canonical identity text and decodes an anchor row through the discriminated union.",
+      "note": "The retained decoder uses shared locator values; the canonical anchor-row encoding and decoding APIs are retired.",
       "targets": [
         {
           "anchor": {
-            "blob": "121c4afa09ae47ad7908ca98c752895684e7232f",
-            "content": "sha256:5febc8cc994f200d39cbf98135f80f69d9e89bc38781fbd5919cd5bf0dbb3b1e",
+            "blob": "0ee5929321e3f7a958a51aecc7f15c63d890c86c",
+            "content": "sha256:0d0003a9634dab7b1114263aa4687f10c3699db9aa9fada2c2cb95c738278508",
             "locator": {
               "kind": "symbol",
-              "name": "anchor_row"
+              "name": "decode_typed_column"
             },
             "path": "mcp/src/agents_remember/memory/knowledge/records.py"
           },
@@ -241,42 +69,12 @@
         },
         {
           "anchor": {
-            "blob": "121c4afa09ae47ad7908ca98c752895684e7232f",
-            "content": "sha256:3f1942fb3b4c56caef11577956abb7a962cf60544b7a1a8db161bb7879497ff8",
+            "blob": "c97e0d9b28c13ea873c21c1b90f320505f736621",
+            "content": "sha256:c662fc6a00aff8273f3c58deea591eb8f0e1ece21f074fb9476d22cddaf8786c",
             "locator": {
               "kind": "symbol",
-              "name": "anchor_row_digest"
-            },
-            "path": "mcp/src/agents_remember/memory/knowledge/records.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "121c4afa09ae47ad7908ca98c752895684e7232f",
-            "content": "sha256:abefcc84253875ed98182787cf202efafd73b7f925d29e23f70e019c9a723348",
-            "locator": {
-              "kind": "symbol",
-              "name": "decode_anchor_row"
-            },
-            "path": "mcp/src/agents_remember/memory/knowledge/records.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "8": {
-      "note": "The single construction point that attaches provenance to a draft.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "6da9b8594800bbc6fbd46f935cd5ed58599644cb",
-            "content": "sha256:76ad1229045d5cbb6c4d05a43f88ed1f34f9e807089ea2d65fe28533687e7515",
-            "locator": {
-              "kind": "symbol",
-              "name": "source_anchor_from_draft"
-            },
-            "path": "mcp/src/agents_remember/memory/knowledge/anchors.py"
+              "name": "SourceLocator"
+            }
           },
           "kind": "code"
         }

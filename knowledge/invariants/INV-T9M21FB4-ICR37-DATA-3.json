@@ -19,6 +19,6 @@
   "revision": 3,
   "schema": "ar-invariant/v1",
   "statement": "An explicit unchanged-knowledge recording prepares the normal live comparison only for a dataset comparison whose published and pending task knowledge match the exact recorded memory base; a leaf whose comparison is its Git trees (converted memory) is refused before any dataset is read or copied.",
-  "status": "proposed",
+  "status": "retired",
   "supersedes": []
 }

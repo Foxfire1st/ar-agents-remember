@@ -1,0 +1,234 @@
+{
+  "document": "mcp/tests/read_scope_test_support.py.md",
+  "preview": {
+    "ok": true,
+    "tokens": 2055,
+    "tokenizer": "tiktoken:o200k_base",
+    "tokenCountExact": true,
+    "operation": "citation_fix",
+    "repoId": "agents-remember",
+    "dryRun": true,
+    "servingBuild": {
+      "version": "3.0.0rc8",
+      "bootedAt": "2026-10-08T11:56:00.022030+00:00",
+      "sourceDigest": "sha256:6659adb8f968f82c8365bc031220a34c1984276112b5cb1dfd5e1c5db841d237",
+      "pythonExecutable": "/home/firefox/.local/share/agents-remember/python/cpython-3.14.8/bin/python3.14",
+      "packageRoot": "/home/firefox/projects/agents-remember/mcp/src/agents_remember",
+      "commit": "3f682987",
+      "dashboardBuild": "cb442492c4373d059462c5a2ad7715f3961bab6f21c1181b2ecf2674b768b4a6"
+    },
+    "status": "converted",
+    "refreshedAnchors": 32,
+    "rewrittenSidecars": [
+      "onboarding/mcp/tests/read_scope_test_support.py.json"
+    ],
+    "unreadableSidecars": [],
+    "stale": [
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/mcp/tests/read_scope_test_support.py.json",
+        "field": "references.10.targets.0",
+        "target": "mcp/tests/evidence-lifecycle.toml",
+        "state": "stale",
+        "message": "onboarding/mcp/tests/read_scope_test_support.py.json: references.10.targets.0: reference target mcp/tests/evidence-lifecycle.toml is stale; refresh it through the onboarding gate (MIK-R30)"
+      },
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/mcp/tests/read_scope_test_support.py.json",
+        "field": "references.4.targets.3",
+        "target": "mcp/tests/read_scope_test_support.py",
+        "state": "stale",
+        "message": "onboarding/mcp/tests/read_scope_test_support.py.json: references.4.targets.3: reference target mcp/tests/read_scope_test_support.py is stale; refresh it through the onboarding gate (MIK-R30)"
+      },
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/mcp/tests/read_scope_test_support.py.json",
+        "field": "references.4.targets.4",
+        "target": "mcp/tests/read_scope_test_support.py",
+        "state": "stale",
+        "message": "onboarding/mcp/tests/read_scope_test_support.py.json: references.4.targets.4: reference target mcp/tests/read_scope_test_support.py is stale; refresh it through the onboarding gate (MIK-R30)"
+      },
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/mcp/tests/read_scope_test_support.py.json",
+        "field": "references.5.targets.1",
+        "target": "mcp/tests/read_scope_test_support.py",
+        "state": "stale",
+        "message": "onboarding/mcp/tests/read_scope_test_support.py.json: references.5.targets.1: reference target mcp/tests/read_scope_test_support.py is stale; refresh it through the onboarding gate (MIK-R30)"
+      },
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/mcp/tests/read_scope_test_support.py.json",
+        "field": "references.5.targets.6",
+        "target": "mcp/tests/read_scope_test_support.py",
+        "state": "stale",
+        "message": "onboarding/mcp/tests/read_scope_test_support.py.json: references.5.targets.6: reference target mcp/tests/read_scope_test_support.py is stale; refresh it through the onboarding gate (MIK-R30)"
+      },
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/mcp/tests/read_scope_test_support.py.json",
+        "field": "references.5.targets.7",
+        "target": "mcp/tests/read_scope_test_support.py",
+        "state": "stale",
+        "message": "onboarding/mcp/tests/read_scope_test_support.py.json: references.5.targets.7: reference target mcp/tests/read_scope_test_support.py is stale; refresh it through the onboarding gate (MIK-R30)"
+      },
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/mcp/tests/read_scope_test_support.py.json",
+        "field": "references.5.targets.8",
+        "target": "mcp/tests/read_scope_test_support.py",
+        "state": "stale",
+        "message": "onboarding/mcp/tests/read_scope_test_support.py.json: references.5.targets.8: reference target mcp/tests/read_scope_test_support.py is stale; refresh it through the onboarding gate (MIK-R30)"
+      },
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/mcp/tests/read_scope_test_support.py.json",
+        "field": "references.5.targets.9",
+        "target": "mcp/tests/read_scope_test_support.py",
+        "state": "stale",
+        "message": "onboarding/mcp/tests/read_scope_test_support.py.json: references.5.targets.9: reference target mcp/tests/read_scope_test_support.py is stale; refresh it through the onboarding gate (MIK-R30)"
+      },
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/mcp/tests/read_scope_test_support.py.json",
+        "field": "references.5.targets.10",
+        "target": "mcp/tests/read_scope_test_support.py",
+        "state": "stale",
+        "message": "onboarding/mcp/tests/read_scope_test_support.py.json: references.5.targets.10: reference target mcp/tests/read_scope_test_support.py is stale; refresh it through the onboarding gate (MIK-R30)"
+      },
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/mcp/tests/read_scope_test_support.py.json",
+        "field": "references.5.targets.11",
+        "target": "mcp/tests/read_scope_test_support.py",
+        "state": "stale",
+        "message": "onboarding/mcp/tests/read_scope_test_support.py.json: references.5.targets.11: reference target mcp/tests/read_scope_test_support.py is stale; refresh it through the onboarding gate (MIK-R30)"
+      },
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/mcp/tests/read_scope_test_support.py.json",
+        "field": "references.6.targets.0",
+        "target": "mcp/tests/read_scope_test_support.py",
+        "state": "stale",
+        "message": "onboarding/mcp/tests/read_scope_test_support.py.json: references.6.targets.0: reference target mcp/tests/read_scope_test_support.py is stale; refresh it through the onboarding gate (MIK-R30)"
+      },
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/mcp/tests/read_scope_test_support.py.json",
+        "field": "references.6.targets.1",
+        "target": "mcp/tests/read_scope_test_support.py",
+        "state": "stale",
+        "message": "onboarding/mcp/tests/read_scope_test_support.py.json: references.6.targets.1: reference target mcp/tests/read_scope_test_support.py is stale; refresh it through the onboarding gate (MIK-R30)"
+      },
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/mcp/tests/read_scope_test_support.py.json",
+        "field": "references.6.targets.2",
+        "target": "mcp/tests/read_scope_test_support.py",
+        "state": "stale",
+        "message": "onboarding/mcp/tests/read_scope_test_support.py.json: references.6.targets.2: reference target mcp/tests/read_scope_test_support.py is stale; refresh it through the onboarding gate (MIK-R30)"
+      },
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/mcp/tests/read_scope_test_support.py.json",
+        "field": "references.6.targets.3",
+        "target": "mcp/tests/read_scope_test_support.py",
+        "state": "stale",
+        "message": "onboarding/mcp/tests/read_scope_test_support.py.json: references.6.targets.3: reference target mcp/tests/read_scope_test_support.py is stale; refresh it through the onboarding gate (MIK-R30)"
+      },
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/mcp/tests/read_scope_test_support.py.json",
+        "field": "references.6.targets.4",
+        "target": "mcp/tests/read_scope_test_support.py",
+        "state": "stale",
+        "message": "onboarding/mcp/tests/read_scope_test_support.py.json: references.6.targets.4: reference target mcp/tests/read_scope_test_support.py is stale; refresh it through the onboarding gate (MIK-R30)"
+      },
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/mcp/tests/read_scope_test_support.py.json",
+        "field": "references.7.targets.0",
+        "target": "mcp/tests/evidence-lifecycle.toml",
+        "state": "stale",
+        "message": "onboarding/mcp/tests/read_scope_test_support.py.json: references.7.targets.0: reference target mcp/tests/evidence-lifecycle.toml is stale; refresh it through the onboarding gate (MIK-R30)"
+      },
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/mcp/tests/read_scope_test_support.py.json",
+        "field": "references.8.targets.0",
+        "target": "mcp/tests/evidence-lifecycle.toml",
+        "state": "stale",
+        "message": "onboarding/mcp/tests/read_scope_test_support.py.json: references.8.targets.0: reference target mcp/tests/evidence-lifecycle.toml is stale; refresh it through the onboarding gate (MIK-R30)"
+      },
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/mcp/tests/read_scope_test_support.py.json",
+        "field": "references.9.targets.0",
+        "target": "mcp/tests/evidence-lifecycle.toml",
+        "state": "stale",
+        "message": "onboarding/mcp/tests/read_scope_test_support.py.json: references.9.targets.0: reference target mcp/tests/evidence-lifecycle.toml is stale; refresh it through the onboarding gate (MIK-R30)"
+      }
+    ],
+    "authoring": {
+      "dryRun": true,
+      "authoredReferences": 6,
+      "reauthoredReferences": 0,
+      "removedReferences": 10,
+      "authoredCards": [
+        "onboarding/mcp/tests/read_scope_test_support.py.md"
+      ],
+      "createdSidecars": [],
+      "unresolvedTargets": [],
+      "refused": [],
+      "authoredCardsCount": 1,
+      "createdSidecarsCount": 0,
+      "unresolvedTargetsCount": 0,
+      "refusedCount": 0
+    },
+    "staleCount": 18,
+    "rewrittenSidecarsCount": 1,
+    "unreadableSidecarsCount": 0
+  },
+  "apply": {
+    "ok": true,
+    "tokens": 359,
+    "tokenizer": "tiktoken:o200k_base",
+    "tokenCountExact": true,
+    "operation": "citation_fix",
+    "repoId": "agents-remember",
+    "dryRun": false,
+    "servingBuild": {
+      "version": "3.0.0rc8",
+      "bootedAt": "2026-10-08T11:56:00.022030+00:00",
+      "sourceDigest": "sha256:6659adb8f968f82c8365bc031220a34c1984276112b5cb1dfd5e1c5db841d237",
+      "pythonExecutable": "/home/firefox/.local/share/agents-remember/python/cpython-3.14.8/bin/python3.14",
+      "packageRoot": "/home/firefox/projects/agents-remember/mcp/src/agents_remember",
+      "commit": "3f682987",
+      "dashboardBuild": "cb442492c4373d059462c5a2ad7715f3961bab6f21c1181b2ecf2674b768b4a6"
+    },
+    "status": "converted",
+    "refreshedAnchors": 0,
+    "rewrittenSidecars": [],
+    "unreadableSidecars": [],
+    "stale": [],
+    "authoring": {
+      "dryRun": false,
+      "authoredReferences": 6,
+      "reauthoredReferences": 0,
+      "removedReferences": 10,
+      "authoredCards": [
+        "onboarding/mcp/tests/read_scope_test_support.py.md"
+      ],
+      "createdSidecars": [],
+      "unresolvedTargets": [],
+      "refused": [],
+      "authoredCardsCount": 1,
+      "createdSidecarsCount": 0,
+      "unresolvedTargetsCount": 0,
+      "refusedCount": 0
+    },
+    "staleCount": 0,
+    "rewrittenSidecarsCount": 0,
+    "unreadableSidecarsCount": 0
+  }
+}

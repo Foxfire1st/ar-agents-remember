@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "Realized across 2 files that together perform the obligation."
+  },
+  "applicability": "The owner-bound documentation correction.",
+  "conditions": [
+    "Only the listed provenance is removed."
+  ],
+  "exclusions": [
+    "Earlier acceptance dispositions and other candidate inputs, which are carried, not reopened."
+  ],
+  "id": "INV-JFGTZT",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Candidate tracked working-diff SHA256 28f8cf17c18b46853d2adfba303c915d2b76e583c1eb829003b0d4763e89b5e8, exact current freeze ff535c0388eee5ea17dfe3aeb0a049bda120cafe920717c517bd3b1ec7dc64d6, independent equality qualification and unchanged original producer/index/HEAD evidence."
+      ],
+      "path": "handoff-stage1.json"
+    },
+    "handoffEntry": "MIK-R26@v1 (documentation correction)",
+    "leaf": "260928-MIK-L26",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The current owner-bound R26 documentation correction removes only the listed provenance and describes the preserved publication boundary without changing executable logic, other candidate inputs or earlier acceptance dispositions.",
+  "status": "retired",
+  "supersedes": []
+}

@@ -1,6 +1,97 @@
 {
   "path": "mcp/src/agents_remember/worktrees/queue/closeout_recovery.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "087633e817b9197311ac844320b1bc70e48c0288",
+        "content": "sha256:6863a842e675f2fad75317197d2e0a5f1edb089de347d587a395618298690fca",
+        "locator": {
+          "kind": "symbol",
+          "name": "require_admitted_tip"
+        }
+      },
+      "id": "RLZ-16560Z",
+      "invariant": "INV-RYF7BJ",
+      "origin": {
+        "handoffEntry": "L26-CX-N03",
+        "leaf": "260928-MIK-L26"
+      },
+      "rationale": "The changed recovery docstring is where the provenance spans lived.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "087633e817b9197311ac844320b1bc70e48c0288",
+        "content": "sha256:6863a842e675f2fad75317197d2e0a5f1edb089de347d587a395618298690fca",
+        "locator": {
+          "kind": "symbol",
+          "name": "require_admitted_tip"
+        }
+      },
+      "id": "RLZ-62E5M0",
+      "invariant": "INV-HDV88M",
+      "origin": {
+        "handoffEntry": "R3 Finding 2",
+        "leaf": "260928-MIK-L26"
+      },
+      "rationale": "Compares the actual branch and parent with the admission before publication.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "087633e817b9197311ac844320b1bc70e48c0288",
+        "content": "sha256:6863a842e675f2fad75317197d2e0a5f1edb089de347d587a395618298690fca",
+        "locator": {
+          "kind": "symbol",
+          "name": "require_admitted_tip"
+        }
+      },
+      "id": "RLZ-76H41E",
+      "invariant": "INV-KTMBMN",
+      "origin": {
+        "handoffEntry": "R3 finding 2",
+        "leaf": "260928-MIK-L26"
+      },
+      "rationale": "This check compares the actual branch and parent with the admission.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "087633e817b9197311ac844320b1bc70e48c0288",
+        "content": "sha256:6863a842e675f2fad75317197d2e0a5f1edb089de347d587a395618298690fca",
+        "locator": {
+          "kind": "symbol",
+          "name": "require_admitted_tip"
+        }
+      },
+      "id": "RLZ-EJA9DM",
+      "invariant": "INV-JFGTZT",
+      "origin": {
+        "handoffEntry": "MIK-R26@v1 (documentation correction)",
+        "leaf": "260928-MIK-L26"
+      },
+      "rationale": "The corrected recovery docstring.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "087633e817b9197311ac844320b1bc70e48c0288",
+        "content": "sha256:6863a842e675f2fad75317197d2e0a5f1edb089de347d587a395618298690fca",
+        "locator": {
+          "kind": "symbol",
+          "name": "require_admitted_tip"
+        }
+      },
+      "id": "RLZ-Z8R42E",
+      "invariant": "INV-NJT6A9",
+      "origin": {
+        "handoffEntry": "L26-CX-N03 (post-takeover completion)",
+        "leaf": "260928-MIK-L26"
+      },
+      "rationale": "The corrected recovery docstring.",
+      "role": "presentation"
+    }
+  ],
   "references": {
     "1": {
       "note": "`MemoryCloseoutOutcome` contains the memory commit and informational refresh results.",

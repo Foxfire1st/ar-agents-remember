@@ -3,311 +3,59 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The opened store: its bound namespace, validated schema, connection and lock path — re-cited against the working tree, where the class docstring now names the sibling graph owners.",
+      "note": "The opened read store holds path, namespace, validated schema and read connection.",
       "targets": [
         {
           "anchor": {
-            "blob": "2d1760f933abbb54eec5c46a68a75255d213e318",
-            "content": "sha256:65f773940d2652b38ae7ff7ed60b8d670db430acb41394cad7ef56fdd2ac4917",
+            "blob": "e4fc1a849557a256d000a2a4f98c444ef5400e7d",
+            "content": "sha256:7adb5813b2c4b3f7d3c4a71123b785c87374e1dc0d4e5c7c0279967d0db724c6",
             "locator": {
               "kind": "symbol",
               "name": "OpenedKnowledgeStore"
             }
           },
           "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2d1760f933abbb54eec5c46a68a75255d213e318",
-            "content": "sha256:9162bfe0bea7f86892461b63499a1e5b4b19a448f7c9f48a381484f471992a7a",
-            "locator": {
-              "end": 110,
-              "kind": "line_range",
-              "start": 92
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "10": {
-      "note": "The membership query, which is not the write rule.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "2d1760f933abbb54eec5c46a68a75255d213e318",
-            "content": "sha256:d0ed3fabaff818e66b4b4042d55bc41d9030791f1595514c1e7a918e3e71d364",
-            "locator": {
-              "kind": "symbol",
-              "name": "lineage_cycle_members"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "11": {
-      "note": "The transaction and lock boundary, with its required failure context and propagate-a-defect rule, now published with private aliases.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "2d1760f933abbb54eec5c46a68a75255d213e318",
-            "content": "sha256:7ee02cccff995e8f4b6b3163968e712d95eae57acd7ce0aa83ae5fce8729905e",
-            "locator": {
-              "kind": "symbol",
-              "name": "within_immediate"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2d1760f933abbb54eec5c46a68a75255d213e318",
-            "content": "sha256:aededc6f520f2f1420952a8cc82279c1a0b995c63a8edfd19ceb5e127c9e4cc5",
-            "locator": {
-              "kind": "symbol",
-              "name": "immediate_transaction"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2d1760f933abbb54eec5c46a68a75255d213e318",
-            "content": "sha256:130e018fa5aca9ea593e79899e82d27a56fdffd114fa01df79ad01ab23b17861",
-            "locator": {
-              "kind": "symbol",
-              "name": "exclusive_candidate_lock"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "20fbf8f958c5f13380299d7733886cfa8e92087c",
-            "content": "sha256:2be6b55dda189edd657c5219f1a82df423de4ac67a76bb11328d6938008c6182",
-            "locator": {
-              "kind": "symbol",
-              "name": "SqliteFailureContext"
-            },
-            "path": "mcp/src/agents_remember/memory/knowledge/refusals.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "12": {
-      "note": "The write helper the batch and the single-record operations share.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "2d1760f933abbb54eec5c46a68a75255d213e318",
-            "content": "sha256:926c69d9688d3f01545d63426eecacae1b6126541a0471f4eaf1c390379d677a",
-            "locator": {
-              "kind": "symbol",
-              "name": "write"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "13": {
-      "note": "The label-edit delegation and the module that owns the guard.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "2d1760f933abbb54eec5c46a68a75255d213e318",
-            "content": "sha256:f83686b130ce3f4448f79a14e13426f601dd757255ecb1020044e7318a3997bb",
-            "locator": {
-              "kind": "symbol",
-              "name": "set_invariant_label"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2d1760f933abbb54eec5c46a68a75255d213e318",
-            "content": "sha256:6288380b1c5661f2c2601055bed7621053d9342c1c92034d35e0557da994f82d",
-            "locator": {
-              "end": 294,
-              "kind": "line_range",
-              "start": 291
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "33eb33766585c5e356fd288d391eea19812bb25a",
-            "content": "sha256:065481de67a11bd991d1239c3c51873f9c274239e7209bb1d5ba409edaf53044",
-            "locator": {
-              "end": 59,
-              "kind": "line_range",
-              "start": 40
-            },
-            "path": "mcp/src/agents_remember/memory/knowledge/labels.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "14": {
-      "note": "The graph modules that reuse this store's lock and transaction helpers.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "97f3ecd2e6c3d4e597f27b5a729aa39e45bef332",
-            "content": "sha256:0bfdf0a52c70aff88470589c1cbe3b28025ba688e1625c661594cdc85c568d38",
-            "locator": {
-              "kind": "symbol",
-              "name": "create_family_revision"
-            },
-            "path": "mcp/src/agents_remember/memory/knowledge/families.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "6da9b8594800bbc6fbd46f935cd5ed58599644cb",
-            "content": "sha256:b2d3e095f7d704f14b3dbc4b8b0467348659e2156a028539f2abf454e15e865f",
-            "locator": {
-              "kind": "symbol",
-              "name": "create_source_anchor"
-            },
-            "path": "mcp/src/agents_remember/memory/knowledge/anchors.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f85aa0cc87342ebf62ab38b912c29344628e56c6",
-            "content": "sha256:f06149691c314c03160f8cacacbb1cade99811e96ca3986c19b56dce20b0f00c",
-            "locator": {
-              "kind": "symbol",
-              "name": "create_family_member"
-            },
-            "path": "mcp/src/agents_remember/memory/knowledge/memberships.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "988c86cd7030270954e63b950f30317ab5d72f61",
-            "content": "sha256:10a013393578987f89739b4813d908ae7a48bfa830b2bf3500f7c21e993bf19a",
-            "locator": {
-              "kind": "symbol",
-              "name": "create_realization_claim"
-            },
-            "path": "mcp/src/agents_remember/memory/knowledge/realizations.py"
-          },
-          "kind": "code"
         }
       ]
     },
     "15": {
-      "note": "The create-versus-reopen open functions.",
+      "note": "Both retained openers open an existing index read-only without creating or repairing it.",
       "targets": [
         {
           "anchor": {
-            "blob": "2d1760f933abbb54eec5c46a68a75255d213e318",
-            "content": "sha256:eedd3794ee95d84811219773f7bf0b2bd92e9716c9dc5713488ff2d7d736a793",
-            "locator": {
-              "kind": "symbol",
-              "name": "open_knowledge_store"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2d1760f933abbb54eec5c46a68a75255d213e318",
-            "content": "sha256:c1d74e076f57f3fd1dcd30cb6b9efa0339e872799436ef20794ebb392e4caf23",
+            "blob": "e4fc1a849557a256d000a2a4f98c444ef5400e7d",
+            "content": "sha256:6fe2cc957dc11a8690591a9d84bf1ef8b232f5a9772df1f9241a4bc43ae0da28",
             "locator": {
               "kind": "symbol",
               "name": "open_existing_knowledge_store"
             }
           },
           "kind": "code"
-        }
-      ]
-    },
-    "16": {
-      "note": "The reused lock primitive this store does not reimplement.",
-      "targets": [
+        },
         {
           "anchor": {
-            "blob": "977ccec9d8280f5159803ee01a455090bc4de2bd",
-            "content": "sha256:915104295d8fa4d8973a118ed3314645db9b7e134d512c63302bf14e7f51085c",
+            "blob": "e4fc1a849557a256d000a2a4f98c444ef5400e7d",
+            "content": "sha256:5a7d444f6d5aa6950d3170e1dfb74ced2b56bfcb496f38dd0485d8bcd71c6898",
             "locator": {
               "kind": "symbol",
-              "name": "exclusive_file_lock"
-            },
-            "path": "mcp/src/agents_remember/kernel/file_lock.py"
+              "name": "open_read_only_store"
+            }
           },
           "kind": "code"
-        }
-      ]
-    },
-    "17": {
-      "note": "The node that pins the two-caller identity contract on the single-record side.\n\nAnchor: \"test_a_repeated_identical_invariant_is_no_change_and_a_relabel_refuses\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "ee5faf030559778d48f1a94c277a420010369537",
-            "content": "sha256:87d1eb0f8b794e731bb8574e9cfd8a0e4896a680e5613adbedbe3467e5141379",
-            "locator": {
-              "end": 207,
-              "kind": "line_range",
-              "start": 180
-            },
-            "path": "mcp/tests/test_knowledge_store.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "18": {
-      "note": "The node that would fail if a close-time peer unlink came back.\n\nAnchor: \"test_a_live_reader_does_not_let_the_write_boundarys_close_lose_the_commit\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "a29c4d4a1e514199bdd5b57741665be165c6dfea",
-            "content": "sha256:56b5e087408d885ec6e9891246d6346bedc886e49cc46eb597d7dd16f9f7fdad",
-            "locator": {
-              "end": 246,
-              "kind": "line_range",
-              "start": 206
-            },
-            "path": "mcp/tests/test_knowledge_candidate_workspace.py"
-          },
-          "kind": "test"
         }
       ]
     },
     "2": {
-      "note": "**The close that unlinks nothing**, and the reason the peer unlink was removed rather than made conditional.",
+      "note": "Closing the owned read handle unlinks no cache peers.\n\nAnchor: `OpenedKnowledgeStore.close`",
       "targets": [
         {
           "anchor": {
-            "blob": "2d1760f933abbb54eec5c46a68a75255d213e318",
-            "content": "sha256:4fc3d87542d694405333acdb25b2595eade5c334dd613fbee9a6f8beca64c3f6",
+            "blob": "e4fc1a849557a256d000a2a4f98c444ef5400e7d",
+            "content": "sha256:947779ca6c56d2d2b3f19731a4d47c06e558fe68abe6d4f9e91cdeb7abde9d4a",
             "locator": {
-              "kind": "symbol",
-              "name": "close"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2d1760f933abbb54eec5c46a68a75255d213e318",
-            "content": "sha256:d18e50a3bc404eeb6775c6b391280d9b4732777e9463fc576d398c285378b3da",
-            "locator": {
-              "end": 147,
+              "end": 90,
               "kind": "line_range",
-              "start": 136
+              "start": 87
             }
           },
           "kind": "code"
@@ -315,48 +63,28 @@
       ]
     },
     "3": {
-      "note": "The read surface, including the seal-verifying single-revision read.",
+      "note": "The exact revision read decodes the stored row and predecessor set.\n\nAnchor: `OpenedKnowledgeStore.get_revision`",
       "targets": [
         {
           "anchor": {
-            "blob": "2d1760f933abbb54eec5c46a68a75255d213e318",
+            "blob": "0ee5929321e3f7a958a51aecc7f15c63d890c86c",
+            "content": "sha256:11b77cf7357bb9e6ed51fc7a1c09f7f8ed251370838f7e0d6467f84a0d37d6e3",
+            "locator": {
+              "kind": "symbol",
+              "name": "decode_revision_row"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/records.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e4fc1a849557a256d000a2a4f98c444ef5400e7d",
             "content": "sha256:233b5e39d22a77c1490a468223a647da8f638bd0614e927fda725edc73b0e9aa",
             "locator": {
-              "kind": "symbol",
-              "name": "get_revision"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2d1760f933abbb54eec5c46a68a75255d213e318",
-            "content": "sha256:58059b97b15d6914d2e9d557cbf2cf46a23b3f401fd95895c76e6cdcd68df76f",
-            "locator": {
-              "kind": "symbol",
-              "name": "get_invariant"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2d1760f933abbb54eec5c46a68a75255d213e318",
-            "content": "sha256:ad156675e95689c5422f876aa03448f1135debf6974cbb9f9911b2c591c9654b",
-            "locator": {
-              "kind": "symbol",
-              "name": "list_revision_ids"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2d1760f933abbb54eec5c46a68a75255d213e318",
-            "content": "sha256:e6d4e725d111f5a961626b85278bd8696a5f851a65bc42c2aba348b5aa7d6fbc",
-            "locator": {
-              "kind": "symbol",
-              "name": "get_repository"
+              "end": 173,
+              "kind": "line_range",
+              "start": 158
             }
           },
           "kind": "code"
@@ -364,170 +92,28 @@
       ]
     },
     "4": {
-      "note": "**The two enumerating reads the Intent Reviewer's entry list is built on: every recorded invariant and family identity, ordered by the identity's own column, with no filter and no count — because a reader that must be handed a subject cannot enumerate a candidate it was not pointed at.**",
+      "note": "Every invariant and family identity is enumerated in stable order.\n\nAnchor: `OpenedKnowledgeStore.list_invariants`; `OpenedKnowledgeStore.list_families`",
       "targets": [
         {
           "anchor": {
-            "blob": "2d1760f933abbb54eec5c46a68a75255d213e318",
+            "blob": "e4fc1a849557a256d000a2a4f98c444ef5400e7d",
             "content": "sha256:00a449d876919d3de040d15c7ea870e221d332a11a45dc654d9be90b89b323ab",
             "locator": {
-              "kind": "symbol",
-              "name": "list_invariants"
+              "end": 139,
+              "kind": "line_range",
+              "start": 123
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "2d1760f933abbb54eec5c46a68a75255d213e318",
+            "blob": "e4fc1a849557a256d000a2a4f98c444ef5400e7d",
             "content": "sha256:3cb70a429652780066956ae4318d55c822d42865aa70e7aa796bf0aba0adb22b",
             "locator": {
-              "kind": "symbol",
-              "name": "list_families"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "5": {
-      "note": "The one atomic insert-only revision operation and its ordered checks.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "2d1760f933abbb54eec5c46a68a75255d213e318",
-            "content": "sha256:3172cf05981d5a62e9715d3426c3ef65c54f315ee927ecb6376c4f65960749f6",
-            "locator": {
-              "kind": "symbol",
-              "name": "create_revision"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2d1760f933abbb54eec5c46a68a75255d213e318",
-            "content": "sha256:0ea5933c42829b36e5b9ad294cf7bb2df3411043acf2d1110a4898733832f4ae",
-            "locator": {
-              "kind": "symbol",
-              "name": "_insert_revision"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "6": {
-      "note": "The two-caller identity contract: `confirm_repeat` decides whether a stored identity is a confirmation or a stale read.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "2d1760f933abbb54eec5c46a68a75255d213e318",
-            "content": "sha256:add442e12c7882ddcbbac6febf4e560438c387e61daa6c792ba6ed2d0f62797b",
-            "locator": {
-              "kind": "symbol",
-              "name": "insert_invariant"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2d1760f933abbb54eec5c46a68a75255d213e318",
-            "content": "sha256:95fb12b865fef2fdc9616fadf05576fe19edd2ea4749ff3a6e9122ce1165bb91",
-            "locator": {
-              "kind": "symbol",
-              "name": "_insert_invariant"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "7": {
-      "note": "The module-level revision aggregate insert, including the pending-predecessor skip of the immediate FK check.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "2d1760f933abbb54eec5c46a68a75255d213e318",
-            "content": "sha256:a14617ef617a74c2ca95fad29a3de75ee60444453ccef1207675cf04976ee28f",
-            "locator": {
-              "kind": "symbol",
-              "name": "insert_revision"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2d1760f933abbb54eec5c46a68a75255d213e318",
-            "content": "sha256:992ce589b5c8af8de3f67567913d3d3a4f6b2c74831e595e11e62f47e17ce654",
-            "locator": {
-              "end": 611,
+              "end": 156,
               "kind": "line_range",
-              "start": 552
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "8": {
-      "note": "The predecessor ownership rule with its batch-declared set, and the single-record lineage rule that can accept wider edges.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "2d1760f933abbb54eec5c46a68a75255d213e318",
-            "content": "sha256:f13acfe4db3b4f57c0bfd63d580b595f481aa183bcd0cdcb262678272572a392",
-            "locator": {
-              "kind": "symbol",
-              "name": "require_same_invariant_predecessors"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2d1760f933abbb54eec5c46a68a75255d213e318",
-            "content": "sha256:3e86aa0c87c1d891a01afce397159052e75f6ad0b6554e4781cc8974047c327e",
-            "locator": {
-              "kind": "symbol",
-              "name": "require_acyclic_lineage"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2d1760f933abbb54eec5c46a68a75255d213e318",
-            "content": "sha256:2d7eaf673adf418f11aca4fa417763d280b70a06fe278bfc04e9a4621f551ef9",
-            "locator": {
-              "kind": "symbol",
-              "name": "find_lineage_cycle"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2d1760f933abbb54eec5c46a68a75255d213e318",
-            "content": "sha256:f20c30689ef6ad7d17cb7b3b7b546287e4868ac51d0eb74e2b75bc33c3176db0",
-            "locator": {
-              "end": 662,
-              "kind": "line_range",
-              "start": 635
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2d1760f933abbb54eec5c46a68a75255d213e318",
-            "content": "sha256:6be0a16d4ae50aad0efb63dbaf9a89a1b487f4dcf87e8157c2d4fbd06cd0ff56",
-            "locator": {
-              "end": 680,
-              "kind": "line_range",
-              "start": 665
+              "start": 141
             }
           },
           "kind": "code"
@@ -535,37 +121,16 @@
       ]
     },
     "9": {
-      "note": "The batch-facing in-transaction helpers and the live identity read the whole snapshot half resolves against.",
+      "note": "The logical identity is read from the opened index and bound namespace.\n\nAnchor: `OpenedKnowledgeStore.snapshot_identity`",
       "targets": [
         {
           "anchor": {
-            "blob": "2d1760f933abbb54eec5c46a68a75255d213e318",
-            "content": "sha256:07323178b7870ca2ed1e9a164f3c4cacfd9a7005b1e08c825c9938f2834457c8",
+            "blob": "e4fc1a849557a256d000a2a4f98c444ef5400e7d",
+            "content": "sha256:3c4b8b862d43ce91d9dd2905d7ea638814dd8a6a21c2c28d3ea3107abb8d5fd6",
             "locator": {
-              "kind": "symbol",
-              "name": "insert_invariant_identity"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2d1760f933abbb54eec5c46a68a75255d213e318",
-            "content": "sha256:8fae911d907371627e493bbb696629d6fed072ffbbb6ac06a09492cf77994c12",
-            "locator": {
-              "kind": "symbol",
-              "name": "insert_revision_aggregate"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2d1760f933abbb54eec5c46a68a75255d213e318",
-            "content": "sha256:258cfe9a58666a763d4c1de07cb8c230abe8d61ce9a129b981ce6798e25b31a0",
-            "locator": {
-              "kind": "symbol",
-              "name": "snapshot_identity"
+              "end": 190,
+              "kind": "line_range",
+              "start": 177
             }
           },
           "kind": "code"

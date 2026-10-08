@@ -1,0 +1,111 @@
+{
+  "schema": "l26-held-source107-six-repair-native-checkpoint/v1",
+  "frames": {
+    "code": {
+      "root": "/home/firefox/projects/ar-coordination/worktrees/agents-remember/260928-mik-l26-ar/260928-mik-l26",
+      "head": "3f6829878ba8457761c6fe8886f050f232cc892c",
+      "rawIndexSHA256": "fb8167832375ec2b119db684f26f865301438bbcb9ba718f7103e0b1b74d8dc8",
+      "semanticStageNUlSHA256": "fb74cec6d1eeb17767a6abfb1ee26de82bf9e5c51f7ef1162c91c4aaea62fa07",
+      "workingDiffSHA256": "6b9bcd4f9337189890040ff2be1a50fa0f0b8e2937549bcfcfb7eed2fe3926c1",
+      "stagedDiffSHA256": "24629f64bc4a49cd16220e051f8cd9ddd9cdf91b24c23f94d7752fe9cf942c83",
+      "unstagedDiffSHA256": "94358f7797ca6fcb9fa5d0db41ba5238b65380496cc21d215e13fdaacaf183c2",
+      "unmerged": "",
+      "tracked": 4055,
+      "untracked": 29,
+      "physicalPathCount": 4084,
+      "selfCaptureExcludedPrefix": null,
+      "captureDidNotChangeIndex": true
+    },
+    "memory": {
+      "root": "/home/firefox/projects/ar-coordination/worktrees/agents-remember/260928-mik-l26-ar/memory-260928-mik-l26",
+      "head": "01050ec50739275e84016b00bd3f13e4cffda6fa",
+      "rawIndexSHA256": "a9781e8db21cf8761d07212aa93f391c8f56d9af28a29f34c75dbd5e984b5967",
+      "semanticStageNUlSHA256": "7b3b903a362271321c6122f79288e812768dcad6f636607b886ea7dedc4cb9bf",
+      "workingDiffSHA256": "aa18e150189fe951c84d3004d6947262654559c5abc8cbdb9e1dc2ec8893a80a",
+      "stagedDiffSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "unstagedDiffSHA256": "aa18e150189fe951c84d3004d6947262654559c5abc8cbdb9e1dc2ec8893a80a",
+      "unmerged": "",
+      "tracked": 9002,
+      "untracked": 294,
+      "physicalPathCount": 9283,
+      "selfCaptureExcludedPrefix": "notes/l26-curation-takeover/d7a5e018/fix3/native-checkpoint/",
+      "captureDidNotChangeIndex": true
+    }
+  },
+  "artifacts": [
+    {
+      "path": "code/index-debug.nul",
+      "sha256": "ed5e5ce799e33150b7bfb8f906d397c0d4117f8d6833d37c14a87703b859e680",
+      "bytes": 734472
+    },
+    {
+      "path": "code/index-stage.nul",
+      "sha256": "fb74cec6d1eeb17767a6abfb1ee26de82bf9e5c51f7ef1162c91c4aaea62fa07",
+      "bytes": 440396
+    },
+    {
+      "path": "code/index.raw",
+      "sha256": "fb8167832375ec2b119db684f26f865301438bbcb9ba718f7103e0b1b74d8dc8",
+      "bytes": 521246
+    },
+    {
+      "path": "code/physical-facts.json",
+      "sha256": "dd77438dbb3242f4e690133b065f52e4395380c5431b71329b2ea459c04aa711",
+      "bytes": 1294014
+    },
+    {
+      "path": "code/staged.diff",
+      "sha256": "24629f64bc4a49cd16220e051f8cd9ddd9cdf91b24c23f94d7752fe9cf942c83",
+      "bytes": 39332
+    },
+    {
+      "path": "code/unstaged.diff",
+      "sha256": "94358f7797ca6fcb9fa5d0db41ba5238b65380496cc21d215e13fdaacaf183c2",
+      "bytes": 7901019
+    },
+    {
+      "path": "code/working.diff",
+      "sha256": "6b9bcd4f9337189890040ff2be1a50fa0f0b8e2937549bcfcfb7eed2fe3926c1",
+      "bytes": 7940351
+    },
+    {
+      "path": "memory/index-debug.nul",
+      "sha256": "5af299b450e9c7d6205e335cfb3c0fc554caebd24aca2e34f0793353ac1741ab",
+      "bytes": 1876594
+    },
+    {
+      "path": "memory/index-stage.nul",
+      "sha256": "7b3b903a362271321c6122f79288e812768dcad6f636607b886ea7dedc4cb9bf",
+      "bytes": 1195309
+    },
+    {
+      "path": "memory/index.raw",
+      "sha256": "a9781e8db21cf8761d07212aa93f391c8f56d9af28a29f34c75dbd5e984b5967",
+      "bytes": 1340172
+    },
+    {
+      "path": "memory/physical-facts.json",
+      "sha256": "4532b753e9aaea3dee9382a32b60da8d57abbfb78bcf846b7298931ebb8a3fa1",
+      "bytes": 3172378
+    },
+    {
+      "path": "memory/staged.diff",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "memory/unstaged.diff",
+      "sha256": "aa18e150189fe951c84d3004d6947262654559c5abc8cbdb9e1dc2ec8893a80a",
+      "bytes": 9972331
+    },
+    {
+      "path": "memory/working.diff",
+      "sha256": "aa18e150189fe951c84d3004d6947262654559c5abc8cbdb9e1dc2ec8893a80a",
+      "bytes": 9972331
+    }
+  ],
+  "noOperationsInFlight": true,
+  "authority": "Manager Source87 timing disposition; checkpoint before SAME Worker supported sync",
+  "notFinalREADY": true,
+  "note": "Read-only capture of full HEAD/index/untracked path union and literal physical content/absence. Only this capture directory is excluded from its self-referential memory physical frame; its artifacts are enumerated separately. No private tree object or index restoration/staging."
+}

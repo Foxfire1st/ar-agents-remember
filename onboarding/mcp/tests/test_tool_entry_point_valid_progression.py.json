@@ -1,0 +1,22 @@
+{
+  "path": "mcp/tests/test_tool_entry_point_valid_progression.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The file realizes its current contract at the corrected candidate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "140e44c92a52e258f2ae75efe1af3485f1bc3176",
+            "content": "sha256:fe0a1d8eb52b4351e9b214c7fccf45331757a404b60ffacb02fa033ed57fca0f",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

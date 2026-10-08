@@ -124,8 +124,12 @@ No configured live documentation source was available for this pass.
 - A row that a later attempt answers again is not re-anchor-checked. [13]
 - A later row of another disposition that would replace the leaf's changed row. [14]
 - The refusal names the changed row it replaces. [15]
-- The validator alone refuses a no_impact row that replaces a changed row at a recorded landing. [16]
-- The rule's two limits. [17]
+
+- Changed row remains governing in every attempt. [16]
+
+
+- Parent-line change may be answered by any later row. [17]
+
 
 ### Cross-Repo References
 

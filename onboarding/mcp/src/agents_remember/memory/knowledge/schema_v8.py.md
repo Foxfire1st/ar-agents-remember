@@ -56,29 +56,15 @@ index and triggers are all covered by `strict_tables`, `deferrable_foreign_keys`
 
 ### Conventions
 
-A generation module states its own declarations and nothing else; the registry composes it. The
-declaration is split the way every earlier generation splits it — tables, columns, primary keys,
-typed-JSON columns, DDL, index DDL, triggers and features — and none of those groups mentions a
-generation 1–7 table. Column order is part of a generation's contract, so `APPENDED_PRIMARY_KEYS` is
-declared rather than derived from the DDL text: the encoder orders a table's rows by that tuple.
+This appended-table module states its own declarations and no row-writing behavior. schema_generations._compose consumes it after schema_v7 to build the single pinned derived-index schema. Tables, columns, primary keys, typed-JSON sets, DDL, indexes, triggers and features remain declared data; primary-key order is not inferred from DDL.
 
 ### Invariants And Boundaries
 
-- **No `ALTER TABLE` and no rewrite.** Nothing here redeclares, reorders, renames, retypes or drops an
-  inherited name, and no `ALTER TABLE` against an earlier generation's table appears anywhere in the
-  package. Generation 8's own case asserts `GENERATION_8.columns[table] == GENERATION_7.columns[table]`
-  for every one of generation 7's thirty-three names.
-- **The succession edge is the record group's only own storage.** Every other row the record group
-  writes is an envelope row, which is why `EFFECT_WRITABLE_TABLES` is exactly
-  `knowledge_record` + `record_revision` and this group contributes **no** table to
-  `MutableRecordTable` — the edge a change set declares is written only as part of the aggregate that
-  owns it, on the same shipped rule that keeps the invariant and family predecessor rows out of the
-  mutable set.
+- No ALTER TABLE or inherited declaration rewrite appears here. The one _compose preserves earlier table declarations while adding change_set_predecessor, and require_pinned_schema_unchanged checks the complete index schema. The former GENERATION_7 and GENERATION_8 registry records are retired.
+- This block declares only change_set_predecessor. Historical canonical-database effect records and their envelope writes were admitted by EFFECT_WRITABLE_TABLES and MutableRecordTable; that writer/table vocabulary was retired by MIK-R26. This module supplies derived-index declarations and grants no write capability.
 - **No table here carries a content address, a logical digest or a fingerprint.** Requirement 3.7 of
   the envelope's own contract puts the content digest on `record_revision`, and none is added here.
-- **Nothing here migrates.** A dataset whose recorded generation predates this table is refused by the
-  write path in `effects.py` with the observed and required versions as facts; no table is created
-  implicitly and `PRAGMA user_version` does not move.
+- This declaration module performs no migration or row writing. The derived-index opener admits only the single CURRENT_GENERATION schema and refuses another declared database version; no legacy database is migrated or guessed into this schema.
 
 ## Evidence
 
@@ -96,11 +82,12 @@ No configured domain documentation could be checked.
 - The DDL: the composite primary key, the one-node-cycle `CHECK`, and the two foreign-key groups that make an edge able to name only records this store holds. [3]
 - The reverse-direction index — "which change sets supersede this one" — and the no-update / no-delete triggers that seal a recorded succession. [4]
 - The declared-empty feature tuple: generation 8 requires nothing generation 7 did not already require. [5]
-- The generation this one is composed onto, by name, and the composition that names this module as generation 8's append. [6]
-- The schema name generation 8 declares, and the registry whose last entry is now the created generation. [7]
-- The generation the write path and the read both require before any authored-effect row may exist or be served. [8]
-- The shared acyclic walk the longer cycle is found by, over this table, inside the successor's own transaction. [9]
-- The record group's declared writable tables — exactly the two envelope tables, so this generation adds nothing to the mutable union. [10]
+
+- The ordered appended declarations compose into the one pinned derived-index schema. [6]
+
+
+- This build creates and reads the single v9 derived-index schema; another declared database version is refused. [7]
+
 
 ### Cross-Repo References
 

@@ -35,7 +35,7 @@ has no single textual spelling, so a digest over it would not identify the value
 - The encoder is used as a pure function; it holds no state, performs no I/O and raises only the JSON encoder's
   own `TypeError`/`ValueError` for an unencodable value.
 - Its first consumer is the knowledge substrate (`models/knowledge/digest.py` for the revision seal,
-  `memory/knowledge/records.py` for typed columns, `memory/knowledge/schema.py` for the schema fingerprint); the
+  `memory/knowledge/records.py` for typed-column decoding, `memory/knowledge/schema.py` for the schema fingerprint); the
   module is deliberately placed in `kernel` (rank 1) so `models` (rank 2) and `memory` (rank 12) may both import
   it downward.
 
@@ -59,7 +59,9 @@ No configured domain documentation could be checked.
 - The byte encoder and the two digest spellings. [2]
 - The duplicate-key-refusing decoder a stored typed column is read through. [3]
 - The revision seal computed through this encoder. [4]
-- The typed-column storage path that reuses this encoder and decoder. [5]
+
+- The retained typed-column decoder shares duplicate-key-refusing JSON policy; canonical row encoding is retired. [5]
+
 - The schema fingerprint computed through this encoder. [6]
 
 ### Cross-Repo References

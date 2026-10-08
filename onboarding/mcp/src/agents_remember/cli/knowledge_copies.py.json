@@ -1,0 +1,22 @@
+{
+  "path": "mcp/src/agents_remember/cli/knowledge_copies.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The file realizes its current contract at the corrected candidate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dcc0baa29ea5eb84e2299228f29d46929282cc13",
+            "content": "sha256:5082d7c3d46d01321eb016f4d898a936eb013450d9b834325634ce3673f1e61c",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

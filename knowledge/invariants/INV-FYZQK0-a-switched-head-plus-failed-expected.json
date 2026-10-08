@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "Realized across 2 files that together perform the obligation."
+  },
+  "applicability": "The ordinary closeout's partial-publication boundary.",
+  "conditions": [
+    "Publication raised after creating a reachable commit, HEAD switched, and expected-old take-back did not remove that commit."
+  ],
+  "exclusions": [
+    "Ordinary unpublished refusal and validation after a successful publication return; their restoration boundaries are separate."
+  ],
+  "id": "INV-FYZQK0",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.md; worktrees/modules/git.py::_move_admitted_ref; test_git_command.py partial-publication controls"
+      ],
+      "path": "handoff-stage1.json"
+    },
+    "handoffEntry": "R4-O2",
+    "leaf": "260928-MIK-L26",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A switched HEAD plus failed expected-old take-back may leave the published memory commit reachable while ordinary closeout restores its preparatory files.",
+  "status": "proposed",
+  "supersedes": []
+}

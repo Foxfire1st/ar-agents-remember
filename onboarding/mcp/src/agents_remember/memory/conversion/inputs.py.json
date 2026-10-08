@@ -1,6 +1,25 @@
 {
   "path": "mcp/src/agents_remember/memory/conversion/inputs.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "bac2db1b4ec7034a89af7cff7887bdf71f8f37b4",
+        "content": "sha256:7c1416b70a22e2bb786fc3cdf446aff6020810bf2d81314b213d7cf961ee4bbb",
+        "locator": {
+          "kind": "symbol",
+          "name": "memory_from_git"
+        }
+      },
+      "id": "RLZ-KMKEAS",
+      "invariant": "INV-738PC9",
+      "origin": {
+        "handoffEntry": "L26-R1-F02",
+        "leaf": "260928-MIK-L26"
+      },
+      "rationale": "Returns early for a converted tree so no historical database is materialized.",
+      "role": "primary-authority"
+    }
+  ],
   "references": {
     "1": {
       "note": "A working tree and its database.",

@@ -6,7 +6,8 @@
   ],
   "exclusions": [
     "Recorded-but-uncommitted allocations (journal written, batch not committed), which are still checked at admission.",
-    "Changed content under an allocated key, which is refused allocation_content_conflict."
+    "Changed content under an allocated key, which is refused allocation_content_conflict.",
+    "The retired database-era realization site; the obligation is recorded on converted memory only."
   ],
   "id": "INV-4N43MNN2",
   "origin": {
@@ -14,9 +15,9 @@
     "legacyId": "a76fb020-46fd-424b-94ff-8054c749308a",
     "task": "260921-ICR"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "A curator hand-off entry whose retry key already holds a recorded allocation whose revision the candidate stores is not admitted again: its exact retry replays and can publish without any realization check, including operations committed before targets carried a rationale, while changed content under that key is refused allocation_content_conflict.",
-  "status": "proposed",
+  "status": "retired",
   "supersedes": []
 }

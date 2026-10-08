@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Publishing a commit object against a moved or foreign parent would put an unreviewed tree on the branch."
+  },
+  "applicability": "publish_tree_commit publication binding.",
+  "conditions": [
+    "The admitted parent and intended ref were captured before object creation."
+  ],
+  "exclusions": [
+    "A caller-provided ref path outside the admitted contract."
+  ],
+  "id": "INV-YZ45D7",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Findings 2/3, Note 11, public closeout races and test_git_command.py; notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.md"
+      ],
+      "path": "handoff-stage1.json"
+    },
+    "handoffEntry": "L26-R1-F01",
+    "leaf": "260928-MIK-L26",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "publish_tree_commit binds the admitted parent and intended ref.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1e0935a2ceb8a3fb4e25545502124b9a1b61fe43",
+            "blob": "8364233d971ce61861a0dcef211d9c4cea533bde",
             "content": "sha256:45bc1250b958e8cc900d18752a6fba5a5df858c759780695aace98de64c269b5",
             "locator": {
               "end": 5,
@@ -42,7 +42,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1e0935a2ceb8a3fb4e25545502124b9a1b61fe43",
+            "blob": "8364233d971ce61861a0dcef211d9c4cea533bde",
             "content": "sha256:141edd6c2de51e07f54d559a6ec176565dd7286e3087af5ff3d3d166006fb296",
             "locator": {
               "kind": "symbol",
@@ -53,7 +53,7 @@
         },
         {
           "anchor": {
-            "blob": "1e0935a2ceb8a3fb4e25545502124b9a1b61fe43",
+            "blob": "8364233d971ce61861a0dcef211d9c4cea533bde",
             "content": "sha256:99f5ca77adacf14e74b4c0ba073d3c660eca60fb58396a4670a8dfcfe45798b8",
             "locator": {
               "kind": "symbol",
@@ -64,7 +64,7 @@
         },
         {
           "anchor": {
-            "blob": "1e0935a2ceb8a3fb4e25545502124b9a1b61fe43",
+            "blob": "8364233d971ce61861a0dcef211d9c4cea533bde",
             "content": "sha256:4fe136f0db52f6c84302414ffdbb748da4e0057a47844e1fb13b57c5061f61ab",
             "locator": {
               "kind": "symbol",
@@ -75,7 +75,7 @@
         },
         {
           "anchor": {
-            "blob": "1e0935a2ceb8a3fb4e25545502124b9a1b61fe43",
+            "blob": "8364233d971ce61861a0dcef211d9c4cea533bde",
             "content": "sha256:94b098bc05038edc0f5e998126b9319e6bc9e2e3c4e11c360a04224e4ff0b292",
             "locator": {
               "kind": "symbol",
@@ -120,12 +120,12 @@
         },
         {
           "anchor": {
-            "blob": "1e0935a2ceb8a3fb4e25545502124b9a1b61fe43",
+            "blob": "8364233d971ce61861a0dcef211d9c4cea533bde",
             "content": "sha256:1a00496407f1632af3cd57a1d72ce924a6cf9deef9a0702b2a634829f9785e7c",
             "locator": {
-              "end": 148,
+              "end": 217,
               "kind": "line_range",
-              "start": 124
+              "start": 193
             }
           },
           "kind": "test"
@@ -149,31 +149,13 @@
         },
         {
           "anchor": {
-            "blob": "1e0935a2ceb8a3fb4e25545502124b9a1b61fe43",
+            "blob": "8364233d971ce61861a0dcef211d9c4cea533bde",
             "content": "sha256:71ee1f58b69a5b59cb31a0ed226527c064d3e1dcda134b19d0bf0720a111ba6c",
             "locator": {
-              "end": 188,
+              "end": 257,
               "kind": "line_range",
-              "start": 171
+              "start": 240
             }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "6": {
-      "note": "The field-isolating family digest node this module's invariant sibling mirrors.\n\nAnchor: \"test_a_family_revision_digest_seals_its_predecessor_set\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "95c05c54408a7e52b6af461f6899f36ab5170234",
-            "content": "sha256:dbf4bb945d910b60bb0b1f9ca8cc52f67a57fcd3737d877ca36c043fca4050c5",
-            "locator": {
-              "end": 183,
-              "kind": "line_range",
-              "start": 150
-            },
-            "path": "mcp/tests/test_knowledge_family_revision.py"
           },
           "kind": "test"
         }
@@ -184,7 +166,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0508e56c262c031606a2a86fd8ddba54f1cb6c33",
+            "blob": "f503fa94c4c7bed4f52d64b967754439519f5b6a",
             "content": "sha256:bf82a17c91fe9724b782c711419f091eeecdebe93cc2087b9d7194c9a48bdce3",
             "locator": {
               "kind": "symbol",
@@ -196,7 +178,7 @@
         },
         {
           "anchor": {
-            "blob": "0508e56c262c031606a2a86fd8ddba54f1cb6c33",
+            "blob": "f503fa94c4c7bed4f52d64b967754439519f5b6a",
             "content": "sha256:f987f04351f9a963408d04353decdced875c8d570d21bdeb16852ae8f8f75efc",
             "locator": {
               "kind": "symbol",

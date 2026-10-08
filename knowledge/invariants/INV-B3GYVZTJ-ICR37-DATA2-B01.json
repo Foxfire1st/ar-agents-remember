@@ -18,6 +18,6 @@
   "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "Known malformed or inconsistent baseline provenance and conflicting historical-absence selection refuse unchanged-knowledge recording before canonical pair placement.",
-  "status": "proposed",
+  "status": "retired",
   "supersedes": []
 }

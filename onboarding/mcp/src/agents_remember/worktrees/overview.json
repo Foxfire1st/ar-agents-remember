@@ -2,15 +2,15 @@
   "path": "mcp/src/agents_remember/worktrees",
   "references": {
     "1": {
-      "note": "**The retention owner this route gained: one commit, one ref, the recorded base as parent.**",
+      "note": "Current custody/release of historical pins; no creation.",
       "targets": [
         {
           "anchor": {
-            "blob": "e56036b983a88cecfd9553c96ecd7bea613c3fa0",
-            "content": "sha256:c27fc00460c90c4a2bf15e0ff0c1cc4f62f4692b8a029ca1f8607ef2744de7dc",
+            "blob": "912d1707bae355645c256a55af1b52aeb7276c9f",
+            "content": "sha256:8a42dc6b7bcee527e6e8e183306a265ac7762ed3aebdab6174cd9937bd3b9951",
             "locator": {
               "kind": "symbol",
-              "name": "retain_code_object"
+              "name": "code_object_custody"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/code_object_retention.py"
           },
@@ -18,11 +18,11 @@
         },
         {
           "anchor": {
-            "blob": "e56036b983a88cecfd9553c96ecd7bea613c3fa0",
-            "content": "sha256:3717da8981d0036f920a613473af5b65b0ee294d7480ac558a565c91ccdb43c7",
+            "blob": "912d1707bae355645c256a55af1b52aeb7276c9f",
+            "content": "sha256:76e1344c022398ef8d50dd167e4a7ea60196db6ebcd824cd1664f9a2729d6cbf",
             "locator": {
               "kind": "symbol",
-              "name": "RETAINED_CODE_REF_NAMESPACE"
+              "name": "release_retained_code_object"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/code_object_retention.py"
           },
@@ -243,7 +243,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ce68d87e207d8a83d53af48e5816c10f407dbfc8",
+            "blob": "d2ea7cbc14046090dc44525a726cf5f923166c10",
             "content": "sha256:888445edc330c6b525441a393fc1814ef0a452abccf4087af43ae902183bc703",
             "locator": {
               "kind": "symbol",
@@ -255,7 +255,7 @@
         },
         {
           "anchor": {
-            "blob": "ce68d87e207d8a83d53af48e5816c10f407dbfc8",
+            "blob": "d2ea7cbc14046090dc44525a726cf5f923166c10",
             "content": "sha256:3d9b939eb29f132e44d631724a82208fb910a5a42a3da32fb3c2a6b242b0316f",
             "locator": {
               "kind": "symbol",
@@ -272,7 +272,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "21e174242087f49b6154f2303db0338c546d0bd8",
+            "blob": "929da2b32893d67c1250150e62b82677f1556231",
             "content": "sha256:ce81740d2e4cb263c942716af0d464e2cbb0d81cb98bf15d04ba52d79ae18843",
             "locator": {
               "kind": "symbol",
@@ -308,12 +308,12 @@
         },
         {
           "anchor": {
-            "blob": "21e174242087f49b6154f2303db0338c546d0bd8",
+            "blob": "929da2b32893d67c1250150e62b82677f1556231",
             "content": "sha256:01ad48477224a4f9aa3691e8864e43abf044cb84c20ccf91577c32a95c21b3ed",
             "locator": {
-              "end": 652,
+              "end": 613,
               "kind": "line_range",
-              "start": 631
+              "start": 592
             },
             "path": "mcp/src/agents_remember/worktrees/sync_transaction.py"
           },
@@ -367,7 +367,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "275847ecea525f425b8c6c5f28b5c3ed8c461439",
+            "blob": "f98146eb55d96bc7a490bf0d5761a39fa74e93ae",
             "content": "sha256:3a20c476b4a05e39bde63fb4fdfa2181f4fc1b6ef772829bf6e7a2c479190ca6",
             "locator": {
               "kind": "symbol",
@@ -379,7 +379,7 @@
         },
         {
           "anchor": {
-            "blob": "21e174242087f49b6154f2303db0338c546d0bd8",
+            "blob": "929da2b32893d67c1250150e62b82677f1556231",
             "content": "sha256:8ccac97f465884f7607ec1c26427a1efcac405a4d1b6f00a2a914985b4480d46",
             "locator": {
               "kind": "symbol",
@@ -427,47 +427,6 @@
               "name": "_mid_flight_summary"
             },
             "path": "mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "2": {
-      "note": "**Custody measured over named history, and the three-way observation that a record never stores.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e56036b983a88cecfd9553c96ecd7bea613c3fa0",
-            "content": "sha256:8a42dc6b7bcee527e6e8e183306a265ac7762ed3aebdab6174cd9937bd3b9951",
-            "locator": {
-              "kind": "symbol",
-              "name": "code_object_custody"
-            },
-            "path": "mcp/src/agents_remember/worktrees/modules/code_object_retention.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e56036b983a88cecfd9553c96ecd7bea613c3fa0",
-            "content": "sha256:4456ef183916291ef3c37b7ada50bc861b0104429880e05e092a9e5835cc34c1",
-            "locator": {
-              "kind": "symbol",
-              "name": "CustodyNames"
-            },
-            "path": "mcp/src/agents_remember/worktrees/modules/code_object_retention.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e56036b983a88cecfd9553c96ecd7bea613c3fa0",
-            "content": "sha256:874ace4ceb964e42fca51d95238b53398b65e9f281bde01d0ddb915da2497f06",
-            "locator": {
-              "kind": "symbol",
-              "name": "code_object_observation"
-            },
-            "path": "mcp/src/agents_remember/worktrees/modules/code_object_retention.py"
           },
           "kind": "code"
         }
@@ -537,296 +496,129 @@
         }
       ]
     },
-    "23": {
-      "note": "The routing: knowledge conflicts settle in the transaction, what it will not decide is what the agent still gets, and the engine's reason travels out with it.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "275847ecea525f425b8c6c5f28b5c3ed8c461439",
-            "content": "sha256:df7bca7aceaa9ac4de87839def636a2e905f8b9a8a12e1e14bc204c389fe86e2",
-            "locator": {
-              "kind": "symbol",
-              "name": "_continue_memory_merge"
-            },
-            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "ff073dcd6884e86bfda0d682259a88056d0e5211",
-            "content": "sha256:a0235a2922b79213f88c1e5be423f11cf0de80d13d6a32f2c10bb98983ec4cf0",
-            "locator": {
-              "kind": "symbol",
-              "name": "settle_knowledge_conflicts"
-            },
-            "path": "mcp/src/agents_remember/worktrees/knowledge_conflict.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "275847ecea525f425b8c6c5f28b5c3ed8c461439",
-            "content": "sha256:0a53fe45579b8493120d4cc8287e34fdb50c2835cc85a80787ed5052cc972af1",
-            "locator": {
-              "kind": "symbol",
-              "name": "SideMergeOutcome"
-            },
-            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "24": {
-      "note": "Binary-safe stage materialisation and the unique-common-base proof that refuses rather than guessing.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "ff073dcd6884e86bfda0d682259a88056d0e5211",
-            "content": "sha256:db5f68b46cd86162d369f122bef2938251f9cea9bff93e44319b315e82bfef52",
-            "locator": {
-              "kind": "symbol",
-              "name": "_materialise_stages"
-            },
-            "path": "mcp/src/agents_remember/worktrees/knowledge_conflict.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "ff073dcd6884e86bfda0d682259a88056d0e5211",
-            "content": "sha256:d3c098446be2c00b076faa12a00394c728cacb4690fba0199df6e0367ffbdf76",
-            "locator": {
-              "kind": "symbol",
-              "name": "_common_base"
-            },
-            "path": "mcp/src/agents_remember/worktrees/knowledge_conflict.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "25": {
-      "note": "The dataset half this route may not host, and the commits the adapter's base claim needs together.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "98aec610624c132745372b672210694450dd6cfd",
-            "content": "sha256:52429675b19ceaf3643a506e1ba9bbf74ccdc023361e04c03b7be7ffc5b4e9b8",
-            "locator": {
-              "kind": "symbol",
-              "name": "merge_conflicted_stages"
-            },
-            "path": "mcp/src/agents_remember/application/knowledge_merge.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "98aec610624c132745372b672210694450dd6cfd",
-            "content": "sha256:b842645141b9501e64ce4ce6d225cbfe6ba9d6560167536967ac4502a69a71b5",
-            "locator": {
-              "kind": "symbol",
-              "name": "ConflictCommits"
-            },
-            "path": "mcp/src/agents_remember/application/knowledge_merge.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "26": {
-      "note": "The layer rule that forces the split, enforced over the tree rather than asserted.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "ee5faf030559778d48f1a94c277a420010369537",
-            "content": "sha256:1c162353d3f25d8f5abeb326b08d895a8b08a5afe8bf5f6990aabc56a12e2d2e",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_lower_ranked_owners_do_not_import_the_memory_domain"
-            },
-            "path": "mcp/tests/test_knowledge_store.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
     "27": {
-      "note": "The integration case that drives a real divergent dataset through `sync()` and asserts the sync completes with both sides intact.",
+      "note": "Converted memory uses structural file plan.",
       "targets": [
         {
           "anchor": {
-            "blob": "ff126f9b30915781edf6095804550e121abbc7cf",
-            "content": "sha256:21acbdc267adebaf0d858e87021d6b8b1a14462795d6f74e83faa28999c54701",
+            "blob": "f98146eb55d96bc7a490bf0d5761a39fa74e93ae",
+            "content": "sha256:eb1fed75ae6bdd3627ae2f50b590865656ddb09e3c7080e05ebe45dd8aec1ea5",
             "locator": {
               "kind": "symbol",
-              "name": "_assert_knowledge_database_conflict_settles"
+              "name": "_knowledge_merge"
             },
-            "path": "mcp/tests/test_worktree_sync.py"
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git.py"
           },
-          "kind": "test"
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f98146eb55d96bc7a490bf0d5761a39fa74e93ae",
+            "content": "sha256:341d161d2c6ffe985b6d6b0e1abd821eb8391e8ef41aed5d17780e8caa5f0b15",
+            "locator": {
+              "kind": "symbol",
+              "name": "_apply_knowledge_merge"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git.py"
+          },
+          "kind": "code"
         }
       ]
     },
     "28": {
-      "note": "In flight is read from the progress cells a completion writes, never from `cleanup`.",
+      "note": "Exact series rule retained in extracted owner.",
       "targets": [
         {
           "anchor": {
-            "blob": "127a1fee161b800c304b013911edacf91a1d2001",
+            "blob": "bd0e5988aafc6934c4ce78d7a1b7424c9cb205ad",
             "content": "sha256:d424aed091836a5806346e94edcebe40e4716778073398e69ca2ae6bb72acd2e",
             "locator": {
               "kind": "symbol",
               "name": "_series_in_flight"
             },
-            "path": "mcp/src/agents_remember/worktrees/reopen.py"
+            "path": "mcp/src/agents_remember/worktrees/reopen_series.py"
           },
           "kind": "code"
         }
       ]
     },
     "29": {
-      "note": "A live series is unaddressed only when its own address is terminal-archived and both progress cells are untouched.",
+      "note": "Exact series rule retained in extracted owner.",
       "targets": [
         {
           "anchor": {
-            "blob": "127a1fee161b800c304b013911edacf91a1d2001",
+            "blob": "bd0e5988aafc6934c4ce78d7a1b7424c9cb205ad",
             "content": "sha256:6f76d11d967ef1fb2c051e6f87386385c0d22c61b95dc28b23fab5df4dac9066",
             "locator": {
               "kind": "symbol",
               "name": "_series_is_live_unaddressed"
             },
-            "path": "mcp/src/agents_remember/worktrees/reopen.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "The commit identity that makes a re-created pin identical.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e56036b983a88cecfd9553c96ecd7bea613c3fa0",
-            "content": "sha256:b23f34db5b3a1d584b9072644a6f88ca4295250b350866ad1fc27a7fbfca88ff",
-            "locator": {
-              "kind": "symbol",
-              "name": "_retention_commit"
-            },
-            "path": "mcp/src/agents_remember/worktrees/modules/code_object_retention.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e56036b983a88cecfd9553c96ecd7bea613c3fa0",
-            "content": "sha256:7844d23972d841741930e4a0433d7c26a786dc3106d5201427711c4a8479772c",
-            "locator": {
-              "kind": "symbol",
-              "name": "_retention_identity"
-            },
-            "path": "mcp/src/agents_remember/worktrees/modules/code_object_retention.py"
+            "path": "mcp/src/agents_remember/worktrees/reopen_series.py"
           },
           "kind": "code"
         }
       ]
     },
     "30": {
-      "note": "An advanced branch on an in-flight series is its own landed work: reported `advance`, never moved.",
+      "note": "Exact series rule retained in extracted owner.",
       "targets": [
         {
           "anchor": {
-            "blob": "127a1fee161b800c304b013911edacf91a1d2001",
+            "blob": "bd0e5988aafc6934c4ce78d7a1b7424c9cb205ad",
             "content": "sha256:9ea03eced1a2215a49cecf290c94ccbc727d96250f4393b2a920350ca1cc0c0d",
             "locator": {
               "kind": "symbol",
               "name": "_series_ref_recut"
             },
-            "path": "mcp/src/agents_remember/worktrees/reopen.py"
+            "path": "mcp/src/agents_remember/worktrees/reopen_series.py"
           },
           "kind": "code"
         }
       ]
     },
     "31": {
-      "note": "The reset clears a review counter that carries history, and leaves an all-zero one alone.",
+      "note": "Master review history reset in extracted series owner.",
       "targets": [
         {
           "anchor": {
-            "blob": "127a1fee161b800c304b013911edacf91a1d2001",
+            "blob": "bd0e5988aafc6934c4ce78d7a1b7424c9cb205ad",
             "content": "sha256:961daa9775534e26777820365d0bbbf928f84386885779d352fda24c91e0d340",
             "locator": {
               "kind": "symbol",
               "name": "_review_state_carries_history"
             },
-            "path": "mcp/src/agents_remember/worktrees/reopen.py"
+            "path": "mcp/src/agents_remember/worktrees/reopen_series.py"
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "127a1fee161b800c304b013911edacf91a1d2001",
+            "blob": "bd0e5988aafc6934c4ce78d7a1b7424c9cb205ad",
             "content": "sha256:ed87aa1001f8f50db3e1e01f775557a7358c9377813a609c920c75dec8290262",
             "locator": {
               "kind": "symbol",
               "name": "_plan_series_document_reset"
             },
-            "path": "mcp/src/agents_remember/worktrees/reopen.py"
+            "path": "mcp/src/agents_remember/worktrees/reopen_series.py"
           },
           "kind": "code"
         }
       ]
     },
     "32": {
-      "note": "`reset` or `publish` is decided by the arrival, and the applied payload states which one ran.",
+      "note": "Exact series rule retained in extracted owner.",
       "targets": [
         {
           "anchor": {
-            "blob": "127a1fee161b800c304b013911edacf91a1d2001",
+            "blob": "bd0e5988aafc6934c4ce78d7a1b7424c9cb205ad",
             "content": "sha256:0fe4e5f2b94af6a5f6576a562adea5a9718eb2f9cb62a038a56c674be4509ee9",
             "locator": {
               "kind": "symbol",
               "name": "_series_reopen_plan"
             },
-            "path": "mcp/src/agents_remember/worktrees/reopen.py"
+            "path": "mcp/src/agents_remember/worktrees/reopen_series.py"
           },
           "kind": "code"
-        }
-      ]
-    },
-    "33": {
-      "note": "The gathered case that drives all three arrivals at the publication, and the spent counter's clearance.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "94443c23f3d62914811f6b7825e5c1521814a169",
-            "content": "sha256:bf74eddf5441ae5fe7283d32cc843bc541c82e0127e418706fe928936b3100fa",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_terminal_series_is_reopened_without_ever_moving_a_live_ref"
-            },
-            "path": "mcp/tests/test_task_reopen.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "34": {
-      "note": "The already-live arrival re-addressed: successor cites the archived predecessor, branch unmoved, counter cleared from `round: 3`.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "94443c23f3d62914811f6b7825e5c1521814a169",
-            "content": "sha256:01ab8d452f8f2c33cd38df64cd535080e2bb503967ea2ce8857b6982c4ed85eb",
-            "locator": {
-              "kind": "symbol",
-              "name": "_assert_a_live_unaddressed_series_is_re_addressed"
-            },
-            "path": "mcp/tests/test_task_reopen.py"
-          },
-          "kind": "test"
         }
       ]
     },
@@ -958,13 +750,25 @@
         }
       ]
     },
-    "39": {
-      "note": "The journaled decisions, and the continuation that clears them with the conflict.",
+    "40": {
+      "note": "Continue/cancel inputs and specific old-journal read tolerance.",
       "targets": [
         {
           "anchor": {
-            "blob": "ce68d87e207d8a83d53af48e5816c10f407dbfc8",
-            "content": "sha256:0a248d827bf5947bba02227b053bfccc57abb65eba5c4413f6eaf001bd0bbafd",
+            "blob": "929da2b32893d67c1250150e62b82677f1556231",
+            "content": "sha256:3474f6117cc9dda982d19d77ab73e840fcdfb94704416d82a3db2c61815cc2ed",
+            "locator": {
+              "kind": "symbol",
+              "name": "sync_input_refusal"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d2ea7cbc14046090dc44525a726cf5f923166c10",
+            "content": "sha256:d076ff421ec8b709c310e05798253721c33d735a49d33f6bc979f09c4abb66ff",
             "locator": {
               "kind": "symbol",
               "name": "SyncSideRecord"
@@ -972,117 +776,33 @@
             "path": "mcp/src/agents_remember/worktrees/sync_transaction_state.py"
           },
           "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "21e174242087f49b6154f2303db0338c546d0bd8",
-            "content": "sha256:7adfb3efe3f9349b41c85f22d5c575846463c84be426418e52ca6fd1a62ce578",
-            "locator": {
-              "kind": "symbol",
-              "name": "_finish_retained_merge"
-            },
-            "path": "mcp/src/agents_remember/worktrees/sync_transaction.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "8755dbb2fcf0a8edfa492a3d956df2e51bdf9497",
-            "content": "sha256:5909a53a618d028e1d3000c0a7abceecbe5fb37f4e511efe46643fad6e66872f",
-            "locator": {
-              "end": 635,
-              "kind": "line_range",
-              "start": 635
-            },
-            "path": "mcp/src/agents_remember/worktrees/sync_transaction.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "21e174242087f49b6154f2303db0338c546d0bd8",
-            "content": "sha256:967f390b333ca2e8845e33ff24b64b23f0ce32c03db9abe051c48dffc052ac6b",
-            "locator": {
-              "end": 694,
-              "kind": "line_range",
-              "start": 694
-            },
-            "path": "mcp/src/agents_remember/worktrees/sync_transaction.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "4": {
-      "note": "The explicit release, and the record it returns.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e56036b983a88cecfd9553c96ecd7bea613c3fa0",
-            "content": "sha256:76e1344c022398ef8d50dd167e4a7ea60196db6ebcd824cd1664f9a2729d6cbf",
-            "locator": {
-              "kind": "symbol",
-              "name": "release_retained_code_object"
-            },
-            "path": "mcp/src/agents_remember/worktrees/modules/code_object_retention.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e56036b983a88cecfd9553c96ecd7bea613c3fa0",
-            "content": "sha256:8a8afcc589d9634366247b3a7daedb65a5f7b7ef547762d8200bfe01751cfd74",
-            "locator": {
-              "kind": "symbol",
-              "name": "ReleasedCodeObject"
-            },
-            "path": "mcp/src/agents_remember/worktrees/modules/code_object_retention.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "40": {
-      "note": "The attempt that carries every accepted decision, and the bounded refusal that stops the cycling.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "21e174242087f49b6154f2303db0338c546d0bd8",
-            "content": "sha256:9323c6adc1e8b3166454d85f3e3cd84088ca4dac85247b10228a6d5d4726a914",
-            "locator": {
-              "kind": "symbol",
-              "name": "_reconcile_knowledge_resolution"
-            },
-            "path": "mcp/src/agents_remember/worktrees/sync_transaction.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "21e174242087f49b6154f2303db0338c546d0bd8",
-            "content": "sha256:4f8f4974d703270b5c0397d4a8d5381f0fe174df34cbd50405f1d04f89d5e39e",
-            "locator": {
-              "kind": "symbol",
-              "name": "_reconcile_progress_refusal"
-            },
-            "path": "mcp/src/agents_remember/worktrees/sync_transaction.py"
-          },
-          "kind": "code"
         }
       ]
     },
     "41": {
-      "note": "The Git half that hands the adapter the whole sequence.",
+      "note": "Supported staged continuation and cancellation guidance.",
       "targets": [
         {
           "anchor": {
-            "blob": "275847ecea525f425b8c6c5f28b5c3ed8c461439",
-            "content": "sha256:649035dbc3509fae16fc616afc9a9bdb9cf519318e93303d3580fb64777724d6",
+            "blob": "f98146eb55d96bc7a490bf0d5761a39fa74e93ae",
+            "content": "sha256:a58de0c68499a1c7e744f240a8a00072cc8d27f4f61bf8e73b5392afaf2d7463",
             "locator": {
               "kind": "symbol",
-              "name": "reconcile_side_merge"
+              "name": "continue_side_merge"
             },
             "path": "mcp/src/agents_remember/worktrees/sync_transaction_git.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3478a7daa4b6b4545dc212e58ea592800554348b",
+            "content": "sha256:b319465bab96886aa6c108ee1a03fe918bc3301a05b88d2cea243fad52822b3e",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolution_required"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_results.py"
           },
           "kind": "code"
         }
@@ -1122,7 +842,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "67d54e66d7a576b212038f6a0c382b1735f1c7a4",
+            "blob": "111e36967466535ff0b6b4801c7dbd9e3afd573a",
             "content": "sha256:6b948cc0a0a6cfabb5116fc3fabbb632de3c30b476b462856555207593d221e0",
             "locator": {
               "kind": "symbol",
@@ -1134,7 +854,7 @@
         },
         {
           "anchor": {
-            "blob": "0b471e3448e819f041af640b69fc9dbf1f6b4ed3",
+            "blob": "111e36967466535ff0b6b4801c7dbd9e3afd573a",
             "content": "sha256:a7b5b5b6c007e7a66a228ff7fef345ec45fdb43cfd0c98eb5836e71f0cf57b2a",
             "locator": {
               "kind": "symbol",
@@ -1151,7 +871,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "275847ecea525f425b8c6c5f28b5c3ed8c461439",
+            "blob": "f98146eb55d96bc7a490bf0d5761a39fa74e93ae",
             "content": "sha256:3a20c476b4a05e39bde63fb4fdfa2181f4fc1b6ef772829bf6e7a2c479190ca6",
             "locator": {
               "kind": "symbol",
@@ -1168,7 +888,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "21e174242087f49b6154f2303db0338c546d0bd8",
+            "blob": "929da2b32893d67c1250150e62b82677f1556231",
             "content": "sha256:250e1605930397e93f18590afa307339b1a45d00c5fc586793809a0517d23a95",
             "locator": {
               "kind": "symbol",
@@ -1214,7 +934,7 @@
         },
         {
           "anchor": {
-            "blob": "d137af1a77fb633b90407595c57af9b5794458ad",
+            "blob": "d250ebaf150ae574609dc3af77e977820511bb80",
             "content": "sha256:9cee7d39379888cd18794013dfc40a3cf9db0a4917edfdcb14e84e2cc389c7d9",
             "locator": {
               "kind": "symbol",
@@ -1227,15 +947,15 @@
       ]
     },
     "48": {
-      "note": "The crossing branch of the memory merge.",
+      "note": "Structural planning applies to all converted sides, reports conflicts/conversion only.",
       "targets": [
         {
           "anchor": {
-            "blob": "275847ecea525f425b8c6c5f28b5c3ed8c461439",
-            "content": "sha256:202bf02a771fb97aa7f33e1caaa2d8883147ab6f5b1342a4c47c45ae3c382e09",
+            "blob": "f98146eb55d96bc7a490bf0d5761a39fa74e93ae",
+            "content": "sha256:eb1fed75ae6bdd3627ae2f50b590865656ddb09e3c7080e05ebe45dd8aec1ea5",
             "locator": {
               "kind": "symbol",
-              "name": "_crossing"
+              "name": "_knowledge_merge"
             },
             "path": "mcp/src/agents_remember/worktrees/sync_transaction_git.py"
           },
@@ -1243,11 +963,11 @@
         },
         {
           "anchor": {
-            "blob": "275847ecea525f425b8c6c5f28b5c3ed8c461439",
-            "content": "sha256:6d999f6c98c5499aa8a1e0becaa0559abdfad91facb9b3e0998fdc06667bf225",
+            "blob": "f98146eb55d96bc7a490bf0d5761a39fa74e93ae",
+            "content": "sha256:341d161d2c6ffe985b6d6b0e1abd821eb8391e8ef41aed5d17780e8caa5f0b15",
             "locator": {
               "kind": "symbol",
-              "name": "_apply_crossing_merge"
+              "name": "_apply_knowledge_merge"
             },
             "path": "mcp/src/agents_remember/worktrees/sync_transaction_git.py"
           },
@@ -1260,7 +980,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "67d54e66d7a576b212038f6a0c382b1735f1c7a4",
+            "blob": "111e36967466535ff0b6b4801c7dbd9e3afd573a",
             "content": "sha256:8f96680898f7f47505195bd2aa85e34b5d6ac2fa29060e19da8ebdc618203b6f",
             "locator": {
               "kind": "symbol",
@@ -1272,7 +992,7 @@
         },
         {
           "anchor": {
-            "blob": "67d54e66d7a576b212038f6a0c382b1735f1c7a4",
+            "blob": "111e36967466535ff0b6b4801c7dbd9e3afd573a",
             "content": "sha256:10d81f79abdf38659f44010a5b9c65c7a311ee40ed2b6ad9be2937df7577de6a",
             "locator": {
               "kind": "symbol",
@@ -1284,7 +1004,7 @@
         },
         {
           "anchor": {
-            "blob": "67d54e66d7a576b212038f6a0c382b1735f1c7a4",
+            "blob": "111e36967466535ff0b6b4801c7dbd9e3afd573a",
             "content": "sha256:e34f9c8dba1e627374789d808cc8164b9fe72317a29b0ea8244f32c2a2a3bcd2",
             "locator": {
               "kind": "symbol",
@@ -1296,29 +1016,12 @@
         }
       ]
     },
-    "5": {
-      "note": "The contract-derived custody names the create-side consumer measures against.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "87c7c5dcefcbaf93baf68a0c8eec34ad2dd11703",
-            "content": "sha256:b434548ce5950f69923fdeab1d86c7ddf29758e41725532ecd2ed67b1e018415",
-            "locator": {
-              "kind": "symbol",
-              "name": "custody_names"
-            },
-            "path": "mcp/src/agents_remember/application/review_comparison_retention.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "50": {
       "note": "The rule 9 refusal.",
       "targets": [
         {
           "anchor": {
-            "blob": "d137af1a77fb633b90407595c57af9b5794458ad",
+            "blob": "d250ebaf150ae574609dc3af77e977820511bb80",
             "content": "sha256:124f5c9e6a34a3f01b3fd5a8d70f161ef7e4d775864fbd5b8db7ccadc105e44a",
             "locator": {
               "kind": "symbol",
@@ -1335,7 +1038,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d137af1a77fb633b90407595c57af9b5794458ad",
+            "blob": "d250ebaf150ae574609dc3af77e977820511bb80",
             "content": "sha256:f3f0c7ee1f793ec67ce30436950163e72dd40e0a71753c28fe1c62ede4ff2921",
             "locator": {
               "kind": "symbol",
@@ -1347,7 +1050,7 @@
         },
         {
           "anchor": {
-            "blob": "d137af1a77fb633b90407595c57af9b5794458ad",
+            "blob": "d250ebaf150ae574609dc3af77e977820511bb80",
             "content": "sha256:3302222db837b98bf5fef2034d41306d014a5ba2a0f0829d178b3ca479d7dab3",
             "locator": {
               "kind": "symbol",
@@ -1364,7 +1067,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "67d54e66d7a576b212038f6a0c382b1735f1c7a4",
+            "blob": "111e36967466535ff0b6b4801c7dbd9e3afd573a",
             "content": "sha256:dd9a78a4fbf03c811f8f8e5d96b0bafd292bce2f185852f5341647eb488726fb",
             "locator": {
               "kind": "symbol",
@@ -1376,7 +1079,7 @@
         },
         {
           "anchor": {
-            "blob": "0b471e3448e819f041af640b69fc9dbf1f6b4ed3",
+            "blob": "111e36967466535ff0b6b4801c7dbd9e3afd573a",
             "content": "sha256:a7b5b5b6c007e7a66a228ff7fef345ec45fdb43cfd0c98eb5836e71f0cf57b2a",
             "locator": {
               "kind": "symbol",
@@ -1422,7 +1125,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d2fce5c8032d735b70632a668c35d44a87da8a2d",
+            "blob": "3478a7daa4b6b4545dc212e58ea592800554348b",
             "content": "sha256:1878b0e5f75356e4c1f49f02da11786351b0b85f974ec6fcbd1eb47f0f3c6766",
             "locator": {
               "kind": "symbol",
@@ -1439,7 +1142,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "67d54e66d7a576b212038f6a0c382b1735f1c7a4",
+            "blob": "111e36967466535ff0b6b4801c7dbd9e3afd573a",
             "content": "sha256:fd53af8b68a80c1646b90147bf2fe634886be0a8ddcadad224cf33b809455558",
             "locator": {
               "kind": "symbol",
@@ -1451,7 +1154,7 @@
         },
         {
           "anchor": {
-            "blob": "67d54e66d7a576b212038f6a0c382b1735f1c7a4",
+            "blob": "111e36967466535ff0b6b4801c7dbd9e3afd573a",
             "content": "sha256:c589198488aae3fba7f0728df8cb78c599fbc4fa68ae434456c7908c9274782d",
             "locator": {
               "kind": "symbol",
@@ -1502,12 +1205,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "127a1fee161b800c304b013911edacf91a1d2001",
+            "blob": "9836ba2ec2eda438d0a47740010ce453189a4cb0",
             "content": "sha256:1e4968e20cfdfae7fc5bb459f86e48a1523e5f31da82d57a6e5045d390e83738",
             "locator": {
-              "end": 642,
+              "end": 570,
               "kind": "line_range",
-              "start": 632
+              "start": 560
             },
             "path": "mcp/src/agents_remember/worktrees/reopen.py"
           },
@@ -1516,15 +1219,16 @@
       ]
     },
     "59": {
-      "note": "Reopen's placement guard on the leaf and the master.",
+      "note": "Reopen's placement guard on the leaf and the master.\n\nAnchor: \"require_task_document_in_place(json_path, doc, ReopenTaskDocumentError)\"; \"require_task_document_in_place(master_path, master, ReopenTaskDocumentError)\"",
       "targets": [
         {
           "anchor": {
-            "blob": "127a1fee161b800c304b013911edacf91a1d2001",
+            "blob": "9836ba2ec2eda438d0a47740010ce453189a4cb0",
             "content": "sha256:3800c4595e1f9a984649face53b7226fad3aae0895f842726784da91c9f124bb",
             "locator": {
-              "kind": "symbol",
-              "name": "_plan_leaf_doc_reset"
+              "end": 390,
+              "kind": "line_range",
+              "start": 348
             },
             "path": "mcp/src/agents_remember/worktrees/reopen.py"
           },
@@ -1532,11 +1236,12 @@
         },
         {
           "anchor": {
-            "blob": "127a1fee161b800c304b013911edacf91a1d2001",
-            "content": "sha256:4dc3ad6e9c80312e89e8c8bda5dee751006e66c8a131a2c8452a0c6267503587",
+            "blob": "9836ba2ec2eda438d0a47740010ce453189a4cb0",
+            "content": "sha256:75b6a14113e8636cd552d6e7d070b63c8fe108c738715a5c718e5974662fbb9f",
             "locator": {
-              "kind": "symbol",
-              "name": "_plan_master_index_reset"
+              "end": 541,
+              "kind": "line_range",
+              "start": 501
             },
             "path": "mcp/src/agents_remember/worktrees/reopen.py"
           },
@@ -1545,15 +1250,15 @@
       ]
     },
     "6": {
-      "note": "The per-file detail for the new member: the module's own statement of the three properties — one commit and one ref, measured custody over named history only, explicit release with a record — and of what it does not decide.",
+      "note": "Current custody/release of historical pins; no creation.",
       "targets": [
         {
           "anchor": {
-            "blob": "e56036b983a88cecfd9553c96ecd7bea613c3fa0",
-            "content": "sha256:c27fc00460c90c4a2bf15e0ff0c1cc4f62f4692b8a029ca1f8607ef2744de7dc",
+            "blob": "912d1707bae355645c256a55af1b52aeb7276c9f",
+            "content": "sha256:8a42dc6b7bcee527e6e8e183306a265ac7762ed3aebdab6174cd9937bd3b9951",
             "locator": {
               "kind": "symbol",
-              "name": "retain_code_object"
+              "name": "code_object_custody"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/code_object_retention.py"
           },
@@ -1561,11 +1266,11 @@
         },
         {
           "anchor": {
-            "blob": "e56036b983a88cecfd9553c96ecd7bea613c3fa0",
-            "content": "sha256:8a42dc6b7bcee527e6e8e183306a265ac7762ed3aebdab6174cd9937bd3b9951",
+            "blob": "912d1707bae355645c256a55af1b52aeb7276c9f",
+            "content": "sha256:76e1344c022398ef8d50dd167e4a7ea60196db6ebcd824cd1664f9a2729d6cbf",
             "locator": {
               "kind": "symbol",
-              "name": "code_object_custody"
+              "name": "release_retained_code_object"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/code_object_retention.py"
           },
@@ -1578,7 +1283,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "603a6ba770e0ebedb221654036de15088ca011c8",
+            "blob": "d9aff968808173dc448e4c355b2ec47353fa2974",
             "content": "sha256:24721572f575894b915f5f8db78f5871a6688aae3dcadad1969af45942dc481b",
             "locator": {
               "kind": "symbol",
@@ -1590,7 +1295,7 @@
         },
         {
           "anchor": {
-            "blob": "603a6ba770e0ebedb221654036de15088ca011c8",
+            "blob": "d9aff968808173dc448e4c355b2ec47353fa2974",
             "content": "sha256:9fab263729d6a821fd2a2abc36eb155b36b1c3a1dd2be7b047d9f901b65f8ae6",
             "locator": {
               "kind": "symbol",
@@ -1619,7 +1324,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "603a6ba770e0ebedb221654036de15088ca011c8",
+            "blob": "d9aff968808173dc448e4c355b2ec47353fa2974",
             "content": "sha256:aee4471ced60a9248a73cdf4e1df84840633a438e3dc8a82d042f2f836e7cfe5",
             "locator": {
               "kind": "symbol",
@@ -1631,7 +1336,7 @@
         },
         {
           "anchor": {
-            "blob": "603a6ba770e0ebedb221654036de15088ca011c8",
+            "blob": "d9aff968808173dc448e4c355b2ec47353fa2974",
             "content": "sha256:67d47854920238903c844bd4769263945e3ecae17cf2d940b09799639597a8b1",
             "locator": {
               "kind": "symbol",
@@ -1660,7 +1365,7 @@
         },
         {
           "anchor": {
-            "blob": "603a6ba770e0ebedb221654036de15088ca011c8",
+            "blob": "d9aff968808173dc448e4c355b2ec47353fa2974",
             "content": "sha256:3f096993a949203bf87250d0259c65b473c2499c874f4f9aa284b5e067c0f2c1",
             "locator": {
               "kind": "symbol",
@@ -1677,7 +1382,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "67d54e66d7a576b212038f6a0c382b1735f1c7a4",
+            "blob": "0b471e3448e819f041af640b69fc9dbf1f6b4ed3",
             "content": "sha256:740b75054ecc53dd6bcfc88b2cd1244add7451bb767150875d8dd8b7571a9bab",
             "locator": {
               "kind": "symbol",
@@ -1689,7 +1394,7 @@
         },
         {
           "anchor": {
-            "blob": "67d54e66d7a576b212038f6a0c382b1735f1c7a4",
+            "blob": "111e36967466535ff0b6b4801c7dbd9e3afd573a",
             "content": "sha256:0edaf68a1b4824fb0f035812769180bb545ff7125a4732f99f6b79a235eb1e29",
             "locator": {
               "kind": "symbol",
@@ -1701,7 +1406,7 @@
         },
         {
           "anchor": {
-            "blob": "67d54e66d7a576b212038f6a0c382b1735f1c7a4",
+            "blob": "0b471e3448e819f041af640b69fc9dbf1f6b4ed3",
             "content": "sha256:e3c107c94ff0890ad2069f8a3d57d92b899158059dd87f7845bbf7685be4256c",
             "locator": {
               "kind": "symbol",
@@ -1718,7 +1423,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4c12320737a261f83da37ee21e7897a5739d4d4e",
+            "blob": "ad3cd305cef9d6f8af36956a3091ff780134057d",
             "content": "sha256:a556c9d631cc7b7ddd6a9d5a9d33c4b0a769fc0caad09453666329c49b429836",
             "locator": {
               "kind": "symbol",
@@ -1747,7 +1452,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "837b3fa7bfc2472ba7cde9635ab32e16a6319a94",
+            "blob": "34b7a01a614d6f22e1f7c233039dae49cb34ce72",
             "content": "sha256:a7f9c48faf4f72c578dbc863e14dcbcaca7ea1d8f16fbdb2634512794cda9bd1",
             "locator": {
               "kind": "symbol",
@@ -1764,7 +1469,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "603a6ba770e0ebedb221654036de15088ca011c8",
+            "blob": "d9aff968808173dc448e4c355b2ec47353fa2974",
             "content": "sha256:0cca0c5b74d0a07af5e532b88dcc4a8c79a274e4d1f04b218bb2923a015dfcc9",
             "locator": {
               "kind": "symbol",
@@ -1781,7 +1486,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "21e174242087f49b6154f2303db0338c546d0bd8",
+            "blob": "929da2b32893d67c1250150e62b82677f1556231",
             "content": "sha256:98bf378e647ab3a5e90af567d6ee05c582e96ec9f1f7c7cc0c405de746638eb7",
             "locator": {
               "kind": "symbol",
@@ -1798,7 +1503,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "603a6ba770e0ebedb221654036de15088ca011c8",
+            "blob": "d9aff968808173dc448e4c355b2ec47353fa2974",
             "content": "sha256:6b4c04dfd9b35b403d74935df75e70d266ec4abe29546e36f92139e9313e049e",
             "locator": {
               "kind": "symbol",
@@ -1815,7 +1520,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "275847ecea525f425b8c6c5f28b5c3ed8c461439",
+            "blob": "f98146eb55d96bc7a490bf0d5761a39fa74e93ae",
             "content": "sha256:d97b331539bed08d8bb17a4fe08fb8c7706ee94b36bf4048fe03eedbc4a5800d",
             "locator": {
               "kind": "symbol",
@@ -1827,21 +1532,12 @@
         }
       ]
     },
-    "7": {
-      "note": "The per-file detail for the new member.\n\nAnchor: \"# mcp/src/agents_remember/worktrees/modules/code_object_retention.py\"",
-      "targets": [
-        {
-          "kind": "unresolved",
-          "text": "onboarding/mcp/src/agents_remember/worktrees/modules/code_object_retention.py.md:1-210"
-        }
-      ]
-    },
     "70": {
       "note": "The commit whose closed history files are frozen: the recorded, completed closeout's.",
       "targets": [
         {
           "anchor": {
-            "blob": "603a6ba770e0ebedb221654036de15088ca011c8",
+            "blob": "d9aff968808173dc448e4c355b2ec47353fa2974",
             "content": "sha256:7e62f02406a1bca57e4306035af6d5886206e02c2f674f2f64628597fec7b90e",
             "locator": {
               "kind": "symbol",
@@ -1858,7 +1554,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "67d54e66d7a576b212038f6a0c382b1735f1c7a4",
+            "blob": "111e36967466535ff0b6b4801c7dbd9e3afd573a",
             "content": "sha256:7f7658aef8f8814a4f38488dc3f46c8ca272521cc949289aed2959d643702830",
             "locator": {
               "kind": "symbol",
@@ -1994,7 +1690,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "67d54e66d7a576b212038f6a0c382b1735f1c7a4",
+            "blob": "111e36967466535ff0b6b4801c7dbd9e3afd573a",
             "content": "sha256:7c22d91e6252549ff5ff5b8f63dbc7bd68f9eb0498b32b119f296e52cc962e5d",
             "locator": {
               "kind": "symbol",
@@ -2006,7 +1702,7 @@
         },
         {
           "anchor": {
-            "blob": "67d54e66d7a576b212038f6a0c382b1735f1c7a4",
+            "blob": "111e36967466535ff0b6b4801c7dbd9e3afd573a",
             "content": "sha256:eb8884ec07deeed5702f8231bcf2164c4e7762ce7a1f1bb7c71024d205fdbce6",
             "locator": {
               "kind": "symbol",
@@ -2018,7 +1714,7 @@
         },
         {
           "anchor": {
-            "blob": "0b471e3448e819f041af640b69fc9dbf1f6b4ed3",
+            "blob": "111e36967466535ff0b6b4801c7dbd9e3afd573a",
             "content": "sha256:a7b5b5b6c007e7a66a228ff7fef345ec45fdb43cfd0c98eb5836e71f0cf57b2a",
             "locator": {
               "kind": "symbol",

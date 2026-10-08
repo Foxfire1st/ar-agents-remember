@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "f1835f850e272e93c572dee8c07d07f8680882af",
-        "content": "sha256:68a443c4804207cbdd4b15f878f0af2bce2afa44d6410f44b3791d0aebc6be18",
+        "blob": "0c25de5b43f8d9eab093ba267292a378cddb9137",
+        "content": "sha256:ead85644de937dc1ad342e01ee925d95fbb66e9381f3a10f5a5e96242c92885b",
         "locator": {
           "kind": "symbol",
           "name": "KnowledgeWriteAdmission"
@@ -17,97 +17,31 @@
       },
       "rationale": "The admission resolver is where 'authority is derived, never asserted' is made a property of the control flow rather than a promise.",
       "role": "primary-authority"
-    },
-    {
-      "anchor": {
-        "blob": "f1835f850e272e93c572dee8c07d07f8680882af",
-        "content": "sha256:53a8af530313c38a96cbfea5c9104fa1b680e214c37b33760bf32b1619f74071",
-        "locator": {
-          "kind": "symbol",
-          "name": "_require_unfrozen_database"
-        }
-      },
-      "id": "RLZ-KB4QFQ",
-      "invariant": "INV-JT28KJ",
-      "origin": {
-        "handoffEntry": "L37-cutover-lock",
-        "leaf": "260928-MIK-L37"
-      },
-      "rationale": "Asks the lock at the database batch writer's front door for an unconverted memory tree, so the batch writer writes nothing in a locked repository.",
-      "role": "enforcement"
-    },
-    {
-      "anchor": {
-        "blob": "f1835f850e272e93c572dee8c07d07f8680882af",
-        "content": "sha256:53a8af530313c38a96cbfea5c9104fa1b680e214c37b33760bf32b1619f74071",
-        "locator": {
-          "kind": "symbol",
-          "name": "_require_unfrozen_database"
-        }
-      },
-      "id": "RLZ-Y9GSNQ",
-      "invariant": "INV-1XKX9ERN",
-      "origin": {
-        "handoffEntry": "L37-frozen-database",
-        "leaf": "260928-MIK-L37"
-      },
-      "rationale": "Is the database batch writer's front door: it refuses an admission whose memory tree is converted, naming the curator file writer, and asks the cutover lock for an unconverted tree, so the batch writer writes nothing for either.",
-      "role": "enforcement"
     }
   ],
   "references": {
     "1": {
-      "note": "**The module's own statement of the gap it closes and of why a second write path was refused.**\n\nAnchor: \"repository's *first* knowledge\"; \"line 11\"",
+      "note": "The taskless admission derives real setup authority; canonical enclosure adapters and database refusal were retired.",
       "targets": [
         {
           "anchor": {
-            "blob": "53ae53ad8a7ab3096a95062f6d99f16dea097393",
-            "content": "sha256:ab6a94cb0c3eea2e3cd6188d6abf1a73134581bbcd958f7bc947a6e593f75f16",
+            "blob": "0c25de5b43f8d9eab093ba267292a378cddb9137",
+            "content": "sha256:ead85644de937dc1ad342e01ee925d95fbb66e9381f3a10f5a5e96242c92885b",
             "locator": {
-              "end": 35,
-              "kind": "line_range",
-              "start": 1
+              "kind": "symbol",
+              "name": "KnowledgeWriteAdmission"
             }
           },
           "kind": "code"
         }
       ]
     },
-    "10": {
-      "note": "The shipped contract loader and the document type the enclosure adapter reads.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "cad2b5290a889e152e487a9d3b2b27aeea339086",
-            "content": "sha256:8c82cf9643d566fa58d68d1a4bc2a516b15a7c4470a36c65892a811abb1e4454",
-            "locator": {
-              "kind": "symbol",
-              "name": "WorktreeContract"
-            },
-            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "1ef6715a9f5e28dd748cb8dde604a86bad8f190d",
-            "content": "sha256:3bc924f5a9c3f4bd27d8bbc6cc3f4383cd0ced5ea64c848c72e01998bbba924d",
-            "locator": {
-              "kind": "symbol",
-              "name": "load_contract"
-            },
-            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "11": {
-      "note": "**The second real admission this value exists to carry, and the resolver that builds it.**",
+      "note": "The current resolver derives taskless admission from repository setup authority.",
       "targets": [
         {
           "anchor": {
-            "blob": "d3d4425dcd8a920e7f8a5ffad2a735244f0b4d54",
+            "blob": "c6f19d716614b209612597c6edbf85090014aac3",
             "content": "sha256:60cb10c962c281de167b8c9f199e2c4b7a7eccaa8279ae40fe7b64a5560b1eb5",
             "locator": {
               "kind": "symbol",
@@ -116,93 +50,30 @@
             "path": "mcp/src/agents_remember/application/knowledge_bootstrap_admission.py"
           },
           "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d3d4425dcd8a920e7f8a5ffad2a735244f0b4d54",
-            "content": "sha256:82ee0c2060de57cad42765c6ac8fc412650a7c48a877d0434e812b57a888abc8",
-            "locator": {
-              "kind": "symbol",
-              "name": "bootstrap_scope"
-            },
-            "path": "mcp/src/agents_remember/application/knowledge_bootstrap_admission.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "12": {
-      "note": "The one operation both admissions reach.\n\nAnchor: \"def ingest_curator_list(\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "6c264ad4baa933504af480b247b65dd3c5a52ea3",
-            "content": "sha256:1e68e38b1d88e42cbf232455a533b8ff42545fd09694ebe83890024f9cd1ccb8",
-            "locator": {
-              "end": 1243,
-              "kind": "line_range",
-              "start": 1116
-            },
-            "path": "mcp/src/agents_remember/application/knowledge_curator_ingest.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "13": {
-      "note": "The front door resolves the admission, then refuses a frozen or locked database.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f1835f850e272e93c572dee8c07d07f8680882af",
-            "content": "sha256:6134c9d6c4f2b99e1872c7ca789541943ea2ea712d6945b5ada598be35cd8e9c",
-            "locator": {
-              "kind": "symbol",
-              "name": "as_write_admission"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f1835f850e272e93c572dee8c07d07f8680882af",
-            "content": "sha256:53a8af530313c38a96cbfea5c9104fa1b680e214c37b33760bf32b1619f74071",
-            "locator": {
-              "kind": "symbol",
-              "name": "_require_unfrozen_database"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "14": {
-      "note": "The database writer is frozen on a converted tree and names the file writer.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "3d5ab012645a59c43d66a805479a40ef63038e39",
-            "content": "sha256:3b6fe5185a2b640c3284f85aba451b53060a107a21f021326c4141f072351e10",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_the_database_writer_is_frozen_on_a_converted_tree_and_names_the_file_writer"
-            },
-            "path": "mcp/tests/test_knowledge_cutover.py"
-          },
-          "kind": "test"
         }
       ]
     },
     "2": {
-      "note": "The published surface: the two kind constants, the value, the provenance and the two builders.",
+      "note": "The taskless admission value and provenance are the published shapes.",
       "targets": [
         {
           "anchor": {
-            "blob": "f1835f850e272e93c572dee8c07d07f8680882af",
-            "content": "sha256:5c808faef5a7b3169b60370aee4156c551c6adfe3f6107c9b267147a85f0b95f",
+            "blob": "0c25de5b43f8d9eab093ba267292a378cddb9137",
+            "content": "sha256:ead85644de937dc1ad342e01ee925d95fbb66e9381f3a10f5a5e96242c92885b",
             "locator": {
               "kind": "symbol",
-              "name": "__all__"
+              "name": "KnowledgeWriteAdmission"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0c25de5b43f8d9eab093ba267292a378cddb9137",
+            "content": "sha256:3ec33dcc3c9500aa2682f5cd25e81fdf7d377bfdee9479f7bc681fff6b88b94a",
+            "locator": {
+              "kind": "symbol",
+              "name": "AdmissionProvenance"
             }
           },
           "kind": "code"
@@ -210,37 +81,15 @@
       ]
     },
     "3": {
-      "note": "**The two admissions as a declared, stored vocabulary rather than a boolean.**",
+      "note": "The one current admission kind is repository-bootstrap.",
       "targets": [
         {
           "anchor": {
-            "blob": "f1835f850e272e93c572dee8c07d07f8680882af",
-            "content": "sha256:c67fe9de2dcf032624c6c28a24f73da8d3d6875b44663f103b643eb161b33521",
+            "blob": "0c25de5b43f8d9eab093ba267292a378cddb9137",
+            "content": "sha256:547e039d511fdb71efdb12d3a866d33fbfc5d12a564c477b327ca7f0a66301e1",
             "locator": {
               "kind": "symbol",
               "name": "AdmissionKind"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f1835f850e272e93c572dee8c07d07f8680882af",
-            "content": "sha256:03b0790da501502c1230f3f50930249c8a080e596afc07415adf8514ded2d339",
-            "locator": {
-              "kind": "symbol",
-              "name": "ENCLOSURE_ADMISSION_KIND"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f1835f850e272e93c572dee8c07d07f8680882af",
-            "content": "sha256:9f250ba77849505356e55b9f12e8df94b3b8a27c6463244428a95b0f2bc5f671",
-            "locator": {
-              "kind": "symbol",
-              "name": "BOOTSTRAP_ADMISSION_KIND"
             }
           },
           "kind": "code"
@@ -264,12 +113,12 @@
       ]
     },
     "5": {
-      "note": "**The facts one admitted write is bound to, including the retry scope and the two exact source revisions.**\n\nAnchor: \"``scope`` is the **retry scope**\"",
+      "note": "The taskless operation is bound to its exact code/memory roots and admitted source commits.",
       "targets": [
         {
           "anchor": {
-            "blob": "f1835f850e272e93c572dee8c07d07f8680882af",
-            "content": "sha256:68a443c4804207cbdd4b15f878f0af2bce2afa44d6410f44b3791d0aebc6be18",
+            "blob": "0c25de5b43f8d9eab093ba267292a378cddb9137",
+            "content": "sha256:ead85644de937dc1ad342e01ee925d95fbb66e9381f3a10f5a5e96242c92885b",
             "locator": {
               "kind": "symbol",
               "name": "KnowledgeWriteAdmission"
@@ -284,7 +133,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f1835f850e272e93c572dee8c07d07f8680882af",
+            "blob": "0c25de5b43f8d9eab093ba267292a378cddb9137",
             "content": "sha256:d0ca2499f3633b6ae4538b5c942d2377ac826925bc1b6f8f37367b7275ab0e30",
             "locator": {
               "kind": "symbol",
@@ -295,7 +144,7 @@
         },
         {
           "anchor": {
-            "blob": "f1835f850e272e93c572dee8c07d07f8680882af",
+            "blob": "0c25de5b43f8d9eab093ba267292a378cddb9137",
             "content": "sha256:ee736089b0313be7277c3830c646eee730e00c672d04d0c7acf218cc91dcba19",
             "locator": {
               "kind": "symbol",
@@ -307,59 +156,15 @@
       ]
     },
     "7": {
-      "note": "Which authority admitted this write, and whether it was derived without an enclosure.\n\nAnchor: `kind`",
+      "note": "Provenance carries the exact setup authority and reference rather than a caller boolean.",
       "targets": [
         {
           "anchor": {
-            "blob": "f1835f850e272e93c572dee8c07d07f8680882af",
-            "content": "sha256:c7486acfea9fdd9cc5168ba1e29927850a9be51998daebbfe20644e03bccaa2a",
+            "blob": "0c25de5b43f8d9eab093ba267292a378cddb9137",
+            "content": "sha256:3ec33dcc3c9500aa2682f5cd25e81fdf7d377bfdee9479f7bc681fff6b88b94a",
             "locator": {
               "kind": "symbol",
-              "name": "is_bootstrap"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f1835f850e272e93c572dee8c07d07f8680882af",
-            "content": "sha256:67f08c129abd2740f4e40855f1073e897f3cdd2ae91b0383fbd5ba0cb622f0e9",
-            "locator": {
-              "end": 136,
-              "kind": "line_range",
-              "start": 132
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "8": {
-      "note": "**The enclosure adapter that derives nothing and states that a real contract admitted the write.**\n\nAnchor: \"It derives nothing\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f1835f850e272e93c572dee8c07d07f8680882af",
-            "content": "sha256:712c1c8b475ba79e318571f38219c8fe53d0d25677f2c2fc26056ae22c9b03e7",
-            "locator": {
-              "kind": "symbol",
-              "name": "enclosure_admission"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "9": {
-      "note": "**The one coercion at the front door: an existing admission is passed through untouched, never re-derived.**\n\nAnchor: \"is passed through untouched\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "53ae53ad8a7ab3096a95062f6d99f16dea097393",
-            "content": "sha256:4c887968e4813595746dc7ee64415afee28a5a0211a60970cf87c581f9dfcf02",
-            "locator": {
-              "kind": "symbol",
-              "name": "as_write_admission"
+              "name": "AdmissionProvenance"
             }
           },
           "kind": "code"

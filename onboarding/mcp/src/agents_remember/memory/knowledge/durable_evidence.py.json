@@ -2,221 +2,12 @@
   "path": "mcp/src/agents_remember/memory/knowledge/durable_evidence.py",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "**The two destinations a retention claim may not rest on, named so neither is reachable by accident.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "bcd26120e2d3769670e1bd3b4b1406ef094002aa",
-            "content": "sha256:af05170701ede975092a792b72f0b32e1fef0bacb48ea1d67a03c806f0b65bf8",
-            "locator": {
-              "kind": "symbol",
-              "name": "DURABLE_EVIDENCE_REFUSED_DESTINATIONS"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "10": {
-      "note": "The shipped curator-coherence route that owns \"leaf evidence parked where it survives\".",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f9803f99ec17984b37829a2d4af77fd2a521764a",
-            "content": "sha256:ccc3a8dd0d56e5f4dc20bef22f1e2972a1a423b411b32fab6cb5c51fe815ba76",
-            "locator": {
-              "kind": "symbol",
-              "name": "curator_coherence_paths"
-            },
-            "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_paths.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "11": {
-      "note": "The cleanup that removes an enclosure-local `reports/` directory, which is why that path is refused.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4553df1a09b4e5397ea5df322777351fc8345de0",
-            "content": "sha256:7c153a48a2c3c453cc8a56c618c16b4f70da9d8b99e59ff28ca27dd0f7b2eaf6",
-            "locator": {
-              "kind": "symbol",
-              "name": "ENCLOSURE_REPORTS_DIRECTORY"
-            },
-            "path": "mcp/src/agents_remember/worktrees/modules/cleanup.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "12": {
-      "note": "The terminal-evidence owner bounds canonical artifact admission; archives retain that exact content set.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4cde6f27891564d461061ee78d31e963ae6d74ba",
-            "content": "sha256:cea0851cc8ac09e4ba351956d9885f8fa98b9d176e662f7f79e5e2c3c029cf27",
-            "locator": {
-              "kind": "symbol",
-              "name": "_is_canonical_artifact"
-            },
-            "path": "mcp/src/agents_remember/worktrees/integration/terminal_enclosure_evidence.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "13": {
-      "note": "**The boundary cases that measure both directions: a published artifact reads back matched, a missing destination is blocked, and changed bytes are mismatched.**",
+      "note": "`publish_durable_evidence` owns the current boundary described above.",
       "targets": [
         {
           "anchor": {
-            "blob": "400c1752a5394493caa7f53b86909258b9b3c250",
-            "content": "sha256:58e7f9b373a602a2e492a929e435c3596dac5667cf72cc49c73178cbca9ac2e4",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_published_artifact_reads_back_with_its_published_digest"
-            },
-            "path": "mcp/tests/test_knowledge_citation_boundaries.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "400c1752a5394493caa7f53b86909258b9b3c250",
-            "content": "sha256:811f2ed333469c7250e9785755a7cc4022953fcd85cf71de5780bdc036c231bb",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_missing_durable_destination_reads_back_as_a_blocked_state"
-            },
-            "path": "mcp/tests/test_knowledge_citation_boundaries.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "400c1752a5394493caa7f53b86909258b9b3c250",
-            "content": "sha256:636da0d7f8b0bbd159f54f80707e23b342c2d2b6a6338824399a7e21422e26f9",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_destination_whose_bytes_changed_reads_back_as_mismatched"
-            },
-            "path": "mcp/tests/test_knowledge_citation_boundaries.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "14": {
-      "note": "The boundary case that proves the destination is outside the enclosure and the archive by construction.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "400c1752a5394493caa7f53b86909258b9b3c250",
-            "content": "sha256:f30427b2c20b9013f1c262f53e84b9cad9689d2b5f2d56a119d3701d69d74eb3",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_the_destination_is_outside_the_enclosure_and_the_archive_by_construction"
-            },
-            "path": "mcp/tests/test_knowledge_citation_boundaries.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "2": {
-      "note": "**The durable root, exported as the one decision a directory-shaped producer must root itself at.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "bcd26120e2d3769670e1bd3b4b1406ef094002aa",
-            "content": "sha256:235530d66b6a614a5e796a88c1b1f12d0d19f8e1194a5a30e4e12454ce537b09",
-            "locator": {
-              "kind": "symbol",
-              "name": "durable_reports_root"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "bcd26120e2d3769670e1bd3b4b1406ef094002aa",
-            "content": "sha256:acadb101ded90b00670338208e59692eb69c58ef5813b8ebc20cd1ab1490d244",
-            "locator": {
-              "kind": "symbol",
-              "name": "_TASK_RELATIVE_REPORTS"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "**Its first consumer: the comparison generation, which derives its whole layout from this root rather than restating it.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "089d51d117d71e9f773b5d7297b03ddc037a9a97",
-            "content": "sha256:5ff43495dbfb832e1b82138cfae66fe0a4c0be2615e6963ecbdc1d1c2b976529",
-            "locator": {
-              "kind": "symbol",
-              "name": "comparison_generations_root"
-            },
-            "path": "mcp/src/agents_remember/application/review_comparison_generation.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "089d51d117d71e9f773b5d7297b03ddc037a9a97",
-            "content": "sha256:8c4b20d59c40447ca2c2c625c1442a1a4cb42467ed83a24d719a4e10fbcae4dd",
-            "locator": {
-              "kind": "symbol",
-              "name": "leaf_generation_root"
-            },
-            "path": "mcp/src/agents_remember/application/review_comparison_generation.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "089d51d117d71e9f773b5d7297b03ddc037a9a97",
-            "content": "sha256:ff4efef8e16256fd5037587d623d01989e9b9be01b9b3320746128707ab4155a",
-            "locator": {
-              "kind": "symbol",
-              "name": "generation_directory"
-            },
-            "path": "mcp/src/agents_remember/application/review_comparison_generation.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "4": {
-      "note": "**The publication record a later reader is given: the exact destination, the digest, the byte count and the machine-readable reference.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "bcd26120e2d3769670e1bd3b4b1406ef094002aa",
-            "content": "sha256:4d757fabba3d39194c6cd06eebd546c32a76d29ca27179f61d97fdcdec4932fc",
-            "locator": {
-              "kind": "symbol",
-              "name": "DurableEvidencePublication"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "5": {
-      "note": "**The publication itself: the destination built from the task root and the digest hashed from the bytes written.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "bcd26120e2d3769670e1bd3b4b1406ef094002aa",
+            "blob": "a53c6f42e92d352bb02456ae4a50a3b52c58e2e4",
             "content": "sha256:97189e515d2b74227fd659bbd308186abc5b49de8171ba308d9b45a013742c38",
             "locator": {
               "kind": "symbol",
@@ -227,28 +18,12 @@
         }
       ]
     },
-    "6": {
-      "note": "**The read-back result, whose state distinguishes \"the bytes are not there\" from \"the bytes are different\", and the blocked reason that renders the failure direction.**",
+    "14": {
+      "note": "`read_back_evidence` owns the current boundary described above.",
       "targets": [
         {
           "anchor": {
-            "blob": "bcd26120e2d3769670e1bd3b4b1406ef094002aa",
-            "content": "sha256:d88c91e25c807eae2186b96c00abce972fc7b504bde6c7b046c5fe6e4ef1e75a",
-            "locator": {
-              "kind": "symbol",
-              "name": "EvidenceReadBack"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "7": {
-      "note": "**The read-back operation itself.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "bcd26120e2d3769670e1bd3b4b1406ef094002aa",
+            "blob": "a53c6f42e92d352bb02456ae4a50a3b52c58e2e4",
             "content": "sha256:20f6a12e1f175ebc7ff71806b44144f91251d45d92d4dbce191f95ccd3f2fd03",
             "locator": {
               "kind": "symbol",
@@ -259,32 +34,16 @@
         }
       ]
     },
-    "8": {
-      "note": "The destination rule that makes a traversal or a nested name unrepresentable.",
+    "15": {
+      "note": "`_require_one_file_name` owns the current boundary described above.",
       "targets": [
         {
           "anchor": {
-            "blob": "bcd26120e2d3769670e1bd3b4b1406ef094002aa",
+            "blob": "a53c6f42e92d352bb02456ae4a50a3b52c58e2e4",
             "content": "sha256:aab3e8795d797c8af8b3e32bdd59548962d53dee066740f10f9983e3f1f182ce",
             "locator": {
               "kind": "symbol",
               "name": "_require_one_file_name"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "9": {
-      "note": "The enclosure-local read-back the cleanup direction is measured with.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "bcd26120e2d3769670e1bd3b4b1406ef094002aa",
-            "content": "sha256:ec87f54c9e65916930fe4de49f8d4eb1c50982f9f98818ae2fd63a12c6c8612c",
-            "locator": {
-              "kind": "symbol",
-              "name": "enclosure_reports_removed"
             }
           },
           "kind": "code"

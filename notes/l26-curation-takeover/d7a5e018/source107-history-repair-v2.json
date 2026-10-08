@@ -1,0 +1,1244 @@
+{
+  "entries": [],
+  "records": [],
+  "history": [
+    {
+      "disposition": "no_impact",
+      "reason": "Every member was examined at the corrected candidate; the joint guarantee still holds unchanged.",
+      "subject": "FAM-4ZNEN9",
+      "examined": [
+        "INV-2172NS",
+        "INV-5M9WY3",
+        "INV-61Y147",
+        "INV-656CYW",
+        "INV-7MH0BR",
+        "INV-EKE1RV"
+      ]
+    },
+    {
+      "disposition": "changed",
+      "reason": "The current shared publication and both leaf routes implement admitted-tree/parent/index binding; direct landing is no longer an admission-snapshot exception. Preserve the Owner's R4-O2 partial-publication limit rather than inventing universal rollback. All unchanged base members and added members are retained and examined.",
+      "subject": "FAM-61DY2V",
+      "examined": [
+        "INV-0T84PZ",
+        "INV-0XMNQZ",
+        "INV-2Q8RPR",
+        "INV-49E649",
+        "INV-656CYW",
+        "INV-89A5AN",
+        "INV-9ZBTVA",
+        "INV-ANKPPE",
+        "INV-BEYEV2",
+        "INV-D2HZQ8",
+        "INV-FYZQK0",
+        "INV-G0Y4VR",
+        "INV-GSEMMW",
+        "INV-HWAWFT",
+        "INV-KTMBMN",
+        "INV-MS9BMJ",
+        "INV-N5RBFK",
+        "INV-WV1YQE",
+        "INV-XN0FG8",
+        "INV-YZ45D7",
+        "INV-ZGFZXT"
+      ]
+    },
+    {
+      "subject": "FAM-7AEA19",
+      "disposition": "no_impact",
+      "reason": "The source corpus retains parent question routing, one top-chat escalation, exact relayed identity/words and unreachable-parent recovery across its five members. Database retirement edits do not alter this stored joint transport guarantee; this source examination does not override our compiled launch capsule.",
+      "examined": [
+        "INV-7FMDAS",
+        "INV-82ZTHK",
+        "INV-8AMSGV",
+        "INV-9S49CW",
+        "INV-HGSFJ8"
+      ]
+    },
+    {
+      "disposition": "changed",
+      "reason": "The current converted-only joint guarantee is retained; all three exact member revisions are re-examined after narrowing the bootstrap admission carrier. The family still excludes the retired database writer and mechanical conversion/closeout acts.",
+      "subject": "FAM-7B6N3Y4Q",
+      "examined": [
+        "INV-1XKX9ERN",
+        "INV-753SKJFF",
+        "INV-QN53GPRB"
+      ]
+    },
+    {
+      "subject": "FAM-83BTBD",
+      "disposition": "no_impact",
+      "reason": "All six member obligations preserve direct Worker/Reviewer/Curator custody, separate code/memory bookkeeping and only named Manager occasions. The current curation-operation edits remove retired dataset handling while retaining memory-conflict ownership and evidenced-code concern routing.",
+      "examined": [
+        "INV-7E3JNX",
+        "INV-RKGNF8",
+        "INV-V7M37D",
+        "INV-W24J6Q",
+        "INV-W58B84",
+        "INV-ZNJ14G"
+      ]
+    },
+    {
+      "disposition": "retired",
+      "reason": "The family's every realization sat on the retired database machinery and its joint obligation is retired with it.",
+      "subject": "FAM-8FH7A8RH",
+      "examined": [
+        "INV-CDB4MZW4",
+        "INV-HKS46WB3"
+      ]
+    },
+    {
+      "disposition": "changed",
+      "reason": "Keep the five live explanation/target-validation obligations and remove the two retired allocation-replay obligations. Their distinct scope and exact current revisions were examined; _targets delegates to the retained value checker rather than the retired batch writer.",
+      "subject": "FAM-KQQE74ZT",
+      "examined": [
+        "INV-0FBA8M52",
+        "INV-4N43MNN2",
+        "INV-CKHJ0M7J",
+        "INV-E8655Z54",
+        "INV-H6A6JS63",
+        "INV-J7179RG5",
+        "INV-VVMNM9B6"
+      ]
+    },
+    {
+      "disposition": "retired",
+      "reason": "The family's every realization sat on the retired database machinery and its joint obligation is retired with it.",
+      "subject": "FAM-M9QBG39Z",
+      "examined": [
+        "INV-2A00CD6G",
+        "INV-6080HQF9",
+        "INV-AGA5HG4K",
+        "INV-HXAH9APB"
+      ]
+    },
+    {
+      "subject": "FAM-PNH1QS",
+      "disposition": "no_impact",
+      "reason": "All five members retain one coordinating agent under Architect, ordinary Manager/Orchestrator decision ownership, exact direct-coordination exceptions and developer-first response. Wording-test edits preserve these jointly governed boundaries.",
+      "examined": [
+        "INV-8AMSGV",
+        "INV-A6GAKX",
+        "INV-NFV5VJ",
+        "INV-P2WRNQ",
+        "INV-PEVJ6G"
+      ]
+    },
+    {
+      "disposition": "retired",
+      "reason": "The former joint guarantee combined semantic-scope admission with the allocated-scope conflict protocol. The latter is retired; preserve INV-KBCKV7N1 as a standalone scoped obligation rather than claim its old partner still implements a joint promise.",
+      "subject": "FAM-SK1BFPE2",
+      "examined": [
+        "INV-KBCKV7N1",
+        "INV-TPDQGXYK"
+      ]
+    },
+    {
+      "disposition": "no_impact",
+      "reason": "The sweep-timeout member returned to its moved owner; every member was examined at its current revision and the joint guarantee holds.",
+      "subject": "FAM-TG3WK0",
+      "examined": [
+        "INV-2S0FEY",
+        "INV-W4XGR4",
+        "INV-X0BRG0"
+      ]
+    },
+    {
+      "subject": "FAM-TYKA3T",
+      "disposition": "no_impact",
+      "reason": "All five members retain child-only worklist computation, exact observed-input reuse, shared bounded child ownership and create-only idempotent comparison pins. Refreshed _leaf_wide_parts and _create_pin anchors preserve the recorded guarantee and failure limits.",
+      "examined": [
+        "INV-19P897",
+        "INV-BBPPS5",
+        "INV-HHZP57",
+        "INV-PKBCZ0",
+        "INV-Z2HVKA"
+      ]
+    },
+    {
+      "disposition": "changed",
+      "reason": "All current and retired siblings were examined. Tree comparison and curator custody survive; canonical dataset operands and the comparison-publishing producer do not. The guarantee is narrowed to the actual retained historical read paths.",
+      "subject": "FAM-XZ5BR65G",
+      "examined": [
+        "INV-09FC73JC",
+        "INV-453ZPCZ5",
+        "INV-53MJW8V0",
+        "INV-7W11WKKN",
+        "INV-8Q6DZTDB",
+        "INV-9BH2BNCT",
+        "INV-9NCBGQSY",
+        "INV-B3GYVZTJ",
+        "INV-S26EBC8P",
+        "INV-T9M21FB4",
+        "INV-VXA7SZ0Z"
+      ]
+    },
+    {
+      "subject": "FAM-YGXZTQ",
+      "disposition": "no_impact",
+      "reason": "The family was already retired on the admitted incoming memory base; its three historical members were examined without restoring the historical protected-corpus guarantee. The surviving full-intake Curator obligation is retained independently and its current proof targets are refreshed.",
+      "examined": [
+        "INV-208SQT",
+        "INV-CXEEF4",
+        "INV-K5SFG7"
+      ]
+    },
+    {
+      "subject": "INV-19P897",
+      "disposition": "no_impact",
+      "reason": "_leaf_wide_parts still delegates to the single child worklist computation, returns its explicit process refusal and keeps no refused view; refreshing its symbol anchor does not change the obligation.",
+      "covers": [
+        "RLZ-MM509G"
+      ]
+    },
+    {
+      "subject": "INV-D2HZQ8",
+      "disposition": "no_impact",
+      "reason": "changed_observations still repeats selection/resolve/existence observations before byte probes, so equal bytes behind a retargeted locator do not reuse a gate verdict; refresh the retained enforcement anchor.",
+      "covers": [
+        "RLZ-67HY7K"
+      ]
+    },
+    {
+      "subject": "INV-Z2HVKA",
+      "disposition": "no_impact",
+      "reason": "_create_pin still uses create-only update-ref, accepts exactly the same tree, refuses another tree and retries held locks; refresh this retained enforcement anchor without changing the concurrent-recording obligation.",
+      "covers": [
+        "RLZ-W2H9EX"
+      ]
+    },
+    {
+      "disposition": "deleted",
+      "effect": "retire",
+      "reason": "Per-leaf dataset comparison freeze is retired; tree-side review holds the current comparison.",
+      "subject": "INV-09FC73JC",
+      "covers": [
+        {
+          "id": "RLZ-CZRDGVGT",
+          "remove": true
+        }
+      ]
+    },
+    {
+      "disposition": "no_impact",
+      "reason": "The current file-writer instructions still require each target rationale and preserve optional role; refresh both instruction and template anchors after the database-publication wording was retired.",
+      "subject": "INV-0FBA8M52",
+      "covers": [
+        "RLZ-K569QYAK",
+        "RLZ-RSTSK683"
+      ]
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "reason": "The record's statement now states the converted-memory writer and the unconverted refusal; the retired database-batch realizations are removed and the surviving command-line realizations re-anchored. Evidence (co:INV-1XKX9ERN): The candidate CLI refuses unconverted trees as legacy-format and the file writer serves converted trees only (MIK-R26 Q6).",
+      "subject": "INV-1XKX9ERN",
+      "covers": [
+        {
+          "id": "PRF-TMK4N3",
+          "remove": true
+        },
+        "RLZ-6HAWT71R",
+        {
+          "id": "RLZ-6X7QPYQ5",
+          "remove": true
+        },
+        "RLZ-86TVNJBC",
+        {
+          "id": "RLZ-CW5BZG",
+          "remove": true
+        },
+        "RLZ-Y766ENWA",
+        {
+          "id": "RLZ-Y9GSNQ",
+          "remove": true
+        },
+        "RLZ-3VSZ64",
+        "RLZ-SKYTG8"
+      ]
+    },
+    {
+      "subject": "INV-208SQT",
+      "disposition": "no_impact",
+      "reason": "The current wording test and Curator paragraph retain distinct full-intake actions, in-seat placement/admission/one writer and accountable harness support. The obsolete 99/100 fanout test symbol is absent at Source107, so remove that obsolete proof rather than claim it still exists; the retained current-coordination proof carries the duty.",
+      "covers": [
+        "PRF-D682YJ",
+        "RLZ-DT71R6",
+        {
+          "id": "PRF-TZR4TX",
+          "remove": true
+        }
+      ]
+    },
+    {
+      "disposition": "deleted",
+      "effect": "retire",
+      "reason": "Dataset family-declaration retention is retired with the database ingest.",
+      "subject": "INV-2A00CD6G",
+      "covers": [
+        {
+          "id": "RLZ-YNTYZW6E",
+          "remove": true
+        }
+      ]
+    },
+    {
+      "disposition": "deleted",
+      "effect": "retire",
+      "reason": "The false converted-memory realization is removed; the retired database-era allocation promise is not implemented by the file writer.",
+      "subject": "INV-4N43MNN2",
+      "covers": [
+        {
+          "id": "RLZ-P3V5XM3S",
+          "remove": true
+        },
+        {
+          "id": "RLZ-R88PA3YJ",
+          "remove": true
+        }
+      ]
+    },
+    {
+      "subject": "INV-5KBX7C",
+      "disposition": "no_impact",
+      "reason": "The wording test continues to assert Manager-owned aggregation and direct peer handovers; the edited test contains no replacement of that ownership.",
+      "covers": [
+        "PRF-0TFF0B"
+      ]
+    },
+    {
+      "subject": "INV-5M9WY3",
+      "disposition": "no_impact",
+      "reason": "The retained view-key/worklist/memo owners still reject failed reads and do not cache recovered aggregate failures. Changes of surrounding imports/tree paths carry these realizations without changing the failure rule.",
+      "covers": [
+        "PRF-BVAJTK",
+        "PRF-E4BSR5",
+        "PRF-GMC5WP",
+        "PRF-RGMJDD",
+        "PRF-RWW8CB",
+        "PRF-YZPTEQ",
+        "RLZ-3EFTEY",
+        "RLZ-4DBN10",
+        "RLZ-B1HDWP",
+        "RLZ-BA531Z",
+        "RLZ-BKB2F1",
+        "RLZ-JT0DJ4",
+        "RLZ-TKD181",
+        "RLZ-YRJNST",
+        "RLZ-ZXPVGB"
+      ]
+    },
+    {
+      "subject": "INV-5TKYXM",
+      "disposition": "no_impact",
+      "reason": "The terminal wording and its current owners still distinguish turn ending from inspected delivery and acceptance; the retirement adds no terminal acceptance authority.",
+      "covers": [
+        "RLZ-EEEG4W",
+        "RLZ-PDP66S"
+      ]
+    },
+    {
+      "disposition": "deleted",
+      "effect": "retire",
+      "reason": "Family-succession membership accounting was a database-ingest operation; the converted writer has no retained-membership accounting.",
+      "subject": "INV-6080HQF9",
+      "covers": [
+        {
+          "id": "RLZ-T0VHS9E5",
+          "remove": true
+        }
+      ]
+    },
+    {
+      "subject": "INV-61Y147",
+      "disposition": "no_impact",
+      "reason": "The reviewer resolver still passes one resolved candidate to dependent parts; the carried owner and existing proof preserve one resolution per request.",
+      "covers": [
+        "PRF-8NWSBZ",
+        "PRF-KH4W06",
+        "RLZ-5BFBN1",
+        "RLZ-D75THA",
+        "RLZ-HM528R"
+      ]
+    },
+    {
+      "subject": "INV-683GA3",
+      "disposition": "no_impact",
+      "reason": "The current wording test still pins the second-master Orchestrator transition, exact existing Manager reuse and fixed launch parent; these test edits change no coordination obligation.",
+      "covers": [
+        "PRF-4FX9HW"
+      ]
+    },
+    {
+      "subject": "INV-7E3JNX",
+      "disposition": "no_impact",
+      "reason": "The current curation operation still assigns Worker sync, direct memory conflicts to Curator and necessary capture/verification/staging to Manager before Worker continuation.",
+      "covers": [
+        "RLZ-3QTBC5",
+        "RLZ-7KXE63",
+        "RLZ-R4SKXV"
+      ]
+    },
+    {
+      "subject": "INV-7VZRZW",
+      "disposition": "no_impact",
+      "reason": "Current Curator text still makes harness helpers accountable to their seat and retains independent Reviewer memory checking; database retirement changes no delegation boundary.",
+      "covers": [
+        "PRF-CJT4MT",
+        "PRF-SB6671",
+        "RLZ-JFZ5WP"
+      ]
+    },
+    {
+      "disposition": "deleted",
+      "effect": "retire",
+      "reason": "Dataset-comparison recovery is retired; tree-side review does not create this successor.",
+      "subject": "INV-9BH2BNCT",
+      "covers": [
+        {
+          "id": "RLZ-15WP0QCN",
+          "remove": true
+        },
+        {
+          "id": "RLZ-A54M1HGQ",
+          "remove": true
+        },
+        {
+          "id": "RLZ-D2SEVSM9",
+          "remove": true
+        },
+        {
+          "id": "RLZ-GGQ6QYTX",
+          "remove": true
+        },
+        {
+          "id": "RLZ-GRQ01WW8",
+          "remove": true
+        }
+      ]
+    },
+    {
+      "subject": "INV-9S49CW",
+      "disposition": "no_impact",
+      "reason": "The current instruction targets continue to describe parent-question routing and the unreachable-parent exception. This target read measures the stored source obligation and does not replace this session compiled capsule.",
+      "covers": [
+        "PRF-SZ8AQ5",
+        "PRF-T2404E",
+        "RLZ-4JERMG",
+        "RLZ-6QVTKY",
+        "RLZ-AHY1E5",
+        "RLZ-CJF248",
+        "RLZ-E9F3YP",
+        "RLZ-HSZ8FM",
+        "RLZ-Q70RTA",
+        "RLZ-QBD8GV",
+        "RLZ-WH4X9B"
+      ]
+    },
+    {
+      "subject": "INV-A6GAKX",
+      "disposition": "no_impact",
+      "reason": "The wording proof continues to require one Manager for one master, with only the stated Orchestrator and direct-coordination exceptions; the proof edits preserve the obligation.",
+      "covers": [
+        "PRF-0E0V75",
+        "PRF-0YJ58R",
+        "RLZ-031YY4",
+        "RLZ-5G6AGC",
+        "RLZ-85MKD0",
+        "RLZ-ATVKJ4",
+        "RLZ-HGSMDT",
+        "RLZ-R0YSNZ",
+        "RLZ-SV2W4A",
+        "RLZ-VHD2RF",
+        "RLZ-WTKS9R"
+      ]
+    },
+    {
+      "disposition": "deleted",
+      "effect": "retire",
+      "reason": "Dataset retained-sibling selection is retired with the database ingest.",
+      "subject": "INV-AGA5HG4K",
+      "covers": [
+        {
+          "id": "RLZ-BQHVY0NS",
+          "remove": true
+        }
+      ]
+    },
+    {
+      "disposition": "deleted",
+      "effect": "retire",
+      "reason": "Unchanged-knowledge recording is a dataset-comparison operation retired with the canonical database; no converted-memory owner implements it.",
+      "subject": "INV-B3GYVZTJ",
+      "covers": [
+        {
+          "id": "RLZ-JAZKF64T",
+          "remove": true
+        }
+      ]
+    },
+    {
+      "disposition": "deleted",
+      "effect": "retire",
+      "reason": "Dataset candidate source continuity is retired with the canonical database.",
+      "subject": "INV-CDB4MZW4",
+      "covers": [
+        {
+          "id": "RLZ-3J8W7JSX",
+          "remove": true
+        }
+      ]
+    },
+    {
+      "subject": "INV-H7WNWS",
+      "disposition": "no_impact",
+      "reason": "The retained installation workflow still uses runtime_install, dashboard daemon and terminal provisioning at their assigned moments; database writer retirement does not replace that provisioning contract.",
+      "covers": [
+        "RLZ-G2F9YV"
+      ]
+    },
+    {
+      "disposition": "deleted",
+      "effect": "retire",
+      "reason": "Dataset candidate progression is retired with the canonical database.",
+      "subject": "INV-HKS46WB3",
+      "covers": [
+        {
+          "id": "RLZ-75FYRXBY",
+          "remove": true
+        }
+      ]
+    },
+    {
+      "subject": "INV-HVGENX",
+      "disposition": "no_impact",
+      "reason": "_patches still requests and parses ordinary Git diff with deterministic options and literal paths; removed dataset-specific selectors introduce no external/color custom diff authority.",
+      "covers": [
+        "RLZ-4HMVQF",
+        "RLZ-52NV78",
+        "RLZ-9F9KC5",
+        "RLZ-QAE3H1"
+      ]
+    },
+    {
+      "disposition": "deleted",
+      "effect": "retire",
+      "reason": "Retained-sibling membership effects were a database-ingest operation; the converted writer has no retention mechanics.",
+      "subject": "INV-HXAH9APB",
+      "covers": [
+        {
+          "id": "RLZ-963SJH6Q",
+          "remove": true
+        }
+      ]
+    },
+    {
+      "subject": "INV-NFV5VJ",
+      "disposition": "no_impact",
+      "reason": "The updated wording test retains Manager/Orchestrator ordinary operational authority and only named developer-needed escalation; source retirement does not transfer that authority.",
+      "covers": [
+        "PRF-0DCHVF",
+        "RLZ-09EQRE",
+        "RLZ-JY5TEM",
+        "RLZ-M2NFTB",
+        "RLZ-T4ZSC9",
+        "RLZ-Y1FRYJ",
+        "RLZ-YF74AS",
+        "RLZ-ZP7734"
+      ]
+    },
+    {
+      "subject": "INV-PEVJ6G",
+      "disposition": "no_impact",
+      "reason": "The current wording proof still pins developer-first Architect response and excludes From-role messages from approval; no approval semantics changed.",
+      "covers": [
+        "PRF-RFP8Q1",
+        "RLZ-1FAAAK",
+        "RLZ-MJ0SZ8"
+      ]
+    },
+    {
+      "subject": "INV-RKGNF8",
+      "disposition": "no_impact",
+      "reason": "Current Worker/Reviewer/Curator instructions still route evidenced code concerns to both Worker and Reviewer even after PASS; removed database reporting does not waive that duty.",
+      "covers": [
+        "RLZ-D0XTAP",
+        "RLZ-K60P42",
+        "RLZ-R5RASM"
+      ]
+    },
+    {
+      "disposition": "deleted",
+      "effect": "retire",
+      "reason": "Unchanged-knowledge dataset recording is retired with the canonical database.",
+      "subject": "INV-T9M21FB4",
+      "covers": [
+        "PRF-JR10RF",
+        {
+          "id": "RLZ-J6A978YS",
+          "remove": true
+        },
+        {
+          "id": "RLZ-M72V18",
+          "remove": true
+        }
+      ]
+    },
+    {
+      "disposition": "deleted",
+      "effect": "retire",
+      "reason": "The false converted-memory realization is removed; the retired allocation-conflict promise is not implemented by the file writer.",
+      "subject": "INV-TPDQGXYK",
+      "covers": [
+        {
+          "id": "RLZ-XM296FBM",
+          "remove": true
+        }
+      ]
+    },
+    {
+      "disposition": "changed",
+      "effect": "replace",
+      "reason": "The live sweep-timeout guarantee moved to the extracted world and its control; the false retirement is replaced, the moved owners are recorded and the proof re-anchored. Evidence (co:INV-W4XGR4): tool_entry_point_world.py retains the 60-second phase budgets and timeout refusal; test_tool_entry_point_controls.py retains the never-answer control.",
+      "subject": "INV-W4XGR4",
+      "covers": [
+        {
+          "id": "PRF-M9WD7C",
+          "remove": true
+        },
+        {
+          "id": "RLZ-1VB4BZ",
+          "remove": true
+        },
+        {
+          "id": "RLZ-J5GA9Z",
+          "remove": true
+        },
+        "RLZ-3J2TZH",
+        "RLZ-BCFPZV"
+      ]
+    },
+    {
+      "subject": "INV-ZNJ14G",
+      "disposition": "no_impact",
+      "reason": "Current leaf instructions retain direct exact-freeze/findings/memory handovers among peer seats, with Manager only named occasions; the retirement does not create a relay lane.",
+      "covers": [
+        "RLZ-7ZK6TT",
+        "RLZ-JH0BAQ",
+        "RLZ-MXJ3HX",
+        "RLZ-VESCVY",
+        "RLZ-XF8A3Q"
+      ]
+    },
+    {
+      "subject": "hunk:sha256:7aa8051a4af53495080ccf238f25bbdfed2b9588c43b98a93179ea394591b495",
+      "disposition": "no_invariant",
+      "reason": "The retired no_rename_inference helper/export is removed and route inference is expressed as the existing tuple of route movements composed with source movements. This adapts the read model; no independent guarantee is introduced by this hunk. Exact inspected hunk: mcp/src/agents_remember/application/review_rename_inference.py; base [38, 1] -> candidate [37, 0]."
+    },
+    {
+      "subject": "hunk:sha256:c9ab844864f9cdae5e5d95705a34ea889eba975a7620a9e9bd1363334e85ed45",
+      "disposition": "no_invariant",
+      "reason": "The retired no_rename_inference helper/export is removed and route inference is expressed as the existing tuple of route movements composed with source movements. This adapts the read model; no independent guarantee is introduced by this hunk. Exact inspected hunk: mcp/src/agents_remember/application/review_rename_inference.py; base [172, 1] -> candidate [164, 1]."
+    },
+    {
+      "subject": "hunk:sha256:3814770c6b02e7c36bf76fe09b04f1a52caedb3ff8033c4b23ab0ba97e3ee3a4",
+      "disposition": "no_invariant",
+      "reason": "The retired no_rename_inference helper/export is removed and route inference is expressed as the existing tuple of route movements composed with source movements. This adapts the read model; no independent guarantee is introduced by this hunk. Exact inspected hunk: mcp/src/agents_remember/application/review_rename_inference.py; base [159, 1] -> candidate [151, 1]."
+    },
+    {
+      "subject": "hunk:sha256:640fe57e96130242568358f4cb0c8f3ece29bf58b04994fe8cef35bcc4a64a64",
+      "disposition": "no_invariant",
+      "reason": "The retired no_rename_inference helper/export is removed and route inference is expressed as the existing tuple of route movements composed with source movements. This adapts the read model; no independent guarantee is introduced by this hunk. Exact inspected hunk: mcp/src/agents_remember/application/review_rename_inference.py; base [130, 7] -> candidate [128, 0]."
+    },
+    {
+      "subject": "hunk:sha256:9072627d6eecb588cbd6148e0dc64d37483a48c5b926fc701b842fa15813a4ea",
+      "disposition": "no_invariant",
+      "reason": "The retired no_rename_inference helper/export is removed and route inference is expressed as the existing tuple of route movements composed with source movements. This adapts the read model; no independent guarantee is introduced by this hunk. Exact inspected hunk: mcp/src/agents_remember/application/review_rename_inference.py; base [179, 1] -> candidate [171, 1]."
+    },
+    {
+      "subject": "hunk:sha256:f3f68cc68475df9c37f57ac77cc73646b3428cd36baae55c1f93a7399a9bc7e0",
+      "disposition": "no_invariant",
+      "reason": "Only the retention-error explanation changes from creation/publication to the surviving release/deletion route. The exception class and runtime behavior are unchanged, so this prose correction carries no separate invariant. Exact inspected hunk: mcp/src/agents_remember/errors.py; base [181, 1] -> candidate [181, 1]."
+    },
+    {
+      "subject": "hunk:sha256:320b514116fa0a344e7f45507695f9654158b951dd0138c29154344a6d641e42",
+      "disposition": "no_invariant",
+      "reason": "Only the retention-error explanation changes from creation/publication to the surviving release/deletion route. The exception class and runtime behavior are unchanged, so this prose correction carries no separate invariant. Exact inspected hunk: mcp/src/agents_remember/errors.py; base [183, 3] -> candidate [183, 3]."
+    },
+    {
+      "subject": "hunk:sha256:3add688e8f86e99c69c5e6488fea6b5561b63f8101ef028d5af18e45b5fbb784",
+      "disposition": "no_invariant",
+      "reason": "DirectGateSource and the optional verdict/source protocol carry the already governed captured memory/code/owner/history inputs through the service boundary. These value fields/signature declarations do not independently add a gate guarantee beyond the retained owner obligations. Exact inspected hunk: mcp/src/agents_remember/worktrees/services.py; base [255, 0] -> candidate [256, 13]."
+    },
+    {
+      "subject": "hunk:sha256:4d748bdc64000efd541010fdb06feb2fd8fa5b01d7a1bcbfed8251c95625223f",
+      "disposition": "no_invariant",
+      "reason": "DirectGateSource and the optional verdict/source protocol carry the already governed captured memory/code/owner/history inputs through the service boundary. These value fields/signature declarations do not independently add a gate guarantee beyond the retained owner obligations. Exact inspected hunk: mcp/src/agents_remember/worktrees/services.py; base [280, 0] -> candidate [295, 9]."
+    },
+    {
+      "subject": "hunk:sha256:a929d127ddcccc5cee36c7d0d2f02e46a9651ca500580edd80decbbbd5dfad66",
+      "disposition": "no_invariant",
+      "reason": "DirectGateSource and the optional verdict/source protocol carry the already governed captured memory/code/owner/history inputs through the service boundary. These value fields/signature declarations do not independently add a gate guarantee beyond the retained owner obligations. Exact inspected hunk: mcp/src/agents_remember/worktrees/services.py; base [401, 0] -> candidate [425, 1]."
+    },
+    {
+      "subject": "hunk:sha256:2e257ec686d610e901b246062248ef6a42f8d8d67213f8cd1ee454daff451f28",
+      "disposition": "no_invariant",
+      "reason": "DirectGateSource and the optional verdict/source protocol carry the already governed captured memory/code/owner/history inputs through the service boundary. These value fields/signature declarations do not independently add a gate guarantee beyond the retained owner obligations. Exact inspected hunk: mcp/src/agents_remember/worktrees/services.py; base [261, 0] -> candidate [275, 1]."
+    },
+    {
+      "subject": "hunk:sha256:694bdec426a76158075f691b887675b43b0aa9bdc7f5c383e3d68b0d995ca965",
+      "disposition": "no_invariant",
+      "reason": "The affected catalog declarations describe disposable/shared test artifacts and exact registered consumers: retired database-case carriers are removed, surviving fixtures move to test support, and the Owner-admitted derived Node list normalization retains authored contracts. They register evidence rather than add a production obligation. Exact inspected hunk: mcp/tests/evidence-lifecycle.toml; base [444, 0] -> candidate [386, 1]; base [1405, 0] -> candidate [1263, 1]."
+    },
+    {
+      "subject": "hunk:sha256:7a9f42335206a127a604724045640e09b10d89aaa8644e4083d0e48c538797cb",
+      "disposition": "no_invariant",
+      "reason": "The affected catalog declarations describe disposable/shared test artifacts and exact registered consumers: retired database-case carriers are removed, surviving fixtures move to test support, and the Owner-admitted derived Node list normalization retains authored contracts. They register evidence rather than add a production obligation. Exact inspected hunk: mcp/tests/evidence-lifecycle.toml; base [356, 0] -> candidate [296, 1]; base [1458, 0] -> candidate [1318, 1]; base [1491, 0] -> candidate [1352, 1]; base [1550, 0] -> candidate [1396, 1]; base [2004, 0] -> candidate [1874, 1]; base [2031, 0] -> candidate [1902, 1]; base [2098, 0] -> candidate [1940, 1]."
+    },
+    {
+      "subject": "hunk:sha256:9d42dd19585877544a3d7a51d3514cc80081c94c738c9b817ff51ddaed4c62ba",
+      "disposition": "no_invariant",
+      "reason": "The affected catalog declarations describe disposable/shared test artifacts and exact registered consumers: retired database-case carriers are removed, surviving fixtures move to test support, and the Owner-admitted derived Node list normalization retains authored contracts. They register evidence rather than add a production obligation. Exact inspected hunk: mcp/tests/evidence-lifecycle.toml; base [2159, 0] -> candidate [2002, 22]."
+    },
+    {
+      "subject": "hunk:sha256:af775d52f92a76838f14ac6ae0b58e0d7a3a73ebe201047da037bf6b3038bc7a",
+      "disposition": "no_invariant",
+      "reason": "The affected catalog declarations describe disposable/shared test artifacts and exact registered consumers: retired database-case carriers are removed, surviving fixtures move to test support, and the Owner-admitted derived Node list normalization retains authored contracts. They register evidence rather than add a production obligation. Exact inspected hunk: mcp/tests/evidence-lifecycle.toml; base [1722, 0] -> candidate [1652, 2]."
+    },
+    {
+      "subject": "hunk:sha256:5546b8e3b2b429d0ea166abf02937669b7dcee210486ec5fceed656c72c9d8d6",
+      "disposition": "no_invariant",
+      "reason": "The affected catalog declarations describe disposable/shared test artifacts and exact registered consumers: retired database-case carriers are removed, surviving fixtures move to test support, and the Owner-admitted derived Node list normalization retains authored contracts. They register evidence rather than add a production obligation. Exact inspected hunk: mcp/tests/evidence-lifecycle.toml; base [1320, 0] -> candidate [1173, 3]."
+    },
+    {
+      "subject": "hunk:sha256:187f8d3bc1c7d09691c3d8de4a718b20cc6fd60f9fe8a14ba039481c9b253afa",
+      "disposition": "no_invariant",
+      "reason": "The affected catalog declarations describe disposable/shared test artifacts and exact registered consumers: retired database-case carriers are removed, surviving fixtures move to test support, and the Owner-admitted derived Node list normalization retains authored contracts. They register evidence rather than add a production obligation. Exact inspected hunk: mcp/tests/evidence-lifecycle.toml; base [1337, 0] -> candidate [1193, 1]."
+    },
+    {
+      "subject": "hunk:sha256:3ef9d32f595c7eb92bc8a36df5d3f75e264a08ddc4d8d9ed774ef8672705f7c5",
+      "disposition": "no_invariant",
+      "reason": "The affected catalog declarations describe disposable/shared test artifacts and exact registered consumers: retired database-case carriers are removed, surviving fixtures move to test support, and the Owner-admitted derived Node list normalization retains authored contracts. They register evidence rather than add a production obligation. Exact inspected hunk: mcp/tests/evidence-lifecycle.toml; base [1676, 0] -> candidate [1575, 6]."
+    },
+    {
+      "subject": "hunk:sha256:bfd501e9da1dde85005124c21eee602e687d392f72ea979225ae81148e783397",
+      "disposition": "no_invariant",
+      "reason": "The affected catalog declarations describe disposable/shared test artifacts and exact registered consumers: retired database-case carriers are removed, surviving fixtures move to test support, and the Owner-admitted derived Node list normalization retains authored contracts. They register evidence rather than add a production obligation. Exact inspected hunk: mcp/tests/evidence-lifecycle.toml; base [1331, 0] -> candidate [1187, 1]."
+    },
+    {
+      "subject": "hunk:sha256:fa038d1f13f29a2d5aee90afee3c29f1f0c07b4cb79f159a03cfb798fd5bc192",
+      "disposition": "no_invariant",
+      "reason": "The affected catalog declarations describe disposable/shared test artifacts and exact registered consumers: retired database-case carriers are removed, surviving fixtures move to test support, and the Owner-admitted derived Node list normalization retains authored contracts. They register evidence rather than add a production obligation. Exact inspected hunk: mcp/tests/evidence-lifecycle.toml; base [314, 0] -> candidate [252, 2]."
+    },
+    {
+      "subject": "hunk:sha256:2623a0cdf5148545a12dca0fe7a68e958e307e05d09a9d5f395ef25aad4ab78e",
+      "disposition": "no_invariant",
+      "reason": "The affected catalog declarations describe disposable/shared test artifacts and exact registered consumers: retired database-case carriers are removed, surviving fixtures move to test support, and the Owner-admitted derived Node list normalization retains authored contracts. They register evidence rather than add a production obligation. Exact inspected hunk: mcp/tests/evidence-lifecycle.toml; base [1724, 0] -> candidate [1657, 1]."
+    },
+    {
+      "subject": "hunk:sha256:88b3d977b7a2d7a535971434da8d5b411b71c7d8a8150c4ff5f46d0138f7e832",
+      "disposition": "no_invariant",
+      "reason": "The affected catalog declarations describe disposable/shared test artifacts and exact registered consumers: retired database-case carriers are removed, surviving fixtures move to test support, and the Owner-admitted derived Node list normalization retains authored contracts. They register evidence rather than add a production obligation. Exact inspected hunk: mcp/tests/evidence-lifecycle.toml; base [1135, 0] -> candidate [1016, 1]."
+    },
+    {
+      "subject": "hunk:sha256:8477ba9700d3d3d4e6f42725bffe84e4e6a85c046f79ac87a23796e2c20834cf",
+      "disposition": "no_invariant",
+      "reason": "The affected catalog declarations describe disposable/shared test artifacts and exact registered consumers: retired database-case carriers are removed, surviving fixtures move to test support, and the Owner-admitted derived Node list normalization retains authored contracts. They register evidence rather than add a production obligation. Exact inspected hunk: mcp/tests/evidence-lifecycle.toml; base [1683, 0] -> candidate [1603, 10]."
+    },
+    {
+      "subject": "hunk:sha256:f7c322656dbeb372d2512d6120c6150d99b3728b919d714eca88253b08a7de52",
+      "disposition": "no_invariant",
+      "reason": "The affected catalog declarations describe disposable/shared test artifacts and exact registered consumers: retired database-case carriers are removed, surviving fixtures move to test support, and the Owner-admitted derived Node list normalization retains authored contracts. They register evidence rather than add a production obligation. Exact inspected hunk: mcp/tests/evidence-lifecycle.toml; base [1404, 0] -> candidate [1261, 1]."
+    },
+    {
+      "subject": "hunk:sha256:bb0d92566baaa96b1ff2e062d48eb8f56a6066800f1085ebd9b08ed0afd57494",
+      "disposition": "no_invariant",
+      "reason": "The affected catalog declarations describe disposable/shared test artifacts and exact registered consumers: retired database-case carriers are removed, surviving fixtures move to test support, and the Owner-admitted derived Node list normalization retains authored contracts. They register evidence rather than add a production obligation. Exact inspected hunk: mcp/tests/evidence-lifecycle.toml; base [1186, 0] -> candidate [1042, 1]."
+    },
+    {
+      "subject": "hunk:sha256:650b6696f42c329809eb58fbbd7a1462c9a25837b4570ea74702221b93234718",
+      "disposition": "no_invariant",
+      "reason": "The affected catalog declarations describe disposable/shared test artifacts and exact registered consumers: retired database-case carriers are removed, surviving fixtures move to test support, and the Owner-admitted derived Node list normalization retains authored contracts. They register evidence rather than add a production obligation. Exact inspected hunk: mcp/tests/evidence-lifecycle.toml; base [1682, 0] -> candidate [1587, 15]."
+    },
+    {
+      "subject": "hunk:sha256:919c47f65fcb96d490d7f5b5c269bdf929d77fce036befb38c6e064519ae0d1d",
+      "disposition": "no_invariant",
+      "reason": "The affected catalog declarations describe disposable/shared test artifacts and exact registered consumers: retired database-case carriers are removed, surviving fixtures move to test support, and the Owner-admitted derived Node list normalization retains authored contracts. They register evidence rather than add a production obligation. Exact inspected hunk: mcp/tests/evidence-lifecycle.toml; base [1140, 0] -> candidate [1020, 1]."
+    },
+    {
+      "subject": "hunk:sha256:99e96e284d7a9bab500df59a73ac9f8ec9a9c6f3985f6c1dd117a6cfc2176f51",
+      "disposition": "no_invariant",
+      "reason": "The affected catalog declarations describe disposable/shared test artifacts and exact registered consumers: retired database-case carriers are removed, surviving fixtures move to test support, and the Owner-admitted derived Node list normalization retains authored contracts. They register evidence rather than add a production obligation. Exact inspected hunk: mcp/tests/evidence-lifecycle.toml; base [1425, 0] -> candidate [1284, 1]."
+    },
+    {
+      "subject": "hunk:sha256:7bea393a125f37371d543a5f702ca4686c2df596441a79c9b927b66f16d1e741",
+      "disposition": "no_invariant",
+      "reason": "The affected catalog declarations describe disposable/shared test artifacts and exact registered consumers: retired database-case carriers are removed, surviving fixtures move to test support, and the Owner-admitted derived Node list normalization retains authored contracts. They register evidence rather than add a production obligation. Exact inspected hunk: mcp/tests/evidence-lifecycle.toml; base [1305, 0] -> candidate [1157, 1]."
+    },
+    {
+      "subject": "hunk:sha256:b8f1911cc9f268db68a8f71069c02827e0467fdf9704daf8591bfecb7bad5af4",
+      "disposition": "no_invariant",
+      "reason": "The affected catalog declarations describe disposable/shared test artifacts and exact registered consumers: retired database-case carriers are removed, surviving fixtures move to test support, and the Owner-admitted derived Node list normalization retains authored contracts. They register evidence rather than add a production obligation. Exact inspected hunk: mcp/tests/evidence-lifecycle.toml; base [1610, 0] -> candidate [1457, 2]."
+    },
+    {
+      "subject": "hunk:sha256:3a67f69f1af9ca89af76ffda1d7ad0559c93fc3e03746a295e26a8b8157797fa",
+      "disposition": "no_invariant",
+      "reason": "The affected catalog declarations describe disposable/shared test artifacts and exact registered consumers: retired database-case carriers are removed, surviving fixtures move to test support, and the Owner-admitted derived Node list normalization retains authored contracts. They register evidence rather than add a production obligation. Exact inspected hunk: mcp/tests/evidence-lifecycle.toml; base [274, 0] -> candidate [206, 6]."
+    },
+    {
+      "subject": "hunk:sha256:298a5f48424a073f8bee04062b133063d274512c0724fd339180460a7c87986e",
+      "disposition": "no_invariant",
+      "reason": "The affected catalog declarations describe disposable/shared test artifacts and exact registered consumers: retired database-case carriers are removed, surviving fixtures move to test support, and the Owner-admitted derived Node list normalization retains authored contracts. They register evidence rather than add a production obligation. Exact inspected hunk: mcp/tests/evidence-lifecycle.toml; base [435, 0] -> candidate [375, 2]."
+    },
+    {
+      "subject": "hunk:sha256:679df356828b38adf2c616ffcace333d92ae7a9f5003a2f1537b135252304739",
+      "disposition": "no_invariant",
+      "reason": "The affected catalog declarations describe disposable/shared test artifacts and exact registered consumers: retired database-case carriers are removed, surviving fixtures move to test support, and the Owner-admitted derived Node list normalization retains authored contracts. They register evidence rather than add a production obligation. Exact inspected hunk: mcp/tests/evidence-lifecycle.toml; base [2488, 0] -> candidate [2351, 60]."
+    },
+    {
+      "subject": "hunk:sha256:2d3d5907ac09ab04c6bc6bb45715e038c08d5905fa9e47f3e1378c85f6c747c1",
+      "disposition": "no_invariant",
+      "reason": "The affected catalog declarations describe disposable/shared test artifacts and exact registered consumers: retired database-case carriers are removed, surviving fixtures move to test support, and the Owner-admitted derived Node list normalization retains authored contracts. They register evidence rather than add a production obligation. Exact inspected hunk: mcp/tests/evidence-lifecycle.toml; base [1723, 0] -> candidate [1655, 1]."
+    },
+    {
+      "subject": "hunk:sha256:978e95746d17a4cf8dd98c8836765f7ea4360d02211f965064e45593caf76d68",
+      "disposition": "no_invariant",
+      "reason": "The affected catalog declarations describe disposable/shared test artifacts and exact registered consumers: retired database-case carriers are removed, surviving fixtures move to test support, and the Owner-admitted derived Node list normalization retains authored contracts. They register evidence rather than add a production obligation. Exact inspected hunk: mcp/tests/evidence-lifecycle.toml; base [255, 1] -> candidate [160, 1]."
+    },
+    {
+      "subject": "hunk:sha256:e93a2890435ddbeaa61a1f7d1c3522cf81a2be05e9906deaf8ac7f4098bc8ebe",
+      "disposition": "no_invariant",
+      "reason": "The affected catalog declarations describe disposable/shared test artifacts and exact registered consumers: retired database-case carriers are removed, surviving fixtures move to test support, and the Owner-admitted derived Node list normalization retains authored contracts. They register evidence rather than add a production obligation. Exact inspected hunk: mcp/tests/evidence-lifecycle.toml; base [1172, 2] -> candidate [1033, 0]."
+    },
+    {
+      "subject": "hunk:sha256:2e246501dc24fd60aa47404ad677558a56965c3657c9500f9243533aecd0868f",
+      "disposition": "no_invariant",
+      "reason": "The affected catalog declarations describe disposable/shared test artifacts and exact registered consumers: retired database-case carriers are removed, surviving fixtures move to test support, and the Owner-admitted derived Node list normalization retains authored contracts. They register evidence rather than add a production obligation. Exact inspected hunk: mcp/tests/evidence-lifecycle.toml; base [1069, 4] -> candidate [957, 1]."
+    },
+    {
+      "subject": "hunk:sha256:df76c6cf841e2e093392e75641fb4c79ead9063e171748d460deca4393c4cc13",
+      "disposition": "no_invariant",
+      "reason": "The affected catalog declarations describe disposable/shared test artifacts and exact registered consumers: retired database-case carriers are removed, surviving fixtures move to test support, and the Owner-admitted derived Node list normalization retains authored contracts. They register evidence rather than add a production obligation. Exact inspected hunk: mcp/tests/evidence-lifecycle.toml; base [1937, 3] -> candidate [1819, 0]."
+    },
+    {
+      "subject": "hunk:sha256:14393dd9e8a481a36b4452117025874c9986474b85a89a29d785284ca19f4cd5",
+      "disposition": "no_invariant",
+      "reason": "The affected catalog declarations describe disposable/shared test artifacts and exact registered consumers: retired database-case carriers are removed, surviving fixtures move to test support, and the Owner-admitted derived Node list normalization retains authored contracts. They register evidence rather than add a production obligation. Exact inspected hunk: mcp/tests/evidence-lifecycle.toml; base [1142, 2] -> candidate [1021, 0]."
+    },
+    {
+      "subject": "hunk:sha256:2bf63829f34a3879292b83b160a1f24e54898c5f43d9dfab9bbc52b6f52c5067",
+      "disposition": "no_invariant",
+      "reason": "The affected catalog declarations describe disposable/shared test artifacts and exact registered consumers: retired database-case carriers are removed, surviving fixtures move to test support, and the Owner-admitted derived Node list normalization retains authored contracts. They register evidence rather than add a production obligation. Exact inspected hunk: mcp/tests/evidence-lifecycle.toml; base [1127, 1] -> candidate [1010, 0]."
+    },
+    {
+      "subject": "hunk:sha256:fb5dac3e3379a5d6844ab5f2bf21f2bdf7761f093eb5fc1137c0ecdc71647359",
+      "disposition": "no_invariant",
+      "reason": "The affected catalog declarations describe disposable/shared test artifacts and exact registered consumers: retired database-case carriers are removed, surviving fixtures move to test support, and the Owner-admitted derived Node list normalization retains authored contracts. They register evidence rather than add a production obligation. Exact inspected hunk: mcp/tests/evidence-lifecycle.toml; base [487, 1] -> candidate [423, 0]; base [1955, 1] -> candidate [1831, 0]."
+    },
+    {
+      "subject": "hunk:sha256:28e445af72e9492dedd9f4d2d807e4d2f2c84535f118f8787d640d5f50e601f2",
+      "disposition": "no_invariant",
+      "reason": "The affected catalog declarations describe disposable/shared test artifacts and exact registered consumers: retired database-case carriers are removed, surviving fixtures move to test support, and the Owner-admitted derived Node list normalization retains authored contracts. They register evidence rather than add a production obligation. Exact inspected hunk: mcp/tests/evidence-lifecycle.toml; base [564, 39] -> candidate [492, 0]."
+    },
+    {
+      "subject": "hunk:sha256:87e7faffc6b94eccb4ca16042a5673e011a5a0f183c07c937a55aaf4af954bca",
+      "disposition": "no_invariant",
+      "reason": "The affected catalog declarations describe disposable/shared test artifacts and exact registered consumers: retired database-case carriers are removed, surviving fixtures move to test support, and the Owner-admitted derived Node list normalization retains authored contracts. They register evidence rather than add a production obligation. Exact inspected hunk: mcp/tests/evidence-lifecycle.toml; base [472, 1] -> candidate [412, 0]."
+    },
+    {
+      "subject": "hunk:sha256:dadf510237b018b962e55ed7c98888a5cdeb5e04be6dbf987c6044d1ded4ab00",
+      "disposition": "no_invariant",
+      "reason": "The affected catalog declarations describe disposable/shared test artifacts and exact registered consumers: retired database-case carriers are removed, surviving fixtures move to test support, and the Owner-admitted derived Node list normalization retains authored contracts. They register evidence rather than add a production obligation. Exact inspected hunk: mcp/tests/evidence-lifecycle.toml; base [470, 1] -> candidate [411, 0]; base [1929, 1] -> candidate [1814, 0]."
+    },
+    {
+      "subject": "hunk:sha256:37f89419dcae92fbded47168fddce3870aec666638f0d589d347202f36a59d95",
+      "disposition": "no_invariant",
+      "reason": "The affected catalog declarations describe disposable/shared test artifacts and exact registered consumers: retired database-case carriers are removed, surviving fixtures move to test support, and the Owner-admitted derived Node list normalization retains authored contracts. They register evidence rather than add a production obligation. Exact inspected hunk: mcp/tests/evidence-lifecycle.toml; base [1067, 1] -> candidate [955, 1]."
+    },
+    {
+      "subject": "hunk:sha256:a5dccc406989925e8f67f4caaf9ff7d003ea85105efe9315c83b1f431bd27b16",
+      "disposition": "no_invariant",
+      "reason": "The affected catalog declarations describe disposable/shared test artifacts and exact registered consumers: retired database-case carriers are removed, surviving fixtures move to test support, and the Owner-admitted derived Node list normalization retains authored contracts. They register evidence rather than add a production obligation. Exact inspected hunk: mcp/tests/evidence-lifecycle.toml; base [1130, 3] -> candidate [1012, 0]."
+    },
+    {
+      "subject": "hunk:sha256:b5f9d1d2d1b1b3d4f819598b955ff9525966673c8868e97637127a8a7f3d4864",
+      "disposition": "no_invariant",
+      "reason": "The affected catalog declarations describe disposable/shared test artifacts and exact registered consumers: retired database-case carriers are removed, surviving fixtures move to test support, and the Owner-admitted derived Node list normalization retains authored contracts. They register evidence rather than add a production obligation. Exact inspected hunk: mcp/tests/evidence-lifecycle.toml; base [1167, 4] -> candidate [1032, 0]."
+    },
+    {
+      "subject": "hunk:sha256:326fc28a7a5ee5795bdb4e3293d386e4b302ea24eabfe789781bf522c6de0e0e",
+      "disposition": "no_invariant",
+      "reason": "The affected catalog declarations describe disposable/shared test artifacts and exact registered consumers: retired database-case carriers are removed, surviving fixtures move to test support, and the Owner-admitted derived Node list normalization retains authored contracts. They register evidence rather than add a production obligation. Exact inspected hunk: mcp/tests/evidence-lifecycle.toml; base [1670, 2] -> candidate [1513, 2]."
+    },
+    {
+      "subject": "hunk:sha256:8a82714126cd195fce5b751d0d8e2cde242e552583646117f83e4547710e3ecd",
+      "disposition": "no_invariant",
+      "reason": "The affected catalog declarations describe disposable/shared test artifacts and exact registered consumers: retired database-case carriers are removed, surviving fixtures move to test support, and the Owner-admitted derived Node list normalization retains authored contracts. They register evidence rather than add a production obligation. Exact inspected hunk: mcp/tests/evidence-lifecycle.toml; base [269, 5] -> candidate [174, 31]."
+    },
+    {
+      "subject": "hunk:sha256:9b15111207bc80fee4305c31fd851af5df890dcc80798438b901badbb870be63",
+      "disposition": "no_invariant",
+      "reason": "The affected catalog declarations describe disposable/shared test artifacts and exact registered consumers: retired database-case carriers are removed, surviving fixtures move to test support, and the Owner-admitted derived Node list normalization retains authored contracts. They register evidence rather than add a production obligation. Exact inspected hunk: mcp/tests/evidence-lifecycle.toml; base [1175, 3] -> candidate [1034, 0]."
+    },
+    {
+      "subject": "hunk:sha256:5858f8cd3949110bd451164c7adb5e0f8f2a7c4519c54bc6de81a75b3e4a5c03",
+      "disposition": "no_invariant",
+      "reason": "The affected catalog declarations describe disposable/shared test artifacts and exact registered consumers: retired database-case carriers are removed, surviving fixtures move to test support, and the Owner-admitted derived Node list normalization retains authored contracts. They register evidence rather than add a production obligation. Exact inspected hunk: mcp/tests/evidence-lifecycle.toml; base [1663, 1] -> candidate [1506, 1]."
+    },
+    {
+      "subject": "hunk:sha256:3eaf9740255542e2031efdcd5c7e806cb1b09f54ac7fa29f58ec05762bdd2e51",
+      "disposition": "no_invariant",
+      "reason": "The affected catalog declarations describe disposable/shared test artifacts and exact registered consumers: retired database-case carriers are removed, surviving fixtures move to test support, and the Owner-admitted derived Node list normalization retains authored contracts. They register evidence rather than add a production obligation. Exact inspected hunk: mcp/tests/evidence-lifecycle.toml; base [498, 3] -> candidate [429, 0]; base [1969, 3] -> candidate [1840, 0]."
+    },
+    {
+      "subject": "hunk:sha256:2d3bbc99681e174d20e4da877a170a57c7f56c07ae16be93d50ff017d04fb5f1",
+      "disposition": "no_invariant",
+      "reason": "The affected catalog declarations describe disposable/shared test artifacts and exact registered consumers: retired database-case carriers are removed, surviving fixtures move to test support, and the Owner-admitted derived Node list normalization retains authored contracts. They register evidence rather than add a production obligation. Exact inspected hunk: mcp/tests/evidence-lifecycle.toml; base [4, 95] -> candidate [3, 0]."
+    },
+    {
+      "subject": "hunk:sha256:3874f8c8f7bcca71927f982eb40676f9cb13c5502417ff1715ae5a70ef479fb2",
+      "disposition": "no_invariant",
+      "reason": "The affected catalog declarations describe disposable/shared test artifacts and exact registered consumers: retired database-case carriers are removed, surviving fixtures move to test support, and the Owner-admitted derived Node list normalization retains authored contracts. They register evidence rather than add a production obligation. Exact inspected hunk: mcp/tests/evidence-lifecycle.toml; base [489, 2] -> candidate [424, 0]; base [1959, 2] -> candidate [1834, 0]."
+    },
+    {
+      "subject": "hunk:sha256:706d6736a25813ce9800d123d998060f9f72b252b6cd44f4eeaf70b416700903",
+      "disposition": "no_invariant",
+      "reason": "The affected catalog declarations describe disposable/shared test artifacts and exact registered consumers: retired database-case carriers are removed, surviving fixtures move to test support, and the Owner-admitted derived Node list normalization retains authored contracts. They register evidence rather than add a production obligation. Exact inspected hunk: mcp/tests/evidence-lifecycle.toml; base [1074, 1] -> candidate [958, 0]."
+    },
+    {
+      "subject": "hunk:sha256:eb63e4d11aeca55d6562f888bdbe3f57a5d321c4a2eea4092608c71385a1bd6a",
+      "disposition": "no_invariant",
+      "reason": "The affected catalog declarations describe disposable/shared test artifacts and exact registered consumers: retired database-case carriers are removed, surviving fixtures move to test support, and the Owner-admitted derived Node list normalization retains authored contracts. They register evidence rather than add a production obligation. Exact inspected hunk: mcp/tests/evidence-lifecycle.toml; base [1184, 2] -> candidate [1040, 0]."
+    },
+    {
+      "subject": "hunk:sha256:482cedc0e54b03713b37b5246fd6d645709543b7d1d33b042ccd4e47e38a172e",
+      "disposition": "no_invariant",
+      "reason": "The affected catalog declarations describe disposable/shared test artifacts and exact registered consumers: retired database-case carriers are removed, surviving fixtures move to test support, and the Owner-admitted derived Node list normalization retains authored contracts. They register evidence rather than add a production obligation. Exact inspected hunk: mcp/tests/evidence-lifecycle.toml; base [1786, 47] -> candidate [1718, 0]."
+    },
+    {
+      "subject": "hunk:sha256:39dd8ebe21cb1d323087d195e99db2e3e705a1d69d2825298f1f3160107ed1e4",
+      "disposition": "no_invariant",
+      "reason": "The affected catalog declarations describe disposable/shared test artifacts and exact registered consumers: retired database-case carriers are removed, surviving fixtures move to test support, and the Owner-admitted derived Node list normalization retains authored contracts. They register evidence rather than add a production obligation. Exact inspected hunk: mcp/tests/evidence-lifecycle.toml; base [1943, 1] -> candidate [1822, 0]."
+    },
+    {
+      "subject": "hunk:sha256:cb0a9eb2bc16f1f424d748fed140ab021f882f54386fd37809fdc417d5379235",
+      "disposition": "no_invariant",
+      "reason": "The affected catalog declarations describe disposable/shared test artifacts and exact registered consumers: retired database-case carriers are removed, surviving fixtures move to test support, and the Owner-admitted derived Node list normalization retains authored contracts. They register evidence rather than add a production obligation. Exact inspected hunk: mcp/tests/evidence-lifecycle.toml; base [1137, 2] -> candidate [1017, 0]."
+    },
+    {
+      "subject": "hunk:sha256:d02591fa10abc45cf161f3d30b3662a70ab04b9b0619de245a44a827897ec0e5",
+      "disposition": "no_invariant",
+      "reason": "The affected catalog declarations describe disposable/shared test artifacts and exact registered consumers: retired database-case carriers are removed, surviving fixtures move to test support, and the Owner-admitted derived Node list normalization retains authored contracts. They register evidence rather than add a production obligation. Exact inspected hunk: mcp/tests/evidence-lifecycle.toml; base [1330, 1] -> candidate [1185, 1]."
+    },
+    {
+      "subject": "hunk:sha256:14f53a12aac8c9a2d38ba08890fade2ed9390eab6bd4367d200f92c66948e999",
+      "disposition": "no_invariant",
+      "reason": "The affected catalog declarations describe disposable/shared test artifacts and exact registered consumers: retired database-case carriers are removed, surviving fixtures move to test support, and the Owner-admitted derived Node list normalization retains authored contracts. They register evidence rather than add a production obligation. Exact inspected hunk: mcp/tests/evidence-lifecycle.toml; base [2370, 2] -> candidate [2233, 0]."
+    },
+    {
+      "subject": "hunk:sha256:ebceb65331089d205bf9de841dfa53bb730821709dd1006ee8ca03a3d4d14ad2",
+      "disposition": "no_invariant",
+      "reason": "The affected catalog declarations describe disposable/shared test artifacts and exact registered consumers: retired database-case carriers are removed, surviving fixtures move to test support, and the Owner-admitted derived Node list normalization retains authored contracts. They register evidence rather than add a production obligation. Exact inspected hunk: mcp/tests/evidence-lifecycle.toml; base [479, 2] -> candidate [417, 0]; base [1946, 2] -> candidate [1824, 0]."
+    },
+    {
+      "subject": "hunk:sha256:0ae3649f3eecf3cfd36cb28ddc78db0d4e7e0418323d49859264338e5a0f2dff",
+      "disposition": "no_invariant",
+      "reason": "The affected catalog declarations describe disposable/shared test artifacts and exact registered consumers: retired database-case carriers are removed, surviving fixtures move to test support, and the Owner-admitted derived Node list normalization retains authored contracts. They register evidence rather than add a production obligation. Exact inspected hunk: mcp/tests/evidence-lifecycle.toml; base [1524, 7] -> candidate [1375, 0]."
+    },
+    {
+      "subject": "hunk:sha256:5b90ca804007600dfa7a0287cc4ad84169038584bb2b3840fbd3ab3342674691",
+      "disposition": "no_invariant",
+      "reason": "The affected catalog declarations describe disposable/shared test artifacts and exact registered consumers: retired database-case carriers are removed, surviving fixtures move to test support, and the Owner-admitted derived Node list normalization retains authored contracts. They register evidence rather than add a production obligation. Exact inspected hunk: mcp/tests/evidence-lifecycle.toml; base [1653, 2] -> candidate [1491, 2]."
+    },
+    {
+      "subject": "hunk:sha256:9c76b9e366db3e7d37962575b1063a82b344a31e25433e6cb252813f5f5c4a44",
+      "disposition": "no_invariant",
+      "reason": "The affected catalog declarations describe disposable/shared test artifacts and exact registered consumers: retired database-case carriers are removed, surviving fixtures move to test support, and the Owner-admitted derived Node list normalization retains authored contracts. They register evidence rather than add a production obligation. Exact inspected hunk: mcp/tests/evidence-lifecycle.toml; base [2038, 30] -> candidate [1908, 0]."
+    },
+    {
+      "subject": "hunk:sha256:71ee814983a7a9eaa87a922cd1eab04fb4e18eeaf9a8a8c1067aeffd570aa4af",
+      "disposition": "no_invariant",
+      "reason": "The affected catalog declarations describe disposable/shared test artifacts and exact registered consumers: retired database-case carriers are removed, surviving fixtures move to test support, and the Owner-admitted derived Node list normalization retains authored contracts. They register evidence rather than add a production obligation. Exact inspected hunk: mcp/tests/evidence-lifecycle.toml; base [1673, 2] -> candidate [1516, 57]."
+    },
+    {
+      "subject": "hunk:sha256:98a9c4651ec9886ebe01a793e6f08f883d512c546aa76c8b0f372210c571431a",
+      "disposition": "no_invariant",
+      "reason": "The affected catalog declarations describe disposable/shared test artifacts and exact registered consumers: retired database-case carriers are removed, surviving fixtures move to test support, and the Owner-admitted derived Node list normalization retains authored contracts. They register evidence rather than add a production obligation. Exact inspected hunk: mcp/tests/evidence-lifecycle.toml; base [492, 1] -> candidate [425, 0]; base [1962, 1] -> candidate [1835, 0]."
+    },
+    {
+      "subject": "hunk:sha256:f740f9fd5e6cb08617e688284f4bc6f6f3cbb146f371e3becb758ec590aabc4c",
+      "disposition": "no_invariant",
+      "reason": "The affected catalog declarations describe disposable/shared test artifacts and exact registered consumers: retired database-case carriers are removed, surviving fixtures move to test support, and the Owner-admitted derived Node list normalization retains authored contracts. They register evidence rather than add a production obligation. Exact inspected hunk: mcp/tests/evidence-lifecycle.toml; base [258, 1] -> candidate [163, 1]."
+    },
+    {
+      "subject": "hunk:sha256:5b9d660778a569a2e8b0a3d4498fec5cd7bae4509959e4cedcfc8eed5700aa25",
+      "disposition": "no_invariant",
+      "reason": "The affected catalog declarations describe disposable/shared test artifacts and exact registered consumers: retired database-case carriers are removed, surviving fixtures move to test support, and the Owner-admitted derived Node list normalization retains authored contracts. They register evidence rather than add a production obligation. Exact inspected hunk: mcp/tests/evidence-lifecycle.toml; base [1188, 1] -> candidate [1043, 0]."
+    },
+    {
+      "subject": "hunk:sha256:ae828cab9d5c28f2594e286de898e0cdcbe1754816257b9160f4a4cf3be2e05d",
+      "disposition": "no_invariant",
+      "reason": "The affected catalog declarations describe disposable/shared test artifacts and exact registered consumers: retired database-case carriers are removed, surviving fixtures move to test support, and the Owner-admitted derived Node list normalization retains authored contracts. They register evidence rather than add a production obligation. Exact inspected hunk: mcp/tests/evidence-lifecycle.toml; base [1248, 1] -> candidate [1099, 0]."
+    },
+    {
+      "subject": "hunk:sha256:d592599a2d870bd37563cb2b61e2843134e9feb3a82076f221a3fbafd61d7218",
+      "disposition": "no_invariant",
+      "reason": "The affected catalog declarations describe disposable/shared test artifacts and exact registered consumers: retired database-case carriers are removed, surviving fixtures move to test support, and the Owner-admitted derived Node list normalization retains authored contracts. They register evidence rather than add a production obligation. Exact inspected hunk: mcp/tests/evidence-lifecycle.toml; base [1509, 1] -> candidate [1370, 1]."
+    },
+    {
+      "subject": "hunk:sha256:77122ba149a0bd30144b7c38354a9df35ac1451df053fda2c7ac6ff5bf4f3a28",
+      "disposition": "no_invariant",
+      "reason": "The affected catalog declarations describe disposable/shared test artifacts and exact registered consumers: retired database-case carriers are removed, surviving fixtures move to test support, and the Owner-admitted derived Node list normalization retains authored contracts. They register evidence rather than add a production obligation. Exact inspected hunk: mcp/tests/evidence-lifecycle.toml; base [476, 1] -> candidate [415, 0]."
+    },
+    {
+      "subject": "hunk:sha256:bcec914c9f5181663a370820d680e62df03ab9447f48ae19cbf38da5af359355",
+      "disposition": "no_invariant",
+      "reason": "The affected catalog declarations describe disposable/shared test artifacts and exact registered consumers: retired database-case carriers are removed, surviving fixtures move to test support, and the Owner-admitted derived Node list normalization retains authored contracts. They register evidence rather than add a production obligation. Exact inspected hunk: mcp/tests/evidence-lifecycle.toml; base [495, 2] -> candidate [428, 1]; base [1966, 2] -> candidate [1839, 1]."
+    },
+    {
+      "subject": "hunk:sha256:0e3e31fe66bcbe9121ddd3592aa4e275465d0c7d69aac44492b14fe5ab74129f",
+      "disposition": "no_invariant",
+      "reason": "The affected catalog declarations describe disposable/shared test artifacts and exact registered consumers: retired database-case carriers are removed, surviving fixtures move to test support, and the Owner-admitted derived Node list normalization retains authored contracts. They register evidence rather than add a production obligation. Exact inspected hunk: mcp/tests/evidence-lifecycle.toml; base [1643, 1] -> candidate [1481, 1]."
+    },
+    {
+      "subject": "hunk:sha256:c372441399b64b22e9193f91ce52107e58e691bb3d2bcd89ce2fc26e2daf1fb2",
+      "disposition": "no_invariant",
+      "reason": "The affected catalog declarations describe disposable/shared test artifacts and exact registered consumers: retired database-case carriers are removed, surviving fixtures move to test support, and the Owner-admitted derived Node list normalization retains authored contracts. They register evidence rather than add a production obligation. Exact inspected hunk: mcp/tests/evidence-lifecycle.toml; base [262, 2] -> candidate [167, 2]."
+    },
+    {
+      "subject": "hunk:sha256:85222c71cf0cba38aee1f54c5c2af170c08174eee64cb615e59216f78c3d1a7d",
+      "disposition": "no_invariant",
+      "reason": "The affected catalog declarations describe disposable/shared test artifacts and exact registered consumers: retired database-case carriers are removed, surviving fixtures move to test support, and the Owner-admitted derived Node list normalization retains authored contracts. They register evidence rather than add a production obligation. Exact inspected hunk: mcp/tests/evidence-lifecycle.toml; base [1205, 3] -> candidate [1059, 0]."
+    },
+    {
+      "subject": "hunk:sha256:b32849ddcf61367656ba05d0c5bc85b4f4309737f35e20f45cf6ddb933b2ea3d",
+      "disposition": "no_invariant",
+      "reason": "The affected catalog declarations describe disposable/shared test artifacts and exact registered consumers: retired database-case carriers are removed, surviving fixtures move to test support, and the Owner-admitted derived Node list normalization retains authored contracts. They register evidence rather than add a production obligation. Exact inspected hunk: mcp/tests/evidence-lifecycle.toml; base [1506, 1] -> candidate [1367, 1]."
+    },
+    {
+      "subject": "hunk:sha256:001961f5d10609c012ce7447d6baec121a5be0825ac41a13171c0108d336a1b3",
+      "disposition": "no_invariant",
+      "reason": "The affected catalog declarations describe disposable/shared test artifacts and exact registered consumers: retired database-case carriers are removed, surviving fixtures move to test support, and the Owner-admitted derived Node list normalization retains authored contracts. They register evidence rather than add a production obligation. Exact inspected hunk: mcp/tests/evidence-lifecycle.toml; base [1211, 1] -> candidate [1063, 1]."
+    },
+    {
+      "subject": "hunk:sha256:1adc97d7f8a1c71174c79207ce875c3fb5a05fcc47520495d12b195c949ad605",
+      "disposition": "no_invariant",
+      "reason": "The affected catalog declarations describe disposable/shared test artifacts and exact registered consumers: retired database-case carriers are removed, surviving fixtures move to test support, and the Owner-admitted derived Node list normalization retains authored contracts. They register evidence rather than add a production obligation. Exact inspected hunk: mcp/tests/evidence-lifecycle.toml; base [1160, 3] -> candidate [1028, 0]."
+    },
+    {
+      "subject": "hunk:sha256:4ff5a3d80f2cde2da84215e0f07a838ac2d4fdbf20e6757423ab8bd44dc79a49",
+      "disposition": "no_invariant",
+      "reason": "The affected catalog declarations describe disposable/shared test artifacts and exact registered consumers: retired database-case carriers are removed, surviving fixtures move to test support, and the Owner-admitted derived Node list normalization retains authored contracts. They register evidence rather than add a production obligation. Exact inspected hunk: mcp/tests/evidence-lifecycle.toml; base [1004, 2] -> candidate [893, 0]."
+    },
+    {
+      "subject": "hunk:sha256:6de20dbf47602517557c6726dbe58ffc667a7d0245f2be9dea7438a06f5f0097",
+      "disposition": "no_invariant",
+      "reason": "The affected catalog declarations describe disposable/shared test artifacts and exact registered consumers: retired database-case carriers are removed, surviving fixtures move to test support, and the Owner-admitted derived Node list normalization retains authored contracts. They register evidence rather than add a production obligation. Exact inspected hunk: mcp/tests/evidence-lifecycle.toml; base [1666, 1] -> candidate [1509, 1]."
+    },
+    {
+      "subject": "hunk:sha256:521aa662b39ef14b37a2ce3eb6603d177f4a8416c19a115524bfe34756f5e69d",
+      "disposition": "no_invariant",
+      "reason": "The affected catalog declarations describe disposable/shared test artifacts and exact registered consumers: retired database-case carriers are removed, surviving fixtures move to test support, and the Owner-admitted derived Node list normalization retains authored contracts. They register evidence rather than add a production obligation. Exact inspected hunk: mcp/tests/evidence-lifecycle.toml; base [1650, 2] -> candidate [1488, 2]."
+    },
+    {
+      "subject": "hunk:sha256:c07e9e9956b18b827be465e3475c28de4c1deeb696edfcde6c960c36d46787fd",
+      "disposition": "no_invariant",
+      "reason": "The affected catalog declarations describe disposable/shared test artifacts and exact registered consumers: retired database-case carriers are removed, surviving fixtures move to test support, and the Owner-admitted derived Node list normalization retains authored contracts. They register evidence rather than add a production obligation. Exact inspected hunk: mcp/tests/evidence-lifecycle.toml; base [1147, 9] -> candidate [1024, 0]."
+    },
+    {
+      "subject": "hunk:sha256:e616353020bb67b40c1132d5fad36e3429a0b4c7be5b18d5521e4d66fee99dbc",
+      "disposition": "no_invariant",
+      "reason": "The affected catalog declarations describe disposable/shared test artifacts and exact registered consumers: retired database-case carriers are removed, surviving fixtures move to test support, and the Owner-admitted derived Node list normalization retains authored contracts. They register evidence rather than add a production obligation. Exact inspected hunk: mcp/tests/evidence-lifecycle.toml; base [1657, 3] -> candidate [1495, 8]."
+    },
+    {
+      "subject": "hunk:sha256:6f5054273be43c659bf240e43b2245e2a01f0319c7d1e56db4b43cd9e9e64757",
+      "disposition": "no_invariant",
+      "reason": "The affected catalog declarations describe disposable/shared test artifacts and exact registered consumers: retired database-case carriers are removed, surviving fixtures move to test support, and the Owner-admitted derived Node list normalization retains authored contracts. They register evidence rather than add a production obligation. Exact inspected hunk: mcp/tests/evidence-lifecycle.toml; base [1336, 1] -> candidate [1191, 0]."
+    },
+    {
+      "subject": "hunk:sha256:166c944e53dc6975fb6141bee06d250b3bd5db2dc9e8210a03a3114874428457",
+      "disposition": "no_invariant",
+      "reason": "The affected catalog declarations describe disposable/shared test artifacts and exact registered consumers: retired database-case carriers are removed, surviving fixtures move to test support, and the Owner-admitted derived Node list normalization retains authored contracts. They register evidence rather than add a production obligation. Exact inspected hunk: mcp/tests/evidence-lifecycle.toml; base [265, 2] -> candidate [170, 2]."
+    },
+    {
+      "subject": "hunk:sha256:21bd90b9fbf6df611d50faf18821c0b5e3aa5f0e6f8290f537dedb2c13110b16",
+      "disposition": "no_invariant",
+      "reason": "The affected catalog declarations describe disposable/shared test artifacts and exact registered consumers: retired database-case carriers are removed, surviving fixtures move to test support, and the Owner-admitted derived Node list normalization retains authored contracts. They register evidence rather than add a production obligation. Exact inspected hunk: mcp/tests/evidence-lifecycle.toml; base [1646, 1] -> candidate [1484, 1]."
+    },
+    {
+      "subject": "hunk:sha256:20faaeb9cd80000bb34772e77739173284af257d768b34546625901d7719fb58",
+      "disposition": "no_invariant",
+      "reason": "The affected catalog declarations describe disposable/shared test artifacts and exact registered consumers: retired database-case carriers are removed, surviving fixtures move to test support, and the Owner-admitted derived Node list normalization retains authored contracts. They register evidence rather than add a production obligation. Exact inspected hunk: mcp/tests/evidence-lifecycle.toml; base [1932, 2] -> candidate [1816, 0]."
+    },
+    {
+      "subject": "hunk:sha256:bc2a206eb9d3ee52aa5c1fd5da4f61a4f23cde769ee34cef3a225902a3ff7872",
+      "disposition": "no_invariant",
+      "reason": "The affected catalog declarations describe disposable/shared test artifacts and exact registered consumers: retired database-case carriers are removed, surviving fixtures move to test support, and the Owner-admitted derived Node list normalization retains authored contracts. They register evidence rather than add a production obligation. Exact inspected hunk: mcp/tests/evidence-lifecycle.toml; base [434, 1] -> candidate [373, 0]."
+    },
+    {
+      "subject": "hunk:sha256:f3b13f381b646cb147b1d84b33ff52379b49ff389290d60a1dbedb5019d41e22",
+      "disposition": "no_invariant",
+      "reason": "The affected catalog declarations describe disposable/shared test artifacts and exact registered consumers: retired database-case carriers are removed, surviving fixtures move to test support, and the Owner-admitted derived Node list normalization retains authored contracts. They register evidence rather than add a production obligation. Exact inspected hunk: mcp/tests/evidence-lifecycle.toml; base [1513, 9] -> candidate [1373, 0]."
+    },
+    {
+      "subject": "hunk:sha256:ef5cc634c8291cda6f5367c37fafc04f91282c2d37351d41264e28c249f5c5a5",
+      "disposition": "no_invariant",
+      "reason": "The affected catalog declarations describe disposable/shared test artifacts and exact registered consumers: retired database-case carriers are removed, surviving fixtures move to test support, and the Owner-admitted derived Node list normalization retains authored contracts. They register evidence rather than add a production obligation. Exact inspected hunk: mcp/tests/evidence-lifecycle.toml; base [1628, 10] -> candidate [1475, 0]."
+    },
+    {
+      "subject": "hunk:sha256:cab079a02950f4126de6ed4c3abf03b643045ea6f8e45c56cb15dc511e4a2fc3",
+      "disposition": "no_invariant",
+      "reason": "The changed lane entries remove retired/absent database tests, register surviving or extracted test modules, and preserve the Owner-admitted same-lane normalization. Test registration carries no additional production invariant. Exact inspected hunk: mcp/tests/test-evidence-lanes.toml; base [406, 0] -> candidate [374, 1]."
+    },
+    {
+      "subject": "hunk:sha256:f754e5a64a7aeb8a2f0e797f0418d153c742a91663c4097c18d97d74da8b92cd",
+      "disposition": "no_invariant",
+      "reason": "The changed lane entries remove retired/absent database tests, register surviving or extracted test modules, and preserve the Owner-admitted same-lane normalization. Test registration carries no additional production invariant. Exact inspected hunk: mcp/tests/test-evidence-lanes.toml; base [386, 0] -> candidate [352, 1]."
+    },
+    {
+      "subject": "hunk:sha256:ed3c8a25656822edb9f27c0eaa0cfecd95316f9f6c8a3e92595884a34d5fb5e7",
+      "disposition": "no_invariant",
+      "reason": "The changed lane entries remove retired/absent database tests, register surviving or extracted test modules, and preserve the Owner-admitted same-lane normalization. Test registration carries no additional production invariant. Exact inspected hunk: mcp/tests/test-evidence-lanes.toml; base [268, 0] -> candidate [238, 1]."
+    },
+    {
+      "subject": "hunk:sha256:0a02ef84f086a5838e93281874145d5955bbf253967a1ff8a5dde939cccd9e80",
+      "disposition": "no_invariant",
+      "reason": "The changed lane entries remove retired/absent database tests, register surviving or extracted test modules, and preserve the Owner-admitted same-lane normalization. Test registration carries no additional production invariant. Exact inspected hunk: mcp/tests/test-evidence-lanes.toml; base [387, 0] -> candidate [354, 1]."
+    },
+    {
+      "subject": "hunk:sha256:7589b2ce9d34940895cf6ad15de08e1e9381f4e33cbf0a226e0d77fa6a01e2e9",
+      "disposition": "no_invariant",
+      "reason": "The changed lane entries remove retired/absent database tests, register surviving or extracted test modules, and preserve the Owner-admitted same-lane normalization. Test registration carries no additional production invariant. Exact inspected hunk: mcp/tests/test-evidence-lanes.toml; base [107, 0] -> candidate [99, 1]."
+    },
+    {
+      "subject": "hunk:sha256:5b7430c67becf62401836a4bdc7222e5bf9658a417d859f77482b8836c8af2a3",
+      "disposition": "no_invariant",
+      "reason": "The changed lane entries remove retired/absent database tests, register surviving or extracted test modules, and preserve the Owner-admitted same-lane normalization. Test registration carries no additional production invariant. Exact inspected hunk: mcp/tests/test-evidence-lanes.toml; base [314, 0] -> candidate [285, 1]."
+    },
+    {
+      "subject": "hunk:sha256:8011f71e32a6fae3ba25fc55f83936a9a0c41f6382ccc1f0196ec3130af42119",
+      "disposition": "no_invariant",
+      "reason": "The changed lane entries remove retired/absent database tests, register surviving or extracted test modules, and preserve the Owner-admitted same-lane normalization. Test registration carries no additional production invariant. Exact inspected hunk: mcp/tests/test-evidence-lanes.toml; base [150, 0] -> candidate [122, 1]."
+    },
+    {
+      "subject": "hunk:sha256:cd77dcf61a66b5a85fede1921db2d1a213f5d241b8bfe716702625d092cb307a",
+      "disposition": "no_invariant",
+      "reason": "The changed lane entries remove retired/absent database tests, register surviving or extracted test modules, and preserve the Owner-admitted same-lane normalization. Test registration carries no additional production invariant. Exact inspected hunk: mcp/tests/test-evidence-lanes.toml; base [112, 0] -> candidate [103, 1]."
+    },
+    {
+      "subject": "hunk:sha256:af5621e2a20f2a9bc621eb0c00449ed6a87c0682b5fb91c69ac7eb04bbed104e",
+      "disposition": "no_invariant",
+      "reason": "The changed lane entries remove retired/absent database tests, register surviving or extracted test modules, and preserve the Owner-admitted same-lane normalization. Test registration carries no additional production invariant. Exact inspected hunk: mcp/tests/test-evidence-lanes.toml; base [415, 0] -> candidate [384, 1]."
+    },
+    {
+      "subject": "hunk:sha256:8a25f014a9f84764cd8e0a9562edc9c3e92066b3e4261721ea3bc079840441ce",
+      "disposition": "no_invariant",
+      "reason": "The changed lane entries remove retired/absent database tests, register surviving or extracted test modules, and preserve the Owner-admitted same-lane normalization. Test registration carries no additional production invariant. Exact inspected hunk: mcp/tests/test-evidence-lanes.toml; base [241, 0] -> candidate [209, 1]."
+    },
+    {
+      "subject": "hunk:sha256:73df95e09b6615cefbce6415f1d90b4c735ff64b8647afee02ee00ecc15179b0",
+      "disposition": "no_invariant",
+      "reason": "The changed lane entries remove retired/absent database tests, register surviving or extracted test modules, and preserve the Owner-admitted same-lane normalization. Test registration carries no additional production invariant. Exact inspected hunk: mcp/tests/test-evidence-lanes.toml; base [254, 0] -> candidate [223, 2]."
+    },
+    {
+      "subject": "hunk:sha256:b20f2ac6429ec7603743e29e3324bbe40ca10be02d0f47c5e894513c84df70b8",
+      "disposition": "no_invariant",
+      "reason": "The changed lane entries remove retired/absent database tests, register surviving or extracted test modules, and preserve the Owner-admitted same-lane normalization. Test registration carries no additional production invariant. Exact inspected hunk: mcp/tests/test-evidence-lanes.toml; base [141, 2] -> candidate [115, 0]."
+    },
+    {
+      "subject": "hunk:sha256:c54522934191e86d659859b9c197233c1e8d4c07a18e7311a08797e6ccb193d6",
+      "disposition": "no_invariant",
+      "reason": "The changed lane entries remove retired/absent database tests, register surviving or extracted test modules, and preserve the Owner-admitted same-lane normalization. Test registration carries no additional production invariant. Exact inspected hunk: mcp/tests/test-evidence-lanes.toml; base [60, 5] -> candidate [58, 1]."
+    },
+    {
+      "subject": "hunk:sha256:e22658ee2f5f0761212f06d703b35d1b329b22874dffb3267ab284b329d6d262",
+      "disposition": "no_invariant",
+      "reason": "The changed lane entries remove retired/absent database tests, register surviving or extracted test modules, and preserve the Owner-admitted same-lane normalization. Test registration carries no additional production invariant. Exact inspected hunk: mcp/tests/test-evidence-lanes.toml; base [114, 2] -> candidate [104, 0]."
+    },
+    {
+      "subject": "hunk:sha256:f233b403ea11634926e7eea7edcde29eed0ce09dd1a7cccf91537e68a272dd2c",
+      "disposition": "no_invariant",
+      "reason": "The changed lane entries remove retired/absent database tests, register surviving or extracted test modules, and preserve the Owner-admitted same-lane normalization. Test registration carries no additional production invariant. Exact inspected hunk: mcp/tests/test-evidence-lanes.toml; base [100, 1] -> candidate [93, 0]."
+    },
+    {
+      "subject": "hunk:sha256:0262c725c94c8256624f21e30eecea9eb6c5556d2e191935c543722d91781ad1",
+      "disposition": "no_invariant",
+      "reason": "The changed lane entries remove retired/absent database tests, register surviving or extracted test modules, and preserve the Owner-admitted same-lane normalization. Test registration carries no additional production invariant. Exact inspected hunk: mcp/tests/test-evidence-lanes.toml; base [58, 1] -> candidate [56, 1]."
+    },
+    {
+      "subject": "hunk:sha256:b497229b8149436a9509b8dd3c19ce3b50398810817ea8eff40cbe3aa9ea4cb4",
+      "disposition": "no_invariant",
+      "reason": "The changed lane entries remove retired/absent database tests, register surviving or extracted test modules, and preserve the Owner-admitted same-lane normalization. Test registration carries no additional production invariant. Exact inspected hunk: mcp/tests/test-evidence-lanes.toml; base [136, 4] -> candidate [114, 0]."
+    },
+    {
+      "subject": "hunk:sha256:290c6db128bcc37aec82be93c0d2ff19ad3196f90746fa677ed4b20e4d93654b",
+      "disposition": "no_invariant",
+      "reason": "The changed lane entries remove retired/absent database tests, register surviving or extracted test modules, and preserve the Owner-admitted same-lane normalization. Test registration carries no additional production invariant. Exact inspected hunk: mcp/tests/test-evidence-lanes.toml; base [130, 2] -> candidate [110, 0]."
+    },
+    {
+      "subject": "hunk:sha256:d4d84faecc7594380b87414bfaa8656867d3cb0347fb147fbc48061687d8c9d7",
+      "disposition": "no_invariant",
+      "reason": "The changed lane entries remove retired/absent database tests, register surviving or extracted test modules, and preserve the Owner-admitted same-lane normalization. Test registration carries no additional production invariant. Exact inspected hunk: mcp/tests/test-evidence-lanes.toml; base [148, 2] -> candidate [120, 0]."
+    },
+    {
+      "subject": "hunk:sha256:a772997c941879201d1db8082c091eb2aef0f4eafe6e37d7686f038de736e3dd",
+      "disposition": "no_invariant",
+      "reason": "The changed lane entries remove retired/absent database tests, register surviving or extracted test modules, and preserve the Owner-admitted same-lane normalization. Test registration carries no additional production invariant. Exact inspected hunk: mcp/tests/test-evidence-lanes.toml; base [109, 2] -> candidate [100, 0]."
+    },
+    {
+      "subject": "hunk:sha256:d9cdbda527ef67012b2370a1242b97fba37d54dcedd61d85f8cec13fc9ba20d8",
+      "disposition": "no_invariant",
+      "reason": "The changed lane entries remove retired/absent database tests, register surviving or extracted test modules, and preserve the Owner-admitted same-lane normalization. Test registration carries no additional production invariant. Exact inspected hunk: mcp/tests/test-evidence-lanes.toml; base [263, 1] -> candidate [233, 1]."
+    },
+    {
+      "subject": "hunk:sha256:672696a5d7d2757596197ecabcfacf4bb7f3084799dcaf377b19b1090a3912de",
+      "disposition": "no_invariant",
+      "reason": "The changed lane entries remove retired/absent database tests, register surviving or extracted test modules, and preserve the Owner-admitted same-lane normalization. Test registration carries no additional production invariant. Exact inspected hunk: mcp/tests/test-evidence-lanes.toml; base [103, 2] -> candidate [95, 0]."
+    },
+    {
+      "subject": "hunk:sha256:dc718e32d25b0295d014e1d227083e9e0974393e81e454586423731fa4b7cea2",
+      "disposition": "no_invariant",
+      "reason": "The changed lane entries remove retired/absent database tests, register surviving or extracted test modules, and preserve the Owner-admitted same-lane normalization. Test registration carries no additional production invariant. Exact inspected hunk: mcp/tests/test-evidence-lanes.toml; base [118, 8] -> candidate [106, 0]."
+    },
+    {
+      "subject": "hunk:sha256:90940ed5f25cf8b75efb3f317cdfa30fb1f99c8ab70f40729ac4471e3c82f302",
+      "disposition": "no_invariant",
+      "reason": "The changed lane entries remove retired/absent database tests, register surviving or extracted test modules, and preserve the Owner-admitted same-lane normalization. Test registration carries no additional production invariant. Exact inspected hunk: mcp/tests/test-evidence-lanes.toml; base [152, 1] -> candidate [123, 0]."
+    },
+    {
+      "subject": "hunk:sha256:eea089997c9c332fbbee3d58001bb37ce71c58072a868ebe339fdc3313fde4f9",
+      "disposition": "no_invariant",
+      "reason": "The changed lane entries remove retired/absent database tests, register surviving or extracted test modules, and preserve the Owner-admitted same-lane normalization. Test registration carries no additional production invariant. Exact inspected hunk: mcp/tests/test-evidence-lanes.toml; base [202, 1] -> candidate [169, 0]."
+    },
+    {
+      "subject": "hunk:sha256:d7ecf64774acb1c1268e7330c685f1900002a91daaf540cd19b249c5f0304f00",
+      "disposition": "no_invariant",
+      "reason": "The changed lane entries remove retired/absent database tests, register surviving or extracted test modules, and preserve the Owner-admitted same-lane normalization. Test registration carries no additional production invariant. Exact inspected hunk: mcp/tests/test-evidence-lanes.toml; base [361, 5] -> candidate [330, 0]."
+    },
+    {
+      "subject": "hunk:sha256:31d858f584821c5f86e4d7fc5337cf2fd3b66070ae1ceacc014fc4b0be5eb5f3",
+      "disposition": "no_invariant",
+      "reason": "The changed lane entries remove retired/absent database tests, register surviving or extracted test modules, and preserve the Owner-admitted same-lane normalization. Test registration carries no additional production invariant. Exact inspected hunk: mcp/tests/test-evidence-lanes.toml; base [169, 3] -> candidate [139, 0]."
+    },
+    {
+      "subject": "hunk:sha256:7574c3bdcad3e6a2ed1bdd69b0e5dc76d4549b68cb5409e119275f9a8ef1f44e",
+      "disposition": "no_invariant",
+      "reason": "The changed lane entries remove retired/absent database tests, register surviving or extracted test modules, and preserve the Owner-admitted same-lane normalization. Test registration carries no additional production invariant. Exact inspected hunk: mcp/tests/test-evidence-lanes.toml; base [175, 1] -> candidate [143, 1]."
+    },
+    {
+      "subject": "hunk:sha256:ddaeb39d0047d2538266709866939629f53caa9ba3bdc99ce9433913fa12e1cc",
+      "disposition": "no_invariant",
+      "reason": "The changed lane entries remove retired/absent database tests, register surviving or extracted test modules, and preserve the Owner-admitted same-lane normalization. Test registration carries no additional production invariant. Exact inspected hunk: mcp/tests/test-evidence-lanes.toml; base [16, 2] -> candidate [15, 0]."
+    },
+    {
+      "subject": "hunk:sha256:579e7bd3b40296fd2bc93435bbf4f217886b736812040e8ad114c24610d2bf13",
+      "disposition": "no_invariant",
+      "reason": "The changed lane entries remove retired/absent database tests, register surviving or extracted test modules, and preserve the Owner-admitted same-lane normalization. Test registration carries no additional production invariant. Exact inspected hunk: mcp/tests/test-evidence-lanes.toml; base [359, 1] -> candidate [329, 0]."
+    },
+    {
+      "subject": "hunk:sha256:40f13ed4c5bd9488fb19965ef8b96c7b2dd2c3235ea31e28b8599753f4688955",
+      "disposition": "no_invariant",
+      "reason": "The changed lane entries remove retired/absent database tests, register surviving or extracted test modules, and preserve the Owner-admitted same-lane normalization. Test registration carries no additional production invariant. Exact inspected hunk: mcp/tests/test-evidence-lanes.toml; base [267, 1] -> candidate [236, 0]."
+    }
+  ]
+}

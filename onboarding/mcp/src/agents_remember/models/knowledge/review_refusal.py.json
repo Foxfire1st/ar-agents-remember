@@ -1,0 +1,22 @@
+{
+  "path": "mcp/src/agents_remember/models/knowledge/review_refusal.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The file realizes its current contract at the corrected candidate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "90ea200234e866233a93577a727c7189b2b52513",
+            "content": "sha256:1574792e2ff4dbf850ca7aea28ff93572b8b240ba2bc475c92ccc4e1d243bb1e",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

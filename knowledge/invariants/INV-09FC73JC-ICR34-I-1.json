@@ -19,6 +19,6 @@
   "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "A leaf's review comparison is recorded as one durable per-leaf generation through the freeze owner rather than recomposed per reader, so the comparison a reviewer read while the enclosure was live resolves from its own record after the leaf closes instead of falling back to a bare recorded source range.",
-  "status": "proposed",
+  "status": "retired",
   "supersedes": []
 }

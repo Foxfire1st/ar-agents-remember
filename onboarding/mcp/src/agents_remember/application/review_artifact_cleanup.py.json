@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "867542540d489a6bba14026b935212fc1374f0b3",
+            "blob": "1129a2652b027f80486312b85456316b0b5352bd",
             "content": "sha256:65b3cdb9f8d5ecc4e630765490d24cf32505c709dec9762a31420d44b271e929",
             "locator": {
               "end": 41,
@@ -24,7 +24,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "867542540d489a6bba14026b935212fc1374f0b3",
+            "blob": "1129a2652b027f80486312b85456316b0b5352bd",
             "content": "sha256:fa4183f5b29506c78abef9259953e8e42280d289b330333019b073e2d911bbfa",
             "locator": {
               "kind": "symbol",
@@ -35,7 +35,7 @@
         },
         {
           "anchor": {
-            "blob": "867542540d489a6bba14026b935212fc1374f0b3",
+            "blob": "1129a2652b027f80486312b85456316b0b5352bd",
             "content": "sha256:eb92b6c363d9fd8af3627e0f5ad119b59437f8fb7364fb445c56ef8788a8d525",
             "locator": {
               "kind": "symbol",
@@ -51,7 +51,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "867542540d489a6bba14026b935212fc1374f0b3",
+            "blob": "1129a2652b027f80486312b85456316b0b5352bd",
             "content": "sha256:c3360d3cd407e96f28fc561fb57139ee9431f89ab0d5b605e375340b45632183",
             "locator": {
               "kind": "symbol",
@@ -62,7 +62,7 @@
         },
         {
           "anchor": {
-            "blob": "867542540d489a6bba14026b935212fc1374f0b3",
+            "blob": "1129a2652b027f80486312b85456316b0b5352bd",
             "content": "sha256:5c98946d84b57374d9cc629a5b79acd6db9dadf255b2fa80dcec3006cd35f0d7",
             "locator": {
               "kind": "symbol",
@@ -78,7 +78,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "867542540d489a6bba14026b935212fc1374f0b3",
+            "blob": "1129a2652b027f80486312b85456316b0b5352bd",
             "content": "sha256:a72c26b962e3bac1bdebb115c1752e70ab15e47a6d176963c87d7fdfb5fa1759",
             "locator": {
               "kind": "symbol",
@@ -89,7 +89,7 @@
         },
         {
           "anchor": {
-            "blob": "867542540d489a6bba14026b935212fc1374f0b3",
+            "blob": "1129a2652b027f80486312b85456316b0b5352bd",
             "content": "sha256:a425baa23d2c1a7fe55d6f2f6e8b191a2d33f621043920be413ae0476660ecfd",
             "locator": {
               "kind": "symbol",
@@ -100,7 +100,7 @@
         },
         {
           "anchor": {
-            "blob": "867542540d489a6bba14026b935212fc1374f0b3",
+            "blob": "1129a2652b027f80486312b85456316b0b5352bd",
             "content": "sha256:a772b18cf1e8599e6f5ebccc5a3243dbf7154a464f6abb6f2f3735e97f454960",
             "locator": {
               "kind": "symbol",
@@ -222,6 +222,40 @@
         }
       ]
     },
+    "18": {
+      "note": "Code-pin history is persisted before releasing the retained pin.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fe49634e9ec9be9654d8cf2cfd533cd3eaf6208d",
+            "content": "sha256:8ea7439e1b26cd6454e4e363a2f9d6d95e09d045ca2ab19e61d4b3a4d6792f94",
+            "locator": {
+              "kind": "symbol",
+              "name": "release_comparison_code_object"
+            },
+            "path": "mcp/src/agents_remember/application/review_comparison_reclamation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "Verified snapshot unlink precedes snapshot history, leaving a static failure window.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fe49634e9ec9be9654d8cf2cfd533cd3eaf6208d",
+            "content": "sha256:f78a7068598131d1b72a4260ff00daa527718fb981c22cd7f3698f08baf466dc",
+            "locator": {
+              "kind": "symbol",
+              "name": "discard_comparison_snapshots"
+            },
+            "path": "mcp/src/agents_remember/application/review_comparison_reclamation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "The report file, the reason, and the two tables that make a file a knowledge dataset.",
       "targets": [
@@ -250,7 +284,7 @@
         },
         {
           "anchor": {
-            "blob": "867542540d489a6bba14026b935212fc1374f0b3",
+            "blob": "1129a2652b027f80486312b85456316b0b5352bd",
             "content": "sha256:2ded9578a116d3072711dbde511b58e882d6e3891f009d6f417a1c15bea2b21e",
             "locator": {
               "kind": "symbol",
@@ -266,7 +300,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "867542540d489a6bba14026b935212fc1374f0b3",
+            "blob": "1129a2652b027f80486312b85456316b0b5352bd",
             "content": "sha256:bbd16dafd3f094e9c4d3ab1c3e5230ff70053fb15eafbb559f822ddb1efba870",
             "locator": {
               "kind": "symbol",
@@ -282,7 +316,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "867542540d489a6bba14026b935212fc1374f0b3",
+            "blob": "1129a2652b027f80486312b85456316b0b5352bd",
             "content": "sha256:5813a24b3fbc8e54016b61fcb910793faf5a1ddb44978272d44ae198a8f29c19",
             "locator": {
               "kind": "symbol",
@@ -298,7 +332,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "867542540d489a6bba14026b935212fc1374f0b3",
+            "blob": "1129a2652b027f80486312b85456316b0b5352bd",
             "content": "sha256:fc032a24c376fe32a800a8666f2fb82a49601fee4941d09b1859155380a65074",
             "locator": {
               "kind": "symbol",
@@ -309,7 +343,7 @@
         },
         {
           "anchor": {
-            "blob": "867542540d489a6bba14026b935212fc1374f0b3",
+            "blob": "1129a2652b027f80486312b85456316b0b5352bd",
             "content": "sha256:a8c263fb7223cefc4c6e3ed7ab75a28f4577ca94f7df3393f2ac814390bf83d1",
             "locator": {
               "kind": "symbol",
@@ -343,7 +377,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "867542540d489a6bba14026b935212fc1374f0b3",
+            "blob": "1129a2652b027f80486312b85456316b0b5352bd",
             "content": "sha256:ae51143fee96962cbcb3a892ba1150757478318b616aa7e4370aa9d5fee623e5",
             "locator": {
               "kind": "symbol",
@@ -354,7 +388,7 @@
         },
         {
           "anchor": {
-            "blob": "867542540d489a6bba14026b935212fc1374f0b3",
+            "blob": "1129a2652b027f80486312b85456316b0b5352bd",
             "content": "sha256:bdb70365235fb65adad56f55afdbeaedb428e01f1d91999347edde51013c57f2",
             "locator": {
               "kind": "symbol",
@@ -370,7 +404,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "867542540d489a6bba14026b935212fc1374f0b3",
+            "blob": "1129a2652b027f80486312b85456316b0b5352bd",
             "content": "sha256:35caace53a1105b4f9ec653a26de6c40d3198ceac8ab0eba59af90ea18eab0fd",
             "locator": {
               "kind": "symbol",
@@ -381,7 +415,7 @@
         },
         {
           "anchor": {
-            "blob": "867542540d489a6bba14026b935212fc1374f0b3",
+            "blob": "1129a2652b027f80486312b85456316b0b5352bd",
             "content": "sha256:158df8e5a73aa3606ee1a32225a2a95c30d4299ce7b52fbc47a5b5b7e6394b52",
             "locator": {
               "kind": "symbol",
@@ -397,7 +431,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "867542540d489a6bba14026b935212fc1374f0b3",
+            "blob": "1129a2652b027f80486312b85456316b0b5352bd",
             "content": "sha256:3e0adf52880e9527e5cd4a6626a096d4b3e8f8ada57549dfd2f4be225c96fbea",
             "locator": {
               "kind": "symbol",
@@ -408,7 +442,7 @@
         },
         {
           "anchor": {
-            "blob": "867542540d489a6bba14026b935212fc1374f0b3",
+            "blob": "1129a2652b027f80486312b85456316b0b5352bd",
             "content": "sha256:571d113a6ecdb17f1e480dbb8096427f0fb504f36d11a83944f714bde3590978",
             "locator": {
               "kind": "symbol",

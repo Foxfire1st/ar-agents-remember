@@ -1,9 +1,27 @@
 {
   "path": "mcp/src/agents_remember/serving/review_trees.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
-        "blob": "bbe110e4539f26ac9b00924e646363fd5b16e48d",
+        "blob": "a7887094ebc35cb68b431fe5f37d81c42451dd03",
+        "content": "sha256:d16a0e167c6c235397c48bf868cfeb1d01e80fd3fcbe38918e82153aecc3f833",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-5FK94J",
+      "invariant": "INV-YJZKYC",
+      "origin": {
+        "handoffEntry": "R3 Note 15",
+        "leaf": "260928-MIK-L26"
+      },
+      "rationale": "The serving view renders the source-only identity.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "d01fab7c887ce5127ca0f3677f82eca9ec27053b",
         "content": "sha256:50b3c4762ccf1629bc3917e56d65d51dd7ac556cfe9e7f2e0ce257bf6866f0b2",
         "locator": {
           "kind": "symbol",

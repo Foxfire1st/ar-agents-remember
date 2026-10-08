@@ -1,5 +1,58 @@
 {
   "path": "mcp/tests/test_direct_landing.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "e026cb197331402f445ffac02968faac936c15d0",
+        "content": "sha256:3146079df45e5db08e3ee183abe12217dbaefc0c0297eb6559647489c38c86aa",
+        "locator": {
+          "kind": "symbol",
+          "name": "DirectLandingTests.test_converted_direct_landing_commits_the_judged_tree_and_requires_governing_row"
+        }
+      },
+      "facet": "Direct landing commits the judged tree with no commit hooks.",
+      "id": "PRF-AZBPJ8",
+      "invariant": "INV-2Q8RPR",
+      "origin": {
+        "handoffEntry": "R3 note 11f",
+        "leaf": "260928-MIK-L26"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "e026cb197331402f445ffac02968faac936c15d0",
+        "content": "sha256:902607a6e4478251221fa50efffd662a23ce0432de799c0cbe66da718e983874",
+        "locator": {
+          "kind": "symbol",
+          "name": "DirectLandingTests.test_a_request_refused_any_number_of_times_lands_on_the_next_plain_retry"
+        }
+      },
+      "facet": "A repeated unpublished refusal leaves the request admissible and the next plain retry lands.",
+      "id": "PRF-JVVPJZ",
+      "invariant": "INV-ZGFZXT",
+      "origin": {
+        "handoffEntry": "R3 finding 1",
+        "leaf": "260928-MIK-L26"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "e026cb197331402f445ffac02968faac936c15d0",
+        "content": "sha256:0bddc2d1a3886b19007f80173191bb05660bd2297513d270b2299fefeb7ee9a4",
+        "locator": {
+          "kind": "symbol",
+          "name": "DirectLandingTests.test_a_late_change_at_the_commit_boundary_refuses_restores_and_the_request_lands"
+        }
+      },
+      "facet": "A late unpublished change refuses, restores and the request still lands.",
+      "id": "PRF-QV0HXZ",
+      "invariant": "INV-9ZBTVA",
+      "origin": {
+        "handoffEntry": "R3 finding 4",
+        "leaf": "260928-MIK-L26"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "1": {

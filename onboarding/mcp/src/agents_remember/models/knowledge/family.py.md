@@ -6,62 +6,21 @@
 
 ## Purpose
 
-Family identity and the immutable family revision aggregate — the vocabulary half of the family graph.
-A family is a stable subject whose revision carries an authored **joint guarantee**: a statement about
-a set of invariant revisions that hold together. The guarantee is the family's own text and is never
-assembled from its members; a member keeps its exact own obligation, and the two are separate authored
-claims a reader must not derive from one another.
-
-This module defines values, not rows. It performs no I/O, owns no table and raises no refusal: the
-storage owner is `memory/knowledge/families.py`.
+Family identity and immutable revision values. A family's joint guarantee is authored independently of its members' obligations; members never supply or rewrite that guarantee.
 
 ## Code Commentary
 
 ### Logic
 
-- `FamilyDraft` is the identity a caller proposes — `family_id`, `display_label` and the label's own
-  `Authorship` — with a non-blank label validator.
-- `FamilyIdentity` adds `repository_id` and the expected `row_digest`, so a stored identity can be
-  compared against what a caller remembered.
-- `FamilyRevisionDraft` is the authored aggregate before sealing: `family_id`, `revision_id`,
-  `display_version`, `joint_guarantee`, `predecessors`, `state_at_origin`, `acceptance_ref` and
-  `provenance`. **The digest is absent by design**: the store recomputes and stores it, so a caller
-  cannot present a payload whose seal belongs to different content.
-- `FamilyRevision` adds `repository_id` and the `payload_digest`; `StoredFamilyRevision` carries the
-  decoded `predecessors_sorted` set alongside the revision.
-- Two authored-value rules are refused at construction rather than at the storage boundary:
-  `require_consistent_acceptance` (an accepted origin needs a non-blank acceptance reference, and a
-  proposed one must not carry one) and the self-predecessor rule (a revision must not declare itself
-  as its own predecessor). `predecessors` additionally refuses a repeated identity.
-
-### Conventions
-
-- Separating `FamilyRevisionDraft` from `FamilyRevision` is what keeps the seal out of a caller's
-  hands, exactly as `RevisionDraft`/`InvariantRevision` do on the invariant side.
-- `StoredFamilyRevision._require_sorted_predecessors` asserts that the decoded set equals the sorted
-  predecessor tuple, so a reader cannot present an unsorted or partial lineage view.
-- Length bounds come from `base.py` (`LABEL_MAX_LENGTH`, `PROSE_MAX_LENGTH`, `REFERENCE_MAX_LENGTH`)
-  rather than being re-spelled here, so both revision aggregates share one set of limits.
+The draft/stored value split keeps a caller-supplied payload digest out of revision authoring. The decoded revision carries its seal and checked sorted predecessor set. Construction refuses inconsistent acceptance, duplicate predecessors and self-predecessors.
 
 ### Invariants And Boundaries
 
-- **Immutability is structural, not advisory.** The `payload_digest` seals the whole authored payload
-  *including the sorted predecessor set*, so a stored family revision identifies exactly one authored
-  aggregate: changing the guarantee means authoring a separately identified successor, and an earlier
-  membership citing the original still resolves the original text.
-- **The guarantee is never derived from members.** Nothing in this vocabulary has a field a reader
-  could fill from a member's obligation.
-- **`unclassified`-style honesty applies here too.** A draft with an unknown role of its own is
-  refused at construction rather than defaulted.
-- **Boundary.** This module declares no operation, no table, no SQL and no refusal code; it must not
-  grow a validation rule whose only enforcement point is storage, because both revision aggregates are
-  validated where they are authored.
-- **Not this module's job.** The relation vocabulary (`graph.py`), the payload-digest computation
-  (`digest.py`) and the storage operations (`memory/knowledge/families.py`).
+A changed guarantee names a successor revision; an earlier membership keeps the exact revision it cites. This module performs no I/O. `memory/knowledge/families.py` only reads values from the memory tree's derived index. Canonical family creation, revision encoding and draft-sealing APIs are retired; fixture writers are not production successors.
 
 ### Todos
 
-None recorded for this slice.
+None recorded.
 
 ## Evidence
 
@@ -80,8 +39,12 @@ No configured domain documentation could be checked.
 - The sealed revision and its stored read shape. [4]
 - The shared accepted/proposed rule this aggregate applies at construction. [5]
 - The payload this revision's digest seals, including the sorted predecessor set. [6]
-- The row codec and seal-verifying decode that turn these values into stored rows. [7]
-- The storage owner that writes and reads these values. [8]
+
+- The retained family revision decoder verifies the sealed aggregate and sorted predecessors. [7]
+
+
+- The production reader retrieves family identities and exact sealed revisions from the derived index; it writes nothing. [8]
+
 - The declared `family` and `family_revision` tables these values map onto. [9]
 The requirement this vocabulary's first delivered slice belongs to: requirement packet `KS-R02@v1`, which lives in the coordination root, outside both the code and the memory repository, so the citation grammar cannot address it.
 

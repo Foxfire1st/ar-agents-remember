@@ -6,109 +6,25 @@
 
 ## Purpose
 
-The package facade for the knowledge vocabulary. It re-exports every served knowledge shape — repository
-namespace, invariant identity and revision aggregate, the sealed digest helpers, the source and locator
-vocabulary, the typed operation requests/refusals/results and the schema identity — so a consumer imports
-one module path and names one vocabulary.
+The explicit shared facade for the retained index-reader vocabulary. It re-exports immutable values and pure digest/read helpers without SQL, Git resolution, write admission or authorization decisions.
 
 ## Code Commentary
 
 ### Logic
 
-The file is a re-export barrel plus `__all__`. It imports from `agents_remember.models.knowledge.authorship`
-(`ACCEPTED_STATE`, `PROPOSED_STATE`, `Authorship`, `KnowledgeState`), `.context`
-(`KNOWLEDGE_SCHEMA_NAME`, `AdmittedKnowledgeDestination`, `KnowledgeSchemaIdentity`), `.digest`
-(`FAMILY_REVISION_PAYLOAD_VERSION`, `REVISION_PAYLOAD_VERSION`, `canonical_family_revision_payload`,
-`canonical_revision_payload`, `family_revision_payload_digest`, `revision_payload_digest`,
-`sealed_family_revision`, `sealed_revision`), `.family` (`FamilyDraft`, `FamilyIdentity`, `FamilyRevision`,
-`FamilyRevisionDraft`, `StoredFamilyRevision`), `.graph` (`AnchorRealizations`, `FamilyMember`,
-`FamilyMemberDraft`, `FamilyMembers`, `InvariantFamilies`, `RealizationClaim`, `RealizationClaimDraft`,
-`RealizationClaims`, `RealizationRole`, `UNCLASSIFIED_ROLE`), `.invariant` (`InvariantDraft`,
-`InvariantIdentity`, `InvariantRevision`, `StoredInvariantRevision`), `.repository` (`RepositoryIdentity`),
-`.result` (the requests, results, `KnowledgeOperation`, `KnowledgeRefusal`, `KnowledgeRefusalCode`),
-`.read` (the selective read's whole vocabulary, added by 260915-KS-L7 — see below) and
-`.source` (`FileLocator`, `GitBlobIdentity`, `LineRangeLocator`, `SourceAnchor`, `SourceAnchorDraft`,
-`SourceIdentity`, `SourceLocator`, `SymbolLocator`).
+The imports retain authorship and origin states, schema identity, canonical invariant/family payload mappings and digest functions, family/member/invariant values, repository identity, KnowledgeOperation/KnowledgeRefusal/KnowledgeRefusalCode, selective-read seed/context/page/cursor values and source locators.
 
-**`.snapshot` is the eighth source this leaf added**: the local candidate layout (`CANDIDATE_DATABASE_NAME`,
-`CANDIDATE_RECEIPT_NAME` and the two path builders), the receipt and its sealing helpers
-(`CANDIDATE_RECEIPT_VERSION`, `CandidateReceiptVersion`, `CandidateReceipt`, `build_candidate_receipt`,
-`receipt_digest`), the lifecycle value objects (`AdmittedCandidateDestination`, `CandidateBaseline`,
-`CandidateResult`), the publication vocabulary (`PreparedKnowledgeSnapshot`, `SnapshotDestinationRequest`,
-`PublishSnapshotRequest`, `SnapshotPublicationResult`, `PublicationState`) and the closed disposal union
-(`DiscardCandidate`, `PublishedCandidate`, `CandidateDisposition`, `CandidateDisposalResult`). Every one of
-those names is now in `__all__`.
-
-**`.read` is the ninth source, added by 260915-KS-L7**, and it is the one addition to this facade the
-selective recorded-scope read makes: the five seed kinds (`PathSeed`, `InvariantIdentitySeed`,
-`InvariantRevisionSeed`, `FamilyIdentitySeed`, `FamilyRevisionSeed`) and their union `KnowledgeReadSeed`, the
-context and budget (`KnowledgeReadContext`, `KnowledgeReadBudget`), the request and its result
-(`KnowledgeReadRequest`, `KnowledgeReadResult`), the page and its counting (`KnowledgeReadPage`,
-`KnowledgeReadCounts`), the grouping and frontier models (`ReadItem`, `ReadRevisionGroup`,
-`AdvertisedExpansion`, `AnchorResolution`, `KnowledgeReadSnapshot`), the policy constant
-(`KNOWLEDGE_READ_POLICY_VERSION`) and the cursor helpers (`KnowledgeReadCursor`, `cursor_for`,
-`continue_from_cursor`, `read_context_digest`, `seed_digest`, `snapshot_of_context`). Every one of those names
-is in `__all__`.
-
-`__all__` is explicit and sorted, so the served surface is a declared list rather than "whatever the
-submodules happen to export".
-
-The graph half added its own names to that list — the family shapes, the two relation shapes and their read
-models, the authored role vocabulary with `UNCLASSIFIED_ROLE`, the eight graph operations' requests and results,
-and the anchor endpoint union. They are re-exported, not defined, here.
-
-The facade deliberately does **not** export `require_stored_outcome`, `require_removal_outcome`,
-`require_consistent_acceptance`, `SqliteFailureContext`, `RefusalFacts` or `KnowledgeStorageError`. Those are
-internal rules and internal control flow; a consumer that branches on a refusal branches on the returned
-`KnowledgeRefusal` value, not on the machinery that builds it.
-
-### Conventions
-
-Every name in `__all__` comes from a submodule; this file defines nothing of its own and holds no SQL, no
-authorization decision and no storage behaviour. Literal vocabularies that decide something (`KnowledgeState`,
-`KnowledgeOperation`, `KnowledgeRefusalCode`, `REVISION_PAYLOAD_VERSION`, `KNOWLEDGE_SCHEMA_NAME`) are defined
-in their owning submodule and imported by the decider, never defined by the decider and imported back down.
+__all__ is an explicit sorted export list. A consumer may name these shared reader values from the facade; underlying contracts and validators remain owned by their defining modules. Private shared acceptance validation remains in base.py rather than exported here.
 
 ### Invariants And Boundaries
 
-- This package is the shared vocabulary of the knowledge substrate; `memory/knowledge` writes it and
-  `application/knowledge.py` composes it. Owners ranked below `memory` receive these values rather than
-  importing the storage package.
-- Adding a name here is a served-surface change: a reader that imports the facade is entitled to assume the
-  re-export list is the contract.
-- Nothing here imports `memory.knowledge`; the direction is vocabulary first, storage second.
+- Vocabulary flows to readers and application owners; this facade imports no memory.knowledge storage implementation.
+- Export membership is a public vocabulary contract, not proof of reachable mutation or admission authority.
+- This module creates no record, snapshot, acceptance or Git state.
 
-### The Composition Vocabulary Joins The Served Surface (260915-KS-L17)
+### Historical boundary — MIK-R26
 
-This leaf added **one more source module** to the facade and, with it, the whole authored-composition
-vocabulary: `models/knowledge/composition.py`, re-exported name by name and listed in `__all__`. The
-names are the closed command kinds and record tables the composition write path publishes
-(`COMPOSITION_COMMAND_KINDS`, `COMPOSITION_WRITABLE_TABLES`), the one registered review scope a
-traversal policy may widen (`REGISTERED_REVIEW_SCOPE`, `WidenedScope`) and the closed direction
-vocabulary (`FOLLOW_DIRECTIONS`, `FollowDirection`), the policy draft and stored version
-(`FamilyCompositionPolicyDraft`, `FamilyCompositionPolicyVersion`, `PolicyIdentity`), the edge and its
-draft (`FamilyComposition`, `FamilyCompositionDraft`), the reported link (`FamilyCompositionLink`) and
-the authored explanatory context with its draft (`FamilyExplanationContext`,
-`FamilyExplanationContextDraft`, `FamilyExplanationContextRevision`).
-
-**Two of the shared unions this facade re-exports grew in the same change**, and this card's own rows
-record both: `KnowledgeOperation` gained `create_composition` and `set_family_revision_route` (the
-operations a *relation write* reports when it is reached directly) and `follow_family_composition` (the
-one act that is **not** a write — following declared composition edges under a versioned traversal
-policy, which is a different operation from `read_knowledge_scope`'s retrieval selection rather than a
-variant of it). The operation union therefore measures **forty-four** members on the merged line while
-the refusal-code union is unchanged at **forty-five**: this leaf minted no new refusal code and reuses
-the shipped ones through three new factories in `memory/knowledge/refusals.py`.
-
-**The counts in this card are measurements, not constants.** `KnowledgeOperation` is counted from the
-literal in `models/knowledge/result.py`; `ProposedCommand` is the discriminated union a batch's
-commands travel under and then held **twenty-two** variants after this leaf's four composition kinds
-joined the eighteen it held before. A later leaf that appends to either union re-counts from the
-declaration rather than editing a number here.
-
-### Todos
-
-None recorded. Later leaves extend the vocabulary in its owning submodules and re-export here.
+Canonical database anchor/realization records, write requests/results, seal-writing helpers, snapshot publication/candidate disposal and composition commands were removed from the facade with their production writer route. require_stored_outcome and require_removal_outcome were retired, not retained hidden helpers. The current export list is the boundary; fixture definitions are not substitute production exports.
 
 ## Evidence
 
@@ -123,16 +39,21 @@ No configured domain documentation could be checked.
 
 The rows below cite the submodules this facade re-exports and the two consumers of the vocabulary.
 
-- The facade's re-export list is the served knowledge vocabulary: authors, states, context, both payload versions and their sealing helpers, family shapes, relation shapes and read models, invariant shapes, repository identity, results, source locators, the whole snapshot vocabulary and — since this leaf — the composition vocabulary. [1]
-- The eighth source module this leaf added to the facade, re-exported name by name. [2]
-- The internal rules deliberately kept off the served surface. [3]
-- The facade's re-export list is the served knowledge vocabulary: authors, states, context, both payload versions and their sealing helpers, family shapes, relation shapes and read models, invariant shapes, repository identity, results, source locators and — since this leaf — the whole snapshot vocabulary. [4]
-- The eighth source module this leaf added to the facade, re-exported name by name. [5]
-- The internal rules deliberately kept off the served surface. [6]
-- The storage owner writes these values rather than defining its own copies — re-cited against the working tree, where the class docstring now names the sibling graph owners. [7]
-- The composition seams that admit a destination and build every request from this vocabulary. [8]
-- The shared branching fixture authors its identity and graph halves from these same models. [9]
-- The snapshot harness that consumes the newly re-exported names end to end. [10]
+
+- The explicit current facade imports and exports retained reader values. [1]
+
+
+- The current export list contains no retired mutation outcome helpers; the acceptance helper remains at its own base owner. [3]
+
+
+- The served surface is the retained index-reader vocabulary. [4]
+
+
+- Retired mutation outcome helpers are absent from the current facade; internal acceptance validation stays in base.py. [6]
+
+
+- The production store consumes these retained values through read-only operations. [7]
+
 
 ### Cross-Repo References
 

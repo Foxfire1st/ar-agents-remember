@@ -1,0 +1,23 @@
+{
+  "ok": true,
+  "tokens": 292,
+  "tokenizer": "tiktoken:o200k_base",
+  "tokenCountExact": true,
+  "operation": "knowledge_read",
+  "state": "refused",
+  "view": "invariant",
+  "repositoryId": "7511e917-d5d3-584e-b0ce-44dcad666cfe",
+  "threshold": {
+    "tokens": 8000,
+    "tokenizer": "tiktoken:o200k_base"
+  },
+  "memoryTree": {
+    "memoryRoot": "/home/firefox/projects/ar-coordination/worktrees/agents-remember/260928-mik-l26-ar/memory-260928-mik-l26",
+    "treeId": "74d3d31f11ad2228cf217a8d74164cacd489ac08",
+    "indexState": "complete",
+    "problems": []
+  },
+  "indexComplete": true,
+  "refusalCode": "selector_absent",
+  "refusalDetail": "invariantRevisionId 'INV-W4XGR4' names no invariant revision this memory tree holds: a converted memory tree's seeds are the revision UUIDs its own reads return -- take one from the knowledge section of read_ar_files or from a source_context row (the projected UUID of '<ID>@<revision>'); a database-era revision ID names nothing in a converted tree; INV-W4XGR4 is held here at revision 2, whose seed is deb1506f-c730-5224-a9a9-8dfaa0ff65a5"
+}

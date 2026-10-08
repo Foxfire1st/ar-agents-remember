@@ -1,9 +1,10 @@
 {
   "path": "mcp/src/agents_remember/kernel/git_command.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
-        "blob": "a19c74bb0d905669c2dc4d699a05e230d970effb",
+        "blob": "0add0d691edd9fadf0873b47c05c3556c94fb585",
         "content": "sha256:a6f31e7ed323bd8751898287365ed85d5e186e252dd9bc4359d3da9e6717ed06",
         "locator": {
           "kind": "symbol",
@@ -21,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "a19c74bb0d905669c2dc4d699a05e230d970effb",
+        "blob": "0add0d691edd9fadf0873b47c05c3556c94fb585",
         "content": "sha256:5eaec5043b48ad5d243ddf92eaf49ff4c2d3c1b68b1603733c1b8e558496c4c8",
         "locator": {
           "kind": "symbol",
@@ -39,7 +40,7 @@
     },
     {
       "anchor": {
-        "blob": "a19c74bb0d905669c2dc4d699a05e230d970effb",
+        "blob": "0add0d691edd9fadf0873b47c05c3556c94fb585",
         "content": "sha256:8c357bd749a5ff5e48b879374a25213bb7e06baff5e880fad1a0e306c2c9b94a",
         "locator": {
           "kind": "symbol",

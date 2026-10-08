@@ -50,34 +50,46 @@
       ]
     },
     "3": {
-      "note": "Rebinding a populated store to another namespace or authority home is refused.",
+      "note": "The repository value declares namespace and authority home; the old rebinding writer is retired.",
       "targets": [
         {
           "anchor": {
-            "blob": "20fbf8f958c5f13380299d7733886cfa8e92087c",
-            "content": "sha256:b77ccf8536705efdf8dd268120ca040cb3e2b0a482ae025515e67759e2151383",
+            "blob": "e3ec48e021d7d76d6910369d094c39829c3f921a",
+            "content": "sha256:974f5ab27a7e0fbde4dd3ce5b614a492148e243f0a3573a302444c15db02f47b",
             "locator": {
               "kind": "symbol",
-              "name": "repository_rebind_refusal"
-            },
-            "path": "mcp/src/agents_remember/memory/knowledge/refusals.py"
+              "name": "RepositoryIdentity"
+            }
           },
           "kind": "code"
         }
       ]
     },
     "4": {
-      "note": "A request naming a foreign namespace refuses before any DML.",
+      "note": "The index reader queries its bound namespace and opens a read-only connection.\n\nAnchor: `OpenedKnowledgeStore.get_repository`",
       "targets": [
         {
           "anchor": {
-            "blob": "20fbf8f958c5f13380299d7733886cfa8e92087c",
-            "content": "sha256:6d6326bea615a1a40b0130e04d65f23d989f88282e9863efc05b03efa129e7ae",
+            "blob": "e4fc1a849557a256d000a2a4f98c444ef5400e7d",
+            "content": "sha256:5a7d444f6d5aa6950d3170e1dfb74ced2b56bfcb496f38dd0485d8bcd71c6898",
             "locator": {
               "kind": "symbol",
-              "name": "scope_refusal"
+              "name": "open_read_only_store"
             },
-            "path": "mcp/src/agents_remember/memory/knowledge/refusals.py"
+            "path": "mcp/src/agents_remember/memory/knowledge/store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e4fc1a849557a256d000a2a4f98c444ef5400e7d",
+            "content": "sha256:e6d4e725d111f5a961626b85278bd8696a5f851a65bc42c2aba348b5aa7d6fbc",
+            "locator": {
+              "end": 106,
+              "kind": "line_range",
+              "start": 94
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/store.py"
           },
           "kind": "code"
         }

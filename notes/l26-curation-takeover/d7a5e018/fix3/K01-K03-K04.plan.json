@@ -1,0 +1,82 @@
+{
+  "authorization": "260928-MIK-L26#D110;owner-current-source-binding@ef8d82df0b1c026f8224111bdb8146b241ca8afeb5d007504ea5c291049fad7d;memory-r2-six-repairs",
+  "carried": [],
+  "codeTree": "bf045a987679cc023f8fdfb8849d28cfcca1adb9",
+  "entries": [
+    {
+      "action": "created",
+      "handoffEntry": "fix3-W4XGR4-typed-proof",
+      "id": "PRF-BE40ZR",
+      "invariant": "INV-W4XGR4",
+      "kind": "proof",
+      "sidecar": "onboarding/mcp/tests/test_tool_entry_point_controls.py.json"
+    }
+  ],
+  "evidence": [
+    {
+      "entry": "fix3-W4XGR4-typed-proof",
+      "evidence": [
+        "mcp/tests/test_tool_entry_point_controls.py::ChokePointControlTests::test_a_tool_that_never_answers_fails_by_name_and_closes_its_handler; sealed memory-r2 K04"
+      ],
+      "storedIn": [
+        "knowledge/history/260928-MIK-L26.json#INV-W4XGR4"
+      ],
+      "tests": [
+        {
+          "detail": "proof PRF-BE40ZR in onboarding/mcp/tests/test_tool_entry_point_controls.py.json",
+          "state": "proof_written",
+          "test": "mcp/tests/test_tool_entry_point_controls.py::ChokePointControlTests::test_a_tool_that_never_answers_fails_by_name_and_closes_its_handler"
+        }
+      ]
+    }
+  ],
+  "historyRows": [
+    {
+      "disposition": "changed",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-GNP9F4",
+      "subject": "INV-753SKJFF"
+    },
+    {
+      "disposition": "changed",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-204RN8",
+      "subject": "INV-W4XGR4"
+    }
+  ],
+  "memoryRoot": "/home/firefox/projects/ar-coordination/worktrees/agents-remember/260928-mik-l26-ar/memory-260928-mik-l26",
+  "notes": [],
+  "operation": "knowledge-write",
+  "owner": "260928-MIK-L26",
+  "problems": [
+    {
+      "message": "-: Value error, a no_impact invariant row keeps the set of entries: none added or removed",
+      "where": "history[1]"
+    }
+  ],
+  "provisionalIds": false,
+  "records": [
+    {
+      "action": "unchanged",
+      "handoffEntry": "fix3-W4XGR4-typed-proof",
+      "id": "INV-W4XGR4",
+      "kind": "invariant",
+      "path": "knowledge/invariants/INV-W4XGR4-the-existing-sweep-awaits-initialization-response.json",
+      "revision": 2
+    },
+    {
+      "action": "updated",
+      "handoffEntry": "fix3-cost-of-false-movement",
+      "id": "INV-0T84PZ",
+      "kind": "invariant",
+      "path": "knowledge/invariants/INV-0T84PZ-a-failed-ref-update-reports-a.json",
+      "revision": 1
+    }
+  ],
+  "removed": [],
+  "requirementEndpoints": [],
+  "rulings": [],
+  "state": "refused",
+  "violations": [],
+  "written": []
+}

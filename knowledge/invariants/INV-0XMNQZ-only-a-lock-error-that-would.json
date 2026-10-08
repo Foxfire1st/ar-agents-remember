@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Waiting on a lock error that can never clear would stall publication indefinitely."
+  },
+  "applicability": "Publication lock acquisition.",
+  "conditions": [
+    "The lock error says another holder would block the attempt."
+  ],
+  "exclusions": [
+    "Every other lock error, which waiting cannot cure."
+  ],
+  "id": "INV-0XMNQZ",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "test_git_command.py::PublishTreeCommitGuardTests::test_only_a_lock_that_would_block_is_waited_for; N11-any-lock-error-busy.log"
+      ],
+      "path": "handoff-stage1.json"
+    },
+    "handoffEntry": "R3 note 11g",
+    "leaf": "260928-MIK-L26",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Only a lock error that would block is waited for and every other lock error is refused immediately.",
+  "status": "proposed",
+  "supersedes": []
+}

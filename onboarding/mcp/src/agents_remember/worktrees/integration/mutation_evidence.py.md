@@ -20,7 +20,7 @@ not part of this evidence vocabulary.
 `initial_closeout_mutation_evidence` creates cells for enabled code and memory legs only.
 Mutation entry points check the effective leg and exact contract repository. Intent captures
 pre-command evidence; the exact-file variant computes its intended tree before a real file write,
-while `bind_expected_output_tree` fills an unbound prepared output before commit launch.
+and `begin_git_mutation` receives the exact intended output tree before commit launch. The removed late-binding helper does not fill an unbound output.
 
 `prove_git_commit` reads the actual repository and requires the bound ref, output tree, commit, and
 accepted parent relation before publishing a proven receipt. `reconcile_closeout_mutations` separates
@@ -63,32 +63,8 @@ No new implementation or live-state operation is authorized by this documentatio
 
 ## Evidence
 
-### Docs References
-
-No Domain Documentation source is configured for this repository. No external domain documents
-were available through the configured registry to consult; the current claims are grounded in the
-working source and package-local evidence below. The registry is discovery input, not a citation.
-
-No configured external domain-documentation evidence.
-
 ### Repo-Internal References
 
-These repository-relative targets and exact ranges were checked against the L9 working source.
-Source declarations and test assertions are distinguished from execution and acceptance evidence.
-
-- Only enabled code/memory legs receive mutation cells. [1]
-- Intent, expected-output binding, and commit proof retain their order. [2]
-- Interrupted attempts are reconciled from actual Git evidence. [3]
-
-- Cache-excluded snapshots retain actual object/ref identity. [4]
-
-- The snapshot model declares the separate content comparison tree. [5]
-
-- The disposable snapshot copies the index with its time. [6]
-
-### Cross-Repo References
-
-The code/memory or fixture-repository boundaries above are established by package-local source.
-No additional configured external or sibling-repository evidence is claimed.
-
-No additional configured cross-repository evidence.
+- `begin_git_mutation` implements the retained boundary described above. [7]
+- `prove_git_commit` implements the retained boundary described above. [8]
+- `reconcile_closeout_mutations` implements the retained boundary described above. [9]

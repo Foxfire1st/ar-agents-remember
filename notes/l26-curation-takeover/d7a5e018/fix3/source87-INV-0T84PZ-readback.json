@@ -1,0 +1,229 @@
+{
+  "ok": true,
+  "tokens": 1591,
+  "tokenizer": "tiktoken:o200k_base",
+  "tokenCountExact": true,
+  "operation": "knowledge_read",
+  "state": "view",
+  "view": "invariant",
+  "repositoryId": "7511e917-d5d3-584e-b0ce-44dcad666cfe",
+  "snapshot": "4dce2490ca53b106bbce85eef1599cdddd414d702d2c802d96d553316420726e",
+  "completeWithinDeclaredScope": true,
+  "page": {
+    "threshold": {
+      "tokens": 8000,
+      "tokenizer": "tiktoken:o200k_base"
+    },
+    "memoryTreeId": "1c2335d25e58a653b74171cc142c024897482c79",
+    "selectionPolicy": "knowledge-view-selection",
+    "selectionPolicyVersion": "v1",
+    "manifestDigest": "e801ed088ed10495efe63f21c827d60eed5fb902241dafd108646737158479bf",
+    "codeTreeId": "715ee46e34ef5c421c540314b882c04d1676e08d",
+    "start": 0,
+    "rowsOnPage": 2,
+    "total": 2,
+    "returned": 2,
+    "remaining": 0,
+    "enumerationComplete": true
+  },
+  "payload": {
+    "view": "invariant",
+    "snapshot": {
+      "repository_id": "7511e917-d5d3-584e-b0ce-44dcad666cfe",
+      "schema_version": "ar-knowledge-sqlite/v9",
+      "logical_digest": "4dce2490ca53b106bbce85eef1599cdddd414d702d2c802d96d553316420726e",
+      "context_digest": "348e4e8eac4b33970f00c1634101134211fa701719e23057ed2adf15a29c2f2d"
+    },
+    "counts": {
+      "registered_realizations": {
+        "state": "counted",
+        "value": 892,
+        "reason": null
+      },
+      "registered_families": {
+        "state": "counted",
+        "value": 33,
+        "reason": null
+      },
+      "rows_returned": {
+        "state": "counted",
+        "value": 2,
+        "reason": null
+      },
+      "rows_remaining": {
+        "state": "counted",
+        "value": 0,
+        "reason": null
+      },
+      "facets_omitted": {
+        "state": "not_applicable",
+        "value": null,
+        "reason": "this view returns no facet rows"
+      },
+      "unmapped_changed_paths": {
+        "state": "not_applicable",
+        "value": null,
+        "reason": "this view compares no two exact states"
+      },
+      "ambiguous_references": {
+        "state": "not_applicable",
+        "value": null,
+        "reason": "this view resolves no cited references"
+      },
+      "unresolved_references": {
+        "state": "not_applicable",
+        "value": null,
+        "reason": "this view resolves no cited references"
+      },
+      "dependency_content_identity_mismatches": {
+        "state": "not_applicable",
+        "value": null,
+        "reason": "this view reads no recorded dependency bytes"
+      }
+    },
+    "completeness": {
+      "complete_within_declared_scope": true,
+      "scope": {
+        "snapshot_logical_digest": "4dce2490ca53b106bbce85eef1599cdddd414d702d2c802d96d553316420726e",
+        "recorded_graph": "recorded-envelope-and-generation-1-entities",
+        "traversal_policy": "knowledge-view-selection/v1",
+        "extractors": [
+          "knowledge-view-renderer/1"
+        ]
+      }
+    },
+    "continuation": null,
+    "limitations": [],
+    "ordering_rule_ids": [
+      "ordering.declared-tiebreak"
+    ],
+    "renderer_version": "knowledge-view-renderer/1",
+    "rows": [
+      {
+        "subject": {
+          "record_kind": "realization_claim",
+          "record_id": "73b2a27c-2080-53f9-addd-27d4a1440ac0",
+          "revision_id": "54f35b25-f5f4-51df-b49c-10f1ae29c8d7"
+        },
+        "fact_kind": "realization",
+        "statement": "This owner rereads the intended ref and keeps the native reason for refusal.",
+        "role": "enforcement",
+        "path": "mcp/src/agents_remember/worktrees/modules/git.py",
+        "locator": {
+          "kind": "symbol",
+          "language": "python",
+          "qualified_name": "_move_admitted_ref"
+        },
+        "essential_conditions": [],
+        "conditions_omitted": false,
+        "lifecycle": null,
+        "acceptance_ref": null,
+        "order": {
+          "position": 1,
+          "ordering_input": "stable_ordering",
+          "provenance": {
+            "provenance_class": "mechanical",
+            "authored": null,
+            "rule_id": "consequence.record-payload-byte-equal",
+            "rule_version": 1
+          },
+          "tiebreak_rule_id": "ordering.declared-tiebreak",
+          "tiebreak_rule_version": 1
+        },
+        "provenance": {
+          "provenance_class": "mechanical",
+          "authored": null,
+          "rule_id": "consequence.record-payload-byte-equal",
+          "rule_version": 1
+        }
+      },
+      {
+        "subject": {
+          "record_kind": "invariant_revision",
+          "record_id": "f6eb292b-fb91-521d-87ae-138d07d78315",
+          "revision_id": "54f35b25-f5f4-51df-b49c-10f1ae29c8d7"
+        },
+        "fact_kind": "statement",
+        "statement": "A failed ref update reports a moved branch only if its tip moved and otherwise preserves Git refusal text.",
+        "role": null,
+        "path": null,
+        "locator": null,
+        "essential_conditions": [
+          "The intended ref was re-read after the failure."
+        ],
+        "conditions_omitted": false,
+        "lifecycle": "proposed",
+        "acceptance_ref": null,
+        "order": {
+          "position": 2,
+          "ordering_input": "stable_ordering",
+          "provenance": {
+            "provenance_class": "mechanical",
+            "authored": null,
+            "rule_id": "consequence.record-payload-byte-equal",
+            "rule_version": 1
+          },
+          "tiebreak_rule_id": "ordering.declared-tiebreak",
+          "tiebreak_rule_version": 1
+        },
+        "provenance": {
+          "provenance_class": "mechanical",
+          "authored": null,
+          "rule_id": "consequence.record-payload-byte-equal",
+          "rule_version": 1
+        }
+      }
+    ]
+  },
+  "memoryTree": {
+    "memoryRoot": "/home/firefox/projects/ar-coordination/worktrees/agents-remember/260928-mik-l26-ar/memory-260928-mik-l26",
+    "treeId": "1c2335d25e58a653b74171cc142c024897482c79",
+    "indexState": "complete",
+    "problems": []
+  },
+  "indexComplete": true,
+  "proofs": [
+    {
+      "id": "PRF-9C37W5",
+      "invariant": "INV-0T84PZ",
+      "path": "mcp/tests/test_git_command.py",
+      "anchor": {
+        "blob": "e51073001505f29c70ea36dfad6be4d0e4943b08",
+        "content": "sha256:6155a9c2851d4e18bb4eae72c95b21bba4a5872e5c6f5a0e57ffa38e7f6679bc",
+        "locator": {
+          "kind": "symbol",
+          "name": "PublishTreeCommitGuardTests.test_no_commit_hook_runs_and_a_refusing_ref_transaction_hook_is_reported"
+        },
+        "path": "mcp/tests/test_git_command.py"
+      },
+      "facet": "A refused ref transaction is reported with Git's own text.",
+      "sidecar": "onboarding/mcp/tests/test_git_command.py.json"
+    }
+  ],
+  "currentness": {
+    "codeTree": {
+      "repositoryRoot": "/home/firefox/projects/ar-coordination/worktrees/agents-remember/260928-mik-l26-ar/260928-mik-l26",
+      "treeId": "715ee46e34ef5c421c540314b882c04d1676e08d"
+    },
+    "counts": {
+      "stale": 0,
+      "unverifiable": 0,
+      "unrealized": 0,
+      "current": 1
+    },
+    "invariants": [
+      {
+        "id": "INV-0T84PZ",
+        "state": "current",
+        "entries": []
+      }
+    ],
+    "families": []
+  },
+  "families": [
+    {
+      "id": "FAM-61DY2V",
+      "title": "Gated leaf publication"
+    }
+  ]
+}

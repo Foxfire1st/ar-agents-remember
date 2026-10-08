@@ -1,14 +1,11 @@
 {
   "admission": "legacy-unassessed",
-  "applicability": "Invariant and family selection when reopening a closed leaf from its own recorded comparison.",
+  "applicability": "Historical review resolution after canonical knowledge database retirement.",
   "conditions": [
-    "For a dataset generation of an unconverted repository, the retained knowledge snapshots are readable and contain the selected recorded subject.",
-    "The read resolves the generation-specific guarantee and exact member revision identities.",
-    "A tree comparison is resolved from the tree ids the leaf recorded."
+    "The retained record identifies its comparison format and exact source endpoints."
   ],
   "exclusions": [
-    "Missing or corrupt retained channels remain explicit failures; another dataset cannot satisfy this obligation.",
-    "A historical review does not establish that its authored knowledge was delivered to the published line."
+    "Reopening an unconverted canonical dataset or borrowing today's knowledge to stand for an unavailable operand."
   ],
   "id": "INV-9NCBGQSY",
   "origin": {
@@ -16,9 +13,9 @@
     "legacyId": "cc02559f-d96a-4656-b1a6-53a0797cf303",
     "task": "260921-ICR"
   },
-  "revision": 4,
+  "revision": 5,
   "schema": "ar-invariant/v1",
-  "statement": "Once a repository's official memory line is converted, a closed leaf that recorded only a dataset comparison keeps its code sides and states its knowledge sides as legacy-unavailable, and no database is read for it. Every other recorded comparison keeps the knowledge operand it was frozen on: a leaf that recorded a tree comparison is reopened from its recorded tree ids, and a leaf of an unconverted repository reopened from its own dataset generation still answers a selected invariant or family with that family's authored guarantee and its exact member revisions rather than refusing for want of a dataset.",
+  "statement": "A historical review reopens a recorded tree comparison from its recorded tree ids. A closed leaf that recorded only a canonical dataset comparison preserves its exact source sides and reports its retired knowledge operands as legacy-unavailable without opening their databases.",
   "status": "proposed",
   "supersedes": []
 }

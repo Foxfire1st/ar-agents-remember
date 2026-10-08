@@ -1,0 +1,213 @@
+{
+  "ok": true,
+  "tokens": 1561,
+  "tokenizer": "tiktoken:o200k_base",
+  "tokenCountExact": true,
+  "operation": "knowledge_read",
+  "state": "view",
+  "view": "invariant",
+  "repositoryId": "7511e917-d5d3-584e-b0ce-44dcad666cfe",
+  "snapshot": "8c977db19b168a7bf232904e7d2f16d6c618d7359fbacec2d62439e5ee2e3ce4",
+  "completeWithinDeclaredScope": true,
+  "page": {
+    "threshold": {
+      "tokens": 8000,
+      "tokenizer": "tiktoken:o200k_base"
+    },
+    "memoryTreeId": "caac3d7dcb6f1d83ee2a841b462517cf2a1d995e",
+    "selectionPolicy": "knowledge-view-selection",
+    "selectionPolicyVersion": "v1",
+    "manifestDigest": "a414de1090ebd5f09bc8d2330231e17ddb256ad166fa4888d9c50d76d0d35cc6",
+    "codeTreeId": "bf045a987679cc023f8fdfb8849d28cfcca1adb9",
+    "start": 0,
+    "rowsOnPage": 2,
+    "total": 2,
+    "returned": 2,
+    "remaining": 0,
+    "enumerationComplete": true
+  },
+  "payload": {
+    "view": "invariant",
+    "snapshot": {
+      "repository_id": "7511e917-d5d3-584e-b0ce-44dcad666cfe",
+      "schema_version": "ar-knowledge-sqlite/v9",
+      "logical_digest": "8c977db19b168a7bf232904e7d2f16d6c618d7359fbacec2d62439e5ee2e3ce4",
+      "context_digest": "514d9ec8f94e4c1bb28fc5bfc22ac18b694ae6482a077b504fa1536c49313b00"
+    },
+    "counts": {
+      "registered_realizations": {
+        "state": "counted",
+        "value": 867,
+        "reason": null
+      },
+      "registered_families": {
+        "state": "counted",
+        "value": 31,
+        "reason": null
+      },
+      "rows_returned": {
+        "state": "counted",
+        "value": 2,
+        "reason": null
+      },
+      "rows_remaining": {
+        "state": "counted",
+        "value": 0,
+        "reason": null
+      },
+      "facets_omitted": {
+        "state": "not_applicable",
+        "value": null,
+        "reason": "this view returns no facet rows"
+      },
+      "unmapped_changed_paths": {
+        "state": "not_applicable",
+        "value": null,
+        "reason": "this view compares no two exact states"
+      },
+      "ambiguous_references": {
+        "state": "not_applicable",
+        "value": null,
+        "reason": "this view resolves no cited references"
+      },
+      "unresolved_references": {
+        "state": "not_applicable",
+        "value": null,
+        "reason": "this view resolves no cited references"
+      },
+      "dependency_content_identity_mismatches": {
+        "state": "not_applicable",
+        "value": null,
+        "reason": "this view reads no recorded dependency bytes"
+      }
+    },
+    "completeness": {
+      "complete_within_declared_scope": true,
+      "scope": {
+        "snapshot_logical_digest": "8c977db19b168a7bf232904e7d2f16d6c618d7359fbacec2d62439e5ee2e3ce4",
+        "recorded_graph": "recorded-envelope-and-generation-1-entities",
+        "traversal_policy": "knowledge-view-selection/v1",
+        "extractors": [
+          "knowledge-view-renderer/1"
+        ]
+      }
+    },
+    "continuation": null,
+    "limitations": [],
+    "ordering_rule_ids": [
+      "ordering.declared-tiebreak"
+    ],
+    "renderer_version": "knowledge-view-renderer/1",
+    "rows": [
+      {
+        "subject": {
+          "record_kind": "realization_claim",
+          "record_id": "0d567bba-2a51-517b-8fde-44efd8aaa679",
+          "revision_id": "fa0ed241-a319-5736-8ca6-c9e25b3f8148"
+        },
+        "fact_kind": "realization",
+        "statement": "resolve_published_intent resolves the admitted repository or leaf memory root, refuses an unconverted root as legacy-format, and selects the derived index of the converted root's exact text tree. An index selection or identity failure is reported unusable rather than selecting another memory layer or publishing a canonical database.",
+        "role": "primary-authority",
+        "path": "mcp/src/agents_remember/application/published_intent.py",
+        "locator": {
+          "kind": "symbol",
+          "language": "python",
+          "qualified_name": "resolve_published_intent"
+        },
+        "essential_conditions": [],
+        "conditions_omitted": false,
+        "lifecycle": null,
+        "acceptance_ref": null,
+        "order": {
+          "position": 1,
+          "ordering_input": "stable_ordering",
+          "provenance": {
+            "provenance_class": "mechanical",
+            "authored": null,
+            "rule_id": "consequence.record-payload-byte-equal",
+            "rule_version": 1
+          },
+          "tiebreak_rule_id": "ordering.declared-tiebreak",
+          "tiebreak_rule_version": 1
+        },
+        "provenance": {
+          "provenance_class": "mechanical",
+          "authored": null,
+          "rule_id": "consequence.record-payload-byte-equal",
+          "rule_version": 1
+        }
+      },
+      {
+        "subject": {
+          "record_kind": "invariant_revision",
+          "record_id": "c88cc287-0469-556c-9f42-b742b2377478",
+          "revision_id": "fa0ed241-a319-5736-8ca6-c9e25b3f8148"
+        },
+        "fact_kind": "statement",
+        "statement": "Published intent is selected from the one resolved converted memory root: the official external memory root outside an enclosure and the leaf's memory worktree inside it. Its text records are canonical; reads select the derived index of that exact tree. An unconverted root is refused as legacy-format, and no canonical knowledge database publication destination is selected.",
+        "role": null,
+        "path": null,
+        "locator": null,
+        "essential_conditions": [
+          "The resolved memory root holds knowledge/layout.json.",
+          "The derived index can be built or read for the selected memory tree; failure remains an explicit unusable selection."
+        ],
+        "conditions_omitted": false,
+        "lifecycle": "proposed",
+        "acceptance_ref": null,
+        "order": {
+          "position": 2,
+          "ordering_input": "stable_ordering",
+          "provenance": {
+            "provenance_class": "mechanical",
+            "authored": null,
+            "rule_id": "consequence.record-payload-byte-equal",
+            "rule_version": 1
+          },
+          "tiebreak_rule_id": "ordering.declared-tiebreak",
+          "tiebreak_rule_version": 1
+        },
+        "provenance": {
+          "provenance_class": "mechanical",
+          "authored": null,
+          "rule_id": "consequence.record-payload-byte-equal",
+          "rule_version": 1
+        }
+      }
+    ]
+  },
+  "memoryTree": {
+    "memoryRoot": "/home/firefox/projects/ar-coordination/worktrees/agents-remember/260928-mik-l26-ar/memory-260928-mik-l26",
+    "treeId": "caac3d7dcb6f1d83ee2a841b462517cf2a1d995e",
+    "indexState": "complete",
+    "problems": []
+  },
+  "indexComplete": true,
+  "proofs": [],
+  "currentness": {
+    "codeTree": {
+      "repositoryRoot": "/home/firefox/projects/ar-coordination/worktrees/agents-remember/260928-mik-l26-ar/260928-mik-l26",
+      "treeId": "bf045a987679cc023f8fdfb8849d28cfcca1adb9"
+    },
+    "counts": {
+      "stale": 0,
+      "unverifiable": 0,
+      "unrealized": 0,
+      "current": 1
+    },
+    "invariants": [
+      {
+        "id": "INV-753SKJFF",
+        "state": "current",
+        "entries": []
+      }
+    ],
+    "families": []
+  },
+  "families": [
+    {
+      "id": "FAM-7B6N3Y4Q",
+      "title": "knowledge-write-and-publication-foundation"
+    }
+  ]
+}

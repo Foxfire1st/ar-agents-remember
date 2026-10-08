@@ -1,0 +1,2045 @@
+[
+  {
+    "id": "L26-MR1-K01",
+    "statement": "Producer entries were bulk-promoted into proposed invariants without plausible semantic admission, including current review/freeze/environment state; INV-RYF7BJ is newly authored as a current claim after its finding was fixed and contradicts its own conditions.",
+    "kind": "finding",
+    "target": [
+      {
+        "path": "knowledge/invariants/INV-0RQS65-the-required-plain-directory-premise-is.json",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "knowledge/invariants/INV-MQV6T8-the-admitted-invalid-input-sweep-exposes.json",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "knowledge/invariants/INV-W3FW03-the-current-r26-code-delivery-retires.json",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "knowledge/invariants/INV-RYF7BJ-changed-closeout-recovery-comments-still-carry.json",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "knowledge/invariants/INV-NJT6A9-the-seven-named-closeout-and-recovery.json",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "knowledge/invariants/INV-JFGTZT-the-current-owner-bound-r26-documentation.json",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "knowledge/invariants/INV-5FC4T6-head-text-or-none-and-the.json",
+        "locator": {
+          "kind": "file"
+        }
+      }
+    ],
+    "found_at": [
+      {
+        "path": "notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.memory-r1.md",
+        "locator": null,
+        "commit": null
+      },
+      {
+        "path": "notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.memory-r1.evidence/records-families.md",
+        "locator": null,
+        "commit": null
+      }
+    ],
+    "disposition": "rejected; repair or explicit evidence disposition required",
+    "disposition_source": "notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.memory-r1.md",
+    "evidence": "All 47 new invariants carry one of four repeated admission sentences; all 23 prevents_costly_mistake justifications use the exact generic sentence 'The behavior guards a costly publication, restoration or refusal mistake that the sealed findings proved reachable.' RYF statement says comments still carry review provenance while condition says seven spans removed; current closeout_external.py lines262-279 and closeout_recovery.py lines67-71 show corrected explanations. The W3FW03 scope names corrected 28f8cf17 working diff and later owner phases, although current curator actually completed those phases.",
+    "authority": {
+      "task_document": "260928_maintained-invariant-knowledge/26_retire-the-canonical-database.json"
+    },
+    "resolution": {
+      "state": "curator-repair-authored-pending-original14-fix2-verification",
+      "judgment": "Task-state, fixed-allegation and duplicate claims retired; retained product obligations have construct-specific semantic admission/cost rationale. Original47 statuses/family dispositions are rowwise retained.",
+      "codeTree": "bf045a987679cc023f8fdfb8849d28cfcca1adb9",
+      "sourceChangeSHA": "6b9bcd4f9337189890040ff2be1a50fa0f0b8e2937549bcfcfb7eed2fe3926c1",
+      "targets": [
+        {
+          "path": "knowledge/invariants/INV-0RQS65-the-required-plain-directory-premise-is.json",
+          "authority": "memory",
+          "state": "present",
+          "sha256": "6546ac1925eaabc7c70bfc234f30dbbcdd23345a0f1bbdf24a82be7b52fce8cb"
+        },
+        {
+          "path": "knowledge/invariants/INV-MQV6T8-the-admitted-invalid-input-sweep-exposes.json",
+          "authority": "memory",
+          "state": "present",
+          "sha256": "4b406877458fe0821c19eab02a784950aa0e258c3b391152e92a9b4187f68b90"
+        },
+        {
+          "path": "knowledge/invariants/INV-W3FW03-the-current-r26-code-delivery-retires.json",
+          "authority": "memory",
+          "state": "present",
+          "sha256": "1dc8aedb0bc1ead9f2481352070a473fbb0c7fea6c6caadd04ff51b17c62601a"
+        },
+        {
+          "path": "knowledge/invariants/INV-RYF7BJ-changed-closeout-recovery-comments-still-carry.json",
+          "authority": "memory",
+          "state": "present",
+          "sha256": "7c487b501398d767db28e66595c3928131830742221f682cb6f6bcde1f839a00"
+        },
+        {
+          "path": "knowledge/invariants/INV-NJT6A9-the-seven-named-closeout-and-recovery.json",
+          "authority": "memory",
+          "state": "present",
+          "sha256": "af9105385d4970a50540bb92434f23c50113510fbdbb1c60fde8b27208ac1c53"
+        },
+        {
+          "path": "knowledge/invariants/INV-JFGTZT-the-current-owner-bound-r26-documentation.json",
+          "authority": "memory",
+          "state": "present",
+          "sha256": "8020bb2912ca8e888f3cc3fa761acad801b0432521a2d888e837b26e5573bdd4"
+        },
+        {
+          "path": "knowledge/invariants/INV-5FC4T6-head-text-or-none-and-the.json",
+          "authority": "memory",
+          "state": "present",
+          "sha256": "7cb2fdce4d5218a64e883abd105e31e821ca1ff26b255a9fb76c4230d2a73ab1"
+        }
+      ],
+      "evidenceRefs": [
+        "memory-260928-mik-l26/notes/l26-curation-takeover/d7a5e018/original47-family-examination.json",
+        "memory-260928-mik-l26/notes/l26-curation-takeover/d7a5e018/remaining-record-commit-v3.json"
+      ],
+      "noPredecessorEntryReplaced": true
+    },
+    "validated_at": "2026-10-08T12:26:21.595594+00:00",
+    "record_action": "revise",
+    "supersedes": null
+  },
+  {
+    "id": "L26-MR1-K02",
+    "statement": "Curation creates a second active D18 decision and multiple parallel invariant IDs for the same worker/reviewer obligation, making provenance differences into knowledge identity.",
+    "kind": "finding",
+    "target": [
+      {
+        "path": "knowledge/decisions/DEC-4CTNXE-text-files-are-the-knowledge-source-of-truth.json",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "knowledge/decisions/DEC-YZA7E4-text-files-in-git-are-the-source-of-truth.json",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "knowledge/invariants/INV-0JMW0S-a-plain-retry-lands-after-any.json",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "knowledge/invariants/INV-ZGFZXT-repeated-refused-publications-of-the-same.json",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "knowledge/invariants/INV-0RA5RQ-teardown-detects-a-removed-apsw-hook.json",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "knowledge/invariants/INV-C5TQ6Z-each-test-teardown-detects-and-restores.json",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "knowledge/invariants/INV-54J62R-a-database-event-with-no-repository.json",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "knowledge/invariants/INV-SY5Z3P-frameless-apsw-and-database-file-operations.json",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "knowledge/invariants/INV-765TQN-unpublished-preparation-failures-restore-history-and.json",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "knowledge/invariants/INV-FQ2447-every-remaining-unpublished-ordinary-memory-failure.json",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "knowledge/invariants/INV-N5RBFK-every-failure-before-memory-publication-restores.json",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "knowledge/invariants/INV-9ZBTVA-an-unpublished-direct-landing-refusal-restores.json",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "knowledge/invariants/INV-PNXKPR-a-provably-unpublished-direct-failure-restores.json",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "knowledge/invariants/INV-CKY44N-cleanup-treats-a-companion-its-reviewed.json",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "knowledge/invariants/INV-QB6EZ0-reviewed-protected-cleanup-companions-remain-kept.json",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "knowledge/invariants/INV-MFQW2H-the-static-retirement-check-detects-attached.json",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "knowledge/invariants/INV-QQ6F52-the-sql-reader-recognizes-attach-expressions.json",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "knowledge/invariants/INV-MT82AS-a-knowledge-diff-subdirectory-is-refused.json",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "knowledge/invariants/INV-X23FME-knowledge-diff-refuses-a-subdirectory-supplied.json",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "knowledge/invariants/INV-GBH3RH-derived-index-modules-cannot-touch-retired.json",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "knowledge/invariants/INV-MB73DH-the-guard-states-its-limits-refuses.json",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "knowledge/invariants/INV-HDV88M-publication-binds-the-contract-branch-and.json",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "knowledge/invariants/INV-KTMBMN-closeout-publishes-only-on-the-contract.json",
+        "locator": {
+          "kind": "file"
+        }
+      }
+    ],
+    "found_at": [
+      {
+        "path": "notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.memory-r1.md",
+        "locator": null,
+        "commit": null
+      },
+      {
+        "path": "notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.memory-r1.evidence/records-families.md",
+        "locator": null,
+        "commit": null
+      }
+    ],
+    "disposition": "rejected; repair or explicit evidence disposition required",
+    "disposition_source": "notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.memory-r1.md",
+    "evidence": "DEC-4CTNXE recreates the same chosen text/Git and rejected canonical database, same developer D18 and same ASM-HDB5GQ reconsideration already held by unchanged DEC-YZA7E4@2. The ten invariant clusters bind the same behavior to the same or constituent realization owners; reviewer counterparts frequently add no proof where the worker record already has a first-class proof. Neither decision supersedes the other.",
+    "authority": {
+      "task_document": "260928_maintained-invariant-knowledge/26_retire-the-canonical-database.json"
+    },
+    "resolution": {
+      "state": "curator-repair-authored-pending-original14-fix2-verification",
+      "judgment": "Existing D18 decision reused; parallel D18 and duplicate new obligations retired with original IDs and producer evidence preserved. Identity is resolved by semantic guarantee, not shared path.",
+      "codeTree": "bf045a987679cc023f8fdfb8849d28cfcca1adb9",
+      "sourceChangeSHA": "6b9bcd4f9337189890040ff2be1a50fa0f0b8e2937549bcfcfb7eed2fe3926c1",
+      "targets": [
+        {
+          "path": "knowledge/decisions/DEC-4CTNXE-text-files-are-the-knowledge-source-of-truth.json",
+          "authority": "memory",
+          "state": "present",
+          "sha256": "04efa58f2a7abd7b59701b401fa1551f4612b0996e6f43fde9842f8cec52edc9"
+        },
+        {
+          "path": "knowledge/decisions/DEC-YZA7E4-text-files-in-git-are-the-source-of-truth.json",
+          "authority": "memory",
+          "state": "present",
+          "sha256": "5891439670d601191f92c69880908cf4ba7f4fc729263b2db468e03f6fe1b5e6"
+        },
+        {
+          "path": "knowledge/invariants/INV-0JMW0S-a-plain-retry-lands-after-any.json",
+          "authority": "memory",
+          "state": "present",
+          "sha256": "48e1b4b0c07cb628fce24c3eb1542cac54a0ad8e8775fe1456b8c7cd133abfc0"
+        },
+        {
+          "path": "knowledge/invariants/INV-ZGFZXT-repeated-refused-publications-of-the-same.json",
+          "authority": "memory",
+          "state": "present",
+          "sha256": "efa9a7074599cca73f5b1636f8e759d01e3c7b686712efcd84b84cb4278d9b01"
+        },
+        {
+          "path": "knowledge/invariants/INV-0RA5RQ-teardown-detects-a-removed-apsw-hook.json",
+          "authority": "memory",
+          "state": "present",
+          "sha256": "e5883862e6a1946457ca7f004cdbbfa347e3e321480fdbc6681e93a0b752ec2e"
+        },
+        {
+          "path": "knowledge/invariants/INV-C5TQ6Z-each-test-teardown-detects-and-restores.json",
+          "authority": "memory",
+          "state": "present",
+          "sha256": "1acf80fc1f2bcc8ecffaa47dee23be64bc77421ef0f08a90a2e2667e97830f52"
+        },
+        {
+          "path": "knowledge/invariants/INV-54J62R-a-database-event-with-no-repository.json",
+          "authority": "memory",
+          "state": "present",
+          "sha256": "f2e216c5da31f2e20eae39614e9e48e927d0b1c53db06648c51a8871b28baf2d"
+        },
+        {
+          "path": "knowledge/invariants/INV-SY5Z3P-frameless-apsw-and-database-file-operations.json",
+          "authority": "memory",
+          "state": "present",
+          "sha256": "7857bf5ce9f8908452571f70437a2428a9e9543c65854f6f5e962d7a7bf53a5a"
+        },
+        {
+          "path": "knowledge/invariants/INV-765TQN-unpublished-preparation-failures-restore-history-and.json",
+          "authority": "memory",
+          "state": "present",
+          "sha256": "a71e9adeee5782b988e76476b582961559eecdcc7d330d867f074742edc4c2f3"
+        },
+        {
+          "path": "knowledge/invariants/INV-FQ2447-every-remaining-unpublished-ordinary-memory-failure.json",
+          "authority": "memory",
+          "state": "present",
+          "sha256": "8f13232abe60ca7cbb811b4fd128708c1c8adb243e868e775554c4c8c0d9df47"
+        },
+        {
+          "path": "knowledge/invariants/INV-N5RBFK-every-failure-before-memory-publication-restores.json",
+          "authority": "memory",
+          "state": "present",
+          "sha256": "6d5e66447944b476aa3cf0e8dadbb1bca2f162c3a00fc496d8d2391f949a1462"
+        },
+        {
+          "path": "knowledge/invariants/INV-9ZBTVA-an-unpublished-direct-landing-refusal-restores.json",
+          "authority": "memory",
+          "state": "present",
+          "sha256": "c34d2a7f108b04ab93b150f558bb9675e20dfba52115ca2e57eea857bc75c8c7"
+        },
+        {
+          "path": "knowledge/invariants/INV-PNXKPR-a-provably-unpublished-direct-failure-restores.json",
+          "authority": "memory",
+          "state": "present",
+          "sha256": "d7f7a03e8d87c94a36fb1e989e8b0fa340f1d3a716fff95b713732af1d9c51de"
+        },
+        {
+          "path": "knowledge/invariants/INV-CKY44N-cleanup-treats-a-companion-its-reviewed.json",
+          "authority": "memory",
+          "state": "present",
+          "sha256": "f8002a9508a2360410d34a4060d9e061154ad51f493608f8233c3f304e8f6565"
+        },
+        {
+          "path": "knowledge/invariants/INV-QB6EZ0-reviewed-protected-cleanup-companions-remain-kept.json",
+          "authority": "memory",
+          "state": "present",
+          "sha256": "8735f606acb18bc71fa367b958d8e03eb2477563d71c0876da5c9ceac92f02b9"
+        },
+        {
+          "path": "knowledge/invariants/INV-MFQW2H-the-static-retirement-check-detects-attached.json",
+          "authority": "memory",
+          "state": "present",
+          "sha256": "ab731fab8068c5d98054f054eeb987315858041875af894b6e24dd75bb258a6f"
+        },
+        {
+          "path": "knowledge/invariants/INV-QQ6F52-the-sql-reader-recognizes-attach-expressions.json",
+          "authority": "memory",
+          "state": "present",
+          "sha256": "45506bfb1a9360d0d552607f3bfefdc6745d751a5cfc78c96f608c8abce1163b"
+        },
+        {
+          "path": "knowledge/invariants/INV-MT82AS-a-knowledge-diff-subdirectory-is-refused.json",
+          "authority": "memory",
+          "state": "present",
+          "sha256": "877dbc4e4c3661d1ceed3ef50394fd4266dadfee42d4a541cc52ba84530cceb5"
+        },
+        {
+          "path": "knowledge/invariants/INV-X23FME-knowledge-diff-refuses-a-subdirectory-supplied.json",
+          "authority": "memory",
+          "state": "present",
+          "sha256": "53c0ef6426413d84927e5908f24c7bfe64de877cf8e6d9d17f020fa08d7497f5"
+        },
+        {
+          "path": "knowledge/invariants/INV-GBH3RH-derived-index-modules-cannot-touch-retired.json",
+          "authority": "memory",
+          "state": "present",
+          "sha256": "29b8edb17686f214156626ce11268cd3d0fa591a378c1274f03aee9e740727a3"
+        },
+        {
+          "path": "knowledge/invariants/INV-MB73DH-the-guard-states-its-limits-refuses.json",
+          "authority": "memory",
+          "state": "present",
+          "sha256": "f05a8b0cd8b775e51d54f2b483b3bebb4c8639fc3c90ac19de76853d2b2b5e73"
+        },
+        {
+          "path": "knowledge/invariants/INV-HDV88M-publication-binds-the-contract-branch-and.json",
+          "authority": "memory",
+          "state": "present",
+          "sha256": "ef2b4a9af5f596d1a0df41a2b63feced6ba8796a911457df5040a20f32202a03"
+        },
+        {
+          "path": "knowledge/invariants/INV-KTMBMN-closeout-publishes-only-on-the-contract.json",
+          "authority": "memory",
+          "state": "present",
+          "sha256": "a1a09afd755ca6d8c10e8cde468f8053cb2cad601bacca7c7420030f824573c0"
+        }
+      ],
+      "evidenceRefs": [
+        "memory-260928-mik-l26/notes/l26-curation-takeover/d7a5e018/remaining-record-commit-v3.json",
+        "memory-260928-mik-l26/notes/l26-curation-takeover/d7a5e018/original47-family-examination.json"
+      ],
+      "noPredecessorEntryReplaced": true
+    },
+    "validated_at": "2026-10-08T12:26:21.595594+00:00",
+    "record_action": "revise",
+    "supersedes": null
+  },
+  {
+    "id": "L26-MR1-K03",
+    "statement": "Newly asserted converted-memory scope and rehomed realizations preserve database-era promises that their candidate source does not implement.",
+    "kind": "finding",
+    "target": [
+      {
+        "path": "knowledge/invariants/INV-4N43MNN2-L45-S5.json",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "knowledge/invariants/INV-TPDQGXYK-ICR37-DATA-5.json",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "knowledge/invariants/INV-8Q6DZTDB-ICR37-DATA-1.json",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "knowledge/invariants/INV-1XKX9ERN-ICR30-I-1.json",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "knowledge/invariants/INV-753SKJFF-ICR30-I-2.json",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "knowledge/families/FAM-7B6N3Y4Q-knowledge-write-and-publication-foundation.json",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "knowledge/families/FAM-KQQE74ZT-Authored-realization-explanation.json",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "knowledge/families/FAM-SK1BFPE2-Explicit-invariant-meaning.json",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "knowledge/families/FAM-XZ5BR65G-Reproducible-review-history.json",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "mcp/src/agents_remember/application/knowledge_writer/authoring.py.json",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "mcp/src/agents_remember/application/review_committed_leaf.py.json",
+        "locator": {
+          "kind": "file"
+        }
+      }
+    ],
+    "found_at": [
+      {
+        "path": "notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.memory-r1.md",
+        "locator": null,
+        "commit": null
+      },
+      {
+        "path": "notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.memory-r1.evidence/records-families.md",
+        "locator": null,
+        "commit": null
+      }
+    ],
+    "disposition": "rejected; repair or explicit evidence disposition required",
+    "disposition_source": "notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.memory-r1.md",
+    "evidence": "Authoring._revision (authoring.py283-308) increments the existing record's revision by comparing meaning. It never enforces allocation_content_conflict, validates allocation journals or requires a successor key. New RLZ-P1QZR4 and RLZ-WQH6MH falsely attribute those mechanisms to it. INV-8Q6DZTDB still conditions its meaning on each operand read from knowledge.sqlite; resolve_committed_leaf_review53-106 and module1-4 explicitly preserve historical source/evidence with canonical datasets unavailable. CLI knowledge_ingest.run107-110 and knowledge_bootstrap._run183-201 refuse unconverted trees, contradicting INV-1XKX9ERN and FAM-7B6N3Y4Q's dual writer. published_intent.resolve_published_intent168-179 refuses legacy while converted selection200-207 is recorded638+, contradicting INV-753SKJFF. All 17 changed invariants changed only exclusions+revision, so the identical appended exclusion is not a substantive rewrite of these promises.",
+    "authority": {
+      "task_document": "260928_maintained-invariant-knowledge/26_retire-the-canonical-database.json"
+    },
+    "resolution": {
+      "state": "curator-repair-authored-pending-original14-fix2-verification",
+      "judgment": "Converted file-writer/read/legacy-review meanings replace false canonical dataset claims; allocation-journal/conflict promises retired, actual converted-only admission and unavailable historical halves recorded. Family guarantees and current/retired siblings read back.",
+      "codeTree": "bf045a987679cc023f8fdfb8849d28cfcca1adb9",
+      "sourceChangeSHA": "6b9bcd4f9337189890040ff2be1a50fa0f0b8e2937549bcfcfb7eed2fe3926c1",
+      "targets": [
+        {
+          "path": "knowledge/invariants/INV-4N43MNN2-L45-S5.json",
+          "authority": "memory",
+          "state": "present",
+          "sha256": "2709e44fbf4e4cab154e9fef4374197d9442c25113f42f93fbc39706fc65e7cd"
+        },
+        {
+          "path": "knowledge/invariants/INV-TPDQGXYK-ICR37-DATA-5.json",
+          "authority": "memory",
+          "state": "present",
+          "sha256": "ce15d267617d2d33e5670fd6dd5f831ed2acee1a0b375f82f22be81ead53d972"
+        },
+        {
+          "path": "knowledge/invariants/INV-8Q6DZTDB-ICR37-DATA-1.json",
+          "authority": "memory",
+          "state": "present",
+          "sha256": "04458f956528e73c3eedd7999fe106c05a6b31dea31be61d68ed1b879bb422c9"
+        },
+        {
+          "path": "knowledge/invariants/INV-1XKX9ERN-ICR30-I-1.json",
+          "authority": "memory",
+          "state": "present",
+          "sha256": "9efae06e09b244645111f85ed86dc62ae01a40687c3891d5da8106f91eb35d66"
+        },
+        {
+          "path": "knowledge/invariants/INV-753SKJFF-ICR30-I-2.json",
+          "authority": "memory",
+          "state": "present",
+          "sha256": "a43d6730b9872bd1127f5612038a564e49393a6ebec1f125801157eab2eaef72"
+        },
+        {
+          "path": "knowledge/families/FAM-7B6N3Y4Q-knowledge-write-and-publication-foundation.json",
+          "authority": "memory",
+          "state": "present",
+          "sha256": "a145d0d2095f37b4775b170de72f35679bf51efe1213cfc666385aa72085525e"
+        },
+        {
+          "path": "knowledge/families/FAM-KQQE74ZT-Authored-realization-explanation.json",
+          "authority": "memory",
+          "state": "present",
+          "sha256": "8e1b4d2c80ec6d4b5295a24d498168f61fa65e65521b04ea7bd1c0ab57baf01d"
+        },
+        {
+          "path": "knowledge/families/FAM-SK1BFPE2-Explicit-invariant-meaning.json",
+          "authority": "memory",
+          "state": "present",
+          "sha256": "4f69fefbff587b5c767367f56faa8871ad4f3e66a7ae31433f162ad2994d24d1"
+        },
+        {
+          "path": "knowledge/families/FAM-XZ5BR65G-Reproducible-review-history.json",
+          "authority": "memory",
+          "state": "present",
+          "sha256": "6639ed149fe0c82a3944367ee89ec83fc6ab905c787a4b92313c178b7179fb4e"
+        },
+        {
+          "path": "mcp/src/agents_remember/application/knowledge_writer/authoring.py.json",
+          "authority": "code",
+          "state": "absent-or-historical",
+          "sha256": null
+        },
+        {
+          "path": "mcp/src/agents_remember/application/review_committed_leaf.py.json",
+          "authority": "code",
+          "state": "absent-or-historical",
+          "sha256": null
+        }
+      ],
+      "evidenceRefs": [
+        "memory-260928-mik-l26/notes/l26-curation-takeover/d7a5e018/remaining-record-commit-v3.json",
+        "memory-260928-mik-l26/notes/l26-curation-takeover/d7a5e018/bootstrap-authority-scope.handoff.json",
+        "memory-260928-mik-l26/notes/l26-curation-takeover/d7a5e018/source107-history-commit-v2.json"
+      ],
+      "noPredecessorEntryReplaced": true
+    },
+    "validated_at": "2026-10-08T12:26:21.595594+00:00",
+    "record_action": "revise",
+    "supersedes": null
+  },
+  {
+    "id": "L26-MR1-K04",
+    "statement": "The history declares a moved live sweep-timeout guarantee retired as database machinery, and all 11 rows claiming retirement leave their invariant records proposed.",
+    "kind": "finding",
+    "target": [
+      {
+        "path": "knowledge/history/260928-MIK-L26.json",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "knowledge/invariants/INV-W4XGR4-the-existing-sweep-awaits-initialization-response.json",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "knowledge/families/FAM-TG3WK0-the-repaired-tests-cannot-block-their-own-combined-run.json",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "knowledge/invariants/INV-B3GYVZTJ-ICR37-DATA2-B01.json",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "knowledge/invariants/INV-6080HQF9-ICR-L39-R6.json",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "knowledge/invariants/INV-9BH2BNCT-ICR-L41-C5.json",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "knowledge/invariants/INV-HXAH9APB-ICR-L39-R3.json",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "knowledge/invariants/INV-09FC73JC-ICR34-I-1.json",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "knowledge/invariants/INV-CDB4MZW4-ICR37-DATA2-B03-SOURCE.json",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "knowledge/invariants/INV-2A00CD6G-ICR-L39-R5.json",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "knowledge/invariants/INV-HKS46WB3-ICR37-DATA2-B03-PROGRESSION.json",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "knowledge/invariants/INV-AGA5HG4K-ICR-L39-R1.json",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "knowledge/invariants/INV-T9M21FB4-ICR37-DATA-3.json",
+        "locator": {
+          "kind": "file"
+        }
+      }
+    ],
+    "found_at": [
+      {
+        "path": "notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.memory-r1.md",
+        "locator": null,
+        "commit": null
+      },
+      {
+        "path": "notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.memory-r1.evidence/records-families.md",
+        "locator": null,
+        "commit": null
+      }
+    ],
+    "disposition": "rejected; repair or explicit evidence disposition required",
+    "disposition_source": "notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.memory-r1.md",
+    "evidence": "ROW-204RN8 removes three W4XGR4 attachments and says every realization sat on retired database machinery. Current tool_entry_point_world.py34-35 and341-370 retain the 60-second phase budgets and timeout refusal; test_tool_entry_point_controls.py65+ retains the never-answer control. FAM-TG3WK0 still contains W4XGR4 and ROW-GTQ1AH claims all three members preserve the joint guarantee. All 11 deleted/effect=retire rows retain proposed records at the same revision/status as K_B; their 'obligation is retired' reasons and family pruning do not describe record truth.",
+    "authority": {
+      "task_document": "260928_maintained-invariant-knowledge/26_retire-the-canonical-database.json"
+    },
+    "resolution": {
+      "state": "curator-repair-authored-pending-original14-fix2-verification",
+      "judgment": "W4XGR4 retains moved live timeout/proof owners; genuinely retired obligations carry retired record states and deleted rows. Current history reanchoring retains the exact removed-entry before-halves and added live entries.",
+      "codeTree": "bf045a987679cc023f8fdfb8849d28cfcca1adb9",
+      "sourceChangeSHA": "6b9bcd4f9337189890040ff2be1a50fa0f0b8e2937549bcfcfb7eed2fe3926c1",
+      "targets": [
+        {
+          "path": "knowledge/history/260928-MIK-L26.json",
+          "authority": "memory",
+          "state": "present",
+          "sha256": "e5a016fd45f36a46235033492e56a629b5683efca13c6487407cf1937b37631b"
+        },
+        {
+          "path": "knowledge/invariants/INV-W4XGR4-the-existing-sweep-awaits-initialization-response.json",
+          "authority": "memory",
+          "state": "present",
+          "sha256": "c415908724b86b9ba4209119e90553cf112d01d445ab940be8271baa241a25c3"
+        },
+        {
+          "path": "knowledge/families/FAM-TG3WK0-the-repaired-tests-cannot-block-their-own-combined-run.json",
+          "authority": "memory",
+          "state": "present",
+          "sha256": "95fe784d3cff5238665c981d29ed8eb61e585303db1a9a3c9fe5970caa8eb617"
+        },
+        {
+          "path": "knowledge/invariants/INV-B3GYVZTJ-ICR37-DATA2-B01.json",
+          "authority": "memory",
+          "state": "present",
+          "sha256": "5ea62f58253d77da169dc18082a7e1a0beb85efb8ce33a71ec20428b0de49e60"
+        },
+        {
+          "path": "knowledge/invariants/INV-6080HQF9-ICR-L39-R6.json",
+          "authority": "memory",
+          "state": "present",
+          "sha256": "b087fa3705d0012b9efa35273f3b886a848c20c8db7ede3c3df9d4bf28540fe4"
+        },
+        {
+          "path": "knowledge/invariants/INV-9BH2BNCT-ICR-L41-C5.json",
+          "authority": "memory",
+          "state": "present",
+          "sha256": "7c670c2f6c59789db347fcc65c93dfe9f2c5ba3245b377f9ce29a8bbe94aeb38"
+        },
+        {
+          "path": "knowledge/invariants/INV-HXAH9APB-ICR-L39-R3.json",
+          "authority": "memory",
+          "state": "present",
+          "sha256": "3e701084ccff89aaa0c1ee12c00074fb01ee5e0cfa5216e33805c57fea5c5ea4"
+        },
+        {
+          "path": "knowledge/invariants/INV-09FC73JC-ICR34-I-1.json",
+          "authority": "memory",
+          "state": "present",
+          "sha256": "bff12875427b1d6d9d1613161512d9154c8cd9e1ae72dda695c3e4ea20ffd789"
+        },
+        {
+          "path": "knowledge/invariants/INV-CDB4MZW4-ICR37-DATA2-B03-SOURCE.json",
+          "authority": "memory",
+          "state": "present",
+          "sha256": "e36328184487ebc2545b922a0776232b12799d9fad14012d6cd409dcc66a53e7"
+        },
+        {
+          "path": "knowledge/invariants/INV-2A00CD6G-ICR-L39-R5.json",
+          "authority": "memory",
+          "state": "present",
+          "sha256": "f4f50a32bf076071d89be74bcadf4b9dc6e92fb85eac0987a5e05dad5aa49784"
+        },
+        {
+          "path": "knowledge/invariants/INV-HKS46WB3-ICR37-DATA2-B03-PROGRESSION.json",
+          "authority": "memory",
+          "state": "present",
+          "sha256": "2eb127f42cdd7d21882bb03e62eae2b1a29c43c6ca103230f5e9e56f2560d32e"
+        },
+        {
+          "path": "knowledge/invariants/INV-AGA5HG4K-ICR-L39-R1.json",
+          "authority": "memory",
+          "state": "present",
+          "sha256": "e2bf65afed0883be306716b421458ca3915fd86325fbe1a1827e5e0412243171"
+        },
+        {
+          "path": "knowledge/invariants/INV-T9M21FB4-ICR37-DATA-3.json",
+          "authority": "memory",
+          "state": "present",
+          "sha256": "3c8327878de13d431cef272577de768ffcaac1c84168d27e5a54b6997a493ab9"
+        }
+      ],
+      "evidenceRefs": [
+        "memory-260928-mik-l26/notes/l26-curation-takeover/d7a5e018/source107-history-commit-v2.json",
+        "memory-260928-mik-l26/notes/l26-curation-takeover/d7a5e018/remaining-record-commit-v3.json"
+      ],
+      "noPredecessorEntryReplaced": true
+    },
+    "validated_at": "2026-10-08T12:26:21.595594+00:00",
+    "record_action": "revise",
+    "supersedes": null
+  },
+  {
+    "id": "L26-MR1-K05",
+    "statement": "The full curation pass leaves all 47 new scoped obligations unexamined for family coverage, so no semantic judgment supports their family plane.",
+    "kind": "finding",
+    "target": [
+      {
+        "path": "knowledge/invariants/INV-0JMW0S-a-plain-retry-lands-after-any.json",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "knowledge/invariants/INV-0RA5RQ-teardown-detects-a-removed-apsw-hook.json",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "knowledge/invariants/INV-0RQS65-the-required-plain-directory-premise-is.json",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "knowledge/invariants/INV-0T84PZ-a-failed-ref-update-reports-a.json",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "knowledge/invariants/INV-0XMNQZ-only-a-lock-error-that-would.json",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "knowledge/invariants/INV-1BBPF3-bootstrap-foundation-examples-name-family-invariant.json",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "knowledge/invariants/INV-2Q8RPR-lifecycle-commit-publication-runs-no-commit.json",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "knowledge/invariants/INV-54J62R-a-database-event-with-no-repository.json",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "knowledge/invariants/INV-5FC4T6-head-text-or-none-and-the.json",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "knowledge/invariants/INV-738PC9-a-converted-git-memory-input-never.json",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "knowledge/invariants/INV-765TQN-unpublished-preparation-failures-restore-history-and.json",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "knowledge/invariants/INV-89A5AN-publication-and-refusal-preserve-index-flags.json",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "knowledge/invariants/INV-9ZBTVA-an-unpublished-direct-landing-refusal-restores.json",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "knowledge/invariants/INV-ANKPPE-an-unfinished-native-action-is-refused.json",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "knowledge/invariants/INV-BEYEV2-take-back-retains-an-expected-old.json",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "knowledge/invariants/INV-C3TYB0-cleanup-protects-each-companion-against-tracking.json",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "knowledge/invariants/INV-C5TQ6Z-each-test-teardown-detects-and-restores.json",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "knowledge/invariants/INV-CKY44N-cleanup-treats-a-companion-its-reviewed.json",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "knowledge/invariants/INV-FQ2447-every-remaining-unpublished-ordinary-memory-failure.json",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "knowledge/invariants/INV-FYZQK0-a-switched-head-plus-failed-expected.json",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "knowledge/invariants/INV-G0Y4VR-the-publication-message-matches-real-git.json",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "knowledge/invariants/INV-GBH3RH-derived-index-modules-cannot-touch-retired.json",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "knowledge/invariants/INV-GSEMMW-publication-preserves-the-ruled-message-index.json",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "knowledge/invariants/INV-HDV88M-publication-binds-the-contract-branch-and.json",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "knowledge/invariants/INV-J6PAD2-tests-catch-loss-of-expected-old.json",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "knowledge/invariants/INV-JFGTZT-the-current-owner-bound-r26-documentation.json",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "knowledge/invariants/INV-JM868W-knowledge-diff-is-bounded-names-omissions.json",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "knowledge/invariants/INV-JZD1F5-the-closeout-docstring-states-that-a.json",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "knowledge/invariants/INV-K69R3M-bootstrap-describes-complete-empty-complete-authored.json",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "knowledge/invariants/INV-KTMBMN-closeout-publishes-only-on-the-contract.json",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "knowledge/invariants/INV-MB73DH-the-guard-states-its-limits-refuses.json",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "knowledge/invariants/INV-MFQW2H-the-static-retirement-check-detects-attached.json",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "knowledge/invariants/INV-MQV6T8-the-admitted-invalid-input-sweep-exposes.json",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "knowledge/invariants/INV-MT82AS-a-knowledge-diff-subdirectory-is-refused.json",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "knowledge/invariants/INV-N5RBFK-every-failure-before-memory-publication-restores.json",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "knowledge/invariants/INV-NJT6A9-the-seven-named-closeout-and-recovery.json",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "knowledge/invariants/INV-PNXKPR-a-provably-unpublished-direct-failure-restores.json",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "knowledge/invariants/INV-PPGGTW-knowledge-diff-stays-within-the-knowledge.json",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "knowledge/invariants/INV-QB6EZ0-reviewed-protected-cleanup-companions-remain-kept.json",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "knowledge/invariants/INV-QQ6F52-the-sql-reader-recognizes-attach-expressions.json",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "knowledge/invariants/INV-RYF7BJ-changed-closeout-recovery-comments-still-carry.json",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "knowledge/invariants/INV-SY5Z3P-frameless-apsw-and-database-file-operations.json",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "knowledge/invariants/INV-W3FW03-the-current-r26-code-delivery-retires.json",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "knowledge/invariants/INV-X23FME-knowledge-diff-refuses-a-subdirectory-supplied.json",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "knowledge/invariants/INV-YJZKYC-unconverted-review-descriptions-state-source-only.json",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "knowledge/invariants/INV-YZ45D7-publish-tree-commit-binds-the-admitted.json",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "knowledge/invariants/INV-ZGFZXT-repeated-refused-publications-of-the-same.json",
+        "locator": {
+          "kind": "file"
+        }
+      }
+    ],
+    "found_at": [
+      {
+        "path": "notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.memory-r1.md",
+        "locator": null,
+        "commit": null
+      },
+      {
+        "path": "notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.memory-r1.evidence/records-families.md",
+        "locator": null,
+        "commit": null
+      }
+    ],
+    "disposition": "rejected; repair or explicit evidence disposition required",
+    "disposition_source": "notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.memory-r1.md",
+    "evidence": "Curation operation113-123 requires a decision for every scoped obligation whether evidence and project intent justify a joint obligation. Curator report97-100 explicitly states all47 new producer invariants were not examined for membership. Independently, no new invariant ID appears in any of the 22 family member sets. That mechanical absence neither proves family-free nor supplies the required judgment.",
+    "authority": {
+      "task_document": "260928_maintained-invariant-knowledge/26_retire-the-canonical-database.json"
+    },
+    "resolution": {
+      "state": "curator-repair-authored-pending-original14-fix2-verification",
+      "judgment": "All47 original obligations examined:18 retired temporary/duplicate obligations,20 memberships,9 deliberate no-family outcomes with individual bases; exact family revisions/siblings retained in file records and history.",
+      "codeTree": "bf045a987679cc023f8fdfb8849d28cfcca1adb9",
+      "sourceChangeSHA": "6b9bcd4f9337189890040ff2be1a50fa0f0b8e2937549bcfcfb7eed2fe3926c1",
+      "targets": [
+        {
+          "path": "knowledge/invariants/INV-0JMW0S-a-plain-retry-lands-after-any.json",
+          "authority": "memory",
+          "state": "present",
+          "sha256": "48e1b4b0c07cb628fce24c3eb1542cac54a0ad8e8775fe1456b8c7cd133abfc0"
+        },
+        {
+          "path": "knowledge/invariants/INV-0RA5RQ-teardown-detects-a-removed-apsw-hook.json",
+          "authority": "memory",
+          "state": "present",
+          "sha256": "e5883862e6a1946457ca7f004cdbbfa347e3e321480fdbc6681e93a0b752ec2e"
+        },
+        {
+          "path": "knowledge/invariants/INV-0RQS65-the-required-plain-directory-premise-is.json",
+          "authority": "memory",
+          "state": "present",
+          "sha256": "6546ac1925eaabc7c70bfc234f30dbbcdd23345a0f1bbdf24a82be7b52fce8cb"
+        },
+        {
+          "path": "knowledge/invariants/INV-0T84PZ-a-failed-ref-update-reports-a.json",
+          "authority": "memory",
+          "state": "present",
+          "sha256": "dd5c78c0bac3e3775dec53bcc6866c4cc2aa9a3ba1849301ce42f3e88fdaf0ed"
+        },
+        {
+          "path": "knowledge/invariants/INV-0XMNQZ-only-a-lock-error-that-would.json",
+          "authority": "memory",
+          "state": "present",
+          "sha256": "743363b8c7ad7dcbf3f713c506dee8e8706deb807852018afae76d98c7c7f8aa"
+        },
+        {
+          "path": "knowledge/invariants/INV-1BBPF3-bootstrap-foundation-examples-name-family-invariant.json",
+          "authority": "memory",
+          "state": "present",
+          "sha256": "a7f890b11363616221393543319c3cd1bfa234726a5d39d4d31f010591b80621"
+        },
+        {
+          "path": "knowledge/invariants/INV-2Q8RPR-lifecycle-commit-publication-runs-no-commit.json",
+          "authority": "memory",
+          "state": "present",
+          "sha256": "f519f00fb1d3b44265493ebf77ac3854ee76da755d17b554c4089ca26c1f292c"
+        },
+        {
+          "path": "knowledge/invariants/INV-54J62R-a-database-event-with-no-repository.json",
+          "authority": "memory",
+          "state": "present",
+          "sha256": "f2e216c5da31f2e20eae39614e9e48e927d0b1c53db06648c51a8871b28baf2d"
+        },
+        {
+          "path": "knowledge/invariants/INV-5FC4T6-head-text-or-none-and-the.json",
+          "authority": "memory",
+          "state": "present",
+          "sha256": "7cb2fdce4d5218a64e883abd105e31e821ca1ff26b255a9fb76c4230d2a73ab1"
+        },
+        {
+          "path": "knowledge/invariants/INV-738PC9-a-converted-git-memory-input-never.json",
+          "authority": "memory",
+          "state": "present",
+          "sha256": "bd8a38d06b9c47aea0f38ad113c07f61d6552a9b63f6b83d2d1fb99c99e1b11e"
+        },
+        {
+          "path": "knowledge/invariants/INV-765TQN-unpublished-preparation-failures-restore-history-and.json",
+          "authority": "memory",
+          "state": "present",
+          "sha256": "a71e9adeee5782b988e76476b582961559eecdcc7d330d867f074742edc4c2f3"
+        },
+        {
+          "path": "knowledge/invariants/INV-89A5AN-publication-and-refusal-preserve-index-flags.json",
+          "authority": "memory",
+          "state": "present",
+          "sha256": "ac804b823d912f785375c41f75582415c6fbc3b2c9536ce85482232125f19fbc"
+        },
+        {
+          "path": "knowledge/invariants/INV-9ZBTVA-an-unpublished-direct-landing-refusal-restores.json",
+          "authority": "memory",
+          "state": "present",
+          "sha256": "c34d2a7f108b04ab93b150f558bb9675e20dfba52115ca2e57eea857bc75c8c7"
+        },
+        {
+          "path": "knowledge/invariants/INV-ANKPPE-an-unfinished-native-action-is-refused.json",
+          "authority": "memory",
+          "state": "present",
+          "sha256": "31d41969fc3dbffd0f70730c20dd6ca9e12330c6789a0906a2d685c0072a2a6c"
+        },
+        {
+          "path": "knowledge/invariants/INV-BEYEV2-take-back-retains-an-expected-old.json",
+          "authority": "memory",
+          "state": "present",
+          "sha256": "6cb0a2a2004643cd05c0c84e98805d4c884a415cf8764ea0c619536835ca6f80"
+        },
+        {
+          "path": "knowledge/invariants/INV-C3TYB0-cleanup-protects-each-companion-against-tracking.json",
+          "authority": "memory",
+          "state": "present",
+          "sha256": "e157b42876b089bed2a890ed350f774f416bf843925761dfdf0abeec9c412dfc"
+        },
+        {
+          "path": "knowledge/invariants/INV-C5TQ6Z-each-test-teardown-detects-and-restores.json",
+          "authority": "memory",
+          "state": "present",
+          "sha256": "1acf80fc1f2bcc8ecffaa47dee23be64bc77421ef0f08a90a2e2667e97830f52"
+        },
+        {
+          "path": "knowledge/invariants/INV-CKY44N-cleanup-treats-a-companion-its-reviewed.json",
+          "authority": "memory",
+          "state": "present",
+          "sha256": "f8002a9508a2360410d34a4060d9e061154ad51f493608f8233c3f304e8f6565"
+        },
+        {
+          "path": "knowledge/invariants/INV-FQ2447-every-remaining-unpublished-ordinary-memory-failure.json",
+          "authority": "memory",
+          "state": "present",
+          "sha256": "8f13232abe60ca7cbb811b4fd128708c1c8adb243e868e775554c4c8c0d9df47"
+        },
+        {
+          "path": "knowledge/invariants/INV-FYZQK0-a-switched-head-plus-failed-expected.json",
+          "authority": "memory",
+          "state": "present",
+          "sha256": "9a28389c027f01ff202f544a3b1eed8fcaf845d9414d6ce6737682a78b869685"
+        },
+        {
+          "path": "knowledge/invariants/INV-G0Y4VR-the-publication-message-matches-real-git.json",
+          "authority": "memory",
+          "state": "present",
+          "sha256": "a5bd83a48f5fbf2513e3370fbded1fec8cb91801c3873b7eb61841ca8e80890a"
+        },
+        {
+          "path": "knowledge/invariants/INV-GBH3RH-derived-index-modules-cannot-touch-retired.json",
+          "authority": "memory",
+          "state": "present",
+          "sha256": "29b8edb17686f214156626ce11268cd3d0fa591a378c1274f03aee9e740727a3"
+        },
+        {
+          "path": "knowledge/invariants/INV-GSEMMW-publication-preserves-the-ruled-message-index.json",
+          "authority": "memory",
+          "state": "present",
+          "sha256": "75f616e30cf0cde88c50699a5576c56ecff324af375ec32fc1071a7c14296a3d"
+        },
+        {
+          "path": "knowledge/invariants/INV-HDV88M-publication-binds-the-contract-branch-and.json",
+          "authority": "memory",
+          "state": "present",
+          "sha256": "ef2b4a9af5f596d1a0df41a2b63feced6ba8796a911457df5040a20f32202a03"
+        },
+        {
+          "path": "knowledge/invariants/INV-J6PAD2-tests-catch-loss-of-expected-old.json",
+          "authority": "memory",
+          "state": "present",
+          "sha256": "f8fe038ee14c4eb5d78ed0a1c2c1910bd861d6742ec1bb6cc2d1beafbf6c118b"
+        },
+        {
+          "path": "knowledge/invariants/INV-JFGTZT-the-current-owner-bound-r26-documentation.json",
+          "authority": "memory",
+          "state": "present",
+          "sha256": "8020bb2912ca8e888f3cc3fa761acad801b0432521a2d888e837b26e5573bdd4"
+        },
+        {
+          "path": "knowledge/invariants/INV-JM868W-knowledge-diff-is-bounded-names-omissions.json",
+          "authority": "memory",
+          "state": "present",
+          "sha256": "e372501454aad521568bc7a560a3998f098b81154f7a0544893d4128b8d9cd0b"
+        },
+        {
+          "path": "knowledge/invariants/INV-JZD1F5-the-closeout-docstring-states-that-a.json",
+          "authority": "memory",
+          "state": "present",
+          "sha256": "cdf1bc73021a38d038dc34e6e7beb73c8e722a6e7e9796907eeacc9c019fd19a"
+        },
+        {
+          "path": "knowledge/invariants/INV-K69R3M-bootstrap-describes-complete-empty-complete-authored.json",
+          "authority": "memory",
+          "state": "present",
+          "sha256": "a8294e2c0a6727735a66f0ab14e5bfb003fb8ac75038dc607b01eb588c870909"
+        },
+        {
+          "path": "knowledge/invariants/INV-KTMBMN-closeout-publishes-only-on-the-contract.json",
+          "authority": "memory",
+          "state": "present",
+          "sha256": "a1a09afd755ca6d8c10e8cde468f8053cb2cad601bacca7c7420030f824573c0"
+        },
+        {
+          "path": "knowledge/invariants/INV-MB73DH-the-guard-states-its-limits-refuses.json",
+          "authority": "memory",
+          "state": "present",
+          "sha256": "f05a8b0cd8b775e51d54f2b483b3bebb4c8639fc3c90ac19de76853d2b2b5e73"
+        },
+        {
+          "path": "knowledge/invariants/INV-MFQW2H-the-static-retirement-check-detects-attached.json",
+          "authority": "memory",
+          "state": "present",
+          "sha256": "ab731fab8068c5d98054f054eeb987315858041875af894b6e24dd75bb258a6f"
+        },
+        {
+          "path": "knowledge/invariants/INV-MQV6T8-the-admitted-invalid-input-sweep-exposes.json",
+          "authority": "memory",
+          "state": "present",
+          "sha256": "4b406877458fe0821c19eab02a784950aa0e258c3b391152e92a9b4187f68b90"
+        },
+        {
+          "path": "knowledge/invariants/INV-MT82AS-a-knowledge-diff-subdirectory-is-refused.json",
+          "authority": "memory",
+          "state": "present",
+          "sha256": "877dbc4e4c3661d1ceed3ef50394fd4266dadfee42d4a541cc52ba84530cceb5"
+        },
+        {
+          "path": "knowledge/invariants/INV-N5RBFK-every-failure-before-memory-publication-restores.json",
+          "authority": "memory",
+          "state": "present",
+          "sha256": "6d5e66447944b476aa3cf0e8dadbb1bca2f162c3a00fc496d8d2391f949a1462"
+        },
+        {
+          "path": "knowledge/invariants/INV-NJT6A9-the-seven-named-closeout-and-recovery.json",
+          "authority": "memory",
+          "state": "present",
+          "sha256": "af9105385d4970a50540bb92434f23c50113510fbdbb1c60fde8b27208ac1c53"
+        },
+        {
+          "path": "knowledge/invariants/INV-PNXKPR-a-provably-unpublished-direct-failure-restores.json",
+          "authority": "memory",
+          "state": "present",
+          "sha256": "d7f7a03e8d87c94a36fb1e989e8b0fa340f1d3a716fff95b713732af1d9c51de"
+        },
+        {
+          "path": "knowledge/invariants/INV-PPGGTW-knowledge-diff-stays-within-the-knowledge.json",
+          "authority": "memory",
+          "state": "present",
+          "sha256": "b3d963065aa56c67b46ada7c33aed3885d5a1d370d7a52c36148dad7529cdd4c"
+        },
+        {
+          "path": "knowledge/invariants/INV-QB6EZ0-reviewed-protected-cleanup-companions-remain-kept.json",
+          "authority": "memory",
+          "state": "present",
+          "sha256": "8735f606acb18bc71fa367b958d8e03eb2477563d71c0876da5c9ceac92f02b9"
+        },
+        {
+          "path": "knowledge/invariants/INV-QQ6F52-the-sql-reader-recognizes-attach-expressions.json",
+          "authority": "memory",
+          "state": "present",
+          "sha256": "45506bfb1a9360d0d552607f3bfefdc6745d751a5cfc78c96f608c8abce1163b"
+        },
+        {
+          "path": "knowledge/invariants/INV-RYF7BJ-changed-closeout-recovery-comments-still-carry.json",
+          "authority": "memory",
+          "state": "present",
+          "sha256": "7c487b501398d767db28e66595c3928131830742221f682cb6f6bcde1f839a00"
+        },
+        {
+          "path": "knowledge/invariants/INV-SY5Z3P-frameless-apsw-and-database-file-operations.json",
+          "authority": "memory",
+          "state": "present",
+          "sha256": "7857bf5ce9f8908452571f70437a2428a9e9543c65854f6f5e962d7a7bf53a5a"
+        },
+        {
+          "path": "knowledge/invariants/INV-W3FW03-the-current-r26-code-delivery-retires.json",
+          "authority": "memory",
+          "state": "present",
+          "sha256": "1dc8aedb0bc1ead9f2481352070a473fbb0c7fea6c6caadd04ff51b17c62601a"
+        },
+        {
+          "path": "knowledge/invariants/INV-X23FME-knowledge-diff-refuses-a-subdirectory-supplied.json",
+          "authority": "memory",
+          "state": "present",
+          "sha256": "53c0ef6426413d84927e5908f24c7bfe64de877cf8e6d9d17f020fa08d7497f5"
+        },
+        {
+          "path": "knowledge/invariants/INV-YJZKYC-unconverted-review-descriptions-state-source-only.json",
+          "authority": "memory",
+          "state": "present",
+          "sha256": "cb903188cc0d70cf60d66e69ae3b7e03c11c51b881d5afdf698826f122f19739"
+        },
+        {
+          "path": "knowledge/invariants/INV-YZ45D7-publish-tree-commit-binds-the-admitted.json",
+          "authority": "memory",
+          "state": "present",
+          "sha256": "6537f78b74104d05842cab2fa410773978d7a4c2aeef4b700caf3a305e1154df"
+        },
+        {
+          "path": "knowledge/invariants/INV-ZGFZXT-repeated-refused-publications-of-the-same.json",
+          "authority": "memory",
+          "state": "present",
+          "sha256": "efa9a7074599cca73f5b1636f8e759d01e3c7b686712efcd84b84cb4278d9b01"
+        }
+      ],
+      "evidenceRefs": [
+        "memory-260928-mik-l26/notes/l26-curation-takeover/d7a5e018/original47-family-examination.json",
+        "memory-260928-mik-l26/notes/l26-curation-takeover/d7a5e018/source107-history-commit-v2.json"
+      ],
+      "noPredecessorEntryReplaced": true
+    },
+    "validated_at": "2026-10-08T12:26:21.595594+00:00",
+    "record_action": "revise",
+    "supersedes": null
+  },
+  {
+    "id": "L26-MR1-K06",
+    "statement": "The curator report names a nonexistent limitation ID and uses a worklist count that does not match the current persisted exact-pair artifact.",
+    "kind": "finding",
+    "target": [
+      {
+        "path": "knowledge/limitations/LIM-M6ZRE6-no-physical-worker-attempt-anchor.json",
+        "locator": {
+          "kind": "file"
+        }
+      }
+    ],
+    "found_at": [
+      {
+        "path": "notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.memory-r1.md",
+        "locator": null,
+        "commit": null
+      },
+      {
+        "path": "notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.memory-r1.evidence/records-families.md",
+        "locator": null,
+        "commit": null
+      }
+    ],
+    "disposition": "rejected; repair or explicit evidence disposition required",
+    "disposition_source": "notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.memory-r1.md",
+    "evidence": "Report109 names LIM-A15J8Z, but the current added limitation record is LIM-M6ZRE6 and no A15J8Z record exists. The persisted worklist pairs exact f423a4e2/f2ad7d22 and contains4067 items (3561 unexplained_hunk,451 onboarding_trace,39 touched_invariant,12 reached_family,4 family_route_condition), while the report claims4128. This may be an earlier MQC snapshot count; it is not described as historical.",
+    "authority": {
+      "task_document": "260928_maintained-invariant-knowledge/26_retire-the-canonical-database.json"
+    },
+    "resolution": {
+      "state": "curator-repair-authored-pending-original14-fix2-verification",
+      "judgment": "Actual limitation LIM-M6ZRE6 retained; no formal Worker attempt invented. Historical4128/4067 and later worklists are dated; final current worklist count/digest/open totals are read from the current operation, not optional row.items.",
+      "codeTree": "bf045a987679cc023f8fdfb8849d28cfcca1adb9",
+      "sourceChangeSHA": "6b9bcd4f9337189890040ff2be1a50fa0f0b8e2937549bcfcfb7eed2fe3926c1",
+      "targets": [
+        {
+          "path": "knowledge/limitations/LIM-M6ZRE6-no-physical-worker-attempt-anchor.json",
+          "authority": "memory",
+          "state": "present",
+          "sha256": "a0715ff32f80d1f90f2513cfdf2e7b7ad49e92d4e3a683692573cdd4fb6b525a"
+        }
+      ],
+      "evidenceRefs": [
+        "memory-260928-mik-l26/notes/l26-curation-takeover/d7a5e018/source107-full-intake-worklist.json",
+        "memory-260928-mik-l26/notes/l26-curation-takeover/d7a5e018/source107-history-commit-v2.json"
+      ],
+      "noPredecessorEntryReplaced": true
+    },
+    "validated_at": "2026-10-08T12:26:21.595594+00:00",
+    "record_action": "revise",
+    "supersedes": null
+  },
+  {
+    "id": "L26-MR1-O01",
+    "statement": "Current onboarding still describes retired canonical-database owners and removed constructs as shipped behavior. Citation cleanup left the current body claims stale; the green memory quality result does not establish that these bodies match the candidate.",
+    "kind": "finding",
+    "target": [
+      {
+        "path": "mcp/src/agents_remember/models/knowledge/context.py.md",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "mcp/src/agents_remember/application/knowledge_before_half.py.md",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "mcp/src/agents_remember/application/review_committed_leaf.py.md",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "mcp/src/agents_remember/memory/knowledge/families.py.md",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "mcp/src/agents_remember/memory/knowledge/store.py.md",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "mcp/src/agents_remember/models/knowledge/facet.py.md",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "mcp/src/agents_remember/mcp/registration/knowledge.py.md",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "mcp/src/agents_remember/worktrees/modules/args.py.md",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "mcp/src/agents_remember/worktrees/overview.md",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "mcp/overview.md",
+        "locator": {
+          "kind": "file"
+        }
+      }
+    ],
+    "found_at": [
+      {
+        "path": "notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.memory-r1.md",
+        "locator": null,
+        "commit": null
+      },
+      {
+        "path": "notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.memory-r1.evidence/onboarding-references.md",
+        "locator": null,
+        "commit": null
+      }
+    ],
+    "disposition": "rejected; repair or explicit evidence disposition required",
+    "disposition_source": "notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.memory-r1.md",
+    "evidence": "At code tree f423a4e2b1b2ceda84764788f95caf7dda487a46, models/knowledge/context.py contains only KNOWLEDGE_SCHEMA_NAME and KnowledgeSchemaIdentity, while its card lines 9-11, 23, 36 and 43 still declares AdmittedKnowledgeDestination. knowledge_before_half.py has only a derived-index identity reader and preflight refusal, while its card lines 14-24 and 49-110 describes baseline origin writing and read_before_half's four states. review_committed_leaf.py preserves legacy source/evidence identities with unavailable canonical sides, while its card line 28 says it reads knowledge.sqlite at exact recorded endpoints. families.py's source lines 8-11 says functions only read, while card lines 23-40 describes create_family/create_family_revision writes. store.py's source lines 10-13 says no writer remains, while card lines 9-18 describes atomic insert, candidate lock and immediate transactions. facet.py retains only attachment endpoint vocabulary, while card lines 9-25 describes the removed eight authored payload kinds and commands. MCP registration now has read/diff/integrity registrars, while card line 15 describes five including removed change/project registrars. args.py removed knowledge_resolution, while card line 21 presents it as current. Governing worktrees overview lines 35, 250 and 325 still routes knowledge_conflict.py as a covered current owner; that source and card were deleted. mcp overview line 1248 says the retired review-record-comparison CLI remains the installed review producer. Raw full paired reads, exact candidate blob comparisons, complete inventories, and the 84-card self-absent-symbol/body candidate census are saved in this route's evidence.",
+    "authority": {
+      "task_document": "260928_maintained-invariant-knowledge/26_retire-the-canonical-database.json"
+    },
+    "resolution": {
+      "state": "curator-repair-authored-pending-original14-fix2-verification",
+      "judgment": "Original91-card/432-leg O01 population has rowwise checked body dispositions and owner-generated citation successors, plus current reclamation order and inherited overview historical qualification. Removed owners are dated or removed from current coverage. No runtime fix or fifteenth finding authored.",
+      "codeTree": "bf045a987679cc023f8fdfb8849d28cfcca1adb9",
+      "sourceChangeSHA": "6b9bcd4f9337189890040ff2be1a50fa0f0b8e2937549bcfcfb7eed2fe3926c1",
+      "targets": [
+        {
+          "path": "mcp/src/agents_remember/models/knowledge/context.py.md",
+          "authority": "code",
+          "state": "absent-or-historical",
+          "sha256": null
+        },
+        {
+          "path": "mcp/src/agents_remember/application/knowledge_before_half.py.md",
+          "authority": "code",
+          "state": "absent-or-historical",
+          "sha256": null
+        },
+        {
+          "path": "mcp/src/agents_remember/application/review_committed_leaf.py.md",
+          "authority": "code",
+          "state": "absent-or-historical",
+          "sha256": null
+        },
+        {
+          "path": "mcp/src/agents_remember/memory/knowledge/families.py.md",
+          "authority": "code",
+          "state": "absent-or-historical",
+          "sha256": null
+        },
+        {
+          "path": "mcp/src/agents_remember/memory/knowledge/store.py.md",
+          "authority": "code",
+          "state": "absent-or-historical",
+          "sha256": null
+        },
+        {
+          "path": "mcp/src/agents_remember/models/knowledge/facet.py.md",
+          "authority": "code",
+          "state": "absent-or-historical",
+          "sha256": null
+        },
+        {
+          "path": "mcp/src/agents_remember/mcp/registration/knowledge.py.md",
+          "authority": "code",
+          "state": "absent-or-historical",
+          "sha256": null
+        },
+        {
+          "path": "mcp/src/agents_remember/worktrees/modules/args.py.md",
+          "authority": "code",
+          "state": "absent-or-historical",
+          "sha256": null
+        },
+        {
+          "path": "mcp/src/agents_remember/worktrees/overview.md",
+          "authority": "code",
+          "state": "absent-or-historical",
+          "sha256": null
+        },
+        {
+          "path": "mcp/overview.md",
+          "authority": "code",
+          "state": "absent-or-historical",
+          "sha256": null
+        }
+      ],
+      "evidenceRefs": [
+        "memory-260928-mik-l26/notes/l26-curation-takeover/d7a5e018/o01-a-proposals.apply-result.json",
+        "memory-260928-mik-l26/notes/l26-curation-takeover/d7a5e018/o01-b-curator-checked.apply-result.json",
+        "memory-260928-mik-l26/notes/l26-curation-takeover/d7a5e018/o01-c-proposals.apply-result.json",
+        "memory-260928-mik-l26/notes/l26-curation-takeover/d7a5e018/reclamation-successor-card.handoff.apply-result.json"
+      ],
+      "noPredecessorEntryReplaced": true
+    },
+    "validated_at": "2026-10-08T12:26:21.595594+00:00",
+    "record_action": "revise",
+    "supersedes": null
+  },
+  {
+    "id": "L26-MR1-O02",
+    "statement": "The retained mixed-reference population is not reconciled with current meaning. A present file leg has been used to leave references that still claim deleted owners, and several present file legs name symbols that are themselves gone.",
+    "kind": "finding",
+    "target": [
+      {
+        "path": "mcp/src/agents_remember/application/knowledge_views.py.json",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "mcp/src/agents_remember/models/knowledge/result.py.json",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "mcp/overview.json",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "mcp/src/agents_remember/application/overview.json",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "mcp/src/agents_remember/memory/knowledge/store.py.json",
+        "locator": {
+          "kind": "file"
+        }
+      }
+    ],
+    "found_at": [
+      {
+        "path": "notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.memory-r1.md",
+        "locator": null,
+        "commit": null
+      },
+      {
+        "path": "notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.memory-r1.evidence/onboarding-references.md",
+        "locator": null,
+        "commit": null
+      }
+    ],
+    "disposition": "rejected; repair or explicit evidence disposition required",
+    "disposition_source": "notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.memory-r1.md",
+    "evidence": "Independent whole-onboarding tree census matches exactly 27 references with 49 newly path-absent code/test legs across 15 sidecars and zero all-stale-by-path references. knowledge_views.py.md line 207 / references.15 says there are two real callers, including the deleted application/knowledge_projection.py. result.py.md lines 231 and 246 / references.20 and .35 claim two no_change result states including deleted SnapshotPublicationResult; the other named MutationResult is also absent from candidate.py. mcp overview references.147 and .187 retains knowledge_ingest.py as a present file, but its _place_review_baseline and _placement_refusal symbols no longer exist. application overview references.144 and store.py references.14 retain families.py and memberships.py as present files, but create_family_revision and create_family_member no longer exist. The full 27-row census records every target leg, reference note and Markdown evidence-line location.",
+    "authority": {
+      "task_document": "260928_maintained-invariant-knowledge/26_retire-the-canonical-database.json"
+    },
+    "resolution": {
+      "state": "curator-repair-authored-pending-original14-fix2-verification",
+      "judgment": "Original27 mixed references have rowwise current replacements/removals and semantic dispositions; original49 absent legs are not justified by another surviving file. Current target checks include pathless/self symbols; historical citations remain explicitly historical.",
+      "codeTree": "bf045a987679cc023f8fdfb8849d28cfcca1adb9",
+      "sourceChangeSHA": "6b9bcd4f9337189890040ff2be1a50fa0f0b8e2937549bcfcfb7eed2fe3926c1",
+      "targets": [
+        {
+          "path": "mcp/src/agents_remember/application/knowledge_views.py.json",
+          "authority": "code",
+          "state": "absent-or-historical",
+          "sha256": null
+        },
+        {
+          "path": "mcp/src/agents_remember/models/knowledge/result.py.json",
+          "authority": "code",
+          "state": "absent-or-historical",
+          "sha256": null
+        },
+        {
+          "path": "mcp/overview.json",
+          "authority": "code",
+          "state": "absent-or-historical",
+          "sha256": null
+        },
+        {
+          "path": "mcp/src/agents_remember/application/overview.json",
+          "authority": "code",
+          "state": "absent-or-historical",
+          "sha256": null
+        },
+        {
+          "path": "mcp/src/agents_remember/memory/knowledge/store.py.json",
+          "authority": "code",
+          "state": "absent-or-historical",
+          "sha256": null
+        }
+      ],
+      "evidenceRefs": [
+        "memory-260928-mik-l26/notes/l26-curation-takeover/d7a5e018/o02-original-population-successor.json",
+        "memory-260928-mik-l26/notes/l26-curation-takeover/d7a5e018/o02-current-target-check.json",
+        "memory-260928-mik-l26/notes/l26-curation-takeover/d7a5e018/source107-original-reference-readback.json"
+      ],
+      "noPredecessorEntryReplaced": true
+    },
+    "validated_at": "2026-10-08T12:26:21.595594+00:00",
+    "record_action": "revise",
+    "supersedes": null
+  },
+  {
+    "id": "L26-MR1-O03",
+    "statement": "Both explicit N3 stale-onboarding corrections required by MIK-R26@v1 rule 7 are absent from the memory candidate.",
+    "kind": "finding",
+    "target": [
+      {
+        "path": "dashboard/src/panels/lifecycle-list/hierarchy.test.tsx.md",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "mcp/src/agents_remember/application/review_intent_summary.py.md",
+        "locator": {
+          "kind": "file"
+        }
+      }
+    ],
+    "found_at": [
+      {
+        "path": "notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.memory-r1.md",
+        "locator": null,
+        "commit": null
+      },
+      {
+        "path": "notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.memory-r1.evidence/onboarding-references.md",
+        "locator": null,
+        "commit": null
+      }
+    ],
+    "disposition": "rejected; repair or explicit evidence disposition required",
+    "disposition_source": "notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.memory-r1.md",
+    "evidence": "Neither card nor either sidecar is changed between memory base 41e4af2b6211c2e554da3a8a2de51822b6689930 and candidate f2ad7d22c6bff6b0725e2ac53205ea860ddeeee6. hierarchy.test.tsx.md Purpose lines 13-15 and its L33 section still describes a second describe and five landed-leaf cases; the full candidate source has one describe and none of those reverted cases. review_intent_summary.py.md Invariants And Boundaries still assigns presentation to ICR-R35/leaf L49, the exact superseded owner the packet instructs this leaf's curation to correct. Full paired N3 reads and exact absence from changed-onboarding-inventory.json are retained.",
+    "authority": {
+      "task_document": "260928_maintained-invariant-knowledge/26_retire-the-canonical-database.json"
+    },
+    "resolution": {
+      "state": "curator-repair-authored-pending-original14-fix2-verification",
+      "judgment": "hierarchy.test.tsx card states the actual one-describe suite and dates reverted L33 tests; review_intent_summary card corrects presentation ownership. Both current-source/card pairs are retained.",
+      "codeTree": "bf045a987679cc023f8fdfb8849d28cfcca1adb9",
+      "sourceChangeSHA": "6b9bcd4f9337189890040ff2be1a50fa0f0b8e2937549bcfcfb7eed2fe3926c1",
+      "targets": [
+        {
+          "path": "dashboard/src/panels/lifecycle-list/hierarchy.test.tsx.md",
+          "authority": "code",
+          "state": "absent-or-historical",
+          "sha256": null
+        },
+        {
+          "path": "mcp/src/agents_remember/application/review_intent_summary.py.md",
+          "authority": "code",
+          "state": "absent-or-historical",
+          "sha256": null
+        }
+      ],
+      "evidenceRefs": [
+        "memory-260928-mik-l26/notes/l26-curation-takeover/d7a5e018/o01-c-proposals.apply-result.json"
+      ],
+      "noPredecessorEntryReplaced": true
+    },
+    "validated_at": "2026-10-08T12:26:21.595594+00:00",
+    "record_action": "revise",
+    "supersedes": null
+  },
+  {
+    "id": "L26-MR1-O04",
+    "statement": "The whole-memory newly-caused target census omits Markdown link targets: 17 retained link legs across seven documents now lead to deleted onboarding cards.",
+    "kind": "finding",
+    "target": [
+      {
+        "path": "mcp/src/agents_remember/application/overview.md",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "mcp/src/agents_remember/memory/overview.md",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      {
+        "path": "mcp/src/agents_remember/worktrees/overview.md",
+        "locator": {
+          "kind": "file"
+        }
+      }
+    ],
+    "found_at": [
+      {
+        "path": "notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.memory-r1.md",
+        "locator": null,
+        "commit": null
+      },
+      {
+        "path": "notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.memory-r1.evidence/onboarding-references.md",
+        "locator": null,
+        "commit": null
+      }
+    ],
+    "disposition": "rejected; repair or explicit evidence disposition required",
+    "disposition_source": "notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.memory-r1.md",
+    "evidence": "An independent scan of every candidate Markdown file resolved relative file links against the memory base and candidate path inventories. It found exactly 17 legs whose resolved target existed at base 41e4af2b6211c2e554da3a8a2de51822b6689930 and is absent at candidate f2ad7d22c6bff6b0725e2ac53205ea860ddeeee6, across seven documents. Current overview links include application/overview.md:33 to review_unchanged_knowledge.py.md, memory/overview.md:22 to knowledge/publication.py.md, and worktrees/overview.md:35 and :325 to knowledge_conflict.py.md. These are distinct from the 27 JSON references / 49 deleted-code target legs reported by the curator. The census records each Markdown line, literal link and resolved target, with base-present and candidate-absent facts.",
+    "authority": {
+      "task_document": "260928_maintained-invariant-knowledge/26_retire-the-canonical-database.json"
+    },
+    "resolution": {
+      "state": "curator-repair-authored-pending-original14-fix2-verification",
+      "judgment": "Original17 newly broken Markdown legs are removed/replaced within seven named cards; original literal targets are not represented as current evidence. Existing rowwise evidence remains; no new baseline census substituted.",
+      "codeTree": "bf045a987679cc023f8fdfb8849d28cfcca1adb9",
+      "sourceChangeSHA": "6b9bcd4f9337189890040ff2be1a50fa0f0b8e2937549bcfcfb7eed2fe3926c1",
+      "targets": [
+        {
+          "path": "mcp/src/agents_remember/application/overview.md",
+          "authority": "code",
+          "state": "absent-or-historical",
+          "sha256": null
+        },
+        {
+          "path": "mcp/src/agents_remember/memory/overview.md",
+          "authority": "code",
+          "state": "absent-or-historical",
+          "sha256": null
+        },
+        {
+          "path": "mcp/src/agents_remember/worktrees/overview.md",
+          "authority": "code",
+          "state": "absent-or-historical",
+          "sha256": null
+        }
+      ],
+      "evidenceRefs": [
+        "memory-260928-mik-l26/notes/l26-curation-takeover/d7a5e018/o04-original17-successor.json",
+        "memory-260928-mik-l26/notes/l26-curation-takeover/d7a5e018/source107-original-reference-readback.json"
+      ],
+      "noPredecessorEntryReplaced": true
+    },
+    "validated_at": "2026-10-08T12:26:21.595594+00:00",
+    "record_action": "revise",
+    "supersedes": null
+  },
+  {
+    "id": "L26-MR1-E01",
+    "statement": "The report labels 130 mixed companion/directory removals as 130 emptied directories; the actual count is 8 companions and 122 directories.",
+    "kind": "finding",
+    "target": [],
+    "found_at": [
+      {
+        "path": "notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.memory-r1.md",
+        "locator": null,
+        "commit": null
+      },
+      {
+        "path": "notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.memory-r1.evidence/retirement-quality.md",
+        "locator": null,
+        "commit": null
+      }
+    ],
+    "disposition": "rejected; repair or explicit evidence disposition required",
+    "disposition_source": "notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.memory-r1.md",
+    "evidence": "p5-scope-apply-report.json has 130 removedWithThem entries, of which the preserved manifest identifies 8 files and 122 unique absent directory paths. The scoped dataset count66 and archive byte identity are independently confirmed.",
+    "authority": {
+      "task_document": "260928_maintained-invariant-knowledge/26_retire-the-canonical-database.json"
+    },
+    "resolution": {
+      "state": "curator-repair-authored-pending-original14-fix2-verification",
+      "judgment": "Correct removal accounting is66 datasets,8 companions,122 emptied directories;130 is the mixed companion/directory total. Raw removal/archive evidence preserved;498 outside-scope copies are not deleted or waived.",
+      "codeTree": "bf045a987679cc023f8fdfb8849d28cfcca1adb9",
+      "sourceChangeSHA": "6b9bcd4f9337189890040ff2be1a50fa0f0b8e2937549bcfcfb7eed2fe3926c1",
+      "targets": [],
+      "evidenceRefs": [],
+      "noPredecessorEntryReplaced": true
+    },
+    "validated_at": "2026-10-08T12:26:21.595594+00:00",
+    "record_action": "revise",
+    "supersedes": null
+  },
+  {
+    "id": "L26-MR1-E02",
+    "statement": "The final report uses 4128 planning items as the final current count; the exact current pair worklist and full MQC artifact contain4067.",
+    "kind": "finding",
+    "target": [],
+    "found_at": [
+      {
+        "path": "notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.memory-r1.md",
+        "locator": null,
+        "commit": null
+      },
+      {
+        "path": "notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.memory-r1.evidence/retirement-quality.md",
+        "locator": null,
+        "commit": null
+      }
+    ],
+    "disposition": "rejected; repair or explicit evidence disposition required",
+    "disposition_source": "notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.memory-r1.md",
+    "evidence": "Current knowledge-worklist.json digest00ed47ba\u2026 contains4067 items. Curator clarification explicitly acknowledges4128 as earlier planning digest4746e11f\u2026 and4067 as final. The handed-off frozen report does not distinguish the phases.",
+    "authority": {
+      "task_document": "260928_maintained-invariant-knowledge/26_retire-the-canonical-database.json"
+    },
+    "resolution": {
+      "state": "curator-repair-authored-pending-original14-fix2-verification",
+      "judgment": "Historical baseline4067 differs from planning4128 and later incoming worklists. Current count/digest/answered/open are reported from current persisted worklist and full MQC; zero open is structural evidence, not semantic acceptance.",
+      "codeTree": "bf045a987679cc023f8fdfb8849d28cfcca1adb9",
+      "sourceChangeSHA": "6b9bcd4f9337189890040ff2be1a50fa0f0b8e2937549bcfcfb7eed2fe3926c1",
+      "targets": [],
+      "evidenceRefs": [
+        "memory-260928-mik-l26/notes/l26-curation-takeover/d7a5e018/source107-full-intake-worklist.json"
+      ],
+      "noPredecessorEntryReplaced": true
+    },
+    "validated_at": "2026-10-08T12:26:21.595594+00:00",
+    "record_action": "revise",
+    "supersedes": null
+  },
+  {
+    "id": "L26-MR1-E03",
+    "statement": "Required pre-removal safety-observation provenance is incomplete: retained times are placeholders and the original observer output/timing is not independently reconstructible.",
+    "kind": "finding",
+    "target": [],
+    "found_at": [
+      {
+        "path": "notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.memory-r1.md",
+        "locator": null,
+        "commit": null
+      },
+      {
+        "path": "notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.memory-r1.evidence/retirement-quality.md",
+        "locator": null,
+        "commit": null
+      }
+    ],
+    "disposition": "rejected; repair or explicit evidence disposition required",
+    "disposition_source": "notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.memory-r1.md",
+    "evidence": "DB provenance at08:2x is invalid; P5 manifest/script hardcode08:20Z. Canonical release08:54:25.919Z requires proof of no active DB/lock/CWD users. Manifest retains activeUsers[]/processCount282 and its scan mechanism; unreadable proc entries are skipped. Curator later attests empty fuser/cwd/fd observations and points to09:19 artifact mtimes, but those are not the original timed observation. All removed-object/preserved-byte and scope checks pass; no active user or unauthorized deletion is alleged.",
+    "authority": {
+      "task_document": "260928_maintained-invariant-knowledge/26_retire-the-canonical-database.json"
+    },
+    "resolution": {
+      "state": "curator-repair-authored-pending-original14-fix2-verification",
+      "judgment": "Canonical Owner cc9634c2 explicitly dispositions missing original observer transcript as historical gap. Placeholder erratum preserves originals; Curator recollection/activeUsers[] is attributed, not independently historical-proven. No fresh scan/mtime/cleanup supplies retrospective proof.",
+      "codeTree": "bf045a987679cc023f8fdfb8849d28cfcca1adb9",
+      "sourceChangeSHA": "6b9bcd4f9337189890040ff2be1a50fa0f0b8e2937549bcfcfb7eed2fe3926c1",
+      "targets": [],
+      "evidenceRefs": [
+        "task:notes/run3/L26-SOURCE95-COMPOSITE-INPUT-879378fb/owner-E03-historical-gap-disposition.json@cc9634c278351e6a574b364c9556d017bd178aea506361efd4596d1b30366a08"
+      ],
+      "noPredecessorEntryReplaced": true
+    },
+    "validated_at": "2026-10-08T12:26:21.595594+00:00",
+    "record_action": "revise",
+    "supersedes": null
+  },
+  {
+    "id": "L26-MR1-C01",
+    "statement": "The current source module docstring still describes the retired admitted candidate-write destination even though only schema identity remains.",
+    "kind": "finding",
+    "target": [
+      {
+        "path": "mcp/src/agents_remember/models/knowledge/context.py",
+        "locator": {
+          "kind": "line_range",
+          "start": 1,
+          "end": 7
+        }
+      }
+    ],
+    "found_at": [
+      {
+        "path": "notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.memory-r1.md",
+        "locator": null,
+        "commit": null
+      },
+      {
+        "path": "notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.memory-r1.evidence/code-point-disposition.json",
+        "locator": null,
+        "commit": null
+      }
+    ],
+    "disposition": "rejected; repair or explicit evidence disposition required",
+    "disposition_source": "notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.memory-r1.md",
+    "evidence": "models/knowledge/context.py lines1-7 describe an admitted destination; the actual module has only KNOWLEDGE_SCHEMA_NAME and KnowledgeSchemaIdentity. Same Worker55c confirmed the defect and proposed a later schema-identity-only docstring repair, with no runtime/API/compatibility change. Source and pair remained held.",
+    "authority": {
+      "task_document": "260928_maintained-invariant-knowledge/26_retire-the-canonical-database.json"
+    },
+    "resolution": {
+      "state": "curator-repair-authored-pending-original14-fix2-verification",
+      "judgment": "Same Worker corrected only context.py schema-identity source prose; paired current card retains only KnowledgeSchemaIdentity/KNOWLEDGE_SCHEMA_NAME. Captured current code is Source107 bf045a98/change6b9b; executable identity and old code-review history remain bounded.",
+      "codeTree": "bf045a987679cc023f8fdfb8849d28cfcca1adb9",
+      "sourceChangeSHA": "6b9bcd4f9337189890040ff2be1a50fa0f0b8e2937549bcfcfb7eed2fe3926c1",
+      "targets": [
+        {
+          "path": "mcp/src/agents_remember/models/knowledge/context.py",
+          "authority": "code",
+          "state": "present",
+          "sha256": "1b42a27597613b7b4d057d527fa49b80b5bb7ef809fb8552d6fa828c547afe70"
+        }
+      ],
+      "evidenceRefs": [
+        "memory-260928-mik-l26/notes/l26-curation-takeover/d7a5e018/o01-c-proposals.apply-result.json"
+      ],
+      "noPredecessorEntryReplaced": true
+    },
+    "validated_at": "2026-10-08T12:26:21.595594+00:00",
+    "record_action": "revise",
+    "supersedes": null
+  }
+]

@@ -27,10 +27,13 @@ certifying services.
   `_AUTH_TOKEN`, and a short list of named variables. A test that needs such an input builds its
   own environment. Inherited `TMUX` and `TMUX_PANE` are removed so a fixture cannot attach through
   the developer's launcher state.
-- `pytest_plugins` registers two plugins: `pytest_bootstrap` and `evidence_lanes`. The second
+- `pytest_plugins` registers three plugins: `pytest_bootstrap`, `evidence_lanes`, and
+  `database_retirement_guard`. The second
   carries the collection hook that loads the lane manifest through `load_lane_manifest` and refuses
   the run when the loader refuses. Because that loader lists the repository's files through Git, a
-  test run needs a Git checkout.
+  test run needs a Git checkout. The third registration watches the worker process for the
+  database access and file mutation routes named by the retirement guard; the registration is
+  a source fact, not evidence that this curation executed the guard.
 
 ### Hooks
 
@@ -78,7 +81,6 @@ scope `all-tests`.
 - The environment is restored and the temporary directory removed. [7]
 - The isolated home directories and the switched-off Git configuration. [8]
 - The removal of inherited opt-ins and credentials. [9]
-- The two registered plugins and the comment on the Git checkout. [10]
 
 - The lane manifest is read once for the integration files, an unreadable manifest is explained, and certification asks for Dagger admission. [13]
 - The refusal text for a manifest that cannot be read or parsed. [14]
@@ -88,3 +90,5 @@ scope `all-tests`.
 - The pytest environment owns a private tmux directory. [16]
 - Environment, lease and temporary cleanup follow an attempted private-server kill even on failure. [17]
 - Inherited tmux launcher variables are scrubbed from the test environment. [18]
+
+- The three registered plugins and the comment on the Git checkout. [10]

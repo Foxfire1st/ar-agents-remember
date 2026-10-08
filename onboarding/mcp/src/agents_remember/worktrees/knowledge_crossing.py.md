@@ -17,9 +17,7 @@ memory-quality runs and (later) closeouts call.
 
 ### Logic
 
-- `crossing_applies(repository, base, own, incoming)` probes the three layout markers
-  (`knowledge_validation.has_layout_marker`). A probe failure is refused at step `markers`.
-  `merge_base` resolves the base.
+- `merge_structure(repository, base, own, incoming)` classifies the actual three marker-bearing trees and selects structural merge or the crossing plan. `merge_base` resolves the base; a failed marker read remains a refusal rather than a guessed format.
 - `crossing_plan(worktree, sides, *, paired_code, owner)` refuses at step `convert` when the paired code
   commit is unknown (the fallback cards would have no code tree), or when no `knowledge_crossing` is bound
   (a crossing sync is never merged as plain Git). Otherwise it calls the port with a `CrossingRequest`. A
@@ -82,36 +80,8 @@ None recorded. The closeout refusal of rule 9 is wired (L09's gate plus L37's cu
 
 ## Evidence
 
-### Docs References
-
-No domain documentation source is configured for this repository (`system/sources.md` carries no
-`Domain Documentation` entries). The design authority is the requirement packet `MIK-R24@v1` of task
-`260928_maintained-invariant-knowledge` (with the architect rulings in the task's leaf document
-`24_conversion-and-boundary-crossing.json`) and the coordination-root note Doc14
-(`notes/ar-intent-reviewer-and-beyond/Doc14-text-canonical-knowledge-layout.md`); they live outside the
-code and memory repositories, so they are named here and not cited as rows.
-
-No configured live documentation source was available for this pass.
-
 ### Repo-Internal References
 
-The crossing helpers and the rule 9 refusal.
-
-- A crossing sync: one tree unconverted and one converted. [1]
-- The plan through the bound port, refused without a paired code commit or a bound crossing. [2]
-- The merge's knowledge and onboarding paths become the plan; conflicted paths are unmerged with three stages. [3]
-- The rule 9 refusal when the official line is converted; every other unconverted tree is left to the cutover lock. [4]
-- A master-line crossing history file is closed in the merge commit. [5]
-- The durable report and its bounded summary, with the how-to. [6]
-- The managed sync crosses an unconverted leaf into a converted line. [7]
-- Overlapping edits go to the curator with markers; a failed step changes nothing. [8]
-- The refusal fires only once the official line is converted. [9]
-
-- Rule 9, then the cutover lock for every other unconverted tree. [10]
-- Whether the official line's tip holds the marker; no line or an unreadable one reads as no. [11]
-
-### Cross-Repo References
-
-No meaningful cross-repo references found: the file reads and writes only the memory and code repositories its caller names.
-
-No cross-repo boundary is crossed by this file.
+- `merge_structure` implements the retained boundary described above. [12]
+- `crossing_plan` implements the retained boundary described above. [13]
+- `apply_crossing` implements the retained boundary described above. [14]

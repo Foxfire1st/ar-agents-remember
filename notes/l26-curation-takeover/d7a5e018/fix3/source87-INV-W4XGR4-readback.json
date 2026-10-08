@@ -1,0 +1,268 @@
+{
+  "ok": true,
+  "tokens": 1962,
+  "tokenizer": "tiktoken:o200k_base",
+  "tokenCountExact": true,
+  "operation": "knowledge_read",
+  "state": "view",
+  "view": "invariant",
+  "repositoryId": "7511e917-d5d3-584e-b0ce-44dcad666cfe",
+  "snapshot": "4dce2490ca53b106bbce85eef1599cdddd414d702d2c802d96d553316420726e",
+  "completeWithinDeclaredScope": true,
+  "page": {
+    "threshold": {
+      "tokens": 8000,
+      "tokenizer": "tiktoken:o200k_base"
+    },
+    "memoryTreeId": "3e898f6313971d226652120c95db116895689c9d",
+    "selectionPolicy": "knowledge-view-selection",
+    "selectionPolicyVersion": "v1",
+    "manifestDigest": "ae4ed05d260666be4f8f107af5c38c998029cb82041ef3616950f37e3508556d",
+    "codeTreeId": "715ee46e34ef5c421c540314b882c04d1676e08d",
+    "start": 0,
+    "rowsOnPage": 3,
+    "total": 3,
+    "returned": 3,
+    "remaining": 0,
+    "enumerationComplete": true
+  },
+  "payload": {
+    "view": "invariant",
+    "snapshot": {
+      "repository_id": "7511e917-d5d3-584e-b0ce-44dcad666cfe",
+      "schema_version": "ar-knowledge-sqlite/v9",
+      "logical_digest": "4dce2490ca53b106bbce85eef1599cdddd414d702d2c802d96d553316420726e",
+      "context_digest": "348e4e8eac4b33970f00c1634101134211fa701719e23057ed2adf15a29c2f2d"
+    },
+    "counts": {
+      "registered_realizations": {
+        "state": "counted",
+        "value": 892,
+        "reason": null
+      },
+      "registered_families": {
+        "state": "counted",
+        "value": 33,
+        "reason": null
+      },
+      "rows_returned": {
+        "state": "counted",
+        "value": 3,
+        "reason": null
+      },
+      "rows_remaining": {
+        "state": "counted",
+        "value": 0,
+        "reason": null
+      },
+      "facets_omitted": {
+        "state": "not_applicable",
+        "value": null,
+        "reason": "this view returns no facet rows"
+      },
+      "unmapped_changed_paths": {
+        "state": "not_applicable",
+        "value": null,
+        "reason": "this view compares no two exact states"
+      },
+      "ambiguous_references": {
+        "state": "not_applicable",
+        "value": null,
+        "reason": "this view resolves no cited references"
+      },
+      "unresolved_references": {
+        "state": "not_applicable",
+        "value": null,
+        "reason": "this view resolves no cited references"
+      },
+      "dependency_content_identity_mismatches": {
+        "state": "not_applicable",
+        "value": null,
+        "reason": "this view reads no recorded dependency bytes"
+      }
+    },
+    "completeness": {
+      "complete_within_declared_scope": true,
+      "scope": {
+        "snapshot_logical_digest": "4dce2490ca53b106bbce85eef1599cdddd414d702d2c802d96d553316420726e",
+        "recorded_graph": "recorded-envelope-and-generation-1-entities",
+        "traversal_policy": "knowledge-view-selection/v1",
+        "extractors": [
+          "knowledge-view-renderer/1"
+        ]
+      }
+    },
+    "continuation": null,
+    "limitations": [],
+    "ordering_rule_ids": [
+      "ordering.declared-tiebreak"
+    ],
+    "renderer_version": "knowledge-view-renderer/1",
+    "rows": [
+      {
+        "subject": {
+          "record_kind": "invariant_revision",
+          "record_id": "ac5f5c5a-8c62-5f1c-b942-dfd31d618478",
+          "revision_id": "deb1506f-c730-5224-a9a9-8dfaa0ff65a5"
+        },
+        "fact_kind": "statement",
+        "statement": "The existing sweep awaits initialization, response and cleanup with sixty-second phase budgets and surfaces its named deadline outside the product-raiser classifier.",
+        "role": null,
+        "path": null,
+        "locator": null,
+        "essential_conditions": [
+          "The sweep drives tools through the extracted world.",
+          "A passed phase limit names the tool and the phase in a `_ToolCallTimeout`."
+        ],
+        "conditions_omitted": false,
+        "lifecycle": "proposed",
+        "acceptance_ref": null,
+        "order": {
+          "position": 1,
+          "ordering_input": "stable_ordering",
+          "provenance": {
+            "provenance_class": "mechanical",
+            "authored": null,
+            "rule_id": "consequence.record-payload-byte-equal",
+            "rule_version": 1
+          },
+          "tiebreak_rule_id": "ordering.declared-tiebreak",
+          "tiebreak_rule_version": 1
+        },
+        "provenance": {
+          "provenance_class": "mechanical",
+          "authored": null,
+          "rule_id": "consequence.record-payload-byte-equal",
+          "rule_version": 1
+        }
+      },
+      {
+        "subject": {
+          "record_kind": "realization_claim",
+          "record_id": "c096a370-6ae5-596d-832d-41089c74015e",
+          "revision_id": "deb1506f-c730-5224-a9a9-8dfaa0ff65a5"
+        },
+        "fact_kind": "realization",
+        "statement": "The control drives a tool that never answers through the same world and asserts the named failure and handler close.",
+        "role": "support",
+        "path": "mcp/tests/test_tool_entry_point_controls.py",
+        "locator": {
+          "kind": "symbol",
+          "language": "python",
+          "qualified_name": "ChokePointControlTests.test_a_tool_that_never_answers_fails_by_name_and_closes_its_handler"
+        },
+        "essential_conditions": [],
+        "conditions_omitted": false,
+        "lifecycle": null,
+        "acceptance_ref": null,
+        "order": {
+          "position": 2,
+          "ordering_input": "stable_ordering",
+          "provenance": {
+            "provenance_class": "mechanical",
+            "authored": null,
+            "rule_id": "consequence.record-payload-byte-equal",
+            "rule_version": 1
+          },
+          "tiebreak_rule_id": "ordering.declared-tiebreak",
+          "tiebreak_rule_version": 1
+        },
+        "provenance": {
+          "provenance_class": "mechanical",
+          "authored": null,
+          "rule_id": "consequence.record-payload-byte-equal",
+          "rule_version": 1
+        }
+      },
+      {
+        "subject": {
+          "record_kind": "realization_claim",
+          "record_id": "fe1df5a2-2aff-5ddd-9bed-005b004e8e2c",
+          "revision_id": "deb1506f-c730-5224-a9a9-8dfaa0ff65a5"
+        },
+        "fact_kind": "realization",
+        "statement": "EntryPointWorld._call wraps session initialization, tool response and session cleanup in the phase budgets, resets the deadline at each transition, and raises _ToolCallTimeout with tool name and phase on timeout; call re-raises that named exception outside the product-raiser classifier.",
+        "role": "primary-authority",
+        "path": "mcp/tests/tool_entry_point_world.py",
+        "locator": {
+          "kind": "symbol",
+          "language": "python",
+          "qualified_name": "EntryPointWorld._call"
+        },
+        "essential_conditions": [],
+        "conditions_omitted": false,
+        "lifecycle": null,
+        "acceptance_ref": null,
+        "order": {
+          "position": 3,
+          "ordering_input": "stable_ordering",
+          "provenance": {
+            "provenance_class": "mechanical",
+            "authored": null,
+            "rule_id": "consequence.record-payload-byte-equal",
+            "rule_version": 1
+          },
+          "tiebreak_rule_id": "ordering.declared-tiebreak",
+          "tiebreak_rule_version": 1
+        },
+        "provenance": {
+          "provenance_class": "mechanical",
+          "authored": null,
+          "rule_id": "consequence.record-payload-byte-equal",
+          "rule_version": 1
+        }
+      }
+    ]
+  },
+  "memoryTree": {
+    "memoryRoot": "/home/firefox/projects/ar-coordination/worktrees/agents-remember/260928-mik-l26-ar/memory-260928-mik-l26",
+    "treeId": "3e898f6313971d226652120c95db116895689c9d",
+    "indexState": "complete",
+    "problems": []
+  },
+  "indexComplete": true,
+  "proofs": [
+    {
+      "id": "PRF-AGBGWK",
+      "invariant": "INV-W4XGR4",
+      "path": "mcp/tests/test_tool_entry_point_controls.py",
+      "anchor": {
+        "blob": "97795b8d20e56adf5262308cb24e2ae781ffc66e",
+        "content": "sha256:c2cd65b344c7053ffa21cea4447aaa2cc482a07488af879ea94b9e191db73b18",
+        "locator": {
+          "kind": "symbol",
+          "name": "ChokePointControlTests.test_a_tool_that_never_answers_fails_by_name_and_closes_its_handler"
+        },
+        "path": "mcp/tests/test_tool_entry_point_controls.py"
+      },
+      "facet": "The control drives a registered never-answering tool through EntryPointWorld.call with a shortened response budget, asserts _ToolCallTimeout names the tool and response phase, and checks handler cleanup and a subsequent usable call. This is a recorded static test relationship, not evidence that this session executed the test.",
+      "sidecar": "onboarding/mcp/tests/test_tool_entry_point_controls.py.json"
+    }
+  ],
+  "currentness": {
+    "codeTree": {
+      "repositoryRoot": "/home/firefox/projects/ar-coordination/worktrees/agents-remember/260928-mik-l26-ar/260928-mik-l26",
+      "treeId": "715ee46e34ef5c421c540314b882c04d1676e08d"
+    },
+    "counts": {
+      "stale": 0,
+      "unverifiable": 0,
+      "unrealized": 0,
+      "current": 1
+    },
+    "invariants": [
+      {
+        "id": "INV-W4XGR4",
+        "state": "current",
+        "entries": []
+      }
+    ],
+    "families": []
+  },
+  "families": [
+    {
+      "id": "FAM-TG3WK0",
+      "title": "The reader and sweep protocol waits end at a limit"
+    }
+  ]
+}

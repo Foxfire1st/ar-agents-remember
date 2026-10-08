@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3b7ad1362b3430ee3f4feb81ed08bec1b5cd75b5",
+            "blob": "8bb5ffe981f83aa58ff262974a165fd286c14bef",
             "content": "sha256:7e478e3d46b8261aa04fa8ae8c23fd232a97784a05268e0eb8ebcca24650bb3e",
             "locator": {
               "kind": "symbol",
@@ -18,7 +18,7 @@
         },
         {
           "anchor": {
-            "blob": "3b7ad1362b3430ee3f4feb81ed08bec1b5cd75b5",
+            "blob": "8bb5ffe981f83aa58ff262974a165fd286c14bef",
             "content": "sha256:30e9aad669bb4970266f7e2053be487cfbf3ddd32a0a986a38c24a028ced6190",
             "locator": {
               "kind": "symbol",
@@ -34,7 +34,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3b7ad1362b3430ee3f4feb81ed08bec1b5cd75b5",
+            "blob": "8bb5ffe981f83aa58ff262974a165fd286c14bef",
             "content": "sha256:a5149a9a6c73e01baad0c1c1141feaada9913738ad9530481dcd957649afe0fe",
             "locator": {
               "kind": "symbol",
@@ -45,7 +45,7 @@
         },
         {
           "anchor": {
-            "blob": "3b7ad1362b3430ee3f4feb81ed08bec1b5cd75b5",
+            "blob": "8bb5ffe981f83aa58ff262974a165fd286c14bef",
             "content": "sha256:d07550d2e2173dd9ca4054097aa74437b737c47741d195797212d4c056590b46",
             "locator": {
               "kind": "symbol",
@@ -121,27 +121,28 @@
       ]
     },
     "6": {
-      "note": "The insert-only operation that seals and stores one aggregate, or refuses without any row.",
+      "note": "The current exact revision read and decoder verify a retained aggregate rather than writing it.\n\nAnchor: `OpenedKnowledgeStore.get_revision`",
       "targets": [
         {
           "anchor": {
-            "blob": "2d1760f933abbb54eec5c46a68a75255d213e318",
-            "content": "sha256:3172cf05981d5a62e9715d3426c3ef65c54f315ee927ecb6376c4f65960749f6",
+            "blob": "0ee5929321e3f7a958a51aecc7f15c63d890c86c",
+            "content": "sha256:11b77cf7357bb9e6ed51fc7a1c09f7f8ed251370838f7e0d6467f84a0d37d6e3",
             "locator": {
               "kind": "symbol",
-              "name": "create_revision"
+              "name": "decode_revision_row"
             },
-            "path": "mcp/src/agents_remember/memory/knowledge/store.py"
+            "path": "mcp/src/agents_remember/memory/knowledge/records.py"
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "2d1760f933abbb54eec5c46a68a75255d213e318",
-            "content": "sha256:0ea5933c42829b36e5b9ad294cf7bb2df3411043acf2d1110a4898733832f4ae",
+            "blob": "e4fc1a849557a256d000a2a4f98c444ef5400e7d",
+            "content": "sha256:233b5e39d22a77c1490a468223a647da8f638bd0614e927fda725edc73b0e9aa",
             "locator": {
-              "kind": "symbol",
-              "name": "_insert_revision"
+              "end": 173,
+              "kind": "line_range",
+              "start": 158
             },
             "path": "mcp/src/agents_remember/memory/knowledge/store.py"
           },

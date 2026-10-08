@@ -1,0 +1,578 @@
+{
+  "entries": [],
+  "records": [
+    {
+      "key": "mr1-current-INV-753SKJFF",
+      "kind": "invariant",
+      "id": "INV-753SKJFF",
+      "fields": {
+        "statement": "Published intent is selected from the one resolved converted memory root: the official external memory root outside an enclosure and the leaf's memory worktree inside it. Its text records are canonical; reads select the derived index of that exact tree. An unconverted root is refused as legacy-format, and no canonical knowledge database publication destination is selected.",
+        "applicability": "Ordinary published-intent selection for the resolved repository or canonical leaf.",
+        "conditions": [
+          "The resolved memory root holds knowledge/layout.json.",
+          "The derived index can be built or read for the selected memory tree; failure remains an explicit unusable selection."
+        ],
+        "exclusions": [
+          "Historical canonical database publication and its former not-recorded converted result.",
+          "A sibling memory layer or derived index cache as an alternative source of truth."
+        ]
+      }
+    },
+    {
+      "key": "mr1-current-INV-VVMNM9B6",
+      "kind": "invariant",
+      "id": "INV-VVMNM9B6",
+      "fields": {
+        "status": "retired"
+      }
+    },
+    {
+      "key": "mr1-current-INV-E8655Z54",
+      "kind": "invariant",
+      "id": "INV-E8655Z54",
+      "fields": {
+        "conditions": [
+          "A converted file-writer handoff supplies realization targets; _targets runs the shared value/route refusal before planning those targets."
+        ],
+        "exclusions": [
+          "Omitted or null governing_route, which remains ungoverned.",
+          "Stored historical realization rows, which this admission check does not retrospectively rewrite."
+        ]
+      }
+    },
+    {
+      "key": "mr1-current-INV-J7179RG5",
+      "kind": "invariant",
+      "id": "INV-J7179RG5",
+      "fields": {
+        "conditions": [
+          "A converted file-writer handoff is parsed for realization targets before authoring its record and sidecar edits."
+        ],
+        "exclusions": [
+          "Target shapes that are not JSON objects, which the target-shape check refuses separately.",
+          "Stored historical claims; this parser judges supplied targets rather than re-admitting every stored row."
+        ]
+      }
+    },
+    {
+      "key": "mr1-current-INV-H6A6JS63",
+      "kind": "invariant",
+      "id": "INV-H6A6JS63",
+      "fields": {
+        "statement": "A converted file-writer handoff target with neither its own nonblank rationale nor a nonblank entry default refuses the entry as realization_rationale_absent, naming the entry and offending targets before record or sidecar writes. The writer never invents the explanation.",
+        "applicability": "Realization targets supplied to the converted curator file writer through knowledge-ingest or knowledge-bootstrap.",
+        "conditions": [
+          "At least one supplied realization target lacks a rationale at both levels."
+        ],
+        "exclusions": [
+          "Targetless task rulings, which create no realization.",
+          "Stored historical claims; this admission check does not rewrite them."
+        ]
+      }
+    },
+    {
+      "key": "mr1-current-INV-7W11WKKN",
+      "kind": "invariant",
+      "id": "INV-7W11WKKN",
+      "fields": {
+        "statement": "The review evidence collector reads owner records for the exact resolved comparison it is rendering, preserving explicit collection availability and immutable curator-generation provenance. Retired canonical detection, verification and evidence collections remain unavailable; an unread or uncaptured collection never becomes a favorable empty result.",
+        "applicability": "review_records_for_resolution and its exact candidate-bound owner collections.",
+        "conditions": [
+          "The comparison is resolved once and supplied to the collector.",
+          "Each collection reports its own availability; curator assessments are read through their generation integrity owner."
+        ],
+        "exclusions": [
+          "The retired dataset comparison publication producer and its explicit-positive-input admission protocol.",
+          "A mutable current pointer, generic evidence citation or invented empty collection as replacement for an unread owner input."
+        ]
+      }
+    },
+    {
+      "key": "mr1-current-INV-9NCBGQSY",
+      "kind": "invariant",
+      "id": "INV-9NCBGQSY",
+      "fields": {
+        "statement": "A historical review reopens a recorded tree comparison from its recorded tree ids. A closed leaf that recorded only a canonical dataset comparison preserves its exact source sides and reports its retired knowledge operands as legacy-unavailable without opening their databases.",
+        "applicability": "Historical review resolution after canonical knowledge database retirement.",
+        "conditions": [
+          "The retained record identifies its comparison format and exact source endpoints."
+        ],
+        "exclusions": [
+          "Reopening an unconverted canonical dataset or borrowing today's knowledge to stand for an unavailable operand."
+        ]
+      }
+    },
+    {
+      "key": "mr1-current-INV-FYZQK0",
+      "kind": "invariant",
+      "id": "INV-FYZQK0",
+      "fields": {
+        "conditions": [
+          "Publication raised after creating a reachable commit, HEAD switched, and expected-old take-back did not remove that commit."
+        ],
+        "exclusions": [
+          "Ordinary unpublished refusal and validation after a successful publication return; their restoration boundaries are separate."
+        ]
+      }
+    },
+    {
+      "key": "mr1-current-INV-JZD1F5",
+      "kind": "invariant",
+      "id": "INV-JZD1F5",
+      "fields": {
+        "applicability": "The ordinary closeout's documentation of its publication and preparation-restoration boundary.",
+        "conditions": [
+          "The documentation distinguishes publication raising after partial ref movement from proof validation after a successful publication return."
+        ],
+        "exclusions": [
+          "A claim that documentation repairs the retained runtime race or publication policy."
+        ]
+      }
+    },
+    {
+      "key": "mr1-current-INV-PPGGTW",
+      "kind": "invariant",
+      "id": "INV-PPGGTW",
+      "fields": {
+        "conditions": [
+          "A converted memory repository is selected, optionally narrowed by a path or record id.",
+          "The complete response is measured against the shared knowledge-read token threshold."
+        ],
+        "exclusions": [
+          "Inferring a semantic verdict from the mechanical diff.",
+          "Canonical database-path comparison, which MIK-R26 retires."
+        ],
+        "admission": {
+          "criteria": [
+            "prevents_costly_mistake"
+          ],
+          "justification": "A diff displayed as complete after silently dropping files can hide changed intent from its reviewer; explicit omissions and the shared read threshold prevent that error."
+        }
+      }
+    },
+    {
+      "key": "mr1-current-INV-1BBPF3",
+      "kind": "invariant",
+      "id": "INV-1BBPF3",
+      "fields": {
+        "admission": {
+          "criteria": [
+            "prevents_costly_mistake"
+          ],
+          "justification": "Foundation examples must name supported read views; otherwise a new project's first inspection is routed to an operation that cannot demonstrate its recorded knowledge."
+        }
+      }
+    },
+    {
+      "key": "mr1-current-INV-K69R3M",
+      "kind": "invariant",
+      "id": "INV-K69R3M",
+      "fields": {
+        "admission": {
+          "criteria": [
+            "prevents_costly_mistake"
+          ],
+          "justification": "Calling converted foundations universally not-recorded hides an actually authored or partially authored foundation and can cause an operator to duplicate or omit its authoring work."
+        }
+      }
+    },
+    {
+      "key": "mr1-current-INV-J6PAD2",
+      "kind": "invariant",
+      "id": "INV-J6PAD2",
+      "fields": {
+        "admission": {
+          "criteria": [
+            "prevents_costly_mistake"
+          ],
+          "justification": "Negative controls expose loss of expected-old take-back, replacement narrowing and cleanup protection, which could otherwise overwrite concurrent commits or remove protected content while ordinary successful tests stay green."
+        }
+      }
+    },
+    {
+      "key": "mr1-current-INV-JM868W",
+      "kind": "invariant",
+      "id": "INV-JM868W",
+      "fields": {
+        "admission": {
+          "criteria": [
+            "prevents_costly_mistake"
+          ],
+          "justification": "A bounded diff must disclose omitted content and its temporary Git-object capture: hiding either can make a partial review look complete or conceal the operation's storage side effect."
+        }
+      }
+    },
+    {
+      "key": "mr1-current-FAM-7B6N3Y4Q",
+      "kind": "family",
+      "id": "FAM-7B6N3Y4Q",
+      "fields": {
+        "guarantee": "Authored knowledge writes use the admitted leaf knowledge-ingest or taskless knowledge-bootstrap command and the single converted file writer. Writer admission and ordinary readers resolve the same repository or leaf memory root, whose text files are canonical. An unconverted root is refused and no canonical dataset is published. Mechanical conversion, crossing merge, formatting and closeout flags are outside this authoring guarantee."
+      }
+    },
+    {
+      "key": "mr1-current-FAM-KQQE74ZT",
+      "kind": "family",
+      "id": "FAM-KQQE74ZT",
+      "fields": {
+        "members": [
+          "INV-0FBA8M52",
+          "INV-CKHJ0M7J",
+          "INV-E8655Z54",
+          "INV-H6A6JS63",
+          "INV-J7179RG5"
+        ],
+        "guarantee": "Every realization target the converted file writer admits carries its author's nonblank explanation and a role from the stated target or explicit entry default; role absence is unclassified. The parser refuses malformed text, unknown roles, absent-literal routes and missing or overlong rationales before writes, naming the offending target. Stored historical claims are not retroactively reauthored; this guarantee asserts no database allocation-journal replay."
+      }
+    },
+    {
+      "key": "mr1-current-FAM-SK1BFPE2",
+      "kind": "family",
+      "id": "FAM-SK1BFPE2",
+      "fields": {
+        "status": "retired",
+        "routes": []
+      }
+    },
+    {
+      "key": "mr1-current-FAM-XZ5BR65G",
+      "kind": "family",
+      "id": "FAM-XZ5BR65G",
+      "fields": {
+        "guarantee": "Historical review uses the exact retained comparison and explicitly names what it can reproduce: recorded tree comparisons retain their code and memory tree ids, while canonical-dataset history preserves exact source sides and marks knowledge legacy-unavailable. Comparison-bound curator generations preserve authored judgments and availability, and reconstruction is labelled. No current dataset, mutable pointer or favorable empty channel replaces unavailable history."
+      }
+    },
+    {
+      "key": "mr1-current-FAM-61DY2V",
+      "kind": "family",
+      "id": "FAM-61DY2V",
+      "fields": {
+        "members": [
+          "INV-0T84PZ",
+          "INV-0XMNQZ",
+          "INV-2Q8RPR",
+          "INV-49E649",
+          "INV-656CYW",
+          "INV-89A5AN",
+          "INV-9ZBTVA",
+          "INV-ANKPPE",
+          "INV-BEYEV2",
+          "INV-D2HZQ8",
+          "INV-FYZQK0",
+          "INV-G0Y4VR",
+          "INV-GSEMMW",
+          "INV-HWAWFT",
+          "INV-KTMBMN",
+          "INV-MS9BMJ",
+          "INV-N5RBFK",
+          "INV-WV1YQE",
+          "INV-XN0FG8",
+          "INV-YZ45D7",
+          "INV-ZGFZXT"
+        ],
+        "guarantee": "A converted leaf's closeout and direct landing judge their prepared memory tree through the validator and invariant gate and publish only that admitted tree on the intended branch and observed parent. The source index, message and hook policy remain faithful, and moved inputs or unfinished native actions refuse. Unpublished refusals restore owned preparations and preserve concurrent content; expected-old take-back never overwrites a foreign commit. Partial publication whose take-back fails may leave a reachable commit while preparations restore, and a proof failure after successful publication return keeps the published preparation. Gate-input reuse and frozen history remain exact. Recorded landing has only its separately declared validator and closed-history checks."
+      }
+    },
+    {
+      "key": "mr1-current-FAM-SDS92V",
+      "kind": "family",
+      "id": "FAM-SDS92V",
+      "fields": {
+        "guarantee": "The repository's retirement guard and static source check expose canonical-database access in their declared test/source scopes, and test teardown restores the guard when a test removes it. The reviewed copy-cleanup owner removes only eligible copies and preserves tracked or symlinked companions. Together these protect the database retirement's executable paths and cleanup boundary; they do not certify unrun tests, derived-index deletion, or elimination of every workspace copy."
+      }
+    }
+  ],
+  "history": [
+    {
+      "subject": "INV-753SKJFF",
+      "disposition": "changed",
+      "effect": "clarify",
+      "reason": "MIK-R26 deliberately supersedes dataset selection: resolve_published_intent selects the converted tree's index and refuses legacy roots. The original dataset and not-recorded promises are preserved only in prior Git history.",
+      "covers": [
+        {
+          "id": "RLZ-7J2QHFP8",
+          "remove": true
+        },
+        {
+          "id": "RLZ-K64BDQNF"
+        },
+        {
+          "id": "RLZ-YNWMKRWK",
+          "remove": true
+        }
+      ]
+    },
+    {
+      "subject": "INV-VVMNM9B6",
+      "disposition": "deleted",
+      "effect": "retire",
+      "reason": "The retired batch writer's allocation-content digest and journal replay are gone. TargetRealization describes authored values but does not enforce allocation_content_conflict, so retaining that realization would assert a mechanism the converted writer lacks.",
+      "covers": [
+        {
+          "id": "RLZ-WFYPZ4RX",
+          "remove": true
+        },
+        {
+          "id": "RLZ-YSH1QP6T",
+          "remove": true
+        }
+      ]
+    },
+    {
+      "subject": "INV-E8655Z54",
+      "disposition": "changed",
+      "effect": "clarify",
+      "reason": "The route-value refusal survives in handoff._targets via realization_refusal; allocation-journal replay exemptions do not survive the database retirement.",
+      "covers": [
+        {
+          "id": "RLZ-6HBW7626"
+        },
+        {
+          "id": "RLZ-7VHY091X"
+        },
+        {
+          "id": "RLZ-PM09BFJR"
+        }
+      ]
+    },
+    {
+      "subject": "INV-J7179RG5",
+      "disposition": "changed",
+      "effect": "clarify",
+      "reason": "The same role/rationale value and length checks survive at handoff._targets. The old committed-allocation bypass is retired and cannot scope the current file parser.",
+      "covers": [
+        {
+          "id": "RLZ-A2D6Y9T1"
+        },
+        {
+          "id": "RLZ-C4KJBVRZ"
+        }
+      ]
+    },
+    {
+      "subject": "INV-H6A6JS63",
+      "disposition": "changed",
+      "effect": "clarify",
+      "reason": "The live _targets parser enforces the authored explanation. Database allocation journals and their replay exemptions are no longer an applicable condition.",
+      "covers": [
+        {
+          "id": "RLZ-GX6ZQZ1F"
+        },
+        {
+          "id": "RLZ-H37XAYPT",
+          "remove": true
+        },
+        {
+          "id": "RLZ-V56JB15W",
+          "remove": true
+        }
+      ]
+    },
+    {
+      "subject": "INV-7W11WKKN",
+      "disposition": "changed",
+      "effect": "clarify",
+      "reason": "Collection ownership and honest availability survive in review_evidence_records; the retired freeze publisher and reserved-positive-input checks do not. This revision preserves that live meaning and drops the unsupported publication claim.",
+      "covers": [
+        {
+          "id": "RLZ-A6WJPHHK"
+        },
+        {
+          "id": "RLZ-C09ZZTNE",
+          "remove": true
+        },
+        {
+          "id": "RLZ-RH2JSX6Y",
+          "remove": true
+        },
+        {
+          "id": "RLZ-W7SB7NYW",
+          "remove": true
+        }
+      ]
+    },
+    {
+      "subject": "INV-9NCBGQSY",
+      "disposition": "changed",
+      "effect": "clarify",
+      "reason": "MIK-R26 retires even the unconverted dataset read route. Historical source and tree comparisons remain readable; the old alternative that still opened the canonical dataset is deliberately superseded.",
+      "covers": [
+        {
+          "id": "RLZ-8S8VDEJ3"
+        }
+      ]
+    },
+    {
+      "subject": "INV-FYZQK0",
+      "disposition": "changed",
+      "effect": "clarify",
+      "reason": "Preserve the observed partial-publication guarantee while removing the exclusion's false assertion that ordinary unpublished refusals restore nothing.",
+      "covers": [
+        {
+          "id": "RLZ-Q6CJEZ"
+        },
+        {
+          "id": "RLZ-GJZS85"
+        }
+      ]
+    },
+    {
+      "subject": "INV-JZD1F5",
+      "disposition": "changed",
+      "effect": "clarify",
+      "reason": "The documentation obligation remains current independently of any named final freeze; the authoring removes its temporary delivery-snapshot scope.",
+      "covers": [
+        {
+          "id": "RLZ-PFSP3Y"
+        },
+        {
+          "id": "RLZ-Y3ZQ4N"
+        }
+      ]
+    },
+    {
+      "subject": "INV-PPGGTW",
+      "disposition": "changed",
+      "effect": "clarify",
+      "reason": "The path-less request compares the full selected tree; an explicitly absent selector is refused. Scope must cover both omission disclosure and selector refusal rather than exclude the behavior its statement promises. The retained statement names a stable protected behavior; replace the generic admission with this specific failure and boundary.",
+      "covers": [
+        {
+          "id": "RLZ-QN88JH"
+        },
+        {
+          "id": "RLZ-TR53WB"
+        }
+      ]
+    },
+    {
+      "subject": "INV-1BBPF3",
+      "disposition": "changed",
+      "effect": "clarify",
+      "reason": "The retained statement names a stable protected behavior; replace the generic admission with this specific failure and boundary.",
+      "covers": [
+        {
+          "id": "RLZ-N1HZEM"
+        }
+      ]
+    },
+    {
+      "subject": "INV-K69R3M",
+      "disposition": "changed",
+      "effect": "clarify",
+      "reason": "The retained statement names a stable protected behavior; replace the generic admission with this specific failure and boundary.",
+      "covers": [
+        {
+          "id": "RLZ-JJMGHW"
+        }
+      ]
+    },
+    {
+      "subject": "INV-J6PAD2",
+      "disposition": "changed",
+      "effect": "clarify",
+      "reason": "The retained statement names a stable protected behavior; replace the generic admission with this specific failure and boundary.",
+      "covers": [
+        {
+          "id": "RLZ-2F1J87"
+        }
+      ]
+    },
+    {
+      "subject": "INV-JM868W",
+      "disposition": "changed",
+      "effect": "clarify",
+      "reason": "The retained statement names a stable protected behavior; replace the generic admission with this specific failure and boundary.",
+      "covers": [
+        {
+          "id": "RLZ-S7GGCD"
+        }
+      ]
+    },
+    {
+      "subject": "FAM-7B6N3Y4Q",
+      "disposition": "changed",
+      "reason": "The three members were examined together: writer reachability, one resolved read location and real taskless setup authority still give one authoring/read-location guarantee. The unconverted batch writer is deliberately removed by MIK-R26.",
+      "examined": [
+        "INV-1XKX9ERN",
+        "INV-753SKJFF",
+        "INV-QN53GPRB"
+      ]
+    },
+    {
+      "subject": "FAM-KQQE74ZT",
+      "disposition": "changed",
+      "reason": "Keep the five live explanation/target-validation obligations and remove the two retired allocation-replay obligations. Their distinct scope and exact current revisions were examined; _targets delegates to the retained value checker rather than the retired batch writer.",
+      "examined": [
+        "INV-0FBA8M52",
+        "INV-CKHJ0M7J",
+        "INV-E8655Z54",
+        "INV-H6A6JS63",
+        "INV-J7179RG5"
+      ]
+    },
+    {
+      "subject": "FAM-SK1BFPE2",
+      "disposition": "retired",
+      "reason": "The former joint guarantee combined semantic-scope admission with the allocated-scope conflict protocol. The latter is retired; preserve INV-KBCKV7N1 as a standalone scoped obligation rather than claim its old partner still implements a joint promise.",
+      "examined": [
+        "INV-KBCKV7N1",
+        "INV-TPDQGXYK"
+      ]
+    },
+    {
+      "subject": "FAM-XZ5BR65G",
+      "disposition": "changed",
+      "reason": "All current and retired siblings were examined. Tree comparison and curator custody survive; canonical dataset operands and the comparison-publishing producer do not. The guarantee is narrowed to the actual retained historical read paths.",
+      "examined": [
+        "INV-453ZPCZ5",
+        "INV-53MJW8V0",
+        "INV-7W11WKKN",
+        "INV-8Q6DZTDB",
+        "INV-9NCBGQSY",
+        "INV-S26EBC8P",
+        "INV-VXA7SZ0Z"
+      ]
+    },
+    {
+      "subject": "FAM-61DY2V",
+      "disposition": "changed",
+      "reason": "The current shared publication and both leaf routes implement admitted-tree/parent/index binding; direct landing is no longer an admission-snapshot exception. Preserve the Owner's R4-O2 partial-publication limit rather than inventing universal rollback. All unchanged base members and added members are retained and examined.",
+      "examined": [
+        "INV-0T84PZ",
+        "INV-0XMNQZ",
+        "INV-2Q8RPR",
+        "INV-49E649",
+        "INV-656CYW",
+        "INV-89A5AN",
+        "INV-9ZBTVA",
+        "INV-ANKPPE",
+        "INV-BEYEV2",
+        "INV-D2HZQ8",
+        "INV-FYZQK0",
+        "INV-G0Y4VR",
+        "INV-GSEMMW",
+        "INV-HWAWFT",
+        "INV-KTMBMN",
+        "INV-MS9BMJ",
+        "INV-N5RBFK",
+        "INV-WV1YQE",
+        "INV-XN0FG8",
+        "INV-YZ45D7",
+        "INV-ZGFZXT"
+      ]
+    },
+    {
+      "subject": "FAM-SDS92V",
+      "disposition": "changed",
+      "reason": "The six members jointly cover retirement detection, continued guard enforcement and protected cleanup, each in its actual scope. The earlier universal production/refusal sentence overstated what test instrumentation and one reviewed cleanup can measure.",
+      "examined": [
+        "INV-54J62R",
+        "INV-C3TYB0",
+        "INV-C5TQ6Z",
+        "INV-CKY44N",
+        "INV-GBH3RH",
+        "INV-MFQW2H"
+      ]
+    }
+  ]
+}

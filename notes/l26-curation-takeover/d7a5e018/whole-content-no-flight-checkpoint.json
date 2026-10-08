@@ -1,0 +1,79 @@
+{
+  "schema": "l26-curator-whole-content-no-flight/v1",
+  "at": "2026-10-08T07:55:37.600249+00:00",
+  "role": "curator",
+  "agent": "e3d033c8-2fa7-48d4-ac49-006d9ca1930f",
+  "request": "d7a5e018-b7ac-441b-86b0-e147b890d32c",
+  "memoryRoot": "/home/firefox/projects/ar-coordination/worktrees/agents-remember/260928-mik-l26-ar/memory-260928-mik-l26",
+  "codeRoot": "/home/firefox/projects/ar-coordination/worktrees/agents-remember/260928-mik-l26-ar/260928-mik-l26",
+  "codeHead": "4afb9f23eea691f7ff7c2ee2c1996cb6d04f5ccf",
+  "memoryHead": "1b8537eb7320d84f1e5af02b90535b3da5ec1910",
+  "codeWorkingDiffSha256": "2c7a15b600af866bef09de58354efefc67c9dda29d239f66cbad4644d15cccc2",
+  "memoryWorkingDiffSha256": "378557e5b1be9fa93d78c6653aeab6e1b71856ab9cf6cb66f522326d645f19d7",
+  "codeIndexSha256": "9e3d6867a502ccdc43058a557bbb14f85bfa5d992dcaf6117a6278d5de619d88",
+  "memoryIndexSha256": "b03748d4349978a226f7f2b43fca36ce72c0c5a3bae45e82fae9aa14f32f1737",
+  "actualFinalSourcePair": [
+    "b35b38bd46aa449704f0e69996879cc8b927faa3",
+    "83d4f82d0e814f26086f4ecca71d779edf951944"
+  ],
+  "original14Retained": true,
+  "writerInFlight": false,
+  "citationInFlight": false,
+  "helpersInFlight": false,
+  "otherMemoryWritesInFlight": false,
+  "o01Cards": 91,
+  "o01Legs": 432,
+  "citationCohorts": [
+    30,
+    61
+  ],
+  "familyExamination": {
+    "original47": 47,
+    "retired": 18,
+    "recordedMembership": 20,
+    "examinedNoFamily": 9
+  },
+  "checks": {
+    "memoryDiffCheck": "passed",
+    "currentFullMQC": "deferred until final source sync; intake172 remains held-pair evidence",
+    "coherence": "deferred until current final fullMQC",
+    "finalFreeze": "not produced"
+  },
+  "preservation": [
+    "old producer lists unchanged",
+    "E03 explicitly unverified historical observer gap",
+    "two-doc static2d3c/source2270 predecessor98f retained",
+    "raw58FALSE/4unowned/globalTRUE/400NOTRUN/all original limits",
+    "no source/index/ref/task/host/settings/Git mutation by Curator"
+  ],
+  "next": "SAME Worker sole one public supported sync to actual final76 pair; Curator resolves only memory content conflicts if returned, Manager verifies/stages; then Curator current full pipeline and one exact repaired pair DIRECT Reviewer under original14/fix2.",
+  "writerReceipts": [
+    {
+      "path": "memory-260928-mik-l26/notes/l26-curation-takeover/d7a5e018/remaining-record-commit.json",
+      "sha256": "f9aba89d86a2045765e435c41ef51b5277951686bdf50e480f23255082d2f2f4",
+      "state": "written",
+      "records": 18,
+      "historyRows": 18,
+      "writtenFiles": 28,
+      "problems": 0
+    },
+    {
+      "path": "memory-260928-mik-l26/notes/l26-curation-takeover/d7a5e018/remaining-record-commit-v3.json",
+      "sha256": "661dd6915d05b56f9ba97eba5da02a60cc8a0b49fde42b8dc1412640e57d8dd4",
+      "state": "written",
+      "records": 20,
+      "historyRows": 20,
+      "writtenFiles": 5,
+      "problems": 0
+    },
+    {
+      "path": "memory-260928-mik-l26/notes/l26-curation-takeover/d7a5e018/bootstrap-authority-scope.commit-v2.json",
+      "sha256": "5ee8f0db0e29ad1465a60b773ef695621fb51b0724b1c5f9ca40228e51b894ed",
+      "state": "written",
+      "records": 1,
+      "historyRows": 2,
+      "writtenFiles": 2,
+      "problems": 0
+    }
+  ]
+}

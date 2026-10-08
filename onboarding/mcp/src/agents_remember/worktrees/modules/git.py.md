@@ -41,9 +41,7 @@ remains visible.
 
 `stage_worktree_content` removes derived index entries and stages actual content without reading
 those paths. `commit_if_dirty` creates an ordinary content commit when its filtered status is dirty.
-`commit_verified_staged` operates on the already prepared index, removes explicitly excluded
-entries, checks the staged diff, and commits with `--no-verify` without restaging. Neither helper
-creates a commit for cache-only dirt. Hook execution remains a separate explicit helper.
+`publish_tree_commit` publishes the admitted exact tree through `commit-tree` and an expected-old branch update. It settles the message before the per-worktree publication lock, refuses an unfinished Git action or a moved/detached admitted ref, stages the supplied tree, runs the supplied confirmation, then writes and publishes the object. A failure gives the index back only while it still holds this call's staged state. Assume-unchanged, skip-worktree and intent-to-add facts are preserved. This primitive runs no Git commit hook; the reference-transaction hook still runs and its refusal retains Git's diagnostic. Prepared closeout hook policies are separate and are not changed here.
 
 Changed-path helpers retain their distinct semantics: existing-file worklists omit deletions, while
 `changed_files_with_counts` reports additions/deletions, rename targets, counts, and binary-file
@@ -65,7 +63,7 @@ verified-index committing remain deliberately separate APIs.
 - All Git execution uses the guarded kernel runner and exact caller-selected repository.
 - Cache-only dirt cannot trigger a memory-content commit when the caller supplies its exclusion.
 - Real ref, ancestry, repository, and content checks are retained.
-- Verified-index commit does not pull in later working-tree changes or rerun hooks.
+- Exact-tree publication does not pull in later working-tree changes. Its hook behavior is separate from prepared closeout policy.
 - Exclusion never grants permission to move a protected ref or bypass workflow authority.
 
 ### Todos
@@ -74,30 +72,9 @@ No new implementation or live-state operation is authorized by this documentatio
 
 ## Evidence
 
-### Docs References
-
-No Domain Documentation source is configured for this repository. No external domain documents
-were available through the configured registry to consult; the current claims are grounded in the
-working source and package-local evidence below. The registry is discovery input, not a citation.
-
-No configured external domain-documentation evidence.
-
 ### Repo-Internal References
 
-These repository-relative targets and exact ranges were checked against the L9 working source.
-Source declarations and test assertions are distinguished from execution and acceptance evidence.
-
-- Ref/repository identity and transport-safe errors have shared implementations. [1]
-- Candidate trees use private indices and exact derived-path exclusions. [2]
-- Filtered status and staging/commit APIs share the exclusion contract. [3]
-- The exact cache pathspec is defined beside the consumer filename. [4]
-- Changed-file reporting preserves its distinct deletion/rename/count semantics. [5]
-
-- `stage_tree` makes the index exactly one tree and reads nothing from the working tree. [6]
-
-### Cross-Repo References
-
-The code/memory or fixture-repository boundaries above are established by package-local source.
-No additional configured external or sibling-repository evidence is claimed.
-
-No additional configured cross-repository evidence.
+- `worktree_candidate_tree` implements the retained boundary described above. [10]
+- `stage_tree` implements the retained boundary described above. [11]
+- `publish_tree_commit` implements the retained boundary described above. [12]
+- `_move_admitted_ref` implements the retained boundary described above. [13]

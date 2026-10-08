@@ -78,8 +78,9 @@ lines); it imports `revision_heads` from there instead of copying it.
 - **The lane's count is a separate fact.** `attribution` is computed from file buckets only (no hunk read; proved by
   `test_the_entry_count_reads_file_buckets_only`) and is never folded into `+`/`−`.
 - **Presentation is not owned here.** Whether an acceptance-only successor is worded differently from a
-  text revision is `ICR-R35`/leaf L49's concern (leaf ruling 16:15:11 on F3; master decision 13:40 on
-  "wording unchanged").
+  text revision is the change-kind owner's concern: `review_change_kinds.py` compares the record
+  wording for the family-context change kinds (MIK-R33, adopting ICR-R32). The earlier `ICR-R35`/leaf
+  L49 assignment of that question is superseded and retained only as history.
 
 ### Todos
 

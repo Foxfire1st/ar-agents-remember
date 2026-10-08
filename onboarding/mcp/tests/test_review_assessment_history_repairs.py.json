@@ -2,80 +2,48 @@
   "path": "mcp/tests/test_review_assessment_history_repairs.py",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "All admitted judgment namespaces retain authored citations and custody.",
+    "6": {
+      "note": "`_nonempty_fixture` supplies the current fixture or assertion described above.",
       "targets": [
         {
           "anchor": {
-            "blob": "9429a5222bd56a617f0e5034c8432ab747df4e30",
-            "content": "sha256:12cb136c6b94fd7b6c3fae3c5ac89b0c7b23f6b2c8dc7d694d16d7e67fcc0596",
+            "blob": "a5c9bfdab65a09e5eed4982363e59419c5160c9a",
+            "content": "sha256:585e673ea32b3affe1058e41fdd768400f18af1abb0c705082da37c6fb9b17ea",
             "locator": {
               "kind": "symbol",
-              "name": "test_each_admitted_judgment_namespace_keeps_its_authored_citation_after_cleanup"
+              "name": "_nonempty_fixture"
             }
           },
           "kind": "test"
         }
       ]
     },
-    "2": {
-      "note": "Publisher-recorded alias destinations remain readable.",
+    "7": {
+      "note": "`_request` supplies the current fixture or assertion described above.",
       "targets": [
         {
           "anchor": {
-            "blob": "9429a5222bd56a617f0e5034c8432ab747df4e30",
-            "content": "sha256:7fbec0577fd4d78565f6539d2efa84183d675b9b0f9a35ccb68180d69e37f0c0",
+            "blob": "a5c9bfdab65a09e5eed4982363e59419c5160c9a",
+            "content": "sha256:e8e3004459606eb429bb40b9b17c7380a8068b730f40fc8345f3a3e88c8ebbd1",
             "locator": {
               "kind": "symbol",
-              "name": "test_confined_assessment_alias_uses_the_recorded_destination_after_alias_removal"
+              "name": "_request"
             }
           },
           "kind": "test"
         }
       ]
     },
-    "3": {
-      "note": "Integrity failure preserves the previous authority.",
+    "8": {
+      "note": "`test_integrity_rejection_precedes_canonical_authority_replacement` supplies the current fixture or assertion described above.",
       "targets": [
         {
           "anchor": {
-            "blob": "9429a5222bd56a617f0e5034c8432ab747df4e30",
+            "blob": "a5c9bfdab65a09e5eed4982363e59419c5160c9a",
             "content": "sha256:d410c863dd704761f2d5bc3833e0acb16216d6b8949b63637bd5907d7a1340cb",
             "locator": {
               "kind": "symbol",
               "name": "test_integrity_rejection_precedes_canonical_authority_replacement"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "4": {
-      "note": "Positive record input provenance is complete before publication.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "9429a5222bd56a617f0e5034c8432ab747df4e30",
-            "content": "sha256:1e53d4d2a7a1709b663a8d74c911a3af8323675a6b5e1a999ee8a711745daae5",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_supplied_owner_inputs_have_complete_provenance_or_refuse_before_publication"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "5": {
-      "note": "Loss of either expected retained half refuses and reclaims partial work.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "9429a5222bd56a617f0e5034c8432ab747df4e30",
-            "content": "sha256:05d6f246f916d8312873c4116b8675434b77067bd3df30d19b2fbfafda5167d6",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_recovery_losing_an_expected_snapshot_before_copy_refuses_and_reclaims"
             }
           },
           "kind": "test"

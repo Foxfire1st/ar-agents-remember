@@ -85,23 +85,6 @@
       },
       "rationale": "Recognises the placeholder word on a target so the entry is refused before the writer would read it as a route path.",
       "role": "enforcement"
-    },
-    {
-      "anchor": {
-        "blob": "befd12b921e3b8573570475a960e0a1992be5913",
-        "content": "sha256:fa9bc1eec6c185a62524511625b1fd471604fd103c84a939f27203ea13aea331",
-        "locator": {
-          "kind": "symbol",
-          "name": "TargetRealization"
-        }
-      },
-      "id": "RLZ-YSH1QP6T",
-      "invariant": "INV-VVMNM9B6",
-      "origin": {
-        "leaf": "260921-ICR-L45"
-      },
-      "rationale": "Carries the target's own stated keys separately from the resolved values, which is what the digest reads.",
-      "role": "support"
     }
   ],
   "references": {
@@ -317,7 +300,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b7d1f0ed9070d0e7e8877341a2a95fe1b5c6b786",
+            "blob": "eb43356c10b09e4f63622d8ce0004d9d68140bee",
             "content": "sha256:04ce117f509879f455d40f1f713e5577467d3d7b176c100922cc2680c0911db4",
             "locator": {
               "kind": "symbol",
@@ -329,7 +312,7 @@
         },
         {
           "anchor": {
-            "blob": "b7d1f0ed9070d0e7e8877341a2a95fe1b5c6b786",
+            "blob": "eb43356c10b09e4f63622d8ce0004d9d68140bee",
             "content": "sha256:d3b62bdeb910a01fc5c180dd90c8fb5154489a9e4b8e100708ef060621d373e4",
             "locator": {
               "kind": "symbol",
@@ -350,88 +333,6 @@
             "path": "mcp/src/agents_remember/models/knowledge/base.py"
           },
           "kind": "code"
-        }
-      ]
-    },
-    "8": {
-      "note": "**The callers: the entry fields read the default, admission asks the refusal before `_creation` (committed allocations exempt), and each planned target binds its resolved realization.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "6c264ad4baa933504af480b247b65dd3c5a52ea3",
-            "content": "sha256:0d4b25cedf6e75983d86ec3cfaeb0a67f9e0fd8e6cdb4200e0a052d2c6583d93",
-            "locator": {
-              "kind": "symbol",
-              "name": "_EntryFields"
-            },
-            "path": "mcp/src/agents_remember/application/knowledge_curator_ingest.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "6c264ad4baa933504af480b247b65dd3c5a52ea3",
-            "content": "sha256:50de660e84e15141163f6c6b0677d2003d8c0c22d0553f029505098e6a769937",
-            "locator": {
-              "kind": "symbol",
-              "name": "_resolve_creation"
-            },
-            "path": "mcp/src/agents_remember/application/knowledge_curator_ingest.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "6c264ad4baa933504af480b247b65dd3c5a52ea3",
-            "content": "sha256:96a7dcb2ce8e6076bd10664bfd033a301597b018732b441c89410f5a05e96cc7",
-            "locator": {
-              "kind": "symbol",
-              "name": "_plan_target_inner"
-            },
-            "path": "mcp/src/agents_remember/application/knowledge_curator_ingest.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "9": {
-      "note": "The cases proving each rule through the real writer.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "3f5daacaaa9d44f63e15ff1a2bea06385d14f0ef",
-            "content": "sha256:18e0b9ecde0d0cec7983a5d3ffb1bab1bbc2ab38544c53282b00660aff8335f1",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_each_target_of_one_entry_stores_its_own_authored_rationale_and_role"
-            },
-            "path": "mcp/tests/test_curator_realization_authoring.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "3f5daacaaa9d44f63e15ff1a2bea06385d14f0ef",
-            "content": "sha256:6270b4a53b25d006055bc52d293bded5c8059d38c18d786d4dfc293f2eb4088c",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_value_that_is_not_text_an_unknown_role_or_an_over_long_rationale_refuses_its_own_entry"
-            },
-            "path": "mcp/tests/test_curator_realization_authoring.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "3f5daacaaa9d44f63e15ff1a2bea06385d14f0ef",
-            "content": "sha256:71a8e6e2ce56ae4dae9c0a20e83d290f5fc3d2a9e554d70e821bd679cc64a0c6",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_the_word_absent_is_refused_as_a_governing_route_in_any_case_once_trimmed"
-            },
-            "path": "mcp/tests/test_curator_realization_authoring.py"
-          },
-          "kind": "test"
         }
       ]
     }

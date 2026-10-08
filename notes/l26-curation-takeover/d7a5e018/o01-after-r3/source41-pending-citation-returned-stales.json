@@ -1,0 +1,996 @@
+{
+  "state": "raw-scoped-citation-results-not-full-MQC",
+  "rawCount": 214,
+  "findings": [
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/overview.json",
+      "field": "references.103.targets.0",
+      "target": "mcp/src/agents_remember/cli/__main__.py",
+      "state": "stale",
+      "message": "onboarding/mcp/overview.json: references.103.targets.0: reference target mcp/src/agents_remember/cli/__main__.py is stale; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/overview.json",
+      "field": "references.14.targets.0",
+      "target": "mcp/src/agents_remember/application/knowledge_worklist/reconsideration.py",
+      "state": "stale",
+      "message": "onboarding/mcp/overview.json: references.14.targets.0: reference target mcp/src/agents_remember/application/knowledge_worklist/reconsideration.py is stale; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/overview.json",
+      "field": "references.152.targets.2",
+      "target": "mcp/src/agents_remember/application/memory_quality/controller.py",
+      "state": "stale",
+      "message": "onboarding/mcp/overview.json: references.152.targets.2: reference target mcp/src/agents_remember/application/memory_quality/controller.py is stale; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/overview.json",
+      "field": "references.161.targets.0",
+      "target": "mcp/src/agents_remember/application/role_capsules/launch.py",
+      "state": "stale",
+      "message": "onboarding/mcp/overview.json: references.161.targets.0: reference target mcp/src/agents_remember/application/role_capsules/launch.py is stale; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/overview.json",
+      "field": "references.161.targets.1",
+      "target": "mcp/src/agents_remember/application/role_capsules/launch.py",
+      "state": "stale",
+      "message": "onboarding/mcp/overview.json: references.161.targets.1: reference target mcp/src/agents_remember/application/role_capsules/launch.py is stale; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/overview.json",
+      "field": "references.168.targets.0",
+      "target": "mcp/pyproject.toml",
+      "state": "stale",
+      "message": "onboarding/mcp/overview.json: references.168.targets.0: reference target mcp/pyproject.toml is stale; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/overview.json",
+      "field": "references.170.targets.0",
+      "target": "layers.toml",
+      "state": "stale",
+      "message": "onboarding/mcp/overview.json: references.170.targets.0: reference target layers.toml is stale; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/overview.json",
+      "field": "references.171.targets.0",
+      "target": "mcp/src/agents_remember/memory/knowledge/__init__.py",
+      "state": "stale",
+      "message": "onboarding/mcp/overview.json: references.171.targets.0: reference target mcp/src/agents_remember/memory/knowledge/__init__.py is stale; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/overview.json",
+      "field": "references.193.targets.0",
+      "target": "mcp/src/agents_remember/cli/dashboard.py",
+      "state": "stale",
+      "message": "onboarding/mcp/overview.json: references.193.targets.0: reference target mcp/src/agents_remember/cli/dashboard.py is stale; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/overview.json",
+      "field": "references.193.targets.1",
+      "target": "mcp/src/agents_remember/cli/dashboard.py",
+      "state": "stale",
+      "message": "onboarding/mcp/overview.json: references.193.targets.1: reference target mcp/src/agents_remember/cli/dashboard.py is stale; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/overview.json",
+      "field": "references.196.targets.1",
+      "target": "mcp/src/agents_remember/cli/dashboard.py",
+      "state": "stale",
+      "message": "onboarding/mcp/overview.json: references.196.targets.1: reference target mcp/src/agents_remember/cli/dashboard.py is stale; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/overview.json",
+      "field": "references.198.targets.0",
+      "target": "mcp/src/agents_remember/cli/knowledge_ingest.py",
+      "state": "stale",
+      "message": "onboarding/mcp/overview.json: references.198.targets.0: reference target mcp/src/agents_remember/cli/knowledge_ingest.py is stale; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/overview.json",
+      "field": "references.198.targets.1",
+      "target": "mcp/src/agents_remember/cli/knowledge_ingest.py",
+      "state": "stale",
+      "message": "onboarding/mcp/overview.json: references.198.targets.1: reference target mcp/src/agents_remember/cli/knowledge_ingest.py is stale; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/overview.json",
+      "field": "references.203.targets.0",
+      "target": "mcp/src/agents_remember/cli/knowledge_ingest.py",
+      "state": "stale",
+      "message": "onboarding/mcp/overview.json: references.203.targets.0: reference target mcp/src/agents_remember/cli/knowledge_ingest.py is stale; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/overview.json",
+      "field": "references.203.targets.1",
+      "target": "mcp/src/agents_remember/cli/knowledge_ingest.py",
+      "state": "stale",
+      "message": "onboarding/mcp/overview.json: references.203.targets.1: reference target mcp/src/agents_remember/cli/knowledge_ingest.py is stale; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/overview.json",
+      "field": "references.208.targets.0",
+      "target": "mcp/src/agents_remember/application/published_intent.py",
+      "state": "stale",
+      "message": "onboarding/mcp/overview.json: references.208.targets.0: reference target mcp/src/agents_remember/application/published_intent.py is stale; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/overview.json",
+      "field": "references.210.targets.0",
+      "target": "mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md",
+      "state": "stale",
+      "message": "onboarding/mcp/overview.json: references.210.targets.0: reference target mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md is stale; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/overview.json",
+      "field": "references.211.targets.0",
+      "target": "mcp/tests/test_read_ar_files.py",
+      "state": "stale",
+      "message": "onboarding/mcp/overview.json: references.211.targets.0: reference target mcp/tests/test_read_ar_files.py is stale; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/overview.json",
+      "field": "references.222.targets.0",
+      "target": "mcp/src/agents_remember/cli/knowledge_write_route.py",
+      "state": "stale",
+      "message": "onboarding/mcp/overview.json: references.222.targets.0: reference target mcp/src/agents_remember/cli/knowledge_write_route.py is stale; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/overview.json",
+      "field": "references.223.targets.0",
+      "target": "mcp/src/agents_remember/cli/knowledge_bootstrap.py",
+      "state": "stale",
+      "message": "onboarding/mcp/overview.json: references.223.targets.0: reference target mcp/src/agents_remember/cli/knowledge_bootstrap.py is stale; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/overview.json",
+      "field": "references.228.targets.0",
+      "target": "mcp/src/agents_remember/cli/paseo_runtime.py",
+      "state": "stale",
+      "message": "onboarding/mcp/overview.json: references.228.targets.0: reference target mcp/src/agents_remember/cli/paseo_runtime.py is stale; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/overview.json",
+      "field": "references.229.targets.0",
+      "target": "mcp/src/agents_remember/cli/paseo_launch.py",
+      "state": "stale",
+      "message": "onboarding/mcp/overview.json: references.229.targets.0: reference target mcp/src/agents_remember/cli/paseo_launch.py is stale; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/overview.json",
+      "field": "references.231.targets.0",
+      "target": "mcp/src/agents_remember/cli/knowledge_write_route.py",
+      "state": "stale",
+      "message": "onboarding/mcp/overview.json: references.231.targets.0: reference target mcp/src/agents_remember/cli/knowledge_write_route.py is stale; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/overview.json",
+      "field": "references.242.targets.0",
+      "target": "mcp/tests/test_reviewer_worklist_process.py",
+      "state": "stale",
+      "message": "onboarding/mcp/overview.json: references.242.targets.0: reference target mcp/tests/test_reviewer_worklist_process.py is stale; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/overview.json",
+      "field": "references.247.targets.0",
+      "target": "mcp/src/agents_remember/kernel/recorded_reads.py",
+      "state": "stale",
+      "message": "onboarding/mcp/overview.json: references.247.targets.0: reference target mcp/src/agents_remember/kernel/recorded_reads.py is stale; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/overview.json",
+      "field": "references.33.targets.0",
+      "target": "mcp/src/agents_remember/application/review_tree_comparison.py",
+      "state": "stale",
+      "message": "onboarding/mcp/overview.json: references.33.targets.0: reference target mcp/src/agents_remember/application/review_tree_comparison.py is stale; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/overview.json",
+      "field": "references.40.targets.0",
+      "target": "mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py",
+      "state": "stale",
+      "message": "onboarding/mcp/overview.json: references.40.targets.0: reference target mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py is stale; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/overview.json",
+      "field": "references.5.targets.2",
+      "target": "mcp/src/agents_remember/worktrees/knowledge_gate.py",
+      "state": "stale",
+      "message": "onboarding/mcp/overview.json: references.5.targets.2: reference target mcp/src/agents_remember/worktrees/knowledge_gate.py is stale; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/overview.json",
+      "field": "references.55.targets.0",
+      "target": "mcp/src/agents_remember/tasks/leaf_decisions.py",
+      "state": "stale",
+      "message": "onboarding/mcp/overview.json: references.55.targets.0: reference target mcp/src/agents_remember/tasks/leaf_decisions.py is stale; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/overview.json",
+      "field": "references.60.targets.0",
+      "target": "mcp/src/agents_remember/application/memory_quality/controller.py",
+      "state": "stale",
+      "message": "onboarding/mcp/overview.json: references.60.targets.0: reference target mcp/src/agents_remember/application/memory_quality/controller.py is stale; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/overview.json",
+      "field": "references.64.targets.0",
+      "target": "mcp/src/agents_remember/application/published_intent.py",
+      "state": "stale",
+      "message": "onboarding/mcp/overview.json: references.64.targets.0: reference target mcp/src/agents_remember/application/published_intent.py is stale; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/overview.json",
+      "field": "references.88.targets.0",
+      "target": "mcp/src/agents_remember/application/published_intent.py",
+      "state": "stale",
+      "message": "onboarding/mcp/overview.json: references.88.targets.0: reference target mcp/src/agents_remember/application/published_intent.py is stale; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/overview.json",
+      "field": "references.93.targets.0",
+      "target": "mcp/src/agents_remember/kernel/git_command.py",
+      "state": "stale",
+      "message": "onboarding/mcp/overview.json: references.93.targets.0: reference target mcp/src/agents_remember/kernel/git_command.py is stale; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/overview.json",
+      "field": "references.97.targets.0",
+      "target": "skills/l-01-agent-lifecycles/templates/curator-handoff-list.md",
+      "state": "stale",
+      "message": "onboarding/mcp/overview.json: references.97.targets.0: reference target skills/l-01-agent-lifecycles/templates/curator-handoff-list.md is stale; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/src/agents_remember/application/knowledge_before_half.py.json",
+      "field": "references.1.targets.0",
+      "target": "mcp/src/agents_remember/application/knowledge_before_half.py",
+      "state": "stale",
+      "message": "onboarding/mcp/src/agents_remember/application/knowledge_before_half.py.json: references.1.targets.0: reference target mcp/src/agents_remember/application/knowledge_before_half.py is stale; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/src/agents_remember/application/knowledge_before_half.py.json",
+      "field": "references.10.targets.0",
+      "target": "mcp/src/agents_remember/application/knowledge_before_half.py",
+      "state": "stale",
+      "message": "onboarding/mcp/src/agents_remember/application/knowledge_before_half.py.json: references.10.targets.0: reference target mcp/src/agents_remember/application/knowledge_before_half.py is stale; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/src/agents_remember/application/knowledge_before_half.py.json",
+      "field": "references.11.targets.0",
+      "target": "mcp/src/agents_remember/application/knowledge_before_half.py",
+      "state": "stale:unresolved",
+      "message": "onboarding/mcp/src/agents_remember/application/knowledge_before_half.py.json: references.11.targets.0: reference target mcp/src/agents_remember/application/knowledge_before_half.py is stale:unresolved; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/src/agents_remember/application/knowledge_before_half.py.json",
+      "field": "references.12.targets.0",
+      "target": "mcp/src/agents_remember/application/knowledge_before_half.py",
+      "state": "stale:unresolved",
+      "message": "onboarding/mcp/src/agents_remember/application/knowledge_before_half.py.json: references.12.targets.0: reference target mcp/src/agents_remember/application/knowledge_before_half.py is stale:unresolved; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/src/agents_remember/application/knowledge_before_half.py.json",
+      "field": "references.13.targets.0",
+      "target": "mcp/src/agents_remember/application/knowledge_before_half.py",
+      "state": "stale:unresolved",
+      "message": "onboarding/mcp/src/agents_remember/application/knowledge_before_half.py.json: references.13.targets.0: reference target mcp/src/agents_remember/application/knowledge_before_half.py is stale:unresolved; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/src/agents_remember/application/knowledge_before_half.py.json",
+      "field": "references.13.targets.1",
+      "target": "mcp/src/agents_remember/application/knowledge_before_half.py",
+      "state": "stale:unresolved",
+      "message": "onboarding/mcp/src/agents_remember/application/knowledge_before_half.py.json: references.13.targets.1: reference target mcp/src/agents_remember/application/knowledge_before_half.py is stale:unresolved; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/src/agents_remember/application/knowledge_before_half.py.json",
+      "field": "references.13.targets.2",
+      "target": "mcp/src/agents_remember/application/knowledge_before_half.py",
+      "state": "stale:unresolved",
+      "message": "onboarding/mcp/src/agents_remember/application/knowledge_before_half.py.json: references.13.targets.2: reference target mcp/src/agents_remember/application/knowledge_before_half.py is stale:unresolved; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/src/agents_remember/application/knowledge_before_half.py.json",
+      "field": "references.14.targets.0",
+      "target": "mcp/src/agents_remember/application/knowledge_before_half.py",
+      "state": "stale:unresolved",
+      "message": "onboarding/mcp/src/agents_remember/application/knowledge_before_half.py.json: references.14.targets.0: reference target mcp/src/agents_remember/application/knowledge_before_half.py is stale:unresolved; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/src/agents_remember/application/knowledge_before_half.py.json",
+      "field": "references.15.targets.0",
+      "target": "mcp/src/agents_remember/application/knowledge_before_half.py",
+      "state": "stale",
+      "message": "onboarding/mcp/src/agents_remember/application/knowledge_before_half.py.json: references.15.targets.0: reference target mcp/src/agents_remember/application/knowledge_before_half.py is stale; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/src/agents_remember/application/knowledge_before_half.py.json",
+      "field": "references.15.targets.1",
+      "target": "mcp/src/agents_remember/application/knowledge_before_half.py",
+      "state": "stale:unresolved",
+      "message": "onboarding/mcp/src/agents_remember/application/knowledge_before_half.py.json: references.15.targets.1: reference target mcp/src/agents_remember/application/knowledge_before_half.py is stale:unresolved; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/src/agents_remember/application/knowledge_before_half.py.json",
+      "field": "references.15.targets.2",
+      "target": "mcp/src/agents_remember/models/knowledge/review.py",
+      "state": "stale:unresolved",
+      "message": "onboarding/mcp/src/agents_remember/application/knowledge_before_half.py.json: references.15.targets.2: reference target mcp/src/agents_remember/models/knowledge/review.py is stale:unresolved; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/src/agents_remember/application/knowledge_before_half.py.json",
+      "field": "references.2.targets.0",
+      "target": "mcp/src/agents_remember/application/knowledge_before_half.py",
+      "state": "stale:unresolved",
+      "message": "onboarding/mcp/src/agents_remember/application/knowledge_before_half.py.json: references.2.targets.0: reference target mcp/src/agents_remember/application/knowledge_before_half.py is stale:unresolved; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/src/agents_remember/application/knowledge_before_half.py.json",
+      "field": "references.3.targets.0",
+      "target": "mcp/src/agents_remember/application/knowledge_before_half.py",
+      "state": "stale:unresolved",
+      "message": "onboarding/mcp/src/agents_remember/application/knowledge_before_half.py.json: references.3.targets.0: reference target mcp/src/agents_remember/application/knowledge_before_half.py is stale:unresolved; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/src/agents_remember/application/knowledge_before_half.py.json",
+      "field": "references.3.targets.1",
+      "target": "mcp/src/agents_remember/application/knowledge_before_half.py",
+      "state": "stale:unresolved",
+      "message": "onboarding/mcp/src/agents_remember/application/knowledge_before_half.py.json: references.3.targets.1: reference target mcp/src/agents_remember/application/knowledge_before_half.py is stale:unresolved; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/src/agents_remember/application/knowledge_before_half.py.json",
+      "field": "references.3.targets.2",
+      "target": "mcp/src/agents_remember/application/knowledge_before_half.py",
+      "state": "stale:unresolved",
+      "message": "onboarding/mcp/src/agents_remember/application/knowledge_before_half.py.json: references.3.targets.2: reference target mcp/src/agents_remember/application/knowledge_before_half.py is stale:unresolved; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/src/agents_remember/application/knowledge_before_half.py.json",
+      "field": "references.3.targets.4",
+      "target": "mcp/src/agents_remember/application/knowledge_before_half.py",
+      "state": "stale:unresolved",
+      "message": "onboarding/mcp/src/agents_remember/application/knowledge_before_half.py.json: references.3.targets.4: reference target mcp/src/agents_remember/application/knowledge_before_half.py is stale:unresolved; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/src/agents_remember/application/knowledge_before_half.py.json",
+      "field": "references.4.targets.0",
+      "target": "mcp/src/agents_remember/application/knowledge_before_half.py",
+      "state": "stale:unresolved",
+      "message": "onboarding/mcp/src/agents_remember/application/knowledge_before_half.py.json: references.4.targets.0: reference target mcp/src/agents_remember/application/knowledge_before_half.py is stale:unresolved; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/src/agents_remember/application/knowledge_before_half.py.json",
+      "field": "references.5.targets.0",
+      "target": "mcp/src/agents_remember/application/knowledge_before_half.py",
+      "state": "stale:unresolved",
+      "message": "onboarding/mcp/src/agents_remember/application/knowledge_before_half.py.json: references.5.targets.0: reference target mcp/src/agents_remember/application/knowledge_before_half.py is stale:unresolved; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/src/agents_remember/application/knowledge_before_half.py.json",
+      "field": "references.6.targets.0",
+      "target": "mcp/src/agents_remember/application/knowledge_before_half.py",
+      "state": "stale:unresolved",
+      "message": "onboarding/mcp/src/agents_remember/application/knowledge_before_half.py.json: references.6.targets.0: reference target mcp/src/agents_remember/application/knowledge_before_half.py is stale:unresolved; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/src/agents_remember/application/knowledge_before_half.py.json",
+      "field": "references.7.targets.0",
+      "target": "mcp/src/agents_remember/application/knowledge_before_half.py",
+      "state": "stale:unresolved",
+      "message": "onboarding/mcp/src/agents_remember/application/knowledge_before_half.py.json: references.7.targets.0: reference target mcp/src/agents_remember/application/knowledge_before_half.py is stale:unresolved; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/src/agents_remember/application/knowledge_before_half.py.json",
+      "field": "references.7.targets.1",
+      "target": "mcp/src/agents_remember/application/knowledge_before_half.py",
+      "state": "stale:unresolved",
+      "message": "onboarding/mcp/src/agents_remember/application/knowledge_before_half.py.json: references.7.targets.1: reference target mcp/src/agents_remember/application/knowledge_before_half.py is stale:unresolved; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/src/agents_remember/application/knowledge_before_half.py.json",
+      "field": "references.8.targets.0",
+      "target": "mcp/src/agents_remember/application/knowledge_before_half.py",
+      "state": "stale:unresolved",
+      "message": "onboarding/mcp/src/agents_remember/application/knowledge_before_half.py.json: references.8.targets.0: reference target mcp/src/agents_remember/application/knowledge_before_half.py is stale:unresolved; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/src/agents_remember/application/knowledge_before_half.py.json",
+      "field": "references.8.targets.1",
+      "target": "mcp/src/agents_remember/kernel/atomic_write.py",
+      "state": "stale",
+      "message": "onboarding/mcp/src/agents_remember/application/knowledge_before_half.py.json: references.8.targets.1: reference target mcp/src/agents_remember/kernel/atomic_write.py is stale; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/src/agents_remember/application/knowledge_before_half.py.json",
+      "field": "references.9.targets.0",
+      "target": "mcp/src/agents_remember/application/knowledge_before_half.py",
+      "state": "stale:unresolved",
+      "message": "onboarding/mcp/src/agents_remember/application/knowledge_before_half.py.json: references.9.targets.0: reference target mcp/src/agents_remember/application/knowledge_before_half.py is stale:unresolved; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/src/agents_remember/application/overview.json",
+      "field": "references.104.targets.0",
+      "target": "mcp/src/agents_remember/application/role_capsules/launch.py",
+      "state": "stale",
+      "message": "onboarding/mcp/src/agents_remember/application/overview.json: references.104.targets.0: reference target mcp/src/agents_remember/application/role_capsules/launch.py is stale; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/src/agents_remember/application/overview.json",
+      "field": "references.104.targets.1",
+      "target": "mcp/src/agents_remember/application/role_capsules/launch.py",
+      "state": "stale",
+      "message": "onboarding/mcp/src/agents_remember/application/overview.json: references.104.targets.1: reference target mcp/src/agents_remember/application/role_capsules/launch.py is stale; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/src/agents_remember/application/overview.json",
+      "field": "references.104.targets.2",
+      "target": "mcp/src/agents_remember/application/role_capsules/launch.py",
+      "state": "stale",
+      "message": "onboarding/mcp/src/agents_remember/application/overview.json: references.104.targets.2: reference target mcp/src/agents_remember/application/role_capsules/launch.py is stale; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/src/agents_remember/application/overview.json",
+      "field": "references.105.targets.0",
+      "target": "mcp/src/agents_remember/application/role_capsules/launch.py",
+      "state": "stale",
+      "message": "onboarding/mcp/src/agents_remember/application/overview.json: references.105.targets.0: reference target mcp/src/agents_remember/application/role_capsules/launch.py is stale; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/src/agents_remember/application/overview.json",
+      "field": "references.11.targets.0",
+      "target": "mcp/src/agents_remember/application/review_source_realization_link.py",
+      "state": "stale",
+      "message": "onboarding/mcp/src/agents_remember/application/overview.json: references.11.targets.0: reference target mcp/src/agents_remember/application/review_source_realization_link.py is stale; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/src/agents_remember/application/overview.json",
+      "field": "references.114.targets.0",
+      "target": "mcp/src/agents_remember/models/tools/tool_registry.py",
+      "state": "stale",
+      "message": "onboarding/mcp/src/agents_remember/application/overview.json: references.114.targets.0: reference target mcp/src/agents_remember/models/tools/tool_registry.py is stale; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/src/agents_remember/application/overview.json",
+      "field": "references.116.targets.3",
+      "target": "mcp/src/agents_remember/application/memory_quality/controller.py",
+      "state": "stale",
+      "message": "onboarding/mcp/src/agents_remember/application/overview.json: references.116.targets.3: reference target mcp/src/agents_remember/application/memory_quality/controller.py is stale; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/src/agents_remember/application/overview.json",
+      "field": "references.132.targets.0",
+      "target": "layers.toml",
+      "state": "stale",
+      "message": "onboarding/mcp/src/agents_remember/application/overview.json: references.132.targets.0: reference target layers.toml is stale; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/src/agents_remember/application/overview.json",
+      "field": "references.133.targets.0",
+      "target": "mcp/src/agents_remember/memory/knowledge/store.py",
+      "state": "stale:unresolved",
+      "message": "onboarding/mcp/src/agents_remember/application/overview.json: references.133.targets.0: reference target mcp/src/agents_remember/memory/knowledge/store.py is stale:unresolved; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/src/agents_remember/application/overview.json",
+      "field": "references.139.targets.0",
+      "target": "mcp/src/agents_remember/application/role_capsules/launch.py",
+      "state": "stale",
+      "message": "onboarding/mcp/src/agents_remember/application/overview.json: references.139.targets.0: reference target mcp/src/agents_remember/application/role_capsules/launch.py is stale; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/src/agents_remember/application/overview.json",
+      "field": "references.139.targets.1",
+      "target": "mcp/src/agents_remember/application/role_capsules/launch.py",
+      "state": "stale",
+      "message": "onboarding/mcp/src/agents_remember/application/overview.json: references.139.targets.1: reference target mcp/src/agents_remember/application/role_capsules/launch.py is stale; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/src/agents_remember/application/overview.json",
+      "field": "references.151.targets.0",
+      "target": "mcp/src/agents_remember/models/knowledge/candidate.py",
+      "state": "stale:unresolved",
+      "message": "onboarding/mcp/src/agents_remember/application/overview.json: references.151.targets.0: reference target mcp/src/agents_remember/models/knowledge/candidate.py is stale:unresolved; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/src/agents_remember/application/overview.json",
+      "field": "references.151.targets.2",
+      "target": "mcp/src/agents_remember/models/knowledge/candidate.py",
+      "state": "stale:unresolved",
+      "message": "onboarding/mcp/src/agents_remember/application/overview.json: references.151.targets.2: reference target mcp/src/agents_remember/models/knowledge/candidate.py is stale:unresolved; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/src/agents_remember/application/overview.json",
+      "field": "references.151.targets.3",
+      "target": "mcp/src/agents_remember/models/knowledge/candidate.py",
+      "state": "stale:unresolved",
+      "message": "onboarding/mcp/src/agents_remember/application/overview.json: references.151.targets.3: reference target mcp/src/agents_remember/models/knowledge/candidate.py is stale:unresolved; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/src/agents_remember/application/overview.json",
+      "field": "references.17.targets.0",
+      "target": "mcp/src/agents_remember/application/review_committed_leaf.py",
+      "state": "stale",
+      "message": "onboarding/mcp/src/agents_remember/application/overview.json: references.17.targets.0: reference target mcp/src/agents_remember/application/review_committed_leaf.py is stale; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/src/agents_remember/application/overview.json",
+      "field": "references.17.targets.1",
+      "target": "mcp/src/agents_remember/application/review_committed_leaf.py",
+      "state": "stale:unresolved",
+      "message": "onboarding/mcp/src/agents_remember/application/overview.json: references.17.targets.1: reference target mcp/src/agents_remember/application/review_committed_leaf.py is stale:unresolved; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/src/agents_remember/application/overview.json",
+      "field": "references.17.targets.2",
+      "target": "mcp/src/agents_remember/application/review_committed_leaf.py",
+      "state": "stale:unresolved",
+      "message": "onboarding/mcp/src/agents_remember/application/overview.json: references.17.targets.2: reference target mcp/src/agents_remember/application/review_committed_leaf.py is stale:unresolved; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/src/agents_remember/application/overview.json",
+      "field": "references.176.targets.2",
+      "target": "mcp/src/agents_remember/application/knowledge_read.py",
+      "state": "stale",
+      "message": "onboarding/mcp/src/agents_remember/application/overview.json: references.176.targets.2: reference target mcp/src/agents_remember/application/knowledge_read.py is stale; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/src/agents_remember/application/overview.json",
+      "field": "references.18.targets.0",
+      "target": "mcp/src/agents_remember/application/review_relationship_movement.py",
+      "state": "stale",
+      "message": "onboarding/mcp/src/agents_remember/application/overview.json: references.18.targets.0: reference target mcp/src/agents_remember/application/review_relationship_movement.py is stale; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/src/agents_remember/application/overview.json",
+      "field": "references.183.targets.0",
+      "target": "mcp/src/agents_remember/application/knowledge_diff.py",
+      "state": "stale",
+      "message": "onboarding/mcp/src/agents_remember/application/overview.json: references.183.targets.0: reference target mcp/src/agents_remember/application/knowledge_diff.py is stale; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/src/agents_remember/application/overview.json",
+      "field": "references.184.targets.0",
+      "target": "mcp/src/agents_remember/application/knowledge_diff.py",
+      "state": "stale",
+      "message": "onboarding/mcp/src/agents_remember/application/overview.json: references.184.targets.0: reference target mcp/src/agents_remember/application/knowledge_diff.py is stale; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/src/agents_remember/application/overview.json",
+      "field": "references.194.targets.0",
+      "target": "mcp/src/agents_remember/memory/knowledge/schema_generations.py",
+      "state": "stale",
+      "message": "onboarding/mcp/src/agents_remember/application/overview.json: references.194.targets.0: reference target mcp/src/agents_remember/memory/knowledge/schema_generations.py is stale; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/src/agents_remember/application/overview.json",
+      "field": "references.194.targets.1",
+      "target": "mcp/src/agents_remember/memory/knowledge/schema_generations.py",
+      "state": "stale",
+      "message": "onboarding/mcp/src/agents_remember/application/overview.json: references.194.targets.1: reference target mcp/src/agents_remember/memory/knowledge/schema_generations.py is stale; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/src/agents_remember/application/overview.json",
+      "field": "references.195.targets.0",
+      "target": "mcp/src/agents_remember/memory/knowledge/schema_generations.py",
+      "state": "stale",
+      "message": "onboarding/mcp/src/agents_remember/application/overview.json: references.195.targets.0: reference target mcp/src/agents_remember/memory/knowledge/schema_generations.py is stale; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/src/agents_remember/application/overview.json",
+      "field": "references.195.targets.1",
+      "target": "mcp/src/agents_remember/memory/knowledge/schema_generations.py",
+      "state": "stale:unresolved",
+      "message": "onboarding/mcp/src/agents_remember/application/overview.json: references.195.targets.1: reference target mcp/src/agents_remember/memory/knowledge/schema_generations.py is stale:unresolved; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/src/agents_remember/application/overview.json",
+      "field": "references.196.targets.0",
+      "target": "mcp/src/agents_remember/memory/knowledge/schema_generations.py",
+      "state": "stale",
+      "message": "onboarding/mcp/src/agents_remember/application/overview.json: references.196.targets.0: reference target mcp/src/agents_remember/memory/knowledge/schema_generations.py is stale; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/src/agents_remember/application/overview.json",
+      "field": "references.197.targets.0",
+      "target": "mcp/src/agents_remember/memory/knowledge/schema_generations.py",
+      "state": "stale",
+      "message": "onboarding/mcp/src/agents_remember/application/overview.json: references.197.targets.0: reference target mcp/src/agents_remember/memory/knowledge/schema_generations.py is stale; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/src/agents_remember/application/overview.json",
+      "field": "references.198.targets.0",
+      "target": "mcp/src/agents_remember/memory/knowledge/schema_generations.py",
+      "state": "stale",
+      "message": "onboarding/mcp/src/agents_remember/application/overview.json: references.198.targets.0: reference target mcp/src/agents_remember/memory/knowledge/schema_generations.py is stale; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/src/agents_remember/application/overview.json",
+      "field": "references.202.targets.0",
+      "target": "mcp/src/agents_remember/memory/knowledge/schema_generations.py",
+      "state": "stale",
+      "message": "onboarding/mcp/src/agents_remember/application/overview.json: references.202.targets.0: reference target mcp/src/agents_remember/memory/knowledge/schema_generations.py is stale; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/src/agents_remember/application/overview.json",
+      "field": "references.202.targets.1",
+      "target": "mcp/src/agents_remember/memory/knowledge/schema_generations.py",
+      "state": "stale",
+      "message": "onboarding/mcp/src/agents_remember/application/overview.json: references.202.targets.1: reference target mcp/src/agents_remember/memory/knowledge/schema_generations.py is stale; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/src/agents_remember/application/overview.json",
+      "field": "references.209.targets.0",
+      "target": "mcp/src/agents_remember/application/knowledge_diff.py",
+      "state": "stale",
+      "message": "onboarding/mcp/src/agents_remember/application/overview.json: references.209.targets.0: reference target mcp/src/agents_remember/application/knowledge_diff.py is stale; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/src/agents_remember/application/overview.json",
+      "field": "references.210.targets.1",
+      "target": "mcp/src/agents_remember/application/knowledge_review.py",
+      "state": "stale",
+      "message": "onboarding/mcp/src/agents_remember/application/overview.json: references.210.targets.1: reference target mcp/src/agents_remember/application/knowledge_review.py is stale; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/src/agents_remember/application/overview.json",
+      "field": "references.216.targets.0",
+      "target": "mcp/src/agents_remember/worktrees/sync_transaction.py",
+      "state": "stale:unresolved",
+      "message": "onboarding/mcp/src/agents_remember/application/overview.json: references.216.targets.0: reference target mcp/src/agents_remember/worktrees/sync_transaction.py is stale:unresolved; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/src/agents_remember/application/overview.json",
+      "field": "references.216.targets.1",
+      "target": "mcp/src/agents_remember/worktrees/sync_transaction.py",
+      "state": "stale:unresolved",
+      "message": "onboarding/mcp/src/agents_remember/application/overview.json: references.216.targets.1: reference target mcp/src/agents_remember/worktrees/sync_transaction.py is stale:unresolved; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/src/agents_remember/application/overview.json",
+      "field": "references.216.targets.2",
+      "target": "mcp/src/agents_remember/worktrees/sync_transaction_state.py",
+      "state": "stale",
+      "message": "onboarding/mcp/src/agents_remember/application/overview.json: references.216.targets.2: reference target mcp/src/agents_remember/worktrees/sync_transaction_state.py is stale; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/src/agents_remember/application/overview.json",
+      "field": "references.222.targets.0",
+      "target": "mcp/src/agents_remember/cli/knowledge_ingest.py",
+      "state": "stale",
+      "message": "onboarding/mcp/src/agents_remember/application/overview.json: references.222.targets.0: reference target mcp/src/agents_remember/cli/knowledge_ingest.py is stale; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/src/agents_remember/application/overview.json",
+      "field": "references.222.targets.1",
+      "target": "mcp/src/agents_remember/cli/knowledge_ingest.py",
+      "state": "stale",
+      "message": "onboarding/mcp/src/agents_remember/application/overview.json: references.222.targets.1: reference target mcp/src/agents_remember/cli/knowledge_ingest.py is stale; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/src/agents_remember/application/overview.json",
+      "field": "references.222.targets.2",
+      "target": "mcp/src/agents_remember/cli/knowledge_ingest.py",
+      "state": "stale:unresolved",
+      "message": "onboarding/mcp/src/agents_remember/application/overview.json: references.222.targets.2: reference target mcp/src/agents_remember/cli/knowledge_ingest.py is stale:unresolved; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/src/agents_remember/application/overview.json",
+      "field": "references.224.targets.0",
+      "target": "mcp/src/agents_remember/cli/knowledge_ingest.py",
+      "state": "stale",
+      "message": "onboarding/mcp/src/agents_remember/application/overview.json: references.224.targets.0: reference target mcp/src/agents_remember/cli/knowledge_ingest.py is stale; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/src/agents_remember/application/overview.json",
+      "field": "references.224.targets.1",
+      "target": "mcp/src/agents_remember/cli/knowledge_ingest.py",
+      "state": "stale",
+      "message": "onboarding/mcp/src/agents_remember/application/overview.json: references.224.targets.1: reference target mcp/src/agents_remember/cli/knowledge_ingest.py is stale; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/src/agents_remember/application/overview.json",
+      "field": "references.228.targets.0",
+      "target": "mcp/src/agents_remember/worktrees/sync_transaction_git.py",
+      "state": "stale",
+      "message": "onboarding/mcp/src/agents_remember/application/overview.json: references.228.targets.0: reference target mcp/src/agents_remember/worktrees/sync_transaction_git.py is stale; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/src/agents_remember/application/overview.json",
+      "field": "references.23.targets.0",
+      "target": "mcp/src/agents_remember/application/review_rename_inference.py",
+      "state": "stale",
+      "message": "onboarding/mcp/src/agents_remember/application/overview.json: references.23.targets.0: reference target mcp/src/agents_remember/application/review_rename_inference.py is stale; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/src/agents_remember/application/overview.json",
+      "field": "references.23.targets.1",
+      "target": "mcp/src/agents_remember/application/review_rename_inference.py",
+      "state": "stale",
+      "message": "onboarding/mcp/src/agents_remember/application/overview.json: references.23.targets.1: reference target mcp/src/agents_remember/application/review_rename_inference.py is stale; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/src/agents_remember/application/overview.json",
+      "field": "references.231.targets.1",
+      "target": "mcp/src/agents_remember/application/review_candidate_resolution.py",
+      "state": "stale",
+      "message": "onboarding/mcp/src/agents_remember/application/overview.json: references.231.targets.1: reference target mcp/src/agents_remember/application/review_candidate_resolution.py is stale; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/src/agents_remember/application/overview.json",
+      "field": "references.235.targets.0",
+      "target": "mcp/src/agents_remember/application/knowledge_review.py",
+      "state": "stale",
+      "message": "onboarding/mcp/src/agents_remember/application/overview.json: references.235.targets.0: reference target mcp/src/agents_remember/application/knowledge_review.py is stale; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/src/agents_remember/application/overview.json",
+      "field": "references.236.targets.0",
+      "target": "mcp/src/agents_remember/application/knowledge_review.py",
+      "state": "stale",
+      "message": "onboarding/mcp/src/agents_remember/application/overview.json: references.236.targets.0: reference target mcp/src/agents_remember/application/knowledge_review.py is stale; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/src/agents_remember/application/overview.json",
+      "field": "references.236.targets.1",
+      "target": "mcp/src/agents_remember/application/knowledge_review.py",
+      "state": "stale",
+      "message": "onboarding/mcp/src/agents_remember/application/overview.json: references.236.targets.1: reference target mcp/src/agents_remember/application/knowledge_review.py is stale; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/src/agents_remember/application/overview.json",
+      "field": "references.237.targets.1",
+      "target": "mcp/src/agents_remember/application/review_candidate_resolution.py",
+      "state": "stale",
+      "message": "onboarding/mcp/src/agents_remember/application/overview.json: references.237.targets.1: reference target mcp/src/agents_remember/application/review_candidate_resolution.py is stale; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/src/agents_remember/application/overview.json",
+      "field": "references.238.targets.0",
+      "target": "mcp/tests/test_knowledge_review_source_endpoints.py",
+      "state": "stale",
+      "message": "onboarding/mcp/src/agents_remember/application/overview.json: references.238.targets.0: reference target mcp/tests/test_knowledge_review_source_endpoints.py is stale; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/src/agents_remember/application/overview.json",
+      "field": "references.238.targets.1",
+      "target": "mcp/tests/test_knowledge_review_source_endpoints.py",
+      "state": "stale",
+      "message": "onboarding/mcp/src/agents_remember/application/overview.json: references.238.targets.1: reference target mcp/tests/test_knowledge_review_source_endpoints.py is stale; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/src/agents_remember/errors.py.json",
+      "field": "references.18.targets.0",
+      "target": "mcp/src/agents_remember/errors.py",
+      "state": "stale",
+      "message": "onboarding/mcp/src/agents_remember/errors.py.json: references.18.targets.0: reference target mcp/src/agents_remember/errors.py is stale; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/src/agents_remember/errors.py.json",
+      "field": "references.21.targets.0",
+      "target": "mcp/src/agents_remember/application/review_comparison_reclamation.py",
+      "state": "stale",
+      "message": "onboarding/mcp/src/agents_remember/errors.py.json: references.21.targets.0: reference target mcp/src/agents_remember/application/review_comparison_reclamation.py is stale; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/mcp/src/agents_remember/kernel/atomic_write.py.json",
+      "field": "references.6.targets.0",
+      "target": "mcp/src/agents_remember/kernel/atomic_write.py",
+      "state": "stale",
+      "message": "onboarding/mcp/src/agents_remember/kernel/atomic_write.py.json: references.6.targets.0: reference target mcp/src/agents_remember/kernel/atomic_write.py is stale; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/overview.json",
+      "field": "references.102.targets.0",
+      "target": "mcp/src/agents_remember/application/review_tree_comparison.py",
+      "state": "stale",
+      "message": "onboarding/overview.json: references.102.targets.0: reference target mcp/src/agents_remember/application/review_tree_comparison.py is stale; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/overview.json",
+      "field": "references.104.targets.0",
+      "target": "mcp/src/agents_remember/cli/knowledge_write_route.py",
+      "state": "stale",
+      "message": "onboarding/overview.json: references.104.targets.0: reference target mcp/src/agents_remember/cli/knowledge_write_route.py is stale; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/overview.json",
+      "field": "references.139.targets.0",
+      "target": "mcp/src/agents_remember/cli/__main__.py",
+      "state": "stale",
+      "message": "onboarding/overview.json: references.139.targets.0: reference target mcp/src/agents_remember/cli/__main__.py is stale; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/overview.json",
+      "field": "references.14.targets.0",
+      "target": "skills/c-04-retrieval-strategy-router/SKILL.md",
+      "state": "stale",
+      "message": "onboarding/overview.json: references.14.targets.0: reference target skills/c-04-retrieval-strategy-router/SKILL.md is stale; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/overview.json",
+      "field": "references.145.targets.1",
+      "target": "mcp/src/agents_remember/serving/paseo/paseo_start.py",
+      "state": "stale",
+      "message": "onboarding/overview.json: references.145.targets.1: reference target mcp/src/agents_remember/serving/paseo/paseo_start.py is stale; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/overview.json",
+      "field": "references.21.targets.0",
+      "target": "skills/l-01-agent-lifecycles/templates/curator-handoff-list.md",
+      "state": "stale",
+      "message": "onboarding/overview.json: references.21.targets.0: reference target skills/l-01-agent-lifecycles/templates/curator-handoff-list.md is stale; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/overview.json",
+      "field": "references.25.targets.0",
+      "target": "mcp/src/agents_remember/application/published_intent.py",
+      "state": "stale",
+      "message": "onboarding/overview.json: references.25.targets.0: reference target mcp/src/agents_remember/application/published_intent.py is stale; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/overview.json",
+      "field": "references.46.targets.2",
+      "target": "mcp/src/agents_remember/application/memory_quality/controller.py",
+      "state": "stale",
+      "message": "onboarding/overview.json: references.46.targets.2: reference target mcp/src/agents_remember/application/memory_quality/controller.py is stale; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/overview.json",
+      "field": "references.51.targets.1",
+      "target": "mcp/src/agents_remember/worktrees/modules/closeout_external.py",
+      "state": "stale",
+      "message": "onboarding/overview.json: references.51.targets.1: reference target mcp/src/agents_remember/worktrees/modules/closeout_external.py is stale; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/overview.json",
+      "field": "references.68.targets.0",
+      "target": "skills/l-01-agent-lifecycles/roles/curator.md",
+      "state": "stale",
+      "message": "onboarding/overview.json: references.68.targets.0: reference target skills/l-01-agent-lifecycles/roles/curator.md is stale; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/overview.json",
+      "field": "references.8.targets.0",
+      "target": "skills/c-04-retrieval-strategy-router/SKILL.md",
+      "state": "stale",
+      "message": "onboarding/overview.json: references.8.targets.0: reference target skills/c-04-retrieval-strategy-router/SKILL.md is stale; refresh it through the onboarding gate (MIK-R30)"
+    },
+    {
+      "check": "knowledge.references.stale",
+      "path": "onboarding/overview.json",
+      "field": "references.88.targets.0",
+      "target": "skills/c-12-closeout/SKILL.md",
+      "state": "stale",
+      "message": "onboarding/overview.json: references.88.targets.0: reference target skills/c-12-closeout/SKILL.md is stale; refresh it through the onboarding gate (MIK-R30)"
+    }
+  ],
+  "curatorActionableCount": null,
+  "fullMQCClassification": "await-qualified-whole-current-source-envelope",
+  "noGreenOrHistoricalDeletionInferred": true,
+  "returnedDetailRows": 123,
+  "unreturnedDetailCount": 91,
+  "boundedReturnedDetailsNotWholeFindingSet": true
+}

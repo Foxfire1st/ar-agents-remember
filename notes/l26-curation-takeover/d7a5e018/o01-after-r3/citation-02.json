@@ -1,0 +1,494 @@
+{
+  "document": "mcp/tests/diff_scope_test_support.py.md",
+  "preview": {
+    "ok": true,
+    "tokens": 5293,
+    "tokenizer": "tiktoken:o200k_base",
+    "tokenCountExact": true,
+    "operation": "citation_fix",
+    "repoId": "agents-remember",
+    "dryRun": true,
+    "servingBuild": {
+      "version": "3.0.0rc8",
+      "bootedAt": "2026-10-08T11:56:00.022030+00:00",
+      "sourceDigest": "sha256:6659adb8f968f82c8365bc031220a34c1984276112b5cb1dfd5e1c5db841d237",
+      "pythonExecutable": "/home/firefox/.local/share/agents-remember/python/cpython-3.14.8/bin/python3.14",
+      "packageRoot": "/home/firefox/projects/agents-remember/mcp/src/agents_remember",
+      "commit": "3f682987",
+      "dashboardBuild": "cb442492c4373d059462c5a2ad7715f3961bab6f21c1181b2ecf2674b768b4a6"
+    },
+    "status": "converted",
+    "refreshedAnchors": 47,
+    "rewrittenSidecars": [
+      "onboarding/mcp/tests/diff_scope_test_support.py.json"
+    ],
+    "unreadableSidecars": [],
+    "stale": [
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/mcp/tests/diff_scope_test_support.py.json",
+        "field": "references.12.targets.0",
+        "target": "mcp/tests/read_scope_test_support.py",
+        "state": "stale",
+        "message": "onboarding/mcp/tests/diff_scope_test_support.py.json: references.12.targets.0: reference target mcp/tests/read_scope_test_support.py is stale; refresh it through the onboarding gate (MIK-R30)"
+      },
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/mcp/tests/diff_scope_test_support.py.json",
+        "field": "references.13.targets.0",
+        "target": "mcp/tests/evidence-lifecycle.toml",
+        "state": "stale",
+        "message": "onboarding/mcp/tests/diff_scope_test_support.py.json: references.13.targets.0: reference target mcp/tests/evidence-lifecycle.toml is stale; refresh it through the onboarding gate (MIK-R30)"
+      },
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/mcp/tests/diff_scope_test_support.py.json",
+        "field": "references.13.targets.1",
+        "target": "mcp/tests/evidence-lifecycle.toml",
+        "state": "stale",
+        "message": "onboarding/mcp/tests/diff_scope_test_support.py.json: references.13.targets.1: reference target mcp/tests/evidence-lifecycle.toml is stale; refresh it through the onboarding gate (MIK-R30)"
+      },
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/mcp/tests/diff_scope_test_support.py.json",
+        "field": "references.13.targets.2",
+        "target": "mcp/tests/evidence-lifecycle.toml",
+        "state": "stale",
+        "message": "onboarding/mcp/tests/diff_scope_test_support.py.json: references.13.targets.2: reference target mcp/tests/evidence-lifecycle.toml is stale; refresh it through the onboarding gate (MIK-R30)"
+      },
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/mcp/tests/diff_scope_test_support.py.json",
+        "field": "references.14.targets.0",
+        "target": "mcp/tests/evidence-lifecycle.toml",
+        "state": "stale",
+        "message": "onboarding/mcp/tests/diff_scope_test_support.py.json: references.14.targets.0: reference target mcp/tests/evidence-lifecycle.toml is stale; refresh it through the onboarding gate (MIK-R30)"
+      },
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/mcp/tests/diff_scope_test_support.py.json",
+        "field": "references.15.targets.0",
+        "target": "mcp/tests/evidence-lifecycle.toml",
+        "state": "stale",
+        "message": "onboarding/mcp/tests/diff_scope_test_support.py.json: references.15.targets.0: reference target mcp/tests/evidence-lifecycle.toml is stale; refresh it through the onboarding gate (MIK-R30)"
+      },
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/mcp/tests/diff_scope_test_support.py.json",
+        "field": "references.16.targets.0",
+        "target": "mcp/tests/evidence-lifecycle.toml",
+        "state": "stale",
+        "message": "onboarding/mcp/tests/diff_scope_test_support.py.json: references.16.targets.0: reference target mcp/tests/evidence-lifecycle.toml is stale; refresh it through the onboarding gate (MIK-R30)"
+      },
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/mcp/tests/diff_scope_test_support.py.json",
+        "field": "references.17.targets.0",
+        "target": "mcp/tests/evidence-lifecycle.toml",
+        "state": "stale",
+        "message": "onboarding/mcp/tests/diff_scope_test_support.py.json: references.17.targets.0: reference target mcp/tests/evidence-lifecycle.toml is stale; refresh it through the onboarding gate (MIK-R30)"
+      },
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/mcp/tests/diff_scope_test_support.py.json",
+        "field": "references.18.targets.0",
+        "target": "mcp/tests/evidence-lifecycle.toml",
+        "state": "stale",
+        "message": "onboarding/mcp/tests/diff_scope_test_support.py.json: references.18.targets.0: reference target mcp/tests/evidence-lifecycle.toml is stale; refresh it through the onboarding gate (MIK-R30)"
+      },
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/mcp/tests/diff_scope_test_support.py.json",
+        "field": "references.18.targets.1",
+        "target": "mcp/tests/evidence-lifecycle.toml",
+        "state": "stale",
+        "message": "onboarding/mcp/tests/diff_scope_test_support.py.json: references.18.targets.1: reference target mcp/tests/evidence-lifecycle.toml is stale; refresh it through the onboarding gate (MIK-R30)"
+      },
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/mcp/tests/diff_scope_test_support.py.json",
+        "field": "references.19.targets.0",
+        "target": "mcp/tests/evidence-lifecycle.toml",
+        "state": "stale",
+        "message": "onboarding/mcp/tests/diff_scope_test_support.py.json: references.19.targets.0: reference target mcp/tests/evidence-lifecycle.toml is stale; refresh it through the onboarding gate (MIK-R30)"
+      },
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/mcp/tests/diff_scope_test_support.py.json",
+        "field": "references.20.targets.0",
+        "target": "mcp/tests/evidence-lifecycle.toml",
+        "state": "stale",
+        "message": "onboarding/mcp/tests/diff_scope_test_support.py.json: references.20.targets.0: reference target mcp/tests/evidence-lifecycle.toml is stale; refresh it through the onboarding gate (MIK-R30)"
+      },
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/mcp/tests/diff_scope_test_support.py.json",
+        "field": "references.20.targets.1",
+        "target": "mcp/tests/evidence-lifecycle.toml",
+        "state": "stale",
+        "message": "onboarding/mcp/tests/diff_scope_test_support.py.json: references.20.targets.1: reference target mcp/tests/evidence-lifecycle.toml is stale; refresh it through the onboarding gate (MIK-R30)"
+      },
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/mcp/tests/diff_scope_test_support.py.json",
+        "field": "references.21.targets.0",
+        "target": "mcp/tests/test-evidence-lanes.toml",
+        "state": "stale",
+        "message": "onboarding/mcp/tests/diff_scope_test_support.py.json: references.21.targets.0: reference target mcp/tests/test-evidence-lanes.toml is stale; refresh it through the onboarding gate (MIK-R30)"
+      },
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/mcp/tests/diff_scope_test_support.py.json",
+        "field": "references.22.targets.0",
+        "target": "mcp/tests/test-evidence-lanes.toml",
+        "state": "stale",
+        "message": "onboarding/mcp/tests/diff_scope_test_support.py.json: references.22.targets.0: reference target mcp/tests/test-evidence-lanes.toml is stale; refresh it through the onboarding gate (MIK-R30)"
+      },
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/mcp/tests/diff_scope_test_support.py.json",
+        "field": "references.23.targets.0",
+        "target": "mcp/tests/test-evidence-lanes.toml",
+        "state": "stale",
+        "message": "onboarding/mcp/tests/diff_scope_test_support.py.json: references.23.targets.0: reference target mcp/tests/test-evidence-lanes.toml is stale; refresh it through the onboarding gate (MIK-R30)"
+      },
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/mcp/tests/diff_scope_test_support.py.json",
+        "field": "references.24.targets.0",
+        "target": "mcp/tests/test-evidence-lanes.toml",
+        "state": "stale",
+        "message": "onboarding/mcp/tests/diff_scope_test_support.py.json: references.24.targets.0: reference target mcp/tests/test-evidence-lanes.toml is stale; refresh it through the onboarding gate (MIK-R30)"
+      },
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/mcp/tests/diff_scope_test_support.py.json",
+        "field": "references.25.targets.0",
+        "target": "mcp/tests/evidence-lifecycle.toml",
+        "state": "stale",
+        "message": "onboarding/mcp/tests/diff_scope_test_support.py.json: references.25.targets.0: reference target mcp/tests/evidence-lifecycle.toml is stale; refresh it through the onboarding gate (MIK-R30)"
+      },
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/mcp/tests/diff_scope_test_support.py.json",
+        "field": "references.26.targets.0",
+        "target": "mcp/tests/evidence-lifecycle.toml",
+        "state": "stale",
+        "message": "onboarding/mcp/tests/diff_scope_test_support.py.json: references.26.targets.0: reference target mcp/tests/evidence-lifecycle.toml is stale; refresh it through the onboarding gate (MIK-R30)"
+      },
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/mcp/tests/diff_scope_test_support.py.json",
+        "field": "references.27.targets.0",
+        "target": "mcp/tests/evidence-lifecycle.toml",
+        "state": "stale",
+        "message": "onboarding/mcp/tests/diff_scope_test_support.py.json: references.27.targets.0: reference target mcp/tests/evidence-lifecycle.toml is stale; refresh it through the onboarding gate (MIK-R30)"
+      },
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/mcp/tests/diff_scope_test_support.py.json",
+        "field": "references.28.targets.0",
+        "target": "mcp/tests/evidence-lifecycle.toml",
+        "state": "stale",
+        "message": "onboarding/mcp/tests/diff_scope_test_support.py.json: references.28.targets.0: reference target mcp/tests/evidence-lifecycle.toml is stale; refresh it through the onboarding gate (MIK-R30)"
+      },
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/mcp/tests/diff_scope_test_support.py.json",
+        "field": "references.29.targets.0",
+        "target": "mcp/tests/evidence-lifecycle.toml",
+        "state": "stale",
+        "message": "onboarding/mcp/tests/diff_scope_test_support.py.json: references.29.targets.0: reference target mcp/tests/evidence-lifecycle.toml is stale; refresh it through the onboarding gate (MIK-R30)"
+      },
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/mcp/tests/diff_scope_test_support.py.json",
+        "field": "references.29.targets.1",
+        "target": "mcp/tests/evidence-lifecycle.toml",
+        "state": "stale",
+        "message": "onboarding/mcp/tests/diff_scope_test_support.py.json: references.29.targets.1: reference target mcp/tests/evidence-lifecycle.toml is stale; refresh it through the onboarding gate (MIK-R30)"
+      },
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/mcp/tests/diff_scope_test_support.py.json",
+        "field": "references.29.targets.2",
+        "target": "mcp/tests/evidence-lifecycle.toml",
+        "state": "stale",
+        "message": "onboarding/mcp/tests/diff_scope_test_support.py.json: references.29.targets.2: reference target mcp/tests/evidence-lifecycle.toml is stale; refresh it through the onboarding gate (MIK-R30)"
+      },
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/mcp/tests/diff_scope_test_support.py.json",
+        "field": "references.29.targets.3",
+        "target": "mcp/tests/evidence-lifecycle.toml",
+        "state": "stale",
+        "message": "onboarding/mcp/tests/diff_scope_test_support.py.json: references.29.targets.3: reference target mcp/tests/evidence-lifecycle.toml is stale; refresh it through the onboarding gate (MIK-R30)"
+      },
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/mcp/tests/diff_scope_test_support.py.json",
+        "field": "references.29.targets.4",
+        "target": "mcp/tests/evidence-lifecycle.toml",
+        "state": "stale",
+        "message": "onboarding/mcp/tests/diff_scope_test_support.py.json: references.29.targets.4: reference target mcp/tests/evidence-lifecycle.toml is stale; refresh it through the onboarding gate (MIK-R30)"
+      },
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/mcp/tests/diff_scope_test_support.py.json",
+        "field": "references.29.targets.5",
+        "target": "mcp/tests/evidence-lifecycle.toml",
+        "state": "stale",
+        "message": "onboarding/mcp/tests/diff_scope_test_support.py.json: references.29.targets.5: reference target mcp/tests/evidence-lifecycle.toml is stale; refresh it through the onboarding gate (MIK-R30)"
+      },
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/mcp/tests/diff_scope_test_support.py.json",
+        "field": "references.29.targets.6",
+        "target": "mcp/tests/evidence-lifecycle.toml",
+        "state": "stale",
+        "message": "onboarding/mcp/tests/diff_scope_test_support.py.json: references.29.targets.6: reference target mcp/tests/evidence-lifecycle.toml is stale; refresh it through the onboarding gate (MIK-R30)"
+      },
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/mcp/tests/diff_scope_test_support.py.json",
+        "field": "references.29.targets.7",
+        "target": "mcp/tests/evidence-lifecycle.toml",
+        "state": "stale",
+        "message": "onboarding/mcp/tests/diff_scope_test_support.py.json: references.29.targets.7: reference target mcp/tests/evidence-lifecycle.toml is stale; refresh it through the onboarding gate (MIK-R30)"
+      },
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/mcp/tests/diff_scope_test_support.py.json",
+        "field": "references.29.targets.8",
+        "target": "mcp/tests/evidence-lifecycle.toml",
+        "state": "stale",
+        "message": "onboarding/mcp/tests/diff_scope_test_support.py.json: references.29.targets.8: reference target mcp/tests/evidence-lifecycle.toml is stale; refresh it through the onboarding gate (MIK-R30)"
+      },
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/mcp/tests/diff_scope_test_support.py.json",
+        "field": "references.29.targets.9",
+        "target": "mcp/tests/evidence-lifecycle.toml",
+        "state": "stale",
+        "message": "onboarding/mcp/tests/diff_scope_test_support.py.json: references.29.targets.9: reference target mcp/tests/evidence-lifecycle.toml is stale; refresh it through the onboarding gate (MIK-R30)"
+      },
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/mcp/tests/diff_scope_test_support.py.json",
+        "field": "references.29.targets.10",
+        "target": "mcp/tests/evidence-lifecycle.toml",
+        "state": "stale",
+        "message": "onboarding/mcp/tests/diff_scope_test_support.py.json: references.29.targets.10: reference target mcp/tests/evidence-lifecycle.toml is stale; refresh it through the onboarding gate (MIK-R30)"
+      },
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/mcp/tests/diff_scope_test_support.py.json",
+        "field": "references.29.targets.11",
+        "target": "mcp/tests/evidence-lifecycle.toml",
+        "state": "stale",
+        "message": "onboarding/mcp/tests/diff_scope_test_support.py.json: references.29.targets.11: reference target mcp/tests/evidence-lifecycle.toml is stale; refresh it through the onboarding gate (MIK-R30)"
+      },
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/mcp/tests/diff_scope_test_support.py.json",
+        "field": "references.29.targets.12",
+        "target": "mcp/tests/evidence-lifecycle.toml",
+        "state": "stale",
+        "message": "onboarding/mcp/tests/diff_scope_test_support.py.json: references.29.targets.12: reference target mcp/tests/evidence-lifecycle.toml is stale; refresh it through the onboarding gate (MIK-R30)"
+      },
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/mcp/tests/diff_scope_test_support.py.json",
+        "field": "references.29.targets.13",
+        "target": "mcp/tests/evidence-lifecycle.toml",
+        "state": "stale",
+        "message": "onboarding/mcp/tests/diff_scope_test_support.py.json: references.29.targets.13: reference target mcp/tests/evidence-lifecycle.toml is stale; refresh it through the onboarding gate (MIK-R30)"
+      },
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/mcp/tests/diff_scope_test_support.py.json",
+        "field": "references.29.targets.14",
+        "target": "mcp/tests/evidence-lifecycle.toml",
+        "state": "stale",
+        "message": "onboarding/mcp/tests/diff_scope_test_support.py.json: references.29.targets.14: reference target mcp/tests/evidence-lifecycle.toml is stale; refresh it through the onboarding gate (MIK-R30)"
+      },
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/mcp/tests/diff_scope_test_support.py.json",
+        "field": "references.30.targets.0",
+        "target": "mcp/tests/evidence-lifecycle.toml",
+        "state": "stale",
+        "message": "onboarding/mcp/tests/diff_scope_test_support.py.json: references.30.targets.0: reference target mcp/tests/evidence-lifecycle.toml is stale; refresh it through the onboarding gate (MIK-R30)"
+      },
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/mcp/tests/diff_scope_test_support.py.json",
+        "field": "references.30.targets.1",
+        "target": "mcp/tests/evidence-lifecycle.toml",
+        "state": "stale",
+        "message": "onboarding/mcp/tests/diff_scope_test_support.py.json: references.30.targets.1: reference target mcp/tests/evidence-lifecycle.toml is stale; refresh it through the onboarding gate (MIK-R30)"
+      },
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/mcp/tests/diff_scope_test_support.py.json",
+        "field": "references.31.targets.0",
+        "target": "mcp/tests/evidence-lifecycle.toml",
+        "state": "stale",
+        "message": "onboarding/mcp/tests/diff_scope_test_support.py.json: references.31.targets.0: reference target mcp/tests/evidence-lifecycle.toml is stale; refresh it through the onboarding gate (MIK-R30)"
+      },
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/mcp/tests/diff_scope_test_support.py.json",
+        "field": "references.31.targets.1",
+        "target": "mcp/tests/evidence-lifecycle.toml",
+        "state": "stale",
+        "message": "onboarding/mcp/tests/diff_scope_test_support.py.json: references.31.targets.1: reference target mcp/tests/evidence-lifecycle.toml is stale; refresh it through the onboarding gate (MIK-R30)"
+      },
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/mcp/tests/diff_scope_test_support.py.json",
+        "field": "references.31.targets.2",
+        "target": "mcp/tests/evidence-lifecycle.toml",
+        "state": "stale",
+        "message": "onboarding/mcp/tests/diff_scope_test_support.py.json: references.31.targets.2: reference target mcp/tests/evidence-lifecycle.toml is stale; refresh it through the onboarding gate (MIK-R30)"
+      },
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/mcp/tests/diff_scope_test_support.py.json",
+        "field": "references.31.targets.3",
+        "target": "mcp/tests/evidence-lifecycle.toml",
+        "state": "stale",
+        "message": "onboarding/mcp/tests/diff_scope_test_support.py.json: references.31.targets.3: reference target mcp/tests/evidence-lifecycle.toml is stale; refresh it through the onboarding gate (MIK-R30)"
+      },
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/mcp/tests/diff_scope_test_support.py.json",
+        "field": "references.31.targets.4",
+        "target": "mcp/tests/evidence-lifecycle.toml",
+        "state": "stale",
+        "message": "onboarding/mcp/tests/diff_scope_test_support.py.json: references.31.targets.4: reference target mcp/tests/evidence-lifecycle.toml is stale; refresh it through the onboarding gate (MIK-R30)"
+      },
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/mcp/tests/diff_scope_test_support.py.json",
+        "field": "references.31.targets.5",
+        "target": "mcp/tests/evidence-lifecycle.toml",
+        "state": "stale",
+        "message": "onboarding/mcp/tests/diff_scope_test_support.py.json: references.31.targets.5: reference target mcp/tests/evidence-lifecycle.toml is stale; refresh it through the onboarding gate (MIK-R30)"
+      },
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/mcp/tests/diff_scope_test_support.py.json",
+        "field": "references.31.targets.6",
+        "target": "mcp/tests/evidence-lifecycle.toml",
+        "state": "stale",
+        "message": "onboarding/mcp/tests/diff_scope_test_support.py.json: references.31.targets.6: reference target mcp/tests/evidence-lifecycle.toml is stale; refresh it through the onboarding gate (MIK-R30)"
+      },
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/mcp/tests/diff_scope_test_support.py.json",
+        "field": "references.31.targets.7",
+        "target": "mcp/tests/evidence-lifecycle.toml",
+        "state": "stale",
+        "message": "onboarding/mcp/tests/diff_scope_test_support.py.json: references.31.targets.7: reference target mcp/tests/evidence-lifecycle.toml is stale; refresh it through the onboarding gate (MIK-R30)"
+      },
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/mcp/tests/diff_scope_test_support.py.json",
+        "field": "references.31.targets.8",
+        "target": "mcp/tests/evidence-lifecycle.toml",
+        "state": "stale",
+        "message": "onboarding/mcp/tests/diff_scope_test_support.py.json: references.31.targets.8: reference target mcp/tests/evidence-lifecycle.toml is stale; refresh it through the onboarding gate (MIK-R30)"
+      },
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/mcp/tests/diff_scope_test_support.py.json",
+        "field": "references.31.targets.9",
+        "target": "mcp/tests/evidence-lifecycle.toml",
+        "state": "stale",
+        "message": "onboarding/mcp/tests/diff_scope_test_support.py.json: references.31.targets.9: reference target mcp/tests/evidence-lifecycle.toml is stale; refresh it through the onboarding gate (MIK-R30)"
+      },
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/mcp/tests/diff_scope_test_support.py.json",
+        "field": "references.31.targets.10",
+        "target": "mcp/tests/evidence-lifecycle.toml",
+        "state": "stale",
+        "message": "onboarding/mcp/tests/diff_scope_test_support.py.json: references.31.targets.10: reference target mcp/tests/evidence-lifecycle.toml is stale; refresh it through the onboarding gate (MIK-R30)"
+      },
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/mcp/tests/diff_scope_test_support.py.json",
+        "field": "references.31.targets.11",
+        "target": "mcp/tests/evidence-lifecycle.toml",
+        "state": "stale",
+        "message": "onboarding/mcp/tests/diff_scope_test_support.py.json: references.31.targets.11: reference target mcp/tests/evidence-lifecycle.toml is stale; refresh it through the onboarding gate (MIK-R30)"
+      }
+    ],
+    "authoring": {
+      "dryRun": true,
+      "authoredReferences": 4,
+      "reauthoredReferences": 0,
+      "removedReferences": 39,
+      "authoredCards": [
+        "onboarding/mcp/tests/diff_scope_test_support.py.md"
+      ],
+      "createdSidecars": [],
+      "unresolvedTargets": [],
+      "refused": [],
+      "authoredCardsCount": 1,
+      "createdSidecarsCount": 0,
+      "unresolvedTargetsCount": 0,
+      "refusedCount": 0
+    },
+    "staleCount": 69,
+    "rewrittenSidecarsCount": 1,
+    "unreadableSidecarsCount": 0,
+    "truncated": [
+      "stale"
+    ],
+    "truncatedNote": "each of stale shows its first 50 entries; the matching ...Count field is the full number. Name one card (document) for its own list, or run `agents-remember memory-citations --fix --dry-run` for the full lists"
+  },
+  "apply": {
+    "ok": true,
+    "tokens": 360,
+    "tokenizer": "tiktoken:o200k_base",
+    "tokenCountExact": true,
+    "operation": "citation_fix",
+    "repoId": "agents-remember",
+    "dryRun": false,
+    "servingBuild": {
+      "version": "3.0.0rc8",
+      "bootedAt": "2026-10-08T11:56:00.022030+00:00",
+      "sourceDigest": "sha256:6659adb8f968f82c8365bc031220a34c1984276112b5cb1dfd5e1c5db841d237",
+      "pythonExecutable": "/home/firefox/.local/share/agents-remember/python/cpython-3.14.8/bin/python3.14",
+      "packageRoot": "/home/firefox/projects/agents-remember/mcp/src/agents_remember",
+      "commit": "3f682987",
+      "dashboardBuild": "cb442492c4373d059462c5a2ad7715f3961bab6f21c1181b2ecf2674b768b4a6"
+    },
+    "status": "converted",
+    "refreshedAnchors": 0,
+    "rewrittenSidecars": [],
+    "unreadableSidecars": [],
+    "stale": [],
+    "authoring": {
+      "dryRun": false,
+      "authoredReferences": 4,
+      "reauthoredReferences": 0,
+      "removedReferences": 39,
+      "authoredCards": [
+        "onboarding/mcp/tests/diff_scope_test_support.py.md"
+      ],
+      "createdSidecars": [],
+      "unresolvedTargets": [],
+      "refused": [],
+      "authoredCardsCount": 1,
+      "createdSidecarsCount": 0,
+      "unresolvedTargetsCount": 0,
+      "refusedCount": 0
+    },
+    "staleCount": 0,
+    "rewrittenSidecarsCount": 0,
+    "unreadableSidecarsCount": 0
+  }
+}

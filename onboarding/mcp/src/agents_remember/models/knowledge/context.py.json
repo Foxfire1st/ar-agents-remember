@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "43bd9c039e841a1baabc3550381fe9198ff20800",
+            "blob": "8708ec1b7c99adf55d3ad194605c0b29c4726d8c",
             "content": "sha256:aed15cf2fd21589bd4dc9f115d80f16c9dbd9085eac0687dc35453ce6267b01b",
             "locator": {
               "kind": "symbol",
@@ -23,27 +23,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "43bd9c039e841a1baabc3550381fe9198ff20800",
+            "blob": "8708ec1b7c99adf55d3ad194605c0b29c4726d8c",
             "content": "sha256:efe856e538ed74beaca490bc8bc858b7c863000d43a41b2ecfc7a81605c925b1",
             "locator": {
               "kind": "symbol",
               "name": "KnowledgeSchemaIdentity"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "The authorized-destination handle the store receives instead of a bare path.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "43bd9c039e841a1baabc3550381fe9198ff20800",
-            "content": "sha256:e2b894e80617dec2ca94d5b849d945fefa664ccf9a0d0898fd062ddc5da59682",
-            "locator": {
-              "kind": "symbol",
-              "name": "AdmittedKnowledgeDestination"
             }
           },
           "kind": "code"
@@ -55,7 +39,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c14937bd02459de274f4bb96b0f500f895dbd44a",
+            "blob": "5330296baa8cabeac31286bb196c70bcf2763703",
             "content": "sha256:930d3a928f847e7604bbfec6b53ca6fe384a4611fa001211ae4f11be297e4d66",
             "locator": {
               "kind": "symbol",
@@ -67,43 +51,13 @@
         },
         {
           "anchor": {
-            "blob": "c14937bd02459de274f4bb96b0f500f895dbd44a",
+            "blob": "5330296baa8cabeac31286bb196c70bcf2763703",
             "content": "sha256:53c6a302dae053cdcdc2b6cc13bf78624646239924382882de2449261f0f3090",
             "locator": {
               "kind": "symbol",
               "name": "create_or_validate_schema"
             },
             "path": "mcp/src/agents_remember/memory/knowledge/connection.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "5": {
-      "note": "The application constructor that binds a resolved destination.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "b27b86aae575bd8d9d63d727f841fc0b4ab08fa3",
-            "content": "sha256:f318c276ea14e280630e148444a67ac04c4e842c2d2d50ff065460c48ccbe1ae",
-            "locator": {
-              "kind": "symbol",
-              "name": "admitted_knowledge_destination"
-            },
-            "path": "mcp/src/agents_remember/application/knowledge.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "b27b86aae575bd8d9d63d727f841fc0b4ab08fa3",
-            "content": "sha256:8a74d5d46179b46e7e3e3e19052eab54c0d1be61bd5c5255b03a4e9476547359",
-            "locator": {
-              "end": 92,
-              "kind": "line_range",
-              "start": 69
-            },
-            "path": "mcp/src/agents_remember/application/knowledge.py"
           },
           "kind": "code"
         }

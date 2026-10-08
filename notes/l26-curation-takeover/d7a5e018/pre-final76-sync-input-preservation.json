@@ -1,0 +1,1141 @@
+{
+  "code": {
+    "root": "/home/firefox/projects/ar-coordination/worktrees/agents-remember/260928-mik-l26-ar/260928-mik-l26",
+    "untracked": [
+      {
+        "path": "mcp/src/agents_remember/application/knowledge_file_diff.py",
+        "sha256": "a9e16d1d14047bd8874150a8b677cb462f5fe25df589b68a760afc150009419e",
+        "bytes": 16930,
+        "mode": 33204
+      },
+      {
+        "path": "mcp/src/agents_remember/application/knowledge_view_rows.py",
+        "sha256": "b225641ff3adcf1e0dae696fe0471041c6268af16345b13ec2896b6327be875a",
+        "bytes": 12317,
+        "mode": 33204
+      },
+      {
+        "path": "mcp/src/agents_remember/application/knowledge_writer/authoring_rows.py",
+        "sha256": "494abeb604df39234860da0ec913a7b06c88091e3ac9897f91a827d35f29d204",
+        "bytes": 27594,
+        "mode": 33204
+      },
+      {
+        "path": "mcp/src/agents_remember/application/legacy_dataset_copies.py",
+        "sha256": "015933b20492fad9f6e37f38e89cfe8e5327bd7545abde9591474f9ab9dc6b81",
+        "bytes": 22575,
+        "mode": 33204
+      },
+      {
+        "path": "mcp/src/agents_remember/cli/knowledge_copies.py",
+        "sha256": "5082d7c3d46d01321eb016f4d898a936eb013450d9b834325634ce3673f1e61c",
+        "bytes": 5899,
+        "mode": 33204
+      },
+      {
+        "path": "mcp/src/agents_remember/models/knowledge/review_refusal.py",
+        "sha256": "af27ea0d1537f7298adfea3ffc34f0f16dec5e39a6a88149c84e2ddd950fd64a",
+        "bytes": 1632,
+        "mode": 33204
+      },
+      {
+        "path": "mcp/src/agents_remember/worktrees/reopen_reset.py",
+        "sha256": "6085b330ab5b4fc6db305405d7023a189fbfabc28f0ec00e1cfb8d3d8d90eef6",
+        "bytes": 4366,
+        "mode": 33204
+      },
+      {
+        "path": "mcp/src/agents_remember/worktrees/reopen_series.py",
+        "sha256": "fd63083bc96cc9e604fb66e66620a6050b579a8c9316e71460377e660303ffb2",
+        "bytes": 38001,
+        "mode": 33204
+      },
+      {
+        "path": "mcp/test_support/agents_remember_test_support/testing/database_retirement_guard.py",
+        "sha256": "b1f806a247dd4f6850652916f3182af452970c69abf9bc059c8eb8a484809c0c",
+        "bytes": 17441,
+        "mode": 33204
+      },
+      {
+        "path": "mcp/test_support/agents_remember_test_support/testing/database_source_reading.py",
+        "sha256": "8f49a40d04041ddbfdc6af993bc5d6d4dbf89099102af137a39bcab845c3d046",
+        "bytes": 17590,
+        "mode": 33204
+      },
+      {
+        "path": "mcp/tests/anchor_fixture_models.py",
+        "sha256": "30f7ce2646503a87e0993a06168e7c7b2212f918b7a4606b72b228c0b2ce0f97",
+        "bytes": 4945,
+        "mode": 33204
+      },
+      {
+        "path": "mcp/tests/knowledge_row_codec_test_support.py",
+        "sha256": "37ce6edb30ecc18c27ae8df4baa4c098ab1d73adf93a0605963e4308f86c4ba1",
+        "bytes": 2380,
+        "mode": 33204
+      },
+      {
+        "path": "mcp/tests/knowledge_rows_test_support.py",
+        "sha256": "cb2a6bf51021bf4c37ba5015553a3eda609dd9d6fef9618b66029e2632965714",
+        "bytes": 19085,
+        "mode": 33204
+      },
+      {
+        "path": "mcp/tests/test_curator_coherence_judgment_evidence.py",
+        "sha256": "89fdd6c36b583adb33e0a21d2b772bc28f944cdcb23dad840ac9f4bfd75d9a88",
+        "bytes": 8599,
+        "mode": 33204
+      },
+      {
+        "path": "mcp/tests/test_curator_realization_refusals.py",
+        "sha256": "3baedc6fec1fdc764b1a2a2999af982a2ce844e676105ff07e7579d1c65773d4",
+        "bytes": 8987,
+        "mode": 33204
+      },
+      {
+        "path": "mcp/tests/test_knowledge_copy_cleanup.py",
+        "sha256": "013ffb96e7eb4167db81468a092bea8557c069e5388aac6f5ed0d6a3ae6e012e",
+        "bytes": 24590,
+        "mode": 33204
+      },
+      {
+        "path": "mcp/tests/test_knowledge_database_retired.py",
+        "sha256": "71265f8208f3b80428a3ac2a2a2e1355170404cc8eb238681ab87c147088aee9",
+        "bytes": 44376,
+        "mode": 33204
+      },
+      {
+        "path": "mcp/tests/test_knowledge_reopen_governing_rows.py",
+        "sha256": "ac18fb73cec3a2ac362e5efee2f28666003df747b6aa4a163d223197490daae9",
+        "bytes": 21621,
+        "mode": 33204
+      },
+      {
+        "path": "mcp/tests/test_knowledge_views.py",
+        "sha256": "1e88b9cfc231980fcb851503dc8011abef9a1687bf8fca2f6a1dfe19414cb732",
+        "bytes": 23707,
+        "mode": 33204
+      },
+      {
+        "path": "mcp/tests/test_reconsideration_route_trigger.py",
+        "sha256": "187a3db5471b26616eae0abfd3beed7d6e5c8c4de950530747ba32202938f1a6",
+        "bytes": 3191,
+        "mode": 33204
+      },
+      {
+        "path": "mcp/tests/test_review_closeout_result_block_through_real_tool.py",
+        "sha256": "19ca0138f815c9ba94b1640dce40fa0ba19452acfe8c63312817326241fcc3f2",
+        "bytes": 4074,
+        "mode": 33204
+      },
+      {
+        "path": "mcp/tests/test_review_comparison_reclamation_real.py",
+        "sha256": "4ab6287ed5eaa61a903fe800d3a51984b7dfbf611aa67310fea37892ba06be95",
+        "bytes": 17164,
+        "mode": 33204
+      },
+      {
+        "path": "mcp/tests/test_review_detection_models.py",
+        "sha256": "57fc3b685095f41354fabc21185f294ca70079b0c957c62a08fcb28d40b6e584",
+        "bytes": 19767,
+        "mode": 33204
+      },
+      {
+        "path": "mcp/tests/test_review_result_blocks_through_real_tools.py",
+        "sha256": "5079695641b080b5c03dce673bd1c37f922157c13e28046b7e98990873d78bd6",
+        "bytes": 6161,
+        "mode": 33204
+      },
+      {
+        "path": "mcp/tests/test_review_source_inventory_boundaries.py",
+        "sha256": "a0d2827c27996dd0e6da19296f5b1776caa100bf80603015df9b08bd48e9133f",
+        "bytes": 15322,
+        "mode": 33204
+      },
+      {
+        "path": "mcp/tests/test_review_verification_observation_model.py",
+        "sha256": "c7552495b68b6d3da2b2e1f34e63885d7dc7a0d1cc3fa6e87f49f2a84e7e96d8",
+        "bytes": 5814,
+        "mode": 33204
+      },
+      {
+        "path": "mcp/tests/test_tool_entry_point_controls.py",
+        "sha256": "b586fa4878ab18e7800427d86b08d224be9bf250b9d2235dd4d9ca8cce454292",
+        "bytes": 11842,
+        "mode": 33204
+      },
+      {
+        "path": "mcp/tests/test_tool_entry_point_valid_progression.py",
+        "sha256": "fe0a1d8eb52b4351e9b214c7fccf45331757a404b60ffacb02fa033ed57fca0f",
+        "bytes": 4838,
+        "mode": 33204
+      },
+      {
+        "path": "mcp/tests/test_worktree_sync_knowledge_merge.py",
+        "sha256": "a83ca4f04c88eeb3adc5e42f27847d7a4d65bfc95262df65501639d9eadabe84",
+        "bytes": 25642,
+        "mode": 33204
+      }
+    ],
+    "count": 29,
+    "semanticIndexSha256": "d802b54fe484840ff13dfd62bc88318c9b20031e2a43e77069dafd0f082de31b",
+    "historySha256": null
+  },
+  "memory": {
+    "root": "/home/firefox/projects/ar-coordination/worktrees/agents-remember/260928-mik-l26-ar/memory-260928-mik-l26",
+    "untracked": [
+      {
+        "path": "knowledge/decisions/DEC-4CTNXE-text-files-are-the-knowledge-source-of-truth.json",
+        "sha256": "04efa58f2a7abd7b59701b401fa1551f4612b0996e6f43fde9842f8cec52edc9",
+        "bytes": 1940,
+        "mode": 33204
+      },
+      {
+        "path": "knowledge/families/FAM-SDS92V-no-production-canonical-database.json",
+        "sha256": "294f3cbad49d0b5fecd65fb276b398fa77a3fad5248d09f14ebe882ed010b823",
+        "bytes": 1321,
+        "mode": 33204
+      },
+      {
+        "path": "knowledge/history/260928-MIK-L26.json",
+        "sha256": "a8c3902fd3c724db829e8081bcae267d0724650f15d8a2c71a3445be170c168a",
+        "bytes": 690379,
+        "mode": 33204
+      },
+      {
+        "path": "knowledge/invariants/INV-0JMW0S-a-plain-retry-lands-after-any.json",
+        "sha256": "48e1b4b0c07cb628fce24c3eb1542cac54a0ad8e8775fe1456b8c7cd133abfc0",
+        "bytes": 1056,
+        "mode": 33204
+      },
+      {
+        "path": "knowledge/invariants/INV-0RA5RQ-teardown-detects-a-removed-apsw-hook.json",
+        "sha256": "e5883862e6a1946457ca7f004cdbbfa347e3e321480fdbc6681e93a0b752ec2e",
+        "bytes": 1056,
+        "mode": 33204
+      },
+      {
+        "path": "knowledge/invariants/INV-0RQS65-the-required-plain-directory-premise-is.json",
+        "sha256": "6546ac1925eaabc7c70bfc234f30dbbcdd23345a0f1bbdf24a82be7b52fce8cb",
+        "bytes": 1167,
+        "mode": 33204
+      },
+      {
+        "path": "knowledge/invariants/INV-0T84PZ-a-failed-ref-update-reports-a.json",
+        "sha256": "dd5c78c0bac3e3775dec53bcc6866c4cc2aa9a3ba1849301ce42f3e88fdaf0ed",
+        "bytes": 1047,
+        "mode": 33204
+      },
+      {
+        "path": "knowledge/invariants/INV-0XMNQZ-only-a-lock-error-that-would.json",
+        "sha256": "743363b8c7ad7dcbf3f713c506dee8e8706deb807852018afae76d98c7c7f8aa",
+        "bytes": 976,
+        "mode": 33204
+      },
+      {
+        "path": "knowledge/invariants/INV-1BBPF3-bootstrap-foundation-examples-name-family-invariant.json",
+        "sha256": "a7f890b11363616221393543319c3cd1bfa234726a5d39d4d31f010591b80621",
+        "bytes": 1143,
+        "mode": 33204
+      },
+      {
+        "path": "knowledge/invariants/INV-2Q8RPR-lifecycle-commit-publication-runs-no-commit.json",
+        "sha256": "f519f00fb1d3b44265493ebf77ac3854ee76da755d17b554c4089ca26c1f292c",
+        "bytes": 1078,
+        "mode": 33204
+      },
+      {
+        "path": "knowledge/invariants/INV-54J62R-a-database-event-with-no-repository.json",
+        "sha256": "f2e216c5da31f2e20eae39614e9e48e927d0b1c53db06648c51a8871b28baf2d",
+        "bytes": 1090,
+        "mode": 33204
+      },
+      {
+        "path": "knowledge/invariants/INV-5FC4T6-head-text-or-none-and-the.json",
+        "sha256": "7cb2fdce4d5218a64e883abd105e31e821ca1ff26b255a9fb76c4230d2a73ab1",
+        "bytes": 1018,
+        "mode": 33204
+      },
+      {
+        "path": "knowledge/invariants/INV-738PC9-a-converted-git-memory-input-never.json",
+        "sha256": "bd8a38d06b9c47aea0f38ad113c07f61d6552a9b63f6b83d2d1fb99c99e1b11e",
+        "bytes": 1040,
+        "mode": 33204
+      },
+      {
+        "path": "knowledge/invariants/INV-765TQN-unpublished-preparation-failures-restore-history-and.json",
+        "sha256": "a71e9adeee5782b988e76476b582961559eecdcc7d330d867f074742edc4c2f3",
+        "bytes": 1070,
+        "mode": 33204
+      },
+      {
+        "path": "knowledge/invariants/INV-89A5AN-publication-and-refusal-preserve-index-flags.json",
+        "sha256": "ac804b823d912f785375c41f75582415c6fbc3b2c9536ce85482232125f19fbc",
+        "bytes": 1119,
+        "mode": 33204
+      },
+      {
+        "path": "knowledge/invariants/INV-9ZBTVA-an-unpublished-direct-landing-refusal-restores.json",
+        "sha256": "c34d2a7f108b04ab93b150f558bb9675e20dfba52115ca2e57eea857bc75c8c7",
+        "bytes": 1213,
+        "mode": 33204
+      },
+      {
+        "path": "knowledge/invariants/INV-ANKPPE-an-unfinished-native-action-is-refused.json",
+        "sha256": "31d41969fc3dbffd0f70730c20dd6ca9e12330c6789a0906a2d685c0072a2a6c",
+        "bytes": 1022,
+        "mode": 33204
+      },
+      {
+        "path": "knowledge/invariants/INV-BEYEV2-take-back-retains-an-expected-old.json",
+        "sha256": "6cb0a2a2004643cd05c0c84e98805d4c884a415cf8764ea0c619536835ca6f80",
+        "bytes": 1057,
+        "mode": 33204
+      },
+      {
+        "path": "knowledge/invariants/INV-C3TYB0-cleanup-protects-each-companion-against-tracking.json",
+        "sha256": "e157b42876b089bed2a890ed350f774f416bf843925761dfdf0abeec9c412dfc",
+        "bytes": 980,
+        "mode": 33204
+      },
+      {
+        "path": "knowledge/invariants/INV-C5TQ6Z-each-test-teardown-detects-and-restores.json",
+        "sha256": "1acf80fc1f2bcc8ecffaa47dee23be64bc77421ef0f08a90a2e2667e97830f52",
+        "bytes": 1117,
+        "mode": 33204
+      },
+      {
+        "path": "knowledge/invariants/INV-CKY44N-cleanup-treats-a-companion-its-reviewed.json",
+        "sha256": "f8002a9508a2360410d34a4060d9e061154ad51f493608f8233c3f304e8f6565",
+        "bytes": 1067,
+        "mode": 33204
+      },
+      {
+        "path": "knowledge/invariants/INV-FQ2447-every-remaining-unpublished-ordinary-memory-failure.json",
+        "sha256": "8f13232abe60ca7cbb811b4fd128708c1c8adb243e868e775554c4c8c0d9df47",
+        "bytes": 1096,
+        "mode": 33204
+      },
+      {
+        "path": "knowledge/invariants/INV-FYZQK0-a-switched-head-plus-failed-expected.json",
+        "sha256": "9a28389c027f01ff202f544a3b1eed8fcaf845d9414d6ce6737682a78b869685",
+        "bytes": 1218,
+        "mode": 33204
+      },
+      {
+        "path": "knowledge/invariants/INV-G0Y4VR-the-publication-message-matches-real-git.json",
+        "sha256": "a5bd83a48f5fbf2513e3370fbded1fec8cb91801c3873b7eb61841ca8e80890a",
+        "bytes": 1166,
+        "mode": 33204
+      },
+      {
+        "path": "knowledge/invariants/INV-GBH3RH-derived-index-modules-cannot-touch-retired.json",
+        "sha256": "29b8edb17686f214156626ce11268cd3d0fa591a378c1274f03aee9e740727a3",
+        "bytes": 1037,
+        "mode": 33204
+      },
+      {
+        "path": "knowledge/invariants/INV-GSEMMW-publication-preserves-the-ruled-message-index.json",
+        "sha256": "75f616e30cf0cde88c50699a5576c56ecff324af375ec32fc1071a7c14296a3d",
+        "bytes": 1172,
+        "mode": 33204
+      },
+      {
+        "path": "knowledge/invariants/INV-HDV88M-publication-binds-the-contract-branch-and.json",
+        "sha256": "ef2b4a9af5f596d1a0df41a2b63feced6ba8796a911457df5040a20f32202a03",
+        "bytes": 1084,
+        "mode": 33204
+      },
+      {
+        "path": "knowledge/invariants/INV-J6PAD2-tests-catch-loss-of-expected-old.json",
+        "sha256": "f8fe038ee14c4eb5d78ed0a1c2c1910bd861d6742ec1bb6cc2d1beafbf6c118b",
+        "bytes": 1187,
+        "mode": 33204
+      },
+      {
+        "path": "knowledge/invariants/INV-JFGTZT-the-current-owner-bound-r26-documentation.json",
+        "sha256": "8020bb2912ca8e888f3cc3fa761acad801b0432521a2d888e837b26e5573bdd4",
+        "bytes": 1288,
+        "mode": 33204
+      },
+      {
+        "path": "knowledge/invariants/INV-JM868W-knowledge-diff-is-bounded-names-omissions.json",
+        "sha256": "e372501454aad521568bc7a560a3998f098b81154f7a0544893d4128b8d9cd0b",
+        "bytes": 1165,
+        "mode": 33204
+      },
+      {
+        "path": "knowledge/invariants/INV-JZD1F5-the-closeout-docstring-states-that-a.json",
+        "sha256": "cdf1bc73021a38d038dc34e6e7beb73c8e722a6e7e9796907eeacc9c019fd19a",
+        "bytes": 1339,
+        "mode": 33204
+      },
+      {
+        "path": "knowledge/invariants/INV-K69R3M-bootstrap-describes-complete-empty-complete-authored.json",
+        "sha256": "a8294e2c0a6727735a66f0ab14e5bfb003fb8ac75038dc607b01eb588c870909",
+        "bytes": 1214,
+        "mode": 33204
+      },
+      {
+        "path": "knowledge/invariants/INV-KTMBMN-closeout-publishes-only-on-the-contract.json",
+        "sha256": "a1a09afd755ca6d8c10e8cde468f8053cb2cad601bacca7c7420030f824573c0",
+        "bytes": 1137,
+        "mode": 33204
+      },
+      {
+        "path": "knowledge/invariants/INV-MB73DH-the-guard-states-its-limits-refuses.json",
+        "sha256": "f05a8b0cd8b775e51d54f2b483b3bebb4c8639fc3c90ac19de76853d2b2b5e73",
+        "bytes": 1100,
+        "mode": 33204
+      },
+      {
+        "path": "knowledge/invariants/INV-MFQW2H-the-static-retirement-check-detects-attached.json",
+        "sha256": "ab731fab8068c5d98054f054eeb987315858041875af894b6e24dd75bb258a6f",
+        "bytes": 1099,
+        "mode": 33204
+      },
+      {
+        "path": "knowledge/invariants/INV-MQV6T8-the-admitted-invalid-input-sweep-exposes.json",
+        "sha256": "4b406877458fe0821c19eab02a784950aa0e258c3b391152e92a9b4187f68b90",
+        "bytes": 1239,
+        "mode": 33204
+      },
+      {
+        "path": "knowledge/invariants/INV-MT82AS-a-knowledge-diff-subdirectory-is-refused.json",
+        "sha256": "877dbc4e4c3661d1ceed3ef50394fd4266dadfee42d4a541cc52ba84530cceb5",
+        "bytes": 1072,
+        "mode": 33204
+      },
+      {
+        "path": "knowledge/invariants/INV-N5RBFK-every-failure-before-memory-publication-restores.json",
+        "sha256": "6d5e66447944b476aa3cf0e8dadbb1bca2f162c3a00fc496d8d2391f949a1462",
+        "bytes": 1251,
+        "mode": 33204
+      },
+      {
+        "path": "knowledge/invariants/INV-NJT6A9-the-seven-named-closeout-and-recovery.json",
+        "sha256": "af9105385d4970a50540bb92434f23c50113510fbdbb1c60fde8b27208ac1c53",
+        "bytes": 1115,
+        "mode": 33204
+      },
+      {
+        "path": "knowledge/invariants/INV-PNXKPR-a-provably-unpublished-direct-failure-restores.json",
+        "sha256": "d7f7a03e8d87c94a36fb1e989e8b0fa340f1d3a716fff95b713732af1d9c51de",
+        "bytes": 1062,
+        "mode": 33204
+      },
+      {
+        "path": "knowledge/invariants/INV-PPGGTW-knowledge-diff-stays-within-the-knowledge.json",
+        "sha256": "b3d963065aa56c67b46ada7c33aed3885d5a1d370d7a52c36148dad7529cdd4c",
+        "bytes": 1320,
+        "mode": 33204
+      },
+      {
+        "path": "knowledge/invariants/INV-QB6EZ0-reviewed-protected-cleanup-companions-remain-kept.json",
+        "sha256": "8735f606acb18bc71fa367b958d8e03eb2477563d71c0876da5c9ceac92f02b9",
+        "bytes": 1042,
+        "mode": 33204
+      },
+      {
+        "path": "knowledge/invariants/INV-QQ6F52-the-sql-reader-recognizes-attach-expressions.json",
+        "sha256": "45506bfb1a9360d0d552607f3bfefdc6745d751a5cfc78c96f608c8abce1163b",
+        "bytes": 1104,
+        "mode": 33204
+      },
+      {
+        "path": "knowledge/invariants/INV-RYF7BJ-changed-closeout-recovery-comments-still-carry.json",
+        "sha256": "7c487b501398d767db28e66595c3928131830742221f682cb6f6bcde1f839a00",
+        "bytes": 1057,
+        "mode": 33204
+      },
+      {
+        "path": "knowledge/invariants/INV-SY5Z3P-frameless-apsw-and-database-file-operations.json",
+        "sha256": "7857bf5ce9f8908452571f70437a2428a9e9543c65854f6f5e962d7a7bf53a5a",
+        "bytes": 1058,
+        "mode": 33204
+      },
+      {
+        "path": "knowledge/invariants/INV-W3FW03-the-current-r26-code-delivery-retires.json",
+        "sha256": "1dc8aedb0bc1ead9f2481352070a473fbb0c7fea6c6caadd04ff51b17c62601a",
+        "bytes": 1237,
+        "mode": 33204
+      },
+      {
+        "path": "knowledge/invariants/INV-X23FME-knowledge-diff-refuses-a-subdirectory-supplied.json",
+        "sha256": "53c0ef6426413d84927e5908f24c7bfe64de877cf8e6d9d17f020fa08d7497f5",
+        "bytes": 1064,
+        "mode": 33204
+      },
+      {
+        "path": "knowledge/invariants/INV-YJZKYC-unconverted-review-descriptions-state-source-only.json",
+        "sha256": "cb903188cc0d70cf60d66e69ae3b7e03c11c51b881d5afdf698826f122f19739",
+        "bytes": 1080,
+        "mode": 33204
+      },
+      {
+        "path": "knowledge/invariants/INV-YZ45D7-publish-tree-commit-binds-the-admitted.json",
+        "sha256": "6537f78b74104d05842cab2fa410773978d7a4c2aeef4b700caf3a305e1154df",
+        "bytes": 1027,
+        "mode": 33204
+      },
+      {
+        "path": "knowledge/invariants/INV-ZGFZXT-repeated-refused-publications-of-the-same.json",
+        "sha256": "efa9a7074599cca73f5b1636f8e759d01e3c7b686712efcd84b84cb4278d9b01",
+        "bytes": 1178,
+        "mode": 33204
+      },
+      {
+        "path": "knowledge/limitations/LIM-M6ZRE6-no-physical-worker-attempt-anchor.json",
+        "sha256": "a0715ff32f80d1f90f2513cfdf2e7b7ad49e92d4e3a683692573cdd4fb6b525a",
+        "bytes": 853,
+        "mode": 33204
+      },
+      {
+        "path": "notes/l26-curation-takeover/d7a5e018/91-marker-integrity.json",
+        "sha256": "a892f5377d2bba6ebcdbb94254eaf233718cb3b911c6931caf494c4418ce0ccc",
+        "bytes": 598,
+        "mode": 33204
+      },
+      {
+        "path": "notes/l26-curation-takeover/d7a5e018/apply-card-proposals.py",
+        "sha256": "78d90c41ed9c814e3caf65a0d10576e7a2c7142385dfc3a79d57c1a34edf22fb",
+        "bytes": 6455,
+        "mode": 33204
+      },
+      {
+        "path": "notes/l26-curation-takeover/d7a5e018/bootstrap-authority-scope.commit-v2.json",
+        "sha256": "5ee8f0db0e29ad1465a60b773ef695621fb51b0724b1c5f9ca40228e51b894ed",
+        "bytes": 28327,
+        "mode": 33204
+      },
+      {
+        "path": "notes/l26-curation-takeover/d7a5e018/bootstrap-authority-scope.commit.json",
+        "sha256": "2de12e2e227473e6579f0750862bf839b232a8865115f91540d0b76c1fe8384c",
+        "bytes": 28514,
+        "mode": 33204
+      },
+      {
+        "path": "notes/l26-curation-takeover/d7a5e018/bootstrap-authority-scope.handoff.json",
+        "sha256": "7e9aa612aab12d7f2540bc23f2bb4bd46052c66b5ea01aeda5781dfcb416a13d",
+        "bytes": 1669,
+        "mode": 33204
+      },
+      {
+        "path": "notes/l26-curation-takeover/d7a5e018/bootstrap-authority-scope.plan-v2.json",
+        "sha256": "9a17a8f3f84b1dd40fe550371532ebf18c58241948331445a37fee88f2eff9c6",
+        "bytes": 28326,
+        "mode": 33204
+      },
+      {
+        "path": "notes/l26-curation-takeover/d7a5e018/bootstrap-authority-scope.plan.json",
+        "sha256": "2de12e2e227473e6579f0750862bf839b232a8865115f91540d0b76c1fe8384c",
+        "bytes": 28514,
+        "mode": 33204
+      },
+      {
+        "path": "notes/l26-curation-takeover/d7a5e018/build-record-repair.py",
+        "sha256": "44a4a3d6afbe6dace2be2be0071df8dd3735e075ffd67c87e8f4b015d58b54b5",
+        "bytes": 16704,
+        "mode": 33204
+      },
+      {
+        "path": "notes/l26-curation-takeover/d7a5e018/citation-ab-documents.json",
+        "sha256": "4f6ed2d0c9a039136bf57fd4119a58548b914db0fc128f407eb435e5c1a7436d",
+        "bytes": 3606,
+        "mode": 33204
+      },
+      {
+        "path": "notes/l26-curation-takeover/d7a5e018/citation-ab-receipts.json",
+        "sha256": "bc9f3ba9adc81252358f3fbc4922e37088013bc8e819f613729f1d191044cf37",
+        "bytes": 829227,
+        "mode": 33204
+      },
+      {
+        "path": "notes/l26-curation-takeover/d7a5e018/citation-c-receipts.json",
+        "sha256": "69d9a5520dfacc4a8033f1f31f725b7d36ea2e480022560533d89e5cc12583fe",
+        "bytes": 599156,
+        "mode": 33204
+      },
+      {
+        "path": "notes/l26-curation-takeover/d7a5e018/helper-credit.json",
+        "sha256": "2364056c00fb0a9e9f36543e630a096918276562d2294abaddd06fd929da053b",
+        "bytes": 1011,
+        "mode": 33204
+      },
+      {
+        "path": "notes/l26-curation-takeover/d7a5e018/intake-mqc-actions.json",
+        "sha256": "90732568ecf77dd0338f1488a74c3ee81a8c03fb8f37dbdf7848637a7f5b1541",
+        "bytes": 144044,
+        "mode": 33204
+      },
+      {
+        "path": "notes/l26-curation-takeover/d7a5e018/intake-mqc-attestation.json",
+        "sha256": "ed40a07ff5e4230e95e9f614fa259d757a0f2ac1297e3e7ac9a06b7582aee84f",
+        "bytes": 103554,
+        "mode": 33204
+      },
+      {
+        "path": "notes/l26-curation-takeover/d7a5e018/intake-mqc-report.md",
+        "sha256": "a2f8483d8b45edbaa481a65ff265071aad9f5941fdf7bf7bf0f6148bcecd9084",
+        "bytes": 3160923,
+        "mode": 33204
+      },
+      {
+        "path": "notes/l26-curation-takeover/d7a5e018/intake-worklist.json",
+        "sha256": "ae426172141da02d4e670de42d6dc9472d7ce0b5928de3365eef70970b338aaf",
+        "bytes": 6690105,
+        "mode": 33204
+      },
+      {
+        "path": "notes/l26-curation-takeover/d7a5e018/o01-a-proposals.apply-result.json",
+        "sha256": "9e0a9bd3623f4bdb6f908606f0dc6f6c48cafc946cf9cddbecaba15bd5429962",
+        "bytes": 16464,
+        "mode": 33204
+      },
+      {
+        "path": "notes/l26-curation-takeover/d7a5e018/o01-a-proposals.json",
+        "sha256": "6dbf5b23f1c33e9a3d001b40203a415720b776b48cdd47526e0331321f01d504",
+        "bytes": 753957,
+        "mode": 33204
+      },
+      {
+        "path": "notes/l26-curation-takeover/d7a5e018/o01-b-curator-checked.apply-result.json",
+        "sha256": "6554a84c0a931491fc43f949e5f7c5af4f5c1e9f948831251b7bc146d3ed36c5",
+        "bytes": 13839,
+        "mode": 33204
+      },
+      {
+        "path": "notes/l26-curation-takeover/d7a5e018/o01-b-curator-checked.json",
+        "sha256": "c770b26a645190d73431314cb3d7009ddb966bfecd40ad0a6e7d81873636477a",
+        "bytes": 684745,
+        "mode": 33204
+      },
+      {
+        "path": "notes/l26-curation-takeover/d7a5e018/o01-b-path-corrigenda.json",
+        "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "bytes": 3,
+        "mode": 33204
+      },
+      {
+        "path": "notes/l26-curation-takeover/d7a5e018/o01-b-proposals.apply-result.json",
+        "sha256": "89e3eaacf6575822e954b7d61faf567979b584a251fe6c7c4448a3360248cb36",
+        "bytes": 12947,
+        "mode": 33204
+      },
+      {
+        "path": "notes/l26-curation-takeover/d7a5e018/o01-b-proposals.json",
+        "sha256": "2d5acd0b061c6ee8ee91cf33f8b86c00f6d9466d3e6faa11be7f11945321ec50",
+        "bytes": 683466,
+        "mode": 33204
+      },
+      {
+        "path": "notes/l26-curation-takeover/d7a5e018/o01-c-proposals.apply-result.json",
+        "sha256": "0f059d6a08051dfa3d6ad2705f8b632f62393160ec235e38e50fdd4a944864fa",
+        "bytes": 12411,
+        "mode": 33204
+      },
+      {
+        "path": "notes/l26-curation-takeover/d7a5e018/o01-c-proposals.json",
+        "sha256": "48f3366adb49805ecdcde426c2f124aef0f47222c767b4da4d66bde73be62b7c",
+        "bytes": 417990,
+        "mode": 33204
+      },
+      {
+        "path": "notes/l26-curation-takeover/d7a5e018/o02-current-target-check.json",
+        "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "bytes": 3,
+        "mode": 33204
+      },
+      {
+        "path": "notes/l26-curation-takeover/d7a5e018/o02-original-population-successor.json",
+        "sha256": "443a7d25288fedc7ece1c256f024c7bf75a810c456e3a0d869884d9bb0470883",
+        "bytes": 22750,
+        "mode": 33204
+      },
+      {
+        "path": "notes/l26-curation-takeover/d7a5e018/o04-original17-successor.json",
+        "sha256": "b59d39e89dff68264384435aa9771715f9067a569532e579bc9f2dd91bf0ab12",
+        "bytes": 10062,
+        "mode": 33204
+      },
+      {
+        "path": "notes/l26-curation-takeover/d7a5e018/original47-family-examination.json",
+        "sha256": "ddaeff8295d0380b0ed3e8ab5a372635baf02235ec1243190220909b46f70e72",
+        "bytes": 41582,
+        "mode": 33204
+      },
+      {
+        "path": "notes/l26-curation-takeover/d7a5e018/reclamation-successor-card.handoff.apply-result.json",
+        "sha256": "fe85722f9e34795ed47328772794922224c22f548678aa380658b548c9a234af",
+        "bytes": 573,
+        "mode": 33204
+      },
+      {
+        "path": "notes/l26-curation-takeover/d7a5e018/reclamation-successor-card.handoff.json",
+        "sha256": "2133bfd95b96ab99b08aad4a8426a54a98a1fe2cf7ae671bc700410de6d5a7b8",
+        "bytes": 3023,
+        "mode": 33204
+      },
+      {
+        "path": "notes/l26-curation-takeover/d7a5e018/remaining-record-commit-v3.json",
+        "sha256": "661dd6915d05b56f9ba97eba5da02a60cc8a0b49fde42b8dc1412640e57d8dd4",
+        "bytes": 37102,
+        "mode": 33204
+      },
+      {
+        "path": "notes/l26-curation-takeover/d7a5e018/remaining-record-commit.json",
+        "sha256": "f9aba89d86a2045765e435c41ef51b5277951686bdf50e480f23255082d2f2f4",
+        "bytes": 38241,
+        "mode": 33204
+      },
+      {
+        "path": "notes/l26-curation-takeover/d7a5e018/remaining-record-plan-v2.json",
+        "sha256": "1fb85f8fa4c3ea812190a3d78dd65c9cf6b25d19c182f7b367e09e8564ea260d",
+        "bytes": 9361,
+        "mode": 33204
+      },
+      {
+        "path": "notes/l26-curation-takeover/d7a5e018/remaining-record-plan-v3.json",
+        "sha256": "83c710f4544824579fb935ab30270599950ff5b896d59a0e1fe09a715157c96e",
+        "bytes": 37101,
+        "mode": 33204
+      },
+      {
+        "path": "notes/l26-curation-takeover/d7a5e018/remaining-record-plan.json",
+        "sha256": "9c0eb89bd40a9b0b6a6e66739c8a24c31332440fcf7b2aae1ce0fa3926f309bb",
+        "bytes": 38240,
+        "mode": 33204
+      },
+      {
+        "path": "notes/l26-curation-takeover/d7a5e018/remaining-record-repair.handoff.json",
+        "sha256": "2886db2669b82c362cdbf1a16dd3a4afa2ab688d483077475d17884df0e4aff0",
+        "bytes": 22889,
+        "mode": 33204
+      },
+      {
+        "path": "notes/l26-curation-takeover/d7a5e018/remaining-record-repair.meaning.json",
+        "sha256": "75d46ade93eeb7fb4afd139c1324f22e535ab4bb1556b73d677db8a7ab7eb80c",
+        "bytes": 4547,
+        "mode": 33204
+      },
+      {
+        "path": "notes/l26-curation-takeover/d7a5e018/whole-content-no-flight-checkpoint.json",
+        "sha256": "fee04db7784e0c736d9ca5b0d6e5336904d911b572877f9bbadd05b191fb29e5",
+        "bytes": 3261,
+        "mode": 33204
+      },
+      {
+        "path": "onboarding/mcp/src/agents_remember/application/knowledge_file_diff.py.json",
+        "sha256": "d4b8faf2260f18d432a54448af3db2597e5f8813a4ab9713323aacee0a1e470f",
+        "bytes": 724,
+        "mode": 33204
+      },
+      {
+        "path": "onboarding/mcp/src/agents_remember/application/knowledge_file_diff.py.md",
+        "sha256": "5dd6443f877c56eb977424f6224bea7c661946ad8baf38912b69c1313f584c83",
+        "bytes": 580,
+        "mode": 33204
+      },
+      {
+        "path": "onboarding/mcp/src/agents_remember/application/knowledge_view_rows.py.json",
+        "sha256": "c4ca554dc3971b513ee17eb7b82afe9078d2680c83cad4ceb815aadaf5367988",
+        "bytes": 591,
+        "mode": 33204
+      },
+      {
+        "path": "onboarding/mcp/src/agents_remember/application/knowledge_view_rows.py.md",
+        "sha256": "646549fb3eccd26a427e6f18beb0b72d1a4e7ecf6df15890c9f0a2bfe0d368de",
+        "bytes": 447,
+        "mode": 33204
+      },
+      {
+        "path": "onboarding/mcp/src/agents_remember/application/knowledge_writer/authoring_rows.py.json",
+        "sha256": "41a3c7162015e4804062e64d183936e77a98197f12dad15d2d5342ad0b37e1d4",
+        "bytes": 603,
+        "mode": 33204
+      },
+      {
+        "path": "onboarding/mcp/src/agents_remember/application/knowledge_writer/authoring_rows.py.md",
+        "sha256": "d2c295ad92fd82a85c4dbddea7b966669f4f9287266611e998991bf8c2081178",
+        "bytes": 510,
+        "mode": 33204
+      },
+      {
+        "path": "onboarding/mcp/src/agents_remember/application/legacy_dataset_copies.py.json",
+        "sha256": "5bd8ebaa7cb797697eb8ddae7ffadb2408dc54ea049cb8969a8938771d235774",
+        "bytes": 1838,
+        "mode": 33204
+      },
+      {
+        "path": "onboarding/mcp/src/agents_remember/application/legacy_dataset_copies.py.md",
+        "sha256": "bdc626f0fa38f2497b8809a23a20ce437006d06f7a41c5c9f7b19eaf7cf90429",
+        "bytes": 712,
+        "mode": 33204
+      },
+      {
+        "path": "onboarding/mcp/src/agents_remember/cli/knowledge_copies.py.json",
+        "sha256": "74451ee915b4f2495933b546489aa021a2794e47b60c8efba10f3000c4b0e163",
+        "bytes": 580,
+        "mode": 33204
+      },
+      {
+        "path": "onboarding/mcp/src/agents_remember/cli/knowledge_copies.py.md",
+        "sha256": "ddb7fe574875f09a21ee2e5db3683b80a3b92a2d52172395531a14679be91b38",
+        "bytes": 466,
+        "mode": 33204
+      },
+      {
+        "path": "onboarding/mcp/src/agents_remember/cli/paseo_bridge.mjs.md",
+        "sha256": "94ccf823339f945dcc14936858eb6514c97878cc8d7c1931f4019b2303d190e7",
+        "bytes": 438,
+        "mode": 33204
+      },
+      {
+        "path": "onboarding/mcp/src/agents_remember/models/knowledge/review_refusal.py.json",
+        "sha256": "ed786fc094a682da5741b46b1e80621a8a4611d7763063edcfdb0a5f7a5fcabc",
+        "bytes": 591,
+        "mode": 33204
+      },
+      {
+        "path": "onboarding/mcp/src/agents_remember/models/knowledge/review_refusal.py.md",
+        "sha256": "3f377554ea7ab443209f975565803a32f238108b7345fbc652d7ff31485b2369",
+        "bytes": 441,
+        "mode": 33204
+      },
+      {
+        "path": "onboarding/mcp/src/agents_remember/worktrees/reopen_reset.py.json",
+        "sha256": "bfe1d6250c6047894126a6f33a8dbb8bd22b2c50a4ca9b2402b4a1830153215e",
+        "bytes": 582,
+        "mode": 33204
+      },
+      {
+        "path": "onboarding/mcp/src/agents_remember/worktrees/reopen_reset.py.md",
+        "sha256": "bc09d8b1d328c261535bd3ff43d5c8cfce4f0b0d664bdbbb82865f3d4c71beff",
+        "bytes": 421,
+        "mode": 33204
+      },
+      {
+        "path": "onboarding/mcp/src/agents_remember/worktrees/reopen_series.py.json",
+        "sha256": "49472b6f32ec59c3d627c36e0329e63a829c7bda98fe2d75de62ae31c6da295a",
+        "bytes": 583,
+        "mode": 33204
+      },
+      {
+        "path": "onboarding/mcp/src/agents_remember/worktrees/reopen_series.py.md",
+        "sha256": "a57cb0c2bfe9b4a44ab7defd2034624626eb3f91664f4d6adc1dc14c67c04c2d",
+        "bytes": 418,
+        "mode": 33204
+      },
+      {
+        "path": "onboarding/mcp/test_support/agents_remember_test_support/testing/database_retirement_guard.py.json",
+        "sha256": "d95b89581f9ba6d9c3388a77a7d541bb8d0a9ce76f910e0bac857c57d954562b",
+        "bytes": 3632,
+        "mode": 33204
+      },
+      {
+        "path": "onboarding/mcp/test_support/agents_remember_test_support/testing/database_retirement_guard.py.md",
+        "sha256": "9b9c751fba2ebbb7b8aef943b973f9706a3b0d5f2e494d51900b96fb44968b08",
+        "bytes": 634,
+        "mode": 33204
+      },
+      {
+        "path": "onboarding/mcp/test_support/agents_remember_test_support/testing/database_source_reading.py.json",
+        "sha256": "904ebc70cbb0d6358e332b3120811d0123ec714ebc54656f1443cb92d7f9f7ad",
+        "bytes": 1298,
+        "mode": 33204
+      },
+      {
+        "path": "onboarding/mcp/test_support/agents_remember_test_support/testing/database_source_reading.py.md",
+        "sha256": "40858b6f2e67d842721afb978571563c2323ff72ed28e288a30eafd2f79a92c9",
+        "bytes": 586,
+        "mode": 33204
+      },
+      {
+        "path": "onboarding/mcp/tests/anchor_fixture_models.py.json",
+        "sha256": "5a02f88a4dc9dc0321efc7df2afa2ec544e45bb13402ff7d2f6b4c1dddf411f0",
+        "bytes": 567,
+        "mode": 33204
+      },
+      {
+        "path": "onboarding/mcp/tests/anchor_fixture_models.py.md",
+        "sha256": "b9b3b288e1e3453e05f2721c3d0b312c179e0efe493b40541b60da87f7dabb37",
+        "bytes": 312,
+        "mode": 33204
+      },
+      {
+        "path": "onboarding/mcp/tests/knowledge_row_codec_test_support.py.json",
+        "sha256": "ecdc7348e68dc815c8596bed63eaf67da1dadfd634bab3f2d87adf154dacf426",
+        "bytes": 578,
+        "mode": 33204
+      },
+      {
+        "path": "onboarding/mcp/tests/knowledge_row_codec_test_support.py.md",
+        "sha256": "a1ad7b696d4387a36467b7f1fa785cbe3935c19996390ff25243b89fe60c8cd6",
+        "bytes": 341,
+        "mode": 33204
+      },
+      {
+        "path": "onboarding/mcp/tests/knowledge_rows_test_support.py.json",
+        "sha256": "a5602073769bd617ec0b480bf461dab0edd38fe79318c059d59f8e1c81c154f0",
+        "bytes": 573,
+        "mode": 33204
+      },
+      {
+        "path": "onboarding/mcp/tests/knowledge_rows_test_support.py.md",
+        "sha256": "c3bf578a7b7fdd89176d8a11b327e59acab2e532c81336d9371b33e3bf0941a0",
+        "bytes": 344,
+        "mode": 33204
+      },
+      {
+        "path": "onboarding/mcp/tests/test_curator_coherence_judgment_evidence.py.json",
+        "sha256": "4537554f0717c43401dbeaad8985c19415cea67af9d2fdd726cbcbeae49296d7",
+        "bytes": 586,
+        "mode": 33204
+      },
+      {
+        "path": "onboarding/mcp/tests/test_curator_coherence_judgment_evidence.py.md",
+        "sha256": "bb05e69f7dcedaaa275cffaa8b6af53106b1d365848ad68a4d9a01e32e1096b8",
+        "bytes": 385,
+        "mode": 33204
+      },
+      {
+        "path": "onboarding/mcp/tests/test_curator_realization_refusals.py.json",
+        "sha256": "b6e8e4b37e2850f905c408e5785d1908437e6b98f4a8a1870f63c4316fcddd78",
+        "bytes": 579,
+        "mode": 33204
+      },
+      {
+        "path": "onboarding/mcp/tests/test_curator_realization_refusals.py.md",
+        "sha256": "742862ead1599537b6a5deb620f806d1cfb4ab1559e7fbfb991e74f3ee4c7c99",
+        "bytes": 390,
+        "mode": 33204
+      },
+      {
+        "path": "onboarding/mcp/tests/test_knowledge_copy_cleanup.py.json",
+        "sha256": "86e92c8337dbec37bfa21d90bdde02d397b037dbe96daed1f42f9cde46e79e52",
+        "bytes": 754,
+        "mode": 33204
+      },
+      {
+        "path": "onboarding/mcp/tests/test_knowledge_copy_cleanup.py.md",
+        "sha256": "fd34dae19be809af6bc1773d8be261fda437c8723f73737c5df5173f90ff968b",
+        "bytes": 500,
+        "mode": 33204
+      },
+      {
+        "path": "onboarding/mcp/tests/test_knowledge_database_retired.py.json",
+        "sha256": "2dc84211e12cbd09eb598bfac9bae5be8c92a11f97e28ec0c605f40700ed53e9",
+        "bytes": 3172,
+        "mode": 33204
+      },
+      {
+        "path": "onboarding/mcp/tests/test_knowledge_database_retired.py.md",
+        "sha256": "a8d0fe7c0a7c54a040276da8d110f858d9f405025a1cd9c8cbd34b75fd7d9284",
+        "bytes": 517,
+        "mode": 33204
+      },
+      {
+        "path": "onboarding/mcp/tests/test_knowledge_reopen_governing_rows.py.json",
+        "sha256": "db8b7c4ad4eeb81be9dceeef85f7698e51fc865d0922ed3bc1271d715b38f23e",
+        "bytes": 582,
+        "mode": 33204
+      },
+      {
+        "path": "onboarding/mcp/tests/test_knowledge_reopen_governing_rows.py.md",
+        "sha256": "e05dc24e2cea804ab0ea2901822e2a5fb6dd9b04a5461d1f8f7dad3b918332e2",
+        "bytes": 359,
+        "mode": 33204
+      },
+      {
+        "path": "onboarding/mcp/tests/test_knowledge_views.py.json",
+        "sha256": "6d2b28ec356b1a083ccc540e0b58e49e7139dc108a70bc0222f30ef970567b82",
+        "bytes": 566,
+        "mode": 33204
+      },
+      {
+        "path": "onboarding/mcp/tests/test_knowledge_views.py.md",
+        "sha256": "961e37d38967aa2c91ae1cd486f8a7e7f7428e9a86df1cd52dbdbbe83510af57",
+        "bytes": 366,
+        "mode": 33204
+      },
+      {
+        "path": "onboarding/mcp/tests/test_reconsideration_route_trigger.py.json",
+        "sha256": "1f6c93113626b6d05e5d6bdde63149346aba4f9bb43a9747f5a653b7a6855f6a",
+        "bytes": 580,
+        "mode": 33204
+      },
+      {
+        "path": "onboarding/mcp/tests/test_reconsideration_route_trigger.py.md",
+        "sha256": "8352a0f873255af964b543510bdb803b09a8846d4b65b30bc502c3ccf00b34d0",
+        "bytes": 401,
+        "mode": 33204
+      },
+      {
+        "path": "onboarding/mcp/tests/test_review_closeout_result_block_through_real_tool.py.json",
+        "sha256": "cad3bb01719a35731b58b03d2c75f183fa0356df0c123a42a118030ddac12eae",
+        "bytes": 597,
+        "mode": 33204
+      },
+      {
+        "path": "onboarding/mcp/tests/test_review_closeout_result_block_through_real_tool.py.md",
+        "sha256": "7c7930e201aa301e81dbfc2a62dc401506b5c560feddb237a6fae1d03885a8f4",
+        "bytes": 400,
+        "mode": 33204
+      },
+      {
+        "path": "onboarding/mcp/tests/test_review_comparison_reclamation_real.py.json",
+        "sha256": "a7d6dad5356c4b3c5829a2460c1d0b9f3e069f5e5e052642c821c7439e0b4877",
+        "bytes": 585,
+        "mode": 33204
+      },
+      {
+        "path": "onboarding/mcp/tests/test_review_comparison_reclamation_real.py.md",
+        "sha256": "b1d138b062f5731d6b294203a6a153e46ad673786560dd5ff870e4238895ff18",
+        "bytes": 369,
+        "mode": 33204
+      },
+      {
+        "path": "onboarding/mcp/tests/test_review_detection_models.py.json",
+        "sha256": "f879b05f0e4d67e807d31c372868925ea5ea388d60e78bb9e940b954b7e4d7e4",
+        "bytes": 574,
+        "mode": 33204
+      },
+      {
+        "path": "onboarding/mcp/tests/test_review_detection_models.py.md",
+        "sha256": "1600150ee6d4f5d58860f78630c9e339406f0133ef56fe9e251be77455e55efc",
+        "bytes": 348,
+        "mode": 33204
+      },
+      {
+        "path": "onboarding/mcp/tests/test_review_result_blocks_through_real_tools.py.json",
+        "sha256": "a2592a200340afa9baaead6a6f1a0b79675b1c58fad7019ddda231ea54c45959",
+        "bytes": 590,
+        "mode": 33204
+      },
+      {
+        "path": "onboarding/mcp/tests/test_review_result_blocks_through_real_tools.py.md",
+        "sha256": "462dfc6f0cccbddd9039cc7cfbcda63c101c0176089305f4bc84d03f6a95a7a8",
+        "bytes": 378,
+        "mode": 33204
+      },
+      {
+        "path": "onboarding/mcp/tests/test_review_source_inventory_boundaries.py.json",
+        "sha256": "707c839c42dee65ddff6b6a78a205804fd313844cc659aaedbf1e20279edc3da",
+        "bytes": 585,
+        "mode": 33204
+      },
+      {
+        "path": "onboarding/mcp/tests/test_review_source_inventory_boundaries.py.md",
+        "sha256": "bd3f5c199abde0cf04ec92f3cc6b991630875d16439ce3cba8951ca147af65b4",
+        "bytes": 396,
+        "mode": 33204
+      },
+      {
+        "path": "onboarding/mcp/tests/test_review_verification_observation_model.py.json",
+        "sha256": "dce91ebb0abb85bd2eabe25176b3a61e1f7e5b842679d0aaf1af266b66dbe524",
+        "bytes": 588,
+        "mode": 33204
+      },
+      {
+        "path": "onboarding/mcp/tests/test_review_verification_observation_model.py.md",
+        "sha256": "d462836303d44d81cc2d59769af722e342b3dc783dbfda061b47ff02d6bcb8ea",
+        "bytes": 376,
+        "mode": 33204
+      },
+      {
+        "path": "onboarding/mcp/tests/test_tool_entry_point_controls.py.json",
+        "sha256": "373d050daca3ba741953f7144439f7585c02c1f921fe5161a4ef69b81c3d710a",
+        "bytes": 1265,
+        "mode": 33204
+      },
+      {
+        "path": "onboarding/mcp/tests/test_tool_entry_point_controls.py.md",
+        "sha256": "098ce29f11c6609e3c3a248fd48f7a8deaa08ade8cc0e58380c01bb64c8434c2",
+        "bytes": 346,
+        "mode": 33204
+      },
+      {
+        "path": "onboarding/mcp/tests/test_tool_entry_point_valid_progression.py.json",
+        "sha256": "833669ccf452c704916b33f5ef5e7f8fba6b8ceed13461907ea94d5996813ca7",
+        "bytes": 585,
+        "mode": 33204
+      },
+      {
+        "path": "onboarding/mcp/tests/test_tool_entry_point_valid_progression.py.md",
+        "sha256": "6dc01f1f0c4f157f35fc0260970fab21c40dbfa3d9fd3b9039925603b85c473a",
+        "bytes": 424,
+        "mode": 33204
+      },
+      {
+        "path": "onboarding/mcp/tests/test_worktree_sync_knowledge_merge.py.json",
+        "sha256": "90d2d522bd66f58b029546d6d154dad2a71aa33fe4ff72de44bf69f33c860216",
+        "bytes": 580,
+        "mode": 33204
+      },
+      {
+        "path": "onboarding/mcp/tests/test_worktree_sync_knowledge_merge.py.md",
+        "sha256": "62920561ef95ca6e51367053476272d2d15aa4627f5f63319756bf627a9083b6",
+        "bytes": 386,
+        "mode": 33204
+      },
+      {
+        "path": "onboarding/mcp/tests/tool_entry_point_world.py.json",
+        "sha256": "d72556adc8140de319d62947a65e5e4715637a7916073343a1b1a2da0317bec6",
+        "bytes": 1168,
+        "mode": 33204
+      },
+      {
+        "path": "onboarding/mcp/tests/tool_entry_point_world.py.md",
+        "sha256": "d1231868ddb43897989a13c057143817f1440f969084779d02a20d8ba09d17bd",
+        "bytes": 407,
+        "mode": 33204
+      },
+      {
+        "path": "onboarding/skills/c-14-knowledge-bootstrap/SKILL.md.json",
+        "sha256": "f6eb6e1f5250221da4e126ea80f00b4ff73d27359eba8fab4d93f8e0d43a2c40",
+        "bytes": 1208,
+        "mode": 33204
+      },
+      {
+        "path": "onboarding/skills/c-14-knowledge-bootstrap/SKILL.md.md",
+        "sha256": "35217e9c04b965b62cbda8ee17e1938ab4e6d23d7fe2cccfb7a343f1fe0ab6ef",
+        "bytes": 475,
+        "mode": 33204
+      },
+      {
+        "path": "onboarding/skills/l-01-agent-lifecycles/operations/closeout.md.md",
+        "sha256": "b015c571195e8d490a532e7927779ef1fa5a423fce2efe3a888a03be94f4126f",
+        "bytes": 533,
+        "mode": 33204
+      },
+      {
+        "path": "onboarding/skills/l-01-agent-lifecycles/operations/coordination.md.md",
+        "sha256": "5ab176e7c5eb98c46f065abf0fe5dd4ea7ed0ddff8f44f77de06ac27420ae42c",
+        "bytes": 414,
+        "mode": 33204
+      },
+      {
+        "path": "onboarding/skills/l-01-agent-lifecycles/operations/curation.md.md",
+        "sha256": "51490a3e7b30cd1f4131bc3727da066848534b0bdd8396153f71038b5a31ddf8",
+        "bytes": 507,
+        "mode": 33204
+      },
+      {
+        "path": "onboarding/skills/l-01-agent-lifecycles/operations/orientation.md.md",
+        "sha256": "5294b8f87c6a6cd2540994e2c8b1cefd3dae4b03e8a0c92dec42c1c54e2b0544",
+        "bytes": 427,
+        "mode": 33204
+      },
+      {
+        "path": "onboarding/skills/l-01-agent-lifecycles/operations/recovery.md.md",
+        "sha256": "75e09353fe49231b69cfe59051cbe14e843a3411657d489d23a6f7986f2c2eaa",
+        "bytes": 417,
+        "mode": 33204
+      }
+    ],
+    "count": 158,
+    "semanticIndexSha256": "14bc9f0eb5ba0dc92aea78b6ff65127f570c1d66ca1716d89bdc96b76a2007fb",
+    "historySha256": "a8c3902fd3c724db829e8081bcae267d0724650f15d8a2c71a3445be170c168a"
+  },
+  "note": "Input preservation observation before this artifact was added; this support artifact is a new untracked observation output, not a final candidate freeze."
+}

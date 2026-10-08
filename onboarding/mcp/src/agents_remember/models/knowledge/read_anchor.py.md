@@ -8,7 +8,7 @@
 
 **The observation one recorded source anchor earns against a requested code tree, as a value
 vocabulary.** It declares the closed set of seven resolution states an observation can reach
-(`AnchorResolutionState`, mirrored as the runtime tuple `ANCHOR_RESOLUTIONS`) and the observation value
+(`AnchorResolutionState`, declared as a literal type) and the observation value
 `AnchorResolution`, including the structured line ranges an exact recorded blob supports. It is the anchor
 half of the read vocabulary: `models/knowledge/read.py` imports and re-exports every name here, so callers
 keep importing from `read.py`. The resolver that produces the value is
@@ -61,30 +61,6 @@ None recorded.
 
 ## Evidence
 
-### Docs References
-
-No domain documentation source is configured for this repository (`system/sources.md` carries no
-`Domain Documentation` entries). The statements below are grounded in repository source only.
-
-No configured domain documentation could be checked.
-
 ### Repo-Internal References
 
-The module is small and self-describing; the rows below name the declarations and the two places that
-give them meaning — the re-export that keeps existing imports working and the resolver that fills the
-ranges.
-
-- The published surface of the anchor-observation vocabulary. [1]
-- **The owner's seven resolution states, as a type and as a runtime tuple.** [2]
-- **One recorded anchor observed against the requested snapshot, carrying its recorded identity whatever the outcome and its structured locator.** [3]
-- **The structured region: the recorded line range or every defining extent, only on an exact recorded blob; none for a file locator.** [4]
-- **The validator refusing ranges beside any resolution other than the exact recorded blob.** [5]
-- The re-export that keeps every existing `read.py` import of these names working. [6]
-- The read item field that carries the observation onto every realization-claim item. [7]
-- The resolver that fills `resolved_ranges` for symbol and line-range locators on the exact recorded blob. [8]
-
-### Cross-Repo References
-
-No cross-repository behavior is implemented in this file.
-
-No meaningful cross-repo references found.
+- `AnchorResolution` implements the retained boundary described above. [9]

@@ -1,0 +1,625 @@
+{
+  "authorization": "agents-remember:260928_maintained-invariant-knowledge/26_retire-the-canonical-database.json#D110;notes/run3/L26-SOURCE95-COMPOSITE-INPUT-879378fb/owner-composite-ready-binding.json@59c1b277",
+  "carried": [],
+  "codeTree": "ef0ae46eb4e52d013553f8e6bd51a684ab536792",
+  "entries": [],
+  "evidence": [],
+  "historyRows": [
+    {
+      "disposition": "changed",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-PZDE9P",
+      "subject": "INV-QN53GPRB"
+    },
+    {
+      "disposition": "changed",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-DABVNP",
+      "subject": "FAM-7B6N3Y4Q"
+    }
+  ],
+  "memoryRoot": "/home/firefox/projects/ar-coordination/worktrees/agents-remember/260928-mik-l26-ar/memory-260928-mik-l26",
+  "notes": [],
+  "operation": "knowledge-write",
+  "owner": "260928-MIK-L26",
+  "problems": [],
+  "provisionalIds": false,
+  "records": [
+    {
+      "action": "updated",
+      "handoffEntry": "mr1-bootstrap-authority-scope",
+      "id": "INV-QN53GPRB",
+      "kind": "invariant",
+      "path": "knowledge/invariants/INV-QN53GPRB-ICR30-I-3.json",
+      "revision": 2
+    }
+  ],
+  "removed": [],
+  "requirementEndpoints": [],
+  "rulings": [],
+  "state": "refused",
+  "violations": [
+    {
+      "field": "line 17",
+      "message": "marker [3] has no reference in onboarding/mcp/src/agents_remember/cli/knowledge_ingest.py.json",
+      "path": "onboarding/mcp/src/agents_remember/cli/knowledge_ingest.py.md",
+      "reportOnly": false,
+      "rule": "R22.3-markers"
+    },
+    {
+      "field": "admission",
+      "message": "92 live record(s) are still legacy-unassessed (11 family(s), 81 invariant(s)); the migration (MIK-R19) assesses or demotes each one",
+      "path": "knowledge",
+      "reportOnly": true,
+      "rule": "R27.4-legacy-unassessed"
+    },
+    {
+      "field": "routes",
+      "message": "family FAM-1ZDJXHP4 is route_unassigned: an exported family with no routes; Coverage is waived until a leaf or the migration assigns them (MIK-R06, MIK-R19)",
+      "path": "knowledge/families/FAM-1ZDJXHP4-generated-artifacts-are-disposable-projections.json",
+      "reportOnly": true,
+      "rule": "R04.4-route-unassigned"
+    },
+    {
+      "field": "routes",
+      "message": "family FAM-33YQGFXE is route_unassigned: an exported family with no routes; Coverage is waived until a leaf or the migration assigns them (MIK-R06, MIK-R19)",
+      "path": "knowledge/families/FAM-33YQGFXE-Bounded-task-document-read-with-unchanged-meaning.json",
+      "reportOnly": true,
+      "rule": "R04.4-route-unassigned"
+    },
+    {
+      "field": "routes",
+      "message": "family FAM-4V4GSQCS is route_unassigned: an exported family with no routes; Coverage is waived until a leaf or the migration assigns them (MIK-R06, MIK-R19)",
+      "path": "knowledge/families/FAM-4V4GSQCS-Bounded-notes-listing-with-unchanged-meaning.json",
+      "reportOnly": true,
+      "rule": "R04.4-route-unassigned"
+    },
+    {
+      "field": "references.5.targets.1",
+      "message": "unresolved reference target: mcp/src/agents_remember/serving/scope.py:207-227",
+      "path": "onboarding/dashboard/src/data/files.test.ts.json",
+      "reportOnly": true,
+      "rule": "R22.3-unresolved-target"
+    },
+    {
+      "field": "references.7.targets.0",
+      "message": "unresolved reference target: onboarding/dashboard/src/data/overview.md:1-936",
+      "path": "onboarding/dashboard/src/overview.json",
+      "reportOnly": true,
+      "rule": "R22.3-unresolved-target"
+    },
+    {
+      "field": "references.8.targets.0",
+      "message": "unresolved reference target: onboarding/dashboard/src/panels/overview.md:1-3622",
+      "path": "onboarding/dashboard/src/overview.json",
+      "reportOnly": true,
+      "rule": "R22.3-unresolved-target"
+    },
+    {
+      "field": "references.9.targets.0",
+      "message": "unresolved reference target: onboarding/dashboard/src/panels/session-cockpit/overview.md:1-595",
+      "path": "onboarding/dashboard/src/overview.json",
+      "reportOnly": true,
+      "rule": "R22.3-unresolved-target"
+    },
+    {
+      "field": "references.2.targets.1",
+      "message": "unresolved reference target: mcp/src/agents_remember/observer/projection.py:1097-1153",
+      "path": "onboarding/dashboard/src/panels/MemoryMirror.tsx.json",
+      "reportOnly": true,
+      "rule": "R22.3-unresolved-target"
+    },
+    {
+      "field": "references.3.targets.0",
+      "message": "unresolved reference target: onboarding/dashboard/src/panels/file-viewer/overview.md:47-79",
+      "path": "onboarding/dashboard/src/panels/file-viewer/DualPane.test.tsx.json",
+      "reportOnly": true,
+      "rule": "R22.3-unresolved-target"
+    },
+    {
+      "field": "references.6.targets.0",
+      "message": "unresolved reference target: onboarding/dashboard/src/panels/file-viewer/overview.md:1-137",
+      "path": "onboarding/dashboard/src/panels/file-viewer/DualPane.tsx.json",
+      "reportOnly": true,
+      "rule": "R22.3-unresolved-target"
+    },
+    {
+      "field": "references.6.targets.0",
+      "message": "unresolved reference target: onboarding/dashboard/src/panels/file-viewer/overview.md:1-107",
+      "path": "onboarding/dashboard/src/panels/file-viewer/FileViewer.tsx.json",
+      "reportOnly": true,
+      "rule": "R22.3-unresolved-target"
+    },
+    {
+      "field": "references.1.targets.0",
+      "message": "unresolved reference target: onboarding/dashboard/src/data/conversation-library/overview.md:1-150",
+      "path": "onboarding/dashboard/src/panels/session-cockpit/conversation-library/overview.json",
+      "reportOnly": true,
+      "rule": "R22.3-unresolved-target"
+    },
+    {
+      "field": "references.2.targets.0",
+      "message": "unresolved reference target: onboarding/dashboard/src/panels/session-cockpit/overview.md:1-506",
+      "path": "onboarding/dashboard/src/panels/session-cockpit/conversation-library/overview.json",
+      "reportOnly": true,
+      "rule": "R22.3-unresolved-target"
+    },
+    {
+      "field": "references.3.targets.0",
+      "message": "unresolved reference target: onboarding/dashboard/src/panels/session-cockpit/conversation/overview.md:1-360",
+      "path": "onboarding/dashboard/src/panels/session-cockpit/conversation-library/overview.json",
+      "reportOnly": true,
+      "rule": "R22.3-unresolved-target"
+    },
+    {
+      "field": "references.1.targets.0",
+      "message": "unresolved reference target: onboarding/dashboard/src/data/conversation/overview.md:1-300",
+      "path": "onboarding/dashboard/src/panels/session-cockpit/conversation/overview.json",
+      "reportOnly": true,
+      "rule": "R22.3-unresolved-target"
+    },
+    {
+      "field": "references.2.targets.0",
+      "message": "unresolved reference target: onboarding/dashboard/src/panels/session-cockpit/conversation-library/overview.md:1-173",
+      "path": "onboarding/dashboard/src/panels/session-cockpit/conversation/overview.json",
+      "reportOnly": true,
+      "rule": "R22.3-unresolved-target"
+    },
+    {
+      "field": "references.3.targets.0",
+      "message": "unresolved reference target: onboarding/dashboard/src/panels/session-cockpit/overview.md:1-506",
+      "path": "onboarding/dashboard/src/panels/session-cockpit/conversation/overview.json",
+      "reportOnly": true,
+      "rule": "R22.3-unresolved-target"
+    },
+    {
+      "field": "references.4.targets.0",
+      "message": "unresolved reference target: onboarding/dashboard/src/data/keymap/overview.md:1-154",
+      "path": "onboarding/dashboard/src/panels/session-cockpit/conversation/overview.json",
+      "reportOnly": true,
+      "rule": "R22.3-unresolved-target"
+    },
+    {
+      "field": "references.5.targets.0",
+      "message": "unresolved reference target: onboarding/mcp/src/agents_remember/serving/conversation/control/overview.md:1-433",
+      "path": "onboarding/dashboard/src/panels/session-cockpit/conversation/overview.json",
+      "reportOnly": true,
+      "rule": "R22.3-unresolved-target"
+    },
+    {
+      "field": "references.2.targets.0",
+      "message": "unresolved reference target: onboarding/examples/mcp/overview.md:1-90",
+      "path": "onboarding/examples/mcp/coding-guidelines.example.md.json",
+      "reportOnly": true,
+      "rule": "R22.3-unresolved-target"
+    },
+    {
+      "field": "references.174.targets.0",
+      "message": "unresolved reference target: onboarding/mcp/src/agents_remember/memory/overview.md:1-2177",
+      "path": "onboarding/mcp/overview.json",
+      "reportOnly": true,
+      "rule": "R22.3-unresolved-target"
+    },
+    {
+      "field": "references.1.targets.0",
+      "message": "unresolved reference target: onboarding/mcp/src/agents_remember/application/overview.md:1250-1252",
+      "path": "onboarding/mcp/src/agents_remember/application/__init__.py.json",
+      "reportOnly": true,
+      "rule": "R22.3-unresolved-target"
+    },
+    {
+      "field": "references.1.targets.0",
+      "message": "unresolved reference target: onboarding/mcp/src/agents_remember/application/overview.md:1-2059",
+      "path": "onboarding/mcp/src/agents_remember/application/runtime/skills.py.json",
+      "reportOnly": true,
+      "rule": "R22.3-unresolved-target"
+    },
+    {
+      "field": "references.10.targets.0",
+      "message": "unresolved reference target: onboarding/mcp/src/agents_remember/application/overview.md:898-938",
+      "path": "onboarding/mcp/src/agents_remember/application/skill_resources/__init__.py.json",
+      "reportOnly": true,
+      "rule": "R22.3-unresolved-target"
+    },
+    {
+      "field": "references.2.targets.0",
+      "message": "unresolved reference target: onboarding/mcp/src/agents_remember/benchmarks/runner_modules/overview.md:1-137",
+      "path": "onboarding/mcp/src/agents_remember/benchmarks/runner_modules/__init__.py.json",
+      "reportOnly": true,
+      "rule": "R22.3-unresolved-target"
+    },
+    {
+      "field": "references.2.targets.0",
+      "message": "unresolved reference target: onboarding/mcp/src/agents_remember/benchmarks/runner_modules/overview.md:1-137",
+      "path": "onboarding/mcp/src/agents_remember/benchmarks/runner_modules/analysis.py.json",
+      "reportOnly": true,
+      "rule": "R22.3-unresolved-target"
+    },
+    {
+      "field": "references.2.targets.0",
+      "message": "unresolved reference target: onboarding/mcp/src/agents_remember/benchmarks/runner_modules/overview.md:1-137",
+      "path": "onboarding/mcp/src/agents_remember/benchmarks/runner_modules/cli.py.json",
+      "reportOnly": true,
+      "rule": "R22.3-unresolved-target"
+    },
+    {
+      "field": "references.2.targets.0",
+      "message": "unresolved reference target: onboarding/mcp/src/agents_remember/benchmarks/runner_modules/overview.md:20-68",
+      "path": "onboarding/mcp/src/agents_remember/benchmarks/runner_modules/commands.py.json",
+      "reportOnly": true,
+      "rule": "R22.3-unresolved-target"
+    },
+    {
+      "field": "references.2.targets.0",
+      "message": "unresolved reference target: onboarding/mcp/src/agents_remember/benchmarks/runner_modules/overview.md:13-19",
+      "path": "onboarding/mcp/src/agents_remember/benchmarks/runner_modules/constants.py.json",
+      "reportOnly": true,
+      "rule": "R22.3-unresolved-target"
+    },
+    {
+      "field": "references.2.targets.0",
+      "message": "unresolved reference target: onboarding/mcp/src/agents_remember/benchmarks/runner_modules/overview.md:1-137",
+      "path": "onboarding/mcp/src/agents_remember/benchmarks/runner_modules/filesystem.py.json",
+      "reportOnly": true,
+      "rule": "R22.3-unresolved-target"
+    },
+    {
+      "field": "references.2.targets.0",
+      "message": "unresolved reference target: onboarding/mcp/src/agents_remember/benchmarks/runner_modules/overview.md:86-96",
+      "path": "onboarding/mcp/src/agents_remember/benchmarks/runner_modules/manifest.py.json",
+      "reportOnly": true,
+      "rule": "R22.3-unresolved-target"
+    },
+    {
+      "field": "references.2.targets.0",
+      "message": "unresolved reference target: onboarding/mcp/src/agents_remember/benchmarks/runner_modules/overview.md:1-137",
+      "path": "onboarding/mcp/src/agents_remember/benchmarks/runner_modules/mcp_registration.py.json",
+      "reportOnly": true,
+      "rule": "R22.3-unresolved-target"
+    },
+    {
+      "field": "references.2.targets.0",
+      "message": "unresolved reference target: onboarding/mcp/src/agents_remember/benchmarks/runner_modules/overview.md:1-137",
+      "path": "onboarding/mcp/src/agents_remember/benchmarks/runner_modules/models.py.json",
+      "reportOnly": true,
+      "rule": "R22.3-unresolved-target"
+    },
+    {
+      "field": "references.2.targets.0",
+      "message": "unresolved reference target: onboarding/mcp/src/agents_remember/benchmarks/runner_modules/overview.md:19-19",
+      "path": "onboarding/mcp/src/agents_remember/benchmarks/runner_modules/roots.py.json",
+      "reportOnly": true,
+      "rule": "R22.3-unresolved-target"
+    },
+    {
+      "field": "references.2.targets.0",
+      "message": "unresolved reference target: onboarding/mcp/src/agents_remember/benchmarks/runner_modules/overview.md:1-137",
+      "path": "onboarding/mcp/src/agents_remember/benchmarks/runner_modules/workspace.py.json",
+      "reportOnly": true,
+      "rule": "R22.3-unresolved-target"
+    },
+    {
+      "field": "references.1.targets.0",
+      "message": "unresolved reference target: ar-coordination/tasks/agents-remember/260831_closeout-certification-reform/requirements/CCR-R21-v2-content-addressed-phase-certificates.md:77-91",
+      "path": "onboarding/mcp/src/agents_remember/certification/certificate_admission.py.json",
+      "reportOnly": true,
+      "rule": "R22.3-unresolved-target"
+    },
+    {
+      "field": "references.1.targets.0",
+      "message": "unresolved reference target: ar-coordination/tasks/agents-remember/260831_closeout-certification-reform/requirements/CCR-R21-v2-content-addressed-phase-certificates.md:118-136",
+      "path": "onboarding/mcp/src/agents_remember/certification/certificate_store.py.json",
+      "reportOnly": true,
+      "rule": "R22.3-unresolved-target"
+    },
+    {
+      "field": "references.6.targets.0",
+      "message": "unresolved reference target: mcp/src/agents_remember/worktrees/modules/quality/execution/sandbox.py:42-66",
+      "path": "onboarding/mcp/src/agents_remember/certification/repository_profiles/authority.py.json",
+      "reportOnly": true,
+      "rule": "R22.3-unresolved-target"
+    },
+    {
+      "field": "references.3.targets.0",
+      "message": "unresolved reference target: mcp/src/agents_remember/certification/__init__.py:146-184",
+      "path": "onboarding/mcp/src/agents_remember/certification/telemetry/__init__.py.json",
+      "reportOnly": true,
+      "rule": "R22.3-unresolved-target"
+    },
+    {
+      "field": "references.1.targets.0",
+      "message": "unresolved reference target: mcp/src/agents_remember/worktrees/modules/quality/gate.py:145-188",
+      "path": "onboarding/mcp/src/agents_remember/kernel/primitives/memory_cap.py.json",
+      "reportOnly": true,
+      "rule": "R22.3-unresolved-target"
+    },
+    {
+      "field": "references.2.targets.0",
+      "message": "unresolved reference target: mcp/src/agents_remember/worktrees/modules/quality/gate.py:268-361",
+      "path": "onboarding/mcp/src/agents_remember/kernel/primitives/memory_cap.py.json",
+      "reportOnly": true,
+      "rule": "R22.3-unresolved-target"
+    },
+    {
+      "field": "references.3.targets.0",
+      "message": "unresolved reference target: mcp/src/agents_remember/mcp/registration/knowledge.py:44-57",
+      "path": "onboarding/mcp/src/agents_remember/mcp/registration/__init__.py.json",
+      "reportOnly": true,
+      "rule": "R22.3-unresolved-target"
+    },
+    {
+      "field": "references.4.targets.0",
+      "message": "unresolved reference target: mcp/src/agents_remember/models/tools/public_roster.py:92-96",
+      "path": "onboarding/mcp/src/agents_remember/mcp/registration/__init__.py.json",
+      "reportOnly": true,
+      "rule": "R22.3-unresolved-target"
+    },
+    {
+      "field": "references.27.targets.0",
+      "message": "unresolved reference target: onboarding/mcp/src/agents_remember/memory/knowledge/durable_evidence.py.md:1-119",
+      "path": "onboarding/mcp/src/agents_remember/memory/overview.json",
+      "reportOnly": true,
+      "rule": "R22.3-unresolved-target"
+    },
+    {
+      "field": "references.2.targets.1",
+      "message": "unresolved reference target: mcp/src/agents_remember/memory_quality/incremental_scope/affected_execution.py:505-515",
+      "path": "onboarding/mcp/src/agents_remember/memory_quality/incremental_scope/errors.py.json",
+      "reportOnly": true,
+      "rule": "R22.3-unresolved-target"
+    },
+    {
+      "field": "references.1.targets.0",
+      "message": "unresolved reference target: onboarding/mcp/src/agents_remember/memory_quality/overview.md:24-24",
+      "path": "onboarding/mcp/src/agents_remember/memory_quality/style/citations/__init__.py.json",
+      "reportOnly": true,
+      "rule": "R22.3-unresolved-target"
+    },
+    {
+      "field": "references.1.targets.1",
+      "message": "unresolved reference target: onboarding/mcp/src/agents_remember/memory_quality/overview.md:59-65",
+      "path": "onboarding/mcp/src/agents_remember/memory_quality/style/citations/__init__.py.json",
+      "reportOnly": true,
+      "rule": "R22.3-unresolved-target"
+    },
+    {
+      "field": "references.1.targets.0",
+      "message": "unresolved reference target: onboarding/mcp/src/agents_remember/memory_quality/overview.md:24-24",
+      "path": "onboarding/mcp/src/agents_remember/memory_quality/style/document_shape/__init__.py.json",
+      "reportOnly": true,
+      "rule": "R22.3-unresolved-target"
+    },
+    {
+      "field": "references.1.targets.1",
+      "message": "unresolved reference target: onboarding/mcp/src/agents_remember/memory_quality/overview.md:59-65",
+      "path": "onboarding/mcp/src/agents_remember/memory_quality/style/document_shape/__init__.py.json",
+      "reportOnly": true,
+      "rule": "R22.3-unresolved-target"
+    },
+    {
+      "field": "references.199.targets.0",
+      "message": "unresolved reference target: mcp/src/agents_remember/models/knowledge/candidate.py:628-635",
+      "path": "onboarding/mcp/src/agents_remember/models/overview.json",
+      "reportOnly": true,
+      "rule": "R22.3-unresolved-target"
+    },
+    {
+      "field": "references.1.targets.0",
+      "message": "unresolved reference target: onboarding/mcp/src/agents_remember/observer/overview.md:1-1042",
+      "path": "onboarding/mcp/src/agents_remember/observer/__init__.py.json",
+      "reportOnly": true,
+      "rule": "R22.3-unresolved-target"
+    },
+    {
+      "field": "references.1.targets.0",
+      "message": "unresolved reference target: system/sources.md:1-3",
+      "path": "onboarding/mcp/src/agents_remember/package_data/runtime/providers/docker/codegraphcontext/watch_guard.py.json",
+      "reportOnly": true,
+      "rule": "R22.3-unresolved-target"
+    },
+    {
+      "field": "references.4.targets.0",
+      "message": "unresolved reference target: system/code-quality-report-template.md:1-55",
+      "path": "onboarding/mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/code-quality-report-template.md.json",
+      "reportOnly": true,
+      "rule": "R22.3-unresolved-target"
+    },
+    {
+      "field": "references.1.targets.0",
+      "message": "unresolved reference target: onboarding/mcp/src/agents_remember/providers/cgc/overview.md:1-151",
+      "path": "onboarding/mcp/src/agents_remember/providers/cgc/__init__.py.json",
+      "reportOnly": true,
+      "rule": "R22.3-unresolved-target"
+    },
+    {
+      "field": "references.1.targets.0",
+      "message": "unresolved reference target: mcp/src/agents_remember/providers/context/__init__.py:13-13",
+      "path": "onboarding/mcp/src/agents_remember/providers/cgc/context/__init__.py.json",
+      "reportOnly": true,
+      "rule": "R22.3-unresolved-target"
+    },
+    {
+      "field": "references.2.targets.0",
+      "message": "unresolved reference target: onboarding/mcp/src/agents_remember/providers/cgc/context/overview.md:1-63",
+      "path": "onboarding/mcp/src/agents_remember/providers/context/__init__.py.json",
+      "reportOnly": true,
+      "rule": "R22.3-unresolved-target"
+    },
+    {
+      "field": "references.3.targets.0",
+      "message": "unresolved reference target: onboarding/mcp/src/agents_remember/providers/grepai/context/overview.md:1-58",
+      "path": "onboarding/mcp/src/agents_remember/providers/context/__init__.py.json",
+      "reportOnly": true,
+      "rule": "R22.3-unresolved-target"
+    },
+    {
+      "field": "references.2.targets.0",
+      "message": "unresolved reference target: onboarding/mcp/src/agents_remember/providers/cgc/context/overview.md:28-50",
+      "path": "onboarding/mcp/src/agents_remember/providers/context/overview.json",
+      "reportOnly": true,
+      "rule": "R22.3-unresolved-target"
+    },
+    {
+      "field": "references.3.targets.0",
+      "message": "unresolved reference target: onboarding/mcp/src/agents_remember/providers/grepai/context/overview.md:21-44",
+      "path": "onboarding/mcp/src/agents_remember/providers/context/overview.json",
+      "reportOnly": true,
+      "rule": "R22.3-unresolved-target"
+    },
+    {
+      "field": "references.1.targets.0",
+      "message": "unresolved reference target: onboarding/mcp/src/agents_remember/providers/grepai/overview.md:1-117",
+      "path": "onboarding/mcp/src/agents_remember/providers/grepai/__init__.py.json",
+      "reportOnly": true,
+      "rule": "R22.3-unresolved-target"
+    },
+    {
+      "field": "references.2.targets.0",
+      "message": "unresolved reference target: onboarding/mcp/src/agents_remember/providers/grepai/lifecycle/core.py.md:17-20",
+      "path": "onboarding/mcp/src/agents_remember/providers/grepai/setup.py.json",
+      "reportOnly": true,
+      "rule": "R22.3-unresolved-target"
+    },
+    {
+      "field": "references.1.targets.0",
+      "message": "unresolved reference target: system/sources.md:1-3",
+      "path": "onboarding/mcp/src/agents_remember/providers/lifecycle/compose_runtime.py.json",
+      "reportOnly": true,
+      "rule": "R22.3-unresolved-target"
+    },
+    {
+      "field": "references.3.targets.0",
+      "message": "unresolved reference target: onboarding/mcp/src/agents_remember/providers/cgc/lifecycle/overview.md:17-22",
+      "path": "onboarding/mcp/src/agents_remember/providers/lifecycle/overview.json",
+      "reportOnly": true,
+      "rule": "R22.3-unresolved-target"
+    },
+    {
+      "field": "references.4.targets.0",
+      "message": "unresolved reference target: onboarding/mcp/src/agents_remember/providers/grepai/lifecycle/overview.md:17-22",
+      "path": "onboarding/mcp/src/agents_remember/providers/lifecycle/overview.json",
+      "reportOnly": true,
+      "rule": "R22.3-unresolved-target"
+    },
+    {
+      "field": "references.1.targets.0",
+      "message": "unresolved reference target: onboarding/mcp/src/agents_remember/providers/provider_setup.py.md:15-18",
+      "path": "onboarding/mcp/src/agents_remember/providers/setup_common.py.json",
+      "reportOnly": true,
+      "rule": "R22.3-unresolved-target"
+    },
+    {
+      "field": "references.1.targets.1",
+      "message": "unresolved reference target: onboarding/mcp/src/agents_remember/providers/provider_setup.py.md:41-46",
+      "path": "onboarding/mcp/src/agents_remember/providers/setup_common.py.json",
+      "reportOnly": true,
+      "rule": "R22.3-unresolved-target"
+    },
+    {
+      "field": "references.1.targets.2",
+      "message": "unresolved reference target: onboarding/mcp/src/agents_remember/providers/provider_setup.py.md:48-48",
+      "path": "onboarding/mcp/src/agents_remember/providers/setup_common.py.json",
+      "reportOnly": true,
+      "rule": "R22.3-unresolved-target"
+    },
+    {
+      "field": "references.2.targets.0",
+      "message": "unresolved reference target: onboarding/mcp/src/agents_remember/providers/lifecycle/__init__.py.md:19-22",
+      "path": "onboarding/mcp/src/agents_remember/providers/setup_common.py.json",
+      "reportOnly": true,
+      "rule": "R22.3-unresolved-target"
+    },
+    {
+      "field": "references.2.targets.1",
+      "message": "unresolved reference target: onboarding/mcp/src/agents_remember/providers/lifecycle/__init__.py.md:36-39",
+      "path": "onboarding/mcp/src/agents_remember/providers/setup_common.py.json",
+      "reportOnly": true,
+      "rule": "R22.3-unresolved-target"
+    },
+    {
+      "field": "references.1.targets.0",
+      "message": "unresolved reference target: onboarding/mcp/src/agents_remember/serving/overview.md:1-1126",
+      "path": "onboarding/mcp/src/agents_remember/serving/__init__.py.json",
+      "reportOnly": true,
+      "rule": "R22.3-unresolved-target"
+    },
+    {
+      "field": "references.2.targets.1",
+      "message": "unresolved reference target: mcp/src/agents_remember/serving/conversation/active/projector/echo_ingestion.py:180-182",
+      "path": "onboarding/mcp/src/agents_remember/serving/conversation/active/projector/references.py.json",
+      "reportOnly": true,
+      "rule": "R22.3-unresolved-target"
+    },
+    {
+      "field": "references.3.targets.0",
+      "message": "unresolved reference target: onboarding/mcp/src/agents_remember/serving/conversation/control/overview.md:1-433",
+      "path": "onboarding/mcp/src/agents_remember/serving/conversation/control/__init__.py.json",
+      "reportOnly": true,
+      "rule": "R22.3-unresolved-target"
+    },
+    {
+      "field": "references.2.targets.0",
+      "message": "unresolved reference target: onboarding/mcp/src/agents_remember/worktrees/activation/overview.md:68-78",
+      "path": "onboarding/mcp/src/agents_remember/worktrees/activation/__init__.py.json",
+      "reportOnly": true,
+      "rule": "R22.3-unresolved-target"
+    },
+    {
+      "field": "references.1.targets.0",
+      "message": "unresolved reference target: onboarding/mcp/src/agents_remember/worktrees/modules/overview.md:1-753",
+      "path": "onboarding/mcp/src/agents_remember/worktrees/modules/__init__.py.json",
+      "reportOnly": true,
+      "rule": "R22.3-unresolved-target"
+    },
+    {
+      "field": "references.14.targets.0",
+      "message": "unresolved reference target: system/git-workflow.md:50-50",
+      "path": "onboarding/mcp/src/agents_remember/worktrees/modules/record_landing.py.json",
+      "reportOnly": true,
+      "rule": "R22.3-unresolved-target"
+    },
+    {
+      "field": "references.2.targets.0",
+      "message": "unresolved reference target: onboarding/mcp/src/agents_remember/worktrees/queue/overview.md:72-107",
+      "path": "onboarding/mcp/src/agents_remember/worktrees/queue/closeout_projection_activation.py.json",
+      "reportOnly": true,
+      "rule": "R22.3-unresolved-target"
+    },
+    {
+      "field": "references.6.targets.0",
+      "message": "unresolved reference target: onboarding/mcp/tests/overview.md:1781-1806",
+      "path": "onboarding/mcp/tests/test_eve_protocol.py.json",
+      "reportOnly": true,
+      "rule": "R22.3-unresolved-target"
+    },
+    {
+      "field": "",
+      "message": "file sidecar without Markdown: its entries wait for a curator to re-home or retire them (MIK-R21 rule 5)",
+      "path": "onboarding/skills/l-01-agent-lifecycles/core/authority.md.json",
+      "reportOnly": true,
+      "rule": "R22.3-sidecar-without-markdown"
+    },
+    {
+      "field": "",
+      "message": "file sidecar without Markdown: its entries wait for a curator to re-home or retire them (MIK-R21 rule 5)",
+      "path": "onboarding/skills/l-01-agent-lifecycles/operations/implementation.md.json",
+      "reportOnly": true,
+      "rule": "R22.3-sidecar-without-markdown"
+    },
+    {
+      "field": "",
+      "message": "file sidecar without Markdown: its entries wait for a curator to re-home or retire them (MIK-R21 rule 5)",
+      "path": "onboarding/skills/l-01-agent-lifecycles/operations/review.md.json",
+      "reportOnly": true,
+      "rule": "R22.3-sidecar-without-markdown"
+    },
+    {
+      "field": "",
+      "message": "file sidecar without Markdown: its entries wait for a curator to re-home or retire them (MIK-R21 rule 5)",
+      "path": "onboarding/skills/l-01-agent-lifecycles/roles/bootstrap.md.json",
+      "reportOnly": true,
+      "rule": "R22.3-sidecar-without-markdown"
+    }
+  ],
+  "written": []
+}

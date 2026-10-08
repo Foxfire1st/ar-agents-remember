@@ -22,9 +22,7 @@ it.
 
 ### Logic
 
-The module is pure data: it defines **no functions and no classes**. Its whole surface is eight
-module constants, and each is a member of the generation record `schema_generations.GENERATION_2`
-composes:
+The module is pure declaration data. Its eight APPENDED_* constants are consumed after the base tables by schema_generations._compose to build CURRENT_GENERATION. The historical generation-2 grouping identifies these six appended tables; this build does not expose an openable generation-2 schema.
 
 - `APPENDED_TABLES` — the ordered tuple `("route", "knowledge_record", "record_revision",
   "source_anchor_route", "invariant_route", "family_route")`. The order is load-bearing: it is the
@@ -67,8 +65,7 @@ Why the tables are shaped this way:
 
 - Every table is `STRICT`, every primary-key column is declared `NOT NULL` explicitly, and every
   foreign key is composite and `DEFERRABLE INITIALLY DEFERRED`, exactly as the ten shipped tables are.
-- Trigger messages share the shipped `immutable_revision:` prefix so `map_sqlite_error` steers a
-  trigger-originated error to that code. The eight triggers refuse: rewriting a sealed record
+- Trigger messages share the shipped `immutable_revision:` prefix retained from the canonical database schema. The former map_sqlite_error mapper was retired; the trigger declarations remain part of the derived-index schema. The eight triggers refuse: rewriting a sealed record
   revision (`record_revision_no_rewrite`, covering `record_schema`, `payload`,
   `predecessor_revision_id`, `content_digest` and `provenance`), deleting one
   (`record_revision_no_delete`), rebinding an envelope's identity (`knowledge_record_no_rebind`),
@@ -85,9 +82,7 @@ Why the tables are shaped this way:
 - **No `ALTER TABLE` appears anywhere in this module or in this package.** The single occurrence of
   the phrase in this file is inside its own docstring, as the prohibition. A generation that changed
   a column of an earlier generation is a schema divergence, not a generation.
-- **Generation 2's manifest prefix is generation 1's manifest, byte for byte**, and generation 2's
-  columns for each of the first ten names are generation 1's. That equality is the mechanical check
-  the additive rule reduces to.
+- The ordered composition preserves the base tables and their declared columns, primary keys and typed-JSON sets while adding this block. The full derived-index schema is pinned by its recorded structural fingerprint, rather than selected from per-generation records.
 - **The envelope holds no identity.** It mints none, derives none and overrides none; `payload_digest`
   stays where generation 1 put it, on the revision aggregate that owns it; `Repository` remains the
   authority home.
@@ -95,10 +90,7 @@ Why the tables are shaped this way:
   changeset, a repair script or a future code path that forgot the rule still cannot rewrite a sealed
   revision or repoint a sealed association. The operations' own preconditions exist to return a typed
   refusal; the triggers exist so that forgetting them still cannot corrupt the record.
-- **Boundary.** This module declares structure and nothing else: it writes no rows, performs no
-  validation, returns no refusal, and owns no behaviour. Authoring a route or an association is
-  `routes.py`; validating a payload is `record_envelope.py`; deciding which generation a dataset is,
-  is `schema_generations.py`.
+- This module declares derived-index structure only: no row writing, payload validation, refusal or migration. The former canonical database record writer associated with these tables was retired. schema_generations composes and validates the one supported index schema.
 - **Not admissible, recorded so it is not re-proposed:** adding `governing_route_id` to a generation-1
   table. Requirement 1.3 forbids changing a generation-1 table's declared column set, and the
   additive check rejects it.
@@ -126,13 +118,10 @@ No configured domain documentation could be checked.
 - The nine reverse-direction indexes, including the governing-route lookup index. [4]
 - The eight immutability triggers: sealed revisions cannot be rewritten or deleted, identities cannot be rebound, and a governing association cannot be repointed. [5]
 - The one added required feature, which is part of the fingerprint because it is part of the manifest. [6]
-- The generation record this module's data is composed into, and the additive composition that keeps generation 1's prefix intact. [7]
+
+- The ordered appended declarations compose into the one pinned derived-index schema. [7]
+
 - The shipped generation-1 tables this module appends after and never touches. [8]
-- The write layer that authors a route and attaches a governed row, and the read side that reports an ungoverned row as ungoverned. [9]
-- **The registry these envelope tables' payloads are admitted through — re-read by hand; since `KS-R14@v1` it holds three groups (the internal conformance kind, the eight facet kinds and the two mechanical-detection kinds), and these tables' columns are unchanged by that.** [10]
-- The one entry point that validates a payload for a kind and schema. [11]
-- The schema disagreement the preflight refuses before any session exists, and the same-generation merge that must still pass on this build. [12]
-- The envelope, route and governing-association cases, including the route-cycle rollback and the payload refusal. [13]
 
 ### Cross-Repo References
 

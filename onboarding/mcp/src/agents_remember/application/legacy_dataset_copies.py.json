@@ -1,0 +1,61 @@
+{
+  "path": "mcp/src/agents_remember/application/legacy_dataset_copies.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "362e9cbfea20eb0f8f0d5a6c763af789a5d25144",
+        "content": "sha256:d3ab7efe3fcd379af4cb559060a5469c7eedc17301da182a4fe987cc4d9639cc",
+        "locator": {
+          "kind": "symbol",
+          "name": "_companion_refusal"
+        }
+      },
+      "id": "RLZ-0ZZRVT",
+      "invariant": "INV-C3TYB0",
+      "origin": {
+        "handoffEntry": "L26-R1-F03",
+        "leaf": "260928-MIK-L26"
+      },
+      "rationale": "Refuses tracked and symbolic-link companions before deletion.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "362e9cbfea20eb0f8f0d5a6c763af789a5d25144",
+        "content": "sha256:fa8ca13dd6aada4d21e34f363cf2ac9af38b855568c977157dec0c6e5c88ba35",
+        "locator": {
+          "kind": "symbol",
+          "name": "run_cleanup"
+        }
+      },
+      "id": "RLZ-AD66SH",
+      "invariant": "INV-CKY44N",
+      "origin": {
+        "handoffEntry": "R3 note 16",
+        "leaf": "260928-MIK-L26"
+      },
+      "rationale": "The cleanup result separates protected companions from failed deletions.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "362e9cbfea20eb0f8f0d5a6c763af789a5d25144",
+        "content": "sha256:fa8ca13dd6aada4d21e34f363cf2ac9af38b855568c977157dec0c6e5c88ba35",
+        "locator": {
+          "kind": "symbol",
+          "name": "run_cleanup"
+        }
+      },
+      "id": "RLZ-PKW8QZ",
+      "invariant": "INV-QB6EZ0",
+      "origin": {
+        "handoffEntry": "R3 Note 16",
+        "leaf": "260928-MIK-L26"
+      },
+      "rationale": "Separates protected companions from failed deletions.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

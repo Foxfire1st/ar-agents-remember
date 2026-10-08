@@ -6,7 +6,8 @@
   ],
   "exclusions": [
     "Role words outside the shipped vocabulary, which are refused at admission (L45-S6) rather than stored.",
-    "Entries refused before planning."
+    "Entries refused before planning.",
+    "The retired database-era realization site; the obligation is recorded on converted memory only."
   ],
   "id": "INV-CKHJ0M7J",
   "origin": {
@@ -14,7 +15,7 @@
     "legacyId": "54f597f8-0815-44d8-bf2f-bbc067db57f7",
     "task": "260921-ICR"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "Each realization target's own rationale and role win over the entry-level realization_rationale and realization_role, which apply only to what a target leaves unstated; the two halves resolve independently, and a role stated at neither level is stored unclassified.",
   "status": "proposed",

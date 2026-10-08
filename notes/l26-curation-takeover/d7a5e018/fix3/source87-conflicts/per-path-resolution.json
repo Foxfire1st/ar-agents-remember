@@ -1,0 +1,1843 @@
+[
+  {
+    "action": "write",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 420,
+      "sha256": "a778766028efec94ca73cd7e5bcd15f92e10f12762d865c804461efcaef10d95",
+      "size": 147660,
+      "uid": 1000
+    },
+    "changes": [
+      {
+        "action": "preserved leaf target; incoming whole-file anchor is not the leaf working source; current scoped citation refresh deferred until completed sync",
+        "reference": "18"
+      },
+      {
+        "action": "preserved leaf target; incoming whole-file anchor is not the leaf working source; current scoped citation refresh deferred until completed sync",
+        "reference": "233"
+      },
+      {
+        "action": "preserved leaf target; incoming whole-file anchor is not the leaf working source; current scoped citation refresh deferred until completed sync",
+        "reference": "233"
+      },
+      {
+        "action": "accepted incoming exact current-file target",
+        "reference": "243"
+      },
+      {
+        "action": "accepted incoming exact current-file target",
+        "reference": "244"
+      },
+      {
+        "action": "preserved leaf target; incoming whole-file anchor is not the leaf working source; current scoped citation refresh deferred until completed sync",
+        "reference": "28"
+      },
+      {
+        "action": "preserved leaf target; incoming whole-file anchor is not the leaf working source; current scoped citation refresh deferred until completed sync",
+        "reference": "32"
+      },
+      {
+        "action": "preserved leaf target; incoming whole-file anchor is not the leaf working source; current scoped citation refresh deferred until completed sync",
+        "reference": "37"
+      },
+      {
+        "action": "preserved leaf target; incoming whole-file anchor is not the leaf working source; current scoped citation refresh deferred until completed sync",
+        "reference": "37"
+      }
+    ],
+    "orientation": {
+      "1": "old official01050ec5",
+      "2": "incoming officialc4431af1",
+      "3": "preserved pre-sync original14 leaf content"
+    },
+    "path": "onboarding/mcp/overview.json",
+    "rationale": "Preserve the leaf current contract, record dispositions and retained citations; admit incoming exact-current anchor refreshes and separately named L87 owner additions only. Removed canonical records and references remain removed. Any non-current anchor stays explicitly pending current scoped citation repair after sync completion.",
+    "resultMode": 420,
+    "resultSha256": "0b891b1af0392d78d3b1fd80d1a16e964a99b97f554c3cebcef806f65caa1113",
+    "resultSize": 139182,
+    "source": "mcp/overview",
+    "sourceExists": false,
+    "sourceSha256": null
+  },
+  {
+    "action": "write",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 420,
+      "sha256": "f0f3c82e58fd4c2ed07905b9a2012f71e60d3de8c3c21a0a5a5a014b84fe8cbd",
+      "size": 3014,
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official01050ec5",
+      "2": "incoming officialc4431af1",
+      "3": "preserved pre-sync original14 leaf content"
+    },
+    "path": "onboarding/mcp/src/agents_remember/application/knowledge_gate/direct.py.json",
+    "rationale": "Preserve the leaf current contract, record dispositions and retained citations; admit incoming exact-current anchor refreshes and separately named L87 owner additions only. Removed canonical records and references remain removed. Any non-current anchor stays explicitly pending current scoped citation repair after sync completion.",
+    "resultMode": 420,
+    "resultSha256": "4130280d6ca5e3c44743937cbe47860778a04514337bbe9b04168cd8934ae797",
+    "resultSize": 1585,
+    "source": "mcp/src/agents_remember/application/knowledge_gate/direct.py",
+    "sourceExists": true,
+    "sourceSha256": "368d56cfd1d3d6f578142094da6425b2c54c157ebd53aa605463aad02300debd"
+  },
+  {
+    "action": "write",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 420,
+      "sha256": "20b59b52dec807f732154921d7958d61c65500dc29a8b695ead2a5896423b381",
+      "size": 10225,
+      "uid": 1000
+    },
+    "changes": [
+      {
+        "action": "accepted incoming exact current-file target",
+        "reference": "8"
+      }
+    ],
+    "orientation": {
+      "1": "old official01050ec5",
+      "2": "incoming officialc4431af1",
+      "3": "preserved pre-sync original14 leaf content"
+    },
+    "path": "onboarding/mcp/src/agents_remember/application/knowledge_gate/predicates.py.json",
+    "rationale": "Preserve the leaf current contract, record dispositions and retained citations; admit incoming exact-current anchor refreshes and separately named L87 owner additions only. Removed canonical records and references remain removed. Any non-current anchor stays explicitly pending current scoped citation repair after sync completion.",
+    "resultMode": 420,
+    "resultSha256": "fb5b5791c414babf82fe9a13a02bd7c7be7d39f82f3bce9d5930790d15ebd461",
+    "resultSize": 9983,
+    "source": "mcp/src/agents_remember/application/knowledge_gate/predicates.py",
+    "sourceExists": true,
+    "sourceSha256": "c2643555eec774b46858afbc1284ac8de41bc10e86656a217b7b504bd3217bd4"
+  },
+  {
+    "action": "write",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 420,
+      "sha256": "bc4bd7b2f695d7d8e135222a27da1ab599f33f1fee15db9327a4deb56f086284",
+      "size": 28785,
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official01050ec5",
+      "2": "incoming officialc4431af1",
+      "3": "preserved pre-sync original14 leaf content"
+    },
+    "path": "onboarding/mcp/src/agents_remember/application/knowledge_writer/authoring.py.json",
+    "rationale": "Preserve the leaf current contract, record dispositions and retained citations; admit incoming exact-current anchor refreshes and separately named L87 owner additions only. Removed canonical records and references remain removed. Any non-current anchor stays explicitly pending current scoped citation repair after sync completion.",
+    "resultMode": 420,
+    "resultSha256": "2b3c61a4910db55ef3d8e423b3c14e42c51dda9741a25a04f3ed5e487fbf0a7d",
+    "resultSize": 28664,
+    "source": "mcp/src/agents_remember/application/knowledge_writer/authoring.py",
+    "sourceExists": true,
+    "sourceSha256": "98f46e920de6cc4eab5836dc61ea0b75c87794b9936199278ffc24ae4e216f46"
+  },
+  {
+    "action": "write",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 420,
+      "sha256": "7f689ace87231f12e4a1fc208cdd0af1bdac843b3e483d2ee08fb09e116d9c0c",
+      "size": 5055,
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official01050ec5",
+      "2": "incoming officialc4431af1",
+      "3": "preserved pre-sync original14 leaf content"
+    },
+    "path": "onboarding/mcp/src/agents_remember/application/knowledge_writer/history_check.py.json",
+    "rationale": "Preserve the leaf current contract, record dispositions and retained citations; admit incoming exact-current anchor refreshes and separately named L87 owner additions only. Removed canonical records and references remain removed. Any non-current anchor stays explicitly pending current scoped citation repair after sync completion.",
+    "resultMode": 420,
+    "resultSha256": "9defb98540ddda8505149996f6a9c0ee1d6d0d5b80a9dd5dc0321f89829dcda5",
+    "resultSize": 4934,
+    "source": "mcp/src/agents_remember/application/knowledge_writer/history_check.py",
+    "sourceExists": true,
+    "sourceSha256": "70e200df2429dd79de394ecfe0757c8a3070d3a2aa01e8f8e4edb867b9ce5689"
+  },
+  {
+    "action": "write",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 420,
+      "sha256": "ca0464bbba871c16f9f0ea0293ee6cde872b85f4f99809fda68617def0ab9be0",
+      "size": 16672,
+      "uid": 1000
+    },
+    "changes": [
+      {
+        "action": "accepted incoming exact current-file target",
+        "reference": "44"
+      },
+      {
+        "action": "leaf authored record retained; anchor refresh awaits completed-current pipeline",
+        "record": "RLZ-W2H9EX"
+      }
+    ],
+    "orientation": {
+      "1": "old official01050ec5",
+      "2": "incoming officialc4431af1",
+      "3": "preserved pre-sync original14 leaf content"
+    },
+    "path": "onboarding/mcp/src/agents_remember/application/review_tree_comparison.py.json",
+    "rationale": "Preserve the leaf current contract, record dispositions and retained citations; admit incoming exact-current anchor refreshes and separately named L87 owner additions only. Removed canonical records and references remain removed. Any non-current anchor stays explicitly pending current scoped citation repair after sync completion.",
+    "resultMode": 420,
+    "resultSha256": "228e6487cd932d76762c20c85b5750612ce50fd852502e62337f42e09ab250aa",
+    "resultSize": 16555,
+    "source": "mcp/src/agents_remember/application/review_tree_comparison.py",
+    "sourceExists": true,
+    "sourceSha256": "684d4810898a57089d0761b5bfe5d13c453f71232537e6bf63719c51ec5e2197"
+  },
+  {
+    "action": "write",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 420,
+      "sha256": "f421d33d646d5459f82c3715f0d99702d6f15460400f95d62964cedf40d589ab",
+      "size": 26742,
+      "uid": 1000
+    },
+    "changes": [
+      {
+        "action": "accepted incoming exact current-file target",
+        "reference": "42"
+      },
+      {
+        "action": "accepted incoming exact current-file target",
+        "reference": "43"
+      },
+      {
+        "action": "accepted incoming exact current-file target",
+        "reference": "44"
+      },
+      {
+        "action": "accepted incoming exact current-file target",
+        "reference": "45"
+      },
+      {
+        "action": "accepted incoming exact current-file target",
+        "reference": "46"
+      },
+      {
+        "action": "leaf authored record retained; anchor refresh awaits completed-current pipeline",
+        "record": "RLZ-MM509G"
+      }
+    ],
+    "orientation": {
+      "1": "old official01050ec5",
+      "2": "incoming officialc4431af1",
+      "3": "preserved pre-sync original14 leaf content"
+    },
+    "path": "onboarding/mcp/src/agents_remember/application/review_tree_knowledge.py.json",
+    "rationale": "Preserve the leaf current contract, record dispositions and retained citations; admit incoming exact-current anchor refreshes and separately named L87 owner additions only. Removed canonical records and references remain removed. Any non-current anchor stays explicitly pending current scoped citation repair after sync completion.",
+    "resultMode": 420,
+    "resultSha256": "9e5bf8f2171ef8bbb47a50c70b00ab09445cbbb9c6fd590534ab37a61cefef89",
+    "resultSize": 26625,
+    "source": "mcp/src/agents_remember/application/review_tree_knowledge.py",
+    "sourceExists": true,
+    "sourceSha256": "2a17324eb7592e68a850b623d5f8c9ba73078fca7d582ae989a96abf3dadf872"
+  },
+  {
+    "action": "write",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 420,
+      "sha256": "d213cfedd01c21232f10063459928a9b72799d34d0c03aded32f6e471de5c7d1",
+      "size": 11765,
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official01050ec5",
+      "2": "incoming officialc4431af1",
+      "3": "preserved pre-sync original14 leaf content"
+    },
+    "path": "onboarding/mcp/src/agents_remember/memory_quality/knowledge_validator/rules_history.py.json",
+    "rationale": "Preserve the leaf current contract, record dispositions and retained citations; admit incoming exact-current anchor refreshes and separately named L87 owner additions only. Removed canonical records and references remain removed. Any non-current anchor stays explicitly pending current scoped citation repair after sync completion.",
+    "resultMode": 420,
+    "resultSha256": "6f776bc1720278b3affad98d3aa9164eac5b53f563bb014c6f21d23ebd989f32",
+    "resultSize": 11523,
+    "source": "mcp/src/agents_remember/memory_quality/knowledge_validator/rules_history.py",
+    "sourceExists": true,
+    "sourceSha256": "ea14fd19adb6191957c1fd13b1cfae78532dd049265703cf6debc986f5bd409f"
+  },
+  {
+    "action": "write",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 420,
+      "sha256": "3fd147d21dcfc13bbf8bf3277c25b4326fd8c269c02d910c101af0b568952468",
+      "size": 19098,
+      "uid": 1000
+    },
+    "changes": [
+      {
+        "action": "accepted incoming exact current-file target",
+        "reference": "11"
+      },
+      {
+        "action": "preserved leaf target; incoming whole-file anchor is not the leaf working source; current scoped citation refresh deferred until completed sync",
+        "reference": "15"
+      }
+    ],
+    "orientation": {
+      "1": "old official01050ec5",
+      "2": "incoming officialc4431af1",
+      "3": "preserved pre-sync original14 leaf content"
+    },
+    "path": "onboarding/mcp/src/agents_remember/worktrees/knowledge_gate.py.json",
+    "rationale": "Preserve the leaf current contract, record dispositions and retained citations; admit incoming exact-current anchor refreshes and separately named L87 owner additions only. Removed canonical records and references remain removed. Any non-current anchor stays explicitly pending current scoped citation repair after sync completion.",
+    "resultMode": 420,
+    "resultSha256": "501ea857f9f473ec439845d5d4aaa654acdb7ea428c6e257cd1104aba4a55f9a",
+    "resultSize": 18856,
+    "source": "mcp/src/agents_remember/worktrees/knowledge_gate.py",
+    "sourceExists": true,
+    "sourceSha256": "f985bdb4f1009cf27f15d6f10b1563f81ad4980332652c9d52dc3d3bf2832b19"
+  },
+  {
+    "action": "write",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 420,
+      "sha256": "4440f7ff1a7301a67f83f56133a0e036014dec16b21aee6e840200fbe4a7f05a",
+      "size": 22978,
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official01050ec5",
+      "2": "incoming officialc4431af1",
+      "3": "preserved pre-sync original14 leaf content"
+    },
+    "path": "onboarding/mcp/src/agents_remember/worktrees/modules/closeout_external.py.json",
+    "rationale": "Preserve the leaf current contract, record dispositions and retained citations; admit incoming exact-current anchor refreshes and separately named L87 owner additions only. Removed canonical records and references remain removed. Any non-current anchor stays explicitly pending current scoped citation repair after sync completion.",
+    "resultMode": 420,
+    "resultSha256": "3adecac94224f00ff557ca40c359172698c2d6d5d5151fc72382b8e9e16be0e2",
+    "resultSize": 16685,
+    "source": "mcp/src/agents_remember/worktrees/modules/closeout_external.py",
+    "sourceExists": true,
+    "sourceSha256": "271e909f1bde1439eaf51c9265d023e531faff3a27d2a3e29c94746028bed962"
+  },
+  {
+    "action": "delete",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 420,
+      "sha256": "87b301f98b14099ddf326b831190f195aa230fb28618642ba0574fb84ead9a9d",
+      "size": 11448,
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official01050ec5",
+      "2": "incoming officialc4431af1",
+      "3": "preserved pre-sync original14 leaf content"
+    },
+    "path": "onboarding/mcp/tests/candidate_batch_test_support.py.json",
+    "rationale": "The preserved leaf retired this source sidecar; the actual current source is absent. Incoming changes refresh evidence for the retired source and do not restore its source or current contract.",
+    "resultMode": null,
+    "resultSha256": null,
+    "resultSize": null,
+    "source": "mcp/tests/candidate_batch_test_support.py",
+    "sourceExists": false,
+    "sourceSha256": null
+  },
+  {
+    "action": "write",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 420,
+      "sha256": "fdea4c74175d56ec2dc4e29c0ba7956eff5e5c406fa37f18812aa7fe17d3a92c",
+      "size": 9245,
+      "uid": 1000
+    },
+    "changes": [
+      {
+        "action": "preserved leaf target; incoming whole-file anchor is not the leaf working source; current scoped citation refresh deferred until completed sync",
+        "reference": "1"
+      },
+      {
+        "action": "preserved leaf target; incoming whole-file anchor is not the leaf working source; current scoped citation refresh deferred until completed sync",
+        "reference": "10"
+      },
+      {
+        "action": "preserved leaf target; incoming whole-file anchor is not the leaf working source; current scoped citation refresh deferred until completed sync",
+        "reference": "13"
+      },
+      {
+        "action": "preserved leaf target; incoming whole-file anchor is not the leaf working source; current scoped citation refresh deferred until completed sync",
+        "reference": "15"
+      },
+      {
+        "action": "preserved leaf target; incoming whole-file anchor is not the leaf working source; current scoped citation refresh deferred until completed sync",
+        "reference": "2"
+      },
+      {
+        "action": "preserved leaf target; incoming whole-file anchor is not the leaf working source; current scoped citation refresh deferred until completed sync",
+        "reference": "4"
+      },
+      {
+        "action": "preserved leaf target; incoming whole-file anchor is not the leaf working source; current scoped citation refresh deferred until completed sync",
+        "reference": "5"
+      },
+      {
+        "action": "preserved leaf target; incoming whole-file anchor is not the leaf working source; current scoped citation refresh deferred until completed sync",
+        "reference": "6"
+      },
+      {
+        "action": "leaf authored record retained; anchor refresh awaits completed-current pipeline",
+        "record": "RLZ-RY44MX"
+      },
+      {
+        "action": "retain incoming L87 pytest shutdown primary authority, including its original origin and rationale; actual symbol content matches, accepted upstream blob remains pending scoped current-leaf refresh",
+        "record": "RLZ-69RY4R"
+      },
+      {
+        "action": "retain incoming documented owner evidence, without resurrecting deleted leaf references",
+        "reference": "16"
+      },
+      {
+        "action": "retain incoming documented owner evidence, without resurrecting deleted leaf references",
+        "reference": "17"
+      },
+      {
+        "action": "retain incoming documented owner evidence, without resurrecting deleted leaf references",
+        "reference": "18"
+      }
+    ],
+    "orientation": {
+      "1": "old official01050ec5",
+      "2": "incoming officialc4431af1",
+      "3": "preserved pre-sync original14 leaf content"
+    },
+    "path": "onboarding/mcp/tests/conftest.py.json",
+    "rationale": "Preserve the leaf current contract, record dispositions and retained citations; admit incoming exact-current anchor refreshes and separately named L87 owner additions only. Removed canonical records and references remain removed. Any non-current anchor stays explicitly pending current scoped citation repair after sync completion.",
+    "resultMode": 420,
+    "resultSha256": "60be6ee61d0853466bd6566bc5fd2046c162d095e6ec39de50fddde32c775331",
+    "resultSize": 9128,
+    "source": "mcp/tests/conftest.py",
+    "sourceExists": true,
+    "sourceSha256": "1b18544d7480c61a8cdb91c500dbdf4d1595cc43fbca0439b681d489492fcd59"
+  },
+  {
+    "action": "write",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 420,
+      "sha256": "6a0ecfdbf9d471d8d1f3a5d6c41cd1e8fde295029b5adc5984a4e026b7d15a18",
+      "size": 12127,
+      "uid": 1000
+    },
+    "changes": [
+      {
+        "action": "preserved leaf target; incoming whole-file anchor is not the leaf working source; current scoped citation refresh deferred until completed sync",
+        "reference": "1"
+      },
+      {
+        "action": "preserved leaf target; incoming whole-file anchor is not the leaf working source; current scoped citation refresh deferred until completed sync",
+        "reference": "2"
+      },
+      {
+        "action": "preserved leaf target; incoming whole-file anchor is not the leaf working source; current scoped citation refresh deferred until completed sync",
+        "reference": "94"
+      },
+      {
+        "action": "leaf authored record retained; anchor refresh awaits completed-current pipeline",
+        "record": "RLZ-1WK7P0"
+      },
+      {
+        "action": "leaf authored record retained; anchor refresh awaits completed-current pipeline",
+        "record": "RLZ-TB9TST"
+      },
+      {
+        "action": "leaf authored record retained; anchor refresh awaits completed-current pipeline",
+        "record": "RLZ-VQZWNZ"
+      },
+      {
+        "action": "retain incoming documented owner evidence, without resurrecting deleted leaf references",
+        "reference": "96"
+      },
+      {
+        "action": "retain incoming documented owner evidence, without resurrecting deleted leaf references",
+        "reference": "97"
+      },
+      {
+        "action": "retain incoming documented owner evidence, without resurrecting deleted leaf references",
+        "reference": "98"
+      }
+    ],
+    "orientation": {
+      "1": "old official01050ec5",
+      "2": "incoming officialc4431af1",
+      "3": "preserved pre-sync original14 leaf content"
+    },
+    "path": "onboarding/mcp/tests/evidence-lifecycle.toml.json",
+    "rationale": "Preserve the leaf current contract, record dispositions and retained citations; admit incoming exact-current anchor refreshes and separately named L87 owner additions only. Removed canonical records and references remain removed. Any non-current anchor stays explicitly pending current scoped citation repair after sync completion.",
+    "resultMode": 420,
+    "resultSha256": "046e35bfbae0665365fa553553c5bcc85caf2b7236afe35c2fe4d3abb583f41b",
+    "resultSize": 11194,
+    "source": "mcp/tests/evidence-lifecycle.toml",
+    "sourceExists": true,
+    "sourceSha256": "bf11b29f82d0268bd6a4eab7ecbb4872320a5fb2de7c848721bd91516de48583"
+  },
+  {
+    "action": "delete",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 420,
+      "sha256": "af5cf66df7ed0f1f51b44bc5712088ca8b37692959522e55b57bfe888c1a9832",
+      "size": 7462,
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official01050ec5",
+      "2": "incoming officialc4431af1",
+      "3": "preserved pre-sync original14 leaf content"
+    },
+    "path": "onboarding/mcp/tests/evidence_test_support.py.json",
+    "rationale": "The preserved leaf retired this source sidecar; the actual current source is absent. Incoming changes refresh evidence for the retired source and do not restore its source or current contract.",
+    "resultMode": null,
+    "resultSha256": null,
+    "resultSize": null,
+    "source": "mcp/tests/evidence_test_support.py",
+    "sourceExists": false,
+    "sourceSha256": null
+  },
+  {
+    "action": "delete",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 420,
+      "sha256": "eb379353761bce1897ecb981f322000f742a02956204572f1f122b8554ff5e33",
+      "size": 22683,
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official01050ec5",
+      "2": "incoming officialc4431af1",
+      "3": "preserved pre-sync original14 leaf content"
+    },
+    "path": "onboarding/mcp/tests/facet_test_support.py.json",
+    "rationale": "The preserved leaf retired this source sidecar; the actual current source is absent. Incoming changes refresh evidence for the retired source and do not restore its source or current contract.",
+    "resultMode": null,
+    "resultSha256": null,
+    "resultSize": null,
+    "source": "mcp/tests/facet_test_support.py",
+    "sourceExists": false,
+    "sourceSha256": null
+  },
+  {
+    "action": "write",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 420,
+      "sha256": "9f538ec097e8fa8b3b558aa274dd8e1b758ecbfdd85710828fc49878bb70eff5",
+      "size": 3925,
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official01050ec5",
+      "2": "incoming officialc4431af1",
+      "3": "preserved pre-sync original14 leaf content"
+    },
+    "path": "onboarding/mcp/tests/knowledge_fixture_test_support.py.json",
+    "rationale": "Preserve the leaf current contract, record dispositions and retained citations; admit incoming exact-current anchor refreshes and separately named L87 owner additions only. Removed canonical records and references remain removed. Any non-current anchor stays explicitly pending current scoped citation repair after sync completion.",
+    "resultMode": 420,
+    "resultSha256": "26c1e2d73fffcca5c11840c752876d9d41911894a848f74b7657c3a24b07fbb0",
+    "resultSize": 2175,
+    "source": "mcp/tests/knowledge_fixture_test_support.py",
+    "sourceExists": true,
+    "sourceSha256": "6153b574ca9e1626deea7ccf1ea0d2e2ac119c188fe9ff82ca9988174f0d0edd"
+  },
+  {
+    "action": "delete",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 420,
+      "sha256": "bd3985ea20f68098239999e0e78bde16e9aaf8279334860677599274f4c133dc",
+      "size": 10542,
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official01050ec5",
+      "2": "incoming officialc4431af1",
+      "3": "preserved pre-sync original14 leaf content"
+    },
+    "path": "onboarding/mcp/tests/knowledge_graph_test_support.py.json",
+    "rationale": "The preserved leaf retired this source sidecar; the actual current source is absent. Incoming changes refresh evidence for the retired source and do not restore its source or current contract.",
+    "resultMode": null,
+    "resultSha256": null,
+    "resultSize": null,
+    "source": "mcp/tests/knowledge_graph_test_support.py",
+    "sourceExists": false,
+    "sourceSha256": null
+  },
+  {
+    "action": "delete",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 420,
+      "sha256": "6d971be4eeb10f535f5fa2288b708718f5bf0f91f3fa9323e4f1d5b827862c41",
+      "size": 13148,
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official01050ec5",
+      "2": "incoming officialc4431af1",
+      "3": "preserved pre-sync original14 leaf content"
+    },
+    "path": "onboarding/mcp/tests/merge_case_test_support.py.json",
+    "rationale": "The preserved leaf retired this source sidecar; the actual current source is absent. Incoming changes refresh evidence for the retired source and do not restore its source or current contract.",
+    "resultMode": null,
+    "resultSha256": null,
+    "resultSize": null,
+    "source": "mcp/tests/merge_case_test_support.py",
+    "sourceExists": false,
+    "sourceSha256": null
+  },
+  {
+    "action": "delete",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 420,
+      "sha256": "065e07ab40d1d24b7cce770d91388267610f21396b7c96b234d5d575e1c8d6e4",
+      "size": 26281,
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official01050ec5",
+      "2": "incoming officialc4431af1",
+      "3": "preserved pre-sync original14 leaf content"
+    },
+    "path": "onboarding/mcp/tests/snapshot_lifecycle_test_support.py.json",
+    "rationale": "The preserved leaf retired this source sidecar; the actual current source is absent. Incoming changes refresh evidence for the retired source and do not restore its source or current contract.",
+    "resultMode": null,
+    "resultSha256": null,
+    "resultSize": null,
+    "source": "mcp/tests/snapshot_lifecycle_test_support.py",
+    "sourceExists": false,
+    "sourceSha256": null
+  },
+  {
+    "action": "write",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 420,
+      "sha256": "b70e40fb5fabbfbcb44c118b9b2c1628ff161cd24ad7d0fb1451d80477455042",
+      "size": 4628,
+      "uid": 1000
+    },
+    "changes": [
+      {
+        "action": "leaf authored record retained; anchor refresh awaits completed-current pipeline",
+        "record": "RLZ-NJFH31"
+      },
+      {
+        "action": "leaf authored record retained; anchor refresh awaits completed-current pipeline",
+        "record": "RLZ-ZTDYFT"
+      },
+      {
+        "action": "retain incoming documented owner evidence, without resurrecting deleted leaf references",
+        "reference": "241"
+      },
+      {
+        "action": "retain incoming documented owner evidence, without resurrecting deleted leaf references",
+        "reference": "242"
+      }
+    ],
+    "orientation": {
+      "1": "old official01050ec5",
+      "2": "incoming officialc4431af1",
+      "3": "preserved pre-sync original14 leaf content"
+    },
+    "path": "onboarding/mcp/tests/test-evidence-lanes.toml.json",
+    "rationale": "Preserve the leaf current contract, record dispositions and retained citations; admit incoming exact-current anchor refreshes and separately named L87 owner additions only. Removed canonical records and references remain removed. Any non-current anchor stays explicitly pending current scoped citation repair after sync completion.",
+    "resultMode": 420,
+    "resultSha256": "95712209191d5cc29955793ca02d9988c6242bdc00f9172aff93b30bfb28877f",
+    "resultSize": 4394,
+    "source": "mcp/tests/test-evidence-lanes.toml",
+    "sourceExists": true,
+    "sourceSha256": "eaaa1ec58bd0c0aa412dadb3d7dc1876af8bdbaa09eeac4b7ab8eccb78036c0e"
+  },
+  {
+    "action": "delete",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 420,
+      "sha256": "e8531c13dd47fdb10c01912a957faa56535fd66618dd5cc26cf29e53471102dd",
+      "size": 9850,
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official01050ec5",
+      "2": "incoming officialc4431af1",
+      "3": "preserved pre-sync original14 leaf content"
+    },
+    "path": "onboarding/mcp/tests/test_candidate_batch_commands.py.json",
+    "rationale": "The preserved leaf retired this source sidecar; the actual current source is absent. Incoming changes refresh evidence for the retired source and do not restore its source or current contract.",
+    "resultMode": null,
+    "resultSha256": null,
+    "resultSize": null,
+    "source": "mcp/tests/test_candidate_batch_commands.py",
+    "sourceExists": false,
+    "sourceSha256": null
+  },
+  {
+    "action": "delete",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 420,
+      "sha256": "085d28b935b22aa5e206cd52da9d0b40fd1efeec62e6ab74176097199cc1e63f",
+      "size": 15885,
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official01050ec5",
+      "2": "incoming officialc4431af1",
+      "3": "preserved pre-sync original14 leaf content"
+    },
+    "path": "onboarding/mcp/tests/test_candidate_batch_transaction.py.json",
+    "rationale": "The preserved leaf retired this source sidecar; the actual current source is absent. Incoming changes refresh evidence for the retired source and do not restore its source or current contract.",
+    "resultMode": null,
+    "resultSha256": null,
+    "resultSize": null,
+    "source": "mcp/tests/test_candidate_batch_transaction.py",
+    "sourceExists": false,
+    "sourceSha256": null
+  },
+  {
+    "action": "delete",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 420,
+      "sha256": "dc2ecf5cbcfff0e5cec2da7e61a207d0dfe88f35e9abebfdaf1b6902a4b9304a",
+      "size": 7678,
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official01050ec5",
+      "2": "incoming officialc4431af1",
+      "3": "preserved pre-sync original14 leaf content"
+    },
+    "path": "onboarding/mcp/tests/test_curator_ingest_write_and_retention.py.json",
+    "rationale": "The preserved leaf retired this source sidecar; the actual current source is absent. Incoming changes refresh evidence for the retired source and do not restore its source or current contract.",
+    "resultMode": null,
+    "resultSha256": null,
+    "resultSize": null,
+    "source": "mcp/tests/test_curator_ingest_write_and_retention.py",
+    "sourceExists": false,
+    "sourceSha256": null
+  },
+  {
+    "action": "delete",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 420,
+      "sha256": "b76acece54048a9fe994f5ddefbe4539f610477f23b6ce3e1410d3403752441d",
+      "size": 10591,
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official01050ec5",
+      "2": "incoming officialc4431af1",
+      "3": "preserved pre-sync original14 leaf content"
+    },
+    "path": "onboarding/mcp/tests/test_curator_realization_authoring.py.json",
+    "rationale": "The preserved leaf retired this source sidecar; the actual current source is absent. Incoming changes refresh evidence for the retired source and do not restore its source or current contract.",
+    "resultMode": null,
+    "resultSha256": null,
+    "resultSize": null,
+    "source": "mcp/tests/test_curator_realization_authoring.py",
+    "sourceExists": false,
+    "sourceSha256": null
+  },
+  {
+    "action": "delete",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 420,
+      "sha256": "372d0d437a0fd1a5f5105eb922b213065e127ab7d218592b4b1210beb6603235",
+      "size": 9815,
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official01050ec5",
+      "2": "incoming officialc4431af1",
+      "3": "preserved pre-sync original14 leaf content"
+    },
+    "path": "onboarding/mcp/tests/test_knowledge_candidate_workspace.py.json",
+    "rationale": "The preserved leaf retired this source sidecar; the actual current source is absent. Incoming changes refresh evidence for the retired source and do not restore its source or current contract.",
+    "resultMode": null,
+    "resultSha256": null,
+    "resultSize": null,
+    "source": "mcp/tests/test_knowledge_candidate_workspace.py",
+    "sourceExists": false,
+    "sourceSha256": null
+  },
+  {
+    "action": "delete",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 420,
+      "sha256": "f1d8628ea9fd7a83a24ff3ca9ec2701bf24557e34815df719d575f758982681a",
+      "size": 23415,
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official01050ec5",
+      "2": "incoming officialc4431af1",
+      "3": "preserved pre-sync original14 leaf content"
+    },
+    "path": "onboarding/mcp/tests/test_knowledge_change_sets.py.json",
+    "rationale": "The preserved leaf retired this source sidecar; the actual current source is absent. Incoming changes refresh evidence for the retired source and do not restore its source or current contract.",
+    "resultMode": null,
+    "resultSha256": null,
+    "resultSize": null,
+    "source": "mcp/tests/test_knowledge_change_sets.py",
+    "sourceExists": false,
+    "sourceSha256": null
+  },
+  {
+    "action": "delete",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 420,
+      "sha256": "9adfbcf9701424a4e41e90c3a5f21bf19623bd8259faf590d355f086cde14531",
+      "size": 10711,
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official01050ec5",
+      "2": "incoming officialc4431af1",
+      "3": "preserved pre-sync original14 leaf content"
+    },
+    "path": "onboarding/mcp/tests/test_knowledge_citation_bindings.py.json",
+    "rationale": "The preserved leaf retired this source sidecar; the actual current source is absent. Incoming changes refresh evidence for the retired source and do not restore its source or current contract.",
+    "resultMode": null,
+    "resultSha256": null,
+    "resultSize": null,
+    "source": "mcp/tests/test_knowledge_citation_bindings.py",
+    "sourceExists": false,
+    "sourceSha256": null
+  },
+  {
+    "action": "delete",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 420,
+      "sha256": "68fabf94960950234ce47b6b19921e49c46594ca5ceb95f0a8b799708f693678",
+      "size": 11325,
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official01050ec5",
+      "2": "incoming officialc4431af1",
+      "3": "preserved pre-sync original14 leaf content"
+    },
+    "path": "onboarding/mcp/tests/test_knowledge_citation_boundaries.py.json",
+    "rationale": "The preserved leaf retired this source sidecar; the actual current source is absent. Incoming changes refresh evidence for the retired source and do not restore its source or current contract.",
+    "resultMode": null,
+    "resultSha256": null,
+    "resultSize": null,
+    "source": "mcp/tests/test_knowledge_citation_boundaries.py",
+    "sourceExists": false,
+    "sourceSha256": null
+  },
+  {
+    "action": "delete",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 420,
+      "sha256": "4de5ac31534cfdd97ced7fd1d8b0b875ed5f3877d91dde9320d976d56ff6ee90",
+      "size": 20571,
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official01050ec5",
+      "2": "incoming officialc4431af1",
+      "3": "preserved pre-sync original14 leaf content"
+    },
+    "path": "onboarding/mcp/tests/test_knowledge_detection_runs.py.json",
+    "rationale": "The preserved leaf retired this source sidecar; the actual current source is absent. Incoming changes refresh evidence for the retired source and do not restore its source or current contract.",
+    "resultMode": null,
+    "resultSha256": null,
+    "resultSize": null,
+    "source": "mcp/tests/test_knowledge_detection_runs.py",
+    "sourceExists": false,
+    "sourceSha256": null
+  },
+  {
+    "action": "delete",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 420,
+      "sha256": "a03bdc82663e0d05079dad6ab039589769ec20a2032297818577770002ede525",
+      "size": 18639,
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official01050ec5",
+      "2": "incoming officialc4431af1",
+      "3": "preserved pre-sync original14 leaf content"
+    },
+    "path": "onboarding/mcp/tests/test_knowledge_detection_signals.py.json",
+    "rationale": "The preserved leaf retired this source sidecar; the actual current source is absent. Incoming changes refresh evidence for the retired source and do not restore its source or current contract.",
+    "resultMode": null,
+    "resultSha256": null,
+    "resultSize": null,
+    "source": "mcp/tests/test_knowledge_detection_signals.py",
+    "sourceExists": false,
+    "sourceSha256": null
+  },
+  {
+    "action": "delete",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 420,
+      "sha256": "0f610f3cf4ed1d63cabd2554116e8707b647c55429e704dc8e85c51346e1072e",
+      "size": 34465,
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official01050ec5",
+      "2": "incoming officialc4431af1",
+      "3": "preserved pre-sync original14 leaf content"
+    },
+    "path": "onboarding/mcp/tests/test_knowledge_effect_claims.py.json",
+    "rationale": "The preserved leaf retired this source sidecar; the actual current source is absent. Incoming changes refresh evidence for the retired source and do not restore its source or current contract.",
+    "resultMode": null,
+    "resultSha256": null,
+    "resultSize": null,
+    "source": "mcp/tests/test_knowledge_effect_claims.py",
+    "sourceExists": false,
+    "sourceSha256": null
+  },
+  {
+    "action": "delete",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 420,
+      "sha256": "50b364a2d9c33076623429423e392f2cedceefec2708ccabdd503886c65c0d12",
+      "size": 15855,
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official01050ec5",
+      "2": "incoming officialc4431af1",
+      "3": "preserved pre-sync original14 leaf content"
+    },
+    "path": "onboarding/mcp/tests/test_knowledge_facets.py.json",
+    "rationale": "The preserved leaf retired this source sidecar; the actual current source is absent. Incoming changes refresh evidence for the retired source and do not restore its source or current contract.",
+    "resultMode": null,
+    "resultSha256": null,
+    "resultSize": null,
+    "source": "mcp/tests/test_knowledge_facets.py",
+    "sourceExists": false,
+    "sourceSha256": null
+  },
+  {
+    "action": "delete",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 420,
+      "sha256": "dcc303a27d280b879e06d37d4ab985fa5cca6f164b076efca0327194ccc1e29c",
+      "size": 7104,
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official01050ec5",
+      "2": "incoming officialc4431af1",
+      "3": "preserved pre-sync original14 leaf content"
+    },
+    "path": "onboarding/mcp/tests/test_knowledge_family_composition.py.json",
+    "rationale": "The preserved leaf retired this source sidecar; the actual current source is absent. Incoming changes refresh evidence for the retired source and do not restore its source or current contract.",
+    "resultMode": null,
+    "resultSha256": null,
+    "resultSize": null,
+    "source": "mcp/tests/test_knowledge_family_composition.py",
+    "sourceExists": false,
+    "sourceSha256": null
+  },
+  {
+    "action": "delete",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 420,
+      "sha256": "7480df09f11db83e28e197e486449e1bc51e7619bd7cdbc8ab0eee69ec948be6",
+      "size": 6898,
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official01050ec5",
+      "2": "incoming officialc4431af1",
+      "3": "preserved pre-sync original14 leaf content"
+    },
+    "path": "onboarding/mcp/tests/test_knowledge_family_composition_boundaries.py.json",
+    "rationale": "The preserved leaf retired this source sidecar; the actual current source is absent. Incoming changes refresh evidence for the retired source and do not restore its source or current contract.",
+    "resultMode": null,
+    "resultSha256": null,
+    "resultSize": null,
+    "source": "mcp/tests/test_knowledge_family_composition_boundaries.py",
+    "sourceExists": false,
+    "sourceSha256": null
+  },
+  {
+    "action": "delete",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 420,
+      "sha256": "a83837083f48df3ea093ca1cac0b5c714fa3f5a3b60593e84eb1e6401d88cc5a",
+      "size": 17453,
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official01050ec5",
+      "2": "incoming officialc4431af1",
+      "3": "preserved pre-sync original14 leaf content"
+    },
+    "path": "onboarding/mcp/tests/test_knowledge_family_integrity_pipeline.py.json",
+    "rationale": "The preserved leaf retired this source sidecar; the actual current source is absent. Incoming changes refresh evidence for the retired source and do not restore its source or current contract.",
+    "resultMode": null,
+    "resultSha256": null,
+    "resultSize": null,
+    "source": "mcp/tests/test_knowledge_family_integrity_pipeline.py",
+    "sourceExists": false,
+    "sourceSha256": null
+  },
+  {
+    "action": "delete",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 420,
+      "sha256": "67d366354b4cd389cb111386c297ef8aba156c1047b307e75c9f8b5ba5974fc7",
+      "size": 11129,
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official01050ec5",
+      "2": "incoming officialc4431af1",
+      "3": "preserved pre-sync original14 leaf content"
+    },
+    "path": "onboarding/mcp/tests/test_knowledge_family_revision.py.json",
+    "rationale": "The preserved leaf retired this source sidecar; the actual current source is absent. Incoming changes refresh evidence for the retired source and do not restore its source or current contract.",
+    "resultMode": null,
+    "resultSha256": null,
+    "resultSize": null,
+    "source": "mcp/tests/test_knowledge_family_revision.py",
+    "sourceExists": false,
+    "sourceSha256": null
+  },
+  {
+    "action": "delete",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 420,
+      "sha256": "bbdf449fb9ce8a19305ac98b03892cd474abeb2be5678c37def3fbb81fe977cd",
+      "size": 9038,
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official01050ec5",
+      "2": "incoming officialc4431af1",
+      "3": "preserved pre-sync original14 leaf content"
+    },
+    "path": "onboarding/mcp/tests/test_knowledge_graph_reads.py.json",
+    "rationale": "The preserved leaf retired this source sidecar; the actual current source is absent. Incoming changes refresh evidence for the retired source and do not restore its source or current contract.",
+    "resultMode": null,
+    "resultSha256": null,
+    "resultSize": null,
+    "source": "mcp/tests/test_knowledge_graph_reads.py",
+    "sourceExists": false,
+    "sourceSha256": null
+  },
+  {
+    "action": "delete",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 420,
+      "sha256": "ca84a243fda9b8b629934c58b8f2bcf850d3076e5bd7b8162d8d9c6a8dcb2cf2",
+      "size": 9436,
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official01050ec5",
+      "2": "incoming officialc4431af1",
+      "3": "preserved pre-sync original14 leaf content"
+    },
+    "path": "onboarding/mcp/tests/test_knowledge_guarded_merge.py.json",
+    "rationale": "The preserved leaf retired this source sidecar; the actual current source is absent. Incoming changes refresh evidence for the retired source and do not restore its source or current contract.",
+    "resultMode": null,
+    "resultSha256": null,
+    "resultSize": null,
+    "source": "mcp/tests/test_knowledge_guarded_merge.py",
+    "sourceExists": false,
+    "sourceSha256": null
+  },
+  {
+    "action": "delete",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 420,
+      "sha256": "aa91ece0e0368c6dd80fbd81ca5f9be66645c6a689a6c0c1d12c714457e4f2e2",
+      "size": 9162,
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official01050ec5",
+      "2": "incoming officialc4431af1",
+      "3": "preserved pre-sync original14 leaf content"
+    },
+    "path": "onboarding/mcp/tests/test_knowledge_guarded_merge_boundaries.py.json",
+    "rationale": "The preserved leaf retired this source sidecar; the actual current source is absent. Incoming changes refresh evidence for the retired source and do not restore its source or current contract.",
+    "resultMode": null,
+    "resultSha256": null,
+    "resultSize": null,
+    "source": "mcp/tests/test_knowledge_guarded_merge_boundaries.py",
+    "sourceExists": false,
+    "sourceSha256": null
+  },
+  {
+    "action": "write",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 420,
+      "sha256": "a8647099c0a7ec693b22e50654f3158262c368b2a718377e3e2782bb7c8e23d5",
+      "size": 5284,
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official01050ec5",
+      "2": "incoming officialc4431af1",
+      "3": "preserved pre-sync original14 leaf content"
+    },
+    "path": "onboarding/mcp/tests/test_knowledge_index_surfaces.py.json",
+    "rationale": "Preserve the leaf current contract, record dispositions and retained citations; admit incoming exact-current anchor refreshes and separately named L87 owner additions only. Removed canonical records and references remain removed. Any non-current anchor stays explicitly pending current scoped citation repair after sync completion.",
+    "resultMode": 420,
+    "resultSha256": "6c29c34bcc43d90fffc54630179dabdf4cb84f857ecc8ec4b000e7a042a2d246",
+    "resultSize": 3104,
+    "source": "mcp/tests/test_knowledge_index_surfaces.py",
+    "sourceExists": true,
+    "sourceSha256": "0ed640f52980541e69a4f906438aed67baaa610eb9d7e81f8919cb667acfbad9"
+  },
+  {
+    "action": "delete",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 420,
+      "sha256": "81ea42229a6921b9d07d2fd9f49c384c7afa2b00e6fd6837ce4f0770eff491ee",
+      "size": 15745,
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official01050ec5",
+      "2": "incoming officialc4431af1",
+      "3": "preserved pre-sync original14 leaf content"
+    },
+    "path": "onboarding/mcp/tests/test_knowledge_ingest_comparison_generation.py.json",
+    "rationale": "The preserved leaf retired this source sidecar; the actual current source is absent. Incoming changes refresh evidence for the retired source and do not restore its source or current contract.",
+    "resultMode": null,
+    "resultSha256": null,
+    "resultSize": null,
+    "source": "mcp/tests/test_knowledge_ingest_comparison_generation.py",
+    "sourceExists": false,
+    "sourceSha256": null
+  },
+  {
+    "action": "delete",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 420,
+      "sha256": "100d6212e593295c0aaf4bf7d9bb34af146cce9a88b2dc35b7d9be314473959b",
+      "size": 25265,
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official01050ec5",
+      "2": "incoming officialc4431af1",
+      "3": "preserved pre-sync original14 leaf content"
+    },
+    "path": "onboarding/mcp/tests/test_knowledge_ingest_failure_windows.py.json",
+    "rationale": "The preserved leaf retired this source sidecar; the actual current source is absent. Incoming changes refresh evidence for the retired source and do not restore its source or current contract.",
+    "resultMode": null,
+    "resultSha256": null,
+    "resultSize": null,
+    "source": "mcp/tests/test_knowledge_ingest_failure_windows.py",
+    "sourceExists": false,
+    "sourceSha256": null
+  },
+  {
+    "action": "delete",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 420,
+      "sha256": "e8090c61d8d734fdea0271b0e595e06ce053f6cf3e4538b4a8c27535da022bc7",
+      "size": 20350,
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official01050ec5",
+      "2": "incoming officialc4431af1",
+      "3": "preserved pre-sync original14 leaf content"
+    },
+    "path": "onboarding/mcp/tests/test_knowledge_ingest_publication_route.py.json",
+    "rationale": "The preserved leaf retired this source sidecar; the actual current source is absent. Incoming changes refresh evidence for the retired source and do not restore its source or current contract.",
+    "resultMode": null,
+    "resultSha256": null,
+    "resultSize": null,
+    "source": "mcp/tests/test_knowledge_ingest_publication_route.py",
+    "sourceExists": false,
+    "sourceSha256": null
+  },
+  {
+    "action": "delete",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 420,
+      "sha256": "b1a7486884dfe8e984d1e8129804ddd75fbfede50db57ea90044ce1a40399cd0",
+      "size": 8429,
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official01050ec5",
+      "2": "incoming officialc4431af1",
+      "3": "preserved pre-sync original14 leaf content"
+    },
+    "path": "onboarding/mcp/tests/test_knowledge_label_operations.py.json",
+    "rationale": "The preserved leaf retired this source sidecar; the actual current source is absent. Incoming changes refresh evidence for the retired source and do not restore its source or current contract.",
+    "resultMode": null,
+    "resultSha256": null,
+    "resultSize": null,
+    "source": "mcp/tests/test_knowledge_label_operations.py",
+    "sourceExists": false,
+    "sourceSha256": null
+  },
+  {
+    "action": "write",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 420,
+      "sha256": "f312748ae944401d0cdd952b073421502b26f8dc9954b86f5862a3722df56341",
+      "size": 4090,
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official01050ec5",
+      "2": "incoming officialc4431af1",
+      "3": "preserved pre-sync original14 leaf content"
+    },
+    "path": "onboarding/mcp/tests/test_knowledge_leaf_read.py.json",
+    "rationale": "Preserve the leaf current contract, record dispositions and retained citations; admit incoming exact-current anchor refreshes and separately named L87 owner additions only. Removed canonical records and references remain removed. Any non-current anchor stays explicitly pending current scoped citation repair after sync completion.",
+    "resultMode": 420,
+    "resultSha256": "55ff4f522705974d33d6ae65c876eb72d108f1e190e9eaf47e42cdb268cb6bef",
+    "resultSize": 1881,
+    "source": "mcp/tests/test_knowledge_leaf_read.py",
+    "sourceExists": true,
+    "sourceSha256": "6c5099921999b04244e720a8740b4b3eeed05d4afc088f56e6cd8cba9ca0be53"
+  },
+  {
+    "action": "delete",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 420,
+      "sha256": "8090f5ff51ea917dd844404c64af06569b886143e4cf0f7827224cab91653bf4",
+      "size": 10751,
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official01050ec5",
+      "2": "incoming officialc4431af1",
+      "3": "preserved pre-sync original14 leaf content"
+    },
+    "path": "onboarding/mcp/tests/test_knowledge_merge_right_side_writes.py.json",
+    "rationale": "The preserved leaf retired this source sidecar; the actual current source is absent. Incoming changes refresh evidence for the retired source and do not restore its source or current contract.",
+    "resultMode": null,
+    "resultSha256": null,
+    "resultSize": null,
+    "source": "mcp/tests/test_knowledge_merge_right_side_writes.py",
+    "sourceExists": false,
+    "sourceSha256": null
+  },
+  {
+    "action": "delete",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 420,
+      "sha256": "44b0842884491a6d0875b54f4ca0def2fc345e727870c800dc39280209fe7946",
+      "size": 15895,
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official01050ec5",
+      "2": "incoming officialc4431af1",
+      "3": "preserved pre-sync original14 leaf content"
+    },
+    "path": "onboarding/mcp/tests/test_knowledge_portable_boundaries.py.json",
+    "rationale": "The preserved leaf retired this source sidecar; the actual current source is absent. Incoming changes refresh evidence for the retired source and do not restore its source or current contract.",
+    "resultMode": null,
+    "resultSha256": null,
+    "resultSize": null,
+    "source": "mcp/tests/test_knowledge_portable_boundaries.py",
+    "sourceExists": false,
+    "sourceSha256": null
+  },
+  {
+    "action": "delete",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 420,
+      "sha256": "f852df885396ce5fe6000d2ea8f9fc7fcf95f5c733cc60ebb33943784d947d94",
+      "size": 17291,
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official01050ec5",
+      "2": "incoming officialc4431af1",
+      "3": "preserved pre-sync original14 leaf content"
+    },
+    "path": "onboarding/mcp/tests/test_knowledge_portable_roundtrip.py.json",
+    "rationale": "The preserved leaf retired this source sidecar; the actual current source is absent. Incoming changes refresh evidence for the retired source and do not restore its source or current contract.",
+    "resultMode": null,
+    "resultSha256": null,
+    "resultSize": null,
+    "source": "mcp/tests/test_knowledge_portable_roundtrip.py",
+    "sourceExists": false,
+    "sourceSha256": null
+  },
+  {
+    "action": "delete",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 420,
+      "sha256": "8dd3793ee9b82cae8bc8a7372b446431254bc61511c738fddc74246297e46ebd",
+      "size": 17174,
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official01050ec5",
+      "2": "incoming officialc4431af1",
+      "3": "preserved pre-sync original14 leaf content"
+    },
+    "path": "onboarding/mcp/tests/test_knowledge_projection_vault_safety.py.json",
+    "rationale": "The preserved leaf retired this source sidecar; the actual current source is absent. Incoming changes refresh evidence for the retired source and do not restore its source or current contract.",
+    "resultMode": null,
+    "resultSha256": null,
+    "resultSize": null,
+    "source": "mcp/tests/test_knowledge_projection_vault_safety.py",
+    "sourceExists": false,
+    "sourceSha256": null
+  },
+  {
+    "action": "write",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 420,
+      "sha256": "4d71cc8d2c8c42d98a6f092e6c4d839e56e693c103f6f7b455acd761a83d67ea",
+      "size": 4396,
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official01050ec5",
+      "2": "incoming officialc4431af1",
+      "3": "preserved pre-sync original14 leaf content"
+    },
+    "path": "onboarding/mcp/tests/test_knowledge_read_paths.py.json",
+    "rationale": "Preserve the leaf current contract, record dispositions and retained citations; admit incoming exact-current anchor refreshes and separately named L87 owner additions only. Removed canonical records and references remain removed. Any non-current anchor stays explicitly pending current scoped citation repair after sync completion.",
+    "resultMode": 420,
+    "resultSha256": "971b9e411745664d723d553d4dcc9f488f74774be0f4435188c63065b963d0c4",
+    "resultSize": 3759,
+    "source": "mcp/tests/test_knowledge_read_paths.py",
+    "sourceExists": true,
+    "sourceSha256": "fc5d69904ac69e0de40a7b75cb1611aa74f612822c277040c860d7b99cb2614e"
+  },
+  {
+    "action": "delete",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 420,
+      "sha256": "d361b4b003168c25ac1e4106836e23bbb02151e7defe244095c95f1365c7911a",
+      "size": 10863,
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official01050ec5",
+      "2": "incoming officialc4431af1",
+      "3": "preserved pre-sync original14 leaf content"
+    },
+    "path": "onboarding/mcp/tests/test_knowledge_relation_rules.py.json",
+    "rationale": "The preserved leaf retired this source sidecar; the actual current source is absent. Incoming changes refresh evidence for the retired source and do not restore its source or current contract.",
+    "resultMode": null,
+    "resultSha256": null,
+    "resultSize": null,
+    "source": "mcp/tests/test_knowledge_relation_rules.py",
+    "sourceExists": false,
+    "sourceSha256": null
+  },
+  {
+    "action": "write",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 420,
+      "sha256": "82dcbcac82ba32fe560f79e35fb721154afb2123a49258401da225ece94093d1",
+      "size": 27274,
+      "uid": 1000
+    },
+    "changes": [
+      {
+        "action": "leaf authored record retained; anchor refresh awaits completed-current pipeline",
+        "record": "PRF-2JW677"
+      },
+      {
+        "action": "leaf authored record retained; anchor refresh awaits completed-current pipeline",
+        "record": "PRF-38BW2P"
+      },
+      {
+        "action": "leaf authored record retained; anchor refresh awaits completed-current pipeline",
+        "record": "PRF-5DW4E9"
+      },
+      {
+        "action": "leaf authored record retained; anchor refresh awaits completed-current pipeline",
+        "record": "PRF-9Z1ZZS"
+      },
+      {
+        "action": "leaf authored record retained; anchor refresh awaits completed-current pipeline",
+        "record": "PRF-BGMM9E"
+      },
+      {
+        "action": "leaf authored record retained; anchor refresh awaits completed-current pipeline",
+        "record": "PRF-HDJRCR"
+      },
+      {
+        "action": "leaf authored record retained; anchor refresh awaits completed-current pipeline",
+        "record": "PRF-HSJSNA"
+      },
+      {
+        "action": "leaf authored record retained; anchor refresh awaits completed-current pipeline",
+        "record": "PRF-PX3B3D"
+      },
+      {
+        "action": "leaf authored record retained; anchor refresh awaits completed-current pipeline",
+        "record": "PRF-PYPX5S"
+      },
+      {
+        "action": "retain incoming documented owner evidence, without resurrecting deleted leaf references",
+        "reference": "29"
+      }
+    ],
+    "orientation": {
+      "1": "old official01050ec5",
+      "2": "incoming officialc4431af1",
+      "3": "preserved pre-sync original14 leaf content"
+    },
+    "path": "onboarding/mcp/tests/test_knowledge_reopen.py.json",
+    "rationale": "Preserve the leaf current contract, record dispositions and retained citations; admit incoming exact-current anchor refreshes and separately named L87 owner additions only. Removed canonical records and references remain removed. Any non-current anchor stays explicitly pending current scoped citation repair after sync completion.",
+    "resultMode": 420,
+    "resultSha256": "2876ee8b318b480e5886d893bb589a6b3f9411aa348c319ec661385590069c92",
+    "resultSize": 9764,
+    "source": "mcp/tests/test_knowledge_reopen.py",
+    "sourceExists": true,
+    "sourceSha256": "4731a2f4013903d200a85dd28fa321447bda4b4181ad41a349f4ee5109b9671d"
+  },
+  {
+    "action": "write",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 420,
+      "sha256": "bc1d9e5f4b1956942b811fcb8b4c140dbb07ae7514520b1a53ba7a5a9f2a79a6",
+      "size": 3595,
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official01050ec5",
+      "2": "incoming officialc4431af1",
+      "3": "preserved pre-sync original14 leaf content"
+    },
+    "path": "onboarding/mcp/tests/test_knowledge_reopen.py.md",
+    "rationale": "Preserve the repaired compact current test account. Add only the incoming shared rewrite-owner meaning and its evidence, using free reference 29 because leaf reference 25 already cites its reopen assertion.",
+    "resultMode": 420,
+    "resultSha256": "2504ad8d98418f8cfc75f9b7a7b67e507f1fa4b20d45c914a5f594a892f169fc",
+    "resultSize": 1790,
+    "source": "mcp/tests/test_knowledge_reopen.py",
+    "sourceExists": true,
+    "sourceSha256": "4731a2f4013903d200a85dd28fa321447bda4b4181ad41a349f4ee5109b9671d"
+  },
+  {
+    "action": "write",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 420,
+      "sha256": "78a26f3c5eaf312d6f41b2ccfc1bae3b5f9817b3a122e07087370b85aa12e133",
+      "size": 5838,
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official01050ec5",
+      "2": "incoming officialc4431af1",
+      "3": "preserved pre-sync original14 leaf content"
+    },
+    "path": "onboarding/mcp/tests/test_knowledge_requirement_reference_contract.py.json",
+    "rationale": "Preserve the leaf current contract, record dispositions and retained citations; admit incoming exact-current anchor refreshes and separately named L87 owner additions only. Removed canonical records and references remain removed. Any non-current anchor stays explicitly pending current scoped citation repair after sync completion.",
+    "resultMode": 420,
+    "resultSha256": "eeb5da00efb27bb944bdfa94e8fbcc45fb5348f4e2577341f082bcde068947bd",
+    "resultSize": 3129,
+    "source": "mcp/tests/test_knowledge_requirement_reference_contract.py",
+    "sourceExists": true,
+    "sourceSha256": "2d8c8ef90bc08eccb043762d6a25407ab6a44f4fcace7077693436e2e9a4321e"
+  },
+  {
+    "action": "delete",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 420,
+      "sha256": "40d863a0b0448dba4ee38ea4e085c6a2581912240ba30b6365b625e9aca471c6",
+      "size": 14068,
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official01050ec5",
+      "2": "incoming officialc4431af1",
+      "3": "preserved pre-sync original14 leaf content"
+    },
+    "path": "onboarding/mcp/tests/test_knowledge_requirement_revisions.py.json",
+    "rationale": "The preserved leaf retired this source sidecar; the actual current source is absent. Incoming changes refresh evidence for the retired source and do not restore its source or current contract.",
+    "resultMode": null,
+    "resultSha256": null,
+    "resultSize": null,
+    "source": "mcp/tests/test_knowledge_requirement_revisions.py",
+    "sourceExists": false,
+    "sourceSha256": null
+  },
+  {
+    "action": "write",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 420,
+      "sha256": "1fb925652c5328caba3dd2c02727f57d876fafb69a745263a9eeb9a1cecb97fd",
+      "size": 5476,
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official01050ec5",
+      "2": "incoming officialc4431af1",
+      "3": "preserved pre-sync original14 leaf content"
+    },
+    "path": "onboarding/mcp/tests/test_knowledge_review_attributed_source_content.py.json",
+    "rationale": "Preserve the leaf current contract, record dispositions and retained citations; admit incoming exact-current anchor refreshes and separately named L87 owner additions only. Removed canonical records and references remain removed. Any non-current anchor stays explicitly pending current scoped citation repair after sync completion.",
+    "resultMode": 420,
+    "resultSha256": "94f58edecaf2c9591d5872665762f38f3d1df01fe88b423d9445d09fb98cae0c",
+    "resultSize": 2542,
+    "source": "mcp/tests/test_knowledge_review_attributed_source_content.py",
+    "sourceExists": true,
+    "sourceSha256": "9b92e4ea52de78abfbeddd62584b0700b88ebafa7374e3410f4d387f4dba3c0a"
+  },
+  {
+    "action": "write",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 420,
+      "sha256": "5ae8abc3075308bf07130389635356317d4ea5bbc71ca5cd6b41d4f19043a6fa",
+      "size": 5755,
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official01050ec5",
+      "2": "incoming officialc4431af1",
+      "3": "preserved pre-sync original14 leaf content"
+    },
+    "path": "onboarding/mcp/tests/test_knowledge_review_attribution_precedence.py.json",
+    "rationale": "Preserve the leaf current contract, record dispositions and retained citations; admit incoming exact-current anchor refreshes and separately named L87 owner additions only. Removed canonical records and references remain removed. Any non-current anchor stays explicitly pending current scoped citation repair after sync completion.",
+    "resultMode": 420,
+    "resultSha256": "33628fae3ea7b165831fb609ac0a47860e706990ac4dce4e66675e80cd371742",
+    "resultSize": 1971,
+    "source": "mcp/tests/test_knowledge_review_attribution_precedence.py",
+    "sourceExists": true,
+    "sourceSha256": "ec4bb9984642c7cfc970102bbcf683bb8013cc9e914d5cb86030d1cc5b9cc3e1"
+  },
+  {
+    "action": "write",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 420,
+      "sha256": "41ddbe1b6349fd66d6ee4a5bf6009f72ec6c1b4320e8bce6116f9bb1500ad0b8",
+      "size": 25320,
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official01050ec5",
+      "2": "incoming officialc4431af1",
+      "3": "preserved pre-sync original14 leaf content"
+    },
+    "path": "onboarding/mcp/tests/test_knowledge_review_comparison_generation.py.json",
+    "rationale": "Preserve the leaf current contract, record dispositions and retained citations; admit incoming exact-current anchor refreshes and separately named L87 owner additions only. Removed canonical records and references remain removed. Any non-current anchor stays explicitly pending current scoped citation repair after sync completion.",
+    "resultMode": 420,
+    "resultSha256": "56a3a69933144f2182b6f9bb8f8a61acd4833fa275b5468cfe486afcf1cd7a50",
+    "resultSize": 1332,
+    "source": "mcp/tests/test_knowledge_review_comparison_generation.py",
+    "sourceExists": true,
+    "sourceSha256": "1065373dae100982e8eaf926c3443683ccb725eaac38067161e953634a7f4960"
+  },
+  {
+    "action": "write",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 420,
+      "sha256": "29040f0622275baeae585a2ba8b7b7e81437bb62c5f20ea503940182fa702e34",
+      "size": 7454,
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official01050ec5",
+      "2": "incoming officialc4431af1",
+      "3": "preserved pre-sync original14 leaf content"
+    },
+    "path": "onboarding/mcp/tests/test_knowledge_review_resolution_and_route.py.json",
+    "rationale": "Preserve the leaf current contract, record dispositions and retained citations; admit incoming exact-current anchor refreshes and separately named L87 owner additions only. Removed canonical records and references remain removed. Any non-current anchor stays explicitly pending current scoped citation repair after sync completion.",
+    "resultMode": 420,
+    "resultSha256": "6bf8e83ed714c4b35be1f6598a7d4f214719c36e29ff0411a75e973dc4dc3403",
+    "resultSize": 2547,
+    "source": "mcp/tests/test_knowledge_review_resolution_and_route.py",
+    "sourceExists": true,
+    "sourceSha256": "390689b03a1359e4562fe8a11d5415d091c652f4c5ddb259432fed9cae1a650e"
+  },
+  {
+    "action": "write",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 420,
+      "sha256": "179480e6c2d90db94f4496c37fc9d1a59c90ae1012bb9da7c8f2991796996c96",
+      "size": 13863,
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official01050ec5",
+      "2": "incoming officialc4431af1",
+      "3": "preserved pre-sync original14 leaf content"
+    },
+    "path": "onboarding/mcp/tests/test_knowledge_review_subject_isolation.py.json",
+    "rationale": "Preserve the leaf current contract, record dispositions and retained citations; admit incoming exact-current anchor refreshes and separately named L87 owner additions only. Removed canonical records and references remain removed. Any non-current anchor stays explicitly pending current scoped citation repair after sync completion.",
+    "resultMode": 420,
+    "resultSha256": "8fb3b068f31dec6f7bef669906882366cf3746f0e9684d2514c41dfac1927a5a",
+    "resultSize": 2378,
+    "source": "mcp/tests/test_knowledge_review_subject_isolation.py",
+    "sourceExists": true,
+    "sourceSha256": "e9b8289ce7b6fa3612429006e3149b901572d3d591fb47da2463b5132d29684e"
+  },
+  {
+    "action": "delete",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 420,
+      "sha256": "1aef7a6212774d22c1fc618803b92ba86f409cdc6b83dc1dfd4c49c3d1beaa62",
+      "size": 12421,
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official01050ec5",
+      "2": "incoming officialc4431af1",
+      "3": "preserved pre-sync original14 leaf content"
+    },
+    "path": "onboarding/mcp/tests/test_knowledge_snapshot_publication.py.json",
+    "rationale": "The preserved leaf retired this source sidecar; the actual current source is absent. Incoming changes refresh evidence for the retired source and do not restore its source or current contract.",
+    "resultMode": null,
+    "resultSha256": null,
+    "resultSize": null,
+    "source": "mcp/tests/test_knowledge_snapshot_publication.py",
+    "sourceExists": false,
+    "sourceSha256": null
+  },
+  {
+    "action": "write",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 420,
+      "sha256": "f1817a7a00dc2257e8c1d85ec454815e15391eaa3d3939a741d528d405b6ee43",
+      "size": 6235,
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official01050ec5",
+      "2": "incoming officialc4431af1",
+      "3": "preserved pre-sync original14 leaf content"
+    },
+    "path": "onboarding/mcp/tests/test_knowledge_store.py.json",
+    "rationale": "Preserve the leaf current contract, record dispositions and retained citations; admit incoming exact-current anchor refreshes and separately named L87 owner additions only. Removed canonical records and references remain removed. Any non-current anchor stays explicitly pending current scoped citation repair after sync completion.",
+    "resultMode": 420,
+    "resultSha256": "36515ebc51b0566517d9d00ece3070353d26f8eb9a2e78a77fa4641428ffb2be",
+    "resultSize": 4371,
+    "source": "mcp/tests/test_knowledge_store.py",
+    "sourceExists": true,
+    "sourceSha256": "7816e1573134b55e462fa089e3185b76a3731c9a1eb20d0e2e43deaad1987eaf"
+  },
+  {
+    "action": "delete",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 420,
+      "sha256": "56131564f02ab3800eb740eb33b401b29ccda65c3af51450056e6d11833095f4",
+      "size": 52903,
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official01050ec5",
+      "2": "incoming officialc4431af1",
+      "3": "preserved pre-sync original14 leaf content"
+    },
+    "path": "onboarding/mcp/tests/test_migration_census.py.json",
+    "rationale": "The preserved leaf retired this source sidecar; the actual current source is absent. Incoming changes refresh evidence for the retired source and do not restore its source or current contract.",
+    "resultMode": null,
+    "resultSha256": null,
+    "resultSize": null,
+    "source": "mcp/tests/test_migration_census.py",
+    "sourceExists": false,
+    "sourceSha256": null
+  },
+  {
+    "action": "write",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 420,
+      "sha256": "d0b353149b06e4871296c095e7809cc09d769cd6ecdf99de471067002d65dab3",
+      "size": 7519,
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official01050ec5",
+      "2": "incoming officialc4431af1",
+      "3": "preserved pre-sync original14 leaf content"
+    },
+    "path": "onboarding/mcp/tests/test_review_external_git_movement_read.py.json",
+    "rationale": "Preserve the leaf current contract, record dispositions and retained citations; admit incoming exact-current anchor refreshes and separately named L87 owner additions only. Removed canonical records and references remain removed. Any non-current anchor stays explicitly pending current scoped citation repair after sync completion.",
+    "resultMode": 420,
+    "resultSha256": "3f9035a31e94cc7f8fb642219301bddf91895ae5aedf6ae6a14688692d9b2527",
+    "resultSize": 4244,
+    "source": "mcp/tests/test_review_external_git_movement_read.py",
+    "sourceExists": true,
+    "sourceSha256": "3d3fbffa44d156b25fdbc58ffcb38b1092c6965577e40b47d6cd38791e559d40"
+  },
+  {
+    "action": "write",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 420,
+      "sha256": "f897c4109de3e7eedd68eb013d0cb93e77958a36a48458fe91443ee5e04498b7",
+      "size": 7750,
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official01050ec5",
+      "2": "incoming officialc4431af1",
+      "3": "preserved pre-sync original14 leaf content"
+    },
+    "path": "onboarding/mcp/tests/test_review_sync_movement_read.py.json",
+    "rationale": "Preserve the leaf current contract, record dispositions and retained citations; admit incoming exact-current anchor refreshes and separately named L87 owner additions only. Removed canonical records and references remain removed. Any non-current anchor stays explicitly pending current scoped citation repair after sync completion.",
+    "resultMode": 420,
+    "resultSha256": "04125c2b2d158e9266b181356a473e37bff23b4928f99aa35e8ddb33afc7d43b",
+    "resultSize": 4183,
+    "source": "mcp/tests/test_review_sync_movement_read.py",
+    "sourceExists": true,
+    "sourceSha256": "cdac7e84370248f6ee9b7052d9b7f0f0c23950716deef78f7de6a17cc485f0c1"
+  },
+  {
+    "action": "write",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 420,
+      "sha256": "f4b108cb1ff912264309db13571512c08767808c7974cdf08aaf2606a50fb2a4",
+      "size": 22287,
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official01050ec5",
+      "2": "incoming officialc4431af1",
+      "3": "preserved pre-sync original14 leaf content"
+    },
+    "path": "onboarding/mcp/tests/test_review_sync_rebinding.py.json",
+    "rationale": "Preserve the leaf current contract, record dispositions and retained citations; admit incoming exact-current anchor refreshes and separately named L87 owner additions only. Removed canonical records and references remain removed. Any non-current anchor stays explicitly pending current scoped citation repair after sync completion.",
+    "resultMode": 420,
+    "resultSha256": "a07ab154494ffc87676ca901d55f04523ab5740f9acb3c1f314af8ec411e0c81",
+    "resultSize": 5468,
+    "source": "mcp/tests/test_review_sync_rebinding.py",
+    "sourceExists": true,
+    "sourceSha256": "7c88abc6d5148ad129e661d731892f4aa6c3f183dc60908830c1cd68c909d6d5"
+  },
+  {
+    "action": "write",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 420,
+      "sha256": "23b42259e2c2e884a896da10fa8384c72932b103ccd575059f273c288865dac6",
+      "size": 11070,
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official01050ec5",
+      "2": "incoming officialc4431af1",
+      "3": "preserved pre-sync original14 leaf content"
+    },
+    "path": "onboarding/mcp/tests/test_tool_entry_point_sweep.py.json",
+    "rationale": "Preserve the leaf current contract, record dispositions and retained citations; admit incoming exact-current anchor refreshes and separately named L87 owner additions only. Removed canonical records and references remain removed. Any non-current anchor stays explicitly pending current scoped citation repair after sync completion.",
+    "resultMode": 420,
+    "resultSha256": "3d3e8fb82b504aa1e9a8d915a012ab251ca93393a1d5e4eebd13bc0c4010b344",
+    "resultSize": 1831,
+    "source": "mcp/tests/test_tool_entry_point_sweep.py",
+    "sourceExists": true,
+    "sourceSha256": "64034fda25f9a82d9b1987f64204d0dc2c82042a3d0bb554a6ae51ed139f483c"
+  }
+]

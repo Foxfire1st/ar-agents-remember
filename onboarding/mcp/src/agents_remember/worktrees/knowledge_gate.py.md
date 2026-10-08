@@ -147,7 +147,9 @@ No configured live documentation source was available for this pass.
 - The converting candidate is gated at every route, never locked. [16]
 
 - The commit whose closed history files are frozen: the recorded, completed closeout's. [17]
-- A history file closed by a hand commit is not frozen. [18]
+
+- Hand commit does not freeze leaf history authority. [18]
+
 
 ### Cross-Repo References
 

@@ -16,6 +16,6 @@
   "revision": 2,
   "routes": [],
   "schema": "ar-family/v1",
-  "status": "proposed",
+  "status": "retired",
   "title": "Faithful authored family succession"
 }

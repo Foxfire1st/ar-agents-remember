@@ -1,0 +1,16 @@
+{
+  "ok": true,
+  "tokens": 208,
+  "tokenizer": "tiktoken:o200k_base",
+  "tokenCountExact": true,
+  "operation": "knowledge_read",
+  "state": "refused",
+  "view": "source_context",
+  "repositoryId": "agents-remember",
+  "threshold": {
+    "tokens": 8000,
+    "tokenizer": "tiktoken:o200k_base"
+  },
+  "refusalCode": "snapshot_unavailable",
+  "refusalDetail": "the selected snapshot is not this dataset: the dataset at /home/firefox/projects/ar-coordination/runtime/knowledge-index/96df46aae7f029e6ee894ce73a2a58dc8d9e7e0e.sqlite is bound to 7511e917-d5d3-584e-b0ce-44dcad666cfe, not to the requested repository namespace agents-remember (at /home/firefox/projects/ar-coordination/runtime/knowledge-index/96df46aae7f029e6ee894ce73a2a58dc8d9e7e0e.sqlite)"
+}

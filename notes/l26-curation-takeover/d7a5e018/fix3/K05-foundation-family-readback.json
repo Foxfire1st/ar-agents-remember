@@ -1,0 +1,197 @@
+{
+  "ok": true,
+  "tokens": 1284,
+  "tokenizer": "tiktoken:o200k_base",
+  "tokenCountExact": true,
+  "operation": "knowledge_read",
+  "state": "page",
+  "view": "source_context",
+  "repositoryId": "7511e917-d5d3-584e-b0ce-44dcad666cfe",
+  "snapshot": "8c13bab417c6d53c4496eedea48cfa7e938eb865",
+  "completeWithinDeclaredScope": true,
+  "page": {
+    "threshold": {
+      "tokens": 8000,
+      "tokenizer": "tiktoken:o200k_base"
+    },
+    "memoryTreeId": "8c13bab417c6d53c4496eedea48cfa7e938eb865",
+    "selectionPolicy": "family-complete-leaf",
+    "selectionPolicyVersion": "v2",
+    "manifestDigest": "d9aa6343e496fd97d984e40bfb005db89cbee9b69e201bdc3563e88a36bd22d6",
+    "codeTreeId": "bf045a987679cc023f8fdfb8849d28cfcca1adb9",
+    "start": 0,
+    "rowsOnPage": 5,
+    "total": 5,
+    "returned": 5,
+    "remaining": 0,
+    "enumerationComplete": true
+  },
+  "payload": {
+    "seed": {
+      "kind": "family",
+      "id": "FAM-XYPE7N"
+    },
+    "state": "page",
+    "memoryTreeId": "8c13bab417c6d53c4496eedea48cfa7e938eb865",
+    "manifestDigest": "d9aa6343e496fd97d984e40bfb005db89cbee9b69e201bdc3563e88a36bd22d6",
+    "rows": [
+      {
+        "kind": "family_header",
+        "id": "FAM-XYPE7N",
+        "revision": 1,
+        "status": "proposed",
+        "admission": {
+          "criteria": [
+            "joint_guarantee"
+          ],
+          "justification": "The examples must lead to supported reads and the state explanation must let the same instructed session interpret what it read. Either alone can misroute or misdescribe the foundation. This is a joint instructional contract, separate from write admission and storage location."
+        },
+        "title": "Truthful foundation inspection instructions",
+        "guarantee": "For a converted foundation, bootstrap instructions name the supported family, invariant and source_context views and distinguish complete-empty, complete-authored and partial knowledge from admission or legacy refusals. An instruction to inspect knowledge does not establish authoring, publication or repository acceptance.",
+        "routes": [
+          "mcp/tests",
+          "skills/c-14-knowledge-bootstrap"
+        ],
+        "memberCount": 2,
+        "members": [
+          "INV-1BBPF3",
+          "INV-K69R3M"
+        ],
+        "staleMembers": 0
+      },
+      {
+        "kind": "member",
+        "id": "INV-1BBPF3",
+        "revision": 1,
+        "status": "proposed",
+        "admission": {
+          "criteria": [
+            "prevents_costly_mistake"
+          ],
+          "justification": "Foundation examples must name supported read views; otherwise a new project's first inspection is routed to an operation that cannot demonstrate its recorded knowledge."
+        },
+        "statement": "Bootstrap foundation examples name family, invariant and source_context views.",
+        "applicability": "The c-14 bootstrap skill's foundation examples.",
+        "conditions": [
+          "The repository holds a converted foundation."
+        ],
+        "exclusions": [
+          "An unconverted foundation, which the conversion command handles first."
+        ],
+        "state": "current",
+        "families": [
+          "FAM-XYPE7N"
+        ]
+      },
+      {
+        "kind": "realization",
+        "id": "RLZ-N1HZEM",
+        "invariant": "INV-1BBPF3",
+        "path": "skills/c-14-knowledge-bootstrap/SKILL.md",
+        "locator": {
+          "kind": "file"
+        },
+        "role": "presentation",
+        "state": "current"
+      },
+      {
+        "kind": "member",
+        "id": "INV-K69R3M",
+        "revision": 1,
+        "status": "proposed",
+        "admission": {
+          "criteria": [
+            "prevents_costly_mistake"
+          ],
+          "justification": "Calling converted foundations universally not-recorded hides an actually authored or partially authored foundation and can cause an operator to duplicate or omit its authoring work."
+        },
+        "statement": "Bootstrap describes complete-empty, complete-authored, partial, admission and legacy states accurately.",
+        "applicability": "The c-14 bootstrap skill's foundation states.",
+        "conditions": [
+          "Complete-empty, complete-authored, partial, admission and legacy states."
+        ],
+        "exclusions": [
+          "An unconverted repository, which the conversion owner refuses by name."
+        ],
+        "state": "current",
+        "families": [
+          "FAM-XYPE7N"
+        ]
+      },
+      {
+        "kind": "realization",
+        "id": "RLZ-JJMGHW",
+        "invariant": "INV-K69R3M",
+        "path": "skills/c-14-knowledge-bootstrap/SKILL.md",
+        "locator": {
+          "kind": "file"
+        },
+        "role": "presentation",
+        "state": "current"
+      }
+    ],
+    "counts": {
+      "families": 1,
+      "members": 2,
+      "entries": 2,
+      "realizations": 2,
+      "proofs": 0,
+      "distinctPaths": 1,
+      "invariantsByState": {
+        "stale": 0,
+        "unverifiable": 0,
+        "unrealized": 0,
+        "current": 2
+      },
+      "advertisedFamilies": 0,
+      "chainFamilies": 0,
+      "rowsTotal": 5,
+      "rowsReturned": 5,
+      "rowsRemaining": 0
+    },
+    "hasMore": false,
+    "enumerationComplete": true,
+    "indexState": "complete",
+    "continuationOperation": "knowledge_read",
+    "continuationView": "source_context"
+  },
+  "memoryTree": {
+    "memoryRoot": "/home/firefox/projects/ar-coordination/worktrees/agents-remember/260928-mik-l26-ar/memory-260928-mik-l26",
+    "treeId": "8c13bab417c6d53c4496eedea48cfa7e938eb865",
+    "indexState": "complete",
+    "problems": []
+  },
+  "indexComplete": true,
+  "currentness": {
+    "codeTree": {
+      "repositoryRoot": "/home/firefox/projects/ar-coordination/worktrees/agents-remember/260928-mik-l26-ar/260928-mik-l26",
+      "treeId": "bf045a987679cc023f8fdfb8849d28cfcca1adb9"
+    },
+    "counts": {
+      "stale": 0,
+      "unverifiable": 0,
+      "unrealized": 0,
+      "current": 2
+    },
+    "invariants": [
+      {
+        "id": "INV-1BBPF3",
+        "state": "current",
+        "entries": []
+      },
+      {
+        "id": "INV-K69R3M",
+        "state": "current",
+        "entries": []
+      }
+    ],
+    "families": [
+      {
+        "id": "FAM-XYPE7N",
+        "members": 2,
+        "staleMembers": 0,
+        "stale": []
+      }
+    ]
+  }
+}

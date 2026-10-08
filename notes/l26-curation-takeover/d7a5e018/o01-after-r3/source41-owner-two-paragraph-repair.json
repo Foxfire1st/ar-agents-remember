@@ -1,0 +1,79 @@
+{
+  "owner": "Manager canonical26 admitted only these two paragraphs; no source edit/new finding/criteria/round",
+  "rows": [
+    {
+      "card": "onboarding/mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md.md",
+      "beforeSha256": "b1b80e484384269540ed91770172bb192f3397a83c6c2e7a9c1668599c7ca5b5",
+      "afterBeforeCitationSha256": "09b5ecb330439eb7dd44fa4b1d5bd79294611bfc7a45769b4741ba43dd7c7c33",
+      "beforeParagraph": "The generated closeout guidance names the existing comparison producer and carries its written/reused generation or refusal. Comparison recording remains review evidence; closeout remains report-only for that result and gains no semantic gate.",
+      "afterParagraph": "The current closeout guidance carries the curator's file-writer handoff as context. The reviewer compares the leaf's Git base and candidate; there is no separate comparison record, and closeout produces none. This does not grant closeout authority or create a semantic gate.",
+      "outsideParagraphBytesPreserved": true,
+      "addedCitationTableOnly": true,
+      "finalCardSha256": "5f7a09ee4e84f3deed099bcd49ff6e867f2c120db64fc7e8061bdbc17850943e",
+      "finalSidecarSha256": "1fb44149ea0c366e744e711a1339b4ef5bc29a159874b42c64fdf6f03e24c472",
+      "verifiedNewReferences": [
+        {
+          "reference": "17",
+          "note": "The current closeout handoff uses Git base/candidate review and produces no separate comparison record.",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md",
+          "anchor": {
+            "blob": "fb7ee6c541ff12537f5e1e9722aef9979c56423d",
+            "content": "sha256:4282df6b178eb0b39554e7a59ef7fb0546b8df982fe8594446d2229f40c31b1c",
+            "locator": {
+              "end": 208,
+              "kind": "line_range",
+              "start": 206
+            }
+          },
+          "excerpt": "   Carry the curator's knowledge hand-off result (the file writer's report) as handoff context. The\n   reviewer compares the leaf's base and candidate from Git, so no separate comparison record exists\n   and closeout produces none.\n"
+        }
+      ]
+    },
+    {
+      "card": "onboarding/mcp/src/agents_remember/application/review_artifact_cleanup.py.md",
+      "beforeSha256": "6a76160dddf6c4aaa8e6858eadbf8d990d1f403b91ed7bcea8b25ca589d0be73",
+      "afterBeforeCitationSha256": "8ed3cc238f1801ffb17073a76679b826ee28e53f3a277e2649f388ab83f1528d",
+      "beforeParagraph": "  (`review_comparison_reclamation`), which write the unavailable-history record first, so a later reopen of the\n  archived generation says the history was deleted and why.",
+      "afterParagraph": "  (`review_comparison_reclamation`). Code-pin release persists its unavailable-history record before releasing\n  the pin. Snapshot deletion verifies and unlinks the snapshot before persisting its deletion history; a failure\n  or interruption in that window can leave removed snapshot content without that history record. This is a\n  static failure window, not an executed witness. The separate attempt receipt written by `ReceiptLedger.begin`\n  before the cleanup sweep remains a distinct safeguard.",
+      "outsideParagraphBytesPreserved": true,
+      "addedCitationTableOnly": true,
+      "finalCardSha256": "d2630a3c7f352f486b4ea5084d7796a48e7e88edd6432dda0731e05e9b508bb8",
+      "finalSidecarSha256": "6b252327a2fca42d0ce9ea57064f9097382abc9a1d5bcfcec0eba2ef561186f0",
+      "verifiedNewReferences": [
+        {
+          "reference": "18",
+          "note": "Code-pin history is persisted before releasing the retained pin.",
+          "path": "mcp/src/agents_remember/application/review_comparison_reclamation.py",
+          "anchor": {
+            "blob": "fe49634e9ec9be9654d8cf2cfd533cd3eaf6208d",
+            "content": "sha256:8ea7439e1b26cd6454e4e363a2f9d6d95e09d045ca2ab19e61d4b3a4d6792f94",
+            "locator": {
+              "kind": "symbol",
+              "name": "release_comparison_code_object"
+            },
+            "path": "mcp/src/agents_remember/application/review_comparison_reclamation.py"
+          },
+          "excerpt": "def release_comparison_code_object(\n    task_root: Path,\n    leaf_id: str,\n    generation_id: str,\n    *,\n    reason: str,\n    recorded_at: str | None = None,\n) -> ComparisonHistoryDeletion:\n    \"\"\"The deletion owner for one generation's code pin: release it and record that it is gone.\n\n    The record is written **before** the ref is deleted, because the record is what a later reopen\n    reads to tell a deliberate release from an accidental loss -- and a crash between the two then\n    leaves the honest ordering (a record for a pin that is still there) rather than the misleading\n    one. Release is explicit and never implicit: nothing in the freeze path calls this.\n    \"\"\"\n\n    manifest = _read_manifest_for_owner(task_root, leaf_id, generation_id)\n    retained = manifest.source.retained\n    repository = Path(manifest.source.code_repository_root)\n    if retained is None:\n        raise CodeObjectRetentionError(\n            \"code-object-ref-absent\",\n            f\"generation {generation_id} recorded no code pin: its tree was already held by \"\n            \"committed history, so there is nothing this owner may release\",\n        )\n    _require_the_ref_names_the_record(repository, retained)\n    names = _custody_names(manifest)\n    deletion = ComparisonHistoryDeletion(\n        target=_CODE_OBJECT_TARGET,\n        deletion_owner=CODE_OBJECT_DELETION_OWNER,\n        cleanup_scope=retained.ref,\n        reason=reason,\n        recorded_at=recorded_at or _now(),\n        released_custody=code_object_observation(repository, retained.tree, names),\n    )\n    record = write_history_deletion(task_root, manifest.leaf_id, manifest.generation_id, deletion)\n    try:\n        release_retained_code_object(\n            repository,\n            retained,\n            reason=reason,\n            recorded_at=deletion.recorded_at,\n            names=names,\n        )\n    except CodeObjectRetentionError:\n        record.unlink(missing_ok=True)\n        raise\n    return deletion\n"
+        },
+        {
+          "reference": "19",
+          "note": "Verified snapshot unlink precedes snapshot history, leaving a static failure window.",
+          "path": "mcp/src/agents_remember/application/review_comparison_reclamation.py",
+          "anchor": {
+            "blob": "fe49634e9ec9be9654d8cf2cfd533cd3eaf6208d",
+            "content": "sha256:f78a7068598131d1b72a4260ff00daa527718fb981c22cd7f3698f08baf466dc",
+            "locator": {
+              "kind": "symbol",
+              "name": "discard_comparison_snapshots"
+            },
+            "path": "mcp/src/agents_remember/application/review_comparison_reclamation.py"
+          },
+          "excerpt": "def discard_comparison_snapshots(\n    task_root: Path,\n    leaf_id: str,\n    generation_id: str,\n    *,\n    reason: str,\n    recorded_at: str | None = None,\n) -> tuple[ComparisonHistoryDeletion, ...]:\n    \"\"\"The deletion owner for one generation's retained knowledge snapshots.\n\n    Each retained half is deleted within its own recorded ``cleanup_scope`` and nowhere else -- the\n    manifest is not touched, because the manifest is the record that the generation *existed* and a\n    reopen has to be able to say so. A present snapshot is read, verified and removed before its\n    deletion history is written; an already absent snapshot is recorded with no removed digest.\n    A failure between removal and the history write can leave the snapshot gone without a record.\n    \"\"\"\n\n    manifest = _read_manifest_for_owner(task_root, leaf_id, generation_id)\n    directory = generation_directory(task_root, manifest.leaf_id, generation_id)\n    deletions: list[ComparisonHistoryDeletion] = []\n    for binding in manifest.knowledge:\n        if binding.state != \"retained\" or binding.artifact is None:\n            continue\n        deletion = ComparisonHistoryDeletion(\n            target=_knowledge_target(binding.side),\n            deletion_owner=SNAPSHOT_DELETION_OWNER,\n            cleanup_scope=binding.artifact.cleanup_scope,\n            reason=reason,\n            recorded_at=recorded_at or _now(),\n            deleted_digest=_measure_and_remove(\n                directory / binding.artifact.relative_path,\n                expected=binding.artifact.sha256,\n                side=binding.side,\n            ),\n        )\n        write_history_deletion(task_root, manifest.leaf_id, manifest.generation_id, deletion)\n        deletions.append(deletion)\n    return tuple(deletions)\n"
+        }
+      ]
+    }
+  ],
+  "sourceReclamationSha256": "2270c48e14970e4b325d1f3759ac88c82dfa18bc835493b8c78bbb355548caa4",
+  "sourceC12Sha256": "ccc1ebee895db3ff670168f676332ff0bdedd06b848b2da02eed5d5b1bc2c2bb",
+  "independentAcceptance": false
+}

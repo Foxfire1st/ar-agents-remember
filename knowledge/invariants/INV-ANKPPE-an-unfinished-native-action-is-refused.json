@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Publishing over an unresolved merge would write a partial tree as if it were judged."
+  },
+  "applicability": "publish_tree_commit's pre-publication checks.",
+  "conditions": [
+    "The repository index or worktree holds an unfinished action."
+  ],
+  "exclusions": [
+    "A clean repository; the check is then a no-op."
+  ],
+  "id": "INV-ANKPPE",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "test_git_command.py::PublishTreeCommitGuardTests::test_an_empty_message_and_an_unfinished_action_publish_nothing; N11-unmerged-before-refusal.log"
+      ],
+      "path": "handoff-stage1.json"
+    },
+    "handoffEntry": "R3 note 11a",
+    "leaf": "260928-MIK-L26",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "An unfinished native action is refused before the index is asked for a tree, including a real unresolved merge.",
+  "status": "proposed",
+  "supersedes": []
+}

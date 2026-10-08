@@ -1,0 +1,170 @@
+{
+  "card": "onboarding/mcp/tests/test_knowledge_reopen.py.md",
+  "preview": {
+    "ok": true,
+    "tokens": 1393,
+    "tokenizer": "tiktoken:o200k_base",
+    "tokenCountExact": true,
+    "operation": "citation_fix",
+    "repoId": "agents-remember",
+    "dryRun": true,
+    "servingBuild": {
+      "version": "3.0.0rc8",
+      "bootedAt": "2026-10-08T11:56:00.022030+00:00",
+      "sourceDigest": "sha256:6659adb8f968f82c8365bc031220a34c1984276112b5cb1dfd5e1c5db841d237",
+      "pythonExecutable": "/home/firefox/.local/share/agents-remember/python/cpython-3.14.8/bin/python3.14",
+      "packageRoot": "/home/firefox/projects/agents-remember/mcp/src/agents_remember",
+      "commit": "3f682987",
+      "dashboardBuild": "cb442492c4373d059462c5a2ad7715f3961bab6f21c1181b2ecf2674b768b4a6"
+    },
+    "status": "converted",
+    "refreshedAnchors": 12,
+    "rewrittenSidecars": [
+      "onboarding/mcp/tests/test_knowledge_reopen.py.json"
+    ],
+    "unreadableSidecars": [],
+    "stale": [
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/mcp/tests/test_knowledge_reopen.py.json",
+        "field": "references.13.targets.0",
+        "target": "mcp/tests/test_knowledge_reopen.py",
+        "state": "stale",
+        "message": "onboarding/mcp/tests/test_knowledge_reopen.py.json: references.13.targets.0: reference target mcp/tests/test_knowledge_reopen.py is stale; refresh it through the onboarding gate (MIK-R30)"
+      },
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/mcp/tests/test_knowledge_reopen.py.json",
+        "field": "references.15.targets.0",
+        "target": "mcp/tests/test_knowledge_reopen.py",
+        "state": "stale:unresolved",
+        "message": "onboarding/mcp/tests/test_knowledge_reopen.py.json: references.15.targets.0: reference target mcp/tests/test_knowledge_reopen.py is stale:unresolved; refresh it through the onboarding gate (MIK-R30)"
+      },
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/mcp/tests/test_knowledge_reopen.py.json",
+        "field": "references.16.targets.0",
+        "target": "mcp/tests/test_knowledge_reopen.py",
+        "state": "stale:unresolved",
+        "message": "onboarding/mcp/tests/test_knowledge_reopen.py.json: references.16.targets.0: reference target mcp/tests/test_knowledge_reopen.py is stale:unresolved; refresh it through the onboarding gate (MIK-R30)"
+      },
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/mcp/tests/test_knowledge_reopen.py.json",
+        "field": "references.17.targets.0",
+        "target": "mcp/tests/test_knowledge_reopen.py",
+        "state": "stale:unresolved",
+        "message": "onboarding/mcp/tests/test_knowledge_reopen.py.json: references.17.targets.0: reference target mcp/tests/test_knowledge_reopen.py is stale:unresolved; refresh it through the onboarding gate (MIK-R30)"
+      },
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/mcp/tests/test_knowledge_reopen.py.json",
+        "field": "references.18.targets.0",
+        "target": "mcp/tests/test_knowledge_reopen.py",
+        "state": "stale:unresolved",
+        "message": "onboarding/mcp/tests/test_knowledge_reopen.py.json: references.18.targets.0: reference target mcp/tests/test_knowledge_reopen.py is stale:unresolved; refresh it through the onboarding gate (MIK-R30)"
+      },
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/mcp/tests/test_knowledge_reopen.py.json",
+        "field": "references.19.targets.0",
+        "target": "mcp/tests/test_knowledge_reopen.py",
+        "state": "stale:unresolved",
+        "message": "onboarding/mcp/tests/test_knowledge_reopen.py.json: references.19.targets.0: reference target mcp/tests/test_knowledge_reopen.py is stale:unresolved; refresh it through the onboarding gate (MIK-R30)"
+      },
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/mcp/tests/test_knowledge_reopen.py.json",
+        "field": "references.20.targets.0",
+        "target": "mcp/tests/test_knowledge_reopen.py",
+        "state": "stale:unresolved",
+        "message": "onboarding/mcp/tests/test_knowledge_reopen.py.json: references.20.targets.0: reference target mcp/tests/test_knowledge_reopen.py is stale:unresolved; refresh it through the onboarding gate (MIK-R30)"
+      },
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/mcp/tests/test_knowledge_reopen.py.json",
+        "field": "references.21.targets.0",
+        "target": "mcp/tests/test_knowledge_reopen.py",
+        "state": "stale:unresolved",
+        "message": "onboarding/mcp/tests/test_knowledge_reopen.py.json: references.21.targets.0: reference target mcp/tests/test_knowledge_reopen.py is stale:unresolved; refresh it through the onboarding gate (MIK-R30)"
+      },
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/mcp/tests/test_knowledge_reopen.py.json",
+        "field": "references.22.targets.0",
+        "target": "mcp/tests/test_knowledge_reopen.py",
+        "state": "stale:unresolved",
+        "message": "onboarding/mcp/tests/test_knowledge_reopen.py.json: references.22.targets.0: reference target mcp/tests/test_knowledge_reopen.py is stale:unresolved; refresh it through the onboarding gate (MIK-R30)"
+      },
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/mcp/tests/test_knowledge_reopen.py.json",
+        "field": "references.24.targets.0",
+        "target": "mcp/tests/test_knowledge_reopen.py",
+        "state": "stale",
+        "message": "onboarding/mcp/tests/test_knowledge_reopen.py.json: references.24.targets.0: reference target mcp/tests/test_knowledge_reopen.py is stale; refresh it through the onboarding gate (MIK-R30)"
+      }
+    ],
+    "authoring": {
+      "dryRun": true,
+      "authoredReferences": 4,
+      "reauthoredReferences": 0,
+      "removedReferences": 24,
+      "authoredCards": [
+        "onboarding/mcp/tests/test_knowledge_reopen.py.md"
+      ],
+      "createdSidecars": [],
+      "unresolvedTargets": [],
+      "refused": [],
+      "authoredCardsCount": 1,
+      "createdSidecarsCount": 0,
+      "unresolvedTargetsCount": 0,
+      "refusedCount": 0
+    },
+    "staleCount": 10,
+    "rewrittenSidecarsCount": 1,
+    "unreadableSidecarsCount": 0
+  },
+  "result": {
+    "ok": true,
+    "tokens": 360,
+    "tokenizer": "tiktoken:o200k_base",
+    "tokenCountExact": true,
+    "operation": "citation_fix",
+    "repoId": "agents-remember",
+    "dryRun": false,
+    "servingBuild": {
+      "version": "3.0.0rc8",
+      "bootedAt": "2026-10-08T11:56:00.022030+00:00",
+      "sourceDigest": "sha256:6659adb8f968f82c8365bc031220a34c1984276112b5cb1dfd5e1c5db841d237",
+      "pythonExecutable": "/home/firefox/.local/share/agents-remember/python/cpython-3.14.8/bin/python3.14",
+      "packageRoot": "/home/firefox/projects/agents-remember/mcp/src/agents_remember",
+      "commit": "3f682987",
+      "dashboardBuild": "cb442492c4373d059462c5a2ad7715f3961bab6f21c1181b2ecf2674b768b4a6"
+    },
+    "status": "converted",
+    "refreshedAnchors": 0,
+    "rewrittenSidecars": [],
+    "unreadableSidecars": [],
+    "stale": [],
+    "authoring": {
+      "dryRun": false,
+      "authoredReferences": 4,
+      "reauthoredReferences": 0,
+      "removedReferences": 24,
+      "authoredCards": [
+        "onboarding/mcp/tests/test_knowledge_reopen.py.md"
+      ],
+      "createdSidecars": [],
+      "unresolvedTargets": [],
+      "refused": [],
+      "authoredCardsCount": 1,
+      "createdSidecarsCount": 0,
+      "unresolvedTargetsCount": 0,
+      "refusedCount": 0
+    },
+    "staleCount": 0,
+    "rewrittenSidecarsCount": 0,
+    "unreadableSidecarsCount": 0
+  }
+}

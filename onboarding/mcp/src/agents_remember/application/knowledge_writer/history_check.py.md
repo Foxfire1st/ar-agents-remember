@@ -77,7 +77,9 @@ The check and its per-row messages.
 
 - The owner's earlier attempts as the base holds them. [6]
 - The revision a changed row may restate: the leaf's latest earlier row, when it is a changed row. [7]
-- A changed row cannot restate a revision once a later row of another disposition is the latest earlier row. [8]
+
+- A change already on the parent line may be answered by a later row; the leaf-owned changed-record rule remains distinct. [8]
+
 
 ### Cross-Repo References
 

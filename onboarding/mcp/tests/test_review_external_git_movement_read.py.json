@@ -2,199 +2,16 @@
   "path": "mcp/tests/test_review_external_git_movement_read.py",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "**The module's own statement of what it drives, what it reads, and why it is a separate module from the managed-sync cases.**\n\nAnchor: \"It lives beside\"; \"rather than inside it\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f10912c6c4aabf944329b780793458ea42566620",
-            "content": "sha256:3344eb6dbdd53f0d0851ce5039e91085953369570b0f209d5337c5d82cd2ede0",
-            "locator": {
-              "end": 19,
-              "kind": "line_range",
-              "start": 15
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "10": {
-      "note": "**The control state: the value an ordinary review of an untouched leaf publishes.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f10912c6c4aabf944329b780793458ea42566620",
-            "content": "sha256:58deb1c80843d9bf2a20f3ea65c398542438963a8afa2a2900190b444418cb2f",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_an_untouched_leaf_reports_no_transition_at_all"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "11": {
-      "note": "**The pair that keeps a missing recorded object apart from a branch switch.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f10912c6c4aabf944329b780793458ea42566620",
-            "content": "sha256:a02022310cf8eb77abb9627f814df1697dc2123a5c21d45593349c146676bde1",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_missing_recorded_object_is_not_reported_as_a_branch_switch"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "12": {
-      "note": "**The pair that keeps an unusable generation apart from \"never reviewed\".**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f10912c6c4aabf944329b780793458ea42566620",
-            "content": "sha256:11013af3e0264f1ccbe1490f2a7ad7488c147604b52cfcbcf98fa43e9452d731",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_generation_that_cannot_be_read_is_unavailable_not_absent"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "13": {
-      "note": "**The case that asserts the documented matrix is the rendered production table, with unknown names refusing.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f10912c6c4aabf944329b780793458ea42566620",
-            "content": "sha256:776877aff563b7366574566772689a159151c0cf7491c5b7de9060ca36d79434",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_the_documented_matrix_and_the_published_matrix_are_one_table"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
     "14": {
-      "note": "**The five validator forgeries, one departing from each clause, against the real published value.**",
+      "note": "Model rejects state contradictions.",
       "targets": [
         {
           "anchor": {
-            "blob": "f10912c6c4aabf944329b780793458ea42566620",
-            "content": "sha256:5090829855d4686acf164e912ab52a3653cb40a76a275dc884463f7f981eaae0",
+            "blob": "9c5a8d9415a05ab1d21c8d793896c230cccdba55",
+            "content": "sha256:1aa9d53b40b0806184268468f6014e8d45dbee0277515aaec290e591dfb56528",
             "locator": {
               "kind": "symbol",
-              "name": "test_the_movement_validator_refuses_each_false_shape"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "15": {
-      "note": "**The case that pins the `unchanged` value as the published control.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f10912c6c4aabf944329b780793458ea42566620",
-            "content": "sha256:6d0e55103a4a95e1304f20666fd10eb2f96065d95d15b9a9f05f70b375a3e2ed",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_the_unchanged_value_is_the_one_the_control_state_publishes"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "16": {
-      "note": "The helper that removes a recorded object so the missing-object state is reachable.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f10912c6c4aabf944329b780793458ea42566620",
-            "content": "sha256:7a0e7e669c770ed9a112a996b0c38db906a875a9b8dc99c5fd0cdfd5a9d1c20f",
-            "locator": {
-              "kind": "symbol",
-              "name": "_delete_loose_object"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "17": {
-      "note": "The helpers that perform the four transitions, each a Git operation rather than an assertion.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f10912c6c4aabf944329b780793458ea42566620",
-            "content": "sha256:882ef1e826a2b46fad3be45d25d4e5c2e91379fa960d5f08c3aaa6acafd48b93",
-            "locator": {
-              "kind": "symbol",
-              "name": "_rebase_work_branch_onto_a_new_official_commit"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "f10912c6c4aabf944329b780793458ea42566620",
-            "content": "sha256:7c9e3f123b7d9f6cbefd082463be2377b524abb6d2b644e8a61b7ccf1e2385ef",
-            "locator": {
-              "kind": "symbol",
-              "name": "_revert_the_leaves_own_commit"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "18": {
-      "note": "The small shared guards the transition helpers are built on.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f10912c6c4aabf944329b780793458ea42566620",
-            "content": "sha256:e43597287e1df7fd84d306bfb624600868c880b3ef59032332e5c107d87cdd5c",
-            "locator": {
-              "kind": "symbol",
-              "name": "_on_branch"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "f10912c6c4aabf944329b780793458ea42566620",
-            "content": "sha256:6cd96b3d0318eaeddc117d61270032316a31cac63d9ddd9ad2250aa25a2504a9",
-            "locator": {
-              "kind": "symbol",
-              "name": "_git_ok"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "19": {
-      "note": "**The module-level case that pins the closeout, closeout-apply and integration results carrying the statement.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f10912c6c4aabf944329b780793458ea42566620",
-            "content": "sha256:fe2c0e881391fd6fbb5d704501ebe3d1c5dc429ecaeb0157a28999137679b971",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_the_closeout_and_integration_results_carry_the_boundary_statement"
+              "name": "test_the_boundary_report_refuses_a_state_its_own_fields_contradict"
             }
           },
           "kind": "test"
@@ -202,141 +19,44 @@
       ]
     },
     "2": {
-      "note": "**The sibling fixture this module shares rather than rebuilds.**",
+      "note": "Current shared enclosure fixture.",
       "targets": [
         {
           "anchor": {
-            "blob": "67148c9cd32ee2920e20b1e33a9f0678bd32381c",
-            "content": "sha256:1cc99cb6f7f3e90741ff527ffc9474ddeea83b8e9c146dc7720788204c43f3f8",
+            "blob": "8f4d87ab4a3b7adffd6b6a39df3a04145b4f263b",
+            "content": "sha256:3ad7e4b59069321bbb7137bd8380813a68e60273f8605b040319ac41066be6fd",
             "locator": {
               "kind": "symbol",
-              "name": "ReviewSyncFixture"
+              "name": "TreeReceiptFixture"
             },
-            "path": "mcp/tests/test_review_sync_rebinding.py"
+            "path": "mcp/tests/test_review_final_output_receipt.py"
           },
           "kind": "test"
-        }
-      ]
-    },
-    "20": {
-      "note": "**The module-level case that pins the absence a leaf which published nothing reports.**",
-      "targets": [
+        },
         {
           "anchor": {
-            "blob": "f10912c6c4aabf944329b780793458ea42566620",
-            "content": "sha256:29170c40a9da7ed354450b389ee90e7595e02d487da5e1e1733774853f4485a1",
+            "blob": "8f4d87ab4a3b7adffd6b6a39df3a04145b4f263b",
+            "content": "sha256:ad730869b4cbec807e6d8d68179d6e88f399d8edaec19af5fc8a4e2d6a4436d5",
             "locator": {
               "kind": "symbol",
-              "name": "test_a_result_whose_leaf_published_nothing_states_the_absence"
-            }
+              "name": "tree_fixture"
+            },
+            "path": "mcp/tests/test_review_final_output_receipt.py"
           },
           "kind": "test"
-        }
-      ]
-    },
-    "21": {
-      "note": "**The lane registration that makes these cases part of the governed `integration` population.**\n\nAnchor: \"mcp/tests/test_review_external_git_movement_read.py\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "ad32196677d5800992fe4294b439f3e28af150ec",
-            "content": "sha256:8a4b6c56f0180bedc3c443a06d93c7c8674441a5c20feb3eac7e0f16dd5c29d4",
-            "locator": {
-              "end": 396,
-              "kind": "line_range",
-              "start": 396
-            },
-            "path": "mcp/tests/test-evidence-lanes.toml"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "22": {
-      "note": "**A lifecycle consumer row that names this module, so the artifact census still counts it.**\n\nAnchor: \"mcp/tests/test_review_external_git_movement_read.py\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
-            "content": "sha256:a01be434638f9450d9aa52e5c45d5100534a39dbae492710e1a461c0e5596a69",
-            "locator": {
-              "end": 770,
-              "kind": "line_range",
-              "start": 765
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "485d1f6f8523e9e114933431e02a38e85bd0ea7a",
-            "content": "sha256:ab600c454631077446b75ce6e14a9b51c76370d4c2129ffcb88cdab503f366d4",
-            "locator": {
-              "end": 1337,
-              "kind": "line_range",
-              "start": 1337
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
-            "content": "sha256:3c0310a330b4eb9eac20d0694ea49fae5d75bfc5f92c9f94076499878020db3f",
-            "locator": {
-              "end": 1468,
-              "kind": "line_range",
-              "start": 1468
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
-            "content": "sha256:8a4b6c56f0180bedc3c443a06d93c7c8674441a5c20feb3eac7e0f16dd5c29d4",
-            "locator": {
-              "end": 771,
-              "kind": "line_range",
-              "start": 771
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "24": {
-      "note": "**The documented section the matrix case asserts against, generated from the production table.**\n\nAnchor: \"Raw Git Identity Boundary\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "c6a17a1f48a3af0ca0ff337739f01606e2ab358a",
-            "content": "sha256:eb3d5c24628816fd9af997ab2acd9f39217939c07784aafe5f67a2eb55d67c7d",
-            "locator": {
-              "end": 148,
-              "kind": "line_range",
-              "start": 113
-            },
-            "path": "docs/reference/worktrees-c09.md"
-          },
-          "kind": "code"
         }
       ]
     },
     "25": {
-      "note": "The sibling module that owns the managed-sync half of the same read, whose fixture this module shares.",
+      "note": "Current managed-sync sibling cases.",
       "targets": [
         {
           "anchor": {
-            "blob": "1f7a5c00243c61772ffbe8b1a4e92b8d0130ec0e",
-            "content": "sha256:144c970c2bd141cff70b0b5f86133e03fa7ee144fc40361e21372ec14b4ebcc3",
+            "blob": "c92a9621f5a0f54288f3d50ab9ff24dfe15ca1ac",
+            "content": "sha256:34e16d5d7e7f61d9cbbb8ae7bb545c3329d8a3fe0790cbf1be30cb7e645273be",
             "locator": {
               "kind": "symbol",
-              "name": "LiveReviewMovementTests"
+              "name": "test_live_review_labels_the_exact_memory_input_a_sync_moved"
             },
             "path": "mcp/tests/test_review_sync_movement_read.py"
           },
@@ -344,49 +64,16 @@
         }
       ]
     },
-    "3": {
-      "note": "**The shipped review read these cases drive.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "75a68c3874ea545bd49e863046a120e320587404",
-            "content": "sha256:cad473d9553028ef6f4d80aafcf02c0cb51d04ce26812204b6d80788ed0fe751",
-            "locator": {
-              "kind": "symbol",
-              "name": "read_knowledge_review"
-            },
-            "path": "mcp/src/agents_remember/application/knowledge_review.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "4": {
-      "note": "**The class whose docstring states the defect it protects: the packet's non-conforming example in its second form.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f10912c6c4aabf944329b780793458ea42566620",
-            "content": "sha256:511c67cdf1960356ee40101957853ce7a25113effdb75d1a7ed620cff71d2c96",
-            "locator": {
-              "kind": "symbol",
-              "name": "RawGitIdentityBoundaryTests"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
     "5": {
-      "note": "**The case that drives a real rebase and proves the review stops reading as current.**",
+      "note": "Uncommitted tree supplies no observed work-head proof.",
       "targets": [
         {
           "anchor": {
-            "blob": "f10912c6c4aabf944329b780793458ea42566620",
-            "content": "sha256:a6d47c69b3d3395272464c9be0be526dc6cf49d88c080123c2d96110179efb3f",
+            "blob": "9c5a8d9415a05ab1d21c8d793896c230cccdba55",
+            "content": "sha256:a8d3e92e00823fdad936f1ca5f1b85ccda91343f051aefeff7bdb2939a3d3275",
             "locator": {
               "kind": "symbol",
-              "name": "test_a_raw_rebase_is_measured_and_the_review_stops_reading_as_current"
+              "name": "test_uncommitted_tree_record_never_invents_an_observed_work_branch_head"
             }
           },
           "kind": "test"
@@ -394,15 +81,15 @@
       ]
     },
     "6": {
-      "note": "**The control that keeps R22's managed-sync fact and this leaf's raw-Git fact apart.**",
+      "note": "Source replacement without fabricated UUID.",
       "targets": [
         {
           "anchor": {
-            "blob": "f10912c6c4aabf944329b780793458ea42566620",
-            "content": "sha256:120ee1e67523a46c1807b4a76f116b447625d5d6d7781e334fc55724b07fa015",
+            "blob": "9c5a8d9415a05ab1d21c8d793896c230cccdba55",
+            "content": "sha256:fe9251e5cc207a7f279937cf641dc32c4531c5dd7b3938a4f771fc6f7699af39",
             "locator": {
               "kind": "symbol",
-              "name": "test_a_managed_sync_alone_is_not_reported_as_a_raw_transition"
+              "name": "test_raw_history_replacement_reports_retained_source_without_fabricated_uuid"
             }
           },
           "kind": "test"
@@ -410,15 +97,15 @@
       ]
     },
     "7": {
-      "note": "The case where the worktree left its declared branch and the comparison cannot be taken at all.",
+      "note": "Leaving the declared branch is a switch.",
       "targets": [
         {
           "anchor": {
-            "blob": "f10912c6c4aabf944329b780793458ea42566620",
-            "content": "sha256:f58062efaad036cc2a32157157a49f2087a0df0b6eaf75ccfbdbf3a1e2ceb842",
+            "blob": "9c5a8d9415a05ab1d21c8d793896c230cccdba55",
+            "content": "sha256:ad43c36815e8e012cda03b03a548b14175640381aaf1f4ac2d0801a80456d016",
             "locator": {
               "kind": "symbol",
-              "name": "test_a_worktree_that_left_its_declared_branch_reports_the_switch"
+              "name": "test_a_checkout_that_left_its_declared_branch_is_a_switch_and_never_a_movement"
             }
           },
           "kind": "test"
@@ -426,31 +113,15 @@
       ]
     },
     "8": {
-      "note": "The cherry-pick, revert and ordinary-commit case, each in its own fixture.",
+      "note": "Commit-bound ancestry states remain distinct.",
       "targets": [
         {
           "anchor": {
-            "blob": "f10912c6c4aabf944329b780793458ea42566620",
-            "content": "sha256:c221c24fb4095dc58b2ffdc3975504261fcdd8053e9494d1df678a6986c2caf3",
+            "blob": "9c5a8d9415a05ab1d21c8d793896c230cccdba55",
+            "content": "sha256:b72e121ba42d3ca5a67aa14e1e2dc4a4aa1a1db888873b30106a4a39ce51d152",
             "locator": {
               "kind": "symbol",
-              "name": "test_each_forward_moving_transition_is_exercised_and_reported_as_what_it_is"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "9": {
-      "note": "The case where the declared source branch is rewritten while the leaf's own branch is untouched.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f10912c6c4aabf944329b780793458ea42566620",
-            "content": "sha256:503c3a1ca5f556a3c3131adac9f6c63c531f898aab46e61c0c2dd3a3c9af9b64",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_rewritten_official_line_replaces_the_recorded_source_base"
+              "name": "test_work_branch_ancestry_tells_an_untouched_branch_from_an_advance_and_a_rewrite"
             }
           },
           "kind": "test"

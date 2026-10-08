@@ -1,0 +1,59 @@
+{
+  "advertisedPaths": 75,
+  "afterIndices": {
+    "code": {
+      "raw": "db21d7b0fb73f8ee332136876da743c9f355b4e85da21caff12b52ae287d79dd",
+      "stageNul": "b30af563126f0f38422fb8a598fd9e292113a19619ad0694567d44ecf170d313"
+    },
+    "memory": {
+      "raw": "2e7cab2cbaf111b587456f5cfb20bfdc1877a2dcf1fe4f902a96f67fae45ed97",
+      "stageNul": "9c495d071fe944e090b84a420696af7368684df8c6ae11054143cd698c29de28"
+    }
+  },
+  "beforeIndices": {
+    "code": {
+      "raw": "db21d7b0fb73f8ee332136876da743c9f355b4e85da21caff12b52ae287d79dd",
+      "stageNul": "b30af563126f0f38422fb8a598fd9e292113a19619ad0694567d44ecf170d313"
+    },
+    "memory": {
+      "raw": "2e7cab2cbaf111b587456f5cfb20bfdc1877a2dcf1fe4f902a96f67fae45ed97",
+      "stageNul": "9c495d071fe944e090b84a420696af7368684df8c6ae11054143cd698c29de28"
+    }
+  },
+  "bothRawAndSemanticIndexesPreserved": true,
+  "captureFailuresBeforeAnyCandidateWrite": [
+    {
+      "correction": "Use actual fullFrames.metadata.rawIndexSHA256/stageNulSHA256 fields.",
+      "result": "KeyError rawIndexSha256",
+      "step": "first metadata read"
+    },
+    {
+      "correction": "Only kind=code targets participate in code-anchor lineage; external/task targets retained unchanged.",
+      "result": "KeyError anchor",
+      "step": "first code reference lineage walk"
+    },
+    {
+      "correction": "Two named skill references carry accepted incoming anchors; actual working skill preserves retirement meaning at moved lines. Refresh deferred and pending explicitly recorded, no invented fingerprint.",
+      "result": "AssertionError",
+      "step": "incoming skill addition strict current-blob check"
+    },
+    {
+      "correction": "Use the exact incoming realizes collection rather than the subsequent proves collection.",
+      "result": "KeyError RLZ-RBHN6V",
+      "step": "atomic cleanup reference construction"
+    }
+  ],
+  "fullCodePhysicalAndDirectoriesPreserved": true,
+  "nativeUnmergedOperandsRetained": 181,
+  "noOwnedOperationInFlightAfterThisCommand": true,
+  "noStageRefSyncContinueQAOrKnowledgeIngest": true,
+  "outsideMemoryFileCount": 9265,
+  "outsideMemoryPhysicalAndDirectoryPopulationPreserved": true,
+  "outsidePhysicalDifferences": [],
+  "ownEvidencePrefixExplicitlyExcluded": "notes/l26-curation-takeover/d7a5e018/fix3/source41-conflicts/",
+  "pendingAnchorWork": "Only after actual paired completion: scoped refresh of retained and incoming accepted-source anchors where current working source differs. No reference-health or READY claim here.",
+  "preservedReviewDisposition": "R3 BLOCK remains dated immutable subject; thirteen credited original findings remain accepted and O01 alone rejected. This conflict resolution is not the21 O01 semantic repair or an extra verification.",
+  "retainedPresent": 31,
+  "state": "content-resolved-not-staged",
+  "verifiedCurrentSourceAbsentDeletions": 44
+}

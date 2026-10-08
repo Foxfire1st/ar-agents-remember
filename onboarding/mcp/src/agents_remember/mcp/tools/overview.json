@@ -6,7 +6,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
+            "blob": "12b2d18549a3d15a005d7fe16fc4b6f3dbc25be1",
             "content": "sha256:fdb9ef8db381f88789d2d788db205da97ac71618dbb2d5ea10c39141240fab76",
             "locator": {
               "kind": "symbol",
@@ -31,15 +31,39 @@
       ]
     },
     "10": {
-      "note": "The refusal detail's new sentence.\n\nAnchor: \"On a converted memory tree\"",
+      "note": "Three delegates serve read, Git diff and tree validation.",
       "targets": [
         {
           "anchor": {
-            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
-            "content": "sha256:498c50b26483703205f3bc4fc068cf8b26d83bd8b3c40723a98f4877c46b63ca",
+            "blob": "12b2d18549a3d15a005d7fe16fc4b6f3dbc25be1",
+            "content": "sha256:62a1299117348503e6a6bf61e906eb424b3adc6a2942c73814d29d008255ad4d",
             "locator": {
               "kind": "symbol",
-              "name": "_change_result"
+              "name": "knowledge_read_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "12b2d18549a3d15a005d7fe16fc4b6f3dbc25be1",
+            "content": "sha256:56aaadd50653a2a36a2842a9f1ea917b9ce7d53e8f6ff3ae6301b3398b471f55",
+            "locator": {
+              "kind": "symbol",
+              "name": "knowledge_diff_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "12b2d18549a3d15a005d7fe16fc4b6f3dbc25be1",
+            "content": "sha256:0b24a3fa35f7dfa0f5991e96ab2739c7b83316b42a48b79aafedaad56bdca22f",
+            "locator": {
+              "kind": "symbol",
+              "name": "knowledge_integrity_check_payload"
             },
             "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
           },
@@ -103,7 +127,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "217ff46ba831274f6cea94641a60077c17749cf0",
+            "blob": "7a06ecec104b9bae8ca879519cedf9db8cf40aaa",
             "content": "sha256:5e15c91b59b90db38d3db51fbe86a1dcff207b43893ad43aabd56cf3e6e099e3",
             "locator": {
               "kind": "symbol",
@@ -120,7 +144,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8ac4a3f3473b2fe58b63f722b05835dd7bd6713b",
+            "blob": "8e8f924f3bcf2e178299af15d0d60b6c338fd98c",
             "content": "sha256:bbb5cca63d43ead2e0f1ad32f19424df622d951e01b873c11f562c947aadb02e",
             "locator": {
               "end": 65,
@@ -138,7 +162,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8ac4a3f3473b2fe58b63f722b05835dd7bd6713b",
+            "blob": "8e8f924f3bcf2e178299af15d0d60b6c338fd98c",
             "content": "sha256:5261f1bd25d426960cb7aa279d69e4f5cc4b5c82d338d617a3e656c5c5cb5b35",
             "locator": {
               "end": 59,
@@ -227,7 +251,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2e1832a7e5f574066e78c4bf63f69851a912ddf2",
+            "blob": "5841f05a99a45b73c2061c46de06ba14898a5d65",
             "content": "sha256:56c28a24b4574bbd167a6c2db330fac203f0c5b8bbec11f82510db2ca04cb251",
             "locator": {
               "end": 219,
@@ -477,95 +501,73 @@
         }
       ]
     },
-    "33": {
-      "note": "The shared selection and its refusal mapping, which since MIK-R01 also refuses a named root with no code tree by name.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
-            "content": "sha256:332f7b79473dc6c398582497f5995186709cf808bc776a5276073be83b06b677",
-            "locator": {
-              "kind": "symbol",
-              "name": "_select"
-            },
-            "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
-            "content": "sha256:006a7730b74ff929e59726f0223be05eb81fa3389d5c10e1b337bd619dadaf10",
-            "locator": {
-              "kind": "symbol",
-              "name": "_SELECTION_FAILURES"
-            },
-            "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
-            "content": "sha256:f1180471fd0347804bd270aeced3e698667044ffee9f812dd67dd59afef7afdb",
-            "locator": {
-              "kind": "symbol",
-              "name": "_selection_refusal"
-            },
-            "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "34": {
-      "note": "A partial index is never presented as complete.",
+      "note": "Read carries tree/index state and partial-index completeness.",
       "targets": [
         {
           "anchor": {
-            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
-            "content": "sha256:cb469cf17bd4dc08dc7b2401c29aa1661adfb4107bf6ce2bb1d6a6d352d16795",
+            "blob": "12b2d18549a3d15a005d7fe16fc4b6f3dbc25be1",
+            "content": "sha256:7fffdcb7bb12a477931fce751c44f0d545603e6735db5c1c9686e85f414e6491",
             "locator": {
               "kind": "symbol",
-              "name": "_index_complete"
+              "name": "_tree_extras"
             },
             "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "694a9727c6739a654c8fec5abf47260e23bd77b5",
+            "content": "sha256:85b6a10d42ca9ab50606b80eae6b36d76b3bdc6869ed836f27dcbeeaf6ca9a2b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_read_reports_a_partial_index_as_incomplete"
+            },
+            "path": "mcp/tests/test_knowledge_index_surfaces.py"
+          },
+          "kind": "test"
         }
       ]
     },
     "35": {
-      "note": "The projection's dataset, or the refusal of an unheld seed.",
+      "note": "Legacy paths and unheld current seeds refuse truthfully.",
       "targets": [
         {
           "anchor": {
-            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
-            "content": "sha256:a00dbff60c6c47b22cf1d530d48a5b1f53c1f40c987664664142cc80a107b269",
+            "blob": "12b2d18549a3d15a005d7fe16fc4b6f3dbc25be1",
+            "content": "sha256:b614a2ec3a46b8674639962aba341db13f6543b462b341f13a67a9a2510c8574",
             "locator": {
               "kind": "symbol",
-              "name": "_projection_selection"
+              "name": "_memory_tree_refusal"
             },
             "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
           },
           "kind": "code"
-        }
-      ]
-    },
-    "36": {
-      "note": "A converted tree's citation-fix result is bounded for transport.",
-      "targets": [
+        },
         {
           "anchor": {
-            "blob": "229c8d54bf92f71204f5239ad062fe7861b9e5ae",
-            "content": "sha256:fbabee3e8414d55363ba542adaf2f26747e94ff6b238ae1aa8ea34d7714aabf2",
+            "blob": "694a9727c6739a654c8fec5abf47260e23bd77b5",
+            "content": "sha256:5bc3a8924f717e9a6d5081c853dbe84a471c3533bcc2f1ee6131c4f9802bbdc3",
             "locator": {
               "kind": "symbol",
-              "name": "bounded_citation_fix"
+              "name": "test_every_knowledge_tool_refuses_legacy_memory_and_opens_no_database"
             },
-            "path": "mcp/src/agents_remember/mcp/tools/memory.py"
+            "path": "mcp/tests/test_knowledge_index_surfaces.py"
           },
-          "kind": "code"
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "694a9727c6739a654c8fec5abf47260e23bd77b5",
+            "content": "sha256:7e1e729d4246d5a2324fb9fe15f5684ab9fcb8e6a56f1fe41f480e811afb4724",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_converted_tree_refuses_a_seed_it_does_not_hold"
+            },
+            "path": "mcp/tests/test_knowledge_index_surfaces.py"
+          },
+          "kind": "test"
         }
       ]
     },
@@ -622,7 +624,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
+            "blob": "12b2d18549a3d15a005d7fe16fc4b6f3dbc25be1",
             "content": "sha256:7fffdcb7bb12a477931fce751c44f0d545603e6735db5c1c9686e85f414e6491",
             "locator": {
               "kind": "symbol",
@@ -685,7 +687,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
+            "blob": "12b2d18549a3d15a005d7fe16fc4b6f3dbc25be1",
             "content": "sha256:7fffdcb7bb12a477931fce751c44f0d545603e6735db5c1c9686e85f414e6491",
             "locator": {
               "kind": "symbol",
@@ -770,7 +772,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
+            "blob": "12b2d18549a3d15a005d7fe16fc4b6f3dbc25be1",
             "content": "sha256:7fffdcb7bb12a477931fce751c44f0d545603e6735db5c1c9686e85f414e6491",
             "locator": {
               "kind": "symbol",
@@ -787,7 +789,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
+            "blob": "12b2d18549a3d15a005d7fe16fc4b6f3dbc25be1",
             "content": "sha256:006a7730b74ff929e59726f0223be05eb81fa3389d5c10e1b337bd619dadaf10",
             "locator": {
               "kind": "symbol",

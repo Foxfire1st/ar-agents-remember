@@ -1,0 +1,22 @@
+{
+  "INV-753SKJFF": "MIK-R26 deliberately supersedes dataset selection: resolve_published_intent selects the converted tree's index and refuses legacy roots. The original dataset and not-recorded promises are preserved only in prior Git history.",
+  "INV-VVMNM9B6": "The retired batch writer's allocation-content digest and journal replay are gone. TargetRealization describes authored values but does not enforce allocation_content_conflict, so retaining that realization would assert a mechanism the converted writer lacks.",
+  "INV-E8655Z54": "The route-value refusal survives in handoff._targets via realization_refusal; allocation-journal replay exemptions do not survive the database retirement.",
+  "INV-J7179RG5": "The same role/rationale value and length checks survive at handoff._targets. The old committed-allocation bypass is retired and cannot scope the current file parser.",
+  "INV-H6A6JS63": "The live _targets parser enforces the authored explanation. Database allocation journals and their replay exemptions are no longer an applicable condition.",
+  "INV-7W11WKKN": "Collection ownership and honest availability survive in review_evidence_records; the retired freeze publisher and reserved-positive-input checks do not. This revision preserves that live meaning and drops the unsupported publication claim.",
+  "INV-9NCBGQSY": "MIK-R26 retires even the unconverted dataset read route. Historical source and tree comparisons remain readable; the old alternative that still opened the canonical dataset is deliberately superseded.",
+  "INV-FYZQK0": "Preserve the observed partial-publication guarantee while removing the exclusion's false assertion that ordinary unpublished refusals restore nothing.",
+  "INV-JZD1F5": "The documentation obligation remains current independently of any named final freeze; the authoring removes its temporary delivery-snapshot scope.",
+  "INV-PPGGTW": "The path-less request compares the full selected tree; an explicitly absent selector is refused. Scope must cover both omission disclosure and selector refusal rather than exclude the behavior its statement promises. The retained statement names a stable protected behavior; replace the generic admission with this specific failure and boundary.",
+  "INV-1BBPF3": "The retained statement names a stable protected behavior; replace the generic admission with this specific failure and boundary.",
+  "INV-K69R3M": "The retained statement names a stable protected behavior; replace the generic admission with this specific failure and boundary.",
+  "INV-J6PAD2": "The retained statement names a stable protected behavior; replace the generic admission with this specific failure and boundary.",
+  "INV-JM868W": "The retained statement names a stable protected behavior; replace the generic admission with this specific failure and boundary.",
+  "FAM-7B6N3Y4Q": "The three members were examined together: writer reachability, one resolved read location and real taskless setup authority still give one authoring/read-location guarantee. The unconverted batch writer is deliberately removed by MIK-R26.",
+  "FAM-KQQE74ZT": "Keep the five live explanation/target-validation obligations and remove the two retired allocation-replay obligations. Their distinct scope and exact current revisions were examined; _targets delegates to the retained value checker rather than the retired batch writer.",
+  "FAM-SK1BFPE2": "The former joint guarantee combined semantic-scope admission with the allocated-scope conflict protocol. The latter is retired; preserve INV-KBCKV7N1 as a standalone scoped obligation rather than claim its old partner still implements a joint promise.",
+  "FAM-XZ5BR65G": "All current and retired siblings were examined. Tree comparison and curator custody survive; canonical dataset operands and the comparison-publishing producer do not. The guarantee is narrowed to the actual retained historical read paths.",
+  "FAM-61DY2V": "The current shared publication and both leaf routes implement admitted-tree/parent/index binding; direct landing is no longer an admission-snapshot exception. Preserve the Owner's R4-O2 partial-publication limit rather than inventing universal rollback. All unchanged base members and added members are retained and examined.",
+  "FAM-SDS92V": "The six members jointly cover retirement detection, continued guard enforcement and protected cleanup, each in its actual scope. The earlier universal production/refusal sentence overstated what test instrumentation and one reviewed cleanup can measure."
+}

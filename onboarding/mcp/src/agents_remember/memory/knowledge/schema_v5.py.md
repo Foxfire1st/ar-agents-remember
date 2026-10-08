@@ -6,20 +6,13 @@
 
 ## Purpose
 
-Generation 5's appended table and nothing else: the authored `CitationBinding` record. Generation 1's
-ten tables, generation 2's six, generation 3's four and generation 4's one stay declared verbatim in
-`schema.py`, `schema_v2.py`, `schema_v3.py` and `schema_v4.py`.
+Retained citation_binding appended-table declarations for the derived-index schema. The historical schema_v5 filename names its origin, not a separately openable generation. The one composition keeps the base and all appended declarations in recorded order. [5] [6]
 
 ## Code Commentary
 
 ### Logic
 
-`APPENDED_TABLES` names the one table, and the five registries beside it (`APPENDED_COLUMNS`,
-`APPENDED_PRIMARY_KEYS`, `APPENDED_JSON_COLUMNS`, `APPENDED_TABLE_DDL`, `APPENDED_INDEX_DDL`,
-`APPENDED_TRIGGERS`, `APPENDED_FEATURES`) declare what `_compose_generation_5` merges into generation
-4's maps. `citation_binding` carries the prose owner revision (repository, confined document path,
-recorded blob identity), the local citation key as a declared form plus its exact text, the typed
-target reference, the locator's discriminator, and the nullable governing-route foreign key.
+APPENDED_TABLES and the column/key/JSON/DDL/index/trigger/feature maps contribute citation_binding to the sole _compose pass. The table retains document revision, exact local key, typed target/locator and nullable governing route. Its constraints seal those recorded facts; no generation registry supplies a creation or migration route. [1] [3] [5]
 
 ### Invariants And Boundaries
 
@@ -62,12 +55,13 @@ No configured domain documentation could be checked.
 - The typed-JSON column registry, which is where the binding payload actually travels. [2]
 - **The table DDL: the unique key over the recorded key text, and the `CHECK` that names exactly the shipped locator union.** [3]
 - The index DDL and the triggers that seal the recorded facts against in-place re-binding. [4]
-- **The composition that puts generation 5's table after generation 4's twenty-one and asserts the prefix equality.** [5]
-- The schema name and version generation 5 declares, and its place in the registry. [6]
+
+- The one schema composition appends retained definitions in order. [5]
+
+
+- Single v9 schema, not an openable generation5. [6]
+
 - The generation-2 `route` table the governing-route foreign key resolves against. [7]
-- The generation the write path requires before a binding row may exist. [8]
-- **The cases that measure the append without touching generation 4's names, the absent identity column, and the locator `CHECK` naming exactly the shipped union.** [9]
-- The boundary case that proves a generation-4 dataset is refused the binding table rather than widened. [10]
 
 ### Cross-Repo References
 

@@ -1,0 +1,3 @@
+usage: agents-remember [-h]
+                       {dashboard,memory-citations,memory-backfill,knowledge-ingest,knowledge-bootstrap,knowledge-format,knowledge-convert,knowledge-validate,knowledge-index,knowledge-worklist,knowledge-routes,knowledge-census,knowledge-copies,paseo} ...
+agents-remember: error: argument command: invalid choice: 'review-record-comparison' (choose from 'dashboard', 'memory-citations', 'memory-backfill', 'knowledge-ingest', 'knowledge-bootstrap', 'knowledge-format', 'knowledge-convert', 'knowledge-validate', 'knowledge-index', 'knowledge-worklist', 'knowledge-routes', 'knowledge-census', 'knowledge-copies', 'paseo')

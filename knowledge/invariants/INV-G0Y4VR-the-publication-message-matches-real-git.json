@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "A message git would abort on, committed with different content than git commit -m stores, would ship an unintended message."
+  },
+  "applicability": "Publication message cleanup and its refusals.",
+  "conditions": [
+    "The repository's configured cleanup mode and comment character apply."
+  ],
+  "exclusions": [
+    "A message file path; the primitive takes one message value."
+  ],
+  "id": "INV-G0Y4VR",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "test_git_command.py::PublishTreeCommitGuardTests::test_the_message_is_what_git_commit_m_stores_and_a_refusal_where_it_aborts; N11-empty-after-cleanup.log; N11-auto-comments.log; N12-invalid-cleanup.log"
+      ],
+      "path": "handoff-stage1.json"
+    },
+    "handoffEntry": "R3 notes 11b and 11c",
+    "leaf": "260928-MIK-L26",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The publication message matches real git commit -m cleanup behavior and refuses invalid modes and messages made empty by cleanup.",
+  "status": "proposed",
+  "supersedes": []
+}

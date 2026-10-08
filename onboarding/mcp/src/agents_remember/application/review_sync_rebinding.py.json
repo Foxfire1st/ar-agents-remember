@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/application/review_sync_rebinding.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -275,7 +276,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4ec2a40b7a16de3a039669fc3091bc2b280706a4",
+            "blob": "a3c76aa75aa29226350c1d16fe7d5613c131e5ab",
             "content": "sha256:158617bfc46805997cb88e9307da60d441550134fc68959c282deadc1e2266ac",
             "locator": {
               "kind": "symbol",
@@ -309,7 +310,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "089d51d117d71e9f773b5d7297b03ddc037a9a97",
+            "blob": "5f1fb1992640a2805521f2956bf943694e352894",
             "content": "sha256:87757e4339e7c19f1a026e13d00e4aa193e7a0755fb81b60e184edf04ae29031",
             "locator": {
               "kind": "symbol",
@@ -321,7 +322,7 @@
         },
         {
           "anchor": {
-            "blob": "089d51d117d71e9f773b5d7297b03ddc037a9a97",
+            "blob": "5f1fb1992640a2805521f2956bf943694e352894",
             "content": "sha256:b0cd4a2490fa79806b19d1b7854d5b9a05b2663b9aa5e3a6eccb3c3359e8f6c9",
             "locator": {
               "kind": "symbol",
@@ -334,34 +335,17 @@
       ]
     },
     "27": {
-      "note": "The selection rule this record names, owned by the final-output receipt module.",
+      "note": "Select the retained tree comparison, not a canonical dataset generation.",
       "targets": [
         {
           "anchor": {
-            "blob": "4db8e6d4458f6338c1acae8e981d08b86d2b1138",
-            "content": "sha256:79c27df0371f049e45c9d015082ecf8b53c806d7d72559f7fa9f73b28a7b04cd",
+            "blob": "6a81a8342eae21ae87cc564a14db157d557fb56b",
+            "content": "sha256:1a8b0df3c0e4e39a752ac3f6ab9fbe5f24376bc19a9b4cdf5ccfb4901169f1f8",
             "locator": {
               "kind": "symbol",
-              "name": "select_review_generation"
+              "name": "select_review_comparison"
             },
             "path": "mcp/src/agents_remember/application/review_final_output_receipt.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "28": {
-      "note": "The freeze route that publishes the successor this record's remedy names.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "7f8632ed58fd13140ba8fb78dc33dfac2f12df94",
-            "content": "sha256:1a8ba2c5df7a581600dac122b98e8bbf092d78a69e8cc91bbddb12bb430223ae",
-            "locator": {
-              "kind": "symbol",
-              "name": "freeze_review_comparison"
-            },
-            "path": "mcp/src/agents_remember/application/review_comparison_freeze.py"
           },
           "kind": "code"
         }
@@ -372,7 +356,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bcd26120e2d3769670e1bd3b4b1406ef094002aa",
+            "blob": "a53c6f42e92d352bb02456ae4a50a3b52c58e2e4",
             "content": "sha256:97189e515d2b74227fd659bbd308186abc5b49de8171ba308d9b45a013742c38",
             "locator": {
               "kind": "symbol",
@@ -384,7 +368,7 @@
         },
         {
           "anchor": {
-            "blob": "bcd26120e2d3769670e1bd3b4b1406ef094002aa",
+            "blob": "a53c6f42e92d352bb02456ae4a50a3b52c58e2e4",
             "content": "sha256:20f6a12e1f175ebc7ff71806b44144f91251d45d92d4dbce191f95ccd3f2fd03",
             "locator": {
               "kind": "symbol",
@@ -396,7 +380,7 @@
         },
         {
           "anchor": {
-            "blob": "bcd26120e2d3769670e1bd3b4b1406ef094002aa",
+            "blob": "a53c6f42e92d352bb02456ae4a50a3b52c58e2e4",
             "content": "sha256:235530d66b6a614a5e796a88c1b1f12d0d19f8e1194a5a30e4e12454ce537b09",
             "locator": {
               "kind": "symbol",
@@ -413,7 +397,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4bde11e7cf0ae5120d98215524297fba21a57dd3",
+            "blob": "e1d40f3cd8b8ad7c20b47ba43bf08632f20a09c5",
             "content": "sha256:1f64ea4d8bdae2397c176a965614efb2ac534341dc2b6c4cc05fcdbe217d42ea",
             "locator": {
               "kind": "symbol",
@@ -446,23 +430,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "501e0bd1224bd9910b2f445e7245277f8ed88105",
-            "content": "sha256:a26b10bf2b87b50893180b1b3246bbb2cb72f0062f8d956290b22857a1ca074e",
+            "blob": "bda6abac209b8bb555561b79169c66526d769437",
+            "content": "sha256:f2f5096b9f88b97e9b50600c7f00890668eae6c683a8ce5360781d8a2531bd45",
             "locator": {
-              "kind": "symbol",
-              "name": "declared_publication_location"
-            },
-            "path": "mcp/src/agents_remember/application/knowledge_publication_route.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e6908cf378263458d5c33e339b9a7a0c60445c27",
-            "content": "sha256:38c9b05133b665ee1d7d4cf015170877e31dbbef0cdc4a9462337c2b320137c2",
-            "locator": {
-              "kind": "symbol",
-              "name": "resolve_published_intent"
+              "end": 168,
+              "kind": "line_range",
+              "start": 168
             },
             "path": "mcp/src/agents_remember/application/published_intent.py"
           },
@@ -534,15 +507,27 @@
       ]
     },
     "35": {
-      "note": "**The cases that drive the real production sync tool: the movement measurement, the clean union with parked WIP returned, the forged verdict, every carried-nothing state, the locator clause, and the reader after its own reclamation.**",
+      "note": "Exact/memory-only movements are measured without relabeling; parked work is captured without staging.",
       "targets": [
         {
           "anchor": {
-            "blob": "67148c9cd32ee2920e20b1e33a9f0678bd32381c",
-            "content": "sha256:8935e06ba98a1216af90578e795e78ab12a5548ffd834b9e6089cae157474f7c",
+            "blob": "efe221684dc919f84df431d5e5edc6525bd918ff",
+            "content": "sha256:48d5e1c5dd645167650ed3aa219b0227e32cb75e6665cf2c114b26136e94e89f",
             "locator": {
               "kind": "symbol",
-              "name": "ManagedSyncReviewRebindingTests"
+              "name": "test_exact_pair_and_memory_only_movement_are_measured_without_relabeling"
+            },
+            "path": "mcp/tests/test_review_sync_rebinding.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "efe221684dc919f84df431d5e5edc6525bd918ff",
+            "content": "sha256:e41a8ad4d52c358bd57c039dd82087f92e6ce7766899f5dd8a0db93bfb054176",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_sync_captures_parked_work_without_staging_the_real_index"
             },
             "path": "mcp/tests/test_review_sync_rebinding.py"
           },
@@ -551,15 +536,27 @@
       ]
     },
     "36": {
-      "note": "The live code/memory worktree pair the managed-sync cases are built on.",
+      "note": "Unavailable memory and historical v1 records claim no pair coverage.",
       "targets": [
         {
           "anchor": {
-            "blob": "67148c9cd32ee2920e20b1e33a9f0678bd32381c",
-            "content": "sha256:1cc99cb6f7f3e90741ff527ffc9474ddeea83b8e9c146dc7720788204c43f3f8",
+            "blob": "efe221684dc919f84df431d5e5edc6525bd918ff",
+            "content": "sha256:d511d21b54300bc73642c6290146e5795d182795e5f21204a0ee9a2a1a053660",
             "locator": {
               "kind": "symbol",
-              "name": "ReviewSyncFixture"
+              "name": "test_no_movement_and_unavailable_memory_capture_never_claim_pair_coverage"
+            },
+            "path": "mcp/tests/test_review_sync_rebinding.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "efe221684dc919f84df431d5e5edc6525bd918ff",
+            "content": "sha256:65612fe695e767f546e24f51453dd7f8de6a43f0bf532eac9b6ada0b708c7929",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_historical_v1_rebinding_is_read_only_and_never_covers_a_tree_pair"
             },
             "path": "mcp/tests/test_review_sync_rebinding.py"
           },
@@ -568,15 +565,15 @@
       ]
     },
     "37": {
-      "note": "**The read-side cases: the live read's rendering, the uncompared knowledge channel, the unusable record, the carrying-state-as-failure, and the validator refusals.**",
+      "note": "Live movement names its exact memory input and refuses contradictory fields.",
       "targets": [
         {
           "anchor": {
-            "blob": "1f7a5c00243c61772ffbe8b1a4e92b8d0130ec0e",
-            "content": "sha256:144c970c2bd141cff70b0b5f86133e03fa7ee144fc40361e21372ec14b4ebcc3",
+            "blob": "c92a9621f5a0f54288f3d50ab9ff24dfe15ca1ac",
+            "content": "sha256:34e16d5d7e7f61d9cbbb8ae7bb545c3329d8a3fe0790cbf1be30cb7e645273be",
             "locator": {
               "kind": "symbol",
-              "name": "LiveReviewMovementTests"
+              "name": "test_live_review_labels_the_exact_memory_input_a_sync_moved"
             },
             "path": "mcp/tests/test_review_sync_movement_read.py"
           },
@@ -584,23 +581,11 @@
         },
         {
           "anchor": {
-            "blob": "1f7a5c00243c61772ffbe8b1a4e92b8d0130ec0e",
-            "content": "sha256:e3248f569d8e23ef4b0c5d864ab5709f08597ef30732355cd4b90cacac70f891",
+            "blob": "c92a9621f5a0f54288f3d50ab9ff24dfe15ca1ac",
+            "content": "sha256:0a89b4bff040f62d033e07205633693a8cb9ce8a0a297a4977082ee5ca14b427",
             "locator": {
               "kind": "symbol",
-              "name": "test_the_live_review_read_renders_what_the_sync_moved"
-            },
-            "path": "mcp/tests/test_review_sync_movement_read.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "1f7a5c00243c61772ffbe8b1a4e92b8d0130ec0e",
-            "content": "sha256:407cb44f0690abe7b6049f7c2b76e1421651d1580bdeafb4c9228665773bdfb1",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_the_movement_validator_refuses_each_false_shape"
+              "name": "test_a_sync_movement_refuses_a_state_its_own_fields_contradict"
             },
             "path": "mcp/tests/test_review_sync_movement_read.py"
           },
@@ -629,7 +614,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4bde11e7cf0ae5120d98215524297fba21a57dd3",
+            "blob": "e1d40f3cd8b8ad7c20b47ba43bf08632f20a09c5",
             "content": "sha256:aaea9b433ad7f6075eb18e20f7d04a3c99ad5738a5c4236baa4a39f0c664d767",
             "locator": {
               "kind": "symbol",
@@ -645,7 +630,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4bde11e7cf0ae5120d98215524297fba21a57dd3",
+            "blob": "e1d40f3cd8b8ad7c20b47ba43bf08632f20a09c5",
             "content": "sha256:5b74811f5b27ce9bf72dea79f259162b5f8a1f6c2748142792c15f8e7e1889e5",
             "locator": {
               "kind": "symbol",
@@ -661,7 +646,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4bde11e7cf0ae5120d98215524297fba21a57dd3",
+            "blob": "e1d40f3cd8b8ad7c20b47ba43bf08632f20a09c5",
             "content": "sha256:864b4a2b09b5bf0d4e5813682e9d748b63ca37c57cd1e5c4dadc4f3e1a24a28d",
             "locator": {
               "kind": "symbol",

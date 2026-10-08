@@ -1,0 +1,1065 @@
+{
+  "authorization": "260928-MIK-L26#D110;owner-current-source-binding@ef8d82df0b1c026f8224111bdb8146b241ca8afeb5d007504ea5c291049fad7d",
+  "carried": [
+    "PRF-18H967",
+    "PRF-24G8R8",
+    "PRF-EA6YHQ",
+    "PRF-H64HF6",
+    "RLZ-090539",
+    "RLZ-1WK7P0",
+    "RLZ-4YAPS7",
+    "RLZ-7B663Y",
+    "RLZ-NJFH31",
+    "RLZ-PFT43W",
+    "RLZ-RC34XZ",
+    "RLZ-TB9TST",
+    "RLZ-V1AKR1",
+    "RLZ-VQZWNZ",
+    "RLZ-X79EQQ",
+    "RLZ-XTSJHY",
+    "RLZ-ZTDYFT"
+  ],
+  "codeTree": "bf045a987679cc023f8fdfb8849d28cfcca1adb9",
+  "entries": [],
+  "evidence": [],
+  "historyRows": [
+    {
+      "disposition": "no_impact",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-7PWMPE",
+      "subject": "FAM-4ZNEN9"
+    },
+    {
+      "disposition": "changed",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-8QK7D0",
+      "subject": "FAM-61DY2V"
+    },
+    {
+      "disposition": "no_impact",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-V00QEA",
+      "subject": "FAM-7AEA19"
+    },
+    {
+      "disposition": "changed",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-DABVNP",
+      "subject": "FAM-7B6N3Y4Q"
+    },
+    {
+      "disposition": "no_impact",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-JCNCG6",
+      "subject": "FAM-83BTBD"
+    },
+    {
+      "disposition": "retired",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-PH44GV",
+      "subject": "FAM-8FH7A8RH"
+    },
+    {
+      "disposition": "changed",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-7SH2Z8",
+      "subject": "FAM-KQQE74ZT"
+    },
+    {
+      "disposition": "retired",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-2DYJES",
+      "subject": "FAM-M9QBG39Z"
+    },
+    {
+      "disposition": "no_impact",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-E6VAQS",
+      "subject": "FAM-PNH1QS"
+    },
+    {
+      "disposition": "retired",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-J7N13B",
+      "subject": "FAM-SK1BFPE2"
+    },
+    {
+      "disposition": "no_impact",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-GTQ1AH",
+      "subject": "FAM-TG3WK0"
+    },
+    {
+      "disposition": "no_impact",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-PRTXSQ",
+      "subject": "FAM-TYKA3T"
+    },
+    {
+      "disposition": "changed",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-KTJ42Z",
+      "subject": "FAM-XZ5BR65G"
+    },
+    {
+      "disposition": "no_impact",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-1E4ZT3",
+      "subject": "FAM-YGXZTQ"
+    },
+    {
+      "disposition": "no_impact",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-EJ8CN8",
+      "subject": "INV-19P897"
+    },
+    {
+      "disposition": "no_impact",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-77AB1D",
+      "subject": "INV-D2HZQ8"
+    },
+    {
+      "disposition": "no_impact",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-XAVMHG",
+      "subject": "INV-Z2HVKA"
+    },
+    {
+      "disposition": "deleted",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-H0E0GT",
+      "subject": "INV-09FC73JC"
+    },
+    {
+      "disposition": "no_impact",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-1H7F2G",
+      "subject": "INV-0FBA8M52"
+    },
+    {
+      "disposition": "changed",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-6S22Z8",
+      "subject": "INV-1XKX9ERN"
+    },
+    {
+      "disposition": "no_impact",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-8GYF7W",
+      "subject": "INV-208SQT"
+    },
+    {
+      "disposition": "deleted",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-N9YQ20",
+      "subject": "INV-2A00CD6G"
+    },
+    {
+      "disposition": "deleted",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-7T7690",
+      "subject": "INV-4N43MNN2"
+    },
+    {
+      "disposition": "no_impact",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-ZEKT31",
+      "subject": "INV-5KBX7C"
+    },
+    {
+      "disposition": "no_impact",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-7459F1",
+      "subject": "INV-5M9WY3"
+    },
+    {
+      "disposition": "no_impact",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-D0C9GC",
+      "subject": "INV-5TKYXM"
+    },
+    {
+      "disposition": "deleted",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-22YH9H",
+      "subject": "INV-6080HQF9"
+    },
+    {
+      "disposition": "no_impact",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-P8W61C",
+      "subject": "INV-61Y147"
+    },
+    {
+      "disposition": "no_impact",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-G919V2",
+      "subject": "INV-683GA3"
+    },
+    {
+      "disposition": "no_impact",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-WSKXYX",
+      "subject": "INV-7E3JNX"
+    },
+    {
+      "disposition": "no_impact",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-FCJHYD",
+      "subject": "INV-7VZRZW"
+    },
+    {
+      "disposition": "deleted",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-3EG4DD",
+      "subject": "INV-9BH2BNCT"
+    },
+    {
+      "disposition": "no_impact",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-ENQJQ4",
+      "subject": "INV-9S49CW"
+    },
+    {
+      "disposition": "no_impact",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-JRZXEX",
+      "subject": "INV-A6GAKX"
+    },
+    {
+      "disposition": "deleted",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-S1KKZY",
+      "subject": "INV-AGA5HG4K"
+    },
+    {
+      "disposition": "deleted",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-1BEN7V",
+      "subject": "INV-B3GYVZTJ"
+    },
+    {
+      "disposition": "deleted",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-M993DE",
+      "subject": "INV-CDB4MZW4"
+    },
+    {
+      "disposition": "no_impact",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-FM59AV",
+      "subject": "INV-H7WNWS"
+    },
+    {
+      "disposition": "deleted",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-RXC3MP",
+      "subject": "INV-HKS46WB3"
+    },
+    {
+      "disposition": "no_impact",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-ZSHZ6E",
+      "subject": "INV-HVGENX"
+    },
+    {
+      "disposition": "deleted",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-4KWFAG",
+      "subject": "INV-HXAH9APB"
+    },
+    {
+      "disposition": "no_impact",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-SDQB8R",
+      "subject": "INV-NFV5VJ"
+    },
+    {
+      "disposition": "no_impact",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-H2GXEN",
+      "subject": "INV-PEVJ6G"
+    },
+    {
+      "disposition": "no_impact",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-E9GCSY",
+      "subject": "INV-RKGNF8"
+    },
+    {
+      "disposition": "deleted",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-W9T928",
+      "subject": "INV-T9M21FB4"
+    },
+    {
+      "disposition": "deleted",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-YD0TPD",
+      "subject": "INV-TPDQGXYK"
+    },
+    {
+      "disposition": "changed",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-204RN8",
+      "subject": "INV-W4XGR4"
+    },
+    {
+      "disposition": "no_impact",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-S5CF1Y",
+      "subject": "INV-ZNJ14G"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-ZCKE4D",
+      "subject": "hunk:sha256:7aa8051a4af53495080ccf238f25bbdfed2b9588c43b98a93179ea394591b495"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-8KJFK9",
+      "subject": "hunk:sha256:c9ab844864f9cdae5e5d95705a34ea889eba975a7620a9e9bd1363334e85ed45"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-AHZRKJ",
+      "subject": "hunk:sha256:3814770c6b02e7c36bf76fe09b04f1a52caedb3ff8033c4b23ab0ba97e3ee3a4"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-PZHS9N",
+      "subject": "hunk:sha256:640fe57e96130242568358f4cb0c8f3ece29bf58b04994fe8cef35bcc4a64a64"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-VBXC2N",
+      "subject": "hunk:sha256:9072627d6eecb588cbd6148e0dc64d37483a48c5b926fc701b842fa15813a4ea"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-S1WDDA",
+      "subject": "hunk:sha256:f3f68cc68475df9c37f57ac77cc73646b3428cd36baae55c1f93a7399a9bc7e0"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-QDBRXC",
+      "subject": "hunk:sha256:320b514116fa0a344e7f45507695f9654158b951dd0138c29154344a6d641e42"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-VC92G2",
+      "subject": "hunk:sha256:3add688e8f86e99c69c5e6488fea6b5561b63f8101ef028d5af18e45b5fbb784"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-F7H653",
+      "subject": "hunk:sha256:4d748bdc64000efd541010fdb06feb2fd8fa5b01d7a1bcbfed8251c95625223f"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-8JXZPJ",
+      "subject": "hunk:sha256:a929d127ddcccc5cee36c7d0d2f02e46a9651ca500580edd80decbbbd5dfad66"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-CRFJ0A",
+      "subject": "hunk:sha256:2e257ec686d610e901b246062248ef6a42f8d8d67213f8cd1ee454daff451f28"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-W7WA41",
+      "subject": "hunk:sha256:694bdec426a76158075f691b887675b43b0aa9bdc7f5c383e3d68b0d995ca965"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-VY9BFG",
+      "subject": "hunk:sha256:7a9f42335206a127a604724045640e09b10d89aaa8644e4083d0e48c538797cb"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-APV32S",
+      "subject": "hunk:sha256:9d42dd19585877544a3d7a51d3514cc80081c94c738c9b817ff51ddaed4c62ba"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-G34JF2",
+      "subject": "hunk:sha256:af775d52f92a76838f14ac6ae0b58e0d7a3a73ebe201047da037bf6b3038bc7a"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-89VHVF",
+      "subject": "hunk:sha256:5546b8e3b2b429d0ea166abf02937669b7dcee210486ec5fceed656c72c9d8d6"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-BYMRZ6",
+      "subject": "hunk:sha256:187f8d3bc1c7d09691c3d8de4a718b20cc6fd60f9fe8a14ba039481c9b253afa"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-4N2GFD",
+      "subject": "hunk:sha256:3ef9d32f595c7eb92bc8a36df5d3f75e264a08ddc4d8d9ed774ef8672705f7c5"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-953FYZ",
+      "subject": "hunk:sha256:bfd501e9da1dde85005124c21eee602e687d392f72ea979225ae81148e783397"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-1HDPFY",
+      "subject": "hunk:sha256:fa038d1f13f29a2d5aee90afee3c29f1f0c07b4cb79f159a03cfb798fd5bc192"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-PP7DVD",
+      "subject": "hunk:sha256:2623a0cdf5148545a12dca0fe7a68e958e307e05d09a9d5f395ef25aad4ab78e"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-AXBFJZ",
+      "subject": "hunk:sha256:88b3d977b7a2d7a535971434da8d5b411b71c7d8a8150c4ff5f46d0138f7e832"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-YAGWGS",
+      "subject": "hunk:sha256:8477ba9700d3d3d4e6f42725bffe84e4e6a85c046f79ac87a23796e2c20834cf"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-DXEHBX",
+      "subject": "hunk:sha256:f7c322656dbeb372d2512d6120c6150d99b3728b919d714eca88253b08a7de52"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-ASHCB8",
+      "subject": "hunk:sha256:bb0d92566baaa96b1ff2e062d48eb8f56a6066800f1085ebd9b08ed0afd57494"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-PTZAKP",
+      "subject": "hunk:sha256:650b6696f42c329809eb58fbbd7a1462c9a25837b4570ea74702221b93234718"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-DGF54N",
+      "subject": "hunk:sha256:919c47f65fcb96d490d7f5b5c269bdf929d77fce036befb38c6e064519ae0d1d"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-2XAEHK",
+      "subject": "hunk:sha256:99e96e284d7a9bab500df59a73ac9f8ec9a9c6f3985f6c1dd117a6cfc2176f51"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-QW18GD",
+      "subject": "hunk:sha256:7bea393a125f37371d543a5f702ca4686c2df596441a79c9b927b66f16d1e741"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-0A7NS3",
+      "subject": "hunk:sha256:b8f1911cc9f268db68a8f71069c02827e0467fdf9704daf8591bfecb7bad5af4"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-Y0E222",
+      "subject": "hunk:sha256:3a67f69f1af9ca89af76ffda1d7ad0559c93fc3e03746a295e26a8b8157797fa"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-TDC407",
+      "subject": "hunk:sha256:298a5f48424a073f8bee04062b133063d274512c0724fd339180460a7c87986e"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-HSA0SR",
+      "subject": "hunk:sha256:679df356828b38adf2c616ffcace333d92ae7a9f5003a2f1537b135252304739"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-82MA6K",
+      "subject": "hunk:sha256:2d3d5907ac09ab04c6bc6bb45715e038c08d5905fa9e47f3e1378c85f6c747c1"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-7FMCD9",
+      "subject": "hunk:sha256:978e95746d17a4cf8dd98c8836765f7ea4360d02211f965064e45593caf76d68"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-3HSS24",
+      "subject": "hunk:sha256:e93a2890435ddbeaa61a1f7d1c3522cf81a2be05e9906deaf8ac7f4098bc8ebe"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-Z1WAEV",
+      "subject": "hunk:sha256:2e246501dc24fd60aa47404ad677558a56965c3657c9500f9243533aecd0868f"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-MW4SM1",
+      "subject": "hunk:sha256:df76c6cf841e2e093392e75641fb4c79ead9063e171748d460deca4393c4cc13"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-2ZYG8Y",
+      "subject": "hunk:sha256:14393dd9e8a481a36b4452117025874c9986474b85a89a29d785284ca19f4cd5"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-HEPFGS",
+      "subject": "hunk:sha256:2bf63829f34a3879292b83b160a1f24e54898c5f43d9dfab9bbc52b6f52c5067"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-AXH60V",
+      "subject": "hunk:sha256:fb5dac3e3379a5d6844ab5f2bf21f2bdf7761f093eb5fc1137c0ecdc71647359"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-GMBC4P",
+      "subject": "hunk:sha256:28e445af72e9492dedd9f4d2d807e4d2f2c84535f118f8787d640d5f50e601f2"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-BXZDDA",
+      "subject": "hunk:sha256:87e7faffc6b94eccb4ca16042a5673e011a5a0f183c07c937a55aaf4af954bca"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-C0SZG4",
+      "subject": "hunk:sha256:dadf510237b018b962e55ed7c98888a5cdeb5e04be6dbf987c6044d1ded4ab00"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-9B9VSD",
+      "subject": "hunk:sha256:37f89419dcae92fbded47168fddce3870aec666638f0d589d347202f36a59d95"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-Z5KPC8",
+      "subject": "hunk:sha256:a5dccc406989925e8f67f4caaf9ff7d003ea85105efe9315c83b1f431bd27b16"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-QCX1RA",
+      "subject": "hunk:sha256:b5f9d1d2d1b1b3d4f819598b955ff9525966673c8868e97637127a8a7f3d4864"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-BNY215",
+      "subject": "hunk:sha256:326fc28a7a5ee5795bdb4e3293d386e4b302ea24eabfe789781bf522c6de0e0e"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-VEPAPB",
+      "subject": "hunk:sha256:8a82714126cd195fce5b751d0d8e2cde242e552583646117f83e4547710e3ecd"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-XDFJ6M",
+      "subject": "hunk:sha256:9b15111207bc80fee4305c31fd851af5df890dcc80798438b901badbb870be63"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-6NHZH1",
+      "subject": "hunk:sha256:5858f8cd3949110bd451164c7adb5e0f8f2a7c4519c54bc6de81a75b3e4a5c03"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-4KHEFW",
+      "subject": "hunk:sha256:3eaf9740255542e2031efdcd5c7e806cb1b09f54ac7fa29f58ec05762bdd2e51"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-5TN53G",
+      "subject": "hunk:sha256:2d3bbc99681e174d20e4da877a170a57c7f56c07ae16be93d50ff017d04fb5f1"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-EG94KT",
+      "subject": "hunk:sha256:3874f8c8f7bcca71927f982eb40676f9cb13c5502417ff1715ae5a70ef479fb2"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-KRMREY",
+      "subject": "hunk:sha256:706d6736a25813ce9800d123d998060f9f72b252b6cd44f4eeaf70b416700903"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-TZJ046",
+      "subject": "hunk:sha256:eb63e4d11aeca55d6562f888bdbe3f57a5d321c4a2eea4092608c71385a1bd6a"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-4TC1EV",
+      "subject": "hunk:sha256:482cedc0e54b03713b37b5246fd6d645709543b7d1d33b042ccd4e47e38a172e"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-B0JQ7T",
+      "subject": "hunk:sha256:39dd8ebe21cb1d323087d195e99db2e3e705a1d69d2825298f1f3160107ed1e4"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-6NZBS5",
+      "subject": "hunk:sha256:cb0a9eb2bc16f1f424d748fed140ab021f882f54386fd37809fdc417d5379235"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-FA2XZ7",
+      "subject": "hunk:sha256:d02591fa10abc45cf161f3d30b3662a70ab04b9b0619de245a44a827897ec0e5"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-A5NQ89",
+      "subject": "hunk:sha256:14f53a12aac8c9a2d38ba08890fade2ed9390eab6bd4367d200f92c66948e999"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-9SS5MV",
+      "subject": "hunk:sha256:ebceb65331089d205bf9de841dfa53bb730821709dd1006ee8ca03a3d4d14ad2"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-A3K253",
+      "subject": "hunk:sha256:0ae3649f3eecf3cfd36cb28ddc78db0d4e7e0418323d49859264338e5a0f2dff"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-6VNCQT",
+      "subject": "hunk:sha256:5b90ca804007600dfa7a0287cc4ad84169038584bb2b3840fbd3ab3342674691"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-FJXFWD",
+      "subject": "hunk:sha256:9c76b9e366db3e7d37962575b1063a82b344a31e25433e6cb252813f5f5c4a44"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-09YXZQ",
+      "subject": "hunk:sha256:71ee814983a7a9eaa87a922cd1eab04fb4e18eeaf9a8a8c1067aeffd570aa4af"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-PJ4963",
+      "subject": "hunk:sha256:98a9c4651ec9886ebe01a793e6f08f883d512c546aa76c8b0f372210c571431a"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-F45CM0",
+      "subject": "hunk:sha256:f740f9fd5e6cb08617e688284f4bc6f6f3cbb146f371e3becb758ec590aabc4c"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-6YPWET",
+      "subject": "hunk:sha256:5b9d660778a569a2e8b0a3d4498fec5cd7bae4509959e4cedcfc8eed5700aa25"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-KAPM2D",
+      "subject": "hunk:sha256:ae828cab9d5c28f2594e286de898e0cdcbe1754816257b9160f4a4cf3be2e05d"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-8K51XT",
+      "subject": "hunk:sha256:d592599a2d870bd37563cb2b61e2843134e9feb3a82076f221a3fbafd61d7218"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-D7R1A4",
+      "subject": "hunk:sha256:77122ba149a0bd30144b7c38354a9df35ac1451df053fda2c7ac6ff5bf4f3a28"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-19YN0W",
+      "subject": "hunk:sha256:bcec914c9f5181663a370820d680e62df03ab9447f48ae19cbf38da5af359355"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-3KSV3Q",
+      "subject": "hunk:sha256:0e3e31fe66bcbe9121ddd3592aa4e275465d0c7d69aac44492b14fe5ab74129f"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-TCE071",
+      "subject": "hunk:sha256:c372441399b64b22e9193f91ce52107e58e691bb3d2bcd89ce2fc26e2daf1fb2"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-6F4VAT",
+      "subject": "hunk:sha256:85222c71cf0cba38aee1f54c5c2af170c08174eee64cb615e59216f78c3d1a7d"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-36P422",
+      "subject": "hunk:sha256:b32849ddcf61367656ba05d0c5bc85b4f4309737f35e20f45cf6ddb933b2ea3d"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-ZYBT8B",
+      "subject": "hunk:sha256:001961f5d10609c012ce7447d6baec121a5be0825ac41a13171c0108d336a1b3"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-55BTB4",
+      "subject": "hunk:sha256:1adc97d7f8a1c71174c79207ce875c3fb5a05fcc47520495d12b195c949ad605"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-Y1DYD8",
+      "subject": "hunk:sha256:4ff5a3d80f2cde2da84215e0f07a838ac2d4fdbf20e6757423ab8bd44dc79a49"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-EJXTM2",
+      "subject": "hunk:sha256:6de20dbf47602517557c6726dbe58ffc667a7d0245f2be9dea7438a06f5f0097"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-2Z6D8E",
+      "subject": "hunk:sha256:521aa662b39ef14b37a2ce3eb6603d177f4a8416c19a115524bfe34756f5e69d"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-ZMTYWE",
+      "subject": "hunk:sha256:c07e9e9956b18b827be465e3475c28de4c1deeb696edfcde6c960c36d46787fd"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-P8J1P4",
+      "subject": "hunk:sha256:e616353020bb67b40c1132d5fad36e3429a0b4c7be5b18d5521e4d66fee99dbc"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-87M49G",
+      "subject": "hunk:sha256:6f5054273be43c659bf240e43b2245e2a01f0319c7d1e56db4b43cd9e9e64757"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-BWMXQ9",
+      "subject": "hunk:sha256:166c944e53dc6975fb6141bee06d250b3bd5db2dc9e8210a03a3114874428457"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-X25NYA",
+      "subject": "hunk:sha256:21bd90b9fbf6df611d50faf18821c0b5e3aa5f0e6f8290f537dedb2c13110b16"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-KAKVEJ",
+      "subject": "hunk:sha256:20faaeb9cd80000bb34772e77739173284af257d768b34546625901d7719fb58"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-9NNEVA",
+      "subject": "hunk:sha256:bc2a206eb9d3ee52aa5c1fd5da4f61a4f23cde769ee34cef3a225902a3ff7872"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-1GFJE7",
+      "subject": "hunk:sha256:f3b13f381b646cb147b1d84b33ff52379b49ff389290d60a1dbedb5019d41e22"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-X8E7KZ",
+      "subject": "hunk:sha256:ef5cc634c8291cda6f5367c37fafc04f91282c2d37351d41264e28c249f5c5a5"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-2742SP",
+      "subject": "hunk:sha256:cab079a02950f4126de6ed4c3abf03b643045ea6f8e45c56cb15dc511e4a2fc3"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-SJM0GA",
+      "subject": "hunk:sha256:f754e5a64a7aeb8a2f0e797f0418d153c742a91663c4097c18d97d74da8b92cd"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-TCKDFF",
+      "subject": "hunk:sha256:ed3c8a25656822edb9f27c0eaa0cfecd95316f9f6c8a3e92595884a34d5fb5e7"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-86JV48",
+      "subject": "hunk:sha256:0a02ef84f086a5838e93281874145d5955bbf253967a1ff8a5dde939cccd9e80"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-BRTAV1",
+      "subject": "hunk:sha256:7589b2ce9d34940895cf6ad15de08e1e9381f4e33cbf0a226e0d77fa6a01e2e9"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-RZQ42G",
+      "subject": "hunk:sha256:5b7430c67becf62401836a4bdc7222e5bf9658a417d859f77482b8836c8af2a3"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-CXJGAK",
+      "subject": "hunk:sha256:8011f71e32a6fae3ba25fc55f83936a9a0c41f6382ccc1f0196ec3130af42119"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-TVA1A4",
+      "subject": "hunk:sha256:cd77dcf61a66b5a85fede1921db2d1a213f5d241b8bfe716702625d092cb307a"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-5S2TMR",
+      "subject": "hunk:sha256:af5621e2a20f2a9bc621eb0c00449ed6a87c0682b5fb91c69ac7eb04bbed104e"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-BEBCJ3",
+      "subject": "hunk:sha256:8a25f014a9f84764cd8e0a9562edc9c3e92066b3e4261721ea3bc079840441ce"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-HVBV5P",
+      "subject": "hunk:sha256:73df95e09b6615cefbce6415f1d90b4c735ff64b8647afee02ee00ecc15179b0"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-TEV89J",
+      "subject": "hunk:sha256:b20f2ac6429ec7603743e29e3324bbe40ca10be02d0f47c5e894513c84df70b8"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-CGAKBC",
+      "subject": "hunk:sha256:c54522934191e86d659859b9c197233c1e8d4c07a18e7311a08797e6ccb193d6"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-SFPBCS",
+      "subject": "hunk:sha256:e22658ee2f5f0761212f06d703b35d1b329b22874dffb3267ab284b329d6d262"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-DK9HNQ",
+      "subject": "hunk:sha256:f233b403ea11634926e7eea7edcde29eed0ce09dd1a7cccf91537e68a272dd2c"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-FZMTZZ",
+      "subject": "hunk:sha256:0262c725c94c8256624f21e30eecea9eb6c5556d2e191935c543722d91781ad1"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-GNTJTZ",
+      "subject": "hunk:sha256:b497229b8149436a9509b8dd3c19ce3b50398810817ea8eff40cbe3aa9ea4cb4"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-G8GQXK",
+      "subject": "hunk:sha256:290c6db128bcc37aec82be93c0d2ff19ad3196f90746fa677ed4b20e4d93654b"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-VXYCMQ",
+      "subject": "hunk:sha256:d4d84faecc7594380b87414bfaa8656867d3cb0347fb147fbc48061687d8c9d7"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-YM26A3",
+      "subject": "hunk:sha256:a772997c941879201d1db8082c091eb2aef0f4eafe6e37d7686f038de736e3dd"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-X5A6E1",
+      "subject": "hunk:sha256:d9cdbda527ef67012b2370a1242b97fba37d54dcedd61d85f8cec13fc9ba20d8"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-8ZW0XG",
+      "subject": "hunk:sha256:672696a5d7d2757596197ecabcfacf4bb7f3084799dcaf377b19b1090a3912de"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-25SZ64",
+      "subject": "hunk:sha256:dc718e32d25b0295d014e1d227083e9e0974393e81e454586423731fa4b7cea2"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-M86E8H",
+      "subject": "hunk:sha256:90940ed5f25cf8b75efb3f317cdfa30fb1f99c8ab70f40729ac4471e3c82f302"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-0MWSSM",
+      "subject": "hunk:sha256:eea089997c9c332fbbee3d58001bb37ce71c58072a868ebe339fdc3313fde4f9"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-YTF92Z",
+      "subject": "hunk:sha256:d7ecf64774acb1c1268e7330c685f1900002a91daaf540cd19b249c5f0304f00"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-FVYAYK",
+      "subject": "hunk:sha256:31d858f584821c5f86e4d7fc5337cf2fd3b66070ae1ceacc014fc4b0be5eb5f3"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-4QSK1Z",
+      "subject": "hunk:sha256:7574c3bdcad3e6a2ed1bdd69b0e5dc76d4549b68cb5409e119275f9a8ef1f44e"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-36TFJ2",
+      "subject": "hunk:sha256:ddaeb39d0047d2538266709866939629f53caa9ba3bdc99ce9433913fa12e1cc"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-7FTF7Z",
+      "subject": "hunk:sha256:579e7bd3b40296fd2bc93435bbf4f217886b736812040e8ad114c24610d2bf13"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-SRFSG2",
+      "subject": "hunk:sha256:40f13ed4c5bd9488fb19965ef8b96c7b2dd2c3235ea31e28b8599753f4688955"
+    }
+  ],
+  "memoryRoot": "/home/firefox/projects/ar-coordination/worktrees/agents-remember/260928-mik-l26-ar/memory-260928-mik-l26",
+  "notes": [],
+  "operation": "knowledge-write",
+  "owner": "260928-MIK-L26",
+  "problems": [
+    {
+      "message": "mcp/tests/test_role_instruction_wording.py: 'mcp/tests/test_role_instruction_wording.py' at C does not define 'InstructionFileWordingTests.test_curator_fanout_wording_distinguishes_99_and_100'",
+      "where": "history[21].covers"
+    }
+  ],
+  "provisionalIds": false,
+  "records": [],
+  "removed": [],
+  "requirementEndpoints": [],
+  "rulings": [],
+  "state": "refused",
+  "violations": [],
+  "written": []
+}

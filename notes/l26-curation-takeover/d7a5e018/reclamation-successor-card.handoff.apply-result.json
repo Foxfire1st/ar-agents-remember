@@ -1,0 +1,16 @@
+{
+  "source": "memory-260928-mik-l26/notes/l26-curation-takeover/d7a5e018/reclamation-successor-card.handoff.json",
+  "errors": [],
+  "cards": [
+    {
+      "card": "onboarding/mcp/src/agents_remember/application/review_comparison_reclamation.py.md",
+      "changed": true,
+      "beforeSha256": "8f5b315e951410930a98f73ccfd118e6442ba3220380ebd51ed8d765f99911fc",
+      "afterSha256": "6e075ee6ad65f5445bc8e1b3d97b45f908d9224aa4be3a91d71abf48ee027d5f",
+      "bodyReplacements": 0,
+      "updatedReferences": 6,
+      "retiredReferences": []
+    }
+  ],
+  "applied": true
+}

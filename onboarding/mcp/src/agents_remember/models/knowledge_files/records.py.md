@@ -28,9 +28,7 @@ models refuse the fields that would give it a second owner.
 - `_FacetRecord` (incident and the six other facets) adds `revision` and `status`
   (`proposed`|`accepted`|`retired`) — added in repair round 1 so MIK-R24 rule 8 (conflict revision)
   and MIK-R22 rule 3 (retire, never delete) apply to every kind. Facets carry no `admission`.
-- `IncidentRecord` requires `recovery` and `corrective_actions` unless `applicability` is
-  `unresolved`. The six facet records carry exactly the fields of today's payload models in
-  `models/knowledge/facet.py`, which a test compares field set by field set.
+- IncidentRecord requires recovery and corrective_actions unless applicability is unresolved. The other six facet record classes declare their text-file meanings directly. The canonical-database facet payload models and the old cross-model field-set comparison were retired by MIK-R26; these records remain the text format's own declarations.
 - `RECORD_MODELS` maps kind → model; `schema_name(kind)` spells `ar-<kind>/v1` with `-` for `_`.
 
 ### Conventions
@@ -80,7 +78,9 @@ The facet payload models this mirrors live in the shipped knowledge vocabulary.
 - The invariant record: no second-owner fields. [6]
 - Incident recovery is required once not unresolved. [7]
 - The kind → model table. [8]
-- Facet fields equal today's payload fields. [9]
+
+- Text facet records declare their own fields, with current kind parsing and malformed-field checks. [9]
+
 
 ### Cross-Repo References
 

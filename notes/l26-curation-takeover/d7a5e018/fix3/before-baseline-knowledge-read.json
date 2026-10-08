@@ -1,0 +1,192 @@
+{
+  "ok": true,
+  "tokens": 1389,
+  "tokenizer": "tiktoken:o200k_base",
+  "tokenCountExact": true,
+  "operation": "knowledge_read",
+  "state": "view",
+  "view": "source_context",
+  "repositoryId": "7511e917-d5d3-584e-b0ce-44dcad666cfe",
+  "snapshot": "a8b3099244ffa7fc52edb6bb0a5ac0bb7913721f8b5350b407375d725e01a452",
+  "completeWithinDeclaredScope": true,
+  "payload": {
+    "view": "source_context",
+    "snapshot": {
+      "repository_id": "7511e917-d5d3-584e-b0ce-44dcad666cfe",
+      "schema_version": "ar-knowledge-sqlite/v9",
+      "logical_digest": "a8b3099244ffa7fc52edb6bb0a5ac0bb7913721f8b5350b407375d725e01a452",
+      "context_digest": "ff3d7a2bc65aaf28b67b4c07a14c10f66757ab0b263680b0ced918ca823f550c"
+    },
+    "counts": {
+      "registered_realizations": {
+        "state": "counted",
+        "value": 860,
+        "reason": null
+      },
+      "registered_families": {
+        "state": "counted",
+        "value": 31,
+        "reason": null
+      },
+      "rows_returned": {
+        "state": "counted",
+        "value": 3,
+        "reason": null
+      },
+      "rows_remaining": {
+        "state": "counted",
+        "value": 0,
+        "reason": null
+      },
+      "facets_omitted": {
+        "state": "not_applicable",
+        "value": null,
+        "reason": "this view returns no facet rows"
+      },
+      "unmapped_changed_paths": {
+        "state": "not_applicable",
+        "value": null,
+        "reason": "this view compares no two exact states"
+      },
+      "ambiguous_references": {
+        "state": "not_applicable",
+        "value": null,
+        "reason": "this view resolves no cited references"
+      },
+      "unresolved_references": {
+        "state": "not_applicable",
+        "value": null,
+        "reason": "this view resolves no cited references"
+      },
+      "dependency_content_identity_mismatches": {
+        "state": "not_applicable",
+        "value": null,
+        "reason": "this view reads no recorded dependency bytes"
+      }
+    },
+    "completeness": {
+      "complete_within_declared_scope": true,
+      "scope": {
+        "snapshot_logical_digest": "a8b3099244ffa7fc52edb6bb0a5ac0bb7913721f8b5350b407375d725e01a452",
+        "recorded_graph": "recorded-envelope-and-generation-1-entities",
+        "traversal_policy": "knowledge-view-selection/v1",
+        "extractors": [
+          "knowledge-view-renderer/1"
+        ]
+      }
+    },
+    "continuation": null,
+    "limitations": [],
+    "ordering_rule_ids": [
+      "ordering.declared-tiebreak"
+    ],
+    "renderer_version": "knowledge-view-renderer/1",
+    "rows": [
+      {
+        "subject": {
+          "record_kind": "realization_claim",
+          "record_id": "0d567bba-2a51-517b-8fde-44efd8aaa679",
+          "revision_id": "f08b297f-7d4e-5ae6-ba92-26f57faf5087"
+        },
+        "fact_kind": "registered_realization",
+        "statement": "Resolves the repository's published dataset at the one path published_dataset_path names, or names why it cannot be read. For a converted memory tree it answers not-recorded, naming the tree, without opening the database file frozen there. For an unconverted layer it reads the dataset's identity at that one location: a location with no entry answers not-recorded, and an entry that is not a regular file, bytes that are not a dataset this code can read, or a dataset bound to another repository's authority home answers unusable, so no other repository's publication is ever selected.",
+        "role": "primary-authority",
+        "path": "mcp/src/agents_remember/application/published_intent.py",
+        "locator": {
+          "kind": "symbol",
+          "language": "python",
+          "qualified_name": "resolve_published_intent"
+        },
+        "anchor_state": null,
+        "order": {
+          "position": 1,
+          "ordering_input": "stable_ordering",
+          "provenance": {
+            "provenance_class": "mechanical",
+            "authored": null,
+            "rule_id": "ordering.registered-role",
+            "rule_version": 1
+          },
+          "tiebreak_rule_id": "ordering.declared-tiebreak",
+          "tiebreak_rule_version": 1
+        },
+        "provenance": {
+          "provenance_class": "mechanical",
+          "authored": null,
+          "rule_id": "ordering.registered-role",
+          "rule_version": 1
+        }
+      },
+      {
+        "subject": {
+          "record_kind": "realization_claim",
+          "record_id": "437e9048-66b2-5767-90d2-fc8889cfd340",
+          "revision_id": "f08b297f-7d4e-5ae6-ba92-26f57faf5087"
+        },
+        "fact_kind": "registered_realization",
+        "statement": "The read route owns the spelling of the location and the write route consumes that same owner, which is what makes the two halves one location rather than two conventions.",
+        "role": "primary-authority",
+        "path": "mcp/src/agents_remember/application/published_intent.py",
+        "locator": {
+          "kind": "symbol",
+          "language": "python",
+          "qualified_name": "published_dataset_path"
+        },
+        "anchor_state": null,
+        "order": {
+          "position": 2,
+          "ordering_input": "stable_ordering",
+          "provenance": {
+            "provenance_class": "mechanical",
+            "authored": null,
+            "rule_id": "ordering.registered-role",
+            "rule_version": 1
+          },
+          "tiebreak_rule_id": "ordering.declared-tiebreak",
+          "tiebreak_rule_version": 1
+        },
+        "provenance": {
+          "provenance_class": "mechanical",
+          "authored": null,
+          "rule_id": "ordering.registered-role",
+          "rule_version": 1
+        }
+      },
+      {
+        "subject": {
+          "record_kind": "realization_claim",
+          "record_id": "59090487-5f66-5d41-9c6f-bd47c24f439c",
+          "revision_id": "f08b297f-7d4e-5ae6-ba92-26f57faf5087"
+        },
+        "fact_kind": "registered_realization",
+        "statement": "The read route owns the spelling of the location and the write route consumes that same owner, which is what makes the two halves one location rather than two conventions.",
+        "role": "primary-authority",
+        "path": "mcp/src/agents_remember/application/knowledge_publication_route.py",
+        "locator": {
+          "kind": "symbol",
+          "language": "python",
+          "qualified_name": "declared_publication_location"
+        },
+        "anchor_state": null,
+        "order": {
+          "position": 3,
+          "ordering_input": "stable_ordering",
+          "provenance": {
+            "provenance_class": "mechanical",
+            "authored": null,
+            "rule_id": "ordering.registered-role",
+            "rule_version": 1
+          },
+          "tiebreak_rule_id": "ordering.declared-tiebreak",
+          "tiebreak_rule_version": 1
+        },
+        "provenance": {
+          "provenance_class": "mechanical",
+          "authored": null,
+          "rule_id": "ordering.registered-role",
+          "rule_version": 1
+        }
+      }
+    ]
+  }
+}

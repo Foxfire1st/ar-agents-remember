@@ -44,7 +44,7 @@ the stamp once the code commit exists.
 **`relationship_movements` is the one entry point, and it reads both snapshots under one identity.**
 It opens each side's database read-only (`open_read_only_database`), reads that snapshot's own
 authored edges through `recorded_snapshot`, traverses the union items, reads the reviewed identity's
-governing-route association, and closes both connections in a `finally` — so one traversal cannot
+governing-route associations through `governing_route_movements`, and closes both connections in a `finally` — so one traversal cannot
 read a side under the other snapshot's namespace, and a review that raises cannot leak a database
 handle. `RelationshipSources` carries the two snapshots, the reviewed subject, the two bound code
 trees and the rename-inference seam as one frozen value, because those are one measurement: a side
@@ -136,7 +136,7 @@ The three adjacent responsibilities are their own modules and are called, never 
   `anchor_unresolved` (the read's own resolution detail), `successor_line_unresolved` (a line whose
   ends are several or none) and `predecessor_records_no_relationship` (a candidate row whose recorded
   authored predecessor holds no relationship in the before union), plus the transition
-  `outside_selection` and the side state `ungoverned`. `anchor_unrecorded`, `identity_differs`,
+  `outside_selection` and the side states `ungoverned` and `unavailable`; the latter preserves unread route declarations with `route_unavailable`. `anchor_unrecorded`, `identity_differs`,
   `identity_not_recorded` and `route_not_recorded` are **defensive-only**: the value layer keeps them
   for a graph the schema does not currently admit (a claim is fetched with an inner join on its anchor,
   the tree resolver always answers a resolution, the store refuses a cross-identity predecessor edge),
@@ -174,7 +174,9 @@ and the three case modules that measure it.
 - The published surface: the sources value, the traversal and the re-exported address view. [2]
 - The declared stream order and why the governing route is last. [3]
 - **Everything one traversal reads as one frozen value, because it is one measurement.** [4]
-- **The one entry point: both snapshots opened read-only and closed in a `finally`, the union traversal, the route movement, and the labelled inference attached last.** [5]
+
+- Both index snapshots feed the authored union and its plural text-route associations. [5]
+
 - **The traversal: candidate sides first, one movement per relationship, the unpaired baseline sides displayed one-sided, the stream in declared order.** [6]
 - **The whole authored line is read, not its head, and rows the page already selected are skipped so a record is displayed once.** [7]
 - The citations one baseline side's lines are built from — a realization one invariant revision, a membership its family *and* member revisions. [8]
@@ -183,7 +185,9 @@ and the three case modules that measure it.
 - **The pairing rules: the same recorded row, or an authored replacement of a withdrawn row; member-wise family pairing; the family edge alone never pairs.** [11]
 - The adapter's one call: the union traversed from the comparison's own page items and the resolved dataset halves, threaded into the source pane. [12]
 - The wire vocabulary the movements fill, with the validators that refuse an unstated pairing, a transition without its sides and an unexplained absent identity. [13]
-- **The eleven cases that measure the packet's own behaviour: the moved realization, the after-only reading falsified, the withdrawn realization, outside-selection, the labelled rename inference, no fabricated movement, authored split and merge, family reassignment, route reassignment, the ungoverned identity, and the unresolved anchor.** [14]
+
+- Each text-declared family route is displayed separately; an unread route side is never ungoverned. [14]
+
 - The reach cases the master's ruling required: a member identity's movement at its own established head, a multi-ended line unresolved and never denied, and the address view's qualification. [15]
 - The authored-line cases of the third round: a split line that records relationships is named and never denied, a multi-ended line never claims a unique head, and an intermediate descendant is displayed. [16]
 

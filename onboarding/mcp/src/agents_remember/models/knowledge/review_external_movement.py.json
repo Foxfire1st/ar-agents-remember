@@ -3,16 +3,15 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "**The module's own statement of why this is a measurement and not a command classifier, and what the four states mean.**\n\nAnchor: \"What is supported is a field, not a tone of voice.\"",
+      "note": "The v2 raw movement report is bound to complete retained tree-comparison evidence.",
       "targets": [
         {
           "anchor": {
-            "blob": "e4be1bf3bf9b2ecdacf433ad84e2a6113f96873a",
-            "content": "sha256:612778411c29ffa32960c9f8413a6ec3193e43bae8d6a0afa8eba69fb89edc73",
+            "blob": "7c3e3e7f80431fb4e5d19acf4d0892d98a9e0259",
+            "content": "sha256:272bf50ae0cb5bbd249fe3b8ef1d8b6c9f9f7a09f4d41fe15af6c30602921b19",
             "locator": {
-              "end": 43,
-              "kind": "line_range",
-              "start": 1
+              "kind": "symbol",
+              "name": "ExternalGitMovement"
             }
           },
           "kind": "code"
@@ -20,15 +19,28 @@
       ]
     },
     "10": {
-      "note": "**The `after` validator that refuses every false shape — state against replaced identities, absence against reason, and `generation_readable` against `unavailable`.**",
+      "note": "The validators enforce complete-source identity and state/observation consistency.\n\nAnchor: `ExternalGitMovement._validate_source_comparison`; `ExternalGitMovement._the_state_follows_from_what_was_measured`",
       "targets": [
         {
           "anchor": {
-            "blob": "e4be1bf3bf9b2ecdacf433ad84e2a6113f96873a",
-            "content": "sha256:6687d73734d00cc7aabf371f3330f0bede14a7c69c2d963fb5f9d778fb79a440",
+            "blob": "7c3e3e7f80431fb4e5d19acf4d0892d98a9e0259",
+            "content": "sha256:7112bdfe6ec6e049407e8802fc63e4457516927654f16016b075fbc61cf8e6bc",
             "locator": {
-              "kind": "symbol",
-              "name": "_the_state_follows_from_what_was_measured"
+              "end": 130,
+              "kind": "line_range",
+              "start": 123
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7c3e3e7f80431fb4e5d19acf4d0892d98a9e0259",
+            "content": "sha256:3ddbde3d9bdef3de9f349908ec2f1062ab75a723d2360fc3541456bb9eb59d35",
+            "locator": {
+              "end": 183,
+              "kind": "line_range",
+              "start": 133
             }
           },
           "kind": "code"
@@ -74,7 +86,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "43308beac4e5f22c7ccb088cb8f22015b2117974",
+            "blob": "091ddadd2d4f4e30e71f798c050ea011606bc638",
             "content": "sha256:74120cde5631dfc9547be309a8bc107ffff02f5d431e39260e1bfd58e6657ccc",
             "locator": {
               "kind": "symbol",
@@ -91,7 +103,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "005c44f99677f29c3777322502b77b732a3a0252",
+            "blob": "0cc1ed4aa2ead143a66f5ee6b69cf490138fd7ae",
             "content": "sha256:4b81dce1ffe23b560df4d6b969cbceee7210a18302fc57a2096645f66819e782",
             "locator": {
               "kind": "symbol",
@@ -167,15 +179,15 @@
       ]
     },
     "18": {
-      "note": "**The case that forges five false shapes, each departing from exactly one validator clause, with the real published value as the accepted control.**",
+      "note": "The current forgery sweep checks state consistency and complete source-comparison binding.",
       "targets": [
         {
           "anchor": {
-            "blob": "f10912c6c4aabf944329b780793458ea42566620",
-            "content": "sha256:5090829855d4686acf164e912ab52a3653cb40a76a275dc884463f7f981eaae0",
+            "blob": "9c5a8d9415a05ab1d21c8d793896c230cccdba55",
+            "content": "sha256:1aa9d53b40b0806184268468f6014e8d45dbee0277515aaec290e591dfb56528",
             "locator": {
               "kind": "symbol",
-              "name": "test_the_movement_validator_refuses_each_false_shape"
+              "name": "test_the_boundary_report_refuses_a_state_its_own_fields_contradict"
             },
             "path": "mcp/tests/test_review_external_git_movement_read.py"
           },
@@ -184,15 +196,27 @@
       ]
     },
     "19": {
-      "note": "The case that pins the control state as the value an untouched leaf publishes.",
+      "note": "Untouched ancestry, advance, rewrite and uncommitted-tree nonmeasurement are distinct observed facts.",
       "targets": [
         {
           "anchor": {
-            "blob": "f10912c6c4aabf944329b780793458ea42566620",
-            "content": "sha256:6d0e55103a4a95e1304f20666fd10eb2f96065d95d15b9a9f05f70b375a3e2ed",
+            "blob": "9c5a8d9415a05ab1d21c8d793896c230cccdba55",
+            "content": "sha256:b72e121ba42d3ca5a67aa14e1e2dc4a4aa1a1db888873b30106a4a39ce51d152",
             "locator": {
               "kind": "symbol",
-              "name": "test_the_unchanged_value_is_the_one_the_control_state_publishes"
+              "name": "test_work_branch_ancestry_tells_an_untouched_branch_from_an_advance_and_a_rewrite"
+            },
+            "path": "mcp/tests/test_review_external_git_movement_read.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9c5a8d9415a05ab1d21c8d793896c230cccdba55",
+            "content": "sha256:a8d3e92e00823fdad936f1ca5f1b85ccda91343f051aefeff7bdb2939a3d3275",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_uncommitted_tree_record_never_invents_an_observed_work_branch_head"
             },
             "path": "mcp/tests/test_review_external_git_movement_read.py"
           },
@@ -222,7 +246,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e4be1bf3bf9b2ecdacf433ad84e2a6113f96873a",
+            "blob": "7c3e3e7f80431fb4e5d19acf4d0892d98a9e0259",
             "content": "sha256:a545b77d5334b9d977ede385b4777abfb18ec72c1344a5d67377ed15997ad398",
             "locator": {
               "kind": "symbol",
@@ -234,11 +258,11 @@
       ]
     },
     "4": {
-      "note": "**The transition vocabulary, whose first member `unchanged` is the measured absence of a transition rather than an event.**",
+      "note": "Transitions describe measured shapes, with unchanged reserved for an untouched complete observation.",
       "targets": [
         {
           "anchor": {
-            "blob": "e4be1bf3bf9b2ecdacf433ad84e2a6113f96873a",
+            "blob": "7c3e3e7f80431fb4e5d19acf4d0892d98a9e0259",
             "content": "sha256:658ffdf72709b07c7b03af8fb4a8e4c5d5b644fa81ef680bbc4a9a79d52f0a31",
             "locator": {
               "kind": "symbol",
@@ -250,11 +274,11 @@
       ]
     },
     "5": {
-      "note": "**Whether this system reconciles a transition at all, earned by the one recovery it performs.**",
+      "note": "The reconciliation vocabulary distinguishes supported and unsupported recovery.",
       "targets": [
         {
           "anchor": {
-            "blob": "e4be1bf3bf9b2ecdacf433ad84e2a6113f96873a",
+            "blob": "7c3e3e7f80431fb4e5d19acf4d0892d98a9e0259",
             "content": "sha256:82b5ea0842c95b5906a0cc6c3d890f950b1456a8859eb39c7398ff40153da081",
             "locator": {
               "kind": "symbol",
@@ -266,11 +290,11 @@
       ]
     },
     "6": {
-      "note": "**The three declared channels, each named by the thing that moved rather than by the command that moved it.**",
+      "note": "The three declared Git ancestry channels.",
       "targets": [
         {
           "anchor": {
-            "blob": "e4be1bf3bf9b2ecdacf433ad84e2a6113f96873a",
+            "blob": "7c3e3e7f80431fb4e5d19acf4d0892d98a9e0259",
             "content": "sha256:b649e261489dd2dded20a3a02faf824bf1c4186787e106ddb4e7472f6ef1bda2",
             "locator": {
               "kind": "symbol",
@@ -282,11 +306,11 @@
       ]
     },
     "7": {
-      "note": "**What one channel's ancestry check found, with `advanced` as a measurement of its own.**",
+      "note": "Ancestry distinguishes current, advanced, replaced and unavailable observations.",
       "targets": [
         {
           "anchor": {
-            "blob": "e4be1bf3bf9b2ecdacf433ad84e2a6113f96873a",
+            "blob": "7c3e3e7f80431fb4e5d19acf4d0892d98a9e0259",
             "content": "sha256:d8bbb27524d6b0bc8d9fafc226626a9eb07ad5727401226ad4c879d748ae94b4",
             "locator": {
               "kind": "symbol",
@@ -298,12 +322,12 @@
       ]
     },
     "8": {
-      "note": "**The movement value: its four-state binding, the transition and evidence tuples, the moved identities and the reason rule.**",
+      "note": "The measured report carries states, exact source and observed branch facts.",
       "targets": [
         {
           "anchor": {
-            "blob": "e4be1bf3bf9b2ecdacf433ad84e2a6113f96873a",
-            "content": "sha256:344eb3143c693eee314cb20205e3d9f558eaefd7e0cf79cfd57ba03c071ffc43",
+            "blob": "7c3e3e7f80431fb4e5d19acf4d0892d98a9e0259",
+            "content": "sha256:272bf50ae0cb5bbd249fe3b8ef1d8b6c9f9f7a09f4d41fe15af6c30602921b19",
             "locator": {
               "kind": "symbol",
               "name": "ExternalGitMovement"
@@ -318,7 +342,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e4be1bf3bf9b2ecdacf433ad84e2a6113f96873a",
+            "blob": "7c3e3e7f80431fb4e5d19acf4d0892d98a9e0259",
             "content": "sha256:a0ea97f19b1ed2e66d8b6a9b77ba235d05909ff1a2d51877a11556547b11fd91",
             "locator": {
               "kind": "symbol",
@@ -329,7 +353,7 @@
         },
         {
           "anchor": {
-            "blob": "e4be1bf3bf9b2ecdacf433ad84e2a6113f96873a",
+            "blob": "7c3e3e7f80431fb4e5d19acf4d0892d98a9e0259",
             "content": "sha256:d99b1f6f4297dcf57bd89d32fe0fb07d556a37f01a8dec64eaec4f419ea82007",
             "locator": {
               "kind": "symbol",

@@ -1,0 +1,95 @@
+{
+  "path": "mcp/tests/test_knowledge_database_retired.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "66c88c31b7b97d8c22db5625ba8974988633360f",
+        "content": "sha256:9884a40ddba7b699e20e3ab398a203c6bab5478efa1a8f1cbbb0618ba3d88373",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_helper_that_opens_a_database_is_called_only_by_the_listed_modules"
+        }
+      },
+      "facet": "Helper callers are pinned and index modules refuse retired names.",
+      "id": "PRF-CKEJMJ",
+      "invariant": "INV-GBH3RH",
+      "origin": {
+        "handoffEntry": "R3 finding 8",
+        "leaf": "260928-MIK-L26"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "66c88c31b7b97d8c22db5625ba8974988633360f",
+        "content": "sha256:627660c8a08e5539811b7ca1813a1bee27674663ba8bfb2f524a03dcc04efd08",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_an_event_with_no_repository_frame_is_refused_unless_coverage_could_make_it"
+        }
+      },
+      "facet": "A frameless database event is attributed and refused except for the coverage connection.",
+      "id": "PRF-ET8PGW",
+      "invariant": "INV-54J62R",
+      "origin": {
+        "handoffEntry": "R3 finding 7",
+        "leaf": "260928-MIK-L26"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "66c88c31b7b97d8c22db5625ba8974988633360f",
+        "content": "sha256:b07cf4328fb93453960332223f756945670be1d7b2d8bd098fd5ff08fbd476dd",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_static_check_catches_the_forms_the_review_found_it_missed"
+        }
+      },
+      "facet": "The static reader catches attached, qualified, quoted, aliased and WITH-prefixed writes.",
+      "id": "PRF-GW5VH6",
+      "invariant": "INV-MFQW2H",
+      "origin": {
+        "handoffEntry": "R3 finding 9",
+        "leaf": "260928-MIK-L26"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "66c88c31b7b97d8c22db5625ba8974988633360f",
+        "content": "sha256:9132040bb76e8b172ae849b612f0aee6fa9f6c0440b944cbb0fb24c3fedebce3",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_test_that_takes_the_guards_hook_out_fails_and_the_hook_is_put_back"
+        }
+      },
+      "facet": "A test removing the hook fails and teardown restores it.",
+      "id": "PRF-PQRQDV",
+      "invariant": "INV-C5TQ6Z",
+      "origin": {
+        "handoffEntry": "R3 note 14",
+        "leaf": "260928-MIK-L26"
+      }
+    }
+  ],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "66c88c31b7b97d8c22db5625ba8974988633360f",
+        "content": "sha256:9884a40ddba7b699e20e3ab398a203c6bab5478efa1a8f1cbbb0618ba3d88373",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_helper_that_opens_a_database_is_called_only_by_the_listed_modules"
+        }
+      },
+      "id": "RLZ-GGDNWD",
+      "invariant": "INV-GBH3RH",
+      "origin": {
+        "handoffEntry": "R3 finding 8",
+        "leaf": "260928-MIK-L26"
+      },
+      "rationale": "This source-population check detects a new caller of a database helper.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

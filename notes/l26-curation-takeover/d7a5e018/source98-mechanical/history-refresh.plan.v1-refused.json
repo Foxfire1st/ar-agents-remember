@@ -1,0 +1,154 @@
+{
+  "argv": [
+    "/home/firefox/projects/agents-remember/mcp/.venv/bin/python",
+    "-m",
+    "agents_remember.cli",
+    "knowledge-ingest",
+    "--contract",
+    "/home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/enclosures/260928-mik-l26/series-contract.md",
+    "--list",
+    "/home/firefox/projects/ar-coordination/worktrees/agents-remember/260928-mik-l26-ar/memory-260928-mik-l26/notes/l26-curation-takeover/d7a5e018/source98-mechanical/history-refresh.handoff.json",
+    "--authorization-ref",
+    "L26-Source98-production-only:sha256:f1a8984a1ff57d91ca7dbd53de8fab8c6597d4be7e5109ab9f684397c71e74d8",
+    "--json"
+  ],
+  "ruler": "leaf a1b7c898 development SDK; serving tool 3f682987",
+  "exitCode": 1,
+  "stderr": "",
+  "report": {
+    "authorization": "L26-Source98-production-only:sha256:f1a8984a1ff57d91ca7dbd53de8fab8c6597d4be7e5109ab9f684397c71e74d8",
+    "carried": [
+      "PRF-0KYXS7",
+      "PRF-3CQKFM",
+      "PRF-95VTT0",
+      "PRF-CJT4MT",
+      "PRF-CPH5K1",
+      "PRF-EA6YHQ",
+      "PRF-H64HF6",
+      "PRF-NHJ0KC",
+      "PRF-SB6671",
+      "PRF-TBGN85",
+      "PRF-Y8YVW3",
+      "RLZ-1WK7P0",
+      "RLZ-8ACRJS",
+      "RLZ-NJFH31",
+      "RLZ-NNHVHW",
+      "RLZ-TB9TST",
+      "RLZ-VQZWNZ",
+      "RLZ-ZTDYFT"
+    ],
+    "codeTree": "6a13d562cd5d03b6fdb8ddfad688c5f48c3f34d2",
+    "entries": [],
+    "evidence": [],
+    "historyRows": [
+      {
+        "disposition": "no_impact",
+        "history": "knowledge/history/260928-MIK-L26.json",
+        "id": "ROW-9HSRCK",
+        "subject": "INV-208SQT"
+      },
+      {
+        "disposition": "no_impact",
+        "history": "knowledge/history/260928-MIK-L26.json",
+        "id": "ROW-5F857S",
+        "subject": "INV-5KBX7C"
+      },
+      {
+        "disposition": "no_impact",
+        "history": "knowledge/history/260928-MIK-L26.json",
+        "id": "ROW-EPM77P",
+        "subject": "INV-683GA3"
+      },
+      {
+        "disposition": "no_impact",
+        "history": "knowledge/history/260928-MIK-L26.json",
+        "id": "ROW-MCRAJQ",
+        "subject": "INV-8AMSGV"
+      },
+      {
+        "disposition": "no_impact",
+        "history": "knowledge/history/260928-MIK-L26.json",
+        "id": "ROW-R8Q760",
+        "subject": "INV-9S49CW"
+      },
+      {
+        "disposition": "no_impact",
+        "history": "knowledge/history/260928-MIK-L26.json",
+        "id": "ROW-4PZRYM",
+        "subject": "INV-A6GAKX"
+      },
+      {
+        "disposition": "no_impact",
+        "history": "knowledge/history/260928-MIK-L26.json",
+        "id": "ROW-VA10W6",
+        "subject": "INV-CHNC1N"
+      },
+      {
+        "disposition": "no_impact",
+        "history": "knowledge/history/260928-MIK-L26.json",
+        "id": "ROW-FKRK0N",
+        "subject": "INV-NFV5VJ"
+      },
+      {
+        "disposition": "no_impact",
+        "history": "knowledge/history/260928-MIK-L26.json",
+        "id": "ROW-3HQCR8",
+        "subject": "INV-PEVJ6G"
+      },
+      {
+        "disposition": "no_impact",
+        "history": "knowledge/history/260928-MIK-L26.json",
+        "id": "ROW-AMF7ZE",
+        "subject": "INV-YNHABM"
+      },
+      {
+        "disposition": "no_impact",
+        "history": "knowledge/history/260928-MIK-L26.json",
+        "id": "ROW-FBVVWN",
+        "subject": "INV-ZNJ14G"
+      },
+      {
+        "disposition": "no_impact",
+        "history": "knowledge/history/260928-MIK-L26.json",
+        "id": "ROW-VNHHEP",
+        "subject": "FAM-7AEA19"
+      },
+      {
+        "disposition": "no_impact",
+        "history": "knowledge/history/260928-MIK-L26.json",
+        "id": "ROW-MK4RHQ",
+        "subject": "FAM-TYQYTP"
+      },
+      {
+        "disposition": "no_impact",
+        "history": "knowledge/history/260928-MIK-L26.json",
+        "id": "ROW-38Y058",
+        "subject": "FAM-PNH1QS"
+      },
+      {
+        "disposition": "no_impact",
+        "history": "knowledge/history/260928-MIK-L26.json",
+        "id": "ROW-XPYS1V",
+        "subject": "FAM-YGXZTQ"
+      }
+    ],
+    "memoryRoot": "/home/firefox/projects/ar-coordination/worktrees/agents-remember/260928-mik-l26-ar/memory-260928-mik-l26",
+    "notes": [],
+    "operation": "knowledge-write",
+    "owner": "260928-MIK-L26",
+    "problems": [
+      {
+        "message": "skills/l-01-agent-lifecycles/composition-manifest.json: lines 1-613 are not lines the blob holds (it holds 611)",
+        "where": "history[10].covers"
+      }
+    ],
+    "provisionalIds": false,
+    "records": [],
+    "removed": [],
+    "requirementEndpoints": [],
+    "rulings": [],
+    "state": "refused",
+    "violations": [],
+    "written": []
+  }
+}

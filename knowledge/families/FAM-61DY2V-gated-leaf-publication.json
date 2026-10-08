@@ -5,16 +5,30 @@
     ],
     "justification": "The gate at the closeout, the commit built from the judged tree, the index copy that lets the judged-tree check see a rewrite made in the second the index was written, the frozen attempt files, the governing changed row and the honest preview each close one way in which a closeout could publish a leaf's memory unjudged or let its judgment be replaced; none of them gives the guarantee alone."
   },
-  "guarantee": "On converted memory a leaf's worktree closeout commits or records the leaf's memory only as a tree that the knowledge validator and the mandatory invariant gate judged with every worklist item answered, also when it resumes with recovered commits and when nothing is left to commit: it commits exactly the tree it judged and refuses a tree that changed while the gate ran, also when a file was rewritten in the second the index was written; a gate verdict kept from an earlier evaluation is used only while every input it recorded outside the trees still reads the same, also when a requirement packet's locator is retargeted to a file with identical bytes; its preview never promises a closeout the gate refuses; the judgments a closeout published stay frozen while later answers go to the leaf's next attempt file; and a later row can never replace the judgment of a record the leaf changed. The guarantee covers the worktree closeout, its recovery paths and the commit it records, which the leaf's integration lands without judging it again. Two other routes by which a leaf's memory reaches its parent line are outside it. A recorded landing runs the knowledge validator and checks that the leaf's history file is closed; it does not recompute the worklist, so an open worklist item does not refuse it. Direct landing has its own gate, and its commit is bound to its admission snapshot, not to the tree that gate judged.",
+  "guarantee": "A converted leaf's closeout and direct landing judge their prepared memory tree through the validator and invariant gate and publish only that admitted tree on the intended branch and observed parent. The source index, message and hook policy remain faithful, and moved inputs or unfinished native actions refuse. Unpublished refusals restore owned preparations and preserve concurrent content; expected-old take-back never overwrites a foreign commit. Partial publication whose take-back fails may leave a reachable commit while preparations restore, and a proof failure after successful publication return keeps the published preparation. Gate-input reuse and frozen history remain exact. Recorded landing has only its separately declared validator and closed-history checks.",
   "id": "FAM-61DY2V",
   "members": [
-    "INV-HWAWFT",
+    "INV-0T84PZ",
+    "INV-0XMNQZ",
+    "INV-2Q8RPR",
     "INV-49E649",
-    "INV-MS9BMJ",
-    "INV-XN0FG8",
-    "INV-WV1YQE",
     "INV-656CYW",
-    "INV-D2HZQ8"
+    "INV-89A5AN",
+    "INV-9ZBTVA",
+    "INV-ANKPPE",
+    "INV-BEYEV2",
+    "INV-D2HZQ8",
+    "INV-FYZQK0",
+    "INV-G0Y4VR",
+    "INV-GSEMMW",
+    "INV-HWAWFT",
+    "INV-KTMBMN",
+    "INV-MS9BMJ",
+    "INV-N5RBFK",
+    "INV-WV1YQE",
+    "INV-XN0FG8",
+    "INV-YZ45D7",
+    "INV-ZGFZXT"
   ],
   "origin": {
     "handoff": {
@@ -24,7 +38,7 @@
     "leaf": "260928-MIK-L37",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "routes": [
     "mcp/src/agents_remember/application",
     "mcp/src/agents_remember/kernel",

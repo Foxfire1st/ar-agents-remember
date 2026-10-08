@@ -1,0 +1,1164 @@
+{
+  "ok": true,
+  "tokens": 7545,
+  "tokenizer": "tiktoken:o200k_base",
+  "tokenCountExact": true,
+  "operation": "knowledge_read",
+  "state": "page",
+  "view": "source_context",
+  "repositoryId": "7511e917-d5d3-584e-b0ce-44dcad666cfe",
+  "snapshot": "d79bbb6484d0764684a43359b97fb8fcadec4fb5",
+  "completeWithinDeclaredScope": false,
+  "continuation": "kc2.eNotUNGOwyAM-xeetyulFEh_Zgoh7KqVtaJsd9O0f79Uurw4cizbyluRmlTM2o4IwTsPRNoMOeSUYwgWkgmUibDHFEGdVBG58d4hWgvAmIC914zkch4IKKaIsc9Gsx1kfOopOD_0fW_dCN4NEElsNjU5I_AUu6cRosqyMGZZdzW91W2-J6E2bN-H_IBJFdq6vVKHV763_VK5cIlcu5-13lpl3ruypscieJ3b1_ZSH3GTKJWxzMvrTGvZFm58_k9qckoeYozOBpu0d9YFi9J8hAhePpAJE5PNcTzk0iForU_qqL2vj0p8ofXe-Lepzx9Kg2N2",
+  "page": {
+    "threshold": {
+      "tokens": 8000,
+      "tokenizer": "tiktoken:o200k_base"
+    },
+    "memoryTreeId": "d79bbb6484d0764684a43359b97fb8fcadec4fb5",
+    "selectionPolicy": "family-complete-leaf",
+    "selectionPolicyVersion": "v2",
+    "manifestDigest": "2776aa4499ead9e770eac6ff3c9cbdbab1f20e433337d1c867311146597639bc",
+    "codeTreeId": "bf045a987679cc023f8fdfb8849d28cfcca1adb9",
+    "start": 0,
+    "rowsOnPage": 62,
+    "total": 170,
+    "returned": 62,
+    "remaining": 108,
+    "enumerationComplete": false
+  },
+  "payload": {
+    "seed": {
+      "kind": "path",
+      "path": "mcp/src/agents_remember/worktrees/modules/git.py"
+    },
+    "state": "page",
+    "memoryTreeId": "d79bbb6484d0764684a43359b97fb8fcadec4fb5",
+    "manifestDigest": "2776aa4499ead9e770eac6ff3c9cbdbab1f20e433337d1c867311146597639bc",
+    "rows": [
+      {
+        "kind": "member",
+        "id": "INV-0T84PZ",
+        "revision": 1,
+        "status": "proposed",
+        "admission": {
+          "criteria": [
+            "prevents_costly_mistake"
+          ],
+          "justification": "Reporting branch movement when the re-read tip is unchanged would conceal a real Git hook or lock refusal. Re-reading the intended ref distinguishes an actual concurrent tip change from a failed update at the admitted tip and preserves Git's diagnostic in the latter case."
+        },
+        "statement": "A failed ref update reports a moved branch only if its tip moved and otherwise preserves Git refusal text.",
+        "applicability": "A failed ref update during publication or take-back.",
+        "conditions": [
+          "The intended ref was re-read after the failure."
+        ],
+        "exclusions": [
+          "A rejection with no moved tip; Git's own text is kept."
+        ],
+        "state": "current",
+        "families": [
+          "FAM-61DY2V"
+        ]
+      },
+      {
+        "kind": "realization",
+        "id": "RLZ-VSE4FH",
+        "invariant": "INV-0T84PZ",
+        "path": "mcp/src/agents_remember/worktrees/modules/git.py",
+        "locator": {
+          "kind": "symbol",
+          "name": "_move_admitted_ref"
+        },
+        "role": "enforcement",
+        "state": "current"
+      },
+      {
+        "kind": "proof",
+        "id": "PRF-9C37W5",
+        "invariant": "INV-0T84PZ",
+        "path": "mcp/tests/test_git_command.py",
+        "locator": {
+          "kind": "symbol",
+          "name": "PublishTreeCommitGuardTests.test_no_commit_hook_runs_and_a_refusing_ref_transaction_hook_is_reported"
+        },
+        "facet": "A refused ref transaction is reported with Git's own text.",
+        "state": "current"
+      },
+      {
+        "kind": "member",
+        "id": "INV-0XMNQZ",
+        "revision": 1,
+        "status": "proposed",
+        "admission": {
+          "criteria": [
+            "prevents_costly_mistake"
+          ],
+          "justification": "Waiting on a lock error that can never clear would stall publication indefinitely."
+        },
+        "statement": "Only a lock error that would block is waited for and every other lock error is refused immediately.",
+        "applicability": "Publication lock acquisition.",
+        "conditions": [
+          "The lock error says another holder would block the attempt."
+        ],
+        "exclusions": [
+          "Every other lock error, which waiting cannot cure."
+        ],
+        "state": "current",
+        "families": [
+          "FAM-61DY2V"
+        ]
+      },
+      {
+        "kind": "realization",
+        "id": "RLZ-SMB7P7",
+        "invariant": "INV-0XMNQZ",
+        "path": "mcp/src/agents_remember/worktrees/modules/git.py",
+        "locator": {
+          "kind": "symbol",
+          "name": "_publication_lock"
+        },
+        "role": "enforcement",
+        "state": "current"
+      },
+      {
+        "kind": "proof",
+        "id": "PRF-NMGMZ2",
+        "invariant": "INV-0XMNQZ",
+        "path": "mcp/tests/test_git_command.py",
+        "locator": {
+          "kind": "symbol",
+          "name": "PublishTreeCommitGuardTests.test_only_a_lock_that_would_block_is_waited_for"
+        },
+        "facet": "Only a lock error that would block is waited for.",
+        "state": "current"
+      },
+      {
+        "kind": "member",
+        "id": "INV-2Q8RPR",
+        "revision": 1,
+        "status": "proposed",
+        "admission": {
+          "criteria": [
+            "guarded_by_test"
+          ],
+          "justification": "At least one proof names this invariant's exact behavior at the candidate."
+        },
+        "statement": "Lifecycle commit publication runs no commit hooks, including the direct-landing memory commit.",
+        "applicability": "Commit-object publication for ordinary, direct and prepared routes.",
+        "conditions": [
+          "The route is the shared commit-tree primitive."
+        ],
+        "exclusions": [
+          "Prepared memory publication, which keeps ordinary Git hooks."
+        ],
+        "state": "current",
+        "families": [
+          "FAM-61DY2V"
+        ]
+      },
+      {
+        "kind": "realization",
+        "id": "RLZ-XMGREQ",
+        "invariant": "INV-2Q8RPR",
+        "path": "mcp/src/agents_remember/worktrees/modules/git.py",
+        "locator": {
+          "kind": "symbol",
+          "name": "publish_tree_commit"
+        },
+        "role": "primary-authority",
+        "state": "current"
+      },
+      {
+        "kind": "proof",
+        "id": "PRF-AZBPJ8",
+        "invariant": "INV-2Q8RPR",
+        "path": "mcp/tests/test_direct_landing.py",
+        "locator": {
+          "kind": "symbol",
+          "name": "DirectLandingTests.test_converted_direct_landing_commits_the_judged_tree_and_requires_governing_row"
+        },
+        "facet": "Direct landing commits the judged tree with no commit hooks.",
+        "state": "current"
+      },
+      {
+        "kind": "member",
+        "id": "INV-49E649",
+        "revision": 2,
+        "status": "proposed",
+        "admission": {
+          "criteria": [
+            "spans_locations",
+            "guarded_by_test",
+            "prevents_costly_mistake"
+          ],
+          "justification": "The gate's evaluation can take a minute; without this binding a file written meanwhile, or content staged only in the repository's index, would be committed to a leaf's memory without the validator or the worklist having judged it."
+        },
+        "statement": "The tree a converted leaf's closeout commits to memory is the tree its gate judged: every write the closeout itself makes to memory content -- the metadata refresh, the history closing and the ledger cache's ignore rule -- is on disk before the tree is read; a working tree or index that changed while the gate ran is refused before the memory commit's Git mutation; and the commit is staged from the judged tree object and proved against it, so a file written after that check stays an uncommitted change and is never committed unjudged.",
+        "applicability": "The memory commit of a converted leaf's worktree closeout.",
+        "conditions": [
+          "The memory tree is converted, so the closeout holds a judged tree."
+        ],
+        "exclusions": [
+          "Unconverted memory, which has no judged tree and is staged from the working tree as before.",
+          "Direct landing is outside this invariant: its commit is bound to its admission snapshot, not to the tree its gate judged.",
+          "The ledger memory.md, which the commit excludes. The cache preparation removes it from the repository's index before the judged-tree check; that is the one index write that precedes the memory commit's mutation.",
+          "The retired database-era realization site; the obligation is recorded on converted memory only."
+        ],
+        "state": "current",
+        "families": [
+          "FAM-61DY2V"
+        ]
+      },
+      {
+        "kind": "realization",
+        "id": "RLZ-1TR608",
+        "invariant": "INV-49E649",
+        "path": "mcp/src/agents_remember/kernel/memory_cache.py",
+        "locator": {
+          "kind": "symbol",
+          "name": "ignore_memory_cache"
+        },
+        "role": "support",
+        "state": "current"
+      },
+      {
+        "kind": "realization",
+        "id": "RLZ-FJ0671",
+        "invariant": "INV-49E649",
+        "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py",
+        "locator": {
+          "kind": "symbol",
+          "name": "_exact_memory_tree"
+        },
+        "role": "support",
+        "state": "current"
+      },
+      {
+        "kind": "realization",
+        "id": "RLZ-K4M788",
+        "invariant": "INV-49E649",
+        "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py",
+        "locator": {
+          "kind": "symbol",
+          "name": "_commit_memory_content"
+        },
+        "role": "primary-authority",
+        "state": "current"
+      },
+      {
+        "kind": "realization",
+        "id": "RLZ-M2XFSX",
+        "invariant": "INV-49E649",
+        "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py",
+        "locator": {
+          "kind": "symbol",
+          "name": "_require_judged_tree"
+        },
+        "role": "enforcement",
+        "state": "current"
+      },
+      {
+        "kind": "realization",
+        "id": "RLZ-V3EGC6",
+        "invariant": "INV-49E649",
+        "path": "mcp/src/agents_remember/worktrees/modules/git.py",
+        "locator": {
+          "kind": "symbol",
+          "name": "stage_tree"
+        },
+        "role": "enforcement",
+        "state": "current"
+      },
+      {
+        "kind": "proof",
+        "id": "PRF-5DW4E9",
+        "invariant": "INV-49E649",
+        "path": "mcp/tests/test_knowledge_reopen.py",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_file_rewritten_while_the_gate_runs_is_never_committed_unjudged"
+        },
+        "facet": "A card rewritten in place while the gate runs is refused before the memory commit's Git mutation, with the closing and .gitignore restored; on the rerun the commit's tree and its proof's expected tree are the judged tree, and files written after the check stay uncommitted.",
+        "state": "current"
+      },
+      {
+        "kind": "member",
+        "id": "INV-656CYW",
+        "revision": 2,
+        "status": "proposed",
+        "admission": {
+          "criteria": [
+            "spans_locations",
+            "guarded_by_test",
+            "prevents_costly_mistake"
+          ],
+          "justification": "A plain copy of an index is a new file with a new time, so Git trusts every entry's recorded stat data: a same-size rewrite in that second keeps its old blob in the capture, and a cached knowledge index of the old content is served as current."
+        },
+        "statement": "A disposable capture taken through a copy of a repository's Git index copies the index together with its file's modification time, bytes and time read from one open file, so Git still compares by content a file that was rewritten in the second the index was written. The knowledge index's directory key and the closeout's staging snapshot therefore never answer such a rewrite from its old blob.",
+        "applicability": "Every capture of a working tree that starts from a copy of the repository's own Git index.",
+        "conditions": [
+          "The repository has an index file to copy."
+        ],
+        "exclusions": [
+          "Staging through the repository's own index, where Git's own check applies."
+        ],
+        "state": "current",
+        "families": [
+          "FAM-4ZNEN9",
+          "FAM-61DY2V"
+        ]
+      },
+      {
+        "kind": "realization",
+        "id": "RLZ-3X5YSV",
+        "invariant": "INV-656CYW",
+        "path": "mcp/src/agents_remember/kernel/git_command.py",
+        "locator": {
+          "kind": "symbol",
+          "name": "copy_git_index"
+        },
+        "role": "primary-authority",
+        "state": "current"
+      },
+      {
+        "kind": "realization",
+        "id": "RLZ-5VBRRY",
+        "invariant": "INV-656CYW",
+        "path": "mcp/src/agents_remember/memory/knowledge_index/tree.py",
+        "locator": {
+          "kind": "symbol",
+          "name": "_capture"
+        },
+        "role": "enforcement",
+        "state": "current"
+      },
+      {
+        "kind": "realization",
+        "id": "RLZ-WZ3W15",
+        "invariant": "INV-656CYW",
+        "path": "mcp/src/agents_remember/worktrees/integration/mutation_evidence.py",
+        "locator": {
+          "kind": "symbol",
+          "name": "ephemeral_git_mutation_snapshot"
+        },
+        "role": "enforcement",
+        "state": "current"
+      },
+      {
+        "kind": "realization",
+        "id": "RLZ-BW7QK2",
+        "invariant": "INV-656CYW",
+        "path": "mcp/src/agents_remember/worktrees/modules/git.py",
+        "locator": {
+          "kind": "symbol",
+          "name": "_tree_from_index_copy"
+        },
+        "role": "enforcement",
+        "state": "current"
+      },
+      {
+        "kind": "proof",
+        "id": "PRF-8EEFJD",
+        "invariant": "INV-656CYW",
+        "path": "mcp/tests/test_knowledge_index.py",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_rewrite_in_the_second_of_the_index_write_is_never_answered_from_the_old_content"
+        },
+        "facet": "After a same-size rewrite in the second the index was written the directory key changes, the cache builds a new index that holds the rewritten statement, and an unchanged tree still reuses its index.",
+        "state": "current"
+      },
+      {
+        "kind": "proof",
+        "id": "PRF-PYPX5S",
+        "invariant": "INV-656CYW",
+        "path": "mcp/tests/test_knowledge_reopen.py",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_file_rewritten_while_the_gate_runs_is_never_committed_unjudged"
+        },
+        "facet": "The staging snapshot taken through the copied index reads the card as rewritten in that second, and equals the exact tree.",
+        "state": "current"
+      },
+      {
+        "kind": "proof",
+        "id": "PRF-N39F79",
+        "invariant": "INV-656CYW",
+        "path": "mcp/tests/test_worktree_candidate_capture.py",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_index_copy_keeps_the_time_git_reads_from_the_index_file"
+        },
+        "facet": "The copy uses the source index modification time and a mutated copy-time implementation fails the intended recheck.",
+        "state": "current"
+      },
+      {
+        "kind": "proof",
+        "id": "PRF-P60NFQ",
+        "invariant": "INV-656CYW",
+        "path": "mcp/tests/test_worktree_candidate_capture.py",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_same_size_rewrite_in_the_second_of_the_index_write_changes_the_tree"
+        },
+        "facet": "A same-size same-second rewrite changes the shared candidate tree on both code and memory sides.",
+        "state": "current"
+      },
+      {
+        "kind": "member",
+        "id": "INV-89A5AN",
+        "revision": 1,
+        "status": "proposed",
+        "admission": {
+          "criteria": [
+            "prevents_costly_mistake"
+          ],
+          "justification": "Dropping index flags, intent-to-add or sparse entries during publication or refusal would lose staged work."
+        },
+        "statement": "Publication and refusal preserve index flags, intent-to-add entries outside the commit and sparse-checkout entries.",
+        "applicability": "Index restoration across publication and refusal.",
+        "conditions": [
+          "The index holds flags, intent-to-add entries or sparse-checkout entries a tree cannot record."
+        ],
+        "exclusions": [
+          "Entries the caller staged for the commit itself; those follow the judged tree."
+        ],
+        "state": "current",
+        "families": [
+          "FAM-61DY2V"
+        ]
+      },
+      {
+        "kind": "realization",
+        "id": "RLZ-ZAY1M2",
+        "invariant": "INV-89A5AN",
+        "path": "mcp/src/agents_remember/worktrees/modules/git.py",
+        "locator": {
+          "kind": "symbol",
+          "name": "stage_tree"
+        },
+        "role": "enforcement",
+        "state": "current"
+      },
+      {
+        "kind": "proof",
+        "id": "PRF-HWV9V8",
+        "invariant": "INV-89A5AN",
+        "path": "mcp/tests/test_git_command.py",
+        "locator": {
+          "kind": "symbol",
+          "name": "PublishTreeCommitGuardTests.test_the_index_keeps_what_no_tree_records_after_a_publication_and_a_refusal"
+        },
+        "facet": "Index flags, intent-to-add and sparse entries survive publication and refusal.",
+        "state": "current"
+      },
+      {
+        "kind": "member",
+        "id": "INV-ANKPPE",
+        "revision": 1,
+        "status": "proposed",
+        "admission": {
+          "criteria": [
+            "prevents_costly_mistake"
+          ],
+          "justification": "Publishing over an unresolved merge would write a partial tree as if it were judged."
+        },
+        "statement": "An unfinished native action is refused before the index is asked for a tree, including a real unresolved merge.",
+        "applicability": "publish_tree_commit's pre-publication checks.",
+        "conditions": [
+          "The repository index or worktree holds an unfinished action."
+        ],
+        "exclusions": [
+          "A clean repository; the check is then a no-op."
+        ],
+        "state": "current",
+        "families": [
+          "FAM-61DY2V"
+        ]
+      },
+      {
+        "kind": "realization",
+        "id": "RLZ-08YAZW",
+        "invariant": "INV-ANKPPE",
+        "path": "mcp/src/agents_remember/worktrees/modules/git.py",
+        "locator": {
+          "kind": "symbol",
+          "name": "publish_tree_commit"
+        },
+        "role": "primary-authority",
+        "state": "current"
+      },
+      {
+        "kind": "proof",
+        "id": "PRF-AEK9MF",
+        "invariant": "INV-ANKPPE",
+        "path": "mcp/tests/test_git_command.py",
+        "locator": {
+          "kind": "symbol",
+          "name": "PublishTreeCommitGuardTests.test_an_empty_message_and_an_unfinished_action_publish_nothing"
+        },
+        "facet": "An unfinished action or empty message publishes nothing.",
+        "state": "current"
+      },
+      {
+        "kind": "member",
+        "id": "INV-BEYEV2",
+        "revision": 1,
+        "status": "proposed",
+        "admission": {
+          "criteria": [
+            "prevents_costly_mistake"
+          ],
+          "justification": "Take-back that overwrites a concurrent foreign commit would destroy another writer's commit."
+        },
+        "statement": "Take-back retains an expected-old compare-and-swap and only unpublished refusal cancellations can replace themselves with the same request.",
+        "applicability": "Take-back and replacement of publication attempts.",
+        "conditions": [
+          "The expected-old value was captured with the admitted parent."
+        ],
+        "exclusions": [
+          "An unpublished refusal, which may replace itself with the same request."
+        ],
+        "state": "current",
+        "families": [
+          "FAM-61DY2V"
+        ]
+      },
+      {
+        "kind": "realization",
+        "id": "RLZ-B2Q04N",
+        "invariant": "INV-BEYEV2",
+        "path": "mcp/src/agents_remember/worktrees/direct_landing.py",
+        "locator": {
+          "kind": "symbol",
+          "name": "_create_direct_landing"
+        },
+        "role": "primary-authority",
+        "state": "current"
+      },
+      {
+        "kind": "realization",
+        "id": "RLZ-9RTXE8",
+        "invariant": "INV-BEYEV2",
+        "path": "mcp/src/agents_remember/worktrees/modules/git.py",
+        "locator": {
+          "kind": "symbol",
+          "name": "_move_admitted_ref"
+        },
+        "role": "enforcement",
+        "state": "current"
+      },
+      {
+        "kind": "member",
+        "id": "INV-EKE1RV",
+        "revision": 1,
+        "status": "proposed",
+        "admission": {
+          "criteria": [
+            "guarded_by_test",
+            "prevents_costly_mistake"
+          ],
+          "justification": "A faster read could otherwise miss flagged changes or mutate the user index that a later commit relies on; the reference-state matrix and explicit original-index assertions pin both hazards."
+        },
+        "statement": "The worktree's real index, its files and the user's work are never changed.",
+        "applicability": "Candidate-tree observations through the shared worktree_candidate_tree owner, for code and external memory repositories.",
+        "conditions": [
+          "Git evidence is retained only for entries matching HEAD; staged changed/add/remove entries are restored before working files are added.",
+          "Assume-unchanged and skip-worktree flags are cleared only on the copy; objects are written into the addressed repository so candidates can be pinned.",
+          "Ignored staged paths absent from HEAD stay absent, and explicit caller-owned derived exclusions are preserved."
+        ],
+        "exclusions": [
+          "Ordinary staging or commit operations intentionally using the real index.",
+          "An unchanged file is not reconverted merely because attributes, filters or core.autocrlf changed after its recorded stat evidence; the approved capture follows what that real index stages."
+        ],
+        "state": "current",
+        "families": [
+          "FAM-4ZNEN9"
+        ]
+      },
+      {
+        "kind": "realization",
+        "id": "RLZ-ZSYXFY",
+        "invariant": "INV-EKE1RV",
+        "path": "mcp/src/agents_remember/kernel/git_command.py",
+        "locator": {
+          "kind": "symbol",
+          "name": "run_git_with_index"
+        },
+        "role": "support",
+        "state": "current"
+      },
+      {
+        "kind": "realization",
+        "id": "RLZ-98370Y",
+        "invariant": "INV-EKE1RV",
+        "path": "mcp/src/agents_remember/worktrees/modules/git.py",
+        "locator": {
+          "kind": "symbol",
+          "name": "_tree_from_head"
+        },
+        "role": "support",
+        "state": "current"
+      },
+      {
+        "kind": "realization",
+        "id": "RLZ-MTQB5G",
+        "invariant": "INV-EKE1RV",
+        "path": "mcp/src/agents_remember/worktrees/modules/git.py",
+        "locator": {
+          "kind": "symbol",
+          "name": "worktree_candidate_tree"
+        },
+        "role": "primary-authority",
+        "state": "current"
+      },
+      {
+        "kind": "realization",
+        "id": "RLZ-S5VV47",
+        "invariant": "INV-EKE1RV",
+        "path": "mcp/src/agents_remember/worktrees/modules/git.py",
+        "locator": {
+          "kind": "symbol",
+          "name": "_tree_from_index_copy"
+        },
+        "role": "enforcement",
+        "state": "current"
+      },
+      {
+        "kind": "proof",
+        "id": "PRF-6MHS46",
+        "invariant": "INV-EKE1RV",
+        "path": "mcp/tests/test_worktree_candidate_capture.py",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_copy_git_cannot_use_falls_back_to_the_full_capture_and_the_same_tree"
+        },
+        "facet": "An unusable index copy uses the existing full private capture and returns its exact tree rather than guessed state.",
+        "state": "current"
+      },
+      {
+        "kind": "proof",
+        "id": "PRF-BA8CBC",
+        "invariant": "INV-EKE1RV",
+        "path": "mcp/tests/test_worktree_candidate_capture.py",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_every_worktree_state_is_captured_as_the_tree_the_previous_capture_returns"
+        },
+        "facet": "Private-index capture matches the previous reference across the listed staged/unstaged/ignored/flagged states and exclusions while preserving real-index state.",
+        "state": "current"
+      },
+      {
+        "kind": "proof",
+        "id": "PRF-E1ZRG3",
+        "invariant": "INV-EKE1RV",
+        "path": "mcp/tests/test_worktree_candidate_capture.py",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_flags_that_trust_the_index_are_cleared_on_the_copy_only"
+        },
+        "facet": "Index flags cannot hide working changes, and the original flags/index stay untouched.",
+        "state": "current"
+      },
+      {
+        "kind": "member",
+        "id": "INV-FYZQK0",
+        "revision": 1,
+        "status": "proposed",
+        "admission": {
+          "criteria": [
+            "spans_locations"
+          ],
+          "justification": "Realized across 2 files that together perform the obligation."
+        },
+        "statement": "A switched HEAD plus failed expected-old take-back may leave the published memory commit reachable while ordinary closeout restores its preparatory files.",
+        "applicability": "The ordinary closeout's partial-publication boundary.",
+        "conditions": [
+          "Publication raised after creating a reachable commit, HEAD switched, and expected-old take-back did not remove that commit."
+        ],
+        "exclusions": [
+          "Ordinary unpublished refusal and validation after a successful publication return; their restoration boundaries are separate."
+        ],
+        "state": "current",
+        "families": [
+          "FAM-61DY2V"
+        ]
+      },
+      {
+        "kind": "realization",
+        "id": "RLZ-Q6CJEZ",
+        "invariant": "INV-FYZQK0",
+        "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py",
+        "locator": {
+          "kind": "symbol",
+          "name": "_commit_memory_content"
+        },
+        "role": "primary-authority",
+        "state": "current"
+      },
+      {
+        "kind": "realization",
+        "id": "RLZ-GJZS85",
+        "invariant": "INV-FYZQK0",
+        "path": "mcp/src/agents_remember/worktrees/modules/git.py",
+        "locator": {
+          "kind": "symbol",
+          "name": "_move_admitted_ref"
+        },
+        "role": "enforcement",
+        "state": "current"
+      },
+      {
+        "kind": "member",
+        "id": "INV-G0Y4VR",
+        "revision": 1,
+        "status": "proposed",
+        "admission": {
+          "criteria": [
+            "prevents_costly_mistake"
+          ],
+          "justification": "A message git would abort on, committed with different content than git commit -m stores, would ship an unintended message."
+        },
+        "statement": "The publication message matches real git commit -m cleanup behavior and refuses invalid modes and messages made empty by cleanup.",
+        "applicability": "Publication message cleanup and its refusals.",
+        "conditions": [
+          "The repository's configured cleanup mode and comment character apply."
+        ],
+        "exclusions": [
+          "A message file path; the primitive takes one message value."
+        ],
+        "state": "current",
+        "families": [
+          "FAM-61DY2V"
+        ]
+      },
+      {
+        "kind": "realization",
+        "id": "RLZ-R331TA",
+        "invariant": "INV-G0Y4VR",
+        "path": "mcp/src/agents_remember/worktrees/modules/git.py",
+        "locator": {
+          "kind": "symbol",
+          "name": "_cleaned_message"
+        },
+        "role": "enforcement",
+        "state": "current"
+      },
+      {
+        "kind": "proof",
+        "id": "PRF-T8AVGK",
+        "invariant": "INV-G0Y4VR",
+        "path": "mcp/tests/test_git_command.py",
+        "locator": {
+          "kind": "symbol",
+          "name": "PublishTreeCommitGuardTests.test_the_message_is_what_git_commit_m_stores_and_a_refusal_where_it_aborts"
+        },
+        "facet": "The stored message equals what git commit -m stores, and an aborted message is refused.",
+        "state": "current"
+      },
+      {
+        "kind": "member",
+        "id": "INV-GSEMMW",
+        "revision": 1,
+        "status": "proposed",
+        "admission": {
+          "criteria": [
+            "prevents_costly_mistake"
+          ],
+          "justification": "Publication that changes the message, index shape or hook behavior would make the committed object differ from the reviewed one."
+        },
+        "statement": "Publication preserves the ruled message, index flags and hook behavior and names real ref/lock failures.",
+        "applicability": "Publication message, index and hook behavior on the shared primitive.",
+        "conditions": [
+          "The repository pins the cleanup mode, comment character and hook policy."
+        ],
+        "exclusions": [
+          "Prepared routes, which keep their no-verify or ordinary-hook policy."
+        ],
+        "state": "current",
+        "families": [
+          "FAM-61DY2V"
+        ]
+      },
+      {
+        "kind": "realization",
+        "id": "RLZ-KGZHZY",
+        "invariant": "INV-GSEMMW",
+        "path": "mcp/src/agents_remember/worktrees/modules/git.py",
+        "locator": {
+          "kind": "symbol",
+          "name": "publish_tree_commit"
+        },
+        "role": "primary-authority",
+        "state": "current"
+      },
+      {
+        "kind": "member",
+        "id": "INV-J6PAD2",
+        "revision": 1,
+        "status": "proposed",
+        "admission": {
+          "criteria": [
+            "prevents_costly_mistake"
+          ],
+          "justification": "Negative controls expose loss of expected-old take-back, replacement narrowing and cleanup protection, which could otherwise overwrite concurrent commits or remove protected content while ordinary successful tests stay green."
+        },
+        "statement": "Tests catch loss of expected-old take-back, replacement narrowing and cleanup validation.",
+        "applicability": "Take-back and replacement controls under test.",
+        "conditions": [
+          "The expected-old value is wrong or the selection is terminal."
+        ],
+        "exclusions": [
+          "A clean success; no control fires."
+        ],
+        "state": "current",
+        "families": []
+      },
+      {
+        "kind": "realization",
+        "id": "RLZ-2F1J87",
+        "invariant": "INV-J6PAD2",
+        "path": "mcp/src/agents_remember/worktrees/modules/git.py",
+        "locator": {
+          "kind": "symbol",
+          "name": "_move_admitted_ref"
+        },
+        "role": "enforcement",
+        "state": "current"
+      },
+      {
+        "kind": "member",
+        "id": "INV-JZD1F5",
+        "revision": 1,
+        "status": "proposed",
+        "admission": {
+          "criteria": [
+            "spans_locations"
+          ],
+          "justification": "Realized across 2 files that together perform the obligation."
+        },
+        "statement": "The closeout docstring states that a partial publication with failed expected-old takeback may retain a reachable commit while preparations restore, whereas proof failure after successful publication return leaves preparations in place.",
+        "applicability": "The ordinary closeout's documentation of its publication and preparation-restoration boundary.",
+        "conditions": [
+          "The documentation distinguishes publication raising after partial ref movement from proof validation after a successful publication return."
+        ],
+        "exclusions": [
+          "A claim that documentation repairs the retained runtime race or publication policy."
+        ],
+        "state": "current",
+        "families": []
+      },
+      {
+        "kind": "realization",
+        "id": "RLZ-PFSP3Y",
+        "invariant": "INV-JZD1F5",
+        "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py",
+        "locator": {
+          "kind": "symbol",
+          "name": "_commit_memory_content"
+        },
+        "role": "presentation",
+        "state": "current"
+      },
+      {
+        "kind": "realization",
+        "id": "RLZ-Y3ZQ4N",
+        "invariant": "INV-JZD1F5",
+        "path": "mcp/src/agents_remember/worktrees/modules/git.py",
+        "locator": {
+          "kind": "symbol",
+          "name": "_move_admitted_ref"
+        },
+        "role": "enforcement",
+        "state": "current"
+      },
+      {
+        "kind": "member",
+        "id": "INV-YZ45D7",
+        "revision": 1,
+        "status": "proposed",
+        "admission": {
+          "criteria": [
+            "prevents_costly_mistake"
+          ],
+          "justification": "Publishing a commit object against a moved or foreign parent would put an unreviewed tree on the branch."
+        },
+        "statement": "publish_tree_commit binds the admitted parent and intended ref.",
+        "applicability": "publish_tree_commit publication binding.",
+        "conditions": [
+          "The admitted parent and intended ref were captured before object creation."
+        ],
+        "exclusions": [
+          "A caller-provided ref path outside the admitted contract."
+        ],
+        "state": "current",
+        "families": [
+          "FAM-61DY2V"
+        ]
+      },
+      {
+        "kind": "realization",
+        "id": "RLZ-C5MD2G",
+        "invariant": "INV-YZ45D7",
+        "path": "mcp/src/agents_remember/worktrees/modules/git.py",
+        "locator": {
+          "kind": "symbol",
+          "name": "publish_tree_commit"
+        },
+        "role": "primary-authority",
+        "state": "current"
+      },
+      {
+        "kind": "family_header",
+        "id": "FAM-4ZNEN9",
+        "revision": 1,
+        "status": "proposed",
+        "admission": {
+          "criteria": [
+            "joint_guarantee"
+          ],
+          "justification": "Capture/index isolation, one resolved pair, confirmed conversion reuse, consumed-byte memo admission and literal patch binding each close a different way an optimization could return source/intent under the wrong observed identity; none alone preserves the complete live review operation."
+        },
+        "title": "Exact live reviewer reuse",
+        "guarantee": "Live reviewer optimizations share one source resolution and capture owner, reuse only exactly confirmed conversion/view inputs, and bind every addressed patch to its literal path, while preserving real-index isolation, actual consumed task bytes, publication rechecks and failed-read refusals. No faster path supplies a comparison, worklist or patch under inputs it did not observe.",
+        "routes": [
+          "mcp/src/agents_remember/application",
+          "mcp/src/agents_remember/cli",
+          "mcp/src/agents_remember/kernel",
+          "mcp/src/agents_remember/memory/knowledge_index",
+          "mcp/src/agents_remember/tasks",
+          "mcp/src/agents_remember/worktrees/integration",
+          "mcp/src/agents_remember/worktrees/modules"
+        ],
+        "memberCount": 6,
+        "members": [
+          "INV-2172NS",
+          "INV-5M9WY3",
+          "INV-61Y147",
+          "INV-656CYW",
+          "INV-7MH0BR",
+          "INV-EKE1RV"
+        ],
+        "staleMembers": 0
+      },
+      {
+        "kind": "member",
+        "id": "INV-2172NS",
+        "revision": 1,
+        "status": "proposed",
+        "admission": {
+          "criteria": [
+            "guarded_by_test",
+            "prevents_costly_mistake"
+          ],
+          "justification": "Reusing a conversion without exact inputs could silently compare another code/memory baseline; the mismatch matrix protects reuse while avoiding repeated materialization of an already held tree."
+        },
+        "statement": "A converted base tree is written only when Git does not hold it.",
+        "applicability": "Live tree comparisons whose before memory is converted from a legacy base.",
+        "conditions": [
+          "The latest comparison record binds the same memory commit, pinned conversion version and paired code commit.",
+          "git cat-file confirms the recorded root object is a tree before reuse."
+        ],
+        "exclusions": [
+          "A missing tree or mismatched conversion inputs retains the existing conversion/materialization behavior.",
+          "This does not skip capture of either live candidate or replace recorded comparison numbering and pins."
+        ],
+        "state": "current",
+        "families": [
+          "FAM-4ZNEN9"
+        ]
+      },
+      {
+        "kind": "realization",
+        "id": "RLZ-P0RJYP",
+        "invariant": "INV-2172NS",
+        "path": "mcp/src/agents_remember/application/review_tree_comparison.py",
+        "locator": {
+          "kind": "symbol",
+          "name": "_converted_base"
+        },
+        "role": "primary-authority",
+        "state": "current"
+      },
+      {
+        "kind": "realization",
+        "id": "RLZ-PFG9TY",
+        "invariant": "INV-2172NS",
+        "path": "mcp/src/agents_remember/application/review_tree_comparison.py",
+        "locator": {
+          "kind": "symbol",
+          "name": "_held_tree"
+        },
+        "role": "enforcement",
+        "state": "current"
+      },
+      {
+        "kind": "proof",
+        "id": "PRF-45KFFF",
+        "invariant": "INV-2172NS",
+        "path": "mcp/tests/test_review_read_latency.py",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_converted_base_tree_git_holds_is_not_written_again"
+        },
+        "facet": "Matching held conversion inputs avoid mktree/hash-object and preserve the full body; each mismatched input and absent tree recomputes.",
+        "state": "current"
+      }
+    ],
+    "counts": {
+      "families": 2,
+      "members": 28,
+      "entries": 132,
+      "realizations": 92,
+      "proofs": 40,
+      "distinctPaths": 42,
+      "invariantsByState": {
+        "stale": 0,
+        "unverifiable": 0,
+        "unrealized": 0,
+        "current": 28
+      },
+      "advertisedFamilies": 0,
+      "chainFamilies": 8,
+      "rowsTotal": 170,
+      "rowsReturned": 62,
+      "rowsRemaining": 108
+    },
+    "hasMore": true,
+    "enumerationComplete": false,
+    "indexState": "complete",
+    "continuationOperation": "knowledge_read",
+    "continuationView": "source_context",
+    "routeChain": {
+      "directory": "mcp/src/agents_remember/worktrees/modules",
+      "links": 6,
+      "derivation": "mechanical",
+      "state": "governed",
+      "families": 8
+    }
+  },
+  "memoryTree": {
+    "memoryRoot": "/home/firefox/projects/ar-coordination/worktrees/agents-remember/260928-mik-l26-ar/memory-260928-mik-l26",
+    "treeId": "d79bbb6484d0764684a43359b97fb8fcadec4fb5",
+    "indexState": "complete",
+    "problems": []
+  },
+  "indexComplete": true,
+  "currentness": {
+    "codeTree": {
+      "repositoryRoot": "/home/firefox/projects/ar-coordination/worktrees/agents-remember/260928-mik-l26-ar/260928-mik-l26",
+      "treeId": "bf045a987679cc023f8fdfb8849d28cfcca1adb9"
+    },
+    "counts": {
+      "stale": 0,
+      "unverifiable": 0,
+      "unrealized": 0,
+      "current": 19
+    },
+    "invariants": [
+      {
+        "id": "INV-0T84PZ",
+        "state": "current",
+        "entries": []
+      },
+      {
+        "id": "INV-0XMNQZ",
+        "state": "current",
+        "entries": []
+      },
+      {
+        "id": "INV-2172NS",
+        "state": "current",
+        "entries": []
+      },
+      {
+        "id": "INV-2Q8RPR",
+        "state": "current",
+        "entries": []
+      },
+      {
+        "id": "INV-49E649",
+        "state": "current",
+        "entries": []
+      },
+      {
+        "id": "INV-5M9WY3",
+        "state": "current",
+        "entries": []
+      },
+      {
+        "id": "INV-61Y147",
+        "state": "current",
+        "entries": []
+      },
+      {
+        "id": "INV-656CYW",
+        "state": "current",
+        "entries": []
+      },
+      {
+        "id": "INV-7MH0BR",
+        "state": "current",
+        "entries": []
+      },
+      {
+        "id": "INV-89A5AN",
+        "state": "current",
+        "entries": []
+      },
+      {
+        "id": "INV-ANKPPE",
+        "state": "current",
+        "entries": []
+      },
+      {
+        "id": "INV-BEYEV2",
+        "state": "current",
+        "entries": []
+      },
+      {
+        "id": "INV-EKE1RV",
+        "state": "current",
+        "entries": []
+      },
+      {
+        "id": "INV-FYZQK0",
+        "state": "current",
+        "entries": []
+      },
+      {
+        "id": "INV-G0Y4VR",
+        "state": "current",
+        "entries": []
+      },
+      {
+        "id": "INV-GSEMMW",
+        "state": "current",
+        "entries": []
+      },
+      {
+        "id": "INV-J6PAD2",
+        "state": "current",
+        "entries": []
+      },
+      {
+        "id": "INV-JZD1F5",
+        "state": "current",
+        "entries": []
+      },
+      {
+        "id": "INV-YZ45D7",
+        "state": "current",
+        "entries": []
+      }
+    ],
+    "families": [
+      {
+        "id": "FAM-4ZNEN9",
+        "members": 6,
+        "staleMembers": 0,
+        "stale": []
+      }
+    ]
+  }
+}

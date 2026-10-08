@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Calling converted foundations universally not-recorded hides an actually authored or partially authored foundation and can cause an operator to duplicate or omit its authoring work."
+  },
+  "applicability": "The c-14 bootstrap skill's foundation states.",
+  "conditions": [
+    "Complete-empty, complete-authored, partial, admission and legacy states."
+  ],
+  "exclusions": [
+    "An unconverted repository, which the conversion owner refuses by name."
+  ],
+  "id": "INV-K69R3M",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Current paragraph lines 114-125; foundation test in the Worker 177-module run; nine generated copies checked independently; notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.md"
+      ],
+      "path": "handoff-stage1.json"
+    },
+    "handoffEntry": "L26-R1-F05",
+    "leaf": "260928-MIK-L26",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Bootstrap describes complete-empty, complete-authored, partial, admission and legacy states accurately.",
+  "status": "proposed",
+  "supersedes": []
+}

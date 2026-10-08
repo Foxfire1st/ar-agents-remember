@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "The behavior guards a costly publication, restoration or refusal mistake that the sealed findings proved reachable."
+  },
+  "applicability": "Guard teardown and hook restoration.",
+  "conditions": [
+    "A test removes the hook or leaves events in the drain."
+  ],
+  "exclusions": [
+    "An untouched guard; teardown is a no-op."
+  ],
+  "id": "INV-0RA5RQ",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.evidence/focused-tests-admitted.log; notes/run3/L26-current-evidence-20261007/N14-hook-presence-negative-current.log"
+      ],
+      "path": "handoff-stage1.json"
+    },
+    "handoffEntry": "R3 Note 14",
+    "leaf": "260928-MIK-L26",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Teardown detects a removed APSW hook, restores it, and keeps the drain private.",
+  "status": "retired",
+  "supersedes": []
+}

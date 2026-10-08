@@ -1,18 +1,37 @@
 {
   "path": "mcp/src/agents_remember/mcp/registration/knowledge.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "5b73990f27d74e4de1c81eadfde79d74ff07de52",
+        "content": "sha256:75e6ff162f472186848c092bbe1d1742318ddba247e8f802c97094a5d2a5262d",
+        "locator": {
+          "kind": "symbol",
+          "name": "register_knowledge_tools"
+        }
+      },
+      "id": "RLZ-M64DW4",
+      "invariant": "INV-W3FW03",
+      "origin": {
+        "handoffEntry": "MIK-R26@v1 (advisory delivery)",
+        "leaf": "260928-MIK-L26"
+      },
+      "rationale": "The registration owns the surviving tool set after the database paths are removed.",
+      "role": "primary-authority"
+    }
+  ],
   "references": {
     "1": {
       "note": "The docstring sentences on the chain rows and the family seed.\n\nAnchor: \"one compact chain_family row per family routed\"; \"no sourcePath returns that family's full content\"",
       "targets": [
         {
           "anchor": {
-            "blob": "588e0a4b8048d178dd2034a1c182a89699f73330",
+            "blob": "5b73990f27d74e4de1c81eadfde79d74ff07de52",
             "content": "sha256:429d58ebcd0a04fccd0879350ada71e8a79b6093a50c1f2bf13ba68d30c83a0e",
             "locator": {
-              "end": 104,
+              "end": 97,
               "kind": "line_range",
-              "start": 102
+              "start": 95
             }
           },
           "kind": "code"
@@ -401,7 +420,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7fce66805fc8dc67be43d1cbdcac8bdcc8d0030d",
+            "blob": "b95b845d5f59e720f11bbf5f0f21d0f8d620ea5a",
             "content": "sha256:cd0bb85b2d3107913e3eaf8924705f554fed961e044ae925d976bd7e75b28a0b",
             "locator": {
               "kind": "symbol",
@@ -455,12 +474,12 @@
         },
         {
           "anchor": {
-            "blob": "721814af4b9ad2433aeced4ba0ed34e488afa210",
+            "blob": "37f41084b20d44aa6b734698e5cde4bd26d9ae63",
             "content": "sha256:e1c1263adee6bc2962441ace87bbc6cb904e4540b977d7a634e94c48f68fde4f",
             "locator": {
-              "end": 58,
+              "end": 53,
               "kind": "line_range",
-              "start": 58
+              "start": 53
             },
             "path": "mcp/src/agents_remember/application/knowledge_views.py"
           },
@@ -468,12 +487,12 @@
         },
         {
           "anchor": {
-            "blob": "721814af4b9ad2433aeced4ba0ed34e488afa210",
+            "blob": "37f41084b20d44aa6b734698e5cde4bd26d9ae63",
             "content": "sha256:57b48f0a99a1137068038ce97bd1ef9eab87a7d6b45d364c63e0acb6c44325bc",
             "locator": {
-              "end": 281,
+              "end": 276,
               "kind": "line_range",
-              "start": 281
+              "start": 276
             },
             "path": "mcp/src/agents_remember/application/knowledge_views.py"
           },
@@ -654,12 +673,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "588e0a4b8048d178dd2034a1c182a89699f73330",
+            "blob": "5b73990f27d74e4de1c81eadfde79d74ff07de52",
             "content": "sha256:a380842a09e5f075c3db75cc8669b3fe7bef183525903c568c419da6b60a6fb6",
             "locator": {
-              "end": 76,
+              "end": 66,
               "kind": "line_range",
-              "start": 76
+              "start": 66
             }
           },
           "kind": "code"
@@ -682,7 +701,7 @@
         },
         {
           "anchor": {
-            "blob": "588e0a4b8048d178dd2034a1c182a89699f73330",
+            "blob": "5b73990f27d74e4de1c81eadfde79d74ff07de52",
             "content": "sha256:bdf1a6248c658acf378fbf0ef07d074a3f6060fbaf55572f6230ba70c6bd067e",
             "locator": {
               "end": 6,

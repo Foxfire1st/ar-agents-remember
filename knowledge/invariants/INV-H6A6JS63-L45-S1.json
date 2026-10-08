@@ -1,14 +1,12 @@
 {
   "admission": "legacy-unassessed",
-  "applicability": "Curator hand-off entries admitted through the ordinary curator writer (knowledge-ingest and knowledge-bootstrap, via ingest_curator_list) that would write new realization claims.",
+  "applicability": "Realization targets supplied to the converted curator file writer through knowledge-ingest or knowledge-bootstrap.",
   "conditions": [
-    "The entry's retry key holds no recorded allocation, or holds one whose revision the candidate does not store.",
-    "At least one target states no nonblank rationale and the entry states no nonblank realization_rationale default."
+    "At least one supplied realization target lacks a rationale at both levels."
   ],
   "exclusions": [
-    "Exact retries of operations whose recorded revision the candidate already stores (covered by L45-S5).",
-    "Rulings with an empty target list, which write no realization.",
-    "Realization claims already stored, including ones holding the old generated sentence; they are never rewritten."
+    "Targetless task rulings, which create no realization.",
+    "Stored historical claims; this admission check does not rewrite them."
   ],
   "id": "INV-H6A6JS63",
   "origin": {
@@ -16,9 +14,9 @@
     "legacyId": "8d9a3176-7c67-4284-8385-be419ab9f692",
     "task": "260921-ICR"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "For an entry that would write new realizations, a curator hand-off target that states no rationale, and whose entry states no realization_rationale default, refuses its whole entry with realization_rationale_absent naming the entry and each such target's position, path and locator, before any identity is minted; the writer never generates rationale text.",
+  "statement": "A converted file-writer handoff target with neither its own nonblank rationale nor a nonblank entry default refuses the entry as realization_rationale_absent, naming the entry and offending targets before record or sidecar writes. The writer never invents the explanation.",
   "status": "proposed",
   "supersedes": []
 }

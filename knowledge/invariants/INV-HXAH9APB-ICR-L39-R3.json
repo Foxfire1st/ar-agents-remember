@@ -19,6 +19,6 @@
   "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "Retaining a sibling creates only the new-family membership edge and keeps the exact stored invariant revision and original historical records unchanged.",
-  "status": "proposed",
+  "status": "retired",
   "supersedes": []
 }

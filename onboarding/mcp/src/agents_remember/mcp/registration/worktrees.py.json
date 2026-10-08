@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/mcp/registration/worktrees.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -7,7 +8,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a9903808aadb875de3adad81429b014ec3cdcf98",
+            "blob": "01f8665b4325e477e7fce86728c4d175a2ec9f55",
             "content": "sha256:1a2d5c0bfd974173ae4f7aa0faec00287a8ed8228e2f090f9de0f1c07b6953ff",
             "locator": {
               "kind": "symbol",
@@ -18,7 +19,7 @@
         },
         {
           "anchor": {
-            "blob": "a9903808aadb875de3adad81429b014ec3cdcf98",
+            "blob": "01f8665b4325e477e7fce86728c4d175a2ec9f55",
             "content": "sha256:93575aa4e5c097197a8e581a70ff117df0811562f86d232797395868ce114de1",
             "locator": {
               "kind": "symbol",
@@ -51,38 +52,14 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7857d0160aedd94f75387bdfec39592e8cbb316a",
-            "content": "sha256:dfd90727d7d8cee7c5348fb4ab7714cf8495238a806a05c40c8f3564aa3a0454",
+            "blob": "6d887d74ea146178a0f34836a4a256d9d754071e",
+            "content": "sha256:56058015a92fef97436b9d0c169947ec7559a0c25f5575074e1b73b6d76bf4c3",
             "locator": {
-              "kind": "symbol",
-              "name": "SyncResolutionInput"
+              "end": 159,
+              "kind": "line_range",
+              "start": 159
             },
             "path": "mcp/src/agents_remember/models/worktree.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2c2dcba184d6050e5f4c0d243e814d695ea0047d",
-            "content": "sha256:a5c7bdac7dcd0b4c4cc5fab082b5ca5e7c0ddd9cdbd366baa19adfc95b72958d",
-            "locator": {
-              "kind": "symbol",
-              "name": "AuthoredReconciliation"
-            },
-            "path": "mcp/src/agents_remember/models/knowledge/merge.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2c2dcba184d6050e5f4c0d243e814d695ea0047d",
-            "content": "sha256:3d43a2536afdd248137c82402f9d46fb0793e13a6be16c5305051ff482bae805",
-            "locator": {
-              "end": 211,
-              "kind": "line_range",
-              "start": 175
-            },
-            "path": "mcp/src/agents_remember/models/knowledge/merge.py"
           },
           "kind": "code"
         }
@@ -93,12 +70,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a9903808aadb875de3adad81429b014ec3cdcf98",
+            "blob": "01f8665b4325e477e7fce86728c4d175a2ec9f55",
             "content": "sha256:de35b6e0021f31dccd710dfe7f0fd695e258e2b75556001f88bbd7129250c298",
             "locator": {
-              "end": 31,
+              "end": 30,
               "kind": "line_range",
-              "start": 26
+              "start": 25
             }
           },
           "kind": "code"

@@ -1,6 +1,24 @@
 {
   "path": "mcp/src/agents_remember/serving/_app_common.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "568c4a7f3fca53b434b15b30464733260ae0a44b",
+        "content": "sha256:a491847f01ce13c3478d5ea5c0672dc377dcac452183a7bcabd8e40ae1d3ffb3",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-KEYCH7",
+      "invariant": "INV-YJZKYC",
+      "origin": {
+        "handoffEntry": "R3 Note 15",
+        "leaf": "260928-MIK-L26"
+      },
+      "rationale": "The common serving payload carries the description.",
+      "role": "presentation"
+    }
+  ],
   "references": {
     "12": {
       "note": "Frozen implementation of ServingCollaborators supporting the stated file behavior.",

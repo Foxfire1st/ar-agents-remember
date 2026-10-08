@@ -1,0 +1,303 @@
+{
+  "source": "memory-260928-mik-l26/notes/l26-curation-takeover/d7a5e018/o01-c-proposals.json",
+  "errors": [],
+  "cards": [
+    {
+      "card": "onboarding/mcp/src/agents_remember/models/knowledge/source.py.md",
+      "changed": true,
+      "beforeSha256": "21768217d882c92081a893ef07b61c14a0afecf63d8f07ab5ace8e21d6c9d4dd",
+      "afterSha256": "85095946b3882af687ac6dbbfc109eafe235f9df1b2a46f302bfc314bcb125df",
+      "bodyReplacements": 1,
+      "updatedReferences": 2,
+      "retiredReferences": [
+        "1",
+        "3",
+        "4",
+        "5",
+        "6"
+      ]
+    },
+    {
+      "card": "onboarding/mcp/src/agents_remember/models/knowledge/review_relationships.py.md",
+      "changed": true,
+      "beforeSha256": "8793a470ceccfca8633e5b32f534eb889c98e5683a56f8745d36d80dfb8fbca9",
+      "afterSha256": "2f1b31fa3c107ed7aad3653631d4d22351c4f4059b764337c99e71d6f0879dd9",
+      "bodyReplacements": 1,
+      "updatedReferences": 1,
+      "retiredReferences": []
+    },
+    {
+      "card": "onboarding/mcp/src/agents_remember/models/knowledge/family.py.md",
+      "changed": true,
+      "beforeSha256": "44f824dbb9b05a1155c1ff6ae2c405db18158391b50a627945836754c75652f4",
+      "afterSha256": "a68b624ed7addeb918dcc1af074c8c3e2c6654bdee0b454c2f9b19c58c0d527e",
+      "bodyReplacements": 1,
+      "updatedReferences": 2,
+      "retiredReferences": []
+    },
+    {
+      "card": "onboarding/mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/bootstrap.md.md",
+      "changed": true,
+      "beforeSha256": "84db2d69bee7730625e2a360daf266e3ce6a816731fbdd189533b06074faa8bd",
+      "afterSha256": "2f36e86c2fd88d0e3eef162fb33145ece398d647275a8e97b72edbefeeb6d85b",
+      "bodyReplacements": 1,
+      "updatedReferences": 1,
+      "retiredReferences": []
+    },
+    {
+      "card": "onboarding/mcp/src/agents_remember/application/knowledge_views.py.md",
+      "changed": true,
+      "beforeSha256": "94e7a8c6a83411b440137cc6dbea1e2500e2c46b4eb299f362ae2338867da670",
+      "afterSha256": "7d51ed8f2277867dc5967ee42ed81ce154b53b3abf60110f4d376a9bd179f89a",
+      "bodyReplacements": 1,
+      "updatedReferences": 1,
+      "retiredReferences": []
+    },
+    {
+      "card": "onboarding/mcp/src/agents_remember/application/review_sync_movement.py.md",
+      "changed": true,
+      "beforeSha256": "28b680eacc36c658ac2811fec4111282b1e1be3f72960037f7f1ee64efcfa3d6",
+      "afterSha256": "94bb1c9c12d1a0a06d62a2f1ec0d060e1b4fe285931e47e3a1a720891d8dd51b",
+      "bodyReplacements": 1,
+      "updatedReferences": 4,
+      "retiredReferences": [
+        "27",
+        "29",
+        "31"
+      ]
+    },
+    {
+      "card": "onboarding/mcp/src/agents_remember/application/review_record_rendering.py.md",
+      "changed": true,
+      "beforeSha256": "0218277be6eed49429b7ae4bac0481351f5167256b52f16caffae10aa20c94ef",
+      "afterSha256": "7f0d629b8794980c18445fea1747fb5b0ee1ec4596bec14b6123762da1a30375",
+      "bodyReplacements": 1,
+      "updatedReferences": 2,
+      "retiredReferences": []
+    },
+    {
+      "card": "onboarding/mcp/src/agents_remember/application/review_final_output_receipt.py.md",
+      "changed": true,
+      "beforeSha256": "e9eae4757b93e6542c81835ce4829ae9c28b8f8f68b6304f68f5af4d9aa8dab9",
+      "afterSha256": "0836b5147e78dbe07e3288999c690cec7572b31ad62d965469624109cf05c9b5",
+      "bodyReplacements": 1,
+      "updatedReferences": 2,
+      "retiredReferences": []
+    },
+    {
+      "card": "onboarding/mcp/src/agents_remember/application/knowledge_write_admission.py.md",
+      "changed": true,
+      "beforeSha256": "8cc71bf43b3836b6c9dcff181cadc00aa8319a2e8f8d8788d4a61a448fd3825b",
+      "afterSha256": "f459545a6c496b200e1f5fe5a5d38505552554ca0f4bec6c44f1f19f9e05730e",
+      "bodyReplacements": 1,
+      "updatedReferences": 6,
+      "retiredReferences": [
+        "8",
+        "9",
+        "10",
+        "13",
+        "14"
+      ]
+    },
+    {
+      "card": "onboarding/mcp/src/agents_remember/application/knowledge_view_render.py.md",
+      "changed": true,
+      "beforeSha256": "2af427c03ff8ab356b3b70601df1a79d2eee228552a32cc7307f77aefedccbc8",
+      "afterSha256": "18b73adad40cfb1a041b29b04e1c5a15da864521ed7518e7f6a93f13ffb14271",
+      "bodyReplacements": 1,
+      "updatedReferences": 1,
+      "retiredReferences": []
+    },
+    {
+      "card": "onboarding/mcp/src/agents_remember/application/published_intent.py.md",
+      "changed": true,
+      "beforeSha256": "0b80c6bf7c9155909b832421c93bbb650c15af53759e723dfad8cbfa886dcd7c",
+      "afterSha256": "eab6c176d7d93c26962c3a026fd164b7c258ad76bd33fd1401d8c859b16e77fa",
+      "bodyReplacements": 1,
+      "updatedReferences": 6,
+      "retiredReferences": [
+        "1",
+        "2",
+        "3",
+        "5",
+        "11",
+        "25",
+        "26",
+        "33",
+        "45"
+      ]
+    },
+    {
+      "card": "onboarding/mcp/src/agents_remember/application/review_sync_rebinding.py.md",
+      "changed": true,
+      "beforeSha256": "22503221ed3c995857d5cf17c341210002f65df9bd63db70eab1f43ada0b82c9",
+      "afterSha256": "52241b560c6c06b316e51028b884d5f9e5447ea2eee73bbe30bfe96968d2c5d7",
+      "bodyReplacements": 1,
+      "updatedReferences": 4,
+      "retiredReferences": []
+    },
+    {
+      "card": "onboarding/mcp/src/agents_remember/application/review_external_git_movement.py.md",
+      "changed": true,
+      "beforeSha256": "b6cdfb6234bcdf75bf20674ef25ab0c54a84133200b7f947cbf3c3445555cf92",
+      "afterSha256": "c5f6bdba90182de11089d6f359cd556c96759aeb12d7338bd06925a2a4a363b9",
+      "bodyReplacements": 1,
+      "updatedReferences": 4,
+      "retiredReferences": []
+    },
+    {
+      "card": "onboarding/mcp/src/agents_remember/application/overview.md",
+      "changed": true,
+      "beforeSha256": "20fb98b80e3d5ed2e942bd4a0e3e4c2916d13cd1e4e0e27f8ee7b4db8642e7c7",
+      "afterSha256": "f2189af9c88f40d11253b14b772f61380ecd58d892ed51cd04820e0f2cde3523",
+      "bodyReplacements": 6,
+      "updatedReferences": 8,
+      "retiredReferences": []
+    },
+    {
+      "card": "onboarding/mcp/src/agents_remember/application/review_comparison_generation.py.md",
+      "changed": true,
+      "beforeSha256": "9e684e1f2af257abeafc2452c6d9befa1957d29eb86ca7ec1d772a89241a40a4",
+      "afterSha256": "22721016bbe4fe14a37113117b4d37d5457dc998226dd35626dc1a9e7ac00432",
+      "bodyReplacements": 1,
+      "updatedReferences": 1,
+      "retiredReferences": []
+    },
+    {
+      "card": "onboarding/mcp/src/agents_remember/application/review_governing_route.py.md",
+      "changed": true,
+      "beforeSha256": "9275af347cfa8a968be0cc83d78eaf213b2890b6e6316b42cf2fd6b056fc5722",
+      "afterSha256": "7e57c97efd895e37a9e8ac92e184463cbb5de49eab1c21b35ea43f1ad3315f21",
+      "bodyReplacements": 1,
+      "updatedReferences": 1,
+      "retiredReferences": []
+    },
+    {
+      "card": "onboarding/mcp/src/agents_remember/application/review_legacy_comparison.py.md",
+      "changed": true,
+      "beforeSha256": "56557d6306b7878ade86a13b11488b130911cefc641312ba0af4a4e116ab5dab",
+      "afterSha256": "bf5448a9198d6250c40bf85fdf35e988418808fdd604d72cf8426d0736bd5f25",
+      "bodyReplacements": 1,
+      "updatedReferences": 1,
+      "retiredReferences": []
+    },
+    {
+      "card": "onboarding/mcp/src/agents_remember/application/knowledge_bootstrap_admission.py.md",
+      "changed": true,
+      "beforeSha256": "729a6ba4dd075f9966308c952210088bda7851f5e4f54334ca30a94c48371f52",
+      "afterSha256": "ad5bdf26fc7b090c79a9019fa89df8d2b85688e6fb51af44dce1e5f3946aa875",
+      "bodyReplacements": 1,
+      "updatedReferences": 1,
+      "retiredReferences": []
+    },
+    {
+      "card": "onboarding/mcp/src/agents_remember/application/review_relationship_movement.py.md",
+      "changed": true,
+      "beforeSha256": "b550a733e31b63f51003abf78e92b2a93fc75cada09e27c6163e021c07df95ac",
+      "afterSha256": "ea31692c55740cf9b0f8e257c2f8e8855af425e6291241c2fb270fbbd8068823",
+      "bodyReplacements": 2,
+      "updatedReferences": 2,
+      "retiredReferences": []
+    },
+    {
+      "card": "onboarding/mcp/src/agents_remember/application/review_comparison_reclamation.py.md",
+      "changed": true,
+      "beforeSha256": "d9d490e5370c61ed6cd9dd6ca69ffcca2f10573451799b9186449c330dca3d7f",
+      "afterSha256": "0fa05f9ca0b93c7f8f3805c619b2ca457345903e47bf438133be2fc27ba0cbb5",
+      "bodyReplacements": 2,
+      "updatedReferences": 3,
+      "retiredReferences": []
+    },
+    {
+      "card": "onboarding/mcp/src/agents_remember/application/review_comparison_reopen.py.md",
+      "changed": true,
+      "beforeSha256": "d7002f99868ebbb16850e4eb6efdf05b2f36d06abbceab932bbb22bfac23b70c",
+      "afterSha256": "49177d35d3550db0126cb7cc7b67bc852df3fc91ff7f444ab06977a64e897857",
+      "bodyReplacements": 1,
+      "updatedReferences": 3,
+      "retiredReferences": []
+    },
+    {
+      "card": "onboarding/mcp/src/agents_remember/application/review_source_admission.py.md",
+      "changed": true,
+      "beforeSha256": "5f9f7a4f113bdf8e34a17db1eb5a070ce8332fc7a15129a9ad70e4638e22b9e0",
+      "afterSha256": "42777d310bc5884407dfd858b775bcf5a9602ddb71485d9312f2a884072b933f",
+      "bodyReplacements": 1,
+      "updatedReferences": 1,
+      "retiredReferences": []
+    },
+    {
+      "card": "onboarding/mcp/src/agents_remember/application/review_evidence_records.py.md",
+      "changed": true,
+      "beforeSha256": "a83851050d8caceeb9771a5e3dcd9cc45fc794f9b08d4f50aa4abdd7553b6c7f",
+      "afterSha256": "373e841d8360b0623d6d7772ecf81f80a788af71978906a7377c1b5756789ebc",
+      "bodyReplacements": 1,
+      "updatedReferences": 2,
+      "retiredReferences": []
+    },
+    {
+      "card": "onboarding/mcp/src/agents_remember/application/knowledge_review.py.md",
+      "changed": true,
+      "beforeSha256": "860e3a525ad0c07251b404ef6c3411869fb220042456bcb7db5937ef170f62f9",
+      "afterSha256": "25897b9ea9da5f2b40702ca80d89e401523183d5856727e36736f7a72aa2cbfc",
+      "bodyReplacements": 1,
+      "updatedReferences": 1,
+      "retiredReferences": []
+    },
+    {
+      "card": "onboarding/mcp/src/agents_remember/application/knowledge_writer/history_check.py.md",
+      "changed": true,
+      "beforeSha256": "116ce5d89ebe395db06857afe4cb01ecd2daadad5bf850a670b52edc1965c2b6",
+      "afterSha256": "2ebef74bd1609519977de6bce0d504c9aa9e6ed63bfd6f5f0a1a00b26ebf5fd8",
+      "bodyReplacements": 0,
+      "updatedReferences": 1,
+      "retiredReferences": []
+    },
+    {
+      "card": "onboarding/mcp/src/agents_remember/application/knowledge_writer/authoring.py.md",
+      "changed": true,
+      "beforeSha256": "387403b9a6ff55ca207f7fad517f5ccc4040c4c76f91a6bd96cd3c5496a0bcee",
+      "afterSha256": "c15420c5614f6306e3a45f4366cbbcb70c721827593734d43008963d8e5727bb",
+      "bodyReplacements": 1,
+      "updatedReferences": 1,
+      "retiredReferences": []
+    },
+    {
+      "card": "onboarding/mcp/src/agents_remember/application/knowledge_gate/predicates.py.md",
+      "changed": true,
+      "beforeSha256": "5404cd7fa2d9a5ee5dcf18e618c91bb6f145e5e9400f21c457a33db426e4a89f",
+      "afterSha256": "bd297d45eb29940da436c821a4fc6cc56776d31bf79002367ce0e0f33e24d818",
+      "bodyReplacements": 0,
+      "updatedReferences": 2,
+      "retiredReferences": []
+    },
+    {
+      "card": "onboarding/mcp/src/agents_remember/application/knowledge_paging/tree_read.py.md",
+      "changed": true,
+      "beforeSha256": "923f3104c54bcaa67613485bd5c0476e5b6e27234ec2c74af6dc3e7e1c93c558",
+      "afterSha256": "718068aa3bf63e8427d720d96e85622ad3da46832789f8ed019035e8e212bc43",
+      "bodyReplacements": 1,
+      "updatedReferences": 1,
+      "retiredReferences": []
+    },
+    {
+      "card": "onboarding/mcp/src/agents_remember/application/knowledge_paging/tree_seeds.py.md",
+      "changed": true,
+      "beforeSha256": "7741982ac779dba37f5c2bc0b79d44af723acf9592a421d72406944c130df022",
+      "afterSha256": "8ba685ed15969c4ff06aceef304da38f281622887d345ea59578a6c71260b800",
+      "bodyReplacements": 1,
+      "updatedReferences": 1,
+      "retiredReferences": []
+    },
+    {
+      "card": "onboarding/mcp/src/agents_remember/kernel/canonical_json.py.md",
+      "changed": true,
+      "beforeSha256": "fa1909a510a445f9042c19b2b5d5c4d9178c63a54006383ea291beda8f0b05f8",
+      "afterSha256": "9ac6e593ab6bc0b556223e7f96c33a0b1f3d5c8059ea9aebc5ad561c1703f0a4",
+      "bodyReplacements": 1,
+      "updatedReferences": 1,
+      "retiredReferences": []
+    }
+  ],
+  "applied": true
+}

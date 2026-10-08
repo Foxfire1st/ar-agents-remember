@@ -1,0 +1,153 @@
+{
+  "document": "mcp/tests/conftest.py.md",
+  "preview": {
+    "ok": true,
+    "tokens": 715,
+    "tokenizer": "tiktoken:o200k_base",
+    "tokenCountExact": true,
+    "operation": "citation_fix",
+    "repoId": "agents-remember",
+    "dryRun": true,
+    "servingBuild": {
+      "version": "3.0.0rc8",
+      "bootedAt": "2026-10-08T11:56:00.022030+00:00",
+      "sourceDigest": "sha256:6659adb8f968f82c8365bc031220a34c1984276112b5cb1dfd5e1c5db841d237",
+      "pythonExecutable": "/home/firefox/.local/share/agents-remember/python/cpython-3.14.8/bin/python3.14",
+      "packageRoot": "/home/firefox/projects/agents-remember/mcp/src/agents_remember",
+      "commit": "3f682987",
+      "dashboardBuild": "cb442492c4373d059462c5a2ad7715f3961bab6f21c1181b2ecf2674b768b4a6"
+    },
+    "status": "converted",
+    "refreshedAnchors": 10,
+    "rewrittenSidecars": [
+      "onboarding/mcp/tests/conftest.py.json"
+    ],
+    "unreadableSidecars": [],
+    "stale": [
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/mcp/tests/conftest.py.json",
+        "field": "references.10.targets.0",
+        "target": "mcp/tests/conftest.py",
+        "state": "stale",
+        "message": "onboarding/mcp/tests/conftest.py.json: references.10.targets.0: reference target mcp/tests/conftest.py is stale; refresh it through the onboarding gate (MIK-R30)"
+      },
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/mcp/tests/conftest.py.json",
+        "field": "references.7.targets.0",
+        "target": "mcp/tests/conftest.py",
+        "state": "stale",
+        "message": "onboarding/mcp/tests/conftest.py.json: references.7.targets.0: reference target mcp/tests/conftest.py is stale; refresh it through the onboarding gate (MIK-R30)"
+      },
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/mcp/tests/conftest.py.json",
+        "field": "references.8.targets.0",
+        "target": "mcp/tests/conftest.py",
+        "state": "stale",
+        "message": "onboarding/mcp/tests/conftest.py.json: references.8.targets.0: reference target mcp/tests/conftest.py is stale; refresh it through the onboarding gate (MIK-R30)"
+      },
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/mcp/tests/conftest.py.json",
+        "field": "references.9.targets.0",
+        "target": "mcp/tests/conftest.py",
+        "state": "stale",
+        "message": "onboarding/mcp/tests/conftest.py.json: references.9.targets.0: reference target mcp/tests/conftest.py is stale; refresh it through the onboarding gate (MIK-R30)"
+      }
+    ],
+    "authoring": {
+      "dryRun": true,
+      "authoredReferences": 0,
+      "reauthoredReferences": 0,
+      "removedReferences": 0,
+      "authoredCards": [],
+      "createdSidecars": [],
+      "unresolvedTargets": [],
+      "refused": [],
+      "authoredCardsCount": 0,
+      "createdSidecarsCount": 0,
+      "unresolvedTargetsCount": 0,
+      "refusedCount": 0
+    },
+    "staleCount": 4,
+    "rewrittenSidecarsCount": 1,
+    "unreadableSidecarsCount": 0
+  },
+  "applied": {
+    "ok": true,
+    "tokens": 715,
+    "tokenizer": "tiktoken:o200k_base",
+    "tokenCountExact": true,
+    "operation": "citation_fix",
+    "repoId": "agents-remember",
+    "dryRun": false,
+    "servingBuild": {
+      "version": "3.0.0rc8",
+      "bootedAt": "2026-10-08T11:56:00.022030+00:00",
+      "sourceDigest": "sha256:6659adb8f968f82c8365bc031220a34c1984276112b5cb1dfd5e1c5db841d237",
+      "pythonExecutable": "/home/firefox/.local/share/agents-remember/python/cpython-3.14.8/bin/python3.14",
+      "packageRoot": "/home/firefox/projects/agents-remember/mcp/src/agents_remember",
+      "commit": "3f682987",
+      "dashboardBuild": "cb442492c4373d059462c5a2ad7715f3961bab6f21c1181b2ecf2674b768b4a6"
+    },
+    "status": "converted",
+    "refreshedAnchors": 10,
+    "rewrittenSidecars": [
+      "onboarding/mcp/tests/conftest.py.json"
+    ],
+    "unreadableSidecars": [],
+    "stale": [
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/mcp/tests/conftest.py.json",
+        "field": "references.10.targets.0",
+        "target": "mcp/tests/conftest.py",
+        "state": "stale",
+        "message": "onboarding/mcp/tests/conftest.py.json: references.10.targets.0: reference target mcp/tests/conftest.py is stale; refresh it through the onboarding gate (MIK-R30)"
+      },
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/mcp/tests/conftest.py.json",
+        "field": "references.7.targets.0",
+        "target": "mcp/tests/conftest.py",
+        "state": "stale",
+        "message": "onboarding/mcp/tests/conftest.py.json: references.7.targets.0: reference target mcp/tests/conftest.py is stale; refresh it through the onboarding gate (MIK-R30)"
+      },
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/mcp/tests/conftest.py.json",
+        "field": "references.8.targets.0",
+        "target": "mcp/tests/conftest.py",
+        "state": "stale",
+        "message": "onboarding/mcp/tests/conftest.py.json: references.8.targets.0: reference target mcp/tests/conftest.py is stale; refresh it through the onboarding gate (MIK-R30)"
+      },
+      {
+        "check": "knowledge.references.stale",
+        "path": "onboarding/mcp/tests/conftest.py.json",
+        "field": "references.9.targets.0",
+        "target": "mcp/tests/conftest.py",
+        "state": "stale",
+        "message": "onboarding/mcp/tests/conftest.py.json: references.9.targets.0: reference target mcp/tests/conftest.py is stale; refresh it through the onboarding gate (MIK-R30)"
+      }
+    ],
+    "authoring": {
+      "dryRun": false,
+      "authoredReferences": 0,
+      "reauthoredReferences": 0,
+      "removedReferences": 0,
+      "authoredCards": [],
+      "createdSidecars": [],
+      "unresolvedTargets": [],
+      "refused": [],
+      "authoredCardsCount": 0,
+      "createdSidecarsCount": 0,
+      "unresolvedTargetsCount": 0,
+      "refusedCount": 0
+    },
+    "staleCount": 4,
+    "rewrittenSidecarsCount": 1,
+    "unreadableSidecarsCount": 0
+  }
+}

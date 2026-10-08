@@ -1,0 +1,46 @@
+{
+  "records": [
+    {
+      "key": "mr1-bootstrap-authority-scope",
+      "kind": "invariant",
+      "id": "INV-QN53GPRB",
+      "fields": {
+        "applicability": "Taskless knowledge-bootstrap admission from the declared MCP repository entry and its resolved code/memory checkouts.",
+        "conditions": [
+          "No enclosure is in scope.",
+          "The repository settings, resolved roots and exact checkout HEAD observations supply the setup admission."
+        ],
+        "exclusions": [
+          "Leaf knowledge-ingest, which is admitted through its canonical enclosure contract.",
+          "A caller assertion of authority or a fabricated task/checkout identity."
+        ]
+      }
+    }
+  ],
+  "history": [
+    {
+      "subject": "INV-QN53GPRB",
+      "disposition": "changed",
+      "effect": "clarify",
+      "reason": "The statement already promises real taskless setup authority. Its inherited orchestrator-list applicability is replaced with the actual bootstrap carrier and conditions; no caller-supplied value or leaf contract grants taskless admission.",
+      "covers": [
+        {
+          "id": "RLZ-9E6YZ4JN"
+        },
+        {
+          "id": "RLZ-X1V7P5N4"
+        }
+      ]
+    },
+    {
+      "subject": "FAM-7B6N3Y4Q",
+      "disposition": "changed",
+      "reason": "The current converted-only joint guarantee is retained; all three exact member revisions are re-examined after narrowing the bootstrap admission carrier. The family still excludes the retired database writer and mechanical conversion/closeout acts.",
+      "examined": [
+        "INV-1XKX9ERN",
+        "INV-753SKJFF",
+        "INV-QN53GPRB"
+      ]
+    }
+  ]
+}

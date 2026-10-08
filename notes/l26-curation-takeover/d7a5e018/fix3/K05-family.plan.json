@@ -1,0 +1,60 @@
+{
+  "authorization": "260928-MIK-L26#D110;owner-current-source-binding@ef8d82df0b1c026f8224111bdb8146b241ca8afeb5d007504ea5c291049fad7d;memory-r2-six-repairs",
+  "carried": [],
+  "codeTree": "bf045a987679cc023f8fdfb8849d28cfcca1adb9",
+  "entries": [],
+  "evidence": [],
+  "historyRows": [
+    {
+      "disposition": "changed",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-ZQBW6P",
+      "subject": "FAM-Q8ZSEV"
+    },
+    {
+      "disposition": "changed",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-MDPYNC",
+      "subject": "FAM-9FNRPE"
+    }
+  ],
+  "memoryRoot": "/home/firefox/projects/ar-coordination/worktrees/agents-remember/260928-mik-l26-ar/memory-260928-mik-l26",
+  "notes": [],
+  "operation": "knowledge-write",
+  "owner": "260928-MIK-L26",
+  "problems": [
+    {
+      "message": "a new record names its display 'slug'",
+      "where": "records[1]"
+    },
+    {
+      "message": "a new record names its display 'slug'",
+      "where": "records[2]"
+    }
+  ],
+  "provisionalIds": false,
+  "records": [
+    {
+      "action": "created",
+      "handoffEntry": "fix3-bounded-diff",
+      "id": "FAM-Q8ZSEV",
+      "kind": "family",
+      "path": "knowledge/families/FAM-Q8ZSEV-record.json",
+      "revision": 1
+    },
+    {
+      "action": "created",
+      "handoffEntry": "fix3-foundation-inspection",
+      "id": "FAM-9FNRPE",
+      "kind": "family",
+      "path": "knowledge/families/FAM-9FNRPE-record.json",
+      "revision": 1
+    }
+  ],
+  "removed": [],
+  "requirementEndpoints": [],
+  "rulings": [],
+  "state": "refused",
+  "violations": [],
+  "written": []
+}

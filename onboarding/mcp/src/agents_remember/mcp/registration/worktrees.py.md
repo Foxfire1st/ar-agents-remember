@@ -81,6 +81,7 @@ No Domain Documentation source is configured for this memory root.
 - The bases parameter object `TaskBases` (source_branch, work_branch, memory_mode, memory_choice, stale_base_choice), defined in the application request boundary. [8]
 - The execution parameter object `StartExecution` (dry_run, skip_provider_setup, retry_provider_setup), defined in the application request boundary. [9]
 - `TaskRef` — the shared task locator attach and status pack. [10]
+
 - **The pairing this registrar performs, and the vocabulary the decision is typed by.** [11]
 
 ### Cross-Repo References

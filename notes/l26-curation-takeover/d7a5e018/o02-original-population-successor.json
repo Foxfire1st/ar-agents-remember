@@ -1,0 +1,624 @@
+[
+  {
+    "sidecar": "onboarding/mcp/overview.json",
+    "reference": "109",
+    "originalNote": "**The per-record guard and the two identity listings it composes.**",
+    "state": "current-successor",
+    "currentNote": "Current curator records and explicit retired-channel unavailability",
+    "currentTargets": [
+      {
+        "anchor": {
+          "blob": "16e7c29f57b7814c6ee69615335aac14aa466a1e",
+          "content": "sha256:fbb49a9450e87dda67fc7e549d6b78f44d160884ef5a1886e724b900aab4b925",
+          "locator": {
+            "kind": "symbol",
+            "name": "review_records_for_resolution"
+          },
+          "path": "mcp/src/agents_remember/application/review_evidence_records.py"
+        },
+        "kind": "code"
+      },
+      {
+        "anchor": {
+          "blob": "16e7c29f57b7814c6ee69615335aac14aa466a1e",
+          "content": "sha256:5d14090b1a207dda5ca6f77a2cea408ca02c8f4509612a548bd14381371ef2eb",
+          "locator": {
+            "kind": "symbol",
+            "name": "_retired_channel"
+          },
+          "path": "mcp/src/agents_remember/application/review_evidence_records.py"
+        },
+        "kind": "code"
+      }
+    ]
+  },
+  {
+    "sidecar": "onboarding/mcp/overview.json",
+    "reference": "128",
+    "originalNote": "**The declared location, resolved through the read route's own owner, and the context that keeps the read-back in the scope the write was made in.**",
+    "state": "current-successor",
+    "currentNote": "Published intent selects converted memory and its derived index",
+    "currentTargets": [
+      {
+        "anchor": {
+          "blob": "bda6abac209b8bb555561b79169c66526d769437",
+          "content": "sha256:3f1eb06bc6c22dfba7737013ff6fbe9017836fa91db8afecfaa0ea24e85a0e13",
+          "locator": {
+            "kind": "symbol",
+            "name": "resolve_published_memory_tree"
+          },
+          "path": "mcp/src/agents_remember/application/published_intent.py"
+        },
+        "kind": "code"
+      },
+      {
+        "anchor": {
+          "blob": "bda6abac209b8bb555561b79169c66526d769437",
+          "content": "sha256:59a7a3ebd4555efbb9b81010b0e796b0c6f499f5c97fc9426cfb178d5963b702",
+          "locator": {
+            "kind": "symbol",
+            "name": "select_knowledge_dataset"
+          },
+          "path": "mcp/src/agents_remember/application/published_intent.py"
+        },
+        "kind": "code"
+      }
+    ]
+  },
+  {
+    "sidecar": "onboarding/mcp/overview.json",
+    "reference": "129",
+    "originalNote": "**The admission as four ordered facts, the fourth of which is the ordinary update.**",
+    "state": "reference-retired",
+    "currentNote": null,
+    "currentTargets": null
+  },
+  {
+    "sidecar": "onboarding/mcp/overview.json",
+    "reference": "130",
+    "originalNote": "**The read-back through the reader's owner, and the three states the report carries.**",
+    "state": "reference-retired",
+    "currentNote": null,
+    "currentTargets": null
+  },
+  {
+    "sidecar": "onboarding/mcp/overview.json",
+    "reference": "147",
+    "originalNote": "**The CLI's two filling paths behind one placement gate, and the cold-start branch.**",
+    "state": "current-successor",
+    "currentNote": "Current four-tree capture",
+    "currentTargets": [
+      {
+        "anchor": {
+          "blob": "516f2eb5d188ee09a0a6c60d87a063a42f913c4e",
+          "content": "sha256:e0dd90e9fda341d2ed3d92c30d6326582d149cf1f7dcb6a574c925c77f49fa4a",
+          "locator": {
+            "kind": "symbol",
+            "name": "live_review_trees"
+          },
+          "path": "mcp/src/agents_remember/application/review_tree_comparison.py"
+        },
+        "kind": "code"
+      }
+    ]
+  },
+  {
+    "sidecar": "onboarding/mcp/overview.json",
+    "reference": "187",
+    "originalNote": "The cold-start branch that fills the half when the caller named no baseline, and the two rules that guard the fork-point copy.",
+    "state": "reference-retired",
+    "currentNote": null,
+    "currentTargets": null
+  },
+  {
+    "sidecar": "onboarding/mcp/src/agents_remember/application/knowledge_views.py.json",
+    "reference": "15",
+    "originalNote": "The two real callers of the seam: the MCP tool registration and the projection writer, both importing `read_knowledge_view` from this module.\n\nAnchor: `read_knowledge_view`",
+    "state": "current-successor",
+    "currentNote": "The two real callers of the seam: the MCP tool registration and the projection writer, both importing `read_knowledge_view` from this module.\n\nAnchor: `read_knowledge_view`",
+    "currentTargets": [
+      {
+        "anchor": {
+          "blob": "12b2d18549a3d15a005d7fe16fc4b6f3dbc25be1",
+          "content": "sha256:07ac27eea41ef7e0d14eeb4cc65ebf0beaa2041ad913826ebdf97d56d6febd5f",
+          "locator": {
+            "end": 37,
+            "kind": "line_range",
+            "start": 37
+          },
+          "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
+        },
+        "kind": "code"
+      },
+      {
+        "anchor": {
+          "blob": "88b51250adf8ed53060e63f6aa8b7ae58d1e14db",
+          "content": "sha256:b5fb51c8fbead540919b383a9dbd1912b1fae383d50c0031efbc0f4ed492e72c",
+          "locator": {
+            "end": 158,
+            "kind": "line_range",
+            "start": 158
+          },
+          "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
+        },
+        "kind": "code"
+      }
+    ]
+  },
+  {
+    "sidecar": "onboarding/mcp/src/agents_remember/application/knowledge_views.py.json",
+    "reference": "4",
+    "originalNote": "The ordered admission gate and its three refusals, run before the database is opened, and the single builder that turns a refusal into a typed result state.",
+    "state": "current-successor",
+    "currentNote": "The ordered admission gate and its three refusals, run before the database is opened, and the single builder that turns a refusal into a typed result state.",
+    "currentTargets": [
+      {
+        "anchor": {
+          "blob": "721814af4b9ad2433aeced4ba0ed34e488afa210",
+          "content": "sha256:326d2db18004a908fe0b294f3a7d44bcd5da86397614f1eb50fb6d30af0e67e8",
+          "locator": {
+            "kind": "symbol",
+            "name": "_admit"
+          }
+        },
+        "kind": "code"
+      },
+      {
+        "anchor": {
+          "blob": "37f41084b20d44aa6b734698e5cde4bd26d9ae63",
+          "content": "sha256:207b3ca87f31b2fd024d7fa9662c29ff9e9ca0fe1df522681a0f075534f529e7",
+          "locator": {
+            "kind": "symbol",
+            "name": "_refused"
+          }
+        },
+        "kind": "code"
+      },
+      {
+        "anchor": {
+          "blob": "bc391045efe2a2c2210873a09c33e180ed9fdab0",
+          "content": "sha256:dda475d8a1a9617079a9a154c6cebad4b62683e9bc3e0da5bcdf688c7a742ced",
+          "locator": {
+            "kind": "symbol",
+            "name": "ViewRefusal"
+          },
+          "path": "mcp/src/agents_remember/models/knowledge/view.py"
+        },
+        "kind": "code"
+      },
+      {
+        "anchor": {
+          "blob": "bc391045efe2a2c2210873a09c33e180ed9fdab0",
+          "content": "sha256:1793befb76dd855c22d73d4e373f1d13ab1b9c82c95322824f262d8a3849fe52",
+          "locator": {
+            "end": 184,
+            "kind": "line_range",
+            "start": 171
+          },
+          "path": "mcp/src/agents_remember/models/knowledge/view.py"
+        },
+        "kind": "code"
+      },
+      {
+        "anchor": {
+          "blob": "5e1dc9aed3f09bf6a0af1b7b09c4bf5770425a6e",
+          "content": "sha256:5909a53a618d028e1d3000c0a7abceecbe5fb37f4e511efe46643fad6e66872f",
+          "locator": {
+            "end": 790,
+            "kind": "line_range",
+            "start": 790
+          },
+          "path": "mcp/src/agents_remember/application/knowledge_diff.py"
+        },
+        "kind": "code"
+      },
+      {
+        "anchor": {
+          "blob": "2e31dd9e23ad14ea40b5941e0fd5aff95be241e1",
+          "content": "sha256:5694edfd9e6d0a86a46d2e8e7439786114a054fe877f8552c2a6e880b70dea6e",
+          "locator": {
+            "end": 817,
+            "kind": "line_range",
+            "start": 801
+          },
+          "path": "mcp/src/agents_remember/application/knowledge_diff.py"
+        },
+        "kind": "code"
+      }
+    ]
+  },
+  {
+    "sidecar": "onboarding/mcp/src/agents_remember/application/knowledge_views.py.json",
+    "reference": "8",
+    "originalNote": "The continuation that binds a token to one snapshot, its minter, and the both-identities check the seam calls first.",
+    "state": "current-successor",
+    "currentNote": "The continuation that binds a token to one snapshot, its minter, and the both-identities check the seam calls first.",
+    "currentTargets": [
+      {
+        "anchor": {
+          "blob": "bc391045efe2a2c2210873a09c33e180ed9fdab0",
+          "content": "sha256:3cae35e67bbc183ad8ccd2be57dce006ff6f072ad2d4cbbbf96cb0480b06530c",
+          "locator": {
+            "kind": "symbol",
+            "name": "ViewContinuation"
+          },
+          "path": "mcp/src/agents_remember/models/knowledge/view.py"
+        },
+        "kind": "code"
+      },
+      {
+        "anchor": {
+          "blob": "bc391045efe2a2c2210873a09c33e180ed9fdab0",
+          "content": "sha256:e295bef9c435ecafa63062e8c522ce3746b858de763a03f9d434ffd0b2abb9fc",
+          "locator": {
+            "kind": "symbol",
+            "name": "continuation_for"
+          },
+          "path": "mcp/src/agents_remember/models/knowledge/view.py"
+        },
+        "kind": "code"
+      },
+      {
+        "anchor": {
+          "blob": "bc391045efe2a2c2210873a09c33e180ed9fdab0",
+          "content": "sha256:7f93145bd948d6c405de9361898a7c2d374c9be1e5b917f32e633f05c16853e3",
+          "locator": {
+            "kind": "symbol",
+            "name": "require_continuation_snapshot"
+          },
+          "path": "mcp/src/agents_remember/models/knowledge/view.py"
+        },
+        "kind": "code"
+      },
+      {
+        "anchor": {
+          "blob": "37f41084b20d44aa6b734698e5cde4bd26d9ae63",
+          "content": "sha256:9faf4b6eabb16beee3f08f86c268a169ac0e8eeb31888bb7eacc7f35b279ee17",
+          "locator": {
+            "end": 63,
+            "kind": "line_range",
+            "start": 63
+          }
+        },
+        "kind": "code"
+      },
+      {
+        "anchor": {
+          "blob": "37f41084b20d44aa6b734698e5cde4bd26d9ae63",
+          "content": "sha256:ab32fcae377f2a8e737a877c0de24502840d07250326c7a7437b376066a8c407",
+          "locator": {
+            "end": 140,
+            "kind": "line_range",
+            "start": 140
+          }
+        },
+        "kind": "code"
+      },
+      {
+        "anchor": {
+          "blob": "bc391045efe2a2c2210873a09c33e180ed9fdab0",
+          "content": "sha256:cd6285f143a0c60181f1f433083e2b5e81ad85970be45852c0a55fbbe79294a3",
+          "locator": {
+            "end": 552,
+            "kind": "line_range",
+            "start": 552
+          },
+          "path": "mcp/src/agents_remember/models/knowledge/view.py"
+        },
+        "kind": "code"
+      }
+    ]
+  },
+  {
+    "sidecar": "onboarding/mcp/src/agents_remember/application/knowledge_views.py.json",
+    "reference": "9",
+    "originalNote": "The completeness scope and the payload that refuses rows-remaining-without-a-continuation.",
+    "state": "current-successor",
+    "currentNote": "The completeness scope and the payload that refuses rows-remaining-without-a-continuation.",
+    "currentTargets": [
+      {
+        "anchor": {
+          "blob": "bc391045efe2a2c2210873a09c33e180ed9fdab0",
+          "content": "sha256:a82705f1540ce1ba058c083942e0fd9d1261f4b1a29ed167bb7b588a71c8cf83",
+          "locator": {
+            "kind": "symbol",
+            "name": "ViewScope"
+          },
+          "path": "mcp/src/agents_remember/models/knowledge/view.py"
+        },
+        "kind": "code"
+      },
+      {
+        "anchor": {
+          "blob": "bc391045efe2a2c2210873a09c33e180ed9fdab0",
+          "content": "sha256:aff482448a3b603ee7de02dc7042aa6cca6ad453dc35d25db526a57ad4803533",
+          "locator": {
+            "kind": "symbol",
+            "name": "ViewPayload"
+          },
+          "path": "mcp/src/agents_remember/models/knowledge/view.py"
+        },
+        "kind": "code"
+      }
+    ]
+  },
+  {
+    "sidecar": "onboarding/mcp/src/agents_remember/application/overview.json",
+    "reference": "144",
+    "originalNote": "The graph modules the new operations delegate to.",
+    "state": "reference-retired",
+    "currentNote": null,
+    "currentTargets": null
+  },
+  {
+    "sidecar": "onboarding/mcp/src/agents_remember/application/overview.json",
+    "reference": "48",
+    "originalNote": "**The per-record guard that makes a damaged record survivable, and the two owner reads it composes.**",
+    "state": "reference-retired",
+    "currentNote": null,
+    "currentTargets": null
+  },
+  {
+    "sidecar": "onboarding/mcp/src/agents_remember/application/overview.json",
+    "reference": "90",
+    "originalNote": "The two sibling owners this module composes rather than reimplements.",
+    "state": "reference-retired",
+    "currentNote": null,
+    "currentTargets": null
+  },
+  {
+    "sidecar": "onboarding/mcp/src/agents_remember/application/overview.json",
+    "reference": "97",
+    "originalNote": "The CLI's two filling paths, the one gate they share, and the cold-start branch that reaches the establishment.",
+    "state": "reference-retired",
+    "currentNote": null,
+    "currentTargets": null
+  },
+  {
+    "sidecar": "onboarding/mcp/src/agents_remember/application/review_final_output_receipt.py.json",
+    "reference": "29",
+    "originalNote": "The publication route whose declared location the published channel is read at, and the read route that resolves it.",
+    "state": "current-successor",
+    "currentNote": "The publication route whose declared location the published channel is read at, and the read route that resolves it.",
+    "currentTargets": [
+      {
+        "anchor": {
+          "blob": "c0231a8a7bfda8e3be26f3c673d794841f526879",
+          "content": "sha256:38c9b05133b665ee1d7d4cf015170877e31dbbef0cdc4a9462337c2b320137c2",
+          "locator": {
+            "kind": "symbol",
+            "name": "resolve_published_intent"
+          },
+          "path": "mcp/src/agents_remember/application/published_intent.py"
+        },
+        "kind": "code"
+      },
+      {
+        "anchor": {
+          "blob": "c0231a8a7bfda8e3be26f3c673d794841f526879",
+          "content": "sha256:a710593a2e2c4d8380d768017d72ef70b83da0a0ac2b6ac40908ba8daf84efa5",
+          "locator": {
+            "end": 80,
+            "kind": "line_range",
+            "start": 1
+          },
+          "path": "mcp/src/agents_remember/application/published_intent.py"
+        },
+        "kind": "code"
+      }
+    ]
+  },
+  {
+    "sidecar": "onboarding/mcp/src/agents_remember/cli/knowledge_ingest.py.json",
+    "reference": "29",
+    "originalNote": "The dataset name both halves take, so a placed baseline and an established first generation are the file the review opens.",
+    "state": "reference-retired",
+    "currentNote": null,
+    "currentTargets": null
+  },
+  {
+    "sidecar": "onboarding/mcp/src/agents_remember/memory/knowledge/connection.py.json",
+    "reference": "10",
+    "originalNote": "The graph readers that reuse the one-row helper.",
+    "state": "current-successor",
+    "currentNote": "The graph readers that reuse the one-row helper.",
+    "currentTargets": [
+      {
+        "anchor": {
+          "blob": "66102e9850b5f1c88cdba3b4cbd1af7d321197e8",
+          "content": "sha256:be4b89a03071dfec313b2a235a46f08cf7115843cc9c516c6f0287f5b35be4c0",
+          "locator": {
+            "kind": "symbol",
+            "name": "get_family_revision"
+          },
+          "path": "mcp/src/agents_remember/memory/knowledge/families.py"
+        },
+        "kind": "code"
+      }
+    ]
+  },
+  {
+    "sidecar": "onboarding/mcp/src/agents_remember/memory/knowledge/refusals.py.json",
+    "reference": "9",
+    "originalNote": "The write-path rule the descending branch describes, and its post-insert graph scope, now owned by the shared lineage module.\n\nAnchor: \"def find_cycle(\"; \"def declared_cycle(\"",
+    "state": "reference-retired",
+    "currentNote": null,
+    "currentTargets": null
+  },
+  {
+    "sidecar": "onboarding/mcp/src/agents_remember/memory/knowledge/store.py.json",
+    "reference": "14",
+    "originalNote": "The graph modules that reuse this store's lock and transaction helpers.",
+    "state": "reference-retired",
+    "currentNote": null,
+    "currentTargets": null
+  },
+  {
+    "sidecar": "onboarding/mcp/src/agents_remember/memory/overview.json",
+    "reference": "28",
+    "originalNote": "**The detection owner's identity listing, decoding nothing, and the composing reader it exists for.**",
+    "state": "current-successor",
+    "currentNote": "Current record owner marks retired classes unavailable.",
+    "currentTargets": [
+      {
+        "anchor": {
+          "blob": "16e7c29f57b7814c6ee69615335aac14aa466a1e",
+          "content": "sha256:fbb49a9450e87dda67fc7e549d6b78f44d160884ef5a1886e724b900aab4b925",
+          "locator": {
+            "kind": "symbol",
+            "name": "review_records_for_resolution"
+          },
+          "path": "mcp/src/agents_remember/application/review_evidence_records.py"
+        },
+        "kind": "code"
+      },
+      {
+        "anchor": {
+          "blob": "16e7c29f57b7814c6ee69615335aac14aa466a1e",
+          "content": "sha256:5d14090b1a207dda5ca6f77a2cea408ca02c8f4509612a548bd14381371ef2eb",
+          "locator": {
+            "kind": "symbol",
+            "name": "_retired_channel"
+          },
+          "path": "mcp/src/agents_remember/application/review_evidence_records.py"
+        },
+        "kind": "code"
+      }
+    ]
+  },
+  {
+    "sidecar": "onboarding/mcp/src/agents_remember/models/knowledge/result.py.json",
+    "reference": "20",
+    "originalNote": "The two result states that carry `no_change` and the two operations that reach them.",
+    "state": "reference-retired",
+    "currentNote": null,
+    "currentTargets": null
+  },
+  {
+    "sidecar": "onboarding/mcp/src/agents_remember/models/knowledge/result.py.json",
+    "reference": "35",
+    "originalNote": "The two result states that carry `no_change` and the two operations that reach them.",
+    "state": "reference-retired",
+    "currentNote": null,
+    "currentTargets": null
+  },
+  {
+    "sidecar": "onboarding/mcp/src/agents_remember/models/knowledge/view.py.json",
+    "reference": "11",
+    "originalNote": "The closure of ordering to the four admitted inputs, refused with the admitted set as its expected value and with no fallback order.",
+    "state": "current-successor",
+    "currentNote": "The closure of ordering to the four admitted inputs, refused with the admitted set as its expected value and with no fallback order.",
+    "currentTargets": [
+      {
+        "anchor": {
+          "blob": "bc391045efe2a2c2210873a09c33e180ed9fdab0",
+          "content": "sha256:be517487a621be36c5658f26254c7aec6e480822b820e173cc1b14aae34e0282",
+          "locator": {
+            "kind": "symbol",
+            "name": "require_admitted_ordering_input"
+          }
+        },
+        "kind": "code"
+      },
+      {
+        "anchor": {
+          "blob": "bc391045efe2a2c2210873a09c33e180ed9fdab0",
+          "content": "sha256:522715ea1fbc876e91f1196ff18867ba5ca8bad48459fdb16d69f4b1d04aaf64",
+          "locator": {
+            "end": 522,
+            "kind": "line_range",
+            "start": 498
+          }
+        },
+        "kind": "code"
+      },
+      {
+        "anchor": {
+          "blob": "85cc2936642a3ec37ee69966adc55c9877cb37e0",
+          "content": "sha256:5f3876fcda219c06eeb11ec30d80b1887cbdbae8d81b8b05cd1a00e460e723ae",
+          "locator": {
+            "end": 67,
+            "kind": "line_range",
+            "start": 67
+          },
+          "path": "mcp/src/agents_remember/application/knowledge_view_render.py"
+        },
+        "kind": "code"
+      },
+      {
+        "anchor": {
+          "blob": "457bef31245f490ad7f0386cabe57f6f1c5494fc",
+          "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "locator": {
+            "end": 277,
+            "kind": "line_range",
+            "start": 277
+          },
+          "path": "mcp/src/agents_remember/application/knowledge_view_render.py"
+        },
+        "kind": "code"
+      },
+      {
+        "anchor": {
+          "blob": "bc391045efe2a2c2210873a09c33e180ed9fdab0",
+          "content": "sha256:b1f586209058df3a2b01a36c7f19accfac49ff3b9804d07e6c02140fe8456107",
+          "locator": {
+            "end": 658,
+            "kind": "line_range",
+            "start": 658
+          }
+        },
+        "kind": "code"
+      },
+      {
+        "anchor": {
+          "blob": "bc391045efe2a2c2210873a09c33e180ed9fdab0",
+          "content": "sha256:77a5761d7009a6bf44da3203086a484f2ebe53183a65368b1bab2132ba8f3925",
+          "locator": {
+            "end": 682,
+            "kind": "line_range",
+            "start": 658
+          }
+        },
+        "kind": "code"
+      }
+    ]
+  },
+  {
+    "sidecar": "onboarding/mcp/src/agents_remember/models/overview.json",
+    "reference": "199",
+    "originalNote": "**The six authored commands and the union they join, which is the operation's widened reach.**\n\nAnchor: `FacetCommand`; \"ProposedCommand = Annotated[\"",
+    "state": "current-successor",
+    "currentNote": "**The six authored commands and the union they join, which is the operation's widened reach.**",
+    "currentTargets": [
+      {
+        "kind": "unresolved",
+        "text": "mcp/src/agents_remember/models/knowledge/candidate.py:628-635"
+      }
+    ]
+  },
+  {
+    "sidecar": "onboarding/mcp/src/agents_remember/models/tools/knowledge_responses.py.json",
+    "reference": "32",
+    "originalNote": "The one registered shape it is a payload of, where the state/payload exclusion is a validator rather than handler discipline.",
+    "state": "reference-retired",
+    "currentNote": null,
+    "currentTargets": null
+  },
+  {
+    "sidecar": "onboarding/mcp/src/agents_remember/worktrees/overview.json",
+    "reference": "23",
+    "originalNote": "The routing: knowledge conflicts settle in the transaction, what it will not decide is what the agent still gets, and the engine's reason travels out with it.",
+    "state": "reference-retired",
+    "currentNote": null,
+    "currentTargets": null
+  },
+  {
+    "sidecar": "onboarding/mcp/tests/knowledge_fixture_test_support.py.json",
+    "reference": "8",
+    "originalNote": "The operations the fixture authors through, both halves.",
+    "state": "reference-retired",
+    "currentNote": null,
+    "currentTargets": null
+  }
+]

@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "The behavior guards a costly publication, restoration or refusal mistake that the sealed findings proved reachable."
+  },
+  "applicability": "Preparation failures during ordinary closeout.",
+  "conditions": [
+    "The failure happened before memory publication."
+  ],
+  "exclusions": [
+    "Content a concurrent writer changed; restoration preserves it."
+  ],
+  "id": "INV-765TQN",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.evidence/focused-tests-admitted.log; notes/run3/L26-current-evidence-20261007/F03-restoration-negative-current.log"
+      ],
+      "path": "handoff-stage1.json"
+    },
+    "handoffEntry": "R3 Finding 3",
+    "leaf": "260928-MIK-L26",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Unpublished preparation failures restore history and ignore content.",
+  "status": "retired",
+  "supersedes": []
+}

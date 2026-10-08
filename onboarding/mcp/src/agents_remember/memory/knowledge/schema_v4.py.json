@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b235caaa860201ca3f665b5e28832b8e076812a7",
+            "blob": "230b5d328abd5de708a00aa439e7e73b9c6c381b",
             "content": "sha256:c371c63ed7409b047b5fbcf0dd642633d75a126fd2fda0d9fbae581b431dff23",
             "locator": {
               "kind": "symbol",
@@ -19,24 +19,12 @@
       ]
     },
     "10": {
-      "note": "**The registry whose last entry is the newest supported generation — generation 8 since `KS-R13@v1` renumbered its append, so the created store declares 8 while a generation-7 dataset keeps declaring 7 — and the created generation it names.**",
+      "note": "This build creates and reads the single v9 derived-index schema; another declared database version is refused.",
       "targets": [
         {
           "anchor": {
-            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
-            "content": "sha256:b4ba2ca4eea50894f1b195208f2f3a9e7bd2f309f3524bc9da6466bb930330a6",
-            "locator": {
-              "kind": "symbol",
-              "name": "GENERATIONS"
-            },
-            "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
-            "content": "sha256:c954da44fc1cb1e734e9bfa69681a7a466150cb94dcadac44e0688afef4fdaa9",
+            "blob": "ed80f22d9e0746a34756ea0717989fa6ad564df8",
+            "content": "sha256:0f0c918f3bf10a7250d7ac346475f3b54df375e1306b83aaca248426e5ff211e",
             "locator": {
               "kind": "symbol",
               "name": "CURRENT_GENERATION"
@@ -47,72 +35,40 @@
         },
         {
           "anchor": {
-            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
-            "content": "sha256:ee8890993746a582400ce823dc7ae072381eef0593bf5511f7066db205781686",
-            "locator": {
-              "end": 434,
-              "kind": "line_range",
-              "start": 425
-            },
-            "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
-            "content": "sha256:2a10a01d0583ed6bcd5fce90e832f1e7c17f3eb3dc9ce18fa88e867ec69fa8ca",
-            "locator": {
-              "end": 447,
-              "kind": "line_range",
-              "start": 447
-            },
-            "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "11": {
-      "note": "**The envelope registry the two detection payload shapes are registered in, which is why this generation appends one table and not a record group.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "8e10708cad491813d46667826fb049d3612605d5",
-            "content": "sha256:e40bffc1c68bc773d83a14ad9be4f7361e463883b38fa5a7268c6758de8bcb5b",
+            "blob": "ed80f22d9e0746a34756ea0717989fa6ad564df8",
+            "content": "sha256:d53b3c553683fc7095beee5d7f6c26fe85c5e10fdacf1c5d76eb268434c8efa4",
             "locator": {
               "kind": "symbol",
-              "name": "PAYLOAD_MODELS"
+              "name": "generation_of_new_store"
             },
-            "path": "mcp/src/agents_remember/memory/knowledge/record_envelope.py"
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "8e10708cad491813d46667826fb049d3612605d5",
-            "content": "sha256:8fe3fc2f5f410f1f38f1332530e7d3b13105fc1bd346cf97bd9c06ee4750f497",
+            "blob": "ed80f22d9e0746a34756ea0717989fa6ad564df8",
+            "content": "sha256:71a55907b220b9b15545b2c009508e8849b44c6d288b76c097e6e70075a6d17d",
             "locator": {
-              "end": 178,
-              "kind": "line_range",
-              "start": 132
+              "kind": "symbol",
+              "name": "generation_of_database"
             },
-            "path": "mcp/src/agents_remember/memory/knowledge/record_envelope.py"
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
           },
           "kind": "code"
         }
       ]
     },
     "12": {
-      "note": "**The generation record this module's data is composed into, and the append that keeps generation 3's prefix intact.**",
+      "note": "The ordered appended declarations compose into the one pinned derived-index schema.",
       "targets": [
         {
           "anchor": {
-            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
-            "content": "sha256:735da1dbaf87a32f5bc059969d4c1df25e59632a8c17d6865fd93e4935802a7a",
+            "blob": "ed80f22d9e0746a34756ea0717989fa6ad564df8",
+            "content": "sha256:f260cf165b695c5f13f6b5f82ffb85014d9155a5346f2bcec9fb4c87a7811a56",
             "locator": {
               "kind": "symbol",
-              "name": "_compose_generation_4"
+              "name": "_APPENDED"
             },
             "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
           },
@@ -120,11 +76,11 @@
         },
         {
           "anchor": {
-            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
-            "content": "sha256:d2ef65915e1389cf4d2a2437e8f52b17c4511d20d4c6541bcc2bc7d1bd3954cd",
+            "blob": "ed80f22d9e0746a34756ea0717989fa6ad564df8",
+            "content": "sha256:8c190c46954d164edeb576a31cf9be1adfdc9fda8da8b1097bb7e3738ca298c3",
             "locator": {
               "kind": "symbol",
-              "name": "GENERATION_4"
+              "name": "_compose"
             },
             "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
           },
@@ -133,24 +89,12 @@
       ]
     },
     "13": {
-      "note": "The registry whose last entry is the newest supported generation, and the created generation it names.",
+      "note": "This build creates and reads the single v9 derived-index schema; another declared database version is refused.",
       "targets": [
         {
           "anchor": {
-            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
-            "content": "sha256:b4ba2ca4eea50894f1b195208f2f3a9e7bd2f309f3524bc9da6466bb930330a6",
-            "locator": {
-              "kind": "symbol",
-              "name": "GENERATIONS"
-            },
-            "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
-            "content": "sha256:c954da44fc1cb1e734e9bfa69681a7a466150cb94dcadac44e0688afef4fdaa9",
+            "blob": "ed80f22d9e0746a34756ea0717989fa6ad564df8",
+            "content": "sha256:0f0c918f3bf10a7250d7ac346475f3b54df375e1306b83aaca248426e5ff211e",
             "locator": {
               "kind": "symbol",
               "name": "CURRENT_GENERATION"
@@ -161,12 +105,11 @@
         },
         {
           "anchor": {
-            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
-            "content": "sha256:ee8890993746a582400ce823dc7ae072381eef0593bf5511f7066db205781686",
+            "blob": "ed80f22d9e0746a34756ea0717989fa6ad564df8",
+            "content": "sha256:d53b3c553683fc7095beee5d7f6c26fe85c5e10fdacf1c5d76eb268434c8efa4",
             "locator": {
-              "end": 434,
-              "kind": "line_range",
-              "start": 425
+              "kind": "symbol",
+              "name": "generation_of_new_store"
             },
             "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
           },
@@ -174,94 +117,15 @@
         },
         {
           "anchor": {
-            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
-            "content": "sha256:2a10a01d0583ed6bcd5fce90e832f1e7c17f3eb3dc9ce18fa88e867ec69fa8ca",
+            "blob": "ed80f22d9e0746a34756ea0717989fa6ad564df8",
+            "content": "sha256:71a55907b220b9b15545b2c009508e8849b44c6d288b76c097e6e70075a6d17d",
             "locator": {
-              "end": 447,
-              "kind": "line_range",
-              "start": 447
+              "kind": "symbol",
+              "name": "generation_of_database"
             },
             "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
           },
           "kind": "code"
-        }
-      ]
-    },
-    "14": {
-      "note": "**The envelope registry the two detection payload shapes are registered in, which is why this generation appends one table and not a record group.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "8e10708cad491813d46667826fb049d3612605d5",
-            "content": "sha256:e40bffc1c68bc773d83a14ad9be4f7361e463883b38fa5a7268c6758de8bcb5b",
-            "locator": {
-              "kind": "symbol",
-              "name": "PAYLOAD_MODELS"
-            },
-            "path": "mcp/src/agents_remember/memory/knowledge/record_envelope.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "8e10708cad491813d46667826fb049d3612605d5",
-            "content": "sha256:8fe3fc2f5f410f1f38f1332530e7d3b13105fc1bd346cf97bd9c06ee4750f497",
-            "locator": {
-              "end": 178,
-              "kind": "line_range",
-              "start": 132
-            },
-            "path": "mcp/src/agents_remember/memory/knowledge/record_envelope.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "15": {
-      "note": "The write path that inserts the sequence rows under this table's composite keys.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "aa097c9e4070ab48ae6ebdd0abe8f0c89c28587e",
-            "content": "sha256:13b8aa70ea9dae0d47823b497e5503fd50ae52eaee94fe8788e2fd9a91280de9",
-            "locator": {
-              "kind": "symbol",
-              "name": "_write_run"
-            },
-            "path": "mcp/src/agents_remember/memory/knowledge/detection.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "aa097c9e4070ab48ae6ebdd0abe8f0c89c28587e",
-            "content": "sha256:f00817b253c9895e165ceedf7f874918a2e45da2655cb72bd3b7f101057c686b",
-            "locator": {
-              "end": 348,
-              "kind": "line_range",
-              "start": 316
-            },
-            "path": "mcp/src/agents_remember/memory/knowledge/detection.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "16": {
-      "note": "**The case that measures the additive rule, the append order, the `STRICT` shape, the key tuple and the two triggers.**\n\nAnchor: \"test_generation_4_appends_only_and_the_first_twenty_names_are_generation_3_s\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "76ad3185151ccb90ef7448d914b5908495250bbe",
-            "content": "sha256:75bd173875b352c41cd07cf04aa1ada8c65df8f8f70c4dd75dbe2d2a87aa072d",
-            "locator": {
-              "end": 751,
-              "kind": "line_range",
-              "start": 724
-            },
-            "path": "mcp/tests/test_knowledge_detection_signals.py"
-          },
-          "kind": "test"
         }
       ]
     },
@@ -270,7 +134,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b235caaa860201ca3f665b5e28832b8e076812a7",
+            "blob": "230b5d328abd5de708a00aa439e7e73b9c6c381b",
             "content": "sha256:e597d97e28b5146633de75b065fbe8d374982cf82ec03ec579d8e0195dd10e9e",
             "locator": {
               "kind": "symbol",
@@ -286,7 +150,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b235caaa860201ca3f665b5e28832b8e076812a7",
+            "blob": "230b5d328abd5de708a00aa439e7e73b9c6c381b",
             "content": "sha256:ce35ebefafce7e26086e8c3eb441ec6e0a5dce0ca1fa921db7058f006455b676",
             "locator": {
               "kind": "symbol",
@@ -302,7 +166,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b235caaa860201ca3f665b5e28832b8e076812a7",
+            "blob": "230b5d328abd5de708a00aa439e7e73b9c6c381b",
             "content": "sha256:2cb74acf877c218cf925b5d3c0b94cb0f32915d9eaf2f0148e4a68d8dfb6efb6",
             "locator": {
               "kind": "symbol",
@@ -318,7 +182,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b235caaa860201ca3f665b5e28832b8e076812a7",
+            "blob": "230b5d328abd5de708a00aa439e7e73b9c6c381b",
             "content": "sha256:009f057627f73ba82f91ce0c38d3a48b3f14a9aaf9a21b33c2a1b9b625e30c13",
             "locator": {
               "kind": "symbol",
@@ -334,7 +198,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b235caaa860201ca3f665b5e28832b8e076812a7",
+            "blob": "230b5d328abd5de708a00aa439e7e73b9c6c381b",
             "content": "sha256:d5a505d1609def56ef47f1739a5425d2840b07879848867b120d46a12752c60e",
             "locator": {
               "kind": "symbol",
@@ -350,7 +214,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b235caaa860201ca3f665b5e28832b8e076812a7",
+            "blob": "230b5d328abd5de708a00aa439e7e73b9c6c381b",
             "content": "sha256:83a515ba78005b853385a41dfb1ef6c864ead15a6adc55cd4fd04230a9f5c504",
             "locator": {
               "kind": "symbol",
@@ -366,7 +230,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b235caaa860201ca3f665b5e28832b8e076812a7",
+            "blob": "230b5d328abd5de708a00aa439e7e73b9c6c381b",
             "content": "sha256:846958ed5776f88992812fe9a6aa343215317e23ae19d052f3cc72413f779aa3",
             "locator": {
               "kind": "symbol",
@@ -378,15 +242,15 @@
       ]
     },
     "9": {
-      "note": "**The generation record this module's data is composed into, and the append that keeps generation 3's prefix intact.**",
+      "note": "The ordered appended declarations compose into the one pinned derived-index schema.",
       "targets": [
         {
           "anchor": {
-            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
-            "content": "sha256:735da1dbaf87a32f5bc059969d4c1df25e59632a8c17d6865fd93e4935802a7a",
+            "blob": "ed80f22d9e0746a34756ea0717989fa6ad564df8",
+            "content": "sha256:f260cf165b695c5f13f6b5f82ffb85014d9155a5346f2bcec9fb4c87a7811a56",
             "locator": {
               "kind": "symbol",
-              "name": "_compose_generation_4"
+              "name": "_APPENDED"
             },
             "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
           },
@@ -394,11 +258,11 @@
         },
         {
           "anchor": {
-            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
-            "content": "sha256:d2ef65915e1389cf4d2a2437e8f52b17c4511d20d4c6541bcc2bc7d1bd3954cd",
+            "blob": "ed80f22d9e0746a34756ea0717989fa6ad564df8",
+            "content": "sha256:8c190c46954d164edeb576a31cf9be1adfdc9fda8da8b1097bb7e3738ca298c3",
             "locator": {
               "kind": "symbol",
-              "name": "GENERATION_4"
+              "name": "_compose"
             },
             "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
           },

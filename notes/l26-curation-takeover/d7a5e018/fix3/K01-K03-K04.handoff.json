@@ -1,0 +1,90 @@
+{
+  "entries": [
+    {
+      "id": "fix3-W4XGR4-typed-proof",
+      "statement": "The existing sweep awaits initialization, response and cleanup with sixty-second phase budgets and surfaces its named deadline outside the product-raiser classifier.",
+      "invariant_id": "INV-W4XGR4",
+      "target": [],
+      "evidence": [
+        "mcp/tests/test_tool_entry_point_controls.py::ChokePointControlTests::test_a_tool_that_never_answers_fails_by_name_and_closes_its_handler; sealed memory-r2 K04"
+      ],
+      "proofs": [
+        {
+          "test": "mcp/tests/test_tool_entry_point_controls.py::ChokePointControlTests::test_a_tool_that_never_answers_fails_by_name_and_closes_its_handler",
+          "facet": "The control drives a registered never-answering tool through EntryPointWorld.call with a shortened response budget, asserts _ToolCallTimeout names the tool and response phase, and checks handler cleanup and a subsequent usable call. This is a recorded static test relationship, not evidence that this session executed the test."
+        }
+      ]
+    }
+  ],
+  "records": [
+    {
+      "key": "fix3-cost-of-false-movement",
+      "kind": "invariant",
+      "id": "INV-0T84PZ",
+      "fields": {
+        "admission": {
+          "criteria": [
+            "prevents_costly_mistake"
+          ],
+          "justification": "Reporting branch movement when the re-read tip is unchanged would conceal a real Git hook or lock refusal. Re-reading the intended ref distinguishes an actual concurrent tip change from a failed update at the admitted tip and preserves Git's diagnostic in the latter case."
+        }
+      }
+    }
+  ],
+  "history": [
+    {
+      "subject": "INV-753SKJFF",
+      "disposition": "changed",
+      "effect": "clarify",
+      "reason": "MIK-R26 deliberately supersedes dataset selection: resolve_published_intent selects the converted tree's index and refuses legacy roots. The original dataset and not-recorded promises are preserved only in prior Git history. K03 successor corrects RLZ-K64BDQNF itself: converted roots select their derived index; unconverted roots refuse legacy-format, without selecting a canonical dataset.",
+      "covers": [
+        {
+          "id": "RLZ-7J2QHFP8",
+          "remove": true
+        },
+        {
+          "id": "RLZ-K64BDQNF",
+          "rationale": "resolve_published_intent resolves the admitted repository or leaf memory root, refuses an unconverted root as legacy-format, and selects the derived index of the converted root's exact text tree. An index selection or identity failure is reported unusable rather than selecting another memory layer or publishing a canonical database."
+        },
+        {
+          "id": "RLZ-YNWMKRWK",
+          "remove": true
+        }
+      ]
+    },
+    {
+      "subject": "INV-W4XGR4",
+      "disposition": "changed",
+      "effect": "replace",
+      "reason": "The live sweep-timeout guarantee moved to the extracted world and its control; the earlier false retirement remains replaced. K04 successor now records the actual phase-budget enforcement at EntryPointWorld._call and writes a typed proves entry for the extracted never-answer control. The earlier fix2 claim that a support realization re-anchored the proof was incorrect; it remains preserved in the reviewed report and Git before-half. No test execution is claimed.",
+      "covers": [
+        {
+          "id": "PRF-M9WD7C",
+          "remove": true
+        },
+        {
+          "id": "RLZ-1VB4BZ",
+          "remove": true
+        },
+        {
+          "id": "RLZ-3J2TZH",
+          "locator": {
+            "kind": "symbol",
+            "name": "EntryPointWorld._call"
+          },
+          "rationale": "EntryPointWorld._call wraps session initialization, tool response and session cleanup in the phase budgets, resets the deadline at each transition, and raises _ToolCallTimeout with tool name and phase on timeout; call re-raises that named exception outside the product-raiser classifier."
+        },
+        {
+          "id": "RLZ-BCFPZV"
+        },
+        {
+          "id": "RLZ-J5GA9Z",
+          "remove": true
+        },
+        {
+          "handoff": "fix3-W4XGR4-typed-proof"
+        }
+      ]
+    }
+  ]
+}

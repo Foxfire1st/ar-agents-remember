@@ -1,0 +1,66 @@
+{
+  "entries": [],
+  "records": [],
+  "history": [
+    {
+      "subject": "hunk:sha256:b54f63011ba007652285f46724e2cb9fbf52070a837d67d6afab123733340952",
+      "disposition": "no_invariant",
+      "reason": "The removed fsync_file helper is part of the retired canonical-dataset route. The live atomic_write_bytes and directory synchronization operations, including incoming Source41 temporary-file cleanup, remain covered by the existing file contract and incoming realizations; deleting this unused helper supplies no additional invariant."
+    },
+    {
+      "subject": "hunk:sha256:16b3c37ae9fbf2ef4ae2636441547a8fb78c28c096821a54dde825ffbc53949e",
+      "disposition": "no_invariant",
+      "reason": "This adds the exact retained knowledge review/reopen/revision-seal consumers to the shared index-fixture artifact. It corrects derived fixture-consumer coverage for existing readers, without granting a production database writer or changing the already recorded reader/fixture boundary."
+    },
+    {
+      "subject": "hunk:sha256:0a06ebc6232829fd72b09bc6165e151595d4228b688045fbd3c38862d1b47e58",
+      "disposition": "no_invariant",
+      "reason": "This relocates the existing test_closeout_queue_store.py consumer to sorted order in the same artifact consumer list. The matching deletion is ordering normalization, with no consumer or contract change."
+    },
+    {
+      "subject": "hunk:sha256:7e219f7011fea33b18b9653ffa76a3decacb2051c819964b7b21086bd3e2f1d9",
+      "disposition": "no_invariant",
+      "reason": "This adds the supported test_series_refusal_texts.py consumer under the Owner-admitted Source41 normal catalog writer. It is derived consumer coverage, not a new requirement or a new execution qualification."
+    },
+    {
+      "subject": "hunk:sha256:64aa8f45cdb9a7834f0da165a06900e1c888e980f25bc4cad861c64113680e9d",
+      "disposition": "no_invariant",
+      "reason": "This relocates test_untyped_sprint_rows.py within the same sorted consumer list. Its paired deletion preserves the same supported consumer and adds no invariant."
+    },
+    {
+      "subject": "hunk:sha256:5d90b5c3644e3f67147f96b79130fa996de6dd62ffba759df8fab42e223c309e",
+      "disposition": "no_invariant",
+      "reason": "This relocates four existing master-retirement test consumers into sorted order. Their obligations and lane membership are unchanged; the paired old-block removal is a catalog normalization."
+    },
+    {
+      "subject": "hunk:sha256:f42e507e1eac2068d9ec6a95cd53c11051b7546458205b9f8283b0e9793b3dca",
+      "disposition": "no_invariant",
+      "reason": "The knowledge_rows_test_support artifact declares the existing test-only raw index-shaped row builder and its exact consumers, with production seal calculation and no surviving production writer. Those boundaries are already recorded and the corrected O01 cards explicitly identify fixture-only row construction; this catalog realization and consumer population do not author a new guarantee."
+    },
+    {
+      "subject": "hunk:sha256:8518039e1d43777fe93c6f47940a673283f2455339603e14ec1222c2477c3e38",
+      "disposition": "no_invariant",
+      "reason": "The deleted test_closeout_queue_store.py occurrence is retained in the same artifact at the sorted position of the matching added hunk. This is ordering normalization and introduces no new obligation."
+    },
+    {
+      "subject": "hunk:sha256:b57b99e8b73210f6ba3cb011ddd4c0c04e87746c437c56c5b6566ab26f92df1a",
+      "disposition": "no_invariant",
+      "reason": "The deleted test_untyped_sprint_rows.py occurrence is retained at the sorted position of the matching added hunk. This removes the old ordering occurrence, not the consumer or its intent."
+    },
+    {
+      "subject": "hunk:sha256:da5787f17d4abc43cf6bf3d74783d0a6d3c7ac1341f558105477c66d3606e9ce",
+      "disposition": "no_invariant",
+      "reason": "The old block removes absent migration_census and memory_mode_removal consumers and relocates four retained master-retirement consumers to sorted positions. The Owner-admitted derived list normalization preserves authored artifact and lane contracts; retired-source cleanup and ordering do not require another invariant."
+    },
+    {
+      "subject": "hunk:sha256:b1c071930eb0993c7270de8205f2fd25f18a9f2bea98a0deac67ccab44a9524e",
+      "disposition": "no_invariant",
+      "reason": "The added closeout prose describes the existing publication-route cancellation/recovery and Git-hook behavior of accepted Source41. The no-leftover failed landing and publication checks are owned by incoming recorded closeout contracts; this procedural explanation neither changes them nor authorizes Curator landing operations."
+    },
+    {
+      "subject": "hunk:sha256:4ffb1d639d21e2c52b71ed3ba205356bfa499705d54f9b8c870633da0c221b74",
+      "disposition": "no_invariant",
+      "reason": "This replaces the retired separate canonical comparison-record instruction with the current Git base/candidate comparison and file-writer handoff route. Existing retirement intent covers that removal; it creates no additional invariant or closeout gate. The capsule-requested public comparison command remains an explicit unavailable capability, not an invented comparison generation."
+    }
+  ]
+}

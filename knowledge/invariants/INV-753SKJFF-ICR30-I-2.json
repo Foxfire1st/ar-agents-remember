@@ -1,8 +1,14 @@
 {
   "admission": "legacy-unassessed",
-  "applicability": "The resolution of a repository's published knowledge, for the ordinary read route and for the write route that consumes the same owner.",
-  "conditions": [],
-  "exclusions": [],
+  "applicability": "Ordinary published-intent selection for the resolved repository or canonical leaf.",
+  "conditions": [
+    "The resolved memory root holds knowledge/layout.json.",
+    "The derived index can be built or read for the selected memory tree; failure remains an explicit unusable selection."
+  ],
+  "exclusions": [
+    "Historical canonical database publication and its former not-recorded converted result.",
+    "A sibling memory layer or derived index cache as an alternative source of truth."
+  ],
   "id": "INV-753SKJFF",
   "origin": {
     "handoff": {
@@ -16,9 +22,9 @@
     "legacyId": "3ac4c376-9a30-4aff-a219-9ade903d183e",
     "task": "260921-ICR"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-invariant/v1",
-  "statement": "A repository's published knowledge has exactly one declared location per memory layer, and that memory layer is the canonical external memory root when no enclosure is in scope and the task's own memory worktree inside a leaf. For an unconverted memory layer the location is the dataset the ordinary read route's own owner names, the memory layer's knowledge.sqlite. A converted memory layer (one that holds knowledge/layout.json) publishes no dataset: its knowledge is the tree's text files, read through that tree's derived index, and the database file frozen there is never selected -- the resolution answers not-recorded, naming the tree.",
+  "statement": "Published intent is selected from the one resolved converted memory root: the official external memory root outside an enclosure and the leaf's memory worktree inside it. Its text records are canonical; reads select the derived index of that exact tree. An unconverted root is refused as legacy-format, and no canonical knowledge database publication destination is selected.",
   "status": "proposed",
   "supersedes": []
 }

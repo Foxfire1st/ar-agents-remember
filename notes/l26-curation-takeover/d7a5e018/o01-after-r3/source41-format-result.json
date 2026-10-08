@@ -1,0 +1,18 @@
+{
+  "argv": [
+    "/home/firefox/projects/agents-remember/mcp/.venv/bin/python",
+    "-m",
+    "agents_remember.cli",
+    "knowledge-format",
+    "/home/firefox/projects/ar-coordination/worktrees/agents-remember/260928-mik-l26-ar/memory-260928-mik-l26/onboarding/mcp/src/agents_remember/worktrees/overview.json"
+  ],
+  "cwd": "/home/firefox/projects/ar-coordination/worktrees/agents-remember/260928-mik-l26-ar/260928-mik-l26",
+  "ruler": "leaf4cdd7fbc development package admitted by Architect",
+  "returncode": 0,
+  "stdout": "reformatted /home/firefox/projects/ar-coordination/worktrees/agents-remember/260928-mik-l26-ar/memory-260928-mik-l26/onboarding/mcp/src/agents_remember/worktrees/overview.json\n",
+  "stderr": "",
+  "beforeSha256": "ffa7e8950f6396166e7b136345bfc63a1ce34e7a715275b7d1b8fdd665b20ea2",
+  "afterSha256": "5e4dc76e090e7bc42bf91dfd07bcb28ce3c944dcf0b0db538796d71dd08471b6",
+  "parsedMeaningUnchanged": true,
+  "onlyFormattedPath": "/home/firefox/projects/ar-coordination/worktrees/agents-remember/260928-mik-l26-ar/memory-260928-mik-l26/onboarding/mcp/src/agents_remember/worktrees/overview.json"
+}

@@ -33,14 +33,7 @@ that carried one would claim an acceptance that never happened. It is called by 
 construction — `InvariantRevision` (which previously inlined the same two checks) and `FamilyRevisionDraft` — so
 the rule has one owner and a new revision kind inherits it instead of restating it.
 
-`require_plain_git_path(value, *, what)` is the shared **pathspec rule**, added by 260915-KS-L7, and it is the one
-place a Git-pathspell question is answered. A recorded path or a path seed is handed to `git ls-tree` as an
-argument, and what makes such an argument something other than an address is pathspec **magic**: a spelling that
-begins with `:` is read by Git as a pathspec — `:(exclude)…` and `:!…` make `ls-tree` exit non-zero, and
-`:(top)…`/`:/…` are accepted and answer about a **different** location. The rule refuses a leading `:` and returns
-the value unchanged otherwise; the surrounding absolute / `~` / drive / UNC / backslash / NUL / empty / `.` / `..`
-refusals live at the two typed call sites (`SourceAnchorDraft` in `source.py`, `PathSeed` in
-`models/knowledge/read.py`).
+require_plain_git_path refuses a leading colon because Git reads it as pathspec magic and can answer about a different location. It admits literal glob characters that ls-tree addresses by name. Current PathSeed applies this shared rule alongside confined-path validation. The former SourceAnchorDraft write-path call site was retired by MIK-R26; no source-locator value is a replacement anchor authoring request.
 
 **The characters `*`, `?` and `[` are deliberately admitted, and that is the corrected half of this rule.** They
 are *not* magic to `ls-tree`: measured against `git 2.54.0`, `git ls-tree <tree> -- 'src/a[1].py'` resolves exactly
@@ -88,7 +81,9 @@ No configured domain documentation could be checked.
 - The frozen, extra-forbidding base every knowledge model inherits. [1]
 - The shared accepted/proposed rule both revision aggregates apply at construction. [2]
 - **The shared pathspec rule, with the measured Git behavior in its docstring: a leading `:` is real pathspec magic and is refused; `*`, `?` and `[` are literal characters to `ls-tree` and are admitted.** [3]
-- **The write-path boundary that applies it, so a malformed anchor cannot be authored.** [4]
+
+- The retained PathSeed uses the shared plain-Git-path rule; the old stored-anchor writer boundary is retired. [4]
+
 - **The seed boundary that applies the same rule, so a refused spelling cannot be presented as a seed.** [5]
 - The canonical-spelling identifier rule and its refusal of non-canonical input. [6]
 - The declared length ceilings and identifier patterns used by every sibling model. [7]

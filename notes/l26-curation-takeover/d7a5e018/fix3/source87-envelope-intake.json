@@ -1,0 +1,90 @@
+{
+  "acceptedEight": [
+    "K02",
+    "K06",
+    "O03",
+    "O04",
+    "E01",
+    "E02",
+    "E03",
+    "C01"
+  ],
+  "artifactProblems": [],
+  "artifactsVerified": 369,
+  "at": "2026-10-08T15:16:53.834389+00:00",
+  "bytesVerified": 341848485,
+  "catalog": "normal25505 exit0 PASS83 separately retained from old44348 exit1 five findings",
+  "envelopeSha256": "6adba9a685e43b3fde57a7eaa8f3f6ddd0e80ca64497591cb505e6dd08ee8caa",
+  "limits": {
+    "affectedTestModuleCount": 411,
+    "authorityVersion": "2.1.1",
+    "complete": false,
+    "configurationDigest": "4ed10b16c2279a80cc58eeb8a00cc6dfe90163a901eb2f30db2a366a91325770",
+    "globalInvalidation": true,
+    "inputCount": 421,
+    "newTestsExecuted": false,
+    "unresolved": [
+      "unresolved:mcp/src/agents_remember/package_data/host-session-environment.json:unowned-test-input",
+      "unresolved:mcp/src/agents_remember/package_data/paseo_host/contract.json:unowned-test-input",
+      "unresolved:mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts:unowned-test-input",
+      "unresolved:mcp/src/agents_remember/package_data/paseo_plugin/client/load.ts:unowned-test-input",
+      "unresolved:mcp/src/agents_remember/package_data/paseo_plugin/client/page.ts:unowned-test-input",
+      "unresolved:mcp/src/agents_remember/package_data/paseo_plugin/client/sidebar.ts:unowned-test-input",
+      "unresolved:scripts/pnt_sandbox/build_roots.py:unowned-python-change",
+      "unresolved:scripts/pnt_sandbox/builder.py:unowned-python-change",
+      "unresolved:scripts/pnt_sandbox/cli.py:unowned-python-change",
+      "unresolved:scripts/pnt_sandbox/commands.py:unowned-python-change",
+      "unresolved:scripts/pnt_sandbox/layout.py:unowned-python-change",
+      "unresolved:scripts/pnt_sandbox/operations.py:unowned-python-change",
+      "unresolved:scripts/pnt_sandbox/safety.py:unowned-python-change",
+      "unresolved:scripts/sync-harness.py:unowned-python-change",
+      "unresolved:scripts/test-under-load.sh:unowned-test-input"
+    ]
+  },
+  "manifestSha256": "629c3eb1e7d9c012198a86d460f03cf2d42334112e1317f32332ccbb8590672e",
+  "memoryEvidenceWrite": "This intake is new curator-owned untracked evidence after verification; captured1004 mutable intake remains a dated before-write observation, never final memory identity.",
+  "nativeReadbackBeforeThisEvidenceWrite": {
+    "code": {
+      "capturedPathRowsVerified": 536,
+      "head": "fbed375e6c87e08ecc3979b4aa04577922288813",
+      "rawIndex": "307a5294a162a4a15596c82936375b5238a914f039e16590a9af883d46c34a49",
+      "stageNul": "3f17e7775afe9176d0dbc30528ef20143788af1ce1e34d2c1853f81ed3d18fa2",
+      "unmergedBytes": 0,
+      "workingDiff": "60906382a032543186e2728c62275a857f7bdcd7ab06932a9fa1d21acb9fa4e5"
+    },
+    "memory": {
+      "capturedPathRowsVerified": 1004,
+      "head": "c4431af1dcf9593cadf66ed18b4fd3d4514f2568",
+      "rawIndex": "870b6dc096cb418c091c1daadef0d9334addd5d676183001908a44644b700b34",
+      "stageNul": "f87d0c77a54987a96d5913583814fa70d096ab304f69377a8cd8dea07bf70e50",
+      "unmergedBytes": 0,
+      "workingDiff": "84bc19dff27679fc27bb29bccb4668f5da2abc336d9b801bdcb3975c02129e7f"
+    }
+  },
+  "nextReview": "ONLY6 memory fix3/ordinary3 not started; exact final pair/Owner case still required",
+  "noCodeIndexStageRefSyncTestsMQCCoherenceOrKnowledgePublication": true,
+  "otherLimits": [
+    "Raw current421/FALSE/15/globalTRUE/411affected NOT EXECUTED; prior335/FALSE/14/global409NOTRUN preserved separately",
+    "Unchanged raw oracle exit1 versus separate exact parsed composition; not rawgreen",
+    "Historical three-method53 subtests/1850pass4fail11skip/real-data public witness are dated, not current whole QA",
+    "Source95 third paseoHierarchy unrun/no PASS; eight separate support permission differences; local Vitest absent/env parity unqualified/lintFAIL15",
+    "Two Source87 changed dashboard controls exact accepted incoming; no inherited whole runtime/environment certification floated",
+    "New L87 load wrapper exact accepted source and unresolved raw input; both L87 D55 full populations Master-scheduled/not run leaf",
+    "E03 canonical unavailable observer transcript/LIM-M6ZRE6 remains a disclosed historical evidence gap",
+    "Native memory tree3dc15dcd not locally qualified; final memory identity/QA/coherence belongs Curator",
+    "Code index differs working; memory currently staged, no private restore/stage or raw-index attribution"
+  ],
+  "pathDifferences": [],
+  "productionAuthority": "Source87 current composite binding awaits Manager; existing canonical ONLY6 repair and four-list c6af preserved",
+  "rawOracle": "63848 exit1 COMPARE MISMATCH; separate ef69 composition is not raw-green",
+  "remainingSix": [
+    "K01",
+    "K03",
+    "K04",
+    "K05",
+    "O01",
+    "O02"
+  ],
+  "state": "whole-source87-data-intake-verified-not-production-admission",
+  "workerReportSha256": "a568e8901335f7e3533455e9391ce5a55aed1b7d2b85087cfa14d5bfa35cb2a7"
+}

@@ -4,8 +4,8 @@
 
 The package now contains strict Paseo configuration, bounded provision/status/stop, native bridge/catalog/frame integration, immutable role-launch intent and identity-bound task tools. Explicit-model and native-default creation use the same declared feature channel while retaining native permission/tool behavior. Converted MIK readers/writers, worklists and review/lifecycle owners remain intact. Transport, source qualification, authored knowledge and paired publication each require their own evidence.
 
-
-
+- Current imported source owns this scoped route boundary. [228]
+- Current imported source owns this scoped route boundary. [229]
 - Current imported source owns this scoped route boundary. [230]
 - Current imported source owns this scoped route boundary. [231]
 
@@ -54,7 +54,7 @@ that keep results computed from Git trees and plain files.
   calls when serving ends.
 
 - A recording block collects the rows of one computation. [246]
-
+- A kept set is checked with its path selections first. [247]
 - A conflict or an unreadable row is a failed observation. [248]
 - The contract loader reads through the recorder. [249]
 - The ledger loader reads through the recorder. [232]
@@ -67,7 +67,7 @@ that keep results computed from Git trees and plain files.
 - The shared-read block of the batched blob reader. [239]
 - The composition root creates the process owner. [240]
 - It supplies the owner's shutdown to the app. [241]
-
+- The waiting bound counts computations, not the requests sharing them. [242]
 - A build mismatch asks for a dashboard restart. [243]
 - Every parsed diff names its own prefix, colour and driver options. [244]
 - Bytes the child consumed are identified across a change and restore, a conflict, an absence and a read error. [245]
@@ -267,6 +267,8 @@ flag or report-only mode exists.
 
 - The history-row rule over every file's subjects and the leaf's own file. [6]
 
+- The two lane rows. [233]
+
 
 ## 260928-MIK-L38 Finalize Completes The Master Row: One Rule For A Leaf's Master
 
@@ -441,6 +443,7 @@ curator never reverses a decision. An unanswered candidate blocks closeout throu
 - The writer's rows, the refresh and its link states. [15]
 - The manifest lookup. [16]
 - The reorder guard, registered on import. [17]
+- The lane row. [18]
 
 ## 260928-MIK-L29 The Path-Based Knowledge Reader, Inert Until The Cutover
 
@@ -616,6 +619,7 @@ lifecycle to a `served_earlier` row; `knowledge_read` never does.
 - The chain module statement. [25]
 - The compact row with its family seed. [26]
 - The family seed on the mounted read. [27]
+- The lane row. [28]
 
 ## 260928-MIK-L10 Unexplained Change Disposition, Inert Until The Cutover
 
@@ -663,6 +667,7 @@ reason; an **uncovered** file takes its onboarding trace (MIK-R30).
 - The two kinds and the coverage lookup. [29]
 - The subjects and the gate predicate. [30]
 - A delete-only hunk is linked only by a K_B range (and, since MIK-R09, an insertion-only hunk only by a K_C range). [31]
+- The lane row. [32]
 
 ## 260928-MIK-L25 The Reviewer On Git Trees, Inert Until The Cutover; The Archive Hook Once Installed
 
@@ -708,10 +713,11 @@ and the archive hook that deletes a task's review artifacts.
   the dashboard adapter and UI cases on real captured bodies. Review R6: pass-with-notes; full unit suite 3,231
   passed, integration lane 447 passed.
 
-
+- The four-tree comparison, pinned and recorded. [33]
 - The archive hook's identity sources and confinement. [34]
 - The tree view route. [35]
 - The index format bump for the seal fix. [36]
+- The two lane rows. [37]
 
 ## 260928-MIK-L13 Decision Records With Rejected Alternatives, Inert Until The Cutover
 
@@ -761,6 +767,7 @@ at closeout. A decision keeps the chosen alternative and the rejected or deferre
 - The content rules and derived reads. [38]
 - The five registered decision rules. [39]
 
+- The owner resolves each requirement endpoint; unresolved is reported. [40]
 
 - The writer reports each endpoint of the records the run touched. [41]
 - A decision is never an export. [42]
@@ -925,6 +932,8 @@ no history row delivers as declared, and the curator answers each with a planned
 - The reconciliation module statement. [52]
 - The declaration on the task document. [53]
 - The planned row. [54]
+
+- The task owner's strict lookup and decision answer. [55]
 
 
 ## 260928-MIK-L02 Bounded Continuation Accepted By The Mounted Read, Inert Until The Cutover
@@ -1125,36 +1134,11 @@ The facts that belong to this route, because `cli/` and `kernel/` have no overvi
 - A converted overview's sidecar feeds the hot-path hints. [74]
 - The rule 9 refusal for a leaf whose official line is converted and, since L37, the cutover lock for every other unconverted tree. [75]
 
-## 260928-MIK-L12 The Curator Writer, And Two CLI Entry Points That Choose Their Writer By Memory Tree
+## Curator file writing
 
-`260928-MIK-L12` (MIK-R12@v2) adds the curator file writer, `write_knowledge`, in
-[`application/knowledge_writer/`](src/agents_remember/application/overview.md) (governed by the `application`
-route overview): it reads the curator hand-off document (the producer's list, or an object with `entries`,
-`records` and `history`), writes every knowledge kind into the memory working tree with every mechanical field
-filled, checks every row of the owner's history file against the result, and runs the knowledge validator over
-the whole resulting tree; any problem or refusing violation refuses the whole operation and nothing is
-written. The one definition of an anchor's `content` bytes is
-[`models/knowledge_files/anchor_content.py`](src/agents_remember/models/overview.md). By architect ruling, the
-database ingest and bootstrap modules are unchanged and stay until MIK-R26 (leaf L26). One fact belongs to this
-route, because `cli/` has no overview of its own:
+knowledge-ingest writes the contract's converted memory through the curator file writer. Without commit it plans/validates and writes nothing; commit writes files, not Git history. crossing addresses master-line conflict history. Any unconverted tree receives named conversion guidance: database writers, candidate-directory/baseline placement and publication options are retired. [131]
 
-- **`cli/`.** No subcommand was added; the umbrella still registers eleven. The new
-  [`cli/knowledge_write_route.py`](src/agents_remember/cli/knowledge_write_route.py.md) is the file route both
-  existing commands share. [`knowledge-ingest`](src/agents_remember/cli/knowledge_ingest.py.md) loads the leaf
-  contract once and, when the contract's memory worktree is converted (`knowledge/layout.json`), writes
-  through the file writer as the leaf (the database-only arguments are refused by name; exit 0 written or
-  planned, 1 refused, 2 invocation refused). [`knowledge-bootstrap`](src/agents_remember/cli/knowledge_bootstrap.py.md)
-  gains `--wave` and writes a converted admitted memory root as that wave, with the bootstrap scope as task.
-  Every unconverted tree takes the database route exactly as before.
-
-`knowledge_change` stays registered and refusing; only its description and refusal text now name the file route
-(the `mcp/registration` and `mcp/tools` route overviews). Before MIK-R37 no production memory tree holds
-`knowledge/layout.json`, so no production route changes behaviour.
-
-
-
-- The layout-marker test both commands use. [78]
-- The writer refuses an unconverted memory tree. [79]
+Published intent selects a converted tree and derived index. The mounted family contains read/diff/integrity only; change/project were removed. [133]
 
 ## 260928-MIK-L20 The Migration Census As Files, And The CLI Gains `knowledge-census`
 
@@ -1268,6 +1252,7 @@ holds `knowledge/layout.json`, so no production route changes behaviour.
 - The subcommand registration. [90]
 - The command's inputs, scope answer and exit statuses. [91]
 - The shared exclusion predicate. [92]
+- The batch blob reader. [93]
 
 ## 260928-MIK-L21 The Package Declares The Text Knowledge Format, And The CLI Gains `knowledge-format`
 
@@ -1294,10 +1279,8 @@ informational section mapping hand-off fields to the future files; it changes no
 
 ## Ordinary comparison recording
 
-The installed review-record-comparison CLI remains the one review producer. Its explicit unchanged-knowledge mode supports code-only work without authored knowledge or publication. The synchronized curator and curation instructions invoke the producer and preserve its result; closeout carries that evidence without becoming a semantic approval gate.
+The installed `review-record-comparison` CLI **was retired by MIK-R26**: this leaf removes the dataset-comparison producer with the canonical database, and the tree-side review (MIK-R25) is the current review route. The synchronized curator and curation instructions therefore no longer invoke that producer, and closeout carries the live review evidence without a dataset-comparison generation. The retired producer's unchanged-knowledge mode and recovery controls are retained only as history below.
 
-- `add_arguments` owns the behavior described above. [98]
-- `run` owns the behavior described above. [99]
 
 ## 260921-ICR-L45 The Curator Writer Stops Generating Rationale, And The Package Copies Carry The New Target Shape
 
@@ -1317,7 +1300,6 @@ element shape in the external schema note *260915-KS-curator-handoff-list-schema
 lives outside this repository and was not edited.
 
 - The realization admission owner. [100]
-- The admission call before minting, exempting committed allocations. [101]
 - The package-owned template copy stating the superseding target shape. [102]
 
 ## 260921-ICR-L34 The Reviewer's Comparison Becomes Recordable, And A Placed Baseline Becomes Openable
@@ -1366,10 +1348,10 @@ successor rather than reusing the record. Both are carried on the new sidecar an
 curation report for the next leaf.
 
 - **The `review-record-comparison` subcommand: the adapter's registration on the umbrella CLI, and the declarative pair it uses.** [103]
-- **The run this command is: the argument-list answer, the standing generation named as predecessor, the request from the contract's own identities, the one freeze call and the outcome as an exit code.** [104]
+
 - **The record-beside-the-bytes namespace, corrected in place: the receipt when there is one, otherwise the before half's own generation record, and the requested repository only when neither exists.** [105]
+
 - **The seal's omission set, which is why naming a predecessor changes the derived id — the fact behind the carried non-idempotence limitation.** [106]
-- The case that protects the corrected namespace rule on the real placed-baseline journey. [107]
 
 ## 260921-ICR-L32 The Repair Leaf: The Seat Policy Moves, And Two Long-Route Defects Close
 
@@ -1461,89 +1443,17 @@ non-committing run cannot burn a family identity or report a digest for bytes no
 `evidence-lifecycle.toml`; no byte or count of a catalog is pinned. Nothing else in the package's public surface moved: no tool name, response model or refusal
 code changed.
 
-## 260921-ICR-L14 The Review's Record Collection Gets One Production Owner, And An Empty Tuple Stops Meaning Three Things
+## Review record channel availability
 
-`260921-ICR-L14` (primary requirement `ICR-R14@v1`) adds **one `application/` owner, one `models/`
-vocabulary module and one case module**, and changes the production dashboard composition's record
-loader. At this altitude the package-wide facts are three:
+The owner preserves curator assessments/evidence and measures exact input currentness. Canonical detection, verification-observation and evidence-claim records have no converted-tree writer/format; their channels remain unavailable with no measured count. Proof entries and worklist history retain their own meanings. [109]
 
-**The record half of a review now has an owner of its own.** `application/review_evidence_records.py`
-resolves, for one resolved candidate, **every** owner-produced collection — the curator authority's
-published assessments, the detection owner's signals, the evidence owner's verification observations and
-evidence claims, and the review matrix's authored effects — plus the one quantity nobody in that
-composition measures (dependency currentness). The resolver used to be a private function at the bottom
-of `application/knowledge_review.py` that read the assessments and returned an empty collection for an
-absent *or* unreadable authority; that body is gone, the adapter re-exports the name from its new home,
-and the adapter is **831 → 819 lines** while gaining the channel assembly. No second store, no second
-reader of an owner's tables and no re-derived content: every collection is the owner's own answer.
+Real production-port cases distinguish absent curator authority from unreadable authority and preserve task-context matrix not_selected. [112]
 
-**Availability became a fact per collection rather than an empty tuple.** The new
-`models/knowledge/review_records.py` declares `ReviewRecordChannel` with five states — `recorded`,
-`none_recorded`, `unavailable` (with the owner's own refusal as provenance), `not_measured`,
-`not_selected` — and its validator makes "a count nobody measured" unrepresentable: an unreadable
-authority carries no count, and every non-answer must say what would produce one. The vocabulary is
-carried on the bundle and on `ReviewEvidencePane.channels`, whole and underived. The vocabulary was
-extracted from `models/knowledge/review.py` (which had crossed the 900-line soft rail at 940 and is 851
-now) and re-exported from it, so no importer moved.
+## Retained comparison artifacts
 
-**Two owners on the memory route gained an identity listing, so a damaged record is named rather than
-fatal.** `detection.recorded_run_ids` and `evidence_records.claim_ids` list identities without decoding,
-and the composing reader then reads each record through that owner's own single-record reader — the
-reason one damaged detection run, or one claim whose payload no longer decodes, is named on its channel
-(`unreadable`) while its siblings are still supplied. Each is a split rather than a second reader:
-`all_claims` and `read_detection_run` are unchanged.
+Current comparisons retain exact code/memory Git endpoints and reopen them after cleanup, restart or later landing without replacement by today's trees. [121]
 
-The ten cases live in `mcp/tests/test_knowledge_review_evidence_channels.py` and drive
-`cli.dashboard.serving_collaborators`, so the packet's failure — a production port supplying only
-assessments while claiming a complete bundle — is caught at the composition rather than at the resolver.
-
-
-- **The per-record guard and the two identity listings it composes.** [109]
-- **The availability vocabulary and the field that carries it on the served payload.** [110]
-
-- The two per-record damage cases, and the task-context collection that reports `not_selected`. [112]
-
-## 260921-ICR-L11 The Package Gains The Durable-Comparison Chain, And Two Typed Failures Beside The Candidate's
-
-Six production modules and one test module arrived on this package route with `260921-ICR-L11` (primary
-requirement ICR-R11@v1), whose obligation is that **a frozen comparison retains resolvable source,
-knowledge and evidence inputs through cleanup and restart**. Five are `application/` owners — the record,
-the freeze, the retention, the reclamation and the reopen — and one is
-`worktrees/modules/code_object_retention.py`, the Git-object retention they depend on. Each has its own
-file-level card and its own route section; what belongs at this altitude is the shape of the chain and
-the one package-wide fact it adds.
-
-**The chain, in one line each.** `review_comparison_generation` owns *the record* (an immutable manifest,
-its layout under `<task_root>/notes/reports/`, the unavailable-history record and the reads);
-`review_comparison_freeze` owns *the act* (resolve and compose exactly as the surface does, stage, read
-every referenced byte back, seal, and publish by **one rename**); `review_comparison_retention` owns
-*where the bytes come from* (custody measured against named durable history only, both knowledge halves
-copied by the storage snapshot owner); `review_comparison_reclamation` owns *the two operations that may
-delete them* (record first, measure the deleted digest, never alias today's data); and
-`review_comparison_reopen` owns *the read-back* (one state per channel, never one verdict). The chain
-composes owners that already existed and adds **no second store, no second capture path and no second
-measurement**.
-
-**The package-wide fact: two typed failures joined `errors.py` beside `FutureCodeCandidateError`.**
-`CodeObjectRetentionError` (retention could not be created, or was not released) and
-`ComparisonReclamationError` (a durable artifact could not be reclaimed as its own record describes it)
-are ordinary `AgentsRememberError` members, each carrying a machine-readable `status`. They are **raised
-rather than returned** at two different boundaries: a retention failure happens inside a publication that
-has not happened yet, so the freeze converts it into a typed refusal; a reclamation failure happens at a
-deletion, where a returned value would make "nothing was removed" easy to overlook at the one
-irreversible step. The insertion is **not additive at the tail** — it lands at `180`, so every class
-below it moved, and the citations into `errors.py` held by this package's cards were re-derived rather
-than shifted.
-
-- **The keystone record: the manifest, its layout under the one durable root, the re-derived id and the directory-name agreement.** [113]
-- **The production entry and the one-rename publication.** [114]
-- **Custody over named durable history only, and the two snapshots copied by the storage owner.** [115]
-- **The two deletion owners and the record that precedes every deletion.** [116]
-- **The read-back: per-channel states and `unavailable_channels()`.** [117]
-- **The Git-object retention member this route's `worktrees/` gained.** [118]
-- **The two typed failures, and the two boundaries that decide why they are raised.** [119]
-- **The one durable-root owner the layout asks instead of restating.** [120]
-- The fifteen production-composition cases that measure the chain end to end. [121]
+The earlier canonical generation writer is retired. Retained JSON still exposes source/evidence identities, but its canonical knowledge is legacy-unavailable. Historical code pin custody/release remains; no new retention commit is authored there. [118]
 
 ## 260921-ICR-L6 The Review Surface's Statement Sides Get An Owner, And A Served Field Value Stops Reading As Absent
 
@@ -1579,114 +1489,17 @@ field, no new type and no transport change, and `models/knowledge/review.py` is 
 - The added and the removed statement, each keeping its complete available text beside the named absent side. [126]
 - The renderer that decides the four branches from declared state. [127]
 
-## 260921-ICR-L20 The Ingest Publishes To The One Location The Read Route Declares, And Reads It Back
+## Historical database mechanism — retired
 
-Two route-level facts this package route now carries, both inside the curator write plane and neither
-public: no advertised tool name changed, no response model changed and no refusal vocabulary moved —
-the mounted `knowledge_change` docstring gained a sentence naming the ordinary route, and that is the
-whole of this package's public-surface delta. The per-file detail lives in the new sidecars for
-`mcp/src/agents_remember/application/knowledge_publication_route.py`,
-`mcp/src/agents_remember/cli/knowledge_ingest_report.py` and
-`mcp/tests/test_knowledge_ingest_publication_route.py`, and in the reconciled sidecars for
-`mcp/src/agents_remember/cli/knowledge_ingest.py`, `.../application/published_intent.py` and
-`.../mcp/registration/knowledge.py`.
+The historical command selected a SQLite publication destination and read it back. That write route is retired. Current published intent selects a converted memory tree and its derived index, never a canonical filename. [128]
 
-- **The write side reached the read side's location, and it is one spelling.** `--publish` selects the
-  repository's declared published dataset (`<this enclosure's resolved memory root>/knowledge.sqlite`),
-  resolved through `application/published_intent.published_dataset_path` for the enclosure's own
-  coordination context — the same declaration the ordinary read resolves. A caller-named `--publish-to`
-  is the other selection and the two are mutually exclusive; `--commit` stays the knowledge-batch write
-  word and does not imply a publication.
-- **What the run admits at that location is derived, not typed.** When `--baseline` names the declared
-  location, the bytes the run captured at the top of the run are the dataset standing there, and their
-  identity is the one the publication may replace: that is the explicit update. Every other case is
-  admitted as holding nothing, and the publication owner refuses by name if it holds something.
-- **A successful exit is not a publication claim, and the report says which it was.** `publicationRoute`
-  names the destination selected (or that none was), `publication` carries the owner's own result, and
-  `publishedIdentity` is an independent read of the location through the reader's owner
-  (`confirmed` / `mismatch` / `unavailable`). A refused publication is read back not at all, because it
-  established nothing about the destination.
-- **The CLI kept the decision and gave up the shape.** The CLI owns the selection and its three
-  invocation refusals; the *meaning* of the declared selection lives in the new application module; and
-  the 135-line report renderer moved to `cli/knowledge_ingest_report.py`, so the CLI's growth to 692
-  lines is R20's own decision surface rather than absorption. This is the same "keep the adapter a
-  delegator" rule this route applied at ICR-L1 and ICR-L18.
+## Historical database mechanism — retired
 
-- **The declared location, resolved through the read route's own owner, and the context that keeps the read-back in the scope the write was made in.** [128]
-- **The admission as four ordered facts, the fourth of which is the ordinary update.** [129]
+Historical ingest copied a database baseline and origin receipt. That layout is retired. Current comparisons bind code and memory bases/candidates as exact Git endpoints; index preflight only checks the selected read sides. [142]
 
-- **The destination selection the CLI owns, its refusals, and the route line it completes from the run's own report.** [131]
-- **The renderer that left the CLI, and the two fields this leaf added to the caller's answer.** [132]
-- The mounted refusal that now names the ordinary publication beside the writer, and the operation whose docstring carries it. [133]
-- The declaration this route resolves against, whose own docstring and constant comment this leaf restated as current truth. [134]
-- **The cases that drive the whole route through the shipped CLI over a production-shaped enclosure.** [135]
+## Historical database mechanism — retired
 
-## 260921-ICR-L18 The Review's Before Half Gets A Generation Owner, And The Ingest Fills It Once
-
-Two route-level facts this package route now carries, both inside the curator write plane and neither
-public: no advertised tool name, no response model and no refusal vocabulary moved. The per-file detail
-lives in the new sidecar for `mcp/src/agents_remember/application/knowledge_baseline_generation.py` and
-in the reconciled sidecars for `.../knowledge_before_half.py` and `mcp/src/agents_remember/cli/knowledge_ingest.py`.
-
-- **A comparison's before side is now a recorded generation rather than whatever the latest run was
-  handed.** A run whose `--baseline` differs from the dataset the comparison already opened on places
-  nothing: it names the generation the half holds, that generation's dataset identity, and the explicit
-  `--rebase-baseline` action that begins a new one. Without that argument the original baseline is kept,
-  which is what stops a second successful write from re-filling the half with the first run's own
-  publication and reporting the addition the review exists to show as present on both sides with an
-  empty delta.
-- **A deliberate rebase is a new generation with lineage, and its failure window is bounded by an
-  ordering.** The replacement record is durable **before** the bytes it names, so the one window a rebase
-  can leave is the previous bytes beside a record that disagrees with them — the named `damaged` reading
-  — and never replacement bytes with no record, which would read as the comparison's original. A failure
-  line names the leg that refused *and* re-reads the half, because the write owner flushes the directory
-  after the rename and a leg can therefore fail after its bytes landed; both leg clauses say only "did
-  not report success" rather than claiming a byte outcome the caller never measured.
-- **The CLI gave up a responsibility it should not have owned.** The placement machinery that used to
-  live in `cli/knowledge_ingest.py` moved into the new application owner, and the CLI is **541 lines**
-  where it was 620. What stays there is the one question only the run's own report can answer —
-  *whether* this run may fill anything — plus the invocation refusal for `--rebase-baseline` without
-  `--baseline`.
-
-- **The application owner that decides what a before half is afterwards, and the four ordered answers behind that decision.** [137]
-- **The recorded generation, the four-state read of what the half holds, the one first placement, and the deliberate rebase with lineage.** [138]
-- **The two publication legs whose order is the failure contract, and the read-back that states what the half holds when one refuses.** [139]
-- **The CLI's one remaining placement question, the handoff that delegates the rest, and the new argument with its invocation refusal.** [140]
-- **The run that reaches that handoff is the database route: since `260928-MIK-L12` `run` first sends a converted memory worktree to the curator file writer.** [141]
-- The sibling owner the half's layout and provenance record stay with, whose docstring was reconciled by this leaf to state the one-record rule. [142]
-- **The successful journey and the failure windows, driven through the shipped CLI on real enclosures.** [143]
-
-## 260921-ICR-L5 The Cold-Start Ingest Establishes A Before Half, And A Selected One Is Read On Every Run
-
-Two route-level facts this package route now carries, both inside the curator write plane and neither
-public: no advertised tool name, no response model and no refusal vocabulary moved. The per-file detail
-lives in the sidecars for `mcp/src/agents_remember/application/knowledge_before_half.py`,
-`.../knowledge_first_generation.py`, `.../knowledge_curator_ingest.py`,
-`.../knowledge_review.py` and `mcp/src/agents_remember/cli/knowledge_ingest.py`.
-
-- **A repository's first knowledge write now has a truthful before side.** A cold-start
-  `knowledge-ingest` run that names no `--baseline` used to commit its candidate and leave the review's
-  before half absent, so the review refused the pair and the first invariant a repository ever recorded
-  could not be displayed as an addition. The run now *establishes* the half as an explicitly identified
-  empty first generation — a schema-valid empty dataset in the candidate's own namespace, built by the
-  shipped creation owner and exposed atomically, with `baseline-origin.json` beside it recording the
-  generation, the code base the run observed, and that pre-feature history is not recorded. The
-  populated candidate is never copied backward as its own origin.
-- **A *selected* baseline that is missing or corrupt is a different fact and is never answered that
-  way.** It is the shipped `selected_input_unavailable` refusal naming the path and the reason, and the
-  read now happens on **every** run — resume included — because reading it only on the clone path made
-  a corrupt fork point invisible exactly where a later run would go on to act on it: the run committed
-  and the before half was then reported *placed* from bytes that were no longer a dataset. The
-  operations this route gains are the two new application modules; `application/knowledge_review.py`
-  gained one import and two call sites so a present-but-unreadable side is a named refusal on both the
-  composition and the entry list.
-
-- The before half's owner: its layout, its origin record, its four states and the one refusal. [144]
-- The establishing operation, and the admission it reads from the committed candidate's own record. [145]
-- **The admission's read of a selected baseline, taken before anything else is decided and on the resume path too.** [146]
-- **The CLI's two filling paths behind one placement gate, and the cold-start branch.** [147]
-- The two adapter call sites that state the unreadable-half refusal on both routes. [148]
-- The cases that measure the operation at the CLI and the surface's before half. [149]
+Historical cold-start ingest manufactured an empty canonical baseline so the first addition could be compared. That mechanism is retired; current tree-comparison capture supplies exact endpoints without database placement. [147]
 
 ## ARSPAWN-L4 Public Advertisement And Starter Contract
 
@@ -1824,7 +1637,7 @@ and re-resolve the incumbent or staged heir at delivery; public outcomes omit ru
 
 ## Development And Certification Policy
 
-Ordinary Python development is supported directly through `mcp/.venv/bin/python -m pytest`; four workers run the isolated unit population. `-m integration` selects the small real-boundary population and `-m ""` selects both. Focused file/node execution, including serial debugging, is valid development work and does not acquire certification authority. The repository declares `unit_case_budget = 4000` and `integration_case_budget = 1000` parametrized collected cases (`pyproject.toml:1-357`), raised from 3000 / 600 by the 260918-TSIP-L13 budget-and-landable-closeout leaf on 2026-09-20 under a second direct developer decision — the pair before that having been raised from 2300 / 400 by the 260918-TSIP-L7 agreement leaf under a direct developer decision. Extend or consolidate distinct behavior protection before adding cases; do not restore deleted matrices, private-branch tests or unused fixture machinery because an old milestone names them.
+Ordinary Python development is supported directly through `mcp/.venv/bin/python -m pytest`; four workers run the isolated unit population. `-m integration` selects the small real-boundary population and `-m ""` selects both. Focused file/node execution, including serial debugging, is valid development work and does not acquire certification authority. The repository declares `unit_case_budget = 4000` and `integration_case_budget = 1000` parametrized collected cases (`pyproject.toml:278-279`), raised from 3000 / 600 by the 260918-TSIP-L13 budget-and-landable-closeout leaf on 2026-09-20 under a second direct developer decision — the pair before that having been raised from 2300 / 400 by the 260918-TSIP-L7 agreement leaf under a direct developer decision. Extend or consolidate distinct behavior protection before adding cases; do not restore deleted matrices, private-branch tests or unused fixture machinery because an old milestone names them.
 
 Coverage, including changed-line coverage, is diagnostic only. No percentage floor requires additional tests. Production-only CRAP retains 20 as a review trigger, not a delivery blocker; tests and verification support are excluded. Lint, formatting, typing, structural rules and test failures still enforce. Diagnostic-tool execution errors remain visible failures distinct from metric findings. There is no coverage baseline, score-exception registry or ratchet.
 
@@ -1999,7 +1812,7 @@ These dated additions retain their original public names and intermediate author
 `mcp/` is the package-managed Agents Remember MCP server. It turns coordinator
 startup and provider lifecycle behavior into typed, host-side operations backed
 by importable Python services instead of model-edited coordinator scripts or
-coordinator `system/settings.json`. The tool surface gained `task_reopen` cit:([`task_reopen`], mcp/src/agents_remember/mcp/registration/tasks.py:1-256):
+coordinator `system/settings.json`. The tool surface gained `task_reopen` cit:([`task_reopen`], mcp/src/agents_remember/mcp/registration/tasks.py:64-76):
 reopen a fully landed leaf task under its exact leaf id — a task-domain state reset
 whose worktree recreation stays with `worktree_start`. The agent-orchestration L2
 adds `spawn_agent_session` — the agent-facing **dispatch** tool that CREATES a
@@ -2373,9 +2186,9 @@ resolution depends on. The evidence for both halves is
 `mcp/tests/test_capsule_launch_wiring.py`.
 
 - The one decision point every launch point calls, with its three answers and named refusals. [159]
-
-
-
+- The one workspace rule and the selection that follows it. [160]
+- The compiler the port is bound to, including the eve path that reads the admitted workspace back out of the carrier. [161]
+- D13's repair, on the registered operation's own resolution path. [162]
 - The declared legacy exclusion, and the enumeration case that keeps a fourth launch point from appearing silently. [163]
 - The production chain read at the consumer's own gate and at the live runtime's system block. [164]
 
@@ -3401,7 +3214,6 @@ its own positive control.
 - The storage home and the one-way import direction, declared as charter wording only. [170]
 - The storage package's own boundary statement. [171]
 - The one canonical encoder, its policy and its duplicate-key-refusing decoder. [172]
-- The composition seam that is the storage package's only consumer. [173]
 - The route overview this section introduces. [174]
 **Measured qualification (260915-CAPS-L10, finding `F-6`) — read the sentence above as root-scoped.** The
 withholding is complete **inside the coordination root** and it is **not** complete on the machine. The
@@ -3457,98 +3269,9 @@ unpopulated in a checkout, because populating it would repoint every checkout la
 dependency-less copy. The per-card detail is on the `install` route's cards and the
 [tests route](tests/overview.md).
 
-## 260915-KS-L45 The Reviewer Becomes Two Routes, And The Candidate Pair Gets A Producer
+## Historical database mechanism — retired
 
-**Superseded count (`260921-ICR-L3`): the surface now serves three routes over three ports, and it is no
-longer true that no review route accepts a path.** This section records the two-route landing as it was;
-its reasons for the split remain current, and the `260921-ICR-L3` section at the end of this narrative
-records what the third route added and which sentence of the route model it corrected.
-
-The Intent Reviewer surface is reached through **three GET routes**, and the second one is what makes
-the first reachable from a task view:
-
-| Route | Answers | Port | Inputs |
-| --- | --- | --- | --- |
-| `/api/review/intent` | what one comparison renders | `KnowledgeReviewPort` | task context + one recorded subject selector |
-| `/api/review/intent/entries` | which subjects the resolved pair can be compared on | `KnowledgeReviewEntriesPort` | task context alone |
-| `/api/review/intent/source-content` | one listed entry's actual content at the two bound code trees (`260921-ICR-L3`) | `ReviewSourceContentPort` | task context + the entry path + both bound code tree ids |
-
-The split is a second **path** rather than a second adapter, and the source comment gives the reason: a
-caller that had to guess a subject id to reach the comparison route would be choosing the candidate,
-which the browser may not do. Both answer from **one application resolution**, so the entry a task view
-is offered and the review it then opens cannot name different candidates. The entry route is the only
-one a caller can invoke *before* it knows a subject, so it takes the task context and nothing else.
-
-**No adapter is a named refusal on all three routes, and neither the entry route nor the expansion route may answer it with a list or with an empty file (`260921-ICR-L3` added the third).**
-The comparison route's `503` says the surface is not served rather than served empty. The entry route
-has its own body (`_UNWIRED_ENTRIES`, `status: "unavailable"`) because an empty entry list would say
-"nothing is reviewable here" — a different fact from "this process cannot answer", and only one of them
-is true when the process was composed without the port. `_status_for` now reads success as
-`refusal is None` (so an `entries` state and a `review` state both serve `200` from one mapping) and
-`subject_unresolved` joins the candidate codes answering `404`.
-
-**The candidate pair now has a production producer, and its two halves are named once.** The ingest CLI
-derives its candidate directory from the **contract's own recorded worktree group** through the
-review's published `REVIEW_CANDIDATE_RELATIVE_ROOT` / `REVIEW_CANDIDATE_DIRECTORY`, so an ingest that
-names no directory authors the candidate the review then opens; and when a caller supplies
-`--baseline` on a committing run, that fork-point dataset is **copied** into the baseline half (never
-moved or linked, because the review's own recorded decision is that both halves live in the leaf's
-disposable local root). Nothing is placed on a way out that did not commit, and a run with no
-`--baseline` **no longer leaves the half absent**: since leaf `260921-ICR-L5` it *establishes* the
-before side as an explicitly identified empty first generation (a schema-valid empty dataset in the
-candidate's own namespace, with `baseline-origin.json` beside it recording the generation, the code
-base the run observed and that pre-feature history is not recorded), because a pair with one side
-missing is refused and the first invariant a repository ever records could not otherwise be displayed
-as an addition. Three outcomes now stand where this paragraph used to name one: a named `--baseline` is
-copied, and is never written over an identified generation or over a damaged half; no `--baseline`
-establishes; and a *selected* baseline that is missing or corrupt is refused by name
-(`selected_input_unavailable`, carrying the path and the reason) rather than answered with a freshly
-empty dataset. An absent half remains its own truthful answer — `candidate_dataset_absent`, now
-**naming which half** is missing — for the case where the establishing run itself left nothing.
-
-**The pair is opened under the namespace recorded beside each dataset, and the receipt-only rule is
-corrected here (`260921-ICR-L34`).** The paragraphs below as first written said the namespace is read
-from the candidate's sealed **receipt** and that a dataset handed directly with no receipt keeps the
-requested identity. That was false for a **before** half placed by a run handed a published
-`--baseline`: a published dataset is not an admitted candidate, so no receipt exists beside it — it
-carries the before half's own `baseline-generation.json`, written by the ingest's placement owner — and
-the read therefore fell back to the requested repository name while the bytes were bound to a namespace
-id. The storage owner refuses that mismatch, so **every leaf on the ordinary `knowledge-ingest
---baseline` route produced a leaf whose comparison could not be frozen** (`candidate_dataset_absent`,
-*"the candidate database is not bound to repository namespace agents-remember"*), and no test could see
-it because the fixtures hand-assemble their pairs. The rule is now **the record beside the bytes**: the
-receipt when there is one, otherwise that generation record, and the requested repository only when
-**neither** exists. The text below is retained as the L45 record of the reading at that time.
-
-A request names a *repository*; a dataset the write plane placed is bound to a *namespace id* derived
-from it, and a side opened under the requested repository spelling refuses against the dataset's own
-binding — measured on this leaf's fixture as `bound to 40d350a6-…, not to the requested repository
-namespace agents-remember`, which in the live product would have failed the review of every real
-candidate. So `review_namespace` reads the namespace from the record standing beside the bytes —
-`candidate-receipt.json` when an admission wrote one, otherwise `baseline-generation.json` — and both
-sides and the review matrix are opened under that. A dataset with **neither** record beside it (a
-fixture, a caller-assembled pair) keeps the requested identity as it always did, and a record that
-exists but cannot be read is refused rather than guessed past.
-
-Production wiring lives in the composition root, and it now supplies both ports:
-`cli/dashboard.py`'s `serving_collaborators` builds `review_port` and `review_entries_port` — the
-application adapter's two halves — and passes them as `knowledge_review` and
-`knowledge_review_entries`. Every `create_app` call in that module goes through that function, so a
-served dashboard either has both adapters or refuses the corresponding route by name.
-
-- **The comparison route constant, GET-only.** [175]
-- **The entry route constant, and the comment recording why it is a second path rather than a second adapter.** [176]
-- The typed request the query string parses into, with no path among its inputs. [177]
-- **The entry route's unwired answer: a named refusal with the "not served rather than served empty" reason, never an empty list.** [178]
-- **The status mapping success reads as `refusal is None`, so one function serves all three typed results; the four candidate codes answer `404` and the expansion's `source_content_unresolved` falls through to `400`.** [179]
-- The two port fields on the collaborators dataclass, and the rank reason they exist — with the third review port beside them since `260921-ICR-L3`. [180]
-- The registration that passes both ports. [181]
-
-- **The two published half-names the ingest CLI derives its candidate directory from — defined in `review_candidate_resolution` and re-exported by the adapter, which is the import path the ingest CLI uses. The three constant ranges were re-derived against this leaf's candidate, whose import block moved them.** [183]
-- **The ingest run's review handoff: two filling paths behind one placement gate — the fork-point dataset copied into the before half, or an identified empty first generation established there.** [184]
-- **The namespace read from the record beside the bytes rather than from the request — the sibling module's operation, which the adapter delegates to. Corrected in place by `260921-ICR-L34`: the receipt-only rule made the before half of every `knowledge-ingest --baseline` run unopenable, and therefore every such leaf's comparison unfreezable.** [185]
-- **The pair preflight: the absent half named as `baseline` or `candidate` — the sibling module's operation, called only when a subject was named, because a task-context review compares no dataset — and the sibling fact beside it, a side that is present but cannot be read.** [186]
-- The cold-start branch that fills the half when the caller named no baseline, and the two rules that guard the fork-point copy. [187]
+The old candidate-directory constants, copied baseline and empty-first-generation producer are retired. The review obtains exact source and memory endpoints through the current tree comparison owner. [183]
 
 ## 260915-KS-L22 The Intent-Review Route, Its Port, And The Wiring Behind It
 
@@ -3669,15 +3392,10 @@ What this route does not gain: no second write path (publication is still
 refusal vocabulary. The per-file detail lives in the sidecars for those modules.
 
 - **The public selection the next task uses to begin from a prior task's published dataset — and, since 260915-KS-L45, the run that also authors the candidate the review opens (on unconverted memory; since `260928-MIK-L12` a converted memory worktree goes to the curator file writer first).** [198]
-- **The handoff that places that dataset into the review's baseline half.** [199]
-- The operation, and the selection value that carries the baseline into admission. [200]
-- The identity derivation, keyed on the repository rather than the base commit, and the three identities one target's own place mints. [201]
-- The case that measures the journey through the public operation on a real SQLite store. [202]
+
+- Current contract-scoped file writing [199]
+
 - The public selection the next task uses to begin from a prior task's published dataset (the database route; a converted memory worktree goes to the file writer first). [203]
-- The allocation a new truth's identity comes from, and the journal a repeat resolves through. [204]
-- The retry key, the content guard, and the explicit anchor reuse a producer may name instead of authoring. [205]
-- The citation derivation, keyed on the repository rather than the base commit, and the three identities one target's own place mints — each now on its own discriminator. [206]
-- The case that measures the journey through the public operation on a real SQLite store, and the case L43 re-pointed at the ruled semantics. [207]
 
 ## 260915-KS-L23 The Terminal Leaf: What Changed Under This Route, And The Three Rails It Must Respect
 
@@ -3708,56 +3426,9 @@ the two ini names with `addini` and **no `default=`**. (3) The evidence catalogu
 **15 contracts / 65 artifacts** while its digest moved to `25b00f88…` — a consumer-only change moves
 the bytes, never the counts.
 
-## 260915-KS-L47 The Write Path Binds Three Claims To The Truth It Actually Writes
+## Historical database mechanism — retired
 
-The master-exit review of the knowledge write path confirmed three failures this leaf repaired, and
-each one is a claim the route was making that the code did not keep. **All three touch this route's
-ingest entry point**, which is why the route overview records them here rather than only on the two
-sidecars.
-
-**A changed request under a held retry key is no longer reported as already committed.**
-`application/knowledge_curator_ingest.py`'s `_content_digest` now digests the complete normalized
-semantic write intent, so it gained `dispositionSource` (the newly reachable field), `namedInvariantId`,
-`predecessors` as an ordered list, the **normalized** `RealizationRole` the write path stores rather
-than the caller's raw spelling, and `roleRationale`. Two inputs stay out deliberately: `entry_id`, which
-is the retry key's own scoping half, and `declares_invariant`, which is derived as `not predecessors` by
-construction. Before the repair the digest covered five of the eleven fields the write path consumes, so
-changing the realization role, the disposition source, or the invariant with its predecessors returned
-exit 0 with `batchState: replayed`, an empty `refused`, `recordsWritten 0`, and a database byte-identical
-to before -- the CLI reporting committed while echoing text the stored revision did not carry. The three
-measured variants now refuse with `allocation_content_conflict`, name the digest the allocation was
-minted for beside the one that arrived, and leave the database untouched; an exact retry still replays
-and writes nothing.
-
-**An explicit anchor reuse is now resolved against the stored anchor before any plan exists.**
-`_require_stored_anchor` and its `_stored_anchor` read refuse a supplied path, blob or locator that
-disagrees with the stored row (`anchor_reuse_mismatch`, and `anchor_id_not_stored` when no dataset holds
-the identity), and the check runs inside `_plan_target_inner` ahead of `_target_identities`. The measured
-defect was a target naming symbol `other` while supplying the anchor that identifies `resolve_budget`:
-the run returned `changed`, committed and published, the receipt echoed locator `other`, and the stored
-claim cited the `resolve_budget` anchor. A matching reuse still succeeds, adds no anchor row, and
-produces a reference agreeing with the receipt and the public read. The memory layer gained one small
-public reader for this -- `memory/knowledge/anchors.py`'s `read_anchor`, with `get_anchor` delegating to
-it -- so the intake resolves a stored anchor through one source of truth instead of a second decoding of
-the anchor row.
-
-**The review's before half is captured before publication can overwrite its source.**
-`cli/knowledge_ingest.py` now reads the admitted baseline at the top of `run` (`_CapturedBaseline` /
-`_capture_baseline`) and `_place_review_baseline` writes those captured bytes rather than re-reading
-`args.baseline`. When one path is used as both `--baseline` and `--publish-to`, publication replaces that
-file in place, so the old post-ingest copy put the published candidate into the review's before half and
-the review answered `present` on both sides with no field changes. Measured after the repair: the before
-half is byte-identical to the true fork point, the review answers before `absent` / after `present` over
-two different digests, and a retry leaves the half unchanged.
-
-The route's own reference tables were re-measured rather than shifted: every citation this leaf's edits
-moved was rewritten to the extent its construct actually occupies, the `compatible` declaration this
-leaf's change set makes explicit is now stated on the `models/tools/knowledge_responses.py` sidecar with
-the wire-omission rule beside it, and `mcp/tests/test_knowledge_views_and_projection.py`'s two reconciled
-assertions are stated on that sidecar. **No route-level behaviour outside the knowledge write path
-changed**, and the merge guard (`memory/knowledge/merge.py`) was not touched: it is byte-unchanged and
-its `_independent_insert_refusal` still refuses two independent insertions of one identity with equal
-payloads.
+The historical database repair captured the before half prior to overwriting publication. Its database placement/publication mechanisms are retired. Current file writing resolves the actual source candidate, validates the resulting memory tree and leaves Git publication to closeout. [199]
 
 ## 260921-ICR-L19 The Package's Ordinary Read Route Gains Its Published-Intent Half, And Its Carriers Move
 
@@ -3877,17 +3548,9 @@ merely avoided. And **only the owners' binding-mismatch code is a moved generati
 keeps the owner's own remedy and is reported as `comparison_page_unreadable`, so a reader is never told to
 open a new comparison when nothing moved. The manifest side is one lane row and three consumer rows.
 
-## 260921-ICR-L26 Three Of This Route's Rows Re-Cited After The Review Adapter Moved
+## Historical review-reader extraction
 
-`260921-ICR-L26` (`ICR-R26@v1`, subject and comparison isolation) changed this route only through the
-**files it references**: the review adapter's `_knowledge_pane` (`1034 → 1036` lines) and the three
-helper declarations the leaf moved out of or into the owners beside it, namely `_claim_records` (now the
-evidence owner's `548-572`), `_knowledge_pane` (now `knowledge_review.py:926-978`) and
-`evidence_pane`/`signal`/`observation` (now `review_record_rendering.py:213-252`, `456-473`, `431-453`).
-Three reference rows on this overview cited those constructs by their pre-change lines, so they were
-re-derived from each construct's own extent in the candidate; **no route-level fact changed** — this
-overview's account of the MCP surface, its tools and its registration is untouched by the leaf, and the
-route's own index was regenerated with the rest of the tree.
+Canonical collection readers formerly extracted from the adapter were retired with their record classes. The current owner preserves curator records and explicitly reports those canonical channels unavailable. [109]
 
 ## 260921-ICR-L12 Historical Committed-Leaf Review: A Closed Leaf Reopens Its Recorded Comparison
 
@@ -3917,6 +3580,8 @@ source inventory R02's and the record bundle R14's. `ICR-R24@v1` owns the leaf-h
 suppression (a local import's `# noqa: PLC0415 - cycle`) and widens no limit or rail.
 
 ## 260921-ICR-L29 The Package Gains A Taskless Bootstrap, And The Ingest Stops Requiring An Enclosure
+
+**Historical database-era account.** The admission, allocation journal, staged dataset, publication and progress mechanics below describe that earlier delivery. MIK-R26 retired those database owners. Current authoring uses the converted file writer through the two admitted CLI entries and selects no canonical dataset publication.
 
 `260921-ICR-L29` (`ICR-R29@v1`) makes a repository's **first** knowledge writable without a task. Before
 it, the package's only knowledge-write admission was a leaf enclosure contract, so
@@ -3960,10 +3625,40 @@ all.
 
 ## Normal comparison capture and explicit recovery
 
-The existing review-record-comparison command now records actual owner-produced assessment inputs through the normal resolved-pair freeze. Its paired recovery controls select an exact retained parent and original curator generation. The packaged curation operation documents both paths and remains synchronized from the canonical skill. No new knowledge writer, semantic store or automatic historical repair is introduced.
+**Historical database-era producer.** The earlier `review-record-comparison` command captured owner assessments and offered paired recovery from a retained parent and curator generation. MIK-R26 retired that command and its canonical-dataset freeze owner. Current review resolves recorded Git tree operands and retained curator generations; unavailable canonical knowledge remains explicitly legacy-unavailable. No current producer generation, replacement writer or retrospective recovery is implied. [109]
 
 
-## 260928-MIK-L96 Host install, start and shared authority
+
+- Current curator records and explicit retired-channel unavailability [109]
+
+
+- Actual absent/unreadable authority and task-context matrix cases [112]
+
+
+- Custody and release remain; creation is retired [118]
+
+
+- Exact retained comparison after cleanup/restart/later landing [121]
+
+
+- Published intent selects converted memory and its derived index [128]
+
+
+- File-only ingest arguments/dispatch [131]
+
+
+- Only three mounted operations [133]
+
+
+- Read-side index preflight without canonical placement [142]
+
+
+- Current four-tree capture [147]
+
+
+- Exact tree endpoint composition, not candidate directories [183]
+
+## Host installation, start and shared authority
 
 The `mcp` route now carries the host step of `runtime_install`, the start-only host supervision behind a dashboard start, the packaged host and Node contract, the installation-wide host authority and the product's session-environment list; the host modules live in `serving/paseo/` and are reached from install and serving alike.
 
@@ -3985,42 +3680,3 @@ The native role-launch CLI composes one Investigator request owner for task-owne
 - This source owns the route’s Investigator selection or execution boundary. [254]
 
 
-## Refreshed current evidence
-
-
-
-
-- The four-tree comparison, pinned and recorded. [33]
-
-- The owner resolves each requirement endpoint; unresolved is reported. [40]
-- The task owner's strict lookup and decision answer. [55]
-- The ingest dispatch on the loaded contract's memory worktree. [76]
-- The bootstrap run mode's dispatch on the admitted memory root. [77]
-- The batch blob reader. [93]
-- **The production record owner: five collections and one measured currentness channel, each read through its owner.** [108]
-- **The production port the cases drive, and the two states F09 collapsed.** [111]
-- **The read-back through the reader's owner, and the three states the report carries.** [130]
-
-- The one workspace rule and the selection that follows it. [160]
-- The compiler the port is bound to, including the eve path that reads the admitted workspace back out of the carrier. [161]
-- D13's repair, on the registered operation's own resolution path. [162]
-- The composition root's two adapter functions. [182]
-- The composition root's two adapter functions. [193]
-- **The three review ports passed into the shared collaborators.** [194]
-- **The two ports passed into the shared collaborators.** [196]
-- Current imported source owns this scoped route boundary. [228]
-- Current imported source owns this scoped route boundary. [229]
-
-
-- A kept set is checked with its path selections first. [247]
-
-
-## Refreshed current evidence
-
-- The lane row. [18]
-- The lane row. [28]
-- The lane row. [32]
-- The two lane rows. [37]
-- The lane row the new module occupies and the two governed consumer rows it joined. [136]
-- The two lane rows. [233]
-- The waiting bound counts computations, not the requests sharing them. [242]

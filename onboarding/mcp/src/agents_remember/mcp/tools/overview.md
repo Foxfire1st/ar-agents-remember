@@ -17,23 +17,9 @@ Native role payloads delegate starts/messages through the actual caller binding;
 
 [overview.md](../../../../../overview.md)
 
-## 260928-MIK-L37 A Projection Refuses A Seed A Converted Tree Does Not Hold
+## Knowledge selection and citations
 
-After the cutover (MIK-R37) every remembered database-era revision ID names nothing in a converted memory tree, and
-an empty, complete answer would read as "no knowledge". So [`knowledge.py`](knowledge.py.md)'s `_project_result`
-now takes its dataset from `_projection_selection`: for a converted tree, the first view seed the tree does not hold
-(`knowledge_paging/tree_seeds.tree_seed_refusal`) refuses the whole `knowledge_project` as `selector_absent`, naming
-where current seeds come from. `knowledge_read` gets the same refusal one layer down, in
-`application/knowledge_paging/tree_read`. A database selection is unchanged, and this route's seam is unchanged.
-
-- The projection's dataset, or the refusal of an unheld seed. [35]
-
-[`memory.py`](memory.py.md) bounds a converted tree's `citation_fix` response: `bounded_citation_fix` caps every
-list at 50 entries, adds each list's full count and names the capped lists. An unconverted tree's result passes
-through unchanged.
-
-- A converted tree's citation-fix result is bounded for transport. [36]
-
+Read refuses unheld converted-tree seeds as selector_absent; project is no longer mounted. The memory-tree/index state stays visible and partial reads stay incomplete. The memory citation adapter retains its separate bounded transport result. [34] [35]
 
 ## 260928-MIK-L01 The Family-Complete Leaf Read, And A Root With No Commit Refused By Name
 
@@ -110,26 +96,13 @@ index opened for the wrong key is the ordinary dataset refusal. No other builder
 - A converted tree's page carries `proofs`, prepared once per page since MIK-R02. [8]
 - A key mismatch is a selection failure. [9]
 
-## 260928-MIK-L12 The Mounted Refusal Names The File Route
+## Knowledge authoring command route
 
-`knowledge_change_payload` still refuses every kind with `registration_absent`; its refusal detail gained one
-sentence: on a converted memory tree (`knowledge/layout.json`) both shipped CLI entry points write knowledge
-files through the curator file writer (MIK-R12) instead of the database. The tool stays registered and refusing
-by architect ruling, until MIK-R26 (leaf L26). No builder, request model or other payload on this route changed.
+Mounted change/refusal and project/render builders are removed. Curator authoring belongs to the command file writer; these builders read, diff and validate only. [10]
 
-- The refusal detail's new sentence. [10]
+## Historical mounted write refusal
 
-## 260921-ICR-L32 The Write Plane Is Named By Both Its Shipped Entry Points
-
-The route's L20 paragraph above was **completed rather than replaced**: the mounted `knowledge_change`
-refusal now names one writer and **both** shipped CLI entry points that reach it — `WRITE_ENTRY_POINT`
-(`agents-remember knowledge-ingest`, a leaf enclosure's ordinary route) beside `TASKLESS_WRITE_ENTRY_POINT`
-(`agents-remember knowledge-bootstrap`, a repository with no enclosure in scope) — and the module comment at
-the top of `knowledge.py` says the same two, so the file no longer contradicts itself 20 lines below a
-comment claiming both names are used wherever a model is told where the write plane is reachable. Nothing
-else on this route moved: the same five builders, the same declared kinds, the same unconditional
-`registration_absent` for every one of them. The second constant is `260921-ICR-L32`'s addition; the first
-sentence was true when `ICR-R20@v1` wrote it and incomplete after `ICR-R29@v1` shipped the second route.
+The earlier change payload only named command writers; MIK-R26 retired it. No current mounted payload writes. [10]
 
 ## 260915-KS-L41 The Knowledge Payload Builders Bind A Run And Complete A Resolution Pair
 
@@ -700,66 +673,13 @@ which is likewise not the extension's enumeration result.
 - The extension's enumeration surface is the `skills/list` method on the registration route, not a builder on this one. [31]
 - This server's own index resource, kept deliberately distinct from that method. [32]
 
-## 260915-KS-L20 The Five Knowledge Payload Builders, And Where A Handler Refuses To Decide
+## Three knowledge payload builders
 
-`mcp/tools/knowledge.py` adds one builder per mounted `knowledge_*` operation family, and its defining
-property is what it does **not** do: no classification is computed, no effect label is inferred, no draft is
-authored, no rationale is judged, no ambiguity is resolved by choosing, no missing assessment is filled, and
-no compatibility verdict is produced. Where a handler would have to decide something, it returns the
-unresolved state instead, and the module's brevity is the measurement of that rule rather than an accident
-of scope. Two of the five are quoted at requirement level and their builders are the reason: `knowledge_read`
-returns "recorded claims and assessments as attributed records", and the payload it returns **is the view
-payload itself**, so the classification rule has exactly one implementation instead of a second renderer
-here; `knowledge_diff` includes "semantic effect labels ... only when supplied by an identified
-agent/assessment, not inferred from the diff", so `_supplied_effect_labels` collects the labels the
-comparison already carries and never derives one.
+Read serves attributed knowledge through the converted tree index; diff serves raw knowledge-file Git patches without labels; integrity serves validator/worklist results. All use the response-model choke point. Database paths, caller namespaces, run selection and projection destinations are removed. [10] [34]
 
-**Four request records and one builder that takes none.** `ReadToolRequest`, `ChangeToolRequest`,
-`DiffToolRequest` and `ProjectToolRequest` are the wire shapes, and each field they declare is an input the
-caller must supply rather than a default the substrate chooses — the dataset path, the namespace, the
-destination, the view name, the ordering input, the limit, the continuation, the authorized overwrites.
-`knowledge_integrity_check_payload` takes no request at all, which is the honest shape for an operation
-whose answer is "here are the recorded conditions and here is what could not be resolved":
-`_recorded_conditions` reads the shipped detection run **for the named scope** — `_run_for_scope` matches
-the caller's scope against the run's own registered traversal scope and `_no_run_for_scope` reports a scope
-no recorded run measured — `_no_detection_run` reports the absence as a state rather than as an empty
-condition list, and `_condition_report` carries each matched fact beside the condition that matched it.
+## Integrity report scope
 
-**Two refusal builders exist so that a refusal never becomes a default.** `_refused_read` returns the
-typed refusal naming the offending view and the code, and `_refused_project` names the destination and the
-code, so a caller can always tell "nothing was selected" from "the selection was refused" — a distinction
-the response models' `state` discriminator preserves on the wire. `DECLARED_CHANGE_KINDS` is the six-member
-tuple of record kinds this surface may be *asked* about (`evidence_claim`, `verification_observation`,
-`invariant_revision`, `assumption`, `semantic_change_set`, `requirement_revision`), and the refusal is
-unconditional for every member of it: the shape records that the earlier spelling advertised two "admitted"
-kinds and then refused both anyway, which made the tool's own description false, so the refusal now names
-where the write actually happens — **one** writer, reached by **both** shipped CLI entry points
-(`WRITE_ENTRY_POINT`, the `agents-remember knowledge-ingest` subcommand for a leaf enclosure's ordinary
-route, beside `TASKLESS_WRITE_ENTRY_POINT`, the `agents-remember knowledge-bootstrap` subcommand for a
-repository with no enclosure in scope) — because inventing a second write path here is exactly the
-authority the requirement forbids this route to add. **The second name is `260921-ICR-L32`'s correction of
-this route's own L20 sentence**: `ICR-R20@v1` named only `knowledge-ingest`, which was true when it was the
-sole reachable entry point, and `ICR-R29@v1`'s second route left the naming incomplete in the one place a
-model reads when it decides. `_projection_requests` builds one view request per requested view so
-the projection builder reads each view through the same seam a direct read does, rather than through a
-second selection path.
-
-## 260915-KS-L32 The Integrity Lookup Is Bound To The Requested Scope
-
-The route's read surface gains one optional seed and loses one silent substitution. `knowledge_read` now
-publishes `sourcePath`, forwarded into `ReadToolRequest.source_path`, so a caller who knows only a file can
-present that file as a seed and let the view layer resolve what governs it — a front door that does not
-require first discovering an invariant revision id or a family revision id. On the integrity side the
-correction is smaller and more consequential: the scope a caller names now **selects** the reported run
-rather than being echoed beside one. Before this, every recorded `detection_run` row was read in record-id
-order and the first was reported whatever scope the caller asked for, so with more than one run recorded
-the answer was whichever run happened to sort first while the response still named the requested scope —
-"scope X" printed beside conditions measured over scope Y. `_run_for_scope` now matches the caller's scope
-against the run's own registered traversal scope (`governing_route_id`) and keeps searching past a run
-measured over a different one; a caller naming no scope keeps the previous behaviour (the first recorded
-run), and a caller whose scope matches no run is told so by `_no_run_for_scope` rather than handed another
-run's conditions. The scope-selection invariant, the two new helpers and the `DECLARED_CHANGE_KINDS` /
-`WRITE_ENTRY_POINT` correction to the L20 section above are the route-level record of it.
+Integrity names a converted memory/code root pair or leaf contract and carries the validator report and latest worklist. Canonical scope-selected detection runs and exact run selectors are retired. [10]
 
 ## 260915-KS-L44 The Read Request States What Owns The Knowledge Selection
 
@@ -767,16 +687,16 @@ run's conditions. The scope-selection invariant, the two new helpers and the `DE
 
 **Nothing was widened.** Exposing a real discovery contract — a settings key, a `context_packet` field, a resolver — is a product decision and is deliberately **not** taken by this leaf. The mounted builders, the refusal vocabulary, the source-resolution pair, the detection-run selection and the projection path are all unchanged; the docstring is the only edit at this surface.
 
-## 260928-MIK-L23 A `databasePath` May Name A Converted Memory Tree
+## Converted memory root selection
 
-**Route meaning extended (MIK-R23@v1).** [`knowledge.py`](knowledge.py.md)'s read, diff and project builders
-now pass every caller-selected dataset path through `_select`, the application's `select_knowledge_dataset`:
-a path naming a converted memory tree (its root, or its published `knowledge.sqlite` location) is read
-through the derived index of that tree's current state, and every other path is opened as before. The
-responses gain the optional `memoryTree` (`memoryTrees` for a comparison) and `indexComplete`; a partial index
-forces every completeness statement to `false`. `_SELECTION_FAILURES` makes an index that cannot be built a
-refusal (`snapshot_unavailable` naming the tree) on all three handlers. No input schema changed. A tree-backed
-read is bound to the index's constant namespace, so seeds are its projected UUIDs.
+Read selects a converted memory root and its derived index. Legacy roots and database files refuse before opening them; no database fallback or project builder remains. [34] [35]
 
-- The shared selection and its refusal mapping, which since MIK-R01 also refuses a named root with no code tree by name. [33]
-- A partial index is never presented as complete. [34]
+
+
+- Three delegates serve read, Git diff and tree validation. [10]
+
+
+- Read carries tree/index state and partial-index completeness. [34]
+
+
+- Legacy paths and unheld current seeds refuse truthfully. [35]

@@ -3,25 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "4be19bfc4f0db366151478c0195bb8e5278c7351",
-        "content": "sha256:a271026abd8eb0197a4b94a37c5a65774298125ef46d349c48fbff378cfc94a2",
-        "locator": {
-          "kind": "symbol",
-          "name": "published_dataset_path"
-        }
-      },
-      "id": "RLZ-7J2QHFP8",
-      "invariant": "INV-753SKJFF",
-      "origin": {
-        "leaf": "260921-ICR-L30"
-      },
-      "rationale": "The read route owns the spelling of the location and the write route consumes that same owner, which is what makes the two halves one location rather than two conventions.",
-      "role": "primary-authority"
-    },
-    {
-      "anchor": {
-        "blob": "4be19bfc4f0db366151478c0195bb8e5278c7351",
-        "content": "sha256:cf99837a0a835809c8b221705f2ba36642e7f0b3589f9e2216ef1dc4a0760978",
+        "blob": "bda6abac209b8bb555561b79169c66526d769437",
+        "content": "sha256:6918f2ee0d10bbb302b9a5825ac0309321a87cc5271af0ee5a2a11102e76be05",
         "locator": {
           "kind": "symbol",
           "name": "resolve_published_intent"
@@ -32,33 +15,17 @@
       "origin": {
         "leaf": "260921-ICR-L30"
       },
-      "rationale": "Resolves the repository's published dataset at the one path published_dataset_path names, or names why it cannot be read. For a converted memory tree it answers not-recorded, naming the tree, without opening the database file frozen there. For an unconverted layer it reads the dataset's identity at that one location: a location with no entry answers not-recorded, and an entry that is not a regular file, bytes that are not a dataset this code can read, or a dataset bound to another repository's authority home answers unusable, so no other repository's publication is ever selected.",
+      "rationale": "resolve_published_intent resolves the admitted repository or leaf memory root, refuses an unconverted root as legacy-format, and selects the derived index of the converted root's exact text tree. An index selection or identity failure is reported unusable rather than selecting another memory layer or publishing a canonical database.",
       "role": "primary-authority"
     }
   ],
   "references": {
-    "1": {
-      "note": "**The one file name a repository's published dataset occupies inside its memory layer, with the comment that now states the current truth: this route declares the location it reads, and the ordinary write side publishes there through `--publish`.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4be19bfc4f0db366151478c0195bb8e5278c7351",
-            "content": "sha256:cd2dea47f4656356861ff6ee5742f8762eac9429df94c7868a7102ebc0de1930",
-            "locator": {
-              "kind": "symbol",
-              "name": "PUBLISHED_DATASET_NAME"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "10": {
       "note": "**The ordinary read's converted-tree selection: `None` for an unconverted root, an `unusable` state when the tree cannot be indexed, and no authority-home check because the index is keyed by its tree alone.**",
       "targets": [
         {
           "anchor": {
-            "blob": "4be19bfc4f0db366151478c0195bb8e5278c7351",
+            "blob": "bda6abac209b8bb555561b79169c66526d769437",
             "content": "sha256:3f1eb06bc6c22dfba7737013ff6fbe9017836fa91db8afecfaa0ea24e85a0e13",
             "locator": {
               "kind": "symbol",
@@ -69,7 +36,7 @@
         },
         {
           "anchor": {
-            "blob": "4be19bfc4f0db366151478c0195bb8e5278c7351",
+            "blob": "bda6abac209b8bb555561b79169c66526d769437",
             "content": "sha256:58edb60dd5a9d17808cff5cbe1af848d85f064729bdce18d7a676de4c6e735cf",
             "locator": {
               "kind": "symbol",
@@ -104,29 +71,12 @@
         }
       ]
     },
-    "11": {
-      "note": "**The module docstring paragraph that states the switch: only the read selects a tree, and the write side still selects the database.**\n\nAnchor: \"A converted memory tree is selected as a tree\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4be19bfc4f0db366151478c0195bb8e5278c7351",
-            "content": "sha256:9d2035dd30c3a8765ed31e496dbac93735a905d0220fa3c14b805affbd8053b6",
-            "locator": {
-              "end": 63,
-              "kind": "line_range",
-              "start": 54
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "12": {
       "note": "**MIK-R03: the `currentness` block at the resolved source tree, named with its `treeScope` and computed once inside the bounded block; with no pair, every realized invariant is unverifiable.**\n\nAnchor: `WalkCurrentness`",
       "targets": [
         {
           "anchor": {
-            "blob": "4be19bfc4f0db366151478c0195bb8e5278c7351",
+            "blob": "bda6abac209b8bb555561b79169c66526d769437",
             "content": "sha256:50736cbebf2454d75107453626b6d9e77ad49561e698b9b649e95a01f8a9f98e",
             "locator": {
               "kind": "symbol",
@@ -137,7 +87,7 @@
         },
         {
           "anchor": {
-            "blob": "4be19bfc4f0db366151478c0195bb8e5278c7351",
+            "blob": "bda6abac209b8bb555561b79169c66526d769437",
             "content": "sha256:5fcf47b9070212571bbc40e7eb7f4ecafa3728f5b06c5f8c87e9f8efc2491c24",
             "locator": {
               "kind": "symbol",
@@ -161,26 +111,15 @@
       ]
     },
     "13": {
-      "note": "**MIK-R02: a memory tree's whole knowledge block is bounded by the shared threshold, with the database path unchanged; since MIK-R01 only scope seeds feed the scope currentness computation.**\n\nAnchor: `bounded_block`",
+      "note": "The complete text-tree knowledge block is bounded by the shared threshold.",
       "targets": [
         {
           "anchor": {
-            "blob": "4be19bfc4f0db366151478c0195bb8e5278c7351",
-            "content": "sha256:fe62f6922d09b0a8c45d7735d9da499c5892065318fec4509b85124eac79ef8d",
+            "blob": "bda6abac209b8bb555561b79169c66526d769437",
+            "content": "sha256:50736cbebf2454d75107453626b6d9e77ad49561e698b9b649e95a01f8a9f98e",
             "locator": {
               "kind": "symbol",
-              "name": "read_published_intent"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "4be19bfc4f0db366151478c0195bb8e5278c7351",
-            "content": "sha256:fb1132e88641d028f978f99aa6b9d90cf213ea6b1ab56038da921df1b0c990fe",
-            "locator": {
-              "kind": "symbol",
-              "name": "_candidates"
+              "name": "_tree_block"
             }
           },
           "kind": "code"
@@ -192,7 +131,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4be19bfc4f0db366151478c0195bb8e5278c7351",
+            "blob": "bda6abac209b8bb555561b79169c66526d769437",
             "content": "sha256:c90096cfc6d76d958d4b4375a74d01ed03f1c2a27eefb85db8e3e51adadd8e02",
             "locator": {
               "kind": "symbol",
@@ -208,7 +147,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4be19bfc4f0db366151478c0195bb8e5278c7351",
+            "blob": "bda6abac209b8bb555561b79169c66526d769437",
             "content": "sha256:cbbea4f2a603df2e8a33a4a17f01cf1ed0c22c3d4bd6827769a9e07e874bb211",
             "locator": {
               "kind": "symbol",
@@ -219,7 +158,7 @@
         },
         {
           "anchor": {
-            "blob": "4be19bfc4f0db366151478c0195bb8e5278c7351",
+            "blob": "bda6abac209b8bb555561b79169c66526d769437",
             "content": "sha256:5d2d9e2147135d1fec75a9062390617e069d9ac3812be9683ff94a7baedea4d2",
             "locator": {
               "kind": "symbol",
@@ -247,7 +186,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4be19bfc4f0db366151478c0195bb8e5278c7351",
+            "blob": "bda6abac209b8bb555561b79169c66526d769437",
             "content": "sha256:ddbc19f7706b71a567538e43ad60938e67ad4445cd8b32a071bd5e46fbcbdd39",
             "locator": {
               "kind": "symbol",
@@ -258,12 +197,12 @@
         },
         {
           "anchor": {
-            "blob": "4be19bfc4f0db366151478c0195bb8e5278c7351",
+            "blob": "bda6abac209b8bb555561b79169c66526d769437",
             "content": "sha256:a1bb876c0492e78cd214cc1972eaf61053c5b976ba8abb3854794790787f232f",
             "locator": {
-              "end": 729,
+              "end": 466,
               "kind": "line_range",
-              "start": 729
+              "start": 466
             }
           },
           "kind": "code"
@@ -309,27 +248,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4be19bfc4f0db366151478c0195bb8e5278c7351",
+            "blob": "bda6abac209b8bb555561b79169c66526d769437",
             "content": "sha256:c90096cfc6d76d958d4b4375a74d01ed03f1c2a27eefb85db8e3e51adadd8e02",
             "locator": {
               "kind": "symbol",
               "name": "_tree_page_block"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "2": {
-      "note": "**The location resolver: repository-scoped by construction, following the resolved memory root with no fallback between the canonical root and a leaf's memory worktree.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4be19bfc4f0db366151478c0195bb8e5278c7351",
-            "content": "sha256:a271026abd8eb0197a4b94a37c5a65774298125ef46d349c48fbff378cfc94a2",
-            "locator": {
-              "kind": "symbol",
-              "name": "published_dataset_path"
             }
           },
           "kind": "code"
@@ -375,7 +298,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "01e3857e3cce0f6a7d1de75afd79360d3c65caef",
+            "blob": "85c55f2eaf44e11e20283306277a55040b2fa8a1",
             "content": "sha256:09c279f2f41db323726fa3e4a6d6054c028eeb2e2e05087fbc6d087fbe2e8ee2",
             "locator": {
               "kind": "symbol",
@@ -392,12 +315,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4be19bfc4f0db366151478c0195bb8e5278c7351",
+            "blob": "bda6abac209b8bb555561b79169c66526d769437",
             "content": "sha256:c9673549b118390dc237dc515c664358359dbbd6676ce07df06df41641af39fe",
             "locator": {
-              "end": 610,
+              "end": 389,
               "kind": "line_range",
-              "start": 608
+              "start": 387
             }
           },
           "kind": "code"
@@ -409,7 +332,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6679af216c37ef21bacdda5ff59f20b077ab50d3",
+            "blob": "97e2e016e3dfee06b4fb61f702b9a0d3a59ee4ec",
             "content": "sha256:6b25c5ae9bc387cc07259a2f7f75a5be091b9d352b392c4a435b056f1a50eed5",
             "locator": {
               "kind": "symbol",
@@ -421,7 +344,7 @@
         },
         {
           "anchor": {
-            "blob": "6679af216c37ef21bacdda5ff59f20b077ab50d3",
+            "blob": "97e2e016e3dfee06b4fb61f702b9a0d3a59ee4ec",
             "content": "sha256:b63a68e41ef6db74862e53d25e91c96ee6b4250062950b7ff58d84dca362f25e",
             "locator": {
               "kind": "symbol",
@@ -433,67 +356,12 @@
         }
       ]
     },
-    "25": {
-      "note": "**The database page's bounds (the byte bound private since MIK-R02), and the page that reports `hasMore`, the counts and the database cursor.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4be19bfc4f0db366151478c0195bb8e5278c7351",
-            "content": "sha256:35881170474dbeb9318bf58fac00560e7b4db17a04eb8c5c3d472db2ebdeee69",
-            "locator": {
-              "kind": "symbol",
-              "name": "PUBLISHED_INTENT_MAX_ITEMS"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "4be19bfc4f0db366151478c0195bb8e5278c7351",
-            "content": "sha256:89952945737f5be9e71df8e11d643441e17ac946c432c788dec3b41407ecb2bb",
-            "locator": {
-              "kind": "symbol",
-              "name": "_DATABASE_PAGE_MAX_UTF8_BYTES"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "4be19bfc4f0db366151478c0195bb8e5278c7351",
-            "content": "sha256:a782b4ea36bd1ebb7e38bb4c5b6874add49f19cdf9f3fe167f952ba1e0553ecd",
-            "locator": {
-              "kind": "symbol",
-              "name": "_page_block"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "26": {
-      "note": "**The limitation that travels with a database page: its cursor continues the scope read, which the mounted read tool does not resume.**\n\nAnchor: \"continuationOperation\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4be19bfc4f0db366151478c0195bb8e5278c7351",
-            "content": "sha256:0976b55e3b827839f547a2757806d9791d3a2c6df8e600334c3e41a85afbe5b1",
-            "locator": {
-              "end": 869,
-              "kind": "line_range",
-              "start": 869
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "27": {
       "note": "**A path no recorded anchor could carry is refused as a seed instead of being answered with an absence this read never observed.**",
       "targets": [
         {
           "anchor": {
-            "blob": "4be19bfc4f0db366151478c0195bb8e5278c7351",
+            "blob": "bda6abac209b8bb555561b79169c66526d769437",
             "content": "sha256:19df8bd4a54efb1a981d4ac3b96ebfbd8ae83b6a1cb247292d0d83e4fb1fdc7e",
             "locator": {
               "kind": "symbol",
@@ -504,7 +372,7 @@
         },
         {
           "anchor": {
-            "blob": "4be19bfc4f0db366151478c0195bb8e5278c7351",
+            "blob": "bda6abac209b8bb555561b79169c66526d769437",
             "content": "sha256:bc486099f784677cdd5107ebc82081c1de8a414fedd3807ba8cff41d2eef4dd3",
             "locator": {
               "kind": "symbol",
@@ -520,7 +388,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4be19bfc4f0db366151478c0195bb8e5278c7351",
+            "blob": "bda6abac209b8bb555561b79169c66526d769437",
             "content": "sha256:177ab8fd5f253b63a1f431bd06807106153500823a088edebbc6027bbcadd397",
             "locator": {
               "kind": "symbol",
@@ -531,7 +399,7 @@
         },
         {
           "anchor": {
-            "blob": "4be19bfc4f0db366151478c0195bb8e5278c7351",
+            "blob": "bda6abac209b8bb555561b79169c66526d769437",
             "content": "sha256:560d92a2c0439e15138d307221521778fbaeffa389e78fbdde03b59c3e8d3152",
             "locator": {
               "kind": "symbol",
@@ -542,12 +410,12 @@
         },
         {
           "anchor": {
-            "blob": "4be19bfc4f0db366151478c0195bb8e5278c7351",
+            "blob": "bda6abac209b8bb555561b79169c66526d769437",
             "content": "sha256:e4c22053fa5ea47b2d67f5c649e7ce0a4513fccba6c136ab8a27533843dfff4e",
             "locator": {
-              "end": 695,
+              "end": 443,
               "kind": "line_range",
-              "start": 682
+              "start": 430
             }
           },
           "kind": "code"
@@ -559,50 +427,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4be19bfc4f0db366151478c0195bb8e5278c7351",
+            "blob": "bda6abac209b8bb555561b79169c66526d769437",
             "content": "sha256:fe053f497a01a2b1b7cec8b4bdc9a6391484cca349f611f645fba4aab20f3d08",
             "locator": {
               "kind": "symbol",
               "name": "_item_json"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "**The resolution and the guard that make a missing, corrupt or foreign publication a named state rather than an empty success.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e6908cf378263458d5c33e339b9a7a0c60445c27",
-            "content": "sha256:38c9b05133b665ee1d7d4cf015170877e31dbbef0cdc4a9462337c2b320137c2",
-            "locator": {
-              "kind": "symbol",
-              "name": "resolve_published_intent"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "4be19bfc4f0db366151478c0195bb8e5278c7351",
-            "content": "sha256:e07a36d9636237d7159935ddee807a32cc372ff323ebddd11e37ad0857e4d981",
-            "locator": {
-              "kind": "symbol",
-              "name": "_absence_state"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "4be19bfc4f0db366151478c0195bb8e5278c7351",
-            "content": "sha256:81b79298f1dfc83e7b6e2f1f94631f934245bb0ec0e098daeeef2d0730b13863",
-            "locator": {
-              "end": 235,
-              "kind": "line_range",
-              "start": 211
             }
           },
           "kind": "code"
@@ -614,7 +443,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4be19bfc4f0db366151478c0195bb8e5278c7351",
+            "blob": "bda6abac209b8bb555561b79169c66526d769437",
             "content": "sha256:f42249104237f69847f0301f1a90ef34e3e35a980291e2405c84ab176878684d",
             "locator": {
               "kind": "symbol",
@@ -625,7 +454,7 @@
         },
         {
           "anchor": {
-            "blob": "4be19bfc4f0db366151478c0195bb8e5278c7351",
+            "blob": "bda6abac209b8bb555561b79169c66526d769437",
             "content": "sha256:c07b6569221b9a29a5a191dc51a5e9706db7c8d1ec04cf78873b5a9abe9f71e0",
             "locator": {
               "kind": "symbol",
@@ -636,7 +465,7 @@
         },
         {
           "anchor": {
-            "blob": "4be19bfc4f0db366151478c0195bb8e5278c7351",
+            "blob": "bda6abac209b8bb555561b79169c66526d769437",
             "content": "sha256:8f374369a9021ccfeb985ff9b4604f4c044a933f98b80deea89f65bc97dd1639",
             "locator": {
               "kind": "symbol",
@@ -647,7 +476,7 @@
         },
         {
           "anchor": {
-            "blob": "4be19bfc4f0db366151478c0195bb8e5278c7351",
+            "blob": "bda6abac209b8bb555561b79169c66526d769437",
             "content": "sha256:e5218b4a4660d113e3db1f628b483d42bcc320ea6458c6396f0fad97e2495b0a",
             "locator": {
               "kind": "symbol",
@@ -663,7 +492,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4be19bfc4f0db366151478c0195bb8e5278c7351",
+            "blob": "bda6abac209b8bb555561b79169c66526d769437",
             "content": "sha256:322338bc40e1b95626856e83ba741df2067ee2fb8cfda5f13edfd5134e8d709b",
             "locator": {
               "kind": "symbol",
@@ -691,41 +520,12 @@
         }
       ]
     },
-    "33": {
-      "note": "The read-only connection the authority check opens, and the authority-home row it reads.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "c14937bd02459de274f4bb96b0f500f895dbd44a",
-            "content": "sha256:8e0d73a6fc5ba1e336df087f356d6f7090430e241977d7497ad8d06bb9fb7662",
-            "locator": {
-              "kind": "symbol",
-              "name": "open_read_only_database"
-            },
-            "path": "mcp/src/agents_remember/memory/knowledge/connection.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "44ff650727251b3cc91dabc145df00cae16057dc",
-            "content": "sha256:6a6dcccbaa93b47c41e710d03782ed98fe5ec9dd54892322fc7046b526f23ce3",
-            "locator": {
-              "kind": "symbol",
-              "name": "bound_repository"
-            },
-            "path": "mcp/src/agents_remember/memory/knowledge/logical.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "34": {
       "note": "The one Git command this route runs, through the shared owner.",
       "targets": [
         {
           "anchor": {
-            "blob": "a19c74bb0d905669c2dc4d699a05e230d970effb",
+            "blob": "0add0d691edd9fadf0873b47c05c3556c94fb585",
             "content": "sha256:60788cf6b3cf57e313ccacab456fb49fd9601a1930fa8f8de28c01088b22a2af",
             "locator": {
               "kind": "symbol",
@@ -742,7 +542,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6679af216c37ef21bacdda5ff59f20b077ab50d3",
+            "blob": "97e2e016e3dfee06b4fb61f702b9a0d3a59ee4ec",
             "content": "sha256:4447df71d234eaf290e4e9255eb307fb38dd2c606d15615f6a635040be3a853c",
             "locator": {
               "kind": "symbol",
@@ -754,7 +554,7 @@
         },
         {
           "anchor": {
-            "blob": "6679af216c37ef21bacdda5ff59f20b077ab50d3",
+            "blob": "97e2e016e3dfee06b4fb61f702b9a0d3a59ee4ec",
             "content": "sha256:9aa1297b92e4397786e67325ec124f1de6580d52d21ed8ec321da3defd209088",
             "locator": {
               "kind": "symbol",
@@ -766,7 +566,7 @@
         },
         {
           "anchor": {
-            "blob": "6679af216c37ef21bacdda5ff59f20b077ab50d3",
+            "blob": "97e2e016e3dfee06b4fb61f702b9a0d3a59ee4ec",
             "content": "sha256:27a035ef159797149d364c57ed83d410db0f249c76ef8bd3af44544cb5f6620f",
             "locator": {
               "kind": "symbol",
@@ -778,7 +578,7 @@
         },
         {
           "anchor": {
-            "blob": "6679af216c37ef21bacdda5ff59f20b077ab50d3",
+            "blob": "97e2e016e3dfee06b4fb61f702b9a0d3a59ee4ec",
             "content": "sha256:7fac4a515910917c194b2343e4464bd76a900bfa8109ddde411f9ea968050eaf",
             "locator": {
               "end": 389,
@@ -796,7 +596,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dfa378b1ad0369db827cbb8fe6d9b2e38296e7a4",
+            "blob": "1ef674f62b3c34b50d5240cd30a305b45f19b747",
             "content": "sha256:c9bae576442e9ed3c038b1f056f35e178a320f84b9c96b858f33f086e7154ed6",
             "locator": {
               "kind": "symbol",
@@ -808,7 +608,7 @@
         },
         {
           "anchor": {
-            "blob": "dfa378b1ad0369db827cbb8fe6d9b2e38296e7a4",
+            "blob": "1ef674f62b3c34b50d5240cd30a305b45f19b747",
             "content": "sha256:f3cb1bd7f572fa66e1810151147f0becc5e5e03ef25b799505dc9b2170d5352a",
             "locator": {
               "kind": "symbol",
@@ -820,7 +620,7 @@
         },
         {
           "anchor": {
-            "blob": "dfa378b1ad0369db827cbb8fe6d9b2e38296e7a4",
+            "blob": "1ef674f62b3c34b50d5240cd30a305b45f19b747",
             "content": "sha256:f8e3ec9f481b6c3fe4e8502991e33c32b9e42fc88b0aedfa64356bdab872e7ad",
             "locator": {
               "kind": "symbol",
@@ -832,7 +632,7 @@
         },
         {
           "anchor": {
-            "blob": "dfa378b1ad0369db827cbb8fe6d9b2e38296e7a4",
+            "blob": "1ef674f62b3c34b50d5240cd30a305b45f19b747",
             "content": "sha256:9b2ce949d089c615aee2c784b6707dee74a54f8fe1fdc73112a59cae790ffb13",
             "locator": {
               "kind": "symbol",
@@ -849,7 +649,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "blob": "26599e0fe8b427bc0d290767b7b8e263cde390b6",
             "content": "sha256:c7a3c663a631295cd6520f0f7af9a8b2412d8b133a2d066dffc537a0bfb37cab",
             "locator": {
               "kind": "symbol",
@@ -861,7 +661,7 @@
         },
         {
           "anchor": {
-            "blob": "dfa378b1ad0369db827cbb8fe6d9b2e38296e7a4",
+            "blob": "1ef674f62b3c34b50d5240cd30a305b45f19b747",
             "content": "sha256:229d6951f9312db22ea5864e71458b0204ad596ddbe42d4e9aec450b33f8598f",
             "locator": {
               "kind": "symbol",
@@ -878,7 +678,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "20fbf8f958c5f13380299d7733886cfa8e92087c",
+            "blob": "23b5c3a4d378d345aa0a00aa163d4f8a9d452341",
             "content": "sha256:b5b99d723dd9e5dbdb29b03039cd159a5c704387f61a01abc7b9953e52d828e0",
             "locator": {
               "kind": "symbol",
@@ -908,26 +708,15 @@
       ]
     },
     "4": {
-      "note": "**The dataset's own identity is read from the file rather than taken from a caller; since MIK-R23 a selection may also name the converted memory tree it reads through the index (`memory_tree`, `None` for a database).**",
+      "note": "The selected index supplies its own identity; no canonical dataset or caller-asserted identity is selected.",
       "targets": [
         {
           "anchor": {
-            "blob": "4be19bfc4f0db366151478c0195bb8e5278c7351",
-            "content": "sha256:c60f667a7fa1ecad402219a3b5ed3930792b71b731af66204b793a35e582dd2e",
+            "blob": "bda6abac209b8bb555561b79169c66526d769437",
+            "content": "sha256:3f1eb06bc6c22dfba7737013ff6fbe9017836fa91db8afecfaa0ea24e85a0e13",
             "locator": {
               "kind": "symbol",
-              "name": "PublishedIntentSelection"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "4be19bfc4f0db366151478c0195bb8e5278c7351",
-            "content": "sha256:e2d8f99a6a0fbbdcb77ff9bf8e805e69427bc6026ca27feb6d5f83c480010099",
-            "locator": {
-              "kind": "symbol",
-              "name": "PublishedMemoryTree"
+              "name": "resolve_published_memory_tree"
             }
           },
           "kind": "code"
@@ -935,15 +724,16 @@
       ]
     },
     "40": {
-      "note": "**The application-layer cases that measure this module's route: the exact identities, the named absences, the seed refusals and the identity-seeded page.**",
+      "note": "The ordinary route selects text-tree indexes, refuses malformed seeds, names absent registration and opens no unconverted canonical database.\n\nAnchor: `PublishedIntentRouteTests.test_the_ordinary_read_returns_source_and_the_selected_tree_index`; `PublishedIntentRouteTests.test_a_seed_that_is_not_typed_is_refused_rather_than_raising`; `PublishedIntentRouteTests.test_a_path_with_no_recorded_anchor_is_a_named_absence`; `PublishedIntentRouteTests.test_a_path_that_cannot_be_a_seed_is_refused`; `PublishedIntentRouteTests.test_an_unconverted_root_cannot_open_a_legacy_database`",
       "targets": [
         {
           "anchor": {
-            "blob": "f3775ac25c5e32bb5efe59b7179717d7549271a7",
-            "content": "sha256:b308d52b4802de13375700d8fc6d9bdab663bc534b365983b08ea9259f5df69d",
+            "blob": "7e43d2693854c899b2a500728aa51e2d2676c2d1",
+            "content": "sha256:70a42142e1272a785b0ad9e26e602f059a48a4b9d749a05d8ec1c34c46cea993",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_ordinary_read_returns_the_published_intent_at_its_exact_identities"
+              "end": 439,
+              "kind": "line_range",
+              "start": 425
             },
             "path": "mcp/tests/test_read_ar_files.py"
           },
@@ -951,11 +741,12 @@
         },
         {
           "anchor": {
-            "blob": "f3775ac25c5e32bb5efe59b7179717d7549271a7",
-            "content": "sha256:49850fffbf29a3d4bbda2f3cb864baa593cc0360da1601184951db73ae8175ca",
+            "blob": "7e43d2693854c899b2a500728aa51e2d2676c2d1",
+            "content": "sha256:412b751f82b7654971ab39e29e641dec6b81de71885df0eed246e04b1de9138f",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_repository_that_publishes_nothing_reports_not_recorded"
+              "end": 444,
+              "kind": "line_range",
+              "start": 441
             },
             "path": "mcp/tests/test_read_ar_files.py"
           },
@@ -963,11 +754,12 @@
         },
         {
           "anchor": {
-            "blob": "f3775ac25c5e32bb5efe59b7179717d7549271a7",
-            "content": "sha256:aa1aa6657f1c3b60aa1886112ca9408f3aec57a3af5e5ab807e443831eb91634",
+            "blob": "7e43d2693854c899b2a500728aa51e2d2676c2d1",
+            "content": "sha256:bdcc9c81080c9a591e9cdee903f20e4d5c10fba09030b9d2efcb8ef5d71292f4",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_dataset_that_is_not_a_dataset_names_the_failed_binding"
+              "end": 452,
+              "kind": "line_range",
+              "start": 446
             },
             "path": "mcp/tests/test_read_ar_files.py"
           },
@@ -975,11 +767,12 @@
         },
         {
           "anchor": {
-            "blob": "f3775ac25c5e32bb5efe59b7179717d7549271a7",
-            "content": "sha256:433cd26b40fba4c350f1c5ca92af7c76480a44e332ef6cccc31d211a9a3adb04",
+            "blob": "7e43d2693854c899b2a500728aa51e2d2676c2d1",
+            "content": "sha256:c75b4077e3185ac9b1f7b9b2f06240718bd4204e25e5b5a3611c9f5b4ec97032",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_directory_at_the_publication_path_is_not_reported_as_nothing_recorded"
+              "end": 457,
+              "kind": "line_range",
+              "start": 454
             },
             "path": "mcp/tests/test_read_ar_files.py"
           },
@@ -987,83 +780,12 @@
         },
         {
           "anchor": {
-            "blob": "f3775ac25c5e32bb5efe59b7179717d7549271a7",
-            "content": "sha256:65f2f121ba1030348ca5952302bf81041dd0bdcdd94dadb3a40edd33848bf383",
+            "blob": "7e43d2693854c899b2a500728aa51e2d2676c2d1",
+            "content": "sha256:ee617b986dc5561eef4d7c9ed4c2369e41e6800118a3b787afa156371a2d7438",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_seed_that_is_not_a_typed_seed_is_refused_rather_than_raising"
-            },
-            "path": "mcp/tests/test_read_ar_files.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "f3775ac25c5e32bb5efe59b7179717d7549271a7",
-            "content": "sha256:ab6fe2630eb9e90d73a76f179b620fd6647e52f1fe2f38c32ddd125194d2173b",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_dataset_bound_to_another_repository_is_never_silently_read"
-            },
-            "path": "mcp/tests/test_read_ar_files.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "f3775ac25c5e32bb5efe59b7179717d7549271a7",
-            "content": "sha256:ad49d9c03adbc57945ae461b090a856956947fdf1dcd461acce62473ba48468c",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_path_the_snapshot_records_nothing_about_is_a_named_absence"
-            },
-            "path": "mcp/tests/test_read_ar_files.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "f3775ac25c5e32bb5efe59b7179717d7549271a7",
-            "content": "sha256:5aa2f47a2147101fe78e573b4b567f72ea23f15f8539cc7625b8afd486af9dac",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_an_identity_the_snapshot_does_not_hold_is_a_named_absence"
-            },
-            "path": "mcp/tests/test_read_ar_files.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "f3775ac25c5e32bb5efe59b7179717d7549271a7",
-            "content": "sha256:926c69e721a93454cd7dc2dbbe60d3a398281966771e14556a8d1a3b4e5f831f",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_path_no_recorded_anchor_could_carry_is_refused_as_a_seed"
-            },
-            "path": "mcp/tests/test_read_ar_files.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "f3775ac25c5e32bb5efe59b7179717d7549271a7",
-            "content": "sha256:bd68cf8ba8b488a7e00b2ccaaef2afea6e977f5b4f6403d61246d65ddb55d5f6",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_the_resolved_source_pair_is_what_recorded_anchors_are_observed_against"
-            },
-            "path": "mcp/tests/test_read_ar_files.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "f3775ac25c5e32bb5efe59b7179717d7549271a7",
-            "content": "sha256:8da90b420171c552f96613e7715e6471b9f2bbb7e48024c8978e0df52cbe83b1",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_an_identity_seeded_page_carries_exact_retained_revisions"
+              "end": 467,
+              "kind": "line_range",
+              "start": 459
             },
             "path": "mcp/tests/test_read_ar_files.py"
           },
@@ -1076,7 +798,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f3775ac25c5e32bb5efe59b7179717d7549271a7",
+            "blob": "7e43d2693854c899b2a500728aa51e2d2676c2d1",
             "content": "sha256:434c9110600d5342cf7ef4de83705f6b672435e7ffa9912d9a1f1564ed47014a",
             "locator": {
               "kind": "symbol",
@@ -1088,7 +810,7 @@
         },
         {
           "anchor": {
-            "blob": "f3775ac25c5e32bb5efe59b7179717d7549271a7",
+            "blob": "7e43d2693854c899b2a500728aa51e2d2676c2d1",
             "content": "sha256:2e11236d5d5a66eebb793a2b5fa9f5ab0c50a9dc665a2e60651d00180f6ec9ee",
             "locator": {
               "kind": "symbol",
@@ -1173,15 +895,15 @@
       ]
     },
     "44": {
-      "note": "**The MIK-R23 cases for the converted-tree selection: the ordinary read reads a converted tree through its index, a partial index's pages say so, an unconverted root keeps the database selection, and a real database in an unconverted root reads byte-identically through the tools.**",
+      "note": "Unconverted roots refuse retired database selection and mounted tools open no legacy database.",
       "targets": [
         {
           "anchor": {
-            "blob": "6073de92442794ee1e231dbcf012de67c56b9dc0",
-            "content": "sha256:ec5dac064418a3fe1bf3cbfa122f81acd4fdd98ac760d0ad7e1fb79de4e650b2",
+            "blob": "f158a3201f14ff80393fad28555b022b5b22dd25",
+            "content": "sha256:455cfb2088d34d872658261dfddba9e8e266bf30d43bb40d532e8b5a4fae450f",
             "locator": {
               "kind": "symbol",
-              "name": "test_the_ordinary_read_selects_a_converted_memory_tree_through_its_index"
+              "name": "test_an_unconverted_memory_root_refuses_the_retired_database_selection"
             },
             "path": "mcp/tests/test_knowledge_index_reuse.py"
           },
@@ -1189,35 +911,11 @@
         },
         {
           "anchor": {
-            "blob": "6073de92442794ee1e231dbcf012de67c56b9dc0",
-            "content": "sha256:4a62b078d7d4049a61e166acf608a71525f63520e3c3420c205cb436ef6587f3",
+            "blob": "694a9727c6739a654c8fec5abf47260e23bd77b5",
+            "content": "sha256:5bc3a8924f717e9a6d5081c853dbe84a471c3533bcc2f1ee6131c4f9802bbdc3",
             "locator": {
               "kind": "symbol",
-              "name": "test_a_partial_tree_selection_says_it_is_partial"
-            },
-            "path": "mcp/tests/test_knowledge_index_reuse.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "6073de92442794ee1e231dbcf012de67c56b9dc0",
-            "content": "sha256:1583bb43ac79ad4bf1e0f69ee568e4140d3be0a0431822e72c6d25c828546ba9",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_an_unconverted_memory_root_keeps_the_database_selection"
-            },
-            "path": "mcp/tests/test_knowledge_index_reuse.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "d8f68761727af2bccdd02ec39c86ee0156f52aad",
-            "content": "sha256:03b66c237d5d9a86e983ac7f068068808704d741be5f5caa7782c348b42aa4a5",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_real_database_in_an_unconverted_root_reads_identically"
+              "name": "test_every_knowledge_tool_refuses_legacy_memory_and_opens_no_database"
             },
             "path": "mcp/tests/test_knowledge_index_surfaces.py"
           },
@@ -1225,60 +923,27 @@
         }
       ]
     },
-    "45": {
-      "note": "A converted memory tree publishes no dataset: the resolution answers not-recorded, naming the tree, and never opens the frozen database.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4be19bfc4f0db366151478c0195bb8e5278c7351",
-            "content": "sha256:cf99837a0a835809c8b221705f2ba36642e7f0b3589f9e2216ef1dc4a0760978",
-            "locator": {
-              "kind": "symbol",
-              "name": "resolve_published_intent"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "46": {
-      "note": "No read selects the database of a converted tree.",
+      "note": "Only a converted root directory is admitted as a knowledge selection; a database path is refused.",
       "targets": [
         {
           "anchor": {
-            "blob": "3d5ab012645a59c43d66a805479a40ef63038e39",
-            "content": "sha256:eab6325c343f30543209edd0ceea70a71c300d8ba2b2e2969d3464cd90a236ad",
+            "blob": "bda6abac209b8bb555561b79169c66526d769437",
+            "content": "sha256:59a7a3ebd4555efbb9b81010b0e796b0c6f499f5c97fc9426cfb178d5963b702",
             "locator": {
               "kind": "symbol",
-              "name": "test_no_read_selects_the_database_of_a_converted_tree"
-            },
-            "path": "mcp/tests/test_knowledge_cutover.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "5": {
-      "note": "**The authority-home guard that makes \"never silently select another repository\" verified rather than claimed.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4be19bfc4f0db366151478c0195bb8e5278c7351",
-            "content": "sha256:13484540acfd4419039caed76414ebef3c9f81840187d82c9df7e9b63744ac7f",
-            "locator": {
-              "kind": "symbol",
-              "name": "_authority_mismatch"
+              "name": "select_knowledge_dataset"
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "4be19bfc4f0db366151478c0195bb8e5278c7351",
-            "content": "sha256:76eb670a4c513337d6d9f4e3a865a420ebc5ec29283cee1efe3a4a755ae36140",
+            "blob": "bda6abac209b8bb555561b79169c66526d769437",
+            "content": "sha256:1547db395076f7fc40126682f972b3cca549f89a0d32ed7f2dffb4d1462dc66e",
             "locator": {
               "kind": "symbol",
-              "name": "_bound_authority_home"
+              "name": "converted_memory_tree"
             }
           },
           "kind": "code"
@@ -1290,7 +955,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4be19bfc4f0db366151478c0195bb8e5278c7351",
+            "blob": "bda6abac209b8bb555561b79169c66526d769437",
             "content": "sha256:1368ffe88c75786263561c6c6181d3c5aa7b5767b69f31bbb588e64da21dceef",
             "locator": {
               "kind": "symbol",
@@ -1301,7 +966,7 @@
         },
         {
           "anchor": {
-            "blob": "4be19bfc4f0db366151478c0195bb8e5278c7351",
+            "blob": "bda6abac209b8bb555561b79169c66526d769437",
             "content": "sha256:30bffbd51aeb7c3ae261b11a07d0ab00ae71a908822236ccc6415d5eca2ae75b",
             "locator": {
               "kind": "symbol",
@@ -1313,15 +978,26 @@
       ]
     },
     "7": {
-      "note": "**The ordinary route's whole public surface: resolve the publication — a converted memory tree first, the database otherwise — seed it with the paths the caller already asked about, and read one bounded page per path with every failure returned as a named state.**",
+      "note": "The ordinary route selects converted text knowledge or reports legacy format without a database fallback.",
       "targets": [
         {
           "anchor": {
-            "blob": "4be19bfc4f0db366151478c0195bb8e5278c7351",
-            "content": "sha256:62604cfa37b04d4736ba44eec3c0c18a9febf5ba9a6a0e05dfac1c0538c6c677",
+            "blob": "bda6abac209b8bb555561b79169c66526d769437",
+            "content": "sha256:033f68c14d8a8997ddbf56030258113ab31200940fc576288a9391fab6e12b2f",
             "locator": {
               "kind": "symbol",
               "name": "published_intent_block"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bda6abac209b8bb555561b79169c66526d769437",
+            "content": "sha256:6918f2ee0d10bbb302b9a5825ac0309321a87cc5271af0ee5a2a11102e76be05",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_published_intent"
             }
           },
           "kind": "code"
@@ -1344,7 +1020,7 @@
         },
         {
           "anchor": {
-            "blob": "4be19bfc4f0db366151478c0195bb8e5278c7351",
+            "blob": "bda6abac209b8bb555561b79169c66526d769437",
             "content": "sha256:116d3c8b2dcac18f3b4b7cb3fdcf15229103d614a585af260f0aa0b3dfeba0a1",
             "locator": {
               "kind": "symbol",
@@ -1382,7 +1058,7 @@
         },
         {
           "anchor": {
-            "blob": "4be19bfc4f0db366151478c0195bb8e5278c7351",
+            "blob": "bda6abac209b8bb555561b79169c66526d769437",
             "content": "sha256:5674939643479443733c55958e7cc61ade883611ea843479abb1ad8a4490bd7d",
             "locator": {
               "kind": "symbol",
@@ -1393,7 +1069,7 @@
         },
         {
           "anchor": {
-            "blob": "4be19bfc4f0db366151478c0195bb8e5278c7351",
+            "blob": "bda6abac209b8bb555561b79169c66526d769437",
             "content": "sha256:7ea9dd88940625c73fb5ea620216bb1b89a65810896defe3a26cf616ef8b7e4c",
             "locator": {
               "kind": "symbol",
@@ -1404,12 +1080,12 @@
         },
         {
           "anchor": {
-            "blob": "4be19bfc4f0db366151478c0195bb8e5278c7351",
+            "blob": "bda6abac209b8bb555561b79169c66526d769437",
             "content": "sha256:a13b424cd626960f161defaf466a3c0115050248d1d65b821821fcb2c006a13b",
             "locator": {
-              "end": 374,
+              "end": 208,
               "kind": "line_range",
-              "start": 369
+              "start": 203
             }
           },
           "kind": "code"

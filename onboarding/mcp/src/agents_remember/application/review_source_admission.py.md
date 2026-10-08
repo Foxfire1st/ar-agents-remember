@@ -84,8 +84,7 @@ both changed-path constructors stay identical to the pre-L43 values.
   enforces.
 - **Undetermined is not absent.** A refusal caused by unreadable knowledge must not carry the
   established-negative sentence.
-- **Never initialized is not damaged.** Knowledge that was never created asks to be initialized, never
-  restored or repaired; a damaged snapshot still asks to be restored or repaired.
+- **The remedy names the text-store cause.** Never-created knowledge is authored through `knowledge-ingest` before reopening a tree review. An unread tree/index is restored or rebuilt; legacy-unavailable knowledge asks for a converted tree comparison. Changed source paths remain expandable and no current knowledge substitutes for the recorded pair.
 - **A proof link admits only for an index-backed comparison, and only the paths its recorded proof
   entries name** (the link owner's `_proof_at_path`); a dataset comparison admits exactly as before.
 - **Changed-path behavior is the pre-L43 behavior.** The R2 differential found all 19 bodies
@@ -120,7 +119,9 @@ No configured domain documentation could be checked.
 - The inventory owner re-used for the leaf change set. [11]
 - The wire literals this module fills and the validator that ties attributed context to `unchanged` and `requested_generation`. [12]
 - **The cases: attributed admission without counting, unlinked refusal, and undetermined refusal.** [13]
-- The never-initialized remedy, and a proof entry linking its path in a tree index while a dataset links none. [14]
+
+- Unconverted knowledge states its unavailability without canonical initialization; tree proof entries still admit their exact unchanged path. [14]
+
 - Ruling Q1 at the route: an unchanged test file only a proof names is refused before the proof exists and admitted with the new sentence after. [15]
 
 ### Cross-Repo References

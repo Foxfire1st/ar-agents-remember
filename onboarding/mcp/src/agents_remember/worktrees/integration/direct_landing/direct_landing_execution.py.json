@@ -1,6 +1,61 @@
 {
   "path": "mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "60e3ff5798445071edb37a32749804d2c8ca0541",
+        "content": "sha256:b9305c3bc5b156027ba6da8574ac256628432061178f4065072357ef4ddf5e4f",
+        "locator": {
+          "kind": "symbol",
+          "name": "_refuse_unpublished"
+        }
+      },
+      "id": "RLZ-C5MECC",
+      "invariant": "INV-PNXKPR",
+      "origin": {
+        "handoffEntry": "R3 Finding 4",
+        "leaf": "260928-MIK-L26"
+      },
+      "rationale": "Distinguishes a provably unpublished attempt from an irreversible output.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "60e3ff5798445071edb37a32749804d2c8ca0541",
+        "content": "sha256:e197e7904a2347e0d103e2ebfe29bb601570a8c76ff9f3f0d7aeb20433236535",
+        "locator": {
+          "kind": "symbol",
+          "name": "execute_or_require_direct_landing_recovery"
+        }
+      },
+      "id": "RLZ-G5ZKV2",
+      "invariant": "INV-9ZBTVA",
+      "origin": {
+        "handoffEntry": "R3 finding 4",
+        "leaf": "260928-MIK-L26"
+      },
+      "rationale": "This owner distinguishes a provably unpublished attempt from an irreversible output.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "60e3ff5798445071edb37a32749804d2c8ca0541",
+        "content": "sha256:8a5524012b9b572fde9e8ed4d61b5176cecb347c8610ac4826666de7da0ead42",
+        "locator": {
+          "kind": "symbol",
+          "name": "_publish_judged_tree"
+        }
+      },
+      "id": "RLZ-JHQRK9",
+      "invariant": "INV-9ZBTVA",
+      "origin": {
+        "handoffEntry": "R3 finding 4",
+        "leaf": "260928-MIK-L26"
+      },
+      "rationale": "This owner translates stricter pre-publication failures into cancellation.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "Execution publishes or reuses real memory output and refreshes the cache afterward.\n\nAnchor: \"ledgerCache\"",

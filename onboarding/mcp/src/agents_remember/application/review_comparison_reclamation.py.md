@@ -6,19 +6,13 @@
 
 ## Purpose
 
-**The two operations that may delete a durable comparison generation's content, and therefore the
-bounded reclamation path every artifact created by a freeze points at.** `review_comparison_freeze`
-records a `deletion_owner` and a `cleanup_scope` on each pin and each retained snapshot; the two
-constants in this module *are* those owners, and the two functions are those operations.
+The two explicit deletion owners for historical comparison content. Earlier canonical freezes recorded each pin or snapshot's deletion owner and cleanup scope. Those freeze producers are retired; these operations still reclaim only the exact historical artifact its retained manifest identifies. No new canonical dataset is frozen here.
 
 The module exists because of the packet's own rule — *a new snapshot or pin that cannot name its bounded
 reclamation path is unbounded durable state* — and its whole design follows from two properties the
 reopen depends on:
 
-1. **The record comes first.** Each operation writes its unavailable-history record into the generation's
-   own directory **before** it deletes anything, so an interruption leaves the honest ordering (a record
-   for content that is still there) rather than the misleading one. The record is what lets a later
-   reopen answer *"this was deleted deliberately, here is why"* instead of reporting an unexplained loss.
+1. **Record ordering differs.** Code-pin release writes its deletion record before removing the ref and withdraws it if release refuses. Snapshot discard currently verifies and removes bytes before writing its record. The earlier record-first description was unimplemented; current source documentation states this removal-before-history boundary.
 2. **Only what the manifest named, inside the scope the manifest recorded.** A code release deletes
    exactly the ref the manifest recorded and refuses a ref that has moved; a snapshot discard deletes
    exactly the recorded `cleanup_scope` of each retained half. Neither touches the manifest — the
@@ -77,8 +71,7 @@ the ref-shaped failures because the same typed failure already owns them.
 
 ### Conventions
 
-`__all__` publishes the two owner constants and the two operations — exactly the surface a freeze needs
-to *name* its deletion owner and a caller needs to *perform* the deletion. `CodeObjectTarget` and
+`__all__` publishes the historical owner constants and the two explicit deletion operations. These names preserve old manifest ownership; they establish no current canonical freeze producer. `CodeObjectTarget` and
 `KnowledgeTarget` (`:67-68`) are `Literal` types spelled with the record's own literal vocabulary, so a
 release and a discard cannot come to name a target the record does not have. `_now()` (`:71-74`) is the
 module's one clock read, used only when the caller supplies no `recorded_at`; both operations accept one
@@ -86,8 +79,7 @@ so a caller can make a batch of deletions share a timestamp.
 
 ### Invariants And Boundaries
 
-- **The record precedes the deletion**, in both operations, so an interruption never leaves deleted
-  content with no explanation.
+- **Record-first applies to code release.** Snapshot discard removes verified bytes before recording the deletion; an interruption in that interval has no established record-first guarantee. Current source documentation explicitly names this window.
 - **A deletion record is withdrawn if the deletion it describes does not happen.** The code release
   unlinks its record when the retention owner refuses.
 - **A released ref must still name the recorded commit.** A moved ref is refused and the ref is left in
@@ -120,24 +112,42 @@ No configured domain documentation could be checked.
 
 Every claim on this card is checkable in the module's own docstring and functions, in the manifest fields
 it is bounded by, and in the cases that measure both deletions. Three details a reader should carry: the
-record is written **before** the deletion and withdrawn if the deletion refuses; the deleted digest is
+code-release record is written **before** ref deletion and withdrawn if release refuses, while snapshot bytes are removed before their history is written; the deleted digest is
 **measured**, not copied, and an already-absent snapshot converges as `None`; and the custody recorded at
 release is taken *before* the ref is removed, because it cannot be recovered afterwards.
 
-- The module's own statement of the two properties the reopen depends on, and of what it deliberately does not decide. [1]
-- **The two canonical deletion owners the manifest names on everything a freeze creates.** [2]
+
+- The historical reclamation owner states its per-route ordering and bounded explicit policy boundary. [1]
+
+
+- The two historical deletion-owner names retained by the manifest. [2]
+
 - The deletion targets, spelled with the record's own literal vocabulary. [3]
 - **The code release: no pin → refuse; moved ref → refuse before recording; custody measured before deletion; record written first and withdrawn if the release refuses.** [4]
 - **The custody names read back from the record rather than re-derived from a live contract, because the enclosure may be gone.** [5]
-- **The snapshot discard: one record per retained half, inside its own recorded cleanup scope, and the manifest left in place.** [6]
+
+- Snapshot discard removes verified historical bytes before writing its per-half deletion record. [6]
+
 - **The digest that is measured rather than copied, the mismatch that records nothing, and the already-absent snapshot that converges as `None`.** [7]
 - The record the two operations write, and the manifest read that bounds them. [8]
 - The retention owner whose ref the code release deletes, and the two failure statuses it raises. [9]
-- **The two typed failures this module raises, with their stated reason for being raised rather than returned.** [10]
-- **The case that measures the discard: a mismatch refused with both files in place and no record, then recorded digests equal to the frozen ones, then both halves reported `unavailable-history`, then the retry recording `None`.** [11]
-- **The case that measures the release: an unavailable-history record, the custody measured before and after reclamation, and a reopen that reports the deletion rather than today's data.** [12]
-- **The case that refuses to delete a ref that moved.** [13]
-- The reopen that consumes these records: the per-channel states and the unavailable-history channel. [14]
+
+- The typed failures preserve ref and snapshot refusal facts without deletion authority. [10]
+
+
+
+- Snapshot discard checks exact bytes before removal and writes the measured deletion record afterwards. [11]
+
+
+
+- Code release records measured custody before ref release and withdraws its record on refusal. [12]
+
+
+- A moved retained ref is refused before release. [13]
+
+
+- Historical reopen keeps unavailable retained canonical knowledge separate from exact readable source and archival deletion facts. [14]
+
 
 ### Cross-Repo References
 

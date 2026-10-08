@@ -1,0 +1,48 @@
+[
+  {
+    "source": "mcp/tests/conftest.py",
+    "beforeSHA256": "d66d43b225119c0b597b784cf06ccb1ac91badd51f813bd004a992c4a8681538",
+    "authoredSHA256": "6426afc3317734de4da044d8af7adfc670ac0f852a4f638a13f95a92d71ac694",
+    "reauthoredReferences": [
+      "10"
+    ],
+    "basis": "Existing same constructs were paired-read against Source87; import/clock-helper composition changes their content anchors without changing the assertion. Conftest retains actual plugin registration. The support card now names the actual test-only row builders rather than retired production writers."
+  },
+  {
+    "source": "mcp/tests/test_knowledge_reopen.py",
+    "beforeSHA256": "2504ad8d98418f8cfc75f9b7a7b67e507f1fa4b20d45c914a5f594a892f169fc",
+    "authoredSHA256": "123586fc71b6b57cb10a0736f4f2670fa486360573b529f6d8081dce0eabf65b",
+    "reauthoredReferences": [
+      "27"
+    ],
+    "basis": "Existing same constructs were paired-read against Source87; import/clock-helper composition changes their content anchors without changing the assertion. Conftest retains actual plugin registration. The support card now names the actual test-only row builders rather than retired production writers."
+  },
+  {
+    "source": "mcp/tests/test_review_read_latency.py",
+    "beforeSHA256": "c1061e5b3c493972bfd9fcd321b7d16e2827bdd1515c38799d31384c775ead59",
+    "authoredSHA256": "e4c00636469ac4999b317c244c9c3880ffb5405f0b07d3a25a024cf93b8da823",
+    "reauthoredReferences": [
+      "18"
+    ],
+    "basis": "Existing same constructs were paired-read against Source87; import/clock-helper composition changes their content anchors without changing the assertion. Conftest retains actual plugin registration. The support card now names the actual test-only row builders rather than retired production writers."
+  },
+  {
+    "source": "mcp/tests/test_worktree_candidate_capture.py",
+    "beforeSHA256": "99b3cd7c2197bb3b8c199f22b2b843f954b5c200eb4b5e97d3831eb3fd30b925",
+    "authoredSHA256": "67088f660c8ced21067b0b85242d253cf3fb28617bccb8dcf0d8d2ff9d3d2311",
+    "reauthoredReferences": [
+      "2"
+    ],
+    "basis": "Existing same constructs were paired-read against Source87; import/clock-helper composition changes their content anchors without changing the assertion. Conftest retains actual plugin registration. The support card now names the actual test-only row builders rather than retired production writers."
+  },
+  {
+    "source": "mcp/tests/knowledge_index_test_support.py",
+    "beforeSHA256": "01e5541d12fcdd87effc4b4c52bc04598b3cd318f28a7536dcbe8cf49603f9bf",
+    "authoredSHA256": "5d4bc5074f9b04c58c2ac8b8374cfb95aa950a4f254a491dbdb77ffc781f49e9",
+    "reauthoredReferences": [
+      "4",
+      "5"
+    ],
+    "basis": "Existing same constructs were paired-read against Source87; import/clock-helper composition changes their content anchors without changing the assertion. Conftest retains actual plugin registration. The support card now names the actual test-only row builders rather than retired production writers."
+  }
+]

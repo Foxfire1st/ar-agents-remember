@@ -20,6 +20,6 @@
   "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "An allocated family declaration binds its nonempty retention set and authored bases; reordering the same set is an exact retry, while changing the set or bases is a content conflict.",
-  "status": "proposed",
+  "status": "retired",
   "supersedes": []
 }

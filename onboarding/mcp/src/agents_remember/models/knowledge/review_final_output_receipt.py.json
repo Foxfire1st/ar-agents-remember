@@ -2,57 +2,13 @@
   "path": "mcp/src/agents_remember/models/knowledge/review_final_output_receipt.py",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "The module's own statement of what it owns (the vocabulary alone) and of why every field is an owner-produced fact.",
+    "19": {
+      "note": "`FinalOutputReceipt` owns the current boundary described above.",
       "targets": [
         {
           "anchor": {
-            "blob": "719ed91754b7cc991e268860a3de7aa2e7403e88",
-            "content": "sha256:0027a2fe1211bcdd7797cbf52a53084de021c7a1b2cb2a56f62053e9397e147e",
-            "locator": {
-              "kind": "symbol",
-              "name": "FinalOutputReceipt"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "719ed91754b7cc991e268860a3de7aa2e7403e88",
-            "content": "sha256:2105cf6897a3eb81dd13a31bae59f741ea8c3a068875169fe765583ab00efad0",
-            "locator": {
-              "end": 14,
-              "kind": "line_range",
-              "start": 1
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "10": {
-      "note": "**The single verdict expression both the writer and the validator call, so they cannot disagree.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "719ed91754b7cc991e268860a3de7aa2e7403e88",
-            "content": "sha256:02e0d5d619e3a2a1a5e535461ef196dd99737f485932001d8a447804543f3afa",
-            "locator": {
-              "kind": "symbol",
-              "name": "final_output_verdict"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "11": {
-      "note": "The record itself: the generation's identities, the delivered commits and trees, the published identity, the two match verdicts and the one state.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "719ed91754b7cc991e268860a3de7aa2e7403e88",
-            "content": "sha256:0027a2fe1211bcdd7797cbf52a53084de021c7a1b2cb2a56f62053e9397e147e",
+            "blob": "296b288583ead598ff029a9527dbe8416ba5430d",
+            "content": "sha256:0cf1f482d90ee2d5d28cd176f5016ecf10e4294f7aed07964b916d48bdcf665c",
             "locator": {
               "kind": "symbol",
               "name": "FinalOutputReceipt"
@@ -62,339 +18,48 @@
         }
       ]
     },
-    "12": {
-      "note": "**The validator that refuses a record whose verdicts do not follow from the identities it carries — detectable without the store, which is what stops a forged `bound`.**",
+    "20": {
+      "note": "`tree_comparison_digest` owns the current boundary described above.",
       "targets": [
         {
           "anchor": {
-            "blob": "719ed91754b7cc991e268860a3de7aa2e7403e88",
-            "content": "sha256:39b161c84a45cf27b929354e34802ee775ff30caa8befd6469335d2e87763036",
+            "blob": "296b288583ead598ff029a9527dbe8416ba5430d",
+            "content": "sha256:f11b29db0655f16dede81b6ec78cda3e5e400ceb3d9e383a56a2c52e1e6f3a47",
             "locator": {
               "kind": "symbol",
-              "name": "_the_receipt_agrees_with_itself"
+              "name": "tree_comparison_digest"
             }
           },
           "kind": "code"
         }
       ]
     },
-    "13": {
-      "note": "**The one sentence the record publishes, derived from its own fields, one clause per verdict.**",
+    "21": {
+      "note": "`tree_output_verdict` owns the current boundary described above.",
       "targets": [
         {
           "anchor": {
-            "blob": "719ed91754b7cc991e268860a3de7aa2e7403e88",
-            "content": "sha256:4baabd7e4d9b29f8073823e6b7a5a07286362216d98bd2b27a16fd2351c8721a",
+            "blob": "296b288583ead598ff029a9527dbe8416ba5430d",
+            "content": "sha256:77b2d85c328fa8a74f0ea2b47e09a7beb2146697885d4674b82270b1c2720c4c",
             "locator": {
               "kind": "symbol",
-              "name": "statement"
+              "name": "tree_output_verdict"
             }
           },
           "kind": "code"
         }
       ]
     },
-    "14": {
-      "note": "The code clause, which names both trees it compared.",
+    "22": {
+      "note": "`LegacyFinalOutputReceipt` owns the current boundary described above.",
       "targets": [
         {
           "anchor": {
-            "blob": "719ed91754b7cc991e268860a3de7aa2e7403e88",
-            "content": "sha256:63f1820dc86060ca3b4dc92c9ea8c5c80cabee15762d45ea032557ac2f728d53",
+            "blob": "296b288583ead598ff029a9527dbe8416ba5430d",
+            "content": "sha256:97fed40431860faebba44f54fbe868776770b28aeda5853a120df76bc1ac5a21",
             "locator": {
               "kind": "symbol",
-              "name": "_code_clause"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "15": {
-      "note": "**The knowledge clause, which cannot claim an unmeasured comparison: coverage and mismatch are reachable only with a published identity in hand.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "719ed91754b7cc991e268860a3de7aa2e7403e88",
-            "content": "sha256:209d68767f778500ebfd0fd0afb1dcc4250c1aacbf8cb582950c511a4766e586",
-            "locator": {
-              "kind": "symbol",
-              "name": "_knowledge_clause"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "16": {
-      "note": "The shared shapes this vocabulary reuses rather than re-declaring.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "138358a5feab44724703f06dfe3ff24c231ee322",
-            "content": "sha256:770c387ee275ee397402391f33ba68467fe3c4e8fd0f6411e59f57807632a7d0",
-            "locator": {
-              "kind": "symbol",
-              "name": "KnowledgeModel"
-            },
-            "path": "mcp/src/agents_remember/models/knowledge/base.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "138358a5feab44724703f06dfe3ff24c231ee322",
-            "content": "sha256:998423b964ec7ac8b318e61b43c890a26b92e139e66818093d97e9343433d1e1",
-            "locator": {
-              "kind": "symbol",
-              "name": "GIT_OBJECT_PATTERN"
-            },
-            "path": "mcp/src/agents_remember/models/knowledge/base.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "138358a5feab44724703f06dfe3ff24c231ee322",
-            "content": "sha256:8d07fc9b5543d8774e7702f3755879f79229e50b72531f6d6e87e17dbe7e0094",
-            "locator": {
-              "kind": "symbol",
-              "name": "SHA256_PATTERN"
-            },
-            "path": "mcp/src/agents_remember/models/knowledge/base.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "138358a5feab44724703f06dfe3ff24c231ee322",
-            "content": "sha256:c58a0be02b9a17f9c110f202c72cb9015eacba9292e924fb7afa7fb7f6fdaff5",
-            "locator": {
-              "kind": "symbol",
-              "name": "UUID_PATTERN"
-            },
-            "path": "mcp/src/agents_remember/models/knowledge/base.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "17": {
-      "note": "The identity the published channel carries when a dataset really was read.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e546b1b51357a040df3bf17f5546842f57c0867e",
-            "content": "sha256:ed0b1757671c569f93a5ecce887e3462143ef5ebd403a5b7913bf17289a76917",
-            "locator": {
-              "kind": "symbol",
-              "name": "SnapshotIdentity"
-            },
-            "path": "mcp/src/agents_remember/models/knowledge/candidate.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e546b1b51357a040df3bf17f5546842f57c0867e",
-            "content": "sha256:87bbee69441638bfcdd5aaa4aa7449803fbb58106b2bf74ada726a0843ee2fe1",
-            "locator": {
-              "end": 111,
-              "kind": "line_range",
-              "start": 1
-            },
-            "path": "mcp/src/agents_remember/models/knowledge/candidate.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "18": {
-      "note": "**The cases that measure each verdict: full match `bound`, a published dataset the review never compared `moved`, a selected knowledge operand with nothing published `unmeasured` and never `bound`, and a forged `bound` refused at read-back.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "ba578936b90857e4f615618804d0d3797e5f69d6",
-            "content": "sha256:0ea4d59d9fc7db8a0fe44b9c517b1c3f003e2b3bc295db9e46782064dcf1d2c4",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_review_receipt_binds_the_delivered_pair_to_the_selected_generation"
-            },
-            "path": "mcp/tests/test_review_final_output_receipt.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "ba578936b90857e4f615618804d0d3797e5f69d6",
-            "content": "sha256:6df100a4b6c581bec4fdab415b9550d1dd4d43d2e60cf468e76168ec66104065",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_review_receipt_reports_a_published_dataset_the_review_never_compared"
-            },
-            "path": "mcp/tests/test_review_final_output_receipt.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "ba578936b90857e4f615618804d0d3797e5f69d6",
-            "content": "sha256:7c71477ed807c6a9edb1a5fa9eee083adc555da32d869782a35be70055b831ed",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_selected_knowledge_operand_with_nothing_published_is_never_bound"
-            },
-            "path": "mcp/tests/test_review_final_output_receipt.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "ba578936b90857e4f615618804d0d3797e5f69d6",
-            "content": "sha256:a764619c4c076f151c795fa821022b7c288ed6ac56db8d789b3821e5e1e64eaa",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_forged_coverage_verdict_is_refused_when_read_back"
-            },
-            "path": "mcp/tests/test_review_final_output_receipt.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "2": {
-      "note": "The published surface: two literals, four vocabularies, three functions, one record.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "719ed91754b7cc991e268860a3de7aa2e7403e88",
-            "content": "sha256:2bc7a424ffed0e6adbb65ed91230b551954d54317a307e99599f2c06a518f413",
-            "locator": {
-              "kind": "symbol",
-              "name": "__all__"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "The version and selection-rule literals, carried as fields so the answer travels with the record.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "719ed91754b7cc991e268860a3de7aa2e7403e88",
-            "content": "sha256:178ee9b64b55ca6450149e390481385c86b12c8b543eaeeadb5e2185ed6a2a7a",
-            "locator": {
-              "kind": "symbol",
-              "name": "FINAL_OUTPUT_RECEIPT_VERSION"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "719ed91754b7cc991e268860a3de7aa2e7403e88",
-            "content": "sha256:0260b755ba8298c6d28291c4807752307d0912a74cb29cd414f024a7e8291680",
-            "locator": {
-              "kind": "symbol",
-              "name": "FINAL_OUTPUT_SELECTION_RULE"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "4": {
-      "note": "**The two phases are separate records because each is a measurement taken at its own moment, and the published dataset can move between them.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "719ed91754b7cc991e268860a3de7aa2e7403e88",
-            "content": "sha256:f9929096ae16c8d6b0114ba8fca367e294fc225f0d0d3147633c3d1f2653a285",
-            "locator": {
-              "kind": "symbol",
-              "name": "FinalOutputPhase"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "5": {
-      "note": "**`not-comparable` is a channel with nothing on one side to compare, and it never makes the receipt `moved`.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "719ed91754b7cc991e268860a3de7aa2e7403e88",
-            "content": "sha256:1d5faf0bc8bc682ddf9dfbe4b79447e4e509c0401e46ed78d0be9fcefba7afd2",
-            "locator": {
-              "kind": "symbol",
-              "name": "MatchState"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "6": {
-      "note": "The three states of the declared publication location, in the resolving route's own vocabulary.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "719ed91754b7cc991e268860a3de7aa2e7403e88",
-            "content": "sha256:b3b5455b2913b6cccef6f14762f47b4397fbcf5ec557b137e95915af7c13c32f",
-            "locator": {
-              "kind": "symbol",
-              "name": "PublishedKnowledgeState"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "7": {
-      "note": "**The one verdict rule and why it has three values: `unmeasured` is not a mismatch, and `bound` is reserved for a measured match on every selected channel.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "719ed91754b7cc991e268860a3de7aa2e7403e88",
-            "content": "sha256:dbfcacd90f41ae4d550504358c4da9d055b8d44527022990f544370770558a74",
-            "locator": {
-              "kind": "symbol",
-              "name": "FinalOutputVerdict"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "8": {
-      "note": "The code channel's comparison: delivered tree against reviewed candidate tree.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "719ed91754b7cc991e268860a3de7aa2e7403e88",
-            "content": "sha256:e121461b497175ab9a0757f9b873218bd99443384382961c13d6cf3b27ae9364",
-            "locator": {
-              "kind": "symbol",
-              "name": "code_match_state"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "9": {
-      "note": "**The knowledge channel: `not-comparable` whenever one side is not a dataset at all, and never `matches` when nothing was compared.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "719ed91754b7cc991e268860a3de7aa2e7403e88",
-            "content": "sha256:8f76de03c76f98bbc71a524ae65ef4cfa9ea6ddfae3cbd305844595645ee0509",
-            "locator": {
-              "kind": "symbol",
-              "name": "knowledge_match_state"
+              "name": "LegacyFinalOutputReceipt"
             }
           },
           "kind": "code"

@@ -1,0 +1,6 @@
+{
+  "operation": "exec_command evidence persistence",
+  "result": "CreateProcess Argument list too long (os error 7)",
+  "candidateWritesBeforeFailure": "20 scoped citation operations completed; closeout_external returned four stale references",
+  "recovery": "Persisted separate per-card full receipts; no product operation replayed"
+}

@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "e12afe988de03321328e7a381737aafa892f202a",
+        "blob": "fb658851e57cca377651a1f40263f8f4d54b86b6",
         "content": "sha256:a2a288dd989f6131292cb6ea8148355c9b71f1a9c4ea5bdeef7b06e319c97f42",
         "locator": {
-          "end": 348,
+          "end": 294,
           "kind": "line_range",
-          "start": 348
+          "start": 294
         }
       },
       "id": "RLZ-4YAPS7",
@@ -22,8 +22,8 @@
     },
     {
       "anchor": {
-        "blob": "e12afe988de03321328e7a381737aafa892f202a",
-        "content": "sha256:7e090edc7c3f7820dc3ff0100c09ae6c76effaad4be7e3eb121390fd6db2bf36",
+        "blob": "fb658851e57cca377651a1f40263f8f4d54b86b6",
+        "content": "sha256:88c46da785d0cedd77c8f4179789345ae56e6e832289b429cb4630db1dbaf382",
         "locator": {
           "kind": "file"
         }
@@ -39,12 +39,12 @@
     },
     {
       "anchor": {
-        "blob": "e12afe988de03321328e7a381737aafa892f202a",
-        "content": "sha256:15985ae2c19ced481a0e732a5996a9a09d5218c03bed6f851bd52b8b84cd8a08",
+        "blob": "fb658851e57cca377651a1f40263f8f4d54b86b6",
+        "content": "sha256:ab04dd1aef9a30dd3c851bfdc62e46281e9eb0c0aa2046b73a52069db0d23fe4",
         "locator": {
-          "end": 330,
+          "end": 266,
           "kind": "line_range",
-          "start": 329
+          "start": 264
         }
       },
       "id": "RLZ-EEEG4W",
@@ -53,13 +53,13 @@
         "handoffEntry": "MIK-R70@v1 rule 4",
         "leaf": "260928-MIK-L70"
       },
-      "rationale": "The curation operation's closing sentences state that terminal/finalizer evidence attests only that the turn ended and forbid a hand-written certification.",
+      "rationale": "The sentence that makes the curation operation a participant: terminal/finalizer evidence attests only that this turn ended and wakes the manager, who validates it.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "e12afe988de03321328e7a381737aafa892f202a",
-        "content": "sha256:7e090edc7c3f7820dc3ff0100c09ae6c76effaad4be7e3eb121390fd6db2bf36",
+        "blob": "fb658851e57cca377651a1f40263f8f4d54b86b6",
+        "content": "sha256:88c46da785d0cedd77c8f4179789345ae56e6e832289b429cb4630db1dbaf382",
         "locator": {
           "kind": "file"
         }
@@ -75,8 +75,8 @@
     },
     {
       "anchor": {
-        "blob": "e12afe988de03321328e7a381737aafa892f202a",
-        "content": "sha256:7e090edc7c3f7820dc3ff0100c09ae6c76effaad4be7e3eb121390fd6db2bf36",
+        "blob": "fb658851e57cca377651a1f40263f8f4d54b86b6",
+        "content": "sha256:88c46da785d0cedd77c8f4179789345ae56e6e832289b429cb4630db1dbaf382",
         "locator": {
           "kind": "file"
         }
@@ -92,12 +92,12 @@
     },
     {
       "anchor": {
-        "blob": "e12afe988de03321328e7a381737aafa892f202a",
+        "blob": "fb658851e57cca377651a1f40263f8f4d54b86b6",
         "content": "sha256:6ce616857be9b2932b1b442a156eb06df996534a4dc191f60bede6f9a6de49a7",
         "locator": {
-          "end": 74,
+          "end": 75,
           "kind": "line_range",
-          "start": 61
+          "start": 62
         }
       },
       "id": "RLZ-X79EQQ",

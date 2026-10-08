@@ -103,8 +103,12 @@ No configured live documentation source was available for this pass.
 
 - An invariant the leaf changed is answered only by its changed row. [9]
 - A family whose guarantee the leaf changed is answered only by its changed row. [10]
-- A changed record is governed by its changed row in every attempt. [11]
-- A family whose guarantee the leaf changed is governed by its changed row. [12]
+
+- Leaf-owned changed records retain their changed governing row across attempts. [11]
+
+
+- A family guarantee changed by the leaf remains governed by that changed row. [12]
+
 
 ### Cross-Repo References
 

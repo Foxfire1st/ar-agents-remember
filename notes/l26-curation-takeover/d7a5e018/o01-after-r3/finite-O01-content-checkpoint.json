@@ -1,0 +1,221 @@
+{
+  "schema": "l26-finite-curator-content-checkpoint/v1",
+  "at": "2026-10-08T17:53:14.940556+00:00",
+  "state": "21-content-corrections-and-citations-finished-qualification-pending",
+  "originalFinding": "L26-MR1-O01",
+  "acceptedOriginal13Preserved": true,
+  "ordinary3Exhausted": true,
+  "conditionalExtraVerification": "authorized-but-not-started-before-repaired-current-successor-and-exact-Owner-case",
+  "cardsCorrected": 21,
+  "citationTargetsNativeVerified": 109,
+  "original84PopulationRetained": 84,
+  "sharedJudgmentsIndividuallyNamed": 74,
+  "pendingSyncCitationDocuments": 6,
+  "pendingSyncAnchorsRefreshed": 48,
+  "rawReturnedStaleReferences": 214,
+  "fullMQC": "not-run-before-qualified-whole-current-source-envelope",
+  "coherence": "not-yet-produced-for-current-successor",
+  "taskComparison": "not-yet-run-for-current-successor; prior-c87b-unavailable-retained",
+  "sourceTestIndexStageMutation": false,
+  "ownedOperationInFlight": false,
+  "rulers": {
+    "citationServingCommit": "3f682987",
+    "nativeHeldLeafHead": "4cdd7fbc1fd9f71fe087ca7688681a9f62865569"
+  },
+  "hostSupport": {
+    "host": "Paseo/Codex",
+    "currentHarnessSubagents": 0,
+    "delegatedCurrentO0121Work": false,
+    "earlierThreeCardHelpersNotReactivated": true
+  },
+  "artifacts": [
+    {
+      "path": "notes/l26-curation-takeover/d7a5e018/o01-after-r3/21-body-write-result.json",
+      "sha256": "74a8c1f5831de582461c26f74614b7901efeac01a3cdcdfcfc0ffd34ac7b869b",
+      "bytes": 4618
+    },
+    {
+      "path": "notes/l26-curation-takeover/d7a5e018/o01-after-r3/21-card-authored-plan.json",
+      "sha256": "209d6c57bdb0a2de9fe1b66c0a008e498345330f7a6eae99d24f8a1740ff03ca",
+      "bytes": 106259
+    },
+    {
+      "path": "notes/l26-curation-takeover/d7a5e018/o01-after-r3/21-citation-and-current-account-readback.json",
+      "sha256": "48da4d05ad1cb7712b405395f1a23a217441981bbb5952f2e1d0d59e4d1f68bc",
+      "bytes": 366778
+    },
+    {
+      "path": "notes/l26-curation-takeover/d7a5e018/o01-after-r3/21-current-source-and-before-card-evidence.json",
+      "sha256": "8a396066e94fe2a7ade060799e8763303929d50a3614b92591fcc76ebb332a16",
+      "bytes": 695448
+    },
+    {
+      "path": "notes/l26-curation-takeover/d7a5e018/o01-after-r3/before21-cards.json",
+      "sha256": "854570addf9215673a0954592f1b501c3b8307c99613032534122a3ac1ee55cb",
+      "bytes": 149086
+    },
+    {
+      "path": "notes/l26-curation-takeover/d7a5e018/o01-after-r3/citation-00.json",
+      "sha256": "0940fc211393ac0846aebcf773d1de5e26ea4748dc64549ef3099c48881318ed",
+      "bytes": 2886
+    },
+    {
+      "path": "notes/l26-curation-takeover/d7a5e018/o01-after-r3/citation-01.json",
+      "sha256": "064cd52e00ec4672eae05c81e2a654e707cbedf11580c2bd97a04a71769150b7",
+      "bytes": 2847
+    },
+    {
+      "path": "notes/l26-curation-takeover/d7a5e018/o01-after-r3/citation-02.json",
+      "sha256": "58a17b3a1a5d3181be2adada3bdd72005da2b3fdc1fffe766f4f0494656b2310",
+      "bytes": 26771
+    },
+    {
+      "path": "notes/l26-curation-takeover/d7a5e018/o01-after-r3/citation-03.json",
+      "sha256": "923c07fc8bd2da36f120c79eaae8db189a24ddbda18fec67890415ebbc38760f",
+      "bytes": 11451
+    },
+    {
+      "path": "notes/l26-curation-takeover/d7a5e018/o01-after-r3/citation-04.json",
+      "sha256": "4c5682c07f79eeefcc07607e7c05fa334bcaa80d4f30cd40fc2a4e564a89efac",
+      "bytes": 9488
+    },
+    {
+      "path": "notes/l26-curation-takeover/d7a5e018/o01-after-r3/citation-05.json",
+      "sha256": "503b9ad63eda070a5b67eab2d6ac370434b26efa5e610c82d03e0b1e4db2fb16",
+      "bytes": 19827
+    },
+    {
+      "path": "notes/l26-curation-takeover/d7a5e018/o01-after-r3/citation-06.json",
+      "sha256": "121505bc1fd8eeaa8b97a68f9c02d4acf884b970aaf6de8ad7d9e700abc0449e",
+      "bytes": 3912
+    },
+    {
+      "path": "notes/l26-curation-takeover/d7a5e018/o01-after-r3/citation-07.json",
+      "sha256": "715bd6302faef92b6dfff3c90fce5492856570ccafa2457219c1a21ee0e31cf8",
+      "bytes": 3867
+    },
+    {
+      "path": "notes/l26-curation-takeover/d7a5e018/o01-after-r3/citation-08.json",
+      "sha256": "9645dd9bcfc5e6b91f84973afba803eaa616f89356ab5d1c860d28aff79663de",
+      "bytes": 6730
+    },
+    {
+      "path": "notes/l26-curation-takeover/d7a5e018/o01-after-r3/citation-09.json",
+      "sha256": "302a4e24c82fb7c71894f0267f5ec5aa051989e3bdb9c88cdf2e7f0970e6e5e7",
+      "bytes": 3530
+    },
+    {
+      "path": "notes/l26-curation-takeover/d7a5e018/o01-after-r3/citation-10.json",
+      "sha256": "921a3c48f8f4c2c717aeb807b340c08de83e084b5dc148fa4940de9ab952142d",
+      "bytes": 4610
+    },
+    {
+      "path": "notes/l26-curation-takeover/d7a5e018/o01-after-r3/citation-11.json",
+      "sha256": "3f361d0594684765cae20a0871231140f192789fc79ebec99d8e1390c9f44374",
+      "bytes": 3492
+    },
+    {
+      "path": "notes/l26-curation-takeover/d7a5e018/o01-after-r3/citation-12.json",
+      "sha256": "f10992dfb0bcfe19132739b8c47ef9570c050d5e40fcbe4c8b470bf4999a56cf",
+      "bytes": 10475
+    },
+    {
+      "path": "notes/l26-curation-takeover/d7a5e018/o01-after-r3/citation-13.json",
+      "sha256": "a737d0d8bf514c6663472496e73a710f307a2b20606b0a89df8acfe45605bbcc",
+      "bytes": 5042
+    },
+    {
+      "path": "notes/l26-curation-takeover/d7a5e018/o01-after-r3/citation-14.json",
+      "sha256": "d1232d2d320029a03f15a3dd58519c204707812427ded71cd0460c8fa6da6bac",
+      "bytes": 5202
+    },
+    {
+      "path": "notes/l26-curation-takeover/d7a5e018/o01-after-r3/citation-15.json",
+      "sha256": "dd0ddfeeb89d649517d99e5588704656d4725ce903680c5123b19fa5cc8910ce",
+      "bytes": 12596
+    },
+    {
+      "path": "notes/l26-curation-takeover/d7a5e018/o01-after-r3/citation-16.json",
+      "sha256": "d8022d787f71d0653f19b8bbdd7330c3dad9acb1b96acc6de2e1e7f416930112",
+      "bytes": 4426
+    },
+    {
+      "path": "notes/l26-curation-takeover/d7a5e018/o01-after-r3/citation-17.json",
+      "sha256": "420d1c696ae1daef1ad54613cedc15d927a8622eb2712ffdb28a72f2dcc2e673",
+      "bytes": 7034
+    },
+    {
+      "path": "notes/l26-curation-takeover/d7a5e018/o01-after-r3/citation-18.json",
+      "sha256": "d8f60ba00a5b4965fb0026544a46dfdc90f872a662856fddbee3fb3792125a84",
+      "bytes": 17696
+    },
+    {
+      "path": "notes/l26-curation-takeover/d7a5e018/o01-after-r3/citation-19.json",
+      "sha256": "372266bbbca200ea40828557e5bfa851398975c39315e5a4f6695118beef84ba",
+      "bytes": 3403
+    },
+    {
+      "path": "notes/l26-curation-takeover/d7a5e018/o01-after-r3/citation-20.json",
+      "sha256": "3d9f56aa69611b0f6985e5cf7492492b72c4ebf0629a3e98943b556ca967f057",
+      "bytes": 7020
+    },
+    {
+      "path": "notes/l26-curation-takeover/d7a5e018/o01-after-r3/source41-O01-curator-response.prepared.json",
+      "sha256": "6839e7f752ce94b4070d6ec026c71d6ffdc14a307969666551f2fc43237082f6",
+      "bytes": 15176
+    },
+    {
+      "path": "notes/l26-curation-takeover/d7a5e018/o01-after-r3/source41-O01-original84-current-dispositions.json",
+      "sha256": "4ce8e9c5dae6395c1637c17fbc0486e60705c3404dcb3e94398409d35bac02f1",
+      "bytes": 1694956
+    },
+    {
+      "path": "notes/l26-curation-takeover/d7a5e018/o01-after-r3/source41-coherence-74-repointing.json",
+      "sha256": "4dd4537132200bbb3448b9477141ee0dd6bbaef503d2ffc4a8b7799371a89f14",
+      "bytes": 210493
+    },
+    {
+      "path": "notes/l26-curation-takeover/d7a5e018/o01-after-r3/source41-coherence-shared74-evidence.json",
+      "sha256": "57d61aa911696a94972ddde64c521b2ab96276c633d596abc5e64aef7b9d1974",
+      "bytes": 2640912
+    },
+    {
+      "path": "notes/l26-curation-takeover/d7a5e018/o01-after-r3/source41-pending-citation-0.json",
+      "sha256": "77a9b5e7b7502bb534a13fbfa004474bd875a03a3b49e459acd3624c7ebbbfdc",
+      "bytes": 37899
+    },
+    {
+      "path": "notes/l26-curation-takeover/d7a5e018/o01-after-r3/source41-pending-citation-1.json",
+      "sha256": "dbb2c5d8c3628e767d18c2fdf8884c9b89f4f46d9c9dc0002e1888efdddce490",
+      "bytes": 31156
+    },
+    {
+      "path": "notes/l26-curation-takeover/d7a5e018/o01-after-r3/source41-pending-citation-2.json",
+      "sha256": "fc59e554ffd41ed4cedae278f677b255a988785b53bdc9d218699b9e44522fb0",
+      "bytes": 57382
+    },
+    {
+      "path": "notes/l26-curation-takeover/d7a5e018/o01-after-r3/source41-pending-citation-3.json",
+      "sha256": "a5a21975ddba4745672e88ac089bd2a928ec789b9a3e13512b2685f7c3849d8b",
+      "bytes": 4841
+    },
+    {
+      "path": "notes/l26-curation-takeover/d7a5e018/o01-after-r3/source41-pending-citation-4.json",
+      "sha256": "fbe410d66efc9639bc8368f2f6d1f36229c48d7c6a7620147467349920801886",
+      "bytes": 3908
+    },
+    {
+      "path": "notes/l26-curation-takeover/d7a5e018/o01-after-r3/source41-pending-citation-5.json",
+      "sha256": "5df4c8e118a637aaa3e723426c4f7c9a317fd2a3255f622db570103bf9ee4b18",
+      "bytes": 14105
+    },
+    {
+      "path": "notes/l26-curation-takeover/d7a5e018/o01-after-r3/source41-pending-citation-returned-stales.json",
+      "sha256": "0f46cfe16fa9cf63999a86b7799598c2fbaad847f87646cae4e33b62e63228b3",
+      "bytes": 62003
+    }
+  ],
+  "independentAcceptance": false,
+  "returnedStaleDetailRows": 123,
+  "unreturnedStaleDetailCount": 91
+}

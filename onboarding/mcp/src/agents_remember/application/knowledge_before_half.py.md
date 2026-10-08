@@ -6,22 +6,18 @@
 
 ## Purpose
 
-**The review's before half**: the layout one before side occupies, the provenance record that says
-which generation its dataset is, and the readers that decide what the half currently *is*. A comparison is
-*between* two datasets, so whatever a review is opened on must have a before side; this module owns
-that side's shape and every read of it, and nothing here establishes one.
+**The review's before-half preflight**: the readers that decide whether a before side can be read, and
+the typed refusal when it cannot. `read_dataset_identity` reads the selected derived index's identity;
+`unreadable_half_refusal` names a side whose index cannot be read, so a comparison refuses an unreadable
+side by name instead of opening a substitute. A comparison is *between* two datasets, so whatever a
+review is opened on must have a before side; this module owns that side's preflight, establishes
+nothing, and creates no canonical dataset layout.
 
-**The half holds the dataset plus *one* provenance record, never both.** (`:1-15`.) The record beside
-the dataset is either this module's own **origin record** — the identified first generation the leaf
-began from — or the **selected baseline's generation record** owned by
-[`application/knowledge_baseline_generation.py`](knowledge_baseline_generation.py.md) — the fork point a
-later run was handed. A half began from exactly one of them, so a half that somehow carried both would
-be a state neither owner could read; this leaf (`260921-ICR-L18`) reconciled the module docstring,
-which had said the half holds "exactly two files", to say that. It is a **documentation reconciliation
-only**: no reader, no writer and no test changed with it. Establishing a first
-generation is the separate act in
-[`application/knowledge_first_generation.py`](knowledge_first_generation.py.md), which is the caller of
-these readers.
+**Historical (retired by MIK-R26).** The layout and provenance machinery described below — the
+one-dataset-plus-one-provenance-record layout, the module-owned origin record, the selected baseline's
+generation record, and the four-state `read_before_half` readers — belonged to the canonical database.
+The converted-memory writer creates no canonical dataset sides, and this module now carries only the
+derived-index identity read and the unreadable-half refusal. The old account is retained as history.
 
 Three facts are told apart here because a writer that confuses them writes the wrong thing, and the
 module's own docstring names them as its load-bearing distinctions:
@@ -56,7 +52,7 @@ module owns — `baseline-origin.json`, the origin of an identified **first gene
 a fact about the run rather than a recorded invariant, so keeping it out of the database is what keeps
 it out of every read the knowledge plane answers. The other record a half may carry is the *selected
 baseline's* generation record, owned by
-[`application/knowledge_baseline_generation.py`](knowledge_baseline_generation.py.md); a half carries
+`application/knowledge_baseline_generation.py`; a half carries
 one of the two and never both, because a half began from exactly one of them.
 
 **`BaselineOrigin` records one act, not a second copy of the dataset.** It is an
@@ -137,7 +133,7 @@ re-counted against `__all__` in this candidate, the surface is twelve, the omitt
   `pre_feature_history` are single-literal fields, so an origin record cannot describe a second
   generation or claim that pre-feature history was measured. A half whose before side is a *selected*
   baseline is described by the other owner's generation record instead
-  ([`application/knowledge_baseline_generation.py`](knowledge_baseline_generation.py.md)), which is the
+  (`application/knowledge_baseline_generation.py`), which is the
   one record a half carries in that case — the two never coexist, because a half began from exactly one
   of them.
 - **A read never raises for an input fact and never repairs.** The readers answer with reasons; a
@@ -190,10 +186,9 @@ one refusal. Ranges are the exact construct extents in this candidate.
 - **The four-state read: the dataset is read, the record beside it is read, and the three identity fields are compared before a half may be called identified.** [13]
 - The path-shaped sibling for a caller that names a file rather than a directory, where absence is deliberately not this reader's answer. [14]
 - **The one refusal the review answers an unreadable side with: both sides preflighted, the shipped `candidate_dataset_absent` code reused rather than a shared vocabulary widened, and the state carried in the detail and the offending input.** [15]
-- The dataset name both halves take, imported rather than re-spelled, so a half's dataset is the file the review opens. [16]
 - The model vocabulary the record is built from — the frozen base and the four pattern/length bounds its fields are validated against. [17]
+
 - The identity value every reader answers with, the module that produces it, and the receipt the sibling module reads to bind a half to the candidate's own admission. [18]
-- The candidate files the establishing sibling reads to bind a half to the candidate's own admission — recorded here because that is the contract this module's readers are handed, not because this module reads them. [19]
 
 ### Cross-Repo References
 

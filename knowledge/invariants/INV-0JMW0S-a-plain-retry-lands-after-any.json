@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "The behavior guards a costly publication, restoration or refusal mistake that the sealed findings proved reachable."
+  },
+  "applicability": "Direct-landing retries after unpublished refusals.",
+  "conditions": [
+    "Each refusal published nothing."
+  ],
+  "exclusions": [
+    "A published generation; its evidence stays recoverable."
+  ],
+  "id": "INV-0JMW0S",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.evidence/focused-tests-admitted.log; notes/run3/L26-current-evidence-20261007/F01-repeated-refusal-negative-current.log"
+      ],
+      "path": "handoff-stage1.json"
+    },
+    "handoffEntry": "R3 Finding 1",
+    "leaf": "260928-MIK-L26",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A plain retry lands after any number of unpublished direct refusals.",
+  "status": "retired",
+  "supersedes": []
+}

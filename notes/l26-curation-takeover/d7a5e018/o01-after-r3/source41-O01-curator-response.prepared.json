@@ -1,0 +1,259 @@
+[
+  {
+    "id": "L26-MR1-O01",
+    "statement": "Current onboarding and twenty published shared-file reconciliation accounts still present retired writers or removed coverage as current behavior; O01 remains outstanding.",
+    "kind": "finding",
+    "target": [
+      {
+        "path": "onboarding/mcp/src/agents_remember/models/knowledge/effect.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 13,
+          "end": 13
+        },
+        "rationale": "Line13 declares add/replace/narrow/widen/clarify/retire/split/merge/reincarnate and EffectLabelLiteral. The source declares restore/clarify/introduce/strengthen/weaken/replace/split/merge/retire and EffectLabel; four labels and the type name in the card are false.",
+        "role": "presentation"
+      },
+      {
+        "path": "onboarding/mcp/tests/test_knowledge_leaf_read.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 9,
+          "end": 9
+        },
+        "rationale": "Purpose line9 still claims thirteen collected cases and projection64-cap coverage. The source declares twelve unparametrized test functions and the old projection-cap test is absent. The removed coverage has not been explicitly retired from Purpose.",
+        "role": "presentation"
+      },
+      {
+        "path": "onboarding/mcp/tests/diff_scope_test_support.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 13,
+          "end": 13
+        },
+        "rationale": "The paired card says public production store operations and records.claim_row_digest seal the fixture. Actual imports select test-only RowStore and knowledge_row_codec_test_support.claim_row_digest. The source documents the retired shapes in docstrings but does not implement their former write rules.",
+        "role": "presentation"
+      },
+      {
+        "path": "onboarding/mcp/tests/read_scope_test_support.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 24,
+          "end": 24
+        },
+        "rationale": "The card says writes never insert rows and use the same public store/family/membership/realization owners as production. Actual imports and _create_revision select knowledge_rows_test_support.RowStore, whose declared purpose is direct index-shaped INSERTs without retired admission rules.",
+        "role": "presentation"
+      },
+      {
+        "path": "onboarding/mcp/tests/test_knowledge_diff_attribution.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 61,
+          "end": 61
+        },
+        "rationale": "The attribution properties remain, but the card claims the candidate claims are authored exactly as the production write plane does and every case uses public store operations. The imports now select the test-only RowStore/realization constructors; read composition is production, canonical write admission is not.",
+        "role": "presentation"
+      },
+      {
+        "path": "onboarding/mcp/tests/test_knowledge_diff_boundaries.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 49,
+          "end": 49
+        },
+        "rationale": "The actual source has the retained fifteen comparison-boundary definitions and test-only fixture writes. The card additionally presents six InventoryFixture/build_inventory_fixture cases absent from this source and calls RowStore writes public production operations. The shared file cannot establish those current coverage/owner claims.",
+        "role": "presentation"
+      },
+      {
+        "path": "onboarding/mcp/tests/test_knowledge_index_reuse.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 17,
+          "end": 17
+        },
+        "rationale": "The card says an unconverted memory root keeps database selection. The actual final test requires unusable/legacy-format, empty seeds and unchanged retired bytes. This file refutes that retained current sentence rather than supporting reconciled status.",
+        "role": "presentation"
+      },
+      {
+        "path": "onboarding/mcp/tests/test_knowledge_paging.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 20,
+          "end": 20
+        },
+        "rationale": "The card presents a projection-over-artifact-limit case as current coverage. Actual source retains leaf/view threshold, bindings, oversized rows and whole-block walks but no projection test or projection owner call; the old projection promise survives only in prose.",
+        "role": "presentation"
+      },
+      {
+        "path": "onboarding/mcp/tests/test_knowledge_read_scope.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 78,
+          "end": 78
+        },
+        "rationale": "The selection/paging properties remain. The card says every fixture is built through public production store operations and none inserts rows directly; build_read_scope_fixture now uses test-only RowStore direct insert constructors, so that write-authority claim is not supported.",
+        "role": "presentation"
+      },
+      {
+        "path": "onboarding/mcp/tests/test_knowledge_review_relationship_line.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 10,
+          "end": 10
+        },
+        "rationale": "The line/intermediate/split/membership read properties remain, but the current card/rationale says the populations are authored through public store operations. Actual family/membership imports come from knowledge_rows_test_support, not a production canonical writer.",
+        "role": "presentation"
+      },
+      {
+        "path": "onboarding/mcp/tests/test_knowledge_review_relationship_reach.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 10,
+          "end": 10
+        },
+        "rationale": "The relationship-reach and pairing assertions remain, but the card/rationale describes public store authoring. Actual membership/family construction uses the test-only support module, so it cannot prove the claimed current production write route.",
+        "role": "presentation"
+      },
+      {
+        "path": "onboarding/mcp/tests/test_knowledge_review_revision_selection.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 11,
+          "end": 11
+        },
+        "rationale": "The head-selection properties remain, but the card/rationale says public production store operations validate fixture authoring. Actual imports select RowStore, which deliberately implements no retired label/lineage/duplicate admission rules. The read refuses damaged rows; the claimed writer boundary is absent.",
+        "role": "presentation"
+      },
+      {
+        "path": "onboarding/mcp/tests/test_read_ar_files.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 31,
+          "end": 31
+        },
+        "rationale": "The card describes an unconverted PublishedIntentRouteTests._read substitution and continued direct database publication testing. Actual setUp builds converted text memory, ordinary read returns its selected index and the unconverted case requires legacy-format. The named _read substitution/current database coverage is absent.",
+        "role": "presentation"
+      },
+      {
+        "path": "onboarding/mcp/tests/test_review_assessment_history.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 9,
+          "end": 9
+        },
+        "rationale": "The current file contains one missing-artifacts/bounded-detail regression and a patched historical reader. It contains no current normal assessment capture, cleanup/restart or exact-parent recovery journey claimed by the card/rationale.",
+        "role": "presentation"
+      },
+      {
+        "path": "onboarding/mcp/tests/test_review_assessment_history_repairs.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 9,
+          "end": 9
+        },
+        "rationale": "The actual parametrized regression checks integrity rejection before replacing canonical curator authority for escaping-alias and corrupt-retained-byte inputs. It does not supply the card claimed four namespace/provenance/channel/custody/snapshot-loss journeys.",
+        "role": "presentation"
+      },
+      {
+        "path": "onboarding/mcp/tests/test_review_bounded_pagination.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 10,
+          "end": 10
+        },
+        "rationale": "The eight current pagination tests support comparison/item/matrix walks and cursor transport. The card still claims twelve cases, names removed remainder tests and says fixture writes use public production stores, while current imports use test-only RowStore constructors.",
+        "role": "presentation"
+      },
+      {
+        "path": "onboarding/mcp/tests/test_review_family_context.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 16,
+          "end": 16
+        },
+        "rationale": "The family-context read/HTTP/roster properties remain, but the card presents all populations as production family/membership authoring. The actual imports and builder use the test-only family/membership namespaces; shared source supports read composition, not retired writer admission.",
+        "role": "presentation"
+      },
+      {
+        "path": "onboarding/mcp/tests/test_review_family_member_sources.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 16,
+          "end": 16
+        },
+        "rationale": "The actual roster reader and anchor resolver support member locations, ranges and unresolved states. The card additionally says every value comes from the production path and realization authoring; the actual realization constructors come from test-only support, so the universal production-owner claim is false.",
+        "role": "presentation"
+      },
+      {
+        "path": "onboarding/mcp/tests/test_review_final_output_receipt.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 11,
+          "end": 11
+        },
+        "rationale": "The source now defines six tree-receipt tests and states without a canonical dataset. The card/rationale still claims eleven end-to-end canonical freeze/publication/closeout/integration scenarios and names removed tests. The shared file directly refutes that current coverage claim.",
+        "role": "presentation"
+      },
+      {
+        "path": "onboarding/mcp/tests/test_review_intent_summary.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 10,
+          "end": 10
+        },
+        "rationale": "The six current summary tests support changed statement/guarantee counts and answer states. The card says their snapshots are built through shipped write operations, but actual imports use test-only RowStore/family/realization constructors.",
+        "role": "presentation"
+      },
+      {
+        "path": "onboarding/mcp/tests/test_review_subject_catalogue.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 12,
+          "end": 12
+        },
+        "rationale": "The current catalogue tests support union, presence, loading and traversal. The card/rationale claims shipped store/batch operations including insert_invariant_identity; actual fixture construction uses test-only support and no such shipped batch owner remains.",
+        "role": "presentation"
+      }
+    ],
+    "found_at": [
+      {
+        "path": "notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.memory-r3.md",
+        "locator": null,
+        "commit": null
+      },
+      {
+        "path": "notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.memory-r3.evidence/finding-adjudications.json",
+        "locator": null,
+        "commit": null
+      }
+    ],
+    "disposition": "rejected; implementation defect; original sealed repair remains outstanding",
+    "disposition_source": "notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.memory-r3.md",
+    "evidence": "Original84 row67 effect.py.md13 names four nonadmitted labels and nonexistent EffectLabelLiteral; source22-44 declares the different closed EffectLabel vocabulary. Row76 leaf_read.py.md9 retains thirteen-case and deleted projection64-cap coverage. All74 actual source/card payloads and published bindings match; the actual shared file applies as static evidence to all74, supports54 reconciliations and refutes20 retired-writer/removed-coverage accounts. Exact20 rows and21 distinct card locations/reasons are in o01-remaining-current-account-repairs.json and shared74-individual-applicability-adjudications.json. No runtime failure or test result is inferred.",
+    "authority": {
+      "task_document": "260928_maintained-invariant-knowledge/26_retire-the-canonical-database.json",
+      "requirement": "MIK-R26@v1",
+      "owner_case": "/home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/notes/run3/L26-SOURCE87-ONLY6-MEMFIX3-879378fb/owner-memory-fix3-case.json",
+      "owner_case_sha256": "4ff7ac83cfc7a3ea22435ca72ebbd33730405a5f8ac41ccc343042cccc33adca",
+      "delivery": "260928-MIK-L26-curation-d7a5e018-source87-original6",
+      "code_candidate_tree": "715ee46e34ef5c421c540314b882c04d1676e08d",
+      "memory_candidate_tree": "def9db85ac3e54dc387d8cd558f7e3a58df333ee",
+      "sealed_r2_producer_sha256": "5024515eab0a72d8a59d18a5187df370ab1cfe6401224c299536c212dddf4818"
+    },
+    "resolution": {
+      "state": "current-content-and-citations-repaired-full-final-pipeline-pending",
+      "sourceHead": "4cdd7fbc1fd9f71fe087ca7688681a9f62865569",
+      "codeTree": "eddf1ac26b10bf632c8c3bfdde3077c090b92c89",
+      "sourceChangeSha256": "0f375c9bf894b634e9e2a82ae83cdbb52078c58c9575d0b6efe74175d2a780f2",
+      "original84DispositionEvidence": "source41-O01-original84-current-dispositions.json",
+      "each74Evidence": "source41-coherence-shared74-evidence.json",
+      "original21Repair": "21-citation-and-current-account-readback.json",
+      "ownerAdmittedTwoParagraphCorrection": "source41-owner-two-paragraph-repair.json",
+      "preservedAcceptedFindings": 13,
+      "independentAcceptance": false
+    },
+    "validated_at": "2026-10-08T18:15:21.638267+00:00",
+    "record_action": "revise",
+    "supersedes": null
+  }
+]

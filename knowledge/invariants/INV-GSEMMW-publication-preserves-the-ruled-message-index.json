@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Publication that changes the message, index shape or hook behavior would make the committed object differ from the reviewed one."
+  },
+  "applicability": "Publication message, index and hook behavior on the shared primitive.",
+  "conditions": [
+    "The repository pins the cleanup mode, comment character and hook policy."
+  ],
+  "exclusions": [
+    "Prepared routes, which keep their no-verify or ordinary-hook policy."
+  ],
+  "id": "INV-GSEMMW",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.evidence/focused-tests-admitted.log; notes/run3/L26-current-evidence-20261007/N11-index-shape-negative-current.log"
+      ],
+      "path": "handoff-stage1.json"
+    },
+    "handoffEntry": "R3 Note 11",
+    "leaf": "260928-MIK-L26",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Publication preserves the ruled message, index flags and hook behavior and names real ref/lock failures.",
+  "status": "proposed",
+  "supersedes": []
+}

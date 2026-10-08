@@ -1,0 +1,15 @@
+{
+  "authority": "Source98 Owner production-only case: owned role-vocabulary mechanical correction",
+  "path": "onboarding/overview.md",
+  "beforeSha256": "3a067c7ae5650cdedb099077e8c789022d3307ea523f6f98abc5cd2653ac02bc",
+  "afterSha256": "c31aa2e2b42fa3d6d4fd85778fae64ee502c421cf0a9fb146747406160c18239",
+  "old": "An architect or a system specialist can be started without a task.",
+  "new": "An architect or an investigator can be started without a task.",
+  "onlyReplacement": true,
+  "source": "skills/l-01-agent-lifecycles/composition-manifest.json",
+  "sourceFields": [
+    "routing_conditions.manual-taskless-projects-role",
+    "roles.investigator"
+  ],
+  "noNewPermissionOrHistoricalReview": true
+}

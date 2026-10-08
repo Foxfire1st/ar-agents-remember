@@ -1,0 +1,113 @@
+{
+  "state": "21-body-corrections-written-citations-pending",
+  "originalFinding": "L26-MR1-O01",
+  "acceptedOriginalFindingsPreserved": 13,
+  "indexesBefore": {
+    "code": {
+      "raw": "db21d7b0fb73f8ee332136876da743c9f355b4e85da21caff12b52ae287d79dd",
+      "stageNul": "b30af563126f0f38422fb8a598fd9e292113a19619ad0694567d44ecf170d313"
+    },
+    "memory": {
+      "raw": "13c25720e36e257a78a4c7086216f057789aa2fd72023fd5d3ac36ce6fef67cb",
+      "stageNul": "8743e39210f7f47352576fa7cb489cdcd9f84fd05b5acff17dc4da0241538618"
+    }
+  },
+  "indexesAfter": {
+    "code": {
+      "raw": "db21d7b0fb73f8ee332136876da743c9f355b4e85da21caff12b52ae287d79dd",
+      "stageNul": "b30af563126f0f38422fb8a598fd9e292113a19619ad0694567d44ecf170d313"
+    },
+    "memory": {
+      "raw": "13c25720e36e257a78a4c7086216f057789aa2fd72023fd5d3ac36ce6fef67cb",
+      "stageNul": "8743e39210f7f47352576fa7cb489cdcd9f84fd05b5acff17dc4da0241538618"
+    }
+  },
+  "sourcesUnchanged": true,
+  "cards": [
+    {
+      "path": "onboarding/mcp/src/agents_remember/models/knowledge/effect.py.md",
+      "sha256": "0f07b7d427d757ed5aa92a4b0896d517991e4eee276e8befe18ff62eb4cd60a9"
+    },
+    {
+      "path": "onboarding/mcp/tests/test_knowledge_leaf_read.py.md",
+      "sha256": "27b62cdb24e4939c4cee97956dfc53734bccf80fcd5f9920d64d5c78bca29089"
+    },
+    {
+      "path": "onboarding/mcp/tests/diff_scope_test_support.py.md",
+      "sha256": "b703076dfbe86c1a75b6f15f3ca66948b79126af9329529fd1e8792966be31dc"
+    },
+    {
+      "path": "onboarding/mcp/tests/read_scope_test_support.py.md",
+      "sha256": "d84da92959024173f3e092542d6900791a365e998663b593c4c703e7b9456e40"
+    },
+    {
+      "path": "onboarding/mcp/tests/test_knowledge_diff_attribution.py.md",
+      "sha256": "76a04a04852360d07955d8c9e79eac07b5eab2028f111f737d8cf1ddb5f223d5"
+    },
+    {
+      "path": "onboarding/mcp/tests/test_knowledge_diff_boundaries.py.md",
+      "sha256": "c23f8b78944bff0a5a7aca98bf45d3e8f584bf6be60c8088b7819867487bae8a"
+    },
+    {
+      "path": "onboarding/mcp/tests/test_knowledge_index_reuse.py.md",
+      "sha256": "2107b4818a8b0fb5429778aff624386dfdeaadce7dd642aab881e423e3ff7091"
+    },
+    {
+      "path": "onboarding/mcp/tests/test_knowledge_paging.py.md",
+      "sha256": "587e9f02576a5f13fce7dfbe327123cede1af48717cebee038ab0a17d67a69d8"
+    },
+    {
+      "path": "onboarding/mcp/tests/test_knowledge_read_scope.py.md",
+      "sha256": "ba398b161b88f4612866ff42d84d5748b1b16bf12a99db1ae6c081d2245d5425"
+    },
+    {
+      "path": "onboarding/mcp/tests/test_knowledge_review_relationship_line.py.md",
+      "sha256": "7bec3db6f3fc2e3b4efdb3117fcefddfa71450059db16d72d9ad1881768c563c"
+    },
+    {
+      "path": "onboarding/mcp/tests/test_knowledge_review_relationship_reach.py.md",
+      "sha256": "6b3a3868fd1b3468d62294a0fdcaf80796dfa84e2c43c517a4f6eef7fd99b36b"
+    },
+    {
+      "path": "onboarding/mcp/tests/test_knowledge_review_revision_selection.py.md",
+      "sha256": "5edff240fcae0d6dab528ef3b4a89262209ddac2a533062176e348106d9c9f68"
+    },
+    {
+      "path": "onboarding/mcp/tests/test_read_ar_files.py.md",
+      "sha256": "db49855c9bc19318cb68dd8178bce21fe6e355f86e37f59c4717d0e8633abb45"
+    },
+    {
+      "path": "onboarding/mcp/tests/test_review_assessment_history.py.md",
+      "sha256": "49bb8908382dfb8fb6bde97d95e931c6012158c01555db8976ddc626e35a978e"
+    },
+    {
+      "path": "onboarding/mcp/tests/test_review_assessment_history_repairs.py.md",
+      "sha256": "ed9ef7a04a8ff512f99a2358ce10f5f3fcc105e836fd1a12328fb4fa1a75f499"
+    },
+    {
+      "path": "onboarding/mcp/tests/test_review_bounded_pagination.py.md",
+      "sha256": "bf8bdc3c326090ac81e9ba92fcefabf6800b55a9ef26bef9a196bff412b54d7a"
+    },
+    {
+      "path": "onboarding/mcp/tests/test_review_family_context.py.md",
+      "sha256": "9ba2880525e585c6672438ec823ddf864ebaf0b3ac5d96c918c27108e1af2862"
+    },
+    {
+      "path": "onboarding/mcp/tests/test_review_family_member_sources.py.md",
+      "sha256": "f7426fb0eabbddb2caecc1a44a4e2f5b6a9a6413101740d93fc94d7889ac40d6"
+    },
+    {
+      "path": "onboarding/mcp/tests/test_review_final_output_receipt.py.md",
+      "sha256": "f5c6eb49fd92196a429907f86a42ca366f466ef6d092218cfe838409b76fb767"
+    },
+    {
+      "path": "onboarding/mcp/tests/test_review_intent_summary.py.md",
+      "sha256": "a5cb409cb9a33744f0e151f1e6ae9f2ef3a73c80a3006b1698763b4a23c7da60"
+    },
+    {
+      "path": "onboarding/mcp/tests/test_review_subject_catalogue.py.md",
+      "sha256": "9df092b9baae649c7158cd1317f314e6b52465531c8a191a848a5c9c75b6d4c8"
+    }
+  ],
+  "noSourceIndexStageTestOrNewInvariant": true
+}

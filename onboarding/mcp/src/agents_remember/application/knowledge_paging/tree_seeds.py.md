@@ -35,8 +35,7 @@ This module decides whether a seed is held and words the `selector_absent` reaso
 
 ### Invariants And Boundaries
 
-- **A database read is not touched.** Only a selection that carries a converted memory tree reaches this module;
-  an unconverted dataset keeps its own answers, including an empty complete view for an unknown seed.
+- **This rule concerns converted trees.** Unheld seeds are refused as `selector_absent`. The former cutover claim that unconverted datasets kept their read answers is historical: mounted knowledge tools now refuse legacy memory and open no canonical database.
 - The module reads the index and writes nothing.
 
 ### Todos
@@ -59,7 +58,9 @@ No configured live documentation source was available for this pass.
 - Why a named seed names no revision the tree holds; a bare held ID is told its seed. [2]
 - The reason for the first seed the tree does not hold. [3]
 - Where current seeds come from, as every refusal says. [4]
-- A converted tree refuses a database-era UUID, a bare ID and an unheld family; a database read with an unknown seed is still a complete view. [5]
+
+- Converted trees refuse unheld seeds; the former database control is replaced by explicit mounted legacy-format refusal. [5]
+
 
 ### Cross-Repo References
 

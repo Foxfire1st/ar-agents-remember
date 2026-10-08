@@ -45,8 +45,11 @@ reuses the existing receipt and reports previously deleted artifacts as already 
   and previously failed artifacts now absent.
 - **Generations go through their own deletion owners.** `_release_one` calls
   `release_comparison_code_object` for the pin and `discard_comparison_snapshots` for the snapshots
-  (`review_comparison_reclamation`), which write the unavailable-history record first, so a later reopen of the
-  archived generation says the history was deleted and why. **A refused release is held (review F3):**
+  (`review_comparison_reclamation`). Code-pin release persists its unavailable-history record before releasing
+  the pin. Snapshot deletion verifies and unlinks the snapshot before persisting its deletion history; a failure
+  or interruption in that window can leave removed snapshot content without that history record. This is a
+  static failure window, not an executed witness. The separate attempt receipt written by `ReceiptLedger.begin`
+  before the cleanup sweep remains a distinct safeguard. **A refused release is held (review F3):**
   `_Report.hold` leaves that generation's ref (the direct pass then skips it) and its directory (the content scan
   then skips it) and lists both under `failures` as "held, not deleted: …".
 - **Exact own-task selection (review F1).** `_own_leaf(task_id)` is the full match `<task-slug>(-l\d+[a-z]?)?`, so
@@ -148,3 +151,6 @@ No cross-repo boundary is crossed by this file.
 - The first no-op records a receipt; an unchanged repeat with no new work or outcome writes none. [16]
 
 - The previous receipt is preserved under its own attempt number, reusing that path after interruption. [17]
+
+- Code-pin history is persisted before releasing the retained pin. [18]
+- Verified snapshot unlink precedes snapshot history, leaving a static failure window. [19]

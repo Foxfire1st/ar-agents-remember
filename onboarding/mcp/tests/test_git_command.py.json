@@ -1,5 +1,92 @@
 {
   "path": "mcp/tests/test_git_command.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "e51073001505f29c70ea36dfad6be4d0e4943b08",
+        "content": "sha256:6155a9c2851d4e18bb4eae72c95b21bba4a5872e5c6f5a0e57ffa38e7f6679bc",
+        "locator": {
+          "kind": "symbol",
+          "name": "PublishTreeCommitGuardTests.test_no_commit_hook_runs_and_a_refusing_ref_transaction_hook_is_reported"
+        }
+      },
+      "facet": "A refused ref transaction is reported with Git's own text.",
+      "id": "PRF-9C37W5",
+      "invariant": "INV-0T84PZ",
+      "origin": {
+        "handoffEntry": "R3 note 11d",
+        "leaf": "260928-MIK-L26"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "e51073001505f29c70ea36dfad6be4d0e4943b08",
+        "content": "sha256:4a48a27af0bdba4a500091b9863d89a1faf0c712320a8b09083597f8cffc73ec",
+        "locator": {
+          "kind": "symbol",
+          "name": "PublishTreeCommitGuardTests.test_an_empty_message_and_an_unfinished_action_publish_nothing"
+        }
+      },
+      "facet": "An unfinished action or empty message publishes nothing.",
+      "id": "PRF-AEK9MF",
+      "invariant": "INV-ANKPPE",
+      "origin": {
+        "handoffEntry": "R3 note 11a",
+        "leaf": "260928-MIK-L26"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "e51073001505f29c70ea36dfad6be4d0e4943b08",
+        "content": "sha256:69dc7199f5dffa790503cd032a4e556feac4af2c790f51a015a8ac30616645a1",
+        "locator": {
+          "kind": "symbol",
+          "name": "PublishTreeCommitGuardTests.test_the_index_keeps_what_no_tree_records_after_a_publication_and_a_refusal"
+        }
+      },
+      "facet": "Index flags, intent-to-add and sparse entries survive publication and refusal.",
+      "id": "PRF-HWV9V8",
+      "invariant": "INV-89A5AN",
+      "origin": {
+        "handoffEntry": "R3 note 11e",
+        "leaf": "260928-MIK-L26"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "e51073001505f29c70ea36dfad6be4d0e4943b08",
+        "content": "sha256:ba45f8ede8e79d36317604c3ba963101d5bd833d5a666a4dab6125ae28974187",
+        "locator": {
+          "kind": "symbol",
+          "name": "PublishTreeCommitGuardTests.test_only_a_lock_that_would_block_is_waited_for"
+        }
+      },
+      "facet": "Only a lock error that would block is waited for.",
+      "id": "PRF-NMGMZ2",
+      "invariant": "INV-0XMNQZ",
+      "origin": {
+        "handoffEntry": "R3 note 11g",
+        "leaf": "260928-MIK-L26"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "e51073001505f29c70ea36dfad6be4d0e4943b08",
+        "content": "sha256:0779a5beaa81098116849360a94776eaf12bf48a3e474b98df5ba22bc35f0a67",
+        "locator": {
+          "kind": "symbol",
+          "name": "PublishTreeCommitGuardTests.test_the_message_is_what_git_commit_m_stores_and_a_refusal_where_it_aborts"
+        }
+      },
+      "facet": "The stored message equals what git commit -m stores, and an aborted message is refused.",
+      "id": "PRF-T8AVGK",
+      "invariant": "INV-G0Y4VR",
+      "origin": {
+        "handoffEntry": "R3 notes 11b and 11c",
+        "leaf": "260928-MIK-L26"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "10": {

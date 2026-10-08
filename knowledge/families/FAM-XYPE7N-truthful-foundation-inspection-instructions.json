@@ -1,0 +1,29 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "The examples must lead to supported reads and the state explanation must let the same instructed session interpret what it read. Either alone can misroute or misdescribe the foundation. This is a joint instructional contract, separate from write admission and storage location."
+  },
+  "guarantee": "For a converted foundation, bootstrap instructions name the supported family, invariant and source_context views and distinguish complete-empty, complete-authored and partial knowledge from admission or legacy refusals. An instruction to inspect knowledge does not establish authoring, publication or repository acceptance.",
+  "id": "FAM-XYPE7N",
+  "members": [
+    "INV-1BBPF3",
+    "INV-K69R3M"
+  ],
+  "origin": {
+    "handoff": {
+      "path": "K05-family.handoff.json"
+    },
+    "handoffEntry": "fix3-foundation-inspection",
+    "leaf": "260928-MIK-L26",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "routes": [
+    "skills/c-14-knowledge-bootstrap"
+  ],
+  "schema": "ar-family/v1",
+  "status": "proposed",
+  "title": "Truthful foundation inspection instructions"
+}

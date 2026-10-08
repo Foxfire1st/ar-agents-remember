@@ -1,0 +1,214 @@
+{
+  "state": "refused-not-written",
+  "refusal": [
+    {
+      "message": "-: Value error, disposition 'changed' is not allowed on a onboarding_trace row; allowed: ['no_impact']",
+      "where": "history[1]"
+    },
+    {
+      "message": "-: Value error, disposition 'changed' is not allowed on a onboarding_trace row; allowed: ['no_impact']",
+      "where": "history[2]"
+    },
+    {
+      "message": "-: Value error, disposition 'changed' is not allowed on a onboarding_trace row; allowed: ['no_impact']",
+      "where": "history[3]"
+    },
+    {
+      "message": "-: Value error, disposition 'changed' is not allowed on a onboarding_trace row; allowed: ['no_impact']",
+      "where": "history[4]"
+    },
+    {
+      "message": "-: Value error, disposition 'changed' is not allowed on a onboarding_trace row; allowed: ['no_impact']",
+      "where": "history[5]"
+    },
+    {
+      "message": "-: Value error, disposition 'changed' is not allowed on a onboarding_trace row; allowed: ['no_impact']",
+      "where": "history[6]"
+    },
+    {
+      "message": "-: Value error, disposition 'changed' is not allowed on a onboarding_trace row; allowed: ['no_impact']",
+      "where": "history[7]"
+    },
+    {
+      "message": "-: Value error, disposition 'changed' is not allowed on a onboarding_trace row; allowed: ['no_impact']",
+      "where": "history[8]"
+    },
+    {
+      "message": "-: Value error, disposition 'changed' is not allowed on a onboarding_trace row; allowed: ['no_impact']",
+      "where": "history[9]"
+    },
+    {
+      "message": "-: Value error, disposition 'changed' is not allowed on a onboarding_trace row; allowed: ['no_impact']",
+      "where": "history[10]"
+    },
+    {
+      "message": "-: Value error, disposition 'changed' is not allowed on a onboarding_trace row; allowed: ['no_impact']",
+      "where": "history[11]"
+    },
+    {
+      "message": "-: Value error, disposition 'changed' is not allowed on a onboarding_trace row; allowed: ['no_impact']",
+      "where": "history[12]"
+    },
+    {
+      "message": "-: Value error, disposition 'changed' is not allowed on a onboarding_trace row; allowed: ['no_impact']",
+      "where": "history[13]"
+    },
+    {
+      "message": "-: Value error, disposition 'changed' is not allowed on a onboarding_trace row; allowed: ['no_impact']",
+      "where": "history[14]"
+    },
+    {
+      "message": "-: Value error, disposition 'changed' is not allowed on a onboarding_trace row; allowed: ['no_impact']",
+      "where": "history[15]"
+    },
+    {
+      "message": "-: Value error, disposition 'changed' is not allowed on a onboarding_trace row; allowed: ['no_impact']",
+      "where": "history[16]"
+    },
+    {
+      "message": "-: Value error, disposition 'changed' is not allowed on a onboarding_trace row; allowed: ['no_impact']",
+      "where": "history[17]"
+    },
+    {
+      "message": "-: Value error, disposition 'changed' is not allowed on a onboarding_trace row; allowed: ['no_impact']",
+      "where": "history[18]"
+    },
+    {
+      "message": "-: Value error, disposition 'changed' is not allowed on a onboarding_trace row; allowed: ['no_impact']",
+      "where": "history[19]"
+    },
+    {
+      "message": "-: Value error, disposition 'changed' is not allowed on a onboarding_trace row; allowed: ['no_impact']",
+      "where": "history[20]"
+    },
+    {
+      "message": "-: Value error, disposition 'changed' is not allowed on a onboarding_trace row; allowed: ['no_impact']",
+      "where": "history[21]"
+    },
+    {
+      "message": "-: Value error, disposition 'changed' is not allowed on a onboarding_trace row; allowed: ['no_impact']",
+      "where": "history[22]"
+    },
+    {
+      "message": "-: Value error, disposition 'changed' is not allowed on a onboarding_trace row; allowed: ['no_impact']",
+      "where": "history[23]"
+    },
+    {
+      "message": "-: Value error, disposition 'changed' is not allowed on a onboarding_trace row; allowed: ['no_impact']",
+      "where": "history[24]"
+    },
+    {
+      "message": "-: Value error, disposition 'changed' is not allowed on a onboarding_trace row; allowed: ['no_impact']",
+      "where": "history[25]"
+    },
+    {
+      "message": "-: Value error, disposition 'changed' is not allowed on a onboarding_trace row; allowed: ['no_impact']",
+      "where": "history[26]"
+    },
+    {
+      "message": "-: Value error, disposition 'changed' is not allowed on a onboarding_trace row; allowed: ['no_impact']",
+      "where": "history[27]"
+    },
+    {
+      "message": "-: Value error, disposition 'changed' is not allowed on a onboarding_trace row; allowed: ['no_impact']",
+      "where": "history[28]"
+    },
+    {
+      "message": "-: Value error, disposition 'changed' is not allowed on a onboarding_trace row; allowed: ['no_impact']",
+      "where": "history[29]"
+    },
+    {
+      "message": "-: Value error, disposition 'changed' is not allowed on a onboarding_trace row; allowed: ['no_impact']",
+      "where": "history[30]"
+    },
+    {
+      "message": "-: Value error, disposition 'changed' is not allowed on a onboarding_trace row; allowed: ['no_impact']",
+      "where": "history[31]"
+    },
+    {
+      "message": "-: Value error, disposition 'changed' is not allowed on a onboarding_trace row; allowed: ['no_impact']",
+      "where": "history[32]"
+    },
+    {
+      "message": "-: Value error, disposition 'changed' is not allowed on a onboarding_trace row; allowed: ['no_impact']",
+      "where": "history[33]"
+    },
+    {
+      "message": "-: Value error, disposition 'changed' is not allowed on a onboarding_trace row; allowed: ['no_impact']",
+      "where": "history[34]"
+    },
+    {
+      "message": "-: Value error, disposition 'changed' is not allowed on a onboarding_trace row; allowed: ['no_impact']",
+      "where": "history[35]"
+    },
+    {
+      "message": "-: Value error, disposition 'changed' is not allowed on a onboarding_trace row; allowed: ['no_impact']",
+      "where": "history[36]"
+    },
+    {
+      "message": "-: Value error, disposition 'changed' is not allowed on a onboarding_trace row; allowed: ['no_impact']",
+      "where": "history[37]"
+    },
+    {
+      "message": "-: Value error, disposition 'changed' is not allowed on a onboarding_trace row; allowed: ['no_impact']",
+      "where": "history[38]"
+    },
+    {
+      "message": "-: Value error, disposition 'changed' is not allowed on a onboarding_trace row; allowed: ['no_impact']",
+      "where": "history[39]"
+    },
+    {
+      "message": "-: Value error, disposition 'changed' is not allowed on a onboarding_trace row; allowed: ['no_impact']",
+      "where": "history[40]"
+    },
+    {
+      "message": "-: Value error, disposition 'changed' is not allowed on a onboarding_trace row; allowed: ['no_impact']",
+      "where": "history[41]"
+    },
+    {
+      "message": "-: Value error, disposition 'changed' is not allowed on a onboarding_trace row; allowed: ['no_impact']",
+      "where": "history[42]"
+    },
+    {
+      "message": "-: Value error, disposition 'changed' is not allowed on a onboarding_trace row; allowed: ['no_impact']",
+      "where": "history[43]"
+    },
+    {
+      "message": "-: Value error, disposition 'changed' is not allowed on a onboarding_trace row; allowed: ['no_impact']",
+      "where": "history[44]"
+    },
+    {
+      "message": "-: Value error, disposition 'changed' is not allowed on a onboarding_trace row; allowed: ['no_impact']",
+      "where": "history[45]"
+    },
+    {
+      "message": "-: Value error, disposition 'changed' is not allowed on a onboarding_trace row; allowed: ['no_impact']",
+      "where": "history[46]"
+    },
+    {
+      "message": "-: Value error, disposition 'changed' is not allowed on a onboarding_trace row; allowed: ['no_impact']",
+      "where": "history[47]"
+    },
+    {
+      "message": "-: Value error, disposition 'changed' is not allowed on a onboarding_trace row; allowed: ['no_impact']",
+      "where": "history[48]"
+    },
+    {
+      "message": "-: Value error, disposition 'changed' is not allowed on a onboarding_trace row; allowed: ['no_impact']",
+      "where": "history[49]"
+    },
+    {
+      "message": "-: Value error, disposition 'changed' is not allowed on a onboarding_trace row; allowed: ['no_impact']",
+      "where": "history[50]"
+    },
+    {
+      "message": "-: Value error, disposition 'changed' is not allowed on a onboarding_trace row; allowed: ['no_impact']",
+      "where": "history[51]"
+    },
+    {
+      "message": "-: Value error, disposition 'changed' is not allowed on a onboarding_trace row; allowed: ['no_impact']",
+      "where": "history[52]"
+    }
+  ],
+  "disposition": "The onboarding_trace route admits only no_impact. These 52 cards changed, so no no_impact rows are written. The changed cards themselves answer onboarding items; record/family/proof judgments use their existing admitted history kinds. The complete current worklist will be read only after the supported sync; any remaining history requirement stays explicit."
+}

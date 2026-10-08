@@ -32,8 +32,9 @@ memory tree that holds `knowledge/layout.json`.
   does not hold them. [`services.py`](services.py.md) carries those commits as `LeafPublication.frozen` and
   `LandingGateRequest.frozen`, and [`knowledge_validation.py`](knowledge_validation.py.md) passes them to the
   validator.
-- **The stage copies of a knowledge conflict.** [`knowledge_conflict.py`](knowledge_conflict.py.md) materialises a
-  settlement's three index stages in a temporary directory that is removed on every way out.
+- **The stage copies of a retired dataset conflict (historical).** The canonical knowledge-dataset conflict
+  settlement (`knowledge_conflict.py`) was removed with the database (MIK-R26 rule 2); every managed sync now
+  merges knowledge files through the structural merge, and no stage copies are materialised.
 - **Cancel after a memory conflict.** [`sync_transaction_git.py`](sync_transaction_git.py.md)'s `rollback_side`
   restores a tracked `memory.md` before `git merge --abort`, so a conflicted memory sync can be cancelled on a line
   that still tracks the cache.
@@ -51,40 +52,9 @@ layer and in the application, memory and command-line layers, and proved by `mcp
 - The memory trees of a commit that publishes a leaf. [71]
 
 
-## Route Impact: Explicit Code-Object Retention (260921-ICR-L11)
+## Historical code-object pins
 
-This route's `modules/` gained **one member** this leaf: `modules/code_object_retention.py`, the explicit
-Git-object retention a durable comparison generation needs because the candidate tree it binds exists in
-**no commit**. The route-level facts a reader should carry are the ones that constrain the ref namespace
-and the custody question:
-
-- **`refs/ar/retained-code/` is a namespace of its own, not a branch.** Nothing fetches, pushes, merges,
-  rebases or deletes it, which is precisely why `worktree remove`, `branch -D`, `worktree prune` and
-  `gc --prune=now` leave a pin where it is — the module's own docstring states that property as the
-  reason the namespace exists rather than as an observation.
-- **One ref keeps both bound objects alive**, because the retention commit's parent is the **recorded base
-  commit** rather than `HEAD`; and its commit id is a function of the two objects it keeps (identity and
-  timestamps supplied, dated by the base commit), so re-creating a released pin reproduces the identical
-  object and an exact re-freeze converges.
-- **Custody is measured only over the history the caller names.** The consumer derives those names from
-  the enclosure contract — the leaf's protected source branch plus the commits the task record landed —
-  and the leaf's own disposable work branch is deliberately absent. A tree that no named history holds is
-  `retained`, which keeps the pin: the safe direction to be wrong in, and the reason a custody
-  measurement never releases anything by itself.
-- **Release is explicit and refuses to delete what it did not bind.** A ref that no longer points at the
-  recorded commit is refused, an already-absent ref converges, and the value returned carries the custody
-  measured *before* deletion — the value a caller stores as the unavailable-history record.
-
-**Open boundary, recorded rather than assumed safe.** Whether a landed integration or closeout operation
-objects to the new ref namespace was not measured by this leaf, which cannot run those transactions.
-
-- **The retention owner this route gained: one commit, one ref, the recorded base as parent.** [1]
-- **Custody measured over named history, and the three-way observation that a record never stores.** [2]
-- The commit identity that makes a re-created pin identical. [3]
-- The explicit release, and the record it returns. [4]
-- The contract-derived custody names the create-side consumer measures against. [5]
-- The per-file detail for the new member: the module's own statement of the three properties — one commit and one ref, measured custody over named history only, explicit release with a record — and of what it does not decide. [6]
-- The per-file detail for the new member. [7]
+The retention module measures custody and releases refs earlier freezes created; no new retention commit is created. Release requires its recorded commit, and custody counts named durable history. Current comparisons retain code and memory Git endpoints through their own owner. [1] [6]
 
 ## What This Area Is
 
@@ -248,7 +218,6 @@ memory-carryover vehicle.
 | `sync_transaction_git.py` | Git proof | retains conflicts and proves exact operation-created history; validates a staged memory merge before committing it; routes a crossing sync's knowledge paths through the crossing plan | covered |
 | `knowledge_validation.py` | knowledge-validator gate (MIK-R22) | probes the layout marker and, for converted memory, calls the validator through `KnowledgeValidationPort`; refuses when the validator or the paired code commit is missing | covered |
 | `knowledge_crossing.py` | crossing sync and unconverted-line refusal (MIK-R24) | plans a crossing sync's structural merge through `KnowledgeCrossingPort` before Git runs, applies it with conflicted paths unmerged, writes the crossing report, closes a master line's crossing history file; refuses an unconverted leaf tree once its official line is converted | covered |
-| `knowledge_conflict.py` | knowledge-conflict settlement (Git half) | settles a binary knowledge dataset through the merge adapter so the agent keeps only what the adapter will not decide | covered |
 | `sync_transaction_recovery.py` | finalization/recovery | terminal publication, rollback, and malformed/missing journal escape | covered |
 | `sync_transaction_results.py` | public evidence | consistent previews, conflict guidance, and terminal replay | covered |
 
@@ -358,7 +327,6 @@ No Domain Documentation source is configured for this memory root.
 | --- | --- | --- | --- |
 | `modules/pause.py` | [`modules/pause.py.md`](modules/pause.py.md) | covered | the stop-only pause: release one selection, publish nothing |
 | `cutover_lock.py` | [`cutover_lock.py.md`](cutover_lock.py.md) | covered | the cutover lock: unconverted memory is only read once the repository holds converted memory |
-| `knowledge_conflict.py` | [`knowledge_conflict.py.md`](knowledge_conflict.py.md) | covered | Git half of the knowledge-dataset conflict settlement |
 | `knowledge_crossing.py` | [`knowledge_crossing.py.md`](knowledge_crossing.py.md) | covered | the crossing sync in the managed sync, and the MIK-R24 rule 9 refusal |
 | `knowledge_validation.py` | [`knowledge_validation.py.md`](knowledge_validation.py.md) | covered | memory commit routes' gate to the MIK-R22 knowledge validator |
 | `sync_source_refresh.py` | [`sync_source_refresh.py.md`](sync_source_refresh.py.md) | covered | shared pre-lock fetch evidence |
@@ -857,104 +825,13 @@ or `worktree_sync(..., resolution_action='cancel', dry_run=false)`), keeping the
 message last. Before this the only thing said about that state was the refused pass's branch
 complaint, which named neither the stuck contract nor what it was doing.
 
-## Route Impact: The Sync Settles A Knowledge-Dataset Conflict (260915-KS-L31)
+## Managed knowledge-file merges
 
-The sync's retained-conflict flow gained one step, and the step is what makes the knowledge merge adapter a
-driver rather than a callable seam. A knowledge database is **binary to Git**: an ordinary merge can only
-declare the whole file conflicted, and no amount of staging resolves it. Before this change the transaction
-handed that file to the agent as `sync-resolution-required` with `resolutionOwner: agent`, and the union was
-obtainable only by calling `resolve_knowledge_merge_base` and `merge_resolved_knowledge_datasets` by hand —
-not a composition seam an agent should have to discover.
+Canonical binary-stage settlement is retired. Any converted side gets the structural knowledge/onboarding plan before Git runs. All-converted trees merge directly; crossings convert legacy inputs first. Remaining conflicts are actual items for worktree repair, staging and continuation. [27]
 
-`_continue_memory_merge` now calls `settle_knowledge_conflicts(Path(side.worktree), conflicts,
-side.preSyncHead, side.sourceCommit)` before it returns that state, and the left/right pair it passes is
-exactly the pair the adapter's request names: `ours` is the work branch tip the merge started from and
-`theirs` is the source commit being merged in. Only the paths the settlement could not decide come back as
-`resolution-required`, so the routing **narrows the agent's work rather than hiding any of it**.
+## Series reopen ownership
 
-The new module `knowledge_conflict.py` is the Git half and owns three facts:
-
-- **Binary safety.** The three datasets are Git *index stages*, and `kernel.git_command.run_git` returns
-  text, so reading a stage with `git show :1:<path>` would decode a SQLite file through a text layer and
-  corrupt it before the adapter ever saw it — surfacing as a row-count mismatch rather than as corruption.
-  The stages are materialised with `git checkout-index --stage=<n> --prefix`, where Git writes the bytes
-  itself, one prefix directory per stage.
-- **Refusal preserved.** A path the adapter will not decide — a schema disagreement above all — stays
-  conflicted, and `settle_knowledge_conflicts` returns it to the caller, which is the tuple the transaction
-  reports.
-- **No compatibility verdict.** A structurally merged dataset says the union is valid, never that the
-  combined knowledge is correct; nothing here may treat it as approval.
-
-The layer contract is what splits the work across two modules rather than one, and the split is enforced
-rather than documented: a module under `worktrees/` may not import `agents_remember.memory` at all, so the
-dataset half — reading identities, proving the common base, publishing the union — lives in
-`application/knowledge_merge.py` as `merge_conflicted_stages`, and this module hands it three paths and
-receives one boolean. `SyncGitProofError` still owns every unproven Git transition, and the routing
-introduces no new authority, no commit of its own, and no ledger row.
-
-- The routing: knowledge conflicts settle in the transaction, what it will not decide is what the agent still gets, and the engine's reason travels out with it. [23]
-- Binary-safe stage materialisation and the unique-common-base proof that refuses rather than guessing. [24]
-- The dataset half this route may not host, and the commits the adapter's base claim needs together. [25]
-- The layer rule that forces the split, enforced over the tree rather than asserted. [26]
-- The integration case that drives a real divergent dataset through `sync()` and asserts the sync completes with both sides intact. [27]
-
-## Route Impact: A Series At A Collected Address Is Re-Addressed, Not Refused (260915-KS-L34)
-
-This route's `reopen.py` is the owner of `task_reopen`, and it grew a second arrival at the series
-publication. The route-level fact a reader needs is **what decides a series reopen's ref rule**, because
-the answer is not the cell the reader would look at first.
-
-A completed series reaches terminal cleanup: its enclosure generation is collected after terminal
-archive proof, its locator reads `terminal-archived`, and its enclosure root is gone. Reopening such a
-series in place is now one journaled transition — contract tombstone, integration refs, master document,
-successor enclosure generation. But a series can also arrive at that transition **already live**: reopened
-by hand before the transition existed (the state D-49's own comment describes), or by a reopen whose
-successor publication was interrupted and then forgotten. That state is `cleanup: pending`, every
-progress cell virgin, both integration branches carrying the series' *own* landed work, and a locator
-that is still `terminal-archived`. The old gates refused it on all three counts, and every operation on
-the series refused with it (`terminal-archive-contract-mismatch`,
-`operation-location-terminal-archived`), so the line could not be integrated by any route.
-
-Three facts now decide instead of two, and each one replaces a cell that could not answer:
-
-- **In flight, not `cleanup`.** `_series_in_flight` reads `closeout_status` and `integration_status`.
-  `cleanup` is deliberately **not** the question: the reopen rewrites that cell as its own first durable
-  step, so keying the ref rule on it would make the rule's answer depend on whether the reset had already
-  been written — which is exactly the difference between a first attempt and its resume.
-- **An advanced branch may be the series' own work, not a moved ref.** `_series_ref_recut` takes
-  `in_flight` and accepts an integration branch that is **strictly ahead of its source on the same line**
-  (the recorded source tip is an ancestor) as action `advance`: that branch is the line the series is
-  landing on, there is nothing to re-cut, and it is never moved. A *completed* series, or a diverged or
-  lagging branch, keeps exactly the refusal it had.
-- **The locator separates "collected" from "mid-transition".** `_series_is_live_unaddressed` accepts the
-  live-unaddressed state only when the generation at the contract's own address is `terminal-archived`
-  **and** closeout and integration are both untouched, then publishes the successor generation alone —
-  structured `mode: publish`, no reset and no ref move. The same predicate is what lets an interrupted
-  reset be resumed rather than stranded: with the tombstone already durable and the locator still
-  collected, the same call finishes the publication.
-
-The review-counter half is the part that is easy to miss and expensive to get wrong. A reopened master
-begins a **new review cycle**, so its counter must be zero: the rounds that ran belong to the completion
-being reopened. `_review_state_carries_history` reports whether the counter carries anything at all
-(round, pending, sealed baseline, residual, developer approval, additional rounds), and
-`_plan_series_document_reset` writes a pristine `ReviewState()` when it does. Without it a master reopened
-at round 3 keeps the counter, its next round reads as the fourth, and at the cap an ordinary first round
-reads as one the developer had to authorize. The reset no longer returns early on a document that has
-already left `Completed`, and a document whose counter is absent or all-zero is left untouched.
-
-What this route therefore guarantees to every caller: **the reopen never moves an existing ref** — it
-re-cuts an absent one, reports an advanced one as the series' own work, and refuses divergence — and a
-successor generation always cites the exact archived predecessor. The series' own `cleanup` stays
-`pending`, because `reopened` is itself a terminal series state and would leave the series unable to own
-the lane.
-
-- In flight is read from the progress cells a completion writes, never from `cleanup`. [28]
-- A live series is unaddressed only when its own address is terminal-archived and both progress cells are untouched. [29]
-- An advanced branch on an in-flight series is its own landed work: reported `advance`, never moved. [30]
-- The reset clears a review counter that carries history, and leaves an all-zero one alone. [31]
-- `reset` or `publish` is decided by the arrival, and the applied payload states which one ran. [32]
-- The gathered case that drives all three arrivals at the publication, and the spent counter's clearance. [33]
-- The already-live arrival re-addressed: successor cites the archived predecessor, branch unmoved, counter cleared from `round: 3`. [34]
+reopen.py owns the public/leaf entry; reopen_series.py owns the atomic-series half. Its preflight distinguishes in-flight work, collected terminal address and interrupted reset. Exact ref planning retains attributable same-line advance and refuses unproved moved branches. Master reset clears prior completion review state while absent/zero state stays untouched. Arrival determines reset versus successor publication and the operation reports which happened. [28] [29] [30] [31] [32]
 
 ## Route Impact: The Series Chain Admits The Reconciled Line A Step Merged With (260915-KS-L35)
 
@@ -1008,56 +885,17 @@ refusal. A chain admitted under an older validator has not been proved by the cu
 - Both directions of the step rule are pinned by one collected case, because both lanes sit at exactly their budget, and the descending-position counter-case is untouched. [37]
 - The order the spine walk consumes: every leaf is proved landed first, then ordered by the pair predicate, refusing unless exactly one minimum exists. [38]
 
-## Route Impact: The Diagnosis Reaches The Agent, And One Authored Decision Settles It (260915-KS-L40)
+## Historical database conflict diagnosis
 
-The L31 section above records the wiring: a conflicted knowledge dataset settles inside the transaction and only the undecided remainder reaches the agent. **This leaf changes what the agent receives and what it can do about it**, and both halves are public.
+The earlier engine journaled a refused database row and advertised an authored decision. Its engine, knowledge_resolution argument and reconcile action are retired. Current conflicts retain structural report provenance and advertise continue/cancel after actual file repair. [40]
 
-**The refusal stopped being a boolean.** `merge_conflicted_stages` (application) returns `KnowledgeStageSettlement(settled, conflict, refusal, detail)`; `knowledge_conflict.py` returns `RefusedKnowledgeStage` (path + the engine's `MergeConflict` + the typed `KnowledgeRefusal` + this layer's own detail + the decisions that conflict admits); `sync_transaction_git.SideMergeOutcome` carries it out of the merge. The engine's explanation was always produced — it used to be discarded one layer below the public response, which reported `sync-resolution-required` with `files: ["knowledge.sqlite"]` and nothing an agent could reconcile. The facts now travel **verbatim**: nothing on the path re-renders, summarises or re-keys the refused row, because a re-rendered diagnosis is a second implementation of it.
+## Historical row-decision recovery
 
-**The diagnosis is durable, not just returned.** `SyncSideRecord.knowledgeConflict` journals it, so `_active_sync_projection` re-states the exact row on every later call. Without that, a resumed sync would fall back to naming the unresolved file.
+The earlier database merge retained every accepted decision to avoid cycling. That mechanism is retired; the current journal drops its two old knowledge keys on read while preserving the exact transaction phase, refs, conflicts and parked candidate so an in-flight upgrade can resume/cancel. [40] [41]
 
-**There is a supported recovery, and the response advertises it.** The public sync (`worktree_sync`) gained a third flat argument, `knowledge_resolution`, carried with `resolution_action='reconcile'`; the response's `nextOperation`/`nextArgs` switch to `reconcile_knowledge_resolution` with the journaled `table`/`record_id` and the decision left as a placeholder, because choosing the side is the agent's act and not the projection's. The merge's own vocabulary decides which decisions a conflict admits (`expressible_decisions`), so the agent is never offered one the engine would refuse to apply.
+## Retained conflict recovery
 
-**What the engine will and will not settle.** `apply_changeset` applies the caller's decision only where it names exactly the conflict in hand (table **and** rendered key), and lets the application continue to the next conflict — which is refused exactly as before. `keep-right` is reachable only with a named row. The row-less referential conflict admits `keep-left` alone and is settled by retracting a row the **arriving** delta inserted. Two consequences are stated as limits rather than as behaviour: the refusal's other named orientation (*restore the removed row*) is **not** expressible in this change and keeps its refusal, and a referential retraction is not itemised in the `synced` result. A schema disagreement still refuses explicitly and admits no decision at all, which the response says by publishing an empty `decisions` list and keeping the generic continuation.
-
-**The disjoint path is untouched.** `sync(memory_sync_choice="merge-memory")` on a valid disjoint divergence still returns `synced` with exit 0, the union committed and the merge parents equal to the two admitted commits — measured identical before and after the change. The explicit schema-disagreement refusal is retained, and a structurally merged database is still not approval.
-
-## 260915-KS-L43 The Recovery Journals Accepted Decisions, And A Returning Answered Row Is Refused
-
-**This route's impact is the retained-knowledge recovery's progress property, and it has two halves that only work together.**
-The L40 section above records the supported recovery: one authored decision, validated against the journaled diagnosis,
-re-run through the merge. What it did not have was **progress**. A retained merge holding two conflicts alternated between
-the same two rows forever, because each attempt carried only the newest decision and so re-refused the row the previous one
-had already answered; the agent was offered a decision it had already made and that had already had its effect. Measured on
-the same harness and the same public surface: **twelve** applications to the cap with `settled: false` before, **two**
-applications and `state synced` after (`evidence/after-independent/recovery-progress-after.json` against
-`recovery-progress-before.json`; the script drives only `fixture.sync` and the advertised `nextArgs`, so it runs unchanged
-against both trees).
-
-**Half one: accepted decisions persist.** `SyncSideRecord.knowledgeReconciliations` journals every decision this side has
-already accepted, in acceptance order, and `_reconcile_knowledge_resolution` re-enters the merge with **all** of them —
-`accepted = (*side.knowledgeReconciliations, args.knowledge_resolution)` — so each attempt starts from the conflict the
-previous attempt actually reached. Each decision still answers only the row it named, and every conflict no decision names
-is still refused, so this is not a policy. `_finish_retained_merge` clears the field with the conflict it belongs to.
-
-**Half two: a returning answered row gets a bounded refusal.** If a row an already-accepted decision answered comes back
-anyway, the retraction could not hold it — retracting the arriving change re-exposed another arriving change that needs the
-same row — and `_reconcile_progress_refusal` returns `sync-resolution-cycling` naming the exact row and the two honest next
-steps (resolve it in the worktree and continue, or cancel), rather than journaling the same decision a second time. The
-merge guard is untouched: `_independent_insert_refusal` still refuses two independent insertions of one identity, and no
-blanket equal-payload exception was introduced.
-
-- The journaled decisions, and the continuation that clears them with the conflict. [39]
-- The attempt that carries every accepted decision, and the bounded refusal that stops the cycling. [40]
-- The Git half that hands the adapter the whole sequence. [41]
-
-## 260915-KS-L42 The Unsettleable Conflict's Summary Names It And Says What To Do
-
-**This route's impact is the sentence a caller reads when no authored decision can settle a retained knowledge conflict.** In `worktrees/sync_transaction_results.py`, `_unsettled_instruction` splits that summary on the merge's measured retraction precondition: a referential refusal whose `precondition` is `no_arriving_insertion` is the orientation where the arriving side removed a row the retained side still cites, so the response says to restore the removed row or retract the reference in the worktree, stage it and continue — while every other unsettled conflict keeps the shipped "resolve it in the worktree, stage it, then continue". `_resolution_guidance` needed no new branch: an empty decision list already falls through to `continue_sync_resolution` with `nextArgs.resolution_action=continue`, which is the route that actually exists, and `cancelArgs` is still carried beside it.
-
-**The failure this replaces was measured, not argued.** The first response used to promise that the merge continues while advertising a `keep_left` the merge had not observed to work, and driving exactly that advertised call returned the identical response forever. The before/after captures are kept in the leaf's evidence — `notes/reports/2026-09-21-cycle-fix-verification/evidence/cycle02-orientation/summary-driven.json` (before) and `.../cycle02-orientation-fixed/summary-driven-after-fix.json` (after) — and the diagnosis in the two is byte-identical, which is the point: the explanation was preserved and only the false promise was removed.
-
-**Open, not settled — named for the round-3 reviewer.** `cancelArgs` itself returns `sync-operation-refused` / `SyncGitProofError` in **both** orientations, including the INSERTED-row orientation round 2 verified as working; it is not introduced here, it is most likely the fixture's missing canonical enclosure locator chain, and the cancel half of the manual continuation therefore could not be proven to settle in that fixture.
+Source merges and parked reapply advertise supported continuation and cancellation. Structural conflicts name their item report and markers; validation still refuses unresolved markers. Retired database-row retraction offers are not current operations. [41]
 
 ## 260928-MIK-L22 The Memory Commit Routes' Gate To The Knowledge Validator
 
@@ -1104,9 +942,9 @@ the route reaches it only through the new `services.KnowledgeCrossingPort`, boun
   conflicted path unmerged with its converted base, own and incoming versions as stages 1-3. It writes the
   durable crossing report into the worktree group's `reports/` and closes a master line's
   `<task-id>-crossing-<n>.json` in the merge commit. It also holds `unconverted_line_refusal`.
-- [`sync_transaction_git.py`](sync_transaction_git.py.md): `start_side_merge` takes the crossing owner;
-  `_crossing` is inert when all three trees are alike (every sync today); `_apply_crossing_merge` applies
-  the plan; `_finish_staged_memory_merge` closes the crossing history file before the validator runs.
+
+- Structural planning applies to all converted sides, reports conflicts/conversion only. [48]
+
 - [`sync_transaction.py`](sync_transaction.py.md) passes the owner (leaf, or the master line's task) and
   journals the report path. [`sync_transaction_state.py`](sync_transaction_state.py.md) omits an empty
   `crossingReport`, so ordinary journals keep the installed runtime's shape (ruling N2).
@@ -1130,7 +968,7 @@ On the real ONT fork (`48b06d96b` against the scratch-converted sprint line), th
 exactly within the 46 cards both lines changed, and after mechanical resolution the merge validated clean.
 
 - The plan before Git, and its application to the started merge. [47]
-- The crossing branch of the memory merge. [48]
+- Structural planning applies to all converted sides, reports conflicts/conversion only.
 - The port and its request and view. [49]
 - The rule 9 refusal. [50]
 - The durable report and the master-line history file closed at commit. [51]
@@ -1259,10 +1097,39 @@ payload and the direct-landing preview). **Inert until the cutover.**
 
 - Direct landing's gate and closing. [64]
 
+
+- Current custody/release of historical pins; no creation. [1]
+
+
+- Current custody/release of historical pins; no creation. [6]
+
+
+- Converted memory uses structural file plan. [27]
+
+
+- Exact series rule retained in extracted owner. [28]
+
+
+- Exact series rule retained in extracted owner. [29]
+
+
+- Exact series rule retained in extracted owner. [30]
+
+
+- Master review history reset in extracted series owner. [31]
+
+
+- Exact series rule retained in extracted owner. [32]
+
+
+- Continue/cancel inputs and specific old-journal read tolerance. [40]
+
+
+- Supported staged continuation and cancellation guidance. [41]
+
 ## Closed-leaf agent archive (MIK-R76)
 
 `services.py` declares `LeafAgentArchivePort` and the optional `leaf_agent_archive` bundle field, so
 the admitted terminal transactions reach the leaf archive service through the worktree layer's
 existing port boundary. A bundle without the port reports `not-bound`; no fallback owner is
 constructed.
-

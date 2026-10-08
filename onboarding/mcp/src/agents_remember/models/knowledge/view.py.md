@@ -236,22 +236,32 @@ carry exactly one outcome.
 
 - The five view names in the design's own order, derived from the closed literal, and the module docstring stating that the five names are the contract. [1]
 - The published phrase per view that describes what the view selects and, as its comment states, carries no ordering claim. [2]
-- The one declared tiebreak rule, the position record that must name it, and the builder that fills it against the admitted ordering input. [3]
+
+- The position record and its builder require the declared tiebreak and admitted ordering input. [3]
+
 - The read failure raised rather than absorbed, the six refusal codes, and the refusal shape whose holder has no rows and which always names a next action. [4]
 - The nine quantities a bounded response must expose, one field per quantity on the counts record so none can be omitted, and the validator that keeps each one either counted or an explicitly stated absence. [5]
 - The builder that turns each `None` into a stated absence with a per-quantity reason, and the two state helpers it uses. [6]
 - The four inputs a completeness statement is scoped to and the field spelled so it cannot claim project semantics. [7]
 - The opaque continuation bound to one snapshot and one view, its minter, and the check that refuses a token presented against another snapshot while naming both digests. [8]
 - Where a value whose classification cannot be determined lands: reported instead of guessed, with no class, severity or ranking. [9]
-- The recorded subject a row is about, and the refusal of a row set in which one subject appears at two positions. [10]
-- The closure of ordering to the four admitted inputs, refused with the admitted set as its expected value and with no fallback order. [11]
-- The no-consequence statement whose stored claim reference is required exactly when the statement is authored. [12]
-- The four per-view row shapes with their closed fact-kind literals, the member-record-versus-attributed-source locus, the assessment and source-change states and the conditions-omitted flag. [13]
-- The machine-selected work item with no judgment field, the separately attributed curator disposition with no detector field, and the row composing them. [14]
-- The payload validator that ties rows-remaining to the continuation, the continuation to the view and snapshot, the completeness scope to the payload's snapshot, and every ordering rule to the registry. [15]
+
+- The declared subject reference and row-identity validator refuse two positions for one subject. [10]
+
+
+- Ordering admits only the four declared inputs; the request validator refuses other spellings and order_candidates raises its named error rather than choosing a fallback. [11]
+
+
+- The no-consequence value requires a claim reference only for an authored statement. [12]
+
+
+- The four per-view row declarations preserve their distinct fact, change-locus, assessment and conditions fields. [13]
+
+
+- Machine work, curator judgment and their queue composition remain separate models. [14]
+
 - The discriminated union that keeps each payload's concrete row type, the declared page size, and the tuple of the five payload classes. [16]
 - The reader port as a runtime-checkable protocol of five methods — including the membership read a generic kind lookup cannot answer — and the recorded row and registered totals it hands a view. [17]
-- One view request with its bounded limit and admitted ordering input, and the result that must carry a payload or a refusal and never both. [18]
 - The optional source-path seed on the read request, and the shipped `PathSeed` rule the request's own validator uses instead of copying it: a path no stored anchor could carry selects nothing by construction rather than by a lookup that happens to miss. [19]
 - The three optional location fields a realization row carries — the recorded role, path and locator, reported by the invariant and the family view alike — and the one stored locator both decode through. [20]
 

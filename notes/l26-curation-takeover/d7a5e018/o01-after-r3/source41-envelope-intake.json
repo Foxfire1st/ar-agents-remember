@@ -1,0 +1,23 @@
+{
+  "state": "whole-current-Worker-envelope-data-intake",
+  "reportSha256": "74a2b6237a618787af9f967d85f064e62442873547d657b8a235759b6f97fe5b",
+  "envelopeSha256": "4166ab4532ebf749a8a80c5ec92f4bf149d1c2a114a598f5950c8fc2714b06b9",
+  "manifestSha256": "0d0352699137339385d7c1a2dfa14102317faa0d1349319bad12f1dae96ef0a0",
+  "artifactsVerified": 472,
+  "bytesVerified": 742989753,
+  "mismatches": [],
+  "sourcePair": {
+    "code": "4cdd7fbc1fd9f71fe087ca7688681a9f62865569",
+    "memory": "7bb1e982f4c8e93a08edc3494c7a6e936be6f081"
+  },
+  "fullPipelineAuthority": {
+    "ownerPath": "/home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/notes/run3/L26-SOURCE41-PRODUCTION-OWNER-879378fb/owner-input-qualification.json",
+    "sha256": "04401c6a3c09ee04759f3d6b2203d592a8c9be32148e3ddea8f102d84e761383",
+    "scope": "original O01 production only; no semantic verification or runtime certificate"
+  },
+  "noNewSemanticOccasionOrRuntimeQualification": true,
+  "live536CodePathStatesMatch": true,
+  "liveThreeCodeDiffsMatch": true,
+  "originalWorker21EmbeddedVerbatim": true,
+  "noMutableMemoryStabilityClaim": true
+}

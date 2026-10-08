@@ -1,0 +1,26 @@
+[
+  {
+    "helper": "a",
+    "path": "memory-260928-mik-l26/notes/l26-curation-takeover/d7a5e018/o01-a-proposals.json",
+    "sha256": "6dbf5b23f1c33e9a3d001b40203a415720b776b48cdd47526e0331321f01d504",
+    "cards": 31,
+    "legs": 136,
+    "scope": "read-only semantic authoring proposals; main Curator verifies/applies, one writer"
+  },
+  {
+    "helper": "b",
+    "path": "memory-260928-mik-l26/notes/l26-curation-takeover/d7a5e018/o01-b-proposals.json",
+    "sha256": "2d5acd0b061c6ee8ee91cf33f8b86c00f6d9466d3e6faa11be7f11945321ec50",
+    "cards": 30,
+    "legs": 166,
+    "scope": "read-only semantic authoring proposals; main Curator verifies/applies, one writer"
+  },
+  {
+    "helper": "c",
+    "path": "memory-260928-mik-l26/notes/l26-curation-takeover/d7a5e018/o01-c-proposals.json",
+    "sha256": "48f3366adb49805ecdcde426c2f124aef0f47222c767b4da4d66bde73be62b7c",
+    "cards": 30,
+    "legs": 130,
+    "scope": "read-only semantic authoring proposals; main Curator verifies/applies, one writer"
+  }
+]

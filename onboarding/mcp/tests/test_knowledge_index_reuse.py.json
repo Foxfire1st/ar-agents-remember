@@ -2,39 +2,12 @@
   "path": "mcp/tests/test_knowledge_index_reuse.py",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "The parity keys on each side.",
+    "6": {
+      "note": "`test_the_reused_selection_selects_the_same_set_over_the_index_as_over_the_database` supplies the current fixture or assertion described above.",
       "targets": [
         {
           "anchor": {
-            "blob": "6073de92442794ee1e231dbcf012de67c56b9dc0",
-            "content": "sha256:b4ec8725ce6281d3710fed85cb1af28507186c51b90be00e438c364f89421884",
-            "locator": {
-              "kind": "symbol",
-              "name": "_database_key"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "6073de92442794ee1e231dbcf012de67c56b9dc0",
-            "content": "sha256:67cd8b35bf4570d531fe62f9e1122c921e41c010b831ba0a486a5a8c003ed7f2",
-            "locator": {
-              "kind": "symbol",
-              "name": "_index_key"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "2": {
-      "note": "The reused selection selects the same set over the index as over the database.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "6073de92442794ee1e231dbcf012de67c56b9dc0",
+            "blob": "f158a3201f14ff80393fad28555b022b5b22dd25",
             "content": "sha256:13a81b385a5a31070e432f880f31bd8e3d2e6b9d3fb557d76d535cf2d484f89a",
             "locator": {
               "kind": "symbol",
@@ -45,39 +18,12 @@
         }
       ]
     },
-    "3": {
-      "note": "Views and the comparison over index files.",
+    "7": {
+      "note": "`test_the_ordinary_read_selects_a_converted_memory_tree_through_its_index` supplies the current fixture or assertion described above.",
       "targets": [
         {
           "anchor": {
-            "blob": "6073de92442794ee1e231dbcf012de67c56b9dc0",
-            "content": "sha256:1d8ff8ce6a136e165249819c16e9f548229d468398e4f49eb1eba4ae1b7209ce",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_the_views_read_the_index_as_their_dataset"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "6073de92442794ee1e231dbcf012de67c56b9dc0",
-            "content": "sha256:a2c99c3483650910e01537acdaa01cd649575e62d8e8ce478b9f1760a593d460",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_comparison_reads_two_trees_through_their_indexes"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "4": {
-      "note": "The published-memory selection: converted, partial and unconverted.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "6073de92442794ee1e231dbcf012de67c56b9dc0",
+            "blob": "f158a3201f14ff80393fad28555b022b5b22dd25",
             "content": "sha256:ec5dac064418a3fe1bf3cbfa122f81acd4fdd98ac760d0ad7e1fb79de4e650b2",
             "locator": {
               "kind": "symbol",
@@ -85,10 +31,15 @@
             }
           },
           "kind": "test"
-        },
+        }
+      ]
+    },
+    "8": {
+      "note": "`test_a_partial_tree_selection_says_it_is_partial` supplies the current fixture or assertion described above.",
+      "targets": [
         {
           "anchor": {
-            "blob": "6073de92442794ee1e231dbcf012de67c56b9dc0",
+            "blob": "f158a3201f14ff80393fad28555b022b5b22dd25",
             "content": "sha256:4a62b078d7d4049a61e166acf608a71525f63520e3c3420c205cb436ef6587f3",
             "locator": {
               "kind": "symbol",
@@ -96,33 +47,20 @@
             }
           },
           "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "6073de92442794ee1e231dbcf012de67c56b9dc0",
-            "content": "sha256:1583bb43ac79ad4bf1e0f69ee568e4140d3be0a0431822e72c6d25c828546ba9",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_an_unconverted_memory_root_keeps_the_database_selection"
-            }
-          },
-          "kind": "test"
         }
       ]
     },
-    "5": {
-      "note": "The lane row.\n\nAnchor: \"mcp/tests/test_knowledge_index_reuse.py\"",
+    "9": {
+      "note": "`test_an_unconverted_memory_root_refuses_the_retired_database_selection` supplies the current fixture or assertion described above.",
       "targets": [
         {
           "anchor": {
-            "blob": "ad32196677d5800992fe4294b439f3e28af150ec",
-            "content": "sha256:7ed6d2ea1379d55b9a055c3301c21735631cf3baf1f8d8f8533ab8e8043731c2",
+            "blob": "f158a3201f14ff80393fad28555b022b5b22dd25",
+            "content": "sha256:455cfb2088d34d872658261dfddba9e8e266bf30d43bb40d532e8b5a4fae450f",
             "locator": {
-              "end": 135,
-              "kind": "line_range",
-              "start": 135
-            },
-            "path": "mcp/tests/test-evidence-lanes.toml"
+              "kind": "symbol",
+              "name": "test_an_unconverted_memory_root_refuses_the_retired_database_selection"
+            }
           },
           "kind": "test"
         }

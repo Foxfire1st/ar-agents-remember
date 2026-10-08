@@ -73,34 +73,34 @@
       ]
     },
     "11": {
-      "note": "A changed record is governed by its changed row in every attempt.",
+      "note": "Leaf-owned changed records retain their changed governing row across attempts.",
       "targets": [
         {
           "anchor": {
-            "blob": "fc1eb060cfce0e2d96b18883ee6bd172f05166e1",
+            "blob": "3e5fee6e11a1a75881f6b906e164fc998ab050c8",
             "content": "sha256:043f5668cb5ae5a0b3ce51c90b551f588de79b91fe1fc7d9aaeb7433b446f570",
             "locator": {
               "kind": "symbol",
               "name": "test_a_changed_record_is_governed_by_its_changed_row_in_every_attempt"
             },
-            "path": "mcp/tests/test_knowledge_reopen.py"
+            "path": "mcp/tests/test_knowledge_reopen_governing_rows.py"
           },
           "kind": "test"
         }
       ]
     },
     "12": {
-      "note": "A family whose guarantee the leaf changed is governed by its changed row.",
+      "note": "A family guarantee changed by the leaf remains governed by that changed row.",
       "targets": [
         {
           "anchor": {
-            "blob": "fc1eb060cfce0e2d96b18883ee6bd172f05166e1",
+            "blob": "3e5fee6e11a1a75881f6b906e164fc998ab050c8",
             "content": "sha256:30d8f2cb537a6cea931c2216c79b7c8c11263b26ea90687b2a4e8c43667e14a7",
             "locator": {
               "kind": "symbol",
               "name": "test_a_family_whose_guarantee_the_leaf_changed_is_governed_by_its_changed_row"
             },
-            "path": "mcp/tests/test_knowledge_reopen.py"
+            "path": "mcp/tests/test_knowledge_reopen_governing_rows.py"
           },
           "kind": "test"
         }

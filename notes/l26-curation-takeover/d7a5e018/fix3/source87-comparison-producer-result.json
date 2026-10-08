@@ -1,0 +1,21 @@
+{
+  "argv": [
+    "/home/firefox/projects/agents-remember/mcp/.venv/bin/python",
+    "-m",
+    "agents_remember.cli",
+    "review-record-comparison",
+    "--config",
+    "/home/firefox/projects/.codex/mcp/agents-remember-settings.json",
+    "--contract",
+    "/home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/enclosures/260928-mik-l26/series-contract.md",
+    "--json"
+  ],
+  "cwd": "/home/firefox/projects/ar-coordination/worktrees/agents-remember/260928-mik-l26-ar/260928-mik-l26",
+  "exitCode": 2,
+  "stdout": "",
+  "stderr": "usage: agents-remember [-h]\n                       {dashboard,memory-citations,memory-backfill,knowledge-ingest,knowledge-bootstrap,knowledge-format,knowledge-convert,knowledge-validate,knowledge-index,knowledge-worklist,knowledge-routes,knowledge-census,knowledge-copies,paseo} ...\nagents-remember: error: argument command: invalid choice: 'review-record-comparison' (choose from 'dashboard', 'memory-citations', 'memory-backfill', 'knowledge-ingest', 'knowledge-bootstrap', 'knowledge-format', 'knowledge-convert', 'knowledge-validate', 'knowledge-index', 'knowledge-worklist', 'knowledge-routes', 'knowledge-census', 'knowledge-copies', 'paseo')\n",
+  "ruler": "leaf fbed375e/715ee46e/change60906382; serving3f682987 stated separately",
+  "state": "unavailable",
+  "generationIdentity": null,
+  "noFallbackInvoked": true
+}

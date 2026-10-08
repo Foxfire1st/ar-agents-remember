@@ -10,7 +10,8 @@
     "The existing `close` operation is registered with `addClassCleanup` before `build()` can fail."
   ],
   "exclusions": [
-    "The world's own build, sweep and close behavior is unchanged."
+    "The world's own build, sweep and close behavior is unchanged.",
+    "The retired database-era realization site; the obligation is recorded on converted memory only."
   ],
   "id": "INV-M9SY9Y",
   "origin": {
@@ -24,7 +25,7 @@
     "leaf": "260928-MIK-L70",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "The sweep fixture uses its existing close operation even when class setup fails.",
   "status": "proposed",

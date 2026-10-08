@@ -60,6 +60,7 @@ The same-size, same-second Git rewrite scenario imports the single `rewrite_in_t
 - The memo's bounds and keys. [15]
 - Three Git questions and the per-file reference answers. [16]
 - Literal file names keep exact patches. [17]
-- A read after an edit shows the new content. [18]
 
 - The shared owner establishes a same-size rewrite in the index-write second. [19]
+
+- A read after an edit shows the new content. [18]

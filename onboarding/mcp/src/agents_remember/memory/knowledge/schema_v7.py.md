@@ -30,14 +30,7 @@ Five appended tables, named once in `APPENDED_TABLES`: `evidence_claim`, the two
 columns, primary keys, typed-JSON columns, DDL, index DDL, triggers and features — and none of those
 groups mentions a generation 1–6 table.
 
-**Append, never rewrite.** There is no `ALTER TABLE` anywhere in this module, and no statement that
-redeclares, reorders, renames, retypes or drops an inherited name. A generation-7 composition is
-generation 6's registry plus these five tables, and the case
-`test_the_observation_generation_appends_and_inherits_by_name` asserts that inheritance **against the
-generation this leaf descends from, by name** — `GENERATION_7.columns[table] ==
-GENERATION_6.columns[table]` for every inherited table and `GENERATION_7.tables[: len(GENERATION_6.tables)] ==
-GENERATION_6.tables` — rather than against a hard-coded table list. A further renumber therefore changes
-two operand names and nothing else.
+Append, never rewrite. No declaration here changes an inherited table. schema_generations._compose appends this evidence/observation block after schema_v6 while preserving inherited column, key and typed-JSON mappings. The complete single derived-index schema is checked against its recorded fingerprint; the former GENERATION_6/GENERATION_7 records and their inheritance assertion are retired.
 
 **The execution vocabulary is closed in the DDL as well as in the vocabulary.** `EXECUTION_RESULT_MEMBERS`
 is the five members `passed`, `failed`, `error`, `skipped` and `not_run`, and `_EXECUTION_RESULT_CHECK`
@@ -66,14 +59,11 @@ seal every revision row, so a second run is a second record rather than an edit.
 
 ### Conventions
 
-A generation module states its own declarations and nothing else; the registry composes it. Column order
-is part of a generation's contract, so a codec that inserts rows derives its statement from the declared
-order instead of restating it.
+An appended-table module states its declarations and nothing else; _compose includes it in the single derived-index schema. Column and key order remain declared data that the encoder consumes rather than reconstructing from DDL.
 
 ### Invariants And Boundaries
 
-- **The declared tables are the writable set's source.** `APPENDED_TABLES` is what the mutable-table union
-  and the schema census read, so a table that is not declared here cannot be written by a command.
+- APPENDED_TABLES declares exactly this module's table block for composition and logical encoding. The former mutable-table union belonged to the retired canonical writer; these declarations grant no write admission.
 - **`EXECUTION_RESULT_MEMBERS` and the vocabulary's `EXECUTION_RESULTS` are one contract.** The DDL cannot
   import the vocabulary, so the tuple is public and a case compares the two lists; widening one without the
   other fails.
@@ -81,9 +71,7 @@ order instead of restating it.
   seal is `record_revision.content_digest` on the envelope's own aggregate; the one digest this generation
   stores is the sha256 of an **external artifact's bytes**, which is an identity of something outside the
   database.
-- **Nothing here migrates.** A dataset whose recorded generation predates these tables is refused by the
-  write path with the observed and required versions as facts; no table is created implicitly and
-  `PRAGMA user_version` does not move.
+- This module neither migrates nor writes rows. The index opener admits the one CURRENT_GENERATION schema and refuses another declared version; no earlier database is implicitly extended or migrated.
 - **The generation this module is composed into is resolved at the registry, not here.** This module never
   names its own number in a table declaration; the version facts live in
   `memory/knowledge/schema_generations.py`, which is where the landing's renumber was applied and where a
@@ -105,11 +93,12 @@ No configured domain documentation could be checked.
 - The closed five-member execution vocabulary the column's own `CHECK` carries, and the public tuple that keeps the DDL and the typed field from drifting. [3]
 - The five tables' DDL and the indexes over the two join tables and the observation's recorded candidate. [4]
 - The no-rewrite and no-delete triggers that make a second run a second record. [5]
-- The generation this one is composed onto, by name, and the composition that names this module as generation 7's append. [6]
-- The schema name generation 7 declares, and the registry whose last entry is now the created generation — generation 8 as of `KS-R13@v1`, so this leaf's own generation stays declared and no longer the tip. [7]
-- The generation the write path requires before any supporting-record row may exist. [8]
-- The case that asserts the append and the inheritance against the generation this leaf descends from, by name. [9]
-- The case that asserts a write against an older generation is refused with both versions as facts. [10]
+
+- The ordered appended declarations compose into the one pinned derived-index schema. [6]
+
+
+- This build creates and reads the single v9 derived-index schema; another declared database version is refused. [7]
+
 
 ### Cross-Repo References
 

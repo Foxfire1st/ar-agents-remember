@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "f691898dcd00ca9d02cd290832852fa2be5c2c42",
+        "blob": "5b2a4ae3f3757a7c03f71c2afdd2082c5bf38392",
         "content": "sha256:0ebf4a5e3e684b912685fc0c90666637f1884a59f1ae8c895d4b53db53e665d1",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,25 @@
     },
     {
       "anchor": {
-        "blob": "f691898dcd00ca9d02cd290832852fa2be5c2c42",
+        "blob": "5b2a4ae3f3757a7c03f71c2afdd2082c5bf38392",
+        "content": "sha256:c7bbb91f8ab877928b918ed5abff23ca3ab64f391f0c1a94b5f90de643a24563",
+        "locator": {
+          "kind": "symbol",
+          "name": "_commit_memory_content"
+        }
+      },
+      "id": "RLZ-4VQ93G",
+      "invariant": "INV-NJT6A9",
+      "origin": {
+        "handoffEntry": "L26-CX-N03 (post-takeover completion)",
+        "leaf": "260928-MIK-L26"
+      },
+      "rationale": "The corrected external docstring.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "5b2a4ae3f3757a7c03f71c2afdd2082c5bf38392",
         "content": "sha256:0ebf4a5e3e684b912685fc0c90666637f1884a59f1ae8c895d4b53db53e665d1",
         "locator": {
           "kind": "symbol",
@@ -39,8 +57,26 @@
     },
     {
       "anchor": {
-        "blob": "f691898dcd00ca9d02cd290832852fa2be5c2c42",
-        "content": "sha256:75c4060c7c4e4f399250356dae222c256bb5aea496cadb60e83e7f4367516072",
+        "blob": "5b2a4ae3f3757a7c03f71c2afdd2082c5bf38392",
+        "content": "sha256:c7bbb91f8ab877928b918ed5abff23ca3ab64f391f0c1a94b5f90de643a24563",
+        "locator": {
+          "kind": "symbol",
+          "name": "_commit_memory_content"
+        }
+      },
+      "id": "RLZ-8QCF0T",
+      "invariant": "INV-KTMBMN",
+      "origin": {
+        "handoffEntry": "R3 finding 2",
+        "leaf": "260928-MIK-L26"
+      },
+      "rationale": "This owner observes the memory tip before capturing the judged tree.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "5b2a4ae3f3757a7c03f71c2afdd2082c5bf38392",
+        "content": "sha256:c7bbb91f8ab877928b918ed5abff23ca3ab64f391f0c1a94b5f90de643a24563",
         "locator": {
           "kind": "symbol",
           "name": "_commit_memory_content"
@@ -57,7 +93,7 @@
     },
     {
       "anchor": {
-        "blob": "f691898dcd00ca9d02cd290832852fa2be5c2c42",
+        "blob": "5b2a4ae3f3757a7c03f71c2afdd2082c5bf38392",
         "content": "sha256:2e6b71f194f95ae3a119d49987ce890f73f507d3bc12bc37744e49d9eef068f6",
         "locator": {
           "kind": "symbol",
@@ -75,7 +111,43 @@
     },
     {
       "anchor": {
-        "blob": "f691898dcd00ca9d02cd290832852fa2be5c2c42",
+        "blob": "5b2a4ae3f3757a7c03f71c2afdd2082c5bf38392",
+        "content": "sha256:c7bbb91f8ab877928b918ed5abff23ca3ab64f391f0c1a94b5f90de643a24563",
+        "locator": {
+          "kind": "symbol",
+          "name": "_commit_memory_content"
+        }
+      },
+      "id": "RLZ-B150AP",
+      "invariant": "INV-765TQN",
+      "origin": {
+        "handoffEntry": "R3 Finding 3",
+        "leaf": "260928-MIK-L26"
+      },
+      "rationale": "The restoring block surrounds preparation, journal intent and publication.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "5b2a4ae3f3757a7c03f71c2afdd2082c5bf38392",
+        "content": "sha256:c7bbb91f8ab877928b918ed5abff23ca3ab64f391f0c1a94b5f90de643a24563",
+        "locator": {
+          "kind": "symbol",
+          "name": "_commit_memory_content"
+        }
+      },
+      "id": "RLZ-DTBEY7",
+      "invariant": "INV-JFGTZT",
+      "origin": {
+        "handoffEntry": "MIK-R26@v1 (documentation correction)",
+        "leaf": "260928-MIK-L26"
+      },
+      "rationale": "The corrected external docstring.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "5b2a4ae3f3757a7c03f71c2afdd2082c5bf38392",
         "content": "sha256:8b005244c058f89a5173a0a1d8c6a01fcba28076d5dd37dc456d66ade779e9e5",
         "locator": {
           "kind": "symbol",
@@ -93,8 +165,8 @@
     },
     {
       "anchor": {
-        "blob": "f691898dcd00ca9d02cd290832852fa2be5c2c42",
-        "content": "sha256:75c4060c7c4e4f399250356dae222c256bb5aea496cadb60e83e7f4367516072",
+        "blob": "5b2a4ae3f3757a7c03f71c2afdd2082c5bf38392",
+        "content": "sha256:c7bbb91f8ab877928b918ed5abff23ca3ab64f391f0c1a94b5f90de643a24563",
         "locator": {
           "kind": "symbol",
           "name": "_commit_memory_content"
@@ -111,8 +183,8 @@
     },
     {
       "anchor": {
-        "blob": "f691898dcd00ca9d02cd290832852fa2be5c2c42",
-        "content": "sha256:641f15ccb51458c4e4607ce8ba4fe383f72a4eca16a990cabc326abdf8322433",
+        "blob": "5b2a4ae3f3757a7c03f71c2afdd2082c5bf38392",
+        "content": "sha256:de0378335937c87f8c461adc352207ef562d860dc1e63f6cbafa60e6f76dcaf4",
         "locator": {
           "kind": "symbol",
           "name": "_require_judged_tree"
@@ -129,7 +201,61 @@
     },
     {
       "anchor": {
-        "blob": "f691898dcd00ca9d02cd290832852fa2be5c2c42",
+        "blob": "5b2a4ae3f3757a7c03f71c2afdd2082c5bf38392",
+        "content": "sha256:c7bbb91f8ab877928b918ed5abff23ca3ab64f391f0c1a94b5f90de643a24563",
+        "locator": {
+          "kind": "symbol",
+          "name": "_commit_memory_content"
+        }
+      },
+      "id": "RLZ-MPKFXQ",
+      "invariant": "INV-FQ2447",
+      "origin": {
+        "handoffEntry": "L26-R1-F04",
+        "leaf": "260928-MIK-L26"
+      },
+      "rationale": "The restoring block covers every failure before publication.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "5b2a4ae3f3757a7c03f71c2afdd2082c5bf38392",
+        "content": "sha256:c7bbb91f8ab877928b918ed5abff23ca3ab64f391f0c1a94b5f90de643a24563",
+        "locator": {
+          "kind": "symbol",
+          "name": "_commit_memory_content"
+        }
+      },
+      "id": "RLZ-PFSP3Y",
+      "invariant": "INV-JZD1F5",
+      "origin": {
+        "handoffEntry": "R4-O2 (post-takeover documentation)",
+        "leaf": "260928-MIK-L26"
+      },
+      "rationale": "The corrected publication-boundary docstring.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "5b2a4ae3f3757a7c03f71c2afdd2082c5bf38392",
+        "content": "sha256:c7bbb91f8ab877928b918ed5abff23ca3ab64f391f0c1a94b5f90de643a24563",
+        "locator": {
+          "kind": "symbol",
+          "name": "_commit_memory_content"
+        }
+      },
+      "id": "RLZ-Q6CJEZ",
+      "invariant": "INV-FYZQK0",
+      "origin": {
+        "handoffEntry": "R4-O2",
+        "leaf": "260928-MIK-L26"
+      },
+      "rationale": "The restoring block's boundary with the ref move.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "5b2a4ae3f3757a7c03f71c2afdd2082c5bf38392",
         "content": "sha256:34f04b6b57aac6604805a6905a669f16b208a605bec1ff24ec7489b710dcf867",
         "locator": {
           "kind": "symbol",
@@ -147,7 +273,25 @@
     },
     {
       "anchor": {
-        "blob": "f691898dcd00ca9d02cd290832852fa2be5c2c42",
+        "blob": "5b2a4ae3f3757a7c03f71c2afdd2082c5bf38392",
+        "content": "sha256:c7bbb91f8ab877928b918ed5abff23ca3ab64f391f0c1a94b5f90de643a24563",
+        "locator": {
+          "kind": "symbol",
+          "name": "_commit_memory_content"
+        }
+      },
+      "id": "RLZ-TQ016P",
+      "invariant": "INV-N5RBFK",
+      "origin": {
+        "handoffEntry": "R3 finding 3",
+        "leaf": "260928-MIK-L26"
+      },
+      "rationale": "The restoring block surrounds preparation, journal intent and publication.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "5b2a4ae3f3757a7c03f71c2afdd2082c5bf38392",
         "content": "sha256:6733de358d09058db7ab9672204df11f721366208bfd9ed54924fe325d71e265",
         "locator": {
           "kind": "symbol",
@@ -165,7 +309,43 @@
     },
     {
       "anchor": {
-        "blob": "f691898dcd00ca9d02cd290832852fa2be5c2c42",
+        "blob": "5b2a4ae3f3757a7c03f71c2afdd2082c5bf38392",
+        "content": "sha256:de0378335937c87f8c461adc352207ef562d860dc1e63f6cbafa60e6f76dcaf4",
+        "locator": {
+          "kind": "symbol",
+          "name": "_require_judged_tree"
+        }
+      },
+      "id": "RLZ-WJY6N2",
+      "invariant": "INV-NJT6A9",
+      "origin": {
+        "handoffEntry": "L26-CX-N03 (post-takeover completion)",
+        "leaf": "260928-MIK-L26"
+      },
+      "rationale": "The corrected judged-tree docstring.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "5b2a4ae3f3757a7c03f71c2afdd2082c5bf38392",
+        "content": "sha256:c7bbb91f8ab877928b918ed5abff23ca3ab64f391f0c1a94b5f90de643a24563",
+        "locator": {
+          "kind": "symbol",
+          "name": "_commit_memory_content"
+        }
+      },
+      "id": "RLZ-ZC5A4Z",
+      "invariant": "INV-RYF7BJ",
+      "origin": {
+        "handoffEntry": "L26-CX-N03",
+        "leaf": "260928-MIK-L26"
+      },
+      "rationale": "The changed docstring is where the provenance spans lived.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "5b2a4ae3f3757a7c03f71c2afdd2082c5bf38392",
         "content": "sha256:8d4fef8bd6c5c58914c6af197676edd4695b894527205834a84265c711ebfc2b",
         "locator": {
           "kind": "symbol",
@@ -183,29 +363,76 @@
     }
   ],
   "references": {
-    "1": {
-      "note": "The converted leaf's history file is closed before the memory commit.\n\nAnchor: \"closing = close_owner_history(contract.memory_worktree, _owner(contract))\"",
+    "23": {
+      "note": "`external_closeout_commits` supplies the exact current transaction boundary above.",
       "targets": [
         {
           "anchor": {
-            "blob": "f691898dcd00ca9d02cd290832852fa2be5c2c42",
-            "content": "sha256:b3da04f908195c30b9a75fac6ffb644efe136034ef15edaa30c9b5bef7ecff9d",
+            "blob": "5b2a4ae3f3757a7c03f71c2afdd2082c5bf38392",
+            "content": "sha256:0ebf4a5e3e684b912685fc0c90666637f1884a59f1ae8c895d4b53db53e665d1",
             "locator": {
-              "end": 99,
-              "kind": "line_range",
-              "start": 88
+              "kind": "symbol",
+              "name": "external_closeout_commits"
             }
           },
           "kind": "code"
         }
       ]
     },
-    "10": {
-      "note": "The validator and the mandatory gate over the leaf's exact memory output.",
+    "24": {
+      "note": "`_commit_memory_content` supplies the exact current transaction boundary above.",
       "targets": [
         {
           "anchor": {
-            "blob": "f691898dcd00ca9d02cd290832852fa2be5c2c42",
+            "blob": "5b2a4ae3f3757a7c03f71c2afdd2082c5bf38392",
+            "content": "sha256:c7bbb91f8ab877928b918ed5abff23ca3ab64f391f0c1a94b5f90de643a24563",
+            "locator": {
+              "kind": "symbol",
+              "name": "_commit_memory_content"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "`_restore_preparations` supplies the exact current transaction boundary above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5b2a4ae3f3757a7c03f71c2afdd2082c5bf38392",
+            "content": "sha256:68a09f3e58948fc67192dbbe53c5f10ddd935558261cf032752aaa6e5641366f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_restore_preparations"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "26": {
+      "note": "`_require_judged_tree` supplies the exact current transaction boundary above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5b2a4ae3f3757a7c03f71c2afdd2082c5bf38392",
+            "content": "sha256:de0378335937c87f8c461adc352207ef562d860dc1e63f6cbafa60e6f76dcaf4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_judged_tree"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "27": {
+      "note": "`_refuse_ungated_memory` supplies the exact current transaction boundary above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5b2a4ae3f3757a7c03f71c2afdd2082c5bf38392",
             "content": "sha256:6733de358d09058db7ab9672204df11f721366208bfd9ed54924fe325d71e265",
             "locator": {
               "kind": "symbol",
@@ -216,60 +443,12 @@
         }
       ]
     },
-    "11": {
-      "note": "The exact tree the memory commit records.",
+    "28": {
+      "note": "`require_gated_recovery` supplies the exact current transaction boundary above.",
       "targets": [
         {
           "anchor": {
-            "blob": "f691898dcd00ca9d02cd290832852fa2be5c2c42",
-            "content": "sha256:8b005244c058f89a5173a0a1d8c6a01fcba28076d5dd37dc456d66ade779e9e5",
-            "locator": {
-              "kind": "symbol",
-              "name": "_exact_memory_tree"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "12": {
-      "note": "The one verdict the preview and the apply's preflight read.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f691898dcd00ca9d02cd290832852fa2be5c2c42",
-            "content": "sha256:34f04b6b57aac6604805a6905a669f16b208a605bec1ff24ec7489b710dcf867",
-            "locator": {
-              "kind": "symbol",
-              "name": "candidate_gate_verdict"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "13": {
-      "note": "The preflight before the approval is claimed or anything is committed.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f691898dcd00ca9d02cd290832852fa2be5c2c42",
-            "content": "sha256:2e6b71f194f95ae3a119d49987ce890f73f507d3bc12bc37744e49d9eef068f6",
-            "locator": {
-              "kind": "symbol",
-              "name": "refuse_ungated_candidate"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "14": {
-      "note": "A recovered closeout is judged like a fresh one.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f691898dcd00ca9d02cd290832852fa2be5c2c42",
+            "blob": "5b2a4ae3f3757a7c03f71c2afdd2082c5bf38392",
             "content": "sha256:8d4fef8bd6c5c58914c6af197676edd4695b894527205834a84265c711ebfc2b",
             "locator": {
               "kind": "symbol",
@@ -280,195 +459,16 @@
         }
       ]
     },
-    "15": {
-      "note": "A commit whose tree is not the judged tree is refused before the memory commit's Git mutation begins.",
+    "29": {
+      "note": "`candidate_gate_verdict` supplies the exact current transaction boundary above.",
       "targets": [
         {
           "anchor": {
-            "blob": "f691898dcd00ca9d02cd290832852fa2be5c2c42",
-            "content": "sha256:641f15ccb51458c4e4607ce8ba4fe383f72a4eca16a990cabc326abdf8322433",
+            "blob": "5b2a4ae3f3757a7c03f71c2afdd2082c5bf38392",
+            "content": "sha256:34f04b6b57aac6604805a6905a669f16b208a605bec1ff24ec7489b710dcf867",
             "locator": {
               "kind": "symbol",
-              "name": "_require_judged_tree"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "16": {
-      "note": "A refused closeout takes back the ignore rule it recorded.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f691898dcd00ca9d02cd290832852fa2be5c2c42",
-            "content": "sha256:b33942a88a862cc968fdfec13615bd9f7691f4560474bb5a20a632a430e2f663",
-            "locator": {
-              "kind": "symbol",
-              "name": "_restore_ignore_file"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "17": {
-      "note": "The public closeout refuses an open item and commits once it is answered.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "fc1eb060cfce0e2d96b18883ee6bd172f05166e1",
-            "content": "sha256:8031e67c7934ff8119bdbf79371644a07e0bc3347e70be2523b4ccf952bbc24b",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_the_public_closeout_refuses_an_open_item_and_commits_once_it_is_answered"
-            },
-            "path": "mcp/tests/test_knowledge_reopen.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "18": {
-      "note": "A file rewritten while the gate runs is never committed unjudged.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "a897777c854a4170c0e27151bf6954c22a736ce4",
-            "content": "sha256:65095f3c51eddfe5fe68ea6ccb93890f5a4eaadef69a18aee42137e861fcbe91",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_file_rewritten_while_the_gate_runs_is_never_committed_unjudged"
-            },
-            "path": "mcp/tests/test_knowledge_reopen.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "2": {
-      "note": "The owner of the history file the closeout closes.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f691898dcd00ca9d02cd290832852fa2be5c2c42",
-            "content": "sha256:cca6c023e9edb39ea6c2f2c46f00c83c67ed8c2c81bc0f273185f18259a6064b",
-            "locator": {
-              "kind": "symbol",
-              "name": "_owner"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "Any failure before the commit restores the file.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f691898dcd00ca9d02cd290832852fa2be5c2c42",
-            "content": "sha256:75c4060c7c4e4f399250356dae222c256bb5aea496cadb60e83e7f4367516072",
-            "locator": {
-              "kind": "symbol",
-              "name": "_commit_memory_content"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "4": {
-      "note": "`external_closeout_commits` resumes or creates the memory output (since MIK-R09 closing a converted leaf's history file first; since L37 after asking the cutover lock for unconverted memory, and judging a recovered memory commit before it resumes), then refreshes its informational cache.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f691898dcd00ca9d02cd290832852fa2be5c2c42",
-            "content": "sha256:0ebf4a5e3e684b912685fc0c90666637f1884a59f1ae8c895d4b53db53e665d1",
-            "locator": {
-              "kind": "symbol",
-              "name": "external_closeout_commits"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "5": {
-      "note": "`_commit_memory_content` reuses clean content or commits attributed memory with root memory.md excluded; since MIK-R09 it validates a converted leaf's exact tree first and restores the closing on any failure before the commit; since L37 it also runs the mandatory gate and stages the commit from the judged tree.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f691898dcd00ca9d02cd290832852fa2be5c2c42",
-            "content": "sha256:75c4060c7c4e4f399250356dae222c256bb5aea496cadb60e83e7f4367516072",
-            "locator": {
-              "kind": "symbol",
-              "name": "_commit_memory_content"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "6": {
-      "note": "`_refresh_external_memory` refreshes onboarding, overview, entity, and generated index data before content publication.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f691898dcd00ca9d02cd290832852fa2be5c2c42",
-            "content": "sha256:0b819e606d55516db053afe7c44c1ae304eed817f524ba0d3a79e49e82a63319",
-            "locator": {
-              "kind": "symbol",
-              "name": "_refresh_external_memory"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "7": {
-      "note": "`_report_memory_commit` reports verified-existing code/memory outputs without fabricated mutation evidence.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f691898dcd00ca9d02cd290832852fa2be5c2c42",
-            "content": "sha256:aacbed3245544671ec9cdbebb43e65a9a21ee5fe355233a9cd58e98b7552b899",
-            "locator": {
-              "kind": "symbol",
-              "name": "_report_memory_commit"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "8": {
-      "note": "Cache rendering returns informational state and creates no Git commit.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "7b0e0cf051f1af1ab86b6c19ab4289849110df85",
-            "content": "sha256:5a0c8c8d38f12b2a398e74c1a64f73ee81bb882375a5dcb2200c28c603c7f6fe",
-            "locator": {
-              "kind": "symbol",
-              "name": "refresh_memory_cache"
-            },
-            "path": "mcp/src/agents_remember/kernel/memory_cache.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "9": {
-      "note": "The lock is asked before any stamping or commit of unconverted memory.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f691898dcd00ca9d02cd290832852fa2be5c2c42",
-            "content": "sha256:0ebf4a5e3e684b912685fc0c90666637f1884a59f1ae8c895d4b53db53e665d1",
-            "locator": {
-              "kind": "symbol",
-              "name": "external_closeout_commits"
+              "name": "candidate_gate_verdict"
             }
           },
           "kind": "code"

@@ -1,18 +1,18 @@
 {
   "admission": {
     "criteria": [
-      "guarded_by_test"
+      "prevents_costly_mistake"
     ],
-    "justification": "An unanswered tool would otherwise leave the sweep and the run blocked with no end to the wait; the named deadline stops the sweep at the first such tool while the control proves the failure fires and the handler closes."
+    "justification": "A phase budget that silently stops naming the tool and phase would leave the sweep hanging instead of failing by name."
   },
-  "applicability": "Every call the tool entry-point sweep makes through its one world, in the session-initialization, tool-response and session-cleanup phases.",
+  "applicability": "Every call the tool entry-point sweep makes through its one world.",
   "conditions": [
-    "The sweep drives tools through `EntryPointWorld.call`.",
+    "The sweep drives tools through the extracted world.",
     "A passed phase limit names the tool and the phase in a `_ToolCallTimeout`."
   ],
   "exclusions": [
-    "The pins, the classifier's arms and the swept population are unchanged by this obligation.",
-    "The environment in which the tests end with an ordinary verdict is a separate recorded limitation, not part of this obligation."
+    "The pins, the classifier's arms and the swept population are unchanged by the move.",
+    "The environment-dependent verdict remains a separate recorded limitation."
   ],
   "id": "INV-W4XGR4",
   "origin": {
@@ -26,7 +26,7 @@
     "leaf": "260928-MIK-L70",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "The existing sweep awaits initialization, response and cleanup with sixty-second phase budgets and surfaces its named deadline outside the product-raiser classifier.",
   "status": "proposed",

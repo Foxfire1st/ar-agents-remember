@@ -1,0 +1,266 @@
+{
+  "entries": [],
+  "records": [],
+  "history": [
+    {
+      "subject": "onboarding:mcp/src/agents_remember/application/knowledge_bootstrap_admission.py",
+      "disposition": "changed",
+      "reason": "Original sealed O01 body repair: The authority carries the settings identity and digest. Admission refuses an enclosure in scope, a different coordination root or code checkout, an unresolved memory context, and a branch/source identity that cannot be read. `bootstrap_scope` names the repository scope; the source revisions are measured Git facts. The former bootstrap staging-directory constant and helper were retired with the canonical database. No staging destination or resume ledger is created here."
+    },
+    {
+      "subject": "onboarding:mcp/src/agents_remember/application/review_candidate_resolution.py",
+      "disposition": "changed",
+      "reason": "Original sealed O01 body repair: `resolve_review_candidate` admits only the declared selectors and enclosure identity. For a live leaf, `_live_resolution` obtains the source tree through the existing capture owner and resolves converted memory through `tree_resolution`. Its baseline_database and candidate_database fields name derived indexes of the selected trees. An unconverted half is explicitly legacy-unavailable, not an empty or substituted dataset. Recorded/closed leaf selection delegates to the retained generation owner. `require_current_candidate_identity` detects a candidate that moved after admission. The old REVIEW_BASELINE_DIRECTORY and REVIEW_CANDIDATE_DIRECTORY layout and dataset receipts are retired."
+    },
+    {
+      "subject": "onboarding:mcp/src/agents_remember/application/review_committed_leaf.py",
+      "disposition": "changed",
+      "reason": "Original sealed O01 body repair: The default generation first uses the converted four-tree reopen and `tree_resolution`. An explicitly named historical generation, or the legacy path, reopens its retained comparison record and passes it to `legacy_comparison_resolution`: exact source and retained evidence remain readable, while canonical dataset halves report legacy unavailability. The reader does not substitute today's candidate or recreate a deleted dataset. `ClosedLeafReview` carries the reopened result and its limitation sentence; the removed dataset measurement and provenance helper suite is not part of this module."
+    },
+    {
+      "subject": "onboarding:mcp/src/agents_remember/application/review_evidence_records.py",
+      "disposition": "changed",
+      "reason": "Original sealed O01 body repair: A resolved candidate reads the immutable curator authority and its artifact references. The returned channels distinguish an assessment collection from the currentness measurement of its exact dependency binding. Canonical detection, verification-observation and evidence-claim collections are retired and explicitly unavailable; they are not measured empty. An unresolved candidate yields unavailable channels. A task-context read without a selected matrix says not-selected for that collection. The removed `_claim_record` projection is not a current reader."
+    },
+    {
+      "subject": "onboarding:mcp/src/agents_remember/cli/knowledge_bootstrap.py",
+      "disposition": "changed",
+      "reason": "Original sealed O01 body repair: `run` validates the hand-off list, authorization, configured settings and taskless admission before `_run` selects the converted route. A converted root delegates to `run_wave_write`; an unconverted root refuses as legacy-format or by the cutover lock. The parser accepts no database destination, staging root, status or discard mode. Planned/written, writer refusal and invocation refusal remain distinct outcomes. The old canonical bootstrap progress, staged publication and resume/discard command modes are retired."
+    },
+    {
+      "subject": "onboarding:mcp/src/agents_remember/cli/knowledge_write_route.py",
+      "disposition": "changed",
+      "reason": "Original sealed O01 body repair: Leaf writes use the supplied enclosure and its leaf owner; named waves use their admitted repository root. Crossing writes retain their separately admitted crossing owner. Each delegates to the file writer rather than selecting a canonical database. `unconverted_write_refusal` supplies the typed legacy/cutover refusal. Database-publication arguments are refused by their CLI front door, not accepted here as an alternative destination. The removed `_file_route_refusal` and legacy dataset writer dispatch are not current routes."
+    },
+    {
+      "subject": "onboarding:mcp/src/agents_remember/kernel/atomic_write.py",
+      "disposition": "changed",
+      "reason": "Original sealed O01 body repair: `atomic_write_bytes` writes and flushes the sibling temporary file, calls `os.fsync` on its descriptor, then delegates to `atomic_replace`. A failed replacement leaves the previous destination intact and removes the temporary file. After a successful replacement, directory fsync can still fail: the destination has already changed and the source temporary file is gone. This failure window must not be described as rollback. The removed `fsync_file` helper has no current public implementation; file fsync is performed inside the writer."
+    },
+    {
+      "subject": "onboarding:mcp/src/agents_remember/memory/knowledge/connection.py",
+      "disposition": "changed",
+      "reason": "Original sealed O01 body repair: `open_read_only_database` uses APSW read-only flags and a bounded busy timeout. `create_or_validate_schema` creates only the current declared schema when the supplied database is empty, inside an immediate transaction, then sets user_version; otherwise it inspects the existing schema. Inspection checks the declared tables, columns and triggers. Transaction errors roll back and propagate. The retired connection-contract helper and canonical-store WAL/journal selection are absent; this module does not turn an index read into an authoring connection."
+    },
+    {
+      "subject": "onboarding:mcp/src/agents_remember/memory/knowledge/durable_evidence.py",
+      "disposition": "changed",
+      "reason": "Original sealed O01 body repair: Publication confines a plain filename to the task reports root, writes the supplied content and returns its content identity. Read-back distinguishes matched, missing, mismatched and unreadable evidence. Those states describe the actual retained file, not successful cleanup or a historical observer. The old refused-destination constant and `enclosure_reports_removed` helper were removed; evidence retention is not inferred from their historical names."
+    },
+    {
+      "subject": "onboarding:mcp/src/agents_remember/memory/knowledge/logical.py",
+      "disposition": "changed",
+      "reason": "Original sealed O01 body repair: The one current schema supplies the table/key order; rows are decoded into the logical body and hashed without physical page layout, file path or retrieval time. `logical_body_from_tables` is the current table-input renderer. `dataset_identity` opens read-only, validates the schema and binds exactly one repository before closing; `bound_repository` refuses no or ambiguous repository rows. The removed `logical_digest_of_tables` and `require_bound_repository` names are not current entry points. These readers provide index identity, not canonical dataset publication."
+    },
+    {
+      "subject": "onboarding:mcp/src/agents_remember/memory/knowledge/schema_generations.py",
+      "disposition": "changed",
+      "reason": "Original sealed O01 body repair: CURRENT_GENERATION composes the retained table declarations into the current version-9 schema. The structure manifest and pinned fingerprint prevent an accidental schema change under the same identity. `generation_for_name` admits only that current schema; `generation_of_database` refuses a different user_version or structure. The former nine-generation runtime registry, per-generation constants, ancestry selector and declared-column helper are retired. Conversion of legacy memory is owned separately, not a read-time schema fallback."
+    },
+    {
+      "subject": "onboarding:mcp/src/agents_remember/models/knowledge/candidate.py",
+      "disposition": "changed",
+      "reason": "Original sealed O01 body repair: `SnapshotIdentity` is repository_id, schema_version and logical_digest. `ExactCandidateInput` carries the exact tree plus any recorded commit/dirty facts; it does not make a tree an alias for HEAD. `KnowledgeContext` validates its digest and the namespace of the carried snapshot. `context_digest` derives the seal from the other fields. The canonical ChangeBatch, expected-record vocabulary, command union and mutation receipt were removed. A carried opaque reference is a resolved value, not proof that its Git object or task exists."
+    },
+    {
+      "subject": "onboarding:mcp/src/agents_remember/models/knowledge/detection.py",
+      "disposition": "changed",
+      "reason": "Original sealed O01 body repair: `DetectionSignalPayload` requires the condition vocabulary version, actual input set, observed changes, relationship paths, extractor/policy versions, scope manifest, unmapped paths and limitations. Its validators require the no-semantic-assessment limitation and consistency of truncation, unmapped paths and probe omissions. `detail` must equal the rendering of recorded basis; a trigger-side-only input cannot claim a two-sided comparison or counterpart absence. The canonical DetectionRun request/result/currentness/reproduction record and writer models are retired. A retained signal value is not a stored detection-run channel or a verdict."
+    },
+    {
+      "subject": "onboarding:mcp/src/agents_remember/models/knowledge/evidence.py",
+      "disposition": "changed",
+      "reason": "Original sealed O01 body repair: `VerificationObservationPayload` requires an exact code or logical knowledge subject and consistent origin; artifact and publication references carry their own identities, while `RunEnvironment` records the environment supplied by the observer. These models do not verify a runtime merely because it was named. EvidenceClaimPayload and the AddEvidenceClaim/AddVerificationObservation canonical write commands were retired. The observation value's survival does not restore a canonical observation collection or writer."
+    },
+    {
+      "subject": "onboarding:mcp/src/agents_remember/models/knowledge/read_anchor.py",
+      "disposition": "changed",
+      "reason": "Original sealed O01 body repair: The existing contract is retained; its removed construct or stale evidence claim is replaced by the actual current owner. The old account remains in the reviewed Git before-half."
+    },
+    {
+      "subject": "onboarding:mcp/src/agents_remember/models/knowledge/requirement.py",
+      "disposition": "changed",
+      "reason": "Original sealed O01 body repair: `RequirementOwnerRef` names the task-relative path, stable requirement ID and version under their declared patterns. `RequirementOwnerResolution` carries the resolved owner or its refusal. These are frozen values, not filesystem admission or a durable requirement revision. RequirementRevisionPayload and its canonical writer/read graph were retired; ownership resolution cannot silently substitute another requirement version."
+    },
+    {
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/integration/mutation_evidence.py",
+      "disposition": "changed",
+      "reason": "Original sealed O01 body repair: The existing contract is retained; its removed construct or stale evidence claim is replaced by the actual current owner. The old account remains in the reviewed Git before-half."
+    },
+    {
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/knowledge_crossing.py",
+      "disposition": "changed",
+      "reason": "Original sealed O01 body repair: The existing contract is retained; its removed construct or stale evidence claim is replaced by the actual current owner. The old account remains in the reviewed Git before-half."
+    },
+    {
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/modules/args.py",
+      "disposition": "changed",
+      "reason": "Original sealed O01 body repair: The existing contract is retained; its removed construct or stale evidence claim is replaced by the actual current owner. The old account remains in the reviewed Git before-half."
+    },
+    {
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/modules/closeout_external.py",
+      "disposition": "changed",
+      "reason": "Original sealed O01 body repair: The existing contract is retained; its removed construct or stale evidence claim is replaced by the actual current owner. The old account remains in the reviewed Git before-half."
+    },
+    {
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/modules/git.py",
+      "disposition": "changed",
+      "reason": "Original sealed O01 body repair: The existing contract is retained; its removed construct or stale evidence claim is replaced by the actual current owner. The old account remains in the reviewed Git before-half."
+    },
+    {
+      "subject": "onboarding:mcp/tests/test_knowledge_bootstrap.py",
+      "disposition": "changed",
+      "reason": "Original sealed O01 body repair: The cases refuse an undeclared repository, refuse an unconverted root without writes, and reject database arguments. A converted-root case drives the named-wave file route. Other cases check memory-init's empty/recorded/partial text states and the skill's account of those states. The old canonical bootstrap staging, resume, publication and retry scenarios were removed. These are test definitions and assertions; no execution or broader environment qualification is claimed by this card."
+    },
+    {
+      "subject": "onboarding:mcp/tests/test_knowledge_cutover.py",
+      "disposition": "changed",
+      "reason": "Original sealed O01 body repair: The probes distinguish a definite repository absence from an unreadable or ambiguous Git repository, cover a converted worktree locking an unconverted route, and permit the converting candidate only through its gate. A read case asserts that no read selects a database for a converted tree; another validates hand-off evidence as strings. The old database-writer-freeze test is removed and cannot be cited as a current writer execution. These source assertions are not a current run certificate."
+    },
+    {
+      "subject": "onboarding:mcp/tests/test_knowledge_index_surfaces.py",
+      "disposition": "changed",
+      "reason": "Original sealed O01 body repair: Current cases read a converted tree through its index; compare knowledge files and adjacent cards; name unknown paths, unheld records, directories and unknown revisions; and report omitted items within the read threshold. Separate cases compare an omitted after revision with the working tree and refuse an unconverted working tree. Retired records are not live selections, partial indexes stay incomplete, and unbuildable indexes return a refusal. The removed combined database-unchanged case is not current coverage; no test execution is asserted here."
+    },
+    {
+      "subject": "onboarding:mcp/tests/test_knowledge_reopen.py",
+      "disposition": "changed",
+      "reason": "Original sealed O01 body repair: A reopened leaf writes its next attempt without reopening a closed history file; the latest row about a subject governs across attempts. Closeout closes the latest attempt, preview reads its verdict, and an unconverted preview reports no gate verdict. A continued leaf creates its next attempt. A file rewritten while the gate runs must not be committed unjudged, and a missing landed history refuses by name. Removed canonical-dataset reopen scenarios are historical, not current helpers or tests. This card records assertions, not a passing run."
+    },
+    {
+      "subject": "onboarding:mcp/tests/test_tool_entry_point_sweep.py",
+      "disposition": "changed",
+      "reason": "Original sealed O01 body repair: EntryPointProbeTests drives the registered entry points through the shared world and declared input pins. The classifier, census controls and phase-budget machinery are extracted owners, not declarations in this module. A probe records the tool's actual route outcome; its existence alone proves neither every environment nor every unsupported consumer. Removed local classifier helpers, pin constants and control class names must not be attributed to this file. Test definitions are not an execution result."
+    },
+    {
+      "subject": "onboarding:mcp/tests/test_worktree_sync.py",
+      "disposition": "changed",
+      "reason": "Original sealed O01 body repair: SyncFixture drives the public transaction with an explicit code and memory pair. Cases check paired fast-forward and contract bases, code-conflict continuation, source-ref resolution, cache exclusions, cancelled restoration and memory-content conflict recovery. Memory conflicts are current knowledge-file/content conflicts; the canonical dataset reconciliation engine and its old helper vocabulary are retired. The transaction journal must describe its actual stop/continue state rather than infer completion from matching HEADs. No source or index operation is authorized by reading these tests, and no run is claimed."
+    },
+    {
+      "subject": "onboarding:mcp/src/agents_remember/application/knowledge_gate/direct.py",
+      "disposition": "changed",
+      "reason": "Original sealed O01 body repair: The existing contract is retained; its removed construct or stale evidence claim is replaced by the actual current owner. The old account remains in the reviewed Git before-half."
+    },
+    {
+      "subject": "onboarding:mcp/src/agents_remember/application/review_attribution.py",
+      "disposition": "changed",
+      "reason": "Original sealed O01 body repair: `_read_side` opens the selected derived index and reads its registered mappings; an incomplete or unreadable side remains uninspected. Negative attribution needs complete inspection of both sides, whereas an empty converted index can be fully inspected and confirm absence. Positive attribution records the exact invariant/family/proof relationship that supplied the path. The retired first-generation origin and damaged-half helpers do not establish historical completeness. The source inventory denominator remains separate from a bounded record selection."
+    },
+    {
+      "subject": "onboarding:mcp/src/agents_remember/application/review_comparison_reopen.py",
+      "disposition": "changed",
+      "reason": "Original sealed O01 body repair: Source channels measure whether the exact recorded objects and pins resolve now; recorded release history is a separate fact. `_knowledge_channel` does not open a historical canonical dataset: an explicit deletion is unavailable-history, otherwise the historical dataset is legacy-unavailable. Evidence channels independently read their confined retained references and hashes. No current candidate substitutes for a missing historical object. The former unavailable_channels helper and dataset measurement promise are retired. Snapshot reclamation ordering is owned by review_comparison_reclamation, not inferred from this reader."
+    },
+    {
+      "subject": "onboarding:mcp/src/agents_remember/application/review_rename_inference.py",
+      "disposition": "changed",
+      "reason": "Original sealed O01 body repair: The existing contract is retained; its removed construct or stale evidence claim is replaced by the actual current owner. The old account remains in the reviewed Git before-half."
+    },
+    {
+      "subject": "onboarding:mcp/src/agents_remember/memory/conversion/crossing_sync.py",
+      "disposition": "changed",
+      "reason": "Original sealed O01 body repair: `cross` classifies the three sides by their markers. Three converted sides use structural merge without a conversion; mixed sides use pinned conversion and marker/history ownership before merge and validation. Three unconverted sides do not enter this crossing route. The plan carries files, conflicts and counts; the transaction owner applies and stages it. The removed is_crossing helper is not a current classifier or alternate writer. This module's plan is not an acceptance or a grant to mutate a repository."
+    },
+    {
+      "subject": "onboarding:mcp/src/agents_remember/memory/knowledge/records.py",
+      "disposition": "changed",
+      "reason": "Original sealed O01 body repair: Typed columns, authorship and state-at-origin are decoded under their recorded schema. Revision and membership decoders verify the declared payload seals before returning values. The former row-building, source-anchor and predecessor write helpers were removed. This codec does not insert canonical records or authorize a writer; the index is a projection of admitted text knowledge."
+    },
+    {
+      "subject": "onboarding:mcp/src/agents_remember/memory/knowledge/view_source.py",
+      "disposition": "changed",
+      "reason": "Original sealed O01 body repair: The reader projects typed invariant/family/revision/member/realization values and provenance from the supplied connection and snapshot. `open_view_reader` opens that snapshot read-only and returns the handle and reader; the caller owns closing the handle. The former store_view_reader(OpenedKnowledgeStore) bridge is removed. This read port neither selects a substitute canonical store nor admits mutations."
+    },
+    {
+      "subject": "onboarding:mcp/src/agents_remember/memory_quality/style/citations/extents.py",
+      "disposition": "changed",
+      "reason": "Original sealed O01 body repair: `FileView` holds source text and extracted definitions; symbol and qualified spans locate declarations, while headings and line-comment blocks provide text extents. `quote_extents_for_path`, `all_quote_matches`, `widened_quotes` and `quote_matches_in` are the current quote APIs; the removed quote_extents/quote_match_extents names are not callable. Normalized/collapsed text retains offset information so a match can map back to source lines. Multiple candidates remain candidates for the citation resolver, not automatic semantic equivalence."
+    },
+    {
+      "subject": "onboarding:mcp/src/agents_remember/models/knowledge/effect.py",
+      "disposition": "changed",
+      "reason": "Original sealed O01 body repair: ADMITTED_EFFECT_LABELS and EffectLabelLiteral name add, replace, narrow, widen, clarify, retire, split, merge and reincarnate. A label alone supplies no effect-specific predecessor or successor relationship. Those conditions belong to the current planned/history record models. The canonical effect payload, writer and cardinality validator were retired; this module carries no preserve label or durable effect operation."
+    },
+    {
+      "subject": "onboarding:mcp/src/agents_remember/models/knowledge/review_final_output_receipt.py",
+      "disposition": "changed",
+      "reason": "Original sealed O01 body repair: FinalOutputReceipt binds the recorded code and knowledge trees and their comparison digest. `tree_match_state` and `tree_output_verdict` compare the actually supplied identities; an unread half is not matching. LegacyFinalOutputReceipt retains the historical code/logical-dataset shape and its validator functions without reopening that dataset. The removed _code_clause/_knowledge_clause helpers are not current rendering owners. A receipt is data about exact compared outputs, never leaf or Git acceptance."
+    },
+    {
+      "subject": "onboarding:mcp/src/agents_remember/models/knowledge_files/planned.py",
+      "disposition": "changed",
+      "reason": "Original sealed O01 body repair: The existing contract is retained; its removed construct or stale evidence claim is replaced by the actual current owner. The old account remains in the reviewed Git before-half."
+    },
+    {
+      "subject": "onboarding:mcp/src/agents_remember/models/lifecycles/review_assessment_binding.py",
+      "disposition": "changed",
+      "reason": "Original sealed O01 body repair: Recorded and measured identity maps remain distinct. `measured_binding_status` returns unavailable for unread dependencies, not-measured for absent coverage, stale for an observed disagreement, and current only when the required identities are fully measured and equal. Separate semantic freshness reasons are carried without rewriting the stored assessment. The removed _subject_state helper is not the current measurement owner; absence of evidence cannot be reported as current."
+    },
+    {
+      "subject": "onboarding:mcp/src/agents_remember/models/worktree.py",
+      "disposition": "changed",
+      "reason": "Original sealed O01 body repair: SourceLineageProjection reports the applicable code/memory edges and recovery facts. SyncOperationProjection carries the journal's actual state, phase, conflicts and next arguments. SyncResolutionProjection describes the side, worktree and files requiring content resolution, with wipRestore distinguishing parked-WIP recovery. Resolution input admits only its declared action. The old SyncKnowledgeConflict and canonical dataset reconciliation fields were retired; these DTOs do not decide conflict content or authorize staging."
+    },
+    {
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/reopen.py",
+      "disposition": "changed",
+      "reason": "Original sealed O01 body repair: `_plan_leaf_doc_reset` resolves the canonical leaf document, resets status/lifecycle fields and appends its reopen decision without publishing. `_plan_master_index_reset` updates its exact master row. `_publish_reopen_transition` owns the paired publication and recovery artifacts; `_restore_reopen_artifacts` restores those on failure. The old series-document and review-state helper names are retired, not permissions to reset an active review. A reader of this card may not edit task state or invoke reopen outside its admitted workflow."
+    },
+    {
+      "subject": "onboarding:mcp/tests/test_knowledge_leaf_read.py",
+      "disposition": "changed",
+      "reason": "Original sealed O01 body repair: The existing contract is retained; its removed construct or stale evidence claim is replaced by the actual current owner. The old account remains in the reviewed Git before-half."
+    },
+    {
+      "subject": "onboarding:mcp/tests/test_knowledge_review_attributed_source_content.py",
+      "disposition": "changed",
+      "reason": "Original sealed O01 body repair: An unchanged path linked by the selected subject opens as context without enlarging the changed-source inventory; a link only in another comparison is refused. The retained pair keeps its exact bytes after live movement. Other cases reject padded paths, preserve undetermined attribution for unread indexes, and include typed proof anchors. The old canonical initialization/freeze helpers are gone; unconverted knowledge reports unavailability. Source assertions are not a current runtime certificate."
+    },
+    {
+      "subject": "onboarding:mcp/tests/test_knowledge_review_attribution_precedence.py",
+      "disposition": "changed",
+      "reason": "Original sealed O01 body repair: A readable side can positively attribute its linked path while the remaining population stays unknown. Empty converted knowledge is completely inspected and can confirm absence; a damaged or unreadable half cannot. The fixture uses exact tree indexes, not a fabricated first canonical generation or repaired origin record. These assertions delimit the read's knowledge state and make no run claim."
+    },
+    {
+      "subject": "onboarding:mcp/tests/test_knowledge_review_comparison_generation.py",
+      "disposition": "changed",
+      "reason": "Original sealed O01 body repair: The fixture assembles a legacy manifest with exact source identities. One case preserves those source objects and patches dataset access to ensure it is never used; another refuses a tampered historical source record rather than retargeting it. The former live freeze/restart/custody scenario suite is removed. These two retained cases are source assertions, not a newly frozen generation or proof of current retention."
+    },
+    {
+      "subject": "onboarding:mcp/tests/test_knowledge_review_evidence_channels.py",
+      "disposition": "changed",
+      "reason": "Original sealed O01 body repair: The converted fixture publishes assessments through their own authority. Cases distinguish unpublished from corrupt/unreadable authority, not-selected matrix collection, measured binding/currentness axes and stale candidates. Retained immutable generations survive damage to the live authority; an unresolvable candidate leaves collections unavailable. Channel counts are refused when their owner did not measure them. Canonical detection, evidence-claim and verification-observation producers and their former tests are removed; no empty-count replacement or executed run is claimed."
+    },
+    {
+      "subject": "onboarding:mcp/tests/test_knowledge_review_relationship_movement.py",
+      "disposition": "changed",
+      "reason": "Original sealed O01 body repair: Synthetic index rows exercise lineage, retractions/additions and authored split/merge edges; a Git rename is labeled inference and does not manufacture an authored edge. A converted-text fixture reads a family's declared routes, one relationship per declared route, while an unread side is never called ungoverned. Removed scalar canonical governing-route writers and helpers are not current fixture owners. Bounded selection omissions are not deletions. These assertions record test intent, not an execution result."
+    },
+    {
+      "subject": "onboarding:mcp/tests/test_knowledge_review_resolution_and_route.py",
+      "disposition": "changed",
+      "reason": "Original sealed O01 body repair: The route cannot accept a browser-chosen candidate path. Missing or unreadable before/candidate halves refuse by name without a substitute; the entry returns the typed refusal instead of raising. Only the two declared selectors are transported, previous binding identity reaches the port, and an absent adapter or unresolvable assessment candidate is explicit. Removed local entry-master/config helpers are not fixture ownership. Test names retaining historical dataset wording do not restore canonical dataset writes, and no run is claimed."
+    },
+    {
+      "subject": "onboarding:mcp/tests/test_knowledge_review_subject_isolation.py",
+      "disposition": "changed",
+      "reason": "Original sealed O01 body repair: The journey classifies own assessments as direct, sibling assessments as context, unrelated ones as counted but not displayed, and malformed/unresolved bindings as unresolved. A previous immutable generation is historical rather than current. Page size does not change classification, direct labels must cite a retained list containing the record, and every supplied collection reports its own complete population. The fixture publishes through `_publish_assessments`; canonical detection/evidence-claim/observation/effect producers and their old helpers were removed. A source inventory denominator is independent of record selection. This card claims test assertions, not a thirteen-case or runtime PASS."
+    },
+    {
+      "subject": "onboarding:mcp/src/agents_remember/application/knowledge_views.py",
+      "disposition": "changed",
+      "reason": "Original O02 reference repair: the current finding and actual present-code anchors replace retired caller/projection or stale present-leg claims. Adjacent reference-health findings on this same card were repaired through scoped citation_fix. No new behavior or test execution is claimed."
+    },
+    {
+      "subject": "onboarding:mcp/src/agents_remember/application/review_final_output_receipt.py",
+      "disposition": "changed",
+      "reason": "Original O02 reference repair: the current finding and actual present-code anchors replace retired caller/projection or stale present-leg claims. Adjacent reference-health findings on this same card were repaired through scoped citation_fix. No new behavior or test execution is claimed."
+    },
+    {
+      "subject": "onboarding:mcp/src/agents_remember/models/knowledge/view.py",
+      "disposition": "changed",
+      "reason": "Original O02 reference repair: the current finding and actual present-code anchors replace retired caller/projection or stale present-leg claims. Adjacent reference-health findings on this same card were repaired through scoped citation_fix. No new behavior or test execution is claimed."
+    }
+  ]
+}

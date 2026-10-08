@@ -80,7 +80,9 @@ No external Domain Documentation source is configured for this memory repo.
 - Atomic-series sync binds the public wrapper to the exact transaction on this contract's own activation record: it validates ownership, publishes `reconciling`, reconciles the pinned source pair, retains incomplete work in reconciling, and publishes `active` only after current-source proof; a foreign master is never read or named. [3]
 - Ordinary transaction routing owns durable resume, continue, cancel, and recovery behavior. [4]
 - Stable status and recovery evidence lives at the enclosure-root journal, not in the queue. [5]
-- Focused integration tests exercise fast-forward sync and contract advance, a retained code merge conflict with continuation, stale-cache source-ref selection, and content-conflict preservation, including the knowledge conflict whose only working route is the manual continuation. [6]
+
+- Current source authority and actual content conflict cases. [6]
+
 
 ### Cross-Repo References
 

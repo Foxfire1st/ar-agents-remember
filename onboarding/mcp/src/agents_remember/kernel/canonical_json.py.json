@@ -88,7 +88,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0508e56c262c031606a2a86fd8ddba54f1cb6c33",
+            "blob": "f503fa94c4c7bed4f52d64b967754439519f5b6a",
             "content": "sha256:cf84d0f055b923f67d3f0c588b2aafff265032b51ca3642945d65da50bd9729d",
             "locator": {
               "kind": "symbol",
@@ -101,15 +101,15 @@
       ]
     },
     "5": {
-      "note": "The typed-column storage path that reuses this encoder and decoder.",
+      "note": "The retained typed-column decoder shares duplicate-key-refusing JSON policy; canonical row encoding is retired.",
       "targets": [
         {
           "anchor": {
-            "blob": "121c4afa09ae47ad7908ca98c752895684e7232f",
-            "content": "sha256:4bef03d01301b036d7418c15d2aeb6ab05d3fdd7d3e99465be81e5d4bcd33e6a",
+            "blob": "0ee5929321e3f7a958a51aecc7f15c63d890c86c",
+            "content": "sha256:0d0003a9634dab7b1114263aa4687f10c3699db9aa9fada2c2cb95c738278508",
             "locator": {
               "kind": "symbol",
-              "name": "encode_typed_column"
+              "name": "decode_typed_column"
             },
             "path": "mcp/src/agents_remember/memory/knowledge/records.py"
           },
@@ -117,13 +117,12 @@
         },
         {
           "anchor": {
-            "blob": "121c4afa09ae47ad7908ca98c752895684e7232f",
-            "content": "sha256:0d0003a9634dab7b1114263aa4687f10c3699db9aa9fada2c2cb95c738278508",
+            "blob": "a939ca21bb16d7edca85c2bc76c955a42e67ad06",
+            "content": "sha256:70911acd3a56d6e8cf2c0328765cc8d3f10df70298f42b7987fa09123bd6c4cd",
             "locator": {
               "kind": "symbol",
-              "name": "decode_typed_column"
-            },
-            "path": "mcp/src/agents_remember/memory/knowledge/records.py"
+              "name": "decoded_json"
+            }
           },
           "kind": "code"
         }

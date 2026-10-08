@@ -68,15 +68,27 @@
       ]
     },
     "5": {
-      "note": "A converted tree refuses a database-era UUID, a bare ID and an unheld family; a database read with an unknown seed is still a complete view.",
+      "note": "Converted trees refuse unheld seeds; the former database control is replaced by explicit mounted legacy-format refusal.",
       "targets": [
         {
           "anchor": {
-            "blob": "d8f68761727af2bccdd02ec39c86ee0156f52aad",
-            "content": "sha256:b85e670eef150d1bd92b5d9169844298c0bb8e8ae7f3ef1db44163b3e0749816",
+            "blob": "694a9727c6739a654c8fec5abf47260e23bd77b5",
+            "content": "sha256:7e1e729d4246d5a2324fb9fe15f5684ab9fcb8e6a56f1fe41f480e811afb4724",
             "locator": {
               "kind": "symbol",
-              "name": "test_a_converted_tree_refuses_a_seed_it_does_not_hold_and_a_database_read_is_unchanged"
+              "name": "test_a_converted_tree_refuses_a_seed_it_does_not_hold"
+            },
+            "path": "mcp/tests/test_knowledge_index_surfaces.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "694a9727c6739a654c8fec5abf47260e23bd77b5",
+            "content": "sha256:5bc3a8924f717e9a6d5081c853dbe84a471c3533bcc2f1ee6131c4f9802bbdc3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_knowledge_tool_refuses_legacy_memory_and_opens_no_database"
             },
             "path": "mcp/tests/test_knowledge_index_surfaces.py"
           },

@@ -22,8 +22,7 @@ convention.
 
 ### Logic
 
-The module is pure data: it defines **no functions and no classes**. Its whole surface is seven module
-constants, and each is a member of the generation record `schema_generations.GENERATION_3` composes:
+The module is pure data: it defines no functions and no classes. Its APPENDED_* declarations are consumed after schema_v2 by schema_generations._compose, which builds CURRENT_GENERATION, the single derived-index schema. The historical generation-3 grouping names this block of tables; it is not a separately openable schema in this build.
 
 - `APPENDED_TABLES` — the ordered tuple `("facet_attachment", "facet_decision_supersession",
   "explanation", "explanation_revision")`. The order is load-bearing: it is the order the encoder
@@ -77,8 +76,7 @@ Why the tables are shaped this way:
 
 - Every table is `STRICT`, every primary-key column is declared `NOT NULL` explicitly, and every foreign
   key is composite and `DEFERRABLE INITIALLY DEFERRED`, exactly as the sixteen shipped tables are.
-- Trigger messages share the shipped `immutable_revision:` prefix so `map_sqlite_error` steers a
-  trigger-originated error to that code. The seven triggers refuse: repointing an attachment
+- Trigger messages share the shipped `immutable_revision:` prefix retained from the canonical database schema. Its former map_sqlite_error mapper was retired; these declarations remain constraints of the derived index. The seven triggers refuse: repointing an attachment
   (`facet_attachment_no_repoint`, covering every column except the key and `attachment_id`), updating or
   deleting a recorded supersession edge (`facet_decision_supersession_no_update`,
   `facet_decision_supersession_no_delete`), rebinding an explanation's subject
@@ -95,26 +93,19 @@ Why the tables are shaped this way:
 - **No facet record carries a content address, a logical digest or a fingerprint column, and none is added
   here.** A facet's revision digest is `record_revision.content_digest`, on the sealed revision aggregate
   that owns it; the envelope stays free of any identity-valued column.
-- **Additive-only, structurally.** `GENERATION_3.tables[: len(GENERATION_2.tables)] == GENERATION_2.tables`
-  and generation 3's columns for each of the first sixteen names are generation 2's. That prefix equality
-  is the whole of the additive rule.
+- Earlier table declarations are preserved by the ordered composition. _compose starts with schema.py and appends each module in _APPENDED without changing inherited column, key or typed-JSON mappings. The resulting single schema is checked against its recorded fingerprint; the former GENERATION_2 and GENERATION_3 records were retired.
 - **Immutability is enforced by the database, not only by the operation.** These triggers exist so a
   changeset, a repair script or a future code path that forgot the rule still cannot rewrite a sealed
   revision, rebind a subject or delete a recorded edge. The operations' own preconditions exist to return
   a typed refusal; the triggers exist so that forgetting them still cannot corrupt the record.
-- **Boundary.** This module declares structure and nothing else: it writes no rows, performs no
-  validation, returns no refusal, and owns no behaviour. Authoring a facet is `facets.py`; converting a
-  row is `facet_records.py`; deciding which generation a dataset is, is `schema_generations.py`.
+- This module declares derived-index structure only: no row writing, payload validation, refusal or migration. The former canonical database record writer associated with these tables was retired. schema_generations composes and validates the one supported index schema.
 - **Not admissible, recorded so it is not re-proposed:** an `endpoint_id` column (it would restore the
   polymorphic shape the per-kind groups exist to make unrepresentable), and a whole-row update trigger on
   `explanation` (it would forbid the one mutable field the designation is).
 
 ### Todos
 
-None recorded. The generation's own fingerprint is computed by composition in `schema_generations.py`
-rather than recorded here, and the recorded detail that this leaf measured is the composed generation-3
-fingerprint `01161417a87618c824dba9e6f2add26b2ba8f84797cfc35b7cc9c841177a1f20`, read from the registry —
-durable in `facet_test_support.py` and the leaf's worker report rather than in a constant here.
+None recorded. Historical measurement before MIK-R26: the composed generation-3 fingerprint was 01161417a87618c824dba9e6f2add26b2ba8f84797cfc35b7cc9c841177a1f20. There is no current generation-3 registry record; the one derived-index schema has its own recorded fingerprint checked by require_pinned_schema_unchanged.
 
 ## Evidence
 
@@ -133,13 +124,19 @@ No configured domain documentation could be checked.
 - The eleven reverse-direction indexes, one per declared lookup direction. [4]
 - **The seven immutability triggers, with the two deliberate absences stated in the comment above them.** [5]
 - **The declared-but-empty feature tuple, so "no new SQLite feature" is stated rather than inferred.** [6]
-- The generation record this module's data is composed into, and the append that keeps generation 2's prefix intact. [7]
-- **The registry, ordered oldest first and now holding eight generations — re-read by hand after `KS-R13@v1` appended generation 8, so "the newest supported generation" is generation 8 rather than generation 7.** [8]
-- The generation record this module's data is composed into, and the append that keeps generation 2's prefix intact. [9]
-- **The registry, ordered oldest first and now holding eight generations — re-read by hand after `KS-R13@v1` appended generation 8, so "the newest supported generation" is generation 8 rather than generation 4.** [10]
+
+- The ordered appended declarations compose into the one pinned derived-index schema. [7]
+
+
+- This build creates and reads the single v9 derived-index schema; another declared database version is refused. [8]
+
+
+- The ordered appended declarations compose into the one pinned derived-index schema. [9]
+
+
+- This build creates and reads the single v9 derived-index schema; another declared database version is refused. [10]
+
 - The generation-2 tables this module appends after and never touches. [11]
-- The write path that inserts these rows, and the row codecs that populate the checked groups. [12]
-- **The case that measures the additive rule, the append order, the `STRICT` shape and the two deliberate trigger absences.** [13]
 
 ### Cross-Repo References
 

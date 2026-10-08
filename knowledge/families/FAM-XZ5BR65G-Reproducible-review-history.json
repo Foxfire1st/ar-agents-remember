@@ -1,18 +1,14 @@
 {
   "admission": "legacy-unassessed",
-  "guarantee": "A reopened review identifies the comparison it can reproduce and preserves the operands it can still read: a recorded tree comparison its recorded tree ids, and a dataset comparison of an unconverted repository its recorded snapshots and code endpoints. Once the repository's official memory line is converted, a leaf that recorded only a dataset comparison keeps its code sides and states its knowledge sides as legacy-unavailable. Reconstruction and missing channels remain explicit instead of borrowing unrelated state.",
+  "guarantee": "Historical review uses the exact retained comparison and explicitly names what it can reproduce: recorded tree comparisons retain their code and memory tree ids, while canonical-dataset history preserves exact source sides and marks knowledge legacy-unavailable. Comparison-bound curator generations preserve authored judgments and availability, and reconstruction is labelled. No current dataset, mutable pointer or favorable empty channel replaces unavailable history.",
   "id": "FAM-XZ5BR65G",
   "members": [
-    "INV-09FC73JC",
     "INV-453ZPCZ5",
     "INV-53MJW8V0",
     "INV-7W11WKKN",
     "INV-8Q6DZTDB",
-    "INV-9BH2BNCT",
     "INV-9NCBGQSY",
-    "INV-B3GYVZTJ",
     "INV-S26EBC8P",
-    "INV-T9M21FB4",
     "INV-VXA7SZ0Z"
   ],
   "origin": {
@@ -20,11 +16,10 @@
     "legacyId": "b5e4aaf8-cd20-45bc-b5a2-b485f7983ca5",
     "task": "260921-ICR"
   },
-  "revision": 5,
+  "revision": 6,
   "routes": [
     "dashboard/src/panels/review",
     "mcp/src/agents_remember/application",
-    "mcp/src/agents_remember/cli",
     "mcp/src/agents_remember/models/lifecycles",
     "mcp/src/agents_remember/worktrees/integration/closeout"
   ],

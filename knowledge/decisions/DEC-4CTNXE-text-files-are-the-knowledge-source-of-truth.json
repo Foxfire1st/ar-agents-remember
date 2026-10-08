@@ -1,0 +1,56 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives"
+    ],
+    "justification": "One owning storage design was weighed against the canonical database and rejected for its complexity and unreadable history."
+  },
+  "alternatives": [
+    {
+      "option": "Markdown prose plus JSON sidecars in Git are the source of truth; SQLite is only a derived, uncommitted index",
+      "reason": "Git keeps the knowledge readable, reviewable and durable, and the database complexity disappears.",
+      "status": "chosen"
+    },
+    {
+      "option": "The canonical knowledge database stays the source of truth",
+      "reason": "It mandated the changeset merge, schema generations, snapshots, candidate and batch plumbing and comparison-dataset copies, and left unreadable history.",
+      "reconsider_when": "The record count grows past about 100,000 or writers appear outside Git.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "The database-only machinery is removed.",
+    "One file writer serves converted memory.",
+    "The published dataset location is one declared path per memory layer."
+  ],
+  "context": "The canonical-database design left about 22,000 lines of storage-only machinery and two sources of truth for one memory layer.",
+  "decider": "Developer ruling D18 (2026-09-28), text-canonical layout Doc14",
+  "id": "DEC-4CTNXE",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "route:mcp/src/agents_remember/application"
+    },
+    {
+      "relation": "constrains",
+      "target": "route:mcp/src/agents_remember/memory"
+    },
+    {
+      "alternative": 1,
+      "relation": "reconsider_on",
+      "target": "ASM-HDB5GQ"
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "handoff-stage1.json"
+    },
+    "handoffEntry": "dec-d18",
+    "leaf": "260928-MIK-L26",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

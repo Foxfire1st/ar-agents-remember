@@ -1,0 +1,2229 @@
+[
+  {
+    "action": "write",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 33188,
+      "sha256": "5f042d563559bb5ea32d1c7b705184f8896336bbd4c7c9be3d66f74aa6bba544",
+      "size": 149761,
+      "type": "file",
+      "uid": 1000
+    },
+    "changes": [
+      {
+        "action": "incoming exact retained reference successor, including corrected note",
+        "incomingNumber": "194",
+        "reference": "194"
+      },
+      {
+        "action": "incoming exact current target; leaf note retained",
+        "reference": "196",
+        "targetIndex": 0
+      },
+      {
+        "action": "leaf target retained; incoming blob differs from actual working source; scoped refresh pending after completion",
+        "reference": "34",
+        "targetIndex": 0
+      },
+      {
+        "action": "incoming exact retained reference successor, including corrected note",
+        "incomingNumber": "53",
+        "reference": "53"
+      },
+      {
+        "action": "incoming exact retained reference successor, including corrected note",
+        "incomingNumber": "8",
+        "reference": "8"
+      },
+      {
+        "action": "incoming exact retained reference successor, including corrected note",
+        "incomingNumber": "9",
+        "reference": "9"
+      },
+      {
+        "action": "retain incoming master-retirement skill meaning and original accepted-source anchor; actual working skill has same meaning but line positions/blob differ, so scoped citation refresh remains pending after paired completion",
+        "reference": "253"
+      }
+    ],
+    "orientation": {
+      "1": "old official base",
+      "2": "incoming official source",
+      "3": "preserved archived leaf"
+    },
+    "path": "onboarding/mcp/overview.json",
+    "rationale": "Keep the preserved leaf schema/current contract, exact typed records and retained reference lineage. Admit only identified incoming current targets, the exact L41 cleanup realizations and explicit retirement-guard evidence additions. References absent from leaf remain retired; numbering or directory similarity never creates a semantic union. Nonmatching current anchors remain pending scoped refresh after actual paired completion.",
+    "resultGid": 1000,
+    "resultMode": 33188,
+    "resultSha256": "adc92589e70348a387774a5308aa381d5fbbd6bc43216f670c6c449409a26502",
+    "resultSize": 139307,
+    "resultUid": 1000,
+    "source": "mcp",
+    "sourceExists": true,
+    "sourceSha256": null
+  },
+  {
+    "action": "delete",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 33188,
+      "sha256": "1a7ed05bccf2864e32f31370001dbcdfe2fef51694f2fbfe1e7d281ed8cb0d9c",
+      "size": 19719,
+      "type": "file",
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official base",
+      "2": "incoming official source",
+      "3": "preserved archived leaf"
+    },
+    "path": "onboarding/mcp/src/agents_remember/application/curator_source_manifest.py.json",
+    "rationale": "Retain the leaf retirement: this exact current source is absent. Incoming evidence refreshes do not restore the retired source or its sidecar.",
+    "resultGid": null,
+    "resultMode": null,
+    "resultSha256": null,
+    "resultSize": null,
+    "resultUid": null,
+    "source": "mcp/src/agents_remember/application/curator_source_manifest.py",
+    "sourceExists": false,
+    "sourceSha256": null
+  },
+  {
+    "action": "delete",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 33188,
+      "sha256": "8242fa72d955048ceb1a24efe91dea94c70405e045f31d14f8b3c9dfed0891bf",
+      "size": 38440,
+      "type": "file",
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official base",
+      "2": "incoming official source",
+      "3": "preserved archived leaf"
+    },
+    "path": "onboarding/mcp/src/agents_remember/application/knowledge_baseline_generation.py.json",
+    "rationale": "Retain the leaf retirement: this exact current source is absent. Incoming evidence refreshes do not restore the retired source or its sidecar.",
+    "resultGid": null,
+    "resultMode": null,
+    "resultSha256": null,
+    "resultSize": null,
+    "resultUid": null,
+    "source": "mcp/src/agents_remember/application/knowledge_baseline_generation.py",
+    "sourceExists": false,
+    "sourceSha256": null
+  },
+  {
+    "action": "write",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 33188,
+      "sha256": "dfec1990757b46bdac20790f37d43e50bfb2156be37c353d714d6ad1ab957cb6",
+      "size": 18267,
+      "type": "file",
+      "uid": 1000
+    },
+    "changes": [
+      {
+        "action": "leaf target retained; incoming blob differs from actual working source; scoped refresh pending after completion",
+        "reference": "8",
+        "targetIndex": 0
+      },
+      {
+        "action": "leaf target retained; incoming blob differs from actual working source; scoped refresh pending after completion",
+        "reference": "8",
+        "targetIndex": 1
+      },
+      {
+        "action": "incoming exact current target; leaf note retained",
+        "reference": "8",
+        "targetIndex": 2
+      }
+    ],
+    "orientation": {
+      "1": "old official base",
+      "2": "incoming official source",
+      "3": "preserved archived leaf"
+    },
+    "path": "onboarding/mcp/src/agents_remember/application/knowledge_before_half.py.json",
+    "rationale": "Keep the preserved leaf schema/current contract, exact typed records and retained reference lineage. Admit only identified incoming current targets, the exact L41 cleanup realizations and explicit retirement-guard evidence additions. References absent from leaf remain retired; numbering or directory similarity never creates a semantic union. Nonmatching current anchors remain pending scoped refresh after actual paired completion.",
+    "resultGid": 1000,
+    "resultMode": 33188,
+    "resultSha256": "e59a989696a3bc6813b045299a01ae45a31978e775dc704c86c6bfbabd290cf5",
+    "resultSize": 18054,
+    "resultUid": 1000,
+    "source": "mcp/src/agents_remember/application/knowledge_before_half.py",
+    "sourceExists": true,
+    "sourceSha256": "5789fd898ab73cd24188c5890fab9eb79b7c9a4e7869eb8970b139ca9737bc57"
+  },
+  {
+    "action": "delete",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 33188,
+      "sha256": "4b68533141442188aaf2df3c31078678ee3de808c2a86f6c6c1d6edefec00b2c",
+      "size": 17067,
+      "type": "file",
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official base",
+      "2": "incoming official source",
+      "3": "preserved archived leaf"
+    },
+    "path": "onboarding/mcp/src/agents_remember/application/knowledge_first_generation.py.json",
+    "rationale": "Retain the leaf retirement: this exact current source is absent. Incoming evidence refreshes do not restore the retired source or its sidecar.",
+    "resultGid": null,
+    "resultMode": null,
+    "resultSha256": null,
+    "resultSize": null,
+    "resultUid": null,
+    "source": "mcp/src/agents_remember/application/knowledge_first_generation.py",
+    "sourceExists": false,
+    "sourceSha256": null
+  },
+  {
+    "action": "write",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 33188,
+      "sha256": "0dfc24fbc2fba53e7f97cbf82b622407b163a86eb7a469bb598f4195d23cdaf3",
+      "size": 320764,
+      "type": "file",
+      "uid": 1000
+    },
+    "changes": [
+      {
+        "action": "leaf target retained; incoming blob differs from actual working source; scoped refresh pending after completion",
+        "reference": "324",
+        "targetIndex": 0
+      },
+      {
+        "action": "leaf target retained; incoming blob differs from actual working source; scoped refresh pending after completion",
+        "reference": "324",
+        "targetIndex": 1
+      },
+      {
+        "action": "incoming exact retained reference successor, including corrected note",
+        "incomingNumber": "385",
+        "reference": "385"
+      }
+    ],
+    "orientation": {
+      "1": "old official base",
+      "2": "incoming official source",
+      "3": "preserved archived leaf"
+    },
+    "path": "onboarding/mcp/src/agents_remember/application/overview.json",
+    "rationale": "Keep the preserved leaf schema/current contract, exact typed records and retained reference lineage. Admit only identified incoming current targets, the exact L41 cleanup realizations and explicit retirement-guard evidence additions. References absent from leaf remain retired; numbering or directory similarity never creates a semantic union. Nonmatching current anchors remain pending scoped refresh after actual paired completion.",
+    "resultGid": 1000,
+    "resultMode": 33188,
+    "resultSha256": "c32a5d4e8dd73a460bffffa669246147ee9742a00afc46cd5f97f3fd9549eade",
+    "resultSize": 320463,
+    "resultUid": 1000,
+    "source": "mcp/src/agents_remember/application",
+    "sourceExists": true,
+    "sourceSha256": null
+  },
+  {
+    "action": "write",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 33188,
+      "sha256": "c6834a9477788548a88606588b2d397ff6b140512640aa77c6a820866c0c40eb",
+      "size": 20712,
+      "type": "file",
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official base",
+      "2": "incoming official source",
+      "3": "preserved archived leaf"
+    },
+    "path": "onboarding/mcp/src/agents_remember/application/review_candidate_resolution.py.json",
+    "rationale": "Keep the preserved leaf schema/current contract, exact typed records and retained reference lineage. Admit only identified incoming current targets, the exact L41 cleanup realizations and explicit retirement-guard evidence additions. References absent from leaf remain retired; numbering or directory similarity never creates a semantic union. Nonmatching current anchors remain pending scoped refresh after actual paired completion.",
+    "resultGid": 1000,
+    "resultMode": 33188,
+    "resultSha256": "fe69732a345f36d278c0199076c7db06ca89649f656da6f4209abb21edc9f10a",
+    "resultSize": 1665,
+    "resultUid": 1000,
+    "source": "mcp/src/agents_remember/application/review_candidate_resolution.py",
+    "sourceExists": true,
+    "sourceSha256": "d3bcf5689a2422e7989b6165469d60e5fda5cfe938df7e217af3fcc4728802b2"
+  },
+  {
+    "action": "write",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 33188,
+      "sha256": "50739ce0f19e73a5f84efc62dc9b8fe055b66212d9f4ccafb13a0ee2e9fd6eb5",
+      "size": 22187,
+      "type": "file",
+      "uid": 1000
+    },
+    "changes": [
+      {
+        "action": "leaf target retained; incoming blob differs from actual working source; scoped refresh pending after completion",
+        "reference": "23",
+        "targetIndex": 0
+      }
+    ],
+    "orientation": {
+      "1": "old official base",
+      "2": "incoming official source",
+      "3": "preserved archived leaf"
+    },
+    "path": "onboarding/mcp/src/agents_remember/errors.py.json",
+    "rationale": "Keep the preserved leaf schema/current contract, exact typed records and retained reference lineage. Admit only identified incoming current targets, the exact L41 cleanup realizations and explicit retirement-guard evidence additions. References absent from leaf remain retired; numbering or directory similarity never creates a semantic union. Nonmatching current anchors remain pending scoped refresh after actual paired completion.",
+    "resultGid": 1000,
+    "resultMode": 33188,
+    "resultSha256": "6a062e45fce5001347c3fbe6b14c84d1c68073bf01bb70b221ace84dc4e06a3b",
+    "resultSize": 22066,
+    "resultUid": 1000,
+    "source": "mcp/src/agents_remember/errors.py",
+    "sourceExists": true,
+    "sourceSha256": "d9b439129f1016340f8245221a0ce4abc7d8f9d27a3b9988780eab76134949d5"
+  },
+  {
+    "action": "write",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 33188,
+      "sha256": "55bb71a56e2a86c6ba071ac0884d739fc23cd2ac521d147f774210992ba4854f",
+      "size": 8399,
+      "type": "file",
+      "uid": 1000
+    },
+    "changes": [
+      {
+        "action": "leaf target retained; incoming blob differs from actual working source; scoped refresh pending after completion",
+        "reference": "8",
+        "targetIndex": 0
+      },
+      {
+        "action": "leaf target retained; incoming blob differs from actual working source; scoped refresh pending after completion",
+        "reference": "6",
+        "targetIndex": 0
+      },
+      {
+        "action": "leaf target retained; incoming blob differs from actual working source; scoped refresh pending after completion",
+        "reference": "7",
+        "targetIndex": 0
+      },
+      {
+        "action": "retain exact incoming L41 process-probe/cleanup realization with its own original rationale/origin; matching actual symbol content",
+        "record": "RLZ-RBHN6V"
+      },
+      {
+        "action": "retain exact incoming L41 process-probe/cleanup realization with its own original rationale/origin; matching actual symbol content",
+        "record": "RLZ-S9Z4DX"
+      },
+      {
+        "action": "retain exact incoming L41 process-probe/cleanup realization with its own original rationale/origin; matching actual symbol content",
+        "record": "RLZ-YW24RV"
+      },
+      {
+        "action": "carry the two exact incoming cleanup-owner anchors for the merged current card; no invented record",
+        "reference": "9"
+      }
+    ],
+    "orientation": {
+      "1": "old official base",
+      "2": "incoming official source",
+      "3": "preserved archived leaf"
+    },
+    "path": "onboarding/mcp/src/agents_remember/kernel/atomic_write.py.json",
+    "rationale": "Keep the preserved leaf schema/current contract, exact typed records and retained reference lineage. Admit only identified incoming current targets, the exact L41 cleanup realizations and explicit retirement-guard evidence additions. References absent from leaf remain retired; numbering or directory similarity never creates a semantic union. Nonmatching current anchors remain pending scoped refresh after actual paired completion.",
+    "resultGid": 1000,
+    "resultMode": 33188,
+    "resultSha256": "506d854f77b31cd6a1cc5c8ee7c7ed26bea6169b7cdfc3b22100b292ef1363a6",
+    "resultSize": 4489,
+    "resultUid": 1000,
+    "source": "mcp/src/agents_remember/kernel/atomic_write.py",
+    "sourceExists": true,
+    "sourceSha256": "4d9bc686f3f229543a30d692fbaea199983b28a36c84e8f0829b0e7bdb0cb391"
+  },
+  {
+    "action": "write",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 33188,
+      "sha256": "bff15ec51426ae7b29a3a5ebb45408e9359280752b9c841f49eb9d1858ba8457",
+      "size": 1984,
+      "type": "file",
+      "uid": 1000
+    },
+    "changes": [
+      {
+        "basis": "actual current atomic_write_bytes/_writer_is_gone/_remove_abandoned_temps, plus exact incoming three realization records",
+        "body": "direct replacement and post-publication cleanup"
+      }
+    ],
+    "orientation": {
+      "1": "old official base",
+      "2": "incoming official source",
+      "3": "preserved archived leaf"
+    },
+    "path": "onboarding/mcp/src/agents_remember/kernel/atomic_write.py.md",
+    "rationale": "Keep the compact leaf account rather than reintroducing retired reference prose. Atomic publication alone also incorporates the actual incoming post-publication cleanup/process-probe meaning; the other two cards already exclude the changed historical citation claims.",
+    "resultGid": 1000,
+    "resultMode": 33188,
+    "resultSha256": "d4160625c32a9732800aebceb5551da16e136157f2ba349783b25a518f3ba2d8",
+    "resultSize": 1583,
+    "resultUid": 1000,
+    "source": "mcp/src/agents_remember/kernel/atomic_write.py",
+    "sourceExists": true,
+    "sourceSha256": "4d9bc686f3f229543a30d692fbaea199983b28a36c84e8f0829b0e7bdb0cb391"
+  },
+  {
+    "action": "delete",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 33188,
+      "sha256": "20acbbedd775785bcde12ab464c542c79eadbbbd82e96000c21d217d78b2f629",
+      "size": 8337,
+      "type": "file",
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official base",
+      "2": "incoming official source",
+      "3": "preserved archived leaf"
+    },
+    "path": "onboarding/mcp/src/agents_remember/memory/knowledge/candidate_receipt.py.json",
+    "rationale": "Retain the leaf retirement: this exact current source is absent. Incoming evidence refreshes do not restore the retired source or its sidecar.",
+    "resultGid": null,
+    "resultMode": null,
+    "resultSha256": null,
+    "resultSize": null,
+    "resultUid": null,
+    "source": "mcp/src/agents_remember/memory/knowledge/candidate_receipt.py",
+    "sourceExists": false,
+    "sourceSha256": null
+  },
+  {
+    "action": "delete",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 33188,
+      "sha256": "81d9752e9eeb2c94a759cb8cf272061e541591c011faff407f363f52b4e7c52f",
+      "size": 5751,
+      "type": "file",
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official base",
+      "2": "incoming official source",
+      "3": "preserved archived leaf"
+    },
+    "path": "onboarding/mcp/src/agents_remember/memory/knowledge/candidate_receipt.py.md",
+    "rationale": "Retain the leaf retirement: this exact current source is absent. Incoming evidence refreshes do not restore the retired source or its sidecar.",
+    "resultGid": null,
+    "resultMode": null,
+    "resultSha256": null,
+    "resultSize": null,
+    "resultUid": null,
+    "source": "mcp/src/agents_remember/memory/knowledge/candidate_receipt.py",
+    "sourceExists": false,
+    "sourceSha256": null
+  },
+  {
+    "action": "delete",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 33188,
+      "sha256": "31b4f76a6e25317885577071c38fa6852a31a2710933716a6597eaafaa0e8d1a",
+      "size": 14472,
+      "type": "file",
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official base",
+      "2": "incoming official source",
+      "3": "preserved archived leaf"
+    },
+    "path": "onboarding/mcp/src/agents_remember/memory/knowledge/closed_snapshot.py.json",
+    "rationale": "Retain the leaf retirement: this exact current source is absent. Incoming evidence refreshes do not restore the retired source or its sidecar.",
+    "resultGid": null,
+    "resultMode": null,
+    "resultSha256": null,
+    "resultSize": null,
+    "resultUid": null,
+    "source": "mcp/src/agents_remember/memory/knowledge/closed_snapshot.py",
+    "sourceExists": false,
+    "sourceSha256": null
+  },
+  {
+    "action": "write",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 33188,
+      "sha256": "a7151e143ae44d347070d0c8fbbb3575e2146e93748b4eefe5e65d26ef893509",
+      "size": 4072,
+      "type": "file",
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official base",
+      "2": "incoming official source",
+      "3": "preserved archived leaf"
+    },
+    "path": "onboarding/mcp/src/agents_remember/memory/knowledge/durable_evidence.py.json",
+    "rationale": "Keep the preserved leaf schema/current contract, exact typed records and retained reference lineage. Admit only identified incoming current targets, the exact L41 cleanup realizations and explicit retirement-guard evidence additions. References absent from leaf remain retired; numbering or directory similarity never creates a semantic union. Nonmatching current anchors remain pending scoped refresh after actual paired completion.",
+    "resultGid": 1000,
+    "resultMode": 33188,
+    "resultSha256": "9f9532d00424633db464c123ddd5bc07bca89b43f7a497645b7b1162929d7bbd",
+    "resultSize": 1623,
+    "resultUid": 1000,
+    "source": "mcp/src/agents_remember/memory/knowledge/durable_evidence.py",
+    "sourceExists": true,
+    "sourceSha256": "35d5d3587c2c7c55c70abc63a72e73cf7e53f4e9682d0d8d5e57d4f84990c1b1"
+  },
+  {
+    "action": "write",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 33188,
+      "sha256": "ca7a4a90dd9ad46209e2755a971bd373f18c5c3cca0c8868c266c494ba0e94bc",
+      "size": 2878,
+      "type": "file",
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official base",
+      "2": "incoming official source",
+      "3": "preserved archived leaf"
+    },
+    "path": "onboarding/mcp/src/agents_remember/memory/knowledge/durable_evidence.py.md",
+    "rationale": "Keep the compact leaf account rather than reintroducing retired reference prose. Atomic publication alone also incorporates the actual incoming post-publication cleanup/process-probe meaning; the other two cards already exclude the changed historical citation claims.",
+    "resultGid": 1000,
+    "resultMode": 33188,
+    "resultSha256": "fcc73dc3575ad7b07e67c58bc10dba6c49685db7645a44aca7f66ddfb456d289",
+    "resultSize": 992,
+    "resultUid": 1000,
+    "source": "mcp/src/agents_remember/memory/knowledge/durable_evidence.py",
+    "sourceExists": true,
+    "sourceSha256": "35d5d3587c2c7c55c70abc63a72e73cf7e53f4e9682d0d8d5e57d4f84990c1b1"
+  },
+  {
+    "action": "delete",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 33188,
+      "sha256": "2ecad23e167daf1801699b8af8e9f4ae14fc0d420e164208f3b7881e3805bfe6",
+      "size": 18027,
+      "type": "file",
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official base",
+      "2": "incoming official source",
+      "3": "preserved archived leaf"
+    },
+    "path": "onboarding/mcp/src/agents_remember/memory/knowledge/publication.py.json",
+    "rationale": "Retain the leaf retirement: this exact current source is absent. Incoming evidence refreshes do not restore the retired source or its sidecar.",
+    "resultGid": null,
+    "resultMode": null,
+    "resultSha256": null,
+    "resultSize": null,
+    "resultUid": null,
+    "source": "mcp/src/agents_remember/memory/knowledge/publication.py",
+    "sourceExists": false,
+    "sourceSha256": null
+  },
+  {
+    "action": "write",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 33188,
+      "sha256": "c121ea22d25fa18f4f32c14fb698c5825a7b96ca9bce5590d4f1fbb0ba4f7b85",
+      "size": 58261,
+      "type": "file",
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official base",
+      "2": "incoming official source",
+      "3": "preserved archived leaf"
+    },
+    "path": "onboarding/mcp/src/agents_remember/models/worktree.py.json",
+    "rationale": "Keep the preserved leaf schema/current contract, exact typed records and retained reference lineage. Admit only identified incoming current targets, the exact L41 cleanup realizations and explicit retirement-guard evidence additions. References absent from leaf remain retired; numbering or directory similarity never creates a semantic union. Nonmatching current anchors remain pending scoped refresh after actual paired completion.",
+    "resultGid": 1000,
+    "resultMode": 33188,
+    "resultSha256": "cc8d2d3b61437b8a339dc68f4c4ab0b3446ba5eaec70e09d9c22973dbc0d901d",
+    "resultSize": 2102,
+    "resultUid": 1000,
+    "source": "mcp/src/agents_remember/models/worktree.py",
+    "sourceExists": true,
+    "sourceSha256": "4f20ed12bc823bc6b835f4ce90bfc4728e0ad47dbb22cbe87da1a2a45155fcba"
+  },
+  {
+    "action": "write",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 33188,
+      "sha256": "7bdd0ca173df54699a2dda14cdcc3782edd3efa753fd94cd4049c797a5b42d03",
+      "size": 31112,
+      "type": "file",
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official base",
+      "2": "incoming official source",
+      "3": "preserved archived leaf"
+    },
+    "path": "onboarding/mcp/src/agents_remember/models/worktree.py.md",
+    "rationale": "Keep the compact leaf account rather than reintroducing retired reference prose. Atomic publication alone also incorporates the actual incoming post-publication cleanup/process-probe meaning; the other two cards already exclude the changed historical citation claims.",
+    "resultGid": 1000,
+    "resultMode": 33188,
+    "resultSha256": "efb159f4633bdcebb04ebf1fe0a7ac0c7c51a5ee91a7c708bf0fd72d6afd7d9a",
+    "resultSize": 1085,
+    "resultUid": 1000,
+    "source": "mcp/src/agents_remember/models/worktree.py",
+    "sourceExists": true,
+    "sourceSha256": "4f20ed12bc823bc6b835f4ce90bfc4728e0ad47dbb22cbe87da1a2a45155fcba"
+  },
+  {
+    "action": "write",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 33188,
+      "sha256": "ba176a95c987d216d4ce2d4bf57e8238715b7d25add5507702303cb52b946ea4",
+      "size": 64492,
+      "type": "file",
+      "uid": 1000
+    },
+    "changes": [
+      {
+        "action": "incoming exact retained reference successor, including corrected note",
+        "incomingNumber": "20",
+        "reference": "20"
+      },
+      {
+        "action": "incoming exact retained reference successor, including corrected note",
+        "incomingNumber": "35",
+        "reference": "35"
+      },
+      {
+        "action": "incoming exact retained reference successor, including corrected note",
+        "incomingNumber": "36",
+        "reference": "36"
+      },
+      {
+        "action": "incoming exact retained reference successor, including corrected note",
+        "incomingNumber": "38",
+        "reference": "38"
+      },
+      {
+        "action": "incoming exact retained reference successor, including corrected note",
+        "incomingNumber": "56",
+        "reference": "56"
+      },
+      {
+        "action": "incoming exact retained reference successor, including corrected note",
+        "incomingNumber": "57",
+        "reference": "57"
+      },
+      {
+        "action": "incoming exact retained reference successor, including corrected note",
+        "incomingNumber": "74",
+        "reference": "74"
+      },
+      {
+        "action": "retain exact incoming master-retirement evidence at free leaf number; current whole-file anchor matched",
+        "reference": "75"
+      },
+      {
+        "action": "retain exact incoming master-retirement evidence at free leaf number; current whole-file anchor matched",
+        "reference": "76"
+      },
+      {
+        "action": "retain exact incoming master-retirement evidence at free leaf number; current whole-file anchor matched",
+        "reference": "77"
+      },
+      {
+        "action": "retain exact incoming master-retirement evidence at free leaf number; current whole-file anchor matched",
+        "reference": "78"
+      }
+    ],
+    "orientation": {
+      "1": "old official base",
+      "2": "incoming official source",
+      "3": "preserved archived leaf"
+    },
+    "path": "onboarding/mcp/src/agents_remember/worktrees/overview.json",
+    "rationale": "Keep the preserved leaf schema/current contract, exact typed records and retained reference lineage. Admit only identified incoming current targets, the exact L41 cleanup realizations and explicit retirement-guard evidence additions. References absent from leaf remain retired; numbering or directory similarity never creates a semantic union. Nonmatching current anchors remain pending scoped refresh after actual paired completion.",
+    "resultGid": 1000,
+    "resultMode": 33188,
+    "resultSha256": "ffa7e8950f6396166e7b136345bfc63a1ce34e7a715275b7d1b8fdd665b20ea2",
+    "resultSize": 62962,
+    "resultUid": 1000,
+    "source": "mcp/src/agents_remember/worktrees",
+    "sourceExists": true,
+    "sourceSha256": null
+  },
+  {
+    "action": "write",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 33188,
+      "sha256": "43f5d32ccecc1e6dd6cc573c20e76d6fbd0a1b636e36964beb067699bb649fe6",
+      "size": 11701,
+      "type": "file",
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official base",
+      "2": "incoming official source",
+      "3": "preserved archived leaf"
+    },
+    "path": "onboarding/mcp/src/agents_remember/worktrees/reopen.py.json",
+    "rationale": "Keep the preserved leaf schema/current contract, exact typed records and retained reference lineage. Admit only identified incoming current targets, the exact L41 cleanup realizations and explicit retirement-guard evidence additions. References absent from leaf remain retired; numbering or directory similarity never creates a semantic union. Nonmatching current anchors remain pending scoped refresh after actual paired completion.",
+    "resultGid": 1000,
+    "resultMode": 33188,
+    "resultSha256": "977f6f9cc210df3ce4f3ad7ded60b136e88d78ad862ade9803570e1fbbc9b6bf",
+    "resultSize": 2115,
+    "resultUid": 1000,
+    "source": "mcp/src/agents_remember/worktrees/reopen.py",
+    "sourceExists": true,
+    "sourceSha256": "7b7a195f97bb5b21f506f2bab7d23c5e0e741839a5dad99ccc547568b861dc0b"
+  },
+  {
+    "action": "delete",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 33188,
+      "sha256": "323378cc3ecb3ad77234e6cfed379038464e59e2f2230ff06bea2c8deae7d24e",
+      "size": 11448,
+      "type": "file",
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official base",
+      "2": "incoming official source",
+      "3": "preserved archived leaf"
+    },
+    "path": "onboarding/mcp/tests/candidate_batch_test_support.py.json",
+    "rationale": "Retain the leaf retirement: this exact current source is absent. Incoming evidence refreshes do not restore the retired source or its sidecar.",
+    "resultGid": null,
+    "resultMode": null,
+    "resultSha256": null,
+    "resultSize": null,
+    "resultUid": null,
+    "source": "mcp/tests/candidate_batch_test_support.py",
+    "sourceExists": false,
+    "sourceSha256": null
+  },
+  {
+    "action": "write",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 33188,
+      "sha256": "430949ad59a771e2d1c59f90619efc375244bca86d10d7339ac343fbbc69125a",
+      "size": 12706,
+      "type": "file",
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official base",
+      "2": "incoming official source",
+      "3": "preserved archived leaf"
+    },
+    "path": "onboarding/mcp/tests/evidence-lifecycle.toml.json",
+    "rationale": "Keep the preserved leaf schema/current contract, exact typed records and retained reference lineage. Admit only identified incoming current targets, the exact L41 cleanup realizations and explicit retirement-guard evidence additions. References absent from leaf remain retired; numbering or directory similarity never creates a semantic union. Nonmatching current anchors remain pending scoped refresh after actual paired completion.",
+    "resultGid": 1000,
+    "resultMode": 33188,
+    "resultSha256": "ca4969b8e1b70d7cd4edbfb063c3dcc2da798e33b8797d437ccbd580ea37e481",
+    "resultSize": 11200,
+    "resultUid": 1000,
+    "source": "mcp/tests/evidence-lifecycle.toml",
+    "sourceExists": true,
+    "sourceSha256": "eaa5cc34d644baa09bc92ae121556f0c5200dea6ef76bb8c3d5b13e727869d70"
+  },
+  {
+    "action": "delete",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 33188,
+      "sha256": "92a1fbc5aa534037221d8213ddaf5be143c7243276d819284c81ef5f01735c97",
+      "size": 7462,
+      "type": "file",
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official base",
+      "2": "incoming official source",
+      "3": "preserved archived leaf"
+    },
+    "path": "onboarding/mcp/tests/evidence_test_support.py.json",
+    "rationale": "Retain the leaf retirement: this exact current source is absent. Incoming evidence refreshes do not restore the retired source or its sidecar.",
+    "resultGid": null,
+    "resultMode": null,
+    "resultSha256": null,
+    "resultSize": null,
+    "resultUid": null,
+    "source": "mcp/tests/evidence_test_support.py",
+    "sourceExists": false,
+    "sourceSha256": null
+  },
+  {
+    "action": "delete",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 33188,
+      "sha256": "ec49f4a8af8f77917f6a303d840fbbd2a7dcf84c66be5f4be1935629ab2d362e",
+      "size": 22683,
+      "type": "file",
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official base",
+      "2": "incoming official source",
+      "3": "preserved archived leaf"
+    },
+    "path": "onboarding/mcp/tests/facet_test_support.py.json",
+    "rationale": "Retain the leaf retirement: this exact current source is absent. Incoming evidence refreshes do not restore the retired source or its sidecar.",
+    "resultGid": null,
+    "resultMode": null,
+    "resultSha256": null,
+    "resultSize": null,
+    "resultUid": null,
+    "source": "mcp/tests/facet_test_support.py",
+    "sourceExists": false,
+    "sourceSha256": null
+  },
+  {
+    "action": "write",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 33188,
+      "sha256": "a9bada53f6dbbc71f5518c5d338ba7294bc3df20d5159957442862edb87cd2a0",
+      "size": 3925,
+      "type": "file",
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official base",
+      "2": "incoming official source",
+      "3": "preserved archived leaf"
+    },
+    "path": "onboarding/mcp/tests/knowledge_fixture_test_support.py.json",
+    "rationale": "Keep the preserved leaf schema/current contract, exact typed records and retained reference lineage. Admit only identified incoming current targets, the exact L41 cleanup realizations and explicit retirement-guard evidence additions. References absent from leaf remain retired; numbering or directory similarity never creates a semantic union. Nonmatching current anchors remain pending scoped refresh after actual paired completion.",
+    "resultGid": 1000,
+    "resultMode": 33188,
+    "resultSha256": "26c1e2d73fffcca5c11840c752876d9d41911894a848f74b7657c3a24b07fbb0",
+    "resultSize": 2175,
+    "resultUid": 1000,
+    "source": "mcp/tests/knowledge_fixture_test_support.py",
+    "sourceExists": true,
+    "sourceSha256": "6153b574ca9e1626deea7ccf1ea0d2e2ac119c188fe9ff82ca9988174f0d0edd"
+  },
+  {
+    "action": "delete",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 33188,
+      "sha256": "fb4e75ee0726e99e7c07a945731791cbd5c0a0fa1dd6c1115be59fc0f2de9fc5",
+      "size": 10542,
+      "type": "file",
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official base",
+      "2": "incoming official source",
+      "3": "preserved archived leaf"
+    },
+    "path": "onboarding/mcp/tests/knowledge_graph_test_support.py.json",
+    "rationale": "Retain the leaf retirement: this exact current source is absent. Incoming evidence refreshes do not restore the retired source or its sidecar.",
+    "resultGid": null,
+    "resultMode": null,
+    "resultSha256": null,
+    "resultSize": null,
+    "resultUid": null,
+    "source": "mcp/tests/knowledge_graph_test_support.py",
+    "sourceExists": false,
+    "sourceSha256": null
+  },
+  {
+    "action": "delete",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 33188,
+      "sha256": "ec611fb6fafaf3185f6f030d9a7bfb74e1816a49126e08e38137d3bd7ae16945",
+      "size": 13148,
+      "type": "file",
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official base",
+      "2": "incoming official source",
+      "3": "preserved archived leaf"
+    },
+    "path": "onboarding/mcp/tests/merge_case_test_support.py.json",
+    "rationale": "Retain the leaf retirement: this exact current source is absent. Incoming evidence refreshes do not restore the retired source or its sidecar.",
+    "resultGid": null,
+    "resultMode": null,
+    "resultSha256": null,
+    "resultSize": null,
+    "resultUid": null,
+    "source": "mcp/tests/merge_case_test_support.py",
+    "sourceExists": false,
+    "sourceSha256": null
+  },
+  {
+    "action": "delete",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 33188,
+      "sha256": "6f146d044cf2c7325a5df8de2302e8fb838686153f5788034051ee82715c3d3f",
+      "size": 26281,
+      "type": "file",
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official base",
+      "2": "incoming official source",
+      "3": "preserved archived leaf"
+    },
+    "path": "onboarding/mcp/tests/snapshot_lifecycle_test_support.py.json",
+    "rationale": "Retain the leaf retirement: this exact current source is absent. Incoming evidence refreshes do not restore the retired source or its sidecar.",
+    "resultGid": null,
+    "resultMode": null,
+    "resultSha256": null,
+    "resultSize": null,
+    "resultUid": null,
+    "source": "mcp/tests/snapshot_lifecycle_test_support.py",
+    "sourceExists": false,
+    "sourceSha256": null
+  },
+  {
+    "action": "write",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 33188,
+      "sha256": "fd58b0a38648f7b83aa8dae2019f98264f585edfb46bbaf581b21b787c240950",
+      "size": 5012,
+      "type": "file",
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official base",
+      "2": "incoming official source",
+      "3": "preserved archived leaf"
+    },
+    "path": "onboarding/mcp/tests/test-evidence-lanes.toml.json",
+    "rationale": "Keep the preserved leaf schema/current contract, exact typed records and retained reference lineage. Admit only identified incoming current targets, the exact L41 cleanup realizations and explicit retirement-guard evidence additions. References absent from leaf remain retired; numbering or directory similarity never creates a semantic union. Nonmatching current anchors remain pending scoped refresh after actual paired completion.",
+    "resultGid": 1000,
+    "resultMode": 33188,
+    "resultSha256": "83902d3c30a9ef6f6d4e2749ea0a9410ee29a9dd00d22505e5f6f47cbcea0329",
+    "resultSize": 4394,
+    "resultUid": 1000,
+    "source": "mcp/tests/test-evidence-lanes.toml",
+    "sourceExists": true,
+    "sourceSha256": "03c939a00648a0511085fb27d88e2c2ae173b276ec8d486f77a5e80840b03854"
+  },
+  {
+    "action": "delete",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 33188,
+      "sha256": "1984fb8391f59f6b7797d931363e367f70cbee25ca1d5308c3b1ff01881a503d",
+      "size": 9850,
+      "type": "file",
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official base",
+      "2": "incoming official source",
+      "3": "preserved archived leaf"
+    },
+    "path": "onboarding/mcp/tests/test_candidate_batch_commands.py.json",
+    "rationale": "Retain the leaf retirement: this exact current source is absent. Incoming evidence refreshes do not restore the retired source or its sidecar.",
+    "resultGid": null,
+    "resultMode": null,
+    "resultSha256": null,
+    "resultSize": null,
+    "resultUid": null,
+    "source": "mcp/tests/test_candidate_batch_commands.py",
+    "sourceExists": false,
+    "sourceSha256": null
+  },
+  {
+    "action": "delete",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 33188,
+      "sha256": "15f9be0741f250f68e85e7a7f355d19d40c5e988aa68f7f19b84596b33442125",
+      "size": 15885,
+      "type": "file",
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official base",
+      "2": "incoming official source",
+      "3": "preserved archived leaf"
+    },
+    "path": "onboarding/mcp/tests/test_candidate_batch_transaction.py.json",
+    "rationale": "Retain the leaf retirement: this exact current source is absent. Incoming evidence refreshes do not restore the retired source or its sidecar.",
+    "resultGid": null,
+    "resultMode": null,
+    "resultSha256": null,
+    "resultSize": null,
+    "resultUid": null,
+    "source": "mcp/tests/test_candidate_batch_transaction.py",
+    "sourceExists": false,
+    "sourceSha256": null
+  },
+  {
+    "action": "delete",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 33188,
+      "sha256": "573fc463f087f038082fa6f494a2daa8da474b0c8e32748d01a739674489da90",
+      "size": 7678,
+      "type": "file",
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official base",
+      "2": "incoming official source",
+      "3": "preserved archived leaf"
+    },
+    "path": "onboarding/mcp/tests/test_curator_ingest_write_and_retention.py.json",
+    "rationale": "Retain the leaf retirement: this exact current source is absent. Incoming evidence refreshes do not restore the retired source or its sidecar.",
+    "resultGid": null,
+    "resultMode": null,
+    "resultSha256": null,
+    "resultSize": null,
+    "resultUid": null,
+    "source": "mcp/tests/test_curator_ingest_write_and_retention.py",
+    "sourceExists": false,
+    "sourceSha256": null
+  },
+  {
+    "action": "delete",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 33188,
+      "sha256": "45bf27ce2682b9147055db6de2654ac42e3293b1d3cd1d51d44089c14dc35a93",
+      "size": 10591,
+      "type": "file",
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official base",
+      "2": "incoming official source",
+      "3": "preserved archived leaf"
+    },
+    "path": "onboarding/mcp/tests/test_curator_realization_authoring.py.json",
+    "rationale": "Retain the leaf retirement: this exact current source is absent. Incoming evidence refreshes do not restore the retired source or its sidecar.",
+    "resultGid": null,
+    "resultMode": null,
+    "resultSha256": null,
+    "resultSize": null,
+    "resultUid": null,
+    "source": "mcp/tests/test_curator_realization_authoring.py",
+    "sourceExists": false,
+    "sourceSha256": null
+  },
+  {
+    "action": "delete",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 33188,
+      "sha256": "e841f23dd5c4e93c90b121c4cb0ce41950c4e09b3f56b402e1715584ad6bcd95",
+      "size": 9815,
+      "type": "file",
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official base",
+      "2": "incoming official source",
+      "3": "preserved archived leaf"
+    },
+    "path": "onboarding/mcp/tests/test_knowledge_candidate_workspace.py.json",
+    "rationale": "Retain the leaf retirement: this exact current source is absent. Incoming evidence refreshes do not restore the retired source or its sidecar.",
+    "resultGid": null,
+    "resultMode": null,
+    "resultSha256": null,
+    "resultSize": null,
+    "resultUid": null,
+    "source": "mcp/tests/test_knowledge_candidate_workspace.py",
+    "sourceExists": false,
+    "sourceSha256": null
+  },
+  {
+    "action": "delete",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 33188,
+      "sha256": "c4f877bd7fcf31b4043388d69f9c279c3bb6a37006d0db4e3d299024048c2c46",
+      "size": 23415,
+      "type": "file",
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official base",
+      "2": "incoming official source",
+      "3": "preserved archived leaf"
+    },
+    "path": "onboarding/mcp/tests/test_knowledge_change_sets.py.json",
+    "rationale": "Retain the leaf retirement: this exact current source is absent. Incoming evidence refreshes do not restore the retired source or its sidecar.",
+    "resultGid": null,
+    "resultMode": null,
+    "resultSha256": null,
+    "resultSize": null,
+    "resultUid": null,
+    "source": "mcp/tests/test_knowledge_change_sets.py",
+    "sourceExists": false,
+    "sourceSha256": null
+  },
+  {
+    "action": "delete",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 33188,
+      "sha256": "354ecf5f6675984c2275214862764ccc3bbbda624d2c993af3605ca978722bf6",
+      "size": 10711,
+      "type": "file",
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official base",
+      "2": "incoming official source",
+      "3": "preserved archived leaf"
+    },
+    "path": "onboarding/mcp/tests/test_knowledge_citation_bindings.py.json",
+    "rationale": "Retain the leaf retirement: this exact current source is absent. Incoming evidence refreshes do not restore the retired source or its sidecar.",
+    "resultGid": null,
+    "resultMode": null,
+    "resultSha256": null,
+    "resultSize": null,
+    "resultUid": null,
+    "source": "mcp/tests/test_knowledge_citation_bindings.py",
+    "sourceExists": false,
+    "sourceSha256": null
+  },
+  {
+    "action": "delete",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 33188,
+      "sha256": "fc2aaa8da3b2930ae1e90c7295bd2da5bac75134d596062750179b19e13d2c50",
+      "size": 11325,
+      "type": "file",
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official base",
+      "2": "incoming official source",
+      "3": "preserved archived leaf"
+    },
+    "path": "onboarding/mcp/tests/test_knowledge_citation_boundaries.py.json",
+    "rationale": "Retain the leaf retirement: this exact current source is absent. Incoming evidence refreshes do not restore the retired source or its sidecar.",
+    "resultGid": null,
+    "resultMode": null,
+    "resultSha256": null,
+    "resultSize": null,
+    "resultUid": null,
+    "source": "mcp/tests/test_knowledge_citation_boundaries.py",
+    "sourceExists": false,
+    "sourceSha256": null
+  },
+  {
+    "action": "delete",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 33188,
+      "sha256": "19d0a412c68ec2fe3d335f612c2ebfd412fb7f29cca0731ac0d8d5e318a79dd2",
+      "size": 20571,
+      "type": "file",
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official base",
+      "2": "incoming official source",
+      "3": "preserved archived leaf"
+    },
+    "path": "onboarding/mcp/tests/test_knowledge_detection_runs.py.json",
+    "rationale": "Retain the leaf retirement: this exact current source is absent. Incoming evidence refreshes do not restore the retired source or its sidecar.",
+    "resultGid": null,
+    "resultMode": null,
+    "resultSha256": null,
+    "resultSize": null,
+    "resultUid": null,
+    "source": "mcp/tests/test_knowledge_detection_runs.py",
+    "sourceExists": false,
+    "sourceSha256": null
+  },
+  {
+    "action": "delete",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 33188,
+      "sha256": "79cc9557f3474e3b1d6c1ccbb6ec0b2c5d5a5985d04794b23c55fa68f9ea8b61",
+      "size": 18639,
+      "type": "file",
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official base",
+      "2": "incoming official source",
+      "3": "preserved archived leaf"
+    },
+    "path": "onboarding/mcp/tests/test_knowledge_detection_signals.py.json",
+    "rationale": "Retain the leaf retirement: this exact current source is absent. Incoming evidence refreshes do not restore the retired source or its sidecar.",
+    "resultGid": null,
+    "resultMode": null,
+    "resultSha256": null,
+    "resultSize": null,
+    "resultUid": null,
+    "source": "mcp/tests/test_knowledge_detection_signals.py",
+    "sourceExists": false,
+    "sourceSha256": null
+  },
+  {
+    "action": "delete",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 33188,
+      "sha256": "796d586b9a6e95cc2637a64cc48a8acd555caf59273e070d18d2c23dcd2e1780",
+      "size": 34465,
+      "type": "file",
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official base",
+      "2": "incoming official source",
+      "3": "preserved archived leaf"
+    },
+    "path": "onboarding/mcp/tests/test_knowledge_effect_claims.py.json",
+    "rationale": "Retain the leaf retirement: this exact current source is absent. Incoming evidence refreshes do not restore the retired source or its sidecar.",
+    "resultGid": null,
+    "resultMode": null,
+    "resultSha256": null,
+    "resultSize": null,
+    "resultUid": null,
+    "source": "mcp/tests/test_knowledge_effect_claims.py",
+    "sourceExists": false,
+    "sourceSha256": null
+  },
+  {
+    "action": "delete",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 33188,
+      "sha256": "7bd3d8898dd3a5308bd58cae0009ee328764e035663e1c87f2c983621e3dedc5",
+      "size": 15855,
+      "type": "file",
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official base",
+      "2": "incoming official source",
+      "3": "preserved archived leaf"
+    },
+    "path": "onboarding/mcp/tests/test_knowledge_facets.py.json",
+    "rationale": "Retain the leaf retirement: this exact current source is absent. Incoming evidence refreshes do not restore the retired source or its sidecar.",
+    "resultGid": null,
+    "resultMode": null,
+    "resultSha256": null,
+    "resultSize": null,
+    "resultUid": null,
+    "source": "mcp/tests/test_knowledge_facets.py",
+    "sourceExists": false,
+    "sourceSha256": null
+  },
+  {
+    "action": "delete",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 33188,
+      "sha256": "ceaac1bd989ce5b5f463a3b16456ed29305ec952f79ec47be6d59952c12a2c05",
+      "size": 7104,
+      "type": "file",
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official base",
+      "2": "incoming official source",
+      "3": "preserved archived leaf"
+    },
+    "path": "onboarding/mcp/tests/test_knowledge_family_composition.py.json",
+    "rationale": "Retain the leaf retirement: this exact current source is absent. Incoming evidence refreshes do not restore the retired source or its sidecar.",
+    "resultGid": null,
+    "resultMode": null,
+    "resultSha256": null,
+    "resultSize": null,
+    "resultUid": null,
+    "source": "mcp/tests/test_knowledge_family_composition.py",
+    "sourceExists": false,
+    "sourceSha256": null
+  },
+  {
+    "action": "delete",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 33188,
+      "sha256": "9d28789cdb0a59c85e31df32aca786630add43204880ba2da47e35a9ed778723",
+      "size": 6898,
+      "type": "file",
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official base",
+      "2": "incoming official source",
+      "3": "preserved archived leaf"
+    },
+    "path": "onboarding/mcp/tests/test_knowledge_family_composition_boundaries.py.json",
+    "rationale": "Retain the leaf retirement: this exact current source is absent. Incoming evidence refreshes do not restore the retired source or its sidecar.",
+    "resultGid": null,
+    "resultMode": null,
+    "resultSha256": null,
+    "resultSize": null,
+    "resultUid": null,
+    "source": "mcp/tests/test_knowledge_family_composition_boundaries.py",
+    "sourceExists": false,
+    "sourceSha256": null
+  },
+  {
+    "action": "delete",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 33188,
+      "sha256": "42445de8c38782e7ac87dc624a0cc548b677754253ab81b01a6d41ee6d1bc453",
+      "size": 17453,
+      "type": "file",
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official base",
+      "2": "incoming official source",
+      "3": "preserved archived leaf"
+    },
+    "path": "onboarding/mcp/tests/test_knowledge_family_integrity_pipeline.py.json",
+    "rationale": "Retain the leaf retirement: this exact current source is absent. Incoming evidence refreshes do not restore the retired source or its sidecar.",
+    "resultGid": null,
+    "resultMode": null,
+    "resultSha256": null,
+    "resultSize": null,
+    "resultUid": null,
+    "source": "mcp/tests/test_knowledge_family_integrity_pipeline.py",
+    "sourceExists": false,
+    "sourceSha256": null
+  },
+  {
+    "action": "delete",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 33188,
+      "sha256": "df6e4ba141417d0dc6a4b50f7afa5e3968ba20e74a4ec6fdc2e79a8f9b447349",
+      "size": 11129,
+      "type": "file",
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official base",
+      "2": "incoming official source",
+      "3": "preserved archived leaf"
+    },
+    "path": "onboarding/mcp/tests/test_knowledge_family_revision.py.json",
+    "rationale": "Retain the leaf retirement: this exact current source is absent. Incoming evidence refreshes do not restore the retired source or its sidecar.",
+    "resultGid": null,
+    "resultMode": null,
+    "resultSha256": null,
+    "resultSize": null,
+    "resultUid": null,
+    "source": "mcp/tests/test_knowledge_family_revision.py",
+    "sourceExists": false,
+    "sourceSha256": null
+  },
+  {
+    "action": "delete",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 33188,
+      "sha256": "cd893aba8afef80c101d76cb737756206787e4af61f15d85a0763afa3f7c8440",
+      "size": 9038,
+      "type": "file",
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official base",
+      "2": "incoming official source",
+      "3": "preserved archived leaf"
+    },
+    "path": "onboarding/mcp/tests/test_knowledge_graph_reads.py.json",
+    "rationale": "Retain the leaf retirement: this exact current source is absent. Incoming evidence refreshes do not restore the retired source or its sidecar.",
+    "resultGid": null,
+    "resultMode": null,
+    "resultSha256": null,
+    "resultSize": null,
+    "resultUid": null,
+    "source": "mcp/tests/test_knowledge_graph_reads.py",
+    "sourceExists": false,
+    "sourceSha256": null
+  },
+  {
+    "action": "delete",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 33188,
+      "sha256": "0be312c9cf5b5b7d204f1cefcfc6e54c69337c7235dfb33c7f0535afc42c2b6c",
+      "size": 9436,
+      "type": "file",
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official base",
+      "2": "incoming official source",
+      "3": "preserved archived leaf"
+    },
+    "path": "onboarding/mcp/tests/test_knowledge_guarded_merge.py.json",
+    "rationale": "Retain the leaf retirement: this exact current source is absent. Incoming evidence refreshes do not restore the retired source or its sidecar.",
+    "resultGid": null,
+    "resultMode": null,
+    "resultSha256": null,
+    "resultSize": null,
+    "resultUid": null,
+    "source": "mcp/tests/test_knowledge_guarded_merge.py",
+    "sourceExists": false,
+    "sourceSha256": null
+  },
+  {
+    "action": "delete",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 33188,
+      "sha256": "5e86bfcd87850e16ed19c70a1afd6ceab7be8bbee61d3af2519804df0bbcf234",
+      "size": 9162,
+      "type": "file",
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official base",
+      "2": "incoming official source",
+      "3": "preserved archived leaf"
+    },
+    "path": "onboarding/mcp/tests/test_knowledge_guarded_merge_boundaries.py.json",
+    "rationale": "Retain the leaf retirement: this exact current source is absent. Incoming evidence refreshes do not restore the retired source or its sidecar.",
+    "resultGid": null,
+    "resultMode": null,
+    "resultSha256": null,
+    "resultSize": null,
+    "resultUid": null,
+    "source": "mcp/tests/test_knowledge_guarded_merge_boundaries.py",
+    "sourceExists": false,
+    "sourceSha256": null
+  },
+  {
+    "action": "write",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 33188,
+      "sha256": "07c8a63e52da45422761cd4bfb30d6d7a19128219c20a97725a8721f5128dbca",
+      "size": 5284,
+      "type": "file",
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official base",
+      "2": "incoming official source",
+      "3": "preserved archived leaf"
+    },
+    "path": "onboarding/mcp/tests/test_knowledge_index_surfaces.py.json",
+    "rationale": "Keep the preserved leaf schema/current contract, exact typed records and retained reference lineage. Admit only identified incoming current targets, the exact L41 cleanup realizations and explicit retirement-guard evidence additions. References absent from leaf remain retired; numbering or directory similarity never creates a semantic union. Nonmatching current anchors remain pending scoped refresh after actual paired completion.",
+    "resultGid": 1000,
+    "resultMode": 33188,
+    "resultSha256": "6c29c34bcc43d90fffc54630179dabdf4cb84f857ecc8ec4b000e7a042a2d246",
+    "resultSize": 3104,
+    "resultUid": 1000,
+    "source": "mcp/tests/test_knowledge_index_surfaces.py",
+    "sourceExists": true,
+    "sourceSha256": "0ed640f52980541e69a4f906438aed67baaa610eb9d7e81f8919cb667acfbad9"
+  },
+  {
+    "action": "delete",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 33188,
+      "sha256": "a0831784b73f995455de0a78a924250086176371d4f64647fc225f175f88bd05",
+      "size": 15745,
+      "type": "file",
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official base",
+      "2": "incoming official source",
+      "3": "preserved archived leaf"
+    },
+    "path": "onboarding/mcp/tests/test_knowledge_ingest_comparison_generation.py.json",
+    "rationale": "Retain the leaf retirement: this exact current source is absent. Incoming evidence refreshes do not restore the retired source or its sidecar.",
+    "resultGid": null,
+    "resultMode": null,
+    "resultSha256": null,
+    "resultSize": null,
+    "resultUid": null,
+    "source": "mcp/tests/test_knowledge_ingest_comparison_generation.py",
+    "sourceExists": false,
+    "sourceSha256": null
+  },
+  {
+    "action": "delete",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 33188,
+      "sha256": "2aa552a82e5006cfa2c6ccdbc50d6d243280e950e06c71e827f7fee25353686a",
+      "size": 25265,
+      "type": "file",
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official base",
+      "2": "incoming official source",
+      "3": "preserved archived leaf"
+    },
+    "path": "onboarding/mcp/tests/test_knowledge_ingest_failure_windows.py.json",
+    "rationale": "Retain the leaf retirement: this exact current source is absent. Incoming evidence refreshes do not restore the retired source or its sidecar.",
+    "resultGid": null,
+    "resultMode": null,
+    "resultSha256": null,
+    "resultSize": null,
+    "resultUid": null,
+    "source": "mcp/tests/test_knowledge_ingest_failure_windows.py",
+    "sourceExists": false,
+    "sourceSha256": null
+  },
+  {
+    "action": "delete",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 33188,
+      "sha256": "588aaf28f0b0d2d1141a4cf97afc2d4f5a59b91a4bc0ab859d68578a621abc16",
+      "size": 20350,
+      "type": "file",
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official base",
+      "2": "incoming official source",
+      "3": "preserved archived leaf"
+    },
+    "path": "onboarding/mcp/tests/test_knowledge_ingest_publication_route.py.json",
+    "rationale": "Retain the leaf retirement: this exact current source is absent. Incoming evidence refreshes do not restore the retired source or its sidecar.",
+    "resultGid": null,
+    "resultMode": null,
+    "resultSha256": null,
+    "resultSize": null,
+    "resultUid": null,
+    "source": "mcp/tests/test_knowledge_ingest_publication_route.py",
+    "sourceExists": false,
+    "sourceSha256": null
+  },
+  {
+    "action": "delete",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 33188,
+      "sha256": "24808b01dc4259f37278ca0a36e3597e59e6c2c87129b6f7301f3ed35bebb037",
+      "size": 8429,
+      "type": "file",
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official base",
+      "2": "incoming official source",
+      "3": "preserved archived leaf"
+    },
+    "path": "onboarding/mcp/tests/test_knowledge_label_operations.py.json",
+    "rationale": "Retain the leaf retirement: this exact current source is absent. Incoming evidence refreshes do not restore the retired source or its sidecar.",
+    "resultGid": null,
+    "resultMode": null,
+    "resultSha256": null,
+    "resultSize": null,
+    "resultUid": null,
+    "source": "mcp/tests/test_knowledge_label_operations.py",
+    "sourceExists": false,
+    "sourceSha256": null
+  },
+  {
+    "action": "write",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 33188,
+      "sha256": "7c5183abc61ee408705e17123f66ed0624db0cfbd71fd3ea8ba8a547af0fe4e3",
+      "size": 4090,
+      "type": "file",
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official base",
+      "2": "incoming official source",
+      "3": "preserved archived leaf"
+    },
+    "path": "onboarding/mcp/tests/test_knowledge_leaf_read.py.json",
+    "rationale": "Keep the preserved leaf schema/current contract, exact typed records and retained reference lineage. Admit only identified incoming current targets, the exact L41 cleanup realizations and explicit retirement-guard evidence additions. References absent from leaf remain retired; numbering or directory similarity never creates a semantic union. Nonmatching current anchors remain pending scoped refresh after actual paired completion.",
+    "resultGid": 1000,
+    "resultMode": 33188,
+    "resultSha256": "55ff4f522705974d33d6ae65c876eb72d108f1e190e9eaf47e42cdb268cb6bef",
+    "resultSize": 1881,
+    "resultUid": 1000,
+    "source": "mcp/tests/test_knowledge_leaf_read.py",
+    "sourceExists": true,
+    "sourceSha256": "6c5099921999b04244e720a8740b4b3eeed05d4afc088f56e6cd8cba9ca0be53"
+  },
+  {
+    "action": "delete",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 33188,
+      "sha256": "f7307d4c21d87dfcd15c2d0c9788bcff91fba159a42c8cb751007ec6acbb6e47",
+      "size": 10751,
+      "type": "file",
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official base",
+      "2": "incoming official source",
+      "3": "preserved archived leaf"
+    },
+    "path": "onboarding/mcp/tests/test_knowledge_merge_right_side_writes.py.json",
+    "rationale": "Retain the leaf retirement: this exact current source is absent. Incoming evidence refreshes do not restore the retired source or its sidecar.",
+    "resultGid": null,
+    "resultMode": null,
+    "resultSha256": null,
+    "resultSize": null,
+    "resultUid": null,
+    "source": "mcp/tests/test_knowledge_merge_right_side_writes.py",
+    "sourceExists": false,
+    "sourceSha256": null
+  },
+  {
+    "action": "delete",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 33188,
+      "sha256": "bcdd2027009554ea98966f8481a7130e12e66c27f5def2422a13dd391c28e74f",
+      "size": 15895,
+      "type": "file",
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official base",
+      "2": "incoming official source",
+      "3": "preserved archived leaf"
+    },
+    "path": "onboarding/mcp/tests/test_knowledge_portable_boundaries.py.json",
+    "rationale": "Retain the leaf retirement: this exact current source is absent. Incoming evidence refreshes do not restore the retired source or its sidecar.",
+    "resultGid": null,
+    "resultMode": null,
+    "resultSha256": null,
+    "resultSize": null,
+    "resultUid": null,
+    "source": "mcp/tests/test_knowledge_portable_boundaries.py",
+    "sourceExists": false,
+    "sourceSha256": null
+  },
+  {
+    "action": "delete",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 33188,
+      "sha256": "30ae3ec653785a3fb5b99ee1491b53f932dc8ee2faed5431cbb0e176ca89ab0a",
+      "size": 17291,
+      "type": "file",
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official base",
+      "2": "incoming official source",
+      "3": "preserved archived leaf"
+    },
+    "path": "onboarding/mcp/tests/test_knowledge_portable_roundtrip.py.json",
+    "rationale": "Retain the leaf retirement: this exact current source is absent. Incoming evidence refreshes do not restore the retired source or its sidecar.",
+    "resultGid": null,
+    "resultMode": null,
+    "resultSha256": null,
+    "resultSize": null,
+    "resultUid": null,
+    "source": "mcp/tests/test_knowledge_portable_roundtrip.py",
+    "sourceExists": false,
+    "sourceSha256": null
+  },
+  {
+    "action": "delete",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 33188,
+      "sha256": "b0d9e0cfbd99608f2f17499a81e69318a80447023d15c4eba0cb6fadd8129b12",
+      "size": 17174,
+      "type": "file",
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official base",
+      "2": "incoming official source",
+      "3": "preserved archived leaf"
+    },
+    "path": "onboarding/mcp/tests/test_knowledge_projection_vault_safety.py.json",
+    "rationale": "Retain the leaf retirement: this exact current source is absent. Incoming evidence refreshes do not restore the retired source or its sidecar.",
+    "resultGid": null,
+    "resultMode": null,
+    "resultSha256": null,
+    "resultSize": null,
+    "resultUid": null,
+    "source": "mcp/tests/test_knowledge_projection_vault_safety.py",
+    "sourceExists": false,
+    "sourceSha256": null
+  },
+  {
+    "action": "write",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 33188,
+      "sha256": "272c0eab2ce819d4dfb41d236eb05569eacd7df0e908e9331657c7172265ac0e",
+      "size": 4396,
+      "type": "file",
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official base",
+      "2": "incoming official source",
+      "3": "preserved archived leaf"
+    },
+    "path": "onboarding/mcp/tests/test_knowledge_read_paths.py.json",
+    "rationale": "Keep the preserved leaf schema/current contract, exact typed records and retained reference lineage. Admit only identified incoming current targets, the exact L41 cleanup realizations and explicit retirement-guard evidence additions. References absent from leaf remain retired; numbering or directory similarity never creates a semantic union. Nonmatching current anchors remain pending scoped refresh after actual paired completion.",
+    "resultGid": 1000,
+    "resultMode": 33188,
+    "resultSha256": "971b9e411745664d723d553d4dcc9f488f74774be0f4435188c63065b963d0c4",
+    "resultSize": 3759,
+    "resultUid": 1000,
+    "source": "mcp/tests/test_knowledge_read_paths.py",
+    "sourceExists": true,
+    "sourceSha256": "fc5d69904ac69e0de40a7b75cb1611aa74f612822c277040c860d7b99cb2614e"
+  },
+  {
+    "action": "delete",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 33188,
+      "sha256": "d26ee002c89ace1d6d2bed31c3502a763afe3ffc954bea9c9669465fe59bf20c",
+      "size": 10863,
+      "type": "file",
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official base",
+      "2": "incoming official source",
+      "3": "preserved archived leaf"
+    },
+    "path": "onboarding/mcp/tests/test_knowledge_relation_rules.py.json",
+    "rationale": "Retain the leaf retirement: this exact current source is absent. Incoming evidence refreshes do not restore the retired source or its sidecar.",
+    "resultGid": null,
+    "resultMode": null,
+    "resultSha256": null,
+    "resultSize": null,
+    "resultUid": null,
+    "source": "mcp/tests/test_knowledge_relation_rules.py",
+    "sourceExists": false,
+    "sourceSha256": null
+  },
+  {
+    "action": "write",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 33188,
+      "sha256": "31f05f8a1e2991771c0d58eddd7bb6647b642516e5cdf1a8ded38ff58d8f1d43",
+      "size": 5838,
+      "type": "file",
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official base",
+      "2": "incoming official source",
+      "3": "preserved archived leaf"
+    },
+    "path": "onboarding/mcp/tests/test_knowledge_requirement_reference_contract.py.json",
+    "rationale": "Keep the preserved leaf schema/current contract, exact typed records and retained reference lineage. Admit only identified incoming current targets, the exact L41 cleanup realizations and explicit retirement-guard evidence additions. References absent from leaf remain retired; numbering or directory similarity never creates a semantic union. Nonmatching current anchors remain pending scoped refresh after actual paired completion.",
+    "resultGid": 1000,
+    "resultMode": 33188,
+    "resultSha256": "eeb5da00efb27bb944bdfa94e8fbcc45fb5348f4e2577341f082bcde068947bd",
+    "resultSize": 3129,
+    "resultUid": 1000,
+    "source": "mcp/tests/test_knowledge_requirement_reference_contract.py",
+    "sourceExists": true,
+    "sourceSha256": "2d8c8ef90bc08eccb043762d6a25407ab6a44f4fcace7077693436e2e9a4321e"
+  },
+  {
+    "action": "delete",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 33188,
+      "sha256": "62d98bc2a83d59e50f5753d0372fd1cc481de771352471deb499d7bb09e87d00",
+      "size": 14068,
+      "type": "file",
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official base",
+      "2": "incoming official source",
+      "3": "preserved archived leaf"
+    },
+    "path": "onboarding/mcp/tests/test_knowledge_requirement_revisions.py.json",
+    "rationale": "Retain the leaf retirement: this exact current source is absent. Incoming evidence refreshes do not restore the retired source or its sidecar.",
+    "resultGid": null,
+    "resultMode": null,
+    "resultSha256": null,
+    "resultSize": null,
+    "resultUid": null,
+    "source": "mcp/tests/test_knowledge_requirement_revisions.py",
+    "sourceExists": false,
+    "sourceSha256": null
+  },
+  {
+    "action": "write",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 33188,
+      "sha256": "ff1e7c0c5ffc3161e86df6dba88154ff0063e86ad00835caa3652f9ad9604332",
+      "size": 5476,
+      "type": "file",
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official base",
+      "2": "incoming official source",
+      "3": "preserved archived leaf"
+    },
+    "path": "onboarding/mcp/tests/test_knowledge_review_attributed_source_content.py.json",
+    "rationale": "Keep the preserved leaf schema/current contract, exact typed records and retained reference lineage. Admit only identified incoming current targets, the exact L41 cleanup realizations and explicit retirement-guard evidence additions. References absent from leaf remain retired; numbering or directory similarity never creates a semantic union. Nonmatching current anchors remain pending scoped refresh after actual paired completion.",
+    "resultGid": 1000,
+    "resultMode": 33188,
+    "resultSha256": "94f58edecaf2c9591d5872665762f38f3d1df01fe88b423d9445d09fb98cae0c",
+    "resultSize": 2542,
+    "resultUid": 1000,
+    "source": "mcp/tests/test_knowledge_review_attributed_source_content.py",
+    "sourceExists": true,
+    "sourceSha256": "9b92e4ea52de78abfbeddd62584b0700b88ebafa7374e3410f4d387f4dba3c0a"
+  },
+  {
+    "action": "write",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 33188,
+      "sha256": "32c62b88f7640e063316ec6ed128ada6cd6028281922b242a1d0baadb1d41983",
+      "size": 5755,
+      "type": "file",
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official base",
+      "2": "incoming official source",
+      "3": "preserved archived leaf"
+    },
+    "path": "onboarding/mcp/tests/test_knowledge_review_attribution_precedence.py.json",
+    "rationale": "Keep the preserved leaf schema/current contract, exact typed records and retained reference lineage. Admit only identified incoming current targets, the exact L41 cleanup realizations and explicit retirement-guard evidence additions. References absent from leaf remain retired; numbering or directory similarity never creates a semantic union. Nonmatching current anchors remain pending scoped refresh after actual paired completion.",
+    "resultGid": 1000,
+    "resultMode": 33188,
+    "resultSha256": "33628fae3ea7b165831fb609ac0a47860e706990ac4dce4e66675e80cd371742",
+    "resultSize": 1971,
+    "resultUid": 1000,
+    "source": "mcp/tests/test_knowledge_review_attribution_precedence.py",
+    "sourceExists": true,
+    "sourceSha256": "ec4bb9984642c7cfc970102bbcf683bb8013cc9e914d5cb86030d1cc5b9cc3e1"
+  },
+  {
+    "action": "write",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 33188,
+      "sha256": "0eaf1e5a0ee91e0b129ffba8e11da0003f8000edf87deafddfa7b0e7e30cebaa",
+      "size": 25320,
+      "type": "file",
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official base",
+      "2": "incoming official source",
+      "3": "preserved archived leaf"
+    },
+    "path": "onboarding/mcp/tests/test_knowledge_review_comparison_generation.py.json",
+    "rationale": "Keep the preserved leaf schema/current contract, exact typed records and retained reference lineage. Admit only identified incoming current targets, the exact L41 cleanup realizations and explicit retirement-guard evidence additions. References absent from leaf remain retired; numbering or directory similarity never creates a semantic union. Nonmatching current anchors remain pending scoped refresh after actual paired completion.",
+    "resultGid": 1000,
+    "resultMode": 33188,
+    "resultSha256": "56a3a69933144f2182b6f9bb8f8a61acd4833fa275b5468cfe486afcf1cd7a50",
+    "resultSize": 1332,
+    "resultUid": 1000,
+    "source": "mcp/tests/test_knowledge_review_comparison_generation.py",
+    "sourceExists": true,
+    "sourceSha256": "1065373dae100982e8eaf926c3443683ccb725eaac38067161e953634a7f4960"
+  },
+  {
+    "action": "write",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 33188,
+      "sha256": "a65470ce4a5430998462f26ee4c2fdbb4df67a113bd031d83e4b871fa5aa3d94",
+      "size": 7454,
+      "type": "file",
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official base",
+      "2": "incoming official source",
+      "3": "preserved archived leaf"
+    },
+    "path": "onboarding/mcp/tests/test_knowledge_review_resolution_and_route.py.json",
+    "rationale": "Keep the preserved leaf schema/current contract, exact typed records and retained reference lineage. Admit only identified incoming current targets, the exact L41 cleanup realizations and explicit retirement-guard evidence additions. References absent from leaf remain retired; numbering or directory similarity never creates a semantic union. Nonmatching current anchors remain pending scoped refresh after actual paired completion.",
+    "resultGid": 1000,
+    "resultMode": 33188,
+    "resultSha256": "6bf8e83ed714c4b35be1f6598a7d4f214719c36e29ff0411a75e973dc4dc3403",
+    "resultSize": 2547,
+    "resultUid": 1000,
+    "source": "mcp/tests/test_knowledge_review_resolution_and_route.py",
+    "sourceExists": true,
+    "sourceSha256": "390689b03a1359e4562fe8a11d5415d091c652f4c5ddb259432fed9cae1a650e"
+  },
+  {
+    "action": "write",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 33188,
+      "sha256": "1870fe10658afa9f6aff9661d234338e390d3d552e58c50cc2a8b19a08c3e630",
+      "size": 13863,
+      "type": "file",
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official base",
+      "2": "incoming official source",
+      "3": "preserved archived leaf"
+    },
+    "path": "onboarding/mcp/tests/test_knowledge_review_subject_isolation.py.json",
+    "rationale": "Keep the preserved leaf schema/current contract, exact typed records and retained reference lineage. Admit only identified incoming current targets, the exact L41 cleanup realizations and explicit retirement-guard evidence additions. References absent from leaf remain retired; numbering or directory similarity never creates a semantic union. Nonmatching current anchors remain pending scoped refresh after actual paired completion.",
+    "resultGid": 1000,
+    "resultMode": 33188,
+    "resultSha256": "8fb3b068f31dec6f7bef669906882366cf3746f0e9684d2514c41dfac1927a5a",
+    "resultSize": 2378,
+    "resultUid": 1000,
+    "source": "mcp/tests/test_knowledge_review_subject_isolation.py",
+    "sourceExists": true,
+    "sourceSha256": "e9b8289ce7b6fa3612429006e3149b901572d3d591fb47da2463b5132d29684e"
+  },
+  {
+    "action": "delete",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 33188,
+      "sha256": "d9c436bb017682cc4e191a9147a5cc4abe20043a19bb00ab2aefb88ea341ee3a",
+      "size": 12421,
+      "type": "file",
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official base",
+      "2": "incoming official source",
+      "3": "preserved archived leaf"
+    },
+    "path": "onboarding/mcp/tests/test_knowledge_snapshot_publication.py.json",
+    "rationale": "Retain the leaf retirement: this exact current source is absent. Incoming evidence refreshes do not restore the retired source or its sidecar.",
+    "resultGid": null,
+    "resultMode": null,
+    "resultSha256": null,
+    "resultSize": null,
+    "resultUid": null,
+    "source": "mcp/tests/test_knowledge_snapshot_publication.py",
+    "sourceExists": false,
+    "sourceSha256": null
+  },
+  {
+    "action": "write",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 33188,
+      "sha256": "e3d0910c60ccfb5afe9370f6f79908de345ea1bc8e453b0bc1f08caf2e437d7e",
+      "size": 6235,
+      "type": "file",
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official base",
+      "2": "incoming official source",
+      "3": "preserved archived leaf"
+    },
+    "path": "onboarding/mcp/tests/test_knowledge_store.py.json",
+    "rationale": "Keep the preserved leaf schema/current contract, exact typed records and retained reference lineage. Admit only identified incoming current targets, the exact L41 cleanup realizations and explicit retirement-guard evidence additions. References absent from leaf remain retired; numbering or directory similarity never creates a semantic union. Nonmatching current anchors remain pending scoped refresh after actual paired completion.",
+    "resultGid": 1000,
+    "resultMode": 33188,
+    "resultSha256": "36515ebc51b0566517d9d00ece3070353d26f8eb9a2e78a77fa4641428ffb2be",
+    "resultSize": 4371,
+    "resultUid": 1000,
+    "source": "mcp/tests/test_knowledge_store.py",
+    "sourceExists": true,
+    "sourceSha256": "7816e1573134b55e462fa089e3185b76a3731c9a1eb20d0e2e43deaad1987eaf"
+  },
+  {
+    "action": "delete",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 33188,
+      "sha256": "e47c4ada6512bc1d4783b5095a068b01b604c370157d82e5820a08f925e9e26d",
+      "size": 52903,
+      "type": "file",
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official base",
+      "2": "incoming official source",
+      "3": "preserved archived leaf"
+    },
+    "path": "onboarding/mcp/tests/test_migration_census.py.json",
+    "rationale": "Retain the leaf retirement: this exact current source is absent. Incoming evidence refreshes do not restore the retired source or its sidecar.",
+    "resultGid": null,
+    "resultMode": null,
+    "resultSha256": null,
+    "resultSize": null,
+    "resultUid": null,
+    "source": "mcp/tests/test_migration_census.py",
+    "sourceExists": false,
+    "sourceSha256": null
+  },
+  {
+    "action": "write",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 33188,
+      "sha256": "7a8e982130b9ce76ec029c4971f10ea0c730c31b995584146354088e1df4b1bc",
+      "size": 7519,
+      "type": "file",
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official base",
+      "2": "incoming official source",
+      "3": "preserved archived leaf"
+    },
+    "path": "onboarding/mcp/tests/test_review_external_git_movement_read.py.json",
+    "rationale": "Keep the preserved leaf schema/current contract, exact typed records and retained reference lineage. Admit only identified incoming current targets, the exact L41 cleanup realizations and explicit retirement-guard evidence additions. References absent from leaf remain retired; numbering or directory similarity never creates a semantic union. Nonmatching current anchors remain pending scoped refresh after actual paired completion.",
+    "resultGid": 1000,
+    "resultMode": 33188,
+    "resultSha256": "3f9035a31e94cc7f8fb642219301bddf91895ae5aedf6ae6a14688692d9b2527",
+    "resultSize": 4244,
+    "resultUid": 1000,
+    "source": "mcp/tests/test_review_external_git_movement_read.py",
+    "sourceExists": true,
+    "sourceSha256": "3d3fbffa44d156b25fdbc58ffcb38b1092c6965577e40b47d6cd38791e559d40"
+  },
+  {
+    "action": "write",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 33188,
+      "sha256": "cbdf3a7dde552c993d7f24d54184b4e633fa63998fb27c25e37125fd93b2f3e5",
+      "size": 7750,
+      "type": "file",
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official base",
+      "2": "incoming official source",
+      "3": "preserved archived leaf"
+    },
+    "path": "onboarding/mcp/tests/test_review_sync_movement_read.py.json",
+    "rationale": "Keep the preserved leaf schema/current contract, exact typed records and retained reference lineage. Admit only identified incoming current targets, the exact L41 cleanup realizations and explicit retirement-guard evidence additions. References absent from leaf remain retired; numbering or directory similarity never creates a semantic union. Nonmatching current anchors remain pending scoped refresh after actual paired completion.",
+    "resultGid": 1000,
+    "resultMode": 33188,
+    "resultSha256": "04125c2b2d158e9266b181356a473e37bff23b4928f99aa35e8ddb33afc7d43b",
+    "resultSize": 4183,
+    "resultUid": 1000,
+    "source": "mcp/tests/test_review_sync_movement_read.py",
+    "sourceExists": true,
+    "sourceSha256": "cdac7e84370248f6ee9b7052d9b7f0f0c23950716deef78f7de6a17cc485f0c1"
+  },
+  {
+    "action": "write",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 33188,
+      "sha256": "b263ee62f2c6019a1ffbc418b331c159169ba8980f876c19c44be1dd49b4e6bd",
+      "size": 22287,
+      "type": "file",
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official base",
+      "2": "incoming official source",
+      "3": "preserved archived leaf"
+    },
+    "path": "onboarding/mcp/tests/test_review_sync_rebinding.py.json",
+    "rationale": "Keep the preserved leaf schema/current contract, exact typed records and retained reference lineage. Admit only identified incoming current targets, the exact L41 cleanup realizations and explicit retirement-guard evidence additions. References absent from leaf remain retired; numbering or directory similarity never creates a semantic union. Nonmatching current anchors remain pending scoped refresh after actual paired completion.",
+    "resultGid": 1000,
+    "resultMode": 33188,
+    "resultSha256": "a07ab154494ffc87676ca901d55f04523ab5740f9acb3c1f314af8ec411e0c81",
+    "resultSize": 5468,
+    "resultUid": 1000,
+    "source": "mcp/tests/test_review_sync_rebinding.py",
+    "sourceExists": true,
+    "sourceSha256": "7c88abc6d5148ad129e661d731892f4aa6c3f183dc60908830c1cd68c909d6d5"
+  },
+  {
+    "action": "write",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 33188,
+      "sha256": "93794fa654ab1fb66010893aa08833ac1c8c027465bd2b4d04f6536b1c6a4eb0",
+      "size": 11070,
+      "type": "file",
+      "uid": 1000
+    },
+    "changes": [],
+    "orientation": {
+      "1": "old official base",
+      "2": "incoming official source",
+      "3": "preserved archived leaf"
+    },
+    "path": "onboarding/mcp/tests/test_tool_entry_point_sweep.py.json",
+    "rationale": "Keep the preserved leaf schema/current contract, exact typed records and retained reference lineage. Admit only identified incoming current targets, the exact L41 cleanup realizations and explicit retirement-guard evidence additions. References absent from leaf remain retired; numbering or directory similarity never creates a semantic union. Nonmatching current anchors remain pending scoped refresh after actual paired completion.",
+    "resultGid": 1000,
+    "resultMode": 33188,
+    "resultSha256": "3d3e8fb82b504aa1e9a8d915a012ab251ca93393a1d5e4eebd13bc0c4010b344",
+    "resultSize": 1831,
+    "resultUid": 1000,
+    "source": "mcp/tests/test_tool_entry_point_sweep.py",
+    "sourceExists": true,
+    "sourceSha256": "64034fda25f9a82d9b1987f64204d0dc2c82042a3d0bb554a6ae51ed139f483c"
+  },
+  {
+    "action": "write",
+    "beforePhysical": {
+      "gid": 1000,
+      "mode": 33188,
+      "sha256": "f75e2ffbbcea19214bbb3bd8cc2de32f216bf08ee56d90e91034898132ba7c25",
+      "size": 70253,
+      "type": "file",
+      "uid": 1000
+    },
+    "changes": [
+      {
+        "action": "incoming exact retained reference successor, including corrected note",
+        "incomingNumber": "100",
+        "reference": "100"
+      },
+      {
+        "action": "incoming exact retained reference successor, including corrected note",
+        "incomingNumber": "77",
+        "reference": "77"
+      },
+      {
+        "action": "leaf target retained; incoming blob differs from actual working source; scoped refresh pending after completion",
+        "reference": "87",
+        "targetIndex": 0
+      },
+      {
+        "action": "leaf target retained; incoming blob differs from actual working source; scoped refresh pending after completion",
+        "reference": "87",
+        "targetIndex": 1
+      },
+      {
+        "action": "incoming exact retained reference successor, including corrected note",
+        "incomingNumber": "97",
+        "reference": "97"
+      },
+      {
+        "action": "incoming exact retained reference successor, including corrected note",
+        "incomingNumber": "98",
+        "reference": "98"
+      },
+      {
+        "action": "incoming exact retained reference successor, including corrected note",
+        "incomingNumber": "99",
+        "reference": "99"
+      },
+      {
+        "action": "retain incoming master-retirement skill meaning and original accepted-source anchor; actual working skill has same meaning but line positions/blob differ, so scoped citation refresh remains pending after paired completion",
+        "reference": "72"
+      }
+    ],
+    "orientation": {
+      "1": "old official base",
+      "2": "incoming official source",
+      "3": "preserved archived leaf"
+    },
+    "path": "onboarding/overview.json",
+    "rationale": "Keep the preserved leaf schema/current contract, exact typed records and retained reference lineage. Admit only identified incoming current targets, the exact L41 cleanup realizations and explicit retirement-guard evidence additions. References absent from leaf remain retired; numbering or directory similarity never creates a semantic union. Nonmatching current anchors remain pending scoped refresh after actual paired completion.",
+    "resultGid": 1000,
+    "resultMode": 33188,
+    "resultSha256": "7575097cbbde572072b557d1ef57ad1258d2f3a5aef254fe2c64f264884ecc4d",
+    "resultSize": 69792,
+    "resultUid": 1000,
+    "source": ".",
+    "sourceExists": true,
+    "sourceSha256": null
+  }
+]

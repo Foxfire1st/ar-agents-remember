@@ -1,0 +1,7 @@
+{
+  "operation": "readback existing typed sidecar entries",
+  "originalError": "KeyError: 'RLZ-031YY4'",
+  "cause": "Evidence inspector looked in entries instead of the converted schema realizes/proves lists. No product/knowledge/index/source write.",
+  "correction": "Read actual realizes/proves schema; 62 typed entries checked, roles/rationales/facets/origins equal.",
+  "originalScriptRetainedAsEvidence": "The current evidence inspector and this dated correction retain the failed assumption; existing candidate evidence outputs were factual and no record authoring occurred."
+}

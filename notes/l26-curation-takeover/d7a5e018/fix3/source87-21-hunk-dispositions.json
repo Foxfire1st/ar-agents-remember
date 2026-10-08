@@ -1,0 +1,1273 @@
+[
+  {
+    "item": {
+      "facts": {
+        "admits": [
+          "attach",
+          "author",
+          "no_invariant"
+        ],
+        "changedLines": {
+          "base": "absent",
+          "candidate": "sha256:03cd80592988d5b38992650b18782b88c8c995c05aaac82f409766873ed25d17"
+        },
+        "coverage": {
+          "realizationEntries": 3,
+          "route": "mcp/tests",
+          "routeStatus": "pending",
+          "state": "covered"
+        },
+        "deleteOnly": false,
+        "hunks": [
+          {
+            "base": [
+              1715,
+              0
+            ],
+            "candidate": [
+              1579,
+              7
+            ]
+          }
+        ],
+        "path": "mcp/tests/evidence-lifecycle.toml",
+        "row": "hunk:sha256:c17703048c50d55f71bc1655a5571f7410cd3c71d757dd901d4cecf020f2943d"
+      },
+      "id": "sha256:c17703048c50d55f71bc1655a5571f7410cd3c71d757dd901d4cecf020f2943d",
+      "kind": "unexplained_hunk",
+      "satisfiedBy": null,
+      "subject": "hunk:mcp/tests/evidence-lifecycle.toml@absent..sha256:03cd80592988d5b38992650b18782b88c8c995c05aaac82f409766873ed25d17"
+    },
+    "chunks": [
+      {
+        "before": "",
+        "after": "  \"mcp/tests/test_automatic_post_integration_cleanup.py\",\n  \"mcp/tests/test_historical_committed_leaf_review.py\",\n  \"mcp/tests/test_knowledge_conversion_toolchain.py\",\n  \"mcp/tests/test_knowledge_copy_cleanup.py\",\n  \"mcp/tests/test_knowledge_diff_attribution.py\",\n  \"mcp/tests/test_knowledge_diff_boundaries.py\",\n  \"mcp/tests/test_knowledge_diff_scope.py\",",
+        "ranges": {
+          "base": [
+            1715,
+            0
+          ],
+          "candidate": [
+            1579,
+            7
+          ]
+        }
+      }
+    ],
+    "disposition": {
+      "subject": "hunk:sha256:c17703048c50d55f71bc1655a5571f7410cd3c71d757dd901d4cecf020f2943d",
+      "disposition": "no_invariant",
+      "reason": "The lifecycle catalog replaces retired canonical-database fixture consumers with the current index-row fixture consumers and their owning artifact declarations. This exact hunk [{'base': [1715, 0], 'candidate': [1579, 7]}] is registry data for the already admitted retirement and the Owner-admitted four derived consumer lists; the source/test behavior and authored lane contract are not changed by the catalog entries. It warrants no additional invariant; the surviving fixture ownership contracts remain in the existing records."
+    }
+  },
+  {
+    "item": {
+      "facts": {
+        "admits": [
+          "attach",
+          "author",
+          "no_invariant"
+        ],
+        "changedLines": {
+          "base": "absent",
+          "candidate": "sha256:4b469c6f286940dca5865ad60001c040cb875b20c1644e11114154aea7b059e9"
+        },
+        "coverage": {
+          "realizationEntries": 3,
+          "route": "mcp/tests",
+          "routeStatus": "pending",
+          "state": "covered"
+        },
+        "deleteOnly": false,
+        "hunks": [
+          {
+            "base": [
+              1724,
+              0
+            ],
+            "candidate": [
+              1685,
+              2
+            ]
+          }
+        ],
+        "path": "mcp/tests/evidence-lifecycle.toml",
+        "row": "hunk:sha256:4d94b09093cee32ff91be5040a49c028e4b18a53ceceecc59d4c1df219b90eb4"
+      },
+      "id": "sha256:4d94b09093cee32ff91be5040a49c028e4b18a53ceceecc59d4c1df219b90eb4",
+      "kind": "unexplained_hunk",
+      "satisfiedBy": null,
+      "subject": "hunk:mcp/tests/evidence-lifecycle.toml@absent..sha256:4b469c6f286940dca5865ad60001c040cb875b20c1644e11114154aea7b059e9"
+    },
+    "chunks": [
+      {
+        "before": "",
+        "after": "  \"mcp/tests/test_review_source_inventory_boundaries.py\",\n  \"mcp/tests/test_review_subject_catalogue.py\",",
+        "ranges": {
+          "base": [
+            1724,
+            0
+          ],
+          "candidate": [
+            1685,
+            2
+          ]
+        }
+      }
+    ],
+    "disposition": {
+      "subject": "hunk:sha256:4d94b09093cee32ff91be5040a49c028e4b18a53ceceecc59d4c1df219b90eb4",
+      "disposition": "no_invariant",
+      "reason": "The lifecycle catalog replaces retired canonical-database fixture consumers with the current index-row fixture consumers and their owning artifact declarations. This exact hunk [{'base': [1724, 0], 'candidate': [1685, 2]}] is registry data for the already admitted retirement and the Owner-admitted four derived consumer lists; the source/test behavior and authored lane contract are not changed by the catalog entries. It warrants no additional invariant; the surviving fixture ownership contracts remain in the existing records."
+    }
+  },
+  {
+    "item": {
+      "facts": {
+        "admits": [
+          "attach",
+          "author",
+          "no_invariant"
+        ],
+        "changedLines": {
+          "base": "absent",
+          "candidate": "sha256:5cdf6ff1f1097e3ef520079995bb7e227b0fef7ab213d736d6ccfe31e7ffeabc"
+        },
+        "coverage": {
+          "realizationEntries": 3,
+          "route": "mcp/tests",
+          "routeStatus": "pending",
+          "state": "covered"
+        },
+        "deleteOnly": false,
+        "hunks": [
+          {
+            "base": [
+              1722,
+              0
+            ],
+            "candidate": [
+              1596,
+              78
+            ]
+          }
+        ],
+        "path": "mcp/tests/evidence-lifecycle.toml",
+        "row": "hunk:sha256:612ec4e32b5fc282a00b006a68c31701c4c6b065034c5b331b2c2df993aea9f3"
+      },
+      "id": "sha256:612ec4e32b5fc282a00b006a68c31701c4c6b065034c5b331b2c2df993aea9f3",
+      "kind": "unexplained_hunk",
+      "satisfiedBy": null,
+      "subject": "hunk:mcp/tests/evidence-lifecycle.toml@absent..sha256:5cdf6ff1f1097e3ef520079995bb7e227b0fef7ab213d736d6ccfe31e7ffeabc"
+    },
+    "chunks": [
+      {
+        "before": "",
+        "after": "  \"mcp/tests/test_knowledge_reopen_governing_rows.py\",\n  \"mcp/tests/test_knowledge_review_attributed_source_content.py\",\n  \"mcp/tests/test_knowledge_review_attribution_precedence.py\",\n  \"mcp/tests/test_knowledge_review_one_sided_statements.py\",\n  \"mcp/tests/test_knowledge_review_relationship_line.py\",\n  \"mcp/tests/test_knowledge_review_relationship_movement.py\",\n  \"mcp/tests/test_knowledge_review_relationship_reach.py\",\n  \"mcp/tests/test_knowledge_review_resolution_and_route.py\",\n  \"mcp/tests/test_knowledge_review_revision_selection.py\",\n  \"mcp/tests/test_knowledge_review_source_content.py\",\n  \"mcp/tests/test_knowledge_review_source_endpoints.py\",\n  \"mcp/tests/test_knowledge_review_surface.py\",\n  \"mcp/tests/test_knowledge_revision_seals.py\",\n  \"mcp/tests/test_knowledge_route_chain.py\",\n  \"mcp/tests/test_knowledge_store.py\",\n  \"mcp/tests/test_knowledge_views.py\",\n  \"mcp/tests/test_read_ar_files.py\",\n  \"mcp/tests/test_review_bounded_pagination.py\",\n  \"mcp/tests/test_review_closeout_result_block_through_real_tool.py\",\n  \"mcp/tests/test_review_family_context.py\",\n  \"mcp/tests/test_review_family_context_population.py\",\n  \"mcp/tests/test_review_family_member_sources.py\",\n  \"mcp/tests/test_review_intent_summary.py\",\n  \"mcp/tests/test_review_read_latency.py\",\n  \"mcp/tests/test_review_source_inventory_boundaries.py\",\n  \"mcp/tests/test_review_subject_catalogue.py\",\n  \"mcp/tests/test_reviewer_worklist_process.py\",\n  \"mcp/tests/test_reviewer_worklist_reads.py\",\n  \"mcp/tests/test_terminal_blocker_reasons.py\",\n  \"mcp/tests/test_transaction_only_worktree_delivery.py\",\n  \"mcp/tests/test_worktree_candidate_capture.py\",\n]\n\n[[artifact]]\npath = \"mcp/tests/knowledge_rows_test_support.py\"\nkind = \"shared-support\"\nauthority = \"internal-canonical\"\nowner = \"mcp/tests/knowledge_rows_test_support.py\"\ncategory = \"unit-regression\"\nfidelity = \"in-process\"\ncadence = \"affected\"\nsource_version_or_generator = \"raw row inserts into the schema production declares (the schema of a memory tree's derived index), with each revision's seal computed by the production digest function the readers verify\"\nintroduced_by = \"260928-MIK-L26\"\nlifetime = \"permanent\"\npermanence_rationale = \"The canonical database's writers are retired (MIK-R26), and the read code that remains runs over index-shaped rows a text tree cannot always express (several revisions of one invariant, a membership present in one dataset and absent in the next). The fixtures of the read, comparison and review cases insert those rows through this one builder, so no production writer survives for the tests' sake and no two fixtures disagree about what a row is.\"\nreplacement_contract = \"node:mcp/tests/test_knowledge_store.py::test_two_same_label_successors_reopen_as_separate_revisions\"\nconsumer_scope = \"exact\"\nconsumers = [\n  \"mcp/tests/test_automatic_post_integration_cleanup.py\",\n  \"mcp/tests/test_historical_committed_leaf_review.py\",\n  \"mcp/tests/test_knowledge_conversion_toolchain.py\",\n  \"mcp/tests/test_knowledge_copy_cleanup.py\",\n  \"mcp/tests/test_knowledge_diff_attribution.py\",\n  \"mcp/tests/test_knowledge_diff_boundaries.py\",\n  \"mcp/tests/test_knowledge_diff_scope.py\",\n  \"mcp/tests/test_knowledge_index.py\",\n  \"mcp/tests/test_knowledge_index_reuse.py\",\n  \"mcp/tests/test_knowledge_index_surfaces.py\",\n  \"mcp/tests/test_knowledge_leaf_read.py\",\n  \"mcp/tests/test_knowledge_paging.py\",\n  \"mcp/tests/test_knowledge_proofs.py\",\n  \"mcp/tests/test_knowledge_read_boundaries.py\",\n  \"mcp/tests/test_knowledge_read_paths.py\",\n  \"mcp/tests/test_knowledge_read_scope.py\",\n  \"mcp/tests/test_knowledge_reopen.py\",\n  \"mcp/tests/test_knowledge_reopen_governing_rows.py\",\n  \"mcp/tests/test_knowledge_review_attributed_source_content.py\",\n  \"mcp/tests/test_knowledge_review_attribution_precedence.py\",\n  \"mcp/tests/test_knowledge_review_one_sided_statements.py\",\n  \"mcp/tests/test_knowledge_review_relationship_line.py\",\n  \"mcp/tests/test_knowledge_review_relationship_movement.py\",\n  \"mcp/tests/test_knowledge_review_relationship_reach.py\",\n  \"mcp/tests/test_knowledge_review_resolution_and_route.py\",\n  \"mcp/tests/test_knowledge_review_revision_selection.py\",\n  \"mcp/tests/test_knowledge_review_source_content.py\",\n  \"mcp/tests/test_knowledge_review_source_endpoints.py\",\n  \"mcp/tests/test_knowledge_review_surface.py\",\n  \"mcp/tests/test_knowledge_revision_seals.py\",",
+        "ranges": {
+          "base": [
+            1722,
+            0
+          ],
+          "candidate": [
+            1596,
+            78
+          ]
+        }
+      }
+    ],
+    "disposition": {
+      "subject": "hunk:sha256:612ec4e32b5fc282a00b006a68c31701c4c6b065034c5b331b2c2df993aea9f3",
+      "disposition": "no_invariant",
+      "reason": "The lifecycle catalog replaces retired canonical-database fixture consumers with the current index-row fixture consumers and their owning artifact declarations. This exact hunk [{'base': [1722, 0], 'candidate': [1596, 78]}] is registry data for the already admitted retirement and the Owner-admitted four derived consumer lists; the source/test behavior and authored lane contract are not changed by the catalog entries. It warrants no additional invariant; the surviving fixture ownership contracts remain in the existing records."
+    }
+  },
+  {
+    "item": {
+      "facts": {
+        "admits": [
+          "attach",
+          "author",
+          "no_invariant"
+        ],
+        "changedLines": {
+          "base": "absent",
+          "candidate": "sha256:aa134cd3e3eac753c4ddb27cf796e7c2e1b5195c610a78a2c07d4faf21b0da26"
+        },
+        "coverage": {
+          "realizationEntries": 3,
+          "route": "mcp/tests",
+          "routeStatus": "pending",
+          "state": "covered"
+        },
+        "deleteOnly": false,
+        "hunks": [
+          {
+            "base": [
+              1723,
+              0
+            ],
+            "candidate": [
+              1675,
+              9
+            ]
+          }
+        ],
+        "path": "mcp/tests/evidence-lifecycle.toml",
+        "row": "hunk:sha256:7c8fbc504ed1272ac8b6dc54b7c939cc0dd2c7b528934b16e428fb1f17ba234a"
+      },
+      "id": "sha256:7c8fbc504ed1272ac8b6dc54b7c939cc0dd2c7b528934b16e428fb1f17ba234a",
+      "kind": "unexplained_hunk",
+      "satisfiedBy": null,
+      "subject": "hunk:mcp/tests/evidence-lifecycle.toml@absent..sha256:aa134cd3e3eac753c4ddb27cf796e7c2e1b5195c610a78a2c07d4faf21b0da26"
+    },
+    "chunks": [
+      {
+        "before": "",
+        "after": "  \"mcp/tests/test_knowledge_store.py\",\n  \"mcp/tests/test_knowledge_views.py\",\n  \"mcp/tests/test_read_ar_files.py\",\n  \"mcp/tests/test_review_bounded_pagination.py\",\n  \"mcp/tests/test_review_closeout_result_block_through_real_tool.py\",\n  \"mcp/tests/test_review_family_context.py\",\n  \"mcp/tests/test_review_family_context_population.py\",\n  \"mcp/tests/test_review_family_member_sources.py\",\n  \"mcp/tests/test_review_intent_summary.py\",",
+        "ranges": {
+          "base": [
+            1723,
+            0
+          ],
+          "candidate": [
+            1675,
+            9
+          ]
+        }
+      }
+    ],
+    "disposition": {
+      "subject": "hunk:sha256:7c8fbc504ed1272ac8b6dc54b7c939cc0dd2c7b528934b16e428fb1f17ba234a",
+      "disposition": "no_invariant",
+      "reason": "The lifecycle catalog replaces retired canonical-database fixture consumers with the current index-row fixture consumers and their owning artifact declarations. This exact hunk [{'base': [1723, 0], 'candidate': [1675, 9]}] is registry data for the already admitted retirement and the Owner-admitted four derived consumer lists; the source/test behavior and authored lane contract are not changed by the catalog entries. It warrants no additional invariant; the surviving fixture ownership contracts remain in the existing records."
+    }
+  },
+  {
+    "item": {
+      "facts": {
+        "admits": [
+          "attach",
+          "author",
+          "no_invariant"
+        ],
+        "changedLines": {
+          "base": "absent",
+          "candidate": "sha256:b10af8990a93f30908ce280e49ad576cbdac9601e608920c40e6b7fb6e69aadc"
+        },
+        "coverage": {
+          "realizationEntries": 3,
+          "route": "mcp/tests",
+          "routeStatus": "pending",
+          "state": "covered"
+        },
+        "deleteOnly": false,
+        "hunks": [
+          {
+            "base": [
+              1726,
+              0
+            ],
+            "candidate": [
+              1689,
+              2
+            ]
+          }
+        ],
+        "path": "mcp/tests/evidence-lifecycle.toml",
+        "row": "hunk:sha256:4cc4fb62108fce899524554d7c38c2ff037b7e7419da658e792b1f94f9f66b15"
+      },
+      "id": "sha256:4cc4fb62108fce899524554d7c38c2ff037b7e7419da658e792b1f94f9f66b15",
+      "kind": "unexplained_hunk",
+      "satisfiedBy": null,
+      "subject": "hunk:mcp/tests/evidence-lifecycle.toml@absent..sha256:b10af8990a93f30908ce280e49ad576cbdac9601e608920c40e6b7fb6e69aadc"
+    },
+    "chunks": [
+      {
+        "before": "",
+        "after": "  \"mcp/tests/test_terminal_blocker_reasons.py\",\n  \"mcp/tests/test_transaction_only_worktree_delivery.py\",",
+        "ranges": {
+          "base": [
+            1726,
+            0
+          ],
+          "candidate": [
+            1689,
+            2
+          ]
+        }
+      }
+    ],
+    "disposition": {
+      "subject": "hunk:sha256:4cc4fb62108fce899524554d7c38c2ff037b7e7419da658e792b1f94f9f66b15",
+      "disposition": "no_invariant",
+      "reason": "The lifecycle catalog replaces retired canonical-database fixture consumers with the current index-row fixture consumers and their owning artifact declarations. This exact hunk [{'base': [1726, 0], 'candidate': [1689, 2]}] is registry data for the already admitted retirement and the Owner-admitted four derived consumer lists; the source/test behavior and authored lane contract are not changed by the catalog entries. It warrants no additional invariant; the surviving fixture ownership contracts remain in the existing records."
+    }
+  },
+  {
+    "item": {
+      "facts": {
+        "admits": [
+          "attach",
+          "author",
+          "no_invariant"
+        ],
+        "changedLines": {
+          "base": "absent",
+          "candidate": "sha256:b5e6d6792ca6ebbb910495965f9b14d44a68adfd085054be24c637388986ef4a"
+        },
+        "coverage": {
+          "realizationEntries": 3,
+          "route": "mcp/tests",
+          "routeStatus": "pending",
+          "state": "covered"
+        },
+        "deleteOnly": false,
+        "hunks": [
+          {
+            "base": [
+              1721,
+              0
+            ],
+            "candidate": [
+              1592,
+              3
+            ]
+          }
+        ],
+        "path": "mcp/tests/evidence-lifecycle.toml",
+        "row": "hunk:sha256:d4affc6e3008dbbb3d14ceb62e09062cc22b7a6e81cd0ff61d89fc2ccbede6d6"
+      },
+      "id": "sha256:d4affc6e3008dbbb3d14ceb62e09062cc22b7a6e81cd0ff61d89fc2ccbede6d6",
+      "kind": "unexplained_hunk",
+      "satisfiedBy": null,
+      "subject": "hunk:mcp/tests/evidence-lifecycle.toml@absent..sha256:b5e6d6792ca6ebbb910495965f9b14d44a68adfd085054be24c637388986ef4a"
+    },
+    "chunks": [
+      {
+        "before": "",
+        "after": "  \"mcp/tests/test_knowledge_read_boundaries.py\",\n  \"mcp/tests/test_knowledge_read_paths.py\",\n  \"mcp/tests/test_knowledge_read_scope.py\",",
+        "ranges": {
+          "base": [
+            1721,
+            0
+          ],
+          "candidate": [
+            1592,
+            3
+          ]
+        }
+      }
+    ],
+    "disposition": {
+      "subject": "hunk:sha256:d4affc6e3008dbbb3d14ceb62e09062cc22b7a6e81cd0ff61d89fc2ccbede6d6",
+      "disposition": "no_invariant",
+      "reason": "The lifecycle catalog replaces retired canonical-database fixture consumers with the current index-row fixture consumers and their owning artifact declarations. This exact hunk [{'base': [1721, 0], 'candidate': [1592, 3]}] is registry data for the already admitted retirement and the Owner-admitted four derived consumer lists; the source/test behavior and authored lane contract are not changed by the catalog entries. It warrants no additional invariant; the surviving fixture ownership contracts remain in the existing records."
+    }
+  },
+  {
+    "item": {
+      "facts": {
+        "admits": [
+          "attach",
+          "author",
+          "no_invariant"
+        ],
+        "changedLines": {
+          "base": "absent",
+          "candidate": "sha256:f1b3f95222fd51e761b78135f3bf46882fef9edb1e7660e72a5a2e66094cd5f2"
+        },
+        "coverage": {
+          "realizationEntries": 3,
+          "route": "mcp/tests",
+          "routeStatus": "pending",
+          "state": "covered"
+        },
+        "deleteOnly": false,
+        "hunks": [
+          {
+            "base": [
+              274,
+              0
+            ],
+            "candidate": [
+              209,
+              13
+            ]
+          }
+        ],
+        "path": "mcp/tests/evidence-lifecycle.toml",
+        "row": "hunk:sha256:dfed92d0f822b43bd4d3361ba305592ec416482b88de6ff0fd460ab0ce4ddbc3"
+      },
+      "id": "sha256:dfed92d0f822b43bd4d3361ba305592ec416482b88de6ff0fd460ab0ce4ddbc3",
+      "kind": "unexplained_hunk",
+      "satisfiedBy": null,
+      "subject": "hunk:mcp/tests/evidence-lifecycle.toml@absent..sha256:f1b3f95222fd51e761b78135f3bf46882fef9edb1e7660e72a5a2e66094cd5f2"
+    },
+    "chunks": [
+      {
+        "before": "",
+        "after": "  \"mcp/tests/test_review_closeout_result_block_through_real_tool.py\",\n  \"mcp/tests/test_review_family_context.py\",\n  \"mcp/tests/test_review_family_context_population.py\",\n  \"mcp/tests/test_review_family_member_sources.py\",\n  \"mcp/tests/test_review_intent_summary.py\",\n  \"mcp/tests/test_review_read_latency.py\",\n  \"mcp/tests/test_review_source_inventory_boundaries.py\",\n  \"mcp/tests/test_review_subject_catalogue.py\",\n  \"mcp/tests/test_reviewer_worklist_process.py\",\n  \"mcp/tests/test_reviewer_worklist_reads.py\",\n  \"mcp/tests/test_terminal_blocker_reasons.py\",\n  \"mcp/tests/test_transaction_only_worktree_delivery.py\",\n  \"mcp/tests/test_worktree_candidate_capture.py\",",
+        "ranges": {
+          "base": [
+            274,
+            0
+          ],
+          "candidate": [
+            209,
+            13
+          ]
+        }
+      }
+    ],
+    "disposition": {
+      "subject": "hunk:sha256:dfed92d0f822b43bd4d3361ba305592ec416482b88de6ff0fd460ab0ce4ddbc3",
+      "disposition": "no_invariant",
+      "reason": "The lifecycle catalog replaces retired canonical-database fixture consumers with the current index-row fixture consumers and their owning artifact declarations. This exact hunk [{'base': [274, 0], 'candidate': [209, 13]}] is registry data for the already admitted retirement and the Owner-admitted four derived consumer lists; the source/test behavior and authored lane contract are not changed by the catalog entries. It warrants no additional invariant; the surviving fixture ownership contracts remain in the existing records."
+    }
+  },
+  {
+    "item": {
+      "facts": {
+        "admits": [
+          "attach",
+          "author",
+          "no_invariant"
+        ],
+        "changedLines": {
+          "base": "sha256:46999338d46d3cb3907549e54cd77f7ec6981178c1e6f8adf6fae85c85391fcf",
+          "candidate": "sha256:42ef5bed3504fe2968ad6163597b912264736e68098d8c303717e3b9524cc48b"
+        },
+        "coverage": {
+          "realizationEntries": 3,
+          "route": "mcp/tests",
+          "routeStatus": "pending",
+          "state": "covered"
+        },
+        "deleteOnly": false,
+        "hunks": [
+          {
+            "base": [
+              269,
+              5
+            ],
+            "candidate": [
+              174,
+              34
+            ]
+          }
+        ],
+        "path": "mcp/tests/evidence-lifecycle.toml",
+        "row": "hunk:sha256:75f2c4aa7ec797c75f87425637beb524fe310faf78e853ae4a10f64fc9c56cfe"
+      },
+      "id": "sha256:75f2c4aa7ec797c75f87425637beb524fe310faf78e853ae4a10f64fc9c56cfe",
+      "kind": "unexplained_hunk",
+      "satisfiedBy": null,
+      "subject": "hunk:mcp/tests/evidence-lifecycle.toml@sha256:46999338d46d3cb3907549e54cd77f7ec6981178c1e6f8adf6fae85c85391fcf..sha256:42ef5bed3504fe2968ad6163597b912264736e68098d8c303717e3b9524cc48b"
+    },
+    "chunks": [
+      {
+        "before": "  \"mcp/tests/test_candidate_batch_commands.py\",\n  \"mcp/tests/test_candidate_batch_transaction.py\",\n  \"mcp/tests/test_knowledge_change_sets.py\",\n  \"mcp/tests/test_knowledge_curator_ingest.py\",\n  \"mcp/tests/test_knowledge_effect_claims.py\",",
+        "after": "  \"mcp/tests/test_automatic_post_integration_cleanup.py\",\n  \"mcp/tests/test_historical_committed_leaf_review.py\",\n  \"mcp/tests/test_knowledge_conversion_toolchain.py\",\n  \"mcp/tests/test_knowledge_copy_cleanup.py\",\n  \"mcp/tests/test_knowledge_diff_attribution.py\",\n  \"mcp/tests/test_knowledge_diff_boundaries.py\",\n  \"mcp/tests/test_knowledge_diff_scope.py\",\n  \"mcp/tests/test_knowledge_index.py\",\n  \"mcp/tests/test_knowledge_index_reuse.py\",\n  \"mcp/tests/test_knowledge_index_surfaces.py\",\n  \"mcp/tests/test_knowledge_leaf_read.py\",\n  \"mcp/tests/test_knowledge_paging.py\",\n  \"mcp/tests/test_knowledge_proofs.py\",\n  \"mcp/tests/test_knowledge_read_boundaries.py\",\n  \"mcp/tests/test_knowledge_read_paths.py\",\n  \"mcp/tests/test_knowledge_read_scope.py\",\n  \"mcp/tests/test_knowledge_reopen.py\",\n  \"mcp/tests/test_knowledge_reopen_governing_rows.py\",\n  \"mcp/tests/test_knowledge_review_attributed_source_content.py\",\n  \"mcp/tests/test_knowledge_review_attribution_precedence.py\",\n  \"mcp/tests/test_knowledge_review_one_sided_statements.py\",\n  \"mcp/tests/test_knowledge_review_relationship_line.py\",\n  \"mcp/tests/test_knowledge_review_relationship_movement.py\",\n  \"mcp/tests/test_knowledge_review_relationship_reach.py\",\n  \"mcp/tests/test_knowledge_review_resolution_and_route.py\",\n  \"mcp/tests/test_knowledge_review_revision_selection.py\",\n  \"mcp/tests/test_knowledge_review_source_content.py\",\n  \"mcp/tests/test_knowledge_review_source_endpoints.py\",\n  \"mcp/tests/test_knowledge_review_surface.py\",\n  \"mcp/tests/test_knowledge_revision_seals.py\",\n  \"mcp/tests/test_knowledge_route_chain.py\",\n  \"mcp/tests/test_knowledge_store.py\",\n  \"mcp/tests/test_knowledge_views.py\",\n  \"mcp/tests/test_read_ar_files.py\",",
+        "ranges": {
+          "base": [
+            269,
+            5
+          ],
+          "candidate": [
+            174,
+            34
+          ]
+        }
+      }
+    ],
+    "disposition": {
+      "subject": "hunk:sha256:75f2c4aa7ec797c75f87425637beb524fe310faf78e853ae4a10f64fc9c56cfe",
+      "disposition": "no_invariant",
+      "reason": "The lifecycle catalog replaces retired canonical-database fixture consumers with the current index-row fixture consumers and their owning artifact declarations. This exact hunk [{'base': [269, 5], 'candidate': [174, 34]}] is registry data for the already admitted retirement and the Owner-admitted four derived consumer lists; the source/test behavior and authored lane contract are not changed by the catalog entries. It warrants no additional invariant; the surviving fixture ownership contracts remain in the existing records."
+    }
+  },
+  {
+    "item": {
+      "facts": {
+        "admits": [
+          "attach",
+          "author",
+          "no_invariant"
+        ],
+        "changedLines": {
+          "base": "sha256:838c79b078719ead93d4e82b3af4f6ddf0080c8f421901045a5b9d9536c5aa3b",
+          "candidate": "sha256:d589df1089a552e260217d4aae50430e89804b4ccca071060ecb47f3e370a456"
+        },
+        "coverage": {
+          "realizationEntries": 3,
+          "route": "mcp/tests",
+          "routeStatus": "pending",
+          "state": "covered"
+        },
+        "deleteOnly": false,
+        "hunks": [
+          {
+            "base": [
+              1712,
+              2
+            ],
+            "candidate": [
+              1575,
+              2
+            ]
+          }
+        ],
+        "path": "mcp/tests/evidence-lifecycle.toml",
+        "row": "hunk:sha256:8411a8ebe64f2570d3fcd3f327b1ab16d2c78c6a30eb5aaabb6b9bd74711b883"
+      },
+      "id": "sha256:8411a8ebe64f2570d3fcd3f327b1ab16d2c78c6a30eb5aaabb6b9bd74711b883",
+      "kind": "unexplained_hunk",
+      "satisfiedBy": null,
+      "subject": "hunk:mcp/tests/evidence-lifecycle.toml@sha256:838c79b078719ead93d4e82b3af4f6ddf0080c8f421901045a5b9d9536c5aa3b..sha256:d589df1089a552e260217d4aae50430e89804b4ccca071060ecb47f3e370a456"
+    },
+    "chunks": [
+      {
+        "before": "permanence_rationale = \"The index parity cases compare the same authored dataset over the database and over its converted tree.\"\nreplacement_contract = \"node:mcp/tests/test_knowledge_index.py::test_a_working_tree_and_its_git_tree_index_to_the_same_key_and_answers\"",
+        "after": "permanence_rationale = \"Production decodes index rows and never encodes one; the fixture row writer and the comparison fixtures encode typed columns, authorship and claim digests with these functions.\"\nreplacement_contract = \"node:mcp/tests/test_knowledge_store.py::test_two_same_label_successors_reopen_as_separate_revisions\"",
+        "ranges": {
+          "base": [
+            1712,
+            2
+          ],
+          "candidate": [
+            1575,
+            2
+          ]
+        }
+      }
+    ],
+    "disposition": {
+      "subject": "hunk:sha256:8411a8ebe64f2570d3fcd3f327b1ab16d2c78c6a30eb5aaabb6b9bd74711b883",
+      "disposition": "no_invariant",
+      "reason": "The lifecycle catalog replaces retired canonical-database fixture consumers with the current index-row fixture consumers and their owning artifact declarations. This exact hunk [{'base': [1712, 2], 'candidate': [1575, 2]}] is registry data for the already admitted retirement and the Owner-admitted four derived consumer lists; the source/test behavior and authored lane contract are not changed by the catalog entries. It warrants no additional invariant; the surviving fixture ownership contracts remain in the existing records."
+    }
+  },
+  {
+    "item": {
+      "facts": {
+        "admits": [
+          "attach",
+          "author",
+          "no_invariant"
+        ],
+        "changedLines": {
+          "base": "sha256:ed51773ce07af71990a31423c7c228ffa5fd42726daf70e74b70783627faa196",
+          "candidate": "sha256:c55f3fdb0dc8fad6cb52118cdfbdb51690ad0798a512320df606da531abf10d9"
+        },
+        "coverage": {
+          "realizationEntries": 3,
+          "route": "mcp/tests",
+          "routeStatus": "pending",
+          "state": "covered"
+        },
+        "deleteOnly": false,
+        "hunks": [
+          {
+            "base": [
+              1696,
+              3
+            ],
+            "candidate": [
+              1544,
+              18
+            ]
+          }
+        ],
+        "path": "mcp/tests/evidence-lifecycle.toml",
+        "row": "hunk:sha256:b3be91f9aad9ef5b25886aaf275105d8eefc43eccbe3eb0432b39e505162a53f"
+      },
+      "id": "sha256:b3be91f9aad9ef5b25886aaf275105d8eefc43eccbe3eb0432b39e505162a53f",
+      "kind": "unexplained_hunk",
+      "satisfiedBy": null,
+      "subject": "hunk:mcp/tests/evidence-lifecycle.toml@sha256:ed51773ce07af71990a31423c7c228ffa5fd42726daf70e74b70783627faa196..sha256:c55f3fdb0dc8fad6cb52118cdfbdb51690ad0798a512320df606da531abf10d9"
+    },
+    "chunks": [
+      {
+        "before": "  \"mcp/tests/test_knowledge_family_revision.py\",\n  \"mcp/tests/test_knowledge_graph_reads.py\",\n  \"mcp/tests/test_knowledge_relation_rules.py\",",
+        "after": "  \"mcp/tests/test_automatic_post_integration_cleanup.py\",\n  \"mcp/tests/test_knowledge_index.py\",\n  \"mcp/tests/test_knowledge_index_reuse.py\",\n  \"mcp/tests/test_knowledge_index_surfaces.py\",\n  \"mcp/tests/test_knowledge_leaf_read.py\",\n  \"mcp/tests/test_knowledge_paging.py\",\n  \"mcp/tests/test_knowledge_proofs.py\",\n  \"mcp/tests/test_knowledge_reopen.py\",\n  \"mcp/tests/test_knowledge_reopen_governing_rows.py\",\n  \"mcp/tests/test_knowledge_route_chain.py\",\n  \"mcp/tests/test_knowledge_views.py\",\n  \"mcp/tests/test_review_closeout_result_block_through_real_tool.py\",\n  \"mcp/tests/test_review_read_latency.py\",\n  \"mcp/tests/test_reviewer_worklist_process.py\",\n  \"mcp/tests/test_reviewer_worklist_reads.py\",\n  \"mcp/tests/test_terminal_blocker_reasons.py\",\n  \"mcp/tests/test_transaction_only_worktree_delivery.py\",\n  \"mcp/tests/test_worktree_candidate_capture.py\",",
+        "ranges": {
+          "base": [
+            1696,
+            3
+          ],
+          "candidate": [
+            1544,
+            18
+          ]
+        }
+      }
+    ],
+    "disposition": {
+      "subject": "hunk:sha256:b3be91f9aad9ef5b25886aaf275105d8eefc43eccbe3eb0432b39e505162a53f",
+      "disposition": "no_invariant",
+      "reason": "The lifecycle catalog replaces retired canonical-database fixture consumers with the current index-row fixture consumers and their owning artifact declarations. This exact hunk [{'base': [1696, 3], 'candidate': [1544, 18]}] is registry data for the already admitted retirement and the Owner-admitted four derived consumer lists; the source/test behavior and authored lane contract are not changed by the catalog entries. It warrants no additional invariant; the surviving fixture ownership contracts remain in the existing records."
+    }
+  },
+  {
+    "item": {
+      "facts": {
+        "admits": [
+          "attach",
+          "author",
+          "no_invariant"
+        ],
+        "changedLines": {
+          "base": "absent",
+          "candidate": "sha256:71c1294e6115e136fac1d501be5d4153ec093ddb10707f3946b09a98c63ab45d"
+        },
+        "coverage": {
+          "realizationEntries": 1,
+          "route": "mcp/tests",
+          "routeStatus": "pending",
+          "state": "covered"
+        },
+        "deleteOnly": false,
+        "hunks": [
+          {
+            "base": [
+              573,
+              0
+            ],
+            "candidate": [
+              566,
+              6
+            ]
+          }
+        ],
+        "path": "mcp/tests/knowledge_index_test_support.py",
+        "row": "hunk:sha256:5b719ac097a1335e183ee680adaa0d58fc3aad9768d8f338374393417dadf4a2"
+      },
+      "id": "sha256:5b719ac097a1335e183ee680adaa0d58fc3aad9768d8f338374393417dadf4a2",
+      "kind": "unexplained_hunk",
+      "satisfiedBy": null,
+      "subject": "hunk:mcp/tests/knowledge_index_test_support.py@absent..sha256:71c1294e6115e136fac1d501be5d4153ec093ddb10707f3946b09a98c63ab45d"
+    },
+    "chunks": [
+      {
+        "before": "",
+        "after": "    from anchor_fixture_models import (  # noqa: PLC0415\n        GitBlobIdentity,\n        RealizationClaimDraft,\n        SourceAnchorDraft,\n    )\n    from knowledge_rows_test_support import NewAnchor  # noqa: PLC0415",
+        "ranges": {
+          "base": [
+            573,
+            0
+          ],
+          "candidate": [
+            566,
+            6
+          ]
+        }
+      }
+    ],
+    "disposition": {
+      "subject": "hunk:sha256:5b719ac097a1335e183ee680adaa0d58fc3aad9768d8f338374393417dadf4a2",
+      "disposition": "no_invariant",
+      "reason": "This exact support hunk [{'base': [573, 0], 'candidate': [566, 6]}] selects the test-only row/anchor builders instead of the retired canonical writer and its request drafts. The existing index fixture and timing-helper obligations still govern the surviving support. Import relocation and removal do not create an additional behavioral guarantee; this history records retirement/composition, not a runtime or executed-test certificate."
+    }
+  },
+  {
+    "item": {
+      "facts": {
+        "admits": [
+          "attach",
+          "author",
+          "no_invariant"
+        ],
+        "changedLines": {
+          "base": "absent",
+          "candidate": "sha256:93a52b9a7d7a2049c85f30f9c61294b75f09dc2b4d5c44a87b911b2c2a323a68"
+        },
+        "coverage": {
+          "realizationEntries": 1,
+          "route": "mcp/tests",
+          "routeStatus": "pending",
+          "state": "covered"
+        },
+        "deleteOnly": false,
+        "hunks": [
+          {
+            "base": [
+              734,
+              0
+            ],
+            "candidate": [
+              727,
+              1
+            ]
+          }
+        ],
+        "path": "mcp/tests/knowledge_index_test_support.py",
+        "row": "hunk:sha256:ccf355341b9f47e5aad8f490a46825fa0e48c6f192989db62d72863f5dd91d99"
+      },
+      "id": "sha256:ccf355341b9f47e5aad8f490a46825fa0e48c6f192989db62d72863f5dd91d99",
+      "kind": "unexplained_hunk",
+      "satisfiedBy": null,
+      "subject": "hunk:mcp/tests/knowledge_index_test_support.py@absent..sha256:93a52b9a7d7a2049c85f30f9c61294b75f09dc2b4d5c44a87b911b2c2a323a68"
+    },
+    "chunks": [
+      {
+        "before": "",
+        "after": "    from knowledge_rows_test_support import NewAnchor  # noqa: PLC0415",
+        "ranges": {
+          "base": [
+            734,
+            0
+          ],
+          "candidate": [
+            727,
+            1
+          ]
+        }
+      }
+    ],
+    "disposition": {
+      "subject": "hunk:sha256:ccf355341b9f47e5aad8f490a46825fa0e48c6f192989db62d72863f5dd91d99",
+      "disposition": "no_invariant",
+      "reason": "This exact support hunk [{'base': [734, 0], 'candidate': [727, 1]}] selects the test-only row/anchor builders instead of the retired canonical writer and its request drafts. The existing index fixture and timing-helper obligations still govern the surviving support. Import relocation and removal do not create an additional behavioral guarantee; this history records retirement/composition, not a runtime or executed-test certificate."
+    }
+  },
+  {
+    "item": {
+      "facts": {
+        "admits": [
+          "attach",
+          "author",
+          "no_invariant"
+        ],
+        "changedLines": {
+          "base": "absent",
+          "candidate": "sha256:e5c3b4a3a6c30587562a8740213d3ccae69b520188f526269c56b0988ca290c3"
+        },
+        "coverage": {
+          "realizationEntries": 1,
+          "route": "mcp/tests",
+          "routeStatus": "pending",
+          "state": "covered"
+        },
+        "deleteOnly": false,
+        "hunks": [
+          {
+            "base": [
+              33,
+              0
+            ],
+            "candidate": [
+              34,
+              13
+            ]
+          }
+        ],
+        "path": "mcp/tests/knowledge_index_test_support.py",
+        "row": "hunk:sha256:164e070748eaa711c74eb8ec401910ff87a90c8f34af6de89757f9d55c54b00b"
+      },
+      "id": "sha256:164e070748eaa711c74eb8ec401910ff87a90c8f34af6de89757f9d55c54b00b",
+      "kind": "unexplained_hunk",
+      "satisfiedBy": null,
+      "subject": "hunk:mcp/tests/knowledge_index_test_support.py@absent..sha256:e5c3b4a3a6c30587562a8740213d3ccae69b520188f526269c56b0988ca290c3"
+    },
+    "chunks": [
+      {
+        "before": "",
+        "after": "from knowledge_rows_test_support import (\n    FamilyMemberRequest,\n    FamilyRequest,\n    FamilyRevisionRequest,\n    InvariantRequest,\n    RealizationClaimRequest,\n    RevisionDraft,\n    RevisionRequest,\n    families,\n    memberships,\n    open_knowledge_store,\n    realizations,\n)",
+        "ranges": {
+          "base": [
+            33,
+            0
+          ],
+          "candidate": [
+            34,
+            13
+          ]
+        }
+      }
+    ],
+    "disposition": {
+      "subject": "hunk:sha256:164e070748eaa711c74eb8ec401910ff87a90c8f34af6de89757f9d55c54b00b",
+      "disposition": "no_invariant",
+      "reason": "This exact support hunk [{'base': [33, 0], 'candidate': [34, 13]}] selects the test-only row/anchor builders instead of the retired canonical writer and its request drafts. The existing index fixture and timing-helper obligations still govern the surviving support. Import relocation and removal do not create an additional behavioral guarantee; this history records retirement/composition, not a runtime or executed-test certificate."
+    }
+  },
+  {
+    "item": {
+      "facts": {
+        "admits": [
+          "attach",
+          "author",
+          "no_invariant"
+        ],
+        "changedLines": {
+          "base": "absent",
+          "candidate": "sha256:ea6e36ae58ab7488ec510ef5add7d444c7756dacec4fc7fb3ce8e111cd927d6a"
+        },
+        "coverage": {
+          "realizationEntries": 1,
+          "route": "mcp/tests",
+          "routeStatus": "pending",
+          "state": "covered"
+        },
+        "deleteOnly": false,
+        "hunks": [
+          {
+            "base": [
+              732,
+              0
+            ],
+            "candidate": [
+              724,
+              1
+            ]
+          }
+        ],
+        "path": "mcp/tests/knowledge_index_test_support.py",
+        "row": "hunk:sha256:cb58ddd6675f3402f6b19bb3f95b7b2aa2b2d1d9f1570bd1de52b2b7aeca8e8a"
+      },
+      "id": "sha256:cb58ddd6675f3402f6b19bb3f95b7b2aa2b2d1d9f1570bd1de52b2b7aeca8e8a",
+      "kind": "unexplained_hunk",
+      "satisfiedBy": null,
+      "subject": "hunk:mcp/tests/knowledge_index_test_support.py@absent..sha256:ea6e36ae58ab7488ec510ef5add7d444c7756dacec4fc7fb3ce8e111cd927d6a"
+    },
+    "chunks": [
+      {
+        "before": "",
+        "after": "        RealizationClaimDraft,",
+        "ranges": {
+          "base": [
+            732,
+            0
+          ],
+          "candidate": [
+            724,
+            1
+          ]
+        }
+      }
+    ],
+    "disposition": {
+      "subject": "hunk:sha256:cb58ddd6675f3402f6b19bb3f95b7b2aa2b2d1d9f1570bd1de52b2b7aeca8e8a",
+      "disposition": "no_invariant",
+      "reason": "This exact support hunk [{'base': [732, 0], 'candidate': [724, 1]}] selects the test-only row/anchor builders instead of the retired canonical writer and its request drafts. The existing index fixture and timing-helper obligations still govern the surviving support. Import relocation and removal do not create an additional behavioral guarantee; this history records retirement/composition, not a runtime or executed-test certificate."
+    }
+  },
+  {
+    "item": {
+      "facts": {
+        "admits": [
+          "no_invariant"
+        ],
+        "changedLines": {
+          "base": "sha256:09ecc6c0599ab0f73dd84ab330375e9594468c71054196ae642c0df5f28f7b03",
+          "candidate": "absent"
+        },
+        "coverage": {
+          "realizationEntries": 1,
+          "route": "mcp/tests",
+          "routeStatus": "pending",
+          "state": "covered"
+        },
+        "deleteOnly": true,
+        "hunks": [
+          {
+            "base": [
+              557,
+              10
+            ],
+            "candidate": [
+              560,
+              0
+            ]
+          }
+        ],
+        "path": "mcp/tests/knowledge_index_test_support.py",
+        "row": "hunk:sha256:5fbfb4074907639cc3c2bdb416ee0dab73ab7eb872f1962fc5140f6d28892b02"
+      },
+      "id": "sha256:5fbfb4074907639cc3c2bdb416ee0dab73ab7eb872f1962fc5140f6d28892b02",
+      "kind": "unexplained_hunk",
+      "satisfiedBy": null,
+      "subject": "hunk:mcp/tests/knowledge_index_test_support.py@sha256:09ecc6c0599ab0f73dd84ab330375e9594468c71054196ae642c0df5f28f7b03..absent"
+    },
+    "chunks": [
+      {
+        "before": "    from agents_remember.models.knowledge.result import (  # noqa: PLC0415\n        FamilyMemberRequest,\n        FamilyRequest,\n        FamilyRevisionRequest,\n        InvariantRequest,\n        NewAnchor,\n        RealizationClaimRequest,\n        RevisionDraft,\n        RevisionRequest,\n    )",
+        "after": "",
+        "ranges": {
+          "base": [
+            557,
+            10
+          ],
+          "candidate": [
+            560,
+            0
+          ]
+        }
+      }
+    ],
+    "disposition": {
+      "subject": "hunk:sha256:5fbfb4074907639cc3c2bdb416ee0dab73ab7eb872f1962fc5140f6d28892b02",
+      "disposition": "no_invariant",
+      "reason": "This exact support hunk [{'base': [557, 10], 'candidate': [560, 0]}] removes retired production writer/model imports. The existing index fixture and timing-helper obligations still govern the surviving support. Import relocation and removal do not create an additional behavioral guarantee; this history records retirement/composition, not a runtime or executed-test certificate."
+    }
+  },
+  {
+    "item": {
+      "facts": {
+        "admits": [
+          "attach",
+          "author",
+          "no_invariant"
+        ],
+        "changedLines": {
+          "base": "sha256:10415733eb2a5a60c56e66de38cd1d1476d5c0148d83f363e75e4f39eef99f41",
+          "candidate": "sha256:6f3c9dffe6cb81b6bccb57aff0e0b38d32ee34c99af514c2756385f3b6231092"
+        },
+        "coverage": {
+          "realizationEntries": 1,
+          "route": "mcp/tests",
+          "routeStatus": "pending",
+          "state": "covered"
+        },
+        "deleteOnly": false,
+        "hunks": [
+          {
+            "base": [
+              552,
+              4
+            ],
+            "candidate": [
+              559,
+              1
+            ]
+          }
+        ],
+        "path": "mcp/tests/knowledge_index_test_support.py",
+        "row": "hunk:sha256:277010ddd89dcb988f1f38dee7a3648c156ed15ac564d8574a82bf3d4a9b8530"
+      },
+      "id": "sha256:277010ddd89dcb988f1f38dee7a3648c156ed15ac564d8574a82bf3d4a9b8530",
+      "kind": "unexplained_hunk",
+      "satisfiedBy": null,
+      "subject": "hunk:mcp/tests/knowledge_index_test_support.py@sha256:10415733eb2a5a60c56e66de38cd1d1476d5c0148d83f363e75e4f39eef99f41..sha256:6f3c9dffe6cb81b6bccb57aff0e0b38d32ee34c99af514c2756385f3b6231092"
+    },
+    "chunks": [
+      {
+        "before": "    from agents_remember.models.knowledge.graph import (  # noqa: PLC0415\n        FamilyMemberDraft,\n        RealizationClaimDraft,\n    )",
+        "after": "    from agents_remember.models.knowledge.graph import FamilyMemberDraft  # noqa: PLC0415",
+        "ranges": {
+          "base": [
+            552,
+            4
+          ],
+          "candidate": [
+            559,
+            1
+          ]
+        }
+      }
+    ],
+    "disposition": {
+      "subject": "hunk:sha256:277010ddd89dcb988f1f38dee7a3648c156ed15ac564d8574a82bf3d4a9b8530",
+      "disposition": "no_invariant",
+      "reason": "This exact support hunk [{'base': [552, 4], 'candidate': [559, 1]}] selects the test-only row/anchor builders instead of the retired canonical writer and its request drafts. The existing index fixture and timing-helper obligations still govern the surviving support. Import relocation and removal do not create an additional behavioral guarantee; this history records retirement/composition, not a runtime or executed-test certificate."
+    }
+  },
+  {
+    "item": {
+      "facts": {
+        "admits": [
+          "no_invariant"
+        ],
+        "changedLines": {
+          "base": "sha256:349edf3462d9e81919b24ffa873278a5aa1a32c3a070860863dfb83e12a6ef92",
+          "candidate": "absent"
+        },
+        "coverage": {
+          "realizationEntries": 1,
+          "route": "mcp/tests",
+          "routeStatus": "pending",
+          "state": "covered"
+        },
+        "deleteOnly": true,
+        "hunks": [
+          {
+            "base": [
+              544,
+              6
+            ],
+            "candidate": [
+              556,
+              0
+            ]
+          }
+        ],
+        "path": "mcp/tests/knowledge_index_test_support.py",
+        "row": "hunk:sha256:a5d90c324229d53505456a6f12f0b56a123d9a8f2e5879108b561d26b815ac62"
+      },
+      "id": "sha256:a5d90c324229d53505456a6f12f0b56a123d9a8f2e5879108b561d26b815ac62",
+      "kind": "unexplained_hunk",
+      "satisfiedBy": null,
+      "subject": "hunk:mcp/tests/knowledge_index_test_support.py@sha256:349edf3462d9e81919b24ffa873278a5aa1a32c3a070860863dfb83e12a6ef92..absent"
+    },
+    "chunks": [
+      {
+        "before": "    from agents_remember.memory.knowledge import (  # noqa: PLC0415\n        families,\n        memberships,\n        realizations,\n    )\n    from agents_remember.memory.knowledge.store import open_knowledge_store  # noqa: PLC0415",
+        "after": "",
+        "ranges": {
+          "base": [
+            544,
+            6
+          ],
+          "candidate": [
+            556,
+            0
+          ]
+        }
+      }
+    ],
+    "disposition": {
+      "subject": "hunk:sha256:a5d90c324229d53505456a6f12f0b56a123d9a8f2e5879108b561d26b815ac62",
+      "disposition": "no_invariant",
+      "reason": "This exact support hunk [{'base': [544, 6], 'candidate': [556, 0]}] removes retired production writer/model imports. The existing index fixture and timing-helper obligations still govern the surviving support. Import relocation and removal do not create an additional behavioral guarantee; this history records retirement/composition, not a runtime or executed-test certificate."
+    }
+  },
+  {
+    "item": {
+      "facts": {
+        "admits": [
+          "attach",
+          "author",
+          "no_invariant"
+        ],
+        "changedLines": {
+          "base": "sha256:8cca75d75b1a3197001a8a01f7d4d29b0a00f66617f7164d3f3a02c959eeb983",
+          "candidate": "sha256:befc5ecf26c75dad34bc30d9eb7f35cce21b0e8ae0c86d7564c2c3862250534f"
+        },
+        "coverage": {
+          "realizationEntries": 1,
+          "route": "mcp/tests",
+          "routeStatus": "pending",
+          "state": "covered"
+        },
+        "deleteOnly": false,
+        "hunks": [
+          {
+            "base": [
+              725,
+              7
+            ],
+            "candidate": [
+              721,
+              2
+            ]
+          }
+        ],
+        "path": "mcp/tests/knowledge_index_test_support.py",
+        "row": "hunk:sha256:b831671435cddb84a5e2b8efc26f0217165bd7a686a7c50e03ed9ac86e9a99e1"
+      },
+      "id": "sha256:b831671435cddb84a5e2b8efc26f0217165bd7a686a7c50e03ed9ac86e9a99e1",
+      "kind": "unexplained_hunk",
+      "satisfiedBy": null,
+      "subject": "hunk:mcp/tests/knowledge_index_test_support.py@sha256:8cca75d75b1a3197001a8a01f7d4d29b0a00f66617f7164d3f3a02c959eeb983..sha256:befc5ecf26c75dad34bc30d9eb7f35cce21b0e8ae0c86d7564c2c3862250534f"
+    },
+    "chunks": [
+      {
+        "before": "    from agents_remember.models.knowledge.graph import RealizationClaimDraft  # noqa: PLC0415\n    from agents_remember.models.knowledge.result import (  # noqa: PLC0415\n        NewAnchor,\n        RealizationClaimRequest,\n    )\n    from agents_remember.models.knowledge.source import (  # noqa: PLC0415\n        FileLocator,",
+        "after": "    from agents_remember.models.knowledge.source import FileLocator  # noqa: PLC0415\n    from anchor_fixture_models import (  # noqa: PLC0415",
+        "ranges": {
+          "base": [
+            725,
+            7
+          ],
+          "candidate": [
+            721,
+            2
+          ]
+        }
+      }
+    ],
+    "disposition": {
+      "subject": "hunk:sha256:b831671435cddb84a5e2b8efc26f0217165bd7a686a7c50e03ed9ac86e9a99e1",
+      "disposition": "no_invariant",
+      "reason": "This exact support hunk [{'base': [725, 7], 'candidate': [721, 2]}] selects the test-only row/anchor builders instead of the retired canonical writer and its request drafts. The existing index fixture and timing-helper obligations still govern the surviving support. Import relocation and removal do not create an additional behavioral guarantee; this history records retirement/composition, not a runtime or executed-test certificate."
+    }
+  },
+  {
+    "item": {
+      "facts": {
+        "admits": [
+          "no_invariant"
+        ],
+        "changedLines": {
+          "base": "sha256:9b874bcae3d1d9743f639dca936a35a8371a75d8a4e3477e61cbcec260c8d312",
+          "candidate": "absent"
+        },
+        "coverage": {
+          "realizationEntries": 1,
+          "route": "mcp/tests",
+          "routeStatus": "pending",
+          "state": "covered"
+        },
+        "deleteOnly": true,
+        "hunks": [
+          {
+            "base": [
+              571,
+              1
+            ],
+            "candidate": [
+              563,
+              0
+            ]
+          }
+        ],
+        "path": "mcp/tests/knowledge_index_test_support.py",
+        "row": "hunk:sha256:9d6f37083c9681784ff962f1b8ff7a2ad7eb6b9fc4e2931f846284e931af2d02"
+      },
+      "id": "sha256:9d6f37083c9681784ff962f1b8ff7a2ad7eb6b9fc4e2931f846284e931af2d02",
+      "kind": "unexplained_hunk",
+      "satisfiedBy": null,
+      "subject": "hunk:mcp/tests/knowledge_index_test_support.py@sha256:9b874bcae3d1d9743f639dca936a35a8371a75d8a4e3477e61cbcec260c8d312..absent"
+    },
+    "chunks": [
+      {
+        "before": "        SourceAnchorDraft,",
+        "after": "",
+        "ranges": {
+          "base": [
+            571,
+            1
+          ],
+          "candidate": [
+            563,
+            0
+          ]
+        }
+      }
+    ],
+    "disposition": {
+      "subject": "hunk:sha256:9d6f37083c9681784ff962f1b8ff7a2ad7eb6b9fc4e2931f846284e931af2d02",
+      "disposition": "no_invariant",
+      "reason": "This exact support hunk [{'base': [571, 1], 'candidate': [563, 0]}] removes retired production writer/model imports. The existing index fixture and timing-helper obligations still govern the surviving support. Import relocation and removal do not create an additional behavioral guarantee; this history records retirement/composition, not a runtime or executed-test certificate."
+    }
+  },
+  {
+    "item": {
+      "facts": {
+        "admits": [
+          "no_invariant"
+        ],
+        "changedLines": {
+          "base": "sha256:bb906eaca6dcb9eb0761d4e28ef52295dc6c457633dd5517705c9cfe540d10e6",
+          "candidate": "absent"
+        },
+        "coverage": {
+          "realizationEntries": 1,
+          "route": "mcp/tests",
+          "routeStatus": "pending",
+          "state": "covered"
+        },
+        "deleteOnly": true,
+        "hunks": [
+          {
+            "base": [
+              569,
+              1
+            ],
+            "candidate": [
+              562,
+              0
+            ]
+          }
+        ],
+        "path": "mcp/tests/knowledge_index_test_support.py",
+        "row": "hunk:sha256:55f505b8082514112ae7de3ee73e7e94564718254def39eae3d46436d18c6f52"
+      },
+      "id": "sha256:55f505b8082514112ae7de3ee73e7e94564718254def39eae3d46436d18c6f52",
+      "kind": "unexplained_hunk",
+      "satisfiedBy": null,
+      "subject": "hunk:mcp/tests/knowledge_index_test_support.py@sha256:bb906eaca6dcb9eb0761d4e28ef52295dc6c457633dd5517705c9cfe540d10e6..absent"
+    },
+    "chunks": [
+      {
+        "before": "        GitBlobIdentity,",
+        "after": "",
+        "ranges": {
+          "base": [
+            569,
+            1
+          ],
+          "candidate": [
+            562,
+            0
+          ]
+        }
+      }
+    ],
+    "disposition": {
+      "subject": "hunk:sha256:55f505b8082514112ae7de3ee73e7e94564718254def39eae3d46436d18c6f52",
+      "disposition": "no_invariant",
+      "reason": "This exact support hunk [{'base': [569, 1], 'candidate': [562, 0]}] removes retired production writer/model imports. The existing index fixture and timing-helper obligations still govern the surviving support. Import relocation and removal do not create an additional behavioral guarantee; this history records retirement/composition, not a runtime or executed-test certificate."
+    }
+  },
+  {
+    "item": {
+      "facts": {
+        "admits": [
+          "no_invariant"
+        ],
+        "changedLines": {
+          "base": "sha256:e7a5efe8422b202302aa8e9f60e5a10fdaff24e2860e195b40c603ccd10d598d",
+          "candidate": "absent"
+        },
+        "coverage": {
+          "realizationEntries": 1,
+          "route": "mcp/tests",
+          "routeStatus": "pending",
+          "state": "covered"
+        },
+        "deleteOnly": true,
+        "hunks": [
+          {
+            "base": [
+              722,
+              2
+            ],
+            "candidate": [
+              719,
+              0
+            ]
+          }
+        ],
+        "path": "mcp/tests/knowledge_index_test_support.py",
+        "row": "hunk:sha256:13fd25b00ed69a4370ece085cf5b963d0a3d0e0b06d71a62b0d2fa573b7a1d33"
+      },
+      "id": "sha256:13fd25b00ed69a4370ece085cf5b963d0a3d0e0b06d71a62b0d2fa573b7a1d33",
+      "kind": "unexplained_hunk",
+      "satisfiedBy": null,
+      "subject": "hunk:mcp/tests/knowledge_index_test_support.py@sha256:e7a5efe8422b202302aa8e9f60e5a10fdaff24e2860e195b40c603ccd10d598d..absent"
+    },
+    "chunks": [
+      {
+        "before": "    from agents_remember.memory.knowledge import realizations  # noqa: PLC0415\n    from agents_remember.memory.knowledge.store import open_knowledge_store  # noqa: PLC0415",
+        "after": "",
+        "ranges": {
+          "base": [
+            722,
+            2
+          ],
+          "candidate": [
+            719,
+            0
+          ]
+        }
+      }
+    ],
+    "disposition": {
+      "subject": "hunk:sha256:13fd25b00ed69a4370ece085cf5b963d0a3d0e0b06d71a62b0d2fa573b7a1d33",
+      "disposition": "no_invariant",
+      "reason": "This exact support hunk [{'base': [722, 2], 'candidate': [719, 0]}] removes retired production writer/model imports. The existing index fixture and timing-helper obligations still govern the surviving support. Import relocation and removal do not create an additional behavioral guarantee; this history records retirement/composition, not a runtime or executed-test certificate."
+    }
+  }
+]

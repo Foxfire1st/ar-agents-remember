@@ -17,9 +17,7 @@ authority home it was authored under.
 (`min_length=1`, `max_length=LABEL_MAX_LENGTH`). Its `authority_home` field validator strips the value and
 refuses a blank result with `"authority_home must not be blank"`.
 
-Every canonical table in `memory/knowledge/schema.py` keys on `repository_id`, and the store's bound namespace is
-this model's `repository_id`; a request naming another namespace is refused as `unauthorized_scope` before any
-DML.
+Every retained base schema table keys its rows on repository_id, and the opened index store queries its bound namespace. This model declares namespace identity; neither it nor the read-only store exposes repository rebinding or foreign-namespace DML.
 
 ### Conventions
 
@@ -31,9 +29,7 @@ revision underneath it.
 
 - `repository_id` is opaque UUID text; the readable repository name belongs in `authority_home`, which is
   provenance rather than identity.
-- Rebinding a populated store to a different namespace or authority home is refused
-  (`repository_rebind_refusal`), because the stored revisions are addressed within the namespace that authored
-  them.
+- Historical canonical-database writes refused rebinding through repository_rebind_refusal. That factory and writer were retired by MIK-R26. The current value retains namespace and authority-home identity; it grants no rebinding operation.
 - The authority home is authored input; the store never derives it from the running checkout or the Git remote.
 
 ### Todos
@@ -53,8 +49,12 @@ No configured domain documentation could be checked.
 
 - The namespace model and its nonblank authority-home rule. [1]
 - The `repository` table this identity keys, and its no-update/no-delete triggers. [2]
-- Rebinding a populated store to another namespace or authority home is refused. [3]
-- A request naming a foreign namespace refuses before any DML. [4]
+
+- The repository value declares namespace and authority home; the old rebinding writer is retired. [3]
+
+
+- The index reader queries its bound namespace and opens a read-only connection. [4]
+
 
 ### Cross-Repo References
 

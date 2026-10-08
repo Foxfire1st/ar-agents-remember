@@ -2,98 +2,44 @@
   "path": "mcp/requirements.txt",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "MCP package metadata declares the same runtime dependencies.\n\nAnchor: \"pydantic>=2,<3\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "cd34ba7224618224d7bda60be1a80b2c77a16860",
-            "content": "sha256:f1cb700f0604155c85bf3de4545f66d82c0b91eb705f65c2817a4fea33c0cc7d",
-            "locator": {
-              "end": 28,
-              "kind": "line_range",
-              "start": 28
-            },
-            "path": "mcp/pyproject.toml"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "2": {
-      "note": "The exact SQLite-binding pin, with the session build-option reason recorded inline above it.\n\nAnchor: \"apsw==3.53.4.0\"",
+      "note": "Current package pin and schema-feature reason.",
       "targets": [
         {
           "anchor": {
-            "blob": "cd34ba7224618224d7bda60be1a80b2c77a16860",
-            "content": "sha256:44db4b85a586f86da2ed7cc34e2a6af28fb512217074dfad5d406fb14c8c83fe",
+            "blob": "f960ca45e4fea2dcef8e92a29382eff04914397a",
+            "content": "sha256:051c831f525d73300bd6e48f838effaac0b1d1f099e72141cb1f408d08340a78",
             "locator": {
-              "end": 26,
-              "kind": "line_range",
-              "start": 21
+              "kind": "file"
             },
             "path": "mcp/pyproject.toml"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "The same pin in this manifest, which must agree with the package metadata.\n\nAnchor: \"apsw==3.53.4.0\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e755e6453e0f09911bbe4a91cdcc31f9b2b61b58",
-            "content": "sha256:46a04c2b98321faec862575eb95fefbd5596b21464b7114c968a8701099d74aa",
-            "locator": {
-              "end": 2,
-              "kind": "line_range",
-              "start": 2
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "4": {
-      "note": "Pydantic response contracts live under the models package: the base model every knowledge vocabulary model inherits, declared against the pinned range.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "138358a5feab44724703f06dfe3ff24c231ee322",
-            "content": "sha256:770c387ee275ee397402391f33ba68467fe3c4e8fd0f6411e59f57807632a7d0",
-            "locator": {
-              "kind": "symbol",
-              "name": "KnowledgeModel"
-            },
-            "path": "mcp/src/agents_remember/models/knowledge/base.py"
           },
           "kind": "code"
         }
       ]
     },
     "5": {
-      "note": "The store that consumes the binding.",
+      "note": "Derived-index projection and read-only connections use APSW.",
       "targets": [
         {
           "anchor": {
-            "blob": "c14937bd02459de274f4bb96b0f500f895dbd44a",
-            "content": "sha256:c292cce359d20655f10cdddc27136f07c4a0c034ea1c136ac02ca4ec9f55223a",
+            "blob": "0d5a95d9a299265f6272d50e4ea52707ae1ff47d",
+            "content": "sha256:60b596c1047d7ff68521b6b57311873e051773ca2446c64b0c6a55dcf53087d3",
             "locator": {
               "kind": "symbol",
-              "name": "open_database"
+              "name": "project"
             },
-            "path": "mcp/src/agents_remember/memory/knowledge/connection.py"
+            "path": "mcp/src/agents_remember/memory/knowledge_index/projection.py"
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "c14937bd02459de274f4bb96b0f500f895dbd44a",
-            "content": "sha256:106dda7307680b4d613aa0ee792ba0f8566868ebb0217a90a13c9be1fbec137e",
+            "blob": "5330296baa8cabeac31286bb196c70bcf2763703",
+            "content": "sha256:8e0d73a6fc5ba1e336df087f356d6f7090430e241977d7497ad8d06bb9fb7662",
             "locator": {
               "kind": "symbol",
-              "name": "apply_connection_contract"
+              "name": "open_read_only_database"
             },
             "path": "mcp/src/agents_remember/memory/knowledge/connection.py"
           },

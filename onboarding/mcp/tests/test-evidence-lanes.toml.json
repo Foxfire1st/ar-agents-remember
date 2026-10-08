@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "d2e70c4ea442123fb39e942aa6d15259450ec98e",
+        "blob": "747e2fd84902c4cfd303447277fc79430196f238",
         "content": "sha256:b34cd52a387bf092bd2484b6a8602413c0028077ff493f0aff91311cbb09d3f1",
         "locator": {
-          "end": 373,
+          "end": 338,
           "kind": "line_range",
-          "start": 373
+          "start": 338
         }
       },
       "id": "RLZ-NJFH31",
@@ -22,12 +22,12 @@
     },
     {
       "anchor": {
-        "blob": "d2e70c4ea442123fb39e942aa6d15259450ec98e",
+        "blob": "747e2fd84902c4cfd303447277fc79430196f238",
         "content": "sha256:d78be9a4046b8ffdab5120a0a748737d28d92bec8743be7d5acec6847feb659b",
         "locator": {
-          "end": 277,
+          "end": 247,
           "kind": "line_range",
-          "start": 277
+          "start": 247
         }
       },
       "id": "RLZ-ZTDYFT",
@@ -103,14 +103,16 @@
       ]
     },
     "241": {
-      "note": "Dependency-facts store controls belong to architecture fitness.",
+      "note": "Dependency-facts store controls belong to architecture fitness.\n\nAnchor: \"mcp/tests/test_dependency_facts_store.py\"",
       "targets": [
         {
           "anchor": {
-            "blob": "d2e70c4ea442123fb39e942aa6d15259450ec98e",
-            "content": "sha256:ce666527e229cf13456733160c5089e1861e0ca7c34f8399e05eb3355b45370b",
+            "blob": "747e2fd84902c4cfd303447277fc79430196f238",
+            "content": "sha256:38bb8eaf37c90e55fdc88a1b8991ecf8c84ceaffa29d0dbbb9bb3efeee91157a",
             "locator": {
-              "kind": "file"
+              "end": 401,
+              "kind": "line_range",
+              "start": 401
             }
           },
           "kind": "test"
@@ -118,14 +120,16 @@
       ]
     },
     "242": {
-      "note": "The bounded Python load-independence scanner belongs to architecture fitness.",
+      "note": "The bounded Python load-independence scanner belongs to architecture fitness.\n\nAnchor: \"mcp/tests/test_suite_load_independence.py\"",
       "targets": [
         {
           "anchor": {
-            "blob": "d2e70c4ea442123fb39e942aa6d15259450ec98e",
-            "content": "sha256:ce666527e229cf13456733160c5089e1861e0ca7c34f8399e05eb3355b45370b",
+            "blob": "747e2fd84902c4cfd303447277fc79430196f238",
+            "content": "sha256:46db249ec1151e616e17ab6b76bad588716389eeaad9d6e25ec27afc8bd70086",
             "locator": {
-              "kind": "file"
+              "end": 417,
+              "kind": "line_range",
+              "start": 417
             }
           },
           "kind": "test"

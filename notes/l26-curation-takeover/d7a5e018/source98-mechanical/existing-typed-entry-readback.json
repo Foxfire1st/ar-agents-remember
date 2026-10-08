@@ -1,0 +1,1410 @@
+{
+  "count": 62,
+  "allRolesRationalesFacetsOriginsPreserved": true,
+  "checks": [
+    {
+      "id": "RLZ-031YY4",
+      "fields": {
+        "role": "presentation",
+        "rationale": "The orchestrator seat description names concurrent-master coordination plus the explicit single-master request.",
+        "facet": null,
+        "origin": {
+          "handoffEntry": "L72/MIK-R72@v2-one-coordinating-agent",
+          "leaf": "260928-MIK-L72"
+        }
+      },
+      "locatorBefore": {
+        "end": 226,
+        "kind": "line_range",
+        "start": 226
+      },
+      "locatorAfter": {
+        "end": 226,
+        "kind": "line_range",
+        "start": 226
+      },
+      "pathBefore": "skills/l-01-agent-lifecycles/composition-manifest.json",
+      "pathAfter": null
+    },
+    {
+      "id": "RLZ-5G6AGC",
+      "fields": {
+        "role": "presentation",
+        "rationale": "The manager seat description places the Manager under the Architect for one master or the Orchestrator for concurrent masters.",
+        "facet": null,
+        "origin": {
+          "handoffEntry": "L72/MIK-R72@v2-one-coordinating-agent",
+          "leaf": "260928-MIK-L72"
+        }
+      },
+      "locatorBefore": {
+        "end": 333,
+        "kind": "line_range",
+        "start": 333
+      },
+      "locatorAfter": {
+        "end": 333,
+        "kind": "line_range",
+        "start": 333
+      },
+      "pathBefore": "skills/l-01-agent-lifecycles/composition-manifest.json",
+      "pathAfter": null
+    },
+    {
+      "id": "RLZ-6W76SN",
+      "fields": {
+        "role": "primary-authority",
+        "rationale": "The canonical manifest is the owner of requested tool identities.",
+        "facet": null,
+        "origin": {
+          "handoffEntry": "MIK-R98@v1 §6",
+          "leaf": "260928-MIK-L98"
+        }
+      },
+      "locatorBefore": {
+        "end": 613,
+        "kind": "line_range",
+        "start": 1
+      },
+      "locatorAfter": {
+        "end": 611,
+        "kind": "line_range",
+        "start": 1
+      },
+      "pathBefore": "skills/l-01-agent-lifecycles/composition-manifest.json",
+      "pathAfter": null
+    },
+    {
+      "id": "RLZ-BMTHTE",
+      "fields": {
+        "role": "primary-authority",
+        "rationale": "The manual-taskless-projects-role route stores the explicit launcher selection and states that no synthetic task reference is created.",
+        "facet": null,
+        "origin": {
+          "handoffEntry": "MIK-PNT-DOCTRINE-TASKLESS-PROJECTS-SCOPE@draft1",
+          "leaf": "260928-MIK-L90"
+        }
+      },
+      "locatorBefore": {
+        "end": 36,
+        "kind": "line_range",
+        "start": 29
+      },
+      "locatorAfter": {
+        "end": 36,
+        "kind": "line_range",
+        "start": 29
+      },
+      "pathBefore": "skills/l-01-agent-lifecycles/composition-manifest.json",
+      "pathAfter": null
+    },
+    {
+      "id": "RLZ-HGSMDT",
+      "fields": {
+        "role": "presentation",
+        "rationale": "The architect seat description states one Manager for one master and one Orchestrator for concurrent masters unless the developer chooses otherwise.",
+        "facet": null,
+        "origin": {
+          "handoffEntry": "L72/MIK-R72@v2-one-coordinating-agent",
+          "leaf": "260928-MIK-L72"
+        }
+      },
+      "locatorBefore": {
+        "end": 180,
+        "kind": "line_range",
+        "start": 180
+      },
+      "locatorAfter": {
+        "end": 180,
+        "kind": "line_range",
+        "start": 180
+      },
+      "pathBefore": "skills/l-01-agent-lifecycles/composition-manifest.json",
+      "pathAfter": null
+    },
+    {
+      "id": "RLZ-WTKS9R",
+      "fields": {
+        "role": "presentation",
+        "rationale": "The planning purpose string names the default and the developer's choice as the manifest description.",
+        "facet": null,
+        "origin": {
+          "handoffEntry": "L72/MIK-R72@v2-one-coordinating-agent",
+          "leaf": "260928-MIK-L72"
+        }
+      },
+      "locatorBefore": {
+        "end": 57,
+        "kind": "line_range",
+        "start": 57
+      },
+      "locatorAfter": {
+        "end": 57,
+        "kind": "line_range",
+        "start": 57
+      },
+      "pathBefore": "skills/l-01-agent-lifecycles/composition-manifest.json",
+      "pathAfter": null
+    },
+    {
+      "id": "RLZ-1FAAAK",
+      "fields": {
+        "role": "support",
+        "rationale": "The router repeats the sender-line reading and the reply-in-own-chat rule for every capsule.",
+        "facet": null,
+        "origin": {
+          "handoffEntry": "L72/MIK-R72@v2-developer-answered-first",
+          "leaf": "260928-MIK-L72"
+        }
+      },
+      "locatorBefore": {
+        "end": 29,
+        "kind": "line_range",
+        "start": 29
+      },
+      "locatorAfter": {
+        "end": 29,
+        "kind": "line_range",
+        "start": 29
+      },
+      "pathBefore": "skills/l-01-agent-lifecycles/SKILL.md",
+      "pathAfter": null
+    },
+    {
+      "id": "RLZ-5F3K07",
+      "fields": {
+        "role": "primary-authority",
+        "rationale": "The router distinguishes shared execution location from repository identity and names the two manually selected taskless role scope gates.",
+        "facet": null,
+        "origin": {
+          "handoffEntry": "MIK-PNT-DOCTRINE-TASKLESS-PROJECTS-SCOPE@draft1",
+          "leaf": "260928-MIK-L90"
+        }
+      },
+      "locatorBefore": {
+        "end": 16,
+        "kind": "line_range",
+        "start": 14
+      },
+      "locatorAfter": {
+        "end": 16,
+        "kind": "line_range",
+        "start": 14
+      },
+      "pathBefore": "skills/l-01-agent-lifecycles/SKILL.md",
+      "pathAfter": null
+    },
+    {
+      "id": "RLZ-R0YSNZ",
+      "fields": {
+        "role": "primary-authority",
+        "rationale": "The thin router states the default and both exceptions for any capsule it selects.",
+        "facet": null,
+        "origin": {
+          "handoffEntry": "L72/MIK-R72@v2-one-coordinating-agent",
+          "leaf": "260928-MIK-L72"
+        }
+      },
+      "locatorBefore": {
+        "end": 31,
+        "kind": "line_range",
+        "start": 31
+      },
+      "locatorAfter": {
+        "end": 31,
+        "kind": "line_range",
+        "start": 31
+      },
+      "pathBefore": "skills/l-01-agent-lifecycles/SKILL.md",
+      "pathAfter": null
+    },
+    {
+      "id": "RLZ-T4ZSC9",
+      "fields": {
+        "role": "support",
+        "rationale": "The router carries the narrow parented-coordinator exception that matches the role texts.",
+        "facet": null,
+        "origin": {
+          "handoffEntry": "L72/MIK-R72@v2-rules3-4-decisions",
+          "leaf": "260928-MIK-L72"
+        }
+      },
+      "locatorBefore": {
+        "end": 29,
+        "kind": "line_range",
+        "start": 29
+      },
+      "locatorAfter": {
+        "end": 29,
+        "kind": "line_range",
+        "start": 29
+      },
+      "pathBefore": "skills/l-01-agent-lifecycles/SKILL.md",
+      "pathAfter": null
+    },
+    {
+      "id": "RLZ-6QVTKY",
+      "fields": {
+        "role": "primary-authority",
+        "rationale": "This self-contained role source states the obligations in every capsule that uses this role.",
+        "facet": null,
+        "origin": {
+          "handoffEntry": "MIK-R93@v1 rules1,2,2a,5,6,7",
+          "leaf": "260928-MIK-L93"
+        }
+      },
+      "locatorBefore": {
+        "kind": "file"
+      },
+      "locatorAfter": {
+        "kind": "file"
+      },
+      "pathBefore": "skills/l-01-agent-lifecycles/roles/worker.md",
+      "pathAfter": null
+    },
+    {
+      "id": "RLZ-MXJ3HX",
+      "fields": {
+        "role": "primary-authority",
+        "rationale": "Owns the factual freeze and repaired-code handover to Reviewer, producer handoff to Curator and pending delivery obligations.",
+        "facet": null,
+        "origin": {
+          "handoffEntry": "R99-1-direct-loop",
+          "leaf": "260928-MIK-L99"
+        }
+      },
+      "locatorBefore": {
+        "kind": "file"
+      },
+      "locatorAfter": {
+        "kind": "file"
+      },
+      "pathBefore": "skills/l-01-agent-lifecycles/roles/worker.md",
+      "pathAfter": null
+    },
+    {
+      "id": "RLZ-09EQRE",
+      "fields": {
+        "role": "primary-authority",
+        "rationale": "This paragraph lists what the Manager decides itself and that it answers its own role agents.",
+        "facet": null,
+        "origin": {
+          "handoffEntry": "L72/MIK-R72@v2-rules3-4-decisions",
+          "leaf": "260928-MIK-L72"
+        }
+      },
+      "locatorBefore": {
+        "end": 22,
+        "kind": "line_range",
+        "start": 22
+      },
+      "locatorAfter": {
+        "end": 22,
+        "kind": "line_range",
+        "start": 22
+      },
+      "pathBefore": "skills/l-01-agent-lifecycles/roles/manager.md",
+      "pathAfter": null
+    },
+    {
+      "id": "RLZ-7ZK6TT",
+      "fields": {
+        "role": "primary-authority",
+        "rationale": "Owns starts, recovery occasions, reports-based state, gate acceptance and transactions while prohibiting leaf content relay.",
+        "facet": null,
+        "origin": {
+          "handoffEntry": "R99-1-direct-loop",
+          "leaf": "260928-MIK-L99"
+        }
+      },
+      "locatorBefore": {
+        "kind": "file"
+      },
+      "locatorAfter": {
+        "kind": "file"
+      },
+      "pathBefore": "skills/l-01-agent-lifecycles/roles/manager.md",
+      "pathAfter": null
+    },
+    {
+      "id": "RLZ-85MKD0",
+      "fields": {
+        "role": "primary-authority",
+        "rationale": "The Manager's opening states that one master's coordination is one Manager under the Architect.",
+        "facet": null,
+        "origin": {
+          "handoffEntry": "L72/MIK-R72@v2-one-coordinating-agent",
+          "leaf": "260928-MIK-L72"
+        }
+      },
+      "locatorBefore": {
+        "end": 8,
+        "kind": "line_range",
+        "start": 8
+      },
+      "locatorAfter": {
+        "end": 8,
+        "kind": "line_range",
+        "start": 8
+      },
+      "pathBefore": "skills/l-01-agent-lifecycles/roles/manager.md",
+      "pathAfter": null
+    },
+    {
+      "id": "RLZ-HSZ8FM",
+      "fields": {
+        "role": "primary-authority",
+        "rationale": "This self-contained role source states the obligations in every capsule that uses this role.",
+        "facet": null,
+        "origin": {
+          "handoffEntry": "MIK-R93@v1 rules1,2,2a,5,6,7",
+          "leaf": "260928-MIK-L93"
+        }
+      },
+      "locatorBefore": {
+        "kind": "file"
+      },
+      "locatorAfter": {
+        "kind": "file"
+      },
+      "pathBefore": "skills/l-01-agent-lifecycles/roles/manager.md",
+      "pathAfter": null
+    },
+    {
+      "id": "RLZ-JY5TEM",
+      "fields": {
+        "role": "support",
+        "rationale": "The paragraph places the rulings record, requirement-change list and status file under the master's notes for the Architect to read.",
+        "facet": null,
+        "origin": {
+          "handoffEntry": "L72/MIK-R72@v2-rules3-4-decisions",
+          "leaf": "260928-MIK-L72"
+        }
+      },
+      "locatorBefore": {
+        "end": 26,
+        "kind": "line_range",
+        "start": 26
+      },
+      "locatorAfter": {
+        "end": 26,
+        "kind": "line_range",
+        "start": 26
+      },
+      "pathBefore": "skills/l-01-agent-lifecycles/roles/manager.md",
+      "pathAfter": null
+    },
+    {
+      "id": "RLZ-M2NFTB",
+      "fields": {
+        "role": "primary-authority",
+        "rationale": "The paragraph bounds the upward messages to the four developer-needed categories and the once-only final report.",
+        "facet": null,
+        "origin": {
+          "handoffEntry": "L72/MIK-R72@v2-rules3-4-decisions",
+          "leaf": "260928-MIK-L72"
+        }
+      },
+      "locatorBefore": {
+        "end": 28,
+        "kind": "line_range",
+        "start": 28
+      },
+      "locatorAfter": {
+        "end": 28,
+        "kind": "line_range",
+        "start": 28
+      },
+      "pathBefore": "skills/l-01-agent-lifecycles/roles/manager.md",
+      "pathAfter": null
+    },
+    {
+      "id": "RLZ-S372ZT",
+      "fields": {
+        "role": "primary-authority",
+        "rationale": "The paragraph makes the Manager record the instructed reporting recipient and route developer-needed matters there without a native reparenting.",
+        "facet": null,
+        "origin": {
+          "handoffEntry": "L72/MIK-R72@v2-second-master-transition-and-answer-relay",
+          "leaf": "260928-MIK-L72"
+        }
+      },
+      "locatorBefore": {
+        "end": 30,
+        "kind": "line_range",
+        "start": 30
+      },
+      "locatorAfter": {
+        "end": 30,
+        "kind": "line_range",
+        "start": 30
+      },
+      "pathBefore": "skills/l-01-agent-lifecycles/roles/manager.md",
+      "pathAfter": null
+    },
+    {
+      "id": "RLZ-2T4Z9R",
+      "fields": {
+        "role": "support",
+        "rationale": "This paragraph requires relaying the developer's actual answer or ruling and rejects a repeated wait question as a decision.",
+        "facet": null,
+        "origin": {
+          "handoffEntry": "L72/MIK-R72@v2-second-master-transition-and-answer-relay",
+          "leaf": "260928-MIK-L72"
+        }
+      },
+      "locatorBefore": {
+        "end": 34,
+        "kind": "line_range",
+        "start": 34
+      },
+      "locatorAfter": {
+        "end": 34,
+        "kind": "line_range",
+        "start": 34
+      },
+      "pathBefore": "skills/l-01-agent-lifecycles/roles/architect.md",
+      "pathAfter": null
+    },
+    {
+      "id": "RLZ-8W0HVX",
+      "fields": {
+        "role": "primary-authority",
+        "rationale": "This paragraph states the second-master transition: one Orchestrator, the existing Manager's exact identity and state, no duplicate start, and the one reporting-recipient message.",
+        "facet": null,
+        "origin": {
+          "handoffEntry": "L72/MIK-R72@v2-second-master-transition-and-answer-relay",
+          "leaf": "260928-MIK-L72"
+        }
+      },
+      "locatorBefore": {
+        "end": 22,
+        "kind": "line_range",
+        "start": 22
+      },
+      "locatorAfter": {
+        "end": 22,
+        "kind": "line_range",
+        "start": 22
+      },
+      "pathBefore": "skills/l-01-agent-lifecycles/roles/architect.md",
+      "pathAfter": null
+    },
+    {
+      "id": "RLZ-MJ0SZ8",
+      "fields": {
+        "role": "primary-authority",
+        "rationale": "This opening paragraph states the answer-first duty and the role-agent sender line that is not a developer decision.",
+        "facet": null,
+        "origin": {
+          "handoffEntry": "L72/MIK-R72@v2-developer-answered-first",
+          "leaf": "260928-MIK-L72"
+        }
+      },
+      "locatorBefore": {
+        "end": 10,
+        "kind": "line_range",
+        "start": 10
+      },
+      "locatorAfter": {
+        "end": 10,
+        "kind": "line_range",
+        "start": 10
+      },
+      "pathBefore": "skills/l-01-agent-lifecycles/roles/architect.md",
+      "pathAfter": null
+    },
+    {
+      "id": "RLZ-QVQ9HA",
+      "fields": {
+        "role": "primary-authority",
+        "rationale": "This paragraph sends a finding-specific repair to the coordinating agent under delegation and to the same Worker only under direct coordination.",
+        "facet": null,
+        "origin": {
+          "handoffEntry": "L72/MIK-R72@v2-repair-and-evidence-actor",
+          "leaf": "260928-MIK-L72"
+        }
+      },
+      "locatorBefore": {
+        "end": 24,
+        "kind": "line_range",
+        "start": 24
+      },
+      "locatorAfter": {
+        "end": 24,
+        "kind": "line_range",
+        "start": 24
+      },
+      "pathBefore": "skills/l-01-agent-lifecycles/roles/architect.md",
+      "pathAfter": null
+    },
+    {
+      "id": "RLZ-SV2W4A",
+      "fields": {
+        "role": "primary-authority",
+        "rationale": "This paragraph owns the Architect's first-delegation choice and names both developer-chosen exceptions.",
+        "facet": null,
+        "origin": {
+          "handoffEntry": "L72/MIK-R72@v2-one-coordinating-agent",
+          "leaf": "260928-MIK-L72"
+        }
+      },
+      "locatorBefore": {
+        "end": 18,
+        "kind": "line_range",
+        "start": 18
+      },
+      "locatorAfter": {
+        "end": 18,
+        "kind": "line_range",
+        "start": 18
+      },
+      "pathBefore": "skills/l-01-agent-lifecycles/roles/architect.md",
+      "pathAfter": null
+    },
+    {
+      "id": "RLZ-XSMK0N",
+      "fields": {
+        "role": "support",
+        "rationale": "This paragraph gives the leaf-diff and repair loop to the Manager under delegation while the Architect reviews the full diff only under direct coordination.",
+        "facet": null,
+        "origin": {
+          "handoffEntry": "L72/MIK-R72@v2-repair-and-evidence-actor",
+          "leaf": "260928-MIK-L72"
+        }
+      },
+      "locatorBefore": {
+        "end": 40,
+        "kind": "line_range",
+        "start": 40
+      },
+      "locatorAfter": {
+        "end": 40,
+        "kind": "line_range",
+        "start": 40
+      },
+      "pathBefore": "skills/l-01-agent-lifecycles/roles/architect.md",
+      "pathAfter": null
+    },
+    {
+      "id": "RLZ-Y1FRYJ",
+      "fields": {
+        "role": "support",
+        "rationale": "This paragraph makes the Architect read the coordinating agent's files itself and align requirement texts within the promise.",
+        "facet": null,
+        "origin": {
+          "handoffEntry": "L72/MIK-R72@v2-rules3-4-decisions",
+          "leaf": "260928-MIK-L72"
+        }
+      },
+      "locatorBefore": {
+        "end": 30,
+        "kind": "line_range",
+        "start": 30
+      },
+      "locatorAfter": {
+        "end": 30,
+        "kind": "line_range",
+        "start": 30
+      },
+      "pathBefore": "skills/l-01-agent-lifecycles/roles/architect.md",
+      "pathAfter": null
+    },
+    {
+      "id": "RLZ-Y56QGT",
+      "fields": {
+        "role": "primary-authority",
+        "rationale": "The Architect opening states that Projects supplies no sprint or repository and limits clarification to missing outcome or registered repository.",
+        "facet": null,
+        "origin": {
+          "handoffEntry": "MIK-PNT-DOCTRINE-TASKLESS-PROJECTS-SCOPE@draft1",
+          "leaf": "260928-MIK-L90"
+        }
+      },
+      "locatorBefore": {
+        "end": 8,
+        "kind": "line_range",
+        "start": 8
+      },
+      "locatorAfter": {
+        "end": 8,
+        "kind": "line_range",
+        "start": 8
+      },
+      "pathBefore": "skills/l-01-agent-lifecycles/roles/architect.md",
+      "pathAfter": null
+    },
+    {
+      "id": "RLZ-DT71R6",
+      "fields": {
+        "role": "primary-authority",
+        "rationale": "This clause keeps the one-level read/search/reference allowance and the new paragraph defines the deduplicated list, the numeric threshold, what is handed out and what stays with the main Curator.",
+        "facet": null,
+        "origin": {
+          "handoffEntry": "L72/MIK-R72@v2-curator-large-worklist-fanout",
+          "leaf": "260928-MIK-L72"
+        }
+      },
+      "locatorBefore": {
+        "end": 219,
+        "kind": "line_range",
+        "start": 217
+      },
+      "locatorAfter": {
+        "end": 219,
+        "kind": "line_range",
+        "start": 217
+      },
+      "pathBefore": "skills/l-01-agent-lifecycles/roles/curator.md",
+      "pathAfter": null
+    },
+    {
+      "id": "RLZ-Q70RTA",
+      "fields": {
+        "role": "primary-authority",
+        "rationale": "This self-contained role source states the obligations in every capsule that uses this role.",
+        "facet": null,
+        "origin": {
+          "handoffEntry": "MIK-R93@v1 rules1,2,2a,5,6,7",
+          "leaf": "260928-MIK-L93"
+        }
+      },
+      "locatorBefore": {
+        "kind": "file"
+      },
+      "locatorAfter": {
+        "kind": "file"
+      },
+      "pathBefore": "skills/l-01-agent-lifecycles/roles/curator.md",
+      "pathAfter": null
+    },
+    {
+      "id": "RLZ-VESCVY",
+      "fields": {
+        "role": "primary-authority",
+        "rationale": "Owns direct producer intake and memory delivery to Reviewer without routing its result through Manager.",
+        "facet": null,
+        "origin": {
+          "handoffEntry": "R99-1-direct-loop",
+          "leaf": "260928-MIK-L99"
+        }
+      },
+      "locatorBefore": {
+        "kind": "file"
+      },
+      "locatorAfter": {
+        "kind": "file"
+      },
+      "pathBefore": "skills/l-01-agent-lifecycles/roles/curator.md",
+      "pathAfter": null
+    },
+    {
+      "id": "RLZ-ATVKJ4",
+      "fields": {
+        "role": "primary-authority",
+        "rationale": "The Orchestrator's opening states that it is selected for concurrent masters or by the developer's explicit single-master request.",
+        "facet": null,
+        "origin": {
+          "handoffEntry": "L72/MIK-R72@v2-one-coordinating-agent",
+          "leaf": "260928-MIK-L72"
+        }
+      },
+      "locatorBefore": {
+        "end": 8,
+        "kind": "line_range",
+        "start": 8
+      },
+      "locatorAfter": {
+        "end": 8,
+        "kind": "line_range",
+        "start": 8
+      },
+      "pathBefore": "skills/l-01-agent-lifecycles/roles/orchestrator.md",
+      "pathAfter": null
+    },
+    {
+      "id": "RLZ-D5ZTR6",
+      "fields": {
+        "role": "enforcement",
+        "rationale": "This paragraph keeps the Manager as the owner of the inner loop and limits the Orchestrator to verifying deliveries and inspecting supplied diffs.",
+        "facet": null,
+        "origin": {
+          "handoffEntry": "L72/MIK-R72@v2-repair-and-evidence-actor",
+          "leaf": "260928-MIK-L72"
+        }
+      },
+      "locatorBefore": {
+        "end": 30,
+        "kind": "line_range",
+        "start": 30
+      },
+      "locatorAfter": {
+        "end": 30,
+        "kind": "line_range",
+        "start": 30
+      },
+      "pathBefore": "skills/l-01-agent-lifecycles/roles/orchestrator.md",
+      "pathAfter": null
+    },
+    {
+      "id": "RLZ-HB7AP1",
+      "fields": {
+        "role": "primary-authority",
+        "rationale": "This paragraph makes the Orchestrator reuse each existing Manager named by the Architect instead of starting a duplicate.",
+        "facet": null,
+        "origin": {
+          "handoffEntry": "L72/MIK-R72@v2-second-master-transition-and-answer-relay",
+          "leaf": "260928-MIK-L72"
+        }
+      },
+      "locatorBefore": {
+        "end": 16,
+        "kind": "line_range",
+        "start": 16
+      },
+      "locatorAfter": {
+        "end": 16,
+        "kind": "line_range",
+        "start": 16
+      },
+      "pathBefore": "skills/l-01-agent-lifecycles/roles/orchestrator.md",
+      "pathAfter": null
+    },
+    {
+      "id": "RLZ-WH4X9B",
+      "fields": {
+        "role": "primary-authority",
+        "rationale": "This self-contained role source states the obligations in every capsule that uses this role.",
+        "facet": null,
+        "origin": {
+          "handoffEntry": "MIK-R93@v1 rules1,2,2a,5,6,7",
+          "leaf": "260928-MIK-L93"
+        }
+      },
+      "locatorBefore": {
+        "kind": "file"
+      },
+      "locatorAfter": {
+        "kind": "file"
+      },
+      "pathBefore": "skills/l-01-agent-lifecycles/roles/orchestrator.md",
+      "pathAfter": null
+    },
+    {
+      "id": "RLZ-YF74AS",
+      "fields": {
+        "role": "primary-authority",
+        "rationale": "The Orchestrator's own-decisions paragraph keeps ordinary readings and rulings with the role and names the same three durable files.",
+        "facet": null,
+        "origin": {
+          "handoffEntry": "L72/MIK-R72@v2-rules3-4-decisions",
+          "leaf": "260928-MIK-L72"
+        }
+      },
+      "locatorBefore": {
+        "end": 20,
+        "kind": "line_range",
+        "start": 20
+      },
+      "locatorAfter": {
+        "end": 20,
+        "kind": "line_range",
+        "start": 20
+      },
+      "pathBefore": "skills/l-01-agent-lifecycles/roles/orchestrator.md",
+      "pathAfter": null
+    },
+    {
+      "id": "RLZ-ZP7734",
+      "fields": {
+        "role": "primary-authority",
+        "rationale": "This paragraph bounds what reaches the Architect for a sprint coordinating agent.",
+        "facet": null,
+        "origin": {
+          "handoffEntry": "L72/MIK-R72@v2-rules3-4-decisions",
+          "leaf": "260928-MIK-L72"
+        }
+      },
+      "locatorBefore": {
+        "end": 24,
+        "kind": "line_range",
+        "start": 24
+      },
+      "locatorAfter": {
+        "end": 24,
+        "kind": "line_range",
+        "start": 24
+      },
+      "pathBefore": "skills/l-01-agent-lifecycles/roles/orchestrator.md",
+      "pathAfter": null
+    },
+    {
+      "id": "RLZ-AHY1E5",
+      "fields": {
+        "role": "primary-authority",
+        "rationale": "This self-contained role source states the obligations in every capsule that uses this role.",
+        "facet": null,
+        "origin": {
+          "handoffEntry": "MIK-R93@v1 rules1,2,2a,5,6,7",
+          "leaf": "260928-MIK-L93"
+        }
+      },
+      "locatorBefore": {
+        "kind": "file"
+      },
+      "locatorAfter": {
+        "kind": "file"
+      },
+      "pathBefore": "skills/l-01-agent-lifecycles/roles/reviewer.md",
+      "pathAfter": null
+    },
+    {
+      "id": "RLZ-JH0BAQ",
+      "fields": {
+        "role": "primary-authority",
+        "rationale": "Owns independent verdict delivery to Worker and Curator, memory findings, action evidence and the closeout-ready notice.",
+        "facet": null,
+        "origin": {
+          "handoffEntry": "R99-1-direct-loop",
+          "leaf": "260928-MIK-L99"
+        }
+      },
+      "locatorBefore": {
+        "kind": "file"
+      },
+      "locatorAfter": {
+        "kind": "file"
+      },
+      "pathBefore": "skills/l-01-agent-lifecycles/roles/reviewer.md",
+      "pathAfter": null
+    },
+    {
+      "id": "RLZ-4JERMG",
+      "fields": {
+        "role": "primary-authority",
+        "rationale": "This self-contained role source states the obligations in every capsule that uses this role.",
+        "facet": null,
+        "origin": {
+          "handoffEntry": "MIK-R93@v1 rules1,2,2a,5,6,7",
+          "leaf": "260928-MIK-L93"
+        }
+      },
+      "locatorBefore": {
+        "kind": "file"
+      },
+      "locatorAfter": {
+        "kind": "file"
+      },
+      "pathBefore": "skills/l-01-agent-lifecycles/roles/investigator.md",
+      "pathAfter": null
+    },
+    {
+      "id": "RLZ-JJE91B",
+      "fields": {
+        "role": "primary-authority",
+        "rationale": "The Investigator opening asks the actual concern source for missing concern or report scope without manufacturing identity.",
+        "facet": null,
+        "origin": {
+          "handoffEntry": "MIK-PNT-DOCTRINE-TASKLESS-PROJECTS-SCOPE@draft1",
+          "leaf": "260928-MIK-L90"
+        }
+      },
+      "locatorBefore": {
+        "end": 10,
+        "kind": "line_range",
+        "start": 10
+      },
+      "locatorAfter": {
+        "end": 10,
+        "kind": "line_range",
+        "start": 10
+      },
+      "pathBefore": "skills/l-01-agent-lifecycles/roles/investigator.md",
+      "pathAfter": null
+    },
+    {
+      "id": "RLZ-H0W6SX",
+      "fields": {
+        "role": "support",
+        "rationale": "The messaging paragraph's follow-through sentence names the Orchestrator, Manager or developer-direct-coordinating Architect following assignments to completion.",
+        "facet": null,
+        "origin": {
+          "handoffEntry": "L72/MIK-R72@v2-repair-and-evidence-actor",
+          "leaf": "260928-MIK-L72"
+        }
+      },
+      "locatorBefore": {
+        "end": 17,
+        "kind": "line_range",
+        "start": 17
+      },
+      "locatorAfter": {
+        "end": 17,
+        "kind": "line_range",
+        "start": 17
+      },
+      "pathBefore": "skills/l-01-agent-lifecycles/operations/coordination.md",
+      "pathAfter": null
+    },
+    {
+      "id": "RLZ-VHD2RF",
+      "fields": {
+        "role": "primary-authority",
+        "rationale": "The coordination operation carries the same delegation rule and the no-fallback behavior for every coordinating role.",
+        "facet": null,
+        "origin": {
+          "handoffEntry": "L72/MIK-R72@v2-one-coordinating-agent",
+          "leaf": "260928-MIK-L72"
+        }
+      },
+      "locatorBefore": {
+        "end": 5,
+        "kind": "line_range",
+        "start": 5
+      },
+      "locatorAfter": {
+        "end": 5,
+        "kind": "line_range",
+        "start": 5
+      },
+      "pathBefore": "skills/l-01-agent-lifecycles/operations/coordination.md",
+      "pathAfter": null
+    },
+    {
+      "id": "RLZ-XF8A3Q",
+      "fields": {
+        "role": "primary-authority",
+        "rationale": "States the complete peer loop and limits Manager to the retained owner acts.",
+        "facet": null,
+        "origin": {
+          "handoffEntry": "R99-1-direct-loop",
+          "leaf": "260928-MIK-L99"
+        }
+      },
+      "locatorBefore": {
+        "kind": "file"
+      },
+      "locatorAfter": {
+        "kind": "file"
+      },
+      "pathBefore": "skills/l-01-agent-lifecycles/operations/coordination.md",
+      "pathAfter": null
+    },
+    {
+      "id": "RLZ-E9F3YP",
+      "fields": {
+        "role": "primary-authority",
+        "rationale": "This operation is delivered with more than one role and states the same conditional routing and recovery without relying on another role source.",
+        "facet": null,
+        "origin": {
+          "handoffEntry": "MIK-R93@v1 rules1,2,2a,5,6,7",
+          "leaf": "260928-MIK-L93"
+        }
+      },
+      "locatorBefore": {
+        "kind": "file"
+      },
+      "locatorAfter": {
+        "kind": "file"
+      },
+      "pathBefore": "skills/l-01-agent-lifecycles/operations/curation.md",
+      "pathAfter": null
+    },
+    {
+      "id": "RLZ-CJF248",
+      "fields": {
+        "role": "primary-authority",
+        "rationale": "This operation is delivered with more than one role and states the same conditional routing and recovery without relying on another role source.",
+        "facet": null,
+        "origin": {
+          "handoffEntry": "MIK-R93@v1 rules1,2,2a,5,6,7",
+          "leaf": "260928-MIK-L93"
+        }
+      },
+      "locatorBefore": {
+        "kind": "file"
+      },
+      "locatorAfter": {
+        "kind": "file"
+      },
+      "pathBefore": "skills/l-01-agent-lifecycles/operations/orientation.md",
+      "pathAfter": null
+    },
+    {
+      "id": "RLZ-PFED6V",
+      "fields": {
+        "role": "primary-authority",
+        "rationale": "The Orientation operation preserves this same taskless entry without creating a task or trust packet.",
+        "facet": null,
+        "origin": {
+          "handoffEntry": "MIK-PNT-DOCTRINE-TASKLESS-PROJECTS-SCOPE@draft1",
+          "leaf": "260928-MIK-L90"
+        }
+      },
+      "locatorBefore": {
+        "end": 3,
+        "kind": "line_range",
+        "start": 3
+      },
+      "locatorAfter": {
+        "end": 3,
+        "kind": "line_range",
+        "start": 3
+      },
+      "pathBefore": "skills/l-01-agent-lifecycles/operations/orientation.md",
+      "pathAfter": null
+    },
+    {
+      "id": "RLZ-QBD8GV",
+      "fields": {
+        "role": "primary-authority",
+        "rationale": "This operation is delivered with more than one role and states the same conditional routing and recovery without relying on another role source.",
+        "facet": null,
+        "origin": {
+          "handoffEntry": "MIK-R93@v1 rules1,2,2a,5,6,7",
+          "leaf": "260928-MIK-L93"
+        }
+      },
+      "locatorBefore": {
+        "kind": "file"
+      },
+      "locatorAfter": {
+        "kind": "file"
+      },
+      "pathBefore": "skills/l-01-agent-lifecycles/operations/review.md",
+      "pathAfter": null
+    },
+    {
+      "id": "PRF-0DCHVF",
+      "fields": {
+        "role": null,
+        "rationale": null,
+        "facet": "The Manager and Orchestrator decision lists, the three durable files and the four developer-needed categories with the once-only final report are present at the candidate.",
+        "origin": {
+          "handoffEntry": "L72/MIK-R72@v2-rules3-4-decisions",
+          "leaf": "260928-MIK-L72"
+        }
+      },
+      "locatorBefore": {
+        "kind": "symbol",
+        "name": "InstructionFileWordingTests.test_current_coordination_and_curator_rules"
+      },
+      "locatorAfter": {
+        "kind": "symbol",
+        "name": "InstructionFileWordingTests.test_current_coordination_and_curator_rules"
+      },
+      "pathBefore": "mcp/tests/test_role_instruction_wording.py",
+      "pathAfter": null
+    },
+    {
+      "id": "PRF-0E0V75",
+      "fields": {
+        "role": null,
+        "rationale": null,
+        "facet": "The four composition-manifest seat and purpose descriptions state the one-Manager/one-Orchestrator default and the developer's choice.",
+        "origin": {
+          "handoffEntry": "L72/MIK-R72@v2-one-coordinating-agent",
+          "leaf": "260928-MIK-L72"
+        }
+      },
+      "locatorBefore": {
+        "kind": "symbol",
+        "name": "InstructionFileWordingTests.test_manifest_descriptions_follow_the_coordination_default"
+      },
+      "locatorAfter": {
+        "kind": "symbol",
+        "name": "InstructionFileWordingTests.test_manifest_descriptions_follow_the_coordination_default"
+      },
+      "pathBefore": "mcp/tests/test_role_instruction_wording.py",
+      "pathAfter": null
+    },
+    {
+      "id": "PRF-0TFF0B",
+      "fields": {
+        "role": null,
+        "rationale": null,
+        "facet": "The coordination leaf-repair sentence and the Architect's delegated-versus-direct repair and evidence sentences are present at the candidate.",
+        "origin": {
+          "handoffEntry": "L72/MIK-R72@v2-repair-and-evidence-actor",
+          "leaf": "260928-MIK-L72"
+        }
+      },
+      "locatorBefore": {
+        "kind": "symbol",
+        "name": "InstructionFileWordingTests.test_current_coordination_and_curator_rules"
+      },
+      "locatorAfter": {
+        "kind": "symbol",
+        "name": "InstructionFileWordingTests.test_current_coordination_and_curator_rules"
+      },
+      "pathBefore": "mcp/tests/test_role_instruction_wording.py",
+      "pathAfter": null
+    },
+    {
+      "id": "PRF-0YJ58R",
+      "fields": {
+        "role": null,
+        "rationale": null,
+        "facet": "Each Architect, Manager, Orchestrator, planning, coordination and router sentence that states the one-agent default and the two developer choices is present at the candidate.",
+        "origin": {
+          "handoffEntry": "L72/MIK-R72@v2-one-coordinating-agent",
+          "leaf": "260928-MIK-L72"
+        }
+      },
+      "locatorBefore": {
+        "kind": "symbol",
+        "name": "InstructionFileWordingTests.test_current_coordination_and_curator_rules"
+      },
+      "locatorAfter": {
+        "kind": "symbol",
+        "name": "InstructionFileWordingTests.test_current_coordination_and_curator_rules"
+      },
+      "pathBefore": "mcp/tests/test_role_instruction_wording.py",
+      "pathAfter": null
+    },
+    {
+      "id": "PRF-18H967",
+      "fields": {
+        "role": null,
+        "rationale": null,
+        "facet": "Compiles every launcher role with and without a parent and requires the parent-routed developerQuestions sentence for all six parentable roles while the parentless value stays byte-identical.",
+        "origin": {
+          "handoffEntry": "MIK-R93@v1 rules1,2,7,10",
+          "leaf": "260928-MIK-L93"
+        }
+      },
+      "locatorBefore": {
+        "kind": "symbol",
+        "name": "HandoverTextWordingTests.test_developer_question_channel_matches_role_and_parent"
+      },
+      "locatorAfter": {
+        "kind": "symbol",
+        "name": "HandoverTextWordingTests.test_developer_question_channel_matches_role_and_parent"
+      },
+      "pathBefore": "mcp/tests/test_role_instruction_wording.py",
+      "pathAfter": null
+    },
+    {
+      "id": "PRF-24G8R8",
+      "fields": {
+        "role": null,
+        "rationale": null,
+        "facet": "Requires the leaf roles' direct peer routes and no parent-result ordering in the composed ownerRelation while the coordinating-role text is preserved.",
+        "origin": {
+          "handoffEntry": "MIK-R93@v1 rules1,2,7,10",
+          "leaf": "260928-MIK-L93"
+        }
+      },
+      "locatorBefore": {
+        "kind": "symbol",
+        "name": "HandoverTextWordingTests.test_owner_relation_routes_developer_questions_and_preserves_coordinators"
+      },
+      "locatorAfter": {
+        "kind": "symbol",
+        "name": "HandoverTextWordingTests.test_owner_relation_routes_developer_questions_and_preserves_coordinators"
+      },
+      "pathBefore": "mcp/tests/test_role_instruction_wording.py",
+      "pathAfter": null
+    },
+    {
+      "id": "PRF-4FX9HW",
+      "fields": {
+        "role": null,
+        "rationale": null,
+        "facet": "The second-master instruction, the existing-Manager reuse, the durable reporting-recipient record and the developer-answer relay are present at the candidate.",
+        "origin": {
+          "handoffEntry": "L72/MIK-R72@v2-second-master-transition-and-answer-relay",
+          "leaf": "260928-MIK-L72"
+        }
+      },
+      "locatorBefore": {
+        "kind": "symbol",
+        "name": "InstructionFileWordingTests.test_current_coordination_and_curator_rules"
+      },
+      "locatorAfter": {
+        "kind": "symbol",
+        "name": "InstructionFileWordingTests.test_current_coordination_and_curator_rules"
+      },
+      "pathBefore": "mcp/tests/test_role_instruction_wording.py",
+      "pathAfter": null
+    },
+    {
+      "id": "PRF-D682YJ",
+      "fields": {
+        "role": null,
+        "rationale": null,
+        "facet": "Requires the delivered curator text to state the full-intake worklist duty that remains after D92 replaced the fixed fan-out policy.",
+        "origin": {
+          "handoffEntry": "R99-curator-worklist",
+          "leaf": "260928-MIK-L99"
+        }
+      },
+      "locatorBefore": {
+        "kind": "symbol",
+        "name": "InstructionFileWordingTests.test_current_coordination_and_curator_rules"
+      },
+      "locatorAfter": {
+        "kind": "symbol",
+        "name": "InstructionFileWordingTests.test_current_coordination_and_curator_rules"
+      },
+      "pathBefore": "mcp/tests/test_role_instruction_wording.py",
+      "pathAfter": null
+    },
+    {
+      "id": "PRF-RFP8Q1",
+      "fields": {
+        "role": null,
+        "rationale": null,
+        "facet": "The Architect's answer-first sentence and the role-agent message reading are present at the candidate.",
+        "origin": {
+          "handoffEntry": "L72/MIK-R72@v2-developer-answered-first",
+          "leaf": "260928-MIK-L72"
+        }
+      },
+      "locatorBefore": {
+        "kind": "symbol",
+        "name": "InstructionFileWordingTests.test_current_coordination_and_curator_rules"
+      },
+      "locatorAfter": {
+        "kind": "symbol",
+        "name": "InstructionFileWordingTests.test_current_coordination_and_curator_rules"
+      },
+      "pathBefore": "mcp/tests/test_role_instruction_wording.py",
+      "pathAfter": null
+    },
+    {
+      "id": "PRF-BK9S30",
+      "fields": {
+        "role": null,
+        "rationale": null,
+        "facet": "Pins the Investigator concern, allowed scratch checking, no code/memory/task mutation, report/order boundary, intake channel and exact fourteen requested tools against the canonical role and manifest.",
+        "origin": {
+          "handoffEntry": "MIK-R98@v1 §6",
+          "leaf": "260928-MIK-L98"
+        }
+      },
+      "locatorBefore": {
+        "kind": "symbol",
+        "name": "InstructionFileWordingTests.test_investigator_scope_report_and_authority_are_explicit"
+      },
+      "locatorAfter": {
+        "kind": "symbol",
+        "name": "InstructionFileWordingTests.test_investigator_scope_report_and_authority_are_explicit"
+      },
+      "pathBefore": "mcp/tests/test_role_instruction_wording.py",
+      "pathAfter": null
+    },
+    {
+      "id": "PRF-SZ8AQ5",
+      "fields": {
+        "role": null,
+        "rationale": null,
+        "facet": "Requires each of the six parentable roles to carry the parent channel, the busy-pending recovery, the unreachable-parent exception and the quoted-answer provenance.",
+        "origin": {
+          "handoffEntry": "MIK-R93@v1 rules1,2,2a,5,6,7",
+          "leaf": "260928-MIK-L93"
+        }
+      },
+      "locatorBefore": {
+        "kind": "symbol",
+        "name": "test_each_parentable_role_has_question_recovery_and_answer_provenance"
+      },
+      "locatorAfter": {
+        "kind": "symbol",
+        "name": "test_each_parentable_role_has_question_recovery_and_answer_provenance"
+      },
+      "pathBefore": "mcp/tests/test_developer_question_wording.py",
+      "pathAfter": null
+    },
+    {
+      "id": "PRF-T2404E",
+      "fields": {
+        "role": null,
+        "rationale": null,
+        "facet": "Requires the orientation, review and curation operations to keep the same conditional routing and pending recovery.",
+        "origin": {
+          "handoffEntry": "MIK-R93@v1 rules1,2,2a,5,6,7",
+          "leaf": "260928-MIK-L93"
+        }
+      },
+      "locatorBefore": {
+        "kind": "symbol",
+        "name": "test_question_operations_keep_conditional_routing_and_pending_recovery"
+      },
+      "locatorAfter": {
+        "kind": "symbol",
+        "name": "test_question_operations_keep_conditional_routing_and_pending_recovery"
+      },
+      "pathBefore": "mcp/tests/test_developer_question_wording.py",
+      "pathAfter": null
+    },
+    {
+      "id": "PRF-WW6328",
+      "fields": {
+        "role": null,
+        "rationale": null,
+        "facet": "Checks the leaf ownerRelation names the actual parent, keeps the sibling roleMessageArguments and omits the old result-to-parent order.",
+        "origin": {
+          "handoffEntry": "MIK-R93@v1 rules1,2,7,10",
+          "leaf": "260928-MIK-L93"
+        }
+      },
+      "locatorBefore": {
+        "kind": "symbol",
+        "name": "test_leaf_owner_relation_keeps_peer_results_and_named_parent_occasions"
+      },
+      "locatorAfter": {
+        "kind": "symbol",
+        "name": "test_leaf_owner_relation_keeps_peer_results_and_named_parent_occasions"
+      },
+      "pathBefore": "mcp/tests/test_developer_question_wording.py",
+      "pathAfter": null
+    },
+    {
+      "id": "RLZ-2E88NK",
+      "fields": {
+        "role": "propagation-persistence",
+        "rationale": "The handover constructor selects developerQuestions solely by the presence of the launching parent and binds its real ID.",
+        "facet": null,
+        "origin": {
+          "handoffEntry": "MIK-R93@v1 rules1,2,7,10",
+          "leaf": "260928-MIK-L93"
+        }
+      },
+      "locatorBefore": {
+        "kind": "symbol",
+        "name": "_compile_handover"
+      },
+      "locatorAfter": {
+        "kind": "symbol",
+        "name": "_compile_handover"
+      },
+      "pathBefore": "mcp/src/agents_remember/cli/role_launch_preparation.py",
+      "pathAfter": null
+    },
+    {
+      "id": "RLZ-Y18EZK",
+      "fields": {
+        "role": "primary-authority",
+        "rationale": "The ownership constructor preserves the parent identity and L72 coordinator values, adds the developer channel, and names R99 direct peers for leaf results and work questions.",
+        "facet": null,
+        "origin": {
+          "handoffEntry": "MIK-R93@v1 rules1,2,7,10",
+          "leaf": "260928-MIK-L93"
+        }
+      },
+      "locatorBefore": {
+        "kind": "symbol",
+        "name": "_owner_relation"
+      },
+      "locatorAfter": {
+        "kind": "symbol",
+        "name": "_owner_relation"
+      },
+      "pathBefore": "mcp/src/agents_remember/cli/role_launch_preparation.py",
+      "pathAfter": null
+    }
+  ],
+  "writerRecordCount": 0,
+  "writerEntryCount": 0
+}

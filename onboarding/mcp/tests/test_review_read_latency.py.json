@@ -303,15 +303,14 @@
       ]
     },
     "18": {
-      "note": "A read after an edit shows the new content.",
+      "note": "A read after an edit shows the new content.\n\nAnchor: `test_a_read_after_an_edit_shows_the_new_content_and_nothing_composed_is_kept`",
       "targets": [
         {
           "anchor": {
-            "blob": "8114ca263309505a08c33917e8f5c4e83e73d673",
-            "content": "sha256:91517d08c00e12afdc83030493e8be109661b988f88c2e0c8a7cdfb38aa9c4c0",
+            "blob": "78e06c642582b7ee2331e01b9d0a2e718e80a76a",
+            "content": "sha256:2f2dc091045b119ebf447fb0f1d97b9f869c9cb9927ea2109fac6cc12da80224",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_read_after_an_edit_shows_the_new_content_and_nothing_composed_is_kept"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -323,7 +322,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0c7c3f3c1ce76348caaec316256a873872841348",
+            "blob": "1f4baeff00e1723d71bec4ae04d0e25599fc7763",
             "content": "sha256:427a3170de3c18a4b9b2fa18b40b88af6155a0aacd80a820c91eff7804374dd4",
             "locator": {
               "kind": "symbol",

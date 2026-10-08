@@ -11,8 +11,11 @@
     "legacyId": "0b8124cd-c8d5-478d-bb8a-cbef14062c2f",
     "task": "260921-ICR"
   },
-  "revision": 1,
-  "routes": [],
+  "revision": 2,
+  "routes": [
+    "mcp/src/agents_remember/models/knowledge",
+    "mcp/src/agents_remember/worktrees"
+  ],
   "schema": "ar-family/v1",
   "status": "proposed",
   "title": "attribution-and-landing-pairing"

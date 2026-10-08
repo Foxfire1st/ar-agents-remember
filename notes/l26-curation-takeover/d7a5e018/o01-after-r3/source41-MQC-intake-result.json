@@ -1,0 +1,609 @@
+{
+  "ok": false,
+  "tokens": 4611,
+  "tokenizer": "tiktoken:o200k_base",
+  "tokenCountExact": true,
+  "operation": "memory_quality_check",
+  "repoId": "agents-remember",
+  "onboardingRoot": "/home/firefox/projects/ar-coordination/worktrees/agents-remember/260928-mik-l26-ar/memory-260928-mik-l26/onboarding",
+  "status": "completed",
+  "runId": "b8a25f1ae1614909",
+  "checks": {
+    "knowledge.converted": {
+      "ok": false,
+      "check": "knowledge.converted",
+      "status": "converted",
+      "findingCount": 1,
+      "referenceStates": {
+        "current": 26771,
+        "stale": 2332
+      }
+    },
+    "style.citations.claim_reopen": {
+      "ok": true,
+      "check": "style.citations.claim_reopen",
+      "status": "not-applicable-converted",
+      "findingCount": 0
+    },
+    "style.citations.range_resolution": {
+      "ok": true,
+      "check": "style.citations.range_resolution",
+      "status": "not-applicable-converted",
+      "findingCount": 0
+    },
+    "style.document_shape.diff_markers": {
+      "ok": true,
+      "check": "style.document_shape.diff_markers",
+      "filesChecked": 2975,
+      "findingCount": 0,
+      "reportOnlyFindingCount": 0
+    },
+    "style.document_shape.entity_catalog_alignment": {
+      "ok": true,
+      "check": "style.document_shape.entity_catalog_alignment",
+      "filesChecked": 1,
+      "findingCount": 0,
+      "reportOnlyFindingCount": 0
+    },
+    "style.document_shape.tables": {
+      "ok": true,
+      "check": "style.document_shape.tables",
+      "filesChecked": 2975,
+      "findingCount": 0,
+      "reportOnlyFindingCount": 0
+    },
+    "style.update_history.history_order": {
+      "ok": true,
+      "check": "style.update_history.history_order",
+      "status": "not-applicable-converted",
+      "findingCount": 0
+    }
+  },
+  "reportPath": "/home/firefox/projects/ar-coordination/worktrees/agents-remember/260928-mik-l26-ar/reports/curator-memory-quality.md",
+  "attestationPath": "/home/firefox/projects/ar-coordination/worktrees/agents-remember/260928-mik-l26-ar/reports/curator-memory-quality.json",
+  "checklistStatus": "action-required",
+  "qualityChecklistStatus": "action-required",
+  "coherenceStatus": "not-evaluated-quality-action-required",
+  "coherenceCanonicalPath": "/home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/notes/reports/260928-MIK-L26-curator-coherence.json",
+  "closeoutReady": false,
+  "curatorActionableCount": 26,
+  "memoryRepairCount": 14,
+  "missingOnboardingCount": 0,
+  "staleRouteIndexCount": 12,
+  "sourceChangeCandidateCount": 487,
+  "closeoutOwnedFindingCount": 0,
+  "noteworthyFindingCount": 2420,
+  "scopeAuthority": "leaf-candidate",
+  "servingBuild": {
+    "version": "3.0.0rc8",
+    "bootedAt": "2026-10-08T11:56:00.022030+00:00",
+    "sourceDigest": "sha256:6659adb8f968f82c8365bc031220a34c1984276112b5cb1dfd5e1c5db841d237",
+    "pythonExecutable": "/home/firefox/.local/share/agents-remember/python/cpython-3.14.8/bin/python3.14",
+    "packageRoot": "/home/firefox/projects/agents-remember/mcp/src/agents_remember",
+    "commit": "3f682987",
+    "dashboardBuild": "cb442492c4373d059462c5a2ad7715f3961bab6f21c1181b2ecf2674b768b4a6"
+  },
+  "acceptanceEligible": true,
+  "contractPath": "/home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/enclosures/260928-mik-l26/series-contract.md",
+  "pairIdentity": {
+    "schemaVersion": "ar-memory-candidate-pair/v1",
+    "repoId": "agents-remember",
+    "contractPath": "/home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/enclosures/260928-mik-l26/series-contract.md",
+    "contractDigest": "cc0505905f1b5613eb5edd557f4afac4ce3853411619433c37a80819b8735702",
+    "codeRoot": "/home/firefox/projects/ar-coordination/worktrees/agents-remember/260928-mik-l26-ar/260928-mik-l26",
+    "memoryRoot": "/home/firefox/projects/ar-coordination/worktrees/agents-remember/260928-mik-l26-ar/memory-260928-mik-l26",
+    "codeSourceBranch": "ar/260928_maintained-invariant-knowledge",
+    "codeWorkBranch": "ar/260928-mik-l26",
+    "codeBaseCommit": "4cdd7fbc1fd9f71fe087ca7688681a9f62865569",
+    "memorySourceBranch": "ar/260928_maintained-invariant-knowledge",
+    "memoryWorkBranch": "ar/260928-mik-l26",
+    "memoryBaseCommit": "7bb1e982f4c8e93a08edc3494c7a6e936be6f081",
+    "onboardingRoot": "/home/firefox/projects/ar-coordination/worktrees/agents-remember/260928-mik-l26-ar/memory-260928-mik-l26/onboarding",
+    "ledgerPath": "/home/firefox/projects/ar-coordination/worktrees/agents-remember/260928-mik-l26-ar/memory-260928-mik-l26/memory.md"
+  },
+  "findingCount": 1,
+  "findings": [
+    {
+      "check": "knowledge.converted",
+      "path": "onboarding/mcp/src/agents_remember/worktrees/overview.json",
+      "field": "",
+      "rule": "R22.1-canonical",
+      "message": "not in the canonical formatting; run `agents-remember knowledge-format onboarding/mcp/src/agents_remember/worktrees/overview.json`",
+      "reportOnly": false
+    }
+  ],
+  "reportOnlyFindingCount": 2417,
+  "reportOnlySample": [
+    {
+      "check": "knowledge.converted",
+      "path": "knowledge",
+      "field": "admission",
+      "rule": "R27.4-legacy-unassessed",
+      "message": "92 live record(s) are still legacy-unassessed (11 family(s), 81 invariant(s)); the migration (MIK-R19) assesses or demotes each one",
+      "reportOnly": true
+    },
+    {
+      "check": "knowledge.converted",
+      "path": "knowledge/families/FAM-1ZDJXHP4-generated-artifacts-are-disposable-projections.json",
+      "field": "routes",
+      "rule": "R04.4-route-unassigned",
+      "message": "family FAM-1ZDJXHP4 is route_unassigned: an exported family with no routes; Coverage is waived until a leaf or the migration assigns them (MIK-R06, MIK-R19)",
+      "reportOnly": true
+    },
+    {
+      "check": "knowledge.converted",
+      "path": "knowledge/families/FAM-33YQGFXE-Bounded-task-document-read-with-unchanged-meaning.json",
+      "field": "routes",
+      "rule": "R04.4-route-unassigned",
+      "message": "family FAM-33YQGFXE is route_unassigned: an exported family with no routes; Coverage is waived until a leaf or the migration assigns them (MIK-R06, MIK-R19)",
+      "reportOnly": true
+    },
+    {
+      "check": "knowledge.converted",
+      "path": "knowledge/families/FAM-4V4GSQCS-Bounded-notes-listing-with-unchanged-meaning.json",
+      "field": "routes",
+      "rule": "R04.4-route-unassigned",
+      "message": "family FAM-4V4GSQCS is route_unassigned: an exported family with no routes; Coverage is waived until a leaf or the migration assigns them (MIK-R06, MIK-R19)",
+      "reportOnly": true
+    },
+    {
+      "check": "knowledge.converted",
+      "path": "onboarding/dashboard/src/data/files.test.ts.json",
+      "field": "references.5.targets.1",
+      "rule": "R22.3-unresolved-target",
+      "message": "unresolved reference target: mcp/src/agents_remember/serving/scope.py:207-227",
+      "reportOnly": true
+    },
+    {
+      "check": "knowledge.converted",
+      "path": "onboarding/dashboard/src/overview.json",
+      "field": "references.7.targets.0",
+      "rule": "R22.3-unresolved-target",
+      "message": "unresolved reference target: onboarding/dashboard/src/data/overview.md:1-936",
+      "reportOnly": true
+    },
+    {
+      "check": "knowledge.converted",
+      "path": "onboarding/dashboard/src/overview.json",
+      "field": "references.8.targets.0",
+      "rule": "R22.3-unresolved-target",
+      "message": "unresolved reference target: onboarding/dashboard/src/panels/overview.md:1-3622",
+      "reportOnly": true
+    },
+    {
+      "check": "knowledge.converted",
+      "path": "onboarding/dashboard/src/overview.json",
+      "field": "references.9.targets.0",
+      "rule": "R22.3-unresolved-target",
+      "message": "unresolved reference target: onboarding/dashboard/src/panels/session-cockpit/overview.md:1-595",
+      "reportOnly": true
+    },
+    {
+      "check": "knowledge.converted",
+      "path": "onboarding/dashboard/src/panels/MemoryMirror.tsx.json",
+      "field": "references.2.targets.1",
+      "rule": "R22.3-unresolved-target",
+      "message": "unresolved reference target: mcp/src/agents_remember/observer/projection.py:1097-1153",
+      "reportOnly": true
+    },
+    {
+      "check": "knowledge.converted",
+      "path": "onboarding/dashboard/src/panels/file-viewer/DualPane.test.tsx.json",
+      "field": "references.3.targets.0",
+      "rule": "R22.3-unresolved-target",
+      "message": "unresolved reference target: onboarding/dashboard/src/panels/file-viewer/overview.md:47-79",
+      "reportOnly": true
+    }
+  ],
+  "reportOnlySampleCount": 10,
+  "memoryCensus": {
+    "status": "ready-for-adjudication",
+    "certified": false,
+    "rowCount": 487,
+    "blockerCount": 0,
+    "unonboardedCount": 0,
+    "rows": [
+      {
+        "identity": {
+          "artifactType": "entity-row",
+          "memoryRootRelativePath": "onboarding/entities.md",
+          "subIdentity": "Closeout Effective Input"
+        },
+        "expectedFinalPresence": "present",
+        "sourcePaths": [
+          "mcp/src/agents_remember/application/worktree_tools.py",
+          "mcp/src/agents_remember/worktrees/direct_landing.py"
+        ],
+        "reasons": [
+          "entity-evidence-intersection"
+        ],
+        "preExisting": true
+      },
+      {
+        "identity": {
+          "artifactType": "entity-row",
+          "memoryRootRelativePath": "onboarding/entities.md",
+          "subIdentity": "Closeout Mutation Evidence"
+        },
+        "expectedFinalPresence": "present",
+        "sourcePaths": [
+          "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py",
+          "mcp/src/agents_remember/worktrees/integration/mutation_evidence.py",
+          "mcp/src/agents_remember/worktrees/modules/closeout_external.py",
+          "mcp/src/agents_remember/worktrees/queue/closeout_recovery.py"
+        ],
+        "reasons": [
+          "entity-evidence-intersection"
+        ],
+        "preExisting": true
+      },
+      {
+        "identity": {
+          "artifactType": "entity-row",
+          "memoryRootRelativePath": "onboarding/entities.md",
+          "subIdentity": "Seat Landing Archive"
+        },
+        "expectedFinalPresence": "present",
+        "sourcePaths": [
+          "mcp/src/agents_remember/application/worktree_tools.py"
+        ],
+        "reasons": [
+          "entity-evidence-intersection"
+        ],
+        "preExisting": true
+      },
+      {
+        "identity": {
+          "artifactType": "entity-row",
+          "memoryRootRelativePath": "onboarding/entities.md",
+          "subIdentity": "Source Lineage"
+        },
+        "expectedFinalPresence": "present",
+        "sourcePaths": [
+          "mcp/src/agents_remember/models/worktree.py",
+          "mcp/src/agents_remember/worktrees/modules/closeout.py"
+        ],
+        "reasons": [
+          "entity-evidence-intersection"
+        ],
+        "preExisting": true
+      },
+      {
+        "identity": {
+          "artifactType": "entity-row",
+          "memoryRootRelativePath": "onboarding/entities.md",
+          "subIdentity": "Worktree Contract"
+        },
+        "expectedFinalPresence": "present",
+        "sourcePaths": [
+          "mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md",
+          "mcp/src/agents_remember/worktrees/modules/closeout.py",
+          "mcp/src/agents_remember/worktrees/modules/guidance.py"
+        ],
+        "reasons": [
+          "entity-evidence-intersection"
+        ],
+        "preExisting": true
+      },
+      {
+        "identity": {
+          "artifactType": "entity-row",
+          "memoryRootRelativePath": "onboarding/entities.md",
+          "subIdentity": "Worktree Integration"
+        },
+        "expectedFinalPresence": "present",
+        "sourcePaths": [
+          "mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md"
+        ],
+        "reasons": [
+          "entity-evidence-intersection"
+        ],
+        "preExisting": true
+      },
+      {
+        "identity": {
+          "artifactType": "file-sidecar",
+          "memoryRootRelativePath": "onboarding/dashboard/src/data/review.ts.md"
+        },
+        "expectedFinalPresence": "present",
+        "sourcePaths": [
+          "dashboard/src/data/review.ts"
+        ],
+        "reasons": [
+          "changed-source"
+        ],
+        "preExisting": true
+      },
+      {
+        "identity": {
+          "artifactType": "file-sidecar",
+          "memoryRootRelativePath": "onboarding/dashboard/src/data/reviewTrees.ts.md"
+        },
+        "expectedFinalPresence": "present",
+        "sourcePaths": [
+          "dashboard/src/data/reviewTrees.ts"
+        ],
+        "reasons": [
+          "changed-source"
+        ],
+        "preExisting": true
+      },
+      {
+        "identity": {
+          "artifactType": "file-sidecar",
+          "memoryRootRelativePath": "onboarding/dashboard/src/panels/lifecycle-list/hierarchy.test.tsx.md"
+        },
+        "expectedFinalPresence": "present",
+        "sourcePaths": [
+          "dashboard/src/panels/lifecycle-list/hierarchy.test.tsx"
+        ],
+        "reasons": [
+          "task-edited-onboarding"
+        ],
+        "preExisting": true
+      },
+      {
+        "identity": {
+          "artifactType": "file-sidecar",
+          "memoryRootRelativePath": "onboarding/dashboard/src/panels/review/familyReview.capture-provenance.json.md"
+        },
+        "expectedFinalPresence": "present",
+        "sourcePaths": [
+          "dashboard/src/panels/review/familyReview.capture-provenance.json"
+        ],
+        "reasons": [
+          "changed-source"
+        ],
+        "preExisting": true
+      }
+    ],
+    "blockers": [],
+    "unonboarded": [],
+    "reportPath": "/home/firefox/projects/ar-coordination/worktrees/agents-remember/260928-mik-l26-ar/reports/memory-census.json",
+    "sha256": "2ef592bc8446d6e9ac84741817136de06fc99b6baaba501d40bbe1e13dd31fb7"
+  },
+  "knowledgeWorklist": {
+    "state": "complete",
+    "path": "/home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/enclosures/260928-mik-l26/knowledge-worklist.json",
+    "digest": "sha256:0274ef837a6f003e0fda22bef51a4d7ae6e3aec5f4550a2a3e899b40ff45f96d",
+    "itemCount": 4090,
+    "itemsByKind": {
+      "family_route_condition": 3,
+      "onboarding_trace": 451,
+      "reached_family": 16,
+      "touched_invariant": 53,
+      "unexplained_hunk": 3567
+    },
+    "incomplete": []
+  },
+  "knowledgeGate": {
+    "state": "refused",
+    "owner": "260928-MIK-L26",
+    "worklistState": "complete",
+    "worklistDigest": "sha256:0274ef837a6f003e0fda22bef51a4d7ae6e3aec5f4550a2a3e899b40ff45f96d",
+    "worklistPath": "/home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/enclosures/260928-mik-l26/knowledge-worklist.json",
+    "findingCount": 13,
+    "openItemCount": 12,
+    "incompleteCount": 0,
+    "violationCount": 1,
+    "reportOnlyCount": 85
+  },
+  "governingOverviewResolution": {
+    "check": "integrity.governing_overview_resolution",
+    "ok": true,
+    "cardsWalked": 2975,
+    "cardsFlagged": 0,
+    "unresolvedFieldCount": 0,
+    "unresolvedLinkCount": 0,
+    "sectionAbsentCount": 0,
+    "findings": [],
+    "observations": []
+  },
+  "onboardingTrace": {
+    "owner": "260928-MIK-L26",
+    "itemCount": 451,
+    "openCount": 0,
+    "open": [],
+    "unnecessaryRowCount": 3,
+    "problemCount": 0
+  },
+  "finalFullCatalog": {
+    "schemaVersion": "memory-final-full-catalog-readiness/v1",
+    "catalog": [
+      {
+        "itemId": "affected.closure",
+        "version": "1.0.0"
+      },
+      {
+        "itemId": "candidate.code_memory_pair",
+        "version": "1.0.0"
+      },
+      {
+        "itemId": "coherence.record",
+        "version": "1.0.0"
+      },
+      {
+        "itemId": "integrity.missing_onboarding",
+        "version": "1.0.0"
+      },
+      {
+        "itemId": "integrity.onboarding_drift_check.summary",
+        "version": "1.0.0"
+      },
+      {
+        "itemId": "route_index.alignment",
+        "version": "1.0.0"
+      },
+      {
+        "itemId": "style.citations.claim_reopen",
+        "version": "1.0.0"
+      },
+      {
+        "itemId": "style.citations.range_resolution",
+        "version": "1.0.0"
+      },
+      {
+        "itemId": "style.document_shape.diff_markers",
+        "version": "1.0.0"
+      },
+      {
+        "itemId": "style.document_shape.entity_catalog_alignment",
+        "version": "1.0.0"
+      },
+      {
+        "itemId": "style.document_shape.tables",
+        "version": "1.0.0"
+      },
+      {
+        "itemId": "style.update_history.history_order",
+        "version": "1.0.0"
+      }
+    ],
+    "items": [
+      {
+        "item": {
+          "itemId": "affected.closure",
+          "version": "1.0.0"
+        },
+        "status": "blocked",
+        "findingCount": 0,
+        "subresultDigest": "3f751dbb2974e944c1454515fb366a9c1de910a6ce2a949218c6bbfafd39705f",
+        "blockedBy": [
+          "affected-closure-plan-not-provided"
+        ],
+        "reference": null
+      },
+      {
+        "item": {
+          "itemId": "candidate.code_memory_pair",
+          "version": "1.0.0"
+        },
+        "status": "pass",
+        "findingCount": 0,
+        "subresultDigest": "d9f89d4635e407e8b94e693e6d14ab25ce03648d5f8fcae03e90e83a1e569877",
+        "blockedBy": [],
+        "reference": null
+      },
+      {
+        "item": {
+          "itemId": "coherence.record",
+          "version": "1.0.0"
+        },
+        "status": "blocked",
+        "findingCount": 0,
+        "subresultDigest": "af504b24b4ec396b0c53b810fba3336c799269d3b612cca5b436178903c94747",
+        "blockedBy": [
+          "coherence-record-not-current"
+        ],
+        "reference": null
+      },
+      {
+        "item": {
+          "itemId": "integrity.missing_onboarding",
+          "version": "1.0.0"
+        },
+        "status": "pass",
+        "findingCount": 0,
+        "subresultDigest": "bf93f21abe3504ce5890072654b1e76e9d21b1b6173ebb900c42618a98b81319",
+        "blockedBy": [],
+        "reference": null
+      },
+      {
+        "item": {
+          "itemId": "integrity.onboarding_drift_check.summary",
+          "version": "1.0.0"
+        },
+        "status": "fail",
+        "findingCount": 1,
+        "subresultDigest": "8dd225f6a8631d1f5494227e21fd9ae3e04778b567e6703361da4fac085d0167",
+        "blockedBy": [],
+        "reference": null
+      },
+      {
+        "item": {
+          "itemId": "route_index.alignment",
+          "version": "1.0.0"
+        },
+        "status": "fail",
+        "findingCount": 12,
+        "subresultDigest": "ce0009b60ff43a64d678de62921914d3f27706faebd05826699a9ddf79b5ca38",
+        "blockedBy": [],
+        "reference": null
+      },
+      {
+        "item": {
+          "itemId": "style.citations.claim_reopen",
+          "version": "1.0.0"
+        },
+        "status": "pass",
+        "findingCount": 0,
+        "subresultDigest": "95c01c725788b7f496fd219adf67020db13842e53cad2119044f5c26ff5cce53",
+        "blockedBy": [],
+        "reference": null
+      },
+      {
+        "item": {
+          "itemId": "style.citations.range_resolution",
+          "version": "1.0.0"
+        },
+        "status": "pass",
+        "findingCount": 0,
+        "subresultDigest": "df750d590d1fcfca1f5e115343c4dbf33417d0876dfe61fc02456b2d33ffd4cc",
+        "blockedBy": [],
+        "reference": null
+      },
+      {
+        "item": {
+          "itemId": "style.document_shape.diff_markers",
+          "version": "1.0.0"
+        },
+        "status": "pass",
+        "findingCount": 0,
+        "subresultDigest": "64b768a80ec616b7278933ce912b984b5085e6730a178ae771e7f5607309ef14",
+        "blockedBy": [],
+        "reference": null
+      },
+      {
+        "item": {
+          "itemId": "style.document_shape.entity_catalog_alignment",
+          "version": "1.0.0"
+        },
+        "status": "pass",
+        "findingCount": 0,
+        "subresultDigest": "c45e4483c00cd75ad296de9a2a3afedf95f3a0b66c2e6602a0f276d93007f31b",
+        "blockedBy": [],
+        "reference": null
+      },
+      {
+        "item": {
+          "itemId": "style.document_shape.tables",
+          "version": "1.0.0"
+        },
+        "status": "pass",
+        "findingCount": 0,
+        "subresultDigest": "2bb0208daa6f01603bfd899eb72b2f6386e3025735fa18df8929524de2dd442c",
+        "blockedBy": [],
+        "reference": null
+      },
+      {
+        "item": {
+          "itemId": "style.update_history.history_order",
+          "version": "1.0.0"
+        },
+        "status": "pass",
+        "findingCount": 0,
+        "subresultDigest": "10ae5f743eb239916e545d9824a95c0dbd785c0cce66244e045ad545bbc08595",
+        "blockedBy": [],
+        "reference": null
+      }
+    ],
+    "checkerRegistryDigest": "43891c23b8fa96d2b8f1e00ba07c0a629f1d379d8b343d3631f99e742f2fb94e",
+    "candidatePairAuthorityDigest": "cc0505905f1b5613eb5edd557f4afac4ce3853411619433c37a80819b8735702",
+    "affectedClosurePlanDigest": null,
+    "memoryTree": "31bc443c7485c4ead014c5e764f7351485aa61e4",
+    "coherenceRecordDigest": null,
+    "finalizationEligible": false,
+    "fullFinalRequired": true
+  },
+  "findingSampleCount": 1
+}

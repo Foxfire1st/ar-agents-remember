@@ -3,12 +3,12 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Conflict ownership and parked-WIP versus merge result shapes, including the journaled knowledge diagnosis.",
+      "note": "Retained conflict shapes.",
       "targets": [
         {
           "anchor": {
-            "blob": "d2fce5c8032d735b70632a668c35d44a87da8a2d",
-            "content": "sha256:9c72b2899ff5eb87d53925ce36a647a3bd5e028593bdcd1ab8804fe90b734a0e",
+            "blob": "3478a7daa4b6b4545dc212e58ea592800554348b",
+            "content": "sha256:b319465bab96886aa6c108ee1a03fe918bc3301a05b88d2cea243fad52822b3e",
             "locator": {
               "kind": "symbol",
               "name": "resolution_required"
@@ -18,61 +18,12 @@
         }
       ]
     },
-    "10": {
-      "note": "Policy choice and non-mutating initial/active/cancel previews.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d2fce5c8032d735b70632a668c35d44a87da8a2d",
-            "content": "sha256:814421fd80b8de327b0538736c165b2fd9bb006ebc83b17f5ccc123b5d70e298",
-            "locator": {
-              "kind": "symbol",
-              "name": "memory_choice_required"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d2fce5c8032d735b70632a668c35d44a87da8a2d",
-            "content": "sha256:7da500161100a861ab131cde1142800073e39c91130466c6ba4e764bc2ec7f29",
-            "locator": {
-              "kind": "symbol",
-              "name": "sync_preview"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d2fce5c8032d735b70632a668c35d44a87da8a2d",
-            "content": "sha256:2156b8f9f6e55d701b18bcde7c331393df8520bfe21a31f0fcf375d162cfa38b",
-            "locator": {
-              "kind": "symbol",
-              "name": "active_preview"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d2fce5c8032d735b70632a668c35d44a87da8a2d",
-            "content": "sha256:cc7b836740b62434bbd40b7d5521fc72da8389131159ad982b31ab7ace0d11f5",
-            "locator": {
-              "kind": "symbol",
-              "name": "cancel_preview"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "11": {
-      "note": "Terminal and no-authority replay results remain distinct; the `continue` replay of a completed generation recomputes the worklist.\n\nAnchor: `with_recomputed_worklist`",
+      "note": "Terminal replay/worklist.",
       "targets": [
         {
           "anchor": {
-            "blob": "d2fce5c8032d735b70632a668c35d44a87da8a2d",
+            "blob": "3478a7daa4b6b4545dc212e58ea592800554348b",
             "content": "sha256:1878b0e5f75356e4c1f49f02da11786351b0b85f974ec6fcbd1eb47f0f3c6766",
             "locator": {
               "kind": "symbol",
@@ -83,54 +34,13 @@
         }
       ]
     },
-    "12": {
-      "note": "Content-domain conflict and staged-resolution proof is delegated to the Git owner.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "275847ecea525f425b8c6c5f28b5c3ed8c461439",
-            "content": "sha256:2c2428c20f8fd2a74d830ef280a4858a3bf5701b7895bc98b9b0127fd445861f",
-            "locator": {
-              "kind": "symbol",
-              "name": "content_conflicts"
-            },
-            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "275847ecea525f425b8c6c5f28b5c3ed8c461439",
-            "content": "sha256:ab768648a3a6df558f6f4a46a03289cc1049f80439af8084638757777b5a5758",
-            "locator": {
-              "kind": "symbol",
-              "name": "validate_staged_resolution"
-            },
-            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "13": {
-      "note": "**The journaled diagnosis these builders project, and the response fields that carry it.**",
+      "note": "Current file-based resolution model.",
       "targets": [
         {
           "anchor": {
-            "blob": "7857d0160aedd94f75387bdfec39592e8cbb316a",
-            "content": "sha256:bdb8f98561611dc3b35125696d51ca42ff30160931761a98f5c6b768e2d7f7f0",
-            "locator": {
-              "kind": "symbol",
-              "name": "SyncKnowledgeConflict"
-            },
-            "path": "mcp/src/agents_remember/models/worktree.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "7857d0160aedd94f75387bdfec39592e8cbb316a",
-            "content": "sha256:80c2bfb06ada8f3faa9cb774ecbe0f35270292666a42ac2f82728ff893b6d0c7",
+            "blob": "6d887d74ea146178a0f34836a4a256d9d754071e",
+            "content": "sha256:7ee5b7aa48b2e692966b0d8f2ce90800290025dae7f0995044c9832235eb34f8",
             "locator": {
               "kind": "symbol",
               "name": "SyncResolutionProjection"
@@ -142,40 +52,28 @@
       ]
     },
     "2": {
-      "note": "A crossing sync's resolution carries the crossing summary and names the report; an ordinary sync's payload is unchanged.\n\nAnchor: \"if side.crossingReport\"",
+      "note": "Structural/crossing report guidance.",
       "targets": [
         {
           "anchor": {
-            "blob": "d2fce5c8032d735b70632a668c35d44a87da8a2d",
-            "content": "sha256:9c72b2899ff5eb87d53925ce36a647a3bd5e028593bdcd1ab8804fe90b734a0e",
+            "blob": "3478a7daa4b6b4545dc212e58ea592800554348b",
+            "content": "sha256:b319465bab96886aa6c108ee1a03fe918bc3301a05b88d2cea243fad52822b3e",
             "locator": {
               "kind": "symbol",
               "name": "resolution_required"
             }
           },
           "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d137af1a77fb633b90407595c57af9b5794458ad",
-            "content": "sha256:4b4c768ca70a68e24dac397d77b1fa255dfd17dd4d78c9a07e29a06e344ee1b3",
-            "locator": {
-              "kind": "symbol",
-              "name": "crossing_summary"
-            },
-            "path": "mcp/src/agents_remember/worktrees/knowledge_crossing.py"
-          },
-          "kind": "code"
         }
       ]
     },
     "3": {
-      "note": "**The next-move decision: reconcile when the conflict admits a decision, otherwise the continuation that exists — with a summary saying which unsettled conflict this is.**",
+      "note": "Current continuation guidance.",
       "targets": [
         {
           "anchor": {
-            "blob": "d2fce5c8032d735b70632a668c35d44a87da8a2d",
-            "content": "sha256:d70b10dc1414be569cbeea85e5b98eb42d791b90397b50867329cd6407c75e03",
+            "blob": "3478a7daa4b6b4545dc212e58ea592800554348b",
+            "content": "sha256:335905cf1f93c3255c69932b95b666fdbccc17398598950bcd629e22751540e9",
             "locator": {
               "kind": "symbol",
               "name": "_resolution_guidance"
@@ -185,76 +83,12 @@
         }
       ]
     },
-    "4": {
-      "note": "**The sentence telling the caller what to do about a conflict no decision settles, split by the merge's measured retraction precondition.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d2fce5c8032d735b70632a668c35d44a87da8a2d",
-            "content": "sha256:ff74e59b8c629158032ee49147a29da6cc33c51d07f3957dc35ab3e1f226f1cf",
-            "locator": {
-              "kind": "symbol",
-              "name": "_unsettled_instruction"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "5": {
-      "note": "**The advertised reconcile call, built from the journal with the decision left to the agent.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d2fce5c8032d735b70632a668c35d44a87da8a2d",
-            "content": "sha256:0e1d0ad61dbebe0a64c1730e1585e87c08dd809ee918ec1b4d47204a523d7140",
-            "locator": {
-              "kind": "symbol",
-              "name": "_reconcile_args"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "6": {
-      "note": "**The one place the refused row is named in a sentence, shared by every builder.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d2fce5c8032d735b70632a668c35d44a87da8a2d",
-            "content": "sha256:43b16d1fb8875bbac7d3bc42942ea9c20156cd609f29b50ce3ebeed004d53544",
-            "locator": {
-              "kind": "symbol",
-              "name": "_conflict_subject"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "7": {
-      "note": "**The read-only preview of authoring a decision, which predicts nothing about the merge.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d2fce5c8032d735b70632a668c35d44a87da8a2d",
-            "content": "sha256:93fde8185c019750dbd3734f22e6db9867c8fa1c7670f23daa007c31d686a2ca",
-            "locator": {
-              "kind": "symbol",
-              "name": "reconcile_preview"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "8": {
-      "note": "Parked-candidate reapply preview.",
+      "note": "Parked preview.",
       "targets": [
         {
           "anchor": {
-            "blob": "d2fce5c8032d735b70632a668c35d44a87da8a2d",
+            "blob": "3478a7daa4b6b4545dc212e58ea592800554348b",
             "content": "sha256:a988200aa365f33b6a3c2c32d40f809521cb56beb9bf940ac6272960ee5caf29",
             "locator": {
               "kind": "symbol",
@@ -266,12 +100,12 @@
       ]
     },
     "9": {
-      "note": "Staged-resolution preview, which now carries the knowledge projection on a dry run.",
+      "note": "Staged preview.",
       "targets": [
         {
           "anchor": {
-            "blob": "d2fce5c8032d735b70632a668c35d44a87da8a2d",
-            "content": "sha256:d84f40c3f689debb4654a82bd2fd6e3f9661fe3c11a1e36f82b8324ae3e50722",
+            "blob": "3478a7daa4b6b4545dc212e58ea592800554348b",
+            "content": "sha256:b0537fc0472a2f83dc6658015d52bee65fb05a06175fee2147d4ea0ad0f85599",
             "locator": {
               "kind": "symbol",
               "name": "resolution_validation_preview"

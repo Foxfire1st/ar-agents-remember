@@ -3,203 +3,38 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The relation this module owns, stated as one exact pair.\n\nAnchor: \"one exact invariant revision in one exact family revision\"",
+      "note": "Membership is one exact invariant revision in one exact family revision.",
       "targets": [
         {
           "anchor": {
-            "blob": "f85aa0cc87342ebf62ab38b912c29344628e56c6",
-            "content": "sha256:fad32c0a4470f5e1c7f48d36d6c5787905de9ed88818ec54fabdf2b366bafb87",
+            "blob": "f07a75805858d1fbe33d3cf8764f519623e075f2",
+            "content": "sha256:2467e2e45d46e15ee0daf750503729a63e3f5c9adcf625e3ad2416c4917f53fd",
             "locator": {
-              "end": 1,
-              "kind": "line_range",
-              "start": 1
+              "kind": "symbol",
+              "name": "find_membership_by_pair"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f07a75805858d1fbe33d3cf8764f519623e075f2",
+            "content": "sha256:079cd24f66f0df288bf260e0a82471627b2a7967029960ada956a41fac02dbf5",
+            "locator": {
+              "kind": "symbol",
+              "name": "list_families_for_invariant_revision"
             }
           },
           "kind": "code"
         }
       ]
     },
-    "10": {
-      "note": "The two nodes that keep the concept guard and the database's own tuple separately proven.\n\nAnchor: \"test_a_database_refusal_mid_batch_names_the_command_that_actually_failed\"; \"test_the_membership_guard_refuses_a_pair_the_declared_unique_tuple_would_also_refuse\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "3a4900498f7625c6e73f4548aa005635f1cc2f4d",
-            "content": "sha256:8767ff12fadaee11f49ed79608356514cc918ee468aeb5abf9414e9c621101c5",
-            "locator": {
-              "end": 1060,
-              "kind": "line_range",
-              "start": 993
-            },
-            "path": "mcp/tests/test_candidate_batch_transaction.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "3a4900498f7625c6e73f4548aa005635f1cc2f4d",
-            "content": "sha256:a3f7c755f8b725330ca4ae523c92ffb640c95de0450bfe74fa64fe7df78222b1",
-            "locator": {
-              "end": 1118,
-              "kind": "line_range",
-              "start": 1062
-            },
-            "path": "mcp/tests/test_candidate_batch_transaction.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "11": {
-      "note": "The single definition of a missing relation endpoint, shared with the claim relation.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "312759424f9894d31fd1fcb2ae1aafc7062d5a80",
-            "content": "sha256:c55e697cc3a75f47ac1638615785527cc7ccd91971d9dcaf7f1c784c091b2727",
-            "locator": {
-              "kind": "symbol",
-              "name": "require_family_revision_endpoint"
-            },
-            "path": "mcp/src/agents_remember/memory/knowledge/endpoints.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "312759424f9894d31fd1fcb2ae1aafc7062d5a80",
-            "content": "sha256:4825d1f82b17a3a05ed99a7a2213ba8ee9e0f471e14a095cb541b295c831ec33",
-            "locator": {
-              "kind": "symbol",
-              "name": "require_invariant_revision_endpoint"
-            },
-            "path": "mcp/src/agents_remember/memory/knowledge/endpoints.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "312759424f9894d31fd1fcb2ae1aafc7062d5a80",
-            "content": "sha256:d11fb1e8e585deb14afabe1cf426ea382b8ef6c23fdb684a96d61a927ae2ce4c",
-            "locator": {
-              "end": 89,
-              "kind": "line_range",
-              "start": 75
-            },
-            "path": "mcp/src/agents_remember/memory/knowledge/endpoints.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "312759424f9894d31fd1fcb2ae1aafc7062d5a80",
-            "content": "sha256:01e2cdde12c24085086fbb9e094c410596443b9271d50a38f8902a90bf59cfb6",
-            "locator": {
-              "end": 113,
-              "kind": "line_range",
-              "start": 92
-            },
-            "path": "mcp/src/agents_remember/memory/knowledge/endpoints.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "12": {
-      "note": "The batch command that composes the draft-sealing insert.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "6c89163646ff22709fb5d690476dad36ff4b94f2",
-            "content": "sha256:b1d4c7e30c1476d67e6b4ecbe7533ff3b2ba14755ca171de6cdfe4e51b6d5593",
-            "locator": {
-              "kind": "symbol",
-              "name": "_add_member"
-            },
-            "path": "mcp/src/agents_remember/memory/knowledge/batch_commands.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "13": {
-      "note": "The two nodes that keep the concept guard and the database's own tuple separately proven.\n\nAnchor: \"test_a_database_refusal_mid_batch_names_the_command_that_actually_failed\"; \"test_the_membership_guard_refuses_a_pair_the_declared_unique_tuple_would_also_refuse\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "3a4900498f7625c6e73f4548aa005635f1cc2f4d",
-            "content": "sha256:8767ff12fadaee11f49ed79608356514cc918ee468aeb5abf9414e9c621101c5",
-            "locator": {
-              "end": 1060,
-              "kind": "line_range",
-              "start": 993
-            },
-            "path": "mcp/tests/test_candidate_batch_transaction.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "3a4900498f7625c6e73f4548aa005635f1cc2f4d",
-            "content": "sha256:a3f7c755f8b725330ca4ae523c92ffb640c95de0450bfe74fa64fe7df78222b1",
-            "locator": {
-              "end": 1118,
-              "kind": "line_range",
-              "start": 1062
-            },
-            "path": "mcp/tests/test_candidate_batch_transaction.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "14": {
-      "note": "The single definition of a missing relation endpoint, shared with the claim relation.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "312759424f9894d31fd1fcb2ae1aafc7062d5a80",
-            "content": "sha256:c55e697cc3a75f47ac1638615785527cc7ccd91971d9dcaf7f1c784c091b2727",
-            "locator": {
-              "kind": "symbol",
-              "name": "require_family_revision_endpoint"
-            },
-            "path": "mcp/src/agents_remember/memory/knowledge/endpoints.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "312759424f9894d31fd1fcb2ae1aafc7062d5a80",
-            "content": "sha256:4825d1f82b17a3a05ed99a7a2213ba8ee9e0f471e14a095cb541b295c831ec33",
-            "locator": {
-              "kind": "symbol",
-              "name": "require_invariant_revision_endpoint"
-            },
-            "path": "mcp/src/agents_remember/memory/knowledge/endpoints.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "15": {
-      "note": "The row codec and expected-row digest that make the stale-caller refusal possible.",
+      "note": "The retained member-row digest and decoder; member_row was not a current symbol.",
       "targets": [
         {
           "anchor": {
-            "blob": "121c4afa09ae47ad7908ca98c752895684e7232f",
-            "content": "sha256:74945936fd363af24bfafbba478b70e2c902a8b2bf4561dfd1e62f85dd349915",
-            "locator": {
-              "kind": "symbol",
-              "name": "member_row"
-            },
-            "path": "mcp/src/agents_remember/memory/knowledge/records.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "121c4afa09ae47ad7908ca98c752895684e7232f",
+            "blob": "0ee5929321e3f7a958a51aecc7f15c63d890c86c",
             "content": "sha256:b33ec55a76c3d3307e1192a3abc021318bd3792bdb5ad0ad85a8a2b11b15240f",
             "locator": {
               "kind": "symbol",
@@ -211,7 +46,7 @@
         },
         {
           "anchor": {
-            "blob": "121c4afa09ae47ad7908ca98c752895684e7232f",
+            "blob": "0ee5929321e3f7a958a51aecc7f15c63d890c86c",
             "content": "sha256:d998b44957e9916e459c94891ae7bee687849d435aeda6934eda2a31448e6946",
             "locator": {
               "kind": "symbol",
@@ -224,11 +59,11 @@
       ]
     },
     "16": {
-      "note": "The vocabulary this module stores and returns.",
+      "note": "The retained membership draft, stored member and invariant-to-family result values.",
       "targets": [
         {
           "anchor": {
-            "blob": "b7d1f0ed9070d0e7e8877341a2a95fe1b5c6b786",
+            "blob": "eb43356c10b09e4f63622d8ce0004d9d68140bee",
             "content": "sha256:b383cf6b448b245ef4cc4c4961c60024dd3f18c8232095b1efd81b908a1e7f88",
             "locator": {
               "kind": "symbol",
@@ -240,7 +75,7 @@
         },
         {
           "anchor": {
-            "blob": "b7d1f0ed9070d0e7e8877341a2a95fe1b5c6b786",
+            "blob": "eb43356c10b09e4f63622d8ce0004d9d68140bee",
             "content": "sha256:76d9a22f63970aa95f306b6987c20391dcc1518416853e039d91d064b2afe326",
             "locator": {
               "kind": "symbol",
@@ -252,19 +87,7 @@
         },
         {
           "anchor": {
-            "blob": "b7d1f0ed9070d0e7e8877341a2a95fe1b5c6b786",
-            "content": "sha256:cd43a40d88a250040405c83f09f661c7554d4a2ef34bb6d8252365954045b16a",
-            "locator": {
-              "kind": "symbol",
-              "name": "FamilyMembers"
-            },
-            "path": "mcp/src/agents_remember/models/knowledge/graph.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "b7d1f0ed9070d0e7e8877341a2a95fe1b5c6b786",
+            "blob": "eb43356c10b09e4f63622d8ce0004d9d68140bee",
             "content": "sha256:7319b50b8bb02089db8f26ecc757b97810ea5d71b7f1fdef8437b49231c60be4",
             "locator": {
               "kind": "symbol",
@@ -276,169 +99,12 @@
         }
       ]
     },
-    "17": {
-      "note": "The declared `family_member` table, its unique tuple, its index and its no-repoint trigger.\n\nAnchor: `family_member`; `family_member_invariant_revision`; `family_member_no_repoint`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "5e27550d32bfd12f38a8b3393ad8622114eb677a",
-            "content": "sha256:fad6adcd99602604604e80faf6b08c961cbaff9c7e91bd6763b2a99749656139",
-            "locator": {
-              "end": 296,
-              "kind": "line_range",
-              "start": 280
-            },
-            "path": "mcp/src/agents_remember/memory/knowledge/schema.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "5e27550d32bfd12f38a8b3393ad8622114eb677a",
-            "content": "sha256:2461b159fde097fa207eb5ead7ec8a3c99c7fe86514c8ffdb5b6211dd0a075b6",
-            "locator": {
-              "end": 328,
-              "kind": "line_range",
-              "start": 327
-            },
-            "path": "mcp/src/agents_remember/memory/knowledge/schema.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "5e27550d32bfd12f38a8b3393ad8622114eb677a",
-            "content": "sha256:9c58b0ced8596ac318eb23d430714270dc2422687d580530f416acb3b2fe7466",
-            "locator": {
-              "end": 394,
-              "kind": "line_range",
-              "start": 390
-            },
-            "path": "mcp/src/agents_remember/memory/knowledge/schema.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "2": {
-      "note": "The membership creation operation and its ordered checks.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f85aa0cc87342ebf62ab38b912c29344628e56c6",
-            "content": "sha256:f06149691c314c03160f8cacacbb1cade99811e96ca3986c19b56dce20b0f00c",
-            "locator": {
-              "kind": "symbol",
-              "name": "create_family_member"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f85aa0cc87342ebf62ab38b912c29344628e56c6",
-            "content": "sha256:bae3f991118c86e87abf7cfba7b4621c486d057740b574a84c42f56d0ae25cdd",
-            "locator": {
-              "kind": "symbol",
-              "name": "_insert_member"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "The in-transaction insert both the operation and the batch command compose, including the pair pre-check the database's unique tuple backs up.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f85aa0cc87342ebf62ab38b912c29344628e56c6",
-            "content": "sha256:0ec255f44502678e6a58db740556d0d4b4141bcfffb1c91207a8917593530996",
-            "locator": {
-              "kind": "symbol",
-              "name": "insert_family_member"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "4": {
-      "note": "The draft-sealing entry point that computes the row digest from the admitted provenance.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f85aa0cc87342ebf62ab38b912c29344628e56c6",
-            "content": "sha256:fa8c36d9c938fbb37300823f2bcb6505bec098abd32c21a9488af5dece0c7d9f",
-            "locator": {
-              "kind": "symbol",
-              "name": "insert_family_member_draft"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "5": {
-      "note": "The removal path, whose stale-caller refusal carries both digests.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f85aa0cc87342ebf62ab38b912c29344628e56c6",
-            "content": "sha256:7d4c4680edd7051676a784f0afb02fe769dbe7e3789f2621563d61c739315371",
-            "locator": {
-              "kind": "symbol",
-              "name": "remove_family_member"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f85aa0cc87342ebf62ab38b912c29344628e56c6",
-            "content": "sha256:dbdf8d0938af136512eb041cc9722adec676b189f721b8d1e5209dc2c09720bb",
-            "locator": {
-              "kind": "symbol",
-              "name": "_delete_member"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f85aa0cc87342ebf62ab38b912c29344628e56c6",
-            "content": "sha256:ef35f7c559b689cca55fea989ccca2bf8a46f6b6e4557fc67fcdfcb1984c83cd",
-            "locator": {
-              "kind": "symbol",
-              "name": "delete_family_member"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "6": {
-      "note": "The forward read (family revision to members).",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f85aa0cc87342ebf62ab38b912c29344628e56c6",
-            "content": "sha256:0bf7248309d1073b1b3b0824a04faf588c6be10341b98ec49e92d498ef12c5b3",
-            "locator": {
-              "kind": "symbol",
-              "name": "list_members"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "7": {
-      "note": "The reverse read (invariant revision to families) over the same rows.",
+      "note": "The retained invariant-to-family read returns stored memberships in stable order.",
       "targets": [
         {
           "anchor": {
-            "blob": "f85aa0cc87342ebf62ab38b912c29344628e56c6",
+            "blob": "f07a75805858d1fbe33d3cf8764f519623e075f2",
             "content": "sha256:079cd24f66f0df288bf260e0a82471627b2a7967029960ada956a41fac02dbf5",
             "locator": {
               "kind": "symbol",
@@ -450,33 +116,16 @@
       ]
     },
     "8": {
-      "note": "The duplicate-pair probe the insert path consults.",
+      "note": "The exact endpoint-pair lookup reads the stored membership.",
       "targets": [
         {
           "anchor": {
-            "blob": "f85aa0cc87342ebf62ab38b912c29344628e56c6",
+            "blob": "f07a75805858d1fbe33d3cf8764f519623e075f2",
             "content": "sha256:2467e2e45d46e15ee0daf750503729a63e3f5c9adcf625e3ad2416c4917f53fd",
             "locator": {
               "kind": "symbol",
               "name": "find_membership_by_pair"
             }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "9": {
-      "note": "The batch command that composes the draft-sealing insert.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "6c89163646ff22709fb5d690476dad36ff4b94f2",
-            "content": "sha256:b1d4c7e30c1476d67e6b4ecbe7533ff3b2ba14755ca171de6cdfe4e51b6d5593",
-            "locator": {
-              "kind": "symbol",
-              "name": "_add_member"
-            },
-            "path": "mcp/src/agents_remember/memory/knowledge/batch_commands.py"
           },
           "kind": "code"
         }

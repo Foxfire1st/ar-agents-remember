@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Publishing against a moved branch or foreign head would put the wrong tree on the contract branch."
+  },
+  "applicability": "Ordinary and direct closeout publication on converted memory.",
+  "conditions": [
+    "The closeout judged a tree from the admitted contract branch and captured the parent before publication."
+  ],
+  "exclusions": [
+    "A caller outside closeout publication; the primitive is not re-used there."
+  ],
+  "id": "INV-KTMBMN",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "test_transaction_only_worktree_delivery.py::test_the_publication_is_bound_to_the_branch_and_the_head_the_closeout_admitted; real-out/apply-refused-*.json"
+      ],
+      "path": "handoff-stage1.json"
+    },
+    "handoffEntry": "R3 finding 2",
+    "leaf": "260928-MIK-L26",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Closeout publishes only on the contract work branch with the parent observed before the admitted tree was captured.",
+  "status": "proposed",
+  "supersedes": []
+}

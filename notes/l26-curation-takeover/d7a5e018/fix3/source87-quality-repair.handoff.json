@@ -1,0 +1,472 @@
+{
+  "entries": [],
+  "records": [
+    {
+      "key": "source87-foundation-route",
+      "kind": "family",
+      "id": "FAM-XYPE7N",
+      "fields": {
+        "routes": [
+          "skills/c-14-knowledge-bootstrap"
+        ]
+      }
+    }
+  ],
+  "history": [
+    {
+      "subject": "hunk:sha256:c17703048c50d55f71bc1655a5571f7410cd3c71d757dd901d4cecf020f2943d",
+      "disposition": "no_invariant",
+      "reason": "The lifecycle catalog replaces retired canonical-database fixture consumers with the current index-row fixture consumers and their owning artifact declarations. This exact hunk [{'base': [1715, 0], 'candidate': [1579, 7]}] is registry data for the already admitted retirement and the Owner-admitted four derived consumer lists; the source/test behavior and authored lane contract are not changed by the catalog entries. It warrants no additional invariant; the surviving fixture ownership contracts remain in the existing records."
+    },
+    {
+      "subject": "hunk:sha256:4d94b09093cee32ff91be5040a49c028e4b18a53ceceecc59d4c1df219b90eb4",
+      "disposition": "no_invariant",
+      "reason": "The lifecycle catalog replaces retired canonical-database fixture consumers with the current index-row fixture consumers and their owning artifact declarations. This exact hunk [{'base': [1724, 0], 'candidate': [1685, 2]}] is registry data for the already admitted retirement and the Owner-admitted four derived consumer lists; the source/test behavior and authored lane contract are not changed by the catalog entries. It warrants no additional invariant; the surviving fixture ownership contracts remain in the existing records."
+    },
+    {
+      "subject": "hunk:sha256:612ec4e32b5fc282a00b006a68c31701c4c6b065034c5b331b2c2df993aea9f3",
+      "disposition": "no_invariant",
+      "reason": "The lifecycle catalog replaces retired canonical-database fixture consumers with the current index-row fixture consumers and their owning artifact declarations. This exact hunk [{'base': [1722, 0], 'candidate': [1596, 78]}] is registry data for the already admitted retirement and the Owner-admitted four derived consumer lists; the source/test behavior and authored lane contract are not changed by the catalog entries. It warrants no additional invariant; the surviving fixture ownership contracts remain in the existing records."
+    },
+    {
+      "subject": "hunk:sha256:7c8fbc504ed1272ac8b6dc54b7c939cc0dd2c7b528934b16e428fb1f17ba234a",
+      "disposition": "no_invariant",
+      "reason": "The lifecycle catalog replaces retired canonical-database fixture consumers with the current index-row fixture consumers and their owning artifact declarations. This exact hunk [{'base': [1723, 0], 'candidate': [1675, 9]}] is registry data for the already admitted retirement and the Owner-admitted four derived consumer lists; the source/test behavior and authored lane contract are not changed by the catalog entries. It warrants no additional invariant; the surviving fixture ownership contracts remain in the existing records."
+    },
+    {
+      "subject": "hunk:sha256:4cc4fb62108fce899524554d7c38c2ff037b7e7419da658e792b1f94f9f66b15",
+      "disposition": "no_invariant",
+      "reason": "The lifecycle catalog replaces retired canonical-database fixture consumers with the current index-row fixture consumers and their owning artifact declarations. This exact hunk [{'base': [1726, 0], 'candidate': [1689, 2]}] is registry data for the already admitted retirement and the Owner-admitted four derived consumer lists; the source/test behavior and authored lane contract are not changed by the catalog entries. It warrants no additional invariant; the surviving fixture ownership contracts remain in the existing records."
+    },
+    {
+      "subject": "hunk:sha256:d4affc6e3008dbbb3d14ceb62e09062cc22b7a6e81cd0ff61d89fc2ccbede6d6",
+      "disposition": "no_invariant",
+      "reason": "The lifecycle catalog replaces retired canonical-database fixture consumers with the current index-row fixture consumers and their owning artifact declarations. This exact hunk [{'base': [1721, 0], 'candidate': [1592, 3]}] is registry data for the already admitted retirement and the Owner-admitted four derived consumer lists; the source/test behavior and authored lane contract are not changed by the catalog entries. It warrants no additional invariant; the surviving fixture ownership contracts remain in the existing records."
+    },
+    {
+      "subject": "hunk:sha256:dfed92d0f822b43bd4d3361ba305592ec416482b88de6ff0fd460ab0ce4ddbc3",
+      "disposition": "no_invariant",
+      "reason": "The lifecycle catalog replaces retired canonical-database fixture consumers with the current index-row fixture consumers and their owning artifact declarations. This exact hunk [{'base': [274, 0], 'candidate': [209, 13]}] is registry data for the already admitted retirement and the Owner-admitted four derived consumer lists; the source/test behavior and authored lane contract are not changed by the catalog entries. It warrants no additional invariant; the surviving fixture ownership contracts remain in the existing records."
+    },
+    {
+      "subject": "hunk:sha256:75f2c4aa7ec797c75f87425637beb524fe310faf78e853ae4a10f64fc9c56cfe",
+      "disposition": "no_invariant",
+      "reason": "The lifecycle catalog replaces retired canonical-database fixture consumers with the current index-row fixture consumers and their owning artifact declarations. This exact hunk [{'base': [269, 5], 'candidate': [174, 34]}] is registry data for the already admitted retirement and the Owner-admitted four derived consumer lists; the source/test behavior and authored lane contract are not changed by the catalog entries. It warrants no additional invariant; the surviving fixture ownership contracts remain in the existing records."
+    },
+    {
+      "subject": "hunk:sha256:8411a8ebe64f2570d3fcd3f327b1ab16d2c78c6a30eb5aaabb6b9bd74711b883",
+      "disposition": "no_invariant",
+      "reason": "The lifecycle catalog replaces retired canonical-database fixture consumers with the current index-row fixture consumers and their owning artifact declarations. This exact hunk [{'base': [1712, 2], 'candidate': [1575, 2]}] is registry data for the already admitted retirement and the Owner-admitted four derived consumer lists; the source/test behavior and authored lane contract are not changed by the catalog entries. It warrants no additional invariant; the surviving fixture ownership contracts remain in the existing records."
+    },
+    {
+      "subject": "hunk:sha256:b3be91f9aad9ef5b25886aaf275105d8eefc43eccbe3eb0432b39e505162a53f",
+      "disposition": "no_invariant",
+      "reason": "The lifecycle catalog replaces retired canonical-database fixture consumers with the current index-row fixture consumers and their owning artifact declarations. This exact hunk [{'base': [1696, 3], 'candidate': [1544, 18]}] is registry data for the already admitted retirement and the Owner-admitted four derived consumer lists; the source/test behavior and authored lane contract are not changed by the catalog entries. It warrants no additional invariant; the surviving fixture ownership contracts remain in the existing records."
+    },
+    {
+      "subject": "hunk:sha256:5b719ac097a1335e183ee680adaa0d58fc3aad9768d8f338374393417dadf4a2",
+      "disposition": "no_invariant",
+      "reason": "This exact support hunk [{'base': [573, 0], 'candidate': [566, 6]}] selects the test-only row/anchor builders instead of the retired canonical writer and its request drafts. The existing index fixture and timing-helper obligations still govern the surviving support. Import relocation and removal do not create an additional behavioral guarantee; this history records retirement/composition, not a runtime or executed-test certificate."
+    },
+    {
+      "subject": "hunk:sha256:ccf355341b9f47e5aad8f490a46825fa0e48c6f192989db62d72863f5dd91d99",
+      "disposition": "no_invariant",
+      "reason": "This exact support hunk [{'base': [734, 0], 'candidate': [727, 1]}] selects the test-only row/anchor builders instead of the retired canonical writer and its request drafts. The existing index fixture and timing-helper obligations still govern the surviving support. Import relocation and removal do not create an additional behavioral guarantee; this history records retirement/composition, not a runtime or executed-test certificate."
+    },
+    {
+      "subject": "hunk:sha256:164e070748eaa711c74eb8ec401910ff87a90c8f34af6de89757f9d55c54b00b",
+      "disposition": "no_invariant",
+      "reason": "This exact support hunk [{'base': [33, 0], 'candidate': [34, 13]}] selects the test-only row/anchor builders instead of the retired canonical writer and its request drafts. The existing index fixture and timing-helper obligations still govern the surviving support. Import relocation and removal do not create an additional behavioral guarantee; this history records retirement/composition, not a runtime or executed-test certificate."
+    },
+    {
+      "subject": "hunk:sha256:cb58ddd6675f3402f6b19bb3f95b7b2aa2b2d1d9f1570bd1de52b2b7aeca8e8a",
+      "disposition": "no_invariant",
+      "reason": "This exact support hunk [{'base': [732, 0], 'candidate': [724, 1]}] selects the test-only row/anchor builders instead of the retired canonical writer and its request drafts. The existing index fixture and timing-helper obligations still govern the surviving support. Import relocation and removal do not create an additional behavioral guarantee; this history records retirement/composition, not a runtime or executed-test certificate."
+    },
+    {
+      "subject": "hunk:sha256:5fbfb4074907639cc3c2bdb416ee0dab73ab7eb872f1962fc5140f6d28892b02",
+      "disposition": "no_invariant",
+      "reason": "This exact support hunk [{'base': [557, 10], 'candidate': [560, 0]}] removes retired production writer/model imports. The existing index fixture and timing-helper obligations still govern the surviving support. Import relocation and removal do not create an additional behavioral guarantee; this history records retirement/composition, not a runtime or executed-test certificate."
+    },
+    {
+      "subject": "hunk:sha256:277010ddd89dcb988f1f38dee7a3648c156ed15ac564d8574a82bf3d4a9b8530",
+      "disposition": "no_invariant",
+      "reason": "This exact support hunk [{'base': [552, 4], 'candidate': [559, 1]}] selects the test-only row/anchor builders instead of the retired canonical writer and its request drafts. The existing index fixture and timing-helper obligations still govern the surviving support. Import relocation and removal do not create an additional behavioral guarantee; this history records retirement/composition, not a runtime or executed-test certificate."
+    },
+    {
+      "subject": "hunk:sha256:a5d90c324229d53505456a6f12f0b56a123d9a8f2e5879108b561d26b815ac62",
+      "disposition": "no_invariant",
+      "reason": "This exact support hunk [{'base': [544, 6], 'candidate': [556, 0]}] removes retired production writer/model imports. The existing index fixture and timing-helper obligations still govern the surviving support. Import relocation and removal do not create an additional behavioral guarantee; this history records retirement/composition, not a runtime or executed-test certificate."
+    },
+    {
+      "subject": "hunk:sha256:b831671435cddb84a5e2b8efc26f0217165bd7a686a7c50e03ed9ac86e9a99e1",
+      "disposition": "no_invariant",
+      "reason": "This exact support hunk [{'base': [725, 7], 'candidate': [721, 2]}] selects the test-only row/anchor builders instead of the retired canonical writer and its request drafts. The existing index fixture and timing-helper obligations still govern the surviving support. Import relocation and removal do not create an additional behavioral guarantee; this history records retirement/composition, not a runtime or executed-test certificate."
+    },
+    {
+      "subject": "hunk:sha256:9d6f37083c9681784ff962f1b8ff7a2ad7eb6b9fc4e2931f846284e931af2d02",
+      "disposition": "no_invariant",
+      "reason": "This exact support hunk [{'base': [571, 1], 'candidate': [563, 0]}] removes retired production writer/model imports. The existing index fixture and timing-helper obligations still govern the surviving support. Import relocation and removal do not create an additional behavioral guarantee; this history records retirement/composition, not a runtime or executed-test certificate."
+    },
+    {
+      "subject": "hunk:sha256:55f505b8082514112ae7de3ee73e7e94564718254def39eae3d46436d18c6f52",
+      "disposition": "no_invariant",
+      "reason": "This exact support hunk [{'base': [569, 1], 'candidate': [562, 0]}] removes retired production writer/model imports. The existing index fixture and timing-helper obligations still govern the surviving support. Import relocation and removal do not create an additional behavioral guarantee; this history records retirement/composition, not a runtime or executed-test certificate."
+    },
+    {
+      "subject": "hunk:sha256:13fd25b00ed69a4370ece085cf5b963d0a3d0e0b06d71a62b0d2fa573b7a1d33",
+      "disposition": "no_invariant",
+      "reason": "This exact support hunk [{'base': [722, 2], 'candidate': [719, 0]}] removes retired production writer/model imports. The existing index fixture and timing-helper obligations still govern the surviving support. Import relocation and removal do not create an additional behavioral guarantee; this history records retirement/composition, not a runtime or executed-test certificate."
+    },
+    {
+      "subject": "INV-7MH0BR",
+      "disposition": "no_impact",
+      "reason": "The record still holds; its realization anchors moved with the retirement edits and are re-anchored at the corrected candidate. Source87 current refresh: each retained cover is resolved at code 715ee46e/change60906382, retaining its actual construct and prior removals. The shared timing-helper call in the reopen proof preserves its same-second rewrite assertion; the latency controls retain the same measured assertions. These are static proof relationships, not tests executed by this curation.",
+      "covers": [
+        {
+          "id": "PRF-K0PSED",
+          "locator": {
+            "kind": "symbol",
+            "name": "test_the_knowledge_diff_asks_git_three_questions_and_answers_what_the_per_file_diff_answered"
+          }
+        },
+        {
+          "id": "PRF-T54N25",
+          "locator": {
+            "kind": "symbol",
+            "name": "test_exact_filename_patches_keep_quoted_bytes_and_do_not_expand_to_siblings_at_two_sizes"
+          }
+        },
+        {
+          "id": "RLZ-646SPE",
+          "locator": {
+            "kind": "symbol",
+            "name": "_listed_changes"
+          }
+        },
+        {
+          "id": "RLZ-D0CC0H",
+          "locator": {
+            "kind": "symbol",
+            "name": "_Listed"
+          }
+        },
+        {
+          "id": "RLZ-H028XD",
+          "locator": {
+            "kind": "symbol",
+            "name": "_quoted_git_path"
+          }
+        },
+        {
+          "id": "RLZ-S383FG",
+          "locator": {
+            "kind": "symbol",
+            "name": "_cut_patch"
+          }
+        },
+        {
+          "id": "RLZ-TVPKC8",
+          "locator": {
+            "kind": "symbol",
+            "name": "_patches"
+          }
+        },
+        {
+          "id": "RLZ-WW3W2C",
+          "locator": {
+            "kind": "symbol",
+            "name": "_documents"
+          }
+        },
+        {
+          "id": "RLZ-ZNK8DX",
+          "locator": {
+            "kind": "symbol",
+            "name": "_measured_tree_diff"
+          }
+        }
+      ]
+    },
+    {
+      "subject": "INV-61Y147",
+      "disposition": "no_impact",
+      "reason": "The reviewer resolver still passes one resolved candidate to dependent parts; the carried owner and existing proof preserve one resolution per request. Source87 current refresh: each retained cover is resolved at code 715ee46e/change60906382, retaining its actual construct and prior removals. The shared timing-helper call in the reopen proof preserves its same-second rewrite assertion; the latency controls retain the same measured assertions. These are static proof relationships, not tests executed by this curation.",
+      "covers": [
+        {
+          "id": "PRF-8NWSBZ",
+          "locator": {
+            "kind": "symbol",
+            "name": "test_the_recheck_still_refuses_a_candidate_that_moved_while_the_review_was_composed"
+          }
+        },
+        {
+          "id": "PRF-KH4W06",
+          "locator": {
+            "kind": "symbol",
+            "name": "test_a_subject_read_resolves_once_and_captures_each_worktree_once_and_for_the_recheck"
+          }
+        },
+        {
+          "id": "RLZ-5BFBN1",
+          "locator": {
+            "kind": "symbol",
+            "name": "read_complete_knowledge_review"
+          }
+        },
+        {
+          "id": "RLZ-D75THA",
+          "locator": {
+            "kind": "symbol",
+            "name": "review_records_of"
+          }
+        },
+        {
+          "id": "RLZ-HM528R",
+          "locator": {
+            "kind": "symbol",
+            "name": "serving_collaborators"
+          }
+        }
+      ]
+    },
+    {
+      "subject": "INV-5M9WY3",
+      "disposition": "no_impact",
+      "reason": "The retained view-key/worklist/memo owners still reject failed reads and do not cache recovered aggregate failures. Changes of surrounding imports/tree paths carry these realizations without changing the failure rule. Source87 current refresh: each retained cover is resolved at code 715ee46e/change60906382, retaining its actual construct and prior removals. The shared timing-helper call in the reopen proof preserves its same-second rewrite assertion; the latency controls retain the same measured assertions. These are static proof relationships, not tests executed by this curation.",
+      "covers": [
+        {
+          "id": "PRF-BVAJTK",
+          "locator": {
+            "kind": "symbol",
+            "name": "test_the_view_memo_is_bounded_by_count_and_by_age_and_never_answers_another_key"
+          }
+        },
+        {
+          "id": "PRF-E4BSR5",
+          "locator": {
+            "kind": "symbol",
+            "name": "test_a_view_behind_which_a_read_failed_is_never_kept"
+          }
+        },
+        {
+          "id": "PRF-GMC5WP",
+          "locator": {
+            "kind": "symbol",
+            "name": "test_an_unreadable_task_input_is_observed_and_never_memoized_even_when_the_worklist_completes"
+          }
+        },
+        {
+          "id": "PRF-RGMJDD",
+          "locator": {
+            "kind": "symbol",
+            "name": "test_child_consumed_task_bytes_survive_aba_conflict_absence_and_read_errors"
+          }
+        },
+        {
+          "id": "PRF-RWW8CB",
+          "locator": {
+            "kind": "symbol",
+            "name": "test_the_leaf_wide_view_captures_nothing_itself_and_is_computed_once_per_comparison"
+          }
+        },
+        {
+          "id": "PRF-YZPTEQ",
+          "locator": {
+            "kind": "symbol",
+            "name": "test_a_task_edit_restored_during_computation_refuses_and_the_next_read_uses_original_inputs"
+          }
+        },
+        {
+          "id": "RLZ-3EFTEY",
+          "locator": {
+            "kind": "symbol",
+            "name": "leaf_view_key"
+          }
+        },
+        {
+          "id": "RLZ-4DBN10",
+          "locator": {
+            "kind": "symbol",
+            "name": "_worklist_view"
+          }
+        },
+        {
+          "id": "RLZ-B1HDWP",
+          "locator": {
+            "kind": "symbol",
+            "name": "moved_inputs"
+          }
+        },
+        {
+          "id": "RLZ-BA531Z",
+          "locator": {
+            "kind": "symbol",
+            "name": "_leaf_wide_parts"
+          }
+        },
+        {
+          "id": "RLZ-BKB2F1",
+          "locator": {
+            "kind": "symbol",
+            "name": "read_task_doc"
+          }
+        },
+        {
+          "id": "RLZ-JT0DJ4",
+          "locator": {
+            "kind": "symbol",
+            "name": "remember"
+          }
+        },
+        {
+          "id": "RLZ-TKD181",
+          "locator": {
+            "kind": "symbol",
+            "name": "_compute_leaf_parts"
+          }
+        },
+        {
+          "id": "RLZ-YRJNST",
+          "locator": {
+            "kind": "symbol",
+            "name": "has_failed_observation"
+          }
+        },
+        {
+          "id": "RLZ-ZXPVGB",
+          "locator": {
+            "kind": "symbol",
+            "name": "_view"
+          }
+        }
+      ]
+    },
+    {
+      "subject": "INV-656CYW",
+      "disposition": "no_impact",
+      "reason": "The record still holds; its realization anchors moved with the retirement edits and are re-anchored at the corrected candidate. Source87 current refresh: each retained cover is resolved at code 715ee46e/change60906382, retaining its actual construct and prior removals. The shared timing-helper call in the reopen proof preserves its same-second rewrite assertion; the latency controls retain the same measured assertions. These are static proof relationships, not tests executed by this curation.",
+      "covers": [
+        {
+          "id": "PRF-8EEFJD",
+          "locator": {
+            "kind": "symbol",
+            "name": "test_a_rewrite_in_the_second_of_the_index_write_is_never_answered_from_the_old_content"
+          }
+        },
+        {
+          "id": "PRF-N39F79",
+          "locator": {
+            "kind": "symbol",
+            "name": "test_the_index_copy_keeps_the_time_git_reads_from_the_index_file"
+          }
+        },
+        {
+          "id": "PRF-P60NFQ",
+          "locator": {
+            "kind": "symbol",
+            "name": "test_a_same_size_rewrite_in_the_second_of_the_index_write_changes_the_tree"
+          }
+        },
+        {
+          "id": "PRF-PYPX5S",
+          "locator": {
+            "kind": "symbol",
+            "name": "test_a_file_rewritten_while_the_gate_runs_is_never_committed_unjudged"
+          }
+        },
+        {
+          "id": "RLZ-3X5YSV",
+          "locator": {
+            "kind": "symbol",
+            "name": "copy_git_index"
+          }
+        },
+        {
+          "id": "RLZ-5VBRRY",
+          "locator": {
+            "kind": "symbol",
+            "name": "_capture"
+          }
+        },
+        {
+          "id": "RLZ-BW7QK2",
+          "locator": {
+            "kind": "symbol",
+            "name": "_tree_from_index_copy"
+          }
+        },
+        {
+          "id": "RLZ-WZ3W15",
+          "locator": {
+            "kind": "symbol",
+            "name": "ephemeral_git_mutation_snapshot"
+          }
+        }
+      ]
+    },
+    {
+      "subject": "INV-49E649",
+      "disposition": "changed",
+      "effect": "replace",
+      "reason": "The retired realization sites are removed and the surviving sites are re-anchored at the corrected candidate; the record's scope now names converted memory only. Evidence (co:INV-49E649): The retirement removed the database-era realization sites; the surviving realizations are re-anchored at the corrected candidate 28f8cf17. Source87 current refresh: each retained cover is resolved at code 715ee46e/change60906382, retaining its actual construct and prior removals. The shared timing-helper call in the reopen proof preserves its same-second rewrite assertion; the latency controls retain the same measured assertions. These are static proof relationships, not tests executed by this curation.",
+      "covers": [
+        {
+          "id": "PRF-5DW4E9",
+          "locator": {
+            "kind": "symbol",
+            "name": "test_a_file_rewritten_while_the_gate_runs_is_never_committed_unjudged"
+          }
+        },
+        {
+          "id": "PRF-Q8BE7Z",
+          "remove": true
+        },
+        {
+          "id": "RLZ-1TR608",
+          "locator": {
+            "kind": "symbol",
+            "name": "ignore_memory_cache"
+          }
+        },
+        {
+          "id": "RLZ-FJ0671",
+          "locator": {
+            "kind": "symbol",
+            "name": "_exact_memory_tree"
+          }
+        },
+        {
+          "id": "RLZ-K4M788",
+          "locator": {
+            "kind": "symbol",
+            "name": "_commit_memory_content"
+          }
+        },
+        {
+          "id": "RLZ-M2XFSX",
+          "locator": {
+            "kind": "symbol",
+            "name": "_require_judged_tree"
+          }
+        },
+        {
+          "id": "RLZ-V3EGC6",
+          "locator": {
+            "kind": "symbol",
+            "name": "stage_tree"
+          }
+        }
+      ]
+    },
+    {
+      "subject": "FAM-XYPE7N",
+      "disposition": "changed",
+      "reason": "The examples must lead to supported reads and the state explanation must let the same instructed session interpret what it read. Either alone can misroute or misdescribe the foundation. This is a joint instructional contract, separate from write admission and storage location. R04.2 repair: keep only skills/c-14-knowledge-bootstrap, whose SKILL.md carries both exact member realizations. The tests contain proofs but no realization entry of either member, so mcp/tests is not a realizing route. Guarantee, two members and their revision-one obligations are preserved.",
+      "examined": [
+        "INV-1BBPF3",
+        "INV-K69R3M"
+      ]
+    }
+  ]
+}

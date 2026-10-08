@@ -1,6 +1,6 @@
 {
   "admission": "legacy-unassessed",
-  "guarantee": "Every authored knowledge write -- a record, an entry or a history row -- goes through the two admitted command lines and the one writer of the memory tree's format, the curator file writer for a converted tree and the knowledge batch writer for an unconverted one; it lands in the repository's one declared knowledge location and is admitted only from real setup authority, so a writer and a reader of the same repository's knowledge can never disagree about where it lives or by what right it was written. The mechanical writers author nothing and are outside this guarantee: the conversion and the crossing sync, the formatter, and the closeout's closed flag.",
+  "guarantee": "Authored knowledge writes use the admitted leaf knowledge-ingest or taskless knowledge-bootstrap command and the single converted file writer. Writer admission and ordinary readers resolve the same repository or leaf memory root, whose text files are canonical. An unconverted root is refused and no canonical dataset is published. Mechanical conversion, crossing merge, formatting and closeout flags are outside this authoring guarantee.",
   "id": "FAM-7B6N3Y4Q",
   "members": [
     "INV-1XKX9ERN",
@@ -12,12 +12,11 @@
     "legacyId": "23ce40dc-51de-4eda-926c-25a2948f8e00",
     "task": "260921-ICR"
   },
-  "revision": 3,
+  "revision": 4,
   "routes": [
     "mcp/src/agents_remember/application",
     "mcp/src/agents_remember/cli",
-    "mcp/src/agents_remember/kernel/primitives",
-    "mcp/src/agents_remember/memory/knowledge"
+    "mcp/src/agents_remember/kernel/primitives"
   ],
   "schema": "ar-family/v1",
   "status": "proposed",

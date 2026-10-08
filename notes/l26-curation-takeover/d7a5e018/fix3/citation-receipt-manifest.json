@@ -1,0 +1,802 @@
+{
+  "cards": 52,
+  "receipts": [
+    {
+      "file": "01.json",
+      "sha256": "affb7f58c925f277e724c39a1d243781c8bdbc923b7506baf1fe9efa9ee22522",
+      "card": "onboarding/mcp/src/agents_remember/application/knowledge_bootstrap_admission.py.md",
+      "ok": true,
+      "stale": 0,
+      "authoring": {
+        "authoredReferences": 3,
+        "reauthoredReferences": 0,
+        "removedReferences": 27,
+        "refusedCount": 0,
+        "unresolvedTargetsCount": 0
+      }
+    },
+    {
+      "file": "02.json",
+      "sha256": "69924c6b7e1b6ae175fb5afafb94f3078dc8035faf077c76416e5d249beaa329",
+      "card": "onboarding/mcp/src/agents_remember/application/review_candidate_resolution.py.md",
+      "ok": true,
+      "stale": 0,
+      "authoring": {
+        "authoredReferences": 3,
+        "reauthoredReferences": 0,
+        "removedReferences": 21,
+        "refusedCount": 0,
+        "unresolvedTargetsCount": 0
+      }
+    },
+    {
+      "file": "03.json",
+      "sha256": "f5edb78ff381f44a5da894745c7ee287366b9794a6c63a6fc8b6e7555ad1956f",
+      "card": "onboarding/mcp/src/agents_remember/application/review_committed_leaf.py.md",
+      "ok": true,
+      "stale": 0,
+      "authoring": {
+        "authoredReferences": 3,
+        "reauthoredReferences": 0,
+        "removedReferences": 27,
+        "refusedCount": 0,
+        "unresolvedTargetsCount": 0
+      }
+    },
+    {
+      "file": "04.json",
+      "sha256": "921251393bbe4616e4601863af5e27011122cec68e66b62a9fc2d50707a21e3b",
+      "card": "onboarding/mcp/src/agents_remember/application/review_evidence_records.py.md",
+      "ok": true,
+      "stale": 0,
+      "authoring": {
+        "authoredReferences": 3,
+        "reauthoredReferences": 0,
+        "removedReferences": 26,
+        "refusedCount": 0,
+        "unresolvedTargetsCount": 0
+      }
+    },
+    {
+      "file": "05.json",
+      "sha256": "2400ff2b0f5ea126fd2d012e77d7d43d752f9e62778062ab2e313ee3c51676d4",
+      "card": "onboarding/mcp/src/agents_remember/cli/knowledge_bootstrap.py.md",
+      "ok": true,
+      "stale": 0,
+      "authoring": {
+        "authoredReferences": 3,
+        "reauthoredReferences": 0,
+        "removedReferences": 24,
+        "refusedCount": 0,
+        "unresolvedTargetsCount": 0
+      }
+    },
+    {
+      "file": "06.json",
+      "sha256": "a537d7f23aa0ed7f2550d6c7820bfc738ae5f68ff577e14bd065f56e9b768b24",
+      "card": "onboarding/mcp/src/agents_remember/cli/knowledge_write_route.py.md",
+      "ok": true,
+      "stale": 0,
+      "authoring": {
+        "authoredReferences": 4,
+        "reauthoredReferences": 0,
+        "removedReferences": 16,
+        "refusedCount": 0,
+        "unresolvedTargetsCount": 0
+      }
+    },
+    {
+      "file": "07.json",
+      "sha256": "4ff3882c11d97873ddedb03f800c8ff40b5bc81d5052a939d261812a23542ae0",
+      "card": "onboarding/mcp/src/agents_remember/kernel/atomic_write.py.md",
+      "ok": true,
+      "stale": 0,
+      "authoring": {
+        "authoredReferences": 3,
+        "reauthoredReferences": 0,
+        "removedReferences": 5,
+        "refusedCount": 0,
+        "unresolvedTargetsCount": 0
+      }
+    },
+    {
+      "file": "08.json",
+      "sha256": "d879cb9be17ccfb4169c435a7dc59c4bd46332eef0afcdf4ebcbc90ae9c56b60",
+      "card": "onboarding/mcp/src/agents_remember/memory/knowledge/connection.py.md",
+      "ok": true,
+      "stale": 0,
+      "authoring": {
+        "authoredReferences": 3,
+        "reauthoredReferences": 0,
+        "removedReferences": 12,
+        "refusedCount": 0,
+        "unresolvedTargetsCount": 0
+      }
+    },
+    {
+      "file": "09.json",
+      "sha256": "bde441d0b09d51cd41e42d1430a512084189d48c95f92f721f20638e187a2421",
+      "card": "onboarding/mcp/src/agents_remember/memory/knowledge/durable_evidence.py.md",
+      "ok": true,
+      "stale": 0,
+      "authoring": {
+        "authoredReferences": 3,
+        "reauthoredReferences": 0,
+        "removedReferences": 12,
+        "refusedCount": 0,
+        "unresolvedTargetsCount": 0
+      }
+    },
+    {
+      "file": "10.json",
+      "sha256": "ad7355d9cd42629386517f90ce7f02c18c164636541bc7314726267f47fcf682",
+      "card": "onboarding/mcp/src/agents_remember/memory/knowledge/logical.py.md",
+      "ok": true,
+      "stale": 0,
+      "authoring": {
+        "authoredReferences": 4,
+        "reauthoredReferences": 0,
+        "removedReferences": 15,
+        "refusedCount": 0,
+        "unresolvedTargetsCount": 0
+      }
+    },
+    {
+      "file": "11.json",
+      "sha256": "07decb645c1a624b1bff68dac30f8c8a264e331d10a3d096d5b4158e5da6f58d",
+      "card": "onboarding/mcp/src/agents_remember/memory/knowledge/schema_generations.py.md",
+      "ok": true,
+      "stale": 0,
+      "authoring": {
+        "authoredReferences": 4,
+        "reauthoredReferences": 0,
+        "removedReferences": 6,
+        "refusedCount": 0,
+        "unresolvedTargetsCount": 0
+      }
+    },
+    {
+      "file": "12.json",
+      "sha256": "f32b93df76c6ff2de0cdf5f2386db48cf87375f939cdabc5e8b8c10dda5be499",
+      "card": "onboarding/mcp/src/agents_remember/models/knowledge/candidate.py.md",
+      "ok": true,
+      "stale": 0,
+      "authoring": {
+        "authoredReferences": 4,
+        "reauthoredReferences": 0,
+        "removedReferences": 23,
+        "refusedCount": 0,
+        "unresolvedTargetsCount": 0
+      }
+    },
+    {
+      "file": "13.json",
+      "sha256": "8a51379f13611d326690db03509179a854dfeca468e73b76909cf097c921e53c",
+      "card": "onboarding/mcp/src/agents_remember/models/knowledge/detection.py.md",
+      "ok": true,
+      "stale": 0,
+      "authoring": {
+        "authoredReferences": 4,
+        "reauthoredReferences": 0,
+        "removedReferences": 28,
+        "refusedCount": 0,
+        "unresolvedTargetsCount": 0
+      }
+    },
+    {
+      "file": "14.json",
+      "sha256": "6a65ad8d0340a0267201d7589deeb29b4b534c9ba95f8d23c9238a691d0d35dc",
+      "card": "onboarding/mcp/src/agents_remember/models/knowledge/evidence.py.md",
+      "ok": true,
+      "stale": 0,
+      "authoring": {
+        "authoredReferences": 4,
+        "reauthoredReferences": 0,
+        "removedReferences": 10,
+        "refusedCount": 0,
+        "unresolvedTargetsCount": 0
+      }
+    },
+    {
+      "file": "15.json",
+      "sha256": "eb1bc66a35ef87e04c764467f0f7ccff8027c615601adeb935152041fd245a45",
+      "card": "onboarding/mcp/src/agents_remember/models/knowledge/read_anchor.py.md",
+      "ok": true,
+      "stale": 0,
+      "authoring": {
+        "authoredReferences": 1,
+        "reauthoredReferences": 0,
+        "removedReferences": 8,
+        "refusedCount": 0,
+        "unresolvedTargetsCount": 0
+      }
+    },
+    {
+      "file": "16.json",
+      "sha256": "851c7fc51046c37aeff7dca8ac462926217c94b817cc2d2f8b3925833fd23634",
+      "card": "onboarding/mcp/src/agents_remember/models/knowledge/requirement.py.md",
+      "ok": true,
+      "stale": 0,
+      "authoring": {
+        "authoredReferences": 2,
+        "reauthoredReferences": 0,
+        "removedReferences": 20,
+        "refusedCount": 0,
+        "unresolvedTargetsCount": 0
+      }
+    },
+    {
+      "file": "17.json",
+      "sha256": "1ccc4fb95eb3a4f701ad3db86a696123acdd07a8ca0247b5b5abf4996cab025a",
+      "card": "onboarding/mcp/src/agents_remember/worktrees/integration/mutation_evidence.py.md",
+      "ok": true,
+      "stale": 0,
+      "authoring": {
+        "authoredReferences": 3,
+        "reauthoredReferences": 0,
+        "removedReferences": 6,
+        "refusedCount": 0,
+        "unresolvedTargetsCount": 0
+      }
+    },
+    {
+      "file": "18.json",
+      "sha256": "45db597e5bd65e8332d18ff5e9d2dba2cb206494d8c237e868e5f6b33004b70f",
+      "card": "onboarding/mcp/src/agents_remember/worktrees/knowledge_crossing.py.md",
+      "ok": true,
+      "stale": 0,
+      "authoring": {
+        "authoredReferences": 3,
+        "reauthoredReferences": 0,
+        "removedReferences": 11,
+        "refusedCount": 0,
+        "unresolvedTargetsCount": 0
+      }
+    },
+    {
+      "file": "19.json",
+      "sha256": "35cef7119597283e26705f131ea972507c2fb6217bcbdee39106df5f457c76fa",
+      "card": "onboarding/mcp/src/agents_remember/worktrees/modules/args.py.md",
+      "ok": true,
+      "stale": 0,
+      "authoring": {
+        "authoredReferences": 1,
+        "reauthoredReferences": 0,
+        "removedReferences": 8,
+        "refusedCount": 0,
+        "unresolvedTargetsCount": 0
+      }
+    },
+    {
+      "file": "20-closeout-repair.json",
+      "sha256": "e8c3e4a8059eb1c056cfad96997733cec8dfc7756d0a563480c00af9c851211f",
+      "card": "onboarding/mcp/src/agents_remember/worktrees/modules/closeout_external.py.md",
+      "ok": true,
+      "stale": 0,
+      "authoring": {
+        "authoredReferences": 7,
+        "reauthoredReferences": 0,
+        "removedReferences": 16,
+        "refusedCount": 0,
+        "unresolvedTargetsCount": 0
+      }
+    },
+    {
+      "file": "20.json",
+      "sha256": "86e0ea2ccfe593f75d84ad29d10624468a77a42251003c2cf8ecd950059653e0",
+      "card": "onboarding/mcp/src/agents_remember/worktrees/modules/closeout_external.py.md",
+      "ok": true,
+      "stale": 4,
+      "authoring": {
+        "authoredReferences": 4,
+        "reauthoredReferences": 0,
+        "removedReferences": 6,
+        "refusedCount": 0,
+        "unresolvedTargetsCount": 0
+      }
+    },
+    {
+      "file": "21.json",
+      "sha256": "f8e677fe79f5420b8046ab12843fc446753438a80495995597c145f2970d6a87",
+      "card": "onboarding/mcp/src/agents_remember/worktrees/modules/git.py.md",
+      "ok": true,
+      "stale": 0,
+      "authoring": {
+        "authoredReferences": 4,
+        "reauthoredReferences": 0,
+        "removedReferences": 6,
+        "refusedCount": 0,
+        "unresolvedTargetsCount": 0
+      }
+    },
+    {
+      "file": "22.json",
+      "sha256": "f5373715e87f9f7c96e4ae0b224240b70408771d5e139a4f1e044257de46cb69",
+      "card": "onboarding/mcp/tests/test_knowledge_bootstrap.py.md",
+      "ok": true,
+      "stale": 0,
+      "authoring": {
+        "authoredReferences": 3,
+        "reauthoredReferences": 0,
+        "removedReferences": 30,
+        "refusedCount": 0,
+        "unresolvedTargetsCount": 0
+      }
+    },
+    {
+      "file": "23.json",
+      "sha256": "5afb7a650874583f4ad9e95a6d50bfa7d210224c722dfde88f2eaefa392f4bcd",
+      "card": "onboarding/mcp/tests/test_knowledge_cutover.py.md",
+      "ok": true,
+      "stale": 0,
+      "authoring": {
+        "authoredReferences": 3,
+        "reauthoredReferences": 0,
+        "removedReferences": 10,
+        "refusedCount": 0,
+        "unresolvedTargetsCount": 0
+      }
+    },
+    {
+      "file": "24.json",
+      "sha256": "c17401342a70e6da13826c7ca4dc19d279d84bd831ed1286aa8a93eb3f4ebaff",
+      "card": "onboarding/mcp/tests/test_knowledge_index_surfaces.py.md",
+      "ok": true,
+      "stale": 0,
+      "authoring": {
+        "authoredReferences": 4,
+        "reauthoredReferences": 0,
+        "removedReferences": 7,
+        "refusedCount": 0,
+        "unresolvedTargetsCount": 0
+      }
+    },
+    {
+      "file": "25.json",
+      "sha256": "a73a2fd69a2082fd664bea8d5b7345b32913c50ad20600e977ad089d1492314b",
+      "card": "onboarding/mcp/tests/test_knowledge_reopen.py.md",
+      "ok": true,
+      "stale": 0,
+      "authoring": {
+        "authoredReferences": 4,
+        "reauthoredReferences": 0,
+        "removedReferences": 24,
+        "refusedCount": 0,
+        "unresolvedTargetsCount": 0
+      }
+    },
+    {
+      "file": "26.json",
+      "sha256": "8056964276d174481545420a39b3f881d158886421feec066c68bc81d332b14c",
+      "card": "onboarding/mcp/tests/test_tool_entry_point_sweep.py.md",
+      "ok": true,
+      "stale": 0,
+      "authoring": {
+        "authoredReferences": 1,
+        "reauthoredReferences": 0,
+        "removedReferences": 23,
+        "refusedCount": 0,
+        "unresolvedTargetsCount": 0
+      }
+    },
+    {
+      "file": "27.json",
+      "sha256": "bcc0ded190217ba45ba0e4d02f2e1a51c873995b5c547a15dbbed6b81459b627",
+      "card": "onboarding/mcp/tests/test_worktree_sync.py.md",
+      "ok": true,
+      "stale": 0,
+      "authoring": {
+        "authoredReferences": 2,
+        "reauthoredReferences": 0,
+        "removedReferences": 10,
+        "refusedCount": 0,
+        "unresolvedTargetsCount": 0
+      }
+    },
+    {
+      "file": "28.json",
+      "sha256": "bf5a5ec4a05f29265fc8c5a2c95c1f08f9f267bf2a1356d054161033ee7fff34",
+      "card": "onboarding/mcp/src/agents_remember/application/knowledge_gate/direct.py.md",
+      "ok": true,
+      "stale": 0,
+      "authoring": {
+        "authoredReferences": 3,
+        "reauthoredReferences": 0,
+        "removedReferences": 5,
+        "refusedCount": 0,
+        "unresolvedTargetsCount": 0
+      }
+    },
+    {
+      "file": "29.json",
+      "sha256": "67fb4befe268066c565cb0006b0b5600097c4cc0535c61ab69b20ca30fa6b50a",
+      "card": "onboarding/mcp/src/agents_remember/application/review_attribution.py.md",
+      "ok": true,
+      "stale": 0,
+      "authoring": {
+        "authoredReferences": 3,
+        "reauthoredReferences": 0,
+        "removedReferences": 11,
+        "refusedCount": 0,
+        "unresolvedTargetsCount": 0
+      }
+    },
+    {
+      "file": "30.json",
+      "sha256": "9003fe7450bc5978fcd7fbaa06339c2559bbfb99140ecc833ab0ac2cb2549c41",
+      "card": "onboarding/mcp/src/agents_remember/application/review_comparison_reopen.py.md",
+      "ok": true,
+      "stale": 0,
+      "authoring": {
+        "authoredReferences": 4,
+        "reauthoredReferences": 0,
+        "removedReferences": 22,
+        "refusedCount": 0,
+        "unresolvedTargetsCount": 0
+      }
+    },
+    {
+      "file": "31.json",
+      "sha256": "57a648368d9245f5be5720a500ac9d9eb2772e5c51d56bc619dc8de14e16d2fd",
+      "card": "onboarding/mcp/src/agents_remember/application/review_rename_inference.py.md",
+      "ok": true,
+      "stale": 0,
+      "authoring": {
+        "authoredReferences": 3,
+        "reauthoredReferences": 0,
+        "removedReferences": 10,
+        "refusedCount": 0,
+        "unresolvedTargetsCount": 0
+      }
+    },
+    {
+      "file": "32.json",
+      "sha256": "8ce9cc8c9cd648485ebf1654edf2d62582fb25f494e626972b1b51b7da2abdb2",
+      "card": "onboarding/mcp/src/agents_remember/memory/conversion/crossing_sync.py.md",
+      "ok": true,
+      "stale": 0,
+      "authoring": {
+        "authoredReferences": 3,
+        "reauthoredReferences": 0,
+        "removedReferences": 10,
+        "refusedCount": 0,
+        "unresolvedTargetsCount": 0
+      }
+    },
+    {
+      "file": "33.json",
+      "sha256": "84a8dae9dab63c3121eeedc702bf6326d31fec423818ce0446c6f2b9449514f2",
+      "card": "onboarding/mcp/src/agents_remember/memory/knowledge/records.py.md",
+      "ok": true,
+      "stale": 0,
+      "authoring": {
+        "authoredReferences": 4,
+        "reauthoredReferences": 0,
+        "removedReferences": 11,
+        "refusedCount": 0,
+        "unresolvedTargetsCount": 0
+      }
+    },
+    {
+      "file": "34.json",
+      "sha256": "8e9c3175882e26556f6203ec4b68e2f896c9a861c081ea7c65aeb765f3f36d4b",
+      "card": "onboarding/mcp/src/agents_remember/memory/knowledge/view_source.py.md",
+      "ok": true,
+      "stale": 0,
+      "authoring": {
+        "authoredReferences": 2,
+        "reauthoredReferences": 0,
+        "removedReferences": 18,
+        "refusedCount": 0,
+        "unresolvedTargetsCount": 0
+      }
+    },
+    {
+      "file": "35.json",
+      "sha256": "5e0448642272d978960e9d84d7a4f25763d2eed82ebb0fc1aa435c10274629bb",
+      "card": "onboarding/mcp/src/agents_remember/memory_quality/style/citations/extents.py.md",
+      "ok": true,
+      "stale": 0,
+      "authoring": {
+        "authoredReferences": 4,
+        "reauthoredReferences": 0,
+        "removedReferences": 24,
+        "refusedCount": 0,
+        "unresolvedTargetsCount": 0
+      }
+    },
+    {
+      "file": "36.json",
+      "sha256": "5e03a7ae317839264ce49306974e52269caaf862afcd9cc09599353a59bcc768",
+      "card": "onboarding/mcp/src/agents_remember/models/knowledge/effect.py.md",
+      "ok": true,
+      "stale": 0,
+      "authoring": {
+        "authoredReferences": 1,
+        "reauthoredReferences": 0,
+        "removedReferences": 11,
+        "refusedCount": 0,
+        "unresolvedTargetsCount": 0
+      }
+    },
+    {
+      "file": "37.json",
+      "sha256": "bb7f9c9ce67a754f598a4b6313279dbaeeba415286460aaf61b28ef522754ce7",
+      "card": "onboarding/mcp/src/agents_remember/models/knowledge/review_final_output_receipt.py.md",
+      "ok": true,
+      "stale": 0,
+      "authoring": {
+        "authoredReferences": 4,
+        "reauthoredReferences": 0,
+        "removedReferences": 8,
+        "refusedCount": 0,
+        "unresolvedTargetsCount": 0
+      }
+    },
+    {
+      "file": "38.json",
+      "sha256": "5f1f1cd4cb52d4d4263051fd45988a9268f0a6b9b9a6d4bfd00d57e386b80b49",
+      "card": "onboarding/mcp/src/agents_remember/models/knowledge_files/planned.py.md",
+      "ok": true,
+      "stale": 0,
+      "authoring": {
+        "authoredReferences": 2,
+        "reauthoredReferences": 0,
+        "removedReferences": 8,
+        "refusedCount": 0,
+        "unresolvedTargetsCount": 0
+      }
+    },
+    {
+      "file": "39.json",
+      "sha256": "39ca426f5b8c46925602f861b16fef4cc690ee690b22cc588517f44378d92e20",
+      "card": "onboarding/mcp/src/agents_remember/models/lifecycles/review_assessment_binding.py.md",
+      "ok": true,
+      "stale": 0,
+      "authoring": {
+        "authoredReferences": 3,
+        "reauthoredReferences": 0,
+        "removedReferences": 5,
+        "refusedCount": 0,
+        "unresolvedTargetsCount": 0
+      }
+    },
+    {
+      "file": "40.json",
+      "sha256": "e72211ba9a5b5ae586112cfe072200bc1ae34ea739c8304784eebb0900e8b49a",
+      "card": "onboarding/mcp/src/agents_remember/models/worktree.py.md",
+      "ok": true,
+      "stale": 0,
+      "authoring": {
+        "authoredReferences": 4,
+        "reauthoredReferences": 0,
+        "removedReferences": 66,
+        "refusedCount": 0,
+        "unresolvedTargetsCount": 0
+      }
+    },
+    {
+      "file": "41.json",
+      "sha256": "66247b576907520eb71f0125be40ed784a4b110d40a6f59f4c383219162c2352",
+      "card": "onboarding/mcp/src/agents_remember/worktrees/reopen.py.md",
+      "ok": true,
+      "stale": 0,
+      "authoring": {
+        "authoredReferences": 4,
+        "reauthoredReferences": 0,
+        "removedReferences": 17,
+        "refusedCount": 0,
+        "unresolvedTargetsCount": 0
+      }
+    },
+    {
+      "file": "42.json",
+      "sha256": "aa3c22abee4be2ef2c3e576e1ceeed536fec5e77ab8052a575612b8ab21756dd",
+      "card": "onboarding/mcp/tests/test_knowledge_leaf_read.py.md",
+      "ok": true,
+      "stale": 0,
+      "authoring": {
+        "authoredReferences": 3,
+        "reauthoredReferences": 0,
+        "removedReferences": 16,
+        "refusedCount": 0,
+        "unresolvedTargetsCount": 0
+      }
+    },
+    {
+      "file": "43.json",
+      "sha256": "39c3d59f144ca34758be4618107fc759899f24f513cce31a029289e791d7f8c5",
+      "card": "onboarding/mcp/tests/test_knowledge_review_attributed_source_content.py.md",
+      "ok": true,
+      "stale": 0,
+      "authoring": {
+        "authoredReferences": 4,
+        "reauthoredReferences": 0,
+        "removedReferences": 10,
+        "refusedCount": 0,
+        "unresolvedTargetsCount": 0
+      }
+    },
+    {
+      "file": "44.json",
+      "sha256": "7c806e38043387a81617f26314d474952a8a071ca247db8f0a69b1eacc6c009d",
+      "card": "onboarding/mcp/tests/test_knowledge_review_attribution_precedence.py.md",
+      "ok": true,
+      "stale": 0,
+      "authoring": {
+        "authoredReferences": 3,
+        "reauthoredReferences": 0,
+        "removedReferences": 8,
+        "refusedCount": 0,
+        "unresolvedTargetsCount": 0
+      }
+    },
+    {
+      "file": "45.json",
+      "sha256": "80d8d245363623d3603ce2edc4a2a8d9ca8b46fed0ae69c011511f7c794418fc",
+      "card": "onboarding/mcp/tests/test_knowledge_review_comparison_generation.py.md",
+      "ok": true,
+      "stale": 0,
+      "authoring": {
+        "authoredReferences": 2,
+        "reauthoredReferences": 0,
+        "removedReferences": 24,
+        "refusedCount": 0,
+        "unresolvedTargetsCount": 0
+      }
+    },
+    {
+      "file": "46.json",
+      "sha256": "71b6f89d0203d65b153010face0a9a292ccdf67b6f320ffe218446d9cf6b20bc",
+      "card": "onboarding/mcp/tests/test_knowledge_review_evidence_channels.py.md",
+      "ok": true,
+      "stale": 0,
+      "authoring": {
+        "authoredReferences": 4,
+        "reauthoredReferences": 0,
+        "removedReferences": 17,
+        "refusedCount": 0,
+        "unresolvedTargetsCount": 0
+      }
+    },
+    {
+      "file": "47.json",
+      "sha256": "b2c3f61b3078070c5708eeabd08aa0e68ceeb030b081d41b06dce9eae77fadf7",
+      "card": "onboarding/mcp/tests/test_knowledge_review_relationship_movement.py.md",
+      "ok": true,
+      "stale": 0,
+      "authoring": {
+        "authoredReferences": 4,
+        "reauthoredReferences": 0,
+        "removedReferences": 11,
+        "refusedCount": 0,
+        "unresolvedTargetsCount": 0
+      }
+    },
+    {
+      "file": "48.json",
+      "sha256": "b351cbc81d735fccb0e4f59800d61a8314fdb5818519d57151bf90e88b561a7d",
+      "card": "onboarding/mcp/tests/test_knowledge_review_resolution_and_route.py.md",
+      "ok": true,
+      "stale": 0,
+      "authoring": {
+        "authoredReferences": 4,
+        "reauthoredReferences": 0,
+        "removedReferences": 12,
+        "refusedCount": 0,
+        "unresolvedTargetsCount": 0
+      }
+    },
+    {
+      "file": "49.json",
+      "sha256": "b1ba89889f8c680f72d07dff0010fa6a76b91c92785534b7eab2885919c322e2",
+      "card": "onboarding/mcp/tests/test_knowledge_review_subject_isolation.py.md",
+      "ok": true,
+      "stale": 0,
+      "authoring": {
+        "authoredReferences": 4,
+        "reauthoredReferences": 0,
+        "removedReferences": 20,
+        "refusedCount": 0,
+        "unresolvedTargetsCount": 0
+      }
+    },
+    {
+      "file": "50-views-repair.json",
+      "sha256": "85ab1e578ff4ba4e750738ae9c6c032c5a8ea0eb69651be3189bf4847e4b5141",
+      "card": "onboarding/mcp/src/agents_remember/application/knowledge_views.py.md",
+      "ok": true,
+      "stale": 0,
+      "authoring": {
+        "authoredReferences": 0,
+        "reauthoredReferences": 3,
+        "removedReferences": 0,
+        "refusedCount": 0,
+        "unresolvedTargetsCount": 0
+      }
+    },
+    {
+      "file": "50.json",
+      "sha256": "174d07c3b5a33ad909b4a91d341346cbad5edd556767e25d0301d558453d4874",
+      "card": "onboarding/mcp/src/agents_remember/application/knowledge_views.py.md",
+      "ok": true,
+      "stale": 4,
+      "authoring": {
+        "authoredReferences": 0,
+        "reauthoredReferences": 2,
+        "removedReferences": 0,
+        "refusedCount": 0,
+        "unresolvedTargetsCount": 0
+      }
+    },
+    {
+      "file": "51-receipt-repair.json",
+      "sha256": "63525b7b49e835d529a9816bb23d2f78b219b4738429b37fd6a0de9edb6fd341",
+      "card": "onboarding/mcp/src/agents_remember/application/review_final_output_receipt.py.md",
+      "ok": true,
+      "stale": 0,
+      "authoring": {
+        "authoredReferences": 7,
+        "reauthoredReferences": 1,
+        "removedReferences": 30,
+        "refusedCount": 0,
+        "unresolvedTargetsCount": 0
+      }
+    },
+    {
+      "file": "51.json",
+      "sha256": "4e7e0cc6ee714d94001a20b2610713def821b133778b7601c15890fb5134d9b9",
+      "card": "onboarding/mcp/src/agents_remember/application/review_final_output_receipt.py.md",
+      "ok": true,
+      "stale": 29,
+      "authoring": {
+        "authoredReferences": 0,
+        "reauthoredReferences": 1,
+        "removedReferences": 0,
+        "refusedCount": 0,
+        "unresolvedTargetsCount": 0
+      }
+    },
+    {
+      "file": "52-view-model-repair.json",
+      "sha256": "976a990739fdd64d6861b27da8d4cb25ead9e88ad5deb3ddec70930f8253df8a",
+      "card": "onboarding/mcp/src/agents_remember/models/knowledge/view.py.md",
+      "ok": true,
+      "stale": 0,
+      "authoring": {
+        "authoredReferences": 0,
+        "reauthoredReferences": 5,
+        "removedReferences": 0,
+        "refusedCount": 0,
+        "unresolvedTargetsCount": 0
+      }
+    },
+    {
+      "file": "52.json",
+      "sha256": "13f8b81b22a9ab3bab0e86e39e15f1fda5046e532e7c05dfaf28799611bb6a0d",
+      "card": "onboarding/mcp/src/agents_remember/models/knowledge/view.py.md",
+      "ok": true,
+      "stale": 18,
+      "authoring": {
+        "authoredReferences": 0,
+        "reauthoredReferences": 1,
+        "removedReferences": 0,
+        "refusedCount": 0,
+        "unresolvedTargetsCount": 0
+      }
+    }
+  ],
+  "initialStaleResultsPreserved": [
+    "20.json",
+    "50.json",
+    "51.json",
+    "52.json"
+  ],
+  "repairs": [
+    "20-closeout-repair.json",
+    "50-views-repair.json",
+    "51-receipt-repair.json",
+    "52-view-model-repair.json"
+  ],
+  "finalAllCardsStaleZero": true
+}

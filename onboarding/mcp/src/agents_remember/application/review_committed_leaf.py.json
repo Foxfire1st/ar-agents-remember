@@ -1,10 +1,29 @@
 {
   "path": "mcp/src/agents_remember/application/review_committed_leaf.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
-        "blob": "f1950eaa1da83687a4057e31a07d75638b1400ed",
-        "content": "sha256:7dcac80a8b8df7ac06900093814815776479539dfcb1e54347cbf683c7babbe7",
+        "blob": "c56b9fb89745db2a10f6d1d6071fd484991027c2",
+        "content": "sha256:75d730cafc4ac9a4cce868d102a297f65c42314e299cf732c0587408408f9eda",
+        "locator": {
+          "kind": "symbol",
+          "name": "resolve_committed_leaf_review"
+        }
+      },
+      "id": "RLZ-72VV42",
+      "invariant": "INV-8Q6DZTDB",
+      "origin": {
+        "handoffEntry": "co:INV-8Q6DZTDB",
+        "leaf": "260928-MIK-L26"
+      },
+      "rationale": "The surviving resolver compares the recorded source and memory endpoints and keeps missing operands explicit.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "c56b9fb89745db2a10f6d1d6071fd484991027c2",
+        "content": "sha256:75d730cafc4ac9a4cce868d102a297f65c42314e299cf732c0587408408f9eda",
         "locator": {
           "kind": "symbol",
           "name": "resolve_committed_leaf_review"
@@ -17,522 +36,16 @@
       },
       "rationale": "Resolves a closed leaf from durable records, never from a worktree. It reads the leaf's recorded enclosure contract first. It then asks the converted-repository resolution: a leaf that recorded a tree comparison reopens from its tree ids, and on a converted official line a leaf that recorded only a dataset comparison keeps its code sides and reports its knowledge sides legacy-unavailable, with no database read. Only an unconverted repository's leaf goes on to its comparison generation, and to the bare source range when none was published; an ambiguous or unreadable generation is refused rather than replaced.",
       "role": "primary-authority"
-    },
-    {
-      "anchor": {
-        "blob": "f1950eaa1da83687a4057e31a07d75638b1400ed",
-        "content": "sha256:cb671714773cb6deb3b2bbf58289ade8bce5d720e292b5cd4d83d8a4cea125b7",
-        "locator": {
-          "kind": "symbol",
-          "name": "_recorded_range_resolution"
-        }
-      },
-      "id": "RLZ-BBB7V6PT",
-      "invariant": "INV-8Q6DZTDB",
-      "origin": {
-        "leaf": "260921-ICR-L46"
-      },
-      "rationale": "When no frozen generation exists, builds the closed-leaf resolution from recorded_committed_range and read_recorded_knowledge: the code sides are the recorded base commit and head tree, the knowledge sides are the per-side recorded datasets, and an absent recorded endpoint returns a named refusal instead of a substitute.",
-      "role": "primary-authority"
     }
   ],
   "references": {
-    "1": {
-      "note": "The historical resolver asks the converted-repository resolution first (MIK-R25: a recorded tree comparison, or a legacy one), then prefers the retained generation and reconstructs exact recorded endpoints only when no generation exists.\n\nAnchor: \"def _generation_resolution(\"",
+    "28": {
+      "note": "`resolve_committed_leaf_review` owns the current boundary described above.",
       "targets": [
         {
           "anchor": {
-            "blob": "f1950eaa1da83687a4057e31a07d75638b1400ed",
-            "content": "sha256:7dcac80a8b8df7ac06900093814815776479539dfcb1e54347cbf683c7babbe7",
-            "locator": {
-              "kind": "symbol",
-              "name": "resolve_committed_leaf_review"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f1950eaa1da83687a4057e31a07d75638b1400ed",
-            "content": "sha256:cb671714773cb6deb3b2bbf58289ade8bce5d720e292b5cd4d83d8a4cea125b7",
-            "locator": {
-              "kind": "symbol",
-              "name": "_recorded_range_resolution"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f1950eaa1da83687a4057e31a07d75638b1400ed",
-            "content": "sha256:506b5a08ee1b3b90611dc686adcc6d7560a24fd64c40bf6e87de4465672fa3f8",
-            "locator": {
-              "end": 303,
-              "kind": "line_range",
-              "start": 265
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "10": {
-      "note": "**The generation resolution: the two retained snapshots, the record's own two code objects read in the repository the record names, and the deliberately absent captured identity.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f1950eaa1da83687a4057e31a07d75638b1400ed",
-            "content": "sha256:506b5a08ee1b3b90611dc686adcc6d7560a24fd64c40bf6e87de4465672fa3f8",
-            "locator": {
-              "kind": "symbol",
-              "name": "_generation_resolution"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "11": {
-      "note": "**One half's dataset: the generation's own retained copy, or the leaf's own disposable path when the record states the half was never kept.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f1950eaa1da83687a4057e31a07d75638b1400ed",
-            "content": "sha256:ea0e221a065dc9cd458a5c8b0771c6986a578ac863f1281ea4217917417b18fc",
-            "locator": {
-              "kind": "symbol",
-              "name": "_half_database"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f1950eaa1da83687a4057e31a07d75638b1400ed",
-            "content": "sha256:a2adfcaa0d48c9b32ff89438fa6739b59a9cf918fc8d1d9dc35c48de88f0bf15",
-            "locator": {
-              "kind": "symbol",
-              "name": "_disposable_half"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "12": {
-      "note": "**The namespace the retained halves are read under, taken from the dataset identities the generation recorded.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f1950eaa1da83687a4057e31a07d75638b1400ed",
-            "content": "sha256:a74cad83e75bdd9a667e02ecaba12204d8617d4cacde61790a8b23936685bca5",
-            "locator": {
-              "kind": "symbol",
-              "name": "_retained_namespace"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "13": {
-      "note": "**The recorded-range resolution: R01's committed-range owner, the two recorded endpoints, and the explicit statement that no generation was published.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f1950eaa1da83687a4057e31a07d75638b1400ed",
-            "content": "sha256:cb671714773cb6deb3b2bbf58289ade8bce5d720e292b5cd4d83d8a4cea125b7",
-            "locator": {
-              "kind": "symbol",
-              "name": "_recorded_range_resolution"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "ea5a7585a7a97301d9e21239404bb2aa6b7a6f59",
-            "content": "sha256:0a532a939f67db2df1a8e12f0dcee8c54f8052d08dbc41036c4f825bb67342d3",
-            "locator": {
-              "kind": "symbol",
-              "name": "recorded_committed_range"
-            },
-            "path": "mcp/src/agents_remember/serving/changeset_endpoints.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "14": {
-      "note": "**The endpoint is a tree, resolved in the repository the range names, because the expansion owner refuses a commit, a blob or a tag by name.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f1950eaa1da83687a4057e31a07d75638b1400ed",
-            "content": "sha256:43da094081b4aa4ddf87e7134a0887fc01d85783c152c6a4748eeb767b22bf01",
-            "locator": {
-              "kind": "symbol",
-              "name": "_tree_of"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "15": {
-      "note": "**The F2 fix: the refusal branched on the endpoint's own kind, so a recorded endpoint that does not resolve is `candidate_unresolved` and only \"nothing live and nothing recorded\" keeps `candidate_not_live`.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f1950eaa1da83687a4057e31a07d75638b1400ed",
-            "content": "sha256:f8b0372133d3568c76acd8916240116deeb5f0b8e3171001ce623b6b5e1a89ca",
-            "locator": {
-              "kind": "symbol",
-              "name": "_no_recorded_range_refusal"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "ea5a7585a7a97301d9e21239404bb2aa6b7a6f59",
-            "content": "sha256:5a28d4a0c426597856d7485be42352e3ed838fc9dfe210e30ae6652b0a109d39",
-            "locator": {
-              "kind": "symbol",
-              "name": "RecordedEndpointAbsent"
-            },
-            "path": "mcp/src/agents_remember/serving/changeset_endpoints.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "16": {
-      "note": "**The declared facts one reopened review publishes; without a closed-leaf record it delegates to the tree or legacy facts (MIK-R25), which are the empty tuple for a live dataset candidate, so a live dataset response is unchanged.**\n\nAnchor: \"def closed_leaf_limitations(\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f1950eaa1da83687a4057e31a07d75638b1400ed",
-            "content": "sha256:c55fab03423b20eef1012e465e4287834df2ce19e8d30c69c17ad8471ed9e7ea",
-            "locator": {
-              "end": 511,
-              "kind": "line_range",
-              "start": 478
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "17": {
-      "note": "**The one sentence a reopened review states about the operand it did not compare, with the record's own state deciding which fact leads.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f1950eaa1da83687a4057e31a07d75638b1400ed",
-            "content": "sha256:631c696e62785a75562ad822918261707c5b1ee89fc1f049bd566e4c79a1e645",
-            "locator": {
-              "kind": "symbol",
-              "name": "closed_leaf_intent_detail"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f1950eaa1da83687a4057e31a07d75638b1400ed",
-            "content": "sha256:c8b1945523907d6083d130c2d0c45c643926463def1073aebdcf49fd2158df0b",
-            "locator": {
-              "kind": "symbol",
-              "name": "_intent_sentence"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "18": {
-      "note": "**The F1 fix: the refusal the entry route and the subject composition share, partitioning the half reasons through R11's own typed-absence set and wording a declared absence apart from a channel that is unavailable.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f1950eaa1da83687a4057e31a07d75638b1400ed",
-            "content": "sha256:ec9d0c8fda0a1f6e9c21ea304f175bab5646cda59445cca9cc415aff14805e87",
-            "locator": {
-              "kind": "symbol",
-              "name": "closed_leaf_dataset_refusal"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f1950eaa1da83687a4057e31a07d75638b1400ed",
-            "content": "sha256:33cfbc416bf90a44cfec52bff0246a373ddca4495c912ad807b94e2105013ecc",
-            "locator": {
-              "kind": "symbol",
-              "name": "_stated_sentence"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f1950eaa1da83687a4057e31a07d75638b1400ed",
-            "content": "sha256:4913e74efe39d5f354e44cf6d8557a0d17bae1b4e01bdfa793b39f8b289bdae0",
-            "locator": {
-              "kind": "symbol",
-              "name": "_unresolved_sentence"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "089d51d117d71e9f773b5d7297b03ddc037a9a97",
-            "content": "sha256:bf75044f5a0c18e1352b1c65b2fffb32bbe5e605c85f1f1cfff0b9270775c6d8",
-            "locator": {
-              "kind": "symbol",
-              "name": "TYPED_ABSENCE_STATES"
-            },
-            "path": "mcp/src/agents_remember/application/review_comparison_generation.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "19": {
-      "note": "**Which half cannot be compared and why: the record's own channel state first, the disk asked only for a half the record retained.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f1950eaa1da83687a4057e31a07d75638b1400ed",
-            "content": "sha256:fa289e4cbd2bc65d2ba89b0a6adec2717710af62e28ea7d1a64e052d404b6381",
-            "locator": {
-              "kind": "symbol",
-              "name": "_half_reason"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f1950eaa1da83687a4057e31a07d75638b1400ed",
-            "content": "sha256:9aab20fe68541a57bbc331361937455f4e64199f417fbaeaae7c60799b44f6d9",
-            "locator": {
-              "kind": "symbol",
-              "name": "_half_present"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f1950eaa1da83687a4057e31a07d75638b1400ed",
-            "content": "sha256:e95b46c42bfe0a40116e82c578e927e87e6d4b375245625d23d3166101494533",
-            "locator": {
-              "kind": "symbol",
-              "name": "_intent_state"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "2": {
-      "note": "**The published surface: the two record names, the three declared-limit prefixes, the closing sentence, the review value and the four entry callables.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f1950eaa1da83687a4057e31a07d75638b1400ed",
-            "content": "sha256:3517cf1b029d5a7010f7bfdf7999e90aa00198b603ca0d348dcd4ffccb20e286",
-            "locator": {
-              "kind": "symbol",
-              "name": "__all__"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "20": {
-      "note": "**The two halves in the order every report of them uses, and the two directory names imported from the live resolution rather than re-spelled.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f1950eaa1da83687a4057e31a07d75638b1400ed",
-            "content": "sha256:a4250d94ee4e3060b3a62b111181d52da347dd0ac233571beddd00627027c5eb",
-            "locator": {
-              "kind": "symbol",
-              "name": "_SIDES"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f1950eaa1da83687a4057e31a07d75638b1400ed",
-            "content": "sha256:5632a0bc28340986cacab1a125aebc915ca30fce8fdcce3c409d7ce85b6acdd4",
-            "locator": {
-              "kind": "symbol",
-              "name": "_HALF_DIRECTORY"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f1950eaa1da83687a4057e31a07d75638b1400ed",
-            "content": "sha256:ce36475f3a123d7725dada0103fa46c6977620d614f5ded7d083a46f056a511f",
-            "locator": {
-              "kind": "symbol",
-              "name": "_DISPOSABLE_RELATIVE"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "21": {
-      "note": "**The value this resolution is composed into, and the field that carries the record rather than a live capture.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "33aff10f88f16a1e0005ac6a64cd2a7f0f8020d8",
-            "content": "sha256:dee356c1578dcd48c6b6ed62de9b417fd51e3dd5b8999ae3b023a021770c4695",
-            "locator": {
-              "kind": "symbol",
-              "name": "ReviewCandidateResolution"
-            },
-            "path": "mcp/src/agents_remember/application/review_candidate_resolution.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "33aff10f88f16a1e0005ac6a64cd2a7f0f8020d8",
-            "content": "sha256:5253ef9d1e9288b27fa89cd339905e8e77f1f9c5f6a02ac6d1dad6aac02e5488",
-            "locator": {
-              "kind": "symbol",
-              "name": "refusal"
-            },
-            "path": "mcp/src/agents_remember/application/review_candidate_resolution.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "22": {
-      "note": "**The single entry point: the closed-enclosure branch that delegates here, with the one local import this leaf's diff suppresses and the reason it is local.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "33aff10f88f16a1e0005ac6a64cd2a7f0f8020d8",
-            "content": "sha256:15c85cc33f1e7e214573b6ddb4d8135b307f5327ab47e100509cac8056ff3c39",
-            "locator": {
-              "kind": "symbol",
-              "name": "resolve_review_candidate"
-            },
-            "path": "mcp/src/agents_remember/application/review_candidate_resolution.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "23": {
-      "note": "**The reopen owner's answer this module reads rather than restates: the manifest, the per-channel states and the refusal an ambiguous or unreadable record earns.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "774f5a68ac28a9e06c64a50e6eb9fce95dd97b06",
-            "content": "sha256:859453d50d61955b6cb7092347b46ca90c2744c0311219b08d34fd34fed8959e",
-            "locator": {
-              "kind": "symbol",
-              "name": "ComparisonReopen"
-            },
-            "path": "mcp/src/agents_remember/application/review_comparison_reopen.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "774f5a68ac28a9e06c64a50e6eb9fce95dd97b06",
-            "content": "sha256:a1d61a6fac0321648380cfdd1e330a04df3090e5b2bbe971ccd648b5a930b95b",
-            "locator": {
-              "kind": "symbol",
-              "name": "ComparisonKnowledgeChannel"
-            },
-            "path": "mcp/src/agents_remember/application/review_comparison_reopen.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "24": {
-      "note": "**The two routes that publish these declarations: the entry refusal and the review's declared limits.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "75a68c3874ea545bd49e863046a120e320587404",
-            "content": "sha256:6e165a86999d36d0d5734a5226bf7e2bf05a2b32e87e4ccf9b8425735205e194",
-            "locator": {
-              "kind": "symbol",
-              "name": "list_knowledge_review_entries"
-            },
-            "path": "mcp/src/agents_remember/application/knowledge_review.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "75a68c3874ea545bd49e863046a120e320587404",
-            "content": "sha256:cccdeadc30f88b4527694d3c2e46f16c82c0784cb1d38b04bece61b9ec6bd1d8",
-            "locator": {
-              "kind": "symbol",
-              "name": "compose_review"
-            },
-            "path": "mcp/src/agents_remember/application/knowledge_review.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "25": {
-      "note": "**The case module that measures the whole chain through the real composition and the real HTTP route.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "ae5bf9a1c9e82543ffd351a303a28e1c3bd0a6a9",
-            "content": "sha256:e54d72139fce7a83967d0759c5db97ac77303a78ea5470b6bcd9e8c17633d9c2",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_closed_leaf_serves_its_recorded_comparison_byte_for_byte"
-            },
-            "path": "mcp/tests/test_historical_committed_leaf_review.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "ae5bf9a1c9e82543ffd351a303a28e1c3bd0a6a9",
-            "content": "sha256:7a788e1a93fb5c7b9455048c6e7b6c9bfc42b75fdc1dfa0a6635b7c936a669ff",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_pre_feature_leaf_exposes_its_recorded_source_range_and_its_absence"
-            },
-            "path": "mcp/tests/test_historical_committed_leaf_review.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "26": {
-      "note": "An explicit generation is resolved through the same committed-leaf owner.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f1950eaa1da83687a4057e31a07d75638b1400ed",
-            "content": "sha256:7dcac80a8b8df7ac06900093814815776479539dfcb1e54347cbf683c7babbe7",
+            "blob": "c56b9fb89745db2a10f6d1d6071fd484991027c2",
+            "content": "sha256:75d730cafc4ac9a4cce868d102a297f65c42314e299cf732c0587408408f9eda",
             "locator": {
               "kind": "symbol",
               "name": "resolve_committed_leaf_review"
@@ -542,220 +55,32 @@
         }
       ]
     },
-    "27": {
-      "note": "A recorded tree comparison reopened, a converted repository's legacy answer, or none for the dataset path.",
+    "29": {
+      "note": "`ClosedLeafReview` owns the current boundary described above.",
       "targets": [
         {
           "anchor": {
-            "blob": "f1950eaa1da83687a4057e31a07d75638b1400ed",
-            "content": "sha256:b58bb4c52c447da55636653319faf412a955ddb2c4eaff5091b350e0018c657f",
-            "locator": {
-              "kind": "symbol",
-              "name": "_converted_repository_resolution"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "**The two records a closed leaf is reopened from, named once because a second spelling would be a second vocabulary.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f1950eaa1da83687a4057e31a07d75638b1400ed",
-            "content": "sha256:2c60f2206692a6fc6bf1b6350c4f004a2e0da19b82fb8cb67a5665df39ad10c7",
-            "locator": {
-              "kind": "symbol",
-              "name": "HISTORY_RECORDED_COMPARISON"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f1950eaa1da83687a4057e31a07d75638b1400ed",
-            "content": "sha256:69b11d7d16505cd8244b9dfcfe4783d23885eb5caa2d42399f305d6aec473155",
-            "locator": {
-              "kind": "symbol",
-              "name": "HISTORY_RECORDED_SOURCE_RANGE"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "4": {
-      "note": "**The declared-limit vocabulary every fact is published at the top level of the response under.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f1950eaa1da83687a4057e31a07d75638b1400ed",
-            "content": "sha256:3d42ec32024110404a2ac9b2c8331b0496f4f4e4151412f39f838b2b9e50ff91",
-            "locator": {
-              "kind": "symbol",
-              "name": "HISTORY_COMPARISON_PREFIX"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f1950eaa1da83687a4057e31a07d75638b1400ed",
-            "content": "sha256:497f17a0c8af1f13d97db3a588f94609c7619a73870cc464bfc1be59f794e7b4",
-            "locator": {
-              "kind": "symbol",
-              "name": "HISTORY_INTENT_PREFIX"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f1950eaa1da83687a4057e31a07d75638b1400ed",
-            "content": "sha256:59fb428affbca64fc9060ea9816a369cf597ab6b4d9c5453898b0b097b12641c",
-            "locator": {
-              "kind": "symbol",
-              "name": "HISTORY_SOURCE_PREFIX"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "5": {
-      "note": "**The one sentence the surface publishes when a closed leaf's review is opened, stated here so the entry, the review and the expansion cannot describe the same resolution three ways.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f1950eaa1da83687a4057e31a07d75638b1400ed",
-            "content": "sha256:1a20d571790773eb9448e6c8425b590461360126a26a6edf9350a3b8e85f6810",
-            "locator": {
-              "kind": "symbol",
-              "name": "CLOSED_LEAF_REVIEW_SENTENCE"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "6": {
-      "note": "**The six intent-half states this surface may declare: its own `retained`, the two typed absences that are history (R05's `not-recorded`, R11's `not-selected`), and the three unresolved states kept apart from them.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f1950eaa1da83687a4057e31a07d75638b1400ed",
-            "content": "sha256:3a734668790ca48b2caf089a2ba1cb25de0b56cd173536ab91832aff942c0126",
-            "locator": {
-              "kind": "symbol",
-              "name": "IntentState"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f1950eaa1da83687a4057e31a07d75638b1400ed",
-            "content": "sha256:2b2da5d2e1b5c7202102e5bce61b6c41944ec83107c0b24e7a9d22a6699a879f",
-            "locator": {
-              "kind": "symbol",
-              "name": "_UNAVAILABLE_INTENT_STATES"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "7": {
-      "note": "**The record one closed leaf's review was reopened from: the reopen owner's own answer, the two bound trees, and the two properties that name which record answered and which half channel it measured.**\n\nAnchor: `state`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f1950eaa1da83687a4057e31a07d75638b1400ed",
-            "content": "sha256:c709b93497d2e0ae97b7b6fbf1c40332d82602efb1d862e41a8749ffd45b6e17",
+            "blob": "c56b9fb89745db2a10f6d1d6071fd484991027c2",
+            "content": "sha256:c3824a2a639e614e4efc6428d9f941e4d910132be8e607bab8f6b7570cc84a1c",
             "locator": {
               "kind": "symbol",
               "name": "ClosedLeafReview"
             }
           },
           "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f1950eaa1da83687a4057e31a07d75638b1400ed",
-            "content": "sha256:a05b16f823332e2ee03fb6bd9e9236725617a6800e445165019201182751e87a",
-            "locator": {
-              "kind": "symbol",
-              "name": "intent"
-            }
-          },
-          "kind": "code"
         }
       ]
     },
-    "8": {
-      "note": "**The whole resolution, in the packet's order: the recorded contract, R11's reopen, the reopen's own refusal for an unreadable record, and the generation-or-range branch.**",
+    "30": {
+      "note": "`closed_leaf_limitations` owns the current boundary described above.",
       "targets": [
         {
           "anchor": {
-            "blob": "f1950eaa1da83687a4057e31a07d75638b1400ed",
-            "content": "sha256:7dcac80a8b8df7ac06900093814815776479539dfcb1e54347cbf683c7babbe7",
+            "blob": "c56b9fb89745db2a10f6d1d6071fd484991027c2",
+            "content": "sha256:e6d90d7bba88cf9a818d0bd8aae35b186c667a7fdabec0fc2ef82822786194c7",
             "locator": {
               "kind": "symbol",
-              "name": "resolve_committed_leaf_review"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "33aff10f88f16a1e0005ac6a64cd2a7f0f8020d8",
-            "content": "sha256:9c381ea6e004519d7c6ba165045aa12a4d8916eb2f36d7beda07e89a149490ac",
-            "locator": {
-              "kind": "symbol",
-              "name": "recorded_leaf_contract"
-            },
-            "path": "mcp/src/agents_remember/application/review_candidate_resolution.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "774f5a68ac28a9e06c64a50e6eb9fce95dd97b06",
-            "content": "sha256:d9b1127ccd4028a81d821f6338009dbc0b2c17dad6ae42521ff333ea70abb177",
-            "locator": {
-              "kind": "symbol",
-              "name": "reopen_comparison_generation"
-            },
-            "path": "mcp/src/agents_remember/application/review_comparison_reopen.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "33aff10f88f16a1e0005ac6a64cd2a7f0f8020d8",
-            "content": "sha256:632d73a14d6b1bdb1b714d755ae436e7f8418014fc9ac1c2cda399153ba232c1",
-            "locator": {
-              "end": 517,
-              "kind": "line_range",
-              "start": 490
-            },
-            "path": "mcp/src/agents_remember/application/review_candidate_resolution.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "9": {
-      "note": "**An unreadable or ambiguous generation refused in the reopen's own words rather than in a sentence invented here.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f1950eaa1da83687a4057e31a07d75638b1400ed",
-            "content": "sha256:7bb63960b2cecd02e5797e8245dab70bc6b0a8e19e76837008c33ad755d3da23",
-            "locator": {
-              "kind": "symbol",
-              "name": "_reopen_refusal"
+              "name": "closed_leaf_limitations"
             }
           },
           "kind": "code"

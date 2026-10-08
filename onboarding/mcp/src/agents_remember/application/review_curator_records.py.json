@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "66abdfd99c8d4afc8df06e9a2e1c212646839627",
+        "blob": "bf1a79f4a160fbd1038927b4869a66fa3abcfcb9",
         "content": "sha256:e0921179e6256ca12e047d62cdf326f107b2ecd8104764b222de519775d7e927",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "66abdfd99c8d4afc8df06e9a2e1c212646839627",
+        "blob": "bf1a79f4a160fbd1038927b4869a66fa3abcfcb9",
         "content": "sha256:6b249ae4f242314ab287747a6393c1e644de29107ad84fbbb8f35740b816d9f5",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "66abdfd99c8d4afc8df06e9a2e1c212646839627",
+        "blob": "bf1a79f4a160fbd1038927b4869a66fa3abcfcb9",
         "content": "sha256:3b3baf556cbf33c307c4aecc76c4752c62c062cb0d80dccfc71d368decb4861e",
         "locator": {
           "kind": "symbol",
@@ -51,23 +51,6 @@
       },
       "rationale": "Reads a closed leaf's assessments only through the single curator-record pin in its frozen comparison manifest. With no pin it defers to _without_pin, and competing pins are refused. The pinned generation is read through records_from_curator_generation and must match the manifest's reserved artifact set and frozen assessment count, so later pointer or source movement cannot change which judgments are shown.",
       "role": "primary-authority"
-    },
-    {
-      "anchor": {
-        "blob": "66abdfd99c8d4afc8df06e9a2e1c212646839627",
-        "content": "sha256:0986f4528d067a840b77d7680f439ef7e9363d8e7ab4cfc58b5cd2fe265e5d8d",
-        "locator": {
-          "kind": "symbol",
-          "name": "require_curator_record_inputs"
-        }
-      },
-      "id": "RLZ-W7SB7NYW",
-      "invariant": "INV-7W11WKKN",
-      "origin": {
-        "leaf": "260921-ICR-L46"
-      },
-      "rationale": "Requires explicit assessment inputs to be exactly what the immutable curator owner supplies. There must be one assessment channel; an empty input may not claim records; a positive input needs exactly one curator-record pin with only reserved-owner artifacts; and the assessments, artifact set and channel provenance must equal records_from_curator_generation for that pin.",
-      "role": "enforcement"
     }
   ],
   "references": {

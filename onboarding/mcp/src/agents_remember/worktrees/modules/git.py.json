@@ -3,7 +3,60 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "d1f69d8d3c1559f18bf2e2f5467b9184b4e79f74",
+        "blob": "ca3f003e5ddefb98b80aea04bce900f75eb2067a",
+        "content": "sha256:242527322f3b98a8d9bc518d4882927d59bac7af2602d8c92bc0e85fd484dbfc",
+        "locator": {
+          "kind": "symbol",
+          "name": "publish_tree_commit"
+        }
+      },
+      "id": "RLZ-08YAZW",
+      "invariant": "INV-ANKPPE",
+      "origin": {
+        "handoffEntry": "R3 note 11a",
+        "leaf": "260928-MIK-L26"
+      },
+      "rationale": "The order of these checks prevents write-tree from obscuring the intended refusal.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "ca3f003e5ddefb98b80aea04bce900f75eb2067a",
+        "content": "sha256:b1bff66ce31f00a3e25ff2e50d3c6a4f3d2ace0229322eb2bf102aca69cfe16f",
+        "locator": {
+          "kind": "symbol",
+          "name": "_move_admitted_ref"
+        }
+      },
+      "id": "RLZ-2F1J87",
+      "invariant": "INV-J6PAD2",
+      "origin": {
+        "handoffEntry": "R3 Note 12",
+        "leaf": "260928-MIK-L26"
+      },
+      "rationale": "The second compare-and-swap protects a concurrent foreign commit.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "ca3f003e5ddefb98b80aea04bce900f75eb2067a",
+        "content": "sha256:025ca35b468cba9986485d10f1c25f5004309d3a27e812317e8561cddc33be00",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-3T98VE",
+      "invariant": "INV-5FC4T6",
+      "origin": {
+        "handoffEntry": "R3 Finding 10",
+        "leaf": "260928-MIK-L26"
+      },
+      "rationale": "The module whose helpers were removed; absence is the evidence.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "ca3f003e5ddefb98b80aea04bce900f75eb2067a",
         "content": "sha256:e16b33af163ce3d8ea2b59b2e1c12273675780444629fba0199d0b0541a29802",
         "locator": {
           "kind": "symbol",
@@ -21,7 +74,25 @@
     },
     {
       "anchor": {
-        "blob": "d1f69d8d3c1559f18bf2e2f5467b9184b4e79f74",
+        "blob": "ca3f003e5ddefb98b80aea04bce900f75eb2067a",
+        "content": "sha256:b1bff66ce31f00a3e25ff2e50d3c6a4f3d2ace0229322eb2bf102aca69cfe16f",
+        "locator": {
+          "kind": "symbol",
+          "name": "_move_admitted_ref"
+        }
+      },
+      "id": "RLZ-9RTXE8",
+      "invariant": "INV-BEYEV2",
+      "origin": {
+        "handoffEntry": "R3 note 12, publication half",
+        "leaf": "260928-MIK-L26"
+      },
+      "rationale": "The second compare-and-swap protects a concurrent foreign commit.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "ca3f003e5ddefb98b80aea04bce900f75eb2067a",
         "content": "sha256:faaea09aee66799c4b7d0b93c7e2fcc0a7b2bd329f3e0474e8290e489ec10395",
         "locator": {
           "kind": "symbol",
@@ -39,7 +110,61 @@
     },
     {
       "anchor": {
-        "blob": "d1f69d8d3c1559f18bf2e2f5467b9184b4e79f74",
+        "blob": "ca3f003e5ddefb98b80aea04bce900f75eb2067a",
+        "content": "sha256:242527322f3b98a8d9bc518d4882927d59bac7af2602d8c92bc0e85fd484dbfc",
+        "locator": {
+          "kind": "symbol",
+          "name": "publish_tree_commit"
+        }
+      },
+      "id": "RLZ-C5MD2G",
+      "invariant": "INV-YZ45D7",
+      "origin": {
+        "handoffEntry": "L26-R1-F01",
+        "leaf": "260928-MIK-L26"
+      },
+      "rationale": "Binds the admitted parent and intended ref in the publication transaction.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "ca3f003e5ddefb98b80aea04bce900f75eb2067a",
+        "content": "sha256:b1bff66ce31f00a3e25ff2e50d3c6a4f3d2ace0229322eb2bf102aca69cfe16f",
+        "locator": {
+          "kind": "symbol",
+          "name": "_move_admitted_ref"
+        }
+      },
+      "id": "RLZ-GJZS85",
+      "invariant": "INV-FYZQK0",
+      "origin": {
+        "handoffEntry": "R4-O2",
+        "leaf": "260928-MIK-L26"
+      },
+      "rationale": "The failed expected-old take-back leaves the moved ref reachable.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "ca3f003e5ddefb98b80aea04bce900f75eb2067a",
+        "content": "sha256:242527322f3b98a8d9bc518d4882927d59bac7af2602d8c92bc0e85fd484dbfc",
+        "locator": {
+          "kind": "symbol",
+          "name": "publish_tree_commit"
+        }
+      },
+      "id": "RLZ-KGZHZY",
+      "invariant": "INV-GSEMMW",
+      "origin": {
+        "handoffEntry": "R3 Note 11",
+        "leaf": "260928-MIK-L26"
+      },
+      "rationale": "The shared commit-object publication path binds the message, index and hook behavior.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "ca3f003e5ddefb98b80aea04bce900f75eb2067a",
         "content": "sha256:ccba9d0b6b768614d7f5c1fc35d1d2b82d509157ec7803f38873ec29dbfeaa2a",
         "locator": {
           "kind": "symbol",
@@ -57,7 +182,25 @@
     },
     {
       "anchor": {
-        "blob": "d1f69d8d3c1559f18bf2e2f5467b9184b4e79f74",
+        "blob": "ca3f003e5ddefb98b80aea04bce900f75eb2067a",
+        "content": "sha256:788f7387fb34f8d84bd0b1772e1f0490c89644795c199dfffa337bd6d84ce4f3",
+        "locator": {
+          "kind": "symbol",
+          "name": "_cleaned_message"
+        }
+      },
+      "id": "RLZ-R331TA",
+      "invariant": "INV-G0Y4VR",
+      "origin": {
+        "handoffEntry": "R3 notes 11b and 11c",
+        "leaf": "260928-MIK-L26"
+      },
+      "rationale": "This owner resolves the configured cleanup and comment rules before publication.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "ca3f003e5ddefb98b80aea04bce900f75eb2067a",
         "content": "sha256:faaea09aee66799c4b7d0b93c7e2fcc0a7b2bd329f3e0474e8290e489ec10395",
         "locator": {
           "kind": "symbol",
@@ -75,8 +218,26 @@
     },
     {
       "anchor": {
-        "blob": "d1f69d8d3c1559f18bf2e2f5467b9184b4e79f74",
-        "content": "sha256:466010a76618adb027af2f51ddb28edb6a5953d38e9d8077befd1184048fbae5",
+        "blob": "ca3f003e5ddefb98b80aea04bce900f75eb2067a",
+        "content": "sha256:4db92bb6277ae2bbf7288903a7351835ee366648856b722649ca901233ad400f",
+        "locator": {
+          "kind": "symbol",
+          "name": "_publication_lock"
+        }
+      },
+      "id": "RLZ-SMB7P7",
+      "invariant": "INV-0XMNQZ",
+      "origin": {
+        "handoffEntry": "R3 note 11g",
+        "leaf": "260928-MIK-L26"
+      },
+      "rationale": "This owner distinguishes contention from errors waiting cannot cure.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "ca3f003e5ddefb98b80aea04bce900f75eb2067a",
+        "content": "sha256:b97684cc2ac76c4fccebf4b9798b3174f988a5b6ff37fa0aa659ddeafa089b67",
         "locator": {
           "kind": "symbol",
           "name": "stage_tree"
@@ -90,76 +251,88 @@
       },
       "rationale": "Makes the index exactly the judged tree with read-tree and reads nothing from the working tree, so nothing written since the tree was read can enter the commit.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "ca3f003e5ddefb98b80aea04bce900f75eb2067a",
+        "content": "sha256:b1bff66ce31f00a3e25ff2e50d3c6a4f3d2ace0229322eb2bf102aca69cfe16f",
+        "locator": {
+          "kind": "symbol",
+          "name": "_move_admitted_ref"
+        }
+      },
+      "id": "RLZ-VSE4FH",
+      "invariant": "INV-0T84PZ",
+      "origin": {
+        "handoffEntry": "R3 note 11d",
+        "leaf": "260928-MIK-L26"
+      },
+      "rationale": "This owner rereads the intended ref and keeps the native reason for refusal.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "ca3f003e5ddefb98b80aea04bce900f75eb2067a",
+        "content": "sha256:242527322f3b98a8d9bc518d4882927d59bac7af2602d8c92bc0e85fd484dbfc",
+        "locator": {
+          "kind": "symbol",
+          "name": "publish_tree_commit"
+        }
+      },
+      "id": "RLZ-XMGREQ",
+      "invariant": "INV-2Q8RPR",
+      "origin": {
+        "handoffEntry": "R3 note 11f",
+        "leaf": "260928-MIK-L26"
+      },
+      "rationale": "The shared commit-object publication path aligns all lifecycle routes.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "ca3f003e5ddefb98b80aea04bce900f75eb2067a",
+        "content": "sha256:b1bff66ce31f00a3e25ff2e50d3c6a4f3d2ace0229322eb2bf102aca69cfe16f",
+        "locator": {
+          "kind": "symbol",
+          "name": "_move_admitted_ref"
+        }
+      },
+      "id": "RLZ-Y3ZQ4N",
+      "invariant": "INV-JZD1F5",
+      "origin": {
+        "handoffEntry": "R4-O2 (post-takeover documentation)",
+        "leaf": "260928-MIK-L26"
+      },
+      "rationale": "The unchanged take-back mechanism the docstring describes.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "ca3f003e5ddefb98b80aea04bce900f75eb2067a",
+        "content": "sha256:b97684cc2ac76c4fccebf4b9798b3174f988a5b6ff37fa0aa659ddeafa089b67",
+        "locator": {
+          "kind": "symbol",
+          "name": "stage_tree"
+        }
+      },
+      "id": "RLZ-ZAY1M2",
+      "invariant": "INV-89A5AN",
+      "origin": {
+        "handoffEntry": "R3 note 11e",
+        "leaf": "260928-MIK-L26"
+      },
+      "rationale": "This owner replaces only differing index entries and restores the shape no tree records.",
+      "role": "enforcement"
     }
   ],
   "references": {
-    "1": {
-      "note": "Ref/repository identity and transport-safe errors have shared implementations.",
+    "10": {
+      "note": "`worktree_candidate_tree` implements the retained boundary described above.",
       "targets": [
         {
           "anchor": {
-            "blob": "d1f69d8d3c1559f18bf2e2f5467b9184b4e79f74",
-            "content": "sha256:1162f7cb58bc57825349497bdd5fe49d3e0115ebc67c0d61fd426292956fecc2",
-            "locator": {
-              "kind": "symbol",
-              "name": "_transport_safe_git_diagnostic"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d1f69d8d3c1559f18bf2e2f5467b9184b4e79f74",
-            "content": "sha256:5777bc0b0c3621a8045a8da3a987b5244a609c00b57b01cd3ceffa06cc74901a",
-            "locator": {
-              "kind": "symbol",
-              "name": "require_git"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d1f69d8d3c1559f18bf2e2f5467b9184b4e79f74",
-            "content": "sha256:bb671106c4738c19abd0c46b0a440e8c5e9dbc3ca686d0fd05b9be1e262a02b9",
-            "locator": {
-              "kind": "symbol",
-              "name": "local_branch_ref"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d1f69d8d3c1559f18bf2e2f5467b9184b4e79f74",
-            "content": "sha256:3c11f083a73cc878659abb8f050e8b9aa48af45b37069e5b337f0534d9059be9",
-            "locator": {
-              "kind": "symbol",
-              "name": "repository_identity"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "2": {
-      "note": "Candidate trees use private indices and exact derived-path exclusions.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d1f69d8d3c1559f18bf2e2f5467b9184b4e79f74",
-            "content": "sha256:4b9bcedb6108e8225ac5ccc2a955c68aff578f2359bacda49ad6651f732304fa",
-            "locator": {
-              "kind": "symbol",
-              "name": "_excluded_pathspec"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d42ed1e9bc0ca736f06b1ad77a7848a986b681a7",
-            "content": "sha256:f8f4b48042939ace0b2a4d95c1c51b0fbf8e9c25fd9dca108d935a5d4a36007e",
+            "blob": "ca3f003e5ddefb98b80aea04bce900f75eb2067a",
+            "content": "sha256:ccba9d0b6b768614d7f5c1fc35d1d2b82d509157ec7803f38873ec29dbfeaa2a",
             "locator": {
               "kind": "symbol",
               "name": "worktree_candidate_tree"
@@ -169,99 +342,48 @@
         }
       ]
     },
-    "3": {
-      "note": "Filtered status and staging/commit APIs share the exclusion contract.",
+    "11": {
+      "note": "`stage_tree` implements the retained boundary described above.",
       "targets": [
         {
           "anchor": {
-            "blob": "d1f69d8d3c1559f18bf2e2f5467b9184b4e79f74",
-            "content": "sha256:46db35bdabf960661b7f3f61825fc5d43590347bcdec94e1fc0bb9e79edde0ae",
-            "locator": {
-              "kind": "symbol",
-              "name": "_status_args"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d1f69d8d3c1559f18bf2e2f5467b9184b4e79f74",
-            "content": "sha256:f4ed54b78505149f52cf865e74608e5c0da609448f9dcebd7dff4a5ca31c3c04",
-            "locator": {
-              "kind": "symbol",
-              "name": "commit_verified_staged"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "4": {
-      "note": "The exact cache pathspec is defined beside the consumer filename.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "125f9e150c83c61988656ca8750c0ee9e6c7563b",
-            "content": "sha256:f90721c6c96b66b3f4f906dcd8182a771fbae7ce6214fdb9c65618c0f13d68bd",
-            "locator": {
-              "kind": "symbol",
-              "name": "LEDGER_RELATIVE_PATH"
-            },
-            "path": "mcp/src/agents_remember/kernel/memory_ledger.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "125f9e150c83c61988656ca8750c0ee9e6c7563b",
-            "content": "sha256:fe8c801c1101f2ea09438c141664d03f55189cd2474a9e9ffd57d075d423f5bf",
-            "locator": {
-              "kind": "symbol",
-              "name": "MEMORY_CACHE_EXCLUDE"
-            },
-            "path": "mcp/src/agents_remember/kernel/memory_ledger.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "5": {
-      "note": "Changed-file reporting preserves its distinct deletion/rename/count semantics.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d1f69d8d3c1559f18bf2e2f5467b9184b4e79f74",
-            "content": "sha256:0e79ba415fc69c4911c449a0d32333a3dd33e0aa68e711b17568dba622df25cb",
-            "locator": {
-              "kind": "symbol",
-              "name": "committed_changed_paths"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d1f69d8d3c1559f18bf2e2f5467b9184b4e79f74",
-            "content": "sha256:e624c577a6a46da2a9dcc5305a454f893acaedde7b3be3e81951754ececf4337",
-            "locator": {
-              "kind": "symbol",
-              "name": "changed_files_with_counts"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "6": {
-      "note": "`stage_tree` makes the index exactly one tree and reads nothing from the working tree.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d1f69d8d3c1559f18bf2e2f5467b9184b4e79f74",
-            "content": "sha256:466010a76618adb027af2f51ddb28edb6a5953d38e9d8077befd1184048fbae5",
+            "blob": "ca3f003e5ddefb98b80aea04bce900f75eb2067a",
+            "content": "sha256:b97684cc2ac76c4fccebf4b9798b3174f988a5b6ff37fa0aa659ddeafa089b67",
             "locator": {
               "kind": "symbol",
               "name": "stage_tree"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "`publish_tree_commit` implements the retained boundary described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ca3f003e5ddefb98b80aea04bce900f75eb2067a",
+            "content": "sha256:242527322f3b98a8d9bc518d4882927d59bac7af2602d8c92bc0e85fd484dbfc",
+            "locator": {
+              "kind": "symbol",
+              "name": "publish_tree_commit"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "`_move_admitted_ref` implements the retained boundary described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ca3f003e5ddefb98b80aea04bce900f75eb2067a",
+            "content": "sha256:b1bff66ce31f00a3e25ff2e50d3c6a4f3d2ace0229322eb2bf102aca69cfe16f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_move_admitted_ref"
             }
           },
           "kind": "code"
@@ -273,7 +395,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d1f69d8d3c1559f18bf2e2f5467b9184b4e79f74",
+            "blob": "ca3f003e5ddefb98b80aea04bce900f75eb2067a",
             "content": "sha256:ccba9d0b6b768614d7f5c1fc35d1d2b82d509157ec7803f38873ec29dbfeaa2a",
             "locator": {
               "kind": "symbol",
@@ -289,7 +411,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d1f69d8d3c1559f18bf2e2f5467b9184b4e79f74",
+            "blob": "ca3f003e5ddefb98b80aea04bce900f75eb2067a",
             "content": "sha256:faaea09aee66799c4b7d0b93c7e2fcc0a7b2bd329f3e0474e8290e489ec10395",
             "locator": {
               "kind": "symbol",
@@ -305,7 +427,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d1f69d8d3c1559f18bf2e2f5467b9184b4e79f74",
+            "blob": "ca3f003e5ddefb98b80aea04bce900f75eb2067a",
             "content": "sha256:871ced845e63cf0bf18fccb80718dc23b8d58fe694660bf8aa0c7e4abae3c42c",
             "locator": {
               "kind": "symbol",

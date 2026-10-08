@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "At least one proof names this invariant's exact behavior at the candidate."
+  },
+  "applicability": "Commit-object publication for ordinary, direct and prepared routes.",
+  "conditions": [
+    "The route is the shared commit-tree primitive."
+  ],
+  "exclusions": [
+    "Prepared memory publication, which keeps ordinary Git hooks."
+  ],
+  "id": "INV-2Q8RPR",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "test_direct_landing.py::DirectLandingTests::test_converted_direct_landing_commits_the_judged_tree_and_requires_governing_row; N11-memory-commit-hook.log; test_git_command.py hook test; skills/c-12-closeout/SKILL.md"
+      ],
+      "path": "handoff-stage1.json"
+    },
+    "handoffEntry": "R3 note 11f",
+    "leaf": "260928-MIK-L26",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Lifecycle commit publication runs no commit hooks, including the direct-landing memory commit.",
+  "status": "proposed",
+  "supersedes": []
+}

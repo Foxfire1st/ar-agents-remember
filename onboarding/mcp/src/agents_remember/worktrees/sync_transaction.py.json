@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "21e174242087f49b6154f2303db0338c546d0bd8",
+        "blob": "929da2b32893d67c1250150e62b82677f1556231",
         "content": "sha256:98bf378e647ab3a5e90af567d6ee05c582e96ec9f1f7c7cc0c405de746638eb7",
         "locator": {
           "kind": "symbol",
@@ -22,11 +22,11 @@
   ],
   "references": {
     "1": {
-      "note": "The driver validates choices and routes retained or new transactions, including the reconcile/decision pairing.",
+      "note": "Current input and journal routing.",
       "targets": [
         {
           "anchor": {
-            "blob": "21e174242087f49b6154f2303db0338c546d0bd8",
+            "blob": "929da2b32893d67c1250150e62b82677f1556231",
             "content": "sha256:ce81740d2e4cb263c942716af0d464e2cbb0d81cb98bf15d04ba52d79ae18843",
             "locator": {
               "kind": "symbol",
@@ -37,8 +37,8 @@
         },
         {
           "anchor": {
-            "blob": "21e174242087f49b6154f2303db0338c546d0bd8",
-            "content": "sha256:0967ac07ff358e20f42b447d9b9ad2d2f577875dc3ea8712f294fe2ddf22b4f9",
+            "blob": "929da2b32893d67c1250150e62b82677f1556231",
+            "content": "sha256:3474f6117cc9dda982d19d77ab73e840fcdfb94704416d82a3db2c61815cc2ed",
             "locator": {
               "kind": "symbol",
               "name": "sync_input_refusal"
@@ -48,278 +48,17 @@
         }
       ]
     },
-    "10": {
-      "note": "**The authored-decision route: validate against the journal, re-run the adapter with every decision this side has already accepted plus the new one, then finish the retained merge.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "21e174242087f49b6154f2303db0338c546d0bd8",
-            "content": "sha256:9323c6adc1e8b3166454d85f3e3cd84088ca4dac85247b10228a6d5d4726a914",
-            "locator": {
-              "kind": "symbol",
-              "name": "_reconcile_knowledge_resolution"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "11": {
-      "note": "**The two facts a caller can get wrong, and the refusal that names them without entering the merge.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "21e174242087f49b6154f2303db0338c546d0bd8",
-            "content": "sha256:9fad17ef4b6fe41ca893540e5be3cbed96a4126cba5cb046a4bdd11ddb3facd1",
-            "locator": {
-              "kind": "symbol",
-              "name": "_reconcile_problem"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "21e174242087f49b6154f2303db0338c546d0bd8",
-            "content": "sha256:ec1452761a547dd4085d0bd43a52ab99b9b1460c04403b9c4484a9ffb75fe1df",
-            "locator": {
-              "kind": "symbol",
-              "name": "_decision_matches"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "21e174242087f49b6154f2303db0338c546d0bd8",
-            "content": "sha256:77cae0f164ba74fe6588b965444405dcd0e40c015d80dc295625c2dca420238e",
-            "locator": {
-              "kind": "symbol",
-              "name": "_refused_record"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "12": {
-      "note": "**The bounded refusal that stops the recovery cycling: a row an already-accepted decision answered that came back anyway.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "21e174242087f49b6154f2303db0338c546d0bd8",
-            "content": "sha256:4f8f4974d703270b5c0397d4a8d5381f0fe174df34cbd50405f1d04f89d5e39e",
-            "locator": {
-              "kind": "symbol",
-              "name": "_reconcile_progress_refusal"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "13": {
-      "note": "**The adapter's explanation projected into the journal and the public response, with the decisions that conflict admits.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "21e174242087f49b6154f2303db0338c546d0bd8",
-            "content": "sha256:af4c092086f5d4a907b138bd37151bda80372968b394fdb13026a03c7c0a8b39",
-            "locator": {
-              "kind": "symbol",
-              "name": "_knowledge_conflict"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "14": {
-      "note": "**The read-only dry run of an authored decision.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "21e174242087f49b6154f2303db0338c546d0bd8",
-            "content": "sha256:555a53dcfdc459770ba255fdb84498937c43fa3bb83d20f52b15052d80906c49",
-            "locator": {
-              "kind": "symbol",
-              "name": "_reconcile_preview"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "15": {
-      "note": "The delegated Git owner excludes only the memory cache while retaining exact native merge proofs, and now returns the adapter's refusal with the merge outcome.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "275847ecea525f425b8c6c5f28b5c3ed8c461439",
-            "content": "sha256:e40546cac2457fb2f2a305608082d7b4e66af5ca95a74c80a43eb6f71a61cb95",
-            "locator": {
-              "kind": "symbol",
-              "name": "worktree_dirty_paths"
-            },
-            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "275847ecea525f425b8c6c5f28b5c3ed8c461439",
-            "content": "sha256:17008b5140e2cff6c63e6c7d8858699ed06315afcbbabe5d57807803597b30a5",
-            "locator": {
-              "kind": "symbol",
-              "name": "_content_pathspec"
-            },
-            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "275847ecea525f425b8c6c5f28b5c3ed8c461439",
-            "content": "sha256:30ee024b857f44ec240971a085e7e49adb1e8a90419914b735dff485d65fe1a4",
-            "locator": {
-              "kind": "symbol",
-              "name": "discard_memory_cache_changes"
-            },
-            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "275847ecea525f425b8c6c5f28b5c3ed8c461439",
-            "content": "sha256:fa1ca326117de93fc4febaebe1e7802714efa4d373dcef16fdc132ab769eae5d",
-            "locator": {
-              "kind": "symbol",
-              "name": "exact_created_head"
-            },
-            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "275847ecea525f425b8c6c5f28b5c3ed8c461439",
-            "content": "sha256:0a53fe45579b8493120d4cc8287e34fdb50c2835cc85a80787ed5052cc972af1",
-            "locator": {
-              "kind": "symbol",
-              "name": "SideMergeOutcome"
-            },
-            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "275847ecea525f425b8c6c5f28b5c3ed8c461439",
-            "content": "sha256:1f6ecff1e3ec8ea4019e8cbe60a8cde0fba0df3c492782995a8a55bd2c4faaed",
-            "locator": {
-              "end": 312,
-              "kind": "line_range",
-              "start": 311
-            },
-            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "16": {
-      "note": "Pinned authority and parked-work restoration remain separate owners.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "a27da9e92f765e4148fa08b689f518f1545d1c79",
-            "content": "sha256:4c03ad5007a5a3a33517bac5162f58e38550ca395df2e4569a4c71f96a2fe194",
-            "locator": {
-              "kind": "symbol",
-              "name": "pin_authority"
-            },
-            "path": "mcp/src/agents_remember/worktrees/sync_transaction_authority.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "a27da9e92f765e4148fa08b689f518f1545d1c79",
-            "content": "sha256:b3c567649571e693bef6410ed9f5205920a7b410e190bd6fcbc2b334f38962a4",
-            "locator": {
-              "kind": "symbol",
-              "name": "require_pinned_authority"
-            },
-            "path": "mcp/src/agents_remember/worktrees/sync_transaction_authority.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "17": {
-      "note": "Terminal finalization/cancellation and damaged-journal recovery are delegated.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "b270b7531a67b779c4e7d3a0fddc63fd285e89b0",
-            "content": "sha256:9c5760e4bc86f585066e6683af4bdbfddaf9454ccfbc970f775f7a64bebc9561",
-            "locator": {
-              "kind": "symbol",
-              "name": "finalize_sync"
-            },
-            "path": "mcp/src/agents_remember/worktrees/sync_transaction_recovery.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "b270b7531a67b779c4e7d3a0fddc63fd285e89b0",
-            "content": "sha256:281c7b4b0435e9938358c5cf452b0edb9478f113094ca158e3f66baffa5efa3f",
-            "locator": {
-              "kind": "symbol",
-              "name": "cancel_sync"
-            },
-            "path": "mcp/src/agents_remember/worktrees/sync_transaction_recovery.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "b270b7531a67b779c4e7d3a0fddc63fd285e89b0",
-            "content": "sha256:02d4c1b7b9aed8051fbe1d5465a8ab5a3e6f2322a9994c54e75c1f1c4dd937c2",
-            "locator": {
-              "kind": "symbol",
-              "name": "recover_unreadable_journal"
-            },
-            "path": "mcp/src/agents_remember/worktrees/sync_transaction_recovery.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "b270b7531a67b779c4e7d3a0fddc63fd285e89b0",
-            "content": "sha256:4b86e7314fe45d353706268c078dacedf163136fb30d0c1ceb3f29ffd69dd306",
-            "locator": {
-              "kind": "symbol",
-              "name": "recover_missing_journal"
-            },
-            "path": "mcp/src/agents_remember/worktrees/sync_transaction_recovery.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "18": {
-      "note": "**The integration case that drives the authored decision through this driver and asserts the advertised call is the one that settles it.**",
+      "note": "Real content conflict continuation scenario.\n\nAnchor: `WorktreeSyncTests.test_memory_merge_settles_content_conflicts_in_the_transaction`",
       "targets": [
         {
           "anchor": {
-            "blob": "ff126f9b30915781edf6095804550e121abbc7cf",
-            "content": "sha256:35cdf35cb9d332ababf21f508eadc3cbec1e5489997036531d131e143442ff43",
+            "blob": "10f851e4484874f5350945cc4b10e60e22644f55",
+            "content": "sha256:3b0303542991bb45b8c52d7aa4a80fafe5aab7c09493db6cf8512947d8413af0",
             "locator": {
-              "kind": "symbol",
-              "name": "_assert_knowledge_conflict_is_diagnosed_and_reconciled"
+              "end": 417,
+              "kind": "line_range",
+              "start": 331
             },
             "path": "mcp/tests/test_worktree_sync.py"
           },
@@ -327,86 +66,16 @@
         }
       ]
     },
-    "19": {
-      "note": "The cutover lock at sync admission: unconverted on every side and a locked repository.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "21e174242087f49b6154f2303db0338c546d0bd8",
-            "content": "sha256:98bf378e647ab3a5e90af567d6ee05c582e96ec9f1f7c7cc0c405de746638eb7",
-            "locator": {
-              "kind": "symbol",
-              "name": "_cutover_locked"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "2": {
-      "note": "Dirty work admission and parking use complete typed side records.",
+      "note": "Moving candidate park.",
       "targets": [
         {
           "anchor": {
-            "blob": "21e174242087f49b6154f2303db0338c546d0bd8",
-            "content": "sha256:62aba0b180a8f1b6001cffa1b31603f3265ea4feb0fe7c169651b20c8e8d88af",
+            "blob": "929da2b32893d67c1250150e62b82677f1556231",
+            "content": "sha256:9a256efa5662efe9387d2df37e2e7f62046c1a898d666e4952a253e7dfb12a0f",
             "locator": {
               "kind": "symbol",
-              "name": "_preflight_participating_sides"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "21e174242087f49b6154f2303db0338c546d0bd8",
-            "content": "sha256:164c220b428f514f036a455a3d2778f92a3ab483bfd67777d2ae03187cbf8231",
-            "locator": {
-              "kind": "symbol",
-              "name": "_side_live_complete"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "20": {
-      "note": "The lock is asked before the preflight of the participating sides.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "21e174242087f49b6154f2303db0338c546d0bd8",
-            "content": "sha256:ada8cfd1332459e1aaebfca5cf8e6236b6160be56d5f371a63034cde921741e5",
-            "locator": {
-              "kind": "symbol",
-              "name": "_admit_participating_sides"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "Currentness and continuation use Git facts and content-only conflicts.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "21e174242087f49b6154f2303db0338c546d0bd8",
-            "content": "sha256:8ccac97f465884f7607ec1c26427a1efcac405a4d1b6f00a2a914985b4480d46",
-            "locator": {
-              "kind": "symbol",
-              "name": "_already_current_result"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "21e174242087f49b6154f2303db0338c546d0bd8",
-            "content": "sha256:cac61766f61bf0b65942531cdb197cef0e377af45211ec0baf7bdfb65c21b689",
-            "locator": {
-              "kind": "symbol",
-              "name": "_continue_resolution"
+              "name": "_park_participating_wip"
             }
           },
           "kind": "code"
@@ -414,11 +83,11 @@
       ]
     },
     "4": {
-      "note": "The validator's refusal is mapped to its own state with a recovery line, on the automatic path and the retained-conflict continuation.",
+      "note": "Validator refusal retains repair state.",
       "targets": [
         {
           "anchor": {
-            "blob": "21e174242087f49b6154f2303db0338c546d0bd8",
+            "blob": "929da2b32893d67c1250150e62b82677f1556231",
             "content": "sha256:250e1605930397e93f18590afa307339b1a45d00c5fc586793809a0517d23a95",
             "locator": {
               "kind": "symbol",
@@ -426,38 +95,16 @@
             }
           },
           "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "21e174242087f49b6154f2303db0338c546d0bd8",
-            "content": "sha256:b0cb5b15df86eacfd106e2400fdf0848a04fb760492b4bae6d9c9e8a57511f12",
-            "locator": {
-              "kind": "symbol",
-              "name": "_run_automatic"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "21e174242087f49b6154f2303db0338c546d0bd8",
-            "content": "sha256:7adfb3efe3f9349b41c85f22d5c575846463c84be426418e52ca6fd1a62ce578",
-            "locator": {
-              "kind": "symbol",
-              "name": "_finish_retained_merge"
-            }
-          },
-          "kind": "code"
         }
       ]
     },
     "5": {
-      "note": "The side run names the crossing owner (leaf or master, and the task ID) and journals the crossing report path.\n\nAnchor: \"crossing_owner\"; \"crossingReport\"",
+      "note": "Structural report journaling.",
       "targets": [
         {
           "anchor": {
-            "blob": "21e174242087f49b6154f2303db0338c546d0bd8",
-            "content": "sha256:cd769276c3007e6925dd13076bdaec0fa4d763ea22b090bb3688d2171e73d51c",
+            "blob": "929da2b32893d67c1250150e62b82677f1556231",
+            "content": "sha256:f854b4466f60fc4ee27d89eda0f5b0db44d6c4fbf586a4418fc68a5910488803",
             "locator": {
               "kind": "symbol",
               "name": "_run_side"
@@ -468,11 +115,11 @@
       ]
     },
     "6": {
-      "note": "The memory merge is paired with the code side's settled result commit, or with nothing before it settles.",
+      "note": "Settled code pairing.",
       "targets": [
         {
           "anchor": {
-            "blob": "21e174242087f49b6154f2303db0338c546d0bd8",
+            "blob": "929da2b32893d67c1250150e62b82677f1556231",
             "content": "sha256:97b81cfa5cd6e45aa35d1ff91ce30f43bf8612d3fed020071686df908aa1eefc",
             "locator": {
               "kind": "symbol",
@@ -483,46 +130,24 @@
         }
       ]
     },
-    "7": {
-      "note": "A resolved memory conflict that breaks validation is refused on `continue` and syncs after the repair.",
+    "9": {
+      "note": "Current continuation.",
       "targets": [
         {
           "anchor": {
-            "blob": "0aa022ec4b45b059754a8f3b1252fa8d25b69384",
-            "content": "sha256:926929a9c6f4048837c859485bfb3575a1284c9a0147ad8e00cbb7a2902c4474",
+            "blob": "929da2b32893d67c1250150e62b82677f1556231",
+            "content": "sha256:1aa70f6f5944ba4764b0db71e424337932290a52b4f5365d33771736b650de3e",
             "locator": {
               "kind": "symbol",
-              "name": "test_a_resolved_memory_conflict_that_breaks_validation_is_refused_on_continue"
-            },
-            "path": "mcp/tests/test_knowledge_validator_routes.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "8": {
-      "note": "**The side the retained phase names is read in one place, so phase and side cannot disagree.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "21e174242087f49b6154f2303db0338c546d0bd8",
-            "content": "sha256:66f1907419c78fceb9cc49ea83d87125315e740fd76bcf790c5fab51376e788a",
-            "locator": {
-              "kind": "symbol",
-              "name": "_retained_side"
+              "name": "_continue_resolution"
             }
           },
           "kind": "code"
-        }
-      ]
-    },
-    "9": {
-      "note": "**The one continuation both a hand-staged resolution and an authored reconciliation end in, which clears the journaled diagnosis with the conflict.**",
-      "targets": [
+        },
         {
           "anchor": {
-            "blob": "21e174242087f49b6154f2303db0338c546d0bd8",
-            "content": "sha256:7adfb3efe3f9349b41c85f22d5c575846463c84be426418e52ca6fd1a62ce578",
+            "blob": "929da2b32893d67c1250150e62b82677f1556231",
+            "content": "sha256:a80333450aa234831dc2da47c2f60b196054b232b1439b05643750d03dfaf4b2",
             "locator": {
               "kind": "symbol",
               "name": "_finish_retained_merge"

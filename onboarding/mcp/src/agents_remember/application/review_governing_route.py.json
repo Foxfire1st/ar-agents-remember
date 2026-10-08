@@ -31,15 +31,15 @@
       ]
     },
     "10": {
-      "note": "**The cases that measure the route movement: a reassignment displaying both recorded routes, and an identity with no route displayed as ungoverned and never as the root.**",
+      "note": "Text route sets yield one association per route and unread declarations are never ungoverned.",
       "targets": [
         {
           "anchor": {
-            "blob": "a509f66249a7ce3a51d1b0497607ba40882704d9",
-            "content": "sha256:8172fc576a742cab9408696a6cb1410c047ca8e21dc02cc1e9442d69f60aea15",
+            "blob": "4fbe8a393d04d0bc0f0af6d31ed7a7880fd4c684",
+            "content": "sha256:abdee66ffdb9bb1ec2aacbfb304a67bde6ff1f9f5d68085f48b2f0b97cd770ab",
             "locator": {
               "kind": "symbol",
-              "name": "test_a_governing_route_reassignment_displays_both_recorded_routes"
+              "name": "test_a_familys_declared_route_set_is_the_governing_association_read_from_text"
             },
             "path": "mcp/tests/test_knowledge_review_relationship_movement.py"
           },
@@ -47,11 +47,11 @@
         },
         {
           "anchor": {
-            "blob": "a509f66249a7ce3a51d1b0497607ba40882704d9",
-            "content": "sha256:ce1227404b5ccb2961b454dd17326d62bb0f07edd3f612c66359bbd349e499c1",
+            "blob": "4fbe8a393d04d0bc0f0af6d31ed7a7880fd4c684",
+            "content": "sha256:a3228e55bfb2cfb17777ec323257d38273b2c23ca70020ac9e3201deb902eebb",
             "locator": {
               "kind": "symbol",
-              "name": "test_an_identity_with_no_route_is_displayed_as_ungoverned_and_never_as_the_root"
+              "name": "test_each_declared_route_is_one_relationship_and_an_unread_side_is_never_ungoverned"
             },
             "path": "mcp/tests/test_knowledge_review_relationship_movement.py"
           },
@@ -64,7 +64,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "092cb3b97e3749de11fc851e90067341bccde9a2",
+            "blob": "055c11c9366f9b384a3122b4ad7c84c014d9bb12",
             "content": "sha256:3d04a238cd5cb48814bb14af11cd2119b3c4d6a7c35b0befe494d1c9a6aa9408",
             "locator": {
               "kind": "symbol",
@@ -140,7 +140,7 @@
         },
         {
           "anchor": {
-            "blob": "092cb3b97e3749de11fc851e90067341bccde9a2",
+            "blob": "055c11c9366f9b384a3122b4ad7c84c014d9bb12",
             "content": "sha256:cb9d32f5414dea80d4a3767eb635e6a83d6eea3c65a869f19bf22dec960d839b",
             "locator": {
               "kind": "symbol",
@@ -216,35 +216,6 @@
               "kind": "symbol",
               "name": "_route_word"
             }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "8": {
-      "note": "The route owner the association is read through.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "56534d529cad3e4756940b5abed5a81155fa92e1",
-            "content": "sha256:c80c92aa3047ec810f8e2ef131b7a5a7d138ba826dbc58d55840f5398c979cbe",
-            "locator": {
-              "kind": "symbol",
-              "name": "find_governing_route"
-            },
-            "path": "mcp/src/agents_remember/memory/knowledge/routes.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "56534d529cad3e4756940b5abed5a81155fa92e1",
-            "content": "sha256:7e1eb8a70e96092fbf5404faa2ef35996aaea7a482e2b9f59d57c3c690dbc67a",
-            "locator": {
-              "kind": "symbol",
-              "name": "route_path_for_id"
-            },
-            "path": "mcp/src/agents_remember/memory/knowledge/routes.py"
           },
           "kind": "code"
         }

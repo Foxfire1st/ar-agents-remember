@@ -1,0 +1,36 @@
+{
+  "schema": "l26-held-source-six-repair-status/v1",
+  "sourceCodeHEAD": "3f6829878ba8457761c6fe8886f050f232cc892c",
+  "sourceMemoryHEAD": "01050ec50739275e84016b00bd3f13e4cffda6fa",
+  "reviewedCodeCandidate": "bf045a987679cc023f8fdfb8849d28cfcca1adb9",
+  "rejectedMemoryCandidate": "7a750e36785a43b7a8eaafd6573fc70537edcb81",
+  "six": {
+    "K01": "INV-0T84PZ admission corrected without changing meaning/revision.",
+    "K03": "RLZ-K64BDQNF itself describes converted-index selection and legacy refusal; existing history clarified.",
+    "K04": "RLZ-3J2TZH anchors EntryPointWorld._call; typed proof PRF-AGBGWK written with static control facet; existing W4 history corrected.",
+    "K05": "47 original identities,29 retained,406 pair comparisons; FAM-71PC5P@1 and FAM-XYPE7N@1 written and read back,5 exact r1 member edges;20 old membership outcomes preserved,4 no-family bases,18 retired.",
+    "O01": "Every original84 paired account mapped,49 body corrections,35 credited accounts preserved;14 previously refuted coherence judgments need actual successor rebinding after sync.",
+    "O02": "Original27/49-leg population traced; retired caller/projection rationale and6 stale legs repaired. Adjacent stale-reference results on these same changed cards repaired through citation_fix, not a new finding population."
+  },
+  "acceptedEightPreserved": [
+    "K02",
+    "K06",
+    "O03",
+    "O04",
+    "E01",
+    "E02",
+    "E03",
+    "C01"
+  ],
+  "fullCurrentMQC": "scope-refused:memory-candidate-pair-base-stale/codeBaseCommit",
+  "coherence": "not-run on stale pair; reviewed record retained unchanged",
+  "comparison": "not-run on stale pair; previous retired CLI capability gap retained",
+  "finalReady": false,
+  "next": "Finish checkpoint/notwriting DIRECT SAME W; supported Source87 sync then actual current inputs/full pipeline/final successor and Owner-only6-fix3 case.",
+  "limitations": [
+    "raw335 completeFALSE 14 unresolved globalTRUE 409 NOTEXECUTED",
+    "E03 historical observer gap and LIM-M6ZRE6 unchanged",
+    "old mode/env/third-unrun/localVitest/lint/failure/oracle histories unchanged",
+    "52 changed-onboarding_trace changed rows refused; not relabelled no_impact; actual current worklist decides remaining history work"
+  ]
+}

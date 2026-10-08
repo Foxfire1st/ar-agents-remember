@@ -1,0 +1,267 @@
+{
+  "ok": true,
+  "tokens": 1752,
+  "tokenizer": "tiktoken:o200k_base",
+  "tokenCountExact": true,
+  "operation": "knowledge_read",
+  "state": "page",
+  "view": "source_context",
+  "repositoryId": "7511e917-d5d3-584e-b0ce-44dcad666cfe",
+  "snapshot": "8c13bab417c6d53c4496eedea48cfa7e938eb865",
+  "completeWithinDeclaredScope": true,
+  "page": {
+    "threshold": {
+      "tokens": 8000,
+      "tokenizer": "tiktoken:o200k_base"
+    },
+    "memoryTreeId": "8c13bab417c6d53c4496eedea48cfa7e938eb865",
+    "selectionPolicy": "family-complete-leaf",
+    "selectionPolicyVersion": "v2",
+    "manifestDigest": "c16926968113646d065ee475ed7c09d2ed0cb673825b6d6e0a7b41b4c633863a",
+    "codeTreeId": "bf045a987679cc023f8fdfb8849d28cfcca1adb9",
+    "start": 0,
+    "rowsOnPage": 9,
+    "total": 9,
+    "returned": 9,
+    "remaining": 0,
+    "enumerationComplete": true
+  },
+  "payload": {
+    "seed": {
+      "kind": "family",
+      "id": "FAM-71PC5P"
+    },
+    "state": "page",
+    "memoryTreeId": "8c13bab417c6d53c4496eedea48cfa7e938eb865",
+    "manifestDigest": "c16926968113646d065ee475ed7c09d2ed0cb673825b6d6e0a7b41b4c633863a",
+    "rows": [
+      {
+        "kind": "family_header",
+        "id": "FAM-71PC5P",
+        "revision": 1,
+        "status": "proposed",
+        "admission": {
+          "criteria": [
+            "joint_guarantee"
+          ],
+          "justification": "Root selection, bounded response and disclosed omissions/capture address different ways the same mechanical comparison could appear complete or side-effect-free when it is not. JM868W adds capture disclosure to the overlap with PPGGTW; X23FME supplies scope admission. Their actual scopes remain unchanged; one member does not establish all three parts."
+        },
+        "title": "Explicit scope and limits of mechanical knowledge diff",
+        "guarantee": "For the declared converted knowledge_diff requests, root admission and an absent-selector refusal prevent a falsely empty comparison. The response stays within the shared knowledge-read threshold and states omitted files and patch cuts; within the recorded capture obligation's scope, loose-object capture is disclosed. This is a mechanical file comparison, not a semantic verdict or canonical-dataset comparison.",
+        "routes": [
+          "mcp/src/agents_remember/application",
+          "mcp/src/agents_remember/mcp/tools"
+        ],
+        "memberCount": 3,
+        "members": [
+          "INV-JM868W",
+          "INV-PPGGTW",
+          "INV-X23FME"
+        ],
+        "staleMembers": 0
+      },
+      {
+        "kind": "member",
+        "id": "INV-JM868W",
+        "revision": 1,
+        "status": "proposed",
+        "admission": {
+          "criteria": [
+            "prevents_costly_mistake"
+          ],
+          "justification": "A bounded diff must disclose omitted content and its temporary Git-object capture: hiding either can make a partial review look complete or conceal the operation's storage side effect."
+        },
+        "statement": "knowledge_diff is bounded, names omissions and absent selectors, and discloses loose-object capture.",
+        "applicability": "knowledge_diff bounding and loose-object disclosure.",
+        "conditions": [
+          "The diff exceeds the shared threshold or names an absent path."
+        ],
+        "exclusions": [
+          "A small diff with a present path."
+        ],
+        "state": "current",
+        "families": [
+          "FAM-71PC5P"
+        ]
+      },
+      {
+        "kind": "realization",
+        "id": "RLZ-S7GGCD",
+        "invariant": "INV-JM868W",
+        "path": "mcp/src/agents_remember/application/knowledge_file_diff.py",
+        "locator": {
+          "kind": "symbol",
+          "name": "bounded_diff"
+        },
+        "role": "enforcement",
+        "state": "current"
+      },
+      {
+        "kind": "member",
+        "id": "INV-PPGGTW",
+        "revision": 1,
+        "status": "proposed",
+        "admission": {
+          "criteria": [
+            "prevents_costly_mistake"
+          ],
+          "justification": "A diff displayed as complete after silently dropping files can hide changed intent from its reviewer; explicit omissions and the shared read threshold prevent that error."
+        },
+        "statement": "Knowledge diff stays within the knowledge-read token threshold, names omitted files and cuts, and refuses an absent path.",
+        "applicability": "knowledge_diff output bounding and omission disclosure.",
+        "conditions": [
+          "A converted memory repository is selected, optionally narrowed by a path or record id.",
+          "The complete response is measured against the shared knowledge-read token threshold."
+        ],
+        "exclusions": [
+          "Inferring a semantic verdict from the mechanical diff.",
+          "Canonical database-path comparison, which MIK-R26 retires."
+        ],
+        "state": "current",
+        "families": [
+          "FAM-71PC5P"
+        ]
+      },
+      {
+        "kind": "realization",
+        "id": "RLZ-QN88JH",
+        "invariant": "INV-PPGGTW",
+        "path": "mcp/src/agents_remember/mcp/tools/knowledge.py",
+        "locator": {
+          "kind": "symbol",
+          "name": "_absent_selector"
+        },
+        "role": "enforcement",
+        "state": "current"
+      },
+      {
+        "kind": "realization",
+        "id": "RLZ-TR53WB",
+        "invariant": "INV-PPGGTW",
+        "path": "mcp/src/agents_remember/mcp/tools/knowledge.py",
+        "locator": {
+          "kind": "symbol",
+          "name": "_bounded_body"
+        },
+        "role": "enforcement",
+        "state": "current"
+      },
+      {
+        "kind": "member",
+        "id": "INV-X23FME",
+        "revision": 1,
+        "status": "proposed",
+        "admission": {
+          "criteria": [
+            "prevents_costly_mistake"
+          ],
+          "justification": "A knowledge diff run against a subdirectory would compare the wrong scope and can report a false clean result."
+        },
+        "statement": "Knowledge diff refuses a subdirectory supplied as the memory root and names the repository root to use.",
+        "applicability": "knowledge_diff selector handling on a converted memory repository.",
+        "conditions": [
+          "The selector is a path inside the memory repository."
+        ],
+        "exclusions": [
+          "A selector outside the memory repository, which the Git route cannot compare."
+        ],
+        "state": "current",
+        "families": [
+          "FAM-71PC5P"
+        ]
+      },
+      {
+        "kind": "realization",
+        "id": "RLZ-ZPFNWA",
+        "invariant": "INV-X23FME",
+        "path": "mcp/src/agents_remember/mcp/tools/knowledge.py",
+        "locator": {
+          "kind": "symbol",
+          "name": "_diff_result"
+        },
+        "role": "enforcement",
+        "state": "current"
+      },
+      {
+        "kind": "proof",
+        "id": "PRF-395E18",
+        "invariant": "INV-X23FME",
+        "path": "mcp/tests/test_knowledge_index_surfaces.py",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_knowledge_diff_refuses_a_directory_inside_the_memory_repository"
+        },
+        "facet": "knowledge_diff refuses an inside directory and names the repository root.",
+        "state": "current"
+      }
+    ],
+    "counts": {
+      "families": 1,
+      "members": 3,
+      "entries": 5,
+      "realizations": 4,
+      "proofs": 1,
+      "distinctPaths": 3,
+      "invariantsByState": {
+        "stale": 0,
+        "unverifiable": 0,
+        "unrealized": 0,
+        "current": 3
+      },
+      "advertisedFamilies": 0,
+      "chainFamilies": 0,
+      "rowsTotal": 9,
+      "rowsReturned": 9,
+      "rowsRemaining": 0
+    },
+    "hasMore": false,
+    "enumerationComplete": true,
+    "indexState": "complete",
+    "continuationOperation": "knowledge_read",
+    "continuationView": "source_context"
+  },
+  "memoryTree": {
+    "memoryRoot": "/home/firefox/projects/ar-coordination/worktrees/agents-remember/260928-mik-l26-ar/memory-260928-mik-l26",
+    "treeId": "8c13bab417c6d53c4496eedea48cfa7e938eb865",
+    "indexState": "complete",
+    "problems": []
+  },
+  "indexComplete": true,
+  "currentness": {
+    "codeTree": {
+      "repositoryRoot": "/home/firefox/projects/ar-coordination/worktrees/agents-remember/260928-mik-l26-ar/260928-mik-l26",
+      "treeId": "bf045a987679cc023f8fdfb8849d28cfcca1adb9"
+    },
+    "counts": {
+      "stale": 0,
+      "unverifiable": 0,
+      "unrealized": 0,
+      "current": 3
+    },
+    "invariants": [
+      {
+        "id": "INV-JM868W",
+        "state": "current",
+        "entries": []
+      },
+      {
+        "id": "INV-PPGGTW",
+        "state": "current",
+        "entries": []
+      },
+      {
+        "id": "INV-X23FME",
+        "state": "current",
+        "entries": []
+      }
+    ],
+    "families": [
+      {
+        "id": "FAM-71PC5P",
+        "members": 3,
+        "staleMembers": 0,
+        "stale": []
+      }
+    ]
+  }
+}

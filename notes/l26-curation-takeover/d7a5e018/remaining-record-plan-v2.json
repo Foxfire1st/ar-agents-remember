@@ -1,0 +1,320 @@
+{
+  "authorization": "agents-remember:260928_maintained-invariant-knowledge/26_retire-the-canonical-database.json#D110;notes/run3/L26-SOURCE95-COMPOSITE-INPUT-879378fb/owner-composite-ready-binding.json@59c1b277",
+  "carried": [],
+  "codeTree": "4450509f746a6bf1475f48d1c7ae5b487017bb9a",
+  "entries": [],
+  "evidence": [],
+  "historyRows": [
+    {
+      "disposition": "changed",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-GNP9F4",
+      "subject": "INV-753SKJFF"
+    },
+    {
+      "disposition": "deleted",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-4KS5QT",
+      "subject": "INV-VVMNM9B6"
+    },
+    {
+      "disposition": "changed",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-YRJ5KT",
+      "subject": "INV-E8655Z54"
+    },
+    {
+      "disposition": "changed",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-HWKQPY",
+      "subject": "INV-J7179RG5"
+    },
+    {
+      "disposition": "changed",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-JAEBCN",
+      "subject": "INV-H6A6JS63"
+    },
+    {
+      "disposition": "changed",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-Z3EJ5K",
+      "subject": "INV-7W11WKKN"
+    },
+    {
+      "disposition": "changed",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-QGR6EX",
+      "subject": "INV-9NCBGQSY"
+    },
+    {
+      "disposition": "changed",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-DJV2DZ",
+      "subject": "INV-FYZQK0"
+    },
+    {
+      "disposition": "changed",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-08T8AR",
+      "subject": "INV-JZD1F5"
+    },
+    {
+      "disposition": "changed",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-8J8Q82",
+      "subject": "INV-PPGGTW"
+    },
+    {
+      "disposition": "changed",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-A3JP7X",
+      "subject": "INV-1BBPF3"
+    },
+    {
+      "disposition": "changed",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-8NAP61",
+      "subject": "INV-K69R3M"
+    },
+    {
+      "disposition": "changed",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-VH4YXD",
+      "subject": "INV-J6PAD2"
+    },
+    {
+      "disposition": "changed",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-MWK0GT",
+      "subject": "INV-JM868W"
+    },
+    {
+      "disposition": "changed",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-DABVNP",
+      "subject": "FAM-7B6N3Y4Q"
+    },
+    {
+      "disposition": "changed",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-7SH2Z8",
+      "subject": "FAM-KQQE74ZT"
+    },
+    {
+      "disposition": "retired",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-J7N13B",
+      "subject": "FAM-SK1BFPE2"
+    },
+    {
+      "disposition": "changed",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-KTJ42Z",
+      "subject": "FAM-XZ5BR65G"
+    },
+    {
+      "disposition": "changed",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-8QK7D0",
+      "subject": "FAM-61DY2V"
+    },
+    {
+      "disposition": "changed",
+      "history": "knowledge/history/260928-MIK-L26.json",
+      "id": "ROW-DX4KQM",
+      "subject": "FAM-SDS92V"
+    }
+  ],
+  "memoryRoot": "/home/firefox/projects/ar-coordination/worktrees/agents-remember/260928-mik-l26-ar/memory-260928-mik-l26",
+  "notes": [],
+  "operation": "knowledge-write",
+  "owner": "260928-MIK-L26",
+  "problems": [
+    {
+      "message": "two items share this handle",
+      "where": "handoff:mr1-current-INV-PPGGTW"
+    },
+    {
+      "message": "a second invariant from hand-off entry mr1-current-INV-PPGGTW",
+      "where": "record mr1-current-INV-PPGGTW"
+    }
+  ],
+  "provisionalIds": false,
+  "records": [
+    {
+      "action": "unchanged",
+      "handoffEntry": "mr1-current-INV-753SKJFF",
+      "id": "INV-753SKJFF",
+      "kind": "invariant",
+      "path": "knowledge/invariants/INV-753SKJFF-ICR30-I-2.json",
+      "revision": 3
+    },
+    {
+      "action": "unchanged",
+      "handoffEntry": "mr1-current-INV-VVMNM9B6",
+      "id": "INV-VVMNM9B6",
+      "kind": "invariant",
+      "path": "knowledge/invariants/INV-VVMNM9B6-L45-S3.json",
+      "revision": 2
+    },
+    {
+      "action": "unchanged",
+      "handoffEntry": "mr1-current-INV-E8655Z54",
+      "id": "INV-E8655Z54",
+      "kind": "invariant",
+      "path": "knowledge/invariants/INV-E8655Z54-L45-S7.json",
+      "revision": 2
+    },
+    {
+      "action": "unchanged",
+      "handoffEntry": "mr1-current-INV-J7179RG5",
+      "id": "INV-J7179RG5",
+      "kind": "invariant",
+      "path": "knowledge/invariants/INV-J7179RG5-L45-S6.json",
+      "revision": 2
+    },
+    {
+      "action": "unchanged",
+      "handoffEntry": "mr1-current-INV-H6A6JS63",
+      "id": "INV-H6A6JS63",
+      "kind": "invariant",
+      "path": "knowledge/invariants/INV-H6A6JS63-L45-S1.json",
+      "revision": 2
+    },
+    {
+      "action": "unchanged",
+      "handoffEntry": "mr1-current-INV-7W11WKKN",
+      "id": "INV-7W11WKKN",
+      "kind": "invariant",
+      "path": "knowledge/invariants/INV-7W11WKKN-ICR-L41-C2.json",
+      "revision": 3
+    },
+    {
+      "action": "unchanged",
+      "handoffEntry": "mr1-current-INV-9NCBGQSY",
+      "id": "INV-9NCBGQSY",
+      "kind": "invariant",
+      "path": "knowledge/invariants/INV-9NCBGQSY-ICR34-I-2.json",
+      "revision": 5
+    },
+    {
+      "action": "updated",
+      "handoffEntry": "mr1-current-INV-FYZQK0",
+      "id": "INV-FYZQK0",
+      "kind": "invariant",
+      "path": "knowledge/invariants/INV-FYZQK0-a-switched-head-plus-failed-expected.json",
+      "revision": 1
+    },
+    {
+      "action": "updated",
+      "handoffEntry": "mr1-current-INV-JZD1F5",
+      "id": "INV-JZD1F5",
+      "kind": "invariant",
+      "path": "knowledge/invariants/INV-JZD1F5-the-closeout-docstring-states-that-a.json",
+      "revision": 1
+    },
+    {
+      "action": "updated",
+      "handoffEntry": "mr1-current-INV-PPGGTW",
+      "id": "INV-PPGGTW",
+      "kind": "invariant",
+      "path": "knowledge/invariants/INV-PPGGTW-knowledge-diff-stays-within-the-knowledge.json",
+      "revision": 1
+    },
+    {
+      "action": "unchanged",
+      "handoffEntry": "mr1-current-INV-1BBPF3",
+      "id": "INV-1BBPF3",
+      "kind": "invariant",
+      "path": "knowledge/invariants/INV-1BBPF3-bootstrap-foundation-examples-name-family-invariant.json",
+      "revision": 1
+    },
+    {
+      "action": "unchanged",
+      "handoffEntry": "mr1-current-INV-K69R3M",
+      "id": "INV-K69R3M",
+      "kind": "invariant",
+      "path": "knowledge/invariants/INV-K69R3M-bootstrap-describes-complete-empty-complete-authored.json",
+      "revision": 1
+    },
+    {
+      "action": "unchanged",
+      "handoffEntry": "mr1-current-INV-J6PAD2",
+      "id": "INV-J6PAD2",
+      "kind": "invariant",
+      "path": "knowledge/invariants/INV-J6PAD2-tests-catch-loss-of-expected-old.json",
+      "revision": 1
+    },
+    {
+      "action": "unchanged",
+      "handoffEntry": "mr1-current-INV-PPGGTW",
+      "id": "INV-PPGGTW",
+      "kind": "invariant",
+      "path": "knowledge/invariants/INV-PPGGTW-knowledge-diff-stays-within-the-knowledge.json",
+      "revision": 1
+    },
+    {
+      "action": "unchanged",
+      "handoffEntry": "mr1-current-INV-JM868W",
+      "id": "INV-JM868W",
+      "kind": "invariant",
+      "path": "knowledge/invariants/INV-JM868W-knowledge-diff-is-bounded-names-omissions.json",
+      "revision": 1
+    },
+    {
+      "action": "unchanged",
+      "handoffEntry": "mr1-current-FAM-7B6N3Y4Q",
+      "id": "FAM-7B6N3Y4Q",
+      "kind": "family",
+      "path": "knowledge/families/FAM-7B6N3Y4Q-knowledge-write-and-publication-foundation.json",
+      "revision": 4
+    },
+    {
+      "action": "unchanged",
+      "handoffEntry": "mr1-current-FAM-KQQE74ZT",
+      "id": "FAM-KQQE74ZT",
+      "kind": "family",
+      "path": "knowledge/families/FAM-KQQE74ZT-Authored-realization-explanation.json",
+      "revision": 3
+    },
+    {
+      "action": "unchanged",
+      "handoffEntry": "mr1-current-FAM-SK1BFPE2",
+      "id": "FAM-SK1BFPE2",
+      "kind": "family",
+      "path": "knowledge/families/FAM-SK1BFPE2-Explicit-invariant-meaning.json",
+      "revision": 2
+    },
+    {
+      "action": "unchanged",
+      "handoffEntry": "mr1-current-FAM-XZ5BR65G",
+      "id": "FAM-XZ5BR65G",
+      "kind": "family",
+      "path": "knowledge/families/FAM-XZ5BR65G-Reproducible-review-history.json",
+      "revision": 6
+    },
+    {
+      "action": "updated",
+      "handoffEntry": "mr1-current-FAM-61DY2V",
+      "id": "FAM-61DY2V",
+      "kind": "family",
+      "path": "knowledge/families/FAM-61DY2V-gated-leaf-publication.json",
+      "revision": 3
+    },
+    {
+      "action": "unchanged",
+      "handoffEntry": "mr1-current-FAM-SDS92V",
+      "id": "FAM-SDS92V",
+      "kind": "family",
+      "path": "knowledge/families/FAM-SDS92V-no-production-canonical-database.json",
+      "revision": 1
+    }
+  ],
+  "removed": [],
+  "requirementEndpoints": [],
+  "rulings": [],
+  "state": "refused",
+  "violations": [],
+  "written": []
+}

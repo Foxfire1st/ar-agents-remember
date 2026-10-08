@@ -1,0 +1,627 @@
+{
+  "schema": "l26-curator-original47-family-examination/v1",
+  "source": "sealed MR1 records-families inventory; current held-leaf records after admitted writer",
+  "plane": "authored converted-file family records plus explicit report examination",
+  "rows": [
+    {
+      "invariant": "INV-0JMW0S",
+      "revision": 1,
+      "status": "retired",
+      "statement": "A plain retry lands after any number of unpublished direct refusals.",
+      "familyOutcome": {
+        "state": "retired-obligation",
+        "basis": "Temporary delivery/fixed-allegation or duplicate producer identity was retired in the stage-5 original MR1 repair; it creates no new current family membership. The original ID/evidence and raw producer list remain preserved."
+      }
+    },
+    {
+      "invariant": "INV-0RA5RQ",
+      "revision": 1,
+      "status": "retired",
+      "statement": "Teardown detects a removed APSW hook, restores it, and keeps the drain private.",
+      "familyOutcome": {
+        "state": "retired-obligation",
+        "basis": "Temporary delivery/fixed-allegation or duplicate producer identity was retired in the stage-5 original MR1 repair; it creates no new current family membership. The original ID/evidence and raw producer list remain preserved."
+      }
+    },
+    {
+      "invariant": "INV-0RQS65",
+      "revision": 1,
+      "status": "retired",
+      "statement": "The required plain-directory premise is false below the real ancestor Git marker, and both baseline and candidate correctly fail closed.",
+      "familyOutcome": {
+        "state": "retired-obligation",
+        "basis": "Temporary delivery/fixed-allegation or duplicate producer identity was retired in the stage-5 original MR1 repair; it creates no new current family membership. The original ID/evidence and raw producer list remain preserved."
+      }
+    },
+    {
+      "invariant": "INV-0T84PZ",
+      "revision": 1,
+      "status": "proposed",
+      "statement": "A failed ref update reports a moved branch only if its tip moved and otherwise preserves Git refusal text.",
+      "familyOutcome": {
+        "state": "recorded-membership",
+        "families": [
+          {
+            "family": "FAM-61DY2V",
+            "revision": 3,
+            "guarantee": "A converted leaf's closeout and direct landing judge their prepared memory tree through the validator and invariant gate and publish only that admitted tree on the intended branch and observed parent. The source index, message and hook policy remain faithful, and moved inputs or unfinished native actions refuse. Unpublished refusals restore owned preparations and preserve concurrent content; expected-old take-back never overwrites a foreign commit. Partial publication whose take-back fails may leave a reachable commit while preparations restore, and a proof failure after successful publication return keeps the published preparation. Gate-input reuse and frozen history remain exact. Recorded landing has only its separately declared validator and closed-history checks."
+          }
+        ],
+        "basis": "This exact obligation supplies one part of the authored joint guarantee above. Current family and invariant revisions, including retained siblings, are named explicitly."
+      }
+    },
+    {
+      "invariant": "INV-0XMNQZ",
+      "revision": 1,
+      "status": "proposed",
+      "statement": "Only a lock error that would block is waited for and every other lock error is refused immediately.",
+      "familyOutcome": {
+        "state": "recorded-membership",
+        "families": [
+          {
+            "family": "FAM-61DY2V",
+            "revision": 3,
+            "guarantee": "A converted leaf's closeout and direct landing judge their prepared memory tree through the validator and invariant gate and publish only that admitted tree on the intended branch and observed parent. The source index, message and hook policy remain faithful, and moved inputs or unfinished native actions refuse. Unpublished refusals restore owned preparations and preserve concurrent content; expected-old take-back never overwrites a foreign commit. Partial publication whose take-back fails may leave a reachable commit while preparations restore, and a proof failure after successful publication return keeps the published preparation. Gate-input reuse and frozen history remain exact. Recorded landing has only its separately declared validator and closed-history checks."
+          }
+        ],
+        "basis": "This exact obligation supplies one part of the authored joint guarantee above. Current family and invariant revisions, including retained siblings, are named explicitly."
+      }
+    },
+    {
+      "invariant": "INV-1BBPF3",
+      "revision": 1,
+      "status": "proposed",
+      "statement": "Bootstrap foundation examples name family, invariant and source_context views.",
+      "familyOutcome": {
+        "state": "examined-no-family",
+        "basis": "The bootstrap examples name the supported inspection views. The admission/location family governs write authority and storage selection, not this instructional read-view contract."
+      }
+    },
+    {
+      "invariant": "INV-2Q8RPR",
+      "revision": 1,
+      "status": "proposed",
+      "statement": "Lifecycle commit publication runs no commit hooks, including the direct-landing memory commit.",
+      "familyOutcome": {
+        "state": "recorded-membership",
+        "families": [
+          {
+            "family": "FAM-61DY2V",
+            "revision": 3,
+            "guarantee": "A converted leaf's closeout and direct landing judge their prepared memory tree through the validator and invariant gate and publish only that admitted tree on the intended branch and observed parent. The source index, message and hook policy remain faithful, and moved inputs or unfinished native actions refuse. Unpublished refusals restore owned preparations and preserve concurrent content; expected-old take-back never overwrites a foreign commit. Partial publication whose take-back fails may leave a reachable commit while preparations restore, and a proof failure after successful publication return keeps the published preparation. Gate-input reuse and frozen history remain exact. Recorded landing has only its separately declared validator and closed-history checks."
+          }
+        ],
+        "basis": "This exact obligation supplies one part of the authored joint guarantee above. Current family and invariant revisions, including retained siblings, are named explicitly."
+      }
+    },
+    {
+      "invariant": "INV-54J62R",
+      "revision": 1,
+      "status": "proposed",
+      "statement": "A database event with no repository frame is refused under its own name except for the standard-library connections coverage creates.",
+      "familyOutcome": {
+        "state": "recorded-membership",
+        "families": [
+          {
+            "family": "FAM-SDS92V",
+            "revision": 1,
+            "guarantee": "The repository's retirement guard and static source check expose canonical-database access in their declared test/source scopes, and test teardown restores the guard when a test removes it. The reviewed copy-cleanup owner removes only eligible copies and preserves tracked or symlinked companions. Together these protect the database retirement's executable paths and cleanup boundary; they do not certify unrun tests, derived-index deletion, or elimination of every workspace copy."
+          }
+        ],
+        "basis": "This exact obligation supplies one part of the authored joint guarantee above. Current family and invariant revisions, including retained siblings, are named explicitly."
+      }
+    },
+    {
+      "invariant": "INV-5FC4T6",
+      "revision": 1,
+      "status": "retired",
+      "statement": "head_text_or_none and the exported worklist_view have been removed.",
+      "familyOutcome": {
+        "state": "retired-obligation",
+        "basis": "Temporary delivery/fixed-allegation or duplicate producer identity was retired in the stage-5 original MR1 repair; it creates no new current family membership. The original ID/evidence and raw producer list remain preserved."
+      }
+    },
+    {
+      "invariant": "INV-738PC9",
+      "revision": 1,
+      "status": "proposed",
+      "statement": "A converted Git memory input never materializes its historical canonical database.",
+      "familyOutcome": {
+        "state": "examined-no-family",
+        "basis": "The memory Git-tree materializer refuses historical canonical bytes when a tree is converted. The test guard/cleanup family concerns executing access and eligible copy removal, not this independent read materialization boundary."
+      }
+    },
+    {
+      "invariant": "INV-765TQN",
+      "revision": 1,
+      "status": "retired",
+      "statement": "Unpublished preparation failures restore history and ignore content.",
+      "familyOutcome": {
+        "state": "retired-obligation",
+        "basis": "Temporary delivery/fixed-allegation or duplicate producer identity was retired in the stage-5 original MR1 repair; it creates no new current family membership. The original ID/evidence and raw producer list remain preserved."
+      }
+    },
+    {
+      "invariant": "INV-89A5AN",
+      "revision": 1,
+      "status": "proposed",
+      "statement": "Publication and refusal preserve index flags, intent-to-add entries outside the commit and sparse-checkout entries.",
+      "familyOutcome": {
+        "state": "recorded-membership",
+        "families": [
+          {
+            "family": "FAM-61DY2V",
+            "revision": 3,
+            "guarantee": "A converted leaf's closeout and direct landing judge their prepared memory tree through the validator and invariant gate and publish only that admitted tree on the intended branch and observed parent. The source index, message and hook policy remain faithful, and moved inputs or unfinished native actions refuse. Unpublished refusals restore owned preparations and preserve concurrent content; expected-old take-back never overwrites a foreign commit. Partial publication whose take-back fails may leave a reachable commit while preparations restore, and a proof failure after successful publication return keeps the published preparation. Gate-input reuse and frozen history remain exact. Recorded landing has only its separately declared validator and closed-history checks."
+          }
+        ],
+        "basis": "This exact obligation supplies one part of the authored joint guarantee above. Current family and invariant revisions, including retained siblings, are named explicitly."
+      }
+    },
+    {
+      "invariant": "INV-9ZBTVA",
+      "revision": 1,
+      "status": "proposed",
+      "statement": "An unpublished direct-landing refusal restores preparation and cancels its generation, while an irreversible publication retains recovery.",
+      "familyOutcome": {
+        "state": "recorded-membership",
+        "families": [
+          {
+            "family": "FAM-61DY2V",
+            "revision": 3,
+            "guarantee": "A converted leaf's closeout and direct landing judge their prepared memory tree through the validator and invariant gate and publish only that admitted tree on the intended branch and observed parent. The source index, message and hook policy remain faithful, and moved inputs or unfinished native actions refuse. Unpublished refusals restore owned preparations and preserve concurrent content; expected-old take-back never overwrites a foreign commit. Partial publication whose take-back fails may leave a reachable commit while preparations restore, and a proof failure after successful publication return keeps the published preparation. Gate-input reuse and frozen history remain exact. Recorded landing has only its separately declared validator and closed-history checks."
+          }
+        ],
+        "basis": "This exact obligation supplies one part of the authored joint guarantee above. Current family and invariant revisions, including retained siblings, are named explicitly."
+      }
+    },
+    {
+      "invariant": "INV-ANKPPE",
+      "revision": 1,
+      "status": "proposed",
+      "statement": "An unfinished native action is refused before the index is asked for a tree, including a real unresolved merge.",
+      "familyOutcome": {
+        "state": "recorded-membership",
+        "families": [
+          {
+            "family": "FAM-61DY2V",
+            "revision": 3,
+            "guarantee": "A converted leaf's closeout and direct landing judge their prepared memory tree through the validator and invariant gate and publish only that admitted tree on the intended branch and observed parent. The source index, message and hook policy remain faithful, and moved inputs or unfinished native actions refuse. Unpublished refusals restore owned preparations and preserve concurrent content; expected-old take-back never overwrites a foreign commit. Partial publication whose take-back fails may leave a reachable commit while preparations restore, and a proof failure after successful publication return keeps the published preparation. Gate-input reuse and frozen history remain exact. Recorded landing has only its separately declared validator and closed-history checks."
+          }
+        ],
+        "basis": "This exact obligation supplies one part of the authored joint guarantee above. Current family and invariant revisions, including retained siblings, are named explicitly."
+      }
+    },
+    {
+      "invariant": "INV-BEYEV2",
+      "revision": 1,
+      "status": "proposed",
+      "statement": "Take-back retains an expected-old compare-and-swap and only unpublished refusal cancellations can replace themselves with the same request.",
+      "familyOutcome": {
+        "state": "recorded-membership",
+        "families": [
+          {
+            "family": "FAM-61DY2V",
+            "revision": 3,
+            "guarantee": "A converted leaf's closeout and direct landing judge their prepared memory tree through the validator and invariant gate and publish only that admitted tree on the intended branch and observed parent. The source index, message and hook policy remain faithful, and moved inputs or unfinished native actions refuse. Unpublished refusals restore owned preparations and preserve concurrent content; expected-old take-back never overwrites a foreign commit. Partial publication whose take-back fails may leave a reachable commit while preparations restore, and a proof failure after successful publication return keeps the published preparation. Gate-input reuse and frozen history remain exact. Recorded landing has only its separately declared validator and closed-history checks."
+          }
+        ],
+        "basis": "This exact obligation supplies one part of the authored joint guarantee above. Current family and invariant revisions, including retained siblings, are named explicitly."
+      }
+    },
+    {
+      "invariant": "INV-C3TYB0",
+      "revision": 1,
+      "status": "proposed",
+      "statement": "Cleanup protects each companion against tracking and symbolic-link deletion.",
+      "familyOutcome": {
+        "state": "recorded-membership",
+        "families": [
+          {
+            "family": "FAM-SDS92V",
+            "revision": 1,
+            "guarantee": "The repository's retirement guard and static source check expose canonical-database access in their declared test/source scopes, and test teardown restores the guard when a test removes it. The reviewed copy-cleanup owner removes only eligible copies and preserves tracked or symlinked companions. Together these protect the database retirement's executable paths and cleanup boundary; they do not certify unrun tests, derived-index deletion, or elimination of every workspace copy."
+          }
+        ],
+        "basis": "This exact obligation supplies one part of the authored joint guarantee above. Current family and invariant revisions, including retained siblings, are named explicitly."
+      }
+    },
+    {
+      "invariant": "INV-C5TQ6Z",
+      "revision": 1,
+      "status": "proposed",
+      "statement": "Each test teardown detects and restores a removed APSW hook, and the violation drain is private to the guard and its own tests.",
+      "familyOutcome": {
+        "state": "recorded-membership",
+        "families": [
+          {
+            "family": "FAM-SDS92V",
+            "revision": 1,
+            "guarantee": "The repository's retirement guard and static source check expose canonical-database access in their declared test/source scopes, and test teardown restores the guard when a test removes it. The reviewed copy-cleanup owner removes only eligible copies and preserves tracked or symlinked companions. Together these protect the database retirement's executable paths and cleanup boundary; they do not certify unrun tests, derived-index deletion, or elimination of every workspace copy."
+          }
+        ],
+        "basis": "This exact obligation supplies one part of the authored joint guarantee above. Current family and invariant revisions, including retained siblings, are named explicitly."
+      }
+    },
+    {
+      "invariant": "INV-CKY44N",
+      "revision": 1,
+      "status": "proposed",
+      "statement": "Cleanup treats a companion its reviewed plan keeps as successful preservation rather than a failed deletion.",
+      "familyOutcome": {
+        "state": "recorded-membership",
+        "families": [
+          {
+            "family": "FAM-SDS92V",
+            "revision": 1,
+            "guarantee": "The repository's retirement guard and static source check expose canonical-database access in their declared test/source scopes, and test teardown restores the guard when a test removes it. The reviewed copy-cleanup owner removes only eligible copies and preserves tracked or symlinked companions. Together these protect the database retirement's executable paths and cleanup boundary; they do not certify unrun tests, derived-index deletion, or elimination of every workspace copy."
+          }
+        ],
+        "basis": "This exact obligation supplies one part of the authored joint guarantee above. Current family and invariant revisions, including retained siblings, are named explicitly."
+      }
+    },
+    {
+      "invariant": "INV-FQ2447",
+      "revision": 1,
+      "status": "retired",
+      "statement": "Every remaining unpublished ordinary-memory failure restores its own preparations.",
+      "familyOutcome": {
+        "state": "retired-obligation",
+        "basis": "Temporary delivery/fixed-allegation or duplicate producer identity was retired in the stage-5 original MR1 repair; it creates no new current family membership. The original ID/evidence and raw producer list remain preserved."
+      }
+    },
+    {
+      "invariant": "INV-FYZQK0",
+      "revision": 1,
+      "status": "proposed",
+      "statement": "A switched HEAD plus failed expected-old take-back may leave the published memory commit reachable while ordinary closeout restores its preparatory files.",
+      "familyOutcome": {
+        "state": "recorded-membership",
+        "families": [
+          {
+            "family": "FAM-61DY2V",
+            "revision": 3,
+            "guarantee": "A converted leaf's closeout and direct landing judge their prepared memory tree through the validator and invariant gate and publish only that admitted tree on the intended branch and observed parent. The source index, message and hook policy remain faithful, and moved inputs or unfinished native actions refuse. Unpublished refusals restore owned preparations and preserve concurrent content; expected-old take-back never overwrites a foreign commit. Partial publication whose take-back fails may leave a reachable commit while preparations restore, and a proof failure after successful publication return keeps the published preparation. Gate-input reuse and frozen history remain exact. Recorded landing has only its separately declared validator and closed-history checks."
+          }
+        ],
+        "basis": "This exact obligation supplies one part of the authored joint guarantee above. Current family and invariant revisions, including retained siblings, are named explicitly."
+      }
+    },
+    {
+      "invariant": "INV-G0Y4VR",
+      "revision": 1,
+      "status": "proposed",
+      "statement": "The publication message matches real git commit -m cleanup behavior and refuses invalid modes and messages made empty by cleanup.",
+      "familyOutcome": {
+        "state": "recorded-membership",
+        "families": [
+          {
+            "family": "FAM-61DY2V",
+            "revision": 3,
+            "guarantee": "A converted leaf's closeout and direct landing judge their prepared memory tree through the validator and invariant gate and publish only that admitted tree on the intended branch and observed parent. The source index, message and hook policy remain faithful, and moved inputs or unfinished native actions refuse. Unpublished refusals restore owned preparations and preserve concurrent content; expected-old take-back never overwrites a foreign commit. Partial publication whose take-back fails may leave a reachable commit while preparations restore, and a proof failure after successful publication return keeps the published preparation. Gate-input reuse and frozen history remain exact. Recorded landing has only its separately declared validator and closed-history checks."
+          }
+        ],
+        "basis": "This exact obligation supplies one part of the authored joint guarantee above. Current family and invariant revisions, including retained siblings, are named explicitly."
+      }
+    },
+    {
+      "invariant": "INV-GBH3RH",
+      "revision": 1,
+      "status": "proposed",
+      "statement": "Derived-index modules cannot touch retired dataset names, helper callers are pinned and only the citation package is exempt from other-store source rules.",
+      "familyOutcome": {
+        "state": "recorded-membership",
+        "families": [
+          {
+            "family": "FAM-SDS92V",
+            "revision": 1,
+            "guarantee": "The repository's retirement guard and static source check expose canonical-database access in their declared test/source scopes, and test teardown restores the guard when a test removes it. The reviewed copy-cleanup owner removes only eligible copies and preserves tracked or symlinked companions. Together these protect the database retirement's executable paths and cleanup boundary; they do not certify unrun tests, derived-index deletion, or elimination of every workspace copy."
+          }
+        ],
+        "basis": "This exact obligation supplies one part of the authored joint guarantee above. Current family and invariant revisions, including retained siblings, are named explicitly."
+      }
+    },
+    {
+      "invariant": "INV-GSEMMW",
+      "revision": 1,
+      "status": "proposed",
+      "statement": "Publication preserves the ruled message, index flags and hook behavior and names real ref/lock failures.",
+      "familyOutcome": {
+        "state": "recorded-membership",
+        "families": [
+          {
+            "family": "FAM-61DY2V",
+            "revision": 3,
+            "guarantee": "A converted leaf's closeout and direct landing judge their prepared memory tree through the validator and invariant gate and publish only that admitted tree on the intended branch and observed parent. The source index, message and hook policy remain faithful, and moved inputs or unfinished native actions refuse. Unpublished refusals restore owned preparations and preserve concurrent content; expected-old take-back never overwrites a foreign commit. Partial publication whose take-back fails may leave a reachable commit while preparations restore, and a proof failure after successful publication return keeps the published preparation. Gate-input reuse and frozen history remain exact. Recorded landing has only its separately declared validator and closed-history checks."
+          }
+        ],
+        "basis": "This exact obligation supplies one part of the authored joint guarantee above. Current family and invariant revisions, including retained siblings, are named explicitly."
+      }
+    },
+    {
+      "invariant": "INV-HDV88M",
+      "revision": 1,
+      "status": "retired",
+      "statement": "Publication binds the contract branch and the head observed before judgment.",
+      "familyOutcome": {
+        "state": "retired-obligation",
+        "basis": "Temporary delivery/fixed-allegation or duplicate producer identity was retired in the stage-5 original MR1 repair; it creates no new current family membership. The original ID/evidence and raw producer list remain preserved."
+      }
+    },
+    {
+      "invariant": "INV-J6PAD2",
+      "revision": 1,
+      "status": "proposed",
+      "statement": "Tests catch loss of expected-old take-back, replacement narrowing and cleanup validation.",
+      "familyOutcome": {
+        "state": "examined-no-family",
+        "basis": "This obligation concerns independent negative controls detecting several regressions. The publication and retirement families promise product mechanisms; treating the control itself as a member would conflate verification with those guarantees."
+      }
+    },
+    {
+      "invariant": "INV-JFGTZT",
+      "revision": 1,
+      "status": "retired",
+      "statement": "The current owner-bound R26 documentation correction removes only the listed provenance and describes the preserved publication boundary without changing executable logic, other candidate inputs or earlier acceptance dispositions.",
+      "familyOutcome": {
+        "state": "retired-obligation",
+        "basis": "Temporary delivery/fixed-allegation or duplicate producer identity was retired in the stage-5 original MR1 repair; it creates no new current family membership. The original ID/evidence and raw producer list remain preserved."
+      }
+    },
+    {
+      "invariant": "INV-JM868W",
+      "revision": 1,
+      "status": "proposed",
+      "statement": "knowledge_diff is bounded, names omissions and absent selectors, and discloses loose-object capture.",
+      "familyOutcome": {
+        "state": "examined-no-family",
+        "basis": "The bounded diff must disclose omissions and temporary object capture. Existing family guarantees concern another reviewer traversal or publication, and do not jointly promise this mounted mechanical diff display."
+      }
+    },
+    {
+      "invariant": "INV-JZD1F5",
+      "revision": 1,
+      "status": "proposed",
+      "statement": "The closeout docstring states that a partial publication with failed expected-old takeback may retain a reachable commit while preparations restore, whereas proof failure after successful publication return leaves preparations in place.",
+      "familyOutcome": {
+        "state": "examined-no-family",
+        "basis": "The documentation must describe the two actual restoration boundaries accurately. FAM-61DY2V promises executable publication behavior; this separate documentary obligation does not enforce that behavior."
+      }
+    },
+    {
+      "invariant": "INV-K69R3M",
+      "revision": 1,
+      "status": "proposed",
+      "statement": "Bootstrap describes complete-empty, complete-authored, partial, admission and legacy states accurately.",
+      "familyOutcome": {
+        "state": "examined-no-family",
+        "basis": "The foundation-state reporting contract distinguishes empty, authored, partial and unavailable state. It is independent of the write authority/location guarantee."
+      }
+    },
+    {
+      "invariant": "INV-KTMBMN",
+      "revision": 1,
+      "status": "proposed",
+      "statement": "Closeout publishes only on the contract work branch with the parent observed before the admitted tree was captured.",
+      "familyOutcome": {
+        "state": "recorded-membership",
+        "families": [
+          {
+            "family": "FAM-61DY2V",
+            "revision": 3,
+            "guarantee": "A converted leaf's closeout and direct landing judge their prepared memory tree through the validator and invariant gate and publish only that admitted tree on the intended branch and observed parent. The source index, message and hook policy remain faithful, and moved inputs or unfinished native actions refuse. Unpublished refusals restore owned preparations and preserve concurrent content; expected-old take-back never overwrites a foreign commit. Partial publication whose take-back fails may leave a reachable commit while preparations restore, and a proof failure after successful publication return keeps the published preparation. Gate-input reuse and frozen history remain exact. Recorded landing has only its separately declared validator and closed-history checks."
+          }
+        ],
+        "basis": "This exact obligation supplies one part of the authored joint guarantee above. Current family and invariant revisions, including retained siblings, are named explicitly."
+      }
+    },
+    {
+      "invariant": "INV-MB73DH",
+      "revision": 1,
+      "status": "retired",
+      "statement": "The guard states its limits, refuses retired names in index modules and pins helper callers.",
+      "familyOutcome": {
+        "state": "retired-obligation",
+        "basis": "Temporary delivery/fixed-allegation or duplicate producer identity was retired in the stage-5 original MR1 repair; it creates no new current family membership. The original ID/evidence and raw producer list remain preserved."
+      }
+    },
+    {
+      "invariant": "INV-MFQW2H",
+      "revision": 1,
+      "status": "proposed",
+      "statement": "The static retirement check detects attached expressions and row writes using qualified, quoted or aliased tables and WITH prefixes.",
+      "familyOutcome": {
+        "state": "recorded-membership",
+        "families": [
+          {
+            "family": "FAM-SDS92V",
+            "revision": 1,
+            "guarantee": "The repository's retirement guard and static source check expose canonical-database access in their declared test/source scopes, and test teardown restores the guard when a test removes it. The reviewed copy-cleanup owner removes only eligible copies and preserves tracked or symlinked companions. Together these protect the database retirement's executable paths and cleanup boundary; they do not certify unrun tests, derived-index deletion, or elimination of every workspace copy."
+          }
+        ],
+        "basis": "This exact obligation supplies one part of the authored joint guarantee above. Current family and invariant revisions, including retained siblings, are named explicitly."
+      }
+    },
+    {
+      "invariant": "INV-MQV6T8",
+      "revision": 1,
+      "status": "retired",
+      "statement": "The admitted invalid-input sweep exposes four pre-existing ToolError arms and a bare MQC result on baseline and candidate production.",
+      "familyOutcome": {
+        "state": "retired-obligation",
+        "basis": "Temporary delivery/fixed-allegation or duplicate producer identity was retired in the stage-5 original MR1 repair; it creates no new current family membership. The original ID/evidence and raw producer list remain preserved."
+      }
+    },
+    {
+      "invariant": "INV-MT82AS",
+      "revision": 1,
+      "status": "retired",
+      "statement": "A knowledge_diff subdirectory is refused with its repository root.",
+      "familyOutcome": {
+        "state": "retired-obligation",
+        "basis": "Temporary delivery/fixed-allegation or duplicate producer identity was retired in the stage-5 original MR1 repair; it creates no new current family membership. The original ID/evidence and raw producer list remain preserved."
+      }
+    },
+    {
+      "invariant": "INV-N5RBFK",
+      "revision": 1,
+      "status": "proposed",
+      "statement": "Every failure before memory publication restores route-owned history and ignore preparations while preserving concurrent content.",
+      "familyOutcome": {
+        "state": "recorded-membership",
+        "families": [
+          {
+            "family": "FAM-61DY2V",
+            "revision": 3,
+            "guarantee": "A converted leaf's closeout and direct landing judge their prepared memory tree through the validator and invariant gate and publish only that admitted tree on the intended branch and observed parent. The source index, message and hook policy remain faithful, and moved inputs or unfinished native actions refuse. Unpublished refusals restore owned preparations and preserve concurrent content; expected-old take-back never overwrites a foreign commit. Partial publication whose take-back fails may leave a reachable commit while preparations restore, and a proof failure after successful publication return keeps the published preparation. Gate-input reuse and frozen history remain exact. Recorded landing has only its separately declared validator and closed-history checks."
+          }
+        ],
+        "basis": "This exact obligation supplies one part of the authored joint guarantee above. Current family and invariant revisions, including retained siblings, are named explicitly."
+      }
+    },
+    {
+      "invariant": "INV-NJT6A9",
+      "revision": 1,
+      "status": "retired",
+      "statement": "The seven named closeout and recovery provenance spans are removed while their technical explanations and durable MIK-R09 citation remain.",
+      "familyOutcome": {
+        "state": "retired-obligation",
+        "basis": "Temporary delivery/fixed-allegation or duplicate producer identity was retired in the stage-5 original MR1 repair; it creates no new current family membership. The original ID/evidence and raw producer list remain preserved."
+      }
+    },
+    {
+      "invariant": "INV-PNXKPR",
+      "revision": 1,
+      "status": "retired",
+      "statement": "A provably unpublished direct failure restores and cancels; published evidence stays recoverable.",
+      "familyOutcome": {
+        "state": "retired-obligation",
+        "basis": "Temporary delivery/fixed-allegation or duplicate producer identity was retired in the stage-5 original MR1 repair; it creates no new current family membership. The original ID/evidence and raw producer list remain preserved."
+      }
+    },
+    {
+      "invariant": "INV-PPGGTW",
+      "revision": 1,
+      "status": "proposed",
+      "statement": "Knowledge diff stays within the knowledge-read token threshold, names omitted files and cuts, and refuses an absent path.",
+      "familyOutcome": {
+        "state": "examined-no-family",
+        "basis": "The mounted diff threshold, omissions and absent-selector refusal are an independent response-completeness guarantee. The existing reviewer-family traversals do not share this exact response contract."
+      }
+    },
+    {
+      "invariant": "INV-QB6EZ0",
+      "revision": 1,
+      "status": "retired",
+      "statement": "Reviewed protected cleanup companions remain kept and do not cause exit 1.",
+      "familyOutcome": {
+        "state": "retired-obligation",
+        "basis": "Temporary delivery/fixed-allegation or duplicate producer identity was retired in the stage-5 original MR1 repair; it creates no new current family membership. The original ID/evidence and raw producer list remain preserved."
+      }
+    },
+    {
+      "invariant": "INV-QQ6F52",
+      "revision": 1,
+      "status": "retired",
+      "statement": "The SQL reader recognizes attach expressions, qualified writes and WITH-prefixed writes.",
+      "familyOutcome": {
+        "state": "retired-obligation",
+        "basis": "Temporary delivery/fixed-allegation or duplicate producer identity was retired in the stage-5 original MR1 repair; it creates no new current family membership. The original ID/evidence and raw producer list remain preserved."
+      }
+    },
+    {
+      "invariant": "INV-RYF7BJ",
+      "revision": 1,
+      "status": "retired",
+      "statement": "Changed closeout/recovery comments still carry review provenance that the source-comment doctrine routes to history and reports.",
+      "familyOutcome": {
+        "state": "retired-obligation",
+        "basis": "Temporary delivery/fixed-allegation or duplicate producer identity was retired in the stage-5 original MR1 repair; it creates no new current family membership. The original ID/evidence and raw producer list remain preserved."
+      }
+    },
+    {
+      "invariant": "INV-SY5Z3P",
+      "revision": 1,
+      "status": "retired",
+      "statement": "Frameless APSW and database-file operations are charged and fail teardown.",
+      "familyOutcome": {
+        "state": "retired-obligation",
+        "basis": "Temporary delivery/fixed-allegation or duplicate producer identity was retired in the stage-5 original MR1 repair; it creates no new current family membership. The original ID/evidence and raw producer list remain preserved."
+      }
+    },
+    {
+      "invariant": "INV-W3FW03",
+      "revision": 1,
+      "status": "retired",
+      "statement": "The current R26 code delivery retires canonical production routes while actual memory removal, copy deletion and final curation remain later owner phases.",
+      "familyOutcome": {
+        "state": "retired-obligation",
+        "basis": "Temporary delivery/fixed-allegation or duplicate producer identity was retired in the stage-5 original MR1 repair; it creates no new current family membership. The original ID/evidence and raw producer list remain preserved."
+      }
+    },
+    {
+      "invariant": "INV-X23FME",
+      "revision": 1,
+      "status": "proposed",
+      "statement": "Knowledge diff refuses a subdirectory supplied as the memory root and names the repository root to use.",
+      "familyOutcome": {
+        "state": "examined-no-family",
+        "basis": "The diff root/subdirectory refusal protects caller-selected scope. It does not supply a joint publication, authoring-admission or reviewer-traversal guarantee with the existing families."
+      }
+    },
+    {
+      "invariant": "INV-YJZKYC",
+      "revision": 1,
+      "status": "proposed",
+      "statement": "Unconverted review descriptions state source-only identities and unavailable retired knowledge.",
+      "familyOutcome": {
+        "state": "examined-no-family",
+        "basis": "Legacy source-only descriptions preserve explicit unavailable knowledge after retirement. The record concerns the documentary projections; the historical-review family promises actual retained operand selection and custody."
+      }
+    },
+    {
+      "invariant": "INV-YZ45D7",
+      "revision": 1,
+      "status": "proposed",
+      "statement": "publish_tree_commit binds the admitted parent and intended ref.",
+      "familyOutcome": {
+        "state": "recorded-membership",
+        "families": [
+          {
+            "family": "FAM-61DY2V",
+            "revision": 3,
+            "guarantee": "A converted leaf's closeout and direct landing judge their prepared memory tree through the validator and invariant gate and publish only that admitted tree on the intended branch and observed parent. The source index, message and hook policy remain faithful, and moved inputs or unfinished native actions refuse. Unpublished refusals restore owned preparations and preserve concurrent content; expected-old take-back never overwrites a foreign commit. Partial publication whose take-back fails may leave a reachable commit while preparations restore, and a proof failure after successful publication return keeps the published preparation. Gate-input reuse and frozen history remain exact. Recorded landing has only its separately declared validator and closed-history checks."
+          }
+        ],
+        "basis": "This exact obligation supplies one part of the authored joint guarantee above. Current family and invariant revisions, including retained siblings, are named explicitly."
+      }
+    },
+    {
+      "invariant": "INV-ZGFZXT",
+      "revision": 1,
+      "status": "proposed",
+      "statement": "Repeated refused publications of the same direct-landing request cancel unpublished generations and the next plain retry can land.",
+      "familyOutcome": {
+        "state": "recorded-membership",
+        "families": [
+          {
+            "family": "FAM-61DY2V",
+            "revision": 3,
+            "guarantee": "A converted leaf's closeout and direct landing judge their prepared memory tree through the validator and invariant gate and publish only that admitted tree on the intended branch and observed parent. The source index, message and hook policy remain faithful, and moved inputs or unfinished native actions refuse. Unpublished refusals restore owned preparations and preserve concurrent content; expected-old take-back never overwrites a foreign commit. Partial publication whose take-back fails may leave a reachable commit while preparations restore, and a proof failure after successful publication return keeps the published preparation. Gate-input reuse and frozen history remain exact. Recorded landing has only its separately declared validator and closed-history checks."
+          }
+        ],
+        "basis": "This exact obligation supplies one part of the authored joint guarantee above. Current family and invariant revisions, including retained siblings, are named explicitly."
+      }
+    }
+  ],
+  "counts": {
+    "retired-obligation": 18,
+    "recorded-membership": 20,
+    "examined-no-family": 9
+  },
+  "externalSources": {
+    "state": "not-recorded",
+    "count": null,
+    "basis": "No external source was inspected in this takeover."
+  }
+}

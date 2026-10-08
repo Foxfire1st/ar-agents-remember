@@ -16,7 +16,8 @@
     "A change that has landed on the leaf's parent line: a leaf reopened after its integration may answer the record with a row of any disposition.",
     "A master's or checkpoint's landing, which is not refused for one of its leaves' rows.",
     "The writer: it counts from the leaf's own HEAD and writes such a row; the refusal comes from the gate and the validator.",
-    "A changed row replaced by hand inside one attempt, which the validator's rule cannot see; the gate's rule does."
+    "A changed row replaced by hand inside one attempt, which the validator's rule cannot see; the gate's rule does.",
+    "The retired database-era realization site; the obligation is recorded on converted memory only."
   ],
   "id": "INV-XN0FG8",
   "origin": {
@@ -30,7 +31,7 @@
     "leaf": "260928-MIK-L37",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "While a leaf's candidate holds another revision of an invariant, or another guarantee of a family, than the leaf's parent line, the leaf's governing row about that record -- its latest across its attempt files -- is the changed row of that change, or the row that retires the record. A later no_impact, moved or extended row about such an invariant, or a no_impact, assigned or rerouted row about such a family, leaves the item open at the gate and is refused by the validator at a commit that publishes the leaf. The writer accepts a changed row at an unchanged revision only as a restatement of the leaf's own changed row of that revision in an earlier attempt.",
   "status": "proposed",

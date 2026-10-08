@@ -6,10 +6,7 @@
 
 ## Purpose
 
-Public vocabulary of the read-only lifecycle status-change wait (CCR-R15): one typed
-`LifecycleWaitOutcome` Literal shared by the wait controller, the application controller,
-the MCP wire response, and the focused conformance tests so the outcome vocabulary cannot drift
-between layers.
+The retained value vocabulary of the read-only lifecycle status-change wait: LifecycleWaitOutcome and its named constants. These declarations describe the wait controller's outcomes; the former worktree_status_wait application/tool and WorktreeStatusWaitResponse consumer were removed and are not a current mounted wire route.
 
 ## Code Commentary
 
@@ -54,7 +51,6 @@ No configured external source governs this strict wait vocabulary.
 - The one typed wait-outcome Literal and its constants. [1]
 - The read-only bounded wait loop returning these outcomes. [2]
 The application controller that translated outcomes into the public response, and the `worktree_status_wait` tool it served, were deleted with the door/operation plane (commit `41b0812e`).
-- The public wire response carrying the outcome. [3]
 - The durable cursor the waiters compare. [4]
 
 ### Cross-Repo References

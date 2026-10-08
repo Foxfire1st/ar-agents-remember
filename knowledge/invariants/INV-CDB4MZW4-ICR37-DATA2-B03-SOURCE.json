@@ -19,6 +19,6 @@
   "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "Ordinary live-leaf curation resolves its source citations against the shared exact future-code capture and refuses moved inputs before affected writes or publication.",
-  "status": "proposed",
+  "status": "retired",
   "supersedes": []
 }

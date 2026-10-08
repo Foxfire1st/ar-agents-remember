@@ -82,7 +82,6 @@ No configured domain documentation could be checked.
 - The served storage surface as an explicit re-export list. [2]
 - The connection contract re-exported here. [3]
 - The schema manifest and fingerprint re-exported here. [4]
-- The composition seam that is this package's only consumer. [5]
 - The layer charter paragraph that records this storage home in `[package.memory]`. [6]
 
 ### Cross-Repo References

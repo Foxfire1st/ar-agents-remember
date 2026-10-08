@@ -30,8 +30,7 @@ nonempty `acceptance_ref`, and a `proposed` origin must not carry one. The two `
 by the extraction; the rule moved so the family revision aggregate applies one owner's version instead of a
 second copy.
 
-`StoredInvariantRevision` wraps a `revision` with `predecessors_sorted` and an after-validator that refuses a
-tuple which is not the sorted predecessor set.
+StoredInvariantRevision wraps the decoded revision and its sorted predecessor tuple. The index row decoder constructs that tuple and verifies the aggregate payload digest; this wrapper declares no independent sorted-predecessor after-validator.
 
 ### Conventions
 
@@ -46,8 +45,7 @@ version belongs to the revision's **label**, not to its identity: two successors
 - `conditions`/`exclusions` are tuples whose empty value is a recorded "none", never a missing value.
 - Proposal is distinct from acceptance: `state_at_origin` is authored data, and the store manufactures no
   acceptance and exposes no promotion operation.
-- `InvariantRevision` is the vocabulary shape; the insert-only write path and its refusals belong to
-  `memory/knowledge/store.py`, which is the only owner of that rule.
+- InvariantRevision declares the aggregate; digest functions define its seal, and the index row decoder verifies it on read. store.py reads exact revisions and exposes no revision writer. The former insert-only canonical database operation was retired by MIK-R26.
 - **The accepted/proposed rule is shared, not owned here.** It lives in `base.py` because both revision
   aggregates apply it at construction; a third revision kind must call it rather than restate it.
 - **No change to this model's behaviour was made by the graph leaf.** The extraction is behaviour-preserving, and
@@ -73,7 +71,9 @@ No configured domain documentation could be checked.
 - The shared accepted/proposed rule this validator now delegates to. [3]
 - The read-back shape that pins the sorted predecessor set. [4]
 - The stored `invariant_revision` table this aggregate is written to, with its immutability triggers. [5]
-- The insert-only operation that seals and stores one aggregate, or refuses without any row. [6]
+
+- The current exact revision read and decoder verify a retained aggregate rather than writing it. [6]
+
 The requirement packet whose normative property this model encodes: requirement packet `KS-R01@v1`, which lives in the coordination root, outside both the code and the memory repository, so the citation grammar cannot address it.
 
 ### Cross-Repo References

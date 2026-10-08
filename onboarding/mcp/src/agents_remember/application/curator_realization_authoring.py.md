@@ -94,8 +94,6 @@ No configured domain documentation could be checked.
 - **Resolution: target first, then the entry default, halves independent; only target-stated keys enter the digest.** [5]
 - **The ordered target checks and the refusal that names every failing target.** [6]
 - The shipped role vocabulary and the unassessed-edge member, and the stored prose limit. [7]
-- **The callers: the entry fields read the default, admission asks the refusal before `_creation` (committed allocations exempt), and each planned target binds its resolved realization.** [8]
-- The cases proving each rule through the real writer. [9]
 
 ### Cross-Repo References
 

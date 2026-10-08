@@ -374,7 +374,6 @@ to be written as prose.
 
 - The handoff paragraph both carriers gained, which is what makes the published identity travel with the report. [39]
 - The read route whose declaration the write side now publishes to, restated as current truth in the retrieval carrier. [40]
-- The write plane the carrier invokes, and the publication owner whose result it reads back. [41]
 
 ## Purpose
 

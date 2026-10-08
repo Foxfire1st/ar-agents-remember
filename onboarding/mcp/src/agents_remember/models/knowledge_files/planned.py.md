@@ -25,8 +25,7 @@ the writer all import these forms from here, so they cannot drift apart.
   anchors the declared form; `PLANNED_SUBJECT_PATTERN` is `planned:(?P<subject>…)#(?P<effect>…)` with the
   effect restricted to `ADMITTED_EFFECT_LABELS`, the unchanged vocabulary. `REQUIREMENT_REF_PATTERN` is
   `<stable ID>@v<n>` (ruling Q5).
-- **The key.** `planned_subject(subject, effect)` builds it; `parse_planned_subject` returns the
-  `(subject, effect)` pair or `None`.
+- **The key.** `planned_subject(subject, effect)` builds it; `PLANNED_SUBJECT_PATTERN` declares its subject/effect grammar. This module has no `parse_planned_subject` function; history-model validation owns parsing.
 - **The predicate.** `planned_item_open(item, rows_by_subject)` is open unless the leaf has a history row
   whose subject is the item's own subject, that is, a planned row. A `no_impact` or any other row about the
   declared invariant never answers the item, because its subject is the record ID, not the planned key.
@@ -50,29 +49,7 @@ the writer all import these forms from here, so they cannot drift apart.
 
 ## Evidence
 
-### Docs References
-
-No domain documentation source is configured for this repository (`system/sources.md` carries no
-`Domain Documentation` entries). The design authority is the requirement packet `MIK-R11@v2` of task
-`260928_maintained-invariant-knowledge` (with the architect rulings in the task's leaf document
-`11_planned-invariant-effects-reconciliation.json`); it lives outside the code and memory repositories, so it
-is named here and not cited as a row.
-
-No configured live documentation source was available for this pass.
-
 ### Repo-Internal References
 
-- The module docstring: the forms and who shares them. [1]
-- The item kind, the unknown-subject fact and the dispositions. [2]
-- The ref keys each disposition takes. [3]
-- The declared, planned and requirement-ref patterns. [4]
-- The planned subject key and its parse. [5]
-- The stored-item predicate for the gate. [6]
-- The history row model built on these forms. [7]
-- The predicate agrees with `satisfiedBy` on every item. [8]
-
-### Cross-Repo References
-
-No meaningful cross-repo references found: the module is pure models.
-
-No cross-repo boundary is crossed by this file.
+- `planned_subject` implements the retained boundary described above. [9]
+- `planned_item_open` implements the retained boundary described above. [10]

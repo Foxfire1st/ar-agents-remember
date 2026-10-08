@@ -68,10 +68,7 @@ for another role is refused and reported rather than absorbed.
 
 ### Conventions
 
-- The role file keeps the corpus's readable order — purpose and authority → required inputs →
-  normal workflow → permitted writes and actions → stop and escalation cases → completion and
-  handoff — followed by its machine-readable knob block, and declares its shared sources with a
-  single `**Inherits:**` line instead of restating them.
+- Role sources are concise, parseable and self-contained. The compact capsule policy supersedes fixed section order and minimum length; role-specific tests protect the duties that matter.
 - Editing it means editing the canonical `skills/l-01-agent-lifecycles/roles/bootstrap.md` and
   running `python scripts/sync-skills.py`; the nine generated copies are never hand-edited.
 - Its permitted surface is a positive list, and it is deliberately narrow: the setup surfaces, the
@@ -127,7 +124,9 @@ No relevant documentation found after checking live sources.
 - The second reader of the same set, so the policy has one spelling. [10]
 - The frozen vocabulary extension that publishes the role and its operation. [11]
 - The shipped checks: free-agent shape, taskless admission, no altitude, and the manifest declaration. [12]
-- The corpus shape checks every role file must satisfy, this one included. [13]
+
+- The current corpus check explicitly supersedes fixed section order and minimum length with concise, well-formed, self-contained source checks. [13]
+
 - The generated copies this file is one of, proved current by the generator's own check. [14]
 
 ### Cross-Repo References

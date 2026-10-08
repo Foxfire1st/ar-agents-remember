@@ -1,0 +1,25 @@
+{
+  "path": "mcp/tests/test_knowledge_copy_cleanup.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "40df89f4777cda9e7316381f25e54f0c8fb69ee5",
+        "content": "sha256:10163ae8337c8e278d5c0549e0cfcbf304d1a57e764839a563db7fb0cd14949b",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_apply_deletes_exactly_the_copies_rule_six_names_with_their_companions"
+        }
+      },
+      "facet": "Cleanup deletes exactly the rule-six copies with their protected companions kept.",
+      "id": "PRF-ZY7TVC",
+      "invariant": "INV-CKY44N",
+      "origin": {
+        "handoffEntry": "R3 note 16",
+        "leaf": "260928-MIK-L26"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

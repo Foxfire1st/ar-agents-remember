@@ -1,0 +1,641 @@
+{
+  "state": "authored-plan-not-applied",
+  "originalFinding": "L26-MR1-O01",
+  "population": "exact21 distinct R3 residual cards; no new baseline",
+  "preserveAcceptedOriginalFindings": 13,
+  "sourceSyncFirstSha256": "2a473adf1cbd4589f0408e5e78967b1db6fa848b8443de998c246cddb0231d9c",
+  "rows": [
+    {
+      "card": "onboarding/mcp/src/agents_remember/models/knowledge/effect.py.md",
+      "source": "mcp/src/agents_remember/models/knowledge/effect.py",
+      "sourceSha256": "8fccec23f351618ead27bab2c0f24b1d8dc336c42245821f28db98ca4fde4349",
+      "beforeCardSha256": "cdaccf131d1fb778e0531b9f00037b27ac37e6d150557bb442293e0abe6030c6",
+      "sealedR3Criterion": {
+        "path": "onboarding/mcp/src/agents_remember/models/knowledge/effect.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 13,
+          "end": 13
+        },
+        "evidence": "Line13 declares add/replace/narrow/widen/clarify/retire/split/merge/reincarnate and EffectLabelLiteral. The source declares restore/clarify/introduce/strengthen/weaken/replace/split/merge/retire and EffectLabel; four labels and the type name in the card are false.",
+        "population": "original84",
+        "ordinal": 67
+      },
+      "authoredPurpose": "Declares the closed vocabulary of nine planned semantic-history effects.",
+      "authoredReconciliation": "`ADMITTED_EFFECT_LABELS` and `EffectLabel` declare exactly restore, clarify, introduce, strengthen, weaken, replace, split, merge and retire. There is no preserve label. A comparison does not infer an authored effect from the changes it observes.\n\nA label alone supplies no predecessor or successor relationship; planned/history record models own those conditions. The canonical effect, preservation and unresolved-question payloads and their database writers were retired. The former EffectLabelLiteral name and add/narrow/widen/reincarnate vocabulary are not declarations of this module.",
+      "sourceTestDefinitions": [],
+      "replacement": "# mcp/src/agents_remember/models/knowledge/effect.py\n\n## Governing Overview\n\n[models route overview](../overview.md)\n\n## Purpose\n\nDeclares the closed vocabulary of nine planned semantic-history effects.\n\n## Code Commentary\n\n`ADMITTED_EFFECT_LABELS` and `EffectLabel` declare exactly restore, clarify, introduce, strengthen, weaken, replace, split, merge and retire. There is no preserve label. A comparison does not infer an authored effect from the changes it observes.\n\nA label alone supplies no predecessor or successor relationship; planned/history record models own those conditions. The canonical effect, preservation and unresolved-question payloads and their database writers were retired. The former EffectLabelLiteral name and add/narrow/widen/reincarnate vocabulary are not declarations of this module.\n\n## Evidence\n\n### Docs References\n\nNo Domain Documentation source is configured for this slice.\n\n### Repo-Internal References\n\n| Finding | Anchor | Source |\n| --- | --- | --- |\n| The declared tuple and EffectLabel carry the exact nine-member vocabulary, with no canonical payload or writer. | | mcp/src/agents_remember/models/knowledge/effect.py:1-44 |\n"
+    },
+    {
+      "card": "onboarding/mcp/tests/test_knowledge_leaf_read.py.md",
+      "source": "mcp/tests/test_knowledge_leaf_read.py",
+      "sourceSha256": "6c5099921999b04244e720a8740b4b3eeed05d4afc088f56e6cd8cba9ca0be53",
+      "beforeCardSha256": "18035a6e5c08e2c3b652e4a2eed9b7b6dcce6b20cca11fc7c26607b9b38cc799",
+      "sealedR3Criterion": {
+        "path": "onboarding/mcp/tests/test_knowledge_leaf_read.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 9,
+          "end": 9
+        },
+        "evidence": "Purpose line9 still claims thirteen collected cases and projection64-cap coverage. The source declares twelve unparametrized test functions and the old projection-cap test is absent. The removed coverage has not been explicitly retired from Purpose.",
+        "population": "original84",
+        "ordinal": 76
+      },
+      "authoredPurpose": "Pins the converted-tree family-complete leaf selection and its ordinary-read carrier.",
+      "authoredReconciliation": "The source declares twelve unparametrized test functions. A path selects its registered entries, complete directly containing families and their members, while advertising a further family without recursively expanding it. Rows retain applicability, conditions, exclusions, admission, realization roles and typed proofs. Identity seeds retain the separate recorded-family-frontier scope policy. Both read surfaces bind the same selection manifest.\n\nThe assertions cover named registration absence, a route chain without entries, partial indexes, a repository without a commit, bounded seed tails, derived titles, and continuation at the originally named code tree. Fixtures construct converted text documents and Git trees through knowledge_index_test_support. No projection writer or projection64-cap test remains here; the former thirteen-case/projection account is historical removed coverage. This card describes source assertions, not a collection or runtime verdict.",
+      "sourceTestDefinitions": [
+        "test_a_path_selects_one_family_hop_in_the_declared_order",
+        "test_both_surfaces_return_one_selection_under_one_manifest",
+        "test_the_invariant_view_names_its_families",
+        "test_the_conforming_example_returns_the_whole_family_in_one_response",
+        "test_a_path_without_entries_still_returns_its_route_chain",
+        "test_absent_and_partial_states_are_named",
+        "test_a_partial_index_is_named_on_both_surfaces",
+        "test_a_repository_root_with_no_commit_is_refused_by_name",
+        "test_a_leaf_walk_resumes_at_its_code_tree_from_the_named_repository",
+        "test_a_tail_longer_than_one_queue_is_refused_by_name_within_the_threshold",
+        "test_a_derived_reference_title_is_the_first_sentence_cut_to_a_fixed_length",
+        "test_identity_seeds_on_a_tree_keep_the_scope_read_beside_the_leaf"
+      ],
+      "replacement": "# mcp/tests/test_knowledge_leaf_read.py\n\n## Governing Overview\n\n[tests route overview](overview.md)\n\n## Purpose\n\nPins the converted-tree family-complete leaf selection and its ordinary-read carrier.\n\n## Code Commentary\n\nThe source declares twelve unparametrized test functions. A path selects its registered entries, complete directly containing families and their members, while advertising a further family without recursively expanding it. Rows retain applicability, conditions, exclusions, admission, realization roles and typed proofs. Identity seeds retain the separate recorded-family-frontier scope policy. Both read surfaces bind the same selection manifest.\n\nThe assertions cover named registration absence, a route chain without entries, partial indexes, a repository without a commit, bounded seed tails, derived titles, and continuation at the originally named code tree. Fixtures construct converted text documents and Git trees through knowledge_index_test_support. No projection writer or projection64-cap test remains here; the former thirteen-case/projection account is historical removed coverage. This card describes source assertions, not a collection or runtime verdict.\n\n## Evidence\n\n### Docs References\n\nNo Domain Documentation source is configured for this slice.\n\n### Repo-Internal References\n\n| Finding | Anchor | Source |\n| --- | --- | --- |\n| `test_a_path_selects_one_family_hop_in_the_declared_order` supplies the current fixture or assertion described above. | `test_a_path_selects_one_family_hop_in_the_declared_order` | mcp/tests/test_knowledge_leaf_read.py:183-272 |\n| `test_both_surfaces_return_one_selection_under_one_manifest` supplies the current fixture or assertion described above. | `test_both_surfaces_return_one_selection_under_one_manifest` | mcp/tests/test_knowledge_leaf_read.py:275-294 |\n| `test_a_leaf_walk_resumes_at_its_code_tree_from_the_named_repository` supplies the current fixture or assertion described above. | `test_a_leaf_walk_resumes_at_its_code_tree_from_the_named_repository` | mcp/tests/test_knowledge_leaf_read.py:403-462 |\n| `test_identity_seeds_on_a_tree_keep_the_scope_read_beside_the_leaf` supplies the current fixture or assertion described above. | `test_identity_seeds_on_a_tree_keep_the_scope_read_beside_the_leaf` | mcp/tests/test_knowledge_leaf_read.py:533-577 |\n"
+    },
+    {
+      "card": "onboarding/mcp/tests/diff_scope_test_support.py.md",
+      "source": "mcp/tests/diff_scope_test_support.py",
+      "sourceSha256": "a2431df4ec8f2462a27f268192873e734978941a077af87bdfef09ec7dfa1a4c",
+      "beforeCardSha256": "6895589df4b0f65ae0d20d79c2698175ffa20360e4600adae454e8c6b43641dd",
+      "sealedR3Criterion": {
+        "path": "onboarding/mcp/tests/diff_scope_test_support.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 7,
+          "end": 25
+        },
+        "evidence": "The paired card says public production store operations and records.claim_row_digest seal the fixture. Actual imports select test-only RowStore and knowledge_row_codec_test_support.claim_row_digest. The source documents the retired shapes in docstrings but does not implement their former write rules.",
+        "population": "each74 published reconciliation",
+        "ordinal": 2
+      },
+      "authoredPurpose": "Builds the two-snapshot knowledge and Git fixture used by the diff and review readers.",
+      "authoredReconciliation": "`build_diff_fixture` copies the read-scope fixture into before and candidate datasets, then applies named fixture transitions: successor revisions, realization removals/additions, an unrelated revision and the corresponding source-tree changes. The selected source trees and logical dataset identities remain independently observable.\n\nFixture rows are inserted by RowStore and realization constructors imported from knowledge_rows_test_support. Realization row digests come from knowledge_row_codec_test_support.claim_row_digest, not a production encoder in records.py. Production read/comparison owners consume those index-shaped datasets. The helper provides no canonical writer, lock, label/lineage/duplicate admission guarantee or claim_no_rewrite enforcement. Historical write-shaped helper names describe fixture construction only.",
+      "sourceTestDefinitions": [],
+      "replacement": "# mcp/tests/diff_scope_test_support.py\n\n## Governing Overview\n\n[Test suite overview](overview.md)\n\n## Purpose\n\nBuilds the two-snapshot knowledge and Git fixture used by the diff and review readers.\n\n## Code Commentary\n\n`build_diff_fixture` copies the read-scope fixture into before and candidate datasets, then applies named fixture transitions: successor revisions, realization removals/additions, an unrelated revision and the corresponding source-tree changes. The selected source trees and logical dataset identities remain independently observable.\n\nFixture rows are inserted by RowStore and realization constructors imported from knowledge_rows_test_support. Realization row digests come from knowledge_row_codec_test_support.claim_row_digest, not a production encoder in records.py. Production read/comparison owners consume those index-shaped datasets. The helper provides no canonical writer, lock, label/lineage/duplicate admission guarantee or claim_no_rewrite enforcement. Historical write-shaped helper names describe fixture construction only.\n\n## Evidence\n\n### Docs References\n\nNo Domain Documentation source is configured for this slice.\n\n### Repo-Internal References\n\n| Finding | Anchor | Source |\n| --- | --- | --- |\n| `build_diff_fixture` supplies the current fixture or assertion described above. | `build_diff_fixture` | mcp/tests/diff_scope_test_support.py:192-236 |\n| `_author_revised_revision` supplies the current fixture or assertion described above. | `_author_revised_revision` | mcp/tests/diff_scope_test_support.py:287-313 |\n| Fixture construction imports test-only row constructors; it does not call the retired canonical writer. | | mcp/tests/diff_scope_test_support.py:61-70 |\n| RowStore inserts index-shaped fixture rows without the retired production admission plane. | `RowStore` | mcp/tests/knowledge_rows_test_support.py:247-322 |\n"
+    },
+    {
+      "card": "onboarding/mcp/tests/read_scope_test_support.py.md",
+      "source": "mcp/tests/read_scope_test_support.py",
+      "sourceSha256": "2b8b267244ad76e82355946c5e3e1022103208fe549b28ff4193a999d32e2575",
+      "beforeCardSha256": "09449b252b8532f76f4b6ee2210ad9bd267cfae13cfd7c150f5953bae991de01",
+      "sealedR3Criterion": {
+        "path": "onboarding/mcp/tests/read_scope_test_support.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 7,
+          "end": 25
+        },
+        "evidence": "The card says writes never insert rows and use the same public store/family/membership/realization owners as production. Actual imports and _create_revision select knowledge_rows_test_support.RowStore, whose declared purpose is direct index-shaped INSERTs without retired admission rules.",
+        "population": "each74 published reconciliation",
+        "ordinal": 7
+      },
+      "authoredPurpose": "Constructs an index-shaped dataset and a real Git tree with the topology needed by bounded scope-read tests.",
+      "authoredReconciliation": "The fixture retains exact invariant/family/revision identities, source locators, applicability, conditions, exclusions and memberships. Its topology deliberately distinguishes directly containing families, sibling realizations, an advertised unreached family, absent/unparsed/mismatched sources and explicit stopping boundaries. Callers use the returned identities rather than inferring relationships from names.\n\nRowStore, revision, family, membership and realization constructors are imported from knowledge_rows_test_support and insert test-only rows. Their production-shaped names do not make them shipped authoring operations or establish the retired storage admission rules. The Git source and current read owners are real; dataset construction is a test fixture.",
+      "sourceTestDefinitions": [],
+      "replacement": "# mcp/tests/read_scope_test_support.py\n\n## Governing Overview\n\n[tests route overview](overview.md)\n\n## Purpose\n\nConstructs an index-shaped dataset and a real Git tree with the topology needed by bounded scope-read tests.\n\n## Code Commentary\n\nThe fixture retains exact invariant/family/revision identities, source locators, applicability, conditions, exclusions and memberships. Its topology deliberately distinguishes directly containing families, sibling realizations, an advertised unreached family, absent/unparsed/mismatched sources and explicit stopping boundaries. Callers use the returned identities rather than inferring relationships from names.\n\nRowStore, revision, family, membership and realization constructors are imported from knowledge_rows_test_support and insert test-only rows. Their production-shaped names do not make them shipped authoring operations or establish the retired storage admission rules. The Git source and current read owners are real; dataset construction is a test fixture.\n\n## Evidence\n\n### Docs References\n\nNo Domain Documentation source is configured for this slice.\n\n### Repo-Internal References\n\n| Finding | Anchor | Source |\n| --- | --- | --- |\n| `build_read_scope_fixture` supplies the current fixture or assertion described above. | `build_read_scope_fixture` | mcp/tests/read_scope_test_support.py:264-281 |\n| `_create_invariant` supplies the current fixture or assertion described above. | `_create_invariant` | mcp/tests/read_scope_test_support.py:463-474 |\n| `_create_revision` supplies the current fixture or assertion described above. | `_create_revision` | mcp/tests/read_scope_test_support.py:477-494 |\n| `_create_realization` supplies the current fixture or assertion described above. | `_create_realization` | mcp/tests/read_scope_test_support.py:645-668 |\n| Fixture construction imports test-only row constructors; it does not call the retired canonical writer. | | mcp/tests/read_scope_test_support.py:47-61 |\n| RowStore inserts index-shaped fixture rows without the retired production admission plane. | `RowStore` | mcp/tests/knowledge_rows_test_support.py:247-322 |\n"
+    },
+    {
+      "card": "onboarding/mcp/tests/test_knowledge_diff_attribution.py.md",
+      "source": "mcp/tests/test_knowledge_diff_attribution.py",
+      "sourceSha256": "000370c9b359e52ae62fd41e4976e97e6c59032e90403bf60d59b1225f668d65",
+      "beforeCardSha256": "e9e02cb384a69e958de64736f9faf7e444f6ad6e63ab720206fae627194496b0",
+      "sealedR3Criterion": {
+        "path": "onboarding/mcp/tests/test_knowledge_diff_attribution.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 7,
+          "end": 25
+        },
+        "evidence": "The attribution properties remain, but the card claims the candidate claims are authored exactly as the production write plane does and every case uses public store operations. The imports now select the test-only RowStore/realization constructors; read composition is production, canonical write admission is not.",
+        "population": "each74 published reconciliation",
+        "ordinal": 17
+      },
+      "authoredPurpose": "Pins changed-path attribution accounting and the limits of what an inspected mapping can establish.",
+      "authoredReconciliation": "The comparison partitions the measured changed-path population into disjoint attributed, confirmed-unregistered and unknown-attribution buckets. Unchanged mapped paths contribute no changed count, repeated claims contribute one path, and selected-subject links are distinguished from completely established outside-selection links. Family scope comes from exact membership revisions.\n\nUnresolved or stale locators do not establish attribution. An unread snapshot prevents a negative conclusion and qualifies outside-selection membership; a known-empty inspected side can support absence. An unavailable observation carries null totals, while a partial denominator names omitted uncarriable paths.\n\nThe two-tree fixture and extra realization rows use test-only knowledge_rows_test_support constructors. `_author_candidate_claim` is a fixture helper despite its historical write-plane docstring. Surviving production anchor readers, source measurement and partition/comparison code supply the asserted output; this suite does not prove canonical write admission.",
+      "sourceTestDefinitions": [
+        "test_the_measured_changes_are_partitioned_once_and_the_buckets_are_disjoint_and_exhaustive",
+        "test_a_change_mapped_only_to_another_invariant_is_outside_selection_not_unregistered",
+        "test_a_family_subject_counts_its_members_own_links_as_selected_attribution",
+        "test_a_registered_mapping_that_did_not_resolve_does_not_establish_attribution",
+        "test_a_stale_or_unresolvable_mapping_does_not_establish_attribution",
+        "test_one_uninspected_snapshot_turns_every_unmapped_change_into_undetermined_attribution",
+        "test_a_legitimately_empty_side_counts_as_completely_inspected_for_absence",
+        "test_an_unavailable_partition_states_no_total_and_never_a_measured_zero",
+        "test_a_partial_observation_states_the_scope_of_its_own_denominator"
+      ],
+      "replacement": "# mcp/tests/test_knowledge_diff_attribution.py\n\n## Governing Overview\n\n[Test suite overview](overview.md)\n\n## Purpose\n\nPins changed-path attribution accounting and the limits of what an inspected mapping can establish.\n\n## Code Commentary\n\nThe comparison partitions the measured changed-path population into disjoint attributed, confirmed-unregistered and unknown-attribution buckets. Unchanged mapped paths contribute no changed count, repeated claims contribute one path, and selected-subject links are distinguished from completely established outside-selection links. Family scope comes from exact membership revisions.\n\nUnresolved or stale locators do not establish attribution. An unread snapshot prevents a negative conclusion and qualifies outside-selection membership; a known-empty inspected side can support absence. An unavailable observation carries null totals, while a partial denominator names omitted uncarriable paths.\n\nThe two-tree fixture and extra realization rows use test-only knowledge_rows_test_support constructors. `_author_candidate_claim` is a fixture helper despite its historical write-plane docstring. Surviving production anchor readers, source measurement and partition/comparison code supply the asserted output; this suite does not prove canonical write admission.\n\n## Evidence\n\n### Docs References\n\nNo Domain Documentation source is configured for this slice.\n\n### Repo-Internal References\n\n| Finding | Anchor | Source |\n| --- | --- | --- |\n| `test_the_measured_changes_are_partitioned_once_and_the_buckets_are_disjoint_and_exhaustive` supplies the current fixture or assertion described above. | `test_the_measured_changes_are_partitioned_once_and_the_buckets_are_disjoint_and_exhaustive` | mcp/tests/test_knowledge_diff_attribution.py:62-133 |\n| `test_a_registered_mapping_that_did_not_resolve_does_not_establish_attribution` supplies the current fixture or assertion described above. | `test_a_registered_mapping_that_did_not_resolve_does_not_establish_attribution` | mcp/tests/test_knowledge_diff_attribution.py:219-297 |\n| `test_one_uninspected_snapshot_turns_every_unmapped_change_into_undetermined_attribution` supplies the current fixture or assertion described above. | `test_one_uninspected_snapshot_turns_every_unmapped_change_into_undetermined_attribution` | mcp/tests/test_knowledge_diff_attribution.py:424-486 |\n| `test_an_unavailable_partition_states_no_total_and_never_a_measured_zero` supplies the current fixture or assertion described above. | `test_an_unavailable_partition_states_no_total_and_never_a_measured_zero` | mcp/tests/test_knowledge_diff_attribution.py:527-553 |\n| Fixture construction imports test-only row constructors; it does not call the retired canonical writer. | | mcp/tests/test_knowledge_diff_attribution.py:40-45 |\n| RowStore inserts index-shaped fixture rows without the retired production admission plane. | `RowStore` | mcp/tests/knowledge_rows_test_support.py:247-322 |\n"
+    },
+    {
+      "card": "onboarding/mcp/tests/test_knowledge_diff_boundaries.py.md",
+      "source": "mcp/tests/test_knowledge_diff_boundaries.py",
+      "sourceSha256": "a140edacbe277c52568b996bda548904a51a42e6845043b6650fa507fdc0b6c2",
+      "beforeCardSha256": "6f343203646afa7a1f536938c694e606cfa95b05183427da3a710bbc9859ef44",
+      "sealedR3Criterion": {
+        "path": "onboarding/mcp/tests/test_knowledge_diff_boundaries.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 7,
+          "end": 25
+        },
+        "evidence": "The actual source has the retained fifteen comparison-boundary definitions and test-only fixture writes. The card additionally presents six InventoryFixture/build_inventory_fixture cases absent from this source and calls RowStore writes public production operations. The shared file cannot establish those current coverage/owner claims.",
+        "population": "each74 published reconciliation",
+        "ordinal": 18
+      },
+      "authoredPurpose": "Pins the bounded comparison response, independent record/source changes and honest unavailable observations.",
+      "authoredReconciliation": "The source declares fifteen test functions. They cover requested-tree expansion, visible unattributed gaps, side-specific realization evidence, display paging with whole-union totals, missing or changed snapshot/selector refusals, payload-field comparisons and separation of record changes from source observations. A read page is not reused as the comparison scope.\n\nSerialized response checks exclude strengthening/harmlessness verdicts, mounted UI state, approval and severity. Paired unavailable/available probe substitutions distinguish an unmade observation from a measured gap. Index-shaped fixtures use test-only RowStore/revision helpers; payload substitution isolates the comparison projection and is not evidence of canonical writer duplicate_identity admission.\n\nThe old InventoryFixture/build_inventory_fixture six-case inventory population was removed. No current inventory-walk coverage or production store authoring is attributed to it.",
+      "sourceTestDefinitions": [
+        "test_the_expansion_names_both_requested_trees_and_every_path_they_differ_at",
+        "test_a_changed_path_no_recorded_realization_attributes_is_listed_as_a_visible_gap",
+        "test_the_attributed_source_of_a_moved_obligation_is_observed_on_the_side_that_claims_it",
+        "test_a_small_display_budget_pages_the_comparison_without_shrinking_its_totals",
+        "test_a_missing_side_refuses_and_substitutes_no_other_snapshot",
+        "test_a_candidate_that_changed_after_a_continuation_refuses_the_continuation",
+        "test_a_continuation_presented_against_another_selector_refuses_and_returns_no_page",
+        "test_a_side_naming_another_snapshot_of_its_own_file_refuses_before_any_page",
+        "test_no_field_of_a_comparison_can_carry_a_strengthening_or_harmlessness_verdict",
+        "test_the_two_change_statements_are_separate_fields_and_neither_implies_the_other",
+        "test_the_record_comparison_reports_exactly_the_payload_field_that_changed",
+        "test_a_page_of_a_selection_is_what_the_comparison_displays_not_what_it_selected",
+        "test_a_comparison_names_no_mounted_ui_and_no_approval_it_cannot_make",
+        "test_an_unavailable_observation_is_reported_as_unavailable_and_never_as_a_change_set",
+        "test_a_probe_that_measured_the_trees_is_what_makes_a_gap_visible"
+      ],
+      "replacement": "# mcp/tests/test_knowledge_diff_boundaries.py\n\n## Governing Overview\n\n[Test suite overview](overview.md)\n\n## Purpose\n\nPins the bounded comparison response, independent record/source changes and honest unavailable observations.\n\n## Code Commentary\n\nThe source declares fifteen test functions. They cover requested-tree expansion, visible unattributed gaps, side-specific realization evidence, display paging with whole-union totals, missing or changed snapshot/selector refusals, payload-field comparisons and separation of record changes from source observations. A read page is not reused as the comparison scope.\n\nSerialized response checks exclude strengthening/harmlessness verdicts, mounted UI state, approval and severity. Paired unavailable/available probe substitutions distinguish an unmade observation from a measured gap. Index-shaped fixtures use test-only RowStore/revision helpers; payload substitution isolates the comparison projection and is not evidence of canonical writer duplicate_identity admission.\n\nThe old InventoryFixture/build_inventory_fixture six-case inventory population was removed. No current inventory-walk coverage or production store authoring is attributed to it.\n\n## Evidence\n\n### Docs References\n\nNo Domain Documentation source is configured for this slice.\n\n### Repo-Internal References\n\n| Finding | Anchor | Source |\n| --- | --- | --- |\n| `test_a_small_display_budget_pages_the_comparison_without_shrinking_its_totals` supplies the current fixture or assertion described above. | `test_a_small_display_budget_pages_the_comparison_without_shrinking_its_totals` | mcp/tests/test_knowledge_diff_boundaries.py:270-310 |\n| `test_the_record_comparison_reports_exactly_the_payload_field_that_changed` supplies the current fixture or assertion described above. | `test_the_record_comparison_reports_exactly_the_payload_field_that_changed` | mcp/tests/test_knowledge_diff_boundaries.py:550-604 |\n| `test_a_page_of_a_selection_is_what_the_comparison_displays_not_what_it_selected` supplies the current fixture or assertion described above. | `test_a_page_of_a_selection_is_what_the_comparison_displays_not_what_it_selected` | mcp/tests/test_knowledge_diff_boundaries.py:715-756 |\n| `test_an_unavailable_observation_is_reported_as_unavailable_and_never_as_a_change_set` supplies the current fixture or assertion described above. | `test_an_unavailable_observation_is_reported_as_unavailable_and_never_as_a_change_set` | mcp/tests/test_knowledge_diff_boundaries.py:781-837 |\n| `test_a_probe_that_measured_the_trees_is_what_makes_a_gap_visible` supplies the current fixture or assertion described above. | `test_a_probe_that_measured_the_trees_is_what_makes_a_gap_visible` | mcp/tests/test_knowledge_diff_boundaries.py:840-863 |\n| Fixture construction imports test-only row constructors; it does not call the retired canonical writer. | | mcp/tests/test_knowledge_diff_boundaries.py:53-56 |\n| RowStore inserts index-shaped fixture rows without the retired production admission plane. | `RowStore` | mcp/tests/knowledge_rows_test_support.py:247-322 |\n"
+    },
+    {
+      "card": "onboarding/mcp/tests/test_knowledge_index_reuse.py.md",
+      "source": "mcp/tests/test_knowledge_index_reuse.py",
+      "sourceSha256": "0cf7e5b796c12424500d39803ac9f1253c63edb72f172343a974b97005cbe132",
+      "beforeCardSha256": "206da80a0ae37c1d7e8fbe67972f457594882ad3ac042b78beef092d6d340328",
+      "sealedR3Criterion": {
+        "path": "onboarding/mcp/tests/test_knowledge_index_reuse.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 7,
+          "end": 25
+        },
+        "evidence": "The card says an unconverted memory root keeps database selection. The actual final test requires unusable/legacy-format, empty seeds and unchanged retired bytes. This file refutes that retained current sentence rather than supporting reconciled status.",
+        "population": "each74 published reconciliation",
+        "ordinal": 22
+      },
+      "authoredPurpose": "Pins reuse of the existing read, view and comparison logic over converted memory-tree indexes.",
+      "authoredReconciliation": "A parity fixture compares selected sets and source-path counts over its test dataset and the index projected from converted text. Views read that index, and a comparison binds two distinct tree indexes. These are read-side parity assertions over a constructed fixture, not production canonical authoring.\n\nThe ordinary converted-tree read returns a complete index and bounded selection; a malformed record names a partial index. An unconverted root instead returns unusable/legacy-format with empty seeds and preserves the retired database bytes. It creates no runtime index there. Legacy selection is refused rather than kept as an alternate readable database route.",
+      "sourceTestDefinitions": [
+        "test_the_reused_selection_selects_the_same_set_over_the_index_as_over_the_database",
+        "test_the_views_read_the_index_as_their_dataset",
+        "test_a_comparison_reads_two_trees_through_their_indexes",
+        "test_the_ordinary_read_selects_a_converted_memory_tree_through_its_index",
+        "test_a_partial_tree_selection_says_it_is_partial",
+        "test_an_unconverted_memory_root_refuses_the_retired_database_selection"
+      ],
+      "replacement": "# mcp/tests/test_knowledge_index_reuse.py\n\n## Governing Overview\n\n[tests route overview](overview.md)\n\n## Purpose\n\nPins reuse of the existing read, view and comparison logic over converted memory-tree indexes.\n\n## Code Commentary\n\nA parity fixture compares selected sets and source-path counts over its test dataset and the index projected from converted text. Views read that index, and a comparison binds two distinct tree indexes. These are read-side parity assertions over a constructed fixture, not production canonical authoring.\n\nThe ordinary converted-tree read returns a complete index and bounded selection; a malformed record names a partial index. An unconverted root instead returns unusable/legacy-format with empty seeds and preserves the retired database bytes. It creates no runtime index there. Legacy selection is refused rather than kept as an alternate readable database route.\n\n## Evidence\n\n### Docs References\n\nNo Domain Documentation source is configured for this slice.\n\n### Repo-Internal References\n\n| Finding | Anchor | Source |\n| --- | --- | --- |\n| `test_the_reused_selection_selects_the_same_set_over_the_index_as_over_the_database` supplies the current fixture or assertion described above. | `test_the_reused_selection_selects_the_same_set_over_the_index_as_over_the_database` | mcp/tests/test_knowledge_index_reuse.py:142-201 |\n| `test_the_ordinary_read_selects_a_converted_memory_tree_through_its_index` supplies the current fixture or assertion described above. | `test_the_ordinary_read_selects_a_converted_memory_tree_through_its_index` | mcp/tests/test_knowledge_index_reuse.py:294-310 |\n| `test_a_partial_tree_selection_says_it_is_partial` supplies the current fixture or assertion described above. | `test_a_partial_tree_selection_says_it_is_partial` | mcp/tests/test_knowledge_index_reuse.py:313-322 |\n| `test_an_unconverted_memory_root_refuses_the_retired_database_selection` supplies the current fixture or assertion described above. | `test_an_unconverted_memory_root_refuses_the_retired_database_selection` | mcp/tests/test_knowledge_index_reuse.py:325-340 |\n"
+    },
+    {
+      "card": "onboarding/mcp/tests/test_knowledge_paging.py.md",
+      "source": "mcp/tests/test_knowledge_paging.py",
+      "sourceSha256": "5614af7dcce210e0c4396c4d59a48585065158589f8bd719a460feca668eea31",
+      "beforeCardSha256": "d35ced174df1e77ff9ed9562c85eb08d0386f6424061f86a90cf4972abf098ce",
+      "sealedR3Criterion": {
+        "path": "onboarding/mcp/tests/test_knowledge_paging.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 7,
+          "end": 25
+        },
+        "evidence": "The card presents a projection-over-artifact-limit case as current coverage. Actual source retains leaf/view threshold, bindings, oversized rows and whole-block walks but no projection test or projection owner call; the old projection promise survives only in prose.",
+        "population": "each74 published reconciliation",
+        "ordinal": 25
+      },
+      "authoredPurpose": "Pins token-bounded converted-tree leaf/view paging and continuation bindings.",
+      "authoredReconciliation": "Nine test functions cover exact family walks without duplicate/lost rows, randomized page bounds, an oversized row returned alone and flagged, whole multi-seed block bounds, deferred seed queues, view ordering, code-tree-bound resumed leaf/view walks and refusal of an empty ordering. The named code repository and page-one tree remain part of continuation identity.\n\nFixtures write converted text documents and Git trees through knowledge_index_test_support. Source assertions distinguish page enumeration from full index completeness and refuse invalid or moved continuation inputs without a payload. The retired projection-over-artifact-limit test and former eleven-case account are removed coverage, not a current projection contract.",
+      "sourceTestDefinitions": [
+        "test_a_forty_member_family_pages_from_read_ar_files_through_knowledge_read_exactly_once",
+        "test_pages_stay_within_the_threshold_over_randomized_families",
+        "test_a_row_larger_than_the_threshold_is_returned_alone_and_flagged",
+        "test_a_continuation_whose_binding_does_not_hold_is_refused_with_no_page",
+        "test_the_whole_knowledge_block_of_several_seeds_stays_within_the_threshold",
+        "test_a_view_walk_resumes_in_its_own_ordering_and_refuses_another",
+        "test_a_resumed_leaf_walk_observes_entries_at_page_one_code_tree",
+        "test_a_view_walk_is_bound_to_its_named_code_tree",
+        "test_an_empty_ordering_is_refused_not_defaulted_on_every_path"
+      ],
+      "replacement": "# mcp/tests/test_knowledge_paging.py\n\n## Governing Overview\n\n[tests route overview](overview.md)\n\n## Purpose\n\nPins token-bounded converted-tree leaf/view paging and continuation bindings.\n\n## Code Commentary\n\nNine test functions cover exact family walks without duplicate/lost rows, randomized page bounds, an oversized row returned alone and flagged, whole multi-seed block bounds, deferred seed queues, view ordering, code-tree-bound resumed leaf/view walks and refusal of an empty ordering. The named code repository and page-one tree remain part of continuation identity.\n\nFixtures write converted text documents and Git trees through knowledge_index_test_support. Source assertions distinguish page enumeration from full index completeness and refuse invalid or moved continuation inputs without a payload. The retired projection-over-artifact-limit test and former eleven-case account are removed coverage, not a current projection contract.\n\n## Evidence\n\n### Docs References\n\nNo Domain Documentation source is configured for this slice.\n\n### Repo-Internal References\n\n| Finding | Anchor | Source |\n| --- | --- | --- |\n| `test_a_forty_member_family_pages_from_read_ar_files_through_knowledge_read_exactly_once` supplies the current fixture or assertion described above. | `test_a_forty_member_family_pages_from_read_ar_files_through_knowledge_read_exactly_once` | mcp/tests/test_knowledge_paging.py:222-256 |\n| `test_a_row_larger_than_the_threshold_is_returned_alone_and_flagged` supplies the current fixture or assertion described above. | `test_a_row_larger_than_the_threshold_is_returned_alone_and_flagged` | mcp/tests/test_knowledge_paging.py:312-323 |\n| `test_the_whole_knowledge_block_of_several_seeds_stays_within_the_threshold` supplies the current fixture or assertion described above. | `test_the_whole_knowledge_block_of_several_seeds_stays_within_the_threshold` | mcp/tests/test_knowledge_paging.py:445-463 |\n| `test_a_view_walk_is_bound_to_its_named_code_tree` supplies the current fixture or assertion described above. | `test_a_view_walk_is_bound_to_its_named_code_tree` | mcp/tests/test_knowledge_paging.py:590-639 |\n"
+    },
+    {
+      "card": "onboarding/mcp/tests/test_knowledge_read_scope.py.md",
+      "source": "mcp/tests/test_knowledge_read_scope.py",
+      "sourceSha256": "d992987bb32ff21ea1de504ac45fc1dfd4d360a07cc4c0bdf5329c7a7c96f644",
+      "beforeCardSha256": "8c28a49a1ed40ac91b780c183712fac0f085004fa8b10f39f33dafbb86b2a167",
+      "sealedR3Criterion": {
+        "path": "onboarding/mcp/tests/test_knowledge_read_scope.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 7,
+          "end": 25
+        },
+        "evidence": "The selection/paging properties remain. The card says every fixture is built through public production store operations and none inserts rows directly; build_read_scope_fixture now uses test-only RowStore direct insert constructors, so that write-authority claim is not supported.",
+        "population": "each74 published reconciliation",
+        "ordinal": 29
+      },
+      "authoredPurpose": "Pins exact scope stopping, retained-revision grouping, deterministic paging and read-only refusals.",
+      "authoredReconciliation": "Path and exact revision seeds close over the appropriate directly containing families, siblings and recorded locations; an advertised family is reached only by selecting it. Identity seeds group retained revisions separately, while an exact revision excludes its siblings in history. Claim identities, repeated membership edges and distinct source locations are counted separately.\n\nThe ordered page stream keeps one snapshot/manifest across continuation, names truncation and registration/selector absence, and refuses budgets or selection bounds that cannot hold the next result. Refused reads preserve every table and the logical digest; selection remains in the requested namespace.\n\nThe dataset is populated by read_scope_test_support and test-only knowledge_rows_test_support RowStore. Direct fixture inserts and production-shaped constructor names do not enforce the retired production write-admission rules. The current scope selection/page owners are the behavior under test.",
+      "sourceTestDefinitions": [
+        "test_a_path_seed_returns_the_sibling_realizations_and_advertises_the_unreached_family",
+        "test_an_exact_invariant_revision_seed_selects_that_revision_and_its_directly_containing_families",
+        "test_an_exact_family_revision_seed_stops_after_its_own_members",
+        "test_selecting_the_advertised_family_explicitly_is_what_reaches_the_further_realizations",
+        "test_the_invariant_seed_and_the_family_seed_enumerate_the_same_claims_and_locations",
+        "test_a_path_seed_and_the_exact_invariant_revision_seed_close_over_the_same_records",
+        "test_an_identity_seed_returns_every_retained_revision_as_its_own_group",
+        "test_an_exact_revision_seed_does_not_select_the_identitys_other_retained_revisions",
+        "test_claim_identities_and_distinct_source_locations_are_counted_separately",
+        "test_a_revision_reached_through_two_families_appears_once_with_both_membership_rows",
+        "test_a_page_budget_of_one_item_still_advertises_the_second_location",
+        "test_every_page_declares_the_same_snapshot_and_manifest_and_the_union_equals_the_selection",
+        "test_the_item_stream_is_ordered_by_stored_identity_and_never_by_an_authored_label",
+        "test_a_truncated_page_states_that_items_remain_rather_than_claiming_completeness",
+        "test_a_page_budget_that_cannot_hold_one_item_refuses_and_keeps_the_position",
+        "test_a_selection_that_reaches_its_declared_bound_refuses_rather_than_reporting_a_total",
+        "test_the_declared_bound_admits_a_selection_that_fits_and_refuses_one_that_does_not",
+        "test_an_unregistered_path_reports_registration_absence_rather_than_an_empty_scope",
+        "test_a_selector_naming_no_recorded_identity_is_told_that_the_selector_is_absent",
+        "test_a_refused_read_leaves_every_table_and_the_logical_digest_unchanged",
+        "test_the_selection_reads_only_the_requested_namespace"
+      ],
+      "replacement": "# mcp/tests/test_knowledge_read_scope.py\n\n## Governing Overview\n\n[tests route overview](overview.md)\n\n## Purpose\n\nPins exact scope stopping, retained-revision grouping, deterministic paging and read-only refusals.\n\n## Code Commentary\n\nPath and exact revision seeds close over the appropriate directly containing families, siblings and recorded locations; an advertised family is reached only by selecting it. Identity seeds group retained revisions separately, while an exact revision excludes its siblings in history. Claim identities, repeated membership edges and distinct source locations are counted separately.\n\nThe ordered page stream keeps one snapshot/manifest across continuation, names truncation and registration/selector absence, and refuses budgets or selection bounds that cannot hold the next result. Refused reads preserve every table and the logical digest; selection remains in the requested namespace.\n\nThe dataset is populated by read_scope_test_support and test-only knowledge_rows_test_support RowStore. Direct fixture inserts and production-shaped constructor names do not enforce the retired production write-admission rules. The current scope selection/page owners are the behavior under test.\n\n## Evidence\n\n### Docs References\n\nNo Domain Documentation source is configured for this slice.\n\n### Repo-Internal References\n\n| Finding | Anchor | Source |\n| --- | --- | --- |\n| `test_an_exact_family_revision_seed_stops_after_its_own_members` supplies the current fixture or assertion described above. | `test_an_exact_family_revision_seed_stops_after_its_own_members` | mcp/tests/test_knowledge_read_scope.py:207-244 |\n| `test_an_identity_seed_returns_every_retained_revision_as_its_own_group` supplies the current fixture or assertion described above. | `test_an_identity_seed_returns_every_retained_revision_as_its_own_group` | mcp/tests/test_knowledge_read_scope.py:395-442 |\n| `test_every_page_declares_the_same_snapshot_and_manifest_and_the_union_equals_the_selection` supplies the current fixture or assertion described above. | `test_every_page_declares_the_same_snapshot_and_manifest_and_the_union_equals_the_selection` | mcp/tests/test_knowledge_read_scope.py:659-720 |\n| `test_a_refused_read_leaves_every_table_and_the_logical_digest_unchanged` supplies the current fixture or assertion described above. | `test_a_refused_read_leaves_every_table_and_the_logical_digest_unchanged` | mcp/tests/test_knowledge_read_scope.py:1002-1057 |\n| Fixture construction imports test-only row constructors; it does not call the retired canonical writer. | | mcp/tests/test_knowledge_read_scope.py:45-45 |\n| RowStore inserts index-shaped fixture rows without the retired production admission plane. | `RowStore` | mcp/tests/knowledge_rows_test_support.py:247-322 |\n"
+    },
+    {
+      "card": "onboarding/mcp/tests/test_knowledge_review_relationship_line.py.md",
+      "source": "mcp/tests/test_knowledge_review_relationship_line.py",
+      "sourceSha256": "d2116548d820f94d48f8bfdacbcac446879ea8ad5c344c83f2ffb37837582d57",
+      "beforeCardSha256": "a999d107c36a03c479e75f1f23d8108e3387b5e9eb285da6f90dc943edfb067e",
+      "sealedR3Criterion": {
+        "path": "onboarding/mcp/tests/test_knowledge_review_relationship_line.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 7,
+          "end": 25
+        },
+        "evidence": "The line/intermediate/split/membership read properties remain, but the current card/rationale says the populations are authored through public store operations. Actual family/membership imports come from knowledge_rows_test_support, not a production canonical writer.",
+        "population": "each74 published reconciliation",
+        "ordinal": 37
+      },
+      "authoredPurpose": "Pins relationship disclosure across a selected subject's complete retained successor line.",
+      "authoredReconciliation": "A split or multi-head line displays relationships actually recorded in that line without claiming a unique head or denying displayed evidence. A line recording no relationships states only what was read. Intermediate descendants and memberships moved to an unselected family revision remain visible.\n\nDatasets are copied from the shared fixture and extended with test-only family/revision/membership constructors from knowledge_rows_test_support. Production review readers perform line/head selection and disclosure; those fixture inserts provide no canonical write admission guarantee.",
+      "sourceTestDefinitions": [
+        "test_a_split_line_that_records_relationships_names_them_and_never_denies",
+        "test_a_multi_head_line_with_relationships_never_claims_a_unique_head",
+        "test_a_split_line_that_records_nothing_states_only_what_was_read",
+        "test_a_relationship_on_an_intermediate_descendant_is_displayed",
+        "test_a_membership_moved_onto_an_unselected_family_revision_is_displayed"
+      ],
+      "replacement": "# mcp/tests/test_knowledge_review_relationship_line.py\n\n## Governing Overview\n\n[mcp/tests route overview](overview.md)\n\n## Purpose\n\nPins relationship disclosure across a selected subject's complete retained successor line.\n\n## Code Commentary\n\nA split or multi-head line displays relationships actually recorded in that line without claiming a unique head or denying displayed evidence. A line recording no relationships states only what was read. Intermediate descendants and memberships moved to an unselected family revision remain visible.\n\nDatasets are copied from the shared fixture and extended with test-only family/revision/membership constructors from knowledge_rows_test_support. Production review readers perform line/head selection and disclosure; those fixture inserts provide no canonical write admission guarantee.\n\n## Evidence\n\n### Docs References\n\nNo Domain Documentation source is configured for this slice.\n\n### Repo-Internal References\n\n| Finding | Anchor | Source |\n| --- | --- | --- |\n| `test_a_split_line_that_records_relationships_names_them_and_never_denies` supplies the current fixture or assertion described above. | `test_a_split_line_that_records_relationships_names_them_and_never_denies` | mcp/tests/test_knowledge_review_relationship_line.py:212-264 |\n| `test_a_multi_head_line_with_relationships_never_claims_a_unique_head` supplies the current fixture or assertion described above. | `test_a_multi_head_line_with_relationships_never_claims_a_unique_head` | mcp/tests/test_knowledge_review_relationship_line.py:267-292 |\n| `test_a_relationship_on_an_intermediate_descendant_is_displayed` supplies the current fixture or assertion described above. | `test_a_relationship_on_an_intermediate_descendant_is_displayed` | mcp/tests/test_knowledge_review_relationship_line.py:317-351 |\n| `test_a_membership_moved_onto_an_unselected_family_revision_is_displayed` supplies the current fixture or assertion described above. | `test_a_membership_moved_onto_an_unselected_family_revision_is_displayed` | mcp/tests/test_knowledge_review_relationship_line.py:354-406 |\n| Fixture construction imports test-only row constructors; it does not call the retired canonical writer. | | mcp/tests/test_knowledge_review_relationship_line.py:27-34 |\n| RowStore inserts index-shaped fixture rows without the retired production admission plane. | `RowStore` | mcp/tests/knowledge_rows_test_support.py:247-322 |\n"
+    },
+    {
+      "card": "onboarding/mcp/tests/test_knowledge_review_relationship_reach.py.md",
+      "source": "mcp/tests/test_knowledge_review_relationship_reach.py",
+      "sourceSha256": "4133b21de02a95fc32aa0fbdb2fc44da42ecdc6a69188854d0a62acb5eaa60d9",
+      "beforeCardSha256": "2f456b44246fbd480fdc61882271cbf5b6c7a16873f82b5083bf188b31be1431",
+      "sealedR3Criterion": {
+        "path": "onboarding/mcp/tests/test_knowledge_review_relationship_reach.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 7,
+          "end": 25
+        },
+        "evidence": "The relationship-reach and pairing assertions remain, but the card/rationale describes public store authoring. Actual membership/family construction uses the test-only support module, so it cannot prove the claimed current production write route.",
+        "population": "each74 published reconciliation",
+        "ordinal": 39
+      },
+      "authoredPurpose": "Pins relationship evidence at exact member heads, recorded pairings and qualified rename observations.",
+      "authoredReconciliation": "A member's moved realization is displayed at its own selected head; ambiguous heads remain unresolved. A withdrawal does not deny a relationship the same payload displays, and retained memberships appear once. Pairing states the recorded relation it uses, never an address resemblance. Rename inference distinguishes measured absence from a measurement not made.\n\nTest-only knowledge_rows_test_support family/revision/membership operations construct the input populations. Real review composition supplies the rendered evidence and refusals; the cases do not reinstate the retired family or membership authoring plane.",
+      "sourceTestDefinitions": [
+        "test_a_member_identities_moved_realization_is_displayed_at_its_own_head",
+        "test_a_member_line_with_no_single_head_is_unresolved_and_never_denied",
+        "test_a_withdrawal_never_denies_a_relationship_the_same_payload_displays",
+        "test_a_family_revision_that_keeps_its_members_displays_each_membership_once",
+        "test_a_pairing_states_the_recorded_relation_it_was_made_on",
+        "test_a_pairing_is_qualified_and_an_address_resemblance_never_pairs",
+        "test_the_rename_inference_separates_a_measured_absence_from_a_measurement_never_made"
+      ],
+      "replacement": "# mcp/tests/test_knowledge_review_relationship_reach.py\n\n## Governing Overview\n\n[mcp/tests route overview](overview.md)\n\n## Purpose\n\nPins relationship evidence at exact member heads, recorded pairings and qualified rename observations.\n\n## Code Commentary\n\nA member's moved realization is displayed at its own selected head; ambiguous heads remain unresolved. A withdrawal does not deny a relationship the same payload displays, and retained memberships appear once. Pairing states the recorded relation it uses, never an address resemblance. Rename inference distinguishes measured absence from a measurement not made.\n\nTest-only knowledge_rows_test_support family/revision/membership operations construct the input populations. Real review composition supplies the rendered evidence and refusals; the cases do not reinstate the retired family or membership authoring plane.\n\n## Evidence\n\n### Docs References\n\nNo Domain Documentation source is configured for this slice.\n\n### Repo-Internal References\n\n| Finding | Anchor | Source |\n| --- | --- | --- |\n| `test_a_member_identities_moved_realization_is_displayed_at_its_own_head` supplies the current fixture or assertion described above. | `test_a_member_identities_moved_realization_is_displayed_at_its_own_head` | mcp/tests/test_knowledge_review_relationship_reach.py:306-358 |\n| `test_a_withdrawal_never_denies_a_relationship_the_same_payload_displays` supplies the current fixture or assertion described above. | `test_a_withdrawal_never_denies_a_relationship_the_same_payload_displays` | mcp/tests/test_knowledge_review_relationship_reach.py:393-433 |\n| `test_a_pairing_is_qualified_and_an_address_resemblance_never_pairs` supplies the current fixture or assertion described above. | `test_a_pairing_is_qualified_and_an_address_resemblance_never_pairs` | mcp/tests/test_knowledge_review_relationship_reach.py:504-542 |\n| `test_the_rename_inference_separates_a_measured_absence_from_a_measurement_never_made` supplies the current fixture or assertion described above. | `test_the_rename_inference_separates_a_measured_absence_from_a_measurement_never_made` | mcp/tests/test_knowledge_review_relationship_reach.py:545-592 |\n| Fixture construction imports test-only row constructors; it does not call the retired canonical writer. | | mcp/tests/test_knowledge_review_relationship_reach.py:39-46 |\n| RowStore inserts index-shaped fixture rows without the retired production admission plane. | `RowStore` | mcp/tests/knowledge_rows_test_support.py:247-322 |\n"
+    },
+    {
+      "card": "onboarding/mcp/tests/test_knowledge_review_revision_selection.py.md",
+      "source": "mcp/tests/test_knowledge_review_revision_selection.py",
+      "sourceSha256": "ffb3efacf41271a5f607c4dc4f0a16bd690eda3ff743f29281f547941c764753",
+      "beforeCardSha256": "243580a7f6f85d680ad5c5d5badec93690aa3fffa168447e36ed29aac1041620",
+      "sealedR3Criterion": {
+        "path": "onboarding/mcp/tests/test_knowledge_review_revision_selection.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 7,
+          "end": 25
+        },
+        "evidence": "The head-selection properties remain, but the card/rationale says public production store operations validate fixture authoring. Actual imports select RowStore, which deliberately implements no retired label/lineage/duplicate admission rules. The read refuses damaged rows; the claimed writer boundary is absent.",
+        "population": "each74 published reconciliation",
+        "ordinal": 41
+      },
+      "authoredPurpose": "Pins revision-head selection without guessed winners, including explicitly damaged fixture graphs.",
+      "authoredReconciliation": "A unique successor chain defaults to the before head and after head, while an intermediate revision remains explicitly selectable. Forks name competing heads and choose no pair. A known-empty after side preserves a removal with its before revision. Heads come from successor edges rather than sorted identity strings, and the review pane renders the selected pair's own statements.\n\nFixture construction uses test-only RowStore and revision containers, not a validating production writer. Cycle and dangling-edge cases deliberately alter their scratch dataset to exercise reader refusal; the reason for that SQL is controlled corrupt read input, not proof that a shipped admission layer prevented the graph. Cyclic or missing predecessor evidence remains unresolved and names no guessed pair.",
+      "sourceTestDefinitions": [
+        "test_a_unique_chain_defaults_to_the_first_before_head_versus_the_last_after_head",
+        "test_an_advanced_before_head_moves_the_default_pair",
+        "test_an_intermediate_revision_stays_selectable_history",
+        "test_a_fork_on_the_after_side_is_an_explicit_ambiguity",
+        "test_a_fork_on_the_before_side_is_an_explicit_ambiguity",
+        "test_a_known_empty_after_side_stays_a_removal_with_the_before_head_recorded",
+        "test_a_successor_cycle_is_unresolved_and_names_no_pair",
+        "test_a_dangling_authored_edge_is_unresolved_and_names_the_missing_revision",
+        "test_heads_come_from_successors_not_from_sorted_order",
+        "test_the_review_pane_renders_the_selected_head_pairs_own_statements"
+      ],
+      "replacement": "# mcp/tests/test_knowledge_review_revision_selection.py\n\n## Governing Overview\n\n[mcp/tests route overview](overview.md)\n\n## Purpose\n\nPins revision-head selection without guessed winners, including explicitly damaged fixture graphs.\n\n## Code Commentary\n\nA unique successor chain defaults to the before head and after head, while an intermediate revision remains explicitly selectable. Forks name competing heads and choose no pair. A known-empty after side preserves a removal with its before revision. Heads come from successor edges rather than sorted identity strings, and the review pane renders the selected pair's own statements.\n\nFixture construction uses test-only RowStore and revision containers, not a validating production writer. Cycle and dangling-edge cases deliberately alter their scratch dataset to exercise reader refusal; the reason for that SQL is controlled corrupt read input, not proof that a shipped admission layer prevented the graph. Cyclic or missing predecessor evidence remains unresolved and names no guessed pair.\n\n## Evidence\n\n### Docs References\n\nNo Domain Documentation source is configured for this slice.\n\n### Repo-Internal References\n\n| Finding | Anchor | Source |\n| --- | --- | --- |\n| `test_a_unique_chain_defaults_to_the_first_before_head_versus_the_last_after_head` supplies the current fixture or assertion described above. | `test_a_unique_chain_defaults_to_the_first_before_head_versus_the_last_after_head` | mcp/tests/test_knowledge_review_revision_selection.py:259-279 |\n| `test_an_intermediate_revision_stays_selectable_history` supplies the current fixture or assertion described above. | `test_an_intermediate_revision_stays_selectable_history` | mcp/tests/test_knowledge_review_revision_selection.py:293-330 |\n| `test_a_successor_cycle_is_unresolved_and_names_no_pair` supplies the current fixture or assertion described above. | `test_a_successor_cycle_is_unresolved_and_names_no_pair` | mcp/tests/test_knowledge_review_revision_selection.py:416-466 |\n| `test_a_dangling_authored_edge_is_unresolved_and_names_the_missing_revision` supplies the current fixture or assertion described above. | `test_a_dangling_authored_edge_is_unresolved_and_names_the_missing_revision` | mcp/tests/test_knowledge_review_revision_selection.py:469-521 |\n| `test_the_review_pane_renders_the_selected_head_pairs_own_statements` supplies the current fixture or assertion described above. | `test_the_review_pane_renders_the_selected_head_pairs_own_statements` | mcp/tests/test_knowledge_review_revision_selection.py:571-615 |\n| Fixture construction imports test-only row constructors; it does not call the retired canonical writer. | | mcp/tests/test_knowledge_review_revision_selection.py:59-64 |\n| RowStore inserts index-shaped fixture rows without the retired production admission plane. | `RowStore` | mcp/tests/knowledge_rows_test_support.py:247-322 |\n"
+    },
+    {
+      "card": "onboarding/mcp/tests/test_read_ar_files.py.md",
+      "source": "mcp/tests/test_read_ar_files.py",
+      "sourceSha256": "b421bb83b0dbf41bdd6642d057e1caf7f1c580ced12d5d1f8a11874536a80640",
+      "beforeCardSha256": "5ae7df9b87fe3ece6c0c86c663cc435a988f471a15ebc604b938752e2d81b0f2",
+      "sealedR3Criterion": {
+        "path": "onboarding/mcp/tests/test_read_ar_files.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 7,
+          "end": 25
+        },
+        "evidence": "The card describes an unconverted PublishedIntentRouteTests._read substitution and continued direct database publication testing. Actual setUp builds converted text memory, ordinary read returns its selected index and the unconverted case requires legacy-format. The named _read substitution/current database coverage is absent.",
+        "population": "each74 published reconciliation",
+        "ordinal": 50
+      },
+      "authoredPurpose": "Pins source confinement, onboarding deduplication and the ordinary converted-tree knowledge carrier.",
+      "authoredReconciliation": "The source-read cases check exact slices/full text, binary omission, path and symlink confinement, overview/route-chain deduplication, refresh/reset behavior and committed source selection. They remain source assertions; this curation does not call the read_ar_files tool.\n\nPublishedIntentRouteTests constructs a converted memory tree with build_world, resolves its actual PublishedIntentSelection and calls the ordinary route with that context. It asserts source plus a complete derived tree index, named seed/registration refusals and actual carrier field spellings. It no longer substitutes a legacy selection through `_read`.\n\nRemoving the layout marker makes the root unusable/legacy-format with empty seeds. Mounted-route cases build a real coordination declaration and require legacy-format for an unconverted root, with source still returned. Historical direct canonical publication/database-isolation journeys were removed; no current database-selection coverage is claimed.",
+      "sourceTestDefinitions": [
+        "test_range_request_returns_exact_slice",
+        "test_full_read_is_not_truncated",
+        "test_binary_source_is_omitted",
+        "test_path_confinement_rejects_escape",
+        "test_symlink_file_escape_rejected",
+        "test_symlink_dir_escape_rejected",
+        "test_first_read_attaches_overview_and_route_chain",
+        "test_second_read_dedups_unchanged_pieces",
+        "test_equal_overviews_dedup_independently_across_roots",
+        "test_changed_overview_is_reserved",
+        "test_refresh_forces_reserve",
+        "test_compact_marker_resets_served",
+        "test_payload_reads_committed_source",
+        "test_the_ordinary_read_returns_source_and_the_selected_tree_index",
+        "test_a_seed_that_is_not_typed_is_refused_rather_than_raising",
+        "test_a_path_with_no_recorded_anchor_is_a_named_absence",
+        "test_a_path_that_cannot_be_a_seed_is_refused",
+        "test_an_unconverted_root_cannot_open_a_legacy_database",
+        "test_the_carrier_uses_the_field_spellings_the_payload_actually_returns",
+        "test_the_mounted_route_returns_no_knowledge_section_for_unconverted_memory",
+        "test_the_mounted_route_names_the_legacy_format_before_anything_is_published"
+      ],
+      "replacement": "# mcp/tests/test_read_ar_files.py\n\n## Governing Overview\n\n[Tests overview](overview.md)\n\n## Purpose\n\nPins source confinement, onboarding deduplication and the ordinary converted-tree knowledge carrier.\n\n## Code Commentary\n\nThe source-read cases check exact slices/full text, binary omission, path and symlink confinement, overview/route-chain deduplication, refresh/reset behavior and committed source selection. They remain source assertions; this curation does not call the read_ar_files tool.\n\nPublishedIntentRouteTests constructs a converted memory tree with build_world, resolves its actual PublishedIntentSelection and calls the ordinary route with that context. It asserts source plus a complete derived tree index, named seed/registration refusals and actual carrier field spellings. It no longer substitutes a legacy selection through `_read`.\n\nRemoving the layout marker makes the root unusable/legacy-format with empty seeds. Mounted-route cases build a real coordination declaration and require legacy-format for an unconverted root, with source still returned. Historical direct canonical publication/database-isolation journeys were removed; no current database-selection coverage is claimed.\n\n## Evidence\n\n### Docs References\n\nNo Domain Documentation source is configured for this slice.\n\n### Repo-Internal References\n\n| Finding | Anchor | Source |\n| --- | --- | --- |\n| `test_the_ordinary_read_returns_source_and_the_selected_tree_index` supplies the current fixture or assertion described above. | `test_the_ordinary_read_returns_source_and_the_selected_tree_index` | mcp/tests/test_read_ar_files.py:425-439 |\n| `test_an_unconverted_root_cannot_open_a_legacy_database` supplies the current fixture or assertion described above. | `test_an_unconverted_root_cannot_open_a_legacy_database` | mcp/tests/test_read_ar_files.py:459-467 |\n| `test_the_carrier_uses_the_field_spellings_the_payload_actually_returns` supplies the current fixture or assertion described above. | `test_the_carrier_uses_the_field_spellings_the_payload_actually_returns` | mcp/tests/test_read_ar_files.py:469-507 |\n| `test_the_mounted_route_returns_no_knowledge_section_for_unconverted_memory` supplies the current fixture or assertion described above. | `test_the_mounted_route_returns_no_knowledge_section_for_unconverted_memory` | mcp/tests/test_read_ar_files.py:533-547 |\n"
+    },
+    {
+      "card": "onboarding/mcp/tests/test_review_assessment_history.py.md",
+      "source": "mcp/tests/test_review_assessment_history.py",
+      "sourceSha256": "9f58030dfe3d7a3c7be788301a269def1d1862fcf349c4cf66d672bdf7433a94",
+      "beforeCardSha256": "e0e81e0fcd551fb7d3b2d56757404f5f2909d45447d4a03434644f6207c252e3",
+      "sealedR3Criterion": {
+        "path": "onboarding/mcp/tests/test_review_assessment_history.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 7,
+          "end": 25
+        },
+        "evidence": "The current file contains one missing-artifacts/bounded-detail regression and a patched historical reader. It contains no current normal assessment capture, cleanup/restart or exact-parent recovery journey claimed by the card/rationale.",
+        "population": "each74 published reconciliation",
+        "ordinal": 51
+      },
+      "authoredPurpose": "Pins the bounded unavailable-curator-channel detail when many retained evidence artifacts are missing.",
+      "authoredReconciliation": "The one remaining regression constructs a missing-evidence channel and monkeypatches review_curator_records._historical_records to raise its exact missing-artifact error. With 100 paths, the source assertions require unavailable, retain every unreadable path and abbreviate the detail; with ten paths whose detail fits PROSE_MAX_LENGTH, they keep the existing wording exactly.\n\nThis is a controlled error-rendering seam in the production channel reader. It does not execute normal assessment capture, cleanup, restart or exact-parent recovery. The former history journey inventory is removed coverage; the module's old broad docstring is not evidence that those tests remain.",
+      "sourceTestDefinitions": [
+        "test_a_leaf_binding_many_missing_curator_artifacts_reads_as_unavailable"
+      ],
+      "replacement": "# mcp/tests/test_review_assessment_history.py\n\n## Governing Overview\n\n[governing route overview](overview.md)\n\n## Purpose\n\nPins the bounded unavailable-curator-channel detail when many retained evidence artifacts are missing.\n\n## Code Commentary\n\nThe one remaining regression constructs a missing-evidence channel and monkeypatches review_curator_records._historical_records to raise its exact missing-artifact error. With 100 paths, the source assertions require unavailable, retain every unreadable path and abbreviate the detail; with ten paths whose detail fits PROSE_MAX_LENGTH, they keep the existing wording exactly.\n\nThis is a controlled error-rendering seam in the production channel reader. It does not execute normal assessment capture, cleanup, restart or exact-parent recovery. The former history journey inventory is removed coverage; the module's old broad docstring is not evidence that those tests remain.\n\n## Evidence\n\n### Docs References\n\nNo Domain Documentation source is configured for this slice.\n\n### Repo-Internal References\n\n| Finding | Anchor | Source |\n| --- | --- | --- |\n| `_curator_channel` supplies the current fixture or assertion described above. | `_curator_channel` | mcp/tests/test_review_assessment_history.py:19-31 |\n| `test_a_leaf_binding_many_missing_curator_artifacts_reads_as_unavailable` supplies the current fixture or assertion described above. | `test_a_leaf_binding_many_missing_curator_artifacts_reads_as_unavailable` | mcp/tests/test_review_assessment_history.py:34-57 |\n"
+    },
+    {
+      "card": "onboarding/mcp/tests/test_review_assessment_history_repairs.py.md",
+      "source": "mcp/tests/test_review_assessment_history_repairs.py",
+      "sourceSha256": "6e424bd9bc877c40a0a4e7d40fd5e98087ac31eede68755157d29a73eed2131c",
+      "beforeCardSha256": "b77c187d52361fc956a3b122dc0015a0314f5bb43298af19d304706473edf1a6",
+      "sealedR3Criterion": {
+        "path": "onboarding/mcp/tests/test_review_assessment_history_repairs.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 7,
+          "end": 25
+        },
+        "evidence": "The actual parametrized regression checks integrity rejection before replacing canonical curator authority for escaping-alias and corrupt-retained-byte inputs. It does not supply the card claimed four namespace/provenance/channel/custody/snapshot-loss journeys.",
+        "population": "each74 published reconciliation",
+        "ordinal": 52
+      },
+      "authoredPurpose": "Pins rejection of invalid retained assessment evidence before canonical curator authority replacement.",
+      "authoredReconciliation": "One parametrized test supplies escaping-alias and corrupt-retained-byte inputs. The fixture prepares a nonempty curator authority and an assessment; one branch points an evidence alias outside the admitted namespace, and the other corrupts a retained evidence file after generation publication but before validation. Both expect CuratorCoherenceError, unchanged canonical bytes and a still-readable current authority.\n\nThe remaining test is this integrity/publication-order boundary. The four former namespace, provenance, channel/custody and snapshot-loss journeys named by the historical module description are no longer current coverage.",
+      "sourceTestDefinitions": [
+        "test_integrity_rejection_precedes_canonical_authority_replacement"
+      ],
+      "replacement": "# mcp/tests/test_review_assessment_history_repairs.py\n\n## Governing Overview\n\n[governing route overview](overview.md)\n\n## Purpose\n\nPins rejection of invalid retained assessment evidence before canonical curator authority replacement.\n\n## Code Commentary\n\nOne parametrized test supplies escaping-alias and corrupt-retained-byte inputs. The fixture prepares a nonempty curator authority and an assessment; one branch points an evidence alias outside the admitted namespace, and the other corrupts a retained evidence file after generation publication but before validation. Both expect CuratorCoherenceError, unchanged canonical bytes and a still-readable current authority.\n\nThe remaining test is this integrity/publication-order boundary. The four former namespace, provenance, channel/custody and snapshot-loss journeys named by the historical module description are no longer current coverage.\n\n## Evidence\n\n### Docs References\n\nNo Domain Documentation source is configured for this slice.\n\n### Repo-Internal References\n\n| Finding | Anchor | Source |\n| --- | --- | --- |\n| `_nonempty_fixture` supplies the current fixture or assertion described above. | `_nonempty_fixture` | mcp/tests/test_review_assessment_history_repairs.py:36-49 |\n| `_request` supplies the current fixture or assertion described above. | `_request` | mcp/tests/test_review_assessment_history_repairs.py:52-85 |\n| `test_integrity_rejection_precedes_canonical_authority_replacement` supplies the current fixture or assertion described above. | `test_integrity_rejection_precedes_canonical_authority_replacement` | mcp/tests/test_review_assessment_history_repairs.py:89-120 |\n"
+    },
+    {
+      "card": "onboarding/mcp/tests/test_review_bounded_pagination.py.md",
+      "source": "mcp/tests/test_review_bounded_pagination.py",
+      "sourceSha256": "84ee20238b717fd771c61790927d07cb1e42a8498d4516a793de488d7889a098",
+      "beforeCardSha256": "6e0166bb73a2199b496204f25c3ae9d4b62b919451222d65289fde1a5bac90e7",
+      "sealedR3Criterion": {
+        "path": "onboarding/mcp/tests/test_review_bounded_pagination.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 7,
+          "end": 25
+        },
+        "evidence": "The eight current pagination tests support comparison/item/matrix walks and cursor transport. The card still claims twelve cases, names removed remainder tests and says fixture writes use public production stores, while current imports use test-only RowStore constructors.",
+        "population": "each74 published reconciliation",
+        "ordinal": 54
+      },
+      "authoredPurpose": "Pins bounded review-record and matrix walks, exact continuation scope and entry-read laziness.",
+      "authoredReconciliation": "Eight test functions cover a complete one-page comparison, long walks without duplication/loss, partitioned item windows, the matrix walk named by the records collection, foreign/snapshot-mismatched records cursors, a moved generation requiring fresh selection, transport page bounds and the entry read's refusal to fetch record pages.\n\nThe fixture copies shared index-shaped populations and adds realization rows through test-only knowledge_rows_test_support. Production review/page composition is read back; fixture authoring names are not shipped storage admission. The deleted remainder-test population and former twelve-case coverage account are historical, not assertions supplied by this module.",
+      "sourceTestDefinitions": [
+        "test_a_complete_comparison_is_one_page_with_no_remainder_and_no_cursor",
+        "test_every_page_of_a_large_comparison_is_reachable_without_duplicate_or_loss",
+        "test_the_item_windows_partition_exactly_and_paging_loses_no_rendered_row",
+        "test_the_records_collection_states_the_matrix_walk_and_the_bound_it_applied",
+        "test_a_records_cursor_of_another_walk_or_another_snapshot_is_refused_by_name",
+        "test_a_cursor_from_a_moved_generation_is_refused_with_a_new_generation_action",
+        "test_the_transport_names_the_input_it_refused_and_bounds_the_page_it_applies",
+        "test_the_entry_read_populates_the_button_without_fetching_record_pages"
+      ],
+      "replacement": "# mcp/tests/test_review_bounded_pagination.py\n\n## Governing Overview\n\n[mcp/tests route overview](overview.md)\n\n## Purpose\n\nPins bounded review-record and matrix walks, exact continuation scope and entry-read laziness.\n\n## Code Commentary\n\nEight test functions cover a complete one-page comparison, long walks without duplication/loss, partitioned item windows, the matrix walk named by the records collection, foreign/snapshot-mismatched records cursors, a moved generation requiring fresh selection, transport page bounds and the entry read's refusal to fetch record pages.\n\nThe fixture copies shared index-shaped populations and adds realization rows through test-only knowledge_rows_test_support. Production review/page composition is read back; fixture authoring names are not shipped storage admission. The deleted remainder-test population and former twelve-case coverage account are historical, not assertions supplied by this module.\n\n## Evidence\n\n### Docs References\n\nNo Domain Documentation source is configured for this slice.\n\n### Repo-Internal References\n\n| Finding | Anchor | Source |\n| --- | --- | --- |\n| `test_every_page_of_a_large_comparison_is_reachable_without_duplicate_or_loss` supplies the current fixture or assertion described above. | `test_every_page_of_a_large_comparison_is_reachable_without_duplicate_or_loss` | mcp/tests/test_review_bounded_pagination.py:382-419 |\n| `test_the_records_collection_states_the_matrix_walk_and_the_bound_it_applied` supplies the current fixture or assertion described above. | `test_the_records_collection_states_the_matrix_walk_and_the_bound_it_applied` | mcp/tests/test_review_bounded_pagination.py:515-544 |\n| `test_a_cursor_from_a_moved_generation_is_refused_with_a_new_generation_action` supplies the current fixture or assertion described above. | `test_a_cursor_from_a_moved_generation_is_refused_with_a_new_generation_action` | mcp/tests/test_review_bounded_pagination.py:593-631 |\n| `test_the_entry_read_populates_the_button_without_fetching_record_pages` supplies the current fixture or assertion described above. | `test_the_entry_read_populates_the_button_without_fetching_record_pages` | mcp/tests/test_review_bounded_pagination.py:720-757 |\n| Fixture construction imports test-only row constructors; it does not call the retired canonical writer. | | mcp/tests/test_review_bounded_pagination.py:74-79 |\n| RowStore inserts index-shaped fixture rows without the retired production admission plane. | `RowStore` | mcp/tests/knowledge_rows_test_support.py:247-322 |\n"
+    },
+    {
+      "card": "onboarding/mcp/tests/test_review_family_context.py.md",
+      "source": "mcp/tests/test_review_family_context.py",
+      "sourceSha256": "16a16b0546435867904291c81ed812c87f35c07ff7808294d34a1e5abd64e064",
+      "beforeCardSha256": "246fc6f3c9c8ec4ce6017249d089ad369ff0e91b1d0f0659901ac9425da0f5f7",
+      "sealedR3Criterion": {
+        "path": "onboarding/mcp/tests/test_review_family_context.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 7,
+          "end": 25
+        },
+        "evidence": "The family-context read/HTTP/roster properties remain, but the card presents all populations as production family/membership authoring. The actual imports and builder use the test-only family/membership namespaces; shared source supports read composition, not retired writer admission.",
+        "population": "each74 published reconciliation",
+        "ordinal": 56
+      },
+      "authoredPurpose": "Pins exact family guarantees, memberships and bounded roster continuation in review context.",
+      "authoredReconciliation": "Recorded family revisions supply their own guarantees and memberships; a successor roster is not inherited. Shared members retain canonical revision identity across contexts, and repeated memberships do not inflate the distinct source population. A member change exposes its family context without declaring a guarantee change or an intent verdict.\n\nThe suite distinguishes measured no-family, absent knowledge, no selected subject, one-sided families and ambiguous family lineage. Roster truncation preserves owner counts and its continuation; tokens bind their exact walk, final pages carry only their share, and a multi-page walk terminates without loss. The client route assertions exercise the production adapter.\n\nFamily/revision/membership inputs are inserted by test-only knowledge_rows_test_support. Those fixtures do not enforce the former canonical family authoring plane. Current guarantees and roster meanings are read from exact supplied rows by the surviving production readers.",
+      "sourceTestDefinitions": [
+        "test_a_selected_invariant_resolves_both_recorded_families_with_their_own_guarantees",
+        "test_a_family_that_did_not_move_is_still_composed_at_its_own_revision",
+        "test_a_successor_family_revision_is_read_from_its_own_rows_not_inherited",
+        "test_a_shared_member_is_one_canonical_revision_referenced_in_two_contexts",
+        "test_a_member_change_makes_its_family_context_available_and_concludes_nothing",
+        "test_a_selection_in_no_recorded_family_is_a_measured_zero",
+        "test_missing_knowledge_is_the_reviews_refusal_not_an_empty_family_context",
+        "test_a_task_context_review_states_that_it_selected_no_subject",
+        "test_a_family_only_the_candidate_records_is_a_one_sided_context_with_a_stated_absence",
+        "test_an_ambiguous_family_lineage_names_its_candidates_and_chooses_no_revision",
+        "test_a_truncated_roster_stays_partial_with_the_owners_counts_and_continuation",
+        "test_the_published_cursor_continues_exactly_the_walk_that_minted_it",
+        "test_a_cursor_that_binds_no_walk_is_refused_beside_the_first_pages",
+        "test_naming_the_roster_collection_without_a_cursor_is_refused",
+        "test_a_token_that_is_not_a_roster_cursor_is_answered_with_the_owner_vocabulary",
+        "test_the_complete_source_population_does_not_grow_with_a_repeated_membership",
+        "test_the_family_context_reaches_the_client_over_the_real_review_route",
+        "test_a_roster_that_fits_one_page_is_carried_whole_and_says_so",
+        "test_the_final_page_of_a_long_walk_may_carry_only_its_own_share",
+        "test_a_roster_walk_larger_than_one_page_terminates_with_a_page_and_no_failure"
+      ],
+      "replacement": "# mcp/tests/test_review_family_context.py\n\n## Governing Overview\n\n[mcp tests route overview](overview.md)\n\n## Purpose\n\nPins exact family guarantees, memberships and bounded roster continuation in review context.\n\n## Code Commentary\n\nRecorded family revisions supply their own guarantees and memberships; a successor roster is not inherited. Shared members retain canonical revision identity across contexts, and repeated memberships do not inflate the distinct source population. A member change exposes its family context without declaring a guarantee change or an intent verdict.\n\nThe suite distinguishes measured no-family, absent knowledge, no selected subject, one-sided families and ambiguous family lineage. Roster truncation preserves owner counts and its continuation; tokens bind their exact walk, final pages carry only their share, and a multi-page walk terminates without loss. The client route assertions exercise the production adapter.\n\nFamily/revision/membership inputs are inserted by test-only knowledge_rows_test_support. Those fixtures do not enforce the former canonical family authoring plane. Current guarantees and roster meanings are read from exact supplied rows by the surviving production readers.\n\n## Evidence\n\n### Docs References\n\nNo Domain Documentation source is configured for this slice.\n\n### Repo-Internal References\n\n| Finding | Anchor | Source |\n| --- | --- | --- |\n| `test_a_successor_family_revision_is_read_from_its_own_rows_not_inherited` supplies the current fixture or assertion described above. | `test_a_successor_family_revision_is_read_from_its_own_rows_not_inherited` | mcp/tests/test_review_family_context.py:342-381 |\n| `test_a_shared_member_is_one_canonical_revision_referenced_in_two_contexts` supplies the current fixture or assertion described above. | `test_a_shared_member_is_one_canonical_revision_referenced_in_two_contexts` | mcp/tests/test_review_family_context.py:384-422 |\n| `test_missing_knowledge_is_the_reviews_refusal_not_an_empty_family_context` supplies the current fixture or assertion described above. | `test_missing_knowledge_is_the_reviews_refusal_not_an_empty_family_context` | mcp/tests/test_review_family_context.py:473-484 |\n| `test_the_published_cursor_continues_exactly_the_walk_that_minted_it` supplies the current fixture or assertion described above. | `test_the_published_cursor_continues_exactly_the_walk_that_minted_it` | mcp/tests/test_review_family_context.py:631-673 |\n| `test_a_roster_walk_larger_than_one_page_terminates_with_a_page_and_no_failure` supplies the current fixture or assertion described above. | `test_a_roster_walk_larger_than_one_page_terminates_with_a_page_and_no_failure` | mcp/tests/test_review_family_context.py:1095-1134 |\n| Fixture construction imports test-only row constructors; it does not call the retired canonical writer. | | mcp/tests/test_review_family_context.py:64-74 |\n| RowStore inserts index-shaped fixture rows without the retired production admission plane. | `RowStore` | mcp/tests/knowledge_rows_test_support.py:247-322 |\n"
+    },
+    {
+      "card": "onboarding/mcp/tests/test_review_family_member_sources.py.md",
+      "source": "mcp/tests/test_review_family_member_sources.py",
+      "sourceSha256": "86850473957bdada3a5ed1608f5e43ef52c7e631e63a511cc787c1027317d78d",
+      "beforeCardSha256": "38ffac0ac95adc7c04867f7f75d2753e1cb61b9310400a9425bef363a5884376",
+      "sealedR3Criterion": {
+        "path": "onboarding/mcp/tests/test_review_family_member_sources.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 7,
+          "end": 25
+        },
+        "evidence": "The actual roster reader and anchor resolver support member locations, ranges and unresolved states. The card additionally says every value comes from the production path and realization authoring; the actual realization constructors come from test-only support, so the universal production-owner claim is false.",
+        "population": "each74 published reconciliation",
+        "ordinal": 58
+      },
+      "authoredPurpose": "Pins each family member's recorded source locator and the range resolved in its exact selected Git blob.",
+      "authoredReconciliation": "The fixture inserts realization rows through test-only knowledge_rows_test_support and creates real source commits. Production read_family_roster and its side-selected anchor resolver supply the output. Construction through the test namespace is not a production realization write or admission check.\n\nAssertions preserve per-member role/rationale and distinguish symbol/range resolution, whole-file locators, missing or stale locators and ranges beyond the recorded blob. A symbol defined twice carries both defining ranges. Changing a file can preserve an unchanged attributed range on both sides; the existing source fields retain their wire values beside the structured locator fields. No range is inferred by parsing a detail sentence.",
+      "sourceTestDefinitions": [
+        "test_two_members_in_one_file_carry_their_own_locators_ranges_and_rationale",
+        "test_a_changed_file_keeps_its_unchanged_attributed_range_on_each_side",
+        "test_an_unresolved_locator_is_stated_with_its_recorded_locator_and_no_range",
+        "test_a_recorded_range_past_the_blob_end_is_unresolved_with_no_range",
+        "test_a_symbol_defined_twice_carries_every_defining_range",
+        "test_the_existing_source_fields_keep_their_published_values"
+      ],
+      "replacement": "# mcp/tests/test_review_family_member_sources.py\n\n## Governing Overview\n\n[mcp tests route overview](overview.md)\n\n## Purpose\n\nPins each family member's recorded source locator and the range resolved in its exact selected Git blob.\n\n## Code Commentary\n\nThe fixture inserts realization rows through test-only knowledge_rows_test_support and creates real source commits. Production read_family_roster and its side-selected anchor resolver supply the output. Construction through the test namespace is not a production realization write or admission check.\n\nAssertions preserve per-member role/rationale and distinguish symbol/range resolution, whole-file locators, missing or stale locators and ranges beyond the recorded blob. A symbol defined twice carries both defining ranges. Changing a file can preserve an unchanged attributed range on both sides; the existing source fields retain their wire values beside the structured locator fields. No range is inferred by parsing a detail sentence.\n\n## Evidence\n\n### Docs References\n\nNo Domain Documentation source is configured for this slice.\n\n### Repo-Internal References\n\n| Finding | Anchor | Source |\n| --- | --- | --- |\n| `test_two_members_in_one_file_carry_their_own_locators_ranges_and_rationale` supplies the current fixture or assertion described above. | `test_two_members_in_one_file_carry_their_own_locators_ranges_and_rationale` | mcp/tests/test_review_family_member_sources.py:264-292 |\n| `test_a_changed_file_keeps_its_unchanged_attributed_range_on_each_side` supplies the current fixture or assertion described above. | `test_a_changed_file_keeps_its_unchanged_attributed_range_on_each_side` | mcp/tests/test_review_family_member_sources.py:295-313 |\n| `test_an_unresolved_locator_is_stated_with_its_recorded_locator_and_no_range` supplies the current fixture or assertion described above. | `test_an_unresolved_locator_is_stated_with_its_recorded_locator_and_no_range` | mcp/tests/test_review_family_member_sources.py:316-338 |\n| `test_a_symbol_defined_twice_carries_every_defining_range` supplies the current fixture or assertion described above. | `test_a_symbol_defined_twice_carries_every_defining_range` | mcp/tests/test_review_family_member_sources.py:356-363 |\n| `test_the_existing_source_fields_keep_their_published_values` supplies the current fixture or assertion described above. | `test_the_existing_source_fields_keep_their_published_values` | mcp/tests/test_review_family_member_sources.py:366-387 |\n| Fixture construction imports test-only row constructors; it does not call the retired canonical writer. | | mcp/tests/test_review_family_member_sources.py:39-44 |\n| RowStore inserts index-shaped fixture rows without the retired production admission plane. | `RowStore` | mcp/tests/knowledge_rows_test_support.py:247-322 |\n"
+    },
+    {
+      "card": "onboarding/mcp/tests/test_review_final_output_receipt.py.md",
+      "source": "mcp/tests/test_review_final_output_receipt.py",
+      "sourceSha256": "5307f9668969ebd80f52282d6713453b521bc6bcc3c8bd7c53725219264aee8c",
+      "beforeCardSha256": "18b6c0cbe36922bcea10b986bc747a0a8d036254d41d9e129732bdd5e27b2c77",
+      "sealedR3Criterion": {
+        "path": "onboarding/mcp/tests/test_review_final_output_receipt.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 7,
+          "end": 25
+        },
+        "evidence": "The source now defines six tree-receipt tests and states without a canonical dataset. The card/rationale still claims eleven end-to-end canonical freeze/publication/closeout/integration scenarios and names removed tests. The shared file directly refutes that current coverage claim.",
+        "population": "each74 published reconciliation",
+        "ordinal": 59
+      },
+      "authoredPurpose": "Pins final-output receipts bound to retained code and memory tree comparisons.",
+      "authoredReconciliation": "TreeReceiptFixture creates real temporary code/memory Git repositories, captures their two-tree comparison through the existing owners and passes committed results to receipt attachment/read functions. It calls receipt owners directly; it does not perform the former end-to-end canonical dataset freeze, closeout or integration journeys.\n\nSix current test functions assert both delivered-tree matches and result keys, moved/absent memory or code coverage, unavailable/corrupt comparison handling without blocking an already completed result, forged source binding and leaf scoping, immutable previous receipts labelled by a successor, and readable historical v1 receipts with an explicit lack of memory-tree proof. The former eleven-journey/module-node account is removed coverage. No receipt here supplies semantic acceptance.",
+      "sourceTestDefinitions": [
+        "test_receipts_bind_both_delivered_trees_and_keep_both_result_keys",
+        "test_memory_movement_and_absent_memory_never_claim_delivered_coverage",
+        "test_unknown_or_corrupt_comparisons_do_not_block_completed_transaction",
+        "test_source_forgery_is_refused_and_receipts_are_leaf_scoped",
+        "test_retained_successor_labels_previous_receipt_without_rewriting_it",
+        "test_historical_v1_receipt_remains_readable_without_claiming_memory_tree_proof"
+      ],
+      "replacement": "# mcp/tests/test_review_final_output_receipt.py\n\n## Governing Overview\n\n[tests route overview](overview.md)\n\n## Purpose\n\nPins final-output receipts bound to retained code and memory tree comparisons.\n\n## Code Commentary\n\nTreeReceiptFixture creates real temporary code/memory Git repositories, captures their two-tree comparison through the existing owners and passes committed results to receipt attachment/read functions. It calls receipt owners directly; it does not perform the former end-to-end canonical dataset freeze, closeout or integration journeys.\n\nSix current test functions assert both delivered-tree matches and result keys, moved/absent memory or code coverage, unavailable/corrupt comparison handling without blocking an already completed result, forged source binding and leaf scoping, immutable previous receipts labelled by a successor, and readable historical v1 receipts with an explicit lack of memory-tree proof. The former eleven-journey/module-node account is removed coverage. No receipt here supplies semantic acceptance.\n\n## Evidence\n\n### Docs References\n\nNo Domain Documentation source is configured for this slice.\n\n### Repo-Internal References\n\n| Finding | Anchor | Source |\n| --- | --- | --- |\n| `TreeReceiptFixture` supplies the current fixture or assertion described above. | `TreeReceiptFixture` | mcp/tests/test_review_final_output_receipt.py:67-97 |\n| `test_receipts_bind_both_delivered_trees_and_keep_both_result_keys` supplies the current fixture or assertion described above. | `test_receipts_bind_both_delivered_trees_and_keep_both_result_keys` | mcp/tests/test_review_final_output_receipt.py:145-178 |\n| `test_memory_movement_and_absent_memory_never_claim_delivered_coverage` supplies the current fixture or assertion described above. | `test_memory_movement_and_absent_memory_never_claim_delivered_coverage` | mcp/tests/test_review_final_output_receipt.py:181-204 |\n| `test_source_forgery_is_refused_and_receipts_are_leaf_scoped` supplies the current fixture or assertion described above. | `test_source_forgery_is_refused_and_receipts_are_leaf_scoped` | mcp/tests/test_review_final_output_receipt.py:221-244 |\n| `test_historical_v1_receipt_remains_readable_without_claiming_memory_tree_proof` supplies the current fixture or assertion described above. | `test_historical_v1_receipt_remains_readable_without_claiming_memory_tree_proof` | mcp/tests/test_review_final_output_receipt.py:273-319 |\n"
+    },
+    {
+      "card": "onboarding/mcp/tests/test_review_intent_summary.py.md",
+      "source": "mcp/tests/test_review_intent_summary.py",
+      "sourceSha256": "d5aa04497ad4597feaf0defac85975591de49b5943ac029b43adb0db957d122a",
+      "beforeCardSha256": "9c0aafc4ef8d3da636acd2d20e23b1123142a364136111d7d33a14b32b941a27",
+      "sealedR3Criterion": {
+        "path": "onboarding/mcp/tests/test_review_intent_summary.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 7,
+          "end": 25
+        },
+        "evidence": "The six current summary tests support changed statement/guarantee counts and answer states. The card says their snapshots are built through shipped write operations, but actual imports use test-only RowStore/family/realization constructors.",
+        "population": "each74 published reconciliation",
+        "ordinal": 61
+      },
+      "authoredPurpose": "Pins changed-intent summary counts and typed answer states over two selected test datasets.",
+      "authoredReconciliation": "The six test functions distinguish added/revised/removed statements and guarantees from realization-only and membership-only changes. A revised member shared by two families counts once on each side. Status-only invariant or version-only family successors count as revisions; a same-guarantee member change remains membership-only. Divergent heads make the summary partial; absent knowledge carries an unavailable refusal and no counts. The route returns typed answers with 200 and an unwired process with 503.\n\n`_shared_base` and `_extend` populate/copy index-shaped datasets through test-only RowStore, family, membership and realization constructors imported from knowledge_rows_test_support. The actual intent_summary_of and route readers are exercised by the assertions; no shipped canonical writer, write lock or admission guarantee is measured by those fixture constructors.",
+      "sourceTestDefinitions": [
+        "test_counts_statement_and_guarantee_heads_and_keeps_other_changes_apart",
+        "test_a_revised_statement_two_families_share_counts_once_on_each_side",
+        "test_a_record_only_successor_counts_once_on_each_side",
+        "test_an_identity_without_one_head_makes_the_summary_partial",
+        "test_missing_knowledge_is_unavailable_with_its_refusal_never_zero",
+        "test_the_route_answers_every_typed_state_in_the_body"
+      ],
+      "replacement": "# mcp/tests/test_review_intent_summary.py\n\n## Governing Overview\n\n[mcp/tests overview](overview.md)\n\n## Purpose\n\nPins changed-intent summary counts and typed answer states over two selected test datasets.\n\n## Code Commentary\n\nThe six test functions distinguish added/revised/removed statements and guarantees from realization-only and membership-only changes. A revised member shared by two families counts once on each side. Status-only invariant or version-only family successors count as revisions; a same-guarantee member change remains membership-only. Divergent heads make the summary partial; absent knowledge carries an unavailable refusal and no counts. The route returns typed answers with 200 and an unwired process with 503.\n\n`_shared_base` and `_extend` populate/copy index-shaped datasets through test-only RowStore, family, membership and realization constructors imported from knowledge_rows_test_support. The actual intent_summary_of and route readers are exercised by the assertions; no shipped canonical writer, write lock or admission guarantee is measured by those fixture constructors.\n\n## Evidence\n\n### Docs References\n\nNo Domain Documentation source is configured for this slice.\n\n### Repo-Internal References\n\n| Finding | Anchor | Source |\n| --- | --- | --- |\n| `test_counts_statement_and_guarantee_heads_and_keeps_other_changes_apart` supplies the current fixture or assertion described above. | `test_counts_statement_and_guarantee_heads_and_keeps_other_changes_apart` | mcp/tests/test_review_intent_summary.py:265-320 |\n| `test_a_record_only_successor_counts_once_on_each_side` supplies the current fixture or assertion described above. | `test_a_record_only_successor_counts_once_on_each_side` | mcp/tests/test_review_intent_summary.py:345-384 |\n| `test_an_identity_without_one_head_makes_the_summary_partial` supplies the current fixture or assertion described above. | `test_an_identity_without_one_head_makes_the_summary_partial` | mcp/tests/test_review_intent_summary.py:387-407 |\n| `test_missing_knowledge_is_unavailable_with_its_refusal_never_zero` supplies the current fixture or assertion described above. | `test_missing_knowledge_is_unavailable_with_its_refusal_never_zero` | mcp/tests/test_review_intent_summary.py:410-422 |\n| `test_the_route_answers_every_typed_state_in_the_body` supplies the current fixture or assertion described above. | `test_the_route_answers_every_typed_state_in_the_body` | mcp/tests/test_review_intent_summary.py:425-461 |\n| Fixture construction imports test-only row constructors; it does not call the retired canonical writer. | | mcp/tests/test_review_intent_summary.py:45-59 |\n| RowStore inserts index-shaped fixture rows without the retired production admission plane. | `RowStore` | mcp/tests/knowledge_rows_test_support.py:247-322 |\n"
+    },
+    {
+      "card": "onboarding/mcp/tests/test_review_subject_catalogue.py.md",
+      "source": "mcp/tests/test_review_subject_catalogue.py",
+      "sourceSha256": "75ef1354f1d1539d769ce44fd1545786549fd85b484a10f0d41f9c3ede5d1c75",
+      "beforeCardSha256": "a8290ef688bd42e66a721a38d92f1bed1f57adea145c58fbbf248f6f0f23591b",
+      "sealedR3Criterion": {
+        "path": "onboarding/mcp/tests/test_review_subject_catalogue.py.md",
+        "locator": {
+          "kind": "line_range",
+          "start": 7,
+          "end": 25
+        },
+        "evidence": "The current catalogue tests support union, presence, loading and traversal. The card/rationale claims shipped store/batch operations including insert_invariant_identity; actual fixture construction uses test-only support and no such shipped batch owner remains.",
+        "population": "each74 published reconciliation",
+        "ordinal": 62
+      },
+      "authoredPurpose": "Pins the union, presence, totals, bounded loading and reviewability of a complete subject catalogue.",
+      "authoredReconciliation": "The shared diff fixture is copied and extended for retired, added and bare identities. RowStore and revision constructors come from test-only knowledge_rows_test_support; `_insert_bare_identity` inserts fixture identity rows. It is not a shipped batch insert_invariant_identity operation or proof of production append-only admission.\n\nProduction catalogue/entry/review composition checks kind grouping including before-only identities, one-sided statements, family listing without a statement side, every offered row's reviewability and a reason-carrying refusal for an unselectable bare identity. Neighbour reviews remain accessible. Entry totals describe the whole catalogue, an empty catalogue coexists with a measured source inventory, and bounded loading is protected by comparison bindings patched to raise. Browser traversal and relationship/roster paging belong to their separate owners.",
+      "sourceTestDefinitions": [
+        "test_the_catalogue_unions_both_snapshots_with_labels_and_presence",
+        "test_the_catalogue_stays_kind_grouped_when_retired_subjects_exist",
+        "test_a_retired_before_only_subject_stays_listed_and_reviewable",
+        "test_a_newly_added_after_only_subject_is_listed_beside_the_retired_half",
+        "test_a_family_subject_is_listed_without_an_establishable_statement_side",
+        "test_every_catalogue_row_opens_through_the_normal_review",
+        "test_a_recorded_but_unselectable_subject_is_listed_and_its_open_carries_the_reason",
+        "test_the_entry_route_carries_labelled_totals_for_the_whole_catalogue",
+        "test_zero_subjects_is_a_valid_catalogue_beside_the_source_inventory",
+        "test_catalogue_loading_runs_no_comparison"
+      ],
+      "replacement": "# mcp/tests/test_review_subject_catalogue.py\n\n## Governing Overview\n\n[mcp/tests route overview](overview.md)\n\n## Purpose\n\nPins the union, presence, totals, bounded loading and reviewability of a complete subject catalogue.\n\n## Code Commentary\n\nThe shared diff fixture is copied and extended for retired, added and bare identities. RowStore and revision constructors come from test-only knowledge_rows_test_support; `_insert_bare_identity` inserts fixture identity rows. It is not a shipped batch insert_invariant_identity operation or proof of production append-only admission.\n\nProduction catalogue/entry/review composition checks kind grouping including before-only identities, one-sided statements, family listing without a statement side, every offered row's reviewability and a reason-carrying refusal for an unselectable bare identity. Neighbour reviews remain accessible. Entry totals describe the whole catalogue, an empty catalogue coexists with a measured source inventory, and bounded loading is protected by comparison bindings patched to raise. Browser traversal and relationship/roster paging belong to their separate owners.\n\n## Evidence\n\n### Docs References\n\nNo Domain Documentation source is configured for this slice.\n\n### Repo-Internal References\n\n| Finding | Anchor | Source |\n| --- | --- | --- |\n| `test_the_catalogue_stays_kind_grouped_when_retired_subjects_exist` supplies the current fixture or assertion described above. | `test_the_catalogue_stays_kind_grouped_when_retired_subjects_exist` | mcp/tests/test_review_subject_catalogue.py:173-203 |\n| `test_every_catalogue_row_opens_through_the_normal_review` supplies the current fixture or assertion described above. | `test_every_catalogue_row_opens_through_the_normal_review` | mcp/tests/test_review_subject_catalogue.py:281-306 |\n| `test_a_recorded_but_unselectable_subject_is_listed_and_its_open_carries_the_reason` supplies the current fixture or assertion described above. | `test_a_recorded_but_unselectable_subject_is_listed_and_its_open_carries_the_reason` | mcp/tests/test_review_subject_catalogue.py:309-350 |\n| `test_zero_subjects_is_a_valid_catalogue_beside_the_source_inventory` supplies the current fixture or assertion described above. | `test_zero_subjects_is_a_valid_catalogue_beside_the_source_inventory` | mcp/tests/test_review_subject_catalogue.py:365-386 |\n| `test_catalogue_loading_runs_no_comparison` supplies the current fixture or assertion described above. | `test_catalogue_loading_runs_no_comparison` | mcp/tests/test_review_subject_catalogue.py:389-404 |\n| Fixture construction imports test-only row constructors; it does not call the retired canonical writer. | | mcp/tests/test_review_subject_catalogue.py:28-33 |\n| RowStore inserts index-shaped fixture rows without the retired production admission plane. | `RowStore` | mcp/tests/knowledge_rows_test_support.py:247-322 |\n"
+    }
+  ]
+}

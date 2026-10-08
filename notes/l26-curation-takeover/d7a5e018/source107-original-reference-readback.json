@@ -1,0 +1,571 @@
+{
+  "at": "2026-10-08T12:27:53.281901+00:00",
+  "original27": [
+    {
+      "sidecar": "onboarding/mcp/overview.json",
+      "reference": "109",
+      "state": "retained-reference",
+      "targets": [
+        {
+          "path": "mcp/src/agents_remember/application/review_evidence_records.py",
+          "locator": {
+            "kind": "symbol",
+            "name": "review_records_for_resolution"
+          },
+          "state": "current-target-present"
+        },
+        {
+          "path": "mcp/src/agents_remember/application/review_evidence_records.py",
+          "locator": {
+            "kind": "symbol",
+            "name": "_retired_channel"
+          },
+          "state": "current-target-present"
+        }
+      ],
+      "note": "Current curator records and explicit retired-channel unavailability"
+    },
+    {
+      "sidecar": "onboarding/mcp/overview.json",
+      "reference": "128",
+      "state": "retained-reference",
+      "targets": [
+        {
+          "path": "mcp/src/agents_remember/application/published_intent.py",
+          "locator": {
+            "kind": "symbol",
+            "name": "resolve_published_memory_tree"
+          },
+          "state": "current-target-present"
+        },
+        {
+          "path": "mcp/src/agents_remember/application/published_intent.py",
+          "locator": {
+            "kind": "symbol",
+            "name": "select_knowledge_dataset"
+          },
+          "state": "current-target-present"
+        }
+      ],
+      "note": "Published intent selects converted memory and its derived index"
+    },
+    {
+      "sidecar": "onboarding/mcp/overview.json",
+      "reference": "129",
+      "state": "removed-reference",
+      "targets": [],
+      "note": null
+    },
+    {
+      "sidecar": "onboarding/mcp/overview.json",
+      "reference": "130",
+      "state": "removed-reference",
+      "targets": [],
+      "note": null
+    },
+    {
+      "sidecar": "onboarding/mcp/overview.json",
+      "reference": "147",
+      "state": "retained-reference",
+      "targets": [
+        {
+          "path": "mcp/src/agents_remember/application/review_tree_comparison.py",
+          "locator": {
+            "kind": "symbol",
+            "name": "live_review_trees"
+          },
+          "state": "current-target-present"
+        }
+      ],
+      "note": "Current four-tree capture"
+    },
+    {
+      "sidecar": "onboarding/mcp/overview.json",
+      "reference": "187",
+      "state": "removed-reference",
+      "targets": [],
+      "note": null
+    },
+    {
+      "sidecar": "onboarding/mcp/src/agents_remember/application/knowledge_views.py.json",
+      "reference": "15",
+      "state": "retained-reference",
+      "targets": [
+        {
+          "path": "mcp/src/agents_remember/mcp/tools/knowledge.py",
+          "locator": {
+            "end": 37,
+            "kind": "line_range",
+            "start": 37
+          },
+          "state": "current-target-present"
+        },
+        {
+          "path": "mcp/src/agents_remember/mcp/tools/knowledge.py",
+          "locator": {
+            "end": 158,
+            "kind": "line_range",
+            "start": 158
+          },
+          "state": "current-target-present"
+        }
+      ],
+      "note": "The two real callers of the seam: the MCP tool registration and the projection writer, both importing `read_knowledge_view` from this module.\n\nAnchor: `read_knowledge_view`"
+    },
+    {
+      "sidecar": "onboarding/mcp/src/agents_remember/application/knowledge_views.py.json",
+      "reference": "4",
+      "state": "retained-reference",
+      "targets": [
+        {
+          "path": "mcp/src/agents_remember/application/knowledge_views.py",
+          "locator": {
+            "kind": "symbol",
+            "name": "_admit"
+          },
+          "state": "current-target-present"
+        },
+        {
+          "path": "mcp/src/agents_remember/application/knowledge_views.py",
+          "locator": {
+            "kind": "symbol",
+            "name": "_refused"
+          },
+          "state": "current-target-present"
+        },
+        {
+          "path": "mcp/src/agents_remember/models/knowledge/view.py",
+          "locator": {
+            "kind": "symbol",
+            "name": "ViewRefusal"
+          },
+          "state": "current-target-present"
+        },
+        {
+          "path": "mcp/src/agents_remember/models/knowledge/view.py",
+          "locator": {
+            "end": 184,
+            "kind": "line_range",
+            "start": 171
+          },
+          "state": "current-target-present"
+        },
+        {
+          "path": "mcp/src/agents_remember/application/knowledge_diff.py",
+          "locator": {
+            "end": 790,
+            "kind": "line_range",
+            "start": 790
+          },
+          "state": "current-target-present"
+        },
+        {
+          "path": "mcp/src/agents_remember/application/knowledge_diff.py",
+          "locator": {
+            "end": 817,
+            "kind": "line_range",
+            "start": 801
+          },
+          "state": "current-target-present"
+        }
+      ],
+      "note": "The ordered admission gate and its three refusals, run before the database is opened, and the single builder that turns a refusal into a typed result state."
+    },
+    {
+      "sidecar": "onboarding/mcp/src/agents_remember/application/knowledge_views.py.json",
+      "reference": "8",
+      "state": "retained-reference",
+      "targets": [
+        {
+          "path": "mcp/src/agents_remember/models/knowledge/view.py",
+          "locator": {
+            "kind": "symbol",
+            "name": "ViewContinuation"
+          },
+          "state": "current-target-present"
+        },
+        {
+          "path": "mcp/src/agents_remember/models/knowledge/view.py",
+          "locator": {
+            "kind": "symbol",
+            "name": "continuation_for"
+          },
+          "state": "current-target-present"
+        },
+        {
+          "path": "mcp/src/agents_remember/models/knowledge/view.py",
+          "locator": {
+            "kind": "symbol",
+            "name": "require_continuation_snapshot"
+          },
+          "state": "current-target-present"
+        },
+        {
+          "path": "mcp/src/agents_remember/application/knowledge_views.py",
+          "locator": {
+            "end": 63,
+            "kind": "line_range",
+            "start": 63
+          },
+          "state": "current-target-present"
+        },
+        {
+          "path": "mcp/src/agents_remember/application/knowledge_views.py",
+          "locator": {
+            "end": 140,
+            "kind": "line_range",
+            "start": 140
+          },
+          "state": "current-target-present"
+        },
+        {
+          "path": "mcp/src/agents_remember/models/knowledge/view.py",
+          "locator": {
+            "end": 552,
+            "kind": "line_range",
+            "start": 552
+          },
+          "state": "current-target-present"
+        }
+      ],
+      "note": "The continuation that binds a token to one snapshot, its minter, and the both-identities check the seam calls first."
+    },
+    {
+      "sidecar": "onboarding/mcp/src/agents_remember/application/knowledge_views.py.json",
+      "reference": "9",
+      "state": "retained-reference",
+      "targets": [
+        {
+          "path": "mcp/src/agents_remember/models/knowledge/view.py",
+          "locator": {
+            "kind": "symbol",
+            "name": "ViewScope"
+          },
+          "state": "current-target-present"
+        },
+        {
+          "path": "mcp/src/agents_remember/models/knowledge/view.py",
+          "locator": {
+            "kind": "symbol",
+            "name": "ViewPayload"
+          },
+          "state": "current-target-present"
+        }
+      ],
+      "note": "The completeness scope and the payload that refuses rows-remaining-without-a-continuation."
+    },
+    {
+      "sidecar": "onboarding/mcp/src/agents_remember/application/overview.json",
+      "reference": "144",
+      "state": "removed-reference",
+      "targets": [],
+      "note": null
+    },
+    {
+      "sidecar": "onboarding/mcp/src/agents_remember/application/overview.json",
+      "reference": "48",
+      "state": "removed-reference",
+      "targets": [],
+      "note": null
+    },
+    {
+      "sidecar": "onboarding/mcp/src/agents_remember/application/overview.json",
+      "reference": "90",
+      "state": "removed-reference",
+      "targets": [],
+      "note": null
+    },
+    {
+      "sidecar": "onboarding/mcp/src/agents_remember/application/overview.json",
+      "reference": "97",
+      "state": "removed-reference",
+      "targets": [],
+      "note": null
+    },
+    {
+      "sidecar": "onboarding/mcp/src/agents_remember/application/review_final_output_receipt.py.json",
+      "reference": "29",
+      "state": "retained-reference",
+      "targets": [
+        {
+          "path": "mcp/src/agents_remember/application/published_intent.py",
+          "locator": {
+            "kind": "symbol",
+            "name": "resolve_published_intent"
+          },
+          "state": "current-target-present"
+        },
+        {
+          "path": "mcp/src/agents_remember/application/published_intent.py",
+          "locator": {
+            "end": 80,
+            "kind": "line_range",
+            "start": 1
+          },
+          "state": "current-target-present"
+        }
+      ],
+      "note": "The publication route whose declared location the published channel is read at, and the read route that resolves it."
+    },
+    {
+      "sidecar": "onboarding/mcp/src/agents_remember/cli/knowledge_ingest.py.json",
+      "reference": "29",
+      "state": "removed-reference",
+      "targets": [],
+      "note": null
+    },
+    {
+      "sidecar": "onboarding/mcp/src/agents_remember/memory/knowledge/connection.py.json",
+      "reference": "10",
+      "state": "retained-reference",
+      "targets": [
+        {
+          "path": "mcp/src/agents_remember/memory/knowledge/families.py",
+          "locator": {
+            "kind": "symbol",
+            "name": "get_family_revision"
+          },
+          "state": "current-target-present"
+        }
+      ],
+      "note": "The graph readers that reuse the one-row helper."
+    },
+    {
+      "sidecar": "onboarding/mcp/src/agents_remember/memory/knowledge/refusals.py.json",
+      "reference": "9",
+      "state": "removed-reference",
+      "targets": [],
+      "note": null
+    },
+    {
+      "sidecar": "onboarding/mcp/src/agents_remember/memory/knowledge/store.py.json",
+      "reference": "14",
+      "state": "removed-reference",
+      "targets": [],
+      "note": null
+    },
+    {
+      "sidecar": "onboarding/mcp/src/agents_remember/memory/overview.json",
+      "reference": "28",
+      "state": "retained-reference",
+      "targets": [
+        {
+          "path": "mcp/src/agents_remember/application/review_evidence_records.py",
+          "locator": {
+            "kind": "symbol",
+            "name": "review_records_for_resolution"
+          },
+          "state": "current-target-present"
+        },
+        {
+          "path": "mcp/src/agents_remember/application/review_evidence_records.py",
+          "locator": {
+            "kind": "symbol",
+            "name": "_retired_channel"
+          },
+          "state": "current-target-present"
+        }
+      ],
+      "note": "Current record owner marks retired classes unavailable."
+    },
+    {
+      "sidecar": "onboarding/mcp/src/agents_remember/models/knowledge/result.py.json",
+      "reference": "20",
+      "state": "removed-reference",
+      "targets": [],
+      "note": null
+    },
+    {
+      "sidecar": "onboarding/mcp/src/agents_remember/models/knowledge/result.py.json",
+      "reference": "35",
+      "state": "removed-reference",
+      "targets": [],
+      "note": null
+    },
+    {
+      "sidecar": "onboarding/mcp/src/agents_remember/models/knowledge/view.py.json",
+      "reference": "11",
+      "state": "retained-reference",
+      "targets": [
+        {
+          "path": "mcp/src/agents_remember/models/knowledge/view.py",
+          "locator": {
+            "kind": "symbol",
+            "name": "require_admitted_ordering_input"
+          },
+          "state": "current-target-present"
+        },
+        {
+          "path": "mcp/src/agents_remember/models/knowledge/view.py",
+          "locator": {
+            "end": 522,
+            "kind": "line_range",
+            "start": 498
+          },
+          "state": "current-target-present"
+        },
+        {
+          "path": "mcp/src/agents_remember/application/knowledge_view_render.py",
+          "locator": {
+            "end": 67,
+            "kind": "line_range",
+            "start": 67
+          },
+          "state": "current-target-present"
+        },
+        {
+          "path": "mcp/src/agents_remember/application/knowledge_view_render.py",
+          "locator": {
+            "end": 277,
+            "kind": "line_range",
+            "start": 277
+          },
+          "state": "current-target-present"
+        },
+        {
+          "path": "mcp/src/agents_remember/models/knowledge/view.py",
+          "locator": {
+            "end": 658,
+            "kind": "line_range",
+            "start": 658
+          },
+          "state": "current-target-present"
+        },
+        {
+          "path": "mcp/src/agents_remember/models/knowledge/view.py",
+          "locator": {
+            "end": 682,
+            "kind": "line_range",
+            "start": 658
+          },
+          "state": "current-target-present"
+        }
+      ],
+      "note": "The closure of ordering to the four admitted inputs, refused with the admitted set as its expected value and with no fallback order."
+    },
+    {
+      "sidecar": "onboarding/mcp/src/agents_remember/models/overview.json",
+      "reference": "199",
+      "state": "historical-unavailable-explicitly-qualified",
+      "targets": [
+        {
+          "path": "mcp/src/agents_remember/models",
+          "locator": {},
+          "state": "historical-or-unresolved"
+        }
+      ],
+      "note": "**The six authored commands and the union they join, which is the operation's widened reach.**",
+      "resolution": "Old unresolved candidate.py extent retained as historical-only payload; current Markdown explicitly reports unavailable historical evidence and excludes a current command/union guarantee."
+    },
+    {
+      "sidecar": "onboarding/mcp/src/agents_remember/models/tools/knowledge_responses.py.json",
+      "reference": "32",
+      "state": "removed-reference",
+      "targets": [],
+      "note": null
+    },
+    {
+      "sidecar": "onboarding/mcp/src/agents_remember/worktrees/overview.json",
+      "reference": "23",
+      "state": "removed-reference",
+      "targets": [],
+      "note": null
+    },
+    {
+      "sidecar": "onboarding/mcp/tests/knowledge_fixture_test_support.py.json",
+      "reference": "8",
+      "state": "removed-reference",
+      "targets": [],
+      "note": null
+    }
+  ],
+  "unresolvedUnqualifiedTargets": [],
+  "original17": [
+    {
+      "path": "onboarding/mcp/src/agents_remember/application/knowledge_before_half.py.md",
+      "literal": "knowledge_baseline_generation.py.md",
+      "oldLiteralPresent": false
+    },
+    {
+      "path": "onboarding/mcp/src/agents_remember/application/knowledge_before_half.py.md",
+      "literal": "knowledge_first_generation.py.md",
+      "oldLiteralPresent": false
+    },
+    {
+      "path": "onboarding/mcp/src/agents_remember/application/knowledge_before_half.py.md",
+      "literal": "knowledge_baseline_generation.py.md",
+      "oldLiteralPresent": false
+    },
+    {
+      "path": "onboarding/mcp/src/agents_remember/application/knowledge_before_half.py.md",
+      "literal": "knowledge_baseline_generation.py.md",
+      "oldLiteralPresent": false
+    },
+    {
+      "path": "onboarding/mcp/src/agents_remember/application/overview.md",
+      "literal": "review_unchanged_knowledge.py.md",
+      "oldLiteralPresent": false
+    },
+    {
+      "path": "onboarding/mcp/src/agents_remember/application/overview.md",
+      "literal": "../cli/review_comparison_record.py.md",
+      "oldLiteralPresent": false
+    },
+    {
+      "path": "onboarding/mcp/src/agents_remember/application/overview.md",
+      "literal": "../cli/review_comparison_record.py.md",
+      "oldLiteralPresent": false
+    },
+    {
+      "path": "onboarding/mcp/src/agents_remember/application/overview.md",
+      "literal": "knowledge_projection.py.md",
+      "oldLiteralPresent": false
+    },
+    {
+      "path": "onboarding/mcp/src/agents_remember/application/overview.md",
+      "literal": "knowledge_projection.py.md",
+      "oldLiteralPresent": false
+    },
+    {
+      "path": "onboarding/mcp/src/agents_remember/application/overview.md",
+      "literal": "review_comparison_freeze.py.md",
+      "oldLiteralPresent": false
+    },
+    {
+      "path": "onboarding/mcp/src/agents_remember/application/review_candidate_resolution.py.md",
+      "literal": "knowledge_baseline_generation.py.md",
+      "oldLiteralPresent": false
+    },
+    {
+      "path": "onboarding/mcp/src/agents_remember/cli/knowledge_ingest.py.md",
+      "literal": "../application/knowledge_baseline_generation.py.md",
+      "oldLiteralPresent": false
+    },
+    {
+      "path": "onboarding/mcp/src/agents_remember/memory/overview.md",
+      "literal": "knowledge/publication.py.md",
+      "oldLiteralPresent": false
+    },
+    {
+      "path": "onboarding/mcp/src/agents_remember/memory/overview.md",
+      "literal": "knowledge_index/adapters.py.md",
+      "oldLiteralPresent": false
+    },
+    {
+      "path": "onboarding/mcp/src/agents_remember/models/overview.md",
+      "literal": "knowledge/projection_manifest.py.md",
+      "oldLiteralPresent": false
+    },
+    {
+      "path": "onboarding/mcp/src/agents_remember/worktrees/overview.md",
+      "literal": "knowledge_conflict.py.md",
+      "oldLiteralPresent": false
+    },
+    {
+      "path": "onboarding/mcp/src/agents_remember/worktrees/overview.md",
+      "literal": "knowledge_conflict.py.md",
+      "oldLiteralPresent": false
+    }
+  ],
+  "oldLiteralsPresent": 0
+}
