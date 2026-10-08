@@ -1,0 +1,315 @@
+{
+  "authorization": "Curator4724d9c2-cb32-4eaf-8d81-34c4734d4f34 request991729fc-2705-4e72-bc16-04de7dd97c80; Manager3be current CODEPASS curation admission",
+  "carried": [
+    "PRF-0SKZY2",
+    "PRF-AGR4G1",
+    "PRF-CB63WR",
+    "PRF-D5CPX7",
+    "PRF-J13VEW",
+    "PRF-NSQZEC",
+    "RLZ-1WK7P0",
+    "RLZ-6036XR",
+    "RLZ-TB9TST",
+    "RLZ-TG7AAM",
+    "RLZ-VQZWNZ"
+  ],
+  "codeTree": "02999c710272fdcf6b9fe262d83298d8f8e522c1",
+  "entries": [
+    {
+      "action": "created",
+      "handoffEntry": "MIK-R107@v1 \u00a74 status current66",
+      "id": "RLZ-3PZ3W9",
+      "invariant": "INV-04HZNY",
+      "kind": "realization",
+      "sidecar": "onboarding/mcp/src/agents_remember/serving/paseo/paseo_node.py.json"
+    },
+    {
+      "action": "created",
+      "handoffEntry": "MIK-R107@v1 \u00a74 status current66",
+      "id": "RLZ-91PA2M",
+      "invariant": "INV-04HZNY",
+      "kind": "realization",
+      "sidecar": "onboarding/mcp/src/agents_remember/serving/paseo/paseo_daemon.py.json"
+    },
+    {
+      "action": "created",
+      "handoffEntry": "MIK-R107@v1 \u00a74 status current66",
+      "id": "RLZ-8S74KK",
+      "invariant": "INV-04HZNY",
+      "kind": "realization",
+      "sidecar": "onboarding/mcp/src/agents_remember/serving/paseo/paseo_start.py.json"
+    },
+    {
+      "action": "created",
+      "handoffEntry": "MIK-R107@v1 \u00a74 status current66",
+      "id": "RLZ-NQ33YR",
+      "invariant": "INV-04HZNY",
+      "kind": "realization",
+      "sidecar": "onboarding/mcp/src/agents_remember/serving/paseo/paseo_start.py.json"
+    },
+    {
+      "action": "created",
+      "handoffEntry": "MIK-R107@v1 \u00a74 status current66",
+      "id": "PRF-W4J3AW",
+      "invariant": "INV-04HZNY",
+      "kind": "proof",
+      "sidecar": "onboarding/mcp/tests/test_paseo_start.py.json"
+    },
+    {
+      "action": "created",
+      "handoffEntry": "MIK-R107@v1 \u00a74 transition current66",
+      "id": "RLZ-2Z1GQ4",
+      "invariant": "INV-2RWJV5",
+      "kind": "realization",
+      "sidecar": "onboarding/mcp/src/agents_remember/serving/paseo/paseo_provision.py.json"
+    },
+    {
+      "action": "created",
+      "handoffEntry": "MIK-R107@v1 \u00a74 transition current66",
+      "id": "RLZ-YQDX5P",
+      "invariant": "INV-2RWJV5",
+      "kind": "realization",
+      "sidecar": "onboarding/mcp/src/agents_remember/serving/paseo/paseo_provision.py.json"
+    },
+    {
+      "action": "created",
+      "handoffEntry": "MIK-R107@v1 \u00a74 transition current66",
+      "id": "RLZ-0SYP4C",
+      "invariant": "INV-2RWJV5",
+      "kind": "realization",
+      "sidecar": "onboarding/mcp/src/agents_remember/serving/paseo/paseo_run.py.json"
+    },
+    {
+      "action": "created",
+      "handoffEntry": "MIK-R107@v1 \u00a74 transition current66",
+      "id": "PRF-QJK022",
+      "invariant": "INV-2RWJV5",
+      "kind": "proof",
+      "sidecar": "onboarding/mcp/tests/test_paseo_install_no_stop.py.json"
+    }
+  ],
+  "evidence": [
+    {
+      "entry": "MIK-R107@v1 \u00a74 status current66",
+      "evidence": [
+        "notes/reports/role-launch/260928-MIK-L107-worker-c1ec121b-f3da-4e9e-ae4a-36795d5b9d81/freeze2/control22/matched/candidate26-observes-live22-status.json; candidate26-live22-public-dashboard-status.json; final26/status-post-sync.json; focused-tests-post-sync-final.log"
+      ],
+      "storedIn": [
+        "INV-04HZNY"
+      ],
+      "tests": []
+    },
+    {
+      "entry": "MIK-R107@v1 \u00a74 transition current66",
+      "evidence": [
+        "notes/reports/role-launch/260928-MIK-L107-worker-c1ec121b-f3da-4e9e-ae4a-36795d5b9d81/freeze2/focused-tests-post-sync-final.log; exact test verifies deferral, restart, retained marker and no-change repeat"
+      ],
+      "storedIn": [
+        "INV-2RWJV5"
+      ],
+      "tests": []
+    },
+    {
+      "entry": "MIK-R107@v1 \u00a73 current66",
+      "evidence": [
+        "notes/reports/role-launch/260928-MIK-L107-worker-c1ec121b-f3da-4e9e-ae4a-36795d5b9d81/freeze2/control22/matched/dispatch-result.json; original26 post-freeze1-dispatch-result.json; same full refusal and arguments, fresh22 native seat; Owner carries readiness to L100"
+      ],
+      "storedIn": [
+        "DEC-E8SS2Q"
+      ],
+      "tests": []
+    }
+  ],
+  "historyRows": [
+    {
+      "disposition": "no_impact",
+      "history": "knowledge/history/260928-MIK-L107.json",
+      "id": "ROW-36079P",
+      "subject": "onboarding:docs/reference/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "history": "knowledge/history/260928-MIK-L107.json",
+      "id": "ROW-GNWNMQ",
+      "subject": "onboarding:mcp/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "history": "knowledge/history/260928-MIK-L107.json",
+      "id": "ROW-DKJDH6",
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_host/contract.json"
+    },
+    {
+      "disposition": "no_impact",
+      "history": "knowledge/history/260928-MIK-L107.json",
+      "id": "ROW-MWQ3FN",
+      "subject": "onboarding:mcp/src/agents_remember/serving/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "history": "knowledge/history/260928-MIK-L107.json",
+      "id": "ROW-Q2A24C",
+      "subject": "onboarding:mcp/src/agents_remember/serving/paseo/paseo_daemon.py"
+    },
+    {
+      "disposition": "no_impact",
+      "history": "knowledge/history/260928-MIK-L107.json",
+      "id": "ROW-6EG13A",
+      "subject": "onboarding:mcp/src/agents_remember/serving/paseo/paseo_node.py"
+    },
+    {
+      "disposition": "no_impact",
+      "history": "knowledge/history/260928-MIK-L107.json",
+      "id": "ROW-5W08B9",
+      "subject": "onboarding:mcp/src/agents_remember/serving/paseo/paseo_provision.py"
+    },
+    {
+      "disposition": "no_impact",
+      "history": "knowledge/history/260928-MIK-L107.json",
+      "id": "ROW-B6ENAJ",
+      "subject": "onboarding:mcp/src/agents_remember/serving/paseo/paseo_start.py"
+    },
+    {
+      "disposition": "no_impact",
+      "history": "knowledge/history/260928-MIK-L107.json",
+      "id": "ROW-CEHZDW",
+      "subject": "onboarding:mcp/tests/evidence-lifecycle.toml"
+    },
+    {
+      "disposition": "no_impact",
+      "history": "knowledge/history/260928-MIK-L107.json",
+      "id": "ROW-9WQ6JB",
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "history": "knowledge/history/260928-MIK-L107.json",
+      "id": "ROW-KR2YEX",
+      "subject": "onboarding:mcp/tests/test_paseo_install_no_stop.py"
+    },
+    {
+      "disposition": "no_impact",
+      "history": "knowledge/history/260928-MIK-L107.json",
+      "id": "ROW-WC52T5",
+      "subject": "onboarding:mcp/tests/test_paseo_start.py"
+    },
+    {
+      "disposition": "no_impact",
+      "history": "knowledge/history/260928-MIK-L107.json",
+      "id": "ROW-YPN1XG",
+      "subject": "onboarding:overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L107.json",
+      "id": "ROW-HCK4VA",
+      "subject": "hunk:sha256:55d468aa401f556d41c3b78a3cae0063777d95e3317f10cf3baefaa31a279bb4"
+    },
+    {
+      "disposition": "no_invariant",
+      "history": "knowledge/history/260928-MIK-L107.json",
+      "id": "ROW-8EA37R",
+      "subject": "hunk:sha256:ed7739236c90d27e6f5b368b4b8af0b95a035b5eb7d37c41ae517c1d5d5863d8"
+    },
+    {
+      "disposition": "changed",
+      "history": "knowledge/history/260928-MIK-L107.json",
+      "id": "ROW-TKZP97",
+      "subject": "INV-BGV9YT"
+    },
+    {
+      "disposition": "no_impact",
+      "history": "knowledge/history/260928-MIK-L107.json",
+      "id": "ROW-86DV0P",
+      "subject": "INV-FM3V0M"
+    },
+    {
+      "disposition": "changed",
+      "history": "knowledge/history/260928-MIK-L107.json",
+      "id": "ROW-AWTGNQ",
+      "subject": "FAM-QDY93G"
+    },
+    {
+      "disposition": "changed",
+      "history": "knowledge/history/260928-MIK-L107.json",
+      "id": "ROW-9S2MET",
+      "subject": "INV-04HZNY"
+    },
+    {
+      "disposition": "changed",
+      "history": "knowledge/history/260928-MIK-L107.json",
+      "id": "ROW-YYPXJZ",
+      "subject": "INV-2RWJV5"
+    }
+  ],
+  "memoryRoot": "/home/firefox/projects/ar-coordination/worktrees/agents-remember/107_the-host-runs-on-the-current-node-c3e0aea30e-ar/memory-107_the-host-runs-on-the-current-node-c3e0aea30e",
+  "notes": [],
+  "operation": "knowledge-write",
+  "owner": "260928-MIK-L107",
+  "problems": [
+    {
+      "message": "consequences: Input should be a valid tuple",
+      "where": "knowledge/decisions/DEC-E8SS2Q-the-host-uses-current-node-with-evidenced-fallback.json"
+    }
+  ],
+  "records": [
+    {
+      "action": "created",
+      "handoffEntry": "MIK-R107@v1 \u00a74 status current66",
+      "id": "INV-04HZNY",
+      "kind": "invariant",
+      "path": "knowledge/invariants/INV-04HZNY-public-paseo-and-dashboard-status-compare.json",
+      "revision": 1
+    },
+    {
+      "action": "created",
+      "handoffEntry": "MIK-R107@v1 \u00a74 transition current66",
+      "id": "INV-2RWJV5",
+      "kind": "invariant",
+      "path": "knowledge/invariants/INV-2RWJV5-an-install-defers-a-live-host.json",
+      "revision": 1
+    },
+    {
+      "action": "updated",
+      "handoffEntry": "L107-node-pin",
+      "id": "INV-BGV9YT",
+      "kind": "invariant",
+      "path": "knowledge/invariants/INV-BGV9YT-the-host-uses-the-absolute-product.json",
+      "revision": 2
+    },
+    {
+      "action": "updated",
+      "handoffEntry": "L107-host-family",
+      "id": "FAM-QDY93G",
+      "kind": "family",
+      "path": "knowledge/families/FAM-QDY93G-one-build-owned-host-lifecycle.json",
+      "revision": 2
+    },
+    {
+      "action": "created",
+      "handoffEntry": "MIK-R107@v1 \u00a73 current66",
+      "id": "DEC-E8SS2Q",
+      "kind": "decision",
+      "path": "knowledge/decisions/DEC-E8SS2Q-the-host-uses-current-node-with-evidenced-fallback.json",
+      "revision": 1
+    }
+  ],
+  "removed": [],
+  "requirementEndpoints": [
+    {
+      "code": "task-intent-requirement-packet-missing",
+      "detail": "approved requirement packet is absent or unreadable: requirements/MIK-R107-v1.md",
+      "endpoint": "agents-remember/260928_maintained-invariant-knowledge#MIK-R107@v1",
+      "field": "links.2",
+      "record": "DEC-E8SS2Q",
+      "relation": "explains",
+      "state": "unresolved"
+    }
+  ],
+  "rulings": [
+    "MIK-R107@v1 \u00a73 current66"
+  ],
+  "state": "refused",
+  "violations": [],
+  "written": []
+}

@@ -12,9 +12,16 @@ The install no-stop cases: a live host is preserved after admission and at every
 
 The module drives `provision_for_install`/`provision_runtime` with the late-restart and observation-failure fakes and the real provider-write rollback path.
 
+The earlier-Node case also checks explicit provision: the replacement host starts once on the contract Node, its earlier sibling Node folder is reported as unused by that host with its marker retained, and a repeated provision changes nothing.
+
 ## Evidence
 
+
 - The post-admission preservation case. [1]
+
+
 - The irreversible-site case. [2]
+
 - The late-restart case. [3]
+
 - The locked-input case. [4]

@@ -28,9 +28,9 @@
     "leaf": "260928-MIK-L96",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "The host uses the absolute product Node22.23.2 on Linux x86_64 with /proc, verifies the official archive digest before unpacking, and refuses other platforms or a foreign target.",
+  "statement": "The host uses the absolute product Node26.11.1 on Linux x86_64 with /proc, verifies the official archive digest before unpacking, and refuses other platforms or a foreign target.",
   "status": "proposed",
   "supersedes": []
 }

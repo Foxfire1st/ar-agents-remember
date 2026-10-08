@@ -7,13 +7,35 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b344e8887beaa26393702f407f5c991067377c97",
-            "content": "sha256:8a34567a31e984f7ae8a2be005a46b5e3cf03565a031ade3863de484fa13cf96",
+            "blob": "44951ce536af7214d13fab1eb33c54a487589000",
+            "content": "sha256:ad98876cc3becdf424d3cf0d2f5db3bd820e37576f6e17ba5adfa5a0669d3574",
             "locator": {
               "kind": "file"
             }
           },
           "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Official v26.11.1 distribution checksums identify the selected linux-x64 archive digest; the retained inspection is dated2026-10-08T08:39:28Z.",
+      "targets": [
+        {
+          "document": {
+            "document": "https://nodejs.org/dist/v26.11.1/SHASUMS256.txt"
+          },
+          "kind": "external"
+        }
+      ]
+    },
+    "3": {
+      "note": "The official release index inspected2026-10-08T09:54:43Z lists26.11.1 as the newest26 release; this retrieval does not assert later releases.",
+      "targets": [
+        {
+          "document": {
+            "document": "https://nodejs.org/dist/index.json"
+          },
+          "kind": "external"
         }
       ]
     }

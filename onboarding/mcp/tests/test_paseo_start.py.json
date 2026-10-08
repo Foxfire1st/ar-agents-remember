@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "e8286af9dec6b2a397423d624b9a822b5b5f58bf",
+        "blob": "03d20024f657d641e591e1ecd7e37fc538ae412b",
         "content": "sha256:63ad8475f0cb389ef7cd97542f0f0564424b439813bb98c4005540053cd1449c",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "e8286af9dec6b2a397423d624b9a822b5b5f58bf",
+        "blob": "03d20024f657d641e591e1ecd7e37fc538ae412b",
         "content": "sha256:e44ba773f9883c429de51c7802915cff75329d8156b2d040569d60e5e14a8955",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,24 @@
     },
     {
       "anchor": {
-        "blob": "e8286af9dec6b2a397423d624b9a822b5b5f58bf",
+        "blob": "03d20024f657d641e591e1ecd7e37fc538ae412b",
+        "content": "sha256:2c33923f8d72dac9b6cc9bc5b93f359dcf15643d975836213cc7cf79c6d729f3",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_running_host_is_read_only_including_mismatches_and_session_names"
+        }
+      },
+      "facet": "Both public status paths show an earlier executable mismatch even with the contract target present; a matching executable has no restart reason, and neither observation mutates files, settings or the host.",
+      "id": "PRF-FHPS2X",
+      "invariant": "INV-7HC1QH",
+      "origin": {
+        "handoffEntry": "MIK-R107@v1 §4 status current66",
+        "leaf": "260928-MIK-L107"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "03d20024f657d641e591e1ecd7e37fc538ae412b",
         "content": "sha256:24daec0b9d5e0027ce12944c6867f99d4e79c27b33d448f7292ce30477641708",
         "locator": {
           "kind": "symbol",
@@ -60,7 +77,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e8286af9dec6b2a397423d624b9a822b5b5f58bf",
+            "blob": "03d20024f657d641e591e1ecd7e37fc538ae412b",
             "content": "sha256:24daec0b9d5e0027ce12944c6867f99d4e79c27b33d448f7292ce30477641708",
             "locator": {
               "kind": "symbol",
@@ -76,7 +93,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e8286af9dec6b2a397423d624b9a822b5b5f58bf",
+            "blob": "03d20024f657d641e591e1ecd7e37fc538ae412b",
             "content": "sha256:63ad8475f0cb389ef7cd97542f0f0564424b439813bb98c4005540053cd1449c",
             "locator": {
               "kind": "symbol",
@@ -92,23 +109,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e8286af9dec6b2a397423d624b9a822b5b5f58bf",
+            "blob": "03d20024f657d641e591e1ecd7e37fc538ae412b",
             "content": "sha256:349a91601550572c5d8c1b59b1132c389ca1c7d3c18b5a71d3420a2f5787086d",
             "locator": {
               "kind": "symbol",
               "name": "test_contending_start_joins_the_same_owned_outcome_without_retry"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "e8286af9dec6b2a397423d624b9a822b5b5f58bf",
-            "content": "sha256:ec073667bc1026ecc75a1064214f0d1f9cacdd6f2cce8e60c39a73d4a58a8268",
-            "locator": {
-              "end": 153,
-              "kind": "line_range",
-              "start": 118
             }
           },
           "kind": "test"
@@ -120,7 +125,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e8286af9dec6b2a397423d624b9a822b5b5f58bf",
+            "blob": "03d20024f657d641e591e1ecd7e37fc538ae412b",
             "content": "sha256:9d76547d4506a58d8050882fe6c71817ce0cb3b95c8b626f6dc2d37d4be2540e",
             "locator": {
               "kind": "symbol",

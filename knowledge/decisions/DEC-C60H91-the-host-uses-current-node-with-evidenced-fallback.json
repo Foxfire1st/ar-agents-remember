@@ -1,0 +1,105 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "The selected current Node line and the evidence condition for using24 constrain later runtime changes; an unrelated native tool gap must not silently select an older runtime."
+  },
+  "alternatives": [
+    {
+      "option": "Select the newest Node26 release for the host build.",
+      "reason": "The developer selected the current line; the sandbox host and bridge work on26 and an offered Pi agent replies. The same native startup refusal occurs on the matched22 control.",
+      "status": "chosen"
+    },
+    {
+      "option": "Select the newest Node24 release if the host fails on26.",
+      "reason": "The authorized fallback requires a failure attributable to the host on26; the matched startup gap supplies no such evidence.",
+      "reconsider_when": "A controlled witness establishes that the host fails on26 and the failure is absent on the matched control.",
+      "status": "deferred"
+    },
+    {
+      "option": "Keep Node22 if both selected newer lines fail.",
+      "reason": "Retaining the previous line is only the packet fallback after both newer host attempts fail; no such failure occurred.",
+      "reconsider_when": "Both authorized newer Node host attempts fail with retained attributable evidence.",
+      "status": "deferred"
+    }
+  ],
+  "consequences": [
+    "The packaged contract pins26.11.1 and its verified archive. A common startup tool refusal does not activate24. Provisioning the developer installation remains a separate post-landing action owned by the Architect."
+  ],
+  "context": "The host build must move from its old Node pin to the current release while the operational witness distinguishes a Node failure from an unrelated startup tool gap.",
+  "decider": "Developer D113, quoted in DEVELOPER-DIRECTION.md; approved MIK-R107@v1 current66 witness/control amendment.",
+  "id": "DEC-C60H91",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "INV-BGV9YT"
+    },
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "44951ce536af7214d13fab1eb33c54a487589000",
+        "content": "sha256:ad98876cc3becdf424d3cf0d2f5db3bd820e37576f6e17ba5adfa5a0669d3574",
+        "locator": {
+          "kind": "file"
+        },
+        "path": "mcp/src/agents_remember/package_data/paseo_host/contract.json"
+      }
+    },
+    {
+      "relation": "explains",
+      "target": {
+        "id": "MIK-R107",
+        "packet": "requirements/MIK-R107-v1-the-host-runs-on-the-current-node.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    },
+    {
+      "alternative": 1,
+      "relation": "reconsider_on",
+      "target": {
+        "id": "MIK-R107",
+        "packet": "requirements/MIK-R107-v1-the-host-runs-on-the-current-node.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    },
+    {
+      "alternative": 2,
+      "relation": "reconsider_on",
+      "target": {
+        "id": "MIK-R107",
+        "packet": "requirements/MIK-R107-v1-the-host-runs-on-the-current-node.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/role-launch/260928-MIK-L107-worker-c1ec121b-f3da-4e9e-ae4a-36795d5b9d81/freeze2/control22/matched/dispatch-result.json; original26 post-freeze1-dispatch-result.json; same full refusal and arguments, fresh22 native seat; Owner carries readiness to L100",
+        "D113 DEVELOPER-DIRECTION.md; requirements/MIK-R107-v1-the-host-runs-on-the-current-node.md SHA25666d1eebc46a88fd0993b7d9bd15f0777b97f34a2e4579e26764dfd191e5e2c99; https://nodejs.org/dist/v26.11.1/SHASUMS256.txt versionv26.11.1 retrieved2026-10-08T08:39:28Z inspectedSHA25675ff0c104acddb008964dd5feb88f58844b652820cb1cb01696f95031372b293 retained/home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/notes/reports/L107-curator-retained-991729fc-2705-4e72-bc16-04de7dd97c80/SHASUMS256-26.txt; https://nodejs.org/dist/index.json retrieved2026-10-08T09:54:43Z inspectedSHA256c7005c9dd6c35ded6bab489597ab51094dc3e923e19b6236014e652b7cf5a7cb retained/home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/notes/reports/L107-curator-retained-991729fc-2705-4e72-bc16-04de7dd97c80/node-index-final.json"
+      ],
+      "path": "handoff.json"
+    },
+    "handoffEntry": "MIK-R107@v1 §3 current66",
+    "leaf": "260928-MIK-L107",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

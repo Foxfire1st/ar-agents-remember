@@ -10,6 +10,24 @@
           "name": "_check_install_restart"
         }
       },
+      "id": "RLZ-A48E62",
+      "invariant": "INV-CB36W0",
+      "origin": {
+        "handoffEntry": "MIK-R107@v1 §4 transition current66",
+        "leaf": "260928-MIK-L107"
+      },
+      "rationale": "The install admission owner detects a live executable mismatch before Node acquisition or home mutations.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "cf0e20b25616726e024ebe9a65135521b342eb6e",
+        "content": "sha256:b3755c26c13c6f8ce7b58a66c46c3ed405eb8856f94c83384ecba50059be2098",
+        "locator": {
+          "kind": "symbol",
+          "name": "_check_install_restart"
+        }
+      },
       "id": "RLZ-PXP20H",
       "invariant": "INV-EQH5X6",
       "origin": {

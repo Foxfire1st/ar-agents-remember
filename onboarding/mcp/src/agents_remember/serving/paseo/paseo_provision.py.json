@@ -3,8 +3,44 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "70b38647aec70c72dae4a0462146b98d004ccbf1",
-        "content": "sha256:be2a8739238b1bf0dc5ac637a8989ceafb9e66e9a4bf12d04c1237fdfd3ce788",
+        "blob": "8b2e75098a4b2a32b4c965d867f0f32828a3fe36",
+        "content": "sha256:aea3ec1737896b4b455444cff71e058b35306cdaed159bd4da04950dfc962897",
+        "locator": {
+          "kind": "symbol",
+          "name": "_report_unused_node"
+        }
+      },
+      "id": "RLZ-2VJ210",
+      "invariant": "INV-CB36W0",
+      "origin": {
+        "handoffEntry": "MIK-R107@v1 §4 transition current66",
+        "leaf": "260928-MIK-L107"
+      },
+      "rationale": "This report-only boundary accepts only an earlier sibling product Node folder and names it as unused by this host without deleting files.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "8b2e75098a4b2a32b4c965d867f0f32828a3fe36",
+        "content": "sha256:a4a472a6f331db512f6aa80c707689776a97c4ded035a97dcff8a2fbc923aeb0",
+        "locator": {
+          "kind": "symbol",
+          "name": "_converge_daemon"
+        }
+      },
+      "id": "RLZ-AFXDAA",
+      "invariant": "INV-CB36W0",
+      "origin": {
+        "handoffEntry": "MIK-R107@v1 §4 transition current66",
+        "leaf": "260928-MIK-L107"
+      },
+      "rationale": "The transition owner defers install restarts, captures the observed earlier Node folder, and reports it only after explicit provision starts the replacement host.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "8b2e75098a4b2a32b4c965d867f0f32828a3fe36",
+        "content": "sha256:a4a472a6f331db512f6aa80c707689776a97c4ded035a97dcff8a2fbc923aeb0",
         "locator": {
           "kind": "symbol",
           "name": "_converge_daemon"
@@ -26,7 +62,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "70b38647aec70c72dae4a0462146b98d004ccbf1",
+            "blob": "8b2e75098a4b2a32b4c965d867f0f32828a3fe36",
             "content": "sha256:dd8d1d012266e1bfdbd926bb4a5b7c313ae7486d3c9d81b6f001532b911f44bc",
             "locator": {
               "kind": "symbol",
@@ -49,6 +85,22 @@
               "name": "_check_install_restart"
             },
             "path": "mcp/src/agents_remember/serving/paseo/paseo_run.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Only the prior sibling product Node is reported unused; files are retained.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8b2e75098a4b2a32b4c965d867f0f32828a3fe36",
+            "content": "sha256:aea3ec1737896b4b455444cff71e058b35306cdaed159bd4da04950dfc962897",
+            "locator": {
+              "kind": "symbol",
+              "name": "_report_unused_node"
+            }
           },
           "kind": "code"
         }

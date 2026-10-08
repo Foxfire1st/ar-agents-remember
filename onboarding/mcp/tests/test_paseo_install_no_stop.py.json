@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "ef1541e4cc56af4b3650e0b0526747c113ebd068",
+        "blob": "4f4eefe190aeda7e299f77c8d8b44c821a634640",
         "content": "sha256:97d4a26bdcee232f61bba7d5ba773bf6fe76a2ad777ea69319bee39b646b18b4",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "ef1541e4cc56af4b3650e0b0526747c113ebd068",
+        "blob": "4f4eefe190aeda7e299f77c8d8b44c821a634640",
         "content": "sha256:d462470c3843148339400e508890c83cae4ef93cd9cc075012547d1bbede4c25",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,24 @@
     },
     {
       "anchor": {
-        "blob": "ef1541e4cc56af4b3650e0b0526747c113ebd068",
+        "blob": "4f4eefe190aeda7e299f77c8d8b44c821a634640",
+        "content": "sha256:a610071fa53ff837f9693820d6f3d4aedc6ca6668a98e52c882ecd2a18d70ee5",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_running_host_on_another_node_is_deferred_before_node_or_home_changes"
+        }
+      },
+      "facet": "Install defers the live Node mismatch before mutation; explicit provision restarts once, reports the earlier folder as unused, retains its marker, and the next provision changes nothing.",
+      "id": "PRF-FW8AFM",
+      "invariant": "INV-CB36W0",
+      "origin": {
+        "handoffEntry": "MIK-R107@v1 §4 transition current66",
+        "leaf": "260928-MIK-L107"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "4f4eefe190aeda7e299f77c8d8b44c821a634640",
         "content": "sha256:8627d1d969466fe6ed2b035d988c16b9722a340afc4df3776613327fee500aec",
         "locator": {
           "kind": "symbol",
@@ -60,23 +77,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ef1541e4cc56af4b3650e0b0526747c113ebd068",
+            "blob": "4f4eefe190aeda7e299f77c8d8b44c821a634640",
             "content": "sha256:8627d1d969466fe6ed2b035d988c16b9722a340afc4df3776613327fee500aec",
             "locator": {
               "kind": "symbol",
               "name": "test_install_preserves_live_host_after_successful_admission"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "ef1541e4cc56af4b3650e0b0526747c113ebd068",
-            "content": "sha256:803991024c097d5a87b9e2945e8d292d3008bf81f4f43710186fec42ca70523d",
-            "locator": {
-              "end": 103,
-              "kind": "line_range",
-              "start": 83
             }
           },
           "kind": "test"
@@ -88,23 +93,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ef1541e4cc56af4b3650e0b0526747c113ebd068",
+            "blob": "4f4eefe190aeda7e299f77c8d8b44c821a634640",
             "content": "sha256:97d4a26bdcee232f61bba7d5ba773bf6fe76a2ad777ea69319bee39b646b18b4",
             "locator": {
               "kind": "symbol",
               "name": "test_install_protects_live_host_at_irreversible_sites"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "ef1541e4cc56af4b3650e0b0526747c113ebd068",
-            "content": "sha256:5ab542f4cc90a6ff7a8f30397732c1c4cf272d7af542ac54e66d481f93897668",
-            "locator": {
-              "end": 131,
-              "kind": "line_range",
-              "start": 104
             }
           },
           "kind": "test"
@@ -116,7 +109,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ef1541e4cc56af4b3650e0b0526747c113ebd068",
+            "blob": "4f4eefe190aeda7e299f77c8d8b44c821a634640",
             "content": "sha256:d462470c3843148339400e508890c83cae4ef93cd9cc075012547d1bbede4c25",
             "locator": {
               "kind": "symbol",
@@ -132,23 +125,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ef1541e4cc56af4b3650e0b0526747c113ebd068",
+            "blob": "4f4eefe190aeda7e299f77c8d8b44c821a634640",
             "content": "sha256:81244aea977bfadbecc497d20a32d646a481a6acdfd5c0992a99cf8d7a3524a4",
             "locator": {
               "kind": "symbol",
               "name": "test_fake_npm_requires_provision_to_supply_each_locked_input"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "ef1541e4cc56af4b3650e0b0526747c113ebd068",
-            "content": "sha256:ccc2b83501214aed76148190320c3c60238069f88a484305a3b414a48115fa1d",
-            "locator": {
-              "end": 208,
-              "kind": "line_range",
-              "start": 196
             }
           },
           "kind": "test"

@@ -14,6 +14,10 @@ runtime_status reports version, daemon, owned plugin and embed state. stop_runti
 
 L96: the module moved from `cli/paseo_daemon.py` into `serving/paseo/`. Stop now runs under the bounded home lock shared with install and start, and its named-remedy text comes from `paseo_remedy`.
 
+`runtime_status` includes the expected contract Node and observed owned executable. A mismatch reports `restartRequired=["node"]` with the existing explicit terminal provision remedy. Observation leaves the running host and its files unchanged.
+
 ## Evidence
 
 - The status/stop boundary and its home record proof. [1]
+
+- Public Paseo status includes the Node restart reason and remedy. [2]

@@ -1,17 +1,52 @@
 {
   "path": "mcp/src/agents_remember/serving/paseo/paseo_daemon.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "27bc7cb29b4c698532f752259d96f7929ecc87c7",
+        "content": "sha256:d798305e60a711a3f5a733eaedc4b1bfcef145f66764c00fcc5fe92799a2ad52",
+        "locator": {
+          "kind": "symbol",
+          "name": "runtime_status"
+        }
+      },
+      "id": "RLZ-5TZT2N",
+      "invariant": "INV-7HC1QH",
+      "origin": {
+        "handoffEntry": "MIK-R107@v1 §4 status current66",
+        "leaf": "260928-MIK-L107"
+      },
+      "rationale": "The public Paseo status owner merges owned process facts with the Node comparison without starting or reconfiguring the host.",
+      "role": "unclassified"
+    }
+  ],
   "references": {
     "1": {
       "note": "The status/stop boundary and its home record proof.",
       "targets": [
         {
           "anchor": {
-            "blob": "a1ba2d172168deb970aefa9a08394177e9bef854",
+            "blob": "27bc7cb29b4c698532f752259d96f7929ecc87c7",
             "content": "sha256:5398bf50a3e1c803e9b4d2d9a68678863eefe473657c09d67ca2d94f2da4ae2a",
             "locator": {
               "kind": "symbol",
               "name": "stop_runtime"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Public Paseo status includes the Node restart reason and remedy.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "27bc7cb29b4c698532f752259d96f7929ecc87c7",
+            "content": "sha256:d798305e60a711a3f5a733eaedc4b1bfcef145f66764c00fcc5fe92799a2ad52",
+            "locator": {
+              "kind": "symbol",
+              "name": "runtime_status"
             }
           },
           "kind": "code"

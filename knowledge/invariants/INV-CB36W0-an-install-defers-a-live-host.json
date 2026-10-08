@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "spans_locations",
+      "family_guarantee"
+    ],
+    "justification": "The public observation and transition boundaries together prevent an installation or status read from unexpectedly replacing a running host; focused tests demonstrate the exact mismatch and preserved-file behavior."
+  },
+  "applicability": "Install and explicit terminal provision when an owned running host uses an earlier product Node.",
+  "conditions": [
+    "Install defers before Node or home writes.",
+    "Only a successful explicit provision restart reports the earlier sibling Node folder as unused by this host."
+  ],
+  "exclusions": [
+    "No deletion of old Node files or claim that another process no longer uses them.",
+    "No automatic transition through dashboard start or status."
+  ],
+  "id": "INV-CB36W0",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/role-launch/260928-MIK-L107-worker-c1ec121b-f3da-4e9e-ae4a-36795d5b9d81/freeze2/focused-tests-post-sync-final.log; exact test verifies deferral, restart, retained marker and no-change repeat"
+      ],
+      "path": "handoff.json"
+    },
+    "handoffEntry": "MIK-R107@v1 §4 transition current66",
+    "leaf": "260928-MIK-L107",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "An install defers a live-host Node transition and explicit provision restarts on the contract Node, reports the observed earlier product Node folder as no longer used by that host, and preserves its files.",
+  "status": "proposed",
+  "supersedes": []
+}
