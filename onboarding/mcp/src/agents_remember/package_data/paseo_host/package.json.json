@@ -1,0 +1,22 @@
+{
+  "path": "mcp/src/agents_remember/package_data/paseo_host/package.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The exact host dependency the manifest declares.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e92d3651c3c26f0d88bcb42ff9e7a471250e02a2",
+            "content": "sha256:aa686635c3bdadcc443e8abe7e5664c0705daac230f35bc31da6487bd463759a",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

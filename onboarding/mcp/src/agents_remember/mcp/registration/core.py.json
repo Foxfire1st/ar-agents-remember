@@ -75,7 +75,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "aac0d96fcafef4e9c0f3d9380f798d70a25b346a",
+            "blob": "a1f83e4886bd990a62f2fc29c73bcd23193104b9",
             "content": "sha256:be4afd34f7e5fd22eb8dab45faefdb70380bbb570c111ba62b0fe12c43480078",
             "locator": {
               "kind": "symbol",
@@ -91,11 +91,27 @@
       "targets": [
         {
           "anchor": {
-            "blob": "aac0d96fcafef4e9c0f3d9380f798d70a25b346a",
+            "blob": "a1f83e4886bd990a62f2fc29c73bcd23193104b9",
             "content": "sha256:39672d586a2b6df1dbe31ea3021a549a5fa0ee6e64d244631115f50054ca0f84",
             "locator": {
               "kind": "symbol",
               "name": "_register_orientation_tools"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The installation tools and the runtime_install registration.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a1f83e4886bd990a62f2fc29c73bcd23193104b9",
+            "content": "sha256:cca1feb13ceb929ec5ac4e7db2b5b7fdbfcc3b989e367e4994129e4830a2eb64",
+            "locator": {
+              "kind": "symbol",
+              "name": "_register_installation_tools"
             }
           },
           "kind": "code"

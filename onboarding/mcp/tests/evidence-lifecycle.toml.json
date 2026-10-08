@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "25f12876abbe765e7e9e1d7fb1120d3b33c32b23",
+        "blob": "db27046ef46e8258fb930235ca048c2ddddcc9c1",
         "content": "sha256:d78be9a4046b8ffdab5120a0a748737d28d92bec8743be7d5acec6847feb659b",
         "locator": {
-          "end": 1113,
+          "end": 1344,
           "kind": "line_range",
-          "start": 1113
+          "start": 1344
         }
       },
       "id": "RLZ-VQZWNZ",
@@ -27,7 +27,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1266d8bfe7072412139ee2da32a93b323606c766",
+            "blob": "db27046ef46e8258fb930235ca048c2ddddcc9c1",
             "content": "sha256:1b040cdd5c5848b8cd6ef5959a60be2ceff3aa6dbdb5840b8d55f20f5386868b",
             "locator": {
               "end": 2,
@@ -107,12 +107,27 @@
         }
       ]
     },
+    "14": {
+      "note": "The durable-artifact consumer entries this catalog now declares; lane rows belong to test-evidence-lanes.toml.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "83490e06b7a7fe55c70d311c2f176279974d22e0",
+            "content": "sha256:271325c4cfeb375d15d4b404c37cb4e38a8feea8c881cf7ece6a30e2549ff65a",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
     "2": {
       "note": "A contract row: identity, owner file and exact evidence node.",
       "targets": [
         {
           "anchor": {
-            "blob": "1266d8bfe7072412139ee2da32a93b323606c766",
+            "blob": "db27046ef46e8258fb930235ca048c2ddddcc9c1",
             "content": "sha256:a58fa86fe18bf3c11bc16759d0f13a04f16adbccc294bbb69c5a5d13c79a30e4",
             "locator": {
               "end": 7,
@@ -198,7 +213,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1266d8bfe7072412139ee2da32a93b323606c766",
+            "blob": "db27046ef46e8258fb930235ca048c2ddddcc9c1",
             "content": "sha256:6bd63858346265c088e61fecb3321203a0ad462c2f425608430e58bb7bf26142",
             "locator": {
               "end": 984,
@@ -215,12 +230,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1266d8bfe7072412139ee2da32a93b323606c766",
+            "blob": "db27046ef46e8258fb930235ca048c2ddddcc9c1",
             "content": "sha256:18223e6fda4a46e963855f613ab3e8a58a641f0238e1f72157867c3c47537a42",
             "locator": {
-              "end": 1111,
+              "end": 1336,
               "kind": "line_range",
-              "start": 1110
+              "start": 1335
             }
           },
           "kind": "test"

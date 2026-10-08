@@ -128,7 +128,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f3dc3eebd9399f47e6859148c150e98949387766",
+            "blob": "204d60e2301bd103bf964062faf6752981b44ed4",
             "content": "sha256:a8ccc7c0fe03f45a32d328523ac9b62650ef51072dbc2822789413f9d2313249",
             "locator": {
               "end": 30,
@@ -164,7 +164,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7c5f635724910b3bca1e3b6641abb2b19c320de2",
+            "blob": "ec1d0ae05b8f205404b23216b55a0567a22e968f",
             "content": "sha256:1cfac17946885e789af8625800b4d1797dfb51bdf09a7abafc47108e7e88e098",
             "locator": {
               "end": 30,
@@ -274,6 +274,83 @@
             "path": "mcp/test_support/agents_remember_test_support/testing/lane_manifest.py"
           },
           "kind": "code"
+        }
+      ]
+    },
+    "27": {
+      "note": "The install-contract module.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "95a0431d80346ab6b5f91344a1149d1244620ce3",
+            "content": "sha256:c33bca6b0078227d93a714ec6b93674357650fb7ed5add0b8fe93ddb167ec063",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_install_reads_added_shared_block_at_call_and_provisions_once"
+            },
+            "path": "mcp/tests/test_paseo_install_contract.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "28": {
+      "note": "The no-stop module.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef1541e4cc56af4b3650e0b0526747c113ebd068",
+            "content": "sha256:8627d1d969466fe6ed2b035d988c16b9722a340afc4df3776613327fee500aec",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_install_preserves_live_host_after_successful_admission"
+            },
+            "path": "mcp/tests/test_paseo_install_no_stop.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ef1541e4cc56af4b3650e0b0526747c113ebd068",
+            "content": "sha256:803991024c097d5a87b9e2945e8d292d3008bf81f4f43710186fec42ca70523d",
+            "locator": {
+              "end": 103,
+              "kind": "line_range",
+              "start": 83
+            },
+            "path": "mcp/tests/test_paseo_install_no_stop.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "29": {
+      "note": "The node module.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd15bb644932a6c9b64f37e306e3ff676db50edb",
+            "content": "sha256:a73abc958ab83d62874373f56ea63bf54899649b2b51470776ef2e7e14422ec0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_verified_archive_is_placed_as_a_whole"
+            },
+            "path": "mcp/tests/test_paseo_node.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "bd15bb644932a6c9b64f37e306e3ff676db50edb",
+            "content": "sha256:97666e938365a819bfc62e9b25892c40e50c46207b06c0f86ebc14a56e9c03ba",
+            "locator": {
+              "end": 88,
+              "kind": "line_range",
+              "start": 68
+            },
+            "path": "mcp/tests/test_paseo_node.py"
+          },
+          "kind": "test"
         }
       ]
     },

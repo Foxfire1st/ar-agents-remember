@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "0ad008bcc0e9c86c269b55c1d27851ae1f9a4739",
+        "blob": "7d5073fe88bde3e92fffa7108228d97077f479ee",
         "content": "sha256:f52fafd5838afa3ab615762f3c9e2e4af18e0c0e0dfe454aa13dfdcc4f34ef49",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "0ad008bcc0e9c86c269b55c1d27851ae1f9a4739",
+        "blob": "7d5073fe88bde3e92fffa7108228d97077f479ee",
         "content": "sha256:f52fafd5838afa3ab615762f3c9e2e4af18e0c0e0dfe454aa13dfdcc4f34ef49",
         "locator": {
           "kind": "symbol",
@@ -36,6 +36,24 @@
       },
       "rationale": "The production reviewer port calls the shared complete-review owner, so the request-count contract holds at the actual dashboard operation.",
       "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "7d5073fe88bde3e92fffa7108228d97077f479ee",
+        "content": "sha256:64bda7d2542d6a0219c2ca768ea4c3000ae01babb83a4f46a5d05a87863b56cf",
+        "locator": {
+          "kind": "symbol",
+          "name": "_run_daemon_command"
+        }
+      },
+      "id": "RLZ-P55DC5",
+      "invariant": "INV-PB8GDK",
+      "origin": {
+        "handoffEntry": "MIK-R96@v1 §5",
+        "leaf": "260928-MIK-L96"
+      },
+      "rationale": "This dashboard control adapter distinguishes status, dashboard stop and ensure; its stop branch reaches only dashboard supervision and leaves host termination to its separate command.",
+      "role": "unclassified"
     }
   ],
   "references": {
@@ -60,7 +78,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0ad008bcc0e9c86c269b55c1d27851ae1f9a4739",
+            "blob": "7d5073fe88bde3e92fffa7108228d97077f479ee",
             "content": "sha256:582096a89994befd90d85ff5a2a060e9896896537d05ba61cae355db27488af9",
             "locator": {
               "kind": "symbol",
@@ -124,7 +142,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0ad008bcc0e9c86c269b55c1d27851ae1f9a4739",
+            "blob": "7d5073fe88bde3e92fffa7108228d97077f479ee",
             "content": "sha256:bf5e9378e91c92e7e4d85f4d54b360dca3c9d3fb19b7f4cf655f5d8fb9b84424",
             "locator": {
               "kind": "symbol",
@@ -206,12 +224,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0ad008bcc0e9c86c269b55c1d27851ae1f9a4739",
+            "blob": "7d5073fe88bde3e92fffa7108228d97077f479ee",
             "content": "sha256:6a5aa29dab0ccf7d63303de3f12e68c6d6e7c7fd66f0290f296215744a9a3773",
             "locator": {
-              "end": 68,
+              "end": 74,
               "kind": "line_range",
-              "start": 64
+              "start": 70
             }
           },
           "kind": "code"
@@ -245,6 +263,68 @@
               "kind": "symbol",
               "name": "_dev_app"
             }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "35": {
+      "note": "The status/stop/daemon dispatch with host handling.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7d5073fe88bde3e92fffa7108228d97077f479ee",
+            "content": "sha256:64bda7d2542d6a0219c2ca768ea4c3000ae01babb83a4f46a5d05a87863b56cf",
+            "locator": {
+              "kind": "symbol",
+              "name": "_run_daemon_command"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "36": {
+      "note": "The background host-start worker.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7d5073fe88bde3e92fffa7108228d97077f479ee",
+            "content": "sha256:677c79661aac50d23a9337fcc0f2ebe8f1ab1dc5184f4236d5c524d916e374cb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_start_host_background"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "37": {
+      "note": "The host observation the status line comes from.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d9ace58e2412f7ca4324514269b24fd960c7d03a",
+            "content": "sha256:a818b6da2ab0f76df7990b165b8f51b22c8a7bb7ed9a4d50bc7143ff5e3da540",
+            "locator": {
+              "kind": "symbol",
+              "name": "observe_host"
+            },
+            "path": "mcp/src/agents_remember/serving/paseo/paseo_start.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d9ace58e2412f7ca4324514269b24fd960c7d03a",
+            "content": "sha256:ee3c5f30de18948e4b7b7d90202a132916a189ca3f302951c00665e09eea10db",
+            "locator": {
+              "end": 78,
+              "kind": "line_range",
+              "start": 65
+            },
+            "path": "mcp/src/agents_remember/serving/paseo/paseo_start.py"
           },
           "kind": "code"
         }

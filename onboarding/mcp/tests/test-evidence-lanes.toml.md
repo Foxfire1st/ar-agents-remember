@@ -60,3 +60,9 @@ No configured live documentation source was available for this pass.
 ### Cross-Repo References
 
 No cross-repo boundary is crossed by this file.
+
+## 260928-MIK-L96 The host test lanes
+
+The lane catalog maps the new host test modules to their lane so the evidence lanes stay complete for the added cases.
+
+- The lane catalog with the host module rows. [21]

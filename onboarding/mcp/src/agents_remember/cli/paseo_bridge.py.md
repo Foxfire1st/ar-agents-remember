@@ -20,3 +20,11 @@ bridge_call sends prompt/payload as stdin data and stops a process at 60 seconds
 - Checks exact endpoint/server-id environment and removal of inherited PASEO/AR_PASEO values. [4]
 - Checks absent settings or home server-id start no process. [5]
 - Exercises different/missing connected server identity and named refusal with reconnect disabled. [6]
+
+## 260928-MIK-L96 Node and remedy text
+
+The bridge starts the product's Node by its full path instead of looking for `node` on `PATH`; a missing product Node is named as the install step's state. The remedy that used to say the Paseo bridge needs Node.js on PATH now names the install step, and the not-installed text names the install step while the not-configured text keeps its own meaning.
+
+- The bridge launch that starts the product's Node by full path with the packaged script and names this build's install state. [7]
+
+- The configured-runtime requirement the bridge enforces before any process starts. [8]

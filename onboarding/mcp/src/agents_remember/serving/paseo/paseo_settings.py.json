@@ -1,0 +1,51 @@
+{
+  "path": "mcp/src/agents_remember/serving/paseo/paseo_settings.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The complete setting list with its start/live split.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e76c3eb424b6bbebb9a6d8e05c003426153de492",
+            "content": "sha256:ad11b4ec4d7f0007ee62a12c3ba8a1679c801a434f68a44305827c85e70e02e6",
+            "locator": {
+              "kind": "symbol",
+              "name": "daemon_settings"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The restart reasons of a running daemon.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e76c3eb424b6bbebb9a6d8e05c003426153de492",
+            "content": "sha256:710b69084d866c838184f67b062fa89c9707766bf85f24c25b0ecea12eeac7b1",
+            "locator": {
+              "kind": "symbol",
+              "name": "restart_reasons"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e76c3eb424b6bbebb9a6d8e05c003426153de492",
+            "content": "sha256:daf202af2bd7715065ff04e2357995d3e988efd2675cd9445c418d3a039f44fc",
+            "locator": {
+              "end": 75,
+              "kind": "line_range",
+              "start": 65
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

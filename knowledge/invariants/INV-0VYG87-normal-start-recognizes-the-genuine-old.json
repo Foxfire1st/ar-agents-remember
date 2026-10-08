@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "A start that skips the rebuild runs tests against a stale shared-authority layout; StartAndStopTests::test_start_builds_a_missing_sandbox_first is the discriminating positive case. No retained control artifact that removes the old-layout rebuild fix and asserts the expected failure was located: the Worker's dated clarification (2026-10-07 22:27:22 UTC under owner authority 6f23d369) searched the bounded retained evidence and found none, so the removed-fix-control wording is narrowed to the positive case and static source."
+  },
+  "applicability": "The sandbox start when its tree is missing or built at the old layout.",
+  "conditions": [
+    "The rebuild goes through the bounded public rebuild and the renderer route, and preserves the user's task file and the repository fixture."
+  ],
+  "exclusions": [
+    "Only the tooling's controlled fake processes are started."
+  ],
+  "id": "INV-0VYG87",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/role-launch/260928-MIK-L96-reviewer-e0a83546-a27f-4486-bb70-c11b906053fb.evidence/fix-verification-round-4/focused.log: StartAndStopTests.test_start_builds_a_missing_sandbox_first uses old layout3 marker and per-harness versioned host block, confirms layout4/current shared authority and public renderer, retains keep-user-task.txt, and succeeds through normal start/stop. This replaces the previously insufficient L71 build0/check1 observation."
+      ],
+      "path": "notes/reports/260928-MIK-L96-curator-evidence/handoff.json"
+    },
+    "handoffEntry": "L96-D-6",
+    "leaf": "260928-MIK-L96",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Normal start recognizes the genuine old layout/config, performs the bounded public rebuild and renderer route, and preserves the user task file and repository fixture before starting only the controlled fake processes.",
+  "status": "proposed",
+  "supersedes": []
+}

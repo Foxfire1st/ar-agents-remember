@@ -6003,6 +6003,23 @@
         }
       ]
     },
+    "286": {
+      "note": "The response shape.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4245ae0dec5940e62c5982d6c6889ac5d0111f53",
+            "content": "sha256:d5a90b391cc27dd10e6d6d5eb7e563735fbc01999b23c874693d09fec1be3407",
+            "locator": {
+              "kind": "symbol",
+              "name": "RuntimeInstallResponse"
+            },
+            "path": "mcp/src/agents_remember/models/runtime.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "29": {
       "note": "The onboarding-trace row and its `markers` list.",
       "targets": [

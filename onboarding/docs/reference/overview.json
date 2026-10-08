@@ -77,6 +77,38 @@
           "kind": "code"
         }
       ]
+    },
+    "5": {
+      "note": "The settings document's host section.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "36b67065d5344f6458c1169d8f6089c43eee9721",
+            "content": "sha256:8ed2ca3dd8c9b08252b497928b6fbc0368f6c6283db9bed3ff63b068b45bf7af",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "docs/reference/settings-json.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The runtime layout document.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b3bb19074ebd2bdeb4fafefa26796ff20aee94e2",
+            "content": "sha256:8f735caeb775cf5b77b098f2877355ba5029a204846e40e653e8c9618e8e4cc3",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "docs/reference/runtime-layout.md"
+          },
+          "kind": "code"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-route/v1"

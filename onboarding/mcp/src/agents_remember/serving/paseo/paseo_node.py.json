@@ -1,0 +1,110 @@
+{
+  "path": "mcp/src/agents_remember/serving/paseo/paseo_node.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "3167ee16f04ad230c21dcbbc1e2fce372593e8bf",
+        "content": "sha256:655cc4ba48eb5762242aa346d6db16f09c04d4322e1ed58238fb02b68c04669c",
+        "locator": {
+          "kind": "symbol",
+          "name": "ensure_node"
+        }
+      },
+      "id": "RLZ-0HKKTZ",
+      "invariant": "INV-BGV9YT",
+      "origin": {
+        "handoffEntry": "MIK-R96@v1 §3",
+        "leaf": "260928-MIK-L96"
+      },
+      "rationale": "This acquisition owner validates existing and downloaded product Node, owns exclusion and reclamation, and refuses unsupported/foreign inputs before provisioning can run npm.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The acquisition entry point with exclusion and reclamation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3167ee16f04ad230c21dcbbc1e2fce372593e8bf",
+            "content": "sha256:655cc4ba48eb5762242aa346d6db16f09c04d4322e1ed58238fb02b68c04669c",
+            "locator": {
+              "kind": "symbol",
+              "name": "ensure_node"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3167ee16f04ad230c21dcbbc1e2fce372593e8bf",
+            "content": "sha256:5cf46822f369ecfb3fc493be7b84898e208b171d150f727961b424ab4251845e",
+            "locator": {
+              "end": 77,
+              "kind": "line_range",
+              "start": 56
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The verified whole placement.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3167ee16f04ad230c21dcbbc1e2fce372593e8bf",
+            "content": "sha256:98fc0f63acc8d0573a3fa0fa93afd658bb43c3445441814bad97d2b504ef75aa",
+            "locator": {
+              "kind": "symbol",
+              "name": "_place"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3167ee16f04ad230c21dcbbc1e2fce372593e8bf",
+            "content": "sha256:48d708f17a0c56c20c4ee7382840f87b833aae99c8b8c0b5c20785491b869c93",
+            "locator": {
+              "end": 140,
+              "kind": "line_range",
+              "start": 97
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The bounded download.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3167ee16f04ad230c21dcbbc1e2fce372593e8bf",
+            "content": "sha256:4e63b4cb67fa9cfcd3b4bbe61142ccc9ca4fef25161cd196e95ebb50a143c843",
+            "locator": {
+              "kind": "symbol",
+              "name": "fetch_archive"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3167ee16f04ad230c21dcbbc1e2fce372593e8bf",
+            "content": "sha256:f7ea72ec8cc543fdc385b06af90846f2279ffd7fadd7d6065455fae993dc4064",
+            "locator": {
+              "end": 54,
+              "kind": "line_range",
+              "start": 47
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -117,6 +117,96 @@
         }
       ]
     },
+    "105": {
+      "note": "The start-only supervision the dashboard composes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d9ace58e2412f7ca4324514269b24fd960c7d03a",
+            "content": "sha256:bada0558f18963fa912b88536362bd1eb9ae669a6bd20671bbae9f4c74cfb0ad",
+            "locator": {
+              "kind": "symbol",
+              "name": "ensure_host"
+            },
+            "path": "mcp/src/agents_remember/serving/paseo/paseo_start.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d9ace58e2412f7ca4324514269b24fd960c7d03a",
+            "content": "sha256:bf250c2a175afdcbe02da80729192b22a5c22f90c4b77b0e2fdb8620c56a8623",
+            "locator": {
+              "end": 180,
+              "kind": "line_range",
+              "start": 148
+            },
+            "path": "mcp/src/agents_remember/serving/paseo/paseo_start.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "106": {
+      "note": "The install host part.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b127a3dd7b944a884fd247e8e9597483d161505f",
+            "content": "sha256:7131667bc6f11773534fc57e49cc6a1c8b1c4424e755edca359dd3dfcef79066",
+            "locator": {
+              "kind": "symbol",
+              "name": "install_host"
+            },
+            "path": "mcp/src/agents_remember/serving/paseo/paseo_install.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b127a3dd7b944a884fd247e8e9597483d161505f",
+            "content": "sha256:1fcef94ffc2329bab6a830d0fcf5918467663f92049ae1114d9e672fd9604b5f",
+            "locator": {
+              "end": 88,
+              "kind": "line_range",
+              "start": 44
+            },
+            "path": "mcp/src/agents_remember/serving/paseo/paseo_install.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "107": {
+      "note": "The host acquisition.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3167ee16f04ad230c21dcbbc1e2fce372593e8bf",
+            "content": "sha256:655cc4ba48eb5762242aa346d6db16f09c04d4322e1ed58238fb02b68c04669c",
+            "locator": {
+              "kind": "symbol",
+              "name": "ensure_node"
+            },
+            "path": "mcp/src/agents_remember/serving/paseo/paseo_node.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3167ee16f04ad230c21dcbbc1e2fce372593e8bf",
+            "content": "sha256:5cf46822f369ecfb3fc493be7b84898e208b171d150f727961b424ab4251845e",
+            "locator": {
+              "end": 77,
+              "kind": "line_range",
+              "start": 56
+            },
+            "path": "mcp/src/agents_remember/serving/paseo/paseo_node.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "11": {
       "note": "The runner's own agreement check, which makes the rule product-enforced rather than test-enforced.",
       "targets": [
@@ -401,7 +491,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "977ccec9d8280f5159803ee01a455090bc4de2bd",
+            "blob": "156826fe4296a6bb4317b56435a0541efc68dee4",
             "content": "sha256:8625fb836b979634f02013f27444bae4be2d8f919640db82fd48f72a5588b0f3",
             "locator": {
               "kind": "symbol",
@@ -1808,7 +1898,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0ad008bcc0e9c86c269b55c1d27851ae1f9a4739",
+            "blob": "7d5073fe88bde3e92fffa7108228d97077f479ee",
             "content": "sha256:64f996fc0ef576998b70475499dfe493ca03ceafeb0f1e7e4a979aa8b21b075c",
             "locator": {
               "kind": "symbol",
@@ -1820,12 +1910,12 @@
         },
         {
           "anchor": {
-            "blob": "0ad008bcc0e9c86c269b55c1d27851ae1f9a4739",
+            "blob": "7d5073fe88bde3e92fffa7108228d97077f479ee",
             "content": "sha256:2f634c82a1409cd47c15e30de2763b76c3b6f9f80f9149d81294376981d7d2f0",
             "locator": {
-              "end": 88,
+              "end": 94,
               "kind": "line_range",
-              "start": 88
+              "start": 94
             },
             "path": "mcp/src/agents_remember/cli/dashboard.py"
           },
@@ -2211,12 +2301,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0ad008bcc0e9c86c269b55c1d27851ae1f9a4739",
+            "blob": "7d5073fe88bde3e92fffa7108228d97077f479ee",
             "content": "sha256:fdb5da4fc7af1e5539b9c6605cb56d514cc702763bec151b051b87e84cf34daf",
             "locator": {
-              "end": 100,
+              "end": 106,
               "kind": "line_range",
-              "start": 100
+              "start": 106
             },
             "path": "mcp/src/agents_remember/cli/dashboard.py"
           },
@@ -2229,12 +2319,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0ad008bcc0e9c86c269b55c1d27851ae1f9a4739",
+            "blob": "7d5073fe88bde3e92fffa7108228d97077f479ee",
             "content": "sha256:24184649da213fc6afc51b9082b0ff905798fe89459e305b08f32f82e44a62f0",
             "locator": {
-              "end": 171,
+              "end": 177,
               "kind": "line_range",
-              "start": 171
+              "start": 177
             },
             "path": "mcp/src/agents_remember/cli/dashboard.py"
           },
@@ -2247,12 +2337,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0ad008bcc0e9c86c269b55c1d27851ae1f9a4739",
+            "blob": "7d5073fe88bde3e92fffa7108228d97077f479ee",
             "content": "sha256:71c4afa2f545f86c4ecffec8ef4f8db48a37b82d2d190cf7a6fd0691442a1102",
             "locator": {
-              "end": 156,
+              "end": 162,
               "kind": "line_range",
-              "start": 153
+              "start": 159
             },
             "path": "mcp/src/agents_remember/cli/dashboard.py"
           },

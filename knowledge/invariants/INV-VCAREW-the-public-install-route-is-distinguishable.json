@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "A sandbox that cannot tell the public install from the retired provision, or that installs a foreign package, produces false host evidence; test_pnt_sandbox exercises the route, the foreign-package refusal and the child environment."
+  },
+  "applicability": "The sandbox tooling's public install route and its fake operation seam.",
+  "conditions": [
+    "The public install route is distinguishable from the retired direct provision route; foreign package identity refuses before writes.",
+    "Controlled child exclusion and environment propagation preserve the install-child lock and the supplied XDG roots."
+  ],
+  "exclusions": [
+    "The tooling's own build/check/start/stop contracts keep their existing invariants.",
+    "No real host, network or model call is part of this obligation's evidence."
+  ],
+  "id": "INV-VCAREW",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/role-launch/260928-MIK-L96-reviewer-e0a83546-a27f-4486-bb70-c11b906053fb.evidence/fix-verification-round-4/focused.log and focused-invocation.json: exact foreign-package/public-receipt/environment/child-lock nodes pass; FakeOperations.runtime_install no longer calls paseo(provision), whose fake branch raises; actual controlled Python child retains the inherited flock and exact seven isolation variables plus PWD. No real host/model/install/network operation is used by Reviewer."
+      ],
+      "path": "notes/reports/260928-MIK-L96-curator-evidence/handoff.json"
+    },
+    "handoffEntry": "L96-D-5",
+    "leaf": "260928-MIK-L96",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The public install route is distinguishable from direct provision, foreign package identity refuses before writes, and real controlled child exclusion/environment propagation preserve the install-child lock and supplied XDG roots.",
+  "status": "proposed",
+  "supersedes": []
+}

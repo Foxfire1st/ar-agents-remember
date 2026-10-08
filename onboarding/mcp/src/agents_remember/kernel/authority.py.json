@@ -7,12 +7,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "74cb448cf86fe0ef7fb7d736bf9a533c4c65e639",
+            "blob": "e0e3901879af6c975558c5c4eb31d6cdf14c5fb4",
             "content": "sha256:c84a28884cf2fdfd7cdb26db62298358debe3f2aa74ad6f2a4229536b2c998f7",
             "locator": {
-              "end": 86,
+              "end": 89,
               "kind": "line_range",
-              "start": 81
+              "start": 84
             },
             "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
           },
@@ -20,12 +20,12 @@
         },
         {
           "anchor": {
-            "blob": "74cb448cf86fe0ef7fb7d736bf9a533c4c65e639",
+            "blob": "e0e3901879af6c975558c5c4eb31d6cdf14c5fb4",
             "content": "sha256:767ec0cac7ee1e6b71bc9428106181d3988c47f96da0d118b96995e6cf37d579",
             "locator": {
-              "end": 138,
+              "end": 141,
               "kind": "line_range",
-              "start": 118
+              "start": 121
             },
             "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
           },
@@ -33,12 +33,12 @@
         },
         {
           "anchor": {
-            "blob": "74cb448cf86fe0ef7fb7d736bf9a533c4c65e639",
+            "blob": "e0e3901879af6c975558c5c4eb31d6cdf14c5fb4",
             "content": "sha256:1ea732ed10ee413f94984de472f230cabcd09f7e0a382952228ed78b1296bbfa",
             "locator": {
-              "end": 666,
+              "end": 672,
               "kind": "line_range",
-              "start": 661
+              "start": 667
             },
             "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
           },
@@ -51,7 +51,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "afda4266a01add49b54479325931f2a4ede6e02f",
+            "blob": "e21353f470d1e68a80a490a4f964aa81289de43f",
             "content": "sha256:6b60d43c9ef5c7c9675d1b65bbc5b3b96af08cd1f6b69c9126f03b1a2022d010",
             "locator": {
               "kind": "symbol",
@@ -63,7 +63,7 @@
         },
         {
           "anchor": {
-            "blob": "afda4266a01add49b54479325931f2a4ede6e02f",
+            "blob": "e21353f470d1e68a80a490a4f964aa81289de43f",
             "content": "sha256:7f26b29a1f0b715def1de7f7d30a324a15e3f00cce6914d124078511b7b7f2c5",
             "locator": {
               "end": 116,

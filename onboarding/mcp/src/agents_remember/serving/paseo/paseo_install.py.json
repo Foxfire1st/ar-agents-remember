@@ -1,0 +1,51 @@
+{
+  "path": "mcp/src/agents_remember/serving/paseo/paseo_install.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The install host entry point and its configured/absent result.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b127a3dd7b944a884fd247e8e9597483d161505f",
+            "content": "sha256:7131667bc6f11773534fc57e49cc6a1c8b1c4424e755edca359dd3dfcef79066",
+            "locator": {
+              "kind": "symbol",
+              "name": "install_host"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b127a3dd7b944a884fd247e8e9597483d161505f",
+            "content": "sha256:1fcef94ffc2329bab6a830d0fcf5918467663f92049ae1114d9e672fd9604b5f",
+            "locator": {
+              "end": 88,
+              "kind": "line_range",
+              "start": 44
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The read-only preview that makes no changing call.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b127a3dd7b944a884fd247e8e9597483d161505f",
+            "content": "sha256:d12c187488683a4c1069726c6776362feafd0210b0d554adf01bd24622e52067",
+            "locator": {
+              "kind": "symbol",
+              "name": "preview_host"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

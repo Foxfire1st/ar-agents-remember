@@ -431,6 +431,23 @@
         }
       ]
     },
+    "28": {
+      "note": "The installation tool registration.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a1f83e4886bd990a62f2fc29c73bcd23193104b9",
+            "content": "sha256:cca1feb13ceb929ec5ac4e7db2b5b7fdbfcc3b989e367e4994129e4830a2eb64",
+            "locator": {
+              "kind": "symbol",
+              "name": "_register_installation_tools"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/core.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "3": {
       "note": "The description sentences on the leaf read.\n\nAnchor: \"is the family-complete leaf read\"",
       "targets": [

@@ -23,9 +23,9 @@
     "leaf": "260928-MIK-L90",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "An absent `paseoRuntime` block is the named state \"no Paseo runtime configured\" (`None`), a present block requires all six facts with `providers` and `embed` allowed empty, and each of the three commands refuses the named state with code `paseo_runtime_not_configured` and exit status 2 before any process is started.",
+  "statement": "An absent `paseoRuntime` block is the named state \"no Paseo runtime configured\" (`None`), a present block requires the five operational facts with `providers` and `embed` allowed empty and an optional `version` that never selects another release, and each of the three commands refuses the named state with code `paseo_runtime_not_configured` and exit status 2 before any process is started.",
   "status": "proposed",
   "supersedes": []
 }

@@ -128,12 +128,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "13a429f43e0bf5d2238a11cbb32f724ffa98056f",
+            "blob": "74d6da3fea4daae707be4261ebe77b2c66206029",
             "content": "sha256:d375ad52fb95f55321174a0c7bcfabc618077684c2fb29ade637d48dc0029286",
             "locator": {
-              "end": 434,
+              "end": 437,
               "kind": "line_range",
-              "start": 358
+              "start": 361
             },
             "path": "mcp/tests/test_paseo_catalog.py"
           },

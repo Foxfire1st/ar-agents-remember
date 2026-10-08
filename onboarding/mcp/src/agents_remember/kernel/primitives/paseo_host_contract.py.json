@@ -1,0 +1,42 @@
+{
+  "path": "mcp/src/agents_remember/kernel/primitives/paseo_host_contract.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "6eb1a2218939c31bb2b99c19dc3dab0718e15c3d",
+        "content": "sha256:a10a9be75d5224507933cba72c70e78267e28126c45dc30e630f5163f4656075",
+        "locator": {
+          "kind": "symbol",
+          "name": "HOST_CONTRACT"
+        }
+      },
+      "id": "RLZ-CED6Q3",
+      "invariant": "INV-RW4566",
+      "origin": {
+        "handoffEntry": "MIK-R96@v1 §2",
+        "leaf": "260928-MIK-L96"
+      },
+      "rationale": "This packaged contract is the single release authority consumed by provision, Node acquisition, comparisons and bridge; user installation facts cannot select another host build.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The contract load and its three derived names.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6eb1a2218939c31bb2b99c19dc3dab0718e15c3d",
+            "content": "sha256:a10a9be75d5224507933cba72c70e78267e28126c45dc30e630f5163f4656075",
+            "locator": {
+              "kind": "symbol",
+              "name": "HOST_CONTRACT"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

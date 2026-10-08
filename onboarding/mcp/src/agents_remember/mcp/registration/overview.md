@@ -681,3 +681,9 @@ family's position in `TOOL_REGISTRARS` is unchanged, and no other family module 
 
 - The entry point, now handing `config` to the diff and project registrars. [21]
 - The three registrars that forward the coordination root. [22]
+
+## 260928-MIK-L96 The runtime_install description
+
+The `runtime_install` tool's description now states the host step, the named absent-block state and the host part of the result, and the tool still takes no parameter for the host.
+
+- The installation tool registration. [28]

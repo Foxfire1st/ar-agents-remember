@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "74cb448cf86fe0ef7fb7d736bf9a533c4c65e639",
-        "content": "sha256:6ae16823f8b58cfc0d5d544f7d289f940dd1e018e4a6704c4e33f12ae0ad6962",
+        "blob": "e0e3901879af6c975558c5c4eb31d6cdf14c5fb4",
+        "content": "sha256:348bce6b71238622473dc73732ecd4258cb6bf938265b6555fd1cf8d2ed0b1b2",
         "locator": {
           "kind": "symbol",
           "name": "McpRuntimeConfig"
@@ -227,7 +227,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "da03b840f9e9b835810d2339c909cf0bb20efe68",
+            "blob": "1f99cfc219a3a4a26ad011d3d472a52f276c579a",
             "content": "sha256:f0e41d7834874b6bcc77ad3010c515db8b76282842ed22366209fcd595dff9ad",
             "locator": {
               "kind": "symbol",
@@ -239,7 +239,7 @@
         },
         {
           "anchor": {
-            "blob": "da03b840f9e9b835810d2339c909cf0bb20efe68",
+            "blob": "1f99cfc219a3a4a26ad011d3d472a52f276c579a",
             "content": "sha256:cffe7f3c5c49cdff5cf1afaca964375ed03f1bb382c70213e451dc14660dabf2",
             "locator": {
               "kind": "symbol",
@@ -251,12 +251,12 @@
         },
         {
           "anchor": {
-            "blob": "da03b840f9e9b835810d2339c909cf0bb20efe68",
+            "blob": "1f99cfc219a3a4a26ad011d3d472a52f276c579a",
             "content": "sha256:33d0396ab8accec0bb3dd6a756809e50e15576932ecb1e7f69fa9308ab2f3fc7",
             "locator": {
-              "end": 553,
+              "end": 530,
               "kind": "line_range",
-              "start": 462
+              "start": 439
             },
             "path": "mcp/src/agents_remember/install/runtime.py"
           },
@@ -264,12 +264,12 @@
         },
         {
           "anchor": {
-            "blob": "da03b840f9e9b835810d2339c909cf0bb20efe68",
+            "blob": "1f99cfc219a3a4a26ad011d3d472a52f276c579a",
             "content": "sha256:8dcd2fcff6eb0a7b76f02c988afe01510b66acf0aa3664ef616b0c4645f2f0e3",
             "locator": {
-              "end": 615,
+              "end": 592,
               "kind": "line_range",
-              "start": 556
+              "start": 533
             },
             "path": "mcp/src/agents_remember/install/runtime.py"
           },
@@ -343,6 +343,34 @@
         }
       ]
     },
+    "19": {
+      "note": "The host settings read the config exposes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e0e3901879af6c975558c5c4eb31d6cdf14c5fb4",
+            "content": "sha256:a3a590c78a3b1776026b947839616dcef7c84362a52f8cc925bba2cf1ba57860",
+            "locator": {
+              "kind": "symbol",
+              "name": "load_paseo_runtime_settings"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e0e3901879af6c975558c5c4eb31d6cdf14c5fb4",
+            "content": "sha256:c4ef61acc4e075d1e30b6152559d7747fbdde4473c9e68517cf6503a7e3bf683",
+            "locator": {
+              "end": 333,
+              "kind": "line_range",
+              "start": 326
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "Config tests cover authority rejection, harness-root inference, provider derivation, and include containment.\n\nAnchor: \"class McpConfigTests(unittest.TestCase):\"",
       "targets": [
@@ -361,12 +389,29 @@
         }
       ]
     },
+    "20": {
+      "note": "The shared authority reader.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "23f89436ed722d0c3ab6470a0bf9079145e22632",
+            "content": "sha256:3cfc871f9f8493dbaa4b11e825bfa4064aed6e67d8b83790b416fab6cc20b54d",
+            "locator": {
+              "kind": "symbol",
+              "name": "load_shared_paseo_runtime"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/paseo_authority.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "3": {
       "note": "`DashboardSettings` defines the boot-snapshot auto-start and port values; the daemon supervisor consumes them to gate autostart and choose the endpoint port.",
       "targets": [
         {
           "anchor": {
-            "blob": "74cb448cf86fe0ef7fb7d736bf9a533c4c65e639",
+            "blob": "e0e3901879af6c975558c5c4eb31d6cdf14c5fb4",
             "content": "sha256:eb10f07ce1aa1cde2f6245b200c58c9a90a4a871b1fbfe3f74cbdee7665852ce",
             "locator": {
               "kind": "symbol",
@@ -377,7 +422,7 @@
         },
         {
           "anchor": {
-            "blob": "86c3b2be96c126893168d463c2382ef107b5bc07",
+            "blob": "35e6afc7c42b1c5de6952ed36194e894b447642b",
             "content": "sha256:4988cff4af7aa12bf35be2bd4fbf5135840ac6fc0d8fcde7c8f847b1e6729ced",
             "locator": {
               "kind": "symbol",
@@ -401,12 +446,12 @@
         },
         {
           "anchor": {
-            "blob": "74cb448cf86fe0ef7fb7d736bf9a533c4c65e639",
+            "blob": "e0e3901879af6c975558c5c4eb31d6cdf14c5fb4",
             "content": "sha256:312cf63064dcdb1b2231db05d5b6d5d8271d8601b4e3afc5bd6eb84a83a8b747",
             "locator": {
-              "end": 100,
+              "end": 103,
               "kind": "line_range",
-              "start": 95
+              "start": 98
             }
           },
           "kind": "code"
@@ -475,12 +520,12 @@
         },
         {
           "anchor": {
-            "blob": "74cb448cf86fe0ef7fb7d736bf9a533c4c65e639",
+            "blob": "e0e3901879af6c975558c5c4eb31d6cdf14c5fb4",
             "content": "sha256:04f913abdc305eab5d5166ec139a518d5c1f54ccd29b68b18596c8e8c3498c97",
             "locator": {
-              "end": 297,
+              "end": 304,
               "kind": "line_range",
-              "start": 248
+              "start": 255
             }
           },
           "kind": "code"
@@ -564,7 +609,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "74cb448cf86fe0ef7fb7d736bf9a533c4c65e639",
+            "blob": "e0e3901879af6c975558c5c4eb31d6cdf14c5fb4",
             "content": "sha256:1999c42b7585142fe47fd695d4d63a63d60b00f0615e3e502045a1248fd54ba6",
             "locator": {
               "kind": "symbol",
@@ -575,7 +620,7 @@
         },
         {
           "anchor": {
-            "blob": "74cb448cf86fe0ef7fb7d736bf9a533c4c65e639",
+            "blob": "e0e3901879af6c975558c5c4eb31d6cdf14c5fb4",
             "content": "sha256:7492668e7105712e78c760b0a7ea28cbe935436fbe691633f794b5ac4056c1eb",
             "locator": {
               "kind": "symbol",
@@ -586,24 +631,24 @@
         },
         {
           "anchor": {
-            "blob": "74cb448cf86fe0ef7fb7d736bf9a533c4c65e639",
+            "blob": "e0e3901879af6c975558c5c4eb31d6cdf14c5fb4",
             "content": "sha256:dd62d34994957471e6870945ca3392b6a2c5f4a5a758902fa8f525d04cd7ef55",
             "locator": {
-              "end": 597,
+              "end": 603,
               "kind": "line_range",
-              "start": 564
+              "start": 570
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "74cb448cf86fe0ef7fb7d736bf9a533c4c65e639",
+            "blob": "e0e3901879af6c975558c5c4eb31d6cdf14c5fb4",
             "content": "sha256:30de19261c247f2299bfe05591dd0643d7185a9c10750c4c4538d0cca864a28c",
             "locator": {
-              "end": 632,
+              "end": 638,
               "kind": "line_range",
-              "start": 600
+              "start": 606
             }
           },
           "kind": "code"

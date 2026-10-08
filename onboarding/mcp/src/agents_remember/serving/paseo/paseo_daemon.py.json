@@ -1,0 +1,23 @@
+{
+  "path": "mcp/src/agents_remember/serving/paseo/paseo_daemon.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The status/stop boundary and its home record proof.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a1ba2d172168deb970aefa9a08394177e9bef854",
+            "content": "sha256:5398bf50a3e1c803e9b4d2d9a68678863eefe473657c09d67ca2d94f2da4ae2a",
+            "locator": {
+              "kind": "symbol",
+              "name": "stop_runtime"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -328,3 +328,10 @@ The matrix below that prose is the code's own table rather than a summary of it:
 shapes with their measured signature, the boundary state each produces, whether this system
 reconciles it, and the recovery route where one exists. Four of the six are **unsupported** and
 say so instead of being implied by omission, which is the property the section exists to keep.
+
+## 260928-MIK-L96 The host reference texts
+
+The reference documents now state the build-owned host contract, the product Node, the shared host authority and the start/stop rules; the settings reference's Paseo section and the dashboard paragraph were updated with them.
+
+- The settings document's host section. [5]
+- The runtime layout document. [6]

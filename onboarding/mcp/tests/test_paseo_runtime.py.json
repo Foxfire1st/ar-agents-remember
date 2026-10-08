@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "d5306ab8d01a98ab7f9e9a792e9522d07889e6f8",
-        "content": "sha256:e5a5602aa323691417cda9714d8f76fb8745965808037c45ab1e905831fd81cb",
+        "blob": "68e9def1959971a0f5ceedffc1ec2f01408849e1",
+        "content": "sha256:b29f8b4987d09632cc65b3ae1d5c99bd97fb03721a6f3b3189d3931f2b6c72b1",
         "locator": {
           "kind": "symbol",
           "name": "PaseoRuntimeTests.test_commands_refuse_without_a_runtime_block_and_drop_paseo_environment"
@@ -20,8 +20,25 @@
     },
     {
       "anchor": {
-        "blob": "d5306ab8d01a98ab7f9e9a792e9522d07889e6f8",
-        "content": "sha256:cdf9fb8b0c8fa0f3747358332a220f1dfe5a2cefcee973bf798d77be93d3229a",
+        "blob": "68e9def1959971a0f5ceedffc1ec2f01408849e1",
+        "content": "sha256:b29f8b4987d09632cc65b3ae1d5c99bd97fb03721a6f3b3189d3931f2b6c72b1",
+        "locator": {
+          "kind": "symbol",
+          "name": "PaseoRuntimeTests.test_commands_refuse_without_a_runtime_block_and_drop_paseo_environment"
+        }
+      },
+      "facet": "an absent block is the named no-host state and the three commands refuse it before any process runs",
+      "id": "PRF-SBF68B",
+      "invariant": "INV-9XEW06",
+      "origin": {
+        "handoffEntry": "L96 reconciliation: settings version is not the pin (INV-9XEW06)",
+        "leaf": "260928-MIK-L96"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "68e9def1959971a0f5ceedffc1ec2f01408849e1",
+        "content": "sha256:40a62f1c987b26223a1cbf9bcd1fc4e67b2dfba0f7716dc3c107f6b2a9d2231d",
         "locator": {
           "kind": "symbol",
           "name": "PaseoRuntimeTests.test_other_version_is_replaced_and_a_failed_install_changes_nothing"
@@ -47,6 +64,34 @@
             "content": "sha256:d39bb1fef9dce215313c524d958eb99029f50cc60d1ef5296cdccc7837a1b03f",
             "locator": {
               "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The runtime tests' contract-sourced cases.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "68e9def1959971a0f5ceedffc1ec2f01408849e1",
+            "content": "sha256:84842ae171063630f82450e961124b3583a440b4416b240f0d4e14518850cb16",
+            "locator": {
+              "kind": "symbol",
+              "name": "PaseoRuntimeTests"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "68e9def1959971a0f5ceedffc1ec2f01408849e1",
+            "content": "sha256:de4373110ef151e16262ae4981ce3406d8a918e8c1b0f5156cb95ffeef0f8e8b",
+            "locator": {
+              "end": 260,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "test"

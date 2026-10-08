@@ -55,12 +55,12 @@
       ]
     },
     "2": {
-      "note": "Runtime installation is a thin typed delegation.",
+      "note": "Runtime installation composes the lower service result with the public host step at the application entry.",
       "targets": [
         {
           "anchor": {
-            "blob": "10ffef7f8dfe40ebf25ce46db7d11c2f8d75c181",
-            "content": "sha256:467f4a6a564822c9967d0253e2cb876837e10d04373f708da2679f96482fb423",
+            "blob": "a81adb6dde0d503439aba7164940ec4bd011a65c",
+            "content": "sha256:8c4ac97d90059ad425122346e9b05a36e6a8ca869d587c0af7ea12c958af0b3a",
             "locator": {
               "kind": "symbol",
               "name": "run_runtime_install"
@@ -83,6 +83,23 @@
               "name": "skills_install_tool"
             },
             "path": "mcp/src/agents_remember/application/runtime/skills.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The composition with the host part.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a81adb6dde0d503439aba7164940ec4bd011a65c",
+            "content": "sha256:8c4ac97d90059ad425122346e9b05a36e6a8ca869d587c0af7ea12c958af0b3a",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_runtime_install"
+            },
+            "path": "mcp/src/agents_remember/application/runtime/install.py"
           },
           "kind": "code"
         }

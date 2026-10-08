@@ -1,0 +1,91 @@
+{
+  "path": "mcp/tests/test_dashboard_host.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "cf1b501b52f2719fcef660cb731d40024c52e696",
+        "content": "sha256:23a9af3a896fdf1b909b96722a7984b9d94d71d165c74c9608a49a623f17190b",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_adoption_and_autostart_ensure_host_while_stop_does_not"
+        }
+      },
+      "facet": "adoption and autoStart call ensure_host while dashboard stop does not",
+      "id": "PRF-0S1HKZ",
+      "invariant": "INV-PB8GDK",
+      "origin": {
+        "handoffEntry": "MIK-R96@v1 §5",
+        "leaf": "260928-MIK-L96"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "cf1b501b52f2719fcef660cb731d40024c52e696",
+        "content": "sha256:d5f30d2bcf924b1e729c53c7b5c5a4ef9a3e810f3f909da6cd5ca88a443a160c",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_status_exit_codes_print_both_and_do_not_start"
+        }
+      },
+      "facet": "the three exit statuses print both lines and start nothing",
+      "id": "PRF-889BPD",
+      "invariant": "INV-03M6ZA",
+      "origin": {
+        "handoffEntry": "MIK-R96@v1 §6",
+        "leaf": "260928-MIK-L96"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The status exit codes and no-start case.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cf1b501b52f2719fcef660cb731d40024c52e696",
+            "content": "sha256:d5f30d2bcf924b1e729c53c7b5c5a4ef9a3e810f3f909da6cd5ca88a443a160c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_status_exit_codes_print_both_and_do_not_start"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The stop-does-not-stop case.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cf1b501b52f2719fcef660cb731d40024c52e696",
+            "content": "sha256:23a9af3a896fdf1b909b96722a7984b9d94d71d165c74c9608a49a623f17190b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_adoption_and_autostart_ensure_host_while_stop_does_not"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The real background wiring case.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cf1b501b52f2719fcef660cb731d40024c52e696",
+            "content": "sha256:a07e08fa3bae45049c38e4b20fd62f93aa92da6f3a89e4b1b0fee334b9864d8d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_real_background_function_serves_before_host_outcome_and_logs"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

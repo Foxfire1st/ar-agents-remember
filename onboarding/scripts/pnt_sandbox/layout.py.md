@@ -11,3 +11,10 @@ SandboxLayout resolves equivalent directory spellings once and derives owned roo
 ## Evidence
 
 - The scoped current source carries the module/document behavior described above. [1]
+
+## 260928-MIK-L96 Ports as caller-selected values
+
+The layout keeps 6820/9797 as the default port numbers and now carries them as the caller-selected pair the public commands take, alongside the product Node installation and archive-cache folders the safety check resolves; the version constant now comes from the packaged host contract.
+
+- The reserved port defaults. [2]
+- The dashboard port default. [3]

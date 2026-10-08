@@ -1,0 +1,76 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "The PATH node and the Eve Node were both weighed and rejected with reasons, and every future platform or Node bump has to change the contract and its archive entries."
+  },
+  "alternatives": [
+    {
+      "option": "The contract names one exact Node release and, per supported platform, the official archive URL and SHA-256; the product fetches into its cache, verifies the digest, unpacks beside the target and moves it into place.",
+      "reason": "A release-owned, digest-checked Node is reproducible independently of what a user's shell file puts on PATH, and the same Node is provably the one the supervisor and worker run on (/proc/<pid>/exe).",
+      "status": "chosen"
+    },
+    {
+      "option": "Use the node the user's shell puts on PATH, checking only its major version.",
+      "reason": "The PATH depends on the process that runs a command, the node is updated outside any product release, and the failure it produced named the wrong thing.",
+      "reconsider_when": "The host ships its own Node or the supported platform gains a guaranteed system Node the build can verify.",
+      "status": "rejected"
+    },
+    {
+      "option": "Reuse the Eve application's Node line (24 or newer).",
+      "reason": "The host was shown on 22.23.2 and on no other; the two applications were not examined for one shared Node, and the host is explicitly not required to share the Eve Node.",
+      "reconsider_when": "The host declares support for the Eve line and one installed Node can serve both applications.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Supported platforms are Linux x86_64 with /proc; other platforms return a named unsupported result and install nothing.",
+    "The product writes under its data folder, its cache folder and two temporary paths; it changes no PATH, no shell file, no bin link and no npm configuration."
+  ],
+  "context": "The host command line starts with `#!/usr/bin/env -S node ...`, the provision started npm by name and the bridge took shutil.which('node'); a machine without a PATH node reported the failure as 'the Paseo CLI is not installed'. This machine has two user-installed Node trees and /usr/bin holds none.",
+  "decider": "architect's direction under D75, frozen in MIK-R96@v1 rule 3",
+  "id": "DEC-CMKGT2",
+  "links": [
+    {
+      "relation": "explains",
+      "target": {
+        "blob": "3167ee16f04ad230c21dcbbc1e2fce372593e8bf",
+        "content": "sha256:655cc4ba48eb5762242aa346d6db16f09c04d4322e1ed58238fb02b68c04669c",
+        "locator": {
+          "kind": "symbol",
+          "name": "ensure_node"
+        },
+        "path": "mcp/src/agents_remember/serving/paseo/paseo_node.py"
+      }
+    },
+    {
+      "relation": "motivated_change_to",
+      "target": {
+        "id": "MIK-R96",
+        "packet": "requirements/MIK-R96-v1-one-install-and-one-start-bring-up-the-host.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/260928-mik-l96-ar/task-reports/role-launch/260928-MIK-L96-worker-c9abaa5b-c066-404b-a276-fcb39fcd4a79.evidence/restart-b/checks/final-unit-v2.log; manifest 1d1f404e04e282f568cfa601317e4cad75d22392b1c9a2f28bc96a1e46091b4f; current source manifest cd7706b9b3c7dbb3d64684ec054c55b6f9eac22dbe1b6d76779bdab5e47abe08; current qualification /home/firefox/projects/ar-coordination/worktrees/agents-remember/260928-mik-l96-ar/task-reports/role-launch/260928-MIK-L96-worker-c9abaa5b-c066-404b-a276-fcb39fcd4a79.evidence/post-l51-current/catalog-qualification.json; current manifest 5cdfbd41e9079195a3cd318d4a26263392ab8031aead02c2459faa39445bbf3f; exact reuse /home/firefox/projects/ar-coordination/worktrees/agents-remember/260928-mik-l96-ar/task-reports/role-launch/260928-MIK-L96-worker-c9abaa5b-c066-404b-a276-fcb39fcd4a79.evidence/post-L39-sync/exact-input-proof-reuse.json"
+      ],
+      "path": "notes/reports/260928-MIK-L96-curator-evidence/handoff.json"
+    },
+    "handoffEntry": "MIK-R96@v1 §3",
+    "leaf": "260928-MIK-L96",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

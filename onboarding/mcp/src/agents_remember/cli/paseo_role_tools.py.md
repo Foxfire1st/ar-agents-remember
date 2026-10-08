@@ -26,3 +26,8 @@ Caller binding decides may-start pairs and sprint/master containment. Starts cal
 ## MIK-R95 Preparation Answer
 
 A `RolePreparationError` cause is projected into the `launch-refused` answer with its exact owner status, detail and next action, and `preparationStatus`; a successful answer carries the receipt's `preparation` block and appends `_projects_preparation_note`, which states that a masterless Projects workspace was opened and that the host reports no creation outcome. Nothing infers the outcome from timing or a pre-call list.
+## 260928-MIK-L96 Host remedy texts
+
+The role-start host remedies now name the install step where the host is not installed and the one start where it is down, so an agent started by a dashboard without a reachable host is told the same thing the dashboard line says.
+
+- The host-unreachable remedy that names the install step and the one start. [9]

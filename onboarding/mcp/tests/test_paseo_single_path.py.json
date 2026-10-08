@@ -16,6 +16,34 @@
           "kind": "test"
         }
       ]
+    },
+    "2": {
+      "note": "The single-path cases over the moved host modules.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e5aca5c8058fe23ab1f7faac9ec4d9d1f496e165",
+            "content": "sha256:067821f7c94845550343930854cc41ede98df645f88d2c797ab563f6092ba527",
+            "locator": {
+              "kind": "symbol",
+              "name": "SinglePathTests"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e5aca5c8058fe23ab1f7faac9ec4d9d1f496e165",
+            "content": "sha256:54f63c93a8fe839c796248b7348621371cdb4d46eafbec8f56e71b15ab025ef1",
+            "locator": {
+              "end": 260,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

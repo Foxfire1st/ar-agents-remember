@@ -109,3 +109,10 @@ documented rule is unchanged: the cadence reaches the child only when this call 
 it — an **adopted** daemon keeps the cadences it was started with.
 
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
+
+## 260928-MIK-L96 Host start, adopt and stop
+
+`ensure` remains this module's dashboard supervision (adopt, spawn, restart). The host composition happens outside it: the MCP boot hook's `_autostart` (serving/daemon.py) and the dashboard CLI adapter (`cli/dashboard.py::_run_daemon_command` and `::_start_host_background`) call `ensure_host` from the shared host package and record the host outcome for a running daemon, while `stop` and every daemon restart path still signal only the dashboard's recorded process and never the host.
+
+- The daemon ensure the dashboard calls. [5]
+- The spawn path the host is not part of. [6]

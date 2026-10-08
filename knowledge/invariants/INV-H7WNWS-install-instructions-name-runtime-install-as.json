@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "A user following the install procedure is the route the host arrives by; a surviving 'run provision first' or 'needs Node on PATH' text sends that user down a command that is no longer the install and can stop a running host."
+  },
+  "applicability": "The install procedure and the documents that state the install and start: the c-13 skill, docs/install/README.md, the settings reference, the readmes, the runtime_install registration/description and the command help texts.",
+  "conditions": [
+    "Each text states rules 1 to 6 and 8 to 10 as far as it covers them, and the generated harness copies are regenerated with the existing commands."
+  ],
+  "exclusions": [
+    "No text tells a user to run the provision as a step of an install; the terminal provision stays the explicit transition only."
+  ],
+  "id": "INV-H7WNWS",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/260928-mik-l96-ar/task-reports/role-launch/260928-MIK-L96-worker-c9abaa5b-c066-404b-a276-fcb39fcd4a79.evidence/restart-b/checks/generated-skills-final.log; manifest 1d1f404e04e282f568cfa601317e4cad75d22392b1c9a2f28bc96a1e46091b4f; current source manifest cd7706b9b3c7dbb3d64684ec054c55b6f9eac22dbe1b6d76779bdab5e47abe08; current qualification /home/firefox/projects/ar-coordination/worktrees/agents-remember/260928-mik-l96-ar/task-reports/role-launch/260928-MIK-L96-worker-c9abaa5b-c066-404b-a276-fcb39fcd4a79.evidence/post-l51-current/catalog-qualification.json; current manifest 5cdfbd41e9079195a3cd318d4a26263392ab8031aead02c2459faa39445bbf3f; exact reuse /home/firefox/projects/ar-coordination/worktrees/agents-remember/260928-mik-l96-ar/task-reports/role-launch/260928-MIK-L96-worker-c9abaa5b-c066-404b-a276-fcb39fcd4a79.evidence/post-L39-sync/exact-input-proof-reuse.json"
+      ],
+      "path": "notes/reports/260928-MIK-L96-curator-evidence/handoff.json"
+    },
+    "handoffEntry": "MIK-R96@v1 §7",
+    "leaf": "260928-MIK-L96",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Install instructions name runtime_install as the host install and dashboard --daemon as the one start, with terminal provision reserved for an explicit transition.",
+  "status": "proposed",
+  "supersedes": []
+}

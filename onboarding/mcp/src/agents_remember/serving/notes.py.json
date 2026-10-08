@@ -473,7 +473,7 @@
         },
         {
           "anchor": {
-            "blob": "74cb448cf86fe0ef7fb7d736bf9a533c4c65e639",
+            "blob": "e0e3901879af6c975558c5c4eb31d6cdf14c5fb4",
             "content": "sha256:034c7e359c605efda03d85d4b7bd1aded24ca7f3d65e4e37234ebb131288dffa",
             "locator": {
               "kind": "symbol",
@@ -498,12 +498,12 @@
         },
         {
           "anchor": {
-            "blob": "74cb448cf86fe0ef7fb7d736bf9a533c4c65e639",
+            "blob": "e0e3901879af6c975558c5c4eb31d6cdf14c5fb4",
             "content": "sha256:7f40e2cf01fda9c57fbc6130e19151703cd18e0db46fe045118851986083ab9b",
             "locator": {
-              "end": 769,
+              "end": 775,
               "kind": "line_range",
-              "start": 764
+              "start": 770
             },
             "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
           },

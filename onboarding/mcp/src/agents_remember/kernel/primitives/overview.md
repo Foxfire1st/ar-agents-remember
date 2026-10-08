@@ -5,7 +5,9 @@
 paseo_runtime_settings supplies strict nested runtime fields and runtime_config carries the selected native host authority without inferring readiness, source ownership or model availability from a folder. Model, effort and service tier remain independent role settings, resolved by the existing settings chain and validated against the selected native catalog. Unconfigured runtime and unsupported configured capability retain explicit refusals.
 
 - Current imported source owns this scoped route boundary. [4]
+
 - Current imported source owns this scoped route boundary. [5]
+
 - Current imported source owns this scoped route boundary. [6]
 - Current imported source owns this scoped route boundary. [7]
 
@@ -157,3 +159,11 @@ When adding a primitive:
 ## 260815-DAG-L4 L4 Configured Repository Identity
 
 Runtime configuration is part of protected-ref authority: code and memory Git common directories, memory mode, coordination root, and canonical task tree must match the durable contract before lifecycle journaling or mutation.
+
+## 260928-MIK-L96 The host authority, contract and environment
+
+This route gained four host primitives: the packaged host/Node contract, the release-owned Node paths with the Linux x86_64 platform rule, the one installation-wide shared host authority read per use, and the product's exact-name host session-environment filter; `paseo_runtime_settings` now requires five facts and treats `version` as an optional, non-selecting key.
+
+- The shared authority reader. [8]
+- The session environment filter. [9]
+- The five-fact settings parse. [10]

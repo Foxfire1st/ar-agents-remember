@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "13a429f43e0bf5d2238a11cbb32f724ffa98056f",
-        "content": "sha256:0f4ba21a61cf802e6c6f510b5e605fecc7389b684c7708f0c3b9d2d1aa91e056",
+        "blob": "74d6da3fea4daae707be4261ebe77b2c66206029",
+        "content": "sha256:dfeffa5143e477f72259341ab94108f5c38fcd3014c49501a5a9321a9da0ac50",
         "locator": {
           "kind": "symbol",
           "name": "LauncherOptionsTests.test_catalog_is_cached_per_runtime_and_only_a_refresh_rediscovers"
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "13a429f43e0bf5d2238a11cbb32f724ffa98056f",
+        "blob": "74d6da3fea4daae707be4261ebe77b2c66206029",
         "content": "sha256:d375ad52fb95f55321174a0c7bcfabc618077684c2fb29ade637d48dc0029286",
         "locator": {
           "kind": "symbol",

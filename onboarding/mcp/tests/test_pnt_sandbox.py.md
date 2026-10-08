@@ -11,3 +11,11 @@ The safety suite judges outside, missing and defaulted AR roots, exact sandbox v
 ## Evidence
 
 - The scoped current source carries the module/document behavior described above. [1]
+
+## 260928-MIK-L96 The public install route and product Node roots
+
+The sandbox tests gained the public install route receipts and admission cases, the foreign-package refusal, the cut/timeout/malformed receipt retirement, and the product Node and cache-root safety cases; their cards' safety and environment rules keep their obligations.
+
+- The safety case for the product Node and cache roots. [2]
+- The public install receipt cases. [3]
+- The foreign-package admission case. [4]

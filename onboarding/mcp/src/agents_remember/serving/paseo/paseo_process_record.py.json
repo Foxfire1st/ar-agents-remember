@@ -1,0 +1,63 @@
+{
+  "path": "mcp/src/agents_remember/serving/paseo/paseo_process_record.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The home record trust rule.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "24d60685c994f22ebdbe51b1d363ab6780a19ffe",
+            "content": "sha256:89ca2b671107da33d70a1214d576e719008cf92e3e9b9da985b899a554edfbda",
+            "locator": {
+              "kind": "symbol",
+              "name": "inspect_record"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "24d60685c994f22ebdbe51b1d363ab6780a19ffe",
+            "content": "sha256:2cfc2b89e0ca81756ca02c88dabe4a58ea5201a35a4a930715d09f7a3e53c918",
+            "locator": {
+              "end": 95,
+              "kind": "line_range",
+              "start": 45
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The process facts including executable and session names.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "24d60685c994f22ebdbe51b1d363ab6780a19ffe",
+            "content": "sha256:e84fc71115ff5a8c0e1fe632c3eb844e3b7d9d15b950bbab8d7939a5b82cfa80",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_process"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "24d60685c994f22ebdbe51b1d363ab6780a19ffe",
+            "content": "sha256:826d5b219e422922f961b55c80797a5e6720cbf6e48eb7bce4b51b22ebf50450",
+            "locator": {
+              "end": 128,
+              "kind": "line_range",
+              "start": 98
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

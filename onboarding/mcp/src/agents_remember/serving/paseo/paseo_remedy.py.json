@@ -1,0 +1,23 @@
+{
+  "path": "mcp/src/agents_remember/serving/paseo/paseo_remedy.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The terminal remedy text.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f9a257c5c1f0238fa38add5f0ae6a36a70edd3b8",
+            "content": "sha256:be7a6eb76892e3fc004a7f0131ab8ef542b95cf0868cb02c8b1400be215de53b",
+            "locator": {
+              "kind": "symbol",
+              "name": "terminal_provision_remedy"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

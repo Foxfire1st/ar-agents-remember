@@ -3,25 +3,25 @@
   "proves": [
     {
       "anchor": {
-        "blob": "4cce64b0da35f1f1f00de3405e9a1f5ffa1761a3",
-        "content": "sha256:18dc75842dda7e3bf4632d0fbacf241ea9c4c4c2abf76fc4a6cd84e450f309b7",
+        "blob": "678e59f79b8f730a0205993cf785a96fdbf441e1",
+        "content": "sha256:70576fc9cb8774291354efb6fb80dec0498cb0be5881fc548a85e2f90af551bc",
         "locator": {
           "kind": "symbol",
           "name": "McpConfigTests.test_optional_paseo_runtime_block_is_exact_and_fail_loud"
         }
       },
-      "facet": "Rejects non-exact, malformed and padded version selectors.",
-      "id": "PRF-B12XTP",
+      "facet": "a complete paseoRuntime block loads with the contract's version and the absent block is the named no-host state (the old exact-selector rejection is historical)",
+      "id": "PRF-C27FPT",
       "invariant": "INV-2MWAYK",
       "origin": {
-        "handoffEntry": "PNT-R01@v1 §7",
-        "leaf": "260928-MIK-L90"
+        "handoffEntry": "L96 reconciliation: packaged host pin (INV-2MWAYK)",
+        "leaf": "260928-MIK-L96"
       }
     },
     {
       "anchor": {
-        "blob": "4cce64b0da35f1f1f00de3405e9a1f5ffa1761a3",
-        "content": "sha256:18dc75842dda7e3bf4632d0fbacf241ea9c4c4c2abf76fc4a6cd84e450f309b7",
+        "blob": "678e59f79b8f730a0205993cf785a96fdbf441e1",
+        "content": "sha256:70576fc9cb8774291354efb6fb80dec0498cb0be5881fc548a85e2f90af551bc",
         "locator": {
           "kind": "symbol",
           "name": "McpConfigTests.test_optional_paseo_runtime_block_is_exact_and_fail_loud"
@@ -43,7 +43,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4cce64b0da35f1f1f00de3405e9a1f5ffa1761a3",
+            "blob": "678e59f79b8f730a0205993cf785a96fdbf441e1",
             "content": "sha256:daa371a7bb7719d9e8e9fdaf42f19b54a57adde5e593b325f79bd3663bd108c0",
             "locator": {
               "kind": "symbol",
@@ -59,7 +59,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4cce64b0da35f1f1f00de3405e9a1f5ffa1761a3",
+            "blob": "678e59f79b8f730a0205993cf785a96fdbf441e1",
             "content": "sha256:bffca9508dbf7e6a58292a9ac05dacd1785465f5d5f38b6058a3d57277ac6623",
             "locator": {
               "kind": "symbol",
@@ -75,7 +75,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4cce64b0da35f1f1f00de3405e9a1f5ffa1761a3",
+            "blob": "678e59f79b8f730a0205993cf785a96fdbf441e1",
             "content": "sha256:40cff312ca5859c0ceaa581152bc307b17c0c875d6334f7bd1732cd8796afa04",
             "locator": {
               "kind": "symbol",
@@ -91,7 +91,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4cce64b0da35f1f1f00de3405e9a1f5ffa1761a3",
+            "blob": "678e59f79b8f730a0205993cf785a96fdbf441e1",
             "content": "sha256:4a066b62a3131e3ad3ef7164f19419770b73526a30baa7f6d16794647d92de9c",
             "locator": {
               "kind": "symbol",
@@ -107,7 +107,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4cce64b0da35f1f1f00de3405e9a1f5ffa1761a3",
+            "blob": "678e59f79b8f730a0205993cf785a96fdbf441e1",
             "content": "sha256:0a41093f08212b5c6c91d970699c3379fae4d5046b369392be47cbf47f2f20e2",
             "locator": {
               "kind": "symbol",
@@ -123,7 +123,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4cce64b0da35f1f1f00de3405e9a1f5ffa1761a3",
+            "blob": "678e59f79b8f730a0205993cf785a96fdbf441e1",
             "content": "sha256:e3b3b996c6a78c7a3531ae71b08a4c09a4a1910ba614ebe4b4520d29c89245cc",
             "locator": {
               "kind": "symbol",
@@ -139,11 +139,27 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4cce64b0da35f1f1f00de3405e9a1f5ffa1761a3",
+            "blob": "678e59f79b8f730a0205993cf785a96fdbf441e1",
             "content": "sha256:76a3c74f06a6b797c2b588747460f0b68af225482a6a70dd7b411e16d0d2a5b1",
             "locator": {
               "kind": "symbol",
               "name": "test_human_pinned_kind_in_global_file_fails_boot"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The optional-block cases this module owns.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "678e59f79b8f730a0205993cf785a96fdbf441e1",
+            "content": "sha256:78ca9ef3553cc85f5540b588d2a2ca81e13743d96b20288adaa42b8139c4e568",
+            "locator": {
+              "kind": "symbol",
+              "name": "McpConfigTests"
             }
           },
           "kind": "test"

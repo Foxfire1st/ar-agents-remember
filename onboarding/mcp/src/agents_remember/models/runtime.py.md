@@ -32,3 +32,9 @@ context dictionary.
 
 - Runtime install application entry point produces the installer response payload. [1]
 - Coordination application entry point exposes resolver output through MCP. [2]
+
+## 260928-MIK-L96 The host part of the install response
+
+`RuntimeInstallResponse` gains the `host` part of the result: the provision report's fields plus the product Node payload, the configured/settings-path facts and the restart-required message; the existing fields and parameters are unchanged.
+
+- The install response shape carrying the host part. [3]

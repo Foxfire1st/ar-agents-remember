@@ -1,0 +1,51 @@
+{
+  "path": "mcp/src/agents_remember/serving/paseo/paseo_command.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The command boundary with the product environment and Node.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "09352e9108115b24900230bcb373ba2cef6e83a1",
+            "content": "sha256:4493c3fee9db7800ece0996f60ab273406d8e2bdfb0ab2ea361b10d4ada1f390",
+            "locator": {
+              "kind": "symbol",
+              "name": "PaseoCli"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "09352e9108115b24900230bcb373ba2cef6e83a1",
+            "content": "sha256:d11d06b8621027bbda50a19ac2975087a3aa92f95a236b4136487ac94e98f881",
+            "locator": {
+              "end": 120,
+              "kind": "line_range",
+              "start": 60
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The named failure type shared with the host modules.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "22cd04269565629341ddea059d1841ecdd9f4978",
+            "content": "sha256:43e338ceab5462a567023caba34b697ce127c6100f6bdc6190f68470e4c7dae7",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/errors.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

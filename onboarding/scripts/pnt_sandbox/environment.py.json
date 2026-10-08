@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "49b16859a35bf71aa727c009a25e387a327096b6",
+        "blob": "c482b50b466b20ca2808aecbc389938cf12af982",
         "content": "sha256:4371835f2a56d3027e70b0859c2e13fb9fa12a0425bf5ec13419ab6e01440ad2",
         "locator": {
           "kind": "symbol",
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "49b16859a35bf71aa727c009a25e387a327096b6",
-        "content": "sha256:6fe91641b1114ecd81ca4627669a9d2cd5e0af928cbb2f5c7b183379a9915148",
+        "blob": "c482b50b466b20ca2808aecbc389938cf12af982",
+        "content": "sha256:ecfcc17da895ca62aa533d02ddfae6c6e5beb4f5cc987abf5b5c48dc9a6d6dff",
         "locator": {
           "kind": "symbol",
           "name": "REMOVED_VARIABLES"
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "49b16859a35bf71aa727c009a25e387a327096b6",
+        "blob": "c482b50b466b20ca2808aecbc389938cf12af982",
         "content": "sha256:b0cd3a73b7d187f86b8c3fdcf79d2bf77d0537f030d03da6852191aad9ff70a3",
         "locator": {
           "kind": "symbol",
@@ -57,8 +57,8 @@
     },
     {
       "anchor": {
-        "blob": "49b16859a35bf71aa727c009a25e387a327096b6",
-        "content": "sha256:b5de59a350db08e48d15df5681c6910e98d2f803dbd2d9a6f81e371d03936c0c",
+        "blob": "c482b50b466b20ca2808aecbc389938cf12af982",
+        "content": "sha256:ee578807d5a469caddeece9a9abf9e7c5bd2f9e415d317a1ba12a5c27cc75b3e",
         "locator": {
           "kind": "symbol",
           "name": "sandbox_variables"
@@ -75,7 +75,25 @@
     },
     {
       "anchor": {
-        "blob": "49b16859a35bf71aa727c009a25e387a327096b6",
+        "blob": "c482b50b466b20ca2808aecbc389938cf12af982",
+        "content": "sha256:ee578807d5a469caddeece9a9abf9e7c5bd2f9e415d317a1ba12a5c27cc75b3e",
+        "locator": {
+          "kind": "symbol",
+          "name": "sandbox_variables"
+        }
+      },
+      "id": "RLZ-QKYVD4",
+      "invariant": "INV-VCAREW",
+      "origin": {
+        "handoffEntry": "L96-D-5",
+        "leaf": "260928-MIK-L96"
+      },
+      "rationale": "Constructs the sandbox-owned XDG environment values the install child receives.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "c482b50b466b20ca2808aecbc389938cf12af982",
         "content": "sha256:4a4effe0303356f5ba0c8b03c665de0f4315381a3ed86ce274b2dc7d2b089860",
         "locator": {
           "kind": "symbol",
@@ -90,6 +108,24 @@
       },
       "rationale": "Names the AR, Paseo, source and former-host selector families removed from child environments.",
       "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "c482b50b466b20ca2808aecbc389938cf12af982",
+        "content": "sha256:b0cd3a73b7d187f86b8c3fdcf79d2bf77d0537f030d03da6852191aad9ff70a3",
+        "locator": {
+          "kind": "symbol",
+          "name": "sandbox_environment"
+        }
+      },
+      "id": "RLZ-VHN333",
+      "invariant": "INV-B6R816",
+      "origin": {
+        "handoffEntry": "INV-B6R816",
+        "leaf": "260928-MIK-L96"
+      },
+      "rationale": "This sandbox environment constructor composes product session exclusions with native selector isolation and the owned XDG roots; the task-specific launch definition now propagates those roots too.",
+      "role": "unclassified"
     }
   ],
   "references": {
@@ -103,6 +139,38 @@
             "locator": {
               "kind": "file"
             }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The sandbox environment constructor.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c482b50b466b20ca2808aecbc389938cf12af982",
+            "content": "sha256:b0cd3a73b7d187f86b8c3fdcf79d2bf77d0537f030d03da6852191aad9ff70a3",
+            "locator": {
+              "kind": "symbol",
+              "name": "sandbox_environment"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The product list the sandbox reads.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb407f537fc9b17727f49c3119b15d231f4ebfbc",
+            "content": "sha256:75dd440ab65676495daeea3e913b4a5e9d91f37541df9acdf13e48eb4ae14a6b",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/host-session-environment.json"
           },
           "kind": "code"
         }

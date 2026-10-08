@@ -27,9 +27,9 @@
     "leaf": "260928-MIK-L90",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "Every process the sandbox starts receives the caller's environment without the variables that select another AR runtime, coordination root, repository or Paseo home (every name starting `PASEO_`, `AR_`, `AGENTS_REMEMBER_` or `ORCA_`; `PYTHONPATH`, `PYTHONHOME`, `VIRTUAL_ENV`, `UV_PROJECT_ENVIRONMENT`; seven `GIT_` redirections) and without the variables that tie a process to the harness session the command was run from (`TMUX`, `TMUX_PANE`, `OLDPWD`, `AI_AGENT`, fourteen `CLAUDE` names and two `CODEX` names, each by exact name), with `TMUX_TMPDIR`, `PYTHONPYCACHEPREFIX`, `GIT_OPTIONAL_LOCKS=0` and `AR_DAGGER_AUTHORITY_ROOT` set to the sandbox's own values and `PWD` set to the child's working directory; harness logins, credentials and home selectors are kept, and nothing is removed by the `CLAUDE_`, `CLAUDE_CODE_` or `CODEX_` prefix.",
+  "statement": "Sandbox isolation retains its exact-name and selector removals and now adds sandbox-owned XDG roots while reading the product session list.",
   "status": "proposed",
   "supersedes": []
 }

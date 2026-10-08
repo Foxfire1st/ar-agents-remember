@@ -1,0 +1,88 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "Both restarting from the install and ignoring the mismatch were weighed and rejected, and every later install now has to keep the preflight, the late-restart answer and the irreversible-site guard in agreement."
+  },
+  "alternatives": [
+    {
+      "option": "The install step reads whether a stop would be needed before any write and defers with restartRequired and the terminal remedy; explicit `paseo provision` remains the transition that may restart.",
+      "reason": "An install must be safe for a user who is working; the session loss is then a deliberate, named, out-of-host action instead of an install side effect.",
+      "status": "chosen"
+    },
+    {
+      "option": "Let the install step restart a mismatched host, as the old direct provision did.",
+      "reason": "Any install run by an agent of the host would kill the session that called it, and sessions of other agents would be closed without warning.",
+      "reconsider_when": "A host restart preserves running sessions and turns, or every install is guaranteed to run outside the host.",
+      "status": "rejected"
+    },
+    {
+      "option": "Install the new version while the old host keeps running and note the mismatch only in the log.",
+      "reason": "The install would report success while the running host is not the build's host, and a later start would find an inconsistent install.",
+      "reconsider_when": "The host and its clients are proven to tolerate a mixed install.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "A build that moves the host release needs a terminal provision before the host matches the build; the install says so and changes nothing of the host.",
+    "A live provider or setting change that the daemon applies without a stop is still applied."
+  ],
+  "context": "runtime_install is called by the tool server, which is a child of the host's worker, so a provision started from it stops its own process halfway; a restart closes every agent session, running turns and pending permission prompts.",
+  "decider": "architect's refinement under D75, frozen in MIK-R96@v1 rule 9",
+  "id": "DEC-7D1NV0",
+  "links": [
+    {
+      "relation": "explains",
+      "target": {
+        "blob": "cf0e20b25616726e024ebe9a65135521b342eb6e",
+        "content": "sha256:b3755c26c13c6f8ce7b58a66c46c3ed405eb8856f94c83384ecba50059be2098",
+        "locator": {
+          "kind": "symbol",
+          "name": "_check_install_restart"
+        },
+        "path": "mcp/src/agents_remember/serving/paseo/paseo_run.py"
+      }
+    },
+    {
+      "relation": "explains",
+      "target": {
+        "blob": "cf0e20b25616726e024ebe9a65135521b342eb6e",
+        "content": "sha256:a198a9214c13de1a50ccd0c901388547ecc8a16592a663f496bb271bb2f12cdd",
+        "locator": {
+          "kind": "symbol",
+          "name": "preserve_live_install"
+        },
+        "path": "mcp/src/agents_remember/serving/paseo/paseo_run.py"
+      }
+    },
+    {
+      "relation": "motivated_change_to",
+      "target": {
+        "id": "MIK-R96",
+        "packet": "requirements/MIK-R96-v1-one-install-and-one-start-bring-up-the-host.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/260928-mik-l96-ar/task-reports/role-launch/260928-MIK-L96-worker-c9abaa5b-c066-404b-a276-fcb39fcd4a79.evidence/restart-b/checks/final-unit-v2.log; manifest 1d1f404e04e282f568cfa601317e4cad75d22392b1c9a2f28bc96a1e46091b4f; current source manifest cd7706b9b3c7dbb3d64684ec054c55b6f9eac22dbe1b6d76779bdab5e47abe08; current qualification /home/firefox/projects/ar-coordination/worktrees/agents-remember/260928-mik-l96-ar/task-reports/role-launch/260928-MIK-L96-worker-c9abaa5b-c066-404b-a276-fcb39fcd4a79.evidence/post-l51-current/catalog-qualification.json; current manifest 5cdfbd41e9079195a3cd318d4a26263392ab8031aead02c2459faa39445bbf3f; exact reuse /home/firefox/projects/ar-coordination/worktrees/agents-remember/260928-mik-l96-ar/task-reports/role-launch/260928-MIK-L96-worker-c9abaa5b-c066-404b-a276-fcb39fcd4a79.evidence/post-L39-sync/exact-input-proof-reuse.json"
+      ],
+      "path": "notes/reports/260928-MIK-L96-curator-evidence/handoff.json"
+    },
+    "handoffEntry": "MIK-R96@v1 §9 preflight",
+    "leaf": "260928-MIK-L96",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

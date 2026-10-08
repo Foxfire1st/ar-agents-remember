@@ -2850,7 +2850,7 @@ The MCP package separates three surfaces:
   `reload_provider_authority`/`require_provider_launch_authority` (unreadable
   or invalid ⇒ fail-closed refusal, never a snapshot fallback), so editing
   `providers` to `{}` bites running servers immediately while stop/status/
-  cleanup stay legal; `runtime_install` seeds the global file copy-if-missing and
+  cleanup stay legal; starter/setup (the renderer) writes the shared coordination settings file when it is absent and
   `spawn_agent_session` resolves its spend knobs through the loader (260703-L16 + HFX2-L10:
   repo-local level override > global level override > repo-local role default >
   global role default > spawn preference/detection-gated default; ids against
@@ -3960,3 +3960,10 @@ all.
 
 The existing review-record-comparison command now records actual owner-produced assessment inputs through the normal resolved-pair freeze. Its paired recovery controls select an exact retained parent and original curator generation. The packaged curation operation documents both paths and remains synchronized from the canonical skill. No new knowledge writer, semantic store or automatic historical repair is introduced.
 
+
+## 260928-MIK-L96 Host install, start and shared authority
+
+The `mcp` route now carries the host step of `runtime_install`, the start-only host supervision behind a dashboard start, the packaged host and Node contract, the installation-wide host authority and the product's session-environment list; the host modules live in `serving/paseo/` and are reached from install and serving alike.
+
+- The host step of the install. [251]
+- The packaged host contract. [252]

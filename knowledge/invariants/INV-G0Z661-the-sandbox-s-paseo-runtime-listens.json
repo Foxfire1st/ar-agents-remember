@@ -26,9 +26,9 @@
     "leaf": "260928-MIK-L90",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "The sandbox's Paseo runtime listens on `127.0.0.1:6820` and its dashboard on `127.0.0.1:9797` and on no other port: when anything that is not the sandbox's own process or a descendant of it listens on a reserved port number, on any address, `start` refuses, names the port and the process id, starts nothing and uses no other port; the ports are looked at before the build and again after the safety check.",
+  "statement": "Public sandbox build/check/start/stop accept explicitly chosen host/dashboard ports, retaining defaults6820/9797 and the same ownership/safety refusals without automatic port selection. The named tooling has one public renderer; actual product roots/runtime are admitted separately.",
   "status": "proposed",
   "supersedes": []
 }

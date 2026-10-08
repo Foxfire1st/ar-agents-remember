@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "c7f685e2839e5f34024bc5afa15818b35c4553d8",
-        "content": "sha256:9808dbae0e8d5d07678ed9f992ae12a6604bfa1a3a216f523500ff175720d729",
+        "blob": "3476324a99bd28dd30bb21f1789de338d66c5aff",
+        "content": "sha256:9f95fd35f24ec058b63858eb5f12bafe6fec2bb7507f4f6e7d66a2c2253005e0",
         "locator": {
           "kind": "symbol",
           "name": "_admission_error"
@@ -17,6 +17,42 @@
         "leaf": "260928-MIK-L90"
       },
       "rationale": "Rejects server_info roots, repository allowlist and provider scope differing from exact disposable corpus authority.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "3476324a99bd28dd30bb21f1789de338d66c5aff",
+        "content": "sha256:4ab8022a97382c5161a29323f72d23d2889667d3bffeec6a591aded3e1e69b69",
+        "locator": {
+          "kind": "symbol",
+          "name": "_call_all"
+        }
+      },
+      "id": "RLZ-M0X9TA",
+      "invariant": "INV-VCAREW",
+      "origin": {
+        "handoffEntry": "L96-D-5",
+        "leaf": "260928-MIK-L96"
+      },
+      "rationale": "Runs the admitted public tool-call path after _admission_error accepts the package identity.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "3476324a99bd28dd30bb21f1789de338d66c5aff",
+        "content": "sha256:9f95fd35f24ec058b63858eb5f12bafe6fec2bb7507f4f6e7d66a2c2253005e0",
+        "locator": {
+          "kind": "symbol",
+          "name": "_admission_error"
+        }
+      },
+      "id": "RLZ-QE1E2R",
+      "invariant": "INV-VCAREW",
+      "origin": {
+        "handoffEntry": "L96-D-5",
+        "leaf": "260928-MIK-L96"
+      },
+      "rationale": "Admission check for product package identity: it refuses a foreign package before the public install route is called.",
       "role": "enforcement"
     }
   ],

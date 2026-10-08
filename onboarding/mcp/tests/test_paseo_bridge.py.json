@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "acaf5f3e7de3fe29059c03497b8fe50bcf25482e",
+        "blob": "b0af01fc7a5dd4073694f370cf0ab432e0df1e7f",
         "content": "sha256:61f4197f39df45313cebd1c6873a0c2831dc3ffce4f81cc7450f812ccc86734a",
         "locator": {
           "kind": "symbol",
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "acaf5f3e7de3fe29059c03497b8fe50bcf25482e",
-        "content": "sha256:7d64fbca8bf9bb513e9233411e4cf04112ed51cad1b2f81b2251dd35f9e50b30",
+        "blob": "b0af01fc7a5dd4073694f370cf0ab432e0df1e7f",
+        "content": "sha256:e3274b9de9f2e09757fa8f558e3093f05dd9487c5741c5ef830e2931053e5184",
         "locator": {
           "kind": "symbol",
           "name": "BridgeProcessTests.test_unconfigured_or_never_started_runtime_refuses_before_any_process"
@@ -37,8 +37,8 @@
     },
     {
       "anchor": {
-        "blob": "acaf5f3e7de3fe29059c03497b8fe50bcf25482e",
-        "content": "sha256:7d799e12e4909fe3c0a0881f77fae7d2aea996677264496266b86285d5a44fa4",
+        "blob": "b0af01fc7a5dd4073694f370cf0ab432e0df1e7f",
+        "content": "sha256:59ec754e59b4faaafa50466b23c4acbaede5df2a01510e3935ca5d9b8deb9b7d",
         "locator": {
           "kind": "symbol",
           "name": "BridgeProcessTests.test_the_script_is_pointed_at_the_configured_runtime_and_no_other"
@@ -64,6 +64,34 @@
             "content": "sha256:846e1bc9be8eadf3126ffcdaade8c57eab77ab126d48358135d5bce47418c23c",
             "locator": {
               "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The bridge environment case with the product Node.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b0af01fc7a5dd4073694f370cf0ab432e0df1e7f",
+            "content": "sha256:97905cf1cea2a9dcbd61233fd9f765988c203b3d1c10d907892ae2294857a07d",
+            "locator": {
+              "kind": "symbol",
+              "name": "BridgeProcessTests"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b0af01fc7a5dd4073694f370cf0ab432e0df1e7f",
+            "content": "sha256:ececd38026784b04de24c13c44a769bb91eddfa53916761915ed09576227fe82",
+            "locator": {
+              "end": 260,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "test"

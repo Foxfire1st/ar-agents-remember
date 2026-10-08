@@ -11,3 +11,9 @@ All process run/spawn/provision actions pass through the scrubbed environment an
 ## Evidence
 
 - The scoped current source carries the module/document behavior described above. [1]
+
+## 260928-MIK-L96 The public install receipts
+
+`Operations.runtime_install` retires the previous current receipt into history before its child runs and records fresh cut, timeout and malformed outcomes with the underlying error and the real receipt and server-log paths, instead of leaving an old success visible.
+
+- The public install receipt owner. [2]

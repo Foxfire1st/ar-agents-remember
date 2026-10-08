@@ -1,0 +1,128 @@
+{
+  "path": "mcp/src/agents_remember/serving/paseo/paseo_start.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "d9ace58e2412f7ca4324514269b24fd960c7d03a",
+        "content": "sha256:bada0558f18963fa912b88536362bd1eb9ae669a6bd20671bbae9f4c74cfb0ad",
+        "locator": {
+          "kind": "symbol",
+          "name": "ensure_host"
+        }
+      },
+      "id": "RLZ-6036XR",
+      "invariant": "INV-96C24X",
+      "origin": {
+        "handoffEntry": "MIK-R96@v1 §4",
+        "leaf": "260928-MIK-L96"
+      },
+      "rationale": "This start-only entry point joins the configured-home operation, observes installed readiness and produces the one bounded start outcome without invoking installation or plugin convergence.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "d9ace58e2412f7ca4324514269b24fd960c7d03a",
+        "content": "sha256:a818b6da2ab0f76df7990b165b8f51b22c8a7bb7ed9a4d50bc7143ff5e3da540",
+        "locator": {
+          "kind": "symbol",
+          "name": "observe_host"
+        }
+      },
+      "id": "RLZ-TG7AAM",
+      "invariant": "INV-03M6ZA",
+      "origin": {
+        "handoffEntry": "MIK-R96@v1 §6",
+        "leaf": "260928-MIK-L96"
+      },
+      "rationale": "This observation entry point bounds all host reads and formats a host outcome without modifying the host or removing stale records; the CLI composes it with dashboard status.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The bounded observation with its state line.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d9ace58e2412f7ca4324514269b24fd960c7d03a",
+            "content": "sha256:a818b6da2ab0f76df7990b165b8f51b22c8a7bb7ed9a4d50bc7143ff5e3da540",
+            "locator": {
+              "kind": "symbol",
+              "name": "observe_host"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d9ace58e2412f7ca4324514269b24fd960c7d03a",
+            "content": "sha256:ee3c5f30de18948e4b7b7d90202a132916a189ca3f302951c00665e09eea10db",
+            "locator": {
+              "end": 78,
+              "kind": "line_range",
+              "start": 65
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The start-only supervision entry point.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d9ace58e2412f7ca4324514269b24fd960c7d03a",
+            "content": "sha256:bada0558f18963fa912b88536362bd1eb9ae669a6bd20671bbae9f4c74cfb0ad",
+            "locator": {
+              "kind": "symbol",
+              "name": "ensure_host"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d9ace58e2412f7ca4324514269b24fd960c7d03a",
+            "content": "sha256:bf250c2a175afdcbe02da80729192b22a5c22f90c4b77b0e2fdb8620c56a8623",
+            "locator": {
+              "end": 180,
+              "kind": "line_range",
+              "start": 148
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The locked start path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d9ace58e2412f7ca4324514269b24fd960c7d03a",
+            "content": "sha256:6d8163cec7a8ef94cb559e1f8ef6e031741eb976fb558acb2f3d51b8651a1f2a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_start_locked"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d9ace58e2412f7ca4324514269b24fd960c7d03a",
+            "content": "sha256:46fc1333c263090707e3bf3be702ebad3adebbe40f6e01b659b1fb2acb4b0a7c",
+            "locator": {
+              "end": 200,
+              "kind": "line_range",
+              "start": 183
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

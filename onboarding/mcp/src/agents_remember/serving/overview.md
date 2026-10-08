@@ -1702,3 +1702,11 @@ admission step, and it keeps the transport's division of labour intact.
 - **The transport only checks shape.** It does not compare, resolve or repair the digest: whether it is
   the comparison that is there now is the owners' answer, and a digest that no longer matches is reported
   as `stale` rather than refused.
+
+## 260928-MIK-L96 The host runtime package
+
+This route gained the `serving/paseo/` package: the moved command/daemon/plugin/provision modules plus the new install host part, Node acquisition, settings/convergence helper, start supervision, home lock, package-lock check, start-outcome receipt and terminal remedy. The dashboard start/status paths only observe or ensure the host — they never install, configure or reload it. Inside this shared package, the install host part (`paseo_install`) and the provision pass (`paseo_provision`) are the writers of host configuration, the plugin copy and the package tree; the start path composes the read-only `paseo_start` owner.
+
+- The start-only supervision the dashboard composes. [105]
+- The install host part. [106]
+- The host acquisition. [107]

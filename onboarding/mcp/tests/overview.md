@@ -178,3 +178,11 @@ The suite gained the leaf-handover tests (`test_leaf_handover.py`, `test_leaf_ha
 - The lane manifest is read at configuration for the integration files. [22]
 - The lane loader refuses a test file without a lane and a lane list that is not canonical. [26]
 - The lifecycle loader refuses a catalog that is not canonical or does not agree with the source tree. [24]
+
+## 260928-MIK-L96 The host test population
+
+The tests route gained seven host modules (install contract, install no-stop, Node, start, dashboard host, release contract, host environment) plus additions to the existing sandbox and Paseo tests; the lane and lifecycle catalogs were extended for them.
+
+- The install-contract module. [27]
+- The no-stop module. [28]
+- The node module. [29]

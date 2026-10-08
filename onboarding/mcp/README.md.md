@@ -128,3 +128,10 @@ the workspace and never the user's home directory.
 The package quickstart now demonstrates the canonical `memory_quality_check` request object with an
 explicit mode instead of the removed flat wait/run-id surface. This is a contract replacement, not
 a compatibility example: sync/start execution fields and poll identity are separate strict shapes.
+
+## 260928-MIK-L96 Host install and start
+
+The package's install step provisions the host pinned by the build contract on a Node the product brings; `agents-remember dashboard --daemon` makes sure both the dashboard and the host run. A dashboard start never installs or upgrades the host and a dashboard stop or restart never stops it; `dashboard --status` shows both states.
+
+- The dashboard command that starts both. [8]
+- The host step of the install. [9]

@@ -7,12 +7,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "df2df8eb6a7946cae73c722a1129ae93857073e3",
+            "blob": "683f4fad82810ac77ce87e5fe32a2a5426e5b2d6",
             "content": "sha256:6a0edb187816155a5e240f7df923e78737aca8d7bb39e621fd621aff7787db23",
             "locator": {
-              "end": 556,
+              "end": 567,
               "kind": "line_range",
-              "start": 556
+              "start": 567
             },
             "path": "scripts/sync-harness.py"
           },

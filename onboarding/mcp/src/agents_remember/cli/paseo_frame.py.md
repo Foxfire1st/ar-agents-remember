@@ -21,3 +21,9 @@ frame_descriptor derives dashboard origin and exact embed mapping, then obtains 
 ## MIK-R95 Workspace Owner Import
 
 The frame route now takes `workspace_folder` from its extracted owner `role_launch_workspace` instead of the preparation module; the route behavior is unchanged.
+## 260928-MIK-L96 The unreachable detail
+
+The frame's `unreachable` answer now distinguishes the host states: a host that is not installed names the install step, a configured host that is down names the one start, and the `unreachable` detail no longer tells a user to provision as a remedy for an unloaded client.
+
+- The frame answer with its host-state detail. [4]
+- The host facts the frame reads. [5]

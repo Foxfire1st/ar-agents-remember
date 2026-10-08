@@ -63,22 +63,23 @@ part of the copied, rendered harness package and this skill no longer installs
 them.
 
 The five-stage sequence is now: (1) run or verify `runtime_install()` so the
-coordinator scaffold exists (it also seeds the global agentic settings file
-copy-if-missing); (2) the AGENTIC-SETTINGS INTERVIEW (new with 260703-L13,
+coordinator scaffold exists and the host step runs; the shared
+`<coordinationRoot>/system/settings.json` file belongs to starter/setup (the
+renderer writes it when absent) and this step never writes that authority; (2) the AGENTIC-SETTINGS INTERVIEW (new with 260703-L13,
 between the old Stages 1 and 2): walk the developer through the four knob
 families — gate delegation posture (with the explicit boot-snapshot
 restart note), loop defaults, concurrency caps, and harness preference
 (registry ids claude/codex/pi) — and edit
 `<coordinationRoot>/system/settings.json` with their answers, leaving skipped
-families at the seeded defaults; repo-local `<repo>/system/settings.json`
+families at the built-in absent-knob defaults; repo-local `<repo>/system/settings.json`
 overrides are offered only on request, never created unprompted; (3) ask
 whether to scaffold a new memory repo or use an existing one, unless memory
 already resolves cleanly; (4) hand off to `c-03-repo-bootstrap` only when a
 new memory repo was scaffolded; (5) configure providers (start/refresh
 watchers) so they actually index the configured code and memory. Stage 0's
-settings-sane check also reports whether the global agentic settings file
+settings-sane check also reports whether the shared agentic settings file
 exists, and the report result gains an agentic-settings line (interviewed vs
-seeded defaults, with the file path). `skills_install()` is explicitly not part
+built-in defaults, with the file path). `skills_install()` is explicitly not part
 of package-based first-run setup because starter packages already include
 harness-discoverable skills; it remains only a maintenance/manual option. The
 report result similarly avoids any hook-restart instruction because hooks are
@@ -127,7 +128,7 @@ No external documentation is needed to prove this repository-local skill contrac
 - Stage 2 interviews the developer on the agentic settings families, writes the seeded global file, and verifies the two caller kinds of the public dispatch transaction. [4]
 - Stage 3 (new under CCR-R22@v1, commit `685f83c44055`) authors, validates, and registers one repository-owned Gate 1-4 certification profile per code-committing repository (`repositories.<repo-id>.certificationProfile`) against `docs/reference/repository-certification-profile.md`; Stage 4/5 delegate memory init, existing-memory adoption, and bootstrap to the existing skills; Stage 6 configures providers. [5]
 - The `provider_watchers` tool Stage 5 drives: it accepts `status`/`start`/`stop`/`restart`/`invalidate-indexes`/`shutdown-all`, and the `action="refresh"` this SKILL.md still names now raises a `ValueError` directing callers to `restart` (watchers only, indexes preserved) or `invalidate-indexes` (full re-embed). [6]
-- The install-side seeding the interview builds on (copy-if-missing global file). [7]
+- The starter/setup renderer that writes the shared coordination settings file when it is absent; the removed install-side seed writer is historical. [7]
 
 ### Cross-Repo References
 
@@ -161,3 +162,9 @@ a development leaf, worktree or enclosure to give the writer an argument list it
 
 **This card describes a generated copy**, propagated from `skills/c-13-install-and-onboard/SKILL.md` by
 `scripts/sync-skills.py` into this package-owned copy and the eight harness starter packages.
+
+## 260928-MIK-L96 The install brings the host
+
+The installed skill's preflight checks that the shared settings name a host, its runtime stage says that `runtime_install` brings the host and how to read the host part, and its report has a host line and ends with the one start. No step tells the user to run the provision as part of an install; the terminal provision is the explicit transition.
+
+- The package copy of the install skill. [8]

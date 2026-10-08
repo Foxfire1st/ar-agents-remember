@@ -30,6 +30,23 @@
         }
       ]
     },
+    "10": {
+      "note": "The five-fact settings parse.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7c4e75b59e2b58b17ad1a2693c3ba3c340e5f590",
+            "content": "sha256:3125f6c5c96edaeb59ff9f4ce68d7c584bcc3714d07dd8ce8d58a73d6c0128cd",
+            "locator": {
+              "kind": "symbol",
+              "name": "parse_paseo_runtime_settings"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/paseo_runtime_settings.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "The layering rail enforces the total order this route anchors.",
       "targets": [
@@ -70,8 +87,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b26253c184fa75dd45ade676d08594cf6333f40e",
-            "content": "sha256:4232421b89bbb18aa4f124e9c4f5106e1c6b435a6a524141e73180b65457f489",
+            "blob": "7c4e75b59e2b58b17ad1a2693c3ba3c340e5f590",
+            "content": "sha256:f5454b360a68ed879adcb0a63555a4647425c847c9d0f4de0e36a73142010203",
             "locator": {
               "kind": "file"
             },
@@ -86,8 +103,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "74cb448cf86fe0ef7fb7d736bf9a533c4c65e639",
-            "content": "sha256:d3a50a8a93cd1556c70516f5a6c156fc53789686c1d09d7496abb354ecc85e3c",
+            "blob": "e0e3901879af6c975558c5c4eb31d6cdf14c5fb4",
+            "content": "sha256:dcfdb2039c30a8bd54045893b0bfc1ec6489d61661213a396c96de67bc3be209",
             "locator": {
               "kind": "file"
             },
@@ -102,8 +119,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "56a87eb79233f3f9fe313a9eeea6e2f9dfdae7d4",
-            "content": "sha256:a1e797bb62f620909dec70beea9719fe32a014f01e4c2ca237b878142e7ee809",
+            "blob": "2295c698608e6e8910ee28c1db3c5296dcf4d6a4",
+            "content": "sha256:baf763499075984ec4f86d348a0dc21c7c961acd80b295c31b0a06ca98918cc9",
             "locator": {
               "kind": "file"
             },
@@ -124,6 +141,40 @@
               "kind": "file"
             },
             "path": "mcp/src/agents_remember/kernel/_agentic_settings_sections.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The shared authority reader.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "23f89436ed722d0c3ab6470a0bf9079145e22632",
+            "content": "sha256:3cfc871f9f8493dbaa4b11e825bfa4064aed6e67d8b83790b416fab6cc20b54d",
+            "locator": {
+              "kind": "symbol",
+              "name": "load_shared_paseo_runtime"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/paseo_authority.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The session environment filter.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "39638c80596020e507e49021c3300935b8be9281",
+            "content": "sha256:db2be433384e17f373255c0b619ddd896b6ce114371547a3993aa20bdb242596",
+            "locator": {
+              "kind": "symbol",
+              "name": "host_environment"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/host_environment.py"
           },
           "kind": "code"
         }

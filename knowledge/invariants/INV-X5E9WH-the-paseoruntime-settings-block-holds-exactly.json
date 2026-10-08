@@ -22,9 +22,9 @@
     "leaf": "260928-MIK-L90",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "The `paseoRuntime` settings block holds exactly six facts (installPrefix, home, listen, version, providers, embed), and a key outside that set is refused when the block is parsed.",
+  "statement": "The `paseoRuntime` settings block holds the five operational facts (installPrefix, home, listen, providers, embed) and one optional `version` key that is no longer the pin; a key outside that set is refused when the block is parsed.",
   "status": "proposed",
   "supersedes": []
 }

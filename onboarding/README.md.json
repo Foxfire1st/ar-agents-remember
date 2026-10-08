@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "bef304057d472fe41cfebec6cacaac3ea0ba2669",
+        "blob": "0ee4400561d2a2ee5a776f5307d4c7790f9b08b6",
         "content": "sha256:364f154e3ff1548eedda192215df5e5295ec7094e5b68f065c3ed32ecd6f3526",
         "locator": {
           "end": 101,
@@ -27,7 +27,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bef304057d472fe41cfebec6cacaac3ea0ba2669",
+            "blob": "0ee4400561d2a2ee5a776f5307d4c7790f9b08b6",
             "content": "sha256:084adacfb6fa35356d75567a154270e09ac04ba0ecc4c526b993a6c3ebda9977",
             "locator": {
               "end": 62,
@@ -44,12 +44,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bef304057d472fe41cfebec6cacaac3ea0ba2669",
+            "blob": "0ee4400561d2a2ee5a776f5307d4c7790f9b08b6",
             "content": "sha256:9952d1d0ed63d0a9a008a962196f8a449654b60428251f8791c785029c5a0ffd",
             "locator": {
-              "end": 331,
+              "end": 341,
               "kind": "line_range",
-              "start": 323
+              "start": 333
             }
           },
           "kind": "code"
@@ -61,12 +61,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bef304057d472fe41cfebec6cacaac3ea0ba2669",
+            "blob": "0ee4400561d2a2ee5a776f5307d4c7790f9b08b6",
             "content": "sha256:f6e757f50314de45ed752df3d2fb828221716fb822264b73bd592d3f9fb919ad",
             "locator": {
-              "end": 331,
+              "end": 341,
               "kind": "line_range",
-              "start": 327
+              "start": 337
             }
           },
           "kind": "code"
@@ -109,12 +109,45 @@
         }
       ]
     },
+    "14": {
+      "note": "The install procedure the readme mirrors.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9d6aaef39fa8726993ecacea4eb791ee797892f5",
+            "content": "sha256:131bf15e0ce4474852f7641cab645c2fa9ac9a58b83d687207ff10b784df643c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/c-13-install-and-onboard/SKILL.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The dashboard start that ensures the host.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7d5073fe88bde3e92fffa7108228d97077f479ee",
+            "content": "sha256:64bda7d2542d6a0219c2ca768ea4c3000ae01babb83a4f46a5d05a87863b56cf",
+            "locator": {
+              "kind": "symbol",
+              "name": "_run_daemon_command"
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "The README shows a `## What It Looks Like In Practice` mini-transcript: a source file's by-path onboarding note, the task-start `context_packet`/`memory_quality_check` calls, and the read-then-propose-then-refresh loop.\n\nAnchor: `## What It Looks Like In Practice`",
       "targets": [
         {
           "anchor": {
-            "blob": "bef304057d472fe41cfebec6cacaac3ea0ba2669",
+            "blob": "0ee4400561d2a2ee5a776f5307d4c7790f9b08b6",
             "content": "sha256:303140747a515f3b23e7dc6ddca01d65b90f4dc0f39b285aecc6c4eabc098bb4",
             "locator": {
               "end": 80,
@@ -131,7 +164,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bef304057d472fe41cfebec6cacaac3ea0ba2669",
+            "blob": "0ee4400561d2a2ee5a776f5307d4c7790f9b08b6",
             "content": "sha256:27793a31e5e56505cb00d8e7fa4ecad35c2f727a103c20e651e8fc3f3d5ffeaf",
             "locator": {
               "end": 87,
@@ -148,7 +181,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bef304057d472fe41cfebec6cacaac3ea0ba2669",
+            "blob": "0ee4400561d2a2ee5a776f5307d4c7790f9b08b6",
             "content": "sha256:364f154e3ff1548eedda192215df5e5295ec7094e5b68f065c3ed32ecd6f3526",
             "locator": {
               "end": 101,
@@ -165,7 +198,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bef304057d472fe41cfebec6cacaac3ea0ba2669",
+            "blob": "0ee4400561d2a2ee5a776f5307d4c7790f9b08b6",
             "content": "sha256:08e28288d6c11a4fde4e338fd904f506a0e47c5b8f5ea643d54106d8e3c3b55a",
             "locator": {
               "end": 138,
@@ -182,12 +215,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bef304057d472fe41cfebec6cacaac3ea0ba2669",
+            "blob": "0ee4400561d2a2ee5a776f5307d4c7790f9b08b6",
             "content": "sha256:c6b5896537078fbcdde1d18b05ac9ea7fd2588da904239666153ad25f8864496",
             "locator": {
-              "end": 192,
+              "end": 202,
               "kind": "line_range",
-              "start": 175
+              "start": 185
             }
           },
           "kind": "code"
@@ -216,12 +249,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bef304057d472fe41cfebec6cacaac3ea0ba2669",
+            "blob": "0ee4400561d2a2ee5a776f5307d4c7790f9b08b6",
             "content": "sha256:8e52a773f4982a224264eb1464f77c51c417d238de22fdeeaf1e71182d7c9ed2",
             "locator": {
-              "end": 320,
+              "end": 330,
               "kind": "line_range",
-              "start": 189
+              "start": 199
             }
           },
           "kind": "code"
@@ -233,12 +266,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bef304057d472fe41cfebec6cacaac3ea0ba2669",
+            "blob": "0ee4400561d2a2ee5a776f5307d4c7790f9b08b6",
             "content": "sha256:0970a65e338421915476b4ff49c4c2bfce0f2909b6adcef3dc894a77eb1b8832",
             "locator": {
-              "end": 326,
+              "end": 336,
               "kind": "line_range",
-              "start": 317
+              "start": 327
             }
           },
           "kind": "code"

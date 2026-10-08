@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "The safety check's public claim that every root resolves inside the sandbox would be false for the two new roots; SafetyCheckTests::test_product_node_and_cache_roots_are_required_and_cannot_escape exercises the missing, outside and symlink-resolved refusals with supplied fake roots. No retained control artifact that removes the real resolver additions and asserts the expected failure was located: the Worker's dated clarification (2026-10-07 22:27:22 UTC under owner authority 6f23d369) searched the bounded retained evidence and found none, so the removed-fix-control wording is narrowed to the positive case and static source."
+  },
+  "applicability": "The sandbox safety check over the product Node installation and archive-cache roots.",
+  "conditions": [
+    "A missing, outside or symlink-resolved product Node or cache root refuses the normal start before public installation or dashboard spawn.",
+    "The existing root and port guards are preserved."
+  ],
+  "exclusions": [
+    "Harness homes and package-manager caches keep their separate exclusion from INV-85WW94."
+  ],
+  "id": "INV-FJPXYV",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/role-launch/260928-MIK-L96-reviewer-e0a83546-a27f-4486-bb70-c11b906053fb.evidence/fix-verification-round-4/focused.log: SafetyCheckTests.test_product_node_and_cache_roots_are_required_and_cannot_escape tests both product roots across missing/outside/symlink shapes and asserts no runtime_install or spawn dashboard; scoped source inspection confirms the build-owned product_node resolver and unchanged safety ownership mechanisms."
+      ],
+      "path": "notes/reports/260928-MIK-L96-curator-evidence/handoff.json"
+    },
+    "handoffEntry": "L96-D-8",
+    "leaf": "260928-MIK-L96",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Missing, outside and symlink-resolved product Node/cache roots refuse the normal start before public installation or dashboard spawn, with the existing root and port guards preserved.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -1,6 +1,25 @@
 {
   "path": "mcp/src/agents_remember/application/runtime/install.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "a81adb6dde0d503439aba7164940ec4bd011a65c",
+        "content": "sha256:8c4ac97d90059ad425122346e9b05a36e6a8ca869d587c0af7ea12c958af0b3a",
+        "locator": {
+          "kind": "symbol",
+          "name": "run_runtime_install"
+        }
+      },
+      "id": "RLZ-NWX29V",
+      "invariant": "INV-GAZREV",
+      "origin": {
+        "handoffEntry": "MIK-R96@v1 §1",
+        "leaf": "260928-MIK-L96"
+      },
+      "rationale": "This application entry point composes the host only after earlier install steps and combines the host outcome with their preserved result; it owns the public ordering and failure boundary.",
+      "role": "unclassified"
+    }
+  ],
   "references": {
     "1": {
       "note": "MCP tool payload construction maps tool booleans into `RuntimeInstallRequest`.",
@@ -67,13 +86,29 @@
       "targets": [
         {
           "anchor": {
-            "blob": "da03b840f9e9b835810d2339c909cf0bb20efe68",
+            "blob": "1f99cfc219a3a4a26ad011d3d472a52f276c579a",
             "content": "sha256:a648e98f3a9e63b69d2d8b4c412cb573b29d59ec98cb93ebfd37bc1a14aa28a0",
             "locator": {
               "kind": "symbol",
               "name": "RuntimeInstallRequest"
             },
             "path": "mcp/src/agents_remember/install/runtime.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The application entry that composes the host step onto the lower service result, including the `ok` conjunction.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a81adb6dde0d503439aba7164940ec4bd011a65c",
+            "content": "sha256:8c4ac97d90059ad425122346e9b05a36e6a8ca869d587c0af7ea12c958af0b3a",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_runtime_install"
+            }
           },
           "kind": "code"
         }

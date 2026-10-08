@@ -11,3 +11,9 @@ This helper runs inside the selected build Python, declares dashboard or MCP pro
 ## Evidence
 
 - The scoped current source carries the module/document behavior described above. [1]
+
+## 260928-MIK-L96 The product Node and cache roots
+
+`resolve_roots` now adds the two product Node roots (the managed installation and the archive cache) to the roots the safety check resolves, so a missing, outside or symlink-resolved product Node or cache path refuses the start before installation or dashboard spawn.
+
+- The resolver with the product Node and cache roots. [2]

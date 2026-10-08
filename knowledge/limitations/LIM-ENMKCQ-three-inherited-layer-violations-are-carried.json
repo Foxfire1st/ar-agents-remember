@@ -1,0 +1,35 @@
+{
+  "boundary": "The three rank violations and the application/worktrees cycle the worker's layer check reports on the candidate are the exact same violations it reports on the base Beb/352: the upward dependencies live in mcp/src/agents_remember/mcp/tools/role_agents.py, mcp/src/agents_remember/worktrees/knowledge_conflict.py and mcp/src/agents_remember/worktrees/modules/start.py, none of which this leaf changes. The packet's scope requires that the leaf adds no forbidden import and leaves the inherited structure unrepaired.",
+  "id": "LIM-ENMKCQ",
+  "limited": "Layer-rank separation and an acyclic application/worktrees dependency on this candidate.",
+  "links": [
+    {
+      "relation": "bounds",
+      "target": {
+        "id": "MIK-R96",
+        "packet": "requirements/MIK-R96-v1-one-install-and-one-start-bring-up-the-host.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "notes/reports/260928-MIK-L96-curator-evidence/handoff.json"
+    },
+    "handoffEntry": "L96 inherited layering",
+    "leaf": "260928-MIK-L96",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-limitation/v1",
+  "status": "proposed",
+  "unsupported": [
+    "No claim that the candidate's layer graph is clean.",
+    "No claim that the host-install work introduced these violations; they pre-date the leaf.",
+    "No authority to repair them here: the report records them for the owning hierarchy."
+  ]
+}

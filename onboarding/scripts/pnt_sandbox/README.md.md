@@ -11,3 +11,9 @@ The sandbox manual describes the fixed disposable layout and five command flows,
 ## Evidence
 
 - The scoped current source carries the module/document behavior described above. [1]
+
+## 260928-MIK-L96 The public install route and explicit ports
+
+The sandbox README now documents the public build/check/start/stop commands taking the two ports with defaults 6820/9797, the sandbox start using the public install route instead of the retired direct provision, and the product Node and cache roots the safety check requires inside the sandbox.
+
+- The document the tooling follows. [2]

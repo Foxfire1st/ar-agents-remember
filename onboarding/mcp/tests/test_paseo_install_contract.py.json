@@ -1,0 +1,159 @@
+{
+  "path": "mcp/tests/test_paseo_install_contract.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "95a0431d80346ab6b5f91344a1149d1244620ce3",
+        "content": "sha256:c33bca6b0078227d93a714ec6b93674357650fb7ed5add0b8fe93ddb167ec063",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_install_reads_added_shared_block_at_call_and_provisions_once"
+        }
+      },
+      "facet": "a configured runtime_install provisions the host exactly once after the earlier steps, reads a block added after start, makes a no-change second run with no mutations, and applies a provider-entry update with a daemon reload and no stop",
+      "id": "PRF-1F8SYK",
+      "invariant": "INV-GAZREV",
+      "origin": {
+        "handoffEntry": "MIK-R96@v1 §1",
+        "leaf": "260928-MIK-L96"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "95a0431d80346ab6b5f91344a1149d1244620ce3",
+        "content": "sha256:3d1cc56b23b1760e702b773e37136ffe392e0b3f877fa6f85fa42e6eca750ee8",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_build_pin_wins_all_settings_selectors_and_legacy_harness_block_is_ignored"
+        }
+      },
+      "facet": "a block with none, the contract's version, another version or '*' all load; the contract's version is installed in every case and the differing selector appears in the loaded notice; a legacy per-harness block is ignored with a warning",
+      "id": "PRF-2WNPZW",
+      "invariant": "INV-RW4566",
+      "origin": {
+        "handoffEntry": "MIK-R96@v1 §2",
+        "leaf": "260928-MIK-L96"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "95a0431d80346ab6b5f91344a1149d1244620ce3",
+        "content": "sha256:3d1cc56b23b1760e702b773e37136ffe392e0b3f877fa6f85fa42e6eca750ee8",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_build_pin_wins_all_settings_selectors_and_legacy_harness_block_is_ignored"
+        }
+      },
+      "facet": "a legacy per-harness block is ignored rather than selecting another host",
+      "id": "PRF-44SZ4P",
+      "invariant": "INV-0PAKA9",
+      "origin": {
+        "handoffEntry": "MIK-R96@v1 §8 / OR-R034",
+        "leaf": "260928-MIK-L96"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "95a0431d80346ab6b5f91344a1149d1244620ce3",
+        "content": "sha256:3d1cc56b23b1760e702b773e37136ffe392e0b3f877fa6f85fa42e6eca750ee8",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_build_pin_wins_all_settings_selectors_and_legacy_harness_block_is_ignored"
+        }
+      },
+      "facet": "a block naming another version loads, the contract's release wins in every selector, and a legacy per-harness block selects nothing",
+      "id": "PRF-BPYXW5",
+      "invariant": "INV-2MWAYK",
+      "origin": {
+        "handoffEntry": "L96 reconciliation: packaged host pin (INV-2MWAYK)",
+        "leaf": "260928-MIK-L96"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "95a0431d80346ab6b5f91344a1149d1244620ce3",
+        "content": "sha256:c7e3a3f01d56c8167eee0321a058a3572943ac171e9f59efe5d72ad0721d2ae9",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_preview_and_absent_host_make_no_mutation_and_host_error_preserves_earlier_steps"
+        }
+      },
+      "facet": "a dry-run preview makes no mutation; an absent block names the no-host state; a failing host step preserves the earlier install result while setting ok false",
+      "id": "PRF-PSGZ18",
+      "invariant": "INV-GAZREV",
+      "origin": {
+        "handoffEntry": "MIK-R96@v1 §1",
+        "leaf": "260928-MIK-L96"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "95a0431d80346ab6b5f91344a1149d1244620ce3",
+        "content": "sha256:3d1cc56b23b1760e702b773e37136ffe392e0b3f877fa6f85fa42e6eca750ee8",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_build_pin_wins_all_settings_selectors_and_legacy_harness_block_is_ignored"
+        }
+      },
+      "facet": "a block without the version key loads and the five operational facts are the parse's fact set",
+      "id": "PRF-VZSV4G",
+      "invariant": "INV-X5E9WH",
+      "origin": {
+        "handoffEntry": "L96 reconciliation: five required facts (INV-X5E9WH)",
+        "leaf": "260928-MIK-L96"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The one-provision call-time read case.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "95a0431d80346ab6b5f91344a1149d1244620ce3",
+            "content": "sha256:c33bca6b0078227d93a714ec6b93674357650fb7ed5add0b8fe93ddb167ec063",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_install_reads_added_shared_block_at_call_and_provisions_once"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The preview and failure-composition case.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "95a0431d80346ab6b5f91344a1149d1244620ce3",
+            "content": "sha256:c7e3a3f01d56c8167eee0321a058a3572943ac171e9f59efe5d72ad0721d2ae9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_preview_and_absent_host_make_no_mutation_and_host_error_preserves_earlier_steps"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The build-pin-wins case.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "95a0431d80346ab6b5f91344a1149d1244620ce3",
+            "content": "sha256:3d1cc56b23b1760e702b773e37136ffe392e0b3f877fa6f85fa42e6eca750ee8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_build_pin_wins_all_settings_selectors_and_legacy_harness_block_is_ignored"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

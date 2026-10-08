@@ -1,0 +1,58 @@
+{
+  "path": "mcp/src/agents_remember/kernel/primitives/host_environment.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "39638c80596020e507e49021c3300935b8be9281",
+        "content": "sha256:db2be433384e17f373255c0b619ddd896b6ce114371547a3993aa20bdb242596",
+        "locator": {
+          "kind": "symbol",
+          "name": "host_environment"
+        }
+      },
+      "id": "RLZ-XHNWMR",
+      "invariant": "INV-YXP2R0",
+      "origin": {
+        "handoffEntry": "MIK-R96@v1 §10",
+        "leaf": "260928-MIK-L96"
+      },
+      "rationale": "This environment constructor is reused by every product host command and strips the declared exact session identities while retaining credential selectors; process observation reports names separately.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The exact-name filter over a base environment.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "39638c80596020e507e49021c3300935b8be9281",
+            "content": "sha256:db2be433384e17f373255c0b619ddd896b6ce114371547a3993aa20bdb242596",
+            "locator": {
+              "kind": "symbol",
+              "name": "host_environment"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The name-only observation of carried session variables.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "39638c80596020e507e49021c3300935b8be9281",
+            "content": "sha256:fffcfa65e5ea551aefdd52120baf630febcea181c92ccd9b940f5dc65206b402",
+            "locator": {
+              "kind": "symbol",
+              "name": "carried_session_variables"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

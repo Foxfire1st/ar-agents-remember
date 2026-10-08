@@ -55,3 +55,10 @@ These source owners establish the mechanics, caller policy, and regression bound
 No separate cross-repository implementation dependency is used by this file.
 
 No cross-repository evidence is required for these claims.
+
+## 260928-MIK-L96 The product-side exclusive lock
+
+`lock_path_for` and `exclusive_file_lock` now back the public Node acquisition: the lock file sits beside the locked resource, waits are bounded by the caller's deadline, and a timeout is the named `LockAcquisitionTimeout`. The Node invariant owns the specific use; the primitive itself keeps its log-lock contract.
+
+- The resource lock path. [5]
+- The bounded exclusive lock. [6]

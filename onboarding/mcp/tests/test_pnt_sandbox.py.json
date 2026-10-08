@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "6f76ef471d4275895cac20bea22e9975f9d06065",
+        "blob": "7aea6da5956731cd080fc3a9f39ec34a2256e192",
         "content": "sha256:96636db2be5105a40156aa3589d6f6f2c4a031b6015e88af6efe672978fa5840",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,58 @@
     },
     {
       "anchor": {
-        "blob": "6f76ef471d4275895cac20bea22e9975f9d06065",
+        "blob": "7aea6da5956731cd080fc3a9f39ec34a2256e192",
+        "content": "sha256:3f39a81369f2a7568b9f745331fa6648fa10f9d02d2fb69448bce27e51e7932e",
+        "locator": {
+          "kind": "symbol",
+          "name": "BuildInputTests.test_the_environment_loses_what_selects_another_runtime_and_keeps_logins"
+        }
+      },
+      "facet": "exact selector/session names disappear, credentials remain, the seven sandbox-owned values are installed, and real children receive their own PWD",
+      "id": "PRF-7KDBW4",
+      "invariant": "INV-B6R816",
+      "origin": {
+        "handoffEntry": "INV-B6R816",
+        "leaf": "260928-MIK-L96"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "7aea6da5956731cd080fc3a9f39ec34a2256e192",
+        "content": "sha256:cad4adea94c879b94dbff0221013264d5138fba94e504d4e786d6d24ce20c042",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_public_host_install_receipts_keep_payloads_and_name_admission_failures"
+        }
+      },
+      "facet": "the public install route keeps payloads and names its admission failures",
+      "id": "PRF-7TN0Y7",
+      "invariant": "INV-VCAREW",
+      "origin": {
+        "handoffEntry": "L96-D-5",
+        "leaf": "260928-MIK-L96"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "7aea6da5956731cd080fc3a9f39ec34a2256e192",
+        "content": "sha256:98704aaa566498774fd01e768a5074195ab087022195507b18d0dbd1abff499f",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_public_install_retires_success_for_cut_timeout_and_malformed"
+        }
+      },
+      "facet": "each cut, timeout and malformed outcome replaces the old success with a fresh failure naming the underlying error and paths",
+      "id": "PRF-AW7C3V",
+      "invariant": "INV-MF5V3J",
+      "origin": {
+        "handoffEntry": "L96-D-9",
+        "leaf": "260928-MIK-L96"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "7aea6da5956731cd080fc3a9f39ec34a2256e192",
         "content": "sha256:0bb58bd0020c02562e0c2a38ad3496cf80739fa7f75a09491769b05120330ec0",
         "locator": {
           "kind": "symbol",
@@ -37,24 +88,41 @@
     },
     {
       "anchor": {
-        "blob": "6f76ef471d4275895cac20bea22e9975f9d06065",
-        "content": "sha256:735915a18141318ff9784dee9761cd3ecf5f0b3f63c1a520e5694be8771f6ce4",
+        "blob": "7aea6da5956731cd080fc3a9f39ec34a2256e192",
+        "content": "sha256:bf8a21caf8e5effe5de7d127f91031dc83d0ab298782b129508ce281f22f2bf5",
         "locator": {
           "kind": "symbol",
-          "name": "test_a_port_is_held_whoever_holds_it_and_on_whichever_address"
+          "name": "test_foreign_package_admission_prevents_public_install_calls"
         }
       },
-      "facet": "Real listeners are found on IPv4 and IPv6 addresses by port number.",
-      "id": "PRF-M2RS7Q",
-      "invariant": "INV-G0Z661",
+      "facet": "a foreign package identity refuses before any public install call",
+      "id": "PRF-MNSZ23",
+      "invariant": "INV-VCAREW",
       "origin": {
-        "handoffEntry": "PNT-R11@v1 §2a / Ports (no fallback)",
-        "leaf": "260928-MIK-L90"
+        "handoffEntry": "L96-D-5",
+        "leaf": "260928-MIK-L96"
       }
     },
     {
       "anchor": {
-        "blob": "6f76ef471d4275895cac20bea22e9975f9d06065",
+        "blob": "7aea6da5956731cd080fc3a9f39ec34a2256e192",
+        "content": "sha256:a5b6a3e37de2bcbb6df62241ead9f2edad128d25d9c0235193ee834a5e5cfa6d",
+        "locator": {
+          "kind": "symbol",
+          "name": "SafetyCheckTests.test_product_node_and_cache_roots_are_required_and_cannot_escape"
+        }
+      },
+      "facet": "missing, outside and symlink-resolved product Node and cache roots refuse the start before install or spawn",
+      "id": "PRF-NFEPGR",
+      "invariant": "INV-FJPXYV",
+      "origin": {
+        "handoffEntry": "L96-D-8",
+        "leaf": "260928-MIK-L96"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "7aea6da5956731cd080fc3a9f39ec34a2256e192",
         "content": "sha256:347f754740815636a9c2c441f97112b4bb9ac3b1f6ba561e5309150d9186adcd",
         "locator": {
           "kind": "symbol",
@@ -71,25 +139,8 @@
     },
     {
       "anchor": {
-        "blob": "6f76ef471d4275895cac20bea22e9975f9d06065",
-        "content": "sha256:bfa7d328770065611847fd1d09e8dea6b08819383adfca5bf59c6d1c41b646bd",
-        "locator": {
-          "kind": "symbol",
-          "name": "test_the_environment_loses_what_selects_another_runtime_and_keeps_logins"
-        }
-      },
-      "facet": "Exact selector/session names disappear, credentials remain, four sandbox values are installed and real children receive their own PWD.",
-      "id": "PRF-VVBCPB",
-      "invariant": "INV-B6R816",
-      "origin": {
-        "handoffEntry": "PNT-R11@v1 §7 (environment) / G5 / F8",
-        "leaf": "260928-MIK-L90"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "6f76ef471d4275895cac20bea22e9975f9d06065",
-        "content": "sha256:1aec020aa2fb63e95e14b6da8ec18bb17e51b214137e2b8aff78f85099fc7aa7",
+        "blob": "7aea6da5956731cd080fc3a9f39ec34a2256e192",
+        "content": "sha256:258649eb95c142370f66d385e6ae5321dc2d75601ddae657bbd35b1de25d4665",
         "locator": {
           "kind": "symbol",
           "name": "test_a_root_the_build_fills_in_by_default_is_caught"
@@ -105,7 +156,24 @@
     },
     {
       "anchor": {
-        "blob": "6f76ef471d4275895cac20bea22e9975f9d06065",
+        "blob": "7aea6da5956731cd080fc3a9f39ec34a2256e192",
+        "content": "sha256:735915a18141318ff9784dee9761cd3ecf5f0b3f63c1a520e5694be8771f6ce4",
+        "locator": {
+          "kind": "symbol",
+          "name": "BuildInputTests.test_a_port_is_held_whoever_holds_it_and_on_whichever_address"
+        }
+      },
+      "facet": "IPv6/unknown-holder refusal is exercised with synthetic procfs text, and the later controlled-supervisor/descendant ownership observation is real",
+      "id": "PRF-YYTSXK",
+      "invariant": "INV-G0Z661",
+      "origin": {
+        "handoffEntry": "MIK-R96@v1 rule8 public port-tooling disposition / INV-G0Z661 effect",
+        "leaf": "260928-MIK-L96"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "7aea6da5956731cd080fc3a9f39ec34a2256e192",
         "content": "sha256:468ee39c8fc698464f45a0cdd950d626041e07632408e7c813ee0562393c0686",
         "locator": {
           "kind": "symbol",
@@ -132,6 +200,66 @@
             "content": "sha256:8f31497691707f845ae1e3e85b3f653f3eef3bff453a9fdb4f5d1bc8d9cb9ffe",
             "locator": {
               "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The safety case for the product Node and cache roots.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7aea6da5956731cd080fc3a9f39ec34a2256e192",
+            "content": "sha256:df22da1a39f4865b591e3def913a9ecc691013fc4a4a67d37f8b8fe2265da2aa",
+            "locator": {
+              "kind": "symbol",
+              "name": "SafetyCheckTests"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "7aea6da5956731cd080fc3a9f39ec34a2256e192",
+            "content": "sha256:4083094c2080e9dffb528126923f669daa8de89bc8761240f174cd37596cd034",
+            "locator": {
+              "end": 342,
+              "kind": "line_range",
+              "start": 295
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The public install receipt cases.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7aea6da5956731cd080fc3a9f39ec34a2256e192",
+            "content": "sha256:98704aaa566498774fd01e768a5074195ab087022195507b18d0dbd1abff499f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_public_install_retires_success_for_cut_timeout_and_malformed"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The foreign-package admission case.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7aea6da5956731cd080fc3a9f39ec34a2256e192",
+            "content": "sha256:bf8a21caf8e5effe5de7d127f91031dc83d0ab298782b129508ce281f22f2bf5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_foreign_package_admission_prevents_public_install_calls"
             }
           },
           "kind": "test"

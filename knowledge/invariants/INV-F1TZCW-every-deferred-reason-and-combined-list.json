@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "A deferred sandbox start that still prints a dashboard URL makes a broken fixture look alive; the case and its removed-fix control exercise the production seam."
+  },
+  "applicability": "A sandbox provision that defers because a live host block must migrate in place.",
+  "conditions": [
+    "Every deferred reason and the combined list are reported with the observed host identity or its absence.",
+    "A preexisting controlled supervisor is preserved, and an unresolved transition never produces a qualified dashboard URL."
+  ],
+  "exclusions": [
+    "The product's own deferral behavior is INV from MIK-R96 rule 9, not this fixture obligation."
+  ],
+  "id": "INV-F1TZCW",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/role-launch/260928-MIK-L96-reviewer-e0a83546-a27f-4486-bb70-c11b906053fb.evidence/fix-verification-round-4/focused.log: StartAndStopTests.test_deferred_install_cannot_qualify_an_older_live_host checks12 individual reasons plus combined list and absent-host case, original process alive, no paseo stop, no dashboard spawn, exact observed PID and no qualified URL; commands._provision retains these observations in the error."
+      ],
+      "path": "notes/reports/260928-MIK-L96-curator-evidence/handoff.json"
+    },
+    "handoffEntry": "L96-D-7",
+    "leaf": "260928-MIK-L96",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Every deferred reason and combined list is reported with observed host identity or absence, while a preexisting controlled supervisor is preserved and unresolved transition never produces a qualified dashboard URL.",
+  "status": "proposed",
+  "supersedes": []
+}

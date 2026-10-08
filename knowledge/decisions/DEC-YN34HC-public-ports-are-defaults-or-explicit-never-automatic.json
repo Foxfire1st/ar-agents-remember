@@ -1,0 +1,77 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "The fixed-only and automatic-selection options were weighed and rejected with reasons, and every later sandbox command and renderer invocation has to keep the explicit pair and the defaults in agreement."
+  },
+  "alternatives": [
+    {
+      "option": "Public build/check/start/stop accept explicitly chosen host/dashboard ports, with 6820/9797 as defaults and the same ownership, foreign-listener and safety refusals; no automatic selection.",
+      "reason": "Several sandboxes can run beside each other while a foreign listener still refuses the start and no port is chosen around a live service.",
+      "status": "chosen"
+    },
+    {
+      "option": "Keep the ports fixed and one sandbox per machine at a time.",
+      "reason": "The tooling's own tests and parallel work needed a second sandbox, and the amendment explicitly makes the choice a caller's recorded value.",
+      "reconsider_when": "Running one sandbox at a time becomes the tooling's declared contract again.",
+      "status": "rejected"
+    },
+    {
+      "option": "Pick a free port automatically when the default is held.",
+      "reason": "An automatic choice can displace or hide a foreign service and removes the refusal that proves the port belongs to the sandbox.",
+      "reconsider_when": "The tooling can prove a chosen port belongs to the sandbox before use and the user confirms the choice.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "A sandbox renderer input keeps its own root, ports, folders and guarded provider entries; no rendered file is edited afterwards.",
+    "The defaults stay 6820/9797 for every caller that supplies none; out-of-range values and the live ports 9785/9786 are rejected at parse time, an equal host/dashboard pair refuses before any action, and a foreign listener refuses the start. An occupied chosen pair remains valid for owned-process adoption and stop, and no port is ever selected automatically."
+  ],
+  "context": "The sandbox layout held fixed ports 6820/9797, and the amended requirement rule 8 lets several sandboxes run at the same time: the renderer and the public sandbox commands take the coordination root and the two ports as arguments, with today's values as defaults.",
+  "decider": "architect's amendment to MIK-R96@v1 rule 8 under D91",
+  "id": "DEC-YN34HC",
+  "links": [
+    {
+      "relation": "explains",
+      "target": {
+        "blob": "2a544745d451274f12d870e535cc80ba520d0ef7",
+        "content": "sha256:a1454f4846cacbfc6c14a73d9ee746a01a74a1bde9e5ae3c0be919ffba9db248",
+        "locator": {
+          "kind": "symbol",
+          "name": "build_parser"
+        },
+        "path": "scripts/pnt_sandbox/cli.py"
+      }
+    },
+    {
+      "alternative": 1,
+      "relation": "reconsider_on",
+      "target": {
+        "blob": "4a12e8e7e2a980f1fe3121c42f63a27208bc4971",
+        "content": "sha256:ff679d4c997c12dfdc59e38238121a4f0101f03179b49a017262b8a62ab294d3",
+        "locator": {
+          "kind": "symbol",
+          "name": "PASEO_PORT"
+        },
+        "path": "scripts/pnt_sandbox/layout.py"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/260928-mik-l96-ar/task-reports/role-launch/260928-MIK-L96-worker-c9abaa5b-c066-404b-a276-fcb39fcd4a79.evidence/port-tooling-successor/cleanup-ports-after.log; /home/firefox/projects/ar-coordination/worktrees/agents-remember/260928-mik-l96-ar/task-reports/role-launch/260928-MIK-L96-worker-c9abaa5b-c066-404b-a276-fcb39fcd4a79.evidence/port-tooling-successor/l71-qualification/check.stdout.log; /home/firefox/projects/ar-coordination/worktrees/agents-remember/260928-mik-l96-ar/task-reports/role-launch/260928-MIK-L96-worker-c9abaa5b-c066-404b-a276-fcb39fcd4a79.evidence/port-tooling-successor/named-frozen-tooling-state.json"
+      ],
+      "path": "notes/reports/260928-MIK-L96-curator-evidence/handoff.json"
+    },
+    "handoffEntry": "MIK-R96@v1 rule8 public port-tooling disposition / INV-G0Z661 effect",
+    "leaf": "260928-MIK-L96",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

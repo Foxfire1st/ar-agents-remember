@@ -1,0 +1,40 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "The install step alone says nothing about what a dashboard start does to a running host; the start's start-only rule alone says nothing about where the release and the Node come from; and the no-stop rule alone says nothing about visibility or the one authority. Only together do they promise that two commands a user runs bring up the build's host and never take a running one down."
+  },
+  "guarantee": "One build's install brings exactly that build's host — its release, its complete package lock, its plugin and a Node the product fetches and verifies itself — every dashboard start makes sure that host runs, one installation-wide authority names it, and neither the install nor a dashboard start or stop removes a host that is running. Release changes stay build-owned; when a required live-host transition is needed — a different contract, or a same-contract listen, start-only-setting, Node or package change — the explicit terminal provision (`agents-remember paseo provision --config <file>`) performs it, and a different build is not a necessary condition for that transition.",
+  "id": "FAM-QDY93G",
+  "members": [
+    "INV-GAZREV",
+    "INV-RW4566",
+    "INV-BGV9YT",
+    "INV-96C24X",
+    "INV-PB8GDK",
+    "INV-03M6ZA",
+    "INV-0PAKA9",
+    "INV-EQH5X6",
+    "INV-FM3V0M",
+    "INV-YXP2R0"
+  ],
+  "origin": {
+    "handoff": {
+      "path": "notes/reports/260928-MIK-L96-curator-evidence/handoff.json"
+    },
+    "handoffEntry": "L96-one-build-owned-host",
+    "leaf": "260928-MIK-L96",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "routes": [
+    "mcp/src/agents_remember/serving/paseo",
+    "mcp/src/agents_remember/application/runtime",
+    "mcp/src/agents_remember/kernel/primitives",
+    "mcp/src/agents_remember/cli"
+  ],
+  "schema": "ar-family/v1",
+  "status": "proposed",
+  "title": "One build-owned host lifecycle"
+}

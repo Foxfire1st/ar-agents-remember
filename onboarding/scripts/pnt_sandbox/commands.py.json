@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "bde9a598af866dbdbe6fb93a9a3dea28046bdf28",
+        "blob": "95a92b9a406eedc5d83a23e47b482b45670b403b",
         "content": "sha256:0ff36f0263392da3b9016521a6ec3b778f102e2ec8177b7cb060d263c653fb66",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,25 @@
     },
     {
       "anchor": {
-        "blob": "bde9a598af866dbdbe6fb93a9a3dea28046bdf28",
+        "blob": "95a92b9a406eedc5d83a23e47b482b45670b403b",
+        "content": "sha256:866b97c8c2da64aad2ca568bf715ec9fa01dc3e0aa33ddb0dabcfeccdd00dbea",
+        "locator": {
+          "kind": "symbol",
+          "name": "_provision"
+        }
+      },
+      "id": "RLZ-1X2T45",
+      "invariant": "INV-MF5V3J",
+      "origin": {
+        "handoffEntry": "L96-D-9",
+        "leaf": "260928-MIK-L96"
+      },
+      "rationale": "This command adapter dispatches the public install request through Operations.runtime_install and relays the reported outcome or error. Receipt retirement and fresh failure/receipt recording are effects of the operations owner and its receipt helpers.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "95a92b9a406eedc5d83a23e47b482b45670b403b",
         "content": "sha256:5ea3782c22b4d0afb58a6a728a86a15f38900541bb86e702fd0ae7cdf557f802",
         "locator": {
           "kind": "symbol",
@@ -39,7 +57,43 @@
     },
     {
       "anchor": {
-        "blob": "bde9a598af866dbdbe6fb93a9a3dea28046bdf28",
+        "blob": "95a92b9a406eedc5d83a23e47b482b45670b403b",
+        "content": "sha256:a44b32ff7bd1c34eb843d8fcfb79d63b1a7becc70742a1f31b5d0967be09a795",
+        "locator": {
+          "kind": "symbol",
+          "name": "_start"
+        }
+      },
+      "id": "RLZ-5JV3ZY",
+      "invariant": "INV-0VYG87",
+      "origin": {
+        "handoffEntry": "L96-D-6",
+        "leaf": "260928-MIK-L96"
+      },
+      "rationale": "Uses the build predicate and orchestrates the rebuild/start path, including the bounded public rebuild and the preservation of user work.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "95a92b9a406eedc5d83a23e47b482b45670b403b",
+        "content": "sha256:866b97c8c2da64aad2ca568bf715ec9fa01dc3e0aa33ddb0dabcfeccdd00dbea",
+        "locator": {
+          "kind": "symbol",
+          "name": "_provision"
+        }
+      },
+      "id": "RLZ-5MH132",
+      "invariant": "INV-F1TZCW",
+      "origin": {
+        "handoffEntry": "L96-D-7",
+        "leaf": "260928-MIK-L96"
+      },
+      "rationale": "This construct owns the verified unchanged sealed obligation: Every deferred reason and combined list is reported with observed host identity or absence, while a preexisting controlled supervisor is preserved and unresolved transition never produces a qualified dashboard URL.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "95a92b9a406eedc5d83a23e47b482b45670b403b",
         "content": "sha256:2423981937c028f19f6f12e75a736559562d7e05b30b5b51da71b82b52a006fe",
         "locator": {
           "kind": "symbol",
@@ -57,7 +111,7 @@
     },
     {
       "anchor": {
-        "blob": "bde9a598af866dbdbe6fb93a9a3dea28046bdf28",
+        "blob": "95a92b9a406eedc5d83a23e47b482b45670b403b",
         "content": "sha256:8721148599740bb8624741af6f281c03cdeaf44f22b84dcc7c0932a1e0cbbb04",
         "locator": {
           "kind": "symbol",
@@ -75,7 +129,7 @@
     },
     {
       "anchor": {
-        "blob": "bde9a598af866dbdbe6fb93a9a3dea28046bdf28",
+        "blob": "95a92b9a406eedc5d83a23e47b482b45670b403b",
         "content": "sha256:301b8d7d2c524d9e390f1f3da1f7341b68644009e47f9306a18dae19f6971dd8",
         "locator": {
           "kind": "symbol",
@@ -93,7 +147,25 @@
     },
     {
       "anchor": {
-        "blob": "bde9a598af866dbdbe6fb93a9a3dea28046bdf28",
+        "blob": "95a92b9a406eedc5d83a23e47b482b45670b403b",
+        "content": "sha256:a44b32ff7bd1c34eb843d8fcfb79d63b1a7becc70742a1f31b5d0967be09a795",
+        "locator": {
+          "kind": "symbol",
+          "name": "_start"
+        }
+      },
+      "id": "RLZ-S7SX24",
+      "invariant": "INV-FJPXYV",
+      "origin": {
+        "handoffEntry": "L96-D-8",
+        "leaf": "260928-MIK-L96"
+      },
+      "rationale": "Applies safety admission before the normal install/start effects.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "95a92b9a406eedc5d83a23e47b482b45670b403b",
         "content": "sha256:c47b35ddfb908ec4256c51abfcded8cf646b9d816e0166761b8bdda2efb1a8a3",
         "locator": {
           "kind": "symbol",
@@ -111,7 +183,7 @@
     },
     {
       "anchor": {
-        "blob": "bde9a598af866dbdbe6fb93a9a3dea28046bdf28",
+        "blob": "95a92b9a406eedc5d83a23e47b482b45670b403b",
         "content": "sha256:657ca498e75a03c54b7ab9f571f12056c2a1f6ddf5fb265e51f2cf02ed5caa3a",
         "locator": {
           "kind": "symbol",
@@ -129,8 +201,8 @@
     },
     {
       "anchor": {
-        "blob": "bde9a598af866dbdbe6fb93a9a3dea28046bdf28",
-        "content": "sha256:8f1b2e75e502ef6b05bc0072657abcd07133b3e22bded661e1763940eb6d971c",
+        "blob": "95a92b9a406eedc5d83a23e47b482b45670b403b",
+        "content": "sha256:866b97c8c2da64aad2ca568bf715ec9fa01dc3e0aa33ddb0dabcfeccdd00dbea",
         "locator": {
           "kind": "symbol",
           "name": "_provision"
@@ -147,7 +219,7 @@
     },
     {
       "anchor": {
-        "blob": "bde9a598af866dbdbe6fb93a9a3dea28046bdf28",
+        "blob": "95a92b9a406eedc5d83a23e47b482b45670b403b",
         "content": "sha256:efe6ae3a843384f1ed6c5301c04a4580ad58ca67a7ea64578a4978a01bee1058",
         "locator": {
           "kind": "symbol",
@@ -174,6 +246,34 @@
             "content": "sha256:a18734015fc0cb2e510dcc3ea95931974bc87265d92afaabcec35da58d0d6ab7",
             "locator": {
               "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The provision seam calling the public install route.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "95a92b9a406eedc5d83a23e47b482b45670b403b",
+            "content": "sha256:866b97c8c2da64aad2ca568bf715ec9fa01dc3e0aa33ddb0dabcfeccdd00dbea",
+            "locator": {
+              "kind": "symbol",
+              "name": "_provision"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "95a92b9a406eedc5d83a23e47b482b45670b403b",
+            "content": "sha256:db49a05d79e721c1c4bfd0e8de8b2dcc466b1f9934dede0d578a881567dd3870",
+            "locator": {
+              "end": 260,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"

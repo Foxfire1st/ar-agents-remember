@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "b26253c184fa75dd45ade676d08594cf6333f40e",
+        "blob": "7c4e75b59e2b58b17ad1a2693c3ba3c340e5f590",
         "content": "sha256:e335ed108802ff7422da8f112732d81111f2ccf7f98c01bc930b6e90eb1d94b6",
         "locator": {
           "kind": "symbol",
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "b26253c184fa75dd45ade676d08594cf6333f40e",
-        "content": "sha256:2dc86c36bc38733f0e2ac8553e5f083054aa2458024906ca11b90629d9e7698e",
+        "blob": "7c4e75b59e2b58b17ad1a2693c3ba3c340e5f590",
+        "content": "sha256:f40be49911055e5237f437842411700f1943663454b754a712e621c82d9a75f0",
         "locator": {
           "end": 23,
           "kind": "line_range",
@@ -40,26 +40,26 @@
     },
     {
       "anchor": {
-        "blob": "b26253c184fa75dd45ade676d08594cf6333f40e",
-        "content": "sha256:2d713e98f8a0b5dc81f1d68798784cda5a5953da19b3d1ca66aa41d7c04b2dae",
+        "blob": "7c4e75b59e2b58b17ad1a2693c3ba3c340e5f590",
+        "content": "sha256:3125f6c5c96edaeb59ff9f4ce68d7c584bcc3714d07dd8ce8d58a73d6c0128cd",
         "locator": {
           "kind": "symbol",
-          "name": "_exact_version"
+          "name": "parse_paseo_runtime_settings"
         }
       },
-      "id": "RLZ-HAFKYT",
+      "id": "RLZ-JRYGTQ",
       "invariant": "INV-2MWAYK",
       "origin": {
-        "handoffEntry": "PNT-R01@v1 §7",
-        "leaf": "260928-MIK-L90"
+        "handoffEntry": "L96 reconciliation: packaged host pin (INV-2MWAYK)",
+        "leaf": "260928-MIK-L96"
       },
-      "rationale": "Rejects selectors that do not identify the exact release provisioning installs.",
-      "role": "enforcement"
+      "rationale": "This parser is the surviving location of the old six-required/settings-pin realizations; its five operational facts and retired optional selector are the exact claims requiring Curator reconciliation.",
+      "role": "unclassified"
     },
     {
       "anchor": {
-        "blob": "b26253c184fa75dd45ade676d08594cf6333f40e",
-        "content": "sha256:cf89baecb21e3f8717ff76bae046d125dd107437042c2bd1e5ad106253477d5d",
+        "blob": "7c4e75b59e2b58b17ad1a2693c3ba3c340e5f590",
+        "content": "sha256:3125f6c5c96edaeb59ff9f4ce68d7c584bcc3714d07dd8ce8d58a73d6c0128cd",
         "locator": {
           "kind": "symbol",
           "name": "parse_paseo_runtime_settings"
@@ -71,7 +71,7 @@
         "handoffEntry": "PNT-R01@v1 §1",
         "leaf": "260928-MIK-L90"
       },
-      "rationale": "Rejects unknown and missing keys before constructing the six-field authority.",
+      "rationale": "Rejects unknown keys and missing operational facts before constructing the five-fact authority; the version key is optional and never selects the release.",
       "role": "enforcement"
     }
   ],
@@ -92,28 +92,12 @@
         }
       ]
     },
-    "2": {
-      "note": "Frozen implementation of _exact_version supporting the stated file behavior.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "b26253c184fa75dd45ade676d08594cf6333f40e",
-            "content": "sha256:2d713e98f8a0b5dc81f1d68798784cda5a5953da19b3d1ca66aa41d7c04b2dae",
-            "locator": {
-              "kind": "symbol",
-              "name": "_exact_version"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "3": {
       "note": "Frozen implementation of _embed_entry supporting the stated file behavior.",
       "targets": [
         {
           "anchor": {
-            "blob": "b26253c184fa75dd45ade676d08594cf6333f40e",
+            "blob": "7c4e75b59e2b58b17ad1a2693c3ba3c340e5f590",
             "content": "sha256:7104e6cdef99b85be17859ffbcf960e805a04e8a299fe03e30333ded97f459c8",
             "locator": {
               "kind": "symbol",
@@ -175,6 +159,38 @@
             "path": "mcp/tests/test_paseo_runtime.py"
           },
           "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The parser with the five facts and optional version.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7c4e75b59e2b58b17ad1a2693c3ba3c340e5f590",
+            "content": "sha256:3125f6c5c96edaeb59ff9f4ce68d7c584bcc3714d07dd8ce8d58a73d6c0128cd",
+            "locator": {
+              "kind": "symbol",
+              "name": "parse_paseo_runtime_settings"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The named no-host state and its refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7c4e75b59e2b58b17ad1a2693c3ba3c340e5f590",
+            "content": "sha256:e335ed108802ff7422da8f112732d81111f2ccf7f98c01bc930b6e90eb1d94b6",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_paseo_runtime"
+            }
+          },
+          "kind": "code"
         }
       ]
     }

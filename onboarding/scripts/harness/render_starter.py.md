@@ -22,9 +22,12 @@ The module is an ordinary, lintable, type-checked Python module whose top-level
 definitions are the fragments. Each generated program is a subset of them plus a
 per-harness constants block.
 
-Shared by every harness (`SHARED_STARTER_FRAGMENTS` in the generator):
-`Renderer`, `infer_workspace_root`, `repository_ids`, `replace_text`, `render_settings`,
-`validate`, `main`.
+Shared by every harness is the generator's `SHARED_STARTER_FRAGMENTS` tuple in
+`scripts/sync-harness.py` (twelve definitions: `infer_workspace_root`, `repository_ids`,
+`replace_text`, `_xdg_home`, `settings_payload`, `fresh_host_block`, `render_settings`,
+`validate`, `main`, `RenderOptions`, `DEFAULT_RENDER_OPTIONS`, `Renderer`). The generator tuple is
+the maintained inventory, and each fragment is defined in this renderer module; the host block it
+renders goes to the single shared `<coordinationRoot>/system/settings.json` when that file is absent.
 
 Per-harness, each present because the harness genuinely requires it:
 
@@ -72,3 +75,10 @@ byte-identical in every generated file.
 - The generator that slices, orders, and assembles these fragments. [1]
 - The classification of which fragments are genuinely per-harness and why. [2]
 - The hook fragment library with the same contract. [3]
+
+## 260928-MIK-L96 The renderer arguments and the host block
+
+The one public renderer invocation now takes the coordination root and the two ports (the host's listen port and the dashboard port named in `embed`), with today's values as defaults, and `fresh_host_block` renders the shared host block with absolute data/state paths, the loopback listen address, empty providers and both loopback dashboard spellings. Nothing else in a rendered file depends on the arguments.
+
+- The host block the renderer writes. [4]
+- The settings render with the recorded root and ports. [5]

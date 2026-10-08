@@ -1,15 +1,19 @@
 {
   "admission": {
     "criteria": [
-      "spans_locations",
-      "guarded_by_test"
+      "guarded_by_test",
+      "prevents_costly_mistake"
     ],
-    "justification": "Parsed pins and observed installation checks prevent testing one host release while accidentally launching another tag or range."
+    "justification": "The contract-pinned release is exercised by the install-contract and config proofs, and a settings value that could select another release would run a host the build was not made for."
   },
-  "applicability": "Parsing and provisioning the configured Paseo release.",
-  "conditions": [],
+  "applicability": "The host release selection: the provision, Node acquisition, version comparisons, the bridge's reported version and the sandbox layout.",
+  "conditions": [
+    "The build ships the exact host release and the complete host npm lock; the provision installs from that lock.",
+    "A settings block whose version names another version or no exact version loads, and the contract's version is used with one notice naming key, file and both versions."
+  ],
   "exclusions": [
-    "Historical F26 final activation/version-check limits are not certified as atomic."
+    "The settings key is no longer the pin and is not edited by the product.",
+    "The old statement's '--save-exact' install and 'prefix reporting any other version is replaced by the install' do not hold: rule 9 keeps a running host, and the install defers with restartRequired."
   ],
   "id": "INV-2MWAYK",
   "origin": {
@@ -23,9 +27,9 @@
     "leaf": "260928-MIK-L90",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "The Paseo version is one exact release (MAJOR.MINOR.PATCH with an optional prerelease): a range, tag, partial version, build metadata, leading `v` or padded value is refused at parse time, the install is requested as `--save-exact @getpaseo/cli@<version>`, and a prefix reporting any other version is replaced.",
+  "statement": "The Paseo host release is one exact version named by the packaged build contract together with the whole npm lock, every reader takes that version from the contract, and the retired settings-selected version never changes it.",
   "status": "proposed",
   "supersedes": []
 }

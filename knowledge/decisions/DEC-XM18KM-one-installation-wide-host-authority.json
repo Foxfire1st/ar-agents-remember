@@ -1,0 +1,76 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "Both the per-harness copies and a read-with-fallback were weighed and rejected, and every harness installation now depends on the one shared path."
+  },
+  "alternatives": [
+    {
+      "option": "One shared <coordinationRoot>/system/settings.json block is the authority: starter/setup creates it once, each harness links the coordination root and reads that same file per use, and no per-harness copy of the block exists.",
+      "reason": "One installation has one host, so one place states it; reading per use means a block added after a server started is used without a restart, and the setup still gives every harness a file it can start from.",
+      "status": "chosen"
+    },
+    {
+      "option": "Keep a full block per harness, kept in sync by the setup.",
+      "reason": "Eight copies of one fact drift, and an agent can be started by a harness whose file names another host.",
+      "reconsider_when": "Harnesses stop sharing one coordination root, so no installation-wide path exists.",
+      "status": "rejected"
+    },
+    {
+      "option": "Read the shared block first and fall back to a per-harness block when it is absent.",
+      "reason": "A fallback keeps the old independent copies alive and hides which authority a running host was started from; the migration is instead an explicit instruction that the developer runs when they choose.",
+      "reconsider_when": "An installation cannot share one filesystem authority and a migration proves impossible.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "The old per-harness block is ignored with one warning naming the shared path and the exact migration, with no fallback.",
+    "The developer owns the real settings edit and the host restart that follows it."
+  ],
+  "context": "Eight settings files of one machine named the same coordination root and could each hold a different paseoRuntime block; only the Codex file held one, and a dashboard started without --config read a file that held none. The developer has called a setting copied into every harness's file a nuisance (D63).",
+  "decider": "ruling OR-R034 under D63 and D75",
+  "id": "DEC-XM18KM",
+  "links": [
+    {
+      "relation": "explains",
+      "target": {
+        "blob": "23f89436ed722d0c3ab6470a0bf9079145e22632",
+        "content": "sha256:3cfc871f9f8493dbaa4b11e825bfa4064aed6e67d8b83790b416fab6cc20b54d",
+        "locator": {
+          "kind": "symbol",
+          "name": "load_shared_paseo_runtime"
+        },
+        "path": "mcp/src/agents_remember/kernel/primitives/paseo_authority.py"
+      }
+    },
+    {
+      "relation": "motivated_change_to",
+      "target": {
+        "id": "MIK-R96",
+        "packet": "requirements/MIK-R96-v1-one-install-and-one-start-bring-up-the-host.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/260928-mik-l96-ar/task-reports/role-launch/260928-MIK-L96-worker-c9abaa5b-c066-404b-a276-fcb39fcd4a79.evidence/restart-b/checks/final-unit-v2.log; manifest 1d1f404e04e282f568cfa601317e4cad75d22392b1c9a2f28bc96a1e46091b4f; current source manifest cd7706b9b3c7dbb3d64684ec054c55b6f9eac22dbe1b6d76779bdab5e47abe08; current qualification /home/firefox/projects/ar-coordination/worktrees/agents-remember/260928-mik-l96-ar/task-reports/role-launch/260928-MIK-L96-worker-c9abaa5b-c066-404b-a276-fcb39fcd4a79.evidence/post-l51-current/catalog-qualification.json; current manifest 5cdfbd41e9079195a3cd318d4a26263392ab8031aead02c2459faa39445bbf3f; exact reuse /home/firefox/projects/ar-coordination/worktrees/agents-remember/260928-mik-l96-ar/task-reports/role-launch/260928-MIK-L96-worker-c9abaa5b-c066-404b-a276-fcb39fcd4a79.evidence/post-L39-sync/exact-input-proof-reuse.json"
+      ],
+      "path": "notes/reports/260928-MIK-L96-curator-evidence/handoff.json"
+    },
+    "handoffEntry": "MIK-R96@v1 §8 / OR-R034",
+    "leaf": "260928-MIK-L96",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

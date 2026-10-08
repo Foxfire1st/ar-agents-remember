@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "977ccec9d8280f5159803ee01a455090bc4de2bd",
+            "blob": "156826fe4296a6bb4317b56435a0541efc68dee4",
             "content": "sha256:8625fb836b979634f02013f27444bae4be2d8f919640db82fd48f72a5588b0f3",
             "locator": {
               "kind": "symbol",
@@ -18,7 +18,7 @@
         },
         {
           "anchor": {
-            "blob": "977ccec9d8280f5159803ee01a455090bc4de2bd",
+            "blob": "156826fe4296a6bb4317b56435a0541efc68dee4",
             "content": "sha256:67ef59667662f3d53dbc35e78d74c5edbd24fcccc140176be697ebc9c9c9586b",
             "locator": {
               "kind": "symbol",
@@ -29,7 +29,7 @@
         },
         {
           "anchor": {
-            "blob": "977ccec9d8280f5159803ee01a455090bc4de2bd",
+            "blob": "156826fe4296a6bb4317b56435a0541efc68dee4",
             "content": "sha256:9a604f8ee478c8286e362f5e67c367511038768ed2af48b155599f47e91e93fa",
             "locator": {
               "kind": "symbol",
@@ -67,7 +67,7 @@
         },
         {
           "anchor": {
-            "blob": "977ccec9d8280f5159803ee01a455090bc4de2bd",
+            "blob": "156826fe4296a6bb4317b56435a0541efc68dee4",
             "content": "sha256:938a7ee0fafc28cb146d0acc1fb7fb46383b87b1f68ba3708f3341c547450d0a",
             "locator": {
               "kind": "symbol",
@@ -119,6 +119,50 @@
               "name": "AuthorityRegistry"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/quality/dagger_authority.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The resource lock path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "156826fe4296a6bb4317b56435a0541efc68dee4",
+            "content": "sha256:8625fb836b979634f02013f27444bae4be2d8f919640db82fd48f72a5588b0f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "lock_path_for"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The bounded exclusive lock.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "156826fe4296a6bb4317b56435a0541efc68dee4",
+            "content": "sha256:dd8d3d0f95aedef79978e2d0f55d8bcb30dde228556a7c232ba96ba8b21d9e36",
+            "locator": {
+              "kind": "symbol",
+              "name": "exclusive_file_lock"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "156826fe4296a6bb4317b56435a0541efc68dee4",
+            "content": "sha256:0084dbbc10a4ae91c2afe5a56b4e3dc47b25c434410848d16d43de6e96b4229f",
+            "locator": {
+              "end": 150,
+              "kind": "line_range",
+              "start": 108
+            }
           },
           "kind": "code"
         }

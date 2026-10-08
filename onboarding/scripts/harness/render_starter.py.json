@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "df2df8eb6a7946cae73c722a1129ae93857073e3",
+            "blob": "683f4fad82810ac77ce87e5fe32a2a5426e5b2d6",
             "content": "sha256:1558c093be0e087e187b21ff6e42f2a7cdbda8555d6072199861142e5160295b",
             "locator": {
               "kind": "symbol",
@@ -19,7 +19,7 @@
         },
         {
           "anchor": {
-            "blob": "df2df8eb6a7946cae73c722a1129ae93857073e3",
+            "blob": "683f4fad82810ac77ce87e5fe32a2a5426e5b2d6",
             "content": "sha256:3d4ab829b673691fbd2219a2ed9b8281008500ee4eaf041a91cad3d143122c87",
             "locator": {
               "kind": "symbol",
@@ -73,6 +73,38 @@
               "name": "emit"
             },
             "path": "scripts/harness/session_start_hook.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The host block the renderer writes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3eb0701053b400248f38396e91dbc480d82d7d6a",
+            "content": "sha256:359bece75664674d69e32438407c20243378f144ed128b568ff80891dcabd7b4",
+            "locator": {
+              "kind": "symbol",
+              "name": "fresh_host_block"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The settings render with the recorded root and ports.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3eb0701053b400248f38396e91dbc480d82d7d6a",
+            "content": "sha256:07f030f3fb397768ae5be187893fb61d5fbc070e3ca511fd5277345e58d27f52",
+            "locator": {
+              "kind": "symbol",
+              "name": "render_settings"
+            }
           },
           "kind": "code"
         }

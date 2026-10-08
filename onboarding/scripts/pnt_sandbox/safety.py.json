@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "2a583f440c0585e193469a574bf6f841450fa40b",
+        "blob": "29424e5c4a9c8961b580a005655d0de44e003967",
         "content": "sha256:bf282cd1512d51ba095947d74e46f7c7b11956a5f833776c8cab410c30b1f82d",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,25 @@
     },
     {
       "anchor": {
-        "blob": "2a583f440c0585e193469a574bf6f841450fa40b",
+        "blob": "29424e5c4a9c8961b580a005655d0de44e003967",
+        "content": "sha256:bf282cd1512d51ba095947d74e46f7c7b11956a5f833776c8cab410c30b1f82d",
+        "locator": {
+          "kind": "symbol",
+          "name": "evaluate"
+        }
+      },
+      "id": "RLZ-9B06AB",
+      "invariant": "INV-FJPXYV",
+      "origin": {
+        "handoffEntry": "L96-D-8",
+        "leaf": "260928-MIK-L96"
+      },
+      "rationale": "Judges the supplied root safety facts, including the product Node and cache roots, before installation or dashboard spawn.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "29424e5c4a9c8961b580a005655d0de44e003967",
         "content": "sha256:895492d5636cf09c5c1c7936759b0103331c9685c1f2ee2e43087f14ab5defcb",
         "locator": {
           "kind": "symbol",

@@ -1,0 +1,23 @@
+{
+  "path": "mcp/src/agents_remember/serving/paseo/paseo_daemon_config.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The private provider write with its rollback files.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e4081c807217a419d2105716d01f1075bf52eb9e",
+            "content": "sha256:0604516d08bb02b7f16747b3138c7fa9013d3b5eebebfc631ed9b5626bd03c5d",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_provider_entries"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

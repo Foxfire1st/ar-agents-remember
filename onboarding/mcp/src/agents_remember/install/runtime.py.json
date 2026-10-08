@@ -36,12 +36,29 @@
         }
       ]
     },
+    "11": {
+      "note": "The application entry that composes the host step onto the lower service result.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a81adb6dde0d503439aba7164940ec4bd011a65c",
+            "content": "sha256:8c4ac97d90059ad425122346e9b05a36e6a8ca869d587c0af7ea12c958af0b3a",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_runtime_install"
+            },
+            "path": "mcp/src/agents_remember/application/runtime/install.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "`RuntimeInstallScope` carries the required resolved selection, and both public entry points funnel through one private installer.",
       "targets": [
         {
           "anchor": {
-            "blob": "da03b840f9e9b835810d2339c909cf0bb20efe68",
+            "blob": "1f99cfc219a3a4a26ad011d3d472a52f276c579a",
             "content": "sha256:e4fec328bd3a60d5ee744f217835980dfa2d8f113efc1b3c60097970fa52f12c",
             "locator": {
               "kind": "symbol",
@@ -52,7 +69,7 @@
         },
         {
           "anchor": {
-            "blob": "da03b840f9e9b835810d2339c909cf0bb20efe68",
+            "blob": "1f99cfc219a3a4a26ad011d3d472a52f276c579a",
             "content": "sha256:f0e41d7834874b6bcc77ad3010c515db8b76282842ed22366209fcd595dff9ad",
             "locator": {
               "kind": "symbol",
@@ -63,7 +80,7 @@
         },
         {
           "anchor": {
-            "blob": "da03b840f9e9b835810d2339c909cf0bb20efe68",
+            "blob": "1f99cfc219a3a4a26ad011d3d472a52f276c579a",
             "content": "sha256:f2592acb3de309e5d5c9d230a540dc6b8dbb08fbf49afdb79e8cbd5d9846823c",
             "locator": {
               "kind": "symbol",
@@ -74,7 +91,7 @@
         },
         {
           "anchor": {
-            "blob": "da03b840f9e9b835810d2339c909cf0bb20efe68",
+            "blob": "1f99cfc219a3a4a26ad011d3d472a52f276c579a",
             "content": "sha256:34d06356a11377c85a04abb93a03795223ac2a1d7fddab178d5bb43a1ec4fef8",
             "locator": {
               "kind": "symbol",
@@ -85,12 +102,12 @@
         },
         {
           "anchor": {
-            "blob": "da03b840f9e9b835810d2339c909cf0bb20efe68",
+            "blob": "1f99cfc219a3a4a26ad011d3d472a52f276c579a",
             "content": "sha256:60b74a9ee66f025d175b9d6378eff0dbb52a4c6497c1ee5426ae63da2808ac03",
             "locator": {
-              "end": 632,
+              "end": 609,
               "kind": "line_range",
-              "start": 616
+              "start": 593
             }
           },
           "kind": "code"
@@ -102,7 +119,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "da03b840f9e9b835810d2339c909cf0bb20efe68",
+            "blob": "1f99cfc219a3a4a26ad011d3d472a52f276c579a",
             "content": "sha256:e1c4866fd44742edd13a94902b7e6e147bdea6722cd3e4fd8f1b788cb0d702f6",
             "locator": {
               "kind": "symbol",
@@ -134,7 +151,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "da03b840f9e9b835810d2339c909cf0bb20efe68",
+            "blob": "1f99cfc219a3a4a26ad011d3d472a52f276c579a",
             "content": "sha256:7cb1b3ddb979b1dc4df45c6fb5cccfce574d0ff1ec5aa44a030cc73e7837fe0b",
             "locator": {
               "kind": "symbol",
@@ -150,7 +167,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "da03b840f9e9b835810d2339c909cf0bb20efe68",
+            "blob": "1f99cfc219a3a4a26ad011d3d472a52f276c579a",
             "content": "sha256:c394882fe50cb8c5fbd4c58641c06077492cbbacce38cca0e5715639c13753cc",
             "locator": {
               "kind": "symbol",
@@ -213,7 +230,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "da03b840f9e9b835810d2339c909cf0bb20efe68",
+            "blob": "1f99cfc219a3a4a26ad011d3d472a52f276c579a",
             "content": "sha256:f0e41d7834874b6bcc77ad3010c515db8b76282842ed22366209fcd595dff9ad",
             "locator": {
               "kind": "symbol",

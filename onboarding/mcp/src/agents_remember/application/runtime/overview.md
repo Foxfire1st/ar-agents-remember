@@ -51,7 +51,7 @@ None.
 ### Repo-Internal References
 
 - Startup owns MCP process declaration, collaborator installation, and the serving-build payload gateway. [1]
-- Runtime installation is a thin typed delegation. [2]
+- Runtime installation composes the lower service result with the public host step at the application entry. [2]
 - Skill installation resolves the configured harness skill root and delegates the copy. [3]
 
 ### Docs References
@@ -95,3 +95,9 @@ the contract lives in the real coordination root. A worktree-bound run must ther
 itself first (`declare_test_process()`, the same call pytest's bootstrap makes); with that
 declaration the run resolves the real authority and writes nothing outside the enclosure's
 `reports/`.
+
+## 260928-MIK-L96 The install host step
+
+The install entry now composes the host step after its existing steps: a configured host is provisioned or previewed, its report is the result's `host` part, and a failing host step keeps the earlier steps while setting `ok` false.
+
+- The composition with the host part. [4]

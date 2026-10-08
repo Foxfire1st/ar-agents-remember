@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "f6e6293545a981a2f79bb902c17c077de1d6a428",
+        "blob": "04f1b6f3d5716d4d9b68b9724f0c1948b18304ab",
         "content": "sha256:3213a3f88c93c01ce8d794611e3629f37c241e8ae24e68edbf5d5138a75ccf8c",
         "locator": {
           "end": 86,
@@ -39,7 +39,7 @@
         },
         {
           "anchor": {
-            "blob": "74cb448cf86fe0ef7fb7d736bf9a533c4c65e639",
+            "blob": "e0e3901879af6c975558c5c4eb31d6cdf14c5fb4",
             "content": "sha256:e1f4547fb3e834f9d3010e6f52f94e144546d376cfec52ea05cec75699cee18c",
             "locator": {
               "kind": "symbol",
@@ -51,12 +51,12 @@
         },
         {
           "anchor": {
-            "blob": "74cb448cf86fe0ef7fb7d736bf9a533c4c65e639",
+            "blob": "e0e3901879af6c975558c5c4eb31d6cdf14c5fb4",
             "content": "sha256:75f6acc8c6cacd9951ef2da4ccb34e46823a789ad63891fe5980b08c3c7e8f15",
             "locator": {
-              "end": 259,
+              "end": 266,
               "kind": "line_range",
-              "start": 245
+              "start": 252
             },
             "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
           },
@@ -136,7 +136,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "74cb448cf86fe0ef7fb7d736bf9a533c4c65e639",
+            "blob": "e0e3901879af6c975558c5c4eb31d6cdf14c5fb4",
             "content": "sha256:ee1844899d24faed094c3a064dca97204f56ebea822848911950282a961a9e4c",
             "locator": {
               "kind": "symbol",
@@ -148,12 +148,12 @@
         },
         {
           "anchor": {
-            "blob": "74cb448cf86fe0ef7fb7d736bf9a533c4c65e639",
+            "blob": "e0e3901879af6c975558c5c4eb31d6cdf14c5fb4",
             "content": "sha256:8bc4be81ebdeb31598fcc3fbaa15aa58e8d600027aec6f79f595f9828fe65e66",
             "locator": {
-              "end": 721,
+              "end": 727,
               "kind": "line_range",
-              "start": 702
+              "start": 708
             },
             "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
           },
@@ -166,7 +166,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "da03b840f9e9b835810d2339c909cf0bb20efe68",
+            "blob": "1f99cfc219a3a4a26ad011d3d472a52f276c579a",
             "content": "sha256:a648e98f3a9e63b69d2d8b4c412cb573b29d59ec98cb93ebfd37bc1a14aa28a0",
             "locator": {
               "kind": "symbol",
@@ -183,13 +183,47 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f6e6293545a981a2f79bb902c17c077de1d6a428",
+            "blob": "04f1b6f3d5716d4d9b68b9724f0c1948b18304ab",
             "content": "sha256:3213a3f88c93c01ce8d794611e3629f37c241e8ae24e68edbf5d5138a75ccf8c",
             "locator": {
               "end": 86,
               "kind": "line_range",
               "start": 49
             }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The dashboard command that starts both.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7d5073fe88bde3e92fffa7108228d97077f479ee",
+            "content": "sha256:88dcf0bf1cb4abadecd695c1821318f6942c4a8b5d819cb4ee14679539d688ae",
+            "locator": {
+              "kind": "symbol",
+              "name": "run"
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The host step of the install.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a81adb6dde0d503439aba7164940ec4bd011a65c",
+            "content": "sha256:8c4ac97d90059ad425122346e9b05a36e6a8ca869d587c0af7ea12c958af0b3a",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_runtime_install"
+            },
+            "path": "mcp/src/agents_remember/application/runtime/install.py"
           },
           "kind": "code"
         }

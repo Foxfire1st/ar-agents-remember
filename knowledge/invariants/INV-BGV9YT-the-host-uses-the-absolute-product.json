@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "An unchecked PATH Node or an unverified archive lets a host run outside the build; test_paseo_node covers digest refusal, foreign-folder refusal, platform refusal, whole placement and XDG resolution, and the downloader's operational byte/time bound is enforced by the production source (MAX_ARCHIVE_BYTES, FETCH_SECONDS) rather than by the injected-fake cases."
+  },
+  "applicability": "Every host acquisition and every process that starts the host: the provision's npm run, PaseoCli calls and the bridge.",
+  "conditions": [
+    "The platform is Linux x86_64 with /proc; the archive URL and SHA-256 come from the contract.",
+    "The managed Node lies beside the product's python and paseo folders; the archive cache is under the user's cache folder."
+  ],
+  "exclusions": [
+    "A Node already on the machine is never used for the host, whatever its version.",
+    "No install outside the product's data and cache folders, no bin link, no PATH, shell or npm-config change.",
+    "The Eve application keeps its own separate Node line."
+  ],
+  "id": "INV-BGV9YT",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/260928-mik-l96-ar/task-reports/role-launch/260928-MIK-L96-worker-c9abaa5b-c066-404b-a276-fcb39fcd4a79.evidence/restart-b/checks/final-unit-v2.log; manifest 1d1f404e04e282f568cfa601317e4cad75d22392b1c9a2f28bc96a1e46091b4f; current source manifest cd7706b9b3c7dbb3d64684ec054c55b6f9eac22dbe1b6d76779bdab5e47abe08; current qualification /home/firefox/projects/ar-coordination/worktrees/agents-remember/260928-mik-l96-ar/task-reports/role-launch/260928-MIK-L96-worker-c9abaa5b-c066-404b-a276-fcb39fcd4a79.evidence/post-l51-current/catalog-qualification.json; current manifest 5cdfbd41e9079195a3cd318d4a26263392ab8031aead02c2459faa39445bbf3f; exact reuse /home/firefox/projects/ar-coordination/worktrees/agents-remember/260928-mik-l96-ar/task-reports/role-launch/260928-MIK-L96-worker-c9abaa5b-c066-404b-a276-fcb39fcd4a79.evidence/post-L39-sync/exact-input-proof-reuse.json"
+      ],
+      "path": "notes/reports/260928-MIK-L96-curator-evidence/handoff.json"
+    },
+    "handoffEntry": "MIK-R96@v1 §3",
+    "leaf": "260928-MIK-L96",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The host uses the absolute product Node22.23.2 on Linux x86_64 with /proc, verifies the official archive digest before unpacking, and refuses other platforms or a foreign target.",
+  "status": "proposed",
+  "supersedes": []
+}

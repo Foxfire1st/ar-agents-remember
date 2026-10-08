@@ -3,8 +3,26 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "bff81c5c4be709cdc481e57e21e5ae3e3dd811cd",
-        "content": "sha256:a88d27ac281f0e0a5cc1adae4e87de64c27458facd32fec86b43b17fdb2670d9",
+        "blob": "09a8fb0b4e0361dc294645727f5e806fc5180f53",
+        "content": "sha256:9266318db49abbd67118464d0eeac7a6de98e45e86fdbe921961cfb2bf78f07b",
+        "locator": {
+          "kind": "symbol",
+          "name": "resolve_roots"
+        }
+      },
+      "id": "RLZ-M56SX3",
+      "invariant": "INV-FJPXYV",
+      "origin": {
+        "handoffEntry": "L96-D-8",
+        "leaf": "260928-MIK-L96"
+      },
+      "rationale": "This root projection reports the product Node/cache and other resolved paths used by sandbox safety admission. It supplies the paths to be judged; safety.evaluate and the normal start path own refusal before installation or dashboard spawn.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "09a8fb0b4e0361dc294645727f5e806fc5180f53",
+        "content": "sha256:9266318db49abbd67118464d0eeac7a6de98e45e86fdbe921961cfb2bf78f07b",
         "locator": {
           "kind": "symbol",
           "name": "resolve_roots"
@@ -21,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "bff81c5c4be709cdc481e57e21e5ae3e3dd811cd",
+        "blob": "09a8fb0b4e0361dc294645727f5e806fc5180f53",
         "content": "sha256:152e30aa8f0075ed3a4adf3ba3d433b405004ce99756cb1b0a5a5021c725891f",
         "locator": {
           "kind": "symbol",
@@ -48,6 +66,34 @@
             "content": "sha256:4a0d79eb2032965ca0b4a40723db4e597f06e7e4b33236a7a05f57e9961f77a6",
             "locator": {
               "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The resolver with the product Node and cache roots.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "09a8fb0b4e0361dc294645727f5e806fc5180f53",
+            "content": "sha256:9266318db49abbd67118464d0eeac7a6de98e45e86fdbe921961cfb2bf78f07b",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_roots"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "09a8fb0b4e0361dc294645727f5e806fc5180f53",
+            "content": "sha256:5eee76103b7ea1726fcf86aa2e38845b6feff03555a0c392e432c1d4d5b47971",
+            "locator": {
+              "end": 160,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"

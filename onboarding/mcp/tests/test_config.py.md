@@ -10,7 +10,7 @@ Runtime authority settings, repository identity and path-containment tests.
 
 ## Current source account
 
-The added Paseo settings case checks absent optional block, exact required keys, absolute roots, host:port, pinned version and canonical browser-origin spellings. Unknown keys, malformed provider/embed shapes, duplicate origins and version ranges refuse. These are parser checks rather than provision or provider startup.
+The added Paseo settings case checks the absent optional block (the named no-host state), the complete five-fact block with the contract's version, absolute roots, host:port and canonical browser-origin spellings, empty providers/embed and the per-fact missing-key refusals. Unknown keys, malformed provider/embed shapes and duplicate origins refuse. A version key is accepted and never selects the release, so version ranges are no longer refused here; the four selector variants and the retired-selector notice belong to `test_paseo_install_contract`. These are parser checks rather than provision or provider startup.
 
 ## Code Commentary
 
@@ -55,3 +55,9 @@ The retained source anchors below support the fixture roles and assertion bounda
 No cross-repository implementation evidence is required for these local test and fixture claims.
 
 Fixture repositories and protocol doubles do not establish a live external integration.
+
+## 260928-MIK-L96 The optional host block
+
+The optional-block cases this module owns are the absent-block named refusal, the complete five-fact-plus-version block load, kept browser-documented embed spellings, empty providers/embed and the per-fact missing-key refusals. The four selector variants and the retired-selector notice are exercised by the install-contract cases, not by this module.
+
+- The optional-block cases this module owns. [8]

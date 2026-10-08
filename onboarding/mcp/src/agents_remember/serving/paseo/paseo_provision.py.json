@@ -1,0 +1,59 @@
+{
+  "path": "mcp/src/agents_remember/serving/paseo/paseo_provision.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "70b38647aec70c72dae4a0462146b98d004ccbf1",
+        "content": "sha256:be2a8739238b1bf0dc5ac637a8989ceafb9e66e9a4bf12d04c1237fdfd3ce788",
+        "locator": {
+          "kind": "symbol",
+          "name": "_converge_daemon"
+        }
+      },
+      "id": "RLZ-R90C04",
+      "invariant": "INV-FM3V0M",
+      "origin": {
+        "handoffEntry": "MIK-R96@v1 §9 late restart",
+        "leaf": "260928-MIK-L96"
+      },
+      "rationale": "This convergence boundary separates live updates from transitions and retains the existing supervisor when installation encounters a late restart-required setting.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The converge pass and its install entry.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "70b38647aec70c72dae4a0462146b98d004ccbf1",
+            "content": "sha256:dd8d1d012266e1bfdbd926bb4a5b7c313ae7486d3c9d81b6f001532b911f44bc",
+            "locator": {
+              "kind": "symbol",
+              "name": "provision_for_install"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The no-stop admission read.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cf0e20b25616726e024ebe9a65135521b342eb6e",
+            "content": "sha256:b3755c26c13c6f8ce7b58a66c46c3ed405eb8856f94c83384ecba50059be2098",
+            "locator": {
+              "kind": "symbol",
+              "name": "_check_install_restart"
+            },
+            "path": "mcp/src/agents_remember/serving/paseo/paseo_run.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

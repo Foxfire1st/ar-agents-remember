@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "75887d061238efdfa429b627183b9f486b055846",
+        "blob": "932c4f1a6b66ff20855f0cda3222663dcb01c8a6",
         "content": "sha256:d78be9a4046b8ffdab5120a0a748737d28d92bec8743be7d5acec6847feb659b",
         "locator": {
-          "end": 264,
+          "end": 274,
           "kind": "line_range",
-          "start": 264
+          "start": 274
         }
       },
       "id": "RLZ-ZTDYFT",
@@ -48,6 +48,21 @@
               "kind": "file"
             },
             "path": "mcp/tests/test_knowledge_reader_tree_coverage.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "21": {
+      "note": "The lane catalog with the host module rows.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "36de1d8e8c8504936dc71538d4443a600476a640",
+            "content": "sha256:59f110085bc09c4ecb76d58941eaa4ea617d5a7537460a16cb447cfd4889aa7c",
+            "locator": {
+              "kind": "file"
+            }
           },
           "kind": "test"
         }

@@ -1,0 +1,102 @@
+{
+  "path": "mcp/tests/test_host_release_contract.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "95523181d5306f13a4c6c4b3384edb30f8c55ebc",
+        "content": "sha256:cae0a20a11eb68589ff854a24d2bf73afc0039e7979f9eb7de53bf97010b32ab",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_plugin_pin_drift_fails_release_concordance"
+        }
+      },
+      "facet": "release concordance rejects a plugin SDK pinned to another version than the contract",
+      "id": "PRF-JYDMS5",
+      "invariant": "INV-RW4566",
+      "origin": {
+        "handoffEntry": "MIK-R96@v1 §2",
+        "leaf": "260928-MIK-L96"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The plugin pin drift case.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "95523181d5306f13a4c6c4b3384edb30f8c55ebc",
+            "content": "sha256:cae0a20a11eb68589ff854a24d2bf73afc0039e7979f9eb7de53bf97010b32ab",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_plugin_pin_drift_fails_release_concordance"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The rendered-block case.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "95523181d5306f13a4c6c4b3384edb30f8c55ebc",
+            "content": "sha256:32a1a90fd67731116893b4baaca8a16d7fc506a72246e9dc544e75a4d1f81fc1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_starter_renders_one_shared_block_and_preserves_existing_settings"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The lock/archive concordance case.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "95523181d5306f13a4c6c4b3384edb30f8c55ebc",
+            "content": "sha256:ddba604a888f7451816b1701378764fd98be8fe06eaefae32c1684048ff5c5f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_release_concordance_rejects_mismatched_lock_entry_or_archive"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "95523181d5306f13a4c6c4b3384edb30f8c55ebc",
+            "content": "sha256:d8d159f3e0f9f92134223b1712c163176e210bb49370b1600873d10d34407b0a",
+            "locator": {
+              "end": 95,
+              "kind": "line_range",
+              "start": 70
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The notice-once case.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "95523181d5306f13a4c6c4b3384edb30f8c55ebc",
+            "content": "sha256:25da727db53e6457ea445fbbc10d5b80c75bbece4ee9162b972b1c7af6ce83f9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_retired_selector_notice_once_on_each_public_command_and_dashboard_line"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

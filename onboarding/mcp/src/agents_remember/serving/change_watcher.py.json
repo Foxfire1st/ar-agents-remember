@@ -221,7 +221,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "977ccec9d8280f5159803ee01a455090bc4de2bd",
+            "blob": "156826fe4296a6bb4317b56435a0541efc68dee4",
             "content": "sha256:8625fb836b979634f02013f27444bae4be2d8f919640db82fd48f72a5588b0f3",
             "locator": {
               "kind": "symbol",
@@ -338,12 +338,12 @@
         },
         {
           "anchor": {
-            "blob": "0ad008bcc0e9c86c269b55c1d27851ae1f9a4739",
+            "blob": "7d5073fe88bde3e92fffa7108228d97077f479ee",
             "content": "sha256:c6235aa994819787a4ebcf4ff4d2adbdd884eda20a29fd41a4577ecc4d315ba5",
             "locator": {
-              "end": 352,
+              "end": 363,
               "kind": "line_range",
-              "start": 352
+              "start": 363
             },
             "path": "mcp/src/agents_remember/cli/dashboard.py"
           },

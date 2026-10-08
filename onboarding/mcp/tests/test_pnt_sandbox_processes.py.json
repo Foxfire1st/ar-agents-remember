@@ -3,7 +3,24 @@
   "proves": [
     {
       "anchor": {
-        "blob": "7c5f635724910b3bca1e3b6641abb2b19c320de2",
+        "blob": "ec1d0ae05b8f205404b23216b55a0567a22e968f",
+        "content": "sha256:b5a2abe3073497010f86360184dfc2e4c2b4e4965fbe006dd146e53e4b27c8da",
+        "locator": {
+          "kind": "symbol",
+          "name": "StartAndStopTests.test_start_builds_a_missing_sandbox_first"
+        }
+      },
+      "facet": "start builds a missing sandbox at the old layout and then starts only the controlled fake processes",
+      "id": "PRF-3ZDKPA",
+      "invariant": "INV-0VYG87",
+      "origin": {
+        "handoffEntry": "L96-D-6",
+        "leaf": "260928-MIK-L96"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "ec1d0ae05b8f205404b23216b55a0567a22e968f",
         "content": "sha256:f47af2c9655e6f36c2ccaad11ffb0b58ceb771da7662bf57d7ceb89882bfc714",
         "locator": {
           "kind": "symbol",
@@ -20,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "7c5f635724910b3bca1e3b6641abb2b19c320de2",
+        "blob": "ec1d0ae05b8f205404b23216b55a0567a22e968f",
         "content": "sha256:13ba62ad415a2e708aad399bca76d174670305925865ac355077bf926a2c0ba8",
         "locator": {
           "kind": "symbol",
@@ -37,8 +54,8 @@
     },
     {
       "anchor": {
-        "blob": "7c5f635724910b3bca1e3b6641abb2b19c320de2",
-        "content": "sha256:f3ba2883a3bb93cf4fcfe6c854f07c9b14012462db3935846046f12eb1954d3c",
+        "blob": "ec1d0ae05b8f205404b23216b55a0567a22e968f",
+        "content": "sha256:05a70f51be80a19e172a74d0a1147064e6203f4f8fdf64267b4d5508ecf7d3c2",
         "locator": {
           "kind": "symbol",
           "name": "test_start_refuses_a_reserved_port_held_by_a_foreign_process"
@@ -54,8 +71,8 @@
     },
     {
       "anchor": {
-        "blob": "7c5f635724910b3bca1e3b6641abb2b19c320de2",
-        "content": "sha256:f8066da15c52c986a72f957395120e6d57378b8ed9f2ee4b2aa13a33c9b36f4a",
+        "blob": "ec1d0ae05b8f205404b23216b55a0567a22e968f",
+        "content": "sha256:3dbc297825fc670afb33ce44e7c4fa64e540b90551b347b22e7183006045f5bd",
         "locator": {
           "kind": "symbol",
           "name": "test_start_starts_nothing_when_the_safety_check_fails"
@@ -71,7 +88,7 @@
     },
     {
       "anchor": {
-        "blob": "7c5f635724910b3bca1e3b6641abb2b19c320de2",
+        "blob": "ec1d0ae05b8f205404b23216b55a0567a22e968f",
         "content": "sha256:45baf638a5839a7627b5d9a427ae3acac172da229f3540bf3f72351ca1a95a70",
         "locator": {
           "kind": "symbol",
@@ -88,7 +105,7 @@
     },
     {
       "anchor": {
-        "blob": "7c5f635724910b3bca1e3b6641abb2b19c320de2",
+        "blob": "ec1d0ae05b8f205404b23216b55a0567a22e968f",
         "content": "sha256:dd1c2743fac4572aa4f955b54a9fb92137a03abd3af8d241bf3605c3bd81deee",
         "locator": {
           "kind": "symbol",
@@ -105,7 +122,7 @@
     },
     {
       "anchor": {
-        "blob": "7c5f635724910b3bca1e3b6641abb2b19c320de2",
+        "blob": "ec1d0ae05b8f205404b23216b55a0567a22e968f",
         "content": "sha256:a318c3ce897485dd698530f2d61f77be9d7ed7b9b29442c6112ea1b933119c28",
         "locator": {
           "kind": "symbol",
@@ -122,8 +139,8 @@
     },
     {
       "anchor": {
-        "blob": "7c5f635724910b3bca1e3b6641abb2b19c320de2",
-        "content": "sha256:4fd7a25c0696e01afc8283ca4fb6dc853aa0718a07812b4fbd2d0a19da4d5fc9",
+        "blob": "ec1d0ae05b8f205404b23216b55a0567a22e968f",
+        "content": "sha256:da21c95e27fb56ac6d347920c87f07d099446bd78612b943d60c7f6901ce179a",
         "locator": {
           "kind": "symbol",
           "name": "test_the_paseo_home_record_is_trusted_only_for_this_homes_supervisor"
@@ -139,8 +156,8 @@
     },
     {
       "anchor": {
-        "blob": "7c5f635724910b3bca1e3b6641abb2b19c320de2",
-        "content": "sha256:a17a87edcc9a6276fd487536b1f28c242d05b0c9fff3b8447f333983dd7d02db",
+        "blob": "ec1d0ae05b8f205404b23216b55a0567a22e968f",
+        "content": "sha256:3b2dd5453a9d86027f9b70d39f0cc0dbaca66c42d099c24a969437a0ec5b0f42",
         "locator": {
           "kind": "symbol",
           "name": "test_the_lock_covers_a_build_and_a_provision_run_and_is_the_file_that_is_there"
@@ -156,7 +173,24 @@
     },
     {
       "anchor": {
-        "blob": "7c5f635724910b3bca1e3b6641abb2b19c320de2",
+        "blob": "ec1d0ae05b8f205404b23216b55a0567a22e968f",
+        "content": "sha256:a86aa4102a81fb24ca8044d961297dc4132d2bdff4aa6d3207090524442c8390",
+        "locator": {
+          "kind": "symbol",
+          "name": "StartAndStopTests.test_deferred_install_cannot_qualify_an_older_live_host"
+        }
+      },
+      "facet": "a deferred install reports its reasons, preserves the preexisting supervisor and qualifies no dashboard URL",
+      "id": "PRF-YQ78WR",
+      "invariant": "INV-F1TZCW",
+      "origin": {
+        "handoffEntry": "L96-D-7",
+        "leaf": "260928-MIK-L96"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "ec1d0ae05b8f205404b23216b55a0567a22e968f",
         "content": "sha256:f47af2c9655e6f36c2ccaad11ffb0b58ceb771da7662bf57d7ceb89882bfc714",
         "locator": {
           "kind": "symbol",
@@ -183,6 +217,38 @@
             "content": "sha256:58116bc6e1c17ca7b637be597e01ad819048ec9a7123a80c96eebaffaa72b1f5",
             "locator": {
               "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The old-layout rebuild case.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ec1d0ae05b8f205404b23216b55a0567a22e968f",
+            "content": "sha256:026ebbc7725ecab5964ca74d651e0821ef13aa3e9f9fedb5352bafa81228e5f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "StartAndStopTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The deferred-install reporting case.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ec1d0ae05b8f205404b23216b55a0567a22e968f",
+            "content": "sha256:026ebbc7725ecab5964ca74d651e0821ef13aa3e9f9fedb5352bafa81228e5f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "StartAndStopTests"
             }
           },
           "kind": "test"

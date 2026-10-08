@@ -37,7 +37,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "74cb448cf86fe0ef7fb7d736bf9a533c4c65e639",
+            "blob": "e0e3901879af6c975558c5c4eb31d6cdf14c5fb4",
             "content": "sha256:eb10f07ce1aa1cde2f6245b200c58c9a90a4a871b1fbfe3f74cbdee7665852ce",
             "locator": {
               "kind": "symbol",
@@ -54,7 +54,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "86c3b2be96c126893168d463c2382ef107b5bc07",
+            "blob": "35e6afc7c42b1c5de6952ed36194e894b447642b",
             "content": "sha256:4988cff4af7aa12bf35be2bd4fbf5135840ac6fc0d8fcde7c8f847b1e6729ced",
             "locator": {
               "kind": "symbol",
@@ -78,6 +78,38 @@
               "start": 18
             },
             "path": "mcp/src/agents_remember/kernel/primitives/version.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The daemon ensure the dashboard calls.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "35e6afc7c42b1c5de6952ed36194e894b447642b",
+            "content": "sha256:38480b90ecd20ca8f70c128442315d1bb865fe2ed1dbc81b93796478e8ac7dda",
+            "locator": {
+              "kind": "symbol",
+              "name": "ensure"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The spawn path the host is not part of.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "35e6afc7c42b1c5de6952ed36194e894b447642b",
+            "content": "sha256:1ec14144869832662104d8a7a6bdc254a99720c702d909d593b123d0862b4a62",
+            "locator": {
+              "kind": "symbol",
+              "name": "spawn"
+            }
           },
           "kind": "code"
         }

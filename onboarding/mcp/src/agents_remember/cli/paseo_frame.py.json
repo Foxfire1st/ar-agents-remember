@@ -23,7 +23,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e12597105b2e0ea9b2784d220eb255836eb861d6",
+            "blob": "4e2e9d1ab627a352fa7289a1a2cabae47d4d6883",
             "content": "sha256:0a5e86fd0af26e80df5a27df7b2121455e0c286967fb38a11fb4736cd4c7f898",
             "locator": {
               "kind": "symbol",
@@ -39,7 +39,39 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e12597105b2e0ea9b2784d220eb255836eb861d6",
+            "blob": "4e2e9d1ab627a352fa7289a1a2cabae47d4d6883",
+            "content": "sha256:20c4574cb94241fce609a3add0b5ae252c176dd06effcd03572900c4844f9ad3",
+            "locator": {
+              "kind": "symbol",
+              "name": "host_frame_facts"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The frame answer with its host-state detail.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4e2e9d1ab627a352fa7289a1a2cabae47d4d6883",
+            "content": "sha256:fe3798ef3c785f22f8f414efb05be264f4b7fa5200774ff9ffd218b5c78bc169",
+            "locator": {
+              "kind": "symbol",
+              "name": "frame_answer"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The host facts the frame reads.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4e2e9d1ab627a352fa7289a1a2cabae47d4d6883",
             "content": "sha256:20c4574cb94241fce609a3add0b5ae252c176dd06effcd03572900c4844f9ad3",
             "locator": {
               "kind": "symbol",

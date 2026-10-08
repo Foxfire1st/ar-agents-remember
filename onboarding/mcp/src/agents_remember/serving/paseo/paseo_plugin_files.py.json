@@ -1,0 +1,23 @@
+{
+  "path": "mcp/src/agents_remember/serving/paseo/paseo_plugin_files.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The home-owned plugin files and their content checks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "acc8ef1150aef064e6a14f31b89cf8b81274591f",
+            "content": "sha256:e3d77c2abcfa749bb54917053d4a7912ccb7856d26e6383a6c667489509e7a02",
+            "locator": {
+              "kind": "symbol",
+              "name": "tree_digest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

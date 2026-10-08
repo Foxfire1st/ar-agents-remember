@@ -92,3 +92,9 @@ the pinned eve application is installed beside the canonical assets); it is a pe
 the unmodified runtime; and the returned record's `selectionSource` names which input supplied
 the mode. The registered tool count is unchanged: a parameter was added to an existing
 declaration, not a tool.
+
+## 260928-MIK-L96 The runtime_install description and host part
+
+The `runtime_install` tool description now states that the step brings the host when the shared settings name one, that a missing block is reported rather than installed, and that the result carries the host part; the tool takes no parameter for the step.
+
+- The installation tools and the runtime_install registration. [7]

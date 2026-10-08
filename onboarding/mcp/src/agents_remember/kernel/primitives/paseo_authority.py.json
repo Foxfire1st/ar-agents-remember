@@ -1,0 +1,86 @@
+{
+  "path": "mcp/src/agents_remember/kernel/primitives/paseo_authority.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "23f89436ed722d0c3ab6470a0bf9079145e22632",
+        "content": "sha256:3cfc871f9f8493dbaa4b11e825bfa4064aed6e67d8b83790b416fab6cc20b54d",
+        "locator": {
+          "kind": "symbol",
+          "name": "load_shared_paseo_runtime"
+        }
+      },
+      "id": "RLZ-1BA9GW",
+      "invariant": "INV-0PAKA9",
+      "origin": {
+        "handoffEntry": "MIK-R96@v1 §8 / OR-R034",
+        "leaf": "260928-MIK-L96"
+      },
+      "rationale": "This reader names one installation-wide authority through the harness coordinationRoot link and reads it per use; it is where missing/malformed shared data is distinguished from legacy per-harness facts.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The shared path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "23f89436ed722d0c3ab6470a0bf9079145e22632",
+            "content": "sha256:b54824dbea465c2d25eddfd730b33bd9a3aca4d06f93cdd4be0e49d0b1029bca",
+            "locator": {
+              "kind": "symbol",
+              "name": "paseo_runtime_path"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "23f89436ed722d0c3ab6470a0bf9079145e22632",
+            "content": "sha256:c1a52f1720725e35c45417d66920fcbe2160853072402d42bcca336ac27b0648",
+            "locator": {
+              "end": 17,
+              "kind": "line_range",
+              "start": 16
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The per-use read of the shared block.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "23f89436ed722d0c3ab6470a0bf9079145e22632",
+            "content": "sha256:3cfc871f9f8493dbaa4b11e825bfa4064aed6e67d8b83790b416fab6cc20b54d",
+            "locator": {
+              "kind": "symbol",
+              "name": "load_shared_paseo_runtime"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The no-fallback migration warning.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "23f89436ed722d0c3ab6470a0bf9079145e22632",
+            "content": "sha256:751c976c76006801810204777327c4ca99211fac30fb5356933111843361ea27",
+            "locator": {
+              "kind": "symbol",
+              "name": "warn_per_harness_paseo"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

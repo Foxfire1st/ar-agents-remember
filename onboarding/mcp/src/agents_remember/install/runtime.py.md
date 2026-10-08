@@ -103,15 +103,14 @@ Defaults are unchanged, including `dry_run=False` (act-by-default) on both entry
 
 The service copies package runtime skills, provider defaults, and runtime
 `AGENTS.md` templates from the source/package runtime tree into the configured
-coordinator. After the `AGENTS.md` copies and the user-owned directory ensures,
-`seed_agentic_settings` (260703-L13) seeds the GLOBAL agentic settings file at
-`<coordinationRoot>/system/settings.json` COPY-IF-MISSING with the documented
-defaults (`kernel/agentic_settings.default_agentic_settings_seed_text` —
-all-human gate delegation, the L12 loop defaults, no spawn preference): an
-existing file is never touched whatever it contains (user-owned posture, like
-`memory-repos/`), a missing one counts as a copied file in the summary, and
-dry-run reports without writing. The c-13 install skill's Stage 2 interview
-then edits the seeded file with the developer. Runtime sync removes stale coordinator `scripts/` remnants because
+coordinator. After the `AGENTS.md` copies and the user-owned directory ensures, this service
+leaves the shared host/agentic settings authority to starter/setup: the renderer
+(`scripts/harness/render_starter.py::render_settings`) writes
+`<coordinationRoot>/system/settings.json` when it is absent, and the install step
+never writes that file. The install-side `seed_agentic_settings` writer is
+historical. The c-13 install skill's Stage 2 interview edits the shared file
+with the developer, and knob families the developer skips keep the built-in
+absent-knob defaults. Runtime sync removes stale coordinator `scripts/` remnants because
 the old source-side installer and skill-install script are no longer valid
 runtime entry points. Dependency-skipped syncs preserve live provider runner
 state under `providers/runners`, while stale `providers/_bin` and
@@ -204,3 +203,9 @@ fields the entry point reads cannot drift apart.
 - Provider settings generation derives lifecycle settings from MCP authority. [8]
 - `install_runtime` stores a provider watcher rebind report, stops watchers before provider refresh, starts/checks them afterward, and includes rebind/recovery details in the MCP payload. [9]
 - Provider watcher lifecycle orchestration and recovery-action construction live in the extracted install helper. [10]
+
+## 260928-MIK-L96 The host part
+
+`install_runtime_from_config` returns the earlier service result only; the host part is composed by the application entry `run_runtime_install`, which adds `result["host"]` and the `ok` conjunction after this function returns. This function's result has no host field.
+
+- The application entry that composes the host step onto the lower service result. [11]

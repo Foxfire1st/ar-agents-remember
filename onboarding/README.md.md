@@ -207,3 +207,10 @@ were deleted after representative exact-candidate measurement failed to justify 
 seven unique product assertions remain ordinary explicit-lane pytest regressions. Non-accepting
 Dagger evidence routes stay labelled and cannot publish lifecycle acceptance; direct targeted
 Vitest remains the only supported host test diagnostic.
+
+## 260928-MIK-L96 Host install and start
+
+The product's install brings the Paseo host: the `runtime_install` step fetches the build's own Node, installs the host release the packaged contract names and starts it, so a user who follows the install types no host command. `agents-remember dashboard --daemon` makes sure the host runs; stopping or restarting the dashboard never stops it, and `agents-remember paseo stop --config <file>` remains the one host-stop command. `agents-remember dashboard --status` prints one line for the dashboard and one for the host.
+
+- The install procedure the readme mirrors. [14]
+- The dashboard start that ensures the host. [15]

@@ -1,0 +1,24 @@
+{
+  "path": "skills/c-13-install-and-onboard/SKILL.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "9d6aaef39fa8726993ecacea4eb791ee797892f5",
+        "content": "sha256:131bf15e0ce4474852f7641cab645c2fa9ac9a58b83d687207ff10b784df643c",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-G2F9YV",
+      "invariant": "INV-H7WNWS",
+      "origin": {
+        "handoffEntry": "MIK-R96@v1 §7",
+        "leaf": "260928-MIK-L96"
+      },
+      "rationale": "This common install procedure teaches the shared setup, public host result and executable single-start route, and is the source regenerated into each harness skill copy.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

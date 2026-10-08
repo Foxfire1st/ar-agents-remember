@@ -214,3 +214,10 @@ As of the 260703-L8 seam ruling `parse_gate_delegation` CONSUMES requireReviewer
 ## 260815-DAG-L4 Authority Boundary
 
 L4 routes this file's existing application, configuration, task, model, registration, or memory responsibility through the shared task-derived integration authority. The change preserves the file's owning altitude while ensuring protected code and external-memory refs cannot be mutated through an ordinary workbench or unjournaled helper.
+
+## 260928-MIK-L96 The shared host authority read per use
+
+`load_paseo_runtime_settings` reads the host block from the file the config names, and the new `paseo_authority` reader resolves the installation-wide `<coordinationRoot>/system/settings.json` at each call, so a block added after a server started is used without a restart. An old per-harness block is ignored with an explicit migration warning and no fallback.
+
+- The host settings read the config exposes. [19]
+- The shared authority reader. [20]

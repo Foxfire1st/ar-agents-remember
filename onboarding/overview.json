@@ -653,12 +653,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "da03b840f9e9b835810d2339c909cf0bb20efe68",
+            "blob": "1f99cfc219a3a4a26ad011d3d472a52f276c579a",
             "content": "sha256:c49482e1392005a1d4105aa1077df95f426e690642b52eea93c95b90b3586a79",
             "locator": {
-              "end": 60,
+              "end": 56,
               "kind": "line_range",
-              "start": 57
+              "start": 53
             },
             "path": "mcp/src/agents_remember/install/runtime.py"
           },
@@ -789,7 +789,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "74cb448cf86fe0ef7fb7d736bf9a533c4c65e639",
+            "blob": "e0e3901879af6c975558c5c4eb31d6cdf14c5fb4",
             "content": "sha256:8a68d04e793048821ea0d878219221b984f7f099d44d098ca49782e676f796e5",
             "locator": {
               "kind": "symbol",
@@ -840,6 +840,66 @@
               "start": 800
             },
             "path": "mcp/src/agents_remember/memory/carryover.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "144": {
+      "note": "The shared host entry the install composes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b127a3dd7b944a884fd247e8e9597483d161505f",
+            "content": "sha256:7131667bc6f11773534fc57e49cc6a1c8b1c4424e755edca359dd3dfcef79066",
+            "locator": {
+              "kind": "symbol",
+              "name": "install_host"
+            },
+            "path": "mcp/src/agents_remember/serving/paseo/paseo_install.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b127a3dd7b944a884fd247e8e9597483d161505f",
+            "content": "sha256:1fcef94ffc2329bab6a830d0fcf5918467663f92049ae1114d9e672fd9604b5f",
+            "locator": {
+              "end": 88,
+              "kind": "line_range",
+              "start": 44
+            },
+            "path": "mcp/src/agents_remember/serving/paseo/paseo_install.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "145": {
+      "note": "The start-only supervision.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d9ace58e2412f7ca4324514269b24fd960c7d03a",
+            "content": "sha256:bada0558f18963fa912b88536362bd1eb9ae669a6bd20671bbae9f4c74cfb0ad",
+            "locator": {
+              "kind": "symbol",
+              "name": "ensure_host"
+            },
+            "path": "mcp/src/agents_remember/serving/paseo/paseo_start.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d9ace58e2412f7ca4324514269b24fd960c7d03a",
+            "content": "sha256:bf250c2a175afdcbe02da80729192b22a5c22f90c4b77b0e2fdb8620c56a8623",
+            "locator": {
+              "end": 180,
+              "kind": "line_range",
+              "start": 148
+            },
+            "path": "mcp/src/agents_remember/serving/paseo/paseo_start.py"
           },
           "kind": "code"
         }

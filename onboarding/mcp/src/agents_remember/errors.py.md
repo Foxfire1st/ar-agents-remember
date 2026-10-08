@@ -119,3 +119,8 @@ No cross-repository evidence is required for these file-local claims.
 ## MIK-R95 RolePreparationError
 
 `RolePreparationError` carries the start owner's `status`, `detail` and `next_action` and renders them in one message, so a preparation refusal reaches the caller as the owner's own typed failure rather than a generic HTTP detail. It is raised by the workspace owner and projected by `role_start` into `launch-refused` with `preparationStatus`.
+## 260928-MIK-L96 The host failure type
+
+`PaseoRuntimeFailure` now lives here, beside the other named errors, so the shared host modules and the bridge can raise it without importing the CLI package; it carries the code, step, message and optional Paseo detail.
+
+- The shared named host failure and its code/step/message/detail fields. [24]

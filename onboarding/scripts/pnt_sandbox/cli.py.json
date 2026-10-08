@@ -1,6 +1,43 @@
 {
   "path": "scripts/pnt_sandbox/cli.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "2a544745d451274f12d870e535cc80ba520d0ef7",
+        "content": "sha256:e259101ca31bef66dc5f43c0c48211b71051dd5a11b84864db81b5aaa11c786e",
+        "locator": {
+          "kind": "symbol",
+          "name": "_run"
+        }
+      },
+      "id": "RLZ-BH60XT",
+      "invariant": "INV-G0Z661",
+      "origin": {
+        "handoffEntry": "MIK-R96@v1 rule8 public port-tooling disposition / INV-G0Z661 effect",
+        "leaf": "260928-MIK-L96"
+      },
+      "rationale": "The controller passes the exact selected pair to the unchanged ownership/safety layout instead of guessing another port.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "2a544745d451274f12d870e535cc80ba520d0ef7",
+        "content": "sha256:a1454f4846cacbfc6c14a73d9ee746a01a74a1bde9e5ae3c0be919ffba9db248",
+        "locator": {
+          "kind": "symbol",
+          "name": "build_parser"
+        }
+      },
+      "id": "RLZ-K094SE",
+      "invariant": "INV-G0Z661",
+      "origin": {
+        "handoffEntry": "MIK-R96@v1 rule8 public port-tooling disposition / INV-G0Z661 effect",
+        "leaf": "260928-MIK-L96"
+      },
+      "rationale": "The public parser owns the four explicit argument surfaces and their preserved defaults/invalid-port refusal.",
+      "role": "primary-authority"
+    }
+  ],
   "references": {
     "1": {
       "note": "The scoped current source carries the module/document behavior described above.",
@@ -11,6 +48,38 @@
             "content": "sha256:6eb6d727b7451049611a2447a5725f567af96d8c507e48862b631ca7fb0db547",
             "locator": {
               "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The parser with the explicit port arguments.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2a544745d451274f12d870e535cc80ba520d0ef7",
+            "content": "sha256:a1454f4846cacbfc6c14a73d9ee746a01a74a1bde9e5ae3c0be919ffba9db248",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_parser"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The controller passing the chosen pair.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2a544745d451274f12d870e535cc80ba520d0ef7",
+            "content": "sha256:e259101ca31bef66dc5f43c0c48211b71051dd5a11b84864db81b5aaa11c786e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_run"
             }
           },
           "kind": "code"

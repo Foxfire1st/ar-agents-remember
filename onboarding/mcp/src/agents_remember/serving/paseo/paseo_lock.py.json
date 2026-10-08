@@ -1,0 +1,23 @@
+{
+  "path": "mcp/src/agents_remember/serving/paseo/paseo_lock.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The bounded home lock and its busy refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3e0e4aaeaeb87ce763d04d759acb6a8b2197b0b3",
+            "content": "sha256:1aebb96dc3720a98725bd6e0b38e05597b67e35277e87e1d7a5ced0879eeb46a",
+            "locator": {
+              "kind": "symbol",
+              "name": "runtime_lock"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

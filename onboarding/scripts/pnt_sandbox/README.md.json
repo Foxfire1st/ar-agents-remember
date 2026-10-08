@@ -16,6 +16,21 @@
           "kind": "code"
         }
       ]
+    },
+    "2": {
+      "note": "The document the tooling follows.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d3dd577a0b28ac3a41ee5027957919009decb0c7",
+            "content": "sha256:6dffd726cad6a89f0ac644104cc2d8214de2913f61a2005801489f207937a2cb",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

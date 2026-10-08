@@ -1,6 +1,25 @@
 {
   "path": "mcp/tests/pnt_sandbox_test_support.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "34fd693aa921bc614f18149996581ce82ccf1749",
+        "content": "sha256:c50e6ad9d6abafbca82e122a75cd53f3b0208eaa22e9750a946846e2e2c9eef5",
+        "locator": {
+          "kind": "symbol",
+          "name": "FakeOperations.runtime_install"
+        }
+      },
+      "id": "RLZ-0J7XT6",
+      "invariant": "INV-VCAREW",
+      "origin": {
+        "handoffEntry": "L96-D-5",
+        "leaf": "260928-MIK-L96"
+      },
+      "rationale": "This fake records that the sandbox command invoked the public runtime_install seam, invokes the injected callback, and returns a fake report or controlled supervisor for the test to observe. Its contribution is route discrimination and test observation support; package admission, inherited lock-descriptor passing and sandbox XDG-root construction belong to the separate production owners.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "The scoped current source carries the module/document behavior described above.",

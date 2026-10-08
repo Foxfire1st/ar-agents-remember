@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "1790d5657d342d135b53bde16d3b45a1029cc0eb",
+        "blob": "4a12e8e7e2a980f1fe3121c42f63a27208bc4971",
         "content": "sha256:b2fce4bca2ccc431efcc30847dc8e67aabb71b6ce4b4fff42f7cf206cea1046e",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "1790d5657d342d135b53bde16d3b45a1029cc0eb",
+        "blob": "4a12e8e7e2a980f1fe3121c42f63a27208bc4971",
         "content": "sha256:ff679d4c997c12dfdc59e38238121a4f0101f03179b49a017262b8a62ab294d3",
         "locator": {
           "kind": "symbol",
@@ -48,6 +48,38 @@
             "content": "sha256:8ac74887e11b596acf63238c2e36d562192ca7b81943dab7424080dca748f951",
             "locator": {
               "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The reserved port defaults.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a12e8e7e2a980f1fe3121c42f63a27208bc4971",
+            "content": "sha256:ff679d4c997c12dfdc59e38238121a4f0101f03179b49a017262b8a62ab294d3",
+            "locator": {
+              "kind": "symbol",
+              "name": "PASEO_PORT"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The dashboard port default.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a12e8e7e2a980f1fe3121c42f63a27208bc4971",
+            "content": "sha256:b2fce4bca2ccc431efcc30847dc8e67aabb71b6ce4b4fff42f7cf206cea1046e",
+            "locator": {
+              "kind": "symbol",
+              "name": "DASHBOARD_PORT"
             }
           },
           "kind": "code"

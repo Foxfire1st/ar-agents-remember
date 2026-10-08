@@ -1,0 +1,22 @@
+{
+  "path": "mcp/src/agents_remember/package_data/paseo_host/contract.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The contract file consumed by the host pin.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b344e8887beaa26393702f407f5c991067377c97",
+            "content": "sha256:8a34567a31e984f7ae8a2be005a46b5e3cf03565a031ade3863de484fa13cf96",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -81,3 +81,11 @@ serving_collaborators retains MIK reviewer/knowledge ports and adds extra_api_ro
 - Frozen implementation of serving_collaborators supporting the stated file behavior. [22]
 - Frozen implementation of _dev_app supporting the stated file behavior. [23]
 - Frozen implementation of run supporting the stated file behavior. [24]
+
+## 260928-MIK-L96 The host in dashboard supervision
+
+`--daemon` now also makes sure the configured host runs: it prints the dashboard line, ensures the host, and ends 0 when dashboard and host are up (or no host is configured) and 3 when the dashboard is up and a configured host is not. `--status` prints the host's line after the dashboard's and uses the same exit statuses; `--stop` still signals only the dashboard's recorded process, and the dashboard's own stop, restart, TERM/KILL and Ctrl-C paths leave the host untouched. A foreground or background serve starts the host from a bounded worker without delaying the dashboard, and an adopting start records the host outcome for the running daemon.
+
+- The status/stop/daemon dispatch with host handling. [35]
+- The background host-start worker. [36]
+- The host observation the status line comes from. [37]

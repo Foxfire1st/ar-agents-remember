@@ -2750,3 +2750,9 @@ new `memoryTree` and per-page `indexState` travel in it without a new declaratio
 
 - The optional memory-tree fields on the three responses (the read response re-read at MIK-R05's `routeChain`). [270]
 - The docstring rule: a memory tree is named, never hidden, and a partial index is never presented as complete. [271]
+
+## 260928-MIK-L96 The install response's host part
+
+`RuntimeInstallResponse` now carries the host part of the install result (provision report, Node payload, configured/settings-path and restart message); the response's other fields are unchanged.
+
+- The response shape. [286]

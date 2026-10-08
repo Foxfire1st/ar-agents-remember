@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "5710a0ee16642b967975fe6e238946dbd0711185",
+        "blob": "b418f48f2f03a847feb9fca2ad9275ca526d3f87",
         "content": "sha256:25d2b37a711376827813cbb4f0876fb56601e2f5b736c7aa89fb2f0a87b253eb",
         "locator": {
           "kind": "symbol",
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "5710a0ee16642b967975fe6e238946dbd0711185",
-        "content": "sha256:6985ce32be39beaf0db4ae7e1792c15d4d554b0e0f3fb7e0d045133e409ef89e",
+        "blob": "b418f48f2f03a847feb9fca2ad9275ca526d3f87",
+        "content": "sha256:f7c6b543d346bbdc187529572259d9fb1aac7eb93ec0ebf3811f5f48c8035747",
         "locator": {
           "kind": "symbol",
           "name": "_configured_server_id"
@@ -60,7 +60,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5710a0ee16642b967975fe6e238946dbd0711185",
+            "blob": "b418f48f2f03a847feb9fca2ad9275ca526d3f87",
             "content": "sha256:25d2b37a711376827813cbb4f0876fb56601e2f5b736c7aa89fb2f0a87b253eb",
             "locator": {
               "kind": "symbol",
@@ -128,16 +128,48 @@
       "targets": [
         {
           "anchor": {
-            "blob": "acaf5f3e7de3fe29059c03497b8fe50bcf25482e",
+            "blob": "b0af01fc7a5dd4073694f370cf0ab432e0df1e7f",
             "content": "sha256:61f4197f39df45313cebd1c6873a0c2831dc3ffce4f81cc7450f812ccc86734a",
             "locator": {
-              "end": 603,
+              "end": 670,
               "kind": "line_range",
-              "start": 508
+              "start": 575
             },
             "path": "mcp/tests/test_paseo_bridge.py"
           },
           "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The bridge launch that starts the product's Node by full path with the packaged script and names this build's install state.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b418f48f2f03a847feb9fca2ad9275ca526d3f87",
+            "content": "sha256:991bbeb60185bc429254a298ff4c0237f7258f1b45e5a4a6250fd2cee2066ee4",
+            "locator": {
+              "kind": "symbol",
+              "name": "bridge_call"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The configured-runtime requirement the bridge enforces before any process starts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b418f48f2f03a847feb9fca2ad9275ca526d3f87",
+            "content": "sha256:17e2f711275228a07167e23f3c17b579cc51b039c62d6393ab5f147fb0d7a873",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_bridge_runtime"
+            }
+          },
+          "kind": "code"
         }
       ]
     }

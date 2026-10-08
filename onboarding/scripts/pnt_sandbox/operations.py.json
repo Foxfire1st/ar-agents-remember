@@ -3,8 +3,44 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "b7d2015b0414223064462d46def39c075090f96c",
-        "content": "sha256:994a453d1e219b420d149f9162fc7db3c782409ed820d9b79e6e45c0af4cea9f",
+        "blob": "7f1a2758d96e3ab64746d28850368f2739af1e7f",
+        "content": "sha256:ebfc822a554c149abe5852fee01d68f04212a0e011c245452f17ae0688d1c75c",
+        "locator": {
+          "kind": "symbol",
+          "name": "Operations._run_sharing_lock"
+        }
+      },
+      "id": "RLZ-0RR5B8",
+      "invariant": "INV-VCAREW",
+      "origin": {
+        "handoffEntry": "L96-D-5",
+        "leaf": "260928-MIK-L96"
+      },
+      "rationale": "Passes the held-lock descriptor to the controlled child so the install-child lock survives the call boundary.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "7f1a2758d96e3ab64746d28850368f2739af1e7f",
+        "content": "sha256:9455f23c617c68aea5bf0de4459004f48e5bc9ac72b0f9f4d6d2e9fe15654dc3",
+        "locator": {
+          "kind": "symbol",
+          "name": "Operations._archive_install_receipts"
+        }
+      },
+      "id": "RLZ-99CM4D",
+      "invariant": "INV-MF5V3J",
+      "origin": {
+        "handoffEntry": "L96-D-9",
+        "leaf": "260928-MIK-L96"
+      },
+      "rationale": "Retires prior current receipts into history before a public install child runs.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "7f1a2758d96e3ab64746d28850368f2739af1e7f",
+        "content": "sha256:5dcdaa21b73d05beb883a3063dddf03ef0e31fad094e3141d68276b5f4b7b25c",
         "locator": {
           "kind": "symbol",
           "name": "Operations"
@@ -21,7 +57,43 @@
     },
     {
       "anchor": {
-        "blob": "b7d2015b0414223064462d46def39c075090f96c",
+        "blob": "7f1a2758d96e3ab64746d28850368f2739af1e7f",
+        "content": "sha256:d516a936cd0aa1c036bc98daed66e7048652cbe3edd6520821faed8d9e5f79c2",
+        "locator": {
+          "kind": "symbol",
+          "name": "Operations.runtime_install"
+        }
+      },
+      "id": "RLZ-AWECY6",
+      "invariant": "INV-MF5V3J",
+      "origin": {
+        "handoffEntry": "L96-D-9",
+        "leaf": "260928-MIK-L96"
+      },
+      "rationale": "This construct owns the verified unchanged sealed obligation: Each public install retires the prior current receipt into history before its child runs and records fresh cut/timeout/malformed failures with underlying error and real receipt/server-log paths instead of exposing old success.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "7f1a2758d96e3ab64746d28850368f2739af1e7f",
+        "content": "sha256:b146b6a0195a5a81dc7df59ea1124ce6acd998d21dbf799b852331262bc58789",
+        "locator": {
+          "kind": "symbol",
+          "name": "Operations._refuse_install"
+        }
+      },
+      "id": "RLZ-W99KFF",
+      "invariant": "INV-MF5V3J",
+      "origin": {
+        "handoffEntry": "L96-D-9",
+        "leaf": "260928-MIK-L96"
+      },
+      "rationale": "Records the current refusal/failure outcome with its receipt and log evidence instead of exposing an old success.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "7f1a2758d96e3ab64746d28850368f2739af1e7f",
         "content": "sha256:ebfc822a554c149abe5852fee01d68f04212a0e011c245452f17ae0688d1c75c",
         "locator": {
           "kind": "symbol",
@@ -48,6 +120,34 @@
             "content": "sha256:d597c649d688d7eddcfac156210681f29467bdb5425eb9af1dfb747ccfd090d6",
             "locator": {
               "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The public install receipt owner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7f1a2758d96e3ab64746d28850368f2739af1e7f",
+            "content": "sha256:5dcdaa21b73d05beb883a3063dddf03ef0e31fad094e3141d68276b5f4b7b25c",
+            "locator": {
+              "kind": "symbol",
+              "name": "Operations"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7f1a2758d96e3ab64746d28850368f2739af1e7f",
+            "content": "sha256:63da0903319f627975b9a6e9395812f33bd24d698815899b7db4f71edbf47493",
+            "locator": {
+              "end": 220,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"

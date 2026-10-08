@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "1ca8977713752ba75054c3e396fca19269ff3088",
-        "content": "sha256:7ddf3f68cc76ab8262a5adc7d7bffd1f31957f0da599567568b2beb50b190769",
+        "blob": "2a46dbc2164109cbf32259c21cdb2921b5d666ec",
+        "content": "sha256:d67abfd73bb07b51e514f52ebb774d96ed336a9ec757370d0ddbb1be1787b570",
         "locator": {
           "kind": "symbol",
           "name": "run"
@@ -68,6 +68,38 @@
             "path": "mcp/tests/test_paseo_runtime.py"
           },
           "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The command dispatch over the shared host modules.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2a46dbc2164109cbf32259c21cdb2921b5d666ec",
+            "content": "sha256:d67abfd73bb07b51e514f52ebb774d96ed336a9ec757370d0ddbb1be1787b570",
+            "locator": {
+              "kind": "symbol",
+              "name": "run"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The argument surface the three commands keep.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2a46dbc2164109cbf32259c21cdb2921b5d666ec",
+            "content": "sha256:94eea8dd721ad29ffdd27964727486e1eea1a11dbc23b73bc1514d6461074756",
+            "locator": {
+              "kind": "symbol",
+              "name": "add_arguments"
+            }
+          },
+          "kind": "code"
         }
       ]
     }

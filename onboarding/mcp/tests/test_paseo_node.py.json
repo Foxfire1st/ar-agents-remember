@@ -1,0 +1,136 @@
+{
+  "path": "mcp/tests/test_paseo_node.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "bd15bb644932a6c9b64f37e306e3ff676db50edb",
+        "content": "sha256:7b302ecc781bec3d819429e77e2394416c5ff65683cd6d2adee4a1abec64b46e",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_existing_node_requires_pinned_version_and_answering_npm"
+        }
+      },
+      "facet": "a folder that does not report the contract's version, and an npm that does not answer, are refused with a named failure",
+      "id": "PRF-B1H0ZF",
+      "invariant": "INV-BGV9YT",
+      "origin": {
+        "handoffEntry": "MIK-R96@v1 §3",
+        "leaf": "260928-MIK-L96"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "bd15bb644932a6c9b64f37e306e3ff676db50edb",
+        "content": "sha256:a73abc958ab83d62874373f56ea63bf54899649b2b51470776ef2e7e14422ec0",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_verified_archive_is_placed_as_a_whole"
+        }
+      },
+      "facet": "a digest-verified archive is unpacked beside the target and renamed into place as one move",
+      "id": "PRF-K13D1H",
+      "invariant": "INV-BGV9YT",
+      "origin": {
+        "handoffEntry": "MIK-R96@v1 §3",
+        "leaf": "260928-MIK-L96"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "bd15bb644932a6c9b64f37e306e3ff676db50edb",
+        "content": "sha256:83cc93dd7b69be18e41bbd37d606c5b3e621675d1d49b519de979a24761954f2",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_foreign_folder_is_refused_and_valid_node_is_read_only"
+        }
+      },
+      "facet": "a foreign folder is refused with 'not overwritten' and its marker is read back unchanged; a valid Node is used read-only without touching the archive cache",
+      "id": "PRF-MV6AXQ",
+      "invariant": "INV-BGV9YT",
+      "origin": {
+        "handoffEntry": "MIK-R96@v1 §3",
+        "leaf": "260928-MIK-L96"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The digest refusal case.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd15bb644932a6c9b64f37e306e3ff676db50edb",
+            "content": "sha256:db642df9c4186fcc0bbd30aca46f271693afd21a73a6ee0d1746d8444d265102",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_digest_failure_removes_archive_and_names_both_digests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The whole placement case.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd15bb644932a6c9b64f37e306e3ff676db50edb",
+            "content": "sha256:a73abc958ab83d62874373f56ea63bf54899649b2b51470776ef2e7e14422ec0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_verified_archive_is_placed_as_a_whole"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "bd15bb644932a6c9b64f37e306e3ff676db50edb",
+            "content": "sha256:97666e938365a819bfc62e9b25892c40e50c46207b06c0f86ebc14a56e9c03ba",
+            "locator": {
+              "end": 88,
+              "kind": "line_range",
+              "start": 68
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The partial-read reclamation case.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd15bb644932a6c9b64f37e306e3ff676db50edb",
+            "content": "sha256:45d2b6f8a9df7f7dac3233e0fa6ec952eb85f7c51a168824756225310eabe431",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_partial_http_read_is_a_named_node_failure_and_is_reclaimed"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The empty-XDG case.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd15bb644932a6c9b64f37e306e3ff676db50edb",
+            "content": "sha256:cfe6ca090152250c6b32f6aeb21fa07ded484ab62342e07f23dab5ae92219bee",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_empty_xdg_values_use_home_defaults_in_every_working_directory"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

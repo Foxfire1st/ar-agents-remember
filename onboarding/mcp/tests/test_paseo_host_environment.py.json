@@ -1,0 +1,91 @@
+{
+  "path": "mcp/tests/test_paseo_host_environment.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "dda3ef11c5cfda41ba933d148f102ca2cfda2926",
+        "content": "sha256:c14c293ed48ed2ebc5538538ee1abecf63b40de01ae803dab440c7dfb417a43b",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_process_observation_reports_only_session_names"
+        }
+      },
+      "facet": "process observation reports the names of carried session variables and no values",
+      "id": "PRF-28XTC5",
+      "invariant": "INV-YXP2R0",
+      "origin": {
+        "handoffEntry": "MIK-R96@v1 §10",
+        "leaf": "260928-MIK-L96"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "dda3ef11c5cfda41ba933d148f102ca2cfda2926",
+        "content": "sha256:f6f1bb00b215f2f98708c68f0500f028316878471a57d067c555c6f705e82c61",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_daemon_runner_drops_session_identity_and_keeps_logins"
+        }
+      },
+      "facet": "the daemon runner's environment drops every listed session name and keeps a harness login",
+      "id": "PRF-VMV1Y0",
+      "invariant": "INV-YXP2R0",
+      "origin": {
+        "handoffEntry": "MIK-R96@v1 §10",
+        "leaf": "260928-MIK-L96"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The runner scrub-and-keep case.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dda3ef11c5cfda41ba933d148f102ca2cfda2926",
+            "content": "sha256:f6f1bb00b215f2f98708c68f0500f028316878471a57d067c555c6f705e82c61",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_daemon_runner_drops_session_identity_and_keeps_logins"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The name-only observation case.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dda3ef11c5cfda41ba933d148f102ca2cfda2926",
+            "content": "sha256:c14c293ed48ed2ebc5538538ee1abecf63b40de01ae803dab440c7dfb417a43b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_process_observation_reports_only_session_names"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The exact-name filter case.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dda3ef11c5cfda41ba933d148f102ca2cfda2926",
+            "content": "sha256:220d5040cd01dfea5b1258abbd8914211e9ab93c12b4865eb7f884a31282df84",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_session_filter_uses_exact_harness_names"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

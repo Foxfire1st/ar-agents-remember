@@ -618,3 +618,10 @@ not a recorded test execution.
 - The lane loader refuses a catalog that is not in canonical form. [140]
 - The lifecycle loader refuses a catalog that is not in canonical form. [141]
 - Launch-capable provider operations re-read the providers map from disk. [142]
+
+## 260928-MIK-L96 Install and start bring up the host
+
+The root route gained the host-lifecycle family: the product's install brings the build's own host on a Node the product brings, every dashboard start makes sure it runs, one shared authority names it, and neither an install nor a dashboard stop removes a running host. The host modules moved from `cli/` into `serving/paseo/` so the install and serving ranks share them, and the one renderer invocation writes the single shared `<coordinationRoot>/system/settings.json` host block; the per-harness starter files carry only harness infrastructure settings, and the renderer code that creates the block is not itself a destination.
+
+- The shared host entry the install composes. [144]
+- The start-only supervision. [145]

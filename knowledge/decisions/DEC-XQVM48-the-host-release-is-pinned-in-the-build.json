@@ -1,0 +1,76 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "Both the settings pin and install-day resolution were seriously available and rejected for stated reasons, and every later host release now has to move the contract, the lock and the consumers together."
+  },
+  "alternatives": [
+    {
+      "option": "Name the host package and one exact release in a packaged contract, ship the whole npm lock, and make every reader take the version from the contract.",
+      "reason": "The release then moves only with a release of the product, two installs of one build hold the same host package for package, and a foreign settings value can no longer select an untested host.",
+      "status": "chosen"
+    },
+    {
+      "option": "Keep paseoRuntime.version as the pin and refuse a block that names another version.",
+      "reason": "A user's settings file would still be able to hold a build at a host version the build was not made for, and a release could not move the host at all.",
+      "reconsider_when": "The host becomes a real dependency of the Python package or publishes a supported stable plugin interface, so one build can track several host releases.",
+      "status": "rejected"
+    },
+    {
+      "option": "Resolve the host packages on the day of the install from a manifest range, as npm does by default.",
+      "reason": "The host's own packages state ranges; resolving them at install time makes the installed host a different tree on every machine and leaves no release-owned lock to check.",
+      "reconsider_when": "The host vendor publishes lock guarantees or a supported compatibility range the build can trust.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "A host release change is a product release step: the contract, the host manifest and the lock move together and the release concordance check refuses a mismatch.",
+    "A settings block whose version names another release loads and produces one notice; it never changes which release is installed or compared."
+  ],
+  "context": "Before this leaf the host version was a required key of the user's paseoRuntime settings block, so a build could not move the host and a settings file could name any version of a package whose plugin support is explicitly unpromised. The build shipped no host lock, so 8 dependencies of the host's command line and 29 of its server were resolved on the day of the install.",
+  "decider": "developer direction D75 (2026-10-06), refined by the architect and frozen in MIK-R96@v1 rule 2",
+  "id": "DEC-XQVM48",
+  "links": [
+    {
+      "relation": "explains",
+      "target": {
+        "blob": "6eb1a2218939c31bb2b99c19dc3dab0718e15c3d",
+        "content": "sha256:a10a9be75d5224507933cba72c70e78267e28126c45dc30e630f5163f4656075",
+        "locator": {
+          "kind": "symbol",
+          "name": "HOST_CONTRACT"
+        },
+        "path": "mcp/src/agents_remember/kernel/primitives/paseo_host_contract.py"
+      }
+    },
+    {
+      "relation": "motivated_change_to",
+      "target": {
+        "id": "MIK-R96",
+        "packet": "requirements/MIK-R96-v1-one-install-and-one-start-bring-up-the-host.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/260928-mik-l96-ar/task-reports/role-launch/260928-MIK-L96-worker-c9abaa5b-c066-404b-a276-fcb39fcd4a79.evidence/restart-b/checks/final-integration-v2.log; manifest 1d1f404e04e282f568cfa601317e4cad75d22392b1c9a2f28bc96a1e46091b4f; current source manifest cd7706b9b3c7dbb3d64684ec054c55b6f9eac22dbe1b6d76779bdab5e47abe08; current qualification /home/firefox/projects/ar-coordination/worktrees/agents-remember/260928-mik-l96-ar/task-reports/role-launch/260928-MIK-L96-worker-c9abaa5b-c066-404b-a276-fcb39fcd4a79.evidence/post-l51-current/catalog-qualification.json; current manifest 5cdfbd41e9079195a3cd318d4a26263392ab8031aead02c2459faa39445bbf3f; exact reuse /home/firefox/projects/ar-coordination/worktrees/agents-remember/260928-mik-l96-ar/task-reports/role-launch/260928-MIK-L96-worker-c9abaa5b-c066-404b-a276-fcb39fcd4a79.evidence/post-L39-sync/exact-input-proof-reuse.json"
+      ],
+      "path": "notes/reports/260928-MIK-L96-curator-evidence/handoff.json"
+    },
+    "handoffEntry": "MIK-R96@v1 §2",
+    "leaf": "260928-MIK-L96",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}
