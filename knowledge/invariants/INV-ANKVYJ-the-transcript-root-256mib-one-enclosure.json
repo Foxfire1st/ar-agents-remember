@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "family_guarantee"
+    ],
+    "justification": "Bounded pressure eviction against one census is proved by the named passing budget cases; single-file member of the family."
+  },
+  "applicability": "Every log folder the server writes.",
+  "conditions": [
+    "Transcript root 256 MiB and one enclosure 64 MiB when absent (both configurable), one detail 8 MiB fixed.",
+    "Eviction removes whole oldest days first against one coherent census; only confirmed reclaimed bytes leave it."
+  ],
+  "exclusions": [
+    "Enclosure age pruning, which does not exist — the budget is the only pre-cleanup removal.",
+    "The stated census/listing margin between concurrent writers."
+  ],
+  "id": "INV-ANKVYJ",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_tool_log_budgets.py::ToolLogEvictionInventoryTests::test_pressure_eviction_bounds_its_listings (passing in the R6 run)"
+      ],
+      "path": "handoff-2.json"
+    },
+    "handoffEntry": "MIK-R108@v1 §3 budgets",
+    "leaf": "260928-MIK-L108",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The transcript root (256MiB when absent), one enclosure (64MiB when absent) and one detail (8MiB, fixed) bound every folder, with oldest-first whole-day eviction against one coherent census; only confirmed reclaimed bytes leave the census and successful cached-day removal is never re-walked.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -6,14 +6,14 @@
 
 ## Purpose
 
-**The one token threshold every bounded knowledge read of a memory tree is cut to (MIK-R02 rule 1).** 8,000 `tiktoken:o200k_base` tokens, declared once and measured over the same canonical compact JSON the response choke point stamps as `tokens`.
+**The one token threshold every bounded knowledge read of a memory tree is cut to (MIK-R02 rule 1).** 8,000 `tiktoken:o200k_base` tokens, declared once. Under MIK-R108 the threshold guarantee belongs to the whole result the producer computed (read back from the answer's detail file): answers no longer carry the stamped count — the log line does — so a page is cut to the threshold less the reserve below and the received answer stays within it.
 
 ## Code Commentary
 
 ### Logic
 
 - `KNOWLEDGE_PAGE_THRESHOLD_TOKENS = 8000` and `KNOWLEDGE_PAGE_TOKENIZER` (the default counter's name). Every surface that pages a memory tree reads this constant, every page states it, and a continuation binds it, so a resumed read uses the same bound on whichever surface it resumes.
-- `ENVELOPE_RESERVE_TOKENS = 64`: what the mounted choke point adds after a page is cut (`ok`, `operation` and the three token-accounting fields). A page is cut to the threshold less this reserve, so the response a caller receives stays within the threshold.
+- `ENVELOPE_RESERVE_TOKENS = 64`: what the mounted response choke point adds after a page is cut (`ok` and, under MIK-R108, `next`/`log` instead of the envelope). A page is cut to the threshold less this reserve, so the answer a caller receives — not only the body this module measured — stays within the threshold.
 - `response_tokens(value)` is `count_response_tokens`; `threshold_block()` is the `{tokens, tokenizer}` object every page, block and refusal states.
 - **The threshold, not `limit`, bounds a converted read (ruling Q4, 19:56:40).** `limit` still bounds database reads.
 

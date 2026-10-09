@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "e0e3901879af6c975558c5c4eb31d6cdf14c5fb4",
-        "content": "sha256:348bce6b71238622473dc73732ecd4258cb6bf938265b6555fd1cf8d2ed0b1b2",
+        "blob": "782aa73feb7c2c955a2baa07be50668a006f080f",
+        "content": "sha256:f21e868a1c38a7502c15e4b466c9c15e6892813b141a19fdfb4854110be1142a",
         "locator": {
           "kind": "symbol",
           "name": "McpRuntimeConfig"

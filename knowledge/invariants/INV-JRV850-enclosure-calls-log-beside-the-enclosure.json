@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "family_guarantee"
+    ],
+    "justification": "Terminating-operation placement at the root is proved by the named passing test; single-file member of the family."
+  },
+  "applicability": "Every tool call's log placement.",
+  "conditions": [
+    "Enclosure-bound role calls log beside the enclosure; all other calls log at the resolved transcript root.",
+    "Cleanup, abandon and finalize route to the root independent of any live enclosure."
+  ],
+  "exclusions": [
+    "A removed enclosure folder, which the server never recreates to write a log.",
+    "Enclosure age pruning — placement is not retention."
+  ],
+  "id": "INV-JRV850",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "sandbox witness destination_checks (all true, SHA 580bf130); mcp/tests/test_tool_answer_table.py::ToolRaisedCallLoggingTests (passing in the R6 run)"
+      ],
+      "path": "handoff-2.json"
+    },
+    "handoffEntry": "MIK-R108@v1 §3 destinations",
+    "leaf": "260928-MIK-L108",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Enclosure calls log beside the enclosure and all else at the resolved transcript root; terminating operations route to the root independent of any live enclosure, including raised and refused calls.",
+  "status": "proposed",
+  "supersedes": []
+}

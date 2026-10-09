@@ -3,7 +3,10 @@
 ## Purpose
 
 Owns post-integration cleanup of registered worktrees, merged task branches,
-worktree-owned observer drift snapshots, and empty worktree folders.
+worktree-owned observer drift snapshots, and empty worktree folders. Under MIK-R108
+rule 3 cleanup also removes `<enclosure>/logs/` whole with the enclosure — no age
+pruning there before cleanup, nothing archived, copied or left as a marker — and the
+cleanup call's own line goes to the coordination root, never into the enclosure it removes.
 
 ## Code Commentary
 

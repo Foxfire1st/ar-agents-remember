@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "spans_locations",
+      "family_guarantee"
+    ],
+    "justification": "The measured short form spans the choke model and the application boundary re-guard, proved by the named passing final-measure cases; it also rides the family guarantee."
+  },
+  "applicability": "Every over-bound answer for every tool and row, interim rows included.",
+  "conditions": [
+    "The guard measures the final delivered mapping including every log and logError change.",
+    "A cut answer re-guards against the 400-token short-form ceiling, not the original tool bound."
+  ],
+  "exclusions": [
+    "Under-bound answers, which leave whole and are never shortened."
+  ],
+  "id": "INV-QN78E9",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_tool_answer_table.py::ToolAnswerFinalMeasureTests::test_full_short_form_fits_including_bookkeeping + test_cut_answer_late_failure_reguards_at_the_short_ceiling (passing in the R6 run); documentary corpus notes/reports/l108-f14-documentary-successor/worker-documentary-evidence.json (SHA 6601bb084849a73554f0e385cf90028966b8bbe07831333cc81529e7b6e89725); A8 documentary corpus notes/reports/l108-f14-documentary-successor-a8/worker-documentary-evidence.json"
+      ],
+      "path": "handoff-2.json"
+    },
+    "handoffEntry": "MIK-R108@v1 §4 overflow-400",
+    "leaf": "260928-MIK-L108",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "An answer over its bound leaves as the measured short form within 400 tokens; the guard measures the final delivered mapping including every log and logError change, and a cut answer re-guards against the 400-token short-form ceiling rather than the original tool bound.",
+  "status": "proposed",
+  "supersedes": []
+}

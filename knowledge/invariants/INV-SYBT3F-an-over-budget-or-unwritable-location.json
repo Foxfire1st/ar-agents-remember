@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "family_guarantee"
+    ],
+    "justification": "Location-omitted shorts measuring within bound is proved by the named passing guard case; single-file member of the family."
+  },
+  "applicability": "Every short form whose detail location does not fit or could not be written.",
+  "conditions": [
+    "The detail file is written all the same when writable.",
+    "The fixed no-path sentence names today's tool-log line as the lookup.",
+    "When the detail file cannot be written, the answer carries the caller's logError with resultKept false."
+  ],
+  "exclusions": [
+    "Locations that fit, which ride as log."
+  ],
+  "id": "INV-SYBT3F",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_tool_answer_table.py::ToolAnswerGuardTests (passing in the R6 run)"
+      ],
+      "path": "handoff-2.json"
+    },
+    "handoffEntry": "MIK-R108@v1 §4 location-omitted",
+    "leaf": "260928-MIK-L108",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "An over-budget location is never cut, substituted or capped: the answer carries the fixed no-path logError and no log while the detail file is written all the same; when the detail file cannot be written the answer carries the caller's logError with resultKept false.",
+  "status": "proposed",
+  "supersedes": []
+}

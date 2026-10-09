@@ -11,7 +11,9 @@ for external memory and providers. Attach now reselects and reconciles an atomic
 series before it exposes the existing workbench. Since L11 the existing-contract branch recreates
 fresh for `cleanup in {abandoned, reopened}` (a reopened leaf keeps its exact leaf
 id), and after writing a leaf contract start restamps the leaf doc's `lifecycleId`
-via `tasks.leaf_doc` so the doc follows the enclosure's fresh lifecycle.
+via `tasks.leaf_doc` so the doc follows the enclosure's fresh lifecycle. Under MIK-R108
+rule 3 enclosure creation also makes `<enclosure>/logs/` outside both worktrees and outside
+Git; a start that cannot make it still starts.
 
 ## Same-request planned parent in public preview
 

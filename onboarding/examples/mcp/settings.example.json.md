@@ -63,6 +63,10 @@ way `timeoutCaps`/`dashboard`/`providerDegradation` do, while still accepting th
 `autoRetireOnIntegration`/`autoRetireOnFinalize` spellings as compatibility aliases. The template
 uses the current `autoLand*` keys so new settings files do not teach completion-edge termination.
 
+The template also shows the optional `toolLog` object (MIK-R108 rule 3):
+`{"keepDays": 14, "maxBytes": 268435456, "enclosureMaxBytes": 67108864}` — the coordination-root
+keeping and the two log-folder byte budgets, each documented in the settings reference.
+
 ### Invariants And Boundaries
 
 This file must not be placed inside the coordinator root, and it must not carry

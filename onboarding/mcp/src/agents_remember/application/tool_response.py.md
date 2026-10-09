@@ -24,6 +24,15 @@ then token counting and serialization cover the complete emitted response. Expli
 recovery guidance takes precedence; cross-task guidance is omitted. Observer tool completion
 receives that same finalized payload rather than an independently reconstructed response.
 
+### MIK-R108 answer boundary and log wiring
+
+`complete_tool_response` now finalizes through the answer choke (`models/tools/tool_answer`): the
+envelope count fields are stripped, over-bound answers leave as the measured short form, and the
+whole result is filed beside the daily log. `_write_delivered_line` re-runs the guard after every
+late line failure and keeps the short-form ceiling once the answer is cut; the observer and the log
+line count the delivered answer, and `_canonical_json` is the canonical form used for whole-result
+byte accounting.
+
 cit:([`complete_tool_response`], mcp/src/agents_remember/application/tool_response.py:131-145)
 cit:([`_attach_lifecycle_tail`], mcp/src/agents_remember/application/tool_response.py:112-128)
 

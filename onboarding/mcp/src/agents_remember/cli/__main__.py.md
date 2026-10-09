@@ -7,10 +7,10 @@
 ## Purpose
 
 `cli/__main__.py` is the umbrella `agents-remember` console entrypoint: a single front door
-that dispatches subcommands. It registers **fourteen** of them — `dashboard`, `memory-citations`,
+that dispatches subcommands. It registers **fifteen** of them — `dashboard`, `memory-citations`,
 `memory-backfill`, `knowledge-ingest`, `knowledge-bootstrap`, `knowledge-format`,
 `knowledge-convert`, `knowledge-validate`, `knowledge-index`, `knowledge-worklist`, `knowledge-routes`,
-`knowledge-census`, `review-record-comparison` and `paseo` — and
+`knowledge-census`, `knowledge-copies`, `tool-log-stats` (MIK-R108 rule 8) and `paseo` — and
 further CLI adapters slot in as subparsers. Backed by the
 `agents-remember = agents_remember.cli.__main__:main` console script.
 
@@ -28,10 +28,12 @@ each subparser through its adapter's own `add_arguments`, setting `func=<adapter
 `knowledge_convert.add_arguments`/`knowledge_convert.run`,
 `knowledge_validate.add_arguments`/`knowledge_validate.run`,
 `knowledge_index.add_arguments`/`knowledge_index.run`,
+`knowledge_worklist.add_arguments`/`knowledge_worklist.run`,
 `knowledge_routes.add_arguments`/`knowledge_routes.run`,
 `knowledge_census.add_arguments`/`knowledge_census.run`,
-`review_comparison_record.add_arguments`/`review_comparison_record.run` and
-`paseo_runtime.add_arguments`/`paseo_runtime.run`. `main(argv=None)` parses and
+`knowledge_copies.add_arguments`/`knowledge_copies.run`,
+`paseo_runtime.add_arguments`/`paseo_runtime.run` and
+`tool_log_stats.add_arguments`/`tool_log_stats.run`. `main(argv=None)` parses and
 dispatches to `args.func(args)`, returning its int exit code.
 
 **The two knowledge subcommands are two different admissions, and the help text says which.**
@@ -69,9 +71,9 @@ contract (persisted beside the contract, exactly as the curator's memory-quality
 explicitly named sides, and prints it as JSON. It exits 0 for a complete worklist, 1 for an incomplete one
 and 2 when none applies (both memory sides unconverted, which is every production leaf before MIK-R37).
 
-`knowledge-routes` (MIK-R04) is the curator's read-only view of family routes: for each family record of a memory working tree it prints the routes, the route state (`unrealized_family`, `route_unassigned`, uncovered realizations, emptied routes) and the mechanical route suggestion, labelled `mechanical`. It never writes a route, and on today's unconverted memory it answers "no family records".
+`knowledge-routes` (MIK-R04) is the curator's read-only view of family routes: for each family record of a memory working tree it prints the routes, the route state (`unrealized_family`, `route_unassigned`, uncovered realizations, emptied routes) and the mechanical route suggestion, labelled `mechanical`. It never writes a route, and on unconverted memory it answers "no family records".
 
-`knowledge-census` (MIK-R20) has two actions. `inventory` pins a census baseline (a code commit and a memory commit) and writes its `baseline.json` and `inventory.json` into a *converted* memory working tree through the census writer, which refuses an unconverted tree; `report` only reads, printing each census's Doc12 measures with their counts, its dispositions and its routes' governing statuses. Claims, assessments and statuses are written through the writer's Python API, not this CLI. On today's unconverted memory `report` answers "no census under knowledge/census/".
+`knowledge-census` (MIK-R20) has two actions. `inventory` pins a census baseline (a code commit and a memory commit) and writes its `baseline.json` and `inventory.json` into a *converted* memory working tree through the census writer, which refuses an unconverted tree; `report` only reads, printing each census's Doc12 measures with their counts, its dispositions and its routes' governing statuses. Claims, assessments and statuses are written through the writer's Python API, not this CLI. On unconverted memory `report` answers "no census under knowledge/census/".
 
 The memory-maintenance and migration adapters are reached only from here, so the umbrella is
 the one place a new CLI surface becomes reachable. Their flags, exit statuses and refusals
@@ -113,7 +115,7 @@ The paseo command group joins existing knowledge-ingest, taskless bootstrap and 
 - **The `knowledge-worklist` subparser `260928-MIK-L08` adds: the change-to-knowledge worklist of a leaf or of four named sides.** [12]
 - **The `knowledge-routes` subparser `260928-MIK-L04` adds: the read-only family route report with the mechanical suggestion.** [13]
 - **The `knowledge-census` subparser `260928-MIK-L20` adds: the migration census's inventory and report.** [14]
-- **The `review-record-comparison` subparser `260921-ICR-L34` adds: the review comparison's production caller.** [15]
+- The `knowledge-copies` subparser adds: retired knowledge-database leftover copies listed with their deciding rule (`--apply` deletes MIK-R26 rule 6 names), registered the same declarative way. [15]
 
 ### Runtime Source References
 

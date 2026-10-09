@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "family_guarantee"
+    ],
+    "justification": "The choke's strip-and-cap behavior is proved by the named passing guard cases; as a single-file member it rides the family's joint guarantee."
+  },
+  "applicability": "Every tool answer leaving the server through the shaping choke.",
+  "conditions": [
+    "The answer passes the choke after the guard, whatever its size.",
+    "Retained list items keep their order, count and location through the cap."
+  ],
+  "exclusions": [
+    "The whole detail result beside the log, which keeps everything the answer drops.",
+    "Dashboard and command-line surfaces, which keep the whole result."
+  ],
+  "id": "INV-B7J1PZ",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_tool_answer_table.py::ToolAnswerLogTests::test_envelope_stripped_from_every_answer + ToolAnswerGuardTests::test_nested_lists_are_cut_through_retained_items (passing in the R6 run); documentary corpus notes/reports/l108-f14-documentary-successor/worker-documentary-evidence.json (SHA 6601bb084849a73554f0e385cf90028966b8bbe07831333cc81529e7b6e89725); A8 documentary corpus notes/reports/l108-f14-documentary-successor-a8/worker-documentary-evidence.json"
+      ],
+      "path": "handoff-2.json"
+    },
+    "handoffEntry": "MIK-R108@v1 §2 envelope",
+    "leaf": "260928-MIK-L108",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The common shaping choke strips the four envelope fields from every answer and caps lists recursively through retained items, preserving order, count and location while the whole detail result is unchanged.",
+  "status": "proposed",
+  "supersedes": []
+}

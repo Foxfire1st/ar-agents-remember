@@ -137,6 +137,13 @@ per-process server-behavior toggles for THIS server's completion-edge hooks
 (`worktree_integrate_tool`/`lifecycle_finalize_task_tool`'s `auto_complete_seats` calls in
 `application/worktree_tools.py`), not portfolio-wide policy.
 
+### Tool-call log settings (MIK-R108 rule 3)
+
+The optional `toolLog` family (`ToolLogSettings`, parsed by `parse_tool_log_settings` with the same
+fail-loud-unknown-key discipline: `keepDays`, `maxBytes`, `enclosureMaxBytes`, 14 days / 256 MiB /
+64 MiB when absent) bounds the coordination-root log and each enclosure's `logs/`. `config_from_mapping`
+threads it into `McpRuntimeConfig.tool_log`, from where the log writer reads its keeping and budgets.
+
 ### Invariants And Boundaries
 
 - MCP settings are the authority for the server path.

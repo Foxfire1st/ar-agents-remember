@@ -67,6 +67,16 @@ flexible envelope declares it too: `extra="allow"` would have accepted it
 undeclared, which is exactly the hole — a tolerated-drift surface tolerates the
 PROVIDER's fields, not this package's.
 
+### MIK-R108 answer fields
+
+Both envelopes also declare the three optional answer-carried fields the choke point writes
+(`exclude_none`, so absent means absent): `next` (the lifecycle next-step hint as
+`{summary, tool, args}`, translated from the `NextStep` model), `log` (the detail-file location
+holding the whole result), and `logError` (the one-sentence writer failure). Same rule as
+`nextStep`: a key the choke point writes is a key of THIS envelope. The envelope count fields
+(`tokens`, `tokenizer`, `tokenCountExact`, `operation`) stay declared: the whole result still
+carries them for the log line and detail accounting, but answers no longer deliver them to callers.
+
 ### Conventions
 
 Use the strict family for owned response vocabulary and the flexible family only for provider or

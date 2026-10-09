@@ -1,0 +1,180 @@
+{
+  "path": "mcp/src/agents_remember/application/tool_answer_log.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "eda1d3e9aa2bf8ac17d026e463b3d39dc5a0162a",
+        "content": "sha256:03ec733da445aa6b4d8910bc6875e8f971ccfb913c6a482b1fac7f3b3eb0fc1f",
+        "locator": {
+          "kind": "symbol",
+          "name": "_redact_value"
+        }
+      },
+      "id": "RLZ-1XE4ME",
+      "invariant": "INV-XJ7GV5",
+      "origin": {
+        "handoffEntry": "MIK-R108@v1 worker-deliberate-1",
+        "leaf": "260928-MIK-L108"
+      },
+      "rationale": "_redact_value with _scrub_substrings decides which argument material reaches the persisted line, so credential values are omitted wherever embedded while ordinary values are written.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "eda1d3e9aa2bf8ac17d026e463b3d39dc5a0162a",
+        "content": "sha256:1780cc829057c1c26228475e2789be2e55bd7a9e2102ea099b2f24e586746f7d",
+        "locator": {
+          "kind": "symbol",
+          "name": "append_call_line"
+        }
+      },
+      "id": "RLZ-GJ6RTW",
+      "invariant": "INV-Y3TD13",
+      "origin": {
+        "handoffEntry": "MIK-R108@v1 §3 daily-line",
+        "leaf": "260928-MIK-L108"
+      },
+      "rationale": "append_call_line owns the line write and its success/drop accounting under whole-record exclusion, so a whole record is distinguished from a short write in exactly one place.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "eda1d3e9aa2bf8ac17d026e463b3d39dc5a0162a",
+        "content": "sha256:8e938807fb5d6538c4803338b19c1800f906615572f3a1c0a91b231a151bf06b",
+        "locator": {
+          "kind": "symbol",
+          "name": "_env_values"
+        }
+      },
+      "id": "RLZ-H7W31G",
+      "invariant": "INV-XJ7GV5",
+      "origin": {
+        "handoffEntry": "MIK-R108@v1 worker-deliberate-1",
+        "leaf": "260928-MIK-L108"
+      },
+      "rationale": "_env_values holds only credential-named variable values of at least six characters, so the searched set is exactly the amended rule's credential set.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "eda1d3e9aa2bf8ac17d026e463b3d39dc5a0162a",
+        "content": "sha256:84c4bbe01db83ee57f061a25667dbc8411e016291a562c52eb5967448f4a9ece",
+        "locator": {
+          "kind": "symbol",
+          "name": "resolve_log_roots"
+        }
+      },
+      "id": "RLZ-RRGDHN",
+      "invariant": "INV-E8S0YF",
+      "origin": {
+        "handoffEntry": "MIK-R108@v1 §3 enclosure-lifecycle",
+        "leaf": "260928-MIK-L108"
+      },
+      "rationale": "resolve_log_roots routes the named terminating operations to the resolved transcript root independent of any live enclosure, so cleanup, abandon and finalize can never recreate a removed enclosure logs directory.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "eda1d3e9aa2bf8ac17d026e463b3d39dc5a0162a",
+        "content": "sha256:84c4bbe01db83ee57f061a25667dbc8411e016291a562c52eb5967448f4a9ece",
+        "locator": {
+          "kind": "symbol",
+          "name": "resolve_log_roots"
+        }
+      },
+      "id": "RLZ-RRJX13",
+      "invariant": "INV-JRV850",
+      "origin": {
+        "handoffEntry": "MIK-R108@v1 §3 destinations",
+        "leaf": "260928-MIK-L108"
+      },
+      "rationale": "resolve_log_roots chooses the physical destination before any line or detail is written, so worker, controller, raised and terminating calls each land where the packet puts them.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "eda1d3e9aa2bf8ac17d026e463b3d39dc5a0162a",
+        "content": "sha256:53a373db7a06d0fbb1b0419108122ca31b58886c642b19298de7e385e5cb4599",
+        "locator": {
+          "kind": "symbol",
+          "name": "_evict_older_days"
+        }
+      },
+      "id": "RLZ-WHP2Y6",
+      "invariant": "INV-ANKVYJ",
+      "origin": {
+        "handoffEntry": "MIK-R108@v1 §3 budgets",
+        "leaf": "260928-MIK-L108"
+      },
+      "rationale": "_evict_older_days runs the pressure-write reclamation loop against census-cached day sizes, so finished days are accounted once and successful removal walks nothing again.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Admitted calls append one whole day line and file their whole result beside it; writes that cannot be admitted are dropped and counted.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eda1d3e9aa2bf8ac17d026e463b3d39dc5a0162a",
+            "content": "sha256:1780cc829057c1c26228475e2789be2e55bd7a9e2102ea099b2f24e586746f7d",
+            "locator": {
+              "kind": "symbol",
+              "name": "append_call_line"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Enclosure calls log beside the enclosure; terminating calls always route to the root.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eda1d3e9aa2bf8ac17d026e463b3d39dc5a0162a",
+            "content": "sha256:84c4bbe01db83ee57f061a25667dbc8411e016291a562c52eb5967448f4a9ece",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_log_roots"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Over-budget folders evict whole oldest days against one coherent census.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eda1d3e9aa2bf8ac17d026e463b3d39dc5a0162a",
+            "content": "sha256:53a373db7a06d0fbb1b0419108122ca31b58886c642b19298de7e385e5cb4599",
+            "locator": {
+              "kind": "symbol",
+              "name": "_evict_older_days"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Credential keys and credential-variable values are omitted; ordinary values stay whole.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eda1d3e9aa2bf8ac17d026e463b3d39dc5a0162a",
+            "content": "sha256:03ec733da445aa6b4d8910bc6875e8f971ccfb913c6a482b1fac7f3b3eb0fc1f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_redact_value"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

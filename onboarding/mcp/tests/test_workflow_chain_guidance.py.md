@@ -60,7 +60,9 @@ Twelve cases, one shared disposable world per class, `unittest.TestCase` through
   process-global ambient lifecycle (`mcp/src/agents_remember/application/next_step.py:260-260`) and
   filtered by `bound_next_step` (`mcp/src/agents_remember/application/tool_response.py:58-58`). They
   are read as two, because a case that inspects only `nextStep` reports "withheld" where the seat in
-  fact received the same operational move top-level.
+  fact received the same operational move top-level. Under MIK-R108 the answer carries the hint as
+  `next` (`{summary, tool, args}`) instead of `nextStep`; the observation translates it back
+  (`emitted_next_step`), so the address binding below measures the same guidance content.
 - **The address guard, with its arrangement asserted** (`_sibling_arrangement`, `:799-847`;
   `test_a_concurrent_siblings_guidance_never_reaches_this_task`, `:1128-1162`). `T54` was systematic:
   guidance derived from the process-global lifecycle named a concurrent session's enclosure. The case

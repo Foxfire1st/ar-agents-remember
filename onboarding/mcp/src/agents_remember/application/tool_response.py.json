@@ -1,6 +1,43 @@
 {
   "path": "mcp/src/agents_remember/application/tool_response.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "8b8f51927339694ac70153332adb5dc6eec68843",
+        "content": "sha256:568c8f952aad4a9f707115d4edc5e3cda9ec0f0901bf01fdefc0cdcc442e794d",
+        "locator": {
+          "kind": "symbol",
+          "name": "_write_delivered_line"
+        }
+      },
+      "id": "RLZ-Y18D7W",
+      "invariant": "INV-MDE1ZN",
+      "origin": {
+        "handoffEntry": "MIK-R108@v1 §4 logError-fixed",
+        "leaf": "260928-MIK-L108"
+      },
+      "rationale": "_write_delivered_line attaches the fixed failure sentence once, keeps the first error across retries, and re-guards the final mapping before the observer is told.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "8b8f51927339694ac70153332adb5dc6eec68843",
+        "content": "sha256:568c8f952aad4a9f707115d4edc5e3cda9ec0f0901bf01fdefc0cdcc442e794d",
+        "locator": {
+          "kind": "symbol",
+          "name": "_write_delivered_line"
+        }
+      },
+      "id": "RLZ-Y2WN79",
+      "invariant": "INV-QN78E9",
+      "origin": {
+        "handoffEntry": "MIK-R108@v1 §4 overflow-400",
+        "leaf": "260928-MIK-L108"
+      },
+      "rationale": "_write_delivered_line re-runs the guard after every late line failure and keeps the short-form ceiling once the answer is cut.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "Defines the function `_agent_notifier_banner` (lines 22-31) — Return the stale-supervisor banner without blocking a tool response..",

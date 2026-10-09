@@ -48,6 +48,14 @@ therefore uses FastMCP's public `list_tools` and `call_tool` hooks to publish
 runs. This is one closed-schema enforcement seam, not a second registrar or handler. Other tool
 registration, descriptions, and argument ownership remain in `mcp/registration/`.
 
+### Tool-call logging at the transport boundary (MIK-R108 rule 3)
+
+`call_tool` brackets every call in `tool_call_context` carrying the exact arguments, start time and
+this server's config (`_agents_remember_config`, set once by `create_server`) to the answer boundary,
+which logs the completed call; a call that raises is logged here by `_log_raised_tool_call` and
+re-raised, with the log write itself never raising. Dispatch input refusals happen inside the
+context so they are logged like any other raised call.
+
 `main(argv)` parses a required `--config` (an absolute path to trusted MCP settings JSON), calls
 `declare_mcp_process()` **before** `load_config`, turns a `ConfigError` into an argparse error, then
 calls `prepare_mcp_process(config)` between config loading and `run_server`. The early declaration

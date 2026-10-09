@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "family_guarantee"
+    ],
+    "justification": "Row validation (shaped rows pass, empty uses fail) is proved by the named passing row-gate cases; single-test-file member of the family."
+  },
+  "applicability": "Every registered tool and every task_doc operation.",
+  "conditions": [
+    "Each row states answerable fields with caller uses, ordinary/largest cases, its bound and interim ownership.",
+    "Bounds are ceilings set from the largest case; interim rows carry bound 4000 with no fields."
+  ],
+  "exclusions": [
+    "Interim rows, which carry no field list until their leaf lands.",
+    "Harness-side cuts, which the product does not govern."
+  ],
+  "id": "INV-180VCA",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_tool_answer_table.py::ToolAnswerRowGateTests (passing in the R6 run) including test_valid_shaped_row_passes and test_empty_use_fails"
+      ],
+      "path": "handoff-2.json"
+    },
+    "handoffEntry": "MIK-R108@v1 §6 table",
+    "leaf": "260928-MIK-L108",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "One table row per registered tool and per task_doc operation holds the fields an answer may hold with each field's caller use, measured ordinary/largest case payloads and exact interim ownership; missing authored rows fail and shaped rows validate their cases.",
+  "status": "proposed",
+  "supersedes": []
+}

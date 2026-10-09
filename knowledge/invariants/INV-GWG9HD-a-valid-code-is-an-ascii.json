@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "family_guarantee"
+    ],
+    "justification": "Code validity gating is proved by the named passing row-gate case; single-file member of the family."
+  },
+  "applicability": "Every code the guard places on a short form and every row case producing one.",
+  "conditions": [
+    "A code is an ASCII identifier of at most 120 chars.",
+    "A malformed code is replaced with invalid-code; the original stays whole in the detail file."
+  ],
+  "exclusions": [
+    "The ok field, which the guard never cuts; error is cut to 600 chars then shrunk to fit 400 with errorCut.",
+    "Producer-internal codes that never reach an answer."
+  ],
+  "id": "INV-GWG9HD",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_tool_answer_table.py::ToolAnswerRowGateTests::test_invalid_code_case_fails_the_row (passing in the R6 run)"
+      ],
+      "path": "handoff-2.json"
+    },
+    "handoffEntry": "MIK-R108@v1 §4 code-120",
+    "leaf": "260928-MIK-L108",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A valid code is an ASCII identifier of at most 120 chars, never dropped and never cut; anything else is a producer defect surfaced before logging.",
+  "status": "proposed",
+  "supersedes": []
+}

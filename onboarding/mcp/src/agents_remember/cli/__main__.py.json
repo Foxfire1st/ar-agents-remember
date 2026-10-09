@@ -24,12 +24,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3356b11c175bbe3fc6df953777623951d9b57dbe",
+            "blob": "d8ed3dea89972d49dfda38caea0f0e4adf3de743",
             "content": "sha256:16984fc6691ba432707c6646a0470cca82bc2c04c5992b38b65342ffef99ce07",
             "locator": {
-              "end": 92,
+              "end": 93,
               "kind": "line_range",
-              "start": 87
+              "start": 88
             }
           },
           "kind": "code"
@@ -41,12 +41,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3356b11c175bbe3fc6df953777623951d9b57dbe",
+            "blob": "d8ed3dea89972d49dfda38caea0f0e4adf3de743",
             "content": "sha256:089d9a356d65210680825e8cacc93ca21948351ebcb197953ec848b3746427c1",
             "locator": {
-              "end": 98,
+              "end": 99,
               "kind": "line_range",
-              "start": 93
+              "start": 94
             }
           },
           "kind": "code"
@@ -58,12 +58,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3356b11c175bbe3fc6df953777623951d9b57dbe",
+            "blob": "d8ed3dea89972d49dfda38caea0f0e4adf3de743",
             "content": "sha256:2808210ac1923f37f17837a1fd0172c7f133f9b08b8d710540b8bd0375f6c1a8",
             "locator": {
-              "end": 104,
+              "end": 105,
               "kind": "line_range",
-              "start": 99
+              "start": 100
             }
           },
           "kind": "code"
@@ -75,12 +75,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3356b11c175bbe3fc6df953777623951d9b57dbe",
+            "blob": "d8ed3dea89972d49dfda38caea0f0e4adf3de743",
             "content": "sha256:3cd02b3a87c4067c5071de1c2f26065d96e6d02d4593f5fd040732f5e6fa5fc1",
             "locator": {
-              "end": 110,
+              "end": 111,
               "kind": "line_range",
-              "start": 105
+              "start": 106
             }
           },
           "kind": "code"
@@ -92,12 +92,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3356b11c175bbe3fc6df953777623951d9b57dbe",
+            "blob": "d8ed3dea89972d49dfda38caea0f0e4adf3de743",
             "content": "sha256:15831c158ad1e92f6f34cd93ecbe3810ff52be2bc4199aac54bcb568f24b877c",
             "locator": {
-              "end": 116,
+              "end": 117,
               "kind": "line_range",
-              "start": 111
+              "start": 112
             }
           },
           "kind": "code"
@@ -105,16 +105,16 @@
       ]
     },
     "15": {
-      "note": "**The `review-record-comparison` subparser `260921-ICR-L34` adds: the review comparison's production caller.**\n\nAnchor: `review_comparison_record`; \"review-record-comparison\"",
+      "note": "The `knowledge-copies` subparser adds: retired knowledge-database leftover copies listed with their deciding rule (`--apply` deletes MIK-R26 rule 6 names), registered the same declarative way.",
       "targets": [
         {
           "anchor": {
-            "blob": "3356b11c175bbe3fc6df953777623951d9b57dbe",
-            "content": "sha256:93b85c35410cc5524f6d7c15ae01699b9405dc7f0f1e86a65f81d3d98aa6a9ac",
+            "blob": "d8ed3dea89972d49dfda38caea0f0e4adf3de743",
+            "content": "sha256:4e7c8ef796b4ea22181e775a29db8ec5e94ec7aa1fa9e4aba2f55d0d1ca3f090",
             "locator": {
-              "end": 125,
+              "end": 126,
               "kind": "line_range",
-              "start": 117
+              "start": 118
             }
           },
           "kind": "code"
@@ -142,7 +142,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3356b11c175bbe3fc6df953777623951d9b57dbe",
+            "blob": "d8ed3dea89972d49dfda38caea0f0e4adf3de743",
             "content": "sha256:a649e278c48beac158b4c587a7846138dd5517a656836701ab739dae5178ec22",
             "locator": {
               "kind": "symbol",
@@ -285,12 +285,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3356b11c175bbe3fc6df953777623951d9b57dbe",
+            "blob": "d8ed3dea89972d49dfda38caea0f0e4adf3de743",
             "content": "sha256:d1f92d08e59b833c3f3dccbc58696f295cc8f61975e7f4b4350e81283ad5a1e1",
             "locator": {
-              "end": 80,
+              "end": 81,
               "kind": "line_range",
-              "start": 75
+              "start": 76
             }
           },
           "kind": "code"
@@ -302,12 +302,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3356b11c175bbe3fc6df953777623951d9b57dbe",
+            "blob": "d8ed3dea89972d49dfda38caea0f0e4adf3de743",
             "content": "sha256:78bf7ea52798639925cff6048b1f51e086ddb12d000042dd4f29bea084924d52",
             "locator": {
-              "end": 86,
+              "end": 87,
               "kind": "line_range",
-              "start": 81
+              "start": 82
             }
           },
           "kind": "code"

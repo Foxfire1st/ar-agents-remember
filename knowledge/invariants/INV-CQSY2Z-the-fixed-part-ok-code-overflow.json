@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "family_guarantee"
+    ],
+    "justification": "Fixed-part and location fit are proved by the named passing guard case; as a single-file member it rides the family guarantee."
+  },
+  "applicability": "Every short form built for an over-bound answer.",
+  "conditions": [
+    "The fixed part is emitted before location and error.",
+    "The location rides only while the measured form with it fits 250."
+  ],
+  "exclusions": [
+    "Under-bound answers, which carry no short form.",
+    "Overlong locations, which are never shortened — the fixed no-path sentence rides instead."
+  ],
+  "id": "INV-CQSY2Z",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_tool_answer_table.py::ToolAnswerGuardTests (passing in the R6 run); short_form fixed-part measurement unchanged"
+      ],
+      "path": "handoff-2.json"
+    },
+    "handoffEntry": "MIK-R108@v1 §4 fixed-250",
+    "leaf": "260928-MIK-L108",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The fixed part (ok/code/overflow/answerTokens) is never reduced and the exact log location rides only while the measured form with it fits 250; the whole short form is measured against 400 with errorCut, the full original detail preserved beside it.",
+  "status": "proposed",
+  "supersedes": []
+}

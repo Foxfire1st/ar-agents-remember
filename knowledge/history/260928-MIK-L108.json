@@ -1,0 +1,1273 @@
+{
+  "closed": true,
+  "leaf": "260928-MIK-L108",
+  "rows": [
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-8WCSQ7",
+          "revision": 1
+        },
+        {
+          "id": "INV-9VQQ7W",
+          "revision": 1
+        },
+        {
+          "id": "INV-AJKQV2",
+          "revision": 1
+        },
+        {
+          "id": "INV-F1TY2E",
+          "revision": 1
+        },
+        {
+          "id": "INV-FEB6Y6",
+          "revision": 1
+        },
+        {
+          "id": "INV-GM5MS3",
+          "revision": 1
+        },
+        {
+          "id": "INV-K43DJZ",
+          "revision": 1
+        },
+        {
+          "id": "INV-PRP52X",
+          "revision": 1
+        },
+        {
+          "id": "INV-VPXD65",
+          "revision": 1
+        },
+        {
+          "id": "INV-W41C85",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-00FDEY",
+      "items": [
+        "sha256:15ee10efdd9497259dc99699299b38b989e2fa360d03d74dadee3e4d39d289d7"
+      ],
+      "reason": "Closed-leaf archival guarantee untouched by transport logging wiring; all ten members preserved (INV-F1TY2E per its row, the other nine untouched).",
+      "subject": "FAM-VNK792"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-0X1NEQ",
+      "items": [
+        "sha256:b60ee7aa04fd24ea9b5339b3e94fc19969b68466b534a0aa76359210820affd3"
+      ],
+      "reason": "Lane-catalog rows registering the new test modules under the existing sorted one-lane-each convention; no separate obligation.",
+      "subject": "hunk:sha256:b60ee7aa04fd24ea9b5339b3e94fc19969b68466b534a0aa76359210820affd3"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-1DYTGQ",
+      "items": [
+        "sha256:ff7db10f2aad7d4dfee31192c1ee49fa910dd569c0ccaeaa0c74db250fc0c802"
+      ],
+      "reason": "The enclosure logs-dir import wires the authored enclosure-lifecycle obligation at enclosure creation; no separate obligation.",
+      "subject": "hunk:sha256:ff7db10f2aad7d4dfee31192c1ee49fa910dd569c0ccaeaa0c74db250fc0c802"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-1K7Y8X",
+      "items": [
+        "sha256:0af677c3ec65fa56e0cf8a305d540646b54ca68c80314660294731f2cb9528cb"
+      ],
+      "reason": "Route purpose unchanged by this leaf; its changed files keep their existing meaning under it (mcp/overview); new files land under existing routes and coverage regenerates mechanically.",
+      "subject": "onboarding:mcp/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "3cf7a446ad8aba51cb72843bb060dc90607481e1",
+            "content": "sha256:b8d99303481809c049f573d0bee3c0f80dbe790543257fbc06276db6d40cbc14",
+            "locator": {
+              "kind": "symbol",
+              "name": "_fit_location"
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
+          },
+          "before": "absent",
+          "id": "RLZ-SQVNSG"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-1SMA23",
+      "items": [],
+      "reason": "Statement corrected: no digest field exists in the answer; the no-path case carries fixed logError with no log while the detail is written, and write failure carries the caller's logError with resultKept false.",
+      "revision": 1,
+      "subject": "INV-SYBT3F"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-46DTRZ",
+      "items": [
+        "sha256:9341d77450beff4a7761d37209e1feed119a6b7fb9ff51b0e8bafe999aac1056"
+      ],
+      "reason": "Route purpose unchanged by this leaf; its changed files keep their existing meaning under it (mcp/src/agents_remember/application/overview); new files land under existing routes and coverage regenerates mechanically.",
+      "subject": "onboarding:mcp/src/agents_remember/application/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-54J8CM",
+      "items": [
+        "sha256:415cdbe099d4e80e2900e7986bf265da942db4f1e9e8e92f03d1183305e6ecb3"
+      ],
+      "reason": "The enclosure logs-dir import wires the authored enclosure-lifecycle obligation at enclosure creation; no separate obligation.",
+      "subject": "hunk:sha256:415cdbe099d4e80e2900e7986bf265da942db4f1e9e8e92f03d1183305e6ecb3"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-5MWXF1",
+      "items": [
+        "sha256:fa8dd1a1c2253c0a089f17363a3cc0a79124928e103e4287dc8528024e59adb4"
+      ],
+      "reason": "Lane-catalog rows registering the new test modules under the existing sorted one-lane-each convention; no separate obligation.",
+      "subject": "hunk:sha256:fa8dd1a1c2253c0a089f17363a3cc0a79124928e103e4287dc8528024e59adb4"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-62H5FX",
+      "items": [
+        "sha256:1debb9e3f34a928b41d3575beae6d13bc2679d2e2c5502a8bed896ba436dd4fa"
+      ],
+      "reason": "The transport logging wiring (tool_answer_log imports, per-call config carriage and the raised-call logger inside the dispatch context) realizes the authored destinations and daily-line obligations at the boundary; no separate obligation.",
+      "subject": "hunk:sha256:1debb9e3f34a928b41d3575beae6d13bc2679d2e2c5502a8bed896ba436dd4fa"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-65HY19",
+      "items": [
+        "sha256:3e446285bf5c6549e07ea1089a09b7cae82e888dc8bcf0a0f4bdfef7df131062"
+      ],
+      "reason": "The transport logging wiring (tool_answer_log imports, per-call config carriage and the raised-call logger inside the dispatch context) realizes the authored destinations and daily-line obligations at the boundary; no separate obligation.",
+      "subject": "hunk:sha256:3e446285bf5c6549e07ea1089a09b7cae82e888dc8bcf0a0f4bdfef7df131062"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R108",
+          "packet": "requirements/MIK-R108-v1-a-tool-answer-holds-what-the-caller-needs-next.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "61eb45ac1883d415065b9b7499cf7957752673d9",
+            "content": "sha256:f406f478752187be7f939ed94859f3743f45453c301c772c796a85101a603007",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_two_late_failures_keep_first_error_and_recount"
+            },
+            "path": "mcp/tests/test_tool_answer_table.py"
+          },
+          "before": "absent",
+          "id": "PRF-C66JJK"
+        },
+        {
+          "after": {
+            "blob": "8b8f51927339694ac70153332adb5dc6eec68843",
+            "content": "sha256:568c8f952aad4a9f707115d4edc5e3cda9ec0f0901bf01fdefc0cdcc442e794d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write_delivered_line"
+            },
+            "path": "mcp/src/agents_remember/application/tool_response.py"
+          },
+          "before": "absent",
+          "id": "RLZ-Y18D7W"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "introduce",
+      "id": "ROW-69YA2W",
+      "items": [],
+      "reason": "The accepted rule-4 logError obligation is supported by the named passing case; the first attached error stays and always rides the rebuilt short beside log.",
+      "revision": 1,
+      "subject": "INV-MDE1ZN"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-8TJ8RZ",
+      "items": [
+        "sha256:523ddd9488d1b4d35889db522c1a6165e55be601d13a4821925ae8d5cee34032"
+      ],
+      "reason": "Route purpose unchanged by this leaf; its changed files keep their existing meaning under it (docs/reference/overview); new files land under existing routes and coverage regenerates mechanically.",
+      "subject": "onboarding:docs/reference/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-A7NQM9",
+      "items": [
+        "sha256:b05cbd0088d0d6df7bc54bb78cafea86f6363b2bed2cc1786abe1fb8fdd17794"
+      ],
+      "reason": "Route purpose unchanged by this leaf; its changed files keep their existing meaning under it (mcp/src/agents_remember/models/overview); new files land under existing routes and coverage regenerates mechanically.",
+      "subject": "onboarding:mcp/src/agents_remember/models/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-EX6T0F",
+          "revision": 1
+        },
+        {
+          "id": "INV-THS1XT",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-AMY42B",
+      "items": [
+        "sha256:00b674bb4dd94a1b881ae6d463b36c36f6b2457e3a248036f03f7fa8ed8d8f34"
+      ],
+      "reason": "First-leaf start-preview guarantee untouched by import and logs-dir changes; both members preserved (INV-EX6T0F per its row, INV-THS1XT untouched).",
+      "subject": "FAM-SZ4B70"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-BGBVYP",
+      "items": [
+        "sha256:dc545bb11baffe764be20910adcd90bf24458a3abc2d29df165f73ebe690eadf"
+      ],
+      "reason": "Route purpose unchanged by this leaf; its changed files keep their existing meaning under it (examples/mcp/overview); new files land under existing routes and coverage regenerates mechanically.",
+      "subject": "onboarding:examples/mcp/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-CBS523",
+      "items": [
+        "sha256:470705a50c9b65a5169c2fe1bc4e9c704a312fa01277d493df8ad2332fe68726"
+      ],
+      "reason": "The emit_tool definition line widened 1->3 lines for the keyword-only answer_tokens parameter (default None); definition-site compatible with no call behavior changed, and the single-event token fact is preserved per the INV-WZR89C row.",
+      "subject": "hunk:sha256:470705a50c9b65a5169c2fe1bc4e9c704a312fa01277d493df8ad2332fe68726"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-CC7WE9",
+      "items": [
+        "sha256:8e46b8920913a7ea3cedcc64753a6f2a7a9a138f7860d9ebcb29460bd4818a5c"
+      ],
+      "reason": "Three lane rows register the new test modules under the existing sorted one-lane-each convention; the catalog account still holds.",
+      "subject": "onboarding:mcp/tests/test-evidence-lanes.toml"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "eda1d3e9aa2bf8ac17d026e463b3d39dc5a0162a",
+            "content": "sha256:53a373db7a06d0fbb1b0419108122ca31b58886c642b19298de7e385e5cb4599",
+            "locator": {
+              "kind": "symbol",
+              "name": "_evict_older_days"
+            },
+            "path": "mcp/src/agents_remember/application/tool_answer_log.py"
+          },
+          "before": "absent",
+          "id": "RLZ-WHP2Y6"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-CF8NZH",
+      "items": [],
+      "reason": "Bounds scoped as absent-defaults: transcript root and enclosure configurable, detail fixed.",
+      "revision": 1,
+      "subject": "INV-ANKVYJ"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "eda1d3e9aa2bf8ac17d026e463b3d39dc5a0162a",
+            "content": "sha256:1780cc829057c1c26228475e2789be2e55bd7a9e2102ea099b2f24e586746f7d",
+            "locator": {
+              "kind": "symbol",
+              "name": "append_call_line"
+            },
+            "path": "mcp/src/agents_remember/application/tool_answer_log.py"
+          },
+          "before": "absent",
+          "id": "RLZ-GJ6RTW"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-CMY2SR",
+      "items": [],
+      "reason": "Statement, conditions and exclusions qualified as attempts: budget-conflict, oversize-detail and unwritable writes are dropped and counted.",
+      "revision": 1,
+      "subject": "INV-Y3TD13"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-DVN9EH",
+      "items": [
+        "sha256:a376d25d375fc38335f72068f220481c0ecfb8a4be291363e10c703feec63fa9"
+      ],
+      "reason": "Route purpose unchanged by this leaf; its changed files keep their existing meaning under it (mcp/tests/overview); new files land under existing routes and coverage regenerates mechanically.",
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "3cf7a446ad8aba51cb72843bb060dc90607481e1",
+            "content": "sha256:0c62c6e66b6c2221581f305c6b13a1ad415712f4221e4a0f70bca68bbd907758",
+            "locator": {
+              "kind": "symbol",
+              "name": "is_valid_tool_code"
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
+          },
+          "before": "absent",
+          "id": "RLZ-PZRP42"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-ENAYSA",
+      "items": [],
+      "reason": "Exclusion corrected: error is cut (600 chars, then shrunk to fit 400 with errorCut); only ok is never cut.",
+      "revision": 1,
+      "subject": "INV-GWG9HD"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-FKBCTC",
+      "items": [
+        "sha256:3b311dcdd0b3228b773b83df2b43b8797972c775c71b5a258186ecc9c6b68d52"
+      ],
+      "reason": "The toolLog settings family (keepDays/maxBytes/enclosureMaxBytes defaults, ToolLogSettings, the fail-loud parser and McpRuntimeConfig wiring) configures the authored budgets obligation; it carries no separate obligation of its own.",
+      "subject": "hunk:sha256:3b311dcdd0b3228b773b83df2b43b8797972c775c71b5a258186ecc9c6b68d52"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-FVH5PR",
+      "items": [
+        "sha256:c90d19ce458060e4a8090077cb1d3640178813dc5827a1e8339d1c7d043cff2d"
+      ],
+      "reason": "The toolLog settings family (keepDays/maxBytes/enclosureMaxBytes defaults, ToolLogSettings, the fail-loud parser and McpRuntimeConfig wiring) configures the authored budgets obligation; it carries no separate obligation of its own.",
+      "subject": "hunk:sha256:c90d19ce458060e4a8090077cb1d3640178813dc5827a1e8339d1c7d043cff2d"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "examined": [
+        {
+          "id": "INV-0VAC47",
+          "revision": 1
+        },
+        {
+          "id": "INV-180VCA",
+          "revision": 1
+        },
+        {
+          "id": "INV-ANKVYJ",
+          "revision": 1
+        },
+        {
+          "id": "INV-B7J1PZ",
+          "revision": 1
+        },
+        {
+          "id": "INV-CQSY2Z",
+          "revision": 1
+        },
+        {
+          "id": "INV-E8S0YF",
+          "revision": 1
+        },
+        {
+          "id": "INV-GWG9HD",
+          "revision": 1
+        },
+        {
+          "id": "INV-JRV850",
+          "revision": 1
+        },
+        {
+          "id": "INV-KJFNBQ",
+          "revision": 1
+        },
+        {
+          "id": "INV-MDE1ZN",
+          "revision": 1
+        },
+        {
+          "id": "INV-QN78E9",
+          "revision": 1
+        },
+        {
+          "id": "INV-SYBT3F",
+          "revision": 1
+        },
+        {
+          "id": "INV-XJ7GV5",
+          "revision": 1
+        },
+        {
+          "id": "INV-Y3TD13",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-G3C0W5",
+      "items": [],
+      "reason": "Guarantee and admission restated with the log admission rule: admitted calls recorded whole; unadmitted writes dropped and counted.",
+      "revision": 1,
+      "subject": "FAM-8SX6BT"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-GGV542",
+      "items": [
+        "sha256:be07d28f9e44e33fa48b25fc1a7b47c7b73b2fae6070008791e2beb63a4a358d"
+      ],
+      "reason": "Added envelope-absence, log-detail and context-manager coverage extend response conformance without changing its subject.",
+      "subject": "onboarding:mcp/tests/test_tool_response_conformance.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "782aa73feb7c2c955a2baa07be50668a006f080f",
+            "content": "sha256:f21e868a1c38a7502c15e4b466c9c15e6892813b141a19fdfb4854110be1142a",
+            "locator": {
+              "kind": "symbol",
+              "name": "McpRuntimeConfig"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+          },
+          "before": {
+            "blob": "e0e3901879af6c975558c5c4eb31d6cdf14c5fb4",
+            "content": "sha256:348bce6b71238622473dc73732ecd4258cb6bf938265b6555fd1cf8d2ed0b1b2",
+            "locator": {
+              "kind": "symbol",
+              "name": "McpRuntimeConfig"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+          },
+          "id": "RLZ-JKN1AR"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-GWYX1N",
+      "items": [
+        "sha256:895c9dd3a33fdf6f4ea83eea6508a239c15afb08dd46f02cd3718fbda377bfac"
+      ],
+      "reason": "The added optional tool_log block does not touch the paseoRuntime None-state obligation; entry re-anchored at C.",
+      "revision": 2,
+      "subject": "INV-9XEW06"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-HF4PSD",
+      "items": [
+        "sha256:d2f9f5b8437e5934bda1c8ae58a7c4a21f9559fb55886da69e291bd0bf5e1495"
+      ],
+      "reason": "Added whole_result_for helper and payload/whole census split extend the census without changing its subject.",
+      "subject": "onboarding:mcp/tests/tool_refusal_census_support.py"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R108",
+          "packet": "requirements/MIK-R108-v1-a-tool-answer-holds-what-the-caller-needs-next.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "61eb45ac1883d415065b9b7499cf7957752673d9",
+            "content": "sha256:ae3f1469afca4550277210d34ce8f350db43eb4ba84e1eb5b3cff994fe90ce38",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_collect_rows"
+            },
+            "path": "mcp/tests/test_tool_answer_table.py"
+          },
+          "before": "absent",
+          "id": "PRF-5E66XS"
+        },
+        {
+          "after": {
+            "blob": "46668f595ea6bf06ba16f3fbeb70deaa74626d79",
+            "content": "sha256:7f59d9efc376f151c3c0fd0fcd576b42bf76f26f4d0a890d22a4df351c42c59e",
+            "locator": {
+              "kind": "symbol",
+              "name": "collect_rows"
+            },
+            "path": "mcp/src/agents_remember/cli/tool_log_stats.py"
+          },
+          "before": "absent",
+          "id": "RLZ-Y83EEJ"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "introduce",
+      "id": "ROW-HPWQXD",
+      "items": [],
+      "reason": "The accepted rule-8 stats obligation is supported by the named passing test; the read-only command sizes calls from the log folder only.",
+      "revision": 1,
+      "subject": "INV-KJFNBQ"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-HQASJW",
+      "items": [
+        "sha256:ab583b129d561d80c9aefa8ffef7dded3dce04bd4d1f6bdd7d196b2156e00190"
+      ],
+      "reason": "Route purpose unchanged by this leaf; its changed files keep their existing meaning under it (mcp/src/agents_remember/worktrees/modules/overview); new files land under existing routes and coverage regenerates mechanically.",
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/modules/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "3cf7a446ad8aba51cb72843bb060dc90607481e1",
+            "content": "sha256:e6bab7b8ca5f483bc4622bbaee7fbaafdc33c4221e6716cb90615ae71b30806d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_fixed_short_part"
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
+          },
+          "before": "absent",
+          "id": "RLZ-ZQJY2P"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-J6NW6A",
+      "items": [],
+      "reason": "Statement corrected: location admission is the 250 fixed+location sub-bound per _fit_location; 400 bounds the whole short form. Conditions already stated 250.",
+      "revision": 1,
+      "subject": "INV-CQSY2Z"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R108",
+          "packet": "requirements/MIK-R108-v1-a-tool-answer-holds-what-the-caller-needs-next.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "61eb45ac1883d415065b9b7499cf7957752673d9",
+            "content": "sha256:2e957ae4acb3d25061bebba42f21d37ec3ebf8e670e94f18e9e59908d6166a5b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_line_failure_overflow_stays_in_bound_and_counts_agree"
+            },
+            "path": "mcp/tests/test_tool_answer_table.py"
+          },
+          "before": "absent",
+          "id": "PRF-1QCVW0"
+        },
+        {
+          "after": {
+            "blob": "3cf7a446ad8aba51cb72843bb060dc90607481e1",
+            "content": "sha256:8061f6fe7812b5ab10b00cd8e4e8b8bfb476711f345649512273cc4291852368",
+            "locator": {
+              "kind": "symbol",
+              "name": "_fit_error"
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
+          },
+          "before": "absent",
+          "id": "RLZ-SVSZ9P"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "introduce",
+      "id": "ROW-MBXMWR",
+      "items": [],
+      "reason": "The accepted rule-4 error-cut obligation is supported by the named passing case; errorCut counts inside the measured 400 with the error shrinking last.",
+      "revision": 1,
+      "subject": "INV-0VAC47"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R108",
+          "packet": "requirements/MIK-R108-v1-a-tool-answer-holds-what-the-caller-needs-next.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "61eb45ac1883d415065b9b7499cf7957752673d9",
+            "content": "sha256:7675815e375aa10ac3ba15b32ab8596d3cbab2448319517a4f8ad1dddfc089a7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_cut_answer_late_failure_reguards_at_the_short_ceiling"
+            },
+            "path": "mcp/tests/test_tool_answer_table.py"
+          },
+          "before": "absent",
+          "id": "PRF-PAR1GQ"
+        },
+        {
+          "after": {
+            "blob": "61eb45ac1883d415065b9b7499cf7957752673d9",
+            "content": "sha256:10a5ec3fa8135ce1d6b22c445b2095a806d4c4d40f9ce136f51d96d58510d93b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_full_short_form_fits_including_bookkeeping"
+            },
+            "path": "mcp/tests/test_tool_answer_table.py"
+          },
+          "before": "absent",
+          "id": "PRF-Z49D7H"
+        },
+        {
+          "after": {
+            "blob": "3cf7a446ad8aba51cb72843bb060dc90607481e1",
+            "content": "sha256:4b3ecbd80f7986cca1ac3edc049ff782ec94d689e59a0653f71a10f36382c5cf",
+            "locator": {
+              "kind": "symbol",
+              "name": "short_form"
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
+          },
+          "before": "absent",
+          "id": "RLZ-DS4GQG"
+        },
+        {
+          "after": {
+            "blob": "8b8f51927339694ac70153332adb5dc6eec68843",
+            "content": "sha256:568c8f952aad4a9f707115d4edc5e3cda9ec0f0901bf01fdefc0cdcc442e794d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write_delivered_line"
+            },
+            "path": "mcp/src/agents_remember/application/tool_response.py"
+          },
+          "before": "absent",
+          "id": "RLZ-Y2WN79"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "introduce",
+      "id": "ROW-MCDCVW",
+      "items": [],
+      "reason": "The accepted rule-4 overflow obligation is supported by the named passing final-measure cases; the guard measures the delivered mapping and re-guards cut answers at the short-form ceiling.",
+      "revision": 1,
+      "subject": "INV-QN78E9"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-MJC90J",
+      "items": [
+        "sha256:ffcea75abbfed808263144face25968ce40df0a3ebc1fd030749dbfb56151d34"
+      ],
+      "reason": "R108 adapts the fixture to read whole results from detail files under tool_call_context; the card's paging and continuation account still holds.",
+      "subject": "onboarding:mcp/tests/test_knowledge_paging.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-MJJ0VV",
+      "items": [
+        "sha256:228892bee87a1da362f2217090a0faf66bfb6108eeecb6e7ed6f4d836d30d82a"
+      ],
+      "reason": "Added whole-result readback and next-hint navigation keys extend refusal conformance without changing its subject.",
+      "subject": "onboarding:mcp/tests/test_tool_refusal_conformance.py"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R108",
+          "packet": "requirements/MIK-R108-v1-a-tool-answer-holds-what-the-caller-needs-next.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "61eb45ac1883d415065b9b7499cf7957752673d9",
+            "content": "sha256:93d8ab23bb1b04375d9089e1d06ebdc0ee949edf7117c2792cb77c660c283147",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_cleanup_removes_logs_with_the_enclosure"
+            },
+            "path": "mcp/tests/test_tool_answer_table.py"
+          },
+          "before": "absent",
+          "id": "PRF-K2K392"
+        },
+        {
+          "after": {
+            "blob": "eda1d3e9aa2bf8ac17d026e463b3d39dc5a0162a",
+            "content": "sha256:84c4bbe01db83ee57f061a25667dbc8411e016291a562c52eb5967448f4a9ece",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_log_roots"
+            },
+            "path": "mcp/src/agents_remember/application/tool_answer_log.py"
+          },
+          "before": "absent",
+          "id": "RLZ-RRGDHN"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "introduce",
+      "id": "ROW-MMZRJW",
+      "items": [],
+      "reason": "The accepted rule-3 enclosure-lifecycle obligation is supported by the named passing test and the sandbox checks; successful public abandon and cleanup remove the group whole with lines at the root.",
+      "revision": 1,
+      "subject": "INV-E8S0YF"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R108",
+          "packet": "requirements/MIK-R108-v1-a-tool-answer-holds-what-the-caller-needs-next.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "61eb45ac1883d415065b9b7499cf7957752673d9",
+            "content": "sha256:a07eada2d258de6cc2eb124d5f88cc1398717749b125be3c85e5442ac87c6fea",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_short_credential_variable_value_is_omitted"
+            },
+            "path": "mcp/tests/test_tool_answer_table.py"
+          },
+          "before": "absent",
+          "id": "PRF-35PF9V"
+        },
+        {
+          "after": {
+            "blob": "61eb45ac1883d415065b9b7499cf7957752673d9",
+            "content": "sha256:661dadff1f5d0d3e2c8d5c3c945bb30ff9bc616f9fa0e13bdac528573d551730",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_ordinary_env_value_is_written"
+            },
+            "path": "mcp/tests/test_tool_answer_table.py"
+          },
+          "before": "absent",
+          "id": "PRF-VZ86GQ"
+        },
+        {
+          "after": {
+            "blob": "61eb45ac1883d415065b9b7499cf7957752673d9",
+            "content": "sha256:288cf06bb84846aabc3e0c9351abb5bb790c6892252853de966959bb8b774844",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_home_folder_path_stays_whole"
+            },
+            "path": "mcp/tests/test_tool_answer_table.py"
+          },
+          "before": "absent",
+          "id": "PRF-ZDX94J"
+        },
+        {
+          "after": {
+            "blob": "eda1d3e9aa2bf8ac17d026e463b3d39dc5a0162a",
+            "content": "sha256:03ec733da445aa6b4d8910bc6875e8f971ccfb913c6a482b1fac7f3b3eb0fc1f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_redact_value"
+            },
+            "path": "mcp/src/agents_remember/application/tool_answer_log.py"
+          },
+          "before": "absent",
+          "id": "RLZ-1XE4ME"
+        },
+        {
+          "after": {
+            "blob": "eda1d3e9aa2bf8ac17d026e463b3d39dc5a0162a",
+            "content": "sha256:8e938807fb5d6538c4803338b19c1800f906615572f3a1c0a91b231a151bf06b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_env_values"
+            },
+            "path": "mcp/src/agents_remember/application/tool_answer_log.py"
+          },
+          "before": "absent",
+          "id": "RLZ-H7W31G"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "introduce",
+      "id": "ROW-MRYKDW",
+      "items": [],
+      "reason": "The accepted amended rule-3 redaction obligation is supported by the named passing redaction cases; credential keys omitted, short and path-looking credential values scrubbed, ordinary values whole.",
+      "revision": 1,
+      "subject": "INV-XJ7GV5"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-N53126",
+      "items": [
+        "sha256:0a5ad3ce9defd7b680fae7dcff70c9140d4b6802e0e62fafc268eecc07d0ad33"
+      ],
+      "reason": "Route purpose unchanged by this leaf; its changed files keep their existing meaning under it (mcp/src/agents_remember/observer/overview); new files land under existing routes and coverage regenerates mechanically.",
+      "subject": "onboarding:mcp/src/agents_remember/observer/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "606ca83f6bd415c83707e7752e22f91d7e495115",
+            "content": "sha256:dc43c1e231297170abed39368b5dd7e562aa6377ea5ef4b6a2585821b87a2fe9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_materialize_start_enclosure"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/start.py"
+          },
+          "before": {
+            "blob": "54402c93a8363ff8c10db48dd342d08ff3e17f26",
+            "content": "sha256:b8bf61c187eea3e2bf821b01d0a17d18fae121f9d2b1254bc147b5b9283ecf8b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_materialize_start_enclosure"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/start.py"
+          },
+          "id": "RLZ-5F6FY8"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-N9QS0Y",
+      "items": [
+        "sha256:63107486ab8ab463652b1caa239a5a7d22f8800c85a48b4fd5d4af7816be99b2"
+      ],
+      "reason": "Import-only change plus logs-dir creation on the materialization path; the preview-carries-parent meaning is preserved; entry re-anchored at C.",
+      "revision": 1,
+      "subject": "INV-EX6T0F"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-NAB33A",
+      "items": [
+        "sha256:13180f54d2d2c9b1525fa2f4bf0f61e54236339f759dc26176638fef5519cade"
+      ],
+      "reason": "Route purpose unchanged by this leaf; its changed files keep their existing meaning under it (mcp/src/agents_remember/kernel/primitives/overview); new files land under existing routes and coverage regenerates mechanically.",
+      "subject": "onboarding:mcp/src/agents_remember/kernel/primitives/overview"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R108",
+          "packet": "requirements/MIK-R108-v1-a-tool-answer-holds-what-the-caller-needs-next.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "61eb45ac1883d415065b9b7499cf7957752673d9",
+            "content": "sha256:3a3aca3dd8f1fea4366a262248516bb6437de0c5fe8d9ca18a199654317922f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_valid_shaped_row_passes"
+            },
+            "path": "mcp/tests/test_tool_answer_table.py"
+          },
+          "before": "absent",
+          "id": "PRF-MXFH7R"
+        },
+        {
+          "after": {
+            "blob": "61eb45ac1883d415065b9b7499cf7957752673d9",
+            "content": "sha256:383e8f5213fcd363b7ced7c8ada20285f571ee20aeff684afed62503a8e8c0d6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_empty_use_fails"
+            },
+            "path": "mcp/tests/test_tool_answer_table.py"
+          },
+          "before": "absent",
+          "id": "PRF-TW1JNF"
+        },
+        {
+          "after": {
+            "blob": "61eb45ac1883d415065b9b7499cf7957752673d9",
+            "content": "sha256:47d672492795b1f68d11b88406c66fe8b88fcc0e1a4b66dc7381eedbc8dcbbbf",
+            "locator": {
+              "kind": "symbol",
+              "name": "validate_row_case"
+            },
+            "path": "mcp/tests/test_tool_answer_table.py"
+          },
+          "before": "absent",
+          "id": "RLZ-8MJZRK"
+        },
+        {
+          "after": {
+            "blob": "61eb45ac1883d415065b9b7499cf7957752673d9",
+            "content": "sha256:f4b2d8d8f7dd941065f4aa1172cf8a4c60c0b3be4ca3439ffa031bee129e03ff",
+            "locator": {
+              "kind": "symbol",
+              "name": "ToolAnswerRow"
+            },
+            "path": "mcp/tests/test_tool_answer_table.py"
+          },
+          "before": "absent",
+          "id": "RLZ-G2E5V5"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "introduce",
+      "id": "ROW-PQFMBJ",
+      "items": [],
+      "reason": "The accepted rule-6 table obligation is supported by the named passing row-gate cases; one row per tool and operation with exact R7 interim ownership on all 74 tools.",
+      "revision": 1,
+      "subject": "INV-180VCA"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
+            "content": "sha256:01be113c054f0e99dd8aa5b5ed8dd0ca72882a657510d31044232875c04cd48f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "a0569bc130f1ea52e6731d4460788c50542ae82a",
+            "content": "sha256:534b915b991a85e4c405f5bd4db899bb170cad187055f94dd0cdfdc43d85ac07",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-GRTJG0"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-Q3X58N",
+      "items": [
+        "sha256:35ec911ab1938c3cda07aac091e1d8d2d861163dbd3ff850844e3003b0c41e9d"
+      ],
+      "reason": "Re-attestation after the tip-sync merge re-pointed the entry's after anchor to the current tree (the earlier row's after anchor no longer resolves): run_breakdown.py still carries the unchanged split/short-circuit location engine with no structural rename and no moved helpers; the verdict and the earlier reason otherwise stand.",
+      "revision": 1,
+      "subject": "INV-MSCRAN"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-QJC5SK",
+      "items": [],
+      "reason": "docs/** is excluded from onboarding by the memory's system/settings.json path rules (this source resolves 'disabled'), so no gated card of this file exists that the change could affect; the row attests nothing about the document's content (architect ruling L108-EXCLUDED-DOCS-TRACE-RULING, following L90/L96/L107 precedent on this subject). The fifteen added lines' facts are held in gated places of this leaf: the optional toolLog family with its absent-defaults and coordination-root/enclosure bounds in the runtime_config card's Tool-call log settings section, and the no-age-pruning / 256-MiB-transcript-root / 64-MiB-per-enclosure / budget-only-pre-cleanup-removal-with-no-marker account in the tool_answer_log card. The leftover card was restored byte-identical to its base (blob 1c1f9024, 4641 bytes) and is left as the base holds it.",
+      "subject": "onboarding:docs/reference/settings-json.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-QSHP5Y",
+      "items": [
+        "sha256:24525506b5077231b959f58befd9a6c8e8199a2ce57c7e11076b7388e7149bb1"
+      ],
+      "reason": "Same-pattern contract-row growth; the recorded DB-era restoration stands (entry re-anchored via the INV-MSCRAN row).",
+      "subject": "onboarding:mcp/tests/evidence-lifecycle.toml"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-R4K29R",
+      "items": [
+        "sha256:4486121db8483fb2be69968f3eb1618dcabbc30666c6584d713f950b07e28527"
+      ],
+      "reason": "The toolLog settings family (keepDays/maxBytes/enclosureMaxBytes defaults, ToolLogSettings, the fail-loud parser and McpRuntimeConfig wiring) configures the authored budgets obligation; it carries no separate obligation of its own.",
+      "subject": "hunk:sha256:4486121db8483fb2be69968f3eb1618dcabbc30666c6584d713f950b07e28527"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-RY08DA",
+      "items": [
+        "sha256:3a0db1c8b4281d1e5aa84cdfc0fdbcc305fce6ce71fca23f5d5256b2749c4407"
+      ],
+      "reason": "The toolLog settings family (keepDays/maxBytes/enclosureMaxBytes defaults, ToolLogSettings, the fail-loud parser and McpRuntimeConfig wiring) configures the authored budgets obligation; it carries no separate obligation of its own.",
+      "subject": "hunk:sha256:3a0db1c8b4281d1e5aa84cdfc0fdbcc305fce6ce71fca23f5d5256b2749c4407"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-RZ7T60",
+      "items": [
+        "sha256:e0a0ff88ea29d1b548f037c6e6b708676e98c426bbe2a8b39ff87b02afffe30a"
+      ],
+      "reason": "The transport logging wiring (tool_answer_log imports, per-call config carriage and the raised-call logger inside the dispatch context) realizes the authored destinations and daily-line obligations at the boundary; no separate obligation.",
+      "subject": "hunk:sha256:e0a0ff88ea29d1b548f037c6e6b708676e98c426bbe2a8b39ff87b02afffe30a"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "289124eb65069d96a2a16ec167d0190a9bbdc367",
+            "content": "sha256:148e8f4aed26aff4e86450fdf83ec87b540e458704e302460ef09ed9e79f9969",
+            "locator": {
+              "end": 422,
+              "kind": "line_range",
+              "start": 422
+            },
+            "path": "mcp/src/agents_remember/observer/ambient.py"
+          },
+          "before": {
+            "blob": "bf408b0d04334071a43207138086e4cfb6f2a374",
+            "content": "sha256:c0e774478a4d18a5a1968c4bcfbc5b315f9d24d53338116433ad1876db5c055a",
+            "locator": {
+              "end": 422,
+              "kind": "line_range",
+              "start": 422
+            },
+            "path": "mcp/src/agents_remember/observer/ambient.py"
+          },
+          "id": "RLZ-3JQQSX"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-TWA756",
+      "items": [
+        "sha256:2ac08eec501c43b47db7f2cf8c2e83c2ed4f1d641fdbe522d108826ab4d0181d"
+      ],
+      "reason": "emit_tool now takes the answer's token count as an explicit keyword-only answer_tokens (None default keeps the payload fallback); the emitted event's tokens field still carries that one answer's size, so the single-event fact is unchanged and the count's source moved from reader to caller.",
+      "revision": 1,
+      "subject": "INV-WZR89C"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-V0NYY1",
+      "items": [
+        "sha256:c9aa9838874a6bb134d06078c0712a2956dc9670833c1587ebdb6aaa93f231ec"
+      ],
+      "reason": "The toolLog settings family (keepDays/maxBytes/enclosureMaxBytes defaults, ToolLogSettings, the fail-loud parser and McpRuntimeConfig wiring) configures the authored budgets obligation; it carries no separate obligation of its own.",
+      "subject": "hunk:sha256:c9aa9838874a6bb134d06078c0712a2956dc9670833c1587ebdb6aaa93f231ec"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R108",
+          "packet": "requirements/MIK-R108-v1-a-tool-answer-holds-what-the-caller-needs-next.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "61eb45ac1883d415065b9b7499cf7957752673d9",
+            "content": "sha256:459e36b09742c36249a42e104d17a81a4c4545d35266fa2c3b74e49e2f5ab7d4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_envelope_stripped_from_every_answer"
+            },
+            "path": "mcp/tests/test_tool_answer_table.py"
+          },
+          "before": "absent",
+          "id": "PRF-1XJ3QK"
+        },
+        {
+          "after": {
+            "blob": "61eb45ac1883d415065b9b7499cf7957752673d9",
+            "content": "sha256:9d4cd35afa708b7815a0297a614fafd90c70fda8ed9b015dac0aa846c8b8251d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_nested_lists_are_cut_through_retained_items"
+            },
+            "path": "mcp/tests/test_tool_answer_table.py"
+          },
+          "before": "absent",
+          "id": "PRF-RYVXYP"
+        },
+        {
+          "after": {
+            "blob": "3cf7a446ad8aba51cb72843bb060dc90607481e1",
+            "content": "sha256:cc62b700fb11a48a3b0b1adf6196bf409d6ac82aded0d52d74a25a436b7840fc",
+            "locator": {
+              "kind": "symbol",
+              "name": "truncate_lists"
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
+          },
+          "before": "absent",
+          "id": "RLZ-4TBAXX"
+        },
+        {
+          "after": {
+            "blob": "3cf7a446ad8aba51cb72843bb060dc90607481e1",
+            "content": "sha256:08eff577329ef1b462a5cca5cccfc934ef341470b6f6da717523d618ae3571fc",
+            "locator": {
+              "kind": "symbol",
+              "name": "strip_envelope"
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
+          },
+          "before": "absent",
+          "id": "RLZ-8AR50R"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "introduce",
+      "id": "ROW-V8TYAX",
+      "items": [],
+      "reason": "The accepted rule-2 shaping obligation is supported by the named passing guard cases; it strips the envelope and caps lists with order, count and location intact.",
+      "revision": 1,
+      "subject": "INV-B7J1PZ"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-VK29WB",
+      "items": [
+        "sha256:dc3fef71d201b0422d499bccd59be91db3ab9721f40be9ac2fc5a2652ec426fa"
+      ],
+      "reason": "Candidate-only docstring paragraph (+6 lines at 414) naming the MIK-R108 explicit answer_tokens parameter and its absent-fallback; prose carrying no behavior and no new obligation, while the tokens obligation itself rides INV-WZR89C.",
+      "subject": "hunk:sha256:dc3fef71d201b0422d499bccd59be91db3ab9721f40be9ac2fc5a2652ec426fa"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R108",
+          "packet": "requirements/MIK-R108-v1-a-tool-answer-holds-what-the-caller-needs-next.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "61eb45ac1883d415065b9b7499cf7957752673d9",
+            "content": "sha256:c7a49870176b53b87dec5206c0180d2c3b8a0767cf16786d75aed0a33f0e2a59",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_terminating_operations_log_to_the_root"
+            },
+            "path": "mcp/tests/test_tool_answer_table.py"
+          },
+          "before": "absent",
+          "id": "PRF-9478HH"
+        },
+        {
+          "after": {
+            "blob": "eda1d3e9aa2bf8ac17d026e463b3d39dc5a0162a",
+            "content": "sha256:84c4bbe01db83ee57f061a25667dbc8411e016291a562c52eb5967448f4a9ece",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_log_roots"
+            },
+            "path": "mcp/src/agents_remember/application/tool_answer_log.py"
+          },
+          "before": "absent",
+          "id": "RLZ-RRJX13"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "introduce",
+      "id": "ROW-X8MYN4",
+      "items": [],
+      "reason": "The accepted rule-3 destinations obligation is supported by the named passing test and the sandbox destination checks; worker calls log in the enclosure, controller, raised and terminating calls at the root.",
+      "revision": 1,
+      "subject": "INV-JRV850"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "3139669673aad140278e0fba2c1e12a0723ebfda",
+            "content": "sha256:a81f016614122f371f2adec3dbef8fd7d66c0e28c4ab9b1ec6bacb5afdbbce5b",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_server"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "before": {
+            "blob": "4348868065c8eed3582731fb3e96e3dbedf43d50",
+            "content": "sha256:c1a7374e28565704dfe0bbfe3842c8fa7624b44a53a427aac71075b0d2310718",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_server"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "id": "RLZ-THMGJK"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-XJ2GEB",
+      "items": [
+        "sha256:17b4fc047679ce51ad9f5b79e53bf3b14083bd1200599786c169ff228b5cda47"
+      ],
+      "reason": "create_server gains per-call config carriage; archival-before-removal is preserved; entry re-anchored at C.",
+      "revision": 1,
+      "subject": "INV-F1TY2E"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ZCFFND",
+      "items": [
+        "sha256:8e305816e82a4c4f3ed2bac37086fb78463ee632be0a3a7dee3d4f9aa1e8c85f"
+      ],
+      "reason": "The transport logging wiring (tool_answer_log imports, per-call config carriage and the raised-call logger inside the dispatch context) realizes the authored destinations and daily-line obligations at the boundary; no separate obligation.",
+      "subject": "hunk:sha256:8e305816e82a4c4f3ed2bac37086fb78463ee632be0a3a7dee3d4f9aa1e8c85f"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ZNVB4Q",
+      "items": [
+        "sha256:0ccc1f88561a8cbf7836c0d38e5413d0b6bff69be06598e90c9256971d892d27"
+      ],
+      "reason": "Lane-catalog rows registering the new test modules under the existing sorted one-lane-each convention; no separate obligation.",
+      "subject": "hunk:sha256:0ccc1f88561a8cbf7836c0d38e5413d0b6bff69be06598e90c9256971d892d27"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-ZP4CVX",
+      "items": [
+        "sha256:a335cafcbde2bd4da944078103e43ce6dd80c1ee1e2f3e2eabdf7911a1d1ded2"
+      ],
+      "reason": "Added envelope-absence asserts and whole-result model validation extend the registry-parity and schema purpose without changing it.",
+      "subject": "onboarding:mcp/tests/test_models.py"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

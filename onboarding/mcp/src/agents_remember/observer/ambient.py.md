@@ -89,7 +89,9 @@ The old `lifecycle_gate`/inbox stack is parked (kept, un-hinted).
 appends one `observed` `tool.completed` (tool/tokens/ok) to the active lifecycle,
 or drops it when none is active — a lifecycle-less call is never misattributed.
 It is wrapped in `contextlib.suppress(ValidationError, OSError)` so audit
-emission can never break the tool it observes.
+emission can never break the tool it observes. Under MIK-R108 the boundary passes
+the delivered answer's token count explicitly (`answer_tokens`); answers no longer
+carry the envelope count, so the reader no longer reads it off the answer.
 
 `emit_read_packet(repo_id, files)` is the slice-07 peer of `emit_tool`: it
 appends one `observed` `read.packet` for the active lifecycle (dropped when none
