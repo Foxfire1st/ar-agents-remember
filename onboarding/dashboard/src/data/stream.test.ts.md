@@ -16,6 +16,11 @@ A controlled EventSource proves that an open channel quietly cycles after a slee
 hidden tabs are exempt from watchdog cycling, ordinary transport errors still signal loss, and a replacement
 that neither opens nor errors is eventually marked signal-lost and retried.
 
+### 260928-MIK-L114 Ready Last-Feed Cases
+
+Two cases prove the ready-marker parsing the store hydration depends on: the marker's
+last feed reaches the opener, and an unreadable marker still opens the gate.
+
 ### Conventions
 
 Fake timers model the post-wake wall-clock discontinuity.

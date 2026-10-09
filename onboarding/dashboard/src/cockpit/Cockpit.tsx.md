@@ -45,6 +45,12 @@ position survive a tab switch.
   gone. The highlight composer is mounted once and filters targets by the current selection; its
   former direct leaf-chat target was removed with the old panel.
 
+### 260928-MIK-L114 Ready Last-Feed Handoff
+
+The event-stream ready handler receives the parsed `ready` marker and passes
+`ready?.lastEventTs` into `markEventsHydrated`, so the store — and the panel head — name
+the last feed even when the replay window holds nothing.
+
 ### Conventions
 
 Panda `css`/`cva`/`cx`; `shell__body` carries `data-fullbleed` for the rails-hide assertions. The

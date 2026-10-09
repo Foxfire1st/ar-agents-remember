@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Without the caller-fact division, host-path rows would render as lifecycle rows and a silent river would keep looking calm; the panel cases pin the division."
+  },
+  "applicability": "Host-path tool.completed rows rendered in the panel.",
+  "conditions": [
+    "Caller facts present; earlier-kind rows keep base labels."
+  ],
+  "exclusions": [
+    "Unknown roles and tasks, shown verbatim rather than mapped."
+  ],
+  "id": "INV-NVWE26",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "EventRiver.test.tsx cases on caller rows, refused-with-code, reached state, target role, chat rows; npx vitest run src/panels/EventRiver.test.tsx src/data/stream.test.ts src/data/store.test.ts (dashboard/) -> EventRiver 17 passed, stream 6 passed, store green; notes/reports/role-launch/260928-MIK-L114-worker-4b5eb1b1-ea79-4dac-b8dd-ef796451e0b6.md"
+      ],
+      "path": "notes/reports/l114-curator-handoff-list.json"
+    },
+    "handoffEntry": "L114-W10",
+    "leaf": "260928-MIK-L114",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Rule-8 row: caller context, done/refused(code)/state outcome, target role, unknown values as-is.",
+  "status": "proposed",
+  "supersedes": []
+}

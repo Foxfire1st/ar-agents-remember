@@ -1,0 +1,61 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "The interval design was weighed and rejected on burst grounds, and the choice binds every future workspace writer."
+  },
+  "alternatives": [
+    {
+      "option": "Admit every append under the river lock, cutting oldest whole rows to 8 MiB first.",
+      "reason": "A size read under the already-held lock costs nothing an interval would save, and the bound holds after every append.",
+      "status": "chosen"
+    },
+    {
+      "option": "Check size on a sixty-second interval.",
+      "reason": "Bursts pass between checks while the file stands over the ceiling.",
+      "reconsider_when": "Lock contention ever dominates append latency and a cheaper exact check exists.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Every workspace writer takes the river lock per append; oversized rows are refused and counted rather than written."
+  ],
+  "context": "Architect F01 ruling: a once-a-minute size check lets any burst pass the 16 MiB ceiling, and the age compactor cannot remove young rows.",
+  "decider": "Architect, F01 ruling on MIK-R114@v1, adopted by the leaf.",
+  "id": "DEC-BPGMT2",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "route:mcp/src/agents_remember/observer"
+    },
+    {
+      "relation": "motivated_change_to",
+      "target": {
+        "id": "MIK-R114",
+        "packet": "requirements/MIK-R114-v1-the-event-river-shows-what-the-hosts-agents-do.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "cases test_every_append_lands_at_or_under_the_ceiling, test_one_function_serves_the_age_cut_and_the_size_cut, test_a_row_that_does_not_fit_after_removal_is_not_written, test_failed_removal_counts_and_leaves_the_file_ungrown, test_bound_values_are_the_packets in mcp/tests/test_tool_event_river.py; pytest mcp/tests/test_tool_event_river.py -p no:cacheprovider -n 0 -q -> 16 passed; notes/reports/role-launch/260928-MIK-L114-worker-4b5eb1b1-ea79-4dac-b8dd-ef796451e0b6.md"
+      ],
+      "path": "notes/reports/l114-curator-handoff-list.json"
+    },
+    "handoffEntry": "L114-W06",
+    "leaf": "260928-MIK-L114",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

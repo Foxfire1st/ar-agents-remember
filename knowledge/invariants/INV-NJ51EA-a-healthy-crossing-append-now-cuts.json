@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "Crossing, sibling-admission and failed-removal cases pin the shared admission; without the record a sibling writer could bypass it."
+  },
+  "applicability": "Workspace-river appends from every writer, including EventStore siblings.",
+  "conditions": [
+    "Admission under the river lock for each append."
+  ],
+  "exclusions": [
+    "Rows that fit no cut, refused and counted."
+  ],
+  "id": "INV-NJ51EA",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "test_tool_event_river.py: crossing-cut regression, sibling-bound cases; discriminator rerun size_crossing accepted x3 with baseOffset advance, sibling_append under ceiling"
+      ],
+      "path": "notes/reports/l114-curator-handoff-list.json"
+    },
+    "handoffEntry": "L114-W37",
+    "leaf": "260928-MIK-L114",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A healthy crossing append now cuts oldest whole rows to leave room for the incoming row and writes it under one lock acquisition, and every sibling workspace append obeys the same admission; the river never stands over the ceiling after an append.",
+  "status": "proposed",
+  "supersedes": []
+}

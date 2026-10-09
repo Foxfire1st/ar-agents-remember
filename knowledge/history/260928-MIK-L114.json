@@ -1,0 +1,437 @@
+{
+  "closed": true,
+  "leaf": "260928-MIK-L114",
+  "rows": [
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "79ced316f57d0a3dfb3b417ac75c7e38b540b002",
+            "content": "sha256:1566b59dd465bdff92b7dc133dd31c20e47a20351dec979b4e60fabb349e9ee1",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
+            "content": "sha256:01be113c054f0e99dd8aa5b5ed8dd0ca72882a657510d31044232875c04cd48f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-GRTJG0"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-0A3ZRV",
+      "items": [
+        "sha256:ffb95888d3fc40327627ac2a499951af47da62481fe8d4e4b1ac866357147873"
+      ],
+      "reason": "Catalog rewrite dedups merge-doubled rows and removes file-gone rows without resurrecting deleted rows; canonical form green; the retired record keeps its meaning; entry re-anchored at C.",
+      "revision": 1,
+      "subject": "INV-MSCRAN"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-8WCSQ7",
+          "revision": 1
+        },
+        {
+          "id": "INV-9VQQ7W",
+          "revision": 1
+        },
+        {
+          "id": "INV-AJKQV2",
+          "revision": 1
+        },
+        {
+          "id": "INV-F1TY2E",
+          "revision": 1
+        },
+        {
+          "id": "INV-FEB6Y6",
+          "revision": 1
+        },
+        {
+          "id": "INV-GM5MS3",
+          "revision": 1
+        },
+        {
+          "id": "INV-K43DJZ",
+          "revision": 1
+        },
+        {
+          "id": "INV-PRP52X",
+          "revision": 1
+        },
+        {
+          "id": "INV-VPXD65",
+          "revision": 1
+        },
+        {
+          "id": "INV-W41C85",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-0DRDAZ",
+      "items": [
+        "sha256:15ee10efdd9497259dc99699299b38b989e2fa360d03d74dadee3e4d39d289d7"
+      ],
+      "reason": "Closed-leaf archival guarantee untouched by the river feed: send_role_message gains river role carriage without changing archived-recipient refusal or settlement; all ten members preserved at their revisions.",
+      "revision": 1,
+      "subject": "FAM-VNK792"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-1NKRV9",
+      "items": [
+        "sha256:ac6630409bd47c198c0f24915a84a7e17ed47269767569f85bda1c6d44f9e164"
+      ],
+      "reason": "Route purpose unchanged by this leaf; its changed files keep their existing meaning under it (mcp/tests/evidence-lifecycle.toml, mcp/tests/l114_e4_river_scale.py, mcp/tests/test-evidence-lanes.toml, mcp/tests/test_f07_missing_lock_cursor.py, mcp/tests/test_f08_registered_handler_river.py, mcp/tests/test_tool_event_river.py).",
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-24EDWT",
+      "items": [
+        "sha256:be785bc1d8038c7bd3a528e493a2baaa85a29704a2174224055773edde9b7066"
+      ],
+      "reason": "Lane-catalog row registering the river test module in canonical byte order; registration order carries no invariant.",
+      "subject": "hunk:sha256:be785bc1d8038c7bd3a528e493a2baaa85a29704a2174224055773edde9b7066"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-6E6NT5",
+      "items": [
+        "sha256:a7b0e38936ac6557c55f2cc9a5bb520ca371c451032f0ac59ea0561449f2f04a"
+      ],
+      "reason": "Route purpose unchanged by this leaf; its changed files keep their existing meaning under it (dashboard/src/cockpit/Cockpit.tsx).",
+      "subject": "onboarding:dashboard/src/overview"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "examined": [
+        {
+          "id": "INV-0MX54D",
+          "revision": 1
+        },
+        {
+          "id": "INV-18B62F",
+          "revision": 1
+        },
+        {
+          "id": "INV-8WCSQ7",
+          "revision": 1
+        },
+        {
+          "id": "INV-9VQQ7W",
+          "revision": 1
+        },
+        {
+          "id": "INV-AJKQV2",
+          "revision": 1
+        },
+        {
+          "id": "INV-F1TY2E",
+          "revision": 1
+        },
+        {
+          "id": "INV-FEB6Y6",
+          "revision": 1
+        },
+        {
+          "id": "INV-GM5MS3",
+          "revision": 1
+        },
+        {
+          "id": "INV-K43DJZ",
+          "revision": 1
+        },
+        {
+          "id": "INV-P661EM",
+          "revision": 1
+        },
+        {
+          "id": "INV-PHS9T7",
+          "revision": 1
+        },
+        {
+          "id": "INV-PRP52X",
+          "revision": 1
+        },
+        {
+          "id": "INV-S11488",
+          "revision": 1
+        },
+        {
+          "id": "INV-VPXD65",
+          "revision": 1
+        },
+        {
+          "id": "INV-VSRHV3",
+          "revision": 1
+        },
+        {
+          "id": "INV-W41C85",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-78X4ES",
+      "items": [],
+      "reason": "Guarantee narrowed to the conditional domain the writer and branch contract implement: failed writes are counted in dropped with no cross-restart promise, and active earlier-kind lifecycle calls use that branch. Member set unchanged; all sixteen examined at current revisions.",
+      "revision": 1,
+      "subject": "FAM-V8AH28"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-8349S3",
+      "items": [
+        "sha256:5c851c687cac2294ccf6a598baef4f160e5385b7abaa7895ac4ccdeb7f662c80"
+      ],
+      "reason": "Route purpose unchanged by this leaf; its changed files keep their existing meaning under it (mcp/src/agents_remember/serving/events.py, mcp/src/agents_remember/serving/response_contract.py).",
+      "subject": "onboarding:mcp/src/agents_remember/serving/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-899NG8",
+      "items": [
+        "sha256:03259c17e2932ab0413c193fe6e4aa470c78213fe6d23eb4737fdf2906d85218"
+      ],
+      "reason": "Route purpose unchanged by this leaf; its changed files keep their existing meaning under it (mcp/src/agents_remember/mcp/tools/role_agents.py).",
+      "subject": "onboarding:mcp/src/agents_remember/mcp/tools/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "539e6e0dfac6147013ce80409fdc72508cca76fd",
+            "content": "sha256:8af2b3b6fef974e84352c5cde2d37ddd0510b1be6b37c35e4b342b3287ec2405",
+            "locator": {
+              "kind": "symbol",
+              "name": "newestFedTs"
+            },
+            "path": "dashboard/src/panels/EventRiver.tsx"
+          },
+          "before": "absent",
+          "id": "RLZ-122GPW"
+        },
+        {
+          "after": {
+            "blob": "9872b3d6c0abcdf7af28fba9f2a54ba2f48bb3cb",
+            "content": "sha256:e2a3b5c09937def3837c359eab4e76e9268398a530c21298c24d41c277fd6056",
+            "locator": {
+              "kind": "symbol",
+              "name": "_read_source_lines"
+            },
+            "path": "mcp/src/agents_remember/serving/events.py"
+          },
+          "before": "absent",
+          "id": "RLZ-3NREV8"
+        },
+        {
+          "after": {
+            "blob": "972bfe128d72a489b3cdb2563a352563c594856e",
+            "content": "sha256:b21739c63223a27b2a7cb70528aa785ecec37fe55ce96834808eaa463a5d4ca0",
+            "locator": {
+              "kind": "symbol",
+              "name": "workspace_river_read"
+            },
+            "path": "mcp/src/agents_remember/observer/store.py"
+          },
+          "before": "absent",
+          "id": "RLZ-6TWJSK"
+        },
+        {
+          "after": {
+            "blob": "d23908b375ed9c6971426892abe1439883faa3d6",
+            "content": "sha256:fe55ae947b3a6fa962f00b29ba3e007c2b1a331d5ff9136f442fee3e8a425c32",
+            "locator": {
+              "kind": "symbol",
+              "name": "summarizeToolCompleted"
+            },
+            "path": "dashboard/src/panels/eventSummary.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-J3YW3P"
+        },
+        {
+          "after": {
+            "blob": "69155ec16aa9b275d0961f523f43b15aafae196f",
+            "content": "sha256:7091f164e8a80474cd1ff08c45fd12d0c6c95e2907037dfed4406e193a891d75",
+            "locator": {
+              "kind": "symbol",
+              "name": "_carry_resolved_target_role"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
+          },
+          "before": "absent",
+          "id": "RLZ-J6YQNS"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-8NFFX9",
+      "items": [],
+      "reason": "Scope corrected: completed answers include refusals, which reach the choke and are recorded with code; unresolved recipients stay literal. Producer fields and anchors unchanged.",
+      "revision": 1,
+      "subject": "INV-N6DKKD"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-91RBBB",
+      "items": [
+        "sha256:882d06a57cb74fa57ab4f946f24a0b40728d9aa1a8cb192379cd0d32edff602c"
+      ],
+      "reason": "Route purpose unchanged by this leaf; its changed files keep their existing meaning under it (mcp/src/agents_remember/observer/event_retention.py, mcp/src/agents_remember/observer/store.py, mcp/src/agents_remember/observer/tool_events.py).",
+      "subject": "onboarding:mcp/src/agents_remember/observer/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "39bd9a4dbbf6d9951c4929856a574d14c520023f",
+            "content": "sha256:3269bf4844a96cc66faaba066289476830b4ff4dda0d47fe28d0f831d985c687",
+            "locator": {
+              "kind": "symbol",
+              "name": "role_start_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/role_agents.py"
+          },
+          "before": "absent",
+          "id": "RLZ-FDKA6K"
+        },
+        {
+          "after": {
+            "blob": "39bd9a4dbbf6d9951c4929856a574d14c520023f",
+            "content": "sha256:f068b965486730039857669797d0cd0f9636ab759e0ec73b6f927b9e9a3dd3a2",
+            "locator": {
+              "kind": "symbol",
+              "name": "role_message_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/role_agents.py"
+          },
+          "before": "absent",
+          "id": "RLZ-ZG3HK3"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-AATTP3",
+      "items": [],
+      "reason": "Scope corrected: completed answers include refusals, which reach the choke and are recorded with code; only role-less recipients stay literal. Producer fields and anchors unchanged.",
+      "revision": 1,
+      "subject": "INV-0ZW4BP"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-B3TX3W",
+      "items": [
+        "sha256:b1a7607f26f9873915ac8d49c94425079680ccf5b09c92d0f3d025c46003d2f6"
+      ],
+      "reason": "Route purpose unchanged by this leaf; its changed files keep their existing meaning under it (mcp/src/agents_remember/application/tool_caller.py, mcp/src/agents_remember/application/tool_response.py).",
+      "subject": "onboarding:mcp/src/agents_remember/application/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-BDQFKC",
+      "items": [
+        "sha256:b67bd1158287c34191e06330790ebbb1d91effed40345b0c4bcabbc6954c09e7"
+      ],
+      "reason": "Route purpose unchanged by this leaf; its changed files keep their existing meaning under it (dashboard/src/panels/EventRiver.test.tsx, dashboard/src/panels/EventRiver.tsx, dashboard/src/panels/eventSummary.ts).",
+      "subject": "onboarding:dashboard/src/panels/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ET8W2A",
+      "items": [
+        "sha256:248adda1913d0db174eefca63f04466c99de5c290a2e962d5eda5a7664803795"
+      ],
+      "reason": "Module-level import wiring the receipt-role carriage into send_role_message; carries no standalone obligation.",
+      "subject": "hunk:sha256:248adda1913d0db174eefca63f04466c99de5c290a2e962d5eda5a7664803795"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-GFNV29",
+      "items": [
+        "sha256:d69a99fb992529947923cb2df8e088d9a1839dd43e7acb37e8cf4eefcbcc2e5d"
+      ],
+      "reason": "Lane-catalog rows registering the river tests under the existing sorted one-lane-each convention; registration order carries no invariant.",
+      "subject": "hunk:sha256:d69a99fb992529947923cb2df8e088d9a1839dd43e7acb37e8cf4eefcbcc2e5d"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-J549RX",
+      "items": [
+        "sha256:3742f9e81b13a06f26aa95bfe8bec858611baab710972563f2d5ae1dc612ac3c"
+      ],
+      "reason": "Route purpose unchanged by this leaf; its changed files keep their existing meaning under it (mcp/src/agents_remember/cli/paseo_role_tools.py).",
+      "subject": "onboarding:mcp/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "69155ec16aa9b275d0961f523f43b15aafae196f",
+            "content": "sha256:341450a5a76f718154ec88dec41ed050018cab985e47ec0a005606a861e24eaf",
+            "locator": {
+              "kind": "symbol",
+              "name": "send_role_message"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
+          },
+          "before": {
+            "blob": "9ce6119c82df708fbfb7c2c1e117c46acc05f900",
+            "content": "sha256:72a641b6100dfc272d288cc172093ba8b5f43e54aa31ee0505104f0b012f2050",
+            "locator": {
+              "kind": "symbol",
+              "name": "send_role_message"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
+          },
+          "id": "RLZ-3DKDAC"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-Q7S27G",
+      "items": [
+        "sha256:036fadc4d0c4eca62ca1c2b40ff36227a9f35061323a83eebf8a914c1b79fbd9"
+      ],
+      "reason": "Archive settlement preserved: the paseo_role_tools change adds river role carriage beside the refusal path; request-ID reconciliation and the archived-recipient refusal keep their meaning; entry re-anchored at C.",
+      "revision": 1,
+      "subject": "INV-GM5MS3"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-Q9G6BP",
+      "items": [
+        "sha256:f785794f0e26534172d874f76f801f0bd7ea81c8cf252e951a9081f7c707d60c"
+      ],
+      "reason": "Route purpose unchanged by this leaf; its changed files keep their existing meaning under it (mcp/src/agents_remember/application/runtime/startup.py).",
+      "subject": "onboarding:mcp/src/agents_remember/application/runtime/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-WYJEMJ",
+      "items": [
+        "sha256:3fe98ada00be3f29ffc6d9494063c755ee1e619110f17eebe4e09a70bcb7475d"
+      ],
+      "reason": "Module-level import wiring the authored river obligation into tool_response; carries no standalone obligation.",
+      "subject": "hunk:sha256:3fe98ada00be3f29ffc6d9494063c755ee1e619110f17eebe4e09a70bcb7475d"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-XD7ERQ",
+      "items": [
+        "sha256:768e098078f2b931b91883b066e5a6adc8d8000e31ecf7c66041594c2c70c25a"
+      ],
+      "reason": "Route purpose unchanged by this leaf; its changed files keep their existing meaning under it (dashboard/src/data/store.ts, dashboard/src/data/stream.test.ts, dashboard/src/data/stream.ts).",
+      "subject": "onboarding:dashboard/src/data/overview"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

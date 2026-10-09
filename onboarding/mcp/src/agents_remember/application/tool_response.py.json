@@ -3,7 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "8b8f51927339694ac70153332adb5dc6eec68843",
+        "blob": "1e151bfd9338a57f52c14bca69c5e9cb90e9398f",
+        "content": "sha256:fc7b80ac552e5d77058d2aeba2aa7e1fd27b885acfcdc639d86c41b655f745e4",
+        "locator": {
+          "kind": "symbol",
+          "name": "complete_tool_response"
+        }
+      },
+      "id": "RLZ-QZ15KH",
+      "invariant": "INV-P661EM",
+      "origin": {
+        "handoffEntry": "L114-W03",
+        "leaf": "260928-MIK-L114"
+      },
+      "rationale": "complete_tool_response is the completion choke where the lifecycle-owned branch and the workspace-river branch divide; one event per call with no double-write depends on this routing.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "1e151bfd9338a57f52c14bca69c5e9cb90e9398f",
         "content": "sha256:568c8f952aad4a9f707115d4edc5e3cda9ec0f0901bf01fdefc0cdcc442e794d",
         "locator": {
           "kind": "symbol",
@@ -21,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "8b8f51927339694ac70153332adb5dc6eec68843",
+        "blob": "1e151bfd9338a57f52c14bca69c5e9cb90e9398f",
         "content": "sha256:568c8f952aad4a9f707115d4edc5e3cda9ec0f0901bf01fdefc0cdcc442e794d",
         "locator": {
           "kind": "symbol",
@@ -40,11 +58,11 @@
   ],
   "references": {
     "1": {
-      "note": "Defines the function `_agent_notifier_banner` (lines 22-31) — Return the stale-supervisor banner without blocking a tool response..",
+      "note": "Defines the function `_agent_notifier_banner` (lines 127-138) — Return the stale-supervisor banner without blocking a tool response.",
       "targets": [
         {
           "anchor": {
-            "blob": "9908eea537fbd4a7b15c1a0ed275bee8388ffc72",
+            "blob": "1e151bfd9338a57f52c14bca69c5e9cb90e9398f",
             "content": "sha256:c53b403544d1af5605724d601825fc96eaf6ec314bd27da5a480f8a235019097",
             "locator": {
               "kind": "symbol",
@@ -56,11 +74,11 @@
       ]
     },
     "2": {
-      "note": "Defines the function `_attach_lifecycle_tail` (lines 34-44).",
+      "note": "Defines the function `_attach_lifecycle_tail` (lines 139-158).",
       "targets": [
         {
           "anchor": {
-            "blob": "9908eea537fbd4a7b15c1a0ed275bee8388ffc72",
+            "blob": "1e151bfd9338a57f52c14bca69c5e9cb90e9398f",
             "content": "sha256:b9a1f903280fdf70c544924c96f7717d7189f719708eac93720b3b059a8681be",
             "locator": {
               "kind": "symbol",
@@ -72,12 +90,12 @@
       ]
     },
     "3": {
-      "note": "Defines the function `complete_tool_response` (lines 47-61) — Validate, enrich, count, and observe one application result..",
+      "note": "Defines the function `complete_tool_response` (lines 303-411) — Validate, enrich, count, and observe one application result.",
       "targets": [
         {
           "anchor": {
-            "blob": "9908eea537fbd4a7b15c1a0ed275bee8388ffc72",
-            "content": "sha256:8c6ce6cb3afcda77d14da74501bc9317aec63207eaa83ff57e536393afd03d6a",
+            "blob": "1e151bfd9338a57f52c14bca69c5e9cb90e9398f",
+            "content": "sha256:fc7b80ac552e5d77058d2aeba2aa7e1fd27b885acfcdc639d86c41b655f745e4",
             "locator": {
               "kind": "symbol",
               "name": "complete_tool_response"

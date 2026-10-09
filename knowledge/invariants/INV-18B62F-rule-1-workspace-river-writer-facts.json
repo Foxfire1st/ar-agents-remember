@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "Three proving tests pin the writer: bound first call, drop carry-then-clear, and no content leakage; without the record the choke could bypass the writer silently."
+  },
+  "applicability": "Every tool call a bound or unbound tool-server process completes.",
+  "conditions": [
+    "A writer is installed at server start; outside a server process the call is not observed."
+  ],
+  "exclusions": [
+    "Calls owned by an active earlier-kind lifecycle, which that path writes."
+  ],
+  "id": "INV-18B62F",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "case test_bound_first_call_writes_one_workspace_event_with_caller_and_facts in mcp/tests/test_tool_event_river.py; pytest mcp/tests/test_tool_event_river.py -p no:cacheprovider -n 0 -q -> 16 passed; notes/reports/role-launch/260928-MIK-L114-worker-4b5eb1b1-ea79-4dac-b8dd-ef796451e0b6.md"
+      ],
+      "path": "notes/reports/l114-curator-handoff-list.json"
+    },
+    "handoffEntry": "L114-W01",
+    "leaf": "260928-MIK-L114",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Rule-1 workspace-river writer: facts-only tool.completed per call, caller/targetRole/dropped facts, 120-char cap, per-append admission, counted failures.",
+  "status": "proposed",
+  "supersedes": []
+}

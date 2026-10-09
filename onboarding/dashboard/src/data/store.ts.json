@@ -1,6 +1,25 @@
 {
   "path": "dashboard/src/data/store.ts",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "771d1ca849e63161968eb0f54325d6f5a4fcd0e2",
+        "content": "sha256:3e95f2199d191216a63e27bcda9874e9c33ec94beb0b0da84399870306b2d4f9",
+        "locator": {
+          "kind": "symbol",
+          "name": "markEventsHydrated"
+        }
+      },
+      "id": "RLZ-VMENSJ",
+      "invariant": "INV-TKTBHD",
+      "origin": {
+        "handoffEntry": "L114-W12",
+        "leaf": "260928-MIK-L114"
+      },
+      "rationale": "markEventsHydrated records the ready marker's last feed in the store so the panel can name it when the window holds nothing.",
+      "role": "support"
+    }
+  ],
   "references": {
     "1": {
       "note": "The stable-equality + arrival-anchor module the merge is built on (volatile set mirror).\n\nAnchor: \"export const VOLATILE_AGE_FIELDS\"",

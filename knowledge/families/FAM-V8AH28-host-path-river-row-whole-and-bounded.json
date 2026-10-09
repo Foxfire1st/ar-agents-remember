@@ -1,0 +1,39 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "Writer, caller snapshot, choke division, bound, write-free stream and panel head together promise one attributed bounded row per completed call with a truthful head under the conditional domain: failed writes are counted in dropped with no cross-restart promise, and active earlier-kind lifecycle calls use that branch; no single place promises the whole chain."
+  },
+  "guarantee": "Every tool call completed on the host path lands exactly one facts-only row in the workspace river, attributed to its once-read caller and its started or addressed role and admitted under the river bound — unless the write fails, in which case the loss is counted in dropped on the next landed row and nothing is promised across a restart; calls owned by an active earlier-kind lifecycle use that branch instead. The panel names who called and when the river was last fed, while the stream itself writes nothing and deletes nothing.",
+  "id": "FAM-V8AH28",
+  "members": [
+    "INV-18B62F",
+    "INV-0MX54D",
+    "INV-P661EM",
+    "INV-PHS9T7",
+    "INV-S11488",
+    "INV-VSRHV3"
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "case test_bound_first_call_writes_one_workspace_event_with_caller_and_facts in mcp/tests/test_tool_event_river.py; pytest mcp/tests/test_tool_event_river.py -p no:cacheprovider -n 0 -q -> 16 passed; notes/reports/role-launch/260928-MIK-L114-worker-4b5eb1b1-ea79-4dac-b8dd-ef796451e0b6.md"
+      ],
+      "path": "notes/reports/l114-curator-handoff-list.json"
+    },
+    "handoffEntry": "river-row",
+    "leaf": "260928-MIK-L114",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "routes": [
+    "mcp/src/agents_remember/observer",
+    "mcp/src/agents_remember/application",
+    "mcp/src/agents_remember/serving",
+    "dashboard/src/panels"
+  ],
+  "schema": "ar-family/v1",
+  "status": "proposed",
+  "title": "Completed host-path tool calls land one bounded, attributed river row; failed writes are counted and restarts promise nothing"
+}

@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "No-file-change and last-feed cases pin the write-free stream; without the record a reader could recreate the lockfile."
+  },
+  "applicability": "Browsers connected to /api/events.",
+  "conditions": [
+    "Reads hold the shared lock, or proceed lockless only with no lockfile before and after."
+  ],
+  "exclusions": [
+    "Lifecycle-log reclamation, owned by the projection pass.",
+    "Cursors inside reclaimed history, which reseat at the retained head."
+  ],
+  "id": "INV-S11488",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "case test_connected_stream_changes_no_file_and_names_the_last_feed in mcp/tests/test_tool_event_river.py; pytest mcp/tests/test_tool_event_river.py -p no:cacheprovider -n 0 -q -> 16 passed; notes/reports/role-launch/260928-MIK-L114-worker-4b5eb1b1-ea79-4dac-b8dd-ef796451e0b6.md"
+      ],
+      "path": "notes/reports/l114-curator-handoff-list.json"
+    },
+    "handoffEntry": "L114-W08",
+    "leaf": "260928-MIK-L114",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Rule-7 stream is write-free; ready carries lastEventTs; protocol otherwise unchanged.",
+  "status": "proposed",
+  "supersedes": []
+}

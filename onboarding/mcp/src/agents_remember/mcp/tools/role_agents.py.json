@@ -1,6 +1,43 @@
 {
   "path": "mcp/src/agents_remember/mcp/tools/role_agents.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "39bd9a4dbbf6d9951c4929856a574d14c520023f",
+        "content": "sha256:3269bf4844a96cc66faaba066289476830b4ff4dda0d47fe28d0f831d985c687",
+        "locator": {
+          "kind": "symbol",
+          "name": "role_start_payload"
+        }
+      },
+      "id": "RLZ-FDKA6K",
+      "invariant": "INV-0ZW4BP",
+      "origin": {
+        "handoffEntry": "L114-W05",
+        "leaf": "260928-MIK-L114"
+      },
+      "rationale": "role_start_payload carries the started role around the completion choke on a context variable, because the choke receives the answer and the answer must not carry the role.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "39bd9a4dbbf6d9951c4929856a574d14c520023f",
+        "content": "sha256:f068b965486730039857669797d0cd0f9636ab759e0ec73b6f927b9e9a3dd3a2",
+        "locator": {
+          "kind": "symbol",
+          "name": "role_message_payload"
+        }
+      },
+      "id": "RLZ-ZG3HK3",
+      "invariant": "INV-0ZW4BP",
+      "origin": {
+        "handoffEntry": "L114-W05",
+        "leaf": "260928-MIK-L114"
+      },
+      "rationale": "role_message_payload carries the addressed role the same way, resolving it from the recipient receipt when the call addresses an agent id that names no role itself.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "Frozen implementation of role_start_payload supporting the stated file behavior.",

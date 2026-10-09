@@ -890,7 +890,8 @@ projection once; `GET /api/events` tails the raw `ar-observer-event/v1` log with
 resume for lifecycle sources and lock-consistent virtual byte offsets for the live-compacted workspace
 source (`serving.events`), doing one retained-backlog scan per connect,
 streaming that bounded backlog in chunks (no whole-history materialization), filtering
-`lifecycle.heartbeat` out of the river, and pruning expired logs on a slow cadence; `POST /api/actions/{action}`
+`lifecycle.heartbeat` out of the river (lifecycle-log reclamation belongs to the projection
+pass, never to this stream); `POST /api/actions/{action}`
 validates lifecycle transitions against `ActionAvailability` (no mutation) and records
 targeted gate-decision verbs as developer-attributed gate decisions, including `gateId` staleness
 checks and rejection notes (`serving.actions` + `gate_decide_for_lifecycle`). `POST /api/operator-inbox` writes developer/dashboard-attributed

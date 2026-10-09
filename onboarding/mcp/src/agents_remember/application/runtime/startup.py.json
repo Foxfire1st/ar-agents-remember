@@ -1,6 +1,25 @@
 {
   "path": "mcp/src/agents_remember/application/runtime/startup.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "fc2da95a5fcd8329ce16067afc1a9291becc04b5",
+        "content": "sha256:2ffb803c1fa60fbe5b634fe22da023a150409f46617f6c60ffe3345f553d154e",
+        "locator": {
+          "kind": "symbol",
+          "name": "build_tool_event_writer"
+        }
+      },
+      "id": "RLZ-GTHQ74",
+      "invariant": "INV-19YW49",
+      "origin": {
+        "handoffEntry": "L114-W04",
+        "leaf": "260928-MIK-L114"
+      },
+      "rationale": "build_tool_event_writer snapshots the caller and installs the process writer at startup; a server started a second ago writes at its first call only if this runs before any tool call.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "MCP startup migrates its owned logs before ambient installation.",

@@ -1,6 +1,43 @@
 {
   "path": "dashboard/src/panels/EventRiver.tsx",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "539e6e0dfac6147013ce80409fdc72508cca76fd",
+        "content": "sha256:8af2b3b6fef974e84352c5cde2d37ddd0510b1be6b37c35e4b342b3287ec2405",
+        "locator": {
+          "kind": "symbol",
+          "name": "newestFedTs"
+        }
+      },
+      "id": "RLZ-122GPW",
+      "invariant": "INV-N6DKKD",
+      "origin": {
+        "handoffEntry": "L114-W38",
+        "leaf": "260928-MIK-L114"
+      },
+      "rationale": "The head takes the maximum valid timestamp across the window and store metadata, so replay order can never move it backwards.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "539e6e0dfac6147013ce80409fdc72508cca76fd",
+        "content": "sha256:8fa41b882b39f2c01f2b107ba9975c64f63f70d38c2a82599c2186bded150e4f",
+        "locator": {
+          "kind": "symbol",
+          "name": "EventRiver"
+        }
+      },
+      "id": "RLZ-RTA0VQ",
+      "invariant": "INV-VSRHV3",
+      "origin": {
+        "handoffEntry": "L114-W11",
+        "leaf": "260928-MIK-L114"
+      },
+      "rationale": "EventRiver is the mounted panel whose head names the newest feed across the window and the store metadata; arrival order must never move it backwards.",
+      "role": "presentation"
+    }
+  ],
   "references": {
     "1": {
       "note": "The raw event channel (single-encoded) it consumes.",

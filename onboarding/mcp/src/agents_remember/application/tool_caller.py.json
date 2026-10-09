@@ -1,0 +1,58 @@
+{
+  "path": "mcp/src/agents_remember/application/tool_caller.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "95a3eeda739d9956cbd20b2497b65cfd1340d99c",
+        "content": "sha256:eb0b2419810d904dd4d85d8a1729414ebf34ad8c8f11b7cffdd79e383b3ae500",
+        "locator": {
+          "kind": "symbol",
+          "name": "snapshot_tool_caller"
+        }
+      },
+      "id": "RLZ-J9300H",
+      "invariant": "INV-0MX54D",
+      "origin": {
+        "handoffEntry": "L114-W02",
+        "leaf": "260928-MIK-L114"
+      },
+      "rationale": "snapshot_tool_caller freezes the caller once at server start from the launch binding; rows stay whole without another read only if this snapshot, not per-call reads, names the caller.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The caller is snapshotted once from the launch binding and never raises.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "95a3eeda739d9956cbd20b2497b65cfd1340d99c",
+            "content": "sha256:eb0b2419810d904dd4d85d8a1729414ebf34ad8c8f11b7cffdd79e383b3ae500",
+            "locator": {
+              "kind": "symbol",
+              "name": "snapshot_tool_caller"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The harness is named from the settings file path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "95a3eeda739d9956cbd20b2497b65cfd1340d99c",
+            "content": "sha256:f0789362bf72db56af9508b3b7aa03acf691f71944966c466b6f69a3b7696e2c",
+            "locator": {
+              "kind": "symbol",
+              "name": "derive_harness"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

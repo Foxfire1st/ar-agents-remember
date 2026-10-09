@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "The one-branch-or-other cases pin the choke division; without the record a call could write twice or not at all."
+  },
+  "applicability": "Every tool response completed on the host path.",
+  "conditions": [
+    "Exactly one branch writes: lifecycle-owned or workspace river, never both."
+  ],
+  "exclusions": [
+    "Responses completed outside complete_tool_response."
+  ],
+  "id": "INV-P661EM",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "cases test_bound_first_call_writes_one_workspace_event_with_caller_and_facts, test_active_lifecycle_writes_its_event_as_today_and_no_second_one in mcp/tests/test_tool_event_river.py; pytest mcp/tests/test_tool_event_river.py -p no:cacheprovider -n 0 -q -> 16 passed; notes/reports/role-launch/260928-MIK-L114-worker-4b5eb1b1-ea79-4dac-b8dd-ef796451e0b6.md"
+      ],
+      "path": "notes/reports/l114-curator-handoff-list.json"
+    },
+    "handoffEntry": "L114-W03",
+    "leaf": "260928-MIK-L114",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Choke point routes non-active-lifecycle calls to the workspace writer; active-lifecycle path unchanged.",
+  "status": "proposed",
+  "supersedes": []
+}

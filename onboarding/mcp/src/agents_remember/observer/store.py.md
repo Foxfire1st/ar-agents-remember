@@ -24,9 +24,16 @@ Lifecycle heartbeats no longer append to `events.jsonl`. They atomically overwri
 log, while `read_log()` and `read_heartbeat()` expose the two storage layers to the projection cache.
 Real lifecycle and workspace events retain their prior JSONL routing.
 
-### 260707-HFX2-L12 CS-6 Update
+### 260928-MIK-L114 River Admission And Write-Free Reads
 
-`EventStore.read()` now skips corrupt, legacy, or torn JSONL lines. That keeps one bad lifecycle event row from freezing the projection tick fleet-wide while preserving append-only write semantics for valid rows.
+`workspace_river_lock()` takes an optional `timeout`: `None` waits as before, a bound
+raises `TimeoutError` (an `OSError`) so a stuck lock is a counted loss, never a hung tool
+call. `workspace_river_read()` holds the river lock for reading without creating any
+observer file — read-only open under a shared lock, and no lock at all when no lockfile
+exists. `EventStore.append()` routes lifecycle-less events through the shared admission
+every writer obeys; lifecycle logs never take the lock either way.
+
+`EventStore.read()` skips corrupt, legacy, or torn JSONL lines. That keeps one bad lifecycle event row from freezing the projection tick fleet-wide while preserving append-only write semantics for valid rows.
 
 `EventStore(observer_root)` holds the `logs/observer/` root. `log_path(lifecycle_id)`
 routes to `lifecycles/<id>/events.jsonl` when a lifecycle id is present, else the

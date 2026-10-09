@@ -45,6 +45,14 @@ the task name even after the corresponding live lifecycle projection disappears.
 uses `Intl.DateTimeFormat` and falls back to `-` for malformed timestamps; it does not slice ISO
 strings.
 
+### 260928-MIK-L114 Host-Path Caller Rows
+
+`summarizeToolCompleted` divides on caller facts: rows carrying them show who called
+(role and task, or chat with harness), the outcome as done / refused with code / reached
+state, and the started or addressed role for role tools. Earlier-kind rows carry no caller
+facts and keep their base ok/failed labels with lifecycle context. Unknown roles and tasks
+render verbatim; only known roles keep friendly labels.
+
 ### Conventions
 
 This module owns display translation only. It does not mutate raw events, infer payload values from
@@ -80,7 +88,8 @@ repository's observer event contract.
 - Focused render coverage proves lifecycle-only history rows use task document labels instead of raw lifecycle ids. [5]
 - `eventSummaryContextReady` gates lifecycle/enclosure-bound rows on available lifecycle, enclosure, or task-document context. [6]
 - `EventRiver` drops not-ready rows before calling `summarizeEvent`. [7]
-- The reload-order regression covers a lifecycle-bound row hidden until task-document context arrives. [8]
+- Lifecycle-only history rows use task-document labels instead of raw lifecycle ids once context exists. [8]
+- A lifecycle-bound row stays hidden until task-document context arrives, then renders. [9]
 
 ### Cross-Repo References
 

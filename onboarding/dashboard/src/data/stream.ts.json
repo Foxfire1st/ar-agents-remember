@@ -1,6 +1,25 @@
 {
   "path": "dashboard/src/data/stream.ts",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "02afc6e0851be4e730b3b9d0fa41c83479dcc1df",
+        "content": "sha256:4b19bf2ef009a90f166dcaa0ece35050cfc096fdc34aab6f4d865b6864308d6d",
+        "locator": {
+          "kind": "symbol",
+          "name": "connectEvents"
+        }
+      },
+      "id": "RLZ-6SZT0A",
+      "invariant": "INV-QJC7QN",
+      "origin": {
+        "handoffEntry": "L114-W13",
+        "leaf": "260928-MIK-L114"
+      },
+      "rationale": "connectEvents opens the raw channel and parses the ready frame without changing event framing; hydration metadata flows through this call.",
+      "role": "support"
+    }
+  ],
   "references": {
     "1": {
       "note": "No relevant documentation found after checking local project source and package contracts.",

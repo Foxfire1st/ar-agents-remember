@@ -44,6 +44,13 @@ instead of growing the panel), preserves the raw event count in the panel title,
 no events exist, and shows a separate "No displayable events." state when only hidden/noisy events are
 present.
 
+### 260928-MIK-L114 Last-Fed Head
+
+The head names when the river was last fed: `newestFedTs` takes the newest valid timestamp
+across the window and the store's last feed — never arrival position, so a source-order
+replay or a late older arrival cannot move it backwards. With an empty window and a known
+feed it says so with that time; with no feed anywhere it keeps "No events yet".
+
 ### Invariants And Boundaries
 
 Read-only; the trust->colour mapping is the provenance contract (North-Star "never pretend declared

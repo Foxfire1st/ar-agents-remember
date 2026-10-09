@@ -16,7 +16,10 @@ produced it.
 ### Logic
 
 `initialize_mcp_application` migrates recognized durable logs without the dashboard-owned notifier
-log, then installs ambient lifecycle state. `mcp_serving_build_payload` converts the cached serving
+log, then installs ambient lifecycle state. Since 260928-MIK-L114 it also installs the
+workspace-river tool writer (`build_tool_event_writer`): the launch binding and its task
+document are snapshotted once here, so a server started a second ago writes at its first
+call; an unreadable binding changes nothing about startup. `mcp_serving_build_payload` converts the cached serving
 stamp to the strict shared wire model at the application boundary; MCP registration never imports
 the serving domain directly. Dashboard autostart remains a separate startup hook.
 

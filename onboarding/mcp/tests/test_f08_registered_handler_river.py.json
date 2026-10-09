@@ -1,0 +1,58 @@
+{
+  "path": "mcp/tests/test_f08_registered_handler_river.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "f4c1e790e40b463afc085e45eaa3aafa8fc36823",
+        "content": "sha256:a16ded8ded9e5a0cb72b14e6519f0a7f81b9765fb9a1147ef8866109d0cdd826",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_f08_bound_first_call_through_registered_handler"
+        }
+      },
+      "facet": "The registered-handler path carries caller and facts.",
+      "id": "PRF-9NMH1H",
+      "invariant": "INV-19YW49",
+      "origin": {
+        "handoffEntry": "L114-W04",
+        "leaf": "260928-MIK-L114"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Bound first call through the registered handler carries caller and facts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f4c1e790e40b463afc085e45eaa3aafa8fc36823",
+            "content": "sha256:a16ded8ded9e5a0cb72b14e6519f0a7f81b9765fb9a1147ef8866109d0cdd826",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_f08_bound_first_call_through_registered_handler"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "A fresh process writes its first call through startup.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f4c1e790e40b463afc085e45eaa3aafa8fc36823",
+            "content": "sha256:55166cdd4c4fd695a0e530a748d8236382f82e8ac1e333ced96f848f818be256",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_f08_fresh_process_first_call_through_registered_handler"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

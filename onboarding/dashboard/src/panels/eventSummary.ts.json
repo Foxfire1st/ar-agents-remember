@@ -1,6 +1,43 @@
 {
   "path": "dashboard/src/panels/eventSummary.ts",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "d23908b375ed9c6971426892abe1439883faa3d6",
+        "content": "sha256:ef649fbdcf67961ba5bccd75c6b25d32135ff1e0fe1b5e6b80f96550d18acb28",
+        "locator": {
+          "kind": "symbol",
+          "name": "summarizeEvent"
+        }
+      },
+      "id": "RLZ-5XKEGZ",
+      "invariant": "INV-NVWE26",
+      "origin": {
+        "handoffEntry": "L114-W10",
+        "leaf": "260928-MIK-L114"
+      },
+      "rationale": "summarizeEvent renders each row's label, caller context, and outcome meta; caller/outcome display with legacy preservation is this function's branching.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "d23908b375ed9c6971426892abe1439883faa3d6",
+        "content": "sha256:fe55ae947b3a6fa962f00b29ba3e007c2b1a331d5ff9136f442fee3e8a425c32",
+        "locator": {
+          "kind": "symbol",
+          "name": "summarizeToolCompleted"
+        }
+      },
+      "id": "RLZ-J3YW3P",
+      "invariant": "INV-N6DKKD",
+      "origin": {
+        "handoffEntry": "L114-W38",
+        "leaf": "260928-MIK-L114"
+      },
+      "rationale": "The row summary branches on caller facts: host-path rows use the new outcome with verbatim unknowns, earlier-kind rows keep ok/failed.",
+      "role": "presentation"
+    }
+  ],
   "references": {
     "1": {
       "note": "The raw observer event envelope rendered by this formatter.",
@@ -77,12 +114,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bf408b0d04334071a43207138086e4cfb6f2a374",
+            "blob": "289124eb65069d96a2a16ec167d0190a9bbdc367",
             "content": "sha256:1c94cf95655949b91d71d652c1ab17b9357ab60f000db84bed8fabaf6be17103",
             "locator": {
-              "end": 418,
+              "end": 426,
               "kind": "line_range",
-              "start": 418
+              "start": 426
             },
             "path": "mcp/src/agents_remember/observer/ambient.py"
           },
@@ -90,12 +127,12 @@
         },
         {
           "anchor": {
-            "blob": "bf408b0d04334071a43207138086e4cfb6f2a374",
+            "blob": "289124eb65069d96a2a16ec167d0190a9bbdc367",
             "content": "sha256:dbcbaa2468ece17ff2403bbfb72f11f7e1c714be7e81a8f13df058147f73d948",
             "locator": {
-              "end": 452,
+              "end": 460,
               "kind": "line_range",
-              "start": 452
+              "start": 460
             },
             "path": "mcp/src/agents_remember/observer/ambient.py"
           },
@@ -103,7 +140,7 @@
         },
         {
           "anchor": {
-            "blob": "bf408b0d04334071a43207138086e4cfb6f2a374",
+            "blob": "289124eb65069d96a2a16ec167d0190a9bbdc367",
             "content": "sha256:862871a9116fbab67aee45d2ba85bd1e35fb5750effb9048fc9ce6fc7355677b",
             "locator": {
               "end": 312,
@@ -116,7 +153,7 @@
         },
         {
           "anchor": {
-            "blob": "bf408b0d04334071a43207138086e4cfb6f2a374",
+            "blob": "289124eb65069d96a2a16ec167d0190a9bbdc367",
             "content": "sha256:729c273b64711e2e0ac65dcc92f6a4b72006c2d0c528fd4dd4566ee42b2739aa",
             "locator": {
               "end": 217,
@@ -134,12 +171,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4d15a0455d7d09fc7f066615ef67e1560f9d37a9",
+            "blob": "539e6e0dfac6147013ce80409fdc72508cca76fd",
             "content": "sha256:2c5ce97c9242d264c581d8e1abbf693fad8c82d495fa6a787817afcb6b3fcb04",
             "locator": {
-              "end": 73,
+              "end": 94,
               "kind": "line_range",
-              "start": 62
+              "start": 83
             },
             "path": "dashboard/src/panels/EventRiver.tsx"
           },
@@ -152,12 +189,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "448c5e3ab54d21267abca8e9d1d1cf1d8851638e",
+            "blob": "45457eab2c475824264e05a7abb33ceaa18b5051",
             "content": "sha256:3e86001d53aad83fb55843329118a148d0c3bd908c5646d2596e6b54ba5ecbd6",
             "locator": {
-              "end": 334,
+              "end": 433,
               "kind": "line_range",
-              "start": 314
+              "start": 413
             },
             "path": "dashboard/src/panels/EventRiver.test.tsx"
           },
@@ -170,7 +207,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3197c79bd1aec076f39a5e65e6d0a3b3d99052ce",
+            "blob": "d23908b375ed9c6971426892abe1439883faa3d6",
             "content": "sha256:ff4226bd5ed17704780445b06a57d0a29161f1e105b288bc293d963d7dcce2d0",
             "locator": {
               "kind": "symbol",
@@ -186,12 +223,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4d15a0455d7d09fc7f066615ef67e1560f9d37a9",
+            "blob": "539e6e0dfac6147013ce80409fdc72508cca76fd",
             "content": "sha256:2c5ce97c9242d264c581d8e1abbf693fad8c82d495fa6a787817afcb6b3fcb04",
             "locator": {
-              "end": 73,
+              "end": 94,
               "kind": "line_range",
-              "start": 62
+              "start": 83
             },
             "path": "dashboard/src/panels/EventRiver.tsx"
           },
@@ -200,16 +237,34 @@
       ]
     },
     "8": {
-      "note": "The reload-order regression covers a lifecycle-bound row hidden until task-document context arrives.\n\nAnchor: \"uses task document labels when event history no longer has a live lifecycle row\"",
+      "note": "Lifecycle-only history rows use task-document labels instead of raw lifecycle ids once context exists.",
       "targets": [
         {
           "anchor": {
-            "blob": "448c5e3ab54d21267abca8e9d1d1cf1d8851638e",
+            "blob": "45457eab2c475824264e05a7abb33ceaa18b5051",
             "content": "sha256:3e86001d53aad83fb55843329118a148d0c3bd908c5646d2596e6b54ba5ecbd6",
             "locator": {
-              "end": 334,
+              "end": 433,
               "kind": "line_range",
-              "start": 314
+              "start": 413
+            },
+            "path": "dashboard/src/panels/EventRiver.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "A lifecycle-bound row stays hidden until task-document context arrives, then renders.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "45457eab2c475824264e05a7abb33ceaa18b5051",
+            "content": "sha256:976af7e0e1345c600be688b12cbf679275f4991a6443f03c83bb65fd35c6fc26",
+            "locator": {
+              "end": 366,
+              "kind": "line_range",
+              "start": 341
             },
             "path": "dashboard/src/panels/EventRiver.test.tsx"
           },

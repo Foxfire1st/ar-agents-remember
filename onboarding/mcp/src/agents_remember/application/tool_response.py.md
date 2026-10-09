@@ -14,15 +14,23 @@ Complete one tool result at the application boundary.
 
 Module-level surface:
 
-- `_agent_notifier_banner` (function, lines 22-31) — Return the stale-supervisor banner without blocking a tool response.
-- `_attach_lifecycle_tail` (function, lines 34-44)
-- `complete_tool_response` (function, lines 47-61) — Validate, enrich, count, and observe one application result.
+- `_agent_notifier_banner` (function, lines 127-138) — Return the stale-supervisor banner without blocking a tool response.
+- `_attach_lifecycle_tail` (function, lines 139-158)
+- `complete_tool_response` (function, lines 303-411) — Validate, enrich, count, and observe one application result.
 
 The registered response model is selected and validated before final output. Lifecycle hints
 and notifier banners are attached as model fields through the finalizer’s enrichment callback,
 then token counting and serialization cover the complete emitted response. Explicit producer
 recovery guidance takes precedence; cross-task guidance is omitted. Observer tool completion
 receives that same finalized payload rather than an independently reconstructed response.
+
+### 260928-MIK-L114 Event River Feed At The Completion Choke
+
+`complete_tool_response` now divides at the lifecycle boundary: a call owned by an active
+lifecycle of the earlier kind writes its event as before with no second row; every other
+call goes to the workspace river through `record_tool_completed` with the delivered
+answer count, needing no lifecycle and no call before it. The tool answers as if the
+event had been written even when the write is counted as dropped.
 
 ### MIK-R108 answer boundary and log wiring
 
@@ -32,9 +40,6 @@ whole result is filed beside the daily log. `_write_delivered_line` re-runs the 
 late line failure and keeps the short-form ceiling once the answer is cut; the observer and the log
 line count the delivered answer, and `_canonical_json` is the canonical form used for whole-result
 byte accounting.
-
-cit:([`complete_tool_response`], mcp/src/agents_remember/application/tool_response.py:131-145)
-cit:([`_attach_lifecycle_tail`], mcp/src/agents_remember/application/tool_response.py:112-128)
 
 ### Conventions
 
@@ -54,9 +59,9 @@ None.
 
 This module defines the top-level symbols cited below; each row points at the exact source range holding the anchor.
 
-- Defines the function `_agent_notifier_banner` (lines 22-31) — Return the stale-supervisor banner without blocking a tool response.. [1]
-- Defines the function `_attach_lifecycle_tail` (lines 34-44). [2]
-- Defines the function `complete_tool_response` (lines 47-61) — Validate, enrich, count, and observe one application result.. [3]
+- Defines the function `_agent_notifier_banner` (lines 127-138) — Return the stale-supervisor banner without blocking a tool response. [1]
+- Defines the function `_attach_lifecycle_tail` (lines 139-158). [2]
+- Defines the function `complete_tool_response` (lines 303-411) — Validate, enrich, count, and observe one application result. [3]
 
 ## L23 Final Candidate Disposition
 

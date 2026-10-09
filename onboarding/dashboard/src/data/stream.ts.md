@@ -23,7 +23,9 @@ active-enclosure set the Topology constellation filters on; its delta arrives as
 `store.applyDelta`, and maps EventSource `open`/`error` to the connection badge state. `connectEvents`
 opens `GET /api/events`, forwards each raw `event` payload to the supplied `onLine` callback, and invokes
 the optional `onReady` callback when the backend emits its explicit `ready` marker after retained backlog
-delivery. 260715-FEUI-L2 (review finding 2) adds the optional **`onInterrupt`** callback, fired on
+delivery. Since 260928-MIK-L114 the callback receives the parsed marker: `parseReady`
+hands the opener `{ lastEventTs }` when it names one, and an unreadable marker still
+opens the gate. 260715-FEUI-L2 (review finding 2) adds the optional **`onInterrupt`** callback, fired on
 the EventSource `error` event: every connection replays a backlog before its own `ready` (an
 undecodable `Last-Event-ID` cursor makes the server fall back to the full initial window), so a
 consumer gating application on `ready` must RE-CLOSE its gate on interrupt — the seat-event

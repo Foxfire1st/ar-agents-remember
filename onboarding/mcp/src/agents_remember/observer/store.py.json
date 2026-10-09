@@ -1,6 +1,61 @@
 {
   "path": "mcp/src/agents_remember/observer/store.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "972bfe128d72a489b3cdb2563a352563c594856e",
+        "content": "sha256:eaa397ca2502ada8e0ddc0503cca873d55f6564cd5900f01ae9a096d711c8972",
+        "locator": {
+          "kind": "symbol",
+          "name": "workspace_river_lock"
+        }
+      },
+      "id": "RLZ-1852X2",
+      "invariant": "INV-W977KH",
+      "origin": {
+        "handoffEntry": "L114-W07",
+        "leaf": "260928-MIK-L114"
+      },
+      "rationale": "workspace_river_lock is the cross-process exclusive lock that keeps a writer from appending into a file another process is replacing, and bounds the wait so a stuck lock is a counted loss rather than a hung call.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "972bfe128d72a489b3cdb2563a352563c594856e",
+        "content": "sha256:b21739c63223a27b2a7cb70528aa785ecec37fe55ce96834808eaa463a5d4ca0",
+        "locator": {
+          "kind": "symbol",
+          "name": "workspace_river_read"
+        }
+      },
+      "id": "RLZ-6TWJSK",
+      "invariant": "INV-N6DKKD",
+      "origin": {
+        "handoffEntry": "L114-W38",
+        "leaf": "260928-MIK-L114"
+      },
+      "rationale": "The read-side lock opens the existing lockfile read-only and never creates one, keeping the browser stream write-free.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "972bfe128d72a489b3cdb2563a352563c594856e",
+        "content": "sha256:51da4b124f3734816bf9d7afb1f5bd740eae16451caa24141d3dfe21b276fbc1",
+        "locator": {
+          "kind": "symbol",
+          "name": "EventStore.append"
+        }
+      },
+      "id": "RLZ-C8EBGZ",
+      "invariant": "INV-NJ51EA",
+      "origin": {
+        "handoffEntry": "L114-W37",
+        "leaf": "260928-MIK-L114"
+      },
+      "rationale": "The shared lifecycle-less append now routes through the admission, so existing seat and replay writers cannot push the river over the ceiling.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "The event envelope serialized and validated by the observer model.\n\nAnchor: \"class Event\"",

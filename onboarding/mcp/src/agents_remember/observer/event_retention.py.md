@@ -31,9 +31,15 @@ deleting only `events.jsonl` left `heartbeat.json` and served/gate sidecars perm
 The whole-directory deletion is intentional: protected or active lifecycles cannot reach this
 boundary.
 
-### 260707-HFX2-L12 CS-6 Update
+### 260928-MIK-L114 Per-Append Size Admission
 
-`compact_workspace_river()` physically reclaims aged `workspace/events.jsonl` rows at serving startup, the one cursor-safe boundary before SSE clients and serving writers exist. The always-on live compactor remains HFX2-L13 scope because byte-offset cursors and cross-process appenders need a larger contract change.
+`compact_workspace_river()` now serves both cuts through `_compact_under_lock()`: the cut
+by age (rows older than the replay TTL) and the cut by size (oldest rows until the file
+is at most the trim bound). `admit_workspace_river_row()` admits every append under the
+river lock — file size plus row bytes over the 16 MiB ceiling cuts oldest whole rows to
+8 MiB first, then appends; a row that fits no cut is refused, not written, and the
+caller counts it. There is no interval between size checks, no store beside the river
+and no second event file. The dashboard's age compaction keeps its hour and its interval.
 
 ### Logic
 
@@ -119,8 +125,8 @@ No relevant external documentation found after checking in-repo design docs for 
 
 ### Repo-Internal References
 
-The serving layer calls this policy before raw event replay. The production owners below
-define dormant pruning, heartbeat-skipping activity reads and bounded active replay.
+The serving layer calls this policy for windowed fresh-offset reads before raw event replay. The production owners below
+define dormant pruning, heartbeat-skipping activity reads and bounded active replay. Lifecycle-log reclamation itself belongs to the projection pass, not to any raw-event reader.
 
 - Fresh-connect offsets are bounded: dormant logs to EOF, active logs to the recent replay window, workspace to its TTL boundary. [1]
 - `lifecycle_is_dormant` is the inactivity cleanup key; `_retention_facts`/`last_activity_at` read the last real activity and ignore heartbeats. [2]
@@ -128,7 +134,7 @@ define dormant pruning, heartbeat-skipping activity reads and bounded active rep
 - `protected_lifecycle_ids` exempts a log from pruning regardless of inactivity; the projection store passes a not-yet-retired master series' leaf ids so a live durable task keeps its history. [4]
 - The protection set is derived from durable enclosure state (a live master series) by the admission module. [5]
 - `_first_retained_offset` keeps unparseable-timestamp events and skips only events with a valid ts strictly older than the cutoff. [6]
-- The raw SSE tailer calls retention pruning and uses retained initial offsets only when no cursor is supplied. [7]
+- The raw SSE tailer uses retained initial offsets only when no cursor is supplied; it never prunes — reclamation belongs to the projection pass. [7]
 
 ### Cross-Repo References
 

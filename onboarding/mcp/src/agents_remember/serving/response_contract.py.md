@@ -108,6 +108,12 @@ this is a `200` body contract, not a new status.
 - **The client mirror and the control that renders the state and withholds the total.** [3]
 - **The cases that measure the discriminator and the route status.** [4]
 
+## 260928-MIK-L114 Last-Feed Ready Marker
+
+`StreamReadyMarker` carries `last_event_ts`: the newest event timestamp across every
+source, which may be older than the replay window, so the panel names the last feed on a
+silent river. Absent when the store holds no event at all.
+
 ## Evidence
 
 ### Docs References

@@ -136,6 +136,15 @@ stream completion or subprocess opportunities; cases and product assertions rema
 modules. Consumer-list changes follow actual source relations, including new cache/scanner tests
 and the state suite's real conftest import. These declarations do not prove a test executed.
 
+## 260928-MIK-L114 River-Test Registration And Catalog Rewrite
+
+The `unit-regression` lane registers the river tests (`test_f07_missing_lock_cursor.py`,
+`test_f08_registered_handler_river.py`, `test_tool_event_river.py`) in canonical byte
+order. The lifecycle catalog is rewritten in canonical form around them: merge-doubled
+contract rows dropped to one copy each, the `knowledge-generation-cases` pair resolved to
+the branch copy whose evidence node file is present, and rows whose owner and evidence
+files are both gone removed without file restores.
+
 ## Evidence
 
 - The schema version and the large-fixture threshold at the top of the file. [1]

@@ -51,6 +51,12 @@ The lane catalog carries the incoming shared evidence-lane content from the L79 
 
 `mcp/tests/test_developer_question_wording.py` is added to the `unit-regression` lane; no other lane changes.
 
+## 260928-MIK-L114 River Tests Join Unit-Regression
+
+`mcp/tests/test_f07_missing_lock_cursor.py`, `mcp/tests/test_f08_registered_handler_river.py`
+and `mcp/tests/test_tool_event_river.py` are `unit-regression` rows in canonical byte
+order; each module appears in exactly one lane.
+
 ## Evidence
 
 ### Docs References

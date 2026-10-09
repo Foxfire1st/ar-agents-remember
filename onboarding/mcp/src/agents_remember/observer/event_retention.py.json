@@ -1,13 +1,86 @@
 {
   "path": "mcp/src/agents_remember/observer/event_retention.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "4f26a1f99f784a3d447ff45cf1ddbf66160c53cc",
+        "content": "sha256:5f06c9b71ce4cefe9c5c8b466e082a205be69656de4c6a5c2912935517fcd74b",
+        "locator": {
+          "kind": "symbol",
+          "name": "admit_workspace_river_row"
+        }
+      },
+      "id": "RLZ-52WKQM",
+      "invariant": "INV-PHS9T7",
+      "origin": {
+        "handoffEntry": "L114-W06",
+        "leaf": "260928-MIK-L114"
+      },
+      "rationale": "admit_workspace_river_row decides, under one lock acquisition, whether an incoming row fits, cuts room for it when it crosses the ceiling, and appends it; the bound at every append is this predicate.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "4f26a1f99f784a3d447ff45cf1ddbf66160c53cc",
+        "content": "sha256:5f06c9b71ce4cefe9c5c8b466e082a205be69656de4c6a5c2912935517fcd74b",
+        "locator": {
+          "kind": "symbol",
+          "name": "admit_workspace_river_row"
+        }
+      },
+      "id": "RLZ-8GVRFA",
+      "invariant": "INV-NJ51EA",
+      "origin": {
+        "handoffEntry": "L114-W37",
+        "leaf": "260928-MIK-L114"
+      },
+      "rationale": "The admission now reserves room for the incoming row before cutting, so a healthy river below the cap cuts instead of refusing the row.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "4f26a1f99f784a3d447ff45cf1ddbf66160c53cc",
+        "content": "sha256:32c3ff8ecb63687a357edba7ab8d920b8daa7f4a345b19792ad28f92e4c0cd16",
+        "locator": {
+          "kind": "symbol",
+          "name": "_compact_under_lock"
+        }
+      },
+      "id": "RLZ-GFSBW2",
+      "invariant": "INV-NJ51EA",
+      "origin": {
+        "handoffEntry": "L114-W37",
+        "leaf": "260928-MIK-L114"
+      },
+      "rationale": "The lock-held cut core lets check, cut, offset change, and append share one lock acquisition as the packet's locked admission requires.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "4f26a1f99f784a3d447ff45cf1ddbf66160c53cc",
+        "content": "sha256:8e7587c4c4843b3580e929a5f5c8185682724c6df776c7140f16c5704d248bb7",
+        "locator": {
+          "kind": "symbol",
+          "name": "compact_workspace_river"
+        }
+      },
+      "id": "RLZ-QZHJ5G",
+      "invariant": "INV-PHS9T7",
+      "origin": {
+        "handoffEntry": "L114-W06",
+        "leaf": "260928-MIK-L114"
+      },
+      "rationale": "compact_workspace_river is the single shared cut for age and size; the size admission reuses exactly this whole-row atomic replacement with the virtual base offset kept right.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "Fresh-connect offsets are bounded: dormant logs to EOF, active logs to the recent replay window, workspace to its TTL boundary.",
       "targets": [
         {
           "anchor": {
-            "blob": "b96a76283d373ac60a4e9cc1fa2e7630bc748565",
+            "blob": "4f26a1f99f784a3d447ff45cf1ddbf66160c53cc",
             "content": "sha256:68071c0726caf7a3e3be2cd438354796a804a7749f8f5bd8798b0281c5656b62",
             "locator": {
               "kind": "symbol",
@@ -23,7 +96,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b96a76283d373ac60a4e9cc1fa2e7630bc748565",
+            "blob": "4f26a1f99f784a3d447ff45cf1ddbf66160c53cc",
             "content": "sha256:2c8077691841e0e49e9ca04a447d27f3c93b121e67acd44cdabf623c3b5a67b3",
             "locator": {
               "kind": "symbol",
@@ -34,7 +107,7 @@
         },
         {
           "anchor": {
-            "blob": "b96a76283d373ac60a4e9cc1fa2e7630bc748565",
+            "blob": "4f26a1f99f784a3d447ff45cf1ddbf66160c53cc",
             "content": "sha256:682a2a3b69286c2c2056d61708310d77be4864db7342614637646ac1ef3dcfa5",
             "locator": {
               "kind": "symbol",
@@ -45,7 +118,7 @@
         },
         {
           "anchor": {
-            "blob": "b96a76283d373ac60a4e9cc1fa2e7630bc748565",
+            "blob": "4f26a1f99f784a3d447ff45cf1ddbf66160c53cc",
             "content": "sha256:24b73539de8a71cedb5394cef159bb87e05ae0279e1023e64d0b4758e3f4b582",
             "locator": {
               "kind": "symbol",
@@ -61,7 +134,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b96a76283d373ac60a4e9cc1fa2e7630bc748565",
+            "blob": "4f26a1f99f784a3d447ff45cf1ddbf66160c53cc",
             "content": "sha256:1fa5a3f578159b9ad3fb28b9ed574d55645e31e5f6d37562e32da8faab01f48d",
             "locator": {
               "kind": "symbol",
@@ -77,7 +150,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b96a76283d373ac60a4e9cc1fa2e7630bc748565",
+            "blob": "4f26a1f99f784a3d447ff45cf1ddbf66160c53cc",
             "content": "sha256:1fa5a3f578159b9ad3fb28b9ed574d55645e31e5f6d37562e32da8faab01f48d",
             "locator": {
               "kind": "symbol",
@@ -110,7 +183,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b96a76283d373ac60a4e9cc1fa2e7630bc748565",
+            "blob": "4f26a1f99f784a3d447ff45cf1ddbf66160c53cc",
             "content": "sha256:1198241f4948f356f4e86b0ae21d5057e0000b93fd0d55a3b32f01ef94e2c94a",
             "locator": {
               "kind": "symbol",
@@ -122,18 +195,16 @@
       ]
     },
     "7": {
-      "note": "The raw SSE tailer calls retention pruning and uses retained initial offsets only when no cursor is supplied.\n\nAnchor: \"async def stream_raw_events(\"; \"offsets = await asyncio.to_thread(initial_event_offsets, root, now=now)\"; \"await asyncio.to_thread(prune_expired_lifecycle_event_logs, root, now=now)\"",
+      "note": "The raw SSE tailer uses retained initial offsets only when no cursor is supplied; it never prunes — reclamation belongs to the projection pass.",
       "targets": [
         {
           "anchor": {
-            "blob": "557621687e7e8238a5f892f1663045a6fe629754",
-            "content": "sha256:121b3d3c8abb19ae1c688db3b51789720feb9c024ce6ccc4c4d4ebd94f9f36b3",
+            "blob": "4f26a1f99f784a3d447ff45cf1ddbf66160c53cc",
+            "content": "sha256:68071c0726caf7a3e3be2cd438354796a804a7749f8f5bd8798b0281c5656b62",
             "locator": {
-              "end": 277,
-              "kind": "line_range",
-              "start": 232
-            },
-            "path": "mcp/src/agents_remember/serving/events.py"
+              "kind": "symbol",
+              "name": "initial_event_offsets"
+            }
           },
           "kind": "code"
         }

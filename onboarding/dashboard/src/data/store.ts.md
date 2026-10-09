@@ -57,7 +57,9 @@ in `useStore` for React subscribers. State mutates through these actions:
   never breaks. This is a memory bound, not the removed silent newest-N display cap — backend
   observer-log retention is the real history bound and `EventRiver` virtualizes the window.
 - `markEventsHydrated` — marks the raw event stream ready after the backend emits the retained backlog
-  and the `ready` SSE marker.
+  and the `ready` SSE marker. Since 260928-MIK-L114 it also records `eventsLastTs`: the
+  ready marker's last feed, else the window's newest event, else the kept value — so the
+  panel names the last feed on a silent river.
 - `suppressAttention` / `releaseAttention` — optimistically hide queue rows while dismiss/clear POSTs
   are in flight, and restore failed dismissals. Analytics replacement prunes suppression ids that no
   longer exist in the server-computed queue.

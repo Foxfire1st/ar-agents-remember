@@ -1,0 +1,30 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Swallowing the ready frame on parse failure would stall hydration gating; the unreadable-marker case pins the gate opening."
+  },
+  "applicability": "Raw-channel opens from the dashboard.",
+  "conditions": [],
+  "exclusions": [
+    "Event framing, which is unchanged."
+  ],
+  "id": "INV-QJC7QN",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "stream.test.tsx cases 'hands the ready marker's last feed to the opener', 'still opens the gate on an unreadable ready marker'; npx vitest run src/panels/EventRiver.test.tsx src/data/stream.test.ts src/data/store.test.ts (dashboard/) -> EventRiver 17 passed, stream 6 passed, store green; notes/reports/role-launch/260928-MIK-L114-worker-4b5eb1b1-ea79-4dac-b8dd-ef796451e0b6.md"
+      ],
+      "path": "notes/reports/l114-curator-handoff-list.json"
+    },
+    "handoffEntry": "L114-W13",
+    "leaf": "260928-MIK-L114",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "ready payload parsed and handed to the opener; unreadable marker still opens the gate.",
+  "status": "proposed",
+  "supersedes": []
+}

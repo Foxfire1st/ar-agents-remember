@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "Read-once, title-once and unbound-chat tests pin the snapshot; without the record a per-call reread could return."
+  },
+  "applicability": "Tool-server processes started with or without a launch binding.",
+  "conditions": [
+    "The binding and task document are read once at start; later edits show after the next start."
+  ],
+  "exclusions": [
+    "Mid-run binding changes, which no reread picks up.",
+    "Harness naming when the settings path is unreadable."
+  ],
+  "id": "INV-0MX54D",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "cases test_caller_is_read_once_at_start, test_bound_task_title_is_read_once_at_snapshot in mcp/tests/test_tool_event_river.py; pytest mcp/tests/test_tool_event_river.py -p no:cacheprovider -n 0 -q -> 16 passed; notes/reports/role-launch/260928-MIK-L114-worker-4b5eb1b1-ea79-4dac-b8dd-ef796451e0b6.md"
+      ],
+      "path": "notes/reports/l114-curator-handoff-list.json"
+    },
+    "handoffEntry": "L114-W02",
+    "leaf": "260928-MIK-L114",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Rule-2 caller snapshot read once at server start, with path fallback and chat+harness.",
+  "status": "proposed",
+  "supersedes": []
+}

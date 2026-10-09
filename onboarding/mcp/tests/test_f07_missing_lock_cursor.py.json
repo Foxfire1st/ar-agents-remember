@@ -1,0 +1,109 @@
+{
+  "path": "mcp/tests/test_f07_missing_lock_cursor.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "35cf8004aad25a2392bd9128a6f0b0cdd2f92d21",
+        "content": "sha256:75294d1a5185a34933fd36a022b712094f112dc8c5f9836564ac3c9a5339768c",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_lockless_clean_read_returns_first_observation"
+        }
+      },
+      "facet": "A lockless clean read returns its first observation.",
+      "id": "PRF-K4REJR",
+      "invariant": "INV-W977KH",
+      "origin": {
+        "handoffEntry": "L114-W07",
+        "leaf": "260928-MIK-L114"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "35cf8004aad25a2392bd9128a6f0b0cdd2f92d21",
+        "content": "sha256:1e71f52d5d652b951fe3f40d3067f4742cdb93c711b041f86b9c2eab61a9a1dc",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_missing_lock_stream_writes_no_observer_file"
+        }
+      },
+      "facet": "The missing-lock stream writes no observer file.",
+      "id": "PRF-TJMGGP",
+      "invariant": "INV-N6DKKD",
+      "origin": {
+        "handoffEntry": "L114-W38",
+        "leaf": "260928-MIK-L114"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "35cf8004aad25a2392bd9128a6f0b0cdd2f92d21",
+        "content": "sha256:fdde71378116b8c2f708c88c204045c4744807776b5b221b535f493cd0c452f2",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_burst_past_old_bound_surfaces_coherently"
+        }
+      },
+      "facet": "Bursts past the old bound surface coherently.",
+      "id": "PRF-VV1PCX",
+      "invariant": "INV-W977KH",
+      "origin": {
+        "handoffEntry": "L114-W07",
+        "leaf": "260928-MIK-L114"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "35cf8004aad25a2392bd9128a6f0b0cdd2f92d21",
+        "content": "sha256:b2ecc470b478ef84fcd8963fd537a3ed5790b528fd08ab359490153f8456c3a5",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_missing_lock_interposed_cut_never_replays_nor_loses"
+        }
+      },
+      "facet": "An interposed cut neither replays nor loses rows.",
+      "id": "PRF-ZSYWKP",
+      "invariant": "INV-W977KH",
+      "origin": {
+        "handoffEntry": "L114-W07",
+        "leaf": "260928-MIK-L114"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Missing-lock reads create no observer file and lose no row.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "35cf8004aad25a2392bd9128a6f0b0cdd2f92d21",
+            "content": "sha256:b2ecc470b478ef84fcd8963fd537a3ed5790b528fd08ab359490153f8456c3a5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_missing_lock_interposed_cut_never_replays_nor_loses"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Failed locks return empty with the cursor unchanged.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "35cf8004aad25a2392bd9128a6f0b0cdd2f92d21",
+            "content": "sha256:7424f0b55cfed62fd1fe36e36934366c99262ce5611916fe6ff9cb114625dc46",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_lockfile_open_failure_returns_empty_with_cursor"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

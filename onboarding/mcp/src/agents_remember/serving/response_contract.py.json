@@ -1,6 +1,25 @@
 {
   "path": "mcp/src/agents_remember/serving/response_contract.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "61ad404bd22d920dd138c1547e688cc536a37131",
+        "content": "sha256:15ab3999ca957c919a14638c78cae2cc9a6d98e7a2726d812b38be1e96d2a2ed",
+        "locator": {
+          "kind": "symbol",
+          "name": "StreamReadyMarker"
+        }
+      },
+      "id": "RLZ-Q21B37",
+      "invariant": "INV-AJYRQ5",
+      "origin": {
+        "handoffEntry": "L114-W09",
+        "leaf": "260928-MIK-L114"
+      },
+      "rationale": "StreamReadyMarker declares the ready frame the route emits, including the optional last feed timestamp the panel names on a silent river.",
+      "role": "support"
+    }
+  ],
   "references": {
     "1": {
       "note": "**The served vocabulary of the leaf view's own recordedness, and its default for every existing caller.**\n\nAnchor: \"state: Literal[\\\"recorded\\\", \\\"unrecorded\\\"]\"",

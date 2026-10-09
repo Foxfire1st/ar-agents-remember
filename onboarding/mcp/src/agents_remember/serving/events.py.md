@@ -11,12 +11,23 @@ append-only observer logs that streams the `ar-observer-event/v1` *activity* rec
 **verbatim** — minus liveness `lifecycle.heartbeat` lines — with exact `Last-Event-ID`
 resume. It is the counterpart to the `state` channel (`app.py`): the state channel serves the
 folded projection and re-snapshots on reconnect, while this channel resumes by byte offset
-because the event log is append-only and unbounded — a reconnecting client must resume where it
-left off, not replay history. Connect cost is bounded — the offset map is computed once, pruning
-runs on a slow cadence, and the backlog drains in bounded chunks — so a large history never blocks
+because lifecycle event logs are append-only — a reconnecting client must resume where it
+left off, not replay history. (The shared workspace river is bounded and live-compacted,
+not unbounded.) Connect cost is bounded — the offset map is computed once and the backlog
+drains in bounded chunks — so a large history never blocks
 the loop before the first byte. It powers the future event-log panel + sim scrubbing.
 
 ## Code Commentary
+
+### 260928-MIK-L114 Write-Free Stream With Last-Feed Ready
+
+`stream_raw_events` deletes nothing: lifecycle-log reclamation belongs to the projection
+pass alone, and a connected browser changes no file under `logs/observer/`. The workspace
+read holds the shared river lock without creating any observer file
+(`workspace_river_read`); with no lockfile it proceeds lockless and repeats once under
+the lock if a lockfile appears, so the base/file pair counts by construction and a lost
+or repeated row is impossible. The `ready` marker carries `lastEventTs` — the newest
+event timestamp across every source — so the panel names the last feed on a silent river.
 
 ### FEUI-L9R Reviewed Candidate Delta
 
@@ -59,10 +70,10 @@ testable without an HTTP client:
 - `encode_cursor` / `decode_cursor` carry the offset map opaquely in the SSE `id` as base64url
   JSON (newline-free); `decode_cursor` returns `{}` for an absent or malformed cursor, and the stream
   treats that as a fresh retained-offset connection rather than replaying every historical row.
-- `stream_raw_events(config, *, last_event_id, interval)` prunes dormant lifecycle logs on connect,
-  computes the offset map **once** — `initial_event_offsets` when the client has no valid/non-empty
-  `Last-Event-ID`, else the explicit resume cursor offsets — then loops over that carried-forward map (no
-  per-tick re-scan): prune only on a slow cadence (`PRUNE_INTERVAL_SECONDS`, 60s) →
+- `stream_raw_events(config, *, last_event_id, interval)` computes the offset map **once** —
+  `initial_event_offsets` when the client has no valid/non-empty `Last-Event-ID`, else the
+  explicit resume cursor offsets — then loops over that carried-forward map (no per-tick
+  re-scan and no pruning: lifecycle-log reclamation belongs to the projection pass) →
   `read_new_events(..., limit=DEFAULT_EVENT_BATCH)` in a worker thread → yield each as
   `ServerSentEvent(event="event", id=<cursor>, retry=2000)`. While a chunk is non-empty it yields to the
   loop (`await asyncio.sleep(0)`) and drains the next chunk; once the (window-bounded) backlog is empty it
@@ -82,15 +93,15 @@ testable without an HTTP client:
 - **Heartbeats never reach the river** — `read_new_events` filters `lifecycle.heartbeat` (liveness already
   lives in the projection status file); the offset still advances past a heartbeat so a resume never
   re-reads it.
-- **Connect cost is bounded** — the offset map is computed once (not re-scanned every tick), pruning runs
-  on `PRUNE_INTERVAL_SECONDS` cadence not every loop, and the backlog drains in `DEFAULT_EVENT_BATCH`
+- **Connect cost is bounded** — the offset map is computed once (not re-scanned every tick),
+  and the backlog drains in `DEFAULT_EVENT_BATCH`
   chunks that yield between chunks, so a long history never blocks the event loop or materializes all at
   once before the first byte.
 - **Lifecycle-aware replay boundary** — valid cursor resumes are honored exactly, but fresh or malformed
   cursor connections begin at the retained windowed offsets (dormant logs at EOF, active logs at the recent
   replay window, workspace TTL) instead of replaying every historical observer event from byte zero.
-- **Pruning is serving-owned and projection-owned:** the raw tail prunes dormant lifecycle logs on connect
-  and on a slow cadence while tailing; projection does the same before folding lifecycle logs.
+- **Pruning is projection-owned:** this stream never removes a lifecycle log or any
+  observer file; the projection pass owns reclamation with its running-master protection.
 - **Readiness is explicit:** a cursorless fresh connection can legitimately receive zero retained rows;
   the separate `ready` event tells clients that the window-bounded backlog has finished hydrating.
 
@@ -129,9 +140,9 @@ No relevant external or domain documentation was found for this repository-local
 - The log layout (`lifecycles/<id>/events.jsonl`, `workspace/events.jsonl`). [2]
 - The one read/path abstraction (NS #5). [3]
 - The app that mounts this as `GET /api/events`. [4]
-- The inactivity retention helper that computes windowed fresh offsets and prunes dormant lifecycle logs. [5]
+- The inactivity retention helper computes windowed fresh offsets for connect; lifecycle-log reclamation belongs to the projection pass. [5]
 - `read_new_events` realigns records, admits top-level objects, filters heartbeat payloads, and bounds emitted batches. [6]
-- `stream_raw_events` computes offsets once, prunes on a slow cadence, drains the backlog in bounded chunks, and emits `ready` once after it. [7]
+- `stream_raw_events` computes offsets once, drains the backlog in bounded chunks without pruning, and emits `ready` once after it. [7]
 
 
 ### Cross-Repo References

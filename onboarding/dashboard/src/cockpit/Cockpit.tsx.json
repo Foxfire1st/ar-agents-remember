@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "20fdf0162caafa918c7644d491813ce78db8d1b3",
+        "blob": "f907717bf9460d7f6facca800810459ce72ecbdf",
         "content": "sha256:abc706fc66c912bf079523425599965ecc4855f669690a4a31d28a309280dd04",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "20fdf0162caafa918c7644d491813ce78db8d1b3",
+        "blob": "f907717bf9460d7f6facca800810459ce72ecbdf",
         "content": "sha256:abc706fc66c912bf079523425599965ecc4855f669690a4a31d28a309280dd04",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "20fdf0162caafa918c7644d491813ce78db8d1b3",
+        "blob": "f907717bf9460d7f6facca800810459ce72ecbdf",
         "content": "sha256:abc706fc66c912bf079523425599965ecc4855f669690a4a31d28a309280dd04",
         "locator": {
           "kind": "symbol",
@@ -57,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "20fdf0162caafa918c7644d491813ce78db8d1b3",
+        "blob": "f907717bf9460d7f6facca800810459ce72ecbdf",
         "content": "sha256:c23dd6b971f43b7988e7fc3e7f775c1292d6394236c1f6e028713d6a03a65c40",
         "locator": {
           "kind": "symbol",
@@ -75,7 +75,7 @@
     },
     {
       "anchor": {
-        "blob": "20fdf0162caafa918c7644d491813ce78db8d1b3",
+        "blob": "f907717bf9460d7f6facca800810459ce72ecbdf",
         "content": "sha256:46ebd9c016ca5f8c1aa57ef07918594923f009cf3494e0642b465c9ac9541e3c",
         "locator": {
           "kind": "symbol",
@@ -93,7 +93,25 @@
     },
     {
       "anchor": {
-        "blob": "20fdf0162caafa918c7644d491813ce78db8d1b3",
+        "blob": "f907717bf9460d7f6facca800810459ce72ecbdf",
+        "content": "sha256:eb6b28ccc4c28cc6b133ccc8c8c4ef5e93f9dc219708120b4b6ddc8827a6976b",
+        "locator": {
+          "kind": "symbol",
+          "name": "Cockpit"
+        }
+      },
+      "id": "RLZ-C8G0X4",
+      "invariant": "INV-TBFVJ5",
+      "origin": {
+        "handoffEntry": "L114-W14",
+        "leaf": "260928-MIK-L114"
+      },
+      "rationale": "Cockpit mounts the Event River panel and hands it the hydrated ready timestamp; the last-fed line appears only if this wiring passes it through.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "f907717bf9460d7f6facca800810459ce72ecbdf",
         "content": "sha256:19ba28765718f373b4b70dd594224499bd1aeb2c6cf77d848967a7e4dc4ade1f",
         "locator": {
           "kind": "symbol",

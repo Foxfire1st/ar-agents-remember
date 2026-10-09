@@ -21,6 +21,12 @@ display cap).
 
 Since L11 the suite's enclosure fixtures carry the REQUIRED `EnclosureNode.codeWorktreeExists`/`memoryWorktreeExists` flags (default `true`) — the river renders events, not task rows, so behavior under test is unchanged.
 
+### 260928-MIK-L114 Host-Path And Last-Fed Cases
+
+The suite now mounts the host-path rows (caller, refused-with-code, reached state, target
+role, chat rows, silent-river line) and the newest-timestamp head: late older arrivals
+never move it back, and an empty window falls back to the store time.
+
 A small `ev(...)` helper builds an `ar-observer-event/v1` event. It no longer assembles the envelope
 itself: it delegates to `observerEvent(...)` from `test/fixtures/wire`, passing a suite-local `id`
 (`e-<kind>-<random>`), the frozen `ts` `2026-06-23T10:11:12+00:00`, and `actor: "model"` ahead of the
