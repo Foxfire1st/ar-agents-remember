@@ -943,7 +943,7 @@ the route reaches it only through the new `services.KnowledgeCrossingPort`, boun
   durable crossing report into the worktree group's `reports/` and closes a master line's
   `<task-id>-crossing-<n>.json` in the merge commit. It also holds `unconverted_line_refusal`.
 
-- Structural planning applies to all converted sides, reports conflicts/conversion only. [48]
+- Structural planning applies to all converted sides: conflicts, conversion, and since MIK-R66 the alignment diagnostics (aligned cards, renumbered references, kept evidence lines, skipped cards) are reported, even on a clean merge. [48]
 
 - [`sync_transaction.py`](sync_transaction.py.md) passes the owner (leaf, or the master line's task) and
   journals the report path. [`sync_transaction_state.py`](sync_transaction_state.py.md) omits an empty
@@ -968,7 +968,8 @@ On the real ONT fork (`48b06d96b` against the scratch-converted sprint line), th
 exactly within the 46 cards both lines changed, and after mechanical resolution the merge validated clean.
 
 - The plan before Git, and its application to the started merge. [47]
-- Structural planning applies to all converted sides, reports conflicts/conversion only.
+- Structural planning applies to all converted sides: conflicts, conversion, and since MIK-R66 the alignment
+  diagnostics are reported, even on a clean merge.
 - The port and its request and view. [49]
 - The rule 9 refusal. [50]
 - The durable report and the master-line history file closed at commit. [51]

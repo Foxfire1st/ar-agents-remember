@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "Realized in the crossing report writer and the sync transaction emission gate, and five tests pin the counts, the summary view, the emission predicate and the journaled carry, so a future report change that drops a population fails before it lands."
+  },
+  "applicability": "Every crossing sync and ordinary converted-line sync result.",
+  "conditions": [
+    "Any nonzero diagnostic population persists a report, even on a clean merge with no conflict."
+  ],
+  "exclusions": [
+    "Clean merges with zero diagnostics, which write no report."
+  ],
+  "id": "INV-0J9FS1",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Rationale: _needs_crossing_report persists a report for conflicts, conversions, renumbering, kept evidence lines and skipped cards, so nonzero diagnostics survive even clean merges; successful_crossings attaches the same crossing_summary view (report identity plus alignment counts) that resolution responses carry, with no new payload contract. Observed: test_the_report_seam_keeps_every_nonzero_alignment_population (all six populations), test_apply_writes_a_report_for_evidence_only_and_skip_only_plans (operation seam with mocks), test_successful_sync_carries_the_journaled_report_and_counts, and the real-sync integration asserting reportPath plus renumberedReferences 1 on a clean renumber merge."
+      ],
+      "path": "notes/reports/l66-curation/curator-handoff-list.json"
+    },
+    "handoffEntry": "L66-W4-07",
+    "leaf": "260928-MIK-L66",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Rule 8 reporting: the crossing report and the sync result summary count aligned cards, renumbered references, kept evidence lines and skipped cards with reasons, on resolution and success responses alike",
+  "status": "proposed",
+  "supersedes": []
+}

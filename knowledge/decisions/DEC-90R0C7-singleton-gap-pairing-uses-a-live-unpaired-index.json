@@ -1,0 +1,45 @@
+{
+  "admission": {
+    "criteria": [
+      "constrains_future_work"
+    ],
+    "justification": "The near-linear bound on fully paired inputs constrains every future change to the gap pass: a slower pairing regresses the sealed scaling witnesses."
+  },
+  "alternatives": [
+    {
+      "option": "A live Fenwick count/rank/removal index over number order per side, with identical strict-between bounds and pair-one-each-side rule",
+      "reason": "O(N log N) cardinality work with pairing outcomes identical by construction on every input.",
+      "status": "chosen"
+    },
+    {
+      "option": "Keep per-gap full side slices",
+      "reason": "R3 measurement of the R2 replacement implementation (per-gap full side slices over sorted intervals with hash-membership checks): N^2/4+N-1 membership calls on crossed fully-paired reordered inputs at 500-4000 references. A different implementation and metric from the R1 linear-value-scan cubic implementation in context; both rejected in favor of the chosen live Fenwick index.",
+      "reconsider_when": "A future pairing rule needs order information the number-order index cannot carry.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Fully paired monotone and crossed populations show identical operation counts with exact injective maps; pairing policy, order and witnesses are unchanged."
+  ],
+  "context": "Cost history of the singleton-gap pass across three retained code attempts. R1 filtered full side slices and scanned a linear pairs.values view for every paired interval: cubic work on fully paired input (100/500/1000 references at 0.00839/0.74038/6.13515 s, notes/reports/l66-code-review-R1/boundary-probes.json). R2 replaced the linear scans with sorted interval searches, repairing the cubic-cost defect (500/1000/2000/4000 medians 0.00297/0.00587/0.01227/0.02536 s). R3 measured the replacement's residual N^2/4+N-1 hash-membership work on crossed fully-paired reordered inputs (62999 calls at 500 references to 4003999 at 4000; notes/reports/l66-code-review-R3/plain-number-scaling.json). D107 EXTRA1 then chose the live Fenwick index below.",
+  "decider": "Worker 88f09b9b repair under the Owner F05/D107 disposition, verified by Reviewer 21ed50da in D107 EXTRA1.",
+  "id": "DEC-90R0C7",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "INV-Q0NS0N"
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "notes/reports/l66-curation/curator-handoff-list.json"
+    },
+    "handoffEntry": "L66-CODE-R1-F05",
+    "leaf": "260928-MIK-L66",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

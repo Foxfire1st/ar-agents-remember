@@ -1,0 +1,39 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "No single member promises the whole: pairing without allocation misnumbers, allocation without prose remap breaks markers, and counts without the merge leave nothing to report; together they promise one structural merge: alignment for eligible cards, the legacy merge with its recorded reason for rule-7-skipped cards, and preserved single-item true conflicts."
+  },
+  "guarantee": "An eligible both-changed card merges without renumbering noise: same references meet at the incoming number, new references take fresh numbers above every side, prose markers follow the same map, evidence both sides added is kept, true authored conflicts stay single items, and the report counts what was aligned. A card skipped under rule 7 keeps the legacy merge with its recorded reason. A curator never renumbers a reference by hand.",
+  "id": "FAM-Q0MQAE",
+  "members": [
+    "INV-MXFA2F",
+    "INV-ADT7XM",
+    "INV-Q0NS0N",
+    "INV-XHSR3S",
+    "INV-CRWXXC",
+    "INV-W6QBYB",
+    "INV-0J9FS1",
+    "INV-B644A4",
+    "INV-F8QQYN",
+    "INV-FRG5GT"
+  ],
+  "origin": {
+    "handoff": {
+      "path": "notes/reports/l66-curation/curator-handoff-list.json"
+    },
+    "handoffEntry": "MIK-R66@v1 / 260928-MIK-L66-W4",
+    "leaf": "260928-MIK-L66",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "routes": [
+    "mcp/src/agents_remember/memory/conversion",
+    "mcp/src/agents_remember/memory_quality/knowledge_validator",
+    "mcp/src/agents_remember/worktrees"
+  ],
+  "schema": "ar-family/v1",
+  "status": "proposed",
+  "title": "The structural merge aligns reference numbers"
+}

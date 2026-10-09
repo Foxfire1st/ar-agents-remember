@@ -1,13 +1,33 @@
 {
   "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/markers.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "a6e1e98c95e55ebf9b6b1a6b7ab5777655412596",
+        "content": "sha256:0124e7e6217b3d3b3c231b359799b32136db1bb927a432d91dfcf492a2d3192e",
+        "locator": {
+          "end": 217,
+          "kind": "line_range",
+          "start": 143
+        }
+      },
+      "id": "RLZ-N1X6HP",
+      "invariant": "INV-XHSR3S",
+      "origin": {
+        "handoffEntry": "L66-W4-04",
+        "leaf": "260928-MIK-L66"
+      },
+      "rationale": "The position accessor plus the remap helper share the find_markers paragraph walk, so prose markers move and code/escaped brackets do not. They are the constructs the clause rewrites prose with.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "The fence and marker patterns.",
       "targets": [
         {
           "anchor": {
-            "blob": "c0c2c582e2b70e6168404055b454502b8816075f",
+            "blob": "a6e1e98c95e55ebf9b6b1a6b7ab5777655412596",
             "content": "sha256:c6c36d088d69c04294ae47cf5d566413f010689b2808a007f403c4a685baea34",
             "locator": {
               "kind": "symbol",
@@ -18,7 +38,7 @@
         },
         {
           "anchor": {
-            "blob": "c0c2c582e2b70e6168404055b454502b8816075f",
+            "blob": "a6e1e98c95e55ebf9b6b1a6b7ab5777655412596",
             "content": "sha256:f5c1da11ff3323201dc35ce7154199abb65a44a0527d6fdf9ad1a6bb96690b4a",
             "locator": {
               "kind": "symbol",
@@ -34,7 +54,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c0c2c582e2b70e6168404055b454502b8816075f",
+            "blob": "a6e1e98c95e55ebf9b6b1a6b7ab5777655412596",
             "content": "sha256:8b5ab585e3f0d7e695d284db9567665205777a0aab455abb2e52e9fb3ed4b849",
             "locator": {
               "kind": "symbol",
@@ -50,7 +70,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c0c2c582e2b70e6168404055b454502b8816075f",
+            "blob": "a6e1e98c95e55ebf9b6b1a6b7ab5777655412596",
             "content": "sha256:0841ec4a8098c0551b4d86269aed901c1b1dda76cefd25250d3995d4238a59b2",
             "locator": {
               "kind": "symbol",
@@ -61,7 +81,7 @@
         },
         {
           "anchor": {
-            "blob": "c0c2c582e2b70e6168404055b454502b8816075f",
+            "blob": "a6e1e98c95e55ebf9b6b1a6b7ab5777655412596",
             "content": "sha256:a9c588f96f403c984383f7eee29eaabc57ce4398c0df1676a987e0097c275cbc",
             "locator": {
               "kind": "symbol",
@@ -72,7 +92,7 @@
         },
         {
           "anchor": {
-            "blob": "c0c2c582e2b70e6168404055b454502b8816075f",
+            "blob": "a6e1e98c95e55ebf9b6b1a6b7ab5777655412596",
             "content": "sha256:54f54f44a2876c498cf408a4121b0110950f18b5c3c86b570cbbbd7ed53fe1fc",
             "locator": {
               "kind": "symbol",
@@ -88,7 +108,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c0c2c582e2b70e6168404055b454502b8816075f",
+            "blob": "a6e1e98c95e55ebf9b6b1a6b7ab5777655412596",
             "content": "sha256:8cc5dd8d1bb5ece940a7d60defb45ca345c82d661d785b52195cf81cf3944e5d",
             "locator": {
               "kind": "symbol",
@@ -104,7 +124,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c0c2c582e2b70e6168404055b454502b8816075f",
+            "blob": "a6e1e98c95e55ebf9b6b1a6b7ab5777655412596",
             "content": "sha256:c6d4832ad5896d4390f0b4a00c87d5086d5578f50cad5d8f1a82f0bfef85e78a",
             "locator": {
               "kind": "symbol",
@@ -115,7 +135,7 @@
         },
         {
           "anchor": {
-            "blob": "c0c2c582e2b70e6168404055b454502b8816075f",
+            "blob": "a6e1e98c95e55ebf9b6b1a6b7ab5777655412596",
             "content": "sha256:a0c29fa819efa9072908f2c35b169ca9e054ddb839a053c35f792074c7df370b",
             "locator": {
               "kind": "symbol",
@@ -140,6 +160,38 @@
             "path": "mcp/tests/test_knowledge_validator.py"
           },
           "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Marker positions are exposed in-line under the same paragraph walk, so a caller can judge one exact bracket.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a6e1e98c95e55ebf9b6b1a6b7ab5777655412596",
+            "content": "sha256:6e02c1697dc349a873e57377a79efdb31ae8e66ef37dea7cd51b481083cc168f",
+            "locator": {
+              "kind": "symbol",
+              "name": "find_marker_positions"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "A number map rewrites exactly the reported markers; code spans, fences, multiline spans, and escaped brackets keep their bytes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a6e1e98c95e55ebf9b6b1a6b7ab5777655412596",
+            "content": "sha256:c6711de3089cd96fe2c150f2a9818ed6d468fc0f5dfb5959adbdb3f66c4592d9",
+            "locator": {
+              "kind": "symbol",
+              "name": "remap_markers"
+            }
+          },
+          "kind": "code"
         }
       ]
     }

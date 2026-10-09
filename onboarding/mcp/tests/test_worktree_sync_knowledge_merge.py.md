@@ -6,12 +6,19 @@
 
 ## Purpose
 
-Tests for the knowledge merge in managed sync.
+Tests for the knowledge merge in managed sync: the structural merge of knowledge files on every managed sync,
+the conversion boundary, and since MIK-R66 the reference alignment through the real transaction.
 
 ## Code Commentary
 
 The tests drive the structural merge of knowledge files on every managed sync and the conversion boundary.
+Both-lines-added references align to a fresh number through the transaction; the report seam keeps every
+nonzero alignment population; evidence-only and skip-only plans still write a report; and a successful sync
+carries the journaled report and counts.
 
 ## Evidence
 
-- The file realizes its current contract at the corrected candidate. [1]
+- Both lines added one reference each: the merge aligns them to a fresh number. [2]
+- The report seam keeps every nonzero alignment population. [3]
+- Evidence-only and skip-only plans write a report. [4]
+- A successful sync carries the journaled report and counts. [5]

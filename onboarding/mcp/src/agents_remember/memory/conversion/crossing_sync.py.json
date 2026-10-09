@@ -1,29 +1,33 @@
 {
   "path": "mcp/src/agents_remember/memory/conversion/crossing_sync.py",
-  "realizes": [],
-  "references": {
-    "11": {
-      "note": "`cross` owns the current boundary described above.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d33ddd95bf6b98c90bf45ce7f23c998d16c1d577",
-            "content": "sha256:0be363e9910148dc217019ae7a6fa772bbb7adc8f19f4999c61629f7cccce3f5",
-            "locator": {
-              "kind": "symbol",
-              "name": "cross"
-            }
-          },
-          "kind": "code"
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "c52a085d1bc02fe0861b0770f891cbf57e7c42d7",
+        "content": "sha256:ebd00a9cdc167595759bb2c18b19a6794f5143cc12fec01fbc0c2d84f2153e6d",
+        "locator": {
+          "end": 290,
+          "kind": "line_range",
+          "start": 228
         }
-      ]
-    },
+      },
+      "id": "RLZ-F3GNJK",
+      "invariant": "INV-B644A4",
+      "origin": {
+        "handoffEntry": "L66-W4-08",
+        "leaf": "260928-MIK-L66"
+      },
+      "rationale": "Both sync routes reach the shared merge through this function, so the rules hold once for both. It is the construct the clause shares the merge with.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
     "12": {
       "note": "`_convert_sides` owns the current boundary described above.",
       "targets": [
         {
           "anchor": {
-            "blob": "d33ddd95bf6b98c90bf45ce7f23c998d16c1d577",
+            "blob": "c52a085d1bc02fe0861b0770f891cbf57e7c42d7",
             "content": "sha256:216c7f7465c28039e32efe120c6ec4b1f82c03475d6e7611234941be82bcc311",
             "locator": {
               "kind": "symbol",
@@ -39,11 +43,27 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d33ddd95bf6b98c90bf45ce7f23c998d16c1d577",
+            "blob": "c52a085d1bc02fe0861b0770f891cbf57e7c42d7",
             "content": "sha256:eb2a1cdba73fbe1610e64a146a96afede08ca4cc284f180795d950323fcf9e5d",
             "locator": {
               "kind": "symbol",
               "name": "next_crossing_owner"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The crossing result carries the alignment counts beside conflicts and cards.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c52a085d1bc02fe0861b0770f891cbf57e7c42d7",
+            "content": "sha256:ebd00a9cdc167595759bb2c18b19a6794f5143cc12fec01fbc0c2d84f2153e6d",
+            "locator": {
+              "kind": "symbol",
+              "name": "cross"
             }
           },
           "kind": "code"

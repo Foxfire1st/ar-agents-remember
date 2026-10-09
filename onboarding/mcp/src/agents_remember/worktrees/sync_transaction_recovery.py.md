@@ -34,7 +34,9 @@ looks up the bound `WorktreeServices.knowledge_worklist` port, reloads the contr
 base pair) and calls `port.recompute`. The port lookup, the reload and the recompute sit inside one guard:
 an unbound bundle or port, or **any** exception, returns `None`. Both `finalize_sync` and the `continue`
 replay of a completed generation (`sync_transaction_results.terminal_resolution_replay`) use it, so both
-report the worklist of the base pair the sync wrote.
+report the worklist of the base pair the sync wrote. Since MIK-R66 the completed result also carries the
+journaled crossing summaries (`successful_crossings`): the same `crossing_summary` view the resolution
+response carries, so a successful sync reports its report identity and alignment counts too.
 
 Unreadable or identity-invalid journals fail closed until explicit cancel. Cancellation first
 archives exact raw bytes or an opaque nonregular entry. With no refs it writes terminal quarantine
@@ -89,10 +91,13 @@ No Domain Documentation source is configured for this memory root.
 
 - The stable store archives raw or opaque journal evidence and projects quarantine. [1]
 - Ref reconstruction and contract/base constraints come from the sync authority module. [2]
-- Exact merge attribution and rollback proof are centralized in the Git module. [3]
+- Exact merge attribution is proven in the Git module. [3]
+- Rollback proof is centralized in the Git module. [3]
 - Finalization refuses while a side still parks its candidate, and cancellation clears a conflicted reapply, rolls back, and returns the parked candidate or reports a typed manual repair. [4]
 - The completed result gains the recomputed worklist summary; every failure leaves it unchanged. [5]
 - The completed-branch proof addresses only operation-created heads and reads no ledger rows. [6]
+
+- A completed sync carries the journaled crossing summaries with their alignment counts. [7]
 
 ### Cross-Repo References
 

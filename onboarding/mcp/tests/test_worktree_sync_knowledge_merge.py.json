@@ -1,16 +1,118 @@
 {
   "path": "mcp/tests/test_worktree_sync_knowledge_merge.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "f627b43639cee3322f5d1cc85f13943e6b72a18a",
+        "content": "sha256:57f128955beb75a87bdc6e4d9800c356257fbc269852e479e2f6fb747415350a",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_successful_sync_carries_the_journaled_report_and_counts"
+        }
+      },
+      "facet": "A successful sync carries the journaled report and counts.",
+      "id": "PRF-PSW4VX",
+      "invariant": "INV-0J9FS1",
+      "origin": {
+        "handoffEntry": "L66-W4-07",
+        "leaf": "260928-MIK-L66"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "f627b43639cee3322f5d1cc85f13943e6b72a18a",
+        "content": "sha256:acef561348b46ecff2e9dce4bba1fb04fafe63eda12863db2a4ed95ec3bd296f",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_report_seam_keeps_every_nonzero_alignment_population"
+        }
+      },
+      "facet": "The emission gate keeps every nonzero alignment population.",
+      "id": "PRF-XPWHT9",
+      "invariant": "INV-0J9FS1",
+      "origin": {
+        "handoffEntry": "L66-W4-07",
+        "leaf": "260928-MIK-L66"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "f627b43639cee3322f5d1cc85f13943e6b72a18a",
+        "content": "sha256:de7ef726246f2b4b55ee7a97eb10a32415070089606cd494dfb4ff76e9999c5c",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_apply_writes_a_report_for_evidence_only_and_skip_only_plans"
+        }
+      },
+      "facet": "Evidence-only and skip-only plans write a report.",
+      "id": "PRF-Y4H6ZG",
+      "invariant": "INV-0J9FS1",
+      "origin": {
+        "handoffEntry": "L66-W4-07",
+        "leaf": "260928-MIK-L66"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
-    "1": {
-      "note": "The file realizes its current contract at the corrected candidate.",
+    "2": {
+      "note": "Both lines added one reference each: the merge aligns them to a fresh number.",
       "targets": [
         {
           "anchor": {
-            "blob": "2a9b0d405d703b83e78b9e9661eb2a00f54e7a1d",
-            "content": "sha256:a83ca4f04c88eeb3adc5e42f27847d7a4d65bfc95262df65501639d9eadabe84",
+            "blob": "f627b43639cee3322f5d1cc85f13943e6b72a18a",
+            "content": "sha256:0ca05062d98be318419f086d9d6c8b47c44378e729567dbc580bc686b2b59219",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_a_reference_number_both_lines_added_is_aligned_to_a_fresh_number"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The report seam keeps every nonzero alignment population.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f627b43639cee3322f5d1cc85f13943e6b72a18a",
+            "content": "sha256:acef561348b46ecff2e9dce4bba1fb04fafe63eda12863db2a4ed95ec3bd296f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_report_seam_keeps_every_nonzero_alignment_population"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Evidence-only and skip-only plans write a report.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f627b43639cee3322f5d1cc85f13943e6b72a18a",
+            "content": "sha256:de7ef726246f2b4b55ee7a97eb10a32415070089606cd494dfb4ff76e9999c5c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_apply_writes_a_report_for_evidence_only_and_skip_only_plans"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "A successful sync carries the journaled report and counts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f627b43639cee3322f5d1cc85f13943e6b72a18a",
+            "content": "sha256:57f128955beb75a87bdc6e4d9800c356257fbc269852e479e2f6fb747415350a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_successful_sync_carries_the_journaled_report_and_counts"
             }
           },
           "kind": "test"

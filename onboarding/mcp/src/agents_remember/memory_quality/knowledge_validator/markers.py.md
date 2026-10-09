@@ -6,7 +6,8 @@
 
 ## Purpose
 
-**Finds the `[n]` reference markers of a Markdown file (MIK-R21 rule 6).** A marker is an unescaped `[` digits `]` outside code. `find_markers(text)` returns every marker with its number and line, in order; `rules_references.check_markers` pairs them with the sidecar's references.
+**Finds the `[n]` reference markers of a Markdown file (MIK-R21 rule 6), and remaps them by number
+(MIK-R66 rule 4).** A marker is an unescaped `[` digits `]` outside code. `find_markers(text)` returns every marker with its number and line, in order; `rules_references.check_markers` pairs them with the sidecar's references. `find_marker_positions(text)` exposes the same grammar with in-line positions, and `remap_markers(text, mapping)` rewrites exactly the reported markers with a number map, so prose follows an alignment while code spans and escaped brackets keep their bytes.
 
 ## Code Commentary
 
@@ -47,6 +48,9 @@ No configured live documentation source was available for this pass.
 ### Repo-Internal References
 
 The grammar and its tests.
+
+- Marker positions are exposed in-line under the same paragraph walk, so a caller can judge one exact bracket. [7]
+- A number map rewrites exactly the reported markers; code spans, fences, multiline spans, and escaped brackets keep their bytes. [8]
 
 - The fence and marker patterns. [1]
 - A marker is valid only as a reference number. [2]

@@ -12,14 +12,20 @@ validation at commit) runs through the real managed sync transaction on real Git
 cases in the `unit-regression` lane. The module also holds `validate_plan`, the step 5 check for the pure
 plan, which moved here from the product (review R1 finding 7).
 
+**MIK-R66: the structural merge aligns reference numbers.** Pairing tests and order, rule 3 allocation,
+prose remapping, true conflicts staying one item, evidence-line regions, both fallbacks, report counts, the
+ordinary converted sync through the same merge, determinism, and the near-linear scaling witnesses live here
+as fixture-card and transaction cases.
+
 ## Code Commentary
 
 ### Logic
 
 - `test_items_merge_by_their_mechanical_and_authored_fields`: one side only, authored beats mechanical,
   incoming for mechanical-only, deleted against mechanical, and authored against authored conflicts.
-- `test_a_reference_number_both_sides_added_conflicts_even_when_the_markdown_merges`: `references.2` is a
-  `renumber one side` conflict while the Markdown merged.
+- `test_a_reference_number_both_sides_added_aligns_when_the_card_is_complete`: both sides added one
+  reference each with different targets; alignment numbers each, and the card merges with no conflict
+  (it replaced the old `renumber one side` collision case).
 - `test_a_crossing_moves_the_leaf_markers_converts_each_side_and_merges`: marker rows with `markers` and
   the fixed reason, `markersNotMoved` for a subject that already has a row, the incoming marker taken, the
   converted sides, and a valid plan.
@@ -44,6 +50,21 @@ plan, which moved here from the product (review R1 finding 7).
   - the sidecar holds the marker, and `continue` with the marker staged is
     `sync-knowledge-validation-refused`;
   - once the item is resolved, the sync is `synced`.
+- **MIK-R66 alignment cases.**
+  - Pairing: content, same number after a move, the singleton between paired neighbours, content preferred
+    over the same number, partnerless incoming with partnerless own, and rule 2b moving content only through
+    alignment.
+  - Allocation: fresh numbers in own order then base order; only what has no partner is freshened; an
+    incoming-deleted reference stays deleted; distinct both-added references never collide; identical
+    both-added cards merge clean.
+  - Prose, conflicts, regions: markers follow references while code and escapes do not; a true conflict
+    stays one item at the incoming number; both-added evidence lines are kept in order; fenced, escaped,
+    multiline-span, and shared-context cases.
+  - Fallbacks and counts: an incomplete card merges without alignment exactly as today (whole-merge witness); a repeated number refuses alignment at the helper injectivity guard (no whole-merge witness); a non-decodable-Markdown side on a would-be-renumbered card skips with its reason;
+    the report and the summary carry the alignment counts; the ordinary converted sync aligns through the
+    same merge; the same three trees merge to identical bytes.
+  - Scaling: fully paired monotone and crossed populations show near-linear bounded work with exact
+    injective maps.
 - **L37: the crossing owner's resolution, the writer's converted base, and cancel.**
   - `test_a_record_both_sides_changed_is_resolved_at_one_more_than_the_higher_side`, parametrised `own-converted`
     and `own-unconverted` (ONT's case): a real `cross()` and `apply_crossing()` leave the record unmerged; a new
@@ -61,9 +82,7 @@ plan, which moved here from the product (review R1 finding 7).
 
 ### Conventions
 
-- The managed-sync cases reuse `test_worktree_sync.SyncFixture`. The fixture's cancel-after-memory-conflict
-  path fails identically on a plain, non-crossing memory conflict (a pre-existing fixture issue the
-  reviewer reproduced), so the crossing's cancel-after-conflict path is not covered here.
+- The managed-sync cases reuse `test_worktree_sync.SyncFixture`. A pre-existing fixture issue once made the cancel-after-memory-conflict path fail identically on a plain, non-crossing memory conflict (reproduced by the reviewer); the crossing's `_cancel_and_cross_again` recovery path is nevertheless exercised inside the existing crossing case, and its assertions (cancel state, exact head, no MERGE_HEAD, clean tree, re-crossing) are stored as Evidence [15] within that case's limits.
 
 ### Invariants And Boundaries
 
@@ -72,8 +91,7 @@ plan, which moved here from the product (review R1 finding 7).
 
 ### Todos
 
-The cancel-after-conflict path of a crossing is uncovered because of the pre-existing `SyncFixture`
-issue above (reported to the coordinator).
+None recorded. (History: the cancel-after-conflict path was once recorded here as uncovered because of the pre-existing `SyncFixture` issue; the existing crossing case now exercises `_cancel_and_cross_again` — one conflicted crossing cancelled and crossed again. This is not universal recovery coverage.)
 
 ## Evidence
 
@@ -94,8 +112,16 @@ The cases and the plan check.
 
 - The step 5 check for a pure plan (test-only). [1]
 - The item rules. [2]
-- A reference-number collision. [3]
-- Markers first, conversion, merge. [4]
+
+- Both sides added one reference each: alignment numbers each, no conflict. [16]
+- Fresh numbers follow own order, then base order. [17]
+- A true conflict stays one item at the incoming number. [18]
+- Both-added evidence lines are kept in order. [19]
+- The report and the summary carry the alignment counts. [20]
+- The same three trees merge to identical bytes. [21]
+- Gap pairing scales near-linearly on fully paired inputs. [22]
+
+- Markers first, conversion, then the structural merge through the real transaction. [4]
 - Long markers in one valid row. [5]
 - The master-line crossing history file. [6]
 - The converted base at the base's own code commit. [7]

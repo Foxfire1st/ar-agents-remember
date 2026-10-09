@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "Nine tests pin the three pairing tests, their order, the singleton-gap rule and the near-linear scaling on fully paired inputs, so a future pairing change that reorders tests or rescans paired populations fails before it lands."
+  },
+  "applicability": "Every both-changed card: base with incoming and base with own, plus partnerless own with partnerless incoming.",
+  "conditions": [
+    "Each reference pairs at most once; tests a, b, c apply in that order.",
+    "Fully paired inputs do bounded near-linear work through the live unpaired index."
+  ],
+  "exclusions": [
+    "References occurring more than once on a side, for which unique-content test a does not apply; the same references remain eligible for same-number test b and singleton-gap test c."
+  ],
+  "id": "INV-Q0NS0N",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Rationale: _pair_with_base implements tests a/b/c in order with at-most-once pairing; each gap interval now counts and locates its live numbers in a Fenwick index over number order (O(log n) range count/locate/remove) instead of filtering full side slices, so overlapping crossed intervals never rescan paired populations; base ranges stay disjoint. partnered_incoming holds only incoming numbers whose base also has an own partner. Observed: the exact sealed witness returns {1:1,4:4,7:2,10:6,2:3,8:5} (test_gap_pairing_accounts_live_unpaired_numbers_per_interval); test_partnerless_incoming_pairs_directly_with_partnerless_own (B4->B1, X->6, one B, no B conflict); test_rule_2b_pairs_same_numbers_when_content_cannot (mutant-probed b-alone discriminator); test_gap_pairing_scales_near_linearly_on_fully_paired_inputs plus test_gap_pairing_scales_on_crossed_fully_paired_inputs (2000 refs, monotone and crossed, both green with wide margins)."
+      ],
+      "path": "notes/reports/l66-curation/curator-handoff-list.json"
+    },
+    "handoffEntry": "L66-W4-03",
+    "leaf": "260928-MIK-L66",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Rule 2 pairing: base with incoming and base with own by unique content, then same number, then singleton gap; partnerless own/incoming pair by content only; empty-base cards pair against an empty population",
+  "status": "proposed",
+  "supersedes": []
+}

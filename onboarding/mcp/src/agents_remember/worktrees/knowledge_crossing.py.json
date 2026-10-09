@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "d250ebaf150ae574609dc3af77e977820511bb80",
+        "blob": "e26aec15ae66d43787698d534743bda3fa5463ef",
         "content": "sha256:124f5c9e6a34a3f01b3fd5a8d70f161ef7e4d775864fbd5b8db7ccadc105e44a",
         "locator": {
           "kind": "symbol",
@@ -18,6 +18,25 @@
       },
       "rationale": "Refuses an operation on an unconverted tree whose official line is converted, and otherwise lets the lock decide, so an unconverted tree in a repository that holds converted memory anywhere is refused as well; knowledge-ingest and a leaf's memory-quality run call it.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "e26aec15ae66d43787698d534743bda3fa5463ef",
+        "content": "sha256:7cb5e728878c9f83736071027ced10ef6989208cf8f258cfc7e211ce330da909",
+        "locator": {
+          "end": 351,
+          "kind": "line_range",
+          "start": 293
+        }
+      },
+      "id": "RLZ-91VYMY",
+      "invariant": "INV-0J9FS1",
+      "origin": {
+        "handoffEntry": "L66-W4-07",
+        "leaf": "260928-MIK-L66"
+      },
+      "rationale": "The report writer persists the alignment counts; the emission predicate keeps every nonzero diagnostic population; the success projection carries the same summary view as resolution. Together they are the constructs the clause reports with.",
+      "role": "enforcement"
     }
   ],
   "references": {
@@ -26,7 +45,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d250ebaf150ae574609dc3af77e977820511bb80",
+            "blob": "e26aec15ae66d43787698d534743bda3fa5463ef",
             "content": "sha256:30a54f3769edbfbc38a046484f4aa1a130ac442b881f2c7dd545e792a053b3a4",
             "locator": {
               "kind": "symbol",
@@ -42,7 +61,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d250ebaf150ae574609dc3af77e977820511bb80",
+            "blob": "e26aec15ae66d43787698d534743bda3fa5463ef",
             "content": "sha256:f7a0fc4572c73ecc54bb34f2dc3e20986303a06174cd1e1ede8615a339722fd2",
             "locator": {
               "kind": "symbol",
@@ -58,11 +77,43 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d250ebaf150ae574609dc3af77e977820511bb80",
+            "blob": "e26aec15ae66d43787698d534743bda3fa5463ef",
             "content": "sha256:9cee7d39379888cd18794013dfc40a3cf9db0a4917edfdcb14e84e2cc389c7d9",
             "locator": {
               "kind": "symbol",
               "name": "apply_crossing"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The curator text forbids hand renumbering: the merge aligns numbers itself.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e26aec15ae66d43787698d534743bda3fa5463ef",
+            "content": "sha256:d75a23a84851f8574389dd80ff2ebd6eb8de1736e498e6eff825d3b5cf830bca",
+            "locator": {
+              "kind": "symbol",
+              "name": "HOW_TO_RESOLVE"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The summary carries the alignment counts with zero defaults.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e26aec15ae66d43787698d534743bda3fa5463ef",
+            "content": "sha256:aa2c2719d400a40951748e06dd979d480eee5fc30387595467df93f30768aa66",
+            "locator": {
+              "kind": "symbol",
+              "name": "crossing_summary"
             }
           },
           "kind": "code"

@@ -34,12 +34,14 @@ memory-quality runs and (later) closeouts call.
 - `write_crossing_report(worktree, own, incoming, plan)` writes
   `crossing-sync-report-<own12>-<incoming12>.json` into the worktree group's `reports/`, beside the sync
   journal and outside every repository. It holds the plan's report (every conflict with its base, own and
-  incoming values, cards per side, marker rows) plus `howToResolve`. `crossing_summary(path)` is the
-  resolution payload's bounded view: counts, the first 100 conflicts with a truncation flag, cards, marker
-  rows, the record-conflict history owner and the how-to.
+  incoming values, cards per side, marker rows, and since MIK-R66 the alignment counts: aligned cards,
+  renumbered references, kept evidence lines, skipped cards with reasons) plus `howToResolve`.
+  `crossing_summary(path)` is the resolution payload's bounded view: counts, the first 100 conflicts with a
+  truncation flag, cards, marker rows, the alignment counts, the record-conflict history owner and the how-to.
 - `HOW_TO_RESOLVE` tells the curator three things: a conflicted JSON item stands as a `crossing-conflict`
   marker; Markdown conflicts carry Git markers; and a card's Markdown and its sidecar must be resolved
-  together, or R22.3-markers refuses the card (the reviewer's round 3 note).
+  together, or R22.3-markers refuses the card (the reviewer's round 3 note). Reference numbers are aligned by
+  the merge itself, so a curator never renumbers a reference by hand to clear a conflict.
 - `close_crossing_history(worktree, parents)` runs in the commit step. It sets `closed: true` on, and
   stages, each `knowledge/history/<task>-crossing-<n>.json` that the merge adds and that neither parent
   holds, so the file is frozen from that commit on (MIK-R07 rule 7).
@@ -85,3 +87,6 @@ None recorded. The closeout refusal of rule 9 is wired (L09's gate plus L37's cu
 - `merge_structure` implements the retained boundary described above. [12]
 - `crossing_plan` implements the retained boundary described above. [13]
 - `apply_crossing` implements the retained boundary described above. [14]
+
+- The curator text forbids hand renumbering: the merge aligns numbers itself. [15]
+- The summary carries the alignment counts with zero defaults. [16]

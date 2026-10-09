@@ -1,0 +1,30 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "One test pins byte-identical output for two merges of the same three trees, so a future merge change that reads a clock or iterates unordered state fails before it lands."
+  },
+  "applicability": "Every structural merge of three converted trees.",
+  "conditions": [
+    "The merge reads the three input trees only, with canonical ordering and deterministic allocation."
+  ],
+  "exclusions": [],
+  "id": "INV-F8QQYN",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Rationale: merge_trees is a pure function of the three input trees (no clock, no randomness; canonical ordering and deterministic allocation), so the same inputs give identical bytes. Observed: test_the_same_three_trees_merge_to_identical_bytes merges twice and compares every file and conflict identity."
+      ],
+      "path": "notes/reports/l66-curation/curator-handoff-list.json"
+    },
+    "handoffEntry": "L66-W4-11",
+    "leaf": "260928-MIK-L66",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Determinism: the same three trees merged twice give identical bytes",
+  "status": "proposed",
+  "supersedes": []
+}

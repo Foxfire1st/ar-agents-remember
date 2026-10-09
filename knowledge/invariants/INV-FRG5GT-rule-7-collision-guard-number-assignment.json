@@ -1,0 +1,30 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "One test pins that a colliding map refuses alignment, so a future allocation change that writes duplicate numbers fails before it lands."
+  },
+  "applicability": "Every reference-number allocation of an aligned card.",
+  "conditions": [
+    "Both number maps are verified injective per side; a collision fails the card closed into a rule-7 skip."
+  ],
+  "exclusions": [],
+  "id": "INV-FRG5GT",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Rationale: after allocation both number maps are checked injective per side, and a collision fails the card closed into a rule-7 skip instead of writing duplicate numbers. Observed: test_a_repeated_number_refuses_alignment passes a colliding map and requires None."
+      ],
+      "path": "notes/reports/l66-curation/curator-handoff-list.json"
+    },
+    "handoffEntry": "L66-W4-12",
+    "leaf": "260928-MIK-L66",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Rule 7 collision guard: number assignment is verified injective per side and fails closed",
+  "status": "proposed",
+  "supersedes": []
+}

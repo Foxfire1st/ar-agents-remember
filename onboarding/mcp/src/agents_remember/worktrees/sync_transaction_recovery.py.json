@@ -1,13 +1,33 @@
 {
   "path": "mcp/src/agents_remember/worktrees/sync_transaction_recovery.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "91d0dce825020d677826f306891b612f23e5abb9",
+        "content": "sha256:5c18c16620ec34c7d404d568453053b4f51579ee908ce8786bb2554821ef1ed4",
+        "locator": {
+          "end": 200,
+          "kind": "line_range",
+          "start": 131
+        }
+      },
+      "id": "RLZ-GP3TR9",
+      "invariant": "INV-0J9FS1",
+      "origin": {
+        "handoffEntry": "L66-W4-07",
+        "leaf": "260928-MIK-L66"
+      },
+      "rationale": "The success projection is the consumer that carries report identity and counts into successful responses.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "The stable store archives raw or opaque journal evidence and projects quarantine.",
       "targets": [
         {
           "anchor": {
-            "blob": "ce68d87e207d8a83d53af48e5816c10f407dbfc8",
+            "blob": "d2ea7cbc14046090dc44525a726cf5f923166c10",
             "content": "sha256:888445edc330c6b525441a393fc1814ef0a452abccf4087af43ae902183bc703",
             "locator": {
               "kind": "symbol",
@@ -19,7 +39,7 @@
         },
         {
           "anchor": {
-            "blob": "ce68d87e207d8a83d53af48e5816c10f407dbfc8",
+            "blob": "d2ea7cbc14046090dc44525a726cf5f923166c10",
             "content": "sha256:d4bc6b6f0f627f861dfed3e739f5288f508f957eea7a9e550c5b69aa8f3fb5fe",
             "locator": {
               "kind": "symbol",
@@ -61,24 +81,12 @@
       ]
     },
     "3": {
-      "note": "Exact merge attribution and rollback proof are centralized in the Git module.",
+      "note": "Rollback proof is centralized in the Git module.",
       "targets": [
         {
           "anchor": {
-            "blob": "275847ecea525f425b8c6c5f28b5c3ed8c461439",
-            "content": "sha256:fa1ca326117de93fc4febaebe1e7802714efa4d373dcef16fdc132ab769eae5d",
-            "locator": {
-              "kind": "symbol",
-              "name": "exact_created_head"
-            },
-            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "aa5c9a74ca8a2c4c3e4e8f42644ee6e8c94af20b",
-            "content": "sha256:362b89c6551f6b216e57821ac09377acfd097be4b244b1b5af2d0e95ddd23acd",
+            "blob": "d792ca35666e800c2743156397e04ac2c2b46306",
+            "content": "sha256:d97b331539bed08d8bb17a4fe08fb8c7706ee94b36bf4048fe03eedbc4a5800d",
             "locator": {
               "kind": "symbol",
               "name": "rollback_side"
@@ -94,7 +102,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b270b7531a67b779c4e7d3a0fddc63fd285e89b0",
+            "blob": "91d0dce825020d677826f306891b612f23e5abb9",
             "content": "sha256:9c5760e4bc86f585066e6683af4bdbfddaf9454ccfbc970f775f7a64bebc9561",
             "locator": {
               "kind": "symbol",
@@ -105,7 +113,7 @@
         },
         {
           "anchor": {
-            "blob": "b270b7531a67b779c4e7d3a0fddc63fd285e89b0",
+            "blob": "91d0dce825020d677826f306891b612f23e5abb9",
             "content": "sha256:281c7b4b0435e9938358c5cf452b0edb9478f113094ca158e3f66baffa5efa3f",
             "locator": {
               "kind": "symbol",
@@ -121,7 +129,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b270b7531a67b779c4e7d3a0fddc63fd285e89b0",
+            "blob": "91d0dce825020d677826f306891b612f23e5abb9",
             "content": "sha256:4914b185c2e5d37db635c28801ec25eb7e089977c7b791b1c9b13703c40528f7",
             "locator": {
               "kind": "symbol",
@@ -132,7 +140,7 @@
         },
         {
           "anchor": {
-            "blob": "b270b7531a67b779c4e7d3a0fddc63fd285e89b0",
+            "blob": "91d0dce825020d677826f306891b612f23e5abb9",
             "content": "sha256:891cae08c8d5b0e773a64d1940b51a1ac566213ac0137ba3f1bd58f7c4aefb56",
             "locator": {
               "kind": "symbol",
@@ -148,11 +156,27 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b270b7531a67b779c4e7d3a0fddc63fd285e89b0",
+            "blob": "91d0dce825020d677826f306891b612f23e5abb9",
             "content": "sha256:4c14ef1128e8d76827f7b5aad6fdd4f416ba99102bb37715a114928c26fcb5a9",
             "locator": {
               "kind": "symbol",
               "name": "_require_completed_branches"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "A completed sync carries the journaled crossing summaries with their alignment counts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "91d0dce825020d677826f306891b612f23e5abb9",
+            "content": "sha256:240c55de9a37e148eb19c7dde3e3957920456dc91e5892d294c8541ee50b6200",
+            "locator": {
+              "kind": "symbol",
+              "name": "successful_crossings"
             }
           },
           "kind": "code"

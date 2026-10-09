@@ -1,105 +1,259 @@
 {
   "path": "mcp/src/agents_remember/memory/conversion/crossing.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "ddf325c8c6d1e73217d71a493e3ad7d71536b3e4",
+        "content": "sha256:04817805b0f5e77e36b1fd6f886d25f40fd1bd9d6d5de4d112a99ff8aa4cb781",
+        "locator": {
+          "end": 478,
+          "kind": "line_range",
+          "start": 398
+        }
+      },
+      "id": "RLZ-3F73V5",
+      "invariant": "INV-MXFA2F",
+      "origin": {
+        "handoffEntry": "L66-W4-01",
+        "leaf": "260928-MIK-L66"
+      },
+      "rationale": "This span is the whole allocation mechanism: partner numbers taken from incoming, then fresh numbers above the maxima in own-then-base order. It is the construct the clause assigns the numbers with.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "ddf325c8c6d1e73217d71a493e3ad7d71536b3e4",
+        "content": "sha256:9cf03859ff7cdbfd50e2dcdc212e8b4bbd2c5955bdaa2f5a4a63e2585f69b007",
+        "locator": {
+          "end": 478,
+          "kind": "line_range",
+          "start": 440
+        }
+      },
+      "id": "RLZ-3ZMRVE",
+      "invariant": "INV-FRG5GT",
+      "origin": {
+        "handoffEntry": "L66-W4-12",
+        "leaf": "260928-MIK-L66"
+      },
+      "rationale": "Both number maps are verified injective per side and a collision fails closed into a skip. This is the construct the clause guards duplicates with.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "ddf325c8c6d1e73217d71a493e3ad7d71536b3e4",
+        "content": "sha256:5c824cbd643cb3f8fe2fce7dcf6b767af6664d2370a0121c8ec34990610d02f1",
+        "locator": {
+          "end": 247,
+          "kind": "line_range",
+          "start": 194
+        }
+      },
+      "id": "RLZ-603WBV",
+      "invariant": "INV-CRWXXC",
+      "origin": {
+        "handoffEntry": "L66-W4-05",
+        "leaf": "260928-MIK-L66"
+      },
+      "rationale": "Key/item merging runs on already-aligned numbers with unchanged authored/mechanical precedence, so a doubly-changed reference stays one item at the incoming number. This is the construct the clause merges with.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "ddf325c8c6d1e73217d71a493e3ad7d71536b3e4",
+        "content": "sha256:1888699926397f76804b5622d631a852d7696c7ff944619070db9c6493a1ff41",
+        "locator": {
+          "end": 364,
+          "kind": "line_range",
+          "start": 263
+        }
+      },
+      "id": "RLZ-8ESEN9",
+      "invariant": "INV-Q0NS0N",
+      "origin": {
+        "handoffEntry": "L66-W4-03",
+        "leaf": "260928-MIK-L66"
+      },
+      "rationale": "This function is tests a/b/c in order with at-most-once pairing, including the live-unpaired gap pass. It is the construct the clause pairs references with.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "ddf325c8c6d1e73217d71a493e3ad7d71536b3e4",
+        "content": "sha256:32a9ebf37e6b70dda4a7db0e92980813315c9aaa121919e042ce14e5f9722187",
+        "locator": {
+          "end": 919,
+          "kind": "line_range",
+          "start": 679
+        }
+      },
+      "id": "RLZ-8J10GX",
+      "invariant": "INV-W6QBYB",
+      "origin": {
+        "handoffEntry": "L66-W4-06",
+        "leaf": "260928-MIK-L66"
+      },
+      "rationale": "Position-exact trailing check, per-side document tables, shared-context sequence alignment and subsequence-checked base spans: together they resolve exactly the empty-base evidence regions. This is the construct the clause keeps evidence lines with.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "ddf325c8c6d1e73217d71a493e3ad7d71536b3e4",
+        "content": "sha256:892f3dc03da5a8a6a2c3bfbdd03bdcaeca2294da1c0f2401056b8b2130aacdd2",
+        "locator": {
+          "end": 1055,
+          "kind": "line_range",
+          "start": 1027
+        }
+      },
+      "id": "RLZ-DYDDH5",
+      "invariant": "INV-F8QQYN",
+      "origin": {
+        "handoffEntry": "L66-W4-11",
+        "leaf": "260928-MIK-L66"
+      },
+      "rationale": "The merge is a pure function of the three trees with canonical ordering, so identical inputs give identical bytes. It is the construct the clause gets determinism from.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "ddf325c8c6d1e73217d71a493e3ad7d71536b3e4",
+        "content": "sha256:ed6944ab6037958a0bf03c11e3e899ddf7ede600eeef35a066de756eca51e11f",
+        "locator": {
+          "end": 581,
+          "kind": "line_range",
+          "start": 503
+        }
+      },
+      "id": "RLZ-T9H0TJ",
+      "invariant": "INV-ADT7XM",
+      "origin": {
+        "handoffEntry": "L66-W4-02",
+        "leaf": "260928-MIK-L66"
+      },
+      "rationale": "These exits skip alignment, each returning its reason for the skippedCards record: the non-injective-pairing guard, the marker-eligibility check, and the non-decodable-Markdown exit on a renumbered side. The marker-incomplete witness exercises the whole legacy merge; the collision witness pins the helper guard only. They are the construct the clause refuses to guess with.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
-    "1": {
-      "note": "The explicit conflict marker the validator refuses.",
+    "10": {
+      "note": "Pairing runs unique content, then same number, then the singleton gap, each at most once.",
       "targets": [
         {
           "anchor": {
-            "blob": "8798d3f2378c3d78a27623725cc402ba0331eb39",
-            "content": "sha256:990addb67919366a3695355cb2d841bf1cf5cbcda95f94bba0b32778bcff24a1",
+            "blob": "ddf325c8c6d1e73217d71a493e3ad7d71536b3e4",
+            "content": "sha256:fe458113de9d87aeaaeae266c84bcab3fb279cc8aff8e1808efa1f328d617b70",
             "locator": {
               "kind": "symbol",
-              "name": "CONFLICT_MARKER"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "8798d3f2378c3d78a27623725cc402ba0331eb39",
-            "content": "sha256:2e432c9398b231c389f51ab7969a92854732e769a60650502fad1864393373cb",
-            "locator": {
-              "kind": "symbol",
-              "name": "_conflicted"
+              "name": "_pair_with_base"
             }
           },
           "kind": "code"
         }
       ]
     },
-    "2": {
-      "note": "Mechanical fields stripped for comparison.",
+    "11": {
+      "note": "Gap intervals count and locate live numbers in a Fenwick index instead of scanning paired populations.",
       "targets": [
         {
           "anchor": {
-            "blob": "8798d3f2378c3d78a27623725cc402ba0331eb39",
-            "content": "sha256:7d988de15c904a26ccc1a73c40d4074bf231c4d1ce6750460c96851d6987e79c",
+            "blob": "ddf325c8c6d1e73217d71a493e3ad7d71536b3e4",
+            "content": "sha256:7e8c5391a252f73fbebb03b71aa16fdd2d92bb48c5b843f32fda57417f8f8d22",
             "locator": {
               "kind": "symbol",
-              "name": "authored"
+              "name": "_LiveUnpaired"
             }
           },
           "kind": "code"
         }
       ]
     },
-    "3": {
-      "note": "The item rules: one side, authored beats mechanical, incoming for mechanical-only, delete versus mechanical.",
+    "12": {
+      "note": "Partnerless own and incoming pair by unique content only.",
       "targets": [
         {
           "anchor": {
-            "blob": "8798d3f2378c3d78a27623725cc402ba0331eb39",
-            "content": "sha256:8d10b0c40446794761e6e4e3ed7d94c324c33f23904fb9840f15544d77489b5b",
+            "blob": "ddf325c8c6d1e73217d71a493e3ad7d71536b3e4",
+            "content": "sha256:367ecf141c19dc2c2ed5875ad20d60157bb69a18212e9d55b5c7913271c5f6ef",
             "locator": {
               "kind": "symbol",
-              "name": "merge_item"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "8798d3f2378c3d78a27623725cc402ba0331eb39",
-            "content": "sha256:4db626493f4453b97d71ec8bee0c67af07bfd24ca5a448fa19ff650b09062d30",
-            "locator": {
-              "kind": "symbol",
-              "name": "_absent_on_a_side"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "8798d3f2378c3d78a27623725cc402ba0331eb39",
-            "content": "sha256:5703c56e99d2eaa55075617c637459fd8d213e7ac9cbaab46ec2db135c9d17b9",
-            "locator": {
-              "kind": "symbol",
-              "name": "_both_changed"
+              "name": "_pair_direct"
             }
           },
           "kind": "code"
         }
       ]
     },
-    "4": {
-      "note": "References by number, entries by id, fields by name; a reference number added on both sides.",
+    "13": {
+      "note": "Incoming-kept numbers, partner numbers, then fresh numbers above every maximum in own-then-base order.",
       "targets": [
         {
           "anchor": {
-            "blob": "8798d3f2378c3d78a27623725cc402ba0331eb39",
-            "content": "sha256:5a9a4838485f057dbd388548b1ac09db65471d3f764a62f4f67d6725f446b736",
+            "blob": "ddf325c8c6d1e73217d71a493e3ad7d71536b3e4",
+            "content": "sha256:1a521072d52de28bea2375ae93d63e20754490bc9b07b675670a0ee21a029d25",
             "locator": {
               "kind": "symbol",
-              "name": "_merge_json"
+              "name": "_assign_numbers"
             }
           },
           "kind": "code"
-        },
+        }
+      ]
+    },
+    "14": {
+      "note": "A non-injective map fails the card closed into a rule-7 skip.",
+      "targets": [
         {
           "anchor": {
-            "blob": "8798d3f2378c3d78a27623725cc402ba0331eb39",
+            "blob": "ddf325c8c6d1e73217d71a493e3ad7d71536b3e4",
+            "content": "sha256:1a521072d52de28bea2375ae93d63e20754490bc9b07b675670a0ee21a029d25",
+            "locator": {
+              "kind": "symbol",
+              "name": "_assign_numbers"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "A side that would be renumbered but holds a marker without a reference, or the reverse, skips with its reason.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ddf325c8c6d1e73217d71a493e3ad7d71536b3e4",
+            "content": "sha256:f76f49a8fee5869cbc6d94aa617d5d6178321044b6c95d3b8932b7a0d262b8ee",
+            "locator": {
+              "kind": "symbol",
+              "name": "_mismatch_reason"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "Empty-base regions of only real trailing-marker evidence lines resolve incoming-first, then own.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ddf325c8c6d1e73217d71a493e3ad7d71536b3e4",
+            "content": "sha256:5f5666b7a936f3e84b60347640aeac03a13a5dc9422e2eee12edc569f1ddf7ae",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resolve_evidence_regions"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "References merge by aligned number, entries by id, fields by name.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ddf325c8c6d1e73217d71a493e3ad7d71536b3e4",
             "content": "sha256:7db691e9e2559e5c16eb7d489336d80d24ad324e2c2c0f54dc85cc5460ff5324",
             "locator": {
               "kind": "symbol",
@@ -110,59 +264,81 @@
         }
       ]
     },
-    "5": {
-      "note": "Markdown three-way by line.",
+    "18": {
+      "note": "Authored beats mechanical; a doubly-changed reference stays one item at the incoming number.",
       "targets": [
         {
           "anchor": {
-            "blob": "8798d3f2378c3d78a27623725cc402ba0331eb39",
-            "content": "sha256:c3c8f39a3d19d2ebe18e8ff86bfc71e15b752ea2862a6445875245254b289f25",
+            "blob": "ddf325c8c6d1e73217d71a493e3ad7d71536b3e4",
+            "content": "sha256:8d10b0c40446794761e6e4e3ed7d94c324c33f23904fb9840f15544d77489b5b",
             "locator": {
               "kind": "symbol",
-              "name": "_merge_markdown"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "8798d3f2378c3d78a27623725cc402ba0331eb39",
-            "content": "sha256:6df17be831f38dccd9280152b16c5e092600151667e3b70c38d54e9b619d5e3c",
-            "locator": {
-              "kind": "symbol",
-              "name": "_merge_text_file"
+              "name": "merge_item"
             }
           },
           "kind": "code"
         }
       ]
     },
-    "6": {
-      "note": "The file-by-file merge and its provenance counts.",
+    "19": {
+      "note": "The explicit conflict marker the validator refuses.",
       "targets": [
         {
           "anchor": {
-            "blob": "8798d3f2378c3d78a27623725cc402ba0331eb39",
-            "content": "sha256:ab6603547c99d2792c0a273682186fca700747df490e1393f77c76ee18ca8b1d",
+            "blob": "ddf325c8c6d1e73217d71a493e3ad7d71536b3e4",
+            "content": "sha256:2e432c9398b231c389f51ab7969a92854732e769a60650502fad1864393373cb",
             "locator": {
               "kind": "symbol",
-              "name": "merge_trees"
+              "name": "_conflicted"
             }
           },
           "kind": "code"
         }
       ]
     },
-    "7": {
-      "note": "The item rules on mechanical and authored fields.",
+    "20": {
+      "note": "The report counts aligned cards, renumbered references, kept evidence lines, and skipped cards.",
       "targets": [
         {
           "anchor": {
-            "blob": "5d3b30310a2b56118b7442daccaf763fae792980",
-            "content": "sha256:ace6564228b1d2dc12a39969501745b0a8d6eed5abe71770fa2c141008071299",
+            "blob": "ddf325c8c6d1e73217d71a493e3ad7d71536b3e4",
+            "content": "sha256:b7f58a480767634e6ed2b95091fdb1cffa35ecf120dc612f42be0e56b3365544",
             "locator": {
               "kind": "symbol",
-              "name": "test_items_merge_by_their_mechanical_and_authored_fields"
+              "name": "AlignmentReport"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "The prose remap moves exactly the markers the shared grammar reports.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a6e1e98c95e55ebf9b6b1a6b7ab5777655412596",
+            "content": "sha256:c6711de3089cd96fe2c150f2a9818ed6d468fc0f5dfb5959adbdb3f66c4592d9",
+            "locator": {
+              "kind": "symbol",
+              "name": "remap_markers"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/markers.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "Both sides added one reference each: alignment gives each its number, no conflict.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1b81505edc5c675ce2a6f1cdf92a60af07a2a634",
+            "content": "sha256:83e0cb92d9717a12946da352ad28240399399f6559a9f58c0ce0e6dff8274bf8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_reference_number_both_sides_added_aligns_when_the_card_is_complete"
             },
             "path": "mcp/tests/test_knowledge_crossing.py"
           },
@@ -170,20 +346,104 @@
         }
       ]
     },
-    "8": {
-      "note": "A reference number both sides added conflicts even when the Markdown merges.",
+    "23": {
+      "note": "A reference both lines changed differently stays one item at the incoming number.",
       "targets": [
         {
           "anchor": {
-            "blob": "5d3b30310a2b56118b7442daccaf763fae792980",
-            "content": "sha256:bc8ade1a2f865ad64c622fef8ace488caa3ced7ebfa6616268ef29887bfb6b37",
+            "blob": "1b81505edc5c675ce2a6f1cdf92a60af07a2a634",
+            "content": "sha256:a38aca35bdacc1e3fcb7496d8d0d6050fcbb2b3f35aefedbfa16fffe60cec29f",
             "locator": {
               "kind": "symbol",
-              "name": "test_a_reference_number_both_sides_added_conflicts_even_when_the_markdown_merges"
+              "name": "test_a_true_conflict_stays_one_item_at_the_incoming_number"
             },
             "path": "mcp/tests/test_knowledge_crossing.py"
           },
           "kind": "test"
+        }
+      ]
+    },
+    "24": {
+      "note": "Evidence lines both sides added are kept incoming-first, then own.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1b81505edc5c675ce2a6f1cdf92a60af07a2a634",
+            "content": "sha256:07688e30b7bcff1178207c1eb3273d7110b7c5edc8291aa24416e07d7f85e58f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_evidence_lines_both_sides_added_are_kept_in_order"
+            },
+            "path": "mcp/tests/test_knowledge_crossing.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "25": {
+      "note": "The same three trees merge to identical bytes twice.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1b81505edc5c675ce2a6f1cdf92a60af07a2a634",
+            "content": "sha256:1a5557d622fc49df18ad95f02e35e5bb0ee64e4b0748be3c0dc5541d1bb84967",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_same_three_trees_merge_to_identical_bytes"
+            },
+            "path": "mcp/tests/test_knowledge_crossing.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "26": {
+      "note": "Fresh numbers follow own order, then base order, above every maximum.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1b81505edc5c675ce2a6f1cdf92a60af07a2a634",
+            "content": "sha256:7d7b3af7a162271d39794b9af65795c3aa3d1f31ca8b098a51d1dbbe2892831b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_fresh_numbers_follow_own_order_then_base_order"
+            },
+            "path": "mcp/tests/test_knowledge_crossing.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "27": {
+      "note": "A repeated number refuses alignment instead of writing duplicates.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1b81505edc5c675ce2a6f1cdf92a60af07a2a634",
+            "content": "sha256:4aa681676a6264f1fe9f2b74bfbf60f0d4ca7c1f2429165bd5827181c5997785",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_repeated_number_refuses_alignment"
+            },
+            "path": "mcp/tests/test_knowledge_crossing.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "One card's numbers are paired, allocated, and its prose remapped, or the card merges as today with its reason.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ddf325c8c6d1e73217d71a493e3ad7d71536b3e4",
+            "content": "sha256:fa9cfa4034b084160395ff06336eeeb3397fa0ef3bb4fc4bf7dbe35aa44f711f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_align_card"
+            }
+          },
+          "kind": "code"
         }
       ]
     }
