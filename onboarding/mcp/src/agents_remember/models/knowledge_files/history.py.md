@@ -200,6 +200,16 @@ that the ordered list gave is gone, while subject disjointness is still asserted
 - Registered sixth, owned by MIK-R14. [13]
 - The row kind registered with its owner, and the subject parsed. [14]
 
+## FamilyRow Keeps Effect And Own Revision Optional (MIK-R48)
+
+`FamilyRow` admits a missing effect and a missing own revision on rows that are
+already recorded, and keeps them missing when the row is written out again; the
+sixteen frozen rows of this master read back with neither key. A new or edited
+changed row must carry both facts, and a half-recorded changed row or an effect on
+any other disposition is refused naming the family and the row.
+
+- Recorded rows keep missing effect and revision missing on rewrite. [38]
+
 ## Evidence
 
 ### Docs References

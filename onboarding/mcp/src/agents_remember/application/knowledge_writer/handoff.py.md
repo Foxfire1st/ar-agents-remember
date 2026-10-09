@@ -116,6 +116,16 @@ rationale") are named problems. A cover is an entry ID, `{id, path?, locator?, r
 - The cover request and its rationale. [23]
 - A cover's rationale: non-empty, and never beside remove. [24]
 
+## The Effect Input Gate (MIK-R48)
+
+`family_effect_refusal` is the input gate for the effect vocabulary: a changed
+family row without a valid authored effect is refused, an effect on a rerouted,
+assigned, no_impact or retired row is refused naming the row, the field and the
+disposition, and the gate never derives a label from wording, reason,
+disposition, counts, members or a member's effect.
+
+- The gate requires the effect on changed rows and refuses it elsewhere. [25]
+
 ## Evidence
 
 ### Docs References

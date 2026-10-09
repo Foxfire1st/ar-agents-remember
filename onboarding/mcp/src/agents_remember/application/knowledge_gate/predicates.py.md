@@ -38,6 +38,7 @@ counted change) satisfies it. An item whose kind has no predicate is open.
   row that retires it. A later `no_impact`, `moved` or `extended` row leaves the item open, and the reason says to
   restate the changed row.
 - **Family rows (rule 2).** `family_row_open` requires a `FamilyRow` about the family and then the first failing of:
+  the recorded own-revision drift check (the row's recorded revision against the family's K_C revision),
   `_hidden_guarantee_reason` (L37: when the item's `reachedBy` holds `guarantee-changed`, the row is `changed` or
   `retired`; a `no_impact`, `assigned` or `rerouted` row does not answer a family whose guarantee the leaf changed),
   `_examined_set_reason` (`examined` equals the union of the family's K_B and K_C members, naming the unexamined and
@@ -77,6 +78,15 @@ counted change) satisfies it. An item whose kind has no predicate is open.
 
 - None.
 
+## Gate Currentness On Own Revision (MIK-R48)
+
+`family_row_open` reopens a governing family row when the family record moved past
+the row's recorded own revision; the remedy text tells a stale changed row to name
+its effect again and a stale row of any other disposition to name a row of its own
+disposition.
+
+- The gate reopens governing rows on family revision drift. [13]
+
 ## Evidence
 
 ### Docs References
@@ -95,7 +105,7 @@ No configured live documentation source was available for this pass.
 - Registration and dispatch; an unregistered kind is open. [3]
 
 - The covers an invariant row must hold, and its currentness. [4]
-- The family row's four reasons: a hidden guarantee change, the examined set, moved members and uncovered members. [5]
+- The family row's own-revision check, then its four reasons: a hidden guarantee change, the examined set, moved members and uncovered members. [5]
 
 - The route condition decided by subject. [6]
 - The ten registrations. [7]

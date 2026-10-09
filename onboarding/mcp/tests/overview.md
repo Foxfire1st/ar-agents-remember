@@ -109,7 +109,9 @@ conflict. A union merge can leave a line twice, leave a list out of order, bring
 one side deleted, or interleave two rows. The loaders refuse a duplicate line, an unordered list,
 the line of a file that no longer exists and a file that does not parse. The lane loader runs at
 every collection, and the validator command (the same command without `--write`) loads both
-catalogs.
+catalogs. The lifecycle catalog's consumer lines pin the live set: after any merge, a consumer
+line for a file that no longer exists is refused, and restoring the base file plus the live
+consumer lines is the repair.
 
 ## Reviewer operation and shared capture proof cards
 

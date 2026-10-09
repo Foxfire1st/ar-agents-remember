@@ -22,7 +22,8 @@ document and its series contract in the leaf's enclosure.
   code commit; the second run reads the cache.
 - **Writer.** The writer carries moved blobs and the rows that cover them, never edits another owner's row
   or a closed history file, and a proof authored through the writer raises its invariant when its test
-  changes.
+  changes. A frozen-text carry assertion does not hold for a hand-closed file under a rule that voids
+  it there: the assertion names the reopen way out while byte and refusal checks stand.
 - **Surfaces.** The tool returns the latest worklist and the checklist shows it. The memory-quality run
   recomputes, persists and names its own failure, and the controller path persists the worklist and
   renders it in the checklist.

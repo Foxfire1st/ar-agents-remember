@@ -3,8 +3,61 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "12cb0674e94ed1242b5e8c322efc6dbe8a973523",
-        "content": "sha256:6c8ba940c4e72e649c55c1f55f7694696b67d675afc9d4436ddcccd0c750b90d",
+        "blob": "4e30c21d7d4d45c8dc277c76b63ad78a79157eda",
+        "content": "sha256:9c67bedc2c8c36b18899210602706f4551c16c4c548d32548495fcd05c0476ed",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-9R6X1J",
+      "invariant": "INV-MKZ0EA",
+      "origin": {
+        "handoffEntry": "L48-C-callsite-hunks-carry-rule-obligations",
+        "leaf": "260928-MIK-L48"
+      },
+      "rationale": "Helper _again and the drift-remedy body around family_row_open carry the disposition-specific re-row wording.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "4e30c21d7d4d45c8dc277c76b63ad78a79157eda",
+        "content": "sha256:07ca253b99a77661c91e7476596f954d6d9508410004a1c4d70dd0d15f041502",
+        "locator": {
+          "kind": "symbol",
+          "name": "family_row_open"
+        }
+      },
+      "id": "RLZ-G8T8H0",
+      "invariant": "INV-EH65RT",
+      "origin": {
+        "handoffEntry": "L48-W-MIK-R48-v2-delivery",
+        "leaf": "260928-MIK-L48"
+      },
+      "rationale": "the gate currentness check comparing the recorded own revision with the candidate family",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "4e30c21d7d4d45c8dc277c76b63ad78a79157eda",
+        "content": "sha256:07ca253b99a77661c91e7476596f954d6d9508410004a1c4d70dd0d15f041502",
+        "locator": {
+          "kind": "symbol",
+          "name": "family_row_open"
+        }
+      },
+      "id": "RLZ-GYT7S8",
+      "invariant": "INV-2TZ2E3",
+      "origin": {
+        "handoffEntry": "MIK-R48@v2 rule 4",
+        "leaf": "260928-MIK-L48"
+      },
+      "rationale": "The predicate reopens a governing row on family revision drift before applying existing member coverage.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "4e30c21d7d4d45c8dc277c76b63ad78a79157eda",
+        "content": "sha256:07ca253b99a77661c91e7476596f954d6d9508410004a1c4d70dd0d15f041502",
         "locator": {
           "kind": "symbol",
           "name": "family_row_open"
@@ -21,7 +74,7 @@
     },
     {
       "anchor": {
-        "blob": "12cb0674e94ed1242b5e8c322efc6dbe8a973523",
+        "blob": "4e30c21d7d4d45c8dc277c76b63ad78a79157eda",
         "content": "sha256:fc0d7d5fa0439df2397680b9f176fc6db44615e9673ed2ee53e36447ecd34865",
         "locator": {
           "kind": "symbol",
@@ -44,7 +97,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "12cb0674e94ed1242b5e8c322efc6dbe8a973523",
+            "blob": "4e30c21d7d4d45c8dc277c76b63ad78a79157eda",
             "content": "sha256:de3a6cfb0deab4a4092e9d17bcf934f9f69d882d21cd1e5baf71999599629cf7",
             "locator": {
               "end": 34,
@@ -61,7 +114,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "12cb0674e94ed1242b5e8c322efc6dbe8a973523",
+            "blob": "4e30c21d7d4d45c8dc277c76b63ad78a79157eda",
             "content": "sha256:53da6194c78e5f14575a85286184420ff70a0222d6b399631d1a07c452270bff",
             "locator": {
               "kind": "symbol",
@@ -106,12 +159,28 @@
         }
       ]
     },
+    "13": {
+      "note": "The gate reopens governing rows on family revision drift.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4e30c21d7d4d45c8dc277c76b63ad78a79157eda",
+            "content": "sha256:07ca253b99a77661c91e7476596f954d6d9508410004a1c4d70dd0d15f041502",
+            "locator": {
+              "kind": "symbol",
+              "name": "family_row_open"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "What a predicate reads, and the entry state that raises on a failed read.",
       "targets": [
         {
           "anchor": {
-            "blob": "12cb0674e94ed1242b5e8c322efc6dbe8a973523",
+            "blob": "4e30c21d7d4d45c8dc277c76b63ad78a79157eda",
             "content": "sha256:b6aaf90cc945ae59b774ddfe476f0b2e4e5ac76c7c7bac312c76446362723793",
             "locator": {
               "kind": "symbol",
@@ -122,7 +191,7 @@
         },
         {
           "anchor": {
-            "blob": "12cb0674e94ed1242b5e8c322efc6dbe8a973523",
+            "blob": "4e30c21d7d4d45c8dc277c76b63ad78a79157eda",
             "content": "sha256:f052d9e85680da1c7eed7a67ecb1918551051cc2c708e0a89819c744363d970f",
             "locator": {
               "kind": "symbol",
@@ -138,7 +207,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "12cb0674e94ed1242b5e8c322efc6dbe8a973523",
+            "blob": "4e30c21d7d4d45c8dc277c76b63ad78a79157eda",
             "content": "sha256:1db214f0c369d9d12b79468e6ef43c88bbf2a2bcfbc6c1756e03960cb69c0470",
             "locator": {
               "kind": "symbol",
@@ -149,7 +218,7 @@
         },
         {
           "anchor": {
-            "blob": "12cb0674e94ed1242b5e8c322efc6dbe8a973523",
+            "blob": "4e30c21d7d4d45c8dc277c76b63ad78a79157eda",
             "content": "sha256:dac1f15525909756ca3c2f0c59a91dda327a1c6796e1dc710ec87dc6ac813585",
             "locator": {
               "kind": "symbol",
@@ -165,7 +234,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "12cb0674e94ed1242b5e8c322efc6dbe8a973523",
+            "blob": "4e30c21d7d4d45c8dc277c76b63ad78a79157eda",
             "content": "sha256:990bc710c5e6e326f454b4c14f2278f6a6cec94c725cf749873d8c74292f4782",
             "locator": {
               "kind": "symbol",
@@ -176,7 +245,7 @@
         },
         {
           "anchor": {
-            "blob": "12cb0674e94ed1242b5e8c322efc6dbe8a973523",
+            "blob": "4e30c21d7d4d45c8dc277c76b63ad78a79157eda",
             "content": "sha256:fc0d7d5fa0439df2397680b9f176fc6db44615e9673ed2ee53e36447ecd34865",
             "locator": {
               "kind": "symbol",
@@ -188,48 +257,15 @@
       ]
     },
     "5": {
-      "note": "The family row's four reasons: a hidden guarantee change, the examined set, moved members and uncovered members.",
+      "note": "The family row's own-revision check, then its four reasons: a hidden guarantee change, the examined set, moved members and uncovered members.",
       "targets": [
         {
           "anchor": {
-            "blob": "12cb0674e94ed1242b5e8c322efc6dbe8a973523",
-            "content": "sha256:6c8ba940c4e72e649c55c1f55f7694696b67d675afc9d4436ddcccd0c750b90d",
+            "blob": "4e30c21d7d4d45c8dc277c76b63ad78a79157eda",
+            "content": "sha256:07ca253b99a77661c91e7476596f954d6d9508410004a1c4d70dd0d15f041502",
             "locator": {
               "kind": "symbol",
               "name": "family_row_open"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "12cb0674e94ed1242b5e8c322efc6dbe8a973523",
-            "content": "sha256:eeb5319929c96c2fc422644c3afef139450e14aabb2868bc3c1bc51d891bf51b",
-            "locator": {
-              "kind": "symbol",
-              "name": "_examined_set_reason"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "12cb0674e94ed1242b5e8c322efc6dbe8a973523",
-            "content": "sha256:c79e5f2da5074ebfe36e4dc7fd4ae12a219d9a97dcc5964f4b554dcd86d1e5ba",
-            "locator": {
-              "kind": "symbol",
-              "name": "_moved_members_reason"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "12cb0674e94ed1242b5e8c322efc6dbe8a973523",
-            "content": "sha256:5448e0ef869acb762bf95fab4bd8ff2419369dfffcf989ffa013799171cd5bec",
-            "locator": {
-              "kind": "symbol",
-              "name": "_uncovered_members_reason"
             }
           },
           "kind": "code"
@@ -241,7 +277,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "12cb0674e94ed1242b5e8c322efc6dbe8a973523",
+            "blob": "4e30c21d7d4d45c8dc277c76b63ad78a79157eda",
             "content": "sha256:53ed51284a461e9c83c28a51ae91b466b430fa376c21c4b19760a28cbedd6a37",
             "locator": {
               "kind": "symbol",
@@ -257,12 +293,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "12cb0674e94ed1242b5e8c322efc6dbe8a973523",
+            "blob": "4e30c21d7d4d45c8dc277c76b63ad78a79157eda",
             "content": "sha256:a9a7031e241d1184ae2773c87a9d12712b2b74147d3674cc5de3e714ed58b238",
             "locator": {
-              "end": 315,
+              "end": 329,
               "kind": "line_range",
-              "start": 307
+              "start": 321
             }
           },
           "kind": "code"
@@ -291,7 +327,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "12cb0674e94ed1242b5e8c322efc6dbe8a973523",
+            "blob": "4e30c21d7d4d45c8dc277c76b63ad78a79157eda",
             "content": "sha256:fc0d7d5fa0439df2397680b9f176fc6db44615e9673ed2ee53e36447ecd34865",
             "locator": {
               "kind": "symbol",

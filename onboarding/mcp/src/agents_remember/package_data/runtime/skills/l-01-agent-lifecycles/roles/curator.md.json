@@ -1,6 +1,24 @@
 {
   "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md",
   "realizes": [],
-  "references": {},
+  "references": {
+    "1": {
+      "note": "The mirror carries the same effect contract as the canonical role.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "51bec83a0fb7d1d5f7feea7563ddfa0f4a69c131",
+            "content": "sha256:e5634b2fde999a70250356a80b5b8e8bfebac4a25e60d6f7c75c56d985354f01",
+            "locator": {
+              "kind": "symbol",
+              "name": "family_effect_refusal"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/handoff.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
   "schema": "ar-onboarding-file/v1"
 }

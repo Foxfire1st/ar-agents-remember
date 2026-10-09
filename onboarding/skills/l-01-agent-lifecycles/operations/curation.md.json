@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "fb658851e57cca377651a1f40263f8f4d54b86b6",
+        "blob": "dfff2166cfd50ada8f20c83d1a2a030379df4511",
         "content": "sha256:a2a288dd989f6131292cb6ea8148355c9b71f1a9c4ea5bdeef7b06e319c97f42",
         "locator": {
-          "end": 294,
+          "end": 296,
           "kind": "line_range",
-          "start": 294
+          "start": 296
         }
       },
       "id": "RLZ-4YAPS7",
@@ -22,8 +22,8 @@
     },
     {
       "anchor": {
-        "blob": "fb658851e57cca377651a1f40263f8f4d54b86b6",
-        "content": "sha256:88c46da785d0cedd77c8f4179789345ae56e6e832289b429cb4630db1dbaf382",
+        "blob": "dfff2166cfd50ada8f20c83d1a2a030379df4511",
+        "content": "sha256:9b63c5af00fe1421a0afa693f110467c40afc4a195137c32fdbafef1e999098b",
         "locator": {
           "kind": "file"
         }
@@ -39,12 +39,12 @@
     },
     {
       "anchor": {
-        "blob": "fb658851e57cca377651a1f40263f8f4d54b86b6",
+        "blob": "dfff2166cfd50ada8f20c83d1a2a030379df4511",
         "content": "sha256:ab04dd1aef9a30dd3c851bfdc62e46281e9eb0c0aa2046b73a52069db0d23fe4",
         "locator": {
-          "end": 266,
+          "end": 268,
           "kind": "line_range",
-          "start": 264
+          "start": 266
         }
       },
       "id": "RLZ-EEEG4W",
@@ -58,8 +58,8 @@
     },
     {
       "anchor": {
-        "blob": "fb658851e57cca377651a1f40263f8f4d54b86b6",
-        "content": "sha256:88c46da785d0cedd77c8f4179789345ae56e6e832289b429cb4630db1dbaf382",
+        "blob": "dfff2166cfd50ada8f20c83d1a2a030379df4511",
+        "content": "sha256:9b63c5af00fe1421a0afa693f110467c40afc4a195137c32fdbafef1e999098b",
         "locator": {
           "kind": "file"
         }
@@ -75,8 +75,27 @@
     },
     {
       "anchor": {
-        "blob": "fb658851e57cca377651a1f40263f8f4d54b86b6",
-        "content": "sha256:88c46da785d0cedd77c8f4179789345ae56e6e832289b429cb4630db1dbaf382",
+        "blob": "dfff2166cfd50ada8f20c83d1a2a030379df4511",
+        "content": "sha256:d6d49af062890c27a501699f6c12c29d977eabf623df0857b62c8f5388480d88",
+        "locator": {
+          "end": 121,
+          "kind": "line_range",
+          "start": 121
+        }
+      },
+      "id": "RLZ-PAE912",
+      "invariant": "INV-VN0A3Q",
+      "origin": {
+        "handoffEntry": "MIK-R48@v2 rule 7",
+        "leaf": "260928-MIK-L48"
+      },
+      "rationale": "The curation operation requires the same authoring fields during the existing pass.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "dfff2166cfd50ada8f20c83d1a2a030379df4511",
+        "content": "sha256:9b63c5af00fe1421a0afa693f110467c40afc4a195137c32fdbafef1e999098b",
         "locator": {
           "kind": "file"
         }
@@ -92,7 +111,7 @@
     },
     {
       "anchor": {
-        "blob": "fb658851e57cca377651a1f40263f8f4d54b86b6",
+        "blob": "dfff2166cfd50ada8f20c83d1a2a030379df4511",
         "content": "sha256:6ce616857be9b2932b1b442a156eb06df996534a4dc191f60bede6f9a6de49a7",
         "locator": {
           "end": 75,

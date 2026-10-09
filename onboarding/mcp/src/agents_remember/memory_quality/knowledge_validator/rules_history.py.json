@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "3c0202279737c46af9d3cdbd32309d0f29503a76",
+        "blob": "3274f2b5b02128a98741ec4f1ebe84bd8285eb04",
         "content": "sha256:8b4227c9d3360ee30a300328b6cc7814300ea3eb301ad606403403bb52bb9dae",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "3c0202279737c46af9d3cdbd32309d0f29503a76",
+        "blob": "3274f2b5b02128a98741ec4f1ebe84bd8285eb04",
         "content": "sha256:8958b1d5e7974ce9450138ae54b86b9c439181230800167a1796f056a74b96b7",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "3c0202279737c46af9d3cdbd32309d0f29503a76",
+        "blob": "3274f2b5b02128a98741ec4f1ebe84bd8285eb04",
         "content": "sha256:b30cea9a1da16d6d79ceae4fcc28e1f7337335326592c19da6e69fdcde1134e7",
         "locator": {
           "kind": "symbol",
@@ -54,6 +54,59 @@
       },
       "rationale": "At a leaf's publication reads every history file that is not closed in a base or in a frozen commit, whatever its own flag, so only a recorded closeout's file is left out of the re-anchor check.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "3274f2b5b02128a98741ec4f1ebe84bd8285eb04",
+        "content": "sha256:c2f8e85a76746c05fbabcc6b2888b462de8d083de39f167c1a37c5be4512be48",
+        "locator": {
+          "kind": "symbol",
+          "name": "check_family_judgments"
+        }
+      },
+      "id": "RLZ-CNGN82",
+      "invariant": "INV-D4C9B3",
+      "origin": {
+        "handoffEntry": "MIK-R48@v2 rule 3",
+        "leaf": "260928-MIK-L48"
+      },
+      "rationale": "The registered check distinguishes the publication population and recorded row equality without backfill.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "3274f2b5b02128a98741ec4f1ebe84bd8285eb04",
+        "content": "sha256:c2f8e85a76746c05fbabcc6b2888b462de8d083de39f167c1a37c5be4512be48",
+        "locator": {
+          "kind": "symbol",
+          "name": "check_family_judgments"
+        }
+      },
+      "id": "RLZ-SCX44M",
+      "invariant": "INV-EH65RT",
+      "origin": {
+        "handoffEntry": "L48-W-MIK-R48-v2-delivery",
+        "leaf": "260928-MIK-L48"
+      },
+      "rationale": "the publication rule judging only route-published new or edited rows",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "3274f2b5b02128a98741ec4f1ebe84bd8285eb04",
+        "content": "sha256:232647f54e098581048fa54985922540a7da716ac50ab4d4e0ae188753973d02",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-X21JJV",
+      "invariant": "INV-MKZ0EA",
+      "origin": {
+        "handoffEntry": "L48-C-callsite-hunks-carry-rule-obligations",
+        "leaf": "260928-MIK-L48"
+      },
+      "rationale": "Registration and rule-text hunks outside check_family_judgments carry the publication-population wording.",
+      "role": "unclassified"
     }
   ],
   "references": {
@@ -96,7 +149,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3c0202279737c46af9d3cdbd32309d0f29503a76",
+            "blob": "3274f2b5b02128a98741ec4f1ebe84bd8285eb04",
             "content": "sha256:b30cea9a1da16d6d79ceae4fcc28e1f7337335326592c19da6e69fdcde1134e7",
             "locator": {
               "kind": "symbol",
@@ -112,7 +165,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3c0202279737c46af9d3cdbd32309d0f29503a76",
+            "blob": "3274f2b5b02128a98741ec4f1ebe84bd8285eb04",
             "content": "sha256:53f33a86c22abbd5093804d624057da20622979d983fe06abc4ef321e661e03f",
             "locator": {
               "kind": "symbol",
@@ -128,7 +181,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3c0202279737c46af9d3cdbd32309d0f29503a76",
+            "blob": "3274f2b5b02128a98741ec4f1ebe84bd8285eb04",
             "content": "sha256:8b4227c9d3360ee30a300328b6cc7814300ea3eb301ad606403403bb52bb9dae",
             "locator": {
               "kind": "symbol",
@@ -144,7 +197,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3c0202279737c46af9d3cdbd32309d0f29503a76",
+            "blob": "3274f2b5b02128a98741ec4f1ebe84bd8285eb04",
             "content": "sha256:8958b1d5e7974ce9450138ae54b86b9c439181230800167a1796f056a74b96b7",
             "locator": {
               "kind": "symbol",
@@ -160,7 +213,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3c0202279737c46af9d3cdbd32309d0f29503a76",
+            "blob": "3274f2b5b02128a98741ec4f1ebe84bd8285eb04",
             "content": "sha256:f7abed20650cba1d743187c351a7bdfd498ab954797afc796f245b4314079860",
             "locator": {
               "kind": "symbol",
@@ -205,12 +258,28 @@
         }
       ]
     },
+    "18": {
+      "note": "Only route-published new or edited rows are judged.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3274f2b5b02128a98741ec4f1ebe84bd8285eb04",
+            "content": "sha256:c2f8e85a76746c05fbabcc6b2888b462de8d083de39f167c1a37c5be4512be48",
+            "locator": {
+              "kind": "symbol",
+              "name": "check_family_judgments"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "The files the re-anchor check reads.",
       "targets": [
         {
           "anchor": {
-            "blob": "3c0202279737c46af9d3cdbd32309d0f29503a76",
+            "blob": "3274f2b5b02128a98741ec4f1ebe84bd8285eb04",
             "content": "sha256:b30cea9a1da16d6d79ceae4fcc28e1f7337335326592c19da6e69fdcde1134e7",
             "locator": {
               "kind": "symbol",
@@ -226,7 +295,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3c0202279737c46af9d3cdbd32309d0f29503a76",
+            "blob": "3274f2b5b02128a98741ec4f1ebe84bd8285eb04",
             "content": "sha256:cf108146f9604aa3fd19b01e83275815d1131c62fbf6683583a4b6655d6b1585",
             "locator": {
               "kind": "symbol",
@@ -242,7 +311,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3c0202279737c46af9d3cdbd32309d0f29503a76",
+            "blob": "3274f2b5b02128a98741ec4f1ebe84bd8285eb04",
             "content": "sha256:8b4227c9d3360ee30a300328b6cc7814300ea3eb301ad606403403bb52bb9dae",
             "locator": {
               "kind": "symbol",
@@ -258,7 +327,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3c0202279737c46af9d3cdbd32309d0f29503a76",
+            "blob": "3274f2b5b02128a98741ec4f1ebe84bd8285eb04",
             "content": "sha256:ee0eabc38a03a35c93292319a8cba532ef6494c923682d7e705123b17ffbb69a",
             "locator": {
               "kind": "symbol",
@@ -274,7 +343,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3c0202279737c46af9d3cdbd32309d0f29503a76",
+            "blob": "3274f2b5b02128a98741ec4f1ebe84bd8285eb04",
             "content": "sha256:08f2d807a28da98b65a7dd1b88fcca427d7f99ec4af82708b3a4fc50ff1b6f03",
             "locator": {
               "kind": "symbol",
@@ -290,7 +359,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3c0202279737c46af9d3cdbd32309d0f29503a76",
+            "blob": "3274f2b5b02128a98741ec4f1ebe84bd8285eb04",
             "content": "sha256:ada10dcf1b001a10048f21dde3833e4c18cf80cb08e0a1a22bb08a27bb39f403",
             "locator": {
               "kind": "symbol",
@@ -301,7 +370,7 @@
         },
         {
           "anchor": {
-            "blob": "3c0202279737c46af9d3cdbd32309d0f29503a76",
+            "blob": "3274f2b5b02128a98741ec4f1ebe84bd8285eb04",
             "content": "sha256:9810864eafef596d9db43cd1edaae57748cabf4b3a8128db9dcf0bfc8c0bf58e",
             "locator": {
               "kind": "symbol",

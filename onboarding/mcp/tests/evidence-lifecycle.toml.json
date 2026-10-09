@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "ddd0e3086ac1594a212b04efdfca79aab6ad8e01",
+        "blob": "79454c7435576e197253d735c8be96301d8379fe",
         "content": "sha256:b34cd52a387bf092bd2484b6a8602413c0028077ff493f0aff91311cbb09d3f1",
         "locator": {
-          "end": 1133,
+          "end": 1134,
           "kind": "line_range",
-          "start": 1133
+          "start": 1134
         }
       },
       "id": "RLZ-1WK7P0",
@@ -22,7 +22,24 @@
     },
     {
       "anchor": {
-        "blob": "ddd0e3086ac1594a212b04efdfca79aab6ad8e01",
+        "blob": "79454c7435576e197253d735c8be96301d8379fe",
+        "content": "sha256:d62ca4770c0037f9870bc32f62bc0684519705638a5566361346309dbd822b1a",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-GRTJG0",
+      "invariant": "INV-MSCRAN",
+      "origin": {
+        "handoffEntry": "L48-W-F2-catalog-union-resurrection-repaired",
+        "leaf": "260928-MIK-L48"
+      },
+      "rationale": "the whole catalog file is the place: resurrected rows for deleted files were removed and exactly two consumer lines added",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "79454c7435576e197253d735c8be96301d8379fe",
         "content": "sha256:b34cd52a387bf092bd2484b6a8602413c0028077ff493f0aff91311cbb09d3f1",
         "locator": {
           "end": 389,
@@ -41,12 +58,12 @@
     },
     {
       "anchor": {
-        "blob": "ddd0e3086ac1594a212b04efdfca79aab6ad8e01",
+        "blob": "79454c7435576e197253d735c8be96301d8379fe",
         "content": "sha256:d78be9a4046b8ffdab5120a0a748737d28d92bec8743be7d5acec6847feb659b",
         "locator": {
-          "end": 1273,
+          "end": 1274,
           "kind": "line_range",
-          "start": 1273
+          "start": 1274
         }
       },
       "id": "RLZ-VQZWNZ",

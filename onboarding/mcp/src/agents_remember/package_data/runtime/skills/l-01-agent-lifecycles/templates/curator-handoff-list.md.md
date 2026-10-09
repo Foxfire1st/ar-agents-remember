@@ -202,6 +202,15 @@ Canonical skills own instructions. Generated copies are synchronized artifacts; 
 
 No additional work is asserted by this card. Actual project publication and semantic acceptance remain separately evidenced outcomes.
 
+## The Family-Effect Input Bullet, Mirrored (MIK-R48)
+
+This generated copy carries the same family-effect bullet as the canonical template:
+a changed family row needs the curator's authored `effect`, any other disposition
+takes none, and the revision is the writer's. The copy holds no contract of its own;
+the canonical surface with its card and the governing history rows carries it.
+
+- The mirror carries the same effect input as the canonical template. [16]
+
 ## Evidence
 
 ### Docs References

@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "7fe080db1e9e99b1f5eb2ffeea96fff983d9e801",
+        "blob": "e5cae0a0b2c4de28fc27e640bfe785ddda22832a",
         "content": "sha256:8a4088c709bac5874ee149bc729069dcb0054b423e9ff911acbfee36827759ac",
         "locator": {
           "end": 28,
@@ -22,12 +22,12 @@
     },
     {
       "anchor": {
-        "blob": "7fe080db1e9e99b1f5eb2ffeea96fff983d9e801",
+        "blob": "e5cae0a0b2c4de28fc27e640bfe785ddda22832a",
         "content": "sha256:a2a288dd989f6131292cb6ea8148355c9b71f1a9c4ea5bdeef7b06e319c97f42",
         "locator": {
-          "end": 239,
+          "end": 241,
           "kind": "line_range",
-          "start": 239
+          "start": 241
         }
       },
       "id": "RLZ-7B663Y",
@@ -41,8 +41,27 @@
     },
     {
       "anchor": {
-        "blob": "7fe080db1e9e99b1f5eb2ffeea96fff983d9e801",
-        "content": "sha256:a591435ed3562cb56d271ae2cd800aadb1e95df74ce384b68e2839a7e19a7e6f",
+        "blob": "e5cae0a0b2c4de28fc27e640bfe785ddda22832a",
+        "content": "sha256:7b4318dfc78f87e7f0e1659161df556af1d576dfe49c3dca2c6680868d074ffb",
+        "locator": {
+          "end": 137,
+          "kind": "line_range",
+          "start": 137
+        }
+      },
+      "id": "RLZ-AHYBRR",
+      "invariant": "INV-VN0A3Q",
+      "origin": {
+        "handoffEntry": "MIK-R48@v2 rule 7",
+        "leaf": "260928-MIK-L48"
+      },
+      "rationale": "The curator role instructs the author of family guarantee judgments to supply the meaning effect while the writer captures revision.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "e5cae0a0b2c4de28fc27e640bfe785ddda22832a",
+        "content": "sha256:870266234ae73477d8ca1eea59448a4048e9082222e3b0199e366f30d3773d64",
         "locator": {
           "kind": "file"
         }
@@ -58,12 +77,12 @@
     },
     {
       "anchor": {
-        "blob": "7fe080db1e9e99b1f5eb2ffeea96fff983d9e801",
+        "blob": "e5cae0a0b2c4de28fc27e640bfe785ddda22832a",
         "content": "sha256:4c024eabad39e1e9db50b2c8e07f6c71c55665fa886c0948f5ce274a00279116",
         "locator": {
-          "end": 219,
+          "end": 221,
           "kind": "line_range",
-          "start": 217
+          "start": 219
         }
       },
       "id": "RLZ-DT71R6",
@@ -77,8 +96,8 @@
     },
     {
       "anchor": {
-        "blob": "7fe080db1e9e99b1f5eb2ffeea96fff983d9e801",
-        "content": "sha256:a591435ed3562cb56d271ae2cd800aadb1e95df74ce384b68e2839a7e19a7e6f",
+        "blob": "e5cae0a0b2c4de28fc27e640bfe785ddda22832a",
+        "content": "sha256:870266234ae73477d8ca1eea59448a4048e9082222e3b0199e366f30d3773d64",
         "locator": {
           "kind": "file"
         }
@@ -94,8 +113,8 @@
     },
     {
       "anchor": {
-        "blob": "7fe080db1e9e99b1f5eb2ffeea96fff983d9e801",
-        "content": "sha256:a591435ed3562cb56d271ae2cd800aadb1e95df74ce384b68e2839a7e19a7e6f",
+        "blob": "e5cae0a0b2c4de28fc27e640bfe785ddda22832a",
+        "content": "sha256:870266234ae73477d8ca1eea59448a4048e9082222e3b0199e366f30d3773d64",
         "locator": {
           "kind": "file"
         }
@@ -110,12 +129,12 @@
     },
     {
       "anchor": {
-        "blob": "7fe080db1e9e99b1f5eb2ffeea96fff983d9e801",
+        "blob": "e5cae0a0b2c4de28fc27e640bfe785ddda22832a",
         "content": "sha256:9a03fcdb919eee74718d24f0feb72d213ad1926e294bb45813387acc341e1673",
         "locator": {
-          "end": 225,
+          "end": 227,
           "kind": "line_range",
-          "start": 223
+          "start": 225
         }
       },
       "id": "RLZ-PDP66S",
@@ -129,7 +148,7 @@
     },
     {
       "anchor": {
-        "blob": "7fe080db1e9e99b1f5eb2ffeea96fff983d9e801",
+        "blob": "e5cae0a0b2c4de28fc27e640bfe785ddda22832a",
         "content": "sha256:c0c3299611edd64232856ead8fe17d6906699709eb295065e377740e36eb895c",
         "locator": {
           "end": 21,
@@ -148,8 +167,8 @@
     },
     {
       "anchor": {
-        "blob": "7fe080db1e9e99b1f5eb2ffeea96fff983d9e801",
-        "content": "sha256:a591435ed3562cb56d271ae2cd800aadb1e95df74ce384b68e2839a7e19a7e6f",
+        "blob": "e5cae0a0b2c4de28fc27e640bfe785ddda22832a",
+        "content": "sha256:870266234ae73477d8ca1eea59448a4048e9082222e3b0199e366f30d3773d64",
         "locator": {
           "kind": "file"
         }
@@ -165,12 +184,12 @@
     },
     {
       "anchor": {
-        "blob": "7fe080db1e9e99b1f5eb2ffeea96fff983d9e801",
+        "blob": "e5cae0a0b2c4de28fc27e640bfe785ddda22832a",
         "content": "sha256:e0dc6932edd27af57f48c10414766f370b8a3b9598f2e8d1750dd0d371c1f9bc",
         "locator": {
-          "end": 204,
+          "end": 206,
           "kind": "line_range",
-          "start": 202
+          "start": 204
         }
       },
       "id": "RLZ-V1AKR1",
@@ -184,8 +203,8 @@
     },
     {
       "anchor": {
-        "blob": "7fe080db1e9e99b1f5eb2ffeea96fff983d9e801",
-        "content": "sha256:a591435ed3562cb56d271ae2cd800aadb1e95df74ce384b68e2839a7e19a7e6f",
+        "blob": "e5cae0a0b2c4de28fc27e640bfe785ddda22832a",
+        "content": "sha256:870266234ae73477d8ca1eea59448a4048e9082222e3b0199e366f30d3773d64",
         "locator": {
           "kind": "file"
         }
@@ -274,12 +293,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bf1e2997e894d1ef157e3ca253db1bda030c53a6",
+            "blob": "e5cae0a0b2c4de28fc27e640bfe785ddda22832a",
             "content": "sha256:c4a79f969d539ba5ec8670fff476d4c6262cefd3b99b934e47777a8a342971d3",
             "locator": {
-              "end": 136,
+              "end": 133,
               "kind": "line_range",
-              "start": 133
+              "start": 130
             }
           },
           "kind": "code"
@@ -315,6 +334,23 @@
               "kind": "line_range",
               "start": 121
             }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Restated guarantees carry an authored effect; the writer fills the revision.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "51bec83a0fb7d1d5f7feea7563ddfa0f4a69c131",
+            "content": "sha256:e5634b2fde999a70250356a80b5b8e8bfebac4a25e60d6f7c75c56d985354f01",
+            "locator": {
+              "kind": "symbol",
+              "name": "family_effect_refusal"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/handoff.py"
           },
           "kind": "code"
         }

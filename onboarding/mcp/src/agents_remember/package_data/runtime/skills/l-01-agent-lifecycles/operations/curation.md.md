@@ -26,6 +26,14 @@ Canonical skills/l-01-agent-lifecycles/operations/curation.md owns the instructi
 
 Do not edit source/task/lifecycle/Git state, invent a dataset destination or source stamp, fabricate family membership, or route a refusal through another installation. Native clarification uses the actual parent/task role via bound messaging; developer decisions stay in the agent’s own chat.
 
+## The Same Authoring Fields, Mirrored (MIK-R48)
+
+This generated copy carries the same family-coverage authoring fields as the
+canonical curation operation. The copy holds no contract of its own; the canonical
+surface with its card and the governing history rows carries it.
+
+- The mirror carries the same authoring fields as the canonical operation. [1]
+
 ## Evidence
 
 ### Repo-Internal References

@@ -1,6 +1,61 @@
 {
   "path": "mcp/src/agents_remember/application/knowledge_writer/authoring_rows.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "8b7ed253727ce74d1ce40cdfbb311227075afeed",
+        "content": "sha256:c409e0ca8078ec19064718f5c4cc4796e7f23656632e4d51f55cb5cf955c5972",
+        "locator": {
+          "kind": "symbol",
+          "name": "HistoryRowAuthoring._family_row"
+        }
+      },
+      "id": "RLZ-2TSM0M",
+      "invariant": "INV-FT42W0",
+      "origin": {
+        "handoffEntry": "MIK-R48@v2 rule 2",
+        "leaf": "260928-MIK-L48"
+      },
+      "rationale": "This method resolves the candidate FamilyRecord and authors the existing history row.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "8b7ed253727ce74d1ce40cdfbb311227075afeed",
+        "content": "sha256:c409e0ca8078ec19064718f5c4cc4796e7f23656632e4d51f55cb5cf955c5972",
+        "locator": {
+          "kind": "symbol",
+          "name": "HistoryRowAuthoring._family_row"
+        }
+      },
+      "id": "RLZ-5C8WZE",
+      "invariant": "INV-EH65RT",
+      "origin": {
+        "handoffEntry": "L48-W-MIK-R48-v2-delivery",
+        "leaf": "260928-MIK-L48"
+      },
+      "rationale": "the row constructor that stores the family record revision and the authored effect and refuses unsupported input",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "8b7ed253727ce74d1ce40cdfbb311227075afeed",
+        "content": "sha256:c409e0ca8078ec19064718f5c4cc4796e7f23656632e4d51f55cb5cf955c5972",
+        "locator": {
+          "kind": "symbol",
+          "name": "HistoryRowAuthoring._family_row"
+        }
+      },
+      "id": "RLZ-XJ80YW",
+      "invariant": "INV-QY70J3",
+      "origin": {
+        "handoffEntry": "L48-W-F1-relocation-after-L26-split",
+        "leaf": "260928-MIK-L48"
+      },
+      "rationale": "the new home of the R48 row construction, reached through the ordinary writer call path",
+      "role": "primary-authority"
+    }
+  ],
   "references": {
     "1": {
       "note": "The file realizes its current contract at the corrected candidate.",
@@ -11,6 +66,23 @@
             "content": "sha256:494abeb604df39234860da0ec913a7b06c88091e3ac9897f91a827d35f29d204",
             "locator": {
               "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "One constructor stores the family revision with the authored effect.\n\nAnchor: `HistoryRowAuthoring._family_row`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8b7ed253727ce74d1ce40cdfbb311227075afeed",
+            "content": "sha256:574d76b827f82d1cd81e4b098a372a4f5640c31fdab0fe813ff8fa60c643051a",
+            "locator": {
+              "end": 620,
+              "kind": "line_range",
+              "start": 552
             }
           },
           "kind": "code"

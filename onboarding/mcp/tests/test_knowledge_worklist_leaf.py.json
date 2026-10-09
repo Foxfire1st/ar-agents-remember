@@ -1,6 +1,25 @@
 {
   "path": "mcp/tests/test_knowledge_worklist_leaf.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "bb33d32e66cacf8fa81aad1a23356a78e271e230",
+        "content": "sha256:de92200ab1ef77d40740f40d55d8c4176fd03703c8dff3ea08a3b75281b90689",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_carrying_never_edits_another_owners_row_or_a_closed_history_file"
+        }
+      },
+      "id": "RLZ-YHCNV8",
+      "invariant": "INV-ZAFMH5",
+      "origin": {
+        "handoffEntry": "L48-W-F3-worklist-wording-adaptation",
+        "leaf": "260928-MIK-L48"
+      },
+      "rationale": "the single test node pinning the writer frozen-file wording that R48 rule 6 intentionally changes for hand-closed files",
+      "role": "support"
+    }
+  ],
   "references": {
     "17": {
       "note": "The module docstring: the fixture's repositories and task root.",

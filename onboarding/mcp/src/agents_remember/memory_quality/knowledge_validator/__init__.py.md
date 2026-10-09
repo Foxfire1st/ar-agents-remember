@@ -35,6 +35,14 @@
 
 None recorded. The routes that MIK-R09 owns (closeout, direct/record landing, master and checkpoint landing) now call this package (leaf 260928-MIK-L09, the carried L22 obligation: `memory_commit_refusal` at every route, and the gate's own validator run); the writer (MIK-R12) calls it too. All of it runs only on converted memory.
 
+## The Family-Judgment Rule Registration (MIK-R48)
+
+The module docstring names MIK-R48's rule beside the history-row rule: at a
+leaf's publication a new or edited changed family row records its effect and own
+revision. Registration itself is unchanged; one module still owns the registry.
+
+- The registry docstring names the family-judgment publication rule. [7]
+
 ## Evidence
 
 ### Docs References

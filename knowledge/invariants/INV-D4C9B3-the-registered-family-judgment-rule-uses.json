@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Judging every parsed file refused the master landing with nine violations on history no base holds; the population keeps landings green while leaves stay judged."
+  },
+  "applicability": "Validator judgments of new or edited changed family rows",
+  "conditions": [
+    "An open history file, judged always",
+    "At a leaf publication, a file not closed in a base, whatever its flag says"
+  ],
+  "exclusions": [
+    "Closed files at master or checkpoint landing and in baseless validation",
+    "Rows unchanged at the same path in a base or frozen file"
+  ],
+  "id": "INV-D4C9B3",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "GitKnowledgeValidation master/leaf/no-base fixtures, actual-base/frozen/merge/edit/delete/copy tests in focused-junit.xml; retained named landing raw limited as below."
+      ],
+      "path": "notes/reports/role-launch/260928-MIK-L48-curator-c94be97e.handoff-list.json"
+    },
+    "handoffEntry": "MIK-R48@v2 rule 3",
+    "leaf": "260928-MIK-L48",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The registered family judgment rule uses the shared history-file population and exact same-path historical equality, retaining frozen rows and refusing new missing or mismatched facts at leaf publication.",
+  "status": "proposed",
+  "supersedes": []
+}

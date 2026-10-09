@@ -3,7 +3,60 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "5a75886e15c710f4b78138ae24142e48486de9ed",
+        "blob": "e653d144087d2870170ba2bb24f20b6514eb46ac",
+        "content": "sha256:73394d3a217e092d64a67692e2ba76b8dd38753c7d9a9073e5ddd8257d31ded9",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-55WTZQ",
+      "invariant": "INV-MKZ0EA",
+      "origin": {
+        "handoffEntry": "L48-C-callsite-hunks-carry-rule-obligations",
+        "leaf": "260928-MIK-L48"
+      },
+      "rationale": "Drift-check message hunks outside owner_history_problems carry the remedy and frozen-file wording.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "e653d144087d2870170ba2bb24f20b6514eb46ac",
+        "content": "sha256:ff72ddefd2aa6f5a09b880445b5007ea83b951c0ed16d885a579ee75430a88e9",
+        "locator": {
+          "kind": "symbol",
+          "name": "owner_history_problems"
+        }
+      },
+      "id": "RLZ-987Q8N",
+      "invariant": "INV-EH65RT",
+      "origin": {
+        "handoffEntry": "L48-W-MIK-R48-v2-delivery",
+        "leaf": "260928-MIK-L48"
+      },
+      "rationale": "the candidate-side check of recorded own revisions carrying the reopen way out",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "e653d144087d2870170ba2bb24f20b6514eb46ac",
+        "content": "sha256:ff72ddefd2aa6f5a09b880445b5007ea83b951c0ed16d885a579ee75430a88e9",
+        "locator": {
+          "kind": "symbol",
+          "name": "owner_history_problems"
+        }
+      },
+      "id": "RLZ-C29640",
+      "invariant": "INV-V9A68X",
+      "origin": {
+        "handoffEntry": "MIK-R48@v2 rule 6",
+        "leaf": "260928-MIK-L48"
+      },
+      "rationale": "The owner history checker produces actionable drift/refusal text and preserves the distinction between hand-closed and frozen files.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "e653d144087d2870170ba2bb24f20b6514eb46ac",
         "content": "sha256:3cd222aedb40c187c6d3bd4813d007c090ed727bf40f4b65fa695ee893f8d186",
         "locator": {
           "kind": "symbol",
@@ -26,7 +79,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5a75886e15c710f4b78138ae24142e48486de9ed",
+            "blob": "e653d144087d2870170ba2bb24f20b6514eb46ac",
             "content": "sha256:c57a75f0a25aa52a8c8a6e45108c1a1734ba06beaae78a50b30f151b5905424c",
             "locator": {
               "kind": "symbol",
@@ -70,19 +123,18 @@
       ]
     },
     "4": {
-      "note": "A contradicted row refuses until it is named again; a closed file is frozen.",
+      "note": "A contradicted row refuses until it is named again; a base-closed file is frozen, while a hand-closed file gains the reopen step with the re-authoring remedy.",
       "targets": [
         {
           "anchor": {
-            "blob": "cfed40211fab111f80a08b412d6b6deaa63639a0",
-            "content": "sha256:8c711c7d1c1ffe0e6e0e7c52a0707e84cabf3d5a41c21ed05580d2f28c4d8832",
+            "blob": "e653d144087d2870170ba2bb24f20b6514eb46ac",
+            "content": "sha256:ff72ddefd2aa6f5a09b880445b5007ea83b951c0ed16d885a579ee75430a88e9",
             "locator": {
               "kind": "symbol",
-              "name": "test_a_row_the_candidate_contradicts_refuses_until_it_is_named_again"
-            },
-            "path": "mcp/tests/test_knowledge_writer.py"
+              "name": "owner_history_problems"
+            }
           },
-          "kind": "test"
+          "kind": "code"
         }
       ]
     },
@@ -91,7 +143,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5a75886e15c710f4b78138ae24142e48486de9ed",
+            "blob": "e653d144087d2870170ba2bb24f20b6514eb46ac",
             "content": "sha256:a3d28fc52505d21b8e41965767c5da4a5b3291441398c20b5b0187640ec2595a",
             "locator": {
               "kind": "symbol",
@@ -107,7 +159,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5a75886e15c710f4b78138ae24142e48486de9ed",
+            "blob": "e653d144087d2870170ba2bb24f20b6514eb46ac",
             "content": "sha256:de44e03ca872897b86a4888c162830f5fb7c3e202f6cfec5883a03a3f5901c1f",
             "locator": {
               "kind": "symbol",
@@ -123,7 +175,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5a75886e15c710f4b78138ae24142e48486de9ed",
+            "blob": "e653d144087d2870170ba2bb24f20b6514eb46ac",
             "content": "sha256:3cd222aedb40c187c6d3bd4813d007c090ed727bf40f4b65fa695ee893f8d186",
             "locator": {
               "kind": "symbol",
@@ -148,6 +200,22 @@
             "path": "mcp/tests/test_knowledge_reopen_governing_rows.py"
           },
           "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "Drift refuses until the row is named again at the current revision.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e653d144087d2870170ba2bb24f20b6514eb46ac",
+            "content": "sha256:ff72ddefd2aa6f5a09b880445b5007ea83b951c0ed16d885a579ee75430a88e9",
+            "locator": {
+              "kind": "symbol",
+              "name": "owner_history_problems"
+            }
+          },
+          "kind": "code"
         }
       ]
     }

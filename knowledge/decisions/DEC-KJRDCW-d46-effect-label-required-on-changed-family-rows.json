@@ -1,0 +1,77 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "Three input rules were weighed and D46 chose one; every later family judgment and refusal text must obey the chosen rule."
+  },
+  "alternatives": [
+    {
+      "option": "Require the curator-authored effect from the existing vocabulary on every new or edited changed family row; the writer stores exactly it and derives none.",
+      "reason": "D46 settles the input rule, and the writer must not judge whether an authored effect is right: code records identities while the curator judges meaning.",
+      "status": "chosen"
+    },
+    {
+      "option": "Leave the effect optional on new changed rows.",
+      "reason": "With nothing stored, the effect display has nothing to show; the omission that motivated D46 persists.",
+      "reconsider_when": "The effect display stops needing a stored effect for a changed row.",
+      "status": "rejected"
+    },
+    {
+      "option": "Let the writer derive the label from the guarantee wording, reason, disposition, counts, members or a member effect.",
+      "reason": "Derivation invents a curator judgment the curator never made; the packet forbids every one of these sources.",
+      "reconsider_when": "The effect becomes computable from record deltas without inventing a judgment.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Changed family rows without a valid authored effect are refused naming row and family.",
+    "Effects on rerouted, assigned, no_impact and retired rows are refused naming row and field.",
+    "Curators following older instruction text are refused with the remedy until rule 7 lands."
+  ],
+  "context": "D46 requires the effect label on new and edited changed family rows, decided 2026-10-04; the writer accepted a hand-off effect and then dropped it, so the reviewer could not show the effect of a family's meaning change.",
+  "decider": "Developer, direction D46 of 2026-10-04.",
+  "id": "DEC-KJRDCW",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "51bec83a0fb7d1d5f7feea7563ddfa0f4a69c131",
+        "content": "sha256:e5634b2fde999a70250356a80b5b8e8bfebac4a25e60d6f7c75c56d985354f01",
+        "locator": {
+          "kind": "symbol",
+          "name": "family_effect_refusal"
+        },
+        "path": "mcp/src/agents_remember/application/knowledge_writer/handoff.py"
+      }
+    },
+    {
+      "relation": "motivated_change_to",
+      "target": {
+        "id": "MIK-R48",
+        "packet": "requirements/MIK-R48-v2-recorded-family-meaning-judgments.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v2"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/l48-code-review-R2/literal-input-verification.json — producer_entries; notes/reports/role-launch/260928-MIK-L48-worker-a8960662-c929-4417-bb14-ddf78437bd4b.successor-R3.json — producer13 (SHA 6024a3fe96617555a27248113f3c9533e7e9e604f94c38cc49ebe14bc7cb0fda); installed templates/curator-handoff-list.md — The entry/Shape."
+      ],
+      "path": "notes/reports/role-launch/260928-MIK-L48-curator-c94be97e.handoff-list.json"
+    },
+    "handoffEntry": "L48-R2-INPUT-1",
+    "leaf": "260928-MIK-L48",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

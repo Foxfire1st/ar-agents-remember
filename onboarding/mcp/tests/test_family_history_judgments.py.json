@@ -1,0 +1,401 @@
+{
+  "path": "mcp/tests/test_family_history_judgments.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "52165b6cf514347f2fb793f14505d01532f63359",
+        "content": "sha256:ce74eb31525d3010c5f500e170ccd45166c3e34b38b61a5167b3227a4729df37",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_leaf_publication_refuses_its_own_unlabelled_changed_family_row"
+        }
+      },
+      "facet": "The leaf's own unlabelled changed row is refused, open or hand-closed",
+      "id": "PRF-0H4W3H",
+      "invariant": "INV-D4C9B3",
+      "origin": {
+        "handoffEntry": "MIK-R48@v2 rule 3",
+        "leaf": "260928-MIK-L48"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "52165b6cf514347f2fb793f14505d01532f63359",
+        "content": "sha256:9ec3f266e8f9d840aef29f2340b1a9c744021bb642731d3edcbd9e1bfad0cda9",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_cli_retains_each_authored_family_effect_and_own_revision_after_index_rebuild"
+        }
+      },
+      "facet": "Rebuilt indexes and public reads return the stored label and revision",
+      "id": "PRF-0Z72AG",
+      "invariant": "INV-2RFC0M",
+      "origin": {
+        "handoffEntry": "MIK-R48@v2 rule 5",
+        "leaf": "260928-MIK-L48"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "52165b6cf514347f2fb793f14505d01532f63359",
+        "content": "sha256:6f73c210af11cb55848c4bcc3fcc635e26006711875fc59d8ff62b19195f371f",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_hand_closed_unfrozen_file_has_a_way_out_through_the_public_calls"
+        }
+      },
+      "facet": "Hand-closed files keep a way out through the public calls",
+      "id": "PRF-140PQF",
+      "invariant": "INV-V9A68X",
+      "origin": {
+        "handoffEntry": "MIK-R48@v2 rule 6",
+        "leaf": "260928-MIK-L48"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "52165b6cf514347f2fb793f14505d01532f63359",
+        "content": "sha256:9ec3f266e8f9d840aef29f2340b1a9c744021bb642731d3edcbd9e1bfad0cda9",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_cli_retains_each_authored_family_effect_and_own_revision_after_index_rebuild"
+        }
+      },
+      "facet": "Each authored label is stored with the family revision and read back whole",
+      "id": "PRF-82FJXD",
+      "invariant": "INV-FT42W0",
+      "origin": {
+        "handoffEntry": "MIK-R48@v2 rule 2",
+        "leaf": "260928-MIK-L48"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "52165b6cf514347f2fb793f14505d01532f63359",
+        "content": "sha256:65c510f207bfd0257b2adacada81362a997a79457a69f8adcca3f8fb1661bea2",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_bad_authored_family_inputs_refuse_without_changing_files_refs_or_index"
+        }
+      },
+      "facet": "Missing, invalid, misplaced or curator-supplied revisions refuse with nothing written",
+      "id": "PRF-8MDBYK",
+      "invariant": "INV-FT42W0",
+      "origin": {
+        "handoffEntry": "MIK-R48@v2 rule 2",
+        "leaf": "260928-MIK-L48"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "52165b6cf514347f2fb793f14505d01532f63359",
+        "content": "sha256:1819b28d6dbce520a26a8c9d87d0cd37365eea7b4672bcd1407a8ce765dee2f3",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_writer_refuses_own_revision_drift_until_the_current_row_is_authored_again"
+        }
+      },
+      "facet": "Own-revision drift refuses until the row is named again",
+      "id": "PRF-CMK9B9",
+      "invariant": "INV-FT42W0",
+      "origin": {
+        "handoffEntry": "MIK-R48@v2 rule 2",
+        "leaf": "260928-MIK-L48"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "52165b6cf514347f2fb793f14505d01532f63359",
+        "content": "sha256:54f1221aaeac48d535c485776a34c07b590983d7a2493dd9f25508317af30ee6",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_nonmeaning_family_rows_record_own_revision_without_authoring_an_effect"
+        }
+      },
+      "facet": "Non-changed rows record own revision without an authored effect",
+      "id": "PRF-D1XX0V",
+      "invariant": "INV-BHFQRK",
+      "origin": {
+        "handoffEntry": "MIK-R48@v2 rule 1",
+        "leaf": "260928-MIK-L48"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "52165b6cf514347f2fb793f14505d01532f63359",
+        "content": "sha256:63501063105b3b174e0540637a880140f9c308bb048711eee19c3a3d4e954c0b",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_half_recorded_or_misplaced_family_judgment_names_the_family_and_the_fix"
+        }
+      },
+      "facet": "Half-recorded or misplaced judgments name the family and the fix",
+      "id": "PRF-EBV09S",
+      "invariant": "INV-V9A68X",
+      "origin": {
+        "handoffEntry": "MIK-R48@v2 rule 6",
+        "leaf": "260928-MIK-L48"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "52165b6cf514347f2fb793f14505d01532f63359",
+        "content": "sha256:705ea780d6daabca17fc8b60e66f92a4cebfe7f688702119ae9fa7be3ad60953",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_stale_non_changed_row_is_told_to_name_a_row_of_its_own_disposition"
+        }
+      },
+      "facet": "Stale non-changed rows are told to name a row of their own disposition",
+      "id": "PRF-FKT4P7",
+      "invariant": "INV-V9A68X",
+      "origin": {
+        "handoffEntry": "MIK-R48@v2 rule 6",
+        "leaf": "260928-MIK-L48"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "52165b6cf514347f2fb793f14505d01532f63359",
+        "content": "sha256:1819b28d6dbce520a26a8c9d87d0cd37365eea7b4672bcd1407a8ce765dee2f3",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_writer_refuses_own_revision_drift_until_the_current_row_is_authored_again"
+        }
+      },
+      "facet": "Drift refuses until the current row is authored again",
+      "id": "PRF-FVZEH8",
+      "invariant": "INV-2TZ2E3",
+      "origin": {
+        "handoffEntry": "MIK-R48@v2 rule 4",
+        "leaf": "260928-MIK-L48"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "52165b6cf514347f2fb793f14505d01532f63359",
+        "content": "sha256:480db71795a8361ce643cb3b8bdb019ab1b1d6c6508a015bc7d45522f718d560",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_master_landing_still_judges_an_open_history_file_it_publishes"
+        }
+      },
+      "facet": "An open unpublished row is refused naming file, row and rule",
+      "id": "PRF-MGA1NM",
+      "invariant": "INV-D4C9B3",
+      "origin": {
+        "handoffEntry": "MIK-R48@v2 rule 3",
+        "leaf": "260928-MIK-L48"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "52165b6cf514347f2fb793f14505d01532f63359",
+        "content": "sha256:b773d7d18cc18cda15f39fb7fd23b25c144618b06946672a20f78ed28dd71651",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_only_actual_unchanged_base_merge_or_closed_frozen_rows_keep_historical_omissions"
+        }
+      },
+      "facet": "Frozen omissions stay missing; edited or reused rows are refused",
+      "id": "PRF-PXW1WX",
+      "invariant": "INV-BHFQRK",
+      "origin": {
+        "handoffEntry": "MIK-R48@v2 rule 1",
+        "leaf": "260928-MIK-L48"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "52165b6cf514347f2fb793f14505d01532f63359",
+        "content": "sha256:37b17ab87042ac080e02bd5a6a750d774609b40abe5167bb489dac99d1f016ab",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_later_attempt_keeps_closed_facts_and_currentness_checks_only_its_governing_revision"
+        }
+      },
+      "facet": "Later attempts keep closed facts while currentness checks only the governing revision",
+      "id": "PRF-Q6A47C",
+      "invariant": "INV-2TZ2E3",
+      "origin": {
+        "handoffEntry": "MIK-R48@v2 rule 4",
+        "leaf": "260928-MIK-L48"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "52165b6cf514347f2fb793f14505d01532f63359",
+        "content": "sha256:9ec3f266e8f9d840aef29f2340b1a9c744021bb642731d3edcbd9e1bfad0cda9",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_cli_retains_each_authored_family_effect_and_own_revision_after_index_rebuild"
+        }
+      },
+      "facet": "End-to-end four-label write and whole readback on the final candidate",
+      "id": "PRF-Q8Y06H",
+      "invariant": "INV-EH65RT",
+      "origin": {
+        "handoffEntry": "L48-W-MIK-R48-v2-delivery",
+        "leaf": "260928-MIK-L48"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "52165b6cf514347f2fb793f14505d01532f63359",
+        "content": "sha256:0570ef337e7f5306313a7534193844b93d31db726619bc9a07e76d043f18779b",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_master_landing_does_not_judge_closed_legacy_rows_its_base_lacks"
+        }
+      },
+      "facet": "Master landings and baseless validation pass over closed legacy rows",
+      "id": "PRF-QAHJGG",
+      "invariant": "INV-D4C9B3",
+      "origin": {
+        "handoffEntry": "MIK-R48@v2 rule 3",
+        "leaf": "260928-MIK-L48"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "52165b6cf514347f2fb793f14505d01532f63359",
+        "content": "sha256:1ca96a00ca51abf963a1d412020a0f029ae38c6a90623371e1ccb34bb985760b",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_publication_refuses_incomplete_or_wrong_new_family_judgments_even_if_closed"
+        }
+      },
+      "facet": "Incomplete new judgments are refused at publication even when hand-closed",
+      "id": "PRF-RKVRK1",
+      "invariant": "INV-V9A68X",
+      "origin": {
+        "handoffEntry": "MIK-R48@v2 rule 6",
+        "leaf": "260928-MIK-L48"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Each authored label is stored with the family revision and read back whole.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52165b6cf514347f2fb793f14505d01532f63359",
+            "content": "sha256:9ec3f266e8f9d840aef29f2340b1a9c744021bb642731d3edcbd9e1bfad0cda9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_cli_retains_each_authored_family_effect_and_own_revision_after_index_rebuild"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "52165b6cf514347f2fb793f14505d01532f63359",
+            "content": "sha256:762bd8e4259c786bf789e2bdd0d77f4b93177f7412a96434d74d50f8d3a5c5c0",
+            "locator": {
+              "end": 170,
+              "kind": "line_range",
+              "start": 120
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Bad inputs refuse with files, refs and index unchanged.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52165b6cf514347f2fb793f14505d01532f63359",
+            "content": "sha256:65c510f207bfd0257b2adacada81362a997a79457a69f8adcca3f8fb1661bea2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_bad_authored_family_inputs_refuse_without_changing_files_refs_or_index"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Master landings pass over closed legacy rows the base lacks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52165b6cf514347f2fb793f14505d01532f63359",
+            "content": "sha256:0570ef337e7f5306313a7534193844b93d31db726619bc9a07e76d043f18779b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_master_landing_does_not_judge_closed_legacy_rows_its_base_lacks"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Open unpublished rows are refused naming file, row and rule.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52165b6cf514347f2fb793f14505d01532f63359",
+            "content": "sha256:480db71795a8361ce643cb3b8bdb019ab1b1d6c6508a015bc7d45522f718d560",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_master_landing_still_judges_an_open_history_file_it_publishes"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The leaf's own unlabelled changed row is refused, open or hand-closed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52165b6cf514347f2fb793f14505d01532f63359",
+            "content": "sha256:ce74eb31525d3010c5f500e170ccd45166c3e34b38b61a5167b3227a4729df37",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_leaf_publication_refuses_its_own_unlabelled_changed_family_row"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "52165b6cf514347f2fb793f14505d01532f63359",
+            "content": "sha256:1e4d30273f8d5f4e09d13889b155bbee851b4a5fc17b7701e6b07e72f0441bf6",
+            "locator": {
+              "end": 442,
+              "kind": "line_range",
+              "start": 416
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Drift refuses until the current row is authored again.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52165b6cf514347f2fb793f14505d01532f63359",
+            "content": "sha256:1819b28d6dbce520a26a8c9d87d0cd37365eea7b4672bcd1407a8ce765dee2f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_writer_refuses_own_revision_drift_until_the_current_row_is_authored_again"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "Only the bad-input, drift and four-label tests distinguish a writer that drops the effect or borrows a member revision from one that stores the family's own revision with the authored label."
+  },
+  "applicability": "Every curator hand-off that names a family in history on converted memory",
+  "conditions": [
+    "The named family record exists in the candidate",
+    "Disposition changed carries an effect; rerouted, assigned, no_impact and retired carry none"
+  ],
+  "exclusions": [
+    "Frozen files, which the writer never rewrites",
+    "Curator-supplied revisions, which are never accepted"
+  ],
+  "id": "INV-FT42W0",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "224-test final-byte closure: bad input/no-write, nonchanged dispositions, revision6→7 vs member1; all-four-label CLI/parsed-document proof."
+      ],
+      "path": "notes/reports/role-launch/260928-MIK-L48-curator-c94be97e.handoff-list.json"
+    },
+    "handoffEntry": "MIK-R48@v2 rule 2",
+    "leaf": "260928-MIK-L48",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The writer records the candidate family's actual own revision and the supplied existing effect label, refusing invalid or curator-owned mechanical input before writing.",
+  "status": "proposed",
+  "supersedes": []
+}

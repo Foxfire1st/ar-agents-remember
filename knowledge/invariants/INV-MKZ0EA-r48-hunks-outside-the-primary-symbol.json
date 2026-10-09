@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "The wording is realized in five files together; no one file states the whole call-site contract."
+  },
+  "applicability": "R48 hunks that share a file with, but no lines with, a primary symbol anchor",
+  "conditions": [
+    "Helper, message, registration and docstring hunks carrying rule wording"
+  ],
+  "exclusions": [
+    "Symbol-anchored hunks, covered by the rule entries",
+    "Uncovered files, answered by their onboarding trace"
+  ],
+  "id": "INV-MKZ0EA",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "MQC gate linkage (definition 8): the sixteen remaining hunks share files with, but no changed lines with, the rule entries' symbol anchors.",
+        "Call-site spans: predicates.py +224,6 with family_row_open; handoff.py refusal strings; history_check.py remedy text; rules_history.py registration text; history.py model docstring."
+      ],
+      "path": "notes/reports/role-launch/260928-MIK-L48-curator-c94be97e.handoff-list-wave2.json"
+    },
+    "handoffEntry": "L48-C-callsite-hunks-carry-rule-obligations",
+    "leaf": "260928-MIK-L48",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "R48 hunks outside the primary symbol anchors — helpers, refusal strings, rule text and docstrings in predicates.py, handoff.py, history_check.py, rules_history.py and history.py — carry the same rule obligations as the anchored constructs and change with them.",
+  "status": "retired",
+  "supersedes": []
+}

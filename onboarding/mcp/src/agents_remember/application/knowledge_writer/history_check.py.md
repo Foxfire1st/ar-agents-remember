@@ -20,8 +20,10 @@ architect ruling F1).** After all edits, `owner_history_problems` checks every r
 - `invariant_revision_violation`: an invariant row's revision is the candidate revision and binds the base
   revision, rule 2.
 - `stale_examined_members`: a family row examined each member at its candidate revision, rule 5.
-- The remedy is "name this row again in 'history' so the writer rewrites it"; on a **closed** file it is
-  `_FROZEN` ("closed and frozen (MIK-R07 rule 7) … a correction belongs to a new leaf's rows").
+- The remedy is "name this row again in 'history' so the writer rewrites it"; on a file
+  closed in the base it is `_FROZEN` ("closed and frozen (MIK-R07 rule 7) … a correction
+  belongs to a new leaf's rows"); on a hand-closed file the base still holds open, the
+  remedy gains the reopen step.
 - **L37.** The file checked is the owner's writable history file (`state.history_target(owner)`), so a reopened
   leaf's rows are checked in its latest attempt and its closed file is not a refusal reason. A `changed` row's
   revision counts from `_base_revision`: the higher merge side's revision while a merge leaves the record unmerged
@@ -44,10 +46,21 @@ architect ruling F1).** After all edits, `owner_history_problems` checks every r
 
 ### Todos
 
-- The module docstring still says "The remedy is always the same", although a closed file gets the
-  `_FROZEN` remedy; the code is right and the sentence is stale.
+- The module docstring still says "The remedy is always the same", although a base-closed file gets the
+  `_FROZEN` remedy and a hand-closed file gains the reopen step; the code is right and the sentence is stale.
 - Open question to the architect from the worker: `reanchor_mismatches` and `unknown_subjects` could also
   run as a registered validator rule over open history files (owner MIK-R09 or R22).
+
+## Own-Revision Drift Check (MIK-R48)
+
+`owner_history_problems` compares a family row's recorded own revision with the
+candidate family record: on drift it refuses with the name-the-row-again remedy
+(a changed row with its effect again). The refusal depends on where the file stands:
+a file closed in the base is frozen, so the existing frozen-history text carries the
+refusal instead; a hand-closed file the base still holds open keeps the re-authoring
+remedy and gains the reopen step.
+
+- Drift refuses until the row is named again at the current revision. [9]
 
 ## Evidence
 
@@ -71,7 +84,7 @@ The check and its per-row messages.
 - Every row of the owner's file, as problems. [2]
 - Invariant and family row checks. [3]
 
-- A contradicted row refuses until it is named again; a closed file is frozen. [4]
+- A contradicted row refuses until it is named again; a base-closed file is frozen, while a hand-closed file gains the reopen step with the re-authoring remedy. [4]
 
 - The revision a row's change counts from: the higher merge side's for an unmerged record. [5]
 

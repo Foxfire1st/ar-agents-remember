@@ -1,6 +1,25 @@
 {
   "path": "mcp/src/agents_remember/memory/knowledge_index/build.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "90164ac5c837db1bc5ba4c61b26854c87a098eb1",
+        "content": "sha256:ffc0ac85ff4e0e275fdd095f58ded3790b2de4fd523b3de064787a5579d9bb34",
+        "locator": {
+          "kind": "symbol",
+          "name": "_write_history"
+        }
+      },
+      "id": "RLZ-NJK730",
+      "invariant": "INV-2RFC0M",
+      "origin": {
+        "handoffEntry": "MIK-R48@v2 rule 5",
+        "leaf": "260928-MIK-L48"
+      },
+      "rationale": "The index persists the complete existing row document together with its history metadata.",
+      "role": "propagation-persistence"
+    }
+  ],
   "references": {
     "1": {
       "note": "The builder's contract: one snapshot in, problems named, nothing derived.\n\nAnchor: \"A file that fails its schema is reported, never guessed at.\"",

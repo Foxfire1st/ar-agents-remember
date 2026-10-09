@@ -73,6 +73,14 @@ The Curator now receives the Worker's and Reviewer's inputs directly and hands i
 
 A Curator with a parent sends a developer question to that parent with `role_message` on `agents-remember-task`, with what it holds back and recommends, and keeps working; a refusal stays pending under **Pending developer questions** and is retried, and only an unreachable parent opens the own chat. This sits beside its L99 Manager-notice recovery: the notice is still never turned into a developer question in the own chat, and the `INV-W24J6Q` exclusion that said ordinary developer questions stay there is superseded — they go to the parent when one exists. The retired own-chat sentence is registered against return.
 
+## Name The Effect (MIK-R48)
+
+When the curator restates a family's guarantee, the hand-off names the family as a
+changed row with the curator's authored `effect`; the writer fills the family's own
+revision. The same step in the curation operation carries the identical contract.
+
+- Restated guarantees carry an authored effect; the writer fills the revision. [8]
+
 ## Evidence
 
 ### Docs References

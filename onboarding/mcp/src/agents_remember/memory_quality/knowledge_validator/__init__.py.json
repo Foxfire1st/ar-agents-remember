@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b9022c98629b43fff5146389154cafda8efe6853",
+            "blob": "ff07d1bb8b2eef58b12e51ac85fb0ab80a99267d",
             "content": "sha256:2227e920a47dfb31e1e613eb780c44df7c38b820c1a638abfdbb66994cdf6c5d",
             "locator": {
               "kind": "symbol",
@@ -127,7 +127,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b9022c98629b43fff5146389154cafda8efe6853",
+            "blob": "ff07d1bb8b2eef58b12e51ac85fb0ab80a99267d",
             "content": "sha256:8ce6c3a589eb4b4f833315758f9eee40ce12ef682fea3b8672bfc637611e1cd1",
             "locator": {
               "end": 17,
@@ -157,7 +157,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b9022c98629b43fff5146389154cafda8efe6853",
+            "blob": "ff07d1bb8b2eef58b12e51ac85fb0ab80a99267d",
             "content": "sha256:0ffdd80cf121cb077567cd4aed0f21d9ad61bda705d2c2305ab9f6f0560ef821",
             "locator": {
               "end": 16,
@@ -177,6 +177,21 @@
               "start": 25
             },
             "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/validator.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The registry docstring names the family-judgment publication rule.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ff07d1bb8b2eef58b12e51ac85fb0ab80a99267d",
+            "content": "sha256:c4067b386820029e4d78efa30a5e641b53548e3ebbbc4ca9cf8b44032697a3c4",
+            "locator": {
+              "kind": "file"
+            }
           },
           "kind": "code"
         }

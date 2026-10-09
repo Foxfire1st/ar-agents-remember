@@ -92,6 +92,17 @@ that entry's anchor in the candidate (`reanchor_mismatches` over `sidecar_entry_
 - The byte-for-byte check of a new history file against its leaf's recorded closeout commit was offered by review R2
   and not required (ruling 17:59:48).
 
+## Judging Only Published Rows (MIK-R48)
+
+`check_family_judgments` iterates the shared `checked_history_files` population,
+so both history rules agree on what the route publishes: open files are always
+judged; at a leaf publication a file not closed in a base is judged whatever its
+flag says; closed files are never judged at master or checkpoint landing or in a
+validation without a base. Rows unchanged at the same path in a base or frozen
+file are exempt inside a judged file.
+
+- Only route-published new or edited rows are judged. [18]
+
 ## Evidence
 
 ### Docs References

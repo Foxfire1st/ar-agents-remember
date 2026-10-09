@@ -26,6 +26,15 @@ Canonical skills/l-01-agent-lifecycles/roles/curator.md owns the instruction. sc
 
 Only admitted memory/onboarding is writable. No code, task/lifecycle/Git transaction change, direct dataset/internal writer, invented stamp, subset-for-full substitution or absorbed role duty. Operator harness, model, effort, serviceTier, launchArgs, sessionCommands and promptKeywords remain settings, outside Curator authority. Native clarification uses the actual parent/task role; dashboard launch needs no parent, and developer decisions remain in the own chat.
 
+## Name The Effect, Mirrored (MIK-R48)
+
+This generated copy carries the same restated-guarantee contract as the canonical
+curator role: a changed row with the curator's effect while the writer fills the
+family's own revision. The copy holds no contract of its own; the canonical surface
+with its card and the governing history rows carries it.
+
+- The mirror carries the same effect contract as the canonical role. [1]
+
 ## Evidence
 
 ### Repo-Internal References

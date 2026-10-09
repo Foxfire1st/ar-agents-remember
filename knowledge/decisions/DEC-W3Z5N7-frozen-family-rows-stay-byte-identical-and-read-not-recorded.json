@@ -1,0 +1,77 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "Three handlings of frozen omissions were weighed with real-data evidence; every later landing, readback and validation must obey the chosen handling."
+  },
+  "alternatives": [
+    {
+      "option": "Keep frozen rows byte-identical with both facts missing, and read them back as effect not recorded and own revision not recorded.",
+      "reason": "The rows were judged when their leaves published them or predate the rule; freezing is what makes earlier attempts auditable.",
+      "status": "chosen"
+    },
+    {
+      "option": "Backfill a default, empty string, zero, current revision or member-derived label and revision onto the old rows.",
+      "reason": "Backfill invents judgments no curator made and rewrites frozen bytes; the packet forbids every one of these fill-ins.",
+      "reconsider_when": "A migration is explicitly requested that re-judges rather than fills, with its own packet and evidence.",
+      "status": "rejected"
+    },
+    {
+      "option": "Report the missing facts as a measured absence or a failure of the old rows.",
+      "reason": "A missing key on a frozen row is a recorded omission, not a failed write; absence claims would refuse landings that the rule must pass.",
+      "reconsider_when": "The readback stops distinguishing recorded omission from failed writes.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "The four listed history blobs stay identical across the leaf.",
+    "Index, timeline and public reads carry the missing keys missing, never a default.",
+    "Edits and deletions of frozen rows still fail the frozen-history check."
+  ],
+  "context": "Sixteen family rows over four history files predate the rule with neither effect nor own revision; the master landing carries them onto the sprint line.",
+  "decider": "Requirement packet MIK-R48@v2, rules 3 and 5 with Expected Evidence.",
+  "id": "DEC-W3Z5N7",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "8eddf9a60675e813e76cdffb4719bc8f0f565b78",
+        "content": "sha256:53a37b161c45a8072839fc6cdbb1d0a3e43384579ace13eadfa2cc5c41fe0075",
+        "locator": {
+          "kind": "symbol",
+          "name": "FamilyRow"
+        },
+        "path": "mcp/src/agents_remember/models/knowledge_files/history.py"
+      }
+    },
+    {
+      "relation": "motivated_change_to",
+      "target": {
+        "id": "MIK-R48",
+        "packet": "requirements/MIK-R48-v2-recorded-family-meaning-judgments.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v2"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "scratch/l48_realdata_driver.out: first run 209 R22.6-anchor-path with 0 R48, corrected run LANDING-PROBE None plus 16/9/5/2 census"
+      ],
+      "path": "notes/reports/role-launch/260928-MIK-L48-curator-c94be97e.handoff-list.json"
+    },
+    "handoffEntry": "L48-W-F4-realdata-pairing-correction",
+    "leaf": "260928-MIK-L48",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

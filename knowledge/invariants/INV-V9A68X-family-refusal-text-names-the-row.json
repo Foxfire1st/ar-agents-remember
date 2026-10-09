@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "A hand-closed incomplete file refused without a way out dead-ends the curator; each text names the row, the family and the remedy."
+  },
+  "applicability": "Every R48 refusal the writer, gate and validator emit",
+  "conditions": [
+    "Missing, invalid or misplaced effect and revision input",
+    "Hand-closed files judged at publication"
+  ],
+  "exclusions": [
+    "Frozen-history edit and delete refusals, which keep the existing MIK-R07 text"
+  ],
+  "id": "INV-V9A68X",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Historical notes1/2 verified by actual hand-closed writer/publication/reopen loop and conditional nonchanged drift text; focused-junit.xml."
+      ],
+      "path": "notes/reports/role-launch/260928-MIK-L48-curator-c94be97e.handoff-list.json"
+    },
+    "handoffEntry": "MIK-R48@v2 rule 6",
+    "leaf": "260928-MIK-L48",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Family refusal text names the row or family and gives the applicable re-authoring action, including reopening a hand-closed file that no base holds closed.",
+  "status": "proposed",
+  "supersedes": []
+}

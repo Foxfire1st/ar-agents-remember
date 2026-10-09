@@ -256,6 +256,15 @@ Q6, 2026-09-29T21:49:19+02:00):
 
 - A cover revises a realization entry's rationale in place. [51]
 
+## History Rows Carry The Family's Own Revision (MIK-R48)
+
+The module docstring states that a history row gets the invariant's or the
+family's own revision beside each examined member's revision. Nothing here judges
+meaning: the revision fill for family rows happens in `HistoryRowAuthoring`, and
+this module only records what the row construction resolved.
+
+- Row mechanics record the invariant's or family's own revision. [52]
+
 ## Evidence
 
 ### Docs References
