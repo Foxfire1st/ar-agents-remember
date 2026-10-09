@@ -1,0 +1,30 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "Dashboard absence tests (master reader, cockpit) and the empty usage-read diff pin the no-replacement rule across backend and dashboard; no host or harness figure is read or shown. Admission claims guarded_by_test only: the invariant is proved by named regression tests rather than multi-file realizations."
+  },
+  "applicability": "Every dashboard view and every host or harness usage read: no token number per agent, task, master or workspace is shown, and AR reads no usage the host holds.",
+  "conditions": [],
+  "exclusions": [
+    "Single-event tokens shown as one answer's size in the Event River (MIK-R114 rule 3)."
+  ],
+  "id": "INV-4T6KSE",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "git diff --stat (those paths absent); dashboard Chats-view picture shows no usage line"
+      ],
+      "path": "l115-handoff.json"
+    },
+    "handoffEntry": "MIK-R115@v1 rule 2",
+    "leaf": "260928-MIK-L115",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Nothing takes the counter's place: no token number per agent, task, master or workspace, and AR does not read the usage the host holds for an agent nor any harness usage; the document chat and host reads are untouched.",
+  "status": "proposed",
+  "supersedes": []
+}

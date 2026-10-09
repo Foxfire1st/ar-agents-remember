@@ -63,24 +63,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8535427e164854d7dadb366fd583408b98d5f38b",
-            "content": "sha256:29369c7f281ea735b666465ebd37c9ad86671cdd5ddb29586da7d6e7c8fc604f",
+            "blob": "29a3f96c4fa5cc4abbdf34ff8486e4ee5a0c46c1",
+            "content": "sha256:b05a7f63a888bbf23bb19597a289dcd3895edfffe6e2a9a484ccc35b1cd8c695",
             "locator": {
-              "kind": "symbol",
-              "name": "LifecycleProjection"
-            },
-            "path": "mcp/src/agents_remember/observer/projection.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "8535427e164854d7dadb366fd583408b98d5f38b",
-            "content": "sha256:233278bded72d6c670eec854b0de78fb37b977537eb68ce360bf1db37fac8d0b",
-            "locator": {
-              "end": 138,
-              "kind": "line_range",
-              "start": 99
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/observer/projection.py"
           },
@@ -93,49 +79,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "099b61b20b7737cc83e281cc58bd425ac0d230cb",
-            "content": "sha256:ee007ae986db048bb8506c817ea9a73f2265c6d546027d4c07d8621d1a03f7f7",
+            "blob": "6f9bdb34b8413d8e9a83c174ccb684e1ee060cd0",
+            "content": "sha256:4ef406fc2333445c74c2ab5f8f7dd0f8e5fb00e20d0694b67a3185942f2e917c",
             "locator": {
-              "kind": "symbol",
-              "name": "project_lifecycle"
-            },
-            "path": "mcp/src/agents_remember/observer/reducer.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "099b61b20b7737cc83e281cc58bd425ac0d230cb",
-            "content": "sha256:ab83c116c74db2528abf18cf5a30e3d951b0708fab08914b7e32c3bfd0eb770b",
-            "locator": {
-              "kind": "symbol",
-              "name": "project_workspace"
-            },
-            "path": "mcp/src/agents_remember/observer/reducer.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "099b61b20b7737cc83e281cc58bd425ac0d230cb",
-            "content": "sha256:1af8dd9600c20c20c4873f295e1b108fbb6d6a8cf5c3337ddcb479a1ca2bb265",
-            "locator": {
-              "end": 106,
-              "kind": "line_range",
-              "start": 79
-            },
-            "path": "mcp/src/agents_remember/observer/reducer.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "099b61b20b7737cc83e281cc58bd425ac0d230cb",
-            "content": "sha256:6f42dd9b6382bf7482a850fc3dafd63996fb0c0f3ae495249ffcfc414d3790b0",
-            "locator": {
-              "end": 179,
-              "kind": "line_range",
-              "start": 126
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/observer/reducer.py"
           },

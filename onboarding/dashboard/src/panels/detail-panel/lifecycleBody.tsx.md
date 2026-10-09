@@ -8,8 +8,8 @@
 
 The lifecycle-detail body of the DetailPanel, extracted from `DetailPanel.tsx` by the
 260731-EFA-L8 split. Owns the master/series resolution helpers, the detail head,
-phase stepper, gate section, worktree spine, token row, and the exported
-`LifecycleDetailBody`.
+phase stepper, gate section, worktree spine, and the exported
+`LifecycleDetailBody`. No token gauge or aggregate figure is rendered here.
 
 
 ## 260831-CCR-L23 Task-Artifact Target Import

@@ -56,8 +56,6 @@ Material).
 - `Affordance.tsx` — the display-only action affordance: a Panda `cva` (ready/off) over the reducer's
   precomputed enabled/reason; `aria-disabled`, never mutates (slice 06 enforces).
 - `ProgressFill.tsx` — the bottom-up cyan charge fill (task-step / provider-seed progress).
-- `TokenGauge.tsx` — the cumulative-token fuel gauge as a dependency-free SVG sparkline (uPlot stays
-  deferred to slice 08).
 - `Markdown.tsx` — a **memoized** markdown renderer (react-markdown + remark-gfm) for task-doc prose:
   Panda descendant-selector styling, GFM tables wrapped in a horizontal-scroll box, and an `inline`
   variant (unwraps the paragraph) for list items / decision cells. `React.memo` keeps the projection

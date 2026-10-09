@@ -52,7 +52,7 @@ projection store (the structural surfaces — providers, contracts, group layout
 Slice 3b adds the **analytical surfaces** — drift read from a persisted JSON
 snapshot, git-free sidecar staleness, provider setup summaries/progress, route
 coverage, the tool-report feed, and ledger currency — plus the derived-aggregate
-rollups (the per-lifecycle token fuel gauge and the sidecar-staleness histogram).
+rollup (the sidecar-staleness histogram).
 Slice 3c adds the task-document surface (S7): `read_task_documents` projects active
 JSON-primary `ar-task-document/v1` docs with optional lifecycle attachment, so the dashboard shows
 task content before and after runtime binding; since L10 the leaf-enclosure attachment joins the
@@ -139,9 +139,7 @@ threaded through `build_analytics`/`project_workspace`/`project_and_write` into 
 `TaskDocNode.lifecycleId` is optional runtime context. `TaskDocNode.id` carries the JSON-primary task id
 used by clients as the authored leaf display number; `TaskDocNode.createdAt` carries task creation time,
 and `SeriesSubTaskNode.createdAt` is resolved from the referenced sibling leaf JSON so clients can default
-to oldest-first leaf display without parsing task-name prefixes. Task 21 adds `SeriesNode.seriesTokenTotal`,
-derived by joining a master's declared sub-task files to projected sibling leaf task documents and summing
-their bound lifecycle token totals; missing or unbound leaves contribute zero.
+to oldest-first leaf display without parsing task-name prefixes.
 
 Slice 6c adds **gate projection** (the Task-6 gate/action plane): `snapshots.read_gates` folds every
 lifecycle + workspace `GateStore` log, and `reducer._attach_gates` materializes each lifecycle's
@@ -406,7 +404,7 @@ The slice-3a projection read side:
   tail, which both merges states differing only in tail case and disagrees with the
   TypeScript mirror's `Capitalize<>`, which cannot lower-case a tail.
 - `reducer.py` — the pure fold: `project_lifecycle` (events → projection, with the
-  inferred paused/abandoned layer, corrections, and token aggregation),
+  inferred paused/abandoned layer and corrections),
   `project_workspace` (tree assembly, including current-enclosure reconciliation for
   non-fleeting event-backed lifecycle rows), precomputed action availability, slice 05
   `build_attention_queue` (+ slice 5f S6 `_start_attention`, the blocked-start chat-parity source),
@@ -421,16 +419,13 @@ The slice-3a projection read side:
   places the reducer restated the vocabulary: `_metrics` builds its buckets as
   `Counter(lc.state for lc in lifecycles)` splatted through `STATE_COUNT_FIELDS` instead of
   three `sum(1 for lc in lifecycles if lc.state == ...)` lines (those three lines are what
-  let an `awaiting-developer` lifecycle count towards `lifecycleCount` and `totalTokens` and
+  let an `awaiting-developer` lifecycle count towards `lifecycleCount` and
   towards nothing else); `_ended_updates` returns `coerce_end_outcome(event.data.get("outcome"))`
   instead of its own `"completed" if ... else "abandoned"`; and the module-level `_STATES`
   membership set is `frozenset(STATES)` rather than `frozenset(get_args(State))` — deliberately,
   because `get_args` on the *union* form (`Literal[...] | Other`) yields `Literal` objects
   rather than strings, and a set of those would match no event payload, silently dropping
   every state correction the fold applies.
-- `series_tokens.py` — the pure series-token aggregate helper: indexes non-master task documents by
-  series directory plus markdown filename, joins master `subTasks[].file` rows to bound leaf
-  lifecycles, and returns copied `SeriesNode`s with `seriesTokenTotal`.
 - `snapshots.py` — the file-surface readers reusing each producer's parser:
   structural (`read_providers` S1, `read_enclosures` S5/S6; enclosures now come from active leaf
   `enclosures/<leaf-id>/series-contract.md`, not root series contracts; since PTS-L2 the enclosure
@@ -556,9 +551,6 @@ The slice-3a projection read side:
   direct selection, while `read_series_documents` also projects the folder-keyed checklist aggregation.
   Series progress reads the master's *declared* `subTasks[]`, never a slice's leaf steps. Leaf
   `series-contract.md` files are enclosure/process state, not task documents.
-- **Series token totals are composed:** `seriesTokenTotal` is derived from already-projected
-  task-document and lifecycle nodes, not read from the master JSON and not inferred from file names
-  beyond the explicit master `subTasks[].file` join key.
 - **Creation order is structured, not parsed:** task creation time comes from `ar-task-document/v1`
   `createdAt`; series sub-task ordering may use it when all referenced leaves resolve, otherwise the
   master-authored order remains authoritative.
@@ -601,7 +593,6 @@ content — an unclassified addition fails loudly instead of silently re-degradi
 - `workspace_provider_nodes` is one of the route-local provider-node helper symbols. [6]
 - Active-enclosure admission is implemented by `admitted_worktree_groups`. [7]
 - Engine activity is admitted by projection input state. [8]
-- Series token totals are composed by a reducer-side helper from projected task docs and lifecycles. [9]
 - `drift_snapshot_path` is the shared drift-snapshot path helper. [10]
 - Projection input invokes the orphan-pruning helper. [11]
 - The shared helper implements orphan pruning for worktree drift snapshots. [12]
@@ -754,7 +745,7 @@ The projection file-surface readers moved from `observer/` into `serving/project
 `contract_snapshot.py`, `drift_snapshots.py`, `landing_state.py`, `paths.py`,
 `projection_inputs.py`, `projection_store.py`, `snapshots.py`, and `snapshots_impl/*` are now
 governed by `serving/projections/overview.md`. This route remains the observable-lifecycle
-**write side** (ambient signals, durable log/store, reducer, save gate, series tokens, provider
+**write side** (ambient signals, durable log/store, reducer, save gate, provider
 nodes) and its read-side orchestration; the reader implementations live in serving, and the
 shared observer store-root path conventions moved to `kernel/primitives/observer_paths.py`.
 

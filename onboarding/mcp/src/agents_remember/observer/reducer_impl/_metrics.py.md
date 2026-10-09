@@ -6,13 +6,11 @@
 
 ## Purpose
 
-Analytical rollups: token series, staleness histogram, and workspace metrics. The reducer's slice-3b rollups: the bounded cumulative token series, the verification-age histogram, the workspace metrics rollup, and the analytics assembly. All remain pure functions of already-read inputs.
+Analytical rollups: staleness histogram and workspace metrics. The reducer's slice-3b rollups: the verification-age histogram, the workspace metrics rollup, and the analytics assembly. All remain pure functions of already-read inputs. No token aggregate is computed here; `tool.completed` is liveness-only.
 
 ## Code Commentary
 
 - `_metrics`
-- `_decimate_token_series`
-- `token_series`
 - `staleness_histogram`
 - `_staleness_bucket`
 - `build_analytics`

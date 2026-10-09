@@ -269,7 +269,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5e4cacc3f5f41b68b1399a4064fb89ccec6b2a7e",
+            "blob": "cee16fce97e5e76b33e52e9b0d606b87481c9758",
             "content": "sha256:8ba123894d75ce9a9e5150115cc5b64e6b77e66bf64ba9080fb94ac20415c41d",
             "locator": {
               "kind": "symbol",
@@ -286,12 +286,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8535427e164854d7dadb366fd583408b98d5f38b",
+            "blob": "29a3f96c4fa5cc4abbdf34ff8486e4ee5a0c46c1",
             "content": "sha256:e2687d3182031b0379e3c3084c17002600ef4a2e7f1b9e5ee8a0245b9698d530",
             "locator": {
-              "end": 227,
+              "end": 209,
               "kind": "line_range",
-              "start": 227
+              "start": 209
             },
             "path": "mcp/src/agents_remember/observer/projection.py"
           },
@@ -509,23 +509,6 @@
               "start": 189
             },
             "path": "mcp/src/agents_remember/serving/projections/projection_inputs.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "9": {
-      "note": "Series token totals are composed by a reducer-side helper from projected task docs and lifecycles.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "42846b7c9ce7da533453aa95d96ef70250b36475",
-            "content": "sha256:cac30fe7c04d074eed4260e1a52c91b74dd2a2c198ef00e6f957dd829b215e20",
-            "locator": {
-              "kind": "symbol",
-              "name": "attach_series_token_totals"
-            },
-            "path": "mcp/src/agents_remember/observer/series_tokens.py"
           },
           "kind": "code"
         }

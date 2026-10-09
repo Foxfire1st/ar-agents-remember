@@ -1,6 +1,26 @@
 {
   "path": "mcp/src/agents_remember/observer/ambient.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "bf408b0d04334071a43207138086e4cfb6f2a374",
+        "content": "sha256:c0e774478a4d18a5a1968c4bcfbc5b315f9d24d53338116433ad1876db5c055a",
+        "locator": {
+          "end": 422,
+          "kind": "line_range",
+          "start": 422
+        }
+      },
+      "id": "RLZ-3JQQSX",
+      "invariant": "INV-WZR89C",
+      "origin": {
+        "handoffEntry": "MIK-R115@v1 rule 3",
+        "leaf": "260928-MIK-L115"
+      },
+      "rationale": "CURRENT construct, not a retirement: the single-event tokens writer preserved per MIK-R114 rule 3. The reference is still valid (ambient.py:422); the projection folds nothing from it.",
+      "role": "unclassified"
+    }
+  ],
   "references": {
     "1": {
       "note": "The state/phase vocabulary, `LifecycleState`, and typed errors this module drives — and, since 260731-EFA-L4, the `TERMINAL_STATES` / `coerce_end_outcome` pair `end` reads instead of restating (`TERMINAL_STATES` L139, `coerce_end_outcome` L149-L158).",

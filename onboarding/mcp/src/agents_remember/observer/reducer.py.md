@@ -37,7 +37,8 @@ running), `_paused_updates`, `_promoted_updates` (fleeting=False+scope,
 into a terminal state; since 260731-EFA-L4 it is
 `{"state": coerce_end_outcome(event.data.get("outcome"))}`, so the outcome
 *names* the state rather than being re-classified by a local conditional) and
-`_tool_completed_updates` (token sum). `_apply_kind` is now three lines: look the
+`_tool_completed_updates` (liveness-only: `tool.completed` writes no projection
+field — no token sum is folded anywhere in the fold). `_apply_kind` is now three lines: look the
 kind up, apply the returned update dict, or `model_copy(update={})` when the kind
 is absent. **Absence from the table is the liveness contract** — `lifecycle.heartbeat`
 and any unknown kind write no projection field, because staleness comes from
@@ -86,7 +87,7 @@ It used to be three hand-written
 `sum(1 for lc in lifecycles if lc.state == "running"|"blocked"|"paused")` lines,
 and that hand-written list is exactly what left `awaiting-developer` uncounted: a
 lifecycle that had handed the turn back counted towards `lifecycleCount` and
-`totalTokens` and towards no bucket at all, so the rollup could not show it.
+towards no bucket at all, so the rollup could not show it.
 Counting by vocabulary also makes the next gap impossible to ship quietly —
 `Metrics` is `extra="forbid"`, so a live state whose bucket field was never
 declared on the model **raises here** instead of vanishing into a zero.
@@ -104,18 +105,12 @@ emits `resume` (enabled only when `blocked`); `enclosure_actions` emits
 `disabledReason`/`nextSafeAction`. `project_workspace` folds every log, enriches
 enclosures with their actions, and rolls up `Metrics`.
 
-**Slice-3b rollups** keep the fold pure: `token_series(events)` builds a
-lifecycle's cumulative-token fuel gauge from its `tool.completed` events (set on
-the projection in `project_lifecycle`). **Served bounded since 260703-L15:** past
-`TOKEN_SERIES_MAX` (512) points, `_decimate_token_series` uniform-thins the older
-history (first sample always kept, `cumulative` stays exact per retained sample —
-still a monotonic gauge) while the newest `TOKEN_SERIES_RECENT` (256) samples stay
-complete; the observer LOG keeps every event — only the served projection is
-bounded (an uncapped series rode ~60 B/sample on EVERY lifecycle delta while its
-agent worked: 10k tool calls ≈ 600 KB/delta). `staleness_histogram` buckets sidecar
+**Slice-3b rollups** keep the fold pure: `staleness_histogram` buckets sidecar
 verification ages (fed into `Metrics.stalenessHistogram`); and `build_analytics`
 assembles the `Analytics` block, collapsing the full sidecar list to a bounded
-stalest-first leaderboard (`_stalest`).
+stalest-first leaderboard (`_stalest`). No token aggregate is computed anywhere
+in the fold: no per-lifecycle series is built, thinned, or bounded, and the
+observer log's events are never summed.
 
 ### The two input bundles (260731-EFA-L2)
 
@@ -178,8 +173,8 @@ same freshness comparison to whitelisted repo-level rows: actionable drift ids i
 `build_analytics(given, *, series=None, attention_queue=None, engine_processes=None)` reads
 `agentPickups` off the bundle and passes it through unchanged; pickup age/state is computed by
 `snapshots.read_agent_pickups`, not inferred in the reducer or frontend. Its three keyword
-arguments are the **derived** surfaces the caller already computed from the same bundle (series
-carrying token totals the raw nodes lack), so they override what `given` holds rather than being
+arguments are the **derived** surfaces the caller already computed from the same bundle (precomputed
+`series` nodes the raw inputs lack), so they override what `given` holds rather than being
 read out of it — `series=series if series is not None else given.series` is the explicit rule.
 `expectation_rows` rides on `AnalyticalInputs` (default `[]`) into `Analytics.expectationRows` —
 the durable deadline-row projection computed entirely by `snapshots.read_expectation_rows`; the
@@ -301,14 +296,11 @@ hold. The two inputs are read at the call edge by `snapshots.read_engine_process
 `read_start_progress_entries` (the latter over `worktrees.start_progress`) and wired in
 `projection_store`.
 
-**Series threading (R1 + Task 21 token rollup):** `given.series` is read at the call edge by
-`snapshots.read_series_documents`. Before analytics assembly, `project_workspace` calls
-`attach_series_token_totals(given.series, given.task_documents, lifecycles)`, which joins each
-master row's `file` to projected sibling leaf docs and sums their bound lifecycle `tokens` into
-`SeriesNode.seriesTokenTotal`; the enriched list is then passed as the `series=` override to
-`build_analytics`, which is why that keyword wins over `given.series`. The helper returns copied
-nodes, so the reducer still composes derived analytics from already-read inputs and performs no
-file I/O. Defaults empty, so prior structural/analytical callers remain unchanged.
+**Series threading:** `given.series` is read at the call edge by
+`snapshots.read_series_documents` and passed straight through as the `series=` override to
+`build_analytics`, which is why that keyword wins over `given.series`. No aggregate is computed
+from it and no helper enriches it: the reducer composes derived analytics from already-read inputs
+and performs no file I/O. Defaults empty, so prior structural/analytical callers remain unchanged.
 
 ## Invariants And Boundaries
 
@@ -353,9 +345,9 @@ file I/O. Defaults empty, so prior structural/analytical callers remain unchange
   provider/setup groups are basenames — keep both sides on the basename.
 - **One row per worktree:** a contract-keyed node always wins; a pre-contract
   start-progress entry is rendered only until its contract exists, then de-duped by group.
-- **Series token rollup stays in the fold:** master token totals are derived from the current
-  `task_documents` + folded lifecycle token totals; the reducer never persists the aggregate back to
-  task JSON.
+- **No token aggregate exists:** no counter is summed from the event log and none is persisted
+  back to task JSON; single-event `tokens` ride on their events untouched and the projection
+  folds nothing from them.
 - **Attention acknowledgements are lifecycle-scoped:** reducer filtering requires the dismissal record's
   lifecycle id to match the attention item lifecycle id. Provider/setup/start alarms cannot be hidden by
   orphaned dismissal rows.
@@ -365,7 +357,6 @@ file I/O. Defaults empty, so prior structural/analytical callers remain unchange
 ### Repo-Internal References
 
 - The projection schema this produces. [1]
-- The series-token helper that enriches `SeriesNode.seriesTokenTotal` before analytics assembly. [2]
 - The event envelope + kinds it folds. [3]
 - The write-side dormancy sweep the abandoned-projection mirrors, and the `end` signal whose `outcome` `_ended_updates` reads. [4]
 - The shared stale/TTL thresholds + age helper. [5]

@@ -87,5 +87,5 @@ sprint-only surfaces.
 in a separate `Discarded before start` section. It is audit history, not part of the live sub-task list
 or completion count. The queue mount is outside the optional graph branch so a graph-less sprint can
 still show exact-current scheduling projection state. `MasterOverviewHeader` is a behavior-preserving
-extraction of the existing kind/title/status header, body notice, change-set bar, and token summary;
-it keeps `MasterOverview` within the function-size gate without changing render order or conditions.
+extraction of the existing kind/title/status header, body notice, and change-set bar;
+it keeps `MasterOverview` within the function-size gate without changing render order or conditions. No aggregate token summary renders anywhere in the reader.

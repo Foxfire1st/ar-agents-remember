@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "Five no-counter regression tests pin the absence across backend projection, served schema, fold behavior, store overwrite and metrics; realizations span observer, dashboard and test-tree locations; nothing replaces the counter per rule 2. Admission claims guarded_by_test only: the invariant is proved by named regression tests rather than multi-file realizations."
+  },
+  "applicability": "Every product-code, fixture, benchmark and test-bound-document location governed by MIK-R115@v1: no computed token counter may exist there, and no code may read, skip or convert an old counter field.",
+  "conditions": [
+    "Absence is asserted by the no-counter regression module and the master-reader absence test at their pinned revisions."
+  ],
+  "exclusions": [
+    "Permitted test-side literals (old-field inputs, absent-name assertions), each listed by file, line and kind in the corrected E1 inventory.",
+    "Unrelated vendor spellings (Codex notification payload, knowledge-paging thresholds).",
+    "Single-event tokens, which stay under MIK-R114 rule 3."
+  ],
+  "id": "INV-S4MBTJ",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_observer_no_computed_counter.py (5/5); dashboard/src/panels/detail-panel/masterSeries.test.tsx 'shows no token total on the master reader' + old-field snapshot test (20/20); worker report + W4 addendum"
+      ],
+      "path": "l115-handoff.json"
+    },
+    "handoffEntry": "MIK-R115@v1 rule 1",
+    "leaf": "260928-MIK-L115",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The computed token counter is removed from the dashboard and the projection: gauge and file, series tokens, cockpit total, TokenSample, tokenSeries, totalTokens, lifecycle tokens with the reducer step, and observer/series_tokens.py with its readers.",
+  "status": "proposed",
+  "supersedes": []
+}

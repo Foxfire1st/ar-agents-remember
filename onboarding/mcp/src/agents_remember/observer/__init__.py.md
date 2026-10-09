@@ -26,9 +26,9 @@ projection read side — `observer_root` (`paths.py`), the schema
 `project_lifecycle`/`project_workspace`/`enclosure_actions` (`reducer.py`). Slice
 3b extends that surface with the analytical schema nodes (`Analytics`,
 `DriftSnapshotNode`, `SidecarStaleNode`, `SetupSummaryNode`, `SetupProgressNode`,
-`RouteCoverageNode`, `ToolReportNode`, `LedgerNode`, `TokenSample`, and task-23/24
+`RouteCoverageNode`, `ToolReportNode`, `LedgerNode`, and task-23/24
 `AgentPickupNode`) and the rollup
-functions (`build_analytics`, `staleness_histogram`, `token_series`). Since
+functions (`build_analytics`, `staleness_histogram`). Since
 260707-HFX2-L1, `ExpectationRowNode` (the R2 durable expectation/deadline-row
 projection surface) is re-exported alongside `AgentPickupNode` and pinned in
 `__all__`. Slice 3c

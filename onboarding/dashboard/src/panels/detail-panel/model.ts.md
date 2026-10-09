@@ -9,7 +9,7 @@
 The pure document-derivation model of the DetailPanel, extracted from
 `DetailPanel.tsx` by the 260731-EFA-L8 split. Owns path/slug helpers, the
 displayed-reader-doc resolution, the master-document view assembly
-(`seriesAsMasterDoc`, `masterDocWithSeriesTokens`), and sub-task key/label helpers.
+(`seriesAsMasterDoc`), and sub-task key/label helpers.
 
 ## Code Commentary
 
@@ -22,8 +22,7 @@ caller signal to fall back to the row older behaviors.
 
 `displayedReaderDoc` / `displayedLeafDoc` resolve which task document the reader
 shows for a selection; `seriesAsMasterDoc` builds the master view from a series node
-(the path whose rows carry `createdAt` for ordering); `masterDocWithSeriesTokens`
-merges series tokens into a master document.
+(the path whose rows carry `createdAt` for ordering).
 
 ### Conventions
 
@@ -68,5 +67,5 @@ No applicable cross-repository source was found.
 
 `MasterDocView` now carries `discardedCount` and `discardedSubTasks`, and `seriesAsMasterDoc()`
 passes both producer-owned values through without folding them into live subtasks or completion.
-The existing execution-graph view, repository-qualified `masterRef` resolution, ordering, and token
-rollup behavior are unchanged.
+The existing execution-graph view, repository-qualified `masterRef` resolution, and ordering
+behavior are unchanged.

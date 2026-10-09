@@ -164,7 +164,7 @@ does not.
 - The attention-item builder takes its sample from analytics. [24]
 - The engine-process builder takes its sample from analytics. [25]
 - The provider builder takes its sample from the top-level providers array. [26]
-- The served snapshot supplies the code provider and memory provider in its top-level provider array. [27]
+- The served snapshot supplies the code provider and memory provider in its top-level provider array.
 - The override constraint every builder takes, and the three limits it documents. [28]
 - The guard that catches the residue `Overrides` cannot — the smuggled field with no assertion to ban, and the `any` rule whose comment names `fixtures/wire.ts::reparsed` as the site that was making exactly that mistake. [29]
 - `KnownUnsampled`, which names `agentNotifierHeartbeat` as absent from the snapshot and therefore a typed literal here. [30]

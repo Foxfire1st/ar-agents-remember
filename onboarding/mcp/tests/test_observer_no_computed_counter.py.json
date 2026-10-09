@@ -1,0 +1,242 @@
+{
+  "path": "mcp/tests/test_observer_no_computed_counter.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "a1af00a919e1a3084e9e5d8788a69ae2017e6c8c",
+        "content": "sha256:0ab0eeb41b8fcd2cfc902f6ae379099494a04435b7ed465c91b4337fcbc69297",
+        "locator": {
+          "kind": "symbol",
+          "name": "NoComputedCounterTests.test_store_write_over_old_field_file_reads_back_clean"
+        }
+      },
+      "facet": "A store write over an old-field file reads back clean.",
+      "id": "PRF-48TFWP",
+      "invariant": "INV-S4MBTJ",
+      "origin": {
+        "handoffEntry": "MIK-R115@v1 rule 1",
+        "leaf": "260928-MIK-L115"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "a1af00a919e1a3084e9e5d8788a69ae2017e6c8c",
+        "content": "sha256:3a7c685e81fb3fcc7ce858169a1d5839677a608e229f558774a290c701750267",
+        "locator": {
+          "kind": "symbol",
+          "name": "NoComputedCounterTests.test_served_schema_carries_no_token_fields"
+        }
+      },
+      "facet": "The served schema carries no token fields.",
+      "id": "PRF-4TRWX5",
+      "invariant": "INV-S4MBTJ",
+      "origin": {
+        "handoffEntry": "MIK-R115@v1 rule 1",
+        "leaf": "260928-MIK-L115"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "a1af00a919e1a3084e9e5d8788a69ae2017e6c8c",
+        "content": "sha256:a38bd888d8cfa650a5b28206a8ae3ab4286dc818b33e70d4382921b6d8f7676c",
+        "locator": {
+          "kind": "symbol",
+          "name": "NoComputedCounterTests.test_tool_completed_tokens_do_not_fold_into_the_lifecycle"
+        }
+      },
+      "facet": "tool.completed tokens never fold into a lifecycle.",
+      "id": "PRF-D6RD1S",
+      "invariant": "INV-S4MBTJ",
+      "origin": {
+        "handoffEntry": "MIK-R115@v1 rule 1",
+        "leaf": "260928-MIK-L115"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "a1af00a919e1a3084e9e5d8788a69ae2017e6c8c",
+        "content": "sha256:2b7181100b85a1dfefbcbc5a7ca1937dce7d0fa95bdc03d6f0ca1177a7b30ece",
+        "locator": {
+          "kind": "symbol",
+          "name": "NoComputedCounterTests.test_projection_models_carry_no_token_fields"
+        }
+      },
+      "facet": "Projection models carry no token fields, so no view can show a per-agent counter from them.",
+      "id": "PRF-HW0B6M",
+      "invariant": "INV-4T6KSE",
+      "origin": {
+        "handoffEntry": "MIK-R115@v1 rule 2",
+        "leaf": "260928-MIK-L115"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "a1af00a919e1a3084e9e5d8788a69ae2017e6c8c",
+        "content": "sha256:37d2f03c741020a899691d2fbab3033c3ae4bcc1a0df1c4cb6e5fe45823ecbef",
+        "locator": {
+          "kind": "symbol",
+          "name": "NoComputedCounterTests.test_workspace_metrics_carry_no_token_total"
+        }
+      },
+      "facet": "Workspace metrics carry no token total.",
+      "id": "PRF-KKA9PS",
+      "invariant": "INV-S4MBTJ",
+      "origin": {
+        "handoffEntry": "MIK-R115@v1 rule 1",
+        "leaf": "260928-MIK-L115"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "a1af00a919e1a3084e9e5d8788a69ae2017e6c8c",
+        "content": "sha256:2b7181100b85a1dfefbcbc5a7ca1937dce7d0fa95bdc03d6f0ca1177a7b30ece",
+        "locator": {
+          "kind": "symbol",
+          "name": "NoComputedCounterTests.test_projection_models_carry_no_token_fields"
+        }
+      },
+      "facet": "Projection models carry no token fields.",
+      "id": "PRF-MJ37ER",
+      "invariant": "INV-S4MBTJ",
+      "origin": {
+        "handoffEntry": "MIK-R115@v1 rule 1",
+        "leaf": "260928-MIK-L115"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "a1af00a919e1a3084e9e5d8788a69ae2017e6c8c",
+        "content": "sha256:a38bd888d8cfa650a5b28206a8ae3ab4286dc818b33e70d4382921b6d8f7676c",
+        "locator": {
+          "kind": "symbol",
+          "name": "NoComputedCounterTests.test_tool_completed_tokens_do_not_fold_into_the_lifecycle"
+        }
+      },
+      "facet": "tool.completed tokens never fold into a lifecycle while events keep them.",
+      "id": "PRF-NVYQ2Z",
+      "invariant": "INV-WZR89C",
+      "origin": {
+        "handoffEntry": "MIK-R115@v1 rule 3",
+        "leaf": "260928-MIK-L115"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "a1af00a919e1a3084e9e5d8788a69ae2017e6c8c",
+        "content": "sha256:3a7c685e81fb3fcc7ce858169a1d5839677a608e229f558774a290c701750267",
+        "locator": {
+          "kind": "symbol",
+          "name": "NoComputedCounterTests.test_served_schema_carries_no_token_fields"
+        }
+      },
+      "facet": "The served schema carries no token fields for any per-task or per-master figure.",
+      "id": "PRF-XS8BHX",
+      "invariant": "INV-4T6KSE",
+      "origin": {
+        "handoffEntry": "MIK-R115@v1 rule 2",
+        "leaf": "260928-MIK-L115"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "a1af00a919e1a3084e9e5d8788a69ae2017e6c8c",
+        "content": "sha256:37d2f03c741020a899691d2fbab3033c3ae4bcc1a0df1c4cb6e5fe45823ecbef",
+        "locator": {
+          "kind": "symbol",
+          "name": "NoComputedCounterTests.test_workspace_metrics_carry_no_token_total"
+        }
+      },
+      "facet": "Workspace metrics carry no token total for any workspace figure.",
+      "id": "PRF-Z0A62S",
+      "invariant": "INV-4T6KSE",
+      "origin": {
+        "handoffEntry": "MIK-R115@v1 rule 2",
+        "leaf": "260928-MIK-L115"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Projection models carry no token fields.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a1af00a919e1a3084e9e5d8788a69ae2017e6c8c",
+            "content": "sha256:2b7181100b85a1dfefbcbc5a7ca1937dce7d0fa95bdc03d6f0ca1177a7b30ece",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_projection_models_carry_no_token_fields"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The served schema carries no token fields.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a1af00a919e1a3084e9e5d8788a69ae2017e6c8c",
+            "content": "sha256:3a7c685e81fb3fcc7ce858169a1d5839677a608e229f558774a290c701750267",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_served_schema_carries_no_token_fields"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "`tool.completed` tokens do not fold into the lifecycle.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a1af00a919e1a3084e9e5d8788a69ae2017e6c8c",
+            "content": "sha256:a38bd888d8cfa650a5b28206a8ae3ab4286dc818b33e70d4382921b6d8f7676c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_tool_completed_tokens_do_not_fold_into_the_lifecycle"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "A store write over an old-field file reads back clean.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a1af00a919e1a3084e9e5d8788a69ae2017e6c8c",
+            "content": "sha256:0ab0eeb41b8fcd2cfc902f6ae379099494a04435b7ed465c91b4337fcbc69297",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_store_write_over_old_field_file_reads_back_clean"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Workspace metrics carry no token total.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a1af00a919e1a3084e9e5d8788a69ae2017e6c8c",
+            "content": "sha256:37d2f03c741020a899691d2fbab3033c3ae4bcc1a0df1c4cb6e5fe45823ecbef",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_workspace_metrics_carry_no_token_total"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

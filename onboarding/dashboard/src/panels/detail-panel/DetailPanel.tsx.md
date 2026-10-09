@@ -22,8 +22,7 @@ frontend-rail size remediation (260731-EFA-L8 R4/R5).
 
 The selected lifecycle's detail (the operations centre viewport): phase stepper, durable **Gate Respond
 surface** for explicit approval/rejection gates, the **task reader** (the JSON task content rendered to
-read in the dashboard, not the filesystem), the lifecycle → worktree → provider spine, and the token
-gauge. The largest panel. The task reader's coordination-notes surface (`TaskNotes`) opens the L17
+read in the dashboard, not the filesystem), the lifecycle → worktree → provider spine. The largest panel. The task reader's coordination-notes surface (`TaskNotes`) opens the L17
 **Notes Reader** takeover through the `onOpenNotes` prop that `DetailPanel` threads from `CockpitShell`
 alongside `onOpenChangeSet` (down through `TaskReader` / `MasterOverview` / `TaskContent`); the GateResponder
 is durable-gates-only (no wait-loop `ask` fallback).
@@ -43,9 +42,7 @@ summaries in the master index and reader header use the server-projected `stepsD
 counters; the visible top-level step list is content, not a second progress authority. Master sub-task navigation resolves authored leaf documents from the full projected
 sibling task-document pool, so leaves can stay absent from the Operations sidebar while remaining
 clickable from the master. Directly opened leaf task documents, including enclosure-backed leaf
-lifecycle rows, now get the same sticky parent/root task backlink as the master-drill path. Master
-readers also show the server-projected `seriesTokenTotal` scalar so aggregate series cost is visible
-without changing the selected lifecycle token gauge. L8 removes the obsolete task-local response box for
+lifecycle rows, now get the same sticky parent/root task backlink as the master-drill path. No aggregate token figure renders in the master reader. L8 removes the obsolete task-local response box for
 ask-only attention details; follow-up conversation belongs in the adjacent leaf chat, while durable gate
 decision controls still render for real `lifecycle.gate` requests. L8 also marks rendered leaf task
 content with `data-task-leaf-key` so highlight capture can identify text selected from the displayed leaf.
@@ -112,7 +109,7 @@ identity for visible promoted-leaf titles, while `taskDocsForLifecycle` keeps th
 to actual task-document JSON for that lifecycle. With **no selection** (`!lifecycle && !selectedSeries && !selectedTaskDoc`) the panel early-returns a `Panel` `fill` holding the
 shared `EmptyStateBackdrop` (slice 07b polish): a faint, effects-gated **battle-cruiser** boomerang-video
 atmosphere (`/assets/sc2-battlecruiser-boomerang.mp4`, aria-hidden, absent under calm-cockpit /
-reduced-motion) behind the **"Select a task to inspect its phase, gate, and tokens."** copy
+reduced-motion) behind the **"Select a task to inspect its phase and gate."** copy
 (user-facing copy; the selected unit is still the `lifecycle`). The `Panel` `fill` variant gives the
 backdrop the flex-column slot its `flex:1` canvas needs. The `stepper` is a `step` `cva`
 (done/current/todo computed from the phase index).
@@ -128,10 +125,8 @@ back / parent up-link sits in the `Panel` `head` slot (sticky): when a slice is 
 shows `← {series}`; otherwise a matched `selectedSeries` renders `MasterOverview` from the
 `analytics.series` master before any lifecycle-doc fallback. Without that series match, an actual
 selected/bound master renders `MasterOverview` directly with sibling slice docs from
-`seriesSliceDocs(allDocs, master.docPath)`. `seriesAsMasterDoc` carries `seriesTokenTotal` directly from
-`Analytics.series`; `masterDocWithSeriesTokens` enriches concrete master `TaskDocNode`s by matching
-`docPath` against `analytics.series`, and `MasterTokenSummary` renders the scalar `series tokens` row
-when a total is present. This is deliberately broader than the selected lifecycle's
+`seriesSliceDocs(allDocs, master.docPath)`. `seriesAsMasterDoc` carries series fields directly from
+`Analytics.series`; no token enrichment or summary row exists. This is deliberately broader than the selected lifecycle's
 direct `docs` array and broader than the Operations sidebar rows: the master index remains the navigation
 surface for authored leaf documents that are not sidebar-eligible. If no master is present,
 `parentTaskLinkForDoc` asks `data/taskHierarchy.ts` whether the selected leaf document matches a
@@ -273,8 +268,8 @@ User-facing task progress in the master index and leaf reader must use projected
 `stepsDone`/`stepsTotal`; the component must not derive a competing count from visible steps. Step and
 code-example labels must compose structured ids with titles at render time; do not embed ids inside
 title strings and do not strip ids from display.
-Series token totals are displayed only from the server-projected `SeriesNode.seriesTokenTotal`; the
-panel must not recompute the aggregate from lifecycle token gauges or child task rows.
+No aggregate token figure is displayed anywhere in the panel: no lifecycle gauge, no series total,
+and no recomputation from child rows.
 Complete visible task content outranks optional reader metadata: `TaskNotes` and every eager
 `ChangeSetButton` under the selected reader remain unmounted only while body state is `loading`, then
 resume for both `available` and `unavailable` so fallback mode retains existing tools.
@@ -329,12 +324,11 @@ master leg of the drill-down).
 - The row uses position for test ids and the resolved child for navigation. [35]
 - The slice list retains createdAt ordering because it operates on task documents. [36]
 - `TaskReader` renders the top `ProgressFill` before the task body and keeps implementation-step copy later in the document. [37]
-- `seriesAsMasterDoc`; `masterDocWithSeriesTokens`; `seriesTokenTotal`; `MasterTokenSummary` [38]
 - SeriesNode provides the series fields and typed sub-task rows consumed by the panel. [39]
 - TaskDocNode provides authored task identity, creation time and task-master references. [40]
 - Only the series sub-task row has optional createdAt. [41]
 - `taskLabel`/`taskDocsForLifecycle`/`taskDocumentLabel` — the lifecycle-visible identity helpers used to label promoted leaf lifecycles without changing task-document filtering. [42]
 - The durable gate responder, now rendered only for real `activeLifecycle.gate` requests. [43]
 - `Markdown`; `Bullets`; `DecisionList`; `MasterSection` [44]
-- `ProgressFill` + `TokenGauge` grammar it composes. [45]
+- `ProgressFill` is the shared progress display primitive the panel composes. [45]
 - The shared empty-state backdrop the no-selection state renders. [46]

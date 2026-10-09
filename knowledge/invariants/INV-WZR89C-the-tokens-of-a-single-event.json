@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "The no-fold regression test and the untouched ambient writer pin preservation at the event source; the projection folds nothing from single-event tokens. Admission claims guarded_by_test only: the invariant is proved by named regression tests rather than multi-file realizations."
+  },
+  "applicability": "The single-event tokens writer and every projection fold: events keep their tokens and no fold sums them.",
+  "conditions": [
+    "The ambient writer records tokens per tool answer as before."
+  ],
+  "exclusions": [
+    "Computed aggregates over events, which no longer exist."
+  ],
+  "id": "INV-WZR89C",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_observer_no_computed_counter.py::test_tool_completed_tokens_do_not_fold_into_the_lifecycle; EventRiver token tests green"
+      ],
+      "path": "l115-handoff.json"
+    },
+    "handoffEntry": "MIK-R115@v1 rule 3",
+    "leaf": "260928-MIK-L115",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The tokens of a single event stay as a fact of its event; a row of the Event River may show them as the size of that one answer.",
+  "status": "proposed",
+  "supersedes": []
+}
