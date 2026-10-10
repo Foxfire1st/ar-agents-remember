@@ -74,26 +74,45 @@ External domain documentation is not configured.
 
 The protocols establish the downward dependency boundary; the application supplies adapters and the selected executor requires the continuation. Protocol definitions do not themselves prove execution or provide a missing implementation.
 
+
 - Citation and provider lifecycle protocols remain explicit. [1]
+
 
 - The knowledge validator's commit-route port: candidate tree, bases and paired code commit in, refusal text or `None` out; since MIK-R09 a `leaf_refusal` twin that takes a `LeafPublication`. [2]
 
+
 - The mandatory gate's port, its landing request and the direct-landing verdict (MIK-R09). [3]
+
+
+- The mandatory gate's port, its landing request and the direct-landing verdict (MIK-R09). [23]
+
 
 - The crossing sync's port, its request and plan view, and the step failure it raises. [4]
 - The worklist recompute port and the bundle field that carries it. [5]
 - The archive hook's request and port (MIK-R25 rule 5): one archived task, its directory name and its two repositories in; the cleanup report out, never raising. [6]
 - Registry population and task/memory observations have distinct service ports. [7]
 - Current memory authority, Gate 5, and finalization are separate continuation methods. [8]
+
 - The bundle exposes optional capabilities, including `knowledge_validation`, `knowledge_crossing`, `knowledge_worklist`, (since MIK-R25) `review_artifact_cleanup` and (since MIK-R09) `knowledge_gate`; provider setup inputs stay opaque. [9]
+
+
 - Bind the composition-provided services for this process. [10]
+
+
 - Clear the bound services (tests and process teardown). [11]
+
+
 - Reading unbound worktree services refuses instead of constructing ambient owners. [12]
+
+
 - The default application bundle binds rails, the prepared continuation and certification, the knowledge validator with its base converter, and the knowledge crossing. [13]
+
 
 - The route helper refuses a converted commit when the port is unbound. [14]
 
+
 - Selected execution, which since MIK-R09 first refuses the prepared path on converted memory, observes memory before reuse and refuses an absent continuation. [15]
+
 
 - The memory trees of a commit that publishes a leaf, with the commits whose closed files stay frozen. [22]
 
@@ -108,9 +127,13 @@ No cross-repository evidence is required for these file-local claims.
 Prepared-memory certification is an explicit typed service alongside the continuation port. Requests carry the actual physical code view and logical memory pair; returned semantic inputs and original references are revalidated by the current lifecycle owner.
 
 - `TerminalGuard` owns the corresponding behavior described above. [16]
+
 - `CitationGuardPort` owns the corresponding behavior described above. [17]
+
 - `WorktreeServicesUnboundError` owns the corresponding behavior described above. [18]
+
 - Bind the composition-provided services for this process. [19]
+
 - `reset_worktree_services` owns the corresponding behavior described above. [20]
 - `worktree_services` owns the corresponding behavior described above. [21]
 

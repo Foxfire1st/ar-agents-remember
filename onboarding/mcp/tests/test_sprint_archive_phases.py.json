@@ -1,0 +1,22 @@
+{
+  "path": "mcp/tests/test_sprint_archive_phases.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Phase rollback, hook-failure retention with retry, and repeat comparison are pinned.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2c2e4bce9a5b997c6b669b0d4b7d2e46dac2e712",
+            "content": "sha256:6b046e56a694f14b7bcad25ae53f64cf74a5dd910c7a4f45fbfbb339d42bc56f",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -32,6 +32,8 @@ every retry/evaluation path.
 
 Canonical lifecycle doctrine owns canonical skill content; generated copies are synchronization outputs. Dispatch proof remains exact-session and fail-closed.
 
+The cleanup and abandon rows record the bounded pre-locator exception: with no locator, no worktree folder and no work branches, the call finishes with nothing to archive or delete and records the why in the surviving contract.
+
 ## Evidence
 
 ### Docs References

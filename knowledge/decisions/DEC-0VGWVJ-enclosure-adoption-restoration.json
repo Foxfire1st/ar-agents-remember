@@ -1,0 +1,72 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "Removal, implicit adoption and restoration were weighed with grounds, and the choice binds all future locator-less enclosure finishes."
+  },
+  "alternatives": [
+    {
+      "option": "Restore worktree_enclosure_adopt as documented, taking in-place operation records as found with hashed dry-run listing.",
+      "reason": "Library and documentation are intact; explicit adoption with receipt keeps every refusal that names the tool true.",
+      "status": "chosen"
+    },
+    {
+      "option": "Leave the tool removed and route around it.",
+      "reason": "Every refusal naming it as next action would stay false, and eight real enclosures would keep no finished state.",
+      "reconsider_when": "Pre-locator enclosures no longer exist anywhere real.",
+      "status": "rejected"
+    },
+    {
+      "option": "Let readers adopt enclosures implicitly.",
+      "reason": "Adoption stays explicit by preservation boundary; no reader adopts on its own.",
+      "reconsider_when": "Never under the current boundary; revisit only by developer ruling.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Pre-locator enclosures reach finished states through the registered tool; in-place records are receipted found-in-place with nothing copied or moved."
+  ],
+  "context": "Refusals named worktree_enclosure_adopt as the next action while the tool had been deleted; eight real enclosures with a folder on disk and in-place operation records needed it.",
+  "decider": "Architect under D47 (packet Settled G2).",
+  "id": "DEC-0VGWVJ",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "bc0aca79e27208d773ffb486a3f8048838ad4236",
+        "content": "sha256:33f9bf50a7e0525ffa22a616f92143af058da1e535c60fb520035006af4f03e2",
+        "locator": {
+          "kind": "symbol",
+          "name": "worktree_enclosure_adopt_payload"
+        },
+        "path": "mcp/src/agents_remember/mcp/tools/enclosure_adoption.py"
+      }
+    },
+    {
+      "relation": "motivated_change_to",
+      "target": {
+        "id": "MIK-R82",
+        "packet": "requirements/MIK-R82-v1-archiving-a-sprint-leftover-copies-and-enclosure-adoption.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "notes/reports/260928-MIK-L82-curator-handoff-list.json"
+    },
+    "handoffEntry": "dec-adoption",
+    "leaf": "260928-MIK-L82",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

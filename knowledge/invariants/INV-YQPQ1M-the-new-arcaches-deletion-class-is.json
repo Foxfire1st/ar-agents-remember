@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "Receipts, hook and shared remainder together carry cache deletions through interruption; four proving tests pin replay, remainder, shared recovery and receipt-gated deletion."
+  },
+  "applicability": "Archive-hook receipt planning, replay, remainder and preview for every deletion class.",
+  "conditions": [
+    "An interrupted or cache-only run replays against a recorded receipt."
+  ],
+  "exclusions": [
+    "Deletion classes outside the shared artifact keys."
+  ],
+  "id": "INV-YQPQ1M",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "test_review_artifact_cleanup.py::test_an_interrupted_cache_deletion_replays_as_attributed_already_absent; ::test_a_cache_only_dry_run_shows_work_remainder_and_preview; ::test_old_classes_and_caches_share_one_receipt_recovery; ::test_nothing_is_deleted_when_the_cache_receipt_cannot_be_written; notes/reports/l82-code-review-R2/focused-pytest.json + .stdout"
+      ],
+      "path": "notes/reports/260928-MIK-L82-curator-handoff-list.json"
+    },
+    "handoffEntry": "L82-CODE-R1-02",
+    "leaf": "260928-MIK-L82",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The new arCaches deletion class is omitted from shared receipt planning, remainder and deleted-name consumers, so an interrupted cache deletion loses its recovery history and an archived dry run can falsely report that nothing would change.",
+  "status": "retired",
+  "supersedes": []
+}

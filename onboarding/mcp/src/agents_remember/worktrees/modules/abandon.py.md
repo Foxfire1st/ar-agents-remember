@@ -102,21 +102,42 @@ blocker and contract-stamp behavior.
 
 No external Domain Documentation source is configured for this memory repo.
 
+
 - Successful abandon and exact terminal replay are wrapped with exact source-pair release. [1]
+
 - The terminal bridge preserves missing, unreadable, or different selection and never clears a newer owner. [2]
 No relevant external documentation found.
 
 ### Repo-Internal References
 
+
 - Abandon passes its dry-run flag into terminal result validation. [3]
+
 - Provider teardown is delegated to the provider-runtime teardown function. [4]
-- `remove_registered_worktree`, `delete_branch_if_merged`, `delete_branch_force`, and `remove_empty_dir` are reused from cleanup. [5]
+
+- `remove_registered_worktree` (from cleanup), `delete_branch_if_merged`, `delete_branch_force` (from `terminal_branch_retirement`), and `remove_empty_dir` are reused through the terminal owners. [5]
+
+
+- `remove_registered_worktree` (from cleanup), `delete_branch_if_merged`, `delete_branch_force` (from `terminal_branch_retirement`), and `remove_empty_dir` are reused through the terminal owners. [13]
+
+
+- `remove_registered_worktree` (from cleanup), `delete_branch_if_merged`, `delete_branch_force` (from `terminal_branch_retirement`), and `remove_empty_dir` are reused through the terminal owners. [14]
+
+
 - `WorktreeArgs` types the abandon input. [6]
+
+
+- `WorktreeArgs` types the abandon input. [15]
+
 - The closeout registrar exposes `worktree_abandon` with `force` forwarded from the MCP layer. [7]
 - Series reports-tree preservation is decided by the legacy child-enclosure guard imported from terminal validation. [8]
+
 - The cleanup vocabulary includes abandoned and reopened as declared terminal/reopen states. [9]
+
 - The typed contract amendment record holds the six optional vocabulary cells. [10]
+
 - The typed amendment helper preserves unspecified cells and applies supplied vocabulary values. [11]
+
 
 ### Cross-Repo References
 
@@ -139,7 +160,9 @@ The current source seams include `abandon_result`. The public module consumes cl
 
 ### Reconciled Source Evidence
 
+
 - The current module exposes `abandon_result` at this ownership boundary. [12]
+
 
 ## 260821-CLIVE Archive-Before-Abandon
 
@@ -149,6 +172,8 @@ root. The archive binds the accepted `force` argument; retry with different inpu
 exact terminal retry/status works after the live root is gone. Atomic series require the ephemeral
 terminal release capability, never a persistent queue blocker. Already-abandoned results retain and
 surface terminal archive proof.
+
+Rule 5 no-remains exception: with no locator, no worktree folder and no work branches, abandon finishes directly with nothing to archive and nothing to delete, persisting its reason in the surviving contract with a readback. A leaf with uncommitted changes or unlanded branch commits is given up only with `force` and the explicit approval, without a sync of its master.
 
 ## Governing Overview
 

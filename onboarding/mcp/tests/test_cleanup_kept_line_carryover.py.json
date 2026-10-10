@@ -1,0 +1,22 @@
+{
+  "path": "mcp/tests/test_cleanup_kept_line_carryover.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Kept-line carryover and refusal cases are pinned.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "69e8ad174a0d93f74c775d0e851c92fe30f25f2e",
+            "content": "sha256:4134090d2b704d95d959df8440930c1ecb8be1e7ee22b3218866e1d00c9e81bf",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

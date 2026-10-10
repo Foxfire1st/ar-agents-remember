@@ -214,7 +214,7 @@ alone and reports the sprint row as skipped with its linkage fact, unless a pare
 Several commanding sprints, invalid linkage and unreadable own documents refuse before cleanup.
 The selected documents publish atomically through [finalize_task_documents.py](finalize_task_documents.py.md).
 [finalize.py](finalize.py.md) retains the master folder and carries the archive skip; `task_doc.retire_master`
-is the only master archive route.
+is the individual-master archive route, while a whole sprint with its moving commanded masters goes by `task_doc.archive_sprint`.
 
 - Series finalization selects the master and any proven typed or correlated seat row; absent or ambiguous correlation is reported as skipped unless a parent was asserted. [58]
 

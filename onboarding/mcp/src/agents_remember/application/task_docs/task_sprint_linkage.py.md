@@ -21,10 +21,10 @@ task-document-writer authority in `code_quality/single_owner.py`.
 ### Logic
 
 The public surface is `SPRINT_LINKAGE_OPERATIONS = ("attach_master", "detach_master",
-"retire_master", "linkage_report")`; `sprint_linkage_operation` builds a `SprintLinkageRequest` from a
-`SprintLinkageCall` (tool-layer context) and dispatches it to one of the four operations (`retire_master`
+"retire_master", "archive_sprint", "linkage_report")`; `sprint_linkage_operation` builds a `SprintLinkageRequest` from a
+`SprintLinkageCall` (tool-layer context) and dispatches it to one of the five operations (`retire_master`
 goes to `task_master_retirement.retire_master`), and `task_doc_tools._special_task_doc_operation`
-routes those operations here while wrapping `SprintLinkageError` in `TaskDocError`. The shared building
+routes those operations here while wrapping `SprintLinkageError` in `TaskDocError`. `archive_sprint` dispatches to the sprint-archive owner beside this module. The shared building
 blocks live beside this module: `SprintLinkageError` and the pure `_detach_candidate` in
 `task_sprint_candidates.py`; `SprintLinkageRequest`, `_sprint_context`, `_validate_candidate`,
 `_publication_transaction` and `_document_preview` in `task_sprint_context.py`.
@@ -110,9 +110,19 @@ completion blockers, while any other row resolves the terminal leaf doc exactly 
 ### Repo-Internal References
 
 
+
 - The typed masterRef row, SprintSeat and TaskDocument models supply the linkage schema this module writes. [1]
 
+
+- The typed masterRef row, SprintSeat and TaskDocument models supply the linkage schema this module writes. [16]
+
+
+
 - The typed-linkage cross-check and altitude role sets this module relies on. [2]
+
+
+- The typed-linkage cross-check and altitude role sets this module relies on. [17]
+
 - The public tool-layer operation routing. [3]
 - The shared judgment verifier and completion gate. [4]
 - The rollback-safe batch writer and exact task publication transaction. [5]
@@ -121,7 +131,9 @@ completion blockers, while any other row resolves the terminal leaf doc exactly 
 
 - The F8 fact kinds: sprints excluded from the uncommanded-master scan; unresolved seat-doc rows named. [8]
 
-- The operation tuple lists the four linkage operations and the dispatcher sends `retire_master` to the retirement module. [10]
+
+- The operation tuple lists the five linkage operations and the dispatcher sends `retire_master` to the retirement module. [10]
+
 - Attach validates its full candidate before preview or apply and calls the shared graph-title cardinality owner before publication. [11]
 - Detach builds its candidate from the shared pure `_detach_candidate`, validates it, and publishes through `_publish`. [12]
 - Apply uses the central title owner and the exact task-document transaction publisher; it does not select a first graph locally. [13]

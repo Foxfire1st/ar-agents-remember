@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "Three proving tests pin slot discovery, review-bound apply and placement protections; without them orphaned indexes would linger outside the managed root."
+  },
+  "applicability": "Citation source index discovery and deletion.",
+  "conditions": [
+    "Slots outside the managed namespace."
+  ],
+  "exclusions": [
+    "The managed namespace; Git-tracked indexes, which list and keep."
+  ],
+  "id": "INV-ZX8QN1",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "M1 verdict L82-MEM-M1-F01 + R4 evidence: test_knowledge_copy_cleanup.py::test_citation_slots_are_found_wherever_publishers_root_them; ::test_a_cache_added_after_the_review_refuses_the_apply; ::test_citation_protections_hold_at_every_placement; /var/tmp/mik-run3/l82/evidence-window/copies-apply.json#deletedCaches; notes/reports/l82-code-rev"
+      ],
+      "path": "notes/reports/260928-MIK-L82-curator-handoff-list-m2.json"
+    },
+    "handoffEntry": "L82-MEM-M1-S-05",
+    "leaf": "260928-MIK-L82",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Citation slots are found wherever publishers root them outside the managed namespace, applies bind to the review, and protections hold at every placement.",
+  "status": "proposed",
+  "supersedes": [
+    "INV-EYMRKQ"
+  ]
+}

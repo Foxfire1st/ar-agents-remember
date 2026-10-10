@@ -3,7 +3,381 @@
   "proves": [
     {
       "anchor": {
-        "blob": "40df89f4777cda9e7316381f25e54f0c8fb69ee5",
+        "blob": "3bf034783f9edf08134213feb5d7151ffeaf944f",
+        "content": "sha256:39206199f02860f973098e66bc8b7519fc08135a8c16d41ef75034d3812ae3ca",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_citation_slots_are_found_wherever_publishers_root_them"
+        }
+      },
+      "facet": "Citation slots are found wherever publishers root them.",
+      "id": "PRF-22BYWX",
+      "invariant": "INV-ZX8QN1",
+      "origin": {
+        "handoffEntry": "L82-MEM-M1-S-05",
+        "leaf": "260928-MIK-L82"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "3bf034783f9edf08134213feb5d7151ffeaf944f",
+        "content": "sha256:cfd3eafe6bdbe9ca5751f80f09fc3d52a9a1331255f2791a5285f8fc260e40cd",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_an_unreadable_generation_manifest_never_falls_through_to_unlink"
+        }
+      },
+      "facet": "An unreadable generation manifest never falls through to unlink.",
+      "id": "PRF-25Z5R7",
+      "invariant": "INV-H97F8K",
+      "origin": {
+        "handoffEntry": "L82-CODE-R1-12",
+        "leaf": "260928-MIK-L82"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "3bf034783f9edf08134213feb5d7151ffeaf944f",
+        "content": "sha256:86c97e51415ac35fd8c4fe6119d63794a31031e839001897616d412b8ddbcfd2",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_tracked_sibling_refuses_the_whole_generation_release"
+        }
+      },
+      "facet": "A tracked sibling refuses the whole generation release.",
+      "id": "PRF-2XY7KM",
+      "invariant": "INV-468X0P",
+      "origin": {
+        "handoffEntry": "L82-CODE-R1-03",
+        "leaf": "260928-MIK-L82"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "3bf034783f9edf08134213feb5d7151ffeaf944f",
+        "content": "sha256:39206199f02860f973098e66bc8b7519fc08135a8c16d41ef75034d3812ae3ca",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_citation_slots_are_found_wherever_publishers_root_them"
+        }
+      },
+      "facet": "Citation slots are found wherever publishers root them.",
+      "id": "PRF-31CDAQ",
+      "invariant": "INV-EYMRKQ",
+      "origin": {
+        "handoffEntry": "L82-CODE-R1-05",
+        "leaf": "260928-MIK-L82"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "3bf034783f9edf08134213feb5d7151ffeaf944f",
+        "content": "sha256:92c016c2f0a756b800be4f30ec991ae6589b123ff416dba34a601974fc9c5065",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_silently_skipped_history_write_is_caught_and_repaired"
+        }
+      },
+      "facet": "A silently skipped history write is caught and repaired.",
+      "id": "PRF-4Y154A",
+      "invariant": "INV-W2HVAT",
+      "origin": {
+        "handoffEntry": "L82-MEM-M1-S-04",
+        "leaf": "260928-MIK-L82"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "3bf034783f9edf08134213feb5d7151ffeaf944f",
+        "content": "sha256:31ed929c2629f82cc2e88fa0d0165ff79bdb0ebc94fc720e136006f40bb260a6",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_an_unreadable_task_document_is_an_admission_failure_with_no_deletions"
+        }
+      },
+      "facet": "An unreadable task document is an admission failure with no deletions.",
+      "id": "PRF-5BF7KK",
+      "invariant": "INV-H97F8K",
+      "origin": {
+        "handoffEntry": "L82-CODE-R1-12",
+        "leaf": "260928-MIK-L82"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "3bf034783f9edf08134213feb5d7151ffeaf944f",
+        "content": "sha256:1af8a1a193d6730a4a34a454a35ae74e7af40ac80917ddcdeea22cca155e2d31",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_wholly_eligible_generation_releases_with_truthful_history"
+        }
+      },
+      "facet": "A wholly eligible generation releases with truthful history.",
+      "id": "PRF-6W324G",
+      "invariant": "INV-14MXY5",
+      "origin": {
+        "handoffEntry": "L82-MEM-M1-S-03",
+        "leaf": "260928-MIK-L82"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "3bf034783f9edf08134213feb5d7151ffeaf944f",
+        "content": "sha256:60bbac305d4c5d5a290303620f7021a49580f583cb295ae71fd492cb85923927",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_cache_added_after_the_review_refuses_the_apply"
+        }
+      },
+      "facet": "A cache added after the review refuses the apply.",
+      "id": "PRF-9JPDE9",
+      "invariant": "INV-ZX8QN1",
+      "origin": {
+        "handoffEntry": "L82-MEM-M1-S-05",
+        "leaf": "260928-MIK-L82"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "3bf034783f9edf08134213feb5d7151ffeaf944f",
+        "content": "sha256:31ed929c2629f82cc2e88fa0d0165ff79bdb0ebc94fc720e136006f40bb260a6",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_an_unreadable_task_document_is_an_admission_failure_with_no_deletions"
+        }
+      },
+      "facet": "An unreadable task document is an admission failure with no deletions.",
+      "id": "PRF-A2J6PF",
+      "invariant": "INV-HSEKYE",
+      "origin": {
+        "handoffEntry": "L82-MEM-M1-S-12",
+        "leaf": "260928-MIK-L82"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "3bf034783f9edf08134213feb5d7151ffeaf944f",
+        "content": "sha256:92c016c2f0a756b800be4f30ec991ae6589b123ff416dba34a601974fc9c5065",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_silently_skipped_history_write_is_caught_and_repaired"
+        }
+      },
+      "facet": "A silently skipped history write is caught and repaired.",
+      "id": "PRF-A8BGHW",
+      "invariant": "INV-49BQPT",
+      "origin": {
+        "handoffEntry": "L82-CODE-R1-04",
+        "leaf": "260928-MIK-L82"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "3bf034783f9edf08134213feb5d7151ffeaf944f",
+        "content": "sha256:46b7010eb61dbef235598f0899b51d59041e39bcefb1868575ad5074ed788d2c",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_transient_owner_failure_is_repaired_in_the_same_request"
+        }
+      },
+      "facet": "A transient owner failure is repaired in the same request.",
+      "id": "PRF-ABE6RG",
+      "invariant": "INV-W2HVAT",
+      "origin": {
+        "handoffEntry": "L82-MEM-M1-S-04",
+        "leaf": "260928-MIK-L82"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "3bf034783f9edf08134213feb5d7151ffeaf944f",
+        "content": "sha256:bdf0755d2c81a32fd886823cde8e2560a7cb74b3875d7a8b0acd6856c3d39545",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_citation_protections_hold_at_every_placement"
+        }
+      },
+      "facet": "Citation protections hold at every placement.",
+      "id": "PRF-AHSTWC",
+      "invariant": "INV-EYMRKQ",
+      "origin": {
+        "handoffEntry": "L82-CODE-R1-05",
+        "leaf": "260928-MIK-L82"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "3bf034783f9edf08134213feb5d7151ffeaf944f",
+        "content": "sha256:28c56a608f8501e4bdbe91667469a0da04728cfe440e7065958b2825a4ec045e",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_missing_task_document_keeps_legacy_classification_distinct_from_parse_failures"
+        }
+      },
+      "facet": "A missing task document keeps legacy classification distinct from parse failures.",
+      "id": "PRF-AK1PZT",
+      "invariant": "INV-H97F8K",
+      "origin": {
+        "handoffEntry": "L82-CODE-R1-12",
+        "leaf": "260928-MIK-L82"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "3bf034783f9edf08134213feb5d7151ffeaf944f",
+        "content": "sha256:28c56a608f8501e4bdbe91667469a0da04728cfe440e7065958b2825a4ec045e",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_missing_task_document_keeps_legacy_classification_distinct_from_parse_failures"
+        }
+      },
+      "facet": "A missing task document keeps legacy classification distinct from parse failures.",
+      "id": "PRF-ASCPEF",
+      "invariant": "INV-HSEKYE",
+      "origin": {
+        "handoffEntry": "L82-MEM-M1-S-12",
+        "leaf": "260928-MIK-L82"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "3bf034783f9edf08134213feb5d7151ffeaf944f",
+        "content": "sha256:1af8a1a193d6730a4a34a454a35ae74e7af40ac80917ddcdeea22cca155e2d31",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_wholly_eligible_generation_releases_with_truthful_history"
+        }
+      },
+      "facet": "A wholly eligible generation releases with truthful history.",
+      "id": "PRF-BTWCPS",
+      "invariant": "INV-468X0P",
+      "origin": {
+        "handoffEntry": "L82-CODE-R1-03",
+        "leaf": "260928-MIK-L82"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "3bf034783f9edf08134213feb5d7151ffeaf944f",
+        "content": "sha256:26ae0c147366e2f959978b4b79cd12cc31480a3acba87edcb68b883a8f9da5c0",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_failed_owner_history_write_is_retained_never_reported_removed"
+        }
+      },
+      "facet": "A failed owner history write is retained as failure, never reported removed.",
+      "id": "PRF-C5MY5V",
+      "invariant": "INV-49BQPT",
+      "origin": {
+        "handoffEntry": "L82-CODE-R1-04",
+        "leaf": "260928-MIK-L82"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "3bf034783f9edf08134213feb5d7151ffeaf944f",
+        "content": "sha256:cfd3eafe6bdbe9ca5751f80f09fc3d52a9a1331255f2791a5285f8fc260e40cd",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_an_unreadable_generation_manifest_never_falls_through_to_unlink"
+        }
+      },
+      "facet": "An unreadable generation manifest never falls through to unlink.",
+      "id": "PRF-J2SC94",
+      "invariant": "INV-HSEKYE",
+      "origin": {
+        "handoffEntry": "L82-MEM-M1-S-12",
+        "leaf": "260928-MIK-L82"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "3bf034783f9edf08134213feb5d7151ffeaf944f",
+        "content": "sha256:46b7010eb61dbef235598f0899b51d59041e39bcefb1868575ad5074ed788d2c",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_transient_owner_failure_is_repaired_in_the_same_request"
+        }
+      },
+      "facet": "A transient owner failure is repaired in the same request.",
+      "id": "PRF-JXCZB2",
+      "invariant": "INV-49BQPT",
+      "origin": {
+        "handoffEntry": "L82-CODE-R1-04",
+        "leaf": "260928-MIK-L82"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "3bf034783f9edf08134213feb5d7151ffeaf944f",
+        "content": "sha256:bdf0755d2c81a32fd886823cde8e2560a7cb74b3875d7a8b0acd6856c3d39545",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_citation_protections_hold_at_every_placement"
+        }
+      },
+      "facet": "Citation protections hold at every placement.",
+      "id": "PRF-K0XHX4",
+      "invariant": "INV-ZX8QN1",
+      "origin": {
+        "handoffEntry": "L82-MEM-M1-S-05",
+        "leaf": "260928-MIK-L82"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "3bf034783f9edf08134213feb5d7151ffeaf944f",
+        "content": "sha256:60bbac305d4c5d5a290303620f7021a49580f583cb295ae71fd492cb85923927",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_cache_added_after_the_review_refuses_the_apply"
+        }
+      },
+      "facet": "A cache added after the review refuses the apply.",
+      "id": "PRF-NVE3TG",
+      "invariant": "INV-EYMRKQ",
+      "origin": {
+        "handoffEntry": "L82-CODE-R1-05",
+        "leaf": "260928-MIK-L82"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "3bf034783f9edf08134213feb5d7151ffeaf944f",
+        "content": "sha256:86c97e51415ac35fd8c4fe6119d63794a31031e839001897616d412b8ddbcfd2",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_tracked_sibling_refuses_the_whole_generation_release"
+        }
+      },
+      "facet": "A tracked sibling refuses the whole generation release.",
+      "id": "PRF-QEHTSB",
+      "invariant": "INV-14MXY5",
+      "origin": {
+        "handoffEntry": "L82-MEM-M1-S-03",
+        "leaf": "260928-MIK-L82"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "3bf034783f9edf08134213feb5d7151ffeaf944f",
+        "content": "sha256:26ae0c147366e2f959978b4b79cd12cc31480a3acba87edcb68b883a8f9da5c0",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_failed_owner_history_write_is_retained_never_reported_removed"
+        }
+      },
+      "facet": "A failed owner history write is retained as failure, never reported removed.",
+      "id": "PRF-XY654Z",
+      "invariant": "INV-W2HVAT",
+      "origin": {
+        "handoffEntry": "L82-MEM-M1-S-04",
+        "leaf": "260928-MIK-L82"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "3bf034783f9edf08134213feb5d7151ffeaf944f",
         "content": "sha256:10163ae8337c8e278d5c0549e0cfcbf304d1a57e764839a563db7fb0cd14949b",
         "locator": {
           "kind": "symbol",

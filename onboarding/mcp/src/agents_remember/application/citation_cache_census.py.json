@@ -1,0 +1,59 @@
+{
+  "path": "mcp/src/agents_remember/application/citation_cache_census.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "93e4a4d5c205fc8b66aec821ea4b5776dd1e2b73",
+        "content": "sha256:7be3c9730a2631b04e12a5caacef10d4120e0337db1abcffca792c3dcf20233b",
+        "locator": {
+          "kind": "symbol",
+          "name": "scan_citation_caches"
+        }
+      },
+      "id": "RLZ-9RERVE",
+      "invariant": "INV-EYMRKQ",
+      "origin": {
+        "handoffEntry": "L82-CODE-R1-05",
+        "leaf": "260928-MIK-L82"
+      },
+      "rationale": "Current single owner of this sealed acceptance obligation.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "93e4a4d5c205fc8b66aec821ea4b5776dd1e2b73",
+        "content": "sha256:7be3c9730a2631b04e12a5caacef10d4120e0337db1abcffca792c3dcf20233b",
+        "locator": {
+          "kind": "symbol",
+          "name": "scan_citation_caches"
+        }
+      },
+      "id": "RLZ-XFA4WQ",
+      "invariant": "INV-ZX8QN1",
+      "origin": {
+        "handoffEntry": "L82-MEM-M1-S-05",
+        "leaf": "260928-MIK-L82"
+      },
+      "rationale": "Current single owner of this sealed acceptance obligation.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Orphaned publisher index slots are listed and deleted; the managed namespace is never entered.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "93e4a4d5c205fc8b66aec821ea4b5776dd1e2b73",
+            "content": "sha256:051ffb4515cf03f08bcc0d2228b811d6910a2690388d5cf08464bc90942ad3a4",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -18,6 +18,42 @@
       },
       "rationale": "Compares the master's folder with tasks/<repository> and refuses a master that is not directly under it, because 0_archive/<name> is defined only for root task folders.",
       "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "2db7333575772368f1d89440b5564a8734508da2",
+        "content": "sha256:3f464c765e6d02618cb751eb106694ae4621ddbc60585efcbef5c0c5cdc7d6c5",
+        "locator": {
+          "kind": "symbol",
+          "name": "hook_remainder"
+        }
+      },
+      "id": "RLZ-7AXX22",
+      "invariant": "INV-25AJSA",
+      "origin": {
+        "handoffEntry": "L82-MEM-M1-S-02",
+        "leaf": "260928-MIK-L82"
+      },
+      "rationale": "Current single owner of this sealed acceptance obligation.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "2db7333575772368f1d89440b5564a8734508da2",
+        "content": "sha256:3f464c765e6d02618cb751eb106694ae4621ddbc60585efcbef5c0c5cdc7d6c5",
+        "locator": {
+          "kind": "symbol",
+          "name": "hook_remainder"
+        }
+      },
+      "id": "RLZ-MGPX1E",
+      "invariant": "INV-YQPQ1M",
+      "origin": {
+        "handoffEntry": "L82-CODE-R1-02",
+        "leaf": "260928-MIK-L82"
+      },
+      "rationale": "Current single owner of this sealed acceptance obligation.",
+      "role": "unclassified"
     }
   ],
   "references": {

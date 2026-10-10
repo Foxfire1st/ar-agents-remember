@@ -1,0 +1,126 @@
+{
+  "path": "mcp/tests/test_enclosure_without_remains.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "3217c4adb9fbc296e18af85213f0b2f1583f7807",
+        "content": "sha256:01c9cf14ce21ea60fbafdfbef5add1f606e6d811782915c728a212dfe68ad49c",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_external_memory_branch_stays_outside_exception"
+        }
+      },
+      "facet": "An external memory branch stays outside the no-remains exception.",
+      "id": "PRF-6WPCJE",
+      "invariant": "INV-AXWPVF",
+      "origin": {
+        "handoffEntry": "L82-MEM-M1-S-06",
+        "leaf": "260928-MIK-L82"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "3217c4adb9fbc296e18af85213f0b2f1583f7807",
+        "content": "sha256:412ed3389506b496cf9838d9b8feea522814ca26cd3e4acf132b24abfd95eb1e",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_cleanup_real_run_persists_reason_in_contract"
+        }
+      },
+      "facet": "A no-remains cleanup real run persists its reason in the contract.",
+      "id": "PRF-ARXC7Q",
+      "invariant": "INV-R6DNZB",
+      "origin": {
+        "handoffEntry": "L82-CODE-R1-06",
+        "leaf": "260928-MIK-L82"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "3217c4adb9fbc296e18af85213f0b2f1583f7807",
+        "content": "sha256:01c9cf14ce21ea60fbafdfbef5add1f606e6d811782915c728a212dfe68ad49c",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_external_memory_branch_stays_outside_exception"
+        }
+      },
+      "facet": "An external memory branch stays outside the no-remains exception.",
+      "id": "PRF-ATQAM5",
+      "invariant": "INV-R6DNZB",
+      "origin": {
+        "handoffEntry": "L82-CODE-R1-06",
+        "leaf": "260928-MIK-L82"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "3217c4adb9fbc296e18af85213f0b2f1583f7807",
+        "content": "sha256:8b9f69a795c2d3b08a55b62fe932c6c8721da4456d5734033edb4191dfec27dd",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_abandon_real_run_persists_reason_in_contract"
+        }
+      },
+      "facet": "A no-remains abandon real run persists its reason in the contract.",
+      "id": "PRF-FXG790",
+      "invariant": "INV-AXWPVF",
+      "origin": {
+        "handoffEntry": "L82-MEM-M1-S-06",
+        "leaf": "260928-MIK-L82"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "3217c4adb9fbc296e18af85213f0b2f1583f7807",
+        "content": "sha256:412ed3389506b496cf9838d9b8feea522814ca26cd3e4acf132b24abfd95eb1e",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_cleanup_real_run_persists_reason_in_contract"
+        }
+      },
+      "facet": "A no-remains cleanup real run persists its reason in the contract.",
+      "id": "PRF-NCW9M1",
+      "invariant": "INV-AXWPVF",
+      "origin": {
+        "handoffEntry": "L82-MEM-M1-S-06",
+        "leaf": "260928-MIK-L82"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "3217c4adb9fbc296e18af85213f0b2f1583f7807",
+        "content": "sha256:8b9f69a795c2d3b08a55b62fe932c6c8721da4456d5734033edb4191dfec27dd",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_abandon_real_run_persists_reason_in_contract"
+        }
+      },
+      "facet": "A no-remains abandon real run persists its reason in the contract.",
+      "id": "PRF-PF0D7F",
+      "invariant": "INV-R6DNZB",
+      "origin": {
+        "handoffEntry": "L82-CODE-R1-06",
+        "leaf": "260928-MIK-L82"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "No-remains abandon and cleanup with persisted reason are pinned.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3217c4adb9fbc296e18af85213f0b2f1583f7807",
+            "content": "sha256:5e0c28cd527a4a323d41631f88c4aab2eac2b8269e9f023a9070022af36bb033",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

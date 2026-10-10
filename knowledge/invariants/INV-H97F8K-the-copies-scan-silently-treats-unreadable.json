@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "Three proving tests pin admission failure, no-fallthrough and legacy-distinct classification; without them deletion could continue past unreadable control documents."
+  },
+  "applicability": "Copies-scan control-document reads.",
+  "conditions": [
+    "Unreadable or missing task or generation documents."
+  ],
+  "exclusions": [
+    "Readable documents with absent metadata."
+  ],
+  "id": "INV-H97F8K",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "test_knowledge_copy_cleanup.py::test_an_unreadable_task_document_is_an_admission_failure_with_no_deletions; ::test_an_unreadable_generation_manifest_never_falls_through_to_unlink; ::test_a_missing_task_document_keeps_legacy_classification_distinct_from_parse_failures; notes/reports/l82-code-review-R2/focused-pytest.json + .stdout"
+      ],
+      "path": "notes/reports/260928-MIK-L82-curator-handoff-list.json"
+    },
+    "handoffEntry": "L82-CODE-R1-12",
+    "leaf": "260928-MIK-L82",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The copies scan silently treats unreadable task or generation documents as absent metadata, allowing deletion to continue and comparison snapshots to fall back to ordinary unlinking.",
+  "status": "retired",
+  "supersedes": []
+}

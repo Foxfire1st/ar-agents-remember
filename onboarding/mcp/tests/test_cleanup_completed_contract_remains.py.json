@@ -1,0 +1,22 @@
+{
+  "path": "mcp/tests/test_cleanup_completed_contract_remains.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Completed-contract-with-remains finish and cache-guard cases are pinned.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "488279a121b91fc657794e7d8bfbdc607dd19a07",
+            "content": "sha256:eb5fd379b18d02822d575ae26d272da19c23527ca3113d4af5b8591f21d2b957",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

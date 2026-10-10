@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "Four custody symbols across three archive modules state one retry obligation no single place states alone; three proving tests pin the refusals and the restoration."
+  },
+  "applicability": "Sprint-archive retries and resumed first-phase moves.",
+  "conditions": [
+    "A record from the same reason and selection exists."
+  ],
+  "exclusions": [
+    "First attempts with no prior record; masters another live sprint keeps."
+  ],
+  "id": "INV-4RTF8V",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "test_sprint_archive_custody.py::test_recorded_retry_refuses_missing_master_custody; ::test_recorded_retry_refuses_changed_archived_sprint_bytes; ::test_resumed_prefix_failure_restores_all_and_removes_record; test_recorded_boundaries.py::test_each_recorded_move_boundary_resumes_truthfully; notes/reports/l82-code-review-R2/focused-pytest.json + .stdout"
+      ],
+      "path": "notes/reports/260928-MIK-L82-curator-handoff-list.json"
+    },
+    "handoffEntry": "L82-CODE-R1-01",
+    "leaf": "260928-MIK-L82",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A same-request archive retry can report completion with missing master custody or changed archived sprint bytes, and a caught resumed move failure can claim restoration while earlier moves remain archived.",
+  "status": "retired",
+  "supersedes": []
+}

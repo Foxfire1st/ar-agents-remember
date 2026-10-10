@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "Receipts, hook and shared remainder together carry cache deletions through interruption; four proving tests pin replay, remainder, shared recovery and receipt-gated deletion."
+  },
+  "applicability": "Archive-hook receipt planning, replay, remainder and preview for every deletion class.",
+  "conditions": [
+    "An interrupted or cache-only run replays against a recorded receipt."
+  ],
+  "exclusions": [
+    "Deletion classes outside the shared artifact keys."
+  ],
+  "id": "INV-25AJSA",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "M1 verdict L82-MEM-M1-F01 + R4 evidence: test_review_artifact_cleanup.py::test_an_interrupted_cache_deletion_replays_as_attributed_already_absent; ::test_a_cache_only_dry_run_shows_work_remainder_and_preview; ::test_old_classes_and_caches_share_one_receipt_recovery; ::test_nothing_is_deleted_when_the_cache_receipt_cannot_be_written; notes/"
+      ],
+      "path": "notes/reports/260928-MIK-L82-curator-handoff-list-m2.json"
+    },
+    "handoffEntry": "L82-MEM-M1-S-02",
+    "leaf": "260928-MIK-L82",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Every deletion class including arCaches is planned, receipted, replayed as attributed absence, remainder-counted and preview-accounted through the shared artifact keys.",
+  "status": "proposed",
+  "supersedes": [
+    "INV-YQPQ1M"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "path": "mcp/tests/test_sprint_archive.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Sprint-archive preconditions, exact dry runs and staying-master handling are pinned.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7bfaa9debc946267bb0781453f07decc9f8c8365",
+            "content": "sha256:cc37eb7681b3cb823b5dffd5737a6f423318476cc290037e120d4d085eb56abc",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

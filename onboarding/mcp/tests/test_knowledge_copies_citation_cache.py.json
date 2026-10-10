@@ -1,0 +1,22 @@
+{
+  "path": "mcp/tests/test_knowledge_copies_citation_cache.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Citation-slot listing, deletion and placement protections are pinned.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "61f5099ca8cea57b062073303d56b8494be05ab7",
+            "content": "sha256:01093c91defcdfdce5d431aa20cc4e22bf62900ad5e14ff72e66b9ca4bff597b",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

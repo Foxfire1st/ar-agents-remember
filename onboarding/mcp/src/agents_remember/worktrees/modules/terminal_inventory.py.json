@@ -1,0 +1,59 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/modules/terminal_inventory.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "22f9d9978e59392d32bb3a6b12b8d0a79793fde7",
+        "content": "sha256:99d01aee9c2f528680671d2e2b2485b40b03b49d0383b59f8800ec438167932b",
+        "locator": {
+          "kind": "symbol",
+          "name": "terminal_without_remains_reason"
+        }
+      },
+      "id": "RLZ-34ZF3P",
+      "invariant": "INV-R6DNZB",
+      "origin": {
+        "handoffEntry": "L82-CODE-R1-06",
+        "leaf": "260928-MIK-L82"
+      },
+      "rationale": "Current single owner of this sealed acceptance obligation.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "22f9d9978e59392d32bb3a6b12b8d0a79793fde7",
+        "content": "sha256:99d01aee9c2f528680671d2e2b2485b40b03b49d0383b59f8800ec438167932b",
+        "locator": {
+          "kind": "symbol",
+          "name": "terminal_without_remains_reason"
+        }
+      },
+      "id": "RLZ-80VFRB",
+      "invariant": "INV-AXWPVF",
+      "origin": {
+        "handoffEntry": "L82-MEM-M1-S-06",
+        "leaf": "260928-MIK-L82"
+      },
+      "rationale": "Current single owner of this sealed acceptance obligation.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "One shared no-remains probe finishes locator-less, folder-less, branch-less enclosures with a persisted reason.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "22f9d9978e59392d32bb3a6b12b8d0a79793fde7",
+            "content": "sha256:378570c90133188e743be343481035449c0203ff4ebebc29c1c8b9811eaf787c",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "Canonical skills and the MCP reference together state the archive and no-remains doctrine; seven parity tests pin every row across all copies."
+  },
+  "applicability": "Scoped doctrine for the archive and no-remains routes.",
+  "conditions": [
+    "Canonical skills, generated copies and the MCP reference."
+  ],
+  "exclusions": [
+    "Product behavior itself, owned by the code entries."
+  ],
+  "id": "INV-4ST2K1",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "M1 verdict L82-MEM-M1-F01 + R4 evidence: test_enclosure_doctrine_parity.py (seven tests); notes/reports/l82-code-review-R2/doctrine-parity.json (20/20 match); notes/reports/l82-code-review-R2/focused-pytest.json + .stdout"
+      ],
+      "path": "notes/reports/260928-MIK-L82-curator-handoff-list-m2.json"
+    },
+    "handoffEntry": "L82-MEM-M1-S-08",
+    "leaf": "260928-MIK-L82",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Scoped doctrine states whole-sprint archive authority and the no-remains exception across canonical skills, generated copies and the reference.",
+  "status": "proposed",
+  "supersedes": [
+    "INV-NY15B8"
+  ]
+}

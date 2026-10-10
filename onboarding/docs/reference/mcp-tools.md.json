@@ -1,0 +1,45 @@
+{
+  "path": "docs/reference/mcp-tools.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "3bf2a3af1ee164d0f0bc1db003cc38f62f8cb628",
+        "content": "sha256:789c07c35bb07b48125149f8d927a74707c811ea4548e4b14a347d9b741504dd",
+        "locator": {
+          "end": 162,
+          "kind": "line_range",
+          "start": 161
+        }
+      },
+      "id": "RLZ-F6DSAT",
+      "invariant": "INV-4ST2K1",
+      "origin": {
+        "handoffEntry": "L82-MEM-M1-S-08",
+        "leaf": "260928-MIK-L82"
+      },
+      "rationale": "The repaired instruction extent names this operational contract.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "3bf2a3af1ee164d0f0bc1db003cc38f62f8cb628",
+        "content": "sha256:789c07c35bb07b48125149f8d927a74707c811ea4548e4b14a347d9b741504dd",
+        "locator": {
+          "end": 162,
+          "kind": "line_range",
+          "start": 161
+        }
+      },
+      "id": "RLZ-N47KE8",
+      "invariant": "INV-NY15B8",
+      "origin": {
+        "handoffEntry": "L82-CODE-R1-08",
+        "leaf": "260928-MIK-L82"
+      },
+      "rationale": "The repaired instruction extent names this operational contract.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

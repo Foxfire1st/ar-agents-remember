@@ -1,0 +1,1302 @@
+{
+  "closed": true,
+  "leaf": "260928-MIK-L82",
+  "rows": [
+    {
+      "disposition": "no_impact",
+      "id": "ROW-09FQPZ",
+      "items": [
+        "sha256:dc7097da8ded83b1e41b108d81d6a1c8c0505ef9ab037cc241c732e9ecc3937c"
+      ],
+      "reason": "Roster wiring for the restored adoption tool; the adoption obligation is recorded on the enclosure_adoption tool card.",
+      "subject": "onboarding:mcp/src/agents_remember/models/tools/public_roster.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-1B5XM0",
+      "items": [
+        "sha256:214274843cb5c96260917d47fdf417f50bdf76a21373ba1655fcc553e0c273f3"
+      ],
+      "reason": "Dispatcher registration of archive_sprint beside the four older operations; the archive obligation is recorded on the sprint-archive modules (entries L82-CODE-R1-01, R1-07, R1-11).",
+      "subject": "hunk:sha256:214274843cb5c96260917d47fdf417f50bdf76a21373ba1655fcc553e0c273f3"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-1HRFC3",
+      "items": [
+        "sha256:fcf31648bf9304678d8c4567d6be80e2685cbbafbf1bb60dcb2cbf417ee9ac9c"
+      ],
+      "reason": "Kept-line tip plumbing for the rule-5 branch check owned by the terminal_branch_retirement card.",
+      "subject": "onboarding:mcp/src/agents_remember/models/worktree.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-28NAWK",
+      "items": [
+        "sha256:7d2f9655f13c26865c0f3defcd08635581fa65c107913cf27af0ef5beb8d59ff"
+      ],
+      "reason": "Route purpose unchanged by this leaf; its changed files keep their existing meaning under it (mcp/src/agents_remember/memory_quality/style/citations/source_index_cache.py).",
+      "subject": "onboarding:mcp/src/agents_remember/memory_quality/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-2HFBJJ",
+      "items": [
+        "sha256:640710487a4071e0e8fac19a51c037a25bd91930ed31a47a288dcecf1b6f94e8",
+        "sha256:deab98fcb12bf675fc23c17cfbc1d7d7020f944290b38a233541665758eda388",
+        "sha256:d1733d62a700593da1fbfa3b55506f925daa288e24c7031d901115539912af43"
+      ],
+      "reason": "Generated-copy propagation of the canonical c-12 archive_sprint wording; meaning carried by the c-12 sidecar entries.",
+      "subject": "onboarding:.pi/skills/c-12-closeout/SKILL.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-2XP7EM",
+      "items": [
+        "sha256:5eb4e4e776e9d995ab13337b162e23e8203e95f8bbfb00893451276b1a822aaf",
+        "sha256:bdd0b853f8f8bf9bdcbaf79f675a15aa99848d3683434ea5326e6667edc80b2c"
+      ],
+      "reason": "Adoption payload export wiring; the adoption obligation is recorded on the enclosure_adoption tool card.",
+      "subject": "onboarding:mcp/src/agents_remember/mcp/tools/__init__.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-31FZTP",
+      "items": [
+        "sha256:e8a1bcf9d0b8dd0432951e18e99110957390687aa0233e1e8befffb2cbaa9c72",
+        "sha256:4246844b6a6b01a731b25d08139c4e550d865a2f2f14fe55b1876648ac1f5c55",
+        "sha256:9a821dec99483cfc70ea5e50d6db7de60668b96d719ee880425389a811f2f80a"
+      ],
+      "reason": "Generated-copy propagation of the canonical c-12 archive_sprint wording; meaning carried by the c-12 sidecar entries.",
+      "subject": "onboarding:.openclaw/workspace/skills/c-12-closeout/SKILL.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-34290E",
+      "items": [
+        "sha256:32aff4286445b193af568cf835a73ea9f3808312f79668eb59c49939b6111573"
+      ],
+      "reason": "Generated-copy propagation of the canonical c-09 no-remains exception; meaning carried by the canonical card.",
+      "subject": "onboarding:.cursor/skills/c-09-git-worktree-manager/SKILL.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-3A941X",
+      "items": [
+        "sha256:e332a8f62adad08b141bb06313af3c6e04aacbf9a3664662c925490ddd0e304f"
+      ],
+      "reason": "Generated-copy propagation of the canonical c-09 no-remains exception; meaning carried by the canonical card.",
+      "subject": "onboarding:.pi/skills/c-09-git-worktree-manager/SKILL.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-3H70MB",
+      "items": [
+        "sha256:6f02554b30159695b204f507032c632a5df85027ce80654f5f8bfd60e85c0081"
+      ],
+      "reason": "Route purpose unchanged by this leaf; its changed files keep their existing meaning under it (mcp/src/agents_remember/application/legacy_dataset_copies.py, mcp/src/agents_remember/application/review_artifact_cleanup.py, mcp/src/agents_remember/application/review_artifact_receipts.py, mcp/src/agents_remember/application/worktree_services.py).",
+      "subject": "onboarding:mcp/src/agents_remember/application/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-3SWX1H",
+      "items": [
+        "sha256:612de9dbf98c17f9a4cc6179dd60b4f866a377932630c86c854fbfc06887620f"
+      ],
+      "reason": "Operation registration wiring for archive_sprint; the archive obligation is recorded on the sprint-archive modules.",
+      "subject": "hunk:sha256:612de9dbf98c17f9a4cc6179dd60b4f866a377932630c86c854fbfc06887620f"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-3WTR6D",
+      "items": [
+        "sha256:adb1b46822d403c129fc3c6fed69150821f63830c12e93dd58a9fdb0fc879753"
+      ],
+      "reason": "Generated-copy propagation of the canonical c-09 no-remains exception; meaning carried by the canonical card.",
+      "subject": "onboarding:.hermes/skills/c-09-git-worktree-manager/SKILL.md"
+    },
+    {
+      "covers": [],
+      "disposition": "deleted",
+      "effect": "retire",
+      "id": "ROW-3Z80FY",
+      "items": [],
+      "reason": "M2 F01 succession complete: positive successor INV-ZX8QN1 carries the live guarantee and names this record in supersedes; this defect-worded record is retired from the current view with its statement, producer input and dated evidence preserved.",
+      "revision": 1,
+      "subject": "INV-EYMRKQ"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-46061N",
+      "items": [
+        "sha256:24b03d32a7a33a40aa94d6e0271cbad18eea3312768969b2820c5b5fcfcc0a4a"
+      ],
+      "reason": "Probe-description wording following the survey split; guard obligations unchanged.",
+      "subject": "hunk:sha256:24b03d32a7a33a40aa94d6e0271cbad18eea3312768969b2820c5b5fcfcc0a4a"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-48N5HJ",
+      "items": [
+        "sha256:e0dda4285aac519ed248c3f38e7781d6ebb2f07914f1d508b6ad444f8260438c"
+      ],
+      "reason": "Extraction move-out to dataset_copy_survey.py without behavior change: the survey, classification and owner-release obligations are recorded on the survey module (entries L82-CODE-R1-03, R1-04, R1-12); retained run_cleanup meaning is re-anchored in this leaf INV-CKY44N row.",
+      "subject": "hunk:sha256:e0dda4285aac519ed248c3f38e7781d6ebb2f07914f1d508b6ad444f8260438c"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-4CH1ZQ",
+      "items": [
+        "sha256:09138cdbac246e6af17875a30eb7de4a3566faea6f88796c2389058e5d4e96a1"
+      ],
+      "reason": "Route purpose unchanged by this leaf; its changed files keep their existing meaning under it (mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_enclosure_adoption.py).",
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/integration/lifecycle/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-4ZECVT",
+      "items": [
+        "sha256:3830701e5db1a2a57fe777158f7d51b0161d92be69042f7a6231fc3e16f23e39",
+        "sha256:da252a57c17816738c43fea4375e3581d96e7021805fa1046b5d6fd7d6f8a417"
+      ],
+      "reason": "Registry wiring for the restored adoption tool; the adoption obligation is recorded on the enclosure_adoption tool card.",
+      "subject": "onboarding:mcp/src/agents_remember/models/tools/tool_registry.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-5E52TC",
+      "items": [
+        "sha256:238af7a3096aa238387de1a2fc0bd0fdc0a52bc0046070c3ce6c143abc62c8b5",
+        "sha256:d128f77d63a8d8e6b58d21a9e7d142311adf7beda78cb90f5c01f20821464912",
+        "sha256:6258cad09ed7ff22df3a6b8190c884046f6f2bed3c10f0185bebc3113f666cfa",
+        "sha256:a107416b01f4255341a489f17f25137708b4fa29213a6eb173962dd5102893cd",
+        "sha256:20cc93a04410ae4659d6fdbf5e26002a53052ba6739da7dc8f0e51acc1ebec4b"
+      ],
+      "reason": "Contract plumbing for the rule-5 terminal paths owned by the terminal module cards.",
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/worktree_contract.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-5FZCAN",
+      "items": [
+        "sha256:37a4fd622f90543b7b9629c5dc6f542930f032395c8d7631f694ef6f1d278e26"
+      ],
+      "reason": "Lane-catalog rows registering the rule-test modules under the existing sorted one-lane-each convention; registration order carries no invariant.",
+      "subject": "hunk:sha256:37a4fd622f90543b7b9629c5dc6f542930f032395c8d7631f694ef6f1d278e26"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-8WCSQ7",
+          "revision": 1
+        },
+        {
+          "id": "INV-9VQQ7W",
+          "revision": 1
+        },
+        {
+          "id": "INV-AJKQV2",
+          "revision": 1
+        },
+        {
+          "id": "INV-F1TY2E",
+          "revision": 1
+        },
+        {
+          "id": "INV-FEB6Y6",
+          "revision": 1
+        },
+        {
+          "id": "INV-GM5MS3",
+          "revision": 1
+        },
+        {
+          "id": "INV-K43DJZ",
+          "revision": 1
+        },
+        {
+          "id": "INV-PRP52X",
+          "revision": 1
+        },
+        {
+          "id": "INV-VPXD65",
+          "revision": 1
+        },
+        {
+          "id": "INV-W41C85",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-5V3WTW",
+      "items": [
+        "sha256:15ee10efdd9497259dc99699299b38b989e2fa360d03d74dadee3e4d39d289d7"
+      ],
+      "reason": "Closed-leaf archival before worktree removal is untouched by the kept-line passthrough: archival order, refusal and settlement reporting keep their meaning; all ten members preserved at their revisions.",
+      "revision": 1,
+      "subject": "FAM-VNK792"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-5VHMXX",
+      "items": [
+        "sha256:984e357af3fb293bb1a761469623480bafcb1b175d0561889a85c6e1666af711"
+      ],
+      "reason": "Extraction move-out to dataset_copy_survey.py without behavior change: the survey, classification and owner-release obligations are recorded on the survey module (entries L82-CODE-R1-03, R1-04, R1-12); retained run_cleanup meaning is re-anchored in this leaf INV-CKY44N row.",
+      "subject": "hunk:sha256:984e357af3fb293bb1a761469623480bafcb1b175d0561889a85c6e1666af711"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-61V9PY",
+      "items": [
+        "sha256:daa569994e1e87539b4a35a7bc6a278352b010d2c5b0b87edfe7939df20cc8fe"
+      ],
+      "reason": "Lane-catalog rows registering the rule-test modules under the existing sorted one-lane-each convention; registration order carries no invariant.",
+      "subject": "hunk:sha256:daa569994e1e87539b4a35a7bc6a278352b010d2c5b0b87edfe7939df20cc8fe"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-6YY1EZ",
+      "items": [
+        "sha256:f2848d4c6f78f496202698fca2d48a6fd99ccd558909faa2665c835c992546b7"
+      ],
+      "reason": "Generated-copy propagation of the canonical c-09 no-remains exception; meaning carried by the canonical card.",
+      "subject": "onboarding:.claude/skills/c-09-git-worktree-manager/SKILL.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-708P2C",
+      "items": [
+        "sha256:5295702b70101e006d0fc576cdfca30f163466d2fc4c5b13db6eaf091a434562",
+        "sha256:48d14cc324fff2665dd90179ee834be6831bfdac7f3474e7763324e78506dffe",
+        "sha256:635feb59be6b20c10171dca803c3bb8a973535bbc1628c0b4199734686b53142"
+      ],
+      "reason": "Generated-copy propagation of the canonical c-12 archive_sprint wording; meaning carried by the c-12 sidecar entries.",
+      "subject": "onboarding:.codex/skills/c-12-closeout/SKILL.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-74S4EJ",
+      "items": [
+        "sha256:7cb426ae071c6e905250f3d280b0be3abafc95da95ca08e30965897975111a31",
+        "sha256:e18983a93df90f31628b6efa1c1ebe476a388cf730c715158dd40da9400ebc89",
+        "sha256:b17d9c70681a1e3762972ee914f8cd5b51af259573728cbc8554950feb7f3879"
+      ],
+      "reason": "Packaged runtime copy of the canonical c-12 text; meaning carried by the c-12 sidecar entries.",
+      "subject": "onboarding:mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7A3247",
+      "items": [
+        "sha256:3c36adcd9e5abe7ac1ecadf38f746fe2b102a6b512b62be5ea46b4ede2685cb3"
+      ],
+      "reason": "Completed-contract flag threading to the terminal owners; the remains behavior is recorded on the terminal module cards.",
+      "subject": "hunk:sha256:3c36adcd9e5abe7ac1ecadf38f746fe2b102a6b512b62be5ea46b4ede2685cb3"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7AP6BH",
+      "items": [
+        "sha256:c62110e3f3c8e4937e7860e2f275a359094f3a5f90d2eace84f3ab75a7bac3b4"
+      ],
+      "reason": "Retired-database guard test adaptation; retirement obligations unchanged.",
+      "subject": "hunk:sha256:c62110e3f3c8e4937e7860e2f275a359094f3a5f90d2eace84f3ab75a7bac3b4"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-7FQSYA",
+      "items": [
+        "sha256:cae3e898d0c566e350ca1837fd92fb45a10255e5d4cc718a7806772168534b1a"
+      ],
+      "reason": "Card still holds: service seam threading with no standalone obligation.",
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/services.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-7M3JHS",
+      "items": [
+        "sha256:0c60a079508318a14c437d90a7d6333899f1bb00d8154eee6b3225280be557ab",
+        "sha256:d3bc26a2323e44ea73fb947eecf4942b94e2569c0c28d96f63e846fe9147de9f"
+      ],
+      "reason": "Archive-state wire shape for the sprint-archive record owned by the sprint_archive model card.",
+      "subject": "onboarding:mcp/src/agents_remember/models/task_doc.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7TPK4F",
+      "items": [
+        "sha256:416779db8668b504d9ab6ffcabd6624d5adefe21fee87c4d67ed0674c331d7e4"
+      ],
+      "reason": "Dispatcher registration of archive_sprint beside the four older operations; the archive obligation is recorded on the sprint-archive modules (entries L82-CODE-R1-01, R1-07, R1-11).",
+      "subject": "hunk:sha256:416779db8668b504d9ab6ffcabd6624d5adefe21fee87c4d67ed0674c331d7e4"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-7Z2CQN",
+      "items": [
+        "sha256:3f22a731848092577453e8ba068e4b015005420090b67a849e608bd8aee2a15d",
+        "sha256:6aedd32c3b66101ed901e63bf9baa399d1875b53f77fc7963863c8f81a988e5e",
+        "sha256:a0da30df0bc9bd0534d31ff451cc0cb3d3be0d45cf69f6565f7acb8403d34d79"
+      ],
+      "reason": "Generated-copy propagation of the canonical c-12 archive_sprint wording; meaning carried by the c-12 sidecar entries.",
+      "subject": "onboarding:.github-vscode/skills/c-12-closeout/SKILL.md"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-8D0GPH",
+      "items": [
+        "sha256:caa7d54ece00993f26317868ac43778cdf97ce6077c64ff55a101c3f1870692d"
+      ],
+      "reason": "Extraction move-out to dataset_copy_survey.py without behavior change: the survey, classification and owner-release obligations are recorded on the survey module (entries L82-CODE-R1-03, R1-04, R1-12); retained run_cleanup meaning is re-anchored in this leaf INV-CKY44N row.",
+      "subject": "hunk:sha256:caa7d54ece00993f26317868ac43778cdf97ce6077c64ff55a101c3f1870692d"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-8GHC62",
+      "items": [
+        "sha256:7a29620b89486437a779f82224c6f54cf59b9587622c65a26b468edf8cb7e639"
+      ],
+      "reason": "Extraction move-out to dataset_copy_survey.py without behavior change: the survey, classification and owner-release obligations are recorded on the survey module (entries L82-CODE-R1-03, R1-04, R1-12); retained run_cleanup meaning is re-anchored in this leaf INV-CKY44N row.",
+      "subject": "hunk:sha256:7a29620b89486437a779f82224c6f54cf59b9587622c65a26b468edf8cb7e639"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-8HPKQG",
+      "items": [
+        "sha256:d8f72f5224605ce46100a9eb3c8e090e91f97ffd430251d228049624ff82741b"
+      ],
+      "reason": "Lane-catalog rows registering the rule-test modules under the existing sorted one-lane-each convention; registration order carries no invariant.",
+      "subject": "hunk:sha256:d8f72f5224605ce46100a9eb3c8e090e91f97ffd430251d228049624ff82741b"
+    },
+    {
+      "covers": [],
+      "disposition": "deleted",
+      "effect": "retire",
+      "id": "ROW-8NQ69P",
+      "items": [],
+      "reason": "M2 F01 succession complete: positive successor INV-YETAXG carries the live guarantee and names this record in supersedes; this defect-worded record is retired from the current view with its statement, producer input and dated evidence preserved.",
+      "revision": 1,
+      "subject": "INV-8FSQZJ"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-8YK1C6",
+      "items": [
+        "sha256:f47947220590602caf8893b0c5657f1f4c6f92fe5d64d20d86ffe30948bbe4e3"
+      ],
+      "reason": "Lane-catalog rows registering the rule-test modules under the existing sorted one-lane-each convention; registration order carries no invariant.",
+      "subject": "hunk:sha256:f47947220590602caf8893b0c5657f1f4c6f92fe5d64d20d86ffe30948bbe4e3"
+    },
+    {
+      "covers": [],
+      "disposition": "deleted",
+      "effect": "retire",
+      "id": "ROW-90CXEJ",
+      "items": [],
+      "reason": "M2 F01 succession complete: positive successor INV-10GFBN carries the live guarantee and names this record in supersedes; this defect-worded record is retired from the current view with its statement, producer input and dated evidence preserved.",
+      "revision": 1,
+      "subject": "INV-8ACXK0"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-94VK7H",
+      "items": [
+        "sha256:4fc73ca449dacc2e92a90dbd72844c3b16cfd7b329ac285846090b29013d3f11"
+      ],
+      "reason": "Extraction move-out to dataset_copy_survey.py without behavior change: the survey, classification and owner-release obligations are recorded on the survey module (entries L82-CODE-R1-03, R1-04, R1-12); retained run_cleanup meaning is re-anchored in this leaf INV-CKY44N row.",
+      "subject": "hunk:sha256:4fc73ca449dacc2e92a90dbd72844c3b16cfd7b329ac285846090b29013d3f11"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-953QB8",
+      "items": [
+        "sha256:0e6b835faf87f365d96a04ea9c802f88a1c9c34054f0bcd527b2ae2f113f7653"
+      ],
+      "reason": "Extraction move-out to dataset_copy_survey.py without behavior change: the survey, classification and owner-release obligations are recorded on the survey module (entries L82-CODE-R1-03, R1-04, R1-12); retained run_cleanup meaning is re-anchored in this leaf INV-CKY44N row.",
+      "subject": "hunk:sha256:0e6b835faf87f365d96a04ea9c802f88a1c9c34054f0bcd527b2ae2f113f7653"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-978W3D",
+      "items": [
+        "sha256:4e277b4f8115ac0b7442c9ff00f36c10a3a371c8ccada11b590d89c705a17be0"
+      ],
+      "reason": "Route purpose unchanged by this leaf; its changed files keep their existing meaning under it (mcp/src/agents_remember/mcp/tools/__init__.py).",
+      "subject": "onboarding:mcp/src/agents_remember/mcp/tools/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-991R2E",
+      "items": [
+        "sha256:cf3556a5a5a5e2e738231365ea026b6468346e46fae648c27edbcdd815a96411",
+        "sha256:d5df1c8f092cfc64527b2409c6e56ecb573bd77fd64bdc74c453e80bb6d11734",
+        "sha256:84af9383437974c836c9173b2c72a15dbc45099d8421b6c859726a03b0ccbe4c"
+      ],
+      "reason": "Generated-copy propagation of the canonical c-12 archive_sprint wording; meaning carried by the c-12 sidecar entries.",
+      "subject": "onboarding:.claude/skills/c-12-closeout/SKILL.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-9PCB17",
+      "items": [
+        "sha256:c31166cfd17f9dc07e42061c27b5ac4a786cc88cdf1bbec8d10795f3d24dbde9"
+      ],
+      "reason": "Cleanup-call-site adaptation to the narrowed terminal owners; test intent unchanged.",
+      "subject": "onboarding:mcp/tests/test_automatic_post_integration_cleanup.py"
+    },
+    {
+      "covers": [],
+      "disposition": "deleted",
+      "effect": "retire",
+      "id": "ROW-9RK8P2",
+      "items": [],
+      "reason": "M2 F01 succession complete: positive successor INV-25AJSA carries the live guarantee and names this record in supersedes; this defect-worded record is retired from the current view with its statement, producer input and dated evidence preserved.",
+      "revision": 1,
+      "subject": "INV-YQPQ1M"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-A4EK7X",
+      "items": [
+        "sha256:f75a6976e0a60135c5ba7c9c93c36667562fe782ac95b3962df41dd6d95298bb"
+      ],
+      "reason": "Packaged runtime copy of the canonical c-09 text; meaning carried by the canonical card.",
+      "subject": "onboarding:mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-AS7N9T",
+      "items": [
+        "sha256:63d21a9b4a01abf5a459b2ba4259afda4970f682007c9b264c79250a31782926",
+        "sha256:2aedc657bfa8240f6729f14ffb097b321bc3529a2a0af12fc32fa9e73d76abe2",
+        "sha256:fd663afa67d67e16331070053f463890db629bb6668afc78f1ea2b3969d4b148",
+        "sha256:7bcf416ee3bad9f9a4952a6790adfc97121a44796335ffbf59be0afb188db458"
+      ],
+      "reason": "Whole-result validation additions for read_steps and operator_inbox_post; existing archive response bounds unchanged.",
+      "subject": "onboarding:mcp/tests/test_tool_response_conformance.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-B0NPCQ",
+      "items": [
+        "sha256:694db1353d081408ecd5628b55c762d7bfbeb9bac70cdd53be17809974585d56"
+      ],
+      "reason": "Entry-point sweep payload for the adoption dry run; the adoption obligation is recorded on the enclosure_adoption tool card.",
+      "subject": "hunk:sha256:694db1353d081408ecd5628b55c762d7bfbeb9bac70cdd53be17809974585d56"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-B4P5Y6",
+      "items": [
+        "sha256:55bd2a477d18666301cda0c9ac0b93f2e614a952dac392bde111e7021663ef1a",
+        "sha256:ba2341e0a5bef430df13ce5f56710d7905418c60807e8c6b5145a08eab7b6a28",
+        "sha256:dc2a1d96f67cb0220a9d4195b63c7c346a6a268b0dbe80f781bc514e89b68c63",
+        "sha256:aa73296e005bdbe50ea40f2a09ff21a7aa1dddd77652ee86b214c69f4a27ea3c"
+      ],
+      "reason": "Guard-message adjustments for the terminal paths; refusal obligations unchanged and owned by the terminal module cards.",
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/modules/terminal_validation.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-BC0MND",
+      "items": [
+        "sha256:3863fe6991cc3cb6902493a7d3a175bf3746f1b010d16ddef2cd6ea2ac1fc638"
+      ],
+      "reason": "Lane-catalog rows registering the rule-test modules under the existing sorted one-lane-each convention; registration order carries no invariant.",
+      "subject": "hunk:sha256:3863fe6991cc3cb6902493a7d3a175bf3746f1b010d16ddef2cd6ea2ac1fc638"
+    },
+    {
+      "covers": [],
+      "disposition": "deleted",
+      "effect": "retire",
+      "id": "ROW-BE55NR",
+      "items": [],
+      "reason": "M2 F01 succession complete: positive successor INV-A704ST carries the live guarantee and names this record in supersedes; this defect-worded record is retired from the current view with its statement, producer input and dated evidence preserved.",
+      "revision": 1,
+      "subject": "INV-VH9J71"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-BSW5YF",
+      "items": [
+        "sha256:fcbc446c7cbcb782eb25f0de55ccb3fff34c89b104fa54c572a03490957aa605"
+      ],
+      "reason": "One-line retire/archive authority wording inside the doctrine extent owned by entry L82-CODE-R1-08; carries no standalone obligation.",
+      "subject": "hunk:sha256:fcbc446c7cbcb782eb25f0de55ccb3fff34c89b104fa54c572a03490957aa605"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-54J62R",
+          "revision": 1
+        },
+        {
+          "id": "INV-C3TYB0",
+          "revision": 1
+        },
+        {
+          "id": "INV-C5TQ6Z",
+          "revision": 1
+        },
+        {
+          "id": "INV-CKY44N",
+          "revision": 1
+        },
+        {
+          "id": "INV-GBH3RH",
+          "revision": 1
+        },
+        {
+          "id": "INV-MFQW2H",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-CVH2EE",
+      "items": [
+        "sha256:2ecd856a540867b8d8a03b04843eb21f8ea001cc555acbeccc7a03cbe25c4899"
+      ],
+      "reason": "Retirement guard with copy cleanup still removes only eligible copies and preserves tracked or symlinked companions: the completed-task rule stays inside eligible-copies wording, and the moved member realization keeps its meaning.",
+      "revision": 1,
+      "subject": "FAM-SDS92V"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-DHKNWD",
+      "items": [
+        "sha256:797f39bba6160b4c9aa7bdee0532f271531b42c41fa368c236272cec200a82d7"
+      ],
+      "reason": "Retired-database guard test adaptation; retirement obligations unchanged.",
+      "subject": "hunk:sha256:797f39bba6160b4c9aa7bdee0532f271531b42c41fa368c236272cec200a82d7"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "bc44f7d1d76a730840da9cd520b6dab66e448a3d",
+            "content": "sha256:9afd60407db196a01b1479a10b635d7fb3f2ba23fcca16ea96374e53e8c741dd",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_cleanup"
+            },
+            "path": "mcp/src/agents_remember/application/legacy_dataset_copies.py"
+          },
+          "before": {
+            "blob": "362e9cbfea20eb0f8f0d5a6c763af789a5d25144",
+            "content": "sha256:fa8ca13dd6aada4d21e34f363cf2ac9af38b855568c977157dec0c6e5c88ba35",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_cleanup"
+            },
+            "path": "mcp/src/agents_remember/application/legacy_dataset_copies.py"
+          },
+          "id": "RLZ-PKW8QZ"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-DK7RAH",
+      "items": [
+        "sha256:153593150f2f1ca69564f6f557e0f3cbd131d789cdb544876601a52a89d351dd"
+      ],
+      "reason": "Extraction relocated run_cleanup; kept protected companions still never cause exit 1. The retired record keeps its historical meaning. Entry re-anchored at C.",
+      "revision": 1,
+      "subject": "INV-QB6EZ0"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-DRW4FJ",
+      "items": [
+        "sha256:9107495822edc9d677196427475e07863b38b74fe7c6888d9639e3399acba9ef"
+      ],
+      "reason": "c-09 route purpose unchanged; the no-remains exception is documented at the skill card.",
+      "subject": "onboarding:skills/c-09-git-worktree-manager/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-DY7AQD",
+      "items": [
+        "sha256:d6bdb22d5fc987536d30c930f5337732c28fdc8b286c61a6ef15c4730e08fd59"
+      ],
+      "reason": "Extraction move-out to dataset_copy_survey.py without behavior change: the survey, classification and owner-release obligations are recorded on the survey module (entries L82-CODE-R1-03, R1-04, R1-12); retained run_cleanup meaning is re-anchored in this leaf INV-CKY44N row.",
+      "subject": "hunk:sha256:d6bdb22d5fc987536d30c930f5337732c28fdc8b286c61a6ef15c4730e08fd59"
+    },
+    {
+      "covers": [],
+      "disposition": "deleted",
+      "effect": "retire",
+      "id": "ROW-E1R3K2",
+      "items": [],
+      "reason": "M2 F01 succession complete: positive successor INV-HSEKYE carries the live guarantee and names this record in supersedes; this defect-worded record is retired from the current view with its statement, producer input and dated evidence preserved.",
+      "revision": 1,
+      "subject": "INV-H97F8K"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-E2ABZ1",
+      "items": [
+        "sha256:9b8d53002172fd75d40bc94c243469306c2ae66a472af700611a3f9f9ef47487"
+      ],
+      "reason": "Card still holds: probe-description wording only, guard obligations unchanged.",
+      "subject": "onboarding:mcp/test_support/agents_remember_test_support/testing/database_retirement_guard.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "c61d5d1b9b4836c3bb1f90ad30cae8de9adefe55",
+            "content": "sha256:b3452d2695138051b724fff10c9e170eb5dab487f426e54a0cae25344f35493a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_cleanup_with_guard"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/terminal_cleanup.py"
+          },
+          "before": {
+            "blob": "6afb7c479c873e8a999e2ced7201ed69a8920204",
+            "content": "sha256:033c1c201467023dfba33bdd3655ccc26e4ad047624a73e22b0ff054bd5ae899",
+            "locator": {
+              "kind": "symbol",
+              "name": "_cleanup_with_guard"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/terminal_cleanup.py"
+          },
+          "id": "RLZ-FYGN7D"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-E7KTBG",
+      "items": [
+        "sha256:4c8354037c5af2e112f0a275ae7c952d32f88d15162801c18030fd0f10d0b6f0"
+      ],
+      "reason": "Kept-line tip passthrough rides beside the archival path: admitted finalize and abandon still archive the recorded agents before removing worktrees. Entry re-anchored at C.",
+      "revision": 1,
+      "subject": "INV-F1TY2E"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "examined": [
+        {
+          "id": "INV-10GFBN",
+          "revision": 1
+        },
+        {
+          "id": "INV-A704ST",
+          "revision": 1
+        },
+        {
+          "id": "INV-G4ED1Q",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-EA851J",
+      "items": [],
+      "reason": "M1 F01: members now state the positive guarantees the joint custody/bounds/admission promise requires; guarantee text holds, member meaning corrected.",
+      "revision": 1,
+      "subject": "FAM-KVC8JB"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-EE1K61",
+      "items": [
+        "sha256:4278cb7df366d839f4e340b340778452d28f097386300f03903d2e6469b2cc99",
+        "sha256:fecd2450f31b6ddc7dbcba13c4ad7387f2888d042c68e4fbe6c8a79a59332ccf",
+        "sha256:74d0d71cdd6234577e96d4ef9a24a1afa96667160d3ebf1dea713515647e071b"
+      ],
+      "reason": "Generated-copy propagation of the canonical c-12 archive_sprint wording; meaning carried by the c-12 sidecar entries.",
+      "subject": "onboarding:.cursor/skills/c-12-closeout/SKILL.md"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-EYTRR4",
+      "items": [
+        "sha256:a61001b5c9f33ef7ad291d39f889bddb056ebbf8bd9f7da749651ab60f93bb1e"
+      ],
+      "reason": "Retired-database guard test adaptation; retirement obligations unchanged.",
+      "subject": "hunk:sha256:a61001b5c9f33ef7ad291d39f889bddb056ebbf8bd9f7da749651ab60f93bb1e"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-FT52AP",
+      "items": [
+        "sha256:fea3c52294206c718a7f2e56ed55383a28fa8a5615272033c1a2c44a71a592ea"
+      ],
+      "reason": "Extraction move-out to dataset_copy_survey.py without behavior change: the survey, classification and owner-release obligations are recorded on the survey module (entries L82-CODE-R1-03, R1-04, R1-12); retained run_cleanup meaning is re-anchored in this leaf INV-CKY44N row.",
+      "subject": "hunk:sha256:fea3c52294206c718a7f2e56ed55383a28fa8a5615272033c1a2c44a71a592ea"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-FXTK1F",
+      "items": [
+        "sha256:8e1633d52a29dd212bb7bf051aa5e2e44e5713e664069bf5b4b665f65a446dfb"
+      ],
+      "reason": "Route purpose unchanged by this leaf; its changed files keep their existing meaning under it (mcp/src/agents_remember/worktrees/services.py, mcp/src/agents_remember/worktrees/worktree_contract.py).",
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-G6A9V0",
+      "items": [
+        "sha256:58ca6510c5c15fcdd830e90be97d6ef6d4705bae24d0d90fefb82ad92cfa506e"
+      ],
+      "reason": "Extraction move-out to dataset_copy_survey.py without behavior change: the survey, classification and owner-release obligations are recorded on the survey module (entries L82-CODE-R1-03, R1-04, R1-12); retained run_cleanup meaning is re-anchored in this leaf INV-CKY44N row.",
+      "subject": "hunk:sha256:58ca6510c5c15fcdd830e90be97d6ef6d4705bae24d0d90fefb82ad92cfa506e"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-GP8WTZ",
+      "items": [
+        "sha256:a5d9214ab7a6897607df03cd407d20ec4a6081f689b68cec5a18dfbc24038c1d"
+      ],
+      "reason": "Extraction move-out to dataset_copy_survey.py without behavior change: the survey, classification and owner-release obligations are recorded on the survey module (entries L82-CODE-R1-03, R1-04, R1-12); retained run_cleanup meaning is re-anchored in this leaf INV-CKY44N row.",
+      "subject": "hunk:sha256:a5d9214ab7a6897607df03cd407d20ec4a6081f689b68cec5a18dfbc24038c1d"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-GTRKYC",
+      "items": [
+        "sha256:bee788729b1ad92992aaff8f8e0c6195489e52bf49a13c98357bf27a4bbdccf5"
+      ],
+      "reason": "Extraction move-out to dataset_copy_survey.py without behavior change: the survey, classification and owner-release obligations are recorded on the survey module (entries L82-CODE-R1-03, R1-04, R1-12); retained run_cleanup meaning is re-anchored in this leaf INV-CKY44N row.",
+      "subject": "hunk:sha256:bee788729b1ad92992aaff8f8e0c6195489e52bf49a13c98357bf27a4bbdccf5"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-GTVPD8",
+      "items": [
+        "sha256:aa757ed03608579786b5951b088f39a710b33d1185a755da56b4e84c6691aad3"
+      ],
+      "reason": "Operation registration wiring for archive_sprint; the archive obligation is recorded on the sprint-archive modules.",
+      "subject": "hunk:sha256:aa757ed03608579786b5951b088f39a710b33d1185a755da56b4e84c6691aad3"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-GWSNEG",
+      "items": [
+        "sha256:f218aa416dbd46892241d9d9d4178e7c7b94da9e482058ca71f9cd12777c1519"
+      ],
+      "reason": "Extraction move-out to dataset_copy_survey.py without behavior change: the survey, classification and owner-release obligations are recorded on the survey module (entries L82-CODE-R1-03, R1-04, R1-12); retained run_cleanup meaning is re-anchored in this leaf INV-CKY44N row.",
+      "subject": "hunk:sha256:f218aa416dbd46892241d9d9d4178e7c7b94da9e482058ca71f9cd12777c1519"
+    },
+    {
+      "covers": [],
+      "disposition": "deleted",
+      "effect": "retire",
+      "id": "ROW-GZ81AT",
+      "items": [],
+      "reason": "M2 F01 succession complete: positive successor INV-AXWPVF carries the live guarantee and names this record in supersedes; this defect-worded record is retired from the current view with its statement, producer input and dated evidence preserved.",
+      "revision": 1,
+      "subject": "INV-R6DNZB"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-H4CXFD",
+      "items": [
+        "sha256:c7b451bfeebf05d0d960dfbf082adb5daaf8ce544ac47ae40b3cbedf69263d84"
+      ],
+      "reason": "Completed-contract flag threading to the terminal owners; the remains behavior is recorded on the terminal module cards.",
+      "subject": "hunk:sha256:c7b451bfeebf05d0d960dfbf082adb5daaf8ce544ac47ae40b3cbedf69263d84"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-HEEGNR",
+      "items": [
+        "sha256:8bc6b0d4bfd9f40e395f37f72325be1f07ae67021fd1ddbc908a7f02b5b44336"
+      ],
+      "reason": "Service seam threading for the terminal owners; no standalone obligation at this seam.",
+      "subject": "hunk:sha256:8bc6b0d4bfd9f40e395f37f72325be1f07ae67021fd1ddbc908a7f02b5b44336"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-HR7HR7",
+      "items": [
+        "sha256:c84c693c3fa3edc0e519cfd822910dc96eccc89b5b76e5dd96097d750814b3e1"
+      ],
+      "reason": "Generated-copy propagation of the canonical c-09 no-remains exception; meaning carried by the canonical card.",
+      "subject": "onboarding:.agents/skills/c-09-git-worktree-manager/SKILL.md"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-HRRZ83",
+      "items": [
+        "sha256:09a837c7bda8ae89eb438ca6568930bdb9137f7c41ca54b579815c278e7f3e94"
+      ],
+      "reason": "Probe-description wording following the survey split; guard obligations unchanged.",
+      "subject": "hunk:sha256:09a837c7bda8ae89eb438ca6568930bdb9137f7c41ca54b579815c278e7f3e94"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-J82QZP",
+      "items": [
+        "sha256:612652c26fd3a6285850388fcb91300c38241a453aa322887f770211a92dc879"
+      ],
+      "reason": "Card still holds: guard test adaptation with unchanged retirement obligations.",
+      "subject": "onboarding:mcp/tests/test_knowledge_database_retired.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-JGVXDB",
+      "items": [
+        "sha256:6d77767c6a99a55c451f6aaa47269ba4b6db10702a5847991f2b4a9bc87b3bac"
+      ],
+      "reason": "Lane-catalog rows registering the rule-test modules under the existing sorted one-lane-each convention; registration order carries no invariant.",
+      "subject": "hunk:sha256:6d77767c6a99a55c451f6aaa47269ba4b6db10702a5847991f2b4a9bc87b3bac"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-JNW80V",
+      "items": [
+        "sha256:988f3a9585c650c79a2f650f1cfd7bc5dc21a57bd2d23ce22bd65f722a4fb620"
+      ],
+      "reason": "Card still holds: completed-contract flag threading only, behavior owned by the terminal module cards.",
+      "subject": "onboarding:mcp/src/agents_remember/application/worktree_services.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-JSKWYZ",
+      "items": [
+        "sha256:ce160f3a63bb5553b73149c69fd01409feca0f4a1d9754ab4cad25bb6020e9a3"
+      ],
+      "reason": "Extraction move-out to dataset_copy_survey.py without behavior change: the survey, classification and owner-release obligations are recorded on the survey module (entries L82-CODE-R1-03, R1-04, R1-12); retained run_cleanup meaning is re-anchored in this leaf INV-CKY44N row.",
+      "subject": "hunk:sha256:ce160f3a63bb5553b73149c69fd01409feca0f4a1d9754ab4cad25bb6020e9a3"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-K590EM",
+      "items": [
+        "sha256:6e9aadaa20a2851ba813da49d56b4d7049cc48ba76e4de3f81f440068671ba74"
+      ],
+      "reason": "Extraction move-out to dataset_copy_survey.py without behavior change: the survey, classification and owner-release obligations are recorded on the survey module (entries L82-CODE-R1-03, R1-04, R1-12); retained run_cleanup meaning is re-anchored in this leaf INV-CKY44N row.",
+      "subject": "hunk:sha256:6e9aadaa20a2851ba813da49d56b4d7049cc48ba76e4de3f81f440068671ba74"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-KQY67B",
+      "items": [
+        "sha256:c5a21d1cc58bcbb01405bdc29ce34c8984567502ebb491883a8c93c700f984c1"
+      ],
+      "reason": "Extraction move-out to dataset_copy_survey.py without behavior change: the survey, classification and owner-release obligations are recorded on the survey module (entries L82-CODE-R1-03, R1-04, R1-12); retained run_cleanup meaning is re-anchored in this leaf INV-CKY44N row.",
+      "subject": "hunk:sha256:c5a21d1cc58bcbb01405bdc29ce34c8984567502ebb491883a8c93c700f984c1"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-M4DZ11",
+      "items": [
+        "sha256:6ab418ee888140efd5694b2dbd3d3766bb51be987279fafca4ab9c3e3c48235b"
+      ],
+      "reason": "Generated-copy propagation of the canonical c-09 no-remains exception; meaning carried by the canonical card.",
+      "subject": "onboarding:.openclaw/workspace/skills/c-09-git-worktree-manager/SKILL.md"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-MA1V14",
+      "items": [
+        "sha256:a2342e29fbce4c50e40451900353dca35aa5f1b9f2dd96945a458ffb4b10d624"
+      ],
+      "reason": "Extraction move-out to dataset_copy_survey.py without behavior change: the survey, classification and owner-release obligations are recorded on the survey module (entries L82-CODE-R1-03, R1-04, R1-12); retained run_cleanup meaning is re-anchored in this leaf INV-CKY44N row.",
+      "subject": "hunk:sha256:a2342e29fbce4c50e40451900353dca35aa5f1b9f2dd96945a458ffb4b10d624"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-MEZZ82",
+      "items": [
+        "sha256:b783cb9b1abfea13831fcf2bd5af85602f5a9bd60badee51dfec10622ad483fc"
+      ],
+      "reason": "One-line archive wording alignment inside the doctrine extent owned by entry L82-CODE-R1-08; carries no standalone obligation.",
+      "subject": "hunk:sha256:b783cb9b1abfea13831fcf2bd5af85602f5a9bd60badee51dfec10622ad483fc"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-MNRE0M",
+      "items": [
+        "sha256:6b030a1da17f46cb853692af8b1b0ec5d57fb41683ee878ca7e0db3965f01f31"
+      ],
+      "reason": "Extraction move-out to dataset_copy_survey.py without behavior change: the survey, classification and owner-release obligations are recorded on the survey module (entries L82-CODE-R1-03, R1-04, R1-12); retained run_cleanup meaning is re-anchored in this leaf INV-CKY44N row.",
+      "subject": "hunk:sha256:6b030a1da17f46cb853692af8b1b0ec5d57fb41683ee878ca7e0db3965f01f31"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-MRQYAC",
+      "items": [
+        "sha256:046ca45f43834f2e4ea1ec572753b374fc3683cf9a6efb4cc5ea2768a1e3e507"
+      ],
+      "reason": "Root route purpose unchanged; generated skill-copy propagation carries no root meaning.",
+      "subject": "onboarding:overview"
+    },
+    {
+      "covers": [],
+      "disposition": "deleted",
+      "effect": "retire",
+      "id": "ROW-MY0QJ0",
+      "items": [],
+      "reason": "M2 F01 succession complete: positive successor INV-4ST2K1 carries the live guarantee and names this record in supersedes; this defect-worded record is retired from the current view with its statement, producer input and dated evidence preserved.",
+      "revision": 1,
+      "subject": "INV-NY15B8"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-NC85B8",
+      "items": [
+        "sha256:0b6fa7a2b2ce387d7f504679dad1f86e30aafd917ece9f49f6e93714ec9a3c11"
+      ],
+      "reason": "Card still holds: one-word refusal routing update, obligation recorded on task_sprint_archive.py.",
+      "subject": "onboarding:mcp/src/agents_remember/application/task_docs/task_retirement_sprint_edit.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-NYZK6T",
+      "items": [
+        "sha256:15289f84959dc29d0e15de554299e4d5f590d0c277ea9545e11bc42ce977f72b"
+      ],
+      "reason": "Extraction move-out to dataset_copy_survey.py without behavior change: the survey, classification and owner-release obligations are recorded on the survey module (entries L82-CODE-R1-03, R1-04, R1-12); retained run_cleanup meaning is re-anchored in this leaf INV-CKY44N row.",
+      "subject": "hunk:sha256:15289f84959dc29d0e15de554299e4d5f590d0c277ea9545e11bc42ce977f72b"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-P8W0K3",
+      "items": [
+        "sha256:cb08cbd4bbff403082c97b43320a49558b290f821ef14b1be161be21c769b2d0"
+      ],
+      "reason": "Route purpose unchanged by this leaf; its changed files keep their existing meaning under it (fifteen rule-test modules and seven changed test modules keep their existing lane and scope).",
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-PCG729",
+      "items": [
+        "sha256:b4f5349149834aed966496855fc66a2eecbd6add09a5649a5e5fa21dd27461d3"
+      ],
+      "reason": "Generated-copy propagation of the canonical c-09 no-remains exception; meaning carried by the canonical card.",
+      "subject": "onboarding:.github-vscode/skills/c-09-git-worktree-manager/SKILL.md"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-PKW8DS",
+      "items": [
+        "sha256:4d5e7ff410a184136b38ae7f2ee29987c480a769acb89283981942c2c10c34f5"
+      ],
+      "reason": "One-word refusal routing update naming archive_sprint for the only-master-of-graph case; the archive-precondition obligation itself is recorded on task_sprint_archive.py (entries L82-CODE-R1-01, R1-11).",
+      "subject": "hunk:sha256:4d5e7ff410a184136b38ae7f2ee29987c480a769acb89283981942c2c10c34f5"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-QEXBEY",
+      "items": [
+        "sha256:e94e6b95d138e2389b6080067ed3c7ca77f36b5e30247b56847b2af5cf0c9b5e",
+        "sha256:6c0e01a36daf29edc4d5aed98ca493bbbe430e406faadb20320a34c152000634",
+        "sha256:0d11db3ca26f8770aeec2a05058d427a3620cfb93338176af49a75776667ef30"
+      ],
+      "reason": "Generated-copy propagation of the canonical c-12 archive_sprint wording; meaning carried by the c-12 sidecar entries.",
+      "subject": "onboarding:.hermes/skills/c-12-closeout/SKILL.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-QHPT8X",
+      "items": [
+        "sha256:b24e96fdac2faf0c436e15afcd33e01fc7c267656182e39105067cd67354cb58"
+      ],
+      "reason": "Card still holds: entry-point sweep payload only, adoption obligation on the tool card.",
+      "subject": "onboarding:mcp/tests/tool_entry_point_world.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-QRDPQE",
+      "items": [
+        "sha256:7323021b930bcadb9ee40db089e89e6cb26fbbbed456ee6edc172d569b730770"
+      ],
+      "reason": "Generated-copy propagation of the canonical c-09 no-remains exception; meaning carried by the canonical card.",
+      "subject": "onboarding:.codex/skills/c-09-git-worktree-manager/SKILL.md"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-QV3R2V",
+      "items": [
+        "sha256:ece793b86a2ca1682400f38d901ebb6e39dd0ee1194e181c4280d2eca764613c"
+      ],
+      "reason": "Dispatcher registration of archive_sprint beside the four older operations; the archive obligation is recorded on the sprint-archive modules (entries L82-CODE-R1-01, R1-07, R1-11).",
+      "subject": "hunk:sha256:ece793b86a2ca1682400f38d901ebb6e39dd0ee1194e181c4280d2eca764613c"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-QW8DD7",
+      "items": [
+        "sha256:52ec4b890c4858fe1809431bbc920e96ee215dce9678f64728a77127b4338cbe"
+      ],
+      "reason": "Route purpose unchanged by this leaf; its changed files keep their existing meaning under it (mcp/src/agents_remember/cli/knowledge_copies.py).",
+      "subject": "onboarding:mcp/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "3349f2f05c7ea3a25d90abdcf6d4beb50d8c9af1",
+            "content": "sha256:3cfce3d757c7b34e3b00085596c1592a33c1e358229a9e24a6c8a0b77125a80a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "79ced316f57d0a3dfb3b417ac75c7e38b540b002",
+            "content": "sha256:1566b59dd465bdff92b7dc133dd31c20e47a20351dec979b4e60fabb349e9ee1",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-GRTJG0"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-RHQWW0",
+      "items": [
+        "sha256:387c752f09b1e2adec07d094fba0116305316a526b104133de4430aa297b278d"
+      ],
+      "reason": "Carried L48 ROW-RHQWW0 meaning: admitted lifecycle application replaced the 32-row catalog with 13 rows and 84 governed artifacts without resurrecting deleted rows; canonical form green. The retired record keeps its historical meaning. Entry RLZ-GRTJG0 re-anchored at C to the landed a145 file (L82 sync resolution, upstream sides).",
+      "revision": 1,
+      "subject": "INV-MSCRAN"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-RS05A4",
+      "items": [
+        "sha256:5a0489c9e2522d1520d025cb3246d9cda6d610347f12526d20b50da622da3a87"
+      ],
+      "reason": "Extraction move-out to dataset_copy_survey.py without behavior change: the survey, classification and owner-release obligations are recorded on the survey module (entries L82-CODE-R1-03, R1-04, R1-12); retained run_cleanup meaning is re-anchored in this leaf INV-CKY44N row.",
+      "subject": "hunk:sha256:5a0489c9e2522d1520d025cb3246d9cda6d610347f12526d20b50da622da3a87"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-S4ZASD",
+      "items": [
+        "sha256:746a31587e2023c3009214307dc68ce0dee4bd09142a72347f253cc274c699f9"
+      ],
+      "reason": "Lane-catalog rows registering the rule-test modules under the existing sorted one-lane-each convention; registration order carries no invariant.",
+      "subject": "hunk:sha256:746a31587e2023c3009214307dc68ce0dee4bd09142a72347f253cc274c699f9"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-S88TRS",
+      "items": [
+        "sha256:1ccc8f95e36e3b9fd847d97cbaf4752ffa694c9f6b06316ac1b397fbc367e6f0",
+        "sha256:4932da8f368277f6b39ca0135a0ee6859298fc5d700bfd271b96227df266e651",
+        "sha256:2d9a490cfb24e38e1b8958ab7b252694891bc6d37125c5a2a44d7b3371490b18"
+      ],
+      "reason": "Generated-copy propagation of the canonical c-12 archive_sprint wording; meaning carried by the c-12 sidecar entries.",
+      "subject": "onboarding:.agents/skills/c-12-closeout/SKILL.md"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "3bf034783f9edf08134213feb5d7151ffeaf944f",
+            "content": "sha256:10163ae8337c8e278d5c0549e0cfcbf304d1a57e764839a563db7fb0cd14949b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_apply_deletes_exactly_the_copies_rule_six_names_with_their_companions"
+            },
+            "path": "mcp/tests/test_knowledge_copy_cleanup.py"
+          },
+          "before": {
+            "blob": "40df89f4777cda9e7316381f25e54f0c8fb69ee5",
+            "content": "sha256:10163ae8337c8e278d5c0549e0cfcbf304d1a57e764839a563db7fb0cd14949b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_apply_deletes_exactly_the_copies_rule_six_names_with_their_companions"
+            },
+            "path": "mcp/tests/test_knowledge_copy_cleanup.py"
+          },
+          "id": "PRF-ZY7TVC"
+        },
+        {
+          "after": {
+            "blob": "bc44f7d1d76a730840da9cd520b6dab66e448a3d",
+            "content": "sha256:9afd60407db196a01b1479a10b635d7fb3f2ba23fcca16ea96374e53e8c741dd",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_cleanup"
+            },
+            "path": "mcp/src/agents_remember/application/legacy_dataset_copies.py"
+          },
+          "before": {
+            "blob": "362e9cbfea20eb0f8f0d5a6c763af789a5d25144",
+            "content": "sha256:fa8ca13dd6aada4d21e34f363cf2ac9af38b855568c977157dec0c6e5c88ba35",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_cleanup"
+            },
+            "path": "mcp/src/agents_remember/application/legacy_dataset_copies.py"
+          },
+          "id": "RLZ-AD66SH"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-SCDDJX",
+      "items": [
+        "sha256:9fcadccf538deecb6ecdbdddfc4847504737cc470cf7095e17fc6ea9876a3459"
+      ],
+      "reason": "Survey extraction moved run_cleanup into the narrowed plan owner without changing companion preservation: a kept companion is still successful preservation, and the proving test moved lines with identical content. Entries re-anchored at C.",
+      "revision": 1,
+      "subject": "INV-CKY44N"
+    },
+    {
+      "covers": [],
+      "disposition": "deleted",
+      "effect": "retire",
+      "id": "ROW-SE9NXE",
+      "items": [],
+      "reason": "M2 F01 succession complete: positive successor INV-W2HVAT carries the live guarantee and names this record in supersedes; this defect-worded record is retired from the current view with its statement, producer input and dated evidence preserved.",
+      "revision": 1,
+      "subject": "INV-49BQPT"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R82",
+          "packet": "requirements/MIK-R82-v1-archiving-a-sprint-leftover-copies-and-enclosure-adoption.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-SW9468",
+      "items": [
+        "sha256:9ddf046b528b2bedda13806afa0809693bf7e05f08c80d5199a7fd8b73eb54d9"
+      ],
+      "reason": "M1 F05: exclusions now name individual retirement and whole-sprint archiving; finalization constraint and provenance untouched. Evidence (L82-MEM-M1-D91D5G-scope): M1 verdict L82-MEM-M1-F05; packet MIK-R82@v1 rule 1; task_sprint_archive.py::archive_sprint",
+      "revision": 2,
+      "subject": "INV-D91D5G"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-T9MYP9",
+      "items": [
+        "sha256:0b98761e76f631f27961dfa17651653be9acde4472ff4482c27d0d67a689d10c"
+      ],
+      "reason": "Extraction move-out to dataset_copy_survey.py without behavior change: the survey, classification and owner-release obligations are recorded on the survey module (entries L82-CODE-R1-03, R1-04, R1-12); retained run_cleanup meaning is re-anchored in this leaf INV-CKY44N row.",
+      "subject": "hunk:sha256:0b98761e76f631f27961dfa17651653be9acde4472ff4482c27d0d67a689d10c"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-TGEZH1",
+      "items": [
+        "sha256:617f3b54fa745e2b6accaee011db39a8cce12b2bfd0174b23f0043d65d24b351"
+      ],
+      "reason": "Kept-line tip passthrough beside the archival path; archival obligations unchanged (see this leaf INV-F1TY2E row).",
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/modules/terminal_cleanup.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-TQB81C",
+      "items": [
+        "sha256:05d6306b5d428fa429a0185372cfa3715e920a8d808a606ba26cc4d53598af3e",
+        "sha256:4e0c18e881db8e4ff32e0327061dcb5707f428040077d17cc97751cccd322998",
+        "sha256:27c0236c6b8fe4be1b80a60f7bb7464e51d52ea3574ec65fa198a11fba893490",
+        "sha256:5311fbf8ee165adbb00291928fbd3ea8ed632210995a0035a77cb6008327109f"
+      ],
+      "reason": "Citation-slot scan support for the rule-3 census; the slot obligation is recorded on the citation_cache_census card.",
+      "subject": "onboarding:mcp/src/agents_remember/memory_quality/style/citations/source_index_cache.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-V4CKTY",
+      "items": [
+        "sha256:68cadd3b8b2fe41d35a0db8a899a520be620f29fecfc08a6f5f74653154568f0"
+      ],
+      "reason": "Route purpose unchanged by this leaf; its changed files keep their existing meaning under it (mcp/src/agents_remember/models/task_doc.py, mcp/src/agents_remember/models/tools/public_roster.py, mcp/src/agents_remember/models/tools/tool_registry.py, mcp/src/agents_remember/models/worktree.py).",
+      "subject": "onboarding:mcp/src/agents_remember/models/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-VHWE6W",
+      "items": [
+        "sha256:40ca751264395db38e139b9f278a11877d5497236d338994b1b5521f6006ba1e"
+      ],
+      "reason": "Route purpose unchanged by this leaf; its changed files keep their existing meaning under it (mcp/test_support/agents_remember_test_support/testing/database_retirement_guard.py).",
+      "subject": "onboarding:mcp/test_support/agents_remember_test_support/testing/overview"
+    },
+    {
+      "covers": [],
+      "disposition": "deleted",
+      "effect": "retire",
+      "id": "ROW-VWNYGQ",
+      "items": [],
+      "reason": "M2 F01 succession complete: positive successor INV-14MXY5 carries the live guarantee and names this record in supersedes; this defect-worded record is retired from the current view with its statement, producer input and dated evidence preserved.",
+      "revision": 1,
+      "subject": "INV-468X0P"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-W5PAWX",
+      "items": [
+        "sha256:6da9a083fd32877755060eee139439013a42375a07605faae65e1aeef15d9896"
+      ],
+      "reason": "Blocker-reason wording adaptation; refusal obligations unchanged.",
+      "subject": "onboarding:mcp/tests/test_terminal_blocker_reasons.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-W76WQD",
+      "items": [
+        "sha256:3fa33a74e2f8ef10e7bf02dd039a4cc046bc820ec9e521b8aabd90a364ce5d62"
+      ],
+      "reason": "Route purpose unchanged by this leaf; its changed files keep their existing meaning under it (mcp/src/agents_remember/mcp/registration/tasks.py, mcp/src/agents_remember/mcp/registration/worktrees.py).",
+      "subject": "onboarding:mcp/src/agents_remember/mcp/registration/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-WN83KX",
+      "items": [
+        "sha256:3a4bc02f42f83b6c30226f352101307f149ef5844d0ab749d09ca7382310bf4b",
+        "sha256:06ffaf5d827a68e82ca1def18253ccd2561cb645035fe707cd098a0f291e091d",
+        "sha256:87ecc1ecfd8a904084235d3639f9997b659926e0adddf87d9d11f5351d611a00"
+      ],
+      "reason": "Adoption tool registration wiring; the adoption obligation is recorded on the enclosure_adoption tool card.",
+      "subject": "onboarding:mcp/src/agents_remember/mcp/registration/worktrees.py"
+    },
+    {
+      "covers": [],
+      "disposition": "deleted",
+      "effect": "retire",
+      "id": "ROW-WP1JHR",
+      "items": [],
+      "reason": "M2 F01 succession complete: positive successor INV-G4ED1Q carries the live guarantee and names this record in supersedes; this defect-worded record is retired from the current view with its statement, producer input and dated evidence preserved.",
+      "revision": 1,
+      "subject": "INV-4RTF8V"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-Y1QNVS",
+      "items": [
+        "sha256:1b231bc9d0b337ee568881d0576f1be031985c2e4c5788b9f2a4e3cdf534e1c6"
+      ],
+      "reason": "Extraction move-out to dataset_copy_survey.py without behavior change: the survey, classification and owner-release obligations are recorded on the survey module (entries L82-CODE-R1-03, R1-04, R1-12); retained run_cleanup meaning is re-anchored in this leaf INV-CKY44N row.",
+      "subject": "hunk:sha256:1b231bc9d0b337ee568881d0576f1be031985c2e4c5788b9f2a4e3cdf534e1c6"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-YCXHR3",
+      "items": [
+        "sha256:c69393e581fcfdf687f4affbc8527c8a4b5d40973be88d1a72e44a90d3658c86"
+      ],
+      "reason": "Extraction move-out to dataset_copy_survey.py without behavior change: the survey, classification and owner-release obligations are recorded on the survey module (entries L82-CODE-R1-03, R1-04, R1-12); retained run_cleanup meaning is re-anchored in this leaf INV-CKY44N row.",
+      "subject": "hunk:sha256:c69393e581fcfdf687f4affbc8527c8a4b5d40973be88d1a72e44a90d3658c86"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-Z38Y1B",
+      "items": [
+        "sha256:11be9d246f612bf0e8cf37b7609d5f7b7efc54a13600295e1fa82bd5e0ebae7c"
+      ],
+      "reason": "Reference route purpose unchanged; the rule-5 exception and adoption rows are documented at the mcp-tools card.",
+      "subject": "onboarding:docs/reference/overview"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

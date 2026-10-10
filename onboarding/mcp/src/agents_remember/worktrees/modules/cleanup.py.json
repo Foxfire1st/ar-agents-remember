@@ -1,13 +1,50 @@
 {
   "path": "mcp/src/agents_remember/worktrees/modules/cleanup.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "6a694c702d35e4d5a1761381a0d9876b40837588",
+        "content": "sha256:2377bc203fa673e8bbee202ad59d18ff2aff663cf7ed11e32fa9940d31265e6e",
+        "locator": {
+          "kind": "symbol",
+          "name": "_publish_cleanup"
+        }
+      },
+      "id": "RLZ-B3GZ9J",
+      "invariant": "INV-R6DNZB",
+      "origin": {
+        "handoffEntry": "L82-CODE-R1-06",
+        "leaf": "260928-MIK-L82"
+      },
+      "rationale": "Current single owner of this sealed acceptance obligation.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "6a694c702d35e4d5a1761381a0d9876b40837588",
+        "content": "sha256:2377bc203fa673e8bbee202ad59d18ff2aff663cf7ed11e32fa9940d31265e6e",
+        "locator": {
+          "kind": "symbol",
+          "name": "_publish_cleanup"
+        }
+      },
+      "id": "RLZ-TFV4YT",
+      "invariant": "INV-AXWPVF",
+      "origin": {
+        "handoffEntry": "L82-MEM-M1-S-06",
+        "leaf": "260928-MIK-L82"
+      },
+      "rationale": "Current single owner of this sealed acceptance obligation.",
+      "role": "unclassified"
+    }
+  ],
   "references": {
     "1": {
       "note": "The authorized memory target clears its disposable cache before ordinary Git removal.",
       "targets": [
         {
           "anchor": {
-            "blob": "4553df1a09b4e5397ea5df322777351fc8345de0",
+            "blob": "6a694c702d35e4d5a1761381a0d9876b40837588",
             "content": "sha256:6655686073ecd35f41f016b1c12f205ebc555fd6d064525522c7f429177bb9da",
             "locator": {
               "kind": "symbol",
@@ -40,37 +77,13 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4553df1a09b4e5397ea5df322777351fc8345de0",
+            "blob": "fba56276158a0598e01ea849d08083987da3f1fe",
             "content": "sha256:2487e4428301ad07f82ce90b5ae632ee586bdaba13687cdfdd2526423c5cfc21",
             "locator": {
               "kind": "symbol",
               "name": "_remote_git"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "a19c74bb0d905669c2dc4d699a05e230d970effb",
-            "content": "sha256:fbfa8472a098bcd75d67a5d7bf39fb9f4f9dd902aa130d654f77efe08ec86503",
-            "locator": {
-              "kind": "symbol",
-              "name": "GIT_REMOTE_TIMEOUT_SECONDS"
             },
-            "path": "mcp/src/agents_remember/kernel/git_command.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "a19c74bb0d905669c2dc4d699a05e230d970effb",
-            "content": "sha256:d11da2e2aff7ba25c39c66c6ad120027f30dd38b13579752f00eb1fd4387cbd0",
-            "locator": {
-              "end": 98,
-              "kind": "line_range",
-              "start": 98
-            },
-            "path": "mcp/src/agents_remember/kernel/git_command.py"
+            "path": "mcp/src/agents_remember/worktrees/modules/terminal_branch_retirement.py"
           },
           "kind": "code"
         }
@@ -81,24 +94,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cad2b5290a889e152e487a9d3b2b27aeea339086",
-            "content": "sha256:93106f4627f5d51b7669b2ba39255fb45eddd4ee73bf573f03e9dbf19bbb41fd",
+            "blob": "049227aeea85b68565e3a144f616be2f01186dc3",
+            "content": "sha256:4f12e525616477b9a6cfc60916cf62ac07f299a7784ed0a6e0ee020b8819336a",
             "locator": {
               "kind": "symbol",
               "name": "amend_contract"
-            },
-            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "cad2b5290a889e152e487a9d3b2b27aeea339086",
-            "content": "sha256:4c492def0fcec9a9c086320a49e3c5ca243c8dde4021df8886a79d4a0e33d0a7",
-            "locator": {
-              "end": 226,
-              "kind": "line_range",
-              "start": 198
             },
             "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
           },
@@ -111,20 +111,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2ffbde258d18e69f9dd976ccc3231cf4345f268d",
-            "content": "sha256:7e524ab2da1ff9f98bcf389858f79a16569bb012367c7f625500eec228c237cd",
-            "locator": {
-              "kind": "symbol",
-              "name": "TerminalResult"
-            },
-            "path": "mcp/src/agents_remember/worktrees/modules/terminal_validation.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "073c9d5fa9aa753f1dca441e4cd97c1aeaa281e2",
-            "content": "sha256:c7ead5df25432e9f05e0a488c88b2184326907ce30eea410c8c09b6fbfafe055",
+            "blob": "72a4cfa2473b44cfe37c17f389a1fe6a30724c90",
+            "content": "sha256:6fecff16f222bd802f30b28b67b5cbf6cd44c932e3b29945d84bfd9496aafb78",
             "locator": {
               "kind": "symbol",
               "name": "terminal_result_blockers"
@@ -140,7 +128,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6b51af08c017f9ead395326bd7fee6fefeac4e9f",
+            "blob": "98c620167fdb936e67188e92cb3354f3d91d3f42",
             "content": "sha256:6811b9303c31e9f8161e57c76cd74aa2e0703c01140277f377b6b3a8843ef7a7",
             "locator": {
               "kind": "symbol",
@@ -152,7 +140,7 @@
         },
         {
           "anchor": {
-            "blob": "6b51af08c017f9ead395326bd7fee6fefeac4e9f",
+            "blob": "98c620167fdb936e67188e92cb3354f3d91d3f42",
             "content": "sha256:0a35eedfdf93940b1382b8b784fd34c2318a07d0f4376c1b581dda2701b79418",
             "locator": {
               "kind": "symbol",
@@ -182,38 +170,50 @@
       ]
     },
     "16": {
-      "note": "The current module exposes `remove_registered_worktree`, `delete_branch_if_merged`, `delete_branch_if_merged_into` at this ownership boundary.",
+      "note": "The current module exposes `remove_registered_worktree` at this ownership boundary; branch deletion is exposed by `terminal_branch_retirement.py`.",
       "targets": [
         {
           "anchor": {
-            "blob": "4553df1a09b4e5397ea5df322777351fc8345de0",
-            "content": "sha256:6655686073ecd35f41f016b1c12f205ebc555fd6d064525522c7f429177bb9da",
-            "locator": {
-              "kind": "symbol",
-              "name": "remove_registered_worktree"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "4553df1a09b4e5397ea5df322777351fc8345de0",
+            "blob": "fba56276158a0598e01ea849d08083987da3f1fe",
             "content": "sha256:8e58b4070331d3fcd12f77132d203db94d86f77c85aa6cfc9370533dd5dcaa20",
             "locator": {
               "kind": "symbol",
               "name": "delete_branch_if_merged"
-            }
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/terminal_branch_retirement.py"
           },
           "kind": "code"
-        },
+        }
+      ]
+    },
+    "17": {
+      "note": "`CleanupStatus`, `ContractCells` and `amend_contract` — the vocabulary the `completed` stamp belongs to and the typed write it takes.",
+      "targets": [
         {
           "anchor": {
-            "blob": "4553df1a09b4e5397ea5df322777351fc8345de0",
-            "content": "sha256:0bcd100808995f11e0f99fec2fff12b3b05c64cd965cffc2df4ab3c21e231fba",
+            "blob": "049227aeea85b68565e3a144f616be2f01186dc3",
+            "content": "sha256:e79f69a320047a9ff0ff3fb74868c934897b26b94cbaf5ad67ab98eaf2e49b71",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "The current module exposes `remove_registered_worktree` at this ownership boundary; branch deletion is exposed by `terminal_branch_retirement.py`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fba56276158a0598e01ea849d08083987da3f1fe",
+            "content": "sha256:61f23ecf8b6df3709541f9f1b81ebd1a9f93b58f804f56a55ba8742d225d8159",
             "locator": {
               "kind": "symbol",
               "name": "delete_branch_if_merged_into"
-            }
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/terminal_branch_retirement.py"
           },
           "kind": "code"
         }
@@ -224,8 +224,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "41581fa05708dee3cbcc1d673235c3e39226912e",
-            "content": "sha256:44d2b008191206b294dd234bf15673d4f0b510373db61fb21039bce38a8dd2f4",
+            "blob": "6a694c702d35e4d5a1761381a0d9876b40837588",
+            "content": "sha256:bbc6d9da4d6ecc262c63ff146c16e9f97e1d5b39192b4fda6a5eabbb4e36f0ca",
             "locator": {
               "kind": "symbol",
               "name": "cleanup_result"
@@ -253,16 +253,14 @@
       ]
     },
     "4": {
-      "note": "Defines the `WorktreeArgs` dataclass that types the `cleanup_result` input.\n\nAnchor: \"class WorktreeArgs\"",
+      "note": "Defines the `WorktreeArgs` dataclass that types the `cleanup_result` input.",
       "targets": [
         {
           "anchor": {
-            "blob": "9a36bc182b43134c2cf03c76dba11f075bfa7e70",
-            "content": "sha256:6176e15d556279e190db0b0cbe43f1e74fbacade0aee4f1087fb8446956978cc",
+            "blob": "aa84ca4a28ab5525e684961f1858766ac211abb7",
+            "content": "sha256:f913c0be00540e770fceedd9ac4fb23021691495ccaceb69849c8b5c31f24cd7",
             "locator": {
-              "end": 35,
-              "kind": "line_range",
-              "start": 35
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/args.py"
           },
@@ -275,7 +273,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2e1832a7e5f574066e78c4bf63f69851a912ddf2",
+            "blob": "5841f05a99a45b73c2061c46de06ba14898a5d65",
             "content": "sha256:c773772c477e0a2152a0edb5e62dff7715402b045b5c6b15b82d3f173b053fdd",
             "locator": {
               "end": 193,
@@ -293,7 +291,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2ffbde258d18e69f9dd976ccc3231cf4345f268d",
+            "blob": "72a4cfa2473b44cfe37c17f389a1fe6a30724c90",
             "content": "sha256:1a7dfc6f818e444df8a75d0f217c2d499b02cb4898523113feb6257e90ca2750",
             "locator": {
               "kind": "symbol",
@@ -310,7 +308,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4553df1a09b4e5397ea5df322777351fc8345de0",
+            "blob": "6a694c702d35e4d5a1761381a0d9876b40837588",
             "content": "sha256:e364d555946e1664facb9c6bc8d5655af03e34794f2208fe1633499b3c91a277",
             "locator": {
               "kind": "symbol",
@@ -339,16 +337,14 @@
       ]
     },
     "9": {
-      "note": "`delete_branch_force` and `remove_registered_worktree(force=...)` are reused by abandon.\n\nAnchor: \"def _abandon_branches\"",
+      "note": "`delete_branch_force` and `remove_registered_worktree(force=...)` are reused by abandon.",
       "targets": [
         {
           "anchor": {
-            "blob": "f463507a910e67dd9c7851377a1d7e52a3ccbf89",
-            "content": "sha256:a71d45a066a075899416f985c4a919722c84bb2e1d13642a1896d5e20e9664dd",
+            "blob": "405fa3b75f6eb309ec9c929dbbe7439d4cd5b7b1",
+            "content": "sha256:c5383b90269522108ba9f5209ed37d341216d9ae0650066498ff855547a28e37",
             "locator": {
-              "end": 456,
-              "kind": "line_range",
-              "start": 422
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/abandon.py"
           },

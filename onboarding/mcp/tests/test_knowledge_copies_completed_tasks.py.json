@@ -1,0 +1,22 @@
+{
+  "path": "mcp/tests/test_knowledge_copies_completed_tasks.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The completed-task copies rule deletes finished-task copies and keeps open-task copies.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0f7bf69874bc055368139e0a01198df18cbb300a",
+            "content": "sha256:fc3e5ed92cf0fe5f08c9982d335dd8329a13b86fa6441d8b3ad98ab83ffc9d31",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Without the armed rails the archive, copies and cleanup owners re-expand past readable single ownership; the rails force extraction before addition."
+  },
+  "applicability": "Module size rails for the archive, copies and cleanup owners.",
+  "conditions": [
+    "The armed 1200-line hard and 900-line soft limits."
+  ],
+  "exclusions": [
+    "Test-only growth under the lane catalogs."
+  ],
+  "id": "INV-8FSQZJ",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/l82-code-review-R2/file-size.json + .stdout (exit0, 54 files); focused-pytest.json (114 passed); recorded-boundaries.json (3 passed); notes/run3/L82-FIRST-START-879378fb/owner-whole-successor-extraction-and-publication-case.json"
+      ],
+      "path": "notes/reports/260928-MIK-L82-curator-handoff-list.json"
+    },
+    "handoffEntry": "L82-CODE-R1-13",
+    "leaf": "260928-MIK-L82",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The new sprint archive module and expanded cleanup module exceed the armed twelve-hundred-line hard limit, while feature logic is also added to the copies module beyond the extraction-required soft limit.",
+  "status": "retired",
+  "supersedes": []
+}

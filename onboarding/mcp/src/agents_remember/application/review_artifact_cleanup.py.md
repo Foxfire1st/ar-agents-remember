@@ -20,7 +20,7 @@ task's archive report, `notes/reports/review-artifact-cleanup.json`, which the f
 `ReviewArtifactCleanupPort` (`worktrees/services.py`) by `application/worktree_services.py`, and called by
 `worktrees/modules/finalize.py` for a task that finalization archived. `task_doc.retire_master` calls
 `cleanup_review_artifacts` directly (through `archive_hook` in `application/task_docs/task_retirement_shared.py`)
-after it has moved a retired master under `0_archive/`; that is the route that archives a master. The first attempt
+after it has moved a retired master under `0_archive/`; that is the route that archives a master. A whole sprint with its moving commanded masters is archived instead by `task_doc(operation="archive_sprint")`, whose hook phase deletes `ar-cache-*` directories under each archived task folder and lists them with size. The new `arCaches` deletion class rides the shared receipt keys so interrupted cache deletions replay as attributed absence and cache-only dry runs show their remainder. The module text states the two trust rules: the hook guards against accidents rather than a second writer with the same rights, and the legacy cleanup trusts the control documents the product itself writes. The first attempt
 records a receipt even without deletion. Later attempts record new work or outcome evidence; an unchanged repeat
 reuses the existing receipt and reports previously deleted artifacts as already absent.
 
@@ -123,19 +123,31 @@ No configured live documentation source was available for this pass.
 
 ### Repo-Internal References
 
+
 - The module's statement of every target's identity source, the trust line, the confinement and the accepted window. [1]
+
+
 - The report file, the reason, and the two tables that make a file a knowledge dataset. [2]
 
+
+
 - The report, and holding a generation's pin and snapshots with the reason. [3]
+
 - The composition-bound port implementation. [4]
+
 - The whole hook: review refs by directory name, own retained-code refs, generations, copies, the report. [5]
+
+
 - Receipt writes refuse paths outside the task. [6]
+
 - Physical confinement: no symlink on the way, and the resolved path inside the resolved root. [7]
 - The legacy identity by the trust line, and `task.json` read only when it is the task's own. [8]
 - Generations released through their owners, or held. [9]
 - A manifest naming another leaf, pin, repository or directory is held. [10]
 - The F1 exact own-task rule and the retained-code refs it selects. [11]
+
 - The content scan: confined root, confined candidates, knowledge schema, untracked. [12]
+
 - The finalizer carries the report after the archive move, and never raises. [13]
 - The main archive case and the colliding-task case. [14]
 
@@ -146,11 +158,17 @@ repository is only compared against them.
 
 No cross-repo boundary is crossed by this file.
 
+
 - The ledger reports earlier deletions, interrupted planned deletions now absent, and previously failed artifacts now absent. [15]
+
+
 
 - The first no-op records a receipt; an unchanged repeat with no new work or outcome writes none. [16]
 
+
+
 - The previous receipt is preserved under its own attempt number, reusing that path after interruption. [17]
+
 
 - Code-pin history is persisted before releasing the retained pin. [18]
 - Verified snapshot unlink precedes snapshot history, leaving a static failure window. [19]

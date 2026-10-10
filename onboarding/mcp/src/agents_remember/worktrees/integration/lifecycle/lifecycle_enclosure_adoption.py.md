@@ -22,6 +22,8 @@ archive as a first-class owned artifact: `_LEGACY_MISSING_INTENT_ARTIFACT` (line
 one predicate (lines 225-253), so a legacy missing-intent generation preserved by the store is
 adopted (moved) with the enclosure instead of being left behind or treated as an unowned artifact.
 
+Operation records written in place are taken as they are: the dry run names the state and lists each record with its size and hash, and the real run writes the receipt with these records and their hashes, marking them found in place and copying and moving nothing. The explicit approval of the real run is the decision. Records in place together with differing originals under `reports/`, or a receipt that does not match what is found, keep the refusal.
+
 ### Conventions
 
 Pure classifiers return typed observations; mutation owners publish write-ahead intent and exact evidence before advancing. Public projections carry bounded expected/observed facts and executable task-addressed next actions without leaking private operation identity.

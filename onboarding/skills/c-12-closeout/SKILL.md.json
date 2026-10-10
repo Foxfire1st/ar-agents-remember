@@ -3,7 +3,26 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "fb7ee6c541ff12537f5e1e9722aef9979c56423d",
+        "blob": "17d7441854a8f1e2c2547bd44e6c9bbcc6c7e468",
+        "content": "sha256:68dcf69c3376477b1a55ced5f4651d4b15be4f0aac1d0a327fda32802bd98072",
+        "locator": {
+          "end": 278,
+          "kind": "line_range",
+          "start": 273
+        }
+      },
+      "id": "RLZ-DMZR23",
+      "invariant": "INV-4ST2K1",
+      "origin": {
+        "handoffEntry": "L82-MEM-M1-S-08",
+        "leaf": "260928-MIK-L82"
+      },
+      "rationale": "The repaired instruction extent names this operational contract.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "17d7441854a8f1e2c2547bd44e6c9bbcc6c7e468",
         "content": "sha256:db688c1dd25915329fea0ff9c80c78a77f5a13eea4e89f0b0f3f3153429ce092",
         "locator": {
           "end": 257,
@@ -22,7 +41,7 @@
     },
     {
       "anchor": {
-        "blob": "fb7ee6c541ff12537f5e1e9722aef9979c56423d",
+        "blob": "17d7441854a8f1e2c2547bd44e6c9bbcc6c7e468",
         "content": "sha256:3eddab67ff76eff578ff1c63ab336676f92140c7b0131e055ab68c0aaff94424",
         "locator": {
           "end": 242,
@@ -38,6 +57,25 @@
       },
       "rationale": "The canonical skill and all nine generated copies must describe this finalization decision.",
       "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "17d7441854a8f1e2c2547bd44e6c9bbcc6c7e468",
+        "content": "sha256:68dcf69c3376477b1a55ced5f4651d4b15be4f0aac1d0a327fda32802bd98072",
+        "locator": {
+          "end": 278,
+          "kind": "line_range",
+          "start": 273
+        }
+      },
+      "id": "RLZ-YZB03G",
+      "invariant": "INV-NY15B8",
+      "origin": {
+        "handoffEntry": "L82-CODE-R1-08",
+        "leaf": "260928-MIK-L82"
+      },
+      "rationale": "The repaired instruction extent names this operational contract.",
+      "role": "unclassified"
     }
   ],
   "references": {},

@@ -167,7 +167,7 @@ otherwise unchanged:
 
 ## Master Retirement And The Sprint Linkage Split
 
-`task_doc.retire_master` is the only operation that archives a master, with or without a sprint. It is implemented by
+`task_doc.retire_master` is the operation that archives an individual master, with or without a sprint. A whole sprint with its moving commanded masters is archived instead by `task_doc.archive_sprint`. It is implemented by
 [task_master_retirement.py](task_master_retirement.py.md) for a master that a sprint
 commands (the sprint edit and the folder move are one validated step, and the sprint is restored if anything fails before
 the folder is archived) and by the lone-master route of [task_master_retirement.py](task_master_retirement.py.md)
@@ -183,7 +183,7 @@ publication transaction, preview), [task_sprint_candidates.py](task_sprint_candi
 candidate and `SprintLinkageError`), and [task_execution_graph_mutations.py](task_execution_graph_mutations.py.md)
 (graph-authoring models and handlers, plus the edge-deletion owner shared with retirement). Retirement's sprint-edit
 owner separately calls `_detached_data` to remove membership and nodes before validating its final candidate.
-`task_sprint_linkage.py` dispatches the four linkage operations and `task_doc_tools.py` preserves complete retired rows.
+`task_sprint_linkage.py` dispatches the five linkage operations (`archive_sprint` goes to the sprint-archive owner beside it) and `task_doc_tools.py` preserves complete retired rows.
 
 - The sprint route builds the candidate, publishes the sprint edit with the folder move, and restores both on a failure before archival. [8]
 - The lone-master route (a master no sprint commands) writes its proof into the master's folder and moves the folder. [9]

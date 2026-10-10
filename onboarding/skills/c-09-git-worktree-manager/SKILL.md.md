@@ -103,12 +103,21 @@ No Domain Documentation source is configured for this memory root.
 ### Repo-Internal References
 
 - Canonical contract-scoped admission and task/queue separation. [1]
+
 - Resumable retained-conflict transaction and explicit cancellation doctrine. [2]
+
+
 - Exact cleanup/finalization boundary. [3]
+
+
 - The finalizer paragraph names the folder master's row and refuses a sub-task naming none whose folder `task.json` is not a master (MIK-R38). [4]
+
 - Public implementation facade preserves the same contract-addressed API. [5]
 
+
 - The preview asks the mandatory gate on converted memory. [6]
+
+- Bounded no-remains exception: with no locator, folder or branches, cleanup or abandon finishes directly, recording terminal state and reason in the surviving contract.
 
 ### Cross-Repo References
 

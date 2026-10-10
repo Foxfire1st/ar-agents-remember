@@ -1,0 +1,22 @@
+{
+  "path": "mcp/tests/test_enclosure_adoption_in_place.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "In-place record adoption with hashed dry-run listing is pinned.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "adcace62d3b92318b9b32a6ce6bc81deaf93f02c",
+            "content": "sha256:d67466b12706cb018e559170ca7f15c94a89a9cfea3a9975155ff25f17d33f5c",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

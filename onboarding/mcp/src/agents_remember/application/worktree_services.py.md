@@ -52,7 +52,9 @@ The rail-definition adapter is implemented; the complete R07/R08 production exec
 
 The default application bundle installs `PreparedCloseoutContinuation` and `PreparedMemoryCertificationAdapter` explicitly. This supplies production memory/finalization composition through the existing service ports; binding the adapters neither bypasses certification nor establishes a successful execution.
 
+
 - The current `build_default_worktree_services` boundary implements the preparation contract above. [1]
+
 
 ## Leaf agent archive binding (MIK-R76)
 
@@ -76,11 +78,27 @@ The cited source establishes the current contracts and boundaries described abov
 
 - Provider translation/delegation [2]
 - Memory-rail and memory-quality adapters [3]
+
 - The citation guard delegates terminal namespace protection. [4]
+
+
 - The default bundle composes the declared worktree services, including the knowledge validator with its base converter and the knowledge crossing. [5]
+
+
+- The default bundle composes the declared worktree services, including the knowledge validator with its base converter and the knowledge crossing. [11]
+
+
 - The default bundle's MIK-R09 binding: the mandatory gate's port adapter. [6]
+
+
 - The default bundle's MIK-R08 binding: the worklist recompute port adapter. [7]
+
+
+- The default bundle's MIK-R08 binding: the worklist recompute port adapter. [12]
+
+
 - The default bundle's MIK-R25 binding: the review-artifact archive hook. [8]
+
 - The canonical binding owner installs the explicit service bundle. [9]
 
 - The closeout's quality phases get the converted-base port. [10]

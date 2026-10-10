@@ -1,18 +1,53 @@
 {
   "path": "mcp/src/agents_remember/application/review_artifact_cleanup.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "a229e8c61b82f5545f7d8e6c3200e0e0f8fec939",
+        "content": "sha256:fc032a24c376fe32a800a8666f2fb82a49601fee4941d09b1859155380a65074",
+        "locator": {
+          "kind": "symbol",
+          "name": "cleanup_review_artifacts"
+        }
+      },
+      "id": "RLZ-8YTPVD",
+      "invariant": "INV-YQPQ1M",
+      "origin": {
+        "handoffEntry": "L82-CODE-R1-02",
+        "leaf": "260928-MIK-L82"
+      },
+      "rationale": "Current single owner of this sealed acceptance obligation.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "a229e8c61b82f5545f7d8e6c3200e0e0f8fec939",
+        "content": "sha256:fc032a24c376fe32a800a8666f2fb82a49601fee4941d09b1859155380a65074",
+        "locator": {
+          "kind": "symbol",
+          "name": "cleanup_review_artifacts"
+        }
+      },
+      "id": "RLZ-XXSFQ4",
+      "invariant": "INV-25AJSA",
+      "origin": {
+        "handoffEntry": "L82-MEM-M1-S-02",
+        "leaf": "260928-MIK-L82"
+      },
+      "rationale": "Current single owner of this sealed acceptance obligation.",
+      "role": "unclassified"
+    }
+  ],
   "references": {
     "1": {
-      "note": "The module's statement of every target's identity source, the trust line, the confinement and the accepted window.\n\nAnchor: \"Where every target's identity comes from\"",
+      "note": "The module's statement of every target's identity source, the trust line, the confinement and the accepted window.",
       "targets": [
         {
           "anchor": {
-            "blob": "1129a2652b027f80486312b85456316b0b5352bd",
-            "content": "sha256:65b3cdb9f8d5ecc4e630765490d24cf32505c709dec9762a31420d44b271e929",
+            "blob": "a229e8c61b82f5545f7d8e6c3200e0e0f8fec939",
+            "content": "sha256:c2c31542704aa477012278c9591ce9008bbfabeeac5d6d18263eb62871de2b25",
             "locator": {
-              "end": 41,
-              "kind": "line_range",
-              "start": 25
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -24,7 +59,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1129a2652b027f80486312b85456316b0b5352bd",
+            "blob": "a229e8c61b82f5545f7d8e6c3200e0e0f8fec939",
             "content": "sha256:fa4183f5b29506c78abef9259953e8e42280d289b330333019b073e2d911bbfa",
             "locator": {
               "kind": "symbol",
@@ -35,7 +70,7 @@
         },
         {
           "anchor": {
-            "blob": "1129a2652b027f80486312b85456316b0b5352bd",
+            "blob": "a229e8c61b82f5545f7d8e6c3200e0e0f8fec939",
             "content": "sha256:eb92b6c363d9fd8af3627e0f5ad119b59437f8fb7364fb445c56ef8788a8d525",
             "locator": {
               "kind": "symbol",
@@ -51,7 +86,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1129a2652b027f80486312b85456316b0b5352bd",
+            "blob": "a229e8c61b82f5545f7d8e6c3200e0e0f8fec939",
             "content": "sha256:c3360d3cd407e96f28fc561fb57139ee9431f89ab0d5b605e375340b45632183",
             "locator": {
               "kind": "symbol",
@@ -62,7 +97,7 @@
         },
         {
           "anchor": {
-            "blob": "1129a2652b027f80486312b85456316b0b5352bd",
+            "blob": "a229e8c61b82f5545f7d8e6c3200e0e0f8fec939",
             "content": "sha256:5c98946d84b57374d9cc629a5b79acd6db9dadf255b2fa80dcec3006cd35f0d7",
             "locator": {
               "kind": "symbol",
@@ -78,41 +113,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1129a2652b027f80486312b85456316b0b5352bd",
-            "content": "sha256:a72c26b962e3bac1bdebb115c1752e70ab15e47a6d176963c87d7fdfb5fa1759",
-            "locator": {
-              "kind": "symbol",
-              "name": "_delete_dataset_copies"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "1129a2652b027f80486312b85456316b0b5352bd",
-            "content": "sha256:a425baa23d2c1a7fe55d6f2f6e8b191a2d33f621043920be413ae0476660ecfd",
-            "locator": {
-              "kind": "symbol",
-              "name": "_scan_root"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "1129a2652b027f80486312b85456316b0b5352bd",
-            "content": "sha256:a772b18cf1e8599e6f5ebccc5a3243dbf7154a464f6abb6f2f3735e97f454960",
-            "locator": {
-              "kind": "symbol",
-              "name": "_is_leftover_copy"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "867542540d489a6bba14026b935212fc1374f0b3",
-            "content": "sha256:6af8d2dc36de8e58b80f5cf993ed534c8568d1a74b26f14274f4205617000435",
+            "blob": "a229e8c61b82f5545f7d8e6c3200e0e0f8fec939",
+            "content": "sha256:9660d6a588f6d73c29e9523ab9dd903a17c679f3a43edad38c60960f23e46709",
             "locator": {
               "kind": "symbol",
               "name": "_is_knowledge_dataset"
@@ -144,7 +146,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c9c8caf9e7786b4d136f0a39cda0524e65de698c",
+            "blob": "3b7acc24cc4b886c15eeffb6c911cc4ab2629068",
             "content": "sha256:3d1354f049755323c27c0138905c788eb69753b831a5e70f1f4a4a727b24d460",
             "locator": {
               "kind": "symbol",
@@ -156,7 +158,7 @@
         },
         {
           "anchor": {
-            "blob": "c9c8caf9e7786b4d136f0a39cda0524e65de698c",
+            "blob": "3b7acc24cc4b886c15eeffb6c911cc4ab2629068",
             "content": "sha256:f3de9985dc8eefa2c59de0ddf3c5843fcf261f8db2458bc4a6d6e693e49332e4",
             "locator": {
               "kind": "symbol",
@@ -169,16 +171,14 @@
       ]
     },
     "15": {
-      "note": "The ledger reports earlier deletions, interrupted planned deletions now absent, and previously failed artifacts now absent.\n\nAnchor: `ReceiptLedger.already_absent`",
+      "note": "The ledger reports earlier deletions, interrupted planned deletions now absent, and previously failed artifacts now absent.",
       "targets": [
         {
           "anchor": {
-            "blob": "30616fa01a98656a0fdbb084dc2f1f1ba7cf6b38",
-            "content": "sha256:ef149fe71386e1b2ec2cfe87ffefdb4e983c1c16cd221a489249cac61ad93332",
+            "blob": "60455ec5f2544afad8a1cc9f43e1b38bce7e613f",
+            "content": "sha256:b172fc179762a6681abf37b35940c150eaef9852587f9242ecab2df2ca49b651",
             "locator": {
-              "end": 124,
-              "kind": "line_range",
-              "start": 98
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/review_artifact_receipts.py"
           },
@@ -187,16 +187,14 @@
       ]
     },
     "16": {
-      "note": "The first no-op records a receipt; an unchanged repeat with no new work or outcome writes none.\n\nAnchor: `ReceiptLedger._nothing_to_record`",
+      "note": "The first no-op records a receipt; an unchanged repeat with no new work or outcome writes none.",
       "targets": [
         {
           "anchor": {
-            "blob": "30616fa01a98656a0fdbb084dc2f1f1ba7cf6b38",
-            "content": "sha256:649d2ecf30de30521abd3c48972f1f4142a10575d4302fc9732faf1d5ef48f67",
+            "blob": "60455ec5f2544afad8a1cc9f43e1b38bce7e613f",
+            "content": "sha256:b172fc179762a6681abf37b35940c150eaef9852587f9242ecab2df2ca49b651",
             "locator": {
-              "end": 213,
-              "kind": "line_range",
-              "start": 205
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/review_artifact_receipts.py"
           },
@@ -205,16 +203,14 @@
       ]
     },
     "17": {
-      "note": "The previous receipt is preserved under its own attempt number, reusing that path after interruption.\n\nAnchor: `ReceiptLedger._set_aside`",
+      "note": "The previous receipt is preserved under its own attempt number, reusing that path after interruption.",
       "targets": [
         {
           "anchor": {
-            "blob": "30616fa01a98656a0fdbb084dc2f1f1ba7cf6b38",
-            "content": "sha256:0b73a688661b247baaa9259a1763f2eac158c70ab92c816d5350632ce0f304dc",
+            "blob": "60455ec5f2544afad8a1cc9f43e1b38bce7e613f",
+            "content": "sha256:b172fc179762a6681abf37b35940c150eaef9852587f9242ecab2df2ca49b651",
             "locator": {
-              "end": 228,
-              "kind": "line_range",
-              "start": 214
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/review_artifact_receipts.py"
           },
@@ -261,47 +257,25 @@
       "targets": [
         {
           "anchor": {
-            "blob": "30616fa01a98656a0fdbb084dc2f1f1ba7cf6b38",
-            "content": "sha256:42d35b5c46a15f15cd6a3e464959e7d4f149e1741f01687f96fdc458de9a5632",
-            "locator": {
-              "kind": "symbol",
-              "name": "CLEANUP_REPORT_NAME"
-            },
-            "path": "mcp/src/agents_remember/application/review_artifact_receipts.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "867542540d489a6bba14026b935212fc1374f0b3",
+            "blob": "87f667053e5114433a51bfe17959d0bc8f0bd714",
             "content": "sha256:2da45cc24f011454caf1f59d92909c00a4c311d206113c425b7b4bfc489448cf",
             "locator": {
               "kind": "symbol",
               "name": "_KNOWLEDGE_TABLES"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "1129a2652b027f80486312b85456316b0b5352bd",
-            "content": "sha256:2ded9578a116d3072711dbde511b58e882d6e3891f009d6f417a1c15bea2b21e",
-            "locator": {
-              "kind": "symbol",
-              "name": "_REASON"
-            }
+            },
+            "path": "mcp/src/agents_remember/application/dataset_copy_survey.py"
           },
           "kind": "code"
         }
       ]
     },
     "3": {
-      "note": "The report, and holding a generation's pin and snapshots with the reason.\n\nAnchor: `_Report.hold`",
+      "note": "The report, and holding a generation's pin and snapshots with the reason.",
       "targets": [
         {
           "anchor": {
-            "blob": "1129a2652b027f80486312b85456316b0b5352bd",
-            "content": "sha256:bbd16dafd3f094e9c4d3ab1c3e5230ff70053fb15eafbb559f822ddb1efba870",
+            "blob": "a229e8c61b82f5545f7d8e6c3200e0e0f8fec939",
+            "content": "sha256:63babcdfbaf10cc04be5675828a1628509a210ad19970e0ccef5df413662a155",
             "locator": {
               "kind": "symbol",
               "name": "_Report"
@@ -316,7 +290,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1129a2652b027f80486312b85456316b0b5352bd",
+            "blob": "a229e8c61b82f5545f7d8e6c3200e0e0f8fec939",
             "content": "sha256:5813a24b3fbc8e54016b61fcb910793faf5a1ddb44978272d44ae198a8f29c19",
             "locator": {
               "kind": "symbol",
@@ -332,19 +306,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1129a2652b027f80486312b85456316b0b5352bd",
-            "content": "sha256:fc032a24c376fe32a800a8666f2fb82a49601fee4941d09b1859155380a65074",
-            "locator": {
-              "kind": "symbol",
-              "name": "cleanup_review_artifacts"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "1129a2652b027f80486312b85456316b0b5352bd",
-            "content": "sha256:a8c263fb7223cefc4c6e3ed7ab75a28f4577ca94f7df3393f2ac814390bf83d1",
+            "blob": "a229e8c61b82f5545f7d8e6c3200e0e0f8fec939",
+            "content": "sha256:cbf1f80de9f9a93f678e120e8f38a6f72ac429a279ed5cd5101caddea87309e5",
             "locator": {
               "kind": "symbol",
               "name": "_sweep"
@@ -355,16 +318,14 @@
       ]
     },
     "6": {
-      "note": "Receipt writes refuse paths outside the task.\n\nAnchor: `ReceiptLedger.begin`",
+      "note": "Receipt writes refuse paths outside the task.",
       "targets": [
         {
           "anchor": {
-            "blob": "30616fa01a98656a0fdbb084dc2f1f1ba7cf6b38",
-            "content": "sha256:d744ea837585652c686c6ebfb6beec345f7c4f8f2a458bfa976948b64035c2ab",
+            "blob": "60455ec5f2544afad8a1cc9f43e1b38bce7e613f",
+            "content": "sha256:b172fc179762a6681abf37b35940c150eaef9852587f9242ecab2df2ca49b651",
             "locator": {
-              "end": 198,
-              "kind": "line_range",
-              "start": 161
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/review_artifact_receipts.py"
           },
@@ -377,7 +338,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1129a2652b027f80486312b85456316b0b5352bd",
+            "blob": "a229e8c61b82f5545f7d8e6c3200e0e0f8fec939",
             "content": "sha256:ae51143fee96962cbcb3a892ba1150757478318b616aa7e4370aa9d5fee623e5",
             "locator": {
               "kind": "symbol",
@@ -388,7 +349,7 @@
         },
         {
           "anchor": {
-            "blob": "1129a2652b027f80486312b85456316b0b5352bd",
+            "blob": "a229e8c61b82f5545f7d8e6c3200e0e0f8fec939",
             "content": "sha256:bdb70365235fb65adad56f55afdbeaedb428e01f1d91999347edde51013c57f2",
             "locator": {
               "kind": "symbol",
@@ -404,7 +365,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1129a2652b027f80486312b85456316b0b5352bd",
+            "blob": "a229e8c61b82f5545f7d8e6c3200e0e0f8fec939",
             "content": "sha256:35caace53a1105b4f9ec653a26de6c40d3198ceac8ab0eba59af90ea18eab0fd",
             "locator": {
               "kind": "symbol",
@@ -415,7 +376,7 @@
         },
         {
           "anchor": {
-            "blob": "1129a2652b027f80486312b85456316b0b5352bd",
+            "blob": "a229e8c61b82f5545f7d8e6c3200e0e0f8fec939",
             "content": "sha256:158df8e5a73aa3606ee1a32225a2a95c30d4299ce7b52fbc47a5b5b7e6394b52",
             "locator": {
               "kind": "symbol",
@@ -431,7 +392,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1129a2652b027f80486312b85456316b0b5352bd",
+            "blob": "a229e8c61b82f5545f7d8e6c3200e0e0f8fec939",
             "content": "sha256:3e0adf52880e9527e5cd4a6626a096d4b3e8f8ada57549dfd2f4be225c96fbea",
             "locator": {
               "kind": "symbol",
@@ -442,7 +403,7 @@
         },
         {
           "anchor": {
-            "blob": "1129a2652b027f80486312b85456316b0b5352bd",
+            "blob": "a229e8c61b82f5545f7d8e6c3200e0e0f8fec939",
             "content": "sha256:571d113a6ecdb17f1e480dbb8096427f0fb504f36d11a83944f714bde3590978",
             "locator": {
               "kind": "symbol",

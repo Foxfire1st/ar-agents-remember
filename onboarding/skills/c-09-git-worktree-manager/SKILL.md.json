@@ -1,13 +1,52 @@
 {
   "path": "skills/c-09-git-worktree-manager/SKILL.md",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "0cfc6a7e2e8707964b0737344e7b02baf23e1634",
+        "content": "sha256:7d8d0418c163fc59ff2fcd6399c1d99cd6d6c1440e2761c31cbd1578985e9604",
+        "locator": {
+          "end": 497,
+          "kind": "line_range",
+          "start": 482
+        }
+      },
+      "id": "RLZ-QGSRZ5",
+      "invariant": "INV-4ST2K1",
+      "origin": {
+        "handoffEntry": "L82-MEM-M1-S-08",
+        "leaf": "260928-MIK-L82"
+      },
+      "rationale": "The repaired instruction extent names this operational contract.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "0cfc6a7e2e8707964b0737344e7b02baf23e1634",
+        "content": "sha256:7d8d0418c163fc59ff2fcd6399c1d99cd6d6c1440e2761c31cbd1578985e9604",
+        "locator": {
+          "end": 497,
+          "kind": "line_range",
+          "start": 482
+        }
+      },
+      "id": "RLZ-YSSZK6",
+      "invariant": "INV-NY15B8",
+      "origin": {
+        "handoffEntry": "L82-CODE-R1-08",
+        "leaf": "260928-MIK-L82"
+      },
+      "rationale": "The repaired instruction extent names this operational contract.",
+      "role": "unclassified"
+    }
+  ],
   "references": {
     "1": {
       "note": "Canonical contract-scoped admission and task/queue separation.\n\nAnchor: \"Atomic-series implementation admission is a separate, contract-scoped authority.\"",
       "targets": [
         {
           "anchor": {
-            "blob": "eb83d20631949cf4497ed58db6faa6b2205119f6",
+            "blob": "0cfc6a7e2e8707964b0737344e7b02baf23e1634",
             "content": "sha256:07d0a1f9b62f3472228b098386bf593631716ca922f77c4d558bf0595d49221c",
             "locator": {
               "end": 249,
@@ -20,16 +59,14 @@
       ]
     },
     "2": {
-      "note": "Resumable retained-conflict transaction and explicit cancellation doctrine.\n\nAnchor: `## Mid-Task Sync`",
+      "note": "Resumable retained-conflict transaction and explicit cancellation doctrine.",
       "targets": [
         {
           "anchor": {
-            "blob": "eb83d20631949cf4497ed58db6faa6b2205119f6",
-            "content": "sha256:6bb20940da2a28d941b98dd945aff8c59ea93b419d4f4824dc4f5d7c3003baca",
+            "blob": "0cfc6a7e2e8707964b0737344e7b02baf23e1634",
+            "content": "sha256:c253bd3e4e46fa28b91d2abbf126d738830871d0638d26980a7648e3efd2a111",
             "locator": {
-              "end": 304,
-              "kind": "line_range",
-              "start": 258
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -37,16 +74,14 @@
       ]
     },
     "3": {
-      "note": "Exact cleanup/finalization boundary.\n\nAnchor: `## Lifecycle Finalization And Cleanup`",
+      "note": "Exact cleanup/finalization boundary.",
       "targets": [
         {
           "anchor": {
-            "blob": "eb83d20631949cf4497ed58db6faa6b2205119f6",
-            "content": "sha256:5247148b0def207f01376a572644afee92f5487cd8d4f909dce98b08973b1e00",
+            "blob": "0cfc6a7e2e8707964b0737344e7b02baf23e1634",
+            "content": "sha256:c253bd3e4e46fa28b91d2abbf126d738830871d0638d26980a7648e3efd2a111",
             "locator": {
-              "end": 518,
-              "kind": "line_range",
-              "start": 438
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -54,16 +89,14 @@
       ]
     },
     "4": {
-      "note": "The finalizer paragraph names the folder master's row and refuses a sub-task naming none whose folder `task.json` is not a master (MIK-R38).\n\nAnchor: \"master lists it, the finalizer always derives that\"; \"assertions are omitted. A sub-task naming none whose folder\"",
+      "note": "The finalizer paragraph names the folder master's row and refuses a sub-task naming none whose folder `task.json` is not a master (MIK-R38).",
       "targets": [
         {
           "anchor": {
-            "blob": "eb83d20631949cf4497ed58db6faa6b2205119f6",
-            "content": "sha256:c6e72960e0a1a170399bd784eeadc15a7c60ad7af6b4c7df51d972a4645d89dc",
+            "blob": "0cfc6a7e2e8707964b0737344e7b02baf23e1634",
+            "content": "sha256:c253bd3e4e46fa28b91d2abbf126d738830871d0638d26980a7648e3efd2a111",
             "locator": {
-              "end": 505,
-              "kind": "line_range",
-              "start": 498
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -92,12 +125,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "eb83d20631949cf4497ed58db6faa6b2205119f6",
-            "content": "sha256:668421fb6b05d84e5564e63af3d8d7d8d21b6895d299ce3418caf564b40c069b",
+            "blob": "0cfc6a7e2e8707964b0737344e7b02baf23e1634",
+            "content": "sha256:c253bd3e4e46fa28b91d2abbf126d738830871d0638d26980a7648e3efd2a111",
             "locator": {
-              "end": 346,
-              "kind": "line_range",
-              "start": 336
+              "kind": "file"
             }
           },
           "kind": "code"

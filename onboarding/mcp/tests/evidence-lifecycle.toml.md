@@ -160,6 +160,10 @@ files are both gone removed without file restores.
 - The loader that validates the file and refuses a catalog that is not canonical. [13]
 - The Node lockfile fixture's row: an exact consumer scope and the start of its consumer list. [94]
 
+## Current catalog registration
+
+The catalog holds 13 contract rows with 85 governed artifacts: the admitted lifecycle replacement (landed upstream of this leaf) replaced the earlier 32-row catalog with 13 rows; `tool_log_witness` predates this leaf; the upstream river-scale measurement (`l114_e4_river_scale.py`) joined as the 85th artifact; this leaf's working tree adds its rule-test modules to the consumer lists and removes no former lane or artifact. Other artifact metadata is unchanged.
+
 ## 260928-MIK-L96 The host test modules
 
 `evidence-lifecycle.toml` gained revised durable-artifact consumer sets/paths for the new host test modules (`test_paseo_install_contract`, `test_paseo_install_no_stop`, `test_paseo_node`, `test_paseo_start`, `test_dashboard_host`, `test_host_release_contract`, `test_paseo_host_environment`) and for the moved host modules. This file holds artifact consumers plus the executable `replacement_contract`/`consumers` records; it declares no lane tables and no knowledge-invariant identities. Lane membership for the host modules lives in `test-evidence-lanes.toml`, and knowledge proof identities live in the sidecar proof plane; a catalog declaration still never shows evidence ran.

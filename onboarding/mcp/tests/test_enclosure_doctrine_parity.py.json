@@ -1,0 +1,262 @@
+{
+  "path": "mcp/tests/test_enclosure_doctrine_parity.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "6d1f0d8cc20980d85104833c2923b58630e7c3d6",
+        "content": "sha256:4f10c286a083d94576644eba83751863d7ea957ab7f7ae0930baf758894d9707",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_c12_no_retire_master_exclusivity"
+        }
+      },
+      "facet": "c-12 no longer claims retire_master exclusivity.",
+      "id": "PRF-0ZRQ0K",
+      "invariant": "INV-NY15B8",
+      "origin": {
+        "handoffEntry": "L82-CODE-R1-08",
+        "leaf": "260928-MIK-L82"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "6d1f0d8cc20980d85104833c2923b58630e7c3d6",
+        "content": "sha256:1955d3ff76fbb91166ff84cad463315c6a9865bd8befe09dfef1312c2ce52291",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_c09_keeps_adoption_and_archive_tail"
+        }
+      },
+      "facet": "c-09 keeps adoption and archive tail wording.",
+      "id": "PRF-25QCFX",
+      "invariant": "INV-4ST2K1",
+      "origin": {
+        "handoffEntry": "L82-MEM-M1-S-08",
+        "leaf": "260928-MIK-L82"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "6d1f0d8cc20980d85104833c2923b58630e7c3d6",
+        "content": "sha256:e6998b59d11a52e6347319eeeb14296feda2b9627e23e668377c1df95aee72fb",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_documented_next_actions_are_registered"
+        }
+      },
+      "facet": "Every documented next action names a registered tool.",
+      "id": "PRF-4VYJ1V",
+      "invariant": "INV-4ST2K1",
+      "origin": {
+        "handoffEntry": "L82-MEM-M1-S-08",
+        "leaf": "260928-MIK-L82"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "6d1f0d8cc20980d85104833c2923b58630e7c3d6",
+        "content": "sha256:49ec53d4b526b6117887cab7e45333e7c1cdf89c50a0d0c71bcd8cf557960eaa",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_mcp_reference_rows_name_exception"
+        }
+      },
+      "facet": "The MCP reference rows name the exception.",
+      "id": "PRF-9X8D48",
+      "invariant": "INV-NY15B8",
+      "origin": {
+        "handoffEntry": "L82-CODE-R1-08",
+        "leaf": "260928-MIK-L82"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "6d1f0d8cc20980d85104833c2923b58630e7c3d6",
+        "content": "sha256:4f10c286a083d94576644eba83751863d7ea957ab7f7ae0930baf758894d9707",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_c12_no_retire_master_exclusivity"
+        }
+      },
+      "facet": "c-12 no longer claims retire_master exclusivity.",
+      "id": "PRF-CCK1TF",
+      "invariant": "INV-4ST2K1",
+      "origin": {
+        "handoffEntry": "L82-MEM-M1-S-08",
+        "leaf": "260928-MIK-L82"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "6d1f0d8cc20980d85104833c2923b58630e7c3d6",
+        "content": "sha256:e6998b59d11a52e6347319eeeb14296feda2b9627e23e668377c1df95aee72fb",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_documented_next_actions_are_registered"
+        }
+      },
+      "facet": "Every documented next action names a registered tool.",
+      "id": "PRF-EC4642",
+      "invariant": "INV-NY15B8",
+      "origin": {
+        "handoffEntry": "L82-CODE-R1-08",
+        "leaf": "260928-MIK-L82"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "6d1f0d8cc20980d85104833c2923b58630e7c3d6",
+        "content": "sha256:fea791e99814dd24ba948936181f440e3cc3b7e9e8612b6612781902db2b0fba",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_c12_keeps_retirement_finalization_authority"
+        }
+      },
+      "facet": "c-12 keeps retirement and finalization authority wording.",
+      "id": "PRF-J1NEJE",
+      "invariant": "INV-4ST2K1",
+      "origin": {
+        "handoffEntry": "L82-MEM-M1-S-08",
+        "leaf": "260928-MIK-L82"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "6d1f0d8cc20980d85104833c2923b58630e7c3d6",
+        "content": "sha256:2e668d9f13e9f01422ebf11a5d7693d63ce0d15d111b2b27cb4d1d7551732d5a",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_c09_states_bounded_no_remains_exception"
+        }
+      },
+      "facet": "c-09 states the bounded no-remains exception.",
+      "id": "PRF-MYAABV",
+      "invariant": "INV-4ST2K1",
+      "origin": {
+        "handoffEntry": "L82-MEM-M1-S-08",
+        "leaf": "260928-MIK-L82"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "6d1f0d8cc20980d85104833c2923b58630e7c3d6",
+        "content": "sha256:2e668d9f13e9f01422ebf11a5d7693d63ce0d15d111b2b27cb4d1d7551732d5a",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_c09_states_bounded_no_remains_exception"
+        }
+      },
+      "facet": "c-09 states the bounded no-remains exception.",
+      "id": "PRF-MYMAGC",
+      "invariant": "INV-NY15B8",
+      "origin": {
+        "handoffEntry": "L82-CODE-R1-08",
+        "leaf": "260928-MIK-L82"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "6d1f0d8cc20980d85104833c2923b58630e7c3d6",
+        "content": "sha256:49ec53d4b526b6117887cab7e45333e7c1cdf89c50a0d0c71bcd8cf557960eaa",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_mcp_reference_rows_name_exception"
+        }
+      },
+      "facet": "The MCP reference rows name the exception.",
+      "id": "PRF-QJCN5H",
+      "invariant": "INV-4ST2K1",
+      "origin": {
+        "handoffEntry": "L82-MEM-M1-S-08",
+        "leaf": "260928-MIK-L82"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "6d1f0d8cc20980d85104833c2923b58630e7c3d6",
+        "content": "sha256:fea791e99814dd24ba948936181f440e3cc3b7e9e8612b6612781902db2b0fba",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_c12_keeps_retirement_finalization_authority"
+        }
+      },
+      "facet": "c-12 keeps retirement and finalization authority wording.",
+      "id": "PRF-QP5QSC",
+      "invariant": "INV-NY15B8",
+      "origin": {
+        "handoffEntry": "L82-CODE-R1-08",
+        "leaf": "260928-MIK-L82"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "6d1f0d8cc20980d85104833c2923b58630e7c3d6",
+        "content": "sha256:3942214304cb49d6d053a089e6aa61230828bd29e18105197b82778d1b011c2a",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_generated_skill_copies_match_canonical"
+        }
+      },
+      "facet": "Every generated skill copy matches the canonical text.",
+      "id": "PRF-SQGZGX",
+      "invariant": "INV-4ST2K1",
+      "origin": {
+        "handoffEntry": "L82-MEM-M1-S-08",
+        "leaf": "260928-MIK-L82"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "6d1f0d8cc20980d85104833c2923b58630e7c3d6",
+        "content": "sha256:3942214304cb49d6d053a089e6aa61230828bd29e18105197b82778d1b011c2a",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_generated_skill_copies_match_canonical"
+        }
+      },
+      "facet": "Every generated skill copy matches the canonical text.",
+      "id": "PRF-V4TTDV",
+      "invariant": "INV-NY15B8",
+      "origin": {
+        "handoffEntry": "L82-CODE-R1-08",
+        "leaf": "260928-MIK-L82"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "6d1f0d8cc20980d85104833c2923b58630e7c3d6",
+        "content": "sha256:1955d3ff76fbb91166ff84cad463315c6a9865bd8befe09dfef1312c2ce52291",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_c09_keeps_adoption_and_archive_tail"
+        }
+      },
+      "facet": "c-09 keeps adoption and archive tail wording.",
+      "id": "PRF-XXNV8J",
+      "invariant": "INV-NY15B8",
+      "origin": {
+        "handoffEntry": "L82-CODE-R1-08",
+        "leaf": "260928-MIK-L82"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Doctrine parity across skill copies and the MCP reference is pinned.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6d1f0d8cc20980d85104833c2923b58630e7c3d6",
+            "content": "sha256:d141b6bc1efd40f1e4bc7217ea4f0193fbcaa5a516ee95f8f765f51d4fd6a71a",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

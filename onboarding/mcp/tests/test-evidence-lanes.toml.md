@@ -39,6 +39,10 @@ A new test module is added to the list of its lane. `mcp/tests/test_reviewer_wor
 `mcp/tests/test_reviewer_worklist_reads.py` are in the `integration` list: they start real child
 processes and Git repositories, and a default run with `not integration` skips them.
 
+The L82 rule modules join their lanes: the sprint-archive, copies-rule, cache-rule, adoption,
+no-remains, kept-line and refusal-guard test modules are `unit-regression` rows, and each module
+appears in exactly one lane.
+
 ### Todos
 
 No additional work is asserted by this card.

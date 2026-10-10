@@ -24,7 +24,7 @@ because the operation vocabulary is not in the types: `create` | `replace` | `se
 `set_step` | `add_step` | `remove_step` | `skip_step` | `read_steps` | `set_subtask` |
 `remove_subtask` | `set_section` | `append_decision` |
 `record_route_review` | `author_execution_graph` | `attach_master` | `detach_master` | `retire_master` |
-`linkage_report` | `set_field` |
+`archive_sprint` | `linkage_report` | `set_field` |
 `get` (`migrate_execution_topology` was removed in 260815-DAG-L13). The JSON document is the source of truth; `task.md` / `<slug>.md` is a generated render that
 is never parsed back. Everything mutates except `operation='get'`, and `dry_run=true` builds and
 validates and returns `rendered`/`diff`/`wouldLose` **without** writing — the preview before
@@ -60,7 +60,7 @@ removes the typed row, membership slug, and graph node, refusing while any edge 
 and never deleting files; `linkage_report` surfaces seat-doc rows, slug-only membership,
 row/membership mismatches, and uncommanded masters as facts, and `get` on a sprint carries the
 same `linkageFacts`. The description also lists `retire_master` and states its contract in plain words:
-it is the only route that archives a master, with or without a sprint, and finalizing a master never archives
+it is the route that archives an individual master, with or without a sprint (a whole sprint with its moving masters goes by `archive_sprint`), and finalizing a master never archives
 it. `fields={masterRef, reason, removeEdges?}`. Called on a sprint it removes the master's membership, graph
 nodes and touching edges, keeps a plain abandoned row with a typed proof (reason, time, recovery data), then
 archives the folder and runs the review-artifact archive hook; outgoing edges to unfinished successors need
@@ -121,7 +121,9 @@ recreates everything.
 - The finalize builder. [3]
 - `FinalizeTaskDocs`. [4]
 
-- The `task_doc` description names `retire_master` as the only route that archives a master and states its two forms, its refusals and its retry rule. [5]
+
+- The `task_doc` description names `retire_master` as the individual-master archive route and states its two forms, its refusals and its retry rule. [5]
+
 
 ## Historical 260815-DAG-L3 Queue Registration (Superseded)
 

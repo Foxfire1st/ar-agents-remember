@@ -44,6 +44,8 @@ support module), so the catalog is unchanged; it runs in the `unit-regression` l
   `review-artifact-cleanup.attempt-1.json`, writes attempt 2 under the canonical name, and the canonical name existed
   at the moment of the atomic replace.
 
+- **Cache class through receipts:** the `arCaches` cases prove an interrupted cache deletion replays as attributed absence, a cache-only dry run shows its remainder and preview, old classes and caches share one receipt recovery, and nothing is deleted when the cache receipt cannot be written.
+
 ### Conventions
 
 - `_owners` patches `read_manifest` and the two reclamation owners where a case plants a manifest and observes

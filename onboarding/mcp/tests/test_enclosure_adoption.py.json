@@ -1,0 +1,22 @@
+{
+  "path": "mcp/tests/test_enclosure_adoption.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Adoption dry run, real run and repeated run are pinned.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f3c0ef303bc63a8b914f9d3807ebc2ede7604248",
+            "content": "sha256:830f1542909523cd66f2ac3066644baae1328fb04d626557cc814dcfc04ce678",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

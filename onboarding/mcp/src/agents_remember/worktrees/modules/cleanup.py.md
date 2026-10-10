@@ -98,7 +98,8 @@ finalized/cleaned by their own lifecycle edge. Helpers:
   `empty` / `remote-unreachable` / `already-absent`; `would_delete` on dry-run.
 
 **Both remote calls are bounded (260731-EFA-L3).** They are the only two network-talking
-git commands in this module, and they run inside an MCP tool call the client cannot
+git commands on the terminal path, owned since the extraction by `terminal_branch_retirement.py`,
+and they run inside an MCP tool call the client cannot
 cancel; the module-local runner they used to go through set no timeout at all, so an
 unreachable or wedged remote held the tool call open indefinitely. `_remote_git(repo,
 args)` now wraps both:
@@ -112,7 +113,7 @@ def _remote_git(repo: Path, args: list[str]) -> subprocess.CompletedProcess[str]
 ```
 
 `GIT_REMOTE_TIMEOUT_SECONDS` (120s, from `kernel.git_command`) is the remote band —
-deliberately tighter than the 300s local default every other `run_git` call in this file
+deliberately tighter than the 300s local default the remaining `run_git` call in this file
 takes, because bytes either move or the connection is wedged. A stall returns `None`,
 and both call sites fold that into the reason the caller already handles:
 `probe is None or probe.returncode != 0` → `remote-unreachable` in
@@ -120,10 +121,13 @@ and both call sites fold that into the reason the caller already handles:
 `_push_branch_deletion`. So a hung remote reads exactly like an unreachable one and
 never escapes as an exception; the payload shape and every reason string are unchanged.
 
-Everything else in this module (`worktree remove`, `branch -d`/`-D`,
-`symbolic-ref`, `branch --show-current`, `checkout`) calls the shared
+The remaining local call in this module is `worktree remove`, which calls the shared
 `kernel.git_command.run_git` with no options object, i.e. the 300-second local class, and
-with the `GIT_DIR`-family environment scrub the module-local runner never had.
+with the `GIT_DIR`-family environment scrub the module-local runner never had. The
+`branch -d`/`-D`, `symbolic-ref`, `branch --show-current` and `checkout` shapes the module
+once issued locally no longer run here: `branch --show-current` now runs in
+`terminal_branch_retirement.py`, and the remote pair above runs through the extracted
+`_remote_git` owner.
 
 **Task 13 correction.** Work-branch cleanup no longer relies on Git's ambient
 merge target (`HEAD` / upstream) and no longer force-drops task work branches
@@ -195,18 +199,33 @@ No external Domain Documentation source is configured for this memory repo.
 ### Repo-Internal References
 
 - The authorized memory target clears its disposable cache before ordinary Git removal. [1]
+
 - Successful cleanup and exact terminal replay pass through the terminal activation-release bridge. [2]
+
 - The bridge releases only an exact selected series and reports durable release failure. [3]
+
 - Defines the `WorktreeArgs` dataclass that types the `cleanup_result` input. [4]
+
 - `cleanup_result` hard-guards on `carryover_done` (imported from here) and reuses `status_payload`. [5]
 - Series reports-tree preservation is decided by the legacy child-enclosure guard imported from terminal validation. [6]
 - Terminal mutation capability binds every removable worktree and local/remote branch to the validated contract before cleanup delegates to the lowest writers. [7]
 - Provider teardown is delegated to this module. [8]
+
 - `delete_branch_force` and `remove_registered_worktree(force=...)` are reused by abandon. [9]
+
 - Shared drift snapshot removal helper used by cleanup. [10]
+
 - `_remote_git` runs both remote-talking calls with `run_git` plus `GIT_REMOTE_TIMEOUT_SECONDS`, passed as `GitRunnerOptions(timeout=...)`. [11]
+
+
 - `CleanupStatus`, `ContractCells` and `amend_contract` — the vocabulary the `completed` stamp belongs to and the typed write it takes. [12]
+
+
+- `CleanupStatus`, `ContractCells` and `amend_contract` — the vocabulary the `completed` stamp belongs to and the typed write it takes. [17]
+
+
 - The bundle the cleanup outputs are validated through, and the builder that refuses a blockage with no reason. [13]
+
 - The forced L6-shape case: an already torn-down provider runtime finalizes on the first call, and a provider runtime that cannot be removed blocks with its own reason. [14]
 - Worktree tests cover cleanup preconditions and completed cleanup state. [15]
 
@@ -228,11 +247,16 @@ Cleanup now treats the contract lease as serialization only and invokes `require
 
 ## 260821-CLIVE-L2 Current Contract
 
-The current source seams include `remove_registered_worktree`, `delete_branch_if_merged`, `delete_branch_if_merged_into`. The public module consumes closed configured-contract admission and performs its authoritative reread at the existing mutation seam. Destructive terminal cleanup/abandon remains fail closed until external archive proof exists; no inferred locator, raw scan, or compatibility reader is permitted.
+The current source seams include `remove_registered_worktree`. Branch deletion (`delete_branch_if_merged`, `delete_branch_if_merged_into`) now lives in `terminal_branch_retirement.py` and is called through the terminal owner. The public module consumes closed configured-contract admission and performs its authoritative reread at the existing mutation seam. Destructive terminal cleanup/abandon remains fail closed until external archive proof exists; no inferred locator, raw scan, or compatibility reader is permitted.
 
 ### Reconciled Source Evidence
 
-- The current module exposes `remove_registered_worktree`, `delete_branch_if_merged`, `delete_branch_if_merged_into` at this ownership boundary. [16]
+
+- The current module exposes `remove_registered_worktree` at this ownership boundary; branch deletion is exposed by `terminal_branch_retirement.py`. [16]
+
+
+- The current module exposes `remove_registered_worktree` at this ownership boundary; branch deletion is exposed by `terminal_branch_retirement.py`. [18]
+
 
 ## 260821-CLIVE Archive-Before-Cleanup
 
@@ -242,6 +266,8 @@ external archive/receipt, then performs the destructive tail under terminal auth
 binds `teardown_providers`; only identical retries converge after root deletion. Atomic series use
 the ephemeral terminal permit/release seam. Already-completed status returns the retained archive
 proof and never reconstructs deleted live state.
+
+Rule 5 terminal cases: branch retirement primitives moved whole into `terminal_branch_retirement.py`, including the kept-line proof that deletes a work branch whose tip sits on the landing or default line; the no-remains probe moved into `terminal_inventory.py`, shared by cleanup and abandon; a leaf whose contract says completed while its folder or branches still exist is finished by the repeated cleanup, which the citation-cache guard does not refuse for a missing state. `cleanup.py` keeps the terminal authority and the `_removed_directories` contract-derived logs sibling handled by the existing remove-tree port.
 
 ## Governing Overview
 

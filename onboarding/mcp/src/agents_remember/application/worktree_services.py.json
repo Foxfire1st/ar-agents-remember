@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "0307d968914d6162c8095e83b37440ff563477ed",
+        "blob": "9ae9c1fd9981228aafde4ea8749d2dd3819612de",
         "content": "sha256:44ca04b177598b8dcc61dc26c1e21afa6e6bd6700b4909dd3f6aeb29c02fd1e3",
         "locator": {
           "kind": "symbol",
@@ -22,16 +22,14 @@
   ],
   "references": {
     "1": {
-      "note": "The current `build_default_worktree_services` boundary implements the preparation contract above.\n\nAnchor: \"def build_default_worktree_services\"",
+      "note": "The current `build_default_worktree_services` boundary implements the preparation contract above.",
       "targets": [
         {
           "anchor": {
-            "blob": "ee679e2f089eb160dd19292309619814bc037124",
-            "content": "sha256:0db87eaed75d1f10ff89c35250f2a0471f1eaef06ce1973a2281bc736f774e61",
+            "blob": "9ae9c1fd9981228aafde4ea8749d2dd3819612de",
+            "content": "sha256:b370cda12c8eb9e48b81c6ba339c593b55dd5088635c58f0566ce3c68c42439a",
             "locator": {
-              "end": 214,
-              "kind": "line_range",
-              "start": 206
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -43,7 +41,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0307d968914d6162c8095e83b37440ff563477ed",
+            "blob": "9ae9c1fd9981228aafde4ea8749d2dd3819612de",
             "content": "sha256:cddef9d5a16727c08ebd3bda8209a8ae576d5505242444195a419791b84f2c8c",
             "locator": {
               "kind": "symbol",
@@ -54,12 +52,45 @@
         }
       ]
     },
+    "11": {
+      "note": "The default bundle composes the declared worktree services, including the knowledge validator with its base converter and the knowledge crossing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a52aa99aebea9ba312a6db34a62c6c34e5090d67",
+            "content": "sha256:eb5133dc06839dccfdcc9332a7563f99487d746a7f5e282a2bd057bcc98318e2",
+            "locator": {
+              "kind": "symbol",
+              "name": "GitKnowledgeValidation"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/commit_route.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The default bundle's MIK-R08 binding: the worklist recompute port adapter.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "41ed699ec457b16f9ad06ea009933785619ef9ba",
+            "content": "sha256:d8180a993b1e07020efcb0b7a376a4ec55a128ee5b7df7a130e18b8ffe95cd24",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_worklist/leaf.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "Provider translation/delegation",
       "targets": [
         {
           "anchor": {
-            "blob": "0307d968914d6162c8095e83b37440ff563477ed",
+            "blob": "9ae9c1fd9981228aafde4ea8749d2dd3819612de",
             "content": "sha256:15d5ed5baa81d8c3dd4289cb6706e4cf30394ad8d8d8c7063c4f4c024c41bcc3",
             "locator": {
               "kind": "symbol",
@@ -75,7 +106,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0307d968914d6162c8095e83b37440ff563477ed",
+            "blob": "9ae9c1fd9981228aafde4ea8749d2dd3819612de",
             "content": "sha256:edd0f3f43a88fe9d9559a8861bff3eadfb36c57f02840246dc9487001a8ad7d7",
             "locator": {
               "kind": "symbol",
@@ -86,7 +117,7 @@
         },
         {
           "anchor": {
-            "blob": "0307d968914d6162c8095e83b37440ff563477ed",
+            "blob": "9ae9c1fd9981228aafde4ea8749d2dd3819612de",
             "content": "sha256:cddef9d5a16727c08ebd3bda8209a8ae576d5505242444195a419791b84f2c8c",
             "locator": {
               "kind": "symbol",
@@ -102,8 +133,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0307d968914d6162c8095e83b37440ff563477ed",
-            "content": "sha256:23a49045179ee38de9c1fad154a88ff77548a609ed7fe41f0f95bfbaaae8ddf9",
+            "blob": "9ae9c1fd9981228aafde4ea8749d2dd3819612de",
+            "content": "sha256:e8631085ca39581f014971b5b39c6506cc83d58972b7c6f27c96b84c8e52e979",
             "locator": {
               "kind": "symbol",
               "name": "CitationGuardAdapter"
@@ -118,64 +149,26 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ee679e2f089eb160dd19292309619814bc037124",
-            "content": "sha256:c50b90ee75f0791f8982bfa60c92c574fd2a3d011b518ab667d2a35f5fd057fb",
+            "blob": "9ae9c1fd9981228aafde4ea8749d2dd3819612de",
+            "content": "sha256:44ca04b177598b8dcc61dc26c1e21afa6e6bd6700b4909dd3f6aeb29c02fd1e3",
             "locator": {
               "kind": "symbol",
               "name": "build_default_worktree_services"
             }
           },
           "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2a3e2ab1f23c38e0a3be9a7de9a2af91a0566f1b",
-            "content": "sha256:7dce94a987c6103da6908cfe0a1167b479263995df126d1907da7fb0f28ba36e",
-            "locator": {
-              "kind": "symbol",
-              "name": "GitKnowledgeValidation"
-            },
-            "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/commit_route.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "8ce9f68e4902699ee4aab2194472936a91aefd07",
-            "content": "sha256:75c14335a1bed58790d86d4fc94943b7fcef5ab82f17aee9b11ad79804fd55f2",
-            "locator": {
-              "kind": "symbol",
-              "name": "GitBaseConverter"
-            },
-            "path": "mcp/src/agents_remember/memory/conversion/base.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "4bf1f63e5d4894418f9652c59aecbefc1b32b0ef",
-            "content": "sha256:0806ff8159b28f075cd569c53575cab2a083401a53dda313678ac0e7fb47fce1",
-            "locator": {
-              "kind": "symbol",
-              "name": "GitKnowledgeCrossing"
-            },
-            "path": "mcp/src/agents_remember/memory/conversion/crossing_port.py"
-          },
-          "kind": "code"
         }
       ]
     },
     "6": {
-      "note": "The default bundle's MIK-R09 binding: the mandatory gate's port adapter.\n\nAnchor: \"knowledge_gate=KnowledgeGate(),\"",
+      "note": "The default bundle's MIK-R09 binding: the mandatory gate's port adapter.",
       "targets": [
         {
           "anchor": {
-            "blob": "0307d968914d6162c8095e83b37440ff563477ed",
-            "content": "sha256:cffde9c4f56f6f69b5b9ce77b7806d7cc9ad2993c7eff13aca5ba3f8d30de17d",
+            "blob": "9ae9c1fd9981228aafde4ea8749d2dd3819612de",
+            "content": "sha256:b370cda12c8eb9e48b81c6ba339c593b55dd5088635c58f0566ce3c68c42439a",
             "locator": {
-              "end": 227,
-              "kind": "line_range",
-              "start": 227
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -183,58 +176,29 @@
       ]
     },
     "7": {
-      "note": "The default bundle's MIK-R08 binding: the worklist recompute port adapter.\n\nAnchor: `knowledge_worklist`",
+      "note": "The default bundle's MIK-R08 binding: the worklist recompute port adapter.",
       "targets": [
         {
           "anchor": {
-            "blob": "41ed699ec457b16f9ad06ea009933785619ef9ba",
-            "content": "sha256:1ff58e949ac75e1df0d582965ccbc0e88b80755391158cdf67fbacf2f6e31ff7",
+            "blob": "9ae9c1fd9981228aafde4ea8749d2dd3819612de",
+            "content": "sha256:b370cda12c8eb9e48b81c6ba339c593b55dd5088635c58f0566ce3c68c42439a",
             "locator": {
-              "kind": "symbol",
-              "name": "LeafWorklistRecompute"
-            },
-            "path": "mcp/src/agents_remember/application/knowledge_worklist/leaf.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "ee679e2f089eb160dd19292309619814bc037124",
-            "content": "sha256:011e097465e616d9d89b8a66e6cbfff2a209545f6503fd86c74c483ea1059c67",
-            "locator": {
-              "end": 224,
-              "kind": "line_range",
-              "start": 212
+              "kind": "file"
             }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2088d0157e4f12e88cea147a7d1d46c11b4a2302",
-            "content": "sha256:20ed4a13532304fbd8ee64a1d33ddbc50160045457ab79711f9321a10ae7a631",
-            "locator": {
-              "end": 446,
-              "kind": "line_range",
-              "start": 437
-            },
-            "path": "mcp/src/agents_remember/application/knowledge_worklist/leaf.py"
           },
           "kind": "code"
         }
       ]
     },
     "8": {
-      "note": "The default bundle's MIK-R25 binding: the review-artifact archive hook.\n\nAnchor: \"review_artifact_cleanup=ReviewArtifactCleanup()\"",
+      "note": "The default bundle's MIK-R25 binding: the review-artifact archive hook.",
       "targets": [
         {
           "anchor": {
-            "blob": "0307d968914d6162c8095e83b37440ff563477ed",
-            "content": "sha256:b0cbb56eecc15a57361c27c296c3ae8d243031ca97ff22b3c92ecd694eec9b01",
+            "blob": "9ae9c1fd9981228aafde4ea8749d2dd3819612de",
+            "content": "sha256:b370cda12c8eb9e48b81c6ba339c593b55dd5088635c58f0566ce3c68c42439a",
             "locator": {
-              "end": 228,
-              "kind": "line_range",
-              "start": 228
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -246,7 +210,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "67d54e66d7a576b212038f6a0c382b1735f1c7a4",
+            "blob": "cd43e4801b1c4e3910470e06ee8323fc4066eada",
             "content": "sha256:39e23e747ef0775107905f1e7c4a2eda107132742553cb591864ab349d2271b1",
             "locator": {
               "kind": "symbol",

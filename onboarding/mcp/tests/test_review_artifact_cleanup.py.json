@@ -1,5 +1,143 @@
 {
   "path": "mcp/tests/test_review_artifact_cleanup.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "3b7acc24cc4b886c15eeffb6c911cc4ab2629068",
+        "content": "sha256:bf5db9b476343c6579e14e54b74e7c27550d5a954f89cb040a389b6318e1fcd1",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_an_interrupted_cache_deletion_replays_as_attributed_already_absent"
+        }
+      },
+      "facet": "An interrupted cache deletion replays as attributed already-absent.",
+      "id": "PRF-D4NVD4",
+      "invariant": "INV-YQPQ1M",
+      "origin": {
+        "handoffEntry": "L82-CODE-R1-02",
+        "leaf": "260928-MIK-L82"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "3b7acc24cc4b886c15eeffb6c911cc4ab2629068",
+        "content": "sha256:c9ad4ed4ad0a27e63614ee03d82cf56c63a5c276673964ff6a58542819db2149",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_cache_only_dry_run_shows_work_remainder_and_preview"
+        }
+      },
+      "facet": "A cache-only dry run shows its remainder and preview instead of reporting no work.",
+      "id": "PRF-FXNCK6",
+      "invariant": "INV-25AJSA",
+      "origin": {
+        "handoffEntry": "L82-MEM-M1-S-02",
+        "leaf": "260928-MIK-L82"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "3b7acc24cc4b886c15eeffb6c911cc4ab2629068",
+        "content": "sha256:c310e9cc7c52800f460cd720544cf20302ea572b1fb7208001d1025e0076cc16",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_old_classes_and_caches_share_one_receipt_recovery"
+        }
+      },
+      "facet": "Old classes and caches share one receipt recovery.",
+      "id": "PRF-HEHPSJ",
+      "invariant": "INV-YQPQ1M",
+      "origin": {
+        "handoffEntry": "L82-CODE-R1-02",
+        "leaf": "260928-MIK-L82"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "3b7acc24cc4b886c15eeffb6c911cc4ab2629068",
+        "content": "sha256:c310e9cc7c52800f460cd720544cf20302ea572b1fb7208001d1025e0076cc16",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_old_classes_and_caches_share_one_receipt_recovery"
+        }
+      },
+      "facet": "Old classes and caches share one receipt recovery.",
+      "id": "PRF-JWSZ53",
+      "invariant": "INV-25AJSA",
+      "origin": {
+        "handoffEntry": "L82-MEM-M1-S-02",
+        "leaf": "260928-MIK-L82"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "3b7acc24cc4b886c15eeffb6c911cc4ab2629068",
+        "content": "sha256:c4ab6de117d061a69f7c7e1f8a612523e3a9f1f90e3d022159169a69b5fd131a",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_nothing_is_deleted_when_the_cache_receipt_cannot_be_written"
+        }
+      },
+      "facet": "Nothing is deleted when the cache receipt cannot be written.",
+      "id": "PRF-RNY950",
+      "invariant": "INV-YQPQ1M",
+      "origin": {
+        "handoffEntry": "L82-CODE-R1-02",
+        "leaf": "260928-MIK-L82"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "3b7acc24cc4b886c15eeffb6c911cc4ab2629068",
+        "content": "sha256:bf5db9b476343c6579e14e54b74e7c27550d5a954f89cb040a389b6318e1fcd1",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_an_interrupted_cache_deletion_replays_as_attributed_already_absent"
+        }
+      },
+      "facet": "An interrupted cache deletion replays as attributed already-absent.",
+      "id": "PRF-SYST2B",
+      "invariant": "INV-25AJSA",
+      "origin": {
+        "handoffEntry": "L82-MEM-M1-S-02",
+        "leaf": "260928-MIK-L82"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "3b7acc24cc4b886c15eeffb6c911cc4ab2629068",
+        "content": "sha256:c9ad4ed4ad0a27e63614ee03d82cf56c63a5c276673964ff6a58542819db2149",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_cache_only_dry_run_shows_work_remainder_and_preview"
+        }
+      },
+      "facet": "A cache-only dry run shows its remainder and preview instead of reporting no work.",
+      "id": "PRF-W3DT5W",
+      "invariant": "INV-YQPQ1M",
+      "origin": {
+        "handoffEntry": "L82-CODE-R1-02",
+        "leaf": "260928-MIK-L82"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "3b7acc24cc4b886c15eeffb6c911cc4ab2629068",
+        "content": "sha256:c4ab6de117d061a69f7c7e1f8a612523e3a9f1f90e3d022159169a69b5fd131a",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_nothing_is_deleted_when_the_cache_receipt_cannot_be_written"
+        }
+      },
+      "facet": "Nothing is deleted when the cache receipt cannot be written.",
+      "id": "PRF-ZKS170",
+      "invariant": "INV-25AJSA",
+      "origin": {
+        "handoffEntry": "L82-MEM-M1-S-02",
+        "leaf": "260928-MIK-L82"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "1": {

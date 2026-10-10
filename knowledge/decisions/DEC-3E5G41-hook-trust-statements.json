@@ -1,0 +1,72 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "Locking and independent-verification designs were weighed through the statements own grounds and rejected, and the choice binds every future hook change."
+  },
+  "alternatives": [
+    {
+      "option": "Check-then-delete guards accidents rather than a second writer with the same rights; legacy cleanup trusts the control documents the product itself writes (the root contract, task.json, the leaf contracts).",
+      "reason": "A process that could swap a symlink between check and delete already holds delete rights on the target, so hardening buys nothing; and whoever can forge two control documents can delete the refs with Git directly, so distrust buys nothing.",
+      "status": "chosen"
+    },
+    {
+      "option": "Harden deletion against a same-rights second writer with locking or TOCTOU-proofing.",
+      "reason": "Entailed rejection from the ruled statement itself: the swapping process already has the right to delete the target.",
+      "reconsider_when": "The threat model gains mutually distrusting co-writers that hold delete rights but lack swap rights.",
+      "status": "rejected"
+    },
+    {
+      "option": "Verify refs independently of product-written control documents.",
+      "reason": "Entailed rejection from the ruled statement itself: forging two control documents already implies direct Git deletion rights.",
+      "reconsider_when": "Control documents become writable by parties without Git delete rights.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Check-then-delete stays without locking; legacy cleanup keeps trusting product-written control documents; future hook changes preserve both statements."
+  ],
+  "context": "MIK-R82@v1 rule 6 settles the archive hook design: two trust statements that the module text and a decision record state without the word accepted.",
+  "decider": "Architect, MIK-R82@v1 rule 6.",
+  "id": "DEC-3E5G41",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "a229e8c61b82f5545f7d8e6c3200e0e0f8fec939",
+        "content": "sha256:fc032a24c376fe32a800a8666f2fb82a49601fee4941d09b1859155380a65074",
+        "locator": {
+          "kind": "symbol",
+          "name": "cleanup_review_artifacts"
+        },
+        "path": "mcp/src/agents_remember/application/review_artifact_cleanup.py"
+      }
+    },
+    {
+      "relation": "motivated_change_to",
+      "target": {
+        "id": "MIK-R82",
+        "packet": "requirements/MIK-R82-v1-archiving-a-sprint-leftover-copies-and-enclosure-adoption.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "notes/reports/260928-MIK-L82-curator-handoff-list-m2.json"
+    },
+    "handoffEntry": "dec-hook-trust",
+    "leaf": "260928-MIK-L82",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

@@ -1,0 +1,22 @@
+{
+  "path": "mcp/tests/test_fixture_recorded_paths.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Recorded-path fixtures with developer-local paths are refused; recorded `/tmp` paths pass.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "abc0acaad4f0b5af7784cf63696c12ffa04fc8c0",
+            "content": "sha256:c082ab51e5bffaa7e6768c270d2a9371def0110f99e858c0362ff984eb12ad73",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

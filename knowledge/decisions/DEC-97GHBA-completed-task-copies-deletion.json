@@ -1,0 +1,72 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "Waiting, hand deletion and product deletion were weighed with grounds, and the choice binds every future copies run and the real-root deletion after landing."
+  },
+  "alternatives": [
+    {
+      "option": "The product deletes copies under Completed or abandoned task notes through the completed-task rule, run by the architect on the real root after landing.",
+      "reason": "D17 and D39 asked for the deletion; D41 withdrew only the archiving of the two masters, and after L26 no code reads the copies.",
+      "status": "chosen"
+    },
+    {
+      "option": "Wait for the commanding sprint archive hook.",
+      "reason": "The sprint holds sixteen rows in progress and nine in planning, so its archive is far away while the copies block nothing and serve nobody.",
+      "reconsider_when": "Sprint archival becomes near-term routine and copies can ride it without stranding.",
+      "status": "rejected"
+    },
+    {
+      "option": "Delete the copies by hand outside the product.",
+      "reason": "Unaudited deletion has no reviewed dry run, no report and no generation-owner release for comparison snapshots.",
+      "reconsider_when": "Never for bulk deletion; single-file accidents stay operator judgment.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "knowledge-copies gains the completed-task rule; comparison snapshots release through their generation owner; review and retained-code refs stay until archive."
+  ],
+  "context": "Seventy-three dataset copies under the notes of completed masters had no route out: the copies command deleted under archived tasks only, and the commanding sprint with rows in progress keeps its archive far away.",
+  "decider": "Architect under D47 (packet Settled G1).",
+  "id": "DEC-97GHBA",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "87f667053e5114433a51bfe17959d0bc8f0bd714",
+        "content": "sha256:ff0c7523caa831fb2b6e0daefa941943517fa3f4db830f4ada10dbfe1f8a1ea0",
+        "locator": {
+          "kind": "symbol",
+          "name": "_task_rule"
+        },
+        "path": "mcp/src/agents_remember/application/dataset_copy_survey.py"
+      }
+    },
+    {
+      "relation": "motivated_change_to",
+      "target": {
+        "id": "MIK-R82",
+        "packet": "requirements/MIK-R82-v1-archiving-a-sprint-leftover-copies-and-enclosure-adoption.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "notes/reports/260928-MIK-L82-curator-handoff-list.json"
+    },
+    "handoffEntry": "dec-copies",
+    "leaf": "260928-MIK-L82",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

@@ -1,18 +1,53 @@
 {
   "path": "mcp/src/agents_remember/application/review_artifact_receipts.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "60455ec5f2544afad8a1cc9f43e1b38bce7e613f",
+        "content": "sha256:7867c89c3d071b0a99eef8068bad3cd91d1670333f0238470d413f99c0eab6ab",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReceiptLedger"
+        }
+      },
+      "id": "RLZ-DWPKG4",
+      "invariant": "INV-YQPQ1M",
+      "origin": {
+        "handoffEntry": "L82-CODE-R1-02",
+        "leaf": "260928-MIK-L82"
+      },
+      "rationale": "Current single owner of this sealed acceptance obligation.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "60455ec5f2544afad8a1cc9f43e1b38bce7e613f",
+        "content": "sha256:7867c89c3d071b0a99eef8068bad3cd91d1670333f0238470d413f99c0eab6ab",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReceiptLedger"
+        }
+      },
+      "id": "RLZ-QMEDE8",
+      "invariant": "INV-25AJSA",
+      "origin": {
+        "handoffEntry": "L82-MEM-M1-S-02",
+        "leaf": "260928-MIK-L82"
+      },
+      "rationale": "Current single owner of this sealed acceptance obligation.",
+      "role": "unclassified"
+    }
+  ],
   "references": {
     "4": {
-      "note": "The ledger records intended deletion before it happens and records the outcome afterward.\n\nAnchor: `ReceiptLedger.begin`",
+      "note": "The ledger records intended deletion before it happens and records the outcome afterward.",
       "targets": [
         {
           "anchor": {
-            "blob": "30616fa01a98656a0fdbb084dc2f1f1ba7cf6b38",
-            "content": "sha256:d744ea837585652c686c6ebfb6beec345f7c4f8f2a458bfa976948b64035c2ab",
+            "blob": "60455ec5f2544afad8a1cc9f43e1b38bce7e613f",
+            "content": "sha256:b172fc179762a6681abf37b35940c150eaef9852587f9242ecab2df2ca49b651",
             "locator": {
-              "end": 198,
-              "kind": "line_range",
-              "start": 161
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -20,16 +55,14 @@
       ]
     },
     "5": {
-      "note": "The first no-op records a receipt; an already-recorded unchanged repeat writes none.\n\nAnchor: `ReceiptLedger._nothing_to_record`",
+      "note": "The first no-op records a receipt; an already-recorded unchanged repeat writes none.",
       "targets": [
         {
           "anchor": {
-            "blob": "30616fa01a98656a0fdbb084dc2f1f1ba7cf6b38",
-            "content": "sha256:649d2ecf30de30521abd3c48972f1f4142a10575d4302fc9732faf1d5ef48f67",
+            "blob": "60455ec5f2544afad8a1cc9f43e1b38bce7e613f",
+            "content": "sha256:b172fc179762a6681abf37b35940c150eaef9852587f9242ecab2df2ca49b651",
             "locator": {
-              "end": 213,
-              "kind": "line_range",
-              "start": 205
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -37,16 +70,14 @@
       ]
     },
     "6": {
-      "note": "Replacement preserves the prior receipt under that receipt's own number.\n\nAnchor: `ReceiptLedger._set_aside`",
+      "note": "Replacement preserves the prior receipt under that receipt's own number.",
       "targets": [
         {
           "anchor": {
-            "blob": "30616fa01a98656a0fdbb084dc2f1f1ba7cf6b38",
-            "content": "sha256:0b73a688661b247baaa9259a1763f2eac158c70ab92c816d5350632ce0f304dc",
+            "blob": "60455ec5f2544afad8a1cc9f43e1b38bce7e613f",
+            "content": "sha256:b172fc179762a6681abf37b35940c150eaef9852587f9242ecab2df2ca49b651",
             "locator": {
-              "end": 228,
-              "kind": "line_range",
-              "start": 214
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -54,16 +85,14 @@
       ]
     },
     "7": {
-      "note": "Recorded prior deletion or new absence is reported by the ledger.\n\nAnchor: `ReceiptLedger.already_absent`",
+      "note": "Recorded prior deletion or new absence is reported by the ledger.",
       "targets": [
         {
           "anchor": {
-            "blob": "30616fa01a98656a0fdbb084dc2f1f1ba7cf6b38",
-            "content": "sha256:ef149fe71386e1b2ec2cfe87ffefdb4e983c1c16cd221a489249cac61ad93332",
+            "blob": "60455ec5f2544afad8a1cc9f43e1b38bce7e613f",
+            "content": "sha256:b172fc179762a6681abf37b35940c150eaef9852587f9242ecab2df2ca49b651",
             "locator": {
-              "end": 124,
-              "kind": "line_range",
-              "start": 98
+              "kind": "file"
             }
           },
           "kind": "code"

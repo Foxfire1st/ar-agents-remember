@@ -8,10 +8,11 @@
   },
   "applicability": "Finalizing a master, with or without a sprint that commands it.",
   "conditions": [
-    "The finalizer completes the master's document and, where a sprint commands it, its sprint row."
+    "The finalizer completes the master document and, where a sprint commands it, its sprint row."
   ],
   "exclusions": [
-    "Retiring a master, which is the only route that archives."
+    "Retiring an individual master, which archives only that master.",
+    "Archiving a whole sprint with its moving commanded masters."
   ],
   "id": "INV-D91D5G",
   "origin": {
@@ -25,9 +26,9 @@
     "leaf": "260928-MIK-L41",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "Finalizing a master never archives its folder: a root task folder that holds a series contract stays in place, and the result says why, naming the commanding sprint or the explicit retire operation.",
+  "statement": "Finalizing a master never archives its folder; explicit retire_master is the individual-master archive route and archive_sprint is the whole-sprint route: a root task folder that holds a series contract stays in place, and the result says why, naming the commanding sprint or the explicit operation.",
   "status": "proposed",
   "supersedes": []
 }

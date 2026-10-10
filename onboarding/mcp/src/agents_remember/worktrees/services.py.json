@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "69c86dd70842a5cf36cbad1c66cce85ecf82a5a0",
+        "blob": "cd43e4801b1c4e3910470e06ee8323fc4066eada",
         "content": "sha256:2693cfdfebd838213c98c87e8beed45da2594e4a12dfb40b3b2187ccdfc484d5",
         "locator": {
           "kind": "symbol",
@@ -26,22 +26,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "67d54e66d7a576b212038f6a0c382b1735f1c7a4",
-            "content": "sha256:1fd1c744db07007f303051c50689de9d02455b2c944ba9cd5f0b47afd4482ad3",
+            "blob": "cd43e4801b1c4e3910470e06ee8323fc4066eada",
+            "content": "sha256:a6c3917c2a7bab1ff8ea341e5efd03e011ebd87f80dc1d856da5ad5cc730dea9",
             "locator": {
               "kind": "symbol",
               "name": "CitationGuardPort"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "67d54e66d7a576b212038f6a0c382b1735f1c7a4",
-            "content": "sha256:3d6f92d4fd05bcf8bd9fa3cf903fb62b86a74954e4a3189df33cecea220b7d9c",
-            "locator": {
-              "kind": "symbol",
-              "name": "ProviderLifecyclePort"
             }
           },
           "kind": "code"
@@ -49,16 +38,14 @@
       ]
     },
     "10": {
-      "note": "Bind the composition-provided services for this process.\n\nAnchor: \"def bind_worktree_services\"",
+      "note": "Bind the composition-provided services for this process.",
       "targets": [
         {
           "anchor": {
-            "blob": "67d54e66d7a576b212038f6a0c382b1735f1c7a4",
-            "content": "sha256:ee4ed8f7561007696aa3c3795bb4de5df11ebc88aa1da79bd62d70685c8369e5",
+            "blob": "cd43e4801b1c4e3910470e06ee8323fc4066eada",
+            "content": "sha256:190aa9efcb0ddfd427bbfff70afc731b0238cf9f780939b0bf1a655c93d3a377",
             "locator": {
-              "end": 375,
-              "kind": "line_range",
-              "start": 375
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -66,16 +53,14 @@
       ]
     },
     "11": {
-      "note": "Clear the bound services (tests and process teardown).\n\nAnchor: \"def reset_worktree_services\"",
+      "note": "Clear the bound services (tests and process teardown).",
       "targets": [
         {
           "anchor": {
-            "blob": "67d54e66d7a576b212038f6a0c382b1735f1c7a4",
-            "content": "sha256:27933e30e1b2bdd1f55a036ce57926b6c86fc29e2885143143f0e826a7bfbae9",
+            "blob": "cd43e4801b1c4e3910470e06ee8323fc4066eada",
+            "content": "sha256:190aa9efcb0ddfd427bbfff70afc731b0238cf9f780939b0bf1a655c93d3a377",
             "locator": {
-              "end": 381,
-              "kind": "line_range",
-              "start": 381
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -83,16 +68,14 @@
       ]
     },
     "12": {
-      "note": "Reading unbound worktree services refuses instead of constructing ambient owners.\n\nAnchor: \"def worktree_services\"",
+      "note": "Reading unbound worktree services refuses instead of constructing ambient owners.",
       "targets": [
         {
           "anchor": {
-            "blob": "67d54e66d7a576b212038f6a0c382b1735f1c7a4",
-            "content": "sha256:5cc5ada9823e05b85d2b7ca05e3da9aea2c275c07f3dc9ac1a5d00de71a70d7d",
+            "blob": "cd43e4801b1c4e3910470e06ee8323fc4066eada",
+            "content": "sha256:190aa9efcb0ddfd427bbfff70afc731b0238cf9f780939b0bf1a655c93d3a377",
             "locator": {
-              "end": 387,
-              "kind": "line_range",
-              "start": 387
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -104,8 +87,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ee679e2f089eb160dd19292309619814bc037124",
-            "content": "sha256:c50b90ee75f0791f8982bfa60c92c574fd2a3d011b518ab667d2a35f5fd057fb",
+            "blob": "9ae9c1fd9981228aafde4ea8749d2dd3819612de",
+            "content": "sha256:44ca04b177598b8dcc61dc26c1e21afa6e6bd6700b4909dd3f6aeb29c02fd1e3",
             "locator": {
               "kind": "symbol",
               "name": "build_default_worktree_services"
@@ -134,16 +117,14 @@
       ]
     },
     "15": {
-      "note": "Selected execution, which since MIK-R09 first refuses the prepared path on converted memory, observes memory before reuse and refuses an absent continuation.\n\nAnchor: \"def execute_selected_closeout(\"",
+      "note": "Selected execution, which since MIK-R09 first refuses the prepared path on converted memory, observes memory before reuse and refuses an absent continuation.",
       "targets": [
         {
           "anchor": {
-            "blob": "5901977eed6b08634132f55b705e0a1ac3e69d3f",
-            "content": "sha256:0ba93c0016e183e37a89b7c1ce4284f6390aec3ddaf7f3c83a75a7c1d453da55",
+            "blob": "d0d31c386573baeb8f5f093dc57275fbd256e20e",
+            "content": "sha256:970668067b38307792ea64a16c4853632378a7eb6b5185446d18bbd9d6402d2c",
             "locator": {
-              "end": 391,
-              "kind": "line_range",
-              "start": 348
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/worktrees/integration/closeout/certification/execution.py"
           },
@@ -156,7 +137,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "67d54e66d7a576b212038f6a0c382b1735f1c7a4",
+            "blob": "cd43e4801b1c4e3910470e06ee8323fc4066eada",
             "content": "sha256:1aed6a1e87df5f7bddf8eec989339481d54e83b78dcd61eac26269dccfc2a45c",
             "locator": {
               "kind": "symbol",
@@ -172,8 +153,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "67d54e66d7a576b212038f6a0c382b1735f1c7a4",
-            "content": "sha256:1fd1c744db07007f303051c50689de9d02455b2c944ba9cd5f0b47afd4482ad3",
+            "blob": "cd43e4801b1c4e3910470e06ee8323fc4066eada",
+            "content": "sha256:a6c3917c2a7bab1ff8ea341e5efd03e011ebd87f80dc1d856da5ad5cc730dea9",
             "locator": {
               "kind": "symbol",
               "name": "CitationGuardPort"
@@ -188,7 +169,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "67d54e66d7a576b212038f6a0c382b1735f1c7a4",
+            "blob": "cd43e4801b1c4e3910470e06ee8323fc4066eada",
             "content": "sha256:05447aa55479275f4cd335c71bd9b8c8c2dd01144fd2c30a8fe404dab23e38df",
             "locator": {
               "kind": "symbol",
@@ -200,16 +181,14 @@
       ]
     },
     "19": {
-      "note": "Bind the composition-provided services for this process.\n\nAnchor: \"def bind_worktree_services\"",
+      "note": "Bind the composition-provided services for this process.",
       "targets": [
         {
           "anchor": {
-            "blob": "67d54e66d7a576b212038f6a0c382b1735f1c7a4",
-            "content": "sha256:ee4ed8f7561007696aa3c3795bb4de5df11ebc88aa1da79bd62d70685c8369e5",
+            "blob": "cd43e4801b1c4e3910470e06ee8323fc4066eada",
+            "content": "sha256:190aa9efcb0ddfd427bbfff70afc731b0238cf9f780939b0bf1a655c93d3a377",
             "locator": {
-              "end": 375,
-              "kind": "line_range",
-              "start": 375
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -221,7 +200,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "67d54e66d7a576b212038f6a0c382b1735f1c7a4",
+            "blob": "cd43e4801b1c4e3910470e06ee8323fc4066eada",
             "content": "sha256:6b948cc0a0a6cfabb5116fc3fabbb632de3c30b476b462856555207593d221e0",
             "locator": {
               "kind": "symbol",
@@ -237,7 +216,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "67d54e66d7a576b212038f6a0c382b1735f1c7a4",
+            "blob": "cd43e4801b1c4e3910470e06ee8323fc4066eada",
             "content": "sha256:acbf13b8b425b2355344994e59db2aea50017b8f97260572ff910bf0fa72106e",
             "locator": {
               "kind": "symbol",
@@ -253,7 +232,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "67d54e66d7a576b212038f6a0c382b1735f1c7a4",
+            "blob": "cd43e4801b1c4e3910470e06ee8323fc4066eada",
             "content": "sha256:b7a1ea036b791642e8a770c435a22aae154f6eb3c1992eb5636260a18a57fec7",
             "locator": {
               "kind": "symbol",
@@ -269,11 +248,27 @@
       "targets": [
         {
           "anchor": {
-            "blob": "67d54e66d7a576b212038f6a0c382b1735f1c7a4",
+            "blob": "cd43e4801b1c4e3910470e06ee8323fc4066eada",
             "content": "sha256:7f7658aef8f8814a4f38488dc3f46c8ca272521cc949289aed2959d643702830",
             "locator": {
               "kind": "symbol",
               "name": "LeafPublication"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "The mandatory gate's port, its landing request and the direct-landing verdict (MIK-R09).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cd43e4801b1c4e3910470e06ee8323fc4066eada",
+            "content": "sha256:8512e3f9ec1039059ad92962157c04e6635ed224e7ee9bca0925cf008470f8f2",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeGatePort"
             }
           },
           "kind": "code"
@@ -285,33 +280,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "67d54e66d7a576b212038f6a0c382b1735f1c7a4",
-            "content": "sha256:0edaf68a1b4824fb0f035812769180bb545ff7125a4732f99f6b79a235eb1e29",
-            "locator": {
-              "kind": "symbol",
-              "name": "LandingGateRequest"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "67d54e66d7a576b212038f6a0c382b1735f1c7a4",
-            "content": "sha256:e3c107c94ff0890ad2069f8a3d57d92b899158059dd87f7845bbf7685be4256c",
+            "blob": "cd43e4801b1c4e3910470e06ee8323fc4066eada",
+            "content": "sha256:32d6fd551b98997870315bbf955597a3eec2d7c4a9f12a6465d7ae97698a4129",
             "locator": {
               "kind": "symbol",
               "name": "DirectGateVerdict"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "67d54e66d7a576b212038f6a0c382b1735f1c7a4",
-            "content": "sha256:740b75054ecc53dd6bcfc88b2cd1244add7451bb767150875d8dd8b7571a9bab",
-            "locator": {
-              "kind": "symbol",
-              "name": "KnowledgeGatePort"
             }
           },
           "kind": "code"
@@ -323,7 +296,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "67d54e66d7a576b212038f6a0c382b1735f1c7a4",
+            "blob": "cd43e4801b1c4e3910470e06ee8323fc4066eada",
             "content": "sha256:8f96680898f7f47505195bd2aa85e34b5d6ac2fa29060e19da8ebdc618203b6f",
             "locator": {
               "kind": "symbol",
@@ -334,7 +307,7 @@
         },
         {
           "anchor": {
-            "blob": "67d54e66d7a576b212038f6a0c382b1735f1c7a4",
+            "blob": "cd43e4801b1c4e3910470e06ee8323fc4066eada",
             "content": "sha256:10d81f79abdf38659f44010a5b9c65c7a311ee40ed2b6ad9be2937df7577de6a",
             "locator": {
               "kind": "symbol",
@@ -345,7 +318,7 @@
         },
         {
           "anchor": {
-            "blob": "67d54e66d7a576b212038f6a0c382b1735f1c7a4",
+            "blob": "cd43e4801b1c4e3910470e06ee8323fc4066eada",
             "content": "sha256:e34f9c8dba1e627374789d808cc8164b9fe72317a29b0ea8244f32c2a2a3bcd2",
             "locator": {
               "kind": "symbol",
@@ -356,7 +329,7 @@
         },
         {
           "anchor": {
-            "blob": "67d54e66d7a576b212038f6a0c382b1735f1c7a4",
+            "blob": "cd43e4801b1c4e3910470e06ee8323fc4066eada",
             "content": "sha256:3c0a49966defd93bf2f76f0c9bbcf4957f62541bcf017a4eae790453fb02e023",
             "locator": {
               "kind": "symbol",
@@ -372,7 +345,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "67d54e66d7a576b212038f6a0c382b1735f1c7a4",
+            "blob": "cd43e4801b1c4e3910470e06ee8323fc4066eada",
             "content": "sha256:dd9a78a4fbf03c811f8f8e5d96b0bafd292bce2f185852f5341647eb488726fb",
             "locator": {
               "kind": "symbol",
@@ -383,7 +356,7 @@
         },
         {
           "anchor": {
-            "blob": "67d54e66d7a576b212038f6a0c382b1735f1c7a4",
+            "blob": "cd43e4801b1c4e3910470e06ee8323fc4066eada",
             "content": "sha256:eebf6be79926cafc14e80f1697222416ac5bb4feab957d496c66825fb29a4ed5",
             "locator": {
               "kind": "symbol",
@@ -399,7 +372,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "67d54e66d7a576b212038f6a0c382b1735f1c7a4",
+            "blob": "cd43e4801b1c4e3910470e06ee8323fc4066eada",
             "content": "sha256:fd53af8b68a80c1646b90147bf2fe634886be0a8ddcadad224cf33b809455558",
             "locator": {
               "kind": "symbol",
@@ -410,7 +383,7 @@
         },
         {
           "anchor": {
-            "blob": "67d54e66d7a576b212038f6a0c382b1735f1c7a4",
+            "blob": "cd43e4801b1c4e3910470e06ee8323fc4066eada",
             "content": "sha256:c589198488aae3fba7f0728df8cb78c599fbc4fa68ae434456c7908c9274782d",
             "locator": {
               "kind": "symbol",
@@ -426,7 +399,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "67d54e66d7a576b212038f6a0c382b1735f1c7a4",
+            "blob": "cd43e4801b1c4e3910470e06ee8323fc4066eada",
             "content": "sha256:a212c7111dbf9117ae0a0e11f6bc291daaae081db2bee63090634e0260d9e1e6",
             "locator": {
               "kind": "symbol",
@@ -437,7 +410,7 @@
         },
         {
           "anchor": {
-            "blob": "67d54e66d7a576b212038f6a0c382b1735f1c7a4",
+            "blob": "cd43e4801b1c4e3910470e06ee8323fc4066eada",
             "content": "sha256:7c22d91e6252549ff5ff5b8f63dbc7bd68f9eb0498b32b119f296e52cc962e5d",
             "locator": {
               "kind": "symbol",
@@ -453,7 +426,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "67d54e66d7a576b212038f6a0c382b1735f1c7a4",
+            "blob": "cd43e4801b1c4e3910470e06ee8323fc4066eada",
             "content": "sha256:eb8884ec07deeed5702f8231bcf2164c4e7762ce7a1f1bb7c71024d205fdbce6",
             "locator": {
               "kind": "symbol",
@@ -469,22 +442,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0b471e3448e819f041af640b69fc9dbf1f6b4ed3",
-            "content": "sha256:a7b5b5b6c007e7a66a228ff7fef345ec45fdb43cfd0c98eb5836e71f0cf57b2a",
+            "blob": "cd43e4801b1c4e3910470e06ee8323fc4066eada",
+            "content": "sha256:3330a43216cdda3dfa74b3caff28fbaf10147b8b672b1b32c74476fcf5fb6429",
             "locator": {
               "kind": "symbol",
               "name": "WorktreeServices"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "67d54e66d7a576b212038f6a0c382b1735f1c7a4",
-            "content": "sha256:ad20b5593871bfbac80778efc8f1b9bc7301ae9c2a35f2474a8dd69375ef7f53",
-            "locator": {
-              "kind": "symbol",
-              "name": "ProviderSetupRequestSpec"
             }
           },
           "kind": "code"

@@ -14,11 +14,20 @@ Owns archive-hook receipts. The canonical latest receipt is `review-artifact-cle
 
 `_set_aside` preserves the canonical receipt under its own attempt number. Repeating that step after interruption reuses that path, rather than allocating another copy. `_previous_attempt` only classifies the prior outcome.
 
+`arCaches` entries carry `path`/`bytes` like `datasetCopies`: the cache-deletion class belongs to the shared artifact keys so every consumer — planned receipts, already-absent replay, remainder counts, deleted names, preview accounting — treats cache deletions exactly like the older classes.
+
 The first attempt writes an initial receipt even when it deletes nothing. A later attempt writes none only if it has no deletion, release or failure, no unfinished receipt, and every reported absence was already recorded; it returns the unchanged receipt and attempt number. `already_absent` includes artifacts deleted earlier, planned by an interrupted attempt and now absent, or previously failed and now absent. Previously recorded absence alone does not require another receipt.
 
 ## Evidence
 
+
 - The ledger records intended deletion before it happens and records the outcome afterward. [4]
+
+
 - The first no-op records a receipt; an already-recorded unchanged repeat writes none. [5]
+
+
 - Replacement preserves the prior receipt under that receipt's own number. [6]
+
+
 - Recorded prior deletion or new absence is reported by the ledger. [7]

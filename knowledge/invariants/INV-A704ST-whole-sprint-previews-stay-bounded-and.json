@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "Two proving tests pin the bounded fifteen-master preview and the keeper and hook-failure previews; without them valid sprints would fail response validation."
+  },
+  "applicability": "Whole-sprint archive previews.",
+  "conditions": [
+    "Valid sprints up to and beyond fifteen masters."
+  ],
+  "exclusions": [
+    "Single-master retire previews."
+  ],
+  "id": "INV-A704ST",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "M1 verdict L82-MEM-M1-F01 + R4 evidence: test_sprint_archive_custody.py::test_fifteen_master_preview_bounded_and_exact; ::test_shared_keeper_preview_and_hook_failure_preview; /var/tmp/mik-run3/l82/evidence-window/stageB8-results.json#steps/0; notes/reports/l82-code-review-R2/focused-pytest.json + .stdout"
+      ],
+      "path": "notes/reports/260928-MIK-L82-curator-handoff-list-m2.json"
+    },
+    "handoffEntry": "L82-MEM-M1-S-07",
+    "leaf": "260928-MIK-L82",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Whole-sprint previews stay bounded and exact at any master count, including keeper and hook-failure previews.",
+  "status": "proposed",
+  "supersedes": [
+    "INV-VH9J71"
+  ]
+}

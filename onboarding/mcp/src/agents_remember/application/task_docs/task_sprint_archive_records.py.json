@@ -1,0 +1,95 @@
+{
+  "path": "mcp/src/agents_remember/application/task_docs/task_sprint_archive_records.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "61e573aa00e9434c8f77da49271c0827b350db38",
+        "content": "sha256:ebd666e837432c34f532e0011d8055585aaa13d64a93ffa7e5c68fb8aaf5ccf9",
+        "locator": {
+          "kind": "symbol",
+          "name": "_recorded_slots"
+        }
+      },
+      "id": "RLZ-1AC0ZX",
+      "invariant": "INV-YETAXG",
+      "origin": {
+        "handoffEntry": "L82-MEM-M1-S-13",
+        "leaf": "260928-MIK-L82"
+      },
+      "rationale": "Current single owner of this sealed acceptance obligation.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "61e573aa00e9434c8f77da49271c0827b350db38",
+        "content": "sha256:ebd666e837432c34f532e0011d8055585aaa13d64a93ffa7e5c68fb8aaf5ccf9",
+        "locator": {
+          "kind": "symbol",
+          "name": "_recorded_slots"
+        }
+      },
+      "id": "RLZ-65H104",
+      "invariant": "INV-4RTF8V",
+      "origin": {
+        "handoffEntry": "L82-CODE-R1-01",
+        "leaf": "260928-MIK-L82"
+      },
+      "rationale": "Current single owner of this sealed acceptance obligation.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "61e573aa00e9434c8f77da49271c0827b350db38",
+        "content": "sha256:ebd666e837432c34f532e0011d8055585aaa13d64a93ffa7e5c68fb8aaf5ccf9",
+        "locator": {
+          "kind": "symbol",
+          "name": "_recorded_slots"
+        }
+      },
+      "id": "RLZ-9YC6K9",
+      "invariant": "INV-8FSQZJ",
+      "origin": {
+        "handoffEntry": "L82-CODE-R1-13",
+        "leaf": "260928-MIK-L82"
+      },
+      "rationale": "Current single owner of this sealed acceptance obligation.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "61e573aa00e9434c8f77da49271c0827b350db38",
+        "content": "sha256:ebd666e837432c34f532e0011d8055585aaa13d64a93ffa7e5c68fb8aaf5ccf9",
+        "locator": {
+          "kind": "symbol",
+          "name": "_recorded_slots"
+        }
+      },
+      "id": "RLZ-TN0DD3",
+      "invariant": "INV-G4ED1Q",
+      "origin": {
+        "handoffEntry": "L82-MEM-M1-S-01",
+        "leaf": "260928-MIK-L82"
+      },
+      "rationale": "Current single owner of this sealed acceptance obligation.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The archive record protects reason and selection across retries; slots reconstruct from the record.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "61e573aa00e9434c8f77da49271c0827b350db38",
+            "content": "sha256:2088a1726f4478e37a2b3b268a02bc1ba071c3b91a4de8b08e25044533dd9dfb",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

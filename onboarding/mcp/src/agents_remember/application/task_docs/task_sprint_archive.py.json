@@ -1,0 +1,203 @@
+{
+  "path": "mcp/src/agents_remember/application/task_docs/task_sprint_archive.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "ff7f7ee220532b04421a687ec92664334c54e460",
+        "content": "sha256:dc8acffd8f507dea01e88c63984330651d5e6df48d5b3bb9eb7e0df05e4cd1c1",
+        "locator": {
+          "kind": "symbol",
+          "name": "_require_rows_terminal"
+        }
+      },
+      "id": "RLZ-1ZPPQM",
+      "invariant": "INV-10GFBN",
+      "origin": {
+        "handoffEntry": "L82-MEM-M1-S-11",
+        "leaf": "260928-MIK-L82"
+      },
+      "rationale": "Current single owner of this sealed acceptance obligation.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "ff7f7ee220532b04421a687ec92664334c54e460",
+        "content": "sha256:cb160fa464d1214b4f211198a81133dcfb4af27f679052ee57f35141aa4ec83b",
+        "locator": {
+          "kind": "symbol",
+          "name": "_require_legacy_rows_terminal"
+        }
+      },
+      "id": "RLZ-23Z8CV",
+      "invariant": "INV-8ACXK0",
+      "origin": {
+        "handoffEntry": "L82-CODE-R1-11",
+        "leaf": "260928-MIK-L82"
+      },
+      "rationale": "Current single owner of this sealed acceptance obligation.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "ff7f7ee220532b04421a687ec92664334c54e460",
+        "content": "sha256:b4c21543b11429395133a0c7374dc94c14250235393525472f07f7896809d8af",
+        "locator": {
+          "kind": "symbol",
+          "name": "_preview_pending"
+        }
+      },
+      "id": "RLZ-2KVTN2",
+      "invariant": "INV-VH9J71",
+      "origin": {
+        "handoffEntry": "L82-CODE-R1-07",
+        "leaf": "260928-MIK-L82"
+      },
+      "rationale": "Current single owner of this sealed acceptance obligation.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "ff7f7ee220532b04421a687ec92664334c54e460",
+        "content": "sha256:f8bc3c2b0cf0094671be85ea3992dd55cf85721a67293ea3004114a3426e6e2b",
+        "locator": {
+          "kind": "symbol",
+          "name": "_require_record_custody"
+        }
+      },
+      "id": "RLZ-2XE3W0",
+      "invariant": "INV-4RTF8V",
+      "origin": {
+        "handoffEntry": "L82-CODE-R1-01",
+        "leaf": "260928-MIK-L82"
+      },
+      "rationale": "Current single owner of this sealed acceptance obligation.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "ff7f7ee220532b04421a687ec92664334c54e460",
+        "content": "sha256:70e54ad7bc5205242f5a3095db497f0c4a794f13dafb5b06acfefb21aeab7bdc",
+        "locator": {
+          "kind": "symbol",
+          "name": "_admit_recorded"
+        }
+      },
+      "id": "RLZ-4PNP9J",
+      "invariant": "INV-G4ED1Q",
+      "origin": {
+        "handoffEntry": "L82-MEM-M1-S-01",
+        "leaf": "260928-MIK-L82"
+      },
+      "rationale": "Current single owner of this sealed acceptance obligation.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "ff7f7ee220532b04421a687ec92664334c54e460",
+        "content": "sha256:dc8acffd8f507dea01e88c63984330651d5e6df48d5b3bb9eb7e0df05e4cd1c1",
+        "locator": {
+          "kind": "symbol",
+          "name": "_require_rows_terminal"
+        }
+      },
+      "id": "RLZ-9Q5PFK",
+      "invariant": "INV-8ACXK0",
+      "origin": {
+        "handoffEntry": "L82-CODE-R1-11",
+        "leaf": "260928-MIK-L82"
+      },
+      "rationale": "Current single owner of this sealed acceptance obligation.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "ff7f7ee220532b04421a687ec92664334c54e460",
+        "content": "sha256:f8bc3c2b0cf0094671be85ea3992dd55cf85721a67293ea3004114a3426e6e2b",
+        "locator": {
+          "kind": "symbol",
+          "name": "_require_record_custody"
+        }
+      },
+      "id": "RLZ-CGEYPY",
+      "invariant": "INV-G4ED1Q",
+      "origin": {
+        "handoffEntry": "L82-MEM-M1-S-01",
+        "leaf": "260928-MIK-L82"
+      },
+      "rationale": "Current single owner of this sealed acceptance obligation.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "ff7f7ee220532b04421a687ec92664334c54e460",
+        "content": "sha256:b4c21543b11429395133a0c7374dc94c14250235393525472f07f7896809d8af",
+        "locator": {
+          "kind": "symbol",
+          "name": "_preview_pending"
+        }
+      },
+      "id": "RLZ-CQZJE7",
+      "invariant": "INV-A704ST",
+      "origin": {
+        "handoffEntry": "L82-MEM-M1-S-07",
+        "leaf": "260928-MIK-L82"
+      },
+      "rationale": "Current single owner of this sealed acceptance obligation.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "ff7f7ee220532b04421a687ec92664334c54e460",
+        "content": "sha256:cb160fa464d1214b4f211198a81133dcfb4af27f679052ee57f35141aa4ec83b",
+        "locator": {
+          "kind": "symbol",
+          "name": "_require_legacy_rows_terminal"
+        }
+      },
+      "id": "RLZ-T9377N",
+      "invariant": "INV-10GFBN",
+      "origin": {
+        "handoffEntry": "L82-MEM-M1-S-11",
+        "leaf": "260928-MIK-L82"
+      },
+      "rationale": "Current single owner of this sealed acceptance obligation.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "ff7f7ee220532b04421a687ec92664334c54e460",
+        "content": "sha256:70e54ad7bc5205242f5a3095db497f0c4a794f13dafb5b06acfefb21aeab7bdc",
+        "locator": {
+          "kind": "symbol",
+          "name": "_admit_recorded"
+        }
+      },
+      "id": "RLZ-TAX4YK",
+      "invariant": "INV-4RTF8V",
+      "origin": {
+        "handoffEntry": "L82-CODE-R1-01",
+        "leaf": "260928-MIK-L82"
+      },
+      "rationale": "Current single owner of this sealed acceptance obligation.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "One explicit operation archives a completed sprint with its commanded masters, guarded by terminal-row and readiness preconditions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ff7f7ee220532b04421a687ec92664334c54e460",
+            "content": "sha256:ec74c15db7412cde614f21dc1529b5348866b10907391cdc89559259e43d7ba3",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

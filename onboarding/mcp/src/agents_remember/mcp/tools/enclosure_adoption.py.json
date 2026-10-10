@@ -1,0 +1,22 @@
+{
+  "path": "mcp/src/agents_remember/mcp/tools/enclosure_adoption.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "One explicit adoption tool migrates pre-locator enclosures, including records written in place, with dry-run listing and receipted real runs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bc0aca79e27208d773ffb486a3f8048838ad4236",
+            "content": "sha256:0f4c125e43cbeff0422abc9b8b1a535bdf6448419ea99fbb148a6bacb949526d",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}
