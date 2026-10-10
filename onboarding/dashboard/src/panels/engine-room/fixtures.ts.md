@@ -46,6 +46,10 @@ meeting `retry_cleanup` in this file knows it is neither a current vocabulary me
 to re-derive from the server. The retired literal `request_cleanup_decision` no longer appears
 anywhere in the file.
 
+### 260928-MIK-L50 Change
+
+The `engine-boot-provider-blocked` recovery actions are now `retry setup` / `abandon`: the `disabled-memory` action is gone because memory cannot be disabled for a task, and a start naming it is refused (`memory-opt-out-refused`) (dashboard/src/panels/engine-room/fixtures.ts:566-580).
+
 ### Invariants And Boundaries
 
 Fixtures are presentation data only: they encode the wire shape (camelCase, `exclude_none` optionals) and carry no behavior. They must stay in lockstep with the imported node types in [types/projection.ts](../../types/projection.ts) — fields like `factState`, `health`, edge `state`, and `phase` use the unions defined there. cit:([`SOURCE_BRANCH`], dashboard/src/panels/engine-room/fixtures.ts:25-25) and the hard-coded commits (`08e9221a`, `d60a0511`) are illustrative, not live. Health/setup/edge state strings must remain valid members of `ProcessHealth` and the edge-state vocabulary so the map renders honestly — and "valid" means the SERVER's vocabulary, not the renderer's tolerance. `EngineProcessEdge` is `extra="forbid"`, so a fixture inventing a field (`refusedPolarity`) or a state (`refused`) that the reducer cannot produce describes a payload the server would reject; the scenario then exercises a branch no user can ever reach. Every fixture edge state must be one `_seed_edge_state`/`_materialize_edge_state` can actually return. `seedFallback: true` in `engine-cgc-fallback` cit:([`ENGINE_ROOM_SCENARIOS`], dashboard/src/panels/engine-room/fixtures.ts:721-1197) models a reroute-to-reindex, not a failure; `retryArgs` appears only on failed-setup scenarios. The active provider `runtimeState` is kept consistent with the running conduit (5g G4) — the engine being seeded/cloned is `indexing`, the done engine `nominal` — so the charging engine lines up with the flowing conduit (e.g. GrepAI cloning ⇒ `[boot("code"), boot("memory", "indexing")]`).

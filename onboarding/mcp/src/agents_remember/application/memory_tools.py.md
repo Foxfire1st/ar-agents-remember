@@ -203,11 +203,9 @@ decision's rejected alternative (lock the three tools like every other write) fo
 
 - The drift tool binds the leaf's converted base with a contract, else the checkout HEAD. [30]
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Baseline status reports unsuccessful `ok` for unavailable Git history as well as blocked drift, while preserving the owner's payload. [1] | `memory_baseline_status_tool` | mcp/src/agents_remember/application/memory_tools.py:567-576 |
-| The baseline owner distinguishes unreadable attribution behind a resolvable HEAD from an unborn repository, retaining the existing drift decision. [2] | `ledger_status` | mcp/src/agents_remember/memory/baseline.py:554-565 |
-| The route-index application entry point forwards resolver-owned authority. [6] | `route_index_refresh_tool` | mcp/src/agents_remember/application/memory_tools.py:379-425 |
-| Baseline status reports unsuccessful `ok` for unavailable Git history as well as blocked drift, while preserving the owner's payload. [10] | `memory_baseline_status_tool` | mcp/src/agents_remember/application/memory_tools.py:567-576 |
-| The baseline owner distinguishes unreadable attribution behind a resolvable HEAD from an unborn repository, retaining the existing drift decision. [11] | `baseline_status` | mcp/src/agents_remember/memory/baseline.py:672-677 |
-| **The memory initializer now reports the knowledge foundation beside the memory root it scaffolds (`ICR-R29@v1`).** [23] | `memory_init_tool` | mcp/src/agents_remember/application/memory_tools.py:426-457 |
+- Baseline status reports unsuccessful `ok` for unavailable Git history as well as blocked drift, while preserving the owner's payload. [1]
+- The baseline owner distinguishes unreadable attribution behind a resolvable HEAD from an unborn repository, retaining the existing drift decision. [2]
+- The route-index application entry point forwards resolver-owned authority. [6]
+- Baseline status reports unsuccessful `ok` for unavailable Git history as well as blocked drift, while preserving the owner's payload. [10]
+- The baseline owner distinguishes unreadable attribution behind a resolvable HEAD from an unborn repository, retaining the existing drift decision. [11]
+- **The memory initializer now reports the knowledge foundation beside the memory root it scaffolds (`ICR-R29@v1`).** [23]

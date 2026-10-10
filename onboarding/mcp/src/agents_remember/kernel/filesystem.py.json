@@ -56,12 +56,12 @@
         },
         {
           "anchor": {
-            "blob": "d1f69d8d3c1559f18bf2e2f5467b9184b4e79f74",
+            "blob": "f10f508c9cbeadef7f1983c4e81f8ecfe9410256",
             "content": "sha256:db0bd40924bf1e90c5906d0f63e1ce158dcfbbd13124ada55c7387ecdc24a02d",
             "locator": {
-              "end": 400,
+              "end": 943,
               "kind": "line_range",
-              "start": 399
+              "start": 942
             },
             "path": "mcp/src/agents_remember/worktrees/modules/git.py"
           },
@@ -69,12 +69,12 @@
         },
         {
           "anchor": {
-            "blob": "d1f69d8d3c1559f18bf2e2f5467b9184b4e79f74",
+            "blob": "f10f508c9cbeadef7f1983c4e81f8ecfe9410256",
             "content": "sha256:e183e7b58e6de88bcad7a93b275b632381a133fdb68bdd47537b24b1cc4d28e4",
             "locator": {
-              "end": 423,
+              "end": 966,
               "kind": "line_range",
-              "start": 423
+              "start": 966
             },
             "path": "mcp/src/agents_remember/worktrees/modules/git.py"
           },

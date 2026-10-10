@@ -54,7 +54,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "67d54e66d7a576b212038f6a0c382b1735f1c7a4",
+            "blob": "cd43e4801b1c4e3910470e06ee8323fc4066eada",
             "content": "sha256:3d6f92d4fd05bcf8bd9fa3cf903fb62b86a74954e4a3189df33cecea220b7d9c",
             "locator": {
               "kind": "symbol",
@@ -71,7 +71,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6b51af08c017f9ead395326bd7fee6fefeac4e9f",
+            "blob": "98c620167fdb936e67188e92cb3354f3d91d3f42",
             "content": "sha256:7a0f04ef049f20ca4ad3b0521fb3759e492f6eb1a71061d927835a47c101e421",
             "locator": {
               "kind": "symbol",
@@ -83,7 +83,7 @@
         },
         {
           "anchor": {
-            "blob": "6b51af08c017f9ead395326bd7fee6fefeac4e9f",
+            "blob": "98c620167fdb936e67188e92cb3354f3d91d3f42",
             "content": "sha256:cf0fca4dddba6037a11a2aace70fc52c6799556318aa5d803988f4061d6b7cd9",
             "locator": {
               "kind": "symbol",
@@ -95,12 +95,12 @@
         },
         {
           "anchor": {
-            "blob": "6b51af08c017f9ead395326bd7fee6fefeac4e9f",
+            "blob": "98c620167fdb936e67188e92cb3354f3d91d3f42",
             "content": "sha256:18b7b166310b208aea22c19d18ac0567a2442ec92f1607a76d2845b9e1c2e9ce",
             "locator": {
-              "end": 329,
+              "end": 335,
               "kind": "line_range",
-              "start": 306
+              "start": 312
             },
             "path": "mcp/tests/test_terminal_blocker_reasons.py"
           },

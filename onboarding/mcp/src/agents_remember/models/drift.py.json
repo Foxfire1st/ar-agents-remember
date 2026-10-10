@@ -7,23 +7,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "88ab63c1685825e580ce7dbc3f0c8c6f32f8acbf",
-            "content": "sha256:a2f120037b4a3244a65f708669bdaf5da721a923c27f8840f5e61f28108cbf20",
+            "blob": "cf68f5578694021f732b573cc3d613b880c7bfd8",
+            "content": "sha256:7e00a1dd009e4484bcd53c4b0f3071076cd3efe31960d64494371201d6bf32ec",
             "locator": {
               "kind": "symbol",
               "name": "DriftSummary"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "cf68f5578694021f732b573cc3d613b880c7bfd8",
-            "content": "sha256:0673052126dfb9f14e4482f0ad5dc18d83e74317290c4bb65d77742f15f8038d",
-            "locator": {
-              "end": 23,
-              "kind": "line_range",
-              "start": 13
             }
           },
           "kind": "code"
@@ -75,29 +63,17 @@
       ]
     },
     "3": {
-      "note": "The onboarding drift model defines the `DriftStatus` and `DriftSummaryPacket` wire shapes.\n\nAnchor: \"DriftStatus = Literal[\"",
+      "note": "The onboarding drift model defines the `DriftStatus` and `DriftSummaryPacket` wire shapes.",
       "targets": [
         {
           "anchor": {
-            "blob": "e2170cdb4c53e14c97e2189e3b26cbf0cbe7d364",
-            "content": "sha256:b1213e60508c3a33c3ef17d5a6328b3c7b35a75d0a9db124c1e8ade517e853dc",
+            "blob": "c55af2c8c0b8cd2eaef3ef961fc49505b96b823a",
+            "content": "sha256:2c37f03052e83372cccb360bdefa6ee9f68c2a6e4a72b6a96404fa76d0c78b52",
             "locator": {
               "kind": "symbol",
               "name": "DriftSummaryPacket"
             },
             "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "cf68f5578694021f732b573cc3d613b880c7bfd8",
-            "content": "sha256:a4fd9adef884dbb6ec257dea9499d51b7d671e333bf190b352afb44cb58b8b8f",
-            "locator": {
-              "end": 11,
-              "kind": "line_range",
-              "start": 11
-            }
           },
           "kind": "code"
         }

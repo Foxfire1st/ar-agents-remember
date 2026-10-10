@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "21d19e2ee5a33d08e72509f9442ab49751e30f1f",
+        "blob": "8f92bbe9948b98fa7072f2ae69b1fb50bc6f098f",
         "content": "sha256:9b489c9891393b3cbeb5b43f0486a0d5796d44c43ad1aa2f6cf6fdd0b2093aaa",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "21d19e2ee5a33d08e72509f9442ab49751e30f1f",
+        "blob": "8f92bbe9948b98fa7072f2ae69b1fb50bc6f098f",
         "content": "sha256:9562e96fdf3bbfa214287193ff0d97a5c78cdee9dc78e8e37287cf4fc0138c22",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "21d19e2ee5a33d08e72509f9442ab49751e30f1f",
+        "blob": "8f92bbe9948b98fa7072f2ae69b1fb50bc6f098f",
         "content": "sha256:09bc52594a04902e96d6482a082ca175014285361638bf4a4c5fd7fdd1557248",
         "locator": {
           "kind": "symbol",
@@ -54,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "21d19e2ee5a33d08e72509f9442ab49751e30f1f",
+        "blob": "8f92bbe9948b98fa7072f2ae69b1fb50bc6f098f",
         "content": "sha256:e9ba6eff80a4b51f831b83c7de639bb2c014cd4d57ae0af15f1ceb9f74b93e9d",
         "locator": {
           "kind": "symbol",
@@ -71,7 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "21d19e2ee5a33d08e72509f9442ab49751e30f1f",
+        "blob": "8f92bbe9948b98fa7072f2ae69b1fb50bc6f098f",
         "content": "sha256:c2b341a1b32b233ee06f2d9e5e1ca6f432e3512a98b01ca63e8e0989ab775859",
         "locator": {
           "kind": "symbol",
@@ -90,7 +90,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "21d19e2ee5a33d08e72509f9442ab49751e30f1f",
+        "blob": "8f92bbe9948b98fa7072f2ae69b1fb50bc6f098f",
         "content": "sha256:09bc52594a04902e96d6482a082ca175014285361638bf4a4c5fd7fdd1557248",
         "locator": {
           "kind": "symbol",
@@ -105,6 +105,24 @@
       },
       "rationale": "The test's premise fails under the real ancestor marker in both states.",
       "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "8f92bbe9948b98fa7072f2ae69b1fb50bc6f098f",
+        "content": "sha256:d41fdb55a660149ded7a89d8ee8435fd7fdbbc085817ea2f7a55a6fc098428f8",
+        "locator": {
+          "kind": "symbol",
+          "name": "_blocked"
+        }
+      },
+      "id": "RLZ-JDVNG9",
+      "invariant": "INV-95NQR7",
+      "origin": {
+        "handoffEntry": "L50-CODE-R1-F02",
+        "leaf": "260928-MIK-L50"
+      },
+      "rationale": "The cutover probe helper takes its operation explicitly with no default; it proves explicit-operation calling, not non-external refusal.",
+      "role": "unclassified"
     }
   ],
   "references": {
@@ -113,7 +131,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "21d19e2ee5a33d08e72509f9442ab49751e30f1f",
+            "blob": "8f92bbe9948b98fa7072f2ae69b1fb50bc6f098f",
             "content": "sha256:9b489c9891393b3cbeb5b43f0486a0d5796d44c43ad1aa2f6cf6fdd0b2093aaa",
             "locator": {
               "kind": "symbol",
@@ -129,7 +147,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "21d19e2ee5a33d08e72509f9442ab49751e30f1f",
+            "blob": "8f92bbe9948b98fa7072f2ae69b1fb50bc6f098f",
             "content": "sha256:e9ba6eff80a4b51f831b83c7de639bb2c014cd4d57ae0af15f1ceb9f74b93e9d",
             "locator": {
               "kind": "symbol",
@@ -145,7 +163,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "21d19e2ee5a33d08e72509f9442ab49751e30f1f",
+            "blob": "8f92bbe9948b98fa7072f2ae69b1fb50bc6f098f",
             "content": "sha256:c2b341a1b32b233ee06f2d9e5e1ca6f432e3512a98b01ca63e8e0989ab775859",
             "locator": {
               "kind": "symbol",
@@ -161,7 +179,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "21d19e2ee5a33d08e72509f9442ab49751e30f1f",
+            "blob": "8f92bbe9948b98fa7072f2ae69b1fb50bc6f098f",
             "content": "sha256:c2b341a1b32b233ee06f2d9e5e1ca6f432e3512a98b01ca63e8e0989ab775859",
             "locator": {
               "kind": "symbol",
@@ -177,7 +195,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "21d19e2ee5a33d08e72509f9442ab49751e30f1f",
+            "blob": "8f92bbe9948b98fa7072f2ae69b1fb50bc6f098f",
             "content": "sha256:09bc52594a04902e96d6482a082ca175014285361638bf4a4c5fd7fdd1557248",
             "locator": {
               "kind": "symbol",
@@ -193,7 +211,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "21d19e2ee5a33d08e72509f9442ab49751e30f1f",
+            "blob": "8f92bbe9948b98fa7072f2ae69b1fb50bc6f098f",
             "content": "sha256:2bc2b425f0f364554aef6962bd40ccd62d750fab9c4f61ca5b294ab8a4369bea",
             "locator": {
               "kind": "symbol",
@@ -209,7 +227,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "21d19e2ee5a33d08e72509f9442ab49751e30f1f",
+            "blob": "8f92bbe9948b98fa7072f2ae69b1fb50bc6f098f",
             "content": "sha256:9562e96fdf3bbfa214287193ff0d97a5c78cdee9dc78e8e37287cf4fc0138c22",
             "locator": {
               "kind": "symbol",
@@ -225,7 +243,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "21d19e2ee5a33d08e72509f9442ab49751e30f1f",
+            "blob": "8f92bbe9948b98fa7072f2ae69b1fb50bc6f098f",
             "content": "sha256:e9ba6eff80a4b51f831b83c7de639bb2c014cd4d57ae0af15f1ceb9f74b93e9d",
             "locator": {
               "kind": "symbol",
@@ -258,7 +276,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "21d19e2ee5a33d08e72509f9442ab49751e30f1f",
+            "blob": "8f92bbe9948b98fa7072f2ae69b1fb50bc6f098f",
             "content": "sha256:44fc3d4b551bc1610ec66f0b9dd8ca390d33832ead0f8e6fd17cd58dc0490c37",
             "locator": {
               "kind": "symbol",

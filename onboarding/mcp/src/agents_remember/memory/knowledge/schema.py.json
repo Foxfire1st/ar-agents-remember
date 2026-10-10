@@ -150,7 +150,7 @@
         },
         {
           "anchor": {
-            "blob": "c14937bd02459de274f4bb96b0f500f895dbd44a",
+            "blob": "5330296baa8cabeac31286bb196c70bcf2763703",
             "content": "sha256:8d782e633af21cdc9e6afc11aebe567379bf7dc8cff00d10b8443340788e7056",
             "locator": {
               "kind": "symbol",
@@ -175,12 +175,12 @@
         },
         {
           "anchor": {
-            "blob": "c14937bd02459de274f4bb96b0f500f895dbd44a",
+            "blob": "5330296baa8cabeac31286bb196c70bcf2763703",
             "content": "sha256:f411ec80d676f6fa93312606d2ec547fed39bc99d653aab3afe18902be734359",
             "locator": {
-              "end": 204,
+              "end": 140,
               "kind": "line_range",
-              "start": 194
+              "start": 130
             },
             "path": "mcp/src/agents_remember/memory/knowledge/connection.py"
           },

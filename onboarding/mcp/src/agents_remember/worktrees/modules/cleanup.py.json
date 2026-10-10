@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "6c144ebeaa236e2459b5aa2ff32fa15789eb6eb4",
-        "content": "sha256:8b22e4c1d88ed51d3e2763f6a1ec838a77ed6c30b1b6a976235bd6ed9c9686d4",
+        "blob": "06ba4d9e9b4494e5332b40c2577f642da6fe649c",
+        "content": "sha256:feadb248ea07cb0dab430491e5f6045615d0cafbe5e5f21dff27c690cac71fea",
         "locator": {
           "kind": "symbol",
           "name": "cleanup_result"
@@ -21,7 +21,25 @@
     },
     {
       "anchor": {
-        "blob": "6c144ebeaa236e2459b5aa2ff32fa15789eb6eb4",
+        "blob": "06ba4d9e9b4494e5332b40c2577f642da6fe649c",
+        "content": "sha256:2368f70df2faf1324dd191deef40f750922150fbcd6151482a5e7525c4c22114",
+        "locator": {
+          "kind": "symbol",
+          "name": "_terminal_mutation_authority"
+        }
+      },
+      "id": "RLZ-A326MB",
+      "invariant": "INV-39FYQE",
+      "origin": {
+        "handoffEntry": "L50-CODE-R1-F04",
+        "leaf": "260928-MIK-L50"
+      },
+      "rationale": "Admits properly-owned live-leaf and terminal-authorized contracts to the abandon-path mutation that writes terminal state, refusing protected refs; terminal-task authorization governs series.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "06ba4d9e9b4494e5332b40c2577f642da6fe649c",
         "content": "sha256:2377bc203fa673e8bbee202ad59d18ff2aff663cf7ed11e32fa9940d31265e6e",
         "locator": {
           "kind": "symbol",
@@ -39,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "6c144ebeaa236e2459b5aa2ff32fa15789eb6eb4",
+        "blob": "06ba4d9e9b4494e5332b40c2577f642da6fe649c",
         "content": "sha256:2377bc203fa673e8bbee202ad59d18ff2aff663cf7ed11e32fa9940d31265e6e",
         "locator": {
           "kind": "symbol",
@@ -62,7 +80,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6c144ebeaa236e2459b5aa2ff32fa15789eb6eb4",
+            "blob": "06ba4d9e9b4494e5332b40c2577f642da6fe649c",
             "content": "sha256:6655686073ecd35f41f016b1c12f205ebc555fd6d064525522c7f429177bb9da",
             "locator": {
               "kind": "symbol",
@@ -112,7 +130,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "049227aeea85b68565e3a144f616be2f01186dc3",
+            "blob": "ba58fbaeceea3ba8048de3c5168fe7f90d3458df",
             "content": "sha256:4f12e525616477b9a6cfc60916cf62ac07f299a7784ed0a6e0ee020b8819336a",
             "locator": {
               "kind": "symbol",
@@ -129,7 +147,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "72a4cfa2473b44cfe37c17f389a1fe6a30724c90",
+            "blob": "45bde9d2eae6681ae74e8f1a36fbf6efed8e8d23",
             "content": "sha256:6fecff16f222bd802f30b28b67b5cbf6cd44c932e3b29945d84bfd9496aafb78",
             "locator": {
               "kind": "symbol",
@@ -175,7 +193,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ba332bd7c862238120bda1b5023b38b817a970f5",
+            "blob": "e80a42ef2e530fe0e693cfefd6b97ca23fe2cf51",
             "content": "sha256:fd4a26f7576f3296e511a5a3e0cc79165e8b233fae04235ab1ea8fff91d42614",
             "locator": {
               "kind": "symbol",
@@ -341,7 +359,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5841f05a99a45b73c2061c46de06ba14898a5d65",
+            "blob": "f2ae7719181b7b041a6701c88f53f37f4d2c8cf1",
             "content": "sha256:c773772c477e0a2152a0edb5e62dff7715402b045b5c6b15b82d3f173b053fdd",
             "locator": {
               "end": 193,
@@ -359,7 +377,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "72a4cfa2473b44cfe37c17f389a1fe6a30724c90",
+            "blob": "45bde9d2eae6681ae74e8f1a36fbf6efed8e8d23",
             "content": "sha256:1a7dfc6f818e444df8a75d0f217c2d499b02cb4898523113feb6257e90ca2750",
             "locator": {
               "kind": "symbol",

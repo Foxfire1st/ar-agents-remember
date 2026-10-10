@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6a4c244d9e980e3d26bd2fa80a02cebeb69c9965",
+            "blob": "3898819544cfb496d93c82138ac0c14cbf890049",
             "content": "sha256:8be558dfd19d944a64de16a830fbebea3660b5af442ba6b2cb68741a1f686353",
             "locator": {
               "end": 259,
@@ -25,12 +25,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "26ae19313dadce07e9f83c63872f56e21e849125",
+            "blob": "b69299b3fd501f6e27e0fc57b804a6232ee33530",
             "content": "sha256:c028e5bc73e3e9185aca1a3d9c90966ef86993ee73ca273c6dcf53cde4e7573d",
             "locator": {
-              "end": 208,
+              "end": 217,
               "kind": "line_range",
-              "start": 208
+              "start": 217
             },
             "path": "mcp/src/agents_remember/worktrees/modules/closeout.py"
           },
@@ -43,12 +43,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "26ae19313dadce07e9f83c63872f56e21e849125",
+            "blob": "b69299b3fd501f6e27e0fc57b804a6232ee33530",
             "content": "sha256:e52c3872e9cd0e33ac543095d2818953841c85185c0a7d3e878dac14cb84f100",
             "locator": {
-              "end": 799,
+              "end": 857,
               "kind": "line_range",
-              "start": 799
+              "start": 857
             },
             "path": "mcp/src/agents_remember/worktrees/modules/closeout.py"
           },
@@ -61,12 +61,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f691898dcd00ca9d02cd290832852fa2be5c2c42",
+            "blob": "1a31dae5cb0e746d7093a7225a558928989e3519",
             "content": "sha256:628d7750e9e9c9fc28ff780210a5c4071ef85a9b86a6c05ebf811fe70ba8be29",
             "locator": {
-              "end": 355,
+              "end": 405,
               "kind": "line_range",
-              "start": 355
+              "start": 405
             },
             "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
           },

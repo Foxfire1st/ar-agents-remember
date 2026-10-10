@@ -2,82 +2,28 @@
   "path": "mcp/tests/test_checkpoint_landing.py",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "Checkpoint versus final durable integration cells.",
+    "10": {
+      "note": "Completed masters refused the weaker route; stale candidates refused",
       "targets": [
         {
           "anchor": {
-            "blob": "4e551549a5b2827a92b78f53e9ef9a9c43fa7921",
-            "content": "sha256:96ac336245c4ad8bf10158e13924f4e5a90672e2e6c3cad223df0cf74dd923f9",
+            "blob": "2d02c4faec8b47837264a67c6a8b6548d8599da3",
+            "content": "sha256:cca4da551af705df9595490b07cd6ac7daa55e52e5f9fcf894151847a5e46386",
             "locator": {
               "kind": "symbol",
-              "name": "test_final_landing_still_records_completed_and_marks_cleanup_pending"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "4e551549a5b2827a92b78f53e9ef9a9c43fa7921",
-            "content": "sha256:bce4587c5faf7f54a7c90a4de6a9a4b57db7cc82d139bde003006d007fc14739",
-            "locator": {
-              "kind": "symbol",
-              "name": "IntegrationCellRecordingTests"
+              "name": "SeriesCheckpointAuthorityTests"
             }
           },
           "kind": "test"
         }
       ]
     },
-    "2": {
-      "note": "The checkpoint result retains the pre-existing cleanup state.",
+    "11": {
+      "note": "Landed masters cannot be abandoned; never-integrated terminal case allowed",
       "targets": [
         {
           "anchor": {
-            "blob": "4e551549a5b2827a92b78f53e9ef9a9c43fa7921",
-            "content": "sha256:7618628d3c53e569c5b0f9863fa5cc2fa18d6c237309a1f6819e2b56a576ea93",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_checkpoint_result_publishes_without_running_cleanup"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "3": {
-      "note": "Completion and stale candidate publication refusals.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4e551549a5b2827a92b78f53e9ef9a9c43fa7921",
-            "content": "sha256:d507f445548f06473cc7ba03182454ebca6a02522e7567205c1f2d5c46168981",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_publication_refuses_a_candidate_that_moved_after_its_capture"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "4": {
-      "note": "The landed-master abandon guard remains enforced.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4e551549a5b2827a92b78f53e9ef9a9c43fa7921",
-            "content": "sha256:f2dba5e24d8665218b6a0c13aa018e81f579c9af771a4ff0acdf041c43384973",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_abandon_guard_still_refuses_a_completed_master"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "4e551549a5b2827a92b78f53e9ef9a9c43fa7921",
+            "blob": "2d02c4faec8b47837264a67c6a8b6548d8599da3",
             "content": "sha256:d4f8ceadcb0e8a0051500672bd33269f77ff6e685f75fa897ccaf505646f259b",
             "locator": {
               "kind": "symbol",
@@ -88,32 +34,67 @@
         }
       ]
     },
-    "5": {
-      "note": "Production checkpoint capture and publication authority.",
+    "6": {
+      "note": "Real memory repository backing the fixture",
       "targets": [
         {
           "anchor": {
-            "blob": "668b4e0d834b3d815d1879596b6d2118e13b94ba",
-            "content": "sha256:d20baf102c103562275f1f962c9d56908d2ac73c7dd825b2278c0def63765742",
+            "blob": "2d02c4faec8b47837264a67c6a8b6548d8599da3",
+            "content": "sha256:939a4ff1bfb4eeb6c133624e00742e7d97f3e98ba77a9f70124b5d062aaee114",
             "locator": {
               "kind": "symbol",
-              "name": "capture_series_checkpoint_refs"
-            },
-            "path": "mcp/src/agents_remember/worktrees/series_closeout.py"
+              "name": "_memory_repo"
+            }
           },
-          "kind": "code"
-        },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Fixture is an external-memory series contract over both repos",
+      "targets": [
         {
           "anchor": {
-            "blob": "668b4e0d834b3d815d1879596b6d2118e13b94ba",
-            "content": "sha256:3ff9bea0e28f74c006cebecdeb7b3209b9ca2c462d8b8109f8d33b995f304eba",
+            "blob": "2d02c4faec8b47837264a67c6a8b6548d8599da3",
+            "content": "sha256:84d4aed461b43057dcc4f57827ce4f417c3534bd71ea4597c5746d232950ac9e",
             "locator": {
               "kind": "symbol",
-              "name": "publish_series_checkpoint_under_authority"
-            },
-            "path": "mcp/src/agents_remember/worktrees/series_closeout.py"
+              "name": "_fixture"
+            }
           },
-          "kind": "code"
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Checkpoint records state and leaves cleanup untouched",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d02c4faec8b47837264a67c6a8b6548d8599da3",
+            "content": "sha256:bce4587c5faf7f54a7c90a4de6a9a4b57db7cc82d139bde003006d007fc14739",
+            "locator": {
+              "kind": "symbol",
+              "name": "IntegrationCellRecordingTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "Checkpoint result keeps prior cleanup through status projection",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d02c4faec8b47837264a67c6a8b6548d8599da3",
+            "content": "sha256:3ddcc5b760945537d24cbbadf41ba4de29cda7b008c6c9981331446ce9ae548b",
+            "locator": {
+              "kind": "symbol",
+              "name": "CheckpointResultTests"
+            }
+          },
+          "kind": "test"
         }
       ]
     }

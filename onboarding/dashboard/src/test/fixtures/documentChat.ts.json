@@ -39,8 +39,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a668a8c2f5f7a0882fa767cbd92b0d40911fd1a7",
-            "content": "sha256:2bfd775715247c48a0a6becd025d4449b8ed7263596dee52387bab27e1ad9e64",
+            "blob": "56a5e9b48bf9e18011e81aa65a63ebd6901df81d",
+            "content": "sha256:008afca40bd4db0628750cb0398ba90b501267e9c528bc30265574407883f360",
             "locator": {
               "kind": "symbol",
               "name": "chatSeries"

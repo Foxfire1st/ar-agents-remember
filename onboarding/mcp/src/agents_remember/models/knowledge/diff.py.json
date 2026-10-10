@@ -374,12 +374,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "16d9115005b531950418960f3030fb71e5e46490",
+            "blob": "73551cfb002f1420c4431ddb8a46eade70ddfa88",
             "content": "sha256:3de618a2e3240cb724e6f306b007b089d8664bce67fca3f6bd1037ec5cd7799d",
             "locator": {
-              "end": 507,
+              "end": 497,
               "kind": "line_range",
-              "start": 481
+              "start": 471
             },
             "path": "mcp/tests/test_knowledge_diff_boundaries.py"
           },
@@ -392,12 +392,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "16d9115005b531950418960f3030fb71e5e46490",
+            "blob": "73551cfb002f1420c4431ddb8a46eade70ddfa88",
             "content": "sha256:91c18b6ad791054cd4ccf163dcf2706f62451c3c85fea6bd6da183ba515a2385",
             "locator": {
-              "end": 540,
+              "end": 530,
               "kind": "line_range",
-              "start": 510
+              "start": 500
             },
             "path": "mcp/tests/test_knowledge_diff_boundaries.py"
           },
@@ -441,7 +441,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "blob": "26599e0fe8b427bc0d290767b7b8e263cde390b6",
             "content": "sha256:91c0e01b1715c0a3ca629e2b554757eca67b4da8f4d6cbae650b0017b9630432",
             "locator": {
               "kind": "symbol",
@@ -465,12 +465,12 @@
         },
         {
           "anchor": {
-            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "blob": "26599e0fe8b427bc0d290767b7b8e263cde390b6",
             "content": "sha256:12fa1866d1db2c3499769a35939717f0e720d051b99867ba1d9063abe2ff4a3a",
             "locator": {
-              "end": 222,
+              "end": 212,
               "kind": "line_range",
-              "start": 151
+              "start": 141
             },
             "path": "mcp/src/agents_remember/models/knowledge/result.py"
           },

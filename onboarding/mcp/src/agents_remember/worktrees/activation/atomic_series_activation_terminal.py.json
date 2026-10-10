@@ -24,12 +24,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "598b2015f9054a298a1a3e54896cfb6ec238b38c",
+            "blob": "4d50d05471260de792a25e40a495b73d67945071",
             "content": "sha256:2b2821cc9654e625c2ee4838b0c714cdb24333411aece77c9fd98e0f2cb0e66e",
             "locator": {
-              "end": 177,
+              "end": 180,
               "kind": "line_range",
-              "start": 157
+              "start": 160
             },
             "path": "mcp/tests/test_atomic_series_activation.py"
           },
@@ -37,12 +37,12 @@
         },
         {
           "anchor": {
-            "blob": "598b2015f9054a298a1a3e54896cfb6ec238b38c",
+            "blob": "4d50d05471260de792a25e40a495b73d67945071",
             "content": "sha256:c994d6631624e0b42bac96c1dc9152ced9ea882b373716bfb76c079d7a5995ca",
             "locator": {
-              "end": 214,
+              "end": 217,
               "kind": "line_range",
-              "start": 179
+              "start": 182
             },
             "path": "mcp/tests/test_atomic_series_activation.py"
           },

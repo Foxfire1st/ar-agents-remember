@@ -19,6 +19,4 @@ The fixture builds the exact three-level shape the binding walks — a sprint wh
 
 - The series fixture carries the abandoned-row count the projection reads. [4]
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The series projection carries the leaf row the binding needs. [3] | `chatSeries` | dashboard/src/test/fixtures/documentChat.ts:7-10 |
+- The series projection carries the leaf row the binding needs. [3]

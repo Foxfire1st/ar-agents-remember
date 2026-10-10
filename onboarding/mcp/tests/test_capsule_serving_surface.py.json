@@ -1,0 +1,97 @@
+{
+  "path": "mcp/tests/test_capsule_serving_surface.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Split contract: surface cases here, worlds and vocabularies imported",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2884e2a455af3ec254605597df9b0b059e4e06b5",
+            "content": "sha256:8f108fc4132c264c40ea28f20a7b059578d2eef9a6413c95a4278fef22cdff94",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Shipped corpus, manifest identity, index shape, entry completeness",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2884e2a455af3ec254605597df9b0b059e4e06b5",
+            "content": "sha256:8f108fc4132c264c40ea28f20a7b059578d2eef9a6413c95a4278fef22cdff94",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Real stdio exchange and its eight client-observed checks",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2884e2a455af3ec254605597df9b0b059e4e06b5",
+            "content": "sha256:8f108fc4132c264c40ea28f20a7b059578d2eef9a6413c95a4278fef22cdff94",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Live-server traversal refusal and harness-can-fail sanity",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2884e2a455af3ec254605597df9b0b059e4e06b5",
+            "content": "sha256:8f108fc4132c264c40ea28f20a7b059578d2eef9a6413c95a4278fef22cdff94",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Seeded-mutation guards: containment, index, name rule, idempotence",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2884e2a455af3ec254605597df9b0b059e4e06b5",
+            "content": "sha256:8f108fc4132c264c40ea28f20a7b059578d2eef9a6413c95a4278fef22cdff94",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Altitude admission, capsule seats, nesting, legacy rename",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2884e2a455af3ec254605597df9b0b059e4e06b5",
+            "content": "sha256:8f108fc4132c264c40ea28f20a7b059578d2eef9a6413c95a4278fef22cdff94",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

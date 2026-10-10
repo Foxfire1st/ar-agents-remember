@@ -173,12 +173,12 @@
         },
         {
           "anchor": {
-            "blob": "74f71ebfe48f6760b4c87c1bcd00e51baeb09358",
+            "blob": "8458f1fd16eafbea5e304d0cec0514bcbe8b0da0",
             "content": "sha256:0c7f69d64a9f8f1248742b4e49d3f8555cf399a006d20e811945f7ebad9d17f0",
             "locator": {
-              "end": 79,
+              "end": 80,
               "kind": "line_range",
-              "start": 79
+              "start": 80
             },
             "path": "mcp/src/agents_remember/worktrees/modules/pause.py"
           },
@@ -191,7 +191,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ad32196677d5800992fe4294b439f3e28af150ec",
+            "blob": "e41c49321364b7c5080944c8c746cd0ffdc181c8",
             "content": "sha256:13097fa856c7a30ea33fb6e87fb9236a60d1e67383850f3c5ec4599801591a78",
             "locator": {
               "end": 438,

@@ -24,7 +24,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3f57a18d7b9c660aa16e15076b98e96ebacf9a79",
+            "blob": "6dac04491dc3e36d2f4f587923556d007147948d",
             "content": "sha256:6c326abfb8ca490077e1c2c925d28385e2740164b5eb1d4adc81b32ff6795088",
             "locator": {
               "kind": "symbol",
@@ -40,7 +40,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3f57a18d7b9c660aa16e15076b98e96ebacf9a79",
+            "blob": "6dac04491dc3e36d2f4f587923556d007147948d",
             "content": "sha256:d1011d9fef67ab244f9a31d25895681b7aa4e54d42b5a76b2ac54468c52ee265",
             "locator": {
               "kind": "symbol",
@@ -56,12 +56,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3356b11c175bbe3fc6df953777623951d9b57dbe",
+            "blob": "d8ed3dea89972d49dfda38caea0f0e4adf3de743",
             "content": "sha256:118a6e36b786cc331a9e2e711f2ed5f0733731d86a871ac285ba808923c2ab0a",
             "locator": {
-              "end": 94,
+              "end": 95,
               "kind": "line_range",
-              "start": 89
+              "start": 90
             },
             "path": "mcp/src/agents_remember/cli/__main__.py"
           },

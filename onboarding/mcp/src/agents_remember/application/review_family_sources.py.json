@@ -120,7 +120,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e7abc7f3bcd44ba6885cdd18277e9962f24e42aa",
+            "blob": "81c9e1852ad2d5926b77e5aebf0ef1df7caae2c6",
             "content": "sha256:00df60683c6562a39fed1cefd04740a3bdd3694504bcac425212fb50f8a370f4",
             "locator": {
               "kind": "symbol",
@@ -137,12 +137,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "78a5998962b38d43feb13a4172c434d9f79f4c52",
+            "blob": "1863cffa06d71d79ae64ac0462a1fae69a504fd0",
             "content": "sha256:db5a418a3c076a03ca27d659eb8334041f770e840d3eb18561cbd12125f8bfe4",
             "locator": {
-              "end": 290,
+              "end": 292,
               "kind": "line_range",
-              "start": 262
+              "start": 264
             },
             "path": "mcp/tests/test_review_family_member_sources.py"
           },
@@ -155,12 +155,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "78a5998962b38d43feb13a4172c434d9f79f4c52",
+            "blob": "1863cffa06d71d79ae64ac0462a1fae69a504fd0",
             "content": "sha256:c2ff3b4c9fcd508151e2f6b490712ba4c14004ff9e0275a888fa6a107256bc5f",
             "locator": {
-              "end": 311,
+              "end": 313,
               "kind": "line_range",
-              "start": 293
+              "start": 295
             },
             "path": "mcp/tests/test_review_family_member_sources.py"
           },
@@ -173,12 +173,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "78a5998962b38d43feb13a4172c434d9f79f4c52",
+            "blob": "1863cffa06d71d79ae64ac0462a1fae69a504fd0",
             "content": "sha256:a3901b80d1e05ba00baceeef1cf96cb080bd1bd206b4a8521be841ed1b7045b2",
             "locator": {
-              "end": 385,
+              "end": 387,
               "kind": "line_range",
-              "start": 364
+              "start": 366
             },
             "path": "mcp/tests/test_review_family_member_sources.py"
           },

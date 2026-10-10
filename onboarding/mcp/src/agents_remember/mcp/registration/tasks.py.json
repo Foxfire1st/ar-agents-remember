@@ -90,12 +90,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "38475a49c1a400b66a220740428e6a6b495a096a",
+            "blob": "a944280846a4175d9217a58a16a3374d336e652b",
             "content": "sha256:2aa6972042cf46b4dcdffedd6f3ee2dea1f7eda2e67ac094f909a60deb7467cb",
             "locator": {
-              "end": 144,
+              "end": 145,
               "kind": "line_range",
-              "start": 144
+              "start": 145
             },
             "path": "mcp/src/agents_remember/application/worktree_tool_requests.py"
           },

@@ -6,24 +6,15 @@
 
 ## Purpose
 
-Registered public operation proofs for exact planned-parent preview, no startup-state materialization, truthful journal/ref facts and unchanged durable apply.
+Registered public operation proofs for exact planned-parent preview, no startup-state materialization, truthful journal/ref facts and unchanged durable apply — plus the proof that the removed opt-out mode never previews.
 
 ## Code Commentary
 
-The canonical confined fixtures use real temporary code/external-memory repositories and the registered MCP/application/start/bootstrap path. Two-mode repeated first-leaf previews compare complete startup-owned product state, refs, worktrees, contents and real index bytes; receipt storage is explicitly separate.
-
-The existing partial-bootstrap case drives one genuine journal before and after its original helper creates the exact memory ref. Preview reports `would-create` only in the first state, `existing` in the second, and actual apply recovers that same journal to durable source/parent/active authority. No manual parent/ref or replacement journal supplies the proof.
-
-Default/durable rejection, foreign/unreadable parent, invalid leaf/source/base/ref, changed current source after preview and organizational direct-super remain separate operations. Fresh-session equality holds. With an already-existing ambient lifecycle, one generic `tool.completed` append makes whole ambient-fixture equality false; both new observer byte trees are retained. Missing original discovery observer bytes remain missing, not reconstructed. These fixtures do not resume or accept the original L41 evidence.
+The canonical confined fixtures use real temporary code and external-memory repositories and the registered MCP/application/start/bootstrap path. `PreviewFixture` builds every world external-memory; the repeated first-leaf preview is parametrized only by commanded versus uncommanded parentage and asserts complete startup-owned state, refs, worktrees, contents and real index bytes stay identical with no parent publication. `test_disabled_start_is_refused_before_any_publication` pins the L50 refusal: both preview and real run with `memory_mode="disabled"` answer `memory-opt-out-refused` at the top of `worktree_start`, before any branch, worktree, contract or task binding exists, so the world is byte-identical afterwards and no parent contract was published. The partial-bootstrap case drives one genuine journal before and after its helper creates the exact memory ref (`would-create` then `existing`), with actual apply recovering that journal; rejection, foreign-parent, invalid-input, changed-source and organizational cases remain separate operations.
 
 ## Evidence
 
-No Domain Documentation source is configured in system/sources.md. These are current source/assertion anchors; the approved requirement and bound public receipts remain task artifacts.
-
-
-- First-leaf preview is repeatable without startup publication. [1]
-- Actual apply re-resolves current source; persisted-parent preview remains read-only. [2]
-- Losing the handoff fails and preview cannot supply durable authority. [3]
-- Persisted artifact errors never select a synthetic valid parent. [4]
-- Same journal/ref states and real apply/recovery remain truthful. [5]
-- Ambient completion is the explicitly observed exception. [6]
+- Fixture world is always external-memory [7]
+- First-leaf preview repeatable without publication, commanded or not [8]
+- Disabled mode refused in preview and real run, world unchanged [9]
+- Partial bootstrap read-only, then apply recovers the same journal [10]

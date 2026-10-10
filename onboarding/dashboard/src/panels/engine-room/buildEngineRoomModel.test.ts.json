@@ -24,7 +24,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a1ab53a78b22bd21d8a03da7fd9383ac09899a25",
+            "blob": "12db828427142b75b334b28d19bad731c1ef45f7",
             "content": "sha256:e7b043904ab116bd8e728f9a3d560335e0db2d03ff6449d3dbaf13127ade46d0",
             "locator": {
               "kind": "symbol",
@@ -46,7 +46,7 @@
         },
         {
           "anchor": {
-            "blob": "a1ab53a78b22bd21d8a03da7fd9383ac09899a25",
+            "blob": "12db828427142b75b334b28d19bad731c1ef45f7",
             "content": "sha256:f151ac1ebaad81c68b67c7e0445790c2abce301df666545f723a83bb2a538d7e",
             "locator": {
               "kind": "symbol",
@@ -103,12 +103,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a1ab53a78b22bd21d8a03da7fd9383ac09899a25",
+            "blob": "12db828427142b75b334b28d19bad731c1ef45f7",
             "content": "sha256:c49e71899d252f15f18a099f7bbdd1c95729543eadffa00e8ce8c4523095fb75",
             "locator": {
-              "end": 134,
+              "end": 132,
               "kind": "line_range",
-              "start": 132
+              "start": 130
             }
           },
           "kind": "test"
@@ -120,7 +120,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5e4cacc3f5f41b68b1399a4064fb89ccec6b2a7e",
+            "blob": "cee16fce97e5e76b33e52e9b0d606b87481c9758",
             "content": "sha256:adc5e70699b6beb4f6da806e367cc006d742e94259f35a0eafbb048349540fd4",
             "locator": {
               "end": 233,
@@ -138,7 +138,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5e4cacc3f5f41b68b1399a4064fb89ccec6b2a7e",
+            "blob": "cee16fce97e5e76b33e52e9b0d606b87481c9758",
             "content": "sha256:0150685acb034ab2c0bf7f04923aef100f5081c94e274216a472aa39b7269672",
             "locator": {
               "end": 365,
@@ -156,12 +156,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5e4cacc3f5f41b68b1399a4064fb89ccec6b2a7e",
+            "blob": "cee16fce97e5e76b33e52e9b0d606b87481c9758",
             "content": "sha256:166d2ecbb0660b6f73e4497602a536512544817207b812a075559071aa49a387",
             "locator": {
-              "end": 513,
+              "end": 509,
               "kind": "line_range",
-              "start": 513
+              "start": 509
             },
             "path": "dashboard/src/types/projection.ts"
           },

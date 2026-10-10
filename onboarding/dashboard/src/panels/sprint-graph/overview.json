@@ -52,7 +52,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "65150d6b9dc643f5ddb48dae19e76a9ad141b816",
+            "blob": "74e115417c4c270744a57431c4d51524c6e61b9b",
             "content": "sha256:870f45dc6d4b00dc1d5a9a77d0b6aec42efb4c4df16fd13c52b6e9fe1580d60f",
             "locator": {
               "kind": "symbol",
@@ -64,7 +64,7 @@
         },
         {
           "anchor": {
-            "blob": "65150d6b9dc643f5ddb48dae19e76a9ad141b816",
+            "blob": "74e115417c4c270744a57431c4d51524c6e61b9b",
             "content": "sha256:a69d6c3ed7680a2369192bb27d9a48da292c1e4a4d1b59b7116126ca9d20e2ca",
             "locator": {
               "kind": "symbol",
@@ -99,12 +99,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5e4cacc3f5f41b68b1399a4064fb89ccec6b2a7e",
+            "blob": "cee16fce97e5e76b33e52e9b0d606b87481c9758",
             "content": "sha256:aaf4594f61d735a88a3580e6cd5f5763836b37158ba663039a45051a4dc7aedd",
             "locator": {
-              "end": 721,
+              "end": 716,
               "kind": "line_range",
-              "start": 721
+              "start": 716
             },
             "path": "dashboard/src/types/projection.ts"
           },

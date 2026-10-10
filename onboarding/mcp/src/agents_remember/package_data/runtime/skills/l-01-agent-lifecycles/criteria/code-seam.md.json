@@ -91,7 +91,7 @@
         },
         {
           "anchor": {
-            "blob": "8216517a6b46f398e278ef4cb431f4ddc445a7f6",
+            "blob": "dfbbd0c973f23d4a03de5afa22be53f766aeac6d",
             "content": "sha256:313d6ae5d5d3eea6d4393cfae149e951e5d6fd2f165516d17d276b153d78b921",
             "locator": {
               "end": 62,
@@ -104,12 +104,12 @@
         },
         {
           "anchor": {
-            "blob": "8216517a6b46f398e278ef4cb431f4ddc445a7f6",
+            "blob": "dfbbd0c973f23d4a03de5afa22be53f766aeac6d",
             "content": "sha256:ca04194485304fe905d26b1663078884c16d5d36f479d9d3e1179a77fdf24011",
             "locator": {
-              "end": 187,
+              "end": 140,
               "kind": "line_range",
-              "start": 187
+              "start": 140
             },
             "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
           },

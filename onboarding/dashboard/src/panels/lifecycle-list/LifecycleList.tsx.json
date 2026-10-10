@@ -203,7 +203,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d51e34bf1af86a00f562f7192a6055f039cdd622",
+            "blob": "30cb14732f6d4d548c1ee9550ab342b849d1eb10",
             "content": "sha256:62037153cf0b147b87950ac58603f70f56d3ea0b2daf892759e0fdf10a74a172",
             "locator": {
               "kind": "symbol",
@@ -669,12 +669,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b6cf9bcff5cd2d9ab2c2b889ae9e481a35093a55",
+            "blob": "832fd9e72f4012320be42897be95764fcd17658e",
             "content": "sha256:9f37622c422a4d718eb844c8b24deea23a0c95e9248873f74a408670def4a983",
             "locator": {
-              "end": 41,
+              "end": 42,
               "kind": "line_range",
-              "start": 40
+              "start": 41
             },
             "path": "mcp/src/agents_remember/tasks/document.py"
           },

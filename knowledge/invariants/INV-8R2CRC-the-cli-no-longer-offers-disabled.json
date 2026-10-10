@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "Realized in the CLI parser, which no longer offers the choice, and in the start module, which answers unknown tokens as invalid requests; the help-pin and unknown-token tests guard both halves."
+  },
+  "applicability": "The module command line and the recovery-choice surface of every start.",
+  "conditions": [
+    "The input names the removed disabled-memory choice or an unknown token."
+  ],
+  "exclusions": [
+    "The supported external choice and the missing-memory-root setup error, which are unchanged."
+  ],
+  "id": "INV-8R2CRC",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "cli.py::build_parser removes choices=(disabled-memory,) while retaining negative-input parsing; start.py::_unknown_choice_result distinguishes unknown answers from the named opt-out. The rendered help pin asserts {disabled-memory} is absent, explicit removed mode/choice paths still receive memory-opt-out-refused, and test_start_refuses_an_unknown_memory_choice_as_an_invalid_request covers unknown-token invalid-request. External-mode behavior and the existing removal tests pass within the authorized three-module selection. Independent qualified Python 3.14.8 ONE three-module run: 124 passed, EXIT=0, PID933961, 2026-10-10T12:14:31.159216Z–12:14:50.323397Z; exact argv/cwd/env and whole streams in notes/reports/role-launch/260928-MIK-L50-reviewer-bc8a682c-745f-42b2-a47d-8d978449ac08-code-r2.evidence/pytest-result.json and pytest.stdout.log (SHA c51285ede6a88c4b08784ab5b97f2c7bb727b6a733a57363198d58aaad673a5a).",
+        "Curator-owned F01 attribution repair: complete original producer input is notes/reports/role-launch/260928-MIK-L50-reviewer-bc8a682c-745f-42b2-a47d-8d978449ac08-code-r6.curator-handoff.json (SHA-256 3ad6cd419e6a447b8cbe8371201b317965fffd5110fc6cd9b052bd8047705f72), entry L50-CODE-R1-F06, with every original producer field unchanged. Named original plus separate curator resolution: notes/reports/role-launch/260928-MIK-L50-curator-8f6ac14e-c1c0-43fe-b347-6b8ed2158727.evidence/named-producer-inputs.json. Existing origin.handoff.path notes/reports/260928-MIK-L50-curator-handoff-list.json is the historical CURATOR-OWNED WRITER PROJECTION, not the original producer input; expanded L50-CUR-EXP items belong to the Curator. F04 projection represents seven of nine targets: both original proof.stdout targets remain in original input and are not code realizations. Four other retained findings match all nine producer fields. F05 and requirement adjudication remain task-local in the complete seven-entry original; no waiver or lost evidence."
+      ],
+      "path": "notes/reports/260928-MIK-L50-curator-handoff-list.json"
+    },
+    "handoffEntry": "L50-CODE-R1-F06",
+    "leaf": "260928-MIK-L50",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The CLI no longer offers disabled-memory as an enum choice; explicit removed input still refuses and an unknown answer is invalid-request. F06 is fixed.",
+  "status": "proposed",
+  "supersedes": []
+}

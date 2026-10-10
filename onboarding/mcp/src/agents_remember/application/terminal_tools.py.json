@@ -256,7 +256,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a7a323a5a3fc87252dc59389a9a107bd0e0ab6c7",
+            "blob": "07dbb4559839c3bb99d5e22b19ab0aeffde8d577",
             "content": "sha256:b078024718ecb17ceaac272f3c33c7e6951de04fc083356f008b91cc408c21b5",
             "locator": {
               "kind": "symbol",
@@ -268,7 +268,7 @@
         },
         {
           "anchor": {
-            "blob": "a7a323a5a3fc87252dc59389a9a107bd0e0ab6c7",
+            "blob": "07dbb4559839c3bb99d5e22b19ab0aeffde8d577",
             "content": "sha256:ade4924a285ec8e455a4b7c52effb75428d732a60f71eaad8379b0fb70b7ad71",
             "locator": {
               "kind": "symbol",
@@ -280,12 +280,12 @@
         },
         {
           "anchor": {
-            "blob": "a7a323a5a3fc87252dc59389a9a107bd0e0ab6c7",
+            "blob": "07dbb4559839c3bb99d5e22b19ab0aeffde8d577",
             "content": "sha256:72a11c884fb7a7643a155c8dad9d7f81975bfe5fd7dc39ed4897de8db8557a77",
             "locator": {
-              "end": 183,
+              "end": 184,
               "kind": "line_range",
-              "start": 173
+              "start": 174
             },
             "path": "mcp/src/agents_remember/serving/launch_capsule.py"
           },

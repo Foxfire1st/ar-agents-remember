@@ -234,7 +234,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "96b09bbc6e00b57ece0ff23b4270e9797026d780",
+            "blob": "f783ca1e819eccb55dc08b0f536877e2e44005d4",
             "content": "sha256:570172fcc27809b39793fa1b60194494ce489acf9006d272466f0182614cd896",
             "locator": {
               "kind": "symbol",
@@ -246,7 +246,7 @@
         },
         {
           "anchor": {
-            "blob": "96b09bbc6e00b57ece0ff23b4270e9797026d780",
+            "blob": "f783ca1e819eccb55dc08b0f536877e2e44005d4",
             "content": "sha256:e9c6c87e9404af3a7812c96cf385a5dd258dc627d2496bc69c76cc78c3bcb5a3",
             "locator": {
               "kind": "symbol",
@@ -258,7 +258,7 @@
         },
         {
           "anchor": {
-            "blob": "96b09bbc6e00b57ece0ff23b4270e9797026d780",
+            "blob": "f783ca1e819eccb55dc08b0f536877e2e44005d4",
             "content": "sha256:4e457fbf5b7714b3ca61986ffd4d434c78a556bf3357fd337ca7601c4957b8a0",
             "locator": {
               "kind": "symbol",
@@ -270,7 +270,7 @@
         },
         {
           "anchor": {
-            "blob": "96b09bbc6e00b57ece0ff23b4270e9797026d780",
+            "blob": "f783ca1e819eccb55dc08b0f536877e2e44005d4",
             "content": "sha256:9a35ba51f5644d3ec4a924fbaa0b1e63f57db834b3e42a28ea92f957205f2f13",
             "locator": {
               "kind": "symbol",
@@ -282,7 +282,7 @@
         },
         {
           "anchor": {
-            "blob": "96b09bbc6e00b57ece0ff23b4270e9797026d780",
+            "blob": "f783ca1e819eccb55dc08b0f536877e2e44005d4",
             "content": "sha256:928c10d1c3169e0bd282510435796d3a8471aebe1f87804af0693ae1b903d413",
             "locator": {
               "kind": "symbol",
@@ -294,7 +294,7 @@
         },
         {
           "anchor": {
-            "blob": "96b09bbc6e00b57ece0ff23b4270e9797026d780",
+            "blob": "f783ca1e819eccb55dc08b0f536877e2e44005d4",
             "content": "sha256:b7b76e0d794b5961ee3fb00ba9b0696cb33f71d7759e227273e58aec36c0b083",
             "locator": {
               "end": 320,
@@ -307,7 +307,7 @@
         },
         {
           "anchor": {
-            "blob": "96b09bbc6e00b57ece0ff23b4270e9797026d780",
+            "blob": "f783ca1e819eccb55dc08b0f536877e2e44005d4",
             "content": "sha256:c7fe4aee1f95c678cdb608330bd674c63442a38827ff1edd486c2dcf30bc89db",
             "locator": {
               "end": 332,
@@ -320,7 +320,7 @@
         },
         {
           "anchor": {
-            "blob": "96b09bbc6e00b57ece0ff23b4270e9797026d780",
+            "blob": "f783ca1e819eccb55dc08b0f536877e2e44005d4",
             "content": "sha256:c940f7d85074ce06ac5ae84abb499b3d31d3f425b2337aa20e13b395d29c4df9",
             "locator": {
               "end": 342,
@@ -333,12 +333,12 @@
         },
         {
           "anchor": {
-            "blob": "96b09bbc6e00b57ece0ff23b4270e9797026d780",
+            "blob": "f783ca1e819eccb55dc08b0f536877e2e44005d4",
             "content": "sha256:9262c9a76b60255a7fc62deeffb427a25faaa087d08356c557e5c6102e86ec65",
             "locator": {
-              "end": 491,
+              "end": 381,
               "kind": "line_range",
-              "start": 478
+              "start": 368
             },
             "path": "mcp/src/agents_remember/memory/knowledge/read_queries.py"
           },
@@ -395,12 +395,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "16d9115005b531950418960f3030fb71e5e46490",
+            "blob": "73551cfb002f1420c4431ddb8a46eade70ddfa88",
             "content": "sha256:91c18b6ad791054cd4ccf163dcf2706f62451c3c85fea6bd6da183ba515a2385",
             "locator": {
-              "end": 540,
+              "end": 530,
               "kind": "line_range",
-              "start": 510
+              "start": 500
             },
             "path": "mcp/tests/test_knowledge_diff_boundaries.py"
           },
@@ -408,12 +408,12 @@
         },
         {
           "anchor": {
-            "blob": "16d9115005b531950418960f3030fb71e5e46490",
+            "blob": "73551cfb002f1420c4431ddb8a46eade70ddfa88",
             "content": "sha256:42e9a906fb6a605b2f9c1711801e560ee4c4c3548ada3b1a9e5ef699fe41442a",
             "locator": {
-              "end": 597,
+              "end": 587,
               "kind": "line_range",
-              "start": 543
+              "start": 533
             },
             "path": "mcp/tests/test_knowledge_diff_boundaries.py"
           },
@@ -455,7 +455,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a3b58d726cbf892f17bbd2cea4b738d4ed605cb0",
+            "blob": "472aa6a95dbd78142b0e19f328d23e2e3d2d3026",
             "content": "sha256:0e33a6818449f12402a8bb83520c99d0fd294d8c353a6afe9f326d22e3665449",
             "locator": {
               "kind": "symbol",
@@ -467,7 +467,7 @@
         },
         {
           "anchor": {
-            "blob": "a3b58d726cbf892f17bbd2cea4b738d4ed605cb0",
+            "blob": "472aa6a95dbd78142b0e19f328d23e2e3d2d3026",
             "content": "sha256:001584ab745e28afcd6f1111f23193c034a107b180674d07b25de79659af14a3",
             "locator": {
               "kind": "symbol",
@@ -479,12 +479,12 @@
         },
         {
           "anchor": {
-            "blob": "a3b58d726cbf892f17bbd2cea4b738d4ed605cb0",
+            "blob": "472aa6a95dbd78142b0e19f328d23e2e3d2d3026",
             "content": "sha256:09483ea98a393005a338e66ad2b22f9316da1a8238a005d5cbfe7facd1667d00",
             "locator": {
-              "end": 233,
+              "end": 228,
               "kind": "line_range",
-              "start": 189
+              "start": 184
             },
             "path": "mcp/tests/diff_scope_test_support.py"
           },
@@ -492,12 +492,12 @@
         },
         {
           "anchor": {
-            "blob": "a3b58d726cbf892f17bbd2cea4b738d4ed605cb0",
+            "blob": "472aa6a95dbd78142b0e19f328d23e2e3d2d3026",
             "content": "sha256:4f35fe3fefcfe7467dbe42f57d671de1779be58a683811fbddd4c6dc8a74536e",
             "locator": {
-              "end": 186,
+              "end": 181,
               "kind": "line_range",
-              "start": 148
+              "start": 143
             },
             "path": "mcp/tests/diff_scope_test_support.py"
           },

@@ -1,0 +1,170 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/disabled_memory.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "1fc3b4f1b5b8a45dbc2c1ad1806e30df145a7c82",
+        "content": "sha256:128ae0a43ef798317f0bd16e6f7da90c204765c8cabb5c9a37aeb38c11035850",
+        "locator": {
+          "kind": "symbol",
+          "name": "is_disabled_contract"
+        }
+      },
+      "id": "RLZ-3FE885",
+      "invariant": "INV-V3N6NW",
+      "origin": {
+        "handoffEntry": "L50-MIK-R50-rule-2-vocabulary-removed",
+        "leaf": "260928-MIK-L50"
+      },
+      "rationale": "Classifies a live contract's removed mode for every reader that must tell an old contract from a current one.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "1fc3b4f1b5b8a45dbc2c1ad1806e30df145a7c82",
+        "content": "sha256:0f0c953f320f96d0f2fdca54a46e2ba871df60af7c671bb8bb5040e5e3b63c92",
+        "locator": {
+          "kind": "symbol",
+          "name": "disabled_opt_out_result"
+        }
+      },
+      "id": "RLZ-NVG11G",
+      "invariant": "INV-V3N6NW",
+      "origin": {
+        "handoffEntry": "L50-MIK-R50-rule-2-vocabulary-removed",
+        "leaf": "260928-MIK-L50"
+      },
+      "rationale": "Builds the start-time refusal result that names the mode, the reason and the default-mode action before anything is created.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "1fc3b4f1b5b8a45dbc2c1ad1806e30df145a7c82",
+        "content": "sha256:3747419fa36537f0256fcad8f1f017235a4de0103d63b135ce4fd3fe912ab959",
+        "locator": {
+          "kind": "symbol",
+          "name": "opt_out_refusal_result"
+        }
+      },
+      "id": "RLZ-PDPV5Q",
+      "invariant": "INV-V3N6NW",
+      "origin": {
+        "handoffEntry": "L50-MIK-R50-rule-2-vocabulary-removed",
+        "leaf": "260928-MIK-L50"
+      },
+      "rationale": "Wraps the refusal text in the command result every refusing route returns.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "1fc3b4f1b5b8a45dbc2c1ad1806e30df145a7c82",
+        "content": "sha256:02992e108b8ca18430d2f1edd9c4b57955c5b1b9518bd02934c871e60f7c90b9",
+        "locator": {
+          "kind": "symbol",
+          "name": "opt_out_detail_for_contract"
+        }
+      },
+      "id": "RLZ-PNDCMP",
+      "invariant": "INV-V3N6NW",
+      "origin": {
+        "handoffEntry": "L50-MIK-R50-rule-2-vocabulary-removed",
+        "leaf": "260928-MIK-L50"
+      },
+      "rationale": "The one refusal text every surface uses, so the removal reads identically everywhere.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Removed mode, one status, known way out, no developer decision",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1fc3b4f1b5b8a45dbc2c1ad1806e30df145a7c82",
+            "content": "sha256:d1d96f82f19f1546921483e16c366655d0bd5a1bfa71712b780c47bd0f0c0df1",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Conventional memory root and non-external contract detection",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1fc3b4f1b5b8a45dbc2c1ad1806e30df145a7c82",
+            "content": "sha256:d1d96f82f19f1546921483e16c366655d0bd5a1bfa71712b780c47bd0f0c0df1",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Reason selection: missing root, probe failure, converted knowledge, unconfigured repo",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1fc3b4f1b5b8a45dbc2c1ad1806e30df145a7c82",
+            "content": "sha256:d1d96f82f19f1546921483e16c366655d0bd5a1bfa71712b780c47bd0f0c0df1",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Raw cell carried only for degraded empty/unknown-cell reads",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1fc3b4f1b5b8a45dbc2c1ad1806e30df145a7c82",
+            "content": "sha256:d1d96f82f19f1546921483e16c366655d0bd5a1bfa71712b780c47bd0f0c0df1",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Contract entry refusal scope; status, attach and abandon keep reading",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1fc3b4f1b5b8a45dbc2c1ad1806e30df145a7c82",
+            "content": "sha256:d1d96f82f19f1546921483e16c366655d0bd5a1bfa71712b780c47bd0f0c0df1",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Start entry placement, full option coverage, missing root returns nothing",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1fc3b4f1b5b8a45dbc2c1ad1806e30df145a7c82",
+            "content": "sha256:d1d96f82f19f1546921483e16c366655d0bd5a1bfa71712b780c47bd0f0c0df1",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

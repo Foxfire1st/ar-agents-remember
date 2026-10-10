@@ -120,8 +120,6 @@ No sibling-repository contract defines this check.
 
 No meaningful cross-repo references found.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Group 1 — adoption follows the recorded branch, and the default-branch accessor validates it. [4] | `test_baseline_adoption_follows_the_configured_branch` | mcp/tests/test_memory_branch_authority.py:261-295 |
-| Group 3 — the exclusion, pinned on the commit tree. [6] | `test_the_first_baseline_never_commits_bootstrap_scaffolding` | mcp/tests/test_memory_branch_authority.py:507-534 |
-| The staging helper the third group's failure mode lives in. [13] | `_excluded_pathspec` | mcp/src/agents_remember/worktrees/modules/git.py:55-58 |
+- Group 1 — adoption follows the recorded branch, and the default-branch accessor validates it. [4]
+- Group 3 — the exclusion, pinned on the commit tree. [6]
+- The staging helper the third group's failure mode lives in. [13]

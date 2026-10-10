@@ -59,7 +59,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e0e3901879af6c975558c5c4eb31d6cdf14c5fb4",
+            "blob": "782aa73feb7c2c955a2baa07be50668a006f080f",
             "content": "sha256:54a79636e129aa494b4e3bb62293781a0d666d88ba0ba575abc8ca09c55ae4f0",
             "locator": {
               "kind": "symbol",
@@ -84,12 +84,12 @@
         },
         {
           "anchor": {
-            "blob": "e0e3901879af6c975558c5c4eb31d6cdf14c5fb4",
+            "blob": "782aa73feb7c2c955a2baa07be50668a006f080f",
             "content": "sha256:b6e52c7036534b668cfa45a73e7eae23e712068a1e70031f51f6091b6fe28c0f",
             "locator": {
-              "end": 832,
+              "end": 892,
               "kind": "line_range",
-              "start": 803
+              "start": 863
             },
             "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
           },
@@ -97,12 +97,12 @@
         },
         {
           "anchor": {
-            "blob": "e0e3901879af6c975558c5c4eb31d6cdf14c5fb4",
+            "blob": "782aa73feb7c2c955a2baa07be50668a006f080f",
             "content": "sha256:1106a905cad686bc3debd52204b677bf61deca30e9c7183e9f2059a025179ef7",
             "locator": {
-              "end": 791,
+              "end": 851,
               "kind": "line_range",
-              "start": 791
+              "start": 851
             },
             "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
           },
@@ -156,7 +156,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4348868065c8eed3582731fb3e96e3dbedf43d50",
+            "blob": "3139669673aad140278e0fba2c1e12a0723ebfda",
             "content": "sha256:66ae0bf6c579630f2aa12e314647b9610a2f52bddc550fe9b6c7f3338e099a36",
             "locator": {
               "kind": "symbol",

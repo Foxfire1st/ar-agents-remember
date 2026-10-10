@@ -2,119 +2,81 @@
   "path": "mcp/tests/test_record_landing.py",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "The route under test: approval gate, landing targets, ancestry refusal, dry run; since MIK-R09 also the mandatory gate on converted memory, which these unconverted fixtures never reach.\n\nAnchor: \"def record_landing_result(\"",
+    "10": {
+      "note": "Nowhere-landed commit refused, cell untouched",
       "targets": [
         {
           "anchor": {
-            "blob": "c4e1ee51d62f77e078f26f24ba5af719fcee5e32",
-            "content": "sha256:ba4270ec0157e79338912f11f9d78b4b12a8aeaeda4a5976751f046174799819",
-            "locator": {
-              "end": 260,
-              "kind": "line_range",
-              "start": 175
-            },
-            "path": "mcp/src/agents_remember/worktrees/modules/record_landing.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "2": {
-      "note": "The widened `already-recorded` guard the new case pins: a checkpointed series is not upgraded into a reclaimable integration.\n\nAnchor: \"contract.integration_status in {\\\"completed\\\", \\\"checkpointed\\\"}\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "c4e1ee51d62f77e078f26f24ba5af719fcee5e32",
-            "content": "sha256:9c3f5d2c194083193c864ed94c6628a421221898b376460ff11e8c801032e303",
-            "locator": {
-              "end": 187,
-              "kind": "line_range",
-              "start": 187
-            },
-            "path": "mcp/src/agents_remember/worktrees/modules/record_landing.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "The shared writer whose cell the happy path asserts, now taking the bundled `LandedIntegration` record (260831-LOCR-L30).",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "5ce07976f06d314990369996912d3c5b84189410",
-            "content": "sha256:918866a94e6e1728f25cf722b59f70e381c35f294f453e3de8df76b06011cdf5",
+            "blob": "fd7a083ba61b5f0885c876c04b541ccf44c0de00",
+            "content": "sha256:0f9898da052dfd031c1562176e498fa65e249d674f25e5a201848ce6665d188a",
             "locator": {
               "kind": "symbol",
-              "name": "record_landed_integration"
-            },
-            "path": "mcp/src/agents_remember/worktrees/modules/landing_record.py"
+              "name": "test_commit_that_landed_nowhere_is_refused"
+            }
           },
-          "kind": "code"
+          "kind": "test"
         }
       ]
     },
-    "4": {
-      "note": "The contract fields the recorded commits land in.",
+    "11": {
+      "note": "Checkpointed series never upgraded into a reclaimable integration",
       "targets": [
         {
           "anchor": {
-            "blob": "cad2b5290a889e152e487a9d3b2b27aeea339086",
-            "content": "sha256:2477340ef80d93bba7c3ff4c836c2d2c130a55ecf141029695515e2102a5c0f8",
+            "blob": "fd7a083ba61b5f0885c876c04b541ccf44c0de00",
+            "content": "sha256:daf344a50081beffabf6589adfa9b2f2b9a7a71220cab33d03da4007adbcd809",
             "locator": {
               "kind": "symbol",
-              "name": "integration_strategy"
-            },
-            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
+              "name": "test_a_checkpointed_series_is_not_upgraded_into_a_reclaimable_integration"
+            }
           },
-          "kind": "code"
-        },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "External-memory series contract over real code and memory repos",
+      "targets": [
         {
           "anchor": {
-            "blob": "cad2b5290a889e152e487a9d3b2b27aeea339086",
-            "content": "sha256:c1d48619f79883d97d024f50fce703f4d9141e662359baa9b1686f2d8423b3b9",
+            "blob": "fd7a083ba61b5f0885c876c04b541ccf44c0de00",
+            "content": "sha256:c801b1bfd0eebcb8c77d62d6c6dbfc8a91ee504bd7849a7b0729464e16a91a39",
             "locator": {
               "kind": "symbol",
-              "name": "integrated_code_commit"
-            },
-            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
+              "name": "_fixture"
+            }
           },
-          "kind": "code"
+          "kind": "test"
         }
       ]
     },
-    "5": {
-      "note": "The consumer-side guard that reads the cell this route sets.\n\nAnchor: \"integration_status != \\\"completed\\\"\"",
+    "8": {
+      "note": "Approved-call shorthand with typed arguments",
       "targets": [
         {
           "anchor": {
-            "blob": "4553df1a09b4e5397ea5df322777351fc8345de0",
-            "content": "sha256:2d5849f73154971574d26c12a7104ae79292669db7434e318fbf051acb2c1903",
+            "blob": "fd7a083ba61b5f0885c876c04b541ccf44c0de00",
+            "content": "sha256:b6495743e89eefaa416cb24d9f5481ff4ed9d4f3bd7ae5832834c9fef4f638b6",
             "locator": {
-              "end": 683,
-              "kind": "line_range",
-              "start": 683
-            },
-            "path": "mcp/src/agents_remember/worktrees/modules/cleanup.py"
+              "kind": "symbol",
+              "name": "_record"
+            }
           },
-          "kind": "code"
+          "kind": "test"
         }
       ]
     },
-    "6": {
-      "note": "The artifact catalog entry (one of the four whose consumer list already names the shared lineage fixture) that would have to gain this file as a consumer if the fixture were shared.\n\nAnchor: \"mcp/tests/fixtures/repository_profiles/node/package.json\"",
+    "9": {
+      "note": "Landed commit sets the terminal cell with the pr label",
       "targets": [
         {
           "anchor": {
-            "blob": "b40e230c8c442fa5db08533ba34af91c391d0454",
-            "content": "sha256:68adec8193458c7810573b7789e03cb52eca6899d6e8d52b459c4a32d6634c2d",
+            "blob": "fd7a083ba61b5f0885c876c04b541ccf44c0de00",
+            "content": "sha256:7c06a4f19e90db5445ffddc59d097c0184237cfa9f48a2a6c1f6cc0e56842c91",
             "locator": {
-              "end": 1454,
-              "kind": "line_range",
-              "start": 1454
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
+              "kind": "symbol",
+              "name": "test_landed_commit_sets_the_terminal_integration_cell"
+            }
           },
           "kind": "test"
         }

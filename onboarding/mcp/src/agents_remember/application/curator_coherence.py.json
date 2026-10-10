@@ -81,7 +81,7 @@
         },
         {
           "anchor": {
-            "blob": "a24e42442bd78eda90e129f52de5de7d6548f602",
+            "blob": "dbad775386ff530ac950360a2ca49d6e9fc02678",
             "content": "sha256:95a6b82ba17ba1a53654ccc370194a40588468f5679c084f4a271b094cc59ec5",
             "locator": {
               "kind": "symbol",
@@ -93,12 +93,12 @@
         },
         {
           "anchor": {
-            "blob": "a24e42442bd78eda90e129f52de5de7d6548f602",
+            "blob": "dbad775386ff530ac950360a2ca49d6e9fc02678",
             "content": "sha256:3626a737f58e24ed7bedbabad711659a48ca03bfe3f3c876aaba6ddb095c1445",
             "locator": {
-              "end": 323,
+              "end": 402,
               "kind": "line_range",
-              "start": 314
+              "start": 393
             },
             "path": "mcp/src/agents_remember/application/lifecycle/configured_contract_admission.py"
           },

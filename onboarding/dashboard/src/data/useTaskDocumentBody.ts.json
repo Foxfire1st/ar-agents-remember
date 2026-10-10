@@ -53,12 +53,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7ed9d2434cff9eae80a1e9569d7135d371e5fe7c",
+            "blob": "f4e9afd7108cec3fab17316ea7bdfd7a4f650dfc",
             "content": "sha256:1f251117bc549daf67a1c264d6fa01e7158a78ec43aa08b83b9f276ae91b2994",
             "locator": {
-              "end": 19,
+              "end": 18,
               "kind": "line_range",
-              "start": 19
+              "start": 18
             },
             "path": "dashboard/src/panels/detail-panel/lifecycleBody.tsx"
           },

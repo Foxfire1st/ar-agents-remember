@@ -107,7 +107,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b62606eb0e3e424924b06492ab05f4f23ab400bd",
+            "blob": "65809f6f38b77f999a84c8301057ae9615842df0",
             "content": "sha256:a82a0882fb602faf321939bffff95b3bddceffcc52d86e117304a71983226595",
             "locator": {
               "kind": "symbol",
@@ -119,12 +119,12 @@
         },
         {
           "anchor": {
-            "blob": "b62606eb0e3e424924b06492ab05f4f23ab400bd",
+            "blob": "65809f6f38b77f999a84c8301057ae9615842df0",
             "content": "sha256:bcaff4518c1620c2f58027856315cd55675da50d3809e78286cd7bac510fcd4a",
             "locator": {
-              "end": 385,
+              "end": 383,
               "kind": "line_range",
-              "start": 373
+              "start": 371
             },
             "path": "dashboard/src/test/fixtures/wire.ts"
           },

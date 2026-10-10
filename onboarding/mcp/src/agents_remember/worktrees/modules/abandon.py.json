@@ -3,7 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "405fa3b75f6eb309ec9c929dbbe7439d4cd5b7b1",
+        "blob": "89f4fd8ef1c246fe85a6cfceba2c99571d8c8dc6",
+        "content": "sha256:0133f2aed3e0146a26eeb89d0b71fc996abe5b86dccac45ca653fb8d1e1028fb",
+        "locator": {
+          "kind": "symbol",
+          "name": "_abandon_branches"
+        }
+      },
+      "id": "RLZ-3GFFJV",
+      "invariant": "INV-39FYQE",
+      "origin": {
+        "handoffEntry": "L50-CODE-R1-F04",
+        "leaf": "260928-MIK-L50"
+      },
+      "rationale": "The terminal way-out mechanics tear down both legs and rebuild external, with the operation proof retained alongside.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "89f4fd8ef1c246fe85a6cfceba2c99571d8c8dc6",
         "content": "sha256:308568001463a3cfcc97b4b359d2f11113b0a6a323a771b5085f39f97cfff290",
         "locator": {
           "kind": "symbol",
@@ -21,7 +39,25 @@
     },
     {
       "anchor": {
-        "blob": "405fa3b75f6eb309ec9c929dbbe7439d4cd5b7b1",
+        "blob": "89f4fd8ef1c246fe85a6cfceba2c99571d8c8dc6",
+        "content": "sha256:af34bd65f334ad4c015282ee8614c0dc2c1169e8bb7f9f4319e61c14e5da6bea",
+        "locator": {
+          "kind": "symbol",
+          "name": "_abandon_worktrees"
+        }
+      },
+      "id": "RLZ-HHM6JG",
+      "invariant": "INV-39FYQE",
+      "origin": {
+        "handoffEntry": "L50-CODE-R1-F04",
+        "leaf": "260928-MIK-L50"
+      },
+      "rationale": "The terminal way-out mechanics tear down both legs and rebuild external, with the operation proof retained alongside.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "89f4fd8ef1c246fe85a6cfceba2c99571d8c8dc6",
         "content": "sha256:308568001463a3cfcc97b4b359d2f11113b0a6a323a771b5085f39f97cfff290",
         "locator": {
           "kind": "symbol",
@@ -44,7 +80,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "405fa3b75f6eb309ec9c929dbbe7439d4cd5b7b1",
+            "blob": "89f4fd8ef1c246fe85a6cfceba2c99571d8c8dc6",
             "content": "sha256:16d3a43affb4cbe85415b5cfa764dc79df13660916b0b96557bcf42294a79c8e",
             "locator": {
               "kind": "symbol",
@@ -60,12 +96,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "049227aeea85b68565e3a144f616be2f01186dc3",
+            "blob": "ba58fbaeceea3ba8048de3c5168fe7f90d3458df",
             "content": "sha256:94b53095cea2ad42bb9785a81659e67e5225b20b174b3af6b3be014fb68f7e2b",
             "locator": {
-              "end": 186,
+              "end": 189,
               "kind": "line_range",
-              "start": 186
+              "start": 189
             },
             "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
           },
@@ -94,7 +130,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "405fa3b75f6eb309ec9c929dbbe7439d4cd5b7b1",
+            "blob": "89f4fd8ef1c246fe85a6cfceba2c99571d8c8dc6",
             "content": "sha256:16d3a43affb4cbe85415b5cfa764dc79df13660916b0b96557bcf42294a79c8e",
             "locator": {
               "kind": "symbol",
@@ -176,7 +212,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "405fa3b75f6eb309ec9c929dbbe7439d4cd5b7b1",
+            "blob": "89f4fd8ef1c246fe85a6cfceba2c99571d8c8dc6",
             "content": "sha256:97310f133dfca42cf7c733d01b9c23d1ac7894702a084a69ba599541e3342102",
             "locator": {
               "kind": "symbol",
@@ -261,7 +297,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "72a4cfa2473b44cfe37c17f389a1fe6a30724c90",
+            "blob": "45bde9d2eae6681ae74e8f1a36fbf6efed8e8d23",
             "content": "sha256:1a7dfc6f818e444df8a75d0f217c2d499b02cb4898523113feb6257e90ca2750",
             "locator": {
               "kind": "symbol",

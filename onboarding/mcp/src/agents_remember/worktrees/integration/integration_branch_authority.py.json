@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "d7984a066b36500e2f0880015871fe7b54c52166",
+        "blob": "9e3618826393608178a240a2aefc6fe4a3c8a366",
         "content": "sha256:1fb83d46e72586f1b54476a1d68c3866972fc7ece9171f599f0e71cd85424edc",
         "locator": {
           "kind": "symbol",
@@ -18,6 +18,24 @@
       },
       "rationale": "Always reads persisted artifacts, and admits only the explicit validated dry-run value at a genuinely absent canonical path through the unchanged series identity predicate.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "9e3618826393608178a240a2aefc6fe4a3c8a366",
+        "content": "sha256:a97942f0024878dd1f863a3c90a5fd7ad116144489f8a3ed8466d8a8d5d6b1df",
+        "locator": {
+          "kind": "symbol",
+          "name": "_repository_sides"
+        }
+      },
+      "id": "RLZ-TYMFE8",
+      "invariant": "INV-39FYQE",
+      "origin": {
+        "handoffEntry": "L50-CODE-R1-F04",
+        "leaf": "260928-MIK-L50"
+      },
+      "rationale": "The terminal way-out mechanics tear down both legs and rebuild external, with the operation proof retained alongside.",
+      "role": "unclassified"
     }
   ],
   "references": {
@@ -26,7 +44,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d7984a066b36500e2f0880015871fe7b54c52166",
+            "blob": "9e3618826393608178a240a2aefc6fe4a3c8a366",
             "content": "sha256:a4400fc1b4b5db186c15f621dba7ede09a9dd8aa4bc22ccc4cb7514591c45cbf",
             "locator": {
               "kind": "symbol",
@@ -37,7 +55,7 @@
         },
         {
           "anchor": {
-            "blob": "d7984a066b36500e2f0880015871fe7b54c52166",
+            "blob": "9e3618826393608178a240a2aefc6fe4a3c8a366",
             "content": "sha256:978eb22e58854450668bdfc55d19867dd09b5b83c0e8947640f9e1f71ab3ba98",
             "locator": {
               "kind": "symbol",
@@ -53,7 +71,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d7984a066b36500e2f0880015871fe7b54c52166",
+            "blob": "9e3618826393608178a240a2aefc6fe4a3c8a366",
             "content": "sha256:1fb83d46e72586f1b54476a1d68c3866972fc7ece9171f599f0e71cd85424edc",
             "locator": {
               "kind": "symbol",
@@ -69,7 +87,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d7984a066b36500e2f0880015871fe7b54c52166",
+            "blob": "9e3618826393608178a240a2aefc6fe4a3c8a366",
             "content": "sha256:d862c24819b16241646771e809a3e0010666daf7b6e323bdedb53d0f1fac716c",
             "locator": {
               "kind": "symbol",
@@ -85,7 +103,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d7984a066b36500e2f0880015871fe7b54c52166",
+            "blob": "9e3618826393608178a240a2aefc6fe4a3c8a366",
             "content": "sha256:845a494aec8d39137d130582abc02cf6f4180872974b8919d92f1ae2029201fe",
             "locator": {
               "kind": "symbol",
@@ -96,7 +114,7 @@
         },
         {
           "anchor": {
-            "blob": "d7984a066b36500e2f0880015871fe7b54c52166",
+            "blob": "9e3618826393608178a240a2aefc6fe4a3c8a366",
             "content": "sha256:082efac41ec540c9dcc5f335b1ec54895f56a1bf5f1df8fac9cfecc89457f700",
             "locator": {
               "kind": "symbol",
@@ -112,7 +130,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d7984a066b36500e2f0880015871fe7b54c52166",
+            "blob": "9e3618826393608178a240a2aefc6fe4a3c8a366",
             "content": "sha256:d8d22ee79ceceaf96ab5c157877d935b48b99f9c0a54d88b3befaeea054c8bc8",
             "locator": {
               "kind": "symbol",
@@ -128,7 +146,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d7984a066b36500e2f0880015871fe7b54c52166",
+            "blob": "9e3618826393608178a240a2aefc6fe4a3c8a366",
             "content": "sha256:2b90f7ae0e8a575f862a317b90259275ab352203f7b3bab25177d29f913141fe",
             "locator": {
               "kind": "symbol",
@@ -144,7 +162,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d7984a066b36500e2f0880015871fe7b54c52166",
+            "blob": "9e3618826393608178a240a2aefc6fe4a3c8a366",
             "content": "sha256:1fb83d46e72586f1b54476a1d68c3866972fc7ece9171f599f0e71cd85424edc",
             "locator": {
               "kind": "symbol",
@@ -160,7 +178,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d7984a066b36500e2f0880015871fe7b54c52166",
+            "blob": "9e3618826393608178a240a2aefc6fe4a3c8a366",
             "content": "sha256:5938c288fcc5fd5587c2e96be367937edec1a9fee6a29241cdf033628ccb1737",
             "locator": {
               "kind": "symbol",
@@ -182,7 +200,7 @@
         },
         {
           "anchor": {
-            "blob": "d7984a066b36500e2f0880015871fe7b54c52166",
+            "blob": "9e3618826393608178a240a2aefc6fe4a3c8a366",
             "content": "sha256:00b74655699e34aa17db156c6340c56f1dbc579fa53fc9ca3da686440df99ad2",
             "locator": {
               "end": 850,
@@ -216,7 +234,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d7984a066b36500e2f0880015871fe7b54c52166",
+            "blob": "9e3618826393608178a240a2aefc6fe4a3c8a366",
             "content": "sha256:1e197b6149a772806531bf7f977cd1fab40aec99483c96ca8862b7def50a6cbd",
             "locator": {
               "kind": "symbol",
@@ -232,7 +250,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d7984a066b36500e2f0880015871fe7b54c52166",
+            "blob": "9e3618826393608178a240a2aefc6fe4a3c8a366",
             "content": "sha256:845a494aec8d39137d130582abc02cf6f4180872974b8919d92f1ae2029201fe",
             "locator": {
               "kind": "symbol",

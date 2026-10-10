@@ -7,12 +7,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "67fa388747fc66fbe35405485cd99e3e80f4f5ae",
+            "blob": "38477fad3dde7ffc069b51804ceb136426569c3d",
             "content": "sha256:ccdd710fc4adf1647466e7dc80cc6f36b04a32e8f93c1eac31cf192f64adb914",
             "locator": {
-              "end": 213,
+              "end": 214,
               "kind": "line_range",
-              "start": 213
+              "start": 214
             },
             "path": "mcp/src/agents_remember/kernel/agentic_settings.py"
           },

@@ -7,12 +7,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ad32196677d5800992fe4294b439f3e28af150ec",
+            "blob": "e41c49321364b7c5080944c8c746cd0ffdc181c8",
             "content": "sha256:150e66e357bc146775235033162172839b6b6d1b88bdec1c85b56bf386ca2149",
             "locator": {
-              "end": 253,
+              "end": 238,
               "kind": "line_range",
-              "start": 253
+              "start": 238
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -20,7 +20,7 @@
         },
         {
           "anchor": {
-            "blob": "ad32196677d5800992fe4294b439f3e28af150ec",
+            "blob": "e41c49321364b7c5080944c8c746cd0ffdc181c8",
             "content": "sha256:06825f71b027f3b49cb717ee9df6a258f90b94a43b1594a0cefab0ef51ea5b50",
             "locator": {
               "end": 5,
@@ -79,7 +79,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "05509e52a557a2b316d92a2dfe5732012e426202",
+            "blob": "622cc21b42bb21eb6ddf65f5c76376a6b460ff4f",
             "content": "sha256:c488228a3c443a2a3b725a9e499919f5bde7a9aeaf17f33a8f44de3694df7d8a",
             "locator": {
               "kind": "symbol",
@@ -91,7 +91,7 @@
         },
         {
           "anchor": {
-            "blob": "05509e52a557a2b316d92a2dfe5732012e426202",
+            "blob": "622cc21b42bb21eb6ddf65f5c76376a6b460ff4f",
             "content": "sha256:d4733fc7de6ff3d3b2069e81728f8ea3edff467fc5c1acf3ddd50b4225bcd2cc",
             "locator": {
               "kind": "symbol",
@@ -103,7 +103,7 @@
         },
         {
           "anchor": {
-            "blob": "05509e52a557a2b316d92a2dfe5732012e426202",
+            "blob": "622cc21b42bb21eb6ddf65f5c76376a6b460ff4f",
             "content": "sha256:b473336b40583d544b8595f92a8bd3214fecc8c6880477cfb1a86c66c8c6c197",
             "locator": {
               "kind": "symbol",
@@ -115,12 +115,12 @@
         },
         {
           "anchor": {
-            "blob": "05509e52a557a2b316d92a2dfe5732012e426202",
+            "blob": "622cc21b42bb21eb6ddf65f5c76376a6b460ff4f",
             "content": "sha256:e8ca985164b9f0f80851790f0eb02c7933a03fd44e50dd1aa69b50a43fb0e45d",
             "locator": {
-              "end": 107,
+              "end": 105,
               "kind": "line_range",
-              "start": 92
+              "start": 90
             },
             "path": "mcp/src/agents_remember/models/lifecycles/review_assessment_binding.py"
           },

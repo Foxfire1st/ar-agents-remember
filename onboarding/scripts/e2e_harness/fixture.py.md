@@ -15,10 +15,10 @@ runtime settings, and Codex/MCP configuration needed for each clean-room replica
 
 `create_fixture` lays out isolated code, memory, coordination, Codex-home, and tmux roots. It compiles
 the real architect template from canonical doctrine, writes validated task topology and settings,
-initializes the disposable Git repository, and points Codex at the deterministic Responses server
+initializes the disposable Git code repository and its own memory repository, and points Codex at the deterministic Responses server
 plus candidate MCP command. The generated MCP registration explicitly whitelists the dynamic
 `TMUX_TMPDIR`, so Codex's stdio child creates role sessions in the same fixture-owned tmux server
-used by liveness checks and teardown.
+used by liveness checks and teardown. Since 260928-MIK-L50 the contract runs `memory_mode="external"` with a real memory leg, because memory cannot be disabled for a task (scripts/e2e_harness/fixture.py:52-76).
 
 ### Conventions
 

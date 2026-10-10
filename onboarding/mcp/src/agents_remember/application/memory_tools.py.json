@@ -7,8 +7,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b36efb156d598b47ef93547574de276270670bb7",
-            "content": "sha256:9d39286d25d95bb4eca95a6fd735c48fdfa3221074035750f2f510891fa39fd1",
+            "blob": "c66952b4cab2bf41fa7e6636635d90d35ec32ead",
+            "content": "sha256:431d4ad02cf89e722e25e6ceceabe1364ca89fa4a23534bdbbb3c4ae9213c997",
             "locator": {
               "kind": "symbol",
               "name": "memory_baseline_status_tool"
@@ -23,8 +23,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b36efb156d598b47ef93547574de276270670bb7",
-            "content": "sha256:9d39286d25d95bb4eca95a6fd735c48fdfa3221074035750f2f510891fa39fd1",
+            "blob": "c66952b4cab2bf41fa7e6636635d90d35ec32ead",
+            "content": "sha256:431d4ad02cf89e722e25e6ceceabe1364ca89fa4a23534bdbbb3c4ae9213c997",
             "locator": {
               "kind": "symbol",
               "name": "memory_baseline_status_tool"
@@ -39,8 +39,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2224d77730508917cec7472ef2059c00bf3196e4",
-            "content": "sha256:9e6973de4e2671f0c8e24cd553757810fb292b01199360184238048a54b4d2a7",
+            "blob": "d3ab002e5da5b90d87d71b0c5d27cc1cd2fab435",
+            "content": "sha256:56a63fac47b10d9fb1f7f5ac4d5b07c5ae803f32865fe25e8531754696fb7094",
             "locator": {
               "kind": "symbol",
               "name": "baseline_status"
@@ -209,18 +209,6 @@
             "path": "mcp/src/agents_remember/memory/baseline.py"
           },
           "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2224d77730508917cec7472ef2059c00bf3196e4",
-            "content": "sha256:9e6973de4e2671f0c8e24cd553757810fb292b01199360184238048a54b4d2a7",
-            "locator": {
-              "kind": "symbol",
-              "name": "baseline_status"
-            },
-            "path": "mcp/src/agents_remember/memory/baseline.py"
-          },
-          "kind": "code"
         }
       ]
     },
@@ -283,40 +271,6 @@
             "locator": {
               "kind": "symbol",
               "name": "memory_init_tool"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "b36efb156d598b47ef93547574de276270670bb7",
-            "content": "sha256:7149a50ce09ba41d063e3b2ab8f6f7549cbb8de593239990ecd4354e501d500b",
-            "locator": {
-              "kind": "symbol",
-              "name": "_knowledge_foundation_state"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "c66952b4cab2bf41fa7e6636635d90d35ec32ead",
-            "content": "sha256:0cfdc444b02c59b386dfeed76e860cd079a6d00ccd608ea2cb3d154a20e4cc54",
-            "locator": {
-              "kind": "symbol",
-              "name": "KNOWLEDGE_BOOTSTRAP_ROUTE"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "c66952b4cab2bf41fa7e6636635d90d35ec32ead",
-            "content": "sha256:3d33a92d3fca7635fc8fdf454d397d3a876785cb8a0e59b8d1ffa57fe5555465",
-            "locator": {
-              "end": 406,
-              "kind": "line_range",
-              "start": 403
             }
           },
           "kind": "code"
@@ -567,18 +521,6 @@
             "locator": {
               "kind": "symbol",
               "name": "route_index_refresh_tool"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "43f903cf7da51fcd08f69e3a39d1e4ce34c49776",
-            "content": "sha256:c920749cfc9d2c8f70162d0ecb5548dc94274817877d8b9515a9731e73161b03",
-            "locator": {
-              "end": 291,
-              "kind": "line_range",
-              "start": 254
             }
           },
           "kind": "code"

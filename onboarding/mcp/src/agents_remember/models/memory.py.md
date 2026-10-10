@@ -118,9 +118,7 @@ and D-33 names the memory-quality and citation surfaces.
 
 - The tool response carries the converted measurement fields beside the legacy ones. [7]
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Other memory MCP application entry points retain drift, citation, route-index, init, baseline, and carryover ownership. [2] | `drift_check_tool` | mcp/src/agents_remember/application/memory_tools.py:112-140 |
-| `DriftCheckResponse.status` uses the shared `DriftStatus` alias. [4] | `DriftCheckResponse` | mcp/src/agents_remember/models/memory.py:15-42 |
-| `DriftSummary.status` uses the same shared `DriftStatus` alias. [5] | `DriftSummary` | mcp/src/agents_remember/models/drift.py:14-35 |
-| The context-packet wire face includes its matching `error` field. [6] | `DriftSummary` | mcp/src/agents_remember/models/drift.py:14-35 |
+- Other memory MCP application entry points retain drift, citation, route-index, init, baseline, and carryover ownership. [2]
+- `DriftCheckResponse.status` uses the shared `DriftStatus` alias. [4]
+- `DriftSummary.status` uses the same shared `DriftStatus` alias. [5]
+- The context-packet wire face includes its matching `error` field. [6]

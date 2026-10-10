@@ -104,8 +104,6 @@ No meaningful cross-repo references found: the file reads and writes only the me
 
 No cross-repo boundary is crossed by this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Stale references are report-only findings naming the onboarding gate. [4] | `check_references` | mcp/src/agents_remember/memory_quality/reference_state.py:145-192 |
-| A sidecar that is not valid JSON is named and skipped. [8] | `_sidecars` | mcp/src/agents_remember/memory_quality/reference_state.py:107-133 |
-| The reference check scoped to one sidecar. [9] | `check_references` | mcp/src/agents_remember/memory_quality/reference_state.py:145-192 |
+- Stale references are report-only findings naming the onboarding gate. [4]
+- A sidecar that is not valid JSON is named and skipped. [8]
+- The reference check scoped to one sidecar. [9]

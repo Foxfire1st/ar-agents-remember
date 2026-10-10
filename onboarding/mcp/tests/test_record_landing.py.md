@@ -6,97 +6,16 @@
 
 ## Purpose
 
-Locks the pull-request landing route and the three ways it must refuse. A recording that succeeds
-sets the terminal integration cell; a commit that landed nowhere, an unapproved call, and a missing
-commit argument each fail without writing the cell. The suite is deliberately self-contained: it
-builds its own minimal series contract and Git repository rather than importing the shared
-`test_source_lineage` fixture, so this card is owned by the module it exercises instead of inheriting
-that suite's whole transitive support closure.
+Locks the pull-request landing route and the ways it must refuse. A recording that succeeds sets the terminal integration cell; a commit that landed nowhere, an unapproved call, and a missing commit argument each fail without writing the cell. The suite stays self-contained: it builds its own series contract and Git repositories rather than importing the shared lineage fixture, so this card is owned by the module it exercises instead of inheriting that suite's transitive support closure.
 
 ## Code Commentary
 
-### Logic
-
-`_fixture(root)` cit:([`_fixture`], mcp/tests/test_record_landing.py:44-65) creates a real Git
-repository with `main`, `super`, and `ar/master`, then builds a series contract over it with
-`memory_mode="disabled"` — so no memory repository is needed and the route's own logic is what is
-under test. `_commit_on` cit:([`_commit_on`], mcp/tests/test_record_landing.py:68-73) commits on a
-named branch and returns the resulting SHA, which is what the route records. `_record`
-cit:([`_record`], mcp/tests/test_record_landing.py:76-89) is the approved-call shorthand; it is
-explicitly typed rather than `**over: object`, which would erase the argument types the route
-validates.
-
-`RecordLandingTests` cit:([`RecordLandingTests`], mcp/tests/test_record_landing.py:92-195) holds seven
-cases:
-
-- `test_landed_commit_sets_the_terminal_integration_cell` cit:(["test_landed_commit_sets_the_terminal_integration_cell"], mcp/tests/test_record_landing.py:93-93)
-  — the happy path; asserts the stored contract reads `completed`, carries the `pr` strategy label,
-  and holds the exact landed commit.
-- `test_commit_that_landed_nowhere_is_refused` cit:(["test_commit_that_landed_nowhere_is_refused"], mcp/tests/test_record_landing.py:106-106)
-  — commits on a side branch that is not merged into either landing target and asserts the refusal
-  message plus an untouched `not-started` cell. This is the anti-fabrication guard.
-- `test_recording_requires_approval` cit:(["test_recording_requires_approval"], mcp/tests/test_record_landing.py:124-124)
-  — an unapproved, non-dry-run call raises before any write.
-- `test_a_missing_commit_argument_is_refused` cit:(["test_a_missing_commit_argument_is_refused"], mcp/tests/test_record_landing.py:136-136)
-  — the route cannot be invoked without naming the commit that landed.
-- `test_dry_run_records_nothing` cit:(["test_dry_run_records_nothing"], mcp/tests/test_record_landing.py:145-145)
-  — reports `would-record` and leaves the cell `not-started`.
-- `test_recording_twice_is_idempotent` cit:(["test_recording_twice_is_idempotent"], mcp/tests/test_record_landing.py:163-163)
-  — a repeat reports `already-recorded` rather than writing again.
-- `test_a_checkpointed_series_is_not_upgraded_into_a_reclaimable_integration` cit:(["test_a_checkpointed_series_is_not_upgraded_into_a_reclaimable_integration"], mcp/tests/test_record_landing.py:173-173)
-  — 260831-LOCR-L30 follow-up: with the contract set to `checkpointed`, the route reports
-  `already-recorded` and both stored cells keep the values the checkpoint wrote. It exists because the
-  full-record path writes `completed` + `cleanup="pending"`, the exact state `worktree_cleanup`
-  requires, so taking it would have made an open series reclaimable.
-
-### Conventions
-
-The suite is a unittest class, matching the surrounding `mcp/tests` convention, and the cases run in
-the ordinary unit population: the route avoids `status_payload`, so no bound worktree services are
-needed and no `@pytest.mark.integration` marker is required.
-
-`_git` cit:([`_git`], mcp/tests/test_record_landing.py:33-41) passes the identity via `-c` flags
-rather than relying on repository or global Git configuration, so the fixture works on a machine with
-no configured user.
-
-### Invariants And Boundaries
-
-- **Keep the fixture self-contained.** Importing `test_source_lineage` drags in its transitive support
-  closure, which then has to be declared as a consumer for four artifacts in
-  `mcp/tests/evidence-lifecycle.toml`; this suite avoids that coupling on purpose. If a future case
-  genuinely needs the shared lineage fixture, that declaration is the price and it must be added in
-  the same change.
-- **The refusals are the point, not incidental coverage.** Each failure case protects a distinct way
-  the terminal cell could be set wrongly or prematurely — including the newest one, which protects the
-  cell from being *over*written on a checkpointed series.
-- **Assert the stored contract, not only the payload.** A payload state can be right while the write
-  was skipped or duplicated; the cases reload the contract to check the durable result.
-
-### Todos
-
-None.
+`_fixture` creates real code and memory repositories with `main`, `super` and `ar/master` branches, then builds an external-memory series contract over both, so the route's own logic is what is under test against a fully-backed contract. `_commit_on` commits on a named branch and returns the SHA the route records; `_record` is the explicitly-typed approved-call shorthand. `RecordLandingTests` holds seven cases: the happy path setting `completed` with the `pr` label and exact commit, the nowhere-landed anti-fabrication refusal, approval and commit-argument gates, dry-run silence, idempotent repeat, and the checkpointed series never upgrading into a reclaimable integration.
 
 ## Evidence
 
-### Docs References
-
-No external Domain Documentation source is configured for this memory repo, and these assertions
-concern this repository's own contract write, so the retained source is the direct evidence.
-
-No external domain claim is required.
-
-### Repo-Internal References
-
-- The route under test: approval gate, landing targets, ancestry refusal, dry run; since MIK-R09 also the mandatory gate on converted memory, which these unconverted fixtures never reach. [1]
-- The widened `already-recorded` guard the new case pins: a checkpointed series is not upgraded into a reclaimable integration. [2]
-- The shared writer whose cell the happy path asserts, now taking the bundled `LandedIntegration` record (260831-LOCR-L30). [3]
-- The contract fields the recorded commits land in. [4]
-- The consumer-side guard that reads the cell this route sets. [5]
-- The artifact catalog entry (one of the four whose consumer list already names the shared lineage fixture) that would have to gain this file as a consumer if the fixture were shared. [6]
-
-### Cross-Repo References
-
-These are in-process contract assertions against a fixture repository created in a temporary
-directory; no sibling repository or external system participates.
-
-No meaningful cross-repo references found.
+- External-memory series contract over real code and memory repos [7]
+- Approved-call shorthand with typed arguments [8]
+- Landed commit sets the terminal cell with the pr label [9]
+- Nowhere-landed commit refused, cell untouched [10]
+- Checkpointed series never upgraded into a reclaimable integration [11]

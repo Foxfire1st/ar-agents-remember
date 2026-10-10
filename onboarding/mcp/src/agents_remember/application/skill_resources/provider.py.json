@@ -101,7 +101,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a210ad747e67b9e40b9c3e90102d58616f69b902",
+            "blob": "a8e2b869f7f277422f7b891f9c31efa0b3c45d4c",
             "content": "sha256:0db60930468c4109b635df66e40698069bc764b25af8f2df4a9783ac27257e10",
             "locator": {
               "end": 2,
@@ -119,7 +119,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b0366122dbbd5a11a6263852dc3086926059871c",
+            "blob": "497182eddd472d861bd107fd62aaaae0e0e82067",
             "content": "sha256:e3bc789bb66a1a3037cba8acfa21524e65966e045a47f3451ae9898f39ddf2c1",
             "locator": {
               "kind": "symbol",
@@ -136,7 +136,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
+            "blob": "1d6d4c77ad41eb2f9783975d929a3519d218f22f",
             "content": "sha256:d2a83faf4056b7018bd031659fd434d19731737dd24a6605d864747c63dbd081",
             "locator": {
               "kind": "symbol",
@@ -148,12 +148,12 @@
         },
         {
           "anchor": {
-            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
+            "blob": "1d6d4c77ad41eb2f9783975d929a3519d218f22f",
             "content": "sha256:8d6df0233db28dae8af94ba99886353a17a1b6ec20716662319b91b6643ee7b6",
             "locator": {
-              "end": 879,
+              "end": 858,
               "kind": "line_range",
-              "start": 862
+              "start": 841
             },
             "path": "mcp/tests/test_capsule_serving.py"
           },

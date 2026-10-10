@@ -25,12 +25,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0f33f584513ad3833a35a818b88f51eaacb54fbc",
+            "blob": "a2e32055df9ed4e20616122a8838f1eea2783fa2",
             "content": "sha256:4a988cc5e423487009c71e7f22d521292aa99da322ef8ab1768db4ad9b41ac92",
             "locator": {
-              "end": 64,
+              "end": 65,
               "kind": "line_range",
-              "start": 64
+              "start": 65
             },
             "path": "mcp/src/agents_remember/application/context_packet.py"
           },

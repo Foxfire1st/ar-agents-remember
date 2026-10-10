@@ -26,7 +26,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "082789175b65a73ba6821158b07e1f5849c192ca",
+            "blob": "6e1c2663fa140e39d14ec835f6a5a6db3ced7de2",
             "content": "sha256:ac1d11f8dcec1fbbaf192dec3dc2a73f56f9cd3a9144cdea6cc963328541dbba",
             "locator": {
               "end": 13,
@@ -44,7 +44,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "217ff46ba831274f6cea94641a60077c17749cf0",
+            "blob": "97539a1d3035c51bdfc8174a6c7de015195b7f61",
             "content": "sha256:5d46671ecd79e0acc904880abe8870161af57ce9eaf44442dd4531d16456bb3d",
             "locator": {
               "end": 225,
@@ -78,12 +78,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e77dbabae8b914a6fd3fd7a8b12467c3c5055259",
+            "blob": "dfa2872ad0a9789182edbd48e33d561d9929e0ba",
             "content": "sha256:f6d066ed830a743ac850c9150d2e1aef3a625454194bd6cb4ccda4e5099bbb20",
             "locator": {
-              "end": 904,
+              "end": 880,
               "kind": "line_range",
-              "start": 884
+              "start": 860
             },
             "path": "mcp/src/agents_remember/application/worktree_tools.py"
           },
@@ -96,12 +96,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e0e3901879af6c975558c5c4eb31d6cdf14c5fb4",
+            "blob": "782aa73feb7c2c955a2baa07be50668a006f080f",
             "content": "sha256:a540dfa0c5117e86fd9eaf02cb7d5c530569236ac65b792e6855272119a8b40d",
             "locator": {
-              "end": 123,
+              "end": 126,
               "kind": "line_range",
-              "start": 123
+              "start": 126
             },
             "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
           },

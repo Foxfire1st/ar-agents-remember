@@ -81,7 +81,5 @@ No meaningful cross-repo references found: the file reads and writes only the me
 
 No cross-repo boundary is crossed by this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The validator's refusals are findings; its reports and stale references are report-only. [3] | `converted_knowledge_check` | mcp/src/agents_remember/memory_quality/converted_check.py:102-142 |
-| The check takes the base port and reports an unbuildable base as a finding. [7] | `converted_knowledge_check` | mcp/src/agents_remember/memory_quality/converted_check.py:102-142 |
+- The validator's refusals are findings; its reports and stale references are report-only. [3]
+- The check takes the base port and reports an unbuildable base as a finding. [7]

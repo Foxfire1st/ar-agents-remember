@@ -1,13 +1,32 @@
 {
   "path": "mcp/src/agents_remember/worktrees/modules/cli.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "2af08192a64805b537a585a25682c679c7b2c4d3",
+        "content": "sha256:eca716be9819925d70a1c828635b0269c71d46df5c3e54bb7bf1ab3acfeabe00",
+        "locator": {
+          "kind": "symbol",
+          "name": "build_parser"
+        }
+      },
+      "id": "RLZ-NCF1SR",
+      "invariant": "INV-8R2CRC",
+      "origin": {
+        "handoffEntry": "L50-CODE-R1-F06",
+        "leaf": "260928-MIK-L50"
+      },
+      "rationale": "The CLI never offers the removed mode while unknown answers stay invalid requests.",
+      "role": "unclassified"
+    }
+  ],
   "references": {
     "1": {
       "note": "`command_closeout` normalizes code/memory messages before the journal-bound closeout adapter.",
       "targets": [
         {
           "anchor": {
-            "blob": "aeb881366a583b9a9d9eaddb1f6e45d8b7a5893c",
+            "blob": "2af08192a64805b537a585a25682c679c7b2c4d3",
             "content": "sha256:9930eda2d08569d3cd033d64b28e05822d39de63b0b90937e139186652fdf327",
             "locator": {
               "kind": "symbol",
@@ -23,7 +42,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "aeb881366a583b9a9d9eaddb1f6e45d8b7a5893c",
+            "blob": "2af08192a64805b537a585a25682c679c7b2c4d3",
             "content": "sha256:e9753e112f7dd107b0668c06b839356b1be2f56aa997f652adf9c7547e1f42b5",
             "locator": {
               "kind": "symbol",
@@ -34,7 +53,7 @@
         },
         {
           "anchor": {
-            "blob": "aeb881366a583b9a9d9eaddb1f6e45d8b7a5893c",
+            "blob": "2af08192a64805b537a585a25682c679c7b2c4d3",
             "content": "sha256:ab09238df46863ba5f29adf43f2eef8a5a5645c17e5b75dc6e8bd3abaa7b714e",
             "locator": {
               "kind": "symbol",
@@ -66,7 +85,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "aeb881366a583b9a9d9eaddb1f6e45d8b7a5893c",
+            "blob": "2af08192a64805b537a585a25682c679c7b2c4d3",
             "content": "sha256:5ad00978007b4f2360e6ef717bcc75eed8d30a8fc4c64459e484e4bd5d88424a",
             "locator": {
               "kind": "symbol",
@@ -82,7 +101,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e77dbabae8b914a6fd3fd7a8b12467c3c5055259",
+            "blob": "dfa2872ad0a9789182edbd48e33d561d9929e0ba",
             "content": "sha256:a8f4da9fa7ab81c9252d77e8ffcf2d03a644b71eebb4f1ffa1a0eb6cfe4b9444",
             "locator": {
               "kind": "symbol",
@@ -94,12 +113,12 @@
         },
         {
           "anchor": {
-            "blob": "e77dbabae8b914a6fd3fd7a8b12467c3c5055259",
+            "blob": "dfa2872ad0a9789182edbd48e33d561d9929e0ba",
             "content": "sha256:2ec23257800b92ba7b2b63d310c8fbec5aa82beb032e7e38afc50782c1ea2505",
             "locator": {
-              "end": 200,
+              "end": 198,
               "kind": "line_range",
-              "start": 103
+              "start": 101
             },
             "path": "mcp/src/agents_remember/application/worktree_tools.py"
           },
@@ -112,7 +131,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e77dbabae8b914a6fd3fd7a8b12467c3c5055259",
+            "blob": "dfa2872ad0a9789182edbd48e33d561d9929e0ba",
             "content": "sha256:9045d7762dda44815f54b0ba65315dd11009f8f1f7cc823307ad9885aa439e3b",
             "locator": {
               "kind": "symbol",
@@ -124,12 +143,12 @@
         },
         {
           "anchor": {
-            "blob": "e77dbabae8b914a6fd3fd7a8b12467c3c5055259",
+            "blob": "dfa2872ad0a9789182edbd48e33d561d9929e0ba",
             "content": "sha256:608de633382abdb4c27ffe5baf10245da66c5612798687f8bd5726cedfdd7dfc",
             "locator": {
-              "end": 302,
+              "end": 300,
               "kind": "line_range",
-              "start": 293
+              "start": 291
             },
             "path": "mcp/src/agents_remember/application/worktree_tools.py"
           },
@@ -142,7 +161,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e77dbabae8b914a6fd3fd7a8b12467c3c5055259",
+            "blob": "dfa2872ad0a9789182edbd48e33d561d9929e0ba",
             "content": "sha256:b1e4c9ab22c38e3d829ba7aec4b53d63a123dd47157b5bd10cb499df3ed8b0b1",
             "locator": {
               "kind": "symbol",
@@ -154,12 +173,12 @@
         },
         {
           "anchor": {
-            "blob": "e77dbabae8b914a6fd3fd7a8b12467c3c5055259",
+            "blob": "dfa2872ad0a9789182edbd48e33d561d9929e0ba",
             "content": "sha256:9ceb196164927e961fde023ed2b43dec9163317533a167abe4a3cc9353fac9ee",
             "locator": {
-              "end": 328,
+              "end": 326,
               "kind": "line_range",
-              "start": 305
+              "start": 303
             },
             "path": "mcp/src/agents_remember/application/worktree_tools.py"
           },
@@ -214,12 +233,12 @@
         },
         {
           "anchor": {
-            "blob": "e77dbabae8b914a6fd3fd7a8b12467c3c5055259",
+            "blob": "dfa2872ad0a9789182edbd48e33d561d9929e0ba",
             "content": "sha256:4db0d61e7a6ea16a5d29b67fd071023a9c9895f22dcbdb7bb4cc5314c2ae3478",
             "locator": {
-              "end": 847,
+              "end": 813,
               "kind": "line_range",
-              "start": 826
+              "start": 792
             },
             "path": "mcp/src/agents_remember/application/worktree_tools.py"
           },
@@ -232,7 +251,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cad2b5290a889e152e487a9d3b2b27aeea339086",
+            "blob": "ba58fbaeceea3ba8048de3c5168fe7f90d3458df",
             "content": "sha256:47e1d3767355bc54493cb7dd35c20385d84ffe7a953bb2cfabea7959bafd7d71",
             "locator": {
               "kind": "symbol",

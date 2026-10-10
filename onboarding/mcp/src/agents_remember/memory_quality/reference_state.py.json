@@ -99,22 +99,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "890d4f88833d19f881459eb824b61b84d4e6b430",
-            "content": "sha256:1351b5c5d88c8123e73798fd9e7b3eef6834d4c213fdce3b283d2bb6e4681b9a",
+            "blob": "e8421ed724191966dedc24b309e74eaf2439eeb9",
+            "content": "sha256:d5a4f8ee36bc919ed6b1287b5f92f206fe02510d168390e7b7bccff76cec6fc7",
             "locator": {
               "kind": "symbol",
               "name": "check_references"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e8421ed724191966dedc24b309e74eaf2439eeb9",
-            "content": "sha256:c97f5111fd6f84686578516ba41dd1602d38eb325ff395cba22ac24580bfdeb0",
-            "locator": {
-              "kind": "symbol",
-              "name": "STALE_REFERENCE_CHECK"
             }
           },
           "kind": "code"
@@ -186,8 +175,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "890d4f88833d19f881459eb824b61b84d4e6b430",
-            "content": "sha256:268bc8cd158bbd6a69fb8daf965aa7a426ce5ec36720a4716dacb0caa673f4ce",
+            "blob": "e8421ed724191966dedc24b309e74eaf2439eeb9",
+            "content": "sha256:07a0bef1bc7377859aacb0aef7f7b38f3f96e55066de087d91841260ec44257f",
             "locator": {
               "kind": "symbol",
               "name": "_sidecars"
@@ -202,8 +191,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "890d4f88833d19f881459eb824b61b84d4e6b430",
-            "content": "sha256:1351b5c5d88c8123e73798fd9e7b3eef6834d4c213fdce3b283d2bb6e4681b9a",
+            "blob": "e8421ed724191966dedc24b309e74eaf2439eeb9",
+            "content": "sha256:d5a4f8ee36bc919ed6b1287b5f92f206fe02510d168390e7b7bccff76cec6fc7",
             "locator": {
               "kind": "symbol",
               "name": "check_references"

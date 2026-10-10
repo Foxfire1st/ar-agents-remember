@@ -75,7 +75,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1561b7a012399b00069bb85b8abe538377e89057",
+            "blob": "90a25a6f5ceee4fe834fa6cf854b9b489659cdf2",
             "content": "sha256:9876ee58b74090ed105bd80b901cb382629d798c1e8a7fc16cc750e2fbf1fcf4",
             "locator": {
               "kind": "symbol",
@@ -91,7 +91,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1561b7a012399b00069bb85b8abe538377e89057",
+            "blob": "90a25a6f5ceee4fe834fa6cf854b9b489659cdf2",
             "content": "sha256:4d21205c243e338e7f56dbfb552057f9abfe5064e20860150c824aea796e2f87",
             "locator": {
               "kind": "symbol",
@@ -102,7 +102,7 @@
         },
         {
           "anchor": {
-            "blob": "1561b7a012399b00069bb85b8abe538377e89057",
+            "blob": "90a25a6f5ceee4fe834fa6cf854b9b489659cdf2",
             "content": "sha256:f61bb4a6dce52283d4e93751b139e978b37d86010095e966a03b8849f337baf1",
             "locator": {
               "kind": "symbol",
@@ -176,7 +176,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
+            "blob": "1d6d4c77ad41eb2f9783975d929a3519d218f22f",
             "content": "sha256:e8181a0720290a24893083991566ddd792976aeb263d08e9046d7d6ef75c9097",
             "locator": {
               "kind": "symbol",
@@ -188,12 +188,12 @@
         },
         {
           "anchor": {
-            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
+            "blob": "1d6d4c77ad41eb2f9783975d929a3519d218f22f",
             "content": "sha256:23240413395f0870408b2e3081f13621edce1e1fd1bfd54b1e279e2fe0c1da41",
             "locator": {
-              "end": 849,
+              "end": 828,
               "kind": "line_range",
-              "start": 815
+              "start": 794
             },
             "path": "mcp/tests/test_capsule_serving.py"
           },
@@ -206,7 +206,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
+            "blob": "1d6d4c77ad41eb2f9783975d929a3519d218f22f",
             "content": "sha256:fdc3df03e6984138a4dd82eb0bd84582f4754ab3779042878e6c006845bdd1f5",
             "locator": {
               "kind": "symbol",
@@ -218,12 +218,12 @@
         },
         {
           "anchor": {
-            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
+            "blob": "1d6d4c77ad41eb2f9783975d929a3519d218f22f",
             "content": "sha256:2b0607b723b829d47ef5ccf50b50809eed6a8297c71b5cdd98c349e47383b521",
             "locator": {
-              "end": 912,
+              "end": 891,
               "kind": "line_range",
-              "start": 886
+              "start": 865
             },
             "path": "mcp/tests/test_capsule_serving.py"
           },

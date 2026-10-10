@@ -1,5 +1,24 @@
 {
   "path": "mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "ac273eaf531038cab4a372393967360f40cb7fcc",
+        "content": "sha256:0586d97a4430cced1f871606d4ec4112db5c522e7c9da4f8dee36a461a7b5f30",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_every_vocabulary_cell_degrades_rather_than_stranding_the_task"
+        }
+      },
+      "facet": "Every vocabulary cell degrades to a named refusal rather than stranding the task.",
+      "id": "PRF-C9H392",
+      "invariant": "INV-V3N6NW",
+      "origin": {
+        "handoffEntry": "L50-MIK-R50-rule-2-vocabulary-removed",
+        "leaf": "260928-MIK-L50"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "1": {
@@ -7,7 +26,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dd608424ecf5b386e5a27070b5f2cb2d10721205",
+            "blob": "ac273eaf531038cab4a372393967360f40cb7fcc",
             "content": "sha256:0586d97a4430cced1f871606d4ec4112db5c522e7c9da4f8dee36a461a7b5f30",
             "locator": {
               "kind": "symbol",
@@ -23,7 +42,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dd608424ecf5b386e5a27070b5f2cb2d10721205",
+            "blob": "ac273eaf531038cab4a372393967360f40cb7fcc",
             "content": "sha256:510c3cfc330b617940c2f98b871f0378dc9d8bddaf9e098848ff46fb48c3e3a8",
             "locator": {
               "kind": "symbol",
@@ -39,7 +58,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dd608424ecf5b386e5a27070b5f2cb2d10721205",
+            "blob": "ac273eaf531038cab4a372393967360f40cb7fcc",
             "content": "sha256:08646ff626e4f5d42d7b40376e7db3719c1dad023de2e79a589f8886b72a4033",
             "locator": {
               "kind": "symbol",
@@ -55,7 +74,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dd608424ecf5b386e5a27070b5f2cb2d10721205",
+            "blob": "ac273eaf531038cab4a372393967360f40cb7fcc",
             "content": "sha256:b4f014d7e37376ae9098e5a7a8adfd0de0cbda0fad3aafbc9d332d8054e1e85d",
             "locator": {
               "kind": "symbol",

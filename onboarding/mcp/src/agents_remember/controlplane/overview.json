@@ -6,12 +6,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8a3dfefc6e514100ec12c4c4caf1f06c21ea51de",
+            "blob": "972bfe128d72a489b3cdb2563a352563c594856e",
             "content": "sha256:6265718c4953782e5e276b9fb819df8c37055dc3ed01a2aeecbe9c701f98a0e5",
             "locator": {
-              "end": 103,
+              "end": 161,
               "kind": "line_range",
-              "start": 103
+              "start": 161
             },
             "path": "mcp/src/agents_remember/observer/store.py"
           },
@@ -24,7 +24,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ed33a8e165b0a70034ce14c4d80b25d9cfef897c",
+            "blob": "fc2da95a5fcd8329ce16067afc1a9291becc04b5",
             "content": "sha256:1b2d95322d48ce113abe68a45f6f0f6691c8177f8e35ed2ec4f1fca4abbf552b",
             "locator": {
               "kind": "symbol",
@@ -99,7 +99,7 @@
         },
         {
           "anchor": {
-            "blob": "ed33a8e165b0a70034ce14c4d80b25d9cfef897c",
+            "blob": "fc2da95a5fcd8329ce16067afc1a9291becc04b5",
             "content": "sha256:b92153e2d4b5e8e39fb22f8e3c36fbfaf92ad1984a562be174679233df2efa5a",
             "locator": {
               "end": 1,
@@ -262,12 +262,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7bf6786f6e546a7f79d0be5ccb3200c4da94e75a",
+            "blob": "65f3f7de5d39c0373fb7fcd8b4bcbf3860c6d1cb",
             "content": "sha256:d17f8669c6f3a3d3914aac6964139af8c7837a64018244653e9400f177a59276",
             "locator": {
-              "end": 41,
+              "end": 42,
               "kind": "line_range",
-              "start": 41
+              "start": 42
             },
             "path": "mcp/src/agents_remember/controlplane/operator_inbox_records.py"
           },
@@ -311,7 +311,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "34ef87c090f8ba42fbc521c058a529d78751ac60",
+            "blob": "feb3705c0b9fadd03556a6fb1fdcf216d50ea060",
             "content": "sha256:22d42a9364869463b895daa2d960aa31ad3c51114cc28a5cef042c139f97eef9",
             "locator": {
               "end": 171,

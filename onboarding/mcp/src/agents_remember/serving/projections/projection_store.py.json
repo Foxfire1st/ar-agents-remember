@@ -256,12 +256,12 @@
         },
         {
           "anchor": {
-            "blob": "099b61b20b7737cc83e281cc58bd425ac0d230cb",
+            "blob": "6f9bdb34b8413d8e9a83c174ccb684e1ee060cd0",
             "content": "sha256:d03fbb85b9ba463ce9a901fe3dbff52af993b1bbd75a7c73507af38e23b38958",
             "locator": {
-              "end": 108,
+              "end": 104,
               "kind": "line_range",
-              "start": 81
+              "start": 77
             },
             "path": "mcp/src/agents_remember/observer/reducer.py"
           },

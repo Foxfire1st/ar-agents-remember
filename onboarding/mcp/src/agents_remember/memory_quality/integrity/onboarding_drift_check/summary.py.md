@@ -2,7 +2,7 @@
 
 ## Governing Overview
 
-[overview.md](../../../../../overview.md)
+[overview.md](../../overview.md)
 
 ## Purpose
 
@@ -107,8 +107,6 @@ unified renderer publishes.
 - The converted result names every measured field; zero means empty, never unread. [11]
 - The converted report and the observer snapshot are written from the same measured result. [12]
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| `ACTIONABLE_CLASSIFICATIONS` and, since 260731-EFA-L4, `DriftSummaryPacket`/`DriftStatus` are sourced from the shared models module (`DriftStatus` declared in `models/drift.py`). [3] | `DriftSummaryPacket` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py:11-70 |
-| The context-packet wire model that validates this packet's `status` — the one that used to lack `error`. [4] | `DriftSummary` | mcp/src/agents_remember/models/drift.py:14-35 |
-| The tool response model that validates the same packet. [5] | `DriftCheckResponse` | mcp/src/agents_remember/models/memory.py:15-42 |
+- `ACTIONABLE_CLASSIFICATIONS` and, since 260731-EFA-L4, `DriftSummaryPacket`/`DriftStatus` are sourced from the shared models module (`DriftStatus` declared in `models/drift.py`). [3]
+- The context-packet wire model that validates this packet's `status` — the one that used to lack `error`. [4]
+- The tool response model that validates the same packet. [5]

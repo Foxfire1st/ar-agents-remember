@@ -53,12 +53,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8a3dfefc6e514100ec12c4c4caf1f06c21ea51de",
+            "blob": "972bfe128d72a489b3cdb2563a352563c594856e",
             "content": "sha256:1b3c6999889b5c09013caadd4ae1893de4290b28c3d2d56b5a94a8b2d3d5e405",
             "locator": {
-              "end": 107,
+              "end": 165,
               "kind": "line_range",
-              "start": 106
+              "start": 164
             },
             "path": "mcp/src/agents_remember/observer/store.py"
           },

@@ -7,12 +7,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3d328c32addf48d8925e1ab191d2521a55aa20ae",
+            "blob": "9f01b458769e29ba24c9cc3c0ff187e9e5eb2cf2",
             "content": "sha256:fa7248deae80fb06525f41cda321cbd3b4fcba82bb50930b9e67ed74789cabba",
             "locator": {
-              "end": 587,
+              "end": 594,
               "kind": "line_range",
-              "start": 562
+              "start": 569
             },
             "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
           },
@@ -25,12 +25,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3d328c32addf48d8925e1ab191d2521a55aa20ae",
+            "blob": "9f01b458769e29ba24c9cc3c0ff187e9e5eb2cf2",
             "content": "sha256:fb0fe50f78e69101db349a8be853b4d8b983dd1caa15399a9e180f4d8d1601c5",
             "locator": {
-              "end": 593,
+              "end": 600,
               "kind": "line_range",
-              "start": 593
+              "start": 600
             },
             "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
           },
@@ -43,7 +43,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cae83c767e4181dfaf6e8e45ad3efc05ef5fa9be",
+            "blob": "6d58977d0180423326b3c4c33f1de00b9453702e",
             "content": "sha256:605c2bee8b0d54f4fe588a7becc0e193efc32cb36d5ccf70788f982e1e948e05",
             "locator": {
               "kind": "symbol",

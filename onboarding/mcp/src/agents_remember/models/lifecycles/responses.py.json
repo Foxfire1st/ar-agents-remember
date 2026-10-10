@@ -7,12 +7,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "082789175b65a73ba6821158b07e1f5849c192ca",
+            "blob": "6e1c2663fa140e39d14ec835f6a5a6db3ced7de2",
             "content": "sha256:d98ec066125f6127dbbe8a52abe5b660f815bea33d53be2a2e63b52821b7a542",
             "locator": {
-              "end": 91,
+              "end": 102,
               "kind": "line_range",
-              "start": 91
+              "start": 102
             },
             "path": "mcp/src/agents_remember/models/base.py"
           },
@@ -54,7 +54,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "217ff46ba831274f6cea94641a60077c17749cf0",
+            "blob": "97539a1d3035c51bdfc8174a6c7de015195b7f61",
             "content": "sha256:bae7e48d786c7b8d76860e19854898dfaabc0b87365f6032e6d800e2fb512720",
             "locator": {
               "end": 218,
@@ -72,12 +72,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "217ff46ba831274f6cea94641a60077c17749cf0",
+            "blob": "97539a1d3035c51bdfc8174a6c7de015195b7f61",
             "content": "sha256:6a8ad15391153df8c0e8ef6d3e158e1e76f0d70bbca93d7df82029d6f0b2f248",
             "locator": {
-              "end": 258,
+              "end": 256,
               "kind": "line_range",
-              "start": 258
+              "start": 256
             },
             "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
           },

@@ -46,7 +46,7 @@
         },
         {
           "anchor": {
-            "blob": "67d7f42f3346e5e5611f092da043a170523f933a",
+            "blob": "8f853c4002c1d8c1779c4a72322db46fe09e058f",
             "content": "sha256:8fe120d7bb051aba2c92f4910cbb0b9d7d9c0c348620cb4b3dc916fa5b941bc2",
             "locator": {
               "kind": "symbol",
@@ -117,7 +117,7 @@
         },
         {
           "anchor": {
-            "blob": "005c44f99677f29c3777322502b77b732a3a0252",
+            "blob": "0cc1ed4aa2ead143a66f5ee6b69cf490138fd7ae",
             "content": "sha256:f85866fb872c92ee60595940e4e9ca33e81e178dc4ae608c2c14185f7e223d49",
             "locator": {
               "kind": "symbol",
@@ -129,12 +129,12 @@
         },
         {
           "anchor": {
-            "blob": "005c44f99677f29c3777322502b77b732a3a0252",
+            "blob": "0cc1ed4aa2ead143a66f5ee6b69cf490138fd7ae",
             "content": "sha256:26e70e6c99e67a6cd53faba6d137da429a9134c4310c0fc049752880e2c654ed",
             "locator": {
-              "end": 391,
+              "end": 377,
               "kind": "line_range",
-              "start": 353
+              "start": 339
             },
             "path": "mcp/src/agents_remember/models/knowledge/review.py"
           },
@@ -176,7 +176,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bd66eb3576aa6605929a1dcc30616584b3563cb1",
+            "blob": "ce64a977e926846a0ca408bf1aceecec8a22ea85",
             "content": "sha256:13284bfe39f1769ed7524e14a03b3fff35435c7de98f6fd8df6d708af266e825",
             "locator": {
               "kind": "symbol",
@@ -193,7 +193,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "005c44f99677f29c3777322502b77b732a3a0252",
+            "blob": "0cc1ed4aa2ead143a66f5ee6b69cf490138fd7ae",
             "content": "sha256:7534f6d7561ed9bef13ee60831fed901abe08ac3102a36b9b2d9f4d66dff2ccd",
             "locator": {
               "kind": "symbol",
@@ -222,12 +222,12 @@
         },
         {
           "anchor": {
-            "blob": "75a68c3874ea545bd49e863046a120e320587404",
+            "blob": "656c6acccc15cb4da02e3931dd492b4f0e2eef71",
             "content": "sha256:821f4720a95daabc0de925407b70118a600332e89ea3a834fc1bd56711e19e73",
             "locator": {
-              "end": 89,
+              "end": 84,
               "kind": "line_range",
-              "start": 85
+              "start": 80
             },
             "path": "mcp/src/agents_remember/application/knowledge_review.py"
           },

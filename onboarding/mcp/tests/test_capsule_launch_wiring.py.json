@@ -161,12 +161,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ad32196677d5800992fe4294b439f3e28af150ec",
+            "blob": "e41c49321364b7c5080944c8c746cd0ffdc181c8",
             "content": "sha256:4695b329b96163bd351824a2c951c1ce73612c7451dc3dc8f142ecb33d112c19",
             "locator": {
-              "end": 20,
+              "end": 18,
               "kind": "line_range",
-              "start": 20
+              "start": 18
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -203,7 +203,7 @@
         },
         {
           "anchor": {
-            "blob": "a7a323a5a3fc87252dc59389a9a107bd0e0ab6c7",
+            "blob": "07dbb4559839c3bb99d5e22b19ab0aeffde8d577",
             "content": "sha256:b078024718ecb17ceaac272f3c33c7e6951de04fc083356f008b91cc408c21b5",
             "locator": {
               "kind": "symbol",

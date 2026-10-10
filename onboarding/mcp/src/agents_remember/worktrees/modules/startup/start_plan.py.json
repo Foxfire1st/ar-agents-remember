@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "83cabcc50057849d9d034bacbb0058e33bd5eda3",
+        "blob": "3370d0e27cac3d4a3c5aba90530883235032262d",
         "content": "sha256:7690f84401be5f748fb2872f5235ca90148077d66730e94f93e3f71932f2768e",
         "locator": {
           "kind": "symbol",
@@ -18,15 +18,49 @@
       },
       "rationale": "Carries the leaf and its same-request owner-validated parent as one immutable local value rather than rebuilding authority from the path.",
       "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "3370d0e27cac3d4a3c5aba90530883235032262d",
+        "content": "sha256:38d915f9a4e84cfaa882248790aa127f496bafd0b83a7ba59e6bc6984b479e35",
+        "locator": {
+          "kind": "symbol",
+          "name": "_contract_after_memory_start"
+        }
+      },
+      "id": "RLZ-WKBKJH",
+      "invariant": "INV-WKM7SS",
+      "origin": {
+        "handoffEntry": "L50-CUR-EXP-F01",
+        "leaf": "260928-MIK-L50"
+      },
+      "rationale": "Never rewrites a contract into the removed mode; the amend-to-disabled branch is removed.",
+      "role": "unclassified"
     }
   ],
   "references": {
-    "1": {
-      "note": "One internal value carries the same request's validated preview-only parent.",
+    "6": {
+      "note": "No disabled projection; only the external base reconciles",
       "targets": [
         {
           "anchor": {
-            "blob": "83cabcc50057849d9d034bacbb0058e33bd5eda3",
+            "blob": "3370d0e27cac3d4a3c5aba90530883235032262d",
+            "content": "sha256:38d915f9a4e84cfaa882248790aa127f496bafd0b83a7ba59e6bc6984b479e35",
+            "locator": {
+              "kind": "symbol",
+              "name": "_contract_after_memory_start"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Same request's validated preview-only parent",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3370d0e27cac3d4a3c5aba90530883235032262d",
             "content": "sha256:7690f84401be5f748fb2872f5235ca90148077d66730e94f93e3f71932f2768e",
             "locator": {
               "kind": "symbol",
@@ -37,44 +71,12 @@
         }
       ]
     },
-    "2": {
-      "note": "Moved memory-mode/base projection preserves its typed contract semantics.",
+    "8": {
+      "note": "Memory blocks retain recovery action and fields",
       "targets": [
         {
           "anchor": {
-            "blob": "83cabcc50057849d9d034bacbb0058e33bd5eda3",
-            "content": "sha256:e633cff8c37cf743403613f9ea2b4522f206535d03b7376cec2c861e1603ce5a",
-            "locator": {
-              "kind": "symbol",
-              "name": "_contract_after_memory_start"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "Preview uses the existing dry-run worktree owner and ordinary result shape.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "83cabcc50057849d9d034bacbb0058e33bd5eda3",
-            "content": "sha256:e8b9b903e8fb118a5d1d1f1e08c1f9c498f9d3e2a947e601eaa26455a1640816",
-            "locator": {
-              "kind": "symbol",
-              "name": "_preview_start_enclosure"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "4": {
-      "note": "Memory blocks retain their existing recovery action/fields.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "83cabcc50057849d9d034bacbb0058e33bd5eda3",
+            "blob": "3370d0e27cac3d4a3c5aba90530883235032262d",
             "content": "sha256:be7bd8e9de162c0787bf485fbe05d7a8a59a729917670d5e21a4361c5775bd6a",
             "locator": {
               "kind": "symbol",
@@ -85,16 +87,16 @@
         }
       ]
     },
-    "5": {
-      "note": "Provider blocks retain their existing recovery action/fields.",
+    "9": {
+      "note": "Preview uses the dry-run worktree owner",
       "targets": [
         {
           "anchor": {
-            "blob": "83cabcc50057849d9d034bacbb0058e33bd5eda3",
-            "content": "sha256:923d05be50358c41177a2624206f1e476a7370e45484e0d177584c3f2e56b1c4",
+            "blob": "3370d0e27cac3d4a3c5aba90530883235032262d",
+            "content": "sha256:e8b9b903e8fb118a5d1d1f1e08c1f9c498f9d3e2a947e601eaa26455a1640816",
             "locator": {
               "kind": "symbol",
-              "name": "_blocked_provider_start_result"
+              "name": "_preview_start_enclosure"
             }
           },
           "kind": "code"

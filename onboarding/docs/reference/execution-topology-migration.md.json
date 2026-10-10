@@ -53,12 +53,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4726f82955a9d9fa8749b5d07b038240fe039acb",
+            "blob": "6564064f9d0f3df892c0a89e3d3132161aba54fa",
             "content": "sha256:e75ed8f376ba159a82d72b5a8bbf5056b0313d2847ad2c1b6557ff50921629b7",
             "locator": {
-              "end": 372,
+              "end": 376,
               "kind": "line_range",
-              "start": 318
+              "start": 322
             },
             "path": "mcp/src/agents_remember/tasks/document_refs.py"
           },

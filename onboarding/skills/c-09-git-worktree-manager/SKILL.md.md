@@ -65,6 +65,8 @@ The closeout paragraph says since L37 that the preview does ask the mandatory in
 a leaf the apply would refuse is answered `knowledge-gate-refused` with the open findings, never `would-closeout`
 (see `c-12-closeout`).
 
+**Memory cannot be disabled for a task (260928-MIK-L50).** The skill's recovery list is now `reconciliation` / `custom` — the `disabled-memory` choice is gone — and a start that names the removed mode or choice is refused (`memory-opt-out-refused`). A contract on disk that carries the removed mode is abandoned and started again: save the changes worth keeping, run `worktree_abandon` (the dry run first), then `worktree_start` at the same address without `memory_mode` (skills/c-09-git-worktree-manager/SKILL.md:211-216).
+
 ### Conventions
 
 - Preview before mutation and keep dry-run side-effect free.

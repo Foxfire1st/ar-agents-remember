@@ -41,12 +41,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f5299f8beb3f677859b2cdd393816c5309ff264d",
+            "blob": "86d10598e49ffb106e6f21bbcee3f7c2449a7cf2",
             "content": "sha256:00811ded8aaf10b2c3fdc3c5bc3676c173237c2f625091753abd8516182c95c8",
             "locator": {
-              "end": 120,
+              "end": 112,
               "kind": "line_range",
-              "start": 120
+              "start": 112
             },
             "path": "mcp/tests/test_knowledge_file_formats.py"
           },

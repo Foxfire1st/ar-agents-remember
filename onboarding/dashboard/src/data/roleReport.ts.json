@@ -54,12 +54,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ce86ff52daa35de0c219ae824e5f1558e55b3d42",
+            "blob": "762704569fb205c645f778f52e0d31afa916dffd",
             "content": "sha256:11a9083f74e6b3e3b1140c1a89aa23dfbc93529150531817604726c5f73b918b",
             "locator": {
-              "end": 343,
+              "end": 344,
               "kind": "line_range",
-              "start": 319
+              "start": 320
             },
             "path": "dashboard/src/cockpit/RoleExecutionStatus.test.tsx"
           },

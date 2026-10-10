@@ -128,7 +128,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bf408b0d04334071a43207138086e4cfb6f2a374",
+            "blob": "289124eb65069d96a2a16ec167d0190a9bbdc367",
             "content": "sha256:efd1b6ced46ad363813e09e8ec03a2d3db2837abc9138a4ee0f5c7c80494ac07",
             "locator": {
               "kind": "symbol",
@@ -389,7 +389,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "082789175b65a73ba6821158b07e1f5849c192ca",
+            "blob": "6e1c2663fa140e39d14ec835f6a5a6db3ced7de2",
             "content": "sha256:82b1223f6a2dfe69490f7dacf49a68f6da3450399b2d6266267c975685458548",
             "locator": {
               "kind": "symbol",
@@ -401,7 +401,7 @@
         },
         {
           "anchor": {
-            "blob": "082789175b65a73ba6821158b07e1f5849c192ca",
+            "blob": "6e1c2663fa140e39d14ec835f6a5a6db3ced7de2",
             "content": "sha256:97a355f06bc816f40ec3e6d30faf87c55a9cec8e6da60eb216254b9c65165c90",
             "locator": {
               "end": 13,
@@ -437,12 +437,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b96a76283d373ac60a4e9cc1fa2e7630bc748565",
+            "blob": "4f26a1f99f784a3d447ff45cf1ddbf66160c53cc",
             "content": "sha256:1fa5a3f578159b9ad3fb28b9ed574d55645e31e5f6d37562e32da8faab01f48d",
             "locator": {
-              "end": 107,
+              "end": 126,
               "kind": "line_range",
-              "start": 73
+              "start": 92
             },
             "path": "mcp/src/agents_remember/observer/event_retention.py"
           },

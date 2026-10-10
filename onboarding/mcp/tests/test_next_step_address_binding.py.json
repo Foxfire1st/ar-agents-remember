@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "853af60ff55338379335766ac25f2ae83ea1c843",
+            "blob": "17bbc60d5484872ad1863b2a25f337eecf265791",
             "content": "sha256:03c7aea9982233ac213eb3413bf30ef1358f384577710222593204a8b9fa6621",
             "locator": {
               "end": 20,
@@ -24,7 +24,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "853af60ff55338379335766ac25f2ae83ea1c843",
+            "blob": "17bbc60d5484872ad1863b2a25f337eecf265791",
             "content": "sha256:edaa730e1ba583d88a4a217c98f0ef4f13e4a9de5f8e36511ed99a0efc4f4532",
             "locator": {
               "kind": "symbol",
@@ -40,7 +40,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "853af60ff55338379335766ac25f2ae83ea1c843",
+            "blob": "17bbc60d5484872ad1863b2a25f337eecf265791",
             "content": "sha256:9612031039a374929d654988fda4070ea4bd63a743ed45cf25731aded99e640f",
             "locator": {
               "kind": "symbol",
@@ -68,12 +68,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ad32196677d5800992fe4294b439f3e28af150ec",
+            "blob": "e41c49321364b7c5080944c8c746cd0ffdc181c8",
             "content": "sha256:6897c1086d34692ed244fe2a89df0b31f713b774b295274504d481dfe90dbc65",
             "locator": {
-              "end": 205,
+              "end": 187,
               "kind": "line_range",
-              "start": 205
+              "start": 187
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -86,7 +86,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9908eea537fbd4a7b15c1a0ed275bee8388ffc72",
+            "blob": "1e151bfd9338a57f52c14bca69c5e9cb90e9398f",
             "content": "sha256:f0688ad773a589f140c01f1a6a70fa5088d8ca7c30ef383f7dca90b8f6eee32a",
             "locator": {
               "kind": "symbol",
@@ -103,7 +103,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9908eea537fbd4a7b15c1a0ed275bee8388ffc72",
+            "blob": "1e151bfd9338a57f52c14bca69c5e9cb90e9398f",
             "content": "sha256:bcb4397f067ede0b0d258767ef8479189851508c12189ec69b383ba0963a9991",
             "locator": {
               "kind": "symbol",
@@ -115,7 +115,7 @@
         },
         {
           "anchor": {
-            "blob": "9908eea537fbd4a7b15c1a0ed275bee8388ffc72",
+            "blob": "1e151bfd9338a57f52c14bca69c5e9cb90e9398f",
             "content": "sha256:28e88d2fdd54c0eb2f29cc2a4dba93fec3183e1fc4c6731ae273e75a9d3fedef",
             "locator": {
               "kind": "symbol",
@@ -149,7 +149,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "853af60ff55338379335766ac25f2ae83ea1c843",
+            "blob": "17bbc60d5484872ad1863b2a25f337eecf265791",
             "content": "sha256:3ee7ee091d37048b52b41ec7d2fa7afcc34eccb14ac2945100e1047f693e2832",
             "locator": {
               "kind": "symbol",
@@ -181,7 +181,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "853af60ff55338379335766ac25f2ae83ea1c843",
+            "blob": "17bbc60d5484872ad1863b2a25f337eecf265791",
             "content": "sha256:53c69e5026dbf42e34c8d9f2e69f446c54bc6bf21a2958c6e29d5981c455ff27",
             "locator": {
               "kind": "symbol",
@@ -197,7 +197,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "853af60ff55338379335766ac25f2ae83ea1c843",
+            "blob": "17bbc60d5484872ad1863b2a25f337eecf265791",
             "content": "sha256:33cf0545f8736cc93833a672b4e1200d97cfe1bf3adb89a7ca85e6dbbf3ed4d0",
             "locator": {
               "kind": "symbol",
@@ -213,7 +213,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "853af60ff55338379335766ac25f2ae83ea1c843",
+            "blob": "17bbc60d5484872ad1863b2a25f337eecf265791",
             "content": "sha256:8b9b897aa6701e89769118cce9ac239e18e242f2bcaddfe7f011de2aa4af5511",
             "locator": {
               "kind": "symbol",

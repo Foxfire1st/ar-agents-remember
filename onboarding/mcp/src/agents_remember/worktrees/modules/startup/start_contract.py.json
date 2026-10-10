@@ -3,8 +3,44 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "360f0c93207f994a849e34d583f562602effa5a8",
-        "content": "sha256:504da8dc317c5886905be21149c3bde6dc882a0e5321e2eed6ebf19a5c96d4b7",
+        "blob": "a5a5d52ff4fc8f4f9e0039688dab818a164a7b84",
+        "content": "sha256:0bde9c4a4127b2a17edee190daf33496aad845ee1c27dbffd538383865183a6e",
+        "locator": {
+          "kind": "symbol",
+          "name": "_tombstone_successor_series"
+        }
+      },
+      "id": "RLZ-151ZEC",
+      "invariant": "INV-WKM7SS",
+      "origin": {
+        "handoffEntry": "L50-CUR-EXP-F01",
+        "leaf": "260928-MIK-L50"
+      },
+      "rationale": "Admits a restart-after-abandon at a tombstone address under its still-disabled parent series with no conversion and no series-file write.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "a5a5d52ff4fc8f4f9e0039688dab818a164a7b84",
+        "content": "sha256:39bdfb87152031c42af7914c04214f93c0d17c55a3969ef22bbba0d7d5da1dc0",
+        "locator": {
+          "kind": "symbol",
+          "name": "_existing_master_series_admission_refusal"
+        }
+      },
+      "id": "RLZ-HRDJ3M",
+      "invariant": "INV-WKM7SS",
+      "origin": {
+        "handoffEntry": "L50-CUR-EXP-F01",
+        "leaf": "260928-MIK-L50"
+      },
+      "rationale": "Refuses a leaf under a disabled series with the series and the new-master way out, never a correct-the-edge mismatch.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "a5a5d52ff4fc8f4f9e0039688dab818a164a7b84",
+        "content": "sha256:9b21cb4c6dcc7ab9142cd40c862fafc4e842d2bb6eedf54c11faf6a9115f2b00",
         "locator": {
           "kind": "symbol",
           "name": "_build_start_contract"
@@ -18,6 +54,24 @@
       },
       "rationale": "Retains the actual parent returned by the one canonical/bootstrap owner only for dry-run construction, returning no preview-parent substitute on apply.",
       "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "a5a5d52ff4fc8f4f9e0039688dab818a164a7b84",
+        "content": "sha256:0bde9c4a4127b2a17edee190daf33496aad845ee1c27dbffd538383865183a6e",
+        "locator": {
+          "kind": "symbol",
+          "name": "_tombstone_successor_series"
+        }
+      },
+      "id": "RLZ-TNJTWD",
+      "invariant": "INV-39FYQE",
+      "origin": {
+        "handoffEntry": "L50-CODE-R1-F04",
+        "leaf": "260928-MIK-L50"
+      },
+      "rationale": "The terminal way-out mechanics tear down both legs and rebuild external, with the operation proof retained alongside.",
+      "role": "unclassified"
     }
   ],
   "references": {
@@ -26,7 +80,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "360f0c93207f994a849e34d583f562602effa5a8",
+            "blob": "a5a5d52ff4fc8f4f9e0039688dab818a164a7b84",
             "content": "sha256:97610670b1b5964828417fa7a47fdc0116dc09500c70d46991909ee6db504649",
             "locator": {
               "kind": "symbol",
@@ -135,7 +189,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cad2b5290a889e152e487a9d3b2b27aeea339086",
+            "blob": "ba58fbaeceea3ba8048de3c5168fe7f90d3458df",
             "content": "sha256:4ad4ee1d7ce035aa8b4626b3e4c1274f186852a2b51da62504c9f51ba31b40e7",
             "locator": {
               "kind": "symbol",
@@ -159,12 +213,12 @@
         },
         {
           "anchor": {
-            "blob": "cad2b5290a889e152e487a9d3b2b27aeea339086",
+            "blob": "ba58fbaeceea3ba8048de3c5168fe7f90d3458df",
             "content": "sha256:c36973447a984987b2c1eff20f85d946ed00cded00f21df2358d95cd70fd78a5",
             "locator": {
-              "end": 177,
+              "end": 180,
               "kind": "line_range",
-              "start": 160
+              "start": 163
             },
             "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
           },
@@ -190,7 +244,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "360f0c93207f994a849e34d583f562602effa5a8",
+            "blob": "a5a5d52ff4fc8f4f9e0039688dab818a164a7b84",
             "content": "sha256:f5daf2397ff0b2a452c8306adfef34ccba84c8905b80a16950887a757c2b30be",
             "locator": {
               "kind": "symbol",
@@ -223,7 +277,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "360f0c93207f994a849e34d583f562602effa5a8",
+            "blob": "a5a5d52ff4fc8f4f9e0039688dab818a164a7b84",
             "content": "sha256:54ada2250a6412b2f9e23b361e014590e1cbde4243bf4b8dec0abd58938936ed",
             "locator": {
               "kind": "symbol",
@@ -271,7 +325,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "93388b43355dd90752a5dfdefad1a7a7e2c5a426",
+            "blob": "3f34335a7a7236e56d958412c6a9f89ff0059781",
             "content": "sha256:5ccdd8fd932088729bee34a4ac52d0aa1359456278e281226d8e8bc0adc50282",
             "locator": {
               "kind": "symbol",
@@ -336,12 +390,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "360f0c93207f994a849e34d583f562602effa5a8",
+            "blob": "a5a5d52ff4fc8f4f9e0039688dab818a164a7b84",
             "content": "sha256:f0ecfd0a31daeb79921da6fc95121fef13d96b5019555e6983cf75cfd94eeab8",
             "locator": {
-              "end": 221,
+              "end": 224,
               "kind": "line_range",
-              "start": 221
+              "start": 224
             }
           },
           "kind": "code"

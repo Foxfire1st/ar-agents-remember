@@ -7,12 +7,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cf06b477b83063de8e2f21be7818ec154d1b93fd",
+            "blob": "ef701826d7c6f745ee4c2988737c2aaae4653934",
             "content": "sha256:ca3557a606e70c84a7687fbe09583e83d51c413d49c746db063042719f39d301",
             "locator": {
-              "end": 653,
+              "end": 669,
               "kind": "line_range",
-              "start": 653
+              "start": 669
             },
             "path": "docs/reference/settings-json.md"
           },
@@ -20,12 +20,12 @@
         },
         {
           "anchor": {
-            "blob": "cf06b477b83063de8e2f21be7818ec154d1b93fd",
+            "blob": "ef701826d7c6f745ee4c2988737c2aaae4653934",
             "content": "sha256:0081f06e054264c050242318b0caed1fabfbd2fe75ffd1f11c7f3d4dcfb2cb3b",
             "locator": {
-              "end": 654,
+              "end": 670,
               "kind": "line_range",
-              "start": 654
+              "start": 670
             },
             "path": "docs/reference/settings-json.md"
           },
@@ -33,12 +33,12 @@
         },
         {
           "anchor": {
-            "blob": "cf06b477b83063de8e2f21be7818ec154d1b93fd",
+            "blob": "ef701826d7c6f745ee4c2988737c2aaae4653934",
             "content": "sha256:53a36e24edb0ff49f02cf060ac301ef1ca0ecd269141943b764daf85070b2b89",
             "locator": {
-              "end": 651,
+              "end": 667,
               "kind": "line_range",
-              "start": 651
+              "start": 667
             },
             "path": "docs/reference/settings-json.md"
           },
@@ -46,12 +46,12 @@
         },
         {
           "anchor": {
-            "blob": "cf06b477b83063de8e2f21be7818ec154d1b93fd",
+            "blob": "ef701826d7c6f745ee4c2988737c2aaae4653934",
             "content": "sha256:4fd1284e73f4971fa5d5fac063a5406894c0024ae7a0ba336b8ef95d3dffc560",
             "locator": {
-              "end": 614,
+              "end": 630,
               "kind": "line_range",
-              "start": 613
+              "start": 629
             },
             "path": "docs/reference/settings-json.md"
           },
@@ -59,12 +59,12 @@
         },
         {
           "anchor": {
-            "blob": "cf06b477b83063de8e2f21be7818ec154d1b93fd",
+            "blob": "ef701826d7c6f745ee4c2988737c2aaae4653934",
             "content": "sha256:c0e4b7e1e2e7b83edf77c6914072fdbc3d7af119ac8995683cb5e0fdc7e902ae",
             "locator": {
-              "end": 611,
+              "end": 627,
               "kind": "line_range",
-              "start": 611
+              "start": 627
             },
             "path": "docs/reference/settings-json.md"
           },

@@ -145,12 +145,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "598b2015f9054a298a1a3e54896cfb6ec238b38c",
+            "blob": "4d50d05471260de792a25e40a495b73d67945071",
             "content": "sha256:d5e9b53584670e8d426bfc747b555b8e77eba3bc9a7fb7b667772183cfb67600",
             "locator": {
-              "end": 173,
+              "end": 176,
               "kind": "line_range",
-              "start": 152
+              "start": 155
             },
             "path": "mcp/tests/test_atomic_series_activation.py"
           },
@@ -158,12 +158,12 @@
         },
         {
           "anchor": {
-            "blob": "598b2015f9054a298a1a3e54896cfb6ec238b38c",
+            "blob": "4d50d05471260de792a25e40a495b73d67945071",
             "content": "sha256:5fc1f69f7d81269feb93b572f3c74639b51462bdfba97750b13386b483ff5427",
             "locator": {
-              "end": 209,
+              "end": 212,
               "kind": "line_range",
-              "start": 174
+              "start": 177
             },
             "path": "mcp/tests/test_atomic_series_activation.py"
           },
@@ -188,7 +188,7 @@
         },
         {
           "anchor": {
-            "blob": "74f71ebfe48f6760b4c87c1bcd00e51baeb09358",
+            "blob": "8458f1fd16eafbea5e304d0cec0514bcbe8b0da0",
             "content": "sha256:be8ef36ce51fa9483a23838076371def6eeaed7e42576161d3273b2170fb4d96",
             "locator": {
               "kind": "symbol",

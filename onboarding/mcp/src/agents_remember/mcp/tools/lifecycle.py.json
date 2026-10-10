@@ -7,12 +7,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bf408b0d04334071a43207138086e4cfb6f2a374",
+            "blob": "289124eb65069d96a2a16ec167d0190a9bbdc367",
             "content": "sha256:6f2b87fe99dd83c3b0ffcfeb076e64ff0e9b61309f2bfef46c8c364933d634c9",
             "locator": {
-              "end": 638,
+              "end": 646,
               "kind": "line_range",
-              "start": 638
+              "start": 646
             },
             "path": "mcp/src/agents_remember/observer/ambient.py"
           },
@@ -20,12 +20,12 @@
         },
         {
           "anchor": {
-            "blob": "bf408b0d04334071a43207138086e4cfb6f2a374",
+            "blob": "289124eb65069d96a2a16ec167d0190a9bbdc367",
             "content": "sha256:14ca95de9a248b98ca91f6eb09f3d3ee9ba8412e03c422232154b87efa8a357c",
             "locator": {
-              "end": 674,
+              "end": 682,
               "kind": "line_range",
-              "start": 674
+              "start": 682
             },
             "path": "mcp/src/agents_remember/observer/ambient.py"
           },

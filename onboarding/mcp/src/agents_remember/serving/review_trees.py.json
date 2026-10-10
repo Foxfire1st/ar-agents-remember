@@ -44,7 +44,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bbe110e4539f26ac9b00924e646363fd5b16e48d",
+            "blob": "d01fab7c887ce5127ca0f3677f82eca9ec27053b",
             "content": "sha256:6d36bd9e40b722ac8501d72d82061f75870c8f1e8346d29e69b4367ca76ac281",
             "locator": {
               "kind": "symbol",
@@ -60,7 +60,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bbe110e4539f26ac9b00924e646363fd5b16e48d",
+            "blob": "d01fab7c887ce5127ca0f3677f82eca9ec27053b",
             "content": "sha256:7d23597cdb1340f4d27c8a79530c19eb558d1fcb54338382541e99d75926cd2e",
             "locator": {
               "kind": "symbol",
@@ -76,7 +76,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bbe110e4539f26ac9b00924e646363fd5b16e48d",
+            "blob": "d01fab7c887ce5127ca0f3677f82eca9ec27053b",
             "content": "sha256:50b3c4762ccf1629bc3917e56d65d51dd7ac556cfe9e7f2e0ce257bf6866f0b2",
             "locator": {
               "kind": "symbol",
@@ -92,7 +92,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bbe110e4539f26ac9b00924e646363fd5b16e48d",
+            "blob": "d01fab7c887ce5127ca0f3677f82eca9ec27053b",
             "content": "sha256:d239eb495d1abf807028753628f2814238afd971d5fcf95160e066b7fc2fb52e",
             "locator": {
               "kind": "symbol",
@@ -176,7 +176,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "023d1f462e7b1839dc594a930d879ba94398d92b",
+            "blob": "b4d78090a1383e85d720b881411db85e13cfb162",
             "content": "sha256:b0b9575dba191615bb0df1d6fe9fd6126a1998967ee4eea85cd780e34e28581c",
             "locator": {
               "kind": "symbol",
@@ -210,12 +210,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bbe110e4539f26ac9b00924e646363fd5b16e48d",
+            "blob": "d01fab7c887ce5127ca0f3677f82eca9ec27053b",
             "content": "sha256:a27dc3d844bb99bb456ec955405c7b46850ccc1509b9e0df63475facba6bd839",
             "locator": {
-              "end": 55,
+              "end": 57,
               "kind": "line_range",
-              "start": 43
+              "start": 45
             }
           },
           "kind": "code"

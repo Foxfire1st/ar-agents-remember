@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5e4cacc3f5f41b68b1399a4064fb89ccec6b2a7e",
+            "blob": "cee16fce97e5e76b33e52e9b0d606b87481c9758",
             "content": "sha256:03593dcea707b4ee6a05583a3cc4507d5b13f6e6675c9b59445350e98b773870",
             "locator": {
               "kind": "symbol",
@@ -171,12 +171,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cbc6fb6b3965455daef6cf4a161aca8221a6c4f1",
+            "blob": "71d6c22bdf89090e52580a00d275a7dd9a73dd41",
             "content": "sha256:7332e70d220220014d10ba047ac7ac7a6a3f2f9c3abae9a7fa6eb63307841144",
             "locator": {
-              "end": 102,
+              "end": 100,
               "kind": "line_range",
-              "start": 94
+              "start": 92
             },
             "path": "dashboard/src/topology/model.test.ts"
           },

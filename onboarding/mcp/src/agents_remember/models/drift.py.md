@@ -52,7 +52,5 @@ context packet had not.
 
 - The summary carries the converted measurement fields beside the legacy ones. [5]
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The strict `DriftSummary` model exposes status and the optional diagnostic error. [1] | `DriftSummary` | mcp/src/agents_remember/models/drift.py:14-35 |
-| The onboarding drift model defines the `DriftStatus` and `DriftSummaryPacket` wire shapes. [3] | `DriftSummaryPacket` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py:11-70 |
+- The strict `DriftSummary` model exposes status and the optional diagnostic error. [1]
+- The onboarding drift model defines the `DriftStatus` and `DriftSummaryPacket` wire shapes. [3]

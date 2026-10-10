@@ -307,7 +307,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9e3d894b4507b91ffa3471824cb09af1fa7e1dc9",
+            "blob": "70805dc7802dce07fa9e0b81d0a3eaab05abf1a2",
             "content": "sha256:9ace9375d2a6e6c42c4bae2fd355a2648977fce3a93d80eb3818f7fc775a7705",
             "locator": {
               "kind": "symbol",
@@ -319,12 +319,12 @@
         },
         {
           "anchor": {
-            "blob": "9e3d894b4507b91ffa3471824cb09af1fa7e1dc9",
+            "blob": "70805dc7802dce07fa9e0b81d0a3eaab05abf1a2",
             "content": "sha256:df6f8ae54b9c0a1f292866dca32419eb98028d74863ea4a3bad62b53d4b9e735",
             "locator": {
-              "end": 488,
+              "end": 501,
               "kind": "line_range",
-              "start": 472
+              "start": 485
             },
             "path": "mcp/tests/test_master_net_generation.py"
           },
@@ -353,7 +353,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d1f69d8d3c1559f18bf2e2f5467b9184b4e79f74",
+            "blob": "f10f508c9cbeadef7f1983c4e81f8ecfe9410256",
             "content": "sha256:e624c577a6a46da2a9dcc5305a454f893acaedde7b3be3e81951754ececf4337",
             "locator": {
               "kind": "symbol",
@@ -365,7 +365,7 @@
         },
         {
           "anchor": {
-            "blob": "d1f69d8d3c1559f18bf2e2f5467b9184b4e79f74",
+            "blob": "f10f508c9cbeadef7f1983c4e81f8ecfe9410256",
             "content": "sha256:93f45cc0ccbb9df978b7873846be582ad2735f01b912194107c89447ce06ac3a",
             "locator": {
               "kind": "symbol",
@@ -377,7 +377,7 @@
         },
         {
           "anchor": {
-            "blob": "d1f69d8d3c1559f18bf2e2f5467b9184b4e79f74",
+            "blob": "f10f508c9cbeadef7f1983c4e81f8ecfe9410256",
             "content": "sha256:a6eb0310bceeffe9f2c38f11f7c2cb8ec958d4b5611af197b85a2360fdf6e4cf",
             "locator": {
               "kind": "symbol",
@@ -389,12 +389,12 @@
         },
         {
           "anchor": {
-            "blob": "d1f69d8d3c1559f18bf2e2f5467b9184b4e79f74",
+            "blob": "f10f508c9cbeadef7f1983c4e81f8ecfe9410256",
             "content": "sha256:5ca058fd21cdf3ffc9e7563dc3879ef8bab31e70928037f5e75ff29de67e2b3c",
             "locator": {
-              "end": 481,
+              "end": 1024,
               "kind": "line_range",
-              "start": 442
+              "start": 985
             },
             "path": "mcp/src/agents_remember/worktrees/modules/git.py"
           },
@@ -423,7 +423,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1bec9a2be1fb844796c8d2378a7d50b8ad2cf94d",
+            "blob": "61ad404bd22d920dd138c1547e688cc536a37131",
             "content": "sha256:463b38acb2a449e68d35e60f53e3a39a6d156550a23302eeffa713b2fd585458",
             "locator": {
               "kind": "symbol",

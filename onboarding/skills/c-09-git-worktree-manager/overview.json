@@ -37,12 +37,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "eb83d20631949cf4497ed58db6faa6b2205119f6",
+            "blob": "3e6cf4595b45bd9657a72f1ec7c6c14acac25a9b",
             "content": "sha256:332ff661c33ba89aaa1fe379ab5d78267416ad499f14645aa514cf2f4a18b190",
             "locator": {
-              "end": 382,
+              "end": 394,
               "kind": "line_range",
-              "start": 382
+              "start": 394
             },
             "path": "skills/c-09-git-worktree-manager/SKILL.md"
           },
@@ -50,12 +50,12 @@
         },
         {
           "anchor": {
-            "blob": "eb83d20631949cf4497ed58db6faa6b2205119f6",
+            "blob": "3e6cf4595b45bd9657a72f1ec7c6c14acac25a9b",
             "content": "sha256:9ffec959ba59abc1da65b6d90b974b0497386a48bcb6115a9a892a9f71ecdb2c",
             "locator": {
-              "end": 386,
+              "end": 398,
               "kind": "line_range",
-              "start": 383
+              "start": 395
             },
             "path": "skills/c-09-git-worktree-manager/SKILL.md"
           },
@@ -63,12 +63,12 @@
         },
         {
           "anchor": {
-            "blob": "eb83d20631949cf4497ed58db6faa6b2205119f6",
+            "blob": "3e6cf4595b45bd9657a72f1ec7c6c14acac25a9b",
             "content": "sha256:0a2c532f1844c058d2f36b382a89f71b4faafaac0b04ab2eec8e04bf547a151f",
             "locator": {
-              "end": 389,
+              "end": 401,
               "kind": "line_range",
-              "start": 389
+              "start": 401
             },
             "path": "skills/c-09-git-worktree-manager/SKILL.md"
           },
@@ -116,7 +116,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ce68d87e207d8a83d53af48e5816c10f407dbfc8",
+            "blob": "d2ea7cbc14046090dc44525a726cf5f923166c10",
             "content": "sha256:888445edc330c6b525441a393fc1814ef0a452abccf4087af43ae902183bc703",
             "locator": {
               "kind": "symbol",
@@ -150,12 +150,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "eb83d20631949cf4497ed58db6faa6b2205119f6",
+            "blob": "3e6cf4595b45bd9657a72f1ec7c6c14acac25a9b",
             "content": "sha256:c6e72960e0a1a170399bd784eeadc15a7c60ad7af6b4c7df51d972a4645d89dc",
             "locator": {
-              "end": 505,
+              "end": 531,
               "kind": "line_range",
-              "start": 498
+              "start": 524
             },
             "path": "skills/c-09-git-worktree-manager/SKILL.md"
           },
@@ -168,12 +168,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "eb83d20631949cf4497ed58db6faa6b2205119f6",
+            "blob": "3e6cf4595b45bd9657a72f1ec7c6c14acac25a9b",
             "content": "sha256:668421fb6b05d84e5564e63af3d8d7d8d21b6895d299ce3418caf564b40c069b",
             "locator": {
-              "end": 346,
+              "end": 358,
               "kind": "line_range",
-              "start": 336
+              "start": 348
             },
             "path": "skills/c-09-git-worktree-manager/SKILL.md"
           },

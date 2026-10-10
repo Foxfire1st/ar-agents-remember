@@ -104,6 +104,4 @@ drift tool, and that omitting it measures nothing.
 
 - The packet description states what include_drift measures and that omitting it measures nothing. [8]
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Frozen implementation of _register_orientation_tools supporting the stated file behavior. [6] | `_register_orientation_tools` | mcp/src/agents_remember/mcp/registration/core.py:55-148 |
+- Frozen implementation of _register_orientation_tools supporting the stated file behavior. [6]

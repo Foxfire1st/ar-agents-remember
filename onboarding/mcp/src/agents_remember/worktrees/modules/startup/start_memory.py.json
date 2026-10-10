@@ -3,7 +3,43 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "50bbd3f18df7be2241476f19cb8d8eaf23cf75fa",
+        "blob": "a98b12ff5a943308bc144baa76cfc82e02f78471",
+        "content": "sha256:2c64c968b07407574a827b59892e80233e3593cae6554095d506ab8f9fd1d556",
+        "locator": {
+          "kind": "symbol",
+          "name": "_disabled_memory_choice"
+        }
+      },
+      "id": "RLZ-0S13C1",
+      "invariant": "INV-WKM7SS",
+      "origin": {
+        "handoffEntry": "L50-CUR-EXP-F01",
+        "leaf": "260928-MIK-L50"
+      },
+      "rationale": "Answers the removed disabled-memory recovery choice by name with mode, reason and action; it is never honored and no longer offered.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "a98b12ff5a943308bc144baa76cfc82e02f78471",
+        "content": "sha256:bd42ed73a0a56a39bdce2c4c13a60a2a9dde5b4b24f4acf7edef9a883b638029",
+        "locator": {
+          "kind": "symbol",
+          "name": "_memory_source_state"
+        }
+      },
+      "id": "RLZ-8CA406",
+      "invariant": "INV-WKM7SS",
+      "origin": {
+        "handoffEntry": "L50-CUR-EXP-F01",
+        "leaf": "260928-MIK-L50"
+      },
+      "rationale": "Verifies the configured memory repository for every start; the disabled short-circuit is gone.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "a98b12ff5a943308bc144baa76cfc82e02f78471",
         "content": "sha256:728f791191fa4a90e2f876f59f19affd5ae534696241b56eb6be583adb11c41b",
         "locator": {
           "kind": "symbol",
@@ -18,48 +54,33 @@
       },
       "rationale": "Separates exact named-ref existence from unpublished contract state: only the absent admitted ref is would-create, while the same-journal already-created ref returns the original existing fact.",
       "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "a98b12ff5a943308bc144baa76cfc82e02f78471",
+        "content": "sha256:f6a50129bb19d069392bab2f56c1f6c22b88b7d30e871c7ed6d00140f21ed422",
+        "locator": {
+          "kind": "symbol",
+          "name": "_missing_memory_repo_state"
+        }
+      },
+      "id": "RLZ-G012QJ",
+      "invariant": "INV-WKM7SS",
+      "origin": {
+        "handoffEntry": "L50-CUR-EXP-F01",
+        "leaf": "260928-MIK-L50"
+      },
+      "rationale": "Offers only repository setup when the memory root is missing; a disabled-memory answer routes to the refusal instead.",
+      "role": "unclassified"
     }
   ],
   "references": {
-    "10": {
-      "note": "Missing external repository and explicit disabled-memory outcomes. [3]",
+    "12": {
+      "note": "External-only preparation, exact source ref, no fallback",
       "targets": [
         {
           "anchor": {
-            "blob": "50bbd3f18df7be2241476f19cb8d8eaf23cf75fa",
-            "content": "sha256:7ed26db55831e99036542b8b1f902892cad3961403cee590dfdfffce6b5d0e75",
-            "locator": {
-              "kind": "symbol",
-              "name": "_disabled_memory_choice"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "11": {
-      "note": "The informational ledger is reconstructed from commit attribution without a cache read. [4]",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "7b0e0cf051f1af1ab86b6c19ab4289849110df85",
-            "content": "sha256:ea1d987c140051b594ad30280582128ace4e4fb085a34d95d14fc369a5a66131",
-            "locator": {
-              "kind": "symbol",
-              "name": "derive_memory_ledger"
-            },
-            "path": "mcp/src/agents_remember/kernel/memory_cache.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "5": {
-      "note": "Preview facts distinguish absent exact refs from existing journal-owned refs.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "50bbd3f18df7be2241476f19cb8d8eaf23cf75fa",
+            "blob": "a98b12ff5a943308bc144baa76cfc82e02f78471",
             "content": "sha256:728f791191fa4a90e2f876f59f19affd5ae534696241b56eb6be583adb11c41b",
             "locator": {
               "kind": "symbol",
@@ -70,45 +91,13 @@
         }
       ]
     },
-    "6": {
-      "note": "Ordinary default/apply requires the exact named ref and writes none.",
+    "13": {
+      "note": "Missing repository routes to the blocked state",
       "targets": [
         {
           "anchor": {
-            "blob": "50bbd3f18df7be2241476f19cb8d8eaf23cf75fa",
-            "content": "sha256:d9733272930699325a547a00b644e907c95c1d7e054cab30c73a8dcab5bc9aef",
-            "locator": {
-              "kind": "symbol",
-              "name": "_ensure_memory_source_branch"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "7": {
-      "note": "Dry run skips mTime mutation; divergence remains explicit.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "50bbd3f18df7be2241476f19cb8d8eaf23cf75fa",
-            "content": "sha256:502457006ef99f338ecc37910f8d85b818154bd1a9b3e581a421935f24f52505",
-            "locator": {
-              "kind": "symbol",
-              "name": "_sync_worktree_memory_mtimes"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "8": {
-      "note": "Source state, named-branch admission, and informational Git-derived metadata. [1]",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "50bbd3f18df7be2241476f19cb8d8eaf23cf75fa",
-            "content": "sha256:e29bba6b38904884cca4f760d456859b8a16e1dad2a56bb29ea3888820aa5e30",
+            "blob": "a98b12ff5a943308bc144baa76cfc82e02f78471",
+            "content": "sha256:bd42ed73a0a56a39bdce2c4c13a60a2a9dde5b4b24f4acf7edef9a883b638029",
             "locator": {
               "kind": "symbol",
               "name": "_memory_source_state"
@@ -118,16 +107,48 @@
         }
       ]
     },
-    "9": {
-      "note": "Mtime reuse and divergence handling preserve the current indexing behavior. [2]",
+    "14": {
+      "note": "Removed answer refused by name, never honored",
       "targets": [
         {
           "anchor": {
-            "blob": "50bbd3f18df7be2241476f19cb8d8eaf23cf75fa",
-            "content": "sha256:502457006ef99f338ecc37910f8d85b818154bd1a9b3e581a421935f24f52505",
+            "blob": "a98b12ff5a943308bc144baa76cfc82e02f78471",
+            "content": "sha256:2c64c968b07407574a827b59892e80233e3593cae6554095d506ab8f9fd1d556",
             "locator": {
               "kind": "symbol",
-              "name": "_sync_worktree_memory_mtimes"
+              "name": "_disabled_memory_choice"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "One remaining recovery choice",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a98b12ff5a943308bc144baa76cfc82e02f78471",
+            "content": "sha256:f6a50129bb19d069392bab2f56c1f6c22b88b7d30e871c7ed6d00140f21ed422",
+            "locator": {
+              "kind": "symbol",
+              "name": "_missing_memory_repo_state"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "Protected source ref required, never created",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a98b12ff5a943308bc144baa76cfc82e02f78471",
+            "content": "sha256:d9733272930699325a547a00b644e907c95c1d7e054cab30c73a8dcab5bc9aef",
+            "locator": {
+              "kind": "symbol",
+              "name": "_ensure_memory_source_branch"
             }
           },
           "kind": "code"

@@ -6,7 +6,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ed33a8e165b0a70034ce14c4d80b25d9cfef897c",
+            "blob": "fc2da95a5fcd8329ce16067afc1a9291becc04b5",
             "content": "sha256:7caec175c6320d20accf7e357b79e757fff27bd113a5565c683b4beacba3a329",
             "locator": {
               "kind": "symbol",
@@ -30,7 +30,7 @@
         },
         {
           "anchor": {
-            "blob": "ed33a8e165b0a70034ce14c4d80b25d9cfef897c",
+            "blob": "fc2da95a5fcd8329ce16067afc1a9291becc04b5",
             "content": "sha256:9c29d951910abed0042a43d058e5ae68fd77fd06994e8ab33343aa5808469774",
             "locator": {
               "kind": "symbol",
@@ -42,7 +42,7 @@
         },
         {
           "anchor": {
-            "blob": "ed33a8e165b0a70034ce14c4d80b25d9cfef897c",
+            "blob": "fc2da95a5fcd8329ce16067afc1a9291becc04b5",
             "content": "sha256:1b2d95322d48ce113abe68a45f6f0f6691c8177f8e35ed2ec4f1fca4abbf552b",
             "locator": {
               "kind": "symbol",

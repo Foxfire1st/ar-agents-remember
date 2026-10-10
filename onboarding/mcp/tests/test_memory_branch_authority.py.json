@@ -145,30 +145,6 @@
             "path": "mcp/src/agents_remember/worktrees/modules/git.py"
           },
           "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d1f69d8d3c1559f18bf2e2f5467b9184b4e79f74",
-            "content": "sha256:29e3637539d1baca5fa93c83090eeb2ca62ea0b2b26efd5056c91eced5a69367",
-            "locator": {
-              "kind": "symbol",
-              "name": "stage_worktree_content"
-            },
-            "path": "mcp/src/agents_remember/worktrees/modules/git.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f10f508c9cbeadef7f1983c4e81f8ecfe9410256",
-            "content": "sha256:65403786714de8e84db7f5bd72a23427d9c3ccd54edda2f4efe9981559d9b9a5",
-            "locator": {
-              "kind": "symbol",
-              "name": "commit_if_dirty"
-            },
-            "path": "mcp/src/agents_remember/worktrees/modules/git.py"
-          },
-          "kind": "code"
         }
       ]
     },
@@ -177,12 +153,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f5ff59259f635590c0064f6dbcb950168206c5bf",
+            "blob": "e41c49321364b7c5080944c8c746cd0ffdc181c8",
             "content": "sha256:b20b064c91520d94fcdf7dc82d5b2995f278685264e074f07a9a11eef4d4addf",
             "locator": {
-              "end": 171,
+              "end": 172,
               "kind": "line_range",
-              "start": 171
+              "start": 172
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -298,44 +274,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "64c39dcd72c274822ad3c2f57ac160f39b0f438c",
-            "content": "sha256:97538ae5ecb1a2d1f3cc1d670f98a2c984e7a1014a03de4130f4c704692f7f46",
+            "blob": "0e11591cec358a67825c52b305c68dcf074de793",
+            "content": "sha256:9ac3e3ceae2126bbbc623424c4ec0dba619f83c6607bbd9107f93e731c4b0111",
             "locator": {
               "kind": "symbol",
               "name": "test_baseline_adoption_follows_the_configured_branch"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "0e11591cec358a67825c52b305c68dcf074de793",
-            "content": "sha256:4dc9bf1c786bee0736b7acfe41d7423733f7e910b106bcd8250e604520c1ea72",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_baseline_adoption_refuses_a_branch_the_memory_repository_does_not_record"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "0e11591cec358a67825c52b305c68dcf074de793",
-            "content": "sha256:72485d1467db6784131e73d632a93867f1c13d92383ef5e4d4c1705685e877cc",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_the_memory_default_branch_validates_the_recorded_name_against_its_refs"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "0e11591cec358a67825c52b305c68dcf074de793",
-            "content": "sha256:a54642343a32c3bb049d9ff212ee44c9fac283cf65bd8033781bd3cc20c2dee2",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_the_memory_default_branch_still_refuses_a_recorded_name_with_no_ref"
             }
           },
           "kind": "test"
@@ -396,22 +339,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "64c39dcd72c274822ad3c2f57ac160f39b0f438c",
-            "content": "sha256:a177857033c2160f6da833552bf85e43325f6befc2f6e2e419070bb9f3af96ce",
+            "blob": "0e11591cec358a67825c52b305c68dcf074de793",
+            "content": "sha256:50ac75f5f6b00a2b6b635be939bd7274439079f41bd54ad26039eb7049bfd939",
             "locator": {
               "kind": "symbol",
               "name": "test_the_first_baseline_never_commits_bootstrap_scaffolding"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "0e11591cec358a67825c52b305c68dcf074de793",
-            "content": "sha256:b3808b5b3e1331d4df5d2315a414c566be9e768b6f486ef2b8f28763ca74ca31",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_no_memory_content_commit_stages_bootstrap_scaffolding"
             }
           },
           "kind": "test"

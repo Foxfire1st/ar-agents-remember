@@ -1,159 +1,50 @@
 {
   "path": "mcp/src/agents_remember/kernel/memory_mode.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "78d1d271f759310ef0703c1bd3d090cc691975db",
+        "content": "sha256:db9477330ae46e27326aa98ab087b3221e0b98d95c1633f94b3a7b223196587f",
+        "locator": {
+          "kind": "symbol",
+          "name": "require_supported_memory_mode"
+        }
+      },
+      "id": "RLZ-ERXPMN",
+      "invariant": "INV-V3N6NW",
+      "origin": {
+        "handoffEntry": "L50-MIK-R50-rule-2-vocabulary-removed",
+        "leaf": "260928-MIK-L50"
+      },
+      "rationale": "Refuses a removed member by name first and raises plain ValueError for any other unknown token, keeping removal distinct from mistyping.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "78d1d271f759310ef0703c1bd3d090cc691975db",
+        "content": "sha256:6ae2b95c8cc936992de63cb1c805a2d7231f9b4cb0b71d92516b68f9f4953166",
+        "locator": {
+          "kind": "symbol",
+          "name": "refuse_removed_memory_mode"
+        }
+      },
+      "id": "RLZ-SQWM3Z",
+      "invariant": "INV-V3N6NW",
+      "origin": {
+        "handoffEntry": "L50-MIK-R50-rule-2-vocabulary-removed",
+        "leaf": "260928-MIK-L50"
+      },
+      "rationale": "Raises the removal refusal for the disabled mode wherever the product must reject it by name.",
+      "role": "unclassified"
+    }
+  ],
   "references": {
-    "14": {
-      "note": "The two literals, their derived tuples and the removed set.",
+    "36": {
+      "note": "Supported topology is `external` only",
       "targets": [
         {
           "anchor": {
-            "blob": "b6b133cae0db6ffbc8a0836cab3470d60443af6b",
-            "content": "sha256:c1ca0d347f6b0ec14704a0a5643b570e59bfe3ff70a005c07e3acd2d3184ba80",
-            "locator": {
-              "end": 41,
-              "kind": "line_range",
-              "start": 31
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "15": {
-      "note": "The remedies stated once for every refusal.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "b6b133cae0db6ffbc8a0836cab3470d60443af6b",
-            "content": "sha256:4d3856166221c5848fa3f01ca9662260205e7d6336f256b2a96b96dfcd763b35",
-            "locator": {
-              "kind": "symbol",
-              "name": "MEMORY_MODE_REMEDIES"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "16": {
-      "note": "The removed memory root's path is resolved through the recorder.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "b6b133cae0db6ffbc8a0836cab3470d60443af6b",
-            "content": "sha256:ad2179bb05078a254f5052ae1a3c8dc33bbe2aa6fa30911c3f79407015c88298",
-            "locator": {
-              "kind": "symbol",
-              "name": "legacy_internal_memory_root"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "17": {
-      "note": "The removed coordination root's path is resolved without recording.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "b6b133cae0db6ffbc8a0836cab3470d60443af6b",
-            "content": "sha256:439da8e3476e00a7ff9cc53d2ed16b4ad2e4035b99b3f799d56af5d6b9a9fcfd",
-            "locator": {
-              "kind": "symbol",
-              "name": "legacy_internal_coordination_root"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "18": {
-      "note": "The one refusal text.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "b6b133cae0db6ffbc8a0836cab3470d60443af6b",
-            "content": "sha256:9aadd3903c35510b7aff60dc28c3011ffdd8e238a99cdec8c34b7b0e404fd341",
-            "locator": {
-              "kind": "symbol",
-              "name": "memory_mode_refusal_message"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "19": {
-      "note": "The typed refusal.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "b6b133cae0db6ffbc8a0836cab3470d60443af6b",
-            "content": "sha256:91f44fd38554cdebeddd089403fd294471b94fd69b56aafce6c6dd944333ffe7",
-            "locator": {
-              "kind": "symbol",
-              "name": "memory_mode_refusal"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "20": {
-      "note": "A removed mode is refused by name before the supported set is tested.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "b6b133cae0db6ffbc8a0836cab3470d60443af6b",
-            "content": "sha256:db9477330ae46e27326aa98ab087b3221e0b98d95c1633f94b3a7b223196587f",
-            "locator": {
-              "kind": "symbol",
-              "name": "require_supported_memory_mode"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "21": {
-      "note": "The same order for a topology.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "b6b133cae0db6ffbc8a0836cab3470d60443af6b",
-            "content": "sha256:35fc0b3b626b8d43ec58c0277bcef3c21b195b20688e1b2a72c849095ddc4dc3",
-            "locator": {
-              "kind": "symbol",
-              "name": "require_supported_topology"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "22": {
-      "note": "An existing repository-sidecar root is refused by name with its path, and its presence, absence and retargeting are recorded.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "badb1f072d8ac23acfd48cfd0400e7db7e2f5c30",
-            "content": "sha256:5d5279ced163a25302240b8fd1de7e6e59fe3f10cde77dc404ca43505d463bcb",
-            "locator": {
-              "kind": "symbol",
-              "name": "_root_selections"
-            },
-            "path": "mcp/tests/test_reviewer_worklist_reads.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "23": {
-      "note": "`Topology` has the single supported member `external`.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "b6b133cae0db6ffbc8a0836cab3470d60443af6b",
+            "blob": "78d1d271f759310ef0703c1bd3d090cc691975db",
             "content": "sha256:158ae71229ce7da25def892080e4ecaf1bbf05b5bf73dd05b0377f495cb5aa62",
             "locator": {
               "kind": "symbol",
@@ -164,13 +55,13 @@
         }
       ]
     },
-    "24": {
-      "note": "`MemoryMode` has exactly `external` and `disabled`.",
+    "37": {
+      "note": "Supported mode is `external` alone",
       "targets": [
         {
           "anchor": {
-            "blob": "b6b133cae0db6ffbc8a0836cab3470d60443af6b",
-            "content": "sha256:2214062a9c907213972ed20d76cd59d4c710d9a819be88a4a08774949f96f0e3",
+            "blob": "78d1d271f759310ef0703c1bd3d090cc691975db",
+            "content": "sha256:f3d496a6f1cf6dd065bfd3b46bc06414a154576598a4366fca3e645e892fe037",
             "locator": {
               "kind": "symbol",
               "name": "MemoryMode"
@@ -180,29 +71,29 @@
         }
       ]
     },
-    "25": {
-      "note": "The supported tuples are derived from the literals, not hand-written.",
+    "38": {
+      "note": "On-disk contracts may still carry `disabled`",
       "targets": [
         {
           "anchor": {
-            "blob": "b6b133cae0db6ffbc8a0836cab3470d60443af6b",
-            "content": "sha256:f979c39f1bb59773a28ae3c6d93c4c3e1a893af279a379911ad6e8313d605a28",
+            "blob": "78d1d271f759310ef0703c1bd3d090cc691975db",
+            "content": "sha256:0ab91f6651c0b75ef9521ae37583791f356c1d9cfc048daed07d26989df17dff",
             "locator": {
               "kind": "symbol",
-              "name": "SUPPORTED_MEMORY_MODES"
+              "name": "ReadableMemoryMode"
             }
           },
           "kind": "code"
         }
       ]
     },
-    "26": {
-      "note": "The removal is declared positively, not left as an absence.",
+    "39": {
+      "note": "Both removed members declared positively",
       "targets": [
         {
           "anchor": {
-            "blob": "b6b133cae0db6ffbc8a0836cab3470d60443af6b",
-            "content": "sha256:5db6a11a9d3c595956105a6d5bee344eea4f399f967792922c540a95d76c69bc",
+            "blob": "78d1d271f759310ef0703c1bd3d090cc691975db",
+            "content": "sha256:9c9ef33842ab0b3bf8f48d28927373ac702f069473fb605f37be9f7e3ccb0b94",
             "locator": {
               "kind": "symbol",
               "name": "REMOVED_MEMORY_MODES"
@@ -212,28 +103,12 @@
         }
       ]
     },
-    "27": {
-      "note": "The old repo-sidecar directory names survive only to detect and report that layout.",
+    "40": {
+      "note": "The one route out, stated once for every surface",
       "targets": [
         {
           "anchor": {
-            "blob": "b6b133cae0db6ffbc8a0836cab3470d60443af6b",
-            "content": "sha256:d09cf0d8563fc5d3752fc87777e951a3387ae4114549db88f7b30c3f5986b45c",
-            "locator": {
-              "kind": "symbol",
-              "name": "LEGACY_INTERNAL_MEMORY_DIRNAME"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "28": {
-      "note": "The documented route out is stated once for every refusal surface, with no automatic migration.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "b6b133cae0db6ffbc8a0836cab3470d60443af6b",
+            "blob": "78d1d271f759310ef0703c1bd3d090cc691975db",
             "content": "sha256:4d3856166221c5848fa3f01ca9662260205e7d6336f256b2a96b96dfcd763b35",
             "locator": {
               "kind": "symbol",
@@ -244,12 +119,12 @@
         }
       ]
     },
-    "29": {
-      "note": "Legacy roots are computed as resolved paths so a report can name the exact artifact.",
+    "41": {
+      "note": "Removed roots resolved only to be reported",
       "targets": [
         {
           "anchor": {
-            "blob": "b6b133cae0db6ffbc8a0836cab3470d60443af6b",
+            "blob": "78d1d271f759310ef0703c1bd3d090cc691975db",
             "content": "sha256:ad2179bb05078a254f5052ae1a3c8dc33bbe2aa6fa30911c3f79407015c88298",
             "locator": {
               "kind": "symbol",
@@ -260,45 +135,13 @@
         }
       ]
     },
-    "30": {
-      "note": "One refusal text is shared by every surface, naming the value, the removal and the supported set.",
+    "42": {
+      "note": "Removed modes refused by name, `disabled` via opt-out",
       "targets": [
         {
           "anchor": {
-            "blob": "b6b133cae0db6ffbc8a0836cab3470d60443af6b",
-            "content": "sha256:9aadd3903c35510b7aff60dc28c3011ffdd8e238a99cdec8c34b7b0e404fd341",
-            "locator": {
-              "kind": "symbol",
-              "name": "memory_mode_refusal_message"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "31": {
-      "note": "The same facts are constructible as a typed error and as a publishable mapping.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "b6b133cae0db6ffbc8a0836cab3470d60443af6b",
-            "content": "sha256:ed3318675ea49750881da18055f2f085cadaa87f86359539b7b70b8a8a1b53ba",
-            "locator": {
-              "kind": "symbol",
-              "name": "memory_mode_refusal_fields"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "32": {
-      "note": "A removed member is refused by name, never substituted by a supported one.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "b6b133cae0db6ffbc8a0836cab3470d60443af6b",
-            "content": "sha256:84e898983e45c8c2024839c5978c10c3b3384eef7f0561c2473266a582e5b6b0",
+            "blob": "78d1d271f759310ef0703c1bd3d090cc691975db",
+            "content": "sha256:6ae2b95c8cc936992de63cb1c805a2d7231f9b4cb0b71d92516b68f9f4953166",
             "locator": {
               "kind": "symbol",
               "name": "refuse_removed_memory_mode"
@@ -308,12 +151,28 @@
         }
       ]
     },
-    "33": {
-      "note": "A removed token is refused by name while an unknown token is an invalid-argument error.",
+    "43": {
+      "note": "Opt-out text names contract, reason, and way out",
       "targets": [
         {
           "anchor": {
-            "blob": "b6b133cae0db6ffbc8a0836cab3470d60443af6b",
+            "blob": "78d1d271f759310ef0703c1bd3d090cc691975db",
+            "content": "sha256:e373fe814f717558218017b2895dba22e47b5d89810c7e5e6be6a6418d34a70f",
+            "locator": {
+              "kind": "symbol",
+              "name": "disabled_opt_out_detail"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "44": {
+      "note": "Removed member refused by name, typo is invalid input",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "78d1d271f759310ef0703c1bd3d090cc691975db",
             "content": "sha256:db9477330ae46e27326aa98ab087b3221e0b98d95c1633f94b3a7b223196587f",
             "locator": {
               "kind": "symbol",
@@ -324,33 +183,16 @@
         }
       ]
     },
-    "34": {
-      "note": "The topology narrower applies the same removal-versus-typo distinction.",
+    "45": {
+      "note": "Same removal-versus-typo distinction for topology",
       "targets": [
         {
           "anchor": {
-            "blob": "b6b133cae0db6ffbc8a0836cab3470d60443af6b",
+            "blob": "78d1d271f759310ef0703c1bd3d090cc691975db",
             "content": "sha256:35fc0b3b626b8d43ec58c0277bcef3c21b195b20688e1b2a72c849095ddc4dc3",
             "locator": {
               "kind": "symbol",
               "name": "require_supported_topology"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "35": {
-      "note": "The typed refusal carries a stable status plus requested, supported, artifact and remedies.\n\nAnchor: `MemoryModeUnsupportedError`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "b6b133cae0db6ffbc8a0836cab3470d60443af6b",
-            "content": "sha256:a9a1310ec4f55926fe125ccb72e685d5d84712a9b41d569ea73e0080cebb25be",
-            "locator": {
-              "end": 28,
-              "kind": "line_range",
-              "start": 28
             }
           },
           "kind": "code"

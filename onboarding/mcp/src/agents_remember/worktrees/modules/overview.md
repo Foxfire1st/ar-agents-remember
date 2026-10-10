@@ -1537,7 +1537,5 @@ run, a refusal or an exception leaves the real index exactly as it was.
 - One Git command runs against a private index file; a failure keeps its name. [61]
 - Staging writes a private index file when asked; otherwise the worktree's own index. [62]
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Final memory staging removes and excludes the cache. [30] | `stage_worktree_content` | mcp/src/agents_remember/worktrees/modules/git.py:334-355 |
-| The index made exactly one tree. [57] | `stage_tree` | mcp/src/agents_remember/worktrees/modules/git.py:429-442 |
+- Final memory staging removes and excludes the cache. [30]
+- The index made exactly one tree. [57]

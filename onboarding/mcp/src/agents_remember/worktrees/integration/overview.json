@@ -268,12 +268,12 @@
         },
         {
           "anchor": {
-            "blob": "add00f23b24a62ea4da4432333f99515e9aa6851",
+            "blob": "9377158492434b556178d2aa3c2b3fc0cd493aab",
             "content": "sha256:bb8ca008b295162e540ceb5fe199d463faee8d2a2133161358f6c02b224c4a9f",
             "locator": {
-              "end": 117,
+              "end": 118,
               "kind": "line_range",
-              "start": 117
+              "start": 118
             },
             "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py"
           },
@@ -281,12 +281,12 @@
         },
         {
           "anchor": {
-            "blob": "add00f23b24a62ea4da4432333f99515e9aa6851",
+            "blob": "9377158492434b556178d2aa3c2b3fc0cd493aab",
             "content": "sha256:2b7a3f458448b900d425419a9822adcfb019ab2e8c15b95e9b5713525f9ab1e0",
             "locator": {
-              "end": 164,
+              "end": 165,
               "kind": "line_range",
-              "start": 162
+              "start": 163
             },
             "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py"
           },

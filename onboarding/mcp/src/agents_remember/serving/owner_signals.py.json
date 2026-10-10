@@ -35,12 +35,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7bf6786f6e546a7f79d0be5ccb3200c4da94e75a",
+            "blob": "65f3f7de5d39c0373fb7fcd8b4bcbf3860c6d1cb",
             "content": "sha256:99783bf7a9540bf6956bf2db6b382a3433643addbf308d95e889aa34b3c9a102",
             "locator": {
-              "end": 244,
+              "end": 245,
               "kind": "line_range",
-              "start": 244
+              "start": 245
             },
             "path": "mcp/src/agents_remember/controlplane/operator_inbox_records.py"
           },

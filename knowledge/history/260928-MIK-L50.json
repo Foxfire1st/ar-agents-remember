@@ -1,0 +1,2579 @@
+{
+  "closed": true,
+  "leaf": "260928-MIK-L50",
+  "rows": [
+    {
+      "disposition": "no_impact",
+      "id": "ROW-0C6XK6",
+      "items": [
+        "sha256:6ac8d18da15cfa7cc3fe73469af0c4731b138eda1505b5e1833d8194c4d03389"
+      ],
+      "reason": "The lifecycle route still admits, lands and finalizes through the same entries; two changed modules add refusal branches inside them.",
+      "subject": "onboarding:mcp/src/agents_remember/application/lifecycle/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-0CSX23",
+      "items": [
+        "sha256:40239c2aeee511cd83da33167734e97d722a90e4f9404cfdd17af91bb616280c",
+        "sha256:faa02343669c85a17a71db135ac62ad9c1b3ee42fbe0118b197e28c03cd53ff6"
+      ],
+      "reason": "Card pins the tolerant-reader recovery boundary generically without citing the memory tuple; swapping the disabled case for the external one preserves it.",
+      "subject": "onboarding:mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-0FQA6V",
+      "items": [
+        "sha256:20a97a27ab28bef971b0112dcacf12ef8ade021d223181d706db4d6931991296"
+      ],
+      "reason": "Candidate lines [20, 3]: Import of the refusal-text constructor serving candidate_gate_verdict; the import carries no invariant itself.",
+      "subject": "hunk:sha256:20a97a27ab28bef971b0112dcacf12ef8ade021d223181d706db4d6931991296"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-0Y127H",
+      "items": [
+        "sha256:f4db48e9240b8ca03ebaf5a5a777ff99db37a947850eb4f42c7e61ee58fddc3f"
+      ],
+      "reason": "Candidate mcp/src/agents_remember/worktrees/modules/record_landing.py:32-36: mechanical call-site follow threading the refusal through the existing construct; carries no invariant of its own.",
+      "subject": "hunk:sha256:f4db48e9240b8ca03ebaf5a5a777ff99db37a947850eb4f42c7e61ee58fddc3f"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-112KX4",
+      "items": [
+        "sha256:6a37e442ac431bf9eb54f5336f413ecb58ac8834b38d9db8c65da643ddc49b2c"
+      ],
+      "reason": "The tests route still proves behavior per module with cataloged lanes; changed test files convert fixtures and extend refusal coverage without moving the route's structure.",
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-16YW7J",
+      "items": [
+        "sha256:b01fd0e32c6f61a7896ef4243937163df09c58e2a3c3b2959750451d0390e818"
+      ],
+      "reason": "Diff adds entry/preview/apply opt-out guards; the card describes policy-gate and candidate flow without mode-handling claims, all still true.",
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/direct_landing.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-17K14T",
+      "items": [
+        "sha256:9523db28de7756dc983e96b1cd11a6c525d4f092ddbd650acc5b5b989f10ba64"
+      ],
+      "reason": "Diff adds opt-out guards in validation and source blocks; the card's validation checklist names no mode behavior and remains true.",
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/modules/integrate.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-1HSP4X",
+      "items": [
+        "sha256:c145d42f88c23f85ed6c143c756c6737305fb5fd412da869c2b1ed6ac8395312"
+      ],
+      "reason": "Candidate mcp/src/agents_remember/worktrees/direct_landing.py:444-445: mechanical call-site follow threading the refusal through the existing construct; carries no invariant of its own.",
+      "subject": "hunk:sha256:c145d42f88c23f85ed6c143c756c6737305fb5fd412da869c2b1ed6ac8395312"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-1REVG6",
+      "items": [
+        "sha256:23ceb13aed7b97c450e77b4bfa5fae7634500d61e0c2718c8efce443cb7fc8e4"
+      ],
+      "reason": "Diff adds entry/gate opt-out refusal; the card's approval, idempotency, and target flow makes no mode claims.",
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/modules/record_landing.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-1VG3NR",
+      "items": [
+        "sha256:4109b0f99e40ad044d8de11845352715c761e2ba83968838a08ccbec20c0c559"
+      ],
+      "reason": "Diff adds tombstone-successor admission; the card describes builder and parent plumbing without parent-mode claims that changed.",
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/modules/startup/start_contract.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-20MA8G",
+      "items": [
+        "sha256:7a486fc15212ce1b44b6853c47d2818328ff6945bbabe07496ecfa31eb4f40e2"
+      ],
+      "reason": "Candidate mcp/src/agents_remember/worktrees/modules/startup/start_contract.py:26-26: import follow for the new disabled_memory classifiers; carries no invariant of its own.",
+      "subject": "hunk:sha256:7a486fc15212ce1b44b6853c47d2818328ff6945bbabe07496ecfa31eb4f40e2"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-253P6J",
+      "items": [
+        "sha256:b65712a0ab0a9be0b452852cf469705ab7d3546bfc115e4a7e2de44428a572a2"
+      ],
+      "reason": "Candidate mcp/src/agents_remember/worktrees/modules/integrate.py:664-666: mechanical call-site follow threading the refusal through the existing construct; carries no invariant of its own.",
+      "subject": "hunk:sha256:b65712a0ab0a9be0b452852cf469705ab7d3546bfc115e4a7e2de44428a572a2"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-2APHKV",
+      "items": [
+        "sha256:edd6781acc4cea2d63dc8c70bfc338f980e93f92993d14c00eba7cd25c0a9bca"
+      ],
+      "reason": "The registration route still declares the worktree tool surface; one changed file updates two descriptions in place.",
+      "subject": "onboarding:mcp/src/agents_remember/mcp/registration/overview"
+    },
+    {
+      "because": [
+        "DEC-V3XQSF"
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "03ad9da940bb07ea9c58b616d6b263781aea8f23",
+            "content": "sha256:447c4d08122d8772ffbb4a60055feda8f0a52e89a317f73c989d56c39d947b64",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_declared_vocabulary_has_no_removed_member"
+            },
+            "path": "mcp/tests/test_memory_mode_removal.py"
+          },
+          "before": "absent",
+          "id": "PRF-7XV937"
+        },
+        {
+          "after": {
+            "blob": "ac273eaf531038cab4a372393967360f40cb7fcc",
+            "content": "sha256:0586d97a4430cced1f871606d4ec4112db5c522e7c9da4f8dee36a461a7b5f30",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_vocabulary_cell_degrades_rather_than_stranding_the_task"
+            },
+            "path": "mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py"
+          },
+          "before": "absent",
+          "id": "PRF-C9H392"
+        },
+        {
+          "after": {
+            "blob": "1fc3b4f1b5b8a45dbc2c1ad1806e30df145a7c82",
+            "content": "sha256:128ae0a43ef798317f0bd16e6f7da90c204765c8cabb5c9a37aeb38c11035850",
+            "locator": {
+              "kind": "symbol",
+              "name": "is_disabled_contract"
+            },
+            "path": "mcp/src/agents_remember/worktrees/disabled_memory.py"
+          },
+          "before": "absent",
+          "id": "RLZ-3FE885"
+        },
+        {
+          "after": {
+            "blob": "ba58fbaeceea3ba8048de3c5168fe7f90d3458df",
+            "content": "sha256:bef19cd9b469e0f45b6c0ba56e168e79e15ecab7b48c5a8576f5bd68aaf7a506",
+            "locator": {
+              "kind": "symbol",
+              "name": "_memory_mode_fallback"
+            },
+            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
+          },
+          "before": "absent",
+          "id": "RLZ-3SJ7K7"
+        },
+        {
+          "after": {
+            "blob": "78d1d271f759310ef0703c1bd3d090cc691975db",
+            "content": "sha256:db9477330ae46e27326aa98ab087b3221e0b98d95c1633f94b3a7b223196587f",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_supported_memory_mode"
+            },
+            "path": "mcp/src/agents_remember/kernel/memory_mode.py"
+          },
+          "before": "absent",
+          "id": "RLZ-ERXPMN"
+        },
+        {
+          "after": {
+            "blob": "1fc3b4f1b5b8a45dbc2c1ad1806e30df145a7c82",
+            "content": "sha256:0f0c953f320f96d0f2fdca54a46e2ba871df60af7c671bb8bb5040e5e3b63c92",
+            "locator": {
+              "kind": "symbol",
+              "name": "disabled_opt_out_result"
+            },
+            "path": "mcp/src/agents_remember/worktrees/disabled_memory.py"
+          },
+          "before": "absent",
+          "id": "RLZ-NVG11G"
+        },
+        {
+          "after": {
+            "blob": "1fc3b4f1b5b8a45dbc2c1ad1806e30df145a7c82",
+            "content": "sha256:3747419fa36537f0256fcad8f1f017235a4de0103d63b135ce4fd3fe912ab959",
+            "locator": {
+              "kind": "symbol",
+              "name": "opt_out_refusal_result"
+            },
+            "path": "mcp/src/agents_remember/worktrees/disabled_memory.py"
+          },
+          "before": "absent",
+          "id": "RLZ-PDPV5Q"
+        },
+        {
+          "after": {
+            "blob": "1fc3b4f1b5b8a45dbc2c1ad1806e30df145a7c82",
+            "content": "sha256:02992e108b8ca18430d2f1edd9c4b57955c5b1b9518bd02934c871e60f7c90b9",
+            "locator": {
+              "kind": "symbol",
+              "name": "opt_out_detail_for_contract"
+            },
+            "path": "mcp/src/agents_remember/worktrees/disabled_memory.py"
+          },
+          "before": "absent",
+          "id": "RLZ-PNDCMP"
+        },
+        {
+          "after": {
+            "blob": "78d1d271f759310ef0703c1bd3d090cc691975db",
+            "content": "sha256:6ae2b95c8cc936992de63cb1c805a2d7231f9b4cb0b71d92516b68f9f4953166",
+            "locator": {
+              "kind": "symbol",
+              "name": "refuse_removed_memory_mode"
+            },
+            "path": "mcp/src/agents_remember/kernel/memory_mode.py"
+          },
+          "before": "absent",
+          "id": "RLZ-SQWM3Z"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-2DE9GB",
+      "items": [],
+      "reason": "MEM-R1 F03: statement now states the topology-conditional fallback (disabled only with no recorded worktree or ledger; either recorded reads external); E-VOC 57 struck for receipt-backed counts.",
+      "revision": 1,
+      "subject": "INV-V3N6NW"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-2H5CPP",
+      "items": [
+        "sha256:0981b43080e066909785207d4af4cca24e7092cacab4fbf7651fadbd88324846",
+        "sha256:50b3e653c78fba2db33cb36e6c7b3dcd5b33d45da28908b1a715c82baaa843f6",
+        "sha256:df20bf343aa0cc67baf62777fc15ef958dae25cc293f589746bd156383a1b5c1"
+      ],
+      "reason": "Card already describes the external-memory contract fixture; the one-line flip plus added memory plan preserve it.",
+      "subject": "onboarding:mcp/tests/test_worktree_support.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-2T5ZJB",
+      "items": [
+        "sha256:27f0cf8b223ba9fd5f20ae7754982a87961bae28f88321875768152d7a3d6c8d"
+      ],
+      "reason": "Candidate mcp/src/agents_remember/worktrees/modules/integrate.py:291-292: mechanical call-site follow threading the refusal through the existing construct; carries no invariant of its own.",
+      "subject": "hunk:sha256:27f0cf8b223ba9fd5f20ae7754982a87961bae28f88321875768152d7a3d6c8d"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-2X89MP",
+      "items": [
+        "sha256:3f11ec2366f3e30ea5b82ab02f712c995f81cfdd7000fb391dba146233f8c7fe"
+      ],
+      "reason": "The integration route still pairs code and memory landings under authority; two changed files add refusals inside it.",
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/integration/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-33A595",
+      "items": [
+        "sha256:4bfad65ffa9e5d03fb0d80c068e446d8b7a184b62af4d6bc28dd06c8604ad068",
+        "sha256:7af1ac11dd288fa7f8675b39994621003795f52b25068261b14226cf70df7f93",
+        "sha256:9ed434ca95fada83eaeebfee9b026239e533d36062db68e55fdee13229c3d241"
+      ],
+      "reason": "Diff moves MemoryMode's import to the kernel module; the public export surface is unchanged and the card names no MemoryMode claim.",
+      "subject": "onboarding:mcp/src/agents_remember/models/__init__.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-3CF2JY",
+      "items": [
+        "sha256:24525506b5077231b959f58befd9a6c8e8199a2ce57c7e11076b7388e7149bb1"
+      ],
+      "reason": "The lifecycle-evidence catalog still accounts every suite's lane rows; added rows register the new opt-out modules without changing the accounting.",
+      "subject": "onboarding:mcp/tests/evidence-lifecycle.toml"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-EX6T0F",
+          "revision": 1
+        },
+        {
+          "id": "INV-THS1XT",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-3F03KS",
+      "items": [
+        "sha256:00b674bb4dd94a1b881ae6d463b36c36f6b2457e3a248036f03f7fa8ed8d8f34"
+      ],
+      "reason": "First-leaf preview guarantee stands: the added refusal and preserved attach keep previews truthful and non-materializing; both members examined.",
+      "revision": 1,
+      "subject": "FAM-SZ4B70"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-3Q8QGE",
+      "items": [
+        "sha256:7441ef4e0cca8742d3df25417dd87f36e367af09d46fa27ad0d048ad213da663",
+        "sha256:98c7834f43bd216b7039907d982e0eab63d5c8ddcce04a3070f5152e433a3211",
+        "sha256:af682f371dcf999ff29e38c5cd0ec61cdc0e7e73ce83776b9aa30e1f2913dcb4",
+        "sha256:bd9c0069ca4d5b089a8b199b190274e64aebe66285b5f91e29f6dc9b48a34a6e",
+        "sha256:f88252184d40b8971d9de3105c745dd9db36509caab48e36bad40ec7928e4ca2"
+      ],
+      "reason": "Diff adds a reopen preflight refusal and drops memory_mode from restart args; the card describes doc-reset and transition flow without restart-arg or mode claims.",
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/reopen.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-3X5G38",
+      "items": [
+        "sha256:ed8c7c50a18f2c74b5cf455a384e80b2a17d0395ea727bc6f1446ad627d25a11"
+      ],
+      "reason": "Candidate mcp/src/agents_remember/worktrees/modules/integrate.py:16-20: mechanical call-site follow threading the refusal through the existing construct; carries no invariant of its own.",
+      "subject": "hunk:sha256:ed8c7c50a18f2c74b5cf455a384e80b2a17d0395ea727bc6f1446ad627d25a11"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-4KFRYK",
+      "items": [
+        "sha256:b6c76f25cfbba88c48e7ef117c456e3f20f00783d908ae7b986747dac4afd989"
+      ],
+      "reason": "Candidate mcp/src/agents_remember/worktrees/modules/integrate.py:793-801: mechanical call-site follow threading the refusal through the existing construct; carries no invariant of its own.",
+      "subject": "hunk:sha256:b6c76f25cfbba88c48e7ef117c456e3f20f00783d908ae7b986747dac4afd989"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-4KWG9W",
+      "items": [
+        "sha256:7a57b06c379d43b8ac83e99f5db465bbf58364697bf3b0335c1a78f8eb1490cd"
+      ],
+      "reason": "Candidate mcp/src/agents_remember/worktrees/modules/integrate.py:256-256; 288-288: mechanical call-site follow threading the refusal through the existing construct; carries no invariant of its own.",
+      "subject": "hunk:sha256:7a57b06c379d43b8ac83e99f5db465bbf58364697bf3b0335c1a78f8eb1490cd"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-4WTX7P",
+      "items": [
+        "sha256:510786f2b2399346746b887bae5eecfaf5b1239daf41921f1035fe6977164e8e",
+        "sha256:a335cafcbde2bd4da944078103e43ce6dd80c1ee1e2f3e2eabdf7911a1d1ded2"
+      ],
+      "reason": "One-line fixture flip; the card covers only the response-model registry.",
+      "subject": "onboarding:mcp/tests/test_models.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "2e61c5b715ff2ad0a5d8cd26a98da4aaa866b6b2",
+            "content": "sha256:54b4f95134fee9ba49567b3c59a20dbc524e5b99411883ad7a0dfab929a9e8a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "leaf_cutover_refusal"
+            },
+            "path": "mcp/src/agents_remember/worktrees/knowledge_gate.py"
+          },
+          "before": {
+            "blob": "d9aff968808173dc448e4c355b2ec47353fa2974",
+            "content": "sha256:0cca0c5b74d0a07af5e532b88dcc4a8c79a274e4d1f04b218bb2923a015dfcc9",
+            "locator": {
+              "kind": "symbol",
+              "name": "leaf_cutover_refusal"
+            },
+            "path": "mcp/src/agents_remember/worktrees/knowledge_gate.py"
+          },
+          "id": "RLZ-AR3Q4W"
+        },
+        {
+          "after": {
+            "blob": "8df56352222cae3f9048acae41cad9951a373f0b",
+            "content": "sha256:ea23d3e0a5458ab3d0bff86cb483f8f2300f1f2cee57d9e8aa84e982372d230b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_knowledge_gate_refusal"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/record_landing.py"
+          },
+          "before": {
+            "blob": "c4e1ee51d62f77e078f26f24ba5af719fcee5e32",
+            "content": "sha256:93e402d78b4c47289168347505c4e0bcdb60e2672560e4fcd2786dc2a889a716",
+            "locator": {
+              "kind": "symbol",
+              "name": "_knowledge_gate_refusal"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/record_landing.py"
+          },
+          "id": "RLZ-BQ1Y8W"
+        },
+        {
+          "after": {
+            "blob": "6cfdec1af86890182716df842f338bd4955bda31",
+            "content": "sha256:4c0fd5a01a0879aee1f25a37c4ad950c9e7ca9385ba4ca71fe69830275435425",
+            "locator": {
+              "kind": "symbol",
+              "name": "_knowledge_gate_block"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/integrate.py"
+          },
+          "before": {
+            "blob": "c054d516075fdbf679b03ca2b05a8873db52c1eb",
+            "content": "sha256:0bec9cd2363539a35c94971e5d8a05b9b2bfd510337b47e36d877ba738ce95a0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_knowledge_gate_block"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/integrate.py"
+          },
+          "id": "RLZ-DH6NBY"
+        },
+        {
+          "after": {
+            "blob": "2e61c5b715ff2ad0a5d8cd26a98da4aaa866b6b2",
+            "content": "sha256:987a28acd25a51da6e8a58012ff2505de02d6d9283b136886e5daff24ef2fdbe",
+            "locator": {
+              "kind": "symbol",
+              "name": "leaf_gate_refusal"
+            },
+            "path": "mcp/src/agents_remember/worktrees/knowledge_gate.py"
+          },
+          "before": {
+            "blob": "d9aff968808173dc448e4c355b2ec47353fa2974",
+            "content": "sha256:aee4471ced60a9248a73cdf4e1df84840633a438e3dc8a82d042f2f836e7cfe5",
+            "locator": {
+              "kind": "symbol",
+              "name": "leaf_gate_refusal"
+            },
+            "path": "mcp/src/agents_remember/worktrees/knowledge_gate.py"
+          },
+          "id": "RLZ-FP4XHH"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-4X2RZH",
+      "items": [
+        "sha256:b69837dc6eced271e04047c428983d397bceb21906dbe578efac21efc4e00db6"
+      ],
+      "reason": "Cutover record stands: touched gate and landing entries re-anchor at C; their added non-external refusals are governed by the new L50 lifecycle invariant.",
+      "revision": 2,
+      "subject": "INV-JT28KJ"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-53HG1K",
+      "items": [
+        "sha256:d18c271b4b42fccd3369f80e6de527ff6501327bf41a7d73fa069b8b6116eed1"
+      ],
+      "reason": "Candidate mcp/src/agents_remember/worktrees/knowledge_gate.py:61-64: mechanical call-site follow threading the refusal through the existing construct; carries no invariant of its own.",
+      "subject": "hunk:sha256:d18c271b4b42fccd3369f80e6de527ff6501327bf41a7d73fa069b8b6116eed1"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-55VJTT",
+      "items": [
+        "sha256:6e188a6bc983917174e7a8f763030f6e7127dcda2c2656ef50487b6094cb634d"
+      ],
+      "reason": "No card; generated byte-copy of canonical skills/c-09-git-worktree-manager/SKILL.md (cmp identical), whose card carries the contract.",
+      "subject": "onboarding:.openclaw/workspace/skills/c-09-git-worktree-manager/SKILL.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-571HKH",
+      "items": [
+        "sha256:bd096bee727641a3ea4a3436b426833864bc902b28ebc7a2c49d310c24a9697a"
+      ],
+      "reason": "The worktrees route still starts, gates, lands and abandons through the same modules; six changed files add the refusal and the way out inside them.",
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-5CGHZA",
+      "items": [
+        "sha256:47fa185bb7a4c5d75037112b3dd82aee9448e02bbcc9156b9c0b8db6b1d2ef76",
+        "sha256:edba894eba12b65352111bf151710f87d686f609203038c1c639652ba97fe49f",
+        "sha256:fb26d30b6b39d1ee3ec1a37657aee39cabe22b4d8fe5fd1fe442aab6db37106f"
+      ],
+      "reason": "Diff is an import/annotation rename to ReadableMemoryMode; carryover_done logic is untouched so the pass-through prose still describes behavior.",
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/modules/guidance.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-5E1WFD",
+      "items": [
+        "sha256:63cc2b8e597e97c9cc79f6bc6fe403d2b4e7083e2a9bd19e7ef5b014c0e0039e"
+      ],
+      "reason": "Candidate mcp/src/agents_remember/worktrees/modules/integrate.py:321-325: mechanical call-site follow threading the refusal through the existing construct; carries no invariant of its own.",
+      "subject": "hunk:sha256:63cc2b8e597e97c9cc79f6bc6fe403d2b4e7083e2a9bd19e7ef5b014c0e0039e"
+    },
+    {
+      "because": [
+        "DEC-V3XQSF"
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "d942a315e886f9a4c077004752d2af6adc4726e0",
+            "content": "sha256:9fb61e29c38ecd355f5b3ef58ee74ea9117fe3ff25778b1e852ece047c34efca",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_master_or_checkpoint_landing_waits_until_no_entry_at_a_changed_path_is_stale"
+            },
+            "path": "mcp/tests/test_knowledge_closeout_gate.py"
+          },
+          "before": "absent",
+          "id": "PRF-6RYB97"
+        },
+        {
+          "after": {
+            "blob": "690ead62160c1245c795067d4e119ae6d4e80a22",
+            "content": "sha256:2e30418108d1d9aa304e2d02622e27a6dd191c3d80a0a04420c05d170ab33410",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_timed_out_blob_read_or_an_unverifiable_entry_refuses_a_master_landing"
+            },
+            "path": "mcp/tests/test_knowledge_gate_routes.py"
+          },
+          "before": "absent",
+          "id": "PRF-A7FX3D"
+        },
+        {
+          "after": {
+            "blob": "b69299b3fd501f6e27e0fc57b804a6232ee33530",
+            "content": "sha256:5b5375fad8ff814614ab8d243f5a84f628024980b734ff85023a51448aea559b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_memory_refresh_preview"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout.py"
+          },
+          "before": "absent",
+          "id": "RLZ-3RQKMH"
+        },
+        {
+          "after": {
+            "blob": "8df56352222cae3f9048acae41cad9951a373f0b",
+            "content": "sha256:e5954b7cbee7f73cfc32a9b994fcb5588566838d7421c753e4c6538f5231be08",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_landing_result"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/record_landing.py"
+          },
+          "before": "absent",
+          "id": "RLZ-4NWKSS"
+        },
+        {
+          "after": {
+            "blob": "2e61c5b715ff2ad0a5d8cd26a98da4aaa866b6b2",
+            "content": "sha256:3056ced3ff338f180c1dc8cc6f34f32df1c14c711c62506f0f4b0d1c2ea47c77",
+            "locator": {
+              "kind": "symbol",
+              "name": "direct_gate_verdict"
+            },
+            "path": "mcp/src/agents_remember/worktrees/knowledge_gate.py"
+          },
+          "before": "absent",
+          "id": "RLZ-870H2F"
+        },
+        {
+          "after": {
+            "blob": "690ead62160c1245c795067d4e119ae6d4e80a22",
+            "content": "sha256:2e30418108d1d9aa304e2d02622e27a6dd191c3d80a0a04420c05d170ab33410",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_timed_out_blob_read_or_an_unverifiable_entry_refuses_a_master_landing"
+            },
+            "path": "mcp/tests/test_knowledge_gate_routes.py"
+          },
+          "before": "absent",
+          "id": "RLZ-AYEG7H"
+        },
+        {
+          "after": {
+            "blob": "b69299b3fd501f6e27e0fc57b804a6232ee33530",
+            "content": "sha256:88f0c64b90b85023d675ba0db630e7046bcbefbad6d478b8d697e7e8747ddcf0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_memory_ledger_repair"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout.py"
+          },
+          "before": "absent",
+          "id": "RLZ-D8E8ZK"
+        },
+        {
+          "after": {
+            "blob": "68e62a4e78041f271e927977fa67c79ca74c18b7",
+            "content": "sha256:e2216195d8085c983ff217ba81885c96a212495fb3edea777e139cdd7cb19068",
+            "locator": {
+              "kind": "symbol",
+              "name": "MemoryOptOutRefusedError"
+            },
+            "path": "mcp/src/agents_remember/errors.py"
+          },
+          "before": "absent",
+          "id": "RLZ-GJ92RY"
+        },
+        {
+          "after": {
+            "blob": "d551d4bbe222a72add65ecdc80d981cdaeec5cfd",
+            "content": "sha256:e112c153df124119c6af9c2af37abbcf5dbd5378e3e796234a479ea4f257f1f4",
+            "locator": {
+              "kind": "symbol",
+              "name": "direct_landing"
+            },
+            "path": "mcp/src/agents_remember/worktrees/direct_landing.py"
+          },
+          "before": "absent",
+          "id": "RLZ-HJ8H2C"
+        },
+        {
+          "after": {
+            "blob": "b69299b3fd501f6e27e0fc57b804a6232ee33530",
+            "content": "sha256:8857d6720d5c936d3e59c15217ad0115e4086b9dfe9d08ebf85bb447fa5a8ccd",
+            "locator": {
+              "kind": "symbol",
+              "name": "_closed_result_payload"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout.py"
+          },
+          "before": "absent",
+          "id": "RLZ-HT0VZS"
+        },
+        {
+          "after": {
+            "blob": "b69299b3fd501f6e27e0fc57b804a6232ee33530",
+            "content": "sha256:bf6a4fd82ce4b7c37dad975706df9dfa2e512477491776e2ed885bf2569e2279",
+            "locator": {
+              "kind": "symbol",
+              "name": "_opt_out_preview"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout.py"
+          },
+          "before": "absent",
+          "id": "RLZ-JAG6F8"
+        },
+        {
+          "after": {
+            "blob": "8f92bbe9948b98fa7072f2ae69b1fb50bc6f098f",
+            "content": "sha256:d41fdb55a660149ded7a89d8ee8435fd7fdbbc085817ea2f7a55a6fc098428f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_blocked"
+            },
+            "path": "mcp/tests/test_knowledge_cutover.py"
+          },
+          "before": "absent",
+          "id": "RLZ-JDVNG9"
+        },
+        {
+          "after": {
+            "blob": "b69299b3fd501f6e27e0fc57b804a6232ee33530",
+            "content": "sha256:4af59765f940af1a42be4a8141c0700127633ca8a23a8bbd6453e39df90b4b91",
+            "locator": {
+              "kind": "symbol",
+              "name": "_closeout_commit_phase"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout.py"
+          },
+          "before": "absent",
+          "id": "RLZ-NQDJG5"
+        },
+        {
+          "after": {
+            "blob": "6cfdec1af86890182716df842f338bd4955bda31",
+            "content": "sha256:4c0fd5a01a0879aee1f25a37c4ad950c9e7ca9385ba4ca71fe69830275435425",
+            "locator": {
+              "kind": "symbol",
+              "name": "_knowledge_gate_block"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/integrate.py"
+          },
+          "before": "absent",
+          "id": "RLZ-PS6FJJ"
+        },
+        {
+          "after": {
+            "blob": "2e61c5b715ff2ad0a5d8cd26a98da4aaa866b6b2",
+            "content": "sha256:af8b2c9e843bfc7c5eabd24e8644f08d5fb63f5ae14434c16fb50f90c8489845",
+            "locator": {
+              "kind": "symbol",
+              "name": "prepared_closeout_refusal"
+            },
+            "path": "mcp/src/agents_remember/worktrees/knowledge_gate.py"
+          },
+          "before": "absent",
+          "id": "RLZ-PTPE1P"
+        },
+        {
+          "after": {
+            "blob": "d942a315e886f9a4c077004752d2af6adc4726e0",
+            "content": "sha256:9fb61e29c38ecd355f5b3ef58ee74ea9117fe3ff25778b1e852ece047c34efca",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_master_or_checkpoint_landing_waits_until_no_entry_at_a_changed_path_is_stale"
+            },
+            "path": "mcp/tests/test_knowledge_closeout_gate.py"
+          },
+          "before": "absent",
+          "id": "RLZ-S2RAEW"
+        },
+        {
+          "after": {
+            "blob": "68e62a4e78041f271e927977fa67c79ca74c18b7",
+            "content": "sha256:56f8ee7b3e7b6935e99b7b8ac28d27a10144b95a9d30fdf9903e64b9f1bc5ef4",
+            "locator": {
+              "kind": "symbol",
+              "name": "MemoryOptOutFacts"
+            },
+            "path": "mcp/src/agents_remember/errors.py"
+          },
+          "before": "absent",
+          "id": "RLZ-V3JVAQ"
+        },
+        {
+          "after": {
+            "blob": "d551d4bbe222a72add65ecdc80d981cdaeec5cfd",
+            "content": "sha256:6064306f286379066fc9b5fdb2d0eb5a452c9452195a4244145f7459a9d45477",
+            "locator": {
+              "kind": "symbol",
+              "name": "_direct_landing_preview"
+            },
+            "path": "mcp/src/agents_remember/worktrees/direct_landing.py"
+          },
+          "before": "absent",
+          "id": "RLZ-Z8X4P3"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-5MWRVA",
+      "items": [],
+      "reason": "MEM-R2 F02: three external-leg test-anchored realizations now state the caller shape they prove instead of module refusal; carried targets, PRF facets, module realizations and H evidence untouched.",
+      "revision": 1,
+      "subject": "INV-95NQR7"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-622TWY",
+      "items": [
+        "sha256:30895b503fcdc9363e197df158562bcac890358a9df6b178eb620c8c9ca7dcd7"
+      ],
+      "reason": "Candidate mcp/src/agents_remember/worktrees/knowledge_gate.py:302-302 inside direct_gate_verdict, governed by INV-95NQR7; this hunk carries no separate invariant.",
+      "subject": "hunk:sha256:30895b503fcdc9363e197df158562bcac890358a9df6b178eb620c8c9ca7dcd7"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-67ZYT1",
+      "items": [
+        "sha256:1b834d03fa80cb8b265c78e3ee9b0e1d13c4a93a329a357ea1f04ffcdbce6344",
+        "sha256:5880826be2210307661190050b3efddd10bcef8f1a41e8c03d6a63ca39a181f7",
+        "sha256:5dbee5186f0430089c224405c3d63f1cd41606ec1dd93b78680a5fafa1310edd",
+        "sha256:64606e45dd78101dde6ab5f6ed0662dfd12ddedf3300a7b14b325d39927fec86",
+        "sha256:79f3719b68906307c8b57355724c97cf158aaa744431fca5f7099e090c6b1829",
+        "sha256:7e3623bd9075da5e1e4f7acb503fe91d46af8f9f861720401f149a77a45ce76d",
+        "sha256:901c9f49a0cd713d63b69d509a0d0f0aa9519d692bbd4a00be5cf288dbb76ff8",
+        "sha256:b430d8d372093db8071611b840303ca353fd4e9e2f762fa204223a208fe00168",
+        "sha256:b4d6ed6c1c4755be1cefb9733b5a0a2bd3a8ce247a7b5ae1b08824f7311f526f",
+        "sha256:d5db92455b0f70e959a5378de8a31bba7377a7a9819db77670cce9c2ef0b5a35"
+      ],
+      "reason": "Diff adds operation labels plus the abandon allow-flag; the card's parameter table and entry-point description make no admission or choice claims that changed (its only 'disabled' hit is unrelated disk-disabled prose).",
+      "subject": "onboarding:mcp/src/agents_remember/application/worktree_tools.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-6JTBEQ",
+      "items": [
+        "sha256:ba6044df991e5031499855fa315287d7122cb52ebf207814a9229e5c6ee6bb00"
+      ],
+      "reason": "Candidate mcp/src/agents_remember/worktrees/modules/start.py:42-45: mechanical call-site follow threading the refusal through the existing construct; carries no invariant of its own.",
+      "subject": "hunk:sha256:ba6044df991e5031499855fa315287d7122cb52ebf207814a9229e5c6ee6bb00"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-6XTYAR",
+      "items": [
+        "sha256:ae14fd3e6288d8a49d6a54af3878c87ff955548ab1f68e30ef3becc5a9f9623c"
+      ],
+      "reason": "The MCP package route still declares topology, the removed internal mode and the refusal surface; four changed files extend that same account without moving the route's boundaries.",
+      "subject": "onboarding:mcp/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-70T6H7",
+      "items": [
+        "sha256:407e98ae28cf1b6f5297ecc90152c7ac07236d176a01f6b68ae2fee760d86046",
+        "sha256:4a25c20793216458049837fa7212ab459bd958e3f998346f9172ee1a76f4eb8f",
+        "sha256:cc923f5f97a50687c3006ef41fe36b1d7ed5b4d2cd8264c127e52112a9c7295d"
+      ],
+      "reason": "Diff edits only the TaskBases docstring to drop the disabled-memory choice; the card describes request concepts generically and names no memory choices.",
+      "subject": "onboarding:mcp/src/agents_remember/application/worktree_tool_requests.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-7286A6",
+      "items": [
+        "sha256:8fd2b8e1e637188e47fba64b80ae17daa721311483a65ad73831e33a796ed0b7"
+      ],
+      "reason": "No card; generated byte-copy of canonical skills/c-12-closeout/SKILL.md (cmp identical), whose card carries the contract.",
+      "subject": "onboarding:.codex/skills/c-12-closeout/SKILL.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-7MTFXC",
+      "items": [
+        "sha256:aba0579b04aa75166b757fb977236ac3d65bdd33b94b11ad012a2dcb59968c11",
+        "sha256:ea7f804e8851c78b7c8e858b598e07abd4773129236e53079b46fc034da8fdc8"
+      ],
+      "reason": "Diff is worktree_start docstring wording; the card lists parameter objects plus stale-base/provider behavior without memory-mode value claims.",
+      "subject": "onboarding:mcp/src/agents_remember/mcp/registration/worktrees.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "b69299b3fd501f6e27e0fc57b804a6232ee33530",
+            "content": "sha256:ca6827290dbd1261a673e9c1a25e3c507c602bea5dadc2a5e08dcb1a0e6cd4aa",
+            "locator": {
+              "kind": "symbol",
+              "name": "_closeout_entry"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout.py"
+          },
+          "before": {
+            "blob": "83cbb3e2850db9f103830039db0c7f31b8b1119f",
+            "content": "sha256:4cb78b5a9f012b7ce02ac18dcce5624b9dd57eb9112d73f425b6bec68361ac42",
+            "locator": {
+              "kind": "symbol",
+              "name": "_closeout_entry"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout.py"
+          },
+          "id": "RLZ-BEW05J"
+        },
+        {
+          "after": {
+            "blob": "b69299b3fd501f6e27e0fc57b804a6232ee33530",
+            "content": "sha256:b558d25912b1cd8dc78b49a884547f8756d788f17bfa846ff765e729d5ff8392",
+            "locator": {
+              "kind": "symbol",
+              "name": "closeout_preview_payload"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout.py"
+          },
+          "before": {
+            "blob": "83cbb3e2850db9f103830039db0c7f31b8b1119f",
+            "content": "sha256:e67608ef3e22a8d7ddd156e69730fec525609bd9bf146a7c42a250b1511007fa",
+            "locator": {
+              "kind": "symbol",
+              "name": "closeout_preview_payload"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout.py"
+          },
+          "id": "RLZ-JWRH8T"
+        },
+        {
+          "after": {
+            "blob": "1a31dae5cb0e746d7093a7225a558928989e3519",
+            "content": "sha256:03d448a1a189c5dc86ddc1581159132595ef51a869616415d5da9690872f42ed",
+            "locator": {
+              "kind": "symbol",
+              "name": "candidate_gate_verdict"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "before": {
+            "blob": "5b2a4ae3f3757a7c03f71c2afdd2082c5bf38392",
+            "content": "sha256:34f04b6b57aac6604805a6905a669f16b208a605bec1ff24ec7489b710dcf867",
+            "locator": {
+              "kind": "symbol",
+              "name": "candidate_gate_verdict"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "id": "RLZ-SR7CGW"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-8E3A2X",
+      "items": [
+        "sha256:45c1683583f61d802127724876046e6648971d34cade1e646a74efb4c6d401f2"
+      ],
+      "reason": "Closeout-preview record stands: touched preview entries re-anchor at C; their added non-external refusals are governed by the new L50 lifecycle invariant.",
+      "revision": 1,
+      "subject": "INV-WV1YQE"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-8G1PMH",
+      "items": [
+        "sha256:00e4f9c72ce1acb70671676f3092bc6aa8e63e439f973b91fb1a470900f49e87"
+      ],
+      "reason": "Candidate mcp/src/agents_remember/worktrees/modules/integrate.py:516-518: mechanical call-site follow threading the refusal through the existing construct; carries no invariant of its own.",
+      "subject": "hunk:sha256:00e4f9c72ce1acb70671676f3092bc6aa8e63e439f973b91fb1a470900f49e87"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-8M4JX9",
+      "items": [
+        "sha256:926e083ecbdf501814453c365b9b44ad3f4cca047ba007f6ce920072062ccb15"
+      ],
+      "reason": "Candidate mcp/src/agents_remember/worktrees/direct_landing.py:74-78: mechanical call-site follow threading the refusal through the existing construct; carries no invariant of its own.",
+      "subject": "hunk:sha256:926e083ecbdf501814453c365b9b44ad3f4cca047ba007f6ce920072062ccb15"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-8QGPM5",
+      "items": [
+        "sha256:219bd58bc4ae76b28423d7eb4ce348057783c7f41e5f28e8d8d82044e19af2ca"
+      ],
+      "reason": "Candidate mcp/src/agents_remember/worktrees/modules/integrate.py:465-469: mechanical call-site follow threading the refusal through the existing construct; carries no invariant of its own.",
+      "subject": "hunk:sha256:219bd58bc4ae76b28423d7eb4ce348057783c7f41e5f28e8d8d82044e19af2ca"
+    },
+    {
+      "because": [
+        "DEC-V3XQSF"
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "6cb58ec1f5c1b629874d4ceb251f1ef2180572f3",
+            "content": "sha256:2ede0cec46d42741682301e0ba4211d4dd1bebd7cfb44f6315c732d04f466c04",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_no_mode_start_attaches_to_a_live_disabled_leaf"
+            },
+            "path": "mcp/tests/test_memory_opt_out_refused_start.py"
+          },
+          "before": "absent",
+          "id": "PRF-DWCTJM"
+        },
+        {
+          "after": {
+            "blob": "4517ff389e5f8ac26676f8b517c15fd5cbc9f94f",
+            "content": "sha256:bcd4e52ac6bd51f3f29f0a48d6a70b28eabae342fbf347b8873f8a3b51756299",
+            "locator": {
+              "kind": "symbol",
+              "name": "_live_disabled_leaf_attach_result"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/start.py"
+          },
+          "before": "absent",
+          "id": "RLZ-4W6N41"
+        },
+        {
+          "after": {
+            "blob": "6cb58ec1f5c1b629874d4ceb251f1ef2180572f3",
+            "content": "sha256:2ede0cec46d42741682301e0ba4211d4dd1bebd7cfb44f6315c732d04f466c04",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_no_mode_start_attaches_to_a_live_disabled_leaf"
+            },
+            "path": "mcp/tests/test_memory_opt_out_refused_start.py"
+          },
+          "before": "absent",
+          "id": "RLZ-R89R52"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-8SV9RY",
+      "items": [],
+      "reason": "Owner D167: restore the prior producer statement through the writer after the EXP-F01 invariant_id clobber; expansion statements neutralized to non-rewriting text.",
+      "revision": 1,
+      "subject": "INV-WKM7SS"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-93WEFA",
+      "items": [
+        "sha256:f5bd5a4ca5da1abc9f2aba46998c1af2f07a397c92b367e2ccea3bb6a7437966"
+      ],
+      "reason": "Candidate mcp/src/agents_remember/worktrees/modules/cleanup.py:18-18: import follow for the new disabled_memory classifiers; carries no invariant of its own.",
+      "subject": "hunk:sha256:f5bd5a4ca5da1abc9f2aba46998c1af2f07a397c92b367e2ccea3bb6a7437966"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "b69299b3fd501f6e27e0fc57b804a6232ee33530",
+            "content": "sha256:450fa35e1d71594b9210d535158da6ab16b6476c2c6dcf9011ec4c8a3aaa1f1e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_recover_closeout_finalization"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout.py"
+          },
+          "before": {
+            "blob": "83cbb3e2850db9f103830039db0c7f31b8b1119f",
+            "content": "sha256:9affcf2ca650e2906c4478bc044c1cf3bd29f3cf7e0258d323e6ecfcb72df27d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_recover_closeout_finalization"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout.py"
+          },
+          "id": "RLZ-A6HS4Z"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-95K7FF",
+      "items": [
+        "sha256:eb78131bec685b01fe7d13b433bfd98b3ab9119f39760af2140f6df551ccd558"
+      ],
+      "reason": "Reopen record stands: the touched closeout-finalization entry re-anchors at C; its added non-external refusal is governed by the new L50 lifecycle invariant.",
+      "revision": 2,
+      "subject": "INV-HWAWFT"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-97W3FZ",
+      "items": [
+        "sha256:344af486c1aad8625e12543d9e96b36105295754d66045982d3a0ea5b1d96861",
+        "sha256:419ad278a3f8820ec5fd6188a924a8639e9be86b2276837fdce9e453e81ab4d7",
+        "sha256:5a3d5c9a1fc7f4cfeb28307875cba8bcb787e7c8b257c5f6470038441a2403d2"
+      ],
+      "reason": "Diff adds an entry opt-out guard; the card describes the composition and locking flow without mode claims.",
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/modules/sync.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-9JQ00G",
+      "items": [
+        "sha256:06e16be06c74f77897aabbe2d3aaab277b18803d72ea4fa7395c2dd86e09b936",
+        "sha256:4fa8f5d6e730248dc0f9d4205b251e09c9b594c39c01ec8be39f1b7f77d42ec0",
+        "sha256:b1d1843d3df42bc417395aa993fbe63130474ba03c22dfa8530563c0d250e84b",
+        "sha256:d33fd9a642c4a3dd4a8806b3210c73d26d01de949c7159b01b206d9b956633b1",
+        "sha256:d5dbdb45052f6bca529806c76d1cbfd3f365512f6064111fedce0b3093d1107b"
+      ],
+      "reason": "Diff adds an entry opt-out guard and extracts target resolution; the card's readiness checklist and reclamation description still hold.",
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/modules/finalize.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-9WWZAP",
+      "items": [
+        "sha256:b0b8586d84f6511db8dc0eef8181c0e9d69fb045da8e4ac5245228b7b04f686f"
+      ],
+      "reason": "The engine-room route still paces enclosure display and recovery choices; the leaf changes only two fixtures' data and expectations, not the route's purpose.",
+      "subject": "onboarding:dashboard/src/panels/engine-room/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-A2FFF1",
+      "items": [
+        "sha256:e7aeef268f56a37ff7e0103747ece6d250c32d80e834bc4db0492a88195766b7"
+      ],
+      "reason": "No card; generated byte-copy of canonical skills/c-09-git-worktree-manager/SKILL.md (cmp identical), whose card carries the contract.",
+      "subject": "onboarding:.hermes/skills/c-09-git-worktree-manager/SKILL.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-AAB5E0",
+      "items": [
+        "sha256:0df8d0f52a55810aed04aa28f11640d127b4e832f0c8b125eec9b7c89eb5f6fa"
+      ],
+      "reason": "No card; generated byte-copy of canonical skills/c-09-git-worktree-manager/SKILL.md (cmp identical), whose card carries the contract.",
+      "subject": "onboarding:.agents/skills/c-09-git-worktree-manager/SKILL.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-AMZ3J6",
+      "items": [
+        "sha256:818f5c0cdaf3b3cd613d9f960ee86d647178f88720a4a7950f4a91978ae0827b"
+      ],
+      "reason": "No card; generated byte-copy of canonical skills/c-12-closeout/SKILL.md (cmp identical), whose card carries the contract.",
+      "subject": "onboarding:.cursor/skills/c-12-closeout/SKILL.md"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "074cbb9f1d1da9ee49aa27d3fb94e15ae36ac05c",
+            "content": "sha256:9da8e5b2a7dc3c8b41df908ba278cca61de18ee199df80ea4cec3f848c7465c1",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "72e3b28c42115f858a0c87cc7053a3f795ad058e",
+            "content": "sha256:07e1d25c2fbf733c400603653933ef745bb9da70f780c617599415973015da27",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-GRTJG0"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-AYDGQG",
+      "items": [
+        "sha256:2872b73db60653c2249a2d5caf0236c6d91d2a542928c5485b39cb45477e18d7"
+      ],
+      "reason": "Lifecycle-evidence catalog record stands: the whole-file entry re-anchors to the extended catalog; added opt-out battery rows extend the account without changing it.",
+      "revision": 1,
+      "subject": "INV-MSCRAN"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-AZF574",
+      "items": [
+        "sha256:bf33b7bc216f17e3f492ebb3914138b7fcac50d14a1df2dce08b9d7ef9f03333"
+      ],
+      "reason": "Candidate mcp/src/agents_remember/worktrees/modules/startup/start_contract.py:13-13: import follow for the new disabled_memory classifiers; carries no invariant of its own.",
+      "subject": "hunk:sha256:bf33b7bc216f17e3f492ebb3914138b7fcac50d14a1df2dce08b9d7ef9f03333"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-BEVAG5",
+      "items": [
+        "sha256:82b3470a7444d91efd1cb88fcea74f6cf8db9cb13dae10090bd6e1f8f17887d3"
+      ],
+      "reason": "Candidate mcp/src/agents_remember/worktrees/modules/startup/start_contract.py:839-841: mechanical call-site follow threading the refusal through the existing construct; carries no invariant of its own.",
+      "subject": "hunk:sha256:82b3470a7444d91efd1cb88fcea74f6cf8db9cb13dae10090bd6e1f8f17887d3"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-BYDHJM",
+      "items": [
+        "sha256:5c4fe5a334f5ed42cf2f7fbf2b9933c7737b680bd1df079f1e7a65ae66effc98"
+      ],
+      "reason": "Candidate mcp/src/agents_remember/worktrees/modules/integrate.py:299-304: mechanical call-site follow threading the refusal through the existing construct; carries no invariant of its own.",
+      "subject": "hunk:sha256:5c4fe5a334f5ed42cf2f7fbf2b9933c7737b680bd1df079f1e7a65ae66effc98"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-C1G2BX",
+      "items": [
+        "sha256:298a7301c81de442fa7287f1162cc9c15a4fc252e67f3fa393dda875b0dc1485",
+        "sha256:4354597efdb929ffe78bf2459ff7e00d49c4c869b271f8e683c8e76ecc29263b",
+        "sha256:d9700db7b43367b5c3d981619f13c0e5926ef6b405127501d281c47e0809e253"
+      ],
+      "reason": "Diff adds an entry opt-out guard; the card describes control/recovery semantics without mode claims.",
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-C1Z66E",
+      "items": [
+        "sha256:f3372e365349d99cc32f501a7f4a3390109947241a7dbc4fbe82e70309e0dfe1",
+        "sha256:f95c66464e72c49791e86464bba1a65fa340e546947776cd367dfe412f89f898"
+      ],
+      "reason": "Diff only threads allow_disabled_memory so status keeps answering on legacy contracts; the card describes the read-only projection without mode-gating claims, all still true.",
+      "subject": "onboarding:mcp/src/agents_remember/application/worktree_status.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-C2KPPS",
+      "items": [
+        "sha256:01d62bb787d1b7ea9c7a51d0e0f88d161dd695808ddd38228847f4865e210538",
+        "sha256:c830baa591c735785a9217e6709ddd7df92be92ae4332571bd42d4b263586ef4"
+      ],
+      "reason": "One-line fixture flip; the card pins hint address binding only.",
+      "subject": "onboarding:mcp/tests/test_next_step_address_binding.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-C2R9T3",
+      "items": [
+        "sha256:bbf6a26f9f02c3327e6f86b8e8117552ea466a52f075eec2458ecc32b9849320"
+      ],
+      "reason": "Candidate mcp/src/agents_remember/worktrees/modules/integrate.py:311-312; 600-601; 1090-1091 inside _knowledge_gate_block, governed by INV-95NQR7, INV-JT28KJ; this hunk carries no separate invariant.",
+      "subject": "hunk:sha256:bbf6a26f9f02c3327e6f86b8e8117552ea466a52f075eec2458ecc32b9849320"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-C7BT42",
+      "items": [
+        "sha256:32a714a5bb7bbb62525986259fdb35ecf528d2c7a6b576b698a34e1c650a22a1",
+        "sha256:d5a4992d7109c2e50bec2a8c844f6acc58d1c2e47f286e8d7433c2f8af8e2216",
+        "sha256:e632f40f736da3e91ddb3cccf8a512804902069881fd78f766a650a193953b63"
+      ],
+      "reason": "Diff narrows _memory_mode to always yield external; the card never stated the old topology-to-disabled mapping and its selection/context claims still hold.",
+      "subject": "onboarding:mcp/src/agents_remember/kernel/coordination_context/resolver.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-CBE7PN",
+      "items": [
+        "sha256:c3781dcb3ec017d769db6c171f6301088e3150fb77a5d8ad7f32b69f9582f291"
+      ],
+      "reason": "Candidate lines [20, 1]: Lane-catalog rows registering the new opt-out test modules; bookkeeping over suites that prove the invariants elsewhere, carrying no new obligation.",
+      "subject": "hunk:sha256:c3781dcb3ec017d769db6c171f6301088e3150fb77a5d8ad7f32b69f9582f291"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-CCXM98",
+      "items": [
+        "sha256:b439a9f670203d07038826e2b205482c3c57b0f9025988068c5532692fe04e5f"
+      ],
+      "reason": "The application route still projects worktree operations to results; three changed modules thread the same refusal through existing results.",
+      "subject": "onboarding:mcp/src/agents_remember/application/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-CS4S0Z",
+      "items": [
+        "sha256:6104ee8c1ff40ef6ab4d5670a6bbedacf346b13cb6b20d5817ceb61dc01770cf"
+      ],
+      "reason": "Candidate mcp/src/agents_remember/worktrees/modules/start.py:551-554: mechanical call-site follow threading the refusal through the existing construct; carries no invariant of its own.",
+      "subject": "hunk:sha256:6104ee8c1ff40ef6ab4d5670a6bbedacf346b13cb6b20d5817ceb61dc01770cf"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-D4ZSFP",
+      "items": [
+        "sha256:ca1a4dc3073e1b07e20c590c1a387ecf98396f56a3a097c3e29b4858506752fb"
+      ],
+      "reason": "No card; generated byte-copy of canonical skills/c-12-closeout/SKILL.md (cmp identical), whose card carries the contract.",
+      "subject": "onboarding:.hermes/skills/c-12-closeout/SKILL.md"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-D9K88N",
+      "items": [
+        "sha256:e75304e737bc09da403970cb4561b2a52bd48509c442046c84eebfff93e7bcb5"
+      ],
+      "reason": "Candidate mcp/src/agents_remember/worktrees/modules/integrate.py:472-479: mechanical call-site follow threading the refusal through the existing construct; carries no invariant of its own.",
+      "subject": "hunk:sha256:e75304e737bc09da403970cb4561b2a52bd48509c442046c84eebfff93e7bcb5"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-DKQA9N",
+      "items": [
+        "sha256:26af9f40d6bb35545042fb1354f4060ecedf2ab807dcdb75f31c839bffa96cba"
+      ],
+      "reason": "Candidate mcp/src/agents_remember/worktrees/modules/startup/start_contract.py:66-66: mechanical call-site follow threading the refusal through the existing construct; carries no invariant of its own.",
+      "subject": "hunk:sha256:26af9f40d6bb35545042fb1354f4060ecedf2ab807dcdb75f31c839bffa96cba"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-DWS1V8",
+      "items": [
+        "sha256:19671121ce464ebbfe80242096b4bf0b07290eee5c484875ae369db35375030a"
+      ],
+      "reason": "Candidate mcp/src/agents_remember/worktrees/modules/integrate.py:201-204: mechanical call-site follow threading the refusal through the existing construct; carries no invariant of its own.",
+      "subject": "hunk:sha256:19671121ce464ebbfe80242096b4bf0b07290eee5c484875ae369db35375030a"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-E0Y2QP",
+      "items": [
+        "sha256:19cdf98babc6f0de18266f077a4f71cf3b2c96908dc18f9a0835f7a8bf303f17"
+      ],
+      "reason": "The coordination-context route still resolves mode, roots and contracts; two changed modules narrow the default without moving resolution.",
+      "subject": "onboarding:mcp/src/agents_remember/kernel/coordination_context/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-E99V7N",
+      "items": [
+        "sha256:39c2bbcee7ff1dd2d102ca5219f1885bb32b8139a1ace87374df7dce88b4efcb"
+      ],
+      "reason": "Candidate lines [214, 3]: Skill prose restating the removal for operators; the obligation lives in the code realizes, no separate adjacent invariant.",
+      "subject": "hunk:sha256:39c2bbcee7ff1dd2d102ca5219f1885bb32b8139a1ace87374df7dce88b4efcb"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-EA8D0A",
+      "items": [
+        "sha256:1a081aea8c5e387496b49ebd33929fe9d823d87d0cbf6b63d98e1c8fc3d69069",
+        "sha256:453504f6b483c9955d81549f62efc04c1e62da0426a78a09933edff68d3f07ec",
+        "sha256:91d70abb3b4473cd8eb249cd791ec6953d41a5c86f101569a6b360385c27aab3",
+        "sha256:97dd0d453590052fc747bd19f4ec9f317a262766a8915ed6405c965f9b1a4e6b",
+        "sha256:e4c709e9807bf3a08a15fb60828cdf2a5b79cc4bcc8a780b9056f9c5e6007ae6"
+      ],
+      "reason": "Card pins finalize/rollback semantics, never a memory mode; the external fixture with memory commits preserves it.",
+      "subject": "onboarding:mcp/tests/test_lifecycle_finalize.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-FCCRW0",
+      "items": [
+        "sha256:e1d5d42d2503244b6d236762d29aa32982c6f2e8443c8d52ded14bfdd9553283"
+      ],
+      "reason": "No card; generated byte-copy of canonical skills/c-09-git-worktree-manager/SKILL.md (cmp identical), whose card carries the contract.",
+      "subject": "onboarding:.pi/skills/c-09-git-worktree-manager/SKILL.md"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-FFNHTA",
+      "items": [
+        "sha256:1dc7cbf306702ca438ecf27d5afbd0a6e9a3f94216f6d2abc5dc8a5980f8942c"
+      ],
+      "reason": "Candidate mcp/src/agents_remember/worktrees/modules/integrate.py:1078-1083: mechanical call-site follow threading the refusal through the existing construct; carries no invariant of its own.",
+      "subject": "hunk:sha256:1dc7cbf306702ca438ecf27d5afbd0a6e9a3f94216f6d2abc5dc8a5980f8942c"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-FKAMHG",
+      "items": [
+        "sha256:14c7ed3c02b799c1357cbe82796e41cbced56b638231f3bd0c7dbbe4c8d831b9"
+      ],
+      "reason": "Candidate mcp/src/agents_remember/worktrees/modules/integrate.py:1096-1096: mechanical call-site follow threading the refusal through the existing construct; carries no invariant of its own.",
+      "subject": "hunk:sha256:14c7ed3c02b799c1357cbe82796e41cbced56b638231f3bd0c7dbbe4c8d831b9"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-FKVHV8",
+      "items": [
+        "sha256:e22d3fcf2a83942b3c097a325c2ca2cbfc66cf152b94225a96e8b3c685356c3c"
+      ],
+      "reason": "Candidate mcp/src/agents_remember/worktrees/direct_landing.py:441-442: mechanical call-site follow threading the refusal through the existing construct; carries no invariant of its own.",
+      "subject": "hunk:sha256:e22d3fcf2a83942b3c097a325c2ca2cbfc66cf152b94225a96e8b3c685356c3c"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-FNH2YC",
+      "items": [
+        "sha256:254047079365a61b5a686364ad65533af688d35da7cd1ea2a99ffe996c349904"
+      ],
+      "reason": "No card; generated byte-copy of canonical skills/c-09-git-worktree-manager/SKILL.md (cmp identical), whose card carries the contract.",
+      "subject": "onboarding:.cursor/skills/c-09-git-worktree-manager/SKILL.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-FZ66ZB",
+      "items": [
+        "sha256:3ebc5b536574ea0b63764b5052dfa9f0a3e5974c0e37c034f6d6f32ec5592c9d",
+        "sha256:56b8d0e8086a2c8c0209b84dbfc5602342b079a24ea4786e174aed3bb5aec860",
+        "sha256:8cc3bd1d0be36c3fddfd5d5a84b608055fb72d8641c7d88a3b9884c0ca8a5a5d",
+        "sha256:bb4f4077e9fd1c52be0ee6dc6f5fb3086dc79714d1e1b1cd828452a2260652b1"
+      ],
+      "reason": "Card describes a helper-only module with no collected tests and cites only the helper name; the _contract external default with memory fields preserves that.",
+      "subject": "onboarding:mcp/tests/test_wire_vocabulary_exhaustiveness.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-G49JFP",
+      "items": [
+        "sha256:a88fea431dbca1e567e476c86c1b2fb637754678d3432110436e09c1c507d033"
+      ],
+      "reason": "Candidate mcp/src/agents_remember/worktrees/modules/integrate.py:709-711: mechanical call-site follow threading the refusal through the existing construct; carries no invariant of its own.",
+      "subject": "hunk:sha256:a88fea431dbca1e567e476c86c1b2fb637754678d3432110436e09c1c507d033"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-G4MQEY",
+      "items": [
+        "sha256:3bda314c82165d871a031fca0e696ce26947828cc3bd27e2ec0949f8d80a8e1b"
+      ],
+      "reason": "Diff widens the sides condition from mode label to repository topology; the card describes surface policy without stating the old mode-label condition.",
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-G7H2N7",
+      "items": [
+        "sha256:d75f5407213b33b3674e07c33848cb048ee3dfef14c52421c7a31fd0051f6c35"
+      ],
+      "reason": "The closeout-models route still types the closeout input; one changed file narrows a cell in place.",
+      "subject": "onboarding:mcp/src/agents_remember/models/closeout/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-GA9GQ1",
+      "items": [
+        "sha256:e2bff4194ed906a81afa79c9541a4841590b5ff73e778211549464d15590fb5f"
+      ],
+      "reason": "Diff widens teardown/branch deletion to carried memory legs regardless of mode; the card states no mode condition on those steps and its ledger-disposability claim still holds.",
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/modules/abandon.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-GEH70F",
+      "items": [
+        "sha256:61ebcbd99131b416fdae9ea9dc5dd34e00b0935d11a0579af306e4fefecab285"
+      ],
+      "reason": "Diff adds MemoryOptOutFacts/MemoryOptOutRefusedError; the card surveys pre-existing families without claiming exhaustiveness and describes none falsely (it never covered memory-mode errors).",
+      "subject": "onboarding:mcp/src/agents_remember/errors.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-GFST47",
+      "items": [
+        "sha256:addbafa292920b5a30310a0f4a43dd9aa8427f1b22afd352c934519d40f43a7d"
+      ],
+      "reason": "Candidate mcp/src/agents_remember/worktrees/modules/integrate.py:604-613: mechanical call-site follow threading the refusal through the existing construct; carries no invariant of its own.",
+      "subject": "hunk:sha256:addbafa292920b5a30310a0f4a43dd9aa8427f1b22afd352c934519d40f43a7d"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-GM4R6Y",
+      "items": [
+        "sha256:40a44fe8a84808b8a5f272911869dabd95e513b54f40ea9f2023c21dea2ee9fb"
+      ],
+      "reason": "Diff only threads the operation kwarg through the _blocked helper and its two routes; no pinned behavior changes.",
+      "subject": "onboarding:mcp/tests/test_knowledge_cutover.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-GR1BV1",
+      "items": [
+        "sha256:4b1b59e04048239acc6693b756f8241916c06d192855c81255b3c1c7bbff9e32"
+      ],
+      "reason": "The integration-lifecycle route still gates operations; one changed file adds a refusal inside it.",
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/integration/lifecycle/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-GR555C",
+      "items": [
+        "sha256:d399b499e6d6eba6ed21e04c8960c461463d74ee2df4b6db7851a852a53b6437"
+      ],
+      "reason": "No card; generated byte-copy of canonical skills/c-12-closeout/SKILL.md (cmp identical), whose card carries the contract.",
+      "subject": "onboarding:.openclaw/workspace/skills/c-12-closeout/SKILL.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-H5YSEW",
+      "items": [
+        "sha256:442f1223809f1a8f1eb7d8e885b9e76202f434c197b43bc1ed228ad3b3d6ce55"
+      ],
+      "reason": "The harness route still builds disposable topologies for replication; the fixture now runs external memory, which the card states.",
+      "subject": "onboarding:scripts/e2e_harness/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-H7A3MF",
+      "items": [
+        "sha256:b00074b3b6b524e90971dafb2fef00f5a85c66abfe81b023eedd3e62b2641d84"
+      ],
+      "reason": "The serving-test card still proves open-landing behavior; converted cases keep the same subjects with external legs.",
+      "subject": "onboarding:mcp/tests/test_serving.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-HHJE3R",
+      "items": [
+        "sha256:32420cd58c248caf0bf5f2edff97477fdb56dc4e52988ee66d05246e1fdfcff5",
+        "sha256:4687c84aa82af2cd9fe75bfdd5f563b94fd4e4243c1c05abc2b0486482219407",
+        "sha256:5fbbf377735b110e17b18cd135d54e1fa38f01cba84a4ffeae9e94f747969624",
+        "sha256:6b585998aef4e8906ccc90c0cddbd16cd827e83b54739078eaa0da2e8ed1697c",
+        "sha256:7246d8ecf05fdabcc0e57b1424b9427f37ca1b1e0f72bfc1c4ea771d2e3710a1",
+        "sha256:8a01961bbfb1eecc5c37d679c40b95f047a8c7e9af173638c819e368535c140d",
+        "sha256:9d227002f2a51254e2520f9a1628af8e74b4bc3d8987ffde4dc30bac8f9e4f33",
+        "sha256:c4e8ee502ea59f055906731bffcce4708b7eeeaa60ef9ffb51ca72807ea86bf1",
+        "sha256:cd395800467dc0a950c7822ec130352c0ba4d156c8ffad15e2f2eb41b9f1d570"
+      ],
+      "reason": "Card pins review identity and aggregate membership, never the fixture memory mode; the external conversion with added memory plans leaves it intact.",
+      "subject": "onboarding:mcp/tests/test_atomic_master_review_identity.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-J8D81B",
+      "items": [
+        "sha256:646507098428d72f60d8805c9fe5a32f17ac52939d25d2f18c0e892ec630256b",
+        "sha256:9cd5956495a11036e0204298d225b070d92a27113ffb68ed91aee24babd7a8fa",
+        "sha256:d9888e8214f9d0b283fffa9b5692018276a762e57199ca00e9b7cc98dccd7b4c",
+        "sha256:e54802585f5b92dfeb39b0a36d191823b591c4bc722a99e20889c5a51d850cef"
+      ],
+      "reason": "Checked both memory-leg blocks (interrupted-reset memory advance :359-368; live re-address code-advance plus memory re-cut :437-457): they extend the arrivals the card describes, and the re-cut recreates a retired branch so the never-move-a-live-ref rule survives.",
+      "subject": "onboarding:mcp/tests/test_task_reopen.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-JA5EAC",
+      "items": [
+        "sha256:8bba366fd9281c5be5f66fa484ec26d4515da344115627a49290c3410ef3314f",
+        "sha256:9748ae960747d5e466ba93d15fdc0ee256107ed625e71e12fde0f552636dcff9",
+        "sha256:d374d2880f8d3190898cb8d0a521e519a973ba16735c155bfc4be32b9daa4974"
+      ],
+      "reason": "Diff makes a missing memory root imply external; the card's admission-edge prose never stated the old None-to-disabled derivation.",
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-JF4HMM",
+      "items": [
+        "sha256:62e2c9857ac38c77891ecec28b1f7f8cbb2513cf83a0d80c4708314c57ac398f",
+        "sha256:a7f991a5464189cfb91cb407913f199748efd6bf9f9e9940cb4a910993b5d267",
+        "sha256:e36dd188be83917eb0f6356220a1bdd08a92b6bd71ee739086c638127095e1aa"
+      ],
+      "reason": "Card pins contract-scoped activation and the two surviving refusals; the fixture now always provisioning a memory repo contradicts nothing in it.",
+      "subject": "onboarding:mcp/tests/test_atomic_series_activation.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-JGA5SV",
+      "items": [
+        "sha256:6a68bc5d59e8a8af4f99e449a58fae6357e496324dfd17dbb3c7a707ccccaaa9",
+        "sha256:a52fb1e7c3c2028e74f8bb56428a068610ecf3af68acc32c641f251db2df1987",
+        "sha256:f300991e9bb0ab8a541d5cee5a909d729f9bc217fe5f1d54d1c65506e3ab2f56"
+      ],
+      "reason": "Diff adds an entry opt-out guard; the stub card claims only series-membership handling, nothing false.",
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/reopen_series.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-JGEZH7",
+      "items": [
+        "sha256:19717b7b6c501ead5da0ffac802335f8361a1ff0df38d86575e53876c9c3eebf",
+        "sha256:1b77ecece45ff58974d083790d235f61e74e0d895528f71c90736cde20894afd",
+        "sha256:1fe970ca7d92bf881568b965be739d1a8d9a3f6549d15da20485482e35b443a2",
+        "sha256:2daa586c4d4beaf030b0f25dac215abc963a41872e88dc855ccf2a30aadd19c2",
+        "sha256:6abe6b55a87c473bb607941ea66f265e9e6d9130879bce8d26fe8e393d3b4992",
+        "sha256:958ae467f5d6509ae38e72810c9d3829856ec1282fced68078426bcd852101a9",
+        "sha256:ac239b4647f454beddbc4e85e5841d9778f8a55aa1742fa12c258b1e49b0498e",
+        "sha256:c71c49299adfb8a634fcb242b3a5ef9dacb8f4ac8a457066bfe37e44be098b7d",
+        "sha256:d6aff19a55cf16c4c5ba3550a15f041f4c1f2b8e53a39a0b6ff5008322a9e1c8"
+      ],
+      "reason": "Card already describes external-memory worlds; the default flip, work_branch parameter and leaf memory plan preserve that account.",
+      "subject": "onboarding:mcp/tests/task_reopen_test_support.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-JVXK1Y",
+      "items": [
+        "sha256:246120aef52b4d60e465d41472d7516c06a13d081a1dba027b6f31c36a8c1e8e",
+        "sha256:2f42f8e2b8fc273166cd2c5c000ac4604a0ea658e3977ce9c4d99ee14bf07be4",
+        "sha256:5658d3b8e6843bb9d11901c93b8629e7759bf6988ed454354119a53c876061d3",
+        "sha256:604662c10000f76783fa004fe4933c45a152758a358c41a6fafbf36f8390f3a8",
+        "sha256:76bbe2e75498d055f91f707a8d67ce58d549e2557d6ab31b6604866a2bfd890a",
+        "sha256:85381f9d7377e19077897cc48e4437cda5f81bdbee070aab649291b583a9f9a1",
+        "sha256:dfa10067e01cc101140f47748519bf71855093ddd874b1f8dfb228c5fe58fe1d",
+        "sha256:ebe50c9bb2b263636d6122ae951a44fefa167d6533e63ebc28f5027121690553"
+      ],
+      "reason": "_external_memory_leaf survives at :162 and the cache-independence account holds; folding the external override into the default fixture changes no pinned behavior.",
+      "subject": "onboarding:mcp/tests/test_post_integration_cleanup_guidance.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-K5PPH0",
+      "items": [
+        "sha256:313a7acb26c87108e25d37ca8f33335580992d77be91c0754dd8de1385ca00b5",
+        "sha256:e1cd941d9c62620a2ecc62520790bf29ebdbefb2da6f36cd6d49103bd37d95cc"
+      ],
+      "reason": "Diff rewrites one skill sentence about disabled contracts; the card never contained that sentence and its closeout-sequencing claims still hold.",
+      "subject": "onboarding:mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-K6640Q",
+      "items": [
+        "sha256:5e16f74cf69aa603abb60c4ecdccb46726809ceef7c20241af1683bb332f27ae"
+      ],
+      "reason": "Candidate mcp/src/agents_remember/worktrees/modules/integrate.py:488-493: mechanical call-site follow threading the refusal through the existing construct; carries no invariant of its own.",
+      "subject": "hunk:sha256:5e16f74cf69aa603abb60c4ecdccb46726809ceef7c20241af1683bb332f27ae"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-KEHC9S",
+      "items": [
+        "sha256:6d2b1b8a5f8a6706712935d3b2d86d196494c6bcb274c62b0b9fa52955893285"
+      ],
+      "reason": "Diff only threads operation=\"worktree_integrate\" through one gate-block call; the card's gate behavior account is untouched.",
+      "subject": "onboarding:mcp/tests/test_knowledge_closeout_gate.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-KQBCMC",
+      "items": [
+        "sha256:3ae283d4519d9f041f64b35b3bd94ee9b39a4430a81fb6e5bbc38a708f247478",
+        "sha256:48683500300039c87efd8fb4e5941a0259fd28b8b2fdc6b2e506ea3c66c4a33e",
+        "sha256:4c92c096532f467d681877b7fbef2ca229c949845aa10bcfe7d2d57ca7ea1b47",
+        "sha256:72824b9e0ca7f1e331dbc92ad6e386aa38bc6bdbc86113cd5f5bdd28ab738aa1",
+        "sha256:7a6e8d781e726c2fb0543ca0b11755f4a1e540276a5a6c37dc8ea588bbc138e0",
+        "sha256:91672a5b6e05bd56d6891b578b1cdc59484cbb7d2ada602a36701624aa69f24c",
+        "sha256:96fb2f4a58e36eb11ff61ef04c33aa34ab4325a87f05bf1412897feb75ffb8a9",
+        "sha256:99ce8af5542b4cf1035965ae159dc076bde5236e148afd98b71b95f3d817c612",
+        "sha256:c38e778830c2cbeebb547eafbffe29edb40b0c17b01b4918e47e66c1f20e4e9e",
+        "sha256:c76023ba37bc7d5c266ffc938708f9fea3d6d195ca5a0d5c878794fc2500c344",
+        "sha256:c7ae12adde653e32655716daeccafb16b157ce532c1a3d4a1484028952addb86",
+        "sha256:c80a240bc31e56d88990c36cc8c3e005da5fa489f702849e331440ab51983d29",
+        "sha256:f979a764a08434bdfac6da97aadcd83082c2735c22121a9612d1d22d93834365"
+      ],
+      "reason": "Card pins transitive lineage over real repos without describing the fixture flag; the always-external fixture with its MIK-R50 assert preserves that account.",
+      "subject": "onboarding:mcp/tests/test_source_lineage.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-KV69KE",
+      "items": [
+        "sha256:e0d014b7621ce429d4b7787dee5f13c8b81a00e1c675f15d1b1cddb994e54672"
+      ],
+      "reason": "Candidate mcp/src/agents_remember/worktrees/modules/closeout.py:20-27: mechanical call-site follow threading the refusal through the existing construct; carries no invariant of its own.",
+      "subject": "hunk:sha256:e0d014b7621ce429d4b7787dee5f13c8b81a00e1c675f15d1b1cddb994e54672"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "08a51034a37a718aa2f0e3f8820c4eea81d8fbe6",
+            "content": "sha256:e2d664ead7347bc85902d16581520ec6335c4aa163a0782d8b12a3f15a0d93e3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_public_partial_bootstrap_preview_is_read_only_then_apply_recovers_same_journal"
+            },
+            "path": "mcp/tests/test_worktree_start_preview.py"
+          },
+          "before": {
+            "blob": "6d337de6102ec305fcdaada91e7f75ec55114e7f",
+            "content": "sha256:2f3d007314e058275946a3f5fb8c4d451bbe5fb09ee13371941842886993b1fa",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_public_partial_bootstrap_preview_is_read_only_then_apply_recovers_same_journal"
+            },
+            "path": "mcp/tests/test_worktree_start_preview.py"
+          },
+          "id": "PRF-GC3WXC"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-M4Y7MV",
+      "items": [
+        "sha256:d9d5dbbb36f727a1e2188ae28eb0687a893f39a49db56b939eb0777067c7efcb"
+      ],
+      "reason": "Partial-preview record stands: the touched proof re-anchors at C with its facet; the memory-preparation realization is untouched.",
+      "revision": 1,
+      "subject": "INV-THS1XT"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "06ba4d9e9b4494e5332b40c2577f642da6fe649c",
+            "content": "sha256:feadb248ea07cb0dab430491e5f6045615d0cafbe5e5f21dff27c690cac71fea",
+            "locator": {
+              "kind": "symbol",
+              "name": "cleanup_result"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/cleanup.py"
+          },
+          "before": {
+            "blob": "6c144ebeaa236e2459b5aa2ff32fa15789eb6eb4",
+            "content": "sha256:8b22e4c1d88ed51d3e2763f6a1ec838a77ed6c30b1b6a976235bd6ed9c9686d4",
+            "locator": {
+              "kind": "symbol",
+              "name": "cleanup_result"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/cleanup.py"
+          },
+          "id": "RLZ-15KPEC"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-M5Z08P",
+      "items": [
+        "sha256:281da3e74ee83e3720a61567b4c057e2c7bc693400a52c5e995145016d63af6c"
+      ],
+      "reason": "Cleanup record stands: the touched cleanup-result entry re-anchors at C; its added non-external refusal is governed by the new L50 lifecycle invariant.",
+      "revision": 1,
+      "subject": "INV-ZJ9JXS"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-M8AQYJ",
+      "items": [
+        "sha256:e74fa161aa31e2a27a726a1dd4ac9acb92e09458fce4dc20d7757fa68ed9d16d"
+      ],
+      "reason": "Candidate mcp/src/agents_remember/worktrees/modules/closeout.py:753-753 inside _memory_ledger_repair, governed by INV-95NQR7; this hunk carries no separate invariant.",
+      "subject": "hunk:sha256:e74fa161aa31e2a27a726a1dd4ac9acb92e09458fce4dc20d7757fa68ed9d16d"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-MJR0MX",
+      "items": [
+        "sha256:3e6d2a13d5127772d1e91eaabf50bda3a723a11d05b6ec414a903f89ad8f95b3"
+      ],
+      "reason": "Candidate lines [181, 2]: Lane-catalog rows registering the new opt-out test modules; bookkeeping over suites that prove the invariants elsewhere, carrying no new obligation.",
+      "subject": "hunk:sha256:3e6d2a13d5127772d1e91eaabf50bda3a723a11d05b6ec414a903f89ad8f95b3"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-MSVK1A",
+      "items": [
+        "sha256:556401dca87acbf8243344b00442fe990958e42c32559afa6609e2734a3ac029"
+      ],
+      "reason": "No card; generated byte-copy of canonical skills/c-12-closeout/SKILL.md (cmp identical), whose card carries the contract.",
+      "subject": "onboarding:.claude/skills/c-12-closeout/SKILL.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-MTD32C",
+      "items": [
+        "sha256:c08218a22288148c66cf600b0f1dddddd285903f8c5f508cb54278e1e6b53501"
+      ],
+      "reason": "No card; generated byte-copy of canonical skills/c-09-git-worktree-manager/SKILL.md (cmp identical), whose card carries the contract.",
+      "subject": "onboarding:.codex/skills/c-09-git-worktree-manager/SKILL.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-MYC7XN",
+      "items": [
+        "sha256:1216622d0fdb0320da6fbfa57abe74bf5cd1f3d9c69efd02c192d0893be2660b",
+        "sha256:14309d3a30c37973a3bfbed6c67120aaa5303941f407b49c81e9457fd07cfd64",
+        "sha256:32b4f5767dc19177b238f027b89fef4ed95dbb369363f15548f9380a2a6c8341",
+        "sha256:4152d35b43bef0f973177079e6d03f60d749990d93925b5d49791ad53fa589c1",
+        "sha256:7a81c3f02ee534a3d51daffa4433086f37e7975e0c6767f8d04780738fd2d81f",
+        "sha256:83c5822134dc80034fc4a0e75c193ddb59a6e1fda8c7c1ad3ffd69a6fde48f6b",
+        "sha256:a0ac12ea82335a78dbcd0c834e303b906348fda202531a68928c27ffef7b8dc2",
+        "sha256:b0682ad7d6ffc132e710c7f07d9bdbfaf6d373b67dd7674ee0e33a12f0bb9fc0",
+        "sha256:dea2a67891ce5af0d364a85867f48d9881a83d6e2fd9e28a72e7fe1e29860997",
+        "sha256:f685a4a0afd6d4dcef5970d9dee5ba517349c6a158357134cd9371f1678e3950"
+      ],
+      "reason": "Card already describes the fixture as external-memory (real content commit with Code-Commit attribution); the diff only deletes the dead disabled branch, so the purpose account survives.",
+      "subject": "onboarding:mcp/tests/integration_branch_authority_test_support.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-NGFBAD",
+      "items": [
+        "sha256:d435eee960635c4e075c4d525117eee5af4bcef34a4072d7e3dd13d5c8be2af4"
+      ],
+      "reason": "No card; generated byte-copy of canonical skills/c-09-git-worktree-manager/SKILL.md (cmp identical), whose card carries the contract.",
+      "subject": "onboarding:.claude/skills/c-09-git-worktree-manager/SKILL.md"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-NGG8SX",
+      "items": [
+        "sha256:b108243d31c13fa5e51904448cc9ff051b8c4bad474566729fbb4641c46237c8"
+      ],
+      "reason": "Candidate mcp/src/agents_remember/worktrees/modules/start.py:59-62: mechanical call-site follow threading the refusal through the existing construct; carries no invariant of its own.",
+      "subject": "hunk:sha256:b108243d31c13fa5e51904448cc9ff051b8c4bad474566729fbb4641c46237c8"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-NMPYWF",
+      "items": [
+        "sha256:26883c484cbbdc4efd39d19fce0c12c4df2b7900589fbd94690e458761084df4"
+      ],
+      "reason": "Diff makes the gate verdict refuse non-external contracts; the card's NOT_APPLICABLE conditions for unconverted/series legs still hold and it claims nothing about disabled.",
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-NXH5MZ",
+      "items": [
+        "sha256:2365d35c40d454c7ebcba73cea43ae045cc31bfe19059d3a44dc031ab9852e20",
+        "sha256:512f41b1a3b14dcb6712b5461709b91e45dd7e18116660f1c9235f44f694fd64",
+        "sha256:62616bb3ff9d700d6a1d8d0b3602d416fff09a86aa32986fb825c7f5c7d3402c",
+        "sha256:84973c1d98c09e30712bfae2e22eb2df87d14aa63a3c02b390bfde59b2221b10",
+        "sha256:9ada1faccb9bb72d961b8bee37397aeb3cecc0ea41a7292b3fe1942aebc5e591",
+        "sha256:b8a2a36a6e89143fbaab9cf1284a421b5b40c1f8681b811b1e770d208b4f2359",
+        "sha256:e9ab956f5c380f9ade0342da213bed37398b7d79748a426ddd34e90497081641"
+      ],
+      "reason": "Card is net-comparison evidence over nine cases; the added memory legs on leaf contracts leave that account intact.",
+      "subject": "onboarding:mcp/tests/test_master_net_generation.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-P53CXX",
+      "items": [
+        "sha256:ef4e175d3eaeff85c7fa8e5eb6b3fa37ea677d2272bb691174b420464fdf98fa"
+      ],
+      "reason": "Candidate mcp/src/agents_remember/worktrees/modules/startup/start_memory.py:10-13: mechanical call-site follow threading the refusal through the existing construct; carries no invariant of its own.",
+      "subject": "hunk:sha256:ef4e175d3eaeff85c7fa8e5eb6b3fa37ea677d2272bb691174b420464fdf98fa"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-PBEK18",
+      "items": [
+        "sha256:11d5f7b51327516ec8a75a1d76659a1770239f96adf25e6c60adb72d4d66ec26",
+        "sha256:17e63756e5465cb9ef173c6d9e4275dde0ebf547ccb73ae8c34c5a916d777048",
+        "sha256:4b1532820f9e9c7155440e58ebd55ab3b9aafa4a549214bad317f653bd0b2288",
+        "sha256:545272534e9f4bf96d99b303b5ec2c774e610b0af6182f5ecc63e4f5804e7866",
+        "sha256:579ad28157a2ff08d97dec23337c9e51340610bb3a80a0f24b8740209d802931",
+        "sha256:6fb76e7ea1f3625a32ac80490d1f2c137e74f10233ba7ff30b413560053bec98",
+        "sha256:77680952ea8f96a728b4294f7d1827ba7df10337daafdd0b03647f32c7f233ff",
+        "sha256:788ba37342cc2176c052085dfd5c64bb8ecc505d8b17c9c040035e9440d1c25c",
+        "sha256:a161666fe3e32c9c12b8641e051c58e50652b4e40cae69a034350facf77595b5",
+        "sha256:aeeaad9d2171772e35c76e476449f28df873fdcc251abc7aa0e049f8bc388995",
+        "sha256:bf6a3b53b4466ae8f687166e4388b77e93f74b0e9fb3efe9bc216e38f03c9f6f",
+        "sha256:debc77191482d734276a1cca641c4efd8e19cf48732b5df8e080310e92898033",
+        "sha256:e9945e685c6f8b3785995b764059e47377da5214c150fad65f5893426f9f279c"
+      ],
+      "reason": "Checked the L50 diff (opt-out refusal, allow_disabled_memory flag, operation labels) against the card: the card describes boundary ownership and strict-by-default admission without enumerating refusal reasons or signatures, so none of its claims is false.",
+      "subject": "onboarding:mcp/src/agents_remember/application/lifecycle/configured_contract_admission.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-PJ8ARX",
+      "items": [
+        "sha256:de8e49374525e081235bcab69a0bacec6e1c953e2c7444f7fe29c6729080c8c0"
+      ],
+      "reason": "Candidate mcp/src/agents_remember/worktrees/modules/start.py:28-28: import follow for the new disabled_memory classifiers; carries no invariant of its own.",
+      "subject": "hunk:sha256:de8e49374525e081235bcab69a0bacec6e1c953e2c7444f7fe29c6729080c8c0"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-Q5RJJ6",
+      "items": [
+        "sha256:e1372a249152c56b3ade17dd5e90164538c83fda2fd477c3e7966777af8ffd34"
+      ],
+      "reason": "The models route still types packets, contracts and worktrees; three changed files narrow vocabulary cells in place.",
+      "subject": "onboarding:mcp/src/agents_remember/models/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-QEK630",
+      "items": [
+        "sha256:9107495822edc9d677196427475e07863b38b74fe7c6888d9639e3399acba9ef"
+      ],
+      "reason": "The skill route still owns worktree lifecycle guidance; the canonical text restates the removal, which the card states.",
+      "subject": "onboarding:skills/c-09-git-worktree-manager/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-QHDVTK",
+      "items": [
+        "sha256:b4838f14522f94e3feaa61b8647be7aee9fd0cebe8b13f324ff8ccb7b705f892"
+      ],
+      "reason": "Candidate mcp/src/agents_remember/worktrees/modules/integrate.py:258-262: mechanical call-site follow threading the refusal through the existing construct; carries no invariant of its own.",
+      "subject": "hunk:sha256:b4838f14522f94e3feaa61b8647be7aee9fd0cebe8b13f324ff8ccb7b705f892"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-QJQDRA",
+      "items": [
+        "sha256:6da2b0744edf8ea3006f781daf861f40e1f274e67dea30f3e720090ff81fb9af"
+      ],
+      "reason": "Candidate mcp/src/agents_remember/worktrees/modules/startup/start_memory.py:28-28 inside _memory_source_state, governed by INV-WKM7SS; this hunk carries no separate invariant.",
+      "subject": "hunk:sha256:6da2b0744edf8ea3006f781daf861f40e1f274e67dea30f3e720090ff81fb9af"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "08a51034a37a718aa2f0e3f8820c4eea81d8fbe6",
+            "content": "sha256:0119668617f127c0acddfc455175c42d15aad8f918a8bd79438c308d2902f9fa",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_registered_first_leaf_preview_is_repeatable_without_publication"
+            },
+            "path": "mcp/tests/test_worktree_start_preview.py"
+          },
+          "before": {
+            "blob": "6d337de6102ec305fcdaada91e7f75ec55114e7f",
+            "content": "sha256:8bf9242e6800792d02e9cbc6c99dc8170bcb0b0f53d24b883f0ed4e9f0872b7f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_registered_first_leaf_preview_is_repeatable_without_publication"
+            },
+            "path": "mcp/tests/test_worktree_start_preview.py"
+          },
+          "id": "PRF-2W13PT"
+        },
+        {
+          "after": {
+            "blob": "08a51034a37a718aa2f0e3f8820c4eea81d8fbe6",
+            "content": "sha256:509f467db5290051ffe52d80caf7441d866091582a94bc401d5f1463d0608144",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_public_apply_re_resolves_source_and_persisted_parent_preview_stays_read_only"
+            },
+            "path": "mcp/tests/test_worktree_start_preview.py"
+          },
+          "before": {
+            "blob": "6d337de6102ec305fcdaada91e7f75ec55114e7f",
+            "content": "sha256:7f5ff150e2daa4698ed59bd7dbce99eb8444beba0cb2345c24ca19945185c417",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_public_apply_re_resolves_source_and_persisted_parent_preview_stays_read_only"
+            },
+            "path": "mcp/tests/test_worktree_start_preview.py"
+          },
+          "id": "PRF-31JXQC"
+        },
+        {
+          "after": {
+            "blob": "08a51034a37a718aa2f0e3f8820c4eea81d8fbe6",
+            "content": "sha256:0e6779cb02e2cc2a4043379b8a2fbd09b73886f8e44a1affd4795f0e3a8ac3f2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_foreign_or_unreadable_persisted_parent_after_preview_is_never_replaced"
+            },
+            "path": "mcp/tests/test_worktree_start_preview.py"
+          },
+          "before": {
+            "blob": "6d337de6102ec305fcdaada91e7f75ec55114e7f",
+            "content": "sha256:bac75766acaf872be86fc871b758b8f2b89307692035cae88fafaf123144f8e9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_foreign_or_unreadable_persisted_parent_after_preview_is_never_replaced"
+            },
+            "path": "mcp/tests/test_worktree_start_preview.py"
+          },
+          "id": "PRF-63NF6V"
+        },
+        {
+          "after": {
+            "blob": "08a51034a37a718aa2f0e3f8820c4eea81d8fbe6",
+            "content": "sha256:f047e65fa75933efb644d29ce6856fff00c6e69f504c86c1d92621f4374766e1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_preview_handoff_is_failure_sensitive_and_cannot_supply_durable_authority"
+            },
+            "path": "mcp/tests/test_worktree_start_preview.py"
+          },
+          "before": {
+            "blob": "6d337de6102ec305fcdaada91e7f75ec55114e7f",
+            "content": "sha256:e4cc6ad9f9c2ac953d9987979e8e2cbfcf206d78b43784929126c4cc043c0ad5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_preview_handoff_is_failure_sensitive_and_cannot_supply_durable_authority"
+            },
+            "path": "mcp/tests/test_worktree_start_preview.py"
+          },
+          "id": "PRF-AKPX5R"
+        },
+        {
+          "after": {
+            "blob": "4517ff389e5f8ac26676f8b517c15fd5cbc9f94f",
+            "content": "sha256:b4d904af9292974d1ec56bbae104b4aaf973cfe81c3f06951c6ab4bfd9c9d155",
+            "locator": {
+              "kind": "symbol",
+              "name": "_plan_start_enclosure"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/start.py"
+          },
+          "before": {
+            "blob": "606ca83f6bd415c83707e7752e22f91d7e495115",
+            "content": "sha256:0ea7a8b0282f396b27d0055c00d4d798d4f0d1ce41aa374131fecbff43c2d225",
+            "locator": {
+              "kind": "symbol",
+              "name": "_plan_start_enclosure"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/start.py"
+          },
+          "id": "RLZ-HS8RJP"
+        },
+        {
+          "after": {
+            "blob": "a5a5d52ff4fc8f4f9e0039688dab818a164a7b84",
+            "content": "sha256:9b21cb4c6dcc7ab9142cd40c862fafc4e842d2bb6eedf54c11faf6a9115f2b00",
+            "locator": {
+              "kind": "symbol",
+              "name": "_build_start_contract"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/startup/start_contract.py"
+          },
+          "before": {
+            "blob": "360f0c93207f994a849e34d583f562602effa5a8",
+            "content": "sha256:504da8dc317c5886905be21149c3bde6dc882a0e5321e2eed6ebf19a5c96d4b7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_build_start_contract"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/startup/start_contract.py"
+          },
+          "id": "RLZ-S6D64F"
+        },
+        {
+          "after": {
+            "blob": "4517ff389e5f8ac26676f8b517c15fd5cbc9f94f",
+            "content": "sha256:85b06a877328df7797297eb6fe45cd70602017caeca3cab20b6eff82cd70b230",
+            "locator": {
+              "kind": "symbol",
+              "name": "start_result"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/start.py"
+          },
+          "before": {
+            "blob": "606ca83f6bd415c83707e7752e22f91d7e495115",
+            "content": "sha256:fe44acba9b6f8848def241a8b84e9a8d203cda148a657760fe4fff98a69f80e2",
+            "locator": {
+              "kind": "symbol",
+              "name": "start_result"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/start.py"
+          },
+          "id": "RLZ-T7WGDA"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-QSAX6M",
+      "items": [
+        "sha256:48ed69226c798e922a5264c027a3c0421967737c22ca111e34948d82c3896303"
+      ],
+      "reason": "Start-preview record stands: touched plan/contract/result entries and preview proofs re-anchor at C; the added refusal and attach lines are governed by the new L50 start invariants.",
+      "revision": 1,
+      "subject": "INV-EX6T0F"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-QWHZCY",
+      "items": [
+        "sha256:dadff2616e6d66c14d938099852fdeb3ce60b1a7d580310a0af72cca5eb0b505"
+      ],
+      "reason": "No card; generated byte-copy of canonical skills/c-12-closeout/SKILL.md (cmp identical), whose card carries the contract.",
+      "subject": "onboarding:.agents/skills/c-12-closeout/SKILL.md"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-RY8H0E",
+      "items": [
+        "sha256:9ad63bc1a07a702c6bef6d7320292e592e3b4fe6c4a888ac4f28ff4a55b8beb5"
+      ],
+      "reason": "Candidate mcp/tests/test_knowledge_cutover.py:213-214: mechanical call-site follow threading the refusal through the existing construct; carries no invariant of its own.",
+      "subject": "hunk:sha256:9ad63bc1a07a702c6bef6d7320292e592e3b4fe6c4a888ac4f28ff4a55b8beb5"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-S2AZAW",
+      "items": [
+        "sha256:c3f553218be5842c183a0459db964dce7a81ed97170a2dabe5385c11fc9ee2d3"
+      ],
+      "reason": "Candidate mcp/src/agents_remember/worktrees/modules/start.py:21-21: import follow for the new disabled_memory classifiers; carries no invariant of its own.",
+      "subject": "hunk:sha256:c3f553218be5842c183a0459db964dce7a81ed97170a2dabe5385c11fc9ee2d3"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-S2F5ZN",
+      "items": [
+        "sha256:e019944b4abe5f6a6e7d611b72474e0e73779818ca5ee5facc0687340726b443"
+      ],
+      "reason": "No card; generated byte-copy of canonical skills/c-12-closeout/SKILL.md (cmp identical), whose card carries the contract.",
+      "subject": "onboarding:.pi/skills/c-12-closeout/SKILL.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-T12ZYF",
+      "items": [
+        "sha256:67d7fdbd89f0ff7f98b9c40ccad732f4d9f05e2da9e0344b3a7e2b240290b39e"
+      ],
+      "reason": "Diff only adds the operation kwarg to three gate-block calls; the card's route/refusal account survives.",
+      "subject": "onboarding:mcp/tests/test_knowledge_gate_routes.py"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-0T84PZ",
+          "revision": 1
+        },
+        {
+          "id": "INV-0XMNQZ",
+          "revision": 1
+        },
+        {
+          "id": "INV-2Q8RPR",
+          "revision": 1
+        },
+        {
+          "id": "INV-49E649",
+          "revision": 2
+        },
+        {
+          "id": "INV-656CYW",
+          "revision": 2
+        },
+        {
+          "id": "INV-89A5AN",
+          "revision": 1
+        },
+        {
+          "id": "INV-9ZBTVA",
+          "revision": 1
+        },
+        {
+          "id": "INV-ANKPPE",
+          "revision": 1
+        },
+        {
+          "id": "INV-BEYEV2",
+          "revision": 1
+        },
+        {
+          "id": "INV-D2HZQ8",
+          "revision": 1
+        },
+        {
+          "id": "INV-FYZQK0",
+          "revision": 1
+        },
+        {
+          "id": "INV-G0Y4VR",
+          "revision": 1
+        },
+        {
+          "id": "INV-GSEMMW",
+          "revision": 1
+        },
+        {
+          "id": "INV-HWAWFT",
+          "revision": 2
+        },
+        {
+          "id": "INV-KTMBMN",
+          "revision": 1
+        },
+        {
+          "id": "INV-MS9BMJ",
+          "revision": 3
+        },
+        {
+          "id": "INV-N5RBFK",
+          "revision": 1
+        },
+        {
+          "id": "INV-WV1YQE",
+          "revision": 1
+        },
+        {
+          "id": "INV-XN0FG8",
+          "revision": 2
+        },
+        {
+          "id": "INV-YZ45D7",
+          "revision": 1
+        },
+        {
+          "id": "INV-ZGFZXT",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-T7YYHQ",
+      "items": [
+        "sha256:a26e377f8a620dc5fd7f8741bdfd9723a06219c2ac6b6aa4eec1f2b33daa26d9"
+      ],
+      "reason": "Gated-publication guarantee stands: the leaf's added non-external refusals only extend the set of judged trees, and converted publication still goes through the validator and gate; all 21 members examined.",
+      "revision": 3,
+      "subject": "FAM-61DY2V"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-T8WC5E",
+      "items": [
+        "sha256:0a77d791a2a77dd1394073adefcd9b15882734fed0803a777e884caaaa76150b"
+      ],
+      "reason": "Diff adds preview/entry opt-out refusal; the card describes closeout transaction behavior without disabled-mode claims, all still true.",
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/modules/closeout.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "c2f561e516398d201b128eafd24be4666efab81a",
+            "content": "sha256:e4c6785adab27439221dd09a08086ce9fa8d02a6172c655fb5d8d4f620e9d72c",
+            "locator": {
+              "kind": "symbol",
+              "name": "BackgroundLandingTests.test_history_is_not_probed_and_open_landing_finishes_once_or_reopens"
+            },
+            "path": "mcp/tests/test_serving.py"
+          },
+          "before": {
+            "blob": "628a754da766ca4c107f492b25d586ed8d6ad679",
+            "content": "sha256:d556f620cf084e8a1bc659072eec4388690b8a201c33f606cae90c4c03059847",
+            "locator": {
+              "kind": "symbol",
+              "name": "BackgroundLandingTests.test_history_is_not_probed_and_open_landing_finishes_once_or_reopens"
+            },
+            "path": "mcp/tests/test_serving.py"
+          },
+          "id": "PRF-1XA4WX"
+        },
+        {
+          "after": {
+            "blob": "c2f561e516398d201b128eafd24be4666efab81a",
+            "content": "sha256:2eb4895dc0b51adcd0edd5f6ab5b38b642377c4c7bd73e3cef9287bc2cc77982",
+            "locator": {
+              "kind": "symbol",
+              "name": "BackgroundLandingTests.test_failed_finishing_probe_stays_missing_and_does_not_retry_history"
+            },
+            "path": "mcp/tests/test_serving.py"
+          },
+          "before": {
+            "blob": "628a754da766ca4c107f492b25d586ed8d6ad679",
+            "content": "sha256:a1e94b6b7f329d91877fce050b08a470e10c39254c4d87d3c011c9832ba15b23",
+            "locator": {
+              "kind": "symbol",
+              "name": "BackgroundLandingTests.test_failed_finishing_probe_stays_missing_and_does_not_retry_history"
+            },
+            "path": "mcp/tests/test_serving.py"
+          },
+          "id": "PRF-JEZARM"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-TZ60CD",
+      "items": [
+        "sha256:33a3dd5556264850195782563ee9f975fa61d6adb60f6e1b8b517b8b6ea45706"
+      ],
+      "reason": "Serving landing-state record stands: the two touched proofs re-anchor converted open-landing cases at C with the same facets; the landing-state realizations are untouched.",
+      "revision": 1,
+      "subject": "INV-D0551J"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "examined": [
+        {
+          "id": "INV-39FYQE",
+          "revision": 1
+        },
+        {
+          "id": "INV-6GBJC6",
+          "revision": 1
+        },
+        {
+          "id": "INV-8R2CRC",
+          "revision": 1
+        },
+        {
+          "id": "INV-95NQR7",
+          "revision": 1
+        },
+        {
+          "id": "INV-V3N6NW",
+          "revision": 1
+        },
+        {
+          "id": "INV-WKM7SS",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-V1A966",
+      "items": [],
+      "reason": "MEM-R1 F03: guarantee bounded to creating/landing/judging/closing routes; preserved reads, modeless live-leaf attach and the abandon-plus-restart escape named explicitly.",
+      "revision": 1,
+      "subject": "FAM-Q5J2ZC"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-VCN931",
+      "items": [
+        "sha256:c057eaa405db18d0683cd8d232407f5e535b7489e32f2451415873210ff27198"
+      ],
+      "reason": "Candidate mcp/src/agents_remember/worktrees/modules/integrate.py:974-974: mechanical call-site follow threading the refusal through the existing construct; carries no invariant of its own.",
+      "subject": "hunk:sha256:c057eaa405db18d0683cd8d232407f5e535b7489e32f2451415873210ff27198"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-AD1MRN",
+          "revision": 1
+        },
+        {
+          "id": "INV-D0551J",
+          "revision": 1
+        },
+        {
+          "id": "INV-GP90VQ",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-VH0W3T",
+      "items": [
+        "sha256:fed6c9d5cbf2d77ce8dced3e9d61bfff8a8505312540010b9b8215d34092b311"
+      ],
+      "reason": "Dashboard pacing guarantee stands: the leaf touches only fixture data and one test's expectations, no pacing or projection path; all 3 members examined.",
+      "revision": 1,
+      "subject": "FAM-CAG581"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-VKH4W6",
+      "items": [
+        "sha256:046ca45f43834f2e4ea1ec572753b374fc3683cf9a6efb4cc5ea2768a1e3e507"
+      ],
+      "reason": "The repository root overview still orients topology, harnesses and recovery; changed skill copies restate the same removal the canonical skill carries.",
+      "subject": "onboarding:overview"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-VN709W",
+      "items": [
+        "sha256:ab4c3efe770d4f39c9a9ece0c8ec7649b741cb2c77d26e9b7f7b038789ef4587",
+        "sha256:e8b70abffc7e0fe29d1d82363ec0fe6eecfaab496b279e17a230de3d1a330f22"
+      ],
+      "reason": "Diff is a single operation-label passthrough on the admission call; the card describes tool and recovery behavior, which is untouched.",
+      "subject": "onboarding:mcp/src/agents_remember/application/lifecycle/direct_landing.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-VQ6T16",
+      "items": [
+        "sha256:b8ea55d17a58ee567924f5a5a787af13035805436049e203dc121d87a1c50d9a"
+      ],
+      "reason": "Candidate mcp/src/agents_remember/worktrees/modules/startup/start_plan.py:11-11: import follow for the new disabled_memory classifiers; carries no invariant of its own.",
+      "subject": "hunk:sha256:b8ea55d17a58ee567924f5a5a787af13035805436049e203dc121d87a1c50d9a"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-W14JXK",
+      "items": [
+        "sha256:a60252bf4815497ac451c6de34add135bc71730e72f8867a959c1f2bc337cdbd"
+      ],
+      "reason": "No card; generated byte-copy of canonical skills/c-09-git-worktree-manager/SKILL.md (cmp identical), whose card carries the contract.",
+      "subject": "onboarding:.github-vscode/skills/c-09-git-worktree-manager/SKILL.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-W5GTYJ",
+      "items": [
+        "sha256:06fa94f3646ad7a78c858ae6d7397b7907054cb44864af08e448bf252b5370a9"
+      ],
+      "reason": "Diff adds an entry opt-out guard plus abandon-leg authority; the card's approval/integration admission claims still hold and it states no mode behavior.",
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/modules/cleanup.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-X2GNQ4",
+      "items": [
+        "sha256:891c206352bc2e911cd0aa12e12d536cb8a301508bb171bf75e4df79305fc84a"
+      ],
+      "reason": "Candidate mcp/src/agents_remember/worktrees/modules/start.py:557-557: mechanical call-site follow threading the refusal through the existing construct; carries no invariant of its own.",
+      "subject": "hunk:sha256:891c206352bc2e911cd0aa12e12d536cb8a301508bb171bf75e4df79305fc84a"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-XNJR73",
+      "items": [
+        "sha256:d29e89a9a63ed4fdc13d248e47feb3ffce3fec71c85c746371b58a89939cdddf"
+      ],
+      "reason": "Candidate lines [175, 3]: Skill prose restating the removal for operators; the obligation lives in the code realizes, no separate adjacent invariant.",
+      "subject": "hunk:sha256:d29e89a9a63ed4fdc13d248e47feb3ffce3fec71c85c746371b58a89939cdddf"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-XRF1KH",
+      "items": [
+        "sha256:e188e05f899f7987d681f9ca4e76b8256f19896cc79600298cee371882b1dcba"
+      ],
+      "reason": "No card; generated byte-copy of canonical skills/c-12-closeout/SKILL.md (cmp identical), whose card carries the contract.",
+      "subject": "onboarding:.github-vscode/skills/c-12-closeout/SKILL.md"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-YB5Z4X",
+      "items": [
+        "sha256:89e4d110071b35cd54174b7f2c2e05619f5f9a9f9c61a90bb9301c1419953e3b"
+      ],
+      "reason": "Candidate mcp/src/agents_remember/worktrees/modules/start.py:111-115: mechanical call-site follow threading the refusal through the existing construct; carries no invariant of its own.",
+      "subject": "hunk:sha256:89e4d110071b35cd54174b7f2c2e05619f5f9a9f9c61a90bb9301c1419953e3b"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-YBG8GN",
+      "items": [
+        "sha256:b3bf9c805d6d2bbd2708342232f912e5f54912572c3e31bc46dcd2e9c360f75c",
+        "sha256:e6e38d4cf6e09ac830a75cd4a435a31482d968878b821dc7b36ed0a429c160a6"
+      ],
+      "reason": "Diff changes help/metavar text only; the card describes subcommand and DTO structure without start memory-flag value claims.",
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/modules/cli.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-YJ3RM7",
+      "items": [
+        "sha256:226deacd26e2b1cc516927062e7d5ab3f02d494226d90f092ad164cc3292e9af",
+        "sha256:ee533be12e699f111a9288fc2259419d42ae7a1743a2ae5f41f2bda018903682"
+      ],
+      "reason": "Diff threads a mode flag so abandon preflight reaches carried legs; the card's preflight/blocker prose states no mode condition.",
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/modules/terminal_validation.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-YSMM6X",
+      "items": [
+        "sha256:d240b3014083c278cdd395fef045381d92385d003e24995b347c04e10774176e"
+      ],
+      "reason": "Candidate mcp/src/agents_remember/worktrees/modules/integrate.py:1100-1100: mechanical call-site follow threading the refusal through the existing construct; carries no invariant of its own.",
+      "subject": "hunk:sha256:d240b3014083c278cdd395fef045381d92385d003e24995b347c04e10774176e"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-YSTT3G",
+      "items": [
+        "sha256:08596c197e80d06a9cf66d13d5c8deb3420cdaafaf6d07b7eeaa7be1149cdeff",
+        "sha256:1aba6b2c00c1aaee57040a8239b027039f91afe038e13b44662987afe878de9e",
+        "sha256:6986ab101e420771a4c1c79314b954c08a982a60c3e35a685c7daee8c284dc55",
+        "sha256:9e58e6091980d1d8ae030c0f0727707900366e1efd9482fa1ac6fe5180af305c",
+        "sha256:b2202674490df8294d37c2ff0a8e8c83c5cba861f0ec951960df71ece1fd2a2f"
+      ],
+      "reason": "Card's R1/R2 enabled-pair and R4 git-ancestry account holds; the added memory leg in the R4 fixture extends rather than contradicts it.",
+      "subject": "onboarding:mcp/tests/test_closeout_kept_rules_pins.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-Z0XWYH",
+      "items": [
+        "sha256:44ba9d833339ddd783d443b0bdf35b6e8362d7ef3991ae2ed1ac961537463bcd",
+        "sha256:af2ccc6d817c3999f8b7194caf544400e42d2bbda599fa397f7953d6f6de267d",
+        "sha256:b979c314c046eadc7f0438d036fb43844364adbc2f08c215abc04e74c125e9f4"
+      ],
+      "reason": "Diff swaps the MemoryMode import for ReadableMemoryMode only; the card describes leg/plan semantics untouched by the rename.",
+      "subject": "onboarding:mcp/src/agents_remember/models/closeout/input.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-ZKMQG1",
+      "items": [
+        "sha256:25b864e7a975212c04a8c82186173c316bc627624308c004c00ead09df53cc63",
+        "sha256:433cbdeddb58849ded7c4ba8dd1aaefe3eeb8b6f0f258ee8fba7dd891ba8bba5",
+        "sha256:738f6761e443f5ecb2a6d967126f32abee4ed2c01242e514503e72f55ae59b09",
+        "sha256:cbe545e2f770514d7e7d06dc6bda0364fa9ed0d0c823c90cb6d1179ca1c655d1",
+        "sha256:e66bb95b4ce8c64c758d941a09d74d57a8771c3d3184c922cbe79602f0562df1"
+      ],
+      "reason": "Card names no memory mode; the flipped default and added memory plan preserve the small-builder purpose.",
+      "subject": "onboarding:mcp/tests/lifecycle_enclosure_test_support.py"
+    },
+    {
+      "because": [
+        "DEC-V3XQSF"
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "6cb58ec1f5c1b629874d4ceb251f1ef2180572f3",
+            "content": "sha256:2cb1848710412d65dcc21211ba4ff91f01f43fdf352d6cd15b05205933c0e3c3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_start_refuses_disabled_where_knowledge_exists"
+            },
+            "path": "mcp/tests/test_memory_opt_out_refused_start.py"
+          },
+          "before": "absent",
+          "id": "PRF-MG2H90"
+        },
+        {
+          "after": {
+            "blob": "b1cc35c9b446e484b65429c35a505444368a9a30",
+            "content": "sha256:d729e3ba5b4fa56caa130994f5b320abd7e417b2184be52b3ee0c4796f984e18",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_behind_entry_gate_sites_refuse_a_disabled_contract"
+            },
+            "path": "mcp/tests/test_memory_opt_out_refused_routes.py"
+          },
+          "before": "absent",
+          "id": "PRF-N2C6BV"
+        },
+        {
+          "after": {
+            "blob": "6cb58ec1f5c1b629874d4ceb251f1ef2180572f3",
+            "content": "sha256:0925fa745908681536cf56f639ffca5e9aa5348eaeb2442b1afaeb5ace1c7adc",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_start_refuses_disabled_where_the_probe_cannot_answer"
+            },
+            "path": "mcp/tests/test_memory_opt_out_refused_start.py"
+          },
+          "before": "absent",
+          "id": "PRF-Z13RG0"
+        },
+        {
+          "after": {
+            "blob": "89f4fd8ef1c246fe85a6cfceba2c99571d8c8dc6",
+            "content": "sha256:0133f2aed3e0146a26eeb89d0b71fc996abe5b86dccac45ca653fb8d1e1028fb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_abandon_branches"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/abandon.py"
+          },
+          "before": "absent",
+          "id": "RLZ-3GFFJV"
+        },
+        {
+          "after": {
+            "blob": "06ba4d9e9b4494e5332b40c2577f642da6fe649c",
+            "content": "sha256:2368f70df2faf1324dd191deef40f750922150fbcd6151482a5e7525c4c22114",
+            "locator": {
+              "kind": "symbol",
+              "name": "_terminal_mutation_authority"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/cleanup.py"
+          },
+          "before": "absent",
+          "id": "RLZ-A326MB"
+        },
+        {
+          "after": {
+            "blob": "89f4fd8ef1c246fe85a6cfceba2c99571d8c8dc6",
+            "content": "sha256:af34bd65f334ad4c015282ee8614c0dc2c1169e8bb7f9f4319e61c14e5da6bea",
+            "locator": {
+              "kind": "symbol",
+              "name": "_abandon_worktrees"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/abandon.py"
+          },
+          "before": "absent",
+          "id": "RLZ-HHM6JG"
+        },
+        {
+          "after": {
+            "blob": "45bde9d2eae6681ae74e8f1a36fbf6efed8e8d23",
+            "content": "sha256:ad3bc1811e96d518d74daa8f3de5e740aea01071a63385f823d710a6fa560e68",
+            "locator": {
+              "kind": "symbol",
+              "name": "_branch_targets"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/terminal_validation.py"
+          },
+          "before": "absent",
+          "id": "RLZ-MXBMR9"
+        },
+        {
+          "after": {
+            "blob": "a5a5d52ff4fc8f4f9e0039688dab818a164a7b84",
+            "content": "sha256:0bde9c4a4127b2a17edee190daf33496aad845ee1c27dbffd538383865183a6e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_tombstone_successor_series"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/startup/start_contract.py"
+          },
+          "before": "absent",
+          "id": "RLZ-TNJTWD"
+        },
+        {
+          "after": {
+            "blob": "9e3618826393608178a240a2aefc6fe4a3c8a366",
+            "content": "sha256:a97942f0024878dd1f863a3c90a5fd7ad116144489f8a3ed8466d8a8d5d6b1df",
+            "locator": {
+              "kind": "symbol",
+              "name": "_repository_sides"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py"
+          },
+          "before": "absent",
+          "id": "RLZ-TYMFE8"
+        },
+        {
+          "after": {
+            "blob": "45bde9d2eae6681ae74e8f1a36fbf6efed8e8d23",
+            "content": "sha256:cf2501a0ff079e8ce5b84ea5b8d8a4611241d0b0e6604dd5f1c7419d1aa72015",
+            "locator": {
+              "kind": "symbol",
+              "name": "_worktree_preflight"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/terminal_validation.py"
+          },
+          "before": "absent",
+          "id": "RLZ-ZJWVH0"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-ZRXWPJ",
+      "items": [],
+      "reason": "MEM-R1 F02: admission now separates H operation evidence (origin) from refusal-test facets; RLZ-A326MB rationale corrected in place; live-leaf entry is the designed path.",
+      "revision": 1,
+      "subject": "INV-39FYQE"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ZVJXT9",
+      "items": [
+        "sha256:cc8c534a3be4017cbc4f77a6c43fdee1cbbc512c786350fa6a1354de49ac1a17"
+      ],
+      "reason": "Candidate mcp/src/agents_remember/worktrees/modules/startup/start_contract.py:902-914: mechanical call-site follow threading the refusal through the existing construct; carries no invariant of its own.",
+      "subject": "hunk:sha256:cc8c534a3be4017cbc4f77a6c43fdee1cbbc512c786350fa6a1354de49ac1a17"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

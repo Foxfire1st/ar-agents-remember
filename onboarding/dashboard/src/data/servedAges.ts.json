@@ -24,7 +24,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f98d8c6a89931775693af8e1c31cf9dafd5a7589",
+            "blob": "771d1ca849e63161968eb0f54325d6f5a4fcd0e2",
             "content": "sha256:926d6a6de6cec9af70b4ca36310f6f429f5a6c996284d53811f49b3bb4e27ef7",
             "locator": {
               "kind": "symbol",
@@ -36,12 +36,12 @@
         },
         {
           "anchor": {
-            "blob": "f98d8c6a89931775693af8e1c31cf9dafd5a7589",
+            "blob": "771d1ca849e63161968eb0f54325d6f5a4fcd0e2",
             "content": "sha256:fe507dd2804556189aba7c6e440a5fe9ac030f45525072c51c5f364db60ae175",
             "locator": {
-              "end": 73,
+              "end": 77,
               "kind": "line_range",
-              "start": 72
+              "start": 76
             },
             "path": "dashboard/src/data/store.ts"
           },
@@ -49,12 +49,12 @@
         },
         {
           "anchor": {
-            "blob": "f98d8c6a89931775693af8e1c31cf9dafd5a7589",
+            "blob": "771d1ca849e63161968eb0f54325d6f5a4fcd0e2",
             "content": "sha256:e9c633ebc73de48d066399d876c832266cc82beb1eb5f3b7762cd9de31961566",
             "locator": {
-              "end": 117,
+              "end": 121,
               "kind": "line_range",
-              "start": 97
+              "start": 101
             },
             "path": "dashboard/src/data/store.ts"
           },

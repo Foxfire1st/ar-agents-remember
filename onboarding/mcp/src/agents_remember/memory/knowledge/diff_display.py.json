@@ -179,7 +179,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5e1dc9aed3f09bf6a0af1b7b09c4bf5770425a6e",
+            "blob": "2e31dd9e23ad14ea40b5941e0fd5aff95be241e1",
             "content": "sha256:75cc4fbd0593f56af28ddcc9b8b65c1b4de6c05e2440466710bdefdcda3336e2",
             "locator": {
               "kind": "symbol",
@@ -191,7 +191,7 @@
         },
         {
           "anchor": {
-            "blob": "5e1dc9aed3f09bf6a0af1b7b09c4bf5770425a6e",
+            "blob": "2e31dd9e23ad14ea40b5941e0fd5aff95be241e1",
             "content": "sha256:d24433a793584ab2d095c789461fb00c4361cc8df5bb2b6a94105a19defd7dac",
             "locator": {
               "kind": "symbol",
@@ -203,7 +203,7 @@
         },
         {
           "anchor": {
-            "blob": "5e1dc9aed3f09bf6a0af1b7b09c4bf5770425a6e",
+            "blob": "2e31dd9e23ad14ea40b5941e0fd5aff95be241e1",
             "content": "sha256:d0f850d506a1836e6ad007d0f85cb9c203601cd7d75083f4b26582c2e6dc38a0",
             "locator": {
               "kind": "symbol",
@@ -215,12 +215,12 @@
         },
         {
           "anchor": {
-            "blob": "5e1dc9aed3f09bf6a0af1b7b09c4bf5770425a6e",
+            "blob": "2e31dd9e23ad14ea40b5941e0fd5aff95be241e1",
             "content": "sha256:f4e9744587a703d1bf56717ada3fff0d64332cd4c6b22f9b68497d4a7fd591bc",
             "locator": {
-              "end": 860,
+              "end": 871,
               "kind": "line_range",
-              "start": 846
+              "start": 857
             },
             "path": "mcp/src/agents_remember/application/knowledge_diff.py"
           },
@@ -233,12 +233,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "16d9115005b531950418960f3030fb71e5e46490",
+            "blob": "73551cfb002f1420c4431ddb8a46eade70ddfa88",
             "content": "sha256:ca55060dabee397d22bf4771569f14120fd68fa50027affc2efe2ac880d32657",
             "locator": {
-              "end": 182,
+              "end": 178,
               "kind": "line_range",
-              "start": 145
+              "start": 141
             },
             "path": "mcp/tests/test_knowledge_diff_boundaries.py"
           },
@@ -246,12 +246,12 @@
         },
         {
           "anchor": {
-            "blob": "16d9115005b531950418960f3030fb71e5e46490",
+            "blob": "73551cfb002f1420c4431ddb8a46eade70ddfa88",
             "content": "sha256:5975eca098d2bbabff96ce09ae5ea80989ce01b8f93d067600bf4421b085cb1d",
             "locator": {
-              "end": 218,
+              "end": 214,
               "kind": "line_range",
-              "start": 185
+              "start": 181
             },
             "path": "mcp/tests/test_knowledge_diff_boundaries.py"
           },
@@ -282,12 +282,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "16d9115005b531950418960f3030fb71e5e46490",
+            "blob": "73551cfb002f1420c4431ddb8a46eade70ddfa88",
             "content": "sha256:5d7f82afa9edce61929ce9e9b14a3d328807191ddc3f7298079fe0625d5227ac",
             "locator": {
-              "end": 847,
+              "end": 837,
               "kind": "line_range",
-              "start": 791
+              "start": 781
             },
             "path": "mcp/tests/test_knowledge_diff_boundaries.py"
           },

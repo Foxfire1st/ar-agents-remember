@@ -87,95 +87,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b36efb156d598b47ef93547574de276270670bb7",
-            "content": "sha256:a225f23d03c7c87b5b1a133d28e74f729b246bcbe4e3d8d2c95f46265cf9450b",
+            "blob": "c66952b4cab2bf41fa7e6636635d90d35ec32ead",
+            "content": "sha256:9f12995207aee0994148f303ede553344bb2fd8c44561370b44bdef062c0e956",
             "locator": {
               "kind": "symbol",
               "name": "drift_check_tool"
-            },
-            "path": "mcp/src/agents_remember/application/memory_tools.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "43f903cf7da51fcd08f69e3a39d1e4ce34c49776",
-            "content": "sha256:13dc71477229967db0a69fe9ade74c337df968b1359aff9095dd9f642c7e093e",
-            "locator": {
-              "kind": "symbol",
-              "name": "citation_fix_tool"
-            },
-            "path": "mcp/src/agents_remember/application/memory_tools.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "c66952b4cab2bf41fa7e6636635d90d35ec32ead",
-            "content": "sha256:1138e99f975a47026d39bb5f4035af8e5380595ca5c8847db9e8076809209f2a",
-            "locator": {
-              "kind": "symbol",
-              "name": "route_index_refresh_tool"
-            },
-            "path": "mcp/src/agents_remember/application/memory_tools.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "c66952b4cab2bf41fa7e6636635d90d35ec32ead",
-            "content": "sha256:7b520fc9b22cbf25310bc93079df0b862908d53ceb2833165f870ee544025537",
-            "locator": {
-              "kind": "symbol",
-              "name": "memory_init_tool"
-            },
-            "path": "mcp/src/agents_remember/application/memory_tools.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "b36efb156d598b47ef93547574de276270670bb7",
-            "content": "sha256:9d39286d25d95bb4eca95a6fd735c48fdfa3221074035750f2f510891fa39fd1",
-            "locator": {
-              "kind": "symbol",
-              "name": "memory_baseline_status_tool"
-            },
-            "path": "mcp/src/agents_remember/application/memory_tools.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "c66952b4cab2bf41fa7e6636635d90d35ec32ead",
-            "content": "sha256:876d9f90ef4444730e458173ce3750fb3752c11887cc927f080fd812f989ae38",
-            "locator": {
-              "kind": "symbol",
-              "name": "memory_baseline_adopt_tool"
-            },
-            "path": "mcp/src/agents_remember/application/memory_tools.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "c66952b4cab2bf41fa7e6636635d90d35ec32ead",
-            "content": "sha256:c3e86513281b49c6094f3934af6bbd66535999f7c0ae63c10cdb3a4485249c4e",
-            "locator": {
-              "kind": "symbol",
-              "name": "memory_carryover_plan_tool"
-            },
-            "path": "mcp/src/agents_remember/application/memory_tools.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "c66952b4cab2bf41fa7e6636635d90d35ec32ead",
-            "content": "sha256:a738650c51f142460dc464c4cf913e575a87bdee5b03fbf173184be588845401",
-            "locator": {
-              "kind": "symbol",
-              "name": "memory_carryover_apply_tool"
             },
             "path": "mcp/src/agents_remember/application/memory_tools.py"
           },
@@ -238,8 +154,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7830f6643d98c4da734d2630c523e1eb2f1bf7ce",
-            "content": "sha256:dd8acbe5d3f8b1196081bb4d5941b664743da0ecb58d66008d23fdfa5d6a6f9d",
+            "blob": "9ef6a8b057a4d5f2ec9156eab7d47da4c38d37c3",
+            "content": "sha256:5defc592c4ead496c0d96b2b8a314b6a884ae178e845fb42f98657c6140395ee",
             "locator": {
               "kind": "symbol",
               "name": "DriftCheckResponse"
@@ -254,8 +170,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "88ab63c1685825e580ce7dbc3f0c8c6f32f8acbf",
-            "content": "sha256:a2f120037b4a3244a65f708669bdaf5da721a923c27f8840f5e61f28108cbf20",
+            "blob": "cf68f5578694021f732b573cc3d613b880c7bfd8",
+            "content": "sha256:7e00a1dd009e4484bcd53c4b0f3071076cd3efe31960d64494371201d6bf32ec",
             "locator": {
               "kind": "symbol",
               "name": "DriftSummary"
@@ -271,23 +187,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "88ab63c1685825e580ce7dbc3f0c8c6f32f8acbf",
-            "content": "sha256:a2f120037b4a3244a65f708669bdaf5da721a923c27f8840f5e61f28108cbf20",
+            "blob": "cf68f5578694021f732b573cc3d613b880c7bfd8",
+            "content": "sha256:7e00a1dd009e4484bcd53c4b0f3071076cd3efe31960d64494371201d6bf32ec",
             "locator": {
               "kind": "symbol",
               "name": "DriftSummary"
-            },
-            "path": "mcp/src/agents_remember/models/drift.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "cf68f5578694021f732b573cc3d613b880c7bfd8",
-            "content": "sha256:dc76221b436baaf2e8b6308210a1e130e0a99b4028302686a4a35107bd0e91d0",
-            "locator": {
-              "kind": "symbol",
-              "name": "error"
             },
             "path": "mcp/src/agents_remember/models/drift.py"
           },

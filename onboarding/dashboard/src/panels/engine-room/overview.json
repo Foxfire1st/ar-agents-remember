@@ -6,12 +6,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6c75fc4b7f68ccc70a4e65a13e9e6098c65963e2",
+            "blob": "c20cabbbf6f30ed5cb7483397bf175b4de13d99f",
             "content": "sha256:1dea019ad356aa7df62d82195273725cf7c6d95221aeeb6e35b6f16bbc66023b",
             "locator": {
-              "end": 129,
+              "end": 82,
               "kind": "line_range",
-              "start": 129
+              "start": 82
             },
             "path": "mcp/src/agents_remember/observer/reducer_impl/_metrics.py"
           },
@@ -102,7 +102,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8535427e164854d7dadb366fd583408b98d5f38b",
+            "blob": "29a3f96c4fa5cc4abbdf34ff8486e4ee5a0c46c1",
             "content": "sha256:9438263648732139f82abce5f76d8ba78adf95de1b686cc1f01565f11d9c9810",
             "locator": {
               "kind": "symbol",
@@ -145,12 +145,12 @@
         },
         {
           "anchor": {
-            "blob": "099b61b20b7737cc83e281cc58bd425ac0d230cb",
+            "blob": "6f9bdb34b8413d8e9a83c174ccb684e1ee060cd0",
             "content": "sha256:6eba7edf8588a5e95c8141ba9c92d8aac4c2703e87b482e9152164fbffaf3024",
             "locator": {
-              "end": 73,
+              "end": 69,
               "kind": "line_range",
-              "start": 73
+              "start": 69
             },
             "path": "mcp/src/agents_remember/observer/reducer.py"
           },
@@ -163,7 +163,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5e4cacc3f5f41b68b1399a4064fb89ccec6b2a7e",
+            "blob": "cee16fce97e5e76b33e52e9b0d606b87481c9758",
             "content": "sha256:21cac9e0ab2bd51c63ac823fa1d60ca86b9759849b9cbd5ccabcdb3bd7aa8072",
             "locator": {
               "kind": "symbol",

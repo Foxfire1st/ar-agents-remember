@@ -25,7 +25,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
+            "blob": "1d6d4c77ad41eb2f9783975d929a3519d218f22f",
             "content": "sha256:e8181a0720290a24893083991566ddd792976aeb263d08e9046d7d6ef75c9097",
             "locator": {
               "kind": "symbol",
@@ -37,12 +37,12 @@
         },
         {
           "anchor": {
-            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
+            "blob": "1d6d4c77ad41eb2f9783975d929a3519d218f22f",
             "content": "sha256:323b5ad262c99244d1d9b74f77ba55747862d16bd5450aa0424bb1b47e255482",
             "locator": {
-              "end": 845,
+              "end": 824,
               "kind": "line_range",
-              "start": 811
+              "start": 790
             },
             "path": "mcp/tests/test_capsule_serving.py"
           },
@@ -244,7 +244,7 @@
         },
         {
           "anchor": {
-            "blob": "1561b7a012399b00069bb85b8abe538377e89057",
+            "blob": "90a25a6f5ceee4fe834fa6cf854b9b489659cdf2",
             "content": "sha256:9876ee58b74090ed105bd80b901cb382629d798c1e8a7fc16cc750e2fbf1fcf4",
             "locator": {
               "kind": "symbol",
@@ -273,7 +273,7 @@
         },
         {
           "anchor": {
-            "blob": "b0366122dbbd5a11a6263852dc3086926059871c",
+            "blob": "497182eddd472d861bd107fd62aaaae0e0e82067",
             "content": "sha256:555b110693e8fd5bcd0c9de05489a4ef1b674ae4aa306f634a858400c38200c6",
             "locator": {
               "kind": "symbol",
@@ -285,12 +285,12 @@
         },
         {
           "anchor": {
-            "blob": "b0366122dbbd5a11a6263852dc3086926059871c",
+            "blob": "497182eddd472d861bd107fd62aaaae0e0e82067",
             "content": "sha256:37e0509b091f1c66c8c1bb119d896fae5b298e4a90860186ee8a58e4e0b4bc09",
             "locator": {
-              "end": 409,
+              "end": 427,
               "kind": "line_range",
-              "start": 394
+              "start": 412
             },
             "path": "mcp/src/agents_remember/application/skill_resources/capsule.py"
           },

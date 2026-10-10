@@ -1,13 +1,32 @@
 {
   "path": "mcp/src/agents_remember/application/lifecycle/configured_contract_admission.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "dbad775386ff530ac950360a2ca49d6e9fc02678",
+        "content": "sha256:42d9a1e57ba3944ce6ffbccda21afca308acfe3e650595ab0e71c08b88cbf2ed",
+        "locator": {
+          "kind": "symbol",
+          "name": "_admit_terminal_surviving_contract"
+        }
+      },
+      "id": "RLZ-93CPH5",
+      "invariant": "INV-6GBJC6",
+      "origin": {
+        "handoffEntry": "L50-CODE-R1-F03",
+        "leaf": "260928-MIK-L50"
+      },
+      "rationale": "Cleanup of a genuine terminal-archived disabled contract refuses by name without a developer decision.",
+      "role": "unclassified"
+    }
+  ],
   "references": {
     "1": {
       "note": "The module defines `ConfiguredContractAccepted`; `ConfiguredContractRefused`; `admit_configured_contract` as its public seam.",
       "targets": [
         {
           "anchor": {
-            "blob": "a24e42442bd78eda90e129f52de5de7d6548f602",
+            "blob": "dbad775386ff530ac950360a2ca49d6e9fc02678",
             "content": "sha256:474e31f0982deb639ffdd0ffea835a5968a97c342dbd271178dea9a8e46833ee",
             "locator": {
               "kind": "symbol",
@@ -18,7 +37,7 @@
         },
         {
           "anchor": {
-            "blob": "a24e42442bd78eda90e129f52de5de7d6548f602",
+            "blob": "dbad775386ff530ac950360a2ca49d6e9fc02678",
             "content": "sha256:b8cbe01abd232a66d9fb1a2ddc5f6ffb9f8e5519428c76021a0137ad5967b67a",
             "locator": {
               "kind": "symbol",
@@ -52,12 +71,12 @@
         },
         {
           "anchor": {
-            "blob": "a24e42442bd78eda90e129f52de5de7d6548f602",
+            "blob": "dbad775386ff530ac950360a2ca49d6e9fc02678",
             "content": "sha256:b8d6c2d0e517a6986a8c1c2ee4f334197c004b82faa039d45aa5870ae7d6d412",
             "locator": {
-              "end": 87,
+              "end": 93,
               "kind": "line_range",
-              "start": 77
+              "start": 83
             }
           },
           "kind": "code"

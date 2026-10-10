@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "6d337de6102ec305fcdaada91e7f75ec55114e7f",
-        "content": "sha256:8bf9242e6800792d02e9cbc6c99dc8170bcb0b0f53d24b883f0ed4e9f0872b7f",
+        "blob": "08a51034a37a718aa2f0e3f8820c4eea81d8fbe6",
+        "content": "sha256:0119668617f127c0acddfc455175c42d15aad8f918a8bd79438c308d2902f9fa",
         "locator": {
           "kind": "symbol",
           "name": "test_registered_first_leaf_preview_is_repeatable_without_publication"
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "6d337de6102ec305fcdaada91e7f75ec55114e7f",
-        "content": "sha256:7f5ff150e2daa4698ed59bd7dbce99eb8444beba0cb2345c24ca19945185c417",
+        "blob": "08a51034a37a718aa2f0e3f8820c4eea81d8fbe6",
+        "content": "sha256:509f467db5290051ffe52d80caf7441d866091582a94bc401d5f1463d0608144",
         "locator": {
           "kind": "symbol",
           "name": "test_public_apply_re_resolves_source_and_persisted_parent_preview_stays_read_only"
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "6d337de6102ec305fcdaada91e7f75ec55114e7f",
+        "blob": "08a51034a37a718aa2f0e3f8820c4eea81d8fbe6",
         "content": "sha256:6d69d1d59b0bf7e712b19055bd4ba589ebf939b34b943c9731d7c11cbc12da79",
         "locator": {
           "kind": "symbol",
@@ -54,8 +54,8 @@
     },
     {
       "anchor": {
-        "blob": "6d337de6102ec305fcdaada91e7f75ec55114e7f",
-        "content": "sha256:bac75766acaf872be86fc871b758b8f2b89307692035cae88fafaf123144f8e9",
+        "blob": "08a51034a37a718aa2f0e3f8820c4eea81d8fbe6",
+        "content": "sha256:0e6779cb02e2cc2a4043379b8a2fbd09b73886f8e44a1affd4795f0e3a8ac3f2",
         "locator": {
           "kind": "symbol",
           "name": "test_foreign_or_unreadable_persisted_parent_after_preview_is_never_replaced"
@@ -71,8 +71,8 @@
     },
     {
       "anchor": {
-        "blob": "6d337de6102ec305fcdaada91e7f75ec55114e7f",
-        "content": "sha256:e4cc6ad9f9c2ac953d9987979e8e2cbfcf206d78b43784929126c4cc043c0ad5",
+        "blob": "08a51034a37a718aa2f0e3f8820c4eea81d8fbe6",
+        "content": "sha256:f047e65fa75933efb644d29ce6856fff00c6e69f504c86c1d92621f4374766e1",
         "locator": {
           "kind": "symbol",
           "name": "test_preview_handoff_is_failure_sensitive_and_cannot_supply_durable_authority"
@@ -88,8 +88,8 @@
     },
     {
       "anchor": {
-        "blob": "6d337de6102ec305fcdaada91e7f75ec55114e7f",
-        "content": "sha256:2f3d007314e058275946a3f5fb8c4d451bbe5fb09ee13371941842886993b1fa",
+        "blob": "08a51034a37a718aa2f0e3f8820c4eea81d8fbe6",
+        "content": "sha256:e2d664ead7347bc85902d16581520ec6335c4aa163a0782d8b12a3f15a0d93e3",
         "locator": {
           "kind": "symbol",
           "name": "test_public_partial_bootstrap_preview_is_read_only_then_apply_recovers_same_journal"
@@ -106,77 +106,13 @@
   ],
   "realizes": [],
   "references": {
-    "1": {
-      "note": "First-leaf preview is repeatable without startup publication.",
+    "10": {
+      "note": "Partial bootstrap read-only, then apply recovers the same journal",
       "targets": [
         {
           "anchor": {
-            "blob": "6d337de6102ec305fcdaada91e7f75ec55114e7f",
-            "content": "sha256:8bf9242e6800792d02e9cbc6c99dc8170bcb0b0f53d24b883f0ed4e9f0872b7f",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_registered_first_leaf_preview_is_repeatable_without_publication"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "2": {
-      "note": "Actual apply re-resolves current source; persisted-parent preview remains read-only.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "6d337de6102ec305fcdaada91e7f75ec55114e7f",
-            "content": "sha256:7f5ff150e2daa4698ed59bd7dbce99eb8444beba0cb2345c24ca19945185c417",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_public_apply_re_resolves_source_and_persisted_parent_preview_stays_read_only"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "3": {
-      "note": "Losing the handoff fails and preview cannot supply durable authority.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "6d337de6102ec305fcdaada91e7f75ec55114e7f",
-            "content": "sha256:e4cc6ad9f9c2ac953d9987979e8e2cbfcf206d78b43784929126c4cc043c0ad5",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_preview_handoff_is_failure_sensitive_and_cannot_supply_durable_authority"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "4": {
-      "note": "Persisted artifact errors never select a synthetic valid parent.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "6d337de6102ec305fcdaada91e7f75ec55114e7f",
-            "content": "sha256:bac75766acaf872be86fc871b758b8f2b89307692035cae88fafaf123144f8e9",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_foreign_or_unreadable_persisted_parent_after_preview_is_never_replaced"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "5": {
-      "note": "Same journal/ref states and real apply/recovery remain truthful.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "6d337de6102ec305fcdaada91e7f75ec55114e7f",
-            "content": "sha256:2f3d007314e058275946a3f5fb8c4d451bbe5fb09ee13371941842886993b1fa",
+            "blob": "08a51034a37a718aa2f0e3f8820c4eea81d8fbe6",
+            "content": "sha256:e2d664ead7347bc85902d16581520ec6335c4aa163a0782d8b12a3f15a0d93e3",
             "locator": {
               "kind": "symbol",
               "name": "test_public_partial_bootstrap_preview_is_read_only_then_apply_recovers_same_journal"
@@ -186,16 +122,48 @@
         }
       ]
     },
-    "6": {
-      "note": "Ambient completion is the explicitly observed exception.",
+    "7": {
+      "note": "Fixture world is always external-memory",
       "targets": [
         {
           "anchor": {
-            "blob": "6d337de6102ec305fcdaada91e7f75ec55114e7f",
-            "content": "sha256:5609981c70b4cac29e6f5a755a932d31df2a023016a70729dc991530e8c17309",
+            "blob": "08a51034a37a718aa2f0e3f8820c4eea81d8fbe6",
+            "content": "sha256:156f9428485de9881a227307f42f87991446e2b8f3a636a62e43fbfda3b3e13e",
             "locator": {
               "kind": "symbol",
-              "name": "_assert_ambient_request_observes_only_tool_completion"
+              "name": "PreviewFixture"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "First-leaf preview repeatable without publication, commanded or not",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08a51034a37a718aa2f0e3f8820c4eea81d8fbe6",
+            "content": "sha256:0119668617f127c0acddfc455175c42d15aad8f918a8bd79438c308d2902f9fa",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_registered_first_leaf_preview_is_repeatable_without_publication"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "Disabled mode refused in preview and real run, world unchanged",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08a51034a37a718aa2f0e3f8820c4eea81d8fbe6",
+            "content": "sha256:f30200cfdf8ca6577ecdf459f01d3ccd3f0f0f109b73045fd0fc18a1ef97530d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_disabled_start_is_refused_before_any_publication"
             }
           },
           "kind": "test"

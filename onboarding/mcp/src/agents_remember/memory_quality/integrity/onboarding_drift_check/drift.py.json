@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e2170cdb4c53e14c97e2189e3b26cbf0cbe7d364",
+            "blob": "c55af2c8c0b8cd2eaef3ef961fc49505b96b823a",
             "content": "sha256:c0b34716944454ad279d667f4a37d00c4cda4aab8ab86bfd031b9d63ebf0f538",
             "locator": {
               "kind": "symbol",
@@ -19,12 +19,12 @@
         },
         {
           "anchor": {
-            "blob": "e2170cdb4c53e14c97e2189e3b26cbf0cbe7d364",
+            "blob": "c55af2c8c0b8cd2eaef3ef961fc49505b96b823a",
             "content": "sha256:833349d17d1dc710103368c805d62cc659b7dd0d60f9ae29416dade0283db967",
             "locator": {
-              "end": 69,
+              "end": 80,
               "kind": "line_range",
-              "start": 58
+              "start": 69
             },
             "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py"
           },
@@ -189,7 +189,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a19c74bb0d905669c2dc4d699a05e230d970effb",
+            "blob": "0add0d691edd9fadf0873b47c05c3556c94fb585",
             "content": "sha256:60788cf6b3cf57e313ccacab456fb49fd9601a1930fa8f8de28c01088b22a2af",
             "locator": {
               "kind": "symbol",

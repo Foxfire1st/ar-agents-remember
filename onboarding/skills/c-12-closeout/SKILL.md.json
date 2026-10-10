@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "17d7441854a8f1e2c2547bd44e6c9bbcc6c7e468",
+        "blob": "bfcc41ae6043eb3d94e95c89af39f7d55715817a",
         "content": "sha256:68dcf69c3376477b1a55ced5f4651d4b15be4f0aac1d0a327fda32802bd98072",
         "locator": {
-          "end": 278,
+          "end": 280,
           "kind": "line_range",
-          "start": 273
+          "start": 275
         }
       },
       "id": "RLZ-DMZR23",
@@ -22,12 +22,12 @@
     },
     {
       "anchor": {
-        "blob": "17d7441854a8f1e2c2547bd44e6c9bbcc6c7e468",
+        "blob": "bfcc41ae6043eb3d94e95c89af39f7d55715817a",
         "content": "sha256:db688c1dd25915329fea0ff9c80c78a77f5a13eea4e89f0b0f3f3153429ce092",
         "locator": {
-          "end": 257,
+          "end": 259,
           "kind": "line_range",
-          "start": 251
+          "start": 253
         }
       },
       "id": "RLZ-RM75GK",
@@ -41,12 +41,12 @@
     },
     {
       "anchor": {
-        "blob": "17d7441854a8f1e2c2547bd44e6c9bbcc6c7e468",
+        "blob": "bfcc41ae6043eb3d94e95c89af39f7d55715817a",
         "content": "sha256:3eddab67ff76eff578ff1c63ab336676f92140c7b0131e055ab68c0aaff94424",
         "locator": {
-          "end": 242,
+          "end": 244,
           "kind": "line_range",
-          "start": 242
+          "start": 244
         }
       },
       "id": "RLZ-S7NJK5",
@@ -60,12 +60,12 @@
     },
     {
       "anchor": {
-        "blob": "17d7441854a8f1e2c2547bd44e6c9bbcc6c7e468",
+        "blob": "bfcc41ae6043eb3d94e95c89af39f7d55715817a",
         "content": "sha256:68dcf69c3376477b1a55ced5f4651d4b15be4f0aac1d0a327fda32802bd98072",
         "locator": {
-          "end": 278,
+          "end": 280,
           "kind": "line_range",
-          "start": 273
+          "start": 275
         }
       },
       "id": "RLZ-YZB03G",
@@ -78,6 +78,127 @@
       "role": "unclassified"
     }
   ],
-  "references": {},
+  "references": {
+    "1": {
+      "note": "Worktree-only doctrine and role split with the manager skill",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bfcc41ae6043eb3d94e95c89af39f7d55715817a",
+            "content": "sha256:6c39185e43557436960f1ed38b205f1643c5cf628596df4161f827b0cfb2ca13",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Closeout tool surface and contract ownership",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bfcc41ae6043eb3d94e95c89af39f7d55715817a",
+            "content": "sha256:6c39185e43557436960f1ed38b205f1643c5cf628596df4161f827b0cfb2ca13",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Converted-memory invariant gate and refused-preview behavior",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bfcc41ae6043eb3d94e95c89af39f7d55715817a",
+            "content": "sha256:6c39185e43557436960f1ed38b205f1643c5cf628596df4161f827b0cfb2ca13",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Contextual authority and the developer hand-off protocol",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bfcc41ae6043eb3d94e95c89af39f7d55715817a",
+            "content": "sha256:6c39185e43557436960f1ed38b205f1643c5cf628596df4161f827b0cfb2ca13",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Closeout-approval as the sole explicit human gate",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bfcc41ae6043eb3d94e95c89af39f7d55715817a",
+            "content": "sha256:6c39185e43557436960f1ed38b205f1643c5cf628596df4161f827b0cfb2ca13",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "No-disabled-memory preconditions and abandon-and-restart way out",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bfcc41ae6043eb3d94e95c89af39f7d55715817a",
+            "content": "sha256:6c39185e43557436960f1ed38b205f1643c5cf628596df4161f827b0cfb2ca13",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Code-then-memory order, attribution, and pre-mutation refusals",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bfcc41ae6043eb3d94e95c89af39f7d55715817a",
+            "content": "sha256:6c39185e43557436960f1ed38b205f1643c5cf628596df4161f827b0cfb2ca13",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Branch-direct landing, legacy repair, failure conditions, boundaries",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bfcc41ae6043eb3d94e95c89af39f7d55715817a",
+            "content": "sha256:6c39185e43557436960f1ed38b205f1643c5cf628596df4161f827b0cfb2ca13",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
   "schema": "ar-onboarding-file/v1"
 }

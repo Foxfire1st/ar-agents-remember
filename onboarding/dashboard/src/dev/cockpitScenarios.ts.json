@@ -53,7 +53,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1bec9a2be1fb844796c8d2378a7d50b8ad2cf94d",
+            "blob": "61ad404bd22d920dd138c1547e688cc536a37131",
             "content": "sha256:29d177b2e2a02eb40a25bc6bcac134c02f344bbadd628a5a6bc430e4260b5124",
             "locator": {
               "kind": "symbol",
@@ -123,7 +123,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6ce7dec4c40a6fe280d065cc5ce576f1b5b3da2d",
+            "blob": "a487415b9d5df3f817b748f597c7ce8378b252f2",
             "content": "sha256:dbd4e595ed8877c525078fde8c58d9cb61b85a3707902aa8424c4dea29ce4f35",
             "locator": {
               "kind": "symbol",
@@ -135,12 +135,12 @@
         },
         {
           "anchor": {
-            "blob": "6ce7dec4c40a6fe280d065cc5ce576f1b5b3da2d",
+            "blob": "a487415b9d5df3f817b748f597c7ce8378b252f2",
             "content": "sha256:a1ecce7e73c16f7f85ed27ac16982cfc0ae1613699281671f8f9d70d53e261cc",
             "locator": {
-              "end": 273,
+              "end": 271,
               "kind": "line_range",
-              "start": 260
+              "start": 258
             },
             "path": "dashboard/src/dev/scenarios.ts"
           },

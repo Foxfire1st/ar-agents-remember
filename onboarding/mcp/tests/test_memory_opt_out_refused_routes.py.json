@@ -1,0 +1,146 @@
+{
+  "path": "mcp/tests/test_memory_opt_out_refused_routes.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "b1cc35c9b446e484b65429c35a505444368a9a30",
+        "content": "sha256:d729e3ba5b4fa56caa130994f5b320abd7e417b2184be52b3ee0c4796f984e18",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_behind_entry_gate_sites_refuse_a_disabled_contract"
+        }
+      },
+      "facet": "Routes behind the lifecycle entry refuse a disabled contract with the way out.",
+      "id": "PRF-N2C6BV",
+      "invariant": "INV-39FYQE",
+      "origin": {
+        "handoffEntry": "L50-CODE-R1-F04",
+        "leaf": "260928-MIK-L50"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Rules 3-4 scope and the companion-module split",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b1cc35c9b446e484b65429c35a505444368a9a30",
+            "content": "sha256:ddb9f745c730d70c1f83b98a65c2414fdeb23479ef4e39a0290e070e4695dca0",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Rule 3 readable surfaces: status, degraded read, attach",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b1cc35c9b446e484b65429c35a505444368a9a30",
+            "content": "sha256:ddb9f745c730d70c1f83b98a65c2414fdeb23479ef4e39a0290e070e4695dca0",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Admission refusal with abandon-first projection",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b1cc35c9b446e484b65429c35a505444368a9a30",
+            "content": "sha256:ddb9f745c730d70c1f83b98a65c2414fdeb23479ef4e39a0290e070e4695dca0",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Abandon way out and abandon's own mode-independent refusals",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b1cc35c9b446e484b65429c35a505444368a9a30",
+            "content": "sha256:ddb9f745c730d70c1f83b98a65c2414fdeb23479ef4e39a0290e070e4695dca0",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Disabled series names the series escape",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b1cc35c9b446e484b65429c35a505444368a9a30",
+            "content": "sha256:ddb9f745c730d70c1f83b98a65c2414fdeb23479ef4e39a0290e070e4695dca0",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Lifecycle-layer refusals without authority, incl. preview-equals-apply",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b1cc35c9b446e484b65429c35a505444368a9a30",
+            "content": "sha256:ddb9f745c730d70c1f83b98a65c2414fdeb23479ef4e39a0290e070e4695dca0",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Knowledge-gate and behind-entry-gate refusals by name",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b1cc35c9b446e484b65429c35a505444368a9a30",
+            "content": "sha256:ddb9f745c730d70c1f83b98a65c2414fdeb23479ef4e39a0290e070e4695dca0",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Tool-level closeout, reopen, cleanup, finalize refusals",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b1cc35c9b446e484b65429c35a505444368a9a30",
+            "content": "sha256:ddb9f745c730d70c1f83b98a65c2414fdeb23479ef4e39a0290e070e4695dca0",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -125,7 +125,7 @@ the worktree engine** (cloned-from, not box-edge→corner) — `cgc-seed` bows o
   "AMBER (stale reroute)". **T7B provider-plan block**:
   `engine-boot-provider-blocked` renders the node-anchored `provider-block` (NOT the `fleeting-enclosure` box —
   that stays T1B/stale-base), the `engine-dropout` halos over the unlit engine slots, a steady `gate` +
-  `attention`, and retry/disabled-led `recovery-chips` (the 4th `abandon` is clipped by the 3-chip cap); the
+  `attention`, and retry/abandon `recovery-chips` (memory cannot be disabled for a task, so no `disabled-memory` choice is offered); the
   paired `engine-boot-provider-verify` gates the `scan-ring` on effects (absent under `data-effects=off`,
   present at the worktree CGC engine `cx=1084`/`cy=150` when on). **T12B moved badge**: `engine-sync-moved`
   shows the soft `moved-badge` (the notification before the gate), `engine-sync-memory-blocked` gates +
