@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "The raiser-pin test and the unmarked-aspect subTest check the pins equal to the observed arms in both directions and ran green on the final candidate."
+  },
+  "applicability": "The sweep's pinned surface while L111 owns the four raisers and L110 owns the bare answer.",
+  "conditions": [
+    "Each pin entry names its owning leaf and rule."
+  ],
+  "exclusions": [
+    "The T34 nine, which remain repaired and are guarded separately.",
+    "Any new raiser or vanished pin, which fails rather than being absorbed."
+  ],
+  "id": "INV-8V5KH0",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "EntryPointProbeTests raiser-pin test; unmarked-aspect subTest; D55 sweep+controls whole plus valid-progression integration on bytes e6f32045",
+        "R3 verdict; sweep:38-58",
+        "R3 verdict; sweep:94-101",
+        "R3 verdict; sweep:86-92",
+        "Architect ruling notes/run3/L130-THE-FIVE-ARE-THE-PINNED-FIVE-RULING.json following d246006f; owner handover notes/run3/L130-L71-pinned-five-exact-handover/owner-pin-handover-and-successor-preparation.json (b9153996); supplied patch two-pin-ownership-and-bidirectional-hunks.patch (8aac324e) copied byte for byte with L71 settings/construction excluded; bound runs exit 0 with pins matching observed"
+      ],
+      "path": "l130-handoff-list.json"
+    },
+    "handoffEntry": "MIK-R130@v1 rules 4+5 + failure/recovery",
+    "leaf": "260928-MIK-L130",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The sweep's pins name exactly the currently unrepaired tool surfaces: the four lifecycle raisers owned by L111 and the bare `memory_quality_check` answer owned by L110, checked equal in both directions; a repair removes its entry in the same change, and a tool that still fails after the move returns to the architect with its tool, key and owner while no producer is repaired and no failure is pinned.",
+  "status": "proposed",
+  "supersedes": []
+}

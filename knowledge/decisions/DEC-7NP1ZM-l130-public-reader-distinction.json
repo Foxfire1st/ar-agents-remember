@@ -1,0 +1,56 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives"
+    ],
+    "justification": "Reusing the shared reader against duplicating a copy inside `_public` was the fork the ruling conditioned on the worker's reading; the no-copy order and the recorded same-case reason document both sides."
+  },
+  "alternatives": [
+    {
+      "option": "Judge driven wire answers in `_public` through the world's single reader with the explicit `ok` assertion; leave the direct whole-result validations in the calling test as they are.",
+      "reason": "Architect ruling point 5 (the reader of the world and no copy of it) with the worker's same-case reading: the payload arm implies the valid whole result (worker successor-freeze record).",
+      "status": "chosen"
+    },
+    {
+      "option": "Duplicate a reader copy inside `_public`.",
+      "reason": "The ruling orders the world's reader and no copy of it; two readers drift.",
+      "reconsider_when": "The shared reader can no longer serve progression's wire shape. (Curator forward condition.)",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Future `_public` edits keep the wire-answer and direct-validation distinction."
+  ],
+  "context": "Valid-progression `_public` judged delivered wire answers against the whole-result model, the same reader shape this leaf moves away from, while its direct whole-result validations in the calling test do not carry a delivered shape.",
+  "decider": "architect (pinned-five ruling point 5, 2026-10-10) with the worker's same-case reading",
+  "id": "DEC-7NP1ZM",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "83f57d7f2e014d45ee53ca60244709701dcac6de",
+        "content": "sha256:d10a6d165f7c0573569d55c975507ff931b793453121ed096581684301799ca7",
+        "locator": {
+          "kind": "symbol",
+          "name": "_public"
+        },
+        "path": "mcp/tests/test_tool_entry_point_valid_progression.py"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "EntryPointProbeTests vocabulary test; ChokePointControlTests missing-file control; D55 sweep+controls whole plus valid-progression integration on bytes e6f32045"
+      ],
+      "path": "l130-handoff-list.json"
+    },
+    "handoffEntry": "MIK-R130@v1 rules 1+3",
+    "leaf": "260928-MIK-L130",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

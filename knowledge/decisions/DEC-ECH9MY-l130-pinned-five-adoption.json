@@ -1,0 +1,61 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives"
+    ],
+    "justification": "Repairing the five producers in the pinning leaf against pinning them with named owners was the measured choice the rulings decided both sides of."
+  },
+  "alternatives": [
+    {
+      "option": "Pin the five in the tests with their owners named; L111 and L110 repair and empty the pins.",
+      "reason": "d246006f: the failures belong to L111/L110 answers, so the pinning leaf repairs no producer; 448f carries the measured hunks byte-for-byte.",
+      "status": "chosen"
+    },
+    {
+      "option": "Repair the five producers inside the pinning leaf.",
+      "reason": "Would make the pinning leaf own L111/L110 answers, against the task exclusion on producer repair.",
+      "reconsider_when": "An owning leaf repair lands; the pin entry goes with it in the same change (d246006f condition).",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "The five are pinned with owners, never repaired in the pinning leaf.",
+    "L130 pin hunks stay byte-identical to measured copies until the owning leaf repairs its surface (448f, hash-reviewed)."
+  ],
+  "context": "Five tools still failed on the tip after the move; the architect measured them (d246006f, 2026-10-09) and gave them to L111 (four landing preconditions) and L110 (bare memory_quality_check). Ruling 448f carries L71's two measured pin hunks into L130 byte-for-byte with hash review.",
+  "decider": "architect (d246006f sweep-failures ruling 2026-10-09, carried to L130 by the 448f pinned-five ruling)",
+  "id": "DEC-ECH9MY",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "route:mcp/tests"
+    },
+    {
+      "relation": "motivated_change_to",
+      "target": {
+        "id": "MIK-R130",
+        "packet": "requirements/MIK-R130-v1-the-tool-sweep-judges-an-answer-as-it-is-delivered.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "EntryPointProbeTests raiser-pin test; unmarked-aspect subTest; D55 sweep+controls whole plus valid-progression integration on bytes e6f32045"
+      ],
+      "path": "l130-handoff-list.json"
+    },
+    "handoffEntry": "MIK-R130@v1 rules 4+5 + failure/recovery",
+    "leaf": "260928-MIK-L130",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

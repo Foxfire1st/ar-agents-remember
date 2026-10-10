@@ -168,6 +168,15 @@ span several modules; the card of a module, where it has one, states what its ca
 | Certification registry and certificates | `test_certification_rail_registry.py`, `test_gate_certificate_authority.py` |
 | The public tool surface and its refusals | `test_tools.py`, `test_tool_refusal_conformance.py` |
 | The test suite's own rails: lanes, budgets, bootstrap, file size, layering | `test_evidence_lanes.py`, `test_suite_budget.py`, `test_pytest_bootstrap_boundaries.py`, `test_file_size_detector.py`, `test_layering.py` |
+| The tool entry-point sweep judging delivered answers | `tool_entry_point_world.py`, `test_tool_entry_point_sweep.py`, `test_tool_entry_point_controls.py`, `test_tool_entry_point_valid_progression.py` |
+
+## Tool Entry-Point Sweep
+
+The sweep over every public tool validates each call's whole result — read back from the file the delivered answer names in `log`, under the tool's registered model — and judges the delivered answer in its own shape: none of the four envelope fields, and no key that neither the whole result at the same place nor the shaping's framework keys account for. A missing or unreadable whole-result file is an unvalidatable finding, never a fallback to the delivered answer. Every tool and every aspect runs on its own subTest, and one tool's deadline never keeps the tools behind it unjudged. The pins record the measured surface with bidirectional exactness: the four lifecycle raisers owned by L111 and the bare `memory_quality_check` answer owned by L110; a repair removes its entry in the same change.
+
+- A returned call is judged from the whole result and the delivered answer through one shared classifier. [1705]
+
+- The sweep judges every tool and aspect on its own subTest with the pins exact in both directions. [1704]
 
 ## 260928-MIK-L99 — a leaf's agents hand over to each other
 
@@ -226,7 +235,9 @@ that a repeated archive-hook attempt keeps its receipts. The test catalog files 
 The tests route gained seven host modules (install contract, install no-stop, Node, start, dashboard host, release contract, host environment) plus additions to the existing sandbox and Paseo tests; the lane and lifecycle catalogs were extended for them.
 
 - The install-contract module. \[27] [1701]
+
 - The no-stop module. \[28] [1702]
+
 - The node module. \[29] [1703]
 
 The curator-authoring lane row for test_curator_scope.py, test_curator_realization_authoring.py and test_curator_family_authoring.py is gone with its modules under the catalog rewrite rule (rows whose owner and evidence files are both gone are removed); no replacement row names them.

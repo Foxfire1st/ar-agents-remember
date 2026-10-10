@@ -1,16 +1,36 @@
 {
   "path": "mcp/tests/test_tool_entry_point_valid_progression.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "83f57d7f2e014d45ee53ca60244709701dcac6de",
+        "content": "sha256:d10a6d165f7c0573569d55c975507ff931b793453121ed096581684301799ca7",
+        "locator": {
+          "kind": "symbol",
+          "name": "_public"
+        }
+      },
+      "id": "RLZ-5YB1NE",
+      "invariant": "INV-01JP62",
+      "origin": {
+        "handoffEntry": "L130-public-single-reader",
+        "leaf": "260928-MIK-L130"
+      },
+      "rationale": "Classifies each returned wire answer with the shared reader and asserts the payload arm, replacing the second validation of a delivered answer against the whole-result model.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
-    "1": {
-      "note": "The file realizes its current contract at the corrected candidate.",
+    "2": {
+      "note": "Each driven tool's delivered answer classifies `payload` through the world's single reader.",
       "targets": [
         {
           "anchor": {
-            "blob": "140e44c92a52e258f2ae75efe1af3485f1bc3176",
-            "content": "sha256:fe0a1d8eb52b4351e9b214c7fccf45331757a404b60ffacb02fa033ed57fca0f",
+            "blob": "83f57d7f2e014d45ee53ca60244709701dcac6de",
+            "content": "sha256:d10a6d165f7c0573569d55c975507ff931b793453121ed096581684301799ca7",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "_public"
             }
           },
           "kind": "test"

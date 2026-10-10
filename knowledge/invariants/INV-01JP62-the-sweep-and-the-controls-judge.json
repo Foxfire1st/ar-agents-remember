@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "The vocabulary test's per-tool and per-aspect subTests all ran and passed on the final candidate, with the sweep and the controls whole in one run each."
+  },
+  "applicability": "Every sweep and control run over the public tool population.",
+  "conditions": [
+    "A tool's prepare and call stay inside their phase deadline, or its timeout is recorded on that tool."
+  ],
+  "exclusions": [
+    "Producer repair and failure pinning, which return to the owning leaf.",
+    "Full-suite, installed-host and model runs, which this task excludes."
+  ],
+  "id": "INV-01JP62",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "EntryPointProbeTests vocabulary test per-tool and per-aspect subTests; EntryPointWorld.sweep per-tool deadline handling; D55 sweep+controls whole plus valid-progression integration on bytes e6f32045",
+        "One independent physical-EOF R03 accepted record against W03; F01/F02 fixed under original criteria, F03 carried fixed; retained bound Worker24passed157subtests+1passed both0, no Reviewer replay/check or MEMORY verdict.",
+        "CODE PASS verdict notes/reports/role-launch/260928-MIK-L130-reviewer-b8c837d4-b77a-4233-821a-8b7ee65e9624.code-r3.md; sweep whole on passed bytes within PID 2433640 run, exit 0; proof freeze6/proof-evidence.md",
+        "tests/test_tool_entry_point_valid_progression.py integration run on passed bytes: 1 passed, exit 0 (PID 2439957); raw /var/tmp/mik-run3/L130/final-w03-20261010T151202/progression.stdout; proof freeze6/proof-evidence.md"
+      ],
+      "path": "l130-handoff-list.json"
+    },
+    "handoffEntry": "MIK-R130@v1 rule 6 + one classifier",
+    "leaf": "260928-MIK-L130",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The sweep and the controls judge through one shared `classify`; every sweep and control aspect runs on the final bytes on its own subTest, and one tool's deadline is recorded as that tool's unvalidatable finding while the sweep goes on.",
+  "status": "proposed",
+  "supersedes": []
+}

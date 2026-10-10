@@ -5088,7 +5088,7 @@
       ]
     },
     "1701": {
-      "note": "The install-contract module. [27]",
+      "note": "The install-contract module. [27]\n\nAnchor: `test_paseo_install_contract.py`",
       "targets": [
         {
           "anchor": {
@@ -5104,7 +5104,7 @@
       ]
     },
     "1702": {
-      "note": "The no-stop module. [28]",
+      "note": "The no-stop module. [28]\n\nAnchor: `test_paseo_install_no_stop.py`",
       "targets": [
         {
           "anchor": {
@@ -5120,7 +5120,7 @@
       ]
     },
     "1703": {
-      "note": "The node module. [29]",
+      "note": "The node module. [29]\n\nAnchor: `test_paseo_node.py`",
       "targets": [
         {
           "anchor": {
@@ -5130,6 +5130,38 @@
               "kind": "file"
             },
             "path": "mcp/tests/test_paseo_node.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1704": {
+      "note": "The sweep judges every tool and aspect on its own subTest with the pins exact in both directions.\n\nAnchor: `test_every_public_tool_answers_in_the_products_own_vocabulary`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "99b2576c60f8486c3086bb6446973f8299d4a116",
+            "content": "sha256:a29c87cfe0bd540f3ae4b533bbd17eee2ee9ba63ec4586518e6a775796414e42",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_tool_entry_point_sweep.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1705": {
+      "note": "A returned call is judged from the whole result and the delivered answer through one shared classifier.\n\nAnchor: `_returned_arm`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ede6877fe9a17d0b2307140324211fa5edea6695",
+            "content": "sha256:41af6cfa34ec71ba090d6ea92d53d6cc2f08b32095ef9aacd10d754edcafb107",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/tool_entry_point_world.py"
           },
           "kind": "test"
         }

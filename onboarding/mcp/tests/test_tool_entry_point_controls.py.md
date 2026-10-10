@@ -10,8 +10,10 @@ Tests for tool entry-point controls.
 
 ## Code Commentary
 
-The tests drive the invalid-input responses of the registered tool entry points.
+The tests drive the invalid-input responses of the registered tool entry points. Every control keeps its red case through the world's single classifier, including the two MIK-R130 controls: a delivered answer that still carries an envelope field is unvalidatable, and an answer whose whole-result file is missing or unreadable is unvalidatable with the situation named — never a fallback to the delivered answer.
 
 ## Evidence
 
-- The file realizes its current contract at the corrected candidate. [1]
+- A delivered answer that keeps an envelope field is unvalidatable, each field on its own subTest. [2]
+- An answer without a readable whole-result file is unvalidatable, and the detail says which. [3]
+- A handler that goes round the choke point arrives as unvalidatable with its key named. [4]

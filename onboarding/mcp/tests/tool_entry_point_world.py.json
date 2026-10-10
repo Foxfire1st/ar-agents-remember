@@ -3,7 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "6181da9346c23604f91193c4de793a689231943c",
+        "blob": "ede6877fe9a17d0b2307140324211fa5edea6695",
+        "content": "sha256:712b2e176205abbeafbeedddced8f935df28d46cba3ff22638854e17719a45d5",
+        "locator": {
+          "kind": "symbol",
+          "name": "_returned_arm"
+        }
+      },
+      "id": "RLZ-2TZQC9",
+      "invariant": "INV-T8FDTX",
+      "origin": {
+        "handoffEntry": "L130-answer-judged-delivered",
+        "leaf": "260928-MIK-L130"
+      },
+      "rationale": "Applies the envelope ban from the product's own ENVELOPE_STRIPPED_FIELDS, walks every nested key against the whole result with only product-derived shaping allowances, and reads refusal marks off the delivered payload.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "ede6877fe9a17d0b2307140324211fa5edea6695",
         "content": "sha256:c4bac9584ff57d79b197e1ae2162e83f182902c091e0956914a3b6bebd602048",
         "locator": {
           "kind": "symbol",
@@ -18,18 +36,357 @@
       },
       "rationale": "EntryPointWorld._call wraps session initialization, tool response and session cleanup in the phase budgets, resets the deadline at each transition, and raises _ToolCallTimeout with tool name and phase on timeout; call re-raises that named exception outside the product-raiser classifier.",
       "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "ede6877fe9a17d0b2307140324211fa5edea6695",
+        "content": "sha256:8a6ac22a1cce7a44906d7512d6a7f215f67bedccbfc8f464e5b9f5f0bafa2d09",
+        "locator": {
+          "kind": "symbol",
+          "name": "_read_whole_result"
+        }
+      },
+      "id": "RLZ-3ME8JM",
+      "invariant": "INV-22N6MM",
+      "origin": {
+        "handoffEntry": "L130-reader-moved",
+        "leaf": "260928-MIK-L130"
+      },
+      "rationale": "Reads this call's whole result from the answer's log file and refuses the no-file and unreadable shapes with a named finding, so no delivered answer can stand in for the whole result.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "ede6877fe9a17d0b2307140324211fa5edea6695",
+        "content": "sha256:6d313994f88c45a47aa5ed5b3b9ccc270d56d86c9e870b1afbe08f97fc9a57e5",
+        "locator": {
+          "kind": "symbol",
+          "name": "UNMARKED_NOT_OK"
+        }
+      },
+      "id": "RLZ-3XS813",
+      "invariant": "INV-8V5KH0",
+      "origin": {
+        "handoffEntry": "L130-pins-taken",
+        "leaf": "260928-MIK-L130"
+      },
+      "rationale": "Holds exactly the observed bare refusal with owner L110 and the repair-removes-entry rule, failing the run in both directions on any deviation.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "ede6877fe9a17d0b2307140324211fa5edea6695",
+        "content": "sha256:712b2e176205abbeafbeedddced8f935df28d46cba3ff22638854e17719a45d5",
+        "locator": {
+          "kind": "symbol",
+          "name": "_returned_arm"
+        }
+      },
+      "id": "RLZ-5XEVC4",
+      "invariant": "INV-T8FDTX",
+      "origin": {
+        "handoffEntry": "MIK-R130@v1 rule 2",
+        "leaf": "260928-MIK-L130"
+      },
+      "rationale": "Judges the delivered answer as delivered: envelope rejection, same-place-or-framework key accounting, refusal read from the answer.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "ede6877fe9a17d0b2307140324211fa5edea6695",
+        "content": "sha256:e70868a155b3a04ce2b756d208c0f43673e28f1561ac0d0b6effd9883252c8c7",
+        "locator": {
+          "end": 27,
+          "kind": "line_range",
+          "start": 24
+        }
+      },
+      "id": "RLZ-6BR2QJ",
+      "invariant": "INV-T8FDTX",
+      "origin": {
+        "handoffEntry": "MIK-R130@v1 rule 2",
+        "leaf": "260928-MIK-L130"
+      },
+      "rationale": "Imports the envelope fields and the framework answer keys from the product's own code, the only shaping authority.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "ede6877fe9a17d0b2307140324211fa5edea6695",
+        "content": "sha256:e7c7b2d84258ceb6a33176f24b2174a26eab5a126411c2fb03fa0ac8f34d66a1",
+        "locator": {
+          "kind": "symbol",
+          "name": "_unknown_in_truncated"
+        }
+      },
+      "id": "RLZ-6KD5XY",
+      "invariant": "INV-T8FDTX",
+      "origin": {
+        "handoffEntry": "L130-CODE-R1-F01",
+        "leaf": "260928-MIK-L130"
+      },
+      "rationale": "This list-wrapper gate now admits product shaping only where the matched whole list is over the product limit.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "ede6877fe9a17d0b2307140324211fa5edea6695",
+        "content": "sha256:37578a1f10cb0bfb736dc16bace943a4034c864a0d510646723f7ba78e95ada6",
+        "locator": {
+          "kind": "symbol",
+          "name": "classify"
+        }
+      },
+      "id": "RLZ-CAJ0JE",
+      "invariant": "INV-01JP62",
+      "origin": {
+        "handoffEntry": "MIK-R130@v1 / L130-W03 / L130-R03",
+        "leaf": "260928-MIK-L130"
+      },
+      "rationale": "The single classifier binds the previously verified whole-result reader to the now repaired same-place and refusal predicates; this acceptance is baseline plus sealed delta, not a new whole review.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "ede6877fe9a17d0b2307140324211fa5edea6695",
+        "content": "sha256:37578a1f10cb0bfb736dc16bace943a4034c864a0d510646723f7ba78e95ada6",
+        "locator": {
+          "kind": "symbol",
+          "name": "classify"
+        }
+      },
+      "id": "RLZ-CDHFWQ",
+      "invariant": "INV-01JP62",
+      "origin": {
+        "handoffEntry": "MIK-R130@v1 rule 6 + one classifier",
+        "leaf": "260928-MIK-L130"
+      },
+      "rationale": "The single classifier the sweep and the controls both use, judging a returned call from the whole result and the delivered answer.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "ede6877fe9a17d0b2307140324211fa5edea6695",
+        "content": "sha256:c3b7bd4ff2f1d28ae6844906bc176b3ce13a3fed08e6bcf4e89cd09c66741aee",
+        "locator": {
+          "kind": "symbol",
+          "name": "sweep"
+        }
+      },
+      "id": "RLZ-CN53DJ",
+      "invariant": "INV-01JP62",
+      "origin": {
+        "handoffEntry": "L130-sweep-runs-whole",
+        "leaf": "260928-MIK-L130"
+      },
+      "rationale": "Records one tool's deadline as that tool's finding and continues with the rest, so no tool stays unjudged behind another's timeout.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "ede6877fe9a17d0b2307140324211fa5edea6695",
+        "content": "sha256:712b2e176205abbeafbeedddced8f935df28d46cba3ff22638854e17719a45d5",
+        "locator": {
+          "kind": "symbol",
+          "name": "_returned_arm"
+        }
+      },
+      "id": "RLZ-FFJB4Q",
+      "invariant": "INV-22N6MM",
+      "origin": {
+        "handoffEntry": "MIK-R130@v1 rules 1+3",
+        "leaf": "260928-MIK-L130"
+      },
+      "rationale": "Validates the read-back whole result under the tool's registered model before judging the delivered answer.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "ede6877fe9a17d0b2307140324211fa5edea6695",
+        "content": "sha256:712b2e176205abbeafbeedddced8f935df28d46cba3ff22638854e17719a45d5",
+        "locator": {
+          "kind": "symbol",
+          "name": "_returned_arm"
+        }
+      },
+      "id": "RLZ-K55Z4E",
+      "invariant": "INV-22N6MM",
+      "origin": {
+        "handoffEntry": "L130-reader-moved",
+        "leaf": "260928-MIK-L130"
+      },
+      "rationale": "Validates that whole result under the tool's registered model, which is the only validation the sweep performs on a returned call.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "ede6877fe9a17d0b2307140324211fa5edea6695",
+        "content": "sha256:c3b7bd4ff2f1d28ae6844906bc176b3ce13a3fed08e6bcf4e89cd09c66741aee",
+        "locator": {
+          "kind": "symbol",
+          "name": "EntryPointWorld.sweep"
+        }
+      },
+      "id": "RLZ-K7KKXM",
+      "invariant": "INV-01JP62",
+      "origin": {
+        "handoffEntry": "MIK-R130@v1 rule 6 + one classifier",
+        "leaf": "260928-MIK-L130"
+      },
+      "rationale": "Records one tool's deadline as that tool's finding and goes on, so nothing stays unrun behind it.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "ede6877fe9a17d0b2307140324211fa5edea6695",
+        "content": "sha256:8a6ac22a1cce7a44906d7512d6a7f215f67bedccbfc8f464e5b9f5f0bafa2d09",
+        "locator": {
+          "kind": "symbol",
+          "name": "_read_whole_result"
+        }
+      },
+      "id": "RLZ-QY1TXM",
+      "invariant": "INV-22N6MM",
+      "origin": {
+        "handoffEntry": "MIK-R130@v1 rules 1+3",
+        "leaf": "260928-MIK-L130"
+      },
+      "rationale": "Reads the whole result of this call from the file the answer names; a missing or unreadable file is an unvalidatable finding with the situation named.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "ede6877fe9a17d0b2307140324211fa5edea6695",
+        "content": "sha256:5051eee79bbddebacb81642153d672e5fa69042a984ac06ee8b17ca76b0582d8",
+        "locator": {
+          "kind": "symbol",
+          "name": "_actionable_next"
+        }
+      },
+      "id": "RLZ-S2F966",
+      "invariant": "INV-T8FDTX",
+      "origin": {
+        "handoffEntry": "MIK-R130 W03 actionable next",
+        "leaf": "260928-MIK-L130"
+      },
+      "rationale": "Gates a shaped delivered next on naming a next tool or carrying arguments.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "ede6877fe9a17d0b2307140324211fa5edea6695",
+        "content": "sha256:122d9b423d9d35131ebd397fe330e484cef669ae05c467fe64d808a3d30ac876",
+        "locator": {
+          "end": 98,
+          "kind": "line_range",
+          "start": 91
+        }
+      },
+      "id": "RLZ-S39TCH",
+      "invariant": "INV-8V5KH0",
+      "origin": {
+        "handoffEntry": "MIK-R130@v1 rules 4+5 + failure/recovery",
+        "leaf": "260928-MIK-L130"
+      },
+      "rationale": "The bare-answer pin records the measured memory_quality_check surface owned by L110.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "ede6877fe9a17d0b2307140324211fa5edea6695",
+        "content": "sha256:616725463860034f01645ef22c9b069790e16605dd50f886654cbdcbdb5299b8",
+        "locator": {
+          "kind": "symbol",
+          "name": "refusal_marks"
+        }
+      },
+      "id": "RLZ-TZ43E1",
+      "invariant": "INV-T8FDTX",
+      "origin": {
+        "handoffEntry": "L130-CODE-R1-F02",
+        "leaf": "260928-MIK-L130"
+      },
+      "rationale": "This shared predicate now gates shaped next solely through the actual actionability predicate, excluding the generic string shortcut.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "ede6877fe9a17d0b2307140324211fa5edea6695",
+        "content": "sha256:616725463860034f01645ef22c9b069790e16605dd50f886654cbdcbdb5299b8",
+        "locator": {
+          "kind": "symbol",
+          "name": "refusal_marks"
+        }
+      },
+      "id": "RLZ-X1MNME",
+      "invariant": "INV-T8FDTX",
+      "origin": {
+        "handoffEntry": "L130-answer-judged-delivered",
+        "leaf": "260928-MIK-L130"
+      },
+      "rationale": "Marks a nonempty delivered code like any refusal identity and a shaped next only when it names a tool or carries arguments, so guidance-only refusals stay bare.",
+      "role": "enforcement"
     }
   ],
   "references": {
-    "1": {
-      "note": "The file realizes its current contract at the corrected candidate.",
+    "2": {
+      "note": "The whole result is read back from the file the answer names, and a missing or unreadable file is an unvalidatable finding, never a fallback.",
       "targets": [
         {
           "anchor": {
-            "blob": "4553c1bdc8f3006ffdfb7c319398a1d84ac25b95",
-            "content": "sha256:59f4a3d334b5e812d90af9f04d4083fe857dae687f0acd8a337eb71f21491eee",
+            "blob": "ede6877fe9a17d0b2307140324211fa5edea6695",
+            "content": "sha256:8a6ac22a1cce7a44906d7512d6a7f215f67bedccbfc8f464e5b9f5f0bafa2d09",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "_read_whole_result"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "A returned call validates the whole result under its model and judges the delivered answer as delivered.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ede6877fe9a17d0b2307140324211fa5edea6695",
+            "content": "sha256:712b2e176205abbeafbeedddced8f935df28d46cba3ff22638854e17719a45d5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_returned_arm"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "One shared classifier serves the sweep and the controls.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ede6877fe9a17d0b2307140324211fa5edea6695",
+            "content": "sha256:37578a1f10cb0bfb736dc16bace943a4034c864a0d510646723f7ba78e95ada6",
+            "locator": {
+              "kind": "symbol",
+              "name": "classify"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "A passed phase limit names the tool and the phase, outside the product-raiser classifier.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ede6877fe9a17d0b2307140324211fa5edea6695",
+            "content": "sha256:cdee253b37027f823794d963e164401d59d8a3df94597f8731eca5d854c71375",
+            "locator": {
+              "kind": "symbol",
+              "name": "_ToolCallTimeout"
             }
           },
           "kind": "test"

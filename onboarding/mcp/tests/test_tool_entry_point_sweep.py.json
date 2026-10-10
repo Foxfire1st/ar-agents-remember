@@ -1,11 +1,191 @@
 {
   "path": "mcp/tests/test_tool_entry_point_sweep.py",
-  "proves": [],
+  "proves": [
+    {
+      "anchor": {
+        "blob": "99b2576c60f8486c3086bb6446973f8299d4a116",
+        "content": "sha256:1e375aa9fbefa7ef55854a0e6e81b6c658903efd95fea7139692bf68de1a2369",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_pinned_raisers_are_exactly_the_ones_that_lose_the_envelope"
+        }
+      },
+      "facet": "The pinned raisers equal the observed error arm in both directions.",
+      "id": "PRF-6KBHE8",
+      "invariant": "INV-8V5KH0",
+      "origin": {
+        "handoffEntry": "MIK-R130@v1 rules 4+5 + failure/recovery",
+        "leaf": "260928-MIK-L130"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "99b2576c60f8486c3086bb6446973f8299d4a116",
+        "content": "sha256:7991154da41374bfca8f6450500696a9e20feb064efc8e791cfde2e12ff52dd4",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_every_public_tool_answers_in_the_products_own_vocabulary"
+        }
+      },
+      "facet": "Every returned call's whole result validates under its registered model.",
+      "id": "PRF-8TH88D",
+      "invariant": "INV-22N6MM",
+      "origin": {
+        "handoffEntry": "MIK-R130@v1 rules 1+3",
+        "leaf": "260928-MIK-L130"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "99b2576c60f8486c3086bb6446973f8299d4a116",
+        "content": "sha256:7991154da41374bfca8f6450500696a9e20feb064efc8e791cfde2e12ff52dd4",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_every_public_tool_answers_in_the_products_own_vocabulary"
+        }
+      },
+      "facet": "The unmarked set equals the pin in both directions.",
+      "id": "PRF-J6Z91D",
+      "invariant": "INV-8V5KH0",
+      "origin": {
+        "handoffEntry": "MIK-R130@v1 rules 4+5 + failure/recovery",
+        "leaf": "260928-MIK-L130"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "99b2576c60f8486c3086bb6446973f8299d4a116",
+        "content": "sha256:7991154da41374bfca8f6450500696a9e20feb064efc8e791cfde2e12ff52dd4",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_every_public_tool_answers_in_the_products_own_vocabulary"
+        }
+      },
+      "facet": "Every sweep aspect runs on its own subTest even when an earlier one fails.",
+      "id": "PRF-ZWB7FX",
+      "invariant": "INV-01JP62",
+      "origin": {
+        "handoffEntry": "MIK-R130@v1 rule 6 + one classifier",
+        "leaf": "260928-MIK-L130"
+      }
+    }
+  ],
   "realizes": [
     {
       "anchor": {
-        "blob": "2b792b244e350d1978f99d3bc3ffaf5426300b8c",
-        "content": "sha256:6f6f1aea6f5d5af44c1ed195cb6f431a468f0f71b31c8ff9c15dc2d0ae6d50aa",
+        "blob": "99b2576c60f8486c3086bb6446973f8299d4a116",
+        "content": "sha256:534a557df83cbcab5a5cf8a41bc85a33ca4e8e8d829e376fbca13c56df9fe2f3",
+        "locator": {
+          "kind": "symbol",
+          "name": "ENVELOPE_LOSING_RAISERS"
+        }
+      },
+      "id": "RLZ-25RX8K",
+      "invariant": "INV-8V5KH0",
+      "origin": {
+        "handoffEntry": "L130-pins-taken",
+        "leaf": "260928-MIK-L130"
+      },
+      "rationale": "Holds exactly the four observed raisers with owner L111 and the repair-removes-entry rule, failing the run in both directions on any deviation.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "99b2576c60f8486c3086bb6446973f8299d4a116",
+        "content": "sha256:cf13fcd4aed8c76d143d9756a4c825aace6cb7f067668fe241e8fe04cbb5c49d",
+        "locator": {
+          "end": 92,
+          "kind": "line_range",
+          "start": 86
+        }
+      },
+      "id": "RLZ-6VVBP4",
+      "invariant": "INV-8V5KH0",
+      "origin": {
+        "handoffEntry": "MIK-R130 W03 pin comment",
+        "leaf": "260928-MIK-L130"
+      },
+      "rationale": "The pin comment states L111 ownership and the same-change repair rule.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "99b2576c60f8486c3086bb6446973f8299d4a116",
+        "content": "sha256:7991154da41374bfca8f6450500696a9e20feb064efc8e791cfde2e12ff52dd4",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_every_public_tool_answers_in_the_products_own_vocabulary"
+        }
+      },
+      "id": "RLZ-8E1MYK",
+      "invariant": "INV-01JP62",
+      "origin": {
+        "handoffEntry": "L130-sweep-runs-whole",
+        "leaf": "260928-MIK-L130"
+      },
+      "rationale": "Judges each tool and each assertion aspect on its own subTest, so one tool's failure neither hides the rest nor keeps later aspects unrun.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "99b2576c60f8486c3086bb6446973f8299d4a116",
+        "content": "sha256:534a557df83cbcab5a5cf8a41bc85a33ca4e8e8d829e376fbca13c56df9fe2f3",
+        "locator": {
+          "end": 101,
+          "kind": "line_range",
+          "start": 94
+        }
+      },
+      "id": "RLZ-B0D6N2",
+      "invariant": "INV-8V5KH0",
+      "origin": {
+        "handoffEntry": "MIK-R130 W03 pin constant",
+        "leaf": "260928-MIK-L130"
+      },
+      "rationale": "The pin constant records the four measured lifecycle preconditions owned by L111.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "99b2576c60f8486c3086bb6446973f8299d4a116",
+        "content": "sha256:8302a031037ec0811de6b2d01ec3d144c2d51a1eda3e1eb266938d85312aacbf",
+        "locator": {
+          "end": 26,
+          "kind": "line_range",
+          "start": 11
+        }
+      },
+      "id": "RLZ-E6ZJX2",
+      "invariant": "INV-T8FDTX",
+      "origin": {
+        "handoffEntry": "MIK-R130 W03 sweep arms table",
+        "leaf": "260928-MIK-L130"
+      },
+      "rationale": "The published arms table states whole-result validation, refusal identity/code/next, and unvalidatable-at-any-depth.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "99b2576c60f8486c3086bb6446973f8299d4a116",
+        "content": "sha256:1e375aa9fbefa7ef55854a0e6e81b6c658903efd95fea7139692bf68de1a2369",
+        "locator": {
+          "kind": "symbol",
+          "name": "EntryPointProbeTests.test_the_pinned_raisers_are_exactly_the_ones_that_lose_the_envelope"
+        }
+      },
+      "id": "RLZ-ET2GC0",
+      "invariant": "INV-8V5KH0",
+      "origin": {
+        "handoffEntry": "MIK-R130@v1 rules 4+5 + failure/recovery",
+        "leaf": "260928-MIK-L130"
+      },
+      "rationale": "The pin test asserts the pin equals the observed error arm in both directions.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "99b2576c60f8486c3086bb6446973f8299d4a116",
+        "content": "sha256:39996bd6680d3e40684c64d2b2e3714a7b881a2f0ecf0ede828ba2606f9b53ff",
         "locator": {
           "kind": "symbol",
           "name": "EntryPointProbeTests"
@@ -22,7 +202,7 @@
     },
     {
       "anchor": {
-        "blob": "2b792b244e350d1978f99d3bc3ffaf5426300b8c",
+        "blob": "99b2576c60f8486c3086bb6446973f8299d4a116",
         "content": "sha256:b49022c9deeed0a84490b978b301fe516f420e645d3b0ea7f9c542dfe8a6d770",
         "locator": {
           "kind": "symbol",
@@ -37,32 +217,54 @@
       },
       "rationale": "Class cleanup registers the existing world close before any deadline can fail fixture setup.",
       "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "99b2576c60f8486c3086bb6446973f8299d4a116",
+        "content": "sha256:ff7ee380d4f8bfe2cfe0f505a5044faab7241de60b346a9c756aac3f301b4382",
+        "locator": {
+          "end": 84,
+          "kind": "line_range",
+          "start": 70
+        }
+      },
+      "id": "RLZ-WQDNDW",
+      "invariant": "INV-8V5KH0",
+      "origin": {
+        "handoffEntry": "MIK-R130@v1 rules 4+5 + failure/recovery",
+        "leaf": "260928-MIK-L130"
+      },
+      "rationale": "The raiser pin records the four measured lifecycle preconditions owned by L111.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "99b2576c60f8486c3086bb6446973f8299d4a116",
+        "content": "sha256:12ea2d2de0b0c2e9f29445ef89c05b4349a712cdccf616bbe79e1a69a71e4179",
+        "locator": {
+          "end": 58,
+          "kind": "line_range",
+          "start": 38
+        }
+      },
+      "id": "RLZ-Y2XJG0",
+      "invariant": "INV-8V5KH0",
+      "origin": {
+        "handoffEntry": "MIK-R130 W03 sweep pin prose",
+        "leaf": "260928-MIK-L130"
+      },
+      "rationale": "The T34 and current-pin prose names the repaired nine, the four L111 raisers, the bare L110 answer, and the repair rule.",
+      "role": "support"
     }
   ],
   "references": {
-    "25": {
-      "note": "`EntryPointProbeTests` owns the current boundary described above.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "2b792b244e350d1978f99d3bc3ffaf5426300b8c",
-            "content": "sha256:6f6f1aea6f5d5af44c1ed195cb6f431a468f0f71b31c8ff9c15dc2d0ae6d50aa",
-            "locator": {
-              "kind": "symbol",
-              "name": "EntryPointProbeTests"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
     "26": {
-      "note": "`T34`'s nine tools that lose the whole envelope, each with the ordinary precondition that loses it. **Now empty** — repaired by `260918-TSIP-L6`.",
+      "note": "`T34`'s nine stay repaired; the pin now holds the four lifecycle preconditions that raise.",
       "targets": [
         {
           "anchor": {
-            "blob": "2b792b244e350d1978f99d3bc3ffaf5426300b8c",
-            "content": "sha256:9cbed5b01f0cff1332dd4da507f21c4eda604ef294aa2928b27b4f92e9e8a986",
+            "blob": "99b2576c60f8486c3086bb6446973f8299d4a116",
+            "content": "sha256:534a557df83cbcab5a5cf8a41bc85a33ca4e8e8d829e376fbca13c56df9fe2f3",
             "locator": {
               "kind": "symbol",
               "name": "ENVELOPE_LOSING_RAISERS"
@@ -77,7 +279,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2b792b244e350d1978f99d3bc3ffaf5426300b8c",
+            "blob": "99b2576c60f8486c3086bb6446973f8299d4a116",
             "content": "sha256:dcc341043a58c926bdda03daf4d6074872b266be668079e2f2eac3a12647e44d",
             "locator": {
               "kind": "symbol",
@@ -93,8 +295,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2b792b244e350d1978f99d3bc3ffaf5426300b8c",
-            "content": "sha256:6f6f1aea6f5d5af44c1ed195cb6f431a468f0f71b31c8ff9c15dc2d0ae6d50aa",
+            "blob": "99b2576c60f8486c3086bb6446973f8299d4a116",
+            "content": "sha256:39996bd6680d3e40684c64d2b2e3714a7b881a2f0ecf0ede828ba2606f9b53ff",
             "locator": {
               "kind": "symbol",
               "name": "EntryPointProbeTests"
@@ -109,8 +311,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6181da9346c23604f91193c4de793a689231943c",
-            "content": "sha256:45f51aced2c7283a60cf8b5c5697df4cc9a00bbee3393481209618d19a26bf67",
+            "blob": "ede6877fe9a17d0b2307140324211fa5edea6695",
+            "content": "sha256:616725463860034f01645ef22c9b069790e16605dd50f886654cbdcbdb5299b8",
             "locator": {
               "kind": "symbol",
               "name": "refusal_marks"
@@ -122,12 +324,12 @@
       ]
     },
     "30": {
-      "note": "The third pin: an envelope reporting `ok:false` that a caller cannot act on. **Now empty** — `citation_migrate` answers the envelope, repaired by `260918-TSIP-L6`.",
+      "note": "The bare-answer pin records the `memory_quality_check` surface that no refusal identity or next action covers; T64's repair remains.",
       "targets": [
         {
           "anchor": {
-            "blob": "6181da9346c23604f91193c4de793a689231943c",
-            "content": "sha256:94827d7d82d1ba1109c0607fbd852ede5b7e830d2ac9490d0c7e76402c68cd0c",
+            "blob": "ede6877fe9a17d0b2307140324211fa5edea6695",
+            "content": "sha256:6d313994f88c45a47aa5ed5b3b9ccc270d56d86c9e870b1afbe08f97fc9a57e5",
             "locator": {
               "kind": "symbol",
               "name": "UNMARKED_NOT_OK"
@@ -143,37 +345,13 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6181da9346c23604f91193c4de793a689231943c",
-            "content": "sha256:b1114d2c34bb8904aa6a26307a763481bdf087e6b03c6105900470aabb03c9ce",
+            "blob": "ede6877fe9a17d0b2307140324211fa5edea6695",
+            "content": "sha256:c62fc440ad0d4ba94ebc42ee5bd94e65d62e1de19921031fd44aa5e60743713e",
             "locator": {
               "kind": "symbol",
               "name": "EntryPointWorld"
             },
             "path": "mcp/tests/tool_entry_point_world.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "2b792b244e350d1978f99d3bc3ffaf5426300b8c",
-            "content": "sha256:d0596934b114e3c4d8d6007d2e661a6f516bfbfc3a5976e1b23989a635c1048b",
-            "locator": {
-              "end": 67,
-              "kind": "line_range",
-              "start": 57
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "2b792b244e350d1978f99d3bc3ffaf5426300b8c",
-            "content": "sha256:b49022c9deeed0a84490b978b301fe516f420e645d3b0ea7f9c542dfe8a6d770",
-            "locator": {
-              "end": 138,
-              "kind": "line_range",
-              "start": 128
-            }
           },
           "kind": "test"
         }
@@ -184,52 +362,13 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6181da9346c23604f91193c4de793a689231943c",
+            "blob": "ede6877fe9a17d0b2307140324211fa5edea6695",
             "content": "sha256:995a2e5792acde634a2f8609a360561be5b5fb9942e5d80573a5a6fcb7e7c852",
             "locator": {
               "kind": "symbol",
               "name": "REFUSED_MODEL"
             },
             "path": "mcp/tests/tool_entry_point_world.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "6181da9346c23604f91193c4de793a689231943c",
-            "content": "sha256:f5ab20eb78fe980df8ce04556764cd4ffc1b830432ac75476c47207d5b13f5c9",
-            "locator": {
-              "end": 170,
-              "kind": "line_range",
-              "start": 154
-            },
-            "path": "mcp/tests/tool_entry_point_world.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "6181da9346c23604f91193c4de793a689231943c",
-            "content": "sha256:26bfab83d0548342d180d30119c4eedbcb029c39d15753716ba73fd28af68518",
-            "locator": {
-              "end": 205,
-              "kind": "line_range",
-              "start": 195
-            },
-            "path": "mcp/tests/tool_entry_point_world.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "97795b8d20e56adf5262308cb24e2ae781ffc66e",
-            "content": "sha256:b7c327a3476a912dc8fdc7706609676d806d19b9ff43ca424289a66d6efbb9b1",
-            "locator": {
-              "end": 170,
-              "kind": "line_range",
-              "start": 153
-            },
-            "path": "mcp/tests/test_tool_entry_point_controls.py"
           },
           "kind": "test"
         }
@@ -240,7 +379,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6181da9346c23604f91193c4de793a689231943c",
+            "blob": "ede6877fe9a17d0b2307140324211fa5edea6695",
             "content": "sha256:08b68c8ec979c3177eef42c9de790526f48c82b46a14df3505368a1e3208f260",
             "locator": {
               "kind": "symbol",
@@ -252,12 +391,12 @@
         },
         {
           "anchor": {
-            "blob": "6181da9346c23604f91193c4de793a689231943c",
+            "blob": "ede6877fe9a17d0b2307140324211fa5edea6695",
             "content": "sha256:76646496be91141403daa27f824beec997a1a5be44c3a0ec5e4cb9461cf8d2ea",
             "locator": {
-              "end": 839,
+              "end": 1019,
               "kind": "line_range",
-              "start": 801
+              "start": 981
             },
             "path": "mcp/tests/tool_entry_point_world.py"
           },
@@ -265,12 +404,12 @@
         },
         {
           "anchor": {
-            "blob": "2b792b244e350d1978f99d3bc3ffaf5426300b8c",
+            "blob": "99b2576c60f8486c3086bb6446973f8299d4a116",
             "content": "sha256:7c8f1ca403bef725da751428848a3b6dc6a8238eb0657b7c73b2180ef7ca0f2e",
             "locator": {
-              "end": 273,
+              "end": 293,
               "kind": "line_range",
-              "start": 263
+              "start": 283
             }
           },
           "kind": "test"
@@ -282,7 +421,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6181da9346c23604f91193c4de793a689231943c",
+            "blob": "ede6877fe9a17d0b2307140324211fa5edea6695",
             "content": "sha256:4716ba36ce90f112c8e69731334ff59b7162feec73b7b9b8848ed9879f177e53",
             "locator": {
               "kind": "symbol",
@@ -294,24 +433,24 @@
         },
         {
           "anchor": {
-            "blob": "2b792b244e350d1978f99d3bc3ffaf5426300b8c",
+            "blob": "99b2576c60f8486c3086bb6446973f8299d4a116",
             "content": "sha256:d0596934b114e3c4d8d6007d2e661a6f516bfbfc3a5976e1b23989a635c1048b",
             "locator": {
-              "end": 67,
+              "end": 84,
               "kind": "line_range",
-              "start": 57
+              "start": 74
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "2b792b244e350d1978f99d3bc3ffaf5426300b8c",
+            "blob": "99b2576c60f8486c3086bb6446973f8299d4a116",
             "content": "sha256:2e165524947d4d98a649d797457bd1b6fee646fb573dd977245093b3582f5ab3",
             "locator": {
-              "end": 269,
+              "end": 289,
               "kind": "line_range",
-              "start": 247
+              "start": 267
             }
           },
           "kind": "test"
@@ -323,7 +462,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6181da9346c23604f91193c4de793a689231943c",
+            "blob": "ede6877fe9a17d0b2307140324211fa5edea6695",
             "content": "sha256:f18c14781ddeecc0fca17b58d2b4d8d3f97930328f9c497895ac89df4713fc79",
             "locator": {
               "kind": "symbol",
@@ -335,24 +474,24 @@
         },
         {
           "anchor": {
-            "blob": "2b792b244e350d1978f99d3bc3ffaf5426300b8c",
+            "blob": "99b2576c60f8486c3086bb6446973f8299d4a116",
             "content": "sha256:b132a2a2d4d753b575dfd386512b6e9a21bc2e7750c918e2461d1138e1a51eaa",
             "locator": {
-              "end": 367,
+              "end": 387,
               "kind": "line_range",
-              "start": 355
+              "start": 375
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "2b792b244e350d1978f99d3bc3ffaf5426300b8c",
+            "blob": "99b2576c60f8486c3086bb6446973f8299d4a116",
             "content": "sha256:8f14734706c32adc59706968b0a18f752e8465450d9bf46d360cda834511b7ae",
             "locator": {
-              "end": 383,
+              "end": 403,
               "kind": "line_range",
-              "start": 369
+              "start": 389
             }
           },
           "kind": "test"
@@ -364,7 +503,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6181da9346c23604f91193c4de793a689231943c",
+            "blob": "ede6877fe9a17d0b2307140324211fa5edea6695",
             "content": "sha256:44100f1a6d5a720f1e607189ff8b81859a2e782b84895087152af79f27792881",
             "locator": {
               "kind": "symbol",
@@ -376,12 +515,12 @@
         },
         {
           "anchor": {
-            "blob": "6181da9346c23604f91193c4de793a689231943c",
+            "blob": "ede6877fe9a17d0b2307140324211fa5edea6695",
             "content": "sha256:ccd5cc11587b9151d106ba8f8b8332aeed400f81a55f3fc605714c170439e422",
             "locator": {
-              "end": 430,
+              "end": 595,
               "kind": "line_range",
-              "start": 408
+              "start": 573
             },
             "path": "mcp/tests/tool_entry_point_world.py"
           },
@@ -389,12 +528,12 @@
         },
         {
           "anchor": {
-            "blob": "2b792b244e350d1978f99d3bc3ffaf5426300b8c",
+            "blob": "99b2576c60f8486c3086bb6446973f8299d4a116",
             "content": "sha256:ce65e0e2d6f763697fb916878475f5ccb5c2ac9af36bf49c344b32ac55324722",
             "locator": {
-              "end": 403,
+              "end": 423,
               "kind": "line_range",
-              "start": 386
+              "start": 406
             }
           },
           "kind": "test"
@@ -406,7 +545,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "97795b8d20e56adf5262308cb24e2ae781ffc66e",
+            "blob": "3b92604bc8c87671a5bbf10bd47f760545a00760",
             "content": "sha256:e6541f83ab393d4ca2381200670325da4fd3de1a6b1b2a32abe9548fecfa8896",
             "locator": {
               "kind": "symbol",
@@ -418,12 +557,12 @@
         },
         {
           "anchor": {
-            "blob": "6181da9346c23604f91193c4de793a689231943c",
+            "blob": "ede6877fe9a17d0b2307140324211fa5edea6695",
             "content": "sha256:9edd824d4fed13f7bcf6277a286f2ab0d666fa7b15bce7ca1555a7b6e8a14b28",
             "locator": {
-              "end": 327,
+              "end": 492,
               "kind": "line_range",
-              "start": 312
+              "start": 477
             },
             "path": "mcp/tests/tool_entry_point_world.py"
           },
@@ -436,39 +575,13 @@
       "targets": [
         {
           "anchor": {
-            "blob": "97795b8d20e56adf5262308cb24e2ae781ffc66e",
-            "content": "sha256:492aad6cd164fcaa8a0f211ed4fe6b72a93723aeb69e0afc6ab455bf5c69b9dc",
+            "blob": "3b92604bc8c87671a5bbf10bd47f760545a00760",
+            "content": "sha256:707fb01ad4dba7520c68bda4723ec8c9d1898c6e30c4bc44994266b7607a6ff6",
             "locator": {
               "kind": "symbol",
               "name": "ChokePointControlTests"
             },
             "path": "mcp/tests/test_tool_entry_point_controls.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "97795b8d20e56adf5262308cb24e2ae781ffc66e",
-            "content": "sha256:feb5e6e22a10b315f08967ab3c8535220da91d1f1eb7798be790bc743b7be478",
-            "locator": {
-              "end": 29,
-              "kind": "line_range",
-              "start": 24
-            },
-            "path": "mcp/tests/test_tool_entry_point_controls.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "6181da9346c23604f91193c4de793a689231943c",
-            "content": "sha256:26bfab83d0548342d180d30119c4eedbcb029c39d15753716ba73fd28af68518",
-            "locator": {
-              "end": 205,
-              "kind": "line_range",
-              "start": 195
-            },
-            "path": "mcp/tests/tool_entry_point_world.py"
           },
           "kind": "test"
         }
@@ -479,7 +592,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "97795b8d20e56adf5262308cb24e2ae781ffc66e",
+            "blob": "3b92604bc8c87671a5bbf10bd47f760545a00760",
             "content": "sha256:22a11f367e54291ae27b8b07bc21b8ba0b55f48071782901bdea64f09a00b608",
             "locator": {
               "kind": "symbol",
@@ -496,7 +609,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "837e915726adb29076ca1c3afe50a1d441d6ea30",
+            "blob": "c08bab7f2fa9c915c4bdd0f83f9b88801860b77b",
             "content": "sha256:cb49472d50ec5b730bf4270f60187cacbd3ca848cec9395513ea0acca480680a",
             "locator": {
               "end": 303,
@@ -509,12 +622,12 @@
         },
         {
           "anchor": {
-            "blob": "2b792b244e350d1978f99d3bc3ffaf5426300b8c",
+            "blob": "99b2576c60f8486c3086bb6446973f8299d4a116",
             "content": "sha256:b7d8c5eebe6ace19a88c5c8d86a2458bff070b5f72c4b869690e3a57b3561fde",
             "locator": {
-              "end": 55,
+              "end": 72,
               "kind": "line_range",
-              "start": 53
+              "start": 70
             }
           },
           "kind": "test"
@@ -535,32 +648,6 @@
             "path": "mcp/src/agents_remember/models/tools/public_roster.py"
           },
           "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "6181da9346c23604f91193c4de793a689231943c",
-            "content": "sha256:02d6df8fe596f3712c7c64b9bb830fba6b6b7bb92c2c86bf30e8ba505f5f5525",
-            "locator": {
-              "end": 24,
-              "kind": "line_range",
-              "start": 23
-            },
-            "path": "mcp/tests/tool_entry_point_world.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "97795b8d20e56adf5262308cb24e2ae781ffc66e",
-            "content": "sha256:57d50058c8bff473ec350ef9c891850aef546413edd49555abb0990427629416",
-            "locator": {
-              "end": 51,
-              "kind": "line_range",
-              "start": 37
-            },
-            "path": "mcp/tests/test_tool_entry_point_controls.py"
-          },
-          "kind": "test"
         }
       ]
     },
@@ -578,19 +665,6 @@
             "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
           },
           "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "6181da9346c23604f91193c4de793a689231943c",
-            "content": "sha256:34041ca96890f5ea2dce18cfd0cb268ce563c17da33427dfd3ccbbdb53d04b1b",
-            "locator": {
-              "end": 180,
-              "kind": "line_range",
-              "start": 163
-            },
-            "path": "mcp/tests/tool_entry_point_world.py"
-          },
-          "kind": "test"
         }
       ]
     },
@@ -611,12 +685,12 @@
         },
         {
           "anchor": {
-            "blob": "97795b8d20e56adf5262308cb24e2ae781ffc66e",
+            "blob": "3b92604bc8c87671a5bbf10bd47f760545a00760",
             "content": "sha256:0d58fee3474d97360b5c4b8a5f1cdeca10da27e8d4df02404feb48fa9550fa25",
             "locator": {
-              "end": 151,
+              "end": 152,
               "kind": "line_range",
-              "start": 115
+              "start": 116
             },
             "path": "mcp/tests/test_tool_entry_point_controls.py"
           },
@@ -641,12 +715,12 @@
         },
         {
           "anchor": {
-            "blob": "97795b8d20e56adf5262308cb24e2ae781ffc66e",
+            "blob": "3b92604bc8c87671a5bbf10bd47f760545a00760",
             "content": "sha256:731a87e08f09efffad81015f8d30eae4bd71dcb1479fb193b155656a126b3406",
             "locator": {
-              "end": 98,
+              "end": 99,
               "kind": "line_range",
-              "start": 88
+              "start": 89
             },
             "path": "mcp/tests/test_tool_entry_point_controls.py"
           },
@@ -659,12 +733,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6181da9346c23604f91193c4de793a689231943c",
+            "blob": "ede6877fe9a17d0b2307140324211fa5edea6695",
             "content": "sha256:7a0ad366490b4757f2733b07c064848e5f9f5fb375a3e32ef5ba06d3e6a314df",
             "locator": {
-              "end": 39,
+              "end": 45,
               "kind": "line_range",
-              "start": 34
+              "start": 40
             },
             "path": "mcp/tests/tool_entry_point_world.py"
           },
@@ -672,12 +746,12 @@
         },
         {
           "anchor": {
-            "blob": "6181da9346c23604f91193c4de793a689231943c",
+            "blob": "ede6877fe9a17d0b2307140324211fa5edea6695",
             "content": "sha256:b7ed0ed5d00dcb3dcfc8a2a183c79a5a7c16c95606ac5bba47169a355502932f",
             "locator": {
-              "end": 376,
+              "end": 541,
               "kind": "line_range",
-              "start": 341
+              "start": 506
             },
             "path": "mcp/tests/tool_entry_point_world.py"
           },
@@ -690,12 +764,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "97795b8d20e56adf5262308cb24e2ae781ffc66e",
+            "blob": "3b92604bc8c87671a5bbf10bd47f760545a00760",
             "content": "sha256:c2cd65b344c7053ffa21cea4447aaa2cc482a07488af879ea94b9e191db73b18",
             "locator": {
-              "end": 86,
+              "end": 87,
               "kind": "line_range",
-              "start": 65
+              "start": 66
             },
             "path": "mcp/tests/test_tool_entry_point_controls.py"
           },
@@ -703,14 +777,147 @@
         },
         {
           "anchor": {
-            "blob": "6181da9346c23604f91193c4de793a689231943c",
+            "blob": "ede6877fe9a17d0b2307140324211fa5edea6695",
             "content": "sha256:013fea916dec48472c2c0310925822170f04fab585b568a0384ad1cdc4dc413d",
             "locator": {
-              "end": 368,
+              "end": 533,
               "kind": "line_range",
-              "start": 341
+              "start": 506
             },
             "path": "mcp/tests/tool_entry_point_world.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "47": {
+      "note": "`EntryPointProbeTests` owns the current boundary described above. [25]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "99b2576c60f8486c3086bb6446973f8299d4a116",
+            "content": "sha256:39996bd6680d3e40684c64d2b2e3714a7b881a2f0ecf0ede828ba2606f9b53ff",
+            "locator": {
+              "kind": "symbol",
+              "name": "EntryPointProbeTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "48": {
+      "note": "Every tool and every aspect is judged on its own subTest on the final bytes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "99b2576c60f8486c3086bb6446973f8299d4a116",
+            "content": "sha256:7991154da41374bfca8f6450500696a9e20feb064efc8e791cfde2e12ff52dd4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_public_tool_answers_in_the_products_own_vocabulary"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "49": {
+      "note": "The lifecycle pin is exact in both directions; T34's original nine must remain repaired.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "99b2576c60f8486c3086bb6446973f8299d4a116",
+            "content": "sha256:1e375aa9fbefa7ef55854a0e6e81b6c658903efd95fea7139692bf68de1a2369",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_pinned_raisers_are_exactly_the_ones_that_lose_the_envelope"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "50": {
+      "note": "The four lifecycle raisers are pinned as the measured surface owned by L111.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "99b2576c60f8486c3086bb6446973f8299d4a116",
+            "content": "sha256:534a557df83cbcab5a5cf8a41bc85a33ca4e8e8d829e376fbca13c56df9fe2f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "ENVELOPE_LOSING_RAISERS"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "51": {
+      "note": "The executed positive control over the choke point, and both break shapes at the entry point.\n\nAnchor: `_tool_payload`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3b92604bc8c87671a5bbf10bd47f760545a00760",
+            "content": "sha256:23c39327589bfbf4b189b2ef5faf1c546c23d6bc86ac0906070327b30a3cd549",
+            "locator": {
+              "end": 29,
+              "kind": "line_range",
+              "start": 24
+            },
+            "path": "mcp/tests/test_tool_entry_point_controls.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "52": {
+      "note": "The discriminator: which model refused decides the arm — the tool's own response model or the caller's arguments model.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ede6877fe9a17d0b2307140324211fa5edea6695",
+            "content": "sha256:f5ab20eb78fe980df8ce04556764cd4ffc1b830432ac75476c47207d5b13f5c9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_raised_arm"
+            },
+            "path": "mcp/tests/tool_entry_point_world.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "53": {
+      "note": "The invalid-argument control proving the caller's side lands in its own arm and is never reported as the tool's break.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3b92604bc8c87671a5bbf10bd47f760545a00760",
+            "content": "sha256:b7c327a3476a912dc8fdc7706609676d806d19b9ff43ca424289a66d6efbb9b1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_invalid_argument_lands_in_its_own_arm_and_names_the_callers_side"
+            },
+            "path": "mcp/tests/test_tool_entry_point_controls.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "54": {
+      "note": "The population-equality control asserting the swept population equals the live advertisement.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3b92604bc8c87671a5bbf10bd47f760545a00760",
+            "content": "sha256:57d50058c8bff473ec350ef9c891850aef546413edd49555abb0990427629416",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_swept_population_is_the_advertised_one"
+            },
+            "path": "mcp/tests/test_tool_entry_point_controls.py"
           },
           "kind": "test"
         }

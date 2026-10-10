@@ -3,7 +3,41 @@
   "proves": [
     {
       "anchor": {
-        "blob": "97795b8d20e56adf5262308cb24e2ae781ffc66e",
+        "blob": "3b92604bc8c87671a5bbf10bd47f760545a00760",
+        "content": "sha256:f471158d375413d998bf6a06bae943ebaac8887cc753a654248dd515d3d4d8d1",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_delivered_answer_that_keeps_an_envelope_field_is_unvalidatable"
+        }
+      },
+      "facet": "A delivered answer that keeps an envelope field is unvalidatable, each field on its own subTest.",
+      "id": "PRF-2JJY17",
+      "invariant": "INV-T8FDTX",
+      "origin": {
+        "handoffEntry": "MIK-R130@v1 rule 2",
+        "leaf": "260928-MIK-L130"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "3b92604bc8c87671a5bbf10bd47f760545a00760",
+        "content": "sha256:c40a1fda5ad323d0abfb6e2d5bf416ee86b1bdbae52a260cf3402caec4070fed",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_an_empty_or_guidance_only_next_refusal_stays_bare"
+        }
+      },
+      "facet": "Only a genuinely actionable next action marks; guidance stays bare.",
+      "id": "PRF-9EZEPF",
+      "invariant": "INV-T8FDTX",
+      "origin": {
+        "handoffEntry": "L130-CODE-R1-F02",
+        "leaf": "260928-MIK-L130"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "3b92604bc8c87671a5bbf10bd47f760545a00760",
         "content": "sha256:c2cd65b344c7053ffa21cea4447aaa2cc482a07488af879ea94b9e191db73b18",
         "locator": {
           "kind": "symbol",
@@ -17,12 +51,167 @@
         "handoffEntry": "fix3-W4XGR4-typed-proof",
         "leaf": "260928-MIK-L26"
       }
+    },
+    {
+      "anchor": {
+        "blob": "3b92604bc8c87671a5bbf10bd47f760545a00760",
+        "content": "sha256:6af557a0c09d5f975aa94d95bfd02f9c09e603ca8b8bd8b1d41d71112f4e4932",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_key_inside_a_retained_list_item_is_unvalidatable"
+        }
+      },
+      "facet": "A new key inside a retained list item is unvalidatable at its indexed path.",
+      "id": "PRF-AKGZDH",
+      "invariant": "INV-T8FDTX",
+      "origin": {
+        "handoffEntry": "L130-CODE-R1-F01",
+        "leaf": "260928-MIK-L130"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "3b92604bc8c87671a5bbf10bd47f760545a00760",
+        "content": "sha256:dfe996194515fd253997ddfb6705fbaac0c075af8c661519072383d951395c3c",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_key_inside_a_kept_nested_mapping_is_unvalidatable"
+        }
+      },
+      "facet": "A new key inside a kept nested mapping is unvalidatable at its nested path.",
+      "id": "PRF-BWS0VM",
+      "invariant": "INV-T8FDTX",
+      "origin": {
+        "handoffEntry": "L130-CODE-R1-F01",
+        "leaf": "260928-MIK-L130"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "3b92604bc8c87671a5bbf10bd47f760545a00760",
+        "content": "sha256:506006a312cd19ba3a4ee993ab3f35be10ba6578e5457a1897c824139ef0cb91",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_code_only_refusal_carries_its_identity"
+        }
+      },
+      "facet": "A delivered code marks a refusal by itself.",
+      "id": "PRF-H0310T",
+      "invariant": "INV-T8FDTX",
+      "origin": {
+        "handoffEntry": "L130-CODE-R1-F02",
+        "leaf": "260928-MIK-L130"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "3b92604bc8c87671a5bbf10bd47f760545a00760",
+        "content": "sha256:0fa6a0ccd9526f61ba8106f1b77029fa7a6cc084687d119ace4fc941ab4d84ac",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_wrapper_over_an_uncut_list_is_unvalidatable"
+        }
+      },
+      "facet": "A wrapper over a list the product would have kept whole is unvalidatable.",
+      "id": "PRF-HFA1AY",
+      "invariant": "INV-T8FDTX",
+      "origin": {
+        "handoffEntry": "L130-CODE-R1-F01",
+        "leaf": "260928-MIK-L130"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "3b92604bc8c87671a5bbf10bd47f760545a00760",
+        "content": "sha256:5b3a075d836e607c7f44727508e07f16e20695d73b3bde2a7046a07f4c4f81ac",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_an_answer_without_a_readable_whole_result_is_unvalidatable"
+        }
+      },
+      "facet": "A missing or unreadable whole-result file is an unvalidatable finding, never a fallback.",
+      "id": "PRF-KZVVQJ",
+      "invariant": "INV-22N6MM",
+      "origin": {
+        "handoffEntry": "MIK-R130@v1 rules 1+3",
+        "leaf": "260928-MIK-L130"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "3b92604bc8c87671a5bbf10bd47f760545a00760",
+        "content": "sha256:94d769f5492e53bf816e48eed616d219d3e8cfab7a676cbf2f0885631b062a44",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_handler_that_bypasses_the_choke_point_arrives_as_unvalidatable"
+        }
+      },
+      "facet": "A key added behind the boundary arrives as unvalidatable with the key named.",
+      "id": "PRF-WNABDT",
+      "invariant": "INV-T8FDTX",
+      "origin": {
+        "handoffEntry": "MIK-R130@v1 rule 2",
+        "leaf": "260928-MIK-L130"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "3b92604bc8c87671a5bbf10bd47f760545a00760",
+        "content": "sha256:1fba3c3c2388fb9fb8875f7fd1b1edc14c1d7b7da61374b0da8fcfefca0cae66",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_next_only_refusal_carries_its_next_action"
+        }
+      },
+      "facet": "A shaped next naming a next tool marks a refusal by itself.",
+      "id": "PRF-XP45PK",
+      "invariant": "INV-T8FDTX",
+      "origin": {
+        "handoffEntry": "L130-CODE-R1-F02",
+        "leaf": "260928-MIK-L130"
+      }
     }
   ],
   "realizes": [
     {
       "anchor": {
-        "blob": "97795b8d20e56adf5262308cb24e2ae781ffc66e",
+        "blob": "3b92604bc8c87671a5bbf10bd47f760545a00760",
+        "content": "sha256:6af557a0c09d5f975aa94d95bfd02f9c09e603ca8b8bd8b1d41d71112f4e4932",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_key_inside_a_retained_list_item_is_unvalidatable"
+        }
+      },
+      "id": "RLZ-3QAT32",
+      "invariant": "INV-T8FDTX",
+      "origin": {
+        "handoffEntry": "L130-controls-bite",
+        "leaf": "260928-MIK-L130"
+      },
+      "rationale": "Corrupts a retained checklist item of a real task_doc answer, proving a kept list does not launder a new key inside its items.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "3b92604bc8c87671a5bbf10bd47f760545a00760",
+        "content": "sha256:506006a312cd19ba3a4ee993ab3f35be10ba6578e5457a1897c824139ef0cb91",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_code_only_refusal_carries_its_identity"
+        }
+      },
+      "id": "RLZ-4B9V28",
+      "invariant": "INV-T8FDTX",
+      "origin": {
+        "handoffEntry": "L130-controls-bite",
+        "leaf": "260928-MIK-L130"
+      },
+      "rationale": "Gives a delivered answer nothing but a code besides ok:false, proving a code marks a refusal by itself.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "3b92604bc8c87671a5bbf10bd47f760545a00760",
         "content": "sha256:c2cd65b344c7053ffa21cea4447aaa2cc482a07488af879ea94b9e191db73b18",
         "locator": {
           "kind": "symbol",
@@ -37,18 +226,233 @@
       },
       "rationale": "The control drives a tool that never answers through the same world and asserts the named failure and handler close.",
       "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "3b92604bc8c87671a5bbf10bd47f760545a00760",
+        "content": "sha256:f471158d375413d998bf6a06bae943ebaac8887cc753a654248dd515d3d4d8d1",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_delivered_answer_that_keeps_an_envelope_field_is_unvalidatable"
+        }
+      },
+      "id": "RLZ-DJ43FG",
+      "invariant": "INV-T8FDTX",
+      "origin": {
+        "handoffEntry": "L130-controls-bite",
+        "leaf": "260928-MIK-L130"
+      },
+      "rationale": "Tries each stripped envelope field on its own subTest against the single classifier, proving the instrument refuses a stowaway envelope key.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "3b92604bc8c87671a5bbf10bd47f760545a00760",
+        "content": "sha256:7ceeb49a6751144d825e834bd62f07eb1396da7a57c67d18846a86dfa311ed37",
+        "locator": {
+          "end": 26,
+          "kind": "line_range",
+          "start": 26
+        }
+      },
+      "id": "RLZ-JVS9GH",
+      "invariant": "INV-T8FDTX",
+      "origin": {
+        "handoffEntry": "MIK-R130@v1 rule 2",
+        "leaf": "260928-MIK-L130"
+      },
+      "rationale": "Imports the envelope fields for the control that stows each one in a delivered answer.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "3b92604bc8c87671a5bbf10bd47f760545a00760",
+        "content": "sha256:f333e5c90bc0df97931c834224d5aa0786f412b1621f6f02557356e332f5bf8b",
+        "locator": {
+          "end": 30,
+          "kind": "line_range",
+          "start": 30
+        }
+      },
+      "id": "RLZ-JWBN5A",
+      "invariant": "INV-T8FDTX",
+      "origin": {
+        "handoffEntry": "MIK-R130 W03 controls refusal import",
+        "leaf": "260928-MIK-L130"
+      },
+      "rationale": "Imports refusal_marks for the code-only, next-only and guidance-only refusal controls.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "3b92604bc8c87671a5bbf10bd47f760545a00760",
+        "content": "sha256:dfe996194515fd253997ddfb6705fbaac0c075af8c661519072383d951395c3c",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_key_inside_a_kept_nested_mapping_is_unvalidatable"
+        }
+      },
+      "id": "RLZ-N13MBQ",
+      "invariant": "INV-T8FDTX",
+      "origin": {
+        "handoffEntry": "L130-controls-bite",
+        "leaf": "260928-MIK-L130"
+      },
+      "rationale": "Corrupts a kept nested mapping of a real server_info answer, proving a top-level key in the whole result does not launder a new nested key.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "3b92604bc8c87671a5bbf10bd47f760545a00760",
+        "content": "sha256:0fa6a0ccd9526f61ba8106f1b77029fa7a6cc084687d119ace4fc941ab4d84ac",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_wrapper_over_an_uncut_list_is_unvalidatable"
+        }
+      },
+      "id": "RLZ-P6CT6J",
+      "invariant": "INV-T8FDTX",
+      "origin": {
+        "handoffEntry": "L130-controls-bite",
+        "leaf": "260928-MIK-L130"
+      },
+      "rationale": "Wraps a short real list in count/items keys, proving the shaping cuts only over-long lists and a wrapper over an uncut list names its path.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "3b92604bc8c87671a5bbf10bd47f760545a00760",
+        "content": "sha256:1fba3c3c2388fb9fb8875f7fd1b1edc14c1d7b7da61374b0da8fcfefca0cae66",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_next_only_refusal_carries_its_next_action"
+        }
+      },
+      "id": "RLZ-PEMT69",
+      "invariant": "INV-T8FDTX",
+      "origin": {
+        "handoffEntry": "L130-controls-bite",
+        "leaf": "260928-MIK-L130"
+      },
+      "rationale": "Gives a delivered answer nothing but a tool-naming next besides ok:false, proving an actionable next marks a refusal by itself.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "3b92604bc8c87671a5bbf10bd47f760545a00760",
+        "content": "sha256:5b3a075d836e607c7f44727508e07f16e20695d73b3bde2a7046a07f4c4f81ac",
+        "locator": {
+          "kind": "symbol",
+          "name": "ChokePointControlTests.test_an_answer_without_a_readable_whole_result_is_unvalidatable"
+        }
+      },
+      "id": "RLZ-WYF5Q2",
+      "invariant": "INV-22N6MM",
+      "origin": {
+        "handoffEntry": "MIK-R130@v1 rules 1+3",
+        "leaf": "260928-MIK-L130"
+      },
+      "rationale": "Control proves the missing-file finding through the shared classifier.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "3b92604bc8c87671a5bbf10bd47f760545a00760",
+        "content": "sha256:f471158d375413d998bf6a06bae943ebaac8887cc753a654248dd515d3d4d8d1",
+        "locator": {
+          "kind": "symbol",
+          "name": "ChokePointControlTests.test_a_delivered_answer_that_keeps_an_envelope_field_is_unvalidatable"
+        }
+      },
+      "id": "RLZ-YCW5V7",
+      "invariant": "INV-T8FDTX",
+      "origin": {
+        "handoffEntry": "MIK-R130@v1 rule 2",
+        "leaf": "260928-MIK-L130"
+      },
+      "rationale": "Control proves the envelope rejection through the shared classifier.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "3b92604bc8c87671a5bbf10bd47f760545a00760",
+        "content": "sha256:c40a1fda5ad323d0abfb6e2d5bf416ee86b1bdbae52a260cf3402caec4070fed",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_an_empty_or_guidance_only_next_refusal_stays_bare"
+        }
+      },
+      "id": "RLZ-Z6EA10",
+      "invariant": "INV-T8FDTX",
+      "origin": {
+        "handoffEntry": "L130-controls-bite",
+        "leaf": "260928-MIK-L130"
+      },
+      "rationale": "Tries empty, summary-only, blank-tool and bare-string next shapes plus a blank code, proving only a genuinely actionable next action marks.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "3b92604bc8c87671a5bbf10bd47f760545a00760",
+        "content": "sha256:5b3a075d836e607c7f44727508e07f16e20695d73b3bde2a7046a07f4c4f81ac",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_an_answer_without_a_readable_whole_result_is_unvalidatable"
+        }
+      },
+      "id": "RLZ-ZGH1TW",
+      "invariant": "INV-T8FDTX",
+      "origin": {
+        "handoffEntry": "L130-controls-bite",
+        "leaf": "260928-MIK-L130"
+      },
+      "rationale": "Tries the nameless and the missing-file shapes against the single classifier, proving a missing whole result is a finding and never a fallback.",
+      "role": "support"
     }
   ],
   "references": {
-    "1": {
-      "note": "The file realizes its current contract at the corrected candidate.",
+    "2": {
+      "note": "A delivered answer that keeps an envelope field is unvalidatable, each field on its own subTest.",
       "targets": [
         {
           "anchor": {
-            "blob": "97795b8d20e56adf5262308cb24e2ae781ffc66e",
-            "content": "sha256:b586fa4878ab18e7800427d86b08d224be9bf250b9d2235dd4d9ca8cce454292",
+            "blob": "53e90bfac9a6957dd71f43b952654897c806bb54",
+            "content": "sha256:f471158d375413d998bf6a06bae943ebaac8887cc753a654248dd515d3d4d8d1",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_a_delivered_answer_that_keeps_an_envelope_field_is_unvalidatable"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "An answer without a readable whole-result file is unvalidatable, and the detail says which.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "53e90bfac9a6957dd71f43b952654897c806bb54",
+            "content": "sha256:5b3a075d836e607c7f44727508e07f16e20695d73b3bde2a7046a07f4c4f81ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_answer_without_a_readable_whole_result_is_unvalidatable"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "A handler that goes round the choke point arrives as unvalidatable with its key named.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "53e90bfac9a6957dd71f43b952654897c806bb54",
+            "content": "sha256:94d769f5492e53bf816e48eed616d219d3e8cfab7a676cbf2f0885631b062a44",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_handler_that_bypasses_the_choke_point_arrives_as_unvalidatable"
             }
           },
           "kind": "test"

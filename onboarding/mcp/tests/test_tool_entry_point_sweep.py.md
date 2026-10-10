@@ -21,7 +21,7 @@ The benign invocation census adds role_start and role_message. Because the scrat
 
 ## Code Commentary
 
-EntryPointProbeTests drives the registered entry points through the shared world and declared input pins. The classifier, census controls and phase-budget machinery are extracted owners, not declarations in this module. A probe records the tool's actual route outcome; its existence alone proves neither every environment nor every unsupported consumer. Removed local classifier helpers, pin constants and control class names must not be attributed to this file. Test definitions are not an execution result.
+EntryPointProbeTests drives the registered entry points through the shared world and declared input pins. Every tool and every aspect is judged on its own subTest, so one tool's failure never keeps the aspects behind it unrun. The pins record the measured surface — the four lifecycle raisers owned by L111 and the bare `memory_quality_check` answer owned by L110 — with bidirectional exactness: a new raiser or a vanished pin fails. The classifier, census controls and phase-budget machinery are extracted owners, not declarations in this module. A probe records the tool's actual route outcome; its existence alone proves neither every environment nor every unsupported consumer. Removed local classifier helpers, pin constants and control class names must not be attributed to this file. Test definitions are not an execution result.
 
 The inline line positions in the following original account refer to the unsplit source. MIK-R26 moved the world/classifier/constants to `tool_entry_point_world.py` and the three control classes to `test_tool_entry_point_controls.py`; the sweep imports those owners. Definitions and historical run observations below are not a new execution result.
 
@@ -49,8 +49,7 @@ raiser.
 **Every sweep call is bounded, and the sweep's own deadline is not a product raiser.**
 `EntryPointWorld._call` runs under three 60-second phase limits — session initialization, the tool
 response and session cleanup — and a passed limit raises `_ToolCallTimeout` naming the tool and the
-phase. `call` lets that exception through instead of counting it as a product raiser, so the sweep
-stops at the first tool that does not answer rather than recording the hang as an envelope loss.
+phase. `call` lets that exception through instead of counting it as a product raiser. Before L130 the sweep stopped at the first tool that did not answer; since L130 it records one tool's deadline as that tool's unvalidatable finding and goes on (MIK-R130 rule 6), so every tool is judged.
 `ChokePointControlTests.test_a_tool_that_never_answers_fails_by_name_and_closes_its_handler` holds a
 tool answer back, patches the response limit to three seconds, and requires the named failure, the
 closed handler and a working next call. The world's cleanup is registered with `addClassCleanup`
@@ -62,9 +61,10 @@ operations.
 refuse, so the caller loses `ok`/`status`/`nextAction`; every entry named an ordinary precondition
 (an absent provider, an unrecorded default-branch authority), and `provider_status` and
 `memory_baseline_status` meet the same conditions with a typed payload, which is why it was a
-defect rather than a contract. **Superseded by `260918-TSIP-L6`, below: the nine are repaired and
-this constant is now `frozenset()`** — emptied in the change that repaired them, which is this
-module's own update rule. `STATE_DEPENDENT_RAISERS` is
+defect rather than a contract. **At the `260918-TSIP-L6` landing, below: the nine were repaired and
+this constant became `frozenset()`** — emptied in the change that repaired them. Since L130 the
+constant records the four lifecycle preconditions that raise (owner L111); T34's nine remain
+repaired, guarded by the pin test below. `STATE_DEPENDENT_RAISERS` is
 the same defect on the lifecycle family's *state* precondition: five tools, each with the states
 in which it loses the envelope, measured as a four-state matrix (`AMBIENT_STATES`) over
 `LIFECYCLE_STATE_POPULATION`, which is **derived by rule from the roster** and
@@ -74,8 +74,8 @@ alone cannot be checked by a subset assertion, so weakening it takes a second vi
 payload reporting `ok:false` while carrying neither a refusal identity (`REFUSAL_IDENTITY_KEYS`,
 `:191`) nor a next action (`NAVIGATION_KEYS`, `:192`). One entry, `citation_migrate`, whose preview
 answered `ok:false` where its sibling `citation_fix` answers `ok:true` for the equivalent shape.
-**Superseded by `260918-TSIP-L6`, below: `citation_migrate` answers the envelope and this constant
-is now `{}`.**
+**At the L6 landing: `citation_migrate` answered the envelope and this constant became `{}`.**
+Since L130 it records the bare `memory_quality_check` answer (owner L110).
 
 **The rule for all three pins: a repaired tool leaves the pin in the same change.** Delete that
 one entry in the change that lands the repair — never delete a constant, never widen one to make
@@ -122,8 +122,9 @@ literals.
   of the derived population, so the population cannot silently become the pin and stop measuring
   the three members that never raise.
 - **Scope boundary.** The sweep invokes the tool surface; it does not certify the tools. A pinned
-  raiser means the envelope is lost at the entry point, and the repair belongs to the tool's owner
-  (`L6`), not to this module.
+  raiser means the envelope is lost at the entry point, and the repair belongs to the owning leaf —
+  `L111` for the four lifecycle raisers, `L110` for the bare `memory_quality_check` surface — not to
+  this module. The pins were first measured under `L6`; the owners above are current.
 
 ## Evidence
 
@@ -139,18 +140,25 @@ No configured domain evidence applies to the file-local claims above.
 The anchors below identify current behaviour of this module; they are not execution evidence and
 they make no acceptance claim.
 
-- `EntryPointProbeTests` owns the current boundary described above. [25]
+- `EntryPointProbeTests` owns the current boundary described above. [47]
 
 
-- `T34`'s nine tools that lose the whole envelope, each with the ordinary precondition that loses it. **Now empty** — repaired by `260918-TSIP-L6`. [26]
+- `T34`'s nine stay repaired; the pin now holds the four lifecycle preconditions that raise. [26]
 - The same defect on the lifecycle family's state precondition, five tools with their losing states. [27]
+
 - The sweep itself: one world, one run, and the equality assertions that bind every pin. [28]
+
 - A refusal's own marks, read from the payload rather than from the arm. [29]
-- The third pin: an envelope reporting `ok:false` that a caller cannot act on. **Now empty** — `citation_migrate` answers the envelope, repaired by `260918-TSIP-L6`. [30]
+
+- The bare-answer pin records the `memory_quality_check` surface that no refusal identity or next action covers; T64's repair remains. [30]
 
 - The world: one scratch coordination root, two repositories, one real leaf enclosure, then the opened lifecycle ended. [31]
 
 - The refused model's identity, which separates a response-model break from the caller's invalid arguments. [32]
+
+- The discriminator: which model refused decides the arm — the tool's own response model or the caller's arguments model. [52]
+
+- The invalid-argument control proving the caller's side lands in its own arm and is never reported as the tool's break. [53]
 
 - The matrix's four ambient states. [33]
 
@@ -163,12 +171,15 @@ they make no acceptance claim.
 - The swept population is derived and equals the live server's advertisement. [37]
 
 - The executed positive control over the choke point, and both break shapes at the entry point. [38]
+- The executed positive control over the choke point, and both break shapes at the entry point. [51]
 
 - The census controls: write, rewrite and delete in both repositories and outside every zone. [39]
 
 - The lane row that keeps this module in the default selection. [40]
 
 - The advertised roster the swept population is derived from and asserted equal to. [41]
+
+- The population-equality control asserting the swept population equals the live advertisement. [54]
 
 - The registry whose models classify a payload that does not validate. [42]
 
@@ -180,6 +191,10 @@ they make no acceptance claim.
 
 - The control that holds an answer back and requires the named failure, the closed handler and a working next call. [46]
 
+- Every tool and every aspect is judged on its own subTest on the final bytes. [48]
+- The lifecycle pin is exact in both directions; T34's original nine must remain repaired. [49]
+- The four lifecycle raisers are pinned as the measured surface owned by L111. [50]
+
 ### Cross-Repo References
 
 No cross-repository implementation evidence is required for these local contract claims.
@@ -187,6 +202,8 @@ No cross-repository implementation evidence is required for these local contract
 No repository or external-system boundary is proved by this module.
 
 ## 260918-TSIP-L6 Both Pins Emptied In The Change That Repaired Them
+
+The account below is that landing's snapshot; the current pins follow it at the end.
 
 This module is L5's, and this leaf **edited it in the same change that repaired what it pinned**,
 which is the update rule the card itself states. `ENVELOPE_LOSING_RAISERS` is now
@@ -205,3 +222,5 @@ rather than keeping a second inline copy that could drift. A new case,
 the real entry point — and this module grew **1274 → 1353 lines** in the change.
 `STATE_DEPENDENT_RAISERS` is untouched: its five members cannot refuse without a contract change
 (`T66`, deferred), so the pin stays and names itself as an open, measured defect.
+
+Current pins (L130): `ENVELOPE_LOSING_RAISERS` holds `worktree_checkpoint_landing`, `worktree_cleanup`, `worktree_integrate` and `worktree_record_landing` (owner L111, repaired under MIK-R111 rule 7); `UNMARKED_NOT_OK` holds `memory_quality_check` (owner L110, repaired under MIK-R110 rule 4). A repair removes its entry in the same change; each pin stays asserted equal to what the sweep observes, in both directions.
