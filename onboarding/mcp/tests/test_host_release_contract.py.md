@@ -6,7 +6,7 @@
 
 ## Purpose
 
-The release-contract cases: plugin SDK drift fails concordance, a starter renders one shared block and preserves existing settings, concordance rejects a mismatched lock entry or archive URL, the same starter input differs only in the recorded root and ports, and each public host command (and the dashboard line) states the retired-selector notice once.
+The release-contract cases: plugin SDK drift fails concordance, a starter renders one shared block and preserves existing settings, concordance rejects a mismatched lock entry or archive URL, the same starter input differs only in the recorded root and ports, and each public host command (and the dashboard line) states the retired-selector notice once. New cases prove every standalone starter refuses the old settings location before any write, the whole-file upgrade preserves the host block and all other families, and the sandbox reads only its own user settings.
 
 ## Code Commentary
 

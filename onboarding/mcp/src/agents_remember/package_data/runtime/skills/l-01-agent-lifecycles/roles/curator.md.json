@@ -1,6 +1,24 @@
 {
   "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "8f384da110d3ba3e6968ae0c2cddfbfcf2f3d994",
+        "content": "sha256:f82c573aa2136558b579867e2ec66471e345f4fd3be86793f50573a5dd2baa55",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-EK6J3B",
+      "invariant": "INV-NNQR91",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-19",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "The mcp/src/agents_remember/package_data/runtime shipped copy propagates the skills/l-01-agent-lifecycles/roles/curator.md instructions to that installation surface; it is generated output and does not independently set role/task or permission authority.",
+      "role": "propagation-persistence"
+    }
+  ],
   "references": {
     "1": {
       "note": "The mirror carries the same effect contract as the canonical role.",
@@ -41,12 +59,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "151e3ba6db2c746cef0bcb81c6db0672bf1260f9",
+            "blob": "b5f664cebbb1579f8082617443e5ca9aa7751791",
             "content": "sha256:7979f990bee5061a061df5dd00b315be4679a1e8bd3d0302ba20565a5a0d4a42",
             "locator": {
-              "end": 114,
+              "end": 116,
               "kind": "line_range",
-              "start": 110
+              "start": 112
             }
           },
           "kind": "code"
@@ -75,12 +93,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "151e3ba6db2c746cef0bcb81c6db0672bf1260f9",
+            "blob": "b5f664cebbb1579f8082617443e5ca9aa7751791",
             "content": "sha256:c4a79f969d539ba5ec8670fff476d4c6262cefd3b99b934e47777a8a342971d3",
             "locator": {
-              "end": 94,
+              "end": 96,
               "kind": "line_range",
-              "start": 91
+              "start": 93
             }
           },
           "kind": "code"
@@ -92,12 +110,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "151e3ba6db2c746cef0bcb81c6db0672bf1260f9",
+            "blob": "b5f664cebbb1579f8082617443e5ca9aa7751791",
             "content": "sha256:f51112201ff416c2fdfbff42072127b3a0fdf55c5702b1f0fdd27c6e0c767b46",
             "locator": {
-              "end": 86,
+              "end": 88,
               "kind": "line_range",
-              "start": 80
+              "start": 82
             }
           },
           "kind": "code"

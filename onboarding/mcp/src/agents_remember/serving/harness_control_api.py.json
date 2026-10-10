@@ -24,7 +24,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "61ad404bd22d920dd138c1547e688cc536a37131",
+            "blob": "ab5559e41e793bd918609a1bea27fa297514293d",
             "content": "sha256:7b559c9f1464bf7195fc8966957c2e9080e855e0da7e437ed2cb9e9534a501d3",
             "locator": {
               "end": 168,
@@ -176,12 +176,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "61ad404bd22d920dd138c1547e688cc536a37131",
+            "blob": "ab5559e41e793bd918609a1bea27fa297514293d",
             "content": "sha256:b2c2eadc13a9c011a7303e1cacd82eafac3d9fc3b9096d581b51757fefbd72a6",
             "locator": {
-              "end": 1150,
+              "end": 1210,
               "kind": "line_range",
-              "start": 1150
+              "start": 1210
             },
             "path": "mcp/src/agents_remember/serving/response_contract.py"
           },

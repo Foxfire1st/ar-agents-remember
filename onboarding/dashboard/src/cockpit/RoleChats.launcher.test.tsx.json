@@ -1,18 +1,36 @@
 {
   "path": "dashboard/src/cockpit/RoleChats.launcher.test.tsx",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "1881f80cde7c80b79201d14758e21c66b41dada8",
+        "content": "sha256:0c6452facbb4cd346afe4c99a59ebd24146df6cc5693c08464e464049906b354",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-DKX1HV",
+      "invariant": "INV-63Z0MN",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-17",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "The retained unchanged nine mounted assertions verify feature preservation in the extracted launcher; its passing proof is reused, not rerun here.",
+      "role": "support"
+    }
+  ],
   "references": {
     "1": {
       "note": "The launch-lock reread case enables fake time before mount, flushes the initial reply, then advances the 1,500 ms product reread in async `act`. Its no-status/no-alert and restored-Start assertions follow the actual reread opportunity; teardown restores real timers.\n\nAnchor: `rereads a launch in progress without an ordinary status line`",
       "targets": [
         {
           "anchor": {
-            "blob": "74d1c9daf756aa23df630f88e5e1b1f423f9836e",
+            "blob": "1881f80cde7c80b79201d14758e21c66b41dada8",
             "content": "sha256:ca33f44bbe08e113c00a54a9be92f5690050d95355a3af301fca4f73861c5619",
             "locator": {
-              "end": 161,
+              "end": 168,
               "kind": "line_range",
-              "start": 135
+              "start": 142
             }
           },
           "kind": "test"
@@ -41,12 +59,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "74d1c9daf756aa23df630f88e5e1b1f423f9836e",
+            "blob": "1881f80cde7c80b79201d14758e21c66b41dada8",
             "content": "sha256:42790e822f1ead18a7f00796fc2a24f117677da62ee7dfe4407b4836b74b7400",
             "locator": {
-              "end": 191,
+              "end": 198,
               "kind": "line_range",
-              "start": 166
+              "start": 173
             }
           },
           "kind": "test"

@@ -1,6 +1,24 @@
 {
   "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/curation.md",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "1b1b1efdfa6420be11b629a8d9de5bfb22337bba",
+        "content": "sha256:fb2349cd8940f6f5ef56159ddefb5b85d0528b116e6cbfa45a18ebb85eb230e4",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-JSEK7Q",
+      "invariant": "INV-NNQR91",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-19",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "The mcp/src/agents_remember/package_data/runtime shipped copy propagates the skills/l-01-agent-lifecycles/operations/curation.md instructions to that installation surface; it is generated output and does not independently set role/task or permission authority.",
+      "role": "propagation-persistence"
+    }
+  ],
   "references": {
     "1": {
       "note": "The mirror carries the same authoring fields as the canonical operation.",

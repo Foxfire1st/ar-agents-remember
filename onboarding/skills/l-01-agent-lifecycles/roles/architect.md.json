@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "1897649411e4a06811eb5cd41b3c08a9e83c72d9",
+        "blob": "b3718dfae0d5962252de9c524dfdf51831e5365a",
         "content": "sha256:46f1ba247426a51bdbc0582688ec4bf236587c6044e4bf69131f40088de7167e",
         "locator": {
           "end": 48,
@@ -22,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "1897649411e4a06811eb5cd41b3c08a9e83c72d9",
+        "blob": "b3718dfae0d5962252de9c524dfdf51831e5365a",
         "content": "sha256:1a037eb21173fb839661b344bf5886756e560da5642dc4347b03911c6587ed3c",
         "locator": {
           "end": 34,
@@ -41,7 +41,7 @@
     },
     {
       "anchor": {
-        "blob": "1897649411e4a06811eb5cd41b3c08a9e83c72d9",
+        "blob": "b3718dfae0d5962252de9c524dfdf51831e5365a",
         "content": "sha256:64b014bf72a3ddf76a265ac494a328b3a6dd7cefdbc2e4057605d5664f140527",
         "locator": {
           "end": 50,
@@ -60,7 +60,24 @@
     },
     {
       "anchor": {
-        "blob": "1897649411e4a06811eb5cd41b3c08a9e83c72d9",
+        "blob": "ad3ecb7649dc78a86614a1c9335c16e1a92b99c0",
+        "content": "sha256:a500235d9a10ccada7ad4d7a6311f7e7c7f58d1be36defefc8a671b9cb317547",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-59K606",
+      "invariant": "INV-NNQR91",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-19",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "The canonical roles/architect.md carries the applicable own-file first-read/task_doc-only write and report/scratch instructions for its role/operation; it is the source the public generator ships.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "b3718dfae0d5962252de9c524dfdf51831e5365a",
         "content": "sha256:b86ed0ec194e278b441cef1148daa0cf7592bd50a2542659a5f085efe326d984",
         "locator": {
           "end": 22,
@@ -79,8 +96,8 @@
     },
     {
       "anchor": {
-        "blob": "1897649411e4a06811eb5cd41b3c08a9e83c72d9",
-        "content": "sha256:8496664b2ea11ad5a0bbdd6a1298394da63d83333554c89d99500e561e9ede27",
+        "blob": "b3718dfae0d5962252de9c524dfdf51831e5365a",
+        "content": "sha256:aa2b31f30f47b59646bef5b2c83c8ced247c12771cd98f26650756fceb1d6fa4",
         "locator": {
           "end": 60,
           "kind": "line_range",
@@ -98,7 +115,7 @@
     },
     {
       "anchor": {
-        "blob": "1897649411e4a06811eb5cd41b3c08a9e83c72d9",
+        "blob": "b3718dfae0d5962252de9c524dfdf51831e5365a",
         "content": "sha256:4a9dc567094ef1b313f0aa20658894f0313277c6e1e16e7c914234496a883352",
         "locator": {
           "end": 10,
@@ -117,7 +134,7 @@
     },
     {
       "anchor": {
-        "blob": "1897649411e4a06811eb5cd41b3c08a9e83c72d9",
+        "blob": "b3718dfae0d5962252de9c524dfdf51831e5365a",
         "content": "sha256:8954e24288f5e81d675e3ce856592924eb75933b4cc3ca2626896200d59d9581",
         "locator": {
           "end": 24,
@@ -136,7 +153,7 @@
     },
     {
       "anchor": {
-        "blob": "1897649411e4a06811eb5cd41b3c08a9e83c72d9",
+        "blob": "b3718dfae0d5962252de9c524dfdf51831e5365a",
         "content": "sha256:beb680d06c4adf9d4d1fa54719c8035f522b3291e395fe1ceded3bba42016d85",
         "locator": {
           "end": 18,
@@ -155,8 +172,8 @@
     },
     {
       "anchor": {
-        "blob": "1897649411e4a06811eb5cd41b3c08a9e83c72d9",
-        "content": "sha256:8496664b2ea11ad5a0bbdd6a1298394da63d83333554c89d99500e561e9ede27",
+        "blob": "b3718dfae0d5962252de9c524dfdf51831e5365a",
+        "content": "sha256:538164eb5cabe0d1f24db74457884e3ca42f0c75c96aac903f52387f5c462627",
         "locator": {
           "kind": "file"
         }
@@ -172,12 +189,12 @@
     },
     {
       "anchor": {
-        "blob": "1897649411e4a06811eb5cd41b3c08a9e83c72d9",
-        "content": "sha256:5a219c38640b4709e7f81f0e82ff9a1ba5547048ae641b89cf5f293a052a9efd",
+        "blob": "b3718dfae0d5962252de9c524dfdf51831e5365a",
+        "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
         "locator": {
-          "end": 40,
+          "end": 41,
           "kind": "line_range",
-          "start": 40
+          "start": 41
         }
       },
       "id": "RLZ-XSMK0N",
@@ -191,7 +208,7 @@
     },
     {
       "anchor": {
-        "blob": "1897649411e4a06811eb5cd41b3c08a9e83c72d9",
+        "blob": "b3718dfae0d5962252de9c524dfdf51831e5365a",
         "content": "sha256:4b2c97839463054b2f5307414e25c52bc948a6e1929f9f1a2b90ef7baf9d2a19",
         "locator": {
           "end": 30,
@@ -210,7 +227,7 @@
     },
     {
       "anchor": {
-        "blob": "1897649411e4a06811eb5cd41b3c08a9e83c72d9",
+        "blob": "b3718dfae0d5962252de9c524dfdf51831e5365a",
         "content": "sha256:cff008a580b31483b82250166a7d30f245042524986ab6a536f026323e0baaf1",
         "locator": {
           "end": 8,
@@ -229,8 +246,8 @@
     },
     {
       "anchor": {
-        "blob": "1897649411e4a06811eb5cd41b3c08a9e83c72d9",
-        "content": "sha256:8496664b2ea11ad5a0bbdd6a1298394da63d83333554c89d99500e561e9ede27",
+        "blob": "b3718dfae0d5962252de9c524dfdf51831e5365a",
+        "content": "sha256:538164eb5cabe0d1f24db74457884e3ca42f0c75c96aac903f52387f5c462627",
         "locator": {
           "kind": "file"
         }

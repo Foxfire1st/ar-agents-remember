@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "family_guarantee"
+    ],
+    "justification": "Spans host agents and the AR server: one bound server per created agent plus narrow Claude-only server_info preapproval, with D124's assignment_read removal, bounds the multi-agent surface FAM-N17BB4 launches into."
+  },
+  "applicability": "Every host agent created for a role launch.",
+  "conditions": [
+    "The agent binding names this launch's AR server.",
+    "Preapproval is the Claude-only server_info identity read."
+  ],
+  "exclusions": [
+    "The removed assignment_read grant and any alternative task reader.",
+    "Broad tool grants, which no launch carries."
+  ],
+  "id": "INV-N9D91D",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/notes/reports/role-launch/260928-MIK-L71-worker-d508f3cc-d109-host-readers/source-current-a1b7/source26-public-sync/generation15-five-pin-successor/expanded-evidence.md"
+      ],
+      "path": "l71-handoff-list.json"
+    },
+    "handoffEntry": "L71-CURRENT242-W-08",
+    "leaf": "260928-MIK-L71",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Each created host agent receives its own bound AR server; Claude-only preapproval is narrow server_info identity access. D124 removes assignment_read and its former grant instead of keeping an alternative task reader.",
+  "status": "proposed",
+  "supersedes": []
+}

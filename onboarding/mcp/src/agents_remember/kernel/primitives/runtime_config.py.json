@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "782aa73feb7c2c955a2baa07be50668a006f080f",
+        "blob": "08fa67e7d17028c0392d8c20bf1c9499b0681f8f",
         "content": "sha256:f21e868a1c38a7502c15e4b466c9c15e6892813b141a19fdfb4854110be1142a",
         "locator": {
           "kind": "symbol",
@@ -17,6 +17,23 @@
         "leaf": "260928-MIK-L90"
       },
       "rationale": "Carries an optional typed authority rather than deriving one from host state.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "08fa67e7d17028c0392d8c20bf1c9499b0681f8f",
+        "content": "sha256:26e0895d292793e0f3fc3408e70a20faa286eb96f72b26aaab3cfc78e0c269a7",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-YTFME9",
+      "invariant": "INV-B7D1WM",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-15",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "Shared runtime configuration reads the migrated user file through the same location contract; missing-user tests isolate both runtime construction and calls.",
       "role": "propagation-persistence"
     }
   ],
@@ -227,7 +244,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1f99cfc219a3a4a26ad011d3d472a52f276c579a",
+            "blob": "1c2dfb4f0f87317da6302be2ab2a2cb173460c1d",
             "content": "sha256:f0e41d7834874b6bcc77ad3010c515db8b76282842ed22366209fcd595dff9ad",
             "locator": {
               "kind": "symbol",
@@ -251,12 +268,12 @@
         },
         {
           "anchor": {
-            "blob": "1f99cfc219a3a4a26ad011d3d472a52f276c579a",
+            "blob": "1c2dfb4f0f87317da6302be2ab2a2cb173460c1d",
             "content": "sha256:33d0396ab8accec0bb3dd6a756809e50e15576932ecb1e7f69fa9308ab2f3fc7",
             "locator": {
-              "end": 530,
+              "end": 571,
               "kind": "line_range",
-              "start": 439
+              "start": 480
             },
             "path": "mcp/src/agents_remember/install/runtime.py"
           },
@@ -264,12 +281,12 @@
         },
         {
           "anchor": {
-            "blob": "1f99cfc219a3a4a26ad011d3d472a52f276c579a",
+            "blob": "1c2dfb4f0f87317da6302be2ab2a2cb173460c1d",
             "content": "sha256:8dcd2fcff6eb0a7b76f02c988afe01510b66acf0aa3664ef616b0c4645f2f0e3",
             "locator": {
-              "end": 592,
+              "end": 633,
               "kind": "line_range",
-              "start": 533
+              "start": 574
             },
             "path": "mcp/src/agents_remember/install/runtime.py"
           },
@@ -348,7 +365,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "782aa73feb7c2c955a2baa07be50668a006f080f",
+            "blob": "08fa67e7d17028c0392d8c20bf1c9499b0681f8f",
             "content": "sha256:a3a590c78a3b1776026b947839616dcef7c84362a52f8cc925bba2cf1ba57860",
             "locator": {
               "kind": "symbol",
@@ -394,7 +411,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "23f89436ed722d0c3ab6470a0bf9079145e22632",
+            "blob": "90c9b6e5110d8f9eb830f5b573de66250fb2e9b7",
             "content": "sha256:3cfc871f9f8493dbaa4b11e825bfa4064aed6e67d8b83790b416fab6cc20b54d",
             "locator": {
               "kind": "symbol",
@@ -411,7 +428,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "782aa73feb7c2c955a2baa07be50668a006f080f",
+            "blob": "08fa67e7d17028c0392d8c20bf1c9499b0681f8f",
             "content": "sha256:eb10f07ce1aa1cde2f6245b200c58c9a90a4a871b1fbfe3f74cbdee7665852ce",
             "locator": {
               "kind": "symbol",
@@ -446,7 +463,7 @@
         },
         {
           "anchor": {
-            "blob": "782aa73feb7c2c955a2baa07be50668a006f080f",
+            "blob": "08fa67e7d17028c0392d8c20bf1c9499b0681f8f",
             "content": "sha256:312cf63064dcdb1b2231db05d5b6d5d8271d8601b4e3afc5bd6eb84a83a8b747",
             "locator": {
               "end": 106,
@@ -631,12 +648,12 @@
         },
         {
           "anchor": {
-            "blob": "782aa73feb7c2c955a2baa07be50668a006f080f",
+            "blob": "08fa67e7d17028c0392d8c20bf1c9499b0681f8f",
             "content": "sha256:dd62d34994957471e6870945ca3392b6a2c5f4a5a758902fa8f525d04cd7ef55",
             "locator": {
-              "end": 635,
+              "end": 637,
               "kind": "line_range",
-              "start": 602
+              "start": 604
             }
           },
           "kind": "code"

@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "06ba4d9e9b4494e5332b40c2577f642da6fe649c",
+        "blob": "fb8d1849ead7e158ccd58f0407524b04db70976e",
         "content": "sha256:feadb248ea07cb0dab430491e5f6045615d0cafbe5e5f21dff27c690cac71fea",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,25 @@
     },
     {
       "anchor": {
-        "blob": "06ba4d9e9b4494e5332b40c2577f642da6fe649c",
+        "blob": "701933197580cddb897953d5733d27c07f507857",
+        "content": "sha256:ec9f3f648de4d0c72b8a81154fb39fb74a35f4869e2aed53fede45344b83a7df",
+        "locator": {
+          "kind": "symbol",
+          "name": "_cleanup_outputs_result"
+        }
+      },
+      "id": "RLZ-3TZ5ST",
+      "invariant": "INV-N70HF0",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-10",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "Completed cleanup uses the same collector before removal; its retained focused control is distinguished from the admitted live Abandoned witness.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "fb8d1849ead7e158ccd58f0407524b04db70976e",
         "content": "sha256:2368f70df2faf1324dd191deef40f750922150fbcd6151482a5e7525c4c22114",
         "locator": {
           "kind": "symbol",
@@ -39,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "06ba4d9e9b4494e5332b40c2577f642da6fe649c",
+        "blob": "fb8d1849ead7e158ccd58f0407524b04db70976e",
         "content": "sha256:2377bc203fa673e8bbee202ad59d18ff2aff663cf7ed11e32fa9940d31265e6e",
         "locator": {
           "kind": "symbol",
@@ -57,7 +75,7 @@
     },
     {
       "anchor": {
-        "blob": "06ba4d9e9b4494e5332b40c2577f642da6fe649c",
+        "blob": "fb8d1849ead7e158ccd58f0407524b04db70976e",
         "content": "sha256:2377bc203fa673e8bbee202ad59d18ff2aff663cf7ed11e32fa9940d31265e6e",
         "locator": {
           "kind": "symbol",
@@ -80,7 +98,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "06ba4d9e9b4494e5332b40c2577f642da6fe649c",
+            "blob": "fb8d1849ead7e158ccd58f0407524b04db70976e",
             "content": "sha256:6655686073ecd35f41f016b1c12f205ebc555fd6d064525522c7f429177bb9da",
             "locator": {
               "kind": "symbol",

@@ -20,6 +20,10 @@ prepare_role_handover validates selection before workspace/enclosure changes. _a
 
 The condition is now parent presence: every parentable role (orchestrator, manager, worker, reviewer, curator, investigator) gets the parent-routed `developerQuestions` naming the actual parent agent id, and the leaf Worker, Reviewer and Curator additionally get `leafSeats` peer routes with no routine result ordered to the parent. Every parentless or dashboard launch keeps the base sentence byte for byte; native parent identity and unrelated tool grants remain unchanged; the approved R98 concern/delegation wording exception is stated below.
 
+## Host-resolved choices, folders, copies and instructions
+
+`_role_defaults` now carries mode, feature values, notes, the host role profile, settings sources and per-choice field origins into one launch-default record. `_prepare_role_folders` allocates per-request report and scratch roots — leaf roles under the group's real `role-reports/<role>/<requestId>` and `scratch/<role>/<requestId>`, other roles under `.agents-remember/role-executions/<requestId>` — refusing links and outside roots. `_prepare_task_document_files` publishes the leaf's own rendered document under `task-documents/` before the first turn. `_compile_handover` composes user plaintext over the capsule baseline (a first-nonblank-line `<overwrite>` tag replaces the baseline, otherwise append), records launch-choice metadata with sources and digests, and names the canonical report path; the brief tells the agent to read the rendered files with its own file tools and to change documents through `task_doc` only.
+
 ## Evidence
 
 - Frozen implementation of prepare_role_handover supporting the stated file behavior. [1]

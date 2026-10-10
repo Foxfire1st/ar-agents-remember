@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "e6bcf39593af90a465bc58c35f1984b15a526c57",
-        "content": "sha256:63966f547f9741626f1b98374d6ce9b4cd7e7418ecf1d66477f4574050745f89",
+        "blob": "44431745a09a4548b3c380f36be3f06e63632a75",
+        "content": "sha256:10e3cad4fa72df4ceb6cfb4ed33b5cdb3eb8dbd9717ac62b24db01c975120fd6",
         "locator": {
           "kind": "file"
         }
@@ -16,6 +16,23 @@
         "leaf": "260928-MIK-L99"
       },
       "rationale": "Separates Curator content repair, Manager staging and Worker supported continuation.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "5553564609934f93aee219589a156621ed1ebea7",
+        "content": "sha256:02d1e3c21bb6f6715907a71bbb8600439992b0ab06262c52921a506435d300b2",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-DRT32D",
+      "invariant": "INV-NNQR91",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-19",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "The canonical operations/implementation.md carries the applicable own-file first-read/task_doc-only write and report/scratch instructions for its role/operation; it is the source the public generator ships.",
       "role": "primary-authority"
     }
   ],

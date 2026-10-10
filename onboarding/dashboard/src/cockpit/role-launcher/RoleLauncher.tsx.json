@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "1f46443e1b156e1c7d44349871b37aedccf14e1d",
-        "content": "sha256:afa38e48297376934d1219f799ae8601a99ec5bbe4362d7adf470a635af7ab30",
+        "blob": "b7d20cc3f2f13a0cd95a326cc08f7364481fa80c",
+        "content": "sha256:abd10bcacdbaf00edce13e267510e59396b0c7bf5c7b8d6cc2e75d796d5057ad",
         "locator": {
           "kind": "symbol",
           "name": "RoleLauncher"
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "1f46443e1b156e1c7d44349871b37aedccf14e1d",
-        "content": "sha256:afa38e48297376934d1219f799ae8601a99ec5bbe4362d7adf470a635af7ab30",
+        "blob": "b7d20cc3f2f13a0cd95a326cc08f7364481fa80c",
+        "content": "sha256:abd10bcacdbaf00edce13e267510e59396b0c7bf5c7b8d6cc2e75d796d5057ad",
         "locator": {
           "kind": "symbol",
           "name": "RoleLauncher"
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "1f46443e1b156e1c7d44349871b37aedccf14e1d",
+        "blob": "b7d20cc3f2f13a0cd95a326cc08f7364481fa80c",
         "content": "sha256:ae01e6a809cd47819b696aee450d63c9dec59f9e0be5b9c54b718c11e5fdabdb",
         "locator": {
           "kind": "symbol",
@@ -57,8 +57,8 @@
     },
     {
       "anchor": {
-        "blob": "1f46443e1b156e1c7d44349871b37aedccf14e1d",
-        "content": "sha256:afa38e48297376934d1219f799ae8601a99ec5bbe4362d7adf470a635af7ab30",
+        "blob": "b7d20cc3f2f13a0cd95a326cc08f7364481fa80c",
+        "content": "sha256:abd10bcacdbaf00edce13e267510e59396b0c7bf5c7b8d6cc2e75d796d5057ad",
         "locator": {
           "kind": "symbol",
           "name": "RoleLauncher"
@@ -75,8 +75,8 @@
     },
     {
       "anchor": {
-        "blob": "1f46443e1b156e1c7d44349871b37aedccf14e1d",
-        "content": "sha256:afa38e48297376934d1219f799ae8601a99ec5bbe4362d7adf470a635af7ab30",
+        "blob": "b7d20cc3f2f13a0cd95a326cc08f7364481fa80c",
+        "content": "sha256:abd10bcacdbaf00edce13e267510e59396b0c7bf5c7b8d6cc2e75d796d5057ad",
         "locator": {
           "kind": "symbol",
           "name": "RoleLauncher"
@@ -93,7 +93,25 @@
     },
     {
       "anchor": {
-        "blob": "1f46443e1b156e1c7d44349871b37aedccf14e1d",
+        "blob": "b7d20cc3f2f13a0cd95a326cc08f7364481fa80c",
+        "content": "sha256:abd10bcacdbaf00edce13e267510e59396b0c7bf5c7b8d6cc2e75d796d5057ad",
+        "locator": {
+          "kind": "symbol",
+          "name": "RoleLauncher"
+        }
+      },
+      "id": "RLZ-N85X2R",
+      "invariant": "INV-63Z0MN",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-17",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "The landed extracted owner passes the existing fifth featureValues operand on both model and effort changes and keeps the agentOverride agentId guard.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "b7d20cc3f2f13a0cd95a326cc08f7364481fa80c",
         "content": "sha256:1687dd751b97a7f56ed19607bf786050f7e969c393691f73db4bdc94c858e497",
         "locator": {
           "kind": "symbol",
@@ -116,7 +134,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1f46443e1b156e1c7d44349871b37aedccf14e1d",
+            "blob": "b7d20cc3f2f13a0cd95a326cc08f7364481fa80c",
             "content": "sha256:ae01e6a809cd47819b696aee450d63c9dec59f9e0be5b9c54b718c11e5fdabdb",
             "locator": {
               "kind": "symbol",
@@ -132,7 +150,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1f46443e1b156e1c7d44349871b37aedccf14e1d",
+            "blob": "b7d20cc3f2f13a0cd95a326cc08f7364481fa80c",
             "content": "sha256:6e12c73e518e0dad2a470a82303f8f9f7e83170c8fbf27b24a3acdcc76b3dd43",
             "locator": {
               "kind": "symbol",
@@ -148,7 +166,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1f46443e1b156e1c7d44349871b37aedccf14e1d",
+            "blob": "b7d20cc3f2f13a0cd95a326cc08f7364481fa80c",
             "content": "sha256:1e6d5148e9e49d5b53b9d510ed2314664cf4a977a6bebe6975df543d2fd13c3b",
             "locator": {
               "kind": "symbol",

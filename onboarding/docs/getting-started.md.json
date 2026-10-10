@@ -1,0 +1,24 @@
+{
+  "path": "docs/getting-started.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "26c9de4dfdeb16bfedc8acd791d125add8628399",
+        "content": "sha256:b6dc67b4a7af5bdede557c0fa592bae50f76bde63f71f05badf066088d4ae89b",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-D995QR",
+      "invariant": "INV-DKN3CG",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-18",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "Getting-started text directs the user to the actual setup/catalog prerequisite rather than claiming an unavailable host already supplied options.",
+      "role": "presentation"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

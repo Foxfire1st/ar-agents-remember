@@ -156,12 +156,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3f959e4c77c06d1a6a03c7faea84a40592232254",
+            "blob": "6030d7e7f82fadbdbcdedfda71855155018b84c0",
             "content": "sha256:43b15bfd7db981b739d72d3c6476c8f74733223abdafec3d5f8d3823e281f23a",
             "locator": {
-              "end": 125,
+              "end": 126,
               "kind": "line_range",
-              "start": 125
+              "start": 126
             },
             "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py"
           },
@@ -191,12 +191,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "49a8f5adf35a4de7ffcb5d682e53bdfb77081c1e",
+            "blob": "e39d70ff98455855cf4ff91e31535253c13ba185",
             "content": "sha256:ab5f2be78181f69e6956754f157288aed9564a3d5c755cd00ad80b5956753b7f",
             "locator": {
-              "end": 109,
+              "end": 110,
               "kind": "line_range",
-              "start": 109
+              "start": 110
             },
             "path": "mcp/src/agents_remember/worktrees/modules/finalize_task_documents.py"
           },
@@ -204,12 +204,12 @@
         },
         {
           "anchor": {
-            "blob": "49a8f5adf35a4de7ffcb5d682e53bdfb77081c1e",
+            "blob": "e39d70ff98455855cf4ff91e31535253c13ba185",
             "content": "sha256:c4375611d8a906ce2c5dca7fb66b6fcd3c3b502feee719e395cc93b7910620f1",
             "locator": {
-              "end": 234,
+              "end": 235,
               "kind": "line_range",
-              "start": 234
+              "start": 235
             },
             "path": "mcp/src/agents_remember/worktrees/modules/finalize_task_documents.py"
           },

@@ -6,7 +6,7 @@
 
 ## Purpose and current source account
 
-Role start enforces the caller's child-role matrix and own sprint/master scope, serializes admitted starts and reuses a starter/request binding. Changed documents reconcile the same saved agent; foreign starter receipts and cross-leaf ID reuse do not prepare new work. Registered tools retain the typed payload envelope.
+Role start enforces the caller's child-role matrix and own sprint/master scope, serializes admitted starts and reuses a starter/request binding. Changed documents reconcile the same saved agent; foreign starter receipts and cross-leaf ID reuse do not prepare new work. Registered tools retain the typed payload envelope. R71 cases prove worker instruction text is not a start-permission input, repeats keep the original launch after a host profile change, and mode is absent from the tool schema and refused at the HTTP route.
 
 Concurrent role starts observe the second caller's failed nonblocking acquisition of the actual held dispatch lock before asserting it remains pending. Lock-expiration cases assert the refusal and retry behavior, while shared hang guards bound fixture release/join; elapsed speed is not an assertion.
 

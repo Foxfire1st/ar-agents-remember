@@ -1,0 +1,24 @@
+{
+  "path": ".openclaw/workspace/skills/l-01-agent-lifecycles/roles/strategist.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "2087451bc222f81f701a08716184f5df89ff485c",
+        "content": "sha256:1f233f92f88866d6eb602241761f52df6f6d340cfd5695e2701e73814517757c",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-6X7WBW",
+      "invariant": "INV-NNQR91",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-19",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "The .openclaw/workspace shipped copy propagates the skills/l-01-agent-lifecycles/roles/strategist.md instructions to that installation surface; it is generated output and does not independently set role/task or permission authority.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

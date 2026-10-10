@@ -3,8 +3,26 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "944ce713c6a7fe5d29ce030660cb26579e0a4ce4",
-        "content": "sha256:f333e29b58d96ebe5539e8dccc71a6ef1b52fdaba299bbbd887d9daf16b4308e",
+        "blob": "8d90be093b6aae30243ee5d5f806a943e5ddfaad",
+        "content": "sha256:f0d882fa36fd738c83a36932b1de094cad0e96e69832602a77b24138a1c689c4",
+        "locator": {
+          "kind": "symbol",
+          "name": "_settle_predecessor_reports"
+        }
+      },
+      "id": "RLZ-0KXGKD",
+      "invariant": "INV-Z0DCW1",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-11",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "Predecessor settlement collects at the existing launch transition, integrated with the landed locked current-receipt/before-create closing barrier rather than a second receipt owner.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "8d90be093b6aae30243ee5d5f806a943e5ddfaad",
+        "content": "sha256:2792f6ff03da821a09715fddd19b9052de7437df966705b1d37f4e7b8c04548a",
         "locator": {
           "kind": "symbol",
           "name": "_execute_prepared_launch"
@@ -21,8 +39,26 @@
     },
     {
       "anchor": {
-        "blob": "944ce713c6a7fe5d29ce030660cb26579e0a4ce4",
-        "content": "sha256:7d2d2f9dfc17d3d5261240e5d8f1d3781bafcb23e2dbace9eb8dc582f839e5c4",
+        "blob": "8d90be093b6aae30243ee5d5f806a943e5ddfaad",
+        "content": "sha256:2792f6ff03da821a09715fddd19b9052de7437df966705b1d37f4e7b8c04548a",
+        "locator": {
+          "kind": "symbol",
+          "name": "_execute_prepared_launch"
+        }
+      },
+      "id": "RLZ-A3NNS7",
+      "invariant": "INV-YDDMGJ",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-07",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "The existing receipt execution owner replays recorded request/session inputs instead of recomputing against a changed role/profile.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "8d90be093b6aae30243ee5d5f806a943e5ddfaad",
+        "content": "sha256:c3cfeff7ea971287804837bf22aabca659efbeeb31a7882c3f20a193114cce3c",
         "locator": {
           "kind": "symbol",
           "name": "_public_execution"
@@ -39,7 +75,7 @@
     },
     {
       "anchor": {
-        "blob": "944ce713c6a7fe5d29ce030660cb26579e0a4ce4",
+        "blob": "8d90be093b6aae30243ee5d5f806a943e5ddfaad",
         "content": "sha256:e9e967ca283364db610815410bd4c44c92806dd3617fc94747f2a5d2247bf81a",
         "locator": {
           "kind": "symbol",
@@ -57,7 +93,7 @@
     },
     {
       "anchor": {
-        "blob": "944ce713c6a7fe5d29ce030660cb26579e0a4ce4",
+        "blob": "8d90be093b6aae30243ee5d5f806a943e5ddfaad",
         "content": "sha256:e08154c185afc4568a9c151f6ec848a40847b339eae2ce3694ade6d1156edaa9",
         "locator": {
           "kind": "symbol",
@@ -75,8 +111,26 @@
     },
     {
       "anchor": {
-        "blob": "944ce713c6a7fe5d29ce030660cb26579e0a4ce4",
-        "content": "sha256:7d2d2f9dfc17d3d5261240e5d8f1d3781bafcb23e2dbace9eb8dc582f839e5c4",
+        "blob": "8d90be093b6aae30243ee5d5f806a943e5ddfaad",
+        "content": "sha256:c3cfeff7ea971287804837bf22aabca659efbeeb31a7882c3f20a193114cce3c",
+        "locator": {
+          "kind": "symbol",
+          "name": "_public_execution"
+        }
+      },
+      "id": "RLZ-J152FK",
+      "invariant": "INV-Z0DCW1",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-11",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "The public projection reads receipt state without making every options/result/status read a filesystem collection mutation.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "8d90be093b6aae30243ee5d5f806a943e5ddfaad",
+        "content": "sha256:c3cfeff7ea971287804837bf22aabca659efbeeb31a7882c3f20a193114cce3c",
         "locator": {
           "kind": "symbol",
           "name": "_public_execution"
@@ -93,8 +147,8 @@
     },
     {
       "anchor": {
-        "blob": "944ce713c6a7fe5d29ce030660cb26579e0a4ce4",
-        "content": "sha256:f333e29b58d96ebe5539e8dccc71a6ef1b52fdaba299bbbd887d9daf16b4308e",
+        "blob": "8d90be093b6aae30243ee5d5f806a943e5ddfaad",
+        "content": "sha256:2792f6ff03da821a09715fddd19b9052de7437df966705b1d37f4e7b8c04548a",
         "locator": {
           "kind": "symbol",
           "name": "_execute_prepared_launch"
@@ -111,8 +165,26 @@
     },
     {
       "anchor": {
-        "blob": "944ce713c6a7fe5d29ce030660cb26579e0a4ce4",
-        "content": "sha256:f333e29b58d96ebe5539e8dccc71a6ef1b52fdaba299bbbd887d9daf16b4308e",
+        "blob": "8d90be093b6aae30243ee5d5f806a943e5ddfaad",
+        "content": "sha256:14ac049261997e14479e0eba54f6bf3c32fee47373a6794adce519f3ae86531e",
+        "locator": {
+          "kind": "symbol",
+          "name": "_observe_launch_choices"
+        }
+      },
+      "id": "RLZ-Q1N4P2",
+      "invariant": "INV-YDDMGJ",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-07",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "Observed host choices are recorded against stated/resolved choices, including a warning when the host does not apply a stated mode.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "8d90be093b6aae30243ee5d5f806a943e5ddfaad",
+        "content": "sha256:2792f6ff03da821a09715fddd19b9052de7437df966705b1d37f4e7b8c04548a",
         "locator": {
           "kind": "symbol",
           "name": "_execute_prepared_launch"
@@ -129,7 +201,7 @@
     },
     {
       "anchor": {
-        "blob": "944ce713c6a7fe5d29ce030660cb26579e0a4ce4",
+        "blob": "8d90be093b6aae30243ee5d5f806a943e5ddfaad",
         "content": "sha256:7074260c5abeecf94e3db69e79ef974b3cff0f80807c7a583086aa612f46bc8c",
         "locator": {
           "kind": "symbol",
@@ -147,7 +219,7 @@
     },
     {
       "anchor": {
-        "blob": "944ce713c6a7fe5d29ce030660cb26579e0a4ce4",
+        "blob": "8d90be093b6aae30243ee5d5f806a943e5ddfaad",
         "content": "sha256:7074260c5abeecf94e3db69e79ef974b3cff0f80807c7a583086aa612f46bc8c",
         "locator": {
           "kind": "symbol",
@@ -165,8 +237,26 @@
     },
     {
       "anchor": {
-        "blob": "944ce713c6a7fe5d29ce030660cb26579e0a4ce4",
-        "content": "sha256:f333e29b58d96ebe5539e8dccc71a6ef1b52fdaba299bbbd887d9daf16b4308e",
+        "blob": "8d90be093b6aae30243ee5d5f806a943e5ddfaad",
+        "content": "sha256:62448557802a49e8c1c7ddc07e9640f4c1ffcc068fdef626592c0178af968ec7",
+        "locator": {
+          "kind": "symbol",
+          "name": "_request_digest"
+        }
+      },
+      "id": "RLZ-S4B768",
+      "invariant": "INV-YDDMGJ",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-07",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "The digest owner omits an empty featureValues map from digest input, preserving the digest of pre-feature requests.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "8d90be093b6aae30243ee5d5f806a943e5ddfaad",
+        "content": "sha256:2792f6ff03da821a09715fddd19b9052de7437df966705b1d37f4e7b8c04548a",
         "locator": {
           "kind": "symbol",
           "name": "_execute_prepared_launch"
@@ -183,7 +273,7 @@
     },
     {
       "anchor": {
-        "blob": "944ce713c6a7fe5d29ce030660cb26579e0a4ce4",
+        "blob": "8d90be093b6aae30243ee5d5f806a943e5ddfaad",
         "content": "sha256:e9e967ca283364db610815410bd4c44c92806dd3617fc94747f2a5d2247bf81a",
         "locator": {
           "kind": "symbol",
@@ -306,7 +396,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "944ce713c6a7fe5d29ce030660cb26579e0a4ce4",
+            "blob": "8d90be093b6aae30243ee5d5f806a943e5ddfaad",
             "content": "sha256:e9e967ca283364db610815410bd4c44c92806dd3617fc94747f2a5d2247bf81a",
             "locator": {
               "kind": "symbol",
@@ -322,7 +412,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "944ce713c6a7fe5d29ce030660cb26579e0a4ce4",
+            "blob": "8d90be093b6aae30243ee5d5f806a943e5ddfaad",
             "content": "sha256:6e1a541aecf8833f9f4888a7b771bd24930153cdf5d8b08346ba64a0eea5562b",
             "locator": {
               "kind": "symbol",
@@ -369,12 +459,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9c27f7546b5f3e96f9406dfadb020e944329a175",
+            "blob": "8f100ce7f5f5381456d67cea47b8638ce0acea36",
             "content": "sha256:2200041761481afb1a77501bfcdb24006626a7641f1a37c9bc4b85a1fc79e8d9",
             "locator": {
-              "end": 1062,
+              "end": 1065,
               "kind": "line_range",
-              "start": 1022
+              "start": 1025
             },
             "path": "mcp/tests/test_paseo_launch.py"
           },
@@ -403,12 +493,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9c27f7546b5f3e96f9406dfadb020e944329a175",
+            "blob": "8f100ce7f5f5381456d67cea47b8638ce0acea36",
             "content": "sha256:f817446786d0d1171f345de2b1bda721ed1b85cfa59d661141ad5603710f34f2",
             "locator": {
-              "end": 1245,
+              "end": 1248,
               "kind": "line_range",
-              "start": 1189
+              "start": 1192
             },
             "path": "mcp/tests/test_paseo_launch.py"
           },

@@ -33,7 +33,7 @@ python3 scripts/sync-harness.py --list-targets
 `StarterSpec`, an optional `HookSpec`, verbatim `shared` copies, `composed` files, and
 `extra_shared` copies whose destination is repo-relative rather than under the harness
 directory (this is how `.github-vscode/` reaches its sibling `.vscode/`). 45 files across
-the nine trees are generated from seven sources.
+the nine trees are generated from eight sources.
 
 Fan-out happens three ways:
 
@@ -45,7 +45,7 @@ Fan-out happens three ways:
    the `# … Workspace Instructions` headings, the `@`-include lines, Copilot's note about
    where the path resolves.
 3. **Assembled from fragment libraries** — named top-level definitions are sliced out of
-   `scripts/harness/render_starter.py` and `scripts/harness/session_start_hook.py` with
+   `scripts/harness/render_starter.py`, `scripts/harness/session_start_hook.py` and the user-settings location module with
    `ast` and re-emitted as standalone programs.
 
 Assembly is deliberately derivation-heavy so nothing can silently drift:

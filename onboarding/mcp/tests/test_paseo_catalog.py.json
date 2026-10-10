@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "74d6da3fea4daae707be4261ebe77b2c66206029",
-        "content": "sha256:dfeffa5143e477f72259341ab94108f5c38fcd3014c49501a5a9321a9da0ac50",
+        "blob": "e002a269996893e64dbc24b15927363dc2dadf09",
+        "content": "sha256:ee7e1eb437f3764d3fd667e3454d1100e6dd4c4b9d7e128b5e27b45a7204b57f",
         "locator": {
           "kind": "symbol",
           "name": "LauncherOptionsTests.test_catalog_is_cached_per_runtime_and_only_a_refresh_rediscovers"
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "74d6da3fea4daae707be4261ebe77b2c66206029",
-        "content": "sha256:d375ad52fb95f55321174a0c7bcfabc618077684c2fb29ade637d48dc0029286",
+        "blob": "e002a269996893e64dbc24b15927363dc2dadf09",
+        "content": "sha256:1dd164bdcba5f0ced9c45f159e2bc2fbf952afc5bce321f11b0ffbfe789c8776",
         "locator": {
           "kind": "symbol",
           "name": "LaunchValidationTests.test_a_launch_is_validated_against_the_catalog_before_anything_is_created"

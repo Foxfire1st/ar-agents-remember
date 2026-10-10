@@ -23,6 +23,8 @@ L23 parsed `qualityGate.executor` as exactly `local` or `dagger` and refused any
 - `_parse_loop_levels`
 - `_parse_roles`
 - `_parse_roles_per_level`
+- `_parse_feature_values`
+- `_optional_role_text`
 - `_parse_concurrency`
 - `_parse_expectations`
 - `_parse_supervisor`
@@ -38,7 +40,7 @@ L23 parsed `qualityGate.executor` as exactly `local` or `dagger` and refused any
 
 ### Role Runtime and Scope
 
-_parse_service_tier accepts only a nonempty string when serviceTier is present; Boolean fast flags or blank/wrong-shaped values refuse. _parse_roles places it in RoleKnobs for normal and per-altitude settings. Actual provider feature capability is validated at native launch, not guessed during config parsing.
+_parse_service_tier accepts only a nonempty string when serviceTier is present; Boolean fast flags or blank/wrong-shaped values refuse. _parse_roles places it in RoleKnobs for normal and per-altitude settings. Actual provider feature capability is validated at native launch, not guessed during config parsing. `_parse_roles` now also reads optional `mode`/`notes` text and a `featureValues` map of booleans or nonempty option ids into RoleKnobs, and harness ids are shape-checked free strings while catalog validation stays at launch; the `harness_ids` parameter is gone from `_parse_roles`/`_parse_roles_per_level`.
 
 ## 260731-EFA-L17/L24 Quality-Gate Parser
 

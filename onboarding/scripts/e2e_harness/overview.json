@@ -66,7 +66,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9b74b5690b0a8cf1c51a74bbc5e947ea868a7086",
+            "blob": "989dd70cbd8a205e4bf097417cf933e719b211e1",
             "content": "sha256:41be3ef34bc95bf9764fb4a030193d8a086c979de3a216a1cd57f9fe09f7f19c",
             "locator": {
               "kind": "symbol",
@@ -78,7 +78,7 @@
         },
         {
           "anchor": {
-            "blob": "9b74b5690b0a8cf1c51a74bbc5e947ea868a7086",
+            "blob": "989dd70cbd8a205e4bf097417cf933e719b211e1",
             "content": "sha256:6d9533da7d8e8abfe4a0ddc69b802d3bcf616485f99a1dacb3047605e180511b",
             "locator": {
               "end": 252,
@@ -108,12 +108,12 @@
         },
         {
           "anchor": {
-            "blob": "f4cdbb8e2ca84e990abe4f6573265c945ea5def0",
+            "blob": "6ff9977050b889863007a90bb703581ba94a0b80",
             "content": "sha256:c7925b6e035a01c47c4cf89f555011381269495af72c0e6cbb9102eaaa8db448",
             "locator": {
-              "end": 531,
+              "end": 536,
               "kind": "line_range",
-              "start": 368
+              "start": 373
             },
             "path": "scripts/e2e_harness/scenario.py"
           },
@@ -202,7 +202,7 @@
         },
         {
           "anchor": {
-            "blob": "4c00897ded7b5148622ddae72ad941d94ee12282",
+            "blob": "8e1e47dac3e8d44f393cc6a7d1233f65cdcc3dc6",
             "content": "sha256:ac4a6d944717aeb5831a27fc4d49773700aa06e107d2f94405e6cc3bc7db14e0",
             "locator": {
               "kind": "symbol",
@@ -227,12 +227,12 @@
         },
         {
           "anchor": {
-            "blob": "4c00897ded7b5148622ddae72ad941d94ee12282",
+            "blob": "8e1e47dac3e8d44f393cc6a7d1233f65cdcc3dc6",
             "content": "sha256:91e5e4a5185fc889aa74883899aa1f65467ba59820e3c5f0f787dbfa6fb9875c",
             "locator": {
-              "end": 1195,
+              "end": 1203,
               "kind": "line_range",
-              "start": 1111
+              "start": 1119
             },
             "path": "scripts/e2e_harness/fresh_user_scenario.py"
           },

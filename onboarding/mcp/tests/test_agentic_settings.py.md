@@ -10,7 +10,7 @@ Two-layer agentic settings merge and authority-boundary tests.
 
 ## Current source account
 
-Three added serviceTier cases prove independent inheritance through flat/global/repository/per-level roles, rejection of invalid values and fast boolean, and explicit refusal when legacy terminal spawning cannot carry a tier. Retained model/effort merge and authority cases remain; this adds no paid-model qualification.
+Three added serviceTier cases prove independent inheritance through flat/global/repository/per-level roles, rejection of invalid values and fast boolean, and explicit refusal when legacy terminal spawning cannot carry a tier. Retained model/effort merge and authority cases remain; this adds no paid-model qualification. New cases prove the per-use user file with the repository file in place, XDG home selection, old-only/both-file refusal before any content read, and user-bytes topology fallback with local memory-repo bytes.
 
 ## Code Commentary
 

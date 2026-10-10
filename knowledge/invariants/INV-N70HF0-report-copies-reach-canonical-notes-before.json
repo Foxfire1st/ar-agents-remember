@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "family_guarantee"
+    ],
+    "justification": "Spans generation folders and canonical notes: fsync before validation, atomic replace, and source-preserving failure are the mechanisms behind FAM-2BRZW7's collect-before-remove guarantee."
+  },
+  "applicability": "Every collection that copies role reports to canonical notes before folder removal.",
+  "conditions": [
+    "Copied-temp data is fsynced before source and readback validation.",
+    "Replacement is atomic."
+  ],
+  "exclusions": [
+    "Removal before canonical copies land.",
+    "Silent source loss on failure; failure preserves the source and the folder."
+  ],
+  "id": "INV-N70HF0",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/notes/reports/role-launch/260928-MIK-L71-worker-d508f3cc-d109-host-readers/source-current-a1b7/source26-public-sync/generation15-role-report-repaired-successor/report.md"
+      ],
+      "path": "l71-handoff-list.json"
+    },
+    "handoffEntry": "L71-CURRENT242-W-10",
+    "leaf": "260928-MIK-L71",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Report copies reach canonical notes before folders are removed; copied-temp data is fsynced before source/readback validation and atomic_replace, and failure preserves the source/report folder.",
+  "status": "proposed",
+  "supersedes": []
+}

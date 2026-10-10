@@ -10,7 +10,7 @@ The independent Reviewer examines one explicitly assigned seam or loop round, re
 
 ## Current Contract
 
-Native intake uses exact task arguments, returned canonical path and actual reader schemas; each call carries its task/contract scope. Write only contained task-local review artifacts. Missing authority or capability is reported rather than substituted.
+Native intake reads the rendered task-document files named in the handover, read with the harness's own file tools before acting; change documents through `task_doc` only, because edits to copies are never read back and are lost on the next publication. Each call carries its task/contract scope; use actual reader schemas. Write only contained task-local review artifacts. Missing authority or capability is reported rather than substituted.
 
 A baseline inspects the complete diff, including unattributed files, against the applicable standing catalog, three lenses and exact requirement evidence class. Knowledge mapping adds before/after family and unchanged-sibling examination. Preserve producer handoff fields for co-resolution.
 
@@ -91,6 +91,9 @@ This role card follows the transaction-only lifecycle boundary: the role reports
 No external domain documentation applies to this repository-local orchestration job file.
 
 No relevant external documentation found.
+## Working folders and reports
+
+Agent-authored temporary files, experiments and working copies live only in the handover's real `workspace.scratchRoot`, outside code, memory and task folders; reports and evidence go in the handover's local report folder, which the product copies to canonical notes before removal.
 
 ## Evidence
 

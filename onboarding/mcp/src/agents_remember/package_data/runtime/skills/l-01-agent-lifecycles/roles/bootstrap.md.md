@@ -102,6 +102,10 @@ for another role is refused and reported rather than absorbed.
 
 None recorded.
 
+## Working folders and reports
+
+Agent-authored temporary files, experiments and working copies live only in the handover's real `workspace.scratchRoot`, outside code, memory and task folders; reports and evidence go in the handover's local report folder, which the product copies to canonical notes before removal.
+
 ## Evidence
 
 ### Docs References

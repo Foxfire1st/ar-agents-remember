@@ -3,7 +3,24 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "3421e76133385092545d9f1b1c2fa21a590d35ef",
+        "blob": "1b1b1efdfa6420be11b629a8d9de5bfb22337bba",
+        "content": "sha256:fb2349cd8940f6f5ef56159ddefb5b85d0528b116e6cbfa45a18ebb85eb230e4",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-0GEXHP",
+      "invariant": "INV-NNQR91",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-19",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "The canonical operations/curation.md carries the applicable own-file first-read/task_doc-only write and report/scratch instructions for its role/operation; it is the source the public generator ships.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "59b96abdc86d2d0203bea462255eaee46b8bbd64",
         "content": "sha256:3a9ad914ea3e63cb5e64b8e3949899427f985baa078e06bc0d87094deaf52738",
         "locator": {
           "end": 90,
@@ -22,12 +39,12 @@
     },
     {
       "anchor": {
-        "blob": "3421e76133385092545d9f1b1c2fa21a590d35ef",
-        "content": "sha256:a2a288dd989f6131292cb6ea8148355c9b71f1a9c4ea5bdeef7b06e319c97f42",
+        "blob": "59b96abdc86d2d0203bea462255eaee46b8bbd64",
+        "content": "sha256:71bd7eb7f9aea55163c813b0b4e6299f8e63d8bb45d0412e21a186f94a1725e6",
         "locator": {
-          "end": 277,
+          "end": 296,
           "kind": "line_range",
-          "start": 277
+          "start": 296
         }
       },
       "id": "RLZ-4YAPS7",
@@ -41,8 +58,8 @@
     },
     {
       "anchor": {
-        "blob": "3421e76133385092545d9f1b1c2fa21a590d35ef",
-        "content": "sha256:dd076594d6bc93b443ec20a0c57a885e59bf34dfeb067e16e92f06d18964cc4b",
+        "blob": "59b96abdc86d2d0203bea462255eaee46b8bbd64",
+        "content": "sha256:681308a36b7737e6186bdb5a962918b28a8667253cc967b6c4fbbe4c53b62d20",
         "locator": {
           "kind": "file"
         }
@@ -58,12 +75,12 @@
     },
     {
       "anchor": {
-        "blob": "3421e76133385092545d9f1b1c2fa21a590d35ef",
-        "content": "sha256:ffe608ae52f8c3fddfeb376357e96e48b9856f3bdb4c97cda21e38c9ec5e61dd",
+        "blob": "59b96abdc86d2d0203bea462255eaee46b8bbd64",
+        "content": "sha256:ea93ba9025756f3db0aa36ea0e22ae962879292832b335ccdba7e48961e563bc",
         "locator": {
-          "end": 265,
+          "end": 268,
           "kind": "line_range",
-          "start": 265
+          "start": 266
         }
       },
       "id": "RLZ-EEEG4W",
@@ -72,13 +89,13 @@
         "handoffEntry": "MIK-R70@v1 rule 4",
         "leaf": "260928-MIK-L70"
       },
-      "rationale": "Terminal-only-ended truth is stated here (operations/curation.md:265); the owner-validation half lives at the accepted common home core/acceptance.md:14-19 (the gate owner validates before advancing state) by explicit referral, not by a second local statement.",
+      "rationale": "The sentence that makes the curation operation a participant: terminal/finalizer evidence attests only that this turn ended and wakes the manager, who validates it.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "3421e76133385092545d9f1b1c2fa21a590d35ef",
-        "content": "sha256:dd076594d6bc93b443ec20a0c57a885e59bf34dfeb067e16e92f06d18964cc4b",
+        "blob": "59b96abdc86d2d0203bea462255eaee46b8bbd64",
+        "content": "sha256:681308a36b7737e6186bdb5a962918b28a8667253cc967b6c4fbbe4c53b62d20",
         "locator": {
           "kind": "file"
         }
@@ -94,12 +111,12 @@
     },
     {
       "anchor": {
-        "blob": "3421e76133385092545d9f1b1c2fa21a590d35ef",
-        "content": "sha256:809390aaeff5d493f342f874194f9463e041ba61bdb008a7f4480d218e4249bb",
+        "blob": "59b96abdc86d2d0203bea462255eaee46b8bbd64",
+        "content": "sha256:d6d49af062890c27a501699f6c12c29d977eabf623df0857b62c8f5388480d88",
         "locator": {
-          "end": 126,
+          "end": 121,
           "kind": "line_range",
-          "start": 124
+          "start": 121
         }
       },
       "id": "RLZ-PAE912",
@@ -108,13 +125,13 @@
         "handoffEntry": "MIK-R48@v2 rule 7",
         "leaf": "260928-MIK-L48"
       },
-      "rationale": "The authored family-effect judgment and the writer-owned revision live here: name the family in history as a changed row with the effect; the writer records the family's own revision.",
+      "rationale": "The curation operation requires the same authoring fields during the existing pass.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "3421e76133385092545d9f1b1c2fa21a590d35ef",
-        "content": "sha256:dd076594d6bc93b443ec20a0c57a885e59bf34dfeb067e16e92f06d18964cc4b",
+        "blob": "59b96abdc86d2d0203bea462255eaee46b8bbd64",
+        "content": "sha256:681308a36b7737e6186bdb5a962918b28a8667253cc967b6c4fbbe4c53b62d20",
         "locator": {
           "kind": "file"
         }
@@ -130,8 +147,8 @@
     },
     {
       "anchor": {
-        "blob": "3421e76133385092545d9f1b1c2fa21a590d35ef",
-        "content": "sha256:6ce616857be9b2932b1b442a156eb06df996534a4dc191f60bede6f9a6de49a7",
+        "blob": "59b96abdc86d2d0203bea462255eaee46b8bbd64",
+        "content": "sha256:99adb8a0e73183ed3ac0ae63626bf3066a1270a7ff970b92c90a694378907194",
         "locator": {
           "end": 75,
           "kind": "line_range",

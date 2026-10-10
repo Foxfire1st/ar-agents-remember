@@ -10,7 +10,7 @@ A native Orchestrator coordinates one selected sprint’s tasks and owners at Pr
 
 ## Current Contract
 
-Read only the canonical task/packet/report/predecessor facts needed for the current decision, using exact supplied task arguments. Missing requirement or owner facts are named from their source.
+Read only the canonical task/packet/report/predecessor facts needed for the current decision. Read the rendered task-document files named in the handover, read with the harness's own file tools before acting; change documents through `task_doc` only, because edits to copies are never read back and are lost on the next publication. Missing requirement or owner facts are named from their source.
 
 Start distinct Manager, Worker, Reviewer and Curator agents only under the selected sprint; reuse each existing Manager named by the Architect and start one Manager per other master. Keep actual IDs, reconcile unknown starts by the same request ID and follow assignments through bound messages/results without a separate poller.
 
@@ -49,6 +49,9 @@ role, then synchronize.
 ### Todos
 
 None recorded.
+## Working folders and reports
+
+Agent-authored temporary files, experiments and working copies live only in the handover's real `workspace.scratchRoot`, outside code, memory and task folders; reports and evidence go in the handover's local report folder, which the product copies to canonical notes before removal.
 
 ## Evidence
 

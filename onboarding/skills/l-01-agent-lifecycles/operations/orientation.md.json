@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "fddae8ce3e396637835602d2a96e7b3d0a29bd1d",
-        "content": "sha256:1306bb4da04c7853394b4400b768e81237508d5a7d9bc165b99ca34fc4cc039a",
+        "blob": "363d653128562c18094b47ad1c490c2a1388e451",
+        "content": "sha256:0a4d3056d41cc4a650de3dd5cc0eb74545e21ff0ca47c4823f77c52c4ab69cda",
         "locator": {
           "end": 7,
           "kind": "line_range",
@@ -22,12 +22,12 @@
     },
     {
       "anchor": {
-        "blob": "fddae8ce3e396637835602d2a96e7b3d0a29bd1d",
+        "blob": "363d653128562c18094b47ad1c490c2a1388e451",
         "content": "sha256:fb88b4cb11d7d27e66b17718d83c21144cbe42b604b12e4b12dde8eac6be3a9b",
         "locator": {
-          "end": 11,
+          "end": 12,
           "kind": "line_range",
-          "start": 11
+          "start": 12
         }
       },
       "id": "RLZ-BPMMTC",
@@ -41,12 +41,12 @@
     },
     {
       "anchor": {
-        "blob": "fddae8ce3e396637835602d2a96e7b3d0a29bd1d",
+        "blob": "363d653128562c18094b47ad1c490c2a1388e451",
         "content": "sha256:1474575fe1142856b37b1106b95e578f8ad8ae8c1982fe29d9324ceee1abb31e",
         "locator": {
-          "end": 15,
+          "end": 16,
           "kind": "line_range",
-          "start": 15
+          "start": 16
         }
       },
       "id": "RLZ-C5XM1T",
@@ -60,8 +60,8 @@
     },
     {
       "anchor": {
-        "blob": "fddae8ce3e396637835602d2a96e7b3d0a29bd1d",
-        "content": "sha256:1b164b85a4af87a3f73b807c0e374cfc93102afa9f8c09a6bb45ba060d3e0505",
+        "blob": "363d653128562c18094b47ad1c490c2a1388e451",
+        "content": "sha256:52ed25935689795cb54a0e5f02f4c1d5d8b201a8547a1b1fc13f302674d5e8ad",
         "locator": {
           "kind": "file"
         }
@@ -77,7 +77,7 @@
     },
     {
       "anchor": {
-        "blob": "fddae8ce3e396637835602d2a96e7b3d0a29bd1d",
+        "blob": "363d653128562c18094b47ad1c490c2a1388e451",
         "content": "sha256:90c1134af65243f7ac535323798edcb2b590b7ff96945970bce4dfdc463ef128",
         "locator": {
           "end": 3,
@@ -92,6 +92,23 @@
         "leaf": "260928-MIK-L90"
       },
       "rationale": "The Orientation operation preserves this same taskless entry without creating a task or trust packet.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "7dcbfc61607d4210a359302d4048b51c2240c592",
+        "content": "sha256:6c25b8c4f42c110e76d4c24d56a039a87d9d13edf39213410edf127c298ec53d",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-Q1RJX3",
+      "invariant": "INV-NNQR91",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-19",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "The canonical operations/orientation.md carries the applicable own-file first-read/task_doc-only write and report/scratch instructions for its role/operation; it is the source the public generator ships.",
       "role": "primary-authority"
     }
   ],

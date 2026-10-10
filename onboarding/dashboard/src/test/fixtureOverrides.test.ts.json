@@ -188,12 +188,12 @@
         },
         {
           "anchor": {
-            "blob": "29a3f96c4fa5cc4abbdf34ff8486e4ee5a0c46c1",
+            "blob": "17f2d4a842a364ac445a776090637c466711b266",
             "content": "sha256:6520211641614e8c0c3ab88e09ef3d926a19d7ea317fc355f02022a338e2e846",
             "locator": {
-              "end": 570,
+              "end": 574,
               "kind": "line_range",
-              "start": 570
+              "start": 574
             },
             "path": "mcp/src/agents_remember/observer/projection.py"
           },
@@ -201,12 +201,12 @@
         },
         {
           "anchor": {
-            "blob": "29a3f96c4fa5cc4abbdf34ff8486e4ee5a0c46c1",
+            "blob": "17f2d4a842a364ac445a776090637c466711b266",
             "content": "sha256:cf34cd8801fcc7ff74a08348c28e55e776d4d5696f4e64a85c1e74950683cd25",
             "locator": {
-              "end": 716,
+              "end": 720,
               "kind": "line_range",
-              "start": 716
+              "start": 720
             },
             "path": "mcp/src/agents_remember/observer/projection.py"
           },
@@ -214,12 +214,12 @@
         },
         {
           "anchor": {
-            "blob": "29a3f96c4fa5cc4abbdf34ff8486e4ee5a0c46c1",
+            "blob": "17f2d4a842a364ac445a776090637c466711b266",
             "content": "sha256:a5cec98b47e0ad6353d0dcc68a3359b4b6686a61e4216251732a1d232b0c5464",
             "locator": {
-              "end": 784,
+              "end": 788,
               "kind": "line_range",
-              "start": 784
+              "start": 788
             },
             "path": "mcp/src/agents_remember/observer/projection.py"
           },

@@ -653,12 +653,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1f99cfc219a3a4a26ad011d3d472a52f276c579a",
+            "blob": "1c2dfb4f0f87317da6302be2ab2a2cb173460c1d",
             "content": "sha256:c49482e1392005a1d4105aa1077df95f426e690642b52eea93c95b90b3586a79",
             "locator": {
-              "end": 56,
+              "end": 62,
               "kind": "line_range",
-              "start": 53
+              "start": 59
             },
             "path": "mcp/src/agents_remember/install/runtime.py"
           },
@@ -671,7 +671,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f27fd521dbd70b6b70144ac9f9d6e6d6562d94fb",
+            "blob": "7ac90d7646622a463e752a899d0d6ad1514c829c",
             "content": "sha256:d464b721ab61acb5e0c79ad3210870eadeddf5510a8dc5f096c0c0468b32f7e5",
             "locator": {
               "end": 5,
@@ -789,7 +789,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "782aa73feb7c2c955a2baa07be50668a006f080f",
+            "blob": "08fa67e7d17028c0392d8c20bf1c9499b0681f8f",
             "content": "sha256:8a68d04e793048821ea0d878219221b984f7f099d44d098ca49782e676f796e5",
             "locator": {
               "kind": "symbol",
@@ -1168,12 +1168,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "151e3ba6db2c746cef0bcb81c6db0672bf1260f9",
+            "blob": "b5f664cebbb1579f8082617443e5ca9aa7751791",
             "content": "sha256:f850b42ccedb338c984cb723a72cb364e5449977ef7ef318709cb1aec36c455c",
             "locator": {
-              "end": 91,
+              "end": 93,
               "kind": "line_range",
-              "start": 91
+              "start": 93
             },
             "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md"
           },
@@ -3068,7 +3068,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "832fd9e72f4012320be42897be95764fcd17658e",
+            "blob": "567534db3b57374c4e2eb55844b1ac276bdaa7e8",
             "content": "sha256:63c1428cc44f763570fa800edb29f9018decbd86ce8442e123a6067cfaca37ba",
             "locator": {
               "end": 80,

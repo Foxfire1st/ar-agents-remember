@@ -1,6 +1,24 @@
 {
   "path": "dashboard/src/test/fixtures/documentChat.ts",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "a73752bcf3161fa40923fdecda01334846d91122",
+        "content": "sha256:1b16f5b96d9c5b1a83131ff7248694b154a9de83cab91531213f3cf2a85ffbcc",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-D175WQ",
+      "invariant": "INV-63Z0MN",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-17",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "The imported chatSeries fixture supplies the actual abandonedCount zero required by incoming schema for its in-progress leaf; it introduces no product fallback.",
+      "role": "support"
+    }
+  ],
   "references": {
     "1": {
       "note": "The sprint fixture commands the master used by the other fixtures.",

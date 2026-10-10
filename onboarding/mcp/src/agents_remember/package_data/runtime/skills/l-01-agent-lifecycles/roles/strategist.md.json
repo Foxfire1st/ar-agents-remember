@@ -1,13 +1,31 @@
 {
   "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/strategist.md",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "2087451bc222f81f701a08716184f5df89ff485c",
+        "content": "sha256:1f233f92f88866d6eb602241761f52df6f6d340cfd5695e2701e73814517757c",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-M42H5N",
+      "invariant": "INV-NNQR91",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-19",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "The mcp/src/agents_remember/package_data/runtime shipped copy propagates the skills/l-01-agent-lifecycles/roles/strategist.md instructions to that installation surface; it is generated output and does not independently set role/task or permission authority.",
+      "role": "propagation-persistence"
+    }
+  ],
   "references": {
     "1": {
       "note": "Canonical source this bundle copy is sync-propagated from.\n\nAnchor: `# Strategist`",
       "targets": [
         {
           "anchor": {
-            "blob": "64bcc2552a35049e51e2ac9f7000ec992981b80f",
+            "blob": "b6c41de0a6a4ae3730f383e859b62040c2605cdb",
             "content": "sha256:6918994a7e8100181e52ac89273ca2a8e3946f85bf3454b28960b44e26f58777",
             "locator": {
               "end": 16,
@@ -25,7 +43,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "64bcc2552a35049e51e2ac9f7000ec992981b80f",
+            "blob": "b6c41de0a6a4ae3730f383e859b62040c2605cdb",
             "content": "sha256:6c9a86e79ff06d538293b232913dfea1eecfa0eb0e7eb4c0373c7e3bac548f7a",
             "locator": {
               "end": 14,
@@ -37,7 +55,7 @@
         },
         {
           "anchor": {
-            "blob": "64bcc2552a35049e51e2ac9f7000ec992981b80f",
+            "blob": "b6c41de0a6a4ae3730f383e859b62040c2605cdb",
             "content": "sha256:07329d1d01437e670051b0ec1cc09be8b66f68278a6ae04d751130cbf1eee3b6",
             "locator": {
               "end": 32,
@@ -49,7 +67,7 @@
         },
         {
           "anchor": {
-            "blob": "64bcc2552a35049e51e2ac9f7000ec992981b80f",
+            "blob": "b6c41de0a6a4ae3730f383e859b62040c2605cdb",
             "content": "sha256:af557134ea67f4c7ce28e7f9f4342d78e10d8a304afa39897da7f3aee7e4acd8",
             "locator": {
               "end": 59,
@@ -66,7 +84,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "64bcc2552a35049e51e2ac9f7000ec992981b80f",
+            "blob": "b6c41de0a6a4ae3730f383e859b62040c2605cdb",
             "content": "sha256:d627a98fae3589b2ba3293c7b9da8e1cd67ea0890303af70da99c5e4a58a3c70",
             "locator": {
               "end": 93,

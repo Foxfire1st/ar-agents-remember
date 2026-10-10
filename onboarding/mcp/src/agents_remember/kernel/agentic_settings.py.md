@@ -7,7 +7,7 @@
 ## Purpose
 
 `agentic_settings.py` is the two-layer AGENTIC settings loader (260703-L13): it reads the
-GLOBAL `<coordination_root>/system/settings.json` plus an optional repo-local
+USER `~/.config/agents-remember/settings.json` (or under `XDG_CONFIG_HOME`) plus an optional repo-local
 `<code_repo>/system/settings.json`, merges them, and parses the top-level `orchestration`
 family — gate delegation, the three-party-loop knobs, per-role knob overrides (flat `roles` +
 per-level `rolesPerLevel`, incl. the free-form escape hatch), concurrency caps, the spawn harness
@@ -136,7 +136,7 @@ convention, 300s) for any kind the settings omit. `_parse_expectations` validate
 against `KNOWN_EXPECTATION_KINDS` (fail-loud on an unknown kind or non-positive SLA). This literal
 kind set is duplicated in `controlplane/expectation_rows.py::ExpectationKind` rather than imported,
 to avoid a kernel<->controlplane import cycle — the two must be kept in sync by hand.
-Unknown TOP-LEVEL keys are deliberately tolerated-not-parsed: the same coordinator file is
+Unknown TOP-LEVEL keys are deliberately tolerated-not-parsed: the same user file is
 the c-08 memory-settings fallback and the earmarked future home of further families
 (`contextProviders` first in line — gate amendment 2026-07-06), so the fail-loud scope must
 not foreclose them. Absent files (or an absent `orchestration` key) yield the documented
@@ -177,7 +177,7 @@ vocabulary = `KNOWN_LOOP_LEVELS` leaf|master|portfolio, congruent with `loops.pe
 `AgenticSettings.resolved_role_knobs(role, level="leaf")` deep-merges the level override over the
 flat default field-wise (harness inherited unless overridden, lists REPLACE) — realizing the
 dispatch chain repo-local level override > global level override > repo-local role default >
-global role default on top of the file merge.
+global role default on top of the file merge. Role knobs now also carry `mode`, `featureValues` and `notes` with per-choice origins: `_attach_role_origins` binds each authored value to its file, key, provider and model without changing the merge, repository layers cannot author mode, notes or permission-bearing feature values (`_refuse_repository_role_authority` refuses them naming file and key), and an old-only or both-file state refuses through the location guard before any content read.
 
 HFX-L6 adds `architect` and L6R3 adds `curator` to the closed role vocabulary for both flat
 `orchestration.roles` and per-level `orchestration.rolesPerLevel`; unknown-role behavior remains
@@ -242,6 +242,7 @@ subclass). The kernel→serving import is a constant-table + frozen-dataclass im
   not-configured sentinel, so `[]` cannot express "cleared" and would silently inherit —
   omit the key to inherit (PR #100 review).
 - `sources` records the files actually read (global first) for error/refusal messages.
+- The global layer is the user's file: an old coordination file refuses load before any content read, naming both paths and the explicit whole-file upgrade command.
 
 ### Todos
 

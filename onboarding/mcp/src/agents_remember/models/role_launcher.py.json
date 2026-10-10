@@ -1,6 +1,24 @@
 {
   "path": "mcp/src/agents_remember/models/role_launcher.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "44a502f4a9fc581105ec6e1beac1d5c4c4c9a617",
+        "content": "sha256:eb877631dd14642e0a9ea08c78d69ef37eff75eef9d6ff9dfb28bb1733dc0e26",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-7HQW7Z",
+      "invariant": "INV-AFTG56",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-01",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "The launcher response models retain catalog choices and source/default metadata for the dashboard without becoming another settings authority.",
+      "role": "support"
+    }
+  ],
   "references": {
     "1": {
       "note": "Frozen implementation of RoleSelection supporting the stated file behavior.\n\nAnchor: `RoleSelection`",
@@ -38,7 +56,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4fd0d38f5909861e21009fb10da7660fa106e9a8",
+            "blob": "44a502f4a9fc581105ec6e1beac1d5c4c4c9a617",
             "content": "sha256:218e7e5028a98077fff6bf832bfd69e59c9845bdd67806bf9d20782104b59213",
             "locator": {
               "kind": "symbol",

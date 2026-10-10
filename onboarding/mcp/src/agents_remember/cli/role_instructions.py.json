@@ -1,0 +1,92 @@
+{
+  "path": "mcp/src/agents_remember/cli/role_instructions.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "cfbfd5569a6b126defa08f9caecbfeb7b0069b48",
+        "content": "sha256:ef6233c30c7bbbb0cb0364d315ac24e3f50e33e55a05ea06615f3a3db596f359",
+        "locator": {
+          "kind": "symbol",
+          "name": "compose_role_instructions"
+        }
+      },
+      "id": "RLZ-JG7AB3",
+      "invariant": "INV-1Q4W04",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-06",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "The compositor interprets the first nonempty tag, selects append/overwrite and keeps the structural capsule/assignment outside the replaced host block.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "cfbfd5569a6b126defa08f9caecbfeb7b0069b48",
+        "content": "sha256:d1798e85dd6aaccc156de67602bac96d25f21f9de216d918c31de1ef944678a9",
+        "locator": {
+          "kind": "symbol",
+          "name": "launch_choice_metadata"
+        }
+      },
+      "id": "RLZ-VQ9N9B",
+      "invariant": "INV-1Q4W04",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-06",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "Launch-choice metadata records sources/digests so plaintext is not repeated in raw choices, profile and deliveredText fields.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Role notes compose as plain text with first-nonempty-overwrite semantics.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cfbfd5569a6b126defa08f9caecbfeb7b0069b48",
+            "content": "sha256:ef6233c30c7bbbb0cb0364d315ac24e3f50e33e55a05ea06615f3a3db596f359",
+            "locator": {
+              "kind": "symbol",
+              "name": "compose_role_instructions"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Choice metadata digests note text and strips profile notes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cfbfd5569a6b126defa08f9caecbfeb7b0069b48",
+            "content": "sha256:d1798e85dd6aaccc156de67602bac96d25f21f9de216d918c31de1ef944678a9",
+            "locator": {
+              "kind": "symbol",
+              "name": "launch_choice_metadata"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Instruction records drop delivered text from stored blocks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cfbfd5569a6b126defa08f9caecbfeb7b0069b48",
+            "content": "sha256:875e07a41c6e03de0d86129862fee5457b27dfb30c0a2c56918150d9f6d2de18",
+            "locator": {
+              "kind": "symbol",
+              "name": "instruction_metadata"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "95a0431d80346ab6b5f91344a1149d1244620ce3",
-        "content": "sha256:c33bca6b0078227d93a714ec6b93674357650fb7ed5add0b8fe93ddb167ec063",
+        "blob": "201e75474b4e5d92c9090b460d752ab5c08aef55",
+        "content": "sha256:d853f5752197f836d1dd4268f27ed9d65f1c780ccdaa8565780d5d6b328e770b",
         "locator": {
           "kind": "symbol",
           "name": "test_install_reads_added_shared_block_at_call_and_provisions_once"
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "95a0431d80346ab6b5f91344a1149d1244620ce3",
-        "content": "sha256:3d1cc56b23b1760e702b773e37136ffe392e0b3f877fa6f85fa42e6eca750ee8",
+        "blob": "201e75474b4e5d92c9090b460d752ab5c08aef55",
+        "content": "sha256:9f2a6eb8eb0f7414beb205290e8747e0cc151f80783b3fd3bc1b299afaa3b127",
         "locator": {
           "kind": "symbol",
           "name": "test_build_pin_wins_all_settings_selectors_and_legacy_harness_block_is_ignored"
@@ -37,8 +37,8 @@
     },
     {
       "anchor": {
-        "blob": "95a0431d80346ab6b5f91344a1149d1244620ce3",
-        "content": "sha256:3d1cc56b23b1760e702b773e37136ffe392e0b3f877fa6f85fa42e6eca750ee8",
+        "blob": "201e75474b4e5d92c9090b460d752ab5c08aef55",
+        "content": "sha256:9f2a6eb8eb0f7414beb205290e8747e0cc151f80783b3fd3bc1b299afaa3b127",
         "locator": {
           "kind": "symbol",
           "name": "test_build_pin_wins_all_settings_selectors_and_legacy_harness_block_is_ignored"
@@ -54,8 +54,8 @@
     },
     {
       "anchor": {
-        "blob": "95a0431d80346ab6b5f91344a1149d1244620ce3",
-        "content": "sha256:3d1cc56b23b1760e702b773e37136ffe392e0b3f877fa6f85fa42e6eca750ee8",
+        "blob": "201e75474b4e5d92c9090b460d752ab5c08aef55",
+        "content": "sha256:9f2a6eb8eb0f7414beb205290e8747e0cc151f80783b3fd3bc1b299afaa3b127",
         "locator": {
           "kind": "symbol",
           "name": "test_build_pin_wins_all_settings_selectors_and_legacy_harness_block_is_ignored"
@@ -71,8 +71,8 @@
     },
     {
       "anchor": {
-        "blob": "95a0431d80346ab6b5f91344a1149d1244620ce3",
-        "content": "sha256:c7e3a3f01d56c8167eee0321a058a3572943ac171e9f59efe5d72ad0721d2ae9",
+        "blob": "201e75474b4e5d92c9090b460d752ab5c08aef55",
+        "content": "sha256:1e5a2b2e8458c1dc9a5a50cf13f3447a0194f88e4996961a98e6873a541f8f80",
         "locator": {
           "kind": "symbol",
           "name": "test_preview_and_absent_host_make_no_mutation_and_host_error_preserves_earlier_steps"
@@ -88,8 +88,8 @@
     },
     {
       "anchor": {
-        "blob": "95a0431d80346ab6b5f91344a1149d1244620ce3",
-        "content": "sha256:3d1cc56b23b1760e702b773e37136ffe392e0b3f877fa6f85fa42e6eca750ee8",
+        "blob": "201e75474b4e5d92c9090b460d752ab5c08aef55",
+        "content": "sha256:9f2a6eb8eb0f7414beb205290e8747e0cc151f80783b3fd3bc1b299afaa3b127",
         "locator": {
           "kind": "symbol",
           "name": "test_build_pin_wins_all_settings_selectors_and_legacy_harness_block_is_ignored"

@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "e6bc4939f85bd6d12d3346dcd2e6f730eb4058e6",
-        "content": "sha256:90f1cb41871162ecf840ead19e563c345f2e80e6d5f9905a91e70662419756f0",
+        "blob": "3ddb3dd453cf996eb2c34dcb5952386da975c162",
+        "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
         "locator": {
-          "end": 22,
+          "end": 23,
           "kind": "line_range",
-          "start": 22
+          "start": 23
         }
       },
       "id": "RLZ-09EQRE",
@@ -22,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "e6bc4939f85bd6d12d3346dcd2e6f730eb4058e6",
+        "blob": "3ddb3dd453cf996eb2c34dcb5952386da975c162",
         "content": "sha256:9584ec2f0e50c087c52bdf05ad3a15badcc93a89e7a6cf725a1ec41b45dec705",
         "locator": {
           "end": 38,
@@ -41,8 +41,8 @@
     },
     {
       "anchor": {
-        "blob": "e6bc4939f85bd6d12d3346dcd2e6f730eb4058e6",
-        "content": "sha256:625b431c600853094f52d7f0748d1e2e648ccc0215263941dc940de32cd3e439",
+        "blob": "3ddb3dd453cf996eb2c34dcb5952386da975c162",
+        "content": "sha256:76fda6077990c8e235ec56a7fb66b8695540a806bb9f2ef4cd4a502ed7cab773",
         "locator": {
           "kind": "file"
         }
@@ -58,7 +58,7 @@
     },
     {
       "anchor": {
-        "blob": "e6bc4939f85bd6d12d3346dcd2e6f730eb4058e6",
+        "blob": "3ddb3dd453cf996eb2c34dcb5952386da975c162",
         "content": "sha256:37a7e5c5bba6813aac0662f50d8212345bd1687ae66f9f805fc2b346385557bb",
         "locator": {
           "end": 8,
@@ -77,8 +77,8 @@
     },
     {
       "anchor": {
-        "blob": "e6bc4939f85bd6d12d3346dcd2e6f730eb4058e6",
-        "content": "sha256:625b431c600853094f52d7f0748d1e2e648ccc0215263941dc940de32cd3e439",
+        "blob": "3ddb3dd453cf996eb2c34dcb5952386da975c162",
+        "content": "sha256:3aba16da5e1083d263aebf2a1bc8ded8affef987172a5c02367a6a82cce08e51",
         "locator": {
           "end": 56,
           "kind": "line_range",
@@ -96,8 +96,8 @@
     },
     {
       "anchor": {
-        "blob": "e6bc4939f85bd6d12d3346dcd2e6f730eb4058e6",
-        "content": "sha256:625b431c600853094f52d7f0748d1e2e648ccc0215263941dc940de32cd3e439",
+        "blob": "3ddb3dd453cf996eb2c34dcb5952386da975c162",
+        "content": "sha256:76fda6077990c8e235ec56a7fb66b8695540a806bb9f2ef4cd4a502ed7cab773",
         "locator": {
           "kind": "file"
         }
@@ -113,12 +113,12 @@
     },
     {
       "anchor": {
-        "blob": "e6bc4939f85bd6d12d3346dcd2e6f730eb4058e6",
-        "content": "sha256:d44774695ba017e537e1be312da408ff6d6c5b3a6decd3e9b258c4834072ec9c",
+        "blob": "3ddb3dd453cf996eb2c34dcb5952386da975c162",
+        "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
         "locator": {
-          "end": 26,
+          "end": 27,
           "kind": "line_range",
-          "start": 26
+          "start": 27
         }
       },
       "id": "RLZ-JY5TEM",
@@ -132,12 +132,12 @@
     },
     {
       "anchor": {
-        "blob": "e6bc4939f85bd6d12d3346dcd2e6f730eb4058e6",
-        "content": "sha256:1a36f47b8265108ad804eda93b9396919cb9f7078417e883371d4df1862a5216",
+        "blob": "3ddb3dd453cf996eb2c34dcb5952386da975c162",
+        "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
         "locator": {
-          "end": 28,
+          "end": 29,
           "kind": "line_range",
-          "start": 28
+          "start": 29
         }
       },
       "id": "RLZ-M2NFTB",
@@ -151,8 +151,25 @@
     },
     {
       "anchor": {
-        "blob": "e6bc4939f85bd6d12d3346dcd2e6f730eb4058e6",
-        "content": "sha256:625b431c600853094f52d7f0748d1e2e648ccc0215263941dc940de32cd3e439",
+        "blob": "46d18773aa6937313486349b75682a4a696c16bb",
+        "content": "sha256:94ce773d444b6cbd72eef80b4cce941d8abadb406acbc4a9303d21445d9119af",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-MA5C8F",
+      "invariant": "INV-NNQR91",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-19",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "The canonical roles/manager.md carries the applicable own-file first-read/task_doc-only write and report/scratch instructions for its role/operation; it is the source the public generator ships.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "3ddb3dd453cf996eb2c34dcb5952386da975c162",
+        "content": "sha256:76fda6077990c8e235ec56a7fb66b8695540a806bb9f2ef4cd4a502ed7cab773",
         "locator": {
           "kind": "file"
         }
@@ -168,12 +185,12 @@
     },
     {
       "anchor": {
-        "blob": "e6bc4939f85bd6d12d3346dcd2e6f730eb4058e6",
-        "content": "sha256:3eec49854bceee2300f88f1912e594871cefc5b524d2ba720b2742190bbf5111",
+        "blob": "3ddb3dd453cf996eb2c34dcb5952386da975c162",
+        "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
         "locator": {
-          "end": 30,
+          "end": 31,
           "kind": "line_range",
-          "start": 30
+          "start": 31
         }
       },
       "id": "RLZ-S372ZT",
@@ -187,8 +204,8 @@
     },
     {
       "anchor": {
-        "blob": "e6bc4939f85bd6d12d3346dcd2e6f730eb4058e6",
-        "content": "sha256:625b431c600853094f52d7f0748d1e2e648ccc0215263941dc940de32cd3e439",
+        "blob": "3ddb3dd453cf996eb2c34dcb5952386da975c162",
+        "content": "sha256:76fda6077990c8e235ec56a7fb66b8695540a806bb9f2ef4cd4a502ed7cab773",
         "locator": {
           "kind": "file"
         }

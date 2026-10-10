@@ -78,8 +78,8 @@ off. It follows the `timeoutCaps` fail-loud discipline: keys outside
 `autoStart` must be a boolean, and `port` a non-bool integer in 1..65535.
 
 `parse_orchestration_settings` (260703-L4, re-homed by 260703-L13) resolves the
-boot-snapshot `orchestration.gateDelegation`. Its HOME is now the GLOBAL agentic
-settings file (`<coordinationRoot>/system/settings.json`), read ONCE at boot
+boot-snapshot `orchestration.gateDelegation`. Its HOME is now the GLOBAL user agentic
+settings file (`~/.config/agents-remember/settings.json`, under `XDG_CONFIG_HOME` when set), read ONCE at boot
 through `kernel/agentic_settings.load_agentic_settings` (per-use semantics do
 not apply to this one key; a change needs a restart — documented). The parse
 itself (`parse_gate_delegation` — named policy, per-kind overrides,
@@ -166,8 +166,8 @@ threads it into `McpRuntimeConfig.tool_log`, from where the log writer reads its
 - `orchestration.gateDelegation` defaults to all-human. Delegation is opt-in,
   validates through `controlplane.gate_policy`, and fail-loud rejects policies
   that would weaken human-pinned gate kinds.
-- The gateDelegation home is the global agentic settings file (boot-snapshot);
-  the authority-file value is a one-cycle legacy fallback that always warns.
+- The gateDelegation home is the user agentic settings file (boot-snapshot);
+  the authority-file value is a one-cycle legacy fallback that always warns. `require_config_path` refuses the user settings file as an MCP `--config` authority alongside the coordinator `system/settings.json` refusal.
   The `gate_policy` wiring downstream of `McpRuntimeConfig.orchestration` is
   unchanged by the re-homing.
 - The boot-snapshot `providers` map is NOT launch authority (containment R1):
@@ -224,7 +224,7 @@ L4 routes this file's existing application, configuration, task, model, registra
 
 ## 260928-MIK-L96 The shared host authority read per use
 
-`load_paseo_runtime_settings` reads the host block from the file the config names, and the new `paseo_authority` reader resolves the installation-wide `<coordinationRoot>/system/settings.json` at each call, so a block added after a server started is used without a restart. An old per-harness block is ignored with an explicit migration warning and no fallback.
+`load_paseo_runtime_settings` reads the host block from the file the config names, and the new `paseo_authority` reader delegates to `require_user_settings_path` at each call, so the single user-path file supplies the host block, the old `<coordinationRoot>/system/settings.json` is refused, and a block added after a server started is used without a restart. An old per-harness block is ignored with an explicit migration warning and no fallback.
 
 - The host settings read the config exposes. [19]
 - The shared authority reader. [20]

@@ -1,0 +1,24 @@
+{
+  "path": ".agents/skills/l-01-agent-lifecycles/roles/orchestrator.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "939ae904208680621f191f92551f504c78f6ec47",
+        "content": "sha256:ca191f0ca2fc48169736ef29f9aa302fb6b24b538caeff9452d3ca22e62552d0",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-5CTA3X",
+      "invariant": "INV-NNQR91",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-19",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "The .agents shipped copy propagates the skills/l-01-agent-lifecycles/roles/orchestrator.md instructions to that installation surface; it is generated output and does not independently set role/task or permission authority.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

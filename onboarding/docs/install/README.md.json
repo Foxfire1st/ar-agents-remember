@@ -1,0 +1,24 @@
+{
+  "path": "docs/install/README.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "8257a146f7f28d2ea660b145f5668d45a8856f47",
+        "content": "sha256:8e9c20ece71a80c65a6cbdc59a485c1e9823975d0861391497a1955e26fcfc5a",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-JV8KJG",
+      "invariant": "INV-3HQNH1",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-16",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "Installation instructions name the required user-file upgrade and path refusals without directing agents to edit the developer real settings file.",
+      "role": "presentation"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

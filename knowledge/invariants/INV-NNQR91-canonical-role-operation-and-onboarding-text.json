@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "family_guarantee"
+    ],
+    "justification": "Spans canonical text and all shipped mirrors: existing-public-generator propagation with no resurrected SystemSpecialist text and no assignment_read first-reads is the derivation discipline FAM-GDXSJG's mirror guarantee depends on."
+  },
+  "applicability": "Every shipped copy of canonical role, operation and onboarding text.",
+  "conditions": [
+    "The existing public generator propagates canonical text to all retained mirrors.",
+    "SystemSpecialist text stays retired.",
+    "No shipped first-read text uses assignment_read."
+  ],
+  "exclusions": [
+    "Hand-edited mirrors.",
+    "Resurrected retired role text.",
+    "Lifecycle rerouting or role resets by propagation."
+  ],
+  "id": "INV-NNQR91",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/notes/reports/role-launch/260928-MIK-L71-worker-d508f3cc-d109-host-readers/source-current-a1b7/source26-public-sync/generation15-five-pin-successor/expanded-evidence.md"
+      ],
+      "path": "l71-handoff-list.json"
+    },
+    "handoffEntry": "L71-CURRENT242-W-19",
+    "leaf": "260928-MIK-L71",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Canonical role/operation and onboarding text is propagated by the existing public generator to all retained shipped mirrors; the source-retired SystemSpecialist text is not resurrected, and no shipped first-read text uses assignment_read.",
+  "status": "proposed",
+  "supersedes": []
+}

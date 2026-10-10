@@ -1,0 +1,24 @@
+{
+  "path": ".cursor/skills/l-01-agent-lifecycles/operations/implementation.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "5553564609934f93aee219589a156621ed1ebea7",
+        "content": "sha256:02d1e3c21bb6f6715907a71bbb8600439992b0ab06262c52921a506435d300b2",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-EAH82E",
+      "invariant": "INV-NNQR91",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-19",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "The .cursor shipped copy propagates the skills/l-01-agent-lifecycles/operations/implementation.md instructions to that installation surface; it is generated output and does not independently set role/task or permission authority.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,6 +1,24 @@
 {
   "path": "mcp/src/agents_remember/mcp/registration/core.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "d423d5da156209f5286bf3bbfdf1205710070dcf",
+        "content": "sha256:e5a2cc2c47da878588f20f8a20d5dbf41c17bfc13813157cf15569cff8ff6e53",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-GEQTSN",
+      "invariant": "INV-N9D91D",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-08",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "The registration owner no longer registers assignment_read; task_doc get and read_ar_files are not replaced by this leaf.",
+      "role": "support"
+    }
+  ],
   "references": {
     "1": {
       "note": "Six of the seven payload builders (all but `read_ar_files_payload`).",
@@ -91,7 +109,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7f01fac9b7f8a001f3303d6976841dc6d5285b21",
+            "blob": "45ac78cc8e9110d7be319a2aacf82bebf4c3f1eb",
             "content": "sha256:f7e4a450bd3d9c27d26cab0995546f4069e17d041493128fde78232aac1e4f12",
             "locator": {
               "kind": "symbol",
@@ -107,7 +125,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7f01fac9b7f8a001f3303d6976841dc6d5285b21",
+            "blob": "45ac78cc8e9110d7be319a2aacf82bebf4c3f1eb",
             "content": "sha256:cca1feb13ceb929ec5ac4e7db2b5b7fdbfcc3b989e367e4994129e4830a2eb64",
             "locator": {
               "kind": "symbol",
@@ -123,7 +141,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7f01fac9b7f8a001f3303d6976841dc6d5285b21",
+            "blob": "45ac78cc8e9110d7be319a2aacf82bebf4c3f1eb",
             "content": "sha256:2e38a53715993680fd000957ce185a57b2c55f0948b2c4c27196bb134cf1fcc1",
             "locator": {
               "kind": "symbol",

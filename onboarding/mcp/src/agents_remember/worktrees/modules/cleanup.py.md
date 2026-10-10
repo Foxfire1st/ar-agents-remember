@@ -180,7 +180,7 @@ preserved only when `legacy_series_reports_is_child_enclosure` proves a legacy s
 named `reports`. Dry-run adds
 that prospective removal to the same planned-path model used for worktrees/provider runtime, so a
 group containing only scheduled paths and the curator checklist correctly reports
-`would_remove`. No other task or coordination report directory is pruned.
+`would_remove`. No other task or coordination report directory is pruned. `_cleanup_terminal_outputs` collects group reports before teardown with the same failure semantics, and `_removed_directories` removes the group's role folders into the same planned-path model.
 
 ## Admitted cleanup with agent archive (MIK-R76)
 

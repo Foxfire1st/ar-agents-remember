@@ -10,7 +10,7 @@ Registers the two agent-initiated role tools and their explicit caller-visible c
 
 ## Code Commentary
 
-role_start constructs RoleStartCall and role_message constructs RoleMessageCall, running blocking application work in a thread so waiting does not block server transport. Descriptions name caller binding, permitted child scope, same-request retry, receipt-bound addressing, role-message final reply behavior and bounded wait. No developer gate is transported through an invented tool.
+role_start constructs RoleStartCall and role_message constructs RoleMessageCall, running blocking application work in a thread so waiting does not block server transport. Descriptions name caller binding, permitted child scope, same-request retry, receipt-bound addressing, role-message final reply behavior and bounded wait. No developer gate is transported through an invented tool. `role_start` accepts `feature_values` for speed features beside agent/model/effort; its description states that a start call cannot state a mode or a permission-bearing feature, which belong in user settings or the host profile.
 
 ## Evidence
 

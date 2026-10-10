@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "family_guarantee"
+    ],
+    "justification": "Spans host catalog and create call: resolving provider/model/effort/speed against the catalog and carrying accepted fields onto the call is the core obligation of FAM-N17BB4's joint launch guarantee."
+  },
+  "applicability": "Every role-agent launch that carries host provider, model, effort or speed choices.",
+  "conditions": [
+    "The host catalog names the offering being resolved.",
+    "Resolution runs before the actual create call."
+  ],
+  "exclusions": [
+    "AR harness registry consumption, which stays its own consumer.",
+    "Dated candidate credits, which this invariant does not restate."
+  ],
+  "id": "INV-AFTG56",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/notes/reports/role-launch/260928-MIK-L71-worker-d508f3cc-d109-host-readers/source-current-a1b7/source26-public-sync/generation15-five-pin-successor/expanded-evidence.md"
+      ],
+      "path": "l71-handoff-list.json"
+    },
+    "handoffEntry": "L71-CURRENT242-W-01",
+    "leaf": "260928-MIK-L71",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Role launches resolve native provider, model, effort and speed choices against the host catalog and carry the accepted fields onto the actual create call; the AR harness registry remains its own consumer.",
+  "status": "proposed",
+  "supersedes": []
+}

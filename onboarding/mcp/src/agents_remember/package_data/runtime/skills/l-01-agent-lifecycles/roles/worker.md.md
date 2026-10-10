@@ -10,7 +10,7 @@ The native Worker implements one selected leaf’s approved primary requirement 
 
 ## Current Contract
 
-Resolve apparent missing task facts from the named canonical task/packet using exact `taskDocReadArgs`, extensionless slug and returned canonical path. Confirm paired code/read-only-memory/report bindings; do not load the whole task hierarchy or infer a different task.
+Resolve apparent missing task facts from the rendered task-document files named in the handover, read with the harness's own file tools before acting; change documents through `task_doc` only, because edits to copies are never read back and are lost on the next publication. Confirm paired code/read-only-memory/report bindings; do not load the whole task hierarchy or infer a different task.
 
 Inspect source before editing, make the smallest complete change and run relevant brief/repository checks. Keep failed and unrun results visible. When invariant/family context applies, inspect affected claims and relevant unchanged siblings; report out-of-scope manifestations rather than editing them.
 
@@ -51,6 +51,9 @@ report — and it does not commit, land, close out, integrate, decide gates, or 
 
 - Durable turn report and terminal/finalizer truth remain the completion evidence — and terminal
   truth attests only that the turn ended, so the owner's validation is what accepts the handoff.
+## Working folders and reports
+
+Agent-authored temporary files, experiments and working copies live only in the handover's real `workspace.scratchRoot`, outside code, memory and task folders; reports and evidence go in the handover's local report folder, which the product copies to canonical notes before removal.
 
 ## Evidence
 

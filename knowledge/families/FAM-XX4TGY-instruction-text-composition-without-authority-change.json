@@ -1,0 +1,30 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "The two member obligations hold only together: plain-text note composition and canonical-file controller reads jointly guarantee that instruction text carries launch choices without ever changing authority or grants. Retired per L71-MEM-07: the authority-preservation promise is already made by INV-1Q4W04 alone and controller file reading is an independent member fact; member facts retained, no joint guarantee claimed."
+  },
+  "guarantee": "Launch instruction text is composed as plain-text append or overwrite from admitted sources only; composition changes no tool grant and no settings authority, controllers read canonical rendered files through harness file tools, and taskless roles honestly report having no own task file.",
+  "id": "FAM-XX4TGY",
+  "members": [
+    "INV-1Q4W04",
+    "INV-QZP9PM"
+  ],
+  "origin": {
+    "handoff": {
+      "path": "l71-handoff-list.json"
+    },
+    "handoffEntry": "l71-instruction-text-composition",
+    "leaf": "260928-MIK-L71",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "routes": [
+    "mcp",
+    "docs/reference"
+  ],
+  "schema": "ar-family/v1",
+  "status": "retired",
+  "title": "instruction-text-composition-without-authority-change"
+}

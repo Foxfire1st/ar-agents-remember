@@ -1,0 +1,31 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "The four member obligations hold only together: isolated folders, collect-before-remove with fsync and atomic replacement, read-only projections with separate failure delivery, and truthful stamps and caches after removal jointly guarantee no report is lost, mutated by reads, or misrepresented after settlement."
+  },
+  "guarantee": "Role reports are collected to leaf-owned canonical notes before generation folders are removed; reads never mutate or delete, failures preserve sources and are reported separately, and stamps, rows, caches and closed receipts stay truthful after local folders are gone.",
+  "id": "FAM-2BRZW7",
+  "members": [
+    "INV-8XCZY1",
+    "INV-N70HF0",
+    "INV-Z0DCW1",
+    "INV-Z1HWDF"
+  ],
+  "origin": {
+    "handoff": {
+      "path": "l71-handoff-list.json"
+    },
+    "handoffEntry": "l71-report-collection-lifecycle",
+    "leaf": "260928-MIK-L71",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "routes": [
+    "mcp"
+  ],
+  "schema": "ar-family/v1",
+  "status": "proposed",
+  "title": "report-collection-before-folder-removal"
+}

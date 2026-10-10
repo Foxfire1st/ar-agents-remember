@@ -6,11 +6,11 @@
 
 ## Purpose
 
-The suite checks catalog-supported launcher selection, explicit options states and configured service-tier disclosure.
+The suite checks catalog-supported launcher selection, explicit options states, speed-feature submission with settings-owned permission display, and feature preservation across model/effort changes.
 
 ## Code Commentary
 
-Unavailable defaults disable Start until an offered override is selected; model-list failure remains visible without inventing a model. A launch lock rereads by itself without an ordinary status line — the case asserts no status or alert before and after the reread — while other refusals stay errors until an explicit successful action clears them (MIK-R75 rule 3). Fast remains on the role agent across supported model overrides; an unsupported tier/model disables Start, and another agent displays provider default.
+Unavailable defaults disable Start until an offered override is selected; model-list failure remains visible without inventing a model. A launch lock rereads by itself without an ordinary status line — the case asserts no status or alert before and after the reread — while other refusals stay errors until an explicit successful action clears them (MIK-R75 rule 3). Fast remains on the role agent across supported model overrides; an unsupported tier/model disables Start, and another agent displays provider default. The R71 cases keep an explicit speed override when choosing model or effort, submit only the explicit speed feature while permission choices render as settings-owned text with no mode override control, and show resolved defaults with their sources.
 
 ## Invariants And Boundaries
 

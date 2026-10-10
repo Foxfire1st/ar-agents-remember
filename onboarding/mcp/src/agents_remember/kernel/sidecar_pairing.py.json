@@ -168,7 +168,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c2ef0233d91074311073916f160f2cf88c129579",
+            "blob": "7abd6ad79f05d4928c2eb63e7beea399853a5e59",
             "content": "sha256:8f09e6eb513ec1e3b96652de09519b0d96ef811cbc36202bf17ca56fc631bb35",
             "locator": {
               "kind": "symbol",
@@ -180,12 +180,12 @@
         },
         {
           "anchor": {
-            "blob": "c2ef0233d91074311073916f160f2cf88c129579",
+            "blob": "7abd6ad79f05d4928c2eb63e7beea399853a5e59",
             "content": "sha256:d29922ee58fb7322040679a9cefe25226867202ca615df89397420548dc95040",
             "locator": {
-              "end": 53,
+              "end": 54,
               "kind": "line_range",
-              "start": 43
+              "start": 44
             },
             "path": "mcp/src/agents_remember/kernel/coordination_context/paths.py"
           },
@@ -198,7 +198,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "782aa73feb7c2c955a2baa07be50668a006f080f",
+            "blob": "08fa67e7d17028c0392d8c20bf1c9499b0681f8f",
             "content": "sha256:034c7e359c605efda03d85d4b7bd1aded24ca7f3d65e4e37234ebb131288dffa",
             "locator": {
               "kind": "symbol",

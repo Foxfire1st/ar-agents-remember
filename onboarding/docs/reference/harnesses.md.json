@@ -1,6 +1,24 @@
 {
   "path": "docs/reference/harnesses.md",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "bb1c8e344a6ed41c4bbc67628b3f03a19b99e9c0",
+        "content": "sha256:09b48f85a634ad9b907cd5c8bd2e9a123b4f9ab2d378a2b0567e3692e948aca8",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-5Z84K2",
+      "invariant": "INV-DKN3CG",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-18",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "The harness reference distinguishes the AR registry from native host choices and records real launch knobs and restart/cutover boundaries.",
+      "role": "presentation"
+    }
+  ],
   "references": {
     "1": {
       "note": "The effective harness registry merges built-ins with settings and role-per-level knobs deep-merge over role defaults.\n\nAnchor: `resolved_role_knobs`, \"def _parse_harnesses(\"",

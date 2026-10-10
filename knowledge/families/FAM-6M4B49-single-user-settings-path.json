@@ -1,0 +1,31 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "The two member obligations hold only together: the single location guard and the one-time whole-file upgrade jointly guarantee exactly one user settings file with no compatibility reader and no partial fallback."
+  },
+  "guarantee": "User settings live at the single standard user config location; the whole file moves there exactly once with metadata preserved, every current-line reader uses the same location guard, old-only and both-path states refuse, and the upgrade command adds no role-key-only fallback.",
+  "id": "FAM-6M4B49",
+  "members": [
+    "INV-B7D1WM",
+    "INV-3HQNH1"
+  ],
+  "origin": {
+    "handoff": {
+      "path": "l71-handoff-list.json"
+    },
+    "handoffEntry": "l71-user-settings-single-path",
+    "leaf": "260928-MIK-L71",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "routes": [
+    "mcp",
+    "scripts",
+    "docs"
+  ],
+  "schema": "ar-family/v1",
+  "status": "proposed",
+  "title": "single-user-settings-path"
+}

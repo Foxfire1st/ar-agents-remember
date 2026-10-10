@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "The eight member obligations hold only together: catalog resolution, layer retention, repository refusal, mode selection, feature acceptance, note composition, repeat stability and server binding jointly guarantee that every launch choice the host offered is carried and everything else is refused. No member was grouped by directory or route; each was read against its source and the Worker expanded evidence."
+  },
+  "guarantee": "A role launch resolves every host launch choice against the host's own offerings and carries the accepted values onto the actual create call; anything unresolvable, incompatible, permission-bearing from an unauthorized layer, or unknown is refused by name before the run, and each created agent receives only its own bound AR server.",
+  "id": "FAM-N17BB4",
+  "members": [
+    "INV-AFTG56",
+    "INV-WT3VCM",
+    "INV-VKTCC4",
+    "INV-7DMXZ3",
+    "INV-002A1G",
+    "INV-1Q4W04",
+    "INV-YDDMGJ",
+    "INV-N9D91D"
+  ],
+  "origin": {
+    "handoff": {
+      "path": "l71-handoff-list.json"
+    },
+    "handoffEntry": "l71-launch-choice-resolution",
+    "leaf": "260928-MIK-L71",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "routes": [
+    "mcp",
+    "dashboard/src/cockpit"
+  ],
+  "schema": "ar-family/v1",
+  "status": "proposed",
+  "title": "launch-choices-resolve-against-host-offerings"
+}

@@ -27,7 +27,7 @@ Shared by every harness is the generator's `SHARED_STARTER_FRAGMENTS` tuple in
 `replace_text`, `_xdg_home`, `settings_payload`, `fresh_host_block`, `render_settings`,
 `validate`, `main`, `RenderOptions`, `DEFAULT_RENDER_OPTIONS`, `Renderer`). The generator tuple is
 the maintained inventory, and each fragment is defined in this renderer module; the host block it
-renders goes to the single shared `<coordinationRoot>/system/settings.json` when that file is absent.
+renders goes to the single user settings file (`~/.config/agents-remember/settings.json`, under `XDG_CONFIG_HOME` when set) when that file is absent. `render_settings` and `main` apply the location guard first: an old coordination file refuses rendering before any harness file changes, naming both paths and the explicit whole-file upgrade command.
 
 Per-harness, each present because the harness genuinely requires it:
 

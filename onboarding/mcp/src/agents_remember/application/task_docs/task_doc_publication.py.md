@@ -40,6 +40,8 @@ transaction, rather than making registration and other prepared-document callers
 scope-union or publisher behavior. This keeps accepted-source CAS, task-first publication,
 invalidation, and rebuild behind one API.
 
+Publication refreshes rendered task-document copies inside the same publisher: after the accepted write, `refresh_task_document_copies` rewrites the changed leaf in every existing enclosure atomically per file, and a copy failure rolls back the accepted sources before re-raising, so a failed copy refresh never leaves task truth ahead of its reads.
+
 ### Conventions
 
 Callers prepare all selected/affected source snapshots before entering the transaction and must not

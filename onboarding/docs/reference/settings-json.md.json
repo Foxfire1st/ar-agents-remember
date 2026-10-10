@@ -1,18 +1,53 @@
 {
   "path": "docs/reference/settings-json.md",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "0b9976229d0ff1dc9160e745f66c5dd00b294ae5",
+        "content": "sha256:7647050bb6d71373c7e5ad6c2d094fcbff248414ebf25db90053aaa8e1e4d94f",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-GS9JTC",
+      "invariant": "INV-QZP9PM",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-14",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "The role-working-folder reference explains real leaf copies, controller canonical paths and file reading; it is documentation of the selected route.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "0b9976229d0ff1dc9160e745f66c5dd00b294ae5",
+        "content": "sha256:7647050bb6d71373c7e5ad6c2d094fcbff248414ebf25db90053aaa8e1e4d94f",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-ZSHMC5",
+      "invariant": "INV-DKN3CG",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-18",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "The settings reference preserves the accepted key inventory and the distinction between role launch readers and qualityGate/concurrency/spawn/loops keys lacking an actual enforcing reader.",
+      "role": "presentation"
+    }
+  ],
   "references": {
     "1": {
       "note": "Agentic settings parser that implements the documented `orchestration.*` families.\n\nAnchor: \"Read + merge the global (and optional repo-local) agentic settings, per use.\"",
       "targets": [
         {
           "anchor": {
-            "blob": "38477fad3dde7ffc069b51804ceb136426569c3d",
+            "blob": "bcf096dde111cdbf84a959f56210af540195b7d0",
             "content": "sha256:ccdd710fc4adf1647466e7dc80cc6f36b04a32e8f93c1eac31cf192f64adb914",
             "locator": {
-              "end": 214,
+              "end": 225,
               "kind": "line_range",
-              "start": 214
+              "start": 225
             },
             "path": "mcp/src/agents_remember/kernel/agentic_settings.py"
           },

@@ -7,12 +7,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "29a3f96c4fa5cc4abbdf34ff8486e4ee5a0c46c1",
+            "blob": "17f2d4a842a364ac445a776090637c466711b266",
             "content": "sha256:301ef8d70dd58cfea37fec34be64e52db39dffa54148fef28bedb99d169f90f3",
             "locator": {
-              "end": 1145,
+              "end": 1149,
               "kind": "line_range",
-              "start": 1123
+              "start": 1127
             },
             "path": "mcp/src/agents_remember/observer/projection.py"
           },

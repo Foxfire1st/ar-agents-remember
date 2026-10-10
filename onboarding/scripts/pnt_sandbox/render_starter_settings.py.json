@@ -3,8 +3,26 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "48fc36b080f6dd66abc3762806e767d79351d83e",
-        "content": "sha256:231e5d0a6e052f19f735d2e62888c518d102ce8e9e2b77ebefc8b0d8f0cf3e88",
+        "blob": "4758232462330fddf643ba46634db768a965ab70",
+        "content": "sha256:89ec4f15acfd23820146624d48bbc03b4d2ebeb03c44b03fe317709a694111b1",
+        "locator": {
+          "kind": "symbol",
+          "name": "render"
+        }
+      },
+      "id": "RLZ-3JXCMM",
+      "invariant": "INV-B7D1WM",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-15",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "Sandbox starter settings use the same standard user-path layout rather than duplicating the removed user coordination path.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "4758232462330fddf643ba46634db768a965ab70",
+        "content": "sha256:89ec4f15acfd23820146624d48bbc03b4d2ebeb03c44b03fe317709a694111b1",
         "locator": {
           "kind": "symbol",
           "name": "render"

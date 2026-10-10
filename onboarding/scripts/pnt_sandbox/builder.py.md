@@ -6,7 +6,7 @@
 
 ## Purpose and current source account
 
-Repeatable build creates the disposable repository/origin, publishes corpus through the selected build tools and preserves existing repository/task/memory/Paseo state. Settings and Eve application/launcher inputs are deliberately regenerated; layout version 4 includes the Pi provider boundary. Unmarked populated directories and unfinished reset state refuse. The marker's state transition is whole-file replace.
+Repeatable build creates the disposable repository/origin, publishes corpus through the selected build tools and preserves existing repository/task/memory/Paseo state. Settings and Eve application/launcher inputs are deliberately regenerated; layout version 5 gives the sandbox its own user configuration (layout version 4 included the Pi provider boundary). Unmarked populated directories and unfinished reset state refuse. The marker's state transition is whole-file replace.
 
 ## Evidence
 

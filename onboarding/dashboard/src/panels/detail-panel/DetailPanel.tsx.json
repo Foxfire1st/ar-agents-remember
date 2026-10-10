@@ -24,7 +24,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f907717bf9460d7f6facca800810459ce72ecbdf",
+            "blob": "76c1e952f0b6c4c9d708c3edf4cd8b28c0f764ff",
             "content": "sha256:38d14af02dfe93dcee52dd30777946b9750f8fafec29818d124f21cdf1e5aef8",
             "locator": {
               "end": 525,
@@ -156,12 +156,12 @@
         },
         {
           "anchor": {
-            "blob": "74e115417c4c270744a57431c4d51524c6e61b9b",
+            "blob": "5010f4f41e7f40f48b178e0039b7fe40a77875c2",
             "content": "sha256:c65326b0d9e2bf8f70191ada0838639ec3b2cb6ce7b964387b72855a02997cf5",
             "locator": {
-              "end": 104,
+              "end": 105,
               "kind": "line_range",
-              "start": 104
+              "start": 105
             },
             "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
           },
@@ -187,12 +187,12 @@
         },
         {
           "anchor": {
-            "blob": "7d78c1b1072578a87bca6571852841a188905e7f",
+            "blob": "0f296666b82f5bb9bb5fd92fda9a2080578cd566",
             "content": "sha256:842c4cfa58e128f25033de3798051f429b3b289a60743fff343932d867a3fca7",
             "locator": {
-              "end": 136,
+              "end": 156,
               "kind": "line_range",
-              "start": 136
+              "start": 156
             },
             "path": "dashboard/src/panels/detail-panel/model.ts"
           },
@@ -200,12 +200,12 @@
         },
         {
           "anchor": {
-            "blob": "7d78c1b1072578a87bca6571852841a188905e7f",
+            "blob": "0f296666b82f5bb9bb5fd92fda9a2080578cd566",
             "content": "sha256:bea565d3bbef86cf8408234397b9a62ed169f748279db85da94bb649b78d9b43",
             "locator": {
-              "end": 150,
+              "end": 170,
               "kind": "line_range",
-              "start": 137
+              "start": 157
             },
             "path": "dashboard/src/panels/detail-panel/model.ts"
           },
@@ -244,12 +244,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "74e115417c4c270744a57431c4d51524c6e61b9b",
+            "blob": "5010f4f41e7f40f48b178e0039b7fe40a77875c2",
             "content": "sha256:2a3ea56090c549a9c7b3e00420b2d37ff98336f464bd9b34655201ba37445850",
             "locator": {
-              "end": 660,
+              "end": 679,
               "kind": "line_range",
-              "start": 624
+              "start": 643
             },
             "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
           },
@@ -422,12 +422,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cee16fce97e5e76b33e52e9b0d606b87481c9758",
+            "blob": "32f61ad92158b8a4519a35f725ce765c87f2ec99",
             "content": "sha256:1de5db4b96d7237e56eaa8a3137a8d59d1f15bcffb40093cf54a0435b21a76f9",
             "locator": {
-              "end": 829,
+              "end": 830,
               "kind": "line_range",
-              "start": 829
+              "start": 830
             },
             "path": "dashboard/src/types/projection.ts"
           },
@@ -440,12 +440,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cee16fce97e5e76b33e52e9b0d606b87481c9758",
+            "blob": "32f61ad92158b8a4519a35f725ce765c87f2ec99",
             "content": "sha256:3fab73214ca880cb59c0e002ac1a72ef5e70806ba155c90548949c959093bc4e",
             "locator": {
-              "end": 788,
+              "end": 789,
               "kind": "line_range",
-              "start": 788
+              "start": 789
             },
             "path": "dashboard/src/types/projection.ts"
           },
@@ -458,7 +458,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cee16fce97e5e76b33e52e9b0d606b87481c9758",
+            "blob": "32f61ad92158b8a4519a35f725ce765c87f2ec99",
             "content": "sha256:4c1f95f4e1d533a9a7ccc9f28e2052505f66ca1be4ef5438235f23fcf3b66eae",
             "locator": {
               "end": 556,
@@ -476,7 +476,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "29a3f96c4fa5cc4abbdf34ff8486e4ee5a0c46c1",
+            "blob": "17f2d4a842a364ac445a776090637c466711b266",
             "content": "sha256:02a2fdce38e3efc33b18558008107e397e770871c05ae2fb9f266367f84578f2",
             "locator": {
               "kind": "symbol",
@@ -488,7 +488,7 @@
         },
         {
           "anchor": {
-            "blob": "29a3f96c4fa5cc4abbdf34ff8486e4ee5a0c46c1",
+            "blob": "17f2d4a842a364ac445a776090637c466711b266",
             "content": "sha256:7230072b4d29082ae057db7e9b648b20072e98f7f3675429001087b45cd554d1",
             "locator": {
               "kind": "symbol",
@@ -540,7 +540,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "74e115417c4c270744a57431c4d51524c6e61b9b",
+            "blob": "5010f4f41e7f40f48b178e0039b7fe40a77875c2",
             "content": "sha256:eacc4b146c3a29d72410d4221eba175af9217a97374ff828fd96339719f30f52",
             "locator": {
               "kind": "symbol",
@@ -588,12 +588,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7d78c1b1072578a87bca6571852841a188905e7f",
+            "blob": "0f296666b82f5bb9bb5fd92fda9a2080578cd566",
             "content": "sha256:4d79d537a9b34271fb683f713a1792480d2c04674283b0477b82cbcebbd4b6a7",
             "locator": {
-              "end": 171,
+              "end": 191,
               "kind": "line_range",
-              "start": 168
+              "start": 188
             },
             "path": "dashboard/src/panels/detail-panel/model.ts"
           },
@@ -606,12 +606,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "74e115417c4c270744a57431c4d51524c6e61b9b",
+            "blob": "5010f4f41e7f40f48b178e0039b7fe40a77875c2",
             "content": "sha256:eacc4b146c3a29d72410d4221eba175af9217a97374ff828fd96339719f30f52",
             "locator": {
-              "end": 488,
+              "end": 500,
               "kind": "line_range",
-              "start": 450
+              "start": 462
             },
             "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
           },
@@ -640,12 +640,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "74e115417c4c270744a57431c4d51524c6e61b9b",
+            "blob": "5010f4f41e7f40f48b178e0039b7fe40a77875c2",
             "content": "sha256:71281a37eaefa7915e1cab7933523c828002dd9a6ed11836e51de5bd2624d08b",
             "locator": {
-              "end": 527,
+              "end": 539,
               "kind": "line_range",
-              "start": 491
+              "start": 503
             },
             "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
           },
@@ -658,12 +658,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "74e115417c4c270744a57431c4d51524c6e61b9b",
+            "blob": "5010f4f41e7f40f48b178e0039b7fe40a77875c2",
             "content": "sha256:2a3ea56090c549a9c7b3e00420b2d37ff98336f464bd9b34655201ba37445850",
             "locator": {
-              "end": 660,
+              "end": 679,
               "kind": "line_range",
-              "start": 624
+              "start": 643
             },
             "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
           },
@@ -694,12 +694,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "74e115417c4c270744a57431c4d51524c6e61b9b",
+            "blob": "5010f4f41e7f40f48b178e0039b7fe40a77875c2",
             "content": "sha256:eacc4b146c3a29d72410d4221eba175af9217a97374ff828fd96339719f30f52",
             "locator": {
-              "end": 488,
+              "end": 500,
               "kind": "line_range",
-              "start": 450
+              "start": 462
             },
             "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
           },
@@ -712,12 +712,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "74e115417c4c270744a57431c4d51524c6e61b9b",
+            "blob": "5010f4f41e7f40f48b178e0039b7fe40a77875c2",
             "content": "sha256:98b6441e2b011e138f34b9ced6266bd724d14be709f951de24dd7e04fbbaad52",
             "locator": {
-              "end": 438,
+              "end": 450,
               "kind": "line_range",
-              "start": 430
+              "start": 442
             },
             "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
           },
@@ -730,12 +730,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "74e115417c4c270744a57431c4d51524c6e61b9b",
+            "blob": "5010f4f41e7f40f48b178e0039b7fe40a77875c2",
             "content": "sha256:6399f5c54d298a0cdb99f9b2e86e712a546e2fe6e39829f3715af31c1ad3203f",
             "locator": {
-              "end": 428,
+              "end": 440,
               "kind": "line_range",
-              "start": 348
+              "start": 360
             },
             "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
           },
@@ -748,12 +748,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "74e115417c4c270744a57431c4d51524c6e61b9b",
+            "blob": "5010f4f41e7f40f48b178e0039b7fe40a77875c2",
             "content": "sha256:71281a37eaefa7915e1cab7933523c828002dd9a6ed11836e51de5bd2624d08b",
             "locator": {
-              "end": 527,
+              "end": 539,
               "kind": "line_range",
-              "start": 491
+              "start": 503
             },
             "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
           },
@@ -779,12 +779,12 @@
         },
         {
           "anchor": {
-            "blob": "74e115417c4c270744a57431c4d51524c6e61b9b",
+            "blob": "5010f4f41e7f40f48b178e0039b7fe40a77875c2",
             "content": "sha256:3b4769008f7e583e3d0be37775018a40f280e098bbf9fef5e402fab0c5ddfa0c",
             "locator": {
-              "end": 624,
+              "end": 643,
               "kind": "line_range",
-              "start": 624
+              "start": 643
             },
             "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
           },
@@ -797,7 +797,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cee16fce97e5e76b33e52e9b0d606b87481c9758",
+            "blob": "32f61ad92158b8a4519a35f725ce765c87f2ec99",
             "content": "sha256:9ada4d915c897a933b1a1647ad0d53c9a6a541d5fbe9be25f88f5726f2c16cdb",
             "locator": {
               "end": 530,
@@ -846,12 +846,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cee16fce97e5e76b33e52e9b0d606b87481c9758",
+            "blob": "32f61ad92158b8a4519a35f725ce765c87f2ec99",
             "content": "sha256:75707db60d5408eb37a4d43361d1fdda0e8e042c5c1ba17f5d733d592e027fd5",
             "locator": {
-              "end": 643,
+              "end": 644,
               "kind": "line_range",
-              "start": 643
+              "start": 644
             },
             "path": "dashboard/src/types/projection.ts"
           },
@@ -864,7 +864,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cee16fce97e5e76b33e52e9b0d606b87481c9758",
+            "blob": "32f61ad92158b8a4519a35f725ce765c87f2ec99",
             "content": "sha256:4c1f95f4e1d533a9a7ccc9f28e2052505f66ca1be4ef5438235f23fcf3b66eae",
             "locator": {
               "end": 556,
@@ -950,7 +950,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "74e115417c4c270744a57431c4d51524c6e61b9b",
+            "blob": "5010f4f41e7f40f48b178e0039b7fe40a77875c2",
             "content": "sha256:5352b72ae12feb6ce7da3267ae3d668932d1b77cf21dc529c77d3b3bb97d8627",
             "locator": {
               "kind": "symbol",

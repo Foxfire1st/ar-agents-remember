@@ -40,7 +40,7 @@ L23 had added the closed `QualityExecutor` choice defaulting `orchestration.qual
 
 ### Role Runtime and Scope
 
-RoleKnobs now carries optional service_tier. resolved_role_knobs merges tier independently of harness/model/effort, so a lower-level model or effort does not erase a role/altitude tier. Preserve the existing spend/launch-arg/default explanations and add this independent native capability fact.
+RoleKnobs now carries optional service_tier. resolved_role_knobs merges tier independently of harness/model/effort, so a lower-level model or effort does not erase a role/altitude tier. Preserve the existing spend/launch-arg/default explanations and add this independent native capability fact. RoleKnobs now also carries `mode`, `feature_values` and `notes` with per-choice `origins`: `NON_PERMISSION_FEATURES` (`service_tier`, `fast_mode`) marks speed authority while unknown features carry permission authority until classified, `native_service_tier` normalizes user `fast` to `priority`, and `role_feature_values` compares the tier alias against `featureValues.service_tier` after merging. `agentic_settings_path` names the repository-local file only; `user_agentic_settings_path` and `require_user_agentic_settings_path` resolve and guard the single user file.
 
 ## 260731-EFA-L17/L24 Quality-Gate Settings
 

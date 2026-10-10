@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "Spans the lifecycle sweep: exactly four error-arm pins plus one unmarked memory_quality_check pin with exact equality, alongside the original T34 repaired-tool controls, is the pinned inventory the sweep is audited against."
+  },
+  "applicability": "The serving-build evidence pins carried by the current sweep.",
+  "conditions": [
+    "Exactly four lifecycle error-arm pins and one unmarked memory_quality_check pin remain.",
+    "Exact pin equality and the original T34 controls hold."
+  ],
+  "exclusions": [
+    "Product repairs in this leaf, which belong to L111 for lifecycle and L110 for MQ projection.",
+    "New finding IDs or product acceptance read from carried pins."
+  ],
+  "id": "INV-TG334W",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/notes/reports/role-launch/260928-MIK-L71-worker-d508f3cc-d109-host-readers/source-current-a1b7/source26-public-sync/generation15-five-pin-successor/two-hunk-qualified-whole-file-byte-replay.json"
+      ],
+      "path": "l71-handoff-list.json"
+    },
+    "handoffEntry": "L71-CURRENT242-W-20",
+    "leaf": "260928-MIK-L71",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The current sweep keeps exactly four lifecycle error-arm pins and one unmarked memory_quality_check pin; exact pin equality and the original T34 nine repaired-tool positive/regression controls remain, with product repairs deferred to L111/L110.",
+  "status": "proposed",
+  "supersedes": []
+}

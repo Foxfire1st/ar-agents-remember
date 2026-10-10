@@ -6,7 +6,7 @@
 
 ## Purpose and current source account
 
-The scrub removes AR/Paseo/source/former-host prefixes and exact Python/Git/caller-session names, then installs seven sandbox-owned values (`TMUX_TMPDIR`, `XDG_DATA_HOME`, `XDG_STATE_HOME`, `XDG_CACHE_HOME`, `PYTHONPYCACHEPREFIX`, `GIT_OPTIONAL_LOCKS=0`, `AR_DAGGER_AUTHORITY_ROOT`); each child receives its own PWD. Credentials and harness home selectors remain. Running daemon admission compares scrubbed selectors and expected owned values, and the Eve env denylist prevents reintroduction by its external key file.
+The scrub removes AR/Paseo/source/former-host prefixes and exact Python/Git/caller-session names, then installs eight sandbox-owned values (`XDG_CONFIG_HOME`, `TMUX_TMPDIR`, `XDG_DATA_HOME`, `XDG_STATE_HOME`, `XDG_CACHE_HOME`, `PYTHONPYCACHEPREFIX`, `GIT_OPTIONAL_LOCKS=0`, `AR_DAGGER_AUTHORITY_ROOT`); each child receives its own PWD. `XDG_CONFIG_HOME` isolates the single user settings file without redirecting HOME or harness login directories. Credentials and harness home selectors remain. Running daemon admission compares scrubbed selectors and expected owned values, and the Eve env denylist prevents reintroduction by its external key file.
 
 ## Evidence
 

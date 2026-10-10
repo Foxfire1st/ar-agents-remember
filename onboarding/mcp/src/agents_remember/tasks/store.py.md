@@ -49,6 +49,10 @@ therefore no longer be written back to disk as current task truth.
 - A document carrying a route review without canonical task intent is not publishable; the store
   refuses before any file is touched.
 
+## Publication rollback helper
+
+`restore_task_doc_sources` restores an accepted JSON/Markdown source set when its derived-file publication fails, so a failed task-document copy refresh leaves canonical sources as they were.
+
 ## Evidence
 
 ### Repo-Internal References

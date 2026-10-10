@@ -7,10 +7,10 @@
 ## Purpose
 
 `cli/__main__.py` is the umbrella `agents-remember` console entrypoint: a single front door
-that dispatches subcommands. It registers **fifteen** of them — `dashboard`, `memory-citations`,
+that dispatches subcommands. It registers **sixteen** of them — `dashboard`, `memory-citations`,
 `memory-backfill`, `knowledge-ingest`, `knowledge-bootstrap`, `knowledge-format`,
 `knowledge-convert`, `knowledge-validate`, `knowledge-index`, `knowledge-worklist`, `knowledge-routes`,
-`knowledge-census`, `knowledge-copies`, `tool-log-stats` (MIK-R108 rule 8) and `paseo` — and
+`knowledge-census`, `knowledge-copies`, `tool-log-stats` (MIK-R108 rule 8), `paseo` and `upgrade-user-settings` — and
 further CLI adapters slot in as subparsers. Backed by the
 `agents-remember = agents_remember.cli.__main__:main` console script.
 
@@ -116,6 +116,8 @@ The paseo command group joins existing knowledge-ingest, taskless bootstrap and 
 - **The `knowledge-routes` subparser `260928-MIK-L04` adds: the read-only family route report with the mechanical suggestion.** [13]
 - **The `knowledge-census` subparser `260928-MIK-L20` adds: the migration census's inventory and report.** [14]
 - The `knowledge-copies` subparser adds: retired knowledge-database leftover copies listed with their deciding rule (`--apply` deletes MIK-R26 rule 6 names), registered the same declarative way. [15]
+
+- The `upgrade-user-settings` subparser this leaf adds: the explicit whole-file move from the old coordination settings file to the user configuration directory, with `--coordination-root` and `--dry-run`. [18]
 
 ### Runtime Source References
 

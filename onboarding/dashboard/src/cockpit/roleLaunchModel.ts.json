@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "e455fa2a668f7b3fb374b34e1150579f56bcbb65",
+        "blob": "e41ef14d80219aa96e8d7fb9408f48a5ed7df37a",
         "content": "sha256:2e9d7f93c94fa35d5ec0e3a3d64ebb29e3136bf6c898e8802e9f5deb7f4abcaf",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "e455fa2a668f7b3fb374b34e1150579f56bcbb65",
+        "blob": "e41ef14d80219aa96e8d7fb9408f48a5ed7df37a",
         "content": "sha256:a19b29c99601e546f591336eed4b4788b60b15d8ca7535811b35aeefac124015",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "e455fa2a668f7b3fb374b34e1150579f56bcbb65",
+        "blob": "e41ef14d80219aa96e8d7fb9408f48a5ed7df37a",
         "content": "sha256:a19b29c99601e546f591336eed4b4788b60b15d8ca7535811b35aeefac124015",
         "locator": {
           "kind": "symbol",
@@ -57,7 +57,25 @@
     },
     {
       "anchor": {
-        "blob": "e455fa2a668f7b3fb374b34e1150579f56bcbb65",
+        "blob": "e41ef14d80219aa96e8d7fb9408f48a5ed7df37a",
+        "content": "sha256:e4f06fa372a3c98459ffab2a10f1312239b803a3dbc38d0ee55bc890a9d77544",
+        "locator": {
+          "kind": "symbol",
+          "name": "roleAgentOverrideFor"
+        }
+      },
+      "id": "RLZ-EPB617",
+      "invariant": "INV-63Z0MN",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-17",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "The existing override helper carries the feature map while deriving model/effort/tier override, with no second launcher or compatibility carrier.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "e41ef14d80219aa96e8d7fb9408f48a5ed7df37a",
         "content": "sha256:7f62c23932dcef110a895a78ecede6df036c913dfef4a6472172da5be7553f6c",
         "locator": {
           "kind": "symbol",
@@ -80,7 +98,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e455fa2a668f7b3fb374b34e1150579f56bcbb65",
+            "blob": "e41ef14d80219aa96e8d7fb9408f48a5ed7df37a",
             "content": "sha256:8f4b494d82dc0f0a86b2a8a5ee7051a8563655671a4cd288cccf932ce389058d",
             "locator": {
               "kind": "symbol",
@@ -112,7 +130,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e455fa2a668f7b3fb374b34e1150579f56bcbb65",
+            "blob": "e41ef14d80219aa96e8d7fb9408f48a5ed7df37a",
             "content": "sha256:e3750a955a104b2a60791dcee22eddb7e14b4c063a4abaf2e9da93165f848944",
             "locator": {
               "kind": "symbol",

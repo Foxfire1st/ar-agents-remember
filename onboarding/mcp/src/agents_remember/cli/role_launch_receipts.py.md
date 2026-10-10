@@ -21,6 +21,10 @@ the same request's closing marker, archive debt and refusal facts when a stale o
 publishes, so a concurrent settlement is not erased. The existing request-ID reconciliation and
 saved-call replay semantics are otherwise unchanged.
 
+## Predecessor reports, observed choices and public fields
+
+`_execute_prepared_launch` collects predecessor reports before running and settles them after the host answers; a settlement failure keeps the host's actual result and records the collection error instead of misreporting. `_observe_launch_choices` records observed mode and feature values against stated choices and warns when the host reports something else. `_public_execution` additionally exposes `choices`, `instructionComposition`, `taskDocumentFiles`, `assignmentReadGrant`, `predecessorCollectionError` and `reportCollection`. `_request_digest` drops an empty feature map so old requests keep their digest, and `_archived_receipt_for_selection` returns the archived receipt so the dispatch route can record predecessor reports.
+
 ## Evidence
 
 

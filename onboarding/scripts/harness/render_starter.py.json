@@ -1,6 +1,25 @@
 {
   "path": "scripts/harness/render_starter.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "ad8bd4ce4df62fdd2bacc60f92f93624eeb629e3",
+        "content": "sha256:87c18d6d509bfd38dab231ecd001de3598202a0bd08c6fc055c810892dc57ac7",
+        "locator": {
+          "kind": "symbol",
+          "name": "render_settings"
+        }
+      },
+      "id": "RLZ-0CF7GP",
+      "invariant": "INV-B7D1WM",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-15",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "Starter rendering writes the standard user file separately from MCP authority/config paths instead of seeding another old user-path default.",
+      "role": "propagation-persistence"
+    }
+  ],
   "references": {
     "1": {
       "note": "The generator that slices, orders, and assembles these fragments.\n\nAnchor: `generated_files`, `render_starter_program`",
@@ -36,7 +55,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3d9da5860bd14bef74bc1c3b989b28c190edb154",
+            "blob": "bdd31174f0254751e4a9c82566d05c87d6f66cb5",
             "content": "sha256:b0b3ba3a0417afff4a0c7a8fee084ed1b319f904b1667756e66e215e3531d57c",
             "locator": {
               "end": 94,
@@ -83,7 +102,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3eb0701053b400248f38396e91dbc480d82d7d6a",
+            "blob": "ad8bd4ce4df62fdd2bacc60f92f93624eeb629e3",
             "content": "sha256:359bece75664674d69e32438407c20243378f144ed128b568ff80891dcabd7b4",
             "locator": {
               "kind": "symbol",

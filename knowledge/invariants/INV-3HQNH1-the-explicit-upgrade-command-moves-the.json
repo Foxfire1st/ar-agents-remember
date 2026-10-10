@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "family_guarantee"
+    ],
+    "justification": "Spans the old and new settings homes: the one-time whole-file move with metadata preserved and existing-destination refusal is the mechanism FAM-6M4B49's single-location guarantee depends on."
+  },
+  "applicability": "The explicit one-time upgrade move of the user settings file.",
+  "conditions": [
+    "The whole JSON file moves once with metadata preserved.",
+    "An existing destination refuses the move.",
+    "No developer real settings file is moved by this leaf."
+  ],
+  "exclusions": [
+    "A role-key-only fallback copy.",
+    "Parsing out or copying only role settings instead of the whole file."
+  ],
+  "id": "INV-3HQNH1",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/notes/reports/role-launch/260928-MIK-L71-worker-d508f3cc-d109-host-readers/source-current-a1b7/source26-public-sync/generation15-five-pin-successor/expanded-evidence.md"
+      ],
+      "path": "l71-handoff-list.json"
+    },
+    "handoffEntry": "L71-CURRENT242-W-16",
+    "leaf": "260928-MIK-L71",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The explicit upgrade command moves the complete user JSON file once, preserves metadata, refuses an existing destination and adds no role-key-only fallback; no developer real settings file was moved in this leaf.",
+  "status": "proposed",
+  "supersedes": []
+}

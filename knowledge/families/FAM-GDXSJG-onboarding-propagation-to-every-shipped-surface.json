@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "The three member obligations hold only together: the extracted launcher, the shipped reference and the generated mirrors jointly guarantee that a role-launch behavior change reaches every surface a user or agent reads, with mirrors derived and retired text staying retired."
+  },
+  "guarantee": "Role-launch behavior changes propagate to the dashboard launcher, the settings reference and every shipped skill mirror through the existing public generator; mirrors stay derived rather than hand-edited, retired role text is not resurrected, and no shipped first-read text uses assignment_read.",
+  "id": "FAM-GDXSJG",
+  "members": [
+    "INV-63Z0MN",
+    "INV-DKN3CG",
+    "INV-NNQR91"
+  ],
+  "origin": {
+    "handoff": {
+      "path": "l71-handoff-list.json"
+    },
+    "handoffEntry": "l71-onboarding-propagation",
+    "leaf": "260928-MIK-L71",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "routes": [
+    "dashboard/src",
+    "docs",
+    "skills",
+    "mcp"
+  ],
+  "schema": "ar-family/v1",
+  "status": "proposed",
+  "title": "onboarding-propagation-to-every-shipped-surface"
+}

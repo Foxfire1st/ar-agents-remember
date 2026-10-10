@@ -2686,7 +2686,7 @@ The MCP package separates three surfaces:
   L16 free-form launchArgs/promptKeywords/sessionCommands escape hatch),
   concurrency caps, spawn harness preference, and the L16 harness-definition
   table `orchestration.harnesses`) lives in
-  the GLOBAL `<coordinationRoot>/system/settings.json` with
+  the GLOBAL user file `~/.config/agents-remember/settings.json` (under `XDG_CONFIG_HOME` when set) with
   `<code-repo>/system/settings.json` repo-local overrides, parsed PER-USE by the
   kernel loader `kernel/agentic_settings.py` (leaf-key deep merge, arrays
   replace, unknown `orchestration.*` keys fail loud naming the file; unknown

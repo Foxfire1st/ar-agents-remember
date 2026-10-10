@@ -1,0 +1,110 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/task_document_copies.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "57af6ea2e6a4cfde077654f5044cb625dcc5d4ff",
+        "content": "sha256:deffa6a40689dd41cf6286fad081e7f5fb0ea18ee97ec96610c63adf73cd86e6",
+        "locator": {
+          "kind": "symbol",
+          "name": "_publish_copy_writes"
+        }
+      },
+      "id": "RLZ-6JFDVN",
+      "invariant": "INV-J3PYB0",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-13",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "The same publication owner atomically replaces the prepared copy/index bytes; copy edits are not read back as canonical task writes.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "57af6ea2e6a4cfde077654f5044cb625dcc5d4ff",
+        "content": "sha256:ee8555108058a663a87f194368291ab4b51a08870f547c9f4a0cbb330b8b6188",
+        "locator": {
+          "kind": "symbol",
+          "name": "refresh_task_document_copies"
+        }
+      },
+      "id": "RLZ-QRVA80",
+      "invariant": "INV-J3PYB0",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-13",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "Refresh discovers existing enclosures for the written own leaf; master and sprint writes replace no enclosure copies.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "57af6ea2e6a4cfde077654f5044cb625dcc5d4ff",
+        "content": "sha256:4fef8b0785d912b8f457a056d30f518ec2228d777028daddaacee2a79443903c",
+        "locator": {
+          "kind": "symbol",
+          "name": "prepare_task_document_copies"
+        }
+      },
+      "id": "RLZ-RMYPGR",
+      "invariant": "INV-J3PYB0",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-13",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "This owner selects the agent own leaf and prepares its regular-file copy and single index entry outside both Git trees.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "A leaf role's own rendered document is prepared as a real enclosure file with one index entry.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "57af6ea2e6a4cfde077654f5044cb625dcc5d4ff",
+            "content": "sha256:4fef8b0785d912b8f457a056d30f518ec2228d777028daddaacee2a79443903c",
+            "locator": {
+              "kind": "symbol",
+              "name": "prepare_task_document_copies"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Public writes rendering the own leaf refresh copies atomically.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "57af6ea2e6a4cfde077654f5044cb625dcc5d4ff",
+            "content": "sha256:ee8555108058a663a87f194368291ab4b51a08870f547c9f4a0cbb330b8b6188",
+            "locator": {
+              "kind": "symbol",
+              "name": "refresh_task_document_copies"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Copy writes publish through the real destination guard.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "57af6ea2e6a4cfde077654f5044cb625dcc5d4ff",
+            "content": "sha256:deffa6a40689dd41cf6286fad081e7f5fb0ea18ee97ec96610c63adf73cd86e6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_publish_copy_writes"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

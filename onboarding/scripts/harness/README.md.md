@@ -23,7 +23,7 @@ and run from there, so it cannot import a shared module out of this repository. 
 program must stay a single self-contained file, and sharing therefore happens at
 generation time.
 
-**Why the fragment libraries are real Python.** Both libraries type-check and lint as
+**Why the fragment libraries are real Python.** The libraries type-check and lint as
 ordinary modules, so the shared body is verified once as a whole instead of once per
 copy. Every generated program is a subset of a checked module plus a constants block.
 
@@ -37,6 +37,7 @@ of copies it replaces:
 | `shared/render-starter.sh` | 8 byte-identical copies |
 | `shared/render-starter.ps1` | 8 byte-identical copies |
 | `shared/agents-remember-settings.json` | 8 byte-identical copies |
+| `user_settings_location.py` fragments | the location guard and upgrade command in every generated starter |
 | `shared/session-start-directive.md` | 6 copies (4 hook directives, Copilot instructions, Cursor rule) |
 | `shared/workspace-directive.md` | 3 copies (`HERMES.md`, `GEMINI.md`, OpenClaw `AGENTS.md`) |
 
@@ -74,5 +75,5 @@ the hook fires for unrelated sessions and must scope itself); and the payload en
 ### Repo-Internal References
 
 - The generator whose `HARNESSES` table encodes this classification. [1]
-- The two fragment libraries this file inventories. [2]
+- The fragment libraries this file inventories, including the user-settings location source. [2]
 - The verbatim and composed bodies. [3]

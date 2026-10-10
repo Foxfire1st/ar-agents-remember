@@ -229,12 +229,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9c27f7546b5f3e96f9406dfadb020e944329a175",
+            "blob": "8f100ce7f5f5381456d67cea47b8638ce0acea36",
             "content": "sha256:2200041761481afb1a77501bfcdb24006626a7641f1a37c9bc4b85a1fc79e8d9",
             "locator": {
-              "end": 1062,
+              "end": 1065,
               "kind": "line_range",
-              "start": 1022
+              "start": 1025
             },
             "path": "mcp/tests/test_paseo_launch.py"
           },

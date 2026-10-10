@@ -7,12 +7,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3898819544cfb496d93c82138ac0c14cbf890049",
+            "blob": "18ebd60503c22a2cb5045ed6a52a134d2a16549c",
             "content": "sha256:8be558dfd19d944a64de16a830fbebea3660b5af442ba6b2cb68741a1f686353",
             "locator": {
-              "end": 259,
+              "end": 263,
               "kind": "line_range",
-              "start": 259
+              "start": 263
             },
             "path": "mcp/src/agents_remember/kernel/coordination_context/resolver.py"
           },

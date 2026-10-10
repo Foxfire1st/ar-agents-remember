@@ -7,12 +7,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "683f4fad82810ac77ce87e5fe32a2a5426e5b2d6",
+            "blob": "7f05a4eee8c55a4bace727205fde9213ebc1c6fe",
             "content": "sha256:6a0edb187816155a5e240f7df923e78737aca8d7bb39e621fd621aff7787db23",
             "locator": {
-              "end": 567,
+              "end": 581,
               "kind": "line_range",
-              "start": 567
+              "start": 581
             },
             "path": "scripts/sync-harness.py"
           },
@@ -43,7 +43,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3d9da5860bd14bef74bc1c3b989b28c190edb154",
+            "blob": "bdd31174f0254751e4a9c82566d05c87d6f66cb5",
             "content": "sha256:2e31ed19d416f0522c711a8fcf98d87e37863eb0f7976d4fa3ce77a824f0c9bf",
             "locator": {
               "end": 79,
@@ -56,7 +56,7 @@
         },
         {
           "anchor": {
-            "blob": "3d9da5860bd14bef74bc1c3b989b28c190edb154",
+            "blob": "bdd31174f0254751e4a9c82566d05c87d6f66cb5",
             "content": "sha256:efdb153059b83e4f06efb4a80d7e794867a93a43e0941bee57642db032a597ef",
             "locator": {
               "end": 81,

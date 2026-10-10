@@ -27,7 +27,7 @@ calls `remove_registered_worktree` with the `force` flag passed through;
 `_abandon_branches` calls `_abandon_branch` for the code work branch, memory
 work branch, and memory integration branch; `_abandon_directories` removes the
 worktree group dir (force-removes with `remove_tree` when `force=True`,
-otherwise `remove_empty_dir`).
+otherwise `remove_empty_dir`). `_abandon_terminal_outputs` collects group reports before provider teardown, recording a collection failure instead of removing; `_abandon_directories` removes the group's role folders and merges them into the planned-removal set.
 
 `_abandon_branch` checks for unmerged commits via `git log --oneline
 <base>..<branch>`. Without `force` it refuses to delete a branch that has

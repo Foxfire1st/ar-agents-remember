@@ -1,0 +1,40 @@
+{
+  "path": "mcp/tests/test_task_document_copies.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "e042f8836ccaeee5839abd31d9abd007b43823f9",
+        "content": "sha256:1c9eba9e274ba69a2b3fc479fe02baeda4f737d5b20a7c37514eeec4f1d7b780",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-9RY83B",
+      "invariant": "INV-QZP9PM",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-14",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "Retained focused controls cover own-leaf-only copies, exact rendered bytes, replacement boundaries and cleanup rather than the withdrawn size/parts tool.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Task-document copy preparation, refresh and publication cases for the own-leaf route.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e042f8836ccaeee5839abd31d9abd007b43823f9",
+            "content": "sha256:1c9eba9e274ba69a2b3fc479fe02baeda4f737d5b20a7c37514eeec4f1d7b780",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

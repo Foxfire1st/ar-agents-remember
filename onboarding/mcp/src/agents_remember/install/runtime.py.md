@@ -72,6 +72,10 @@ labelled `created-by-skills_install` with an undo command that says so, because
 `install_runtime_from_config` never populates `config.harness_skill_root` and must not tell an
 operator to delete a directory this install did not create.
 
+### User settings upgrade and role-execution roots
+
+`upgrade_user_settings` moves the entire old coordination settings file once to the user location: it refuses an existing destination, refuses a non-regular source, preserves metadata, and removes the old file only after the complete transfer succeeds, with dry-run and already-current/no-settings states. `_install_runtime` applies the location guard before any asset write, and the install ensures the workspace `.agents-remember/role-executions` directory with a Git ignore entry for per-execution report/scratch folders.
+
 ### 260731-EFA-L2 Install Request And Tree-Sync Objects
 
 Three frozen dataclasses carry what an install is asked to do:
@@ -106,7 +110,7 @@ The service copies package runtime skills, provider defaults, and runtime
 coordinator. After the `AGENTS.md` copies and the user-owned directory ensures, this service
 leaves the shared host/agentic settings authority to starter/setup: the renderer
 (`scripts/harness/render_starter.py::render_settings`) writes
-`<coordinationRoot>/system/settings.json` when it is absent, and the install step
+the single user settings file (`~/.config/agents-remember/settings.json`, under `XDG_CONFIG_HOME` when set) when it is absent, and the install step
 never writes that file. The install-side `seed_agentic_settings` writer is
 historical. The c-13 install skill's Stage 2 interview edits the shared file
 with the developer, and knob families the developer skips keep the built-in

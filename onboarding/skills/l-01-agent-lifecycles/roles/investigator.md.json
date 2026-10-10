@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "a08846e889bfab580a6ad18dd53f9023ed6575af",
+        "blob": "6428318fb10db78c57c5d7017713d87f823fe4c2",
         "content": "sha256:d048ebdcb11dc9889428e8a207d6a0e59a0479827a0a88776fa312b7f4718bcf",
         "locator": {
           "end": 32,
@@ -22,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "a08846e889bfab580a6ad18dd53f9023ed6575af",
+        "blob": "6428318fb10db78c57c5d7017713d87f823fe4c2",
         "content": "sha256:d048ebdcb11dc9889428e8a207d6a0e59a0479827a0a88776fa312b7f4718bcf",
         "locator": {
           "end": 32,
@@ -41,8 +41,8 @@
     },
     {
       "anchor": {
-        "blob": "a08846e889bfab580a6ad18dd53f9023ed6575af",
-        "content": "sha256:d048ebdcb11dc9889428e8a207d6a0e59a0479827a0a88776fa312b7f4718bcf",
+        "blob": "6428318fb10db78c57c5d7017713d87f823fe4c2",
+        "content": "sha256:80b9d73a5adc80a9833b8ce5c871fc298edf2e853421dfacb5ab4f3873158ea2",
         "locator": {
           "kind": "file"
         }
@@ -58,7 +58,7 @@
     },
     {
       "anchor": {
-        "blob": "a08846e889bfab580a6ad18dd53f9023ed6575af",
+        "blob": "6428318fb10db78c57c5d7017713d87f823fe4c2",
         "content": "sha256:d048ebdcb11dc9889428e8a207d6a0e59a0479827a0a88776fa312b7f4718bcf",
         "locator": {
           "end": 32,
@@ -77,7 +77,7 @@
     },
     {
       "anchor": {
-        "blob": "a08846e889bfab580a6ad18dd53f9023ed6575af",
+        "blob": "6428318fb10db78c57c5d7017713d87f823fe4c2",
         "content": "sha256:d048ebdcb11dc9889428e8a207d6a0e59a0479827a0a88776fa312b7f4718bcf",
         "locator": {
           "end": 32,
@@ -96,8 +96,25 @@
     },
     {
       "anchor": {
-        "blob": "a08846e889bfab580a6ad18dd53f9023ed6575af",
-        "content": "sha256:d048ebdcb11dc9889428e8a207d6a0e59a0479827a0a88776fa312b7f4718bcf",
+        "blob": "5743d12b2bdf584f2ddd8c448245c5540ae8ea98",
+        "content": "sha256:d294c484135b305a63a412152407510b99e1e856e44a69c48e659c5b6c79b051",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-D1DKW9",
+      "invariant": "INV-NNQR91",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-19",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "The canonical Investigator role retains incoming direct-peer/investigation prose and carries only the unchanged R71 scratch/report paragraph moved from retired SystemSpecialist, without retaining a second role owner.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "6428318fb10db78c57c5d7017713d87f823fe4c2",
+        "content": "sha256:80b9d73a5adc80a9833b8ce5c871fc298edf2e853421dfacb5ab4f3873158ea2",
         "locator": {
           "kind": "file"
         }
@@ -113,7 +130,7 @@
     },
     {
       "anchor": {
-        "blob": "a08846e889bfab580a6ad18dd53f9023ed6575af",
+        "blob": "6428318fb10db78c57c5d7017713d87f823fe4c2",
         "content": "sha256:e881e74a4df65491672d2262d8bd37652610292484ddcf59e4edd03acbe01619",
         "locator": {
           "end": 10,
@@ -132,7 +149,7 @@
     },
     {
       "anchor": {
-        "blob": "a08846e889bfab580a6ad18dd53f9023ed6575af",
+        "blob": "6428318fb10db78c57c5d7017713d87f823fe4c2",
         "content": "sha256:d048ebdcb11dc9889428e8a207d6a0e59a0479827a0a88776fa312b7f4718bcf",
         "locator": {
           "end": 32,

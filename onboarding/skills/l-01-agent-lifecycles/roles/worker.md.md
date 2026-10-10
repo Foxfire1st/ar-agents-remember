@@ -22,7 +22,7 @@ hand-off rather than a summary of one: items name where each thing lives — pat
 inside it, from one resolution act — and keep the worker's own wording, because a re-worded statement
 destroys the evidence the curator compares against the code.
 
-Worker intake opens each version-addressed canonical packet and verifies the exact ID/version,
+Worker intake reads the rendered requirement and leaf document named in the handover and verifies the exact ID/version,
 approved state, and durable corpus-ruling citation before implementation. A missing, unapproved,
 or mismatched packet is a refusal, not permission to infer the requirement from leaf prose.
 

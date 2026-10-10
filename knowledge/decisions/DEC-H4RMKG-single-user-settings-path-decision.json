@@ -1,0 +1,52 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "The dual-path design with a compatibility reader was the live alternative during review (old-path readers existed on the current line); the whole-file one-time move was chosen by developer ruling D109. It constrains every future settings reader to the same guard."
+  },
+  "alternatives": [
+    {
+      "option": "Move the whole user settings file once to the standard user config location; every reader uses the same location guard; old-only and both-path states refuse.",
+      "reason": "One file ends ambiguity between project and user paths; the refusal states are explicit instead of silently merged.",
+      "status": "chosen"
+    },
+    {
+      "option": "Keep dual project/user paths with a compatibility reader that merges or falls back.",
+      "reason": "Rejected: silent merging reintroduces the ambiguity D109 removed, and a fallback reader would need its own authority story.",
+      "reconsider_when": "The platform defines a new standard user config location that supersedes the current one.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "No compatibility reader for the old path exists; old-only and both-path states refuse.",
+    "The upgrade command moves the whole JSON file once, preserves metadata, and refuses an existing destination.",
+    "No role-key-only fallback is added."
+  ],
+  "context": "Developer ruling D109 on leaf 260928-MIK-L71: the whole user settings file moves once to the standard user config location.",
+  "decider": "developer (D109, carried by Owner semantic case 4ef8129e)",
+  "id": "DEC-H4RMKG",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "INV-B7D1WM"
+    },
+    {
+      "relation": "constrains",
+      "target": "INV-3HQNH1"
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "l71-handoff-list.json"
+    },
+    "handoffEntry": "l71-single-user-settings-path",
+    "leaf": "260928-MIK-L71",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

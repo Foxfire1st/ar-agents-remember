@@ -3,10 +3,10 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "151e3ba6db2c746cef0bcb81c6db0672bf1260f9",
-        "content": "sha256:961e902b663153498eb7da69210c44d39d1cb6819fa440e1f25786ce8f0f4b1f",
+        "blob": "b5f664cebbb1579f8082617443e5ca9aa7751791",
+        "content": "sha256:2ee6531903d4dd13daac46450c9c16ce39fd0aed29161dbfef6377ee5e587f1c",
         "locator": {
-          "end": 13,
+          "end": 28,
           "kind": "line_range",
           "start": 13
         }
@@ -22,12 +22,12 @@
     },
     {
       "anchor": {
-        "blob": "151e3ba6db2c746cef0bcb81c6db0672bf1260f9",
-        "content": "sha256:dbc0d5820eb978ab0687e1d7eed9f05e1a9c24ca68df552a34941f2e045d3189",
+        "blob": "b5f664cebbb1579f8082617443e5ca9aa7751791",
+        "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
         "locator": {
-          "end": 158,
+          "end": 5,
           "kind": "line_range",
-          "start": 158
+          "start": 5
         }
       },
       "id": "RLZ-7B663Y",
@@ -41,12 +41,12 @@
     },
     {
       "anchor": {
-        "blob": "151e3ba6db2c746cef0bcb81c6db0672bf1260f9",
-        "content": "sha256:41012cf301822de9e1bb1b451200b9460003676d31c951db84d5a899f25d1b83",
+        "blob": "b5f664cebbb1579f8082617443e5ca9aa7751791",
+        "content": "sha256:16a9d98f68567c8c72b592219f4041dc5f7c428778d4dd320b32ed003368a50f",
         "locator": {
-          "end": 99,
+          "end": 136,
           "kind": "line_range",
-          "start": 95
+          "start": 136
         }
       },
       "id": "RLZ-AHYBRR",
@@ -60,8 +60,8 @@
     },
     {
       "anchor": {
-        "blob": "151e3ba6db2c746cef0bcb81c6db0672bf1260f9",
-        "content": "sha256:bd77c7db953ed04e4f6fc14c8a08f9940958e080e0efd3eff5c9052c8f37f21f",
+        "blob": "b5f664cebbb1579f8082617443e5ca9aa7751791",
+        "content": "sha256:3d6a444ab1b6c2c46771ee7f86ccfa05632b06a438cc304a45c20e73e3791a28",
         "locator": {
           "kind": "file"
         }
@@ -77,12 +77,12 @@
     },
     {
       "anchor": {
-        "blob": "151e3ba6db2c746cef0bcb81c6db0672bf1260f9",
-        "content": "sha256:d59d5d207e2094aa2ecce4fd5affd4cfce92ecb4eff2af679ccbbbf2941a707e",
+        "blob": "b5f664cebbb1579f8082617443e5ca9aa7751791",
+        "content": "sha256:4c0c4c01a89a7a026ec118d7fdd8ba3a00b35e8a5ee199391f24e20d679478e1",
         "locator": {
-          "end": 191,
+          "end": 220,
           "kind": "line_range",
-          "start": 187
+          "start": 218
         }
       },
       "id": "RLZ-DT71R6",
@@ -91,17 +91,17 @@
         "handoffEntry": "L72/MIK-R72@v2-curator-large-worklist-fanout",
         "leaf": "260928-MIK-L72"
       },
-      "rationale": "The role text obliges the Curator report to enumerate one full-intake worklist of distinct outstanding memory actions with IDs, evidence and delegation account, and retains placement, admission, writer, quality, coherence and handover responsibility.",
+      "rationale": "This clause keeps the one-level read/search/reference allowance and the new paragraph defines the deduplicated list, the numeric threshold, what is handed out and what stays with the main Curator.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "151e3ba6db2c746cef0bcb81c6db0672bf1260f9",
+        "blob": "b5f664cebbb1579f8082617443e5ca9aa7751791",
         "content": "sha256:16982b1069215292a905dc7d1ebaccddab307de10f359aff1b57c1af343a81ca",
         "locator": {
-          "end": 104,
+          "end": 106,
           "kind": "line_range",
-          "start": 104
+          "start": 106
         }
       },
       "id": "RLZ-HVJ3RJ",
@@ -115,8 +115,8 @@
     },
     {
       "anchor": {
-        "blob": "151e3ba6db2c746cef0bcb81c6db0672bf1260f9",
-        "content": "sha256:bd77c7db953ed04e4f6fc14c8a08f9940958e080e0efd3eff5c9052c8f37f21f",
+        "blob": "b5f664cebbb1579f8082617443e5ca9aa7751791",
+        "content": "sha256:3d6a444ab1b6c2c46771ee7f86ccfa05632b06a438cc304a45c20e73e3791a28",
         "locator": {
           "kind": "file"
         }
@@ -132,8 +132,8 @@
     },
     {
       "anchor": {
-        "blob": "151e3ba6db2c746cef0bcb81c6db0672bf1260f9",
-        "content": "sha256:bd77c7db953ed04e4f6fc14c8a08f9940958e080e0efd3eff5c9052c8f37f21f",
+        "blob": "b5f664cebbb1579f8082617443e5ca9aa7751791",
+        "content": "sha256:3d6a444ab1b6c2c46771ee7f86ccfa05632b06a438cc304a45c20e73e3791a28",
         "locator": {
           "kind": "file"
         }
@@ -148,12 +148,12 @@
     },
     {
       "anchor": {
-        "blob": "151e3ba6db2c746cef0bcb81c6db0672bf1260f9",
-        "content": "sha256:ba66b20db67b0191b0b55eeb89691fea7ece0d2e3eddde1a322d234fcd040f06",
+        "blob": "b5f664cebbb1579f8082617443e5ca9aa7751791",
+        "content": "sha256:fbff5bd01607b500321daf6e482a9a8f4ca6f4688dcd509b9d7c001202584f4d",
         "locator": {
-          "end": 146,
+          "end": 226,
           "kind": "line_range",
-          "start": 145
+          "start": 224
         }
       },
       "id": "RLZ-PDP66S",
@@ -167,10 +167,10 @@
     },
     {
       "anchor": {
-        "blob": "151e3ba6db2c746cef0bcb81c6db0672bf1260f9",
-        "content": "sha256:961e902b663153498eb7da69210c44d39d1cb6819fa440e1f25786ce8f0f4b1f",
+        "blob": "b5f664cebbb1579f8082617443e5ca9aa7751791",
+        "content": "sha256:600335da77cabad9fdb615ee1f3b745321cbf69f140554123c49cc7676aafef0",
         "locator": {
-          "end": 13,
+          "end": 21,
           "kind": "line_range",
           "start": 13
         }
@@ -186,8 +186,8 @@
     },
     {
       "anchor": {
-        "blob": "151e3ba6db2c746cef0bcb81c6db0672bf1260f9",
-        "content": "sha256:bd77c7db953ed04e4f6fc14c8a08f9940958e080e0efd3eff5c9052c8f37f21f",
+        "blob": "b5f664cebbb1579f8082617443e5ca9aa7751791",
+        "content": "sha256:3d6a444ab1b6c2c46771ee7f86ccfa05632b06a438cc304a45c20e73e3791a28",
         "locator": {
           "kind": "file"
         }
@@ -203,12 +203,12 @@
     },
     {
       "anchor": {
-        "blob": "151e3ba6db2c746cef0bcb81c6db0672bf1260f9",
-        "content": "sha256:ba66b20db67b0191b0b55eeb89691fea7ece0d2e3eddde1a322d234fcd040f06",
+        "blob": "b5f664cebbb1579f8082617443e5ca9aa7751791",
+        "content": "sha256:51900cc8720c0bfed4bdfa12068c6bab7ad802039058e5be7d06d52ef3a125f6",
         "locator": {
-          "end": 146,
+          "end": 205,
           "kind": "line_range",
-          "start": 145
+          "start": 203
         }
       },
       "id": "RLZ-V1AKR1",
@@ -222,8 +222,8 @@
     },
     {
       "anchor": {
-        "blob": "151e3ba6db2c746cef0bcb81c6db0672bf1260f9",
-        "content": "sha256:bd77c7db953ed04e4f6fc14c8a08f9940958e080e0efd3eff5c9052c8f37f21f",
+        "blob": "b5f664cebbb1579f8082617443e5ca9aa7751791",
+        "content": "sha256:3d6a444ab1b6c2c46771ee7f86ccfa05632b06a438cc304a45c20e73e3791a28",
         "locator": {
           "kind": "file"
         }
@@ -235,6 +235,23 @@
         "leaf": "260928-MIK-L99"
       },
       "rationale": "Owns direct producer intake and memory delivery to Reviewer without routing its result through Manager.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "8f384da110d3ba3e6968ae0c2cddfbfcf2f3d994",
+        "content": "sha256:f82c573aa2136558b579867e2ec66471e345f4fd3be86793f50573a5dd2baa55",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-VXHQMN",
+      "invariant": "INV-NNQR91",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-19",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "The canonical roles/curator.md carries the applicable own-file first-read/task_doc-only write and report/scratch instructions for its role/operation; it is the source the public generator ships.",
       "role": "primary-authority"
     }
   ],
@@ -312,12 +329,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "151e3ba6db2c746cef0bcb81c6db0672bf1260f9",
+            "blob": "b5f664cebbb1579f8082617443e5ca9aa7751791",
             "content": "sha256:c4a79f969d539ba5ec8670fff476d4c6262cefd3b99b934e47777a8a342971d3",
             "locator": {
-              "end": 94,
+              "end": 96,
               "kind": "line_range",
-              "start": 91
+              "start": 93
             }
           },
           "kind": "code"

@@ -6,7 +6,7 @@
 
 ## Purpose and current source account
 
-Recipients come from this line's receipts and exact role/task selection; multiple candidates, missing binding and pending permissions refuse. Closed sessions pass Revive scope checks before send. Wait tracks the consuming turn, and timeout leaves the message delivered rather than causing duplicate send or turn cancellation.
+Recipients come from this line's receipts and exact role/task selection; multiple candidates, missing binding and pending permissions refuse. Closed sessions pass Revive scope checks before send. Wait tracks the consuming turn, and timeout leaves the message delivered rather than causing duplicate send or turn cancellation. An R71 case proves delivery proceeds despite collection errors with per-agent isolation and the failure returned separately.
 
 ## Evidence
 

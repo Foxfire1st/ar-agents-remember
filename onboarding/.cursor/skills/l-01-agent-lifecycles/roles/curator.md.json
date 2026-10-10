@@ -1,0 +1,24 @@
+{
+  "path": ".cursor/skills/l-01-agent-lifecycles/roles/curator.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "f6516a6ea0c4cf75ab48635cedc4a869c7ceac56",
+        "content": "sha256:adee2f3c4bf7314ee7fc3f300e22a43d4a887227e9ebe54a89d0ebf18d28f926",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-CC6TZF",
+      "invariant": "INV-NNQR91",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-19",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "The .cursor shipped copy propagates the skills/l-01-agent-lifecycles/roles/curator.md instructions to that installation surface; it is generated output and does not independently set role/task or permission authority.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

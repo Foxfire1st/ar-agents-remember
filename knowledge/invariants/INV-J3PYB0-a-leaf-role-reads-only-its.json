@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "Spans the leaf enclosure and task-documents: own-document-only reads as real files with a pre-first-turn INDEX entry is the D124/D125 containment mechanism; public writes refresh only the own leaf's copies."
+  },
+  "applicability": "Every leaf role's reading of its own rendered task document.",
+  "conditions": [
+    "The copy is a real enclosure/task-documents file for the agent's own leaf.",
+    "One INDEX entry exists before the first turn.",
+    "Public writes that render the own leaf refresh copies atomically."
+  ],
+  "exclusions": [
+    "Reading another leaf's document.",
+    "Git-tree or in-memory-only copies presented as the readable file."
+  ],
+  "id": "INV-J3PYB0",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/notes/reports/role-launch/260928-MIK-L71-worker-d508f3cc-d109-host-readers/source-current-a1b7/source26-public-sync/generation15-five-pin-successor/expanded-evidence.md"
+      ],
+      "path": "l71-handoff-list.json"
+    },
+    "handoffEntry": "L71-CURRENT242-W-13",
+    "leaf": "260928-MIK-L71",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A leaf role reads only its own rendered leaf document as a real enclosure/task-documents file, with one INDEX entry before the first turn; public writes rendering that own leaf refresh its copies atomically.",
+  "status": "proposed",
+  "supersedes": []
+}

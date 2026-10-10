@@ -1,0 +1,92 @@
+{
+  "path": "dashboard/src/cockpit/RoleLaunchFeatures.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "583ac7279440da656e98b3495ceecc02f5d1eb78",
+        "content": "sha256:85722fcbd0a13f750dbafdcdf12dc4cb137597f0cb2d6bb098ef3963edb7211c",
+        "locator": {
+          "kind": "symbol",
+          "name": "FeatureControl"
+        }
+      },
+      "id": "RLZ-000KJN",
+      "invariant": "INV-002A1G",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-05",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "The control renders the host-provided field type/options and updates the selected feature map without granting permissions.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "583ac7279440da656e98b3495ceecc02f5d1eb78",
+        "content": "sha256:f1778a7b138e5a91d2d9b1a3757d6d32f5d56348c87f43474ed981fc3dc22f7c",
+        "locator": {
+          "kind": "symbol",
+          "name": "RoleLaunchDefaults"
+        }
+      },
+      "id": "RLZ-G82K8R",
+      "invariant": "INV-63Z0MN",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-17",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "The defaults component displays mode/settings/profile sources and instruction digest information so a user can inspect resolved launch choices.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The permission-bearing feature renders settings-owned text with no override control.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "583ac7279440da656e98b3495ceecc02f5d1eb78",
+            "content": "sha256:85722fcbd0a13f750dbafdcdf12dc4cb137597f0cb2d6bb098ef3963edb7211c",
+            "locator": {
+              "kind": "symbol",
+              "name": "FeatureControl"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The speed feature renders the host option select around the role default.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "583ac7279440da656e98b3495ceecc02f5d1eb78",
+            "content": "sha256:26ef81fc28824c9c78870b9203bc48a8fd8e7220e6fd0bdffb319c187502d45b",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleLaunchFeatures"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The defaults line carries mode, choice sources and instruction provenance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "583ac7279440da656e98b3495ceecc02f5d1eb78",
+            "content": "sha256:f1778a7b138e5a91d2d9b1a3757d6d32f5d56348c87f43474ed981fc3dc22f7c",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleLaunchDefaults"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

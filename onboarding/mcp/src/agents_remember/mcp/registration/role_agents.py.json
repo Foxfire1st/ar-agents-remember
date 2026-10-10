@@ -1,6 +1,24 @@
 {
   "path": "mcp/src/agents_remember/mcp/registration/role_agents.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "d1a44689d39e0724315ed30be137f201111f15ff",
+        "content": "sha256:97d2f9f7ad997d4e062334d485d8d7bb0f4ae2adbeb2f749a7b16ccf9e5ad658",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-C3R4TK",
+      "invariant": "INV-7DMXZ3",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-04",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "The public structural role tool advertises model/effort/tier and the allowed feature surface without a permission-mode start parameter.",
+      "role": "presentation"
+    }
+  ],
   "references": {
     "1": {
       "note": "Frozen implementation of register_role_agent_tools supporting the stated file behavior.\n\nAnchor: `register_role_agent_tools`",

@@ -1,6 +1,24 @@
 {
   "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "939ae904208680621f191f92551f504c78f6ec47",
+        "content": "sha256:ca191f0ca2fc48169736ef29f9aa302fb6b24b538caeff9452d3ca22e62552d0",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-YVX677",
+      "invariant": "INV-NNQR91",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-19",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "The mcp/src/agents_remember/package_data/runtime shipped copy propagates the skills/l-01-agent-lifecycles/roles/orchestrator.md instructions to that installation surface; it is generated output and does not independently set role/task or permission authority.",
+      "role": "propagation-persistence"
+    }
+  ],
   "references": {
     "1": {
       "note": "This source owns the stated current Investigator scope or canonical vocabulary.",
@@ -22,7 +40,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5ef8c937db8421f36aa32417d6e97019a39af43f",
+            "blob": "cd187129994e86112236dc28d7d52fa0251cb361",
             "content": "sha256:bb027ed51e4124b2628d15f8c590801a98ebfc067500116bf652c11ab16d5e86",
             "locator": {
               "end": 4,

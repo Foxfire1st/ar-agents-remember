@@ -22,6 +22,10 @@ receipt or call the event stays literal.
 
 Four `nextAction` remedies that still leave the message transportable (`_archived`, `_resume` scope-changed, `_resume` cannot-resume, `_undelivered`) now name the parent with `role_message` on `agents-remember-task` first and the own chat only for an agent without one. The no-runtime and host-unreachable remedies keep their own-chat advice, and no refusal reason, code or delivery algorithm changed.
 
+## Feature passthrough, choice metadata and message-time collection
+
+`_agent_override` passes speed `featureValues` through even without an agent/model/effort override, and still refuses a model or effort without its agent. The start answer carries launch-choice metadata, task-document files and any warning beside preparation. `send_role_message` collects the sender's own execution reports before delivery when its receipt matches the bound agent; a collection failure is recorded and returned alongside the delivered message rather than blocking it.
+
 ## Evidence
 
 

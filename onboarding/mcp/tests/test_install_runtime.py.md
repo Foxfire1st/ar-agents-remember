@@ -12,7 +12,7 @@ Runtime installation preservation and watcher recovery tests.
 
 ### Logic
 
-Installing managed assets preserves provider state, database data and central logs while removing obsolete generated runtime assets. Dependency installation failure still attempts watcher restart and status recovery. Existing global settings remain byte-identical; dry run counts a seed without writing it.
+Installing managed assets preserves provider state, database data and central logs while removing obsolete generated runtime assets. Dependency installation failure still attempts watcher restart and status recovery. Existing global settings remain byte-identical; dry run counts a seed without writing it. New cases prove the public upgrade dry-run-then-move preserves the entire file and repeats without copying, old-or-both-file refusal precedes all asset writes, and collision or failed transfer preserves the old file.
 
 ### Conventions
 

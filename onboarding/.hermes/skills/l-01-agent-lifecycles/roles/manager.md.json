@@ -1,0 +1,24 @@
+{
+  "path": ".hermes/skills/l-01-agent-lifecycles/roles/manager.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "46d18773aa6937313486349b75682a4a696c16bb",
+        "content": "sha256:94ce773d444b6cbd72eef80b4cce941d8abadb406acbc4a9303d21445d9119af",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-891WT3",
+      "invariant": "INV-NNQR91",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-19",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "The .hermes shipped copy propagates the skills/l-01-agent-lifecycles/roles/manager.md instructions to that installation surface; it is generated output and does not independently set role/task or permission authority.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

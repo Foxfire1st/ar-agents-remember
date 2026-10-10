@@ -3,7 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "d57949b8574bdf280c23f7d8c15d4c28634a0097",
+        "blob": "0482315deb6222f2909773abb02b19d56146a0f5",
+        "content": "sha256:ff5daff4dd37ba2cddd3058ae438a18152c47935c27eb0a088e81d744b00ff25",
+        "locator": {
+          "kind": "symbol",
+          "name": "agent_binding"
+        }
+      },
+      "id": "RLZ-1881JS",
+      "invariant": "INV-N9D91D",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-08",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "The binding pins role/request/task/report identity for the launched server rather than borrowing another agent or ambient AR instance.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "0482315deb6222f2909773abb02b19d56146a0f5",
         "content": "sha256:fa38e6b23d0512939df6b4f03cccca030ef299efe4e63c8a7b7cb98c4ac04854",
         "locator": {
           "kind": "symbol",
@@ -21,7 +39,43 @@
     },
     {
       "anchor": {
-        "blob": "d57949b8574bdf280c23f7d8c15d4c28634a0097",
+        "blob": "0482315deb6222f2909773abb02b19d56146a0f5",
+        "content": "sha256:51dee9b48e02226c1323d144f9faf49e2ac024446db2d48be7f3405854d99239",
+        "locator": {
+          "kind": "symbol",
+          "name": "build_launch_call"
+        }
+      },
+      "id": "RLZ-CCXPRM",
+      "invariant": "INV-AFTG56",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-01",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "The create-call builder writes provider/model/thinkingOptionId and accepted featureValues into the saved host payload before the first turn.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "0482315deb6222f2909773abb02b19d56146a0f5",
+        "content": "sha256:51dee9b48e02226c1323d144f9faf49e2ac024446db2d48be7f3405854d99239",
+        "locator": {
+          "kind": "symbol",
+          "name": "build_launch_call"
+        }
+      },
+      "id": "RLZ-DY24T1",
+      "invariant": "INV-N9D91D",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-08",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "The saved call constructs one TOOL_SERVER_NAME entry from this agent binding and adds only the exact Claude identity-read preapproval names; foreign configured AR servers receive no grant.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "0482315deb6222f2909773abb02b19d56146a0f5",
         "content": "sha256:ff5daff4dd37ba2cddd3058ae438a18152c47935c27eb0a088e81d744b00ff25",
         "locator": {
           "kind": "symbol",
@@ -39,7 +93,7 @@
     },
     {
       "anchor": {
-        "blob": "d57949b8574bdf280c23f7d8c15d4c28634a0097",
+        "blob": "0482315deb6222f2909773abb02b19d56146a0f5",
         "content": "sha256:bb5f95ed4aa40134659f1b481854cfdb2c08726f5de6f52d4bf1c4b03b5eb3dc",
         "locator": {
           "kind": "symbol",
@@ -57,7 +111,7 @@
     },
     {
       "anchor": {
-        "blob": "d57949b8574bdf280c23f7d8c15d4c28634a0097",
+        "blob": "0482315deb6222f2909773abb02b19d56146a0f5",
         "content": "sha256:b23b5a34c786635449ee1f046d515494ee161ef24d4367d029d5cf01b1609f88",
         "locator": {
           "kind": "symbol",
@@ -75,8 +129,8 @@
     },
     {
       "anchor": {
-        "blob": "d57949b8574bdf280c23f7d8c15d4c28634a0097",
-        "content": "sha256:0ee7392fa4ef7fc72f185b7b22671c6ec9ada333ced852706ce7ae1767c6c093",
+        "blob": "0482315deb6222f2909773abb02b19d56146a0f5",
+        "content": "sha256:51dee9b48e02226c1323d144f9faf49e2ac024446db2d48be7f3405854d99239",
         "locator": {
           "kind": "symbol",
           "name": "build_launch_call"
@@ -93,7 +147,7 @@
     },
     {
       "anchor": {
-        "blob": "d57949b8574bdf280c23f7d8c15d4c28634a0097",
+        "blob": "0482315deb6222f2909773abb02b19d56146a0f5",
         "content": "sha256:fa38e6b23d0512939df6b4f03cccca030ef299efe4e63c8a7b7cb98c4ac04854",
         "locator": {
           "kind": "symbol",
@@ -108,6 +162,24 @@
       },
       "rationale": "Calls the admitted leaf before-create check between workspace opening and creation while preserving ordinary call behavior.",
       "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "0482315deb6222f2909773abb02b19d56146a0f5",
+        "content": "sha256:51dee9b48e02226c1323d144f9faf49e2ac024446db2d48be7f3405854d99239",
+        "locator": {
+          "kind": "symbol",
+          "name": "build_launch_call"
+        }
+      },
+      "id": "RLZ-V0EBT3",
+      "invariant": "INV-YDDMGJ",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-07",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "modeId and featureValues are in agent creation, so a first edit cannot race a later mode-setting call; this also accounts for the received L48 initial-mode authority.",
+      "role": "propagation-persistence"
     }
   ],
   "references": {
@@ -116,7 +188,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d57949b8574bdf280c23f7d8c15d4c28634a0097",
+            "blob": "0482315deb6222f2909773abb02b19d56146a0f5",
             "content": "sha256:bb5f95ed4aa40134659f1b481854cfdb2c08726f5de6f52d4bf1c4b03b5eb3dc",
             "locator": {
               "kind": "symbol",
@@ -182,12 +254,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9c27f7546b5f3e96f9406dfadb020e944329a175",
+            "blob": "8f100ce7f5f5381456d67cea47b8638ce0acea36",
             "content": "sha256:2200041761481afb1a77501bfcdb24006626a7641f1a37c9bc4b85a1fc79e8d9",
             "locator": {
-              "end": 1062,
+              "end": 1065,
               "kind": "line_range",
-              "start": 1022
+              "start": 1025
             },
             "path": "mcp/tests/test_paseo_launch.py"
           },

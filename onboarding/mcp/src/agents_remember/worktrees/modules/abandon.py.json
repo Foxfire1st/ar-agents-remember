@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "89f4fd8ef1c246fe85a6cfceba2c99571d8c8dc6",
+        "blob": "a219e532c44f9417a6056c5206555b1afabde8d5",
         "content": "sha256:0133f2aed3e0146a26eeb89d0b71fc996abe5b86dccac45ca653fb8d1e1028fb",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "89f4fd8ef1c246fe85a6cfceba2c99571d8c8dc6",
+        "blob": "a219e532c44f9417a6056c5206555b1afabde8d5",
         "content": "sha256:308568001463a3cfcc97b4b359d2f11113b0a6a323a771b5085f39f97cfff290",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "89f4fd8ef1c246fe85a6cfceba2c99571d8c8dc6",
+        "blob": "a219e532c44f9417a6056c5206555b1afabde8d5",
         "content": "sha256:af34bd65f334ad4c015282ee8614c0dc2c1169e8bb7f9f4319e61c14e5da6bea",
         "locator": {
           "kind": "symbol",
@@ -57,7 +57,25 @@
     },
     {
       "anchor": {
-        "blob": "89f4fd8ef1c246fe85a6cfceba2c99571d8c8dc6",
+        "blob": "a219e532c44f9417a6056c5206555b1afabde8d5",
+        "content": "sha256:3d92bd5fc67e0e717180db0cf8b06efe023c2061ea3235415c7bc92c3b8b57ed",
+        "locator": {
+          "kind": "symbol",
+          "name": "_abandon_directories"
+        }
+      },
+      "id": "RLZ-SDKCH6",
+      "invariant": "INV-N70HF0",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-10",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "The actual Abandoned route calls the collection/removal boundary before enclosure removal, retaining nonempty canonical report evidence.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "a219e532c44f9417a6056c5206555b1afabde8d5",
         "content": "sha256:308568001463a3cfcc97b4b359d2f11113b0a6a323a771b5085f39f97cfff290",
         "locator": {
           "kind": "symbol",
@@ -80,7 +98,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "89f4fd8ef1c246fe85a6cfceba2c99571d8c8dc6",
+            "blob": "a219e532c44f9417a6056c5206555b1afabde8d5",
             "content": "sha256:16d3a43affb4cbe85415b5cfa764dc79df13660916b0b96557bcf42294a79c8e",
             "locator": {
               "kind": "symbol",
@@ -130,7 +148,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "89f4fd8ef1c246fe85a6cfceba2c99571d8c8dc6",
+            "blob": "a219e532c44f9417a6056c5206555b1afabde8d5",
             "content": "sha256:16d3a43affb4cbe85415b5cfa764dc79df13660916b0b96557bcf42294a79c8e",
             "locator": {
               "kind": "symbol",
@@ -212,7 +230,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "89f4fd8ef1c246fe85a6cfceba2c99571d8c8dc6",
+            "blob": "a219e532c44f9417a6056c5206555b1afabde8d5",
             "content": "sha256:97310f133dfca42cf7c733d01b9c23d1ac7894702a084a69ba599541e3342102",
             "locator": {
               "kind": "symbol",

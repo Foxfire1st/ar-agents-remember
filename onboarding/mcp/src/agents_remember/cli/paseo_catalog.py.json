@@ -3,8 +3,26 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "56fd9c6668fd2e3fad073af42f3532c9db66a3eb",
-        "content": "sha256:6d9ea8093f9a0e130c4a8ec9ccddad6e21bb2fa707586e25774debb36148798e",
+        "blob": "c16647f099e69e6a494446ba0dafce47196c6300",
+        "content": "sha256:2cf3fcde8291915ff8d76b0e40714e14b41ec5759a7a2bba3a71234a22e7aab3",
+        "locator": {
+          "kind": "symbol",
+          "name": "launcher_options"
+        }
+      },
+      "id": "RLZ-1A9CAN",
+      "invariant": "INV-002A1G",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-05",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "The public options route exposes offered controls and their sources for onboarding and the dashboard; it is not a guessed static feature list.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "c16647f099e69e6a494446ba0dafce47196c6300",
+        "content": "sha256:0aea26f2a51302551255d15bb618cc962adbbe210604b2445187661236e05961",
         "locator": {
           "kind": "symbol",
           "name": "resolve_agent_selection"
@@ -21,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "56fd9c6668fd2e3fad073af42f3532c9db66a3eb",
+        "blob": "c16647f099e69e6a494446ba0dafce47196c6300",
         "content": "sha256:2ee18b0e960d8f26922b3a32dc406473e3eba269f281aaa5250736623678853e",
         "locator": {
           "kind": "symbol",
@@ -39,7 +57,79 @@
     },
     {
       "anchor": {
-        "blob": "56fd9c6668fd2e3fad073af42f3532c9db66a3eb",
+        "blob": "c16647f099e69e6a494446ba0dafce47196c6300",
+        "content": "sha256:0996320e34b68a41d7f99f1bf881914fa204fdcf2d0f1458be1329b844bc9c47",
+        "locator": {
+          "kind": "symbol",
+          "name": "_resolve_mode"
+        }
+      },
+      "id": "RLZ-B88P86",
+      "invariant": "INV-7DMXZ3",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-04",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "The existing resolution owner applies user/profile precedence and explicit Claude default/Codex auto/Pi no-mode policy instead of catalogDefault or inherited Codex full access.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "c16647f099e69e6a494446ba0dafce47196c6300",
+        "content": "sha256:54b6ef2a933944520c73acab6fbbcf27cb55859f30f861d728f627d6fcde5299",
+        "locator": {
+          "kind": "symbol",
+          "name": "_scope_matches"
+        }
+      },
+      "id": "RLZ-KC8GKY",
+      "invariant": "INV-WT3VCM",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-02",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "Binding comparison excludes provider/model-specific lower values when their recorded binding differs from the actual host choice.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "c16647f099e69e6a494446ba0dafce47196c6300",
+        "content": "sha256:d6760aa54784fc632ef9b14625915a343b8caf98e0d524bcbdeb1e2e57c253c9",
+        "locator": {
+          "kind": "symbol",
+          "name": "_omitted_lower_choices"
+        }
+      },
+      "id": "RLZ-NSXZH4",
+      "invariant": "INV-WT3VCM",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-02",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "Ignored lower values are retained with their source/reason for the returned provenance instead of silently disappearing.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "c16647f099e69e6a494446ba0dafce47196c6300",
+        "content": "sha256:6e58dfe9f55b655992db0380942f2820cd9d7ffe9dadd142a288ab55ee10963c",
+        "locator": {
+          "kind": "symbol",
+          "name": "_resolve_features"
+        }
+      },
+      "id": "RLZ-Q50PP6",
+      "invariant": "INV-002A1G",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-05",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "Resolution validates host offered feature values and their provider/model applicability before an accepted feature reaches the create payload.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "c16647f099e69e6a494446ba0dafce47196c6300",
         "content": "sha256:8fbf3fd90997084f88cd6d730ec1cc518e3650aed48ea0d26ca3926fac37736c",
         "locator": {
           "kind": "symbol",
@@ -54,6 +144,60 @@
       },
       "rationale": "Discovers only for empty cache or explicit refresh, preserving the selected runtime key.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "c16647f099e69e6a494446ba0dafce47196c6300",
+        "content": "sha256:0aea26f2a51302551255d15bb618cc962adbbe210604b2445187661236e05961",
+        "locator": {
+          "kind": "symbol",
+          "name": "resolve_agent_selection"
+        }
+      },
+      "id": "RLZ-SR53ZZ",
+      "invariant": "INV-AFTG56",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-01",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "This resolver validates the selected host provider and its offered model/effort/tier rather than restricting provider selection to AR builtin harness declarations.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "c16647f099e69e6a494446ba0dafce47196c6300",
+        "content": "sha256:66a8b3fc57f621f7f7d97009ee3df3c3d0e7e05bc491e30032c9f07b48e5d835",
+        "locator": {
+          "kind": "symbol",
+          "name": "_resolve_notes"
+        }
+      },
+      "id": "RLZ-SWAWHM",
+      "invariant": "INV-1Q4W04",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-06",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "Notes resolution uses the existing user-role source and host profile as inputs without interpreting text as permission settings.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "c16647f099e69e6a494446ba0dafce47196c6300",
+        "content": "sha256:6e58dfe9f55b655992db0380942f2820cd9d7ffe9dadd142a288ab55ee10963c",
+        "locator": {
+          "kind": "symbol",
+          "name": "_resolve_features"
+        }
+      },
+      "id": "RLZ-Z7SMV6",
+      "invariant": "INV-VKTCC4",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-03",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "Host feature metadata and the speed/nonpermission versus permission-bearing classification gate accepted feature values at launch.",
+      "role": "enforcement"
     }
   ],
   "references": {
@@ -62,7 +206,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "56fd9c6668fd2e3fad073af42f3532c9db66a3eb",
+            "blob": "c16647f099e69e6a494446ba0dafce47196c6300",
             "content": "sha256:8fbf3fd90997084f88cd6d730ec1cc518e3650aed48ea0d26ca3926fac37736c",
             "locator": {
               "kind": "symbol",

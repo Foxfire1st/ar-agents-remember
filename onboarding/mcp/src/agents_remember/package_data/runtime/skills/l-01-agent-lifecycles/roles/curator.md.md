@@ -10,7 +10,7 @@ The Curator owns one selected leaf’s intent/onboarding/knowledge coherence pas
 
 ## Current Contract
 
-Resolve the supplied task through exact read arguments and canonical `docPath`; use actual bound schemas and immutable baseline/candidate knowledge. Missing field/capability is a named blocker. Outputs stay inside the selected memory root and another installation’s writer cannot substitute for the admitted source-bound command.
+Read the rendered task-document files named in the handover, read with the harness's own file tools before acting; change documents through `task_doc` only, because edits to copies are never read back and are lost on the next publication. Use actual bound schemas and immutable baseline/candidate knowledge. Missing field/capability is a named blocker. Outputs stay inside the selected memory root and another installation’s writer cannot substitute for the admitted source-bound command.
 
 Carry producer handoff fields unchanged; author semantic scope, each target’s rationale and the record action. The existing INV-0FBA8M52 target-shape/rationale obligation remains: target rationale is authored per construct, role is optional and the writer does not generate the explanation.
 
@@ -25,6 +25,10 @@ Canonical skills/l-01-agent-lifecycles/roles/curator.md owns the instruction. sc
 ## Invariants And Boundaries
 
 Only admitted memory/onboarding is writable. No code, task/lifecycle/Git transaction change, direct dataset/internal writer, invented stamp, subset-for-full substitution or absorbed role duty. Operator harness, model, effort, serviceTier, launchArgs, sessionCommands and promptKeywords remain settings, outside Curator authority. Native clarification uses the actual parent/task role; dashboard launch needs no parent, and developer decisions remain in the own chat.
+
+## Working folders and reports
+
+Agent-authored temporary files, experiments and working copies live only in the handover's real `workspace.scratchRoot`, outside code, memory and task folders; reports and evidence go in the handover's local report folder, which the product copies to canonical notes before removal.
 
 ## Name The Effect, Mirrored (MIK-R48)
 

@@ -10,7 +10,7 @@ The Worker implements one selected leaf’s approved primary requirement and pre
 
 ## Current Contract
 
-Read the selected requirement/task using exact handover arguments and inspect target source before editing. Memory is read-only context; task, contract, memory and onboarding state are not Worker write areas.
+Read the rendered task-document files named in the handover, read with the harness's own file tools before acting; change documents through `task_doc` only, because edits to copies are never read back and are lost on the next publication. Read the selected requirement and inspect target source before editing. Memory is read-only context; task, contract, memory and onboarding state are not Worker write areas.
 
 Make the smallest complete change and report relevant checks with failures and unrun results visible. One canonical task report names changed files, requirement/invariant evidence, actual sender identity when known and open limitations.
 

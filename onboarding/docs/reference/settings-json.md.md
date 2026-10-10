@@ -2,14 +2,16 @@
 
 ## Governing Overview
 
-[root repo overview](../../overview.md) — the `docs/reference` route has no route-local overview
-of its own (pre-existing registered gap; see the skills reference sidecar).
+[root repo overview](../../overview.md) — governed by the route-local [docs/reference overview](overview.md).
 
 ## Purpose
 
 Public settings reference for Agents Remember. It separates the four settings homes (MCP
 authority, memory topology, agentic orchestration, provider lifecycle), documents their read
-cadence, and gives examples for internal/external memory and MCP authority files.
+cadence, and gives examples for internal/external memory and MCP authority files. The agentic
+orchestration and host-runtime homes live in the single user configuration file
+(`~/.config/agents-remember/settings.json`, under `XDG_CONFIG_HOME` when set), shared by every
+harness; the coordinator root no longer selects a host settings file.
 
 ## Code Commentary
 
@@ -50,10 +52,15 @@ and maintained Claude/Anthropic + Codex/OpenAI harness-native spend/endpoint env
 `spend-override-unsupported`; the doc points readers to `docs/reference/harnesses.md` for the full
 spawn-surface manual.
 
+The global agentic settings file and the host-runtime block both moved to the single user
+configuration file above; an old coordinator `system/settings.json` file is never read and requires
+the explicit upgrade before settings load. Neither the user configuration file nor the old
+coordinator path is an MCP authority file or a provider settings source.
+
 ## Invariants And Boundaries
 
 - Settings families have exactly one home; do not present coordinator `system/settings.json` as an
-  MCP authority file.
+  MCP authority file, and do not present the user configuration file as one either.
 - Unknown keys under `orchestration.*` fail loud in the parser; docs must track parser field names.
 - The agent-notifier redelivery and repeated-signal cadence floor is 900 seconds; docs must not suggest
   a sub-15-minute setting can run.

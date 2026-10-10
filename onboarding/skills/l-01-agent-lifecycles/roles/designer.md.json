@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "1e16d02e220b9ba8638feb0817c8731dfc84e618",
-        "content": "sha256:5800e932c02115263f7f95b4babd2c68ef983c6dbb7dac3ed79201b8c593cb97",
+        "blob": "98125ee2e505edcf37a1b6e74fd554a097531507",
+        "content": "sha256:70480ae5801f6e90205e77e649652433d14220120f71669096090847cff6004d",
         "locator": {
           "kind": "file"
         }
@@ -16,6 +16,23 @@
         "leaf": "260928-MIK-L99"
       },
       "rationale": "designer receives the same assignment autonomy and responsibility bounds in its own composed role text.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "6f7e30ee52bc51dc0cc79e4641425317c17dffa1",
+        "content": "sha256:370902c37c1574a432e939f91fae0e9ac909a98213d0a63bf6049f63f9f19dcf",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-YPZ7CB",
+      "invariant": "INV-NNQR91",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-19",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "The canonical roles/designer.md carries the applicable own-file first-read/task_doc-only write and report/scratch instructions for its role/operation; it is the source the public generator ships.",
       "role": "primary-authority"
     }
   ],

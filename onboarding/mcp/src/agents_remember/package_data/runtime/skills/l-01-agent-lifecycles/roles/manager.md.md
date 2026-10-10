@@ -10,7 +10,7 @@ A Manager coordinates one selected master’s leaf owners and evidence at Projec
 
 ## Current Contract
 
-Use the supplied sprint/master/requirement/candidate/report references and exact task-read arguments. Each leaf owns one primary requirement; inherited/adjacent requirements remain constraints. Leaf work uses the AR paired enclosure rather than an independent Paseo worktree.
+Use the supplied sprint/master/requirement/candidate/report references. Read the rendered task-document files named in the handover, read with the harness's own file tools before acting; change documents through `task_doc` only, because edits to copies are never read back and are lost on the next publication. Each leaf owns one primary requirement; inherited/adjacent requirements remain constraints. Leaf work uses the AR paired enclosure rather than an independent Paseo worktree.
 
 Start the Worker and Reviewer together and the Curator at the first freeze, under the selected master, and retain their actual IDs. The leaf's Reviewer sends finding-specific repair to the same Worker directly; independent review runs when required by task/plan, and fix verification preserves its sealed baseline.
 
@@ -39,6 +39,9 @@ Use existing AR task/data and paired Git owners under actual authority. No Curat
 - Runtime packaging cannot expose child occupant ids to the manager model.
 - Builder, reviewer, curator, closeout, and handover separation matches canonical doctrine exactly.
 
+## Working folders and reports
+
+Agent-authored temporary files, experiments and working copies live only in the handover's real `workspace.scratchRoot`, outside code, memory and task folders; reports and evidence go in the handover's local report folder, which the product copies to canonical notes before removal.
 
 ## Evidence
 

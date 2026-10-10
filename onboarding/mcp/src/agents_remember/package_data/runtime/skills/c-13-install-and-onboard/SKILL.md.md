@@ -63,14 +63,14 @@ part of the copied, rendered harness package and this skill no longer installs
 them.
 
 The five-stage sequence is now: (1) run or verify `runtime_install()` so the
-coordinator scaffold exists and the host step runs; the shared
-`<coordinationRoot>/system/settings.json` file belongs to starter/setup (the
+coordinator scaffold exists and the host step runs. An existing `<coordinationRoot>/system/settings.json` requires the explicit product upgrade before the server can load settings: preview `agents-remember upgrade-user-settings --coordination-root <absolute root> --dry-run`, then run it without `--dry-run` to move the entire file once; an old-only or both-file state refuses and names both paths. The shared
+user settings file (`~/.config/agents-remember/settings.json`, under `XDG_CONFIG_HOME` when set) belongs to starter/setup (the
 renderer writes it when absent) and this step never writes that authority; (2) the AGENTIC-SETTINGS INTERVIEW (new with 260703-L13,
 between the old Stages 1 and 2): walk the developer through the four knob
 families — gate delegation posture (with the explicit boot-snapshot
 restart note), loop defaults, concurrency caps, and harness preference
 (registry ids claude/codex/pi) — and edit
-`<coordinationRoot>/system/settings.json` with their answers, leaving skipped
+`~/.config/agents-remember/settings.json` (under `XDG_CONFIG_HOME` when set) with their answers, leaving skipped
 families at the built-in absent-knob defaults; repo-local `<repo>/system/settings.json`
 overrides are offered only on request, never created unprompted; (3) ask
 whether to scaffold a new memory repo or use an existing one, unless memory
@@ -84,6 +84,10 @@ of package-based first-run setup because starter packages already include
 harness-discoverable skills; it remains only a maintenance/manual option. The
 report result similarly avoids any hook-restart instruction because hooks are
 copied before this skill runs.
+
+### User settings upgrade and role mode interview
+
+For every role the Paseo launcher offers, guide a new user through permission mode choice from the running host's modes via the existing public options route; write `orchestration.roles.<role>.mode` in the user configuration only after the user chooses it, with Claude defaulting to `default` and Codex to `auto` when unoffered. Modes, notes and permission-bearing features are user/profile authority only and never go in a repository's settings. Verify the workspace's `.agents-remember/role-executions/` directory exists and is Git-ignored: taskless and controller roles receive per-execution scratch folders there, leaf roles under their group's real `scratch`.
 
 ### Conventions
 

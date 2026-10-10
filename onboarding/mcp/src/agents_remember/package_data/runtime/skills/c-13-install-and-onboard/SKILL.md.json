@@ -1,6 +1,24 @@
 {
   "path": "mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "02677b4e360f93f17905c5bb061817767369ac52",
+        "content": "sha256:c34593798af3d2f6b310896a7b3b721a87dd26023eb54e8f8fb873e57981594b",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-K2M1WN",
+      "invariant": "INV-NNQR91",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-19",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "The mcp/src/agents_remember/package_data/runtime shipped copy propagates the skills/c-13-install-and-onboard/SKILL.md instructions to that installation surface; it is generated output and does not independently set role/task or permission authority.",
+      "role": "propagation-persistence"
+    }
+  ],
   "references": {
     "1": {
       "note": "The skill starts only after the harness package is copied and rendered, MCP is wired, and the harness has restarted once; package files own skills, hooks, rules, instructions, MCP templates, settings templates, and render scripts.\n\nAnchor: `# c-13-install-and-onboard Install And Onboard`",
@@ -41,7 +59,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "52275d0af2da30b946b20bfb8f1462cd14266877",
+            "blob": "02677b4e360f93f17905c5bb061817767369ac52",
             "content": "sha256:eeb898b2049eaf96fc7d04985513eea1dde217ca27f6b92d33ef542852b80a0d",
             "locator": {
               "end": 151,
@@ -87,24 +105,24 @@
         },
         {
           "anchor": {
-            "blob": "52275d0af2da30b946b20bfb8f1462cd14266877",
+            "blob": "02677b4e360f93f17905c5bb061817767369ac52",
             "content": "sha256:e0de6277dfb0665d61964d21c74dcd5c9795894e6b81026b8cab7862c0a468d3",
             "locator": {
-              "end": 300,
+              "end": 332,
               "kind": "line_range",
-              "start": 282
+              "start": 314
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "52275d0af2da30b946b20bfb8f1462cd14266877",
+            "blob": "02677b4e360f93f17905c5bb061817767369ac52",
             "content": "sha256:6f7e7448490dca4c7224498afe0987c29f76330c23fa3253ac20b39fb5ff6b9d",
             "locator": {
-              "end": 310,
+              "end": 342,
               "kind": "line_range",
-              "start": 301
+              "start": 333
             }
           },
           "kind": "code"
@@ -135,24 +153,24 @@
         },
         {
           "anchor": {
-            "blob": "52275d0af2da30b946b20bfb8f1462cd14266877",
+            "blob": "02677b4e360f93f17905c5bb061817767369ac52",
             "content": "sha256:80eeb0c2b0bae92cbd87bd26e58606b84e1e7f256f91abfcaf10150b091012d9",
             "locator": {
-              "end": 371,
+              "end": 403,
               "kind": "line_range",
-              "start": 371
+              "start": 403
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "52275d0af2da30b946b20bfb8f1462cd14266877",
+            "blob": "02677b4e360f93f17905c5bb061817767369ac52",
             "content": "sha256:3a72bd9da7a58673638a31fa992a3efc5a956013d361fb470e7dd1533379fc45",
             "locator": {
-              "end": 373,
+              "end": 405,
               "kind": "line_range",
-              "start": 373
+              "start": 405
             }
           },
           "kind": "code"

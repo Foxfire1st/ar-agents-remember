@@ -1,0 +1,58 @@
+{
+  "path": "mcp/src/agents_remember/kernel/primitives/user_settings_location.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "dda14b3df58e377daa2411ff9b168ecb1ad261e1",
+        "content": "sha256:b77f49c3cfacc373e0c5adca9be77dc47c3427cdb89c5168b8877c0e433344d7",
+        "locator": {
+          "kind": "symbol",
+          "name": "require_user_settings_path"
+        }
+      },
+      "id": "RLZ-46MS1Y",
+      "invariant": "INV-B7D1WM",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-15",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "The common location guard selects XDG_CONFIG_HOME or the standard user config directory and names old-only/both-path refusal with the explicit upgrade command.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The single user settings path under XDG_CONFIG_HOME or the standard user config directory.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dda14b3df58e377daa2411ff9b168ecb1ad261e1",
+            "content": "sha256:de0d5e9da282deb9cc3d4f976c8e8c60bcb13fdca803c750b46f749b9b2e1bc9",
+            "locator": {
+              "kind": "symbol",
+              "name": "user_settings_path"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The old-location refusal naming both paths and the upgrade command.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dda14b3df58e377daa2411ff9b168ecb1ad261e1",
+            "content": "sha256:b77f49c3cfacc373e0c5adca9be77dc47c3427cdb89c5168b8877c0e433344d7",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_user_settings_path"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

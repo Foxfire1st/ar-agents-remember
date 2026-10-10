@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "family_guarantee"
+    ],
+    "justification": "Spans dashboard launcher generations: feature parity through model/effort changes with visible defaults and provenance is what lets FAM-GDXSJG propagate behavior changes without silent launcher drift."
+  },
+  "applicability": "Every dashboard role launch through the single extracted launcher.",
+  "conditions": [
+    "Model and effort changes carry all five operands including featureValues.",
+    "Defaults and provenance stay visible."
+  ],
+  "exclusions": [
+    "Merging host-offered speed controls into permission policy.",
+    "A second launcher source of truth."
+  ],
+  "id": "INV-63Z0MN",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/notes/reports/role-launch/260928-MIK-L71-worker-d508f3cc-d109-host-readers/source-current-a1b7/source26-public-sync/generation15-five-pin-successor/expanded-evidence.md"
+      ],
+      "path": "l71-handoff-list.json"
+    },
+    "handoffEntry": "L71-CURRENT242-W-17",
+    "leaf": "260928-MIK-L71",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The single extracted dashboard launcher preserves every stated feature through model and effort changes; defaults and provenance are visible and host-offered speed controls remain distinct from permission policy.",
+  "status": "proposed",
+  "supersedes": []
+}

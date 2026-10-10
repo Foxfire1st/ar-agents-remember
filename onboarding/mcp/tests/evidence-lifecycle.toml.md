@@ -166,7 +166,9 @@ files are both gone removed without file restores.
 
 ## Current catalog registration
 
-The catalog holds 13 contract rows with 85 governed artifacts: the admitted lifecycle replacement (landed upstream of this leaf) replaced the earlier 32-row catalog with 13 rows; `tool_log_witness` predates this leaf; the upstream river-scale measurement (`l114_e4_river_scale.py`) joined as the 85th artifact; this leaf's working tree adds its rule-test modules to the consumer lists and removes no former lane or artifact. Other artifact metadata is unchanged.
+The current catalog holds 13 contract rows and 87 governed artifacts. The shared `preview_read_only_test_support.py` artifact declares the registered-preview call-record comparison as permanent local-composition evidence, with the existing repeatable-preview test as its replacement contract. Its exact consumers are `test_worktree_start_preview.py` and `test_master_retirement_readiness.py`: the latter reaches the support transitively through the preview fixture. The added consumer leaves the row's metadata, existing direct consumer and every other catalog row unchanged. Artifact and consumer declarations establish ownership and reachability, not test execution or acceptance.
+
+- The registered-preview comparator's artifact row retains its replacement contract and lists both direct and transitive consumers. [260]
 
 ## 260928-MIK-L96 The host test modules
 

@@ -2,7 +2,7 @@
 
 ## Native identity and requested launch options
 
-role_agents/role_launcher describe native start/message and launcher wire contracts. TaskDocumentRef and TaskScopedReaderContext retain repository/path identity separately from provider actor/workspace IDs. Dynamic model/effort/tier validation respects explicit overrides. Immutable sessionOptions records requested native creation values; agent.serviceTier is observed only when the host reports it. The declared schema alone certifies no launch, acceptance or publication.
+role_agents/role_launcher describe native start/message and launcher wire contracts. TaskDocumentRef and TaskScopedReaderContext retain repository/path identity separately from provider actor/workspace IDs. Dynamic model/effort/mode/feature validation respects explicit overrides, with per-choice sources and observed values. Immutable sessionOptions records requested native creation values; agent mode and serviceTier are observed only when the host reports them. The declared schema alone certifies no launch, acceptance or publication.
 
 - Current imported source owns this scoped route boundary. [275]
 - Current imported source owns this scoped route boundary. [276]

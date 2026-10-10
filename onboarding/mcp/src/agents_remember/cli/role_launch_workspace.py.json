@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "b1a881404e3c96e9033bee68b81e6c639eebb2ff",
+        "blob": "8e00cf0dd6d16533b701282b72d5ad8f9eba3225",
         "content": "sha256:16b8206380a8f6c2cf8e474b1b8a569816b1237e30754d8aaecd3e3cd17d0c4b",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "b1a881404e3c96e9033bee68b81e6c639eebb2ff",
+        "blob": "8e00cf0dd6d16533b701282b72d5ad8f9eba3225",
         "content": "sha256:7bed85c3ee2f4d1ae1c5b044416633c88910d9c88b9339b2c63237f830a60da3",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "b1a881404e3c96e9033bee68b81e6c639eebb2ff",
+        "blob": "8e00cf0dd6d16533b701282b72d5ad8f9eba3225",
         "content": "sha256:d6fde4cb534c458665bcbbcaf1b3e0d6a124b41dcac11ecfe26c05a0a7987503",
         "locator": {
           "kind": "symbol",
@@ -57,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "b1a881404e3c96e9033bee68b81e6c639eebb2ff",
+        "blob": "8e00cf0dd6d16533b701282b72d5ad8f9eba3225",
         "content": "sha256:d6fde4cb534c458665bcbbcaf1b3e0d6a124b41dcac11ecfe26c05a0a7987503",
         "locator": {
           "kind": "symbol",
@@ -75,7 +75,7 @@
     },
     {
       "anchor": {
-        "blob": "b1a881404e3c96e9033bee68b81e6c639eebb2ff",
+        "blob": "8e00cf0dd6d16533b701282b72d5ad8f9eba3225",
         "content": "sha256:1d362164da7db151e71462781701fa326cc8dc10a271661bb475223d16689e94",
         "locator": {
           "kind": "symbol",
@@ -93,8 +93,8 @@
     },
     {
       "anchor": {
-        "blob": "b1a881404e3c96e9033bee68b81e6c639eebb2ff",
-        "content": "sha256:cc03ce5de4729e22af1abeb11fc8ff8c17b4eea33b01180fdceaa87b6588750f",
+        "blob": "8e00cf0dd6d16533b701282b72d5ad8f9eba3225",
+        "content": "sha256:e3dcd4ea741e42a153abc69a6837b3d0aa49f30d11fc6b0a05959e0ad0128dbb",
         "locator": {
           "kind": "symbol",
           "name": "_resolve_workspace"
@@ -111,7 +111,7 @@
     },
     {
       "anchor": {
-        "blob": "b1a881404e3c96e9033bee68b81e6c639eebb2ff",
+        "blob": "8e00cf0dd6d16533b701282b72d5ad8f9eba3225",
         "content": "sha256:a23cf9cfa008bf8a2ee317fb605d5039754507de4e00f40c91703884303d46c6",
         "locator": {
           "kind": "symbol",
@@ -126,6 +126,24 @@
       },
       "rationale": "Validates canonical enclosure from leaf document without creating it.",
       "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "8e00cf0dd6d16533b701282b72d5ad8f9eba3225",
+        "content": "sha256:26cbb4abc68e5d67daed1998e00b4db205be18fc3eefa6d190344b501db21ec8",
+        "locator": {
+          "kind": "symbol",
+          "name": "workspace_folder"
+        }
+      },
+      "id": "RLZ-ZV55NQ",
+      "invariant": "INV-8XCZY1",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-09",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "The extracted workspace owner supplies the existing enclosure working-folder/report-directory boundary; leaf report directories stay outside code and memory Git trees.",
+      "role": "enforcement"
     }
   ],
   "references": {
@@ -134,7 +152,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b1a881404e3c96e9033bee68b81e6c639eebb2ff",
+            "blob": "8e00cf0dd6d16533b701282b72d5ad8f9eba3225",
             "content": "sha256:7bed85c3ee2f4d1ae1c5b044416633c88910d9c88b9339b2c63237f830a60da3",
             "locator": {
               "kind": "symbol",
@@ -150,7 +168,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b1a881404e3c96e9033bee68b81e6c639eebb2ff",
+            "blob": "8e00cf0dd6d16533b701282b72d5ad8f9eba3225",
             "content": "sha256:1d362164da7db151e71462781701fa326cc8dc10a271661bb475223d16689e94",
             "locator": {
               "kind": "symbol",
@@ -166,7 +184,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b1a881404e3c96e9033bee68b81e6c639eebb2ff",
+            "blob": "8e00cf0dd6d16533b701282b72d5ad8f9eba3225",
             "content": "sha256:a23cf9cfa008bf8a2ee317fb605d5039754507de4e00f40c91703884303d46c6",
             "locator": {
               "kind": "symbol",
@@ -198,7 +216,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b1a881404e3c96e9033bee68b81e6c639eebb2ff",
+            "blob": "8e00cf0dd6d16533b701282b72d5ad8f9eba3225",
             "content": "sha256:d6fde4cb534c458665bcbbcaf1b3e0d6a124b41dcac11ecfe26c05a0a7987503",
             "locator": {
               "kind": "symbol",
@@ -214,7 +232,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b1a881404e3c96e9033bee68b81e6c639eebb2ff",
+            "blob": "8e00cf0dd6d16533b701282b72d5ad8f9eba3225",
             "content": "sha256:16b8206380a8f6c2cf8e474b1b8a569816b1237e30754d8aaecd3e3cd17d0c4b",
             "locator": {
               "kind": "symbol",

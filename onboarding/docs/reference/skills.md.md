@@ -2,8 +2,7 @@
 
 ## Governing Overview
 
-[root repo overview](../../overview.md) — the `docs/reference` route has no route-local overview
-of its own (pre-existing registered gap; see the root overview's L16 history entry).
+[root repo overview](../../overview.md) — governed by the route-local [docs/reference overview](overview.md).
 
 ## Purpose
 

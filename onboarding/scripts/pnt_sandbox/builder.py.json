@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "3a8807af7f358f147661611927bfc9e888d47966",
+        "blob": "5c1bf04fd06159d4437ba142716f02091bfaf844",
         "content": "sha256:9b509d05c260fd748de1caa2ce83fbef8fb8d4d9d21011846d739e89d74f798b",
         "locator": {
           "kind": "symbol",
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "3a8807af7f358f147661611927bfc9e888d47966",
-        "content": "sha256:b91a3950c6724b89d9b8a674404d8fd233a4c4b7445dba1d503281b3aec4defa",
+        "blob": "5c1bf04fd06159d4437ba142716f02091bfaf844",
+        "content": "sha256:d5dbd25beaf8163ab94b4c9d1371ecf72c330e7b999f056b61bcbc7818777fc5",
         "locator": {
           "kind": "symbol",
           "name": "build_unlocked"
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "3a8807af7f358f147661611927bfc9e888d47966",
+        "blob": "5c1bf04fd06159d4437ba142716f02091bfaf844",
         "content": "sha256:b724580976d5e1330a0045f33dd398bc7d94eefadda5a8374f2609e10cc5de67",
         "locator": {
           "kind": "symbol",
@@ -57,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "3a8807af7f358f147661611927bfc9e888d47966",
+        "blob": "5c1bf04fd06159d4437ba142716f02091bfaf844",
         "content": "sha256:700e09b37d07b78f6a2a7afae9e25492221d783897d9235da8b6cff3d0d72013",
         "locator": {
           "kind": "symbol",
@@ -75,7 +75,7 @@
     },
     {
       "anchor": {
-        "blob": "3a8807af7f358f147661611927bfc9e888d47966",
+        "blob": "5c1bf04fd06159d4437ba142716f02091bfaf844",
         "content": "sha256:f9c167aabc96fb810cc3f669b8baf2cde2ce1f323a93ba3ae3070b093d85fe4c",
         "locator": {
           "kind": "symbol",
@@ -90,6 +90,24 @@
       },
       "rationale": "Rejects unowned populated directories and unfinished resetting state before reuse.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "5c1bf04fd06159d4437ba142716f02091bfaf844",
+        "content": "sha256:d5dbd25beaf8163ab94b4c9d1371ecf72c330e7b999f056b61bcbc7818777fc5",
+        "locator": {
+          "kind": "symbol",
+          "name": "build_unlocked"
+        }
+      },
+      "id": "RLZ-E2ZY4A",
+      "invariant": "INV-B7D1WM",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-15",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "The public sandbox builder seeds the owned isolated user-config path, including the landed host-reader dependency.",
+      "role": "support"
     }
   ],
   "references": {
@@ -113,7 +131,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3a8807af7f358f147661611927bfc9e888d47966",
+            "blob": "5c1bf04fd06159d4437ba142716f02091bfaf844",
             "content": "sha256:b724580976d5e1330a0045f33dd398bc7d94eefadda5a8374f2609e10cc5de67",
             "locator": {
               "kind": "symbol",

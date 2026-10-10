@@ -3,7 +3,24 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "a1a6de3a528984440383f7b64afede6f90ab9032",
+        "blob": "1e41d3496df85ab7e3473a3e3c760ba68cdc3c8b",
+        "content": "sha256:ce5b50fe3ed4536246772dea5a3ce2f08a7e6a7d79eb41c58fd6cecfc7aa55ea",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-7J6Y4G",
+      "invariant": "INV-AFTG56",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-01",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "The host bridge returns actual provider/model/mode/feature offerings and the wire metadata the Python resolver consumes; it is the boundary to host capability, not another catalog.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "1e41d3496df85ab7e3473a3e3c760ba68cdc3c8b",
         "content": "sha256:20cd3eac1b53dfc4ba83bbde509ce1126af97244cf6eaddeb2cf453ea722281c",
         "locator": {
           "kind": "symbol",
@@ -21,7 +38,7 @@
     },
     {
       "anchor": {
-        "blob": "a1a6de3a528984440383f7b64afede6f90ab9032",
+        "blob": "1e41d3496df85ab7e3473a3e3c760ba68cdc3c8b",
         "content": "sha256:1eb47e79656d46d170216bb1f9900e74a177c1225bbc89c59edaf3309a15c509",
         "locator": {
           "kind": "symbol",
@@ -39,7 +56,7 @@
     },
     {
       "anchor": {
-        "blob": "a1a6de3a528984440383f7b64afede6f90ab9032",
+        "blob": "1e41d3496df85ab7e3473a3e3c760ba68cdc3c8b",
         "content": "sha256:773f6528c0313df70b181925f552765ca75485f7368e6d53d10dbc13e95a2c7c",
         "locator": {
           "kind": "symbol",

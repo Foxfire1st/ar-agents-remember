@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "family_guarantee"
+    ],
+    "justification": "Spans repeated requests: reusing recorded choices and call, setting mode fields before agent creation, and keeping observations distinct from requested values is how FAM-N17BB4 stays repeatable across retries."
+  },
+  "applicability": "Every repeated (replayed or relaunched) role request and its recorded call.",
+  "conditions": [
+    "Initial mode fields are set before agent creation.",
+    "Mode observations are compared against requested values, not merged with them."
+  ],
+  "exclusions": [
+    "Old request digests, which an empty feature map must not break."
+  ],
+  "id": "INV-YDDMGJ",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/notes/reports/role-launch/260928-MIK-L71-worker-d508f3cc-d109-host-readers/source-current-a1b7/source26-public-sync/generation15-five-pin-successor/expanded-evidence.md"
+      ],
+      "path": "l71-handoff-list.json"
+    },
+    "handoffEntry": "L71-CURRENT242-W-07",
+    "leaf": "260928-MIK-L71",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A repeated request uses its recorded choices and call; initial mode fields are set before agent creation, mode observations remain distinguishable from requested values, and empty feature maps do not break old request digests.",
+  "status": "proposed",
+  "supersedes": []
+}

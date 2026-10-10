@@ -12,7 +12,7 @@ each stable requirement ID from the same applicable set dispatched to the worker
 
 ### Bound native review intake
 
-Review only the owner’s explicit assignment. Use exact handover task arguments, the returned canonical `docPath`, `arMcpContext.readerArguments` and actual bound schemas; per-call context includes the canonical task and enclosure contract. Read only the documents required by the assigned seam and write only contained task-local report artifacts. Missing fields/capabilities are reported gaps, not permission to switch AR servers or retrieve unscoped material.
+Review only the owner’s explicit assignment. Read the rendered task-document files named in the handover with the harness’s own file tools, using `arMcpContext.readerArguments` and actual bound schemas; per-call context includes the canonical task and enclosure contract. Read only the documents required by the assigned seam and write only contained task-local report artifacts. Missing fields/capabilities are reported gaps, not permission to switch AR servers or retrieve unscoped material.
 
 The baseline inspects every changed file in the complete candidate, including unattributed files. Knowledge before/after, family interactions and unchanged sibling realizations add a review dimension rather than reducing that population. Preserve producer Curator hand-off fields for co-resolution. Native peer clarification uses the actual parent/task role through bound `role_message`; a dashboard Reviewer needs no parent and starts no role. Developer questions go to the parent when one exists; without one they stay in the own chat.
 

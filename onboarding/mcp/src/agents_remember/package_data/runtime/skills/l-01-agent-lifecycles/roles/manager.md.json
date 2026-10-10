@@ -1,6 +1,24 @@
 {
   "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "46d18773aa6937313486349b75682a4a696c16bb",
+        "content": "sha256:94ce773d444b6cbd72eef80b4cce941d8abadb406acbc4a9303d21445d9119af",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-EQZH1P",
+      "invariant": "INV-NNQR91",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-19",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "The mcp/src/agents_remember/package_data/runtime shipped copy propagates the skills/l-01-agent-lifecycles/roles/manager.md instructions to that installation surface; it is generated output and does not independently set role/task or permission authority.",
+      "role": "propagation-persistence"
+    }
+  ],
   "references": {
     "1": {
       "note": "This source owns the stated current Investigator scope or canonical vocabulary.",
@@ -22,7 +40,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e6bc4939f85bd6d12d3346dcd2e6f730eb4058e6",
+            "blob": "3ddb3dd453cf996eb2c34dcb5952386da975c162",
             "content": "sha256:342bdd7c63787cdd02eea07af5179b44e74de818c8185ded11a9086a901b4c42",
             "locator": {
               "end": 8,
@@ -73,7 +91,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e6bc4939f85bd6d12d3346dcd2e6f730eb4058e6",
+            "blob": "3ddb3dd453cf996eb2c34dcb5952386da975c162",
             "content": "sha256:4e568132297bd1cba5578b07d8fd196d1b317e7048f927a07b9ed5290cdd4297",
             "locator": {
               "end": 4,
@@ -90,7 +108,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e6bc4939f85bd6d12d3346dcd2e6f730eb4058e6",
+            "blob": "3ddb3dd453cf996eb2c34dcb5952386da975c162",
             "content": "sha256:4e568132297bd1cba5578b07d8fd196d1b317e7048f927a07b9ed5290cdd4297",
             "locator": {
               "end": 4,

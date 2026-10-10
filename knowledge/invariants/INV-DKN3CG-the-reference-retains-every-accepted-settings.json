@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "family_guarantee"
+    ],
+    "justification": "Spans the settings reference and its readers: retaining every accepted key with a stated reader/enforcer or no-reader boundary is how FAM-GDXSJG keeps the reference an honest map through behavior changes."
+  },
+  "applicability": "The shipped settings reference and the onboarding path for provider, mode and feature choices.",
+  "conditions": [
+    "Every accepted key states its reader/enforcer or its explicit no-reader boundary.",
+    "Onboarding reads choices from the existing public options catalog with the host running."
+  ],
+  "exclusions": [
+    "qualityGate, concurrency, spawn and loops keys presented as enforced.",
+    "Stale key inventories."
+  ],
+  "id": "INV-DKN3CG",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/notes/reports/role-launch/260928-MIK-L71-worker-d508f3cc-d109-host-readers/source-current-a1b7/source26-public-sync/generation15-five-pin-successor/expanded-evidence.md"
+      ],
+      "path": "l71-handoff-list.json"
+    },
+    "handoffEntry": "L71-CURRENT242-W-18",
+    "leaf": "260928-MIK-L71",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The reference retains every accepted settings key and states its reader/enforcer or no-reader boundary. Onboarding obtains provider/mode/feature choices from the existing public options catalog with the host running.",
+  "status": "proposed",
+  "supersedes": []
+}

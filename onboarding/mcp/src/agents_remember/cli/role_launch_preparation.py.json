@@ -3,8 +3,26 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "dd77ddbc02a7e4cd350b49dd61d06268c62be4f7",
-        "content": "sha256:7d46fe74bd30e9d8dea0f35c71b38ff1489d500369e03615c1b7545f9503d3d0",
+        "blob": "b8f7c722099e623377ad8688de7d5eca403ba590",
+        "content": "sha256:e41abed441671a85b892d5fe420194995b25d8848c83adf97e81323afd6b6adc",
+        "locator": {
+          "kind": "symbol",
+          "name": "_task_document_read_metadata"
+        }
+      },
+      "id": "RLZ-091N3N",
+      "invariant": "INV-QZP9PM",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-14",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "The handover metadata names only a leaf own copy or the controller own canonical Markdown path and distinguishes taskless/outside-working-folder states.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "b8f7c722099e623377ad8688de7d5eca403ba590",
+        "content": "sha256:95928a873913115c0000a9ea734dd21f9ccb317e633bbb86f902276fd24b2e38",
         "locator": {
           "kind": "symbol",
           "name": "prepare_role_handover"
@@ -21,8 +39,8 @@
     },
     {
       "anchor": {
-        "blob": "dd77ddbc02a7e4cd350b49dd61d06268c62be4f7",
-        "content": "sha256:586dcdf53c397c10296da81a6d4c524a9492bf0a01a7c2e35f3f0034c0b0cdf5",
+        "blob": "b8f7c722099e623377ad8688de7d5eca403ba590",
+        "content": "sha256:37b43302004eb0989ddad80f5ee6da85718caf1eb7750b8e5cb1d470b00432cc",
         "locator": {
           "kind": "symbol",
           "name": "_compile_handover"
@@ -39,8 +57,8 @@
     },
     {
       "anchor": {
-        "blob": "dd77ddbc02a7e4cd350b49dd61d06268c62be4f7",
-        "content": "sha256:586dcdf53c397c10296da81a6d4c524a9492bf0a01a7c2e35f3f0034c0b0cdf5",
+        "blob": "b8f7c722099e623377ad8688de7d5eca403ba590",
+        "content": "sha256:37b43302004eb0989ddad80f5ee6da85718caf1eb7750b8e5cb1d470b00432cc",
         "locator": {
           "kind": "symbol",
           "name": "_compile_handover"
@@ -57,8 +75,26 @@
     },
     {
       "anchor": {
-        "blob": "dd77ddbc02a7e4cd350b49dd61d06268c62be4f7",
-        "content": "sha256:7d46fe74bd30e9d8dea0f35c71b38ff1489d500369e03615c1b7545f9503d3d0",
+        "blob": "b8f7c722099e623377ad8688de7d5eca403ba590",
+        "content": "sha256:8aeb4c9c5feaf03555182b2ce173b50d4b63d042afdcedddcfccbd9cfb055bda",
+        "locator": {
+          "kind": "symbol",
+          "name": "_prepare_role_folders"
+        }
+      },
+      "id": "RLZ-5H4QN7",
+      "invariant": "INV-8XCZY1",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-09",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "Preparation allocates request/role-local report and scratch roots, so another agent half-writing a file cannot block this agent collection.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "b8f7c722099e623377ad8688de7d5eca403ba590",
+        "content": "sha256:95928a873913115c0000a9ea734dd21f9ccb317e633bbb86f902276fd24b2e38",
         "locator": {
           "kind": "symbol",
           "name": "prepare_role_handover"
@@ -75,7 +111,7 @@
     },
     {
       "anchor": {
-        "blob": "dd77ddbc02a7e4cd350b49dd61d06268c62be4f7",
+        "blob": "b8f7c722099e623377ad8688de7d5eca403ba590",
         "content": "sha256:a3d7a97f320d80d5444f516b79094467bf76db8e2b049ee68ae0dddb4ca54bb7",
         "locator": {
           "kind": "symbol",
@@ -93,8 +129,44 @@
     },
     {
       "anchor": {
-        "blob": "dd77ddbc02a7e4cd350b49dd61d06268c62be4f7",
-        "content": "sha256:928d9454d113bea6db778ef9f9f9520800a68db93168be0fc33d5e65099a5f81",
+        "blob": "b8f7c722099e623377ad8688de7d5eca403ba590",
+        "content": "sha256:ae9169abae6738fc9a561547d75cdeb72f64e1473ecaf76aed6a1ac03b18a254",
+        "locator": {
+          "kind": "symbol",
+          "name": "_prepare_task_document_files"
+        }
+      },
+      "id": "RLZ-AZVMM0",
+      "invariant": "INV-J3PYB0",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-13",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "Start preparation publishes the copies before creating the leaf agent and refuses a leaf lacking an enclosure instead of inventing another placement.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "b8f7c722099e623377ad8688de7d5eca403ba590",
+        "content": "sha256:367b623d0c9136729dec508d9dd1bbff6a5520b04b3ef4b2ff625e4e620874be",
+        "locator": {
+          "kind": "symbol",
+          "name": "_role_defaults"
+        }
+      },
+      "id": "RLZ-FGXVSQ",
+      "invariant": "INV-WT3VCM",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-02",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "The preparation owner carries resolved fieldOrigins and the actual host profile into one launch-default record, keeping authored per-level provider origins.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "b8f7c722099e623377ad8688de7d5eca403ba590",
+        "content": "sha256:735a352fa76546a7d51c101fcf94a9013da1849970eb0a08941917f14aa5d412",
         "locator": {
           "kind": "symbol",
           "name": "_role_assignment"
@@ -111,8 +183,8 @@
     },
     {
       "anchor": {
-        "blob": "dd77ddbc02a7e4cd350b49dd61d06268c62be4f7",
-        "content": "sha256:a34b86de18759d4d0b8be0def80ca7c638f2f37cff046e23af4a8f36e971b765",
+        "blob": "b8f7c722099e623377ad8688de7d5eca403ba590",
+        "content": "sha256:7a8cad7a4059cc95233992378766546c30d7689d21ead9faa255fc9c33ece757",
         "locator": {
           "kind": "symbol",
           "name": "_role_report_path"
@@ -129,7 +201,7 @@
     },
     {
       "anchor": {
-        "blob": "dd77ddbc02a7e4cd350b49dd61d06268c62be4f7",
+        "blob": "b8f7c722099e623377ad8688de7d5eca403ba590",
         "content": "sha256:a22825664b51defd28eec8a582fb0e965eb88368f049472166db4e2d8324a82b",
         "locator": {
           "kind": "symbol",
@@ -147,7 +219,25 @@
     },
     {
       "anchor": {
-        "blob": "dd77ddbc02a7e4cd350b49dd61d06268c62be4f7",
+        "blob": "b8f7c722099e623377ad8688de7d5eca403ba590",
+        "content": "sha256:37b43302004eb0989ddad80f5ee6da85718caf1eb7750b8e5cb1d470b00432cc",
+        "locator": {
+          "kind": "symbol",
+          "name": "_compile_handover"
+        }
+      },
+      "id": "RLZ-KABSJ7",
+      "invariant": "INV-QZP9PM",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-14",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "The first-read text uses the supplied file path and task_doc-only write rule, rather than a whole-document MCP response.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "b8f7c722099e623377ad8688de7d5eca403ba590",
         "content": "sha256:bd8af18ca2eff8d6a7662ba658b40e59544148e37db473109d111c57587f7e4f",
         "locator": {
           "kind": "symbol",
@@ -186,7 +276,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dd77ddbc02a7e4cd350b49dd61d06268c62be4f7",
+            "blob": "b8f7c722099e623377ad8688de7d5eca403ba590",
             "content": "sha256:ccc44177e1d12dd63e0f1295ddff48791c1fa44598ac39a5577e663d467bc6d9",
             "locator": {
               "kind": "symbol",

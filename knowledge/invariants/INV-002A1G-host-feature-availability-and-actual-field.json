@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "family_guarantee"
+    ],
+    "justification": "Spans every host launch surface: the bearing rule (speed choices accepted, permission-bearing refused unless authorized, unknown refused) is the filter FAM-N17BB4's launch-choice guarantee depends on — without it the family could carry an unauthorized choice onto the create call."
+  },
+  "applicability": "Every host feature value presented for launch acceptance.",
+  "conditions": [
+    "The host names the feature's availability for the selected provider and model.",
+    "The value's actual field meaning (speed vs permission-bearing vs unknown) is established."
+  ],
+  "exclusions": [
+    "Values whose bearing is unknown, which are refused.",
+    "Permission policy, which stays distinct from speed controls."
+  ],
+  "id": "INV-002A1G",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/notes/reports/role-launch/260928-MIK-L71-worker-d508f3cc-d109-host-readers/source-current-a1b7/source26-public-sync/generation15-five-pin-successor/expanded-evidence.md"
+      ],
+      "path": "l71-handoff-list.json"
+    },
+    "handoffEntry": "L71-CURRENT242-W-05",
+    "leaf": "260928-MIK-L71",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Host feature availability and actual field meaning govern acceptance: service_tier/fast_mode and serviceTier are speed choices; plan_mode/auto_accept are permission-bearing; unknown bearing is refused.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "a7fe51d55b2a2fe943c30cf342cfeff1f4aebc9d",
-        "content": "sha256:f09c6a80b2392d4a497ff0c917236932ce908f2dcd5dd4aec988dadd81edaefe",
+        "blob": "a0e62b1361ebc00a003ce4bd08ad611a104aed67",
+        "content": "sha256:a721d4aee179de046d5e84f55e6012ec238440b455fc0ce006967830f5182bbe",
         "locator": {
           "kind": "file"
         }
@@ -16,6 +16,23 @@
         "leaf": "260928-MIK-L99"
       },
       "rationale": "bootstrap receives the same assignment autonomy and responsibility bounds in its own composed role text.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "01de4de8163995d1964fbcb12dce9f3ffd34239f",
+        "content": "sha256:045b7e0337b5c8f8668945f9f120cfb71c17c823e3a19c9414b917dd99ae12df",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-3QBDFJ",
+      "invariant": "INV-NNQR91",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-19",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "The canonical roles/bootstrap.md carries the applicable own-file first-read/task_doc-only write and report/scratch instructions for its role/operation; it is the source the public generator ships.",
       "role": "primary-authority"
     }
   ],

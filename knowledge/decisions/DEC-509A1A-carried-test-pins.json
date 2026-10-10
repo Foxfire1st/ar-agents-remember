@@ -1,0 +1,48 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "Product repair inside L71 was the live alternative (the sweep pins record real error-arm gaps); carrying test-only pins with named removal owners was chosen by Architect ruling d246006f and Owner admission db4a51b4. It constrains L111 (lifecycle repairs) and L110 (MQ projection) to own the deferred repairs."
+  },
+  "alternatives": [
+    {
+      "option": "Carry the four lifecycle error-arm pins and the one unmarked memory_quality_check pin as test-only boundaries with named removal owners (L111 for lifecycle, L110 for MQ projection).",
+      "reason": "The pins record exact current behavior without claiming product acceptance; the deferred repairs land in the leaves that own those surfaces.",
+      "status": "chosen"
+    },
+    {
+      "option": "Repair the pinned behavior in the L71 product code now.",
+      "reason": "Declined by Architect d246006f: the repairs belong to the lifecycle and MQ-projection surfaces, not to the role-settings leaf.",
+      "reconsider_when": "L111 or L110 land their repairs, at which point the corresponding pins are removed by their named owners.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Exact pin equality and the original T34 controls remain in the sweep.",
+    "No new finding IDs and no product acceptance are read from the carried pins.",
+    "Four lifecycle repairs belong to L111 and MQ projection to L110."
+  ],
+  "context": "Architect ruling d246006f (declined product repair in L71) and Owner admission db4a51b4 (exactly two pin hunks) on leaf 260928-MIK-L71.",
+  "decider": "architect (d246006f) and Owner (db4a51b4), carried by Owner semantic case 4ef8129e",
+  "id": "DEC-509A1A",
+  "links": [
+    {
+      "relation": "explains",
+      "target": "INV-TG334W"
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "l71-handoff-list.json"
+    },
+    "handoffEntry": "l71-carried-test-pins",
+    "leaf": "260928-MIK-L71",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

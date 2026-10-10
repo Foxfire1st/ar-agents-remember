@@ -1,6 +1,24 @@
 {
   "path": "mcp/src/agents_remember/kernel/coordination_context/settings.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "5e4ce825f323526337234f4b1ed2d42ece6e3bf9",
+        "content": "sha256:bcfcc2a9143047203a87e978e8b8c1e79645bb3ca80dce3c03ad187305d26f0e",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-3F7134",
+      "invariant": "INV-B7D1WM",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-15",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "Coordination context reads retain their authority/config boundaries while routing the user layer through the migrated path.",
+      "role": "propagation-persistence"
+    }
+  ],
   "references": {
     "4": {
       "note": "The JSON sibling first, then the default, then the fenced Markdown blocks, all through the recorder.",
@@ -40,7 +58,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "badb1f072d8ac23acfd48cfd0400e7db7e2f5c30",
+            "blob": "b8f75c0db0ff78135ca05f2e8d2d82d0a8f2350e",
             "content": "sha256:c078ebe5f0226cd4aa3168108fd2f8acc48329db8769a74229b8890efb901816",
             "locator": {
               "kind": "symbol",

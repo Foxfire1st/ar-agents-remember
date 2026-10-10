@@ -1,6 +1,24 @@
 {
   "path": "mcp/src/agents_remember/kernel/_agentic_settings_core.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "308164ec1fe3322d0b4a5a269cb74d351d714d22",
+        "content": "sha256:0e26822b02b5e8a2a23218265fc65791b625ff4da1b3c3844bdbfefdcfe1b1f7",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-KN3CBB",
+      "invariant": "INV-VKTCC4",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-03",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "Role defaults retain accepted mode/notes/featureValues keys in the existing settings-owned schema rather than a second public policy schema.",
+      "role": "support"
+    }
+  ],
   "references": {
     "1": {
       "note": "Frozen implementation of RoleKnobs supporting the stated file behavior.",

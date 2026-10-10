@@ -7,12 +7,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "832fd9e72f4012320be42897be95764fcd17658e",
+            "blob": "567534db3b57374c4e2eb55844b1ac276bdaa7e8",
             "content": "sha256:35060cdf1a6f2cf8755ce8a6e9e698c5d3268f8e7c527e2f29104d38d458382f",
             "locator": {
-              "end": 649,
+              "end": 667,
               "kind": "line_range",
-              "start": 649
+              "start": 667
             },
             "path": "mcp/src/agents_remember/tasks/document.py"
           },
@@ -33,7 +33,7 @@
         },
         {
           "anchor": {
-            "blob": "7594b74ca357e630326dc07bacf00771d8aabf25",
+            "blob": "cd24d245a0ef800a3673fd36ae43ad19a28af78a",
             "content": "sha256:6e53dbcb18a140b75d4bfeb218f4873ea7447c100ca3d7c74d73a56455f452b5",
             "locator": {
               "end": 124,
@@ -51,7 +51,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d82759802e5fc502d133aec8c52295c77bfa992f",
+            "blob": "f9253d15cde4d77f06017c9600f00c1e89944615",
             "content": "sha256:96e6b89fd9d1e8879d08f0ab6f0a537ce90a6756e10026c4479274dbe0ee721d",
             "locator": {
               "end": 15,
@@ -80,7 +80,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d82759802e5fc502d133aec8c52295c77bfa992f",
+            "blob": "f9253d15cde4d77f06017c9600f00c1e89944615",
             "content": "sha256:d2622e51d0765e45b27e6115da1c776a7b64811687bbba6cad83212d1b74c980",
             "locator": {
               "end": 17,
@@ -92,12 +92,12 @@
         },
         {
           "anchor": {
-            "blob": "d82759802e5fc502d133aec8c52295c77bfa992f",
+            "blob": "f9253d15cde4d77f06017c9600f00c1e89944615",
             "content": "sha256:6d215ca34d652dd2376c7b5d4a12c6bdfa5ab067e67787fb62b88f69eae66ffb",
             "locator": {
-              "end": 71,
+              "end": 75,
               "kind": "line_range",
-              "start": 71
+              "start": 75
             }
           },
           "kind": "code"

@@ -3,8 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "52275d0af2da30b946b20bfb8f1462cd14266877",
-        "content": "sha256:c57a9847cfdc8c3d17668bbb395e990658c1bf06b3956bc77eeb1c5f15b7e0d1",
+        "blob": "02677b4e360f93f17905c5bb061817767369ac52",
+        "content": "sha256:c34593798af3d2f6b310896a7b3b721a87dd26023eb54e8f8fb873e57981594b",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-88JBV4",
+      "invariant": "INV-NNQR91",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-19",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "The canonical install/onboarding interview names the public host catalog and user-config setup prerequisite; generated copies derive from this owner.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "02677b4e360f93f17905c5bb061817767369ac52",
+        "content": "sha256:c34593798af3d2f6b310896a7b3b721a87dd26023eb54e8f8fb873e57981594b",
         "locator": {
           "kind": "file"
         }
@@ -17,6 +34,23 @@
       },
       "rationale": "This common install procedure teaches the shared setup, public host result and executable single-start route, and is the source regenerated into each harness skill copy.",
       "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "02677b4e360f93f17905c5bb061817767369ac52",
+        "content": "sha256:c34593798af3d2f6b310896a7b3b721a87dd26023eb54e8f8fb873e57981594b",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-KW0J8V",
+      "invariant": "INV-DKN3CG",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-18",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "Onboarding uses the public dashboard options route per agent kind, so a fresh install needs no guessed task-bound role selection or second catalog.",
+      "role": "presentation"
     }
   ],
   "references": {},

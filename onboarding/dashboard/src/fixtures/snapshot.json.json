@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "669cc52a8678baebdc75f44c4138b8e92d5f09ca",
+            "blob": "f9054d3ef622e62a8ca0fce134c695cbd66003c0",
             "content": "sha256:2e00ca726941656e14bae55188c848c704fabb1beb53c9da3404ef3e655e0fcc",
             "locator": {
               "end": 609,
@@ -267,7 +267,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "669cc52a8678baebdc75f44c4138b8e92d5f09ca",
+            "blob": "f9054d3ef622e62a8ca0fce134c695cbd66003c0",
             "content": "sha256:c728004edefb88962a4df291ac88371951e96cbfc685428104dbcb65bf89d2f1",
             "locator": {
               "end": 380,
@@ -279,12 +279,12 @@
         },
         {
           "anchor": {
-            "blob": "669cc52a8678baebdc75f44c4138b8e92d5f09ca",
+            "blob": "f9054d3ef622e62a8ca0fce134c695cbd66003c0",
             "content": "sha256:4407611e9fb68657eca80fe7a58690d9b0fd595f6e254a5beff93acd8e7476f7",
             "locator": {
-              "end": 1789,
+              "end": 1791,
               "kind": "line_range",
-              "start": 1166
+              "start": 1168
             }
           },
           "kind": "code"
@@ -330,7 +330,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "669cc52a8678baebdc75f44c4138b8e92d5f09ca",
+            "blob": "f9054d3ef622e62a8ca0fce134c695cbd66003c0",
             "content": "sha256:f8f905f07141c8e18288d136810b169d10609ca229a5e116b06d07633d028e0c",
             "locator": {
               "end": 2,
@@ -398,7 +398,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "29a3f96c4fa5cc4abbdf34ff8486e4ee5a0c46c1",
+            "blob": "17f2d4a842a364ac445a776090637c466711b266",
             "content": "sha256:301ef8d70dd58cfea37fec34be64e52db39dffa54148fef28bedb99d169f90f3",
             "locator": {
               "kind": "symbol",
@@ -423,12 +423,12 @@
         },
         {
           "anchor": {
-            "blob": "29a3f96c4fa5cc4abbdf34ff8486e4ee5a0c46c1",
+            "blob": "17f2d4a842a364ac445a776090637c466711b266",
             "content": "sha256:2dfa2f1d1342ac25ff477dbf50ad77de717e45968146868d957a99aa22099c1e",
             "locator": {
-              "end": 1143,
+              "end": 1147,
               "kind": "line_range",
-              "start": 1121
+              "start": 1125
             },
             "path": "mcp/src/agents_remember/observer/projection.py"
           },

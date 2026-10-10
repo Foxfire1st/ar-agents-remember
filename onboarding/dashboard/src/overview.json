@@ -174,7 +174,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cee16fce97e5e76b33e52e9b0d606b87481c9758",
+            "blob": "32f61ad92158b8a4519a35f725ce765c87f2ec99",
             "content": "sha256:46894d777463298a1a95031da8c618c203b9bf1480eda1c328419e41a1166d1d",
             "locator": {
               "end": 363,
@@ -192,12 +192,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "669cc52a8678baebdc75f44c4138b8e92d5f09ca",
+            "blob": "f9054d3ef622e62a8ca0fce134c695cbd66003c0",
             "content": "sha256:560447f96afcb217ab90fa5111598800172021ef00f1a20cde938fe0254d9cc0",
             "locator": {
-              "end": 1224,
+              "end": 1226,
               "kind": "line_range",
-              "start": 1223
+              "start": 1225
             },
             "path": "dashboard/src/fixtures/snapshot.json"
           },
@@ -245,7 +245,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f907717bf9460d7f6facca800810459ce72ecbdf",
+            "blob": "76c1e952f0b6c4c9d708c3edf4cd8b28c0f764ff",
             "content": "sha256:c85239fff8d91f8454fdbeaf8b8863fb9f8ad9198a009b0d1fcb32a7814d6513",
             "locator": {
               "end": 389,
@@ -263,7 +263,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f907717bf9460d7f6facca800810459ce72ecbdf",
+            "blob": "76c1e952f0b6c4c9d708c3edf4cd8b28c0f764ff",
             "content": "sha256:c1fda8ac10daf4bfeb28f1a9a5162bdf98c3e127b6f7114bdb43075d05e87938",
             "locator": {
               "end": 414,
@@ -276,12 +276,12 @@
         },
         {
           "anchor": {
-            "blob": "f907717bf9460d7f6facca800810459ce72ecbdf",
+            "blob": "76c1e952f0b6c4c9d708c3edf4cd8b28c0f764ff",
             "content": "sha256:e48fa5053b848932fff47d4fd3283fd08e1d57057af51e6fe91c5b577ae2192f",
             "locator": {
-              "end": 581,
+              "end": 587,
               "kind": "line_range",
-              "start": 581
+              "start": 587
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -294,7 +294,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f907717bf9460d7f6facca800810459ce72ecbdf",
+            "blob": "76c1e952f0b6c4c9d708c3edf4cd8b28c0f764ff",
             "content": "sha256:34571ca86d73641d676acb35c8c10396e970251b142939f19ddf94b090426d1b",
             "locator": {
               "end": 36,
@@ -435,7 +435,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f907717bf9460d7f6facca800810459ce72ecbdf",
+            "blob": "76c1e952f0b6c4c9d708c3edf4cd8b28c0f764ff",
             "content": "sha256:c8a70740d4932f44fcd17ddf4a9effdd40f8e1654cf88a9bfacb1b2ff0886d5f",
             "locator": {
               "kind": "symbol",
@@ -522,12 +522,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f907717bf9460d7f6facca800810459ce72ecbdf",
+            "blob": "76c1e952f0b6c4c9d708c3edf4cd8b28c0f764ff",
             "content": "sha256:54e7d063e5ed2db70b84ca8cc17247ef519a4a9a03e43c29ac0480dd70c88d2a",
             "locator": {
-              "end": 787,
+              "end": 801,
               "kind": "line_range",
-              "start": 786
+              "start": 800
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -788,7 +788,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f907717bf9460d7f6facca800810459ce72ecbdf",
+            "blob": "76c1e952f0b6c4c9d708c3edf4cd8b28c0f764ff",
             "content": "sha256:19ba28765718f373b4b70dd594224499bd1aeb2c6cf77d848967a7e4dc4ade1f",
             "locator": {
               "kind": "symbol",

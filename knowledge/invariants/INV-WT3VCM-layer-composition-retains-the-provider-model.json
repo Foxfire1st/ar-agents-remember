@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "family_guarantee"
+    ],
+    "justification": "Spans composition layers: retaining each authored choice's provider/model binding and explaining incompatible lower choices as non-applicable (never reinterpreted) keeps FAM-N17BB4's carried choices faithful per layer."
+  },
+  "applicability": "Every composition of authored settings layers that carries provider/model bindings.",
+  "conditions": [
+    "Both the higher and the lower layer author a choice for the same slot.",
+    "Composition runs through the existing loader."
+  ],
+  "exclusions": [
+    "Reinterpretation of a lower choice for a higher-layer provider.",
+    "Presentation-only omission text, which carries no binding."
+  ],
+  "id": "INV-WT3VCM",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/notes/reports/role-launch/260928-MIK-L71-worker-d508f3cc-d109-host-readers/source-current-a1b7/source26-public-sync/generation15-five-pin-successor/expanded-evidence.md"
+      ],
+      "path": "l71-handoff-list.json"
+    },
+    "handoffEntry": "L71-CURRENT242-W-02",
+    "leaf": "260928-MIK-L71",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Layer composition retains the provider/model binding of each authored choice; an incompatible lower choice is explained as non-applicable rather than reinterpreted for a higher-layer provider.",
+  "status": "proposed",
+  "supersedes": []
+}

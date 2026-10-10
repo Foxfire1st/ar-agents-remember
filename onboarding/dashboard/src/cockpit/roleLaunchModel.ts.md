@@ -6,11 +6,11 @@
 
 ## Purpose
 
-The pure model carries canonical role/document/request identity and validates advertised agent/model/effort/tier selection.
+The pure model carries canonical role/document/request identity and validates advertised agent/model/effort/mode/feature selection.
 
 ## Code Commentary
 
-Topology helpers enforce the seven roles' canonical reference needs. Taskless metadata and exact scope comparators preserve active request identity. Role model applies on the role agent, effort on its role model, and service tier on its role agent even for a model override. Fast maps to priority; another agent uses native tier default.
+Topology helpers enforce the seven roles' canonical reference needs. Taskless metadata and exact scope comparators preserve active request identity. Role model applies on the role agent, effort on its role model, and service tier on its role agent even for a model override. Fast maps to priority; another agent uses native tier default. Model rows carry host-offered `features` with permission-bearing marks and agents carry `modes`; defaults carry `mode`, `featureValues` and per-choice sources. `agentId` is optional so defaults can stand without an explicit selection, `roleAgentOverrideFor` preserves explicit speed values through model and effort changes, and selection equality compares sorted feature entries.
 
 ## Invariants And Boundaries
 

@@ -10,7 +10,7 @@ Defines canonical role selections and HTTP launcher call models.
 
 ## Code Commentary
 
-RoleSelection carries exact sprint/master/leaf references; request aliases keep the current role/Paseo vocabulary. RoleAgentOverride separates agent/model/effort; service tier is inherited native configuration and its capability projections rather than a Boolean fast transport alias. RoleDispatchRequest distinguishes start/revive under the saved request UUID.
+RoleSelection carries exact sprint/master/leaf references; request aliases keep the current role/Paseo vocabulary. RoleAgentOverride separates agent/model/effort/feature values with an optional agent id; service tier is inherited native configuration and its capability projections rather than a Boolean fast transport alias. `featureValues` carries strict booleans or option ids, and the override states no mode. RoleDispatchRequest distinguishes start/revive under the saved request UUID.
 
 ## Evidence
 
