@@ -39,6 +39,17 @@ guards the `linkedLifecycleId` cross-series jump; `TaskBodyNotice` reflects the
 on-demand body state; the small primitives (`Section`, `Bullets`, `StepList`,
 `CodeExample`) render markdown-model content without a markdown renderer.
 
+### 260928-MIK-L126 Current Delta — Decision Preview
+
+`DecisionPreview` draws the five newest authored decisions newest-first with an
+`all N decisions` link opening the whole log on its own reader page. Ordering comes from
+`orderDecisionsNewestFirst` (parsed recorded time, stable fallback); product-written records
+are muted per the architect time-order ruling. The task page mounts the `TaskNotes` line,
+references and recorded reports; the preview's `DecisionList` (taskReader line 776,
+used by `DecisionPreview` at 821) renders the newest five on the task page, while
+the whole log renders separately in the reader (`DecisionsPane` at
+NotesReaderViewer 457 onward, newest-first, product records muted).
+
 ### Conventions
 
 Presentational grammar; the panel owns data wiring.
@@ -62,10 +73,13 @@ No relevant domain documentation was found.
 
 ### Repo-Internal References
 
-- The reader entry and master overview mount optional graph content and the independently scoped queue. [1]
+- The reader entry and master overview mount optional graph content. [1]
 - The sub-task index composes rows in received order. [2]
 - The slice list orders and opens authored task documents. [3]
 - StepList renders implementation steps, nested substeps, and explicit skip dispositions. [4]
+
+- The preview draws five newest decisions with the whole-log link. [5]
+- The task page mounts the notes line, references and reports. [6]
 
 ### Cross-Repo References
 

@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "a90c6c292d8e3f9c2e31f0e20dbe6b34d4c752ab",
+        "blob": "67ed611ecae6afb009c83e58fac07d3eafb62ade",
         "content": "sha256:eca098b79e309ce0c237f71f4a4ccb60f6bfe8698f2c32717d78e4ddef07f7d0",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "a90c6c292d8e3f9c2e31f0e20dbe6b34d4c752ab",
+        "blob": "67ed611ecae6afb009c83e58fac07d3eafb62ade",
         "content": "sha256:4536f1dad01450a083aed799544333d7d5a051dc4c979c5033240f716dd72d74",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "a90c6c292d8e3f9c2e31f0e20dbe6b34d4c752ab",
+        "blob": "67ed611ecae6afb009c83e58fac07d3eafb62ade",
         "content": "sha256:f8e6fe843176ce434cc761eed7059022194bbb0a5c4a4a8af3bea4060bc772e8",
         "locator": {
           "kind": "symbol",
@@ -57,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "a90c6c292d8e3f9c2e31f0e20dbe6b34d4c752ab",
+        "blob": "67ed611ecae6afb009c83e58fac07d3eafb62ade",
         "content": "sha256:39a67c309aec67de63eed5e1df9006c8e9dc3c23ddeeee08677bdcda5145db9d",
         "locator": {
           "kind": "symbol",
@@ -75,8 +75,8 @@
     },
     {
       "anchor": {
-        "blob": "a90c6c292d8e3f9c2e31f0e20dbe6b34d4c752ab",
-        "content": "sha256:9ef080f478475095ba1e277f57d5ba97034a0b129a3b2d625b9974a859bf8c98",
+        "blob": "67ed611ecae6afb009c83e58fac07d3eafb62ade",
+        "content": "sha256:805e45c71f138cb1bae540f663efc3d1112cf2d838c430de1aae50607e1c1d7f",
         "locator": {
           "kind": "symbol",
           "name": "read_role_report"
@@ -90,18 +90,71 @@
       },
       "rationale": "The route's one function: it resolves the execution from the launcher's own selection, requires the recorded canonical report and answers every refusal by name.",
       "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "67ed611ecae6afb009c83e58fac07d3eafb62ade",
+        "content": "sha256:805e45c71f138cb1bae540f663efc3d1112cf2d838c430de1aae50607e1c1d7f",
+        "locator": {
+          "kind": "symbol",
+          "name": "read_role_report"
+        }
+      },
+      "id": "RLZ-SHTV3H",
+      "invariant": "INV-P2KSPN",
+      "origin": {
+        "handoffEntry": "MIK-R126@v1 rule 5",
+        "leaf": "260928-MIK-L126"
+      },
+      "rationale": "This route completes the page exact task-only target to the canonical chain and opens live and archived receipts through the confined report path with all refusals intact.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "67ed611ecae6afb009c83e58fac07d3eafb62ade",
+        "content": "sha256:aae4ce295eec7cb19758ecfdc94fc2320e525a8c8143706d3e87f50d144f1e78",
+        "locator": {
+          "kind": "symbol",
+          "name": "list_task_reports"
+        }
+      },
+      "id": "RLZ-VVYQQS",
+      "invariant": "INV-P2KSPN",
+      "origin": {
+        "handoffEntry": "MIK-R126@v1 rule 5",
+        "leaf": "260928-MIK-L126"
+      },
+      "rationale": "This route reads the recorded starts from receipt current-plus-history files, filters by the recorded task reference and caps at twenty.",
+      "role": "primary-authority"
     }
   ],
   "references": {
     "1": {
-      "note": "The route's one function: resolves the execution from the launcher's own selection, requires the recorded canonical report and answers every refusal by name.\n\nAnchor: `read_role_report`",
+      "note": "The route resolves the execution and requires the recorded canonical report.",
       "targets": [
         {
           "anchor": {
-            "blob": "a90c6c292d8e3f9c2e31f0e20dbe6b34d4c752ab",
-            "content": "sha256:560bfa5c48dbbf7cb2dfb87ac6f95a5a5db541a1d650f85b3a1813e42f8211b3",
+            "blob": "67ed611ecae6afb009c83e58fac07d3eafb62ade",
+            "content": "sha256:805e45c71f138cb1bae540f663efc3d1112cf2d838c430de1aae50607e1c1d7f",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "read_role_report"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The row cap bounds the reports answer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "67ed611ecae6afb009c83e58fac07d3eafb62ade",
+            "content": "sha256:ffb85f292bf6b701407db95ad76019afc961a57b47bb36df6b6fe27f5428ced2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_TASK_REPORT_ROWS"
             }
           },
           "kind": "code"
@@ -109,14 +162,15 @@
       ]
     },
     "2": {
-      "note": "Requires the recorded file to be the launch-derived name directly under the exact report root, and refuses a sibling, handover or nested replacement.\n\nAnchor: `_recorded_report_path`",
+      "note": "The recorded file must be the launch-derived name directly under the root.",
       "targets": [
         {
           "anchor": {
-            "blob": "a90c6c292d8e3f9c2e31f0e20dbe6b34d4c752ab",
-            "content": "sha256:560bfa5c48dbbf7cb2dfb87ac6f95a5a5db541a1d650f85b3a1813e42f8211b3",
+            "blob": "67ed611ecae6afb009c83e58fac07d3eafb62ade",
+            "content": "sha256:4536f1dad01450a083aed799544333d7d5a051dc4c979c5033240f716dd72d74",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "_recorded_report_path"
             }
           },
           "kind": "code"
@@ -128,7 +182,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a90c6c292d8e3f9c2e31f0e20dbe6b34d4c752ab",
+            "blob": "67ed611ecae6afb009c83e58fac07d3eafb62ade",
             "content": "sha256:39a67c309aec67de63eed5e1df9006c8e9dc3c23ddeeee08677bdcda5145db9d",
             "locator": {
               "kind": "symbol",
@@ -140,14 +194,15 @@
       ]
     },
     "4": {
-      "note": "The read-only regular-file read with the bounded size and truncation contract.\n\nAnchor: `_read_report_file`",
+      "note": "The read-only regular-file read with bounded size.",
       "targets": [
         {
           "anchor": {
-            "blob": "a90c6c292d8e3f9c2e31f0e20dbe6b34d4c752ab",
-            "content": "sha256:560bfa5c48dbbf7cb2dfb87ac6f95a5a5db541a1d650f85b3a1813e42f8211b3",
+            "blob": "67ed611ecae6afb009c83e58fac07d3eafb62ade",
+            "content": "sha256:f8e6fe843176ce434cc761eed7059022194bbb0a5c4a4a8af3bea4060bc772e8",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "_read_report_file"
             }
           },
           "kind": "code"
@@ -155,12 +210,28 @@
       ]
     },
     "5": {
-      "note": "Serves the canonical file when the task's report-access alias is absent and refuses an actually retargeted alias distinctly.\n\nAnchor: `_report_access_refusal`",
+      "note": "The canonical file serves when the access alias is absent.",
       "targets": [
         {
           "anchor": {
-            "blob": "a90c6c292d8e3f9c2e31f0e20dbe6b34d4c752ab",
-            "content": "sha256:560bfa5c48dbbf7cb2dfb87ac6f95a5a5db541a1d650f85b3a1813e42f8211b3",
+            "blob": "67ed611ecae6afb009c83e58fac07d3eafb62ade",
+            "content": "sha256:eca098b79e309ce0c237f71f4a4ccb60f6bfe8698f2c32717d78e4ddef07f7d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_report_access_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The file's Investigator boundary and request identity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "67ed611ecae6afb009c83e58fac07d3eafb62ade",
+            "content": "sha256:136cd216837d91f2b8723c795419a2bd4c28c506fce43fa8db945504da30a2fd",
             "locator": {
               "kind": "file"
             }
@@ -169,17 +240,48 @@
         }
       ]
     },
-    "6": {
-      "note": "The current source implements this file’s stated Investigator boundary.",
+    "7": {
+      "note": "The listing reads recorded starts filtered by task, capped at twenty.",
       "targets": [
         {
           "anchor": {
-            "blob": "a90c6c292d8e3f9c2e31f0e20dbe6b34d4c752ab",
-            "content": "sha256:560bfa5c48dbbf7cb2dfb87ac6f95a5a5db541a1d650f85b3a1813e42f8211b3",
+            "blob": "67ed611ecae6afb009c83e58fac07d3eafb62ade",
+            "content": "sha256:aae4ce295eec7cb19758ecfdc94fc2320e525a8c8143706d3e87f50d144f1e78",
             "locator": {
-              "end": 179,
-              "kind": "line_range",
-              "start": 1
+              "kind": "symbol",
+              "name": "list_task_reports"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The page target completes to the canonical task chain.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "67ed611ecae6afb009c83e58fac07d3eafb62ade",
+            "content": "sha256:f940653ad53c1140e1c8395fbf4cc0e5ff5833bc4e4803396251eca5afbb8df0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_complete_task_selection"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Live and archived receipts open through the confined path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "67ed611ecae6afb009c83e58fac07d3eafb62ade",
+            "content": "sha256:805e45c71f138cb1bae540f663efc3d1112cf2d838c430de1aae50607e1c1d7f",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_role_report"
             }
           },
           "kind": "code"

@@ -12,6 +12,13 @@ The focused suite proves the one read-only report route's serving, confinement a
 
 Coverage: every launchable role's report is read unchanged (task-bound and taskless); a caller cannot name a path; missing, unreadable and outside-root reports each answer their own refusal; a rewritten receipt cannot substitute a sibling, handover or nested file; a damaged, non-regular or symlinked receipt answers the report-specific refusal; an absent access alias still serves the canonical file while a retargeted alias gets its own refusal; a FIFO is refused before opening; the read is bounded; another execution or selection cannot read the report.
 
+### 260928-MIK-L126 Current Delta — Task-Page Report Targets
+
+Two cases prove the task page's exact report targets: a task-page target opens current and
+archived role starts, and keeps the exact request identity through refusals
+(L126-CODE-10). The listing and cap live in the companion `test_task_reports_listing.py`
+suite.
+
 ## Invariants And Boundaries
 
 These are behavioral tests of the route on synthetic receipts and reports. They do not establish a live host, a real report's content, or an acceptance verdict, and the fixture world is built per test.

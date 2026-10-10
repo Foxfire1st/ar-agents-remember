@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "spans_locations"
+    ],
+    "justification": "Listing and read tests pin the newest-first cap, task filter, nulls, refusals and exact live/archived targets; the single-request resolve test pins bounded resolution; the obligation spans the serving endpoint and the report routes in two files."
+  },
+  "applicability": "Every task page showing references or recorded role starts, on any master.",
+  "conditions": [
+    "References resolve in one server request; null stays plain text; nested-only bare names stay text while pathed and top-folder bare names link per the Parent reference-format disposition.",
+    "Recorded starts render newest-first capped at twenty with an explorer link; report targets open the exact recorded report for live and archived starts with all refusals intact."
+  ],
+  "exclusions": [
+    "Resolution performs no tree search; cost is bounded by reference count, not tree size.",
+    "Null report paths render no dead link."
+  ],
+  "id": "INV-P2KSPN",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "listing tests + read tests (live/archived open, refusals incl. preserved partial-chain 409); pytest green"
+      ],
+      "path": "notes/reports/role-launch/260928-MIK-L126-curator-handoff.json"
+    },
+    "handoffEntry": "MIK-R126@v1 rule 5",
+    "leaf": "260928-MIK-L126",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A task page shows its references resolved by one request and its recorded role starts newest-first capped at twenty with an explorer link; report targets open the exact recorded report for live and archived starts; nested-only bare names stay text while pathed and top-folder bare names link per the Parent reference-format disposition.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -285,7 +285,7 @@ exact evidence bytes (worker handover: notes/reports/260902-CCR-L03-worker-deliv
 
 The structural role vocabulary uses canonical Investigator. Renaming that value preserves task-document ownership, index and seat classification; it does not make a task document or display label into runtime start authority. The launch-selection resolver separately admits Investigator’s non-leaf reference patterns.
 
-- This source owns the stated current Investigator scope or canonical vocabulary. [20]
+- This source owns the stated current Investigator scope and canonical vocabulary. [20]
 
 
 ## Refreshed current evidence
@@ -293,3 +293,14 @@ The structural role vocabulary uses canonical Investigator. Renaming that value 
 - The optional field and its comment. [1]
 - The optional field and its comment. [5]
 - The check runs in the document validator. [6]
+
+## 260928-MIK-L126 Current Delta — Product-Record Decision Marking
+
+`is_product_record_decision` marks a decision-log entry as a product-written record (not an
+authored decision) from the writers' own constants: exact `PRODUCT_RECORD_DECISION_EXACT`
+(the finalizer's lifecycle decision) or the `PRODUCT_RECORD_DECISION_PREFIXES` (removed-step
+and skip-step prefixes). The page matches no text and the stored shape is unchanged; the
+projection carries the marking for the newest-five rule (Parent ruling
+L126-LIFECYCLE-RECORDS-IN-THE-DECISION-LOG-RULING).
+
+- Writer constants mark product records; the marking is provenance-based (exact/prefix string match), and no enforced authorship separation keeps authored text from colliding — the tests pin named positives and near-misses, not impossibility. [21]

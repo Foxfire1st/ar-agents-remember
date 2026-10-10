@@ -1,0 +1,22 @@
+{
+  "admission": "legacy-unassessed",
+  "applicability": "Historical: the _is_dir sort key of the list walk. Current: _folder_entries/_folder_row of the folder endpoint.",
+  "conditions": [
+    "The entry's stat raises OSError of any errno: the row is skipped, never listed."
+  ],
+  "exclusions": [
+    "Errors outside ENOENT, ENOTDIR, EBADF and ELOOP, which propagate as they did through Path.is_dir().",
+    "Per-entry stat errors of any errno, which are skipped rather than propagated (partial continuity: skip-behavior holds, propagate-clause retired)."
+  ],
+  "id": "INV-DA7D417G",
+  "origin": {
+    "leaf": "260921-ICR-L55",
+    "legacyId": "0a39d993-3be5-4a15-909c-4aaff565e17d",
+    "task": "260921-ICR"
+  },
+  "revision": 2,
+  "schema": "ar-invariant/v1",
+  "statement": "Dated L55 bound for the superseded walk: the directory-first sort key treated ENOENT, ENOTDIR, EBADF and ELOOP from a followed stat as not-a-directory and propagated every other error. Current folder endpoint: _folder_entries sorts directories first, case-folded, exact name breaking ties; per-entry stat failures of any errno are skipped by _folder_row and never fail the answer — the propagate-other-errors promise does not carry to per-entry stats; errors from opening or listing the folder itself propagate.",
+  "status": "proposed",
+  "supersedes": []
+}

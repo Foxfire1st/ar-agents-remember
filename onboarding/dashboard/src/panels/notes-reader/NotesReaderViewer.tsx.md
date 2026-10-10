@@ -8,10 +8,11 @@
 
 `NotesReaderViewer.tsx` is the **Notes Reader** screen (agent-orchestration L17): the L9 coordination-notes
 reading experience rebuilt on the SAME full-view pattern the Change-Set / File Viewer use. It is a
-task-scoped **takeover** whose LEFT RAIL is the master's notes tree (from `/api/notes/list`, `reports/`
-included) with the open note highlighted, and whose content pane renders the opened note by **reusing the
+task-scoped **takeover** whose LEFT RAIL is the shared `ExplorerTree` (the File viewer's tree, no
+second tree written) fed one folder at a time by rule 2, with the open note highlighted, and whose
+content pane renders the opened note by **reusing the
 File Viewer's `DualPane` primitive**. It replaces the retired inline `TaskNotes` reading pane; the compact
-`TaskNotes` list + resolved references stay as the ENTRY surfaces that open this reader.
+`TaskNotes` line + resolved references stay as the ENTRY surfaces that open this reader.
 
 
 ## 260831-CCR-L23 Task-Artifact Reader (notes + requirements)
@@ -22,11 +23,16 @@ local `NotesReaderTarget` interface was deleted and re-exported as the shared
 view now takes a `kind` member plus an optional `document` (requirements
 only). Listing/content hooks branch on the kind:
 
-- `kind === "notes"` (no document): the unchanged `listNotes` /
-  `readNote` path;
+- `kind === "notes"` (no document): the folder/read path (`listFolder` with
+  offsets for next parts / `readNote`);
 - `kind === "requirements"`: `listRequirements` /
   `readRequirement` with the task-document reference, mapping each packet row
   into the notes rail shape (`language: "markdown"`, `truncated: false`).
+- `kind === "task-report"`: one recorded report by its exact recorded identity.
+- `kind === "decisions"`: the whole log on its own page (`DecisionsPane`,
+  newest-first, product records muted).
+- `kind === "role-report"` / supplied report content: the recorded body in the
+  shared pane with no rail.
 
 The rail header, open-path label, and failure copy are kind-aware (`notes` vs
 `requirements`), the screen root carries `data-artifact-kind`, and
@@ -41,15 +47,18 @@ The rail header, open-path label, and failure copy are kind-aware (`notes` vs
 `path` and rail `onSelectNote` are lifted to `CockpitShell` (like the File Viewer's persisted state) so a
 selection survives back/forward.
 
-- Fetches the rail listing with `listNotes(repo, master)` on `(repo, master)` change (the `let live`
+- Fetches the rail one folder at a time with `listFolder(repo, master, path, offset)` on
+  `(repo, master)` change (the `let live`
   cancellation idiom; an unreachable API leaves an empty rail, never a crash).
 - Fetches the open note with `readNote(repo, master, path)` on `(repo, master, path)` change — `null` while
   loading, `failed` on a read error. Changing `path` (a rail click or a fresh entry) re-fetches → the
   "switch the pane in place" behavior.
-- **Rail** — the ChangeSetViewer changed-files column idiom: a sticky `notes (n)` head + one `<button>` per
-  note (`note-rail-<n>`, path + byte size), `data-active` on the row whose path is open (the amber/cyan
-  wash), a click calls `onSelectNote(entry.path)`, and the server's `truncated` flag renders a muted
-  "beyond the list cap" hint.
+- **Rail** — the shared `ExplorerTree`: folders start closed; opening on a note opens the
+  folders on the way to it and marks the note, loading beyond the first part as needed
+  (L126-CODE-03); a folder answered in parts shows a row loading the next part; a vanished
+  folder shows empty with the server's reason while the rest stays usable (L126-CODE-04).
+  The adapter holds at most 32 folders with LRU eviction that never touches the open note
+  chain (`MAX_CACHED_FOLDERS`, L126-CODE-11).
 - **Content pane** reuses `DualPane` via `dualPaneProps(note)`: a **markdown** note takes DualPane's
   partnerless-markdown path (`code=null`, `sidecar={state:"markdown"}`) — the exact treatment the File
   Viewer gives a partnerless route overview; a **text** note becomes a synthetic `FileContent`
@@ -66,14 +75,15 @@ selection survives back/forward.
 
 Panda `css` local styles mirroring the `ChangeSetViewer` takeover chrome (screen · sticky back header ·
 `react-resizable-panels` rail+pane). Testids: `notes-reader-viewer` (screen), `notes-reader-back`,
-`notes-reader-open` (the open path in the header), `notes-rail`, `note-rail-<n>`, `note-status`.
+`notes-reader-open` (the open path in the header), `note-rail-<n>`, `note-status`. No `notes-rail` testid exists in the carried source.
 
 ### Invariants And Boundaries
 
-GET-only over the unchanged L9 `/api/notes/*` server contract (allow-listing, confinement, binary/oversize
-all stay server-side). No store mutation. There is **no second bespoke reader** — the content pane is the
+Folder/read transport over the L126 `/api/notes/*` server contract (allow-listing, confinement, binary/oversize
+all stay server-side; the whole-tree list route is gone). No store mutation. There is **no second bespoke reader** — the content pane is the
 File Viewer's `DualPane`, and the only file-viewer leaf stubbed in tests is `FilePane` (the CodeMirror
-editor), the same jsdom accommodation the Change-Set Viewer tests make for `ChangeSetPane`.
+editor), the same jsdom accommodation the Change-Set Viewer tests make for `ChangeSetPane`. The whole-log
+`DecisionsPane`, task-report and role-report readers render their kinds in the same pane.
 
 ## Role-report kind
 
@@ -92,13 +102,33 @@ A same-origin view over the local notes API; nothing crosses repositories.
 
 ### Repo-Internal References
 
+
 - The reused File Viewer content pane (markdown/code/placeholder). [1]
+
 - The `FileContent` type the text path maps a note into. [2]
-- The L9 notes client (`listNotes`/`readNote`) this view consumes. [3]
 - The shell that hosts the takeover + lifts its selection. [4]
-- The entry surface (compact list + references) that opens this reader. [5]
-- The L9 serving endpoints behind the client; their routes and wire shape are unchanged, while L55 re-implemented the listing walk (symlink-only confinement, descriptor descent). [6]
-- The component test suite. [7]
+- The entry surface (Notes line + references) that opens this reader. [5]
+
+
+- The component test suite covers the tree, open path, parts and depth. [7]
+
+
+
+- The notes client with folder, resolve and read helpers. [3]
+
+
+
+- The folder, resolve and read endpoints behind the client. [6]
+
+
+- The folder-fed tree adapter with fill, vanish recovery and the folder cap. [8]
+
+
+- The whole-log pane renders newest-first with product records muted. [9]
+
+
+- Old reader addresses open the same note through the new tree. [10]
+
 
 ## Current L5I Maintenance
 

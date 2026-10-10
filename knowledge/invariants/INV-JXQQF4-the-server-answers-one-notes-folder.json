@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "Eleven folder tests pin the one-folder answer, stable order, parts, confinement and the removed whole-tree answer, each failing on targeted revert; the mechanism spans the serving module whose three functions the entry names."
+  },
+  "applicability": "Every notes-folder request served by the product, on any master.",
+  "conditions": [
+    "The request names one folder under the notes root; the answer carries that folder's entries in the stable total order, in parts of at most 200.",
+    "Confinement holds across the request: a directory swapped for a symlink mid-request reads as gone, never as outside entries."
+  ],
+  "exclusions": [
+    "No whole-tree answer exists; nothing outside the notes root is ever listed.",
+    "No state is kept between requests; a fresh request re-reads the folder."
+  ],
+  "id": "INV-JXQQF4",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_notes_folder.py (11 cases); pytest 11 passed"
+      ],
+      "path": "notes/reports/role-launch/260928-MIK-L126-curator-handoff.json"
+    },
+    "handoffEntry": "MIK-R126@v1 rule 2",
+    "leaf": "260928-MIK-L126",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The server answers one notes folder per request in a stable total order (directories first, case-folded name, exact name breaking ties) and in parts of 200, opens folders through held descriptors without following symlinks, and the whole-tree answer stays removed with no caller.",
+  "status": "proposed",
+  "supersedes": []
+}

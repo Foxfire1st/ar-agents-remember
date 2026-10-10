@@ -1,0 +1,107 @@
+{
+  "path": "mcp/tests/test_task_reports_listing.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "904a0dd9315b0b392fc85ed9927d78f9f2b38576",
+        "content": "sha256:7e41bf6706c1401af8f56cb18ac9971576f583277a91b4b0c026a642a063aeb0",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_cap_of_twenty_with_explorer_link"
+        }
+      },
+      "facet": "The listing caps at twenty with the explorer link.",
+      "id": "PRF-A0PZWY",
+      "invariant": "INV-P2KSPN",
+      "origin": {
+        "handoffEntry": "MIK-R126@v1 rule 5",
+        "leaf": "260928-MIK-L126"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "904a0dd9315b0b392fc85ed9927d78f9f2b38576",
+        "content": "sha256:0606d7c65942a2592c1236e2634c48004d2759531d8e1575751df2b7318b4378",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_newest_first_and_task_filter"
+        }
+      },
+      "facet": "Recorded starts filter by task and order newest-first.",
+      "id": "PRF-RTA4BW",
+      "invariant": "INV-P2KSPN",
+      "origin": {
+        "handoffEntry": "MIK-R126@v1 rule 5",
+        "leaf": "260928-MIK-L126"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Starts read newest first with the task filter.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "904a0dd9315b0b392fc85ed9927d78f9f2b38576",
+            "content": "sha256:0606d7c65942a2592c1236e2634c48004d2759531d8e1575751df2b7318b4378",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_newest_first_and_task_filter"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The answer caps at twenty with an explorer link.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "904a0dd9315b0b392fc85ed9927d78f9f2b38576",
+            "content": "sha256:7e41bf6706c1401af8f56cb18ac9971576f583277a91b4b0c026a642a063aeb0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_cap_of_twenty_with_explorer_link"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Empty starts and null reports degrade honestly.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "904a0dd9315b0b392fc85ed9927d78f9f2b38576",
+            "content": "sha256:6f4ad3362555ad92e47dbae0c3d311af79ec8384264ea13a5f7d07811a76e269",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_empty_without_starts_and_nulls_without_reports"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Unreadable and out-of-root records are refused.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "904a0dd9315b0b392fc85ed9927d78f9f2b38576",
+            "content": "sha256:bde7d2e366219d3b4f8d77078ec916665c74d87828720df5fe1d58e5ab874ce4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_refusals"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

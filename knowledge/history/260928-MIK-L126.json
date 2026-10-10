@@ -1,0 +1,3331 @@
+{
+  "closed": true,
+  "leaf": "260928-MIK-L126",
+  "rows": [
+    {
+      "disposition": "no_impact",
+      "id": "ROW-04S0BK",
+      "items": [
+        "sha256:8296e70a815b521cb6196f99d903a994f446dd709b11f184fdeb216b2b6d6945"
+      ],
+      "reason": "Covered by the document-schema contract; the card records the writer-constants product-record predicate with unchanged stored shape.",
+      "subject": "onboarding:mcp/src/agents_remember/tasks/document.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-09Q7KF",
+      "items": [
+        "sha256:d9a44abf0696e662503d842c3fa593d0823d250381a4fc91c9425e8ead43a738"
+      ],
+      "reason": "Attached to the rule 5 entry: the shared artifact target union the page mounts for notes and requirement packets; no separate invariant.",
+      "subject": "hunk:sha256:d9a44abf0696e662503d842c3fa593d0823d250381a4fc91c9425e8ead43a738"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-0AE0WN",
+      "items": [
+        "sha256:a681488d0304a8a7e75672849e27ee1f601df93b3f877c376d50595e5349c35b"
+      ],
+      "reason": "Attached to the rule 6 entry (with the requirement-link context of rule 5): the preview mount and the whole-log page split are the presentation half of that obligation; no separate invariant.",
+      "subject": "hunk:sha256:a681488d0304a8a7e75672849e27ee1f601df93b3f877c376d50595e5349c35b"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-0B364N",
+      "items": [
+        "sha256:86747922ca521499b562edc25223bb246422a4fdae5f990c9f381cd84e956825"
+      ],
+      "reason": "Entry-surface suite pinning the Notes line, the folder/resolve/reports stub shape and the three assertion groups; regression evidence for the rule 3 and rule 5 entries, with no reader behavior claimed.",
+      "subject": "hunk:sha256:86747922ca521499b562edc25223bb246422a4fdae5f990c9f381cd84e956825"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-0DB8QG",
+      "items": [
+        "sha256:8860f686fe2461544f1b2991681776e43f2401a67c6691b30f64f2ac4938eeae"
+      ],
+      "reason": "Attached to the rule 2 and rule 5 entries: the folder, resolve and report declared models are the contract half of those obligations; no separate invariant.",
+      "subject": "hunk:sha256:8860f686fe2461544f1b2991681776e43f2401a67c6691b30f64f2ac4938eeae"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-0FYTCW",
+      "items": [
+        "sha256:49758cba303ed08c91855e1f5bbda3be7b39cec21673b2a8445151a906a8de36"
+      ],
+      "reason": "Attached to the rule 6 and rule 5 entries: the newest-first ordering helper plus the references-carrying master view are the presentation half of those obligations; no separate invariant.",
+      "subject": "hunk:sha256:49758cba303ed08c91855e1f5bbda3be7b39cec21673b2a8445151a906a8de36"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-0QJCA9",
+      "items": [
+        "sha256:c309431273350e2d4e8fa56d7900da7872cc439c8a31c34c4b7137dbca69a900"
+      ],
+      "reason": "Attached to the rule 4, rule 6 and rule 7 entries: the one-folder-at-a-time tree feed with its cap, the whole-log pane and the address-compatible target are the obligations those entries author; no separate invariant.",
+      "subject": "hunk:sha256:c309431273350e2d4e8fa56d7900da7872cc439c8a31c34c4b7137dbca69a900"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-0W9TRZ",
+      "items": [
+        "sha256:9288f16ddeb458ea23e284cf43fc4d807a832b6ce07bce0e1aa341f2b4063b92"
+      ],
+      "reason": "Reader suite pinning the tree rail, content pane, takeover, target and whole-log cases; regression evidence for the rule 4, rule 6 and rule 7 entries, with obligations owned by those entries.",
+      "subject": "hunk:sha256:9288f16ddeb458ea23e284cf43fc4d807a832b6ce07bce0e1aa341f2b4063b92"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-0XSBQH",
+      "items": [
+        "sha256:6c907eb64c82b0162d81970febeef4370f6afa1b04a6c41d263624e45132f579"
+      ],
+      "reason": "Attached to the rule 6 entry: the finalizer's newest-record prepend that the newest-first rule orders by; no separate invariant.",
+      "subject": "hunk:sha256:6c907eb64c82b0162d81970febeef4370f6afa1b04a6c41d263624e45132f579"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-0YH8AG",
+      "items": [
+        "sha256:f1a70a8fd27c65750e9e73d3ae851674636dae338a7ba1f3faf4df1b25f05e43"
+      ],
+      "reason": "Removed whole-tree list machinery (the listing docstring, the depth cap, the walk accumulator and its imports): the one-folder endpoint of entry MIK-R126@v1 rule 2 replaces it, and the whole-tree answer stays removed with no caller.",
+      "subject": "hunk:sha256:f1a70a8fd27c65750e9e73d3ae851674636dae338a7ba1f3faf4df1b25f05e43"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-17DVQC",
+      "items": [
+        "sha256:f1f0dec36ff23fa3e6e19a088512ab8623f523430e61923d437d293ef0be07ae"
+      ],
+      "reason": "Retired-listing suite kept as historical evidence for the superseded list surface; it states no current behavior and the folder suite carries the rule 2 obligation.",
+      "subject": "hunk:sha256:f1f0dec36ff23fa3e6e19a088512ab8623f523430e61923d437d293ef0be07ae"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-1HJFAR",
+      "items": [
+        "sha256:4b6e56032212d0efc72464e97852ed6733d0a66a7996e4f392bed8a15ce54b51"
+      ],
+      "reason": "Reviewed no change: the route body states package structure and decision flow, all still accurate; the report-route listing delta is carried in the role_report.py file card.",
+      "subject": "onboarding:mcp/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-1JHM0Z",
+      "items": [
+        "sha256:c5942fdb2f35a15b2bf0154921b2b1c56cb49b6dbed5bb1e812e71f632234cb4"
+      ],
+      "reason": "Viewed-leaf selection assertions untouched in meaning by the delta; no new obligation stated.",
+      "subject": "hunk:sha256:c5942fdb2f35a15b2bf0154921b2b1c56cb49b6dbed5bb1e812e71f632234cb4"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-1Q772B",
+      "items": [
+        "sha256:7ed1edd748f407717974aa25ca38c000c1f34919c3a660548b43153239ac3db6"
+      ],
+      "reason": "Reader suite pinning the tree rail, content pane, takeover, target and whole-log cases; regression evidence for the rule 4, rule 6 and rule 7 entries, with obligations owned by those entries.",
+      "subject": "hunk:sha256:7ed1edd748f407717974aa25ca38c000c1f34919c3a660548b43153239ac3db6"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-1WV93F",
+      "items": [
+        "sha256:67a00b2b0c3b85ae1782798a32f519f3ad78123b5c6b4365d04c71a74dc6c0be"
+      ],
+      "reason": "Attached to the rule 2 and rule 5 entries: the folder client and the single-request resolver are the presentation half of those obligations; no separate invariant.",
+      "subject": "hunk:sha256:67a00b2b0c3b85ae1782798a32f519f3ad78123b5c6b4365d04c71a74dc6c0be"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-1X1T6S",
+      "items": [
+        "sha256:24f70caa3a44e8e25a77f0f0f9bdda195cb2ae77d7532ec147174c52efc70210"
+      ],
+      "reason": "Attached to the rule 2 and rule 5 entries: the folder client and the single-request resolver are the presentation half of those obligations; no separate invariant.",
+      "subject": "hunk:sha256:24f70caa3a44e8e25a77f0f0f9bdda195cb2ae77d7532ec147174c52efc70210"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-20F8VS",
+      "items": [
+        "sha256:662584bc41d38a42127cbd79d8eb656fec365d915c8c996746d6693315927b48"
+      ],
+      "reason": "Card gains the product_record wire-flag section per L126-MEM-09.",
+      "subject": "onboarding:dashboard/src/types/projection.schema.json"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "ee3a18c16e8a5e3a122f5a0d7b81c1d7c53a8d94",
+            "content": "sha256:8ade386aef7cf97b902fccba93c3014f0f85968da64f13db582a5d0d91631641",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_searchable_unreadable_folder_keeps_baseline_500"
+            },
+            "path": "mcp/tests/test_notes_folder.py"
+          },
+          "before": "absent",
+          "id": "PRF-DKHMG7"
+        },
+        {
+          "after": {
+            "blob": "ee3a18c16e8a5e3a122f5a0d7b81c1d7c53a8d94",
+            "content": "sha256:5f28a349c201d01fe0320eac787122c0e8c59b5092ca0f24a829a98095753fe3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_readable_unsearchable_folder_answers_200_without_children"
+            },
+            "path": "mcp/tests/test_notes_folder.py"
+          },
+          "before": "absent",
+          "id": "PRF-KYFPEQ"
+        },
+        {
+          "after": {
+            "blob": "ee3a18c16e8a5e3a122f5a0d7b81c1d7c53a8d94",
+            "content": "sha256:936d6a7ab07a6e4bfd4e9d9b0539c01505a588e587e489c5cd0abd7f17182d72",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_neither_read_nor_search_folder_keeps_500"
+            },
+            "path": "mcp/tests/test_notes_folder.py"
+          },
+          "before": "absent",
+          "id": "PRF-R31ZP9"
+        },
+        {
+          "after": "absent",
+          "before": {
+            "blob": "e3e6f8d4c246e066532296e69563c435200ae08b",
+            "content": "sha256:d40680e3e52e1674571b0c9fe034680547f3e699eedd2038f71927be107959c5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_confined_stat"
+            },
+            "path": "mcp/src/agents_remember/serving/notes.py"
+          },
+          "id": "RLZ-DCXK7W7T"
+        },
+        {
+          "after": {
+            "blob": "d1f1be6c7c8cb30d03e132b8f4f34d2bdd0cd4fd",
+            "content": "sha256:0de19755f32283a7f8fb60c9e392c0725d22feaf2a05aaf1fe8ed77bd2ef87a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_folder_row"
+            },
+            "path": "mcp/src/agents_remember/serving/notes.py"
+          },
+          "before": "absent",
+          "id": "RLZ-WPD3J9"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-259R7F",
+      "items": [
+        "sha256:48c1e6ade6e6689e60f75df670c3e196cb6f68a46755ab68b2336d627d889ea0"
+      ],
+      "reason": "post-sync rebinding per L126-MEM-01: four current covers renewed on the synced pair; retired walk-anchored entry affirmed absent alongside.",
+      "revision": 2,
+      "subject": "INV-413DC8XE"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-27KKTZ",
+      "items": [
+        "sha256:e6812e0e9af6e0a0a917921e80b530ab1eaf6b9a420c2c770b83fcea5b262ac2"
+      ],
+      "reason": "Card rewritten to the live L126 assertions (folder fetch, Notes line, reference links); retired-listing prose superseded, deletion stays separate, per L126-MEM-07.",
+      "subject": "onboarding:dashboard/src/panels/detail-panel/seriesNotes.test.tsx"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-2C9FD5",
+      "items": [
+        "sha256:34801d3aabcb722ba73631991eea59782733612ca1d9087d01d8f7fda9c964c3"
+      ],
+      "reason": "Attached to the rule 4, rule 6 and rule 7 entries: the one-folder-at-a-time tree feed with its cap, the whole-log pane and the address-compatible target are the obligations those entries author; no separate invariant.",
+      "subject": "hunk:sha256:34801d3aabcb722ba73631991eea59782733612ca1d9087d01d8f7fda9c964c3"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-2DQ3BK",
+      "items": [
+        "sha256:ccef62f0e4e5787d42a9226cb5794cf388f14995cbfa7bc4813ae9d5b084da43"
+      ],
+      "reason": "Attached to the rule 2, rule 5 and rule 7 entries: the one-folder answer, the single-request resolve and the unchanged read path are the obligations those entries author; no separate invariant.",
+      "subject": "hunk:sha256:ccef62f0e4e5787d42a9226cb5794cf388f14995cbfa7bc4813ae9d5b084da43"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-2FM1BR",
+      "items": [
+        "sha256:f592d3cc4fc7b4952586a133852f170fed7bb0654649fda43f5186bc57c2f0e7"
+      ],
+      "reason": "Client-contract tests for the folder/read URLs, the single-request resolve mapping and the malformed-answer rejection; regression evidence for the rule 2 and rule 5 entries, with no product obligation beyond them.",
+      "subject": "hunk:sha256:f592d3cc4fc7b4952586a133852f170fed7bb0654649fda43f5186bc57c2f0e7"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-2HJQEH",
+      "items": [
+        "sha256:e3d2bc4d373f719f51191804dd2f8d3c0559394f6aaacc8a524b4460a6eccf17"
+      ],
+      "reason": "Attached to the rule 6 entry: the finalizer's newest-record prepend that the newest-first rule orders by; no separate invariant.",
+      "subject": "hunk:sha256:e3d2bc4d373f719f51191804dd2f8d3c0559394f6aaacc8a524b4460a6eccf17"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-2MFEW6",
+      "items": [
+        "sha256:8d6ee51849e93d056962c7a19ae636e7346939a5481ed36c37a7ec366bc76f8a"
+      ],
+      "reason": "Attached to the rule 6 entry: re-exported writer constants and the product-record predicate for the newest-five rule; no new behavior, no separate invariant.",
+      "subject": "hunk:sha256:8d6ee51849e93d056962c7a19ae636e7346939a5481ed36c37a7ec366bc76f8a"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-2PDBNG",
+      "items": [
+        "sha256:cc15df9516314215b8da8a16a9a4d5f2e2efad0e13d2a80adb7d79954f4edf00"
+      ],
+      "reason": "Reader suite pinning the tree rail, content pane, takeover, target and whole-log cases; regression evidence for the rule 4, rule 6 and rule 7 entries, with obligations owned by those entries.",
+      "subject": "hunk:sha256:cc15df9516314215b8da8a16a9a4d5f2e2efad0e13d2a80adb7d79954f4edf00"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-2WE2XV",
+      "items": [
+        "sha256:d6144040c926eacf8febe487f0c2a0f872de027732634bd6cfcadea7c8b432c0"
+      ],
+      "reason": "Focused takeover-contract assertions for the notes-reader entry surface; they pin the reader-target wiring without stating a product obligation beyond the rule 3 entry surface.",
+      "subject": "hunk:sha256:d6144040c926eacf8febe487f0c2a0f872de027732634bd6cfcadea7c8b432c0"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-2YQRJG",
+      "items": [
+        "sha256:2ef719875535bdf89f672ad3820836c62010b8d5511db6c322bf3df0ca471ea1"
+      ],
+      "reason": "Attached to the rule 6 entry (with the requirement-link context of rule 5): the preview mount and the whole-log page split are the presentation half of that obligation; no separate invariant.",
+      "subject": "hunk:sha256:2ef719875535bdf89f672ad3820836c62010b8d5511db6c322bf3df0ca471ea1"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-2YWBVW",
+      "items": [
+        "sha256:700f57c930ecae368bb45639dc35847fc4075677aac06a193f940f3be37414c6"
+      ],
+      "reason": "Card gains the marking-field section with provenance qualification per L126-MEM-09.",
+      "subject": "onboarding:mcp/src/agents_remember/observer/projection.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-32Z1DX",
+      "items": [
+        "sha256:47e7ae0926e5eedd0f437cb445e4040ec45e93f8fa521abba8f4c39cd20de9a9"
+      ],
+      "reason": "Attached to the rule 4, rule 6 and rule 7 entries: the one-folder-at-a-time tree feed with its cap, the whole-log pane and the address-compatible target are the obligations those entries author; no separate invariant.",
+      "subject": "hunk:sha256:47e7ae0926e5eedd0f437cb445e4040ec45e93f8fa521abba8f4c39cd20de9a9"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-34HZ67",
+      "items": [
+        "sha256:77f3aa9ebe3b3647d5fd080e57decd6cb99be327b77872fe3822d1e2b728be1c"
+      ],
+      "reason": "Attached to the rule 2, rule 5 and rule 7 entries: the one-folder answer, the single-request resolve and the unchanged read path are the obligations those entries author; no separate invariant.",
+      "subject": "hunk:sha256:77f3aa9ebe3b3647d5fd080e57decd6cb99be327b77872fe3822d1e2b728be1c"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-38BFBN",
+      "items": [
+        "sha256:8ba9b56d8cfdb48453089056aac4e66ead68a273797952691366b326d9dd95d0"
+      ],
+      "reason": "Reviewed no change: the route body states client module structure and the taskArtifacts discriminator, all still accurate; the new taskReports.ts client and the folder/resolve shapes are carried in the file cards.",
+      "subject": "onboarding:dashboard/src/data/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-3N8TZD",
+      "items": [
+        "sha256:de76dbb506695efa68c5dd4c604ec980cfc7ebbe17e5559a6835716021c0fc6c"
+      ],
+      "reason": "Retired-listing suite kept as historical evidence for the superseded list surface; it states no current behavior and the folder suite carries the rule 2 obligation.",
+      "subject": "hunk:sha256:de76dbb506695efa68c5dd4c604ec980cfc7ebbe17e5559a6835716021c0fc6c"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-3VF8H0",
+      "items": [
+        "sha256:b157bd4fe9dced260d9687fc9e37ed6149a10f146adec0e7bae9b12926b06029"
+      ],
+      "reason": "Attached to the rule 2, rule 5 and rule 7 entries: the one-folder answer, the single-request resolve and the unchanged read path are the obligations those entries author; no separate invariant.",
+      "subject": "hunk:sha256:b157bd4fe9dced260d9687fc9e37ed6149a10f146adec0e7bae9b12926b06029"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-3ZQR2A",
+      "items": [
+        "sha256:8898bdfc2da547dcf496eb638e0d63b452cf675411ad5e9826454cb83efe7f50"
+      ],
+      "reason": "Attached to the rule 2, rule 5 and rule 7 entries: the one-folder answer, the single-request resolve and the unchanged read path are the obligations those entries author; no separate invariant.",
+      "subject": "hunk:sha256:8898bdfc2da547dcf496eb638e0d63b452cf675411ad5e9826454cb83efe7f50"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-403VCF",
+      "items": [
+        "sha256:9fb2e2f301509db56e644b343cc7a7ac44c8a5bf5adf5671467df0403a5adf69"
+      ],
+      "reason": "Entry-surface suite pinning the Notes line, the folder/resolve/reports stub shape and the three assertion groups; regression evidence for the rule 3 and rule 5 entries, with no reader behavior claimed.",
+      "subject": "hunk:sha256:9fb2e2f301509db56e644b343cc7a7ac44c8a5bf5adf5671467df0403a5adf69"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-40Q7ME",
+      "items": [
+        "sha256:84c7c9b2b720980a5b3086530ba699a9d8e2d47f3ac5b8d8a4fc276d01c5dd8c"
+      ],
+      "reason": "Attached to the rule 3 and rule 5 entries: the Notes-line component with its reference links and recorded reports is the obligation those entries author; no separate invariant.",
+      "subject": "hunk:sha256:84c7c9b2b720980a5b3086530ba699a9d8e2d47f3ac5b8d8a4fc276d01c5dd8c"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-48AMR0",
+      "items": [
+        "sha256:fca605c613c640330e7ca9e34f584bdb7784b12b7c286d6d68e020be973a0322"
+      ],
+      "reason": "Reader suite pinning the tree rail, content pane, takeover, target and whole-log cases; regression evidence for the rule 4, rule 6 and rule 7 entries, with obligations owned by those entries.",
+      "subject": "hunk:sha256:fca605c613c640330e7ca9e34f584bdb7784b12b7c286d6d68e020be973a0322"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-4D48JX",
+      "items": [
+        "sha256:d96122568eae3d76ad1aabdb2b39e0394513e2661c0c344b743c35b5e49e1d8f"
+      ],
+      "reason": "Reader suite pinning the tree rail, content pane, takeover, target and whole-log cases; regression evidence for the rule 4, rule 6 and rule 7 entries, with obligations owned by those entries.",
+      "subject": "hunk:sha256:d96122568eae3d76ad1aabdb2b39e0394513e2661c0c344b743c35b5e49e1d8f"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-4D5TAE",
+      "items": [
+        "sha256:5fa3babe4278c88c8482fdb8c83c8342d039776e07090ee281dc3b99d1b451f6"
+      ],
+      "reason": "Retired-listing suite kept as historical evidence for the superseded list surface; it states no current behavior and the folder suite carries the rule 2 obligation.",
+      "subject": "hunk:sha256:5fa3babe4278c88c8482fdb8c83c8342d039776e07090ee281dc3b99d1b451f6"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-4EXVCY",
+      "items": [
+        "sha256:eb00c34ad37eb7a81e951cf8e7660843d0f17aa08b63b3f32da847881ab557a8"
+      ],
+      "reason": "Entry-surface suite pinning the Notes line, the folder/resolve/reports stub shape and the three assertion groups; regression evidence for the rule 3 and rule 5 entries, with no reader behavior claimed.",
+      "subject": "hunk:sha256:eb00c34ad37eb7a81e951cf8e7660843d0f17aa08b63b3f32da847881ab557a8"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-4FZWP6",
+      "items": [
+        "sha256:397c985c364306274997fa2d5133243322c1cda66295492266f1d883db718c84"
+      ],
+      "reason": "Attached to the rule 3 and rule 5 entries: the Notes-line component with its reference links and recorded reports is the obligation those entries author; no separate invariant.",
+      "subject": "hunk:sha256:397c985c364306274997fa2d5133243322c1cda66295492266f1d883db718c84"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-4K1QFT",
+      "items": [
+        "sha256:f90191cae77cebdda25b67e6b40a752ba411d2334a72b7b0772e50d47f029d5b"
+      ],
+      "reason": "Attached to the rule 6 entry: the newest-first decision projection the page renders; no separate invariant.",
+      "subject": "hunk:sha256:f90191cae77cebdda25b67e6b40a752ba411d2334a72b7b0772e50d47f029d5b"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-4K25FM",
+      "items": [
+        "sha256:5a0a01d875bd0391856d93193837da066a44112c6a86f4c18a2091ba86ab6734"
+      ],
+      "reason": "Covered by the wire-fixture sample contract; the card records the seeded cursor and the explicit product-record flags exercising the projection marking.",
+      "subject": "onboarding:dashboard/src/fixtures/snapshot.json"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "d1f1be6c7c8cb30d03e132b8f4f34d2bdd0cd4fd",
+            "content": "sha256:0de19755f32283a7f8fb60c9e392c0725d22feaf2a05aaf1fe8ed77bd2ef87a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_folder_row"
+            },
+            "path": "mcp/src/agents_remember/serving/notes.py"
+          },
+          "before": {
+            "blob": "e3e6f8d4c246e066532296e69563c435200ae08b",
+            "content": "sha256:3024897a33256f888cc8bdf14471f8193608dad125b8f8ca27eae8694da69e33",
+            "locator": {
+              "kind": "symbol",
+              "name": "_walk_notes"
+            },
+            "path": "mcp/src/agents_remember/serving/notes.py"
+          },
+          "id": "RLZ-5KCQCHVQ"
+        },
+        {
+          "after": {
+            "blob": "d1f1be6c7c8cb30d03e132b8f4f34d2bdd0cd4fd",
+            "content": "sha256:0de19755f32283a7f8fb60c9e392c0725d22feaf2a05aaf1fe8ed77bd2ef87a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_folder_row"
+            },
+            "path": "mcp/src/agents_remember/serving/notes.py"
+          },
+          "before": {
+            "blob": "e3e6f8d4c246e066532296e69563c435200ae08b",
+            "content": "sha256:d40680e3e52e1674571b0c9fe034680547f3e699eedd2038f71927be107959c5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_confined_stat"
+            },
+            "path": "mcp/src/agents_remember/serving/notes.py"
+          },
+          "id": "RLZ-7X2C4VRQ"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-4KPPFW",
+      "items": [
+        "sha256:dfe066f5472289ee8d618ebc860343e3e8914451dff8ceb9f23c41ae67385a11"
+      ],
+      "reason": "economy clause corrected per L126-MEM-02 remainder: one nofollow stat per row plus a second followed stat for symlinks; realization rationale revised in place, anchor kept. A5 closes the two remaining original MEM-02 clauses: the exclusion distinguishes dated L55 one-stat behavior from current nofollow-plus-symlink-followed stats, and RLZ-5KCQCHVQ explicitly owns symlink resolution. IDs, both cover anchors and the correct second-stat tail are preserved.",
+      "revision": 2,
+      "subject": "INV-Z66EMHMH"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-4RAS5C",
+      "items": [
+        "sha256:56ff33da67833a6c44d239ad44bbcb3597401bd6beea736484085057987b3083"
+      ],
+      "reason": "Entry-surface suite pinning the Notes line, the folder/resolve/reports stub shape and the three assertion groups; regression evidence for the rule 3 and rule 5 entries, with no reader behavior claimed.",
+      "subject": "hunk:sha256:56ff33da67833a6c44d239ad44bbcb3597401bd6beea736484085057987b3083"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-4VJBWY",
+      "items": [
+        "sha256:26c6bfea6691b44476bc5c90360031e02c581f5d55fbf301eff0a0863fcfd728"
+      ],
+      "reason": "Attached to the rule 4, rule 6 and rule 7 entries: the one-folder-at-a-time tree feed with its cap, the whole-log pane and the address-compatible target are the obligations those entries author; no separate invariant.",
+      "subject": "hunk:sha256:26c6bfea6691b44476bc5c90360031e02c581f5d55fbf301eff0a0863fcfd728"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-4X2BDQ",
+      "items": [
+        "sha256:a6880ec337d0d52d9bbdf362ecd0eb7ccca4a8d6bf46658989b13c71688e3529"
+      ],
+      "reason": "Removed list-based entry surface (the series-notes list, its row styles and the inline list fetch): the one Notes line of entry MIK-R126@v1 rule 3 replaces it, and note reading lives in the reader; no obligation remains in the removed lines.",
+      "subject": "hunk:sha256:a6880ec337d0d52d9bbdf362ecd0eb7ccca4a8d6bf46658989b13c71688e3529"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-4XX9V4",
+      "items": [
+        "sha256:99a3f58bccb0f31fbe21bef7d92314b42bae0007e46fc3627416df6a0b40c103"
+      ],
+      "reason": "Client-contract tests for the folder/read URLs, the single-request resolve mapping and the malformed-answer rejection; regression evidence for the rule 2 and rule 5 entries, with no product obligation beyond them.",
+      "subject": "hunk:sha256:99a3f58bccb0f31fbe21bef7d92314b42bae0007e46fc3627416df6a0b40c103"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-4ZE54F",
+      "items": [
+        "sha256:577ee2c2b7d3a8f2b7a0a94b4c62f6c140dd6ee5b13b5364d9de0bf2ccb7a66f"
+      ],
+      "reason": "Attached to the rule 4, rule 6 and rule 7 entries: the one-folder-at-a-time tree feed with its cap, the whole-log pane and the address-compatible target are the obligations those entries author; no separate invariant.",
+      "subject": "hunk:sha256:577ee2c2b7d3a8f2b7a0a94b4c62f6c140dd6ee5b13b5364d9de0bf2ccb7a66f"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-536B5R",
+      "items": [
+        "sha256:410d8fdd320daf83c5b2ee76fe389ce5e9e0905ef106f2f348748af703d40eeb"
+      ],
+      "reason": "Constant-for-string swap, prepend behavior unchanged; card carries no prepend prose per L126-MEM-11.",
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/modules/finalize_task_documents.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-54TVP8",
+      "items": [
+        "sha256:b31a9b25b7b7e54c2e0ade305d4abd3bf667ffd1fa41d7af866f362f59c57d79"
+      ],
+      "reason": "Removed whole-tree list machinery (the listing docstring, the depth cap, the walk accumulator and its imports): the one-folder endpoint of entry MIK-R126@v1 rule 2 replaces it, and the whole-tree answer stays removed with no caller.",
+      "subject": "hunk:sha256:b31a9b25b7b7e54c2e0ade305d4abd3bf667ffd1fa41d7af866f362f59c57d79"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-5KGK0Q",
+      "items": [
+        "sha256:3410bc16da731f8c66dd7b7c79c4f3691a0d394a74301ca8a817854f6f21b26e"
+      ],
+      "reason": "Attached to the rule 4, rule 6 and rule 7 entries: the one-folder-at-a-time tree feed with its cap, the whole-log pane and the address-compatible target are the obligations those entries author; no separate invariant.",
+      "subject": "hunk:sha256:3410bc16da731f8c66dd7b7c79c4f3691a0d394a74301ca8a817854f6f21b26e"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-5TE8YR",
+      "items": [
+        "sha256:71e1e777b2587c3db0a8dc832a1c8061f3fb7545952dad525fbc61e8284e4152"
+      ],
+      "reason": "Reader suite pinning the tree rail, content pane, takeover, target and whole-log cases; regression evidence for the rule 4, rule 6 and rule 7 entries, with obligations owned by those entries.",
+      "subject": "hunk:sha256:71e1e777b2587c3db0a8dc832a1c8061f3fb7545952dad525fbc61e8284e4152"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-5VB4SJ",
+      "items": [
+        "sha256:f1fec7d6b94bbbf61dabf6314a2323ea6b917fd9d4545cec8b27728a4b908cbd"
+      ],
+      "reason": "Attached to the rule 6 entry: the writer-constants product-record predicate with unchanged stored shape; no separate invariant.",
+      "subject": "hunk:sha256:f1fec7d6b94bbbf61dabf6314a2323ea6b917fd9d4545cec8b27728a4b908cbd"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-630N1G",
+      "items": [
+        "sha256:c71588af036c8d8fde4d0d247f2cef0b9b9c51af5c1af2abf03dad08ad1519f4"
+      ],
+      "reason": "Removed list-fed rail (the bespoke NotesRail, its row styles and the list transport import): the shared ExplorerTree fed one folder at a time in entry MIK-R126@v1 rule 4 replaces it; no obligation remains in the removed lines.",
+      "subject": "hunk:sha256:c71588af036c8d8fde4d0d247f2cef0b9b9c51af5c1af2abf03dad08ad1519f4"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-656GQV",
+      "items": [
+        "sha256:ed4ba48809f7b44922717d60d2974de41259fc5416e68e2739b911ca1dd11062"
+      ],
+      "reason": "Client-contract tests for the folder/read URLs, the single-request resolve mapping and the malformed-answer rejection; regression evidence for the rule 2 and rule 5 entries, with no product obligation beyond them.",
+      "subject": "hunk:sha256:ed4ba48809f7b44922717d60d2974de41259fc5416e68e2739b911ca1dd11062"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-69M6V3",
+      "items": [
+        "sha256:4e8e5c0b0663fcd683a01df5157781405a226abe32b71f98ca39f5263704a86f"
+      ],
+      "reason": "New client suite pinning the reports listing fetch and the newest-first cap the page renders; regression evidence for the rule 5 entry.",
+      "subject": "hunk:sha256:4e8e5c0b0663fcd683a01df5157781405a226abe32b71f98ca39f5263704a86f"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "114b072b68900fb726a36275aa081eaadb4852ba",
+            "content": "sha256:34e3037b0015fa6c8f132b73024834789ea9ced1b9c9671d01c9678cac14f21a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "074cbb9f1d1da9ee49aa27d3fb94e15ae36ac05c",
+            "content": "sha256:9da8e5b2a7dc3c8b41df908ba278cca61de18ee199df80ea4cec3f848c7465c1",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-GRTJG0"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-6EW13R",
+      "items": [
+        "sha256:b2d9ff792710ab6a87d50cce99330bbae8ea23f609f2a4badf2ce3d4463cecf4"
+      ],
+      "reason": "post-sync re-anchor per L126-MEM-11: catalog realization renewed on the synced pair after sidecar citation refresh; registry prose corrected.",
+      "revision": 1,
+      "subject": "INV-MSCRAN"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-6FWSB7",
+      "items": [
+        "sha256:fb5c59beffabdbca8535334812fbb25667fb1d06505b4c84d679458102d5dd64"
+      ],
+      "reason": "Covered by the listing-test contract; the card records the four newest-first, cap, null and refusal cases.",
+      "subject": "onboarding:mcp/tests/test_task_reports_listing.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-6HQ7YT",
+      "items": [
+        "sha256:62304d62c5700e88019f45c5ab9b948085e90252c2b4650dd9c09749bb138836"
+      ],
+      "reason": "Covered by the entry-surface suite; the card records the folder/resolve/reports stub shape and the three assertion groups without claiming reader behavior.",
+      "subject": "onboarding:dashboard/src/panels/TaskNotes.test.tsx"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-6KCPEJ",
+      "items": [
+        "sha256:f5ca4035a996b378739deae03d26b8e97e9dbfc04e314d5dbf85e2a949cb2a96"
+      ],
+      "reason": "Attached to the rule 5 entry: the newest-first listing, the exact task-only target completion and the confined report open are the obligation that entry authors; no separate invariant.",
+      "subject": "hunk:sha256:f5ca4035a996b378739deae03d26b8e97e9dbfc04e314d5dbf85e2a949cb2a96"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-6RWTVQ",
+      "items": [
+        "sha256:cd0f58bd6e105ecbe60a8c5c7ac5cad8cb17a3596a195bf5f3e8ff32e5496d61"
+      ],
+      "reason": "Attached to the rule 5 entry: the newest-first listing, the exact task-only target completion and the confined report open are the obligation that entry authors; no separate invariant.",
+      "subject": "hunk:sha256:cd0f58bd6e105ecbe60a8c5c7ac5cad8cb17a3596a195bf5f3e8ff32e5496d61"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-6TKABP",
+      "items": [
+        "sha256:70a3fdc02fe325e8164705ff789be35adb89727f031716fdd2c14077a896706b"
+      ],
+      "reason": "Entry-surface suite pinning the Notes line, the folder/resolve/reports stub shape and the three assertion groups; regression evidence for the rule 3 and rule 5 entries, with no reader behavior claimed.",
+      "subject": "hunk:sha256:70a3fdc02fe325e8164705ff789be35adb89727f031716fdd2c14077a896706b"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-6W7PPT",
+      "items": [
+        "sha256:323dbfaa9c2d14c673c33574e279d1255f0d376207006e0a736fa40eb3df6139"
+      ],
+      "reason": "Reviewed no change: the route body states the evidence-lane registry structure; the four new test modules and the folder-suite rename are carried in the catalog and file cards, with the superseded list suite deleted.",
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-74KAQY",
+      "items": [
+        "sha256:aca37ce24a2d2f74b8550f164eb8c16ddc85d9cc484b48ffc0c51c7c8c150c4e"
+      ],
+      "reason": "Reader suite pinning the tree rail, content pane, takeover, target and whole-log cases; regression evidence for the rule 4, rule 6 and rule 7 entries, with obligations owned by those entries.",
+      "subject": "hunk:sha256:aca37ce24a2d2f74b8550f164eb8c16ddc85d9cc484b48ffc0c51c7c8c150c4e"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-74W4XF",
+      "items": [
+        "sha256:f2dde967b6a77f9d54ea5ca8cddad93bf729f1ff60ec86f6d4b873c1b580e7bc"
+      ],
+      "reason": "Reader suite pinning the tree rail, content pane, takeover, target and whole-log cases; regression evidence for the rule 4, rule 6 and rule 7 entries, with obligations owned by those entries.",
+      "subject": "hunk:sha256:f2dde967b6a77f9d54ea5ca8cddad93bf729f1ff60ec86f6d4b873c1b580e7bc"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-76RMVZ",
+      "items": [
+        "sha256:9f59addcd3257af4f39ca72c6891f9ccb415160181ac3cbb9e310f2d2270c8f7"
+      ],
+      "reason": "Preview-contract suite pinning the newest-five rendering and the whole-log link; regression evidence for the rule 6 entry, with ordering owned by the shared helper.",
+      "subject": "hunk:sha256:9f59addcd3257af4f39ca72c6891f9ccb415160181ac3cbb9e310f2d2270c8f7"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-77D05J",
+      "items": [
+        "sha256:57f48e5a1b5ba1f6f19ef926c49db234f8c5ec68c672894812e2fc4ab138464a"
+      ],
+      "reason": "Attached to the rule 6 and rule 5 entries: the newest-first ordering helper plus the references-carrying master view are the presentation half of those obligations; no separate invariant.",
+      "subject": "hunk:sha256:57f48e5a1b5ba1f6f19ef926c49db234f8c5ec68c672894812e2fc4ab138464a"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-77EC0M",
+      "items": [
+        "sha256:b04546ae36c6a65704d4f297c839f54a56c919d764cc05ec140647d5f301d33f"
+      ],
+      "reason": "Attached to the rule 3 and rule 5 entries: the Notes-line component with its reference links and recorded reports is the obligation those entries author; no separate invariant.",
+      "subject": "hunk:sha256:b04546ae36c6a65704d4f297c839f54a56c919d764cc05ec140647d5f301d33f"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-79G5FN",
+      "items": [
+        "sha256:42334b6099978c39a5bdafcb0f923248a53d35af0782444584516f7df068db84"
+      ],
+      "reason": "Attached to the rule 4, rule 6 and rule 7 entries: the one-folder-at-a-time tree feed with its cap, the whole-log pane and the address-compatible target are the obligations those entries author; no separate invariant.",
+      "subject": "hunk:sha256:42334b6099978c39a5bdafcb0f923248a53d35af0782444584516f7df068db84"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-79T5H0",
+      "items": [
+        "sha256:12db532c7e3777a3bc587c4557aea188fcaa024d1f42f2f3c6ecc848b46dd5a4"
+      ],
+      "reason": "Focused takeover-contract assertions for the notes-reader entry surface; they pin the reader-target wiring without stating a product obligation beyond the rule 3 entry surface.",
+      "subject": "hunk:sha256:12db532c7e3777a3bc587c4557aea188fcaa024d1f42f2f3c6ecc848b46dd5a4"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7JHYR8",
+      "items": [
+        "sha256:a97b8c57e6af872bc59eb958490c7ddff2c6b2f0ba3927c3aa319bdd0f4f3efa"
+      ],
+      "reason": "Attached to the rule 3 entry surface: the NotesTakeover data-view naming and the folder-open reader state are part of the Notes-line obligation authored in entry MIK-R126@v1 rule 3; no separate invariant.",
+      "subject": "hunk:sha256:a97b8c57e6af872bc59eb958490c7ddff2c6b2f0ba3927c3aa319bdd0f4f3efa"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7K4AAM",
+      "items": [
+        "sha256:9307451948d41481da47a30a81526de0f60563256e9047674d0cbd155683ee84"
+      ],
+      "reason": "Entry-surface suite pinning the Notes line, the folder/resolve/reports stub shape and the three assertion groups; regression evidence for the rule 3 and rule 5 entries, with no reader behavior claimed.",
+      "subject": "hunk:sha256:9307451948d41481da47a30a81526de0f60563256e9047674d0cbd155683ee84"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-7KX1A9",
+      "items": [
+        "sha256:68497590730d27bacf6fcd74f742c070775569c797fbe0080b87119b7de9fc96"
+      ],
+      "reason": "Reviewed no change: the route body states schema structure; the writer-constants product-record predicate is carried in the document.py file card with unchanged stored shape.",
+      "subject": "onboarding:mcp/src/agents_remember/tasks/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7N1SSD",
+      "items": [
+        "sha256:0cec343c9e0894cafbb0dc267e77bcae68bbb46b2747284f039b7847038c1416"
+      ],
+      "reason": "Reader suite pinning the tree rail, content pane, takeover, target and whole-log cases; regression evidence for the rule 4, rule 6 and rule 7 entries, with obligations owned by those entries.",
+      "subject": "hunk:sha256:0cec343c9e0894cafbb0dc267e77bcae68bbb46b2747284f039b7847038c1416"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7R4ZSM",
+      "items": [
+        "sha256:789276e39132607ac303b24455c6eaf7a3b3ac8dbd624fb7df0ca1c838945147"
+      ],
+      "reason": "Reader suite pinning the tree rail, content pane, takeover, target and whole-log cases; regression evidence for the rule 4, rule 6 and rule 7 entries, with obligations owned by those entries.",
+      "subject": "hunk:sha256:789276e39132607ac303b24455c6eaf7a3b3ac8dbd624fb7df0ca1c838945147"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-81AH5P",
+      "items": [
+        "sha256:967ffb75c757fea6fde6364252884c6fbe02a6678d66be9c3c707d5e9ad6dea7"
+      ],
+      "reason": "Covered by the folder client and single-request resolver; the card records the endpoint shapes and the null-stays-text mapping.",
+      "subject": "onboarding:dashboard/src/data/notes.ts"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-81GGT2",
+      "items": [
+        "sha256:4c88e329c8ae6e739e28e36a00f08b1999ec0afad6c49bd9f3ad5c17a3fe2f9f"
+      ],
+      "reason": "Attached to the rule 3 and rule 5 entries: the Notes-line component with its reference links and recorded reports is the obligation those entries author; no separate invariant.",
+      "subject": "hunk:sha256:4c88e329c8ae6e739e28e36a00f08b1999ec0afad6c49bd9f3ad5c17a3fe2f9f"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-81N1BM",
+      "items": [
+        "sha256:8e46b8920913a7ea3cedcc64753a6f2a7a9a138f7860d9ebcb29460bd4818a5c"
+      ],
+      "reason": "Covered by the evidence-lane registry; the card records the lane registration matching the lifecycle catalog.",
+      "subject": "onboarding:mcp/tests/test-evidence-lanes.toml"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-87RZDK",
+      "items": [
+        "sha256:0c4674217024c672b01a16d5b71c19a2f591ec1da90db329f065ff7ab9627a8b"
+      ],
+      "reason": "Retired-listing suite kept as historical evidence for the superseded list surface; it states no current behavior and the folder suite carries the rule 2 obligation.",
+      "subject": "hunk:sha256:0c4674217024c672b01a16d5b71c19a2f591ec1da90db329f065ff7ab9627a8b"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-8CRQGQ",
+      "items": [
+        "sha256:48299165a9a638fed6b043986a47fc949257471904aaaf1a8a803873149fdc1d"
+      ],
+      "reason": "Focused takeover-contract assertions for the notes-reader entry surface; they pin the reader-target wiring without stating a product obligation beyond the rule 3 entry surface.",
+      "subject": "hunk:sha256:48299165a9a638fed6b043986a47fc949257471904aaaf1a8a803873149fdc1d"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-8DNACQ",
+      "items": [
+        "sha256:1d8072c5188dd135951d4f7096bd802e71052b2f925102cabec5aef72c3f1432"
+      ],
+      "reason": "Attached to the rule 5 entry: the recorded-start step the listing reads keeps its shape; no separate invariant.",
+      "subject": "hunk:sha256:1d8072c5188dd135951d4f7096bd802e71052b2f925102cabec5aef72c3f1432"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-8FK54S",
+      "items": [
+        "sha256:4ce8bc868e6fad3da5d56a04dd113fdbd0259170857b56ceffa18c06eb28ffd6"
+      ],
+      "reason": "Attached to the rule 2 and rule 5 entries: the folder client and the single-request resolver are the presentation half of those obligations; no separate invariant.",
+      "subject": "hunk:sha256:4ce8bc868e6fad3da5d56a04dd113fdbd0259170857b56ceffa18c06eb28ffd6"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "d1f1be6c7c8cb30d03e132b8f4f34d2bdd0cd4fd",
+            "content": "sha256:43f4ba126f1b33e32bea57712a0108f877098422848dc9145d6893174508338f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_open_confined_dir"
+            },
+            "path": "mcp/src/agents_remember/serving/notes.py"
+          },
+          "before": {
+            "blob": "e3e6f8d4c246e066532296e69563c435200ae08b",
+            "content": "sha256:982283ac1245e4fc86e2fb53b687d371a42077dfb11192a3842764a6e629d62c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_open_subdir"
+            },
+            "path": "mcp/src/agents_remember/serving/notes.py"
+          },
+          "id": "RLZ-5NWBYG1T"
+        },
+        {
+          "after": {
+            "blob": "d1f1be6c7c8cb30d03e132b8f4f34d2bdd0cd4fd",
+            "content": "sha256:43f4ba126f1b33e32bea57712a0108f877098422848dc9145d6893174508338f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_open_confined_dir"
+            },
+            "path": "mcp/src/agents_remember/serving/notes.py"
+          },
+          "before": {
+            "blob": "e3e6f8d4c246e066532296e69563c435200ae08b",
+            "content": "sha256:514778fe85fae024f5331223bcbbc3e05579331473811c4d6195580566a51a87",
+            "locator": {
+              "kind": "symbol",
+              "name": "_open_below_root"
+            },
+            "path": "mcp/src/agents_remember/serving/notes.py"
+          },
+          "id": "RLZ-W8VA2JEP"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-8H800X",
+      "items": [
+        "sha256:ae53cc5dba4da589a0a82b3936e6320643ca6b4bf9ae84e256935377df9a4647"
+      ],
+      "reason": "Preserved: both realizations re-anchored onto _open_confined_dir, which pins the folder through held descriptors with O_NOFOLLOW and refuses the ELOOP/ENOTDIR swap signature; descent can no longer be redirected.",
+      "revision": 1,
+      "subject": "INV-QR24S1VH"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-8M5QDK",
+      "items": [
+        "sha256:9bf30b318bc84f91a44951966df7c7fd7e028d61df39811d3f56f7cb40375c80"
+      ],
+      "reason": "Attached to the rule 4, rule 6 and rule 7 entries: the one-folder-at-a-time tree feed with its cap, the whole-log pane and the address-compatible target are the obligations those entries author; no separate invariant.",
+      "subject": "hunk:sha256:9bf30b318bc84f91a44951966df7c7fd7e028d61df39811d3f56f7cb40375c80"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-8ND7HN",
+      "items": [
+        "sha256:ce90d7ef01b98dabd47ef4dadb14290d07aa55bde5f135c34b41fda1af9638a7"
+      ],
+      "reason": "Attached to the rule 3 and rule 5 entries: the Notes-line component with its reference links and recorded reports is the obligation those entries author; no separate invariant.",
+      "subject": "hunk:sha256:ce90d7ef01b98dabd47ef4dadb14290d07aa55bde5f135c34b41fda1af9638a7"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-8P66XF",
+      "items": [
+        "sha256:51ee76988a7be0083f7ed25e151b5e72f25de470b7c20c7f7043c9f619966f47"
+      ],
+      "reason": "Client-contract tests for the folder/read URLs, the single-request resolve mapping and the malformed-answer rejection; regression evidence for the rule 2 and rule 5 entries, with no product obligation beyond them.",
+      "subject": "hunk:sha256:51ee76988a7be0083f7ed25e151b5e72f25de470b7c20c7f7043c9f619966f47"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-8QV90C",
+      "items": [
+        "sha256:3c20954e3f3fbe049569ab09d856210e0af601c6f487e8efb468f976b5ed48b4"
+      ],
+      "reason": "Attached to the rule 6 entry: the product_record flag shape the projection serves for the newest-five rule; no separate invariant.",
+      "subject": "hunk:sha256:3c20954e3f3fbe049569ab09d856210e0af601c6f487e8efb468f976b5ed48b4"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-8RC99N",
+      "items": [
+        "sha256:3b84baaa40be026f82a8343ced0372e64f39f2830418edb87cf8f3591790929d"
+      ],
+      "reason": "Client-contract tests for the folder/read URLs, the single-request resolve mapping and the malformed-answer rejection; regression evidence for the rule 2 and rule 5 entries, with no product obligation beyond them.",
+      "subject": "hunk:sha256:3b84baaa40be026f82a8343ced0372e64f39f2830418edb87cf8f3591790929d"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-8RZ0SE",
+      "items": [
+        "sha256:a432e6a8cbc1229233a8fee71e1c409b32b6c6f72b47cf396d1dd3efecc6475e"
+      ],
+      "reason": "Attached to the rule 6 entry: the newest-first decision projection the page renders; no separate invariant.",
+      "subject": "hunk:sha256:a432e6a8cbc1229233a8fee71e1c409b32b6c6f72b47cf396d1dd3efecc6475e"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-8YTBJ0",
+      "items": [
+        "sha256:1a40e4416b97762a37dcba725805e4f361519a29a36f1f2d1d1956e3076ec12f"
+      ],
+      "reason": "Attached to the rule 8 entry: pinned first-part bytes the mounted transition asserts against; fixture evidence, not a new obligation.",
+      "subject": "hunk:sha256:1a40e4416b97762a37dcba725805e4f361519a29a36f1f2d1d1956e3076ec12f"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-8ZF241",
+      "items": [
+        "sha256:0867fa7d0f8ffa7b0a8fc697ec07bd72b6fbbdf9b9b97355754adcd6279510c9"
+      ],
+      "reason": "Covered by the marking-test contract; the card records the two writer-constants cases.",
+      "subject": "onboarding:mcp/tests/test_task_decision_product_records.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-8ZSKZ3",
+      "items": [
+        "sha256:405df6145acf7b495bef0a42d10218a517946e1182bf8541e84befad015f60b1"
+      ],
+      "reason": "Covered by the reports client; the card records the listing route the entry surface reads.",
+      "subject": "onboarding:dashboard/src/data/taskReports.ts"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-902RPT",
+      "items": [
+        "sha256:46c3653538d4c511c4bff44e2539665554f8be444554fac2b101fedc5370438e"
+      ],
+      "reason": "Attached to the rule 8 entry: pinned selection-change answers re-verified against live masters; fixture evidence, not a new obligation.",
+      "subject": "hunk:sha256:46c3653538d4c511c4bff44e2539665554f8be444554fac2b101fedc5370438e"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-906F9G",
+      "items": [
+        "sha256:b732ff02c899bae135d94a77ed75355c0e9e7a5ed458b8ece432b084f59b0026"
+      ],
+      "reason": "Body updated in this pass: Purpose, Route Model, Invariants and Hot Path now state the folder/read/resolve transport and the one-folder-at-a-time ExplorerTree feed with its cap, replacing the removed list-endpoint account.",
+      "subject": "onboarding:dashboard/src/panels/notes-reader/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-91S52N",
+      "items": [
+        "sha256:b62a30101ed6d4a3a653b0a72cd74cae6fe516202b391e2a300bea00740d560b"
+      ],
+      "reason": "Attached to the rule 2, rule 5 and rule 7 entries: the one-folder answer, the single-request resolve and the unchanged read path are the obligations those entries author; no separate invariant.",
+      "subject": "hunk:sha256:b62a30101ed6d4a3a653b0a72cd74cae6fe516202b391e2a300bea00740d560b"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-947KKJ",
+      "items": [
+        "sha256:a34428e08db79fe90fd103747738877d231a3115bd7c1dfea7c0b97456966276"
+      ],
+      "reason": "Focused takeover-contract assertions for the notes-reader entry surface; they pin the reader-target wiring without stating a product obligation beyond the rule 3 entry surface.",
+      "subject": "hunk:sha256:a34428e08db79fe90fd103747738877d231a3115bd7c1dfea7c0b97456966276"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-9982SA",
+      "items": [
+        "sha256:908e4b31e5a20d2cba5b5ce8ab30549488c41e140d59c1c0d2e6eb1664d64aa9"
+      ],
+      "reason": "Task-body section assertions untouched in meaning by the delta; they pin existing rendering without stating a new obligation.",
+      "subject": "hunk:sha256:908e4b31e5a20d2cba5b5ce8ab30549488c41e140d59c1c0d2e6eb1664d64aa9"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-9B4MY1",
+      "items": [
+        "sha256:f6818fceb1e8e7c69e18b7a6968eb067b0a5cd41e1b76f3eb3e9e67bb6a0a5ff"
+      ],
+      "reason": "Shared render helpers for the detail-panel suites; test harness, not product behavior, stating no obligation.",
+      "subject": "hunk:sha256:f6818fceb1e8e7c69e18b7a6968eb067b0a5cd41e1b76f3eb3e9e67bb6a0a5ff"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-9C7QA8",
+      "items": [
+        "sha256:0dd36248a7b10e90e58d398b64251d1d8f02f30843da71f7f109ea9a4463c388"
+      ],
+      "reason": "Reader suite pinning the tree rail, content pane, takeover, target and whole-log cases; regression evidence for the rule 4, rule 6 and rule 7 entries, with obligations owned by those entries.",
+      "subject": "hunk:sha256:0dd36248a7b10e90e58d398b64251d1d8f02f30843da71f7f109ea9a4463c388"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-9MK7N1",
+      "items": [
+        "sha256:84e2f18753ce46b7098b849ff0a5be669c203ee68dae37813c0959c955df78bb"
+      ],
+      "reason": "Attached to the rule 6 entry (with the requirement-link context of rule 5): the preview mount and the whole-log page split are the presentation half of that obligation; no separate invariant.",
+      "subject": "hunk:sha256:84e2f18753ce46b7098b849ff0a5be669c203ee68dae37813c0959c955df78bb"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-9MZ9EY",
+      "items": [
+        "sha256:b77c59720bb9be454775ff94f4154aa02947006120f321dea441d3d11a28bd71"
+      ],
+      "reason": "Deleted file: the superseded list-endpoint suite is removed with the whole-tree answer it proved; its history is task-local evidence, and the folder suite carries the obligation.",
+      "subject": "onboarding:mcp/tests/test_notes_listing.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-9Q2PX6",
+      "items": [
+        "sha256:27ea4c92e25885bf5a0e79e9ffcf8ba9cbab920b1b91fa57a3851f739888c96d"
+      ],
+      "reason": "Attached to the rule 6 entry: the product-record marking type the page consumes; no separate invariant.",
+      "subject": "hunk:sha256:27ea4c92e25885bf5a0e79e9ffcf8ba9cbab920b1b91fa57a3851f739888c96d"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-9XKP5F",
+      "items": [
+        "sha256:00181dbd820cc0ae487028074ba6e5a9a40a63497fadc64711216465e7c6a432"
+      ],
+      "reason": "Covered by the declared-model contract; the card records the folder, resolve and report models added beside the unchanged ones.",
+      "subject": "onboarding:mcp/src/agents_remember/serving/response_contract.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-9XW5NE",
+      "items": [
+        "sha256:7c19f77a814518dcfd47e3b0c1cc3eb98013c3404841b3706108c8701bbf825d"
+      ],
+      "reason": "Attached to the rule 3 and rule 5 entries: the Notes-line component with its reference links and recorded reports is the obligation those entries author; no separate invariant.",
+      "subject": "hunk:sha256:7c19f77a814518dcfd47e3b0c1cc3eb98013c3404841b3706108c8701bbf825d"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-A0EDYY",
+      "items": [
+        "sha256:2664cbeae12f3542b494c57b2484646c49a6261f6861f09c21220e9bbcd12f92"
+      ],
+      "reason": "Covered by the retained cost-test contract; the card records the three bounded-selection cases re-verified against live masters.",
+      "subject": "onboarding:mcp/tests/test_generated_master_selection_cost.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-A0XBM1",
+      "items": [
+        "sha256:e47125db85759e36fe615c578b30f9bf45f8781cd08743a0fb5061d6318fedb6"
+      ],
+      "reason": "Attached to the rule 6 entry (with the requirement-link context of rule 5): the preview mount and the whole-log page split are the presentation half of that obligation; no separate invariant.",
+      "subject": "hunk:sha256:e47125db85759e36fe615c578b30f9bf45f8781cd08743a0fb5061d6318fedb6"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-A6ZYQN",
+      "items": [
+        "sha256:e87b68fdec88323d87fee8050844f1997f00f2e66d425bad905eb54f1fe8a07f"
+      ],
+      "reason": "Attached to the rule 6 and rule 5 entries: the newest-first ordering helper plus the references-carrying master view are the presentation half of those obligations; no separate invariant.",
+      "subject": "hunk:sha256:e87b68fdec88323d87fee8050844f1997f00f2e66d425bad905eb54f1fe8a07f"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-AAB96W",
+      "items": [
+        "sha256:53d2edfc9150bd49777090f79624283f5fb5543c4000a445e88aca05b487e581"
+      ],
+      "reason": "Attached to the rule 5 entry: the recorded-start step the listing reads keeps its shape; no separate invariant.",
+      "subject": "hunk:sha256:53d2edfc9150bd49777090f79624283f5fb5543c4000a445e88aca05b487e581"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ABBW63",
+      "items": [
+        "sha256:fee4b9b568c81f40a0a0e71c66966d2d29d3bcba17a5a772758cbef2c66c747e"
+      ],
+      "reason": "Mounted cost suite performing the actual BIG-to-SMALL transition against pinned replies; proof evidence for the rule 8 entry, with the bound owned by that entry.",
+      "subject": "hunk:sha256:fee4b9b568c81f40a0a0e71c66966d2d29d3bcba17a5a772758cbef2c66c747e"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ABNNBZ",
+      "items": [
+        "sha256:d5eab55ae8b9ccadea1882b48e6492c1e4ee5120d6f8bd8c993f415f84a0ac19"
+      ],
+      "reason": "Entry-surface suite pinning the Notes line, the folder/resolve/reports stub shape and the three assertion groups; regression evidence for the rule 3 and rule 5 entries, with no reader behavior claimed.",
+      "subject": "hunk:sha256:d5eab55ae8b9ccadea1882b48e6492c1e4ee5120d6f8bd8c993f415f84a0ac19"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-AFRXAV",
+      "items": [
+        "sha256:c84fc9992b840b101a4f215e961dc763f100c2e899099032b7560079763199ac"
+      ],
+      "reason": "Covered by the pinned-reply fixture contract; the card records the selection-change answers re-verified against live masters.",
+      "subject": "onboarding:dashboard/src/panels/__fixtures__/generatedSelectionChangeAnswers.json"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-AGT43K",
+      "items": [
+        "sha256:f1a8128b733b4c78ecc4635995f3823b7159551f5a4da5a680ed8ccb52794829"
+      ],
+      "reason": "Reader suite pinning the tree rail, content pane, takeover, target and whole-log cases; regression evidence for the rule 4, rule 6 and rule 7 entries, with obligations owned by those entries.",
+      "subject": "hunk:sha256:f1a8128b733b4c78ecc4635995f3823b7159551f5a4da5a680ed8ccb52794829"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-AMR7DY",
+      "items": [
+        "sha256:4a44573e46280351dce412e49198dd7f3de6a76a11c2837bb0fc051c920a78f4"
+      ],
+      "reason": "Task-body section assertions untouched in meaning by the delta; they pin existing rendering without stating a new obligation.",
+      "subject": "hunk:sha256:4a44573e46280351dce412e49198dd7f3de6a76a11c2837bb0fc051c920a78f4"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ANW48Z",
+      "items": [
+        "sha256:633dacbcf708cd44f6b3f09d0206ec8d13c9b3f4ee050902dc0e7bffccdb067f"
+      ],
+      "reason": "Removed whole-tree list machinery (the listing docstring, the depth cap, the walk accumulator and its imports): the one-folder endpoint of entry MIK-R126@v1 rule 2 replaces it, and the whole-tree answer stays removed with no caller.",
+      "subject": "hunk:sha256:633dacbcf708cd44f6b3f09d0206ec8d13c9b3f4ee050902dc0e7bffccdb067f"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ASNGMQ",
+      "items": [
+        "sha256:f56404d7bbdde78aef1cd6cab99db916c17def186921307451db1ba56ce85a37"
+      ],
+      "reason": "Attached to the rule 6 entry (with the requirement-link context of rule 5): the preview mount and the whole-log page split are the presentation half of that obligation; no separate invariant.",
+      "subject": "hunk:sha256:f56404d7bbdde78aef1cd6cab99db916c17def186921307451db1ba56ce85a37"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-ATTQE4",
+      "items": [
+        "sha256:4e637c9ed7417b8f1eab2e844854e38c04049d12cf396e0b5af2a9de2cff8d05"
+      ],
+      "reason": "Covered by the preview contract; the card records the newest-five rendering and the whole-log link assertions.",
+      "subject": "onboarding:dashboard/src/panels/detail-panel/decisionPreview.test.tsx"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-AV24NC",
+      "items": [
+        "sha256:b81c3dbe3bd78053ae2975ce8caa04b225835f4d611a69b419b87d9a3c318c74"
+      ],
+      "reason": "Reader suite pinning the tree rail, content pane, takeover, target and whole-log cases; regression evidence for the rule 4, rule 6 and rule 7 entries, with obligations owned by those entries.",
+      "subject": "hunk:sha256:b81c3dbe3bd78053ae2975ce8caa04b225835f4d611a69b419b87d9a3c318c74"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-AXETWA",
+      "items": [
+        "sha256:8b560ddbdf38e0e1ef40becd32360529fad16cf86582294ee6ad5ee2040816bd"
+      ],
+      "reason": "Attached to the rule 2 and rule 5 entries: the folder, resolve and report declared models are the contract half of those obligations; no separate invariant.",
+      "subject": "hunk:sha256:8b560ddbdf38e0e1ef40becd32360529fad16cf86582294ee6ad5ee2040816bd"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-B25DTA",
+      "items": [
+        "sha256:bb466beadbca9e0653b608fca721e37ee9eee5ce5261a904c8361ad76ddc96d3"
+      ],
+      "reason": "Reviewed no change: the route body states cockpit composition and client ownership, all still accurate; the NotesTakeover data-view naming is carried in the Cockpit.tsx file card.",
+      "subject": "onboarding:dashboard/src/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-B6XBAN",
+      "items": [
+        "sha256:6d6524a2300ca78bca841756aef472ebcb89b02f62c06be39b9d48622c9db910"
+      ],
+      "reason": "Attached to the rule 2 and rule 5 entries: the folder client and the single-request resolver are the presentation half of those obligations; no separate invariant.",
+      "subject": "hunk:sha256:6d6524a2300ca78bca841756aef472ebcb89b02f62c06be39b9d48622c9db910"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-BD3F5V",
+      "items": [
+        "sha256:3f1332e5e19227860fa875d10327e34c046b189f35356b68016ae1906dca38c5"
+      ],
+      "reason": "Card gains the writer-constants re-export section per L126-MEM-09.",
+      "subject": "onboarding:mcp/src/agents_remember/tasks/__init__.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-BF3ZK3",
+      "items": [
+        "sha256:6e3b91152f5f9cddf8c1693c54f3afa92618948581a339d5d0954d6bd11a0f12"
+      ],
+      "reason": "Attached to the rule 3 and rule 5 entries: the Notes-line component with its reference links and recorded reports is the obligation those entries author; no separate invariant.",
+      "subject": "hunk:sha256:6e3b91152f5f9cddf8c1693c54f3afa92618948581a339d5d0954d6bd11a0f12"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-BFE1WY",
+      "items": [
+        "sha256:4506d96d95659beee477918e58277a6e5e4415f09ae7fb1df37c9a63a807c279"
+      ],
+      "reason": "Removed list-fed rail (the bespoke NotesRail, its row styles and the list transport import): the shared ExplorerTree fed one folder at a time in entry MIK-R126@v1 rule 4 replaces it; no obligation remains in the removed lines.",
+      "subject": "hunk:sha256:4506d96d95659beee477918e58277a6e5e4415f09ae7fb1df37c9a63a807c279"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-BG7SAH",
+      "items": [
+        "sha256:63a4bd82f52ba21861757389562bb02ef587f75e2a89d351ff6889b4851285e9"
+      ],
+      "reason": "Card gains the product_record wire-flag section per L126-MEM-09.",
+      "subject": "onboarding:dashboard/src/types/projection.ts"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-BHQQG0",
+      "items": [
+        "sha256:e849fc3581bbc29c6d81549ac57df00fc0492c563558bc71449ed2b6a97d2ace"
+      ],
+      "reason": "Removed list-based entry surface (the series-notes list, its row styles and the inline list fetch): the one Notes line of entry MIK-R126@v1 rule 3 replaces it, and note reading lives in the reader; no obligation remains in the removed lines.",
+      "subject": "hunk:sha256:e849fc3581bbc29c6d81549ac57df00fc0492c563558bc71449ed2b6a97d2ace"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-BHT61A",
+      "items": [
+        "sha256:3c7444bae028f1e1a15fad814f656b81b1a46c463d502d92427f72d6df5d5145"
+      ],
+      "reason": "Covered by the test-harness contract; the card records the shared render helpers, not product behavior.",
+      "subject": "onboarding:dashboard/src/panels/detail-panel/test-utils.tsx"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-BHVDZ4",
+      "items": [
+        "sha256:19800bcbb01f9309b298e137af163ed13af8051430518b6b95aef32c9ee18d0d"
+      ],
+      "reason": "Retired-listing suite kept as historical evidence for the superseded list surface; it states no current behavior and the folder suite carries the rule 2 obligation.",
+      "subject": "hunk:sha256:19800bcbb01f9309b298e137af163ed13af8051430518b6b95aef32c9ee18d0d"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-BPKTEF",
+      "items": [
+        "sha256:e9f5dd29c69503c9f274d141e2134568bf7ca945960ba68f98df0fc46357ad00"
+      ],
+      "reason": "Reader suite pinning the tree rail, content pane, takeover, target and whole-log cases; regression evidence for the rule 4, rule 6 and rule 7 entries, with obligations owned by those entries.",
+      "subject": "hunk:sha256:e9f5dd29c69503c9f274d141e2134568bf7ca945960ba68f98df0fc46357ad00"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-BXYN7P",
+      "items": [
+        "sha256:3b0fbb6d496804b642e7e9457434b5fff4b4c492383f24e8303cc092fa8cab23"
+      ],
+      "reason": "Reader suite pinning the tree rail, content pane, takeover, target and whole-log cases; regression evidence for the rule 4, rule 6 and rule 7 entries, with obligations owned by those entries.",
+      "subject": "hunk:sha256:3b0fbb6d496804b642e7e9457434b5fff4b4c492383f24e8303cc092fa8cab23"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-CEE2F7",
+      "items": [
+        "sha256:112905082bea56c652b8736a06d143aa08ae7f5776b0c742050c1ba0cbfe70aa"
+      ],
+      "reason": "Reader suite pinning the tree rail, content pane, takeover, target and whole-log cases; regression evidence for the rule 4, rule 6 and rule 7 entries, with obligations owned by those entries.",
+      "subject": "hunk:sha256:112905082bea56c652b8736a06d143aa08ae7f5776b0c742050c1ba0cbfe70aa"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-CEXM7N",
+      "items": [
+        "sha256:f0ff0686b70272846af5cc82092d51a6adffc3e65b9b194e5ffe01fc442c6873"
+      ],
+      "reason": "Entry-surface suite pinning the Notes line, the folder/resolve/reports stub shape and the three assertion groups; regression evidence for the rule 3 and rule 5 entries, with no reader behavior claimed.",
+      "subject": "hunk:sha256:f0ff0686b70272846af5cc82092d51a6adffc3e65b9b194e5ffe01fc442c6873"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-CH4G6G",
+      "items": [
+        "sha256:9809ffdc1d8ef7233b7ac936d5a1c128b18001267304f3a65d7b72f1187d1f48"
+      ],
+      "reason": "Body updated in this pass: the task-page sentence now states the one Notes line with root count, references and recorded reports, plus the decision preview and the one-folder-fed shared tree.",
+      "subject": "onboarding:dashboard/src/panels/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-CPKPK0",
+      "items": [
+        "sha256:a1ea1c2429592cb164486782f9f9fa5c4fc07213b62ad7297c69f6257088f92d"
+      ],
+      "reason": "Attached to the rule 2 and rule 5 entries: the folder client and the single-request resolver are the presentation half of those obligations; no separate invariant.",
+      "subject": "hunk:sha256:a1ea1c2429592cb164486782f9f9fa5c4fc07213b62ad7297c69f6257088f92d"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-CXSQAR",
+      "items": [
+        "sha256:97b3c6dc404185ce0bfb390a2fa83aaeb16d39d9d02b60b5a1dee04b0e00a2c7"
+      ],
+      "reason": "Reviewed no change: the route body states the step plane and publication seam, all still accurate; the recorded-start step keeps its shape per the task_doc_steps.py file card.",
+      "subject": "onboarding:mcp/src/agents_remember/application/task_docs/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-D46ZA2",
+      "items": [
+        "sha256:3834fc483c9a4bff15a8f669c92fde56f11433269ccbbf5fc75b2137215d808e"
+      ],
+      "reason": "Attached to the rule 4, rule 6 and rule 7 entries: the one-folder-at-a-time tree feed with its cap, the whole-log pane and the address-compatible target are the obligations those entries author; no separate invariant.",
+      "subject": "hunk:sha256:3834fc483c9a4bff15a8f669c92fde56f11433269ccbbf5fc75b2137215d808e"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-D7FTN9",
+      "items": [
+        "sha256:257854fb1a7a8bc42ae5776fd3df619b6d0d8ee4507f12c33b16d1e4251f2739"
+      ],
+      "reason": "Attached to the rule 6 entry (with the requirement-link context of rule 5): the preview mount and the whole-log page split are the presentation half of that obligation; no separate invariant.",
+      "subject": "hunk:sha256:257854fb1a7a8bc42ae5776fd3df619b6d0d8ee4507f12c33b16d1e4251f2739"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-D8JWWJ",
+      "items": [
+        "sha256:e89437b8197fd06b2a0733edf5b61723eb0351200a5b853f664cbb67811489de"
+      ],
+      "reason": "Covered by the report-test contract; the card records the unchanged launchable-role coverage plus the two task-page target cases.",
+      "subject": "onboarding:mcp/tests/test_role_report.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "d1f1be6c7c8cb30d03e132b8f4f34d2bdd0cd4fd",
+            "content": "sha256:7e69a5c5252ce9324c46b19420334ae365601d3d20f23b9bf7101e468ec93765",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_note"
+            },
+            "path": "mcp/src/agents_remember/serving/notes.py"
+          },
+          "before": {
+            "blob": "e3e6f8d4c246e066532296e69563c435200ae08b",
+            "content": "sha256:7e69a5c5252ce9324c46b19420334ae365601d3d20f23b9bf7101e468ec93765",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_note"
+            },
+            "path": "mcp/src/agents_remember/serving/notes.py"
+          },
+          "id": "RLZ-AFAM29GC"
+        },
+        {
+          "after": {
+            "blob": "d1f1be6c7c8cb30d03e132b8f4f34d2bdd0cd4fd",
+            "content": "sha256:0186fdab5f017034970f1e1f731805df2b928dc8cb8f049d2702dbfdce22ef17",
+            "locator": {
+              "kind": "symbol",
+              "name": "_notes_json"
+            },
+            "path": "mcp/src/agents_remember/serving/notes.py"
+          },
+          "before": {
+            "blob": "e3e6f8d4c246e066532296e69563c435200ae08b",
+            "content": "sha256:892f36a83d3997a29e6cb53485f4a0c3dc2e005321e682b8c56e259785d82f88",
+            "locator": {
+              "kind": "symbol",
+              "name": "_notes_json"
+            },
+            "path": "mcp/src/agents_remember/serving/notes.py"
+          },
+          "id": "RLZ-V1EWDR6A"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-DFME9G",
+      "items": [
+        "sha256:1aa1ec89aad19b5343a2efe39c57e39f3507a79ec4d0d8206ca402a8f87c8111"
+      ],
+      "reason": "Preserved across the folder-endpoint rewrite: RLZ-AFAM29GC carried byte-identical and RLZ-V1EWDR6A re-anchored onto the new read path, both in mcp/src/agents_remember/serving/notes.py; the read contract is unchanged.",
+      "revision": 1,
+      "subject": "INV-2DF3HS9Q"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-DHF7BH",
+      "items": [
+        "sha256:c2ac12156643a86c5defe530ef0dcbf82423e8c0b8d3882cef59ab16205fa12e"
+      ],
+      "reason": "Attached to the rule 3 and rule 5 entries: the Notes-line component with its reference links and recorded reports is the obligation those entries author; no separate invariant.",
+      "subject": "hunk:sha256:c2ac12156643a86c5defe530ef0dcbf82423e8c0b8d3882cef59ab16205fa12e"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-DPQV6M",
+      "items": [
+        "sha256:84a842fe18c7b201a9bdcd1ce4a59ccd9ee7846b221ecaf352b397931dad822c"
+      ],
+      "reason": "Attached to the rule 4, rule 6 and rule 7 entries: the one-folder-at-a-time tree feed with its cap, the whole-log pane and the address-compatible target are the obligations those entries author; no separate invariant.",
+      "subject": "hunk:sha256:84a842fe18c7b201a9bdcd1ce4a59ccd9ee7846b221ecaf352b397931dad822c"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-E5F8SA",
+      "items": [
+        "sha256:08a20163f5884aa60d4d067cc0f8cf9b27ed50bae1509210e66ada942ef64fe5"
+      ],
+      "reason": "Covered by the pinned-reply fixture contract; the card records the first-part bytes the mounted transition asserts against.",
+      "subject": "onboarding:dashboard/src/panels/__fixtures__/generatedRootFirstPart.json"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-E76C1E",
+      "items": [
+        "sha256:452f1df12d065bd1344f910a7146de25a279a068103a11792c244d3b0bcce17d"
+      ],
+      "reason": "Report-route suite: unchanged launchable-role coverage plus the two task-page target cases opening current and archived starts; regression evidence for the rule 5 entry.",
+      "subject": "hunk:sha256:452f1df12d065bd1344f910a7146de25a279a068103a11792c244d3b0bcce17d"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-E88S61",
+      "items": [
+        "sha256:ae111df115cd35c0c04bd76f27b4c6a972dc3cd666532c0ca153253ede85ed52"
+      ],
+      "reason": "Attached to the rule 3 entry surface: the NotesTakeover data-view naming and the folder-open reader state are part of the Notes-line obligation authored in entry MIK-R126@v1 rule 3; no separate invariant.",
+      "subject": "hunk:sha256:ae111df115cd35c0c04bd76f27b4c6a972dc3cd666532c0ca153253ede85ed52"
+    },
+    {
+      "disposition": "changed",
+      "effect": "weaken",
+      "examined": [
+        {
+          "id": "INV-DA7D417G",
+          "revision": 2
+        },
+        {
+          "id": "INV-EJW15DXA",
+          "revision": 2
+        },
+        {
+          "id": "INV-QR24S1VH",
+          "revision": 1
+        },
+        {
+          "id": "INV-Z66EMHMH",
+          "revision": 2
+        },
+        {
+          "id": "INV-ZJS1XY4R",
+          "revision": 2
+        }
+      ],
+      "id": "ROW-EGQ90Q",
+      "items": [
+        "sha256:47d0e1baca783b36a72de81231b6a3019d538cf449643f83a289136bb1db1fb2",
+        "sha256:9614deb0b004abdad50091d63a1ca9bba0ef83d7ebe052a23a2f6923197be028"
+      ],
+      "reason": "governing changed row per L126-MEM-02 (MIK-R06 rule 3): same-bytes clause retired with the removed endpoint; per-entry cost is one nofollow stat plus a second followed stat for symlinks; confinement, no-fail and no-state joint guarantee current; dated truth preserved in members.",
+      "revision": 2,
+      "subject": "FAM-4V4GSQCS"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-EVZVFQ",
+      "items": [
+        "sha256:69acc0b7a0724bb986e6278c4eeefd4bb7cc2abc64bfc4678840c7ac375a78b9"
+      ],
+      "reason": "Covered by the newest-first ordering contract; the card records the parsed-time order with stable fallback.",
+      "subject": "onboarding:dashboard/src/panels/detail-panel/model.ts"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-EZX6CF",
+      "items": [
+        "sha256:d94d881be9be7e0671876eb0444fde3c1ea7d7340e5e6c7a68f663720998b3cc"
+      ],
+      "reason": "Covered by the mounted cost contract; the card records the actual BIG-to-SMALL transition assertions against pinned replies.",
+      "subject": "onboarding:dashboard/src/panels/taskPageCost.test.tsx"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-F75EK7",
+      "items": [
+        "sha256:ce91b738caa5fd25be00c857736679d94f7bbe7e91569aaedb17a13d99dd47bd"
+      ],
+      "reason": "Attached to the rule 5 entry: the newest-first listing, the exact task-only target completion and the confined report open are the obligation that entry authors; no separate invariant.",
+      "subject": "hunk:sha256:ce91b738caa5fd25be00c857736679d94f7bbe7e91569aaedb17a13d99dd47bd"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-F7RT2G",
+      "items": [
+        "sha256:d43e925074f7e97e94a2bed3a4bb23a5a96c3d18009d8b4271f3c3b16240e914"
+      ],
+      "reason": "Entry-surface suite pinning the Notes line, the folder/resolve/reports stub shape and the three assertion groups; regression evidence for the rule 3 and rule 5 entries, with no reader behavior claimed.",
+      "subject": "hunk:sha256:d43e925074f7e97e94a2bed3a4bb23a5a96c3d18009d8b4271f3c3b16240e914"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-FJFWA8",
+      "items": [
+        "sha256:aaa9ae4069bcea243ac52ec527a915c1d8387f49a10015ac84576be114f38326"
+      ],
+      "reason": "Attached to the rule 2, rule 5 and rule 7 entries: the one-folder answer, the single-request resolve and the unchanged read path are the obligations those entries author; no separate invariant.",
+      "subject": "hunk:sha256:aaa9ae4069bcea243ac52ec527a915c1d8387f49a10015ac84576be114f38326"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-FJMSSR",
+      "items": [
+        "sha256:0a304b4e144b1a4f80c648147b84b6e71019965c42065f253d873c0123420413"
+      ],
+      "reason": "Attached to the rule 3 and rule 5 entries: the Notes-line component with its reference links and recorded reports is the obligation those entries author; no separate invariant.",
+      "subject": "hunk:sha256:0a304b4e144b1a4f80c648147b84b6e71019965c42065f253d873c0123420413"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-FKVJF7",
+      "items": [
+        "sha256:1a7b5bfbbb04eb2e40e465b0429a661862fe2cecf5223ee1607589b903522efc"
+      ],
+      "reason": "Attached to the rule 2, rule 5 and rule 7 entries: the one-folder answer, the single-request resolve and the unchanged read path are the obligations those entries author; no separate invariant.",
+      "subject": "hunk:sha256:1a7b5bfbbb04eb2e40e465b0429a661862fe2cecf5223ee1607589b903522efc"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-FQ1K4V",
+      "items": [
+        "sha256:33bca54252904120be36629a6c9cb42d47674b842d6646c52875b60bc6e4156b"
+      ],
+      "reason": "Attached to the rule 3 and rule 5 entries: the Notes-line component with its reference links and recorded reports is the obligation those entries author; no separate invariant.",
+      "subject": "hunk:sha256:33bca54252904120be36629a6c9cb42d47674b842d6646c52875b60bc6e4156b"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-FTNXQG",
+      "items": [
+        "sha256:396406dd5e45a8849870da9d2743a5798f433c72596cb782f9966952a2b2ef6e"
+      ],
+      "reason": "Attached to the rule 3 and rule 5 entries: the Notes-line component with its reference links and recorded reports is the obligation those entries author; no separate invariant.",
+      "subject": "hunk:sha256:396406dd5e45a8849870da9d2743a5798f433c72596cb782f9966952a2b2ef6e"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-FVSMWS",
+      "items": [
+        "sha256:704afad4d57c9d6342b8037da947223caace30de7e2cb36a61e544eb5337cc6c"
+      ],
+      "reason": "Reader suite pinning the tree rail, content pane, takeover, target and whole-log cases; regression evidence for the rule 4, rule 6 and rule 7 entries, with obligations owned by those entries.",
+      "subject": "hunk:sha256:704afad4d57c9d6342b8037da947223caace30de7e2cb36a61e544eb5337cc6c"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-FYXXEY",
+      "items": [
+        "sha256:16fdf658f04813911ceebb7e8c8d3d85ee4fdbb78e72f2909da9a03cab2ba649"
+      ],
+      "reason": "Card refreshed to the four actual members plus optional path/folder; prior two-member claim replaced per L126-MEM-06.",
+      "subject": "onboarding:dashboard/src/data/taskArtifacts.ts"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-G2X7ER",
+      "items": [
+        "sha256:2f70e82a2f2618971bce6b847437fb2ab4045bc461bdf9053750ca6b36be70a5"
+      ],
+      "reason": "Deleted file: the superseded whole-tree list suite is removed with the endpoint it proved; its history is task-local evidence and the folder suite carries the rule 2 obligation.",
+      "subject": "hunk:sha256:2f70e82a2f2618971bce6b847437fb2ab4045bc461bdf9053750ca6b36be70a5"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-G5WBRQ",
+      "items": [
+        "sha256:af04544a898f59db69c2fcd9e7f1b20284fc818b355e9b6549cb7e19780734f5"
+      ],
+      "reason": "Attached to the rule 5 entry: the newest-first listing, the exact task-only target completion and the confined report open are the obligation that entry authors; no separate invariant.",
+      "subject": "hunk:sha256:af04544a898f59db69c2fcd9e7f1b20284fc818b355e9b6549cb7e19780734f5"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-GE23H8",
+      "items": [
+        "sha256:dd45f3cfa6dd8a5fa9ec396517b220df45666f75e342006b88be10699fd23711"
+      ],
+      "reason": "One-line import delta; card carries no recorded-start account per L126-MEM-11.",
+      "subject": "onboarding:mcp/src/agents_remember/application/task_docs/task_doc_steps.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-GF00VH",
+      "items": [
+        "sha256:6e0682f13e0aebdbb3a74afddfc5d042e26eec16bb54891be6624cf804cce083"
+      ],
+      "reason": "Attached to the rule 4, rule 6 and rule 7 entries: the one-folder-at-a-time tree feed with its cap, the whole-log pane and the address-compatible target are the obligations those entries author; no separate invariant.",
+      "subject": "hunk:sha256:6e0682f13e0aebdbb3a74afddfc5d042e26eec16bb54891be6624cf804cce083"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-GJCJHW",
+      "items": [
+        "sha256:bd758e25a35ec2fb1157e65be0e2ca01f5894d22838a7312078e474edd2d32c6"
+      ],
+      "reason": "Card gains the stored-order plus predicate-marking section (no sort; frontend orders) per L126-MEM-09.",
+      "subject": "onboarding:mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-GJEG6Z",
+      "items": [
+        "sha256:5843fa902513952b8b45e15c3c4796d0de73c2198dda4ed853d1ad8565823031"
+      ],
+      "reason": "Reader suite pinning the tree rail, content pane, takeover, target and whole-log cases; regression evidence for the rule 4, rule 6 and rule 7 entries, with obligations owned by those entries.",
+      "subject": "hunk:sha256:5843fa902513952b8b45e15c3c4796d0de73c2198dda4ed853d1ad8565823031"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-GNQTWW",
+      "items": [
+        "sha256:90074361e8af801d3b88b4f670c0c21f997a3e9f9fc7ba718433d24f039635e1"
+      ],
+      "reason": "Removed list-fed rail (the bespoke NotesRail, its row styles and the list transport import): the shared ExplorerTree fed one folder at a time in entry MIK-R126@v1 rule 4 replaces it; no obligation remains in the removed lines.",
+      "subject": "hunk:sha256:90074361e8af801d3b88b4f670c0c21f997a3e9f9fc7ba718433d24f039635e1"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-GQ2N9N",
+      "items": [
+        "sha256:2cb68f2430a4ea316ea18ed505cc28fea593df673e0b59dffe0ad73b90aa2bc4"
+      ],
+      "reason": "Attached to the rule 2, rule 5 and rule 7 entries: the one-folder answer, the single-request resolve and the unchanged read path are the obligations those entries author; no separate invariant.",
+      "subject": "hunk:sha256:2cb68f2430a4ea316ea18ed505cc28fea593df673e0b59dffe0ad73b90aa2bc4"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-GTEZ6S",
+      "items": [
+        "sha256:5c6041e019a5c6a65b3379745604b9f662c24142784b89a8c9e20f53ce7a4f64"
+      ],
+      "reason": "Entry-surface suite pinning the Notes line, the folder/resolve/reports stub shape and the three assertion groups; regression evidence for the rule 3 and rule 5 entries, with no reader behavior claimed.",
+      "subject": "hunk:sha256:5c6041e019a5c6a65b3379745604b9f662c24142784b89a8c9e20f53ce7a4f64"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-GTFMDP",
+      "items": [
+        "sha256:984106d34d0085073fcea0fa913fa32078abeb98a90937553c9711033acade79"
+      ],
+      "reason": "Attached to the rule 6 entry (with the requirement-link context of rule 5): the preview mount and the whole-log page split are the presentation half of that obligation; no separate invariant.",
+      "subject": "hunk:sha256:984106d34d0085073fcea0fa913fa32078abeb98a90937553c9711033acade79"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-H36C6M",
+      "items": [
+        "sha256:7e303e911f0b0f6d0cf6604a20342d32bd581c36c1cf58125322d6efa0e3cd01"
+      ],
+      "reason": "Attached to the rule 3 and rule 5 entries: the Notes-line component with its reference links and recorded reports is the obligation those entries author; no separate invariant.",
+      "subject": "hunk:sha256:7e303e911f0b0f6d0cf6604a20342d32bd581c36c1cf58125322d6efa0e3cd01"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-HAH0J7",
+      "items": [
+        "sha256:458aba593b4027017ded6241bdd04a91025e2d9fe583aee7c7185f0eaeb6f5e0"
+      ],
+      "reason": "Attached to the rule 4, rule 6 and rule 7 entries: the one-folder-at-a-time tree feed with its cap, the whole-log pane and the address-compatible target are the obligations those entries author; no separate invariant.",
+      "subject": "hunk:sha256:458aba593b4027017ded6241bdd04a91025e2d9fe583aee7c7185f0eaeb6f5e0"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-HFBCZC",
+      "items": [
+        "sha256:9b741a302c6608ee3103580d0d0c00cd2faf602ac7c928f0d6e96e7f51c2ab73"
+      ],
+      "reason": "Attached to the rule 6 entry: re-exported writer constants and the product-record predicate for the newest-five rule; no new behavior, no separate invariant.",
+      "subject": "hunk:sha256:9b741a302c6608ee3103580d0d0c00cd2faf602ac7c928f0d6e96e7f51c2ab73"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-HKGPTX",
+      "items": [
+        "sha256:4397a7bb9726e7d051e8b9cdd1d220c4b9268360beec6353a2eb89857e110571"
+      ],
+      "reason": "Attached to the rule 5 entry: the shared artifact target union the page mounts for notes and requirement packets; no separate invariant.",
+      "subject": "hunk:sha256:4397a7bb9726e7d051e8b9cdd1d220c4b9268360beec6353a2eb89857e110571"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-HSSZBH",
+      "items": [
+        "sha256:3c228632d266e8bda3e9ba4c315c6debad358ccd1fa277b60a1ea536e5efc2db"
+      ],
+      "reason": "Attached to the rule 3 and rule 5 entries: the Notes-line component with its reference links and recorded reports is the obligation those entries author; no separate invariant.",
+      "subject": "hunk:sha256:3c228632d266e8bda3e9ba4c315c6debad358ccd1fa277b60a1ea536e5efc2db"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-J0ZJHC",
+      "items": [
+        "sha256:7af066ab6d708f211b1be1e70d57b0395e57baa6b3d71c7ec7e199ada4520fea"
+      ],
+      "reason": "Attached to the rule 6 entry: re-exported writer constants and the product-record predicate for the newest-five rule; no new behavior, no separate invariant.",
+      "subject": "hunk:sha256:7af066ab6d708f211b1be1e70d57b0395e57baa6b3d71c7ec7e199ada4520fea"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-J1SXEZ",
+      "items": [
+        "sha256:1cc4e663f41f3c31df0bb4da09704e90803e1afab59215c9ac15aeae78c42445"
+      ],
+      "reason": "Attached to the rule 2 and rule 5 entries: the folder, resolve and report declared models are the contract half of those obligations; no separate invariant.",
+      "subject": "hunk:sha256:1cc4e663f41f3c31df0bb4da09704e90803e1afab59215c9ac15aeae78c42445"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-J2C1BD",
+      "items": [
+        "sha256:38e95d48f8d4be42f1b72f779647c4ba032cbcffde8f767371ac46e887fa7f1d"
+      ],
+      "reason": "Entry-surface suite pinning the Notes line, the folder/resolve/reports stub shape and the three assertion groups; regression evidence for the rule 3 and rule 5 entries, with no reader behavior claimed.",
+      "subject": "hunk:sha256:38e95d48f8d4be42f1b72f779647c4ba032cbcffde8f767371ac46e887fa7f1d"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-JBVV2W",
+      "items": [
+        "sha256:405e7a1b558703c27c3342d239c562a5ffd7db35d762455d77e96b8a736a6fb0"
+      ],
+      "reason": "Folder-contract suite pinning the one-folder answer, stable order, parts, confinement and single-request resolve; proof evidence for the rule 2 and rule 5 entries.",
+      "subject": "hunk:sha256:405e7a1b558703c27c3342d239c562a5ffd7db35d762455d77e96b8a736a6fb0"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-JCNG90",
+      "items": [
+        "sha256:552c28be799d366bfda097e7f033a8a63204f4a022b4ad0c22357244e99e2ed9"
+      ],
+      "reason": "Removed list-based entry surface (the series-notes list, its row styles and the inline list fetch): the one Notes line of entry MIK-R126@v1 rule 3 replaces it, and note reading lives in the reader; no obligation remains in the removed lines.",
+      "subject": "hunk:sha256:552c28be799d366bfda097e7f033a8a63204f4a022b4ad0c22357244e99e2ed9"
+    },
+    {
+      "covers": [],
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-JHZA4A",
+      "items": [],
+      "reason": "conditions[0]/[2] re-landed per L126-MEM-04/05 after the v11 stale-carry revert; rule-6 carried from the v10-sent corrected state with read-back verification.",
+      "revision": 1,
+      "subject": "INV-NBCGCF"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-JK4BF2",
+      "items": [
+        "sha256:d6ae00cfd3d6df3ebc54537f378dcddaed1072a44383f6e98e0c3da41f7aa6d7"
+      ],
+      "reason": "Attached to the rule 6 entry: re-exported writer constants and the product-record predicate for the newest-five rule; no new behavior, no separate invariant.",
+      "subject": "hunk:sha256:d6ae00cfd3d6df3ebc54537f378dcddaed1072a44383f6e98e0c3da41f7aa6d7"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-JPT7P7",
+      "items": [
+        "sha256:0106b7c7d34bec1b9b5480fdc81fd90f62f31968477a3bd7a6f82bab2ae61ff0"
+      ],
+      "reason": "Reader suite pinning the tree rail, content pane, takeover, target and whole-log cases; regression evidence for the rule 4, rule 6 and rule 7 entries, with obligations owned by those entries.",
+      "subject": "hunk:sha256:0106b7c7d34bec1b9b5480fdc81fd90f62f31968477a3bd7a6f82bab2ae61ff0"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-JQKCRR",
+      "items": [
+        "sha256:d68939ddad84476d3e60fdeddee1f8ab7ec129d7a0e8bf5556a892c6ff07350b"
+      ],
+      "reason": "Attached to the rule 2 and rule 5 entries: the folder client and the single-request resolver are the presentation half of those obligations; no separate invariant.",
+      "subject": "hunk:sha256:d68939ddad84476d3e60fdeddee1f8ab7ec129d7a0e8bf5556a892c6ff07350b"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-JQQPCP",
+      "items": [
+        "sha256:18f2f855711d25d5bfcaa467378dfe3378aae92562dc0d67c5b7875c6da7d845"
+      ],
+      "reason": "Attached to the rule 4, rule 6 and rule 7 entries: the one-folder-at-a-time tree feed with its cap, the whole-log pane and the address-compatible target are the obligations those entries author; no separate invariant.",
+      "subject": "hunk:sha256:18f2f855711d25d5bfcaa467378dfe3378aae92562dc0d67c5b7875c6da7d845"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-JRSVG1",
+      "items": [
+        "sha256:3842b362713c6169f1061fc8bd9d746c987b103221fb21a48ec62deb053543e0"
+      ],
+      "reason": "Reader suite pinning the tree rail, content pane, takeover, target and whole-log cases; regression evidence for the rule 4, rule 6 and rule 7 entries, with obligations owned by those entries.",
+      "subject": "hunk:sha256:3842b362713c6169f1061fc8bd9d746c987b103221fb21a48ec62deb053543e0"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-JX69E8",
+      "items": [
+        "sha256:6fbcb230955fc98fa6087f446b6a4e02d1ef42ee656e4797b00aef4c73a25c10"
+      ],
+      "reason": "Reader suite pinning the tree rail, content pane, takeover, target and whole-log cases; regression evidence for the rule 4, rule 6 and rule 7 entries, with obligations owned by those entries.",
+      "subject": "hunk:sha256:6fbcb230955fc98fa6087f446b6a4e02d1ef42ee656e4797b00aef4c73a25c10"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-K0AR6P",
+      "items": [
+        "sha256:c29a977a69c0af18feed77d1f5cb35f5a285147af12e6cb4a3523849f5e763e4"
+      ],
+      "reason": "Attached to the rule 4, rule 6 and rule 7 entries: the one-folder-at-a-time tree feed with its cap, the whole-log pane and the address-compatible target are the obligations those entries author; no separate invariant.",
+      "subject": "hunk:sha256:c29a977a69c0af18feed77d1f5cb35f5a285147af12e6cb4a3523849f5e763e4"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-K0N185",
+      "items": [
+        "sha256:80bfd54d6304844c79d0157264cb22a12eb5eecb26081cf70130a7f25e8dce79"
+      ],
+      "reason": "Covered by the viewed-leaf contract; the card records the selection assertions untouched by the delta.",
+      "subject": "onboarding:dashboard/src/panels/detail-panel/viewedLeaf.test.tsx"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-K65R3P",
+      "items": [
+        "sha256:c3e865c28d087c34c0f188072e9fcb62d13801fea9e542fe520e6e5140f90ec1"
+      ],
+      "reason": "Attached to the rule 2 and rule 5 entries: the folder client and the single-request resolver are the presentation half of those obligations; no separate invariant.",
+      "subject": "hunk:sha256:c3e865c28d087c34c0f188072e9fcb62d13801fea9e542fe520e6e5140f90ec1"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-K9P4G5",
+      "items": [
+        "sha256:d72fa21fbe266d50879985b11b27183e616eff290605a99dc395702180fa4370"
+      ],
+      "reason": "Attached to the rule 3 and rule 5 entries: the Notes-line component with its reference links and recorded reports is the obligation those entries author; no separate invariant.",
+      "subject": "hunk:sha256:d72fa21fbe266d50879985b11b27183e616eff290605a99dc395702180fa4370"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-KHT7HX",
+      "items": [
+        "sha256:cb32bad9ea2ddd09f818df4c85ce851c41310619fe7e6be55e12a9d90934b5d1"
+      ],
+      "reason": "Attached to the rule 6 entry (with the requirement-link context of rule 5): the preview mount and the whole-log page split are the presentation half of that obligation; no separate invariant.",
+      "subject": "hunk:sha256:cb32bad9ea2ddd09f818df4c85ce851c41310619fe7e6be55e12a9d90934b5d1"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-KXM57J",
+      "items": [
+        "sha256:a153de4de3a5f87088b953905cf72b1e6022a6e382081fe9bd61a1320c66d3ba"
+      ],
+      "reason": "Attached to the rule 2 and rule 5 entries: the folder client and the single-request resolver are the presentation half of those obligations; no separate invariant.",
+      "subject": "hunk:sha256:a153de4de3a5f87088b953905cf72b1e6022a6e382081fe9bd61a1320c66d3ba"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-M0Z7A0",
+      "items": [
+        "sha256:5e91a76f187367b63820082a4fe54d327bbfba8dff5d059fe7df3447c3beb359"
+      ],
+      "reason": "Reader suite pinning the tree rail, content pane, takeover, target and whole-log cases; regression evidence for the rule 4, rule 6 and rule 7 entries, with obligations owned by those entries.",
+      "subject": "hunk:sha256:5e91a76f187367b63820082a4fe54d327bbfba8dff5d059fe7df3447c3beb359"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-M6SE6S",
+      "items": [
+        "sha256:6d778f63a0b27eab9083d1ef3ef15590124338c34e6ba2dca8c0df4b29141bd8"
+      ],
+      "reason": "Attached to the rule 5 entry: the new reports client the entry surface reads; no separate invariant.",
+      "subject": "hunk:sha256:6d778f63a0b27eab9083d1ef3ef15590124338c34e6ba2dca8c0df4b29141bd8"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-M8NQV6",
+      "items": [
+        "sha256:db56a2157608b497be1b79961add7c07def934abf4c5f31770bb03fff9a0a0b8"
+      ],
+      "reason": "Attached to the rule 4, rule 6 and rule 7 entries: the one-folder-at-a-time tree feed with its cap, the whole-log pane and the address-compatible target are the obligations those entries author; no separate invariant.",
+      "subject": "hunk:sha256:db56a2157608b497be1b79961add7c07def934abf4c5f31770bb03fff9a0a0b8"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-MCVPZF",
+      "items": [
+        "sha256:b5be4900178c678ae60b0971f1f38e106700810acbf658b3db3e391beaf54435"
+      ],
+      "reason": "Attached to the rule 6 and rule 5 entries: the newest-first ordering helper plus the references-carrying master view are the presentation half of those obligations; no separate invariant.",
+      "subject": "hunk:sha256:b5be4900178c678ae60b0971f1f38e106700810acbf658b3db3e391beaf54435"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-MG0F6P",
+      "items": [
+        "sha256:2ded839ecfed1a19d60c5b79852d94edefbb2fee514c222d32b42b15871c7724"
+      ],
+      "reason": "Entry-surface suite pinning the Notes line, the folder/resolve/reports stub shape and the three assertion groups; regression evidence for the rule 3 and rule 5 entries, with no reader behavior claimed.",
+      "subject": "hunk:sha256:2ded839ecfed1a19d60c5b79852d94edefbb2fee514c222d32b42b15871c7724"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-MHBMQH",
+      "items": [
+        "sha256:fec36ec77ee05619c412f721632154a50e544c167f355ba58616b56f440dd0de"
+      ],
+      "reason": "Attached to the rule 2, rule 5 and rule 7 entries: the one-folder answer, the single-request resolve and the unchanged read path are the obligations those entries author; no separate invariant.",
+      "subject": "hunk:sha256:fec36ec77ee05619c412f721632154a50e544c167f355ba58616b56f440dd0de"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-MKT3X4",
+      "items": [
+        "sha256:8064ff8c3bfbdbb0bcea75c38bb4e82964cee7e8621d34d1180138654238120b"
+      ],
+      "reason": "Attached to the rule 2, rule 5 and rule 7 entries: the one-folder answer, the single-request resolve and the unchanged read path are the obligations those entries author; no separate invariant.",
+      "subject": "hunk:sha256:8064ff8c3bfbdbb0bcea75c38bb4e82964cee7e8621d34d1180138654238120b"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-MQKZKE",
+      "items": [
+        "sha256:b2883cba8f27e484ac7ff3cb026169f9c05bdc9beac8b7eb42b03cd812d2b91b"
+      ],
+      "reason": "Attached to the rule 4, rule 6 and rule 7 entries: the one-folder-at-a-time tree feed with its cap, the whole-log pane and the address-compatible target are the obligations those entries author; no separate invariant.",
+      "subject": "hunk:sha256:b2883cba8f27e484ac7ff3cb026169f9c05bdc9beac8b7eb42b03cd812d2b91b"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "d1f1be6c7c8cb30d03e132b8f4f34d2bdd0cd4fd",
+            "content": "sha256:0ae21a994d111465147bd661ccec7e8ef284c86d7dcfb0c56b1542d8deaf0cc2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_folder_entries"
+            },
+            "path": "mcp/src/agents_remember/serving/notes.py"
+          },
+          "before": {
+            "blob": "e3e6f8d4c246e066532296e69563c435200ae08b",
+            "content": "sha256:416b34dcc8d590457c1d5d955a2d30666170c76362f84c3fd718868b89a11977",
+            "locator": {
+              "kind": "symbol",
+              "name": "_is_dir"
+            },
+            "path": "mcp/src/agents_remember/serving/notes.py"
+          },
+          "id": "RLZ-NGTT9WWJ"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-MRXW68",
+      "items": [
+        "sha256:fb98e8a3e12c24a079e2162053bf6eab0980369c13231157599eef567fe6731f"
+      ],
+      "reason": "post-sync re-anchor per L126-MEM-02: sort realization renewed on the synced pair.",
+      "revision": 2,
+      "subject": "INV-DA7D417G"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-MSVCMK",
+      "items": [
+        "sha256:cce068bfff60c5c8516bfc8a8f3b25e4a04ef3029fe61754075c6cb908bd2c1e"
+      ],
+      "reason": "Attached to the rule 2, rule 5 and rule 7 entries: the one-folder answer, the single-request resolve and the unchanged read path are the obligations those entries author; no separate invariant.",
+      "subject": "hunk:sha256:cce068bfff60c5c8516bfc8a8f3b25e4a04ef3029fe61754075c6cb908bd2c1e"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-MTVFDV",
+      "items": [
+        "sha256:6cf75e28af076fc4383992d322089b85ebf0c9e23c96092ed02fbedb4efded1d"
+      ],
+      "reason": "Attached to the rule 4, rule 6 and rule 7 entries: the one-folder-at-a-time tree feed with its cap, the whole-log pane and the address-compatible target are the obligations those entries author; no separate invariant.",
+      "subject": "hunk:sha256:6cf75e28af076fc4383992d322089b85ebf0c9e23c96092ed02fbedb4efded1d"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-MXHNT2",
+      "items": [
+        "sha256:aadf6f8a93233d3992261e64b63f4230aa925bd9dbe908363977f67e332e51bc"
+      ],
+      "reason": "Entry-surface suite pinning the Notes line, the folder/resolve/reports stub shape and the three assertion groups; regression evidence for the rule 3 and rule 5 entries, with no reader behavior claimed.",
+      "subject": "hunk:sha256:aadf6f8a93233d3992261e64b63f4230aa925bd9dbe908363977f67e332e51bc"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-N9W491",
+      "items": [
+        "sha256:7e5754b1d6a76d75713a7ea87d1534f2f3193a564a6fd17a5f1819b892eec1d9"
+      ],
+      "reason": "Task-body section assertions untouched in meaning by the delta; they pin existing rendering without stating a new obligation.",
+      "subject": "hunk:sha256:7e5754b1d6a76d75713a7ea87d1534f2f3193a564a6fd17a5f1819b892eec1d9"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-NG4ACK",
+      "items": [
+        "sha256:6372384a32d132967ecb0fb3b956978b88e7fe1c6a14e66a0a76c196cfdd4af3"
+      ],
+      "reason": "Attached to the rule 4, rule 6 and rule 7 entries: the one-folder-at-a-time tree feed with its cap, the whole-log pane and the address-compatible target are the obligations those entries author; no separate invariant.",
+      "subject": "hunk:sha256:6372384a32d132967ecb0fb3b956978b88e7fe1c6a14e66a0a76c196cfdd4af3"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-NXV7YP",
+      "items": [
+        "sha256:28d0a49164fb800dfc44e36b97355e67eb2a3b1ba9a9c159acb7e0e541a31c3b"
+      ],
+      "reason": "Attached to the rule 5 entry: the newest-first listing, the exact task-only target completion and the confined report open are the obligation that entry authors; no separate invariant.",
+      "subject": "hunk:sha256:28d0a49164fb800dfc44e36b97355e67eb2a3b1ba9a9c159acb7e0e541a31c3b"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-P1CR40",
+      "items": [
+        "sha256:7b6639f23a16e8d62e6dd96aadc730ac5e3f8ff4caee482b97e03165fec4684a"
+      ],
+      "reason": "Reader suite pinning the tree rail, content pane, takeover, target and whole-log cases; regression evidence for the rule 4, rule 6 and rule 7 entries, with obligations owned by those entries.",
+      "subject": "hunk:sha256:7b6639f23a16e8d62e6dd96aadc730ac5e3f8ff4caee482b97e03165fec4684a"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-P4Q32T",
+      "items": [
+        "sha256:24525506b5077231b959f58befd9a6c8e8199a2ce57c7e11076b7388e7149bb1"
+      ],
+      "reason": "One module added plus listing-to-folder rename; not four new modules per L126-MEM-11.",
+      "subject": "onboarding:mcp/tests/evidence-lifecycle.toml"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-P7X4RZ",
+      "items": [
+        "sha256:95f413c0f9fb8a223125c7e21272cce38ae4e9d3a351abbdb2929c615b2e9317"
+      ],
+      "reason": "Covered by the reader contract; the card records the preview mount and the whole-log page split without restating section behavior.",
+      "subject": "onboarding:dashboard/src/panels/detail-panel/taskReader.tsx"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-PAK5BF",
+      "items": [
+        "sha256:972db30fb9c207f12ba8b096b8beff433511f2dee558edd0d479cfe14fb878ea"
+      ],
+      "reason": "Covered by the folder-test contract; the card records the eleven one-folder, order, parts, confinement and resolve cases.",
+      "subject": "onboarding:mcp/tests/test_notes_folder.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-PJJXQB",
+      "items": [
+        "sha256:712a3d7280b2633a8e75290c238543f35262d3c7c390c36183e98973bf04dd3f"
+      ],
+      "reason": "Lane registration only: the four L126 test modules join unit-regression and the folder suite replaces the superseded list suite; registry bookkeeping for the rule 2 and rule 8 entries, not a new obligation.",
+      "subject": "hunk:sha256:712a3d7280b2633a8e75290c238543f35262d3c7c390c36183e98973bf04dd3f"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-PN0XDT",
+      "items": [
+        "sha256:2d183957a51bbbdb503d0cbbe0bc45f5311f7bc1ae589e1490f680345af09046"
+      ],
+      "reason": "Attached to the rule 5 entry: the shared artifact target union the page mounts for notes and requirement packets; no separate invariant.",
+      "subject": "hunk:sha256:2d183957a51bbbdb503d0cbbe0bc45f5311f7bc1ae589e1490f680345af09046"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-43CXH6",
+          "revision": 1
+        },
+        {
+          "id": "INV-5MP23G",
+          "revision": 2
+        },
+        {
+          "id": "INV-6SGHBB",
+          "revision": 1
+        },
+        {
+          "id": "INV-8J056T",
+          "revision": 1
+        },
+        {
+          "id": "INV-C7AT8R",
+          "revision": 1
+        },
+        {
+          "id": "INV-DH5NRM",
+          "revision": 1
+        },
+        {
+          "id": "INV-EFDE52",
+          "revision": 1
+        },
+        {
+          "id": "INV-TA2JW5",
+          "revision": 1
+        },
+        {
+          "id": "INV-ZVQ7E3",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-PN54XS",
+      "items": [
+        "sha256:a5209688ec158353f4e7bc0ef8e89b8d1681af44c45e029cb37b776339bbb664"
+      ],
+      "reason": "All nine launcher-strip members examined at their stored revisions; the L126 report-listing touch on INV-TA2JW5 realizations preserves the strip guarantee — the page opens exact recorded reports through the existing reader with no new execution prose and no second-start path.",
+      "revision": 3,
+      "subject": "FAM-RT2XDA"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-PQAKA8",
+      "items": [
+        "sha256:35017576d8f0efa3925b3f7d13c89447683becb787ea60b107cd121f6b0e2b58"
+      ],
+      "reason": "Card gains tree/paging/fill/vanish/cache/whole-log/task-report groups with folder transports; flat-list prose dated, per L126-MEM-08.",
+      "subject": "onboarding:dashboard/src/panels/notes-reader/NotesReaderViewer.test.tsx"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-PRD7S5",
+      "items": [
+        "sha256:26f52346ad0b952f09ef1f8319e26a221b3df9d355292d2e2c8857a16c3194b3"
+      ],
+      "reason": "Marking-contract suite pinning the writer-constants predicate; proof evidence for the rule 6 entry.",
+      "subject": "hunk:sha256:26f52346ad0b952f09ef1f8319e26a221b3df9d355292d2e2c8857a16c3194b3"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-PS0ZN3",
+      "items": [
+        "sha256:1d436a4bf719e40bde0dd899586949fa40c5cd318b3857347ee9affa314f8d9f"
+      ],
+      "reason": "Attached to the rule 2, rule 5 and rule 7 entries: the one-folder answer, the single-request resolve and the unchanged read path are the obligations those entries author; no separate invariant.",
+      "subject": "hunk:sha256:1d436a4bf719e40bde0dd899586949fa40c5cd318b3857347ee9affa314f8d9f"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-PSFZ7D",
+      "items": [
+        "sha256:6c6f9ee4fac7c05b334809ecc9e91cb33e96f0b6f60c7ebccbf77d45bd20e203"
+      ],
+      "reason": "Attached to the rule 3 and rule 5 entries: the Notes-line component with its reference links and recorded reports is the obligation those entries author; no separate invariant.",
+      "subject": "hunk:sha256:6c6f9ee4fac7c05b334809ecc9e91cb33e96f0b6f60c7ebccbf77d45bd20e203"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "9ccc8fe209e97edadb25ba988bdce70ad595a167",
+            "content": "sha256:a32aabc2885e83d39aa6fb70d3ceef94e5348ce8fa817d3aab8fbdb46a22de17",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_report_of_every_launchable_role_is_read_only"
+            },
+            "path": "mcp/tests/test_role_report.py"
+          },
+          "before": {
+            "blob": "f2af72b4daa859889e617e18b377b2f8b2b2b953",
+            "content": "sha256:a32aabc2885e83d39aa6fb70d3ceef94e5348ce8fa817d3aab8fbdb46a22de17",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_report_of_every_launchable_role_is_read_only"
+            },
+            "path": "mcp/tests/test_role_report.py"
+          },
+          "id": "PRF-1THM3M"
+        },
+        {
+          "after": {
+            "blob": "9ccc8fe209e97edadb25ba988bdce70ad595a167",
+            "content": "sha256:6c41b1f0f3c548341041f80e22343c9f309480d1fff1bf9ece05dccff8e9d0b4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_canonical_report_survives_absent_alias_and_names_a_retarget"
+            },
+            "path": "mcp/tests/test_role_report.py"
+          },
+          "before": {
+            "blob": "f2af72b4daa859889e617e18b377b2f8b2b2b953",
+            "content": "sha256:6c41b1f0f3c548341041f80e22343c9f309480d1fff1bf9ece05dccff8e9d0b4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_canonical_report_survives_absent_alias_and_names_a_retarget"
+            },
+            "path": "mcp/tests/test_role_report.py"
+          },
+          "id": "PRF-A5F1FJ"
+        },
+        {
+          "after": {
+            "blob": "9ccc8fe209e97edadb25ba988bdce70ad595a167",
+            "content": "sha256:539d846c6fc7418b2eb0138441eee33b77761fe20c6b2e4eb118102723b3b521",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_receipt_cannot_replace_the_deterministic_report_file"
+            },
+            "path": "mcp/tests/test_role_report.py"
+          },
+          "before": {
+            "blob": "f2af72b4daa859889e617e18b377b2f8b2b2b953",
+            "content": "sha256:539d846c6fc7418b2eb0138441eee33b77761fe20c6b2e4eb118102723b3b521",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_receipt_cannot_replace_the_deterministic_report_file"
+            },
+            "path": "mcp/tests/test_role_report.py"
+          },
+          "id": "PRF-E87PQE"
+        },
+        {
+          "after": {
+            "blob": "9ccc8fe209e97edadb25ba988bdce70ad595a167",
+            "content": "sha256:0ad84a4204797bd64c5299e7f577fb9b29d3dea07b8060d1bdfc062acc346abd",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_damaged_receipts_have_a_receipt_specific_refusal"
+            },
+            "path": "mcp/tests/test_role_report.py"
+          },
+          "before": {
+            "blob": "f2af72b4daa859889e617e18b377b2f8b2b2b953",
+            "content": "sha256:0ad84a4204797bd64c5299e7f577fb9b29d3dea07b8060d1bdfc062acc346abd",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_damaged_receipts_have_a_receipt_specific_refusal"
+            },
+            "path": "mcp/tests/test_role_report.py"
+          },
+          "id": "PRF-MNQQGN"
+        },
+        {
+          "after": {
+            "blob": "9ccc8fe209e97edadb25ba988bdce70ad595a167",
+            "content": "sha256:f702a95c4e5f41c61210ce59a16f86cbbfafe8921dc107e42ecb58650c53c865",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_report_refusals_are_named"
+            },
+            "path": "mcp/tests/test_role_report.py"
+          },
+          "before": {
+            "blob": "f2af72b4daa859889e617e18b377b2f8b2b2b953",
+            "content": "sha256:f702a95c4e5f41c61210ce59a16f86cbbfafe8921dc107e42ecb58650c53c865",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_report_refusals_are_named"
+            },
+            "path": "mcp/tests/test_role_report.py"
+          },
+          "id": "PRF-MWJ1GP"
+        },
+        {
+          "after": {
+            "blob": "9ccc8fe209e97edadb25ba988bdce70ad595a167",
+            "content": "sha256:35728d3758397ad1426f3b14fcabb076b8cae8d93b80dabbbffe726f703e1bbd",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_signature_and_attempted_path_cannot_select_another_file"
+            },
+            "path": "mcp/tests/test_role_report.py"
+          },
+          "before": {
+            "blob": "f2af72b4daa859889e617e18b377b2f8b2b2b953",
+            "content": "sha256:35728d3758397ad1426f3b14fcabb076b8cae8d93b80dabbbffe726f703e1bbd",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_signature_and_attempted_path_cannot_select_another_file"
+            },
+            "path": "mcp/tests/test_role_report.py"
+          },
+          "id": "PRF-RYPSQ8"
+        },
+        {
+          "after": {
+            "blob": "67ed611ecae6afb009c83e58fac07d3eafb62ade",
+            "content": "sha256:eca098b79e309ce0c237f71f4a4ccb60f6bfe8698f2c32717d78e4ddef07f7d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_report_access_refusal"
+            },
+            "path": "mcp/src/agents_remember/cli/role_report.py"
+          },
+          "before": {
+            "blob": "a90c6c292d8e3f9c2e31f0e20dbe6b34d4c752ab",
+            "content": "sha256:eca098b79e309ce0c237f71f4a4ccb60f6bfe8698f2c32717d78e4ddef07f7d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_report_access_refusal"
+            },
+            "path": "mcp/src/agents_remember/cli/role_report.py"
+          },
+          "id": "RLZ-2TDWMB"
+        },
+        {
+          "after": {
+            "blob": "67ed611ecae6afb009c83e58fac07d3eafb62ade",
+            "content": "sha256:4536f1dad01450a083aed799544333d7d5a051dc4c979c5033240f716dd72d74",
+            "locator": {
+              "kind": "symbol",
+              "name": "_recorded_report_path"
+            },
+            "path": "mcp/src/agents_remember/cli/role_report.py"
+          },
+          "before": {
+            "blob": "a90c6c292d8e3f9c2e31f0e20dbe6b34d4c752ab",
+            "content": "sha256:4536f1dad01450a083aed799544333d7d5a051dc4c979c5033240f716dd72d74",
+            "locator": {
+              "kind": "symbol",
+              "name": "_recorded_report_path"
+            },
+            "path": "mcp/src/agents_remember/cli/role_report.py"
+          },
+          "id": "RLZ-3TESNM"
+        },
+        {
+          "after": {
+            "blob": "67ed611ecae6afb009c83e58fac07d3eafb62ade",
+            "content": "sha256:f8e6fe843176ce434cc761eed7059022194bbb0a5c4a4a8af3bea4060bc772e8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_read_report_file"
+            },
+            "path": "mcp/src/agents_remember/cli/role_report.py"
+          },
+          "before": {
+            "blob": "a90c6c292d8e3f9c2e31f0e20dbe6b34d4c752ab",
+            "content": "sha256:f8e6fe843176ce434cc761eed7059022194bbb0a5c4a4a8af3bea4060bc772e8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_read_report_file"
+            },
+            "path": "mcp/src/agents_remember/cli/role_report.py"
+          },
+          "id": "RLZ-7EMVNE"
+        },
+        {
+          "after": {
+            "blob": "67ed611ecae6afb009c83e58fac07d3eafb62ade",
+            "content": "sha256:39a67c309aec67de63eed5e1df9006c8e9dc3c23ddeeee08677bdcda5145db9d",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleReportRequest"
+            },
+            "path": "mcp/src/agents_remember/cli/role_report.py"
+          },
+          "before": {
+            "blob": "a90c6c292d8e3f9c2e31f0e20dbe6b34d4c752ab",
+            "content": "sha256:39a67c309aec67de63eed5e1df9006c8e9dc3c23ddeeee08677bdcda5145db9d",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleReportRequest"
+            },
+            "path": "mcp/src/agents_remember/cli/role_report.py"
+          },
+          "id": "RLZ-PAYX3G"
+        },
+        {
+          "after": {
+            "blob": "67ed611ecae6afb009c83e58fac07d3eafb62ade",
+            "content": "sha256:805e45c71f138cb1bae540f663efc3d1112cf2d838c430de1aae50607e1c1d7f",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_role_report"
+            },
+            "path": "mcp/src/agents_remember/cli/role_report.py"
+          },
+          "before": {
+            "blob": "a90c6c292d8e3f9c2e31f0e20dbe6b34d4c752ab",
+            "content": "sha256:9ef080f478475095ba1e277f57d5ba97034a0b129a3b2d625b9974a859bf8c98",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_role_report"
+            },
+            "path": "mcp/src/agents_remember/cli/role_report.py"
+          },
+          "id": "RLZ-RGXF18"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-PVB5H8",
+      "items": [
+        "sha256:9953aeb99a7e9a5be8a46f60117f396c3ddeb2e51536ce6d044904a441f06f51"
+      ],
+      "reason": "Preserved: ten carried proofs and realizations byte-identical, RLZ-RGXF18 re-anchored onto the newest-first listing in mcp/src/agents_remember/cli/role_report.py; the untouched role_launch_routes.py realization is not covered. Recorded reports still serve only their deterministic recorded bytes with named refusals.",
+      "revision": 1,
+      "subject": "INV-TA2JW5"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-PVJW0J",
+      "items": [
+        "sha256:b676ee1f3808c3a332beeeff30f2723c283cd206c4f58fae0059bd959fda864a"
+      ],
+      "reason": "Lane registration only: the four L126 test modules join unit-regression and the folder suite replaces the superseded list suite; registry bookkeeping for the rule 2 and rule 8 entries, not a new obligation.",
+      "subject": "hunk:sha256:b676ee1f3808c3a332beeeff30f2723c283cd206c4f58fae0059bd959fda864a"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "d1f1be6c7c8cb30d03e132b8f4f34d2bdd0cd4fd",
+            "content": "sha256:588ddec25312110e5e0f19ec9721f196c744466d8edea4c97b9f100cd90cab6e",
+            "locator": {
+              "kind": "symbol",
+              "name": "list_folder"
+            },
+            "path": "mcp/src/agents_remember/serving/notes.py"
+          },
+          "before": {
+            "blob": "e3e6f8d4c246e066532296e69563c435200ae08b",
+            "content": "sha256:0d00b8c2e8b4018c2285876277245ab1007dcea03c3afde5fc22afd8cfc21409",
+            "locator": {
+              "kind": "symbol",
+              "name": "list_notes"
+            },
+            "path": "mcp/src/agents_remember/serving/notes.py"
+          },
+          "id": "RLZ-7RNSV7PG"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-Q44T61",
+      "items": [
+        "sha256:7c3bf7849e4b9f24f3dcac42e80b07c471fb5125fba9a1d5f90e98e5a104fb06"
+      ],
+      "reason": "post-sync re-anchor per L126-MEM-02: wire-payload realization renewed on the synced pair.",
+      "revision": 2,
+      "subject": "INV-EJW15DXA"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-Q5V2JN",
+      "items": [
+        "sha256:ce04df268e7f04fac713b046de6cb48c90c1d37a14a877521c4b2a2eca8561a5"
+      ],
+      "reason": "Attached to the rule 3 and rule 5 entries: the Notes-line component with its reference links and recorded reports is the obligation those entries author; no separate invariant.",
+      "subject": "hunk:sha256:ce04df268e7f04fac713b046de6cb48c90c1d37a14a877521c4b2a2eca8561a5"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-QHMF9E",
+      "items": [
+        "sha256:f1ad9c169da2804d025ac0ab19fe63bfa404c769588a34aab75ff1c0ce10038d"
+      ],
+      "reason": "Covered by the Notes-line contract; the card records the root-count line, reference links and recorded reports without drawing note rows.",
+      "subject": "onboarding:dashboard/src/panels/TaskNotes.tsx"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-QK1TNH",
+      "items": [
+        "sha256:f9a5025ad7850aa0ba5a01d384e229f693c810c5aa0914dc449bd2e8791b19b5"
+      ],
+      "reason": "Attached to the rule 2 and rule 5 entries: the folder, resolve and report declared models are the contract half of those obligations; no separate invariant.",
+      "subject": "hunk:sha256:f9a5025ad7850aa0ba5a01d384e229f693c810c5aa0914dc449bd2e8791b19b5"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-QVW3TY",
+      "items": [
+        "sha256:e574efe3e63956a1acae1907df5aae6d83b7bc7150d334ce476da4df200eba18"
+      ],
+      "reason": "Attached to the rule 2 and rule 5 entries: the folder client and the single-request resolver are the presentation half of those obligations; no separate invariant.",
+      "subject": "hunk:sha256:e574efe3e63956a1acae1907df5aae6d83b7bc7150d334ce476da4df200eba18"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-QWJQ92",
+      "items": [
+        "sha256:3988b5b53a820cf4c68c7c93ed7b05f17bdad8792b0ca9df3f1ec13049c4614f"
+      ],
+      "reason": "Attached to the rule 2 and rule 5 entries: the folder, resolve and report declared models are the contract half of those obligations; no separate invariant.",
+      "subject": "hunk:sha256:3988b5b53a820cf4c68c7c93ed7b05f17bdad8792b0ca9df3f1ec13049c4614f"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-QYDBN7",
+      "items": [
+        "sha256:bd5dc275f2bd390dbe65d014d5cfae139ec58b3e7c63e442c51a2636c771ed86"
+      ],
+      "reason": "Route body accurate; file card now carries the marking section factually per L126-MEM-09.",
+      "subject": "onboarding:mcp/src/agents_remember/serving/projections/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-R6BHBC",
+      "items": [
+        "sha256:8170e9e0599f4c1270750a0c651fbcd505efc65e849b93067f9de0bffdb10c0d"
+      ],
+      "reason": "Retired-listing suite kept as historical evidence for the superseded list surface; it states no current behavior and the folder suite carries the rule 2 obligation.",
+      "subject": "hunk:sha256:8170e9e0599f4c1270750a0c651fbcd505efc65e849b93067f9de0bffdb10c0d"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-R7DJCY",
+      "items": [
+        "sha256:e3fd6b699a7586ae611c1fc9ebc82e0bdd67097d08a9a166f9fa2b0c68b3c7b4"
+      ],
+      "reason": "Reader suite pinning the tree rail, content pane, takeover, target and whole-log cases; regression evidence for the rule 4, rule 6 and rule 7 entries, with obligations owned by those entries.",
+      "subject": "hunk:sha256:e3fd6b699a7586ae611c1fc9ebc82e0bdd67097d08a9a166f9fa2b0c68b3c7b4"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-R8PDXW",
+      "items": [
+        "sha256:059933f6a40b7e069e0d3d3c7403b8f056e6ba6d251f23ea691ce189a3ce3acf"
+      ],
+      "reason": "Attached to the rule 6 entry (with the requirement-link context of rule 5): the preview mount and the whole-log page split are the presentation half of that obligation; no separate invariant.",
+      "subject": "hunk:sha256:059933f6a40b7e069e0d3d3c7403b8f056e6ba6d251f23ea691ce189a3ce3acf"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-R9G8JX",
+      "items": [
+        "sha256:0ef614b478c9654d286a4c0a82a262ce1361f4cfc0dcbd51abc55bb682e98046"
+      ],
+      "reason": "Reader suite pinning the tree rail, content pane, takeover, target and whole-log cases; regression evidence for the rule 4, rule 6 and rule 7 entries, with obligations owned by those entries.",
+      "subject": "hunk:sha256:0ef614b478c9654d286a4c0a82a262ce1361f4cfc0dcbd51abc55bb682e98046"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-REBK49",
+      "items": [
+        "sha256:95840642a1a087a85d61db51a2f2863e86fc3a5c9d8fc294323d48fb83de06d3"
+      ],
+      "reason": "Attached to the rule 3 and rule 5 entries: the Notes-line component with its reference links and recorded reports is the obligation those entries author; no separate invariant.",
+      "subject": "hunk:sha256:95840642a1a087a85d61db51a2f2863e86fc3a5c9d8fc294323d48fb83de06d3"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-RGZ5V7",
+      "items": [
+        "sha256:67a85d479f0c792c6a1a6e453ee153543eed0994c35aaf68e5cc073e8d8c2976"
+      ],
+      "reason": "Attached to the rule 3 and rule 5 entries: the Notes-line component with its reference links and recorded reports is the obligation those entries author; no separate invariant.",
+      "subject": "hunk:sha256:67a85d479f0c792c6a1a6e453ee153543eed0994c35aaf68e5cc073e8d8c2976"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-RNBNZC",
+      "items": [
+        "sha256:9c86422d1cafe1fca46c0c04bf21f9d2d8437a25659ffbcfcf19de3c6db49c06"
+      ],
+      "reason": "Two URL/prefix cases; no cap/order assertions per L126-MEM-11.",
+      "subject": "onboarding:dashboard/src/data/taskReports.test.ts"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-RP6P7C",
+      "items": [
+        "sha256:2e20b3bdaaf5d0a0950d42b78ffbabe144e9d196f377610f4a2da9990338c160"
+      ],
+      "reason": "Listing-contract suite pinning newest-first order, the twenty-cap, nulls and refusals; proof evidence for the rule 5 entry.",
+      "subject": "hunk:sha256:2e20b3bdaaf5d0a0950d42b78ffbabe144e9d196f377610f4a2da9990338c160"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "d1f1be6c7c8cb30d03e132b8f4f34d2bdd0cd4fd",
+            "content": "sha256:588ddec25312110e5e0f19ec9721f196c744466d8edea4c97b9f100cd90cab6e",
+            "locator": {
+              "kind": "symbol",
+              "name": "list_folder"
+            },
+            "path": "mcp/src/agents_remember/serving/notes.py"
+          },
+          "before": {
+            "blob": "e3e6f8d4c246e066532296e69563c435200ae08b",
+            "content": "sha256:0d00b8c2e8b4018c2285876277245ab1007dcea03c3afde5fc22afd8cfc21409",
+            "locator": {
+              "kind": "symbol",
+              "name": "list_notes"
+            },
+            "path": "mcp/src/agents_remember/serving/notes.py"
+          },
+          "id": "RLZ-HNH06VQK"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-RP8G4F",
+      "items": [
+        "sha256:3e73456f767494065083d7d997b377c7a290717675922dfb93c31e94b4162ad6"
+      ],
+      "reason": "Preserved: re-anchored onto list_folder, which answers the live folder on each call with no kept state between requests.",
+      "revision": 1,
+      "subject": "INV-SMYSQKTJ"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-RY4170",
+      "items": [
+        "sha256:ace0b775bfa19e25f28f1b478134b713152fb270c0fe58ec151a0855041641a1"
+      ],
+      "reason": "Entry-surface suite pinning the Notes line, the folder/resolve/reports stub shape and the three assertion groups; regression evidence for the rule 3 and rule 5 entries, with no reader behavior claimed.",
+      "subject": "hunk:sha256:ace0b775bfa19e25f28f1b478134b713152fb270c0fe58ec151a0855041641a1"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-S79F53",
+      "items": [
+        "sha256:cff53167ce1dec0f1a0ae646fff1a9e217a853fc9ad293397b7fe5a29ec73cd9"
+      ],
+      "reason": "Attached to the rule 6 entry: the product-record marking carried for the newest-five rule; no separate invariant.",
+      "subject": "hunk:sha256:cff53167ce1dec0f1a0ae646fff1a9e217a853fc9ad293397b7fe5a29ec73cd9"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-SARCNF",
+      "items": [
+        "sha256:7e35c4f9e12582dde60997f021cddeffef92983bb0d21a11fc73e70c4e869fa8"
+      ],
+      "reason": "Attached to the rule 6 entry: the two explicit product_record flags exercise the projection marking the newest-five rule consumes; no separate invariant.",
+      "subject": "hunk:sha256:7e35c4f9e12582dde60997f021cddeffef92983bb0d21a11fc73e70c4e869fa8"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-SFDZX1",
+      "items": [
+        "sha256:b70436699218d8449df40176c0106533e9f6b15dacad619ded043169e4da5383"
+      ],
+      "reason": "Attached to the rule 4, rule 6 and rule 7 entries: the one-folder-at-a-time tree feed with its cap, the whole-log pane and the address-compatible target are the obligations those entries author; no separate invariant.",
+      "subject": "hunk:sha256:b70436699218d8449df40176c0106533e9f6b15dacad619ded043169e4da5383"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-SHWJH9",
+      "items": [
+        "sha256:b2fad891b0ea14053c028988a830931272130dd28a2905f6170d0bffa7703d0a"
+      ],
+      "reason": "Covered by the task-page shell contract; the card records the NotesTakeover data-view naming and the folder-open reader state without restating rail behavior.",
+      "subject": "onboarding:dashboard/src/cockpit/Cockpit.tsx"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-SMNKXR",
+      "items": [
+        "sha256:cebe8888c92bd384b6a83894a9d9269d526fd535918b3446fa0f8437703fc309"
+      ],
+      "reason": "Attached to the rule 4, rule 6 and rule 7 entries: the one-folder-at-a-time tree feed with its cap, the whole-log pane and the address-compatible target are the obligations those entries author; no separate invariant.",
+      "subject": "hunk:sha256:cebe8888c92bd384b6a83894a9d9269d526fd535918b3446fa0f8437703fc309"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-SNHG58",
+      "items": [
+        "sha256:89dc6eb74a496b4fc801bc50fea9f3e4a31d6a94ca68e5b52ff32bbeb2cc4587"
+      ],
+      "reason": "Shared render helpers for the detail-panel suites; test harness, not product behavior, stating no obligation.",
+      "subject": "hunk:sha256:89dc6eb74a496b4fc801bc50fea9f3e4a31d6a94ca68e5b52ff32bbeb2cc4587"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-SPM76N",
+      "items": [
+        "sha256:d6a2300e89c192f69269df126d97a29e4e16f82a79d8df98b534be4a3e9a4fad"
+      ],
+      "reason": "Attached to the rule 4, rule 6 and rule 7 entries: the one-folder-at-a-time tree feed with its cap, the whole-log pane and the address-compatible target are the obligations those entries author; no separate invariant.",
+      "subject": "hunk:sha256:d6a2300e89c192f69269df126d97a29e4e16f82a79d8df98b534be4a3e9a4fad"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-SSGEGH",
+      "items": [
+        "sha256:0a32b971605dbc3491e230dddde18e0d5b51e23312ca1773fd773ee3dad367d7"
+      ],
+      "reason": "Focused takeover-contract assertions for the notes-reader entry surface; they pin the reader-target wiring without stating a product obligation beyond the rule 3 entry surface.",
+      "subject": "hunk:sha256:0a32b971605dbc3491e230dddde18e0d5b51e23312ca1773fd773ee3dad367d7"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-T300WT",
+      "items": [
+        "sha256:f104f34901bc9b28af5cbc7262bda8797798eb8948bfc491e3f909ce11389598"
+      ],
+      "reason": "Attached to the rule 5 entry: the recorded-start step the listing reads keeps its shape; no separate invariant.",
+      "subject": "hunk:sha256:f104f34901bc9b28af5cbc7262bda8797798eb8948bfc491e3f909ce11389598"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-T3KQCG",
+      "items": [
+        "sha256:68762c05bcb19b046f9e7c404c800cd7e7b1e70901fa1e50cba335439149feb2"
+      ],
+      "reason": "Reviewed no change: the route body states the projection reducer and lifecycle-operation fold, all still accurate; the product-record marking is carried in the projection.py file card.",
+      "subject": "onboarding:mcp/src/agents_remember/observer/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-T5Q0QW",
+      "items": [
+        "sha256:c2d2add3326dd75b06acef8cd73c9823c84d84cc3169849fda24868fe6434418"
+      ],
+      "reason": "Attached to the rule 5 entry: the newest-first listing, the exact task-only target completion and the confined report open are the obligation that entry authors; no separate invariant.",
+      "subject": "hunk:sha256:c2d2add3326dd75b06acef8cd73c9823c84d84cc3169849fda24868fe6434418"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-TKXMQY",
+      "items": [
+        "sha256:32b2c647995f92ccfb39423864f1de7675df51c71b4dddc1826e96d24becc180"
+      ],
+      "reason": "Entry-surface suite pinning the Notes line, the folder/resolve/reports stub shape and the three assertion groups; regression evidence for the rule 3 and rule 5 entries, with no reader behavior claimed.",
+      "subject": "hunk:sha256:32b2c647995f92ccfb39423864f1de7675df51c71b4dddc1826e96d24becc180"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-TMSJTD",
+      "items": [
+        "sha256:34f6fc50b8816d64478d8b8b0f4e3872152c84cd2c005160af303b4d76a3330e"
+      ],
+      "reason": "Removed list-fed rail (the bespoke NotesRail, its row styles and the list transport import): the shared ExplorerTree fed one folder at a time in entry MIK-R126@v1 rule 4 replaces it; no obligation remains in the removed lines.",
+      "subject": "hunk:sha256:34f6fc50b8816d64478d8b8b0f4e3872152c84cd2c005160af303b4d76a3330e"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-TPDMJJ",
+      "items": [
+        "sha256:a2f911c91a68a5ead0c3bfa872ed9b785a9718322d22d396dad9e3765b443ca3"
+      ],
+      "reason": "Attached to the rule 4, rule 6 and rule 7 entries: the one-folder-at-a-time tree feed with its cap, the whole-log pane and the address-compatible target are the obligations those entries author; no separate invariant.",
+      "subject": "hunk:sha256:a2f911c91a68a5ead0c3bfa872ed9b785a9718322d22d396dad9e3765b443ca3"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-TS87HB",
+      "items": [
+        "sha256:55af424c70be9667e177eaa78fe62194bdb04c4159a781ec11528c5cf859b114"
+      ],
+      "reason": "Task-body section assertions untouched in meaning by the delta; they pin existing rendering without stating a new obligation.",
+      "subject": "hunk:sha256:55af424c70be9667e177eaa78fe62194bdb04c4159a781ec11528c5cf859b114"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-TX0YGM",
+      "items": [
+        "sha256:afb4cc648a7e172428700e412d5bd6a034a5a420bc8129933adb6b154f15df81"
+      ],
+      "reason": "Attached to the rule 2 and rule 5 entries: the folder, resolve and report declared models are the contract half of those obligations; no separate invariant.",
+      "subject": "hunk:sha256:afb4cc648a7e172428700e412d5bd6a034a5a420bc8129933adb6b154f15df81"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-TZHE0R",
+      "items": [
+        "sha256:a694808e5b694535f35bc004bd835d3f7c7560e84412c296c6f13d0b0ca1f64d"
+      ],
+      "reason": "finalize card carries no prepend prose (constant swap only); registry reason factual per L126-MEM-11 remainder.",
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/modules/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-V8F2YT",
+      "items": [
+        "sha256:d491542190b9fcbfd87836766fe927dbec9481aeea1cc32a82b6afd4bc8dfe56"
+      ],
+      "reason": "Attached to the rule 2, rule 5 and rule 7 entries: the one-folder answer, the single-request resolve and the unchanged read path are the obligations those entries author; no separate invariant.",
+      "subject": "hunk:sha256:d491542190b9fcbfd87836766fe927dbec9481aeea1cc32a82b6afd4bc8dfe56"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-VTXKQB",
+      "items": [
+        "sha256:5783ddd53dad748f9a16df99a2ade5c6760858348c045f0eb549e5dbf8b4b75a"
+      ],
+      "reason": "Reader suite pinning the tree rail, content pane, takeover, target and whole-log cases; regression evidence for the rule 4, rule 6 and rule 7 entries, with obligations owned by those entries.",
+      "subject": "hunk:sha256:5783ddd53dad748f9a16df99a2ade5c6760858348c045f0eb549e5dbf8b4b75a"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-W3SBMF",
+      "items": [
+        "sha256:92ec9231a4bfa7a0d109211593d76eccb4287e895d695a92e5f2819006b600dd"
+      ],
+      "reason": "Attached to the rule 4, rule 6 and rule 7 entries: the one-folder-at-a-time tree feed with its cap, the whole-log pane and the address-compatible target are the obligations those entries author; no separate invariant.",
+      "subject": "hunk:sha256:92ec9231a4bfa7a0d109211593d76eccb4287e895d695a92e5f2819006b600dd"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-W4E7B8",
+      "items": [
+        "sha256:e8318ffb6786a471e95ab30981b93db140efb601d34286f112e1411cfda2c2af"
+      ],
+      "reason": "Lane registration only: the four L126 test modules join unit-regression and the folder suite replaces the superseded list suite; registry bookkeeping for the rule 2 and rule 8 entries, not a new obligation.",
+      "subject": "hunk:sha256:e8318ffb6786a471e95ab30981b93db140efb601d34286f112e1411cfda2c2af"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-W5F4KY",
+      "items": [
+        "sha256:839f8f9b3aea86eff0af6badaeb099ef026547a24f057d4df91260c54e4f9de3"
+      ],
+      "reason": "Covered by the report-route contract; the card records the newest-first listing, the exact task-only target completion and the confined report open.",
+      "subject": "onboarding:mcp/src/agents_remember/cli/role_report.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-W89XD1",
+      "items": [
+        "sha256:e7ea98f1ace7b1cb7a0423f5966b6c868fa453f0f98a4c009ce654540b5e0fd9"
+      ],
+      "reason": "Attached to the rule 3 and rule 5 entries: the Notes-line component with its reference links and recorded reports is the obligation those entries author; no separate invariant.",
+      "subject": "hunk:sha256:e7ea98f1ace7b1cb7a0423f5966b6c868fa453f0f98a4c009ce654540b5e0fd9"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-W941MQ",
+      "items": [
+        "sha256:991ac9f9d2cd5a9accd9378b6c62321f16052b40edaba765dc8549c366570bee"
+      ],
+      "reason": "Covered by the task-body contract; the card records the section rendering assertions untouched by the task-page delta.",
+      "subject": "onboarding:dashboard/src/panels/detail-panel/taskBody.test.tsx"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-WEHBPR",
+      "items": [
+        "sha256:624cc8a1661c44de34c2ba3aa0f66af5ae0e06ae569b775f3c13799815e3126e"
+      ],
+      "reason": "Mechanical stub deltas only (list to folder, fetch scoping); no seven-assertion census exists in card or source per L126-MEM-11.",
+      "subject": "onboarding:dashboard/src/cockpit/Cockpit.test.tsx"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-WF1GY9",
+      "items": [
+        "sha256:5e6e04a5764a8067ecdbe2f540c9099d39d12196f47351764ecb1beb5b7d48ae"
+      ],
+      "reason": "Reader suite pinning the tree rail, content pane, takeover, target and whole-log cases; regression evidence for the rule 4, rule 6 and rule 7 entries, with obligations owned by those entries.",
+      "subject": "hunk:sha256:5e6e04a5764a8067ecdbe2f540c9099d39d12196f47351764ecb1beb5b7d48ae"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-WT7XQE",
+      "items": [
+        "sha256:5f7bb72c2712065bfb776e679b34f586401ca556961968ebff39011b645aafda"
+      ],
+      "reason": "Attached to the rule 4, rule 6 and rule 7 entries: the one-folder-at-a-time tree feed with its cap, the whole-log pane and the address-compatible target are the obligations those entries author; no separate invariant.",
+      "subject": "hunk:sha256:5f7bb72c2712065bfb776e679b34f586401ca556961968ebff39011b645aafda"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-WXPGAS",
+      "items": [
+        "sha256:f8e86bc80d43b8cd22119595f01dd53423501f658dcd6f51b54790c7a05eb0c3"
+      ],
+      "reason": "Focused takeover-contract assertions for the notes-reader entry surface; they pin the reader-target wiring without stating a product obligation beyond the rule 3 entry surface.",
+      "subject": "hunk:sha256:f8e86bc80d43b8cd22119595f01dd53423501f658dcd6f51b54790c7a05eb0c3"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-WZ4Z6W",
+      "items": [
+        "sha256:ae884e79c4bb3d187cb0e41c87be70c433eff45fa8bdb800d89ca149ebc3d60f"
+      ],
+      "reason": "Retained cost suite proving the bounded selection set with ceiling and pinned-live equality; proof evidence for the rule 8 entry, with the bound owned by that entry.",
+      "subject": "hunk:sha256:ae884e79c4bb3d187cb0e41c87be70c433eff45fa8bdb800d89ca149ebc3d60f"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-X260NK",
+      "items": [
+        "sha256:4c4d12ddbd480fbf73eb8758799d4469130c89f6db579f989eeb8e051dd5fb52"
+      ],
+      "reason": "Lane registration only: the four L126 test modules join unit-regression and the folder suite replaces the superseded list suite; registry bookkeeping for the rule 2 and rule 8 entries, not a new obligation.",
+      "subject": "hunk:sha256:4c4d12ddbd480fbf73eb8758799d4469130c89f6db579f989eeb8e051dd5fb52"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-X6BH0N",
+      "items": [
+        "sha256:da75326f1bc34ac23ef3b9f42b4de9af3bf519fc3750b333e94ab3011fbbf963"
+      ],
+      "reason": "Attached to the rule 2 and rule 5 entries: the folder client and the single-request resolver are the presentation half of those obligations; no separate invariant.",
+      "subject": "hunk:sha256:da75326f1bc34ac23ef3b9f42b4de9af3bf519fc3750b333e94ab3011fbbf963"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-X6QHTB",
+      "items": [
+        "sha256:ae89511f408d63521d95704b43caf20a9055f518cd86ce85f3bc81c57fae79f3"
+      ],
+      "reason": "Reader suite pinning the tree rail, content pane, takeover, target and whole-log cases; regression evidence for the rule 4, rule 6 and rule 7 entries, with obligations owned by those entries.",
+      "subject": "hunk:sha256:ae89511f408d63521d95704b43caf20a9055f518cd86ce85f3bc81c57fae79f3"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-XCMJ9P",
+      "items": [
+        "sha256:27c2455cb48ba1967677698232fceac076a1c5b2452cbcc18ff7138e7946ad3e"
+      ],
+      "reason": "Covered by the notes client contract; the card records the folder/read URLs, the single-request resolve mapping and the malformed-answer rejection.",
+      "subject": "onboarding:dashboard/src/data/notes.test.ts"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-XFQRB3",
+      "items": [
+        "sha256:156773c58e01468140c750f54b41944b234e0f7a9b60090a4717de32a85b64c3"
+      ],
+      "reason": "Task-body section assertions untouched in meaning by the delta; they pin existing rendering without stating a new obligation.",
+      "subject": "hunk:sha256:156773c58e01468140c750f54b41944b234e0f7a9b60090a4717de32a85b64c3"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-XH1ZTV",
+      "items": [
+        "sha256:a22baaf42edf48b3045411d13d4ea74e65af016e81365fb1eeac4cf386d1d652"
+      ],
+      "reason": "Attached to the rule 4, rule 6 and rule 7 entries: the one-folder-at-a-time tree feed with its cap, the whole-log pane and the address-compatible target are the obligations those entries author; no separate invariant.",
+      "subject": "hunk:sha256:a22baaf42edf48b3045411d13d4ea74e65af016e81365fb1eeac4cf386d1d652"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-XM1C8H",
+      "items": [
+        "sha256:d4a656705ba0dda4ce96dff4f4b2119b1ab91ff40a9654edd2231ae2dd48ddbc"
+      ],
+      "reason": "Attached to the rule 3 and rule 5 entries: the Notes-line component with its reference links and recorded reports is the obligation those entries author; no separate invariant.",
+      "subject": "hunk:sha256:d4a656705ba0dda4ce96dff4f4b2119b1ab91ff40a9654edd2231ae2dd48ddbc"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-XY5HB4",
+      "items": [
+        "sha256:f98305ad98be0cc2d1ad6e6db726db725f88376e25af4da1dfb480323e195b9a"
+      ],
+      "reason": "Covered by the reader contract; the card records the one-folder-at-a-time tree feed, vanish recovery and the 32-folder cap.",
+      "subject": "onboarding:dashboard/src/panels/notes-reader/NotesReaderViewer.tsx"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-XZA8PA",
+      "items": [
+        "sha256:254fbd998cd22dd956046f3b32c9258e05b52fda112d533aea1dd35a625ffc0f"
+      ],
+      "reason": "Reviewed no change: the route body states module structure without endpoint detail; the folder-endpoint replacement is carried in the notes.py and response_contract.py file cards.",
+      "subject": "onboarding:mcp/src/agents_remember/serving/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-Y16F5T",
+      "items": [
+        "sha256:317d504bd6189345d8cc37c220e103f5d5c179f693b580d1bd2efc78642f90a4"
+      ],
+      "reason": "Attached to the rule 4, rule 6 and rule 7 entries: the one-folder-at-a-time tree feed with its cap, the whole-log pane and the address-compatible target are the obligations those entries author; no separate invariant.",
+      "subject": "hunk:sha256:317d504bd6189345d8cc37c220e103f5d5c179f693b580d1bd2efc78642f90a4"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-Y1ET5P",
+      "items": [
+        "sha256:4634b534ba66d4726001d21269d8dd906c5c39b7ad086ca3c54b66a2ec75d67c"
+      ],
+      "reason": "Retired-listing suite kept as historical evidence for the superseded list surface; it states no current behavior and the folder suite carries the rule 2 obligation.",
+      "subject": "hunk:sha256:4634b534ba66d4726001d21269d8dd906c5c39b7ad086ca3c54b66a2ec75d67c"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-YDBZ04",
+      "items": [
+        "sha256:877bc8861a9c55c4f2fa4003c8c82f7d8ad34ab3c226780c6b6c0fbb594433ee"
+      ],
+      "reason": "Client-contract tests for the folder/read URLs, the single-request resolve mapping and the malformed-answer rejection; regression evidence for the rule 2 and rule 5 entries, with no product obligation beyond them.",
+      "subject": "hunk:sha256:877bc8861a9c55c4f2fa4003c8c82f7d8ad34ab3c226780c6b6c0fbb594433ee"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-YHPG8V",
+      "items": [
+        "sha256:714368d840167fd115ae777aa1d45a122c9c4701c87daaf060bbe43f3ea95bb2"
+      ],
+      "reason": "Focused takeover-contract assertions for the notes-reader entry surface; they pin the reader-target wiring without stating a product obligation beyond the rule 3 entry surface.",
+      "subject": "hunk:sha256:714368d840167fd115ae777aa1d45a122c9c4701c87daaf060bbe43f3ea95bb2"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-YJCGQD",
+      "items": [
+        "sha256:db017bb2eac4586903ff4441512ee7391f3a91466b0a5971ee917c95e89c72f7"
+      ],
+      "reason": "Entry-surface suite pinning the Notes line, the folder/resolve/reports stub shape and the three assertion groups; regression evidence for the rule 3 and rule 5 entries, with no reader behavior claimed.",
+      "subject": "hunk:sha256:db017bb2eac4586903ff4441512ee7391f3a91466b0a5971ee917c95e89c72f7"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "d1f1be6c7c8cb30d03e132b8f4f34d2bdd0cd4fd",
+            "content": "sha256:588ddec25312110e5e0f19ec9721f196c744466d8edea4c97b9f100cd90cab6e",
+            "locator": {
+              "kind": "symbol",
+              "name": "list_folder"
+            },
+            "path": "mcp/src/agents_remember/serving/notes.py"
+          },
+          "before": {
+            "blob": "e3e6f8d4c246e066532296e69563c435200ae08b",
+            "content": "sha256:0d00b8c2e8b4018c2285876277245ab1007dcea03c3afde5fc22afd8cfc21409",
+            "locator": {
+              "kind": "symbol",
+              "name": "list_notes"
+            },
+            "path": "mcp/src/agents_remember/serving/notes.py"
+          },
+          "id": "RLZ-9YY9Y1E1"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-YTE7ZG",
+      "items": [
+        "sha256:757d61fd333ed9b49c9b1d1f7c2629c30aa9323cb4f8cc678177c7c999131197"
+      ],
+      "reason": "post-sync re-anchor per L126-MEM-02: no-state realization renewed on the synced pair.",
+      "revision": 2,
+      "subject": "INV-ZJS1XY4R"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-YY3SVJ",
+      "items": [
+        "sha256:995cb00dd44f1cb6825923e2a43cdaa513099f6629cb550105599975481fffd9"
+      ],
+      "reason": "Attached to the rule 3 and rule 5 entries: the Notes-line component with its reference links and recorded reports is the obligation those entries author; no separate invariant.",
+      "subject": "hunk:sha256:995cb00dd44f1cb6825923e2a43cdaa513099f6629cb550105599975481fffd9"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-Z802G1",
+      "items": [
+        "sha256:c06cf31fc9f8742764f2c245855b760b355a9693d09ad8e37b26b3c4e27d900a"
+      ],
+      "reason": "Reader suite pinning the tree rail, content pane, takeover, target and whole-log cases; regression evidence for the rule 4, rule 6 and rule 7 entries, with obligations owned by those entries.",
+      "subject": "hunk:sha256:c06cf31fc9f8742764f2c245855b760b355a9693d09ad8e37b26b3c4e27d900a"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ZAWD1W",
+      "items": [
+        "sha256:3867ba891032e8413ba3ed017fe57738464af220378b49f69c391d4c729f728b"
+      ],
+      "reason": "Attached to the rule 2, rule 5 and rule 7 entries: the one-folder answer, the single-request resolve and the unchanged read path are the obligations those entries author; no separate invariant.",
+      "subject": "hunk:sha256:3867ba891032e8413ba3ed017fe57738464af220378b49f69c391d4c729f728b"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "114b072b68900fb726a36275aa081eaadb4852ba",
+            "content": "sha256:b34cd52a387bf092bd2484b6a8602413c0028077ff493f0aff91311cbb09d3f1",
+            "locator": {
+              "end": 1227,
+              "kind": "line_range",
+              "start": 1227
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "074cbb9f1d1da9ee49aa27d3fb94e15ae36ac05c",
+            "content": "sha256:b34cd52a387bf092bd2484b6a8602413c0028077ff493f0aff91311cbb09d3f1",
+            "locator": {
+              "end": 1226,
+              "kind": "line_range",
+              "start": 1226
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-1WK7P0"
+        },
+        {
+          "after": {
+            "blob": "ad71c77d7a980af9ef73ede9aecc6694db1e4656",
+            "content": "sha256:b34cd52a387bf092bd2484b6a8602413c0028077ff493f0aff91311cbb09d3f1",
+            "locator": {
+              "end": 366,
+              "kind": "line_range",
+              "start": 366
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "e41c49321364b7c5080944c8c746cd0ffdc181c8",
+            "content": "sha256:b34cd52a387bf092bd2484b6a8602413c0028077ff493f0aff91311cbb09d3f1",
+            "locator": {
+              "end": 363,
+              "kind": "line_range",
+              "start": 363
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-NJFH31"
+        },
+        {
+          "after": {
+            "blob": "114b072b68900fb726a36275aa081eaadb4852ba",
+            "content": "sha256:b34cd52a387bf092bd2484b6a8602413c0028077ff493f0aff91311cbb09d3f1",
+            "locator": {
+              "end": 460,
+              "kind": "line_range",
+              "start": 460
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "074cbb9f1d1da9ee49aa27d3fb94e15ae36ac05c",
+            "content": "sha256:b34cd52a387bf092bd2484b6a8602413c0028077ff493f0aff91311cbb09d3f1",
+            "locator": {
+              "end": 460,
+              "kind": "line_range",
+              "start": 460
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-TB9TST"
+        },
+        {
+          "after": {
+            "blob": "114b072b68900fb726a36275aa081eaadb4852ba",
+            "content": "sha256:d78be9a4046b8ffdab5120a0a748737d28d92bec8743be7d5acec6847feb659b",
+            "locator": {
+              "end": 1372,
+              "kind": "line_range",
+              "start": 1372
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "074cbb9f1d1da9ee49aa27d3fb94e15ae36ac05c",
+            "content": "sha256:d78be9a4046b8ffdab5120a0a748737d28d92bec8743be7d5acec6847feb659b",
+            "locator": {
+              "end": 1371,
+              "kind": "line_range",
+              "start": 1371
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-VQZWNZ"
+        },
+        {
+          "after": {
+            "blob": "ad71c77d7a980af9ef73ede9aecc6694db1e4656",
+            "content": "sha256:d78be9a4046b8ffdab5120a0a748737d28d92bec8743be7d5acec6847feb659b",
+            "locator": {
+              "end": 265,
+              "kind": "line_range",
+              "start": 265
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "e41c49321364b7c5080944c8c746cd0ffdc181c8",
+            "content": "sha256:d78be9a4046b8ffdab5120a0a748737d28d92bec8743be7d5acec6847feb659b",
+            "locator": {
+              "end": 264,
+              "kind": "line_range",
+              "start": 264
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-ZTDYFT"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-ZCF1ZY",
+      "items": [],
+      "reason": "The five archive/report registration rows preserve their passed module literals and consumer/lane roles on the composed catalog. Three-way source correspondence maps each unchanged row through incoming and local insertions; only the code anchors move, with no member intent or proof change.",
+      "revision": 1,
+      "subject": "INV-0H8WBQ"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ZJVAF6",
+      "items": [
+        "sha256:cee59df9cfed7134e574a403a8e2434fd15ddf9144ab572c1d712c2513624b23"
+      ],
+      "reason": "Attached to the rule 3 and rule 5 entries: the Notes-line component with its reference links and recorded reports is the obligation those entries author; no separate invariant.",
+      "subject": "hunk:sha256:cee59df9cfed7134e574a403a8e2434fd15ddf9144ab572c1d712c2513624b23"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ZMVB0G",
+      "items": [
+        "sha256:d5075b8076d7491f1578e08af727829af870f233c0621d6ee0b9af927a1e4ed1"
+      ],
+      "reason": "Attached to the rule 4, rule 6 and rule 7 entries: the one-folder-at-a-time tree feed with its cap, the whole-log pane and the address-compatible target are the obligations those entries author; no separate invariant.",
+      "subject": "hunk:sha256:d5075b8076d7491f1578e08af727829af870f233c0621d6ee0b9af927a1e4ed1"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ZP494S",
+      "items": [
+        "sha256:3dce8236f4eadf3b72de84c1697ff2490131ac2ea45cf30cb5d75cb93d111f25"
+      ],
+      "reason": "Attached to the rule 5 entry: the newest-first listing, the exact task-only target completion and the confined report open are the obligation that entry authors; no separate invariant.",
+      "subject": "hunk:sha256:3dce8236f4eadf3b72de84c1697ff2490131ac2ea45cf30cb5d75cb93d111f25"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-ZPDDNV",
+      "items": [
+        "sha256:d7173d512267308028c677a8bea53fd225ea57080eb3ed6dbc1a6e730ead648b"
+      ],
+      "reason": "Covered by the notes-serving contract; the card records the one-folder answer, the single-request resolve and the unchanged read path.",
+      "subject": "onboarding:mcp/src/agents_remember/serving/notes.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ZTY6B1",
+      "items": [
+        "sha256:a55297bda5fd252c9d72d15d95fdd897bfe5d5d16d85bfad341173ff3566e9b2"
+      ],
+      "reason": "Attached to the rule 3 and rule 5 entries: the Notes-line component with its reference links and recorded reports is the obligation those entries author; no separate invariant.",
+      "subject": "hunk:sha256:a55297bda5fd252c9d72d15d95fdd897bfe5d5d16d85bfad341173ff3566e9b2"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

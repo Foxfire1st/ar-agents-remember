@@ -1,16 +1,36 @@
 {
   "path": "dashboard/src/panels/detail-panel/taskReader.tsx",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "5010f4f41e7f40f48b178e0039b7fe40a77875c2",
+        "content": "sha256:579d4c1df744e05cc5dd0f3cb90ac1b9420cda0cf53aa9df637221df5a063f47",
+        "locator": {
+          "kind": "symbol",
+          "name": "DecisionPreview"
+        }
+      },
+      "id": "RLZ-C2WSJF",
+      "invariant": "INV-NBCGCF",
+      "origin": {
+        "handoffEntry": "MIK-R126@v1 rule 6",
+        "leaf": "260928-MIK-L126"
+      },
+      "rationale": "This component draws the five newest authored decisions by time and the omitted-count link that opens the whole-log page.",
+      "role": "presentation"
+    }
+  ],
   "references": {
     "1": {
-      "note": "The reader entry and master overview mount optional graph content and the independently scoped queue.",
+      "note": "The reader entry and master overview mount optional graph content.",
       "targets": [
         {
           "anchor": {
-            "blob": "74e115417c4c270744a57431c4d51524c6e61b9b",
-            "content": "sha256:521ca40f267afe2d1789b838a2dff4018f6d388ea2f6d9874066913cdccaddda",
+            "blob": "5010f4f41e7f40f48b178e0039b7fe40a77875c2",
+            "content": "sha256:1d66a90f314b272c3d664fe97081164f6ddbcf39f96b4afc70c378b42481b7c3",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "MasterOverview"
             }
           },
           "kind": "code"
@@ -22,12 +42,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "74e115417c4c270744a57431c4d51524c6e61b9b",
+            "blob": "5010f4f41e7f40f48b178e0039b7fe40a77875c2",
             "content": "sha256:eacc4b146c3a29d72410d4221eba175af9217a97374ff828fd96339719f30f52",
             "locator": {
-              "end": 488,
+              "end": 500,
               "kind": "line_range",
-              "start": 450
+              "start": 462
             }
           },
           "kind": "code"
@@ -39,12 +59,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "74e115417c4c270744a57431c4d51524c6e61b9b",
+            "blob": "5010f4f41e7f40f48b178e0039b7fe40a77875c2",
             "content": "sha256:71281a37eaefa7915e1cab7933523c828002dd9a6ed11836e51de5bd2624d08b",
             "locator": {
-              "end": 527,
+              "end": 539,
               "kind": "line_range",
-              "start": 491
+              "start": 503
             }
           },
           "kind": "code"
@@ -56,12 +76,44 @@
       "targets": [
         {
           "anchor": {
-            "blob": "74e115417c4c270744a57431c4d51524c6e61b9b",
+            "blob": "5010f4f41e7f40f48b178e0039b7fe40a77875c2",
             "content": "sha256:3450a6703e4f2e0d4726af52db3c736829973d7cccc199b94a02b229dac0ca4d",
             "locator": {
-              "end": 736,
+              "end": 755,
               "kind": "line_range",
-              "start": 712
+              "start": 731
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The preview draws five newest decisions with the whole-log link.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5010f4f41e7f40f48b178e0039b7fe40a77875c2",
+            "content": "sha256:579d4c1df744e05cc5dd0f3cb90ac1b9420cda0cf53aa9df637221df5a063f47",
+            "locator": {
+              "kind": "symbol",
+              "name": "DecisionPreview"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The task page mounts the notes line, references and reports.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5010f4f41e7f40f48b178e0039b7fe40a77875c2",
+            "content": "sha256:2a3ea56090c549a9c7b3e00420b2d37ff98336f464bd9b34655201ba37445850",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskReader"
             }
           },
           "kind": "code"

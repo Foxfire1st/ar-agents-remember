@@ -1,0 +1,54 @@
+{
+  "path": "dashboard/src/data/taskReports.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The per-task reports URL is built from repo, master and doc.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a17b594530ab671e7682f7fab0c324c0d5d83ce8",
+            "content": "sha256:ba3f56645a09697bcf0d112725d75f122820c0911672c02103c4044c278814ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "listTaskReports"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The dashboard doc prefix is stripped to the recorded task reference.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a17b594530ab671e7682f7fab0c324c0d5d83ce8",
+            "content": "sha256:e666a50815fda7d5678aa160feae3457685b3e527a408587777d72b1be17d681",
+            "locator": {
+              "kind": "symbol",
+              "name": "docRefPath"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Report rows come from recorded starts, newest first, at most twenty.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a17b594530ab671e7682f7fab0c324c0d5d83ce8",
+            "content": "sha256:2273e15caac747be5baac640784f8ab018885dbc237bfde461cb7e139f674792",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

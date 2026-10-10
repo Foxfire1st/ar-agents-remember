@@ -1,0 +1,38 @@
+{
+  "path": "dashboard/src/panels/__fixtures__/generatedRootFirstPart.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The first part carries a bounded root answer with its count.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ab3a077fed708853be92e5d09a1561d9afdee742",
+            "content": "sha256:102ffba678ee467956b233b4665b3580c59b26dcb72f56a46a31450796dd40ab",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The retained first-part case consumes this fixture.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b72b95071371961d02d2ada97857e5bf79623144",
+            "content": "sha256:48286195f5a7bb8bb12cc63bc856341a9dbfdbb45899c48c91d9bedf74fbf00a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/taskPageCost.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,6 +1,6 @@
 {
   "admission": "legacy-unassessed",
-  "applicability": "The response bytes of GET /api/notes/list for one series master, compared with the path-based walk that realpath-checked every entry.",
+  "applicability": "Historical: the response bytes of GET /api/notes/list (removed). Current: the per-folder properties above for GET /api/notes/folder.",
   "conditions": [
     "The notes tree is not mutated between the two listings being compared.",
     "Depth is counted on the lexical path, so an in-root directory symlink is listed and pruned at its own position."
@@ -16,9 +16,9 @@
     "legacyId": "25de0855-0817-4622-b8f2-e7cddff335da",
     "task": "260921-ICR"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "GET /api/notes/list returns the same bytes as before the bounding change: files before folders by case-folded name with readdir-order ties, in-root symlinks listed under their own lexical path, escaping or broken symlinks and non-regular files skipped, folders at depth cap 4 pruned with truncated true, missing notes folder an empty list.",
+  "statement": "Dated L55 bound for the superseded endpoint: GET /api/notes/list returned the same bytes as before the bounding change (files before folders by case-folded name with readdir-order ties; in-root symlinks under their own lexical path; escaping/broken symlinks and non-regular files skipped; depth-4 pruning with truncated true; missing folder as empty list). The endpoint is removed by the accepted packet; current per-folder properties (in-root aliases under their own path, escaping/broken skips, missing-folder emptiness) hold in list_folder and are governed by the rule 2 entry — except ordering (directories-first, exact-name ties) and the envelope, which differ.",
   "status": "proposed",
   "supersedes": []
 }

@@ -67,7 +67,11 @@ shell's routing, rails or change-set plumbing changed with it: the target choose
   mounted and are hidden while full-bleed. Takeovers (change set, intent review, notes/requirements,
   a review target) render over the hidden railed body, and closing one returns to where it was
   opened. `IntentEntryRevalidation` wraps the tree and re-reads the Operations entry once per showing
-  (`view === "operations" && !takeover`).
+  (`view === "operations" && !takeover`). The notes/requirements/decisions/report takeover
+  (`NotesTakeover`) names its `data-view` from the artifact kind (`notes-reader`,
+  `requirements-reader`, `decisions-reader`, `report-reader`); a note selection leaves the
+  folder-open state (`selectNote` sets `folder: false` on `kind === "notes"`) so the reader
+  shows the note (260928-MIK-L126).
 - **Shared consumers.** `Cockpit` wires `connectState` and one `connectEvents` connection with two
   consumers (the Event River and the gated seat-event reconciler). `CockpitShell` owns the refcounted
   catalog poll driver, the eager/cross-tab reconciler and the screen wake lock. The

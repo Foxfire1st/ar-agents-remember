@@ -10,7 +10,7 @@ The canonical evidence-lane catalog: which test modules belong to which lane, so
 
 ## Code Commentary
 
-The catalog assigns each current test module exactly one evidence lane, one module path per row, kept sorted within the lane. This leaf adds three `unit-regression` rows: the extracted capsule serving-surface suite and the two memory-opt-out refusal suites (start and routes). The file now holds 471 lines with 453 module rows, 312 of them in `unit-regression`; earlier shape counts recorded against smaller trees are superseded by the tree itself.
+The catalog assigns each current test module exactly one evidence lane, one module path per row, kept sorted within the lane. This leaf adds three `unit-regression` rows: the extracted capsule serving-surface suite and the two memory-opt-out refusal suites (start and routes). The file now holds 474 lines with 456 module rows, 315 of them in `unit-regression`; earlier shape counts recorded against smaller trees are superseded by the tree itself.
 
 ## Evidence
 

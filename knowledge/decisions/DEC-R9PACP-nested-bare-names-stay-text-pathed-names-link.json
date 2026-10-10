@@ -1,0 +1,67 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "The chosen link rule and its two rejected alternatives constrain every future reference surface; a bare-name change must re-weigh collision against cost."
+  },
+  "alternatives": [
+    {
+      "option": "Resolve by one server request; nested-only bare names stay text, pathed and top-folder bare names link.",
+      "reason": "The Parent disposition keeps the previously working unique-bare link only where it cannot collide, and the single-request resolve bounds cost by reference count.",
+      "status": "chosen"
+    },
+    {
+      "option": "Restore the dropped unique-anywhere bare-name link (a bare name occurring exactly once anywhere in the tree links).",
+      "reason": "Parent d388e211 sections 1-2 expressly drops this third way: a bare name existing only in a sub-folder stays plain text, with no scan, index, fallback or second lookup (Expected Evidence 2); restoring it reintroduces the tree walk the packet removes. CODE-05 stays closed as no regression.",
+      "reconsider_when": "The packet is amended to admit tree-wide resolution with a cost bound.",
+      "status": "rejected"
+    },
+    {
+      "option": "Search the whole tree for every bare name.",
+      "reason": "Tree search reintroduces unbounded cost on large masters, breaking the rule 8 bound.",
+      "reconsider_when": "The cost protocol admits tree search within the ceiling with retained proof.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Reference links are exact or absent; no guessed link is ever rendered."
+  ],
+  "context": "The task page must link references to notes without rescanning the tree, under Parent ruling L126-REFERENCE-FORMAT-RULING (d388e211).",
+  "decider": "Parent ruling d388e211 (L126-REFERENCE-FORMAT-RULING), carried in the R5 dispositions.",
+  "id": "DEC-R9PACP",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "INV-P2KSPN"
+    },
+    {
+      "relation": "explains",
+      "target": {
+        "id": "MIK-R126",
+        "packet": "requirements/MIK-R126-v1-the-task-page-shows-what-belongs-to-the-task.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "listing tests + read tests (live/archived open, refusals incl. preserved partial-chain 409); pytest green"
+      ],
+      "path": "notes/reports/role-launch/260928-MIK-L126-curator-handoff.json"
+    },
+    "handoffEntry": "MIK-R126@v1 rule 5",
+    "leaf": "260928-MIK-L126",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

@@ -1,0 +1,24 @@
+{
+  "admission": "legacy-unassessed",
+  "guarantee": "The notes listing costs one nofollow stat per entry plus a second followed stat for symlink entries, with path resolution paid only for the notes root and for symlinks, and it still means: nothing listed from outside the notes root even when a directory is swapped for a symlink mid-open, no whole-answer failure from a looping or file-traversing symlink, and no state kept between requests. Dated L55 truth preserved: the whole-tree list wire (same response bytes, depth-4 truncation, readdir-order ties, propagate-other-errors) belonged to the removed endpoint and is retired with it; the per-folder properties above are the current joint guarantee under the accepted packet.",
+  "id": "FAM-4V4GSQCS",
+  "members": [
+    "INV-DA7D417G",
+    "INV-EJW15DXA",
+    "INV-QR24S1VH",
+    "INV-Z66EMHMH",
+    "INV-ZJS1XY4R"
+  ],
+  "origin": {
+    "leaf": "260921-ICR-L55",
+    "legacyId": "0acf2d11-8b86-458d-af47-2ebf5cc34890",
+    "task": "260921-ICR"
+  },
+  "revision": 2,
+  "routes": [
+    "mcp/src/agents_remember/serving"
+  ],
+  "schema": "ar-family/v1",
+  "status": "proposed",
+  "title": "Bounded notes listing with unchanged meaning"
+}

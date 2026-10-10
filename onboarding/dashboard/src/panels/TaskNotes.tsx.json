@@ -1,29 +1,36 @@
 {
   "path": "dashboard/src/panels/TaskNotes.tsx",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "4fd13392ee64ff470abdcce77426d87eb9f9a55b",
+        "content": "sha256:19d59d8bb1924194adca2e83f7c75750415b180dea906466d8a9643fba277bfe",
+        "locator": {
+          "kind": "symbol",
+          "name": "TaskNotes"
+        }
+      },
+      "id": "RLZ-MM7B05",
+      "invariant": "INV-RKYCEP",
+      "origin": {
+        "handoffEntry": "MIK-R126@v1 rule 3",
+        "leaf": "260928-MIK-L126"
+      },
+      "rationale": "This component draws the Notes line from the root folder total only, and opens the folder target the reader understands.",
+      "role": "presentation"
+    }
+  ],
   "references": {
     "1": {
-      "note": "The data client + the pure reference resolver.\n\nAnchor: `listNotes`, `resolveNoteReference`",
+      "note": "The data client with the folder and reference resolvers.",
       "targets": [
         {
           "anchor": {
-            "blob": "43bffd67009f4cebf8c15adbb66d797fc0c20155",
-            "content": "sha256:ea96e2f129e7d29d6f2e847dca92d725fb659db2a4a0b2931b7985b15052079b",
+            "blob": "db4ee81eefe2ea8e744d09543e10feec070a2b46",
+            "content": "sha256:e29a0ae65685a8b9a1a8b41013f668d69aa49aec462004040e1477fbcb99ef95",
             "locator": {
               "kind": "symbol",
-              "name": "listNotes"
-            },
-            "path": "dashboard/src/data/notes.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "43bffd67009f4cebf8c15adbb66d797fc0c20155",
-            "content": "sha256:8c62e549e9afe5477f682e83eda4e4870e1fa470f6ebb4c7c0d196705144b939",
-            "locator": {
-              "kind": "symbol",
-              "name": "resolveNoteReference"
+              "name": "listFolder"
             },
             "path": "dashboard/src/data/notes.ts"
           },
@@ -32,16 +39,15 @@
       ]
     },
     "2": {
-      "note": "The surface passes a shared discriminated artifact target: notes carry a path, while requirements also carry the selected document.\n\nAnchor: \"export type TaskArtifactReaderTarget =\"",
+      "note": "The surface passes a shared discriminated artifact target.",
       "targets": [
         {
           "anchor": {
-            "blob": "63e409de6f0777f70c752a04cf186a7f910b158b",
-            "content": "sha256:5bd7f8dca22cf06dd249a8f12cfcabc24ae2ad0617e42c379c23366fa5dcdeb5",
+            "blob": "f433d3c79bfc376fb5c5b05f30f881a81adced4d",
+            "content": "sha256:4d11b60e1e6de76747f98193a4ee65f90bc79d5b23c2020c9e201a292217a258",
             "locator": {
-              "end": 14,
-              "kind": "line_range",
-              "start": 1
+              "kind": "symbol",
+              "name": "TaskArtifactReaderTarget"
             },
             "path": "dashboard/src/data/taskArtifacts.ts"
           },
@@ -54,12 +60,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4f78e66c6cad87f02598d241bfa4204ca21f3b0b",
+            "blob": "4fd13392ee64ff470abdcce77426d87eb9f9a55b",
             "content": "sha256:c9b54ab3ac2e7bbd6c12add13be75e7eb51d5c58a87e780ff70e442323b462e6",
             "locator": {
-              "end": 17,
+              "end": 23,
               "kind": "line_range",
-              "start": 17
+              "start": 23
             }
           },
           "kind": "code"
@@ -97,53 +103,16 @@
       ]
     },
     "5": {
-      "note": "The task reader + master overview that mount this component and thread `onOpenNotes`.\n\nAnchor: `MasterOverview`, `TaskReader`",
+      "note": "The task reader mounts this component and threads `onOpenNotes`.",
       "targets": [
         {
           "anchor": {
-            "blob": "74e115417c4c270744a57431c4d51524c6e61b9b",
-            "content": "sha256:870f45dc6d4b00dc1d5a9a77d0b6aec42efb4c4df16fd13c52b6e9fe1580d60f",
+            "blob": "5010f4f41e7f40f48b178e0039b7fe40a77875c2",
+            "content": "sha256:9c3b11a5f1a401a7433158a046a8c57069261d60b7e3b6b6265d5ba92738cccc",
             "locator": {
-              "kind": "symbol",
-              "name": "MasterOverview"
-            },
-            "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "74e115417c4c270744a57431c4d51524c6e61b9b",
-            "content": "sha256:2a3ea56090c549a9c7b3e00420b2d37ff98336f464bd9b34655201ba37445850",
-            "locator": {
-              "kind": "symbol",
-              "name": "TaskReader"
-            },
-            "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "65150d6b9dc643f5ddb48dae19e76a9ad141b816",
-            "content": "sha256:ae375ba403f6e49c4bdbbc8cbf517581d63c2636000aad3de5bea04a162b9402",
-            "locator": {
-              "end": 242,
+              "end": 270,
               "kind": "line_range",
-              "start": 167
-            },
-            "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "74e115417c4c270744a57431c4d51524c6e61b9b",
-            "content": "sha256:c30b4698a8a428219b6572fb334b2c06fb5838779f40b6d2b67e105abe46e9e8",
-            "locator": {
-              "end": 634,
-              "kind": "line_range",
-              "start": 600
+              "start": 254
             },
             "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
           },
@@ -152,15 +121,15 @@
       ]
     },
     "6": {
-      "note": "The serving endpoints behind the client.",
+      "note": "The folder, resolve and read endpoints behind the client.",
       "targets": [
         {
           "anchor": {
-            "blob": "e3e6f8d4c246e066532296e69563c435200ae08b",
-            "content": "sha256:a751e8b4d04a6eae9f3a33fa848a630a8cf66a31a29b970931ee96eaedd898d0",
+            "blob": "d1f1be6c7c8cb30d03e132b8f4f34d2bdd0cd4fd",
+            "content": "sha256:588ddec25312110e5e0f19ec9721f196c744466d8edea4c97b9f100cd90cab6e",
             "locator": {
               "kind": "symbol",
-              "name": "register_notes_routes"
+              "name": "list_folder"
             },
             "path": "mcp/src/agents_remember/serving/notes.py"
           },
@@ -169,20 +138,49 @@
       ]
     },
     "7": {
-      "note": "The component test suite.\n\nAnchor: \"TaskNotes entry surface\"",
+      "note": "The component test suite.",
       "targets": [
         {
           "anchor": {
-            "blob": "4c8dcbcb233f63d4847aa5b0712a3abe9583f375",
-            "content": "sha256:c0b35a6df9ec24343d7855bf58725f57e6716f0cb890090d83e0663c24a027d6",
+            "blob": "8ec686675f29a48b9d12f158ee6a4c76a1d67b3b",
+            "content": "sha256:5938f2b5ed535510f8ec42eda1bb50b1d52110fa83419545ad2fb3f4b84cb994",
             "locator": {
-              "end": 76,
-              "kind": "line_range",
-              "start": 38
+              "kind": "file"
             },
             "path": "dashboard/src/panels/TaskNotes.test.tsx"
           },
           "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The page shows one Notes line with the root count and no tree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4fd13392ee64ff470abdcce77426d87eb9f9a55b",
+            "content": "sha256:19d59d8bb1924194adca2e83f7c75750415b180dea906466d8a9643fba277bfe",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskNotes"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "References resolve through one request; reports read newest-first capped at twenty.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4fd13392ee64ff470abdcce77426d87eb9f9a55b",
+            "content": "sha256:8474ef72b3e86cff14b6f8c8800f1d7037ee7a42adf1bff057a86441fc1d92ca",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
         }
       ]
     }

@@ -7,80 +7,58 @@
 ## Purpose
 
 `notes.py` is the read-only **coordination-notes API** (agent-orchestration L9, closing
-friction F-M): two GET endpoints that surface the coordination `notes/` tree — design
+friction F-M): three endpoints that surface the coordination `notes/` tree — design
 records, the friction ledger, worker turn reports, adversarial verdicts — for one series
-master, `tasks/<repo>/<master>/notes/` under the coordination root. Before it, the files
+master, `tasks/<repo>/<master>/notes/` under the coordination root. Since 260928-MIK-L126
+the server answers **one folder per request**: the whole-tree `GET /api/notes/list` walk is
+removed with no caller remaining. Before it, the files
 API served only repo roots + worktree enclosures and the task reader rendered only
 `task.json` content, so a task doc's references to notes files were inert strings. It
-feeds the task reader's notes view (`dashboard/src/panels/TaskNotes.tsx` via
-`dashboard/src/data/notes.ts`).
+feeds the task reader's notes line (`dashboard/src/panels/TaskNotes.tsx` via
+`dashboard/src/data/notes.ts` and `dashboard/src/data/taskReports.ts`).
 
 ## Code Commentary
 
-### 260921-ICR-L55 Current Delta — The Listing Resolves Only Symlinks And Walks By Descriptor
+### 260928-MIK-L126 Current Delta — The Server Answers One Folder Per Request
 
-The task reader fetches `GET /api/notes/list` every time a task opens, and a series' notes tree holds
-thousands of files. The earlier walk ran three `realpath` calls on every entry: `child.resolve()`, then
-`path_is_relative_to` resolving the entry and the root again. Each call `lstat`s every path component.
-That was about 85% of the listing's cost, and because the work is pure Python between syscalls, a busy
-server stretched it to seconds. `ICR-R24@v3` (leaf L55) bounds the listing to **one followed `stat` per
-entry**. Path resolution is paid once for the root and once per symlink, whatever the number or size of
-the notes. The wire response is unchanged, with one accepted exception described below. No cache, index
-or store was added. A directory-mtime cache was considered and rejected: a note that grows in place
-changes its size without changing any directory mtime, so a cache would serve stale sizes and break the
-live refresh (`ICR-R17`).
+The task reader fetched `GET /api/notes/list` every time a task opened, and the walk of the
+whole tree grew with the notes folder: 72,875 rows in 15 MB on the measured master. `MIK-R126@v1`
+(rule 2) replaces it with **one folder per request**. `list_folder` reads only the requested
+folder — never its subfolders, so the work does not grow with the number of files under the
+notes root — and answers entries in a stable total order (directories first, case-folded name,
+exact name breaking ties) in parts of `_FOLDER_PAGE` (200), with `remaining` for the next part.
+A missing folder answers empty with the server's reason, never an error. The whole-tree answer
+is removed and no caller of it remains.
 
-How the walk works now:
+Confinement is preserved in the one-folder shape:
 
-- `list_notes` resolves the notes root once and opens it as a descriptor (`_DIR_OPEN` =
-  `O_RDONLY|O_DIRECTORY|O_NOFOLLOW`). `_walk_notes` lists each directory with `os.scandir(dir_fd)` and
-  collects the results in a `_NotesWalk` accumulator. A row's `path` is built from entry names
-  (`prefix + name`), not from `relative_to`.
-- **Only symlinks are confinement-checked** (`_confined_stat`). A symlink entry keeps the unchanged
-  `resolve()` + `path_is_relative_to(…, root)` check, judged on its lexical path through the walk. A
-  non-symlink child needs no check, because the walk only enters directories opened beneath the
-  confined root. An escaping symlink is never listed. An entry whose stat fails is skipped.
-- **Directories are entered through descriptors** (`_open_subdir`, `_walk_subdir`). A plain
-  subdirectory is opened relative to its parent's descriptor. An in-root directory symlink is still
-  listed under its own lexical path, as before. Its target is re-resolved, re-checked and then opened
-  one component at a time from the root descriptor (`_open_below_root`). If a directory was swapped
-  for a symlink or a file after the walk saw it, the open fails with `ELOOP`/`ENOTDIR`
-  (`_SWAPPED_AWAY`), and the directory is refused rather than followed out of the root. Every other
-  open error propagates, as the path-based walk's errors did. This hardening came from review finding
-  L55-R1-F2. Under a real concurrent flip it measured 0 leaking listings per 20,000, against 107–156
-  for the old walk.
-- **The directory-first sort key** (`_is_dir`) treats a followed-stat failure the way `Path.is_dir()`
-  did. `ENOENT`, `ENOTDIR`, `EBADF` and `ELOOP` (`_NOT_A_DIR`) mean "not a directory"; every other
-  error propagates. So a looping symlink, or one that traverses a file, is skipped and never turns the
-  whole listing into HTTP 500 (review finding L55-R1-F1).
-- Only regular files are listed, after following an in-root symlink (`S_ISREG`). FIFOs, sockets and
-  other non-regular entries are skipped, as before.
+- The requested folder is opened through held descriptors without following symlinks
+  (`_open_confined_dir`): a directory swapped for an escaping link after confinement reads as
+  gone instead of listing outside entries (review finding L126-CODE-01). A vanished folder, a
+  file path, or an unreadable folder answers empty with its reason (L126-CODE-04); every other
+  error propagates, including EACCES from opening or listing the folder itself — a
+  searchable-but-unreadable folder and a neither-read-nor-search folder keep the baseline
+  500. The one exception is a readable-but-unsearchable folder: listing succeeds and each
+  entry's stat failure is skipped, never listed (`_folder_row`), so it answers present
+  with no children — zero rows with exists true (INV-413DC8XE).
+- Each row is examined without following symlinks (`_folder_row`): only a symlink can escape,
+  and an escaping link is never listed while an in-root alias still lists under its own name.
+  Non-regular entries are skipped.
+- Bare-name resolution never returns an escaping link (`_confined_is_file`, L126-CODE-01).
+- Reference resolution is per-token and bounded by reference count (`resolve_notes_references`):
+  a token naming an existing note by path (with or without the `notes/` prefix) wins; a bare
+  filename resolves only at the notes root, never by a tree walk (Parent ruling L126-REFERENCE-FORMAT-RULING:
+  nested-only bare names stay text, L126-CODE-05). Anything else stays plain text.
 
-**The one accepted deviation from byte identity** (Architect rulings of 2026-09-28T16:30:31 and
-16:55:00): a directory that is readable but not searchable (`r` without `x`) now lists without its
-children and answers 200. The path-based walk answered HTTP 500 there. This applies whether the
-listing reaches the directory directly or through an in-root symlink. It follows the listing's
-existing policy of silently skipping unreadable entries. No corpus entry has that mode.
+This entry supersedes the L55 descriptor-walk description on this card: the walk, its sort key,
+its per-entry stat economy and its residuals describe a removed endpoint.
 
-**Residuals the descriptor walk does not cover.** The comment above `_DIR_OPEN` states both.
+### 260731-EFA-L4 Current Delta — Both Routes Now Declare What They Answer With (L126: three routes)
 
-- (a) If a directory is renamed out of the root while it is being listed, its own entries are still
-  listed through the open descriptor. The path-based walk did not do this. It discloses nothing new:
-  whoever can move that directory could equally place the same content inside the root.
-- (b) A symlink's stat is taken during the sort (`DirEntry` caches it), before its path check. So a
-  retarget in between can list one outside file's size under the in-root name. The path-based walk
-  had the same single-entry window in the opposite order: check, then stat.
-
-In both cases note reads stay confined by `confine_rel`.
-
-This entry supersedes the earlier description on this card that every walked child is
-realpath-checked.
-
-### 260731-EFA-L4 Current Delta — Both Routes Now Declare What They Answer With
-
-`GET /api/notes/list` declares `response_model=NotesListing` and `GET /api/notes/read` declares
-`response_model=NoteContents`, both under the shared `responses=SCOPED_READ_RESPONSES` table.
-All three come from `serving/response_contract.py`, which is where this module's
+`GET /api/notes/folder` declares `response_model=NotesFolder`, `POST /api/notes/resolve`
+declares `response_model=NotesResolutions`, and `GET /api/notes/read` declares
+`response_model=NoteContents`, all under the shared `responses=SCOPED_READ_RESPONSES` table.
+All come from `serving/response_contract.py`, which is where this module's
 one new import lives.
 
 `SCOPED_READ_RESPONSES` is exactly the two statuses `_notes_json` can produce — 400
@@ -102,26 +80,24 @@ closeout.
 
 L9 review follow-up (L9R-1): the shared status mapper now also catches `ValueError` from `Path.resolve()` (e.g. an embedded null byte in `path`) and answers `400 bad-path` instead of an uncaught 500 — malformed input gets the same wire answer as a confinement breach.
 
-`register_notes_routes(app, config)` registers two GET routes and **must** be called
+`register_notes_routes(app, config)` registers three routes and **must** be called
 before the greedy static `/` mount (it is, after `register_changeset_routes` in
-`serving/app.py`): `GET /api/notes/list?repo&master` and `GET
-/api/notes/read?repo&master&path`. Both go through `_notes_json` — it validates the
+`serving/app.py`): `GET /api/notes/folder?repo&master&path&offset`,
+`POST /api/notes/resolve` (a `references` list with `repo`/`master`), and `GET
+/api/notes/read?repo&master&path`. All go through `_notes_json` — it validates the
 `{repo, master}` selector (unknown repo → `404 unknown-repo` via `require_repo`; a
 non-single-segment `master` → `400 bad-request` via `_is_single_segment`, the change-set
 `master`-key confinement idiom) and maps domain errors to the shared wire idiom
 (`AuthorityError` → `400 bad-path`, `FileNotFoundError` → `404 not-found`) so
-`data/files.ts`'s error mapping applies unchanged.
+`data/files.ts`'s error mapping applies unchanged. A negative folder offset is a
+`ValueError` → `400 bad-path`: it names no path at all.
 
-`list_notes(config, repo_id, master)` walks the series' notes root recursively via
-`_walk_notes`. Within each directory, files sort before subfolders, by case-folded name. Each entry
-is `{name, path (notes-root-relative posix), size, language}`, and the call returns
-`{repo, master, notes, truncated}`. A **missing notes folder is an empty list, never an
-error** (a young series without notes is normal). Symlink entries are realpath-checked against
-the resolved root (`path_is_relative_to`), and a symlink escaping the notes tree is silently
-skipped. Other children are confined because the walk enters directories only by descriptor,
-beneath the root (see the L55 delta above). Directories deeper than `_MAX_LIST_DEPTH` (4) are
-pruned with `truncated: true`, so the listing never lies about completeness. Depth counts the
-lexical path, so an in-root directory symlink is listed, and pruned, at its own position.
+`list_folder(config, repo_id, master, rel, offset)` confines `rel` (empty at the root),
+answers one part of that folder's entries with `total`/`offset`/`limit`/`remaining`, and
+a missing notes folder or gone folder as empty with `exists: false` and the reason —
+never an error. Each entry is `{name, path (notes-root-relative posix), kind, size,
+language}`; row `path`s are prefixed after the stable sort so independently fetched
+offset parts never depend on readdir order (L126-CODE-02).
 
 `read_note(config, repo_id, master, rel)` confines `rel` with `confine_rel` (the realpath
 idiom: `..` traversal, absolute paths, and symlink escapes all raise `AuthorityError`),
@@ -142,26 +118,28 @@ confined to one honest path segment.
 
 ### Invariants And Boundaries
 
-- No mutation surface of any kind: both routes are GET, nothing writes.
-- Every served path stays inside the series' notes root: `confine_rel` on reads, and on
-  listing the symlink realpath check plus descriptor-only descent. The rest of the
-  coordination tree (task docs, contracts, enclosures) is NOT reachable through this API. The
-  listing's two residual windows are stated in the L55 delta above.
-- The listing's cost is one followed `stat` per entry. Path resolution is paid once for the root
-  and once per symlink, never per note. The listing never opens a note's content, and it keeps no
-  state between requests. Keep all three: `mcp/tests/test_notes_listing.py` counts the `realpath`
-  calls at two tree sizes and refuses any content open.
-- Every directory is entered through `_open_subdir`. Descending any other way reopens symlink
-  escape. Only `ELOOP`/`ENOTDIR` may be swallowed there, because widening that set would change
-  the error answers the path-based walk gave (a mode-000 directory still answers 500). The sort
-  key must keep `_NOT_A_DIR` parity with `Path.is_dir()`.
-- A missing notes folder degrades to `[]`; a missing note file is `404 not-found`; the
+- No mutation surface of any kind: folder and read are GET, resolve is POST with a
+  references body, nothing writes.
+- Every served path stays inside the series' notes root: `confine_rel` on reads and
+  reference paths, held-descriptor opens on folders. The rest of the
+  coordination tree (task docs, contracts, enclosures) is NOT reachable through this API.
+- A folder answer never grows with the tree: one folder read, at most 200 rows per part,
+  reference work bounded by reference count. The folder answer keeps no
+  state between requests. Keep both: `mcp/tests/test_notes_folder.py` proves the parts,
+  the stable order and the tree-size-independent work, and
+  `mcp/tests/test_generated_master_selection_cost.py` proves the bounded selection set
+  on the generated master.
+- Every directory is entered through `_open_confined_dir`. Descending any other way reopens symlink
+  escape. Only swapped-away/vanished/file-path failures answer empty-with-reason; every other
+  error propagates.
+- A missing notes folder or gone folder answers empty with `exists: false` and the reason;
+  a missing note file is `404 not-found`; the
   status idiom matches the files/change-set APIs — and since **260731-EFA-L4** that shared idiom
   is declared once as `SCOPED_READ_RESPONSES`, so a new status here means adding it to the shared
   table, not widening a per-route one.
 - The declared models are the contract, not the runtime guard: these handlers return `Response`
-  objects, so a key added to `list_notes` or `read_note` must land in `NotesListing` /
-  `NoteContents` in the same change to keep the declared contract accurate.
+  objects, so a key added to `list_folder`, `resolve_notes_references` or `read_note` must land in
+  `NotesFolder` / `NotesResolutions` / `NoteContents` in the same change to keep the declared contract accurate.
 
 ## Evidence
 
@@ -171,20 +149,50 @@ No meaningful cross-repo references found.
 
 ### Repo-Internal References
 
-- The app factory registers notes routes during app assembly and mounts static assets later; those calls are not an immediately adjacent pair. [1]
+
+- The app factory registers notes routes during app assembly. [1]
+
+
 - The `confine_rel` realpath confinement this module reuses for reads. [2]
+
+
+- `McpRuntimeConfig` and `path_is_relative_to` provide configuration and path confinement. [4]
+
+
+- The browser client for these endpoints. [7]
+
 - The repo allow-list authority guard (`require_repo`). [3]
-- `McpRuntimeConfig` (`coordination_root`, `allowed_repo_ids`) and `path_is_relative_to` provide configuration and path confinement. [4]
 - `language_for` supplies the listing and read `language` field. [5]
 - The changeset route's single-segment master confinement helper (moved to the new selection module by 260921-ICR-L13; `changeset.py` imports it). [6]
-- The browser client for these endpoints. [7]
-- The `list_notes` and `read_note` helper bodies: the listing opens the resolved root once as a descriptor and walks from it; the read confines through `confine_rel`. [8]
-- The descriptor-open flags, the swap signature that refuses a directory, and the `Path.is_dir()`-parity errno set, with the source comment stating the two residual windows. [9]
-- The per-listing accumulator: the real root and its descriptor, the rows, the prune flag. [10]
-- The directory-first sort key that reads looping or file-traversing symlinks as "not a directory". [11]
-- Symlink-only confinement: one followed `stat` per entry, and `resolve()` + `path_is_relative_to` only for a symlink. [12]
-- Descriptor descent: a plain subdirectory opened relative to its parent, an in-root directory symlink re-resolved and opened component by component from the root, and only `ELOOP`/`ENOTDIR` refused. [13]
-- The walk: `scandir` on the descriptor, files before folders, the depth cap, regular files only, row paths built from names. [14]
-- The wire contract the listing must keep, unchanged by L55. [15]
-- The module's own tests: exact wire bytes over every entry kind, the directory-swap refusal, a `realpath` count that does not grow with the tree, live refresh, and the refusal table. [16]
+
+
+- One folder answers in parts with total, offset, limit and remaining. [8]
+
+
+- Folders open through held descriptors without following symlinks. [9]
+
+
+- Rows sort directories first, case-folded, exact name breaking ties. [10]
+
+
+- Each row is examined without following symlinks. [11]
+
+
+- Bare names never resolve an escaping link. [12]
+
+
+- Each reference resolves to a notes path or null in one request. [13]
+
+
+- Bare filenames resolve only at the notes root. [14]
+
+
+- The part ceiling bounds every folder answer. [15]
+
+
+- The module's folder tests prove parts, order, confinement and bounds. [16]
+
+
+- A readable-but-unsearchable folder answers present with no children since failed entry stats are skipped; EACCES from the folder open or listing itself propagates (searchable-unreadable and neither keep baseline 500). [18]
+
 - The shared `SCOPED_READ_RESPONSES` refusal-table declaration. [17]

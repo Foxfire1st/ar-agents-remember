@@ -33,6 +33,14 @@ from `TaskDocument.seats`; `TaskDocNode.seats` defaults to empty so non-sprint d
 
 The Python schema is the source for generated TypeScript and JSON schema artifacts.
 
+## L126 Product-Record Marking Field
+
+`TaskDecisionNode` carries `product_record: bool = False`: true when the entry
+is a product-written record (finalize lifecycle, removed/skip step), marked from
+the writers' own constants in `tasks.document`. The marking is provenance-based
+(exact/prefix string match); no enforced authorship separation keeps authored
+text from colliding (see INV-NBCGCF). The stored decision shape is unchanged.
+
 ### Invariants And Boundaries
 
 - Projected task references identify work, not runtime occupants.

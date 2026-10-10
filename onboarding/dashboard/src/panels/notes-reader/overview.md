@@ -13,18 +13,18 @@
 `notes-reader/` is the **Notes Reader** (agent-orchestration L17): the L9 coordination-notes reading
 experience rebuilt on the SAME full-view pattern the File Viewer / Change-Set Viewer use. It is a
 task-scoped **takeover** — `CockpitShell` renders it full-bleed in place of the railed Operations body — and
-it is the frontend consumer of the **unchanged** L9 read-only notes API (`GET /api/notes/{list,read}`,
-served by `serving/notes.py`). It reuses the L2 File Viewer content primitive (`file-viewer/DualPane`, which
+it is the frontend consumer of the notes folder API (`GET /api/notes/folder`, `/api/notes/read`,
+`POST /api/notes/resolve`, served by `serving/notes.py`). It reuses the L2 File Viewer content primitive (`file-viewer/DualPane`, which
 itself composes `FilePane` + `grammar/Markdown`) and the L4 Change-Set Viewer takeover chrome (sticky back
 header + `react-resizable-panels` rail+pane). It **replaces** the retired inline `TaskNotes` reading pane;
-the compact `TaskNotes` list + resolved references remain the ENTRY surfaces that open it.
+the compact `TaskNotes` line + resolved references + recorded reports remain the ENTRY surfaces that open it.
 
 ## Route Model
 
-- `NotesReaderViewer.tsx` — the screen. LEFT RAIL = the master's notes tree from `/api/notes/list`
-  (`reports/` included), one clickable row per note (path + byte size) with the open note in an amber/cyan
-  **active wash** (the Change-Set Viewer row idiom); the server's `truncated` flag surfaces a muted
-  "beyond the list cap" hint. CONTENT PANE = the opened note (`/api/notes/read`) rendered by **reusing
+- `NotesReaderViewer.tsx` — the screen. LEFT RAIL = the shared `ExplorerTree` fed one folder at a
+  time from `/api/notes/folder`, filling to the open note, emptying a vanished folder with the
+  server's reason, and holding at most 32 folders with LRU eviction that never touches the open
+  note chain. CONTENT PANE = the opened note (`/api/notes/read`) rendered by **reusing
   `DualPane`**: a markdown note takes DualPane's partnerless-markdown path (the File Viewer's route-overview
   treatment), a text note renders through DualPane's `CodeSide` (read-only CodeMirror), a binary note
   degrades to the byte-count placeholder; loading/failed show a local `note-status` placeholder. The view is
@@ -41,10 +41,11 @@ invalidating the notes-specific assertions.
 
 ## Invariants And Boundaries
 
-- Read-only over the **unchanged** L9 `/api/notes/*` server contract (allow-listing, confinement,
-  binary/oversize all stay server-side); no store mutation — the screen owns its own listing/content fetch
+- Read-only over the notes folder server contract (one folder per request in stable order and
+  parts, single-request resolve, unchanged read path; confinement and binary/oversize all stay
+  server-side); no store mutation — the screen owns its own folder/content fetch
   via `data/notes.ts`.
-- **No second bespoke reader** — the content pane IS the File Viewer's `DualPane`; only the flat notes rail
+- **No second bespoke reader** — the content pane IS the File Viewer's `DualPane`; only the one-folder tree rail
   (the ChangeSetViewer column idiom) and the takeover chrome are local. Panda CSS owns looks; no CSS
   animation (GSAP/Motion only — master invariant).
 - Opened as a Cockpit **takeover** (rails hidden, full-bleed), not a standing mode-bar tab; Back — or a
@@ -53,19 +54,25 @@ invalidating the notes-specific assertions.
 
 ## Hot Path Summary
 
-`NotesReaderViewer.tsx` is the shared task-artifact takeover: `kind: notes` uses `/api/notes/{list,read}`, while `kind: requirements` uses the canonical task-document-selected `/api/requirements/{list,read}` endpoints. The tree rail and `DualPane` are shared; kind-aware labels prevent requirement packets from being presented as ordinary notes.
+`NotesReaderViewer.tsx` is the shared task-artifact takeover: `kind: notes` uses the folder/read/resolve notes endpoints, while `kind: requirements` uses the canonical task-document-selected `/api/requirements/{list,read}` endpoints. The tree rail and `DualPane` are shared; kind-aware labels prevent requirement packets from being presented as ordinary notes.
 
 ## Evidence
 
 ### Repo-Internal References
 
+
 - The read-only notes routes. [1]
-- The same-origin notes client (`listNotes`/`readNote`/`resolveNoteReference`). [2]
+
+
+- The same-origin notes client (`listFolder`/`readNote`/`resolveNoteReferences`). [2]
+
 - The reused File Viewer content pane maps both notes and requirement packets to markdown/code/placeholder rendering. [3]
 - Cockpit defines the note-opening callback. [4]
 - Cockpit defines the note-selection callback. [5]
 - Cockpit renders NotesReaderViewer. [6]
+
 - TaskNotes resolves registered requirement references first; a requirement address never falls through to a note target. [7]
+
 
 ## Current L5I Route State
 
@@ -77,10 +84,13 @@ above.
 L23 widened this child route from a notes-only reader to a discriminated
 task-artifact reader. `NotesReaderViewer.tsx` now takes the shared
 `TaskArtifactReaderTarget` (`data/taskArtifacts.ts`) with a `kind`
-member: `notes` keeps the unchanged `/api/notes/{list,read}` transport,
+member: `notes` uses the folder/read transport (`/api/notes/folder`,
+`/api/notes/read`),
 and the new `requirements` kind reads the task-local packet root over
 `/api/requirements/{list,read}` (listing/content hooks branch on the kind and
-map packets into the existing rail/pane). Rail headers, the open-path label, failure
+map packets into the existing rail/pane). L126 adds the `task-report`,
+`decisions` (whole-log page), and role-report/supplied kinds to the same
+takeover. Rail headers, the open-path label, failure
 copy, and the screen root (`data-artifact-kind`) are kind-aware; rendering still
 reuses the File Viewer `DualPane`. Entry surfaces (task prose via
 `Markdown`, `TaskNotes` references, the `DetailPanel` reader) open

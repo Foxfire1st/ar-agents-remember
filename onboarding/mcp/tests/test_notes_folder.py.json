@@ -1,0 +1,342 @@
+{
+  "path": "mcp/tests/test_notes_folder.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "ee3a18c16e8a5e3a122f5a0d7b81c1d7c53a8d94",
+        "content": "sha256:a85794f6b81ad2931842e79b4d8892bfd54e88477e27347f9c0e6aee86d05776",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_directory_swapped_for_an_escaping_link_mid_request_stays_confined"
+        }
+      },
+      "facet": "A mid-request directory/symlink swap stays confined instead of listing outside entries.",
+      "id": "PRF-06GB11",
+      "invariant": "INV-JXQQF4",
+      "origin": {
+        "handoffEntry": "MIK-R126@v1 rule 2",
+        "leaf": "260928-MIK-L126"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "ee3a18c16e8a5e3a122f5a0d7b81c1d7c53a8d94",
+        "content": "sha256:8ade386aef7cf97b902fccba93c3014f0f85968da64f13db582a5d0d91631641",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_searchable_unreadable_folder_keeps_baseline_500"
+        }
+      },
+      "facet": "A searchable-unreadable folder keeps the baseline 500; the invariant does not cover it.",
+      "id": "PRF-DKHMG7",
+      "invariant": "INV-413DC8XE",
+      "origin": {
+        "handoffEntry": "L126-413DC8XE-repair",
+        "leaf": "260928-MIK-L126"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "ee3a18c16e8a5e3a122f5a0d7b81c1d7c53a8d94",
+        "content": "sha256:2a0bffbd4565974dd7d8e2622417304e6edc4bd522dc39b0315c8842c73f2a9e",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_resolve_answers_each_reference_in_one_request"
+        }
+      },
+      "facet": "All document references resolve in one request, each to a path or null.",
+      "id": "PRF-E70C8G",
+      "invariant": "INV-P2KSPN",
+      "origin": {
+        "handoffEntry": "MIK-R126@v1 rule 5",
+        "leaf": "260928-MIK-L126"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "ee3a18c16e8a5e3a122f5a0d7b81c1d7c53a8d94",
+        "content": "sha256:9714e9a9dd3e02f6af957c1126da3cacce94914578494af6a12c3f48821baf8d",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_folder_parts_above_the_ceiling"
+        }
+      },
+      "facet": "Folders above the part ceiling answer in bounded parts.",
+      "id": "PRF-HQ3501",
+      "invariant": "INV-JXQQF4",
+      "origin": {
+        "handoffEntry": "MIK-R126@v1 rule 2",
+        "leaf": "260928-MIK-L126"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "ee3a18c16e8a5e3a122f5a0d7b81c1d7c53a8d94",
+        "content": "sha256:bbc54c9bddd998a21d35c57654995f1bd182b6454f027b8518618a52bd938654",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_case_fold_ties_order_identically_from_any_enumeration"
+        }
+      },
+      "facet": "Case-folded name ties order identically whatever the enumeration order.",
+      "id": "PRF-HR3XAK",
+      "invariant": "INV-JXQQF4",
+      "origin": {
+        "handoffEntry": "MIK-R126@v1 rule 2",
+        "leaf": "260928-MIK-L126"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "ee3a18c16e8a5e3a122f5a0d7b81c1d7c53a8d94",
+        "content": "sha256:5f28a349c201d01fe0320eac787122c0e8c59b5092ca0f24a829a98095753fe3",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_readable_unsearchable_folder_answers_200_without_children"
+        }
+      },
+      "facet": "A readable-unsearchable folder answers 200 present with empty entries and zero total.",
+      "id": "PRF-KYFPEQ",
+      "invariant": "INV-413DC8XE",
+      "origin": {
+        "handoffEntry": "L126-413DC8XE-repair",
+        "leaf": "260928-MIK-L126"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "ee3a18c16e8a5e3a122f5a0d7b81c1d7c53a8d94",
+        "content": "sha256:c6c6fdf1bd738f2c792b0047d617118dac084da40464b7c1fe694b37154eab49",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_folder_answers_one_level_in_a_stable_order_and_never_descends"
+        }
+      },
+      "facet": "One folder per request in stable total order with no descent below it.",
+      "id": "PRF-PK7EJY",
+      "invariant": "INV-JXQQF4",
+      "origin": {
+        "handoffEntry": "MIK-R126@v1 rule 2",
+        "leaf": "260928-MIK-L126"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "ee3a18c16e8a5e3a122f5a0d7b81c1d7c53a8d94",
+        "content": "sha256:936d6a7ab07a6e4bfd4e9d9b0539c01505a588e587e489c5cd0abd7f17182d72",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_neither_read_nor_search_folder_keeps_500"
+        }
+      },
+      "facet": "A neither-read-nor-search folder keeps its 500; the invariant does not cover it.",
+      "id": "PRF-R31ZP9",
+      "invariant": "INV-413DC8XE",
+      "origin": {
+        "handoffEntry": "L126-413DC8XE-repair",
+        "leaf": "260928-MIK-L126"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "ee3a18c16e8a5e3a122f5a0d7b81c1d7c53a8d94",
+        "content": "sha256:f4a711a4069a9c2ca7fc78be84d4cb560d3e2adf2102752ee5c35af46775e663",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_parent_ruling_reference_format_nested_bare_is_text_pathed_is_link"
+        }
+      },
+      "facet": "Nested-only bare names stay text while pathed and top-folder bare names link.",
+      "id": "PRF-SZZJPB",
+      "invariant": "INV-P2KSPN",
+      "origin": {
+        "handoffEntry": "MIK-R126@v1 rule 5",
+        "leaf": "260928-MIK-L126"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "One folder level answers in a stable order and never descends.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ee3a18c16e8a5e3a122f5a0d7b81c1d7c53a8d94",
+            "content": "sha256:c6c6fdf1bd738f2c792b0047d617118dac084da40464b7c1fe694b37154eab49",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_folder_answers_one_level_in_a_stable_order_and_never_descends"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Parts above the ceiling page in order.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ee3a18c16e8a5e3a122f5a0d7b81c1d7c53a8d94",
+            "content": "sha256:9714e9a9dd3e02f6af957c1126da3cacce94914578494af6a12c3f48821baf8d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_folder_parts_above_the_ceiling"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Folder work does not grow with tree size.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ee3a18c16e8a5e3a122f5a0d7b81c1d7c53a8d94",
+            "content": "sha256:7df09b7456b54eb12499619fc0e579cba2a800186a2dc1131e18ac13958d5a28",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_folder_work_does_not_grow_with_tree_size"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "A swapped directory mid-request stays confined.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ee3a18c16e8a5e3a122f5a0d7b81c1d7c53a8d94",
+            "content": "sha256:a85794f6b81ad2931842e79b4d8892bfd54e88477e27347f9c0e6aee86d05776",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_directory_swapped_for_an_escaping_link_mid_request_stays_confined"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Case-fold ties order identically from any enumeration.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ee3a18c16e8a5e3a122f5a0d7b81c1d7c53a8d94",
+            "content": "sha256:bbc54c9bddd998a21d35c57654995f1bd182b6454f027b8518618a52bd938654",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_case_fold_ties_order_identically_from_any_enumeration"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The whole-tree answer is gone with no caller.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ee3a18c16e8a5e3a122f5a0d7b81c1d7c53a8d94",
+            "content": "sha256:a9f7f57f0789fdac11ecf71d84719cfea9c69e1fbc098103ad0db5c20e1dd22a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_whole_tree_answer_is_gone"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "A readable-unsearchable folder answers 200 present with no children.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ee3a18c16e8a5e3a122f5a0d7b81c1d7c53a8d94",
+            "content": "sha256:5f28a349c201d01fe0320eac787122c0e8c59b5092ca0f24a829a98095753fe3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_readable_unsearchable_folder_answers_200_without_children"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ee3a18c16e8a5e3a122f5a0d7b81c1d7c53a8d94",
+            "content": "sha256:500a697275dac44af3726203c31443fa4dfc439a9902e0d075a3898111da0925",
+            "locator": {
+              "end": 431,
+              "kind": "line_range",
+              "start": 414
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "A searchable-unreadable folder keeps baseline 500.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ee3a18c16e8a5e3a122f5a0d7b81c1d7c53a8d94",
+            "content": "sha256:8ade386aef7cf97b902fccba93c3014f0f85968da64f13db582a5d0d91631641",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_searchable_unreadable_folder_keeps_baseline_500"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ee3a18c16e8a5e3a122f5a0d7b81c1d7c53a8d94",
+            "content": "sha256:a2cea49e93f47d81790886bca7af2cdd20ffcc2282f07cd513cb01477c15b539",
+            "locator": {
+              "end": 412,
+              "kind": "line_range",
+              "start": 396
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "A neither-read-nor-search folder keeps 500.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ee3a18c16e8a5e3a122f5a0d7b81c1d7c53a8d94",
+            "content": "sha256:936d6a7ab07a6e4bfd4e9d9b0539c01505a588e587e489c5cd0abd7f17182d72",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_neither_read_nor_search_folder_keeps_500"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ee3a18c16e8a5e3a122f5a0d7b81c1d7c53a8d94",
+            "content": "sha256:e80afbf0378775a44db3191676203e8a3f2a7fb07de65b3bcadf8748c758ce43",
+            "locator": {
+              "end": 451,
+              "kind": "line_range",
+              "start": 433
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

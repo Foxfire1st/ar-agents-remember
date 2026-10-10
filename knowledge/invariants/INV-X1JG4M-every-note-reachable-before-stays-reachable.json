@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "The obligation spans the unchanged server read path and the reader target in two files; deep-note and old-address cases pin both ends."
+  },
+  "applicability": "Every note reachable through the old reader or the old listing, on any master.",
+  "conditions": [
+    "Any confined note opens at any depth through the explorer; the read route is unchanged.",
+    "Old kind/repo/master/path addresses open the same note through the new tree."
+  ],
+  "exclusions": [
+    "Depth is no longer a reachability boundary; the old depth of four is gone.",
+    "Unconfined paths stay refused; reachability never widens confinement."
+  ],
+  "id": "INV-X1JG4M",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "NotesReaderViewer depth/address cases; vitest green"
+      ],
+      "path": "notes/reports/role-launch/260928-MIK-L126-curator-handoff.json"
+    },
+    "handoffEntry": "MIK-R126@v1 rule 7",
+    "leaf": "260928-MIK-L126",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Every note reachable before stays reachable through the explorer including below the old depth of four, and old reader addresses open the same note.",
+  "status": "proposed",
+  "supersedes": []
+}

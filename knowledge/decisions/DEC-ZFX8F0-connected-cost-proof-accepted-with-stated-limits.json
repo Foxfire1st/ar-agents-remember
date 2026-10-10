@@ -1,0 +1,61 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "The accepted proof shape and its limits describe how this cost claim was evidenced; they do not bind future changes to any CI policy."
+  },
+  "alternatives": [
+    {
+      "option": "Accept the connected proof (pinned-live connector, mounted actual transition, retained cost tests) with the stated limits and no latency gate.",
+      "reason": "R5 accepted this evidence shape for its round (no latency gate demanded there); the retained tests re-verify the bound per run. No standing future-proof policy is decided.",
+      "status": "chosen"
+    },
+    {
+      "option": "Drop the cost bound to unblock landing.",
+      "reason": "Without the bound a future surface may grow answers with descendant count, the exact failure the packet forbids.",
+      "reconsider_when": "The packet withdraws rule 8 by amendment.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Response size stays independent of descendant count under the ruled protocol."
+  ],
+  "context": "Rule 8 must be proven without replaying measures: BEFORE 1a89ec51 and AFTER v26 stand literal with runner3 UNKNOWN absence-by-design.",
+  "decider": "No authorized policy decider. R5 e162eb22 is independent review evidence (decisions and gates remain Manager/Owner acts); the connected-proof shape below is Curator-recorded evidence, not a decided standing policy.",
+  "id": "DEC-ZFX8F0",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "INV-657ZGC"
+    },
+    {
+      "relation": "explains",
+      "target": {
+        "id": "MIK-R126",
+        "packet": "requirements/MIK-R126-v1-the-task-page-shows-what-belongs-to-the-task.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "connector 7354B/60e3bb40 + mounted 9372B/48286195 + fixture 21193B/0544c058; R5 verdict 14743B/e162eb22 PASS"
+      ],
+      "path": "notes/reports/role-launch/260928-MIK-L126-curator-handoff.json"
+    },
+    "handoffEntry": "MIK-R126@v1 rule 8",
+    "leaf": "260928-MIK-L126",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

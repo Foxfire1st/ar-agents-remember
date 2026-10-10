@@ -1,0 +1,21 @@
+{
+  "admission": "legacy-unassessed",
+  "applicability": "GET /api/notes/folder (list_folder and row helpers) over one master's notes root.",
+  "conditions": [
+    "Every request opens and reads the live folder inside the call; no cache or module-level state."
+  ],
+  "exclusions": [
+    "Browser-side caching or polling cadence in the dashboard client."
+  ],
+  "id": "INV-ZJS1XY4R",
+  "origin": {
+    "leaf": "260921-ICR-L55",
+    "legacyId": "eee02477-7779-4cdd-acb2-f491d2096bba",
+    "task": "260921-ICR"
+  },
+  "revision": 2,
+  "schema": "ar-invariant/v1",
+  "statement": "The folder endpoint keeps no state between requests: every request opens and answers the live folder inside the call, so a note written or grown after one listing appears current in the next. (Dated L55 walk-from-root phrasing retired with the walk; the no-state guarantee is unchanged.)",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -6,35 +6,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e3e6f8d4c246e066532296e69563c435200ae08b",
-            "content": "sha256:a751e8b4d04a6eae9f3a33fa848a630a8cf66a31a29b970931ee96eaedd898d0",
+            "blob": "d1f1be6c7c8cb30d03e132b8f4f34d2bdd0cd4fd",
+            "content": "sha256:588ddec25312110e5e0f19ec9721f196c744466d8edea4c97b9f100cd90cab6e",
             "locator": {
               "kind": "symbol",
-              "name": "register_notes_routes"
-            },
-            "path": "mcp/src/agents_remember/serving/notes.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e3e6f8d4c246e066532296e69563c435200ae08b",
-            "content": "sha256:0d00b8c2e8b4018c2285876277245ab1007dcea03c3afde5fc22afd8cfc21409",
-            "locator": {
-              "kind": "symbol",
-              "name": "list_notes"
-            },
-            "path": "mcp/src/agents_remember/serving/notes.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e3e6f8d4c246e066532296e69563c435200ae08b",
-            "content": "sha256:7e69a5c5252ce9324c46b19420334ae365601d3d20f23b9bf7101e468ec93765",
-            "locator": {
-              "kind": "symbol",
-              "name": "read_note"
+              "name": "list_folder"
             },
             "path": "mcp/src/agents_remember/serving/notes.py"
           },
@@ -43,39 +19,15 @@
       ]
     },
     "2": {
-      "note": "The same-origin notes client (`listNotes`/`readNote`/`resolveNoteReference`).",
+      "note": "The same-origin notes client (`listFolder`/`readNote`/`resolveNoteReferences`).",
       "targets": [
         {
           "anchor": {
-            "blob": "43bffd67009f4cebf8c15adbb66d797fc0c20155",
-            "content": "sha256:ea96e2f129e7d29d6f2e847dca92d725fb659db2a4a0b2931b7985b15052079b",
+            "blob": "db4ee81eefe2ea8e744d09543e10feec070a2b46",
+            "content": "sha256:e29a0ae65685a8b9a1a8b41013f668d69aa49aec462004040e1477fbcb99ef95",
             "locator": {
               "kind": "symbol",
-              "name": "listNotes"
-            },
-            "path": "dashboard/src/data/notes.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "43bffd67009f4cebf8c15adbb66d797fc0c20155",
-            "content": "sha256:684ae4c7ea130b878532f5488a9dd9ce46584ce558626cc1fb52e3c9a51d6ba1",
-            "locator": {
-              "kind": "symbol",
-              "name": "readNote"
-            },
-            "path": "dashboard/src/data/notes.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "43bffd67009f4cebf8c15adbb66d797fc0c20155",
-            "content": "sha256:8c62e549e9afe5477f682e83eda4e4870e1fa470f6ebb4c7c0d196705144b939",
-            "locator": {
-              "kind": "symbol",
-              "name": "resolveNoteReference"
+              "name": "listFolder"
             },
             "path": "dashboard/src/data/notes.ts"
           },
@@ -88,12 +40,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "da6b1dad40f634e0d0a7ab66ecf966af32e721e7",
+            "blob": "fa64ce4c3d5c456ef60740f445a0424150da823e",
             "content": "sha256:594588f676c4d2debe3970e4c23069527741e528fdcf9ac4f6c9965912371242",
             "locator": {
-              "end": 138,
+              "end": 145,
               "kind": "line_range",
-              "start": 121
+              "start": 128
             },
             "path": "dashboard/src/panels/notes-reader/NotesReaderViewer.tsx"
           },
@@ -101,12 +53,12 @@
         },
         {
           "anchor": {
-            "blob": "da6b1dad40f634e0d0a7ab66ecf966af32e721e7",
+            "blob": "fa64ce4c3d5c456ef60740f445a0424150da823e",
             "content": "sha256:68a2b4d382437dadb4bbbe1d75607d067e34315faef5c4dd340524dfa4c6235d",
             "locator": {
-              "end": 205,
+              "end": 448,
               "kind": "line_range",
-              "start": 205
+              "start": 448
             },
             "path": "dashboard/src/panels/notes-reader/NotesReaderViewer.tsx"
           },
@@ -119,7 +71,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f907717bf9460d7f6facca800810459ce72ecbdf",
+            "blob": "76c1e952f0b6c4c9d708c3edf4cd8b28c0f764ff",
             "content": "sha256:70415866ef3eaf11b112a4d3a1e096c4a6dd6672bc1652987b78dd2e85ee207e",
             "locator": {
               "end": 538,
@@ -155,12 +107,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f907717bf9460d7f6facca800810459ce72ecbdf",
+            "blob": "76c1e952f0b6c4c9d708c3edf4cd8b28c0f764ff",
             "content": "sha256:5e7324eb16d1a1120e25ff0485617aa4e555dad57373f64a2c8235296b853979",
             "locator": {
-              "end": 628,
+              "end": 642,
               "kind": "line_range",
-              "start": 628
+              "start": 642
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -169,16 +121,15 @@
       ]
     },
     "7": {
-      "note": "TaskNotes resolves registered requirement references first; a requirement address never falls through to a note target.\n\nAnchor: \"function ReferenceList({\"",
+      "note": "TaskNotes resolves registered requirement references first; a requirement address never falls through to a note target.",
       "targets": [
         {
           "anchor": {
-            "blob": "4f78e66c6cad87f02598d241bfa4204ca21f3b0b",
-            "content": "sha256:57d93e8c8eee9b2809d8909bb805c385e80443956db0ace8c4891a48af78f973",
+            "blob": "4fd13392ee64ff470abdcce77426d87eb9f9a55b",
+            "content": "sha256:19d59d8bb1924194adca2e83f7c75750415b180dea906466d8a9643fba277bfe",
             "locator": {
-              "end": 129,
-              "kind": "line_range",
-              "start": 75
+              "kind": "symbol",
+              "name": "TaskNotes"
             },
             "path": "dashboard/src/panels/TaskNotes.tsx"
           },

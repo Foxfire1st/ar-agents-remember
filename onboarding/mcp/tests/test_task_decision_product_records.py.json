@@ -1,0 +1,75 @@
+{
+  "path": "mcp/tests/test_task_decision_product_records.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "b20b96423d9336c163334edc709616cec4ddcc75",
+        "content": "sha256:110697161e68adaba209f67416a74c5c362d2f9ea65503b69a1480e8f04f4f9a",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_finalizer_entry_keeps_its_shape_and_is_marked"
+        }
+      },
+      "facet": "The finalizer record keeps its shape and is marked as a product record.",
+      "id": "PRF-3GSFRB",
+      "invariant": "INV-NBCGCF",
+      "origin": {
+        "handoffEntry": "MIK-R126@v1 rule 6",
+        "leaf": "260928-MIK-L126"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b20b96423d9336c163334edc709616cec4ddcc75",
+        "content": "sha256:a24057bd3f0c6b444f6b4e7b44ab3456dce498d28c9b24af1f2a1b2869add479",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_writer_constants_are_marked_and_authored_text_is_not"
+        }
+      },
+      "facet": "Writer constants mark product records while the named authored decisions do not match (no impossibility proof for arbitrary authored text).",
+      "id": "PRF-J5N1J4",
+      "invariant": "INV-NBCGCF",
+      "origin": {
+        "handoffEntry": "MIK-R126@v1 rule 6",
+        "leaf": "260928-MIK-L126"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Writer constants are marked and authored text is not.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b20b96423d9336c163334edc709616cec4ddcc75",
+            "content": "sha256:a24057bd3f0c6b444f6b4e7b44ab3456dce498d28c9b24af1f2a1b2869add479",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_writer_constants_are_marked_and_authored_text_is_not"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "A finalizer entry keeps its shape and is marked.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b20b96423d9336c163334edc709616cec4ddcc75",
+            "content": "sha256:110697161e68adaba209f67416a74c5c362d2f9ea65503b69a1480e8f04f4f9a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_finalizer_entry_keeps_its_shape_and_is_marked"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

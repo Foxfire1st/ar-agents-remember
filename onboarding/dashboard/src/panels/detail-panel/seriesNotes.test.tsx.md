@@ -6,8 +6,13 @@
 
 ## Purpose
 
-The series-notes behavior suite split from `DetailPanel.test.tsx` by the
-260731-EFA-L8 test split. Pins the L9 series-notes rendering in the detail reader.
+The task-notes behavior suite split from `DetailPanel.test.tsx` by the
+260731-EFA-L8 test split. Since L126 it pins the task page's Notes line for the
+doc's own series (not the retired L9 series-notes list rendering): the folder is
+fetched for the doc's own series, one resolution request carries the doc's
+references, and no list is ever drawn. The L9 list-era prose below is superseded;
+the retired whole-tree list suite was deleted with its endpoint (see the folder
+suite), while this suite is collected live source asserting current behavior.
 
 
 ## 260831-CCR-L23 Kind-Tagged Open Payload
@@ -19,12 +24,17 @@ The series-notes click expectation now asserts the discriminated artifact target
 
 ### Logic
 
-Seeds a series with notes and asserts the notes surface renders the expected content
-and state.
+Renders the detail panel for a leaf doc and asserts: the Notes line appears via
+`notes-root-count` (not a "Series notes" list); the folder URL carries the doc's
+own repo/master with `path=&offset=0`; no report-path row is drawn
+(`queryByText` null); the notes-file reference is an openable link (click fires
+`onOpenNotes` with the notes target) while the code-path reference stays plain
+text (`note-ref-2` null).
 
 ### Invariants And Boundaries
 
-Assertions preserved from the monolithic suite.
+Live L126 assertions (folder fetch, Notes line, reference links); the L9
+list-rendering assertions are superseded, not preserved.
 
 ### Todos
 

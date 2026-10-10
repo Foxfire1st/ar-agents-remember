@@ -1,0 +1,25 @@
+{
+  "admission": "legacy-unassessed",
+  "applicability": "A single-folder read (GET /api/notes/folder) naming a readable-but-unsearchable directory (read permission without search, e.g. mode 0o444) under the notes root.",
+  "conditions": [
+    "_folder_row skips each entry whose stat fails instead of listing it, so the folder answer carries exists true with empty entries and zero total.",
+    "Family examination: no joint obligation is supported. Basis: unchanged — a ruled exception bounding the byte-identity member, expressed for single-folder reads.",
+    "Dated allegation corrected additively (MEMORY A1, L126-MEM-01): the interim _list_names revision is retracted — no such construct exists in the tree; the 200-empty answer pre-dates the repair attempt via per-entry skips, and the initial EACCES-at-listdir premise for readable folders was refuted (R6 4e6ba5f5, final option-a 2f477f8a)."
+  ],
+  "exclusions": [
+    "Swapped-away (ELOOP/ENOTDIR) and bad-descriptor (EBADF) folders still answer empty-with-reason.",
+    "A missing folder and a file path keep their own reasons.",
+    "A searchable-but-unreadable folder (e.g. mode 0o111) and a neither-read-nor-search folder (e.g. mode 0o000): EACCES from the folder open or listing propagates and the baseline 500 is preserved."
+  ],
+  "id": "INV-413DC8XE",
+  "origin": {
+    "leaf": "260921-ICR-L55",
+    "legacyId": "1415ff15-3b07-455e-bce4-2b817af0184a",
+    "task": "260921-ICR"
+  },
+  "revision": 2,
+  "schema": "ar-invariant/v1",
+  "statement": "An unlistable notes folder answers present with no children: each entry's stat failure is skipped, never listed, so a readable-but-unsearchable folder yields zero rows with exists true.",
+  "status": "proposed",
+  "supersedes": []
+}

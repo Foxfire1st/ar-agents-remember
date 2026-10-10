@@ -26,6 +26,14 @@ task-intent slot models `AcceptanceObligationQuestion`, `ApprovedRequirementPack
 `TaskIntentIdentity` (line 11-15, also in `__all__` line 84-117) so callers reference the typed
 intent forms through the package surface. `__all__` lists the full public set.
 
+## L126 Writer-Constants Re-export
+
+L126 additionally re-exports the product-record marking surface from
+`tasks.document`: `FINALIZE_TASK_LIFECYCLE_DECISION`,
+`REMOVED_STEP_DECISION_PREFIX`, `SKIP_STEP_DECISION_PREFIX`, and the
+`is_product_record_decision` predicate (exact/prefix string match; no new
+behavior, no enforced authorship separation).
+
 ### Invariants And Boundaries
 
 - Consumers (the `task_doc` application entry point, the observer S7 reader) import from

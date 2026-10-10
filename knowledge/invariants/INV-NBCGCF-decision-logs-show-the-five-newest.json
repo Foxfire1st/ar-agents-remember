@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "spans_locations"
+    ],
+    "justification": "Predicate and ordering tests pin the marking and the newest-first order with revert-verified failure; the obligation spans the writer predicate, the shared ordering helper and both surfaces in four files."
+  },
+  "applicability": "Every decision log surface: the task-page preview and the whole-log reader page.",
+  "conditions": [
+    "Both order by parsed recorded time, newest first; invalid stamps sort after all valid stamps, stable among invalid peers (never inventing order).",
+    "The preview shows the five newest authored decisions with an all-entries link naming both counts; product-written records are muted from the authored count.",
+    "Product-record marking comes only from the writers' own constants via exact/prefix match; authored collisions are unguarded (no enforced separation)."
+  ],
+  "exclusions": [
+    "Storage order carries no invariant; neither surface invents an order.",
+    "The stored decision shape is unchanged by the marking."
+  ],
+  "id": "INV-NBCGCF",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "predicate tests + preview tests + whole-log unsorted test; pytest/vitest green"
+      ],
+      "path": "notes/reports/role-launch/260928-MIK-L126-curator-handoff.json"
+    },
+    "handoffEntry": "MIK-R126@v1 rule 6",
+    "leaf": "260928-MIK-L126",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Decision logs show the five newest authored decisions by recorded time with an all-entries link naming both counts, and the whole log opens newest-first by time on its own reader page with product-written records muted.",
+  "status": "proposed",
+  "supersedes": []
+}

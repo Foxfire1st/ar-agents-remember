@@ -1,0 +1,52 @@
+{
+  "path": "dashboard/src/panels/detail-panel/decisionPreview.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Five entries show five with no link; six show five with a link.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3ef6e86637604284370454f94465de4f05314e5d",
+            "content": "sha256:c6e3fcb321993ee0e3abcd52faa4d504927152716db752b3bb12da5efd98eef5",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The newest five come first by recorded time from an unsorted log.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3ef6e86637604284370454f94465de4f05314e5d",
+            "content": "sha256:c6e3fcb321993ee0e3abcd52faa4d504927152716db752b3bb12da5efd98eef5",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Product-written records are excluded and both counts are named.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3ef6e86637604284370454f94465de4f05314e5d",
+            "content": "sha256:c6e3fcb321993ee0e3abcd52faa4d504927152716db752b3bb12da5efd98eef5",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

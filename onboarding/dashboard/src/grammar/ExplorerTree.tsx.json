@@ -28,6 +28,24 @@
           "name": "ExplorerTree"
         }
       },
+      "id": "RLZ-METDA5",
+      "invariant": "INV-Q021G3",
+      "origin": {
+        "handoffEntry": "MIK-R126@v1 rule 4",
+        "leaf": "260928-MIK-L126"
+      },
+      "rationale": "This is the shared tree both the File viewer and the notes reader render; the reader writes no tree of its own and the shared component is unchanged.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "dcf0163353aa753e3985ca03bebd9323116a5a56",
+        "content": "sha256:554e52dcd3fa3ab6650860a0807a2b88198dc837156840a4c4a8657b868a5d78",
+        "locator": {
+          "kind": "symbol",
+          "name": "ExplorerTree"
+        }
+      },
       "id": "RLZ-YXGQAV",
       "invariant": "INV-JJCTRA",
       "origin": {

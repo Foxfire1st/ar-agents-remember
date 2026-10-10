@@ -24,6 +24,15 @@ caller signal to fall back to the row older behaviors.
 shows for a selection; `seriesAsMasterDoc` builds the master view from a series node
 (the path whose rows carry `createdAt` for ordering).
 
+### 260928-MIK-L126 Current Delta — Newest-First Decision Ordering
+
+`orderDecisionsNewestFirst` orders decisions by parsed recorded time, newest first, with a
+stable fallback: writers stamp `at` as ISO-8601, the finalizer prepends its newest record, and
+storage order carries no invariant, so both the preview and the whole-log page order by time.
+An unparseable stamp keeps its input position among its peers, never inventing an order.
+
+- Decisions order newest-first by recorded time with a stable fallback. [3]
+
 ### Conventions
 
 Pure functions only — no React, no stores.
@@ -49,7 +58,7 @@ No relevant domain documentation was found.
 ### Repo-Internal References
 
 - The reader-doc resolution entry points. [1]
-- The master/series view assembly. [2]
+- The master/series view assembly builds the master view from a series node. [2]
 
 ### Cross-Repo References
 

@@ -3,7 +3,43 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "da6b1dad40f634e0d0a7ab66ecf966af32e721e7",
+        "blob": "fa64ce4c3d5c456ef60740f445a0424150da823e",
+        "content": "sha256:1c8a885a5a575dc91c787070f78d71f7d5e4c69fb6b5bd6dc3bc960045ecb093",
+        "locator": {
+          "kind": "symbol",
+          "name": "NotesTargetReader"
+        }
+      },
+      "id": "RLZ-CT0YBC",
+      "invariant": "INV-X1JG4M",
+      "origin": {
+        "handoffEntry": "MIK-R126@v1 rule 7",
+        "leaf": "260928-MIK-L126"
+      },
+      "rationale": "This target keeps the kind/repo/master/path address shape, so an old address opens the same note through the new tree.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "fa64ce4c3d5c456ef60740f445a0424150da823e",
+        "content": "sha256:429ae93b8db07ee6b37c85237690ac590c9690fa55e8d1b94497373bcd849b0b",
+        "locator": {
+          "kind": "symbol",
+          "name": "NotesTree"
+        }
+      },
+      "id": "RLZ-VB7HWH",
+      "invariant": "INV-Q021G3",
+      "origin": {
+        "handoffEntry": "MIK-R126@v1 rule 4",
+        "leaf": "260928-MIK-L126"
+      },
+      "rationale": "This adapter feeds the shared tree from the folder endpoint, fills to the open note, honors gone reasons, and caps its working set with stated LRU eviction.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "fa64ce4c3d5c456ef60740f445a0424150da823e",
         "content": "sha256:74ea34aa3ba59fb78acb97e8224a41a84d724ce2d48515df021e374affbbee95",
         "locator": {
           "kind": "symbol",
@@ -18,22 +54,53 @@
       },
       "rationale": "The existing notes reader accepts a role report as one more artifact kind and shows it in the same pane, so no second viewer exists.",
       "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "fa64ce4c3d5c456ef60740f445a0424150da823e",
+        "content": "sha256:1e15be75fe628aafd0b3b41b6293070bfc87106e6ad91d59d77a7c021d43d120",
+        "locator": {
+          "kind": "symbol",
+          "name": "DecisionsPane"
+        }
+      },
+      "id": "RLZ-ZD6JZZ",
+      "invariant": "INV-NBCGCF",
+      "origin": {
+        "handoffEntry": "MIK-R126@v1 rule 6",
+        "leaf": "260928-MIK-L126"
+      },
+      "rationale": "This pane renders the whole log newest-first by time with product-written records muted.",
+      "role": "presentation"
     }
   ],
   "references": {
     "1": {
-      "note": "The reused File Viewer content pane (markdown/code/placeholder).\n\nAnchor: \"export type SidecarView\"",
+      "note": "The reused File Viewer content pane (markdown/code/placeholder).",
       "targets": [
         {
           "anchor": {
-            "blob": "5e1f3e3243fe21af63d66c6fafc9829e9fa50166",
-            "content": "sha256:9428217c1b14fbbd9ac6536ae1a74b2ee998120fd89ca37907c7cce32420cbee",
+            "blob": "fa64ce4c3d5c456ef60740f445a0424150da823e",
+            "content": "sha256:79f02fb61f76f4f5c833cbb6a6ac6922621e5ca0a5807df19b06ef17f835379e",
             "locator": {
-              "end": 14,
-              "kind": "line_range",
-              "start": 14
-            },
-            "path": "dashboard/src/panels/file-viewer/DualPane.tsx"
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Old reader addresses open the same note through the new tree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fa64ce4c3d5c456ef60740f445a0424150da823e",
+            "content": "sha256:1c8a885a5a575dc91c787070f78d71f7d5e4c69fb6b5bd6dc3bc960045ecb093",
+            "locator": {
+              "kind": "symbol",
+              "name": "NotesTargetReader"
+            }
           },
           "kind": "code"
         }
@@ -57,16 +124,15 @@
       ]
     },
     "3": {
-      "note": "The L9 notes client (`listNotes`/`readNote`) this view consumes.\n\nAnchor: \"export interface NoteEntry\"",
+      "note": "The notes client with folder, resolve and read helpers.",
       "targets": [
         {
           "anchor": {
-            "blob": "43bffd67009f4cebf8c15adbb66d797fc0c20155",
-            "content": "sha256:aa3fa24c16d0d192738168c4bd2ee09645676789b3adb1d5c8a9d61f5138c2fb",
+            "blob": "db4ee81eefe2ea8e744d09543e10feec070a2b46",
+            "content": "sha256:e29a0ae65685a8b9a1a8b41013f668d69aa49aec462004040e1477fbcb99ef95",
             "locator": {
-              "end": 10,
-              "kind": "line_range",
-              "start": 10
+              "kind": "symbol",
+              "name": "listFolder"
             },
             "path": "dashboard/src/data/notes.ts"
           },
@@ -79,7 +145,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f907717bf9460d7f6facca800810459ce72ecbdf",
+            "blob": "76c1e952f0b6c4c9d708c3edf4cd8b28c0f764ff",
             "content": "sha256:bfeaf57796ee542d46cf39a6a14592f32b01475c2f57d3970685d8a2cfcd7c70",
             "locator": {
               "end": 71,
@@ -97,12 +163,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4f78e66c6cad87f02598d241bfa4204ca21f3b0b",
+            "blob": "4fd13392ee64ff470abdcce77426d87eb9f9a55b",
             "content": "sha256:3bea27808b67f7f2b14f06944df6213fd5be26b2a5702573b0708157a21edd33",
             "locator": {
-              "end": 170,
+              "end": 224,
               "kind": "line_range",
-              "start": 170
+              "start": 224
             },
             "path": "dashboard/src/panels/TaskNotes.tsx"
           },
@@ -111,16 +177,15 @@
       ]
     },
     "6": {
-      "note": "The L9 serving endpoints behind the client; their routes and wire shape are unchanged, while L55 re-implemented the listing walk (symlink-only confinement, descriptor descent).\n\nAnchor: \"def _walk_notes\"",
+      "note": "The folder, resolve and read endpoints behind the client.",
       "targets": [
         {
           "anchor": {
-            "blob": "e3e6f8d4c246e066532296e69563c435200ae08b",
-            "content": "sha256:b94569ed48350ec98347bd5a9d324be4564def9697b82edcc07cfaad6c46d538",
+            "blob": "d1f1be6c7c8cb30d03e132b8f4f34d2bdd0cd4fd",
+            "content": "sha256:588ddec25312110e5e0f19ec9721f196c744466d8edea4c97b9f100cd90cab6e",
             "locator": {
-              "end": 165,
-              "kind": "line_range",
-              "start": 165
+              "kind": "symbol",
+              "name": "list_folder"
             },
             "path": "mcp/src/agents_remember/serving/notes.py"
           },
@@ -129,20 +194,50 @@
       ]
     },
     "7": {
-      "note": "The component test suite.\n\nAnchor: \"function stubNotesApi\"",
+      "note": "The component test suite covers the tree, open path, parts and depth.",
       "targets": [
         {
           "anchor": {
-            "blob": "c2e3d43aa4dc223efaf3ffbe6fdad805cc80b98c",
-            "content": "sha256:fb1daf56f850e288ce8d0a99e7d5e0b090a37d2d775628136847bf1530d6f414",
+            "blob": "f6072ed9607e28a959d4a183a2129c2e86dbb163",
+            "content": "sha256:34bb73219d94dff2366c248e703c25b0bbf0bbb3e25dc65568c9f48baed11105",
             "locator": {
-              "end": 29,
-              "kind": "line_range",
-              "start": 29
+              "kind": "file"
             },
             "path": "dashboard/src/panels/notes-reader/NotesReaderViewer.test.tsx"
           },
           "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The folder-fed tree adapter with fill, vanish recovery and the folder cap.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fa64ce4c3d5c456ef60740f445a0424150da823e",
+            "content": "sha256:429ae93b8db07ee6b37c85237690ac590c9690fa55e8d1b94497373bcd849b0b",
+            "locator": {
+              "kind": "symbol",
+              "name": "NotesTree"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The whole-log pane renders newest-first with product records muted.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fa64ce4c3d5c456ef60740f445a0424150da823e",
+            "content": "sha256:1e15be75fe628aafd0b3b41b6293070bfc87106e6ad91d59d77a7c021d43d120",
+            "locator": {
+              "kind": "symbol",
+              "name": "DecisionsPane"
+            }
+          },
+          "kind": "code"
         }
       ]
     }

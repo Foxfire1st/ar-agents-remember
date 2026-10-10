@@ -186,3 +186,9 @@ The snapshot fixture gained a super-to-leaf source-relation entry (`relation: "s
 The hand-kept fixture snapshot now seeds `meaningfulRevision: 1` on the lifecycle
 operation node that previously carried only the revision-less projection fields, so dashboard and
 wire-fixture consumers have a cursor-carrying sample matching the regenerated schema.
+
+## 260928-MIK-L126 Current Delta — Product-Record Fixture Flags
+
+Two sampled decisions carry explicit `product_record: false`, so the hand-maintained fixture
+exercises the product-record marking the projection serves: authored decisions stay unmarked
+while writer constants mark records.

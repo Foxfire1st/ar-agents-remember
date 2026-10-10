@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Without this bound a future task re-adds an inline tree or a whole-tree total to the page, reintroducing unbounded reads on large masters; the component suite pins the single line and the root-only count."
+  },
+  "applicability": "Every task page whose task carries a notes folder.",
+  "conditions": [
+    "The page shows one Notes line naming the top-folder entry count with a link opening the reader at the notes root."
+  ],
+  "exclusions": [
+    "No note rows are drawn on the task page; no total over the tree is computed.",
+    "Note content stays in the reader; the page never fetches it."
+  ],
+  "id": "INV-RKYCEP",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "dashboard/src/panels/TaskNotes.test.tsx; vitest green in full suite 2214"
+      ],
+      "path": "notes/reports/role-launch/260928-MIK-L126-curator-handoff.json"
+    },
+    "handoffEntry": "MIK-R126@v1 rule 3",
+    "leaf": "260928-MIK-L126",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A task page with a notes folder shows one Notes line naming the top-folder entry count with a link opening the reader at the notes root, and computes no total over the tree.",
+  "status": "proposed",
+  "supersedes": []
+}

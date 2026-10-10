@@ -1,13 +1,32 @@
 {
   "path": "dashboard/src/panels/detail-panel/model.ts",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "0f296666b82f5bb9bb5fd92fda9a2080578cd566",
+        "content": "sha256:b500adade27093aeef1c49a094b3d928f2901b440ec4f1e610f01b3a4b9c32db",
+        "locator": {
+          "kind": "symbol",
+          "name": "orderDecisionsNewestFirst"
+        }
+      },
+      "id": "RLZ-7AK9A1",
+      "invariant": "INV-NBCGCF",
+      "origin": {
+        "handoffEntry": "MIK-R126@v1 rule 6",
+        "leaf": "260928-MIK-L126"
+      },
+      "rationale": "This shared helper orders decisions by parsed recorded time with a stable fallback, used by both the preview and the whole-log page.",
+      "role": "support"
+    }
+  ],
   "references": {
     "1": {
       "note": "The reader-doc resolution entry points.",
       "targets": [
         {
           "anchor": {
-            "blob": "7d78c1b1072578a87bca6571852841a188905e7f",
+            "blob": "0f296666b82f5bb9bb5fd92fda9a2080578cd566",
             "content": "sha256:4964fe68aa3c975f552f2e17aaa78397f5fbb9de4af93e005e065f753f10e667",
             "locator": {
               "kind": "symbol",
@@ -18,7 +37,7 @@
         },
         {
           "anchor": {
-            "blob": "7d78c1b1072578a87bca6571852841a188905e7f",
+            "blob": "0f296666b82f5bb9bb5fd92fda9a2080578cd566",
             "content": "sha256:3d99a36ecfb8da35eefdb5797b0f9c4c4dd1ca73e5a07d08dea5cb152ca30721",
             "locator": {
               "kind": "symbol",
@@ -30,14 +49,43 @@
       ]
     },
     "2": {
-      "note": "The master/series view assembly.",
+      "note": "The master/series view assembly builds the master view from a series node.",
       "targets": [
         {
           "anchor": {
-            "blob": "7d78c1b1072578a87bca6571852841a188905e7f",
-            "content": "sha256:3ceea3a0dff201e797868b90f00b18cca70378c7c7ea9166d1221300aa79ddc2",
+            "blob": "0f296666b82f5bb9bb5fd92fda9a2080578cd566",
+            "content": "sha256:3eb45b9fcbe45fb037ebe332efb219aba93c1ac431eaef89ccb4a26ba3c003b0",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "seriesAsMasterDoc"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Decisions order newest-first by recorded time with a stable fallback.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0f296666b82f5bb9bb5fd92fda9a2080578cd566",
+            "content": "sha256:b500adade27093aeef1c49a094b3d928f2901b440ec4f1e610f01b3a4b9c32db",
+            "locator": {
+              "kind": "symbol",
+              "name": "orderDecisionsNewestFirst"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0f296666b82f5bb9bb5fd92fda9a2080578cd566",
+            "content": "sha256:95c4326ac851f2576dae8fd2fda59a816d9c25641474ea7f25ab971e42306e34",
+            "locator": {
+              "end": 42,
+              "kind": "line_range",
+              "start": 26
             }
           },
           "kind": "code"

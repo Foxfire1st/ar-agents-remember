@@ -3,11 +3,29 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "e3e6f8d4c246e066532296e69563c435200ae08b",
-        "content": "sha256:3024897a33256f888cc8bdf14471f8193608dad125b8f8ca27eae8694da69e33",
+        "blob": "d1f1be6c7c8cb30d03e132b8f4f34d2bdd0cd4fd",
+        "content": "sha256:43f4ba126f1b33e32bea57712a0108f877098422848dc9145d6893174508338f",
         "locator": {
           "kind": "symbol",
-          "name": "_walk_notes"
+          "name": "_open_confined_dir"
+        }
+      },
+      "id": "RLZ-4B3HK3",
+      "invariant": "INV-JXQQF4",
+      "origin": {
+        "handoffEntry": "MIK-R126@v1 rule 2",
+        "leaf": "260928-MIK-L126"
+      },
+      "rationale": "This function pins the requested folder through held descriptors so a mid-request directory/symlink swap reads as gone instead of listing outside entries.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "d1f1be6c7c8cb30d03e132b8f4f34d2bdd0cd4fd",
+        "content": "sha256:0de19755f32283a7f8fb60c9e392c0725d22feaf2a05aaf1fe8ed77bd2ef87a1",
+        "locator": {
+          "kind": "symbol",
+          "name": "_folder_row"
         }
       },
       "id": "RLZ-5KCQCHVQ",
@@ -15,16 +33,16 @@
       "origin": {
         "leaf": "260921-ICR-L55"
       },
-      "rationale": "Calls _confined_stat exactly once per scanned entry and builds each row's path from the parent prefix plus the entry name, so the walk loop adds no path resolution of its own and each listed note costs one followed stat.",
+      "rationale": "Stats each entry once without following symlinks; for symlink entries, resolves the lexical path and checks it against the resolved notes root; symlink entries take a second followed stat after resolution.",
       "role": "support"
     },
     {
       "anchor": {
-        "blob": "e3e6f8d4c246e066532296e69563c435200ae08b",
-        "content": "sha256:982283ac1245e4fc86e2fb53b687d371a42077dfb11192a3842764a6e629d62c",
+        "blob": "d1f1be6c7c8cb30d03e132b8f4f34d2bdd0cd4fd",
+        "content": "sha256:43f4ba126f1b33e32bea57712a0108f877098422848dc9145d6893174508338f",
         "locator": {
           "kind": "symbol",
-          "name": "_open_subdir"
+          "name": "_open_confined_dir"
         }
       },
       "id": "RLZ-5NWBYG1T",
@@ -32,16 +50,16 @@
       "origin": {
         "leaf": "260921-ICR-L55"
       },
-      "rationale": "Opens each subdirectory with O_RDONLY|O_DIRECTORY|O_NOFOLLOW relative to its already-confined parent descriptor, re-checks an in-root directory symlink's target, and refuses only the ELOOP/ENOTDIR swap signature, so a directory replaced after observation is not followed.",
+      "rationale": "Pins the requested folder through held descriptors with O_NOFOLLOW, refusing the ELOOP/ENOTDIR swap signature instead of following it out.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "e3e6f8d4c246e066532296e69563c435200ae08b",
-        "content": "sha256:0d00b8c2e8b4018c2285876277245ab1007dcea03c3afde5fc22afd8cfc21409",
+        "blob": "d1f1be6c7c8cb30d03e132b8f4f34d2bdd0cd4fd",
+        "content": "sha256:588ddec25312110e5e0f19ec9721f196c744466d8edea4c97b9f100cd90cab6e",
         "locator": {
           "kind": "symbol",
-          "name": "list_notes"
+          "name": "list_folder"
         }
       },
       "id": "RLZ-7RNSV7PG",
@@ -49,16 +67,16 @@
       "origin": {
         "leaf": "260921-ICR-L55"
       },
-      "rationale": "Assembles the NotesListing wire payload {repo, master, notes, truncated} from the walk's rows and prune flag, and returns an empty notes list for a missing folder; this is the shape and ordering that must match the path-based walk byte for byte.",
+      "rationale": "Assembles the one-folder wire payload with total, offset, remaining and empty-with-reason for a missing folder.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "e3e6f8d4c246e066532296e69563c435200ae08b",
-        "content": "sha256:d40680e3e52e1674571b0c9fe034680547f3e699eedd2038f71927be107959c5",
+        "blob": "d1f1be6c7c8cb30d03e132b8f4f34d2bdd0cd4fd",
+        "content": "sha256:0de19755f32283a7f8fb60c9e392c0725d22feaf2a05aaf1fe8ed77bd2ef87a1",
         "locator": {
           "kind": "symbol",
-          "name": "_confined_stat"
+          "name": "_folder_row"
         }
       },
       "id": "RLZ-7X2C4VRQ",
@@ -66,16 +84,34 @@
       "origin": {
         "leaf": "260921-ICR-L55"
       },
-      "rationale": "Decides confinement per entry: only an entry that is a symlink is resolved and checked with path_is_relative_to against the resolved root, and every other entry returns its one cached DirEntry stat. This is where the three per-entry realpath calls were removed, so resolution is paid only for symlinks.",
+      "rationale": "Decides confinement per entry: only symlinks are resolved and checked against the root; every other entry uses its single cached lstat.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "e3e6f8d4c246e066532296e69563c435200ae08b",
-        "content": "sha256:0d00b8c2e8b4018c2285876277245ab1007dcea03c3afde5fc22afd8cfc21409",
+        "blob": "d1f1be6c7c8cb30d03e132b8f4f34d2bdd0cd4fd",
+        "content": "sha256:7e69a5c5252ce9324c46b19420334ae365601d3d20f23b9bf7101e468ec93765",
         "locator": {
           "kind": "symbol",
-          "name": "list_notes"
+          "name": "read_note"
+        }
+      },
+      "id": "RLZ-983YA0",
+      "invariant": "INV-X1JG4M",
+      "origin": {
+        "handoffEntry": "MIK-R126@v1 rule 7",
+        "leaf": "260928-MIK-L126"
+      },
+      "rationale": "This unchanged read path serves any confined note at any depth, so depth is no longer a reachability boundary.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "d1f1be6c7c8cb30d03e132b8f4f34d2bdd0cd4fd",
+        "content": "sha256:588ddec25312110e5e0f19ec9721f196c744466d8edea4c97b9f100cd90cab6e",
+        "locator": {
+          "kind": "symbol",
+          "name": "list_folder"
         }
       },
       "id": "RLZ-9YY9Y1E1",
@@ -83,12 +119,12 @@
       "origin": {
         "leaf": "260921-ICR-L55"
       },
-      "rationale": "Creates a fresh _NotesWalk accumulator and opens and closes the root descriptor inside each call, with no cache or module-level state, so every request walks the live tree and sees new or grown notes.",
+      "rationale": "Opens and answers the live folder inside each call with no cache or module-level state; every request reads the current tree.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "e3e6f8d4c246e066532296e69563c435200ae08b",
+        "blob": "d1f1be6c7c8cb30d03e132b8f4f34d2bdd0cd4fd",
         "content": "sha256:7e69a5c5252ce9324c46b19420334ae365601d3d20f23b9bf7101e468ec93765",
         "locator": {
           "kind": "symbol",
@@ -105,28 +141,11 @@
     },
     {
       "anchor": {
-        "blob": "e3e6f8d4c246e066532296e69563c435200ae08b",
-        "content": "sha256:d40680e3e52e1674571b0c9fe034680547f3e699eedd2038f71927be107959c5",
+        "blob": "d1f1be6c7c8cb30d03e132b8f4f34d2bdd0cd4fd",
+        "content": "sha256:588ddec25312110e5e0f19ec9721f196c744466d8edea4c97b9f100cd90cab6e",
         "locator": {
           "kind": "symbol",
-          "name": "_confined_stat"
-        }
-      },
-      "id": "RLZ-DCXK7W7T",
-      "invariant": "INV-413DC8XE",
-      "origin": {
-        "leaf": "260921-ICR-L55"
-      },
-      "rationale": "Its OSError catch returns None for a child whose stat fails, which is what happens (EACCES) to every child of a readable but not searchable directory; those children are skipped and the listing answers 200 instead of the path-based walk's 500.",
-      "role": "primary-authority"
-    },
-    {
-      "anchor": {
-        "blob": "e3e6f8d4c246e066532296e69563c435200ae08b",
-        "content": "sha256:0d00b8c2e8b4018c2285876277245ab1007dcea03c3afde5fc22afd8cfc21409",
-        "locator": {
-          "kind": "symbol",
-          "name": "list_notes"
+          "name": "list_folder"
         }
       },
       "id": "RLZ-HNH06VQK",
@@ -134,16 +153,16 @@
       "origin": {
         "leaf": "260921-ICR-L55"
       },
-      "rationale": "Performs a full walk of the live notes tree on every call and consults no cache, so there is no directory-mtime key that could serve a stale size when a note grows in place.",
+      "rationale": "Answers the live folder on each call with no kept state between requests, so grown notes appear on the next request.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "e3e6f8d4c246e066532296e69563c435200ae08b",
-        "content": "sha256:416b34dcc8d590457c1d5d955a2d30666170c76362f84c3fd718868b89a11977",
+        "blob": "d1f1be6c7c8cb30d03e132b8f4f34d2bdd0cd4fd",
+        "content": "sha256:0ae21a994d111465147bd661ccec7e8ef284c86d7dcfb0c56b1542d8deaf0cc2",
         "locator": {
           "kind": "symbol",
-          "name": "_is_dir"
+          "name": "_folder_entries"
         }
       },
       "id": "RLZ-NGTT9WWJ",
@@ -151,13 +170,31 @@
       "origin": {
         "leaf": "260921-ICR-L55"
       },
-      "rationale": "Is the directory-first sort key: it treats ENOENT, ENOTDIR, EBADF and ELOOP from DirEntry.is_dir() as not-a-directory and re-raises every other error, reproducing Path.is_dir() so looping or file-traversing symlinks cannot fail the sort.",
+      "rationale": "Orders rows directories-first with case-folded tie-break after reading; unstatable names are skipped, never failing the answer.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "e3e6f8d4c246e066532296e69563c435200ae08b",
-        "content": "sha256:892f36a83d3997a29e6cb53485f4a0c3dc2e005321e682b8c56e259785d82f88",
+        "blob": "d1f1be6c7c8cb30d03e132b8f4f34d2bdd0cd4fd",
+        "content": "sha256:792075f7576822e90ac57da978dd9765e0c31ed25b87b57b6fbca56e1cbe2cac",
+        "locator": {
+          "kind": "symbol",
+          "name": "_FOLDER_PAGE"
+        }
+      },
+      "id": "RLZ-S0GKRK",
+      "invariant": "INV-JXQQF4",
+      "origin": {
+        "handoffEntry": "MIK-R126@v1 rule 2",
+        "leaf": "260928-MIK-L126"
+      },
+      "rationale": "This constant fixes the part ceiling the tests pin, so no folder answer grows with the tree.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "d1f1be6c7c8cb30d03e132b8f4f34d2bdd0cd4fd",
+        "content": "sha256:0186fdab5f017034970f1e1f731805df2b928dc8cb8f049d2702dbfdce22ef17",
         "locator": {
           "kind": "symbol",
           "name": "_notes_json"
@@ -173,11 +210,11 @@
     },
     {
       "anchor": {
-        "blob": "e3e6f8d4c246e066532296e69563c435200ae08b",
-        "content": "sha256:514778fe85fae024f5331223bcbbc3e05579331473811c4d6195580566a51a87",
+        "blob": "d1f1be6c7c8cb30d03e132b8f4f34d2bdd0cd4fd",
+        "content": "sha256:43f4ba126f1b33e32bea57712a0108f877098422848dc9145d6893174508338f",
         "locator": {
           "kind": "symbol",
-          "name": "_open_below_root"
+          "name": "_open_confined_dir"
         }
       },
       "id": "RLZ-W8VA2JEP",
@@ -185,50 +222,93 @@
       "origin": {
         "leaf": "260921-ICR-L55"
       },
-      "rationale": "Re-opens an in-root directory symlink's resolved target one path component at a time from the root descriptor with O_NOFOLLOW, so a component retargeted during the walk cannot redirect descent outside the notes root.",
+      "rationale": "Confinement lives in the held-descriptor open: a swapped directory fails the open rather than redirecting descent.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "d1f1be6c7c8cb30d03e132b8f4f34d2bdd0cd4fd",
+        "content": "sha256:0de19755f32283a7f8fb60c9e392c0725d22feaf2a05aaf1fe8ed77bd2ef87a1",
+        "locator": {
+          "kind": "symbol",
+          "name": "_folder_row"
+        }
+      },
+      "id": "RLZ-WPD3J9",
+      "invariant": "INV-413DC8XE",
+      "origin": {
+        "handoffEntry": "L126-413DC8XE-repair",
+        "leaf": "260928-MIK-L126"
+      },
+      "rationale": "This row builder skips unresolvable entries instead of listing them, which is the whole mechanism behind the present-with-no-children answer.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "d1f1be6c7c8cb30d03e132b8f4f34d2bdd0cd4fd",
+        "content": "sha256:588ddec25312110e5e0f19ec9721f196c744466d8edea4c97b9f100cd90cab6e",
+        "locator": {
+          "kind": "symbol",
+          "name": "list_folder"
+        }
+      },
+      "id": "RLZ-XKWZZH",
+      "invariant": "INV-JXQQF4",
+      "origin": {
+        "handoffEntry": "MIK-R126@v1 rule 2",
+        "leaf": "260928-MIK-L126"
+      },
+      "rationale": "This function is the one-folder answer: confinement, single-level read, stable total order, offset parts and empty-with-reason for missing folders.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "d1f1be6c7c8cb30d03e132b8f4f34d2bdd0cd4fd",
+        "content": "sha256:4e85593c5140d457d8466fb9e9071a3c55c636d801d1d71ee4f72305810b888e",
+        "locator": {
+          "kind": "symbol",
+          "name": "resolve_notes_references"
+        }
+      },
+      "id": "RLZ-Y1SPDE",
+      "invariant": "INV-P2KSPN",
+      "origin": {
+        "handoffEntry": "MIK-R126@v1 rule 5",
+        "leaf": "260928-MIK-L126"
+      },
+      "rationale": "This endpoint resolves the document references with per-token existence probes, bounded by reference count instead of tree size.",
+      "role": "primary-authority"
     }
   ],
   "references": {
     "1": {
-      "note": "The app factory registers notes routes during app assembly and mounts static assets later; those calls are not an immediately adjacent pair.\n\nAnchor: \"def register_notes_routes(app: FastAPI\", `mount_static`",
+      "note": "The app factory registers notes routes during app assembly.",
       "targets": [
         {
           "anchor": {
-            "blob": "0411370c042b987440c3681001642cc1f1ef7d5b",
-            "content": "sha256:1f606188e90d39e5ba2cfc48b354700f36033577e0e58aa84612f9e26c84a423",
+            "blob": "5fb8e66cec1d7d893d10dd198cc0b06fa0d9a00b",
+            "content": "sha256:5ea98950e60bf8e4baa3c21af2f6ad101956c55275ceb6c4883c802863ade04f",
             "locator": {
-              "kind": "symbol",
-              "name": "mount_static"
-            },
-            "path": "mcp/src/agents_remember/serving/static.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e3e6f8d4c246e066532296e69563c435200ae08b",
-            "content": "sha256:95a7e60e1cf249eec653219ec2e652a9fcadff7d8b7119a42390fb693b451354",
-            "locator": {
-              "end": 279,
+              "end": 300,
               "kind": "line_range",
-              "start": 279
-            }
+              "start": 290
+            },
+            "path": "mcp/src/agents_remember/serving/app.py"
           },
           "kind": "code"
         }
       ]
     },
     "10": {
-      "note": "The per-listing accumulator: the real root and its descriptor, the rows, the prune flag.",
+      "note": "Rows sort directories first, case-folded, exact name breaking ties.",
       "targets": [
         {
           "anchor": {
-            "blob": "e3e6f8d4c246e066532296e69563c435200ae08b",
-            "content": "sha256:cdd454ddddd1acd96682753535b7a2c255e0cf6805f43f282522aee4e5172eea",
+            "blob": "d1f1be6c7c8cb30d03e132b8f4f34d2bdd0cd4fd",
+            "content": "sha256:0ae21a994d111465147bd661ccec7e8ef284c86d7dcfb0c56b1542d8deaf0cc2",
             "locator": {
               "kind": "symbol",
-              "name": "_NotesWalk"
+              "name": "_folder_entries"
             }
           },
           "kind": "code"
@@ -236,15 +316,15 @@
       ]
     },
     "11": {
-      "note": "The directory-first sort key that reads looping or file-traversing symlinks as \"not a directory\".",
+      "note": "Each row is examined without following symlinks.",
       "targets": [
         {
           "anchor": {
-            "blob": "e3e6f8d4c246e066532296e69563c435200ae08b",
-            "content": "sha256:416b34dcc8d590457c1d5d955a2d30666170c76362f84c3fd718868b89a11977",
+            "blob": "d1f1be6c7c8cb30d03e132b8f4f34d2bdd0cd4fd",
+            "content": "sha256:0de19755f32283a7f8fb60c9e392c0725d22feaf2a05aaf1fe8ed77bd2ef87a1",
             "locator": {
               "kind": "symbol",
-              "name": "_is_dir"
+              "name": "_folder_row"
             }
           },
           "kind": "code"
@@ -252,15 +332,15 @@
       ]
     },
     "12": {
-      "note": "Symlink-only confinement: one followed `stat` per entry, and `resolve()` + `path_is_relative_to` only for a symlink.",
+      "note": "Bare names never resolve an escaping link.",
       "targets": [
         {
           "anchor": {
-            "blob": "e3e6f8d4c246e066532296e69563c435200ae08b",
-            "content": "sha256:d40680e3e52e1674571b0c9fe034680547f3e699eedd2038f71927be107959c5",
+            "blob": "d1f1be6c7c8cb30d03e132b8f4f34d2bdd0cd4fd",
+            "content": "sha256:3193522bce013d6e6ffbd4849faace0caa972c6bd8e5f74755b102965dc23e32",
             "locator": {
               "kind": "symbol",
-              "name": "_confined_stat"
+              "name": "_confined_is_file"
             }
           },
           "kind": "code"
@@ -268,26 +348,15 @@
       ]
     },
     "13": {
-      "note": "Descriptor descent: a plain subdirectory opened relative to its parent, an in-root directory symlink re-resolved and opened component by component from the root, and only `ELOOP`/`ENOTDIR` refused.",
+      "note": "Each reference resolves to a notes path or null in one request.",
       "targets": [
         {
           "anchor": {
-            "blob": "e3e6f8d4c246e066532296e69563c435200ae08b",
-            "content": "sha256:514778fe85fae024f5331223bcbbc3e05579331473811c4d6195580566a51a87",
+            "blob": "d1f1be6c7c8cb30d03e132b8f4f34d2bdd0cd4fd",
+            "content": "sha256:4e85593c5140d457d8466fb9e9071a3c55c636d801d1d71ee4f72305810b888e",
             "locator": {
               "kind": "symbol",
-              "name": "_open_below_root"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e3e6f8d4c246e066532296e69563c435200ae08b",
-            "content": "sha256:982283ac1245e4fc86e2fb53b687d371a42077dfb11192a3842764a6e629d62c",
-            "locator": {
-              "kind": "symbol",
-              "name": "_open_subdir"
+              "name": "resolve_notes_references"
             }
           },
           "kind": "code"
@@ -295,26 +364,15 @@
       ]
     },
     "14": {
-      "note": "The walk: `scandir` on the descriptor, files before folders, the depth cap, regular files only, row paths built from names.",
+      "note": "Bare filenames resolve only at the notes root.",
       "targets": [
         {
           "anchor": {
-            "blob": "e3e6f8d4c246e066532296e69563c435200ae08b",
-            "content": "sha256:3024897a33256f888cc8bdf14471f8193608dad125b8f8ca27eae8694da69e33",
+            "blob": "d1f1be6c7c8cb30d03e132b8f4f34d2bdd0cd4fd",
+            "content": "sha256:692bf41cd7e65034c58f20e9a62efac0a7a73db804a33389e351d2926beacb0d",
             "locator": {
               "kind": "symbol",
-              "name": "_walk_notes"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e3e6f8d4c246e066532296e69563c435200ae08b",
-            "content": "sha256:e0e9a4d3eb20aefb5c1fa1b7394c38411dfa2d44f117d131a6eb2bd4fd440709",
-            "locator": {
-              "kind": "symbol",
-              "name": "_walk_subdir"
+              "name": "_resolve_one"
             }
           },
           "kind": "code"
@@ -322,58 +380,32 @@
       ]
     },
     "15": {
-      "note": "The wire contract the listing must keep, unchanged by L55.",
+      "note": "The part ceiling bounds every folder answer.",
       "targets": [
         {
           "anchor": {
-            "blob": "61ad404bd22d920dd138c1547e688cc536a37131",
-            "content": "sha256:b8a391c05feafd46724927cb29aece9995e96516fd7d4906dbedb3fd88198a12",
+            "blob": "d1f1be6c7c8cb30d03e132b8f4f34d2bdd0cd4fd",
+            "content": "sha256:792075f7576822e90ac57da978dd9765e0c31ed25b87b57b6fbca56e1cbe2cac",
             "locator": {
               "kind": "symbol",
-              "name": "NotesListing"
-            },
-            "path": "mcp/src/agents_remember/serving/response_contract.py"
+              "name": "_FOLDER_PAGE"
+            }
           },
           "kind": "code"
         }
       ]
     },
     "16": {
-      "note": "The module's own tests: exact wire bytes over every entry kind, the directory-swap refusal, a `realpath` count that does not grow with the tree, live refresh, and the refusal table.",
+      "note": "The module's folder tests prove parts, order, confinement and bounds.",
       "targets": [
         {
           "anchor": {
-            "blob": "148e2856eeddb30ee7db73e1ea7c0505e5cc74be",
-            "content": "sha256:cdae544b1f5b435ddfb5c1de4e1372ba092681d986123a7784fc20a8dcf72144",
+            "blob": "ee3a18c16e8a5e3a122f5a0d7b81c1d7c53a8d94",
+            "content": "sha256:2a846ba1820cd457d4ac9640a7eb493345aede967750637e95b116ed178caffb",
             "locator": {
-              "kind": "symbol",
-              "name": "test_listing_bytes_classify_every_entry_kind_and_prune_at_the_depth_cap"
+              "kind": "file"
             },
-            "path": "mcp/tests/test_notes_listing.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "148e2856eeddb30ee7db73e1ea7c0505e5cc74be",
-            "content": "sha256:e30659ae3bcfdcf99ddd9f0422e3cf1e07515092c1355d63dea9b362553ff549",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_directory_swapped_for_an_escaping_symlink_before_it_is_opened_is_refused"
-            },
-            "path": "mcp/tests/test_notes_listing.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "148e2856eeddb30ee7db73e1ea7c0505e5cc74be",
-            "content": "sha256:48512107134372d23a26301c0d128dd22d931b7134984f9d0d03700c922d240d",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_listing_work_does_not_grow_with_note_count_or_content_size"
-            },
-            "path": "mcp/tests/test_notes_listing.py"
+            "path": "mcp/tests/test_notes_folder.py"
           },
           "kind": "test"
         }
@@ -384,13 +416,29 @@
       "targets": [
         {
           "anchor": {
-            "blob": "61ad404bd22d920dd138c1547e688cc536a37131",
+            "blob": "ab5559e41e793bd918609a1bea27fa297514293d",
             "content": "sha256:7b27dd0903646ae944feecd369ce9dfd548bfcb3c95b9baac2c849372adbcc57",
             "locator": {
               "kind": "symbol",
               "name": "SCOPED_READ_RESPONSES"
             },
             "path": "mcp/src/agents_remember/serving/response_contract.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "A readable-but-unsearchable folder answers present with no children since failed entry stats are skipped; EACCES from the folder open or listing itself propagates (searchable-unreadable and neither keep baseline 500).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d1f1be6c7c8cb30d03e132b8f4f34d2bdd0cd4fd",
+            "content": "sha256:0de19755f32283a7f8fb60c9e392c0725d22feaf2a05aaf1fe8ed77bd2ef87a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_folder_row"
+            }
           },
           "kind": "code"
         }
@@ -406,19 +454,6 @@
             "locator": {
               "kind": "symbol",
               "name": "confine_rel"
-            },
-            "path": "mcp/src/agents_remember/kernel/sidecar_pairing.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "28c6d442c3bee361d688bddebe7aea088c48189c",
-            "content": "sha256:f264a2faeee90e3ff349790d1c9fbd939f4200473dd8024ac8c86e5d76a08814",
-            "locator": {
-              "end": 47,
-              "kind": "line_range",
-              "start": 35
             },
             "path": "mcp/src/agents_remember/kernel/sidecar_pairing.py"
           },
@@ -457,53 +492,15 @@
       ]
     },
     "4": {
-      "note": "`McpRuntimeConfig` (`coordination_root`, `allowed_repo_ids`) and `path_is_relative_to` provide configuration and path confinement.",
+      "note": "`McpRuntimeConfig` and `path_is_relative_to` provide configuration and path confinement.",
       "targets": [
         {
           "anchor": {
-            "blob": "2d0c60d2df2abaa3c483fb0f63bfd7c0b107ddfe",
-            "content": "sha256:0d3b1a86df3de4b2b7f81828fd3dc25bd588d932ed545f8863363d4d68b777e5",
+            "blob": "782aa73feb7c2c955a2baa07be50668a006f080f",
+            "content": "sha256:f21e868a1c38a7502c15e4b466c9c15e6892813b141a19fdfb4854110be1142a",
             "locator": {
               "kind": "symbol",
               "name": "McpRuntimeConfig"
-            },
-            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "782aa73feb7c2c955a2baa07be50668a006f080f",
-            "content": "sha256:034c7e359c605efda03d85d4b7bd1aded24ca7f3d65e4e37234ebb131288dffa",
-            "locator": {
-              "kind": "symbol",
-              "name": "path_is_relative_to"
-            },
-            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2d0c60d2df2abaa3c483fb0f63bfd7c0b107ddfe",
-            "content": "sha256:a2cfcd2611c52ccee5f09f091ec2359bf938c65137a8fc8791a84d845a778954",
-            "locator": {
-              "end": 154,
-              "kind": "line_range",
-              "start": 124
-            },
-            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "782aa73feb7c2c955a2baa07be50668a006f080f",
-            "content": "sha256:7f40e2cf01fda9c57fbc6130e19151703cd18e0db46fe045118851986083ab9b",
-            "locator": {
-              "end": 835,
-              "kind": "line_range",
-              "start": 830
             },
             "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
           },
@@ -550,11 +547,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "43bffd67009f4cebf8c15adbb66d797fc0c20155",
-            "content": "sha256:c2da116e292e9bdc6b5b6e34d14cdc89dc125b33440209647be16a64ae5c5bc5",
+            "blob": "db4ee81eefe2ea8e744d09543e10feec070a2b46",
+            "content": "sha256:1c1e47b037c0ea2d513ce72bada4469a15726501e1873ab0781739fce9b1dfe5",
             "locator": {
-              "kind": "symbol",
-              "name": "notes"
+              "kind": "file"
             },
             "path": "dashboard/src/data/notes.ts"
           },
@@ -563,26 +559,15 @@
       ]
     },
     "8": {
-      "note": "The `list_notes` and `read_note` helper bodies: the listing opens the resolved root once as a descriptor and walks from it; the read confines through `confine_rel`.\n\nAnchor: `list_notes`, `read_note`",
+      "note": "One folder answers in parts with total, offset, limit and remaining.",
       "targets": [
         {
           "anchor": {
-            "blob": "e3e6f8d4c246e066532296e69563c435200ae08b",
-            "content": "sha256:0d00b8c2e8b4018c2285876277245ab1007dcea03c3afde5fc22afd8cfc21409",
+            "blob": "d1f1be6c7c8cb30d03e132b8f4f34d2bdd0cd4fd",
+            "content": "sha256:588ddec25312110e5e0f19ec9721f196c744466d8edea4c97b9f100cd90cab6e",
             "locator": {
               "kind": "symbol",
-              "name": "list_notes"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e3e6f8d4c246e066532296e69563c435200ae08b",
-            "content": "sha256:7e69a5c5252ce9324c46b19420334ae365601d3d20f23b9bf7101e468ec93765",
-            "locator": {
-              "kind": "symbol",
-              "name": "read_note"
+              "name": "list_folder"
             }
           },
           "kind": "code"
@@ -590,37 +575,15 @@
       ]
     },
     "9": {
-      "note": "The descriptor-open flags, the swap signature that refuses a directory, and the `Path.is_dir()`-parity errno set, with the source comment stating the two residual windows.",
+      "note": "Folders open through held descriptors without following symlinks.",
       "targets": [
         {
           "anchor": {
-            "blob": "e3e6f8d4c246e066532296e69563c435200ae08b",
-            "content": "sha256:acc4c52402bc26a6f3ce06fe04e4e20d8a4f77e7cc2381167785e7f927fa0ff4",
+            "blob": "d1f1be6c7c8cb30d03e132b8f4f34d2bdd0cd4fd",
+            "content": "sha256:43f4ba126f1b33e32bea57712a0108f877098422848dc9145d6893174508338f",
             "locator": {
               "kind": "symbol",
-              "name": "_DIR_OPEN"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e3e6f8d4c246e066532296e69563c435200ae08b",
-            "content": "sha256:a534bf74d82e9bc93db40dec87084d9ffa0da3f2e2a029a8c234ee111c3fb46c",
-            "locator": {
-              "kind": "symbol",
-              "name": "_SWAPPED_AWAY"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e3e6f8d4c246e066532296e69563c435200ae08b",
-            "content": "sha256:c3f396a93232fe8c1c38809bca32f8d03418dfab3b01ae1c8152ee1413fb6bf3",
-            "locator": {
-              "kind": "symbol",
-              "name": "_NOT_A_DIR"
+              "name": "_open_confined_dir"
             }
           },
           "kind": "code"

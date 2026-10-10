@@ -7,8 +7,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4f78e66c6cad87f02598d241bfa4204ca21f3b0b",
-            "content": "sha256:d8274e76e06cec70165ab206f3f5700b8405bb0643825cd82c8ac85c3200c401",
+            "blob": "4fd13392ee64ff470abdcce77426d87eb9f9a55b",
+            "content": "sha256:19d59d8bb1924194adca2e83f7c75750415b180dea906466d8a9643fba277bfe",
             "locator": {
               "kind": "symbol",
               "name": "TaskNotes"
@@ -20,41 +20,29 @@
       ]
     },
     "2": {
-      "note": "The listing entry type shaped by the suite's stub payload.",
+      "note": "The folder entry type shaped by the suite's stub payload.",
       "targets": [
         {
           "anchor": {
-            "blob": "43bffd67009f4cebf8c15adbb66d797fc0c20155",
-            "content": "sha256:d796d7020f69bd9fe3480f24e64393b5d647fa55be86395394125a7b5e16cc7d",
+            "blob": "db4ee81eefe2ea8e744d09543e10feec070a2b46",
+            "content": "sha256:ed92c2d96120e9edf1b9316ca0e8c1f7629e9bed17074a44422870c862c37b48",
             "locator": {
               "kind": "symbol",
-              "name": "NoteEntry"
+              "name": "FolderEntry"
             },
             "path": "dashboard/src/data/notes.ts"
           },
           "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "4c8dcbcb233f63d4847aa5b0712a3abe9583f375",
-            "content": "sha256:bf1e67d572767cd9c7648e08ea4837960c170fd25b6add002d8585f41cf7d17b",
-            "locator": {
-              "end": 15,
-              "kind": "line_range",
-              "start": 13
-            }
-          },
-          "kind": "test"
         }
       ]
     },
     "3": {
-      "note": "The component suite's `stubNotesApi` returns the directly evidenced listing payload.",
+      "note": "The component suite's `stubNotesApi` returns the directly evidenced folder payload.",
       "targets": [
         {
           "anchor": {
-            "blob": "4c8dcbcb233f63d4847aa5b0712a3abe9583f375",
-            "content": "sha256:4068c536b185a5b5fde259396972e0dd3ae1be950855cefd3914fa6948d0e192",
+            "blob": "8ec686675f29a48b9d12f158ee6a4c76a1d67b3b",
+            "content": "sha256:134a933e56a511a5e566e303585f98a625b7fea05bcf74f76897c8b126d07123",
             "locator": {
               "kind": "symbol",
               "name": "stubNotesApi"
@@ -65,16 +53,16 @@
       ]
     },
     "4": {
-      "note": "The moved note-content suite (markdown, text fallback, binary placeholder, truncation) covering the reader this surface opens.\n\nAnchor: \"NotesReaderViewer content pane (reuses the File Viewer DualPane)\"",
+      "note": "The moved note-content suite covering the reader this surface opens.\n\nAnchor: \"NotesReaderViewer content pane (reuses the File Viewer DualPane)\"",
       "targets": [
         {
           "anchor": {
-            "blob": "c2e3d43aa4dc223efaf3ffbe6fdad805cc80b98c",
-            "content": "sha256:71e316127d190ad3ebbff59d54d210fe2f6034fefadb7cab5ba12b834418bc29",
+            "blob": "f6072ed9607e28a959d4a183a2129c2e86dbb163",
+            "content": "sha256:031f676133811db46a08cbe6b24890dd7dd96daac8295a672506d888d67e4c57",
             "locator": {
-              "end": 179,
+              "end": 403,
               "kind": "line_range",
-              "start": 110
+              "start": 403
             },
             "path": "dashboard/src/panels/notes-reader/NotesReaderViewer.test.tsx"
           },

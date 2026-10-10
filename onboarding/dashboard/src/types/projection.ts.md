@@ -39,6 +39,13 @@ generated file belong to other collections — `CloseoutCandidateNode.reasons` (
 
 ### Conventions
 
+## L126 Product-Record Wire Flag
+
+`TaskDecisionNode` carries `product_record: boolean` (line ~640): true when the
+decision-log entry is a product-written record (finalize lifecycle, removed/skip
+step), set server-side from the writers' own constants. The page mutes such
+records from the newest-five authored count; the stored entry shape is unchanged.
+
 This file is generated from the Python projection schemas; edit the model/generator and resynchronize
 rather than hand-maintaining parallel declarations.
 

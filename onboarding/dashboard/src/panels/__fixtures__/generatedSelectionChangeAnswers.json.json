@@ -1,0 +1,55 @@
+{
+  "path": "dashboard/src/panels/__fixtures__/generatedSelectionChangeAnswers.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The pinned replies are the live served answers of both masters.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1af4d277bada95d4dde2556df6827de259968fe4",
+            "content": "sha256:0544c058913656ea3d04208e43f970fee3a5c0e0712507f478a63a73456f9385",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The connector re-verifies the pinned answers against a live tree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3535e8a729a618c0d9e8b0791a200ab5e7d29e1f",
+            "content": "sha256:a385248b33a0e38234e6b451471a1ca5e355114c8819deb89d21b2b8d206a877",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_pinned_selection_answers_match_live_generated_masters"
+            },
+            "path": "mcp/tests/test_generated_master_selection_cost.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The mounted transition consumes the pinned replies per master.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b72b95071371961d02d2ada97857e5bf79623144",
+            "content": "sha256:48286195f5a7bb8bb12cc63bc856341a9dbfdbb45899c48c91d9bedf74fbf00a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/taskPageCost.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

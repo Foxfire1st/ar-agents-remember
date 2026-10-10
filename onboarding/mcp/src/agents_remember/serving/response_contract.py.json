@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "61ad404bd22d920dd138c1547e688cc536a37131",
+        "blob": "ab5559e41e793bd918609a1bea27fa297514293d",
         "content": "sha256:15ab3999ca957c919a14638c78cae2cc9a6d98e7a2726d812b38be1e96d2a2ed",
         "locator": {
           "kind": "symbol",
@@ -26,7 +26,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "61ad404bd22d920dd138c1547e688cc536a37131",
+            "blob": "ab5559e41e793bd918609a1bea27fa297514293d",
             "content": "sha256:463b38acb2a449e68d35e60f53e3a39a6d156550a23302eeffa713b2fd585458",
             "locator": {
               "kind": "symbol",
@@ -37,11 +37,59 @@
         },
         {
           "anchor": {
-            "blob": "61ad404bd22d920dd138c1547e688cc536a37131",
+            "blob": "ab5559e41e793bd918609a1bea27fa297514293d",
             "content": "sha256:159da6ef49727c547882faaa0c6c5f07ceb45e0cb5d62d237e27fa9db7490f89",
             "locator": {
               "kind": "symbol",
               "name": "state_detail"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "One folder's entries model parts with total, remaining and reason.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ab5559e41e793bd918609a1bea27fa297514293d",
+            "content": "sha256:0d61b8fcf3adcface15bf07bbcd40ef376cedd1cd00f94488eed139ce7ed53f4",
+            "locator": {
+              "kind": "symbol",
+              "name": "NotesFolder"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Each reference resolves to a path or null.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ab5559e41e793bd918609a1bea27fa297514293d",
+            "content": "sha256:e4c37f23a2b7ec027a5e6016991bc2940a7c6feee2e9c139d58d773f58cc101d",
+            "locator": {
+              "kind": "symbol",
+              "name": "NotesResolutions"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Recorded starts model newest-first rows with nullable paths.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ab5559e41e793bd918609a1bea27fa297514293d",
+            "content": "sha256:787087b81498e16e4c169b78ed4abe9d74f67788712e5b2a0cb5864b22ef7615",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskReportRow"
             }
           },
           "kind": "code"
@@ -95,27 +143,14 @@
       ]
     },
     "4": {
-      "note": "**The cases that measure the discriminator and the route status.**",
+      "note": "The cases that measure the discriminator and the route status.",
       "targets": [
         {
           "anchor": {
-            "blob": "ef7ea37ef8748fc8652f213eb82a099ffd4ad708",
-            "content": "sha256:b9332aae10fd5065c5bc4ba35205b40390de7a58b9ce8e9b63c01de77f68e38b",
+            "blob": "c592a267a980f828d8674554354ca185d56ddc70",
+            "content": "sha256:73635ca023404c29caeca12869416be8c3db15eb8d4b05840a5f062af780f184",
             "locator": {
-              "kind": "symbol",
-              "name": "test_an_unrecorded_committed_endpoint_is_answered_with_its_own_state_rather_than_read_from_head"
-            },
-            "path": "mcp/tests/test_knowledge_review_source_endpoints.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "ef7ea37ef8748fc8652f213eb82a099ffd4ad708",
-            "content": "sha256:c797f9387e3d9d2b955ce41e52637dc378b31de1f07fa17e47c7801bd65c1741",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_the_route_answers_an_unrecorded_committed_view_without_a_status_error"
+              "kind": "file"
             },
             "path": "mcp/tests/test_knowledge_review_source_endpoints.py"
           },
@@ -128,7 +163,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "61ad404bd22d920dd138c1547e688cc536a37131",
+            "blob": "ab5559e41e793bd918609a1bea27fa297514293d",
             "content": "sha256:f64c082d90fbb42c45415faf0fed88e15e456ce9c1b4d3bfccd27c9e4b686b03",
             "locator": {
               "kind": "symbol",
@@ -139,7 +174,7 @@
         },
         {
           "anchor": {
-            "blob": "61ad404bd22d920dd138c1547e688cc536a37131",
+            "blob": "ab5559e41e793bd918609a1bea27fa297514293d",
             "content": "sha256:dde80e31f24d9d4836c324eaa93b07012c54462ca77b232373d84670f5e882b8",
             "locator": {
               "kind": "symbol",
@@ -150,7 +185,7 @@
         },
         {
           "anchor": {
-            "blob": "61ad404bd22d920dd138c1547e688cc536a37131",
+            "blob": "ab5559e41e793bd918609a1bea27fa297514293d",
             "content": "sha256:bbbb25e8523b159636c4217b70b8618bc867bb38c88eb3b0cde709926030ce4c",
             "locator": {
               "kind": "symbol",
@@ -166,7 +201,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "61ad404bd22d920dd138c1547e688cc536a37131",
+            "blob": "ab5559e41e793bd918609a1bea27fa297514293d",
             "content": "sha256:463b38acb2a449e68d35e60f53e3a39a6d156550a23302eeffa713b2fd585458",
             "locator": {
               "kind": "symbol",
@@ -177,7 +212,7 @@
         },
         {
           "anchor": {
-            "blob": "61ad404bd22d920dd138c1547e688cc536a37131",
+            "blob": "ab5559e41e793bd918609a1bea27fa297514293d",
             "content": "sha256:159da6ef49727c547882faaa0c6c5f07ceb45e0cb5d62d237e27fa9db7490f89",
             "locator": {
               "kind": "symbol",
@@ -193,7 +228,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "61ad404bd22d920dd138c1547e688cc536a37131",
+            "blob": "ab5559e41e793bd918609a1bea27fa297514293d",
             "content": "sha256:99d12fb092b2aaee432f74aab4ded60d437f14818ef6d2e7c33bad36582e28b6",
             "locator": {
               "kind": "symbol",
@@ -209,7 +244,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "61ad404bd22d920dd138c1547e688cc536a37131",
+            "blob": "ab5559e41e793bd918609a1bea27fa297514293d",
             "content": "sha256:0d48bf4c3921c4f055a62be30df77cd363018e46aae040503a1f5f370b8745a4",
             "locator": {
               "kind": "symbol",
@@ -225,7 +260,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "61ad404bd22d920dd138c1547e688cc536a37131",
+            "blob": "ab5559e41e793bd918609a1bea27fa297514293d",
             "content": "sha256:f38e5b44460554fe46bf88809cbf5bcf8bd8db31457bd37f06a4a8f5988f8e06",
             "locator": {
               "kind": "symbol",

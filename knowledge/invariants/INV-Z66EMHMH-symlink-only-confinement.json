@@ -1,0 +1,23 @@
+{
+  "admission": "legacy-unassessed",
+  "applicability": "Historical: the list walk over one master's notes root. Current: the folder open and row examination of GET /api/notes/folder.",
+  "conditions": [
+    "The folder opens through held descriptors without following symlinks (O_NOFOLLOW).",
+    "Each row stats without following; only symlink entries are resolved and checked against the root."
+  ],
+  "exclusions": [
+    "read_note, which confines each requested path with confine_rel.",
+    "Dated L55 bound for the superseded walk: one followed stat per entry. Current folder endpoint: one nofollow stat per row, plus a second followed stat for symlink entries after resolution; path resolution is limited to the notes root and symlink entries, not ordinary entries."
+  ],
+  "id": "INV-Z66EMHMH",
+  "origin": {
+    "leaf": "260921-ICR-L55",
+    "legacyId": "a364488f-a789-4589-8c76-1dfb4a45a787",
+    "task": "260921-ICR"
+  },
+  "revision": 2,
+  "schema": "ar-invariant/v1",
+  "statement": "Dated L55 bound for the superseded walk: the listing realpath-checked only symlink entries against the resolved root (one followed stat per entry; root resolved once). Current folder endpoint: confinement lives in the held-descriptor open (_open_confined_dir, O_NOFOLLOW); the per-entry decision stats without following and resolves only symlinks against the root. Each row costs one nofollow stat, plus a second followed stat for symlink entries after resolution; path resolution is paid for the root and for symlinks only; the DirEntry sort-before-check window description is retired with the walk.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -8,6 +8,14 @@
 
 Task-document and series readers: summaries, full bodies, lifecycle binding. Task JSON is the source of truth (never the rendered markdown). These readers project task documents and the series checklist, resolve cross-folder lifecycle links, and hash full bodies for the on-demand body endpoint.
 
+## L126 Decision Projection Marking
+
+`_reader_fields` projects each stored decision in stored array order (no sort —
+the frontend `orderDecisionsNewestFirst` helper orders by parsed time) and sets
+`product_record` from the writers' own predicate
+`is_product_record_decision(item.decision)` (exact/prefix string match). The
+projection preserves order; it does not decide recency.
+
 The two kinds of reader have different costs, and since 260921-ICR-L42 that difference is deliberate.
 The always-on summary and series readers enumerate the canonical corpus (`_common._iter_task_json`)
 on each projection pass. The on-demand body reader, `read_task_document_body`, which serves one

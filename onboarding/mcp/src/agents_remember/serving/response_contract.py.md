@@ -106,13 +106,35 @@ this is a `200` body contract, not a new status.
 - **The served vocabulary of the leaf view's own recordedness, and its default for every existing caller.** [1]
 - **The producer that publishes it, with the counter zero it exists to annotate.** [2]
 - **The client mirror and the control that renders the state and withholds the total.** [3]
-- **The cases that measure the discriminator and the route status.** [4]
+
+- The cases that measure the discriminator and the route status. [4]
+
 
 ## 260928-MIK-L114 Last-Feed Ready Marker
 
 `StreamReadyMarker` carries `last_event_ts`: the newest event timestamp across every
 source, which may be older than the replay window, so the panel names the last feed on a
 silent river. Absent when the store holds no event at all.
+
+## 260928-MIK-L126 Current Delta — Folder, Resolve And Report Models
+
+`NoteRow`/`NotesListing` are replaced by `FolderEntry` (`kind`, nullable `size`) and
+`NotesFolder` (`path`/`entries`/`total`/`offset`/`limit`/`remaining`/`exists`/`reason`):
+one folder's entries in a stable order, in parts. `NoteResolution`/`NotesResolutions`
+model the per-reference resolve answer (null staying plain text), and
+`TaskReportRow`/`TaskReports` model the recorded starts (null paths until the product
+records the report). The declared models stay the contract: handlers return `Response`
+objects, so a key added on either side must land in both in the same change.
+
+
+- One folder's entries model parts with total, remaining and reason. [10]
+
+
+- Each reference resolves to a path or null. [11]
+
+
+- Recorded starts model newest-first rows with nullable paths. [12]
+
 
 ## Evidence
 

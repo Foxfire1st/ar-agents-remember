@@ -1,0 +1,70 @@
+{
+  "path": "dashboard/src/panels/taskPageCost.test.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "b72b95071371961d02d2ada97857e5bf79623144",
+        "content": "sha256:48286195f5a7bb8bb12cc63bc856341a9dbfdbb45899c48c91d9bedf74fbf00a",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-W549EV",
+      "invariant": "INV-657ZGC",
+      "origin": {
+        "handoffEntry": "MIK-R126@v1 rule 8",
+        "leaf": "260928-MIK-L126"
+      },
+      "rationale": "This retained test mounts TaskNotes and performs the actual BIG-to-SMALL selected-task change against the pinned live replies, asserting reissued operands, ceiling, masked stability and row bound.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "A task change reissues the bounded request set on an actual selection change.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b72b95071371961d02d2ada97857e5bf79623144",
+            "content": "sha256:48286195f5a7bb8bb12cc63bc856341a9dbfdbb45899c48c91d9bedf74fbf00a",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Aggregate bytes stay under the fixed ceiling with fewer than 100 rows.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b72b95071371961d02d2ada97857e5bf79623144",
+            "content": "sha256:48286195f5a7bb8bb12cc63bc856341a9dbfdbb45899c48c91d9bedf74fbf00a",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Served replies are bound to the selected repository and master.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b72b95071371961d02d2ada97857e5bf79623144",
+            "content": "sha256:48286195f5a7bb8bb12cc63bc856341a9dbfdbb45899c48c91d9bedf74fbf00a",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

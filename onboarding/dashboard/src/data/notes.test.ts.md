@@ -6,26 +6,22 @@
 
 ## Purpose
 
-`notes.test.ts` is the unit suite for the L9 notes data layer (`data/notes.ts`): the
-list/read URL construction, the shared `FilesApiError` mapping, and the
-`resolveNoteReference` resolution rules.
+`notes.test.ts` is the unit suite for the notes data layer (`data/notes.ts`): the
+folder/read URL construction, the shared `FilesApiError` mapping, and the
+single-request reference resolution.
 
 ## Code Commentary
 
 ### Logic
 
-Two describe blocks in the `data/files.test.ts` idiom (a `stubFetch` that answers a
-fixed payload, `vi.unstubAllGlobals` after each test):
+Two describe blocks in the `data/files.test.ts` idiom (a `stubFetch` handler by URL,
+`vi.unstubAllGlobals` after each test):
 
-- **client** — `listNotes`/`readNote` build exactly
-  `/api/notes/list?repo&master` and `/api/notes/read?repo&master&path` (path
+- **client** — `listFolder`/`readNote` build exactly
+  `/api/notes/folder?repo&master&path&offset` and `/api/notes/read?repo&master&path` (path
   URL-encoded); a non-ok response rejects with the shared `FilesApiError`.
-- **resolveNoteReference** — the resolution table: a `notes/`-prefixed reference with
-  trailing prose resolves to the notes-relative path; a nested `reports/…` path resolves
-  with or without the `notes/` prefix; an unambiguous bare filename resolves; an
-  AMBIGUOUS bare filename (same basename in two folders) does not; a code-path reference
-  (`serving/files.py`, `panels/DetailPanel.tsx`) does not; plain prose and an empty note
-  list do not.
+- **resolveNoteReferences** — one POST carries the document's references and answers each
+  with a path or null; the client maps answered paths and throws on a malformed answer.
 
 ### Conventions
 
@@ -33,8 +29,8 @@ Pure unit tests — no component rendering, no store; fetch is stubbed per test.
 
 ### Invariants And Boundaries
 
-The suite pins the conservative posture: resolution returns `undefined` for anything
-not provably one existing note, so the UI can never render a dead or guessed link.
+The suite pins the client contract: folder/read URLs, one POST for references, and a
+rejection on malformed answers, so the UI can never render a dead or guessed link.
 
 ## Evidence
 
@@ -54,6 +50,6 @@ No configured Domain Documentation source exists for this file.
 
 ### Repo-Internal References
 
-- The list/read client functions under test. [1]
-- The reference resolver under test. [2]
+- The folder/read client functions under test. [1]
+- The single-request reference resolver under test. [2]
 - The sibling client suite's shared fetch-stub idiom. [3]

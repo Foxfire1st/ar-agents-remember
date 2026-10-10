@@ -19,6 +19,26 @@ L23 re-tagged every existing render with `kind="notes"` and added a
 open-path `requirements/<path>`) and renders the exact selected packet's markdown
 over the real `/api/requirements/read` URL.
 
+## L126 Folder-Tree, Paging, Whole-Log and Task-Report Cases
+
+Since L126 the suite additionally pins the one-folder-at-a-time tree and its
+transports; the flat-list rail and `/api/notes/list` fetch prose below is
+superseded for these cases (retained as history where it describes unchanged
+takeover/content-pane behavior):
+
+- **Tree** — one-level tree with closed folders on open; expand loads a folder's
+  children; folders over the part ceiling show a next-part row; deep paths open
+  to the note with the way folders open and the note marked.
+- **Fill/vanish/cache** — fill-to-note, vanish (twice), and LRU-plus-pin cache
+  cases.
+- **Whole log** — whole-log cases from line 628 on; the newest finalizer record
+  stands FIRST in the whole log, muted (line 647 on).
+- **Task-report read** — exact task-report read by recorded identity; existing
+  role-report preservation kept.
+- **Transport** — folder (`/api/notes/folder`), read (`/api/notes/read`),
+  single-request resolve (`/api/notes/resolve`), and reports
+  (`/api/role-launch/reports`); no route walks the tree.
+
 ## Role-Report Kind Case
 
 The suite also renders the `role-report` kind and pins that the supplied report's body, file name and
@@ -47,14 +67,19 @@ No additional work is asserted by this card.
 
 ### 260707-HFX2-L13 Fetch-Fixture Compatibility
 
-The notes-reader fetch stub now serves `/api/task-document` before its notes list/read branches. The
+The notes-reader fetch stub now serves `/api/task-document` before its notes folder/read branches. The
 notes viewer embeds task-reader flows whose `DetailPanel` dependency fetches full task bodies on
 demand, so this branch preserves the suite's isolation while leaving notes API assertions unchanged.
+(The `notes list/read branches` wording of the earlier era now reads folder/read; resolve and
+reports branches serve the reference and report cases.)
 
 ### Logic
 
-- **Rail** — lists the master's notes (reports/ included) with the open note highlighted; the highlight
+- **Rail** — one folder's entries at a time (the open folder's files and
+  subfolders), with the open note highlighted; the highlight
   follows the controlled `path` prop (rerender moves `data-active`); a rail click calls `onSelectNote`.
+  (The flat whole-list rail prose of the earlier era is superseded; see the L126
+  section above.)
 - **Content pane** — a markdown note renders formatted through the reused `DualPane` sidecar (`sidecar-pane`);
   a text note renders through the shared file pane (`file-pane`); a binary note degrades to DualPane's
   `pane-placeholder`. The CodeMirror leaf `../file-viewer/FilePane` is `vi.mock`ed to a `<pre>` — the house
@@ -83,10 +108,13 @@ that contract.
 
 ### Invariants And Boundaries
 
-Fetch is stubbed per-URL (`/api/notes/list`, `/api/notes/read`; a `{repos:[]}` fallback keeps the hidden
-File Viewer layer happy). No real network, no store mutation beyond the seeded projection. The seed
+Fetch is stubbed per-URL (folder `/api/notes/folder`, read `/api/notes/read`,
+single-request resolve `/api/notes/resolve`, reports `/api/role-launch/reports`;
+a `{repos:[]}` fallback keeps the hidden File Viewer layer happy). No real
+network, no store mutation beyond the seeded projection. The seed
 must stay cast-free: a fixture that cannot fail when the projection contract moves stops describing the
-contract the day it moves.
+contract the day it moves. (The `/api/notes/list` fetch prose of the earlier
+era is superseded; see the L126 section above.)
 
 ## Evidence
 

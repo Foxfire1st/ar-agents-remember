@@ -1,0 +1,126 @@
+{
+  "path": "mcp/tests/test_generated_master_selection_cost.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "3535e8a729a618c0d9e8b0791a200ab5e7d29e1f",
+        "content": "sha256:a385248b33a0e38234e6b451471a1ca5e355114c8819deb89d21b2b8d206a877",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_pinned_selection_answers_match_live_generated_masters"
+        }
+      },
+      "facet": "Pinned replies match freshly built live masters on every run.",
+      "id": "PRF-G5B7SR",
+      "invariant": "INV-657ZGC",
+      "origin": {
+        "handoffEntry": "MIK-R126@v1 rule 8",
+        "leaf": "260928-MIK-L126"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "3535e8a729a618c0d9e8b0791a200ab5e7d29e1f",
+        "content": "sha256:8273f835e7b0c3d35fefce7a353dc50ea622805ce34be223b4ecd1f2f9c95ea3",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_selection_change_on_a_noteless_master_stays_bounded"
+        }
+      },
+      "facet": "The noteless-master change stays bounded.",
+      "id": "PRF-K8C2K1",
+      "invariant": "INV-657ZGC",
+      "origin": {
+        "handoffEntry": "MIK-R126@v1 rule 8",
+        "leaf": "260928-MIK-L126"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "3535e8a729a618c0d9e8b0791a200ab5e7d29e1f",
+        "content": "sha256:aa720a25b3b81a222715983046df4c953ca9839ac0473c497a7c6fed0ff3e5ec",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_selection_change_bytes_are_bounded_and_independent_of_tree_size"
+        }
+      },
+      "facet": "Selection-change bytes stay bounded and independent of tree size.",
+      "id": "PRF-MFPFD4",
+      "invariant": "INV-657ZGC",
+      "origin": {
+        "handoffEntry": "MIK-R126@v1 rule 8",
+        "leaf": "260928-MIK-L126"
+      }
+    }
+  ],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "3535e8a729a618c0d9e8b0791a200ab5e7d29e1f",
+        "content": "sha256:60e3bb40d75aa187314e57e4da469bf0a74b1b0b0b16068f8b4b23172f8af4eb",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-J5XKNY",
+      "invariant": "INV-657ZGC",
+      "origin": {
+        "handoffEntry": "MIK-R126@v1 rule 8",
+        "leaf": "260928-MIK-L126"
+      },
+      "rationale": "This retained test builds the 100001-file nested master, proves the bounded selection set with ceiling and masked independence, and re-verifies the pinned dashboard replies against the live tree on every run.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Selection-change bytes are bounded and independent of tree size.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3535e8a729a618c0d9e8b0791a200ab5e7d29e1f",
+            "content": "sha256:aa720a25b3b81a222715983046df4c953ca9839ac0473c497a7c6fed0ff3e5ec",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_selection_change_bytes_are_bounded_and_independent_of_tree_size"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The noteless master stays bounded.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3535e8a729a618c0d9e8b0791a200ab5e7d29e1f",
+            "content": "sha256:8273f835e7b0c3d35fefce7a353dc50ea622805ce34be223b4ecd1f2f9c95ea3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_selection_change_on_a_noteless_master_stays_bounded"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Pinned selection answers match the live generated masters.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3535e8a729a618c0d9e8b0791a200ab5e7d29e1f",
+            "content": "sha256:a385248b33a0e38234e6b451471a1ca5e355114c8819deb89d21b2b8d206a877",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_pinned_selection_answers_match_live_generated_masters"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}
