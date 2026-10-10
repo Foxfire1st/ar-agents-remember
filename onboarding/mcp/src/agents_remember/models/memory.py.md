@@ -67,11 +67,7 @@ run states.
 ### Repo-Internal References
 
 - Memory-quality requests are executed by the focused controller. [1]
-- Other memory MCP application entry points retain drift, citation, route-index, init, baseline, and carryover ownership. [2]
 - The strict sync/start/poll request models and discriminated union. [3]
-- `DriftCheckResponse.status` uses the shared `DriftStatus` alias. [4]
-- `DriftSummary.status` uses the same shared `DriftStatus` alias. [5]
-- The context-packet wire face includes its matching `error` field. [6]
 
 ## 260815-DAG-L3 Attestation Response Field
 
@@ -115,3 +111,16 @@ It is **declared** rather than left to the flexible envelope, by this package's 
 `extra="allow"`, so an undeclared stamp would validate and stay invisible in the tool's own schema.
 `drift_check` deliberately carries no stamp: it is a tree-integrity count rather than a curation count,
 and D-33 names the memory-quality and citation surfaces.
+
+`DriftCheckResponse` carries the same converted measurement fields as the packet summary — `basis`,
+`memoryRoot`, `codeRoot`, `sidecarCount`, `states`, `violationCount`, `violationSample`,
+`reportOnlyCount` and `unreadableSidecars` — so the tool and the packet faces of one measurement agree.
+
+- The tool response carries the converted measurement fields beside the legacy ones. [7]
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Other memory MCP application entry points retain drift, citation, route-index, init, baseline, and carryover ownership. [2] | `drift_check_tool` | mcp/src/agents_remember/application/memory_tools.py:112-140 |
+| `DriftCheckResponse.status` uses the shared `DriftStatus` alias. [4] | `DriftCheckResponse` | mcp/src/agents_remember/models/memory.py:15-42 |
+| `DriftSummary.status` uses the same shared `DriftStatus` alias. [5] | `DriftSummary` | mcp/src/agents_remember/models/drift.py:14-35 |
+| The context-packet wire face includes its matching `error` field. [6] | `DriftSummary` | mcp/src/agents_remember/models/drift.py:14-35 |

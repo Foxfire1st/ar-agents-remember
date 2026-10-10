@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d51e34bf1af86a00f562f7192a6055f039cdd622",
+            "blob": "30cb14732f6d4d548c1ee9550ab342b849d1eb10",
             "content": "sha256:93e13492ef4088c8368594cf9da93e076e02cafdd0db09ad5e78eca35bc3f159",
             "locator": {
               "kind": "symbol",
@@ -23,11 +23,27 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d51e34bf1af86a00f562f7192a6055f039cdd622",
+            "blob": "30cb14732f6d4d548c1ee9550ab342b849d1eb10",
             "content": "sha256:b7d8d2f08c7133249b2f9e95e24cfe22c08f422f577c2fa7accefe7d51b0f870",
             "locator": {
               "kind": "symbol",
               "name": "buildTree"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The converted drift names order with the legacy classifications, healthy first.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "30cb14732f6d4d548c1ee9550ab342b849d1eb10",
+            "content": "sha256:2f83b13eb6d0477badb3e2f2d84cdac51bd6c1565679c78804712e80a8c0e928",
+            "locator": {
+              "kind": "symbol",
+              "name": "DRIFT_ORDER"
             }
           },
           "kind": "code"

@@ -7,61 +7,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "658c6f6924b5894147f8e568aa85fa76d743161f",
+            "blob": "597c57b254ec08a62dcc4dfced2687498c5c2660",
             "content": "sha256:8f0c78909c98191b6046d39ddedf7d4eaa25fd71f9dd3a5bf6615fc4ee0eb9e4",
             "locator": {
               "kind": "symbol",
               "name": "not_checked"
-            },
-            "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "658c6f6924b5894147f8e568aa85fa76d743161f",
-            "content": "sha256:d1ac205dbaa6ffc19900eec8884c15383ec45c72e0d1971e0100a0327dd2380e",
-            "locator": {
-              "kind": "symbol",
-              "name": "run_drift_summary"
-            },
-            "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "658c6f6924b5894147f8e568aa85fa76d743161f",
-            "content": "sha256:d40dea78696f8a990093cafdaa16ab6f1592cac82fe8762035e47ad0236fa3be",
-            "locator": {
-              "kind": "symbol",
-              "name": "summarize_rows"
-            },
-            "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "658c6f6924b5894147f8e568aa85fa76d743161f",
-            "content": "sha256:26c1c4f6dfc976407a946dd1c877931ac154aceee412dc06fb07f1f50f8df632",
-            "locator": {
-              "end": 22,
-              "kind": "line_range",
-              "start": 21
-            },
-            "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "658c6f6924b5894147f8e568aa85fa76d743161f",
-            "content": "sha256:cf84f63b992c5f1a1030a90c4a0173def01695732959639b2211b658df6e02c0",
-            "locator": {
-              "end": 91,
-              "kind": "line_range",
-              "start": 76
             },
             "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py"
           },
@@ -74,24 +24,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "88ab63c1685825e580ce7dbc3f0c8c6f32f8acbf",
-            "content": "sha256:a2f120037b4a3244a65f708669bdaf5da721a923c27f8840f5e61f28108cbf20",
+            "blob": "cf68f5578694021f732b573cc3d613b880c7bfd8",
+            "content": "sha256:7e00a1dd009e4484bcd53c4b0f3071076cd3efe31960d64494371201d6bf32ec",
             "locator": {
               "kind": "symbol",
               "name": "DriftSummary"
-            },
-            "path": "mcp/src/agents_remember/models/drift.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "88ab63c1685825e580ce7dbc3f0c8c6f32f8acbf",
-            "content": "sha256:0673052126dfb9f14e4482f0ad5dc18d83e74317290c4bb65d77742f15f8038d",
-            "locator": {
-              "end": 23,
-              "kind": "line_range",
-              "start": 13
             },
             "path": "mcp/src/agents_remember/models/drift.py"
           },
@@ -104,8 +41,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7830f6643d98c4da734d2630c523e1eb2f1bf7ce",
-            "content": "sha256:dd8acbe5d3f8b1196081bb4d5941b664743da0ecb58d66008d23fdfa5d6a6f9d",
+            "blob": "9ef6a8b057a4d5f2ec9156eab7d47da4c38d37c3",
+            "content": "sha256:5defc592c4ead496c0d96b2b8a314b6a884ae178e845fb42f98657c6140395ee",
             "locator": {
               "kind": "symbol",
               "name": "DriftCheckResponse"
@@ -116,12 +53,12 @@
         },
         {
           "anchor": {
-            "blob": "7830f6643d98c4da734d2630c523e1eb2f1bf7ce",
-            "content": "sha256:eae68a099e750bd7082ee4781091aad96ef7d6ad5141ca8319a227b2adb7a9dd",
+            "blob": "9ef6a8b057a4d5f2ec9156eab7d47da4c38d37c3",
+            "content": "sha256:17ddd1488f5007b833cbf58560083764457499bcab9586b9c65dd8c458b54f48",
             "locator": {
-              "end": 28,
+              "end": 45,
               "kind": "line_range",
-              "start": 14
+              "start": 26
             },
             "path": "mcp/src/agents_remember/models/memory.py"
           },
@@ -141,6 +78,22 @@
               "name": "run_drift_quality_check"
             },
             "path": "mcp/src/agents_remember/memory_quality/check.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The packet carries the converted measurement fields alongside the legacy ones.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c55af2c8c0b8cd2eaef3ef961fc49505b96b823a",
+            "content": "sha256:2c37f03052e83372cccb360bdefa6ee9f68c2a6e4a72b6a96404fa76d0c78b52",
+            "locator": {
+              "kind": "symbol",
+              "name": "DriftSummaryPacket"
+            }
           },
           "kind": "code"
         }

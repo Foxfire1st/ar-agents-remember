@@ -18,7 +18,7 @@
         },
         {
           "anchor": {
-            "blob": "88ab63c1685825e580ce7dbc3f0c8c6f32f8acbf",
+            "blob": "cf68f5578694021f732b573cc3d613b880c7bfd8",
             "content": "sha256:0673052126dfb9f14e4482f0ad5dc18d83e74317290c4bb65d77742f15f8038d",
             "locator": {
               "end": 23,
@@ -35,12 +35,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0f33f584513ad3833a35a818b88f51eaacb54fbc",
+            "blob": "a2e32055df9ed4e20616122a8838f1eea2783fa2",
             "content": "sha256:179ff2277dbc9f31b6dcc07320f7d791f765304c67a1149cfb37cc5dbad06d37",
             "locator": {
-              "end": 105,
+              "end": 106,
               "kind": "line_range",
-              "start": 105
+              "start": 106
             },
             "path": "mcp/src/agents_remember/application/context_packet.py"
           },
@@ -48,12 +48,12 @@
         },
         {
           "anchor": {
-            "blob": "0f33f584513ad3833a35a818b88f51eaacb54fbc",
+            "blob": "a2e32055df9ed4e20616122a8838f1eea2783fa2",
             "content": "sha256:b600923b643228d39c596fce21ff38f86699563149c22fbbed582024d0a31874",
             "locator": {
-              "end": 177,
+              "end": 193,
               "kind": "line_range",
-              "start": 177
+              "start": 193
             },
             "path": "mcp/src/agents_remember/application/context_packet.py"
           },
@@ -61,12 +61,12 @@
         },
         {
           "anchor": {
-            "blob": "0f33f584513ad3833a35a818b88f51eaacb54fbc",
+            "blob": "a2e32055df9ed4e20616122a8838f1eea2783fa2",
             "content": "sha256:42dc01e6a5b3c6e6acd56fd8b693dc265774948e58ae547146c624a40b1ee2e3",
             "locator": {
-              "end": 181,
+              "end": 197,
               "kind": "line_range",
-              "start": 181
+              "start": 197
             },
             "path": "mcp/src/agents_remember/application/context_packet.py"
           },
@@ -91,7 +91,7 @@
         },
         {
           "anchor": {
-            "blob": "88ab63c1685825e580ce7dbc3f0c8c6f32f8acbf",
+            "blob": "cf68f5578694021f732b573cc3d613b880c7bfd8",
             "content": "sha256:a4fd9adef884dbb6ec257dea9499d51b7d671e333bf190b352afb44cb58b8b8f",
             "locator": {
               "end": 11,
@@ -108,7 +108,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "88ab63c1685825e580ce7dbc3f0c8c6f32f8acbf",
+            "blob": "cf68f5578694021f732b573cc3d613b880c7bfd8",
             "content": "sha256:3c2e03e160a2b1b355b128517aabec642e133b1930f6797c20a7a311b715aa24",
             "locator": {
               "end": 14,
@@ -120,7 +120,7 @@
         },
         {
           "anchor": {
-            "blob": "7830f6643d98c4da734d2630c523e1eb2f1bf7ce",
+            "blob": "9ef6a8b057a4d5f2ec9156eab7d47da4c38d37c3",
             "content": "sha256:9006b7b69dc5a39ca0854598cd817087bc4cd69dadbaeac832c91843fde0f9e7",
             "locator": {
               "end": 15,
@@ -128,6 +128,22 @@
               "start": 15
             },
             "path": "mcp/src/agents_remember/models/memory.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The summary carries the converted measurement fields beside the legacy ones.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cf68f5578694021f732b573cc3d613b880c7bfd8",
+            "content": "sha256:7e00a1dd009e4484bcd53c4b0f3071076cd3efe31960d64494371201d6bf32ec",
+            "locator": {
+              "kind": "symbol",
+              "name": "DriftSummary"
+            }
           },
           "kind": "code"
         }

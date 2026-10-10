@@ -29,6 +29,11 @@ holds `knowledge/layout.json`.
   (MIK-R22 rule 6). Refusing violations are findings. Report-only violations and every stale reference
   (`reference_state.check_references`) are report-only. The check name is `knowledge.converted`, and the
   result also carries the reference state counts.
+- When the base cannot be built, carried-vs-new classification is unknown, so the base-dependent
+  anchor-path refusals are withheld instead of being decided against an invented empty base: the named
+  unbuildable-base refusal is recorded, every independently measurable reference state keeps being
+  reported, and no new/carried refusal fires. The result also carries `sidecarCount` and
+  `unreadableSidecars` for the drift summary to name what it measured.
 
 ### Conventions
 
@@ -63,15 +68,20 @@ The not-applicable result and the converted check.
 
 - The legacy-format checks and their not-applicable result. [1]
 - K_B is the converted HEAD, when there is one. [2]
-- The validator's refusals are findings; its reports and stale references are report-only. [3]
 - The runner's dispatch to this module. [4]
 - Memory quality reads the converted format. [5]
 
 - The validator's bases, and why a converted base could not be built. [6]
-- The check takes the base port and reports an unbuildable base as a finding. [7]
+
+- An unbuildable base withholds base-dependent refusals; measurable states keep reporting. [8]
 
 ### Cross-Repo References
 
 No meaningful cross-repo references found: the file reads and writes only the memory and code repositories its caller names.
 
 No cross-repo boundary is crossed by this file.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The validator's refusals are findings; its reports and stale references are report-only. [3] | `converted_knowledge_check` | mcp/src/agents_remember/memory_quality/converted_check.py:102-142 |
+| The check takes the base port and reports an unbuildable base as a finding. [7] | `converted_knowledge_check` | mcp/src/agents_remember/memory_quality/converted_check.py:102-142 |

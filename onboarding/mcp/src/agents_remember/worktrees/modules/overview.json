@@ -438,7 +438,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6d887d74ea146178a0f34836a4a256d9d754071e",
+            "blob": "8e7c293ce46fe4d3041a43bab9bf26cbf1087120",
             "content": "sha256:04d86805fe7f02d3596ffcbcad248910dc1ddcfb56a5a965023c98a8413cc9e2",
             "locator": {
               "end": 291,
@@ -451,7 +451,7 @@
         },
         {
           "anchor": {
-            "blob": "6d887d74ea146178a0f34836a4a256d9d754071e",
+            "blob": "8e7c293ce46fe4d3041a43bab9bf26cbf1087120",
             "content": "sha256:6ec06a7803b29cd2a5ce32ccef80a6b0cfefd4478eb4d47b67604f7075e795a4",
             "locator": {
               "end": 47,
@@ -1314,6 +1314,40 @@
               "name": "_finalized_result"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/finalize.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "61": {
+      "note": "One Git command runs against a private index file; a failure keeps its name.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f10f508c9cbeadef7f1983c4e81f8ecfe9410256",
+            "content": "sha256:103e227873dd44c7a39e41d3501ffd4894d3bf88901ee6f9c4003e40c0290f60",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_git_with_index"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/git.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "62": {
+      "note": "Staging writes a private index file when asked; otherwise the worktree's own index.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f10f508c9cbeadef7f1983c4e81f8ecfe9410256",
+            "content": "sha256:3fa4853e3ba5d58ec94dc90ca426452fba3a8ed627b5dadcd585e2d4b0d39b25",
+            "locator": {
+              "kind": "symbol",
+              "name": "stage_worktree_content"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/git.py"
           },
           "kind": "code"
         }

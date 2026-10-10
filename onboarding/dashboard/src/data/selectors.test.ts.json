@@ -7,12 +7,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "811fe765c0325e4475111fc63ef99aee00d45802",
+            "blob": "7079a30e132aed793dd2c5155541995699c83ab8",
             "content": "sha256:b5154289f10b45f9c906e946b349e16c38a69e304a4661c5d37d8e524f558639",
             "locator": {
-              "end": 89,
+              "end": 87,
               "kind": "line_range",
-              "start": 74
+              "start": 72
             }
           },
           "kind": "test"
@@ -24,24 +24,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "811fe765c0325e4475111fc63ef99aee00d45802",
+            "blob": "7079a30e132aed793dd2c5155541995699c83ab8",
             "content": "sha256:035ec6bcb3a963f8ec92a2f5d11ca4e77a131094f63212c53d42742b14ccfebd",
             "locator": {
-              "end": 36,
+              "end": 34,
               "kind": "line_range",
-              "start": 25
+              "start": 23
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "811fe765c0325e4475111fc63ef99aee00d45802",
+            "blob": "7079a30e132aed793dd2c5155541995699c83ab8",
             "content": "sha256:2ebeffc72ebab0fafbe4f52343de12824f0d8fed3efc859454fe43068ca02546",
             "locator": {
-              "end": 70,
+              "end": 68,
               "kind": "line_range",
-              "start": 64
+              "start": 62
             }
           },
           "kind": "test"
@@ -53,7 +53,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d51e34bf1af86a00f562f7192a6055f039cdd622",
+            "blob": "30cb14732f6d4d548c1ee9550ab342b849d1eb10",
             "content": "sha256:93e13492ef4088c8368594cf9da93e076e02cafdd0db09ad5e78eca35bc3f159",
             "locator": {
               "kind": "symbol",
@@ -62,6 +62,22 @@
             "path": "dashboard/src/data/selectors.ts"
           },
           "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Converted drift segments order current, stale and violation with exact shares.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7079a30e132aed793dd2c5155541995699c83ab8",
+            "content": "sha256:20ac54cefddfc419e8f8479d11f7ddb8769f908b5ce4166ec9d42a884936768c",
+            "locator": {
+              "kind": "symbol",
+              "name": "driftSnapshot"
+            }
+          },
+          "kind": "test"
         }
       ]
     }

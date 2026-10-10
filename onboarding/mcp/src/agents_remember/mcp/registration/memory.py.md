@@ -25,10 +25,11 @@ already pass keywords. Registered tools are unchanged.
 memory content and a ledger cache refresh; there is no ledger commit argument or ledger branch
 publication for callers to provide.
 
-The two read-only checks are named for what they measure: `drift_check` is the **task-start**
-worklist
-(classifies how far onboarding has drifted since it was last verified — a nonzero actionable count
-after code changes is expected, not a failure). A contract-scoped `memory_quality_check` is the
+The two read-only checks are named for what they measure: `drift_check` measures the reference anchors
+of onboarding cards and the validity of the tree — on converted memory how many anchors are current
+and how many are stale against the code, plus the knowledge validator's refusing findings. Whether an
+invariant is still current is answered by `knowledge_read` and `knowledge_integrity_check`, not here; a
+stale reference is reported and never blocks by itself, and nothing is repaired by this check. A contract-scoped `memory_quality_check` is the
 curator's full pre-closeout repair worklist and is repeated as the hard post-refresh closeout gate;
 `ok=false` means enforced findings exist, not that the tool failed. A full scoped call also replaces
 one operational checklist under the enclosure `reports/` directory and returns the zeroable
@@ -93,9 +94,10 @@ No configured external domain source applies.
 
 ### Repo-Internal References
 
-- Carryover registration declares one memory subject and describes the computed cache refresh. [1]
 - The payload builders for the carryover plan and report-filing apply pair. [2]
 - The typed sync/start/poll payload builders. [3]
+
+- Carryover registration declares one memory subject and describes the computed cache refresh. [1]
 - The `MemoryBranches` parameter object. [4]
 - The `CarryoverSelection` parameter object. [5]
 - The `CarryoverCommitMessages` parameter object. [6]
@@ -167,3 +169,6 @@ validator used by closeout, and a `coherence-required` response directs the call
 The registration advertises repository-only calls as official diagnostics and requires candidate
 polls to repeat the original contract path. It does not imply that repository id can select an
 acceptance pair.
+
+- The drift description states the anchor measurement, the non-blocking stale rule, and the no-repair boundary. [15]
+- The adoption description states that accept_drift clears stale anchors only and the first baseline is validated. [16]

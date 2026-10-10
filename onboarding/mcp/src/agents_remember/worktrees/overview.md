@@ -290,6 +290,15 @@ Lifecycle remedies require a live locator; otherwise the refusal gives the appli
 
 - Retirement readiness refuses actual open leaf work and unfinished or unreadable current operation authority, and returns evidence and retained facts. [78]
 
+## Staging Against A Private Index
+
+Staging and tree commands that must not touch the worktree's own index take a private index file:
+`stage_worktree_content` and the cache-preparation exclusion run through the private file when one
+is passed, and `_require_git_with_index` runs one Git command against it while keeping the
+failure's name. The converted baseline adoption stages, validates and reads the tree on such a
+copy, so a dry run, a refusal or an exception leaves the real index exactly as it was and preserves
+concurrent staged edits by construction.
+
 ## Evidence
 
 ### Repo-Internal References

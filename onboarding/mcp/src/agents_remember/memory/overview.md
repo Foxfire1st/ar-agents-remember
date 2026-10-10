@@ -34,6 +34,22 @@ memory tree that holds `knowledge/layout.json`.
 - The capture copies the index with its time. [119]
 
 
+## Converted Adoption Validates The Staged Tree Before It Commits
+
+The first baseline of a converted tree is validated before it is made. The adoption stages the
+content on a private copy of the worktree index, asks the knowledge validator about that staged
+tree with no comparison bases and paired with the attributed code commit, and records exactly the
+validated tree: the commit object is built from the immutable tree, the branch ref moves to it only
+while it still points where validation saw it, and the recorded tree is verified. A refusal, a dry
+run, or any exception in the owned interval leaves the index, the refs and every owned file as they
+were — the prepared ignore line is given back only while its bytes are provably still ours, so a
+concurrent external edit is preserved, and the raised error keeps its name. The worktree's own
+index is written only after validation passes. The baseline drift block carries the converted
+measurement with its three blocking states (`blocked-invalid` while validator violations exist,
+`blocked-drift` while stale anchors exist unaccepted, `unavailable` as before), and `accept_drift`
+accepts stale anchors only, never a violation. Where the validator is not bound, the adoption
+refuses; it never commits unvalidated.
+
 ## Requirement Endpoints, Approval State And Their Recorded Reads
 
 [`knowledge/requirement_endpoint.py`](knowledge/requirement_endpoint.py.md) resolves a requirement endpoint of a

@@ -7,7 +7,11 @@
 ## Purpose
 
 `summary.py` runs a bounded onboarding drift summary for context packets,
-`drift_check`, and the closeout memory quality gate.
+`drift_check`, and the closeout memory quality gate. On a converted tree the summary is built from
+`converted_knowledge_check` and nothing else: it names how many reference anchors are current and how
+many are stale against the code, which files the knowledge validator refuses, and the two roots that
+were read. The legacy classification is never called for a converted tree — a converted card has no
+metadata table, so legacy discovery would answer an unread "checked, 0" instead of measuring.
 
 ## Code Commentary
 
@@ -87,10 +91,24 @@ unified renderer publishes.
 
 - Tier 3 unresolved: context packets and skill-facing drift tools call this summary helper; `context_packet.py` calls `run_drift_summary`, while `skill_tools.py` exposes `skills_install_tool` and no drift-summary call. [1]
 - The memory quality runner wraps actionable rows from this summary as integrity findings, reading the status-conditional keys with `.get`. [2]
-- `ACTIONABLE_CLASSIFICATIONS` and, since 260731-EFA-L4, `DriftSummaryPacket`/`DriftStatus` are sourced from the shared models module (`DriftStatus` declared in `models/drift.py`). [3]
-- The context-packet wire model that validates this packet's `status` — the one that used to lack `error`. [4]
-- The tool response model that validates the same packet. [5]
 - The drift-snapshot dir + schema the b1 write targets (shared with the reader). [6]
 - The shared drift-snapshot filename helper now used by the producer. [7]
 - The observer reader that consumes the persisted snapshot. [8]
 - `_write_drift_snapshot` persists source/memory/report provenance beside counts and rows. [9]
+- A converted tree takes `_run_converted_summary`: `status: checked` with `basis: converted-references`,
+  the two roots, `sidecarCount`, `count` over observed code/test anchors, `states: {current, stale}`,
+  `actionableCount` as the stale count with a bounded `actionableSample`, `violationCount` with a
+  bounded `violationSample` of refusing findings, `reportOnlyCount`, and `unreadableSidecars`. Counts
+  are exact; only the samples are bounded. A tree that cannot be read returns `status: error` with the
+  reason and no counts. An optional `KnowledgeBasePort` base selects the comparison base; the memory
+  layer owns no base, the application callers that own a contract bind it.
+
+- A converted tree is measured from the converted check alone; legacy discovery never runs there. [10]
+- The converted result names every measured field; zero means empty, never unread. [11]
+- The converted report and the observer snapshot are written from the same measured result. [12]
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| `ACTIONABLE_CLASSIFICATIONS` and, since 260731-EFA-L4, `DriftSummaryPacket`/`DriftStatus` are sourced from the shared models module (`DriftStatus` declared in `models/drift.py`). [3] | `DriftSummaryPacket` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py:11-70 |
+| The context-packet wire model that validates this packet's `status` — the one that used to lack `error`. [4] | `DriftSummary` | mcp/src/agents_remember/models/drift.py:14-35 |
+| The tool response model that validates the same packet. [5] | `DriftCheckResponse` | mcp/src/agents_remember/models/memory.py:15-42 |

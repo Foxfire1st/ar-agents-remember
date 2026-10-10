@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Reading the repaired defect as the norm would license direct staging and trust in polluted baselines; the corrected statement keeps the validated no-touch behavior (private discard, real preservation, named error) as the durable norm, so the costly mistake cannot be reintroduced as intent."
+  },
+  "applicability": "Converted memory baseline adoptions that stage, validate and commit memory content through the owned prepare/stage/validate interval.",
+  "conditions": [
+    "The worktree index is reachable for copying, or absent so the private file stages empty.",
+    "The knowledge validator is bound in the adopting process; where it is not, adoption refuses."
+  ],
+  "exclusions": [
+    "Unconverted adoptions, which keep the direct stage-and-commit path.",
+    "Files outside the owned interval: only the prepared ignore line is ever given back, never caller or external content."
+  ],
+  "id": "INV-ZCRMS7",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/l44-memory-review-M1/frozen/memory/knowledge/invariants/INV-DZB7MC-an-exception-during-staged-tree-validation.json:32 states \"An exception during staged-tree validation exits a dry run with the staged index still installed.\" In the same object admission.justification calls it a no-touch guarantee and origin.handoff.evidence says private copies are discarded. Frozen memory/baseline.py:330-395 stages a temporary private index, discards it on exit, restores provably owned ignore-file bytes and propagates the named error. Historical fe29f13b operation witnesses show privateDiscarded=true and realIndexUntouchedBeforeValidation=true. models/knowledge_files/records.py:117-129 defines ar-invariant/v1 as one normative guarantee."
+      ],
+      "path": "l44-m1-repair.json"
+    },
+    "handoffEntry": "L44-M1-01",
+    "leaf": "260928-MIK-L44",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "During prepare/stage/validate against a private staging index, a validation exception exits with the real index untouched: staged private content is discarded, owned ignore-file bytes and mode are restored, and the named error propagates.",
+  "status": "proposed",
+  "supersedes": [
+    "INV-DZB7MC"
+  ]
+}

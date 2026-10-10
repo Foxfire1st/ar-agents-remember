@@ -89,6 +89,15 @@ changed.
 
 - The registrar's optional pair, `contractPath` and docstring. [6]
 
+## The Drift And Baseline Descriptions State The Converted Measurement
+
+The `drift_check` and `context_packet` descriptions say the check measures the reference anchors of
+onboarding cards and the validity of the tree — current and stale counts plus the validator's
+refusing findings on converted memory — that currentness of invariants belongs to `knowledge_read`
+and `knowledge_integrity_check`, that a stale reference is reported and never blocks by itself, and
+that nothing is repaired here. The adoption description says `accept_drift` clears stale anchors
+only and the first baseline of a converted tree is validated before it is committed.
+
 ## Knowledge authoring command route
 
 The mounted family has no write or refusal-only change entry. Curator authoring uses knowledge-ingest/knowledge-bootstrap; change and project were removed. [7]

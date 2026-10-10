@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d51e34bf1af86a00f562f7192a6055f039cdd622",
+            "blob": "30cb14732f6d4d548c1ee9550ab342b849d1eb10",
             "content": "sha256:4c0fb7c43778f84379248a5e9c2dcccaf4baf74975385a21d6539f52be823e57",
             "locator": {
               "kind": "symbol",
@@ -24,7 +24,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8535427e164854d7dadb366fd583408b98d5f38b",
+            "blob": "29a3f96c4fa5cc4abbdf34ff8486e4ee5a0c46c1",
             "content": "sha256:a7b8d62e0e29d006112cc35e305ec422f860555869e63ccd668ba43e8f995b9e",
             "locator": {
               "kind": "symbol",
@@ -37,6 +37,22 @@
         {
           "kind": "unresolved",
           "text": "mcp/src/agents_remember/observer/projection.py:1097-1153"
+        }
+      ]
+    },
+    "3": {
+      "note": "Converted stale and violation segments read like their legacy counterparts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9569d88720f6e78045675d93303f7a4752fb92e1",
+            "content": "sha256:ddbaea66f9f0b5cd92a32ca27a92d4447343bf55ec9bd55b91ca55abae6cb0f5",
+            "locator": {
+              "kind": "symbol",
+              "name": "SEG_BG"
+            }
+          },
+          "kind": "code"
         }
       ]
     }

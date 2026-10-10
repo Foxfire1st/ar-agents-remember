@@ -71,7 +71,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e2170cdb4c53e14c97e2189e3b26cbf0cbe7d364",
+            "blob": "c55af2c8c0b8cd2eaef3ef961fc49505b96b823a",
             "content": "sha256:4f888b408f3ea32f96c6d9a7aff94534d8f465c7a1a8fc402108a5a5492e3cfb",
             "locator": {
               "end": 11,
@@ -84,7 +84,7 @@
         },
         {
           "anchor": {
-            "blob": "88ab63c1685825e580ce7dbc3f0c8c6f32f8acbf",
+            "blob": "cf68f5578694021f732b573cc3d613b880c7bfd8",
             "content": "sha256:a4fd9adef884dbb6ec257dea9499d51b7d671e333bf190b352afb44cb58b8b8f",
             "locator": {
               "end": 11,
@@ -153,7 +153,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0f33f584513ad3833a35a818b88f51eaacb54fbc",
+            "blob": "a2e32055df9ed4e20616122a8838f1eea2783fa2",
             "content": "sha256:3ae031cbe65c164de319b55fe1ccefb3ad3edaeade89531a176bdfd304386d44",
             "locator": {
               "kind": "symbol",
@@ -164,7 +164,7 @@
         },
         {
           "anchor": {
-            "blob": "0f33f584513ad3833a35a818b88f51eaacb54fbc",
+            "blob": "a2e32055df9ed4e20616122a8838f1eea2783fa2",
             "content": "sha256:db10d8a1f4b7d55fbed6cf4b0b35165264740ff47ec3d68374d22fe6e297ecdb",
             "locator": {
               "kind": "symbol",
@@ -175,11 +175,27 @@
         },
         {
           "anchor": {
-            "blob": "0f33f584513ad3833a35a818b88f51eaacb54fbc",
+            "blob": "a2e32055df9ed4e20616122a8838f1eea2783fa2",
             "content": "sha256:514fad889468a806ec57d17b62cd9ab44b6ebefa44cbd0699a45ced8dd108303",
             "locator": {
               "kind": "symbol",
               "name": "build_context_packet"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "A leaf drift block compares against the leaf's converted base and agrees with the drift tool.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a2e32055df9ed4e20616122a8838f1eea2783fa2",
+            "content": "sha256:f745faa8f76bfefd6c2f7176bee019bfde535bf578c5852dbf5b590d818e6b64",
+            "locator": {
+              "kind": "symbol",
+              "name": "_leaf_drift_base"
             }
           },
           "kind": "code"

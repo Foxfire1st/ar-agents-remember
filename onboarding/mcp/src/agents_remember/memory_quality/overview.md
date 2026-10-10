@@ -48,6 +48,18 @@ memory tree that holds `knowledge/layout.json`.
 - The drift item of a converted tree is the converted check's result. [77]
 
 
+## Converted Drift Names What It Measured
+
+On a converted tree the drift summary is built from the converted knowledge check and nothing else.
+It reports how many reference anchors of the onboarding cards are current and how many are stale
+against the code, which files the knowledge validator refuses, and the two roots that were read —
+with the sidecar count that says how many sidecars held references and were read. Counts are exact;
+only the samples are bounded. Zero means an empty tree, never an unread one: a tree that cannot be
+read returns an error with the reason and no counts, and an unbuildable comparison base is one
+refusing finding, never a comparison against nothing. The same summary feeds the drift tool, the
+context-packet drift block and both baseline tools, and the Markdown report and the observer
+snapshot are written from that one result. Legacy fields are never invented for a converted card.
+
 ## 260915-CAPS-L20 The Dead Governing Declaration Becomes Visible
 
 This route gained the check that closes `D3`/`D16`'s product gap, and gained it in the same shape as

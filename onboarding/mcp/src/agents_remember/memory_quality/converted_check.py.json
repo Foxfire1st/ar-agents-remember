@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f01c09d92d3d3b023ebfba03adb0a99d6330565f",
+            "blob": "fea0b44c434a69e383fd2504f6950a539d8da851",
             "content": "sha256:ecfbfe33ca6ca959a7089a708440062186d28a630d620ac9ca9e26158918b503",
             "locator": {
               "kind": "symbol",
@@ -18,7 +18,7 @@
         },
         {
           "anchor": {
-            "blob": "f01c09d92d3d3b023ebfba03adb0a99d6330565f",
+            "blob": "fea0b44c434a69e383fd2504f6950a539d8da851",
             "content": "sha256:ea3c1f567d4ea70924548f9d40a0a91e823cd9ab33e727b7749586c934487652",
             "locator": {
               "kind": "symbol",
@@ -34,7 +34,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f01c09d92d3d3b023ebfba03adb0a99d6330565f",
+            "blob": "fea0b44c434a69e383fd2504f6950a539d8da851",
             "content": "sha256:4f4d571509f070b6b194d8cc2e2e4397b1c13948dd9445303efc599732feb22d",
             "locator": {
               "kind": "symbol",
@@ -61,7 +61,7 @@
         },
         {
           "anchor": {
-            "blob": "f01c09d92d3d3b023ebfba03adb0a99d6330565f",
+            "blob": "fea0b44c434a69e383fd2504f6950a539d8da851",
             "content": "sha256:3dab29b02c5d73e27dae4481e9c9b68d3d6972bdf6f99d0b8cd3abf9727361ed",
             "locator": {
               "kind": "symbol",
@@ -111,7 +111,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f01c09d92d3d3b023ebfba03adb0a99d6330565f",
+            "blob": "fea0b44c434a69e383fd2504f6950a539d8da851",
             "content": "sha256:215ec4b99c44aff97b9eb3535f1dba09e2ceb0332d9ba4ba17cd371e9eacc32e",
             "locator": {
               "kind": "symbol",
@@ -122,7 +122,7 @@
         },
         {
           "anchor": {
-            "blob": "f01c09d92d3d3b023ebfba03adb0a99d6330565f",
+            "blob": "fea0b44c434a69e383fd2504f6950a539d8da851",
             "content": "sha256:2ea7090ba8f226dac8a812a416add05ecbe607a0b29ca776b4ae8d61b1231d28",
             "locator": {
               "kind": "symbol",
@@ -140,6 +140,22 @@
           "anchor": {
             "blob": "f01c09d92d3d3b023ebfba03adb0a99d6330565f",
             "content": "sha256:1aad9ad4a07387fb919cf7a7136e828c7187ae9215a1c3e4da28198339c3ad01",
+            "locator": {
+              "kind": "symbol",
+              "name": "converted_knowledge_check"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "An unbuildable base withholds base-dependent refusals; measurable states keep reporting.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fea0b44c434a69e383fd2504f6950a539d8da851",
+            "content": "sha256:f50d3d5405afa140c996968bb535428102504f7cf6fd2890a3a84d6f15ecbf70",
             "locator": {
               "kind": "symbol",
               "name": "converted_knowledge_check"

@@ -33,6 +33,9 @@ the producer now hands over the typed thing rather than a dict:
   at which point the `ValidationError` escaped the `@server.tool()` handler — nothing on this
   path catches one. Constructing the model at the projection puts the checker on the seam
   instead.
+- A leaf context that names an enclosure contract compares against the application-owned converted base
+  for that leaf (`_leaf_drift_base`), so this route agrees with the drift tool on the same candidate and
+  contract; a context without a contract keeps today's semantics with no separate base.
 - `_drift_packet(...)` cit:(["def _drift_packet("], mcp/src/agents_remember/application/context_packet.py:177-177) is typed `-> DriftSummaryPacket`, the `TypedDict` from
   `memory_quality.integrity.onboarding_drift_check.models`, instead of `dict[str, Any]`. Its
   `status` is the producer's `DriftStatus`, whose `error` member — and the matching `error` key —
@@ -110,3 +113,5 @@ The current source seams include `ContextPacketError`, `ContextPacketRequest`, `
 ### Reconciled Source Evidence
 
 - The current module exposes `ContextPacketError`, `ContextPacketRequest`, `build_context_packet` at this ownership boundary. [8]
+
+- A leaf drift block compares against the leaf's converted base and agrees with the drift tool. [9]

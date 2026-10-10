@@ -12,6 +12,10 @@ identify or claim a future commit for these working changes.
 
 Inspects and adopts an existing external-memory onboarding baseline. Adoption creates an attributed
 memory-content commit; the consumer ledger is computed from Git and refreshed as a disposable cache.
+On a converted tree the first baseline is validated before it is made: the adoption stages the
+content on a private index, validates the staged tree with no comparison bases paired with the
+attributed code commit, and records exactly that tree. A refusal, a dry run, or any validation
+exception leaves the index, the refs and every owned file as they were.
 
 ## Code Commentary
 
@@ -46,14 +50,36 @@ created, and it refuses — with the recorded-value name in the message — when
 
 The code source-branch commit is resolved once. The fixed adoption subject is passed through
 `render_memory_content_message`, so the resulting memory commit carries that exact `Code-Commit`
-trailer. Cache preparation adds the ignore rule and removes the cached ledger from the index. Content
-staging excludes the shared memory-content policy rather than one inline name:
+trailer. Content staging excludes the shared memory-content policy rather than one inline name:
 `commit_if_dirty(..., exclude_paths=MEMORY_CONTENT_EXCLUDES)` carries `("memory.md", "bootstrap")` on
 the call that actually stages. That last half is load-bearing and is why the constant is imported
 rather than spelled here: `commit_if_dirty` re-stages the whole worktree, so an exclusion applied to a
-bare `git add` *before* it is inert and `bootstrap/` scaffolding lands in the baseline commit anyway —
-the defect this seam carried until this leaf fixed it. The returned bootstrap contains
-`memoryContentCommit` and best-effort `ledgerCache`, with no ledger-only commit.
+bare `git add` *before* it is inert and `bootstrap/` scaffolding lands in the baseline commit anyway.
+The returned bootstrap contains `memoryContentCommit` and best-effort `ledgerCache`, with no
+ledger-only commit.
+
+Drift is measured with the one shared summary: `run_drift` calls `run_drift_summary` and no longer
+classifies by itself, so the drift block of the baseline tools carries the converted rule-2 fields
+on a converted tree and keeps today's behaviour elsewhere. The memory layer imports nothing from the
+application layer; the optional converted comparison base stays with the application callers that own
+a contract. The converted payload reports three blocking states — `blocked-invalid` while validator
+violations exist, `blocked-drift` while stale anchors exist and drift was not accepted, and
+`unavailable` as before — and `accept_drift` accepts stale anchors only, never a validator violation.
+
+The converted adoption never writes the worktree's own index before validation passes.
+`_private_staging_index` holds a mtime-preserving copy of the worktree index for one interval (an
+absent index stages from an empty private file, exactly as `git add` would; any other copy failure
+refuses loudly with no fallback). `_prepare_stage_validate` runs cache preparation, staging and
+validation against that copy; any exception first restores the prepared `.gitignore` if and only if
+its bytes are provably still ours — a concurrent external edit or an unreadable file is preserved,
+never overwritten — then propagates with its name. A dry run validates and gives everything back;
+a refusal gives the file back and raises `BaselineValidationRefused` with the worktree index
+untouched. Only after validation passes does `_adopt_validated_converted_tree` publish: the commit
+object is built from the immutable validated tree (`commit-tree`), the branch ref moves to it only
+while it still points where validation saw it (expected-old `update-ref`), and the recorded tree is
+verified — so a hook or a concurrent index change cannot smuggle different bytes into the
+publication. The worktree's own index is then brought to the adopted state. Where the validator is
+not bound, the adoption refuses; it never commits unvalidated.
 
 ### Conventions
 
@@ -73,6 +99,11 @@ cache computation, while the shared Git module owns content staging.
 - Repeating adoption with readable attributed history returns `already-adopted` without another commit.
 - **`bootstrap/` is excluded from the baseline commit, not deleted from the worktree.** The exclusion
   must ride the staging call; a bare `git add` before `commit_if_dirty` is inert.
+- **The worktree's own index is never written before validation passes.** Prepare, stage and tree
+  commands of the owned interval address the private copy; only the `.gitignore` file guard is kept,
+  and only while its bytes are provably ours.
+- **`accept_drift` never clears a validator violation.** It accepts stale anchors only; a dry run
+  reports `would-adopt` only when the staged-tree validation would pass.
 
 ### Todos
 
@@ -95,14 +126,8 @@ the current working-candidate behavior; historical entries below retain their or
 
 - Context, drift, and Git-history adoption decisions. [1]
 - Bootstrap branch proof and the one attributed content commit. [2]
-- Cache preparation and refresh are separate from Git commit publication. [3]
-- Shared staging excludes derived paths from the content commit. [4]
 - The existing baseline case checks unborn readiness, one attributed commit, and unavailable-history refusal. [5]
-- Context, drift and Git-history adoption decisions. [6]
-- Bootstrap branch proof from the branch `memory_init` recorded, and the one attributed content commit. [7]
 - The shared memory-content policy the content commit excludes, and the reason the exclusion belongs on the staging call. [8]
-- Shared staging, and the re-stage that makes a bare `git add` exclusion inert. [9]
-- The branch-authority cases this leaf added: adoption follows the recorded branch, and `bootstrap/` never enters the baseline commit. [10]
 - The recorded-default authority this file now follows instead of a literal. [11]
 
 ### Cross-Repo References
@@ -112,3 +137,18 @@ the package-local implementation above. No additional external or sibling-reposi
 source is configured for this file's claims.
 
 No additional configured cross-repository evidence is claimed.
+
+- Drift is measured with the one shared summary; the memory layer classifies nothing by itself. [12]
+- The converted payload carries the rule-2 fields with its three blocking states. [13]
+- The converted gate accepts stale anchors only, never a validator violation. [14]
+- The whole owned interval runs on a private index copy; an exception restores owned bytes, then keeps its name. [15]
+- A dry run, a refusal or an exception leaves the index, the refs and every owned file as they were. [16]
+- Publication records exactly the validated tree; a moved branch refuses instead of publishing past validation. [17]
+- Converted adoption stages, validates with no bases paired with the code commit, and commits exactly that tree. [18]
+
+- Cache preparation and refresh are separate from Git commit publication. [3]
+- Shared staging excludes derived paths from the content commit. [4]
+- Context, drift and Git-history adoption decisions. [6]
+- Bootstrap branch proof from the branch `memory_init` recorded, and the one attributed content commit. [7]
+- Shared staging, and the re-stage that makes a bare `git add` exclusion inert. [9]
+- The branch-authority cases this leaf added: adoption follows the recorded branch, and `bootstrap/` never enters the baseline commit. [10]

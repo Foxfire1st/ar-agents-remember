@@ -16,7 +16,11 @@ Provides the existing memory-facing application tool entry points and leaf-only 
 
 ### Logic
 
-`memory_baseline_status_tool` reports `ok=false` for both `blocked-drift` and `unavailable`.
+`drift_check_tool` binds the application-owned converted base when the call names a contract, so a leaf
+that deleted a file carries that anchor as carried and stale rather than refusing it as newly written;
+without a contract the base is the memory checkout's converted `HEAD`, as the converted check already
+does. `memory_baseline_status_tool` reports `ok=false` for `blocked-drift`, `blocked-invalid` and
+`unavailable`.
 The baseline owner returns `unavailable` when an existing memory HEAD resolves but its Git
 attribution history cannot be read. An unborn repository can remain `ready` under the existing
 drift rules. This adapter preserves the owner's state and details; cache-file availability does
@@ -109,17 +113,12 @@ No configured domain documentation could be checked.
 
 ### Repo-Internal References
 
-- Baseline status reports unsuccessful `ok` for unavailable Git history as well as blocked drift, while preserving the owner's payload. [1]
-- The baseline owner distinguishes unreadable attribution behind a resolvable HEAD from an unborn repository, retaining the existing drift decision. [2]
 - Carryover has one memory subject and forwards it without a ledger-message option. [3]
 - Canonical quality scope is owned by the focused scope module. [4]
 - Typed quality execution and public run translation are owned by the controller. [5]
-- The route-index application entry point forwards resolver-owned authority. [6]
 - The route-index builder. [7]
 - The route-index builder receives storage authority explicitly in its typed signature. [8]
 - The apply entry point that forwards that subject and nothing else. [9]
-- Baseline status reports unsuccessful `ok` for unavailable Git history as well as blocked drift, while preserving the owner's payload. [10]
-- The baseline owner distinguishes unreadable attribution behind a resolvable HEAD from an unborn repository, retaining the existing drift decision. [11]
 - Carryover has one memory subject and forwards it without a ledger-message option. [12]
 - The apply entry point that forwards that subject and nothing else. [13]
 - Canonical quality scope is owned by the focused scope module. [14]
@@ -131,7 +130,6 @@ No configured domain documentation could be checked.
 - The one construction point that carries a caller's excludes into all four citation operations. [20]
 - The scope object the caller's excludes ride with, validated at construction. [21]
 - The refusal rule for a caller exclude that cannot mean anything. [22]
-- **The memory initializer now reports the knowledge foundation beside the memory root it scaffolds (`ICR-R29@v1`).** [23]
 - **The admission whose location this block reports, so the location a curator is told to populate is the one the bootstrap publishes to.** [24]
 - The read that decides the block's state, and the unavailable form its states come from. [25]
 
@@ -202,3 +200,14 @@ this exception to MIK-R24 rule 9 and is linked to the three functions, so a chan
 decision's rejected alternative (lock the three tools like every other write) for reconsideration.
 
 - The three card writers, which ask no cutover lock. [27]
+
+- The drift tool binds the leaf's converted base with a contract, else the checkout HEAD. [30]
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Baseline status reports unsuccessful `ok` for unavailable Git history as well as blocked drift, while preserving the owner's payload. [1] | `memory_baseline_status_tool` | mcp/src/agents_remember/application/memory_tools.py:567-576 |
+| The baseline owner distinguishes unreadable attribution behind a resolvable HEAD from an unborn repository, retaining the existing drift decision. [2] | `ledger_status` | mcp/src/agents_remember/memory/baseline.py:554-565 |
+| The route-index application entry point forwards resolver-owned authority. [6] | `route_index_refresh_tool` | mcp/src/agents_remember/application/memory_tools.py:379-425 |
+| Baseline status reports unsuccessful `ok` for unavailable Git history as well as blocked drift, while preserving the owner's payload. [10] | `memory_baseline_status_tool` | mcp/src/agents_remember/application/memory_tools.py:567-576 |
+| The baseline owner distinguishes unreadable attribution behind a resolvable HEAD from an unborn repository, retaining the existing drift decision. [11] | `baseline_status` | mcp/src/agents_remember/memory/baseline.py:672-677 |
+| **The memory initializer now reports the knowledge foundation beside the memory root it scaffolds (`ICR-R29@v1`).** [23] | `memory_init_tool` | mcp/src/agents_remember/application/memory_tools.py:426-457 |

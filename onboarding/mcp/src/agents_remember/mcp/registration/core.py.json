@@ -75,7 +75,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a1f83e4886bd990a62f2fc29c73bcd23193104b9",
+            "blob": "7f01fac9b7f8a001f3303d6976841dc6d5285b21",
             "content": "sha256:be4afd34f7e5fd22eb8dab45faefdb70380bbb570c111ba62b0fe12c43480078",
             "locator": {
               "kind": "symbol",
@@ -107,11 +107,27 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a1f83e4886bd990a62f2fc29c73bcd23193104b9",
+            "blob": "7f01fac9b7f8a001f3303d6976841dc6d5285b21",
             "content": "sha256:cca1feb13ceb929ec5ac4e7db2b5b7fdbfcc3b989e367e4994129e4830a2eb64",
             "locator": {
               "kind": "symbol",
               "name": "_register_installation_tools"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The packet description states what include_drift measures and that omitting it measures nothing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7f01fac9b7f8a001f3303d6976841dc6d5285b21",
+            "content": "sha256:2e38a53715993680fd000957ce185a57b2c55f0948b2c4c27196bb134cf1fcc1",
+            "locator": {
+              "kind": "symbol",
+              "name": "context_packet"
             }
           },
           "kind": "code"

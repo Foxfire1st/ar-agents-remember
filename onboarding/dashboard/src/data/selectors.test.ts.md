@@ -20,7 +20,9 @@ table of the tasks-surface visibility rule: either existing worktree (code or me
 both-false hides — no cleanup-state input exists in the signature at all. The `selectQueue` tests
 assert the server-computed queue is returned
 when analytics exists, a stable empty queue is returned when it does not, and optimistic
-`suppressedAttentionIds` hide a matching queue row.
+`suppressedAttentionIds` hide a matching queue row. The `driftSegments` cases pin the converted
+snapshot contract: `current`, `stale` and `violation` order with exact shares, and legacy
+classifications keep their place ahead of converted-only names.
 
 ### Conventions
 
@@ -47,8 +49,12 @@ No relevant external documentation applies to these pure selector tests.
 - Tree grouping and wait formatting tests cover the unchanged selector behavior. [2]
 - The selector under test caches and filters attention rows. [3]
 
+
+
 ### Cross-Repo References
 
 No meaningful cross-repo references found.
 
 No meaningful cross-repo references found.
+
+- Converted drift segments order current, stale and violation with exact shares. [4]

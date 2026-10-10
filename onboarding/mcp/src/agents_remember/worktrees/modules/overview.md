@@ -44,7 +44,6 @@ integration routes exactly as before.
 
 - The validator and the mandatory gate over the leaf's exact memory output. [55]
 - The preview answers the refused preview for a leaf the gate refuses. [56]
-- The index made exactly one tree. [57]
 
 
 ## 260928-MIK-L09 Closeout, Record Landing And Integration Ask The Mandatory Invariant Gate
@@ -264,7 +263,6 @@ Current working-candidate evidence for this route:
 
 - External closeout chooses substantive memory output and refreshes the cache afterwards. [29]
 
-- Final memory staging removes and excludes the cache. [30]
 - Carryover completion is actual memory ancestry. [31]
 
 ### Certificate Records And Executor Evidence
@@ -1527,3 +1525,19 @@ best-effort host-archive boundary, and `terminal_cleanup._cleanup_with_guard` /
 `terminal_abandon._abandon_with_guard` are the extracted admitted transactions that archive a leaf's
 recorded agents after terminal admission and before any destructive output. `cleanup.py` and
 `abandon.py` keep their public results and delegate the guarded transaction to those modules.
+
+## Staging Against A Private Index
+
+Staging and tree commands that must not touch the worktree's own index take a private index file:
+`stage_worktree_content` runs every step through `_require_git_with_index` against the file when one
+is passed, and `_require_git_with_index` runs one Git command against it while keeping the failure's
+name. The converted baseline adoption stages, validates and reads the tree on such a copy, so a dry
+run, a refusal or an exception leaves the real index exactly as it was.
+
+- One Git command runs against a private index file; a failure keeps its name. [61]
+- Staging writes a private index file when asked; otherwise the worktree's own index. [62]
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Final memory staging removes and excludes the cache. [30] | `stage_worktree_content` | mcp/src/agents_remember/worktrees/modules/git.py:334-355 |
+| The index made exactly one tree. [57] | `stage_tree` | mcp/src/agents_remember/worktrees/modules/git.py:429-442 |

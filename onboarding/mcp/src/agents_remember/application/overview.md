@@ -1914,6 +1914,11 @@ catches the new typed `BranchAuthorityUnavailable` and answers through
 `_baseline_adopt_refusal` (`:433-459`). The catch is narrow on purpose: the other `RuntimeError`s
 on that path refuse a state the caller must understand and change, and they keep raising.
 
+The drift tool and the context-packet drift block bind the application-owned converted comparison
+base when the call names a leaf contract — a leaf that deleted a file then carries that anchor as
+carried and stale, not as newly written — and the baseline status tool reports the converted
+`blocked-invalid` state beside `blocked-drift` and `unavailable`.
+
 **`T54` — the response's own address.** `tool_response.py::bound_next_step` (`:58-99`) is the only
 thing connecting process-global ambient guidance to the response that carries it, and both of its
 escapes are closed: a response that declares no contract path has its guidance withheld rather

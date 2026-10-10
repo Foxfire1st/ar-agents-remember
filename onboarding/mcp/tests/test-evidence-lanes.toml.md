@@ -63,6 +63,14 @@ The registered public preview module is an integration-lane operation, alongside
 
 New Paseo runtime, bridge, launch, messaging, sandbox and previous-host cases are registered in unit-regression. The real child tool-server, role-handover binding and registered canonical-reader protocol cases are in integration. Shared support modules collect no cases and gain no lane row.
 
+## 260928-MIK-L99 — a leaf's agents hand over to each other
+
+The lane catalog carries the incoming shared evidence-lane content from the L79 sync plus the lanes of the new leaf-handover and retirement-wording test modules.
+
+## 260928-MIK-L93 — a question for the developer goes up the chain
+
+`mcp/tests/test_developer_question_wording.py` is added to the `unit-regression` lane; no other lane changes.
+
 ## 260928-MIK-L114 River Tests Join Unit-Regression
 
 `mcp/tests/test_f07_missing_lock_cursor.py`, `mcp/tests/test_f08_registered_handler_river.py`
@@ -149,14 +157,14 @@ No configured live documentation source was available for this pass.
 
 No cross-repo boundary is crossed by this file.
 
+## 260928-MIK-L96 The host test lanes
+
+The lane catalog maps the new host test modules to their lane so the evidence lanes stay complete for the added cases.
 
 
 
 ## Refreshed current evidence
 
-- The new module joins this lane. [19]
-- The lane catalog with the host module rows. [21]
-- The integration list includes the two reviewer worklist test modules. [240]
 - Dependency-facts store controls belong to architecture fitness. [241]
 - The bounded Python load-independence scanner belongs to architecture fitness. [242]
 
@@ -272,3 +280,12 @@ No cross-repo boundary is crossed by this file.
 - The new lane row, between its alphabetical neighbours. [780]
 - The three new lane rows, each directly below its sibling. [781]
 - The two L37 rows, after the gate-routes row and before the planned-effects row. [782]
+The converted-drift module runs in the `unit-regression` lane, sorted with the other converted-memory cases.
+
+- The converted-drift module belongs to the unit-regression lane. [243]
+
+- The new module joins this lane. [19]
+- The lane catalog with the host module rows. [21]
+- The integration list includes the two reviewer worklist test modules. [240]
+
+The citation table that named rows [19]/[21]/[240] now stands as these dash-lines; the refs are intact.

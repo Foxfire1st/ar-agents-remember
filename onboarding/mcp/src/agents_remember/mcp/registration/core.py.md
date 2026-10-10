@@ -78,7 +78,6 @@ server_info describes optional toolServer and agentBinding of a launched server.
 ### Runtime Source References
 
 - Frozen implementation of _register_identity_tools supporting the stated file behavior. [5]
-- Frozen implementation of _register_orientation_tools supporting the stated file behavior. [6]
 
 ## 260915-CAPS-L9 Experiment Parameter On `runtime_install`
 
@@ -98,3 +97,13 @@ declaration, not a tool.
 The `runtime_install` tool description now states that the step brings the host when the shared settings name one, that a missing block is reported rather than installed, and that the result carries the host part; the tool takes no parameter for the step.
 
 - The installation tools and the runtime_install registration. [7]
+
+The `context_packet` description states that `include_drift` measures the reference anchors of
+onboarding cards and the validity of the tree, with the same stale/current/non-repair doctrine as the
+drift tool, and that omitting it measures nothing.
+
+- The packet description states what include_drift measures and that omitting it measures nothing. [8]
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Frozen implementation of _register_orientation_tools supporting the stated file behavior. [6] | `_register_orientation_tools` | mcp/src/agents_remember/mcp/registration/core.py:55-148 |

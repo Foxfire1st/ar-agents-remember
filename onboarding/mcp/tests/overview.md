@@ -101,6 +101,10 @@ governed support module or fixture also needs its own `[[artifact]]` row, which 
 this route that is not a test module is governed and needs such a row, and so do the data files
 that the catalog's card names.
 
+The converted-drift module (`test_converted_onboarding_drift.py`, one test per packet rule) rides
+the same registration: one lane line in `unit-regression` and consumer lines wherever the lifecycle
+catalog supports it.
+
 **Canonical form and merging.** Both catalogs are kept in one canonical form: contract rows ordered
 by `id`, artifact rows by `path`, every list ascending, without duplicates and with one path per
 line. Both loaders refuse a catalog that is not in it and name the command. Git merges both
@@ -165,6 +169,14 @@ span several modules; the card of a module, where it has one, states what its ca
 | The public tool surface and its refusals | `test_tools.py`, `test_tool_refusal_conformance.py` |
 | The test suite's own rails: lanes, budgets, bootstrap, file size, layering | `test_evidence_lanes.py`, `test_suite_budget.py`, `test_pytest_bootstrap_boundaries.py`, `test_file_size_detector.py`, `test_layering.py` |
 
+## 260928-MIK-L99 — a leaf's agents hand over to each other
+
+The suite gained the leaf-handover tests (`test_leaf_handover.py`, `test_leaf_handover_review_rounds.py`), the retirement-wording guard test (`test_leaf_retirement_wording.py`) and the wording-guard rework in `test_role_instruction_wording.py`. The new modules have their own cards, and have their own cards.
+
+## 260928-MIK-L93 — a question for the developer goes up the chain
+
+The new `test_developer_question_wording.py` joins the unit-regression lane: it requires the parent channel, recovery and answer provenance in every parentable role and the three operations, the starter roles' relay and permission-notice duties, the leaf ownerRelation peer routes, and the independent detection of each exact retired directive. `test_role_instruction_wording.py` now compiles the parent condition for all six parentable roles and the renamed ownerRelation test; the two evidence catalogs list the new module.
+
 
 
 ## Master Retirement, Finalization And Abandoned-Row Cases
@@ -209,6 +221,15 @@ that a repeated archive-hook attempt keeps its receipts. The test catalog files 
 - The lane loader refuses a test file without a lane and a lane list that is not canonical. [26]
 - The lifecycle loader refuses a catalog that is not canonical or does not agree with the source tree. [24]
 
+## 260928-MIK-L96 The host test population
+
+The tests route gained seven host modules (install contract, install no-stop, Node, start, dashboard host, release contract, host environment) plus additions to the existing sandbox and Paseo tests; the lane and lifecycle catalogs were extended for them.
+
+- The install-contract module. \[27] [1701]
+- The no-stop module. \[28] [1702]
+- The node module. \[29] [1703]
+
+The curator-authoring lane row for test_curator_scope.py, test_curator_realization_authoring.py and test_curator_family_authoring.py is gone with its modules under the catalog rewrite rule (rows whose owner and evidence files are both gone are removed); no replacement row names them.
 
 ## Closed-leaf agent archive suite (MIK-R76)
 

@@ -28,6 +28,13 @@ run's converted check reports the same states.
   anchor without one). Every non-current target is returned as a **report-only** finding
   `knowledge.references.stale`, naming the onboarding gate (MIK-R30) as the refresh route. The result is
   `ok` with `findingCount: 0`, and the counts are by state.
+- Only sidecars that actually hold references are counted or observed: a sidecar with an empty
+  references map holds nothing to observe, so it is neither read nor unreadable here (the fixer still
+  visits it to author references). A sidecar whose references name only non-code targets is counted
+  while its anchors stay out of the observed code/test counts, and a sidecar whose references cannot
+  be read as targets is named in `unreadableSidecars` and excluded from every count. The result
+  carries `sidecarCount` alongside `states` and `unreadableSidecars`, so zero means an empty tree,
+  never an unread one.
 - `fix_references(memory_root, code_root, *, dry_run)` re-records only **mechanical** moves
   (`_refreshed`, `_refresh_document`):
   - an anchor whose located content is unchanged but whose blob moved gets the new blob;
@@ -80,16 +87,15 @@ The format test, the anchor states, the check and the fixer.
 - The located bytes of a file, symbol or range locator. [2]
 - An anchor's state in the working tree. [3]
 
-- Stale references are report-only findings naming the onboarding gate. [4]
 - Only mechanical moves are re-recorded; a range is re-found only when its bytes occur exactly once. [5]
 
 - References are checked, and only mechanical moves are fixed. [6]
 
 - The fixer can be scoped to one sidecar, and names unreadable sidecars. [7]
 
-- A sidecar that is not valid JSON is named and skipped. [8]
 
-- The reference check scoped to one sidecar. [9]
+
+- Only sidecars holding references are counted or observed; empty maps are skipped, malformed ones unreadable. [11]
 - One document's fix lists its own stale references. [10]
 
 ### Cross-Repo References
@@ -97,3 +103,9 @@ The format test, the anchor states, the check and the fixer.
 No meaningful cross-repo references found: the file reads and writes only the memory and code repositories its caller names.
 
 No cross-repo boundary is crossed by this file.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Stale references are report-only findings naming the onboarding gate. [4] | `check_references` | mcp/src/agents_remember/memory_quality/reference_state.py:145-192 |
+| A sidecar that is not valid JSON is named and skipped. [8] | `_sidecars` | mcp/src/agents_remember/memory_quality/reference_state.py:107-133 |
+| The reference check scoped to one sidecar. [9] | `check_references` | mcp/src/agents_remember/memory_quality/reference_state.py:145-192 |

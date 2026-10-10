@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "7b0e0cf051f1af1ab86b6c19ab4289849110df85",
-        "content": "sha256:7a231597db49f78ca1a9edfcf838bbd74e6aa9dfda7401fdb613fb0825448cf1",
+        "blob": "7a62e25249db9a1da4bcc623e29b4af7faaf91e9",
+        "content": "sha256:c391838ec9de06b1a7883cda8aad7a7051b54b8ad0e80bfa8c1359001fe9de53",
         "locator": {
           "kind": "symbol",
           "name": "ignore_memory_cache"
@@ -18,6 +18,42 @@
       },
       "rationale": "Is the one write the cache preparation makes to memory content, split out so that the closeout records the ignore rule before it judges the tree.",
       "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "7a62e25249db9a1da4bcc623e29b4af7faaf91e9",
+        "content": "sha256:5893805cb01008e3ddc3e197d8f95acc2686af8fd50333197501ed7aaa9d213d",
+        "locator": {
+          "kind": "symbol",
+          "name": "prepare_memory_cache"
+        }
+      },
+      "id": "RLZ-929JJ1",
+      "invariant": "INV-ZCRMS7",
+      "origin": {
+        "handoffEntry": "L44-M1-01",
+        "leaf": "260928-MIK-L44"
+      },
+      "rationale": "Performs the cache exclusion against the private index file when asked and returns the prepared ignore bytes, so the refusing route can tell its own change apart from a concurrent edit.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "7a62e25249db9a1da4bcc623e29b4af7faaf91e9",
+        "content": "sha256:5893805cb01008e3ddc3e197d8f95acc2686af8fd50333197501ed7aaa9d213d",
+        "locator": {
+          "kind": "symbol",
+          "name": "prepare_memory_cache"
+        }
+      },
+      "id": "RLZ-F8FPNC",
+      "invariant": "INV-DZB7MC",
+      "origin": {
+        "handoffEntry": "L44-C1-03",
+        "leaf": "260928-MIK-L44"
+      },
+      "rationale": "Performs the cache exclusion against the private index file when asked and returns the prepared ignore bytes, so the refusing route can tell its own change apart from a concurrent edit.",
+      "role": "support"
     }
   ],
   "references": {
@@ -26,11 +62,27 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7b0e0cf051f1af1ab86b6c19ab4289849110df85",
+            "blob": "7a62e25249db9a1da4bcc623e29b4af7faaf91e9",
             "content": "sha256:3ce2dafbfeb64e05c0e9d47e4ff9e69d06c53c8adc7ffbac6089f73b70f7d392",
             "locator": {
               "kind": "symbol",
               "name": "discard_memory_cache_changes"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The ignore rule is the one content write, and its exact bytes are returned.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7a62e25249db9a1da4bcc623e29b4af7faaf91e9",
+            "content": "sha256:c391838ec9de06b1a7883cda8aad7a7051b54b8ad0e80bfa8c1359001fe9de53",
+            "locator": {
+              "kind": "symbol",
+              "name": "ignore_memory_cache"
             }
           },
           "kind": "code"
@@ -42,7 +94,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7b0e0cf051f1af1ab86b6c19ab4289849110df85",
+            "blob": "7a62e25249db9a1da4bcc623e29b4af7faaf91e9",
             "content": "sha256:ea1d987c140051b594ad30280582128ace4e4fb085a34d95d14fc369a5a66131",
             "locator": {
               "kind": "symbol",
@@ -58,22 +110,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7b0e0cf051f1af1ab86b6c19ab4289849110df85",
-            "content": "sha256:ef5f9203cdfcd0b246fdc721c537d4ebbbafbe3df375707ffca280ff74512204",
+            "blob": "7a62e25249db9a1da4bcc623e29b4af7faaf91e9",
+            "content": "sha256:5893805cb01008e3ddc3e197d8f95acc2686af8fd50333197501ed7aaa9d213d",
             "locator": {
               "kind": "symbol",
               "name": "prepare_memory_cache"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "7b0e0cf051f1af1ab86b6c19ab4289849110df85",
-            "content": "sha256:5a0c8c8d38f12b2a398e74c1a64f73ee81bb882375a5dcb2200c28c603c7f6fe",
-            "locator": {
-              "kind": "symbol",
-              "name": "refresh_memory_cache"
             }
           },
           "kind": "code"
@@ -161,8 +202,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7b0e0cf051f1af1ab86b6c19ab4289849110df85",
-            "content": "sha256:7a231597db49f78ca1a9edfcf838bbd74e6aa9dfda7401fdb613fb0825448cf1",
+            "blob": "7a62e25249db9a1da4bcc623e29b4af7faaf91e9",
+            "content": "sha256:c391838ec9de06b1a7883cda8aad7a7051b54b8ad0e80bfa8c1359001fe9de53",
             "locator": {
               "kind": "symbol",
               "name": "ignore_memory_cache"
@@ -177,8 +218,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7b0e0cf051f1af1ab86b6c19ab4289849110df85",
-            "content": "sha256:ef5f9203cdfcd0b246fdc721c537d4ebbbafbe3df375707ffca280ff74512204",
+            "blob": "7a62e25249db9a1da4bcc623e29b4af7faaf91e9",
+            "content": "sha256:5893805cb01008e3ddc3e197d8f95acc2686af8fd50333197501ed7aaa9d213d",
+            "locator": {
+              "kind": "symbol",
+              "name": "prepare_memory_cache"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Preparation writes a private index file when asked, and returns the prepared ignore bytes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7a62e25249db9a1da4bcc623e29b4af7faaf91e9",
+            "content": "sha256:5893805cb01008e3ddc3e197d8f95acc2686af8fd50333197501ed7aaa9d213d",
             "locator": {
               "kind": "symbol",
               "name": "prepare_memory_cache"

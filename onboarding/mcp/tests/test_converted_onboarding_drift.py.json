@@ -1,0 +1,353 @@
+{
+  "path": "mcp/tests/test_converted_onboarding_drift.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "2823c2a98efd70f5aa57ed2cd5c0a0f6bfb7dce2",
+        "content": "sha256:1da8a37a64f8c13baa0ed7da7d88dad7b9051ae001f057fbd1701db9866c6b35",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_success_brings_real_index_to_adopted_state"
+        }
+      },
+      "facet": "After validation passes the worktree index is brought to the adopted state.",
+      "id": "PRF-0PX548",
+      "invariant": "INV-DZB7MC",
+      "origin": {
+        "handoffEntry": "L44-C1-03",
+        "leaf": "260928-MIK-L44"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "2823c2a98efd70f5aa57ed2cd5c0a0f6bfb7dce2",
+        "content": "sha256:4242b9e90dcea8a8b9296bd8690396c571687b7122e72aaf66dce4ec7a45d238",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_interval_failure_leaves_everything_untouched"
+        }
+      },
+      "facet": "A staged refusal with entry intent-to-add, untracked symlink and concurrent edit leaves real index bytes, stage lines and flags exact while keeping the refusal name.",
+      "id": "PRF-3VH3K8",
+      "invariant": "INV-ZCRMS7",
+      "origin": {
+        "handoffEntry": "L44-M1-01",
+        "leaf": "260928-MIK-L44"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "2823c2a98efd70f5aa57ed2cd5c0a0f6bfb7dce2",
+        "content": "sha256:f1c9094359d52da8507780a1ef2df4e7f4b5aae99c82b08f2f515edf9a86941f",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_dry_run_and_refusal_change_nothing"
+        }
+      },
+      "facet": "Dry-run and real-adoption validation failures restore owned ignore bytes and mode with the worktree index untouched.",
+      "id": "PRF-4FMCYG",
+      "invariant": "INV-ZCRMS7",
+      "origin": {
+        "handoffEntry": "L44-M1-01",
+        "leaf": "260928-MIK-L44"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "2823c2a98efd70f5aa57ed2cd5c0a0f6bfb7dce2",
+        "content": "sha256:1da8a37a64f8c13baa0ed7da7d88dad7b9051ae001f057fbd1701db9866c6b35",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_success_brings_real_index_to_adopted_state"
+        }
+      },
+      "facet": "After validation passes the worktree index is brought to the adopted state.",
+      "id": "PRF-4MPNST",
+      "invariant": "INV-ZCRMS7",
+      "origin": {
+        "handoffEntry": "L44-M1-01",
+        "leaf": "260928-MIK-L44"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "2823c2a98efd70f5aa57ed2cd5c0a0f6bfb7dce2",
+        "content": "sha256:92655406773531aad3b3b930c3249c3c147168ad09848d0612459893b72f3800",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_first_baseline_commits_exactly_the_validated_tree"
+        }
+      },
+      "facet": "Only the validated tree is published: commit-tree object, expected-old ref move, recorded-tree verification.",
+      "id": "PRF-55071H",
+      "invariant": "INV-ZCRMS7",
+      "origin": {
+        "handoffEntry": "L44-M1-01",
+        "leaf": "260928-MIK-L44"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "2823c2a98efd70f5aa57ed2cd5c0a0f6bfb7dce2",
+        "content": "sha256:4242b9e90dcea8a8b9296bd8690396c571687b7122e72aaf66dce4ec7a45d238",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_interval_failure_leaves_everything_untouched"
+        }
+      },
+      "facet": "A staged refusal with entry intent-to-add, untracked symlink and concurrent edit leaves real index bytes, stage lines and flags exact while keeping the refusal name.",
+      "id": "PRF-6QG6ZY",
+      "invariant": "INV-DZB7MC",
+      "origin": {
+        "handoffEntry": "L44-C1-03",
+        "leaf": "260928-MIK-L44"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "2823c2a98efd70f5aa57ed2cd5c0a0f6bfb7dce2",
+        "content": "sha256:92655406773531aad3b3b930c3249c3c147168ad09848d0612459893b72f3800",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_first_baseline_commits_exactly_the_validated_tree"
+        }
+      },
+      "facet": "Only the validated tree is published: commit-tree object, expected-old ref move, recorded-tree verification.",
+      "id": "PRF-CRZ8GQ",
+      "invariant": "INV-DZB7MC",
+      "origin": {
+        "handoffEntry": "L44-C1-03",
+        "leaf": "260928-MIK-L44"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "2823c2a98efd70f5aa57ed2cd5c0a0f6bfb7dce2",
+        "content": "sha256:f1c9094359d52da8507780a1ef2df4e7f4b5aae99c82b08f2f515edf9a86941f",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_dry_run_and_refusal_change_nothing"
+        }
+      },
+      "facet": "Dry-run and real-adoption validation failures restore owned ignore bytes and mode with the worktree index untouched.",
+      "id": "PRF-DGHCAC",
+      "invariant": "INV-DZB7MC",
+      "origin": {
+        "handoffEntry": "L44-C1-03",
+        "leaf": "260928-MIK-L44"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Converted trees take the converted branch and skip legacy discovery.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2823c2a98efd70f5aa57ed2cd5c0a0f6bfb7dce2",
+            "content": "sha256:b3e4d895081bcc24c58ccc40960f643a154bfbee2a20ef3ccd310ba37b945536",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_converted_trees_take_the_converted_branch_and_skip_legacy_discovery"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "A dry run and a refusal change nothing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2823c2a98efd70f5aa57ed2cd5c0a0f6bfb7dce2",
+            "content": "sha256:f1c9094359d52da8507780a1ef2df4e7f4b5aae99c82b08f2f515edf9a86941f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_dry_run_and_refusal_change_nothing"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "Every named surface states what the check is, and the generated copies match.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2823c2a98efd70f5aa57ed2cd5c0a0f6bfb7dce2",
+            "content": "sha256:fc130444d7e0652185b5e1ef0c4a8ca20c0b63b0b3142780efa229a2666cb0f0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_descriptions_say_what_the_check_is"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "The context-packet leaf route binds the leaf base.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2823c2a98efd70f5aa57ed2cd5c0a0f6bfb7dce2",
+            "content": "sha256:5e1b5a56ef6d3f728b956cdbc85c4b007ee88c03ad62e5533477fa9ba4d917a7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_context_packet_leaf_route_binds_the_leaf_base"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "An interval failure leaves everything untouched.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2823c2a98efd70f5aa57ed2cd5c0a0f6bfb7dce2",
+            "content": "sha256:4242b9e90dcea8a8b9296bd8690396c571687b7122e72aaf66dce4ec7a45d238",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_interval_failure_leaves_everything_untouched"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The converted result names every measured field.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2823c2a98efd70f5aa57ed2cd5c0a0f6bfb7dce2",
+            "content": "sha256:357bb9b93290a1cb0bde44751616dd7f8a6d430a33ed543f937aba5e8ee87fd3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_converted_result_names_every_measured_field"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Empty, missing and unbuildable-base trees report truthfully, never as checked-zero.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2823c2a98efd70f5aa57ed2cd5c0a0f6bfb7dce2",
+            "content": "sha256:a5696e7277cd70460b050fb81f7582c6c7589c2496247ed3d81711e21a93ba8d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_empty_missing_and_unbuildable_base_trees"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "A carried anchor is reported stale, never refused as newly written.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2823c2a98efd70f5aa57ed2cd5c0a0f6bfb7dce2",
+            "content": "sha256:efd184ce9dcb8b02d916924b73c5241a7aadb255c5c89db4ea233bd27b5541a9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_carried_anchor_is_reported_stale_never_refused_as_new"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The three consumers return one answer from the same summary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2823c2a98efd70f5aa57ed2cd5c0a0f6bfb7dce2",
+            "content": "sha256:c5a7c2278c25b95309936233fabd5dac86680cb849180d245318d86be3ebabd1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_three_consumers_return_one_answer"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Report and snapshot come from the same measured result.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2823c2a98efd70f5aa57ed2cd5c0a0f6bfb7dce2",
+            "content": "sha256:c235349b2af6acc4887d5b64ef297c09455140bbee53eadfe03d74a0a0b0cb9e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_report_and_snapshot_come_from_the_same_result"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Converted baseline states block on violations first, then on unaccepted drift.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2823c2a98efd70f5aa57ed2cd5c0a0f6bfb7dce2",
+            "content": "sha256:90d65886325c64e8fde792c4ae767b2cc27db43b1b423f26a7be5a48fd39c762",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_baseline_states_for_converted_trees"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Accepting drift never clears a validator violation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2823c2a98efd70f5aa57ed2cd5c0a0f6bfb7dce2",
+            "content": "sha256:a79590b9f9f9d4a3e84993c8792b1a059c852cfd8c9459aebeb0ccaa16a75225",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_accept_drift_never_clears_a_validator_violation"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The first baseline commits exactly the validated tree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2823c2a98efd70f5aa57ed2cd5c0a0f6bfb7dce2",
+            "content": "sha256:92655406773531aad3b3b930c3249c3c147168ad09848d0612459893b72f3800",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_first_baseline_commits_exactly_the_validated_tree"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

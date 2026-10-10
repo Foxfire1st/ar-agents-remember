@@ -1,0 +1,579 @@
+{
+  "closed": true,
+  "leaf": "260928-MIK-L44",
+  "rows": [
+    {
+      "disposition": "no_impact",
+      "id": "ROW-12ZX7W",
+      "items": [
+        "sha256:83d24c62c9def443c683a3adac3bbde2d41f5d4df43eeea9964cd6f6f9fe90ad"
+      ],
+      "reason": "Generated harness copy: the harness sync regenerates it from the canonical skill source, which with this leaf’s history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.pi/skills/c-02-memory-quality-control/SKILL.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-1D23QT",
+      "items": [
+        "sha256:1caead35e41293b59dd27fcc6b9bfe5b6dbefec29afcbff8e6d5d2f83de50c1f",
+        "sha256:25898ce0d893e8304b537805bac6cdd838901ae671cf06a57f813eaf02ca3150",
+        "sha256:67dddd052c447ed3ed2fc206d48b09328e65c58c565c3ae3b6854a36b08f49e1",
+        "sha256:ce4008c0c4197d0e155813209918bdb525c05e0e8bfba14ea47696a3d98688a2"
+      ],
+      "reason": "Generated harness copy: the harness sync regenerates it from the canonical skill source, which with this leaf’s history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.cursor/skills/c-10-adopt-memory-baseline/SKILL.md"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "f10f508c9cbeadef7f1983c4e81f8ecfe9410256",
+            "content": "sha256:85a9805f569f646611dbd63f93364f8d2a44351f6f39e6eb87c273d5586cb4d9",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/git.py"
+          },
+          "before": {
+            "blob": "ca3f003e5ddefb98b80aea04bce900f75eb2067a",
+            "content": "sha256:025ca35b468cba9986485d10f1c25f5004309d3a27e812317e8561cddc33be00",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/git.py"
+          },
+          "id": "RLZ-3T98VE"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-1RXY5T",
+      "items": [
+        "sha256:52fd04d9357cb094c1e4816bafc6a363535035f9973caf9c046000df0bec69db"
+      ],
+      "reason": "L44 changes worktrees/modules/git.py (private-index staging runner); the whole-file realization re-anchors at the current candidate, record meaning unchanged.",
+      "revision": 1,
+      "subject": "INV-5FC4T6"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-2G56QF",
+      "items": [
+        "sha256:9e73335d58204cd02f7be4752d209f7492f1c584b2c24764c863f114d2c42b8e"
+      ],
+      "reason": "Selector/suite changes are card-level (selectors.ts, selectors.test.ts carry their own counted changes); the data route meaning is unchanged.",
+      "subject": "onboarding:dashboard/src/data/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-3PXY9J",
+      "items": [
+        "sha256:8ce7606747ebb460f6e47a8764cd6c2630742473f3bc77cbe9fcc501ce6771b1",
+        "sha256:afb2400ada2bc830eb82af12b2eba15fba21f19f617c368e497b7f5806b002bf",
+        "sha256:ceee2a2adab76758e90ef5881a86eb31972131983c3638a272fce9d13806c1a3",
+        "sha256:ebad014fb6a0ef68948ebc2b8e2821c7c5e85bb986cbb94ce51fb3b0d02fd221"
+      ],
+      "reason": "Generated harness copy: the harness sync regenerates it from the canonical skill source, which with this leaf’s history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.claude/skills/c-10-adopt-memory-baseline/SKILL.md"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-77ERF2",
+      "items": [
+        "sha256:6a224cae6b5b45e4d1fbee7ed229e55c8efc1263e99e477042caf9965f28dafc"
+      ],
+      "reason": "Lane-inventory line registering the converted-drift module in unit-regression. The module behavior is covered by its test card and proofs; the catalog line states no separate obligation beyond the inventory the canonical-form loader enforces.",
+      "subject": "hunk:sha256:6a224cae6b5b45e4d1fbee7ed229e55c8efc1263e99e477042caf9965f28dafc"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-7SCBRE",
+      "items": [
+        "sha256:8e2f1ea4460d33d2c9ef2812e1f63d1232a639134e41709f44774bb2e34ea9e7"
+      ],
+      "reason": "Generated harness copy: the harness sync regenerates it from the canonical skill source, which with this leaf’s history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.hermes/skills/c-02-memory-quality-control/SKILL.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-8DSYQ7",
+      "items": [
+        "sha256:7bb2c49d0385aceb47591cb3730c1ba977172a2d6c7abadd97a16180436997bd",
+        "sha256:a13a3751d9e14368dba62f56b3c971400c88fd0da00b14ccac5700cab9e10e5d",
+        "sha256:b78710b7fff04b2d50deff334373efe080a96cdee1f2d6c1f4693c439d9edec4",
+        "sha256:c665a60e3c0ca8a93b6d87ff4f13de3764feefc00d02920f7bd64c863482f970"
+      ],
+      "reason": "Canonical rule-8 wording required by MIK-R44@v2: states the anchor measurement, the non-blocking stale rule and the no-repair boundary. The wording is packet-determined prose with no code contract of its own; its meaning is carried by the requirement clause and the private-staging decision of this leaf.",
+      "subject": "onboarding:skills/c-10-adopt-memory-baseline/SKILL.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-AP51F4",
+      "items": [
+        "sha256:03ef20ff176a5ad75a6ed78a865f8659d42a064bc3495739986e18d25f3e615b",
+        "sha256:2077ddc0b7ae41b5ce96ab93b2ede58db4311cb3b6a0ed9c4ca2e28b64ecc21d",
+        "sha256:281356daa229fa001ed04cd69a00a4a17cae84db58517e77309bf5e1ad98c753",
+        "sha256:6b683c80feb66a3c153b10e0b7f76656965bccdb2026a93cb0843904526aff8a"
+      ],
+      "reason": "Generated harness copy: the harness sync regenerates it from the canonical skill source, which with this leaf’s history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.agents/skills/c-10-adopt-memory-baseline/SKILL.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-E885VN",
+      "items": [
+        "sha256:8a48ca29fa7127ed94592138468cb9c91a5225d1cfa9f13e63746557ea4597f9"
+      ],
+      "reason": "Generated harness copy: the harness sync regenerates it from the canonical skill source, which with this leaf’s history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.github-vscode/skills/c-02-memory-quality-control/SKILL.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-E9TT0E",
+      "items": [
+        "sha256:d339c8ac12b2acd4eab780a88a14602abd7fca176261266e8af6a150bf5f8511"
+      ],
+      "reason": "Generated harness copy: the harness sync regenerates it from the canonical skill source, which with this leaf’s history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.codex/skills/c-02-memory-quality-control/SKILL.md"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "43c3ce60b302f5e61445491c0fe97a0fd7d84a69",
+            "content": "sha256:134f8d0daa116b1c0896411dacc6e423ee88b9738675913d670b364cf0aeadfe",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_file_rewritten_while_the_gate_runs_is_never_committed_unjudged"
+            },
+            "path": "mcp/tests/test_knowledge_reopen.py"
+          },
+          "before": {
+            "blob": "43c3ce60b302f5e61445491c0fe97a0fd7d84a69",
+            "content": "sha256:134f8d0daa116b1c0896411dacc6e423ee88b9738675913d670b364cf0aeadfe",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_file_rewritten_while_the_gate_runs_is_never_committed_unjudged"
+            },
+            "path": "mcp/tests/test_knowledge_reopen.py"
+          },
+          "id": "PRF-5DW4E9"
+        },
+        {
+          "after": {
+            "blob": "7a62e25249db9a1da4bcc623e29b4af7faaf91e9",
+            "content": "sha256:c391838ec9de06b1a7883cda8aad7a7051b54b8ad0e80bfa8c1359001fe9de53",
+            "locator": {
+              "kind": "symbol",
+              "name": "ignore_memory_cache"
+            },
+            "path": "mcp/src/agents_remember/kernel/memory_cache.py"
+          },
+          "before": {
+            "blob": "7b0e0cf051f1af1ab86b6c19ab4289849110df85",
+            "content": "sha256:7a231597db49f78ca1a9edfcf838bbd74e6aa9dfda7401fdb613fb0825448cf1",
+            "locator": {
+              "kind": "symbol",
+              "name": "ignore_memory_cache"
+            },
+            "path": "mcp/src/agents_remember/kernel/memory_cache.py"
+          },
+          "id": "RLZ-1TR608"
+        },
+        {
+          "after": {
+            "blob": "5b2a4ae3f3757a7c03f71c2afdd2082c5bf38392",
+            "content": "sha256:8b005244c058f89a5173a0a1d8c6a01fcba28076d5dd37dc456d66ade779e9e5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_exact_memory_tree"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "before": {
+            "blob": "5b2a4ae3f3757a7c03f71c2afdd2082c5bf38392",
+            "content": "sha256:8b005244c058f89a5173a0a1d8c6a01fcba28076d5dd37dc456d66ade779e9e5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_exact_memory_tree"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "id": "RLZ-FJ0671"
+        },
+        {
+          "after": {
+            "blob": "5b2a4ae3f3757a7c03f71c2afdd2082c5bf38392",
+            "content": "sha256:c7bbb91f8ab877928b918ed5abff23ca3ab64f391f0c1a94b5f90de643a24563",
+            "locator": {
+              "kind": "symbol",
+              "name": "_commit_memory_content"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "before": {
+            "blob": "5b2a4ae3f3757a7c03f71c2afdd2082c5bf38392",
+            "content": "sha256:c7bbb91f8ab877928b918ed5abff23ca3ab64f391f0c1a94b5f90de643a24563",
+            "locator": {
+              "kind": "symbol",
+              "name": "_commit_memory_content"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "id": "RLZ-K4M788"
+        },
+        {
+          "after": {
+            "blob": "5b2a4ae3f3757a7c03f71c2afdd2082c5bf38392",
+            "content": "sha256:de0378335937c87f8c461adc352207ef562d860dc1e63f6cbafa60e6f76dcaf4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_judged_tree"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "before": {
+            "blob": "5b2a4ae3f3757a7c03f71c2afdd2082c5bf38392",
+            "content": "sha256:de0378335937c87f8c461adc352207ef562d860dc1e63f6cbafa60e6f76dcaf4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_judged_tree"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "id": "RLZ-M2XFSX"
+        },
+        {
+          "after": {
+            "blob": "f10f508c9cbeadef7f1983c4e81f8ecfe9410256",
+            "content": "sha256:b97684cc2ac76c4fccebf4b9798b3174f988a5b6ff37fa0aa659ddeafa089b67",
+            "locator": {
+              "kind": "symbol",
+              "name": "stage_tree"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/git.py"
+          },
+          "before": {
+            "blob": "ca3f003e5ddefb98b80aea04bce900f75eb2067a",
+            "content": "sha256:b97684cc2ac76c4fccebf4b9798b3174f988a5b6ff37fa0aa659ddeafa089b67",
+            "locator": {
+              "kind": "symbol",
+              "name": "stage_tree"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/git.py"
+          },
+          "id": "RLZ-V3EGC6"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-EH53S7",
+      "items": [
+        "sha256:cf4df8175c11f6bfa3c5daffa7364cf9e7e550ec3041dd440dd7b5dbfcae2eb7"
+      ],
+      "reason": "L44 changes kernel/memory_cache.py (private-index prepare/cache exclusion, prepared-bytes return) and carries a git.py realization; the record meaning is unchanged and its entries re-anchor at the current candidate.",
+      "revision": 2,
+      "subject": "INV-49E649"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-G6STNM",
+      "items": [
+        "sha256:8bb8433cbee4723f6da176ad708ad6df883b1ee56682b9746d527ead55cdeca3"
+      ],
+      "reason": "Canonical rule-8 wording required by MIK-R44@v2: states the anchor measurement, the non-blocking stale rule and the no-repair boundary. The wording is packet-determined prose with no code contract of its own; its meaning is carried by the requirement clause and the private-staging decision of this leaf.",
+      "subject": "onboarding:skills/c-02-memory-quality-control/SKILL.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-GFGMXR",
+      "items": [
+        "sha256:07ef042d70507e5f1c0a41c5a907a6cefca90d47f3fafe7288df1388f437fdae"
+      ],
+      "reason": "Generated harness copy: the harness sync regenerates it from the canonical skill source, which with this leaf’s history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.claude/skills/c-02-memory-quality-control/SKILL.md"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "72e3b28c42115f858a0c87cc7053a3f795ad058e",
+            "content": "sha256:07e1d25c2fbf733c400603653933ef745bb9da70f780c617599415973015da27",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "da4f05ca7e197f7eeeb08f1dec4233719bf8878c",
+            "content": "sha256:2f00c832cd760bdb0b424facb0f882c7dcb2a65f48245bb9dc6d0b9f763cb702",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-GRTJG0"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-GNZMSC",
+      "items": [
+        "sha256:d1675faab54728bf457f8341182da9aeda4032c126db3b99a4ba5ad7f4ee3ba6"
+      ],
+      "reason": "L44 registers the converted-drift module in evidence-lifecycle.toml; the whole-file realization re-anchors at the current candidate, record meaning unchanged.",
+      "revision": 1,
+      "subject": "INV-MSCRAN"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-0T84PZ",
+          "revision": 1
+        },
+        {
+          "id": "INV-0XMNQZ",
+          "revision": 1
+        },
+        {
+          "id": "INV-2Q8RPR",
+          "revision": 1
+        },
+        {
+          "id": "INV-49E649",
+          "revision": 2
+        },
+        {
+          "id": "INV-656CYW",
+          "revision": 2
+        },
+        {
+          "id": "INV-89A5AN",
+          "revision": 1
+        },
+        {
+          "id": "INV-9ZBTVA",
+          "revision": 1
+        },
+        {
+          "id": "INV-ANKPPE",
+          "revision": 1
+        },
+        {
+          "id": "INV-BEYEV2",
+          "revision": 1
+        },
+        {
+          "id": "INV-D2HZQ8",
+          "revision": 1
+        },
+        {
+          "id": "INV-FYZQK0",
+          "revision": 1
+        },
+        {
+          "id": "INV-G0Y4VR",
+          "revision": 1
+        },
+        {
+          "id": "INV-GSEMMW",
+          "revision": 1
+        },
+        {
+          "id": "INV-HWAWFT",
+          "revision": 2
+        },
+        {
+          "id": "INV-KTMBMN",
+          "revision": 1
+        },
+        {
+          "id": "INV-MS9BMJ",
+          "revision": 3
+        },
+        {
+          "id": "INV-N5RBFK",
+          "revision": 1
+        },
+        {
+          "id": "INV-WV1YQE",
+          "revision": 1
+        },
+        {
+          "id": "INV-XN0FG8",
+          "revision": 2
+        },
+        {
+          "id": "INV-YZ45D7",
+          "revision": 1
+        },
+        {
+          "id": "INV-ZGFZXT",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-GV5PGT",
+      "items": [
+        "sha256:a26e377f8a620dc5fd7f8741bdfd9723a06219c2ac6b6aa4eec1f2b33daa26d9"
+      ],
+      "reason": "Gated leaf publication guarantee examined at current member revisions; L44 touches one member realization (INV-49E649, re-anchored without meaning change) and adds no joint obligation, so the family record stands as written.",
+      "revision": 3,
+      "subject": "FAM-61DY2V"
+    },
+    {
+      "covers": [],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-HS0JK9",
+      "items": [],
+      "reason": "M1-01: normative statement superseded by the bounded no-touch guarantee successor (prevents_costly_mistake admission); defect sentence retained as history in origin evidence.",
+      "revision": 1,
+      "subject": "INV-DZB7MC"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-JAEWQE",
+      "items": [
+        "sha256:03f071385404ae8005bc0cea4472210fe4e20eac96723d41b93b840d38882343"
+      ],
+      "reason": "Generated harness copy: the harness sync regenerates it from the canonical skill source, which with this leaf’s history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.agents/skills/c-02-memory-quality-control/SKILL.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-JWWHH1",
+      "items": [
+        "sha256:0d25bd16a6bb766e80f1df5361b7cb205e2560005cdff59bee850cd83433bcdb",
+        "sha256:a08e8a197bd621bdaa612a8430bf5fb3d4550da04c998df642a31983a2acba16",
+        "sha256:cea5e02f0fa0578d94ad561ba2a8450217d78ef94e1d46bb1202a8c456a356a5",
+        "sha256:d5729bc2006eb5268e5f13bb6ec0106500d26fd7074fb4067e3f6b98b1709457"
+      ],
+      "reason": "Generated harness copy: the harness sync regenerates it from the canonical skill source, which with this leaf’s history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.github-vscode/skills/c-10-adopt-memory-baseline/SKILL.md"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-QWW0BJ",
+      "items": [
+        "sha256:5fa43007983285d6fcfa5499207a0cabc979094e219fed33d0d2c8762ea24066"
+      ],
+      "reason": "Import-line wiring: it names the index-pinned runner the private staging interval runs through. The staged-exclusion obligation it serves is realized at prepare_memory_cache in the same file, and the line itself states no separate obligation.",
+      "subject": "hunk:sha256:5fa43007983285d6fcfa5499207a0cabc979094e219fed33d0d2c8762ea24066"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-R6FMZD",
+      "items": [
+        "sha256:d54d948a58f7eaa742c81ba6f1c860aa83b1b1b65546fa543e14bc9d52ffd93e"
+      ],
+      "reason": "Repository root intent unchanged by the converted-drift measurement and validated-adoption construction.",
+      "subject": "onboarding:overview"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-RWZWJD",
+      "items": [
+        "sha256:47146fed26ee563fed523fe38a63b39ccda3c32f1081f0ff5845d15066cf245e",
+        "sha256:630edb91bf7d0608d5d520438b5b48000d09df7f11f43a4fadf80b425b9d52fb",
+        "sha256:768dc70bc66e998a76fef11613eafa40673d66f1f03f1874510d2a2c87b95141",
+        "sha256:7d8b34f57fe7a9d23ab99f835963d2e115a2992e589499b945291ed98ce6b149",
+        "sha256:cbc2d2fe19486fa788c2416dcd0b952db243b719af9e75e0e3e83c5221baebfe"
+      ],
+      "reason": "Generated copy: scripts/sync-skills.py regenerates it from the canonical skill source, which with this leaf’s history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:mcp/src/agents_remember/package_data/runtime/skills/c-10-adopt-memory-baseline/SKILL.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-TY82NW",
+      "items": [
+        "sha256:8ef8b892ab65c8b81386dc4518749cafd8efb97c879471a54769205b480193ca"
+      ],
+      "reason": "MemoryMirror segment names and the documentChat fixture field are card-level changes; the panels route meaning is unchanged.",
+      "subject": "onboarding:dashboard/src/panels/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-V90JTD",
+      "items": [
+        "sha256:189c392cf34548b7d163e3a8a5a551fd7b3582e23c6342d1abaa14b4d56e490f",
+        "sha256:c337d8c5fc6383ad88508eebf5ac54da36fa8e1b43bb47d46d1da6318bcf0869",
+        "sha256:c3fbbcae37b20dda1bf1609a66c5eab8d40cfaacfa023bd712d1c262d40ac8f3",
+        "sha256:f9ff6ed3da9d7242f06a4f84d6260e4ed7372563e91bd92f80c2ecf00683721a"
+      ],
+      "reason": "Generated harness copy: the harness sync regenerates it from the canonical skill source, which with this leaf’s history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.hermes/skills/c-10-adopt-memory-baseline/SKILL.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-W527M2",
+      "items": [
+        "sha256:03d8f7a70a24adbfccdcb08794740f33b2d1059862564dad232bd53822c4c03f",
+        "sha256:2cc5370b6bf0b9e1e9e34036d23e3f2869c16c52dcd59b485023214990564615",
+        "sha256:3389c67ffc923c633dcd39a7d40f395e6a2b1c1612b49392b70f6c01e301100c",
+        "sha256:a65d48960746b94cb286a1f6742e9e388906c48234958b6b1898280b16191bdd"
+      ],
+      "reason": "Generated harness copy: the harness sync regenerates it from the canonical skill source, which with this leaf’s history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.pi/skills/c-10-adopt-memory-baseline/SKILL.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-WN9HZG",
+      "items": [
+        "sha256:346c1aabf6475cf7b77743a3c5acc20f0bc63814282522ae0aeac58487d0aeea"
+      ],
+      "reason": "Generated harness copy: the harness sync regenerates it from the canonical skill source, which with this leaf’s history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.openclaw/workspace/skills/c-02-memory-quality-control/SKILL.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-WYNZRK",
+      "items": [
+        "sha256:a716d2201f7ce34ad1d07c4f92a5db632a896773a385cc5985dadcad7989fdaf"
+      ],
+      "reason": "Generated harness copy: the harness sync regenerates it from the canonical skill source, which with this leaf’s history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.cursor/skills/c-02-memory-quality-control/SKILL.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-Y0MVZ1",
+      "items": [
+        "sha256:a464d076f432bd3ffc987cb70ba7c6af8e3fd7dc41f3cec66fd023b364e57520"
+      ],
+      "reason": "No package-level contract changed; all L44 behavior is carried by file cards and the affected route overviews.",
+      "subject": "onboarding:mcp/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-YKGZ9X",
+      "items": [
+        "sha256:941bcdf6948d7cc2f7dc396d569d79e4d29f098e15896013bcbb172a1371937e",
+        "sha256:b89f4774d31b20f1470424173273a49b049a623f398947c2a66cf452910e7be3"
+      ],
+      "reason": "Generated copy: scripts/sync-skills.py regenerates it from the canonical skill source, which with this leaf’s history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:mcp/src/agents_remember/package_data/runtime/skills/c-02-memory-quality-control/SKILL.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-Z29W46",
+      "items": [
+        "sha256:2fdb48a58751eb3b9838780ce7a44ce2624ceb39ca140ef3a70648bf1f2c3f3f",
+        "sha256:49c7f1dba72aec4d6962084d12c17a86c7116ebcbca15caac59c5be23661f22a",
+        "sha256:9005e9773d8401e0ebadee1eedcd174a70b1942e15273f9a207e0c766aa2edc3",
+        "sha256:a0d04f678fe4c75302aab724b16025b8accbd2866d8d3a1f2aba478c98088d27"
+      ],
+      "reason": "Generated harness copy: the harness sync regenerates it from the canonical skill source, which with this leaf’s history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.openclaw/workspace/skills/c-10-adopt-memory-baseline/SKILL.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-ZNYKKG",
+      "items": [
+        "sha256:0da8acb8efc4c4e9c70ff3d2e2506bacc38ad9c18e15234683849e3a1482fbb4",
+        "sha256:1504b429c226dbb87da0ace3223a79a7ae096fafb3fe7f3e34a911470451fe46",
+        "sha256:32f4a0a17d3352908572f03d103cb0026f0eab9367780ac8ddafd8bd473bdffc",
+        "sha256:9266ff86c73861d10db503c3e11ab38a6dd571b6a2d0c655527a8baa8760176e"
+      ],
+      "reason": "Generated harness copy: the harness sync regenerates it from the canonical skill source, which with this leaf’s history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.codex/skills/c-10-adopt-memory-baseline/SKILL.md"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

@@ -19,8 +19,9 @@ Since L15 the panel's served ages advance LOCALLY: the wire carries stable forms
 `driftSegments` turns a drift snapshot's counts into ordered `{cls,count,pct}` segments. The `segbar`
 is a Panda `css()` flex track; each segment's colour comes from a **record** `SEG_BG[cls]` (not a
 cva) because drift classifications are forward-compatible (an unanticipated class renders with no
-fill). Actionable count toggles an `actionable` (amber) vs `muted` class. Ledger + stalest lists are
-plain Panda rows.
+fill). Converted repositories report `stale` anchors and validator `violation`s; they read like their
+legacy counterparts (amber and alarm). Actionable count toggles an `actionable` (amber) vs `muted`
+class. Ledger + stalest lists are plain Panda rows.
 
 ### Invariants And Boundaries
 
@@ -33,3 +34,5 @@ ages are server-computed.
 
 - `driftSegments` + the `DRIFT_ORDER`. [1]
 - The drift/ledger/stalest analytics nodes. [2]
+
+- Converted stale and violation segments read like their legacy counterparts. [3]

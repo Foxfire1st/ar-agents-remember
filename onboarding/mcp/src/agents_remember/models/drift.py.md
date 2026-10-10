@@ -12,7 +12,10 @@
 
 `DriftSummary` is strict and exposes the check status, optional total
 and actionable counts, an optional report path, a bounded actionable sample, and
-An optional error field is also part of the strict summary.
+An optional error field is also part of the strict summary. For a converted tree it also carries what
+was really measured — `basis`, `memoryRoot`, `codeRoot`, `sidecarCount`, `states`, `violationCount`,
+`violationSample`, `reportOnlyCount` and `unreadableSidecars` — each optional and absent on legacy
+results; legacy fields are never invented for a converted card, and vice versa.
 
 `status` is `DriftStatus`, **imported** from
 `memory_quality.integrity.onboarding_drift_check.models`, the module
@@ -44,7 +47,12 @@ context packet had not.
 
 ### Repo-Internal References
 
-- The strict `DriftSummary` model exposes status and the optional diagnostic error. [1]
 - Context packet construction validates `_drift_packet` output with `DriftSummary.model_validate`; `_drift_packet` is typed as `DriftSummaryPacket`. [2]
-- The onboarding drift model defines the `DriftStatus` and `DriftSummaryPacket` wire shapes. [3]
 - Both wire models expose the shared `DriftStatus` and optional error diagnostic. [4]
+
+- The summary carries the converted measurement fields beside the legacy ones. [5]
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The strict `DriftSummary` model exposes status and the optional diagnostic error. [1] | `DriftSummary` | mcp/src/agents_remember/models/drift.py:14-35 |
+| The onboarding drift model defines the `DriftStatus` and `DriftSummaryPacket` wire shapes. [3] | `DriftSummaryPacket` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py:11-70 |

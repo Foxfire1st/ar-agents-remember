@@ -1109,6 +1109,12 @@ the status *and* the key, i.e. the diagnostic crashed on exactly the call meant 
 problem. `DriftSummary` gains `error: str | None`. `models.memory.DriftCheckStatus` was the
 third copy (correct, but a third place for the next member not to arrive) and is gone.
 
+Both wire models now also carry the converted measurement beside the legacy fields — `basis`,
+`memoryRoot`, `codeRoot`, `sidecarCount`, `states`, `violationCount`, `violationSample`,
+`reportOnlyCount` and `unreadableSidecars` — each optional and absent on legacy results, so the
+tool and the packet faces of one measurement agree without inventing legacy fields for converted
+cards.
+
 **`read_files.py` — the alias moved to the decider.** `FileReadStatus` is declared in
 `application/read_files.py`, where `_resolve_onboarding` decides it and now returns it as its
 annotated type, and this model imports it. Note the direction: this is a `models/` →

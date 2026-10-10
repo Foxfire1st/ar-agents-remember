@@ -119,6 +119,14 @@ default unit run includes.
 The command keeps a comment that follows a table header on its line, and comment lines that stand
 directly above a table header, with that row. It refuses a comment inside a list.
 
+## 260928-MIK-L99 — a leaf's agents hand over to each other
+
+The catalog's consumer list names `test_leaf_handover.py` and `test_leaf_handover_review_rounds.py`; the lane catalog registers `test_leaf_retirement_wording.py`. No module artifact rows were added for the three new test modules, and the changed wording and turn-truth test artifacts keep their existing rows.
+
+## 260928-MIK-L93 — a question for the developer goes up the chain
+
+The R93 wording test `mcp/tests/test_developer_question_wording.py` is added to the consumer lists the source tree supports; no artifact or contract row changes, and the canonical form is unchanged.
+
 ## 260928-MIK-L101 — rule 6 budget registry and test
 
 The `test_role_capsule_budgets.py` module joined the Node lockfile fixture's consumer list (fixture `mcp/tests/fixtures/repository_profiles/node/package-lock.json`, consumer entry at evidence-lifecycle.toml:1355) alongside the unit-regression lane (test-evidence-lanes.toml:254); no artifact or contract row changes, and the canonical form is unchanged. The rule 6 budget registry itself is a producer-side contract and makes no consumer-list claim.
@@ -160,14 +168,21 @@ files are both gone removed without file restores.
 
 The catalog holds 13 contract rows with 85 governed artifacts: the admitted lifecycle replacement (landed upstream of this leaf) replaced the earlier 32-row catalog with 13 rows; `tool_log_witness` predates this leaf; the upstream river-scale measurement (`l114_e4_river_scale.py`) joined as the 85th artifact; this leaf's working tree adds its rule-test modules to the consumer lists and removes no former lane or artifact. Other artifact metadata is unchanged.
 
+## 260928-MIK-L96 The host test modules
+
+`evidence-lifecycle.toml` gained revised durable-artifact consumer sets/paths for the new host test modules (`test_paseo_install_contract`, `test_paseo_install_no_stop`, `test_paseo_node`, `test_paseo_start`, `test_dashboard_host`, `test_host_release_contract`, `test_paseo_host_environment`) and for the moved host modules. This file holds artifact consumers plus the executable `replacement_contract`/`consumers` records; it declares no lane tables and no knowledge-invariant identities. Lane membership for the host modules lives in `test-evidence-lanes.toml`, and knowledge proof identities live in the sidecar proof plane; a catalog declaration still never shows evidence ran.
+
+
+
+| Conversation-open support (`mcp/tests/conversation_open_test_support.py`) declares its permanent owner and real replacement contract. [258] |  | mcp/tests/evidence-lifecycle.toml |
+| Eve event support (`mcp/tests/eve_adapter_event_test_support.py`) declares its permanent owner and exact consumers. [259] |  | mcp/tests/evidence-lifecycle.toml |
+
 ## 260928-MIK-L129 Repeated-cleanup regression test consumers
 
 `mcp/tests/test_cleanup_repeated_archive_ready.py` joins the three consumer lists the source tree supports (two lifecycle `consumers` lists and one exact-scope artifact's `consumers` list) through the documented `--write` command, and joins the `integration` lane. No artifact or contract row is added, removed or reordered by hand, and the canonical form is unchanged.
 
 ## Refreshed current evidence
 
-- The durable-artifact consumer entries this catalog now declares; lane rows belong to test-evidence-lanes.toml. [14]
-- The two reviewer worklist test modules on that row's consumer list. [95]
 - Worklist process support declares its permanent local-composition contract. [98]
 ### Conventions
 
@@ -268,3 +283,10 @@ Source declarations and test assertions are distinguished from execution and acc
 - None [255]
 - None [256]
 - The referenced transaction test definition exists in the current source. [257]
+The converted-drift test module joins the consumer lists it exercises with: one test per packet rule,
+each behavioural case failing before its fix and passing after.
+- The converted-drift module is registered as a consumer of the evidence it exercises. [99]
+- The durable-artifact consumer entries this catalog now declares; lane rows belong to test-evidence-lanes.toml. [14]
+- The two reviewer worklist test modules on that row's consumer list. [95]
+
+The converted-drift registration once tabled under keys 14/95 now stands as the [99] line above; keys 14 and 95 cite the catalog's durable-artifact and reviewer-worklist rows.

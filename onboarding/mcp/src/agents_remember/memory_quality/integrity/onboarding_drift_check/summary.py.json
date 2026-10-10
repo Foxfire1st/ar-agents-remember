@@ -19,14 +19,62 @@
         },
         {
           "anchor": {
-            "blob": "0f33f584513ad3833a35a818b88f51eaacb54fbc",
+            "blob": "a2e32055df9ed4e20616122a8838f1eea2783fa2",
             "content": "sha256:5d246fffd9db7dec40eb538866f499e691778abb88b97474cc0cefe71c0c3a43",
             "locator": {
-              "end": 184,
+              "end": 200,
               "kind": "line_range",
-              "start": 184
+              "start": 200
             },
             "path": "mcp/src/agents_remember/application/context_packet.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "A converted tree is measured from the converted check alone; legacy discovery never runs there.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "597c57b254ec08a62dcc4dfced2687498c5c2660",
+            "content": "sha256:6e37826bdad0c43151a0791101d9a9ac02974dddca9fbe112e7508926137f689",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_drift_summary"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The converted result names every measured field; zero means empty, never unread.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "597c57b254ec08a62dcc4dfced2687498c5c2660",
+            "content": "sha256:549c55fad6185759a2de8e052e388c8149f63cadb074740f3a30ce032a6c5175",
+            "locator": {
+              "kind": "symbol",
+              "name": "_run_converted_summary"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The converted report and the observer snapshot are written from the same measured result.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "597c57b254ec08a62dcc4dfced2687498c5c2660",
+            "content": "sha256:d9e1b4e3ba17e79f97dd6f897043a4e1419c230116d9d243870e12f3992a8e04",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write_converted_report"
+            }
           },
           "kind": "code"
         }
@@ -66,7 +114,7 @@
         },
         {
           "anchor": {
-            "blob": "88ab63c1685825e580ce7dbc3f0c8c6f32f8acbf",
+            "blob": "cf68f5578694021f732b573cc3d613b880c7bfd8",
             "content": "sha256:a4fd9adef884dbb6ec257dea9499d51b7d671e333bf190b352afb44cb58b8b8f",
             "locator": {
               "end": 11,
@@ -96,7 +144,7 @@
         },
         {
           "anchor": {
-            "blob": "88ab63c1685825e580ce7dbc3f0c8c6f32f8acbf",
+            "blob": "cf68f5578694021f732b573cc3d613b880c7bfd8",
             "content": "sha256:0673052126dfb9f14e4482f0ad5dc18d83e74317290c4bb65d77742f15f8038d",
             "locator": {
               "end": 23,
@@ -196,7 +244,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "658c6f6924b5894147f8e568aa85fa76d743161f",
+            "blob": "597c57b254ec08a62dcc4dfced2687498c5c2660",
             "content": "sha256:433e1755ab5abb07f8c97d249f6909510febede82bb7c1b080691e18194525f6",
             "locator": {
               "kind": "symbol",
@@ -207,12 +255,12 @@
         },
         {
           "anchor": {
-            "blob": "658c6f6924b5894147f8e568aa85fa76d743161f",
+            "blob": "597c57b254ec08a62dcc4dfced2687498c5c2660",
             "content": "sha256:939937f982310879eb87e0fff7de9d71280c31e41a6d97c2bfa7c418eadb0531",
             "locator": {
-              "end": 148,
+              "end": 341,
               "kind": "line_range",
-              "start": 109
+              "start": 302
             }
           },
           "kind": "code"

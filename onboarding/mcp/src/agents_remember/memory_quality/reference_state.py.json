@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "890d4f88833d19f881459eb824b61b84d4e6b430",
+            "blob": "e8421ed724191966dedc24b309e74eaf2439eeb9",
             "content": "sha256:5222022946ed0872ef074f7f24e823e660c3d191c7983b3bdcd3731db2da5b2f",
             "locator": {
               "kind": "symbol",
@@ -23,7 +23,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "35ed5331f0d66f87bd2128c05dc99f847778bbfb",
+            "blob": "ac132ba02c16f5f0000f16185b12cfe345dfe99b",
             "content": "sha256:c69fc638c7048214c08a7d809605e5451b242f96cc4a106102802dce0f1af01a",
             "locator": {
               "kind": "symbol",
@@ -35,12 +35,28 @@
         }
       ]
     },
+    "11": {
+      "note": "Only sidecars holding references are counted or observed; empty maps are skipped, malformed ones unreadable.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e8421ed724191966dedc24b309e74eaf2439eeb9",
+            "content": "sha256:d5a4f8ee36bc919ed6b1287b5f92f206fe02510d168390e7b7bccff76cec6fc7",
+            "locator": {
+              "kind": "symbol",
+              "name": "check_references"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "The located bytes of a file, symbol or range locator.",
       "targets": [
         {
           "anchor": {
-            "blob": "890d4f88833d19f881459eb824b61b84d4e6b430",
+            "blob": "e8421ed724191966dedc24b309e74eaf2439eeb9",
             "content": "sha256:d5a78ce00a59a66e7d0d29b949c031082d0301ae2901b304f5781a3e56080dc3",
             "locator": {
               "kind": "symbol",
@@ -56,7 +72,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "890d4f88833d19f881459eb824b61b84d4e6b430",
+            "blob": "e8421ed724191966dedc24b309e74eaf2439eeb9",
             "content": "sha256:3a48d929bee49d77e968dce8842e753c75ec437f33c6d3730a2a811c6c4ca49a",
             "locator": {
               "kind": "symbol",
@@ -67,7 +83,7 @@
         },
         {
           "anchor": {
-            "blob": "890d4f88833d19f881459eb824b61b84d4e6b430",
+            "blob": "e8421ed724191966dedc24b309e74eaf2439eeb9",
             "content": "sha256:6d63bbaf8d5a866d9817c9baf298afafcd70c7f6920a11b44db26bd6e70d3554",
             "locator": {
               "kind": "symbol",
@@ -94,7 +110,7 @@
         },
         {
           "anchor": {
-            "blob": "890d4f88833d19f881459eb824b61b84d4e6b430",
+            "blob": "e8421ed724191966dedc24b309e74eaf2439eeb9",
             "content": "sha256:c97f5111fd6f84686578516ba41dd1602d38eb325ff395cba22ac24580bfdeb0",
             "locator": {
               "kind": "symbol",
@@ -110,7 +126,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "890d4f88833d19f881459eb824b61b84d4e6b430",
+            "blob": "e8421ed724191966dedc24b309e74eaf2439eeb9",
             "content": "sha256:f0274d6ddcde7d15035f21e86d63b74b10e7e3ad3d5bfc51a50ed7bd43f33f73",
             "locator": {
               "kind": "symbol",
@@ -121,7 +137,7 @@
         },
         {
           "anchor": {
-            "blob": "890d4f88833d19f881459eb824b61b84d4e6b430",
+            "blob": "e8421ed724191966dedc24b309e74eaf2439eeb9",
             "content": "sha256:86ea7c2796d9ad1ea4f1141671be57d678471dedb914c18f7dfb9a0c563fab53",
             "locator": {
               "kind": "symbol",
@@ -137,7 +153,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "35ed5331f0d66f87bd2128c05dc99f847778bbfb",
+            "blob": "ac132ba02c16f5f0000f16185b12cfe345dfe99b",
             "content": "sha256:2d63c14aee7e1b3369e902a5c73e9c20b76158a403a72893ee402b8e38909ed2",
             "locator": {
               "kind": "symbol",
@@ -154,7 +170,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "890d4f88833d19f881459eb824b61b84d4e6b430",
+            "blob": "e8421ed724191966dedc24b309e74eaf2439eeb9",
             "content": "sha256:86ea7c2796d9ad1ea4f1141671be57d678471dedb914c18f7dfb9a0c563fab53",
             "locator": {
               "kind": "symbol",

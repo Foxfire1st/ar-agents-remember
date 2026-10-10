@@ -47,7 +47,10 @@ reader cannot "fix" the seat by giving it the altitude it must not have.
 *Group 3 — the reviewed round-2 findings, pinned (2 cases).* `bootstrap/` is absent from the first
 baseline's commit and still on disk afterwards, asserted on `git ls-files` — the committed tree — not
 on a comment; and the same exclusion holds on the helper a later memory commit uses. These are the
-two cases that fail if the exclusion goes inert again.
+two cases that fail if the exclusion goes inert again. Both now run under a bound validator: fresh
+`memory_init` trees are converted, so the first baseline validates the staged tree through the
+knowledge validator instead of committing unvalidated, and the `bound_validation` fixture binds real
+worktree services (`GitKnowledgeValidation` with `GitBaseConverter`) for exactly that.
 
 *Group 4 — the taskless document and the manifest (2 cases).* A document supplied to a taskless role
 still resolves but skips the altitude check, so a bad reference is still refused; and the manifest
@@ -99,20 +102,26 @@ No relevant documentation found after checking live sources.
 - The module's own statement of the property, the four seams, and the two-sides rule. [1]
 - Group 1 — minting, inheriting and refusing to invent a branch. [2]
 - Group 1 — the repair path, the name narrowing, and the recorded spelling. [3]
-- Group 1 — adoption follows the recorded branch, and the default-branch accessor validates it. [4]
 - Group 2 — the free agent's shape, with the ruling the group protects. [5]
-- Group 3 — the exclusion, pinned on the commit tree. [6]
 - Group 4 — a supplied document still resolves, and the manifest exception stays scoped. [7]
 - The branch authority the first group drives. [8]
 - The adoption seam whose hard-coded `main` the first group replaced. [9]
 - The recorded-name validation the first group holds, and its malformed-name refusal. [10]
 - The taskless admission the second and fourth groups hold. [11]
 - The exclusion policy the third group pins. [12]
-- The staging helper the third group's failure mode lives in. [13]
 - The lane row that keeps the fail-closed evidence registry loading clean. [15]
+
+- Converted first baselines run under a bound validator via the bound_validation fixture. [16]
+
 
 ### Cross-Repo References
 
 No sibling-repository contract defines this check.
 
 No meaningful cross-repo references found.
+
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| Group 1 — adoption follows the recorded branch, and the default-branch accessor validates it. [4] | `test_baseline_adoption_follows_the_configured_branch` | mcp/tests/test_memory_branch_authority.py:261-295 |
+| Group 3 — the exclusion, pinned on the commit tree. [6] | `test_the_first_baseline_never_commits_bootstrap_scaffolding` | mcp/tests/test_memory_branch_authority.py:507-534 |
+| The staging helper the third group's failure mode lives in. [13] | `_excluded_pathspec` | mcp/src/agents_remember/worktrees/modules/git.py:55-58 |

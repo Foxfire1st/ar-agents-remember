@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "The no-touch guarantee is realized jointly in the staging owner, the Git runner and the cache helper across three files, and the converted-drift suite proves it: interval-failure, dry-run, validated-tree publication and adopted-state cases pin each half."
+  },
+  "applicability": "Converted memory baseline adoptions that stage, validate and commit memory content through the owned prepare/stage/validate interval.",
+  "conditions": [
+    "The worktree index is reachable for copying, or absent so the private file stages empty.",
+    "The knowledge validator is bound in the adopting process; where it is not, adoption refuses."
+  ],
+  "exclusions": [
+    "Unconverted adoptions, which keep the direct stage-and-commit path.",
+    "Files outside the owned interval: only the prepared ignore line is ever given back, never caller or external content."
+  ],
+  "id": "INV-DZB7MC",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/l44-code-extra7/private-index-probes.results.json SHA fe29f13bc5b7d7687bd586a871335de552bd38aa93b94ffb23025151a14f924c: 34/34 public dry+real original03 scenarios pass. Four quiet ITA and two quiet untracked-symlink former failures now preserve the entry raw index bytes, stage lines and semantic flags; executable mode-only index entries also remain exact. Partial preparation, staging, private-tree read and validation exceptions retain their named errors and restore owned ignore-file bytes/mode; copy failure refuses loudly and an absent index remains absent. Concurrent staged ignore edits, additions with assume-unchanged flags and tracked deletions stay exact. Private copies preserve source bytes/mtime and are discarded. Actual product index-addressing interval commands explicitly pin the private file; immutable object-only validation reads address tree/object IDs. A post-validation real-adoption failure retains its named OSError, publishes exactly the validated tree and occurs after real-index preservation at validation. Scoped2 pytest nodes and four-file Ruff/check-format/Pyright pass once; runner exit is distinguished from all 34 state assertions."
+      ],
+      "path": "l44-curator-handoff.json"
+    },
+    "handoffEntry": "L44-C1-03",
+    "leaf": "260928-MIK-L44",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "An exception during staged-tree validation exits a dry run with the staged index still installed.",
+  "status": "proposed",
+  "supersedes": []
+}

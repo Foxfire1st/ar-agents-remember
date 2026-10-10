@@ -22,10 +22,15 @@ maps it to newest-first rows. The first row supplies the current code/memory pai
 supplies the base pair. A history with no attribution yields empty rows and empty revision fields.
 This read never consults `memory.md`.
 
-`prepare_memory_cache` is an explicit preparation helper for an already authorized memory-content
-workflow. It adds the root cache ignore rule and removes the cache from the current Git index while
-retaining the disk file. That housekeeping belongs to ordinary content staging; the helper does not
-create a commit, select a publication ref, or decide whether a Git transaction may proceed.
+`prepare_memory_cache(repository, *, index_path=None)` is an explicit preparation helper for an
+already authorized memory-content workflow. It adds the root cache ignore rule and removes the cache
+from the Git index while retaining the disk file. With `index_path` the exclusion writes a private
+index file instead of the worktree's own index — this is how the converted baseline adoption stages
+without touching the real index before validation passes; without it the worktree's own index is
+prepared. It returns the prepared `.gitignore` bytes, so a refusing route can tell its own change
+apart from a concurrent external edit without re-reading the file. That housekeeping belongs to
+ordinary content staging; the helper does not create a commit, select a publication ref, or decide
+whether a Git transaction may proceed.
 
 `refresh_memory_cache` derives the representation and compares it with current bytes before writing
 through the shared atomic-text writer. Existing cache read failure is treated as missing prior
@@ -33,10 +38,12 @@ bytes. The result reports `updated` or `current`, the path and row count; deriva
 write failures report `unavailable` with a reason. Those cache outcomes do not determine whether an
 already completed Git action succeeded.
 
-`ignore_memory_cache(repository)` (L37) records the cache's ignore rule in `.gitignore` and does nothing else. It is
-the one write `prepare_memory_cache` makes to memory content, and `prepare_memory_cache` calls it first. A route
-that judges the exact tree it is about to commit calls it before it reads that tree, so the judged tree already
-holds the line, and restores `.gitignore` when it refuses: the converted worktree closeout does (INV-49E649).
+`ignore_memory_cache(repository)` records the cache's ignore rule in `.gitignore` and does nothing else. It is
+the one write `prepare_memory_cache` makes to memory content, and `prepare_memory_cache` calls it first. It
+returns the exact bytes written. A route that judges the exact tree it is about to commit calls it before
+it reads that tree, so the judged tree already holds the line, and restores `.gitignore` when it refuses:
+the converted worktree closeout does (INV-49E649), and the converted baseline adoption restores only
+bytes provably still its own, preserving a concurrent external edit.
 
 ### Conventions
 
@@ -74,14 +81,11 @@ Source declarations and test assertions are distinguished from execution and acc
 - Terminal removal discards only the root memory cache. [1]
 - Derivation reads Git attribution and computes current/base metadata. [2]
 
-- Preparation excludes the cache and refresh reports materialization outcomes. [3]
 
 - Committed attribution and row mapping have one reader. [4]
 - The consumer representation supports empty derived history. [5]
 - Cache independence and exact local-ref derivation are exercised by the retained projection tests. [6]
 
-- The ignore rule alone: the one write the preparation makes to content. [7]
-- The preparation records the rule first, then removes the cache from the index. [8]
 
 ### Cross-Repo References
 
@@ -89,3 +93,10 @@ The code/memory or fixture-repository boundaries above are established by packag
 No additional configured external or sibling-repository evidence is claimed.
 
 No additional configured cross-repository evidence.
+
+- Preparation writes a private index file when asked, and returns the prepared ignore bytes. [9]
+- The ignore rule is the one content write, and its exact bytes are returned. [10]
+
+- Preparation excludes the cache and refresh reports materialization outcomes. [3]
+- The ignore rule alone: the one write the preparation makes to content. [7]
+- The preparation records the rule first, then removes the cache from the index. [8]

@@ -31,7 +31,8 @@ whose worktree closeout removed is **not** rendered as a row under its master an
 that second rule exists in neither tree. `buildTree` pivots lifecycle rows by
 l-01 phase or repo with deterministic ordering. `fmtWait` formats server-computed ages only. The lower
 helpers translate provider snapshots into engine-room display groupings and drift snapshot counts into a
-stable segment list.
+stable segment list. `DRIFT_ORDER` also orders the converted names `stale` and `violation`, so a converted
+repository's bar reads the same good-to-actionable way as a legacy one.
 
 ### Conventions
 
@@ -56,6 +57,9 @@ No relevant documentation found after checking live sources.
 
 - `selectQueue` caches filtered queue arrays by source references and filters optimistic suppression ids. [1]
 - Lifecycle tree grouping and wait formatting are pure display derivations. [2]
+
+- The converted drift names order with the legacy classifications, healthy first. [3]
+
 
 ### Cross-Repo References
 

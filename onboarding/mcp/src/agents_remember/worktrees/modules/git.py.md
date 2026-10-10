@@ -39,8 +39,13 @@ pathspecs. This avoids treating an ignored cache literal as an explicit add requ
 `contract_has_worktree_changes` excludes `memory.md` only on the memory side. Real content dirt
 remains visible.
 
-`stage_worktree_content` removes derived index entries and stages actual content without reading
-those paths. `commit_if_dirty` creates an ordinary content commit when its filtered status is dirty.
+`stage_worktree_content(repo, *, exclude_paths=(), index_path=None)` removes derived index entries
+and stages actual content without reading those paths. With `index_path` every step runs through
+`_require_git_with_index` against a private index file instead of the worktree's own index — this is
+the staging half of the converted baseline adoption's private interval; without it the worktree's own
+index is staged. `_require_git_with_index` runs one Git command against the private file and keeps the
+failure's name. `commit_if_dirty` creates an ordinary content commit when its filtered status is dirty.
+The generic two-sentence form of this contract (derived-entry removal without reading; ordinary commit when dirty) now stands above in signature-specific form with the private-index interval.
 `publish_tree_commit` publishes the admitted exact tree through `commit-tree` and an expected-old branch update. It settles the message before the per-worktree publication lock, refuses an unfinished Git action or a moved/detached admitted ref, stages the supplied tree, runs the supplied confirmation, then writes and publishes the object. A failure gives the index back only while it still holds this call's staged state. Assume-unchanged, skip-worktree and intent-to-add facts are preserved. This primitive runs no Git commit hook; the reference-transaction hook still runs and its refusal retains Git's diagnostic. Prepared closeout hook policies are separate and are not changed here.
 
 Changed-path helpers retain their distinct semantics: existing-file worklists omit deletions, while
@@ -105,3 +110,5 @@ The code/memory or fixture-repository boundaries above are established by packag
 No additional configured external or sibling-repository evidence is claimed.
 
 No additional configured cross-repository evidence.
+- One Git command runs against a private index file; a failure keeps its name. [14]
+- Staging writes a private index file when asked; otherwise the worktree's own index. [15]
