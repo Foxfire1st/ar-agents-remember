@@ -297,7 +297,9 @@ The one candidate capture owner copies the real index with its file time, restor
 
 ## First-leaf planned authority through preview
 
-The existing start-contract owner returns the same validated planned parent through [startup/start_plan.py](startup/start_plan.py.md) to public preview admission. The local record/projection module preserves moved start values/results; it constructs no authority. Source/memory preview distinguishes actual absent versus journal-owned existing named refs. Apply retains durable bootstrap, source/activation and exact identity/CAS revalidation; a plan is never implementation authority. The generic ambient completion event is not startup-state publication or universal no-I/O evidence.
+The existing start-contract owner returns the same validated planned parent through [startup/start_plan.py](startup/start_plan.py.md) to public preview admission. The local record/projection module preserves moved start values/results; it constructs no authority. Source/memory preview distinguishes actual absent versus journal-owned existing named refs. Apply retains durable bootstrap, source/activation and exact identity/CAS revalidation; a plan is never implementation authority. No startup contract, activation, ref, worktree/provider or index/content mutation is authorized by preview. The registered call nevertheless records its daily tool-log line and any required detail, and its completed-answer river event; an existing ambient lifecycle retains its separate event route. Read-only proof checks these records and only their causal entry-directory mtimes, never excludes all logs or treats telemetry as startup publication.
+
+- The registered proof preserves startup/Git state and checks the call records. [63]
 
 ## Purpose
 

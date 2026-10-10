@@ -8,6 +8,20 @@
 
 Owns worktree start, attach, status result construction, and startup preparation for external memory and providers. Memory cannot be disabled for a task: every start runs in `external` mode, and a start that names the removed `disabled` mode — or the removed `disabled-memory` recovery answer — is refused by name before any worktree exists.
 
+## Same-request planned parent in public preview
+
+`start_result` consumes a `StartContractPlan`: the leaf contract plus the exact parent already validated by `ensure_master_series_contract`. Only dry-run construction carries that parent. The value passes through preflight, lineage recognition and enclosure planning to `require_parent_series`; a missing filename alone never establishes this special authority. An existing parent still goes through its normal reader/identity guard.
+
+Apply carries no preview-parent substitute and retains the existing locked bootstrap, source/activation reconciliation, persisted-parent checks and materialization. Preview is not a reservation: later apply recomputes current facts and keeps existing refusal/recovery/CAS behavior. Organizational direct-super and ordinary standalone routes retain their existing meanings.
+
+The moved plan/result records and memory/provider blocked projections have one home in [startup/start_plan.py](startup/start_plan.py.md). Their blocked-result vocabulary and reconciled-memory-base projection are preserved there; the removed disabled-memory projection is not restored. Startup-owned dry-run storage/ref/worktree/index state is unchanged. A registered preview still writes the daily tool-call log and, when its answer completes, the workspace-river event; under an already-existing ambient lifecycle that event keeps its lifecycle-file route instead. These call records are not startup publication, reservations or apply authority. The first-leaf proof checks the records rather than dropping the logs subtree from observation, so this card makes no universal no-I/O claim.
+
+- A tool call records its daily line and any required detail under the existing log owner. \[21] [21]
+- The completed-answer observer records the workspace event outside an ambient lifecycle. \[22] [22]
+- The public result path carries the same owner-validated plan. \[23] [23]
+- Only an actual carried preview parent qualifies for planned-lineage recognition. \[24] [24]
+- Preview admission and memory preparation use that exact admitted parent. \[25] [25]
+
 ## Code Commentary
 
 `start_result` refuses removed vocabulary first, at the top, because there it has no worktree, branch, contract, or task binding to unwind: `_removed_vocabulary_result` answers a removed `memory_mode` or `topology` (other than `disabled`) with the `memory-mode-unsupported` typed result and never substitutes `external` for what was asked; `disabled` is refused just below with its own opt-out refusal, never with the `internal` text; and `_unknown_choice_result` answers any other unknown `memory_choice` as an invalid request in the same shape as every mistyped start argument. The CLI no longer offers `disabled-memory` as a choice, so it still parses only so the start can refuse it by name.

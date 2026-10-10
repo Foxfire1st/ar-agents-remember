@@ -47,7 +47,7 @@ The leaf path (`_reconcile_task_documents`, `_leaf_completion_candidate`, `_pare
 
 - Every refusal raises `FinalizeTaskDocumentError`; `finalize_result` turns it into
   `task-document-resolution-blocked` or `task-document-publication-blocked` before cleanup or without a task change.
-- A dry run previews the same documents and writes nothing.
+- A dry run previews the same documents and publishes no task-document changes. This helper's document-state boundary does not remove the enclosing registered tool call's daily log or completed-call river record.
 
 ### Invariants And Boundaries
 

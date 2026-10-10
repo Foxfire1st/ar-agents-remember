@@ -27,9 +27,9 @@
     "leaf": "260928-MIK-L37",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "A converted leaf's closeout preview reads the same gate verdict as the apply's preflight, over the same two trees: a leaf the apply would refuse is previewed as knowledge-gate-refused with its findings, never as would-closeout, asks for no commit approval and offers no apply; a passing preview says that the gate passed; an unconverted leaf's preview carries no gate verdict; and the preview writes nothing.",
+  "statement": "A converted leaf's closeout preview reads the same gate verdict as the apply's preflight, over the same two trees: a leaf the apply would refuse is previewed as knowledge-gate-refused with its findings, never as would-closeout, asks for no commit approval and offers no apply; a passing preview says that the gate passed; an unconverted leaf's preview carries no gate verdict; and preview performs no closeout publication to the leaf's code, memory or contract. The enclosing registered tool call retains its daily tool-log record and its completed-call river event; these records are not closeout publication.",
   "status": "proposed",
   "supersedes": []
 }

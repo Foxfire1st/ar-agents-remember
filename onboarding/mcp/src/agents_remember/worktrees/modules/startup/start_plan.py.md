@@ -14,7 +14,9 @@ Request-local enclosure plan values, unchanged contract projections and ordinary
 
 `_PreparedStartEnclosure` and `_StartEnclosurePlan`, the memory/provider blocked results, `_contract_after_memory_start`, and `_preview_start_enclosure` live here without a duplicate implementation. Block results retain the same recovery actions and wire fields. No code path rewrites a contract to the removed `disabled` mode or writes a new contract in it: `_contract_after_memory_start` only reconciles the external base commit, carrying a genuine `reconciledMemoryBaseCommit` onto the existing contract projection. Preview uses the existing `ensure_worktree` dry-run and returns ordinary prepared results, preserving memory/provider plans.
 
-Authority remains with the existing master-series constructor/admission and durable transaction owners. These local values do not authorize actual apply or another parent-series caller.
+Authority remains with the existing master-series constructor/admission and durable transaction owners. These local values do not authorize actual apply or another parent-series caller. Startup-state no-materialization means no contract, activation, protected-ref, worktree/provider or real-index mutation. The enclosing registered tool call still records its daily log line and any detail file, plus its completed-call workspace-river event (or the existing ambient lifecycle's event). Those records are not a reservation or startup publication; the public first-leaf proof admits and checks them rather than asserting universal zero-I/O.
+
+- The registered first-leaf proof preserves startup/Git state and checks the call records separately. \[10] [10]
 
 ## Evidence
 

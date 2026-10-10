@@ -3,7 +3,7 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Dry run previews and writes nothing then apply publishes.",
+      "note": "Dry run preserves the task-document snapshot; apply publishes the graph changes. This assertion is not a universal no-I/O claim about enclosing registered-call log/river records.",
       "targets": [
         {
           "anchor": {

@@ -3,8 +3,42 @@
   "proves": [
     {
       "anchor": {
-        "blob": "08a51034a37a718aa2f0e3f8820c4eea81d8fbe6",
-        "content": "sha256:0119668617f127c0acddfc455175c42d15aad8f918a8bd79438c308d2902f9fa",
+        "blob": "8d86ca26f65f28f7054fb550878c3120abc18eab",
+        "content": "sha256:78c1c690590688c72fca7c0405a4dccac2df6b27fbe1a96c59818b363a67c4cb",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_admitted_record_rejects_a_rewritten_earlier_line"
+        }
+      },
+      "facet": "A modified earlier log line violates the byte-prefix append requirement.",
+      "id": "PRF-0CJK8E",
+      "invariant": "INV-GAKDNC",
+      "origin": {
+        "handoffEntry": "MIK-R131@v1/R2/worker",
+        "leaf": "260928-MIK-L131"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "8d86ca26f65f28f7054fb550878c3120abc18eab",
+        "content": "sha256:90b9acc72cd7ad859a7b9ae161a4cd4310d596d56b1d91dfa2dd5a9f56bba985",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_admitted_record_rejects_a_file_beside_the_line_file"
+        }
+      },
+      "facet": "A differently named file beside the daily log is rejected, not hidden by excluding the logs subtree.",
+      "id": "PRF-2B15HE",
+      "invariant": "INV-GAKDNC",
+      "origin": {
+        "handoffEntry": "MIK-R131@v1/R2/worker",
+        "leaf": "260928-MIK-L131"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "8d86ca26f65f28f7054fb550878c3120abc18eab",
+        "content": "sha256:e9dceee757cfcac7831e050a9891e08a2c25113a34449a9761e670cb13982470",
         "locator": {
           "kind": "symbol",
           "name": "test_registered_first_leaf_preview_is_repeatable_without_publication"
@@ -20,8 +54,8 @@
     },
     {
       "anchor": {
-        "blob": "08a51034a37a718aa2f0e3f8820c4eea81d8fbe6",
-        "content": "sha256:509f467db5290051ffe52d80caf7441d866091582a94bc401d5f1463d0608144",
+        "blob": "8d86ca26f65f28f7054fb550878c3120abc18eab",
+        "content": "sha256:ffdf381b8be83ad6fe8275e4a4c5798d996b6a3c8c749c916a29350feb2d47df",
         "locator": {
           "kind": "symbol",
           "name": "test_public_apply_re_resolves_source_and_persisted_parent_preview_stays_read_only"
@@ -37,8 +71,8 @@
     },
     {
       "anchor": {
-        "blob": "08a51034a37a718aa2f0e3f8820c4eea81d8fbe6",
-        "content": "sha256:6d69d1d59b0bf7e712b19055bd4ba589ebf939b34b943c9731d7c11cbc12da79",
+        "blob": "8d86ca26f65f28f7054fb550878c3120abc18eab",
+        "content": "sha256:3b9d4abdac9864d26ecb08a14bab93d5d3f7f158d884f39cf692dbc80271c991",
         "locator": {
           "kind": "symbol",
           "name": "test_invalid_public_leaf_source_base_and_protected_ref_stay_refused_without_writes"
@@ -54,8 +88,8 @@
     },
     {
       "anchor": {
-        "blob": "08a51034a37a718aa2f0e3f8820c4eea81d8fbe6",
-        "content": "sha256:0e6779cb02e2cc2a4043379b8a2fbd09b73886f8e44a1affd4795f0e3a8ac3f2",
+        "blob": "8d86ca26f65f28f7054fb550878c3120abc18eab",
+        "content": "sha256:538104ce3f245bf86b9cb9b29e2760c1a7c7f2424461ff552ae95903b3635c42",
         "locator": {
           "kind": "symbol",
           "name": "test_foreign_or_unreadable_persisted_parent_after_preview_is_never_replaced"
@@ -71,8 +105,25 @@
     },
     {
       "anchor": {
-        "blob": "08a51034a37a718aa2f0e3f8820c4eea81d8fbe6",
-        "content": "sha256:f047e65fa75933efb644d29ce6856fff00c6e69f504c86c1d92621f4374766e1",
+        "blob": "8d86ca26f65f28f7054fb550878c3120abc18eab",
+        "content": "sha256:b6077b2d15d6c04deaf7b966ebff69fa3ab4166b7e27a0dd92fe634ba8f8f45e",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_admitted_record_rejects_a_directory_touch_without_entry"
+        }
+      },
+      "facet": "A directory mtime touch without an admitted new direct child is rejected.",
+      "id": "PRF-98J11A",
+      "invariant": "INV-GAKDNC",
+      "origin": {
+        "handoffEntry": "MIK-R131@v1/R2/worker",
+        "leaf": "260928-MIK-L131"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "8d86ca26f65f28f7054fb550878c3120abc18eab",
+        "content": "sha256:1fed1e0cf07033e9e4a221c18793b98dfd1c994bddc03dfd8c3c3035392fe1d6",
         "locator": {
           "kind": "symbol",
           "name": "test_preview_handoff_is_failure_sensitive_and_cannot_supply_durable_authority"
@@ -88,8 +139,25 @@
     },
     {
       "anchor": {
-        "blob": "08a51034a37a718aa2f0e3f8820c4eea81d8fbe6",
-        "content": "sha256:e2d664ead7347bc85902d16581520ec6335c4aa163a0782d8b12a3f15a0d93e3",
+        "blob": "8d86ca26f65f28f7054fb550878c3120abc18eab",
+        "content": "sha256:3f5b70ea805ee76b57412f00adb4d44ffcbf38f8f1086ca0076791e24122092b",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_admitted_record_rejects_a_stale_day_detail_folder"
+        }
+      },
+      "facet": "An unrelated old-day detail folder is not admitted by daily-record-shaped spelling.",
+      "id": "PRF-GAABYY",
+      "invariant": "INV-GAKDNC",
+      "origin": {
+        "handoffEntry": "MIK-R131@v1/R2/worker",
+        "leaf": "260928-MIK-L131"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "8d86ca26f65f28f7054fb550878c3120abc18eab",
+        "content": "sha256:90d0149fc87b77f37cd34bfd00738d6959638577e1aa591223b2b8f546fc1094",
         "locator": {
           "kind": "symbol",
           "name": "test_public_partial_bootstrap_preview_is_read_only_then_apply_recovers_same_journal"
@@ -102,17 +170,121 @@
         "handoffEntry": "L47-R1-F1",
         "leaf": "260928-MIK-L47"
       }
+    },
+    {
+      "anchor": {
+        "blob": "8d86ca26f65f28f7054fb550878c3120abc18eab",
+        "content": "sha256:79fba9a76f372513eb4e950976d84ea8eacfe81e11ae3b51ad8d86e7e093381e",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_admitted_record_rejects_a_detail_file_no_line_names"
+        }
+      },
+      "facet": "A new detail file with no new line naming it is rejected.",
+      "id": "PRF-GRZNF5",
+      "invariant": "INV-GAKDNC",
+      "origin": {
+        "handoffEntry": "MIK-R131@v1/R2/worker",
+        "leaf": "260928-MIK-L131"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "8d86ca26f65f28f7054fb550878c3120abc18eab",
+        "content": "sha256:19c9b43d358848506314e4f00d175c7d1fdac08792d0bfd27c6a86af586cdcdb",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_observer_event_mode_change_is_rejected"
+        }
+      },
+      "facet": "The legitimate ambient append passes before chmod, while a kind/mode change is rejected by the caller-owned metadata guard.",
+      "id": "PRF-MST172",
+      "invariant": "INV-GAKDNC",
+      "origin": {
+        "handoffEntry": "MIK-R131@v1/R2/worker",
+        "leaf": "260928-MIK-L131"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "8d86ca26f65f28f7054fb550878c3120abc18eab",
+        "content": "sha256:e9dceee757cfcac7831e050a9891e08a2c25113a34449a9761e670cb13982470",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_registered_first_leaf_preview_is_repeatable_without_publication"
+        }
+      },
+      "facet": "Repeated registered first-leaf previews preserve startup/Git state while each actual call is accounted for by checked log and completed-call river records.",
+      "id": "PRF-QACN4Z",
+      "invariant": "INV-GAKDNC",
+      "origin": {
+        "handoffEntry": "MIK-R131@v1/R2/worker",
+        "leaf": "260928-MIK-L131"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "8d86ca26f65f28f7054fb550878c3120abc18eab",
+        "content": "sha256:e7a4d7f610b39623e8bbff0e6798a9c380238137ac0f82291405a1a4ff7c742a",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_admitted_record_rejects_a_stale_day_line_file"
+        }
+      },
+      "facet": "An unrelated old-day line path is not admitted by daily-record-shaped spelling.",
+      "id": "PRF-WE5RQB",
+      "invariant": "INV-GAKDNC",
+      "origin": {
+        "handoffEntry": "MIK-R131@v1/R2/worker",
+        "leaf": "260928-MIK-L131"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "8d86ca26f65f28f7054fb550878c3120abc18eab",
+        "content": "sha256:d17ecd65dd2757031c9aae2a7fd06e29dcd96fb82d860ac02eb0ce02a77e5f5a",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_admitted_record_rejects_a_rewritten_earlier_event"
+        }
+      },
+      "facet": "A modified earlier workspace event violates the byte-prefix append requirement.",
+      "id": "PRF-ZC9KP2",
+      "invariant": "INV-GAKDNC",
+      "origin": {
+        "handoffEntry": "MIK-R131@v1/R2/worker",
+        "leaf": "260928-MIK-L131"
+      }
     }
   ],
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "8d86ca26f65f28f7054fb550878c3120abc18eab",
+        "content": "sha256:f78eccb29e35c8aa73f6612012f0fcc28c01990aab8ec80aae4d4415dec1d400",
+        "locator": {
+          "kind": "symbol",
+          "name": "PreviewFixture"
+        }
+      },
+      "id": "RLZ-CNGGMS",
+      "invariant": "INV-GAKDNC",
+      "origin": {
+        "handoffEntry": "MIK-R131@v1/R2/worker",
+        "leaf": "260928-MIK-L131"
+      },
+      "rationale": "The real temporary registered-call fixture supplies inside-root transcript/event layout, whole-root metadata/content and repository observations, and separate total/completed call accounting.",
+      "role": "support"
+    }
+  ],
   "references": {
     "10": {
-      "note": "Partial bootstrap read-only, then apply recovers the same journal",
+      "note": "Partial-bootstrap preview and actual apply use the same journal.",
       "targets": [
         {
           "anchor": {
-            "blob": "08a51034a37a718aa2f0e3f8820c4eea81d8fbe6",
-            "content": "sha256:e2d664ead7347bc85902d16581520ec6335c4aa163a0782d8b12a3f15a0d93e3",
+            "blob": "8d86ca26f65f28f7054fb550878c3120abc18eab",
+            "content": "sha256:90d0149fc87b77f37cd34bfd00738d6959638577e1aa591223b2b8f546fc1094",
             "locator": {
               "kind": "symbol",
               "name": "test_public_partial_bootstrap_preview_is_read_only_then_apply_recovers_same_journal"
@@ -122,13 +294,126 @@
         }
       ]
     },
-    "7": {
-      "note": "Fixture world is always external-memory",
+    "11": {
+      "note": "The observer exception preserves kind and mode before allowing an append.",
       "targets": [
         {
           "anchor": {
-            "blob": "08a51034a37a718aa2f0e3f8820c4eea81d8fbe6",
-            "content": "sha256:156f9428485de9881a227307f42f87991446e2b8f3a636a62e43fbfda3b3e13e",
+            "blob": "8d86ca26f65f28f7054fb550878c3120abc18eab",
+            "content": "sha256:a86b1d3b4dcaf22dffa4ddc8ec4271b03e6e8bb2606eb4890fc57c6f51e00ef4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_assert_observer_event_kept_kind_mode"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "Negative cases reject writes and metadata changes beyond the checked record.\n\nAnchor: lines 736-860",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8d86ca26f65f28f7054fb550878c3120abc18eab",
+            "content": "sha256:66c5f46472175127050a31c616ed4fc29dbdd710eacf0fe1a747fa9a23ed2850",
+            "locator": {
+              "end": 860,
+              "kind": "line_range",
+              "start": 736
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "Losing the handoff fails and preview cannot supply durable authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8d86ca26f65f28f7054fb550878c3120abc18eab",
+            "content": "sha256:1fed1e0cf07033e9e4a221c18793b98dfd1c994bddc03dfd8c3c3035392fe1d6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_preview_handoff_is_failure_sensitive_and_cannot_supply_durable_authority"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "Persisted artifact errors never select a synthetic valid parent.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8d86ca26f65f28f7054fb550878c3120abc18eab",
+            "content": "sha256:538104ce3f245bf86b9cb9b29e2760c1a7c7f2424461ff552ae95903b3635c42",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_foreign_or_unreadable_persisted_parent_after_preview_is_never_replaced"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "Same journal/ref states and real apply/recovery remain truthful.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8d86ca26f65f28f7054fb550878c3120abc18eab",
+            "content": "sha256:90d0149fc87b77f37cd34bfd00738d6959638577e1aa591223b2b8f546fc1094",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_public_partial_bootstrap_preview_is_read_only_then_apply_recovers_same_journal"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "Ambient completion has its own append proof and kind/mode guard, beside checked daily log records.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8d86ca26f65f28f7054fb550878c3120abc18eab",
+            "content": "sha256:fc22676a09959764cfccf60d2fd721f544303a91a24b792f72bda0a5de0b35e0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_assert_ambient_request_observes_only_tool_completion"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "Actual apply re-resolves current source; persisted-parent preview preserves startup/Git state and checks its call records.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8d86ca26f65f28f7054fb550878c3120abc18eab",
+            "content": "sha256:ffdf381b8be83ad6fe8275e4a4c5798d996b6a3c8c749c916a29350feb2d47df",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_public_apply_re_resolves_source_and_persisted_parent_preview_stays_read_only"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Fixture world is always external-memory.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8d86ca26f65f28f7054fb550878c3120abc18eab",
+            "content": "sha256:f78eccb29e35c8aa73f6612012f0fcc28c01990aab8ec80aae4d4415dec1d400",
             "locator": {
               "kind": "symbol",
               "name": "PreviewFixture"
@@ -139,12 +424,12 @@
       ]
     },
     "8": {
-      "note": "First-leaf preview repeatable without publication, commanded or not",
+      "note": "First-leaf preview repeats without startup publication while checking its call records, commanded or not.",
       "targets": [
         {
           "anchor": {
-            "blob": "08a51034a37a718aa2f0e3f8820c4eea81d8fbe6",
-            "content": "sha256:0119668617f127c0acddfc455175c42d15aad8f918a8bd79438c308d2902f9fa",
+            "blob": "8d86ca26f65f28f7054fb550878c3120abc18eab",
+            "content": "sha256:e9dceee757cfcac7831e050a9891e08a2c25113a34449a9761e670cb13982470",
             "locator": {
               "kind": "symbol",
               "name": "test_registered_first_leaf_preview_is_repeatable_without_publication"
@@ -155,12 +440,12 @@
       ]
     },
     "9": {
-      "note": "Disabled mode refused in preview and real run, world unchanged",
+      "note": "Typed disabled-mode preview and actual requests preserve refusal identity and no parent publication while checking their daily line/detail and river records cumulatively.",
       "targets": [
         {
           "anchor": {
-            "blob": "08a51034a37a718aa2f0e3f8820c4eea81d8fbe6",
-            "content": "sha256:f30200cfdf8ca6577ecdf459f01d3ccd3f0f0f109b73045fd0fc18a1ef97530d",
+            "blob": "8d86ca26f65f28f7054fb550878c3120abc18eab",
+            "content": "sha256:36e9ba2dd735e9c299b8956bc5d2846f5427a811ae0411d60ca250e68495c2bf",
             "locator": {
               "kind": "symbol",
               "name": "test_disabled_start_is_refused_before_any_publication"

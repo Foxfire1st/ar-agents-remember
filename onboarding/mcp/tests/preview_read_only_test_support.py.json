@@ -1,0 +1,171 @@
+{
+  "path": "mcp/tests/preview_read_only_test_support.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "7cf302eb50c45f037ae310ce5db71ccb9e0f5be3",
+        "content": "sha256:64d28d5db2468949a9721097cbaaa884c086821e600d20b67ad8ab364ea93f95",
+        "locator": {
+          "kind": "symbol",
+          "name": "assert_preview_read_only"
+        }
+      },
+      "id": "RLZ-WP3KMY",
+      "invariant": "INV-GAKDNC",
+      "origin": {
+        "handoffEntry": "MIK-R131@v1/R2/worker",
+        "leaf": "260928-MIK-L131"
+      },
+      "rationale": "The single comparator joins call-day and path-kind admission, causal directory changes, full repository preservation and checked log/river rows.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Captures pair observed state and record bytes with a UTC day.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7cf302eb50c45f037ae310ce5db71ccb9e0f5be3",
+            "content": "sha256:dde936bee470bbc8071b6fc18b3b25d2906244d935f208cac65d6a8548ed60f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "attach_record"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Daily record paths are admitted only within the capture-day interval.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7cf302eb50c45f037ae310ce5db71ccb9e0f5be3",
+            "content": "sha256:3b873f33ca3d133d9f4d5d28f36562106d2cd5af30596f5b186a0afb6d5c1978",
+            "locator": {
+              "kind": "symbol",
+              "name": "admitted_call_days"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Path classification binds the record names to admitted days and exact roots.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7cf302eb50c45f037ae310ce5db71ccb9e0f5be3",
+            "content": "sha256:95a24aee52f58dd1ceb8201f0604c41be8d112212ecc0d1b00b0d7f076bf22e6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_classify"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Created kinds, kept-path preservation and causal directory-entry checks are wired together.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7cf302eb50c45f037ae310ce5db71ccb9e0f5be3",
+            "content": "sha256:de836cb1d111a2ef3a180ea7f87bc002d7b8788fb0d9d74024fcb66c35859b0a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_check_paths_admit_only_record"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "A kept directory touch needs an admitted new direct child.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7cf302eb50c45f037ae310ce5db71ccb9e0f5be3",
+            "content": "sha256:fb966693894c05db612461c57137e2045b1a90e3f929091ce5164465f4b8a18a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_entry_causality"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Daily log lines account for calls and new detail files.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7cf302eb50c45f037ae310ce5db71ccb9e0f5be3",
+            "content": "sha256:225f022321368b9e8f713ce6c07a20bbebb0ae4fd3e46d2b69b99cb37ca2c484",
+            "locator": {
+              "kind": "symbol",
+              "name": "_check_record_checked"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "River rows account for completed calls and retain the completed-event kind.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7cf302eb50c45f037ae310ce5db71ccb9e0f5be3",
+            "content": "sha256:b3645a2b40953deb8c46ad9c3151e5f2a497c79ab3fe025266dc0619a7a6488a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_check_river_checked"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The top-level comparator preserves repository state and checks both record channels.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7cf302eb50c45f037ae310ce5db71ccb9e0f5be3",
+            "content": "sha256:64d28d5db2468949a9721097cbaaa884c086821e600d20b67ad8ab364ea93f95",
+            "locator": {
+              "kind": "symbol",
+              "name": "assert_preview_read_only"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The sole ambient caller separately proves its lifecycle append and preserves event metadata.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d5c7953dea706c733aa16daf33e8bf677022b47e",
+            "content": "sha256:fc22676a09959764cfccf60d2fd721f544303a91a24b792f72bda0a5de0b35e0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_assert_ambient_request_observes_only_tool_completion"
+            },
+            "path": "mcp/tests/test_worktree_start_preview.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

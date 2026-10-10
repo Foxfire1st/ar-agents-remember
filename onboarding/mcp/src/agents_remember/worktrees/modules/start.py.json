@@ -190,6 +190,88 @@
           "kind": "code"
         }
       ]
+    },
+    "21": {
+      "note": "A tool call records its daily line and any required detail under the existing log owner. [21]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eda1d3e9aa2bf8ac17d026e463b3d39dc5a0162a",
+            "content": "sha256:ff6599cd6ddf244ac14b2ec5cfdf351e8576cecf52d65b5ee608ed8a9aacee21",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_tool_call"
+            },
+            "path": "mcp/src/agents_remember/application/tool_answer_log.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "The completed-answer observer records the workspace event outside an ambient lifecycle. [22]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1ce75e52bb168b85b81156109a18ca23cfa7b801",
+            "content": "sha256:db24aaa4c677843b12e305218671e7a210542ea8f41f557a36cfbffdba17b67f",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_tool_completed"
+            },
+            "path": "mcp/src/agents_remember/observer/tool_events.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "The public result path carries the same owner-validated plan. [23]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4517ff389e5f8ac26676f8b517c15fd5cbc9f94f",
+            "content": "sha256:85b06a877328df7797297eb6fe45cd70602017caeca3cab20b6eff82cd70b230",
+            "locator": {
+              "kind": "symbol",
+              "name": "start_result"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "Only an actual carried preview parent qualifies for planned-lineage recognition. [24]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4517ff389e5f8ac26676f8b517c15fd5cbc9f94f",
+            "content": "sha256:1f55299fdc0743f470ed6fbc002652e45e36d9b364a87b7d20427e97f2d0b558",
+            "locator": {
+              "kind": "symbol",
+              "name": "_parent_lineage_start_block"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "Preview admission and memory preparation use that exact admitted parent. [25]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4517ff389e5f8ac26676f8b517c15fd5cbc9f94f",
+            "content": "sha256:b4d904af9292974d1ec56bbae104b4aaf973cfe81c3f06951c6ab4bfd9c9d155",
+            "locator": {
+              "kind": "symbol",
+              "name": "_plan_start_enclosure"
+            }
+          },
+          "kind": "code"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

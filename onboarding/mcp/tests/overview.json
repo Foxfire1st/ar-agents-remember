@@ -5167,6 +5167,40 @@
         }
       ]
     },
+    "1706": {
+      "note": "Registered preview preserves startup/Git state while checking call records.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d5c7953dea706c733aa16daf33e8bf677022b47e",
+            "content": "sha256:435c253d479393efb704da064156a4ed01dec3c60bf858249900335d2a67ba15",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_registered_first_leaf_preview_is_repeatable_without_publication"
+            },
+            "path": "mcp/tests/test_worktree_start_preview.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1707": {
+      "note": "The shared comparator checks call-day paths, causal directory entries, log details and completed-call river records.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7cf302eb50c45f037ae310ce5db71ccb9e0f5be3",
+            "content": "sha256:64d28d5db2468949a9721097cbaaa884c086821e600d20b67ad8ab364ea93f95",
+            "locator": {
+              "kind": "symbol",
+              "name": "assert_preview_read_only"
+            },
+            "path": "mcp/tests/preview_read_only_test_support.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
     "18": {
       "note": "The task-scoped MCP reader cases.",
       "targets": [

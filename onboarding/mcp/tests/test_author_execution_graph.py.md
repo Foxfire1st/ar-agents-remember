@@ -38,7 +38,8 @@ No configured domain evidence applies to the file-local claims above.
 
 The retained source anchors below support the fixture roles and assertion boundaries described above. They identify current behavior, not a request to restore historical test counts or percentage targets.
 
-- Dry run previews and writes nothing then apply publishes. [1]
+- Dry run preserves the task-document snapshot; apply publishes the graph changes. This assertion is not a universal no-I/O claim about enclosing registered-call log/river records. [1]
+
 - Batch atomicity leaves everything untouched on failure. [2]
 
 ### Cross-Repo References

@@ -844,6 +844,40 @@
         }
       ]
     },
+    "36": {
+      "note": "Registered calls keep the daily call record independently of closeout publication. [36]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eda1d3e9aa2bf8ac17d026e463b3d39dc5a0162a",
+            "content": "sha256:ff6599cd6ddf244ac14b2ec5cfdf351e8576cecf52d65b5ee608ed8a9aacee21",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_tool_call"
+            },
+            "path": "mcp/src/agents_remember/application/tool_answer_log.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "37": {
+      "note": "Completed calls keep their workspace-river event independently of closeout publication. [37]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1ce75e52bb168b85b81156109a18ca23cfa7b801",
+            "content": "sha256:db24aaa4c677843b12e305218671e7a210542ea8f41f557a36cfbffdba17b67f",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_tool_completed"
+            },
+            "path": "mcp/src/agents_remember/observer/tool_events.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "4": {
       "note": "`_recover_closeout_finalization` asks the recovery gate and re-proves existing output commits before exact contract publication.",
       "targets": [

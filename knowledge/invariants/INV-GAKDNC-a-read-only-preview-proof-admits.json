@@ -1,0 +1,39 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "The helper and registered fixture must jointly distinguish genuine preview publication from required telemetry; ignoring logs, admitting stale record paths or granting metadata exceptions would hide a product mutation while tests appeared green."
+  },
+  "applicability": "The registered worktree-start preview and refusal comparisons in the confined preview test fixture, including its already-existing ambient lifecycle event case.",
+  "conditions": [
+    "The fixture observes complete product paths and both repositories, keeps the transcript root inside coordination and pre-creates the empty workspace river lockfile.",
+    "The call-day interval comes from UTC capture days, with both ends inclusive; created record paths have their required kinds.",
+    "Earlier daily-log/river bytes remain a prefix; new rows and tool counts match the observed calls, and every new detail is named by a new line.",
+    "Only admitted direct-child entry creation explains a kept record directory mtime change; non-record paths and repository refs/worktrees/index remain unchanged.",
+    "The caller separately supplies completed-call river expectations and proves any existing ambient lifecycle event append while preserving kind/mode."
+  ],
+  "exclusions": [
+    "Production retention/compaction, budget-dropping or unwritable telemetry, which retain the existing product owners and are not exercised by this fresh-fixture equality proof.",
+    "Actual apply, arbitrary tool mutation and a third type of product write: the comparison supplies no implementation authority and an unexpected path remains a finding."
+  ],
+  "id": "INV-GAKDNC",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Whole file -m '': exit 0, 17 passed in 38.84s (/var/tmp/mik-run3/L131/20261010T1756/file-whole-run8.stdout); worker report notes/reports/role-launch/260928-MIK-L131-worker-0dd7ffe6-c1d2-407f-b276-5c2220ef73b9.md (satisfied envelope); journal #l131-r2-mik-r131-v1-worker-delivery; reviewer adjudication #l131-r2-mik-r131-v1-reviewer-adjudication (accepted CODE)."
+      ],
+      "path": "notes/reports/260928-MIK-L131-curator-evidence/handoff.json"
+    },
+    "handoffEntry": "MIK-R131@v1/R2/worker",
+    "leaf": "260928-MIK-L131",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A read-only preview proof admits and checks only the daily tool-log record and the workspace-river record of its calls, with strict call-day, entry-causality and observer-metadata boundaries, preserving every path outside them.",
+  "status": "proposed",
+  "supersedes": []
+}
