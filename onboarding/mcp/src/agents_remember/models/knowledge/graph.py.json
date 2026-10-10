@@ -29,6 +29,38 @@
         }
       ]
     },
+    "12": {
+      "note": "The closed authored role vocabulary and the explicit not-classified member.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb43356c10b09e4f63622d8ce0004d9d68140bee",
+            "content": "sha256:04ce117f509879f455d40f1f713e5577467d3d7b176c100922cc2680c0911db4",
+            "locator": {
+              "kind": "symbol",
+              "name": "RealizationRole"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The membership draft and its stored, digest-carrying form.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb43356c10b09e4f63622d8ce0004d9d68140bee",
+            "content": "sha256:b383cf6b448b245ef4cc4c4961c60024dd3f18c8232095b1efd81b908a1e7f88",
+            "locator": {
+              "kind": "symbol",
+              "name": "FamilyMemberDraft"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "The retained authored role Literal has an explicit unclassified value.",
       "targets": [

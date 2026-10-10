@@ -67,6 +67,187 @@
           "kind": "test"
         }
       ]
+    },
+    "56": {
+      "note": "**The candidate's two new source paths, its revised statement and its authored words, and the whole candidate tree as one table.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "472aa6a95dbd78142b0e19f328d23e2e3d2d3026",
+            "content": "sha256:4a0655790dff977be97d84615ec165500b44a99840460dd423000ba91ddd54b1",
+            "locator": {
+              "kind": "symbol",
+              "name": "SUCCESSOR_PATH"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "57": {
+      "note": "The three small value types: one candidate-only realization's identities, one side of the comparison, and the fixture with every identity a case asserts against.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "472aa6a95dbd78142b0e19f328d23e2e3d2d3026",
+            "content": "sha256:afb7197eebc31ce6df3f6f2bc2a07c6860a39df5e220a8025a902f064f8a2790",
+            "locator": {
+              "kind": "symbol",
+              "name": "AddedRealization"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "58": {
+      "note": "**The fixture builder: the shared baseline, the copied database, the curating candidate and the two live trees.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "472aa6a95dbd78142b0e19f328d23e2e3d2d3026",
+            "content": "sha256:0e33a6818449f12402a8bb83520c99d0fd294d8c353a6afe9f326d22e3665449",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_diff_fixture"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "60": {
+      "note": "**The fourth revision neither side selects, which is what makes `present_outside_selection` measurable.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "472aa6a95dbd78142b0e19f328d23e2e3d2d3026",
+            "content": "sha256:050bdaa5412f93c0d8c11c74ee63cd15577369f356d27aaa6eff71c0b9d01321",
+            "locator": {
+              "kind": "symbol",
+              "name": "_add_unselected_revision"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "61": {
+      "note": "**The added claim, whose recorded identity is the blob the candidate tree really holds.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "472aa6a95dbd78142b0e19f328d23e2e3d2d3026",
+            "content": "sha256:3c322c2a216f80f22a50d1a8851d44b86450d5c7a410a2808de28678d2557420",
+            "locator": {
+              "kind": "symbol",
+              "name": "_add_successor_claim"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "62": {
+      "note": "**The candidate tree, the object-store borrow that lets one repository name both trees, and the hermetic Git environment.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "472aa6a95dbd78142b0e19f328d23e2e3d2d3026",
+            "content": "sha256:03651363a5a071e8fffeda2df047e03f295a8c16b150f8018e5c9bab384042a3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_borrow_objects"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "63": {
+      "note": "**The fixture's loud-failure rule: a building step that does not do what it says fails the fixture.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "472aa6a95dbd78142b0e19f328d23e2e3d2d3026",
+            "content": "sha256:a8c852017cf6186413eb3d3c3a92bf3361ea68aff03528a0762109b5cf59d288",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "64": {
+      "note": "**The baseline fixture this module builds on.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9f0492ab5aba8203333707f64fbc4914d432963f",
+            "content": "sha256:1c1cc0d822b84b2e2bc2985992d154d169a88e6928a5f1b59eaf352820ef9079",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_read_scope_fixture"
+            },
+            "path": "mcp/tests/read_scope_test_support.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "65": {
+      "note": "The fixture value the baseline side is read from.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9f0492ab5aba8203333707f64fbc4914d432963f",
+            "content": "sha256:9b57b87f9d39abfcc36a9196479bac7e0d41a13935c7c67582b514d175b95ee8",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReadScopeFixture"
+            },
+            "path": "mcp/tests/read_scope_test_support.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "66": {
+      "note": "**The contract this module's artifact row is registered under.**\n\nAnchor: `knowledge-diff-cases`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "79ced316f57d0a3dfb3b417ac75c7e38b540b002",
+            "content": "sha256:929342408eab986b85e474007d33b0398ae3cda343cf39c7a584d5cf1ebf0936",
+            "locator": {
+              "end": 17,
+              "kind": "line_range",
+              "start": 15
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "67": {
+      "note": "**The evidence node the contract names: the removed realization keeps its baseline source in the union.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6839ec8adb0e987ab0ae64a2391cf27bc1cbd606",
+            "content": "sha256:01b96d95a32086cce401e101566384603e719f797336ca7ee06ee5568a9ad7cb",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_realization_the_candidate_removed_keeps_its_baseline_source_in_the_union"
+            },
+            "path": "mcp/tests/test_knowledge_diff_scope.py"
+          },
+          "kind": "test"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

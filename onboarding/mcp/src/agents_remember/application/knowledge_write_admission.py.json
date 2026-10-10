@@ -53,6 +53,70 @@
         }
       ]
     },
+    "12": {
+      "note": "**The module's own statement of the gap it closes and of why a second write path was refused.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0c25de5b43f8d9eab093ba267292a378cddb9137",
+            "content": "sha256:ead85644de937dc1ad342e01ee925d95fbb66e9381f3a10f5a5e96242c92885b",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeWriteAdmission"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "**The facts one admitted write is bound to, including the retry scope and the two exact source revisions.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0c25de5b43f8d9eab093ba267292a378cddb9137",
+            "content": "sha256:ead85644de937dc1ad342e01ee925d95fbb66e9381f3a10f5a5e96242c92885b",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeWriteAdmission"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "Which authority admitted this write, and whether it was derived without an enclosure.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0c25de5b43f8d9eab093ba267292a378cddb9137",
+            "content": "sha256:3ec33dcc3c9500aa2682f5cd25e81fdf7d377bfdee9479f7bc681fff6b88b94a",
+            "locator": {
+              "kind": "symbol",
+              "name": "AdmissionProvenance"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "**The second real admission this value exists to carry, and the resolver that builds it.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0c25de5b43f8d9eab093ba267292a378cddb9137",
+            "content": "sha256:ead85644de937dc1ad342e01ee925d95fbb66e9381f3a10f5a5e96242c92885b",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeWriteAdmission"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "The taskless admission value and provenance are the published shapes.",
       "targets": [

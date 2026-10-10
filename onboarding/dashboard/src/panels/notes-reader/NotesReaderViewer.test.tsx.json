@@ -2,6 +2,124 @@
   "path": "dashboard/src/panels/notes-reader/NotesReaderViewer.test.tsx",
   "realizes": [],
   "references": {
+    "17": {
+      "note": "The component under test.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da6b1dad40f634e0d0a7ab66ecf966af32e721e7",
+            "content": "sha256:bfb17be65e8b1a6843d4bd96e6535360bca70b17e394407885bc8bee06c47933",
+            "locator": {
+              "kind": "symbol",
+              "name": "NotesReaderViewer"
+            },
+            "path": "dashboard/src/panels/notes-reader/NotesReaderViewer.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "The shell driven by the takeover-wiring test.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "20fdf0162caafa918c7644d491813ce78db8d1b3",
+            "content": "sha256:19ba28765718f373b4b70dd594224499bd1aeb2c6cf77d848967a7e4dc4ade1f",
+            "locator": {
+              "kind": "symbol",
+              "name": "CockpitShell"
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "`masterDoc` and `seedMaster` — the cast-free seed and its `satisfies WorkspaceProjection`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c2e3d43aa4dc223efaf3ffbe6fdad805cc80b98c",
+            "content": "sha256:36be73f4e65fee9885d875e2b2b8fa1edb7912c7e3a3e6bec73cfc3966806e9b",
+            "locator": {
+              "kind": "symbol",
+              "name": "masterDoc"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "20": {
+      "note": "The seed task document is checked against the generated TaskDocNode.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cee16fce97e5e76b33e52e9b0d606b87481c9758",
+            "content": "sha256:674f8a5c8ece6da2bbcd3b0a81e3f0a424d1260ceb82458c65828e3f7b459dfd",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskDocNode"
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "Analytics requires agentPickups and expectationRows arrays, along with the other projected collections.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cee16fce97e5e76b33e52e9b0d606b87481c9758",
+            "content": "sha256:162c26c0cad036357bad30e157f8f2604877fbdae3e2b73ed0f5d7f6e6658d23",
+            "locator": {
+              "kind": "symbol",
+              "name": "Analytics"
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "The seeded snapshot satisfies the generated workspace contract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cee16fce97e5e76b33e52e9b0d606b87481c9758",
+            "content": "sha256:0f6e963168be5aeccb761d64603f4c4f77cace12721e5e7ca5d9f1e8e26a1ebd",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorkspaceProjection"
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "The seed derives metrics through the shared lifecycle rollup helper.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cee16fce97e5e76b33e52e9b0d606b87481c9758",
+            "content": "sha256:e9ee85ebb381e09c4f6b9a60589ab9f2ae16b5bf020fa42a6b9c53b47f0aa00a",
+            "locator": {
+              "kind": "symbol",
+              "name": "metricsFor"
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "8": {
       "note": "The cases mount the shell explicitly on Operations.\n\nAnchor: `CockpitShell`",
       "targets": [

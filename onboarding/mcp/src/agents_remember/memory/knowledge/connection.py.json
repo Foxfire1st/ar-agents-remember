@@ -49,6 +49,136 @@
           "kind": "code"
         }
       ]
+    },
+    "16": {
+      "note": "- The bounded lock policy and its no-retry rule.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5330296baa8cabeac31286bb196c70bcf2763703",
+            "content": "sha256:443116d5d7ec42b5e741759b495286c4fe4d15aa5f75ea5038f71c378f3fa3b5",
+            "locator": {
+              "kind": "symbol",
+              "name": "BUSY_TIMEOUT_MILLISECONDS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "- The read-only connection every identity confirmation uses, so a pass cannot repair what it checks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5330296baa8cabeac31286bb196c70bcf2763703",
+            "content": "sha256:8e0d73a6fc5ba1e336df087f356d6f7090430e241977d7497ad8d06bb9fb7662",
+            "locator": {
+              "kind": "symbol",
+              "name": "open_read_only_database"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "- The shared one-row reader every graph read is built on.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5330296baa8cabeac31286bb196c70bcf2763703",
+            "content": "sha256:ba4a0983cd502c72cf152dbc822d8f22729403c38c03298662136f762fa88241",
+            "locator": {
+              "kind": "symbol",
+              "name": "fetch_one"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "- Create-on-empty versus validate-on-existing, and the post-commit version marker.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5330296baa8cabeac31286bb196c70bcf2763703",
+            "content": "sha256:53c6a302dae053cdcdc2b6cc13bf78624646239924382882de2449261f0f3090",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_or_validate_schema"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "- The existing database is checked for generation, exact table columns and the full trigger set.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5330296baa8cabeac31286bb196c70bcf2763703",
+            "content": "sha256:930d3a928f847e7604bbfec6b53ca6fe384a4611fa001211ae4f11be297e4d66",
+            "locator": {
+              "kind": "symbol",
+              "name": "inspect_schema"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "- The single immediate transaction whose exit rolls back without suppressing the failure.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5330296baa8cabeac31286bb196c70bcf2763703",
+            "content": "sha256:0ade81c5cb9c5790671542b21896edaa0640f14246b71d2e3725870cb85e0926",
+            "locator": {
+              "kind": "symbol",
+              "name": "immediate_transaction"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "- The graph readers that reuse the one-row helper.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "66102e9850b5f1c88cdba3b4cbd1af7d321197e8",
+            "content": "sha256:be4b89a03071dfec313b2a235a46f08cf7115843cc9c516c6f0287f5b35be4c0",
+            "locator": {
+              "kind": "symbol",
+              "name": "get_family_revision"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/families.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "- The close that no longer calls the peer unlink, and why.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e4fc1a849557a256d000a2a4f98c444ef5400e7d",
+            "content": "sha256:947779ca6c56d2d2b3f19731a4d47c06e558fe68abe6d4f9e91cdeb7abde9d4a",
+            "locator": {
+              "kind": "symbol",
+              "name": "close"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/store.py"
+          },
+          "kind": "code"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

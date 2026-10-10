@@ -205,7 +205,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "30a7a2a8d8ec537425cdc4652a376dea8effdce8",
+            "blob": "bb33d32e66cacf8fa81aad1a23356a78e271e230",
             "content": "sha256:0ce0d8b09fe446eae103436346e55cb41b36e1e6300b7d5aa90f8b87faf24161",
             "locator": {
               "kind": "symbol",
@@ -231,6 +231,247 @@
             "path": "mcp/tests/test_reviewer_worklist_process.py"
           },
           "kind": "test"
+        }
+      ]
+    },
+    "29": {
+      "note": "The hunk, range, content-identity and hit rules.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "172b440738a1d8071271d873fec1d5482306a954",
+            "content": "sha256:5a7fe9a4cdca5c887338cdd085aa1d9824402dd61470d26127b1e0ac17c88c6c",
+            "locator": {
+              "kind": "symbol",
+              "name": "CodeTrees"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "30": {
+      "note": "The pinned zero-context blob diff.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "172b440738a1d8071271d873fec1d5482306a954",
+            "content": "sha256:4732d4fa652707b60b16f11a7755cc6ecca5624812435b69cc7c0e20409408f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "BLOB_DIFF_ARGS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "31": {
+      "note": "One hunk and its document form.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "172b440738a1d8071271d873fec1d5482306a954",
+            "content": "sha256:d2ce1bb5827e58efd712ff0ca55f3fde440eab096c9b4f33bd903f63f1a6fb96",
+            "locator": {
+              "kind": "symbol",
+              "name": "Hunk"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "32": {
+      "note": "The strict-inside rule for an empty side.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "172b440738a1d8071271d873fec1d5482306a954",
+            "content": "sha256:2d9db158368289e1be4222668ff5eeb78090e5716ff3e4e3f42f430638125e24",
+            "locator": {
+              "kind": "symbol",
+              "name": "_hits"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "33": {
+      "note": "Binary pairs give `None`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "172b440738a1d8071271d873fec1d5482306a954",
+            "content": "sha256:6a7bb3717138117cc6ff4a72820c39634f4ae245eb588d556786a9b52ea8bbb8",
+            "locator": {
+              "kind": "symbol",
+              "name": "parse_hunks"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "34": {
+      "note": "The image of a line range, or no mapping.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "172b440738a1d8071271d873fec1d5482306a954",
+            "content": "sha256:38d5a0c2a37f935f76418b0bd992a75908c2a27c963c44508ecbbc87d89d1977",
+            "locator": {
+              "kind": "symbol",
+              "name": "_map_line"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "35": {
+      "note": "The hunks of a blob pair, cached, with a named failure.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "172b440738a1d8071271d873fec1d5482306a954",
+            "content": "sha256:5a7fe9a4cdca5c887338cdd085aa1d9824402dd61470d26127b1e0ac17c88c6c",
+            "locator": {
+              "kind": "symbol",
+              "name": "CodeTrees"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "36": {
+      "note": "Whether the store holds a blob; a Git failure is a `CodeReadError`, never absent (R3-2).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "172b440738a1d8071271d873fec1d5482306a954",
+            "content": "sha256:5a7fe9a4cdca5c887338cdd085aa1d9824402dd61470d26127b1e0ac17c88c6c",
+            "locator": {
+              "kind": "symbol",
+              "name": "CodeTrees"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "37": {
+      "note": "Resolution by locator kind.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "172b440738a1d8071271d873fec1d5482306a954",
+            "content": "sha256:ee08bf6e56e4c1c8214c747ae6f2bc80256052a918377f796e2ba5264fb446f5",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "38": {
+      "note": "A line range mapped from its recorded blob; an unknown blob has no mapping.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "172b440738a1d8071271d873fec1d5482306a954",
+            "content": "sha256:14a94bde92e54f85d9ce0d8bdc16a592112263d35405b2421379c9bdf920aff9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_mapped_lines"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "39": {
+      "note": "The mechanical unique match of definition 6.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "172b440738a1d8071271d873fec1d5482306a954",
+            "content": "sha256:d4d4a8fd507e3205d7e3cb98d38a7ec5b9ad583334439a253a4ca4299160c115",
+            "locator": {
+              "kind": "symbol",
+              "name": "unique_binder"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "40": {
+      "note": "A changed path's hunks, shared by the gate and the lane (moved from `_path_hunks`).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "172b440738a1d8071271d873fec1d5482306a954",
+            "content": "sha256:11585a1ae94100e7cdae9228394a6ce0d0d41fa109edf13642d3c29ad5a055a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "change_hunks"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "41": {
+      "note": "The two callers: the gate's linkage and the lane's classification.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "172b440738a1d8071271d873fec1d5482306a954",
+            "content": "sha256:11585a1ae94100e7cdae9228394a6ce0d0d41fa109edf13642d3c29ad5a055a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "change_hunks"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "42": {
+      "note": "Hunk parsing and line-range mapping cases.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b88287461b307446f70db6c1c509b1f8032c2621",
+            "content": "sha256:07f3d64dacd95030b3b405e93335322d4d2aaa1ee0b4952fa3c6f88d97d5d51d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_hunks_parse_and_line_ranges_map_through_the_zero_context_diff"
+            },
+            "path": "mcp/tests/test_knowledge_worklist.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "43": {
+      "note": "Line ranges map, carry and touch.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "172b440738a1d8071271d873fec1d5482306a954",
+            "content": "sha256:50b699f659182b6f27aabf7837b0437b1790cb9310b29ffc5e98a2a7e0a5932e",
+            "locator": {
+              "kind": "symbol",
+              "name": "map_range"
+            }
+          },
+          "kind": "code"
         }
       ]
     }

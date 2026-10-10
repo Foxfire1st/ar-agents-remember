@@ -66,6 +66,199 @@
           "kind": "code"
         }
       ]
+    },
+    "34": {
+      "note": "The observed change granularities, whose whole point is that a file-level observation is not a span observation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fba49281a25900d4e9dd78649d759e48d72908db",
+            "content": "sha256:11e8e56a52e1fc3ce9298969f0f58e68ca30de6ccf472115d81b4fdb8c0e6a12",
+            "locator": {
+              "kind": "symbol",
+              "name": "DetectionChangeGranularity"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "35": {
+      "note": "The registered scope status, every declareable limitation, and the one limitation both records state unconditionally.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fba49281a25900d4e9dd78649d759e48d72908db",
+            "content": "sha256:113730280358b09e0101d74b629d8552c914da582c96c7486ef37886e5fb8354",
+            "locator": {
+              "kind": "symbol",
+              "name": "DetectionScopeStatus"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "36": {
+      "note": "The four manifest destinations, and the rule that only the durable publication route can back a retained report.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fba49281a25900d4e9dd78649d759e48d72908db",
+            "content": "sha256:3f8e75033935f11925e48e2d4ff45d8943558fc44287e38ef9130544d2fb6528",
+            "locator": {
+              "kind": "symbol",
+              "name": "DetectionScopeManifest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "37": {
+      "note": "One side of a read as an identity: the admission, the selector and the selector policy version, with the one-namespace refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fba49281a25900d4e9dd78649d759e48d72908db",
+            "content": "sha256:551c901c8218f966bf287aff6feaa8b67a3acf39b80a9ab7aa87ea0e7ba6a597",
+            "locator": {
+              "kind": "symbol",
+              "name": "DetectionInputSide"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "38": {
+      "note": "The counterpart-probe outcome, in the shipped coverage vocabulary rather than a second one.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fba49281a25900d4e9dd78649d759e48d72908db",
+            "content": "sha256:1761547001647e7b754eee68bbe20626ab376824120810e706fc62ff44fc0e46",
+            "locator": {
+              "kind": "symbol",
+              "name": "DetectionCounterpartProbe"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "39": {
+      "note": "The observed change at its recorded granularity, and the refusal of a span observation no whole-path locator could have made.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fba49281a25900d4e9dd78649d759e48d72908db",
+            "content": "sha256:a5475c39842607129ad03a0e447d2efe1e068936c89c364f9b4922b37cc32f78",
+            "locator": {
+              "kind": "symbol",
+              "name": "DetectionObservedChange"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "40": {
+      "note": "The recorded relationship path, retaining every edge and the side that reached it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fba49281a25900d4e9dd78649d759e48d72908db",
+            "content": "sha256:8a7215664bb01a39edd67d0fa4d4d5fe49c7470317ec8fe7e849fbb96c9e1e1d",
+            "locator": {
+              "kind": "symbol",
+              "name": "DetectionRelationshipPath"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "41": {
+      "note": "The manifest reference: the retained object's own fields, the declared destination kinds, and `resolve` reporting a reference it cannot show as unresolved with what would resolve it rather than as an empty manifest.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fba49281a25900d4e9dd78649d759e48d72908db",
+            "content": "sha256:60a8bd2d79588f31996a7babbaaba6db371858c112a4473a71225cfaa56c364f",
+            "locator": {
+              "kind": "symbol",
+              "name": "DetectionManifestResolution"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "42": {
+      "note": "The declared input set and the discriminator check: two sides and no probe, both sides and the probe, or one side and no probe — each refused with the member and the recorded inputs named.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fba49281a25900d4e9dd78649d759e48d72908db",
+            "content": "sha256:a6bf33654e4abf6b268fb8aa82d296b41ef2fcea29100f6c4622a6c9bb0fd05a",
+            "locator": {
+              "kind": "symbol",
+              "name": "DetectionRecordedInputSet"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "43": {
+      "note": "The all-required signal field set, its closed-vocabulary validator and the `detail`-equals-rendering refusal that makes a verdict in prose unrepresentable.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fba49281a25900d4e9dd78649d759e48d72908db",
+            "content": "sha256:6012b3a5a13fa4f2aac335ee8e202fc6e1dda4cb340856fa1b50cecd55d36591",
+            "locator": {
+              "kind": "symbol",
+              "name": "DetectionSignalPayload"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "44": {
+      "note": "The one detail string a signal is allowed to hold, as a rendering of its own recorded basis.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fba49281a25900d4e9dd78649d759e48d72908db",
+            "content": "sha256:d1f644a37cecc50a34ea0400ef21dc339d25e4673688e95836668bf7e1f14770",
+            "locator": {
+              "kind": "symbol",
+              "name": "observed_basis_detail"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "45": {
+      "note": "The refusal type a documented refusal would be carried on.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "26599e0fe8b427bc0d290767b7b8e263cde390b6",
+            "content": "sha256:c7a3c663a631295cd6520f0f7af9a8b2412d8b133a2d066dffc537a0bfb37cab",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeRefusal"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/result.py"
+          },
+          "kind": "code"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

@@ -24,6 +24,12 @@ Canonical skills/l-01-agent-lifecycles/operations/orientation.md owns the instru
 
 Worker/Reviewer use memory read-only; Curator owns admitted memory writes. A dashboard role needs no parent. After compaction/reconnect restore the same assignment and inspect current AR truth before retrying an action.
 
+## Code Commentary
+
+### Todos
+
+None recorded.
+
 ## Evidence
 
 ### Repo-Internal References
@@ -32,6 +38,25 @@ Worker/Reviewer use memory read-only; Curator owns admitted memory writes. A das
 | --- | --- | --- |
 | Taskless/approved-scope intake, exact task reads, paired write surfaces, bound server and same-task recovery. | lines 3-13 | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/orientation.md:3-13 |
 
+### Docs References
+
+No external or domain documentation governs this repository-local instruction file; it is canonical
+repository prose consumed by the skill router.
+
+No relevant documentation found after checking live sources.
+
+### Repo-Internal References
+
+- Investigator takes any scoped concern from the actual parent, uses the developer request only without a parent, and never synthesizes task identity; developer decisions follow the parent channel with the stated parentless and unreachable exceptions. \[2] [2]
+
+- The operation block's declared purpose, source path, and applicable roles. [3]
+- The canonical source of this block. [4]
+
+### Cross-Repo References
+
+No sibling-repository contract defines this instruction file.
+
+No meaningful cross-repo references found.
 
 ## Current Investigator contract impact
 
@@ -42,4 +67,4 @@ Parentless Projects Investigator intake asks only for the missing concern/report
 
 ## Current intake and developer-question evidence
 
-- Investigator takes any scoped concern from the actual parent, uses the developer request only without a parent, and never synthesizes task identity; developer decisions follow the parent channel with the stated parentless and unreachable exceptions. \[2] [2]
+- Investigator takes any scoped concern from the actual parent, uses the developer request only without a parent, and never synthesizes task identity; developer decisions follow the parent channel with the stated parentless and unreachable exceptions. [2] [2]

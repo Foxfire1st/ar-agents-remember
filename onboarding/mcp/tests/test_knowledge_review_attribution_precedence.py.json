@@ -34,6 +34,57 @@
         }
       ]
     },
+    "12": {
+      "note": "**The precedence cases: one unreadable half leaves the readable side attributed and the rest unknown; the same pair read completely confirms absence where the lost half could not; a damaged half cannot support a negative conclusion.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "db8e79f3cba6883a4b097081334a412465c01635",
+            "content": "sha256:bab86f608af5e7616a8171381280f06d69cc9aa26e631a371aecc709c0a27828",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_one_unreadable_knowledge_half_leaves_the_readable_side_attributed_and_the_rest_unknown"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "The unit-regression lane row, beside its sibling's.\n\nAnchor: `test_knowledge_review_attribution_precedence`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "15411f097a9e85935a2eda14481d89ff6f7c2768",
+            "content": "sha256:a030c166ca646be6ba8660755a3045e04d6f7e624177ca6a9292fb454ccf9e2c",
+            "locator": {
+              "end": 130,
+              "kind": "line_range",
+              "start": 130
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "The empty-base case: a real empty converted Git base counts as completely inspected for absence; no canonical origin record invents its emptiness.\n\nAnchor: lines 122-151",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "db8e79f3cba6883a4b097081334a412465c01635",
+            "content": "sha256:c7830afe8bd8ac54ff56c7f3747d52847807474f9de8bded225366c4c17f1414",
+            "locator": {
+              "end": 151,
+              "kind": "line_range",
+              "start": 122
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
     "9": {
       "note": "`test_one_unreadable_knowledge_half_leaves_the_readable_side_attributed_and_the_rest_unknown` owns the current boundary described above.",
       "targets": [

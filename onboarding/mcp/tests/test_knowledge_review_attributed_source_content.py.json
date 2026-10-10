@@ -65,6 +65,118 @@
           "kind": "test"
         }
       ]
+    },
+    "15": {
+      "note": "**The module's own statement of the admitted population and one case per property.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fcca75c35582b37105f048d0536ee42d366721c4",
+            "content": "sha256:6e67b3f94b66dfea3ce63f9d327aeb19f7a4064284f129894b262ef283ca6d89",
+            "locator": {
+              "kind": "symbol",
+              "name": "attributed_fixture"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "The lane marker, the three population paths and the two refusal constants.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fcca75c35582b37105f048d0536ee42d366721c4",
+            "content": "sha256:cb2f34bbbac5c21c0849d4523d5304ab8efd675527cd859ac0f70b96b0b336e3",
+            "locator": {
+              "kind": "symbol",
+              "name": "ATTRIBUTED_PATH"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "**Attributed admission without counting, and the unlinked refusal.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fcca75c35582b37105f048d0536ee42d366721c4",
+            "content": "sha256:d70366a961d71e0818f3c98a04f891c2885dde06ba6d0a42e71312fd65fe615f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_unchanged_path_a_recorded_realization_links_opens_as_context_without_counting"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "18": {
+      "note": "**Comparison isolation and historical bytes.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fcca75c35582b37105f048d0536ee42d366721c4",
+            "content": "sha256:7bbc9e7dfed79e65b20eaf2e0849f7218fe90927136e619991fd3b13f69a5fac",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_path_linked_only_in_another_comparison_is_refused_for_this_one"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "19": {
+      "note": "**The two review-fix cases: exact spelling, and a link scope size cannot fail or an unread half cannot negate.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fcca75c35582b37105f048d0536ee42d366721c4",
+            "content": "sha256:a106a785d11d775de2dbf51735afe26592c9a63c2898e28a6995b83e9aa0a3f0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_padded_spelling_is_never_admitted_as_attributed_context"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "20": {
+      "note": "The population paths the fixture's knowledge links.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fcca75c35582b37105f048d0536ee42d366721c4",
+            "content": "sha256:cb2f34bbbac5c21c0849d4523d5304ab8efd675527cd859ac0f70b96b0b336e3",
+            "locator": {
+              "kind": "symbol",
+              "name": "ATTRIBUTED_PATH"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "21": {
+      "note": "The owners under test.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fcca75c35582b37105f048d0536ee42d366721c4",
+            "content": "sha256:e4029e890c3384457742e3ce080a5610d76aae3ee2b63f0af57c14074c642592",
+            "locator": {
+              "kind": "symbol",
+              "name": "_expand"
+            }
+          },
+          "kind": "test"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

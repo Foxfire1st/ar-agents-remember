@@ -81,6 +81,37 @@
           "kind": "test"
         }
       ]
+    },
+    "24": {
+      "note": "The lane row and the exact-scope consumer row this module is registered in.\n\nAnchor: `\"mcp/tests/test_review_final_output_receipt.py\"`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "837e915726adb29076ca1c3afe50a1d441d6ea30",
+            "content": "sha256:67f58c58dbc55122e84f30cab52617992ecf9b03d80f0738288afe38aac190bf",
+            "locator": {
+              "end": 243,
+              "kind": "line_range",
+              "start": 243
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "65ceaeb4c6e3bcf64ec78176b74b507a84a69233",
+            "content": "sha256:67f58c58dbc55122e84f30cab52617992ecf9b03d80f0738288afe38aac190bf",
+            "locator": {
+              "end": 1339,
+              "kind": "line_range",
+              "start": 1339
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

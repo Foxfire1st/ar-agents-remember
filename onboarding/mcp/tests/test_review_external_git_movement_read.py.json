@@ -64,6 +64,77 @@
         }
       ]
     },
+    "26": {
+      "note": "**The sibling fixture this module shares rather than rebuilds.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8f4d87ab4a3b7adffd6b6a39df3a04145b4f263b",
+            "content": "sha256:ad730869b4cbec807e6d8d68179d6e88f399d8edaec19af5fc8a4e2d6a4436d5",
+            "locator": {
+              "kind": "symbol",
+              "name": "tree_fixture"
+            },
+            "path": "mcp/tests/test_review_final_output_receipt.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "27": {
+      "note": "**The lane registration that makes these cases part of the governed `integration` population.**\n\nAnchor: `test_review_external_git_movement_read`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e6cd30be07fa6a435465d02ac4fb9feb7e1bbc8",
+            "content": "sha256:8a4b6c56f0180bedc3c443a06d93c7c8674441a5c20feb3eac7e0f16dd5c29d4",
+            "locator": {
+              "end": 365,
+              "kind": "line_range",
+              "start": 365
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "28": {
+      "note": "**A lifecycle consumer row that names this module, so the artifact census still counts it.**\n\nAnchor: `test_review_external_git_movement_read`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a0569bc130f1ea52e6731d4460788c50542ae82a",
+            "content": "sha256:8a4b6c56f0180bedc3c443a06d93c7c8674441a5c20feb3eac7e0f16dd5c29d4",
+            "locator": {
+              "end": 1248,
+              "kind": "line_range",
+              "start": 1248
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "29": {
+      "note": "**The documented section the matrix case asserts against, generated from the production table.**\n\nAnchor: `Raw Git Identity Boundary`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9875a36129ddf25e975f528d87b4f23f8e651543",
+            "content": "sha256:59c1906565dbfe011e824511f7a77e69deb73531ed789fd602b21b74aac23cf1",
+            "locator": {
+              "end": 150,
+              "kind": "line_range",
+              "start": 113
+            },
+            "path": "docs/reference/worktrees-c09.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "5": {
       "note": "Uncommitted tree supplies no observed work-head proof.",
       "targets": [

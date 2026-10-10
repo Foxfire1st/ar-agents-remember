@@ -1248,7 +1248,7 @@ The leaf-wide view of a live comparison holds the knowledge diff, the currentnes
 `application/` owns operation-level MCP composition. Application entry points translate
 trusted MCP runtime config plus typed tool arguments into package service calls
 and JSON-compatible payload dictionaries. Domain placement follows what a tool
-operates on: `task_reopen_tool` cit:([`task_reopen_tool`], mcp/src/agents_remember/application/task_docs/task_reopen.py:20-41) sits beside the task_doc application entry point because it
+operates on: `task_reopen_tool`  sits beside the task_doc application entry point because it
 reopens a task, while worktree_tools keeps only genuine worktree operations (its
 abandon now also ends the ambient lifecycle it anchors).
 
@@ -1451,7 +1451,7 @@ sync/start/poll object and Pydantic rejects mixed mode fields.
   whereas a type mismatch at the producer is a pyright error before the code ships.
 - A vocabulary an application entry point decides is declared in the owning model/module and imported
   by the consumer, not retyped there (260731-EFA-L4; `FileReadStatus` is the worked example).
-  cit:(["FileReadStatus = Literal["], mcp/src/agents_remember/models/read_files.py:20-32; mcp/src/agents_remember/application/read_files.py:44-46)
+
 
 ## Invariants And Boundaries
 
@@ -1487,6 +1487,8 @@ A replacement preserves the previous receipt under its own attempt number; an un
 ## Evidence
 
 ### Repo-Internal References
+
+- The adapter's re-export of the sibling surface, which is what keeps the dashboard CLI's import resolving. [450]
 
 - The two MCP payload builders are declared at these entry points. [112]
 - `ResponseModel` is the public response-model base. [113]
@@ -1539,6 +1541,41 @@ Current working-candidate evidence for this route:
 - Application message transport contains only code and memory. [123]
 - Landing input carries the actual two outputs. [124]
 
+## Refreshed current evidence
+
+## Refreshed current evidence
+
+- The route association, with the existence question asked before the route question. [416]
+- **The labelled Git inference: the exact command, the three states, and the sentence that says it is not proof that the invariant moved.** [417]
+- **The adapter that lost the private resolver and re-exports the owner's, and the port the production app reads it through.** [419]
+- **The pane that reads the partition instead of recomputing it, with every count scoped or reasoned.** [420]
+- The declaration this module resolves against: `published_dataset_path`/`PUBLISHED_DATASET_NAME` are retired under R26 (zero hits in the tree) and resolve nothing; `resolve_published_intent` survives (`mcp/src/agents_remember/application/published_intent.py:67` export, defined `:168`, called `:278`) — the original publication/read-back reuse clause is therefore not reusable unchanged.
+- The required `--contract` argument, and the invocation refusal that fires after the contract is loaded: `run()` calls `load_leaf_contract` first (`mcp/src/agents_remember/cli/knowledge_ingest.py:101`), with no separate ingest precontract.
+- The capsule operation's four refusal-capable steps, each returning a value rather than raising. [423]
+- The launch compiler: the entry point the serving port is bound to, its named refusals, and the two admittances. [424]
+- The eve carrier path, which materializes L7's carrier and reads the admitted workspace back out of it. [425]
+- The seat-addressed routing rule and its address type, for a caller with no task document. [426]
+- `TOOL_RESPONSE_MODELS` is the registry of public response models. [427]
+- The capsule surface this package consumes and does not re-implement. [428]
+- The production caller the produce side gained: an eve launch through the wired launch points materializes this carrier, and the launch runs in the workspace the admitted roots own. [429]
+- **The named states the route answers with, and the guard that makes "never silently select another repository" a verified fact.** [431]
+- **The one observation both the review's inventory and the comparison's expansion read, with the two Git questions it asks.** [432]
+- **The comparison's expansion seam is a delegation, so this route has one implementation of "what did these two trees change".** [433]
+- The default bundle binds the knowledge validator. [434]
+- The composition binds the base converter and the crossing. [435]
+- Joining a computation in flight; the bound applies only to a new one. [437]
+- Recorded rows are rechecked with path selections first (`changed_observations` at `mcp/src/agents_remember/kernel/recorded_reads.py:151-162`: selections before bytes, so a moved locator never causes an outside-target read).
+- The leaf-wide parts: memo, one recorded computation, one more when an input moved, then the inputs_changing refusal; a process failure is refused and not kept. [440]
+- Identical requests share one child and others wait for one of two slots. [441]
+- The waiting bound counts computations, not the requests sharing them. [442]
+- A killed dashboard takes the child and its Git process with it. [443]
+- Four concurrent first reads answer alike from one child (`test_four_concurrent_first_reads_answer_alike_from_one_child` at `mcp/tests/test_reviewer_worklist_process.py:554-581`: four threads over one barrier, a single shared reply).
+- The task reopening tool beside the task_doc entry point. [445]
+- The file-read status vocabulary. [446]
+- The file-read status import the application reads through. [447]
+- The file-read status literal and its value set. [448]
+- The onboarding resolver deciding the file-read status. [449]
+
 ## 260731-EFA-L4 — Typed Seams Where An Application Entry Point Meets A Producer
 
 Two application entry points stopped re-validating something a collaborator already returned in a checked
@@ -1566,9 +1603,9 @@ are checked against the shape `models/drift.py` expects.
 (`Literal["found", "missing", "disabled", "unsupported", "not_requested"]`).
 `application/read_files.py` imports that alias, and `_resolve_onboarding` is the only function that
 decides the value and returns `tuple[FileReadStatus, str | None, bool]`.
-cit:([`FileReadStatus`], mcp/src/agents_remember/models/read_files.py:29-29)
-cit:(["from agents_remember.models.read_files import FileReadStatus"], mcp/src/agents_remember/application/read_files.py:73-73)
-cit:([`_resolve_onboarding`], mcp/src/agents_remember/application/read_files.py:262-291)
+
+
+
 `VALID_FILE_READ_STATUSES = frozenset(get_args(FileReadStatus))` is the runtime half, derived from the
 alias. The import direction is application → models, so the producer uses the single declared alias
 without maintaining a second copy.
@@ -2693,7 +2730,8 @@ keeps "the candidate the leaf authored" and "the candidate the review resolved" 
 - **The capture is the shipped owner's, wrapped rather than re-implemented, and its own mid-capture head check is what makes a moved head a named state.** [233]
 - **The pre-publication recheck (for a tree comparison, the memory candidate is recaptured first, MIK-R25) and the refusal that carries both identities, with the one recapture action.** [234]
 - **The adapter's new call site: the recheck runs after the reads and before the payload, and a moved input refuses the whole render.** [235]
-- The adapter's re-export of the sibling surface, which is what keeps the ingest CLI's import resolving. [236]
+- The adapter's re-export of the sibling surface, which is what keeps the dashboard CLI's import resolving. [451]
+
 - **The pair preflight and the record-beside-the-bytes namespace remain the sibling module's, and this route's two operations still call them. The namespace rows' ranges and their wording were corrected by `260921-ICR-L34`, which made the second record answer.** [237]
 - **The case module that measures this route's half of the change through the real resolution, the real capture, the real comparison and the served payload.** [238]
 

@@ -7,7 +7,6 @@ the MCP application entry points and the worktree CLI into the worktree domain f
 `WorktreeArgs` replaces the loosely typed `argparse.Namespace` that previously
 flowed across those layers (F17), giving every layer a single explicit field set
 to read and write.
-
 ## Code Commentary
 
 ### Logic
@@ -58,21 +57,67 @@ threads through to `_build_start_contract`, which stamps it into the contract's
 `gate_policy: GatePolicy = DEFAULT_GATE_POLICY` (260703-L4) is the parsed
 server-side gate delegation policy threaded from MCP config into worktree
 closeout. Existing CLI/tests that omit it keep the all-human default.
-
 ### Conventions
 
 Accepted input, exact Git facts, and typed owner results stay distinct from disposable projections.
-
 ### Invariants And Boundaries
 
 The ledger is a computed consumer cache; it cannot supply an additional Git output or lifecycle prerequisite.
-
 ### Todos
 
 None recorded for the ledger-retirement boundary.
-
 ## Evidence
+
+### Docs References
+
+No external Domain Documentation source is configured for this slice. The current behavior is repository-owned and is supported by the source references below.
+
+No configured external source applies.
 
 ### Repo-Internal References
 
 - `WorktreeArgs` implements the retained boundary described above. [10]
+The following current source boundaries establish the ledger-retirement behavior.
+
+- `report_operation_progress` publishes progress through the exact worker-owned callback. [13]
+
+- Public sync choice and resolution-action vocabularies are owned once by the worktree model. [14]
+
+- Provider setup config is typed through the companion worktree models module. (`WorktreeProviderSetupConfig`) [15]
+
+- Worktree CLI builds argparse namespaces that this DTO adapts via `from_namespace`. [16]
+
+- Gate delegation policy model (kernel-owned since L9). [17]
+
+### Cross-Repo References
+
+No separately configured cross-repository implementation governs this file; any external-memory repository is addressed by the task contract.
+
+No additional cross-repository evidence applies.
+## Series-Contract Notes
+
+`WorktreeArgs` carries `parent_task` and `leaf_id` through CLI, MCP, and source API entrypoints, giving all operations the same active-task and leaf-selection inputs.
+## L23 Final Candidate Disposition
+
+The internal worktree argument DTO carries accepted candidate, task contract, and operation-progress
+facts between modules. Public callers still address the canonical task and never supply private
+operation, process, lease, or approval identifiers.
+## 260821-CLIVE-L1 Internal Transport
+
+`WorktreeArgs` no longer carries raw code and memory closeout message strings. Closeout execution receives one optional `EffectiveCloseoutInput`, populated only after validation; integration and PR landing carry only their actual code/memory output facts. This prevents worker, preview, recovery, and commit code from independently normalizing or defaulting closeout subjects.
+## 260821-CLIVE-L2 Current Contract
+
+The current source seams include `WorktreeArgs`, `report_operation_progress`. This module remains a public execution adapter over closed admission and exact mutation-owner reread; it does not duplicate reader exception families or lifecycle authority.
+### Reconciled Source Evidence
+
+- Inputs shared by the worktree application layer, CLI, and domain functions. [11]
+
+- Advance the plane-owned operation when this call runs under its detached worker. [12]
+
+## Current Landed Composition
+
+The internal `integration_certification_owner` field carries the typed journal-owned integration certification continuation. It defaults to absent and is not a public authorization token; the integration owner validates its own authority.
+
+## Governing Overview
+
+[Governing route overview](overview.md)

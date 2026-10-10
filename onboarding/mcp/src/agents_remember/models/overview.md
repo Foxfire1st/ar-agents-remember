@@ -9,10 +9,6 @@ role_agents/role_launcher describe native start/message and launcher wire contra
 - Current imported source owns this scoped route boundary. [277]
 - Current imported source owns this scoped route boundary. [278]
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| sourceRoute            | `mcp/src/agents_remember/models/`          |
-
 ## Governing Overview
 
 [mcp/overview.md](../../../../overview.md)
@@ -50,6 +46,19 @@ role_agents/role_launcher describe native start/message and launcher wire contra
 ## 260921-ICR-L44 Two Pure Extractions, And The Anchor Observation Gains A Structured Region
 
 AnchorResolutionState and AnchorResolution live in read_anchor.py and are re-exported by read.py. The former ANCHOR_RESOLUTIONS tuple was retired; the Literal retains seven states. resolved_ranges records exact blob regions only for exact_recorded_blob. Family member-source values remain separately owned by review_family_source.py and re-exported by their consumer; locator-state rules never put a region on unobserved bytes.
+
+Two value vocabularies moved into their own modules, each re-exported unchanged by the module it left so
+every existing import keeps working: the anchor-observation vocabulary (`AnchorResolutionState`,
+`AnchorResolution`) now lives in `models/knowledge/read_anchor.py` (re-exported by
+`read.py`), and the family member-source reference (`ReviewFamilyMemberSource`,
+`ReviewSourceLocatorState`, `source_locator_state`) in `models/knowledge/review_family_source.py`
+(re-exported by `review_family_context.py`). Both moves kept their source modules under the 600-line
+pressure line. Two additive wire changes rode with them: `AnchorResolution.resolved_ranges` — structured
+one-based line ranges, allowed only on `exact_recorded_blob` — appears on **every** anchor observation
+(knowledge read pages, diff observations, the family roster), and the member source gained `locator`,
+`resolved_ranges` and a required `locator_state`, with `role`/`rationale` required. The locator state is
+decided by one function shared by the producer and the validator, so a region can never be stated on
+bytes the side did not find.
 
 - The anchor observation and its region validator. [8]
 - The member-source reference and its one locator-state rule. [9]
@@ -686,8 +695,10 @@ Receipt and sync-movement v2 values bind the complete retained code/memory tree 
 builders. It turns the public tool surface and internal builders
 from loose dictionaries into named, inspectable models that can be validated at
 runtime and tested by schema. Model homes follow tool domains: `TaskReopenResponse`
-(cit:([`TaskReopenResponse`], mcp/src/agents_remember/models/task_doc.py:223-226)) lives in `task_doc.py` while keeping the `WorktreeCommandResponse` shape, since
+lives in `task_doc.py` while keeping the `WorktreeCommandResponse` shape, since
 the task_reopen payload carries the enclosure contract state.
+
+- `TaskReopenResponse` lives in `task_doc.py` while keeping the `WorktreeCommandResponse` shape. [287]
 
 ## Hot Path Summary
 
@@ -1250,12 +1261,14 @@ still validate as a set. `mcp/tests/test_tools.py::PublicSurfaceInventoryTests` 
 `finalize_tool_response` call per name for that reason.
 
 **260831-LOCR-L34** adds `worktree_checkpoint_landing` to the `NextTool` vocabulary
-cit:([`NextTool`], mcp/src/agents_remember/models/worktree.py:65-87) — the checkpoint's preview and its
+— the checkpoint's preview and its
 `integration-ref-race` refusal both emit it, and it is a registered public tool — while deliberately
 leaving `NextOperation` unchanged, because pausing a master is the existing
 `request_integration_decision` intent rather than a lifecycle phase. The reasoning and the
 reviewed-and-not-changed row live on the `models/worktree.py` card; the preview/apply parity invariant
 that produced the repair is inventoried on the `worktrees/overview.md` route.
+
+- `worktree_checkpoint_landing` joins the `NextTool` vocabulary; its preview and refusal both emit it. [288]
 
 ## 260831-LOCR-L29 Public-Surface Repair
 
@@ -1281,21 +1294,21 @@ to that tuple and drives one `finalize_tool_response` call for the repaired name
 ## 260831-LOCR-L32 The Public Roster Joins This Route, And The Worktree Next Move Is Enforced
 
 This route's `tools/` leaf gained `public_roster.py` — a zero-import module whose whole body is the
-`PUBLIC_TOOLS` literal
-cit:([`PUBLIC_TOOLS`], mcp/src/agents_remember/models/tools/public_roster.py:22-97) — **62 names at this
-leaf, 63 from 260831-LOCR-L37, and 66 since 260915-CAPS-L4**. It is the tuple's **single definition**; `mcp/tools/base.py`
+`PUBLIC_TOOLS` literal. It is the tuple's **single definition**; `mcp/tools/base.py`
 now re-exports that identical object instead of declaring its own, so
 `agents_remember.mcp.tools.PUBLIC_TOOLS`, `PUBLIC_TOOL_RESPONSE_MODELS`, the live registration order,
 and the `public_surface` pin all still name the same tuple with no consumer change.
 
+- `PUBLIC_TOOLS` is one tuple with a single definition, re-exported unchanged. [289]
+
 The roster lives here because a model needs to read it. `models/worktree.py::WorktreeCommandResponse`
 now declares `nextAction` / `nextTool` / `nextArgs`
-cit:(["# The next-move triple, declared here so the worktree surface's guidance is part of"], mcp/src/agents_remember/models/worktree.py:400-400) and refuses a `nextTool` outside
-  cit:(["# The next-move triple, declared here so the worktree surface's guidance is part of"], mcp/src/agents_remember/models/worktree.py:400-400) and refuses a `nextTool` outside
-`PUBLIC_TOOLS` through `_require_registered_public_next_tool`
-cit:([`_require_registered_public_next_tool`], mcp/src/agents_remember/models/worktree.py:431-442). Before this leaf the
-cit:([`_require_registered_public_next_tool`], mcp/src/agents_remember/models/worktree.py:431-442). Before this leaf the
-cit:(["# The next-move triple, declared here so the worktree surface's guidance is part of"], mcp/src/agents_remember/models/worktree.py:400-400) and refuses a `nextTool` outside
+and refuses a `nextTool` outside
+`PUBLIC_TOOLS` through `_require_registered_public_next_tool`.
+
+- The worktree response declares the next-move triple and refuses any `nextTool` outside `PUBLIC_TOOLS`. [290]
+
+Before this leaf the
 envelope inherited `extra="allow"` and declared none of those keys, so
 `application/worktree_status.py::_project_terminal_contract_status`'s write crossed the wire verbatim
 and unchecked — `worktree_abandon` reached the wire as a `nextTool` without ever being a `NextTool`

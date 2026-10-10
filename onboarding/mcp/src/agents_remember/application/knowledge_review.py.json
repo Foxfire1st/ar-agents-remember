@@ -1502,6 +1502,22 @@
         }
       ]
     },
+    "47": {
+      "note": "The dashboard operation shares one resolution with records and composition.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "656c6acccc15cb4da02e3931dd492b4f0e2eef71",
+            "content": "sha256:c6d3fc19ab7aae8cedf36503ebb6a47ab71e0bba1bd85dcc4c2bad56d4fe306b",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_complete_knowledge_review"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "5": {
       "note": "The record input set, its frozen shape and its single module-level empty value — now declared in the extracted record renderer and imported here, so `review_records_for` and the ingest CLI keep resolving.",
       "targets": [

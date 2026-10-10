@@ -65,6 +65,168 @@
           "kind": "test"
         }
       ]
+    },
+    "17": {
+      "note": "The module's own statement of the boundary it measures, and the import of the surface helpers it reuses.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8f853c4002c1d8c1779c4a72322db46fe09e058f",
+            "content": "sha256:56299469c3e2434944f5157681e18984be911b07bc2e0a9f54fe35a9082b58da",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_candidate_is_resolved_from_task_context_and_never_from_a_browser_chosen_path"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "18": {
+      "note": "The unit marker and the per-case fixture.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8f853c4002c1d8c1779c4a72322db46fe09e058f",
+            "content": "sha256:569502bf735b86e9d8cd035fd0e1c66865de363e3f3ada6a426801b336a9f01b",
+            "locator": {
+              "kind": "symbol",
+              "name": "fixture"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "19": {
+      "note": "The surface module's config that names no real root, and the render helper that puts the previous identity on the request.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8f853c4002c1d8c1779c4a72322db46fe09e058f",
+            "content": "sha256:56299469c3e2434944f5157681e18984be911b07bc2e0a9f54fe35a9082b58da",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_candidate_is_resolved_from_task_context_and_never_from_a_browser_chosen_path"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "20": {
+      "note": "The two resolution cases: the candidate comes from task context rather than a browser-chosen path, and an absent dataset refuses by name.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8f853c4002c1d8c1779c4a72322db46fe09e058f",
+            "content": "sha256:56299469c3e2434944f5157681e18984be911b07bc2e0a9f54fe35a9082b58da",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_candidate_is_resolved_from_task_context_and_never_from_a_browser_chosen_path"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "21": {
+      "note": "**The absent before half refuses by name and the refused review creates nothing: the sibling leaf `260921-ICR-L5`'s case beside the absent-candidate one above, differing in *which* half is missing — the two halves are different facts and have different next actions.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8f853c4002c1d8c1779c4a72322db46fe09e058f",
+            "content": "sha256:3a2190534ac8787ef1861a8fbcc06aa82fe16d7be39df7d73cf1c7b0628335ad",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_absent_baseline_half_refuses_by_name_rather_than_substituting_an_empty_one"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "22": {
+      "note": "**The corrupt before half is a typed refusal rather than an `apsw.NotADBError` raised from inside the read, and the refusal names the baseline rather than the candidate — only one of the two sides can be repaired by authoring knowledge again.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8f853c4002c1d8c1779c4a72322db46fe09e058f",
+            "content": "sha256:b93fa02f62d656d00b070beff442565448cab3a3f67bfd226e4fca4458e2bee2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_before_side_that_is_present_but_unreadable_refuses_by_name"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "23": {
+      "note": "The two transport cases: exactly the two reviewable selector kinds are admitted and every other spelling refused, and the route serves the typed result and refuses by name with no adapter.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8f853c4002c1d8c1779c4a72322db46fe09e058f",
+            "content": "sha256:d86784400b4e517a756a4981dd0f2dc9c26fceca88faf2b966d6387c599bb099",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_transport_admits_exactly_the_two_reviewable_selector_kinds"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "24": {
+      "note": "**The previous identity driven through every hop: carried by a refresh to the port and compared, absent on a plain read, and refused by name when malformed.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8f853c4002c1d8c1779c4a72322db46fe09e058f",
+            "content": "sha256:8fe120d7bb051aba2c92f4910cbb0b9d7d9c0c348620cb4b3dc916fa5b941bc2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_previous_binding_identity_reaches_the_port_and_is_compared_against_the_read"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "25": {
+      "note": "**The loader case: an unresolvable candidate yields no fabricated assessment, and its entry list refuses with the review's own code rather than answering empty.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8f853c4002c1d8c1779c4a72322db46fe09e058f",
+            "content": "sha256:d14cd6b445dcc0e65d14d451151dadb3b00ee7d4015fac101ac4cff58f2ecb4d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_published_assessment_loader_returns_nothing_for_an_unresolvable_candidate"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "26": {
+      "note": "The unit-regression lane row, beside its sibling's.\n\nAnchor: `test_knowledge_review_resolution_and_route`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e6cd30be07fa6a435465d02ac4fb9feb7e1bbc8",
+            "content": "sha256:c6ed336e675c9b0ea21bce0af57d9629a65289c35d2c34e0da466207c712cde5",
+            "locator": {
+              "end": 135,
+              "kind": "line_range",
+              "start": 135
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

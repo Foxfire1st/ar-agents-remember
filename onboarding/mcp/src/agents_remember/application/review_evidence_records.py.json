@@ -86,6 +86,170 @@
           "kind": "code"
         }
       ]
+    },
+    "33": {
+      "note": "**The record kinds the authored-effects channel counts, moved here beside the channel that reports them, and the same declaration for the claims collection.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16e7c29f57b7814c6ee69615335aac14aa466a1e",
+            "content": "sha256:61b59a6b5160a907e9bf26bb4c11a903254d3ebfdacfc4e43e8dceb1b253a674",
+            "locator": {
+              "kind": "symbol",
+              "name": "AUTHORED_EFFECT_KINDS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "34": {
+      "note": "**The currentness owner the bundle names, and the measurement this module now delegates instead of stating.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16e7c29f57b7814c6ee69615335aac14aa466a1e",
+            "content": "sha256:2176413c67df039df2ee1c19e7248d6a3d3d54324d762abd8fe0d1848363a805",
+            "locator": {
+              "kind": "symbol",
+              "name": "_COLLECTION_OWNERS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "35": {
+      "note": "Assessment collection availability comes from the durable curator bridge: captured records, measured empty, uncaptured, and unreadable expected inputs remain distinct.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bf1a79f4a160fbd1038927b4869a66fa3abcfcb9",
+            "content": "sha256:b435bd29b84200c6088aef7ce1a7231617dec7bf71412d69952db82d11623abc",
+            "locator": {
+              "kind": "symbol",
+              "name": "review_curator_records"
+            },
+            "path": "mcp/src/agents_remember/application/review_curator_records.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "36": {
+      "note": "**The unresolvable-candidate bundle: every collection unavailable, one entry per class, because nothing resolved and so no owner was asked.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16e7c29f57b7814c6ee69615335aac14aa466a1e",
+            "content": "sha256:f264c4441ea27645d05a6fc3ec902648ebf5bb3ff8000c6c0e4aeb8f53cde6c8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_unresolved_channels"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "37": {
+      "note": "The one channel construction point: the answer varies, the owner does not.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16e7c29f57b7814c6ee69615335aac14aa466a1e",
+            "content": "sha256:56c2f9e8716c22390ce9410dfd12c7e6bd647d7bc535f32c9c708349bda05d72",
+            "locator": {
+              "kind": "symbol",
+              "name": "_answered"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "38": {
+      "note": "**The availability vocabulary this module builds, and the validator that makes \"a count nobody measured\" unrepresentable.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "794ec671b12610ad3e698d052473a9231bcd0574",
+            "content": "sha256:dafe017fda5c133ffcdc982c070c12de7eedc57930f07153e09db3295c2b788e",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewRecordChannel"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review_records.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "39": {
+      "note": "**The task-context composition's call site: no matrix was read, so the matrix-owned collections are reported `not_selected`.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16e7c29f57b7814c6ee69615335aac14aa466a1e",
+            "content": "sha256:b9b8b38c8c048b76aa0c17cc3d7377029fcc170898b19e06d1d6139d7ac0d0ae",
+            "locator": {
+              "kind": "symbol",
+              "name": "without_selected_matrix"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "40": {
+      "note": "**The channel list as part of the served payload, one entry per class the composition read.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0cc1ed4aa2ead143a66f5ee6b69cf490138fd7ae",
+            "content": "sha256:ea88638d284465eef9ab8dd55effba8fd905a19b1c831ef1adcef90fc0afccf1",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewEvidencePane"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "41": {
+      "note": "All owner records are collected for the already resolved comparison pair.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16e7c29f57b7814c6ee69615335aac14aa466a1e",
+            "content": "sha256:fbb49a9450e87dda67fc7e549d6b78f44d160884ef5a1886e724b900aab4b925",
+            "locator": {
+              "kind": "symbol",
+              "name": "review_records_for_resolution"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "42": {
+      "note": "Three of the six collection owners are retired canonical records (MIK-R26): `detection_signals`, `verification_observations` and `evidence_claims` name retired-canonical records; `assessments`, `authored_effects` and `assessment_currentness` have live owners.\n\nAnchor: lines 68-77",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16e7c29f57b7814c6ee69615335aac14aa466a1e",
+            "content": "sha256:f467ef99f87380033b337d1a7fd9bc3c9fbed65dd0f89e8cd8c3ccd4f3525d87",
+            "locator": {
+              "end": 77,
+              "kind": "line_range",
+              "start": 68
+            }
+          },
+          "kind": "code"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

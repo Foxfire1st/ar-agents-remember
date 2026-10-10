@@ -813,6 +813,22 @@
         }
       ]
     },
+    "20": {
+      "note": "The registered facet kind the authored claim is carried in, with the two canonical outcome prefixes and the three payload fields `authored_decision` reads.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "85cc2936642a3ec37ee69966adc55c9877cb37e0",
+            "content": "sha256:4adfb87ca80862b420ec464bb02161ae88a3cf74b1572725fc87facb65df8d78",
+            "locator": {
+              "kind": "symbol",
+              "name": "DECISION_FACET_KIND"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "3": {
       "note": "The text-decision reader consumes recorded fields and canonical outcome prefixes; the canonical facet payload type is retired.",
       "targets": [

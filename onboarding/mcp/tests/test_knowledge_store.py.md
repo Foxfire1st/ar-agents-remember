@@ -21,10 +21,34 @@ Cases protect database immutability triggers, read-time payload seals, declared 
 - Production opens are read-only; fixture row insertion is test-only.
 - Schema drift refuses rather than repairing or re-pinning.
 
+### Logic
+
+| Node | Protects |
+| --- | --- |
+| `test_two_same_label_successors_reopen_as_separate_revisions` | two `v2` successors stay independently addressable with their exact statements after a close/reopen cycle |
+| `test_reopening_the_same_path_keeps_identity_and_schema` | reopen validates the same generation instead of creating or repairing |
+| `test_stored_revision_rows_refuse_update_and_delete` | direct `UPDATE`/`DELETE` raises `immutable_revision` at the database level |
+| `test_payload_digest_seals_more_than_the_statement` | the seal covers the predecessor set, so a re-pointed edge fails the read-time check |
+| `test_lower_ranked_owners_do_not_import_the_memory_domain` | the layer direction holds: no owner below `memory` imports the storage package |
+
+### Conventions
+
+The module imports the fixture through the bare module name `knowledge_fixture_test_support`, which is how
+`mcp/tests/conftest.py` puts this directory on `sys.path`. Assertions name the observable outcome (state, refusal
+code, offending record, row counts) rather than internal call order.
+
+### Todos
+
+None recorded. Later leaves (KS-R02 … KS-R08) extend the fixture and add their own modules rather than growing this
+one.
+
 ## Evidence
 
-### Repo-Internal References
+### Docs References
 
+
+
+### Repo-Internal References
 
 - Both successors remain separately readable. [1]
 
@@ -43,7 +67,25 @@ Cases protect database immutability triggers, read-time payload seals, declared 
 
 - Read-only production store and test-only builder. [13]
 
+### Docs References
+
+No domain documentation source is configured for this repository (`system/sources.md` carries no
+`Domain Documentation` entries). The statements below are grounded in repository source only.
+
+No configured domain documentation could be checked.
+
+- The divergent-successor read, the node registered as the shared fixture's evidence node. [14]
+- The database-level immutability proof against the stored revision rows. [15]
+- The seal covering more than the statement. [16]
+- The layer-direction case. [17]
+- The shared fixture every case builds from. [18]
+- The lane registration that makes the repository's manifest load (this module's row inside the lane, after the `KS-R03` insertions). [19]
+- The fixture's registered stable contract and evidence node. [20]
 
 ### Cross-Repo References
 
 No cross-repository contract is established by this file.
+
+No cross-repository behavior is implemented in this file.
+
+No meaningful cross-repo references found.

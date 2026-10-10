@@ -18,6 +18,103 @@
         }
       ]
     },
+    "14": {
+      "note": "The fixture shape: the identity half's two same-label successors and the graph half's families and realizations.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3c16a4dfa4da992adf2a51310c127fb399544c1f",
+            "content": "sha256:4f65fd551c4b8961ffd92b81140f6d1a928e78f5b95910cba74c946c149587d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "BranchingKnowledgeFixture"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "The builder, which authors both halves through the real operations and closes the store.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3c16a4dfa4da992adf2a51310c127fb399544c1f",
+            "content": "sha256:436356d85a5375cb2207b22f622dc232bca56ceeaa44d4663d8a070d19627e85",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_branching_knowledge_fixture"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "The extension helper for later leaves' scenarios.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3c16a4dfa4da992adf2a51310c127fb399544c1f",
+            "content": "sha256:68fd234c015460cf601f7dc9576254ed8d6d50f414050079f9a75178a045b3e6",
+            "locator": {
+              "kind": "symbol",
+              "name": "fixture_revision_draft"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "The step assertion that makes a fixture failure loud.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3c16a4dfa4da992adf2a51310c127fb399544c1f",
+            "content": "sha256:3c439a4b793d5a5e6a8257a770cb8894eb43e644eaede6ed55fe01ae8a516535",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "18": {
+      "note": "The graph-half construction phases, each authored through the public operations.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3c16a4dfa4da992adf2a51310c127fb399544c1f",
+            "content": "sha256:37ffef78842c062e1aa9eb76ffd47847662e4431af6c2538e838381a73eabb21",
+            "locator": {
+              "kind": "symbol",
+              "name": "_build_identity_half"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "19": {
+      "note": "The operations the fixture authors through, both halves.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "25497ca2fe27297d4ac750d338e86962058a76f1",
+            "content": "sha256:154970d010d0b63a920fc6a15b97c84199fbd3fd3c7db024cd31a1a80c7050a7",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_revision"
+            },
+            "path": "mcp/tests/knowledge_rows_test_support.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
     "2": {
       "note": "One builder constructs both halves.",
       "targets": [

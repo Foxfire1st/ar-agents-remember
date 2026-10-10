@@ -45,6 +45,54 @@
         }
       ]
     },
+    "16": {
+      "note": "**The close that unlinks nothing**, and the reason the peer unlink was removed rather than made conditional.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e4fc1a849557a256d000a2a4f98c444ef5400e7d",
+            "content": "sha256:947779ca6c56d2d2b3f19731a4d47c06e558fe68abe6d4f9e91cdeb7abde9d4a",
+            "locator": {
+              "kind": "symbol",
+              "name": "close"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "The read surface, including the seal-verifying single-revision read.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e4fc1a849557a256d000a2a4f98c444ef5400e7d",
+            "content": "sha256:233b5e39d22a77c1490a468223a647da8f638bd0614e927fda725edc73b0e9aa",
+            "locator": {
+              "kind": "symbol",
+              "name": "get_revision"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "**The two enumerating reads the Intent Reviewer's entry list is built on: every recorded invariant and family identity, ordered by the identity's own column, with no filter and no count — because a reader that must be handed a subject cannot enumerate a candidate it was not pointed at.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e4fc1a849557a256d000a2a4f98c444ef5400e7d",
+            "content": "sha256:00a449d876919d3de040d15c7ea870e221d332a11a45dc654d9be90b89b323ab",
+            "locator": {
+              "kind": "symbol",
+              "name": "list_invariants"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "Closing the owned read handle unlinks no cache peers.\n\nAnchor: `OpenedKnowledgeStore.close`",
       "targets": [

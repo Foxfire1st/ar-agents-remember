@@ -290,6 +290,74 @@
         }
       ]
     },
+    "15": {
+      "note": "The document's identity and authority: the schema name, the authority statement naming the thin router, and the authoritative tree the packaged copies are generated from.\n\nAnchor: `schema`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9f01b458769e29ba24c9cc3c0ff187e9e5eb2cf2",
+            "content": "sha256:f26dbe6f0c682f33740a4cc4008ccaec3f68f15f6d78caf8daaff58ead18b52b",
+            "locator": {
+              "end": 5,
+              "kind": "line_range",
+              "start": 2
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The nine operation blocks, each with its source, purpose and the roles that may run it.\n\nAnchor: `operations`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9f01b458769e29ba24c9cc3c0ff187e9e5eb2cf2",
+            "content": "sha256:a10435a35d73f2356cda0f29a1427d08ba1c58b2b1e2a334cc4e522dcb686b84",
+            "locator": {
+              "end": 129,
+              "kind": "line_range",
+              "start": 38
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "The role registry itself and the two role entries that show the per-seat shape.\n\nAnchor: `roles`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9f01b458769e29ba24c9cc3c0ff187e9e5eb2cf2",
+            "content": "sha256:1a50a334e72212a54b4e684f75e31004ece288bbab6af60957a05be10d2a72de",
+            "locator": {
+              "end": 253,
+              "kind": "line_range",
+              "start": 157
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "The per-role entry fields a consumer selects on: the altitude, the tool ids, and the one-line seat statement.\n\nAnchor: `altitude`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9f01b458769e29ba24c9cc3c0ff187e9e5eb2cf2",
+            "content": "sha256:443bcaf8c620b668fbf1877a2c875e1e72e67832eb6a92d55cdd494e89179060",
+            "locator": {
+              "end": 180,
+              "kind": "line_range",
+              "start": 159
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "The role registry in canonical order and the three routing conditions, including the launcher condition that is not a role.",
       "targets": [
@@ -300,6 +368,125 @@
             "locator": {
               "kind": "file"
             }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "The four template lists that register the curator hand-off list, one per seat on either side of that contract (each anchor quotes a sibling entry of the same list, because the shared file name appears in all four).\n\nAnchor: `templates`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9f01b458769e29ba24c9cc3c0ff187e9e5eb2cf2",
+            "content": "sha256:cdfa580d1029033c5053c051080c28ee152916dcc36a9bf92ac8812a31142890",
+            "locator": {
+              "end": 478,
+              "kind": "line_range",
+              "start": 473
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "The launcher entry: a routing condition with its own core block, its operations, and the brief it compiles.\n\nAnchor: `launcher`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9f01b458769e29ba24c9cc3c0ff187e9e5eb2cf2",
+            "content": "sha256:795d480a4648c3d4f318d5cc448e237de7f0469f3066deac78f542096901fb89",
+            "locator": {
+              "end": 572,
+              "kind": "line_range",
+              "start": 557
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "The reference-only trees that never enter a capsule, the composition order, and the notes that state what the file is not.\n\nAnchor: `references`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9f01b458769e29ba24c9cc3c0ff187e9e5eb2cf2",
+            "content": "sha256:99a32da5cb3cd1b67e6445fb66213d4dbcb4df21e2db557a817abab6fb651b0a",
+            "locator": {
+              "end": 610,
+              "kind": "line_range",
+              "start": 573
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "The consumer that parses these bytes: the schema constant it checks against, and the pure parser that builds the typed manifest and refuses a vocabulary disagreement.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "96753fd67b5fc1c702ebbcc0f89dab1182db7156",
+            "content": "sha256:d3e6eee279eafcfca161291cb247167af728e57159bcf6e30031ef5a16653f19",
+            "locator": {
+              "kind": "symbol",
+              "name": "parse_composition_manifest"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/manifest.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "The packaging consumer: the manifest is admitted beside its corpus root, and the provider yields root and manifest as one value \"because they are one admission\".",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f1d4e8e2f8295896686d4d104794e325b9694007",
+            "content": "sha256:b1aa6db26f9495b7eac841b60e70fbfb0730b9dbbdeb2a63197ed4bac2c762b8",
+            "locator": {
+              "kind": "symbol",
+              "name": "shipped_composition_corpus"
+            },
+            "path": "mcp/src/agents_remember/application/skill_resources/provider.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "The admission identity rule: the manifest is metadata rather than an instruction block, so it takes the reserved metadata identity and can never collide with a real block identity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5b2145bba70163c198afb85dbe914657fc8c6b9f",
+            "content": "sha256:b37d92a73e4025436e6316bdf1a20530ac74c4dcf2b9d5f1583df188c9681218",
+            "locator": {
+              "kind": "symbol",
+              "name": "_identity_for"
+            },
+            "path": "mcp/src/agents_remember/application/role_capsules/sources.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "26": {
+      "note": "The install-time corpus anchor and the corpus test that reads the manifest by path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "825a6d7fb4950e9ba55bc5bf315f2e56b9946b30",
+            "content": "sha256:684230c5d826a8f344a73f6bf3f7ad650a399c83726c67edce126a43f987e75c",
+            "locator": {
+              "kind": "symbol",
+              "name": "CORPUS_ANCHOR"
+            },
+            "path": "mcp/src/agents_remember/install/experiment.py"
           },
           "kind": "code"
         }

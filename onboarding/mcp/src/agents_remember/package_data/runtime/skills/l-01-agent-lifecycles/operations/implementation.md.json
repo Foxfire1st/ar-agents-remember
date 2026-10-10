@@ -1,0 +1,43 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/implementation.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The operation block's declared purpose, source path, and applicable roles.\n\nAnchor: `implementation`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9f01b458769e29ba24c9cc3c0ff187e9e5eb2cf2",
+            "content": "sha256:184dc85b2896a856ceaf191e2a2d99b961f548147d26de5b475c3e899ffbac27",
+            "locator": {
+              "end": 71,
+              "kind": "line_range",
+              "start": 65
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The canonical source of this block.\n\nAnchor: `# Operation`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a7322ad56ce8f6b9f034da982c786bb37d645fb3",
+            "content": "sha256:3f5d07224aac38f0506fc9b15ca5e2c6f12ffd7b1c18d0f5a53f130467a366ac",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/implementation.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

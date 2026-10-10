@@ -1,15 +1,12 @@
 # mcp/src/agents_remember/models/knowledge/graph.py
 
 ## Governing Overview
-
 [models route overview](../overview.md)
 
 ## Purpose
-
 The retained exact-membership values and authored realization-role vocabulary consumed by derived-index readers. These are values, not a table owner, writer or authority decision.
 
 ## Code Commentary
-
 ### Logic
 
 FamilyMemberDraft names member_id, family_revision_id, invariant_revision_id and provenance. FamilyMember adds repository_id and row_digest. InvariantFamilies carries the queried exact invariant revision and stored membership tuple; an empty tuple is an explicit empty answer.
@@ -28,8 +25,35 @@ RealizationRole closes primary-authority, enforcement, propagation-persistence, 
 
 RealizationClaimDraft/RealizationClaim and the FamilyMembers/RealizationClaims/AnchorRealizations roster were retired with the canonical database route. Their old write operations and claim codecs surviving in tests are fixture support, not production successors or a second write lane.
 
-## Evidence
+### Logic
 
+- `FamilyMemberDraft` is the authored membership (`member_id`, `family_revision_id`,
+  `invariant_revision_id`, `provenance`); `FamilyMember` adds the bound `repository_id` and the
+  expected `row_digest`.
+
+- `RealizationRole` is the closed authored vocabulary — `primary-authority`, `enforcement`,
+  `propagation-persistence`, `support`, `presentation`, `incidental`, `unclassified` — and
+  `UNCLASSIFIED_ROLE` names the last one so a caller does not hard-code the string.
+
+### Conventions
+
+- The role's leading and trailing members are this repository's addition to the design's list: a
+  missing role must be representable as "not classified" rather than silently defaulted to a real one.
+
+### Invariants And Boundaries
+
+- **A role is a claim about this relationship, never a machine observation.** The closed vocabulary
+  exists so a reader can render a role without inventing one; nothing in the read path infers or
+  fills a role.
+
+- **Revisions, not identities.** The membership cites `family_revision_id` and
+  `invariant_revision_id`, so nobody has to guess which statement a membership was authored against
+  and a newer family revision needs its own explicitly authored membership.
+
+- **Not this module's job.** Family revision identity (`family.py`), the locator and source-identity
+  union (`source.py`), the request/result and refusal vocabulary (`result.py`).
+
+## Evidence
 ### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
@@ -64,3 +88,6 @@ The requirement this vocabulary's first delivered slice belongs to: requirement 
 No cross-repository behavior is implemented in this file.
 
 No meaningful cross-repo references found.
+
+- The closed authored role vocabulary and the explicit not-classified member. [12]
+- The membership draft and its stored, digest-carrying form. [13]

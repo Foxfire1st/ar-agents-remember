@@ -147,6 +147,215 @@
           "kind": "test"
         }
       ]
+    },
+    "23": {
+      "note": "`Topology` has the single supported member `external`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b6b133cae0db6ffbc8a0836cab3470d60443af6b",
+            "content": "sha256:158ae71229ce7da25def892080e4ecaf1bbf05b5bf73dd05b0377f495cb5aa62",
+            "locator": {
+              "kind": "symbol",
+              "name": "Topology"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "`MemoryMode` has exactly `external` and `disabled`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b6b133cae0db6ffbc8a0836cab3470d60443af6b",
+            "content": "sha256:2214062a9c907213972ed20d76cd59d4c710d9a819be88a4a08774949f96f0e3",
+            "locator": {
+              "kind": "symbol",
+              "name": "MemoryMode"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "The supported tuples are derived from the literals, not hand-written.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b6b133cae0db6ffbc8a0836cab3470d60443af6b",
+            "content": "sha256:f979c39f1bb59773a28ae3c6d93c4c3e1a893af279a379911ad6e8313d605a28",
+            "locator": {
+              "kind": "symbol",
+              "name": "SUPPORTED_MEMORY_MODES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "26": {
+      "note": "The removal is declared positively, not left as an absence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b6b133cae0db6ffbc8a0836cab3470d60443af6b",
+            "content": "sha256:5db6a11a9d3c595956105a6d5bee344eea4f399f967792922c540a95d76c69bc",
+            "locator": {
+              "kind": "symbol",
+              "name": "REMOVED_MEMORY_MODES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "27": {
+      "note": "The old repo-sidecar directory names survive only to detect and report that layout.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b6b133cae0db6ffbc8a0836cab3470d60443af6b",
+            "content": "sha256:d09cf0d8563fc5d3752fc87777e951a3387ae4114549db88f7b30c3f5986b45c",
+            "locator": {
+              "kind": "symbol",
+              "name": "LEGACY_INTERNAL_MEMORY_DIRNAME"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "28": {
+      "note": "The documented route out is stated once for every refusal surface, with no automatic migration.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b6b133cae0db6ffbc8a0836cab3470d60443af6b",
+            "content": "sha256:4d3856166221c5848fa3f01ca9662260205e7d6336f256b2a96b96dfcd763b35",
+            "locator": {
+              "kind": "symbol",
+              "name": "MEMORY_MODE_REMEDIES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "29": {
+      "note": "Legacy roots are computed as resolved paths so a report can name the exact artifact.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b6b133cae0db6ffbc8a0836cab3470d60443af6b",
+            "content": "sha256:ad2179bb05078a254f5052ae1a3c8dc33bbe2aa6fa30911c3f79407015c88298",
+            "locator": {
+              "kind": "symbol",
+              "name": "legacy_internal_memory_root"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "30": {
+      "note": "One refusal text is shared by every surface, naming the value, the removal and the supported set.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b6b133cae0db6ffbc8a0836cab3470d60443af6b",
+            "content": "sha256:9aadd3903c35510b7aff60dc28c3011ffdd8e238a99cdec8c34b7b0e404fd341",
+            "locator": {
+              "kind": "symbol",
+              "name": "memory_mode_refusal_message"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "31": {
+      "note": "The same facts are constructible as a typed error and as a publishable mapping.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b6b133cae0db6ffbc8a0836cab3470d60443af6b",
+            "content": "sha256:ed3318675ea49750881da18055f2f085cadaa87f86359539b7b70b8a8a1b53ba",
+            "locator": {
+              "kind": "symbol",
+              "name": "memory_mode_refusal_fields"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "32": {
+      "note": "A removed member is refused by name, never substituted by a supported one.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b6b133cae0db6ffbc8a0836cab3470d60443af6b",
+            "content": "sha256:84e898983e45c8c2024839c5978c10c3b3384eef7f0561c2473266a582e5b6b0",
+            "locator": {
+              "kind": "symbol",
+              "name": "refuse_removed_memory_mode"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "33": {
+      "note": "A removed token is refused by name while an unknown token is an invalid-argument error.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b6b133cae0db6ffbc8a0836cab3470d60443af6b",
+            "content": "sha256:db9477330ae46e27326aa98ab087b3221e0b98d95c1633f94b3a7b223196587f",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_supported_memory_mode"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "34": {
+      "note": "The topology narrower applies the same removal-versus-typo distinction.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b6b133cae0db6ffbc8a0836cab3470d60443af6b",
+            "content": "sha256:35fc0b3b626b8d43ec58c0277bcef3c21b195b20688e1b2a72c849095ddc4dc3",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_supported_topology"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "35": {
+      "note": "The typed refusal carries a stable status plus requested, supported, artifact and remedies.\n\nAnchor: `MemoryModeUnsupportedError`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b6b133cae0db6ffbc8a0836cab3470d60443af6b",
+            "content": "sha256:a9a1310ec4f55926fe125ccb72e685d5d84712a9b41d569ea73e0080cebb25be",
+            "locator": {
+              "end": 28,
+              "kind": "line_range",
+              "start": 28
+            }
+          },
+          "kind": "code"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

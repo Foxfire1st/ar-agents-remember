@@ -14,6 +14,10 @@ TreeReceiptFixture creates real temporary code/memory Git repositories, captures
 
 Six current test functions assert both delivered-tree matches and result keys, moved/absent memory or code coverage, unavailable/corrupt comparison handling without blocking an already completed result, forged source binding and leaf scoping, immutable previous receipts labelled by a successor, and readable historical v1 receipts with an explicit lack of memory-tree proof. The former eleven-journey/module-node account is removed coverage. No receipt here supplies semantic acceptance.
 
+### Todos
+
+None recorded.
+
 ## Evidence
 
 ### Docs References
@@ -27,3 +31,16 @@ No Domain Documentation source is configured for this slice.
 - `test_memory_movement_and_absent_memory_never_claim_delivered_coverage` supplies the current fixture or assertion described above. [21]
 - `test_source_forgery_is_refused_and_receipts_are_leaf_scoped` supplies the current fixture or assertion described above. [22]
 - `test_historical_v1_receipt_remains_readable_without_claiming_memory_tree_proof` supplies the current fixture or assertion described above. [23]
+
+### Docs References
+
+No domain documentation source is configured for this repository (`system/sources.md` carries no
+`Domain Documentation` entries). The statements below are grounded in repository source only.
+
+No configured domain documentation could be checked.
+
+- The lane row and the exact-scope consumer row this module is registered in. [24]
+
+### Cross-Repo References
+
+No meaningful cross-repo references found.

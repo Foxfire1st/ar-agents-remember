@@ -66,6 +66,88 @@
           "kind": "code"
         }
       ]
+    },
+    "30": {
+      "note": "The lane vocabulary, including the read-only `baseline` member that exists so it can be refused by name.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9b2bf18774207aaeb442ff737297b3233369a1f3",
+            "content": "sha256:729f796f81cbb158752ae02bceebba4d37049ce2bd1a92ce6c9a2f82bf392002",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeLane"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "31": {
+      "note": "The portable content identity and the two exact candidate inputs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9b2bf18774207aaeb442ff737297b3233369a1f3",
+            "content": "sha256:ed0b1757671c569f93a5ecce887e3462143ef5ebd403a5b7913bf17289a76917",
+            "locator": {
+              "kind": "symbol",
+              "name": "SnapshotIdentity"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "32": {
+      "note": "The resolved context and its two consistency validators.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9b2bf18774207aaeb442ff737297b3233369a1f3",
+            "content": "sha256:65db1db8e18e31dbaa60d1ffb8c5541f26824a626c459431766c62ced74510aa",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeContext"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "33": {
+      "note": "The module-level digest the validator calls and the operation re-derives.\n\nAnchor: `context_digest`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9b2bf18774207aaeb442ff737297b3233369a1f3",
+            "content": "sha256:beebadd71b0845fc745504f9c0daf37166d9d0aedec0e38aa72e452765a8c154",
+            "locator": {
+              "end": 128,
+              "kind": "line_range",
+              "start": 118
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "34": {
+      "note": "The frozen base and the shared identifier/digest patterns every model here inherits.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "138358a5feab44724703f06dfe3ff24c231ee322",
+            "content": "sha256:770c387ee275ee397402391f33ba68467fe3c4e8fd0f6411e59f57807632a7d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeModel"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/base.py"
+          },
+          "kind": "code"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

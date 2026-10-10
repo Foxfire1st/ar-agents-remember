@@ -950,6 +950,23 @@
         }
       ]
     },
+    "47": {
+      "note": "No read selects the database of a converted tree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "21d19e2ee5a33d08e72509f9442ab49751e30f1f",
+            "content": "sha256:e9ba6eff80a4b51f831b83c7de639bb2c014cd4d57ae0af15f1ceb9f74b93e9d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_no_read_selects_the_database_of_a_converted_tree"
+            },
+            "path": "mcp/tests/test_knowledge_cutover.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
     "6": {
       "note": "**The source-resolution pair, resolved together or left unrequested because the read context refuses either half alone.**",
       "targets": [

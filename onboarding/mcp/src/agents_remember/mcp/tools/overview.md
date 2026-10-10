@@ -21,6 +21,10 @@ Native role payloads delegate starts/messages through the actual caller binding;
 
 Read refuses unheld converted-tree seeds as selector_absent; project is no longer mounted. The memory-tree/index state stays visible and partial reads stay incomplete. The memory citation adapter retains its separate bounded transport result. [34] [35]
 
+[`memory.py`](memory.py.md) bounds a converted tree's `citation_fix` response: `bounded_citation_fix` caps every
+list at 50 entries, adds each list's full count and names the capped lists. An unconverted tree's result passes
+through unchanged.
+
 ## 260928-MIK-L01 The Family-Complete Leaf Read, And A Root With No Commit Refused By Name
 
 A converted tree's `knowledge_read` with `view: "source_context"` and `sourcePath`, and every `leaf`
@@ -429,6 +433,10 @@ inline `reportPath` through the per-domain `compact_*_payload` helpers.
 - The supervisor heartbeat store + staleness-banner helper `base.py`'s choke point calls (260707-HFX2-L2 R5). [21]
 - The `ResponseEnvelope` union and the two choke-point fields (`nextStep`, `supervisorBanner`) declared on both envelope bases. [22]
 - The trusted terminal assignment response carries document-and-role binding plus private session correlation. [23]
+
+- - The shared selection and its refusal mapping, which since MIK-R01 also refuses a named root with no code tree by name. [41]
+- - A partial index is never presented as complete. [42]
+- - A converted tree's citation-fix result is bounded for transport. [43]
 
 Current working-candidate evidence for this route:
 

@@ -87,6 +87,72 @@
         }
       ]
     },
+    "14": {
+      "note": "- The two rules this module is shaped by, stated in its own docstring.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "66102e9850b5f1c88cdba3b4cbd1af7d321197e8",
+            "content": "sha256:be4b89a03071dfec313b2a235a46f08cf7115843cc9c516c6f0287f5b35be4c0",
+            "locator": {
+              "kind": "symbol",
+              "name": "get_family_revision"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "- The read surface, including the seal-verifying revision read.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "66102e9850b5f1c88cdba3b4cbd1af7d321197e8",
+            "content": "sha256:be4b89a03071dfec313b2a235a46f08cf7115843cc9c516c6f0287f5b35be4c0",
+            "locator": {
+              "kind": "symbol",
+              "name": "get_family_revision"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "- The payload a family revision's digest seals, including the sorted predecessor set.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f503fa94c4c7bed4f52d64b967754439519f5b6a",
+            "content": "sha256:f987f04351f9a963408d04353decdced875c8d570d21bdeb16852ae8f8f75efc",
+            "locator": {
+              "kind": "symbol",
+              "name": "canonical_family_revision_payload"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/digest.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "- The declared `family`, `family_revision` and `family_predecessor` tables and their indexes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e27550d32bfd12f38a8b3393ad8622114eb677a",
+            "content": "sha256:1efcb530f1e377466f79224937603ba0b0bc9f31377d471199e8f89853430953",
+            "locator": {
+              "kind": "symbol",
+              "name": "TABLE_DDL"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "9": {
       "note": "The retained family identity, exact revision and revision enumeration reads.",
       "targets": [

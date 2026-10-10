@@ -22,6 +22,12 @@ Canonical skills/l-01-agent-lifecycles/operations/closeout.md owns the instructi
 
 The existing AR owner validates and applies the paired transaction. Raw Git does not reproduce that owner’s logic. Do not claim commit, integration, push or acceptance before reading the owner result and verifying the exact pair; human-pinned decisions remain with their authority.
 
+## Code Commentary
+
+### Todos
+
+None recorded.
+
 ## Evidence
 
 ### Repo-Internal References
@@ -29,3 +35,21 @@ The existing AR owner validates and applies the paired transaction. Raw Git does
 | Finding | Anchor | References |
 | --- | --- | --- |
 | Authorized owner, exact paired inputs, visible checks and owner-result readback. | lines 3-7 | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/closeout.md:3-7 |
+
+### Docs References
+
+No external or domain documentation governs this repository-local instruction file; it is canonical
+repository prose consumed by the skill router.
+
+No relevant documentation found after checking live sources.
+
+### Repo-Internal References
+
+- The operation block's declared purpose, source path, and applicable roles. [1]
+- The canonical source of this block. [2]
+
+### Cross-Repo References
+
+No sibling-repository contract defines this instruction file.
+
+No meaningful cross-repo references found.

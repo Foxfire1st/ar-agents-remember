@@ -200,6 +200,217 @@
           "kind": "test"
         }
       ]
+    },
+    "23": {
+      "note": "The published surface: the two literals, the three vocabularies, the observation model and the three rules.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a3c76aa75aa29226350c1d16fe7d5613c131e5ab",
+            "content": "sha256:be347cb5f4a12579a4c2853636046efcef935fdc61433ad6169f801d2e6a05f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "The record's own version literal, so records from different layouts are distinguishable.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a3c76aa75aa29226350c1d16fe7d5613c131e5ab",
+            "content": "sha256:52e562481763d3358ba21c1415b66c0ef5a109347b06be46a60059e80298b15b",
+            "locator": {
+              "kind": "symbol",
+              "name": "REVIEW_SYNC_REBINDING_VERSION"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "Which generation a rebinding judges, spelled here so a reader need not import the selecting owner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a3c76aa75aa29226350c1d16fe7d5613c131e5ab",
+            "content": "sha256:995b9735bdf3669df685696ebde96499086be07e4e80e0127f5caff4efef112b",
+            "locator": {
+              "kind": "symbol",
+              "name": "REVIEW_SYNC_SELECTION_RULE"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "26": {
+      "note": "**The channel-match vocabulary, including why `selected-not-retained` is a fact about the review rather than a third mismatch.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a3c76aa75aa29226350c1d16fe7d5613c131e5ab",
+            "content": "sha256:47b7e926b498b053db7c47c3f8bf9dfbb667f147fcc0feb73042d0ff67699c93",
+            "locator": {
+              "kind": "symbol",
+              "name": "SyncChannelMatch"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "27": {
+      "note": "**The three-value verdict, and the reason `unmeasured` is neither coverage nor a measured difference.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a3c76aa75aa29226350c1d16fe7d5613c131e5ab",
+            "content": "sha256:efa1fb7875aa490893ce95abf51dcc13ce0aa7b3fffbcca55e299881f9cec8e5",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewSyncRebindingVerdict"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "28": {
+      "note": "The two states a knowledge channel can hold instead of a readable dataset.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a3c76aa75aa29226350c1d16fe7d5613c131e5ab",
+            "content": "sha256:c7b5089fca78241be1bb21e356e7aaa138f2815cb27893acb6712f6fd26c7654",
+            "locator": {
+              "kind": "symbol",
+              "name": "SyncKnowledgeState"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "29": {
+      "note": "**The code channel: a pure comparison of two identities one owner produced.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a3c76aa75aa29226350c1d16fe7d5613c131e5ab",
+            "content": "sha256:5c26764309a130dcac03c89d631c5ebfc4afaf0564757865719c2827edd2ab0c",
+            "locator": {
+              "kind": "symbol",
+              "name": "code_channel_match"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "30": {
+      "note": "**The knowledge channel: `unmeasured` whenever one side is not a dataset at all, and never an agreement.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a3c76aa75aa29226350c1d16fe7d5613c131e5ab",
+            "content": "sha256:376a7e952cfd4488cee719e59ca2368a20303dba7ea369ee80513b960a3d1414",
+            "locator": {
+              "kind": "symbol",
+              "name": "knowledge_channel_match"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "31": {
+      "note": "**What the declared location held, with an identity carried exactly when a dataset was read.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a3c76aa75aa29226350c1d16fe7d5613c131e5ab",
+            "content": "sha256:0b49af36b4daf281db2d3d0499010a183a5c1cf6ac5e1b8b7a0dfe48b506c9cc",
+            "locator": {
+              "kind": "symbol",
+              "name": "SyncKnowledgeObservation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "32": {
+      "note": "**The self-consistency validator, including the refusal of an `unmeasured` channel beside a readable dataset.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a3c76aa75aa29226350c1d16fe7d5613c131e5ab",
+            "content": "sha256:45ef18415b464f754d682ef270b63b5049d7ce3f81c1391c019a3044971e3070",
+            "locator": {
+              "kind": "symbol",
+              "name": "_the_rebinding_agrees_with_itself"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "33": {
+      "note": "The one predicate a consumer branches on instead of re-deriving the verdict rule.\n\nAnchor: `covers_resolved_pair`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a3c76aa75aa29226350c1d16fe7d5613c131e5ab",
+            "content": "sha256:76bf66d59636901156379f270f015d21c2b25c507897ae2d5bc8d4201b8256d3",
+            "locator": {
+              "end": 327,
+              "kind": "line_range",
+              "start": 326
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "34": {
+      "note": "The durable publication and read-back the record travels through.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e1d40f3cd8b8ad7c20b47ba43bf08632f20a09c5",
+            "content": "sha256:4c9c5a7d3f62c7400e1dab3c421e62326b360a771ad0dc66e15964dbd55b77ba",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_review_sync_rebinding"
+            },
+            "path": "mcp/src/agents_remember/application/review_sync_rebinding.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "35": {
+      "note": "**The case that forges this record's verdict and shows the validator refusing it.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c92a9621f5a0f54288f3d50ab9ff24dfe15ca1ac",
+            "content": "sha256:fce1f589c16e9c25eb11776f946d02e633feb412ec64238bbb9bbcded16a91c6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_unreadable_or_forged_rebinding_is_unavailable_and_never_current"
+            },
+            "path": "mcp/tests/test_review_sync_movement_read.py"
+          },
+          "kind": "test"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

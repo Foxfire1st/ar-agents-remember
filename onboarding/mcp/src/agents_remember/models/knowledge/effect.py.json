@@ -18,6 +18,22 @@
           "kind": "code"
         }
       ]
+    },
+    "15": {
+      "note": "The nine admitted labels, in one declaration, and the literal type built from exactly that tuple.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bf1a860ce199614342216d293c3aae62ef3456b5",
+            "content": "sha256:aff1727683a42211e8382807aa90861f209dfce6fc1b7e731719f2c76bdcea9b",
+            "locator": {
+              "kind": "symbol",
+              "name": "ADMITTED_EFFECT_LABELS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

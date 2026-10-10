@@ -167,6 +167,231 @@
           "kind": "code"
         }
       ]
+    },
+    "36": {
+      "note": "The three carrying states, and the table of every state that carried nothing with the reason no pair was resolved.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e1d40f3cd8b8ad7c20b47ba43bf08632f20a09c5",
+            "content": "sha256:aaea9b433ad7f6075eb18e20f7d04a3c99ad5738a5c4236baa4a39f0c664d767",
+            "locator": {
+              "kind": "symbol",
+              "name": "_CARRYING_SYNC_STATES"
+            },
+            "path": "mcp/src/agents_remember/application/review_sync_rebinding.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "37": {
+      "note": "The never-raising entry point the sync tool calls, with each state it can report instead of raising.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e1d40f3cd8b8ad7c20b47ba43bf08632f20a09c5",
+            "content": "sha256:84902733d9a837e315a051bfb5a9c4288401531c2b00eb2c6280caf60788f30d",
+            "locator": {
+              "kind": "symbol",
+              "name": "rebinding_result_block"
+            },
+            "path": "mcp/src/agents_remember/application/review_sync_rebinding.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "38": {
+      "note": "The record's own version, selection rule, channel-match vocabulary and three-valued verdict.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a3c76aa75aa29226350c1d16fe7d5613c131e5ab",
+            "content": "sha256:52e562481763d3358ba21c1415b66c0ef5a109347b06be46a60059e80298b15b",
+            "locator": {
+              "kind": "symbol",
+              "name": "REVIEW_SYNC_REBINDING_VERSION"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review_sync_rebinding.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "39": {
+      "note": "The one verdict rule, stated once so a writer and the record's validator cannot disagree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a3c76aa75aa29226350c1d16fe7d5613c131e5ab",
+            "content": "sha256:158617bfc46805997cb88e9307da60d441550134fc68959c282deadc1e2266ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "review_sync_verdict"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review_sync_rebinding.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "40": {
+      "note": "The reader's three states, its sentence, and its own statement that a discarded record and one never written read the same.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e1d40f3cd8b8ad7c20b47ba43bf08632f20a09c5",
+            "content": "sha256:66304ce7baea6fc5889c4106560140ed387665de493f1c90cd02443de20d1492",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_review_sync_rebinding"
+            },
+            "path": "mcp/src/agents_remember/application/review_sync_rebinding.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "41": {
+      "note": "The shipped capture owner that derives the resolved source side after the sync.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5c80e7ae55cc5d07b72431cf1df92bd062a126c6",
+            "content": "sha256:c28610a807f07eef9605c4d4d26582f6c12b09134c54dc26451500653d03b94b",
+            "locator": {
+              "kind": "symbol",
+              "name": "capture_future_code_candidate"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/future_code_candidate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e1d40f3cd8b8ad7c20b47ba43bf08632f20a09c5",
+            "content": "sha256:8c5ee74f6ed82c305ea7813d52117248d8094b20ca38b99ce05f556c19588f18",
+            "locator": {
+              "end": 185,
+              "kind": "line_range",
+              "start": 152
+            },
+            "path": "mcp/src/agents_remember/application/review_sync_rebinding.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "42": {
+      "note": "The durable-evidence pair every record is published and read back through.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a53c6f42e92d352bb02456ae4a50a3b52c58e2e4",
+            "content": "sha256:235530d66b6a614a5e796a88c1b1f12d0d19f8e1194a5a30e4e12454ce537b09",
+            "locator": {
+              "kind": "symbol",
+              "name": "durable_reports_root"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/durable_evidence.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a53c6f42e92d352bb02456ae4a50a3b52c58e2e4",
+            "content": "sha256:97189e515d2b74227fd659bbd308186abc5b49de8171ba308d9b45a013742c38",
+            "locator": {
+              "kind": "symbol",
+              "name": "publish_durable_evidence"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/durable_evidence.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a53c6f42e92d352bb02456ae4a50a3b52c58e2e4",
+            "content": "sha256:20f6a12e1f175ebc7ff71806b44144f91251d45d92d4dbce191f95ccd3f2fd03",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_back_evidence"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/durable_evidence.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e1d40f3cd8b8ad7c20b47ba43bf08632f20a09c5",
+            "content": "sha256:db5f2d1ab6347daf68caca6868dac405a7841db81dc84498a10a5ef1f08cbb8e",
+            "locator": {
+              "end": 197,
+              "kind": "line_range",
+              "start": 192
+            },
+            "path": "mcp/src/agents_remember/application/review_sync_rebinding.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e1d40f3cd8b8ad7c20b47ba43bf08632f20a09c5",
+            "content": "sha256:a65f8f881cdaaccfa509a4f2a6d10e3c762ae230becf765919bf67fcb04700e5",
+            "locator": {
+              "end": 285,
+              "kind": "line_range",
+              "start": 280
+            },
+            "path": "mcp/src/agents_remember/application/review_sync_rebinding.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "43": {
+      "note": "**The reopen owner's fifth channel, which is what makes this record a production read rather than a dead one.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "07dda66c98a13ea7b9344ae8f32b60b389587469",
+            "content": "sha256:194905f4bdd11e25e97fecd79b098aed5829d2342ac21b2235d1f46fd016ca1d",
+            "locator": {
+              "kind": "symbol",
+              "name": "sync_rebinding"
+            },
+            "path": "mcp/src/agents_remember/application/review_comparison_reopen.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "07dda66c98a13ea7b9344ae8f32b60b389587469",
+            "content": "sha256:11e963c6a492cfe706b5ebd1124a7c8b335ff68f6ffd8a4cf05472f11bcb9872",
+            "locator": {
+              "end": 358,
+              "kind": "line_range",
+              "start": 334
+            },
+            "path": "mcp/src/agents_remember/application/review_comparison_reopen.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e1d40f3cd8b8ad7c20b47ba43bf08632f20a09c5",
+            "content": "sha256:831e8669a13c490b34ab90fe2c993cc2b4eaa30f63baa248e898a2e722e25664",
+            "locator": {
+              "end": 315,
+              "kind": "line_range",
+              "start": 304
+            },
+            "path": "mcp/src/agents_remember/application/review_sync_rebinding.py"
+          },
+          "kind": "code"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

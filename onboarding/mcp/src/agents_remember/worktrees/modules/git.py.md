@@ -72,9 +72,36 @@ No new implementation or live-state operation is authorized by this documentatio
 
 ## Evidence
 
+### Docs References
+
+No Domain Documentation source is configured for this repository. No external domain documents
+were available through the configured registry to consult; the current claims are grounded in the
+working source and package-local evidence below. The registry is discovery input, not a citation.
+
+No configured external domain-documentation evidence.
+
+
 ### Repo-Internal References
+
+These repository-relative targets and exact ranges were checked against the L9 working source.
+Source declarations and test assertions are distinguished from execution and acceptance evidence.
+
 
 - `worktree_candidate_tree` implements the retained boundary described above. [10]
 - `stage_tree` implements the retained boundary described above. [11]
 - `publish_tree_commit` implements the retained boundary described above. [12]
 - `_move_admitted_ref` implements the retained boundary described above. [13]
+
+- Ref/repository identity and transport-safe errors have shared implementations. [19]
+- Candidate trees use private indices and exact derived-path exclusions. [20]
+- The exact cache pathspec is defined beside the consumer filename. [21]
+- Changed-file reporting preserves its distinct deletion/rename/count semantics. [22]
+- `stage_tree` makes the index exactly one tree and reads nothing from the working tree. [23]
+
+
+### Cross-Repo References
+
+The code/memory or fixture-repository boundaries above are established by package-local source.
+No additional configured external or sibling-repository evidence is claimed.
+
+No additional configured cross-repository evidence.

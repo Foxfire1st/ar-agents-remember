@@ -236,6 +236,262 @@
           "kind": "test"
         }
       ]
+    },
+    "30": {
+      "note": "The module docstring: reopen after a converted closeout.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43c3ce60b302f5e61445491c0fe97a0fd7d84a69",
+            "content": "sha256:3e370e47e66672c9b03eca925c7712d6fd4c2146b89a4c289b629c5b03115e39",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_reopened_leaf_writes_its_next_attempt_and_its_history_is_every_file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "31": {
+      "note": "A reopened leaf writes its next attempt, and its history is every file.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43c3ce60b302f5e61445491c0fe97a0fd7d84a69",
+            "content": "sha256:3e370e47e66672c9b03eca925c7712d6fd4c2146b89a4c289b629c5b03115e39",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_reopened_leaf_writes_its_next_attempt_and_its_history_is_every_file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "32": {
+      "note": "Attempt files are named, ordered and backward compatible.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43c3ce60b302f5e61445491c0fe97a0fd7d84a69",
+            "content": "sha256:b0ff4581aa200f8e280f0e90cc7973ea4e1151e64d4e8b6f1d627b1a15fe3602",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_attempt_files_are_named_ordered_and_backward_compatible"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "33": {
+      "note": "The closeout closes the latest attempt and never reopens a closed one.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43c3ce60b302f5e61445491c0fe97a0fd7d84a69",
+            "content": "sha256:7336d93c3b92459bec563bcd7cfc58878776a4a3af5dd15c274c7376da0c66b6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_closeout_closes_the_latest_attempt_and_never_reopens_a_closed_one"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "34": {
+      "note": "The gate names the attempt the writer writes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43c3ce60b302f5e61445491c0fe97a0fd7d84a69",
+            "content": "sha256:42d698d6d5a57601141e324cf8d1b1385a279dcabd6fcca186537e83e130e427",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_gate_names_the_attempt_the_writer_writes"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "35": {
+      "note": "Record landing refuses when the landed history cannot be listed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43c3ce60b302f5e61445491c0fe97a0fd7d84a69",
+            "content": "sha256:7c5fd9389c28b73495b562404614d80788b130604525bd0dbf8b085698f5dd12",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_record_landing_refuses_when_the_landed_history_cannot_be_listed"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "36": {
+      "note": "The history target under test.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43c3ce60b302f5e61445491c0fe97a0fd7d84a69",
+            "content": "sha256:b0ff4581aa200f8e280f0e90cc7973ea4e1151e64d4e8b6f1d627b1a15fe3602",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_attempt_files_are_named_ordered_and_backward_compatible"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "37": {
+      "note": "The merged reading under test.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43c3ce60b302f5e61445491c0fe97a0fd7d84a69",
+            "content": "sha256:3e370e47e66672c9b03eca925c7712d6fd4c2146b89a4c289b629c5b03115e39",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_reopened_leaf_writes_its_next_attempt_and_its_history_is_every_file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "38": {
+      "note": "The public closeout refuses an open item and commits once it is answered.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43c3ce60b302f5e61445491c0fe97a0fd7d84a69",
+            "content": "sha256:8031e67c7934ff8119bdbf79371644a07e0bc3347e70be2523b4ccf952bbc24b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_public_closeout_refuses_an_open_item_and_commits_once_it_is_answered"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "39": {
+      "note": "The closeout preview answers what the apply will do.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43c3ce60b302f5e61445491c0fe97a0fd7d84a69",
+            "content": "sha256:a419a2ef4205b62694f493a82b89b312796cde352d825bea1937452355964fdc",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_closeout_preview_answers_what_the_apply_will_do"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "40": {
+      "note": "An unconverted leaf's preview carries no gate verdict.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43c3ce60b302f5e61445491c0fe97a0fd7d84a69",
+            "content": "sha256:8175fc7b29aee6a15876e507081b4bf925be85c7b57fe3ae6997392c3bed9ff7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_unconverted_leafs_preview_carries_no_gate_verdict"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "41": {
+      "note": "A leaf that continues after its closeout writes its next attempt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43c3ce60b302f5e61445491c0fe97a0fd7d84a69",
+            "content": "sha256:4151f5dc1641778cc3806eff75c09e9d7e0d4120a9c9ad92e0dc67c28ac929ae",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_leaf_that_continues_after_its_closeout_writes_its_next_attempt"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "42": {
+      "note": "A file rewritten while the gate runs is never committed unjudged.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43c3ce60b302f5e61445491c0fe97a0fd7d84a69",
+            "content": "sha256:134f8d0daa116b1c0896411dacc6e423ee88b9738675913d670b364cf0aeadfe",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_file_rewritten_while_the_gate_runs_is_never_committed_unjudged"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "43": {
+      "note": "The latest row about a subject governs across attempts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43c3ce60b302f5e61445491c0fe97a0fd7d84a69",
+            "content": "sha256:b4e0fc3e10c1926ffe0f37de71b09a8786012843714b17f0f1b992d62681463d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_latest_row_about_a_subject_governs_across_attempts"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "44": {
+      "note": "A world whose contract records the leaf's completed closeout that was not integrated.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43c3ce60b302f5e61445491c0fe97a0fd7d84a69",
+            "content": "sha256:b2913766d98deb980382926340e843a26a599e4ae78542376a8aa78bd7ccb2e3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_Continued"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "45": {
+      "note": "The public closeout, run whole.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43c3ce60b302f5e61445491c0fe97a0fd7d84a69",
+            "content": "sha256:68322f2420d1ab8a5c547174c23d08f577df481c5c429d5f0e041be7e83245cf",
+            "locator": {
+              "kind": "symbol",
+              "name": "_public_closeout"
+            }
+          },
+          "kind": "test"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

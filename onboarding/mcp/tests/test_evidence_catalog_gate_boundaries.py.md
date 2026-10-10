@@ -48,3 +48,28 @@ the real repository.
 - The case: one consumer line removed, one finding, and no mention of the write command. [8]
 
 - The oracle's finding when declared and observed consumers differ. [9]
+### Cross-Repo References
+
+No cross-repository behavior is implemented or measured in this file. The synthetic repository is
+created under `tmp_path` and never touches the checkout's own Git store.
+
+No meaningful cross-repo references found.
+### Docs References
+
+No domain documentation source is configured for this repository (`system/sources.md` carries no
+`Domain Documentation` entries). The statements below are grounded in repository source only.
+
+No configured domain documentation could be checked.
+### Repo-Internal References
+
+- The lane row this module was appended to, in the lane list — appended rather than inserted mid-list.
+- The two exact-scope consumer registrations this module obliged.
+
+- **The consumer-completeness oracle: the one gate the source tree can redden, and the finding it raises.** [22]
+- The shared fixture that writes a valid synthetic catalog. [23]
+- The synthetic repository: two real consumers, one governed artifact, and a real Git repository because the oracle derives its graph from tracked files. [24]
+- The lane row this module was appended to, in the lane list — appended rather than inserted mid-list. [25]
+- The two exact-scope consumer registrations this module obliged. [26]
+
+- The lane row this module was appended to, in the lane list — appended rather than inserted mid-list. [27]
+- The two exact-scope consumer registrations this module obliged. [28]

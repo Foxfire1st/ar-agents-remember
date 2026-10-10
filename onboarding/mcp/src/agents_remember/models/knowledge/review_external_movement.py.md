@@ -1,15 +1,12 @@
 # mcp/src/agents_remember/models/knowledge/review_external_movement.py
 
 ## Governing Overview
-
 [models route overview](../overview.md)
 
 ## Purpose
-
 The source-bound v2 report of raw Git ancestry on the complete retained review tree comparison. It reports which declared identities were observed current, advanced, replaced or unreadable; it does not guess which Git command ran or perform recovery.
 
 ## Code Commentary
-
 ### Logic
 
 ExternalGitMovement carries the complete ReviewTreeComparisonRecord, its canonical digest and movement_version v2. A non-unavailable report must carry its source comparison, and a carried digest must identify that complete record. Missing comparison evidence carries no invented generation UUID or zero digest.
@@ -21,6 +18,10 @@ transitions names observed shapes. unchanged appears alone, in current, with no 
 observed_* values locate branch heads actually read and never replace recorded identity. A named moved input requires stale, and stale requires moved identities. not-measured and unavailable require a reason; a measured state carries none. unavailable cannot report generation_readable true. These are constructor rules, not wording conventions.
 
 The application's support matrix owns supported and unsupported recovery routes. unsupported is repeated on the displayed value, while successor_action names a successor live review with exact code/memory tree comparison. Empty unsupported means no transitions named in this report, never that all transitions are supported.
+
+### Conventions
+
+**The state vocabulary is reused, not re-minted.** `binding_state` is typed `ReviewSyncMovementState`, because a reader of either value must read the same four words the same way — and because R15's currentness rules are the ones the packet's failure clause names, so `stale` is the only state a replaced identity earns.
 
 ### Invariants And Boundaries
 
@@ -35,7 +36,6 @@ The application's support matrix owns supported and unsupported recovery routes.
 The former v1 value used dataset-generation identity. Historical shapes retain their own decoding constraints; v2 uses the complete tree comparison and invents no UUID or dataset coverage when that source is absent.
 
 ## Evidence
-
 ### Docs References
 
 No configured domain documentation could be checked for this module. The resolved memory layer's
@@ -97,3 +97,11 @@ store, resolves no path, runs no Git command and touches no repository, and ever
 carry — a generation id, a binding digest, a Git object id — is a value another owner in this same
 repository resolved. No cross-repo reference row is recorded here because no cited range proves a
 repository or external-system boundary.
+
+- **The transition vocabulary, whose first member `unchanged` is the measured absence of a transition rather than an event.** [20]
+- **Whether this system reconciles a transition at all, earned by the one recovery it performs.** [21]
+- **The three declared channels, each named by the thing that moved rather than by the command that moved it.** [22]
+- **What one channel's ancestry check found, with `advanced` as a measurement of its own.** [23]
+- **The movement value: its four-state binding, the transition and evidence tuples, the moved identities and the reason rule.** [24]
+- **The `after` validator that refuses every false shape — state against replaced identities, absence against reason, and `generation_readable` against `unavailable`.** [25]
+- The reused state vocabulary: `binding_state` carries the measured-currentness words, and `stale` is the only state a replaced identity earns. [26]

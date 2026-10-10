@@ -68,6 +68,234 @@
           "kind": "code"
         }
       ]
+    },
+    "28": {
+      "note": "**The module's own statement of the two-tree measurement, the labelled value, and the rule that a rename is never proof that an invariant moved.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cdf90e2dcf1740f5d915c212e7b629f58e366b8f",
+            "content": "sha256:a0749f08e37e7b29c93a83795436fb4707fd206a1df5266b7cbb7467b287591e",
+            "locator": {
+              "kind": "symbol",
+              "name": "git_rename_inference"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "29": {
+      "note": "The published surface: the command, the observation and sources values, the seam and the four functions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cdf90e2dcf1740f5d915c212e7b629f58e366b8f",
+            "content": "sha256:b278472e1ffa4c08cc12872e753bfceb01645c2e47fc356f56180dbbcb9aa330",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "30": {
+      "note": "**The declared command with both bound tree objects substituted and never a branch, a working tree or `HEAD`.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cdf90e2dcf1740f5d915c212e7b629f58e366b8f",
+            "content": "sha256:16e822ceb1fbb10cfb10371634e079bbfba6e407e7f51e85266205133a46444a",
+            "locator": {
+              "kind": "symbol",
+              "name": "RENAME_INFERENCE_COMMAND"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "31": {
+      "note": "The three stated reasons an inference was not measured, and the two Git status letters that carry two paths in the `-z` raw form.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cdf90e2dcf1740f5d915c212e7b629f58e366b8f",
+            "content": "sha256:d7e7af91c170e42c930a589eefc3e581686a3a06f25f3e0bcc4d306670ee5fa0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_MISSING_TREE_RENAME_DETAIL"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "32": {
+      "note": "**One Git rename record, and the honesty boundary between a measured non-pairing and an unmeasured inference.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cdf90e2dcf1740f5d915c212e7b629f58e366b8f",
+            "content": "sha256:89781080a86ce4137d5b6d2cb9304d7c81916fc099143631e0af5abe90375611",
+            "locator": {
+              "kind": "symbol",
+              "name": "RenamePair"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "33": {
+      "note": "The seam the inference is measured through, so a case measures one review with a substituted observation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cdf90e2dcf1740f5d915c212e7b629f58e366b8f",
+            "content": "sha256:f15585de5194f0a9a850c2ec81842b6210f6e1c064247d429cc9bf7e65e8023e",
+            "locator": {
+              "kind": "symbol",
+              "name": "RenameInferenceProbe"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "34": {
+      "note": "**The two bound trees and the seam as one measurement, with the answer or the reason it was not measured.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cdf90e2dcf1740f5d915c212e7b629f58e366b8f",
+            "content": "sha256:4e8818f35142541a1f85c7e80cd6c0e412109f69dfa88a8a6fb63e21a95788c3",
+            "locator": {
+              "kind": "symbol",
+              "name": "RenameInferenceSources"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "35": {
+      "note": "**The inference asked at most once and attached only to movements whose recorded addresses differ, with the stream's order untouched.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cdf90e2dcf1740f5d915c212e7b629f58e366b8f",
+            "content": "sha256:5ec5aa8ad368632859e81573ef7b4f05cbcabf51a67eeb333fa2896dad6deb7f",
+            "locator": {
+              "kind": "symbol",
+              "name": "with_rename_inferences"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "36": {
+      "note": "**The three states as sentences: the pairing that states it is not proof, the measured non-pairing that names every pair asked about, and the unmeasured one that claims no inference either way.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cdf90e2dcf1740f5d915c212e7b629f58e366b8f",
+            "content": "sha256:b8ff625360852394cfb2683045a386d054f709a63bb01bfa0c1841f134d0bb75",
+            "locator": {
+              "kind": "symbol",
+              "name": "_inference_for"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "37": {
+      "note": "The declared record format reader that refuses an output which is not this interface's.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cdf90e2dcf1740f5d915c212e7b629f58e366b8f",
+            "content": "sha256:0d957117c538ebbfbf3330892183ceaaf575ffdc20e48cabd0436f440610c2ca",
+            "locator": {
+              "kind": "symbol",
+              "name": "_rename_pairs"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "38": {
+      "note": "The wire value, whose validator keeps a pairing and its state one fact and refuses a similarity word on an unmeasured inference.\n\nAnchor: `ReviewRenameInference`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cdf90e2dcf1740f5d915c212e7b629f58e366b8f",
+            "content": "sha256:8f324ddbb47ba32233599c7709770d012ac4d9d762dfcec03616945697730926",
+            "locator": {
+              "end": 6,
+              "kind": "line_range",
+              "start": 6
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "39": {
+      "note": "The traversal that calls this module last, after the movements exist.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e437ee9bba5c14761a4d4fb336ef4294cee7ca27",
+            "content": "sha256:496b3dcefa9ca0d521d8ef5cd9057719d8d06766aa30b6c86639856a97e3389c",
+            "locator": {
+              "kind": "symbol",
+              "name": "relationship_movements"
+            },
+            "path": "mcp/src/agents_remember/application/review_relationship_movement.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "40": {
+      "note": "The Git runner the measurement goes through.\n\nAnchor: `run_git`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cdf90e2dcf1740f5d915c212e7b629f58e366b8f",
+            "content": "sha256:68509850bc09349a610a11d22cfb67056d9d999ad4c91b0f45e2722dfa70eacf",
+            "locator": {
+              "end": 23,
+              "kind": "line_range",
+              "start": 23
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "41": {
+      "note": "**The cases that measure the inference: a source rename displayed as a labelled Git inference, the same rename with no authored edge producing a retraction and an addition rather than a movement, and the separation of a measured absence from a measurement never made.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4fbe8a393d04d0bc0f0af6d31ed7a7880fd4c684",
+            "content": "sha256:9d92a141ef6c66f5c78b86d4ff8ffaface38f7e13a723906ff63df0e4896b51f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_source_rename_is_displayed_as_a_labelled_git_inference"
+            },
+            "path": "mcp/tests/test_knowledge_review_relationship_movement.py"
+          },
+          "kind": "test"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

@@ -162,107 +162,6 @@
         }
       ]
     },
-    "22": {
-      "note": "The envelope every one of the five derives from — a strict response plus the single required `operation` string each model then pins to a literal — and the shared header it inherits rather than redeclares.\n\nAnchor: `operation`; `to_payload`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "082789175b65a73ba6821158b07e1f5849c192ca",
-            "content": "sha256:ca5199c1cb508e337fc2b88eb8e795ae0ed267b3f32f4e4224ae759f0e28db6f",
-            "locator": {
-              "kind": "symbol",
-              "name": "ToolResponse"
-            },
-            "path": "mcp/src/agents_remember/models/base.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "082789175b65a73ba6821158b07e1f5849c192ca",
-            "content": "sha256:45b7cfd1ea33c7e121c05e03d6d9040b9c5f4e017f07efaaef19d7a73d4d1607",
-            "locator": {
-              "kind": "symbol",
-              "name": "ResponseModel"
-            },
-            "path": "mcp/src/agents_remember/models/base.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "082789175b65a73ba6821158b07e1f5849c192ca",
-            "content": "sha256:82b1223f6a2dfe69490f7dacf49a68f6da3450399b2d6266267c975685458548",
-            "locator": {
-              "kind": "symbol",
-              "name": "StrictResponseModel"
-            },
-            "path": "mcp/src/agents_remember/models/base.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "b95b845d5f59e720f11bbf5f0f21d0f8d620ea5a",
-            "content": "sha256:8c0b805e5da54933eeb04c75ff764d8de2cc73115fff9a043cba6750a7acac6c",
-            "locator": {
-              "end": 51,
-              "kind": "line_range",
-              "start": 51
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "23": {
-      "note": "Where the five classes are imported and mapped to their tool names in the registry.\n\nAnchor: `KnowledgeChangeResponse`; `KnowledgeDiffResponse`; `KnowledgeIntegrityCheckResponse`; `KnowledgeProjectResponse`; `KnowledgeReadResponse`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "217ff46ba831274f6cea94641a60077c17749cf0",
-            "content": "sha256:41b30584f1e6ab48b0ba5196af39144b20a777a24d5a07337d4b11fe99d5d04b",
-            "locator": {
-              "end": 118,
-              "kind": "line_range",
-              "start": 112
-            },
-            "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "217ff46ba831274f6cea94641a60077c17749cf0",
-            "content": "sha256:a30808185d7b0f10991bd70239f2fc0622317c9a1c2c6e5efd5e2c41f7651818",
-            "locator": {
-              "end": 255,
-              "kind": "line_range",
-              "start": 251
-            },
-            "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "24": {
-      "note": "The registry entry point itself, whose docstring states that a package-owned response shape uses a strict model so the field set is a drift-proof contract.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f0ed9e8a95befff8de1c27cb1778af257e3929df",
-            "content": "sha256:c5e692c8d6a2bd9e57fe45c669fad6d515fb880c1ffd1637dd37a067f6c787fc",
-            "locator": {
-              "kind": "symbol",
-              "name": "TOOL_RESPONSE_MODELS"
-            },
-            "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "25": {
       "note": "The projection of the registry that the public surface pin compares against the advertised roster.",
       "targets": [
@@ -275,23 +174,6 @@
               "name": "PUBLIC_TOOL_RESPONSE_MODELS"
             },
             "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "26": {
-      "note": "The five advertised tool names, closing the one cycle-free roster literal whose last entries are the knowledge family.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "37b01ee751f37d46d0fa1d6ea4c24e5aff5f1200",
-            "content": "sha256:7d00533fe5fe98c6953fcd37b7f70fe04e7a048b82aa53b8da59ffa147469646",
-            "locator": {
-              "kind": "symbol",
-              "name": "PUBLIC_TOOLS"
-            },
-            "path": "mcp/src/agents_remember/models/tools/public_roster.py"
           },
           "kind": "code"
         }
@@ -409,6 +291,94 @@
         }
       ]
     },
+    "35": {
+      "note": "The envelope every one of the three derives from — a strict response plus the single required `operation` string each model then pins to a literal — and the shared header it inherits rather than redeclares.\n\nAnchor: lines 102-106",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6e1c2663fa140e39d14ec835f6a5a6db3ced7de2",
+            "content": "sha256:e76fb9dcdec65ca764d37795cdf99666e924156e661a37b18317c5b955012282",
+            "locator": {
+              "end": 106,
+              "kind": "line_range",
+              "start": 102
+            },
+            "path": "mcp/src/agents_remember/models/base.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "36": {
+      "note": "Where the three classes are imported and mapped to their tool names in the registry.\n\nAnchor: lines 249-251",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7a06ecec104b9bae8ca879519cedf9db8cf40aaa",
+            "content": "sha256:c422dc8c23ea96e84036ce5510418d23580b411e5073ea35f1e83b5c88205c62",
+            "locator": {
+              "end": 251,
+              "kind": "line_range",
+              "start": 249
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "37": {
+      "note": "The three advertised knowledge tool names in the public roster.\n\nAnchor: lines 95-97",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8e8f924f3bcf2e178299af15d0d60b6c338fd98c",
+            "content": "sha256:309a611cc8d773f899de1875fc66442a2a03026bc0714ff7849f3f2eb367af6a",
+            "locator": {
+              "end": 97,
+              "kind": "line_range",
+              "start": 95
+            },
+            "path": "mcp/src/agents_remember/models/tools/public_roster.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "38": {
+      "note": "The docstring paragraph on the route-chain rows, `routeChain` and the family seed.\n\nAnchor: `knowledge_responses`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b95b845d5f59e720f11bbf5f0f21d0f8d620ea5a",
+            "content": "sha256:0bb764809d268b1241a7f9ad6de39d1effd8662ca2284ad12825da6368309198",
+            "locator": {
+              "end": 55,
+              "kind": "line_range",
+              "start": 51
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "39": {
+      "note": "The docstring paragraph on the leaf read and family names.\n\nAnchor: `knowledge_responses`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b95b845d5f59e720f11bbf5f0f21d0f8d620ea5a",
+            "content": "sha256:37b5280d3f42bdd814c28bb869ba5c26683643da9d274ed28224afedd4a8d48e",
+            "locator": {
+              "end": 49,
+              "kind": "line_range",
+              "start": 45
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "4": {
       "note": "The current read response carries its named view/page and optional reader-owned tree, proof, currentness, family and route blocks.",
       "targets": [
@@ -419,6 +389,170 @@
             "locator": {
               "kind": "symbol",
               "name": "KnowledgeReadResponse"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "40": {
+      "note": "The docstring paragraph on proofs beside the view.\n\nAnchor: `knowledge_responses`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b95b845d5f59e720f11bbf5f0f21d0f8d620ea5a",
+            "content": "sha256:b03a0dc7c64a4da94332b901394040442cc1e759c8a1508021916450f92e4a9c",
+            "locator": {
+              "end": 33,
+              "kind": "line_range",
+              "start": 30
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "41": {
+      "note": "The docstring paragraph on currentness beside the view.\n\nAnchor: `knowledge_responses`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b95b845d5f59e720f11bbf5f0f21d0f8d620ea5a",
+            "content": "sha256:9fee503dba31f601e1e1cbfff0294a73785e2560900da5dc4147bc5486d5d9c7",
+            "locator": {
+              "end": 43,
+              "kind": "line_range",
+              "start": 35
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "42": {
+      "note": "The docstring paragraph on a memory tree's bounded page.\n\nAnchor: `knowledge_responses`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b95b845d5f59e720f11bbf5f0f21d0f8d620ea5a",
+            "content": "sha256:c589de1ee20de654ac3253797544a684657522c5d8bd9b5806ece7a43597da60",
+            "locator": {
+              "end": 28,
+              "kind": "line_range",
+              "start": 22
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "43": {
+      "note": "The module docstring's statement that a memory tree is named, never hidden, and that a partial index is never presented as complete.\n\nAnchor: `knowledge_responses`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b95b845d5f59e720f11bbf5f0f21d0f8d620ea5a",
+            "content": "sha256:a34bd31ebc5bb301452e68cbf31f389ccde5fd78b373c0b8768a96e4d52b14c7",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 14
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "44": {
+      "note": "The optional `proofs` field on the read response, beside L03's `currentness`, since MIK-R02 the `page` and `threshold` fields, since MIK-R01 the optional `families`, and since MIK-R05 the optional `routeChain`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b95b845d5f59e720f11bbf5f0f21d0f8d620ea5a",
+            "content": "sha256:cd0bb85b2d3107913e3eaf8924705f554fed961e044ae925d976bd7e75b28a0b",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeReadResponse"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "45": {
+      "note": "The optional `currentness` field on the read response, after `proofs`, re-read at MIK-R02 when the model gained `page` and `threshold`, at MIK-R01 when it gained `families`, and at MIK-R05 when it gained `routeChain`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b95b845d5f59e720f11bbf5f0f21d0f8d620ea5a",
+            "content": "sha256:cd0bb85b2d3107913e3eaf8924705f554fed961e044ae925d976bd7e75b28a0b",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeReadResponse"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "46": {
+      "note": "The `page` state (which since MIK-R01 also answers a leaf read, and since MIK-R05 a family seed) and the optional `page` and `threshold` fields on the read model.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b95b845d5f59e720f11bbf5f0f21d0f8d620ea5a",
+            "content": "sha256:cd0bb85b2d3107913e3eaf8924705f554fed961e044ae925d976bd7e75b28a0b",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeReadResponse"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "47": {
+      "note": "The read response: which view and which snapshot it was read at, echoed beside the payload verbatim, plus the optional memory-tree binding and index completeness when the read went through a converted tree's index.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b95b845d5f59e720f11bbf5f0f21d0f8d620ea5a",
+            "content": "sha256:cd0bb85b2d3107913e3eaf8924705f554fed961e044ae925d976bd7e75b28a0b",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeReadResponse"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "48": {
+      "note": "The read handler that stores the view payload's own JSON and echoes the snapshot, the completeness statement (forced to `false` by a partial index) and the continuation token, beside `memoryTree` and `indexComplete`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b95b845d5f59e720f11bbf5f0f21d0f8d620ea5a",
+            "content": "sha256:cd0bb85b2d3107913e3eaf8924705f554fed961e044ae925d976bd7e75b28a0b",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeReadResponse"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "49": {
+      "note": "The optional `routeChain` field on the read model, for a path's refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b95b845d5f59e720f11bbf5f0f21d0f8d620ea5a",
+            "content": "sha256:7a2f75a44c9d5d7656be66496e43cddf4a25bfd79e14a04f473849e592463bf7",
+            "locator": {
+              "kind": "symbol",
+              "name": "routeChain"
             }
           },
           "kind": "code"
@@ -436,6 +570,74 @@
               "kind": "symbol",
               "name": "KnowledgeReadResponse"
             }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "50": {
+      "note": "The optional `families` field on the read model.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b95b845d5f59e720f11bbf5f0f21d0f8d620ea5a",
+            "content": "sha256:18a5ecb48926b0e6097d1f1fcec4be8c743c236f66212d0d43eede17154d126d",
+            "locator": {
+              "kind": "symbol",
+              "name": "families"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "51": {
+      "note": "A family whose members have no proof shows `[]`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "21f99aa076f020f6ff937e97fa2cec6f87d0c9fe",
+            "content": "sha256:3ca50d3f9ee1a02287b076df8a2ab5873b77daabc19839e6208d443fbca3df22",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_family_whose_members_have_no_proof_shows_an_empty_list"
+            },
+            "path": "mcp/tests/test_knowledge_proofs.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "52": {
+      "note": "The builder that fills them.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "93f9cc7b1e87fde3103b6798c2d8245be88d94a5",
+            "content": "sha256:246c2c53aa05e422046961c197ad4be6066796da8ece43467bb2014e9b31141a",
+            "locator": {
+              "kind": "symbol",
+              "name": "leaf_worklist_fields"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_worklist/surface.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "53": {
+      "note": "The registry entry point itself, whose docstring states that a package-owned response shape uses a strict model so the field set is a drift-proof contract.\n\nAnchor: lines 3-9",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7a06ecec104b9bae8ca879519cedf9db8cf40aaa",
+            "content": "sha256:e89530603afbbcb72dd29a9e296e44e817ee7c358074d3843cbcaef53789a28f",
+            "locator": {
+              "end": 9,
+              "kind": "line_range",
+              "start": 3
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
           },
           "kind": "code"
         }

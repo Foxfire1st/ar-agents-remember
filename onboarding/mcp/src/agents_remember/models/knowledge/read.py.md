@@ -1,18 +1,15 @@
 # mcp/src/agents_remember/models/knowledge/read.py
 
 ## Governing Overview
-
 [models route overview](../overview.md)
 
 ## Purpose
-
 **The whole vocabulary of one selective recorded-scope read: its seeds, its declared snapshot, its page
 and its cursor.** This module holds no SQL, no Git resolution and no authority decision; it declares what a
 caller may ask for and what a caller is told, and the deciders import it rather than redefining a branch
 of it.
 
 ## Code Commentary
-
 ### Logic
 
 **Four splits are load-bearing, and each one is a place a future edit could silently undo a guarantee:**
@@ -110,7 +107,6 @@ snapshot's `context_digest` is **derived** and is not canonical database content
 None recorded.
 
 ## Evidence
-
 ### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no

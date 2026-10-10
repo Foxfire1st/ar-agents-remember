@@ -22,6 +22,13 @@ run loads the contract once, dispatches crossing to run_crossing_write, converte
 - The commit word writes knowledge, never Git history or acceptance.
 - There is no canonical database fallback.
 
+### Conventions
+
+Module-level definitions follow the package conventions, matching its seven sibling CLI adapters; names
+prefixed with `_` are private to this module. Argument declaration and dispatch are split the same way
+they are in `memory_citations.py` and `memory_backfill.py`: `add_arguments` owns the parser surface and
+`run` owns the behaviour, so the parser can be exercised without running the operation.
+
 ## Evidence
 
 ### Repo-Internal References

@@ -158,6 +158,202 @@
         }
       ]
     },
+    "30": {
+      "note": "Exact refs, worktree identity, and authority-safe cleanup.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d792ca35666e800c2743156397e04ac2c2b46306",
+            "content": "sha256:84580a01bb3869b8ec141c3c2d55a44b42eecd9a55c9637f2c2e766d93762cbf",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_ref"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "31": {
+      "note": "Typed dirty/WIP and restore proof exclude only the memory cache.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d792ca35666e800c2743156397e04ac2c2b46306",
+            "content": "sha256:e40546cac2457fb2f2a305608082d7b4e66af5ca95a74c80a43eb6f71a61cb95",
+            "locator": {
+              "kind": "symbol",
+              "name": "worktree_dirty_paths"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "32": {
+      "note": "Content-domain conflicts and narrowly scoped cache state handling.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d792ca35666e800c2743156397e04ac2c2b46306",
+            "content": "sha256:2c2428c20f8fd2a74d830ef280a4858a3bf5701b7895bc98b9b0127fd445861f",
+            "locator": {
+              "kind": "symbol",
+              "name": "content_conflicts"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "33": {
+      "note": "Native merge, exact continuation, and cache-free merge output; both entry points carry the paired code commit to the final memory merge, which first closes any master-line crossing history file the merge adds.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d792ca35666e800c2743156397e04ac2c2b46306",
+            "content": "sha256:dcdca2ca3f138cc692e594ce192ef4f10bc043801c7c031008395522e8c4ba5c",
+            "locator": {
+              "kind": "symbol",
+              "name": "start_side_merge"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "34": {
+      "note": "The crossing helpers this module drives.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e26aec15ae66d43787698d534743bda3fa5463ef",
+            "content": "sha256:f7a0fc4572c73ecc54bb34f2dc3e20986303a06174cd1e1ede8615a339722fd2",
+            "locator": {
+              "kind": "symbol",
+              "name": "crossing_plan"
+            },
+            "path": "mcp/src/agents_remember/worktrees/knowledge_crossing.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "35": {
+      "note": "The managed sync crosses an unconverted leaf into a converted line, and leaves overlapping edits to the curator.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1b81505edc5c675ce2a6f1cdf92a60af07a2a634",
+            "content": "sha256:c47e053eeef9b1a79299c2fbaf4b07dbb2a073343d67ef58acba8ee517470239",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_managed_sync_crosses_an_unconverted_leaf_into_a_converted_line"
+            },
+            "path": "mcp/tests/test_knowledge_crossing.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "36": {
+      "note": "The staged memory tree is validated against both parents before the commit; a refusal raises and leaves the merge staged.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d792ca35666e800c2743156397e04ac2c2b46306",
+            "content": "sha256:3a20c476b4a05e39bde63fb4fdfa2181f4fc1b6ef772829bf6e7a2c479190ca6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_finish_staged_memory_merge"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "37": {
+      "note": "The managed sync refuses a merge with duplicate IDs, keeps it staged, and syncs after the repair.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0aa022ec4b45b059754a8f3b1252fa8d25b69384",
+            "content": "sha256:d73742d5ac37b6faa2d79865d288edaae714ac2231a2e8147bdc911c5fd9e969",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_managed_sync_refuses_a_merge_with_duplicate_ids_until_it_is_repaired"
+            },
+            "path": "mcp/tests/test_knowledge_validator_routes.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "38": {
+      "note": "Rollback and created-head proof retain exact operation ownership.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d792ca35666e800c2743156397e04ac2c2b46306",
+            "content": "sha256:d97b331539bed08d8bb17a4fe08fb8c7706ee94b36bf4048fe03eedbc4a5800d",
+            "locator": {
+              "kind": "symbol",
+              "name": "rollback_side"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "39": {
+      "note": "The rollback restores the cache before the merge abort.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d792ca35666e800c2743156397e04ac2c2b46306",
+            "content": "sha256:30ee024b857f44ec240971a085e7e49adb1e8a90419914b735dff485d65fe1a4",
+            "locator": {
+              "kind": "symbol",
+              "name": "discard_memory_cache_changes"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "40": {
+      "note": "A failed abort names Git's reason.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d792ca35666e800c2743156397e04ac2c2b46306",
+            "content": "sha256:1198290d616fa0d6414dae46011c099e7e7c84ef584a23fba0f455f9dd780a76",
+            "locator": {
+              "kind": "symbol",
+              "name": "_abort_failure"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "41": {
+      "note": "Cancel after a memory conflict restores the branch and its tracked cache.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "10f851e4484874f5350945cc4b10e60e22644f55",
+            "content": "sha256:7641ca0bc19096ed37cd771b996d024e734975642b0c58e621c4ae98c302c37e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_cancel_after_a_memory_conflict_restores_the_branch_and_its_tracked_cache"
+            },
+            "path": "mcp/tests/test_worktree_sync.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
     "8": {
       "note": "Supported staged continuation.",
       "targets": [

@@ -119,6 +119,185 @@
           "kind": "code"
         }
       ]
+    },
+    "17": {
+      "note": "A crossing sync: one tree unconverted and one converted.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e26aec15ae66d43787698d534743bda3fa5463ef",
+            "content": "sha256:30a54f3769edbfbc38a046484f4aa1a130ac442b881f2c7dd545e792a053b3a4",
+            "locator": {
+              "kind": "symbol",
+              "name": "merge_structure"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "The plan through the bound port, refused without a paired code commit or a bound crossing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e26aec15ae66d43787698d534743bda3fa5463ef",
+            "content": "sha256:f7a0fc4572c73ecc54bb34f2dc3e20986303a06174cd1e1ede8615a339722fd2",
+            "locator": {
+              "kind": "symbol",
+              "name": "crossing_plan"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "The merge's knowledge and onboarding paths become the plan; conflicted paths are unmerged with three stages.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e26aec15ae66d43787698d534743bda3fa5463ef",
+            "content": "sha256:9cee7d39379888cd18794013dfc40a3cf9db0a4917edfdcb14e84e2cc389c7d9",
+            "locator": {
+              "kind": "symbol",
+              "name": "apply_crossing"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "The rule 9 refusal when the official line is converted; every other unconverted tree is left to the cutover lock.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e26aec15ae66d43787698d534743bda3fa5463ef",
+            "content": "sha256:124f5c9e6a34a3f01b3fd5a8d70f161ef7e4d775864fbd5b8db7ccadc105e44a",
+            "locator": {
+              "kind": "symbol",
+              "name": "unconverted_line_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "A master-line crossing history file is closed in the merge commit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e26aec15ae66d43787698d534743bda3fa5463ef",
+            "content": "sha256:3302222db837b98bf5fef2034d41306d014a5ba2a0f0829d178b3ca479d7dab3",
+            "locator": {
+              "kind": "symbol",
+              "name": "close_crossing_history"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "The durable report and its bounded summary, with the how-to.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e26aec15ae66d43787698d534743bda3fa5463ef",
+            "content": "sha256:f3f0c7ee1f793ec67ce30436950163e72dd40e0a71753c28fe1c62ede4ff2921",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_crossing_report"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "Rule 9, then the cutover lock for every other unconverted tree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e26aec15ae66d43787698d534743bda3fa5463ef",
+            "content": "sha256:124f5c9e6a34a3f01b3fd5a8d70f161ef7e4d775864fbd5b8db7ccadc105e44a",
+            "locator": {
+              "kind": "symbol",
+              "name": "unconverted_line_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "Whether the official line's tip holds the marker; no line or an unreadable one reads as no.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e26aec15ae66d43787698d534743bda3fa5463ef",
+            "content": "sha256:1b59f6b06f19b2177d0fe13c7e1743256970ab21280487644fcc35731d962885",
+            "locator": {
+              "kind": "symbol",
+              "name": "_official_line_converted"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "The managed sync crosses an unconverted leaf into a converted line.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1b81505edc5c675ce2a6f1cdf92a60af07a2a634",
+            "content": "sha256:c47e053eeef9b1a79299c2fbaf4b07dbb2a073343d67ef58acba8ee517470239",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_managed_sync_crosses_an_unconverted_leaf_into_a_converted_line"
+            },
+            "path": "mcp/tests/test_knowledge_crossing.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "26": {
+      "note": "Overlapping edits go to the curator with markers; a failed step changes nothing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1b81505edc5c675ce2a6f1cdf92a60af07a2a634",
+            "content": "sha256:4e4830a84005983da07a3c5589b501f73475627a3565c79bb4c4e1725268f4fd",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_crossing_leaves_overlapping_edits_to_the_curator_and_a_failed_step_changes_nothing"
+            },
+            "path": "mcp/tests/test_knowledge_crossing.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "27": {
+      "note": "The refusal fires only once the official line is converted.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ac132ba02c16f5f0000f16185b12cfe345dfe99b",
+            "content": "sha256:ce973bceccdc86d02c658e0d9d5a9cc626c1112b5d2d58b469d2e5879098d739",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_unconverted_leaf_is_refused_only_once_its_official_line_is_converted"
+            },
+            "path": "mcp/tests/test_knowledge_conversion_toolchain.py"
+          },
+          "kind": "test"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

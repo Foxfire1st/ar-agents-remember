@@ -86,6 +86,88 @@
           "kind": "code"
         }
       ]
+    },
+    "31": {
+      "note": "**The value this resolution is composed into, and the field that carries the record rather than a live capture.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c56b9fb89745db2a10f6d1d6071fd484991027c2",
+            "content": "sha256:75d730cafc4ac9a4cce868d102a297f65c42314e299cf732c0587408408f9eda",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_committed_leaf_review"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "32": {
+      "note": "**The single entry point: the closed-enclosure branch that delegates here, with the one local import this leaf's diff suppresses and the reason it is local.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c56b9fb89745db2a10f6d1d6071fd484991027c2",
+            "content": "sha256:75d730cafc4ac9a4cce868d102a297f65c42314e299cf732c0587408408f9eda",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_committed_leaf_review"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "33": {
+      "note": "**The reopen owner's answer this module reads rather than restates: the manifest, the per-channel states and the refusal an ambiguous or unreadable record earns.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "07dda66c98a13ea7b9344ae8f32b60b389587469",
+            "content": "sha256:80fcc2f8bc2ab0548e861e26c7ecbb17bf19cad275e89cec1a4a6ca25f4c1a8d",
+            "locator": {
+              "kind": "symbol",
+              "name": "ComparisonReopen"
+            },
+            "path": "mcp/src/agents_remember/application/review_comparison_reopen.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "34": {
+      "note": "**The case module that measures the whole chain through the real composition and the real HTTP route.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "03ddfd4d7cfa1d7d40eb93badc9bc3282806f94c",
+            "content": "sha256:6b0c898d00655e49fbc5cada3d22143be3f12de967a3d039a0fe4dbb383f8850",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_closed_leaf_serves_its_recorded_comparison_byte_for_byte"
+            },
+            "path": "mcp/tests/test_historical_committed_leaf_review.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "35": {
+      "note": "An explicit generation is resolved through the same committed-leaf owner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c56b9fb89745db2a10f6d1d6071fd484991027c2",
+            "content": "sha256:75d730cafc4ac9a4cce868d102a297f65c42314e299cf732c0587408408f9eda",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_committed_leaf_review"
+            }
+          },
+          "kind": "code"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

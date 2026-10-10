@@ -31,6 +31,42 @@
           "kind": "code"
         }
       ]
+    },
+    "3": {
+      "note": "The operation block's declared purpose, source path, and applicable roles.\n\nAnchor: `orientation`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9f01b458769e29ba24c9cc3c0ff187e9e5eb2cf2",
+            "content": "sha256:ee423b4709661c5bf62c3ef0bf31b49e324f4a8f47522b946e3443232fe1ac53",
+            "locator": {
+              "end": 54,
+              "kind": "line_range",
+              "start": 39
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The canonical source of this block.\n\nAnchor: `# Operation`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fe0ee3ac71ede00f98e9bcafb82a64ad8eed553b",
+            "content": "sha256:2b7260aa7dec000b8500726aef3283b2e3aec4799f1e8d873b58ab31fd07c14c",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/orientation.md"
+          },
+          "kind": "code"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

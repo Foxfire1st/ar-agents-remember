@@ -37,6 +37,135 @@
     }
   ],
   "references": {
+    "17": {
+      "note": "The published surface of the anchor-observation vocabulary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "81c9e1852ad2d5926b77e5aebf0ef1df7caae2c6",
+            "content": "sha256:fcf4f04779e3a861bf0dabe85e71aca0e9e5d1dcb3aa2b752089b2d721f9c0c1",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "**One recorded anchor observed against the requested snapshot, carrying its recorded identity whatever the outcome and its structured locator.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "81c9e1852ad2d5926b77e5aebf0ef1df7caae2c6",
+            "content": "sha256:94101c434ec37600081cbe91b9d6a933676f9cd18397ca40c0d433c775a829d4",
+            "locator": {
+              "kind": "symbol",
+              "name": "AnchorResolution"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "**The structured region: the recorded line range or every defining extent, only on an exact recorded blob; none for a file locator.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "81c9e1852ad2d5926b77e5aebf0ef1df7caae2c6",
+            "content": "sha256:00df60683c6562a39fed1cefd04740a3bdd3694504bcac425212fb50f8a370f4",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolved_ranges"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "**The validator refusing ranges beside any resolution other than the exact recorded blob.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "81c9e1852ad2d5926b77e5aebf0ef1df7caae2c6",
+            "content": "sha256:6df7b2ab9a7f184f1a6c860739d84c54b1058c1706a4f901f3f63aa2dde00b27",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_ranges_only_on_the_recorded_bytes"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "The re-export that keeps every existing `read.py` import of these names working.\n\nAnchor: `AnchorResolution`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1ef674f62b3c34b50d5240cd30a305b45f19b747",
+            "content": "sha256:023bcf2b067a0cd1649ed262383f2290742e9a10082fdda468f2499fbf6cfe83",
+            "locator": {
+              "end": 50,
+              "kind": "line_range",
+              "start": 47
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/read.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "The read item field that carries the observation onto every realization-claim item.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1ef674f62b3c34b50d5240cd30a305b45f19b747",
+            "content": "sha256:67f3b71398806f5b4f55d98980b2737ded49379c955846d982cbf5389aa1f689",
+            "locator": {
+              "kind": "symbol",
+              "name": "anchor"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/read.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "The resolver that fills `resolved_ranges` for symbol and line-range locators on the exact recorded blob.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "24c7f2718e93cdc31278f980928b3ae205aa8c86",
+            "content": "sha256:bfc0319d634856fb8f98a46fa53fcb0eb7fbba8a55532e4e7e19bc8d804a5b5f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_observed_symbol"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_anchors.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "24c7f2718e93cdc31278f980928b3ae205aa8c86",
+            "content": "sha256:a503652955f6dfd31cbfd0eb47bbd1e7bf66fee39157dd488833e7be2300bd7d",
+            "locator": {
+              "end": 232,
+              "kind": "line_range",
+              "start": 227
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_anchors.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "9": {
       "note": "`AnchorResolution` implements the retained boundary described above.",
       "targets": [

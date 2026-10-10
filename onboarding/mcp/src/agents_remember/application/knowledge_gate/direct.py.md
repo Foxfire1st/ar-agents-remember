@@ -59,3 +59,25 @@ commit's tree and K_C the memory checkout's exact candidate tree. The worktree l
 - `_open_histories` implements the retained boundary described above. [6]
 - `_source` implements the retained boundary described above. [7]
 - `direct_verdict` implements the retained boundary described above. [8]
+
+### Docs References
+
+No domain documentation source is configured for this repository (`system/sources.md` carries no
+`Domain Documentation` entries). The design authority is `MIK-R09@v2` and `09_mandatory-invariant-closeout-gate.json`,
+outside the repositories.
+
+No configured live documentation source was available for this pass.
+
+### Repo-Internal References
+
+- The module docstring: the four sides and the leaf a direct landing names. [9]
+- The open leaf history files of a candidate. [10]
+- The verdict; a replay is not gated; exactly one owner. [11]
+- The worklist over the series sides, failing closed. [12]
+- The route test. [13]
+
+### Cross-Repo References
+
+No meaningful cross-repo references found.
+
+No cross-repo boundary is crossed by this file.

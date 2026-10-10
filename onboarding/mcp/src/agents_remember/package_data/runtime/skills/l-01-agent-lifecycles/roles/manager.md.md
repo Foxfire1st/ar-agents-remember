@@ -16,13 +16,29 @@ Start the Worker and Reviewer together and the Curator at the first freeze, unde
 
 Inspect actual deliverables, complete changed-file diff, checks and reports before handoff. Preserve requirement/finding IDs and separate implementation, review, curation and publication facts. Its own decisions cover leaf order and starts, operational problems, ordinary requirement readings, repair rounds, landing checks and delegated closeout/integration; only the four developer-needed categories plus the once-only final report go to the parent or the instructed reporting recipient. A real parent is addressed from the handover; dashboard launch needs none.
 
+## Logic
+
+Curator dispatch carries the same exact approved revision packets and per-revision reviewer rows
+used by builder/reviewer handoff. A rejected or worker-blocked revision is a curation blocker, not
+authority for current onboarding.
+
 ## Conventions
 
 Canonical skills/l-01-agent-lifecycles/roles/manager.md owns the instruction. scripts/sync-skills.py regenerates this exact packaged copy and the eight harness copies; no generated file defines a separate obligation.
 
+- Change manager doctrine only in canonical `skills/`.
+- Propagate and verify with `scripts/sync-skills.py`.
+- Keep package-path provenance distinct while keeping content byte-identical.
+- Do not append package-only task deltas or compatibility instructions.
+
 ## Invariants And Boundaries
 
 Use existing AR task/data and paired Git owners under actual authority. No Curator memory edit, self-review, uncertain duplicate, shell-commit substitution, invented parent or unverified landing claim.
+
+- Installation cannot widen manager authority beyond one canonical master.
+- Runtime packaging cannot expose child occupant ids to the manager model.
+- Builder, reviewer, curator, closeout, and handover separation matches canonical doctrine exactly.
+
 
 ## Evidence
 
@@ -32,6 +48,11 @@ Use existing AR task/data and paired Git owners under actual authority. No Curat
 | --- | --- | --- |
 | Selected-master scope, bound leaf loop, evidence inspection and AR publication ownership. | lines 8-24 | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md:8-24 |
 
+- The packaged manager is one master-scoped owner of the leaf closeout chain. [2]
+- Its hosted child dispatch uses structural task document and role. [3]
+- Curator dispatch carries the exact requirement packets, and a reviewer adjudication only when review was requested. [4]
+- The canonical source owns this doctrine. [5]
+- MCP package data is copied from canonical skills and checked for drift. [6]
 
 ## Current Investigator contract impact
 

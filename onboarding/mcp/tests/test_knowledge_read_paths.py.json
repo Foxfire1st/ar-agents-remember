@@ -18,6 +18,167 @@
         }
       ]
     },
+    "10": {
+      "note": "**The pathspec-magic boundary node: a leading-`:` spelling refused at both typed boundaries, with the Git facts measured by the module itself.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "91e4a83282691ee1303a098b598590e266225430",
+            "content": "sha256:23008fc2ad62d86f657422efc766520d04840dd2ec873f925834bbc63d8f4080",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_pathspec_magic_spelling_is_refused_by_the_typed_path_and_never_answered_as_absence"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "**The glob-character node the review's correction rests on: authored, stored, seeded and resolved to its own blob.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "91e4a83282691ee1303a098b598590e266225430",
+            "content": "sha256:b32510a964ce1e216b287781c6a71349538f9103d3322f1ab9a9ef2d1b1f605d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_path_holding_glob_characters_is_authorable_seedable_and_observed_as_its_blob"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "**The unaddressable-stored-spelling node: a refusal of the spelling, never an absence from the tree.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "91e4a83282691ee1303a098b598590e266225430",
+            "content": "sha256:2e378e91f88d9ff9cbb71fab1b02d3c67f78d55a6e0f7780f22dd22d76613d39",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_stored_path_that_cannot_be_addressed_is_refused_rather_than_reported_absent"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "**The lookup that ran and could not answer, refused as unavailable rather than absent.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "91e4a83282691ee1303a098b598590e266225430",
+            "content": "sha256:7ef8818ed136feabb30a06d57bf8d5985f6904f995f7e6dd608245b4dfe42713",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_failed_tree_lookup_is_unavailable_rather_than_an_absent_path"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "**The lookup that could not be run at all, reported as the same fact.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "91e4a83282691ee1303a098b598590e266225430",
+            "content": "sha256:0356438815abbe377617683c4af7689502abf0349a88b54e2183a58c988efe29",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_git_that_cannot_run_is_unavailable_rather_than_an_absent_path"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "**The corrected predicate this module measures: leading `:` refused; `*`, `?` and `[` admitted as literal characters.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "24c7f2718e93cdc31278f980928b3ae205aa8c86",
+            "content": "sha256:b3d613826a8ec1517125e0879403fe1c4aad88032371f0b956871b9ec1832875",
+            "locator": {
+              "kind": "symbol",
+              "name": "_confined_posix_relative"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_anchors.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "138358a5feab44724703f06dfe3ff24c231ee322",
+            "content": "sha256:44e59ee23e75ec8ac8af261e1288670123b6cc1d40eae8e02ccc43e71e721ff7",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_plain_git_path"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/base.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "**The write-path boundary that applies the shared rule, so a malformed anchor cannot be authored.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e852b71ce80180b12f5682c62e4baa1e186d0ec2",
+            "content": "sha256:12b3301d68fc80d98a6414b732ea425dcc979f5d77ce818f246cad5a965010c9",
+            "locator": {
+              "kind": "symbol",
+              "name": "SourceAnchorDraft"
+            },
+            "path": "mcp/tests/anchor_fixture_models.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "**The seed boundary that applies the same rule, so a refused spelling cannot be presented as a seed.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1ef674f62b3c34b50d5240cd30a305b45f19b747",
+            "content": "sha256:c9bae576442e9ed3c038b1f056f35e178a320f84b9c96b858f33f086e7154ed6",
+            "locator": {
+              "kind": "symbol",
+              "name": "PathSeed"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/read.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "The lane row this module occupies.\n\nAnchor: `test_knowledge_read_paths`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e6cd30be07fa6a435465d02ac4fb9feb7e1bbc8",
+            "content": "sha256:6d72a03b51c229fc0032ede7d0676b5f68afcd6b9e47ae30601f6b28cfaed5e5",
+            "locator": {
+              "end": 339,
+              "kind": "line_range",
+              "start": 339
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
     "2": {
       "note": "Literal glob characters are addressable.",
       "targets": [

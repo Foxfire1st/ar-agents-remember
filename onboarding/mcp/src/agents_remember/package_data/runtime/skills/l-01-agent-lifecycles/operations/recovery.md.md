@@ -22,6 +22,12 @@ Canonical skills/l-01-agent-lifecycles/operations/recovery.md owns the instructi
 
 No new owner, parallel Paseo Git worktree, global memory root, alternate transport, private store or background poller is created to bypass uncertainty or refusal. Name the actual prerequisite or missing semantic field and return it to its owner.
 
+## Code Commentary
+
+### Todos
+
+None recorded.
+
 ## Evidence
 
 ### Repo-Internal References
@@ -29,3 +35,21 @@ No new owner, parallel Paseo Git worktree, global memory root, alternate transpo
 | Finding | Anchor | References |
 | --- | --- | --- |
 | Saved exact identity, same-request reconciliation, paired workspace and visible unknown outcome. | lines 3-7 | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/recovery.md:3-7 |
+
+### Docs References
+
+No external or domain documentation governs this repository-local instruction file; it is canonical
+repository prose consumed by the skill router.
+
+No relevant documentation found after checking live sources.
+
+### Repo-Internal References
+
+- The operation block's declared purpose, source path, and applicable roles. [1]
+- The canonical source of this block. [2]
+
+### Cross-Repo References
+
+No sibling-repository contract defines this instruction file.
+
+No meaningful cross-repo references found.

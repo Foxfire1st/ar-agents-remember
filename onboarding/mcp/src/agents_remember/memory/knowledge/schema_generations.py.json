@@ -66,6 +66,137 @@
           "kind": "code"
         }
       ]
+    },
+    "41": {
+      "note": "The frozen generation record and the eleven fields a generation must answer for itself; the key and typed-JSON registries are part of the pinned structure, not derivable from DDL.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ed80f22d9e0746a34756ea0717989fa6ad564df8",
+            "content": "sha256:b53a743342451b3f87017e3d650ce93da39c497293ae02352f4549c4daf0e413",
+            "locator": {
+              "kind": "symbol",
+              "name": "SchemaGeneration"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "42": {
+      "note": "The only place a build's own generation decides anything, and it decides only what a created store declares.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ed80f22d9e0746a34756ea0717989fa6ad564df8",
+            "content": "sha256:d53b3c553683fc7095beee5d7f6c26fe85c5e10fdacf1c5d76eb268434c8efa4",
+            "locator": {
+              "kind": "symbol",
+              "name": "generation_of_new_store"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "43": {
+      "note": "The one fingerprint definition, now a function of a record rather than of the running build.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ed80f22d9e0746a34756ea0717989fa6ad564df8",
+            "content": "sha256:28f4e45d5144f438ef6885f676671f4efbbb318bd8aafef09ba5a5edda830504",
+            "locator": {
+              "kind": "symbol",
+              "name": "structure_fingerprint"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "44": {
+      "note": "Open-path dispatch by version alone, and the hard refusal of an unregistered version.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ed80f22d9e0746a34756ea0717989fa6ad564df8",
+            "content": "sha256:71a55907b220b9b15545b2c009508e8849b44c6d288b76c097e6e70075a6d17d",
+            "locator": {
+              "kind": "symbol",
+              "name": "generation_of_database"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "45": {
+      "note": "**The schema name generation 9 declares — `ar-knowledge-sqlite/v9`, the name a created store now carries.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ed80f22d9e0746a34756ea0717989fa6ad564df8",
+            "content": "sha256:0def1c776cf68967974e107fb20f37758ffbe71dba776990a086d2ac936f1c28",
+            "locator": {
+              "kind": "symbol",
+              "name": "SCHEMA_NAME"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "46": {
+      "note": "Generation 1's declared tables, columns, keys, JSON columns, DDL, triggers and features — the declarations this module delegates to and never restates.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e27550d32bfd12f38a8b3393ad8622114eb677a",
+            "content": "sha256:6feb1da7702db4f19134857c1233bc1fa288925fa0b603a5174a37150637a0c9",
+            "locator": {
+              "kind": "symbol",
+              "name": "CANONICAL_TABLES"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "47": {
+      "note": "The open path that calls this module's dispatch and the creation path that declares a generation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5330296baa8cabeac31286bb196c70bcf2763703",
+            "content": "sha256:930d3a928f847e7604bbfec6b53ca6fe384a4611fa001211ae4f11be297e4d66",
+            "locator": {
+              "kind": "symbol",
+              "name": "inspect_schema"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/connection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "48": {
+      "note": "The encoder that takes the selected generation instead of reading build globals.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9bd771868db3dd26d3ff90ea75cbbf5bdcf4a8f1",
+            "content": "sha256:be0962955b303788b7ad2f1f232027d69f1ce2535e7b7346b7733eee87f74aa0",
+            "locator": {
+              "kind": "symbol",
+              "name": "logical_body_from_tables"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/logical.py"
+          },
+          "kind": "code"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

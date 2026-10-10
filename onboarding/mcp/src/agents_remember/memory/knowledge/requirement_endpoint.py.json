@@ -131,6 +131,216 @@
           "kind": "test"
         }
       ]
+    },
+    "23": {
+      "note": "The docstring's recording paragraph (MIK-R09).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b8476720a5b70cf8f7e8577c7680ed8e26d3d079",
+            "content": "sha256:e81e65f5dea0a7f4ae9f71e1333de6e84e0a046b9d8c79f7522e98adb596c91d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_manifest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "The two answers that are this module's own, both about the root.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b8476720a5b70cf8f7e8577c7680ed8e26d3d079",
+            "content": "sha256:6f009ce3656a87d4b37b7bdd737866906746146847e1d3bfdfac4b10f0de3b61",
+            "locator": {
+              "kind": "symbol",
+              "name": "TASK_PLANE_UNAVAILABLE"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "One endpoint, its state, its task root and the owner's answer; its index key.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b8476720a5b70cf8f7e8577c7680ed8e26d3d079",
+            "content": "sha256:805dc487f22dc6d5f6b4e4d19d03a302ba1ed800b23aebec8daaa99930593b62",
+            "locator": {
+              "kind": "symbol",
+              "name": "RequirementEndpoint"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "26": {
+      "note": "The owning task's root, or none when the repository is not one directory.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b8476720a5b70cf8f7e8577c7680ed8e26d3d079",
+            "content": "sha256:e193e06d27f5ca3e36c1b6df94c5acef94331f99885129b8262b73955086cbc4",
+            "locator": {
+              "kind": "symbol",
+              "name": "requirement_task_root"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "27": {
+      "note": "No root, a root outside tasks, or the owner's answer verbatim.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b8476720a5b70cf8f7e8577c7680ed8e26d3d079",
+            "content": "sha256:62053a4a3e8b2b719dc2f2929d0043fe15e429e73171aef402b509709047c059",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_requirement_endpoint"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "28": {
+      "note": "The manifest path, format and version pattern; the approval states.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b8476720a5b70cf8f7e8577c7680ed8e26d3d079",
+            "content": "sha256:6107e1df3fc95f3e6eb4024cac45e69f0c21b10c7bd8a9d9fd42e47590f6961f",
+            "locator": {
+              "kind": "symbol",
+              "name": "MANIFEST_PATH"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "29": {
+      "note": "The integer after `v`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b8476720a5b70cf8f7e8577c7680ed8e26d3d079",
+            "content": "sha256:49570d37da1778dba3c9b19703066fb894a945cc3b2aa6d9e18b46c3b672ca09",
+            "locator": {
+              "kind": "symbol",
+              "name": "version_number"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "30": {
+      "note": "What the manifest says about one ID, and the newer-than comparison.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b8476720a5b70cf8f7e8577c7680ed8e26d3d079",
+            "content": "sha256:5fb08aad422a944a4e84cf80f7cb468b0b9e10196bdb886ba627267a3ff12fd9",
+            "locator": {
+              "kind": "symbol",
+              "name": "RequirementApproval"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "31": {
+      "note": "The manifest read with its reasons, since MIK-R09 recording the exact bytes read; the approved entries of one ID.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b8476720a5b70cf8f7e8577c7680ed8e26d3d079",
+            "content": "sha256:e81e65f5dea0a7f4ae9f71e1333de6e84e0a046b9d8c79f7522e98adb596c91d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_manifest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "32": {
+      "note": "The highest approved version and its packet, `not_approved`, or `unknown`; the packet's named function.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b8476720a5b70cf8f7e8577c7680ed8e26d3d079",
+            "content": "sha256:3da4a039b41e690cfdc147dff1a290d7c9f6cc1bae61b1dd9a23430300a4ddf2",
+            "locator": {
+              "kind": "symbol",
+              "name": "requirement_approval"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "33": {
+      "note": "The lookup's cases.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e499f1cf47ad6bc42fb86c1314767b975f0653ac",
+            "content": "sha256:df053197906d07b2388c5dac23e09dedb0592a931742ca48c4a64f9c3d13e43e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_manifest_lookup_returns_the_highest_approved_version"
+            },
+            "path": "mcp/tests/test_reconsideration_surfacing.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "34": {
+      "note": "The owner the packet question is handed to.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b8476720a5b70cf8f7e8577c7680ed8e26d3d079",
+            "content": "sha256:62053a4a3e8b2b719dc2f2929d0043fe15e429e73171aef402b509709047c059",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_requirement_endpoint"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "35": {
+      "note": "Resolved, version mismatch, missing, outside tasks and no root; the validator never resolves.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5d61a0905f69494b5527cb7179246b4559cf8d2c",
+            "content": "sha256:e6da3ab34e59a129b755374a77b7dd28270b5ae8ed3ce4ca0a73c1fd5ef0adaa",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_requirement_endpoints_resolve_through_the_owner_and_never_refuse"
+            },
+            "path": "mcp/tests/test_knowledge_decisions.py"
+          },
+          "kind": "test"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

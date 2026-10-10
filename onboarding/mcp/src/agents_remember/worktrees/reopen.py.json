@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9836ba2ec2eda438d0a47740010ce453189a4cb0",
+            "blob": "f86b06f86b6e2c7ba667e072f5882b502d0c5539",
             "content": "sha256:3800c4595e1f9a984649face53b7226fad3aae0895f842726784da91c9f124bb",
             "locator": {
               "kind": "symbol",
@@ -39,7 +39,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9836ba2ec2eda438d0a47740010ce453189a4cb0",
+            "blob": "f86b06f86b6e2c7ba667e072f5882b502d0c5539",
             "content": "sha256:40eae1fe71f30f7e778650b60405a4d6860e6931bf22f7a49e544284f66fafbe",
             "locator": {
               "kind": "symbol",
@@ -55,12 +55,161 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9836ba2ec2eda438d0a47740010ce453189a4cb0",
+            "blob": "f86b06f86b6e2c7ba667e072f5882b502d0c5539",
             "content": "sha256:990ae872da7fba050e1aa445414ef95fb7658e10bb92ab91a34e84dd93aeb350",
             "locator": {
               "kind": "symbol",
               "name": "_restore_reopen_artifacts"
             }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "Terminal preflight, accepted memory ancestry, and integrated source-position checks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f86b06f86b6e2c7ba667e072f5882b502d0c5539",
+            "content": "sha256:b9f7bc95bbbaa05b87dd8fa4c1578337c824c8af17170c536705eee74cd570e8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_reopen_preflight_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "Contract reset preserves identity while clearing two-output provenance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c08f0dd0dd501355eacf1089bf4011d44a0783e",
+            "content": "sha256:6d3689db95b8a2bc176c968a1bb0662a870335d936d02066b9e3265428fd6a5c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_reopened_contract"
+            },
+            "path": "mcp/src/agents_remember/worktrees/reopen_reset.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "Frozen observation, task plans, and canonical publication remain coordinated.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c08f0dd0dd501355eacf1089bf4011d44a0783e",
+            "content": "sha256:18849a22f6422d15585b60237d37d467380867bb90ee039271f48892ebeafadf",
+            "locator": {
+              "kind": "symbol",
+              "name": "_clear_frozen_landing"
+            },
+            "path": "mcp/src/agents_remember/worktrees/reopen_reset.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "An unnamed leaf's master through the shared helper; a named reference by reopen's own rule.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f86b06f86b6e2c7ba667e072f5882b502d0c5539",
+            "content": "sha256:1e4968e20cfdfae7fc5bb459f86e48a1523e5f31da82d57a6e5045d390e83738",
+            "locator": {
+              "kind": "symbol",
+              "name": "_reopen_master_path"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "26": {
+      "note": "The master reset refuses a misplaced master before planning its row, and keeps the demotion rule.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f86b06f86b6e2c7ba667e072f5882b502d0c5539",
+            "content": "sha256:4dc3ad6e9c80312e89e8c8bda5dee751006e66c8a131a2c8452a0c6267503587",
+            "locator": {
+              "kind": "symbol",
+              "name": "_plan_master_index_reset"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "27": {
+      "note": "The leaf reset refuses a misplaced leaf before planning its reset.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f86b06f86b6e2c7ba667e072f5882b502d0c5539",
+            "content": "sha256:3800c4595e1f9a984649face53b7226fad3aae0895f842726784da91c9f124bb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_plan_leaf_doc_reset"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "28": {
+      "note": "The shared rule.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "55abfd6f453d2c1fd50283bd978936948b9367b2",
+            "content": "sha256:b71097f7db9038140b56ed2d23976c5a1d5c73fdf20acbc9a80f91d78a42e5a5",
+            "locator": {
+              "kind": "symbol",
+              "name": "folder_master_json_path"
+            },
+            "path": "mcp/src/agents_remember/tasks/master_sync.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "29": {
+      "note": "Parent lineage compares exact prestart output positions to the configured parent source.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0698b4d3060c69466daeccba41780544dbc5a11d",
+            "content": "sha256:94e08600c7701d5b5d55804a9bc4db0493ff8176781be940c5cd89b96a098d4d",
+            "locator": {
+              "kind": "symbol",
+              "name": "parent_source_lineage"
+            },
+            "path": "mcp/src/agents_remember/worktrees/source_lineage.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "30": {
+      "note": "The series half shares the terminal path's tombstone proof, guards and archive citation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd0e5988aafc6934c4ce78d7a1b7424c9cb205ad",
+            "content": "sha256:45dab99e820c6a87591861c5360d7ecfe244bb50f60b23a1618c05b93df0fb1a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_series_is_reset_tombstone"
+            },
+            "path": "mcp/src/agents_remember/worktrees/reopen_series.py"
           },
           "kind": "code"
         }

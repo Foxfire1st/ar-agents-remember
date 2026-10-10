@@ -71,6 +71,1515 @@
         }
       ]
     },
+    "1414": {
+      "note": "The lane row.\n\nAnchor: `mcp/tests/test_review_change_kinds.py`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
+            "content": "sha256:ff02417d0b98f26db3afb4f15f2c9b641013621b2b0cb63cc98da2bf231ea367",
+            "locator": {
+              "end": 1346,
+              "kind": "line_range",
+              "start": 1344
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1415": {
+      "note": "The packet's examples: ready once current rows answer every item; a new edit reopens two.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a7b02b18c6ba61cd62c0caf04e1fd45e3f685253",
+            "content": "sha256:539fede000fd2d62aa31b95bfb43ab55974f5776e6a4b112bec5b8faab2747f6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_leaf_is_ready_only_once_current_rows_answer_every_item_and_a_new_edit_reopens_two"
+            },
+            "path": "mcp/tests/test_knowledge_closeout_gate.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1416": {
+      "note": "One refusal test per public route entry, starting with the worktree closeout.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "49c65d2f37ba8f90838a80838cec770b2b0e5848",
+            "content": "sha256:cb38c1d763c28d0bdfcc2911aab8fa01c159c315ddf3860b584826dc793f8044",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_worktree_closeout_refuses_restores_the_file_and_commits_it_closed_once_valid"
+            },
+            "path": "mcp/tests/test_knowledge_gate_routes.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1417": {
+      "note": "The sync-merge cases.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0aa022ec4b45b059754a8f3b1252fa8d25b69384",
+            "content": "sha256:ca8026f753e814efb423427ba9db47666900ae917825a632db04f9b936f8b72c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_sync_merge_refuses_a_history_row_only_when_the_leaf_s_own_side_had_it_wrong"
+            },
+            "path": "mcp/tests/test_knowledge_validator_routes.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1418": {
+      "note": "The two lane rows.\n\nAnchor: `mcp/tests/test_knowledge_closeout_gate.py`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
+            "content": "sha256:42ebbab70fda652fa2d2d54cc8868f99a344e34c64ee1e28d1e20311bc01a144",
+            "locator": {
+              "end": 1181,
+              "kind": "line_range",
+              "start": 1179
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1419": {
+      "note": "The folder-master finalize cases.\n\nAnchor: `class FolderMasterFinalizeTests(_FinalizeFixtures)`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "27dce0428e0b78344cc446de30c489c5a09e2ceb",
+            "content": "sha256:1d2502d3d0cf7ec1ef24bc5b35adecb24ba698983e0b1629a8b091df0366593b",
+            "locator": {
+              "end": 410,
+              "kind": "line_range",
+              "start": 247
+            },
+            "path": "mcp/tests/test_lifecycle_finalize.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1420": {
+      "note": "The four reopen cases.\n\nAnchor: `def test_a_leaf_naming_no_master_resets_the_row_its_folder_master_lists(self) -> None`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "71d5ffe949d1a507a98ab67bb131d902e889c604",
+            "content": "sha256:6d5c23ee494a141406702322b340656c73ef5d340075918a13d6ff35c7f3cc6c",
+            "locator": {
+              "end": 109,
+              "kind": "line_range",
+              "start": 109
+            },
+            "path": "mcp/tests/test_task_reopen.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1421": {
+      "note": "Buckets and destinations reconcile; long paths answer typed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "378aa0f26f857bdb1593d1772ee9afd1ce8ccb12",
+            "content": "sha256:620d4c189edbd120db7f2bb91c474d027aabc04c57aae5fa80ac6618fc764ebe",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_changed_file_takes_one_bucket_and_the_destinations_reconcile"
+            },
+            "path": "mcp/tests/test_review_unexplained_lane.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1422": {
+      "note": "The lane row.\n\nAnchor: `mcp/tests/test_review_unexplained_lane.py`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
+            "content": "sha256:d474b8d6bbe4390579a3960fe4603ef79ee019acc8740c97962f768cea714af3",
+            "locator": {
+              "end": 1366,
+              "kind": "line_range",
+              "start": 1364
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1423": {
+      "note": "The registry compared as a set.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "36ccb7811c4d25e65212ab5af8c1e1f0e29d3dd2",
+            "content": "sha256:5b86df606246b1683e3f084b30dd3f5f826129ea3485174250337eed72956e61",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_row_kind_registry_owns_disjoint_subject_forms"
+            },
+            "path": "mcp/tests/test_knowledge_history_files.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1424": {
+      "note": "The lane row.\n\nAnchor: `mcp/tests/test_reconsideration_surfacing.py`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
+            "content": "sha256:2b2a4bdc79feff63fe4110f8b670890332df25bdd25c50c98f625dc2415de9b1",
+            "locator": {
+              "end": 1332,
+              "kind": "line_range",
+              "start": 1330
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1425": {
+      "note": "The module's own statement of its fixture.\n\nAnchor: `The fixture is a coordination root with one repository`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4ec4c95baf015b3298eca6db77c2a032c0632a63",
+            "content": "sha256:81be205f03d9f37559be0710ff96632b2591f83d2a3517e5f42fe3385e584e9d",
+            "locator": {
+              "end": 3,
+              "kind": "line_range",
+              "start": 3
+            },
+            "path": "mcp/tests/test_knowledge_reader.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1426": {
+      "note": "The walk-tree case (F16, R3-1, R3-2).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4ec4c95baf015b3298eca6db77c2a032c0632a63",
+            "content": "sha256:7421f6fb089297a8ddbe4a9b682d9a78af5f6e46cbac65039b12f43ad0e193b3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_subtree_walk_measures_every_page_at_the_code_tree_it_began_at"
+            },
+            "path": "mcp/tests/test_knowledge_reader.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1427": {
+      "note": "The route case: every view, 503 unwired, nothing written.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4ec4c95baf015b3298eca6db77c2a032c0632a63",
+            "content": "sha256:113eedcddca789aecec61858881ddfcf7f25b94b2cebf5495bd52b5a8c16b9c1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_route_serves_every_view_and_the_reader_writes_nothing"
+            },
+            "path": "mcp/tests/test_knowledge_reader.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1428": {
+      "note": "The lane row.\n\nAnchor: `mcp/tests/test_knowledge_reader.py`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
+            "content": "sha256:3fa272a05b44543f3da9782b476754c98759ff557a010423fd1c94bbcf2a7543",
+            "locator": {
+              "end": 1207,
+              "kind": "line_range",
+              "start": 1205
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1429": {
+      "note": "The cards-read case and its four helpers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b4d78090a1383e85d720b881411db85e13cfb162",
+            "content": "sha256:8b69520899d5d6334e2b2c3297cf085f335d4ab5a94f72029832b3acb575a12f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_cards_read_locates_each_entry_of_the_named_invariants_on_both_code_sides"
+            },
+            "path": "mcp/tests/test_review_git_trees.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1430": {
+      "note": "The proof admission at the route.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b4d78090a1383e85d720b881411db85e13cfb162",
+            "content": "sha256:fcb7164803a03ddef8f525daca1ea7839ee704354a2dea175af4f7345d92ff66",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_unchanged_path_only_a_proof_names_opens_in_a_tree_review"
+            },
+            "path": "mcp/tests/test_review_git_trees.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1431": {
+      "note": "The Q8 case.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cdc0b27f30f87da8796853c129138c349a5e4b79",
+            "content": "sha256:9442c37c494ef6de03712fb5169d0ac2d7e3d773fccaa41fc2321316d284ac52",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_leaf_binding_many_missing_curator_artifacts_reads_as_unavailable"
+            },
+            "path": "mcp/tests/test_review_assessment_history.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1432": {
+      "note": "The MIK-R05 lane row.\n\nAnchor: `mcp/tests/test_knowledge_route_chain.py`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
+            "content": "sha256:1336e9192e751b9fdcb32036b3dee0b19f6aac25b570f972632290485bc00e86",
+            "locator": {
+              "end": 306,
+              "kind": "line_range",
+              "start": 304
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1433": {
+      "note": "The budget and resumption case.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a6660c5337b78e3b9019c0b4d214bc8e040e909d",
+            "content": "sha256:db81e961da60dfa823c274455f4fdb9abcddbf63a34984f204e41e35909f2f6b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_chain_entries_count_toward_the_threshold_and_resume_like_the_leaf"
+            },
+            "path": "mcp/tests/test_knowledge_route_chain.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1434": {
+      "note": "The lacking-revision case on resume and fresh read.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a6660c5337b78e3b9019c0b4d214bc8e040e909d",
+            "content": "sha256:51151a78027a41b37855bd1a00b1e7739ef375ef6c39b7d05fc3796fb10b79de",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_family_seed_walk_resumed_naming_a_revision_the_tree_lacks_is_refused"
+            },
+            "path": "mcp/tests/test_knowledge_route_chain.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1435": {
+      "note": "The entry-less page in the adapted leaf-read module.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1754beccfe5ea5ef90f83609255ce19021a04c18",
+            "content": "sha256:42f22a52bc23231200bab37cd394f75fd4c8cac97f90ec086cac1ffea41c7de0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_path_without_entries_still_returns_its_route_chain"
+            },
+            "path": "mcp/tests/test_knowledge_leaf_read.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1436": {
+      "note": "The MIK-R10 lane row.\n\nAnchor: `mcp/tests/test_unexplained_change_disposition.py`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
+            "content": "sha256:d08631c68d28ff196d24b937167d5f8ce046407849bc90b02306708b17f42100",
+            "locator": {
+              "end": 1450,
+              "kind": "line_range",
+              "start": 1448
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1437": {
+      "note": "Delete-only: only no_invariant.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8e108013ca6f2f2a0a316b40a89ba0dff31652d9",
+            "content": "sha256:d60461cab31a7c45c0e524c82d34be464ca2c9d9459174deddd897f0e1e51c71",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_delete_only_hunk_admits_only_no_invariant"
+            },
+            "path": "mcp/tests/test_unexplained_change_disposition.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1438": {
+      "note": "The knowledge items, without the unexplained kinds.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b88287461b307446f70db6c1c509b1f8032c2621",
+            "content": "sha256:cb0af687629093d542efef0699b042bb881b862870023e0e40e016f299316979",
+            "locator": {
+              "kind": "symbol",
+              "name": "knowledge_items"
+            },
+            "path": "mcp/tests/test_knowledge_worklist.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1439": {
+      "note": "The two MIK-R25 lane rows.\n\nAnchor: `mcp/tests/test_review_git_trees.py`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
+            "content": "sha256:f97e1e4cc141231cb0de8e2d9f005e7b61c987b5ea43fc798f01e579b1b41e7d",
+            "locator": {
+              "end": 1356,
+              "kind": "line_range",
+              "start": 1354
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1440": {
+      "note": "A repeat read writes nothing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b4d78090a1383e85d720b881411db85e13cfb162",
+            "content": "sha256:086e2e8453fd3ccfa57b63922e43e4732f3b400b556ff9e87233f659118ac2ec",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_read_writes_only_review_refs_and_comparison_objects_and_a_repeat_writes_nothing"
+            },
+            "path": "mcp/tests/test_review_git_trees.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1441": {
+      "note": "Archival deletes only the task's own artifacts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c9c8caf9e7786b4d136f0a39cda0524e65de698c",
+            "content": "sha256:3d1354f049755323c27c0138905c788eb69753b831a5e70f1f4a4a727b24d460",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_archiving_deletes_the_tasks_review_refs_legacy_pins_and_dataset_copies"
+            },
+            "path": "mcp/tests/test_review_artifact_cleanup.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1442": {
+      "note": "The decision-record lane row.\n\nAnchor: `mcp/tests/test_knowledge_decisions.py`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
+            "content": "sha256:50c16b556a53dd2329e7c9182e662cc3854332049cb6a963d866c3afab06b6dd",
+            "locator": {
+              "end": 1189,
+              "kind": "line_range",
+              "start": 1187
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1443": {
+      "note": "A lifted decision round-trips with its requirement endpoints reported.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cfed40211fab111f80a08b412d6b6deaa63639a0",
+            "content": "sha256:c3f9e8959460806f9fabd77bc3d0db4dfa0972fdd61e4b08dc2f12363642b97b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_lifted_decision_round_trips_and_its_requirement_endpoints_are_reported"
+            },
+            "path": "mcp/tests/test_knowledge_writer.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1444": {
+      "note": "A decision is never an export (review F6).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5d61a0905f69494b5527cb7179246b4559cf8d2c",
+            "content": "sha256:0a49ae753910a15eea88f7e1ad72cb65d068f2edcb877f9afde23cbd83ecad1f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_decision_is_never_an_export_so_a_legacy_id_exempts_it_from_nothing"
+            },
+            "path": "mcp/tests/test_knowledge_decisions.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1445": {
+      "note": "The leaf-read lane row.\n\nAnchor: `mcp/tests/test_knowledge_leaf_read.py`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
+            "content": "sha256:1ab6d89d070e0ec655e8060db7b6f9857fd4729cf993e18ca307349ce13bcadc",
+            "locator": {
+              "end": 286,
+              "kind": "line_range",
+              "start": 284
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1446": {
+      "note": "The leaf-read module's two consumer lines.\n\nAnchor: `mcp/tests/test_knowledge_leaf_read.py`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
+            "content": "sha256:1ab6d89d070e0ec655e8060db7b6f9857fd4729cf993e18ca307349ce13bcadc",
+            "locator": {
+              "end": 286,
+              "kind": "line_range",
+              "start": 284
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1447": {
+      "note": "The lane registration.\n\nAnchor: `mcp/tests/test_family_route_conditions.py`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
+            "content": "sha256:a17907f39daf90ffacc9763311632a6f9dd4c3e457e56043f4b35b35cb95dd44",
+            "locator": {
+              "end": 1145,
+              "kind": "line_range",
+              "start": 1143
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1448": {
+      "note": "The conforming directory move.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "60e379181fa5ed1b2b1e809a2ecc36bf67caaeee",
+            "content": "sha256:081e44a40428fd342a54e7f426b5ca62a52ee394917b913ed9af4ef5720d3c33",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_directory_move_raises_emptied_and_uncovered_and_a_rerouted_row_satisfies_them"
+            },
+            "path": "mcp/tests/test_family_route_conditions.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1449": {
+      "note": "A forged legacy ID does not make a record exported.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5567548fd4e80a404eda206045c2ebae9d085c88",
+            "content": "sha256:4523e9a98feb5acd66c7973b2b117b37d3f6ba13234dd455ce7c3648e09ac413",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_forged_legacy_id_does_not_make_a_record_exported"
+            },
+            "path": "mcp/tests/test_knowledge_validator.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1450": {
+      "note": "The writer refuses an unsupported admission claim.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cfed40211fab111f80a08b412d6b6deaa63639a0",
+            "content": "sha256:7e48993ba5bdb343df0182dfe1029efbb930397557db7522e8449a5cd59ea14b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_writer_refuses_a_new_invariant_whose_claim_the_tree_does_not_support"
+            },
+            "path": "mcp/tests/test_knowledge_writer.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1451": {
+      "note": "The planned-effects lane row.\n\nAnchor: `mcp/tests/test_planned_knowledge_effects.py`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
+            "content": "sha256:a64a6086d1cecee84d14b7c0bd4336e311073aef076b342bc964b2233d4f9efe",
+            "locator": {
+              "end": 1311,
+              "kind": "line_range",
+              "start": 1309
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1452": {
+      "note": "The planned-effects module's consumer line.\n\nAnchor: `mcp/tests/test_planned_knowledge_effects.py`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
+            "content": "sha256:a64a6086d1cecee84d14b7c0bd4336e311073aef076b342bc964b2233d4f9efe",
+            "locator": {
+              "end": 1311,
+              "kind": "line_range",
+              "start": 1309
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1453": {
+      "note": "The paging lane row.\n\nAnchor: `mcp/tests/test_knowledge_paging.py`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
+            "content": "sha256:7a287ddf099a5660d2a6e88d70a037805a382e9c65a6af6fccde1c21aead507e",
+            "locator": {
+              "end": 287,
+              "kind": "line_range",
+              "start": 285
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1454": {
+      "note": "The paging module's two consumer lines.\n\nAnchor: `mcp/tests/test_knowledge_paging.py`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
+            "content": "sha256:7a287ddf099a5660d2a6e88d70a037805a382e9c65a6af6fccde1c21aead507e",
+            "locator": {
+              "end": 287,
+              "kind": "line_range",
+              "start": 285
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1455": {
+      "note": "The onboarding gate's lane row.\n\nAnchor: `mcp/tests/test_onboarding_trace_gate.py`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
+            "content": "sha256:9d120ddedbdd0042f420abd24edd88c72ff5c1af816b2511d22bc9b5c6496001",
+            "locator": {
+              "end": 1281,
+              "kind": "line_range",
+              "start": 1279
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1456": {
+      "note": "The gate cases' fixture description.\n\nAnchor: `the inputs the curator's memory-quality run and the closeout validator hand the gate`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "467daeec96b849b586a8065cb3b35d3958a59b89",
+            "content": "sha256:9d82da0e74d0e087687c68d0671b05d0ca0d7d88563edd8b80e752a8d609d12b",
+            "locator": {
+              "end": 5,
+              "kind": "line_range",
+              "start": 5
+            },
+            "path": "mcp/tests/test_onboarding_trace_gate.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1457": {
+      "note": "The lane row.\n\nAnchor: `mcp/tests/test_knowledge_currentness.py`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
+            "content": "sha256:39b82f6f32e640a9ee6b3964dc0b74ba82488722606b67f7c07effa5d8a1d83d",
+            "locator": {
+              "end": 1186,
+              "kind": "line_range",
+              "start": 1184
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1458": {
+      "note": "The consumer addition.\n\nAnchor: `mcp/tests/test_knowledge_currentness.py`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
+            "content": "sha256:39b82f6f32e640a9ee6b3964dc0b74ba82488722606b67f7c07effa5d8a1d83d",
+            "locator": {
+              "end": 1186,
+              "kind": "line_range",
+              "start": 1184
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1459": {
+      "note": "The two lane rows.\n\nAnchor: `mcp/tests/test_knowledge_worklist.py`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
+            "content": "sha256:39b1bee59a973b92195fa242a575d7ca959ea50e2ef304ee8302131723796518",
+            "locator": {
+              "end": 1232,
+              "kind": "line_range",
+              "start": 1230
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1460": {
+      "note": "The lane row.\n\nAnchor: `mcp/tests/test_knowledge_proofs.py`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
+            "content": "sha256:5a3d23dc4cbd157e281485a972293013284ab8f94dabe9dbb518cb0337a4b1d4",
+            "locator": {
+              "end": 288,
+              "kind": "line_range",
+              "start": 286
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1461": {
+      "note": "The three consumer additions.\n\nAnchor: `mcp/tests/test_knowledge_proofs.py`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
+            "content": "sha256:5a3d23dc4cbd157e281485a972293013284ab8f94dabe9dbb518cb0337a4b1d4",
+            "locator": {
+              "end": 288,
+              "kind": "line_range",
+              "start": 286
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1462": {
+      "note": "The migration-pass case.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "21f99aa076f020f6ff937e97fa2cec6f87d0c9fe",
+            "content": "sha256:2ea418d939b9272380e2fde90df33c48fd5e5cd4099b15a2025e9b4d00725bdf",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_migrated_evidence_is_listed_then_turned_into_a_proof_by_a_curator_pass"
+            },
+            "path": "mcp/tests/test_knowledge_proofs.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1463": {
+      "note": "The three lane rows.\n\nAnchor: `mcp/tests/test_knowledge_conversion.py`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
+            "content": "sha256:dffdb67294e2631750fa69b360aaec3da0c6f6a7191e8dc87c8df85f33a927bc",
+            "locator": {
+              "end": 1182,
+              "kind": "line_range",
+              "start": 1180
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1464": {
+      "note": "The two lane rows.\n\nAnchor: `mcp/tests/test_knowledge_writer.py`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
+            "content": "sha256:225e98936d6b787e055c3387cf22bb322a5713ad4932c1d42a34dfd7a821d866",
+            "locator": {
+              "end": 1234,
+              "kind": "line_range",
+              "start": 1232
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1465": {
+      "note": "The conforming example's measures carry their counts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0f86d20bf0fec7d5d1d7a06e51767968b6725696",
+            "content": "sha256:ac79fcd449d0433c0cc214c716a58ab5a8a60e2241c5ad547ebc3f231600e5b8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_measures_of_the_conforming_example_carry_their_counts"
+            },
+            "path": "mcp/tests/test_knowledge_census_report.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1466": {
+      "note": "A recorded assessment is never edited; a correction appends.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dfff8113f603a70767d8f1bdfacdb2e9ada4afa1",
+            "content": "sha256:a41bc4a4cd425f2a55491d0e8871e957f0ec5bfabe76a2f6e9383a412aa5a843",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_recorded_assessment_is_never_edited_and_a_correction_appends"
+            },
+            "path": "mcp/tests/test_knowledge_census_files.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1467": {
+      "note": "The two lane rows.\n\nAnchor: `mcp/tests/test_knowledge_census_files.py`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
+            "content": "sha256:f6d64b6daeb10190ac6d75cbdd3a88563ddc4c0f45b6cdcf75e8510741527ed9",
+            "locator": {
+              "end": 810,
+              "kind": "line_range",
+              "start": 808
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1468": {
+      "note": "The Doc14 family example validates.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b82b15199ae3a85cf7b55e3bfca9ea85608e0759",
+            "content": "sha256:041ca81bc982770544f770a84aee6c8f482d454e21d7911fd0de840c3c6eb857",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_doc14_family_example_validates_with_every_route_holding_realizations"
+            },
+            "path": "mcp/tests/test_knowledge_family_routes.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1469": {
+      "note": "The lane row.\n\nAnchor: `mcp/tests/test_knowledge_family_routes.py`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
+            "content": "sha256:1b428733d4765fea9f1e785510ee189fafa79807f5555c87821cb48230d7cc05",
+            "locator": {
+              "end": 815,
+              "kind": "line_range",
+              "start": 813
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1470": {
+      "note": "A file failing its schema marks the index partial and is named.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "94729363bfc469047ff18fa929954280c3e57a43",
+            "content": "sha256:c8d0758a2993716516d8d13d17f86d4c5bcf9a31877b3cb01af414839345552c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_file_failing_its_schema_marks_the_index_partial_and_is_named"
+            },
+            "path": "mcp/tests/test_knowledge_index.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1471": {
+      "note": "Parity of the reused selection over the index and the database.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f158a3201f14ff80393fad28555b022b5b22dd25",
+            "content": "sha256:13a81b385a5a31070e432f880f31bd8e3d2e6b9d3fb557d76d535cf2d484f89a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_reused_selection_selects_the_same_set_over_the_index_as_over_the_database"
+            },
+            "path": "mcp/tests/test_knowledge_index_reuse.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1472": {
+      "note": "Every tool surface reports a partial index as incomplete.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "94729363bfc469047ff18fa929954280c3e57a43",
+            "content": "sha256:c8d0758a2993716516d8d13d17f86d4c5bcf9a31877b3cb01af414839345552c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_file_failing_its_schema_marks_the_index_partial_and_is_named"
+            },
+            "path": "mcp/tests/test_knowledge_index.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1473": {
+      "note": "The three lane rows.\n\nAnchor: `mcp/tests/test_knowledge_index.py`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
+            "content": "sha256:10819fb9354d39945045dfac90eeb62b7456f16227e7f8f359c655927faad21d",
+            "locator": {
+              "end": 283,
+              "kind": "line_range",
+              "start": 281
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1474": {
+      "note": "The baseline and the pinned report-only set.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5567548fd4e80a404eda206045c2ebae9d085c88",
+            "content": "sha256:037e6597c8624f1080c1a16534c7c34a6f993b4ca15c8802e72e11db08b07fcc",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_converted_fixture_tree_passes_every_rule"
+            },
+            "path": "mcp/tests/test_knowledge_validator.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1475": {
+      "note": "The managed sync refuses, keeps the merge staged, and syncs after the repair.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0aa022ec4b45b059754a8f3b1252fa8d25b69384",
+            "content": "sha256:d73742d5ac37b6faa2d79865d288edaae714ac2231a2e8147bdc911c5fd9e969",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_managed_sync_refuses_a_merge_with_duplicate_ids_until_it_is_repaired"
+            },
+            "path": "mcp/tests/test_knowledge_validator_routes.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1476": {
+      "note": "The two lane rows.\n\nAnchor: `mcp/tests/test_knowledge_validator.py`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
+            "content": "sha256:e115555b0624b68a2d29fe8fde97574a89d9e69912fcadde15a28b66ae565829",
+            "locator": {
+              "end": 817,
+              "kind": "line_range",
+              "start": 815
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1477": {
+      "note": "The freeze cases.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "36ccb7811c4d25e65212ab5af8c1e1f0e29d3dd2",
+            "content": "sha256:cc07275c03ffc4de7ac31092738e9c078adbe1e07f614d48baafd7615173367e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_closed_in_base_implies_byte_identical_in_candidate"
+            },
+            "path": "mcp/tests/test_knowledge_history_files.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1478": {
+      "note": "The parallel-merge case.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "36ccb7811c4d25e65212ab5af8c1e1f0e29d3dd2",
+            "content": "sha256:ccadf67bf45823113abfc3b08498d7233dc827a2239af4a335fb18b7d962ba7b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_two_parallel_leaves_merge_their_history_files_without_conflict"
+            },
+            "path": "mcp/tests/test_knowledge_history_files.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1479": {
+      "note": "The lane row.\n\nAnchor: `mcp/tests/test_knowledge_history_files.py`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
+            "content": "sha256:143036087bcd0c86b65e36467a0f4b5f8fc0a1f410cad861b097e5b118c36c12",
+            "locator": {
+              "end": 1197,
+              "kind": "line_range",
+              "start": 1195
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1480": {
+      "note": "The nine fixtures and the model each must parse as.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "86d10598e49ffb106e6f21bbcee3f7c2449a7cf2",
+            "content": "sha256:7e88b48daeb0e7625149ec72ee55f8fef0441261cbd029b2dbce55e1b032c3d2",
+            "locator": {
+              "kind": "symbol",
+              "name": "DOC14_FIXTURES"
+            },
+            "path": "mcp/tests/test_knowledge_file_formats.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1481": {
+      "note": "The two lane rows.\n\nAnchor: `mcp/tests/test_knowledge_file_canonical.py`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
+            "content": "sha256:0e608abff77a6d0c8beda795077995a8f75aebc3828fd8d52e78839c70c12568",
+            "locator": {
+              "end": 1194,
+              "kind": "line_range",
+              "start": 1192
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1482": {
+      "note": "The module's own statement of what it pins.\n\nAnchor: `Each family member's realization sources carry their own recorded locator and resolved range`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1863cffa06d71d79ae64ac0462a1fae69a504fd0",
+            "content": "sha256:0db808d890ca7ba9a9de309ba33e8d7ec0214578171c016d702460b4aa1326f8",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/tests/test_review_family_member_sources.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1483": {
+      "note": "Its lane registration.\n\nAnchor: `mcp/tests/test_review_family_member_sources.py`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
+            "content": "sha256:43cc12bf9e6d761d95cb1692ec6f9275ce13c83a680223a7500dd91d5ca17f1d",
+            "locator": {
+              "end": 314,
+              "kind": "line_range",
+              "start": 312
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1484": {
+      "note": "**The new route-level case: the served `200`, the state after serialization, and the unknown leaf that is still a named `404`.**\n\nAnchor: `register_changeset_routes`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c0a2c0716ff604e0b11fe27d001364f53db5eac2",
+            "content": "sha256:d37c9d13250d0b44a56a3ae76b9efbd19093bd381e20618051939eb87d2740d6",
+            "locator": {
+              "end": 32,
+              "kind": "line_range",
+              "start": 32
+            },
+            "path": "mcp/tests/test_knowledge_review_source_endpoints.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1485": {
+      "note": "The one-half degradation, unchanged, whose docstring now records that the code side reads `recorded` beside it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "19fc708baf2cab7b36a25b906bce7698bca4efbf",
+            "content": "sha256:c3fa19e1df608a70426c73d1197726203bbda116485c1370cebef29583c98040",
+            "locator": {
+              "kind": "symbol",
+              "name": "recorded"
+            },
+            "path": "mcp/tests/test_paseo_bridge_agents.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1486": {
+      "note": "The producer both cases drive.\n\nAnchor: `leaf_changeset`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c0a2c0716ff604e0b11fe27d001364f53db5eac2",
+            "content": "sha256:d6bb9aa2999984e1321eb7f3729a94bf8b7ea05e562291ca2abbb3e0fb5b7faa",
+            "locator": {
+              "end": 30,
+              "kind": "line_range",
+              "start": 30
+            },
+            "path": "mcp/tests/test_knowledge_review_source_endpoints.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1487": {
+      "note": "The module's own statement of the admitted population and its cases.\n\nAnchor: `ICR-R03`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6492d7c9aef520bfe3699194cab7a1fea4a5dd65",
+            "content": "sha256:62c825ab528c1bac21ec3c039c13d55d37ad2afb437f8d50ef9b6893521fa0a8",
+            "locator": {
+              "end": 3,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/tests/test_knowledge_review_source_content.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1488": {
+      "note": "Its lane registration beside the sibling module.\n\nAnchor: `mcp/tests/test_knowledge_review_attributed_source_content.py`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
+            "content": "sha256:36e94806cfa84b8bfe20e53e86fe6cb3eb6597b7eb3491265adc724e93371457",
+            "locator": {
+              "end": 294,
+              "kind": "line_range",
+              "start": 292
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1489": {
+      "note": "The module's own statement of the read bound and the preserved projection.\n\nAnchor: `The on-demand task-document body reads one document, not the task corpus`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4bd9d1ac3990250728549ef5c1dcb9b3360fe826",
+            "content": "sha256:ddbe31e5b21cd2de7bf451d4c585da0b4120ba491c54020051fdf8e5a865ed08",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/tests/test_task_document_body_lookup.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1490": {
+      "note": "The count-based scaling case.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4bd9d1ac3990250728549ef5c1dcb9b3360fe826",
+            "content": "sha256:d1fda4fe44bcfa06e31703aa14cb656ecabf9212f3f7ea366d4d1c1a39d2aca2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_one_body_read_touches_the_same_files_whatever_the_corpus_size"
+            },
+            "path": "mcp/tests/test_task_document_body_lookup.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1491": {
+      "note": "Its lane registration.\n\nAnchor: `mcp/tests/test_task_document_body_lookup.py`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
+            "content": "sha256:3fbe715dbb98b2301eb02fabb25a18187a13740faffbe965ffcbadb8149db6a4",
+            "locator": {
+              "end": 1414,
+              "kind": "line_range",
+              "start": 1412
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1492": {
+      "note": "The module's own statement of what it protects.\n\nAnchor: `The listing is fetched whenever a task opens`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "148e2856eeddb30ee7db73e1ea7c0505e5cc74be",
+            "content": "sha256:6187c11036db5ce8e9afc48ceab4bf912d9d93a8eb74734f324f65abb553427c",
+            "locator": {
+              "end": 3,
+              "kind": "line_range",
+              "start": 3
+            },
+            "path": "mcp/tests/test_notes_listing.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1493": {
+      "note": "The count-based scaling case.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "148e2856eeddb30ee7db73e1ea7c0505e5cc74be",
+            "content": "sha256:48512107134372d23a26301c0d128dd22d931b7134984f9d0d03700c922d240d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_listing_work_does_not_grow_with_note_count_or_content_size"
+            },
+            "path": "mcp/tests/test_notes_listing.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1494": {
+      "note": "Its lane registration.\n\nAnchor: `mcp/tests/test_notes_listing.py`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
+            "content": "sha256:a7e84d3376745e6bb0e52df681ae6f1d7189240343a9cf0614c6135dfa024c90",
+            "locator": {
+              "end": 1275,
+              "kind": "line_range",
+              "start": 1273
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1495": {
+      "note": "The module's own statement of what it protects.\n\nAnchor: `nothing remembered that can change`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cc55a05c99442d0513753f4957bfa3b0950c2be3",
+            "content": "sha256:6214c3239831dfdb76541c93e6c597f2f03441c14170f26d5efc7a16a7a60e08",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/tests/test_read_anchor_memo.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1496": {
+      "note": "Availability loss reported, not remembered.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cc55a05c99442d0513753f4957bfa3b0950c2be3",
+            "content": "sha256:30f37a1955f290fe8b4ed9edf4227bdfde0104891934dbbdd32fea274b72fd04",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_tree_that_stops_being_available_is_reported_unavailable_not_remembered"
+            },
+            "path": "mcp/tests/test_read_anchor_memo.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1497": {
+      "note": "Its lane registration.\n\nAnchor: `mcp/tests/test_read_anchor_memo.py`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
+            "content": "sha256:5e0c7ca4242e1591235774996ce78d5f96dbdd73802849c0b35e51bdb166414f",
+            "locator": {
+              "end": 1328,
+              "kind": "line_range",
+              "start": 1326
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1498": {
+      "note": "The three new lane rows beside their siblings.\n\nAnchor: `mcp/tests/test_knowledge_review_resolution_and_route.py`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
+            "content": "sha256:8009b9552be058c865f3235eea5a74c6aba848561f78b1b5f9cb2066a3f19f3c",
+            "locator": {
+              "end": 300,
+              "kind": "line_range",
+              "start": 298
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1499": {
+      "note": "**The movement module's own statement of what it measures, and the fixture it authors through the store's operations.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4fbe8a393d04d0bc0f0af6d31ed7a7880fd4c684",
+            "content": "sha256:7a185c96df28b1d3bfa34af5f9698b41a81831526fd132a2f3dd05b6d0cda19a",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_movement_fixture"
+            },
+            "path": "mcp/tests/test_knowledge_review_relationship_movement.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
     "15": {
       "note": "Which files of this route are governed test artifacts.",
       "targets": [
@@ -88,6 +1597,1747 @@
         }
       ]
     },
+    "1500": {
+      "note": "**The packet's conforming example and the non-conforming reading measured beside it.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4fbe8a393d04d0bc0f0af6d31ed7a7880fd4c684",
+            "content": "sha256:c541cc58ebe13ea87b050db72ad1eef4ed93ef7c75d4b2b8a9c2a79d16724e49",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_moved_realization_displays_both_recorded_paths_under_one_invariant_identity"
+            },
+            "path": "mcp/tests/test_knowledge_review_relationship_movement.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1501": {
+      "note": "The withdrawal boundary and the labelled inference with its no-fabrication control.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4fbe8a393d04d0bc0f0af6d31ed7a7880fd4c684",
+            "content": "sha256:e9f35ce7e338468c9d99e8b858bfdc030052d2335c8ab2f24deecb34a7930440",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_withdrawn_realization_stays_visible_with_its_deleted_file_and_its_identity"
+            },
+            "path": "mcp/tests/test_knowledge_review_relationship_movement.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1502": {
+      "note": "The family, route and ungoverned cases, and the unresolved anchor that keeps its reason.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4fbe8a393d04d0bc0f0af6d31ed7a7880fd4c684",
+            "content": "sha256:f21712c4ef5c349abe321931144ddda784c8bc216fa95620670c0bf99df02865",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_family_association_reassigned_to_a_new_revision_displays_both_recorded_sides"
+            },
+            "path": "mcp/tests/test_knowledge_review_relationship_movement.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1503": {
+      "note": "**The reach module's own statement of the five states the ruling turns on, and the member-head case.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c78b77e8fcfad5e154ea2c3872161c04594b8d11",
+            "content": "sha256:003510327cb24af1c8665b37b829bf730b8eb2702248ec4a2932af48cf713bc2",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_member_move_fixture"
+            },
+            "path": "mcp/tests/test_knowledge_review_relationship_reach.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1504": {
+      "note": "The multi-ended line, the named-instead-of-denied withdrawal, and the member-wise family pairing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c78b77e8fcfad5e154ea2c3872161c04594b8d11",
+            "content": "sha256:63587cf3ad5d27d687240c0b146377141a407c975c485896eca1fea42f300397",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_member_line_with_no_single_head_is_unresolved_and_never_denied"
+            },
+            "path": "mcp/tests/test_knowledge_review_relationship_reach.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1505": {
+      "note": "**The three lane rows and the six consumer rows the same change registered.**\n\nAnchor: `mcp/tests/test_knowledge_review_relationship_movement.py`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
+            "content": "sha256:7fc8a082259e3336a317515e48bf5e4083fbaa4fe3a2324464d097654523f4e8",
+            "locator": {
+              "end": 298,
+              "kind": "line_range",
+              "start": 296
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1506": {
+      "note": "**The re-contracted mechanism case in the surface module.**\n\nAnchor: `read_subject_catalogue`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a83a4806efe6b4dd3f6553894b1c39556819745",
+            "content": "sha256:7041e4885577485b9e8ba73a4ff3939f8a985c8af415d210cf5f65c781b150da",
+            "locator": {
+              "end": 44,
+              "kind": "line_range",
+              "start": 44
+            },
+            "path": "mcp/tests/test_knowledge_review_subject_isolation.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1507": {
+      "note": "The unit-regression registry includes the revision-selection test module.\n\nAnchor: `unit-regression = [`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "697a75039390b965929f3ba7a68c0ff8303231c3",
+            "content": "sha256:06825f71b027f3b49cb717ee9df6a258f90b94a43b1594a0cefab0ef51ea5b50",
+            "locator": {
+              "end": 5,
+              "kind": "line_range",
+              "start": 5
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1508": {
+      "note": "The module's own lane declaration, which is what makes the classification its own rather than a budget convenience.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4dfb58bf4430757ad55e934aa37cc7bc6ed0f69c",
+            "content": "sha256:0753257dc2b79f881f380b8681aa5ded3b4e356b794086776ece0c5b7a215bb4",
+            "locator": {
+              "kind": "symbol",
+              "name": "pytestmark"
+            },
+            "path": "mcp/tests/test_knowledge_review_revision_selection.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1509": {
+      "note": "**The fixture that makes a chain, a fork and a history real: two independently built snapshots under one namespace through the public write path.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4dfb58bf4430757ad55e934aa37cc7bc6ed0f69c",
+            "content": "sha256:4f72cd2c8e2453d0e7afda913f13790c41043d3ec8359b5fa8839d6ac5ae6129",
+            "locator": {
+              "kind": "symbol",
+              "name": "_build_snapshot"
+            },
+            "path": "mcp/tests/test_knowledge_review_revision_selection.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1510": {
+      "note": "**The two chain defaults with exact selected revision ids.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4dfb58bf4430757ad55e934aa37cc7bc6ed0f69c",
+            "content": "sha256:a485a4566081992cffff071e12917c3dcc0dd65ad82e3b634a583ef5d63ad26d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_unique_chain_defaults_to_the_first_before_head_versus_the_last_after_head"
+            },
+            "path": "mcp/tests/test_knowledge_review_revision_selection.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1511": {
+      "note": "**The two fork ambiguities and the two lineage failures, each with no pair recorded.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4dfb58bf4430757ad55e934aa37cc7bc6ed0f69c",
+            "content": "sha256:c9ed8b97c386d72bde00821b35ce2bf801f54bd89b914249d7c3f3f8711948b4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_fork_on_the_after_side_is_an_explicit_ambiguity"
+            },
+            "path": "mcp/tests/test_knowledge_review_revision_selection.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1512": {
+      "note": "**The pane case that closes the loop through the served payload.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4dfb58bf4430757ad55e934aa37cc7bc6ed0f69c",
+            "content": "sha256:08dcdf36572af45fba09a070f6f216091fb71b547f8b6bb146f8952e871c9761",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_review_pane_renders_the_selected_head_pairs_own_statements"
+            },
+            "path": "mcp/tests/test_knowledge_review_revision_selection.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1513": {
+      "note": "**The two rewritten surface cases: the old both-sides assertions replaced by ambiguity assertions.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "02f29acb662ca678a1c2f6997c6c88f631ec55ca",
+            "content": "sha256:d8ca9fa81403b9e2624109c9b4d2a93d749f64e697d81e8391623b53a1cfe194",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_knowledge_pane_renders_the_subjects_own_statements_and_the_comparisons_own_facts"
+            },
+            "path": "mcp/tests/test_knowledge_review_surface.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1514": {
+      "note": "**The module's own statement of what it measures — endpoint-correct, generation-bound, through the operations the dashboard really calls.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9e3d894b4507b91ffa3471824cb09af1fa7e1dc9",
+            "content": "sha256:2de796bf3226f012ae5d15a82940e8c11b88c163c9e563dfd6aca2252a8cb15e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_two_leaves_that_add_then_remove_a_file_net_to_exactly_zero"
+            },
+            "path": "mcp/tests/test_master_net_generation.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1515": {
+      "note": "**The shared master-shaped world and its builder.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9e3d894b4507b91ffa3471824cb09af1fa7e1dc9",
+            "content": "sha256:6610fde6b6f5f5e66b29c98373ed90dd5658de16b3ed546c0752b0812678c478",
+            "locator": {
+              "kind": "symbol",
+              "name": "MasterFixture"
+            },
+            "path": "mcp/tests/test_master_net_generation.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1516": {
+      "note": "**The lane row, and the manifest extent it sits in.**\n\nAnchor: `unit-regression`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "78876383d0c7eed29dfddba7fd6978c87025eb7f",
+            "content": "sha256:da9d45c8c4c984f8150187319c2014ed2f5a362e36ced1ae19d10e901239ae7a",
+            "locator": {
+              "end": 49,
+              "kind": "line_range",
+              "start": 49
+            },
+            "path": "mcp/tests/_evidence_catalog_fixture.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1517": {
+      "note": "**The module's own statement of what it is — the fast transport contract, driving the real route — and of the two shapes a refusal arrives in.**\n\nAnchor: `register_review_routes`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "03ddfd4d7cfa1d7d40eb93badc9bc3282806f94c",
+            "content": "sha256:621da7a298e50f93ac576e31dff151d5f34342b5e01c57c3082c17c75692cc7b",
+            "locator": {
+              "end": 28,
+              "kind": "line_range",
+              "start": 28
+            },
+            "path": "mcp/tests/test_historical_committed_leaf_review.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1518": {
+      "note": "**The module's own definition of actionable, asserted as a set inclusion in every transport-level case.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ad3036c7fcb571f1b9f1cd796189ff0f9884a71c",
+            "content": "sha256:874b037984507799b35d3410ee30957ef204329343f8872f416764a641be4592",
+            "locator": {
+              "kind": "symbol",
+              "name": "ACTIONABLE"
+            },
+            "path": "mcp/tests/test_review_route_refusals.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1519": {
+      "note": "**The bare app with the real routes registered, which is what makes the ports the only injected part.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ad3036c7fcb571f1b9f1cd796189ff0f9884a71c",
+            "content": "sha256:3117a5e4c783497749141e19539f5b608980f91d71e9ad01791a90ad724d2c78",
+            "locator": {
+              "kind": "symbol",
+              "name": "served"
+            },
+            "path": "mcp/tests/test_review_route_refusals.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1520": {
+      "note": "**The conforming example at the transport, with no `payload` key so a refusal cannot read as a success.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ad3036c7fcb571f1b9f1cd796189ff0f9884a71c",
+            "content": "sha256:a41315a2b25788e91b87702ed18fc9a3dfe6988430e0ff3a312c43382f59f52d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_typed_refusal_travels_whole_in_the_body_of_its_own_status"
+            },
+            "path": "mcp/tests/test_review_route_refusals.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1521": {
+      "note": "**The status family derived from the refusal's own code.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ad3036c7fcb571f1b9f1cd796189ff0f9884a71c",
+            "content": "sha256:75f78e2f295596fa1e817a27968cb0661394c7455b896b2b70bfa369a1e3bc0f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_entry_route_maps_each_refusal_code_onto_its_own_status"
+            },
+            "path": "mcp/tests/test_review_route_refusals.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1522": {
+      "note": "**The lane row, and the manifest extent it sits in.**\n\nAnchor: `unit-regression`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "78876383d0c7eed29dfddba7fd6978c87025eb7f",
+            "content": "sha256:da9d45c8c4c984f8150187319c2014ed2f5a362e36ced1ae19d10e901239ae7a",
+            "locator": {
+              "end": 49,
+              "kind": "line_range",
+              "start": 49
+            },
+            "path": "mcp/tests/_evidence_catalog_fixture.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1523": {
+      "note": "**The module's own statement of the requirement and of the property behind each case.**\n\nAnchor: `ICR-R03@v1`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6492d7c9aef520bfe3699194cab7a1fea4a5dd65",
+            "content": "sha256:f75e5f06a78dd8efa2277975a43f9b76fa6dda2853889ca68e352abea8e86a0e",
+            "locator": {
+              "end": 3,
+              "kind": "line_range",
+              "start": 3
+            },
+            "path": "mcp/tests/test_knowledge_review_source_content.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1524": {
+      "note": "**The first case: both bound objects' own bytes, each against an independent `git show` observation.**\n\nAnchor: `git show`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6492d7c9aef520bfe3699194cab7a1fea4a5dd65",
+            "content": "sha256:890f5be20d61e05de1d495fa89aed36d0ff1fbeb8e6e1893985367150f33c174",
+            "locator": {
+              "end": 275,
+              "kind": "line_range",
+              "start": 274
+            },
+            "path": "mcp/tests/test_knowledge_review_source_content.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1525": {
+      "note": "**The content classes the fixture materializes for real, and the routes wired as the composition root wires them.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6492d7c9aef520bfe3699194cab7a1fea4a5dd65",
+            "content": "sha256:d0a1a806c28c58ba325863b3169b2c8320b576bd721f5301865da160b28a7358",
+            "locator": {
+              "kind": "symbol",
+              "name": "_materialize_unusual"
+            },
+            "path": "mcp/tests/test_knowledge_review_source_content.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1526": {
+      "note": "**The generation binding, the two availability cases, and the verifier's path-confinement finding.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6492d7c9aef520bfe3699194cab7a1fea4a5dd65",
+            "content": "sha256:b00603c408e29956e98ec23f7cd58fe4e3b049fe1832fe9cb3506f0937e3cf49",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_expansion_stays_bound_when_the_branch_advances_after_the_listing"
+            },
+            "path": "mcp/tests/test_knowledge_review_source_content.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1527": {
+      "note": "**The refusal family and the closing identity case.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6492d7c9aef520bfe3699194cab7a1fea4a5dd65",
+            "content": "sha256:6de61e708b7c086a3c358c547178d7de5ed001b3da123d6d1de394b23bc51684",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_query_that_does_not_name_the_generation_is_refused_by_the_transport"
+            },
+            "path": "mcp/tests/test_knowledge_review_source_content.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1528": {
+      "note": "**The shared R01 fixture these cases extend rather than duplicate.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6492d7c9aef520bfe3699194cab7a1fea4a5dd65",
+            "content": "sha256:71c084d5c2e0d8ac7a2af262f02f85b4b47492a9c2eb83054886b4fdec56301f",
+            "locator": {
+              "kind": "symbol",
+              "name": "content_fixture"
+            },
+            "path": "mcp/tests/test_knowledge_review_source_content.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1529": {
+      "note": "**The lane row the insertion created, and the two rows it displaced.**\n\nAnchor: `mcp/tests/test_knowledge_review_source_content.py`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
+            "content": "sha256:414c6d603bd29aa5ab3785de8d43accd5673a4178be176205f81d51e0ccd7cf4",
+            "locator": {
+              "end": 302,
+              "kind": "line_range",
+              "start": 300
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1530": {
+      "note": "**The two consumer rows this module joined, and the counts they do not move.**\n\nAnchor: `mcp/tests/test_knowledge_review_source_content.py`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
+            "content": "sha256:414c6d603bd29aa5ab3785de8d43accd5673a4178be176205f81d51e0ccd7cf4",
+            "locator": {
+              "end": 302,
+              "kind": "line_range",
+              "start": 300
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1531": {
+      "note": "The expansion owner and route constant these cases are the regression surface for.\n\nAnchor: `read_review_source_content`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6492d7c9aef520bfe3699194cab7a1fea4a5dd65",
+            "content": "sha256:014706fc0fcccbfa0272135292362547e1d6a3eb7cdf2976f1f92825badad0b6",
+            "locator": {
+              "end": 45,
+              "kind": "line_range",
+              "start": 45
+            },
+            "path": "mcp/tests/test_knowledge_review_source_content.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1532": {
+      "note": "**The module whose cases are the production-composition evidence, and its lane row.**\n\nAnchor: `unit-regression`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "78876383d0c7eed29dfddba7fd6978c87025eb7f",
+            "content": "sha256:da9d45c8c4c984f8150187319c2014ed2f5a362e36ced1ae19d10e901239ae7a",
+            "locator": {
+              "end": 49,
+              "kind": "line_range",
+              "start": 49
+            },
+            "path": "mcp/tests/_evidence_catalog_fixture.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1533": {
+      "note": "**The production port the cases read through, and the bundle they read beside it.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1cb89d4b2b1b3adee4bd73989ab4a0703b287d97",
+            "content": "sha256:77d75234cabf39af2eb886c425d033d6021612aaf363aa349b1786bda11ab349",
+            "locator": {
+              "kind": "symbol",
+              "name": "review_through_port"
+            },
+            "path": "mcp/tests/test_knowledge_review_evidence_channels.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1534": {
+      "note": "The fixture's external-memory shape, which the assessment channel needs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c0a2c0716ff604e0b11fe27d001364f53db5eac2",
+            "content": "sha256:46d9f7666cc0c7c2bb4f794db653a432b1b39222a53a3ce630ee4e6522dddbaa",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_endpoint_fixture"
+            },
+            "path": "mcp/tests/test_knowledge_review_source_endpoints.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1535": {
+      "note": "**The nine partition cases, appended after the module's former end.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "51644d37b1e1ca3f18314348dfbdc2d16fff19b9",
+            "content": "sha256:bfb954ef713b6314a3acbfa4a8dd27ef6c854cfe66e34b5217c57f8e1f164b13",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_measured_changes_are_partitioned_once_and_the_buckets_are_disjoint_and_exhaustive"
+            },
+            "path": "mcp/tests/test_knowledge_diff_attribution.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1536": {
+      "note": "**The six precedence and receipt cases on the real enclosure route.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "db8e79f3cba6883a4b097081334a412465c01635",
+            "content": "sha256:bab86f608af5e7616a8171381280f06d69cc9aa26e631a371aecc709c0a27828",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_one_unreadable_knowledge_half_leaves_the_readable_side_attributed_and_the_rest_unknown"
+            },
+            "path": "mcp/tests/test_knowledge_review_attribution_precedence.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1537": {
+      "note": "One collected subject covering all three arrivals at the series publication.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "71d5ffe949d1a507a98ab67bb131d902e889c604",
+            "content": "sha256:bf74eddf5441ae5fe7283d32cc843bc541c82e0127e418706fe928936b3100fa",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_terminal_series_is_reopened_without_ever_moving_a_live_ref"
+            },
+            "path": "mcp/tests/test_task_reopen.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1538": {
+      "note": "The interrupted reset resumes rather than stranding the branches the series stands on.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "71d5ffe949d1a507a98ab67bb131d902e889c604",
+            "content": "sha256:555e265f8dcb37cc7c17ba1266502f46543ead21ebb3e9b05173798379aa7f3f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_assert_an_interrupted_series_reset_is_resumed"
+            },
+            "path": "mcp/tests/test_task_reopen.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1539": {
+      "note": "The one collected case that now pins all three directions of the step rule.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c0f5408a10c0eb96ffa347f355a328143f385081",
+            "content": "sha256:33b02132fd68638e4f65e1899991a685a6a4fd3f263db29525e79f3feb6e56ab",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_leaf_level_sync_position_is_admitted_and_a_silent_one_is_refused"
+            },
+            "path": "mcp/tests/test_atomic_series_chain_pair_order.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1540": {
+      "note": "The counter-case the new admission must not weaken: a position descending from a step cannot vacate it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c0f5408a10c0eb96ffa347f355a328143f385081",
+            "content": "sha256:db0788015cd61fbfb76f57d50d85745adb675e5fe71602ea1973f1ed196637c9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_position_that_descends_from_a_step_does_not_vacate_it"
+            },
+            "path": "mcp/tests/test_atomic_series_chain_pair_order.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1541": {
+      "note": "**The lane row, inserted mid-list, and the row it displaced.**\n\nAnchor: `mcp/tests/test_knowledge_review_one_sided_statements.py`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
+            "content": "sha256:135d727e12b60e89fbb6c15b033b5758cb63fa280e5306b87485b509598a17e7",
+            "locator": {
+              "end": 296,
+              "kind": "line_range",
+              "start": 294
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1542": {
+      "note": "The module's own lane declaration, which is what makes the classification its own rather than a budget convenience.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e63bbe0a355c2157ece83f1a76b83ae5c16a6e2",
+            "content": "sha256:0753257dc2b79f881f380b8681aa5ded3b4e356b794086776ece0c5b7a215bb4",
+            "locator": {
+              "kind": "symbol",
+              "name": "pytestmark"
+            },
+            "path": "mcp/tests/test_knowledge_review_one_sided_statements.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1543": {
+      "note": "**The fixture that makes an addition and a removal real: two independently built snapshots under one namespace, plus the four authored revisions.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e63bbe0a355c2157ece83f1a76b83ae5c16a6e2",
+            "content": "sha256:2b3cbe86321bd49f579daeeb82a755f2ccfaf2f776b253ea31564e3b344f57d6",
+            "locator": {
+              "kind": "symbol",
+              "name": "pair"
+            },
+            "path": "mcp/tests/test_knowledge_review_one_sided_statements.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1544": {
+      "note": "**The addition and the removal: the complete present-side statement beside the named absent side, with the comparison's own side-absence code.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e63bbe0a355c2157ece83f1a76b83ae5c16a6e2",
+            "content": "sha256:2c88cb7e4ccc6e6f31b85f6737cf90ce462e537c5625002e27cbb567f7f15df2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_added_statement_renders_its_after_text_beside_a_named_absent_before"
+            },
+            "path": "mcp/tests/test_knowledge_review_one_sided_statements.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1545": {
+      "note": "The field-row cases: the roster asserted by exact key set, and the structured value served as its own projection on both sides.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e63bbe0a355c2157ece83f1a76b83ae5c16a6e2",
+            "content": "sha256:b87075404e39a14342660043a0e36da8e5e184daf13e2ff48c8f048a00cb3a19",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_field_row_keeps_the_side_that_recorded_a_value_and_names_the_side_that_did_not"
+            },
+            "path": "mcp/tests/test_knowledge_review_one_sided_statements.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1546": {
+      "note": "The one-sided-record case and the task-context case.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e63bbe0a355c2157ece83f1a76b83ae5c16a6e2",
+            "content": "sha256:11e22fd36edb688cef31a499ce8eb266af6546cef1ac286b96abef04d93b709a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_one_sided_record_is_reported_by_its_coverage_and_not_by_a_roster_of_field_rows"
+            },
+            "path": "mcp/tests/test_knowledge_review_one_sided_statements.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1547": {
+      "note": "**The catalog consumer row the same registration produced, on the shared read-scope fixture.**\n\nAnchor: `mcp/tests/test_knowledge_review_one_sided_statements.py`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
+            "content": "sha256:135d727e12b60e89fbb6c15b033b5758cb63fa280e5306b87485b509598a17e7",
+            "locator": {
+              "end": 296,
+              "kind": "line_range",
+              "start": 294
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1548": {
+      "note": "**The catalog consumer row the same registration produced, on the shared read-scope fixture.**\n\nAnchor: `mcp/tests/test_knowledge_review_one_sided_statements.py`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
+            "content": "sha256:135d727e12b60e89fbb6c15b033b5758cb63fa280e5306b87485b509598a17e7",
+            "locator": {
+              "end": 296,
+              "kind": "line_range",
+              "start": 294
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1549": {
+      "note": "**The renderer half that uses these same values, which is what makes a change to either half fail in one of the two.**\n\nAnchor: `KnowledgeStatements`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e63bbe0a355c2157ece83f1a76b83ae5c16a6e2",
+            "content": "sha256:fec1ad83ebe9c6281086b0cc8a7ec34a8503bdad7218325b9186b66e8bc7a32f",
+            "locator": {
+              "end": 27,
+              "kind": "line_range",
+              "start": 27
+            },
+            "path": "mcp/tests/test_knowledge_review_one_sided_statements.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1550": {
+      "note": "The acceptance pair, read out of each started session's own first prompt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f69ef77b1ac38671bb6b7bfc97bd453affc594be",
+            "content": "sha256:95087f358b1ee7c78e6d453fd4f9327cec8d6171b2b443cf1811f4f0829586b6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_task_attached_seat_reads_its_compiled_capsule_out_of_its_own_first_prompt"
+            },
+            "path": "mcp/tests/test_capsule_launch_wiring.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1551": {
+      "note": "The production-chain pair that replaced the hand-supplied case.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f69ef77b1ac38671bb6b7bfc97bd453affc594be",
+            "content": "sha256:d721fec7a1ec333e78514ceae21ad3891307bedf01ba514f6870595a2fddb165",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_production_eve_launch_runs_where_its_capsule_admits_and_the_consumer_accepts"
+            },
+            "path": "mcp/tests/test_capsule_launch_wiring.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1552": {
+      "note": "The refusal before any host effect, the mode gate, the byte-identical legacy payload, the single-carrier bound and the site enumeration.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f69ef77b1ac38671bb6b7bfc97bd453affc594be",
+            "content": "sha256:67df6697e853be30ae74d7cc0850e722d8570d04e1c6bd5db614ab67ec12eeba",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_uncapsulable_role_refuses_by_name_before_any_host_effect"
+            },
+            "path": "mcp/tests/test_capsule_launch_wiring.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1553": {
+      "note": "The declared legacy exclusion, the free agent's admission, and the two defect pins.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f69ef77b1ac38671bb6b7bfc97bd453affc594be",
+            "content": "sha256:4fb5039022189714018f9a64b35f23a23dd00d88ddda0f23486bbfd8d804237d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_declared_legacy_reopen_names_why_it_cannot_carry_a_capsule"
+            },
+            "path": "mcp/tests/test_capsule_launch_wiring.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1554": {
+      "note": "The production-chain evidence the module's in-process cases complement.\n\nAnchor: `resolve_runtime_spec`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6050969a458d78903090248ba3c5c4cb49edf265",
+            "content": "sha256:206e6813e8a1c48c153bf77a95684233a0162e21d4138642c7ca1a6f607b60d4",
+            "locator": {
+              "end": 81,
+              "kind": "line_range",
+              "start": 81
+            },
+            "path": "mcp/tests/live_eve_native_fixture.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1555": {
+      "note": "The fixture world and the synthetic corpus every hermetic case is built from.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b88287461b307446f70db6c1c509b1f8032c2621",
+            "content": "sha256:a2edc9903428a3d9d7e93037b811395429a45f118ec4dc8a8f7ef36606b0c2f9",
+            "locator": {
+              "kind": "symbol",
+              "name": "World"
+            },
+            "path": "mcp/tests/test_knowledge_worklist.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1556": {
+      "note": "The admission guarantees: no role acquisition by string, no caller-selected source, no write to the read tree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d3952ef797ae6f8761d477b1f5a56be86884e40e",
+            "content": "sha256:bccb2a34df8aeeb72d9049f1da7f3a06c727cc27ae808b84195cc0d9d52a8027",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_caller_changing_the_role_string_cannot_acquire_another_role"
+            },
+            "path": "mcp/tests/test_capsule_serving.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1557": {
+      "note": "The guards the repairs pinned, each driven directly by its own case.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d3952ef797ae6f8761d477b1f5a56be86884e40e",
+            "content": "sha256:8c299ac6f68f2b81ecbd0b9a131c0e8608296939f5b0afb935e41bdec2a8afc9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_catalog_record_that_escapes_its_skill_directory_is_refused"
+            },
+            "path": "mcp/tests/test_capsule_serving.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1558": {
+      "note": "The SEP entry contract, asserted separately from this server's own index shape.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d3952ef797ae6f8761d477b1f5a56be86884e40e",
+            "content": "sha256:5648d5b6e1c8200caad56717af8affec2584f1fd9a7a9ceee33399aeaa5805c6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_sep_2640_entry_is_complete_and_carries_verbatim_frontmatter"
+            },
+            "path": "mcp/tests/test_capsule_serving.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1559": {
+      "note": "The two independent-SDK-client exchanges, including both extension methods and the `-32602` refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d3952ef797ae6f8761d477b1f5a56be86884e40e",
+            "content": "sha256:b8e12a88c690222106abb3e467066887f175eac7ea90103e3c71b33d0c844b3d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_real_client_and_server_exchange_over_the_installed_sdk"
+            },
+            "path": "mcp/tests/test_capsule_serving.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1560": {
+      "note": "The case that keeps the seeded-mutation evidence honest.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d3952ef797ae6f8761d477b1f5a56be86884e40e",
+            "content": "sha256:0dddbfa450e25ce628e01f602c9101b9ade14e60b53ec0ea6299a655393276f7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_mutation_harness_can_actually_fail"
+            },
+            "path": "mcp/tests/test_capsule_serving.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1561": {
+      "note": "The lane row that selects this module into the unit population.\n\nAnchor: `mcp/tests/test_capsule_serving.py`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
+            "content": "sha256:f557a6d4f0c9b2a6c5780d960b17252cfb70c70cadae871b1fabc63f033da6fc",
+            "locator": {
+              "end": 1059,
+              "kind": "line_range",
+              "start": 1057
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1562": {
+      "note": "The Python half, whose refusal cases assert a named defect.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d23b661924f6cda0fe5ff695fe834b9e7a582a6e",
+            "content": "sha256:2a4b8b17fc922800e7e21b37114157799732fcbdce39d2b6168134c2f0818e9b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_launch_verification_refuses_every_declared_defect"
+            },
+            "path": "mcp/tests/test_eve_capsule_binding.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1563": {
+      "note": "The TypeScript half, executing the shipped modules under a real Node.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bc4707f0134d1fef3f5f6dcbd20cbc68c185f992",
+            "content": "sha256:80065bcf476126b8866432d6a35b367385d4a2a9ad6789be4259e6a1ccd351d2",
+            "locator": {
+              "kind": "symbol",
+              "name": "RuntimeProbe"
+            },
+            "path": "mcp/tests/test_eve_capsule_runtime.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1564": {
+      "note": "The trace's effective-prompt key, which the live capsule scenarios assert against.\n\nAnchor: `the provider's own view of the effective prompt`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7e43a9a5faeb7066fa52b59977ca820f35c7efd6",
+            "content": "sha256:926de113b32a63df2f04f289325b2928a464b7fddc2aed99cd373a2f188093ce",
+            "locator": {
+              "end": 66,
+              "kind": "line_range",
+              "start": 66
+            },
+            "path": "mcp/tests/eve_fixture_model.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1565": {
+      "note": "The live end-to-end capsule scenarios, which are the whole-seam proof rather than a unit claim.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6050969a458d78903090248ba3c5c4cb49edf265",
+            "content": "sha256:7ea77f16974c880b061864c68338931fc884233b76aae581a42024e7d420f6f0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_scenario_capsule_binding"
+            },
+            "path": "mcp/tests/live_eve_native_fixture.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1566": {
+      "note": "Exact contract scope, full check and curator worklist publication.\n\nAnchor: `_execute_memory_quality`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bb33d32e66cacf8fa81aad1a23356a78e271e230",
+            "content": "sha256:640e521e7123fbf3089739578c64371817e4d60847bdb3d1014c4d53c514ab2d",
+            "locator": {
+              "end": 589,
+              "kind": "line_range",
+              "start": 589
+            },
+            "path": "mcp/tests/test_knowledge_worklist_leaf.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1567": {
+      "note": "Interactive catalog names missing authority without eligibility.\n\nAnchor: `_attach_final_full_catalog`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bb33d32e66cacf8fa81aad1a23356a78e271e230",
+            "content": "sha256:be4390bc92c31a07b7b0fb4707a0441da6b53b3b635fc8bb7c50f35590af9f58",
+            "locator": {
+              "end": 665,
+              "kind": "line_range",
+              "start": 665
+            },
+            "path": "mcp/tests/test_knowledge_worklist_leaf.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1568": {
+      "note": "The citation index's exclusion register, its ruled caps and its reported-skip behaviour, defended case by case.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "67d6f1543ad5c7743e2aa5674854c5a2ebf4789a",
+            "content": "sha256:e2dcf2ac8bd61ed202b562bcb51a4024a071d2921f5813adc8e3de3104e6fc06",
+            "locator": {
+              "kind": "symbol",
+              "name": "TheExclusionRegisterIsHonouredFromEachSourceIndependently"
+            },
+            "path": "mcp/tests/test_citation_index_resilience.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1569": {
+      "note": "The divergence between the register's re-inclusion rule and Git's, measured on both sides.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "67d6f1543ad5c7743e2aa5674854c5a2ebf4789a",
+            "content": "sha256:c45cbb53f6e910f4564f1adab31ff94142d50b7e6a31676e6fb226e7d2880d79",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_register_admits_a_negated_file_under_an_excluded_directory_where_git_does_not"
+            },
+            "path": "mcp/tests/test_citation_index_resilience.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1570": {
+      "note": "The consumer of record for the three new `scripts/e2e_harness` governed artifacts, and the fixture/scenario shape it pins.\n\nAnchor: `scripts/e2e_harness`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
+            "content": "sha256:4c051d39d8f9c183b225f1750c8015a07e7718bc4024cf76b7b8d05ef652221f",
+            "locator": {
+              "end": 2298,
+              "kind": "line_range",
+              "start": 2296
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1571": {
+      "note": "The lane rows that admit both L14 modules to the `unit-regression` lane.\n\nAnchor: `mcp/tests/test_citation_index_resilience.py`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
+            "content": "sha256:4fbb56fc340ff2dc75e72f23d3fcc966083e099ac5b752099644ca8135499ea9",
+            "locator": {
+              "end": 1072,
+              "kind": "line_range",
+              "start": 1070
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1572": {
+      "note": "The three `scripts/e2e_harness` [[artifact]] rows a leaf under that permanent support root must register.\n\nAnchor: `scripts/e2e_harness/fresh_user_fixture.py`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
+            "content": "sha256:2a20fafe2f687b92758a9e3036039db4efc674c4cede4cd8f9ada28cf0035032",
+            "locator": {
+              "end": 2365,
+              "kind": "line_range",
+              "start": 2363
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1573": {
+      "note": "The three `scripts/e2e_harness` [[artifact]] rows a leaf under that permanent support root must register.\n\nAnchor: `scripts/e2e_harness/fresh_user_fixture.py`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
+            "content": "sha256:2a20fafe2f687b92758a9e3036039db4efc674c4cede4cd8f9ada28cf0035032",
+            "locator": {
+              "end": 2365,
+              "kind": "line_range",
+              "start": 2363
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1574": {
+      "note": "The three `scripts/e2e_harness` [[artifact]] rows a leaf under that permanent support root must register.\n\nAnchor: `scripts/e2e_harness/fresh_user_fixture.py`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
+            "content": "sha256:2a20fafe2f687b92758a9e3036039db4efc674c4cede4cd8f9ada28cf0035032",
+            "locator": {
+              "end": 2365,
+              "kind": "line_range",
+              "start": 2363
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1575": {
+      "note": "The three `scripts/e2e_harness` [[artifact]] rows a leaf under that permanent support root must register.\n\nAnchor: `scripts/e2e_harness/fresh_user_fixture.py`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
+            "content": "sha256:2a20fafe2f687b92758a9e3036039db4efc674c4cede4cd8f9ada28cf0035032",
+            "locator": {
+              "end": 2365,
+              "kind": "line_range",
+              "start": 2363
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1576": {
+      "note": "The three `scripts/e2e_harness` [[artifact]] rows a leaf under that permanent support root must register.\n\nAnchor: `scripts/e2e_harness/fresh_user_fixture.py`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
+            "content": "sha256:2a20fafe2f687b92758a9e3036039db4efc674c4cede4cd8f9ada28cf0035032",
+            "locator": {
+              "end": 2365,
+              "kind": "line_range",
+              "start": 2363
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1577": {
+      "note": "The three `scripts/e2e_harness` [[artifact]] rows a leaf under that permanent support root must register.\n\nAnchor: `scripts/e2e_harness/fresh_user_fixture.py`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
+            "content": "sha256:2a20fafe2f687b92758a9e3036039db4efc674c4cede4cd8f9ada28cf0035032",
+            "locator": {
+              "end": 2365,
+              "kind": "line_range",
+              "start": 2363
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1578": {
+      "note": "The three `scripts/e2e_harness` [[artifact]] rows a leaf under that permanent support root must register.\n\nAnchor: `scripts/e2e_harness/fresh_user_fixture.py`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
+            "content": "sha256:2a20fafe2f687b92758a9e3036039db4efc674c4cede4cd8f9ada28cf0035032",
+            "locator": {
+              "end": 2365,
+              "kind": "line_range",
+              "start": 2363
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1579": {
+      "note": "The three `scripts/e2e_harness` [[artifact]] rows a leaf under that permanent support root must register.\n\nAnchor: `scripts/e2e_harness/fresh_user_fixture.py`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
+            "content": "sha256:2a20fafe2f687b92758a9e3036039db4efc674c4cede4cd8f9ada28cf0035032",
+            "locator": {
+              "end": 2365,
+              "kind": "line_range",
+              "start": 2363
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1580": {
+      "note": "The lane rows that admit both L14 modules to the `unit-regression` lane.\n\nAnchor: `mcp/tests/test_citation_index_resilience.py`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
+            "content": "sha256:4fbb56fc340ff2dc75e72f23d3fcc966083e099ac5b752099644ca8135499ea9",
+            "locator": {
+              "end": 1072,
+              "kind": "line_range",
+              "start": 1070
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1581": {
+      "note": "The live public-surface inventory contract for the advertised MCP tool tuple.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3ab0d44d1db2a5d0385439309040570f61329bc5",
+            "content": "sha256:2ebc14b18d51623f784392c927ed0622576181781cf21bbf6c445a50ea2d9ae9",
+            "locator": {
+              "kind": "symbol",
+              "name": "PublicSurfaceInventoryTests"
+            },
+            "path": "mcp/tests/test_tools.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1582": {
+      "note": "The advertised roster the inventory comparison uses, in its new zero-import `models` leaf.\n\nAnchor: `models`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "47f039513a0bfe66b78a9ce298beb39a63510661",
+            "content": "sha256:fa3cc391b6340b56b26aa3fa2d2c6baec1f62ad73ddbbb367e27e02ee74ee2b6",
+            "locator": {
+              "end": 9,
+              "kind": "line_range",
+              "start": 9
+            },
+            "path": "mcp/tests/_adapter_event_scripts.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1583": {
+      "note": "The L32 module itself: archive-ready reachability for both cleanup verbs, the declarations, and the validator in both directions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f3f3b31e87748120cf9b50b0d32079f880bef128",
+            "content": "sha256:2994e908c22c262a2a4248551c5ea35649166bb1701ccd8c7480f754ddad9381",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_archive_ready_status_names_the_accepted_cleanup_operation"
+            },
+            "path": "mcp/tests/test_worktree_status_terminal_next_tool.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1584": {
+      "note": "The lane row that admits the L3 module: `test_memory_backfill.py` in the `unit-regression` lane.\n\nAnchor: `mcp/tests/test_memory_backfill.py`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
+            "content": "sha256:78fbd9e0fcbae938a47198330ca1b09d726d108e010d4bc63af3ed4e0e90c122",
+            "locator": {
+              "end": 1257,
+              "kind": "line_range",
+              "start": 1255
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1585": {
+      "note": "The contract-scoped activation record: one record per series contract, keyed by the contract fingerprint rather than a source pair.\n\nAnchor: `contract_fingerprint`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "682aa80f78746e7ec45a149845acbbf31f95811f",
+            "content": "sha256:10d1737c51836553255dfb464c23079367c2aa306fb3eaebb19d1f4e795c4b01",
+            "locator": {
+              "end": 134,
+              "kind": "line_range",
+              "start": 130
+            },
+            "path": "mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "1586": {
+      "note": "The L36 lane registration the fail-closed manifest requires.\n\nAnchor: `mcp/tests/test_cross_master_concurrency.py`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
+            "content": "sha256:405443381e2870ec4c5c12e56fe23238fd82d6ded1f9498cf3a5d0925849a989",
+            "locator": {
+              "end": 363,
+              "kind": "line_range",
+              "start": 361
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1587": {
+      "note": "The L37 structural half: the pause's import closure is disjoint from every publication module.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a24443a30248d8bc65193ddde2d9f9ca3bd89244",
+            "content": "sha256:3cee22c074a1321d04fd58e1890fc02bdd44f6700364e32bb2d89460fd0f26b1",
+            "locator": {
+              "kind": "symbol",
+              "name": "PUBLICATION_MODULES"
+            },
+            "path": "mcp/tests/test_pause_is_not_publication.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1588": {
+      "note": "The ordered lifecycle playthrough that is the regression proof for the deleted atomic-series child-admission seal: master open → leaf start → closeout → landing → checkpoint → pause → attach → a leaf commanded after the landing still starts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2752814792df538b1f2af5dc080ab27db3712ade",
+            "content": "sha256:e9bf871923d31b0b9b16c428cdee4dd477f9d41602726a75d4d059ee4e27e1f5",
+            "locator": {
+              "kind": "symbol",
+              "name": "LifecyclePlaythroughTests"
+            },
+            "path": "mcp/tests/test_lifecycle_playthrough_end_to_end.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1589": {
+      "note": "The lane registration the fail-closed manifest requires for that module.\n\nAnchor: `mcp/tests/test_lifecycle_playthrough_end_to_end.py`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
+            "content": "sha256:8d4d182b2ab28cbb33b148eee1cd722c7507719ce894e930a567391f4462be2a",
+            "locator": {
+              "end": 364,
+              "kind": "line_range",
+              "start": 362
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1590": {
+      "note": "The L4 census module's lane row, which closed the gap the L4 route section recorded.\n\nAnchor: `mcp/tests/test_memory_attribution_producers.py`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
+            "content": "sha256:b9c23eecf4e308f557f14e38998ff9b02ac4d083f744c161a06c90fa6cedf3a2",
+            "locator": {
+              "end": 501,
+              "kind": "line_range",
+              "start": 499
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1591": {
+      "note": "The L23 registration-order proof: the observed chain with the terminated-row read carrying its own batch-commit state, the partial-proof singleton, the raising registrar that stops the pass, the restart that re-registers and loses nothing, and the fast-path exclusion measured in both directions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d9db0a0f8b6df9c28adecac31a6b347298969fd8",
+            "content": "sha256:de55f12d1192f6cc1ba7f56f7cca349ff6e46eb0ab929659403fbef3c0be6999",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_due_sweep_registers_committed_terminated_rows_before_compaction"
+            },
+            "path": "mcp/tests/test_terminal_liveness_registration_order.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1592": {
+      "note": "The L27 pane-authority proof, its fixture import from the sibling sweeper suite, and the lane registration the fail-closed manifest requires.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "67ce1780223ee89ab9f5b577a9578add7e1063ee",
+            "content": "sha256:e3ce8a83d7bc17124f27f9501463eca0f5d6dfe9914852ca1addd0b35d02d496",
+            "locator": {
+              "kind": "symbol",
+              "name": "PaneDiagnosticAuthorityTests"
+            },
+            "path": "mcp/tests/test_terminal_liveness_pane_authority.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1593": {
+      "note": "The shared fixtures the L27 module imports instead of rebuilding.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d2d734f54cecf7b60134483f0c989f998538836",
+            "content": "sha256:2771de31475cb646580e06f0d0fe0673366e339614acc65b46f1a8a654b49f1e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_Clock"
+            },
+            "path": "mcp/tests/test_terminal_paste.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1594": {
+      "note": "**260913-LCA-L8:** the L6 shape finalizes on the first call, a real permission failure blocks with its own reason and refuses identically on retry, and the two invariant owners are driven directly.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6b51af08c017f9ead395326bd7fee6fefeac4e9f",
+            "content": "sha256:6811b9303c31e9f8161e57c76cd74aa2e0703c01140277f377b6b3a8843ef7a7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_torn_down_provider_runtime_finalizes_on_the_first_call"
+            },
+            "path": "mcp/tests/test_terminal_blocker_reasons.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1595": {
+      "note": "**260913-LCA-L8:** the only construction path for a terminal blockage, and the operator-language answer for a reasonless or malformed result item.\n\nAnchor: `_blocker`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
+            "content": "sha256:f842ce003eca034257ceb56c20c1fb1272c1533412b5d80bfcb5f7781e9265e7",
+            "locator": {
+              "end": 321,
+              "kind": "line_range",
+              "start": 319
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1596": {
+      "note": "The L37 stop boundary proof: the public pause, the measured world, the eight independently-failing cases and the refusals. Its never-selected case now asserts the already-vacant success rather than a refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d50d777888246b34651a72915f670855670dfa6e",
+            "content": "sha256:8663b7a7059d14674c07768204266eb31f00b22d1d77b5bc9e8fb84dd737cd9d",
+            "locator": {
+              "kind": "symbol",
+              "name": "PauseStopsAnAtomicMasterTests"
+            },
+            "path": "mcp/tests/test_pause_stop_only_end_to_end.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1597": {
+      "note": "The lane registration the fail-closed manifest requires for that module (row 165 after the KS-L2 and KS-L3 insertions).\n\nAnchor: `mcp/tests/test_lifecycle_playthrough_end_to_end.py`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
+            "content": "sha256:8d4d182b2ab28cbb33b148eee1cd722c7507719ce894e930a567391f4462be2a",
+            "locator": {
+              "end": 364,
+              "kind": "line_range",
+              "start": 362
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1598": {
+      "note": "The architecture-fitness lane registration the fail-closed manifest requires for that proof.\n\nAnchor: `mcp/tests/test_terminal_liveness_pane_authority.py`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
+            "content": "sha256:61bedbd1b4c7075e988d68ad7dd8b230c0c2a455a198619313120971778aff36",
+            "locator": {
+              "end": 1434,
+              "kind": "line_range",
+              "start": 1432
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1599": {
+      "note": "The L27 pane-authority proof, its fixture import from the sibling sweeper suite, and the lane registration the fail-closed manifest requires.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "67ce1780223ee89ab9f5b577a9578add7e1063ee",
+            "content": "sha256:e3ce8a83d7bc17124f27f9501463eca0f5d6dfe9914852ca1addd0b35d02d496",
+            "locator": {
+              "kind": "symbol",
+              "name": "PaneDiagnosticAuthorityTests"
+            },
+            "path": "mcp/tests/test_terminal_liveness_pane_authority.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
     "16": {
       "note": "The command removes the lane line and consumer lines of a file that no longer exists.",
       "targets": [
@@ -100,6 +3350,1738 @@
               "name": "_drop_gone"
             },
             "path": "mcp/test_support/agents_remember_test_support/testing/catalog_canonical.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "1600": {
+      "note": "The shared fixtures the L27 module imports instead of rebuilding.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d2d734f54cecf7b60134483f0c989f998538836",
+            "content": "sha256:2771de31475cb646580e06f0d0fe0673366e339614acc65b46f1a8a654b49f1e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_Clock"
+            },
+            "path": "mcp/tests/test_terminal_paste.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1601": {
+      "note": "**The mid-flight reporting boundary:** a completed pass beside a reconciling selection is not this call's success, and a refusal left beside one leads with the mid-flight state.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "598b2015f9054a298a1a3e54896cfb6ec238b38c",
+            "content": "sha256:5e76dec374aeeebd693fb2aa28e0afc884036e219be49ea97f2f3a7d53cd3de7",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReconcilingResultTests"
+            },
+            "path": "mcp/tests/test_atomic_series_activation.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1602": {
+      "note": "The rewritten contract-scoped activation forcing suite and its shared-source-pair fixture.\n\nAnchor: `class ActivationFixture`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "598b2015f9054a298a1a3e54896cfb6ec238b38c",
+            "content": "sha256:c56bad34bcecbd9dcf7029186655436e84f13969b875b9e97e280ce4565a2843",
+            "locator": {
+              "end": 112,
+              "kind": "line_range",
+              "start": 63
+            },
+            "path": "mcp/tests/test_atomic_series_activation.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1603": {
+      "note": "The registered admission refusal now addresses only the addressed contract's own state.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ff9baaa4a10c7a8abd9a3028e60741add9bacc02",
+            "content": "sha256:d0c30db2f705f24c90a0df61907ee97e71244aab976ba7d6c8d8c5537735f3fa",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_registered_sync_refusal_addresses_only_this_contracts_own_state"
+            },
+            "path": "mcp/tests/test_activation_admission_registered.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1604": {
+      "note": "Public closeout exercises the actual pair, attribution and cache-independent delivery.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3cb51d6a619167b107b8c8836f89bd51831af1ed",
+            "content": "sha256:bb043388f8a411c5e75a54f79141a1cdeed0b92c912901d306567521edb4e655",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_public_closeout_commits_code_and_memory_without_acceptance_tools"
+            },
+            "path": "mcp/tests/test_transaction_only_worktree_delivery.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1605": {
+      "note": "Cache damage cannot change the accepted integration pair or block ref publication.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2f50834048a5d93766dce2eb701040f614f49a0f",
+            "content": "sha256:d1b769266ca2c06857744a419ea02ee250028be95719299bd5a1ff835a81951d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_cache_damage_cannot_change_the_accepted_pair_or_block_its_ref_move"
+            },
+            "path": "mcp/tests/test_integration_branch_authority.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1606": {
+      "note": "The migration acceptance proof reads only committed trailers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0b64410c301acbc247f941bbb50591a306473a9e",
+            "content": "sha256:8d36dcad3debb71110573f7ded1ed5c5b7e0a38cb51ed1ea31fc10a23c00f6a9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_trailers_alone_preserve_every_pairing_the_ledger_file_recorded"
+            },
+            "path": "mcp/tests/test_memory_backfill.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1607": {
+      "note": "Cache damage cannot change the accepted integration pair or block ref publication.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2f50834048a5d93766dce2eb701040f614f49a0f",
+            "content": "sha256:d1b769266ca2c06857744a419ea02ee250028be95719299bd5a1ff835a81951d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_cache_damage_cannot_change_the_accepted_pair_or_block_its_ref_move"
+            },
+            "path": "mcp/tests/test_integration_branch_authority.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1608": {
+      "note": "The migration acceptance proof reads only committed trailers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0b64410c301acbc247f941bbb50591a306473a9e",
+            "content": "sha256:8d36dcad3debb71110573f7ded1ed5c5b7e0a38cb51ed1ea31fc10a23c00f6a9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_trailers_alone_preserve_every_pairing_the_ledger_file_recorded"
+            },
+            "path": "mcp/tests/test_memory_backfill.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1609": {
+      "note": "**The completeness node that derives the mandatory set from recorded rows rather than from the implementation's own page manifest.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "61493ab06ab1c25137186e0a59838d91236bd92e",
+            "content": "sha256:ab96cb9648dfdff46b8c0c7e5061d0a4e85d2d79ce411ff4107d1bfec8ddbe93",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_page_declares_the_same_snapshot_and_manifest_and_the_union_equals_the_selection"
+            },
+            "path": "mcp/tests/test_knowledge_read_scope.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1610": {
+      "note": "The ordering node the review sealed as HIGH, and the truncated-page node.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "61493ab06ab1c25137186e0a59838d91236bd92e",
+            "content": "sha256:189f358c62ec727ed95b70241a12f9b0299b15dbaaf418cb14e55cedc290fb1e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_item_stream_is_ordered_by_stored_identity_and_never_by_an_authored_label"
+            },
+            "path": "mcp/tests/test_knowledge_read_scope.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1611": {
+      "note": "**The three path facts, and the case that authors, stores, seeds and resolves a path holding glob characters.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "91e4a83282691ee1303a098b598590e266225430",
+            "content": "sha256:2e378e91f88d9ff9cbb71fab1b02d3c67f78d55a6e0f7780f22dd22d76613d39",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_stored_path_that_cannot_be_addressed_is_refused_rather_than_reported_absent"
+            },
+            "path": "mcp/tests/test_knowledge_read_paths.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1612": {
+      "note": "The lookup that ran and could not answer, refused as unavailable rather than absent.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "91e4a83282691ee1303a098b598590e266225430",
+            "content": "sha256:7ef8818ed136feabb30a06d57bf8d5985f6904f995f7e6dd608245b4dfe42713",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_failed_tree_lookup_is_unavailable_rather_than_an_absent_path"
+            },
+            "path": "mcp/tests/test_knowledge_read_paths.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1613": {
+      "note": "The lookup that could not be run at all, reported as the same fact.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "91e4a83282691ee1303a098b598590e266225430",
+            "content": "sha256:0356438815abbe377617683c4af7689502abf0349a88b54e2183a58c988efe29",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_git_that_cannot_run_is_unavailable_rather_than_an_absent_path"
+            },
+            "path": "mcp/tests/test_knowledge_read_paths.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1614": {
+      "note": "The continuation bindings, each with its own control, and the read-only property on a real file.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "624f38412c884053c110c5b5b9a024d9c6458aaa",
+            "content": "sha256:47bc72e56b1ec449a1f563f8f5d7cdad217216e3eea912ae4c7236ce0f3c1cdb",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_continuation_that_binds_another_manifest_is_refused_and_its_own_is_verified"
+            },
+            "path": "mcp/tests/test_knowledge_read_boundaries.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1615": {
+      "note": "The read fixture and its registered contract.\n\nAnchor: `knowledge-read-scope-cases`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
+            "content": "sha256:ffb0114b575d503e236977d47b97156ba49cd0ed7b171845390e4aeb3a642782",
+            "locator": {
+              "end": 57,
+              "kind": "line_range",
+              "start": 55
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1616": {
+      "note": "The unit-lane row the read's selection module occupies.\n\nAnchor: `mcp/tests/test_knowledge_read_scope.py`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
+            "content": "sha256:a5a69b53a58dff42b2855eb9b137c3707af6dac687337586bda61a510d39bac6",
+            "locator": {
+              "end": 59,
+              "kind": "line_range",
+              "start": 57
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1617": {
+      "note": "The two integration-lane rows the read's boundary and path modules occupy.\n\nAnchor: `mcp/tests/test_knowledge_read_boundaries.py`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
+            "content": "sha256:b5e6d6792ca6ebbb910495965f9b14d44a68adfd085054be24c637388986ef4a",
+            "locator": {
+              "end": 289,
+              "kind": "line_range",
+              "start": 287
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1618": {
+      "note": "The read fixture and its registered contract.\n\nAnchor: `knowledge-read-scope-cases`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
+            "content": "sha256:ffb0114b575d503e236977d47b97156ba49cd0ed7b171845390e4aeb3a642782",
+            "locator": {
+              "end": 57,
+              "kind": "line_range",
+              "start": 55
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1619": {
+      "note": "The unit-lane row the read's selection module occupies.\n\nAnchor: `mcp/tests/test_knowledge_read_scope.py`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
+            "content": "sha256:a5a69b53a58dff42b2855eb9b137c3707af6dac687337586bda61a510d39bac6",
+            "locator": {
+              "end": 59,
+              "kind": "line_range",
+              "start": 57
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1620": {
+      "note": "**The packet's first non-conforming example, and the node `M1`/`M2` kill.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6839ec8adb0e987ab0ae64a2391cf27bc1cbd606",
+            "content": "sha256:01b96d95a32086cce401e101566384603e719f797336ca7ee06ee5568a9ad7cb",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_realization_the_candidate_removed_keeps_its_baseline_source_in_the_union"
+            },
+            "path": "mcp/tests/test_knowledge_diff_scope.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1621": {
+      "note": "**The present-outside-versus-absent distinction side by side, and the per-table rule-2 subsumption assertion.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6839ec8adb0e987ab0ae64a2391cf27bc1cbd606",
+            "content": "sha256:7e0c12e4d218ac0147405ab8bd4be751549d0c83e99be6b785ecf996452ca61f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_record_the_other_snapshot_holds_but_the_selection_missed_is_not_an_absence"
+            },
+            "path": "mcp/tests/test_knowledge_diff_scope.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1622": {
+      "note": "**The forbidden-overreach case: nine verdict words searched over the serialized response, with a positive control.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "73551cfb002f1420c4431ddb8a46eade70ddfa88",
+            "content": "sha256:dea61409c71ffb5e30c9d47e45d7e22123d04a719dd03b452386a90d5ce82b20",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_no_field_of_a_comparison_can_carry_a_strengthening_or_harmlessness_verdict"
+            },
+            "path": "mcp/tests/test_knowledge_diff_boundaries.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1623": {
+      "note": "**The node that drives a real candidate write and refuses its continuation, and the substituted-snapshot refusal.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "73551cfb002f1420c4431ddb8a46eade70ddfa88",
+            "content": "sha256:c2d3d9d16199c89e249796492e4c1d4268927146810cc889cc4740d104c09023",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_candidate_that_changed_after_a_continuation_refuses_the_continuation"
+            },
+            "path": "mcp/tests/test_knowledge_diff_boundaries.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1624": {
+      "note": "The expansion, the visible unattributed gap, and the filter that narrows the display and never the comparison.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "73551cfb002f1420c4431ddb8a46eade70ddfa88",
+            "content": "sha256:c4345dbfe7ef22d184ff764c83c6596abe291f73ccba157ed743f0ff16a7bba5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_expansion_names_both_requested_trees_and_every_path_they_differ_at"
+            },
+            "path": "mcp/tests/test_knowledge_diff_boundaries.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1625": {
+      "note": "**The fixture and the governed contract it is registered under.**\n\nAnchor: `knowledge-diff-cases`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
+            "content": "sha256:929342408eab986b85e474007d33b0398ae3cda343cf39c7a584d5cf1ebf0936",
+            "locator": {
+              "end": 27,
+              "kind": "line_range",
+              "start": 25
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1626": {
+      "note": "**The fixture and the governed contract it is registered under.**\n\nAnchor: `knowledge-diff-cases`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
+            "content": "sha256:929342408eab986b85e474007d33b0398ae3cda343cf39c7a584d5cf1ebf0936",
+            "locator": {
+              "end": 27,
+              "kind": "line_range",
+              "start": 25
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1627": {
+      "note": "**The harness that owns the admitted candidate and the recorded fixture.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1cb89d4b2b1b3adee4bd73989ab4a0703b287d97",
+            "content": "sha256:ad440580b360d5b792dc4c6539e6bf6b1f07f057124170de7482b2e6ee1c387d",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_recorded_fixture"
+            },
+            "path": "mcp/tests/test_knowledge_review_evidence_channels.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1628": {
+      "note": "**The refusal an over-budget population raises, which is why the loops live inside their cases.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37015e5725011204145c6d1d824b717f550f4ed4",
+            "content": "sha256:c5fd6518a2d5c334ecfc5e958e96bcde80ed2de7f5faca4a6c7538b5a3f98184",
+            "locator": {
+              "kind": "symbol",
+              "name": "pytest_collection_finish"
+            },
+            "path": "mcp/tests/conftest.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1629": {
+      "note": "The publish refusal names the one omitted member, for each of the nine.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9901ab65ec40f3a558b0efe13f76012e31131e28",
+            "content": "sha256:7d67736ab681640b043a8e6c7f6e218b141d1863dc55d1995f7e6c4ab2791853",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_publish_refusal_names_the_one_missing_publication_member"
+            },
+            "path": "mcp/tests/test_curator_coherence_publication_discoverability.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1630": {
+      "note": "The all-nine refusal names every member in declaration order.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9901ab65ec40f3a558b0efe13f76012e31131e28",
+            "content": "sha256:02f4c337fad1a1106fcfcf691fd5c643968601e98468721340bdd5afc857d415",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_publish_refusal_without_any_member_names_all_nine_in_declaration_order"
+            },
+            "path": "mcp/tests/test_curator_coherence_publication_discoverability.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1631": {
+      "note": "The positive control binds the declaration to the request model's own field order.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9901ab65ec40f3a558b0efe13f76012e31131e28",
+            "content": "sha256:b6595c00a097f0bc4a68c12f5fa9cce072eea4d26a1935db9367c0c7574c3bb1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_publish_with_every_publication_member_validates"
+            },
+            "path": "mcp/tests/test_curator_coherence_publication_discoverability.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1632": {
+      "note": "The prepare text is asserted from the real `_prepare` path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9901ab65ec40f3a558b0efe13f76012e31131e28",
+            "content": "sha256:3e1c789146cc606887cae4406d773129917460bab3dbe064d25fbb68b2fe61ef",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_prepare_states_the_complete_publication_input_set"
+            },
+            "path": "mcp/tests/test_curator_coherence_publication_discoverability.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1633": {
+      "note": "The sibling refusal names the supplied member for each read action.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9901ab65ec40f3a558b0efe13f76012e31131e28",
+            "content": "sha256:a134bf1bc317b296e726f92b3bf52456ce8f3f9aee347817affc72fcdad98c4d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_non_publish_actions_name_the_publication_member_they_received"
+            },
+            "path": "mcp/tests/test_curator_coherence_publication_discoverability.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1634": {
+      "note": "The multi-field refusal names every supplied field in model order, `judgments` included.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9901ab65ec40f3a558b0efe13f76012e31131e28",
+            "content": "sha256:14ea410173dfa53b6a1340dedf99171f92985f6be48e9c36292c40371fdb5a99",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_non_publish_refusal_names_every_supplied_field_in_model_order"
+            },
+            "path": "mcp/tests/test_curator_coherence_publication_discoverability.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1635": {
+      "note": "The freeze branch keeps its own named refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9901ab65ec40f3a558b0efe13f76012e31131e28",
+            "content": "sha256:53a4277ec61094a10193a07af475040e01c53e10fbc100087a42205422968a98",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_freeze_snapshot_keeps_its_own_named_refusal"
+            },
+            "path": "mcp/tests/test_curator_coherence_publication_discoverability.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1636": {
+      "note": "**The signal suite's 28 cases, including the nine-parameter required-field table and the two halves of \"a conclusion is unrepresentable\".**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "29d2dfb898d5a2be510e0ae86506a663a1f42b6a",
+            "content": "sha256:0a97382eba956794a9e9a87de035ff79cdbe2b7d6abc693faace54fd20507912",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_signal_missing_a_required_field_fails_construction"
+            },
+            "path": "mcp/tests/test_review_detection_models.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1637": {
+      "note": "The L27 pane-authority proof, its fixture import from the sibling sweeper suite, and the lane registration the fail-closed manifest requires.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "67ce1780223ee89ab9f5b577a9578add7e1063ee",
+            "content": "sha256:e3ce8a83d7bc17124f27f9501463eca0f5d6dfe9914852ca1addd0b35d02d496",
+            "locator": {
+              "kind": "symbol",
+              "name": "PaneDiagnosticAuthorityTests"
+            },
+            "path": "mcp/tests/test_terminal_liveness_pane_authority.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1638": {
+      "note": "**260913-LCA-L8:** the nine exact-consumer rows `mcp/tests/test_terminal_blocker_reasons.py` adds to the evidence registry under the `synthetic-test-evidence-candidate` contract.\n\nAnchor: `synthetic-test-evidence-candidate`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
+            "content": "sha256:625ef3f6d144761540680ace49bdf598cd4131a520507bf4bfe597d1b91012c0",
+            "locator": {
+              "end": 92,
+              "kind": "line_range",
+              "start": 90
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1639": {
+      "note": "The read fixture and its registered contract.\n\nAnchor: `knowledge-read-scope-cases`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
+            "content": "sha256:ffb0114b575d503e236977d47b97156ba49cd0ed7b171845390e4aeb3a642782",
+            "locator": {
+              "end": 57,
+              "kind": "line_range",
+              "start": 55
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1640": {
+      "note": "The two integration-lane rows the read's boundary and path modules occupy.\n\nAnchor: `mcp/tests/test_knowledge_read_boundaries.py`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
+            "content": "sha256:b5e6d6792ca6ebbb910495965f9b14d44a68adfd085054be24c637388986ef4a",
+            "locator": {
+              "end": 289,
+              "kind": "line_range",
+              "start": 287
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1641": {
+      "note": "**The fixture and the governed contract it is registered under.**\n\nAnchor: `knowledge-diff-cases`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
+            "content": "sha256:929342408eab986b85e474007d33b0398ae3cda343cf39c7a584d5cf1ebf0936",
+            "locator": {
+              "end": 27,
+              "kind": "line_range",
+              "start": 25
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1642": {
+      "note": "The new case module and its lane marker.\n\nAnchor: `pytestmark = pytest.mark.evidence_unit`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aca42eda5f218bb88734d11e4667a69d620be1e9",
+            "content": "sha256:0753257dc2b79f881f380b8681aa5ded3b4e356b794086776ece0c5b7a215bb4",
+            "locator": {
+              "end": 29,
+              "kind": "line_range",
+              "start": 29
+            },
+            "path": "mcp/tests/test_curator_coherence_judgment_evidence.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1643": {
+      "note": "The forbidden-name set the whole payload schema is walked against.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "02f29acb662ca678a1c2f6997c6c88f631ec55ca",
+            "content": "sha256:a07b511ae3d93de9a1f4c96b9822c32a78e067305fe9f082f7ec38642dd30459",
+            "locator": {
+              "kind": "symbol",
+              "name": "FORBIDDEN_FIELD_NAMES"
+            },
+            "path": "mcp/tests/test_knowledge_review_surface.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1644": {
+      "note": "The row-level proof that a full render stores nothing.\n\nAnchor: `def test_the_surface_stores_nothing_so_deleting_every_rendering_loses_no_canonical_information(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "02f29acb662ca678a1c2f6997c6c88f631ec55ca",
+            "content": "sha256:0f3bd55e47d0bc9861ad27029b63066314526721983461f8eae4e8984720891e",
+            "locator": {
+              "end": 497,
+              "kind": "line_range",
+              "start": 497
+            },
+            "path": "mcp/tests/test_knowledge_review_surface.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1645": {
+      "note": "The case that the adapter selects nothing, compared value for value.\n\nAnchor: `def test_the_adapter_selects_nothing_because_the_shipped_comparison_is_the_comparison_rendered(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "02f29acb662ca678a1c2f6997c6c88f631ec55ca",
+            "content": "sha256:0880bd70f45aebad20ab28dc22ab5d0b8f9558156ccec177c41bb2fae41f22b6",
+            "locator": {
+              "end": 510,
+              "kind": "line_range",
+              "start": 510
+            },
+            "path": "mcp/tests/test_knowledge_review_surface.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1646": {
+      "note": "The transport case: typed result, a 400 and a 503.\n\nAnchor: `def test_the_route_serves_the_typed_result_and_refuses_by_name_with_no_adapter(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8f853c4002c1d8c1779c4a72322db46fe09e058f",
+            "content": "sha256:c6130bc88a4671e87a2c1f3c3f6fd988eeeab8cfabc127ad47a910997cbac7ec",
+            "locator": {
+              "end": 247,
+              "kind": "line_range",
+              "start": 247
+            },
+            "path": "mcp/tests/test_knowledge_review_resolution_and_route.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1647": {
+      "note": "The two `consumers` registrations the module obliged.\n\nAnchor: `test_knowledge_review_surface`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
+            "content": "sha256:958666dad42955335319e715b2f7193de07bc03d78661a4a06d8d6542686fa1b",
+            "locator": {
+              "end": 304,
+              "kind": "line_range",
+              "start": 302
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1648": {
+      "note": "The five lane rows, appended rather than inserted.\n\nAnchor: `mcp/tests/test_next_step_address_binding.py`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
+            "content": "sha256:89e1d914a510ecfdbf5956d56eee0e6ff930e396cd16f4801fee46626ac185b3",
+            "locator": {
+              "end": 1274,
+              "kind": "line_range",
+              "start": 1272
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1649": {
+      "note": "**The four consumer registrations the two governed-support consumers and the item-16 case obliged.**\n\nAnchor: `mcp/tests/test_evidence_catalog_gate_boundaries.py`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
+            "content": "sha256:6a77f5f75d151f8e877400f89c3e1f5cb8f793409e8fc72805f73f03f0d822a3",
+            "locator": {
+              "end": 180,
+              "kind": "line_range",
+              "start": 178
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1650": {
+      "note": "**The budget pair the populations are measured against, and the `UsageError` that makes an over-budget lane execute zero tests.**\n\nAnchor: `unit_case_budget`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37015e5725011204145c6d1d824b717f550f4ed4",
+            "content": "sha256:bf68aa0375fc7968623485b80384a11acd8d5f678294709f947d755b80675bfc",
+            "locator": {
+              "end": 107,
+              "kind": "line_range",
+              "start": 107
+            },
+            "path": "mcp/tests/conftest.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1651": {
+      "note": "The scaffold the sibling imports, still exported from the kept module.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fcca75c35582b37105f048d0536ee42d366721c4",
+            "content": "sha256:351151f0f02bcae9c7db28b12ab0ab27f875614f8196964c197ccdf3fdf2ce34",
+            "locator": {
+              "kind": "symbol",
+              "name": "_pair"
+            },
+            "path": "mcp/tests/test_knowledge_review_attributed_source_content.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1652": {
+      "note": "The publication-input cases in their new home, asserting the declaration is the model's own field order.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9901ab65ec40f3a558b0efe13f76012e31131e28",
+            "content": "sha256:b6595c00a097f0bc4a68c12f5fa9cce072eea4d26a1935db9367c0c7574c3bb1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_publish_with_every_publication_member_validates"
+            },
+            "path": "mcp/tests/test_curator_coherence_publication_discoverability.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1653": {
+      "note": "**The module itself: the eight cases and the production composition they drive.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c0a2c0716ff604e0b11fe27d001364f53db5eac2",
+            "content": "sha256:63ec7b796d7c0062b9b913f86887f9d59ac926d08cd886085837eb6517ac4f90",
+            "locator": {
+              "kind": "symbol",
+              "name": "EndpointFixture"
+            },
+            "path": "mcp/tests/test_knowledge_review_source_endpoints.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1654": {
+      "note": "**The production owners the cases measure: the delegated resolution, the capture owner, and the recorded-range resolver.**\n\nAnchor: `resolve_review_candidate`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "03ddfd4d7cfa1d7d40eb93badc9bc3282806f94c",
+            "content": "sha256:3c60074951a879cf512ac031f51df94cbdddb02c3daf8df5be3747a54733e3f7",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 21
+            },
+            "path": "mcp/tests/test_historical_committed_leaf_review.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1655": {
+      "note": "**The two new classes and the fixtures they drive, including the `_selection()` narrowing helper the type-checked call sites need.**\n\nAnchor: `_selection()`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7e43d2693854c899b2a500728aa51e2d2676c2d1",
+            "content": "sha256:8fb7e921e792821ea87584f669e4948e4241e31e10f999ebbfe1fcf3a32baf1f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_selection"
+            },
+            "path": "mcp/tests/test_read_ar_files.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "7e43d2693854c899b2a500728aa51e2d2676c2d1",
+            "content": "sha256:65cef23352265187d2e2d741bdb1842a745d0082023a5b80b0e1112f1fb33c2c",
+            "locator": {
+              "end": 442,
+              "kind": "line_range",
+              "start": 442
+            },
+            "path": "mcp/tests/test_read_ar_files.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1656": {
+      "note": "**The carrier-parity case: the vocabulary is derived from a real page, and the unproduced camelCase variants are required to be absent.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7e43d2693854c899b2a500728aa51e2d2676c2d1",
+            "content": "sha256:0448f524c5e5be9fed1ea50d293d98fcb32086c3d0da27aba7e4d9fbcd3514c7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_carrier_uses_the_field_spellings_the_payload_actually_returns"
+            },
+            "path": "mcp/tests/test_read_ar_files.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1657": {
+      "note": "**The mounted-route class, which measures the block through the call an agent actually makes. Since MIK-R24 an unconverted memory tree is read as `legacy-format` there, so its two cases assert that, with and without a database.**\n\nAnchor: `legacy-format`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e9abf0956980a6a4a0964943a8fea86680a6f39f",
+            "content": "sha256:398aa230496e0b7d2ef9d5bd90da04c6e29db1e5db5b0f495e600e34cf44a929",
+            "locator": {
+              "end": 366,
+              "kind": "line_range",
+              "start": 366
+            },
+            "path": "mcp/tests/test_knowledge_bootstrap.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1658": {
+      "note": "**The no-datasets fixture shape and the selector-less request the task-context cases use.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c0a2c0716ff604e0b11fe27d001364f53db5eac2",
+            "content": "sha256:46d9f7666cc0c7c2bb4f794db653a432b1b39222a53a3ce630ee4e6522dddbaa",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_endpoint_fixture"
+            },
+            "path": "mcp/tests/test_knowledge_review_source_endpoints.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1659": {
+      "note": "**The four cases R02 is measured by through the real composition and the real route.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c0a2c0716ff604e0b11fe27d001364f53db5eac2",
+            "content": "sha256:b68bf652eb5ef6f597dec0fa6645f944b25bdcfea03dd859fa980cf7d57540da",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_task_context_review_lists_the_complete_source_inventory_with_no_knowledge_at_all"
+            },
+            "path": "mcp/tests/test_knowledge_review_source_endpoints.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1660": {
+      "note": "**The real-repository fixture and the six cases that measure the inventory against every change class.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "076fb4941f2eeec4b274ef7e06ea8b092a6a33da",
+            "content": "sha256:bb1793b7509d7c7883a849fdfff403e643336c53a1f417f71d96227b82b99c72",
+            "locator": {
+              "kind": "symbol",
+              "name": "InventoryFixture"
+            },
+            "path": "mcp/tests/test_review_source_inventory_boundaries.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1661": {
+      "note": "**The two new unit cases, the narrowing helper the optional selector obliged, and the selector-kind transport case.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "02f29acb662ca678a1c2f6997c6c88f631ec55ca",
+            "content": "sha256:ca9f033c76a105fd9705d603b5df139629dbfc53a9a11ce74b77ab001706b984",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_knowledge_only_change_leaves_an_openable_review_with_a_measured_empty_inventory"
+            },
+            "path": "mcp/tests/test_knowledge_review_surface.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1662": {
+      "note": "New-member context preserves the independent family counterpart.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "425092f3285d3d94542b2b0e0be045cade63d706",
+            "content": "sha256:936b54cf2ee3144291f0212472b79e7da972896a0c09564e87c5bad492d1561c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_new_member_keeps_the_existing_familys_before_context"
+            },
+            "path": "mcp/tests/test_review_family_context_population.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1663": {
+      "note": "Genuine ambiguity and exact requested history are distinct assertions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "425092f3285d3d94542b2b0e0be045cade63d706",
+            "content": "sha256:8c5a74167ce8a4b96a4f10f8c9de8e73dbae81ff859ab21120c1760732c6f7f7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_history_sentence_is_measured_against_the_family_owner"
+            },
+            "path": "mcp/tests/test_review_family_context_population.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1664": {
+      "note": "The lane row.\n\nAnchor: `mcp/tests/test_review_intent_summary.py`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
+            "content": "sha256:6379c8d4ea03e475d32c9c63c7e1f0d0857d330d733585e37a6f60c3300c0f99",
+            "locator": {
+              "end": 315,
+              "kind": "line_range",
+              "start": 313
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1665": {
+      "note": "The record-only successor case (L47-R1-F3).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a03ccb63b526f573166dc8f5f25d4746cfeaf963",
+            "content": "sha256:e08c68412231e30cc5bcb24aff2c8b57841cc9dd0b9b57f78ca1582ab9098aaa",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_record_only_successor_counts_once_on_each_side"
+            },
+            "path": "mcp/tests/test_review_intent_summary.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1666": {
+      "note": "The new cutover module's docstring: what it covers.\n\nAnchor: `The cutover's carried completions`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "21d19e2ee5a33d08e72509f9442ab49751e30f1f",
+            "content": "sha256:db796119f377e83d0a2ed15210f4d7bf2d73b14beaa0c35da3b06ef77ce40735",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/tests/test_knowledge_cutover.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1667": {
+      "note": "The new reopen module's docstring.\n\nAnchor: `Reopen after a converted closeout`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43c3ce60b302f5e61445491c0fe97a0fd7d84a69",
+            "content": "sha256:28597adf5136e2ba1d61d4df8d8959eedf617dd743b9671ceb6f6502aa18a15d",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/tests/test_knowledge_reopen.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1668": {
+      "note": "The two lane rows.\n\nAnchor: `mcp/tests/test_knowledge_reopen.py`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
+            "content": "sha256:22d87e4dc3a39759d3412035feb12fc3ad7a891bbfd0c29e28386df87c1378c4",
+            "locator": {
+              "end": 292,
+              "kind": "line_range",
+              "start": 290
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1669": {
+      "note": "The public closeout refuses an open item and commits once it is answered.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43c3ce60b302f5e61445491c0fe97a0fd7d84a69",
+            "content": "sha256:8031e67c7934ff8119bdbf79371644a07e0bc3347e70be2523b4ccf952bbc24b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_public_closeout_refuses_an_open_item_and_commits_once_it_is_answered"
+            },
+            "path": "mcp/tests/test_knowledge_reopen.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1670": {
+      "note": "`# The next-move triple, declared here so the worktree surface's guidance is part of`\n\nAnchor: `# The next-move triple, declared here`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6d887d74ea146178a0f34836a4a256d9d754071e",
+            "content": "sha256:5803dc2ebddf21f22c0ecc5740678648209cd21d62660d6964e8666ca6f9ca9a",
+            "locator": {
+              "end": 358,
+              "kind": "line_range",
+              "start": 358
+            },
+            "path": "mcp/src/agents_remember/models/worktree.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "1671": {
+      "note": "refuse a `nextTool` outside the roster (`_require_registered_public_next_tool`)",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6d887d74ea146178a0f34836a4a256d9d754071e",
+            "content": "sha256:2b53233df4625503e4879e38c3fc0c5019bd748a0acc0843a62721ded74b16ca",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_registered_public_next_tool"
+            },
+            "path": "mcp/src/agents_remember/models/worktree.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "1672": {
+      "note": "The trace's effective-prompt key, which the live capsule scenarios assert against.\n\nAnchor: \"the provider's own view of the effective prompt\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7e43a9a5faeb7066fa52b59977ca820f35c7efd6",
+            "content": "sha256:687dfc49b03dbf69ddd0f0a10ea4f3bd366e0fcc3e4ae08f1874ce6da930cdd3",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/eve_fixture_model.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1673": {
+      "note": "The lifecycle catalog registration for the shared support module, with its four derived consumers.\n\nAnchor: \"path = \\\"mcp/tests/eve_capsule_test_support.py\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
+            "content": "sha256:01be113c054f0e99dd8aa5b5ed8dd0ca72882a657510d31044232875c04cd48f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1674": {
+      "note": "The lifecycle catalog registration for the shared support module, with its four derived consumers.\n\nAnchor: \"path = \\\"mcp/tests/eve_capsule_test_support.py\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
+            "content": "sha256:01be113c054f0e99dd8aa5b5ed8dd0ca72882a657510d31044232875c04cd48f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1675": {
+      "note": "The lifecycle catalog registration for the shared support module, with its four derived consumers.\n\nAnchor: \"path = \\\"mcp/tests/eve_capsule_test_support.py\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
+            "content": "sha256:01be113c054f0e99dd8aa5b5ed8dd0ca72882a657510d31044232875c04cd48f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1676": {
+      "note": "The lifecycle catalog registration for the shared support module, with its four derived consumers.\n\nAnchor: \"path = \\\"mcp/tests/eve_capsule_test_support.py\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
+            "content": "sha256:01be113c054f0e99dd8aa5b5ed8dd0ca72882a657510d31044232875c04cd48f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1677": {
+      "note": "Development commands, budgets, diagnostic metrics and isolation.\n\nAnchor: `# Python test policy and commands`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6321de43731f72b2d339bd70b4d96eab67a7217b",
+            "content": "sha256:a85123f9aa59b6340adbb9b5d50e1b882ce06b6073b4e7076fb3814d9b2ba330",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "docs/design/python-pytest-bootstrap.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "1678": {
+      "note": "Certifying publication and accepting consumers.\n\nAnchor: `# Python Test Evidence Authority`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "27dd0858bebf6610971f6c4babbe6930da63fdf0",
+            "content": "sha256:e031bcf6ba0c8196da860d1cfb8a3e1516109874a3b47c8cf6eb3d6ff2bd88d5",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "docs/design/python-test-evidence.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "1679": {
+      "note": "The lane rows that admit both L14 modules to the `unit-regression` lane.\n\nAnchor: \"mcp/tests/test_citation_index_resilience.py\"; \"mcp/tests/test_fresh_user_harness.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "697a75039390b965929f3ba7a68c0ff8303231c3",
+            "content": "sha256:9f38d26d538086c30e5c99f2e770c822ee3c88b5630916b5cbad2855fd06df23",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1680": {
+      "note": "The three `scripts/e2e_harness` [[artifact]] rows a leaf under that permanent support root must register.\n\nAnchor: \"path = \\\"scripts/e2e_harness/fresh_user_fixture.py\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
+            "content": "sha256:01be113c054f0e99dd8aa5b5ed8dd0ca72882a657510d31044232875c04cd48f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1681": {
+      "note": "The three `scripts/e2e_harness` [[artifact]] rows a leaf under that permanent support root must register.\n\nAnchor: \"path = \\\"scripts/e2e_harness/fresh_user_fixture.py\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
+            "content": "sha256:01be113c054f0e99dd8aa5b5ed8dd0ca72882a657510d31044232875c04cd48f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1682": {
+      "note": "The three `scripts/e2e_harness` [[artifact]] rows a leaf under that permanent support root must register.\n\nAnchor: \"path = \\\"scripts/e2e_harness/fresh_user_fixture.py\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
+            "content": "sha256:01be113c054f0e99dd8aa5b5ed8dd0ca72882a657510d31044232875c04cd48f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1683": {
+      "note": "The three `scripts/e2e_harness` [[artifact]] rows a leaf under that permanent support root must register.\n\nAnchor: \"path = \\\"scripts/e2e_harness/fresh_user_fixture.py\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
+            "content": "sha256:01be113c054f0e99dd8aa5b5ed8dd0ca72882a657510d31044232875c04cd48f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1684": {
+      "note": "The three `scripts/e2e_harness` [[artifact]] rows a leaf under that permanent support root must register.\n\nAnchor: \"path = \\\"scripts/e2e_harness/fresh_user_fixture.py\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
+            "content": "sha256:01be113c054f0e99dd8aa5b5ed8dd0ca72882a657510d31044232875c04cd48f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1685": {
+      "note": "The three `scripts/e2e_harness` [[artifact]] rows a leaf under that permanent support root must register.\n\nAnchor: \"path = \\\"scripts/e2e_harness/fresh_user_fixture.py\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
+            "content": "sha256:01be113c054f0e99dd8aa5b5ed8dd0ca72882a657510d31044232875c04cd48f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1686": {
+      "note": "The three `scripts/e2e_harness` [[artifact]] rows a leaf under that permanent support root must register.\n\nAnchor: \"path = \\\"scripts/e2e_harness/fresh_user_fixture.py\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
+            "content": "sha256:01be113c054f0e99dd8aa5b5ed8dd0ca72882a657510d31044232875c04cd48f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1687": {
+      "note": "The three `scripts/e2e_harness` [[artifact]] rows a leaf under that permanent support root must register.\n\nAnchor: \"path = \\\"scripts/e2e_harness/fresh_user_fixture.py\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
+            "content": "sha256:01be113c054f0e99dd8aa5b5ed8dd0ca72882a657510d31044232875c04cd48f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1688": {
+      "note": "The lane rows that admit both L14 modules to the `unit-regression` lane.\n\nAnchor: \"mcp/tests/test_citation_index_resilience.py\"; \"mcp/tests/test_fresh_user_harness.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "697a75039390b965929f3ba7a68c0ff8303231c3",
+            "content": "sha256:9f38d26d538086c30e5c99f2e770c822ee3c88b5630916b5cbad2855fd06df23",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1689": {
+      "note": "The lane row that admits the L3 module: `test_memory_backfill.py` in the `unit-regression` lane.\n\nAnchor: \"mcp/tests/test_memory_backfill.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "697a75039390b965929f3ba7a68c0ff8303231c3",
+            "content": "sha256:9f38d26d538086c30e5c99f2e770c822ee3c88b5630916b5cbad2855fd06df23",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1690": {
+      "note": "The contract-scoped activation record: one record per series contract, keyed by the contract fingerprint rather than a source pair.\n\nAnchor: \"def contract_fingerprint(\"; \"def activation_path(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "682aa80f78746e7ec45a149845acbbf31f95811f",
+            "content": "sha256:02fe41f3e0297396ae35272bf58870d9c98171e6d662bdb563c7fc2dca96acb1",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "1691": {
+      "note": "The L36 lane registration the fail-closed manifest requires.\n\nAnchor: \"mcp/tests/test_cross_master_concurrency.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "697a75039390b965929f3ba7a68c0ff8303231c3",
+            "content": "sha256:9f38d26d538086c30e5c99f2e770c822ee3c88b5630916b5cbad2855fd06df23",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1692": {
+      "note": "The lane registration the fail-closed manifest requires for that module.\n\nAnchor: \"mcp/tests/test_lifecycle_playthrough_end_to_end.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "697a75039390b965929f3ba7a68c0ff8303231c3",
+            "content": "sha256:9f38d26d538086c30e5c99f2e770c822ee3c88b5630916b5cbad2855fd06df23",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1693": {
+      "note": "The L4 census module's lane row, which closed the gap the L4 route section recorded.\n\nAnchor: \"mcp/tests/test_memory_attribution_producers.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "697a75039390b965929f3ba7a68c0ff8303231c3",
+            "content": "sha256:9f38d26d538086c30e5c99f2e770c822ee3c88b5630916b5cbad2855fd06df23",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1694": {
+      "note": "The lane registration the fail-closed manifest requires for that module (row 165 after the KS-L2 and KS-L3 insertions).\n\nAnchor: \"mcp/tests/test_lifecycle_playthrough_end_to_end.py\"; \"mcp/tests/test_pause_stop_only_end_to_end.py\"; \"mcp/tests/test_pause_is_not_publication.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "697a75039390b965929f3ba7a68c0ff8303231c3",
+            "content": "sha256:9f38d26d538086c30e5c99f2e770c822ee3c88b5630916b5cbad2855fd06df23",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1695": {
+      "note": "The architecture-fitness lane registration the fail-closed manifest requires for that proof.\n\nAnchor: \"mcp/tests/test_terminal_liveness_pane_authority.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "697a75039390b965929f3ba7a68c0ff8303231c3",
+            "content": "sha256:9f38d26d538086c30e5c99f2e770c822ee3c88b5630916b5cbad2855fd06df23",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1696": {
+      "note": "The rewritten contract-scoped activation forcing suite and its shared-source-pair fixture.\n\nAnchor: `class ActivationFixture`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "598b2015f9054a298a1a3e54896cfb6ec238b38c",
+            "content": "sha256:507fe7f17c405a28f5565b823837dad8ef080ec2b48747d6430a73823044c9ea",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_atomic_series_activation.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1697": {
+      "note": "The shared fixture world the seam's cases are built on.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fd4bfaa2951ad9ceca924016f78a0355bc0928c1",
+            "content": "sha256:4a51051801665e9f353d8b60a6c7a718eace43f8e792ee072e6f651f4ffaa7b6",
+            "locator": {
+              "kind": "symbol",
+              "name": "FixtureWorld"
+            },
+            "path": "mcp/tests/eve_capsule_test_support.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1698": {
+      "note": "The launch-binding fixture that makes the adapter suite's launches verifiable.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5df10e7a13c0ae403d119e8416558b7fe7b608d6",
+            "content": "sha256:07865559f165c23c1652d86d3921ea35bda2e7de341dcb3a3107366b46d5a0a3",
+            "locator": {
+              "kind": "symbol",
+              "name": "fixture_launch_binding"
+            },
+            "path": "mcp/tests/eve_adapter_test_support.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1699": {
+      "note": "Final memory adapter requires the selected four-code-terminal prefix.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f7b59934d4c1a98bbc511a7df67311083ace2c01",
+            "content": "sha256:444173f862af3429a6e23c2b5ccb23231c9a1be6af7c1c03b08d7778bcad5d9c",
+            "locator": {
+              "kind": "symbol",
+              "name": "PreparedMemoryCertificationAdapter"
+            },
+            "path": "mcp/src/agents_remember/application/prepared_certification.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "1700": {
+      "note": "Finalization consumes original selected fifth-certificate inputs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4fc36e65dd21de71100edb1587afb5484b9e9771",
+            "content": "sha256:40757eadc95735685c47d292e216082eb307fa75f2edc755bd5fbcbc7aa4c6f5",
+            "locator": {
+              "kind": "symbol",
+              "name": "PreparedCloseoutContinuation"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/preparation/continuation.py"
           },
           "kind": "code"
         }
@@ -200,7 +5182,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e8bdf251226d481d7582f6d4b4a34634d0fa25be",
+            "blob": "37015e5725011204145c6d1d824b717f550f4ed4",
             "content": "sha256:7716b0fc6f4492586181089d9da952259b1b4a1e6e0d7c8925f4f1b4ea477114",
             "locator": {
               "kind": "symbol",
@@ -274,83 +5256,6 @@
             "path": "mcp/test_support/agents_remember_test_support/testing/lane_manifest.py"
           },
           "kind": "code"
-        }
-      ]
-    },
-    "27": {
-      "note": "The install-contract module.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "95a0431d80346ab6b5f91344a1149d1244620ce3",
-            "content": "sha256:c33bca6b0078227d93a714ec6b93674357650fb7ed5add0b8fe93ddb167ec063",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_install_reads_added_shared_block_at_call_and_provisions_once"
-            },
-            "path": "mcp/tests/test_paseo_install_contract.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "28": {
-      "note": "The no-stop module.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4f4eefe190aeda7e299f77c8d8b44c821a634640",
-            "content": "sha256:8627d1d969466fe6ed2b035d988c16b9722a340afc4df3776613327fee500aec",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_install_preserves_live_host_after_successful_admission"
-            },
-            "path": "mcp/tests/test_paseo_install_no_stop.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "4f4eefe190aeda7e299f77c8d8b44c821a634640",
-            "content": "sha256:803991024c097d5a87b9e2945e8d292d3008bf81f4f43710186fec42ca70523d",
-            "locator": {
-              "end": 104,
-              "kind": "line_range",
-              "start": 84
-            },
-            "path": "mcp/tests/test_paseo_install_no_stop.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "29": {
-      "note": "The node module.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "cb9ffce8560b0111ffce23279ecf676ca9c82c92",
-            "content": "sha256:a73abc958ab83d62874373f56ea63bf54899649b2b51470776ef2e7e14422ec0",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_verified_archive_is_placed_as_a_whole"
-            },
-            "path": "mcp/tests/test_paseo_node.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "cb9ffce8560b0111ffce23279ecf676ca9c82c92",
-            "content": "sha256:97666e938365a819bfc62e9b25892c40e50c46207b06c0f86ebc14a56e9c03ba",
-            "locator": {
-              "end": 88,
-              "kind": "line_range",
-              "start": 68
-            },
-            "path": "mcp/tests/test_paseo_node.py"
-          },
-          "kind": "test"
         }
       ]
     },
@@ -428,7 +5333,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e8bdf251226d481d7582f6d4b4a34634d0fa25be",
+            "blob": "37015e5725011204145c6d1d824b717f550f4ed4",
             "content": "sha256:f6cfa9c9114bb478696ea6932cf4cc88bd4f0ab3ab9a872d03ec0f6d0c2f4b3b",
             "locator": {
               "kind": "symbol",
@@ -564,7 +5469,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e8bdf251226d481d7582f6d4b4a34634d0fa25be",
+            "blob": "37015e5725011204145c6d1d824b717f550f4ed4",
             "content": "sha256:c5fd6518a2d5c334ecfc5e958e96bcde80ed2de7f5faca4a6c7538b5a3f98184",
             "locator": {
               "kind": "symbol",

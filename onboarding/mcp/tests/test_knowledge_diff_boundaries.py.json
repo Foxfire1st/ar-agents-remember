@@ -115,6 +115,474 @@
           "kind": "test"
         }
       ]
+    },
+    "33": {
+      "note": "The integration marker, the fixture, the request builder and the public-seam driver.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "73551cfb002f1420c4431ddb8a46eade70ddfa88",
+            "content": "sha256:16892ee5fae12d79fecfa63d1c7f7f64edd17e02070536602dec5cce18a887bc",
+            "locator": {
+              "kind": "symbol",
+              "name": "fixture"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "73551cfb002f1420c4431ddb8a46eade70ddfa88",
+            "content": "sha256:cef7f773ba983abbab18d3fedff66bb85806f063456038e8bd00c0562718af00",
+            "locator": {
+              "kind": "symbol",
+              "name": "pytestmark"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "73551cfb002f1420c4431ddb8a46eade70ddfa88",
+            "content": "sha256:31905db8ba295dd1725e7ee38113dfdcb8ebac59e31ea6ef8b2bb8f34b8ceb92",
+            "locator": {
+              "kind": "symbol",
+              "name": "request_for"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "73551cfb002f1420c4431ddb8a46eade70ddfa88",
+            "content": "sha256:702ac3e9cbd1ba751b082703dcd3f999e846cecd59f3b6640771f896502ae210",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_diff"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "34": {
+      "note": "The two readers that let a case name a record rather than a position.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "73551cfb002f1420c4431ddb8a46eade70ddfa88",
+            "content": "sha256:23136c191d329bad8378a9b2c45e29808ca14e28223091197d79e58b17e526ea",
+            "locator": {
+              "kind": "symbol",
+              "name": "items_of"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "73551cfb002f1420c4431ddb8a46eade70ddfa88",
+            "content": "sha256:8de2e80a5157a10bc86ddc65dbe22b349778d1e0d32104a8d0ecf672890c793c",
+            "locator": {
+              "kind": "symbol",
+              "name": "item_for"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "35": {
+      "note": "**The expansion naming both requested trees and every path they differ at, with the reproducing command and no `HEAD`.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "73551cfb002f1420c4431ddb8a46eade70ddfa88",
+            "content": "sha256:c4345dbfe7ef22d184ff764c83c6596abe291f73ccba157ed743f0ff16a7bba5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_expansion_names_both_requested_trees_and_every_path_they_differ_at"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "36": {
+      "note": "**The changed path no recorded realization attributes, listed as a visible gap that survives a filter.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "73551cfb002f1420c4431ddb8a46eade70ddfa88",
+            "content": "sha256:5cb8acf6aa1955acd1c100e7f63a4afa03e0fbdcf9cdf6d81fcc982313d3c894",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_changed_path_no_recorded_realization_attributes_is_listed_as_a_visible_gap"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "37": {
+      "note": "The moved obligation's source observed on the side that claims it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "73551cfb002f1420c4431ddb8a46eade70ddfa88",
+            "content": "sha256:3ac66ba962b428b4cdbc8545bed0b514c4c33337d50d2a518d889852e4c38dd7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_attributed_source_of_a_moved_obligation_is_observed_on_the_side_that_claims_it"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "38": {
+      "note": "**A small display budget paging the comparison without shrinking its totals.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "73551cfb002f1420c4431ddb8a46eade70ddfa88",
+            "content": "sha256:f4d312062a40b56bf0941b217f1e096a7cd4b59d128aa52edba409e2d4f34484",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_small_display_budget_pages_the_comparison_without_shrinking_its_totals"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "39": {
+      "note": "**A missing side refusing and substituting no other snapshot.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "73551cfb002f1420c4431ddb8a46eade70ddfa88",
+            "content": "sha256:655daeea8c7739c8acf8c22fca10bb4dbb9e0d472e7a811076be7efadb4188e6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_missing_side_refuses_and_substitutes_no_other_snapshot"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "40": {
+      "note": "**The real candidate write that moves the logical digest and refuses the continuation, and the helper that makes the write through the public store.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "73551cfb002f1420c4431ddb8a46eade70ddfa88",
+            "content": "sha256:4d2047a186a58b6d41cddbc256b3d18f40b2c5164bafe39cab8868e03696224c",
+            "locator": {
+              "kind": "symbol",
+              "name": "add_unrelated_revision"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "41": {
+      "note": "**A continuation against another selector refusing and returning no page.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "73551cfb002f1420c4431ddb8a46eade70ddfa88",
+            "content": "sha256:da0468f469c150060819b26311e309bf35b06772177df7a4679afdc1ca80dba4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_continuation_presented_against_another_selector_refuses_and_returns_no_page"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "42": {
+      "note": "**A side naming another snapshot of its own file refused before any page — the node the review's `R22` form kills.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "73551cfb002f1420c4431ddb8a46eade70ddfa88",
+            "content": "sha256:80338ad0480138b0d1a17abc2caacbda0eae5eeaed3cb4afd038e26a71f4b211",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_side_naming_another_snapshot_of_its_own_file_refuses_before_any_page"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "43": {
+      "note": "**The forbidden-overreach case: nine verdict words searched over the serialized response, with a positive control.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "73551cfb002f1420c4431ddb8a46eade70ddfa88",
+            "content": "sha256:dea61409c71ffb5e30c9d47e45d7e22123d04a719dd03b452386a90d5ce82b20",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_no_field_of_a_comparison_can_carry_a_strengthening_or_harmlessness_verdict"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "44": {
+      "note": "The two change statements kept apart, and the record comparison reporting exactly the field that changed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "73551cfb002f1420c4431ddb8a46eade70ddfa88",
+            "content": "sha256:7ed33191ace74f5b6fe429e09a8d91b105f4238f792fc8de7e3dad9a69ccae8f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_record_comparison_reports_exactly_the_payload_field_that_changed"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "73551cfb002f1420c4431ddb8a46eade70ddfa88",
+            "content": "sha256:0227960c51252fe00261d1f85b30502b8be48ee617faea9c427ff52333de85f7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_two_change_statements_are_separate_fields_and_neither_implies_the_other"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "45": {
+      "note": "The input-substitution and scope-rewording helpers the last group of cases uses.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "73551cfb002f1420c4431ddb8a46eade70ddfa88",
+            "content": "sha256:3a2ae0ee476b16bd406912a24291bf877365d11bdface57055bcf15bc0e69364",
+            "locator": {
+              "kind": "symbol",
+              "name": "_substitute"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "73551cfb002f1420c4431ddb8a46eade70ddfa88",
+            "content": "sha256:aa6d9e334378336e12af9e774b9807d5a9501e3857781ed9409a8e22f44170d9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_substituting"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "73551cfb002f1420c4431ddb8a46eade70ddfa88",
+            "content": "sha256:553bb187d0ccab8b20b72fe69617c50e10501da87ec0f3d4383453586a788815",
+            "locator": {
+              "kind": "symbol",
+              "name": "selected_scopes"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "73551cfb002f1420c4431ddb8a46eade70ddfa88",
+            "content": "sha256:e6374a06b33aae533e29efb296e36491210e1e2c87b96d6cef09a9c27c3285d7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_rewording"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "46": {
+      "note": "**A page of a selection being what the comparison displays and not what it selected.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "73551cfb002f1420c4431ddb8a46eade70ddfa88",
+            "content": "sha256:9208103b48fdeeb0b58d3f182f591d4b2694768f1b0b6c2888ff57b0ea0c931a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_page_of_a_selection_is_what_the_comparison_displays_not_what_it_selected"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "47": {
+      "note": "The two non-claims: no mounted UI and no approval, and an unavailable observation never reported as a change set — now with the partition asserted too (no total at all, empty third list, the undetermined limit declared and no counted omission).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "73551cfb002f1420c4431ddb8a46eade70ddfa88",
+            "content": "sha256:5d7f82afa9edce61929ce9e9b14a3d328807191ddc3f7298079fe0625d5227ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_unavailable_observation_is_reported_as_unavailable_and_never_as_a_change_set"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "73551cfb002f1420c4431ddb8a46eade70ddfa88",
+            "content": "sha256:6ee78c11c3c0d84f12fcacad355068578bd7c1c0fa9ef05468222155288b0610",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_comparison_names_no_mounted_ui_and_no_approval_it_cannot_make"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "48": {
+      "note": "**The probe that measured the trees being what makes a gap visible.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "73551cfb002f1420c4431ddb8a46eade70ddfa88",
+            "content": "sha256:155ecab90583890cccafa8fe89d7814a351addca813226746f4cff6a258b5e31",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_probe_that_measured_the_trees_is_what_makes_a_gap_visible"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "49": {
+      "note": "The production probe these cases drive rather than substitute.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e31dd9e23ad14ea40b5941e0fd5aff95be241e1",
+            "content": "sha256:75cc4fbd0593f56af28ddcc9b8b65c1b4de6c05e2440466710bdefdcda3336e2",
+            "locator": {
+              "kind": "symbol",
+              "name": "git_tree_difference_probe"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_diff.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "50": {
+      "note": "The integration-lane row this module occupies, and the read-scope artifact whose consumer list it joined.\n\nAnchor: `\"mcp/tests/test_knowledge_diff_boundaries.py\"`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "837e915726adb29076ca1c3afe50a1d441d6ea30",
+            "content": "sha256:43230098effe611fcd8d17c1eeaffe2f58ffc492f05ad1875158c95c069efe77",
+            "locator": {
+              "end": 355,
+              "kind": "line_range",
+              "start": 355
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "65ceaeb4c6e3bcf64ec78176b74b507a84a69233",
+            "content": "sha256:43230098effe611fcd8d17c1eeaffe2f58ffc492f05ad1875158c95c069efe77",
+            "locator": {
+              "end": 245,
+              "kind": "line_range",
+              "start": 245
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "65ceaeb4c6e3bcf64ec78176b74b507a84a69233",
+            "content": "sha256:43230098effe611fcd8d17c1eeaffe2f58ffc492f05ad1875158c95c069efe77",
+            "locator": {
+              "end": 528,
+              "kind": "line_range",
+              "start": 528
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "65ceaeb4c6e3bcf64ec78176b74b507a84a69233",
+            "content": "sha256:43230098effe611fcd8d17c1eeaffe2f58ffc492f05ad1875158c95c069efe77",
+            "locator": {
+              "end": 1174,
+              "kind": "line_range",
+              "start": 1174
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "65ceaeb4c6e3bcf64ec78176b74b507a84a69233",
+            "content": "sha256:43230098effe611fcd8d17c1eeaffe2f58ffc492f05ad1875158c95c069efe77",
+            "locator": {
+              "end": 1708,
+              "kind": "line_range",
+              "start": 1708
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "65ceaeb4c6e3bcf64ec78176b74b507a84a69233",
+            "content": "sha256:43230098effe611fcd8d17c1eeaffe2f58ffc492f05ad1875158c95c069efe77",
+            "locator": {
+              "end": 1774,
+              "kind": "line_range",
+              "start": 1774
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "65ceaeb4c6e3bcf64ec78176b74b507a84a69233",
+            "content": "sha256:43230098effe611fcd8d17c1eeaffe2f58ffc492f05ad1875158c95c069efe77",
+            "locator": {
+              "end": 2047,
+              "kind": "line_range",
+              "start": 2047
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

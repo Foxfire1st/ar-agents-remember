@@ -1,6 +1,75 @@
 {
   "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/worker.md",
   "realizes": [],
-  "references": {},
+  "references": {
+    "1": {
+      "note": "The packaged worker declares its seat purpose, authority boundary, and no-commit contract.\n\nAnchor: `# Worker`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7ef8f7882d406362133d4f880ea9426d61473e9a",
+            "content": "sha256:49be23014dba0b8542d32bae234c60fd500f75078f92117ffb61841ecd2b58e5",
+            "locator": {
+              "end": 8,
+              "kind": "line_range",
+              "start": 6
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The role is a self-contained capsule — everything this seat does is on this page — and it declares no inherited shared sources.\n\nAnchor: `handover`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7ef8f7882d406362133d4f880ea9426d61473e9a",
+            "content": "sha256:d75d887dd8ef78b99003fc620a6197d4420347f3a0917663df648070964f51ac",
+            "locator": {
+              "end": 8,
+              "kind": "line_range",
+              "start": 8
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The canonical source owns this doctrine.\n\nAnchor: `l-01-agent-lifecycles-role-worker`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7ef8f7882d406362133d4f880ea9426d61473e9a",
+            "content": "sha256:5f3d1154ebbd6680d1333d73a7b95ee7d823f0fe4084db5391fde6c9c649dc5a",
+            "locator": {
+              "end": 4,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "MCP package data is copied from canonical skills and checked for drift.\n\nAnchor: `l-01-agent-lifecycles-role-worker`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7ef8f7882d406362133d4f880ea9426d61473e9a",
+            "content": "sha256:5f3d1154ebbd6680d1333d73a7b95ee7d823f0fe4084db5391fde6c9c649dc5a",
+            "locator": {
+              "end": 4,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
   "schema": "ar-onboarding-file/v1"
 }

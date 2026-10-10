@@ -99,6 +99,55 @@
         }
       ]
     },
+    "17": {
+      "note": "- The relation this module owns, stated as one exact pair.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f07a75805858d1fbe33d3cf8764f519623e075f2",
+            "content": "sha256:2467e2e45d46e15ee0daf750503729a63e3f5c9adcf625e3ad2416c4917f53fd",
+            "locator": {
+              "kind": "symbol",
+              "name": "find_membership_by_pair"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "- The reverse read (invariant revision to families) over the same rows.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f07a75805858d1fbe33d3cf8764f519623e075f2",
+            "content": "sha256:079cd24f66f0df288bf260e0a82471627b2a7967029960ada956a41fac02dbf5",
+            "locator": {
+              "kind": "symbol",
+              "name": "list_families_for_invariant_revision"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "- The declared `family_member` table, its unique tuple, its index and its no-repoint trigger.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e27550d32bfd12f38a8b3393ad8622114eb677a",
+            "content": "sha256:1efcb530f1e377466f79224937603ba0b0bc9f31377d471199e8f89853430953",
+            "locator": {
+              "kind": "symbol",
+              "name": "TABLE_DDL"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "7": {
       "note": "The retained invariant-to-family read returns stored memberships in stable order.",
       "targets": [

@@ -18,6 +18,121 @@
         }
       ]
     },
+    "11": {
+      "note": "The module docstring: the forms and who shares them.\n\nAnchor: `planned`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "afdf823cf2c4166590f16c1dee56f27346651b24",
+            "content": "sha256:55229f2889c19aad07e98c30707e8d38e5274ad3f8ab62724b998ec759485e85",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The item kind, the unknown-subject fact and the dispositions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "afdf823cf2c4166590f16c1dee56f27346651b24",
+            "content": "sha256:a66a8278c4c61b1e8d3739a46787415e1d56e55e12bc33926167c1076d6391a4",
+            "locator": {
+              "kind": "symbol",
+              "name": "PLANNED_ITEM_KIND"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The ref keys each disposition takes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "afdf823cf2c4166590f16c1dee56f27346651b24",
+            "content": "sha256:cb94fa4ffe6310cf4ff54412b0abf458d8f0f399b13bdf283c547eabaf3e6ec5",
+            "locator": {
+              "kind": "symbol",
+              "name": "REFS_BY_DISPOSITION"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The declared, planned and requirement-ref patterns.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "afdf823cf2c4166590f16c1dee56f27346651b24",
+            "content": "sha256:75b301649e713f35b2c329bd46e5327926038ed9a3dc2610ebf226dc6903b68b",
+            "locator": {
+              "kind": "symbol",
+              "name": "DECLARED_SUBJECT_PATTERN"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The stored-item predicate for the gate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "afdf823cf2c4166590f16c1dee56f27346651b24",
+            "content": "sha256:34f497eef3153dc8d02978bf9783e12b4919c4387896f082df4e323d586a7fa8",
+            "locator": {
+              "kind": "symbol",
+              "name": "planned_item_open"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The history row model built on these forms.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8eddf9a60675e813e76cdffb4719bc8f0f565b78",
+            "content": "sha256:621bc2e6a508d74aa5f647066d6609eb5b704b98b1ae0c35578a234bf946e695",
+            "locator": {
+              "kind": "symbol",
+              "name": "PlannedEffectRow"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge_files/history.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "The predicate agrees with `satisfiedBy` on every item.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c7852e87c4c2eb41c0ab66973a0e148888c604ff",
+            "content": "sha256:e5843fff97a252979221547a2bb897adadfa857a52373ed518f29daac2bdcfec",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_planned_row_answers_its_item_and_the_stored_predicate_agrees"
+            },
+            "path": "mcp/tests/test_planned_knowledge_effects.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
     "9": {
       "note": "`planned_subject` implements the retained boundary described above.",
       "targets": [

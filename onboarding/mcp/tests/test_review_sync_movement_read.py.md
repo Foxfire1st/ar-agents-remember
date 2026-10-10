@@ -23,7 +23,18 @@ The projection maps current/moved/unmeasured to current/stale/not-measured and c
 - A memory-only movement matters when code still matches.
 - Unavailable and unmeasured are not agreement.
 
+### Todos
+
+None recorded.
+
 ## Evidence
+
+### Docs References
+
+No domain documentation source is configured for this repository — the memory layer's `system/sources.md`
+records no entries at all. The statements below are grounded in repository source only.
+
+No configured domain documentation could be checked.
 
 ### Repo-Internal References
 
@@ -45,6 +56,12 @@ The projection maps current/moved/unmeasured to current/stale/not-measured and c
 
 - Current shared enclosure and sibling measurement. [30]
 
+
+- The `unavailable` value: an absence reported with its reason and without an agreement clause. [31]
+- One accepted record projected, with resolved identities carried exactly on the channel that moved. [32]
+- The record model and its self-consistency validator the projected movement reads. [33]
+
+- The production sync tool whose payload the read-side block is attached to. [34]
 
 ### Cross-Repo References
 

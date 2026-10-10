@@ -65,6 +65,220 @@
           "kind": "code"
         }
       ]
+    },
+    "23": {
+      "note": "The version and selection-rule literals, carried as fields so the answer travels with the record.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "296b288583ead598ff029a9527dbe8416ba5430d",
+            "content": "sha256:9078d5a501ba9d7b18a6022cf00e60e112ae352cd1693a45f1e841cf5acc2b4a",
+            "locator": {
+              "kind": "symbol",
+              "name": "FINAL_OUTPUT_RECEIPT_VERSION"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "**The two phases are separate records because each is a measurement taken at its own moment, and the published dataset can move between them.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "296b288583ead598ff029a9527dbe8416ba5430d",
+            "content": "sha256:f9929096ae16c8d6b0114ba8fca367e294fc225f0d0d3147633c3d1f2653a285",
+            "locator": {
+              "kind": "symbol",
+              "name": "FinalOutputPhase"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "**`not-comparable` is a channel with nothing on one side to compare, and it never makes the receipt `moved`.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "296b288583ead598ff029a9527dbe8416ba5430d",
+            "content": "sha256:1d5faf0bc8bc682ddf9dfbe4b79447e4e509c0401e46ed78d0be9fcefba7afd2",
+            "locator": {
+              "kind": "symbol",
+              "name": "MatchState"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "26": {
+      "note": "The three states of the declared publication location, in the resolving route's own vocabulary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "296b288583ead598ff029a9527dbe8416ba5430d",
+            "content": "sha256:b3b5455b2913b6cccef6f14762f47b4397fbcf5ec557b137e95915af7c13c32f",
+            "locator": {
+              "kind": "symbol",
+              "name": "PublishedKnowledgeState"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "28": {
+      "note": "The code channel's comparison: delivered tree against reviewed candidate tree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "296b288583ead598ff029a9527dbe8416ba5430d",
+            "content": "sha256:e121461b497175ab9a0757f9b873218bd99443384382961c13d6cf3b27ae9364",
+            "locator": {
+              "kind": "symbol",
+              "name": "code_match_state"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "29": {
+      "note": "**The knowledge channel: `not-comparable` whenever one side is not a dataset at all, and never `matches` when nothing was compared.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "296b288583ead598ff029a9527dbe8416ba5430d",
+            "content": "sha256:8f76de03c76f98bbc71a524ae65ef4cfa9ea6ddfae3cbd305844595645ee0509",
+            "locator": {
+              "kind": "symbol",
+              "name": "knowledge_match_state"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "31": {
+      "note": "The record itself: the generation's identities, the delivered commits and trees, the published identity, the two match verdicts and the one state.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "296b288583ead598ff029a9527dbe8416ba5430d",
+            "content": "sha256:97fed40431860faebba44f54fbe868776770b28aeda5853a120df76bc1ac5a21",
+            "locator": {
+              "kind": "symbol",
+              "name": "LegacyFinalOutputReceipt"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "33": {
+      "note": "**The one sentence the record publishes, derived from its own fields, one clause per verdict.**\n\nAnchor: `statement`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "296b288583ead598ff029a9527dbe8416ba5430d",
+            "content": "sha256:d0700d9ce9f62bc8590288b414390030bafabe8322e63ce635655a0e58f3dc1b",
+            "locator": {
+              "end": 322,
+              "kind": "line_range",
+              "start": 310
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "34": {
+      "note": "The shared shapes this vocabulary reuses rather than re-declaring.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "138358a5feab44724703f06dfe3ff24c231ee322",
+            "content": "sha256:770c387ee275ee397402391f33ba68467fe3c4e8fd0f6411e59f57807632a7d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeModel"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/base.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "35": {
+      "note": "The identity the published channel carries when a dataset really was read.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9b2bf18774207aaeb442ff737297b3233369a1f3",
+            "content": "sha256:ed0b1757671c569f93a5ecce887e3462143ef5ebd403a5b7913bf17289a76917",
+            "locator": {
+              "kind": "symbol",
+              "name": "SnapshotIdentity"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/candidate.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "36": {
+      "note": "The one verdict rule and why it has three values (v1 legacy).\n\nAnchor: lines 110-131",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "296b288583ead598ff029a9527dbe8416ba5430d",
+            "content": "sha256:c6b1d9d4e987cbda812f087934b79935126a5b2367fd8abafe909c18cf97d4fc",
+            "locator": {
+              "end": 131,
+              "kind": "line_range",
+              "start": 110
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "37": {
+      "note": "The single verdict expression both the writer and the validator call, so they cannot disagree (v1 `final_output_verdict`; v2 calls `tree_output_verdict`).\n\nAnchor: lines 110-131",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "296b288583ead598ff029a9527dbe8416ba5430d",
+            "content": "sha256:c6b1d9d4e987cbda812f087934b79935126a5b2367fd8abafe909c18cf97d4fc",
+            "locator": {
+              "end": 131,
+              "kind": "line_range",
+              "start": 110
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "38": {
+      "note": "The validator that refuses a record whose verdicts do not follow from the identities it carries (v1 `_the_receipt_agrees_with_itself`; v2 validates tree binding in `_validate_tree_binding`).\n\nAnchor: lines 189-258",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "296b288583ead598ff029a9527dbe8416ba5430d",
+            "content": "sha256:a47e45e4dfa1c03fc4efcbd0eaf3bce806c19bbf9960da0ed8701aa925567275",
+            "locator": {
+              "end": 258,
+              "kind": "line_range",
+              "start": 189
+            }
+          },
+          "kind": "code"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

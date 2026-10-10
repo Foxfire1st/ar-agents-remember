@@ -99,6 +99,291 @@
           "kind": "test"
         }
       ]
+    },
+    "17": {
+      "note": "**The fixture's declared topology and why this graph and not the shared branching one.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9f0492ab5aba8203333707f64fbc4914d432963f",
+            "content": "sha256:1c1cc0d822b84b2e2bc2985992d154d169a88e6928a5f1b59eaf352820ef9079",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_read_scope_fixture"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "18": {
+      "note": "The graph constants: the labels, statements, conditions and the four direct family guarantees.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9f0492ab5aba8203333707f64fbc4914d432963f",
+            "content": "sha256:ad679459dab5c2a84e88aa007ca1ff7991d2f7b4e12468d39d6e6dd8d70cf7da",
+            "locator": {
+              "kind": "symbol",
+              "name": "RETRY_LABEL"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9f0492ab5aba8203333707f64fbc4914d432963f",
+            "content": "sha256:e0aaeab559961677d040e05cfb3e9c9618f232238087944f80a0f7bb869cf72d",
+            "locator": {
+              "kind": "symbol",
+              "name": "BATCH_LABEL"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9f0492ab5aba8203333707f64fbc4914d432963f",
+            "content": "sha256:7633f099fdba63fb16e8f14ec87229e741b1f8582cd227650747290af3931796",
+            "locator": {
+              "kind": "symbol",
+              "name": "RESOLUTION_LABEL"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9f0492ab5aba8203333707f64fbc4914d432963f",
+            "content": "sha256:b081be6e423b89978cd024b7efb50d8ac2d782b89577a5dca9b71350fb18dd43",
+            "locator": {
+              "kind": "symbol",
+              "name": "SHARED_SUCCESSOR_LABEL"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9f0492ab5aba8203333707f64fbc4914d432963f",
+            "content": "sha256:aa31a30134ac48b4e2fa021ba12348952bc175109748677b0055eda78b00c6b9",
+            "locator": {
+              "kind": "symbol",
+              "name": "FAMILY_LABEL"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9f0492ab5aba8203333707f64fbc4914d432963f",
+            "content": "sha256:234438e92bcdfd40b01a8e0668ddc7fb72f2107a495439a2b632080f58dfb96e",
+            "locator": {
+              "kind": "symbol",
+              "name": "OVERLAPPING_FAMILY_LABEL"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9f0492ab5aba8203333707f64fbc4914d432963f",
+            "content": "sha256:4199685d04e067a3f2cdb58ae0fdc6ed3fe8b96153affd7023008949c814ef55",
+            "locator": {
+              "kind": "symbol",
+              "name": "DIRECT_FAMILY_LABEL"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "19": {
+      "note": "The recorded paths, including the two the read is measured against (absent and mismatched).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9f0492ab5aba8203333707f64fbc4914d432963f",
+            "content": "sha256:33c93a5f2d5c04b33720a374772dbcb76749a98b08faa21fb593d3e9a52633ef",
+            "locator": {
+              "kind": "symbol",
+              "name": "INTEGRATION_PATH"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9f0492ab5aba8203333707f64fbc4914d432963f",
+            "content": "sha256:bb31bddcdb417f5b7f273c9d787f3c7cb07c6bd620eb71056f23936bd86be795",
+            "locator": {
+              "kind": "symbol",
+              "name": "SYNCHRONIZATION_PATH"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9f0492ab5aba8203333707f64fbc4914d432963f",
+            "content": "sha256:c0542bfa5669f90a05e0b39daf9b58df15d129ceec4518252f17e00c214e0276",
+            "locator": {
+              "kind": "symbol",
+              "name": "ABSENT_PATH"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9f0492ab5aba8203333707f64fbc4914d432963f",
+            "content": "sha256:37933c004aabd5d44817aeea27c512aa73d337c6d11ac21bf6529765175cdafc",
+            "locator": {
+              "kind": "symbol",
+              "name": "BATCH_PATH"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9f0492ab5aba8203333707f64fbc4914d432963f",
+            "content": "sha256:7cc90345a1a65f79aa7a0772d4517ca23f9725f62f2cd6dfbb20fa6b2e3b464b",
+            "locator": {
+              "kind": "symbol",
+              "name": "MISMATCH_PATH"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "20": {
+      "note": "**The partly-authored retry ordering identity the fix round introduced, and the predecessor label that makes the ordering case deterministic.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9f0492ab5aba8203333707f64fbc4914d432963f",
+            "content": "sha256:44b8780ed1ed1044e875e0f509d7ae85b9235437382705b3767d76934a852622",
+            "locator": {
+              "kind": "symbol",
+              "name": "_ordered_revision_id"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9f0492ab5aba8203333707f64fbc4914d432963f",
+            "content": "sha256:3d5bffafbaabca3e66c22456fffbe08d38d92c8909e5e20ad12600fe60718241",
+            "locator": {
+              "kind": "symbol",
+              "name": "PREDECESSOR_LABEL"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9f0492ab5aba8203333707f64fbc4914d432963f",
+            "content": "sha256:c4fbea2d98c39eae1d41d3b4621098b2093eee4c9ee0e200dfd6264da2a8831e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_seed_identities"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "21": {
+      "note": "The public builder and the value types a case reads.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9f0492ab5aba8203333707f64fbc4914d432963f",
+            "content": "sha256:1c1cc0d822b84b2e2bc2985992d154d169a88e6928a5f1b59eaf352820ef9079",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_read_scope_fixture"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9f0492ab5aba8203333707f64fbc4914d432963f",
+            "content": "sha256:0e3fa5e93f9ddb49990b81cd2e85b8ab0aad1ef6d4c4a5d0711dfb0f60693de3",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReadScopeFixture"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9f0492ab5aba8203333707f64fbc4914d432963f",
+            "content": "sha256:da3e9dc37310d0e025b34d586655ae8443525adfb045348805671488037e3fa4",
+            "locator": {
+              "kind": "symbol",
+              "name": "RevisionSeed"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9f0492ab5aba8203333707f64fbc4914d432963f",
+            "content": "sha256:6dd84021c8ba8166aaea5c8e62a973612acc3de23f0f1d070be0f57db5f03d1f",
+            "locator": {
+              "kind": "symbol",
+              "name": "RealizationSeed"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9f0492ab5aba8203333707f64fbc4914d432963f",
+            "content": "sha256:077b2ba130e176f3daf7d3ed117f0c969aeeca677520880af5a1ba93fd5f10f7",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReadFixtureFamily"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9f0492ab5aba8203333707f64fbc4914d432963f",
+            "content": "sha256:c369d899b31fa70f78489ddb6406ce57679539e0d5335f148232313fad758572",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReadFixtureRealization"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "22": {
+      "note": "**The governed-artifact and contract rows that make this module part of the catalog.**\n\nAnchor: `read_scope_test_support`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a0569bc130f1ea52e6731d4460788c50542ae82a",
+            "content": "sha256:1ee3acb2ab43db1554c9afb0bf7495e701a128cd330d8b564d140f73eba5b034",
+            "locator": {
+              "end": 1913,
+              "kind": "line_range",
+              "start": 1910
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

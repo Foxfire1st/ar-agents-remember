@@ -5,14 +5,12 @@
 [mcp/tests route overview](overview.md)
 
 ## Purpose
-
 The one-sided statement contract drives real compose_review over two independently built read-side datasets. Their rows are assembled by knowledge_rows_test_support, the test-only builder; no production canonical database writer is involved. The after half holds an addition and the before half a removal, each selected by its own identity. [15]
 
 The renderer half of the same requirement is `dashboard/src/panels/review/KnowledgeStatements.test.tsx`,
 which uses these same values. A change to either half's contract fails in one of the two.
 
 ## Code Commentary
-
 ### Logic
 
 **The fixture is two independently built snapshots, and that is the preservation boundary made
@@ -106,13 +104,6 @@ claims.
 
 ## Evidence
 
-### Docs References
-
-No domain documentation source is configured for this repository (`system/sources.md` carries no
-`Domain Documentation` entries). The statements below are grounded in repository source only.
-
-No configured domain documentation could be checked.
-
 ### Repo-Internal References
 
 Every claim on this card is checkable in the shipped candidate: the module's own docstring and case
@@ -120,13 +111,14 @@ bodies, the fixture module it builds on, the store operations it authors through
 drives, the owner of the projection it asserts against, and the catalogue and lane rows that register
 it.
 
+- Fixture insertion through test-only builder, with acceptance provenance tied to accepted origin. [5]
+
+- Read fixture and test-only row builder supply both datasets. [15]
+
 - **The module's own scope statement: six cases over the real adapter and two real datasets, and the load-bearing properties each one owns.** [1]
 - The module's whole lane declaration. [2]
 - The authored identities and words every case asserts against, drawn once in the builder. [3]
 - **The two frozen fixture values: one invariant to author (with the origin state that alone decides its acceptance reference) and the pair of snapshots plus the identities cases select by.** [4]
-
-- Fixture insertion through test-only builder, with acceptance provenance tied to accepted origin. [5]
-
 - **The fixture: two independently built snapshots under one namespace, and the four authored revisions that make an addition, a removal and a real transition.** [6]
 - The one composition call, with the hand-assembled resolution and the loud failure on a refusal. [7]
 - **The addition and the removal: the complete present-side statement, the named absent side with `text is None`, and the comparison's own side-absence code.** [8]
@@ -136,12 +128,17 @@ it.
 - **The task-context case: no comparison, both sides unresolved with the same reason and no text, and no roster.** [12]
 - **The projection owner whose markers and canonicality this module asserts.** [13]
 - The adapter entry point the cases drive, and the one-sided contract its pane values carry. [14]
-
-- Read fixture and test-only row builder supply both datasets. [15]
-
 - **The lane row that selects this module, and the artifact consumer row that registers it against the fixture it consumes.** [16]
 - The `consumer_scope = "exact"` artifact whose list this module joined. [17]
 - **The renderer half that uses these same values, which is what makes a change to either half fail in one of the two.** [18]
+
+
+### Docs References
+
+No domain documentation source is configured for this repository (`system/sources.md` carries no
+`Domain Documentation` entries). The statements below are grounded in repository source only.
+
+No configured domain documentation could be checked.
 
 ### Cross-Repo References
 

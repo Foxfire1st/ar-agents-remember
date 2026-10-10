@@ -32,6 +32,20 @@ No inferred task/repository/parent, self-approval, hidden proxy or duplicate own
 | --- | --- | --- |
 | Explicit taskless subject, canonical requirements, one coordinating agent under the Architect, bound identities and authority boundaries. | lines 8-32 | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md:8-32 |
 
+### Docs References
+
+No Domain Documentation source is configured for this memory root.
+
+### Repo-Internal References
+
+- The router's registry still names architect as the developer-facing owner seat. [2]
+- The canonical source owns this doctrine. [3]
+
+### Cross-Repo References
+
+No sibling repository evidence is needed for this orchestration role file.
+
+No meaningful cross-repo references found.
 
 ## Current Investigator contract impact
 

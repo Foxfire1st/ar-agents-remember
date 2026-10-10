@@ -119,6 +119,23 @@
           "kind": "code"
         }
       ]
+    },
+    "8": {
+      "note": "The shared branching fixture authors its identity and graph halves from these same models.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3c16a4dfa4da992adf2a51310c127fb399544c1f",
+            "content": "sha256:436356d85a5375cb2207b22f622dc232bca56ceeaa44d4663d8a070d19627e85",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_branching_knowledge_fixture"
+            },
+            "path": "mcp/tests/knowledge_fixture_test_support.py"
+          },
+          "kind": "test"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

@@ -103,6 +103,120 @@
           "kind": "code"
         }
       ]
+    },
+    "30": {
+      "note": "**Settings resolution through the umbrella CLI's own discovery, with no second convention.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ac95d9ba546fa91777026e0b623d55226d7a3da0",
+            "content": "sha256:c17bae8dfc4136214fc543c77ed57b07a32ca8ae85ade53684ed28859eaf4375",
+            "locator": {
+              "kind": "symbol",
+              "name": "_settings"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "31": {
+      "note": "The one admission this invocation runs under, or the refusal that stopped it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ac95d9ba546fa91777026e0b623d55226d7a3da0",
+            "content": "sha256:14d04c9638aaa7d67ddc98afd49fe873a55eac07cc8c41e7ed9e7960e8488ac3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_admitted"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "32": {
+      "note": "The typed refusal payload a refusal is rendered from.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ac95d9ba546fa91777026e0b623d55226d7a3da0",
+            "content": "sha256:a82f1eaefe4044507a5d3f0d818542fb15fb79188eea3a7edaca49fb0f11474d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refusal_payload"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "33": {
+      "note": "The `--wave` argument, required only for converted memory.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ac95d9ba546fa91777026e0b623d55226d7a3da0",
+            "content": "sha256:d6ec1939f594e8be8c6bc8d83400d7972ed22a9390f17fb790fd232dde0feb2a",
+            "locator": {
+              "kind": "symbol",
+              "name": "add_arguments"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "34": {
+      "note": "**The admission resolver this entry point is the public face of.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c6f19d716614b209612597c6edbf85090014aac3",
+            "content": "sha256:60cb10c962c281de167b8c9f199e2c4b7a7eccaa8279ae40fe7b64a5560b1eb5",
+            "locator": {
+              "kind": "symbol",
+              "name": "admit_bootstrap_context"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_bootstrap_admission.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "35": {
+      "note": "The wave passes the admitted authority's coordination root, so requirement endpoints resolve (MIK-R13, review F4).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ac95d9ba546fa91777026e0b623d55226d7a3da0",
+            "content": "sha256:f5fc650a7a85cfd35b04047b9457a44b78af752f80e6e31785612d2b968bedd1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_run"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "36": {
+      "note": "knowledge-bootstrap refuses unconverted memory once the repository holds converted memory.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cfed40211fab111f80a08b412d6b6deaa63639a0",
+            "content": "sha256:95ce2809bd9e6ad3e706dbe037dbdae571c6ff4451ae63c4b56112f69c9e5722",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_knowledge_bootstrap_refuses_unconverted_memory_once_the_repository_holds_converted_memory"
+            },
+            "path": "mcp/tests/test_knowledge_writer.py"
+          },
+          "kind": "test"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

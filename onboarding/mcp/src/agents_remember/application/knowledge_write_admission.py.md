@@ -22,6 +22,21 @@ The value decides no destination, identity or authority. Leaf file writes read t
 
 None recorded.
 
+### Logic
+
+**`memory_repo_path` is optional and `memory_worktree` is not** (`:100-106`): a repository with no
+external memory layer has no memory repository to name, while `memory_worktree` is the strictly
+stronger requirement the operation itself refuses on, exactly as it did when it read a contract.
+
+### Invariants And Boundaries
+
+- There is no `admitted=True` argument on this path; an admission is built by a resolver, never
+  asserted by a caller.
+- An admission confers no authority and decides no destination, namespace or identity.
+- `memory_repo_path` may be `None`; `memory_worktree` is the requirement the operation refuses on.
+- `scope` is the **retry** scope: it is what makes "an exact retry does not duplicate knowledge" true
+  without the retry key ever becoming an identity input.
+
 ## Evidence
 
 ### Docs References
@@ -61,3 +76,10 @@ No cross-repository behavior is implemented in this file: it reads no repository
 settings' `crossRepo.allow` is empty, so nothing here names, reads or writes another repository.
 
 No meaningful cross-repo references found.
+
+### Repo-Internal References
+
+- **The module's own statement of the gap it closes and of why a second write path was refused.** [12]
+- **The facts one admitted write is bound to, including the retry scope and the two exact source revisions.** [13]
+- Which authority admitted this write, and whether it was derived without an enclosure. [14]
+- **The second real admission this value exists to carry, and the resolver that builds it.** [15]

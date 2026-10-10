@@ -55,6 +55,43 @@ orientation and coordination as its operations, and `architect-brief.md` as its 
 all carry `injected: false`, so a reader can see what is available without any of it entering
 a composed capsule.
 
+**The identity keys say what the file is and where its authority sits.** `schema` fixes the document
+vocabulary at `ar-role-capsule-composition/v1`; `authority` names `SKILL.md` as the thin router and
+this file as metadata only; `entry_router` names the router file a session enters through;
+`authoritative_tree` is `skills/`, which is the canonical authored tree the packaged copies are
+generated from.
+
+**`operations` declares each operation's source and the roles that may run it.** Nine entries —
+orientation, planning, implementation, review, curation, coordination, authorized-closeout, recovery
+and bootstrap — each with a `source` under `operations/`, a one-line `purpose`, and an
+`applies_to_roles` list. Two of them are narrow on purpose: `implementation` applies to `worker`
+alone, and `bootstrap` to `bootstrap` alone, while `orientation` applies to all ten roles and
+`planning` to the four planning seats. The role side repeats the same applicability from the other
+direction; the parser refuses a manifest where the two disagree rather than letting the compiler
+resolve the conflict at selection time.
+
+**`core` names the block sources the corpus holds, but a dispatched role seat composes none of them into its capsule.** The manifest's `composition_order` is exactly `role` then `operation` (canonical manifest `600-606`); the frozen core map remains metadata for compiler compatibility and shared core blocks are not injected. `models/role_capsules/selection.py:158-163` returns `core_blocks=()` for a dispatched role seat (developer ruling 2026-09-17): the manifest declaration tells a reader where the doctrine lives, it is not what the seat is sent, and the role file states every obligation that binds the seat.
+
+**`roles` is the per-seat registry and is where the selection actually happens.** Each of the ten
+entries carries `file` (the role source under `roles/`), `altitude`, `tools` (the tool ids the seat
+may use), `skills` (the skill pointers it may reference), `seat` (the one-line statement of what the
+seat is), `core` (the shared-block names the seat lists for capsule composition), `operations` (the authoritative applicability
+list), `templates` (the field schemas and handoff artifacts that seat compiles or emits) and
+`criteria` (the reviewer criteria catalogs bound to it). The lists differ per seat rather than being
+uniform: `implementation` appears only in the worker's operations, the curator's operations are
+orientation, curation and recovery, and `curator-handoff-list.md` appears in exactly four template
+lists — the orchestrator's, the worker's, the curator's and the reviewer's — which is the registry
+wiring behind the producer/consumer hand-off contract. `altitude` is a plain string rather than an
+enum, and for the reviewer it is the composite `leaf | master | sprint, by seam`.
+
+**`skills`, `launcher` and `references` complete the declared surface.** `skills` declares the one
+skill by origin, URI and root source (`agents-remember/skills`, `skill://agents-remember/skills/l-01-agent-lifecycles`,
+`SKILL.md`); the parser's own model notes a skill reference "is a *pointer to separately delivered
+content*, so its identity is server/repository origin plus skill URI — a bare name would collide
+across servers." `launcher` is the ambient launcher's composition: `is_role: false`, the routing
+condition it belongs to, `core/launcher.md` as its instruction source, the `launcher` core block,
+orientation and coordination as its operations, and `architect-brief.md` as its one template.
+
 ### Conventions
 
 The file is a flat JSON object with `snake_case` keys, ordered so the document reads from identity to
@@ -66,7 +103,39 @@ display name where an identity would do, and the one skill entry carries origin 
 a bare name. Duplicated knowledge is deliberate and testable: the operations' `applies_to_roles` and
 the roles' `operations` are two views of one applicability, and the parser refuses disagreement. The `notes` array states role/operation-only native composition, the inert core map, separate handover facts, the retained ten/nine vocabulary versus seven launchable roles, and bound native role tools.
 
+The file is a flat JSON object with `snake_case` keys, ordered so the document reads from identity to
+registry to composition to notes. Values that select a file are root-relative POSIX strings
+(`roles/architect.md`, `operations/curation.md`, `core/loop.md`), never absolute paths and never
+package paths, because the corpus root is supplied by the consumer. Every list that a consumer
+iterates is an array of strings or of objects with a `source`/`purpose` pair; nothing is keyed by a
+display name where an identity would do, and the one skill entry carries origin plus URI rather than
+a bare name. Duplicated knowledge is deliberate and testable: the operations' `applies_to_roles` and
+the roles' `operations` are two views of one applicability, and the parser refuses disagreement. The
+`notes` array is where the file states what it is not — routing metadata, no prose, no task facts, and
+the launcher is not a role.
+
 ### Invariants And Boundaries
+
+- **The manifest carries no instruction prose.** It selects sources; the prose lives in `core/`,
+  `roles/`, `operations/`, `criteria/` and `templates/`, and the notes state that this file "carries
+  no instruction prose and no copies of any source section."
+- **The role registry is exactly `role_order`.** Ten roles; the launcher is a routing condition with
+  `is_role: false` and is not an eleventh entry.
+- **The declared vocabulary is authoritative over the file.** The consumer parses these bytes against
+  frozen role and operation sets and refuses a manifest that disagrees, so an edit cannot mint a role
+  or a tenth operation by writing one.
+- **Operation applicability must agree on both sides.** A role's `operations` list and the
+  operation's `applies_to_roles` list are checked against each other at parse time; a disagreement is
+  a `manifest-inconsistent-applicability` refusal rather than a selection-time surprise.
+- **One source per instruction.** A block is authored once and referenced by path; a role file states
+  its own seat's side of a shared rule and never restates the whole of it.
+- **Task facts are not part of the manifest.** They travel as a separate context channel.
+- **Reference-only trees do not enter a capsule.** The `references` entries are marked
+  `injected: false`, and `lenses.md` is described as material for the scoping seats rather than
+  something "a dispatched role" picks.
+- **The corpus root is the consumer's, not the file's.** Every declared path is relative to the
+  admitted corpus root, which is why the same manifest can be read from the authored tree or from the
+  packaged copy without editing a path.
 
 - **The manifest carries no instruction prose.** It selects sources; the prose lives in `core/`,
   `roles/`, `operations/`, `criteria/` and `templates/`, and the notes state that this file "carries
@@ -121,6 +190,19 @@ install-time corpus anchor, and the corpus test that pins the registry wiring.
 - The packaging consumer: the manifest is admitted beside its corpus root, and the provider yields root and manifest as one value "because they are one admission". [11]
 - The admission identity rule: the manifest is metadata rather than an instruction block, so it takes the reserved metadata identity and can never collide with a real block identity. [12]
 - The install-time corpus anchor and the corpus test that reads the manifest by path. [13]
+
+- The document's identity and authority: the schema name, the authority statement naming the thin router, and the authoritative tree the packaged copies are generated from. [15]
+- The nine operation blocks, each with its source, purpose and the roles that may run it. [16]
+- The six block names the corpus holds (including the launcher block authored here so the registry holds only roles); the manifest composes role then operation only, and a dispatched seat receives no shared core block (`models/role_capsules/selection.py:158-163` returns `core_blocks=()`).
+- The role registry itself and the two role entries that show the per-seat shape. [18]
+- The per-role entry fields a consumer selects on: the altitude, the tool ids, and the one-line seat statement. [19]
+- The four template lists that register the curator hand-off list, one per seat on either side of that contract (each anchor quotes a sibling entry of the same list, because the shared file name appears in all four). [20]
+- The launcher entry: a routing condition with its own core block, its operations, and the brief it compiles. [21]
+- The reference-only trees that never enter a capsule, the composition order, and the notes that state what the file is not. [22]
+- The consumer that parses these bytes: the schema constant it checks against, and the pure parser that builds the typed manifest and refuses a vocabulary disagreement. [23]
+- The packaging consumer: the manifest is admitted beside its corpus root, and the provider yields root and manifest as one value "because they are one admission". [24]
+- The admission identity rule: the manifest is metadata rather than an instruction block, so it takes the reserved metadata identity and can never collide with a real block identity. [25]
+- The install-time corpus anchor and the corpus test that reads the manifest by path. [26]
 
 ### Cross-Repo References
 

@@ -21,6 +21,14 @@ current_generation_name returns CURRENT_GENERATION.schema_name. declared_pair op
 
 ## Evidence
 
+### Docs References
+
+No domain documentation source is configured for this repository (`system/sources.md` carries no
+`Domain Documentation` entries). The statements below are grounded in repository source only.
+
+No configured domain documentation could be checked.
+
+
 ### Repo-Internal References
 
 
@@ -39,6 +47,13 @@ current_generation_name returns CURRENT_GENERATION.schema_name. declared_pair op
 - Read-only handle. [7]
 
 
+
+- The pair reader, and why the schema name it reports is the registry's rather than the file's. [9]
+
+
 ### Cross-Repo References
+
+No cross-repository behavior is implemented in this file.
+
 
 No cross-repository contract is established by this file.

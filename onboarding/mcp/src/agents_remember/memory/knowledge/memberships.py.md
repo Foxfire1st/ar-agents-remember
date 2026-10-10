@@ -25,6 +25,31 @@ find_membership_by_pair reads the one stored membership for the named exact endp
 
 create_family_member, draft-sealing/insert helpers, remove_family_member, list_members and candidate lock/transaction composition belonged to canonical database writing and were retired. The file authoring route owns membership changes; this module reads the resulting derived index.
 
+### Conventions
+
+- The declared unique tuple `(repository_id, family_revision_id, invariant_revision_id)` and the
+  composite foreign keys are the structural guarantee.
+
+### Invariants And Boundaries
+
+- **A membership relates exactly one pair, once.** The unique tuple is declared, so a second row for the same pair is unrepresentable in practice.
+
+- **A newer family revision does not inherit memberships.** There is no floating pointer: the relation
+  cites `family_revision_id`, and the successor needs its own authored row.
+
+- **No second list.** The reverse read is a query over the same rows, not a separately maintained
+  index of semantic facts.
+
+- **Not this module's job.** Family and family-revision identity (`families.py`), the joint guarantee
+  (a property of the family revision, never composed from members), and family *composition* across families, which `KS-R02` defers.
+
+### Todos
+
+### Todos
+
+None recorded for this slice. Cross-family composition remains explicitly deferred by `KS-R02@v1`
+rather than pending work in this module.
+
 ## Evidence
 
 ### Docs References
@@ -52,6 +77,10 @@ No configured domain documentation could be checked.
 - The retained membership draft, stored member and invariant-to-family result values. [16]
 
 The requirement this module's first delivered slice belongs to: requirement packet `KS-R02@v1`, which lives in the coordination root, outside both the code and the memory repository, so the citation grammar cannot address it.
+
+- - The relation this module owns, stated as one exact pair. [17]
+- - The reverse read (invariant revision to families) over the same rows. [18]
+- - The declared `family_member` table, its unique tuple, its index and its no-repoint trigger. [19]
 
 ### Cross-Repo References
 

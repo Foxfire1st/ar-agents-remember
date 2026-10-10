@@ -33,6 +33,33 @@
           "kind": "test"
         }
       ]
+    },
+    "8": {
+      "note": "An over-length unreadable-owner detail is summarised; one that fits keeps its landed wording exactly; every artifact is listed either way.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cdc0b27f30f87da8796853c129138c349a5e4b79",
+            "content": "sha256:9442c37c494ef6de03712fb5169d0ac2d7e3d773fccaa41fc2321316d284ac52",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_leaf_binding_many_missing_curator_artifacts_reads_as_unavailable"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "cdc0b27f30f87da8796853c129138c349a5e4b79",
+            "content": "sha256:711674ff6bcc39db55b38bb2c65948c4c452b581f557e3b20a45b2133bd61aa3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_curator_channel"
+            }
+          },
+          "kind": "test"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

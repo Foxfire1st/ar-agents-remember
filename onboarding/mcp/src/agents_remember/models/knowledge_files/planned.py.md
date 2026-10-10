@@ -1,9 +1,7 @@
 # mcp/src/agents_remember/models/knowledge_files/planned.py
-
 ## Governing Overview
 
 [models route overview](../overview.md)
-
 ## Purpose
 
 **The one spelling of MIK-R11's planned-effect forms.** It defines the declared subject form
@@ -12,7 +10,6 @@
 each takes, and `planned_item_open`, the stored-item predicate for the closeout gate (MIK-R09). The task
 plane (`tasks/document.py`), the history row model (`history.py`), the worklist (`planned_effects.py`) and
 the writer all import these forms from here, so they cannot drift apart.
-
 ## Code Commentary
 
 ### Logic
@@ -42,14 +39,33 @@ the writer all import these forms from here, so they cannot drift apart.
 - **The effect vocabulary is unchanged** (Preservation): the effect alternation is the admitted labels.
 - **`planned_item_open` agrees with the worklist's `satisfiedBy`**; both are the subject lookup of the
   planned row.
-
 ### Todos
 
 - None recorded.
-
 ## Evidence
 
 ### Repo-Internal References
 
 - `planned_subject` implements the retained boundary described above. [9]
 - `planned_item_open` implements the retained boundary described above. [10]
+### Docs References
+
+No domain documentation source is configured for this repository (`system/sources.md` carries no
+`Domain Documentation` entries). The design authority is the requirement packet `MIK-R11@v2` of task
+`260928_maintained-invariant-knowledge` (with the architect rulings in the task's leaf document
+`11_planned-invariant-effects-reconciliation.json`); it lives outside the code and memory repositories, so it
+is named here and not cited as a row.
+
+No configured live documentation source was available for this pass.
+### Cross-Repo References
+
+No meaningful cross-repo references found: the module is pure models.
+
+No cross-repo boundary is crossed by this file.
+- The module docstring: the forms and who shares them. [11]
+- The item kind, the unknown-subject fact and the dispositions. [12]
+- The ref keys each disposition takes. [13]
+- The declared, planned and requirement-ref patterns. [14]
+- The stored-item predicate for the gate. [15]
+- The history row model built on these forms. [16]
+- The predicate agrees with `satisfiedBy` on every item. [17]

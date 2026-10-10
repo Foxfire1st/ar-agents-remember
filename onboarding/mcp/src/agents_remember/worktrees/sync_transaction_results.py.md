@@ -18,13 +18,45 @@ _resolution_guidance uses supported continue for both retained forms. A structur
 
 Previews mutate no index/stash/commit. Completed continuation recomputes worklist through its owner; quarantine proves no unrecorded restoration. [8] [9] [11]
 
+
+**A crossing sync's resolution names its report (MIK-R24 rule 8).** When the side record journals a
+`crossingReport`, `resolution_required` adds `resolution.crossing`, the output of
+`knowledge_crossing.crossing_summary`: the report path, the conflicted-item count, the first 100
+`(path, item, reason)` entries with a truncation flag, the cards taken from each side, the moved marker
+rows, the record-conflict history owner, and `howToResolve`. It also appends one sentence to the summary.
+That sentence says this is a crossing sync, names the report, and says that every conflicted JSON item holds
+a `crossing-conflict` marker the knowledge validator refuses until it is resolved. For an ordinary sync
+`crossingReport` is empty and nothing is added, so the payload is unchanged.
+
+**The `continue` replay of a completed sync recomputes the worklist (MIK-R08 rule 8).**
+`terminal_resolution_replay` with `resolution_action='continue'` on a completed generation now returns
+`with_recomputed_worklist(completed_sync_result(...), contract)`, so the replay carries the same optional
+`knowledgeWorklist` summary as the original finalization (review R1 F2). A worklist failure leaves the
+replayed result unchanged.
+
+Resolution previews read `content_conflicts(side)`: memory-side root memory.md is excluded while code-side files and genuine memory content remain visible. `resolution_validation_preview` delegates the exact staged-content/MERGE_HEAD proof. `parked_wip_validation_preview` reports whether the real reapply conflicts are settled; it does not mutate an index, drop a stash, or create a commit.
+
 ### Invariants And Boundaries
 
 - Continue and cancel travel together.
 - A completed generation cannot be cancelled retroactively.
 - Public resolution preserves file/report facts, not retired canonical rows.
 
+- Memory cache-only index state cannot become a manual resolution requirement.
+- Quarantine replay does not claim branch restoration without authority refs.
+
+
+### Todos
+
+No new file-local follow-up is identified by this source reconciliation.
+
+
 ## Evidence
+
+### Docs References
+
+No domain-documentation source is configured for this slice. The behavior described here is established by current repository source and the authorized LCA L9 change, rather than an invented external reference.
+
 
 ### Repo-Internal References
 
@@ -50,6 +82,17 @@ Previews mutate no index/stash/commit. Completed continuation recomputes worklis
 - Current file-based resolution model. [13]
 
 
+
+- A crossing sync's resolution carries the crossing summary and names the report; an ordinary sync's payload is unchanged. [19]
+- Parked-candidate reapply preview. [20]
+- Policy choice and non-mutating initial/active/cancel previews. [21]
+- Terminal and no-authority replay results remain distinct; the `continue` replay of a completed generation recomputes the worklist. [22]
+- Content-domain conflict and staged-resolution proof is delegated to the Git owner. [23]
+
+
 ### Cross-Repo References
+
+The operation and fixture boundaries described here are defined by same-repository contracts and Git helpers. No separate cross-repository document is used as evidence for this card.
+
 
 No cross-repository contract is established by this file.

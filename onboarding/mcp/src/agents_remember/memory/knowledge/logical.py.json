@@ -66,6 +66,235 @@
           "kind": "code"
         }
       ]
+    },
+    "20": {
+      "note": "- The declared primary key per canonical table, including the non-leading-column case.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9bd771868db3dd26d3ff90ea75cbbf5bdcf4a8f1",
+            "content": "sha256:1732b63ee8648ab225f6c484e325388f0073eabe2424c9c53f5f64dc06389da6",
+            "locator": {
+              "kind": "symbol",
+              "name": "PRIMARY_KEYS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "- The typed JSON columns decoded at the portable boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9bd771868db3dd26d3ff90ea75cbbf5bdcf4a8f1",
+            "content": "sha256:947124879867c1d676decfb74cee6c777feb31cbad36d65ca34cda386c4dfd34",
+            "locator": {
+              "kind": "symbol",
+              "name": "JSON_COLUMNS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "- The body version and the digest over the canonical body.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9bd771868db3dd26d3ff90ea75cbbf5bdcf4a8f1",
+            "content": "sha256:7245af42b70a554e686245ea3d10fd9fa2f8cf2294a7fefa9912103574b317bb",
+            "locator": {
+              "kind": "symbol",
+              "name": "logical_digest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "- **The one body constructor, and the digest over an already-encoded table mapping — the entry point the portable export seals through, so the scan and the artifact cannot define the body twice.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9bd771868db3dd26d3ff90ea75cbbf5bdcf4a8f1",
+            "content": "sha256:be0962955b303788b7ad2f1f232027d69f1ce2535e7b7346b7733eee87f74aa0",
+            "locator": {
+              "kind": "symbol",
+              "name": "logical_body_from_tables"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "- The row ordering, the cell decoding and the JSON-text-is-not-knowledge rule.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9bd771868db3dd26d3ff90ea75cbbf5bdcf4a8f1",
+            "content": "sha256:96effcb39183460929b6ff0f71dba7fc245341cde0a8077bbcc0c7bd97148bd6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_rows_of"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "- **The public spelling of that one decoder, added by 260915-KS-L7 so the selective read and this digest cannot disagree about a stored cell.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9bd771868db3dd26d3ff90ea75cbbf5bdcf4a8f1",
+            "content": "sha256:19b24fa8965b32406c0fa4cb94cb6a51b998f6acca88447458c8eca6b30446ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "cell_value"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "26": {
+      "note": "- The reader that calls it, instead of decoding a typed JSON column a second time.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f783ca1e819eccb55dc08b0f536877e2e44005d4",
+            "content": "sha256:9aa77b62fce1a6b254e8004fbc6cddb8e5ffd1d411c18bc02c387ad831013ea9",
+            "locator": {
+              "kind": "symbol",
+              "name": "fetch_invariant_revisions"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_queries.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "27": {
+      "note": "- The key-versus-manifest honesty check, now reached by both the scan and the artifact path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9bd771868db3dd26d3ff90ea75cbbf5bdcf4a8f1",
+            "content": "sha256:6b377d7d83f8855cf0b187367e3b88b16e92a868fe6235cdf96b4c01eeb69fc9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_declared_keys"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "28": {
+      "note": "- The identity packaging and the defensive namespace read.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9bd771868db3dd26d3ff90ea75cbbf5bdcf4a8f1",
+            "content": "sha256:01d06d3c7946be173f9a68980c232a8cbf7b0967fdae2ca50aca5b818cd9b71b",
+            "locator": {
+              "kind": "symbol",
+              "name": "snapshot_identity"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "29": {
+      "note": "- **The file-level identity entry point this leaf added, and the ambiguous-namespace read it depends on.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9bd771868db3dd26d3ff90ea75cbbf5bdcf4a8f1",
+            "content": "sha256:793a7cb2f90b6d7e9ffd268240928c1f4241714c1d1581cc59150741b7fdd51d",
+            "locator": {
+              "kind": "symbol",
+              "name": "dataset_identity"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "30": {
+      "note": "- The read-only connection the file-level entry point must use, so a comparison cannot repair what it measures.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5330296baa8cabeac31286bb196c70bcf2763703",
+            "content": "sha256:8e0d73a6fc5ba1e336df087f356d6f7090430e241977d7497ad8d06bb9fb7662",
+            "locator": {
+              "kind": "symbol",
+              "name": "open_read_only_database"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/connection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "31": {
+      "note": "- The kernel canonical encoder the digest is computed through.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a939ca21bb16d7edca85c2bc76c955a42e67ad06",
+            "content": "sha256:6014728eba1656282dfde160fc7befd2794422d005031effd3d2315aed7a0715",
+            "locator": {
+              "kind": "symbol",
+              "name": "sha256_digest"
+            },
+            "path": "mcp/src/agents_remember/kernel/canonical_json.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "32": {
+      "note": "- The JSON decoder a typed column is compared through, which refuses ambiguous stored text.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a939ca21bb16d7edca85c2bc76c955a42e67ad06",
+            "content": "sha256:70911acd3a56d6e8cf2c0328765cc8d3f10df70298f42b7987fa09123bd6c4cd",
+            "locator": {
+              "kind": "symbol",
+              "name": "decoded_json"
+            },
+            "path": "mcp/src/agents_remember/kernel/canonical_json.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "33": {
+      "note": "- The store method that exposes the live identity to a caller cheaply, and the sibling half of every comparison.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e4fc1a849557a256d000a2a4f98c444ef5400e7d",
+            "content": "sha256:3c4b8b862d43ce91d9dd2905d7ea638814dd8a6a21c2c28d3ea3107abb8d5fd6",
+            "locator": {
+              "kind": "symbol",
+              "name": "snapshot_identity"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/store.py"
+          },
+          "kind": "code"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

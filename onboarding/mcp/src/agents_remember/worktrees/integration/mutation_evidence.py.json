@@ -21,6 +21,103 @@
     }
   ],
   "references": {
+    "10": {
+      "note": "Only enabled code/memory legs receive mutation cells.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c94a443cc8683e43d44bffdadf077d89969642a1",
+            "content": "sha256:47a6be4de4f5791a84043f62cd700a9161f6d397cfa29514657fe093fbe2734e",
+            "locator": {
+              "kind": "symbol",
+              "name": "initial_closeout_mutation_evidence"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Intent, expected-output binding, and commit proof retain their order.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c94a443cc8683e43d44bffdadf077d89969642a1",
+            "content": "sha256:112946f07d62c75613cbc8278b9845297104d365edf3b2a89845efd4bef442eb",
+            "locator": {
+              "kind": "symbol",
+              "name": "begin_git_mutation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Interrupted attempts are reconciled from actual Git evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c94a443cc8683e43d44bffdadf077d89969642a1",
+            "content": "sha256:c6edea6ac2ee716ea288491f7086dc5e8601b57c81314142e8971cb899b482f7",
+            "locator": {
+              "kind": "symbol",
+              "name": "reconcile_closeout_mutations"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "Cache-excluded snapshots retain actual object/ref identity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c94a443cc8683e43d44bffdadf077d89969642a1",
+            "content": "sha256:8e25de5b2bec6a3e47821213ae384a185a78a94bd2c1f7cb3f3dcd9511ee4927",
+            "locator": {
+              "kind": "symbol",
+              "name": "snapshot_is_clean_at_head"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The disposable snapshot copies the index with its time.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c94a443cc8683e43d44bffdadf077d89969642a1",
+            "content": "sha256:6a6bedb9b679f5b7f43d20e2e9b02c80d21dbd03f53131f1d9dbb062deef0e89",
+            "locator": {
+              "kind": "symbol",
+              "name": "ephemeral_git_mutation_snapshot"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The snapshot model declares the separate content comparison tree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d503d30b2c978a8642b69d2ab16c63530b330251",
+            "content": "sha256:1d2213697e54872749956c9f46bcec11d94fd8d6c15fb918b47608230c689933",
+            "locator": {
+              "kind": "symbol",
+              "name": "GitMutationSnapshot"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/mutation_evidence.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "7": {
       "note": "`begin_git_mutation` implements the retained boundary described above.",
       "targets": [

@@ -16,6 +16,91 @@
           "kind": "code"
         }
       ]
+    },
+    "2": {
+      "note": "The packaged manager is one master-scoped owner of the leaf closeout chain.\n\nAnchor: `# Manager`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "592110578a35abd37ceccd7e8f2bc0c2227f4c84",
+            "content": "sha256:342bdd7c63787cdd02eea07af5179b44e74de818c8185ded11a9086a901b4c42",
+            "locator": {
+              "end": 8,
+              "kind": "line_range",
+              "start": 6
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Its hosted child dispatch uses structural task document and role.\n\nAnchor: `role_start`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "592110578a35abd37ceccd7e8f2bc0c2227f4c84",
+            "content": "sha256:8802e024e27b7ec5244fbc7cf6eef825e6211c65ebbac1cdcf5fd3ea9e67a15a",
+            "locator": {
+              "end": 18,
+              "kind": "line_range",
+              "start": 16
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Curator dispatch carries the exact requirement packets, and a reviewer adjudication only when review was requested.\n\nAnchor: `role_start`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "592110578a35abd37ceccd7e8f2bc0c2227f4c84",
+            "content": "sha256:5273359624060efd8fd05094a65d0732e4d39980b6a702db4d4f2013ac0e2c52",
+            "locator": {
+              "end": 18,
+              "kind": "line_range",
+              "start": 12
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The canonical source owns this doctrine.\n\nAnchor: `l-01-agent-lifecycles-role-manager`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "592110578a35abd37ceccd7e8f2bc0c2227f4c84",
+            "content": "sha256:4e568132297bd1cba5578b07d8fd196d1b317e7048f927a07b9ed5290cdd4297",
+            "locator": {
+              "end": 4,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "MCP package data is copied from canonical skills and checked for drift.\n\nAnchor: `l-01-agent-lifecycles-role-manager`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "592110578a35abd37ceccd7e8f2bc0c2227f4c84",
+            "content": "sha256:4e568132297bd1cba5578b07d8fd196d1b317e7048f927a07b9ed5290cdd4297",
+            "locator": {
+              "end": 4,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

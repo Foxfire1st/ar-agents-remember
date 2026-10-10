@@ -24,6 +24,26 @@ Code agreement alone proves no delivered-pair coverage. Absent or moved memory c
 
 None recorded.
 
+### Logic
+
+**Publication and read-back are the durable-evidence pair.**
+`record_final_output_receipt` (`:258-299`) publishes through `publish_durable_evidence` under
+`receipt_file_name` (`:252-255`) — `final-output-<leaf>-<generation-id>-<phase>.json` in the shipped
+durable reports root — and returns the record beside `read_back_evidence`'s result. A phase measured
+twice converges on one file and reports `replaced_existing`, because the record says what that phase
+delivered **when it was read**.
+
+### Invariants And Boundaries
+
+- **Nothing here can refuse a transaction.** The recording runs *after* the Git transaction and its
+  contract write, inside the result builder; every failure becomes a state in the payload. The one
+  raising function is `record_final_output_receipt`, and the transaction owners deliberately call the
+  never-raising wrapper instead.
+- **A phase that recorded nothing is still reported.** `read_final_output_receipts` returns one entry per
+  phase, so "nothing was recorded" and "no phase was asked about" never read the same.
+- **One file per (leaf, generation, phase)**, so a leaf accumulates at most two files per generation it
+  publishes and a repeated measurement converges on its own location.
+
 ## Evidence
 
 ### Repo-Internal References
@@ -38,3 +58,27 @@ Phase measurement can replace the same phase receipt; retained comparison record
 - `require_comparison_repositories` supplies the current exact-tree receipt boundary described above. [38]
 - `source_comparison_matches` supplies the current exact-tree receipt boundary described above. [39]
 - The old canonical published-dataset receipt channel was retired. Separately, ordinary published intent resolves a converted tree and its index; it is not a canonical receipt publication channel. [29]
+
+### Docs References
+
+No domain documentation source is configured for this repository (`system/sources.md` carries no
+`Domain Documentation` entries). The statements below are grounded in repository source only.
+
+No configured domain documentation could be checked.
+
+### Cross-Repo References
+
+No cross-repository behavior is implemented in this file. It reads a task root and a repository path the worktree contract names, and it resolves the declared publication location inside the same repository boundary.
+
+### Repo-Internal References
+
+- The one durable file-name prefix, one file per leaf, generation and phase. [40]
+- One published receipt: the durable artifact, the record, and the read-back that proves it. [41]
+- The one durable destination a phase publishes to. [42]
+- **Measuring one phase and publishing it: the owners' values, the read-back, and `replaced_existing` rather than a hidden rewrite.** [43]
+- **The prepared-work projection: the one comparison it makes, and `None` rather than `True` when either side is unknown.** [44]
+- **The three attachments and the `ok`-plus-a-real-commit gate that keeps a failed transaction from carrying a receipt.** [45]
+- **The never-raising entry point and its three states, including `not-applicable` for a series contract.** [46]
+- **The three production call sites: closeout preview, closeout apply and integration.** [47]
+- **The reopen owner's fourth channel, which is what makes the reader a production consumer.** [48]
+- The durable-evidence pair every receipt is published and read back through. [49]
