@@ -190,6 +190,25 @@ destructive outputs. The already-completed terminal path also archives before re
 non-empty `agentArchive` report is merged into the result payload. The module keeps its own result,
 blocker and contract-stamp behavior.
 
+## 260928-MIK-L129 — a repeated cleanup carries no rejudged record on the archived contract
+
+`cleanup_result` set `kept_line` only on the branch without a terminal archive, but passed it to
+`_cleanup_reserved` on every path. A repeat admitted by an archive-ready terminal authority (the
+archived contract, the same operation and arguments, a state other than `cleanup-completed`) reached
+the shared tail with `kept_line` unbound and raised `UnboundLocalError`, unless the provider or the
+preflight check returned first. That state is what an interrupted cleanup leaves behind, and the
+repeat is the only supported way out of it.
+
+The R1 repair superseded the first recompute attempt per the Parent ruling
+L129-THE-GATE-IS-NOT-JUDGED-AGAIN: on the archive branch the gate is not judged again.
+`TerminalEnclosureArchive` declares no kept-line record of that judgement and forbids extra fields,
+so the repeat carries `kept_line = None`; its answer may lack `landedTips` but invents none.
+`kept_line` flows only to the optional `landedTips` attach, which nothing else consumes, so the
+repeat needs no record. Re-evaluating live carryover evidence on replay would strand cleanups whose
+branches the accepted first run already retired, contrary to rule 2. The completed-cleanup and
+argument-mismatch early returns, the first-run gate, the check and refusal order and texts, the
+no-remains path and closed-agent archiving are unchanged.
+
 ## Evidence
 
 ### Docs References
@@ -199,8 +218,6 @@ No external Domain Documentation source is configured for this memory repo.
 ### Repo-Internal References
 
 - The authorized memory target clears its disposable cache before ordinary Git removal. [1]
-
-- Successful cleanup and exact terminal replay pass through the terminal activation-release bridge. [2]
 
 - The bridge releases only an exact selected series and reports durable release failure. [3]
 
@@ -232,6 +249,12 @@ No external Domain Documentation source is configured for this memory repo.
 ### Cross-Repo References
 
 This file owns no ambient cross-repository authority. Any external-memory repository it reaches remains explicitly contract-addressed.
+
+- A cleanup repeated after its terminal archive was written carries no rejudged record: the archive-ready branch binds `kept_line = None` and invents no `landedTips`. [22]
+- The dry-run repeat of an archive-ready cleanup finishes with no invented `landedTips`. [23]
+- The real-run and branch-gone repeats complete the contract and the terminal authority re-reads `cleanup-completed`. [24]
+- Successful cleanup and exact terminal replay pass through the terminal activation-release bridge. [2]
+
 ## 260815-DAG-L4 Authority History, Reconciled By CLIVE
 
 Task-derived integration refs remain mechanically non-ordinary, but final terminal admission is not

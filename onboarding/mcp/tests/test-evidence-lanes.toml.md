@@ -66,6 +66,11 @@ order; each module appears in exactly one lane.
 `mcp/tests/test_role_capsule_budgets.py` is a `unit-regression` row in canonical byte
 order; each module appears in exactly one lane.
 
+## 260928-MIK-L129 Repeated-cleanup regression test joins integration
+
+`mcp/tests/test_cleanup_repeated_archive_ready.py` is an `integration` row in canonical byte
+order; each module appears in exactly one lane. No other lane changes.
+
 ## Evidence
 
 ### Docs References

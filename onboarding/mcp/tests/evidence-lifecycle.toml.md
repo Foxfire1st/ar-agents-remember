@@ -172,6 +172,10 @@ The catalog holds 13 contract rows with 85 governed artifacts: the admitted life
 
 `evidence-lifecycle.toml` gained revised durable-artifact consumer sets/paths for the new host test modules (`test_paseo_install_contract`, `test_paseo_install_no_stop`, `test_paseo_node`, `test_paseo_start`, `test_dashboard_host`, `test_host_release_contract`, `test_paseo_host_environment`) and for the moved host modules. This file holds artifact consumers plus the executable `replacement_contract`/`consumers` records; it declares no lane tables and no knowledge-invariant identities. Lane membership for the host modules lives in `test-evidence-lanes.toml`, and knowledge proof identities live in the sidecar proof plane; a catalog declaration still never shows evidence ran.
 
+## 260928-MIK-L129 Repeated-cleanup regression test consumers
+
+`mcp/tests/test_cleanup_repeated_archive_ready.py` joins the three consumer lists the source tree supports (two lifecycle `consumers` lists and one exact-scope artifact's `consumers` list) through the documented `--write` command, and joins the `integration` lane. No artifact or contract row is added, removed or reordered by hand, and the canonical form is unchanged.
+
 
 
 - Conversation-open support declares its permanent owner and real replacement contract. [96]

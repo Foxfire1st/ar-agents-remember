@@ -1,0 +1,125 @@
+{
+  "path": "mcp/tests/test_cleanup_repeated_archive_ready.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "631bb23bebf460e98ada1fda4e15775db7c25c2b",
+        "content": "sha256:3aca38e8d8e7b7e64481205bd6f17b1d892c06ca229c54f94c4fbf83392ab1eb",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_repeated_cleanup_with_branches_already_gone_finishes"
+        }
+      },
+      "facet": "A repeat after branch retirement finishes and completes without live refs.",
+      "id": "PRF-AT03YR",
+      "invariant": "INV-ZJ9JXS",
+      "origin": {
+        "handoffEntry": "MIK-R129@v1",
+        "leaf": "260928-MIK-L129"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "631bb23bebf460e98ada1fda4e15775db7c25c2b",
+        "content": "sha256:11693da24789d1d355b5297ebc94857b2f237ace8f46c336d20f33d60249f269",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_repeated_cleanup_with_archive_ready_finishes"
+        }
+      },
+      "facet": "An archive-ready dry-run repeat finishes with no invented landedTips.",
+      "id": "PRF-BA20BH",
+      "invariant": "INV-ZJ9JXS",
+      "origin": {
+        "handoffEntry": "MIK-R129@v1",
+        "leaf": "260928-MIK-L129"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "631bb23bebf460e98ada1fda4e15775db7c25c2b",
+        "content": "sha256:2d61b01b4203356d0f6b2f872571c5f1e1ec3eafd58b982b788e7ce83fdf0c72",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_repeated_cleanup_real_run_reaches_cleanup_completed"
+        }
+      },
+      "facet": "A genuine archive-ready repeat completes the contract and the terminal authority reads cleanup-completed.",
+      "id": "PRF-YZMTKK",
+      "invariant": "INV-ZJ9JXS",
+      "origin": {
+        "handoffEntry": "MIK-R129@v1",
+        "leaf": "260928-MIK-L129"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "4": {
+      "note": "The dry-run repeat of an archive-ready cleanup finishes with no invented `landedTips`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "631bb23bebf460e98ada1fda4e15775db7c25c2b",
+            "content": "sha256:11693da24789d1d355b5297ebc94857b2f237ace8f46c336d20f33d60249f269",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_repeated_cleanup_with_archive_ready_finishes"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The real-run repeat completes the contract and the terminal authority re-reads `cleanup-completed`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "631bb23bebf460e98ada1fda4e15775db7c25c2b",
+            "content": "sha256:2d61b01b4203356d0f6b2f872571c5f1e1ec3eafd58b982b788e7ce83fdf0c72",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_repeated_cleanup_real_run_reaches_cleanup_completed"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The branch-gone repeat finishes and completes without live refs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "631bb23bebf460e98ada1fda4e15775db7c25c2b",
+            "content": "sha256:3aca38e8d8e7b7e64481205bd6f17b1d892c06ca229c54f94c4fbf83392ab1eb",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_repeated_cleanup_with_branches_already_gone_finishes"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The archive-ready branch binds `kept_line = None` and invents no record.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c144ebeaa236e2459b5aa2ff32fa15789eb6eb4",
+            "content": "sha256:8b22e4c1d88ed51d3e2763f6a1ec838a77ed6c30b1b6a976235bd6ed9c9686d4",
+            "locator": {
+              "kind": "symbol",
+              "name": "cleanup_result"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/cleanup.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

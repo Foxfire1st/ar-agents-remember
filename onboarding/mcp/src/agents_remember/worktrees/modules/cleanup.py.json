@@ -3,7 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "6a694c702d35e4d5a1761381a0d9876b40837588",
+        "blob": "6c144ebeaa236e2459b5aa2ff32fa15789eb6eb4",
+        "content": "sha256:8b22e4c1d88ed51d3e2763f6a1ec838a77ed6c30b1b6a976235bd6ed9c9686d4",
+        "locator": {
+          "kind": "symbol",
+          "name": "cleanup_result"
+        }
+      },
+      "id": "RLZ-15KPEC",
+      "invariant": "INV-ZJ9JXS",
+      "origin": {
+        "handoffEntry": "MIK-R129@v1",
+        "leaf": "260928-MIK-L129"
+      },
+      "rationale": "cleanup_result owns the archive-ready continuation: it carries no judgement record where the strict archive has none, does not rejudge the already accepted gate, and passes only optional landedTips data to the guarded tail.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "6c144ebeaa236e2459b5aa2ff32fa15789eb6eb4",
         "content": "sha256:2377bc203fa673e8bbee202ad59d18ff2aff663cf7ed11e32fa9940d31265e6e",
         "locator": {
           "kind": "symbol",
@@ -21,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "6a694c702d35e4d5a1761381a0d9876b40837588",
+        "blob": "6c144ebeaa236e2459b5aa2ff32fa15789eb6eb4",
         "content": "sha256:2377bc203fa673e8bbee202ad59d18ff2aff663cf7ed11e32fa9940d31265e6e",
         "locator": {
           "kind": "symbol",
@@ -44,7 +62,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6a694c702d35e4d5a1761381a0d9876b40837588",
+            "blob": "6c144ebeaa236e2459b5aa2ff32fa15789eb6eb4",
             "content": "sha256:6655686073ecd35f41f016b1c12f205ebc555fd6d064525522c7f429177bb9da",
             "locator": {
               "kind": "symbol",
@@ -224,14 +242,64 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6a694c702d35e4d5a1761381a0d9876b40837588",
-            "content": "sha256:bbc6d9da4d6ecc262c63ff146c16e9f97e1d5b39192b4fda6a5eabbb4e36f0ca",
+            "blob": "6c144ebeaa236e2459b5aa2ff32fa15789eb6eb4",
+            "content": "sha256:8b22e4c1d88ed51d3e2763f6a1ec838a77ed6c30b1b6a976235bd6ed9c9686d4",
             "locator": {
               "kind": "symbol",
               "name": "cleanup_result"
             }
           },
           "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "A cleanup repeated after its terminal archive was written carries no rejudged record: the archive-ready branch binds `kept_line = None` and invents no `landedTips`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c144ebeaa236e2459b5aa2ff32fa15789eb6eb4",
+            "content": "sha256:8b22e4c1d88ed51d3e2763f6a1ec838a77ed6c30b1b6a976235bd6ed9c9686d4",
+            "locator": {
+              "kind": "symbol",
+              "name": "cleanup_result"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "The dry-run repeat of an archive-ready cleanup finishes with no invented `landedTips`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "631bb23bebf460e98ada1fda4e15775db7c25c2b",
+            "content": "sha256:11693da24789d1d355b5297ebc94857b2f237ace8f46c336d20f33d60249f269",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_repeated_cleanup_with_archive_ready_finishes"
+            },
+            "path": "mcp/tests/test_cleanup_repeated_archive_ready.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "24": {
+      "note": "The real-run and branch-gone repeats complete the contract and the terminal authority re-reads `cleanup-completed`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "631bb23bebf460e98ada1fda4e15775db7c25c2b",
+            "content": "sha256:3aca38e8d8e7b7e64481205bd6f17b1d892c06ca229c54f94c4fbf83392ab1eb",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_repeated_cleanup_with_branches_already_gone_finishes"
+            },
+            "path": "mcp/tests/test_cleanup_repeated_archive_ready.py"
+          },
+          "kind": "test"
         }
       ]
     },
@@ -308,7 +376,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6a694c702d35e4d5a1761381a0d9876b40837588",
+            "blob": "6c144ebeaa236e2459b5aa2ff32fa15789eb6eb4",
             "content": "sha256:e364d555946e1664facb9c6bc8d5655af03e34794f2208fe1633499b3c91a277",
             "locator": {
               "kind": "symbol",

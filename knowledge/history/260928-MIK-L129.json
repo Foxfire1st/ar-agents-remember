@@ -1,0 +1,65 @@
+{
+  "closed": true,
+  "leaf": "260928-MIK-L129",
+  "rows": [
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "da4f05ca7e197f7eeeb08f1dec4233719bf8878c",
+            "content": "sha256:2f00c832cd760bdb0b424facb0f882c7dcb2a65f48245bb9dc6d0b9f763cb702",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "65ceaeb4c6e3bcf64ec78176b74b507a84a69233",
+            "content": "sha256:7c9aa5f0b2bb6d753defa7bc8d3b9bb721c05620547aacea2f07058e259b27b1",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-GRTJG0"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-0S3NCP",
+      "items": [
+        "sha256:a7a52e4e13298a23264e3f0774f5f551f03c1e6c5a527b0101d319b0898c7dc4"
+      ],
+      "reason": "L129 adds three consumer lines for its new test module to the lifecycle catalog through the documented --write step (canonical order kept); the retired L48 whole-catalog restoration is intact: no base rows removed or restored, no union merge involved. RLZ-GRTJG0 is carried with identical id/rationale/role/origin, anchor re-pointed to the current catalog (blob da4f05ca, whole-file span). INV-MSCRAN stays retired at rev 1; this leaf revives nothing, alters no guarantee, authors no invariant.",
+      "revision": 1,
+      "subject": "INV-MSCRAN"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-3RMNCF",
+      "items": [
+        "sha256:48a75b924c4cf8a9d0b14c02d8ab007cbfa69e3b2b8d3acd83efc68187b805f8"
+      ],
+      "reason": "The new test module carries its own card; lane structure, catalog registration procedure and route meaning are unchanged, so the route overview still holds.",
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-QB7H8A",
+      "items": [
+        "sha256:a405da09e1629a90ab58edbaeb50b4c5676081f3738e51059b056f5b1bae7b09"
+      ],
+      "reason": "Single-line mechanical registration of L129's new test module in the integration lane's canonical consumer list (byte order kept, derived alongside the documented --write step); the line realizes no invariant. Catalog registration behavior is unchanged and ownership stays source-derived.",
+      "subject": "hunk:sha256:a405da09e1629a90ab58edbaeb50b4c5676081f3738e51059b056f5b1bae7b09"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-RQ5XBC",
+      "items": [
+        "sha256:9497ffd1f3fd3ea3f23a7f4daed022ae0bf590f2b92e5048d4a1c6a5a850948f"
+      ],
+      "reason": "The archive-ready kept_line binding lives inside cleanup_result; module route ownership, terminal authority, guard order, check/refusal texts and tail behavior are unchanged, so the route overview still holds.",
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/modules/overview"
+    }
+  ],
+  "schema": "ar-history/v1"
+}
