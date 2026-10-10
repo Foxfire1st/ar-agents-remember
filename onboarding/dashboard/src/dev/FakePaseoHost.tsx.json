@@ -1,0 +1,39 @@
+{
+  "path": "dashboard/src/dev/FakePaseoHost.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The page runs the real plugin client part against the stubbed two-workspace SDK.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5dff4706457149e8e5aabf35af9878a3e8a8b0b6",
+            "content": "sha256:7cea2441050e26f33a024ea5169233cde9d604f6fa6a573e1d55bd742527d81c",
+            "locator": {
+              "kind": "symbol",
+              "name": "FakePaseoHost"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "An opened agent's workspace is resolved from the fake's own agent table, never from the frame.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5dff4706457149e8e5aabf35af9878a3e8a8b0b6",
+            "content": "sha256:59f8b033dd6300205b4c692e5d5df7e1cf41b548588ddde908c4f6324cc49b1b",
+            "locator": {
+              "kind": "symbol",
+              "name": "createFakeClient"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

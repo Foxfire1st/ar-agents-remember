@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "a4f2e59e2adf2865387c345b289c2ca59ae935cd",
-        "content": "sha256:1fc4dbd1c066bea251ae51a649ceaa43e47dc49aa12cc39817f403c11de834ec",
+        "blob": "7f35409c0ead21784b841b92101dc1bb086c6d98",
+        "content": "sha256:e19a2d1ae40f78ba801b1d0f5341bf7edf1d2d3719f876847c4ea14d0216ded6",
         "locator": {
           "kind": "symbol",
           "name": "watchSelectedChats"
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "a4f2e59e2adf2865387c345b289c2ca59ae935cd",
-        "content": "sha256:1fc4dbd1c066bea251ae51a649ceaa43e47dc49aa12cc39817f403c11de834ec",
+        "blob": "7f35409c0ead21784b841b92101dc1bb086c6d98",
+        "content": "sha256:e19a2d1ae40f78ba801b1d0f5341bf7edf1d2d3719f876847c4ea14d0216ded6",
         "locator": {
           "kind": "symbol",
           "name": "watchSelectedChats"
@@ -39,8 +39,8 @@
     },
     {
       "anchor": {
-        "blob": "a4f2e59e2adf2865387c345b289c2ca59ae935cd",
-        "content": "sha256:1fc4dbd1c066bea251ae51a649ceaa43e47dc49aa12cc39817f403c11de834ec",
+        "blob": "7f35409c0ead21784b841b92101dc1bb086c6d98",
+        "content": "sha256:e19a2d1ae40f78ba801b1d0f5341bf7edf1d2d3719f876847c4ea14d0216ded6",
         "locator": {
           "kind": "symbol",
           "name": "watchSelectedChats"
@@ -57,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "a4f2e59e2adf2865387c345b289c2ca59ae935cd",
+        "blob": "7f35409c0ead21784b841b92101dc1bb086c6d98",
         "content": "sha256:8d90f4e43207d461b1078a42ffdcaf1911200cb7c57c5fc08527c020d587ee52",
         "locator": {
           "kind": "symbol",

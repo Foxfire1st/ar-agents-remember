@@ -1,6 +1,25 @@
 {
   "path": "dashboard/src/cockpit/paseoFrameModel.ts",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "dc93c2e121bcf6780acd62c38bc7587e63e769a7",
+        "content": "sha256:c26319ea1a18417c3770f0e47f8e96aec89a363e760412dded033408ea1c8b0e",
+        "locator": {
+          "kind": "symbol",
+          "name": "agentTimeoutText"
+        }
+      },
+      "id": "RLZ-D21787",
+      "invariant": "INV-KSCJ1Q",
+      "origin": {
+        "handoffEntry": "MIK-R121-R2-P3",
+        "leaf": "260928-MIK-L121"
+      },
+      "rationale": "The timeout sentence lives with the other pane sentences; its fallback claim must match the loaded-identity guard or it asserts an action never taken.",
+      "role": "presentation"
+    }
+  ],
   "references": {},
   "schema": "ar-onboarding-file/v1"
 }

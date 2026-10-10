@@ -1,0 +1,60 @@
+{
+  "admission": {
+    "criteria": [
+      "constrains_future_work"
+    ],
+    "justification": "Binds every future change of the plugin bridge display path to keep shown as displayed-screen evidence."
+  },
+  "alternatives": [
+    {
+      "option": "Settle a selection only on displayed-screen evidence: the frame route names the workspace as exact path segments, the stored layout names agent_<id> as the shown pane's focused tab, no visible selected tab names another agent, and a chat scroll root is visibly mounted without loading or not-found markers.",
+      "reason": "MIK-R121@v1 rule 3 and the R5 acceptance: six native selections confirm on exactly this conjunction with equal installed-client identity on both arms.",
+      "status": "chosen"
+    },
+    {
+      "option": "Settle on navigation receipt: post shown after asking the application to open the screen.",
+      "reason": "Counts a screen that never appears as shown, which is the D153 endless-loading defect the packet repairs.",
+      "reconsider_when": "The host application gains a synchronous open acknowledgement that is true only when the screen displays.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Future changes to the bridge display path keep shown as display evidence, never navigation receipt."
+  ],
+  "context": "MIK-R121 rule 3 requires the dashboard to settle a selection only on a sign that is true only when the agent's screen displays; the pre-leaf code posted shown straight after asking the application to open the screen, counting a never-appearing screen as shown.",
+  "decider": "architect (MIK-R121@v1 packet under developer direction D153)",
+  "id": "DEC-KW7QN3",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "66f63b526cfeef92f3048946ce23151a0e05a04b",
+        "content": "sha256:569e5af472233cc7c4add15ef13ead26bdbcbd417434a8d5698bd5f25c5dcde7",
+        "locator": {
+          "kind": "symbol",
+          "name": "displaySatisfied"
+        },
+        "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+      }
+    },
+    {
+      "relation": "constrains",
+      "target": "route:mcp/src/agents_remember/package_data/paseo_plugin/client"
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/260928-MIK-L121-requirement-attempt-journal.md#l121-r121-v1-reviewer-code-r5 :: exact-attempt reviewer adjudication; notes/reports/role-launch/260928-MIK-L121-reviewer-73cfdaa6-8311-4f8d-a477-6e14ae50d2fd.code-r5.verification.md :: Requirement Adjudication / Fix-Verification Dispositions; notes/reports/role-launch/260928-MIK-L121-reviewer-73cfdaa6-8311-4f8d-a477-6e14ae50d2fd.code-r5.browser.md :: Final R5 disposition"
+      ],
+      "path": "notes/reports/role-launch/260928-MIK-L121-curator-handoff-list.json"
+    },
+    "handoffEntry": "MIK-R121@v1",
+    "leaf": "260928-MIK-L121",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

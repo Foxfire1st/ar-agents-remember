@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "Realized in dashboard/src/cockpit/paseoFrameControl.ts, where arm posts the agent-naming problem for the unanswered target with one fallback load, and in dashboard/src/cockpit/paseoFrameModel.ts, where agentTimeoutText states whether the fallback loads the agent page or the frame already names it."
+  },
+  "applicability": "Every selection whose display report or channel readiness never arrives within the control deadline, on document and Chats pages alike.",
+  "conditions": [
+    "A selection is wanted but unsettled: a pending request, else the unsettled wanted target.",
+    "The fallback sentence states whether the agent page loads or the frame already names it, from the loaded-identity comparison."
+  ],
+  "exclusions": [
+    "Unselected panes, which name nothing by construction."
+  ],
+  "id": "INV-KSCJ1Q",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "PaseoChatFrame.test.tsx document page: no-ready naming, no-target silence, chats-page single fallback load with truthful sentence"
+      ],
+      "path": "notes/reports/role-launch/260928-MIK-L121-curator-handoff-list.json"
+    },
+    "handoffEntry": "MIK-R121-R2-P3",
+    "leaf": "260928-MIK-L121",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The deadline names the unanswered selection even when readiness never arrived (the pending request, else the unsettled wanted target, else silence), and the sentence states whether the fallback loads the agent page or the frame already names it.",
+  "status": "proposed",
+  "supersedes": []
+}

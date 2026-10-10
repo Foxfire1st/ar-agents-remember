@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "No member alone delivers the promise: agent-alone navigation without the display gate can acknowledge a missing screen, the gate without truthful deadline naming can wait silently, and naming without navigation reaches nothing. Together they promise the selected chat appears or its problem is named."
+  },
+  "guarantee": "The Operations document chat settles the selected document's live agent truthfully: navigation reaches the agent in its workspace by message-first moves that never reload the frame, shown is reported only for that agent's displayed screen — never for another agent — and a silent frame ends in the agent-naming problem state with at most one fallback load when the frame does not already name the target. A pending or failed request retains the previous screen; it never ends in an endless loading.",
+  "id": "FAM-JY9AN3",
+  "members": [
+    "INV-72Y8R3",
+    "INV-BTK24H",
+    "INV-KSCJ1Q"
+  ],
+  "origin": {
+    "handoff": {
+      "path": "notes/reports/role-launch/260928-MIK-L121-curator-handoff-list.json"
+    },
+    "handoffEntry": "fam-selected-chat",
+    "leaf": "260928-MIK-L121",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "routes": [
+    "dashboard/src/cockpit",
+    "mcp/src/agents_remember/package_data/paseo_plugin/client",
+    "mcp/src/agents_remember/package_data/paseo_plugin"
+  ],
+  "schema": "ar-family/v1",
+  "status": "proposed",
+  "title": "The selected document's agent chat appears, or the pane names its problem"
+}

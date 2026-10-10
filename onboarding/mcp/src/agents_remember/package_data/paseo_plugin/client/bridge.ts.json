@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "36e6100bac6aeb44a77c7c45bdbb9aaca07ce821",
-        "content": "sha256:5b1580705e72da59cfb1a652810d566d90f9e96ff7ee1c0599f38dd4fb535b01",
+        "blob": "66f63b526cfeef92f3048946ce23151a0e05a04b",
+        "content": "sha256:7b4a0e79c9da07da0586bbebc998f4c35b0a992f810acadc29f9170977f8bf44",
         "locator": {
           "kind": "symbol",
           "name": "installBridge"
@@ -21,8 +21,44 @@
     },
     {
       "anchor": {
-        "blob": "36e6100bac6aeb44a77c7c45bdbb9aaca07ce821",
-        "content": "sha256:5b1580705e72da59cfb1a652810d566d90f9e96ff7ee1c0599f38dd4fb535b01",
+        "blob": "66f63b526cfeef92f3048946ce23151a0e05a04b",
+        "content": "sha256:38a4834dc2dba60ca9b9146a51899241bc6de67efa6968a9f896939865129db7",
+        "locator": {
+          "kind": "symbol",
+          "name": "agentChatVisible"
+        }
+      },
+      "id": "RLZ-4EXMTZ",
+      "invariant": "INV-72Y8R3",
+      "origin": {
+        "handoffEntry": "MIK-R121-R4-P1",
+        "leaf": "260928-MIK-L121"
+      },
+      "rationale": "The R3 single-literal probe was false on every real web display; the prefix probe matches the live-measured web variant.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "66f63b526cfeef92f3048946ce23151a0e05a04b",
+        "content": "sha256:569e5af472233cc7c4add15ef13ead26bdbcbd417434a8d5698bd5f25c5dcde7",
+        "locator": {
+          "kind": "symbol",
+          "name": "displaySatisfied"
+        }
+      },
+      "id": "RLZ-5XXHCD",
+      "invariant": "INV-72Y8R3",
+      "origin": {
+        "handoffEntry": "MIK-R121-R4-P1",
+        "leaf": "260928-MIK-L121"
+      },
+      "rationale": "displaySatisfied is the single gate between opening and reporting; the five-clause conjunction is what makes the confirmation display evidence.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "66f63b526cfeef92f3048946ce23151a0e05a04b",
+        "content": "sha256:7b4a0e79c9da07da0586bbebc998f4c35b0a992f810acadc29f9170977f8bf44",
         "locator": {
           "kind": "symbol",
           "name": "installBridge"
@@ -39,8 +75,8 @@
     },
     {
       "anchor": {
-        "blob": "36e6100bac6aeb44a77c7c45bdbb9aaca07ce821",
-        "content": "sha256:5b1580705e72da59cfb1a652810d566d90f9e96ff7ee1c0599f38dd4fb535b01",
+        "blob": "66f63b526cfeef92f3048946ce23151a0e05a04b",
+        "content": "sha256:7b4a0e79c9da07da0586bbebc998f4c35b0a992f810acadc29f9170977f8bf44",
         "locator": {
           "kind": "symbol",
           "name": "installBridge"
@@ -57,7 +93,43 @@
     },
     {
       "anchor": {
-        "blob": "36e6100bac6aeb44a77c7c45bdbb9aaca07ce821",
+        "blob": "66f63b526cfeef92f3048946ce23151a0e05a04b",
+        "content": "sha256:6736f96eb1e1da16ab9ba899639e926ef2efc84411913ea49f00569ee459db9a",
+        "locator": {
+          "kind": "symbol",
+          "name": "openAgent"
+        }
+      },
+      "id": "RLZ-EX1831",
+      "invariant": "INV-BTK24H",
+      "origin": {
+        "handoffEntry": "MIK-R121-R2-P1",
+        "leaf": "260928-MIK-L121"
+      },
+      "rationale": "openAgent is the one place the channel turns a request into navigation; per the supported contract it takes agentId only, and per pinned native source the app session resolves location.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "66f63b526cfeef92f3048946ce23151a0e05a04b",
+        "content": "sha256:dc2febbb6af49e5234bfc30e74df9fc6cb40241d185d0f37c39eab80914bbafa",
+        "locator": {
+          "kind": "symbol",
+          "name": "noContradictingSelection"
+        }
+      },
+      "id": "RLZ-GFZT5P",
+      "invariant": "INV-72Y8R3",
+      "origin": {
+        "handoffEntry": "MIK-R121-R4-P1",
+        "leaf": "260928-MIK-L121"
+      },
+      "rationale": "Strip agreement blocks confirmation against a stale/contradicting visible selection; render lag keeps the wait open for the timer.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "66f63b526cfeef92f3048946ce23151a0e05a04b",
         "content": "sha256:3675faa5b02f7fffe24de8f89ffd0b72d0a388f953ce1288dd1c735677af2bb4",
         "locator": {
           "kind": "symbol",
@@ -75,8 +147,8 @@
     },
     {
       "anchor": {
-        "blob": "36e6100bac6aeb44a77c7c45bdbb9aaca07ce821",
-        "content": "sha256:5b1580705e72da59cfb1a652810d566d90f9e96ff7ee1c0599f38dd4fb535b01",
+        "blob": "66f63b526cfeef92f3048946ce23151a0e05a04b",
+        "content": "sha256:7b4a0e79c9da07da0586bbebc998f4c35b0a992f810acadc29f9170977f8bf44",
         "locator": {
           "kind": "symbol",
           "name": "installBridge"
@@ -93,8 +165,8 @@
     },
     {
       "anchor": {
-        "blob": "36e6100bac6aeb44a77c7c45bdbb9aaca07ce821",
-        "content": "sha256:5b1580705e72da59cfb1a652810d566d90f9e96ff7ee1c0599f38dd4fb535b01",
+        "blob": "66f63b526cfeef92f3048946ce23151a0e05a04b",
+        "content": "sha256:7b4a0e79c9da07da0586bbebc998f4c35b0a992f810acadc29f9170977f8bf44",
         "locator": {
           "kind": "symbol",
           "name": "installBridge"
@@ -111,8 +183,8 @@
     },
     {
       "anchor": {
-        "blob": "36e6100bac6aeb44a77c7c45bdbb9aaca07ce821",
-        "content": "sha256:5b1580705e72da59cfb1a652810d566d90f9e96ff7ee1c0599f38dd4fb535b01",
+        "blob": "66f63b526cfeef92f3048946ce23151a0e05a04b",
+        "content": "sha256:7b4a0e79c9da07da0586bbebc998f4c35b0a992f810acadc29f9170977f8bf44",
         "locator": {
           "kind": "symbol",
           "name": "installBridge"
@@ -129,7 +201,7 @@
     },
     {
       "anchor": {
-        "blob": "36e6100bac6aeb44a77c7c45bdbb9aaca07ce821",
+        "blob": "66f63b526cfeef92f3048946ce23151a0e05a04b",
         "content": "sha256:3f61656bb07a906a7620eb85454f8c4871076c905c10ab0f3ceceaf1a74fdb0a",
         "locator": {
           "kind": "symbol",

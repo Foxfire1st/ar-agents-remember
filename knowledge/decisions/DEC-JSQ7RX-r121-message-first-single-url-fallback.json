@@ -1,0 +1,62 @@
+{
+  "admission": {
+    "criteria": [
+      "constrains_future_work"
+    ],
+    "justification": "Binds every future change of the dashboard frame control to message-first moves with a single fallback load."
+  },
+  "alternatives": [
+    {
+      "option": "Message-first open for every selection while the channel is ready, with a single workspace-and-agent URL fallback load when the message cannot bring the frame to the agent.",
+      "reason": "MIK-R121@v1 rules 4 and 5 with the R5 acceptance: cross- and same-workspace selections move by message with no reload, and the silent frame loads the agent page once.",
+      "status": "chosen"
+    },
+    {
+      "option": "A URL load for every selection.",
+      "reason": "Reloads the frame on every selection, also inside one workspace, which the packet names non-conforming.",
+      "reconsider_when": "Message opens prove unable to reach another workspace's agent and the packet is revised.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Future frame-control changes keep message-first moves and the single fallback load; per-selection reloads stay out."
+  ],
+  "context": "MIK-R121 rule 4 requires one URL fallback load where the message cannot bring the frame to the agent, and the packet's non-conforming examples forbid reloading the frame on selections that a message can carry. Re-sourced successor: supersedes DEC-F63JY2, whose origin named the retired curator alias; this record's origin names the actual worker source entry.",
+  "decider": "architect (MIK-R121@v1 packet under developer direction D153)",
+  "id": "DEC-JSQ7RX",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "fb9ca83fa3143598c8efeddd62aebf30e3be5a69",
+        "content": "sha256:fd559019f9befd140955e05079a57e8fa101a960fc63d6434e7d4119407804f4",
+        "locator": {
+          "kind": "symbol",
+          "name": "arm"
+        },
+        "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+      }
+    },
+    {
+      "relation": "constrains",
+      "target": "route:dashboard/src/cockpit"
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "PaseoChatFrame.test.tsx document page: no-ready naming, no-target silence, chats-page single fallback load with truthful sentence"
+      ],
+      "path": "notes/reports/role-launch/260928-MIK-L121-curator-handoff-list.json"
+    },
+    "handoffEntry": "MIK-R121-R2-P3",
+    "leaf": "260928-MIK-L121",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": [
+    "DEC-F63JY2"
+  ]
+}

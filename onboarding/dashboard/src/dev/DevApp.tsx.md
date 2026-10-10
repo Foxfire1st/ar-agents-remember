@@ -9,7 +9,10 @@
 The DEV-only harness router (lazy-loaded from `App` under `import.meta.env.DEV`, so it is
 dead-code-eliminated from the production bundle). `/dev/reference` = the mc2 mount; `/dev/pty-bench` =
 the PTY renderer measurement harness (260715-FEUI-L6, master OQ-B); `/dev/bench` = the component
-gallery; `/dev/flows` = the lifecycle-design canvas (orchestration L0); otherwise a small index.
+gallery; `/dev/flows` = the lifecycle-design canvas (orchestration L0);
+`/dev/document-chat-host` + `/dev/fake-paseo-host` = the MIK-R121 cross-workspace chat repair rig
+(real document chat against the fake two-workspace host running the real plugin bridge);
+otherwise a small index.
 
 ## Code Commentary
 
