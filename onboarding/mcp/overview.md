@@ -4,8 +4,6 @@
 
 The package now contains strict Paseo configuration, bounded provision/status/stop, native bridge/catalog/frame integration, immutable role-launch intent and identity-bound task tools. Explicit-model and native-default creation use the same declared feature channel while retaining native permission/tool behavior. Converted MIK readers/writers, worklists and review/lifecycle owners remain intact. Transport, source qualification, authored knowledge and paired publication each require their own evidence.
 
-- Current imported source owns this scoped route boundary. [228]
-- Current imported source owns this scoped route boundary. [229]
 - Current imported source owns this scoped route boundary. [230]
 - Current imported source owns this scoped route boundary. [231]
 
@@ -54,7 +52,6 @@ that keep results computed from Git trees and plain files.
   calls when serving ends.
 
 - A recording block collects the rows of one computation. [246]
-- A kept set is checked with its path selections first. [247]
 - A conflict or an unreadable row is a failed observation. [248]
 - The contract loader reads through the recorder. [249]
 - The ledger loader reads through the recorder. [232]
@@ -67,7 +64,6 @@ that keep results computed from Git trees and plain files.
 - The shared-read block of the batched blob reader. [239]
 - The composition root creates the process owner. [240]
 - It supplies the owner's shutdown to the app. [241]
-- The waiting bound counts computations, not the requests sharing them. [242]
 - A build mismatch asks for a dashboard restart. [243]
 - Every parsed diff names its own prefix, colour and driver options. [244]
 - Bytes the child consumed are identified across a change and restore, a conflict, an absence and a read error. [245]
@@ -267,7 +263,6 @@ flag or report-only mode exists.
 
 - The history-row rule over every file's subjects and the leaf's own file. [6]
 
-- The two lane rows. [233]
 
 
 ## 260928-MIK-L38 Finalize Completes The Master Row: One Rule For A Leaf's Master
@@ -443,7 +438,6 @@ curator never reverses a decision. An unanswered candidate blocks closeout throu
 - The writer's rows, the refresh and its link states. [15]
 - The manifest lookup. [16]
 - The reorder guard, registered on import. [17]
-- The lane row. [18]
 
 ## 260928-MIK-L29 The Path-Based Knowledge Reader, Inert Until The Cutover
 
@@ -619,7 +613,6 @@ lifecycle to a `served_earlier` row; `knowledge_read` never does.
 - The chain module statement. [25]
 - The compact row with its family seed. [26]
 - The family seed on the mounted read. [27]
-- The lane row. [28]
 
 ## 260928-MIK-L10 Unexplained Change Disposition, Inert Until The Cutover
 
@@ -667,7 +660,6 @@ reason; an **uncovered** file takes its onboarding trace (MIK-R30).
 - The two kinds and the coverage lookup. [29]
 - The subjects and the gate predicate. [30]
 - A delete-only hunk is linked only by a K_B range (and, since MIK-R09, an insertion-only hunk only by a K_C range). [31]
-- The lane row. [32]
 
 ## 260928-MIK-L25 The Reviewer On Git Trees, Inert Until The Cutover; The Archive Hook Once Installed
 
@@ -713,11 +705,9 @@ and the archive hook that deletes a task's review artifacts.
   the dashboard adapter and UI cases on real captured bodies. Review R6: pass-with-notes; full unit suite 3,231
   passed, integration lane 447 passed.
 
-- The four-tree comparison, pinned and recorded. [33]
 - The archive hook's identity sources and confinement. [34]
 - The tree view route. [35]
 - The index format bump for the seal fix. [36]
-- The two lane rows. [37]
 
 ## 260928-MIK-L13 Decision Records With Rejected Alternatives, Inert Until The Cutover
 
@@ -767,7 +757,6 @@ at closeout. A decision keeps the chosen alternative and the rejected or deferre
 - The content rules and derived reads. [38]
 - The five registered decision rules. [39]
 
-- The owner resolves each requirement endpoint; unresolved is reported. [40]
 
 - The writer reports each endpoint of the records the run touched. [41]
 - A decision is never an export. [42]
@@ -933,7 +922,6 @@ no history row delivers as declared, and the curator answers each with a planned
 - The declaration on the task document. [53]
 - The planned row. [54]
 
-- The task owner's strict lookup and decision answer. [55]
 
 
 ## 260928-MIK-L02 Bounded Continuation Accepted By The Mounted Read, Inert Until The Cutover
@@ -1134,6 +1122,30 @@ The facts that belong to this route, because `cli/` and `kernel/` have no overvi
 - A converted overview's sidecar feeds the hot-path hints. [74]
 - The rule 9 refusal for a leaf whose official line is converted and, since L37, the cutover lock for every other unconverted tree. [75]
 
+## 260928-MIK-L12 The Curator Writer, And Two CLI Entry Points That Choose Their Writer By Memory Tree
+
+`260928-MIK-L12` (MIK-R12@v2) adds the curator file writer, `write_knowledge`, in
+[`application/knowledge_writer/`](src/agents_remember/application/overview.md) (governed by the `application`
+route overview): it reads the curator hand-off document (the producer's list, or an object with `entries`,
+`records` and `history`), writes every knowledge kind into the memory working tree with every mechanical field
+filled, checks every row of the owner's history file against the result, and runs the knowledge validator over
+the whole resulting tree; any problem or refusing violation refuses the whole operation and nothing is
+written. The one definition of an anchor's `content` bytes is
+[`models/knowledge_files/anchor_content.py`](src/agents_remember/models/overview.md). By architect ruling, the
+database ingest and bootstrap modules were retired by MIK-R26 (leaf L26, b52adc8b): the commands write through the file writer for converted trees or refuse legacy by name. One fact belongs to this
+route, because `cli/` has no overview of its own:
+
+- **`cli/`.** No subcommand was added; the umbrella still registers fifteen. The new
+  [`cli/knowledge_write_route.py`](src/agents_remember/cli/knowledge_write_route.py.md) is the file route both
+  existing commands share. [`knowledge-ingest`](src/agents_remember/cli/knowledge_ingest.py.md) loads the leaf
+  contract once and, when the contract's memory worktree is converted (`knowledge/layout.json`), writes
+  through the file writer as the leaf (the database-only arguments are refused by name; exit 0 written or
+  planned, 1 refused, 2 invocation refused). [`knowledge-bootstrap`](src/agents_remember/cli/knowledge_bootstrap.py.md)
+  gains `--wave` and writes a converted admitted memory root as that wave, with the bootstrap scope as task.
+
+ Before MIK-R37 no production memory tree holds
+`knowledge/layout.json`, so no production route changes behaviour.
+
 ## Curator file writing
 
 knowledge-ingest writes the contract's converted memory through the curator file writer. Without commit it plans/validates and writes nothing; commit writes files, not Git history. crossing addresses master-line conflict history. Any unconverted tree receives named conversion guidance: database writers, candidate-directory/baseline placement and publication options are retired. [131]
@@ -1252,7 +1264,6 @@ holds `knowledge/layout.json`, so no production route changes behaviour.
 - The subcommand registration. [90]
 - The command's inputs, scope answer and exit statuses. [91]
 - The shared exclusion predicate. [92]
-- The batch blob reader. [93]
 
 ## 260928-MIK-L21 The Package Declares The Text Knowledge Format, And The CLI Gains `knowledge-format`
 
@@ -1442,6 +1453,36 @@ non-committing run cannot burn a family identity or report a digest for bytes no
 **Catalog accounting.** The new test module took its existing lane row and two consumer rows in
 `evidence-lifecycle.toml`; no byte or count of a catalog is pinned. Nothing else in the package's public surface moved: no tool name, response model or refusal
 code changed.
+
+## 260921-ICR-L14 The Review's Record Collection Gets One Production Owner, And An Empty Tuple Stops Meaning Three Things
+
+`260921-ICR-L14` (primary requirement `ICR-R14@v1`) adds **one `application/` owner, one `models/`
+vocabulary module and one case module**, and changes the production dashboard composition's record
+loader. At this altitude the package-wide facts are three:
+
+**The record half of a review now has an owner of its own.** `application/review_evidence_records.py`
+resolves, for one resolved candidate, every answerable owner-produced collection — the curator authority's
+published assessments and the review matrix's authored effects — plus the dependency-currentness
+measurement this resolution produces (`comparison_currentness_measurement` against the bound comparison).
+The detection owner's signals, the evidence owner's verification observations and evidence claims belong
+to the retired canonical store: their channels remain visible as unavailable with no measured count. The resolver used to be a private function at the bottom
+of `application/knowledge_review.py` that read the assessments and returned an empty collection for an
+absent *or* unreadable authority; that body is gone, the adapter re-exports the name from its new home,
+and the adapter is **831 → 819 lines** while gaining the channel assembly. No second store, no second
+reader of an owner's tables and no re-derived content: every collection is the owner's own answer.
+
+**Availability became a fact per collection rather than an empty tuple.** The new
+`models/knowledge/review_records.py` declares `ReviewRecordChannel` with five states — `recorded`,
+`none_recorded`, `unavailable` (with the owner's own refusal as provenance), `not_measured`,
+`not_selected` — and its validator makes "a count nobody measured" unrepresentable: an unreadable
+authority carries no count, and every non-answer must say what would produce one. The vocabulary is
+carried on the bundle and on `ReviewEvidencePane.channels`, whole and underived. The vocabulary was
+extracted from `models/knowledge/review.py` (which had crossed the 900-line soft rail at 940 and is 851
+now) and re-exported from it, so no importer moved.
+
+The ten cases live in `mcp/tests/test_knowledge_review_evidence_channels.py` and drive
+`cli.dashboard.serving_collaborators`, so the packet's failure — a production port supplying only
+assessments while claiming a complete bundle — is caught at the composition rather than at the resolver.
 
 ## Review record channel availability
 
@@ -1812,7 +1853,7 @@ These dated additions retain their original public names and intermediate author
 `mcp/` is the package-managed Agents Remember MCP server. It turns coordinator
 startup and provider lifecycle behavior into typed, host-side operations backed
 by importable Python services instead of model-edited coordinator scripts or
-coordinator `system/settings.json`. The tool surface gained `task_reopen` cit:([`task_reopen`], mcp/src/agents_remember/mcp/registration/tasks.py:64-76):
+coordinator `system/settings.json`. The tool surface gained `task_reopen` :
 reopen a fully landed leaf task under its exact leaf id — a task-domain state reset
 whose worktree recreation stays with `worktree_start`. The agent-orchestration L2
 adds `spawn_agent_session` — the agent-facing **dispatch** tool that CREATES a
@@ -2186,9 +2227,6 @@ resolution depends on. The evidence for both halves is
 `mcp/tests/test_capsule_launch_wiring.py`.
 
 - The one decision point every launch point calls, with its three answers and named refusals. [159]
-- The one workspace rule and the selection that follows it. [160]
-- The compiler the port is bound to, including the eve path that reads the admitted workspace back out of the carrier. [161]
-- D13's repair, on the registered operation's own resolution path. [162]
 - The declared legacy exclusion, and the enumeration case that keeps a fourth launch point from appearing silently. [163]
 - The production chain read at the consumer's own gate and at the live runtime's system block. [164]
 
@@ -3269,6 +3307,42 @@ unpopulated in a checkout, because populating it would repoint every checkout la
 dependency-less copy. The per-card detail is on the `install` route's cards and the
 [tests route](tests/overview.md).
 
+## 260915-KS-L45 The Reviewer Becomes Two Routes, And The Candidate Pair Gets A Producer
+
+**Superseded count (`260921-ICR-L3`): the surface now serves three routes over three ports, and it is no
+longer true that no review route accepts a path.** This section records the two-route landing as it was;
+its reasons for the split remain current, and the `260921-ICR-L3` section at the end of this narrative
+records what the third route added and which sentence of the route model it corrected.
+
+The Intent Reviewer surface is reached through **three GET routes**, and the second one is what makes
+the first reachable from a task view:
+
+| Route | Answers | Port | Inputs |
+| --- | --- | --- | --- |
+| `/api/review/intent` | what one comparison renders | `KnowledgeReviewPort` | task context + one recorded subject selector |
+| `/api/review/intent/entries` | which subjects the resolved pair can be compared on | `KnowledgeReviewEntriesPort` | task context alone |
+| `/api/review/intent/source-content` | one listed entry's actual content at the two bound code trees (`260921-ICR-L3`) | `ReviewSourceContentPort` | task context + the entry path + both bound code tree ids |
+
+The split is a second **path** rather than a second adapter, and the source comment gives the reason: a
+caller that had to guess a subject id to reach the comparison route would be choosing the candidate,
+which the browser may not do. Both answer from **one application resolution**, so the entry a task view
+is offered and the review it then opens cannot name different candidates. The entry route is the only
+one a caller can invoke *before* it knows a subject, so it takes the task context and nothing else.
+
+**No adapter is a named refusal on all three routes, and neither the entry route nor the expansion route may answer it with a list or with an empty file (`260921-ICR-L3` added the third).**
+The comparison route's `503` says the surface is not served rather than served empty. The entry route
+has its own body (`_UNWIRED_ENTRIES`, `status: "unavailable"`) because an empty entry list would say
+"nothing is reviewable here" — a different fact from "this process cannot answer", and only one of them
+is true when the process was composed without the port. `_status_for` now reads success as
+`refusal is None` (so an `entries` state and a `review` state both serve `200` from one mapping) and
+`subject_unresolved` joins the candidate codes answering `404`.
+
+Production wiring lives in the composition root, and it now supplies both ports:
+`cli/dashboard.py`'s `serving_collaborators` builds `review_port` and `review_entries_port` — the
+application adapter's two halves — and passes them as `knowledge_review` and
+`knowledge_review_entries`. Every `create_app` call in that module goes through that function, so a
+served dashboard either has both adapters or refuses the corresponding route by name.
+
 ## Historical database mechanism — retired
 
 The old candidate-directory constants, copied baseline and empty-first-generation producer are retired. The review obtains exact source and memory endpoints through the current tree comparison owner. [183]
@@ -3310,13 +3384,10 @@ empty surface.
 - The typed request the query string parses into, with no path among its inputs. [190]
 - The port field on the collaborators dataclass, and the rank reason it exists. [191]
 - The registration that reads that port. [192]
-- The composition root's two adapter functions. [193]
 
-- The shared collaborators bind the knowledge-review and entry-list ports and the listed source-content port. [194]
 
 - **The two-shape status idiom the routes inherit, `503` included; the signature now accepts all three typed results.** [195]
 
-- The shared collaborators bind the knowledge-review and entry-list ports. [196]
 
 - **The two-shape status idiom both routes inherit, `503` included; the signature now accepts both typed results.** [197]
 
@@ -3632,7 +3703,6 @@ all.
 - Current curator records and explicit retired-channel unavailability [109]
 
 
-- Actual absent/unreadable authority and task-context matrix cases [112]
 
 
 - Custody and release remain; creation is retired [118]
@@ -3680,3 +3750,57 @@ The native role-launch CLI composes one Investigator request owner for task-owne
 - This source owns the route’s Investigator selection or execution boundary. [254]
 
 
+
+## Refreshed current evidence
+
+- The four-tree comparison, pinned and recorded. [33]
+- The owner resolves each requirement endpoint; unresolved is reported. [40]
+- The task owner's strict lookup and decision answer. [55]
+- The batch blob reader. [93]
+- Actual absent/unreadable authority and task-context matrix cases [112]
+- The one workspace rule and the selection that follows it. [160]
+- The compiler the port is bound to, including the eve path that reads the admitted workspace back out of the carrier. [161]
+- D13's repair, on the registered operation's own resolution path. [162]
+- The composition root's two adapter functions. [193]
+- The shared collaborators bind the knowledge-review and entry-list ports and the listed source-content port. [194]
+- The shared collaborators bind the knowledge-review and entry-list ports. [196]
+- Current imported source owns this scoped route boundary. [228]
+- Current imported source owns this scoped route boundary. [229]
+- A kept set is checked with its path selections first. [247]
+
+- The layout-marker test both commands use. [255]
+- The writer refuses an unconverted memory tree. [256]
+- **The availability vocabulary and the field that carries it on the served payload.** [257]
+- **The production port the cases drive, and the two states F09 collapsed.** [258]
+- **The keystone record: the manifest, its layout under the one durable root, the re-derived id and the directory-name agreement.** [259]
+- **The two deletion owners and the record that precedes every deletion.** [260]
+- **The Git-object retention member this route's `worktrees/` gained.** [261]
+- **The two typed failures, and the two boundaries that decide why they are raised.** [262]
+- **The one durable-root owner the layout asks instead of restating.** [263]
+- **The comparison route constant, GET-only.** [264]
+- **The entry route constant, and the comment recording why it is a second path rather than a second adapter.** [265]
+- **The entry route's unwired answer: a named refusal with the "not served rather than served empty" reason, never an empty list.** [266]
+- **The status mapping success reads as `refusal is None`, so one function serves all three typed results; the four candidate codes answer `404` and the expansion's `source_content_unresolved` falls through to `400`.** [267]
+- The shared collaborators bind the knowledge-review and entry-list ports and the listed source-content port. [268]
+- The four-tree comparison, pinned and recorded. [269]
+- The owner resolves each requirement endpoint; unresolved is reported. [270]
+- The task owner's strict lookup and decision answer (`mcp/src/agents_remember/tasks/leaf_decisions.py:56-64` `strict_leaf_doc`, decision answer at `115-132`).
+
+The publication's snapshot/override iteration over topology paths answers no lookup; it is a different construct from the strict lookup above.
+- The batch blob reader. [272]
+- The one workspace rule and the selection that follows it. [273]
+- The compiler the port is bound to, including the eve path that reads the admitted workspace back out of the carrier. [274]
+- The composition root's two adapter functions: `review_port` renders one review through the application adapter (`mcp/src/agents_remember/cli/dashboard.py:109`).
+- The composition root's two adapter functions: `review_entries_port` lists subjects through the same adapter (`mcp/src/agents_remember/cli/dashboard.py:129`).
+- A kept set is checked with its path selections first (`changed_observations` rechecks selections before bytes, `mcp/src/agents_remember/kernel/recorded_reads.py:151-162`).
+- The waiting bound counts computations, not the requests sharing them (`mcp/tests/test_reviewer_worklist_process.py:1008-1067`, twelve sharers join at 1054-1061).
+- The task reopening tool on the registration surface. [285]
+
+## Refreshed current evidence
+
+- The lane row. [18]
+- The lane row. [28]
+- The lane row. [32]
+- The two lane rows. [37]
+- The two lane rows. [233]
+- The waiting bound counts computations, not the requests sharing them. [242]

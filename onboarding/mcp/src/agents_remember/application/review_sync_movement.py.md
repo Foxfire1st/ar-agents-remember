@@ -22,6 +22,21 @@ Only a rebinding equal to the retained tree comparison supplies measurement. Mis
 
 None recorded.
 
+### Invariants And Boundaries
+
+- **`unavailable` is a third outcome and neither neighbour.** It carries `record_readable=False` and a
+  non-empty `reason`, and the movement validator in the models module requires exactly that: an absence
+  state without a reason is refused, and a measurement carrying one is refused as well.
+- **Only `stale` moves the fold.** Agreement and absence leave the reader's own staleness exactly as they
+  found it, so a `not-measured` movement never renders as a movement and never as an agreement: it is a
+  value beside the staleness field, not a claim inside it.
+- **The previous input is always one somebody held.** `carried or movement.reviewed_binding_digest`; the
+  fallback is the generation's own bound comparison identity, never a synthesized one.
+- **Boundary: this module is the read half only.** The write half, the record's own vocabulary and the
+  sync-tool projection live in `application/review_sync_rebinding.py` and
+  `models/knowledge/review_sync_rebinding.py`; this module consumes them and owns neither their shape nor
+  their durability.
+
 ## Evidence
 
 ### Docs References

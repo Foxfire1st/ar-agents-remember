@@ -31,9 +31,15 @@ approval increments the requirement version.
 
 Canonical lifecycle doctrine owns this source; generated copies are synchronization outputs. Native assignments preserve approved requirement IDs/versions, exact task/paired/report bindings and actual returned role-agent identities. An approved packet is not rewritten in place and delivery roles do not acquire semantic revision authority. No inferred repository/parent, uncertain duplicate, self-approval or shell-publication substitute is allowed; existing delegated c-09/c-12 authority remains required for Architect closeout coordination.
 
+Canonical lifecycle doctrine owns canonical skill content; generated copies are synchronization
+outputs. An approved requirement packet is never
+rewritten in place. A worker/reviewer classification cannot become semantic authority.
+
 ## CCR-R12@v5 Transaction Boundary
 
 Current role duty remains targeted/scoped evidence with failed or unrun results visible, followed by the existing authorized paired Git transaction under its real contract. Requested independent review preserves the sealed monotonic finding set and three-round rule. The normal Curator authoring pass remains the standing full memory-quality/coherence exception; an explicitly report-only admission claims none of that normal pass complete. No finished turn or green check supplies semantic acceptance or Git publication.
+
+This role card follows the transaction-only lifecycle boundary: the role reports its own targeted or scoped evidence with failed and not-run states visible and leaves closeout/integration to the authorized code, memory-content, and ledger Git transaction. Full quality, full tests, full memory quality, certification, and independent review are explicit operations only, save the normal Curator authoring pass, which remains the standing full memory-quality/coherence exception. Requested reviews retain the sealed finding list and monotonic three-round limit.
 
 ## 260928-MIK-L99 — a leaf's agents hand over to each other
 
@@ -70,6 +76,8 @@ The terminal-custody section now says rows whose entire owner chain is dead surf
 architect as a mailbox (the timed escalation ladder is retired), rows land at the architect's
 turn boundary (the system acks), and `operator_inbox_consume` is an optional attribution
 marker. The developer remains an authority, not an address.
+
+<!-- Base heading superseded by the Historical prefix at the cut; body kept verbatim above: ## 260713-TES-L5 Current Delta — Mailbox Custody, Not Ladder Rungs -->
 
 ## Historical 260815-DAG-L2 Planning Authority
 

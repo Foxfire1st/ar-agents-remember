@@ -65,6 +65,233 @@
           "kind": "code"
         }
       ]
+    },
+    "27": {
+      "note": "The published surface and the value that packages the three addressing strings.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "07dda66c98a13ea7b9344ae8f32b60b389587469",
+            "content": "sha256:6d3974362ae74fc0e485fd626aa228c6dd0d229414bb25d302ec15178cc93a4f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_Addressed"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "28": {
+      "note": "**The source channel's five facts, including `pin_present` (measured now) beside `release_recorded` (history) and the three-valued `custody_observed`.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "07dda66c98a13ea7b9344ae8f32b60b389587469",
+            "content": "sha256:cb6a6df1572b2c295881fc71696ec7b90e98b7c702902725437c634c5d00ad3c",
+            "locator": {
+              "kind": "symbol",
+              "name": "ComparisonSourceChannel"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "29": {
+      "note": "The evidence channel: one cited artifact re-read against its recorded digest.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "07dda66c98a13ea7b9344ae8f32b60b389587469",
+            "content": "sha256:7f834352850268396432d135a8553965ed9b9915d44b41e053b959cd2dc3b470",
+            "locator": {
+              "kind": "symbol",
+              "name": "ComparisonEvidenceChannel"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "30": {
+      "note": "**The fourth channel: what the task's own closeout and integration recorded for this generation, one entry per phase in phase order (ICR-R21@v1).**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6a81a8342eae21ae87cc564a14db157d557fb56b",
+            "content": "sha256:af0d4ce4ccbe57ecf131b9efd3ef88b378ab5821256ccf884cfe1b1e31fdfe97",
+            "locator": {
+              "kind": "symbol",
+              "name": "FinalOutputReceiptRead"
+            },
+            "path": "mcp/src/agents_remember/application/review_final_output_receipt.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "31": {
+      "note": "**The operation: addressed from the task artifact plane alone, with a named generation or the highest recorded index.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "07dda66c98a13ea7b9344ae8f32b60b389587469",
+            "content": "sha256:d9b1127ccd4028a81d821f6338009dbc0b2c17dad6ae42521ff333ea70abb177",
+            "locator": {
+              "kind": "symbol",
+              "name": "reopen_comparison_generation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "32": {
+      "note": "**The named reopen, and the latest-index reopen with its three honest answers (one unreadable record read anyway, several unreadable records, none at all).**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "07dda66c98a13ea7b9344ae8f32b60b389587469",
+            "content": "sha256:df52475e96859b5af8a27306e2ff34af70bc0d970d9938e905ac36227149435a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_reopen_named"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "33": {
+      "note": "**The read-and-measure pass that builds every channel, including the fourth one read in the one place a generation is resolved, and computes the generation-level state from the channels that were expected to resolve.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "07dda66c98a13ea7b9344ae8f32b60b389587469",
+            "content": "sha256:b5ec0930b814ea044695b82562ed59a29c23d88f71955969397b00873ad5fc9e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_read_and_measure"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "34": {
+      "note": "**The source channel's measurement: both objects, the pin, the current custody, and the composed detail that leads with the live fact.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "07dda66c98a13ea7b9344ae8f32b60b389587469",
+            "content": "sha256:43f6a94e49e8aacad25ba1d368ae6ab4bebc9bb77e996d935249690ce63f56f2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_source_channel"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "35": {
+      "note": "**The state order that matters: readability first, the deletion record only for objects that are really gone.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "07dda66c98a13ea7b9344ae8f32b60b389587469",
+            "content": "sha256:5525bc4906600f0fff2fbe2d5bf8d26ea2db83d11efc25ff9a8ad78356dfe0b4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_source_state"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "36": {
+      "note": "**The evidence read-back and its task-root confinement.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "07dda66c98a13ea7b9344ae8f32b60b389587469",
+            "content": "sha256:f38f745fff9aa6ee1e24a12b6cbf8fa309420c610fc364e03e97d8c79072b212",
+            "locator": {
+              "kind": "symbol",
+              "name": "_evidence_channel"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "37": {
+      "note": "The three non-measured answers: ambiguous, unreadable, absent — each with its own remedy.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "07dda66c98a13ea7b9344ae8f32b60b389587469",
+            "content": "sha256:681da1244a738ecf51ce3879023f301e76eb4435b2083049858f8a84c3aa2608",
+            "locator": {
+              "kind": "symbol",
+              "name": "_ambiguous"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "38": {
+      "note": "The record, its discovery pass and its deletion record: the three things this module reads and never writes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5f1fb1992640a2805521f2956bf943694e352894",
+            "content": "sha256:b0cd4a2490fa79806b19d1b7854d5b9a05b2663b9aa5e3a6eccb3c3359e8f6c9",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_manifest"
+            },
+            "path": "mcp/src/agents_remember/application/review_comparison_generation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "39": {
+      "note": "**The three-valued observation this module reports, and the pin's own readability question.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "912d1707bae355645c256a55af1b52aeb7276c9f",
+            "content": "sha256:874ace4ceb964e42fca51d95238b53398b65e9f281bde01d0ddb915da2497f06",
+            "locator": {
+              "kind": "symbol",
+              "name": "code_object_observation"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/code_object_retention.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "40": {
+      "note": "**The fifth channel: what this leaf's own managed syncs measured against this generation (`ICR-R22@v1`), one value whose absence is stated in two shapes, read at the location and then checked against the generation itself — so a forged-but-internally-consistent record reads back `not-recorded` with the reason rather than as a measurement of this generation.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "07dda66c98a13ea7b9344ae8f32b60b389587469",
+            "content": "sha256:57337aa92772f46bc6eecae09f2bfee559869f68875434e41a6e531d74388bb8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_measured_rebinding"
+            }
+          },
+          "kind": "code"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

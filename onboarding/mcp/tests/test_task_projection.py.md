@@ -57,7 +57,7 @@ resolution path.
 
 ### Invariants And Boundaries
 
-- **This module has its evidence-lane row.** `mcp/tests/test_task_projection.py` is listed in the `unit-regression` lane of `mcp/tests/test-evidence-lanes.toml` (`:289`). The fail-closed loader `load_lane_manifest` derives the expected test population from the Python test modules under `testpaths = ["mcp/tests"]` and raises `LaneManifestError` for any test file without an explicit lane; the `pytest_collection_modifyitems` hook calls it on every collection.
+- **This module has its evidence-lane row.** `mcp/tests/test_task_projection.py` is listed in the `unit-regression` lane of `mcp/tests/test-evidence-lanes.toml` (`:280`). The fail-closed loader `load_lane_manifest` derives the expected test population from the Python test modules under `testpaths = ["mcp/tests"]` and raises `LaneManifestError` for any test file without an explicit lane; the `pytest_collection_modifyitems` hook calls it on every collection.
 - **No case may compare the projection against itself.** The expected side comes from the fixture
   files on disk, a frozen vocabulary, or an independent parse — never from the projection's output.
 - The import-surface case walks every module in the package, so a new module is covered
@@ -82,6 +82,8 @@ No relevant documentation found after checking the configured sources.
 ### Repo-Internal References
 
 The cases, the fixture value objects that vary one fact at a time, and the seam they prove.
+
+- The lane manifest row for this module (`:280`). [21]
 
 - The fixture world and the two spec value objects that keep a failure attributable. [1]
 - The generated enclosure contract, and the external-memory topology the fixture must reproduce. [2]

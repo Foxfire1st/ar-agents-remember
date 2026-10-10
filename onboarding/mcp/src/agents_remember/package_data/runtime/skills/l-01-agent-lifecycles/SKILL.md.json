@@ -31,6 +31,40 @@
           "kind": "code"
         }
       ]
+    },
+    "3": {
+      "note": "Canonical skills are propagated into package data and harness mirrors by the sync script.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52ead88df5abcc06f44245c1a48ebae0f190b1a6",
+            "content": "sha256:749faa913fd02887de600f0c5da29e8e5d815d3ab4936ea5bb847d1a302f9b7d",
+            "locator": {
+              "kind": "symbol",
+              "name": "sync_targets"
+            },
+            "path": "scripts/sync-skills.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The enabled corpus stays self-contained: the shipped check fails on a role that leaks a sibling's duties, on a manifest that names a missing source, and on any relative path the corpus cites that does not resolve.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "489f6cc3b9ce4b1a1e36dc637b4b291d9bc292d1",
+            "content": "sha256:9a353fca0a318b38ea5c755fec2f90ba068ffcb9698f91fac30ff0815a5ab974",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_role_source_is_concise_and_well_formed"
+            },
+            "path": "mcp/tests/test_role_instruction_corpus.py"
+          },
+          "kind": "test"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

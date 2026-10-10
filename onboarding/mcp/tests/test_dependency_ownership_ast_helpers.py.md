@@ -94,3 +94,30 @@ not with a bare parser error.
 
 
 - A catalog that does not parse fails these checks with the recovery sentence of the shared reader. [14]
+### Cross-Repo References
+
+No cross-repository implementation evidence is required for these local test and fixture claims.
+
+Fixture repositories and protocol doubles do not establish a live external integration.
+### Docs References
+
+No Domain Documentation entries are configured in this memory root. These are repository-owned fixture and assertion contracts; no external library behavior is inferred.
+
+No configured domain evidence applies to the file-local claims above.
+### Repo-Internal References
+
+The retained source anchors below support the fixture roles and assertion boundaries described above. They identify current behavior, not a request to restore historical test counts or percentage targets.
+
+- The three artifacts those rows belong to, each an already-governed row rather than a new registration.
+
+- Repository inputs reach their supported consumers. [62]
+- The closure check over the governed inventory, and the lane-membership check. [63]
+- The leaf's own case module, which is why no third fixture was registered. [64]
+- The module whose two consumer entries are the entire catalog delta. [65]
+- The two consumer rows the leaf's module joined, and the artifact identities they belong to. [66]
+- The existing unit-regression registry contains the three relationship modules. [67]
+- The consumer line the census derived. [68]
+- The consumer lines the census derived. [69]
+- The consumer line the census derived. [70]
+
+- The three artifacts those rows belong to, each an already-governed row rather than a new registration. [71]

@@ -8,6 +8,10 @@
 
 The review adapter assembles the shipped source, knowledge and owner-record operations over one canonical task resolution. It selects no semantic frontier, authors no verdict and stores no composed answer.
 
+## Shared resolution at the dashboard operation
+
+`read_complete_knowledge_review` is the complete dashboard operation: resolve the candidate once, collect owner records through `review_records_of`, and compose over that same resolution. The existing publication currentness check still recaptures both live worktrees and refuses a moved candidate. Record-only and older composition entry points keep their owned operations; they do not become another capture implementation. No composed review answer is stored on the server.
+
 ## Code Commentary
 
 ### Logic
@@ -23,6 +27,243 @@ No guessed worktree, browser path, current HEAD or current knowledge replaces a 
 ### Todos
 
 None recorded.
+
+### Logic
+
+**Resolution is delegated, and this module no longer defines it.** What the delegation leaves here is the *call*: `read_knowledge_review` and
+`list_knowledge_review_entries` resolve through that module and return a refused result immediately when
+it refuses. The resolution's own rules — the three selectors screened as single path segments, the
+contract located from the recorded task root, the recorded base commit as a precondition, the capture of
+the add-all candidate tree, the two datasets under one disposable root, and the receipt-derived
+namespace — are documented on that module's card.
+
+**What this adapter still owns about the endpoints is where they are re-checked.** `compose_review`
+calls `require_current_candidate_identity` **after** the comparison and the review-matrix read and
+immediately before the payload is built, and returns the named refusal when a capture input moved while
+the review was being composed. The recheck is deliberately not part of resolution: a capture that was
+current when it was taken can be stale by the time a payload would be returned, and publishing that
+payload would bind a generation to a candidate the leaf no longer has under a label that says it is the
+candidate's own comparison.
+
+**`list_knowledge_review_entries` is the surface's entry half, and it exists because the reviewed
+subject is the one input a reader cannot supply.** The subject is a recorded identity inside the
+comparison's before/after pair, and the browser must not choose the candidate, so the task view asks
+the server instead of guessing. It resolves through the *identical* operation `read_knowledge_review`
+uses — canonical task context only, one contract, one derived root — so the list a caller is offered
+and the review it then opens cannot disagree about which datasets are being compared. **The catalogue
+is enumerated, not compared:** since this leaf (`260921-ICR-L9`, `ICR-R09@v1`) the entry half
+delegates to `application/review_subject_catalogue.py`'s `read_subject_catalogue(resolved)` — every
+invariant and family identity the pair's before/after snapshots record is listed with its label, its
+per-row `presence` and the labelled totals, and **no subject is compared to earn its row**. The old
+per-subject mechanism (a subject offered exactly when the shipped comparison answered for it, each
+compared through `diff_knowledge_scope`, a refused one dropped by `_selected_item_count` returning
+`None`) is **deleted, not moved** — it was the verified F06 defect this packet owns, "the API returns
+multiple entries but only the first is reachable" in its entry-half shape, and it silently dropped a
+retired (before-only) subject entirely. What one subject's review renders stays the comparison's own
+answer when that subject alone is opened. The adapter fills the totals itself — `total_subjects`
+counts the rows, split once into `invariant_total`/`family_total` — and a candidate that records no
+identity yields an empty list, which the caller renders as no entry beside the source inventory
+rather than as an invitation to name one. **Both pair refusals are therefore stated before any
+subject is listed** — the absent half first, and since leaf `260921-ICR-L5` the unreadable half
+beside it (see the paragraph below) — because the catalogue read opens both snapshots and a side no
+catalogue can open would otherwise raise out of the call that exists to offer a subject. Since
+`260921-ICR-L47` those refusals are one call, `pair_preflight_refusal(resolved)` from
+[`review_pair_preflight.py`](review_pair_preflight.py.md), in the same order; the changed-intent
+summary shares it, so the task entry cannot count a pair its catalogue refuses.
+
+**`read_knowledge_review` is the whole public comparison operation and it resolves before it
+composes.** It calls the sibling module's `resolve_review_candidate`, returns `_refused(...)`
+immediately when that yields a `ReviewRefusal`, and otherwise delegates to `compose_review`. The
+`contract` is carried on the resolution so a caller that also needs the recorded task facts reads them
+from the same resolution rather than resolving twice.
+
+**`compose_review` measures the source observation once and hands it to both renderings, then
+splits on whether a subject was named, and re-checks the captured endpoints last.** The two tree
+sides are built and the observation is made before any dataset is opened and before the selector
+branch, from the two tree ids the resolution bound: it is the one half of a review that cannot
+depend on a knowledge selection, and measuring it only after a comparison succeeded is how a task
+with no invariant — or with no datasets at all — came to lose its source review entirely.
+`review_inventory` renders that same observation (the `observed` input, not a second measurement),
+and the task-context branch hands it to `pair_attribution` as the partition's denominator. A request
+with **no selector** is then answered by `review_task_context.task_context_review`, which composes
+`comparison=None`, `staleness.state="not_compared"` and a knowledge pane in the `task_context`
+selection state, so an absent knowledge half stays a stated fact rather than a refused read. A
+request that **does** name a selector keeps the shipped behaviour exactly, with one narrowing:
+`_open_dataset_pair` refuses an absent dataset half and an unreadable candidate receipt through the
+shared refusal owner (`unreadable_candidate_refusal` in `review_candidate_resolution.py`, the only
+place the code, detail, next action and offending input exist), and reads the namespace once through
+`review_namespace` so one render cannot open its two sides and its matrix under two different
+namespaces; `_compare` then calls the shipped comparison, and a comparison
+that is not `state == "page"`, or that carries no page or no binding, becomes a `comparison_refused`
+result through `_comparison_refusal`, which carries the shipped refusal's own `code`, `detail` and
+`next_action` through verbatim rather than inventing a summary. `_selector_kind_or_absence` is what lets
+that refusal spell a selector that is absent as `"no selector"` instead of reading `kind` through
+`None`. The subject route's pane attribution is the comparison's own partition, carried verbatim by
+`_comparison_attribution` — never recomputed here, because a second measurement could only disagree
+with the one the payload's expansion already publishes.
+
+**The reviewed identity's explicit revision selection is computed once in `compose_review`, from the
+comparison's own union items and the two snapshots' own authored edges, and the pane renders it.**
+`select_subject_revisions(page.items, request.selector, repository_id=comparison.repository_id,
+before_database=resolved.baseline_database, after_database=resolved.candidate_database)` is the one
+call, placed after the staleness measurement and before the payload is built, and `_knowledge_pane`
+receives its answer (`selected`) instead of the selector — the adapter resolves, calls and
+assembles, and the head rule lives in its own module. A selector that names no identity selects no
+revision, exactly as the both-sides preference this replaces did.
+
+**The review matrix is read from the candidate through L20's operation, not recomputed.**
+`read_knowledge_view` is handed the candidate database, the diff side opened by `open_diff_side` over
+the same database and code root, and a `ViewRequest(view="review_matrix", record_kinds=REVIEW_MATRIX_KINDS)`.
+A view that is not `state == "view"` becomes `comparison_refused` with the view's own detail appended,
+so the surface never renders a pane from a partial matrix. `REVIEW_MATRIX_KINDS` is the *input* the
+view is asked for — the five record kinds — rather than a selection policy of this leaf's; the view
+applies its own registered traversal over them.
+
+**The matrix's own answer is what states the two matrix-owned collections' availability, and the
+composition reports it rather than deriving it.** Immediately after the rows are in hand,
+`compose_review` calls `review_evidence_records.with_selection_channels(records, rows,
+MatrixSelection(page=published_page if request.page_of == "records" else None,
+remaining=_matrix_rows_remaining(matrix), unreadable=matrix_refusal))`, which adds the `authored_effects` channel from the rows the
+view returned and carries the view's **own** declared bound: the remaining count reads
+the served view, so a review that rendered a bounded page reports
+the bound instead of presenting the page it read as the whole selection.
+
+**The five subjects the payload states are assembled from the matrix rows and the supplied records,
+and the two authored/mechanical collections never mix.** `_knowledge_pane` renders identities, both
+sides' exact statements and conditions, the retained-revision groups, every field transition the
+comparison reported, the authored records (`AUTHORED_EFFECT_KINDS`), the detection signals, the
+assessment displays and one unresolved-author reference per authored row. The other two panes are no
+longer composed here: `source_pane` (in `review_source_inventory`) renders the inventory first and
+then the measured attribution partition — the selected locations, the six published remaining
+counts, the expansion reference and command, and the three bucket lists read from the partition
+value — with `evidence_pane` (in `review_record_rendering`)
+renders the evidence links, the observations and the assessments, with `evidence_state` and
+`assessment_state` computed from the collections themselves. Both are the same functions the
+task-context composition calls, which is what keeps an unassessed collection reading identically in
+both.
+
+**Pane 1's statement sides and field roster are delegated too, and the one wire-visible behavior this
+leaf changed lives in that delegation.** `_knowledge_pane` calls
+`application/review_statement_sides.py`'s `side_content` for both sides, `side_conditions` for both
+condition tuples and `field_changes(items)` for the roster — the same four names under their new,
+public spellings, with the module's own `read_side` replacing the adapter's private one. The
+behavioral delta is inside `field_changes`' value reader: a **changed structured field** used to be
+reported as `None` on both sides (`_field_text` returned `None` for any `dict`), which states an
+absence the snapshot does not hold — and on a field the comparison reports as *changed*, two of them
+at once. Each side now carries `structured_value_text` of the value that side really holds, and
+`None` stays reserved for the two real absences (no record at all; no value recorded for that field).
+The statement-side contract therefore has one implementation, in a module named for it, and this
+adapter keeps only *that* it asks for the sides and *where* it puts them.
+
+**Pane 1's two operands are the reviewed identity's selected revisions, and the deleted
+prefer-both-sides rule is what this leaf removed to make that true.** `_knowledge_pane` no longer
+takes the selector and no longer prefers the item present on both sides (`_identity_item` and
+`_selector_record_id` are deleted, not moved: they were private to this adapter and no module under
+`mcp/` imported them). It takes the head selection, renders the selected head items' sides through
+`_selected_statements` — a compared or one-sided selection renders the heads' own recorded sides, so
+a known-empty side stays the absent state ICR-R06 already gives it — and an ambiguous or unresolved
+selection renders no head's text as the subject's operand: both sides carry the explicit statement
+that says why no pair was chosen, with empty conditions, while the recorded selection beside them
+(`revision_selection` on the pane) still lists every head and every retained revision. The
+wire-visible change is therefore twofold: a unique chain now compares the before head to the after
+head instead of the retained predecessor, and a branched identity renders an explicit ambiguity
+instead of a silently chosen pair.
+
+**Staleness and submission are two statements of one fact, and in this leaf the rule itself moved out while the coupling stayed here.** `comparison_identity` and `review_staleness` are
+[`application/review_comparison_staleness.py`](review_comparison_staleness.py.md)'s, and the two private
+helpers that used to hold them in this adapter (`_comparison_identity`, `_staleness`) are **deleted, not
+annotated**: nothing under `mcp/` imported them, so the extraction leaves no alias and `__all__` is
+unchanged. What stays here is the call and the reading. `compose_review` computes the identity once
+with `comparison_identity(comparison)` immediately after the comparison and the review-matrix answer,
+calls `review_staleness(identity, request.previous_binding_digest)`, reads `staleness.state == "stale"`
+for the submission state **and** publishes that same `staleness` value on the payload — one
+measurement, so "an assessment is never submitted against a comparison that has moved" cannot be true
+of one field and false of the other. The previous identity is no longer a keyword beside the request
+either: `read_knowledge_review` and `compose_review` lost their `previous_binding_digest` parameter and
+read it from `ReviewSurfaceRequest.previous_binding_digest`, which is one spelling of what was asked.
+
+`KnowledgeReviewPayload`'s validator refuses the payload where the two disagree, so "an assessment is
+never submitted against a comparison that has moved" is a property of the value; its second validator
+holds the identity and the staleness state in agreement the other way round, so `comparison is None` is
+true exactly when the state is `not_compared` and the knowledge pane's `selection_state` says which
+question the payload answered.
+
+**The inventory's own state is a declared limit of the response, not a pane detail.** `_limitations`
+carries the comparison's limits and counted omissions **and** `inventory_limitations(inventory)`, so an
+unavailable measurement (`limitation:source_inventory_unavailable`) and a partial one
+(`limitation:source_inventory_partial`) are named at the top level beside the comparison's own
+limitations — a limit a reader has to open a pane to discover is a limit the response did not state.
+
+**`review_records_for` left this module for the record owner, and the name here is a re-export**
+(`ICR-R14@v1`). The resolver used to read the published assessment collection and collapse an absent
+authority and an unreadable one into `EMPTY_REVIEW_RECORDS`; both of those are now *states* on the
+bundle, and the whole collection resolution lives in
+[`application/review_evidence_records.py`](review_evidence_records.py.md). The adapter keeps the name in
+`__all__` and imports it from the owner (the import block at the top of the file is the re-export) `AUTHORED_EFFECT_KINDS` moved
+with it for the same reason and is imported back here: the kinds a channel counts and the kinds
+`_knowledge_pane` renders are one declaration, so they cannot drift.
+
+**The family context carries change-kind facts on a tree comparison (MIK-L33, MIK-R33).** `compose_review` publishes
+`family_context=with_change_kinds(family.context, resolved.trees)`: for a tree comparison every family entry comes back
+carrying `change_kinds`, the facts of the member occurrences this page returned, computed by
+`application/review_change_kinds.py` over MIK-L32's lane (one `open_tree_lane` per read); a dataset review
+(`resolved.trees` is `None`) gets its context back exactly as composed, and the served body omits the null field
+(`exclude_none`). The dataset guard lives in `with_change_kinds` rather than here, which kept `compose_review`'s
+complexity at C (the worker's radon note). The adapter adds no fact of its own. The file is 1,078 lines (1,075 on
+MIK-L33's base).
+
+### Conventions
+
+### Invariants And Boundaries
+
+- **The adapter applies no rule of its own.** The comparison, the item identities, the counts, the field
+  transitions and the revision groups are the shipped operations' own values; the module adds no
+  ordering, no ranking, no filter and no re-diff — and the head selection is the policy module's,
+  computed once in `compose_review` from the comparison's own union items and the snapshots' own
+  authored edges. The entry list obeys the same rule since `ICR-R09@v1`: it offers exactly the union
+  of the two snapshots' own recorded identities — no comparison runs to earn a row, no row is dropped
+  for being unselectable, and no ranking is applied — so it is not a selection policy in disguise.
+- **No path is accepted from a caller.** The candidate dataset is derived from the located enclosure
+  contract's recorded worktree group; `HEAD`, a guessed worktree and a browser-supplied path are all
+  unreachable from the module's inputs. The entry route's inputs are the task context and nothing else.
+- **A side with no exact tree is no longer a supported state of a review.** The endpoints are bound by
+  `review_candidate_resolution`: the baseline is the contract's recorded base commit and the candidate
+  is the captured add-all tree, and a contract that records no base commit is refused by name rather
+  than resolved with an absent tree. The `| None` field types survive only for a resolution assembled
+  by hand (a caller comparing two named files), which has no contract and no capture to bind.
+- **A moved capture input is refused before the payload is built.** `compose_review` calls
+  `require_current_candidate_identity` after the comparison and the matrix read, and
+  `task_context_review` calls it after the inventory is measured; a moved input returns the named
+  refusal carrying the two identities it compared — never a stale publication.
+- **No selector is a state, not an empty subject.** A request whose `selector` is `None` compares no
+  knowledge operand: the payload carries `comparison=None`, `staleness.state="not_compared"` and a
+  knowledge pane whose `selection_state` is `task_context` with its reason, and the source pane still
+  carries the complete inventory. The task-context path never opens a dataset, never reads the review
+  matrix and never reaches a comparison refusal.
+- **One responsibility, one implementation.** The inventory, the record rendering, the statement-side
+  projection and the task-context composition each live in exactly one module; this adapter imports
+  and calls them and re-exports what moved. Two implementations of "what did these two trees change"
+  — the review's inventory and the comparison's expansion — were collapsed into one by this leaf.
+- **A field row's `None` means absence, and the comparison's roster is the roster.** The statement-side
+  module owns both rules; this adapter neither widens the roster nor reconstructs a structured value
+  as a `None` of its own, and a changed structured field is served as each side's own projection.
+- **A subject the comparison refuses is still listed, and its reason is carried by the review it
+  opens.** The catalogue never drops a recorded identity to imply a smaller complete population; a
+  recorded but unselectable subject opens to the comparison's own typed refusal, which names the
+  subject and its reason, while the other subjects and the task-context source review stay
+  accessible. (Until this leaf the opposite rule held — `_selected_item_count` returned `None` for a
+  refused comparison and the entry was omitted — and that rule was the F06 defect this packet owns.)
+- **Unassessed is the absence of a value.** No `current` measurement means every stored assessment is
+  displayed `stale`; a candidate with no published assessment displays `unassessed` rather than a
+  clearance.
+- **An unresolved reference is displayed, never dropped and never made anonymous.** `_unresolved_author`
+  names the record and states that the matrix publishes no author; the evidence pane names the coverage
+  the matrix does not publish; the source pane names every item held by only one snapshot.
+- **The module defines no record kind and stores nothing.** It opens the candidate read-only through
+  the shipped operations and writes no file
+- **Rank is the reason for the ports.** `serving/review.py` takes `read_knowledge_review` and
+  `list_knowledge_review_entries` as ports supplied by the composition root, because a serving module
+  may not import them.
 
 ## Evidence
 
@@ -117,6 +358,9 @@ repository namespace the request names.
 
 No meaningful cross-repo references found.
 
+### Repo-Internal References
+
+- The dashboard operation shares one resolution with records and composition. [47]
 ## 260921-ICR-L10 The Adapter Offers A Cursor To The Collection It Names
 
 `260921-ICR-L10` (`ICR-R10@v1`) carries a request's cursor to the collection that names it. The

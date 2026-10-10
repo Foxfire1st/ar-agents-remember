@@ -53,6 +53,51 @@
         }
       ]
     },
+    "12": {
+      "note": "Retired records are never live.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "694a9727c6739a654c8fec5abf47260e23bd77b5",
+            "content": "sha256:4be154412171cb8e4ec07dad7a2f9dd37772f0a5c2e41abc3e3ddd91d7a29cc3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_retired_record_is_never_selected_as_live_and_is_answered_as_retired"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "694a9727c6739a654c8fec5abf47260e23bd77b5",
+            "content": "sha256:5d19e381bcd3f13593101c47fa53c4e4ac8acabaf0cb0531465c6f180ec572b7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_retired_family_is_never_selected_as_live"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "The lane row.\n\nAnchor: `test_knowledge_index_surfaces`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e6cd30be07fa6a435465d02ac4fb9feb7e1bbc8",
+            "content": "sha256:222a6ff244f67693b41c16ff732f292d763843984688f77f46c8f03400b9bb92",
+            "locator": {
+              "end": 117,
+              "kind": "line_range",
+              "start": 117
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
     "8": {
       "note": "`test_knowledge_diff_serves_the_git_diff_of_the_knowledge_files` owns the current boundary described above.",
       "targets": [

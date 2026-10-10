@@ -99,6 +99,191 @@
           "kind": "code"
         }
       ]
+    },
+    "18": {
+      "note": "The import and the registration after the tree view route, before the static mount.\n\nAnchor: `register_knowledge_reader_route`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5fb8e66cec1d7d893d10dd198cc0b06fa0d9a00b",
+            "content": "sha256:67384fe33fa994dd78396955e2575c4a90f48a146251473ec78e484170d6c627",
+            "locator": {
+              "end": 308,
+              "kind": "line_range",
+              "start": 306
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "The route it registers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f60b20373629b56db05b6b2cd9dc184622380b3",
+            "content": "sha256:5781c8215b5a6f6de9beb976f79d707fcd24810e3bf4859034a1508daa19895d",
+            "locator": {
+              "kind": "symbol",
+              "name": "register_knowledge_reader_route"
+            },
+            "path": "mcp/src/agents_remember/serving/knowledge_reader.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "The import and the registration after the summary route.\n\nAnchor: `register_review_trees_route`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5fb8e66cec1d7d893d10dd198cc0b06fa0d9a00b",
+            "content": "sha256:1d8a504bca790a85e65b48ae1c1784b410d45e15541e527e9d950c49ea2c9739",
+            "locator": {
+              "end": 307,
+              "kind": "line_range",
+              "start": 306
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "The import and the registration after the reviewer family.\n\nAnchor: `register_review_summary_route`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5fb8e66cec1d7d893d10dd198cc0b06fa0d9a00b",
+            "content": "sha256:4f0e972acc5df98f8e7b9bc4da0a64f8cf33ccb246033810b87060bfc4072f95",
+            "locator": {
+              "end": 306,
+              "kind": "line_range",
+              "start": 299
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "App creation composes the serving route and lifespan families.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5fb8e66cec1d7d893d10dd198cc0b06fa0d9a00b",
+            "content": "sha256:0c261ffcf03be4a482c04d84095506cfa08a1f3773835c09056bd9f857c49836",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_app"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "One serving clock, and the observer-health publisher built on it and on the observer root, so the record's completion stamp and every age computed from it share one source.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5fb8e66cec1d7d893d10dd198cc0b06fa0d9a00b",
+            "content": "sha256:99a8dfdf9d67b75378cd6fa7186bbbd9aa9daee4438e2eb51c8ee18d65bc33ab",
+            "locator": {
+              "kind": "symbol",
+              "name": "_build_serving_runtime"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "The facade exports structural task-assignment names.\n\nAnchor: `TerminalAttachTaskRequest`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5fb8e66cec1d7d893d10dd198cc0b06fa0d9a00b",
+            "content": "sha256:f6e2ba847dded42ccadf2a9b81237e63ce769c973ff7cc4e58d0249ba40b376b",
+            "locator": {
+              "end": 352,
+              "kind": "line_range",
+              "start": 348
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "The one line that places the capsule-compiler port on the serving runtime.\n\nAnchor: `capsule_launch`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5fb8e66cec1d7d893d10dd198cc0b06fa0d9a00b",
+            "content": "sha256:aa81b0b375bc1b1043cc2d63ee4dab2253a2bab8f5d3fb026ba4605f0d252edc",
+            "locator": {
+              "end": 250,
+              "kind": "line_range",
+              "start": 245
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "26": {
+      "note": "**The reviewer route family registered with all three collaborator ports, the third one being this leaf's entry-content port.**\n\nAnchor: `register_review_routes`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5fb8e66cec1d7d893d10dd198cc0b06fa0d9a00b",
+            "content": "sha256:6c9f0b508c6761d91dc59b44c289511fb9a5a67eecd54aa2ff8d11addefa7801",
+            "locator": {
+              "end": 305,
+              "kind": "line_range",
+              "start": 299
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "27": {
+      "note": "The composition root that binds the real compiler into the collaborator record every `create_app` call uses.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a206d3d815288a7126484f8f1ed32c00a634033",
+            "content": "sha256:f52fafd5838afa3ab615762f3c9e2e4af18e0c0e0dfe454aa13dfdcc4f34ef49",
+            "locator": {
+              "kind": "symbol",
+              "name": "serving_collaborators"
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "28": {
+      "note": "The gate whose behaviour the port's presence decides.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "07dbb4559839c3bb99d5e22b19ab0aeffde8d577",
+            "content": "sha256:b078024718ecb17ceaac272f3c33c7e6951de04fc083356f008b91cc408c21b5",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_launch_capsule"
+            },
+            "path": "mcp/src/agents_remember/serving/launch_capsule.py"
+          },
+          "kind": "code"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

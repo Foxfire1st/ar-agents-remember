@@ -24,6 +24,36 @@ Failed capture invents no identity; a moved pair remains moved and needs renewed
 
 None recorded.
 
+### Logic
+
+**What counts as a completed sync is three checked facts, not an inference from payload keys.**
+`resolved_pair_completed` (`:196-220`) requires the operation to be `worktree_sync`, `ok` to be true, and
+the state to be one of the three in `_CARRYING_SYNC_STATES` (`:155-161`) — `synced`,
+`sync-pass-completed-memory-skipped`, `sync-pass-completed-source-moved-again`. `already-current` is
+deliberately **not** a carrying state: that result reports that the recorded pair and the participating
+work branches already contained the official line, so nothing was carried and there is no resolved pair to
+measure a review against. The success conjunct is carried even though every producer of those three states
+returns zero today, because a carrying state beside `ok: false` is a result this tool must not measure.
+
+**Every state that carried nothing is described by its own entry.** `_CARRIED_NOTHING` (`:167-193`) is a
+table rather than a ladder, one row per state, each pairing a block state with the store fact it observed:
+`would-sync` → `preview`, `already-current` → `no-movement`, `sync-resolution-required` → `not-resolved`,
+`sync-cancelled` → `cancelled`, `memory-sync-choice-required` → `choice-required`. A state outside the
+table answers `not-measured` naming the state it was actually given. This is the shape that replaced a
+single false sentence ("this result is not a completed sync"), which was false for several of these.
+
+### Invariants And Boundaries
+
+- **No refusal reaches the sync.** `rebinding_result_block` (`:316-373`) catches the unmeasurable-capture
+  control-flow exception and the storage/os/runtime/value errors, and writes a state onto the payload in
+  each case. Nothing in this module can block the Git transaction it describes.
+- **One file per (leaf, generation), not per sync.** A later sync over the same generation replaces that
+  answer instead of accumulating a second one beside it, because the question is "does the review still
+  describe what the leaf holds".
+- **Boundary: paths are recorded as produced.** `task_root` and `contract_path` travel as the contract
+  gave them, so a relocated coordination root leaves a record whose paths no longer resolve where they
+  did; the identities remain readable.
+
 ## Evidence
 
 ### Docs References

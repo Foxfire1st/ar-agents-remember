@@ -24,6 +24,77 @@ Availability travels independently of collection length. The renderer opens no s
 
 None recorded.
 
+### Logic
+
+`ReviewRecordInputs.artifacts` carries immutable owner references for the producer. The renderer transports them with the typed bundle and does not derive, select or validate curator authority from their names. Record availability still travels separately from tuple length, including uncaptured and unavailable history.
+
+**`refused` is the one builder of a refused result in this surface.** It returns
+`KnowledgeReviewResult(state="refused", repository_id=…, refusal=…)` with no payload, which is what
+makes "a refusal is a state and never a degraded success" a property of a constructor rather than a
+convention. Both compositions and both entry points reach it, so no code path raises out of a review
+read.
+
+**`submission` publishes the two states a display-only surface may have, and grows no private write
+path.** It returns `disabled_stale` exactly when the caller says the comparison is stale — with the
+reason "Candidate changed — open a new comparison" and the matching next action — and `unavailable`
+otherwise, with the reason that this increment mounts no serving route that publishes an assessment
+and a next action naming **the existing curator authority's publication action**. In both cases it
+carries `PROPOSED_ASSESSMENT_DISPOSITIONS`, which is that authority's own vocabulary rather than a
+control this surface invented.
+
+**`_evidence_link` is the one per-claim projection, and it has two shapes rather than one.**
+`evidence_pane` indexes the supplied claims by identity and hands each matrix row its own record. A
+claim this composition supplied gets the claim's own recorded fields **verbatim** — `author_ref`,
+`lifecycle`, `claimed_coverage`, and `limitations=(claim.limitations,)` where an empty member is the
+author's recorded "no limitations declared" and not missing data — plus the row's own assessment
+references, and **no** unresolved reference. A claim whose record the evidence owner did not supply
+keeps its identity and its assessment references and names the missing half as one
+`ReviewUnresolvedReference` of field `claim_content`, with the detail naming both halves of the
+evidence: the matrix publishes the claim's identity, lifecycle and assessment references, and the
+evidence owner's own read of *this* claim supplied no content for it. That is why an unread claim is
+never rendered as a claim that declared no limitations — before `ICR-R14@v1` every claim link carried
+exactly that unresolved-coverage reference, which was true of the pane's knowledge and false of the
+claim's.
+
+**`subject_states` projects every stored assessment per subject and leaves currentness as measured.** A
+caller that supplied no `current` measurement gets every assessment reported `stale`: the shipped
+projection refuses to promote an unmeasured assessment to current, and this surface does not improve
+on that by guessing which dependencies still match. `assessment_displays` then renders that projection
+in order, de-duplicating by assessment id and reading each record's author provenance, examined inputs
+and evidence references; `_assessment_display` is the one per-record projection, and its
+`examined_inputs` falls back to the comparison reference when a record names no identities — the
+record's own fact rather than an empty list.
+
+**`observation` displays a verification observation exactly, and adds no sufficiency field.** The
+command identity, the result artifact reference and digest, the execution result, the tested
+candidate's logical digest and the environment identity are carried through; `limitations` is the
+empty tuple and the docstring says why — a verification observation carries no authored limitation
+field of its own, so the pane adds none rather than inventing one, and no sufficiency claim is made
+from a result.
+
+**`signal` carries one detection fact and nothing that could read as a verdict.** Condition, declared
+input set, governing route, relationship paths, extractor version, policy version and the signal's own
+scope limitations — and there is deliberately no field for a voice, a severity or a disposition.
+
+### Invariants And Boundaries
+
+- **The renderer renders what it is given.** No function here resolves a reference, selects a record,
+  ranks a subject or decides an outcome; the collections belong to other owners' read paths.
+- **The availability list is carried, never recomputed.** `channels` reaches the pane exactly as the
+  composition supplied it; this module never derives a state from a collection's length, because the
+  whole point of the vocabulary is that an empty tuple has three possible meanings.
+- **A claim is unresolved only when its own content was not supplied.** A claim this renderer holds is
+  rendered with its own authored fields and no unresolved reference; the `claim_content` reference is
+  reserved for the one case where the owner's read supplied nothing for that identity.
+- **The authored field is rendered verbatim.** An empty `limitations` member is the author's recorded
+  statement, and no rendering turns it into "unknown" or drops it.
+- **`submission` never invents a write path.** Its `unavailable` state names the curator authority's
+  own publication action, and its proposed dispositions are that authority's vocabulary.
+- **One rendering, two compositions.** The subject review and the task-context review call these same
+  functions, which is why an unassessed collection reads identically in both.
+- **No path, no candidate and no store.** The module touches no filesystem, opens no database and
+  carries no identity beyond the record values it is handed.
+
 ## Evidence
 
 ### Docs References

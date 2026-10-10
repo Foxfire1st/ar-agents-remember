@@ -119,14 +119,6 @@ default unit run includes.
 The command keeps a comment that follows a table header on its line, and comment lines that stand
 directly above a table header, with that row. It refuses a comment inside a list.
 
-## 260928-MIK-L99 — a leaf's agents hand over to each other
-
-The catalog's consumer list names `test_leaf_handover.py` and `test_leaf_handover_review_rounds.py`; the lane catalog registers `test_leaf_retirement_wording.py`. No module artifact rows were added for the three new test modules, and the changed wording and turn-truth test artifacts keep their existing rows.
-
-## 260928-MIK-L93 — a question for the developer goes up the chain
-
-The R93 wording test `mcp/tests/test_developer_question_wording.py` is added to the consumer lists the source tree supports; no artifact or contract row changes, and the canonical form is unchanged.
-
 ## 260928-MIK-L101 — rule 6 budget registry and test
 
 The `test_role_capsule_budgets.py` module joined the Node lockfile fixture's consumer list (fixture `mcp/tests/fixtures/repository_profiles/node/package-lock.json`, consumer entry at evidence-lifecycle.toml:1355) alongside the unit-regression lane (test-evidence-lanes.toml:254); no artifact or contract row changes, and the canonical form is unchanged. The rule 6 budget registry itself is a producer-side contract and makes no consumer-list claim.
@@ -168,18 +160,107 @@ files are both gone removed without file restores.
 
 The catalog holds 13 contract rows with 85 governed artifacts: the admitted lifecycle replacement (landed upstream of this leaf) replaced the earlier 32-row catalog with 13 rows; `tool_log_witness` predates this leaf; the upstream river-scale measurement (`l114_e4_river_scale.py`) joined as the 85th artifact; this leaf's working tree adds its rule-test modules to the consumer lists and removes no former lane or artifact. Other artifact metadata is unchanged.
 
-## 260928-MIK-L96 The host test modules
-
-`evidence-lifecycle.toml` gained revised durable-artifact consumer sets/paths for the new host test modules (`test_paseo_install_contract`, `test_paseo_install_no_stop`, `test_paseo_node`, `test_paseo_start`, `test_dashboard_host`, `test_host_release_contract`, `test_paseo_host_environment`) and for the moved host modules. This file holds artifact consumers plus the executable `replacement_contract`/`consumers` records; it declares no lane tables and no knowledge-invariant identities. Lane membership for the host modules lives in `test-evidence-lanes.toml`, and knowledge proof identities live in the sidecar proof plane; a catalog declaration still never shows evidence ran.
-
-
-
-- Conversation-open support declares its permanent owner and real replacement contract. [96]
-- Eve event support declares its permanent owner and exact consumers. [97]
-
-
 ## Refreshed current evidence
 
 - The durable-artifact consumer entries this catalog now declares; lane rows belong to test-evidence-lanes.toml. [14]
 - The two reviewer worklist test modules on that row's consumer list. [95]
 - Worklist process support declares its permanent local-composition contract. [98]
+### Conventions
+
+The catalog is a policy/configuration input and is not counted as an artifact inside itself.
+Fidelity, lifetime, and test grouping answer different questions. Current source declarations
+supersede historical per-leaf consumer positions and population counts retained below.
+### Cross-Repo References
+
+The code/memory or fixture-repository boundaries above are established by package-local source.
+No additional configured external or sibling-repository evidence is claimed.
+
+No additional configured cross-repository evidence.
+### Docs References
+
+No Domain Documentation source is configured for this repository. No external domain documents
+were available through the configured registry to consult; the current claims are grounded in the
+working source and package-local evidence below. The registry is discovery input, not a citation.
+
+No configured external domain-documentation evidence.
+### Invariants And Boundaries
+
+- Replacement node references must name the retained real test definition.
+- Exact consumer declarations must correspond to actual support use; stale counts are not authority.
+- A `[[artifact]]` row's path must be discoverable by `governed_artifact_paths`, which is a different
+  question from whether the module exists and is imported.
+- Registry consistency and permanent-support rationale do not claim execution or certification.
+- Ledger retirement changes the closeout replacement node, not unrelated artifact ownership.
+- **A consumer row is a catalog change.** Adding an importer to a `consumers` list moves the file's
+  bytes; `test_dependency_ownership_ast_helpers.py` computes every property from the catalog — no byte,
+  row count or file count is written down there, so adding a test file never edits that module.
+- **Consumer rows are accounting, never acceptance.** A row states that a test module reaches a
+  support artifact; it does not claim the artifact's fidelity, that a test ran, or that a boundary was
+  exercised in production.
+### Repo-Internal References
+
+These repository-relative targets and exact ranges were checked against the current working source.
+Source declarations and test assertions are distinguished from execution and acceptance evidence.
+
+- The schema version and the large-fixture discovery threshold remain explicit.
+- The four retained knowledge contracts and their evidence nodes.
+- Closeout fixture support names the retained code/memory transaction replacement.
+- Closeout-input support declares the cleanup-guidance consumer.
+- None
+- None
+- None
+- None
+- The referenced transaction test definition exists in the current source.
+- None
+- Closeout-input support names the same retained code/memory transaction replacement node.
+- None
+- None
+- The referenced transaction test definition exists in the current source.
+
+- The schema version and the large-fixture discovery threshold remain explicit. [212]
+- The four retained knowledge contracts and their evidence nodes. [213]
+- The referenced transaction test definition exists in the current source. [214]
+- The referenced transaction test definition exists in the current source. [215]
+- The artifact the first pair belongs to, and the scope both lists carry. [216]
+- The fixture module it builds on rather than duplicating, so no third enclosure fixture was introduced. [217]
+- **The row registered for the member-source cases, at the end of the read-scope artifact's exact consumer list.** [218]
+- **The fixture it extends rather than duplicating, and the observation helper its cases read bytes back through.** [219]
+- **The three consumer entries on the diff-cases artifact's exact list, appended newest-last.** [220]
+- **The same three on the read-scope artifact's exact list.** [221]
+- The enclosure the three modules extend rather than duplicating. [222]
+- The read-scope artifact's consumer list with the new exact consumer. [223]
+- The nine new fixture rows for the Doc14 knowledge-file examples. [224]
+- The consumer additions: the conversion toolchain case on the curator-coherence and read-scope rows, the crossing case on the merge-case and generation rows. [225]
+- The three consumer additions, one on each exact row. [226]
+- The three rows they belong to. [227]
+- The consumer addition. [228]
+- The row it belongs to. [229]
+- The consumer addition. [230]
+- The row it belongs to. [231]
+- The paging module's consumer line on the package-lock row. [232]
+- None [233]
+- The planned-effects module's consumer line. [234]
+- The row it belongs to. [235]
+- The leaf-read module's consumer line on the package-lock row. [236]
+- None [237]
+- The two rows it belongs to. [238]
+- The unexplained-change module's consumer line on the package-lock row. [239]
+- The row it belongs to. [240]
+- The route-chain module's consumer lines on the four rows. [241]
+- The reconsideration module's consumer line on the package-lock row. [242]
+- The row it belongs to. [243]
+
+- The schema version and the large-fixture discovery threshold remain explicit. [244]
+- The four retained knowledge contracts and their evidence nodes. [245]
+- Closeout fixture support names the retained code/memory transaction replacement. [246]
+- Closeout-input support declares the cleanup-guidance consumer. [247]
+- None [248]
+- None [249]
+- None [250]
+- None [251]
+- The referenced transaction test definition exists in the current source. [252]
+- None [253]
+- Closeout-input support names the same retained code/memory transaction replacement node. [254]
+- None [255]
+- None [256]
+- The referenced transaction test definition exists in the current source. [257]

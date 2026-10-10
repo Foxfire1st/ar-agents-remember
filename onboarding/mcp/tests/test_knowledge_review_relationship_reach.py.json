@@ -99,6 +99,136 @@
           "kind": "test"
         }
       ]
+    },
+    "16": {
+      "note": "The module's own statement of the five states the ruling turns on, and the candidate-only paths the cases author.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c78b77e8fcfad5e154ea2c3872161c04594b8d11",
+            "content": "sha256:003510327cb24af1c8665b37b829bf730b8eb2702248ec4a2932af48cf713bc2",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_member_move_fixture"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "**The ruling measured: a member identity's movement displayed at its own established head, with the new address displayed and the old one still listed.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c78b77e8fcfad5e154ea2c3872161c04594b8d11",
+            "content": "sha256:e4dbb54d8a15ee68d463c40cd0bce76d95c017f50d04a4ec650abb459d82514c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_member_identities_moved_realization_is_displayed_at_its_own_head"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "18": {
+      "note": "**The multi-ended line unresolved with its reason and never a denial.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c78b77e8fcfad5e154ea2c3872161c04594b8d11",
+            "content": "sha256:63587cf3ad5d27d687240c0b146377141a407c975c485896eca1fea42f300397",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_member_line_with_no_single_head_is_unresolved_and_never_denied"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "19": {
+      "note": "**One payload may not contradict itself: the withdrawn rows name the candidate row citing the same revision.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c78b77e8fcfad5e154ea2c3872161c04594b8d11",
+            "content": "sha256:30dc48de3117cc2d439286edbbf4bb9c0de4168fce8d13faa2a5b6ec3878610c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_withdrawal_never_denies_a_relationship_the_same_payload_displays"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "20": {
+      "note": "The member-wise family pairing, each membership displayed once.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c78b77e8fcfad5e154ea2c3872161c04594b8d11",
+            "content": "sha256:bbe68220b103ca407fda987016a98c7c5588db051ed66c54ec2967ca27d568ed",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_family_revision_that_keeps_its_members_displays_each_membership_once"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "21": {
+      "note": "**Every pairing states the recorded relation it was made on, and an address resemblance never pairs.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c78b77e8fcfad5e154ea2c3872161c04594b8d11",
+            "content": "sha256:6904c4cc51acc8c613eb17707a1bb4a6339e124821fff90961fa709fcaa2b19b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_pairing_states_the_recorded_relation_it_was_made_on"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "22": {
+      "note": "**The two rename non-pairing states kept apart, and the similarity word present only where Git paired.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c78b77e8fcfad5e154ea2c3872161c04594b8d11",
+            "content": "sha256:0010043d06f95f115b79c57b11a2f871aee3ba05636fcbc1095ac379bb20019c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_rename_inference_separates_a_measured_absence_from_a_measurement_never_made"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "23": {
+      "note": "The sibling case module whose builders this module imports, and the two exact-scope support rows it is registered on.\n\nAnchor: `test_knowledge_review_relationship_reach`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a0569bc130f1ea52e6731d4460788c50542ae82a",
+            "content": "sha256:7e1193e84246af7cae00483770f839a8d865a3616ad5c95913bbbd4ca8c281bb",
+            "locator": {
+              "end": 461,
+              "kind": "line_range",
+              "start": 461
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

@@ -241,6 +241,119 @@
         }
       ]
     },
+    "20": {
+      "note": "**The transition vocabulary, whose first member `unchanged` is the measured absence of a transition rather than an event.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7c3e3e7f80431fb4e5d19acf4d0892d98a9e0259",
+            "content": "sha256:658ffdf72709b07c7b03af8fb4a8e4c5d5b644fa81ef680bbc4a9a79d52f0a31",
+            "locator": {
+              "kind": "symbol",
+              "name": "ExternalGitTransition"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "**Whether this system reconciles a transition at all, earned by the one recovery it performs.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7c3e3e7f80431fb4e5d19acf4d0892d98a9e0259",
+            "content": "sha256:82b5ea0842c95b5906a0cc6c3d890f950b1456a8859eb39c7398ff40153da081",
+            "locator": {
+              "kind": "symbol",
+              "name": "GitTransitionReconciliation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "**The three declared channels, each named by the thing that moved rather than by the command that moved it.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7c3e3e7f80431fb4e5d19acf4d0892d98a9e0259",
+            "content": "sha256:b649e261489dd2dded20a3a02faf824bf1c4186787e106ddb4e7472f6ef1bda2",
+            "locator": {
+              "kind": "symbol",
+              "name": "GitMovementChannel"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "**What one channel's ancestry check found, with `advanced` as a measurement of its own.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7c3e3e7f80431fb4e5d19acf4d0892d98a9e0259",
+            "content": "sha256:d8bbb27524d6b0bc8d9fafc226626a9eb07ad5727401226ad4c879d748ae94b4",
+            "locator": {
+              "kind": "symbol",
+              "name": "GitMovementEvidence"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "**The movement value: its four-state binding, the transition and evidence tuples, the moved identities and the reason rule.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7c3e3e7f80431fb4e5d19acf4d0892d98a9e0259",
+            "content": "sha256:272bf50ae0cb5bbd249fe3b8ef1d8b6c9f9f7a09f4d41fe15af6c30602921b19",
+            "locator": {
+              "kind": "symbol",
+              "name": "ExternalGitMovement"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "**The `after` validator that refuses every false shape — state against replaced identities, absence against reason, and `generation_readable` against `unavailable`.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7c3e3e7f80431fb4e5d19acf4d0892d98a9e0259",
+            "content": "sha256:6687d73734d00cc7aabf371f3330f0bede14a7c69c2d963fb5f9d778fb79a440",
+            "locator": {
+              "kind": "symbol",
+              "name": "_the_state_follows_from_what_was_measured"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "26": {
+      "note": "The reused state vocabulary: `binding_state` carries the measured-currentness words, and `stale` is the only state a replaced identity earns.\n\nAnchor: `ReviewSyncMovementState`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7c3e3e7f80431fb4e5d19acf4d0892d98a9e0259",
+            "content": "sha256:a95fe7dfbcc9f91b986fbf7ff4674e73557fa465c9b385d281e49bf0bf44dae3",
+            "locator": {
+              "end": 100,
+              "kind": "line_range",
+              "start": 90
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "3": {
       "note": "The published surface: the value, the transition union, the channel union, the evidence union and the reconciliation union.",
       "targets": [

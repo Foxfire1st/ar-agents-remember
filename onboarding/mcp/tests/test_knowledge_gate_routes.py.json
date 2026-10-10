@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6de998c9451213b8db656a2271d6de25ae7c4b20",
+            "blob": "49c65d2f37ba8f90838a80838cec770b2b0e5848",
             "content": "sha256:d9198e7b784a3a1b6b9b301dcbbcac02bbbce9d59e91307d3a5b0b8616bb95d8",
             "locator": {
               "end": 6,
@@ -40,7 +40,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6de998c9451213b8db656a2271d6de25ae7c4b20",
+            "blob": "49c65d2f37ba8f90838a80838cec770b2b0e5848",
             "content": "sha256:7689a7b234b0cb254bfd2a2f633fecf07c9a1af3f4a220ec95e707c9e0f67bd6",
             "locator": {
               "kind": "symbol",
@@ -56,7 +56,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6de998c9451213b8db656a2271d6de25ae7c4b20",
+            "blob": "49c65d2f37ba8f90838a80838cec770b2b0e5848",
             "content": "sha256:3f7bc6557a05b8446e9b602174c01b492ca4d4de59eedc0e6710036e6b2e0530",
             "locator": {
               "kind": "symbol",
@@ -88,7 +88,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6de998c9451213b8db656a2271d6de25ae7c4b20",
+            "blob": "49c65d2f37ba8f90838a80838cec770b2b0e5848",
             "content": "sha256:208b8ef141a1c32d17061d4ba27d38bd67d44d2ba97e3898f030725c419679f5",
             "locator": {
               "kind": "symbol",
@@ -104,7 +104,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6de998c9451213b8db656a2271d6de25ae7c4b20",
+            "blob": "49c65d2f37ba8f90838a80838cec770b2b0e5848",
             "content": "sha256:781254a9aa437829fc461e3dcb967d7c727b953ae73a55cccb2d7e10287e72d0",
             "locator": {
               "kind": "symbol",
@@ -120,7 +120,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6de998c9451213b8db656a2271d6de25ae7c4b20",
+            "blob": "49c65d2f37ba8f90838a80838cec770b2b0e5848",
             "content": "sha256:a6d492cbdf333c3436560e75f8ba097883b53930ec2316a32794aed9dfdfbe23",
             "locator": {
               "kind": "symbol",
@@ -145,6 +145,213 @@
             "path": "mcp/src/agents_remember/application/knowledge_worklist/onboarding_trace.py"
           },
           "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "The module docstring: each route test enters through its own entry point.\n\nAnchor: `record_landing_result`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "49c65d2f37ba8f90838a80838cec770b2b0e5848",
+            "content": "sha256:d6fb67f70c4e04794d7e692f77af197a083d0729f20d3ef96c196e51bc4b04aa",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "23": {
+      "note": "F1 and the worktree closeout, record, master and checkpoint route entries.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "49c65d2f37ba8f90838a80838cec770b2b0e5848",
+            "content": "sha256:bc681f97490d8ba99a5cd312417633ead8bb68f74605ee7a8a3d1dee5954cba1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_hand_closed_leaf_file_is_refused_at_closeout_validation_and_record_landing"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "24": {
+      "note": "Direct landing's route entries and its closing across calls.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "49c65d2f37ba8f90838a80838cec770b2b0e5848",
+            "content": "sha256:3f7bc6557a05b8446e9b602174c01b492ca4d4de59eedc0e6710036e6b2e0530",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_direct_landing_preview_and_apply_refuse_through_their_route_entry"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "25": {
+      "note": "Master landing refuses anything not current; ghost subjects; the scoping.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "49c65d2f37ba8f90838a80838cec770b2b0e5848",
+            "content": "sha256:b7ad398354e6f1764d857019f4f20eb3e49e115884af7b5da1d6d02edf2ea2a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_timed_out_blob_read_or_an_unverifiable_entry_refuses_a_master_landing"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "26": {
+      "note": "The exact trees re-anchor-check the file they just closed; an unavailable object.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "49c65d2f37ba8f90838a80838cec770b2b0e5848",
+            "content": "sha256:54de1dac89ad347c8ae2498b208934d2776c03e88a17c7952543f4fe46901552",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_closeout_s_exact_tree_re_anchor_checks_the_file_it_has_just_closed"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "27": {
+      "note": "The admission base, the memo key and record landing on unconverted memory.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "49c65d2f37ba8f90838a80838cec770b2b0e5848",
+            "content": "sha256:2a62640ab5dbbd8e5edda02a6774f9d4b2e552f5959cfec5dbd2a0d5efb10d0b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_routes_judge_a_leaf_s_earlier_record_new_against_the_parent_line"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "28": {
+      "note": "Git failures, probes and the read set.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "49c65d2f37ba8f90838a80838cec770b2b0e5848",
+            "content": "sha256:781254a9aa437829fc461e3dcb967d7c727b953ae73a55cccb2d7e10287e72d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_git_read_that_fails_inside_a_predicate_or_the_validator_is_never_a_verdict"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "29": {
+      "note": "R3-1 and R3-2.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "49c65d2f37ba8f90838a80838cec770b2b0e5848",
+            "content": "sha256:327d78ae2f713edb03a385621d5b91cd798af89ec0b81257a3a7048655982dbe",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_closing_the_memory_line_already_holds_is_never_restored"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "49c65d2f37ba8f90838a80838cec770b2b0e5848",
+            "content": "sha256:aaabd2d787c2395f0985482d43fce2c1d636c6593c1b3362279ddd1e2aacd396",
+            "locator": {
+              "end": 972,
+              "kind": "line_range",
+              "start": 919
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "30": {
+      "note": "The lane row.\n\nAnchor: `test_knowledge_gate_routes`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e6cd30be07fa6a435465d02ac4fb9feb7e1bbc8",
+            "content": "sha256:5dd49e6f019944b831ae324d60918ae5349903e4f8368f5cf96f5948aeaba91c",
+            "locator": {
+              "end": 115,
+              "kind": "line_range",
+              "start": 111
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "31": {
+      "note": "A Git failure asking for a recorded blob is named by the trees and the lane.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "49c65d2f37ba8f90838a80838cec770b2b0e5848",
+            "content": "sha256:a25b751e9d479ca19125a3a78923132a144e33c0f5764437384502721a45cb39",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_git_failure_asking_for_a_recorded_blob_is_named_by_the_trees_and_the_lane"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "32": {
+      "note": "An unwritable closing receipt restores the file and admits nothing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "49c65d2f37ba8f90838a80838cec770b2b0e5848",
+            "content": "sha256:0f8785c3f4fe3d78f23bdb550f9df0e26ddca9c8eaa89c96199c7001aeca4e23",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_unwritable_closing_receipt_restores_the_file_and_admits_nothing"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "33": {
+      "note": "A hand-closed file is refused also one commit later and through a merge.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "49c65d2f37ba8f90838a80838cec770b2b0e5848",
+            "content": "sha256:bc681f97490d8ba99a5cd312417633ead8bb68f74605ee7a8a3d1dee5954cba1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_hand_closed_leaf_file_is_refused_at_closeout_validation_and_record_landing"
+            }
+          },
+          "kind": "test"
         }
       ]
     }

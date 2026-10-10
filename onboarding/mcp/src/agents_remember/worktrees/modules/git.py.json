@@ -390,6 +390,87 @@
         }
       ]
     },
+    "19": {
+      "note": "Ref/repository identity and transport-safe errors have shared implementations.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ca3f003e5ddefb98b80aea04bce900f75eb2067a",
+            "content": "sha256:5777bc0b0c3621a8045a8da3a987b5244a609c00b57b01cd3ceffa06cc74901a",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_git"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "Candidate trees use private indices and exact derived-path exclusions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ca3f003e5ddefb98b80aea04bce900f75eb2067a",
+            "content": "sha256:ccba9d0b6b768614d7f5c1fc35d1d2b82d509157ec7803f38873ec29dbfeaa2a",
+            "locator": {
+              "kind": "symbol",
+              "name": "worktree_candidate_tree"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "The exact cache pathspec is defined beside the consumer filename.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "125f9e150c83c61988656ca8750c0ee9e6c7563b",
+            "content": "sha256:fe8c801c1101f2ea09438c141664d03f55189cd2474a9e9ffd57d075d423f5bf",
+            "locator": {
+              "kind": "symbol",
+              "name": "MEMORY_CACHE_EXCLUDE"
+            },
+            "path": "mcp/src/agents_remember/kernel/memory_ledger.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "Changed-file reporting preserves its distinct deletion/rename/count semantics.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ca3f003e5ddefb98b80aea04bce900f75eb2067a",
+            "content": "sha256:e624c577a6a46da2a9dcc5305a454f893acaedde7b3be3e81951754ececf4337",
+            "locator": {
+              "kind": "symbol",
+              "name": "changed_files_with_counts"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "`stage_tree` makes the index exactly one tree and reads nothing from the working tree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ca3f003e5ddefb98b80aea04bce900f75eb2067a",
+            "content": "sha256:b97684cc2ac76c4fccebf4b9798b3174f988a5b6ff37fa0aa659ddeafa089b67",
+            "locator": {
+              "kind": "symbol",
+              "name": "stage_tree"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "7": {
       "note": "One shared entry owns copied-index and existing full capture.",
       "targets": [

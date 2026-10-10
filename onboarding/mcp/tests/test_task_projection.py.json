@@ -86,12 +86,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ad32196677d5800992fe4294b439f3e28af150ec",
+            "blob": "15411f097a9e85935a2eda14481d89ff6f7c2768",
             "content": "sha256:1e63282d454a81385c60d01480ef8f81c883423862b512a38619e46453b702f6",
             "locator": {
-              "end": 305,
+              "end": 280,
               "kind": "line_range",
-              "start": 305
+              "start": 280
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -209,6 +209,24 @@
               "kind": "line_range",
               "start": 235
             }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "21": {
+      "note": "The lane manifest row for this module (`:280`).\n\nAnchor: lines 280-280",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "15411f097a9e85935a2eda14481d89ff6f7c2768",
+            "content": "sha256:1e63282d454a81385c60d01480ef8f81c883423862b512a38619e46453b702f6",
+            "locator": {
+              "end": 280,
+              "kind": "line_range",
+              "start": 280
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
           },
           "kind": "test"
         }

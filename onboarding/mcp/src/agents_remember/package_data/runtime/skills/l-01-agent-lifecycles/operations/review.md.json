@@ -1,0 +1,43 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/review.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The operation block's declared purpose, source path, and applicable roles.\n\nAnchor: `review`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9f01b458769e29ba24c9cc3c0ff187e9e5eb2cf2",
+            "content": "sha256:817cae232e058b3d1351eb59ba5f41c7ddf38b67e60124a44b46bc349b5117c9",
+            "locator": {
+              "end": 81,
+              "kind": "line_range",
+              "start": 72
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The canonical source of this block.\n\nAnchor: `# Operation`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3939a7464ac042ed416981590443f91efc0c3ca4",
+            "content": "sha256:c2853f5a0d21fd3b9da0d29103c3f9f81a91fce4b4dc6cb9d5d5f5a155fc6cda",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/review.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

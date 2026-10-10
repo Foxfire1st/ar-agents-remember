@@ -51,6 +51,22 @@
         }
       ]
     },
+    "19": {
+      "note": "A crossing sync's resolution carries the crossing summary and names the report; an ordinary sync's payload is unchanged.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3478a7daa4b6b4545dc212e58ea592800554348b",
+            "content": "sha256:b319465bab96886aa6c108ee1a03fe918bc3301a05b88d2cea243fad52822b3e",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolution_required"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "Structural/crossing report guidance.",
       "targets": [
@@ -62,6 +78,71 @@
               "kind": "symbol",
               "name": "resolution_required"
             }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "Parked-candidate reapply preview.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3478a7daa4b6b4545dc212e58ea592800554348b",
+            "content": "sha256:a988200aa365f33b6a3c2c32d40f809521cb56beb9bf940ac6272960ee5caf29",
+            "locator": {
+              "kind": "symbol",
+              "name": "parked_wip_validation_preview"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "Policy choice and non-mutating initial/active/cancel previews.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3478a7daa4b6b4545dc212e58ea592800554348b",
+            "content": "sha256:814421fd80b8de327b0538736c165b2fd9bb006ebc83b17f5ccc123b5d70e298",
+            "locator": {
+              "kind": "symbol",
+              "name": "memory_choice_required"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "Terminal and no-authority replay results remain distinct; the `continue` replay of a completed generation recomputes the worklist.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3478a7daa4b6b4545dc212e58ea592800554348b",
+            "content": "sha256:1878b0e5f75356e4c1f49f02da11786351b0b85f974ec6fcbd1eb47f0f3c6766",
+            "locator": {
+              "kind": "symbol",
+              "name": "terminal_resolution_replay"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "Content-domain conflict and staged-resolution proof is delegated to the Git owner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d792ca35666e800c2743156397e04ac2c2b46306",
+            "content": "sha256:2c2428c20f8fd2a74d830ef280a4858a3bf5701b7895bc98b9b0127fd445861f",
+            "locator": {
+              "kind": "symbol",
+              "name": "content_conflicts"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git.py"
           },
           "kind": "code"
         }

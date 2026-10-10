@@ -24,6 +24,12 @@ Canonical skills/l-01-agent-lifecycles/operations/coordination.md owns the instr
 
 Use only `role_start`/`role_message` on `agents-remember-task`. Preserve canonical task and paired paths; do not create an independent Paseo Git worktree, background scheduler, duplicate owner or acceptance ledger. Avoid mutually waiting agents.
 
+## Code Commentary
+
+### Todos
+
+None recorded.
+
 ## Evidence
 
 ### Repo-Internal References
@@ -32,6 +38,23 @@ Use only `role_start`/`role_message` on `agents-remember-task`. Preserve canonic
 | --- | --- | --- |
 | One coordinating agent under the Architect, bound start/messaging, same-request recovery and execution metadata boundary. | lines 3-15 | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/coordination.md:3-15 |
 
+### Docs References
+
+No external or domain documentation governs this repository-local instruction file; it is canonical
+repository prose consumed by the skill router.
+
+No relevant documentation found after checking live sources.
+
+### Repo-Internal References
+
+- The operation block's declared purpose, source path, and applicable roles. [2]
+- The canonical source of this block. [3]
+
+### Cross-Repo References
+
+No sibling-repository contract defines this instruction file.
+
+No meaningful cross-repo references found.
 
 ## Current Investigator contract impact
 

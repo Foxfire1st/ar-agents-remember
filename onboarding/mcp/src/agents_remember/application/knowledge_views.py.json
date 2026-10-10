@@ -170,6 +170,54 @@
         }
       ]
     },
+    "16": {
+      "note": "The ordered admission gate and its three refusals, run before the database is opened, and the single builder that turns a refusal into a typed result state.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37f41084b20d44aa6b734698e5cde4bd26d9ae63",
+            "content": "sha256:3e94692ef31c0f277434ec65433a6db34a74db56f5c1b01d8f341b5a948c78fd",
+            "locator": {
+              "kind": "symbol",
+              "name": "_admit"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "The five payload classes the table dispatches to, the five names the seam indexes, and the reader port with its store-side opener.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37f41084b20d44aa6b734698e5cde4bd26d9ae63",
+            "content": "sha256:5531d802d7d5b4e93d9ddefeaa0facddb572854640f6156ffb08783326810a57",
+            "locator": {
+              "kind": "symbol",
+              "name": "_PAYLOADS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "The four admitted ordering inputs the admission gate screens the request against, and the five renderers the dispatch table imports one per view name.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37f41084b20d44aa6b734698e5cde4bd26d9ae63",
+            "content": "sha256:ee0e496c1acb5f3a101beb015e66b27e9f02bf0eb016a7306c84ce275fa64992",
+            "locator": {
+              "kind": "symbol",
+              "name": "_RENDERERS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "The recorded-graph and traversal-policy scope inputs a completeness statement is bounded to, and the version the dispatch tables and every payload record.",
       "targets": [

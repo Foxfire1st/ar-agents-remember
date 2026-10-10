@@ -229,6 +229,414 @@
           "kind": "test"
         }
       ]
+    },
+    "57": {
+      "note": "- The read adds `proofs` only for a converted memory tree's page, prepared once per page since MIK-R02.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "12b2d18549a3d15a005d7fe16fc4b6f3dbc25be1",
+            "content": "sha256:7fffdcb7bb12a477931fce751c44f0d545603e6735db5c1c9686e85f414e6491",
+            "locator": {
+              "kind": "symbol",
+              "name": "_tree_extras"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "58": {
+      "note": "- A key mismatch joins the selection failures.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "12b2d18549a3d15a005d7fe16fc4b6f3dbc25be1",
+            "content": "sha256:006a7730b74ff929e59726f0223be05eb81fa3389d5c10e1b337bd619dadaf10",
+            "locator": {
+              "kind": "symbol",
+              "name": "_SELECTION_FAILURES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "59": {
+      "note": "- Invariant and family views of a tree carry their proofs; no pass or result key exists.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "21f99aa076f020f6ff937e97fa2cec6f87d0c9fe",
+            "content": "sha256:56aad2e95f94971198ee2f83b8028706bd3e90b083bd5d0d640acf6a8e0b1896",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_invariant_and_family_views_carry_their_proofs"
+            },
+            "path": "mcp/tests/test_knowledge_proofs.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "60": {
+      "note": "- The integrity check's request value.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "12b2d18549a3d15a005d7fe16fc4b6f3dbc25be1",
+            "content": "sha256:6a752c679b21430b2a1536b8cbe54bc168013aafdbcc17e029889be3a6a756fb",
+            "locator": {
+              "kind": "symbol",
+              "name": "IntegrityCheckRequest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "61": {
+      "note": "- Dataset, leaf, both or neither; the leaf's worklist fields added when a contract is named.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "12b2d18549a3d15a005d7fe16fc4b6f3dbc25be1",
+            "content": "sha256:0b24a3fa35f7dfa0f5991e96ab2739c7b83316b42a48b79aafedaad56bdca22f",
+            "locator": {
+              "kind": "symbol",
+              "name": "knowledge_integrity_check_payload"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "62": {
+      "note": "- The worklist fields read from the persisted file.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "93f9cc7b1e87fde3103b6798c2d8245be88d94a5",
+            "content": "sha256:246c2c53aa05e422046961c197ad4be6066796da8ece43467bb2014e9b31141a",
+            "locator": {
+              "kind": "symbol",
+              "name": "leaf_worklist_fields"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_worklist/surface.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "63": {
+      "note": "- The tool returns the latest worklist.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bb33d32e66cacf8fa81aad1a23356a78e271e230",
+            "content": "sha256:631732cc4652b28279cb4a9d3dfcfefeae8c845e53b51d7d509f2544625fbe01",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_tool_returns_the_latest_worklist_and_the_checklist_shows_it"
+            },
+            "path": "mcp/tests/test_knowledge_worklist_leaf.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "64": {
+      "note": "- A converted tree's page carries `currentness` at the walk's code tree, computed once per page beside its proofs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "12b2d18549a3d15a005d7fe16fc4b6f3dbc25be1",
+            "content": "sha256:7fffdcb7bb12a477931fce751c44f0d545603e6735db5c1c9686e85f414e6491",
+            "locator": {
+              "kind": "symbol",
+              "name": "_tree_extras"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "65": {
+      "note": "- A named tree flags the stale invariant and keeps it visible.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "85c55f2eaf44e11e20283306277a55040b2fa8a1",
+            "content": "sha256:d4b9911b1395ec1a3b7268944d57fc41447f34349a1bbe67a23351679e305dcc",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_knowledge_read_flags_a_stale_invariant_and_keeps_it_visible"
+            },
+            "path": "mcp/tests/test_knowledge_currentness.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "66": {
+      "note": "- Without `codeTreeId` it is unverifiable and never reads `HEAD`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "85c55f2eaf44e11e20283306277a55040b2fa8a1",
+            "content": "sha256:a5a23df64e8b4bd5366430a3e80d049b43770ee44894375733f350207e20d399",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_knowledge_read_without_a_named_tree_is_unverifiable_and_never_reads_head"
+            },
+            "path": "mcp/tests/test_knowledge_currentness.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "67": {
+      "note": "- A failing step never refuses the view.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "85c55f2eaf44e11e20283306277a55040b2fa8a1",
+            "content": "sha256:e183a2d74a57440dfd414fdac038941d816a450c2727f7809775ad31ab88d2a7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_failing_currentness_step_degrades_to_a_reason_and_never_refuses_the_read"
+            },
+            "path": "mcp/tests/test_knowledge_currentness.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "68": {
+      "note": "- A converted tree's read is handed to the paged tree read right after the selection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "12b2d18549a3d15a005d7fe16fc4b6f3dbc25be1",
+            "content": "sha256:3e2727fb0993b347c3826f27dcf1f18beb611f1296087f36aa0312a4d73596d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_read_result"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "69": {
+      "note": "- The default ordering, applied only when the caller named none.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "12b2d18549a3d15a005d7fe16fc4b6f3dbc25be1",
+            "content": "sha256:49791f57cd0f2e684f30c1fe2f9d6feb1f7dac52dcdfae6e4457cfdc5018975b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_ordering"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "70": {
+      "note": "- A converted-tree refusal states the threshold; a database refusal does not.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "12b2d18549a3d15a005d7fe16fc4b6f3dbc25be1",
+            "content": "sha256:62a1299117348503e6a6bf61e906eb424b3adc6a2942c73814d29d008255ad4d",
+            "locator": {
+              "kind": "symbol",
+              "name": "knowledge_read_payload"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "71": {
+      "note": "- The paged tree read this module hands a converted selection to.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b4fb3c6660f8614143e3526477bf733ef8f58d20",
+            "content": "sha256:5d5b0a1f3ef99ef70850f6c59d2ea1e778efc30f4d6e35bc27f7cd3121a28cae",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_tree_page"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_paging/tree_read.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "72": {
+      "note": "- A named root that resolves no code tree is its own error, refused `selected_input_unavailable` naming the root.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "12b2d18549a3d15a005d7fe16fc4b6f3dbc25be1",
+            "content": "sha256:fdb9ef8db381f88789d2d788db205da97ac71618dbb2d5ea10c39141240fab76",
+            "locator": {
+              "kind": "symbol",
+              "name": "_NoCodeTreeError"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "73": {
+      "note": "- `_source_resolution` raises it for a caller-named root without a tree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "12b2d18549a3d15a005d7fe16fc4b6f3dbc25be1",
+            "content": "sha256:c39890d0dd786e7183906846ef5088590ef3164cef757103d3188f9ac1c5d123",
+            "locator": {
+              "kind": "symbol",
+              "name": "_source_resolution"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "74": {
+      "note": "- The leaf read the tree read routes a `source_context` path read to (and, since MIK-R05, a read naming only `familyRevisionId`, as a family seed).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b4fb3c6660f8614143e3526477bf733ef8f58d20",
+            "content": "sha256:5680bcd9eb0d97cf2dc07777b851539d05de60a0e94221f8549a48bda238e663",
+            "locator": {
+              "kind": "symbol",
+              "name": "_leaf_response"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_paging/tree_read.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "75": {
+      "note": "- The flat read request as one frozen value: the continuation, the two revision selectors, the optional source roots, and an ordering left `None` unless the caller names one.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "12b2d18549a3d15a005d7fe16fc4b6f3dbc25be1",
+            "content": "sha256:608f9b7fbe01c22a7f1523946877c9dcfeaec531d9b0e115b5ef2d38bda5ec95",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReadToolRequest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "76": {
+      "note": "- The flat read request's optional source-path seed, beside the unnamed-by-default ordering MIK-R02 introduced.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "12b2d18549a3d15a005d7fe16fc4b6f3dbc25be1",
+            "content": "sha256:608f9b7fbe01c22a7f1523946877c9dcfeaec531d9b0e115b5ef2d38bda5ec95",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReadToolRequest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "77": {
+      "note": "- The one refusal envelope the read operation returns for an unknown view and for a view the seam refused.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "12b2d18549a3d15a005d7fe16fc4b6f3dbc25be1",
+            "content": "sha256:18ff8e190e26412017ccf169053b9effdcfa8d8fa450644533a60b0841e4964c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refused_read"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "78": {
+      "note": "- The one refusal envelope the read operation returns for an unknown view and for a view the seam refused.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "12b2d18549a3d15a005d7fe16fc4b6f3dbc25be1",
+            "content": "sha256:18ff8e190e26412017ccf169053b9effdcfa8d8fa450644533a60b0841e4964c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refused_read"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "79": {
+      "note": "- The read builder: the five-view closure, the shared dataset selection (a converted memory tree reads through its index), the resolver call, the seam call, and the payload returned as the view payload itself — with every completeness statement forced to `false` when that index is partial.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "12b2d18549a3d15a005d7fe16fc4b6f3dbc25be1",
+            "content": "sha256:3e2727fb0993b347c3826f27dcf1f18beb611f1296087f36aa0312a4d73596d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_read_result"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "80": {
+      "note": "- The source-resolution pair completed rather than half-supplied: the caller's own root with its current tree (refused by name when it has none, since MIK-R01), the mount's workspace default used only when a tree can be resolved from it, and neither half when Git cannot answer for it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "12b2d18549a3d15a005d7fe16fc4b6f3dbc25be1",
+            "content": "sha256:c39890d0dd786e7183906846ef5088590ef3164cef757103d3188f9ac1c5d123",
+            "locator": {
+              "kind": "symbol",
+              "name": "_source_resolution"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "81": {
+      "note": "- **Every way resolving and opening a selection can fail, refused the same way on every handler: a named root with no code tree is `selected_input_unavailable` naming the root (MIK-R01), a tree, Git or cache failure is `snapshot_unavailable` naming the tree, anything else the dataset refusal it was before.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "12b2d18549a3d15a005d7fe16fc4b6f3dbc25be1",
+            "content": "sha256:bd46131b34125fbbd1d1d23fa0fd79e29d355329f2e48ee6a4105399cb94ab1c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_selection_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

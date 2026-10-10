@@ -65,6 +65,358 @@
           "kind": "code"
         }
       ]
+    },
+    "29": {
+      "note": "Defines the class `Extent` (lines 39-49) — One range an anchor occupies in a file, and how it was found..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4757f36e9a477d0e286dfcc9ea3e7446977a1821",
+            "content": "sha256:5531d559680e00e0a64707bdd56679d7f62fba5b493641e626da92afa94c4170",
+            "locator": {
+              "kind": "symbol",
+              "name": "Extent"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "30": {
+      "note": "Defines the class `WordMark` (lines 52-60) — One collapsed word and the byte position it retains from the source..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4757f36e9a477d0e286dfcc9ea3e7446977a1821",
+            "content": "sha256:366f7149acc52e3bd5cdf1dd0e725c910484991b129c3faa2dd658b877215da8",
+            "locator": {
+              "kind": "symbol",
+              "name": "WordMark"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "31": {
+      "note": "Defines the class `CollapsedText` (lines 63-68) — Whitespace-collapsed text whose word marks still identify source bytes..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4757f36e9a477d0e286dfcc9ea3e7446977a1821",
+            "content": "sha256:2271b4b82e4be599e58701cc3a9ef718a6e68d7dda17aecae22ec6cdf991d28f",
+            "locator": {
+              "kind": "symbol",
+              "name": "CollapsedText"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "32": {
+      "note": "Defines the class `QuoteMatch` (lines 71-82) — One exact quote occurrence before line-range rendering merges equal extents..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4757f36e9a477d0e286dfcc9ea3e7446977a1821",
+            "content": "sha256:c2f4b2f30d9a019c72e1ae13d74e766b6efc63bb6bafde568690ca5ff1dada16",
+            "locator": {
+              "kind": "symbol",
+              "name": "QuoteMatch"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "33": {
+      "note": "Defines the function `anchor_extents` (lines 85-91) — Every range in ``lines`` that satisfies ``anchor``, by the rule its kind implies..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4757f36e9a477d0e286dfcc9ea3e7446977a1821",
+            "content": "sha256:dd411c8ebe873050a3b23e75b53a75c8550bda8c60dafcc946796c988ee9cb79",
+            "locator": {
+              "kind": "symbol",
+              "name": "anchor_extents"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "34": {
+      "note": "Defines the function `symbol_extents` (lines 94-99) — The constructs binding ``name``, or -- failing that -- the lines that mention it..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4757f36e9a477d0e286dfcc9ea3e7446977a1821",
+            "content": "sha256:7852112c7635ca461973a1c8db6867a4f2911dcb861707d9a04cb063e6a4486a",
+            "locator": {
+              "kind": "symbol",
+              "name": "symbol_extents"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "35": {
+      "note": "Defines the function `definitions` (lines 102-116) — Every name this file binds at any depth, and the extent of the construct binding it..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4757f36e9a477d0e286dfcc9ea3e7446977a1821",
+            "content": "sha256:96c24b4eb0f3218dbc1541bcff255228f976d64905854de32b2012f6ce82db1c",
+            "locator": {
+              "kind": "symbol",
+              "name": "definitions"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "36": {
+      "note": "The one symbol-binding rule, shared by the curator writer, the conversion and the reference check.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4757f36e9a477d0e286dfcc9ea3e7446977a1821",
+            "content": "sha256:b2ced6307919efd33b944f30f6c6418bab915d3d05ad6b8ac6cb29f047a21ca0",
+            "locator": {
+              "kind": "symbol",
+              "name": "qualified_spans"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "37": {
+      "note": "Defines the function `occurrence_runs` (lines 119-129) — Consecutive lines holding the pattern, grouped -- two mentions ten lines apart are two ranges, because one range spanning them would quote eight lines that say nothing..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4757f36e9a477d0e286dfcc9ea3e7446977a1821",
+            "content": "sha256:76aedd72af4ad1ee0a995095a0f5c83b3d2648cf359d20cc689e4684e1847941",
+            "locator": {
+              "kind": "symbol",
+              "name": "occurrence_runs"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "38": {
+      "note": "Defines the function `heading_extents` (lines 132-135) — The section a heading opens: its own line to the line before the next heading of equal or higher level, or to the end of the document..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4757f36e9a477d0e286dfcc9ea3e7446977a1821",
+            "content": "sha256:72f7af5ec276eeb938c220a532e5fcaee87566d029cb439d5141ff3e9b4ad6c2",
+            "locator": {
+              "kind": "symbol",
+              "name": "heading_extents"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "39": {
+      "note": "Defines the function `heading_extents_in` (lines 138-152) — :func:`heading_extents` with the file's heading levels already derived..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4757f36e9a477d0e286dfcc9ea3e7446977a1821",
+            "content": "sha256:549f8cd53f65a65d05900754dc636a8c79e763e8aa58034c993b98371f78d789",
+            "locator": {
+              "kind": "symbol",
+              "name": "heading_extents_in"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "40": {
+      "note": "Defines the function `heading_levels` (lines 155-158) — Each unfenced heading line's index and its ``#`` depth..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4757f36e9a477d0e286dfcc9ea3e7446977a1821",
+            "content": "sha256:c2c9721732130eaf0bd1a5c700d368aae8f971caba1797be3faa7abb0d993e3f",
+            "locator": {
+              "kind": "symbol",
+              "name": "heading_levels"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "41": {
+      "note": "Defines the function `quote_extents_for_path` (lines 173-176) — Quoted extents with parsed-language call-argument widening..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4757f36e9a477d0e286dfcc9ea3e7446977a1821",
+            "content": "sha256:7da95cd7dc32cd3c7d5a13bb4ec62507d68316b8ffa2ad89d3ad207bc0348946",
+            "locator": {
+              "kind": "symbol",
+              "name": "quote_extents_for_path"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "42": {
+      "note": "Defines the function `all_quote_matches` (lines 179-199).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4757f36e9a477d0e286dfcc9ea3e7446977a1821",
+            "content": "sha256:23573658920d66f898b6c97b56efb916056288a58cc4becd507eef22ac820c1d",
+            "locator": {
+              "kind": "symbol",
+              "name": "all_quote_matches"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "43": {
+      "note": "Defines the function `widened_quotes` (lines 207-230).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4757f36e9a477d0e286dfcc9ea3e7446977a1821",
+            "content": "sha256:6cd52711b26e5dd94ced3ea83466d9c814ac8631e1f49b8caec27507fd1f35de",
+            "locator": {
+              "kind": "symbol",
+              "name": "widened_quotes"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "44": {
+      "note": "Defines the function `quote_matches_in` (lines 233-259) — Exact occurrences in one collapsed stream, with source-byte identity retained..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4757f36e9a477d0e286dfcc9ea3e7446977a1821",
+            "content": "sha256:b2c8510d3da035d20388ec53c65813f1dc8b09b9c3ffe267ea3cd9f798a0c759",
+            "locator": {
+              "kind": "symbol",
+              "name": "quote_matches_in"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "45": {
+      "note": "Defines the function `collapsed` (lines 262-284) — The file as whitespace-collapsed text with each word's line and byte position..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4757f36e9a477d0e286dfcc9ea3e7446977a1821",
+            "content": "sha256:7735fa45b4cf0282e9c2cd857dedb3508eb88d787aabf736cfae218007b0bc2b",
+            "locator": {
+              "kind": "symbol",
+              "name": "collapsed"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "46": {
+      "note": "Defines the function `line_comment_blocks` (lines 287-321) — Contiguous ``//`` blocks with syntax prefixes removed and source lines retained..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4757f36e9a477d0e286dfcc9ea3e7446977a1821",
+            "content": "sha256:b9a8b282ce0fc8d5bcdb0cacfce659ec81a5e5a4d9865e3a2487904a28ca66a0",
+            "locator": {
+              "kind": "symbol",
+              "name": "line_comment_blocks"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "47": {
+      "note": "Defines the function `word_mark_at` (lines 324-339) — The source word containing a non-whitespace collapsed-text offset..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4757f36e9a477d0e286dfcc9ea3e7446977a1821",
+            "content": "sha256:b454c3b92d1512710e1f4367e5c2be4700506980ac62d24e6c3b5bf87e3c6a77",
+            "locator": {
+              "kind": "symbol",
+              "name": "word_mark_at"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "48": {
+      "note": "Defines the function `source_line_starts` (lines 342-349) — UTF-8 byte offset of every line in the exact source tree-sitter parses..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4757f36e9a477d0e286dfcc9ea3e7446977a1821",
+            "content": "sha256:22bd4cab5955f06f5fee5506283990f08132d1c56c259dd435c904654d5ad394",
+            "locator": {
+              "kind": "symbol",
+              "name": "source_line_starts"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "49": {
+      "note": "Defines the class `FileView` (lines 352-412) — One file, matched against many anchors, with each whole-file derivation done once..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4757f36e9a477d0e286dfcc9ea3e7446977a1821",
+            "content": "sha256:b8980079d414db2ee02190b9c5ac0def39d4c48cc3cacc22eadd5c964d96ef1d",
+            "locator": {
+              "kind": "symbol",
+              "name": "FileView"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "50": {
+      "note": "Defines the function `merged` (lines 415-423) — ``spans`` in order with overlapping and adjacent ones fused into one range..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4757f36e9a477d0e286dfcc9ea3e7446977a1821",
+            "content": "sha256:13a6e87f8f0084aa7fa01527fe04e6d9f4f09b86de89c68463499e358819f2a7",
+            "locator": {
+              "kind": "symbol",
+              "name": "merged"
+            }
+          },
+          "kind": "code"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

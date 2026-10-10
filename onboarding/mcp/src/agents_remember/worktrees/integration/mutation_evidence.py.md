@@ -6,13 +6,11 @@
 
 Working candidate verification: source inspected at 2026-09-15T01:02 UTC against the uncommitted L9 candidate.
 The commit fields identify the latest real commit touching this source; they do not identify a future commit for the working changes.
-
 ## Purpose
 
 Owns code/memory Git-mutation evidence: accepted snapshots, intent publication, expected-output
 binding, exact commit proof, and reconciliation of interrupted attempts. The retired ledger leg is
 not part of this evidence vocabulary.
-
 ## Code Commentary
 
 ### Logic
@@ -48,7 +46,6 @@ the snapshot's candidate tree with its new blob (INV-656CYW). The closeout's jud
 The shared snapshot predicate is the only cleanliness definition used by direct execution and
 recovery. Progress callbacks can record typed evidence in-process; the caller's operation owner
 controls durable publication and generation transitions.
-
 ### Invariants And Boundaries
 
 - Enabled leg and exact repository authority are checked before mutation.
@@ -56,11 +53,9 @@ controls durable publication and generation transitions.
 - Cached bytes, staged cache entries, and cache conflicts do not determine memory cleanliness.
 - Only code and memory outputs are modeled; no ledger third-leg exception remains.
 - Ambiguity cannot be rewritten into a false unchanged or successful receipt.
-
 ### Todos
 
 No new implementation or live-state operation is authorized by this documentation pass.
-
 ## Evidence
 
 ### Repo-Internal References
@@ -68,3 +63,24 @@ No new implementation or live-state operation is authorized by this documentatio
 - `begin_git_mutation` implements the retained boundary described above. [7]
 - `prove_git_commit` implements the retained boundary described above. [8]
 - `reconcile_closeout_mutations` implements the retained boundary described above. [9]
+### Docs References
+
+No Domain Documentation source is configured for this repository. No external domain documents
+were available through the configured registry to consult; the current claims are grounded in the
+working source and package-local evidence below. The registry is discovery input, not a citation.
+
+No configured external domain-documentation evidence.
+These repository-relative targets and exact ranges were checked against the L9 working source.
+Source declarations and test assertions are distinguished from execution and acceptance evidence.
+### Cross-Repo References
+
+The code/memory or fixture-repository boundaries above are established by package-local source.
+No additional configured external or sibling-repository evidence is claimed.
+
+No additional configured cross-repository evidence.
+- Only enabled code/memory legs receive mutation cells. [10]
+- Intent, expected-output binding, and commit proof retain their order. [11]
+- Interrupted attempts are reconciled from actual Git evidence. [12]
+- Cache-excluded snapshots retain actual object/ref identity. [13]
+- The disposable snapshot copies the index with its time. [14]
+- The snapshot model declares the separate content comparison tree. [15]

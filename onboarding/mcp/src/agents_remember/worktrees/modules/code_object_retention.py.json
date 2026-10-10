@@ -132,6 +132,198 @@
         }
       ]
     },
+    "36": {
+      "note": "The module's own statement of the three properties — one commit and one ref, measured custody over named history only, explicit release with a record — and of what it does not decide.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "912d1707bae355645c256a55af1b52aeb7276c9f",
+            "content": "sha256:8a42dc6b7bcee527e6e8e183306a265ac7762ed3aebdab6174cd9937bd3b9951",
+            "locator": {
+              "kind": "symbol",
+              "name": "code_object_custody"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "37": {
+      "note": "The published surface, the namespace, the two custody literals and the third observation's literal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "912d1707bae355645c256a55af1b52aeb7276c9f",
+            "content": "sha256:521021c228bca502d2758219b602ab42b1780af4c94efe0bc9f8a8aa6c4a73d9",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "38": {
+      "note": "**The durable history a custody measurement is allowed to find the tree in, and the empty set as a statement.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "912d1707bae355645c256a55af1b52aeb7276c9f",
+            "content": "sha256:4456ef183916291ef3c37b7ada50bc861b0104429880e05e092a9e5835cc34c1",
+            "locator": {
+              "kind": "symbol",
+              "name": "CustodyNames"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "39": {
+      "note": "**The pin record — ref, commit, tree, base — whose four fields release requires together.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "912d1707bae355645c256a55af1b52aeb7276c9f",
+            "content": "sha256:e89b7667e78f4ab4a0fb17204ec719f8acd854a2d7618481061120cca515c9f4",
+            "locator": {
+              "kind": "symbol",
+              "name": "RetainedCodeObject"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "40": {
+      "note": "**The release record a caller stores as unavailable history, including the custody measured at release and the honest `absent` case.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "912d1707bae355645c256a55af1b52aeb7276c9f",
+            "content": "sha256:8a8afcc589d9634366247b3a7daedb65a5f7b7ef547762d8200bfe01751cfd74",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReleasedCodeObject"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "41": {
+      "note": "The one Git question that answers a boolean rather than raising.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "912d1707bae355645c256a55af1b52aeb7276c9f",
+            "content": "sha256:3a9744366ad5a42017bbb96c37d6679389ddf4eb3df0b05ddbdcbdf0b2e7e031",
+            "locator": {
+              "kind": "symbol",
+              "name": "object_readable"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "42": {
+      "note": "**Custody over named history only, bounded by the number of names and never walking ancestry.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "912d1707bae355645c256a55af1b52aeb7276c9f",
+            "content": "sha256:8a42dc6b7bcee527e6e8e183306a265ac7762ed3aebdab6174cd9937bd3b9951",
+            "locator": {
+              "kind": "symbol",
+              "name": "code_object_custody"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "43": {
+      "note": "**The three-way observation, and the reason `absent` is a separate type from the two custody values.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "912d1707bae355645c256a55af1b52aeb7276c9f",
+            "content": "sha256:874ace4ceb964e42fca51d95238b53398b65e9f281bde01d0ddb915da2497f06",
+            "locator": {
+              "kind": "symbol",
+              "name": "code_object_observation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "44": {
+      "note": "The reader's question about a recorded pin: gone, or re-pointed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "912d1707bae355645c256a55af1b52aeb7276c9f",
+            "content": "sha256:f9bf8dc42f67156b384de43f6486c23156208dad567ec64c19f26716ad28c76f",
+            "locator": {
+              "kind": "symbol",
+              "name": "retained_object_readable"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "45": {
+      "note": "**Release: refuse a moved ref, converge on an absent one, and return the record with custody measured before deletion.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "912d1707bae355645c256a55af1b52aeb7276c9f",
+            "content": "sha256:76e1344c022398ef8d50dd167e4a7ea60196db6ebcd824cd1664f9a2729d6cbf",
+            "locator": {
+              "kind": "symbol",
+              "name": "release_retained_code_object"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "46": {
+      "note": "The named-commit resolution that drops what does not resolve to a commit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "912d1707bae355645c256a55af1b52aeb7276c9f",
+            "content": "sha256:fc9fbc87c8adcdda88fd95dd099a164f1ddda4f15896094fe1536f30c05512da",
+            "locator": {
+              "kind": "symbol",
+              "name": "_named_commits"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "47": {
+      "note": "The Git failure's own words, rendered transport-safe for an actionable refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "912d1707bae355645c256a55af1b52aeb7276c9f",
+            "content": "sha256:d09f86d5360ecba7edd10ca4d889920ccf8ef0508ebaa0dc37687c995edfe85e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_diagnostic"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "5": {
       "note": "Complete retained pin identity.",
       "targets": [

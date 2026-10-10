@@ -3,7 +3,6 @@
 ## Governing Overview
 
 [worktrees route overview](overview.md)
-
 ## Purpose
 
 **The crossing sync in the managed sync transaction, and the unconverted-line refusal (MIK-R24 rules 8
@@ -12,7 +11,6 @@ lacks `knowledge/layout.json` and another has it. This module plans the structur
 port before Git merges, and applies it to the started merge. It writes the durable crossing report and
 closes a master line's crossing history file at commit. It also holds the rule 9 refusal that writes,
 memory-quality runs and (later) closeouts call.
-
 ## Code Commentary
 
 ### Logic
@@ -60,7 +58,6 @@ memory-quality runs and (later) closeouts call.
 - Wired callers: `sync_transaction_git` (the crossing branch and the commit step),
   `sync_transaction_results` (the summary), `cli/knowledge_write_route` and
   `application/memory_quality/controller` (the refusal).
-
 ### Invariants And Boundaries
 
 - **A crossing conflict is never committed silently.** Conflicted paths stay unmerged, and conflicted JSON
@@ -75,11 +72,9 @@ memory-quality runs and (later) closeouts call.
   An unconverted official line, or a repository without one, converts by running `agents-remember
   knowledge-convert` and committing through its normal route.
 - The crossing sync's own commit converts the line. There is no separate conversion commit.
-
 ### Todos
 
 None recorded. The closeout refusal of rule 9 is wired (L09's gate plus L37's cutover lock in `knowledge_gate.py`).
-
 ## Evidence
 
 ### Repo-Internal References
@@ -90,3 +85,30 @@ None recorded. The closeout refusal of rule 9 is wired (L09's gate plus L37's cu
 
 - The curator text forbids hand renumbering: the merge aligns numbers itself. [15]
 - The summary carries the alignment counts with zero defaults. [16]
+### Docs References
+
+No domain documentation source is configured for this repository (`system/sources.md` carries no
+`Domain Documentation` entries). The design authority is the requirement packet `MIK-R24@v1` of task
+`260928_maintained-invariant-knowledge` (with the architect rulings in the task's leaf document
+`24_conversion-and-boundary-crossing.json`) and the coordination-root note Doc14
+(`notes/ar-intent-reviewer-and-beyond/Doc14-text-canonical-knowledge-layout.md`); they live outside the
+code and memory repositories, so they are named here and not cited as rows.
+
+No configured live documentation source was available for this pass.
+The crossing helpers and the rule 9 refusal.
+### Cross-Repo References
+
+No meaningful cross-repo references found: the file reads and writes only the memory and code repositories its caller names.
+
+No cross-repo boundary is crossed by this file.
+- A crossing sync: one tree unconverted and one converted. [17]
+- The plan through the bound port, refused without a paired code commit or a bound crossing. [18]
+- The merge's knowledge and onboarding paths become the plan; conflicted paths are unmerged with three stages. [19]
+- The rule 9 refusal when the official line is converted; every other unconverted tree is left to the cutover lock. [20]
+- A master-line crossing history file is closed in the merge commit. [21]
+- The durable report and its bounded summary, with the how-to. [22]
+- Rule 9, then the cutover lock for every other unconverted tree. [23]
+- Whether the official line's tip holds the marker; no line or an unreadable one reads as no. [24]
+- The managed sync crosses an unconverted leaf into a converted line. [25]
+- Overlapping edits go to the curator with markers; a failed step changes nothing. [26]
+- The refusal fires only once the official line is converted. [27]

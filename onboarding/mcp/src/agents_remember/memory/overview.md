@@ -1,10 +1,5 @@
 # mcp/src/agents_remember/memory/ - Memory Repository Lifecycle And Knowledge Storage Overview
 
-| Field | Value |
-| --- | --- |
-| sourceRoute | `mcp/src/agents_remember/memory/` |
-| the recorded working candidateNote | the verification tuple above was recorded by 260915-KS-L45; this row names the 260915-KS-L43 reading performed against the same line |
-
 ## Governing Overview
 
 [mcp/overview.md](../../../overview.md)
@@ -301,6 +296,8 @@ Memory lifecycle and file-derived knowledge reads. The selected text tree is aut
 
 Index build/cache/query read the selected converted text tree. Projection fills retained tables and store opens them read-only. The schema module declares exactly v9 and logical computes its row identity. File authoring belongs to application/knowledge_writer; sync structurally merges knowledge files, never SQLite changesets. [65]
 
+## Detailed Route Context
+
 ## Historical canonical substrate — retired
 
 The earlier store used sealed rows, lock-guarded batches, generation dispatch, copied candidates, publication, portable roundtrips and changeset merging. MIK-R26 retired those mechanisms. Retained declarations/codecs now support one derived-index schema, never a canonical writer or a legacy database as current knowledge. Text authoring, indexing and structural merging carry current responsibilities. [65]
@@ -387,6 +384,9 @@ The node that isolates the sealed predecessor field on each payload, added by th
 ---
 The storage home is declared in the memory package charter as a wording addition only.
 The fixture's registered stable contract, its evidence node and its five declared consumers.
+
+- An unreadable baseline is refused. [143]
+- Every write is checked, then written atomically. [144]
 
 ### Cross-Repo References
 

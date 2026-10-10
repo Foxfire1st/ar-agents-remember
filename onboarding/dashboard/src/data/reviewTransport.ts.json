@@ -133,6 +133,317 @@
           "kind": "test"
         }
       ]
+    },
+    "29": {
+      "note": "**The header's own record of the defect this module exists for, and of its two boundaries: the body is the answer whatever the status, and the shared client keeps throwing for the routes that use it.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "25250cf4f41daf7721dd292a421845d64fefdd4c",
+            "content": "sha256:6e85817cf7adc12d0e32445415755453f931e8ce8e584541b8cedd7c69732b0f",
+            "locator": {
+              "kind": "symbol",
+              "name": "getReviewJson"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "30": {
+      "note": "**The shared client whose throw-on-non-2xx idiom is right for the other serving routes and dropped this route's typed refusal whole: the behaviour this module deliberately does not change.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "69f443587646541eb1434c6090c484772f0ac10a",
+            "content": "sha256:aee27bd2070c9668b9d11e34383243d0296956943d9cef550376dbf57313c14f",
+            "locator": {
+              "kind": "symbol",
+              "name": "getJson"
+            },
+            "path": "dashboard/src/data/files.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "31": {
+      "note": "**The failure vocabulary: one token per answer that is not a review, including the two honest fallbacks, and the explicit statement that `loading`/`known-empty` are not members.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "25250cf4f41daf7721dd292a421845d64fefdd4c",
+            "content": "sha256:7e50f05031835d108310e3392553c5e2cda7fd4ac8ddcd687c34dc04726cd7a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewFailureToken"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "32": {
+      "note": "**One failure in the owner's own terms, with `code` never re-spelled and `httpStatus` present only when a response carried it.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "25250cf4f41daf7721dd292a421845d64fefdd4c",
+            "content": "sha256:5681b446d544be3f2083632d00ee0534c0a7fcff380817488a529be115860a09",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewFailure"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "33": {
+      "note": "The typed refusal's wire fields, declared structurally so the import runs one way only.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "25250cf4f41daf7721dd292a421845d64fefdd4c",
+            "content": "sha256:5eed3fb70f20d15d8ae365a085e6dc9c6c8e9639bf32e92ecaa3f550dd7d723d",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewRefusalFacts"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "34": {
+      "note": "**The only code→state table in the dashboard, and the classifier that carries an unknown code verbatim rather than guessing it into a state.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "25250cf4f41daf7721dd292a421845d64fefdd4c",
+            "content": "sha256:0629df989dcc8c29ec8f443b780af0a6f666210482b5b2f9c393cb2e5a6336fa",
+            "locator": {
+              "kind": "symbol",
+              "name": "TOKEN_BY_CODE"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "35": {
+      "note": "**The refusals that answer for the intent half alone, which is what licenses offering the task's source inventory as a separate question.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "25250cf4f41daf7721dd292a421845d64fefdd4c",
+            "content": "sha256:17910ece273ff0424b72ce445ec320a5875fb0b32eed9f98cdbde5fa171c5551",
+            "locator": {
+              "kind": "symbol",
+              "name": "INTENT_ONLY_CODES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "36": {
+      "note": "The one error, staying a `FilesApiError` for existing catchers while carrying the whole failure.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "25250cf4f41daf7721dd292a421845d64fefdd4c",
+            "content": "sha256:499bcbcd05724dcb2ba554a23c69c05a530465d4e4be674fbcb1fc9ae139017d",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewTransportError"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "37": {
+      "note": "**The single transport-level classification: the body's own `status`, the optional fields read only where published, and `path` accepted as the port's own spelling of the offending input.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "25250cf4f41daf7721dd292a421845d64fefdd4c",
+            "content": "sha256:c4d5858a6e56e809a402e0b5a5a9f47d8ec1287a0e3e30c3bfedb4aec18095e6",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewBody"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "38": {
+      "note": "**A failure with no HTTP response is its own token and carries no status.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "25250cf4f41daf7721dd292a421845d64fefdd4c",
+            "content": "sha256:8213dfd5d70eb9132176eba4a2757beb64c601667fe832a27c1dda9c75e08f22",
+            "locator": {
+              "kind": "symbol",
+              "name": "networkFailure"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "39": {
+      "note": "**The one GET: the body is read whatever the status, and a body carrying this route's `state` IS the answer.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "25250cf4f41daf7721dd292a421845d64fefdd4c",
+            "content": "sha256:6e85817cf7adc12d0e32445415755453f931e8ce8e584541b8cedd7c69732b0f",
+            "locator": {
+              "kind": "symbol",
+              "name": "getReviewJson"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "40": {
+      "note": "**A typed refusal projected through the same classifier, so the entry and the surface cannot disagree about a code.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "25250cf4f41daf7721dd292a421845d64fefdd4c",
+            "content": "sha256:a37260d8b27a9f472ae532254db44f925b0c5c62f4f35f55366ac7ccc558fed7",
+            "locator": {
+              "kind": "symbol",
+              "name": "reviewProblemFromRefusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "41": {
+      "note": "An answer whose `state` this client does not admit is named, never rendered as a review.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "25250cf4f41daf7721dd292a421845d64fefdd4c",
+            "content": "sha256:a4a9a040ef418cee03f357b4ac33faecdccc395803768ba94d91004fe8bf8122",
+            "locator": {
+              "kind": "symbol",
+              "name": "unreadableAnswer"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "42": {
+      "note": "Any thrown cause as a failure: the transport error's own, anything else as the network failure it must be.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "25250cf4f41daf7721dd292a421845d64fefdd4c",
+            "content": "sha256:95d6a21cf22641c6a1afae742feadbfbb7b442847bebaab9f7fab4016adc8cdc",
+            "locator": {
+              "kind": "symbol",
+              "name": "reviewProblemFromCause"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "43": {
+      "note": "The three public client reads use the shared review transport.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "923faffc20359156074cf02aed9860c41b8b29dd",
+            "content": "sha256:a152f07db96bb7862f632571fd4595a32ef8103c304bc492ba591d2efacc3ba0",
+            "locator": {
+              "kind": "symbol",
+              "name": "intentReview"
+            },
+            "path": "dashboard/src/data/review.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "44": {
+      "note": "**The rendered counterpart of this module's classification: one region for every state that is not a review, and one block carrying every field the owner published.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9c563bdc8c08ff9ac7ad435c187715c423a9cffb",
+            "content": "sha256:74471e933b7f1282d2b582656b01f556829f0c7f7cc23c680357692ebd1152da",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewOutcomeRegion"
+            },
+            "path": "dashboard/src/panels/review/ReviewOutcome.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "45": {
+      "note": "The task entry's brief word for the same tokens (`briefProblem`), shown on a control that never disappears, with the owner's full sentence in the disclosure beside it (`problemSentence`, since `260921-ICR-L47`).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08b834804e69b920387becdd55cd9cb21a584689",
+            "content": "sha256:55614d11c93c21ea706b6586989d20ee5a10b9e74c627d7613e9102629f2c9bc",
+            "locator": {
+              "kind": "symbol",
+              "name": "briefProblem"
+            },
+            "path": "dashboard/src/panels/detail-panel/entryState.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "46": {
+      "note": "The change-set client and the route the routed debt belongs to — a different client, a different route and a different owner from the review transport, which is why this leaf leaves it untouched.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ed265675478575ff8a4d1556006a4a3afd4aa87a",
+            "content": "sha256:a85e2cc9a5a731afed4fd8049a86cb9be07af2b3948fb6ceefd4894695138bed",
+            "locator": {
+              "kind": "symbol",
+              "name": "taskChangeset"
+            },
+            "path": "dashboard/src/data/changeset.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "47": {
+      "note": "**The cases that drive the real client functions against the measured route bodies, including the pair that shows `getJson` dropping the identical body this decode preserves.**\n\nAnchor: `getJson`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "45d7df2ebd225f5645b2d6a10524d48f237852f1",
+            "content": "sha256:be605aa7ebd5f50727d335966a1906dca4eebae03ff9764b638d32fa98614200",
+            "locator": {
+              "end": 190,
+              "kind": "line_range",
+              "start": 175
+            },
+            "path": "dashboard/src/data/reviewTransport.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

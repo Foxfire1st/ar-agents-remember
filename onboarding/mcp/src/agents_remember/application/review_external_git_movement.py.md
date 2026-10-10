@@ -24,6 +24,79 @@ Source identities never become fabricated generation UUIDs. Corrupt content and 
 
 None recorded.
 
+### Logic
+
+**`GIT_TRANSITION_SUPPORT` is the support matrix, and it is the authority rather than a summary of one.**
+Each `GitTransitionSupport` row carries the transition name, the *measured Git signature*, the boundary
+state it renders in, whether this system reconciles it at all, and the step a person takes instead
+(`:123-142`). The table holds six rows (`:143-236`): `unchanged`, `ordinary-append`, `rebase`,
+`cherry-pick`, `revert` and `branch-switch`. Two of them are the shape NOT moved and the shape moved
+forward normally — both `state="current"`, both `reconciliation="supported"` — and the other four are
+the packet's named transitions, of which exactly one (`rebase`) is distinguishable by an ancestry check
+alone and is therefore `stale`, while `cherry-pick`, `revert` and `branch-switch` are each
+`reconciliation="unsupported"` with the recovery named in the row.
+
+**`unchanged` is a state, not a transition, and it is why the control case cannot lie.** A branch
+standing exactly at its recorded head has no Git event to name; publishing `ordinary-append` for it
+would assert an advance that did not happen. The vocabulary in
+`models/knowledge/review_external_movement.py:74-81` carries `unchanged` for precisely that measured
+absence, and the agreement sentence has a clause for it separately from the advance clause
+(`_agreement_statement`, `:843-868`).
+
+**The recovery text is derived from the matrix, never restated.** `_recovery_actions` (`:99-116`) folds
+the rows' own `recovery_action` values, and `unsupported_transitions()` (`:261-274`) derives the
+unsupported list from the same table, so a report cannot name a verdict the matrix contradicts.
+`supported_recovery(transition)` (`:242-260`) refuses an unknown transition with a `KeyError` naming the
+matrix as the authority instead of answering with a permissive default — a silent fallback here would be
+the over-claim the matrix exists to prevent.
+
+**The state is composed, not chosen.** `_state` (`:549-565`) ranks `stale` above `current` above
+`not-measured`, and `current` is reachable only when **every** declared channel was compared (`_report`,
+`:496-527`). `_ancestry` (`:642-698`) is the single ancestry decision, answering
+`current` / `advanced` / `replaced` / `unavailable` per channel. `advanced` is a measurement of its own —
+the recorded identity is still an ancestor, so the branch moved forward without replacing it — which is
+how a rebase is told apart from a cherry-pick of the same content.
+
+**Every sentence is built from measured fields.** `_statement` (`:803-828`) dispatches one sentence per
+state; `_compared_clause` (`:829-842`) states what an absence *did* compare, and returns the
+nothing-was-compared clause only when that is true; `_agreement_statement` (`:843-868`) keeps the
+`unchanged` clause apart from the advance clause; `_movement_statement` (`:869-882`) names the replaced
+channels and then the channels that still stood; `_replacement_clause` (`:883-895`) spells the
+replacement from the values the check read rather than from a diagnosis; and `_reason` (`:789-802`) names
+each unreadable channel with its own reason, because restoring a checkout and restoring a repository are
+different acts.
+
+**Every read that can fail keeps its failure as a state.** `_tip` (`:720-728`), `_object_readable`
+(`:729-737`), `_related` (`:738-746`) and `_text` (`:747-755`) sit behind `_BranchTip` (`:321-327`),
+whose `commit` is optional and whose `detail` carries why there is none; `_unreadable` (`:699-719`) and
+`_unavailable` (`:472-495`) turn that into the reported absence rather than an exception.
+
+### Invariants And Boundaries
+
+- **No unfavourable fact is promoted into a claim.** `not-measured` and `unavailable` never become
+  `stale`: promoting an absence into a movement would report a movement nobody observed.
+- **An absence always names its reason and carries no observed identity.** A channel that could not be
+  read reports `unavailable` and carries no observed value at all rather than a favourable default
+  (`_report`, `:496-527`), and the unreadable-generation state invents no generation identity
+  (`_unavailable`, `:472-495`). The cause itself is established once, in `_measure_contract` /
+  `_measure_generation`, and travels as `_BoundaryAbsence.detail` rather than being re-derived by the
+  caller that publishes it.
+- **The closeout statement never gates.** `external_git_movement_result_block` (`:421-456`) attaches a
+  typed block to a successful result and returns a failed result untouched; the closeout door's own
+  source-lineage checks remain the only checks on that transaction.
+- **Boundary: the four named transitions are documented as three unsupported plus one stale.**
+  `cherry-pick` and `revert` move the branch *forward*, so the recorded commit is still in history and
+  no ancestry check identifies either — the module's own docstring says so — and that measurement
+  belongs to the owners that already take it (the managed-sync rebinding on the sync route, the reopen
+  channel on the read route). The matrix says exactly that rather than implying support by silence.
+- **Boundary: `branch-switch` is reported as `not-measured`, not as a replacement.** The checkout left
+  the declared branch, so the work-branch comparison cannot be taken at all; the state carries the
+  sub-fact rather than claiming an identity was replaced, and this system never checks a branch out on a
+  reader's behalf.
+- **Boundary: the authoring boundary has no natural owner.** The packet names review/authoring/closeout;
+  the review read, the closeout and the integration owners are wired here, and the authoring boundary is
+  recorded as an absence rather than given a synthetic owner.
+
 ## Evidence
 
 ### Docs References

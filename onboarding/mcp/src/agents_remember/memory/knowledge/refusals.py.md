@@ -26,6 +26,21 @@ selected_input_unavailable_refusal refuses an explicitly selected input that is 
 
 Canonical database mutation factories, KnowledgeRefused transaction control flow, lineage and relation factories, SQLite-error mapping, candidate/publication factories and composition factories were retired. Their old mutation guarantees are not current entry points of this module; the retained functions serve index reads.
 
+### Conventions
+
+A refusal is a **returned value**, not an exception: callers branch on a code instead of parsing a message.
+
+### Invariants And Boundaries
+
+- A reachable expected failure returns a `KnowledgeRefusal` with one of the contract codes; `KnowledgeStorageError`
+  means the caller has found a defect, not an outcome to handle.
+
+### Todos
+
+### Todos
+
+None recorded.
+
 ## Evidence
 
 ### Docs References
@@ -49,6 +64,8 @@ No configured domain documentation could be checked.
 
 - The retained refusal value and its declared code vocabulary. [14]
 
+
+- - The facts bundle and the one generic factory every refusal is built through. [15]
 
 ### Cross-Repo References
 

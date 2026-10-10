@@ -1,15 +1,12 @@
 # mcp/src/agents_remember/models/knowledge/review_relationships.py
 
 ## Governing Overview
-
 [models route overview](../overview.md)
 
 ## Purpose
-
 The closed vocabulary for recorded before/after relationship movements. Both recorded sides and their identity travel together; any missing fact carries its own named gap.
 
 ## Code Commentary
-
 ### Logic
 
 `ReviewRelationshipSide` distinguishes `recorded`, `absent`, `unresolved`, `ungoverned`, `unavailable` and `not_recorded`. A recorded identity with no route, unread route declarations and an identity absent from the snapshot are different facts. `route_unavailable` keeps an unread declaration visible instead of converting it into ungoverned.
@@ -25,7 +22,6 @@ The models declare values, not storage or verdicts. No similarity supplies a pai
 None recorded.
 
 ## Evidence
-
 ### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no

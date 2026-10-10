@@ -14,6 +14,18 @@ One parametrized test supplies escaping-alias and corrupt-retained-byte inputs. 
 
 The remaining test is this integrity/publication-order boundary. The four former namespace, provenance, channel/custody and snapshot-loss journeys named by the historical module description are no longer current coverage.
 
+### Conventions
+
+Use the existing typed owners and exact recorded identities. Keep operation evidence and candidate provenance in task notes.
+
+### Invariants And Boundaries
+
+Each regression protects a demonstrated public operation rather than a private branch count. Original L38/L40 artifacts remain outside these disposable fixtures.
+
+### Todos
+
+None recorded.
+
 ## Evidence
 
 ### Docs References
@@ -25,3 +37,19 @@ No Domain Documentation source is configured for this slice.
 - `_nonempty_fixture` supplies the current fixture or assertion described above. [6]
 - `_request` supplies the current fixture or assertion described above. [7]
 - `test_integrity_rejection_precedes_canonical_authority_replacement` supplies the current fixture or assertion described above. [8]
+
+The cited owners carry the behavior and failure boundaries described above.
+
+### Docs References
+
+No Domain Documentation source is configured. The repository declarations below support this contract.
+
+No configured domain source could be checked.
+
+- Integrity failure preserves the previous authority. [9]
+
+### Cross-Repo References
+
+No separate repository supplies this contract.
+
+No cross-repository reference is required.

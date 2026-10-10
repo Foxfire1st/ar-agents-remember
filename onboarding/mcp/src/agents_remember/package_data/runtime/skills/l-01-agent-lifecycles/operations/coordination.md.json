@@ -16,6 +16,42 @@
           "kind": "code"
         }
       ]
+    },
+    "2": {
+      "note": "The operation block's declared purpose, source path, and applicable roles.\n\nAnchor: `coordination`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9f01b458769e29ba24c9cc3c0ff187e9e5eb2cf2",
+            "content": "sha256:401c1deb918a306873d6607751784145932c3d5bb4e54cabf33dd00290916776",
+            "locator": {
+              "end": 98,
+              "kind": "line_range",
+              "start": 90
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The canonical source of this block.\n\nAnchor: `# Operation`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1c35338d861367330a396fcb0256f4ed253f8f34",
+            "content": "sha256:1ef76bbb155772d5cbaa602f79f34e50cffadb32e4ac0a79cb63cf1861214d37",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/coordination.md"
+          },
+          "kind": "code"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

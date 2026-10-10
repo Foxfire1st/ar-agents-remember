@@ -287,7 +287,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "082789175b65a73ba6821158b07e1f5849c192ca",
+            "blob": "6e1c2663fa140e39d14ec835f6a5a6db3ced7de2",
             "content": "sha256:ac1d11f8dcec1fbbaf192dec3dc2a73f56f9cd3a9144cdea6cc963328541dbba",
             "locator": {
               "end": 13,
@@ -660,6 +660,57 @@
               "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/terminal_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "41": {
+      "note": "- The shared selection and its refusal mapping, which since MIK-R01 also refuses a named root with no code tree by name.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "12b2d18549a3d15a005d7fe16fc4b6f3dbc25be1",
+            "content": "sha256:bd46131b34125fbbd1d1d23fa0fd79e29d355329f2e48ee6a4105399cb94ab1c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_selection_refusal"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "42": {
+      "note": "- A partial index is never presented as complete.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b4fb3c6660f8614143e3526477bf733ef8f58d20",
+            "content": "sha256:43e9c655a29b5d9fccede6aa85726d12d1eb226200ff17a3ba433f77822de0c1",
+            "locator": {
+              "kind": "symbol",
+              "name": "index_complete"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_paging/tree_read.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "43": {
+      "note": "- A converted tree's citation-fix result is bounded for transport.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "229c8d54bf92f71204f5239ad062fe7861b9e5ae",
+            "content": "sha256:fbabee3e8414d55363ba542adaf2f26747e94ff6b238ae1aa8ea34d7714aabf2",
+            "locator": {
+              "kind": "symbol",
+              "name": "bounded_citation_fix"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/memory.py"
           },
           "kind": "code"
         }

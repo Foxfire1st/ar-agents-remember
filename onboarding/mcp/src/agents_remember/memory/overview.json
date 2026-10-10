@@ -272,7 +272,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8798d3f2378c3d78a27623725cc402ba0331eb39",
+            "blob": "ddf325c8c6d1e73217d71a493e3ad7d71536b3e4",
             "content": "sha256:8d10b0c40446794761e6e4e3ed7d94c324c33f23904fb9840f15544d77489b5b",
             "locator": {
               "kind": "symbol",
@@ -284,7 +284,7 @@
         },
         {
           "anchor": {
-            "blob": "8798d3f2378c3d78a27623725cc402ba0331eb39",
+            "blob": "ddf325c8c6d1e73217d71a493e3ad7d71536b3e4",
             "content": "sha256:990addb67919366a3695355cb2d841bf1cf5cbcda95f94bba0b32778bcff24a1",
             "locator": {
               "kind": "symbol",
@@ -450,12 +450,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ad32196677d5800992fe4294b439f3e28af150ec",
+            "blob": "2e6cd30be07fa6a435465d02ac4fb9feb7e1bbc8",
             "content": "sha256:313ed0aea69f94d6889c191e0ef012ae79630aae743f75e7373d0b3122379659",
             "locator": {
-              "end": 330,
+              "end": 304,
               "kind": "line_range",
-              "start": 330
+              "start": 304
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -468,12 +468,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b40e230c8c442fa5db08533ba34af91c391d0454",
+            "blob": "a0569bc130f1ea52e6731d4460788c50542ae82a",
             "content": "sha256:e3dcb550aa48a2eadb5856507ceee47fed75ccdabdce0ab3733ba900c9f495df",
             "locator": {
-              "end": 50,
+              "end": 2501,
               "kind": "line_range",
-              "start": 50
+              "start": 2501
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -839,6 +839,40 @@
               "name": "_approved_packet_ref"
             },
             "path": "mcp/src/agents_remember/tasks/task_intent.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "143": {
+      "note": "An unreadable baseline is refused.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "59c73ccfe22c4f748e6c60c4da38c6790b5c9820",
+            "content": "sha256:0486f897e3514385ce6430a5f794328714fbc33ec279dc117a10e62aa7a01643",
+            "locator": {
+              "kind": "symbol",
+              "name": "take_inventory"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge_census/inventory.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "144": {
+      "note": "Every write is checked, then written atomically.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "31b8f4bf7d33de65114d9eb5e5a9fec83e524e25",
+            "content": "sha256:c817c1d7207d96075190bad353f34577a41d815f402f10353e1eb0abcc7cd978",
+            "locator": {
+              "kind": "symbol",
+              "name": "CensusWriter"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge_census/writer.py"
           },
           "kind": "code"
         }

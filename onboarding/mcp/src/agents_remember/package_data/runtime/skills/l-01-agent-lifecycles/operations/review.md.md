@@ -24,6 +24,16 @@ Canonical skills/l-01-agent-lifecycles/operations/review.md owns the instruction
 
 Reviewer never edits, accepts AR task truth or publishes Git. Developer decisions stay in the own chat; peer clarification goes directly to the leaf's Worker or Curator by role and task reference, and only the named Manager occasions go to the owner.
 
+## Code Commentary
+
+### Conventions
+
+Review is never selected by default; closeout and integration neither require nor launch it.
+
+### Todos
+
+None recorded.
+
 ## Evidence
 
 ### Repo-Internal References
@@ -31,3 +41,21 @@ Reviewer never edits, accepts AR task truth or publishes Git. Developer decision
 | Finding | Anchor | References |
 | --- | --- | --- |
 | Requested complete baseline, monotonic fix-verification and owner-recorded independent result. | lines 3-9 | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/review.md:3-9 |
+
+### Docs References
+
+No external or domain documentation governs this repository-local instruction file; it is canonical
+repository prose consumed by the skill router.
+
+No relevant documentation found after checking live sources.
+
+### Repo-Internal References
+
+- The operation block's declared purpose, source path, and applicable roles. [1]
+- The canonical source of this block. [2]
+
+### Cross-Repo References
+
+No sibling-repository contract defines this instruction file.
+
+No meaningful cross-repo references found.

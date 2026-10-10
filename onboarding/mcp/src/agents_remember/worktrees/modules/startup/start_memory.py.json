@@ -21,6 +21,39 @@
     }
   ],
   "references": {
+    "10": {
+      "note": "Missing external repository and explicit disabled-memory outcomes. [3]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "50bbd3f18df7be2241476f19cb8d8eaf23cf75fa",
+            "content": "sha256:7ed26db55831e99036542b8b1f902892cad3961403cee590dfdfffce6b5d0e75",
+            "locator": {
+              "kind": "symbol",
+              "name": "_disabled_memory_choice"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The informational ledger is reconstructed from commit attribution without a cache read. [4]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7b0e0cf051f1af1ab86b6c19ab4289849110df85",
+            "content": "sha256:ea1d987c140051b594ad30280582128ace4e4fb085a34d95d14fc369a5a66131",
+            "locator": {
+              "kind": "symbol",
+              "name": "derive_memory_ledger"
+            },
+            "path": "mcp/src/agents_remember/kernel/memory_cache.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "5": {
       "note": "Preview facts distinguish absent exact refs from existing journal-owned refs.",
       "targets": [
@@ -55,6 +88,38 @@
     },
     "7": {
       "note": "Dry run skips mTime mutation; divergence remains explicit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "50bbd3f18df7be2241476f19cb8d8eaf23cf75fa",
+            "content": "sha256:502457006ef99f338ecc37910f8d85b818154bd1a9b3e581a421935f24f52505",
+            "locator": {
+              "kind": "symbol",
+              "name": "_sync_worktree_memory_mtimes"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Source state, named-branch admission, and informational Git-derived metadata. [1]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "50bbd3f18df7be2241476f19cb8d8eaf23cf75fa",
+            "content": "sha256:e29bba6b38904884cca4f760d456859b8a16e1dad2a56bb29ea3888820aa5e30",
+            "locator": {
+              "kind": "symbol",
+              "name": "_memory_source_state"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Mtime reuse and divergence handling preserve the current indexing behavior. [2]",
       "targets": [
         {
           "anchor": {

@@ -24,7 +24,37 @@ Canonical skills/l-01-agent-lifecycles/roles/orchestrator.md owns the instructio
 
 Paseo turn status is execution metadata, not AR acceptance/landing. Developer decisions remain in the own chat; a parent-bound coordinating role sends only the four developer-needed categories plus the once-only final report to its actual parent, while ordinary requirement readings and operational rulings stay with the role. No fabricated task, identity, duplicate execution or second semantic ledger.
 
+## Code Commentary
+
+### Logic
+
+The orchestrator owns durable portfolio execution behind the architect.
+
+### Conventions
+
+Edit the canonical
+role, then synchronize.
+
+### Invariants And Boundaries
+
+- Seat identity is `(canonical task document, role)` and occupant replacement is plane-owned.
+
+- Structural dispatch and structural gate decision fail closed on missing or ambiguous authority.
+
+- The orchestrator is backend-only and does not become manager, worker, reviewer, curator, or
+  developer-facing architect.
+
+- This packaged artifact must remain byte-identical to the canonical role.
+
+### Todos
+
+None recorded.
+
 ## Evidence
+
+### Docs References
+
+No Domain Documentation source is configured for this memory root.
 
 ### Repo-Internal References
 
@@ -32,6 +62,25 @@ Paseo turn status is execution metadata, not AR acceptance/landing. Developer de
 | --- | --- | --- |
 | Selected-sprint truth, one Manager per master, same-agent follow-through and producer/evidence preservation. | lines 8-24 | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:8-24 |
 
+- Root skills are canonical and the sync script publishes byte-identical package and harness copies. [2]
+
+### Cross-Repo References
+
+No sibling repository evidence is needed for this doctrine file.
+
+No meaningful cross-repo references found.
+
+### 260731-EFA-L17 — Quality Altitude Ladder
+
+The orchestrator consumes targeted worker checks and scoped curator checks. Full quality, full tests,
+full memory quality, certification, and review remain explicit operations; closeout and integration
+do not infer a quality gate or launch those tools automatically.
+
+## L23 Final Candidate Disposition
+
+The orchestrator observes closeout and integration through canonical task status. The ordinary path
+publishes the authorized Git transaction; any explicit quality or review operation remains with its
+own lifecycle owner.
 
 ## Current Investigator contract impact
 

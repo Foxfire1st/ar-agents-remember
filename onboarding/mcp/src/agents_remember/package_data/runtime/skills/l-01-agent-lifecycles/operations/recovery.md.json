@@ -1,0 +1,43 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/recovery.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The operation block's declared purpose, source path, and applicable roles.\n\nAnchor: `recovery`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9f01b458769e29ba24c9cc3c0ff187e9e5eb2cf2",
+            "content": "sha256:70158846ec3791bf426ac36600f10d91a07e79d0d775efa7b73392adc1ca3ee7",
+            "locator": {
+              "end": 121,
+              "kind": "line_range",
+              "start": 108
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The canonical source of this block.\n\nAnchor: `# Operation`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d41235f2eb6d828de0ab062df5d1d7e4e6bbd13c",
+            "content": "sha256:74c29298c97887fd0a2a2f4bad57ee6de565d754331c427ef1e866f58d46c230",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/recovery.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

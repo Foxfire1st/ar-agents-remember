@@ -84,3 +84,103 @@ they are not shipped application code.
 - The harness capability matrix. [7]
 - The test commands and the need for a Git checkout. [8]
 - The one accepting authority for Python test evidence. [9]
+## Hot Path Summary
+
+`observable-lifecycle.md` describes code/memory-content Git transaction phases and a separate computed ledger cache. A cache refresh is not a third transaction phase or a closeout/integration acceptance condition.
+
+In-repo design documentation for the dashboard and Python verification architecture. Child route `engine-room/` is the engine-room design
+reference — a living spec paired with the prototype/scenario player the React engine room was built from.
+The `dashboard/` folder now carries the FEUI-L8 scenario matrix and reproducible accessibility/performance
+evidence, the closeout evidence pack, and the upstream-register boundary for contracts the frontend must not
+fabricate. Top-level notes include `observable-lifecycle.md`, `harness-matrix.md`, and the three Python
+evidence documents listed below.
+## R39 Design Evidence Disposition
+
+The cockpit performance/evidence design document now labels its test-capable measurement command as
+an internal nonce-attested Dagger invocation and explicitly refuses host execution. This is an
+evidence-location clarification; the dashboard architecture is unchanged.
+### Repo-Internal References
+
+The engine-room design reference child route ([engine-room overview](engine-room/overview.md), living spec + prototype) governs the dashboard engine room.
+The dashboard engine-room renderer ([dashboard engine-room overview](../../dashboard/src/panels/engine-room/overview.md)) is governed by the engine-room design docs.
+- FEUI-L8's canonical scenario, accessibility, performance, and invariant evidence.
+- The explicit upstream gaps and one-Chats cutover ruling.
+- The bounded series closeout evidence pack.
+
+- FEUI-L8's canonical scenario, accessibility, performance, and invariant evidence. [20]
+- The explicit upstream gaps and one-Chats cutover ruling. [21]
+- The bounded series closeout evidence pack. [22]
+
+- FEUI-L8's canonical scenario, accessibility, performance, and invariant evidence. [23]
+- The explicit upstream gaps and one-Chats cutover ruling. [24]
+- The bounded series closeout evidence pack. [25]
+
+Current working-candidate evidence for this route:
+
+- The implementation produces/reuses memory content before refreshing its cache (since MIK-R09 validating a converted leaf's exact tree first). [26]
+
+## CCR Selection And Evidence Contract
+
+`python-evidence-system.md` now requires typed incomplete selection to stop before Gate 2.
+Unresolved ownership never silently expands to safe-full; deleted tests leave the population,
+and irrelevant inputs remain explicit. The immutable selector result binds candidate,
+configuration, scope and dependency reasons. Retry binds that selector digest and may refresh
+only the already admitted population when its cached proof is unusable.
+## 260824-PDLS Evidence-Authority Design
+
+The Python test-evidence design now separates diagnostic execution from certifying evidence,
+defines the package-root bootstrap boundary, and records Dagger as the sole acceptance authority.
+The document also captures fixture ownership, proof lifetime, dependency-derived selection, and
+the rule that diagnostic success cannot satisfy a lifecycle gate.
+
+The final consolidation removes the two narrower direct-cohort/direct-diagnostics notes. Their
+still-valid content is carried by `python-evidence-system.md`, `python-pytest-bootstrap.md`, and
+`python-test-evidence.md`; deletion prevents an obsolete diagnostic-first contract from competing
+with the accepted authority model.
+## Integrated IAS Recovery Contract
+
+`python-pytest-bootstrap.md` now permits ordinary isolated host pytest for development and the repository declares `unit_case_budget = 4000` / `integration_case_budget = 1000` (`pyproject.toml:278-279`). It **superseded** the 2,000 / 300 figures this paragraph carried (themselves raised 1000 → 1500 → 2000 (unit) and 150 → 250 → 300 (integration) by `260915-CAPS-L8`, `260831-LOCR-L37` and the 2026-09-17 ruling); 4346e697/TSIP-L13 raised them to 4,000 / 1,000. Coverage is diagnostic, and production CRAP20 prompts review rather than blocking delivery. Focused checks support leaf work; full-suite execution and whole-candidate review belong at the end of the assembled master. Dagger admission remains mandatory for certification; the retired Candidate-A analyzer and route-measurement machinery are not restored.
+## CCR-L42 Review-Authority Route Update
+
+`python-test-evidence.md` now names `worktrees.route_review_scope.require_current_route_review` as
+the route-review owner. Review runs at the owning altitude: atomic child leaves defer to the
+accumulated canonical master review at master-to-parent integration, while standalone and
+organizational leaves retain their applicable independent route review. The evidence and
+certification model remains unchanged; this update records where the route review is owned.
+### Cross-Repo References
+
+The FEUI-L8 design evidence and Chats ruling are repository-local. No cross-repository implementation was
+needed to establish the route model.
+
+No applicable cross-repository source was found.
+### Docs References
+
+The active memory repository's `system/sources.md` has no configured Domain Documentation entries. This
+overview was refreshed from the same-repository design documents, reviewed FEUI-L8 implementation/tests,
+and the accepted worker/reviewer evidence.
+
+No configured external Domain Documentation source governs this route.
+## 260918-TSIP-L4 — The Bootstrap Note States Its Git Prerequisite, And Its Budget Figure Is Corrected
+
+`docs/design/python-pytest-bootstrap.md` gained a three-line prerequisite (**`:22-24`**, file
+**50 → 53 lines**): *"Every command needs a Git checkout: the evidence-lane hook enumerates the
+test population through `git ls-files`, so an exported (`git archive`/tarball) tree must run
+`git init` and `git add -A` first or collection fails instead of running."*
+
+The requirement is new and it is real: `260918-TSIP-L4` registered
+`agents_remember_test_support.testing.evidence_lanes` in `mcp/tests/conftest.py`, whose
+`pytest_collection_modifyitems` calls `load_lane_manifest`; the loader enumerates the population
+through `git ls-files`, so an exported tree now fails collection with
+`ScopeError … fatal: not a git repository` rather than running. **This route is where an operator
+reads test policy** (`AGENTS.md` routes a seat here for "the current test policy and commands"),
+which is why the statement went here and not only into the comment at the registration site.
+
+**The budget figure in this overview's body was wrong and is corrected in the paragraph above:**
+the repository declares `unit_case_budget = 4000` and `integration_case_budget = 1000`
+(`pyproject.toml:278-279`), changed by 4346e697/TSIP-L13 from 2,000 unit / 300 integration. The superseded values are recorded
+rather than deleted, and this is a `T45` find — no check reads a number in prose.
+## 260713-TES-L5 Route Impact — Fact-Relay Recovery Language
+
+`observable-lifecycle.md` (this route's design authority) refreshed its recovery runbook:
+`ladder-resolved` is legacy parse-compat (the timed escalation ladder is retired) and
+retired/absent-target rows resolve through the sweep's landing/ceiling/grace paths.

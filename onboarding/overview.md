@@ -616,12 +616,6 @@ not a recorded test execution.
 - The lifecycle loader refuses a catalog that is not in canonical form. [141]
 - Launch-capable provider operations re-read the providers map from disk. [142]
 
-## 260928-MIK-L96 Install and start bring up the host
-
-The root route gained the host-lifecycle family: the product's install brings the build's own host on a Node the product brings, every dashboard start makes sure it runs, one shared authority names it, and neither an install nor a dashboard stop removes a running host. The host modules moved from `cli/` into `serving/paseo/` so the install and serving ranks share them, and the one renderer invocation writes the single shared `<coordinationRoot>/system/settings.json` host block; the per-harness starter files carry only harness infrastructure settings, and the renderer code that creates the block is not itself a destination.
-
-- The shared host entry the install composes. [144]
-
 ## Investigator concern and selection boundary
 
 Investigator handles one concern of any kind in Projects, a selected sprint or a selected sprint/master scope. Architect, Orchestrator and Manager start it only within their admitted containment. A leaf can be named in the concern but is never its selected start scope. Checks use scratch or the tooling sandbox; code, memory and task changes remain with Worker or Curator. Selected-task requests keep separate UUIDs under the complete eight-open budget and preserve the primary coordinator. The one earlier role spelling remains a read alias, and historical rulings retain their original words.
@@ -634,3 +628,198 @@ Investigator handles one concern of any kind in Projects, a selected sprint or a
 - The role-capsule router's selection rule and its unsupported-field refusal. [85]
 - The roles of each task altitude; a reviewer sits on a leaf, master or sprint document. [97]
 - The start-only supervision. [145]
+## 260928-MIK-L14 A Changed Ground Reopens A Rejected Alternative, Not Yet Used
+
+Repository-level consequence of leaf `260928-MIK-L14` (MIK-R14@v2): once a memory tree is converted, a decision's
+rejected or deferred alternative comes back up when a leaf changes a target its `reconsider_on` link names (a
+record, a history row's subject, a code anchor, or a requirement packet whose owning task approved a newer version).
+The worklist lists it as a reconsideration candidate, and the curator answers it: `still_rejected` with a reason
+(the link is refreshed to what was judged, so the same condition is not raised again, while a later change is), or
+`raise`, which puts the decision under reconsideration and appends a question to the leaf's task document for the
+developer. The curator never reverses a decision, and a linked alternative cannot be reordered to another index.
+The curator's hand-off template says how to write the row: the authored `skills/` copy, synchronized by
+`scripts/sync-skills.py` into the package copy and the eight harness starter copies this route governs.
+**Nothing the installed runtime does changes before MIK-R37**: unconverted memory gets no worklist and no file
+write.
+
+- The template's reconsideration-row bullet, mirrored into the package and starter copies.
+- The decision section's reorder refusal.
+## 260928-MIK-L05 A File Sees The Families Whose Territory It Lies In, Not Yet Used
+
+Repository-level consequence of leaf `260928-MIK-L05` (MIK-R05@v2): once a memory tree is converted, reading a
+file through `read_ar_files`, or through `knowledge_read` with `view: "source_context"` and `sourcePath`, also
+returns one compact row per family with a route on the file's directory or an ancestor, after the file's own
+family content, so a new or unattributed file still sees the families whose territory it is in. Each row's
+`expand` reads that family whole (`source_context` with `familyRevisionId` and no `sourcePath`). A repeated
+`read_ar_files` in the same session may shorten an unchanged row to `served_earlier`; `knowledge_read` never
+does. The skill `c-04-retrieval-strategy-router` teaches this in one paragraph (ruling Q5): the authored
+`skills/` copy, synchronized by `scripts/sync-skills.py` into
+[the package copy](mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md.md)
+and the eight harness starter copies this route governs. **Nothing the installed runtime does changes before
+MIK-R37**: unconverted reads are byte-identical to base.
+
+- The skill's route-chain paragraph, mirrored into the package and starter copies.
+## 260928-MIK-L10 Every Unexplained Change Needs An Authored Disposition, Not Yet Used
+
+Repository-level consequence of leaf `260928-MIK-L10` (MIK-R10@v2): once a memory tree is converted, every change a
+leaf makes that no recorded entry covers becomes a worklist item the closeout gate will require an answer for. In a
+covered file the curator attaches the change to an existing invariant, authors a new one, or records a
+`no_invariant` history row with a reason; a delete-only change admits only the row. In a file the knowledge graph
+does not cover yet, the file's onboarding trace answers it. The curator's hand-off template says how to write the
+row: the authored `skills/` copy, synchronized by `scripts/sync-skills.py` into the package copy and the eight
+harness starter copies this route governs. **Nothing the installed runtime does changes before MIK-R37**:
+unconverted memory gets no worklist.
+
+- The template's no_invariant-row bullet, mirrored into the package and starter copies.
+## 260928-MIK-L13 Decisions Are Recorded With The Alternatives They Rejected, Not Yet Used
+
+Repository-level consequence of leaf `260928-MIK-L13` (MIK-R13@v2): once a memory tree is converted, a developer
+ruling or requirement-packet choice that keeps governing code can be kept as a decision record with the
+alternatives that were weighed. The knowledge validator refuses a decision with fewer than two alternatives, with
+no chosen alternative or several, with a rejected or deferred alternative that does not say when to reconsider it,
+with a stored `superseded`, or with a `reconsider_on` link to an alternative that does not exist or is chosen. The
+curator writer reports each requirement packet a record links as `resolved` or `unresolved` through the requirement
+owner, and never refuses on it; admission never treats a decision as an export. The curator's hand-off template and
+role (step 3) say how to lift decisions at closeout: the authored `skills/` copies, synchronized by
+`scripts/sync-skills.py` into the package copies and the eight harness starter copies this route governs.
+**Nothing the installed runtime does changes before MIK-R37**: the conversion writes no decisions, and unconverted
+memory is unchanged.
+
+- The template's decision-record section, mirrored into the package and starter copies.
+- The curator role's step-3 pointer to lifting decisions.
+## 260928-MIK-L01 A Path Is Read With Its Whole Family, Not Yet Used
+
+Repository-level consequence of leaf `260928-MIK-L01` (MIK-R01@v2): once a memory tree is converted, reading a
+file through `read_ar_files`, or through `knowledge_read` with `view: "source_context"` and `sourcePath`, returns
+the file's own invariants, every family containing them with its guarantee and routes, every member's statement
+and entries, and the families one hop further as advertised rows -- one selection, under one manifest digest, on
+both surfaces, paged by the MIK-R02 threshold when it does not fit one response. A `repositoryRoot` with no
+commit is now refused by name instead of raising, on every read. The skill `c-04-retrieval-strategy-router`
+names this view (rule 6): the authored `skills/` copy, synchronized by `scripts/sync-skills.py` into
+[the package copy](mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md.md)
+and the eight harness starter copies this route governs. **Nothing the installed runtime does changes before
+MIK-R37**: a database read keeps its recorded-scope selection, byte-identical.
+
+- The skill's paragraph naming the family-complete leaf read, mirrored into the package and starter copies.
+## 260928-MIK-L06 A Family's Routes Must Follow The Code, Not Yet Used
+
+Repository-level consequence of leaf `260928-MIK-L06` (MIK-R06@v2): once a memory tree is converted, a leaf
+whose change breaks a family's routes (a route directory gone, a route left with none of the family's
+realizations, a realization outside every route, or a family without routes that the leaf reaches) gets a
+`family_route_condition` worklist item. It is answered only by the leaf's family row (never `no_impact`) and a
+family record that satisfies MIK-R04 again, so a stale route cannot survive the closeout of the leaf that
+caused it. A route already dead before the leaf stays a validator report for the migration, and retired
+families raise nothing. The curator writer can now record a directory move with `moved` rows that relocate
+an entry to its new file. **Nothing the installed runtime does changes before MIK-R37**: unconverted leaves
+get no worklist.
+## 260928-MIK-L02 A Bounded Knowledge Page Continues Through `knowledge_read`, Not Yet Used
+
+Repository-level consequence of leaf `260928-MIK-L02` (MIK-R02@v2): once a memory tree is converted, every
+bounded knowledge read is cut to one token threshold (8,000 `tiktoken:o200k_base` tokens), stated on every
+response, and the knowledge block of a `read_ar_files` response is bounded as a whole. A page's continuation
+is accepted by the mounted `knowledge_read` whichever surface minted it, so an agent holding a partial read
+can finish it; the token binds the memory tree, the seed, the selection policy and manifest, the ordering and
+the code tree, and a mismatch is refused with no partial page. The skill `c-04-retrieval-strategy-router`
+teaches that route (rule 6): the authored `skills/` copy, synchronized by `scripts/sync-skills.py` into
+[the package copy](mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md.md)
+and the eight harness starter copies this route governs. **Nothing the installed runtime does changes before
+MIK-R37**: a database read keeps its budgets and cursors, byte-identical, and the skill keeps the by-identity
+read for it.
+
+- The skill's taught route through `knowledge_read`, mirrored into the package and starter copies.
+## 260928-MIK-L30 The Onboarding Gate Moves To History Files, Not Yet Used
+
+Repository-level consequence of leaf `260928-MIK-L30` (MIK-R30@v1): once a memory tree is converted, the
+onboarding refresh gate no longer reads Update History or `lastVerifiedCommit*`. Every changed source file's
+card, and its nearest governing route overview, needs either a counted change (Markdown, or a sidecar field
+other than an anchor's `blob`, line numbers and `content`) or an `onboarding_trace` row with disposition
+`no_impact` in the leaf's history file. The rule is
+[`worktrees/modules/onboarding_trace.py`](mcp/src/agents_remember/worktrees/modules/overview.md); the
+curator's memory-quality run and the closeout validator dispatch to it only on a converted tree, and its items
+join the leaf's worklist. The canonical curator hand-off template's writer section gains a bullet for the
+onboarding row, synchronized by `scripts/sync-skills.py` into the package copy and the eight harness starter
+copies this route governs. **Architect rulings (2026-09-29):** 18:49:50 (on converted trees only a counted change or a history row satisfies a trace, so curator-coherence no-impact judgments no longer count there; `onboarding_trace` items go into the persisted `knowledge-worklist.json`; the root route's subject is `onboarding:overview`; the converted-base cache is v2 and also holds onboarding Markdown; deleting `memory_quality/style/update_history/` is left to MIK-R37; the wiring outside the Scope list is accepted); 19:23:45 (mixed formats give an incomplete side, never a vacuous pass; items are sorted by `(kind, subject)`; a v1 cache file is ignored and rewritten; an unreadable sidecar never satisfies a trace); 19:53:54 (`onboarding_item_open` agrees with the live gate; an unreadable K_B sidecar is an incomplete input, an unreadable K_C sidecar keeps the item open, and a readable repair counts). **Nothing the installed runtime does changes before MIK-R37**: every
+unconverted tree keeps today's gate, byte-identical, including this master's own closeouts.
+
+- The hand-off template's onboarding-row bullet, mirrored into the starter copies.
+
+- The skill's finalizer paragraph, mirrored into the package and starter copies. [252]
+- The template's reconsideration-row bullet, mirrored into the package and starter copies. [253]
+- The decision section's reorder refusal. [254]
+- The skill's route-chain paragraph, mirrored into the package and starter copies. [255]
+- The template's no_invariant-row bullet, mirrored into the package and starter copies. [256]
+- The template's decision-record section, mirrored into the package and starter copies. [257]
+- The curator role's step-3 pointer to lifting decisions. [258]
+- The skill's paragraph naming the family-complete leaf read, mirrored into the package and starter copies. [259]
+- The template's admission section, mirrored into the package and starter copies. [260]
+- OM-4, mirrored likewise. [261]
+- c-14 step 3's admission paragraph, mirrored likewise. [262]
+- The template's planned-row bullet, mirrored into the package and starter copies. [263]
+- The reviewer's declaration check, mirrored likewise. [264]
+- The skill's taught route through `knowledge_read`, mirrored into the package and starter copies. [265]
+- The hand-off template's onboarding-row bullet, mirrored into the starter copies. [266]
+- The history-file gate's rule. [267]
+- The template's new proof guidance. [268]
+- The two readings of proofs. [269]
+- The format declaration's own statement that text files become the source of truth. [270]
+- The writer refuses an unconverted memory tree. [271]
+- The template's family-routes subsection. [272]
+- The order declares `certification` between `models` and `controlplane`, and those package tables carry matching ranks 3 and 4. [273]
+- The production checker loads that one contract, rejects undeclared package directories, and reports invalid dependency direction. [274]
+- The source checkout distinguishes installed runtime work from sibling-repo work and keeps implementation approval separate from commit approval. [275]
+- The docs index owns the start-here, install, operational, and reference map. [276]
+- Runtime asset sync treats root runtime folders as canonical and exposes a check form. [277]
+- GitHub runs the deterministic non-test gate on pull requests only; tag publishing proves main reachability instead of regating. [278]
+- The staged-quality boundary refuses unsafe linked/conflicted worktrees, binds the accepted candidate tree, stages exactly what will commit, and invokes targeted Dagger quality; the transaction-only closeout no longer imports it. [279]
+- The staged-quality owner enforces its exact-candidate delivery boundary. [280]
+- Contributor guidance separates host feedback from Dagger-owned certifying evidence and defines the retained protection policy. [281]
+- Provider guidance keeps provider runtime paths under configured provider roots. [282]
+- The MCP settings example declares repository and coordination authority. [283]
+- The memory-repo tools example provides the `Code Quality` section. [284]
+- Exact contract scope, full check and curator worklist publication. [285]
+- Interactive catalog names missing authority without eligibility. [286]
+- Final memory adapter requires the selected four-code-terminal prefix. [287]
+- Closeout writes or reuses one actual memory-content output (since MIK-R09, on converted memory, after closing the leaf's history file and validating and gating the exact tree). [288]
+- Closed admission and one public projector. [289]
+- Root manifest/journal location authority. [290]
+- Task-addressed lifecycle controls. [291]
+- Retained-generation projection derives public legal controls and recovery surfaces without owning evidence. [292]
+- **The ordinary paired read is the mount point, and the response field the block travels on.** [293]
+- **The canonical retrieval carrier, whose new section directs a caller to the route.** [294]
+- **The generated copy of that carrier this package ships, regenerated from the authored source.** [295]
+- **The case that holds the carrier to the payload's real field spellings, and the constant that reaches the authored skill from the test file.** [296]
+- The converted-card workflow's opening, in the authored skill copy. [297]
+
+- The canonical template's per-target rationale section. [298]
+- The skill's paragraph naming the family-complete leaf read, mirrored into the package and starter copies. [299]
+- The skill's taught route through `knowledge_read`, mirrored into the package and starter copies. [300]
+- The skill's route-chain paragraph, mirrored into the package and starter copies. [301]
+- The template's no_invariant-row bullet, mirrored into the package and starter copies. [302]
+- The template's decision-record section, mirrored into the package and starter copies. [303]
+- The curator role's step-3 pointer to lifting decisions. [304]
+- The template's reconsideration-row bullet, mirrored into the package and starter copies. [305]
+- The decision section's reorder refusal. [306]
+- The template's new proof guidance. [307]
+- The hand-off template's onboarding-row bullet, mirrored into the starter copies. [308]
+
+
+## 260928-MIK-L28 Test Proofs Are Read Back And Listed, Not Yet Used
+
+Repository-level consequence of leaf `260928-MIK-L28` (MIK-R28@v1): the tests that prove an invariant become
+first-class. Hand-off evidence names a test as `path::name` or as `path -k name` (architect ruling), and a
+proof is still written only once the curator authors its facet.
+[`application/knowledge_proofs.py`](mcp/src/agents_remember/application/overview.md) reads proofs back for
+`knowledge_read`'s `invariant` and `family` views (an optional `proofs` field, accepted by architect ruling)
+and lists the invariants without proof in the curator checklist, as information and never counted toward
+`curatorActionableCount` (architect ruling). Rule 3 and the stale-proof clause moved to L08 and L03 by
+architect ruling. The canonical curator hand-off template's writer section now names both evidence forms and
+gains "Proofs are shown and counted (MIK-R28)", synchronized by `scripts/sync-skills.py` into the package copy
+and the eight harness starter copies this route governs. **Nothing the installed runtime does changes before
+MIK-R37**: no production memory tree is converted, and database reads carry no `proofs`.
+
+- The template's new proof guidance.
+## 260928-MIK-L96 Install and start bring up the host
+
+The root route gained the host-lifecycle family: the product's install brings the build's own host on a Node the product brings, every dashboard start makes sure it runs, one shared authority names it, and neither an install nor a dashboard stop removes a running host. The host modules moved from `cli/` into `serving/paseo/` so the install and serving ranks share them, and the one renderer invocation writes the single shared `<coordinationRoot>/system/settings.json` host block; the per-harness starter files carry only harness infrastructure settings, and the renderer code that creates the block is not itself a destination.
+
+- The shared host entry the install composes. [144]

@@ -49,6 +49,169 @@
           "kind": "code"
         }
       ]
+    },
+    "15": {
+      "note": "**The one anchor resolution that establishes a registered mapping, with stale and unresolved states named as purported.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b9a0c47b3fc3768b5f349230242112bace549e77",
+            "content": "sha256:d0ce4132bb7b16985e37e2c86111fbd4b8c972f2e502f15e7466bd65e4bab2b6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_RESOLVED_MAPPINGS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "**The subject the membership question needs, narrowed per seed kind rather than reached through `getattr`.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b9a0c47b3fc3768b5f349230242112bace549e77",
+            "content": "sha256:2efd96e643e7825355566834c3addd3cf6c6b8f125490c3ed1c6f6442cccf16d",
+            "locator": {
+              "kind": "symbol",
+              "name": "selected_subject"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "**One bound snapshot: its binding, its handle, and the carried reason when it never became readable.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b9a0c47b3fc3768b5f349230242112bace549e77",
+            "content": "sha256:d2b47eb5ed10b6afcff22db57f2f70ae0a9296aab0a621f5ecba8edeedc28536",
+            "locator": {
+              "kind": "symbol",
+              "name": "AttributionSideInput"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "**The entry point: the caller's own observation partitioned by the bound snapshots' mappings.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b9a0c47b3fc3768b5f349230242112bace549e77",
+            "content": "sha256:ed2b1a340d82597a734d98a463b25e25eece6da613211d3401da547233e185bc",
+            "locator": {
+              "kind": "symbol",
+              "name": "review_attribution"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "**One side's mappings read by exact path equality with each anchor observed, or the reason it could not be read.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b9a0c47b3fc3768b5f349230242112bace549e77",
+            "content": "sha256:dff7386ee0c430438341a565d9325aacd4d60dfaa3ea23601550f7ebe4453781",
+            "locator": {
+              "kind": "symbol",
+              "name": "_read_side"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "**The per-row subject predicate, with family membership from the family's own rows and degradation to membership-unknown.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b9a0c47b3fc3768b5f349230242112bace549e77",
+            "content": "sha256:0f93ca3912eb970da70443cdf1d2936229304cac1e9af7933a9d4a6de69fd833",
+            "locator": {
+              "kind": "symbol",
+              "name": "_subject_matcher"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "**Completely inspected versus legitimately known-empty, claimed only for a checked first-generation before half.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b9a0c47b3fc3768b5f349230242112bace549e77",
+            "content": "sha256:aa90f585d7855a54e00d6718cf3a2ea2ebe9e3c56073b6d7842fdc7946e59540",
+            "locator": {
+              "kind": "symbol",
+              "name": "_inspection_state"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "**The same lookup the registered-scope construction reads, so the two cannot disagree.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f783ca1e819eccb55dc08b0f536877e2e44005d4",
+            "content": "sha256:c610ab0cfeb3507211d26724d98b4a3a6ba0b516b131b7529c1fea5943c9bb82",
+            "locator": {
+              "kind": "symbol",
+              "name": "fetch_realizations_at_path"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_queries.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "**The comparison's reader over its own two open snapshots — no second open, no second namespace.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e31dd9e23ad14ea40b5941e0fd5aff95be241e1",
+            "content": "sha256:68a52c804c40a57f9cced1c0a9dddc6d3570559cdb37f467e9f39b38feac8d52",
+            "locator": {
+              "kind": "symbol",
+              "name": "_registered_mapping_reader"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_diff.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "**The task-context route's own pair measurement, for a review that compares no dataset.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "edacdea8856ade42f5d2396583c6f219a4760787",
+            "content": "sha256:8f5a17fdb8e79d177f24bc0a9c8aaa2adb82d6cc10ee962551da63a507133ff7",
+            "locator": {
+              "kind": "symbol",
+              "name": "pair_attribution"
+            },
+            "path": "mcp/src/agents_remember/application/review_task_context.py"
+          },
+          "kind": "code"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

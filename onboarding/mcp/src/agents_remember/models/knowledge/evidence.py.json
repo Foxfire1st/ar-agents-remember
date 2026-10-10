@@ -65,6 +65,70 @@
           "kind": "code"
         }
       ]
+    },
+    "19": {
+      "note": "The artifact reference: a confined path, the bytes' sha256 and size — a reference, never a content store.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9569ae5784b33633d2c0a981f0b2ce0538993d69",
+            "content": "sha256:b56fa4629f75bde999d9971b7ee36eaafa24ca4051696ea547266fbe3b4dc8a8",
+            "locator": {
+              "kind": "symbol",
+              "name": "ResultArtifactReference"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "The publication reference whose presence states which retention route the record relies on.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9569ae5784b33633d2c0a981f0b2ce0538993d69",
+            "content": "sha256:fa977b494a9d93001dd37513d774d1ff2af88fb86d680ccf44e10e1afbc6f40c",
+            "locator": {
+              "kind": "symbol",
+              "name": "PublicationReference"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "The run's own toolchain, recorded at write time and bounded.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9569ae5784b33633d2c0a981f0b2ce0538993d69",
+            "content": "sha256:ddb4a940b717dac46a133ccf31d5c120b116cc23a28fe6ae1b217a6adc9ed827",
+            "locator": {
+              "kind": "symbol",
+              "name": "RunEnvironment"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "The observation aggregate: recorded candidate, command identity, artifact, execution result, environment, publication.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9569ae5784b33633d2c0a981f0b2ce0538993d69",
+            "content": "sha256:34ab7f99bf31d44e464d994357dae74aa34aefb9ac027fc685f4b7821279da6a",
+            "locator": {
+              "kind": "symbol",
+              "name": "VerificationObservationPayload"
+            }
+          },
+          "kind": "code"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

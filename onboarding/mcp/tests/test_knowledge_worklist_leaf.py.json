@@ -26,7 +26,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "30a7a2a8d8ec537425cdc4652a376dea8effdce8",
+            "blob": "bb33d32e66cacf8fa81aad1a23356a78e271e230",
             "content": "sha256:bf96f8181cea1ece869f2921b57b402ee8d34458f1dac0650e67d08f57291323",
             "locator": {
               "end": 5,
@@ -43,7 +43,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "30a7a2a8d8ec537425cdc4652a376dea8effdce8",
+            "blob": "bb33d32e66cacf8fa81aad1a23356a78e271e230",
             "content": "sha256:26d048924a5f466e265c649ec7e10c4cdecb4aedf219eddc3e47dc4bb510b081",
             "locator": {
               "kind": "symbol",
@@ -59,7 +59,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "30a7a2a8d8ec537425cdc4652a376dea8effdce8",
+            "blob": "bb33d32e66cacf8fa81aad1a23356a78e271e230",
             "content": "sha256:e443416bd568ce0600bd81d13d4c26056a9cfa83ed8bea722eff3af6f5592cc8",
             "locator": {
               "kind": "symbol",
@@ -75,7 +75,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "30a7a2a8d8ec537425cdc4652a376dea8effdce8",
+            "blob": "bb33d32e66cacf8fa81aad1a23356a78e271e230",
             "content": "sha256:cbd1939ce9438a98ec3d33abda34e01b8a9eaaf4ae7db54346077b9112aac33b",
             "locator": {
               "kind": "symbol",
@@ -91,7 +91,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "30a7a2a8d8ec537425cdc4652a376dea8effdce8",
+            "blob": "bb33d32e66cacf8fa81aad1a23356a78e271e230",
             "content": "sha256:d18fd70894e0d97b5c2558ce098100f31b3fd328ae799b05ee7658604cbfad7f",
             "locator": {
               "kind": "symbol",
@@ -107,7 +107,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "30a7a2a8d8ec537425cdc4652a376dea8effdce8",
+            "blob": "bb33d32e66cacf8fa81aad1a23356a78e271e230",
             "content": "sha256:a0ed35805dbb7d23462f50b23ed19b8548656e86ab6bc977c4c81e898a3b032b",
             "locator": {
               "kind": "symbol",
@@ -123,7 +123,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "30a7a2a8d8ec537425cdc4652a376dea8effdce8",
+            "blob": "bb33d32e66cacf8fa81aad1a23356a78e271e230",
             "content": "sha256:0ce0d8b09fe446eae103436346e55cb41b36e1e6300b7d5aa90f8b87faf24161",
             "locator": {
               "kind": "symbol",
@@ -148,6 +148,276 @@
             "path": "mcp/src/agents_remember/application/knowledge_worklist/code.py"
           },
           "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "The tool case counts two onboarding items.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bb33d32e66cacf8fa81aad1a23356a78e271e230",
+            "content": "sha256:631732cc4652b28279cb4a9d3dfcfefeae8c845e53b51d7d509f2544625fbe01",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_tool_returns_the_latest_worklist_and_the_checklist_shows_it"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "26": {
+      "note": "The cache case patches the conversion where it now lives.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bb33d32e66cacf8fa81aad1a23356a78e271e230",
+            "content": "sha256:d18fd70894e0d97b5c2558ce098100f31b3fd328ae799b05ee7658604cbfad7f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_converted_bases_are_cached_by_commit_version_and_code_commit"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "27": {
+      "note": "The leaf fixture: real repositories plus the task root and enclosure.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bb33d32e66cacf8fa81aad1a23356a78e271e230",
+            "content": "sha256:58326037683ec47f20567dbfcd69dbb87a9d4941dfb1ae2ba15027db6ef3ce3b",
+            "locator": {
+              "kind": "symbol",
+              "name": "converted_memory"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "28": {
+      "note": "The leaf's contract and task document.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bb33d32e66cacf8fa81aad1a23356a78e271e230",
+            "content": "sha256:0e1d8485e897e8b22b166d411644a2fdfd746159caa43fc3bf9374e22b44af3c",
+            "locator": {
+              "kind": "symbol",
+              "name": "Leaf"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "bb33d32e66cacf8fa81aad1a23356a78e271e230",
+            "content": "sha256:937d94c896844458b5e41fd6790d1ffa4746413e2a958637b6598034ee6748ae",
+            "locator": {
+              "end": 238,
+              "kind": "line_range",
+              "start": 183
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "29": {
+      "note": "Pairing by trailer and persistence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bb33d32e66cacf8fa81aad1a23356a78e271e230",
+            "content": "sha256:26d048924a5f466e265c649ec7e10c4cdecb4aedf219eddc3e47dc4bb510b081",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_leaf_pairs_k_b_by_trailer_follows_its_sync_and_persists_beside_its_contract"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "30": {
+      "note": "The task document's maintenance scope.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bb33d32e66cacf8fa81aad1a23356a78e271e230",
+            "content": "sha256:f502708a58ed54430b132b804c481f2306f4b588d8aa14c03de9a181e0b0900b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_task_documents_maintenance_scope_classifies_every_entry"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "31": {
+      "note": "The writer's carry.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bb33d32e66cacf8fa81aad1a23356a78e271e230",
+            "content": "sha256:f2ab56e2b5b537001c07008dc9577493f986db58f2841cf8129d3eb17317a987",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_writer_carries_moved_blobs_and_the_rows_that_cover_them"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "32": {
+      "note": "The tool and the checklist section.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bb33d32e66cacf8fa81aad1a23356a78e271e230",
+            "content": "sha256:631732cc4652b28279cb4a9d3dfcfefeae8c845e53b51d7d509f2544625fbe01",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_tool_returns_the_latest_worklist_and_the_checklist_shows_it"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "33": {
+      "note": "Other owners' rows and closed files are untouched.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bb33d32e66cacf8fa81aad1a23356a78e271e230",
+            "content": "sha256:de92200ab1ef77d40740f40d55d8c4176fd03703c8dff3ea08a3b75281b90689",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_carrying_never_edits_another_owners_row_or_a_closed_history_file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "34": {
+      "note": "A writer-authored proof raises its invariant.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bb33d32e66cacf8fa81aad1a23356a78e271e230",
+            "content": "sha256:d1746df272aa238fbb3082c7fd351f8eb3135a946375cbeee40bc7ee475166f7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_proof_authored_through_the_writer_raises_its_invariant_when_its_test_changes"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "35": {
+      "note": "The bound sync port.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bb33d32e66cacf8fa81aad1a23356a78e271e230",
+            "content": "sha256:288294c171cacc7cfd64e90e9efda89801b7578942f1b21a3af9edf119eedebc",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_completed_sync_recomputes_through_the_bound_port"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "36": {
+      "note": "The controller-level run; since MIK-R09 its four open items count (4).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bb33d32e66cacf8fa81aad1a23356a78e271e230",
+            "content": "sha256:97d167479c46526e971c737b39edb1a5a866e564a441c05066da749bfb6791f7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_memory_quality_controller_persists_the_worklist_and_renders_it_in_the_checklist"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "37": {
+      "note": "Never raises; never fails a completed sync.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bb33d32e66cacf8fa81aad1a23356a78e271e230",
+            "content": "sha256:a0ed35805dbb7d23462f50b23ed19b8548656e86ab6bc977c4c81e898a3b032b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_recompute_never_raises_and_a_failure_never_fails_a_completed_sync"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "38": {
+      "note": "The `continue` replay.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bb33d32e66cacf8fa81aad1a23356a78e271e230",
+            "content": "sha256:a4fc414282b6f160e216925263e21a8d7581649fe3bbc52910c20da74d521c43",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_continue_replay_of_a_completed_sync_recomputes_too"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "39": {
+      "note": "The converted-base cache.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bb33d32e66cacf8fa81aad1a23356a78e271e230",
+            "content": "sha256:d18fd70894e0d97b5c2558ce098100f31b3fd328ae799b05ee7658604cbfad7f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_converted_bases_are_cached_by_commit_version_and_code_commit"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "40": {
+      "note": "The census-derived consumer row.\n\nAnchor: `test_knowledge_worklist_leaf`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a0569bc130f1ea52e6731d4460788c50542ae82a",
+            "content": "sha256:8aa6e197d7f8f2e7c570ee6de7c6ff3b6397dd22743f0c75a60bcf3ea1ccaf51",
+            "locator": {
+              "end": 1133,
+              "kind": "line_range",
+              "start": 1129
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
         }
       ]
     }

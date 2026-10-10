@@ -84,6 +84,22 @@
           "kind": "code"
         }
       ]
+    },
+    "9": {
+      "note": "The pair reader, and why the schema name it reports is the registry's rather than the file's.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0716e883bde01d28f822858c4f81e892e338a717",
+            "content": "sha256:fd177c79c1b8437d27777a1d933684cfad96b1ec94786a4b2bea9f62574588fa",
+            "locator": {
+              "kind": "symbol",
+              "name": "declared_pair"
+            }
+          },
+          "kind": "test"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

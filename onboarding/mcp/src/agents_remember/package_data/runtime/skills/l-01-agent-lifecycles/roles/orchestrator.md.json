@@ -16,6 +16,23 @@
           "kind": "code"
         }
       ]
+    },
+    "2": {
+      "note": "Root skills are canonical and the sync script publishes byte-identical package and harness copies.\n\nAnchor: `l-01-agent-lifecycles-role-orchestrator`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e9c8975d297fe0271bc4c6777f41a4fffad2a002",
+            "content": "sha256:bb027ed51e4124b2628d15f8c590801a98ebfc067500116bf652c11ab16d5e86",
+            "locator": {
+              "end": 4,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

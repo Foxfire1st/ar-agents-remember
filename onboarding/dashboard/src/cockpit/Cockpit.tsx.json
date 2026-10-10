@@ -134,8 +134,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dbd3ef46e609e178b20798093e2c399bdf3e9b0f",
-            "content": "sha256:ba7d7fa6dca9b6458857973791fd7d36f6bb3a55568a13be15d803afb65e0ef9",
+            "blob": "f907717bf9460d7f6facca800810459ce72ecbdf",
+            "content": "sha256:9912c2b9f934e8f713aab3e2e384a39eb053dea8ae1de4f1f729ed7938bdb627",
             "locator": {
               "kind": "file"
             }
@@ -149,8 +149,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dbd3ef46e609e178b20798093e2c399bdf3e9b0f",
-            "content": "sha256:ba7d7fa6dca9b6458857973791fd7d36f6bb3a55568a13be15d803afb65e0ef9",
+            "blob": "f907717bf9460d7f6facca800810459ce72ecbdf",
+            "content": "sha256:9912c2b9f934e8f713aab3e2e384a39eb053dea8ae1de4f1f729ed7938bdb627",
             "locator": {
               "kind": "file"
             }
@@ -164,8 +164,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dbd3ef46e609e178b20798093e2c399bdf3e9b0f",
-            "content": "sha256:ba7d7fa6dca9b6458857973791fd7d36f6bb3a55568a13be15d803afb65e0ef9",
+            "blob": "f907717bf9460d7f6facca800810459ce72ecbdf",
+            "content": "sha256:9912c2b9f934e8f713aab3e2e384a39eb053dea8ae1de4f1f729ed7938bdb627",
             "locator": {
               "kind": "file"
             }
@@ -179,8 +179,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dbd3ef46e609e178b20798093e2c399bdf3e9b0f",
-            "content": "sha256:ba7d7fa6dca9b6458857973791fd7d36f6bb3a55568a13be15d803afb65e0ef9",
+            "blob": "f907717bf9460d7f6facca800810459ce72ecbdf",
+            "content": "sha256:9912c2b9f934e8f713aab3e2e384a39eb053dea8ae1de4f1f729ed7938bdb627",
             "locator": {
               "kind": "file"
             }
@@ -194,8 +194,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dbd3ef46e609e178b20798093e2c399bdf3e9b0f",
-            "content": "sha256:ba7d7fa6dca9b6458857973791fd7d36f6bb3a55568a13be15d803afb65e0ef9",
+            "blob": "f907717bf9460d7f6facca800810459ce72ecbdf",
+            "content": "sha256:9912c2b9f934e8f713aab3e2e384a39eb053dea8ae1de4f1f729ed7938bdb627",
             "locator": {
               "kind": "file"
             }
@@ -209,8 +209,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dbd3ef46e609e178b20798093e2c399bdf3e9b0f",
-            "content": "sha256:ba7d7fa6dca9b6458857973791fd7d36f6bb3a55568a13be15d803afb65e0ef9",
+            "blob": "f907717bf9460d7f6facca800810459ce72ecbdf",
+            "content": "sha256:9912c2b9f934e8f713aab3e2e384a39eb053dea8ae1de4f1f729ed7938bdb627",
             "locator": {
               "kind": "file"
             }
@@ -248,6 +248,486 @@
             "path": "dashboard/src/panels/knowledge-reader/KnowledgeReader.tsx"
           },
           "kind": "code"
+        }
+      ]
+    },
+    "64": {
+      "note": "The provider around the shell, shown only for Operations with no takeover.\n\nAnchor: `IntentEntryRevalidation`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f907717bf9460d7f6facca800810459ce72ecbdf",
+            "content": "sha256:f29095a6b0e65991918d78538811f694e2d7cf4045c8a92d963b95d6ff19bd85",
+            "locator": {
+              "end": 913,
+              "kind": "line_range",
+              "start": 881
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "65": {
+      "note": "The body grid bleed variant switches between three railed columns and a single full-width column.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f907717bf9460d7f6facca800810459ce72ecbdf",
+            "content": "sha256:67c3b106e684a02d421281e64e67f5430bfa6f712e56f1edb6b45412eb0fdccc",
+            "locator": {
+              "kind": "symbol",
+              "name": "bodyGrid"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "66": {
+      "note": "Files, Engine Room, Topology, and Chats request the full-bleed layout.\n\nAnchor: `fullBleed`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f907717bf9460d7f6facca800810459ce72ecbdf",
+            "content": "sha256:146e733ec4294046cd9deced51210017286f0328f30d8a0e286e903dac76e087",
+            "locator": {
+              "end": 455,
+              "kind": "line_range",
+              "start": 450
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "67": {
+      "note": "Rail fade properties are selected by the animation permission.\n\nAnchor: `railEnter`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f907717bf9460d7f6facca800810459ce72ecbdf",
+            "content": "sha256:041333e586753988ecd046c93fdd43769ae2ab30c44e8c98c592f5294cd70d0d",
+            "locator": {
+              "end": 457,
+              "kind": "line_range",
+              "start": 450
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "68": {
+      "note": "The `chatsLayer` keep-alive class used by the Chats layer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f907717bf9460d7f6facca800810459ce72ecbdf",
+            "content": "sha256:8a8976027b22047c4030a7ac855a24105253185203e0163cfc631decc487d093",
+            "locator": {
+              "kind": "symbol",
+              "name": "chatsLayer"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "69": {
+      "note": "`EffectsToggle` (✦ Effects / ❄ Calm) — flips `data-effects` + persists `calm-cockpit`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f907717bf9460d7f6facca800810459ce72ecbdf",
+            "content": "sha256:7ab813a18528ed7b0291017e86822ecbd10c8156f14da45ac0088e4a3f8e8eeb",
+            "locator": {
+              "kind": "symbol",
+              "name": "EffectsToggle"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "70": {
+      "note": "The boot-time effects flag it persists to.\n\nAnchor: `calm-cockpit`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7b235ae6d40f2ffc6897ad451c87b3bae5b873e9",
+            "content": "sha256:32163839fde1d2afa46e8c39fc3bcaf196e94fc02aa0a5d47098d392e3159c50",
+            "locator": {
+              "end": 16,
+              "kind": "line_range",
+              "start": 12
+            },
+            "path": "dashboard/src/main.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "71": {
+      "note": "The honest-motion gate the rail transition + the toggle drive.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5045a0dfe298de1b76c82e4326d5f177dbd5bc70",
+            "content": "sha256:03fbe4a61df59f3821f011f83ed126d730c7c17a0c274c82b2b3d537bcb9f6a9",
+            "locator": {
+              "kind": "symbol",
+              "name": "useShouldAnimate"
+            },
+            "path": "dashboard/src/panels/engine-room/useShouldAnimate.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5045a0dfe298de1b76c82e4326d5f177dbd5bc70",
+            "content": "sha256:7eedf1a31aea446e506e11b8b30a0d1213e90b714b9501707e7c848d56d21ca6",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 12
+            },
+            "path": "dashboard/src/panels/engine-room/useShouldAnimate.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "72": {
+      "note": "The SSE stream wiring: `connectState`, then one `connectEvents` connection with two consumers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f907717bf9460d7f6facca800810459ce72ecbdf",
+            "content": "sha256:eb6b28ccc4c28cc6b133ccc8c8c4ef5e93f9dc219708120b4b6ddc8827a6976b",
+            "locator": {
+              "kind": "symbol",
+              "name": "Cockpit"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "73": {
+      "note": "A `#knowledge?…` reader URL selects the Knowledge view as the shell's initial view.\n\nAnchor: `parseReaderHash`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f907717bf9460d7f6facca800810459ce72ecbdf",
+            "content": "sha256:23ba3275b061f4cbf0f2fde4d10d2b79b5778515123efa1f56d588b6f2aeb510",
+            "locator": {
+              "end": 392,
+              "kind": "line_range",
+              "start": 385
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "75": {
+      "note": "The reader's hash parser.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8491fd4fd23fcb220157d46e63d31917682590df",
+            "content": "sha256:eda6257fecd133947c26ef85ac6ee28147c69d3f84870f1fc64117e4b907ba15",
+            "locator": {
+              "kind": "symbol",
+              "name": "parseReaderHash"
+            },
+            "path": "dashboard/src/data/knowledgeReader.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "76": {
+      "note": "The seat-event application + per-connection backlog gate this shell holds.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4b6c3adce54894c03440db973f39692bf8425fe5",
+            "content": "sha256:820e8b5f07443f3775f3447df60867065ff5842d5f4256202b71b434bf077fc5",
+            "locator": {
+              "kind": "symbol",
+              "name": "createGatedSeatEventApplier"
+            },
+            "path": "dashboard/src/data/seatEvents.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4b6c3adce54894c03440db973f39692bf8425fe5",
+            "content": "sha256:ed99bf158d90c641608f53d99f4d80333b3b9327aaa8b63ff1dc682e79751a32",
+            "locator": {
+              "end": 135,
+              "kind": "line_range",
+              "start": 107
+            },
+            "path": "dashboard/src/data/seatEvents.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "77": {
+      "note": "The refcounted catalog poll driver started unconditionally here.\n\nAnchor: `startCatalogPollDriver`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f907717bf9460d7f6facca800810459ce72ecbdf",
+            "content": "sha256:83d942e922042383c5a9f498adc4f9c472321ed48c102103243c2b18ef1cb262",
+            "locator": {
+              "end": 866,
+              "kind": "line_range",
+              "start": 862
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "78": {
+      "note": "Typed task/lifecycle selection helpers used by `open` and `selectedLifecycleId`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "40a0e24637b2a8f8a50c03cf09db2ea3976e83cc",
+            "content": "sha256:99e0229a94cf3305d469f57526b91327a4c99a310e6f45c456ba3ee136563c07",
+            "locator": {
+              "kind": "symbol",
+              "name": "lifecycleIdForSelection"
+            },
+            "path": "dashboard/src/data/taskIdentity.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "79": {
+      "note": "The frontend `Analytics` projection includes the `engineProcesses` process-map collection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cee16fce97e5e76b33e52e9b0d606b87481c9758",
+            "content": "sha256:56d879b8f546a2afd9edcc95544586acccf0d5aa279185fb83b6c05b3055d47e",
+            "locator": {
+              "kind": "symbol",
+              "name": "engineProcesses"
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "80": {
+      "note": "Metrics extends the mapped active-state counts and adds total lifecycle/token and histogram fields.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cee16fce97e5e76b33e52e9b0d606b87481c9758",
+            "content": "sha256:2d5c012b5da58f558f6b064bfb61d20c2f17885b0bf0f5c41396eee1d6caa4b4",
+            "locator": {
+              "kind": "symbol",
+              "name": "Metrics"
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "81": {
+      "note": "Every ActiveState maps to a required count field.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cee16fce97e5e76b33e52e9b0d606b87481c9758",
+            "content": "sha256:b6804561ec905cf59ad4c54013af8009ff2f4e76ddc7da6dda957bcded54b8a7",
+            "locator": {
+              "kind": "symbol",
+              "name": "LifecycleStateCounts"
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "82": {
+      "note": "The count-field name is derived from the camel-cased state vocabulary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cee16fce97e5e76b33e52e9b0d606b87481c9758",
+            "content": "sha256:48e3e062679eeb8c25c438d63cff60432f503bc4cc2c65b9f430962c1b2aba11",
+            "locator": {
+              "kind": "symbol",
+              "name": "StateCountField"
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "83": {
+      "note": "metricsFor builds the client rollup from lifecycles and spreads the derived state counts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cee16fce97e5e76b33e52e9b0d606b87481c9758",
+            "content": "sha256:e9ee85ebb381e09c4f6b9a60589ab9f2ae16b5bf020fa42a6b9c53b47f0aa00a",
+            "locator": {
+              "kind": "symbol",
+              "name": "metricsFor"
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "84": {
+      "note": "The server rollup this bar's `awaitingDeveloperCount` comes from: `_metrics` expands `STATE_COUNT_FIELDS`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c20cabbbf6f30ed5cb7483397bf175b4de13d99f",
+            "content": "sha256:b8a4ab88879885f101a4b55f4d3a6059bf5a513b952b47ee34e7f3b1555133ef",
+            "locator": {
+              "kind": "symbol",
+              "name": "_metrics"
+            },
+            "path": "mcp/src/agents_remember/observer/reducer_impl/_metrics.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "85": {
+      "note": "`AgentNotifierHeartbeatBadge` reads the store field this top-bar indicator renders.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f907717bf9460d7f6facca800810459ce72ecbdf",
+            "content": "sha256:5508205699e2921a6ee43f076c77433055462f36900b4236837b797b06254e6a",
+            "locator": {
+              "kind": "symbol",
+              "name": "AgentNotifierHeartbeatBadge"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "86": {
+      "note": "The `AgentNotifierHeartbeat` type this badge's props shape mirrors.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cee16fce97e5e76b33e52e9b0d606b87481c9758",
+            "content": "sha256:beb31ab5870fb86707cbcaf925ed9404919ee72463ac00eb6889d846dcf8915e",
+            "locator": {
+              "kind": "symbol",
+              "name": "AgentNotifierHeartbeat"
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "87": {
+      "note": "The shell starts the screen wake lock once on mount and releases it while hidden.\n\nAnchor: `startScreenWakeLock`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f907717bf9460d7f6facca800810459ce72ecbdf",
+            "content": "sha256:08b8bd133a0e18ed1096568fc817b9ab856652a56f71ff512bb6015ffa2ca149",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 21
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "88": {
+      "note": "The reviewed UI contract owner `MainLayers`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f907717bf9460d7f6facca800810459ce72ecbdf",
+            "content": "sha256:abc706fc66c912bf079523425599965ecc4855f669690a4a31d28a309280dd04",
+            "locator": {
+              "kind": "symbol",
+              "name": "MainLayers"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "89": {
+      "note": "The reviewed UI contract owner `RoleChatsPane`.\n\nAnchor: `RoleChatsPane`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f907717bf9460d7f6facca800810459ce72ecbdf",
+            "content": "sha256:f6179dfd4a7754a006d432553b55091449c4bb05a8eeda501fd31b3e488c87fa",
+            "locator": {
+              "end": 791,
+              "kind": "line_range",
+              "start": 791
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "90": {
+      "note": "The reviewed UI contract owner `ViewLayer`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f907717bf9460d7f6facca800810459ce72ecbdf",
+            "content": "sha256:eeeccc8f1fdaa58fb21299088471a3654662916f1e14c89d09f7d201d379eea2",
+            "locator": {
+              "kind": "symbol",
+              "name": "ViewLayer"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "91": {
+      "note": "The sole Chats destination mounts RoleChatsPane directly, has no Chats-mode selector or SessionsView child, and keeps the pane identity while hiding/showing the existing layer.\n\nAnchor: `directly shows one persistent Role chats pane without an old-chat selector`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "23c0bc4e9a1dd7cb000ea663313435e26be970ce",
+            "content": "sha256:c913cc52dedb36161f21c530f23496a7d67ba6e1e6ef4190bfe2fc9a2493ec89",
+            "locator": {
+              "end": 771,
+              "kind": "line_range",
+              "start": 771
+            },
+            "path": "dashboard/src/cockpit/Cockpit.test.tsx"
+          },
+          "kind": "test"
         }
       ]
     }

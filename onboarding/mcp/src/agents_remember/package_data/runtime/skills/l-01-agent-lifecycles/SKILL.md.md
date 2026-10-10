@@ -24,6 +24,23 @@ Canonical skills/l-01-agent-lifecycles/SKILL.md owns the instruction. scripts/sy
 
 Restore the same role, operation, task, agent IDs and report from the durable handover. Reconcile an uncertain start with the same request ID. A finished turn, review, curation, semantic acceptance and paired Git publication require their separate owning evidence.
 
+## Code Commentary
+
+### Invariants And Boundaries
+
+- This artifact must remain byte-identical to the canonical lifecycle SKILL.
+
+- No role is defined by reference to another role's lifecycle, and no role file sends its reader to a
+  sibling's prose to learn its own obligations. A sanctioned sibling reference exists only for wearing
+  that hat or dispatching that seat, and `mcp/tests/test_role_instruction_corpus.py` fails on any
+  other one.
+
+- Installed runtimes receive the same doctrine as the canonical tree, not a compatibility variant.
+
+### Todos
+
+None recorded.
+
 ## Evidence
 
 ### Repo-Internal References
@@ -33,6 +50,24 @@ Restore the same role, operation, task, agent IDs and report from the durable ha
 | Explicit role/operation composition and taskless Projects scope. | lines 8-16 | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:8-16 |
 | Bound server, actual role identities, one coordinating agent under the Architect and recovery/acceptance distinction. | lines 20-35 | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:20-35 |
 
+### Docs References
+
+No external domain documentation is configured for this repository-local lifecycle doctrine.
+
+No relevant external documentation found.
+
+### Repo-Internal References
+
+- Investigator takes any scoped concern from the actual parent, uses the developer request only without a parent, and never synthesizes task identity; developer decisions follow the parent channel with the stated parentless and unreachable exceptions. \[2] [2]
+
+- Canonical skills are propagated into package data and harness mirrors by the sync script. [3]
+- The enabled corpus stays self-contained: the shipped check fails on a role that leaks a sibling's duties, on a manifest that names a missing source, and on any relative path the corpus cites that does not resolve. [4]
+
+### Cross-Repo References
+
+No sibling repository evidence is needed for this doctrine file.
+
+No meaningful cross-repo references found.
 
 ## Current Investigator contract impact
 
@@ -43,4 +78,4 @@ The native launcher’s seven roles use canonical Investigator in place of the e
 
 ## Current intake and developer-question evidence
 
-- Investigator takes any scoped concern from the actual parent, uses the developer request only without a parent, and never synthesizes task identity; developer decisions follow the parent channel with the stated parentless and unreachable exceptions. \[2] [2]
+- Investigator takes any scoped concern from the actual parent, uses the developer request only without a parent, and never synthesizes task identity; developer decisions follow the parent channel with the stated parentless and unreachable exceptions. [2] [2]

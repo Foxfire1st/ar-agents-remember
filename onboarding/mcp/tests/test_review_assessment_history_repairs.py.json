@@ -49,6 +49,22 @@
           "kind": "test"
         }
       ]
+    },
+    "9": {
+      "note": "Integrity failure preserves the previous authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a5c9bfdab65a09e5eed4982363e59419c5160c9a",
+            "content": "sha256:d410c863dd704761f2d5bc3833e0acb16216d6b8949b63637bd5907d7a1340cb",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_integrity_rejection_precedes_canonical_authority_replacement"
+            }
+          },
+          "kind": "test"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

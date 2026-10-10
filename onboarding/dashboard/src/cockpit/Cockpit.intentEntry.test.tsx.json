@@ -48,6 +48,155 @@
           "kind": "code"
         }
       ]
+    },
+    "22": {
+      "note": "The ruled triggers and the request-counting method.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0cdba9694c6e8a4266cdf4bf7f486b082a9ee59e",
+            "content": "sha256:574d41cea115a9e36cac9b0f42e83b48974b9c97b33953b10c2e92c011c44183",
+            "locator": {
+              "kind": "symbol",
+              "name": "serve"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "23": {
+      "note": "Two live leaves seeded into the real store.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0cdba9694c6e8a4266cdf4bf7f486b082a9ee59e",
+            "content": "sha256:a3d7569d03aef063254ce2602775cdadc3b94dcb5239cf8316039ecb08658825",
+            "locator": {
+              "kind": "symbol",
+              "name": "seedTwoLiveLeaves"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "24": {
+      "note": "The route stub with the knowledge switch and the read counters.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0cdba9694c6e8a4266cdf4bf7f486b082a9ee59e",
+            "content": "sha256:574d41cea115a9e36cac9b0f42e83b48974b9c97b33953b10c2e92c011c44183",
+            "locator": {
+              "kind": "symbol",
+              "name": "serve"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "25": {
+      "note": "The first-ingest sequence every case starts from.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0cdba9694c6e8a4266cdf4bf7f486b082a9ee59e",
+            "content": "sha256:f86bb38eec9b6d954da7576bf929e35440e7cc5e8ec801edb3944fe72c33c9a6",
+            "locator": {
+              "kind": "symbol",
+              "name": "openStaleEntry"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "26": {
+      "note": "(a) re-show, once per showing, no catalogue read.\n\nAnchor: `CockpitShell`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0cdba9694c6e8a4266cdf4bf7f486b082a9ee59e",
+            "content": "sha256:1bbaa01b175b461b75f8c4942efe2486ed61fb4eb30680da7c91a0595a86fab8",
+            "locator": {
+              "end": 230,
+              "kind": "line_range",
+              "start": 211
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "27": {
+      "note": "(a) opening a task from another view reads once.\n\nAnchor: `CockpitShell`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0cdba9694c6e8a4266cdf4bf7f486b082a9ee59e",
+            "content": "sha256:7abd92574597cf102e30e88d52fc74bc099d5bcaae26b8f5f08ccb191c12aefa",
+            "locator": {
+              "end": 243,
+              "kind": "line_range",
+              "start": 232
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "28": {
+      "note": "(b) leaving the reviewer re-validates.\n\nAnchor: `CockpitShell`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0cdba9694c6e8a4266cdf4bf7f486b082a9ee59e",
+            "content": "sha256:998c7b9a328d9a807d29ae3222826664d1a75b77dcca72d2d7730b3f9069ad66",
+            "locator": {
+              "end": 262,
+              "kind": "line_range",
+              "start": 245
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "29": {
+      "note": "(c) the reviewer's refresh re-validates.\n\nAnchor: `CockpitShell`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0cdba9694c6e8a4266cdf4bf7f486b082a9ee59e",
+            "content": "sha256:4f189161e25f3be38756814300eb985d0f506f45f49616a0316642bc8cbf1ca0",
+            "locator": {
+              "end": 278,
+              "kind": "line_range",
+              "start": 264
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "30": {
+      "note": "The provider under test.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "701f0ed34d661ec7a976642ac4b7713502d1cb46",
+            "content": "sha256:495395edc9c750eb467c472c50a53c55ea59ed7ef0bff8c01a6b1faf156710f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "IntentEntryRevalidation"
+            },
+            "path": "dashboard/src/data/intentEntryRevalidation.tsx"
+          },
+          "kind": "code"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

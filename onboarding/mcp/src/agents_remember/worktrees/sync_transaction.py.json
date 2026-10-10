@@ -82,6 +82,119 @@
         }
       ]
     },
+    "33": {
+      "note": "Dirty work admission and parking use complete typed side records.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "929da2b32893d67c1250150e62b82677f1556231",
+            "content": "sha256:62aba0b180a8f1b6001cffa1b31603f3265ea4feb0fe7c169651b20c8e8d88af",
+            "locator": {
+              "kind": "symbol",
+              "name": "_preflight_participating_sides"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "34": {
+      "note": "Currentness and continuation use Git facts and content-only conflicts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "929da2b32893d67c1250150e62b82677f1556231",
+            "content": "sha256:8ccac97f465884f7607ec1c26427a1efcac405a4d1b6f00a2a914985b4480d46",
+            "locator": {
+              "kind": "symbol",
+              "name": "_already_current_result"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "35": {
+      "note": "The validator's refusal is mapped to its own state with a recovery line, on the automatic path and the retained-conflict continuation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "929da2b32893d67c1250150e62b82677f1556231",
+            "content": "sha256:250e1605930397e93f18590afa307339b1a45d00c5fc586793809a0517d23a95",
+            "locator": {
+              "kind": "symbol",
+              "name": "_knowledge_validation_refused"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "36": {
+      "note": "The side run names the crossing owner (leaf or master, and the task ID) and journals the crossing report path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "929da2b32893d67c1250150e62b82677f1556231",
+            "content": "sha256:f854b4466f60fc4ee27d89eda0f5b0db44d6c4fbf586a4418fc68a5910488803",
+            "locator": {
+              "kind": "symbol",
+              "name": "_run_side"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "37": {
+      "note": "The memory merge is paired with the code side's settled result commit, or with nothing before it settles.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "929da2b32893d67c1250150e62b82677f1556231",
+            "content": "sha256:97b81cfa5cd6e45aa35d1ff91ce30f43bf8612d3fed020071686df908aa1eefc",
+            "locator": {
+              "kind": "symbol",
+              "name": "_paired_code"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "38": {
+      "note": "A resolved memory conflict that breaks validation is refused on `continue` and syncs after the repair.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0aa022ec4b45b059754a8f3b1252fa8d25b69384",
+            "content": "sha256:926929a9c6f4048837c859485bfb3575a1284c9a0147ad8e00cbb7a2902c4474",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_resolved_memory_conflict_that_breaks_validation_is_refused_on_continue"
+            },
+            "path": "mcp/tests/test_knowledge_validator_routes.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "39": {
+      "note": "**The side the retained phase names is read in one place, so phase and side cannot disagree.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "929da2b32893d67c1250150e62b82677f1556231",
+            "content": "sha256:66f1907419c78fceb9cc49ea83d87125315e740fd76bcf790c5fab51376e788a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_retained_side"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "4": {
       "note": "Validator refusal retains repair state.",
       "targets": [
@@ -92,6 +205,106 @@
             "locator": {
               "kind": "symbol",
               "name": "_knowledge_validation_refused"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "41": {
+      "note": "Pinned authority and parked-work restoration remain separate owners.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a27da9e92f765e4148fa08b689f518f1545d1c79",
+            "content": "sha256:4c03ad5007a5a3a33517bac5162f58e38550ca395df2e4569a4c71f96a2fe194",
+            "locator": {
+              "kind": "symbol",
+              "name": "pin_authority"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_authority.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "42": {
+      "note": "Terminal finalization/cancellation and damaged-journal recovery are delegated.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "91d0dce825020d677826f306891b612f23e5abb9",
+            "content": "sha256:9c5760e4bc86f585066e6683af4bdbfddaf9454ccfbc970f775f7a64bebc9561",
+            "locator": {
+              "kind": "symbol",
+              "name": "finalize_sync"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_recovery.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "43": {
+      "note": "The cutover lock at sync admission: unconverted on every side and a locked repository.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "929da2b32893d67c1250150e62b82677f1556231",
+            "content": "sha256:98bf378e647ab3a5e90af567d6ee05c582e96ec9f1f7c7cc0c405de746638eb7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_cutover_locked"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "44": {
+      "note": "The lock is asked before the preflight of the participating sides.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "929da2b32893d67c1250150e62b82677f1556231",
+            "content": "sha256:ada8cfd1332459e1aaebfca5cf8e6236b6160be56d5f371a63034cde921741e5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_admit_participating_sides"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "45": {
+      "note": "The driver validates choices and routes retained or new transactions: continue or cancel only.\n\nAnchor: lines 90-99",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "929da2b32893d67c1250150e62b82677f1556231",
+            "content": "sha256:acc855fe5d75e72a8ca098aa863a98c24a403411eb429660cf0e4172abdaf9f8",
+            "locator": {
+              "end": 99,
+              "kind": "line_range",
+              "start": 90
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "46": {
+      "note": "The one continuation a hand-staged resolution ends in; no authored decision is stored.\n\nAnchor: lines 660-666",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "929da2b32893d67c1250150e62b82677f1556231",
+            "content": "sha256:4caaaa389f18cf48a1a623f92f8eb4ba77a07ad24b324f34e93105d1a7a61d00",
+            "locator": {
+              "end": 666,
+              "kind": "line_range",
+              "start": 660
             }
           },
           "kind": "code"

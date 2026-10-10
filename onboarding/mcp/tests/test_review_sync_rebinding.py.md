@@ -23,7 +23,18 @@ Historical v1 receipts remain readable but prove no memory-tree coverage. The v2
 - Currency requires both exact trees to match.
 - Movement evidence is not successor publication or acceptance.
 
+### Todos
+
+None recorded.
+
 ## Evidence
+
+### Docs References
+
+No domain documentation source is configured for this repository — the memory layer's `system/sources.md`
+records no entries at all. The statements below are grounded in repository source only.
+
+No configured domain documentation could be checked.
 
 ### Repo-Internal References
 
@@ -57,6 +68,18 @@ Historical v1 receipts remain readable but prove no memory-tree coverage. The v2
 
 - Statement names trees, not a canonical dataset carrier. [35]
 
+
+- The three carrying states, and the table of every state that carried nothing with the reason no pair was resolved. [36]
+- The never-raising entry point the sync tool calls, with each state it can report instead of raising. [37]
+- The record's own version, selection rule, channel-match vocabulary and three-valued verdict. [38]
+- The one verdict rule, stated once so a writer and the record's validator cannot disagree. [39]
+- The reader's three states, its sentence, and its own statement that a discarded record and one never written read the same. [40]
+
+- The shipped capture owner that derives the resolved source side after the sync. [41]
+
+- The durable-evidence pair every record is published and read back through. [42]
+
+- **The reopen owner's fifth channel, which is what makes this record a production read rather than a dead one.** [43]
 
 ### Cross-Repo References
 

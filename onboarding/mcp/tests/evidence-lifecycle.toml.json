@@ -82,7 +82,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ddd0e3086ac1594a212b04efdfca79aab6ad8e01",
+            "blob": "79ced316f57d0a3dfb3b417ac75c7e38b540b002",
             "content": "sha256:1b040cdd5c5848b8cd6ef5959a60be2ceff3aa6dbdb5840b8d55f20f5386868b",
             "locator": {
               "end": 2,
@@ -167,8 +167,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6f95ec3517f79fb1bf9d91232c1515e352657e0a",
-            "content": "sha256:a20b0f19989cb58fc2967bd272eb264a15bbbc6f19d27262475e8fa5f1a90fe3",
+            "blob": "79ced316f57d0a3dfb3b417ac75c7e38b540b002",
+            "content": "sha256:1566b59dd465bdff92b7dc133dd31c20e47a20351dec979b4e60fabb349e9ee1",
             "locator": {
               "kind": "file"
             }
@@ -182,13 +182,768 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ddd0e3086ac1594a212b04efdfca79aab6ad8e01",
+            "blob": "79ced316f57d0a3dfb3b417ac75c7e38b540b002",
             "content": "sha256:a58fa86fe18bf3c11bc16759d0f13a04f16adbccc294bbb69c5a5d13c79a30e4",
             "locator": {
-              "end": 2480,
+              "end": 7,
               "kind": "line_range",
-              "start": 2477
+              "start": 4
             }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "212": {
+      "note": "The schema version and the large-fixture discovery threshold remain explicit.\n\nAnchor: `schema_version`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "79ced316f57d0a3dfb3b417ac75c7e38b540b002",
+            "content": "sha256:ec47b978dc7bb6048e2626ef3e675029bdab1ecd557eff40c64e2d61434d9849",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "213": {
+      "note": "The four retained knowledge contracts and their evidence nodes.\n\nAnchor: `ar-durable-store/1.0-process-race-evidence`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "79ced316f57d0a3dfb3b417ac75c7e38b540b002",
+            "content": "sha256:e920acf0da4d56f68bfbc8566c39535b2abca2e1ec762d7c590c3e657fb9f7c9",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 5
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "214": {
+      "note": "The referenced transaction test definition exists in the current source.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3cb51d6a619167b107b8c8836f89bd51831af1ed",
+            "content": "sha256:bb043388f8a411c5e75a54f79141a1cdeed0b92c912901d306567521edb4e655",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_public_closeout_commits_code_and_memory_without_acceptance_tools"
+            },
+            "path": "mcp/tests/test_transaction_only_worktree_delivery.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "215": {
+      "note": "The referenced transaction test definition exists in the current source.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3cb51d6a619167b107b8c8836f89bd51831af1ed",
+            "content": "sha256:bb043388f8a411c5e75a54f79141a1cdeed0b92c912901d306567521edb4e655",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_public_closeout_commits_code_and_memory_without_acceptance_tools"
+            },
+            "path": "mcp/tests/test_transaction_only_worktree_delivery.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "216": {
+      "note": "The artifact the first pair belongs to, and the scope both lists carry.\n\nAnchor: `mcp/tests/fixtures/repository_profiles/node/package-lock.json`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "79ced316f57d0a3dfb3b417ac75c7e38b540b002",
+            "content": "sha256:5a17c85dc533e3044697c8ede8f0148c43ba794703f23f2acd9a7e7b8f62ef9d",
+            "locator": {
+              "end": 989,
+              "kind": "line_range",
+              "start": 987
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "217": {
+      "note": "The fixture module it builds on rather than duplicating, so no third enclosure fixture was introduced.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c0a2c0716ff604e0b11fe27d001364f53db5eac2",
+            "content": "sha256:46d9f7666cc0c7c2bb4f794db653a432b1b39222a53a3ce630ee4e6522dddbaa",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_endpoint_fixture"
+            },
+            "path": "mcp/tests/test_knowledge_review_source_endpoints.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "218": {
+      "note": "**The row registered for the member-source cases, at the end of the read-scope artifact's exact consumer list.**\n\nAnchor: `mcp/tests/test_review_family_member_sources.py`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "79ced316f57d0a3dfb3b417ac75c7e38b540b002",
+            "content": "sha256:43cc12bf9e6d761d95cb1692ec6f9275ce13c83a680223a7500dd91d5ca17f1d",
+            "locator": {
+              "end": 279,
+              "kind": "line_range",
+              "start": 277
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "219": {
+      "note": "**The fixture it extends rather than duplicating, and the observation helper its cases read bytes back through.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c0a2c0716ff604e0b11fe27d001364f53db5eac2",
+            "content": "sha256:46d9f7666cc0c7c2bb4f794db653a432b1b39222a53a3ce630ee4e6522dddbaa",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_endpoint_fixture"
+            },
+            "path": "mcp/tests/test_knowledge_review_source_endpoints.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "220": {
+      "note": "**The three consumer entries on the diff-cases artifact's exact list, appended newest-last.**\n\nAnchor: `mcp/tests/test_knowledge_review_relationship_movement.py`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "79ced316f57d0a3dfb3b417ac75c7e38b540b002",
+            "content": "sha256:7fc8a082259e3336a317515e48bf5e4083fbaa4fe3a2324464d097654523f4e8",
+            "locator": {
+              "end": 527,
+              "kind": "line_range",
+              "start": 525
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "221": {
+      "note": "**The same three on the read-scope artifact's exact list.**\n\nAnchor: `mcp/tests/test_knowledge_review_relationship_movement.py`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "79ced316f57d0a3dfb3b417ac75c7e38b540b002",
+            "content": "sha256:7fc8a082259e3336a317515e48bf5e4083fbaa4fe3a2324464d097654523f4e8",
+            "locator": {
+              "end": 2028,
+              "kind": "line_range",
+              "start": 2026
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "222": {
+      "note": "The enclosure the three modules extend rather than duplicating.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c0a2c0716ff604e0b11fe27d001364f53db5eac2",
+            "content": "sha256:46d9f7666cc0c7c2bb4f794db653a432b1b39222a53a3ce630ee4e6522dddbaa",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_endpoint_fixture"
+            },
+            "path": "mcp/tests/test_knowledge_review_source_endpoints.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "223": {
+      "note": "The read-scope artifact's consumer list with the new exact consumer.\n\nAnchor: `mcp/tests/test_knowledge_review_attributed_source_content.py`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "79ced316f57d0a3dfb3b417ac75c7e38b540b002",
+            "content": "sha256:36e94806cfa84b8bfe20e53e86fe6cb3eb6597b7eb3491265adc724e93371457",
+            "locator": {
+              "end": 2024,
+              "kind": "line_range",
+              "start": 2022
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "224": {
+      "note": "The nine new fixture rows for the Doc14 knowledge-file examples.\n\nAnchor: `mcp/tests/fixtures/knowledge_files/4.1-direct_landing.py.json`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "79ced316f57d0a3dfb3b417ac75c7e38b540b002",
+            "content": "sha256:0c3cded3fc398b5155aa4bd0e42d75210bc87e1cb445d6dd9c6bc44932c2a188",
+            "locator": {
+              "end": 764,
+              "kind": "line_range",
+              "start": 762
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "225": {
+      "note": "The consumer additions: the conversion toolchain case on the curator-coherence and read-scope rows, the crossing case on the merge-case and generation rows.\n\nAnchor: `mcp/tests/test_knowledge_conversion_toolchain.py`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "79ced316f57d0a3dfb3b417ac75c7e38b540b002",
+            "content": "sha256:4f5187c8d007a041960819e07923b270b08e4c119689f6dd0e3787129bdab4cf",
+            "locator": {
+              "end": 243,
+              "kind": "line_range",
+              "start": 241
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "226": {
+      "note": "The three consumer additions, one on each exact row.\n\nAnchor: `mcp/tests/test_knowledge_proofs.py`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "79ced316f57d0a3dfb3b417ac75c7e38b540b002",
+            "content": "sha256:5a3d23dc4cbd157e281485a972293013284ab8f94dabe9dbb518cb0337a4b1d4",
+            "locator": {
+              "end": 253,
+              "kind": "line_range",
+              "start": 251
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "227": {
+      "note": "The three rows they belong to.\n\nAnchor: `mcp/tests/fixtures/repository_profiles/node/package-lock.json`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "79ced316f57d0a3dfb3b417ac75c7e38b540b002",
+            "content": "sha256:5a17c85dc533e3044697c8ede8f0148c43ba794703f23f2acd9a7e7b8f62ef9d",
+            "locator": {
+              "end": 989,
+              "kind": "line_range",
+              "start": 987
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "228": {
+      "note": "The consumer addition.\n\nAnchor: `mcp/tests/test_knowledge_worklist_leaf.py`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "79ced316f57d0a3dfb3b417ac75c7e38b540b002",
+            "content": "sha256:0ac99c9fdb2b9fa5ee83dd2e980c4654676b3d1262bc4f1f77cbd5a970367da0",
+            "locator": {
+              "end": 1200,
+              "kind": "line_range",
+              "start": 1198
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "229": {
+      "note": "The row it belongs to.\n\nAnchor: `mcp/tests/fixtures/repository_profiles/node/package-lock.json`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "79ced316f57d0a3dfb3b417ac75c7e38b540b002",
+            "content": "sha256:5a17c85dc533e3044697c8ede8f0148c43ba794703f23f2acd9a7e7b8f62ef9d",
+            "locator": {
+              "end": 989,
+              "kind": "line_range",
+              "start": 987
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "230": {
+      "note": "The consumer addition.\n\nAnchor: `mcp/tests/test_knowledge_currentness.py`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "79ced316f57d0a3dfb3b417ac75c7e38b540b002",
+            "content": "sha256:39b82f6f32e640a9ee6b3964dc0b74ba82488722606b67f7c07effa5d8a1d83d",
+            "locator": {
+              "end": 1153,
+              "kind": "line_range",
+              "start": 1151
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "231": {
+      "note": "The row it belongs to.\n\nAnchor: `mcp/tests/fixtures/repository_profiles/node/package-lock.json`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "79ced316f57d0a3dfb3b417ac75c7e38b540b002",
+            "content": "sha256:5a17c85dc533e3044697c8ede8f0148c43ba794703f23f2acd9a7e7b8f62ef9d",
+            "locator": {
+              "end": 989,
+              "kind": "line_range",
+              "start": 987
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "232": {
+      "note": "The paging module's consumer line on the package-lock row.\n\nAnchor: `mcp/tests/test_knowledge_paging.py`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "79ced316f57d0a3dfb3b417ac75c7e38b540b002",
+            "content": "sha256:0fd2577dfe67d57a7a5e92c91462879a6140fcd001a05795c26a8556aab88bee",
+            "locator": {
+              "end": 1167,
+              "kind": "line_range",
+              "start": 1167
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "233": {
+      "note": "None",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "79ced316f57d0a3dfb3b417ac75c7e38b540b002",
+            "content": "sha256:1566b59dd465bdff92b7dc133dd31c20e47a20351dec979b4e60fabb349e9ee1",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "234": {
+      "note": "The planned-effects module's consumer line.\n\nAnchor: `mcp/tests/test_planned_knowledge_effects.py`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "79ced316f57d0a3dfb3b417ac75c7e38b540b002",
+            "content": "sha256:a64a6086d1cecee84d14b7c0bd4336e311073aef076b342bc964b2233d4f9efe",
+            "locator": {
+              "end": 1278,
+              "kind": "line_range",
+              "start": 1276
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "235": {
+      "note": "The row it belongs to.\n\nAnchor: `mcp/tests/fixtures/repository_profiles/node/package-lock.json`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "79ced316f57d0a3dfb3b417ac75c7e38b540b002",
+            "content": "sha256:5a17c85dc533e3044697c8ede8f0148c43ba794703f23f2acd9a7e7b8f62ef9d",
+            "locator": {
+              "end": 989,
+              "kind": "line_range",
+              "start": 987
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "236": {
+      "note": "The leaf-read module's consumer line on the package-lock row.\n\nAnchor: `mcp/tests/test_knowledge_leaf_read.py`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "79ced316f57d0a3dfb3b417ac75c7e38b540b002",
+            "content": "sha256:6027af8247fcbbf12777fca8eae097ec0fc644ead20dc6255cbb7bb10446dd31",
+            "locator": {
+              "end": 1166,
+              "kind": "line_range",
+              "start": 1166
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "237": {
+      "note": "None",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "79ced316f57d0a3dfb3b417ac75c7e38b540b002",
+            "content": "sha256:1566b59dd465bdff92b7dc133dd31c20e47a20351dec979b4e60fabb349e9ee1",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "238": {
+      "note": "The two rows it belongs to.\n\nAnchor: `mcp/tests/fixtures/repository_profiles/node/package-lock.json`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "79ced316f57d0a3dfb3b417ac75c7e38b540b002",
+            "content": "sha256:5a17c85dc533e3044697c8ede8f0148c43ba794703f23f2acd9a7e7b8f62ef9d",
+            "locator": {
+              "end": 989,
+              "kind": "line_range",
+              "start": 987
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "239": {
+      "note": "The unexplained-change module's consumer line on the package-lock row.\n\nAnchor: `mcp/tests/test_unexplained_change_disposition.py`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "79ced316f57d0a3dfb3b417ac75c7e38b540b002",
+            "content": "sha256:d08631c68d28ff196d24b937167d5f8ce046407849bc90b02306708b17f42100",
+            "locator": {
+              "end": 1417,
+              "kind": "line_range",
+              "start": 1415
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "240": {
+      "note": "The row it belongs to.\n\nAnchor: `mcp/tests/fixtures/repository_profiles/node/package-lock.json`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "79ced316f57d0a3dfb3b417ac75c7e38b540b002",
+            "content": "sha256:5a17c85dc533e3044697c8ede8f0148c43ba794703f23f2acd9a7e7b8f62ef9d",
+            "locator": {
+              "end": 989,
+              "kind": "line_range",
+              "start": 987
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "241": {
+      "note": "The route-chain module's consumer lines on the four rows.\n\nAnchor: `mcp/tests/test_knowledge_route_chain.py`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "79ced316f57d0a3dfb3b417ac75c7e38b540b002",
+            "content": "sha256:1336e9192e751b9fdcb32036b3dee0b19f6aac25b570f972632290485bc00e86",
+            "locator": {
+              "end": 271,
+              "kind": "line_range",
+              "start": 269
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "242": {
+      "note": "The reconsideration module's consumer line on the package-lock row.\n\nAnchor: `mcp/tests/test_reconsideration_surfacing.py`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "79ced316f57d0a3dfb3b417ac75c7e38b540b002",
+            "content": "sha256:2b2a4bdc79feff63fe4110f8b670890332df25bdd25c50c98f625dc2415de9b1",
+            "locator": {
+              "end": 1299,
+              "kind": "line_range",
+              "start": 1297
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "243": {
+      "note": "The row it belongs to.\n\nAnchor: `mcp/tests/fixtures/repository_profiles/node/package-lock.json`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "79ced316f57d0a3dfb3b417ac75c7e38b540b002",
+            "content": "sha256:5a17c85dc533e3044697c8ede8f0148c43ba794703f23f2acd9a7e7b8f62ef9d",
+            "locator": {
+              "end": 989,
+              "kind": "line_range",
+              "start": 987
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "244": {
+      "note": "The schema version and the large-fixture discovery threshold remain explicit.\n\nAnchor: `schema_version`; `large_fixture_bytes`; \"ar-test-evidence-lifecycle/v3\"; \"large_fixture_bytes = 25000\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "79ced316f57d0a3dfb3b417ac75c7e38b540b002",
+            "content": "sha256:1566b59dd465bdff92b7dc133dd31c20e47a20351dec979b4e60fabb349e9ee1",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "245": {
+      "note": "The four retained knowledge contracts and their evidence nodes.\n\nAnchor: \"id = \\\"ar-durable-store/1.0-process-race-evidence\\\"\"; \"id = \\\"conversation-control-public-route-contract\\\"\"; \"id = \\\"next-supported-pi-rpc-activity-recording\\\"\"; \"id = \\\"synthetic-test-evidence-candidate\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "79ced316f57d0a3dfb3b417ac75c7e38b540b002",
+            "content": "sha256:1566b59dd465bdff92b7dc133dd31c20e47a20351dec979b4e60fabb349e9ee1",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "246": {
+      "note": "Closeout fixture support names the retained code/memory transaction replacement.\n\nAnchor: \"closeout_fixture_test_support.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "79ced316f57d0a3dfb3b417ac75c7e38b540b002",
+            "content": "sha256:1566b59dd465bdff92b7dc133dd31c20e47a20351dec979b4e60fabb349e9ee1",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "247": {
+      "note": "Closeout-input support declares the cleanup-guidance consumer.\n\nAnchor: \"closeout_input_test_support.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "79ced316f57d0a3dfb3b417ac75c7e38b540b002",
+            "content": "sha256:1566b59dd465bdff92b7dc133dd31c20e47a20351dec979b4e60fabb349e9ee1",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "248": {
+      "note": "None",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "79ced316f57d0a3dfb3b417ac75c7e38b540b002",
+            "content": "sha256:1566b59dd465bdff92b7dc133dd31c20e47a20351dec979b4e60fabb349e9ee1",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "249": {
+      "note": "None",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "79ced316f57d0a3dfb3b417ac75c7e38b540b002",
+            "content": "sha256:1566b59dd465bdff92b7dc133dd31c20e47a20351dec979b4e60fabb349e9ee1",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "250": {
+      "note": "None",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "79ced316f57d0a3dfb3b417ac75c7e38b540b002",
+            "content": "sha256:1566b59dd465bdff92b7dc133dd31c20e47a20351dec979b4e60fabb349e9ee1",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "251": {
+      "note": "None",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "79ced316f57d0a3dfb3b417ac75c7e38b540b002",
+            "content": "sha256:1566b59dd465bdff92b7dc133dd31c20e47a20351dec979b4e60fabb349e9ee1",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "252": {
+      "note": "The referenced transaction test definition exists in the current source.\n\nAnchor: \"test_public_closeout_commits_code_and_memory_without_acceptance_tools\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3cb51d6a619167b107b8c8836f89bd51831af1ed",
+            "content": "sha256:ac3712c88b870998ca14b349417a30d3132117794b6c0dc8fd9887c9539470b8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_transaction_only_worktree_delivery.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "253": {
+      "note": "None\n\nAnchor: \"mcp/tests/closeout_fixture_test_support.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "883313cd4c68474702899e7bd30c740a69201007",
+            "content": "sha256:80abe0eb21e28ddb8efe491f92cc756c58e8d58971b10c5eef7150dd655f7ffd",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/closeout_fixture_test_support.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "254": {
+      "note": "Closeout-input support names the same retained code/memory transaction replacement node.\n\nAnchor: \"mcp/tests/closeout_input_test_support.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "67060bab8e42a073cbacc81807f52e9d720abd6b",
+            "content": "sha256:e6dd465fbd9fa6323c66f15f40d31b4b6e242b37defd804412f3a2af1e025c3d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/closeout_input_test_support.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "255": {
+      "note": "None\n\nAnchor: \"mcp/tests/curator_coherence_test_support.py\"; \"mcp/tests/test_post_integration_cleanup_guidance.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "04b8781cc8a79476fb86d9189fd7dcf40e14f968",
+            "content": "sha256:0888b9f2578e148408739b30339ddf71876078829f021c1a01a1904273721cb5",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/curator_coherence_test_support.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "256": {
+      "note": "None",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "79ced316f57d0a3dfb3b417ac75c7e38b540b002",
+            "content": "sha256:1566b59dd465bdff92b7dc133dd31c20e47a20351dec979b4e60fabb349e9ee1",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "257": {
+      "note": "The referenced transaction test definition exists in the current source.\n\nAnchor: \"test_public_closeout_commits_code_and_memory_without_acceptance_tools\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3cb51d6a619167b107b8c8836f89bd51831af1ed",
+            "content": "sha256:ac3712c88b870998ca14b349417a30d3132117794b6c0dc8fd9887c9539470b8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_transaction_only_worktree_delivery.py"
           },
           "kind": "test"
         }
@@ -268,12 +1023,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ddd0e3086ac1594a212b04efdfca79aab6ad8e01",
+            "blob": "79ced316f57d0a3dfb3b417ac75c7e38b540b002",
             "content": "sha256:6bd63858346265c088e61fecb3321203a0ad462c2f425608430e58bb7bf26142",
             "locator": {
-              "end": 935,
+              "end": 1000,
               "kind": "line_range",
-              "start": 922
+              "start": 987
             }
           },
           "kind": "test"
@@ -285,46 +1040,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6f95ec3517f79fb1bf9d91232c1515e352657e0a",
-            "content": "sha256:18223e6fda4a46e963855f613ab3e8a58a641f0238e1f72157867c3c47537a42",
+            "blob": "79ced316f57d0a3dfb3b417ac75c7e38b540b002",
+            "content": "sha256:803cc856ef5cf9a7323000ebc0c4361c2743a74aa5335c6f9c281e275d94c2ad",
             "locator": {
-              "end": 1339,
+              "end": 1306,
               "kind": "line_range",
-              "start": 1338
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "96": {
-      "note": "Conversation-open support declares its permanent owner and real replacement contract.\n\nAnchor: \"path = \"mcp/tests/conversation_open_test_support.py\"\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "ddd0e3086ac1594a212b04efdfca79aab6ad8e01",
-            "content": "sha256:1a5a8bb4120f76db5f772f1072c403be555de878f479653a58f7c0cbab1ee196",
-            "locator": {
-              "end": 329,
-              "kind": "line_range",
-              "start": 329
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "97": {
-      "note": "Eve event support declares its permanent owner and exact consumers.\n\nAnchor: \"path = \"mcp/tests/eve_adapter_event_test_support.py\"\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "ddd0e3086ac1594a212b04efdfca79aab6ad8e01",
-            "content": "sha256:7ac8b10d1ef6b31fc7cbcbbbbd056f06a718bb3347800e4902bfe46e5c6ff144",
-            "locator": {
-              "end": 474,
-              "kind": "line_range",
-              "start": 474
+              "start": 1305
             }
           },
           "kind": "test"
@@ -336,12 +1057,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ddd0e3086ac1594a212b04efdfca79aab6ad8e01",
+            "blob": "79ced316f57d0a3dfb3b417ac75c7e38b540b002",
             "content": "sha256:ed54a755fbed1c6105c41a3a53be5406fd9fb2e09b07091b1075370d6f47125b",
             "locator": {
-              "end": 1991,
+              "end": 2083,
               "kind": "line_range",
-              "start": 1991
+              "start": 2083
             }
           },
           "kind": "test"

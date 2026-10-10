@@ -155,6 +155,119 @@
           "kind": "test"
         }
       ]
+    },
+    "14": {
+      "note": "A converted worktree locks, and an unanswered probe refuses.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "21d19e2ee5a33d08e72509f9442ab49751e30f1f",
+            "content": "sha256:c2b341a1b32b233ee06f2d9e5e1ca6f432e3512a98b01ca63e8e0989ab775859",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_converted_worktree_locks_too_and_an_unanswered_probe_refuses"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "Only a definite non-repository is unlocked.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "21d19e2ee5a33d08e72509f9442ab49751e30f1f",
+            "content": "sha256:09bc52594a04902e96d6482a082ca175014285361638bf4a4c5fd7fdd1557248",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_only_a_definite_non_repository_reads_as_holding_no_converted_memory"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "A bare repository Git cannot open refuses by name.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "21d19e2ee5a33d08e72509f9442ab49751e30f1f",
+            "content": "sha256:2bc2b425f0f364554aef6962bd40ccd62d750fab9c4f61ca5b294ab8a4369bea",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_bare_repository_git_cannot_open_refuses_by_name"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "The converting candidate is gated, never locked.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "21d19e2ee5a33d08e72509f9442ab49751e30f1f",
+            "content": "sha256:9562e96fdf3bbfa214287193ff0d97a5c78cdee9dc78e8e37287cf4fc0138c22",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_converting_candidate_is_gated_never_locked"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "18": {
+      "note": "No read selects the database of a converted tree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "21d19e2ee5a33d08e72509f9442ab49751e30f1f",
+            "content": "sha256:e9ba6eff80a4b51f831b83c7de639bb2c014cd4d57ae0af15f1ceb9f74b93e9d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_no_read_selects_the_database_of_a_converted_tree"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "19": {
+      "note": "The lock under test.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "34b7a01a614d6f22e1f7c233039dae49cb34ce72",
+            "content": "sha256:a7f9c48faf4f72c578dbc863e14dcbcaca7ea1d8f16fbdb2634512794cda9bd1",
+            "locator": {
+              "kind": "symbol",
+              "name": "cutover_lock_refusal"
+            },
+            "path": "mcp/src/agents_remember/worktrees/cutover_lock.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "One unconverted commit under both branches.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "21d19e2ee5a33d08e72509f9442ab49751e30f1f",
+            "content": "sha256:44fc3d4b551bc1610ec66f0b9dd8ca390d33832ead0f8e6fd17cd58dc0490c37",
+            "locator": {
+              "kind": "symbol",
+              "name": "_unconverted"
+            }
+          },
+          "kind": "test"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

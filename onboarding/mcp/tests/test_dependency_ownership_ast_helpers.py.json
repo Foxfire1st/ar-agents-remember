@@ -239,6 +239,145 @@
         }
       ]
     },
+    "62": {
+      "note": "Repository inputs reach their supported consumers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9da8563d8c8ebed194bc8de4eb27d292075930d0",
+            "content": "sha256:8863221f133ef7225c0c0f3364c929ef694538c609745d5b95d6aded430eb76b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_repository_inputs_reach_their_supported_consumers"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "63": {
+      "note": "The closure check over the governed inventory, and the lane-membership check.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9da8563d8c8ebed194bc8de4eb27d292075930d0",
+            "content": "sha256:9315682a1d7ceed0ed7f75b13b40162aa6c049747980241c23008a45c141901c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_assert_the_governed_inventory_is_closed"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "64": {
+      "note": "The leaf's own case module, which is why no third fixture was registered.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c0a2c0716ff604e0b11fe27d001364f53db5eac2",
+            "content": "sha256:46d9f7666cc0c7c2bb4f794db653a432b1b39222a53a3ce630ee4e6522dddbaa",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_endpoint_fixture"
+            },
+            "path": "mcp/tests/test_knowledge_review_source_endpoints.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "65": {
+      "note": "The module whose two consumer entries are the entire catalog delta.\n\nAnchor: `mcp/tests/test_knowledge_review_comparison_generation.py`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
+            "content": "sha256:d5093ad51ef26d41ad8a0389066442d6304264c8a763c37f7c07585164baecbd",
+            "locator": {
+              "end": 1214,
+              "kind": "line_range",
+              "start": 1212
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "66": {
+      "note": "The two consumer rows the leaf's module joined, and the artifact identities they belong to.\n\nAnchor: `mcp/tests/test_knowledge_review_source_content.py`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
+            "content": "sha256:414c6d603bd29aa5ab3785de8d43accd5673a4178be176205f81d51e0ccd7cf4",
+            "locator": {
+              "end": 302,
+              "kind": "line_range",
+              "start": 300
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "67": {
+      "note": "The existing unit-regression registry contains the three relationship modules.\n\nAnchor: `test_knowledge_review_relationship_movement`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "697a75039390b965929f3ba7a68c0ff8303231c3",
+            "content": "sha256:7fc8a082259e3336a317515e48bf5e4083fbaa4fe3a2324464d097654523f4e8",
+            "locator": {
+              "end": 135,
+              "kind": "line_range",
+              "start": 133
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "68": {
+      "note": "The consumer line the census derived.\n\nAnchor: `mcp/tests/test_unexplained_change_disposition.py`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
+            "content": "sha256:d08631c68d28ff196d24b937167d5f8ce046407849bc90b02306708b17f42100",
+            "locator": {
+              "end": 1450,
+              "kind": "line_range",
+              "start": 1448
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "69": {
+      "note": "The consumer lines the census derived.\n\nAnchor: `mcp/tests/test_knowledge_route_chain.py`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
+            "content": "sha256:1336e9192e751b9fdcb32036b3dee0b19f6aac25b570f972632290485bc00e86",
+            "locator": {
+              "end": 306,
+              "kind": "line_range",
+              "start": 304
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
     "7": {
       "note": "The proof must stay `test_` source outside the governed inventory.",
       "targets": [
@@ -250,6 +389,40 @@
               "kind": "symbol",
               "name": "_assert_the_proof_is_ordinary_test_source"
             }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "70": {
+      "note": "The consumer line the census derived.\n\nAnchor: `mcp/tests/test_reconsideration_surfacing.py`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
+            "content": "sha256:2b2a4bdc79feff63fe4110f8b670890332df25bdd25c50c98f625dc2415de9b1",
+            "locator": {
+              "end": 1332,
+              "kind": "line_range",
+              "start": 1330
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "71": {
+      "note": "The three artifacts those rows belong to, each an already-governed row rather than a new registration.\n\nAnchor: \"mcp/tests/diff_scope_test_support.py\"; \"mcp/tests/read_scope_test_support.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
+            "content": "sha256:01be113c054f0e99dd8aa5b5ed8dd0ca72882a657510d31044232875c04cd48f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
           },
           "kind": "test"
         }

@@ -64,6 +64,22 @@
         }
       ]
     },
+    "15": {
+      "note": "- The facts bundle and the one generic factory every refusal is built through.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "23b5c3a4d378d345aa0a00aa163d4f8a9d452341",
+            "content": "sha256:8b81b334af5fb9de7934333bc06a8ac55b9085dfbdb203777adb0fc3d783d963",
+            "locator": {
+              "kind": "symbol",
+              "name": "refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "The identifying facts and generic typed-refusal constructor.",
       "targets": [

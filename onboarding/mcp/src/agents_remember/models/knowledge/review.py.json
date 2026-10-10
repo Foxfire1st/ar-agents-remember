@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "005c44f99677f29c3777322502b77b732a3a0252",
+            "blob": "0cc1ed4aa2ead143a66f5ee6b69cf490138fd7ae",
             "content": "sha256:9df78498b185b74f9687f6b1f6b4f820995663b16f0b01d5124fd78b32aaae55",
             "locator": {
               "end": 21,
@@ -40,7 +40,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "005c44f99677f29c3777322502b77b732a3a0252",
+            "blob": "0cc1ed4aa2ead143a66f5ee6b69cf490138fd7ae",
             "content": "sha256:44969738b0b14d020aaa8b2a96d595dd3c379de488e0cb68690b3f10f742df19",
             "locator": {
               "kind": "symbol",
@@ -56,7 +56,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "005c44f99677f29c3777322502b77b732a3a0252",
+            "blob": "0cc1ed4aa2ead143a66f5ee6b69cf490138fd7ae",
             "content": "sha256:a4263b02a9d7845959117e978e35c7aeae2c02e81549e278ce3006c40481000e",
             "locator": {
               "kind": "symbol",
@@ -72,7 +72,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "005c44f99677f29c3777322502b77b732a3a0252",
+            "blob": "0cc1ed4aa2ead143a66f5ee6b69cf490138fd7ae",
             "content": "sha256:428eed53ee5c5de6afe6f6707241af38aa575b8323c254cad2d647d5ebf4ba26",
             "locator": {
               "kind": "symbol",
@@ -88,7 +88,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "005c44f99677f29c3777322502b77b732a3a0252",
+            "blob": "0cc1ed4aa2ead143a66f5ee6b69cf490138fd7ae",
             "content": "sha256:309800d1e476be02617431a5b949573576643852804a690979848579f42e621b",
             "locator": {
               "kind": "symbol",
@@ -104,7 +104,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "005c44f99677f29c3777322502b77b732a3a0252",
+            "blob": "0cc1ed4aa2ead143a66f5ee6b69cf490138fd7ae",
             "content": "sha256:f85866fb872c92ee60595940e4e9ca33e81e178dc4ae608c2c14185f7e223d49",
             "locator": {
               "kind": "symbol",
@@ -136,7 +136,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "005c44f99677f29c3777322502b77b732a3a0252",
+            "blob": "0cc1ed4aa2ead143a66f5ee6b69cf490138fd7ae",
             "content": "sha256:d231f5d80a2730aab1061832becb5f2d5f3b3bd9ead09eb7a107fa018380ad30",
             "locator": {
               "kind": "symbol",
@@ -152,7 +152,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "005c44f99677f29c3777322502b77b732a3a0252",
+            "blob": "0cc1ed4aa2ead143a66f5ee6b69cf490138fd7ae",
             "content": "sha256:6d5c31b5ab056ff9b66c2abfe30670aeeac958f52062367c544054f40015d7c4",
             "locator": {
               "kind": "symbol",
@@ -168,7 +168,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "005c44f99677f29c3777322502b77b732a3a0252",
+            "blob": "0cc1ed4aa2ead143a66f5ee6b69cf490138fd7ae",
             "content": "sha256:999cd446d09503cd2c7f5f4f09ac16680cc1c38f3c3f3ddd195e800165f10e60",
             "locator": {
               "kind": "symbol",
@@ -184,7 +184,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "005c44f99677f29c3777322502b77b732a3a0252",
+            "blob": "0cc1ed4aa2ead143a66f5ee6b69cf490138fd7ae",
             "content": "sha256:2736440ef48ef1a08cb9ab24d8b1fa8e668a260d4a7f6d59fb02ea3ba32c1b7b",
             "locator": {
               "kind": "symbol",
@@ -200,7 +200,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "005c44f99677f29c3777322502b77b732a3a0252",
+            "blob": "0cc1ed4aa2ead143a66f5ee6b69cf490138fd7ae",
             "content": "sha256:a6ded60f6de0902dd814d1c229af2628aaa97baf14d42932e23e87cb7d90bb48",
             "locator": {
               "kind": "symbol",
@@ -216,7 +216,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "005c44f99677f29c3777322502b77b732a3a0252",
+            "blob": "0cc1ed4aa2ead143a66f5ee6b69cf490138fd7ae",
             "content": "sha256:65dafa202f40ba2a5d96f2c3b652c751c562b0dcd38af89bd10f5ff56bc434b4",
             "locator": {
               "kind": "symbol",
@@ -248,7 +248,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "005c44f99677f29c3777322502b77b732a3a0252",
+            "blob": "0cc1ed4aa2ead143a66f5ee6b69cf490138fd7ae",
             "content": "sha256:60f8245e26872ab7d3cc717591296fbc7b92122d500d501f0056eed402c42b2d",
             "locator": {
               "kind": "symbol",
@@ -264,7 +264,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "005c44f99677f29c3777322502b77b732a3a0252",
+            "blob": "0cc1ed4aa2ead143a66f5ee6b69cf490138fd7ae",
             "content": "sha256:3f6ad78447f26df5cb81727e95df3e43f23cf60810c0ca2d9693c4b59ead4926",
             "locator": {
               "kind": "symbol",
@@ -280,7 +280,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "005c44f99677f29c3777322502b77b732a3a0252",
+            "blob": "0cc1ed4aa2ead143a66f5ee6b69cf490138fd7ae",
             "content": "sha256:5a1381dc54d4c371825141ff77e765db4904c35001df3db4561f1ea549facc8b",
             "locator": {
               "kind": "symbol",
@@ -322,6 +322,584 @@
             "path": "mcp/tests/test_reviewer_worklist_reads.py"
           },
           "kind": "test"
+        }
+      ]
+    },
+    "55": {
+      "note": "The module's own statement of what it owns and the five prohibitions the display's shape enforces.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0cc1ed4aa2ead143a66f5ee6b69cf490138fd7ae",
+            "content": "sha256:60f8245e26872ab7d3cc717591296fbc7b92122d500d501f0056eed402c42b2d",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeReviewPayload"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "56": {
+      "note": "The published vocabulary: the constants, the dispositions tuple, the refusal-code union and the models, with the channel vocabulary re-exported from its own module.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0cc1ed4aa2ead143a66f5ee6b69cf490138fd7ae",
+            "content": "sha256:76b4855ea420035e7e9aab5f310ee5329d05a1b7b94b2822793e5c191704fb8b",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "57": {
+      "note": "**The recorded surface version, the three pane names, `RRD:366`'s three proposed dispositions verbatim, the closed refusal-code union (seven members since 260921-ICR-L3, which added `source_content_unresolved` to the six 260915-KS-L45 left), the two-member subject-kind union, the three-member subject-presence union (`before_only`/`after_only`/`both`, ICR-R09) and the four-member side-state union — re-read at the merged candidate.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0cc1ed4aa2ead143a66f5ee6b69cf490138fd7ae",
+            "content": "sha256:bd95d32373ba4e15c7e9aaadc6c4fea3de473edd3b7c422f7c8a9e0874df4173",
+            "locator": {
+              "kind": "symbol",
+              "name": "KNOWLEDGE_REVIEW_SURFACE_VERSION"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "58": {
+      "note": "**The movement vocabulary this module re-exports in its own `__all__` (`ICR-R08@v1`): the movement, its sides and states, the authored lineage, the gaps with their codes and the labelled rename inference — declared next door beside the other payload vocabularies.**\n\nAnchor: `ReviewRelationshipMovement`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0cc1ed4aa2ead143a66f5ee6b69cf490138fd7ae",
+            "content": "sha256:edbe03f35243285fca9acdfc135895ca917d4b456d5df8c9c880b89f03dfb91c",
+            "locator": {
+              "end": 60,
+              "kind": "line_range",
+              "start": 60
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "59": {
+      "note": "The shared shape that makes an unresolved reference a displayed fact rather than a dropped or anonymous one.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0cc1ed4aa2ead143a66f5ee6b69cf490138fd7ae",
+            "content": "sha256:af027ed4e894e09815dda6c0149062fc72f5c80095ff55fb3d76f5497c1fd85c",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewUnresolvedReference"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "60": {
+      "note": "**The missing-side rule as a constructor check: text exactly when `present`, in both directions.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0cc1ed4aa2ead143a66f5ee6b69cf490138fd7ae",
+            "content": "sha256:428eed53ee5c5de6afe6f6707241af38aa575b8323c254cad2d647d5ebf4ba26",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewSideContent"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "61": {
+      "note": "The one request shape: a task context plus one of the read operation's own declared seeds, with no display version, instant or \"latest\" flag representable.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0cc1ed4aa2ead143a66f5ee6b69cf490138fd7ae",
+            "content": "sha256:309800d1e476be02617431a5b949573576643852804a690979848579f42e621b",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewSurfaceRequest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "62": {
+      "note": "The candidate reference, which carries task identities and never a filesystem path, and the comparison identity carried verbatim rather than recomputed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0cc1ed4aa2ead143a66f5ee6b69cf490138fd7ae",
+            "content": "sha256:c196c3a1861cc0be5aef37a1d6ecf071597c21ca31038aaf8e54279b5e680017",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewCandidateRef"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "63": {
+      "note": "The two per-side and per-item mechanical facts: the retained-revision count kept per side, and the field transition that states no meaning.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0cc1ed4aa2ead143a66f5ee6b69cf490138fd7ae",
+            "content": "sha256:44794991644bf94dd244b8a22e918fa4bee3abddece34b83bdbb9af9457caa11",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewRevisionGroup"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "64": {
+      "note": "The authored record displayed as the author wrote it, with no field for a computed effect, and the detection fact with no severity, verdict or author.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0cc1ed4aa2ead143a66f5ee6b69cf490138fd7ae",
+            "content": "sha256:1b78d3a1d599b8da18fb7d057c60b308593429bb2c2441351d5a1b049053a27c",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewAuthoredEffect"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "65": {
+      "note": "**The validator that refuses an anonymous verdict or an assessment that examined nothing.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0cc1ed4aa2ead143a66f5ee6b69cf490138fd7ae",
+            "content": "sha256:6d5c31b5ab056ff9b66c2abfe30670aeeac958f52062367c544054f40015d7c4",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewAssessmentDisplay"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "66": {
+      "note": "The evidence claim reference with its own authored limitations, and the observation that has no field for a sufficiency verdict.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0cc1ed4aa2ead143a66f5ee6b69cf490138fd7ae",
+            "content": "sha256:09a38e0817bee597a77b6f114bd71170232553350e4477e68fd113c39b976253",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewEvidenceLink"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "67": {
+      "note": "**The six persistent counts declared once, with the confirmed negative and the undetermined beside each other.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0cc1ed4aa2ead143a66f5ee6b69cf490138fd7ae",
+            "content": "sha256:f81dcb5356cb388fec9e9eeb62f80b7e6436d364f2bdcc36b66426ea759865f2",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewRemainingCountName"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "68": {
+      "note": "**The selected location whose missing role stays unclassified rather than guessed from a path, and which since `ICR-R08@v1` carries the preserved identity, its own recorded side, the transition, the counterpart address (only when the other side records exactly one) and the whole movement.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0cc1ed4aa2ead143a66f5ee6b69cf490138fd7ae",
+            "content": "sha256:a534925c08ceec61e373170de934a2ef1563aa0de669feb112624761dfcd2f2e",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewSourceLocation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "69": {
+      "note": "**Pane 1's own self-agreement rule: the pane's single assessment must be one of the assessments it displays, and the authored and mechanical collections keep separate element types. Pane 1's recorded selection: the optional `revision_selection` with its one-direction validator.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0cc1ed4aa2ead143a66f5ee6b69cf490138fd7ae",
+            "content": "sha256:2736440ef48ef1a08cb9ab24d8b1fa8e668a260d4a7f6d59fb02ea3ba32c1b7b",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewKnowledgePane"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "70": {
+      "note": "**The explicit revision selection the pane carries: the compared head pair, the one-sided head, or the ambiguous/unresolved non-pair — declared next door, carried here, refused beside anything but a compared subject.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0cc1ed4aa2ead143a66f5ee6b69cf490138fd7ae",
+            "content": "sha256:cbdcd572a23fc6e8182083d61d637275f0c46f2d864a4038af40681f7900f8cd",
+            "locator": {
+              "kind": "symbol",
+              "name": "revision_selection"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0cc1ed4aa2ead143a66f5ee6b69cf490138fd7ae",
+            "content": "sha256:f7109016100122eb405e40e69d136e50ea703ee31c24c40f5ada5d7968dee37f",
+            "locator": {
+              "end": 70,
+              "kind": "line_range",
+              "start": 70
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "71": {
+      "note": "**The inventory's own model, with the count checked against the list and the rule that an unrepresentable path makes the inventory measured and partial.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0cc1ed4aa2ead143a66f5ee6b69cf490138fd7ae",
+            "content": "sha256:a6ded60f6de0902dd814d1c229af2628aaa97baf14d42932e23e87cb7d90bb48",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewSourceInventory"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "72": {
+      "note": "**Pane 2: the selected locations, the traversed recorded relationships (the associations with no source address at all), the expansion, the carried partition and the three changed-path lists read from it.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0cc1ed4aa2ead143a66f5ee6b69cf490138fd7ae",
+            "content": "sha256:65dafa202f40ba2a5d96f2c3b652c751c562b0dcd38af89bd10f5ff56bc434b4",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewSourcePane"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "73": {
+      "note": "**Pane 3's two independent absence states, tied to the collections they describe, plus the availability list carried rather than inferred.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0cc1ed4aa2ead143a66f5ee6b69cf490138fd7ae",
+            "content": "sha256:ea88638d284465eef9ab8dd55effba8fd905a19b1c831ef1adcef90fc0afccf1",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewEvidencePane"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "74": {
+      "note": "The stale state that retains its previous input as a labelled value, and the rule that a current comparison has none to label.\n\nAnchor: `ReviewStaleness`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0cc1ed4aa2ead143a66f5ee6b69cf490138fd7ae",
+            "content": "sha256:55559481ca3d798fa055ca63ca2a24e28850218408768005ea9e72c95321f1ed",
+            "locator": {
+              "end": 66,
+              "kind": "line_range",
+              "start": 66
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "75": {
+      "note": "The submission state with no favourable member, and the boundary that none of the published dispositions is approval.\n\nAnchor: `ReviewSubmission`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0cc1ed4aa2ead143a66f5ee6b69cf490138fd7ae",
+            "content": "sha256:ccf5c12a07c0f15d5f1ff87995c65a8aefa7040e99ee2f077cbbd0fd72bcf9be",
+            "locator": {
+              "end": 67,
+              "kind": "line_range",
+              "start": 67
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "76": {
+      "note": "**The whole payload and its stale/submission coupling, which refuses either direction of disagreement.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0cc1ed4aa2ead143a66f5ee6b69cf490138fd7ae",
+            "content": "sha256:60f8245e26872ab7d3cc717591296fbc7b92122d500d501f0056eed402c42b2d",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeReviewPayload"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "77": {
+      "note": "The refusal that is a state and never a degraded success, and the result that carries exactly one outcome.\n\nAnchor: `ReviewRefusal`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0cc1ed4aa2ead143a66f5ee6b69cf490138fd7ae",
+            "content": "sha256:96edbd3a92d1749edcb369a3a049a094950690fa4184b3da1cd5dae7f007ec2b",
+            "locator": {
+              "end": 56,
+              "kind": "line_range",
+              "start": 56
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "78": {
+      "note": "**The catalogue's entry: a recorded identity, its own label and the presence the two snapshots give it, with no field for a path, a file, a display version, a ranking or a comparison count — the deleted `selected_item_count` was the wire carrier of the per-subject compare-to-earn-a-row mechanism.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0cc1ed4aa2ead143a66f5ee6b69cf490138fd7ae",
+            "content": "sha256:e91af29a9528470efca1f803fa9e4626bd205866b022aa34315ef527791b51c8",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewEntry"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "79": {
+      "note": "**The entry read's typed outcome, whose validators refuse a refused read that offers any entry, non-zero totals beside a refusal, and a total smaller than the page beside it — so a caller can never be handed a subject beside the statement that nothing admitted one, nor a whole catalogue that reads as a first row.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0cc1ed4aa2ead143a66f5ee6b69cf490138fd7ae",
+            "content": "sha256:5a1381dc54d4c371825141ff77e765db4904c35001df3db4561f1ea549facc8b",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewEntryListResult"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "80": {
+      "note": "**The two subject kinds declared once here, so the transport's admission tuple, the entry list and the panes cannot disagree about which identities are reviewable.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0cc1ed4aa2ead143a66f5ee6b69cf490138fd7ae",
+            "content": "sha256:5ca01335f5373b0f3df7147cd7bd29838f5e0e639cfec60e212c04538b47dedd",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewSubjectKind"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "81": {
+      "note": "**The availability list the pane carries: one entry per record class the composition read, whole and underived.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0cc1ed4aa2ead143a66f5ee6b69cf490138fd7ae",
+            "content": "sha256:7a5fbb0ba955c031a54745841891d9ff9f5bcb970536bed9d05b3489da4621ec",
+            "locator": {
+              "kind": "symbol",
+              "name": "channels"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0cc1ed4aa2ead143a66f5ee6b69cf490138fd7ae",
+            "content": "sha256:73550afe71793de4fe3fb6a45aa4d04fde3b9cbb0ecbc6e5a56c5593293c3dec",
+            "locator": {
+              "end": 940,
+              "kind": "line_range",
+              "start": 940
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "82": {
+      "note": "**The re-export that keeps every existing importer resolving while the vocabulary lives in its own module.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0cc1ed4aa2ead143a66f5ee6b69cf490138fd7ae",
+            "content": "sha256:ea88638d284465eef9ab8dd55effba8fd905a19b1c831ef1adcef90fc0afccf1",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewEvidencePane"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "83": {
+      "note": "The shared bounds and the `KnowledgeModel` base every model here uses rather than restating its own.\n\nAnchor: `KnowledgeModel`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0cc1ed4aa2ead143a66f5ee6b69cf490138fd7ae",
+            "content": "sha256:8b3964c958711484e0278040a62b6b049b6b8fca49828d3cb1c9ac58de09d70c",
+            "locator": {
+              "end": 36,
+              "kind": "line_range",
+              "start": 36
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "84": {
+      "note": "**The case that walks the whole payload schema for a field a generated conclusion could occupy.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "02f29acb662ca678a1c2f6997c6c88f631ec55ca",
+            "content": "sha256:535cb473f9f95ad83f3a13acfbb28ccc885b19c299a435b6cf5713baa9188d79",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_whole_payload_schema_has_no_field_a_generated_conclusion_could_occupy"
+            },
+            "path": "mcp/tests/test_knowledge_review_surface.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "85": {
+      "note": "**The case that asserts this module declares no record kind, no table and no status of its own.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "02f29acb662ca678a1c2f6997c6c88f631ec55ca",
+            "content": "sha256:9c1281290594bba0361c2b6c1b2421cb2cd241bfd24f88bee66760e1e0c9efef",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_surface_defines_no_record_kind_no_table_and_no_status_of_its_own"
+            },
+            "path": "mcp/tests/test_knowledge_review_surface.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "86": {
+      "note": "The case that an unassessed subject is displayed unassessed and never defaulted to compatible, and the case that a missing side is its own state.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "02f29acb662ca678a1c2f6997c6c88f631ec55ca",
+            "content": "sha256:865fd63935dd59bd9a58bb5df21fbf5a82d2f1a02bd4da96a4422d1d3e9ef1c8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_unassessed_subject_is_displayed_unassessed_and_never_defaulted_to_compatible"
+            },
+            "path": "mcp/tests/test_knowledge_review_surface.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "87": {
+      "note": "The case that a passing observation is displayed as an observation and never as invariant-satisfied, and the case that a signal carries facts and scope limitations with no severity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "02f29acb662ca678a1c2f6997c6c88f631ec55ca",
+            "content": "sha256:1f3010a0dedf0225179fea0f21b5cb03a13804c69c22f68d89b84cf5cdb795cd",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_passing_observation_is_displayed_as_an_observation_and_never_as_invariant_satisfied"
+            },
+            "path": "mcp/tests/test_knowledge_review_surface.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "88": {
+      "note": "**The two rules that were extracted out of this module and the movement that arrived beside them (`ICR-R22@v1`): `ReviewStaleness`, `ReviewSubmission` and the new `ReviewSyncMovement` are declared in the staleness module, and this module re-exports all three so its importers and tests keep resolving.**\n\nAnchor: `ReviewStaleness`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0cc1ed4aa2ead143a66f5ee6b69cf490138fd7ae",
+            "content": "sha256:55559481ca3d798fa055ca63ca2a24e28850218408768005ea9e72c95321f1ed",
+            "locator": {
+              "end": 66,
+              "kind": "line_range",
+              "start": 66
+            }
+          },
+          "kind": "code"
         }
       ]
     }

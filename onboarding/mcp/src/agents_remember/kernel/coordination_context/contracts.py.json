@@ -51,6 +51,57 @@
           "kind": "test"
         }
       ]
+    },
+    "7": {
+      "note": "Worktree contract parsing and task-root candidate logic live in the worktrees package.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2839bd8153b4ebbc2bb89e86da08e84840c848e5",
+            "content": "sha256:e1d54f44bf087f37f9f77e7991bff2e04102ffd5c47c313f982f32f935df7345",
+            "locator": {
+              "kind": "symbol",
+              "name": "load_contract"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/contract_reader.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Alias-aware leaf enclosure lookup for explicit leaf ids lives in the dedicated leaf-ref resolver.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0cf0dd9c497c0b345a5f2b31323b75e9f84de4a3",
+            "content": "sha256:c9941155b1d99610c0f55c6c769aec56ffd6ebe30cde986d0c48ef6fe84aed7d",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_leaf_enclosure_contract_for_ref"
+            },
+            "path": "mcp/src/agents_remember/worktrees/leaf_refs.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Resolver assembly consumes the optional contract payload.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6a4c244d9e980e3d26bd2fa80a02cebeb69c9965",
+            "content": "sha256:8870c09e8bed95ded0d857d9f6194cfec03b84f590d4bb2065205ae282024c46",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_coordination_context"
+            },
+            "path": "mcp/src/agents_remember/kernel/coordination_context/resolver.py"
+          },
+          "kind": "code"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

@@ -79,6 +79,22 @@
           "kind": "code"
         }
       ]
+    },
+    "8": {
+      "note": "The three locators and the discriminated union over them.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c97e0d9b28c13ea873c21c1b90f320505f736621",
+            "content": "sha256:cd62c80383c06ea6d0fdf6d3cc765e8810a3cf4e42979c3dc2fa7ebabdf4aedf",
+            "locator": {
+              "kind": "symbol",
+              "name": "FileLocator"
+            }
+          },
+          "kind": "code"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

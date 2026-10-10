@@ -55,6 +55,126 @@
         }
       ]
     },
+    "20": {
+      "note": "FEUI-L8's canonical scenario, accessibility, performance, and invariant evidence.\n\nAnchor: `# Cockpit Dashboard — Workflow Scenario Catalog`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c43e96c6af35a6657dac43bcaaf8ea1ac60ac5d",
+            "content": "sha256:d3a5fe9a7130b3987509ea35a6d2e752fe3952f95dca87b75b72d6f6d0e08562",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "docs/design/dashboard/scenario-catalog.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "The explicit upstream gaps and one-Chats cutover ruling.\n\nAnchor: `# Session cockpit upstream register and Chats decision brief`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a2d8fedd5515c6d6585486ce7062b7b41d2b117b",
+            "content": "sha256:b131763dae4a272d73ba410ad90c7c3c5e488afa24585712294e19b777de4476",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "docs/design/dashboard/session-cockpit-upstream-register.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "The bounded series closeout evidence pack.\n\nAnchor: `# Session cockpit closeout evidence`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "01d8d34e8e7f7a1181906ecdab6487335ea132f4",
+            "content": "sha256:8fda9198e3445904b9bbe767e86eec5cf48aaf72c658eda933cbe635df68ddd6",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "docs/design/dashboard/session-cockpit-closeout-evidence.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "FEUI-L8's canonical scenario, accessibility, performance, and invariant evidence.\n\nAnchor: `# Cockpit Dashboard — Workflow Scenario Catalog`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c43e96c6af35a6657dac43bcaaf8ea1ac60ac5d",
+            "content": "sha256:571957739a0ac4824a803d401da5b454fa0cd59d1edb511e3b3995d6a8b0c6a4",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "docs/design/dashboard/scenario-catalog.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "The explicit upstream gaps and one-Chats cutover ruling.\n\nAnchor: `# Session cockpit upstream register and Chats decision brief`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a2d8fedd5515c6d6585486ce7062b7b41d2b117b",
+            "content": "sha256:35e5a8db5191c50494cb56bb0c14536efff04a60ab81a7f556a37e35f3f75c61",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "docs/design/dashboard/session-cockpit-upstream-register.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "The bounded series closeout evidence pack.\n\nAnchor: `# Session cockpit closeout evidence`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "01d8d34e8e7f7a1181906ecdab6487335ea132f4",
+            "content": "sha256:f2c0d544f65e5466a0514763dc2bfe205dd441fea246970378d8af4878096b9c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "docs/design/dashboard/session-cockpit-closeout-evidence.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "26": {
+      "note": "The implementation produces/reuses memory content before refreshing its cache.\n\nAnchor: `closeout_external`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5b2a4ae3f3757a7c03f71c2afdd2082c5bf38392",
+            "content": "sha256:55322f1f3eda1fd316b55287aa4511976e9f556e2dbb9b1bfd5966f27b817235",
+            "locator": {
+              "end": 109,
+              "kind": "line_range",
+              "start": 89
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "3": {
       "note": "The closeout evidence index of the session cockpit series.",
       "targets": [

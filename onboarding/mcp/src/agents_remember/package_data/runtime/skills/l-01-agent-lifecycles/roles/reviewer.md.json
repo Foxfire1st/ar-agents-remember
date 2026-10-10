@@ -1,6 +1,483 @@
 {
   "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md",
   "realizes": [],
-  "references": {},
+  "references": {
+    "1": {
+      "note": "A leaf's declared knowledge effects are checked against its packet; a mismatch is a finding (MIK-R11).\n\nAnchor: `expectedKnowledgeEffects`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8216517a6b46f398e278ef4cb431f4ddc445a7f6",
+            "content": "sha256:6e496165f569558e9be2890f58fdbf115dfb83e1977232bf4eb80b324a7f3546",
+            "locator": {
+              "end": 106,
+              "kind": "line_range",
+              "start": 104
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The completion lens accounts for every master requirement, leaf, substep, and accepted blank-fill.\n\nAnchor: `MISSING`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8216517a6b46f398e278ef4cb431f4ddc445a7f6",
+            "content": "sha256:62868fa002fa99a54365d9725c63be70830edca8bfed2bde3ea2f93fcc24eac1",
+            "locator": {
+              "end": 185,
+              "kind": "line_range",
+              "start": 181
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Skipped or reshaped work has a decision-log trail.\n\nAnchor: `decision-log`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8216517a6b46f398e278ef4cb431f4ddc445a7f6",
+            "content": "sha256:c997d18ddc1aaf492425db68b4e7529f43ff3f834bf5cd40b9ef5ea04223508f",
+            "locator": {
+              "end": 182,
+              "kind": "line_range",
+              "start": 182
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "No unfinished leaf work is hidden inside the handover packet.\n\nAnchor: `hidden`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8216517a6b46f398e278ef4cb431f4ddc445a7f6",
+            "content": "sha256:063a6e8727e828ae33969c253d544d7f2353733529c83cde090b1f799f9110b3",
+            "locator": {
+              "end": 184,
+              "kind": "line_range",
+              "start": 182
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The scoped-implementation lens checks the builder's targeted tests and the repository-prescribed lint, formatting, typing and structural checks.\n\nAnchor: `targeted checks`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8216517a6b46f398e278ef4cb431f4ddc445a7f6",
+            "content": "sha256:8b9d892cee4dd8af94213a442a2ada6974c8afeef007c0c0be7fea2f3d309073",
+            "locator": {
+              "end": 93,
+              "kind": "line_range",
+              "start": 92
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The onboarding-vs-code lens diffs sidecars and route overviews against as-landed code and rejects history-only refreshes.\n\nAnchor: `sidecars`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8216517a6b46f398e278ef4cb431f4ddc445a7f6",
+            "content": "sha256:45ceabbe3500feb46aedc900fa419ed47b5ce7781b0faec98772988208c788d6",
+            "locator": {
+              "end": 179,
+              "kind": "line_range",
+              "start": 175
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "Route overviews are among the memory surfaces the onboarding-vs-code lens diffs against as-landed code.\n\nAnchor: `route overviews`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8216517a6b46f398e278ef4cb431f4ddc445a7f6",
+            "content": "sha256:3b323b6d14c3508d95658cca8c5b650fbe8113e9da430c280bacc27ae444fef1",
+            "locator": {
+              "end": 191,
+              "kind": "line_range",
+              "start": 187
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The reviewer's evidence reports the affected-sidecar and route-overview checks; full suites and `drift_check` run only on an explicit developer request, and the complete `memory_quality_check` is the curator's own operation.\n\nAnchor: `memory_quality_check`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8216517a6b46f398e278ef4cb431f4ddc445a7f6",
+            "content": "sha256:26604ac7d11b2f1f44d8fac71250d32a70f32b7e365a0372946b38dc8718ff31",
+            "locator": {
+              "end": 95,
+              "kind": "line_range",
+              "start": 92
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "A master-exit block returns to the owning manager as fix leaves.\n\nAnchor: `fix leaves`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8216517a6b46f398e278ef4cb431f4ddc445a7f6",
+            "content": "sha256:9c2999de71342d59c8a870bc4f58ed02e80c13aebb05b035903310059beacd3c",
+            "locator": {
+              "end": 196,
+              "kind": "line_range",
+              "start": 193
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "A super-exit block returns to the orchestrator as fix leaves.\n\nAnchor: `super-exit`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8216517a6b46f398e278ef4cb431f4ddc445a7f6",
+            "content": "sha256:9c2999de71342d59c8a870bc4f58ed02e80c13aebb05b035903310059beacd3c",
+            "locator": {
+              "end": 196,
+              "kind": "line_range",
+              "start": 193
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "Reviewer duties include writing the verdict artifact and returning a baseline block as decomposable fix leaves.\n\nAnchor: `verdict`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8216517a6b46f398e278ef4cb431f4ddc445a7f6",
+            "content": "sha256:8df72c04a9e104a0be92c76c4889dc66ffab28b96dbc2a95f56d15462bbf82a2",
+            "locator": {
+              "end": 131,
+              "kind": "line_range",
+              "start": 129
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The reviewer is short-lived and self-contained.\n\nAnchor: `# Reviewer`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8216517a6b46f398e278ef4cb431f4ddc445a7f6",
+            "content": "sha256:282b734b0cb443ae86c692c2f8957a6502b8c3bb436bfd45b499d957dffa8181",
+            "locator": {
+              "end": 10,
+              "kind": "line_range",
+              "start": 8
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "The verdict artifact and terminal/finalizer truth are the completion signal; the reviewer does not author a duplicate completion row.\n\nAnchor: `terminal/finalizer`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8216517a6b46f398e278ef4cb431f4ddc445a7f6",
+            "content": "sha256:00a4840ecec2a5de5465bcbd86e1dde908c2e942381683021be893c799901143",
+            "locator": {
+              "end": 164,
+              "kind": "line_range",
+              "start": 163
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "The role's tools are the review surface.\n\nAnchor: `read_ar_files`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8216517a6b46f398e278ef4cb431f4ddc445a7f6",
+            "content": "sha256:d1e014b596f938d74404b7cbb5258db1bddcf137c0cf4eb25496d570f1674363",
+            "locator": {
+              "end": 203,
+              "kind": "line_range",
+              "start": 200
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "The role declares the readable order — Inputs, Process, Outputs — with no inherited-sources line and no operator-knob block.\n\nAnchor: `Inputs`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8216517a6b46f398e278ef4cb431f4ddc445a7f6",
+            "content": "sha256:08afb392873a90afa9af28a851d700be0cfbcc580d675413996e335063d34843",
+            "locator": {
+              "end": 127,
+              "kind": "line_range",
+              "start": 30
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "The role keeps the two seam rubrics and the three review lenses.\n\nAnchor: `Master-exit`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8216517a6b46f398e278ef4cb431f4ddc445a7f6",
+            "content": "sha256:2076f2dc96bf9e1b94129fd6100ffd0ac19a63a7ce4224e826f79d2858bbe9ba",
+            "locator": {
+              "end": 185,
+              "kind": "line_range",
+              "start": 173
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "26": {
+      "note": "Bound explicit review intake and parent/dashboard transport.\n\nAnchor: lines 11-29",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8216517a6b46f398e278ef4cb431f4ddc445a7f6",
+            "content": "sha256:d9fa9286afaf0da384f60a84aa275296728a580a049842f37d5d4924f14a189b",
+            "locator": {
+              "end": 29,
+              "kind": "line_range",
+              "start": 11
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "27": {
+      "note": "Complete diff, required evidence, standing criteria, exact attempts and sealed findings.\n\nAnchor: lines 63-113",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8216517a6b46f398e278ef4cb431f4ddc445a7f6",
+            "content": "sha256:d6956fae5710d90f4c37d4b5315e200c1b3476d11104d3815e8d7434c5399a36",
+            "locator": {
+              "end": 113,
+              "kind": "line_range",
+              "start": 63
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "28": {
+      "note": "Permitted read surface, role/recording prohibitions and retained seam duties.\n\nAnchor: lines 158-193",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8216517a6b46f398e278ef4cb431f4ddc445a7f6",
+            "content": "sha256:531c284bec156b4c95e351c56ea3de52574444a302f08c5258f06ded05e97a78",
+            "locator": {
+              "end": 193,
+              "kind": "line_range",
+              "start": 158
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "29": {
+      "note": "Reviewer communications use role_message for delivery to another role agent, named by agent id or by role plus task references.\n\nAnchor: lines 22-28",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8216517a6b46f398e278ef4cb431f4ddc445a7f6",
+            "content": "sha256:a53e73818ce431690928b5ed7dfc2fbb4a45476fb6035cc7cfecb2531ced0d46",
+            "locator": {
+              "end": 28,
+              "kind": "line_range",
+              "start": 22
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The reviewer receives the brief as its session start.\n\nAnchor: `# Reviewer`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8216517a6b46f398e278ef4cb431f4ddc445a7f6",
+            "content": "sha256:282b734b0cb443ae86c692c2f8957a6502b8c3bb436bfd45b499d957dffa8181",
+            "locator": {
+              "end": 10,
+              "kind": "line_range",
+              "start": 8
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "30": {
+      "note": "The reviewer returns fix leaves to the seat it reports to.\n\nAnchor: lines 193-196",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8216517a6b46f398e278ef4cb431f4ddc445a7f6",
+            "content": "sha256:9c2999de71342d59c8a870bc4f58ed02e80c13aebb05b035903310059beacd3c",
+            "locator": {
+              "end": 196,
+              "kind": "line_range",
+              "start": 193
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Dashboard-owned sessions keep this seat's role fixed for the session lifetime.\n\nAnchor: `dashboard`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8216517a6b46f398e278ef4cb431f4ddc445a7f6",
+            "content": "sha256:95c75021c42665278a2ac9fdaa5250003acf964398dd41d393fe1f3ee06aebf3",
+            "locator": {
+              "end": 28,
+              "kind": "line_range",
+              "start": 26
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "A pasted brief for another role is refused and reported through the inbox.\n\nAnchor: `decider`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8216517a6b46f398e278ef4cb431f4ddc445a7f6",
+            "content": "sha256:d83f5e6c5adb49293d6c575e9cd3c3dc9112e588235dc8212964dddd9805f5f6",
+            "locator": {
+              "end": 214,
+              "kind": "line_range",
+              "start": 211
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Review retrieval is refute-or-confirm, and findings must survive attempted refutation.\n\nAnchor: `refute-or-confirm`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8216517a6b46f398e278ef4cb431f4ddc445a7f6",
+            "content": "sha256:0b27b897504acc5dd147ccda53e31e56db35bde775f71aa7beec5e18dde48e76",
+            "locator": {
+              "end": 88,
+              "kind": "line_range",
+              "start": 86
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Review criteria are not made up on the spot.\n\nAnchor: `catalogs`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8216517a6b46f398e278ef4cb431f4ddc445a7f6",
+            "content": "sha256:4b2f741a95c5999923addf98fbfc9f9779c5c8eedd5effd282c1e44e3124ba11",
+            "locator": {
+              "end": 53,
+              "kind": "line_range",
+              "start": 53
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "A first review runs the standing catalogs its review type binds.\n\nAnchor: `Baseline`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8216517a6b46f398e278ef4cb431f4ddc445a7f6",
+            "content": "sha256:a6da1c5fa19b7ad3d738e7364190700b2e54647a06b4486c024ce801a3a6b301",
+            "locator": {
+              "end": 88,
+              "kind": "line_range",
+              "start": 83
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The exploratory mandate defaults to two lenses.\n\nAnchor: `exploratory mandate`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8216517a6b46f398e278ef4cb431f4ddc445a7f6",
+            "content": "sha256:0b27b897504acc5dd147ccda53e31e56db35bde775f71aa7beec5e18dde48e76",
+            "locator": {
+              "end": 88,
+              "kind": "line_range",
+              "start": 86
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
   "schema": "ar-onboarding-file/v1"
 }

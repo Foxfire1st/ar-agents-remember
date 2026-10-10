@@ -1,11 +1,9 @@
 # mcp/src/agents_remember/models/knowledge/read_anchor.py
 
 ## Governing Overview
-
 [models route overview](../overview.md)
 
 ## Purpose
-
 **The observation one recorded source anchor earns against a requested code tree, as a value
 vocabulary.** It declares the closed set of seven resolution states an observation can reach
 (`AnchorResolutionState`, declared as a literal type) and the observation value
@@ -15,7 +13,6 @@ keep importing from `read.py`. The resolver that produces the value is
 `memory/knowledge/read_anchors.py`; this module holds no resolution, no Git call and no SQL.
 
 ## Code Commentary
-
 ### Logic
 
 **The recorded identity stays on the observation whatever the outcome.** `AnchorResolution` carries the
@@ -60,7 +57,31 @@ the resolution.
 None recorded.
 
 ## Evidence
-
 ### Repo-Internal References
 
 - `AnchorResolution` implements the retained boundary described above. [9]
+
+### Docs References
+
+No domain documentation source is configured for this repository (`system/sources.md` carries no
+`Domain Documentation` entries). The statements below are grounded in repository source only.
+
+No configured domain documentation could be checked.
+
+### Cross-Repo References
+
+No cross-repository behavior is implemented in this file.
+
+No meaningful cross-repo references found.
+
+The module is small and self-describing; the rows below name the declarations and the two places that
+give them meaning — the re-export that keeps existing imports working and the resolver that fills the
+ranges.
+
+- The published surface of the anchor-observation vocabulary. [17]
+- **One recorded anchor observed against the requested snapshot, carrying its recorded identity whatever the outcome and its structured locator.** [18]
+- **The structured region: the recorded line range or every defining extent, only on an exact recorded blob; none for a file locator.** [19]
+- **The validator refusing ranges beside any resolution other than the exact recorded blob.** [20]
+- The re-export that keeps every existing `read.py` import of these names working. [21]
+- The read item field that carries the observation onto every realization-claim item. [22]
+- The resolver that fills `resolved_ranges` for symbol and line-range locators on the exact recorded blob. [23]

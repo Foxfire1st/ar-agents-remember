@@ -19,6 +19,124 @@
         }
       ]
     },
+    "22": {
+      "note": "**The consumer-completeness oracle: the one gate the source tree can redden, and the finding it raises.**\n\nAnchor: `EvidenceLifecycleError`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "35bc38ba9dced7641747c1c7b08827c524e9ae95",
+            "content": "sha256:603de6c82338064d3b68286fbd34939c5fa75579c7549c145c822af5b2281ee2",
+            "locator": {
+              "end": 18,
+              "kind": "line_range",
+              "start": 18
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "23": {
+      "note": "The shared fixture that writes a valid synthetic catalog.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "78876383d0c7eed29dfddba7fd6978c87025eb7f",
+            "content": "sha256:454088df9dfb719c56c8d7bad86b66e88b1bc650a41be2fa928e98dcadcadf7e",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_synthetic_evidence_catalog"
+            },
+            "path": "mcp/tests/_evidence_catalog_fixture.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "24": {
+      "note": "The synthetic repository: two real consumers, one governed artifact, and a real Git repository because the oracle derives its graph from tracked files.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "35bc38ba9dced7641747c1c7b08827c524e9ae95",
+            "content": "sha256:5de854e874dcf026ff6c477281601062c1ed458f0f8fe8ee8fcde4c8fbefdcb5",
+            "locator": {
+              "kind": "symbol",
+              "name": "synthetic_repo"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "25": {
+      "note": "The lane row this module was appended to, in the lane list — appended rather than inserted mid-list.\n\nAnchor: `test_evidence_catalog_gate_boundaries`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "697a75039390b965929f3ba7a68c0ff8303231c3",
+            "content": "sha256:1d0174394ac949359d686292321739390d691490cf94038d9e8f95e831d8624a",
+            "locator": {
+              "end": 70,
+              "kind": "line_range",
+              "start": 70
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "26": {
+      "note": "The two exact-scope consumer registrations this module obliged.\n\nAnchor: `test_evidence_catalog_gate_boundaries`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
+            "content": "sha256:6a77f5f75d151f8e877400f89c3e1f5cb8f793409e8fc72805f73f03f0d822a3",
+            "locator": {
+              "end": 180,
+              "kind": "line_range",
+              "start": 178
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "27": {
+      "note": "The lane row this module was appended to, in the lane list — appended rather than inserted mid-list.\n\nAnchor: \"mcp/tests/test_evidence_catalog_gate_boundaries.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "697a75039390b965929f3ba7a68c0ff8303231c3",
+            "content": "sha256:9f38d26d538086c30e5c99f2e770c822ee3c88b5630916b5cbad2855fd06df23",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "28": {
+      "note": "The two exact-scope consumer registrations this module obliged.\n\nAnchor: \"mcp/tests/test_evidence_catalog_gate_boundaries.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4042c8362847935b7d176b4f657047150e913ce5",
+            "content": "sha256:01be113c054f0e99dd8aa5b5ed8dd0ca72882a657510d31044232875c04cd48f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
     "5": {
       "note": "The shared builder that writes the valid, canonical synthetic catalog.",
       "targets": [

@@ -247,6 +247,88 @@
           "kind": "code"
         }
       ]
+    },
+    "45": {
+      "note": "**The two members this leaf added, each for the reason written beside it in the source: the scope construction is neither the retrieval selection nor the composition traversal, and the pipeline's composition act is neither the construction nor a record read — and no refusal code was added with either.**\n\nAnchor: `construct_registered_scope`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "26599e0fe8b427bc0d290767b7b8e263cde390b6",
+            "content": "sha256:893cfbd0eeb753962fc8400408cd1caff3629e029188b161ec94866daf7d9b4e",
+            "locator": {
+              "end": 146,
+              "kind": "line_range",
+              "start": 141
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "46": {
+      "note": "The refusal value carrying code, operation, offending record and next action.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "26599e0fe8b427bc0d290767b7b8e263cde390b6",
+            "content": "sha256:c7a3c663a631295cd6520f0f7af9a8b2412d8b133a2d066dffc537a0bfb37cab",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeRefusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "47": {
+      "note": "The declared mutating-operation vocabulary, including the six L4 operations, the two L5 merge operations, the two L6 portable operations, the one L7 read operation, the one L8 comparison operation, the two L10 route operations, the seven L11 facet operations, **the two L14 detection operations, the two L18 citation-binding operations and the two L16 family-integrity operations** — fifty members, re-counted from the literal on this candidate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "26599e0fe8b427bc0d290767b7b8e263cde390b6",
+            "content": "sha256:91c0e01b1715c0a3ca629e2b554757eca67b4da8f4d6cbae650b0017b9630432",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeOperation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "48": {
+      "note": "The declared refusal vocabulary, with each member naming a distinct observable failure — the seven L4 codes, the twelve L5 merge codes, the one L6 portable code, the six L7 read codes (L8, L10, L11, L16 and L18 added none) **the one L14 detection code** and the cutover's `database_frozen` (260928-MIK-L37); forty-six members, re-counted from the literal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "26599e0fe8b427bc0d290767b7b8e263cde390b6",
+            "content": "sha256:4b1bcca9dc4387cf22200602f0fcc11f1b61e336587bae16344ac2d70dd05b48",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeRefusalCode"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "49": {
+      "note": "The refusal code of a database write into a converted tree.\n\nAnchor: `database_frozen`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "26599e0fe8b427bc0d290767b7b8e263cde390b6",
+            "content": "sha256:af50effae8539ad0a1801c118758a9ee91062ab9b6b1a42f00f154cbcfdbf09d",
+            "locator": {
+              "end": 226,
+              "kind": "line_range",
+              "start": 224
+            }
+          },
+          "kind": "code"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

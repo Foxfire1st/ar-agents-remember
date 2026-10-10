@@ -2,6 +2,71 @@
   "path": "mcp/src/agents_remember/application/knowledge_gate/direct.py",
   "realizes": [],
   "references": {
+    "10": {
+      "note": "The open leaf history files of a candidate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "501e843eb81c280a37a2da43c76b36539bc126c0",
+            "content": "sha256:1a82503335dfe34106b68ebfc42a8b0a4b73c46da93b5a15cea929aba31ba7eb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_open_histories"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The verdict; a replay is not gated; exactly one owner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "501e843eb81c280a37a2da43c76b36539bc126c0",
+            "content": "sha256:54b6cb7c466287f7ef2e9d5a01ae4b66601375e047d96cab34838ff7e1c6efa6",
+            "locator": {
+              "kind": "symbol",
+              "name": "direct_verdict"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The worklist over the series sides, failing closed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "501e843eb81c280a37a2da43c76b36539bc126c0",
+            "content": "sha256:0e49b4be19d35dc91f3c53b2777953d9cbe81b16fc4a50805dfb5a63a297bfe1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_worklist"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The route test.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a7b02b18c6ba61cd62c0caf04e1fd45e3f685253",
+            "content": "sha256:9684007c3c4abd98a35440692ff27c4bfedc74612fd78ea7e019334e29471b59",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_direct_landing_gates_names_its_leaf_closes_its_history_and_restores_on_refusal"
+            },
+            "path": "mcp/tests/test_knowledge_closeout_gate.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
     "6": {
       "note": "`_open_histories` implements the retained boundary described above.",
       "targets": [
@@ -44,6 +109,34 @@
             "locator": {
               "kind": "symbol",
               "name": "direct_verdict"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The module docstring: the four sides and the leaf a direct landing names.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "501e843eb81c280a37a2da43c76b36539bc126c0",
+            "content": "sha256:54b6cb7c466287f7ef2e9d5a01ae4b66601375e047d96cab34838ff7e1c6efa6",
+            "locator": {
+              "kind": "symbol",
+              "name": "direct_verdict"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "501e843eb81c280a37a2da43c76b36539bc126c0",
+            "content": "sha256:5ff58a4999312dc66b9f030eabe122f5111a543451b8a08dc908d5305e61579a",
+            "locator": {
+              "end": 18,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"

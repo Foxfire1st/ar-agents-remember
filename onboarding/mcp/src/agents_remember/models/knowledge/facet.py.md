@@ -1,15 +1,12 @@
 # mcp/src/agents_remember/models/knowledge/facet.py
 
 ## Governing Overview
-
 [models route overview](../overview.md)
 
 ## Purpose
-
 The retained attachment-endpoint vocabulary and derived-index column mapping. AttachmentEndpointKind closes invariant_revision, family_revision, source_anchor and realization_claim. Route is deliberately absent because the index envelope has its own governing-route association.
 
 ## Code Commentary
-
 ### Logic
 
 ENDPOINT_COLUMNS maps each endpoint kind to its facet_attachment column. This is reader vocabulary: it names the checked column group an attachment row resolves, without writing a row or classifying a facet.
@@ -26,7 +23,6 @@ ENDPOINT_COLUMNS maps each endpoint kind to its facet_attachment column. This is
 Canonical database facet payloads, schema/command registries, authored facet/explanation requests and receipts were retired. The prior distinction between authored content and provenance, and diagnostic guidance and a verdict, remains relevant to text records; removed classes here no longer enforce it. A retained endpoint mapping grants no canonical write admission.
 
 ## Evidence
-
 ### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no

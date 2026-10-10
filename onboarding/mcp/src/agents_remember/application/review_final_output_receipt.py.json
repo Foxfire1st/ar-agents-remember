@@ -131,6 +131,167 @@
           "kind": "code"
         }
       ]
+    },
+    "40": {
+      "note": "The one durable file-name prefix, one file per leaf, generation and phase.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6a81a8342eae21ae87cc564a14db157d557fb56b",
+            "content": "sha256:98eb5c3cc7e8e33e862125f811e6ea1901d019b0a34f55d56f62e2108cafa8d9",
+            "locator": {
+              "kind": "symbol",
+              "name": "FINAL_OUTPUT_RECEIPTS_PREFIX"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "41": {
+      "note": "One published receipt: the durable artifact, the record, and the read-back that proves it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6a81a8342eae21ae87cc564a14db157d557fb56b",
+            "content": "sha256:4801ee3620a2e30454201127bb51f50357b1cb0f6bbec019867c2ed34089eb9d",
+            "locator": {
+              "kind": "symbol",
+              "name": "FinalOutputReceiptPublication"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "42": {
+      "note": "The one durable destination a phase publishes to.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6a81a8342eae21ae87cc564a14db157d557fb56b",
+            "content": "sha256:bde7f928b9e9f8c5d0bcf12150daa9806cfc02dff9082c6086e5dec5e0d02f5a",
+            "locator": {
+              "kind": "symbol",
+              "name": "receipt_file_name"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "43": {
+      "note": "**Measuring one phase and publishing it: the owners' values, the read-back, and `replaced_existing` rather than a hidden rewrite.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6a81a8342eae21ae87cc564a14db157d557fb56b",
+            "content": "sha256:05efdacdc397a149b12bffb084cd3876672db3b1d546e9749087545656583ab2",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_final_output_receipt"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "44": {
+      "note": "**The prepared-work projection: the one comparison it makes, and `None` rather than `True` when either side is unknown.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6a81a8342eae21ae87cc564a14db157d557fb56b",
+            "content": "sha256:6eec436262588b5cffe89cb35db0908fb3f55a1197c4ccab8c114aa1f43188a2",
+            "locator": {
+              "kind": "symbol",
+              "name": "final_output_selection_block"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "45": {
+      "note": "**The three attachments and the `ok`-plus-a-real-commit gate that keeps a failed transaction from carrying a receipt.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6a81a8342eae21ae87cc564a14db157d557fb56b",
+            "content": "sha256:5715caff8976ea9ceb48eb569b7f41dcf21acf0ab6535183fc1bdcedd63465d4",
+            "locator": {
+              "kind": "symbol",
+              "name": "attach_closeout_receipt"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "46": {
+      "note": "**The never-raising entry point and its three states, including `not-applicable` for a series contract.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6a81a8342eae21ae87cc564a14db157d557fb56b",
+            "content": "sha256:0755bde72787c5f080f5975dfd50b516169d077e1850581222d265b563ae25aa",
+            "locator": {
+              "kind": "symbol",
+              "name": "final_output_result_block"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "47": {
+      "note": "**The three production call sites: closeout preview, closeout apply and integration.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6a81a8342eae21ae87cc564a14db157d557fb56b",
+            "content": "sha256:5715caff8976ea9ceb48eb569b7f41dcf21acf0ab6535183fc1bdcedd63465d4",
+            "locator": {
+              "kind": "symbol",
+              "name": "attach_closeout_receipt"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "48": {
+      "note": "**The reopen owner's fourth channel, which is what makes the reader a production consumer.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6a81a8342eae21ae87cc564a14db157d557fb56b",
+            "content": "sha256:af0d4ce4ccbe57ecf131b9efd3ef88b378ab5821256ccf884cfe1b1e31fdfe97",
+            "locator": {
+              "kind": "symbol",
+              "name": "FinalOutputReceiptRead"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "49": {
+      "note": "The durable-evidence pair every receipt is published and read back through.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a53c6f42e92d352bb02456ae4a50a3b52c58e2e4",
+            "content": "sha256:97189e515d2b74227fd659bbd308186abc5b49de8171ba308d9b45a013742c38",
+            "locator": {
+              "kind": "symbol",
+              "name": "publish_durable_evidence"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/durable_evidence.py"
+          },
+          "kind": "code"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

@@ -22,6 +22,12 @@ Canonical skills/l-01-agent-lifecycles/operations/implementation.md owns the ins
 
 Leave the candidate uncommitted. No Worker self-acceptance, independent Reviewer work, Curator writes, closeout, merge or push. Put developer questions in the own chat or send a blocker to the actual bound parent; keep the same task after uncertainty.
 
+## Code Commentary
+
+### Todos
+
+None recorded.
+
 ## Evidence
 
 ### Repo-Internal References
@@ -29,3 +35,21 @@ Leave the candidate uncommitted. No Worker self-acceptance, independent Reviewer
 | Finding | Anchor | References |
 | --- | --- | --- |
 | Worker write scope, truthful report and uncommitted handoff. | lines 3-7 | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/implementation.md:3-7 |
+
+### Docs References
+
+No external or domain documentation governs this repository-local instruction file; it is canonical
+repository prose consumed by the skill router.
+
+No relevant documentation found after checking live sources.
+
+### Repo-Internal References
+
+- The operation block's declared purpose, source path, and applicable roles. [1]
+- The canonical source of this block. [2]
+
+### Cross-Repo References
+
+No sibling-repository contract defines this instruction file.
+
+No meaningful cross-repo references found.

@@ -77,6 +77,88 @@
         }
       ]
     },
+    "31": {
+      "note": "The `unavailable` value: an absence reported with its reason and without an agreement clause.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3a7a51167bc4342c1d0cd79fee92196b7ae12b14",
+            "content": "sha256:a75184e78b1ecde6fd6c06f44ba18991381752545847c339e3e149ebe30e8cae",
+            "locator": {
+              "kind": "symbol",
+              "name": "_unavailable"
+            },
+            "path": "mcp/src/agents_remember/application/review_sync_movement.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "32": {
+      "note": "One accepted record projected, with resolved identities carried exactly on the channel that moved.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3a7a51167bc4342c1d0cd79fee92196b7ae12b14",
+            "content": "sha256:d40a79190a281a59a50b462bec2156b444a6377fa1054cfa67aa77438903ce25",
+            "locator": {
+              "kind": "symbol",
+              "name": "_project"
+            },
+            "path": "mcp/src/agents_remember/application/review_sync_movement.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "33": {
+      "note": "The record model and its self-consistency validator the projected movement reads.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a3c76aa75aa29226350c1d16fe7d5613c131e5ab",
+            "content": "sha256:3af0d133ba3072b1d0938761908e53b734e53ed87a01d6d6fd32edca254d6ad9",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewSyncRebinding"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review_sync_rebinding.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "34": {
+      "note": "The production sync tool whose payload the read-side block is attached to.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1cde4225b75d74c141b4c97f8fd78f2499ce6028",
+            "content": "sha256:350d0d6985d73d679254b267097841715e6a0c2f6c0b8280e9721b5c1d70eb2b",
+            "locator": {
+              "end": 375,
+              "kind": "line_range",
+              "start": 371
+            },
+            "path": "mcp/src/agents_remember/application/worktree_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e1d40f3cd8b8ad7c20b47ba43bf08632f20a09c5",
+            "content": "sha256:c2d699400575ad6ab78c30a6441b8243181d27c8922437c6704286cde095c593",
+            "locator": {
+              "end": 235,
+              "kind": "line_range",
+              "start": 218
+            },
+            "path": "mcp/src/agents_remember/application/review_sync_rebinding.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "5": {
       "note": "Exact memory input movement and staleness fold.",
       "targets": [

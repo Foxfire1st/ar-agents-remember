@@ -33,6 +33,24 @@
           "kind": "test"
         }
       ]
+    },
+    "27": {
+      "note": "The lane row this module was registered under, inside the array whose own key declares the classification.\n\nAnchor: `test_knowledge_review_comparison_generation`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e6cd30be07fa6a435465d02ac4fb9feb7e1bbc8",
+            "content": "sha256:8b2f74e3b128e63ee59f6931d5d72751705a6ffc61e56d7ff1719aa7f74df984",
+            "locator": {
+              "end": 129,
+              "kind": "line_range",
+              "start": 129
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

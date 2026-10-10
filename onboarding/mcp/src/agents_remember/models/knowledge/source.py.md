@@ -7,21 +7,21 @@
 ## Purpose
 
 Shared source locator values: a whole file, an inclusive one-based line range, or a qualified symbol. `SourceLocator` is their discriminated union.
-
 ## Code Commentary
 
 ### Logic
 
 `LineRangeLocator` refuses an end preceding its start; `SymbolLocator` requires nonblank language and qualified name. The symbol reader uses the shipped extractor over recorded bytes, reports an unbound name as a mismatch and an unavailable grammar as unsupported. Failure to resolve a locator does not erase its claim.
+### Conventions
 
+A stored locator is a well-formed record even when no resolver currently supports it: a symbol locator remains
+readable after the symbol moves, and losing resolvability never erases the claim.
 ### Invariants And Boundaries
 
 This module performs no I/O. Canonical Git-blob identity and source-anchor draft/stored models and their row-writing APIs are retired under MIK-R26; no anchor writer is replaced by a locator value. Recorded locators remain readable values even when a reader cannot resolve them.
-
 ### Todos
 
 None recorded.
-
 ## Evidence
 
 ### Docs References
@@ -46,3 +46,4 @@ The later requirement packets this vocabulary is declared shared with: requireme
 No cross-repository behavior is implemented in this file.
 
 No meaningful cross-repo references found.
+- The three locators and the discriminated union over them. [8]

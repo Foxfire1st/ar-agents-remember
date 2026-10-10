@@ -115,6 +115,200 @@
           "kind": "test"
         }
       ]
+    },
+    "23": {
+      "note": "The new module's scope statement: heads from authored successors, the six load-bearing properties, and the fault-injection disclosure.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4dfb58bf4430757ad55e934aa37cc7bc6ed0f69c",
+            "content": "sha256:c339878c1eb6da08c3ba21d3b8452e19bce0c046adf093cb9e7de01d894aa2d6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_select"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "24": {
+      "note": "The module's own lane declaration, which is what makes the classification its own rather than a budget convenience.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4dfb58bf4430757ad55e934aa37cc7bc6ed0f69c",
+            "content": "sha256:0753257dc2b79f881f380b8681aa5ded3b4e356b794086776ece0c5b7a215bb4",
+            "locator": {
+              "kind": "symbol",
+              "name": "pytestmark"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "25": {
+      "note": "The fixed recorded statements every authored revision carries, so a head's text is assertable.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4dfb58bf4430757ad55e934aa37cc7bc6ed0f69c",
+            "content": "sha256:c596aaa7f3a6c0d6d0714e2b10874362d78c6842a1c1b1c87618a60a62171246",
+            "locator": {
+              "kind": "symbol",
+              "name": "STATEMENTS"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "26": {
+      "note": "The adapter's own function under test, called exactly as `compose_review` calls it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4dfb58bf4430757ad55e934aa37cc7bc6ed0f69c",
+            "content": "sha256:c339878c1eb6da08c3ba21d3b8452e19bce0c046adf093cb9e7de01d894aa2d6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_select"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "27": {
+      "note": "The two chain defaults with exact selected revision ids: `r1`-vs-`r3` and the advanced `r2`-vs-`r3`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4dfb58bf4430757ad55e934aa37cc7bc6ed0f69c",
+            "content": "sha256:a485a4566081992cffff071e12917c3dcc0dd65ad82e3b634a583ef5d63ad26d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_unique_chain_defaults_to_the_first_before_head_versus_the_last_after_head"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "28": {
+      "note": "Selectable history: the default still compares the heads while `r2` is compared on demand through the per-side explicit selector with its own recorded text.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4dfb58bf4430757ad55e934aa37cc7bc6ed0f69c",
+            "content": "sha256:cd76141f3174b3a3164780aafdd29aa22e1a31561ce8dd1ba900d1b37e436a69",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_intermediate_revision_stays_selectable_history"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "29": {
+      "note": "The two fork ambiguities: both heads listed, no pair, the statement naming the choice left to the reader.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4dfb58bf4430757ad55e934aa37cc7bc6ed0f69c",
+            "content": "sha256:c9ed8b97c386d72bde00821b35ce2bf801f54bd89b914249d7c3f3f8711948b4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_fork_on_the_after_side_is_an_explicit_ambiguity"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "30": {
+      "note": "The known-empty side: a removal under the R06 contract with the before head recorded and the after side absent.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4dfb58bf4430757ad55e934aa37cc7bc6ed0f69c",
+            "content": "sha256:5814a0dc41fc56acea744067ad44e77b812aa343eef92e6b368830deb305ca91",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_known_empty_after_side_stays_a_removal_with_the_before_head_recorded"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "31": {
+      "note": "The two lineage failures: a successor cycle and a dangling authored edge, each unresolved with no pair and the reason named.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4dfb58bf4430757ad55e934aa37cc7bc6ed0f69c",
+            "content": "sha256:3ddd0afb074437b7f09cdf9d25b2863fd9088d241480e4d1f3c08b876e4b2396",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_successor_cycle_is_unresolved_and_names_no_pair"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "32": {
+      "note": "Order-independence: the successor relation beats sorted position.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4dfb58bf4430757ad55e934aa37cc7bc6ed0f69c",
+            "content": "sha256:6f17e1bb369bdf32d2e544d24c926fab90f69e9859a805f3ff97b169a515ac1e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_heads_come_from_successors_not_from_sorted_order"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "33": {
+      "note": "The pane case: the served payload records the compared head pair and renders the heads' own recorded statements as `present`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4dfb58bf4430757ad55e934aa37cc7bc6ed0f69c",
+            "content": "sha256:08dcdf36572af45fba09a070f6f216091fb71b547f8b6bb146f8952e871c9761",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_review_pane_renders_the_selected_head_pairs_own_statements"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "34": {
+      "note": "The lane row, inserted mid-list in the alphabetical knowledge run.\n\nAnchor: `test_knowledge_review_revision_selection`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e6cd30be07fa6a435465d02ac4fb9feb7e1bbc8",
+            "content": "sha256:ca0181cb2687cc93f7d2ddab0b83e2d688779fdfad7c0f7e2aa50a3da01d612f",
+            "locator": {
+              "end": 136,
+              "kind": "line_range",
+              "start": 136
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

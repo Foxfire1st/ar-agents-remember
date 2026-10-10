@@ -115,6 +115,223 @@
           "kind": "code"
         }
       ]
+    },
+    "21": {
+      "note": "The serving lifetime owns one completion-relative, non-overlapping observation attempt that sleeps after each call returns, including a failed one.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d39e4bbddf8ce6294103fcfb45ac4757adc1d5c6",
+            "content": "sha256:4c9a6e5b80ceb857b39b5318359b25a7ec8df7cde187f806408f6812d4518198",
+            "locator": {
+              "kind": "symbol",
+              "name": "_terminal_observation_loop"
+            },
+            "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "That attempt cadence is the sweeper's own starting-row interval constant, read at its declaration.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "93fcb1e2ab08983fffc181554360deab4805da6d",
+            "content": "sha256:df35871babd673fe66debf42ab5d27f2e60c9c2c859d50b3ab6c88951e483ec6",
+            "locator": {
+              "kind": "symbol",
+              "name": "DEFAULT_STARTING_SWEEP_INTERVAL_SECONDS"
+            },
+            "path": "mcp/src/agents_remember/serving/terminal_liveness.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "The lifespan creates the observer unconditionally and cancels/awaits it with the other background loops, and it takes the one pre-serve observation prime before the projection is built.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d39e4bbddf8ce6294103fcfb45ac4757adc1d5c6",
+            "content": "sha256:b95e5843750b24be7993406c83a7eb89f34e5b629c83165b2ed13b0f3b9cc1d4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_serving_lifespan"
+            },
+            "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "The sweeper keeps its own starting-row window and ten-second full-sweep limit behind `refresh`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "93fcb1e2ab08983fffc181554360deab4805da6d",
+            "content": "sha256:ecf9805e5170a4d00f3b6f3490b33284da3f03a5a6d367381d719c50eb6ed2e4",
+            "locator": {
+              "kind": "symbol",
+              "name": "refresh"
+            },
+            "path": "mcp/src/agents_remember/serving/terminal_liveness.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "The module drives the real lifespan finalizer, the real sweeper, and its cadence cases with a virtual clock and no HTTP surface; every absolute call index counts the pre-serve prime as call 1.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "87c912f0b50c9d653b8106aaaed6acb58c8b7df8",
+            "content": "sha256:8110f3d32520776a99626a049f899a9048d26e77a1cc8a9e846c08a59010b537",
+            "locator": {
+              "kind": "symbol",
+              "name": "ServingObservationLoopTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "26": {
+      "note": "One failed pass is isolated: the owner stays scheduled, five sibling loops and the HTTP surface survive, nothing durable of its own is published, the retry resumes from the current catalog, and cancellation still ends the task.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "87c912f0b50c9d653b8106aaaed6acb58c8b7df8",
+            "content": "sha256:3843bd7d787040e12e63974061170d0788ff0a614dee99ffc8c5703e51d3fd56",
+            "locator": {
+              "kind": "symbol",
+              "name": "ServingObservationFailureIsolationTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "27": {
+      "note": "The failure boundary is `except Exception` and therefore cannot absorb cancellation, because `CancelledError` is a `BaseException`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d39e4bbddf8ce6294103fcfb45ac4757adc1d5c6",
+            "content": "sha256:4c9a6e5b80ceb857b39b5318359b25a7ec8df7cde187f806408f6812d4518198",
+            "locator": {
+              "kind": "symbol",
+              "name": "_terminal_observation_loop"
+            },
+            "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "28": {
+      "note": "The like-scoped exclusion that keeps the R11 identity exact while accounting for the one row R17 must rewrite on every completed observer call.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "87c912f0b50c9d653b8106aaaed6acb58c8b7df8",
+            "content": "sha256:baea31497d3f514c34c478c6ef5d772abb503cf72cde4b20ef5c16dfc3f9dfef",
+            "locator": {
+              "kind": "symbol",
+              "name": "_durable_tree_without_observer_health"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "29": {
+      "note": "The health row's own path and the category a failed steady pass must publish, asserted by the failure case.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f8ee117267c48931ecea44368c9e27287ce687b5",
+            "content": "sha256:dbdfa6727127384cc5ce99f0f61793ae4e607963a30ed1ea8788f8f0ea164a62",
+            "locator": {
+              "kind": "symbol",
+              "name": "terminal_observer_health_path"
+            },
+            "path": "mcp/src/agents_remember/serving/terminal_observer_health.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "30": {
+      "note": "The shared fixture and its ordered `startup` witness, imported by the startup-prime module as well as used here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "87c912f0b50c9d653b8106aaaed6acb58c8b7df8",
+            "content": "sha256:dbf9d65c5a31bd10e102173aacdb227712535c8809f80c7536bcd4296f8db3bf",
+            "locator": {
+              "kind": "symbol",
+              "name": "_ServingFixture"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "31": {
+      "note": "The probe's parkable inner callable, used to place a slow pass on a chosen invocation rather than always on the first.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "87c912f0b50c9d653b8106aaaed6acb58c8b7df8",
+            "content": "sha256:dffe0ad14c2d1fd5cd2f56897031e17662ad0641893ff2c17386400efaa4dc52",
+            "locator": {
+              "kind": "symbol",
+              "name": "_Gate"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "32": {
+      "note": "The sibling module that owns the pre-serve prime's own ordering contract and imports this fixture.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "070e626689df1de7f2263a8f16b96bc133daff0a",
+            "content": "sha256:e8d0fba1e71f9924d1341ae926f5e91138ccff69f56318b083df2846a3d72208",
+            "locator": {
+              "kind": "symbol",
+              "name": "ServingStartupPrimeTests"
+            },
+            "path": "mcp/tests/test_serving_startup_prime.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "33": {
+      "note": "The candidate classifies this module once, in the explicit unit-regression lane.\n\nAnchor: `test_serving_observation_loop`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e6cd30be07fa6a435465d02ac4fb9feb7e1bbc8",
+            "content": "sha256:2d49413e5ade6f1518beff74d908be6c5e2ae361db5f17b028c96822bfb2058a",
+            "locator": {
+              "end": 256,
+              "kind": "line_range",
+              "start": 252
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

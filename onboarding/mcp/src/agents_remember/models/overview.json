@@ -3305,7 +3305,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b7301ab8d7c0d460acaec4bc6051a0e07a8304a3",
+            "blob": "8eddf9a60675e813e76cdffb4719bc8f0f565b78",
             "content": "sha256:4dee800a8bb13c6e5f68f405f9021616ec9631665e2fe76bad24c4a958c708ca",
             "locator": {
               "kind": "symbol",
@@ -3322,12 +3322,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b7301ab8d7c0d460acaec4bc6051a0e07a8304a3",
+            "blob": "8eddf9a60675e813e76cdffb4719bc8f0f565b78",
             "content": "sha256:0bcde5fce6f90d8dd1ecf427c7cbc0351264dfceb67ad75589ada51de0950c2a",
             "locator": {
-              "end": 399,
+              "end": 415,
               "kind": "line_range",
-              "start": 392
+              "start": 408
             },
             "path": "mcp/src/agents_remember/models/knowledge_files/history.py"
           },
@@ -3340,7 +3340,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b7301ab8d7c0d460acaec4bc6051a0e07a8304a3",
+            "blob": "8eddf9a60675e813e76cdffb4719bc8f0f565b78",
             "content": "sha256:2799b0cbe1e743ea523b7593ebb8498618c81f604095f8e51f25f9e61aa6cac4",
             "locator": {
               "kind": "symbol",
@@ -3450,7 +3450,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b7301ab8d7c0d460acaec4bc6051a0e07a8304a3",
+            "blob": "8eddf9a60675e813e76cdffb4719bc8f0f565b78",
             "content": "sha256:274273b127cd7bae61dbedb33794d3d26a4da04425a05a43b2138f987a38aad7",
             "locator": {
               "kind": "symbol",
@@ -3484,7 +3484,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b7301ab8d7c0d460acaec4bc6051a0e07a8304a3",
+            "blob": "8eddf9a60675e813e76cdffb4719bc8f0f565b78",
             "content": "sha256:2a6098f81a2571808253d02c5ba685e568e3fd6f3114a9a6cee85b651a2630dc",
             "locator": {
               "kind": "symbol",
@@ -3714,18 +3714,86 @@
         }
       ]
     },
+    "287": {
+      "note": "`TaskReopenResponse` lives in `task_doc.py` while keeping the `WorktreeCommandResponse` shape.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6f54fd6f338847f19a73a83a3ee4294c2b44e009",
+            "content": "sha256:6038ea35a7ffb093ab5e3f8084150b0e70be83ba152a5b957ba52622e78e7ff8",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskReopenResponse"
+            },
+            "path": "mcp/src/agents_remember/models/task_doc.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "288": {
+      "note": "`worktree_checkpoint_landing` joins the `NextTool` vocabulary; its preview and refusal both emit it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6d887d74ea146178a0f34836a4a256d9d754071e",
+            "content": "sha256:552b61eb9a0a2ae154ada3a2559836a5a86a23ef82ab6ffe58489ada743df63a",
+            "locator": {
+              "kind": "symbol",
+              "name": "NextTool"
+            },
+            "path": "mcp/src/agents_remember/models/worktree.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "289": {
+      "note": "`PUBLIC_TOOLS` is one tuple with a single definition, re-exported unchanged.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8e8f924f3bcf2e178299af15d0d60b6c338fd98c",
+            "content": "sha256:3a96ecef0425d31c3456d39a606fe9781d1b5bc4b220351fe6d6af359f1f4975",
+            "locator": {
+              "kind": "symbol",
+              "name": "PUBLIC_TOOLS"
+            },
+            "path": "mcp/src/agents_remember/models/tools/public_roster.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "29": {
       "note": "The onboarding-trace row and its `markers` list.",
       "targets": [
         {
           "anchor": {
-            "blob": "b7301ab8d7c0d460acaec4bc6051a0e07a8304a3",
+            "blob": "8eddf9a60675e813e76cdffb4719bc8f0f565b78",
             "content": "sha256:855ab7ba95c83a62a5bd9718e34b68e4af6847299fb4b7f68d0c1c2e53bf0679",
             "locator": {
               "kind": "symbol",
               "name": "OnboardingTraceRow"
             },
             "path": "mcp/src/agents_remember/models/knowledge_files/history.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "290": {
+      "note": "The worktree response declares the next-move triple and refuses any `nextTool` outside `PUBLIC_TOOLS`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6d887d74ea146178a0f34836a4a256d9d754071e",
+            "content": "sha256:2b53233df4625503e4879e38c3fc0c5019bd748a0acc0843a62721ded74b16ca",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_registered_public_next_tool"
+            },
+            "path": "mcp/src/agents_remember/models/worktree.py"
           },
           "kind": "code"
         }
@@ -3951,7 +4019,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b7301ab8d7c0d460acaec4bc6051a0e07a8304a3",
+            "blob": "8eddf9a60675e813e76cdffb4719bc8f0f565b78",
             "content": "sha256:855ab7ba95c83a62a5bd9718e34b68e4af6847299fb4b7f68d0c1c2e53bf0679",
             "locator": {
               "kind": "symbol",
@@ -4050,7 +4118,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b7301ab8d7c0d460acaec4bc6051a0e07a8304a3",
+            "blob": "8eddf9a60675e813e76cdffb4719bc8f0f565b78",
             "content": "sha256:351ca76594016af73163b5744b84f92ac9ea626b79d1252cbe5dddff5500cafa",
             "locator": {
               "kind": "symbol",
@@ -4062,7 +4130,7 @@
         },
         {
           "anchor": {
-            "blob": "b7301ab8d7c0d460acaec4bc6051a0e07a8304a3",
+            "blob": "8eddf9a60675e813e76cdffb4719bc8f0f565b78",
             "content": "sha256:621bc2e6a508d74aa5f647066d6609eb5b704b98b1ae0c35578a234bf946e695",
             "locator": {
               "kind": "symbol",
@@ -4079,12 +4147,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b7301ab8d7c0d460acaec4bc6051a0e07a8304a3",
+            "blob": "8eddf9a60675e813e76cdffb4719bc8f0f565b78",
             "content": "sha256:8fadb4ca161d335390177bbc2a171c5cbdfac023b5494b2a73c2dd45a37c70a0",
             "locator": {
-              "end": 396,
+              "end": 412,
               "kind": "line_range",
-              "start": 396
+              "start": 412
             },
             "path": "mcp/src/agents_remember/models/knowledge_files/history.py"
           },
@@ -4393,7 +4461,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b7301ab8d7c0d460acaec4bc6051a0e07a8304a3",
+            "blob": "8eddf9a60675e813e76cdffb4719bc8f0f565b78",
             "content": "sha256:b297338c0e33a8419088ba8d4744a1f9dcfceecfb4895f5f8cfde191bb2ba85d",
             "locator": {
               "kind": "symbol",
@@ -4410,12 +4478,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b7301ab8d7c0d460acaec4bc6051a0e07a8304a3",
+            "blob": "8eddf9a60675e813e76cdffb4719bc8f0f565b78",
             "content": "sha256:ba79991de34ee7f95287408b481cc14936a2a2ad73ce7634169ae4f9ecec85e1",
             "locator": {
-              "end": 397,
+              "end": 413,
               "kind": "line_range",
-              "start": 397
+              "start": 413
             },
             "path": "mcp/src/agents_remember/models/knowledge_files/history.py"
           },
@@ -4846,7 +4914,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b7301ab8d7c0d460acaec4bc6051a0e07a8304a3",
+            "blob": "8eddf9a60675e813e76cdffb4719bc8f0f565b78",
             "content": "sha256:d3e54223a5cf8e1c583975d19d64357ac9e83e202c04e318830a33f39f3eb24a",
             "locator": {
               "kind": "symbol",
@@ -4858,12 +4926,12 @@
         },
         {
           "anchor": {
-            "blob": "b7301ab8d7c0d460acaec4bc6051a0e07a8304a3",
+            "blob": "8eddf9a60675e813e76cdffb4719bc8f0f565b78",
             "content": "sha256:30eef198dc125e95c9dcc355bffb786e3af9027b747f4704fdd489a3bd964cea",
             "locator": {
-              "end": 398,
+              "end": 414,
               "kind": "line_range",
-              "start": 398
+              "start": 414
             },
             "path": "mcp/src/agents_remember/models/knowledge_files/history.py"
           },
@@ -5226,7 +5294,7 @@
         },
         {
           "anchor": {
-            "blob": "d51fb39c7118e4dfa589dd4c72808a49ace4d4a1",
+            "blob": "123c7eaf256393182681706fb3f5b80a98a47a12",
             "content": "sha256:3a67c503a36c49b1855b27723da3cbe83d56b32bd609117d16bd301e6f052bf4",
             "locator": {
               "kind": "symbol",

@@ -18,6 +18,23 @@
           "kind": "code"
         }
       ]
+    },
+    "2": {
+      "note": "Workflow step 3 requires an authored rationale on every hand-off target (generated copy).\n\nAnchor: `realization_rationale_absent`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dfff2166cfd50ada8f20c83d1a2a030379df4511",
+            "content": "sha256:7609bf9bf533d1d97de5ff66a239816226b4fe6de5e422dedb3d30e9947b32ce",
+            "locator": {
+              "end": 109,
+              "kind": "line_range",
+              "start": 105
+            }
+          },
+          "kind": "code"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

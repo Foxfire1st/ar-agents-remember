@@ -19,6 +19,100 @@
         }
       ]
     },
+    "11": {
+      "note": "Idempotence and content preservation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1d8c1480b31c6606fd6a2e4ba661fcd296cf202a",
+            "content": "sha256:a1338079a9ad7b07014e6231cb17a13f3b612bf23432e87eaa3012c263f1499e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_formatter_is_idempotent_and_preserves_content"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "Only declared positions are sorted.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1d8c1480b31c6606fd6a2e4ba661fcd296cf202a",
+            "content": "sha256:8541b33337e09e7893cfebe2f435692d357238c8c9ac4eec5066bfc39961bdff",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_only_identified_entry_positions_are_sorted"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "Content-changing input is refused.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1d8c1480b31c6606fd6a2e4ba661fcd296cf202a",
+            "content": "sha256:831e34a9dc6775dea664bc8d3f172ba9987a5d15bda92b18b2de19d646fc48fc",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_formatter_refuses_input_it_cannot_reformat_without_changing_content"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "1d8c1480b31c6606fd6a2e4ba661fcd296cf202a",
+            "content": "sha256:ccdb3577de53514bff4082230da5412a6e8697144893f9a14d59d8bf3dfb832a",
+            "locator": {
+              "end": 86,
+              "kind": "line_range",
+              "start": 80
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "The command's exit codes and skip rules.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1d8c1480b31c6606fd6a2e4ba661fcd296cf202a",
+            "content": "sha256:218d5b1303ee29ab8c8f199c4965e801ccad2985a0d147ce67a32543ee9c4701",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_knowledge_format_command_checks_rewrites_and_skips_caches"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "Lane registration.\n\nAnchor: `test_knowledge_file_canonical`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e6cd30be07fa6a435465d02ac4fb9feb7e1bbc8",
+            "content": "sha256:c2b868ff7b3c127af17a9eafe16d29a248a9090946dbe072ef1bbecb9d0cd5b3",
+            "locator": {
+              "end": 113,
+              "kind": "line_range",
+              "start": 109
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
     "6": {
       "note": "Idempotence and content preservation on the untidy document.",
       "targets": [

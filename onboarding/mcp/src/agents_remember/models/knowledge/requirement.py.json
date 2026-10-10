@@ -33,6 +33,54 @@
           "kind": "code"
         }
       ]
+    },
+    "28": {
+      "note": "The version spelling taken from the task plane's own pattern rather than widened into a second admitted form.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "03137ee15503f6fc4b27e13ad08a1f2fa28b2071",
+            "content": "sha256:1116008abc69b1edd62c520ce85808a233e8429eab4ad1f66e375b57ed42b140",
+            "locator": {
+              "kind": "symbol",
+              "name": "REQUIREMENT_PACKET_VERSION_PATTERN"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "29": {
+      "note": "**The owner reference in the task plane's own three components, with `extra=\"forbid\"` as the fourth-addressing-scheme refusal.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "03137ee15503f6fc4b27e13ad08a1f2fa28b2071",
+            "content": "sha256:09d4cde84e3d70d710bc2d82f8cc64dbdd2c554a6b53d8485f4a700925f52272",
+            "locator": {
+              "kind": "symbol",
+              "name": "RequirementOwnerRef"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "30": {
+      "note": "The resolution consumed rather than re-derived: one outcome, and the owner's own refusal fields verbatim.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "03137ee15503f6fc4b27e13ad08a1f2fa28b2071",
+            "content": "sha256:57aea78e37873200ce396959369685d653e8d03367d9ff1283756f8d9b336abe",
+            "locator": {
+              "kind": "symbol",
+              "name": "RequirementOwnerResolution"
+            }
+          },
+          "kind": "code"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

@@ -2,13 +2,16 @@
 
 ## Governing Overview
 
+
 [models route overview](../overview.md)
 
 ## Purpose
 
+
 The explicit shared facade for the retained index-reader vocabulary. It re-exports immutable values and pure digest/read helpers without SQL, Git resolution, write admission or authorization decisions.
 
 ## Code Commentary
+
 
 ### Logic
 
@@ -27,6 +30,7 @@ __all__ is an explicit sorted export list. A consumer may name these shared read
 Canonical database anchor/realization records, write requests/results, seal-writing helpers, snapshot publication/candidate disposal and composition commands were removed from the facade with their production writer route. require_stored_outcome and require_removal_outcome were retired, not retained hidden helpers. The current export list is the boundary; fixture definitions are not substitute production exports.
 
 ## Evidence
+
 
 ### Docs References
 
@@ -54,6 +58,8 @@ The rows below cite the submodules this facade re-exports and the two consumers 
 
 - The production store consumes these retained values through read-only operations. [7]
 
+
+- The shared branching fixture authors its identity and graph halves from these same models. [8]
 
 ### Cross-Repo References
 

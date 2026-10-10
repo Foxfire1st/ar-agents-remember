@@ -2,6 +2,70 @@
   "path": "mcp/src/agents_remember/models/lifecycles/review_assessment_binding.py",
   "realizes": [],
   "references": {
+    "10": {
+      "note": "The two-member currentness state and the derivation that produces it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "622cc21b42bb21eb6ddf65f5c76376a6b460ff4f",
+            "content": "sha256:d4733fc7de6ff3d3b2069e81728f8ea3edff467fc5c1acf3ddd50b4225bcd2cc",
+            "locator": {
+              "kind": "symbol",
+              "name": "AssessmentCurrentness"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The refusal that names the recorded digest, the observed state and the exact identity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "622cc21b42bb21eb6ddf65f5c76376a6b460ff4f",
+            "content": "sha256:b473336b40583d544b8595f92a8bd3214fecc8c6880477cfb1a86c66c8c6c197",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_current_assessment_binding"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The one edge kind excluded from the comparison, and why the exclusion is structural.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "622cc21b42bb21eb6ddf65f5c76376a6b460ff4f",
+            "content": "sha256:95f9e087a10e051391ba60a04f0af499e06b4ad5c5aff51f523c3b31b65f5fc8",
+            "locator": {
+              "kind": "symbol",
+              "name": "SELF_REFERENTIAL_KINDS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The two-member spelling is declared module-locally; no shipped `DetectionRunCurrentness` precedent exists in the tree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "622cc21b42bb21eb6ddf65f5c76376a6b460ff4f",
+            "content": "sha256:ece3db5cfe5fbbf13a4e85dc0a61c3f02942196c32379efe5375e110a0abe97d",
+            "locator": {
+              "kind": "symbol",
+              "name": "CurrentnessStatus"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "6": {
       "note": "`measured_binding_status` owns the current boundary described above.",
       "targets": [
@@ -44,6 +108,22 @@
             "locator": {
               "kind": "symbol",
               "name": "require_assessment_dependencies"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The equality comparison over declared-dependency identities, and the gap it reports.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "622cc21b42bb21eb6ddf65f5c76376a6b460ff4f",
+            "content": "sha256:c488228a3c443a2a3b725a9e499919f5bde7a9aeaf17f33a8f44de3694df7d8a",
+            "locator": {
+              "kind": "symbol",
+              "name": "disputed_dependencies"
             }
           },
           "kind": "code"
