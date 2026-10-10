@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "Realized in templates/manager-brief.md and templates/worker-brief.md, which keep distinct dispatch value rows after role-text repeats were cut; two files carry the obligation."
+  },
+  "applicability": "The four brief templates (manager, worker, curator, architect) and their value rows.",
+  "conditions": [
+    "Brief rows carry leaf values; role and operation texts win on disagreement."
+  ],
+  "exclusions": [
+    "Role and operation texts, which own the rules."
+  ],
+  "id": "INV-WHEFVS",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "manager/worker/curator/architect brief cuts in rule1-table (goes rows); worker-brief gloss names bounded L-R/L-S exception per guideline rule 6"
+      ],
+      "path": "notes/reports/260928-MIK-L101-curator-handoff-list.json"
+    },
+    "handoffEntry": "MIK-R101@v1 rule 5",
+    "leaf": "260928-MIK-L101",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Brief templates keep handed-over inputs and asked outputs; parts repeating role text or ordering inside cut.",
+  "status": "proposed",
+  "supersedes": []
+}

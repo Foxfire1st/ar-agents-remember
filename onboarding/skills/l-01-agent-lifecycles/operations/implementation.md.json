@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "a7322ad56ce8f6b9f034da982c786bb37d645fb3",
-        "content": "sha256:b2bd98ec2b261c19045ea8ae6deec8aa94c7acfbf12095aec245036be67ff72f",
+        "blob": "e6bcf39593af90a465bc58c35f1984b15a526c57",
+        "content": "sha256:63966f547f9741626f1b98374d6ce9b4cd7e7418ecf1d66477f4574050745f89",
         "locator": {
           "kind": "file"
         }
@@ -19,6 +19,52 @@
       "role": "primary-authority"
     }
   ],
-  "references": {},
+  "references": {
+    "1": {
+      "note": "The freeze handover goes directly to the Reviewer and carries the appended journal records.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e6bcf39593af90a465bc58c35f1984b15a526c57",
+            "content": "sha256:63966f547f9741626f1b98374d6ce9b4cd7e7418ecf1d66477f4574050745f89",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The candidate stays uncommitted and the seat starts no role and stages nothing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e6bcf39593af90a465bc58c35f1984b15a526c57",
+            "content": "sha256:63966f547f9741626f1b98374d6ce9b4cd7e7418ecf1d66477f4574050745f89",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "A hand-over counts only on a reply naming its exact object; busy refusals are retried.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e6bcf39593af90a465bc58c35f1984b15a526c57",
+            "content": "sha256:63966f547f9741626f1b98374d6ce9b4cd7e7418ecf1d66477f4574050745f89",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
   "schema": "ar-onboarding-file/v1"
 }

@@ -16,7 +16,7 @@ executable statement that it happened.
 
 ## Current source account
 
-The projection guard quotes the current core acceptance sentence, manager deliverable inspection and worker lifecycle/parent-message wording. The tuple has four entries despite the nearby historical three-clause summary. Canonical and all nine generated targets must retain each marker; removing one from a packaged copy is detected. Copy/swap recovery and exact inventory guards remain.
+The projection guard quotes exactly two completion-truth clauses: (core/acceptance.md, "Terminal truth is mechanical; acceptance is the owner's.") and (roles/worker.md, "A finished turn is not AR acceptance."). The two formerly listed clauses (manager deliverable inspection; worker parent report notice) stay out under the retired-wording register (test_sync_scripts.py:114-118). No third current clause is claimed. Canonical and all nine generated targets must retain each marker; removing one from a packaged copy is detected. Copy/swap recovery and exact inventory guards remain.
 
 ## Code Commentary
 
@@ -30,11 +30,11 @@ Four readings, each defended by a different case class:
 - **The drift reader itself can still fail** — `ReplaceTreeSequenceTests` hand-edits, deletes and adds
   files in a throwaway tree and requires all three failure kinds to be reported. The copy-then-swap
   sequence is characterized at the two places it can fail, including the rename interruption
-  (`RenameInterruption`, 245).
+  (`RenameInterruption`, 246).
 - **The declared inventory is the certified one** — `DeclaredProjectionInventoryTests` requires the
   script's `TARGETS` to equal the paths `mcp/certification-profile-v1.json` declares as the
   `generated-skills` generated input, so a target silently dropped from the script fails.
-- **The corrected boundary clauses reach every copy** — `BoundaryPropagationTests` (458) re-asserts the
+- **The corrected boundary clauses reach every copy** — `BoundaryPropagationTests` (459) re-asserts the
   shipped completion-truth clauses against canonical **plus** the nine copies through
   `boundary_locations()` / `boundary_surface_texts()` / `missing_clause_locations()`, and
   `test_a_clause_missing_from_one_...` deletes one clause from one copy to prove the reach case bites.

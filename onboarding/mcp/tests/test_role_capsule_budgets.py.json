@@ -1,0 +1,58 @@
+{
+  "path": "mcp/tests/test_role_capsule_budgets.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "0af0431175466d1d6d0ef30654277069c9ac6095",
+        "content": "sha256:1a2e5bc3df0f8e53fb9c847cf2b7aa6a397ccae242a38e0b058133b988b79aed",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_no_capsule_exceeds_its_recorded_budget"
+        }
+      },
+      "facet": "Fresh compiled sizes stay at or under the recorded ceil(size_words*11/10) budgets.",
+      "id": "PRF-N8MMW7",
+      "invariant": "INV-Y6GVZ7",
+      "origin": {
+        "handoffEntry": "MIK-R101@v1 rule 6",
+        "leaf": "260928-MIK-L101"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Registry keys equal exactly the capsule matrix the source yields.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0af0431175466d1d6d0ef30654277069c9ac6095",
+            "content": "sha256:6b19123d802f1d5f72bf6d8ae4258455ffc48e83ffd2c02e2a45711760637f15",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_yielded_capsule_has_a_budget_and_no_other_key_does"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "No compiled capsule exceeds its recorded ceil(raw*11/10) budget.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0af0431175466d1d6d0ef30654277069c9ac6095",
+            "content": "sha256:1a2e5bc3df0f8e53fb9c847cf2b7aa6a397ccae242a38e0b058133b988b79aed",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_no_capsule_exceeds_its_recorded_budget"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

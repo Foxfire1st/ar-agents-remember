@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "87e65981d3c9e3fa40442939f69b0a774bd7da1b",
-        "content": "sha256:9c43a62058ddf233c84254b1e183fb0db7d7db90a092f2ad9555b05d1505a9c1",
+        "blob": "0f1ea4c1ecb7fca8a1343492c4c7b58409f25176",
+        "content": "sha256:97166447dd1b5160dd885672125696654663dcf7080ec284d0a6d6139270c5ec",
         "locator": {
           "kind": "file"
         }
@@ -19,8 +19,8 @@
     },
     {
       "anchor": {
-        "blob": "87e65981d3c9e3fa40442939f69b0a774bd7da1b",
-        "content": "sha256:9c43a62058ddf233c84254b1e183fb0db7d7db90a092f2ad9555b05d1505a9c1",
+        "blob": "0f1ea4c1ecb7fca8a1343492c4c7b58409f25176",
+        "content": "sha256:97166447dd1b5160dd885672125696654663dcf7080ec284d0a6d6139270c5ec",
         "locator": {
           "kind": "file"
         }
@@ -35,8 +35,8 @@
     },
     {
       "anchor": {
-        "blob": "87e65981d3c9e3fa40442939f69b0a774bd7da1b",
-        "content": "sha256:9c43a62058ddf233c84254b1e183fb0db7d7db90a092f2ad9555b05d1505a9c1",
+        "blob": "0f1ea4c1ecb7fca8a1343492c4c7b58409f25176",
+        "content": "sha256:97166447dd1b5160dd885672125696654663dcf7080ec284d0a6d6139270c5ec",
         "locator": {
           "kind": "file"
         }
@@ -52,8 +52,8 @@
     },
     {
       "anchor": {
-        "blob": "87e65981d3c9e3fa40442939f69b0a774bd7da1b",
-        "content": "sha256:9c43a62058ddf233c84254b1e183fb0db7d7db90a092f2ad9555b05d1505a9c1",
+        "blob": "0f1ea4c1ecb7fca8a1343492c4c7b58409f25176",
+        "content": "sha256:97166447dd1b5160dd885672125696654663dcf7080ec284d0a6d6139270c5ec",
         "locator": {
           "kind": "file"
         }
@@ -64,6 +64,25 @@
         "leaf": "260921-ICR-L45"
       },
       "rationale": "The canonical template owns the hand-off list shape every curator instruction defers to.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "0f1ea4c1ecb7fca8a1343492c4c7b58409f25176",
+        "content": "sha256:e92c25aa9d3f4323100058f851f378da1d56344f7b7ca28691d6422e69a78616",
+        "locator": {
+          "end": 334,
+          "kind": "line_range",
+          "start": 330
+        }
+      },
+      "id": "RLZ-Y9M8Q6",
+      "invariant": "INV-BCEZZM",
+      "origin": {
+        "handoffEntry": "MIK-R101@v1 rule 8",
+        "leaf": "260928-MIK-L101"
+      },
+      "rationale": "This paragraph is the external-document reference shape with the retirement note beside it.",
       "role": "primary-authority"
     }
   ],

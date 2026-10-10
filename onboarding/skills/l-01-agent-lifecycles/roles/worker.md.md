@@ -46,7 +46,7 @@ Those records live in one physical leaf journal shared as an ordered append-only
 independent reviewer. The separate worker turn report links newly appended attempt anchors and
 does not duplicate their authority.
 
-Closeout, integration, task acceptance and admitted memory remain with their owning AR/Curator seats. Worker leaves the code candidate uncommitted and writes the exact canonical report, then freezes the candidate and sends it directly to the leaf's Reviewer; after code PASS it sends its structured hand-off list to the Curator. The Manager receives no routine report notice and relays no freeze, finding, verdict or memory change. A question for the developer goes to the parent named in the handover; a Worker without a parent asks in its own chat.
+Closeout, integration, task acceptance and admitted memory remain with their owning AR/Curator seats. Worker leaves the code candidate uncommitted and writes the exact canonical report, then freezes the candidate and sends it directly to the leaf's Reviewer; after code PASS it sends its structured hand-off list to the Curator. The Manager receives only its authority or recovery matters, not routine report notices or relayed contents. A question for the developer goes to the parent named in the handover; a Worker without a parent asks in its own chat.
 
 The Manager starts the Worker and Reviewer together and the Curator at the first freeze; no seat starts the one that checks it. Worker starts no role. Unknown results and compaction recover the same task/agent/report rather than inventing a new owner.
 

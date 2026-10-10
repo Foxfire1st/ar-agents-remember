@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "20ffc07d30937ed3e612b3c6c22e259d60282af6",
-        "content": "sha256:25fa7ed9037568ffaf97cca7bb4e7e3c8bfced02bc786a29cc48d5ef7e3cf5e8",
+        "blob": "fff064c87fd819aef2586c03c20d201f511247c4",
+        "content": "sha256:e976d4362da84b99537ee22d9d06d2153695ee6acf110a3e4c8934589c2668a5",
         "locator": {
           "kind": "symbol",
           "name": "test_each_parent_has_upward_notice_and_unchanged_downward_answer_duties"
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "20ffc07d30937ed3e612b3c6c22e259d60282af6",
+        "blob": "fff064c87fd819aef2586c03c20d201f511247c4",
         "content": "sha256:19d28f4d232caef57721e6e512145676b42b4b3527a8f5cea05dc692b37fecd5",
         "locator": {
           "kind": "symbol",
@@ -37,8 +37,8 @@
     },
     {
       "anchor": {
-        "blob": "20ffc07d30937ed3e612b3c6c22e259d60282af6",
-        "content": "sha256:712588c6f50cea32734da26b8612c10c7b254d1d13ef49c62cefe02616e5c640",
+        "blob": "fff064c87fd819aef2586c03c20d201f511247c4",
+        "content": "sha256:2c9872c8b748d6ac703d2a38a03cd5fa537388dab1bd3fa7fb14d416335b4ba3",
         "locator": {
           "kind": "symbol",
           "name": "test_each_parentable_role_has_question_recovery_and_answer_provenance"
@@ -54,8 +54,8 @@
     },
     {
       "anchor": {
-        "blob": "20ffc07d30937ed3e612b3c6c22e259d60282af6",
-        "content": "sha256:96942bd07513a479948d116176fdd6bfaf9361529f105ce9dd61e145bbdeb7f5",
+        "blob": "fff064c87fd819aef2586c03c20d201f511247c4",
+        "content": "sha256:560c310997b2a7ff934065bb8a489b3e1be52e294cb7e8876cc385b280e4eab1",
         "locator": {
           "kind": "symbol",
           "name": "test_question_operations_keep_conditional_routing_and_pending_recovery"
@@ -71,7 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "20ffc07d30937ed3e612b3c6c22e259d60282af6",
+        "blob": "fff064c87fd819aef2586c03c20d201f511247c4",
         "content": "sha256:718c44929c67a7198c45bd7587557647866333de6e21107c4810fc8d547954d2",
         "locator": {
           "kind": "symbol",

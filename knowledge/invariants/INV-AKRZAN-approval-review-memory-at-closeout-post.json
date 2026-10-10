@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "Realized in operations/closeout.md, the byte-identical closeout contract, and in roles/curator.md:104, the preserved closeout-evidence sentence the master had dropped; two files carry the obligation."
+  },
+  "applicability": "The nine kept-by-name clauses wherever they stand, and operations/closeout.md with the named role closeout and integration passages.",
+  "conditions": [
+    "Closeout and integration text stays byte-identical."
+  ],
+  "exclusions": [
+    "Wording outside the nine kept points."
+  ],
+  "id": "INV-AKRZAN",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "sweep-evidence.json rule4_kept_by_name + closeout_identity (1303B baea8d9c, identical a1b7/69379); curator closeout sentence at roles/curator.md 104 [A6: locator corrected from 129 (an ## Outputs heading in A5 bytes) to the actual closeout-evidence sentence line 105; verified non-blank.] [A7: locator corrected 105->104 after R4 byte read-back; line 105 is blank, the closeout-evidence sentence is line 104.]"
+      ],
+      "path": "notes/reports/260928-MIK-L101-curator-handoff-list.json"
+    },
+    "handoffEntry": "MIK-R101@v1 rule 4",
+    "leaf": "260928-MIK-L101",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Approval, review, memory-at-closeout, post-PASS faults, word-for-word closeout, coordination rules, never-touch list, recovery, and product facts all kept.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -1,6 +1,24 @@
 {
   "path": "skills/l-01-agent-lifecycles/templates/worker-brief.md",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "bb49a2c6a235a9cc42250ed17ece09d06ee588d4",
+        "content": "sha256:055d94573bfb27e8a73d5cdf64afb565090b38b2e6db1d0299b8603c0a3dbc58",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-YH9NW2",
+      "invariant": "INV-WHEFVS",
+      "origin": {
+        "handoffEntry": "MIK-R101@v1 rule 5",
+        "leaf": "260928-MIK-L101"
+      },
+      "rationale": "This brief carries dispatch values with repeats removed and the guideline gloss corrected.",
+      "role": "primary-authority"
+    }
+  ],
   "references": {
     "1": {
       "note": "The brief binds the exact owned requirement revision and evidence classes.\n\nAnchor: \"## Owned primary requirement (exactly one stable-ID + version)\"",

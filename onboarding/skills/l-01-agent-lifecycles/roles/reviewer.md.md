@@ -51,7 +51,7 @@ packet requires, with no effect missing and none invented — and a mismatch is 
 the role file, not in a criteria catalog, because the catalogs admit a standing criterion only with
 catching evidence. Who writes the declaration stays procedural; `task_doc` has no per-field role gate.
 
-Beside the verdict, the reviewer emits **its own curator hand-off list** (`:103-113`) — its verdicts and
+Beside the verdict, the reviewer emits **its own curator hand-off list** (`:92-99`) — its verdicts and
 findings in the shape `../templates/curator-handoff-list.md` owns, as data rather than as verdict prose
 for the curator to re-read. Each entry is one finding or one requirement adjudication, carrying the
 source it came from and the place it was found at, and a finding the reviewer minted carries its own
@@ -61,7 +61,7 @@ the reviewer looked — the path and the construct inside it come from one resol
 the reviewer's own statement and evidence verbatim rather than re-telling them.
 
 If the manifestation candidate moves before adjudication, the stale attempt is rejected and a
-successor is reviewed. An unrelated later candidate does not reopen an accepted attempt.
+successor is reviewed. A successor reuses the sealed reports rather than re-censusing routes.
 
 The role serves the assigned leaf/master/plan/super seams and the seam table still fixes the review candidate and verdict destination. Actual ownership comes from the explicit canonical assignment, rather than an inferred plane generation. For native clarification use the actual parent/task role through bound messaging; a dashboard Reviewer has no parent and needs none. The Reviewer starts no role.
 

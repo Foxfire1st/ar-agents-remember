@@ -1,0 +1,37 @@
+{
+  "path": "skills/l-01-agent-lifecycles/operations/planning.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "One master takes one Manager, two or more take one Orchestrator; direct coordination is the developer-chosen exception.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c0d7bdf23d8de8d5d79fd2131d276d37ad16bad",
+            "content": "sha256:7a838418428b61f89bab701116ee30e3a0b52ccfe76c08a03ca91b2e31107cc0",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Each independently falsifiable obligation gets a stable ID, version and canonical packet before topology.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c0d7bdf23d8de8d5d79fd2131d276d37ad16bad",
+            "content": "sha256:7a838418428b61f89bab701116ee30e3a0b52ccfe76c08a03ca91b2e31107cc0",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

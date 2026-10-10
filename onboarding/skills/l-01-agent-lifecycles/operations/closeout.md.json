@@ -4,6 +4,23 @@
     {
       "anchor": {
         "blob": "797c78c090a39734d316d12fab86fd41820ab528",
+        "content": "sha256:baea8d9c29a19b55b3bd58cb8c81382965f4ad5f2d665e42839f2843ef3411f0",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-CQCTG9",
+      "invariant": "INV-AKRZAN",
+      "origin": {
+        "handoffEntry": "MIK-R101@v1 rule 4",
+        "leaf": "260928-MIK-L101"
+      },
+      "rationale": "This file is the byte-identical closeout contract; role passages verified present.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "797c78c090a39734d316d12fab86fd41820ab528",
         "content": "sha256:b6c519a318ad0d8dc83be28af50e49d54421306a428b6ed696a09c0ba98a6736",
         "locator": {
           "end": 3,

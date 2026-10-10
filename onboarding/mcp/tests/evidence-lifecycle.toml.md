@@ -127,6 +127,10 @@ The catalog's consumer list names `test_leaf_handover.py` and `test_leaf_handove
 
 The R93 wording test `mcp/tests/test_developer_question_wording.py` is added to the consumer lists the source tree supports; no artifact or contract row changes, and the canonical form is unchanged.
 
+## 260928-MIK-L101 — rule 6 budget registry and test
+
+The `test_role_capsule_budgets.py` module joined the Node lockfile fixture's consumer list (fixture `mcp/tests/fixtures/repository_profiles/node/package-lock.json`, consumer entry at evidence-lifecycle.toml:1355) alongside the unit-regression lane (test-evidence-lanes.toml:254); no artifact or contract row changes, and the canonical form is unchanged. The rule 6 budget registry itself is a producer-side contract and makes no consumer-list claim.
+
 ## Shared Causal Test Helpers
 
 The conversation-open, Eve event-pump and reviewer-worklist-process supports are permanent,

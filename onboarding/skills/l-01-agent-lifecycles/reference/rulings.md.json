@@ -3,10 +3,10 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "492f5893483ffea6db9e546b428b5d5c3dcea6df",
-        "content": "sha256:a5fe218ea3df9b58d13cce9b0da86fc1ec215713ab5d5753020e61a6bd70714d",
+        "blob": "f5230b3d5e7b2d983b12d10682b67f9983a414a4",
+        "content": "sha256:c2a3c28132006b1eba9cbcd178edc304c9c21f517a73a5dea06d57fd2974ddea",
         "locator": {
-          "end": 52,
+          "end": 51,
           "kind": "line_range",
           "start": 1
         }
@@ -21,6 +21,37 @@
       "role": "primary-authority"
     }
   ],
-  "references": {},
+  "references": {
+    "1": {
+      "note": "Each row records one obeyed ruling with its carrying anchor and supersession.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f5230b3d5e7b2d983b12d10682b67f9983a414a4",
+            "content": "sha256:ef7357a3df7f67fb19c58c3494b79c0e79d38477415b7c894a58e1d907cb3e7e",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Seats follow rules where authored; reason and supersession live in this index.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f5230b3d5e7b2d983b12d10682b67f9983a414a4",
+            "content": "sha256:ef7357a3df7f67fb19c58c3494b79c0e79d38477415b7c894a58e1d907cb3e7e",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
   "schema": "ar-onboarding-file/v1"
 }

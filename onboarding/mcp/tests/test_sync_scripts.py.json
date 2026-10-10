@@ -1,6 +1,45 @@
 {
   "path": "mcp/tests/test_sync_scripts.py",
-  "realizes": [],
+  "proves": [
+    {
+      "anchor": {
+        "blob": "99aaef12a6ac9dd723324025054b12a2ada50063",
+        "content": "sha256:713db2fc9a66c6019298bca81e6a4cb4edfc4fc287002d1dfc5cd7b2893bb53a",
+        "locator": {
+          "kind": "symbol",
+          "name": "BoundaryPropagationTests.test_every_declared_copy_carries_the_corrected_boundary_clauses"
+        }
+      },
+      "facet": "Every declared packaged copy carries the corrected boundary clauses after regeneration.",
+      "id": "PRF-0M7GR5",
+      "invariant": "INV-J70XZA",
+      "origin": {
+        "handoffEntry": "MIK-R101@v1 rule 7",
+        "leaf": "260928-MIK-L101"
+      }
+    }
+  ],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "99aaef12a6ac9dd723324025054b12a2ada50063",
+        "content": "sha256:875fcf4be4ec36c73771b353e1cda604414bfc547fcbbd286670731d055377a5",
+        "locator": {
+          "end": 118,
+          "kind": "line_range",
+          "start": 114
+        }
+      },
+      "id": "RLZ-KZSY9R",
+      "invariant": "INV-J70XZA",
+      "origin": {
+        "handoffEntry": "MIK-R101@v1 rule 7",
+        "leaf": "260928-MIK-L101"
+      },
+      "rationale": "This comment records the retired-register guard without task-history provenance.",
+      "role": "primary-authority"
+    }
+  ],
   "references": {
     "1": {
       "note": "The projection mechanism whose behavior this module pins.",

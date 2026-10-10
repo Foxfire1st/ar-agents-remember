@@ -1,19 +1,20 @@
 {
   "admission": {
     "criteria": [
-      "spans_locations",
-      "guarded_by_test"
+      "spans_locations"
     ],
-    "justification": "The census rule is realized in the doctrine test and in the three composed documents' retained sentences, and it keeps a surface that newly speaks the vocabulary from silently dropping off the roster."
+    "justification": "Realized across operations/curation.md, roles/curator.md and roles/reviewer.md with the owner-validation half at the accepted common home core/acceptance.md; partial attestation marks the evidence as needing owner validation before state advances."
   },
-  "applicability": "Every canonical surface under `skills/l-01-agent-lifecycles` that composes completion from terminal or finalizer truth.",
+  "applicability": "Terminal/finalizer-attested meanings in operations/curation.md, roles/curator.md and roles/reviewer.md.",
   "conditions": [
-    "Each of the three documents states both halves of the reading: terminal/finalizer truth attests only that the turn ended, and it wakes the owner who validates.",
-    "The roster's mechanical-reading case (`test_every_roster_surface_carries_the_mechanical_reading`) holds every declared surface to the first half of that reading; the owed-clause statements do not cover these three documents."
+    "Terminal-only-ended truth is directly stated at operations/curation.md:265.",
+    "Owner validation is owned by core/acceptance.md:14-19; the gate owner validates before advancing state.",
+    "roles/curator.md:146 composes the curation handoff home by explicit referral; roles/reviewer.md retains local turn-only truth.",
+    "The three scoped local surfaces state only the terminal half locally; the rostered common home core/acceptance.md states both halves (terminal truth :3-8, owner validation :14-19)."
   ],
   "exclusions": [
-    "A surface that merely names the relay, such as the notifier, is not a participant.",
-    "The role documents' duties beyond their completion sentence are unchanged."
+    "Sweep-wide wording changes in settled role documents outside the retained corpus.",
+    "A reissued both-halves local requirement for the three scoped surfaces, which the accepted common-home meaning replaces."
   ],
   "id": "INV-5TKYXM",
   "origin": {
@@ -27,9 +28,9 @@
     "leaf": "260928-MIK-L70",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "`operations/curation.md`, `roles/curator.md` and `roles/reviewer.md` each tell their role that terminal/finalizer truth attests only that the turn ended and wakes the owner who validates, so each is a completion-truth participant and stands on `COMPLETION_TRUTH_ROSTER`.",
+  "statement": "Terminal/finalizer-only-ended truth is stated in operations/curation.md:265 and retained through the role documents' composed handoff referrals; owner validation lives at the accepted common home core/acceptance.md:14-19. Participation is by direct statement and explicit referral, not by each of these three documents stating both halves locally.",
   "status": "proposed",
   "supersedes": []
 }

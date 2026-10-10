@@ -3,12 +3,31 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "dfff2166cfd50ada8f20c83d1a2a030379df4511",
+        "blob": "3421e76133385092545d9f1b1c2fa21a590d35ef",
+        "content": "sha256:3a9ad914ea3e63cb5e64b8e3949899427f985baa078e06bc0d87094deaf52738",
+        "locator": {
+          "end": 90,
+          "kind": "line_range",
+          "start": 84
+        }
+      },
+      "id": "RLZ-2JHTJ3",
+      "invariant": "INV-BCEZZM",
+      "origin": {
+        "handoffEntry": "MIK-R101@v1 rule 8",
+        "leaf": "260928-MIK-L101"
+      },
+      "rationale": "This block is the amended single-producer clause with the exact no-install sentence.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "3421e76133385092545d9f1b1c2fa21a590d35ef",
         "content": "sha256:a2a288dd989f6131292cb6ea8148355c9b71f1a9c4ea5bdeef7b06e319c97f42",
         "locator": {
-          "end": 296,
+          "end": 277,
           "kind": "line_range",
-          "start": 296
+          "start": 277
         }
       },
       "id": "RLZ-4YAPS7",
@@ -22,8 +41,8 @@
     },
     {
       "anchor": {
-        "blob": "dfff2166cfd50ada8f20c83d1a2a030379df4511",
-        "content": "sha256:9b63c5af00fe1421a0afa693f110467c40afc4a195137c32fdbafef1e999098b",
+        "blob": "3421e76133385092545d9f1b1c2fa21a590d35ef",
+        "content": "sha256:dd076594d6bc93b443ec20a0c57a885e59bf34dfeb067e16e92f06d18964cc4b",
         "locator": {
           "kind": "file"
         }
@@ -39,12 +58,12 @@
     },
     {
       "anchor": {
-        "blob": "dfff2166cfd50ada8f20c83d1a2a030379df4511",
-        "content": "sha256:ab04dd1aef9a30dd3c851bfdc62e46281e9eb0c0aa2046b73a52069db0d23fe4",
+        "blob": "3421e76133385092545d9f1b1c2fa21a590d35ef",
+        "content": "sha256:ffe608ae52f8c3fddfeb376357e96e48b9856f3bdb4c97cda21e38c9ec5e61dd",
         "locator": {
-          "end": 268,
+          "end": 265,
           "kind": "line_range",
-          "start": 266
+          "start": 265
         }
       },
       "id": "RLZ-EEEG4W",
@@ -53,13 +72,13 @@
         "handoffEntry": "MIK-R70@v1 rule 4",
         "leaf": "260928-MIK-L70"
       },
-      "rationale": "The sentence that makes the curation operation a participant: terminal/finalizer evidence attests only that this turn ended and wakes the manager, who validates it.",
+      "rationale": "Terminal-only-ended truth is stated here (operations/curation.md:265); the owner-validation half lives at the accepted common home core/acceptance.md:14-19 (the gate owner validates before advancing state) by explicit referral, not by a second local statement.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "dfff2166cfd50ada8f20c83d1a2a030379df4511",
-        "content": "sha256:9b63c5af00fe1421a0afa693f110467c40afc4a195137c32fdbafef1e999098b",
+        "blob": "3421e76133385092545d9f1b1c2fa21a590d35ef",
+        "content": "sha256:dd076594d6bc93b443ec20a0c57a885e59bf34dfeb067e16e92f06d18964cc4b",
         "locator": {
           "kind": "file"
         }
@@ -75,12 +94,12 @@
     },
     {
       "anchor": {
-        "blob": "dfff2166cfd50ada8f20c83d1a2a030379df4511",
-        "content": "sha256:d6d49af062890c27a501699f6c12c29d977eabf623df0857b62c8f5388480d88",
+        "blob": "3421e76133385092545d9f1b1c2fa21a590d35ef",
+        "content": "sha256:809390aaeff5d493f342f874194f9463e041ba61bdb008a7f4480d218e4249bb",
         "locator": {
-          "end": 121,
+          "end": 126,
           "kind": "line_range",
-          "start": 121
+          "start": 124
         }
       },
       "id": "RLZ-PAE912",
@@ -89,13 +108,13 @@
         "handoffEntry": "MIK-R48@v2 rule 7",
         "leaf": "260928-MIK-L48"
       },
-      "rationale": "The curation operation requires the same authoring fields during the existing pass.",
+      "rationale": "The authored family-effect judgment and the writer-owned revision live here: name the family in history as a changed row with the effect; the writer records the family's own revision.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "dfff2166cfd50ada8f20c83d1a2a030379df4511",
-        "content": "sha256:9b63c5af00fe1421a0afa693f110467c40afc4a195137c32fdbafef1e999098b",
+        "blob": "3421e76133385092545d9f1b1c2fa21a590d35ef",
+        "content": "sha256:dd076594d6bc93b443ec20a0c57a885e59bf34dfeb067e16e92f06d18964cc4b",
         "locator": {
           "kind": "file"
         }
@@ -111,7 +130,7 @@
     },
     {
       "anchor": {
-        "blob": "dfff2166cfd50ada8f20c83d1a2a030379df4511",
+        "blob": "3421e76133385092545d9f1b1c2fa21a590d35ef",
         "content": "sha256:6ce616857be9b2932b1b442a156eb06df996534a4dc191f60bede6f9a6de49a7",
         "locator": {
           "end": 75,

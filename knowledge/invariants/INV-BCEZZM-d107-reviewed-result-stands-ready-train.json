@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "Realized in operations/curation.md:84-90 (single-producer clause), templates/curator-handoff-list.md:330-334 (external-document reference shape) and operations/orientation.md:15 (permission non-bypass); three files carry the obligation."
+  },
+  "applicability": "The six ruled sentences, each standing in exactly one place: review, recovery, coordination, curation (producer and origin-evidence), orientation.",
+  "conditions": [
+    "Each ruling stands once; old database-era passages stay absent."
+  ],
+  "exclusions": [
+    "Rulings owned by other leaves packets."
+  ],
+  "id": "INV-BCEZZM",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "sweep-evidence.json rule8_writeins; producer curation.md 84-90; origin-evidence curation.md 127-129 + handoff-list 330-334; permission orientation.md 15 in all start operations via required-input pointers; old database-era passages absent"
+      ],
+      "path": "notes/reports/260928-MIK-L101-curator-handoff-list.json"
+    },
+    "handoffEntry": "MIK-R101@v1 rule 8",
+    "leaf": "260928-MIK-L101",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "D107, reviewed-result-stands, ready-train, single producer, external-sources, and permission non-bypass all stated once each and delivered.",
+  "status": "proposed",
+  "supersedes": []
+}

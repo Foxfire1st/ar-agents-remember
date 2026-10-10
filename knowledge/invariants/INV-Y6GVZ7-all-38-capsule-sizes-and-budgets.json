@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "The budget test bounds every fresh compiled capsule within its recorded budget; without it an overgrown capsule would silently break instruction composition. Registry totals are evidenced by the registry cells and the A8 decisions, not by the test."
+  },
+  "applicability": "All 38 role, operation and launcher capsule budgets in skills/l-01-agent-lifecycles/capsule-budgets.json.",
+  "conditions": [
+    "Each stored budget equals ceil(stored size_words * 11 / 10); fresh compiled sizes stay at or under budget; the budget test passes.",
+    "Registry raw total 83786 and A8 adjusted total 82200 are distinguished from the dated A8 compiled total 93905, which is a different composition and not a contract term."
+  ],
+  "exclusions": [
+    "Historical era sums (62748, a1b7 109616, master 107226) and the dated A8 compiled total 93905 as current contract terms."
+  ],
+  "id": "INV-Y6GVZ7",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "capsule-sizes.json (era 62748, a1b7 109616, master 107226, final 93905); sync-check 9/9; F07 memo for launcher/orientation +57 and architect/recovery +17"
+      ],
+      "path": "notes/reports/260928-MIK-L101-curator-handoff-list.json"
+    },
+    "handoffEntry": "MIK-R101@v1 rule 6",
+    "leaf": "260928-MIK-L101",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The 38-cell capsule-budget registry records post-sweep sizes totaling 83786 raw words (A8 adjusted 82200); each budget is ceil(size_words*11/10), recorded same-change with decisions. The 93905 A8 compiled total is a dated leaf measurement retained in origin, not the reusable contract.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "3939a7464ac042ed416981590443f91efc0c3ca4",
-        "content": "sha256:9bf5ac42199934f97a908cd994115ae8831b7a61b6512758b93590915d49af8e",
+        "blob": "dbf343f86d5bf2a3d00ecd6d2c4c255e646cd043",
+        "content": "sha256:5f44de52981907402d31c4456912475ca60726182153bbaf24efecd63e2d3727",
         "locator": {
           "kind": "file"
         }
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "3939a7464ac042ed416981590443f91efc0c3ca4",
-        "content": "sha256:9bf5ac42199934f97a908cd994115ae8831b7a61b6512758b93590915d49af8e",
+        "blob": "dbf343f86d5bf2a3d00ecd6d2c4c255e646cd043",
+        "content": "sha256:5f44de52981907402d31c4456912475ca60726182153bbaf24efecd63e2d3727",
         "locator": {
           "kind": "file"
         }
@@ -36,6 +36,52 @@
       "role": "primary-authority"
     }
   ],
-  "references": {},
+  "references": {
+    "1": {
+      "note": "The verdict goes directly to the Worker and code PASS directly to the Curator.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dbf343f86d5bf2a3d00ecd6d2c4c255e646cd043",
+            "content": "sha256:5f44de52981907402d31c4456912475ca60726182153bbaf24efecd63e2d3727",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Fix-verification checks only the sealed outstanding IDs; rounds are bounded with a recorded D107 exception.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dbf343f86d5bf2a3d00ecd6d2c4c255e646cd043",
+            "content": "sha256:5f44de52981907402d31c4456912475ca60726182153bbaf24efecd63e2d3727",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The Reviewer never edits, accepts, starts a role or publishes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dbf343f86d5bf2a3d00ecd6d2c4c255e646cd043",
+            "content": "sha256:5f44de52981907402d31c4456912475ca60726182153bbaf24efecd63e2d3727",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
   "schema": "ar-onboarding-file/v1"
 }

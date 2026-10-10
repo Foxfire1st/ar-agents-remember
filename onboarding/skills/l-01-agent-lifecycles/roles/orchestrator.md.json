@@ -3,8 +3,27 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "e9c8975d297fe0271bc4c6777f41a4fffad2a002",
-        "content": "sha256:740b5365cfe34c7cd564737d17fa4898179d19845be3ebb9bed964f5350ae17e",
+        "blob": "5ef8c937db8421f36aa32417d6e97019a39af43f",
+        "content": "sha256:fb1cf7d88495c263b9de3fa539e40bf476622dda21da761de3f2f807d56d1d4b",
+        "locator": {
+          "end": 36,
+          "kind": "line_range",
+          "start": 34
+        }
+      },
+      "id": "RLZ-20AC2N",
+      "invariant": "INV-5M79ZP",
+      "origin": {
+        "handoffEntry": "MIK-R101@v1 rule 2",
+        "leaf": "260928-MIK-L101"
+      },
+      "rationale": "This block collects every artifact the Orchestrator owes, referring to detailed shapes.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "5ef8c937db8421f36aa32417d6e97019a39af43f",
+        "content": "sha256:5c619fcf4052b801b53312ea1dcea7619facf23d9b3624bc708074a7116c1695",
         "locator": {
           "kind": "file"
         }
@@ -20,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "e9c8975d297fe0271bc4c6777f41a4fffad2a002",
+        "blob": "5ef8c937db8421f36aa32417d6e97019a39af43f",
         "content": "sha256:48db0f66afbbe06e68d88b492073362b6bfe09bc1da519a689ff19dfb0efab6c",
         "locator": {
           "end": 8,
@@ -39,7 +58,7 @@
     },
     {
       "anchor": {
-        "blob": "e9c8975d297fe0271bc4c6777f41a4fffad2a002",
+        "blob": "5ef8c937db8421f36aa32417d6e97019a39af43f",
         "content": "sha256:7b412bc2640f985bc311cb505711aca38ad48ab8729baead850c5776f1aa5c25",
         "locator": {
           "end": 30,
@@ -58,7 +77,7 @@
     },
     {
       "anchor": {
-        "blob": "e9c8975d297fe0271bc4c6777f41a4fffad2a002",
+        "blob": "5ef8c937db8421f36aa32417d6e97019a39af43f",
         "content": "sha256:5b5abd5ab67d55a2d84a38c4e7f1782ebdea4a76d7f6fcf7bcc76c262ee643f3",
         "locator": {
           "end": 16,
@@ -77,8 +96,8 @@
     },
     {
       "anchor": {
-        "blob": "e9c8975d297fe0271bc4c6777f41a4fffad2a002",
-        "content": "sha256:740b5365cfe34c7cd564737d17fa4898179d19845be3ebb9bed964f5350ae17e",
+        "blob": "5ef8c937db8421f36aa32417d6e97019a39af43f",
+        "content": "sha256:5c619fcf4052b801b53312ea1dcea7619facf23d9b3624bc708074a7116c1695",
         "locator": {
           "kind": "file"
         }
@@ -94,8 +113,8 @@
     },
     {
       "anchor": {
-        "blob": "e9c8975d297fe0271bc4c6777f41a4fffad2a002",
-        "content": "sha256:740b5365cfe34c7cd564737d17fa4898179d19845be3ebb9bed964f5350ae17e",
+        "blob": "5ef8c937db8421f36aa32417d6e97019a39af43f",
+        "content": "sha256:5c619fcf4052b801b53312ea1dcea7619facf23d9b3624bc708074a7116c1695",
         "locator": {
           "end": 50,
           "kind": "line_range",
@@ -113,8 +132,8 @@
     },
     {
       "anchor": {
-        "blob": "e9c8975d297fe0271bc4c6777f41a4fffad2a002",
-        "content": "sha256:740b5365cfe34c7cd564737d17fa4898179d19845be3ebb9bed964f5350ae17e",
+        "blob": "5ef8c937db8421f36aa32417d6e97019a39af43f",
+        "content": "sha256:5c619fcf4052b801b53312ea1dcea7619facf23d9b3624bc708074a7116c1695",
         "locator": {
           "kind": "file"
         }
@@ -130,7 +149,7 @@
     },
     {
       "anchor": {
-        "blob": "e9c8975d297fe0271bc4c6777f41a4fffad2a002",
+        "blob": "5ef8c937db8421f36aa32417d6e97019a39af43f",
         "content": "sha256:9b91705cae4f2c2bf734b3eb50e31634ac665953e2ceecbc0a211ceccc1a7573",
         "locator": {
           "end": 20,
@@ -149,7 +168,7 @@
     },
     {
       "anchor": {
-        "blob": "e9c8975d297fe0271bc4c6777f41a4fffad2a002",
+        "blob": "5ef8c937db8421f36aa32417d6e97019a39af43f",
         "content": "sha256:f7171cd8804c30ab57ed9b1ca09faebcc802155f3c9bf9a70b7c9b8cd5443fdb",
         "locator": {
           "end": 24,
@@ -168,13 +187,13 @@
     }
   ],
   "references": {
-    "1": {
-      "note": "The seat's self-definition is an event loop over durable task state that never converses with the developer.",
+    "16": {
+      "note": "The seat coordinates one sprint above Managers and verifies delivery without taking over the loop.",
       "targets": [
         {
           "anchor": {
-            "blob": "e9c8975d297fe0271bc4c6777f41a4fffad2a002",
-            "content": "sha256:740b5365cfe34c7cd564737d17fa4898179d19845be3ebb9bed964f5350ae17e",
+            "blob": "5ef8c937db8421f36aa32417d6e97019a39af43f",
+            "content": "sha256:5c619fcf4052b801b53312ea1dcea7619facf23d9b3624bc708074a7116c1695",
             "locator": {
               "kind": "file"
             }
@@ -183,13 +202,13 @@
         }
       ]
     },
-    "10": {
-      "note": "Role-seat immutability refuses a pasted brief for another role.",
+    "17": {
+      "note": "The owed result is collected whole in the Result contract.",
       "targets": [
         {
           "anchor": {
-            "blob": "e9c8975d297fe0271bc4c6777f41a4fffad2a002",
-            "content": "sha256:740b5365cfe34c7cd564737d17fa4898179d19845be3ebb9bed964f5350ae17e",
+            "blob": "5ef8c937db8421f36aa32417d6e97019a39af43f",
+            "content": "sha256:5c619fcf4052b801b53312ea1dcea7619facf23d9b3624bc708074a7116c1695",
             "locator": {
               "kind": "file"
             }
@@ -198,13 +217,13 @@
         }
       ]
     },
-    "11": {
-      "note": "The producers' curator hand-off list is passed through to the curator unparaphrased.",
+    "18": {
+      "note": "Developer questions go to the parent Architect; children's questions are answered or passed up.",
       "targets": [
         {
           "anchor": {
-            "blob": "e9c8975d297fe0271bc4c6777f41a4fffad2a002",
-            "content": "sha256:740b5365cfe34c7cd564737d17fa4898179d19845be3ebb9bed964f5350ae17e",
+            "blob": "5ef8c937db8421f36aa32417d6e97019a39af43f",
+            "content": "sha256:5c619fcf4052b801b53312ea1dcea7619facf23d9b3624bc708074a7116c1695",
             "locator": {
               "kind": "file"
             }
@@ -213,178 +232,13 @@
         }
       ]
     },
-    "12": {
-      "note": "The by-hand portfolio-wide retire authority is exceptional and the write surface is enumerated.",
+    "19": {
+      "note": "The Orchestrator may start Investigator under its own sprint as a child concern and report carrier.",
       "targets": [
         {
           "anchor": {
-            "blob": "e9c8975d297fe0271bc4c6777f41a4fffad2a002",
-            "content": "sha256:740b5365cfe34c7cd564737d17fa4898179d19845be3ebb9bed964f5350ae17e",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "13": {
-      "note": "The seat's prohibitions and the architect ceiling with its four-field decision item are explicit.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e9c8975d297fe0271bc4c6777f41a4fffad2a002",
-            "content": "sha256:740b5365cfe34c7cd564737d17fa4898179d19845be3ebb9bed964f5350ae17e",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "14": {
-      "note": "Provider degradation has a fixed four-step response that ends in the always-legal teardown.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e9c8975d297fe0271bc4c6777f41a4fffad2a002",
-            "content": "sha256:740b5365cfe34c7cd564737d17fa4898179d19845be3ebb9bed964f5350ae17e",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "15": {
-      "note": "This source owns the stated current Investigator scope or canonical vocabulary.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e9c8975d297fe0271bc4c6777f41a4fffad2a002",
-            "content": "sha256:740b5365cfe34c7cd564737d17fa4898179d19845be3ebb9bed964f5350ae17e",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "2": {
-      "note": "The generic event loop is owned by the coordination operation, which wins on disagreement.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e9c8975d297fe0271bc4c6777f41a4fffad2a002",
-            "content": "sha256:740b5365cfe34c7cd564737d17fa4898179d19845be3ebb9bed964f5350ae17e",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "The topology duty fixes super off `main`, organizational vs atomic masters, and the waiting final push.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e9c8975d297fe0271bc4c6777f41a4fffad2a002",
-            "content": "sha256:740b5365cfe34c7cd564737d17fa4898179d19845be3ebb9bed964f5350ae17e",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "4": {
-      "note": "Priority judgment is recorded before it changes selection.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e9c8975d297fe0271bc4c6777f41a4fffad2a002",
-            "content": "sha256:740b5365cfe34c7cd564737d17fa4898179d19845be3ebb9bed964f5350ae17e",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "5": {
-      "note": "Release and landing follow execution nature, with worker checks and the curator's complete result as prerequisite evidence.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e9c8975d297fe0271bc4c6777f41a4fffad2a002",
-            "content": "sha256:740b5365cfe34c7cd564737d17fa4898179d19845be3ebb9bed964f5350ae17e",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "6": {
-      "note": "The spirit test is this seat's alone and cannot widen a fix-verification scope.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e9c8975d297fe0271bc4c6777f41a4fffad2a002",
-            "content": "sha256:740b5365cfe34c7cd564737d17fa4898179d19845be3ebb9bed964f5350ae17e",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "7": {
-      "note": "Master exit decides one open manager handover gate and never treats a verdict as the decision.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e9c8975d297fe0271bc4c6777f41a4fffad2a002",
-            "content": "sha256:740b5365cfe34c7cd564737d17fa4898179d19845be3ebb9bed964f5350ae17e",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "8": {
-      "note": "The seat owns the portfolio bird's-eye through eight numbered duties.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e9c8975d297fe0271bc4c6777f41a4fffad2a002",
-            "content": "sha256:740b5365cfe34c7cd564737d17fa4898179d19845be3ebb9bed964f5350ae17e",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "9": {
-      "note": "The seat's children are enumerated with the manager/system-specialist/super-exit reviewer split.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e9c8975d297fe0271bc4c6777f41a4fffad2a002",
-            "content": "sha256:740b5365cfe34c7cd564737d17fa4898179d19845be3ebb9bed964f5350ae17e",
+            "blob": "5ef8c937db8421f36aa32417d6e97019a39af43f",
+            "content": "sha256:5c619fcf4052b801b53312ea1dcea7619facf23d9b3624bc708074a7116c1695",
             "locator": {
               "kind": "file"
             }

@@ -30,8 +30,12 @@ Four mechanisms defend four different readings, and they are deliberately **not*
   is a census, not a list of favoured files: the declared roster must **equal** the files that use
   `COMPLETION_TRUTH_VOCABULARY`, in both directions. A surface that newly speaks the vocabulary and is
   not declared fails just as a declared surface that went silent does. The composed curation operation
-  and the curator and reviewer role documents stand on the roster because each retains the sentence that
-  terminal/finalizer truth attests only that the turn ended and wakes the owner who validates.
+  states the terminal-only half directly (operations/curation.md:265); the curator role document
+  composes that handoff home by explicit referral (roles/curator.md:146); the reviewer role document
+  retains local turn-only truth. The owner-validation half lives at the accepted common home
+  core/acceptance.md:14-19. None of these three scoped local surfaces states both halves locally;
+  the rostered common home core/acceptance.md states both halves (terminal truth at :3-8,
+  owner validation on wake at :14-19).
 - **Each declared surface states its own owed clauses and does not deny them.** `OWED_STATEMENTS` is
   per-surface and contradiction-aware: a surface that states *and* denies fails `_assert_owed` and
   reads `CONTRADICTED`.

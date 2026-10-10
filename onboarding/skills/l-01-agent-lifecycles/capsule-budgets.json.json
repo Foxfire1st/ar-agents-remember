@@ -1,0 +1,57 @@
+{
+  "path": "skills/l-01-agent-lifecycles/capsule-budgets.json",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "d7a0d90828d1b6ce06b2555df4608b408b1ddff4",
+        "content": "sha256:8460fc4185b567e8190fcb25d617628308f10b93b5d4f92153559356d7b4990f",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-9FX5WR",
+      "invariant": "INV-Y6GVZ7",
+      "origin": {
+        "handoffEntry": "MIK-R101@v1 rule 6",
+        "leaf": "260928-MIK-L101"
+      },
+      "rationale": "This registry is the decision-backed current capsule budget contract with all 38 cells recomputed.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "All 38 capsules carry ceil(raw*11/10) budgets recorded with the texts they measure.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d7a0d90828d1b6ce06b2555df4608b408b1ddff4",
+            "content": "sha256:8460fc4185b567e8190fcb25d617628308f10b93b5d4f92153559356d7b4990f",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The test bounds fresh compiled sizes by stored capsule budgets; decision recording is registry policy and is not checked by this test.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0af0431175466d1d6d0ef30654277069c9ac6095",
+            "content": "sha256:1a2e5bc3df0f8e53fb9c847cf2b7aa6a397ccae242a38e0b058133b988b79aed",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_no_capsule_exceeds_its_recorded_budget"
+            },
+            "path": "mcp/tests/test_role_capsule_budgets.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

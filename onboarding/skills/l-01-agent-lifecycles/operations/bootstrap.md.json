@@ -1,0 +1,52 @@
+{
+  "path": "skills/l-01-agent-lifecycles/operations/bootstrap.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The bootstrap carrier is a taskless free agent whose capsule arrives as session environment.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "90d0e2a70ed4f9b3c23a1465b0bed91600d810df",
+            "content": "sha256:af419059a10bda4a648f7dd256c9f8c0b9bbe410ba0962516cbfb335b33368cd",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The eight setup steps run through their owning surfaces, ending in baseline adoption.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "90d0e2a70ed4f9b3c23a1465b0bed91600d810df",
+            "content": "sha256:af419059a10bda4a648f7dd256c9f8c0b9bbe410ba0962516cbfb335b33368cd",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The seat reads and reports the knowledge foundation but never authors records.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "90d0e2a70ed4f9b3c23a1465b0bed91600d810df",
+            "content": "sha256:af419059a10bda4a648f7dd256c9f8c0b9bbe410ba0962516cbfb335b33368cd",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

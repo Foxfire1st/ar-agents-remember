@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "Realized in roles/manager.md, which collects everything the Manager owes, and in roles/orchestrator.md, which collects everything the Orchestrator owes, with the handover protocol one-placed in operations/coordination.md; two files carry the obligation."
+  },
+  "applicability": "Every role text and handover paragraph in skills/l-01-agent-lifecycles.",
+  "conditions": [
+    "A role's output section is the single place its whole output is stated."
+  ],
+  "exclusions": [
+    "Brief templates, which carry values rather than rules (rule 5)."
+  ],
+  "id": "INV-5M79ZP",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Manager Result contract roles/manager.md 36-38; Orchestrator Result contract roles/orchestrator.md 34-36; handover protocol in operations/coordination.md"
+      ],
+      "path": "notes/reports/260928-MIK-L101-curator-handoff-list.json"
+    },
+    "handoffEntry": "MIK-R101@v1 rule 2",
+    "leaf": "260928-MIK-L101",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Each role states its whole output in its own text, with one authoritative Result contract collecting every owed artifact.",
+  "status": "proposed",
+  "supersedes": []
+}

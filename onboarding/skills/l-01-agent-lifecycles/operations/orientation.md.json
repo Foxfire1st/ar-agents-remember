@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "fe0ee3ac71ede00f98e9bcafb82a64ad8eed553b",
+        "blob": "fddae8ce3e396637835602d2a96e7b3d0a29bd1d",
         "content": "sha256:1306bb4da04c7853394b4400b768e81237508d5a7d9bc165b99ca34fc4cc039a",
         "locator": {
           "end": 7,
@@ -22,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "fe0ee3ac71ede00f98e9bcafb82a64ad8eed553b",
+        "blob": "fddae8ce3e396637835602d2a96e7b3d0a29bd1d",
         "content": "sha256:fb88b4cb11d7d27e66b17718d83c21144cbe42b604b12e4b12dde8eac6be3a9b",
         "locator": {
           "end": 11,
@@ -41,8 +41,27 @@
     },
     {
       "anchor": {
-        "blob": "fe0ee3ac71ede00f98e9bcafb82a64ad8eed553b",
-        "content": "sha256:83809b5f736555c591ccd2964ca3ec36644ec461dba5ec07774674e8b151d234",
+        "blob": "fddae8ce3e396637835602d2a96e7b3d0a29bd1d",
+        "content": "sha256:1474575fe1142856b37b1106b95e578f8ad8ae8c1982fe29d9324ceee1abb31e",
+        "locator": {
+          "end": 15,
+          "kind": "line_range",
+          "start": 15
+        }
+      },
+      "id": "RLZ-C5XM1T",
+      "invariant": "INV-BCEZZM",
+      "origin": {
+        "handoffEntry": "MIK-R101@v1 rule 8",
+        "leaf": "260928-MIK-L101"
+      },
+      "rationale": "This sentence is the canonical permission non-bypass boundary required in every start operation.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "fddae8ce3e396637835602d2a96e7b3d0a29bd1d",
+        "content": "sha256:1b164b85a4af87a3f73b807c0e374cfc93102afa9f8c09a6bb45ba060d3e0505",
         "locator": {
           "kind": "file"
         }
@@ -58,7 +77,7 @@
     },
     {
       "anchor": {
-        "blob": "fe0ee3ac71ede00f98e9bcafb82a64ad8eed553b",
+        "blob": "fddae8ce3e396637835602d2a96e7b3d0a29bd1d",
         "content": "sha256:90c1134af65243f7ac535323798edcb2b590b7ff96945970bce4dfdc463ef128",
         "locator": {
           "end": 3,

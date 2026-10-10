@@ -1,0 +1,45 @@
+{
+  "admission": {
+    "criteria": [
+      "constrains_future_work"
+    ],
+    "justification": "Binds run-evidence admission for every leaf paid and fixture operation to the five-fact contract."
+  },
+  "alternatives": [
+    {
+      "option": "Credit a run whole on command, output, exit status, code and memory identities, and who/when; absent harness tool-call envelopes are no gap.",
+      "reason": "Architect standing ruling WHAT-THE-EVIDENCE-OF-A-RUN-HOLDS-RULING.json (44c648b6, 2026-10-10), points 1-4.",
+      "status": "chosen"
+    },
+    {
+      "option": "Block runs for absent harness-owned tool-call metadata.",
+      "reason": "A harness does not hand its agent the envelope of the agent's own call; the condition is unmeetable.",
+      "reconsider_when": "A Reviewer names a product fact unjudgeable without a further record under point 4, and the Architect answers.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Run-evidence admission for every leaf paid and fixture operation follows the five-fact contract."
+  ],
+  "context": "The renewed L101 run was blocked for absent harness-owned tool-call metadata no requirement asked for.",
+  "decider": "architect (standing ruling 44c648b6, 2026-10-10)",
+  "id": "DEC-F6BPRV",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "route:notes"
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "notes/reports/260928-MIK-L101-curator-handoff-list.json"
+    },
+    "handoffEntry": "dec-run-evidence",
+    "leaf": "260928-MIK-L101",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

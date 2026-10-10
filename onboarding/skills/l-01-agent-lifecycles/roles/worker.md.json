@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "7ef8f7882d406362133d4f880ea9426d61473e9a",
-        "content": "sha256:024e68495fc07da4a90a0a5fd0fdcd8a3d2e91b62e5cab21a85839013b57696b",
+        "blob": "fe4d11dd56c68d470009b7aa2d285c0594ac9301",
+        "content": "sha256:5bb66351365a021665a5ec13e1e7c6d04d41c9cc5f4bcef20523f81f591a3064",
         "locator": {
           "end": 12,
           "kind": "line_range",
@@ -22,8 +22,8 @@
     },
     {
       "anchor": {
-        "blob": "7ef8f7882d406362133d4f880ea9426d61473e9a",
-        "content": "sha256:87ed38f8275d5430062a4cf46f621c165e84a0b55c80d7bd0dfe268b22bde8c0",
+        "blob": "fe4d11dd56c68d470009b7aa2d285c0594ac9301",
+        "content": "sha256:31cc116d08bc5b031fbc85b4aeb05cf463a399b56b3020ccfbbcecb505dca009",
         "locator": {
           "kind": "file"
         }
@@ -39,8 +39,8 @@
     },
     {
       "anchor": {
-        "blob": "7ef8f7882d406362133d4f880ea9426d61473e9a",
-        "content": "sha256:87ed38f8275d5430062a4cf46f621c165e84a0b55c80d7bd0dfe268b22bde8c0",
+        "blob": "fe4d11dd56c68d470009b7aa2d285c0594ac9301",
+        "content": "sha256:31cc116d08bc5b031fbc85b4aeb05cf463a399b56b3020ccfbbcecb505dca009",
         "locator": {
           "kind": "file"
         }
@@ -56,8 +56,8 @@
     },
     {
       "anchor": {
-        "blob": "7ef8f7882d406362133d4f880ea9426d61473e9a",
-        "content": "sha256:87ed38f8275d5430062a4cf46f621c165e84a0b55c80d7bd0dfe268b22bde8c0",
+        "blob": "fe4d11dd56c68d470009b7aa2d285c0594ac9301",
+        "content": "sha256:31cc116d08bc5b031fbc85b4aeb05cf463a399b56b3020ccfbbcecb505dca009",
         "locator": {
           "kind": "file"
         }
@@ -73,8 +73,8 @@
     },
     {
       "anchor": {
-        "blob": "7ef8f7882d406362133d4f880ea9426d61473e9a",
-        "content": "sha256:87ed38f8275d5430062a4cf46f621c165e84a0b55c80d7bd0dfe268b22bde8c0",
+        "blob": "fe4d11dd56c68d470009b7aa2d285c0594ac9301",
+        "content": "sha256:31cc116d08bc5b031fbc85b4aeb05cf463a399b56b3020ccfbbcecb505dca009",
         "locator": {
           "kind": "file"
         }
@@ -90,12 +90,12 @@
     },
     {
       "anchor": {
-        "blob": "7ef8f7882d406362133d4f880ea9426d61473e9a",
-        "content": "sha256:cbcdf2806d289c38676ef1301ccb4f93324bdfb2dbf4ee8fd7047ed5815ce753",
+        "blob": "fe4d11dd56c68d470009b7aa2d285c0594ac9301",
+        "content": "sha256:238bbdae676cefbf9176f33ee6657c3a2a8d53b6e73fc92216e012c9e4235ed8",
         "locator": {
-          "end": 28,
+          "end": 30,
           "kind": "line_range",
-          "start": 28
+          "start": 30
         }
       },
       "id": "RLZ-X136N6",
@@ -104,7 +104,7 @@
         "handoffEntry": "Preservation (flags and acceptance)",
         "leaf": "260928-MIK-L90"
       },
-      "rationale": "The worker's report-and-limits paragraph keeps the report duty and states that a finished turn is not AR acceptance.",
+      "rationale": "The Boundaries paragraph keeps the non-acceptance rule: the Worker neither reviews nor accepts its own implementation, and a finished turn is not AR acceptance.",
       "role": "support"
     }
   ],

@@ -61,6 +61,11 @@ The lane catalog carries the incoming shared evidence-lane content from the L79 
 and `mcp/tests/test_tool_event_river.py` are `unit-regression` rows in canonical byte
 order; each module appears in exactly one lane.
 
+## 260928-MIK-L101 Rule 6 budget test joins unit-regression
+
+`mcp/tests/test_role_capsule_budgets.py` is a `unit-regression` row in canonical byte
+order; each module appears in exactly one lane.
+
 ## Evidence
 
 ### Docs References

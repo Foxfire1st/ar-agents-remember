@@ -1,0 +1,55 @@
+{
+  "admission": {
+    "criteria": [
+      "constrains_future_work"
+    ],
+    "justification": "Binds this master's sweep (MIK-R101) to keep closeout and integration byte-identical per developer direction D93."
+  },
+  "alternatives": [
+    {
+      "option": "Preserve operations/closeout.md and the named closeout and integration role passages byte-identical through the sweep.",
+      "reason": "Developer direction D93 via the MIK-R101@v1 packet; verified by byte comparison at A8.",
+      "status": "chosen"
+    },
+    {
+      "option": "Sweep closeout and integration text with the other role texts.",
+      "reason": "Closeout wording is landing-transaction authority, not role style.",
+      "reconsider_when": "A closeout defect traces to the preserved wording itself.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "No sweep edits closeout or integration text under this master's packets without a new developer ruling."
+  ],
+  "context": "The sweep threatened the closeout and integration wording the landing transaction depends on; the developer ruled the closeout stays as it is.",
+  "decider": "developer (direction D93) via the MIK-R101@v1 packet",
+  "id": "DEC-A4XZ06",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "797c78c090a39734d316d12fab86fd41820ab528",
+        "content": "sha256:baea8d9c29a19b55b3bd58cb8c81382965f4ad5f2d665e42839f2843ef3411f0",
+        "locator": {
+          "kind": "file"
+        },
+        "path": "skills/l-01-agent-lifecycles/operations/closeout.md"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "sweep-evidence.json rule4_kept_by_name + closeout_identity (1303B baea8d9c, identical a1b7/69379); curator closeout sentence at roles/curator.md 104 [A6: locator corrected from 129 (an ## Outputs heading in A5 bytes) to the actual closeout-evidence sentence line 105; verified non-blank.] [A7: locator corrected 105->104 after R4 byte read-back; line 105 is blank, the closeout-evidence sentence is line 104.]"
+      ],
+      "path": "notes/reports/260928-MIK-L101-curator-handoff-list.json"
+    },
+    "handoffEntry": "MIK-R101@v1 rule 4",
+    "leaf": "260928-MIK-L101",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

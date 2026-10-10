@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "21c85a8e5e2ff9e00f0e2baf308dffb3f4ea2599",
-        "content": "sha256:61d0bb26b1f48e78a417722a872bd7fcff6f58701ebefde854ce7ed1442323f3",
+        "blob": "db65f4af62b9d4f8da76f7526082c27f6d7f02db",
+        "content": "sha256:3c0c11a655d7a84e6a283329b5b1ae34b1c825b85ea012b5087325be43a96eae",
         "locator": {
           "kind": "file"
         }
@@ -19,6 +19,52 @@
       "role": "primary-authority"
     }
   ],
-  "references": {},
+  "references": {
+    "1": {
+      "note": "Owner, builder and reviewer never take each other's acts; verdicts are evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "db65f4af62b9d4f8da76f7526082c27f6d7f02db",
+            "content": "sha256:3c0c11a655d7a84e6a283329b5b1ae34b1c825b85ea012b5087325be43a96eae",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Review is opt-in with tiers tuning depth; at most three rounds with sealed lists.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "db65f4af62b9d4f8da76f7526082c27f6d7f02db",
+            "content": "sha256:3c0c11a655d7a84e6a283329b5b1ae34b1c825b85ea012b5087325be43a96eae",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Requirement compilation into stable ID and version packets precedes task topology.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "db65f4af62b9d4f8da76f7526082c27f6d7f02db",
+            "content": "sha256:3c0c11a655d7a84e6a283329b5b1ae34b1c825b85ea012b5087325be43a96eae",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
   "schema": "ar-onboarding-file/v1"
 }
