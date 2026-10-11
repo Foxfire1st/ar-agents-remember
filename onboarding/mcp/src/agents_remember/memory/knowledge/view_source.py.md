@@ -42,27 +42,15 @@ the dataset declares, validates the bound namespace and returns the identity tho
 and the schema identity's own `fingerprint` as the context digest. `snapshot()` returns exactly that
 value, so a view cannot be handed a snapshot the reader did not read.
 
-**One statement per question, with the columns named.** `RECORDS_OF_KIND` is the envelope-and-revision
-read: it selects `record_id`, `kind`, `record_schema`, `lifecycle`, `governing_route_id`,
-`revision_id`, `payload` and `provenance`, left-joining `record_revision` on the repository and record
-keys, and it names its columns rather than selecting a star so a column added by a later generation
-cannot silently change what a view reads. `REGISTERED_REALIZATIONS` and `REGISTERED_FAMILIES` are the
+**One statement per question, with the columns named.** The envelope tables are gone, so there is no generic envelope read: each question has its own statement naming its columns rather than selecting a star, so a column added later cannot silently change what a view reads. `REGISTERED_REALIZATIONS` and `REGISTERED_FAMILIES` are the
 two registered totals, each counted from its own table. Generation 1's own entities are read by their
 own statements instead of being copied into the envelope: `INVARIANT_REVISIONS` and `FAMILY_REVISIONS`
 each left-join their revision table, `FAMILY_MEMBERS` reads the membership rows, and
 `REALIZATION_CLAIMS` joins `source_anchor` so a claim arrives with the path, source identity and
-locator it attributes. `ATTACHMENTS_OF_ENDPOINT` is one statement for the authored attachments of one
-exact endpoint, and its endpoint column is substituted from `ENDPOINT_COLUMNS` — the declared
-vocabulary mapping each endpoint kind to the column it populates — so no string a caller supplies can
-reach the SQL.
+locator it attributes. The attachment statement is deleted with the facet tables: no authored-attachment read remains.
 
 **A statement answers the question it was written for, and the port method is what says which question
-that is.** Membership is a generation-1 entity with its own table, and it is not copied into the
-envelope, so `family_member_rows` executes `FAMILY_MEMBERS` and not `rows("family_member")`. The
-distinction is not stylistic: the generic envelope read answers for `knowledge_record` /
-`record_revision` kinds, and asking it for a kind those tables never carry returns **no rows on a
-dataset that holds them** — an empty answer a view then reports as `completeWithinDeclaredScope: true`
-for a family it never read. `_member_row` builds the row from the statement's own column order, and it
+that is.** Membership is a recorded entity with its own table, so `family_member_rows` executes `FAMILY_MEMBERS` and nothing else. `_member_row` builds the row from the statement's own column order, and it
 keeps only what was recorded: the two ids travel in the payload under the names the view layer reads
 (`family_revision_id`, `invariant_revision_id`), the row kind and schema are `family_member` and
 `family-member/v1`, and the `change_locus` a view puts on such a row is the *view's* decision — this
@@ -75,27 +63,21 @@ recorded list column into a tuple of strings through `decode_typed_column`, retu
 for null; `_text` renders one scalar as text or `None`; `_provenance_author` decodes a stored
 provenance envelope, reads its `actor_ref` mapping entry and returns `None` when the row carries no
 author — never a default, because the point of an authored classification is that a named actor wrote
-it. `_decode_row` decodes the revision payload and raises `ViewReaderError` when the stored value is
-not a JSON object, so an unreadable payload cannot arrive at a view as an empty mapping.
+it. The builders decode typed columns inline (`_text`/`_sequence`); the shared `_decode_row` envelope path and its not-a-JSON-object refusal are deleted with the envelope tables.
 
-**One row builder per recorded shape.** `_invariant_row`, `_family_row`, `_member_row`,
-`_realization_row` and `_attachment_row` construct `ViewSourceRow` from the fixed column order their
-statement declares: each names its `record_kind` and `record_schema`, fills the envelope fields it has
+**One row builder per recorded shape.** `_invariant_row`, `_family_row`, `_member_row` and
+`_realization_row` construct `ViewSourceRow` from the fixed column order their
+statement declares: each names its `record_kind` and `record_schema`, fills the fields it has
 (`revision_id`, `lifecycle`, `author_ref`) and builds the `payload` mapping from named columns — conditions and
-exclusions through `_sequence`, the attachment's payload through the decoded facet object whose
-`facet_kind` becomes the row's `record_kind`. `_decode_row` is the envelope path, taking `kind`,
-`record_schema`, `record_id`, `revision_id`, `lifecycle`, `governing_route_id` and `author_ref` from
-the stored columns and the payload from the decoded revision. `_member_row` is the membership path and
+exclusions through `_sequence`. The attachment builder is deleted with the facet tables. `_member_row` is the membership path and
 is the one builder whose result carries **no** `change_locus`: which locus a membership row belongs to
 is the view's classification decision, and this module classifies nothing.
 
 **Every read is cached, counted and answered as a typed error rather than an empty result.**
-`StoreViewReader` keeps a per-key `_cache` for the reader's lifetime — keyed by record kind, by the
-invariant, family, membership and realization statements, and by
-`attachments:{endpoint_kind}:{endpoint_id}` — so two views built over one reader cannot disagree about
+`StoreViewReader` keeps a per-key `_cache` for the reader's lifetime — keyed by the
+invariant, family, membership and realization statements — so two views built over one reader cannot disagree about
 a kind's rows merely because a write landed between them. `_count` reads the single count row and raises `ViewReaderError` when the statement
-returns none; `registered_counts` returns the two totals as `ViewSourceCounts`. `attachment_rows`
-refuses an unregistered endpoint kind with `ViewReaderError` before it builds a statement, and
+returns none; `registered_counts` returns the two totals as `ViewSourceCounts`.
 `anchor_state` returns `not_requested` when no resolver was supplied or the resolver answers nothing,
 raising `ViewReaderError` when the resolver it was built with is not callable.
 
@@ -103,10 +85,9 @@ This module declares no model of its own: every shape it returns comes from the 
 `ViewSourceRow` and `ViewSourceCounts` from `models/knowledge/view.py` and `KnowledgeReadSnapshot` from
 `models/knowledge/read.py`, so `extra="forbid"` and `frozen=True` reach these rows from the shared base
 rather than from a declaration repeated here. Declarations that must agree are one declaration: each
-SQL statement is a single module-level constant executed from one place, the endpoint column is looked
-up in the imported `ENDPOINT_COLUMNS` mapping instead of being written into a query, and the five
-record-schema literals the entity and attachment builders write (`invariant-revision/v1`,
-`family-revision/v1`, `family-member/v1`, `realization-claim/v1`, `facet/v1`) are spelled once each in
+SQL statement is a single module-level constant executed from one place, and the four
+record-schema literals the entity builders write (`invariant-revision/v1`,
+`family-revision/v1`, `family-member/v1`, `realization-claim/v1`) are spelled once each in
 their own builder.
 
 - **This module selects nothing, orders nothing and classifies nothing.** Its statements filter on the
@@ -122,27 +103,19 @@ their own builder.
 - **No path is held and no second connection is opened.** `StoreViewReader` is constructed from an
   already-open connection, the repository id and the snapshot, so it cannot re-open the database at
   another revision behind the caller's back.
-- **An unanswerable read is raised, not absorbed.** `ViewReaderError` covers an unregistered endpoint
-  kind, a stored payload that is not a JSON object, a count statement that returned no row and a
+- **An unanswerable read is raised, not absorbed.** `ViewReaderError` covers
+  a stored payload that is not a JSON object, a count statement that returned no row and a
   resolver that is not callable, because an empty result and an unreadable input are different facts.
 - **No author is invented.** `_provenance_author` returns `None` for a row with no recorded actor
   instead of a default, so "nobody recorded this" never renders as "someone did".
-- **No caller text reaches SQL.** The attachment statement's endpoint column is chosen from
-  `ENDPOINT_COLUMNS`, and an endpoint kind outside that vocabulary is refused before a statement is
-  built, so the one substituted token in this file is never caller text.
-- **The reader owns no table and no generation rule.** It reads `knowledge_record`, `record_revision`
-  and generation 1's own entity tables exactly as they are declared elsewhere; the envelope and
-  revision pair is generation 2's appended structure, declared in `schema_v2.py` and not restated here.
+- **No caller text reaches SQL.** Every statement is a fixed module-level constant with only bound parameters, so no substituted token in this file is ever caller text.
+- **The reader owns no table and no generation rule.** It reads the eight logical tables the projection fills, exactly as the single schema module declares them.
 - **One declared statement has exactly one caller, and it is the port method written for it.**
   `FAMILY_MEMBERS` is a module-level statement that `__all__` does not list; it is executed from
   `StoreViewReader.family_member_rows` and from nowhere else, and `family_member_rows` is the port method
-  that makes the family view's membership read possible at all. The two travels together: the statement
-  is the read, the method is the question, and a caller that reaches for the generic envelope read
-  instead gets an empty answer the statement would not have given.
-- **Membership is read from its own table, never through the envelope.** `family_member` is a
-  generation-1 entity like `family` and `invariant`; it is not duplicated into
-  `knowledge_record`/`record_revision`, so `rows("family_member")` answers "no rows" on a dataset that
-  holds membership. The port declares `family_member_rows` so that read is a typed method call rather
+  that makes the family view's membership read possible at all.
+- **Membership is read from its own table.** `family_member` lives in its own table;
+  the port declares `family_member_rows` so that read is a typed method call rather
   than a string a caller can spell wrong, and `_member_row` is the only row builder for that statement.
 
 ## Evidence
@@ -160,27 +133,27 @@ No domain documentation source is configured for this repository (`system/source
 No configured domain documentation could be checked.
 
 The reader answers a port declared one layer up and feeds a view layer that decides everything this
-module refuses to decide; the tables it reads are declared by generations it does not own. The rows
+module refuses to decide; the tables it reads are the eight logical tables the single schema declares. The rows
 below cite the reader's statements, builders and entry points, the vocabulary it imports rather than
 re-declares, and the layer where selection, ordering and provenance classification actually happen.
 
 - The reader's own statement of its division of labour: recorded rows out, no selection, no ordering and no classification, because every such decision carries a provenance class one layer up. [21]
 - The read-only handle this module opens through, with the read-only APSW flag and the busy timeout it does set. [22]
 - The snapshot composed from the dataset's own identity rather than a caller's assertion. [23]
-- The envelope-and-revision read, with its columns named rather than selected by a star so a later column cannot change what a view sees. [24]
+- The per-question statements, each naming its columns rather than selecting by a star so a later column cannot change what a view sees. [24]
 - The two registered totals, each counted from its own table and returned as one counts value. [25]
-- Generation 1's own entities read by their own statements instead of being copied into the envelope. [26]
-- The family-membership read: its own statement, executed from its own port method, with the comment recording why the generic envelope read could not answer it. [27]
+- Each entity read by its own statement: invariant revisions, family revisions, memberships and realization claims. [26]
+- The family-membership read: its own statement, executed from its own port method. [27]
 - The realization-claim read and the source anchor it joins, so a claim arrives with the location it attributes. [28]
-- The attachment read, whose endpoint column is chosen from the declared vocabulary instead of being interpolated from caller text. [29]
+- No attachment read remains: the facet tables are deleted. [29]
 - The typed-JSON decoding and the never-defaulted author lookup every stored payload passes through. [30]
-- The reader class, built from an already-open connection and the declared snapshot, holding no path of its own, and the port it answers — including the membership method the protocol declares so a caller cannot reach for the envelope kind by name. [31]
-- The snapshot accessor, the registered counts and the per-kind read with its lifetime cache. [32]
-- The entity row readers and the attachment read, plus the count helper that refuses an empty count result. [33]
+- The reader class, built from an already-open connection and the declared snapshot, holding no path of its own, and the port it answers. [31]
+- The snapshot accessor, the registered counts and the per-statement read with its lifetime cache. [32]
+- The entity row readers plus the count helper that refuses an empty count result. [33]
 - The anchor-state answer: not-requested when there is no resolver, a typed error when the resolver is not callable. [34]
 - The row builders, each naming its record kind and schema and building its payload from named columns. [35]
 - Where selection and ordering actually live, with an unclassifiable value withheld rather than defaulted. [36]
-- The envelope and revision tables generation 2 appends, and the opened store the reader is built over. [37]
+- The eight logical tables the single schema declares. [37]
 
 ### Cross-Repo References
 

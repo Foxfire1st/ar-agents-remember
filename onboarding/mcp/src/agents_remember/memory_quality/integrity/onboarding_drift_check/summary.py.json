@@ -19,12 +19,12 @@
         },
         {
           "anchor": {
-            "blob": "a2e32055df9ed4e20616122a8838f1eea2783fa2",
+            "blob": "1b1b9671292115c6dd9de74936534444e0f8affe",
             "content": "sha256:5d246fffd9db7dec40eb538866f499e691778abb88b97474cc0cefe71c0c3a43",
             "locator": {
-              "end": 200,
+              "end": 202,
               "kind": "line_range",
-              "start": 200
+              "start": 202
             },
             "path": "mcp/src/agents_remember/application/context_packet.py"
           },
@@ -65,15 +65,15 @@
       ]
     },
     "12": {
-      "note": "The converted report and the observer snapshot are written from the same measured result.",
+      "note": "The converted branch gates report, observer snapshot and reportPath together; unfiled reads retain the same measured packet.",
       "targets": [
         {
           "anchor": {
-            "blob": "597c57b254ec08a62dcc4dfced2687498c5c2660",
-            "content": "sha256:d9e1b4e3ba17e79f97dd6f897043a4e1419c230116d9d243870e12f3992a8e04",
+            "blob": "b2516e18ff95d4d77de4285a6b610fada5d5f4c5",
+            "content": "sha256:f3d678c572049ebd86cc2af1a22e1bf92d3c48954e25c78eaa613c885709eae1",
             "locator": {
               "kind": "symbol",
-              "name": "_write_converted_report"
+              "name": "_run_converted_summary"
             }
           },
           "kind": "code"
@@ -205,7 +205,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "597c57b254ec08a62dcc4dfced2687498c5c2660",
+            "blob": "b2516e18ff95d4d77de4285a6b610fada5d5f4c5",
             "content": "sha256:433e1755ab5abb07f8c97d249f6909510febede82bb7c1b080691e18194525f6",
             "locator": {
               "kind": "symbol",
@@ -216,12 +216,12 @@
         },
         {
           "anchor": {
-            "blob": "597c57b254ec08a62dcc4dfced2687498c5c2660",
+            "blob": "b2516e18ff95d4d77de4285a6b610fada5d5f4c5",
             "content": "sha256:939937f982310879eb87e0fff7de9d71280c31e41a6d97c2bfa7c418eadb0531",
             "locator": {
-              "end": 341,
+              "end": 347,
               "kind": "line_range",
-              "start": 302
+              "start": 308
             }
           },
           "kind": "code"

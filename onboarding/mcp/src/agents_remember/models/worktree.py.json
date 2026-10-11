@@ -3,7 +3,7 @@
   "realizes": [],
   "references": {
     "113": {
-      "note": "Readable mode imported from the kernel\n\nAnchor: `ReadableMemoryMode`",
+      "note": "Readable mode imported from the kernel\n\nAnchor: `source range`",
       "targets": [
         {
           "anchor": {
@@ -77,6 +77,856 @@
             "locator": {
               "kind": "symbol",
               "name": "WorktreePauseResponse"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "118": {
+      "note": "SourceLineageProjection carries state, summary, edges and recoveries.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3ff8738a74b90a9cde9779804b87b348f22f8127",
+            "content": "sha256:b927163c3ce97dd8d1500ec96675fb500941af9185636a45d3bd1682e5603adf",
+            "locator": {
+              "kind": "symbol",
+              "name": "SourceLineageProjection"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "119": {
+      "note": "SyncOperationProjection carries journal state, phase, conflicts, summary and next/cancel arguments.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3ff8738a74b90a9cde9779804b87b348f22f8127",
+            "content": "sha256:2e809f9709cd74bbcfd7a2a23bc06a59b3a0fe71348944b7abb4c3d5d4d46f79",
+            "locator": {
+              "kind": "symbol",
+              "name": "SyncOperationProjection"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "120": {
+      "note": "SyncResolutionProjection describes agent-owned side/worktree/files and wipRestore without deciding conflict content.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3ff8738a74b90a9cde9779804b87b348f22f8127",
+            "content": "sha256:7ee5b7aa48b2e692966b0d8f2ce90800290025dae7f0995044c9832235eb34f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "SyncResolutionProjection"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "121": {
+      "note": "SyncResolutionInput admits only its declared optional action.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3ff8738a74b90a9cde9779804b87b348f22f8127",
+            "content": "sha256:3bb1db0cf79e680c28ede9577bb884ad984242f4be8d086307df0b299e70c7ff",
+            "locator": {
+              "kind": "symbol",
+              "name": "SyncResolutionInput"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "122": {
+      "note": "WorkflowKind is the shared chat-task/light-task wire vocabulary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3ff8738a74b90a9cde9779804b87b348f22f8127",
+            "content": "sha256:aa6bd76fde7d46f8d8c8160809ca60e8a4308f054eca39dc682e0fdb24fbfd65",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorkflowKind"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "123": {
+      "note": "The guidance module imports NextOperation, NextTool and WorktreePhase from the model and obtains guidance by calling lifecycle_guidance(contract). Recovery aliases remain separate.\n\nAnchor: `source range`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f2ae7719181b7b041a6701c88f53f37f4d2c8cf1",
+            "content": "sha256:ea3e2a4130eb4039ac289d9472a1a4ded5214f10cd463859d0f003be5834dd7b",
+            "locator": {
+              "kind": "symbol",
+              "name": "guidance"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/guidance.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f2ae7719181b7b041a6701c88f53f37f4d2c8cf1",
+            "content": "sha256:0d6fa275f1382d8bee165ec35f677b118a387c442aa516d3fb6e4915304b88e8",
+            "locator": {
+              "kind": "symbol",
+              "name": "RecoveryOperation"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/guidance.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f2ae7719181b7b041a6701c88f53f37f4d2c8cf1",
+            "content": "sha256:89712cc3131e102fe7887d38d583a9957a3f97397b4e13fc906df2c9c31b0202",
+            "locator": {
+              "kind": "symbol",
+              "name": "RecoveryTool"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/guidance.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f2ae7719181b7b041a6701c88f53f37f4d2c8cf1",
+            "content": "sha256:c64f57395d1828f7f8384621ea303b6872410158fdffd50e7913ab06aa8737fd",
+            "locator": {
+              "end": 14,
+              "kind": "line_range",
+              "start": 10
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/guidance.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "124": {
+      "note": "TaskDocResponse is a ToolResponse rather than a WorktreeCommandResponse and declares nextTool as str or None; the worktree roster validator does not govern this class.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9525a9a6218a4ea4a1084fa4bd7331b0cdda4468",
+            "content": "sha256:dc12d718a347a25d1d34282034975001a8448ffa5dca97dd5bc6013b079a9ceb",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskDocResponse"
+            },
+            "path": "mcp/src/agents_remember/models/task_doc.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "125": {
+      "note": "worktree_sync_tool admits its configured contract, delegates to the worktree manager and forwards resolution.action as resolution_action.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dfa2872ad0a9789182edbd48e33d561d9929e0ba",
+            "content": "sha256:8e0d747e51053cb3f8f394cc56e2231d82dc661c50824500a0efd4ed322b4af4",
+            "locator": {
+              "kind": "symbol",
+              "name": "worktree_sync_tool"
+            },
+            "path": "mcp/src/agents_remember/application/worktree_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "126": {
+      "note": "SourceLineageEdge, SourceLineageRecovery and SourceLineageProjection expose the typed source-lineage boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3ff8738a74b90a9cde9779804b87b348f22f8127",
+            "content": "sha256:f618c0739bc4f7ba1467523bfb10b53f864664298a5509ccc130c90b27fe6451",
+            "locator": {
+              "kind": "symbol",
+              "name": "SourceLineageEdge"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3ff8738a74b90a9cde9779804b87b348f22f8127",
+            "content": "sha256:0a0bf5a1061cb229b0f71dccbfcf35974c07782402caff8ac3e61f7631682bca",
+            "locator": {
+              "kind": "symbol",
+              "name": "SourceLineageRecovery"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3ff8738a74b90a9cde9779804b87b348f22f8127",
+            "content": "sha256:b927163c3ce97dd8d1500ec96675fb500941af9185636a45d3bd1682e5603adf",
+            "locator": {
+              "kind": "symbol",
+              "name": "SourceLineageProjection"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "127": {
+      "note": "WorktreeSummary is the strict context-packet shape with typed lifecycle and worktree vocabulary fields.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3ff8738a74b90a9cde9779804b87b348f22f8127",
+            "content": "sha256:42e9ad3f73ef20b9a4b7ea28756b32d3e08d8b6992ab8a1afeebf70a5a3ebb29",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorktreeSummary"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "128": {
+      "note": "WorktreeState is locally declared as inactive, active, missingContract or invalidContract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3ff8738a74b90a9cde9779804b87b348f22f8127",
+            "content": "sha256:a47c00cea5853784f166d563a3d6bdf45f283ddade8c0d85712a924d92c066ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorktreeState"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "129": {
+      "note": "WorktreeSummary uses the declared wire vocabulary fields, including ReadableMemoryMode for persisted memory-mode reads.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3ff8738a74b90a9cde9779804b87b348f22f8127",
+            "content": "sha256:42e9ad3f73ef20b9a4b7ea28756b32d3e08d8b6992ab8a1afeebf70a5a3ebb29",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorktreeSummary"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "130": {
+      "note": "The terminal-status projector distinguishes terminal-cleanup-completed from terminal-archive-ready and emits the archive cleanup operation as the next tool only when cleanup remains.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ea5764081bbb7a9fa9f16d71c4164e1626564383",
+            "content": "sha256:c9958666764ea6263bf1a7ac0bd142cc5d8ccb1629a3a7cc51a0b313e3e6de8d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_project_terminal_contract_status"
+            },
+            "path": "mcp/src/agents_remember/application/worktree_status.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "131": {
+      "note": "TerminalCleanupOperation is the two-member terminal-cleanup vocabulary (worktree_cleanup, worktree_abandon).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6bbec9cbfc096676c54ad4dd86c945a5fd415f18",
+            "content": "sha256:54f82209fc9ecb4764bdbd052cd4789e3bb8cf87e6d62426e7a4d050eff8e4d2",
+            "locator": {
+              "kind": "symbol",
+              "name": "TerminalCleanupOperation"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/enclosure.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "132": {
+      "note": "finalize_tool_response validates one declared response, applies optional caller enrichment, and counts tokens.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1528f1fc6e82408f2ddd381ca2b6956cbf42f694",
+            "content": "sha256:db1f8864146fed21cfc113c37453f85a5f1327c0ac702321cd6eccc0ce005fc8",
+            "locator": {
+              "kind": "symbol",
+              "name": "finalize_tool_response"
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_response.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "133": {
+      "note": "TOOL_RESPONSE_MODELS maps each tool name to its declared response model.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "97539a1d3035c51bdfc8174a6c7de015195b7f61",
+            "content": "sha256:8a47b6b491c0348c7b44466fa5affd0bc2d187d51524ab3a0e0a4aeb37e3c3b1",
+            "locator": {
+              "kind": "symbol",
+              "name": "TOOL_RESPONSE_MODELS"
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "134": {
+      "note": "WorktreeStatusResponse carries the status operation literal with lifecycle and sync projections.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3ff8738a74b90a9cde9779804b87b348f22f8127",
+            "content": "sha256:dbcdf96d5e59acec35c358c0fbda9fcb76304718e912fd7deb5fb07e86cc94bc",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorktreeStatusResponse"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "135": {
+      "note": "FlexibleResponseModel is the extra-allowing base class for provider-native diagnostic payloads.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6e1c2663fa140e39d14ec835f6a5a6db3ced7de2",
+            "content": "sha256:3a9b622246cce227e7c85ad545afea5310ba47ae0d819591b04eb16e8e48ae1a",
+            "locator": {
+              "kind": "symbol",
+              "name": "FlexibleResponseModel"
+            },
+            "path": "mcp/src/agents_remember/models/base.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "136": {
+      "note": "The membership validator refuses a next move outside the advertised roster.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3ff8738a74b90a9cde9779804b87b348f22f8127",
+            "content": "sha256:2b53233df4625503e4879e38c3fc0c5019bd748a0acc0843a62721ded74b16ca",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_registered_public_next_tool"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "137": {
+      "note": "PUBLIC_TOOLS lives in models as a zero-import leaf tuple the validator reads.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aac03e58e85406466eb074f35a87baaad2b51e30",
+            "content": "sha256:12200c2ef3e36ff98b41480aa7d935360159b72ed488a1f74ed5da7355b336c8",
+            "locator": {
+              "kind": "symbol",
+              "name": "PUBLIC_TOOLS"
+            },
+            "path": "mcp/src/agents_remember/models/tools/public_roster.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "138": {
+      "note": "WorktreeSummary.nextAction is the optional single-value developer-decision literal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3ff8738a74b90a9cde9779804b87b348f22f8127",
+            "content": "sha256:42e9ad3f73ef20b9a4b7ea28756b32d3e08d8b6992ab8a1afeebf70a5a3ebb29",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorktreeSummary"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "139": {
+      "note": "Cleanup completes the terminal guard with updated-contract publication and old-contract rollback; failed publication returns blocked evidence.\n\nAnchor: `guarded cleanup publication and rollback`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fb8d1849ead7e158ccd58f0407524b04db70976e",
+            "content": "sha256:2377bc203fa673e8bbee202ad59d18ff2aff663cf7ed11e32fa9940d31265e6e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_publish_cleanup"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/cleanup.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "140": {
+      "note": "Abandon completes the terminal guard with updated-contract publication and old-contract rollback; failed publication returns abandon-blocked evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a219e532c44f9417a6056c5206555b1afabde8d5",
+            "content": "sha256:308568001463a3cfcc97b4b359d2f11113b0a6a323a771b5085f39f97cfff290",
+            "locator": {
+              "kind": "symbol",
+              "name": "_publish_abandon"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/abandon.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "141": {
+      "note": "The terminal-status projector distinguishes terminal-cleanup-completed from terminal-archive-ready and emits the archive cleanup operation as the next tool only when cleanup remains.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ea5764081bbb7a9fa9f16d71c4164e1626564383",
+            "content": "sha256:c9958666764ea6263bf1a7ac0bd142cc5d8ccb1629a3a7cc51a0b313e3e6de8d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_project_terminal_contract_status"
+            },
+            "path": "mcp/src/agents_remember/application/worktree_status.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "142": {
+      "note": "The wire-vocabulary module retains its R10 doctrine docstring; this range is doctrine text, not proof that any executor ran.\n\nAnchor: `source range`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "717aa39ae800a072c978e62f06d55f424c8d6fe9",
+            "content": "sha256:2f13579b34140256663a2880060eb60f856ef02e03a1199d0846414eeefbec90",
+            "locator": {
+              "end": 92,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/tests/test_wire_vocabulary_exhaustiveness.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "143": {
+      "note": "RecoveryOperation is a separate guidance recovery vocabulary, not the context-facing NextOperation alias.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f2ae7719181b7b041a6701c88f53f37f4d2c8cf1",
+            "content": "sha256:0d6fa275f1382d8bee165ec35f677b118a387c442aa516d3fb6e4915304b88e8",
+            "locator": {
+              "kind": "symbol",
+              "name": "RecoveryOperation"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/guidance.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "144": {
+      "note": "RecoveryTool is a separate guidance recovery vocabulary, not the context-facing NextTool alias.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f2ae7719181b7b041a6701c88f53f37f4d2c8cf1",
+            "content": "sha256:89712cc3131e102fe7887d38d583a9957a3f97397b4e13fc906df2c9c31b0202",
+            "locator": {
+              "kind": "symbol",
+              "name": "RecoveryTool"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/guidance.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "145": {
+      "note": "WorktreeSummary.nextRequiredArgs is an optional list of strings, defaulting to None.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3ff8738a74b90a9cde9779804b87b348f22f8127",
+            "content": "sha256:66bc5c8f67ae02c70ed7e6faf1e639b8b56895993669751bc7b2854fd52537c6",
+            "locator": {
+              "kind": "symbol",
+              "name": "nextRequiredArgs"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "146": {
+      "note": "unknownContractCells (`list[str] \\\\| None`, default None) is present only when the contract file carried a cell outside its declared vocabulary, as notice that values were substituted.\n\nAnchor: `unknown-cell notice commentary and field`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3ff8738a74b90a9cde9779804b87b348f22f8127",
+            "content": "sha256:557c21b02a53f09b111cac96bb00f04acc29f3198af8467935280d60656dbf0a",
+            "locator": {
+              "kind": "symbol",
+              "name": "unknownContractCells"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "147": {
+      "note": "WorktreeCommandResponse declares the next-move triple: nextAction, nextTool and nextArgs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3ff8738a74b90a9cde9779804b87b348f22f8127",
+            "content": "sha256:cfb8175b9d6e7b28e9688209a0c90764fb6ca7e704e9de2812065e5900f1adf9",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorktreeCommandResponse"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "148": {
+      "note": "The membership validator refuses a next move outside the advertised roster.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3ff8738a74b90a9cde9779804b87b348f22f8127",
+            "content": "sha256:2b53233df4625503e4879e38c3fc0c5019bd748a0acc0843a62721ded74b16ca",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_registered_public_next_tool"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "149": {
+      "note": "PUBLIC_TOOLS lives in models as a zero-import leaf tuple the validator reads.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aac03e58e85406466eb074f35a87baaad2b51e30",
+            "content": "sha256:12200c2ef3e36ff98b41480aa7d935360159b72ed488a1f74ed5da7355b336c8",
+            "locator": {
+              "kind": "symbol",
+              "name": "PUBLIC_TOOLS"
+            },
+            "path": "mcp/src/agents_remember/models/tools/public_roster.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "150": {
+      "note": "`IntegrationStatus` gained a fourth member, `checkpointed` .",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3ff8738a74b90a9cde9779804b87b348f22f8127",
+            "content": "sha256:12c8e442606e9c6902b8054db0d5aeafcce4b244f990de25ec9823cd0c0a1833",
+            "locator": {
+              "kind": "symbol",
+              "name": "IntegrationStatus"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "151": {
+      "note": "record_landed_integration publishes that a contract’s code landed and returns the updated contract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5ce07976f06d314990369996912d3c5b84189410",
+            "content": "sha256:918866a94e6e1728f25cf722b59f70e381c35f294f453e3de8df76b06011cdf5",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_landed_integration"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/landing_record.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "152": {
+      "note": "The post-integration phase routes the outcome after integration was attempted (blocked, or landed with carryover/cleanup).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f2ae7719181b7b041a6701c88f53f37f4d2c8cf1",
+            "content": "sha256:ee4961644f5f75ee7af81745e3554bbfbc0eeb8e1029eadaf6de37787a13299f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_post_integration_phase"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/guidance.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "153": {
+      "note": "WorktreePhase declares the eight closed lifecycle-phase values; the checkpoint does not add a ninth phase.\n\nAnchor: `whole file`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3ff8738a74b90a9cde9779804b87b348f22f8127",
+            "content": "sha256:d06f01d8c287235639df437d52900047185a7cfd2762ea66ff5e05987c1e9f23",
+            "locator": {
+              "end": 528,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "154": {
+      "note": "WorkflowKind is declared once in models.worktree as the shared wire vocabulary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3ff8738a74b90a9cde9779804b87b348f22f8127",
+            "content": "sha256:aa6bd76fde7d46f8d8c8160809ca60e8a4308f054eca39dc682e0fdb24fbfd65",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorkflowKind"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "155": {
+      "note": "HumanReviewStatus is declared once in models.worktree as the shared wire vocabulary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3ff8738a74b90a9cde9779804b87b348f22f8127",
+            "content": "sha256:d6eebab69c6cbf24d0841200438efa24d938b5d7239c3088274d3de975483c7a",
+            "locator": {
+              "kind": "symbol",
+              "name": "HumanReviewStatus"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "156": {
+      "note": "CloseoutStatus is declared once in models.worktree as the shared wire vocabulary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3ff8738a74b90a9cde9779804b87b348f22f8127",
+            "content": "sha256:ead89766766b124a140db0ae77ae47ae439c30773b7d567677f7f714f4269635",
+            "locator": {
+              "kind": "symbol",
+              "name": "CloseoutStatus"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "157": {
+      "note": "IntegrationStatus is declared once in models.worktree as the shared wire vocabulary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3ff8738a74b90a9cde9779804b87b348f22f8127",
+            "content": "sha256:12c8e442606e9c6902b8054db0d5aeafcce4b244f990de25ec9823cd0c0a1833",
+            "locator": {
+              "kind": "symbol",
+              "name": "IntegrationStatus"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "158": {
+      "note": "CleanupStatus is declared once in models.worktree as the shared wire vocabulary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3ff8738a74b90a9cde9779804b87b348f22f8127",
+            "content": "sha256:e092fb2568484314845a9e60f9dea7437e90fa9fe0e646662ff06051f4a2749b",
+            "locator": {
+              "kind": "symbol",
+              "name": "CleanupStatus"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "159": {
+      "note": "worktree_contract imports lifecycle vocabularies from models.worktree, imports memory vocabularies from the kernel and derives VALID_* sets with get_args.\n\nAnchor: `model vocabulary imports and runtime sets`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ba58fbaeceea3ba8048de3c5168fe7f90d3458df",
+            "content": "sha256:b905dcbd0330c47e752f249a1aced6e7cc0f2fe4bb2ccdc600d7d1704b19af23",
+            "locator": {
+              "end": 81,
+              "kind": "line_range",
+              "start": 19
+            },
+            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "160": {
+      "note": "Checkpoint responses record only the real integrated code and memory-content commits.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3ff8738a74b90a9cde9779804b87b348f22f8127",
+            "content": "sha256:c0aad6aae43ea09f1d18794980092208e2434a7217f6ba5e63490f9566a7d895",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorktreeCheckpointLandingResponse"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "161": {
+      "note": "The pause envelope declares the stop's one own field, paused, and inherits the ordinary command envelope.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3ff8738a74b90a9cde9779804b87b348f22f8127",
+            "content": "sha256:54927d929d9e790dd40c3cbfe13fe2e312b1a917e8b8eca11c05b4bb094066b8",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorktreePauseResponse"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "162": {
+      "note": "NextTool includes worktree_checkpoint_landing while NextOperation remains its seven-member intent vocabulary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3ff8738a74b90a9cde9779804b87b348f22f8127",
+            "content": "sha256:552b61eb9a0a2ae154ada3a2559836a5a86a23ef82ab6ffe58489ada743df63a",
+            "locator": {
+              "kind": "symbol",
+              "name": "NextTool"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3ff8738a74b90a9cde9779804b87b348f22f8127",
+            "content": "sha256:e81ad413706118d9812ccbb48039cd61a58b25ddbadefe20a520cb1c7924bb37",
+            "locator": {
+              "kind": "symbol",
+              "name": "NextOperation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "163": {
+      "note": "WorktreeCommandResponse declares the next-move triple, while WorktreeSyncResponse and WorktreeOperationControlResponse narrow nextTool.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3ff8738a74b90a9cde9779804b87b348f22f8127",
+            "content": "sha256:cfb8175b9d6e7b28e9688209a0c90764fb6ca7e704e9de2812065e5900f1adf9",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorktreeCommandResponse"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3ff8738a74b90a9cde9779804b87b348f22f8127",
+            "content": "sha256:e627ba7b31e14a07b094b794806c45350920fb8159a5d2772ac93c7f618f3af2",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorktreeSyncResponse"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3ff8738a74b90a9cde9779804b87b348f22f8127",
+            "content": "sha256:3f65fc5bdc5dd28976465e41c0c83f7e4a4b8cf27a296379d80eb2d178142aa8",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorktreeOperationControlResponse"
             }
           },
           "kind": "code"

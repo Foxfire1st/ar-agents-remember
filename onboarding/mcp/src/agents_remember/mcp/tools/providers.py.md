@@ -19,13 +19,13 @@ and the CGC query builders (`cgc_symbol_search`, `cgc_callers`, `cgc_callees`,
 arguments to the matching `application.provider_tools` function and returns
 through `base._tool_payload`.
 
-`provider_diagnostics_payload` and `provider_watchers_payload` are
-response-budgeted (S4, 2.5.1): each writes its full application entry point payload to a
+`provider_diagnostics_payload` is response-budgeted without filing a per-call report (rule 6):
+the answer is the compact diagnosis with no `reportPath` key. `provider_watchers_payload` writes
+its full application entry point payload to a
 temp report via `write_tool_report` (`mcp/tool_reports.py`, keep-5/7-day
 retention, secrets redacted) and returns a compact builder result with
 `reportPath` inline. `compact_diagnostics_payload` drops `rawStatus`, the
-`currentState` body (a verbatim copy of the on-disk current.json that
-`currentStateFile` already points at), and `items[].rawStatus`.
+`currentState` body, and `items[].rawStatus`.
 `compact_watchers_payload` keeps per-step/per-provider outcome dicts
 (`provider`, `action`, `ok`, ...) and drops the raw provider payloads; the
 watchers report is written **before** `summarize_command_logs` mutates the

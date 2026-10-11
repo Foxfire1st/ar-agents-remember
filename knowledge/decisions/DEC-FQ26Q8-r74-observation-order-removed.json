@@ -1,0 +1,45 @@
+{
+  "admission": {
+    "criteria": [
+      "constrains_future_work"
+    ],
+    "justification": "Binds the retired observation channel to stay while its ORDER entry stays removed: channel retention is not an invitation to re-list it."
+  },
+  "alternatives": [
+    {
+      "option": "Only the verification_observation ORDER entry is removed; the retired observation channel, model, render and fixtures stay per observations ruling 0d977eb5.",
+      "reason": "The channel retention is deliberate; re-adding the ORDER entry would re-advertise a retired canonical class as orderable.",
+      "status": "chosen"
+    },
+    {
+      "option": "Restore the verification_observation ORDER entry.",
+      "reason": "Re-advertises a retired canonical class as orderable against ruling 0d977eb5.",
+      "reconsider_when": "The observation class is un-retired with a governed producer.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Future observation work keeps the channel without the ORDER entry."
+  ],
+  "context": "Worker P2: L74 removes only the verification_observation ORDER entry.",
+  "decider": "curator (260928-MIK-L74 memory curation)",
+  "id": "DEC-FQ26Q8",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "route:mcp/tests"
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "l74-ingest-list.json"
+    },
+    "handoffEntry": "L74-P2",
+    "leaf": "260928-MIK-L74",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

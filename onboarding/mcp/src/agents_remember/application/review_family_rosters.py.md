@@ -44,13 +44,10 @@ records no membership here; a family records no such revision), so the compositi
 supplies the sentence rather than this module guessing it.
 
 **One snapshot, opened once, and its failure kept as a state.** `FamilyRosterSide` is one
-bound snapshot: its store, its read context, every authored `(successor, predecessor)` edge, and
-`unreadable` — the reason the side could not be opened at all, in which case every family context on
-that side states that reason rather than an absence. `open_family_side` opens all three and
-turns a storage error, an OS error or a value error into `unreadable` with the error's own type and
-message rather than raising. `_authored_edges` reads the predecessor edges over a read-only
-connection — the same values `ICR-R07@v1`'s selection reads — so a head rule applied to them is applied
-to the snapshot's own authored lineage and to nothing a caller derived.
+bound snapshot: its store, its read context, and `unreadable` — the reason the side could not be
+opened at all, in which case every family context on that side states that reason rather than an
+absence. `open_family_side` opens both and turns a storage error, an OS error or a value error
+into `unreadable` with the error's own type and message rather than raising.
 
 **The read states each fact it established and nothing it did not.** `read_family_roster`
 answers one snapshot's context for one family: a selection that established no revision on this side
@@ -107,7 +104,7 @@ either moved.
 
 `__all__` publishes the twelve names the composition consumes, in one alphabetical list. The
 module imports the shipped read operation and its request/seed/budget/context values, the family and
-membership owners, the read-only connection and predecessor-edge query, the store opener, the refusal
+membership owners, the store opener, the refusal
 type, the review surface's page and refusal values, the member-source projection, and the values it states. It defines no
 SQL of its own and opens no store it does not close: `open_family_side` returns the side and the
 composition closes both sides in a `finally` block.
@@ -166,7 +163,6 @@ synthesized guarantee**.
 - One bound snapshot as this composition reads it, with the reason it could not be opened when it could not. [7]
 - One side's roster read of one family revision, with what the offered cursor did. [8]
 - **The opener that turns a storage, OS or value error into a stated unreadable side rather than an exception.** [9]
-- The authored predecessor edges, read over a read-only connection so the head rule sees the snapshot's own lineage. [10]
 - **The read that states each fact it established: the selected revision, its guarantee, its roster page and its members — or the side's own unreadable reason.** [11]
 - **The cursor offer, where a cursor another walk minted leaves the side read from its own first page.** [12]
 - One read of one family revision's recorded scope at the request's own page bound. [13]
@@ -197,6 +193,6 @@ synthesized guarantee**.
 
 No cross-repository behavior is implemented in this module. The snapshots it opens, the namespace it
 binds them to and the code roots it passes to the read context are all values the caller's own resolution
-selected for one leaf's enclosure; the predecessor edges come from the same local store, and no remote,
+selected for one leaf's enclosure, and no remote,
 credential, network or external system is involved. No cross-repo reference row is recorded here because
 no cited range proves a repository or external-system boundary.

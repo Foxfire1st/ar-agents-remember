@@ -20,7 +20,9 @@ converted. It also records the definitions of *onboarding route* and *governing 
   anchors always sit in the sidecar's own file. `RealizationEntry` adds `id` (`RLZ-…`), `role` and
   `rationale`; `ProofEntry` adds `id` (`PRF-…`) and `facet`.
 - `RealizationRole` is `primary-authority`, `enforcement`, `propagation-persistence`, `support`,
-  `presentation`, `unclassified` — the hand-off template's `incidental` is deliberately absent.
+  `presentation`, `unclassified` — text storage keeps the normalized set only, and the legacy
+  `incidental` spelling the graph vocabulary still admits is normalized to `support` at every product
+  boundary (writer handoff, legacy conversion). A claim staged with the legacy spelling must use `support`.
 - `FileSidecar` has `path`, `references` (the `[n]` table), `realizes` (required, may be empty) and
   `proves?` (test sidecars). Its validator refuses repeated entry IDs and any reference anchor whose
   `path` equals the sidecar's own path (it must be omitted instead).

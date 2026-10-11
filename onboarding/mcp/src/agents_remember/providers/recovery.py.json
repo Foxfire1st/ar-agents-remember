@@ -52,12 +52,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "514d04f97f4a75aec95d03c476627d2325a95f01",
+            "blob": "f69234bdcc96f9151d173f456645ff89f9d2fc4b",
             "content": "sha256:93c7a2556566a6c5597ea735b868d562e54f2024a287545a6c37e77ba8c01efe",
             "locator": {
-              "end": 273,
+              "end": 286,
               "kind": "line_range",
-              "start": 273
+              "start": 286
             },
             "path": "mcp/src/agents_remember/providers/status.py"
           },

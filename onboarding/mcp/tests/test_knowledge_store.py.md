@@ -25,10 +25,10 @@ Cases protect database immutability triggers, read-time payload seals, declared 
 
 | Node | Protects |
 | --- | --- |
-| `test_two_same_label_successors_reopen_as_separate_revisions` | two `v2` successors stay independently addressable with their exact statements after a close/reopen cycle |
+| `test_three_separately_recorded_revisions_stay_independently_addressable` | three single-revision records stay independently addressable with their exact statements after a close/reopen cycle |
 | `test_reopening_the_same_path_keeps_identity_and_schema` | reopen validates the same generation instead of creating or repairing |
 | `test_stored_revision_rows_refuse_update_and_delete` | direct `UPDATE`/`DELETE` raises `immutable_revision` at the database level |
-| `test_payload_digest_seals_more_than_the_statement` | the seal covers the predecessor set, so a re-pointed edge fails the read-time check |
+| `test_payload_digest_seals_more_than_the_statement` | the seal covers the stored cells, so a rewritten cell fails the read-time check |
 | `test_lower_ranked_owners_do_not_import_the_memory_domain` | the layer direction holds: no owner below `memory` imports the storage package |
 
 ### Conventions
@@ -47,10 +47,9 @@ one.
 ### Docs References
 
 
-
 ### Repo-Internal References
 
-- Both successors remain separately readable. [1]
+- Three separately recorded single-revision records stay independently addressable. [1]
 
 
 - Identity/schema preserved on reopen. [2]

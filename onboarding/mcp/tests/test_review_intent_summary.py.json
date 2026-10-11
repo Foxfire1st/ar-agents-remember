@@ -71,12 +71,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a03ccb63b526f573166dc8f5f25d4746cfeaf963",
+            "blob": "e3c9e6d68f8d6f48fd237ebd3b95897e13669448",
             "content": "sha256:1a37d7dc8d9c57d32b3de022e6b5ed7c861a0fd8f617701a5f3da3f62efe3d4d",
             "locator": {
-              "end": 59,
+              "end": 61,
               "kind": "line_range",
-              "start": 45
+              "start": 47
             }
           },
           "kind": "test"
@@ -164,22 +164,6 @@
         }
       ]
     },
-    "20": {
-      "note": "Divergent heads are `partial`.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "a03ccb63b526f573166dc8f5f25d4746cfeaf963",
-            "content": "sha256:41faebf17042ef1336824db794c290d8b15ca5fe1e6d84800e4628b97d29456c",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_an_identity_without_one_head_makes_the_summary_partial"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
     "21": {
       "note": "Absent knowledge is `unavailable`, never zero.",
       "targets": [
@@ -217,12 +201,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f47be3b1f6dbad3ecc71cc8fccbb681b81e244d9",
+            "blob": "512be564b35aaf6f9d3b9709113b613309efe221",
             "content": "sha256:33e248a5dc8236adc94be461a7384eb753c94ce29a613946b5331c9f219fb00d",
             "locator": {
-              "end": 250,
+              "end": 255,
               "kind": "line_range",
-              "start": 250
+              "start": 255
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },

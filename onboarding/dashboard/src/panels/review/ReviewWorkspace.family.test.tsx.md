@@ -114,8 +114,7 @@ which row they are about out of the DOM before asking the centre, for the same r
    `REVIEW_PAGED_COLLECTIONS` and deliberately **not** in `REVIEW_WALKABLE_COLLECTIONS`, so the collection
    picker offers no option that would fetch a refusal; the truncated roster states both of the owner's own
    measures; the click sends the published `pageOf=family_members` continuation unchanged, and an incompatible returned walk fails visibly while the coherent display is retained.
-6. *renders a body that carries no family context as that fact, never as a measured zero* — a captured body
-   recorded before the family field existed mounts as `absent`, says "this body carries no family context"
+6. *renders a body that carries no family context as that fact, never as a measured zero* — the `withoutFamilyContext` helper strips the field from a surviving capture (no route serves a familyless body); it mounts as `absent`, says "this body carries no family context"
    and "not a measured zero", renders no family list, and leaves the scope header and the explorer stating
    their own facts.
 7. *keeps an expanded entry expanded across a diff-layout switch* — an opened inventory row reports
@@ -229,7 +228,7 @@ which row they are about out of the DOM before asking the centre, for the same r
 
 Imports are grouped the way the rest of the dashboard's test modules group them: Node builtins
 (`node:fs`, `node:path`), then `@testing-library/react` plus `vitest`. The module imports the two collection
-constants from `../../data/review`, the captured refusal body from `./recordsPageRefusal.captured`, and the
+constants from `../../data/review`, the `withoutFamilyContext` decoder helper derived in-module, and the
 real `ReviewSurface` from `./ReviewSurface` — it never imports a mock. Test ids are the assertions' only
 handle on the DOM (`review-family-tree`, `review-family`, `review-family-guarantee`, `review-family-member`,
 `review-family-member-open`, `review-family-member-shared`, `review-family-member-state`, `review-family-open`,
@@ -319,12 +318,12 @@ opens the case.
 - **Real component and real client, with only `fetch` stubbed, and the header's provenance: the two captures recorded in the receipt (the MIK-L31 re-capture, `mik_l31_recapture`), and the one case labelled SYNTHETIC as the only assembled body.** [2]
 - What these cases catch, including the two ways a repair could lie. [3]
 - **What they do not claim: not browser evidence, Dagger-only Playwright configs, and a live publication explicitly out of scope.** [4]
-- The two collection constants the walk case pins, and the captured refusal body the no-family-context case mounts. [5]
+- The two collection constants the walk case pins, and the decoder helper the no-family-context case mounts. [5]
 - The three task identifiers and the seven captured bodies, read from the capture directory. [6]
 - The loader that resolves a capture from this file's own directory rather than the process cwd. [7]
 - The runtime narrowing that finds a family subject in a captured body and throws rather than mounting under a wrong one. [8]
 - The typed refusal the explorer's reads are answered with, so no case asserts on a file's bytes. [9]
-- The one stubbed `fetch` for the whole surface: it records the URLs, routes `/source-content` to the refusal, and answers the rest with the captured queue in order. [10]
+- The one stubbed `fetch` for the whole surface: it records the URLs, routes `/source-content` to the typed refusal, and answers the rest with the captured queue in order. [10]
 - The test mount opens the real surface with the fixture task and selected subject context. [11]
 - The teardown cleans the mounted tree and restores stubbed globals. [12]
 - The one `describe` every case below lives in, including the MIK-L31 real-body and synthetic roster cases. [13]

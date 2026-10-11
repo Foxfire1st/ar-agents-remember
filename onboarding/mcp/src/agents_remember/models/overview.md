@@ -1749,8 +1749,9 @@ that disagrees with its omissions in either direction** — while `no_semantic_a
 unconditional.
 
 **The closed vocabularies and the one member that was removed.** `DiffItemKind` (five), `DiffCoverage`
-(five), `DiffRecordTransition` (six, whose `superseding`/`superseded` pair is recognised **only** from the
-authored predecessor edge — never a label, a display version or an insertion order), `DiffOmissionReason`
+(five), `DiffRecordTransition` (four: `unchanged`, `changed`, `added`, `removed` — a revised statement
+reads as a removal beside an unrelated addition, since text records hold no predecessor edge under
+MIK-R74 rule 1; the `superseding`/`superseded` pair is deleted), `DiffOmissionReason`
 (three) and `DiffLimitation` (four) are literals rather than free text. `assessment_beyond_this_increment`
 was declared and then **removed** in fix round 1 because nothing in the package constructed it and no
 limitation advertised it: a reason with no producer is dead vocabulary in a table the validator checks in
@@ -2094,9 +2095,10 @@ and no field a caller could read as an assessment. `REGISTERED_ROLE_ORDER` is re
 declaration (`get_args(RealizationRole)`) rather than hand-copied, so a role added to the vocabulary cannot
 silently acquire a position.
 
-**`models/knowledge/view.py` declares the five views and makes three dishonest shapes unconstructible.**
-`VIEW_NAMES` is `Doc13:235-239`'s list in that order — source context, invariant, family, review matrix,
-curation queue — with no synonym, no sixth view and no view assembled at a caller's convenience, and the
+**`models/knowledge/view.py` declares the three views and makes dishonest shapes unconstructible.**
+`VIEW_NAMES` is the closed literal in the design's order — source context, invariant,
+family — with no synonym, no fourth view and no view assembled at a caller's convenience (the review-matrix
+and curation-queue views left with the envelope tables they read), and the
 payload's own `view` field says which one the caller got. Every row that orders or qualifies a value
 carries a `Provenance` as a **sibling** field of that value (requirement 2.6), so a consumer can tell an
 authored finding from a mechanical observation without knowing which renderer produced the payload; there is
@@ -2590,6 +2592,10 @@ ids.py, documents.py, canonical.py and the format facade admit history through o
 ## 260928-MIK-L23 Memory-tree response binding after MIK-R26
 
 KnowledgeReadResponse retains memoryTree/indexComplete to state the selected tree/index and partial-read limitations. KnowledgeDiffResponse now compares Git-tree knowledge files and carries exact revisions, completeness and omissions rather than per-side index fields. KnowledgeIntegrityCheckResponse carries validator inputs/findings and optional leaf worklist. KnowledgeProjectResponse was retired. ReadArFilesResponse carries its reader-owned published_intent block without declaring a second shape.
+
+## 260928-MIK-L74 The derived index sheds the dataset shape
+
+The roster holds 73 names: the former knowledge_change and knowledge_project tools are removed, and the mounted knowledge family contains read, diff and integrity only. The knowledge facade renders no dataset surface; the derived index owns exactly eight logical tables plus the `ix_*` index tables. Predecessor rows are no longer decoded and arrive as empty tuples. The candidate and future-code observation trees live in the system temp dir.
 
 ## Host installation result
 

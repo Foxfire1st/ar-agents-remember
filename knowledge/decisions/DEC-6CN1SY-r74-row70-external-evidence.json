@@ -1,0 +1,53 @@
+{
+  "admission": {
+    "criteria": [
+      "constrains_future_work"
+    ],
+    "justification": "Records the by-design appendix row-70 evidence choice so future evidence work keeps it."
+  },
+  "alternatives": [
+    {
+      "option": "External-source evidence is carried as the source document, version and origin the row names; no fetch time or content hash is recorded for it.",
+      "reason": "The row's by-design choice fixes the evidence triple and the absence; inventing fetch metadata would exceed the row.",
+      "status": "chosen"
+    },
+    {
+      "option": "Record fetch time and content hash for external-source evidence.",
+      "reason": "Contradicts the row's explicit by-design absence.",
+      "reconsider_when": "Appendix row 70 is revised to require fetch metadata.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Future external-source evidence keeps the document/version/origin triple and records no fetch time or hash."
+  ],
+  "context": "MIK-R74 appendix row 70 by-design choice, authored under rule 8; row 63 is built rather than by-design and needs no decision under this clause.",
+  "decider": "curator (260928-MIK-L74 memory repair)",
+  "id": "DEC-6CN1SY",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "f0080ac8512cae6107e8cf65f880a151ca6d19c5",
+        "content": "sha256:8a3e09b08d614e4917acaee1113f4fcb16811776b199633a77947c36e8933738",
+        "locator": {
+          "kind": "symbol",
+          "name": "review_records_for_resolution"
+        },
+        "path": "mcp/src/agents_remember/application/review_evidence_records.py"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "l74-repair-list.json"
+    },
+    "handoffEntry": "L74-MEM-01-row70",
+    "leaf": "260928-MIK-L74",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

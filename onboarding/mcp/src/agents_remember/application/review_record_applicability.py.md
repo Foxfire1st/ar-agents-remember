@@ -114,24 +114,26 @@ reference* rather than a stored identity: the record's `comparisonRef` (or the r
 `comparisonRef`) must equal the displayed comparison's published `reference` or `binding_digest`, and
 anything else is `unresolved` — never a match by label or nearest generation.
 
-**Signals and matrix rows are classified from their own recorded paths.** `_classify_signals` matches
+**Signals are classified from their own recorded paths.** `_classify_signals` matches
 the relationship rows a detection signal walked and the item each walk reached against the selection's
 own revisions and relationship ids (`_match_references`); a path that reaches a related identity is
 displayed as context whose relationship spelling is the selection's own `relationship_of` answer (or
 the recorded relationship row it matched), and a path that reaches nothing this selection holds is
 `unresolved` — shown with the paths it recorded, never dropped and never read as support.
-`_classify_rows` does the same for the review matrix's authored effects and evidence claims, reading a
-claim's own recorded subject revision through the evidence owner's renderer input
-(`ReviewClaimRecord.subject_revision_id`) instead of re-reading the claim. `_classify_observations`
+`_classify_observations`
 labels a verification observation from its own recorded candidate binding: a binding to the compared
 candidate is `candidate`, and nothing here promotes an execution observation to a judgment on a
-subject.
+subject. There is no `_classify_rows`: the two matrix-owned collections (`authored_effects`,
+`evidence_claims`) are read by no review (MIK-R74 rule 1), so `apply_review_applicability` writes
+their summaries as the zero counts of a selection no page returned rather than classifying rows no
+reader holds. In a task-context review the supplied evidence claims are still counted beside the
+pane that displays none.
 
 **`task_context_applicability` is the second entry, for a review that selected no subject.** There is
 no selected subject and no comparison generation, so every supplied record is `candidate` — the one
 label that neither claims the record applies to a subject nor reports a binding as unresolved when
 nothing was asked of it — each with its recorded subject beside it. The two matrix-owned collections
-are read by no pane of a task-context review, so their `not_selected` channel says so while the claims
+are read by no pane of a task-context review, so their channel states the removal/retirement unavailability while the claims
 the owner did supply are still counted.
 
 **A summary refuses a partition that loses a record.** `_summary` builds
@@ -140,8 +142,8 @@ what `supplied` counts; the model's own validator refuses a sum that does not ac
 supplied record exactly once, which is what stops a filtering bug from becoming silent erasure. The
 `supplied` fact is stated per class rather than uniformly: for the three owner-read collections it is
 the population the pane's own collection was classified from (the same population the R14 channel
-counts), and for the two matrix-owned collections (`authored_effects`, `evidence_claims`) it is the
-rows the review matrix **page** returned, with the owner's complete count travelling on the channel —
+counts), and for the two matrix-owned collections (`authored_effects`, `evidence_claims`) it is
+the rows no page returns — always zero, since the matrix left with the retired envelope tables — with the owner's complete count travelling on the channel —
 which the summary's `detail` says.
 
 ### Conventions
@@ -212,7 +214,7 @@ No configured domain documentation could be checked.
 - **The one place a label may cite ICR-R07's published retained list, and only when that list really carries the matched revisions.** [9]
 - **ICR-R07's own page-bound retained list, carried beside the recorded revisions rather than in place of them.** [10]
 - **A comparison subject is matched by exact authored reference or binding digest, and nothing else resolves.** [11]
-- **The signal and matrix-row classifications: a recorded path that reaches the selection, a related identity displayed as context, and an unmatched path shown unresolved with its references.** [12]
+- The surviving supplied-signal classifier and reference matcher label a recorded path reaching the selection as direct, a related identity as context, and an unmatched path as unresolved with its references. There is no matrix-row classifier; the production owner does not load the retired detection collection. [12]
 - **The lazy known-subject catalogue, opened only when a record names a subject the selection does not reach.** [13]
 - **The catalogue owner the lazy reader calls, kept the one implementation of a subject enumeration.** [14]
 - **The six-way summary a collection's counts are published as, with the page-versus-owner population stated per class.** [15]

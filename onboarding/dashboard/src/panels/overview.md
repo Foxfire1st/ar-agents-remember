@@ -1220,9 +1220,10 @@ both sides recorded one, and the available operand beside the named absence when
 renders as its own named state rather than as an empty diff, and neither the statement area nor this
 file declares a second differ.
 
-The prohibitions are rendered, not merely intended. Authored effects, preservation claims and
+The prohibitions are rendered, not merely intended. Preservation claims and
 unresolved questions are listed under their own heading and detection signals under a second one,
-because the payload keeps those two collections apart by element type; a selected path with no
+because the payload keeps those two collections apart by element type; the authored-effects collection
+left with the retired envelope tables, so no authored-effects list renders here, only detection signals; a selected path with no
 registered attribution is reported outside any claim instead of being folded into one; a count the
 comparison could not measure prints as not measured with its stated reason rather than as a zero;
 and both lists that could show an assessment print `UNASSESSED — no assessment is recorded against
@@ -1288,7 +1289,7 @@ six-way partition beside the collections it filtered). All three read the fields
 none derives a treatment, a relationship or a total.
 
 **One record, one treatment, two panes.** `applicabilityNote` is called on the knowledge pane's
-assessments, authored effects and signals **and** on the evidence pane's evidence links and
+assessments and signals **and** on the evidence pane's evidence links and
 observations, and the context list and the counts block are mounted on both panes, so the same record
 cannot read one way in one pane and another way in the other. A context row never renders the sibling's
 finding: the row carries the record's kind, and that is the whole point of the value.

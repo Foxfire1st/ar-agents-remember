@@ -1,0 +1,69 @@
+{
+  "admission": {
+    "criteria": [
+      "constrains_future_work"
+    ],
+    "justification": "The two governing Architect rulings extend the existing rule6 boundary with requested-fetch permission(d); rule8 requires explicit current decision guidance."
+  },
+  "alternatives": [
+    {
+      "option": "Keep admitted(a)-(c) and add(d): when the caller of a context read asks for freshness, the writes of one `git fetch` of the configured upstream, all inside the Git directory: the fetched objects, the remote-tracking refs and their reflogs, `FETCH_HEAD`, a tag that Git's fetch follows by its default, and Git's own housekeeping after a fetch. It changes no local branch, no HEAD, no index and no file of a working tree. Without the argument the read fetches nothing.",
+      "reason": "One plain requested fetch has this Git-owned footprint; it is not an unrecorded tree capture. Architect point3 explicitly accepts the existing test allowance and unchanged command.",
+      "status": "chosen"
+    },
+    {
+      "option": "Retain remote-tracking refs and objects only, no tag.",
+      "reason": "The original wording understated what plain git fetch itself writes and was expressly replaced by the later ruling.",
+      "reconsider_when": "A separately admitted fetch command and contract intentionally narrow the ordinary Git footprint.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Baseline-adoption previews suppress report/snapshot and unfiled pointers; mutating adoption remains a producer.",
+    "General read-boundary prose carries(a)-(d), with no unasked fetch and no local branch/HEAD/index/working-tree mutation.",
+    "No --no-tags change, new runtime proof, envelope/replay criterion, observer feature or blanket preservation acceptance is inferred."
+  ],
+  "context": "Governing L74-RULE-SIX-A-DRY-RUN-FILES-NOTHING-AND-AN-ASKED-FOR-FETCH-IS-NAMED-RULING.json plus L74-RULE-SIX-D-NAMES-WHAT-ONE-FETCH-WRITES-RULING.json supersede the earlier narrow no-tag interpretation only. Existing(a)-(c), capture scratch restrictions and adoption preview suppression remain. Reviewer caller-final-334ade6c verdict is bounded acceptance, not whole-primary or MEMORY acceptance.",
+  "decider": "curator (260928-MIK-L74 post-sync reconciliation of governing Architect rulings)",
+  "id": "DEC-8326MP",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "1b1b9671292115c6dd9de74936534444e0f8affe",
+        "content": "sha256:fbd4498c88eedc397bb24db68c2120b0d809d1c230470f630ff906e46f2ad27a",
+        "locator": {
+          "kind": "symbol",
+          "name": "_freshness_packet"
+        },
+        "path": "mcp/src/agents_remember/application/context_packet.py"
+      }
+    },
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "7fe00a759778edee005a11e3fcbbe33b7891bab9",
+        "content": "sha256:aea9defabe69732b041f5242876b4bbe943870ccb26a99621de8495f2ca8c922",
+        "locator": {
+          "kind": "symbol",
+          "name": "baseline_adopt"
+        },
+        "path": "mcp/src/agents_remember/memory/baseline.py"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "notes/reports/role-launch/260928-MIK-L74-curator-4a355657-1697-44fa-b23c-accffaa750dd.W02-custody/post-sync-076cc40e-9274c42c/rule6-current-writer-list.json"
+    },
+    "handoffEntry": "decision-rule6-named-fetch-current",
+    "leaf": "260928-MIK-L74",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": [
+    "DEC-KV4ASN"
+  ]
+}

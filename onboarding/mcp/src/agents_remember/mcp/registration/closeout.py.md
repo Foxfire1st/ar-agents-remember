@@ -94,7 +94,9 @@ The preview/apply pair (`worktree_closeout_preview` L24-L46, `worktree_closeout_
 share `CloseoutCommitMessages(code, memory)`, built in each body from
 the two flat message arguments. Apply keeps a **second** object, `CloseoutApproval(intent_note,
 dry_run)`, precisely so the approval-bearing half cannot be confused with the commit text: folding
-`dry_run` in with the messages would let a preview read as an approved apply.
+`dry_run` in with the messages would let a preview read as an approved apply. A preview is a
+read: it writes only the leaf's worklist, its quality reports and the judged tree's objects, and
+never falls back to writing anywhere else.
 
 **Historical quality-gate registration, superseded by the current transaction boundary above.**
 The former docstrings stated a pre-commit gate order. Preview reports whether strict

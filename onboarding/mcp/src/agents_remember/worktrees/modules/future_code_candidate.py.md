@@ -24,8 +24,9 @@ the complete route identity and rejects any bound-field drift.
 ### Conventions
 
 The model uses the canonical public camel-case field names required by the future-code acceptance
-variant. Every observation receives a distinct enclosure-local temporary directory and index; the
-directory and index are removed when that observation exits.
+variant. Every observation receives a distinct temporary directory and index in the system temp
+directory — never the enclosure's `reports/` directory (rule 6: unrecorded scratch must not create
+it); the directory and index are removed when that observation exits.
 
 ### Invariants And Boundaries
 
@@ -60,7 +61,7 @@ low-level Git algorithm remains separately owned.
 - The frozen strict route model prohibits mutation and undeclared identity fields. [1]
 - Capture observes HEAD around the one canonical isolated-index add-all tree calculation. [2]
 - Reuse requires exact equality of the complete bound route identity. [3]
-- Each capture gives the canonical helper its own enclosure-local temporary index. [4]
+- Each capture gives the canonical helper its own temporary index in the system temp directory. [4]
 - Capture and stale-input outcomes use the package's central typed error family. [5]
 - The underlying helper seeds a temporary index from HEAD, applies `git add -A`, writes the tree, and removes the index. [6]
 

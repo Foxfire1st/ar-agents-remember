@@ -171,11 +171,13 @@ collections), `observation` and `signal` carry the label beside their facts, and
 handed and the projection is the module that decided which values those are — the renderer still
 reaches no comparison, no relationship and no store.
 
-**Two renderers moved here, verbatim except for their names.** `authored_effects` and
-`unresolved_authors` were `knowledge_review._authored_effect` and `knowledge_review._unresolved_author`;
-they are the pane's authored rows and the "the matrix publishes no author for this record" reference,
-and they moved because the adapter is over the repository's soft file-size rail. The unresolved
-constant is stated once here rather than in the adapter.
+**The matrix's two per-record renderers are gone.** `authored_effects` and `unresolved_authors`
+moved here from the adapter under ICR-R26 and left again with the review matrix that read the
+retired envelope tables (MIK-R74 rule 1): no matrix row is read, so no authored row and no
+"matrix publishes no author" reference is rendered. The input bundle keeps no authored-effects or
+evidence-claims collection — only assessments, signals, observations and claims travel beside the
+channels — while the applicability class vocabulary still names the retired collections so their
+channels can state `not_selected` or retired rather than vanishing.
 
 **The one renderer input that gained a field.** `ReviewClaimRecord.subject_revision_id` carries the
 claim's **own recorded subject revision**, read by the evidence owner from the claim's own subject edge;

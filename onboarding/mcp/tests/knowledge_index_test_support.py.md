@@ -13,7 +13,7 @@
 ### Logic
 
 - Constants name the fixture's paths and IDs (`REVIEW_PATH`, `SIBLING_PATHS`, `TEST_PATH`, `REVIEW_INVARIANT`, `FAMILY`, `DECISION`, `INCIDENT`, `LEAF`, …); `anchor`, `write_document`, `git`, `init_repository` and `commit_all` are the shared helpers.
-- `convert_dataset(database_path, destination)` writes the layout marker and converts heads (`_heads`, which refuses a lineage with several heads), mapping legacy locators with `_new_locator` and returning the legacy-ID → text-ID map.
+- `convert_dataset(database_path, destination)` writes the layout marker and converts heads (`_heads`, which tolerates a missing predecessor table — with no successor relation every retained revision is a head), mapping legacy locators with `_new_locator` and returning the legacy-ID → text-ID map.
 - `build_parity_dataset` authors a fixture database through the test-only `knowledge_rows_test_support` row builders (`P→I`, `F{I,J}`, `G{J,K}`, `H{I,L}`, six claims over five paths); `add_parity_claim` adds one claim for the candidate-changed parity case.
 - `rewrite_in_the_second_of_the_index_write(repository, target, text)` (L37) records `target` in the repository's
   index and then rewrites it in place with `text`, same size, in the same clock second, retrying until both fall

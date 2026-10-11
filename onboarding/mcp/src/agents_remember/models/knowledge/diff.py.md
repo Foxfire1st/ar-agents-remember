@@ -53,13 +53,12 @@ and the page.
    learned the second one, and any later change to the limitation↔omission validator must keep both
    directions.
 
-**The `record_transition` union is six states, and the two that matter most are
-`superseding`/`superseded`.** A schema whose revisions are immutable in place makes "the statement
-changed" a **pair** of records — the author's successor and the exact revision it names as its
-predecessor — so a comparison that knew only `added` and `removed` would render every revised statement
-as a deletion plus an unrelated addition. The pair is recognised from the authored predecessor edge
-(`invariant_predecessor`, `family_predecessor`), **never** from a label, a display version or an
-insertion order.
+**The `record_transition` union is four states: `unchanged`, `changed`, `added`, `removed`.**
+It is deliberately not a comparison of *meanings*: an item is `unchanged` when both sides hold the
+same record with the same fields, `changed` when both sides hold it and its fields differ, and
+`added`/`removed` when only one side holds it. A revised statement — a different exact revision on
+each side — reads as a removal beside an unrelated addition: text records hold no predecessor edge
+(MIK-R74 rule 1), so no succession is stated.
 
 **Three construction-time invariants a consumer may rely on, plus the partition's own:**
 
@@ -152,7 +151,7 @@ No configured domain documentation could be checked.
 ### Repo-Internal References
 
 - The comparison policy version and the display budget that bounds what a page *shows* and never what the comparison *selected*. [1]
-- **The closed vocabularies: item kinds, coverage, the six record transitions, the omission reasons and the five limitations.** [2]
+- **The closed vocabularies: item kinds, coverage, the four record transitions, the omission reasons and the five limitations.** [2]
 - **The nine compared record fields in declared order, with `selection_reasons` deliberately absent.** [3]
 - **One side of a comparison: the exact snapshot and the per-side selector that is the one extension to R07's contract.** [4]
 - The display-only budget and the registered-role filter that refuses a repeated role. [5]

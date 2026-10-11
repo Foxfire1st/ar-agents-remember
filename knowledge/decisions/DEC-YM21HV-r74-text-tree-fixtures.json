@@ -1,0 +1,57 @@
+{
+  "admission": {
+    "criteria": [
+      "constrains_future_work"
+    ],
+    "justification": "Binds test fixtures to text-tree authoring: no fixture reaches for the retired production admission plane."
+  },
+  "alternatives": [
+    {
+      "option": "Fixtures write text trees through RowStore and reseal claim digests through one production owner; one authored change per kind; no canonical writer, lock or claim_no_rewrite.",
+      "reason": "The retired admission plane no longer exists; fixtures that inserted index-shaped rows described a writer the tree refuses.",
+      "status": "chosen"
+    },
+    {
+      "option": "Keep inserting index-shaped rows through RowStore with the retired admission plane.",
+      "reason": "The admission plane no longer exists; the rows would describe a writer the tree refuses.",
+      "reconsider_when": "A shipped admission plane returns with a governed writer.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "New fixtures build text trees twice (baseline and candidate) with same text IDs and order, and reseal through the one owner."
+  ],
+  "context": "MIK-R74 fixture conversion: read/diff/review scope supports and all consumer suites build populations as text trees the production reader actually reads.",
+  "decider": "curator (260928-MIK-L74 memory curation)",
+  "id": "DEC-YM21HV",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "a9f15f65030dc235b7645bd909b6d719bcdb2413",
+        "content": "sha256:dcde19d7631d5e2a2101dfb519ef402f81aa89d4237293d09e0fa465a83f580c",
+        "locator": {
+          "kind": "symbol",
+          "name": "rebuild_after_tree"
+        },
+        "path": "mcp/tests/diff_scope_test_support.py"
+      }
+    },
+    {
+      "relation": "constrains",
+      "target": "route:mcp/tests"
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "l74-ingest-list.json"
+    },
+    "handoffEntry": "L74-P4",
+    "leaf": "260928-MIK-L74",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

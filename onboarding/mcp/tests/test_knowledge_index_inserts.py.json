@@ -1,0 +1,87 @@
+{
+  "path": "mcp/tests/test_knowledge_index_inserts.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "No test/support module holds an executable index-table insert",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1d93fdf9a78b7801ce03867cafcb8047d5c00429",
+            "content": "sha256:dad18b9bd671c7df807a864ba1ce3aebbbd5246b8a75fb1e0d28fa55ae52b335",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_no_test_or_support_module_inserts_into_an_index_table"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Retired detector vectors are inert data, never called",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1d93fdf9a78b7801ce03867cafcb8047d5c00429",
+            "content": "sha256:3aa20b5e15f8cecdf2c07ca9be7c16540a3e1dd559d0dbafd59a89649f27c132",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_retired_detector_vectors_are_inert_data_never_called"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The detector module holds no execute call to feed",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1d93fdf9a78b7801ce03867cafcb8047d5c00429",
+            "content": "sha256:3fb10eecb45a038640b2238a09f6def89d8439a65b1a19b3425d910e05cf5208",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_retired_detector_module_has_no_execute_call_to_feed"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Assigned and subscripted vectors still count as executed",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1d93fdf9a78b7801ce03867cafcb8047d5c00429",
+            "content": "sha256:e6d4352240d002d3dd3dbb0aca607a13a6a8f2e72e6363951b3f1c417538ec8a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_assigned_and_subscripted_vectors_count_as_executed"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The census exception is exactly the one rule 3 names",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1d93fdf9a78b7801ce03867cafcb8047d5c00429",
+            "content": "sha256:c3b43e42fb4305453d4e99a961e84fa4014c9e21eb19d67674598e9460e1b5be",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_census_exception_is_exactly_the_stated_one"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

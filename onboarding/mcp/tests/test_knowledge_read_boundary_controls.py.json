@@ -1,0 +1,87 @@
+{
+  "path": "mcp/tests/test_knowledge_read_boundary_controls.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A real unauthorized object write fails the oracle",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "905ec3fff937f941c81795239277081dba0b1a3b",
+            "content": "sha256:4418d7ecaf03a9a1467d9f4188564f542973640e298fa7bbcd53277fa3a9d2ae",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_real_unauthorized_object_write_fails_the_oracle"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Borrowed alternates answer to the same attribution",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "905ec3fff937f941c81795239277081dba0b1a3b",
+            "content": "sha256:1c7f9fce1147dea0e587a51f6fbaec0a1e391797d6a56e1b81b63b88323b26e1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_borrowed_alternate_objects_answer_to_the_same_attribution"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Inside-root chain to outside lender is inventoried",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "905ec3fff937f941c81795239277081dba0b1a3b",
+            "content": "sha256:7d8fb7f72fde0ecf5631524ff3dcbe0738958466828017ed8ddca72431569faa",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_inside_root_chain_to_outside_lender_is_inventoried"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Refs are keyed by name, never collapsed",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "905ec3fff937f941c81795239277081dba0b1a3b",
+            "content": "sha256:a08592eea30bd7b164e989560418325313fbcc3f29169a6e7ece0c9740356745",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_refs_are_keyed_by_name_so_a_shared_object_never_collapses_two_refs"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "A moved pin fails, an attested pin passes",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "905ec3fff937f941c81795239277081dba0b1a3b",
+            "content": "sha256:5bafa2ac8b8cc26f228baafcdceeb07a52bd8c80dca0ac92feffbcfdeb34d77a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_moved_pin_is_a_finding_but_an_attested_pin_is_allowed"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -41,8 +41,9 @@ and 3).** Every other reader module builds its rows from these four shapes:
 - **Linking records.** `records_linking` groups links by their source record, never a sidecar or history
   row, each record once with every link it records.
 - **A link from a history row names the record the row is about (L37, MIK-R29 rule 5).** A history row has no
-  page of its own. For a link whose source is a `history_row`, `link_document` reads the row through
-  `KnowledgeIndex.history_row` and adds `sourceSubject`, the summary of the row's subject, when the index holds the
+  page of its own. For a link whose source is a `history_row`, `link_document` reads the rows through
+  `KnowledgeIndex.history_row` — the lookup may return one row per file holding the ID — and picks the
+  one filed at the link's own origin path, never the first of several; it adds `sourceSubject`, the summary of the row's subject, when the index holds the
   row. Such a link carries no `sourceRecord`. File and route sources are unchanged.
 
 ### Conventions

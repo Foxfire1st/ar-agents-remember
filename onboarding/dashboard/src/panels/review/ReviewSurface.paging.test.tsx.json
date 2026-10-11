@@ -3,11 +3,11 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "**The module's own statement of what it exercises, of the defect it catches, and of the two wrong repairs it also fails against.**\n\nAnchor: `ReviewSurface`; `intentReview`",
+      "note": "The mounted cases use the shipped ReviewSurface and review client with fetch stubbed; useReviewCatalogue is additionally isolated for comparison-focused cases.\n\nAnchor: `source range`; `catalogue-isolation mock`",
       "targets": [
         {
           "anchor": {
-            "blob": "201331d7021babefefab01d779a09ee997b8003d",
+            "blob": "2e30b0d01499068dab71e69e6b1a1b9c1a0bba82",
             "content": "sha256:381d852d703420e5dc1c6d0e1e05ba854410c492ca64f371779bd514922a4714",
             "locator": {
               "end": 19,
@@ -16,20 +16,32 @@
             }
           },
           "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "2e30b0d01499068dab71e69e6b1a1b9c1a0bba82",
+            "content": "sha256:368bab4d96eb968def464a3260cd6bca114d77c60c03698e68eb6de6cd4c8907",
+            "locator": {
+              "end": 40,
+              "kind": "line_range",
+              "start": 23
+            }
+          },
+          "kind": "test"
         }
       ]
     },
     "10": {
-      "note": "**The two collections' totals kept apart in the sentence the reader sees.**\n\nAnchor: \"keeps the two collections' totals apart in the sentence the reader sees\"",
+      "note": "The bounds sentence distinguishes walk from selection totals on the surviving knowledge collection.\n\nAnchor: `\"keeps the two collections' totals apart in the sentence the reader sees\"`",
       "targets": [
         {
           "anchor": {
-            "blob": "201331d7021babefefab01d779a09ee997b8003d",
-            "content": "sha256:672fd1618676ea9b8f79ae28720f11011e07d1eebe5c6cf5a8a81d321294b7f9",
+            "blob": "2e30b0d01499068dab71e69e6b1a1b9c1a0bba82",
+            "content": "sha256:ecb78e4f9f8a2d44c82ba1c3858a63c2ff20214e5653b626895a42a3cce32547",
             "locator": {
-              "end": 498,
+              "end": 479,
               "kind": "line_range",
-              "start": 443
+              "start": 424
             }
           },
           "kind": "test"
@@ -37,16 +49,16 @@
       ]
     },
     "11": {
-      "note": "The whole review stays reachable and the selector travels through a paged request.\n\nAnchor: \"keeps the whole review reachable and carries the selector through a paged request\"",
+      "note": "The whole review stays reachable and the selector travels through a paged request.\n\nAnchor: `'keeps the whole review reachable and carries the selector through a paged request'`",
       "targets": [
         {
           "anchor": {
-            "blob": "201331d7021babefefab01d779a09ee997b8003d",
-            "content": "sha256:e6d293fed5a3291eeeb66b95083caf47406aeafc3690e71d16ffaaf7401d103c",
+            "blob": "2e30b0d01499068dab71e69e6b1a1b9c1a0bba82",
+            "content": "sha256:6157879d4e69f1fc234f9dfb731b335122141607cb25a62c80025a69826bfc46",
             "locator": {
-              "end": 514,
+              "end": 495,
               "kind": "line_range",
-              "start": 499
+              "start": 481
             }
           },
           "kind": "test"
@@ -54,12 +66,12 @@
       ]
     },
     "12": {
-      "note": "**The one normaliser of the two spellings of \"no page\", and the bounds sentence built from the page's own basis.**",
+      "note": "**The one normaliser of the two spellings of \"no page\", and the bounds sentence built from the page's own basis.**\n\nAnchor: `no-page normalization commentary`",
       "targets": [
         {
           "anchor": {
-            "blob": "923faffc20359156074cf02aed9860c41b8b29dd",
-            "content": "sha256:3b55093c66702463240622b5e86748f1459b59915c203077e5575d872049441f",
+            "blob": "f84799b8607720d59167369281b8ab441bb956ee",
+            "content": "sha256:ba9404485b9553ae10fbc626769c89e4905c87b8b7815be8ca89dee4edfe9193",
             "locator": {
               "kind": "symbol",
               "name": "carriedPage"
@@ -70,8 +82,8 @@
         },
         {
           "anchor": {
-            "blob": "923faffc20359156074cf02aed9860c41b8b29dd",
-            "content": "sha256:a2cc85ec2dc5f638de16a6582ac49f456d5eb7f262bf4c0868b8f3b79cc43ed8",
+            "blob": "f84799b8607720d59167369281b8ab441bb956ee",
+            "content": "sha256:1bc93ec2aa754520f5f25dfbf6cadf9f669f187690c3f5e285d81e20adf9d80c",
             "locator": {
               "kind": "symbol",
               "name": "pageBounds"
@@ -82,8 +94,8 @@
         },
         {
           "anchor": {
-            "blob": "923faffc20359156074cf02aed9860c41b8b29dd",
-            "content": "sha256:f3c54944fc9a84920de443da0dc2df0f786a295528f83d11a268f859636de603",
+            "blob": "f84799b8607720d59167369281b8ab441bb956ee",
+            "content": "sha256:c5f6e09edb1e2efe890f143d8771728a4b635865ee12988169c7401278ab21e4",
             "locator": {
               "kind": "symbol",
               "name": "continuationOf"
@@ -94,8 +106,8 @@
         },
         {
           "anchor": {
-            "blob": "923faffc20359156074cf02aed9860c41b8b29dd",
-            "content": "sha256:5c1622eb1d50079b031e193bc55c8a9576d4178cdfdfb4de786b64a33a046e44",
+            "blob": "f84799b8607720d59167369281b8ab441bb956ee",
+            "content": "sha256:d7581a9d53df0f7ee677d165b939bdafbff8b871f4d97680c9d23cb72c7795b7",
             "locator": {
               "kind": "symbol",
               "name": "RESET_GLOSS"
@@ -106,12 +118,12 @@
         },
         {
           "anchor": {
-            "blob": "923faffc20359156074cf02aed9860c41b8b29dd",
+            "blob": "f84799b8607720d59167369281b8ab441bb956ee",
             "content": "sha256:c29392af4253d38c9c3c3272b34eba1e8e7298d530489c655b9aa79095ade662",
             "locator": {
-              "end": 665,
+              "end": 667,
               "kind": "line_range",
-              "start": 663
+              "start": 665
             },
             "path": "dashboard/src/data/review.ts"
           },
@@ -124,8 +136,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "923faffc20359156074cf02aed9860c41b8b29dd",
-            "content": "sha256:87082a749b78b387975834efea4179ecd3042382e1d42cecadd2014ab02b3650",
+            "blob": "f84799b8607720d59167369281b8ab441bb956ee",
+            "content": "sha256:5914fc8a18d58bf6922fd66e05c3fba4785e902766db400dc530b97d7d310c3a",
             "locator": {
               "kind": "symbol",
               "name": "ReviewCollectionPage"
@@ -137,7 +149,7 @@
       ]
     },
     "14": {
-      "note": "**The control the cases drive: the page picker, the actions, the bounds line and the refusal block.**",
+      "note": "**The control the cases drive: the page picker, the actions, the bounds line and the refusal block.**\n\nAnchor: `source range`",
       "targets": [
         {
           "anchor": {
@@ -232,11 +244,11 @@
       ]
     },
     "16": {
-      "note": "The published page shape these bodies have: the surface's own page value and its two refusal codes.\n\nAnchor: `comparison_page_reset`; `comparison_page_unreadable`",
+      "note": "The published page shape these bodies have: the surface's own page value and its two refusal codes.\n\nAnchor: `comparison_page_reset; comparison_page_unreadable`",
       "targets": [
         {
           "anchor": {
-            "blob": "0cc1ed4aa2ead143a66f5ee6b69cf490138fd7ae",
+            "blob": "f9105a09d9fdee4eeed9ab2b715723940337949e",
             "content": "sha256:d231f5d80a2730aab1061832becb5f2d5f3b3bd9ead09eb7a107fa018380ad30",
             "locator": {
               "kind": "symbol",
@@ -248,39 +260,25 @@
         },
         {
           "anchor": {
-            "blob": "005c44f99677f29c3777322502b77b732a3a0252",
-            "content": "sha256:fbe0325893e222ac3252111770681368eaa0f780917dc3232c130ab08134c9ea",
+            "blob": "a8aca318ce4a99648858f4f2c0ad3fad21eb0bf8",
+            "content": "sha256:ab44340be711b4cfc5f1209e3260bb96b3015e9e40435d757688b38ebb615490",
             "locator": {
-              "end": 158,
-              "kind": "line_range",
-              "start": 157
+              "kind": "symbol",
+              "name": "ReviewRefusalCode"
             },
-            "path": "mcp/src/agents_remember/models/knowledge/review.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "63e4b2ff0581b472b92222169905d9de145508ef",
-            "content": "sha256:92e08f692ea00fdb8852968ef6c4505506a82510e4181c414e420e19520974be",
-            "locator": {
-              "end": 162,
-              "kind": "line_range",
-              "start": 152
-            },
-            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+            "path": "mcp/src/agents_remember/models/knowledge/review_refusal.py"
           },
           "kind": "code"
         }
       ]
     },
     "2": {
-      "note": "The two opaque cursors, verbatim from the evidence run: one per collection, which is why mixing them up would be a defect.",
+      "note": "The paging fixtures retain KNOWLEDGE_CURSOR and RECORDS_CURSOR as opaque strings; no client-side cursor decoding is asserted.",
       "targets": [
         {
           "anchor": {
-            "blob": "201331d7021babefefab01d779a09ee997b8003d",
-            "content": "sha256:753f359d84899d2337e35c3451bca57b0eb9698de25ffacbe732d47f670254a9",
+            "blob": "2e30b0d01499068dab71e69e6b1a1b9c1a0bba82",
+            "content": "sha256:3f4d85cdc2cb981306e2f3d9eb859197043e21a8ca6ba52e06e8adc7598d6220",
             "locator": {
               "kind": "symbol",
               "name": "KNOWLEDGE_CURSOR"
@@ -290,8 +288,8 @@
         },
         {
           "anchor": {
-            "blob": "201331d7021babefefab01d779a09ee997b8003d",
-            "content": "sha256:f8304afa261ecaa8f770e63743cf6b9f2432085c5fd48aa3a76bba898208953b",
+            "blob": "2e30b0d01499068dab71e69e6b1a1b9c1a0bba82",
+            "content": "sha256:2965fc13ad6c61e1e597782f07863fd676b38987a1381fb1e6ab0894cff81b95",
             "locator": {
               "kind": "symbol",
               "name": "RECORDS_CURSOR"
@@ -301,34 +299,17 @@
         }
       ]
     },
-    "3": {
-      "note": "The captured server body the refusal case renders.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "ef0e6c93124064ddf3d8eb528ef4d49aa78e0757",
-            "content": "sha256:53055aa4b022248d511f60efafe21dd1ad46477fe4dd4eeb795fa558f3dabc3e",
-            "locator": {
-              "kind": "symbol",
-              "name": "RECORDS_PAGE_REFUSAL_RESPONSE"
-            },
-            "path": "dashboard/src/panels/review/recordsPageRefusal.captured.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "4": {
-      "note": "**The bounds, the scope and the one action that reaches the rest.**\n\nAnchor: \"states the bounds and scope of a page and offers the one action that reaches the rest\"",
+      "note": "**The bounds, the scope and the one action that reaches the rest.**\n\nAnchor: `'states the bounds and scope of a page and offers the one action that reaches the rest'`",
       "targets": [
         {
           "anchor": {
-            "blob": "201331d7021babefefab01d779a09ee997b8003d",
-            "content": "sha256:dce015d6f28c0fb842eb85659d0c207569baaaa59846515fff0d441140be06db",
+            "blob": "2e30b0d01499068dab71e69e6b1a1b9c1a0bba82",
+            "content": "sha256:673a05a249a1701fa41b5a41c6ce7c099ac3e5d520564a7125c5ca74b2084e0c",
             "locator": {
               "end": 189,
               "kind": "line_range",
-              "start": 160
+              "start": 161
             }
           },
           "kind": "test"
@@ -336,16 +317,16 @@
       ]
     },
     "5": {
-      "note": "**The advancing case: the second request carries the cursor the server published, and the bounds move.**\n\nAnchor: \"advances with the cursor the server published, and keeps the same collection\"",
+      "note": "**The advancing case: the second request carries the cursor the server published, and the bounds move.**\n\nAnchor: `'advances with the cursor the server published, and keeps the same collection'`",
       "targets": [
         {
           "anchor": {
-            "blob": "201331d7021babefefab01d779a09ee997b8003d",
-            "content": "sha256:2e7f18be6e5f9c30a1a22bae2b0caf2c5d3c26cdcb10047a12eaf8d259a9bd4a",
+            "blob": "2e30b0d01499068dab71e69e6b1a1b9c1a0bba82",
+            "content": "sha256:a4218c07da23c6fe10e1de439d18bce5f1c60aee7e0be824542622f072f4b683",
             "locator": {
               "end": 235,
               "kind": "line_range",
-              "start": 190
+              "start": 191
             }
           },
           "kind": "test"
@@ -353,16 +334,16 @@
       ]
     },
     "6": {
-      "note": "**No next action for a body that published no cursor, whatever it reported.**\n\nAnchor: \"offers no next action for a page that published no cursor, whatever it reported\"",
+      "note": "**No next action for a body that published no cursor, whatever it reported.**\n\nAnchor: `'offers no next action for a page that published no cursor, whatever it reported'`",
       "targets": [
         {
           "anchor": {
-            "blob": "201331d7021babefefab01d779a09ee997b8003d",
-            "content": "sha256:941ede7ab65fc17d7f81a7f49fe0696c18f1eb8473d44ab8640248b63453ec04",
+            "blob": "2e30b0d01499068dab71e69e6b1a1b9c1a0bba82",
+            "content": "sha256:43c1fbc5f74eab15f5ab8bde1fa161462082158704415480a04c16f34f0d97e2",
             "locator": {
-              "end": 267,
+              "end": 275,
               "kind": "line_range",
-              "start": 236
+              "start": 237
             }
           },
           "kind": "test"
@@ -370,16 +351,16 @@
       ]
     },
     "7": {
-      "note": "A named collection asked for deliberately, and a reset stated as its own action.\n\nAnchor: \"asks for a named collection deliberately, and states a reset as its own action\"",
+      "note": "A named collection asked for deliberately, and a reset stated as its own action.\n\nAnchor: `'asks for a named collection deliberately, and states a reset as its own action'`",
       "targets": [
         {
           "anchor": {
-            "blob": "201331d7021babefefab01d779a09ee997b8003d",
-            "content": "sha256:04d97ed742b6880d6a1ce005cb8c0d3f7d12c345e8a52238bfc40b3c7f1e5987",
+            "blob": "2e30b0d01499068dab71e69e6b1a1b9c1a0bba82",
+            "content": "sha256:0e00012c0876985a4f895bcbb81675c62396980b4550396efaaa26ae67f45d9d",
             "locator": {
-              "end": 315,
+              "end": 323,
               "kind": "line_range",
-              "start": 268
+              "start": 277
             }
           },
           "kind": "test"
@@ -387,16 +368,16 @@
       ]
     },
     "8": {
-      "note": "**The refused records page rendered from the CAPTURED body, with its code, both identities and a live first-page action.**\n\nAnchor: \"states a refused records page from the CAPTURED server body, with its code, identities and a live first-page action\"",
+      "note": "The retired records page earns no request and renders no refusal: records left with the review matrix (MIK-R74 rule 1).\n\nAnchor: `'cannot ask for the retired records collection: the control is gone and no such request goes out'`",
       "targets": [
         {
           "anchor": {
-            "blob": "201331d7021babefefab01d779a09ee997b8003d",
-            "content": "sha256:c5c359a9a31224d3c1cd798b836e0d69f8d77b1e4f36b185174ea9811a997f01",
+            "blob": "2e30b0d01499068dab71e69e6b1a1b9c1a0bba82",
+            "content": "sha256:7861401d6372ee5f60c68b13c5776c38874972dd5ba4a32f460721d0ac140012",
             "locator": {
-              "end": 373,
+              "end": 353,
               "kind": "line_range",
-              "start": 316
+              "start": 325
             }
           },
           "kind": "test"
@@ -404,16 +385,16 @@
       ]
     },
     "9": {
-      "note": "**A reset worded from its refusal code, so a foreign cursor is not called a moved comparison.**\n\nAnchor: \"words a reset from its refusal code, so a foreign cursor is not called a moved comparison\"",
+      "note": "**A reset worded from its refusal code, so a foreign cursor is not called a moved comparison.**\n\nAnchor: `'words a reset from its refusal code, so a foreign cursor is not called a moved comparison'`",
       "targets": [
         {
           "anchor": {
-            "blob": "201331d7021babefefab01d779a09ee997b8003d",
-            "content": "sha256:b9228bad26e64ebb7b17df5ef18a815c3a80f6dd8bb2e86c4c9e5c3f32764ae4",
+            "blob": "2e30b0d01499068dab71e69e6b1a1b9c1a0bba82",
+            "content": "sha256:0fcc6346e7a66691d7f2069a3a65cf916fbb38c53b273f1711cacf4acdef5bfa",
             "locator": {
-              "end": 442,
+              "end": 422,
               "kind": "line_range",
-              "start": 374
+              "start": 355
             }
           },
           "kind": "test"

@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0add0d691edd9fadf0873b47c05c3556c94fb585",
+            "blob": "cd35c66bb9c9d8af0f23fd2579f5e610cf4ee8da",
             "content": "sha256:4b6abd07dd0bca1048d191f3231041c240ff088073c53fb101afa00643f5e146",
             "locator": {
               "kind": "symbol",
@@ -24,7 +24,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0add0d691edd9fadf0873b47c05c3556c94fb585",
+            "blob": "cd35c66bb9c9d8af0f23fd2579f5e610cf4ee8da",
             "content": "sha256:fbfa8472a098bcd75d67a5d7bf39fb9f4f9dd902aa130d654f77efe08ec86503",
             "locator": {
               "kind": "symbol",
@@ -41,7 +41,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0add0d691edd9fadf0873b47c05c3556c94fb585",
+            "blob": "cd35c66bb9c9d8af0f23fd2579f5e610cf4ee8da",
             "content": "sha256:4e9712efdc5e47916c2dbb622ba70183d1df366b5fb155e7aaba5c37c0972fe0",
             "locator": {
               "kind": "symbol",
@@ -58,7 +58,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0add0d691edd9fadf0873b47c05c3556c94fb585",
+            "blob": "cd35c66bb9c9d8af0f23fd2579f5e610cf4ee8da",
             "content": "sha256:60788cf6b3cf57e313ccacab456fb49fd9601a1930fa8f8de28c01088b22a2af",
             "locator": {
               "kind": "symbol",
@@ -70,12 +70,12 @@
         },
         {
           "anchor": {
-            "blob": "0add0d691edd9fadf0873b47c05c3556c94fb585",
+            "blob": "cd35c66bb9c9d8af0f23fd2579f5e610cf4ee8da",
             "content": "sha256:25f3731d7eb981c6583df927b9c4a1742b18ec9e96ed7271aff4ce079be6026e",
             "locator": {
-              "end": 223,
+              "end": 230,
               "kind": "line_range",
-              "start": 159
+              "start": 166
             },
             "path": "mcp/src/agents_remember/kernel/git_command.py"
           },
@@ -147,7 +147,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a2e32055df9ed4e20616122a8838f1eea2783fa2",
+            "blob": "1b1b9671292115c6dd9de74936534444e0f8affe",
             "content": "sha256:fbd4498c88eedc397bb24db68c2120b0d809d1c230470f630ff906e46f2ad27a",
             "locator": {
               "kind": "symbol",

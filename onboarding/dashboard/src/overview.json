@@ -371,12 +371,12 @@
         },
         {
           "anchor": {
-            "blob": "923faffc20359156074cf02aed9860c41b8b29dd",
+            "blob": "f84799b8607720d59167369281b8ab441bb956ee",
             "content": "sha256:81e9e12c0c00606d352fdec65d8459fe7a8f3fffe284126ac6f40d3945762837",
             "locator": {
-              "end": 715,
+              "end": 717,
               "kind": "line_range",
-              "start": 709
+              "start": 711
             },
             "path": "dashboard/src/data/review.ts"
           },

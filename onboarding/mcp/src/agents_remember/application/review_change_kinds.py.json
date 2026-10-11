@@ -132,12 +132,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "656c6acccc15cb4da02e3931dd492b4f0e2eef71",
+            "blob": "e82e48a3fe51cf1b33e2db3907db00759c429781",
             "content": "sha256:df335d4a125139d744fd24d04fcc90476e7739486a731c2c73afa5927cfabd48",
             "locator": {
-              "end": 579,
+              "end": 525,
               "kind": "line_range",
-              "start": 579
+              "start": 525
             },
             "path": "mcp/src/agents_remember/application/knowledge_review.py"
           },

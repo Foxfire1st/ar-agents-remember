@@ -1,0 +1,87 @@
+{
+  "path": "mcp/tests/read_boundary_oracle_test_support.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The oracle snapshots files, refs, admin dirs and alternates chains",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c9c76f665a1c80f400e0aed0a3c0531b4054a3c8",
+            "content": "sha256:4991520fd28539c2618b1937e855aa3826ecc7b038c1c5a1db407b177e0b0666",
+            "locator": {
+              "kind": "symbol",
+              "name": "_snapshot"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Alternates pointers are followed before the containment skip",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c9c76f665a1c80f400e0aed0a3c0531b4054a3c8",
+            "content": "sha256:a0feb2ad40a4936c8a24772e203c0d05c4703b4c20ff9ac80a0d45ac509ee627",
+            "locator": {
+              "kind": "symbol",
+              "name": "_snapshot_alternates"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Pointer discovery accepts any store directory name",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c9c76f665a1c80f400e0aed0a3c0531b4054a3c8",
+            "content": "sha256:bbbe65de9f68e40a5b537155fcb0438c21a83e17d21ef62431fe22abd7ca540d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_alternate_targets"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Classification is one entry point over Git and file findings",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c9c76f665a1c80f400e0aed0a3c0531b4054a3c8",
+            "content": "sha256:2ac4461b13698c2e9fc70096230d667f87810e627e22c7603c80c2431e94ae87",
+            "locator": {
+              "kind": "symbol",
+              "name": "_classify"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Hand-built world states for the controls",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c9c76f665a1c80f400e0aed0a3c0531b4054a3c8",
+            "content": "sha256:d65fc9518953796e67024560d48d645309b7691b8059591a1e73de2efa630ff0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_bare_repo"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

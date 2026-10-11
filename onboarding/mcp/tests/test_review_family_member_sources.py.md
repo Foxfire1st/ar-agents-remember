@@ -10,7 +10,7 @@ Pins each family member's recorded source locator and the range resolved in its 
 
 ## Code Commentary
 
-The fixture inserts realization rows through test-only knowledge_rows_test_support and creates real source commits. Production read_family_roster and its side-selected anchor resolver supply the output. Construction through the test namespace is not a production realization write or admission check.
+The fixture writes realization entries through test-only knowledge_rows_test_support and creates real source commits. Production read_family_roster and its side-selected anchor resolver supply the output. Construction through the test namespace is not a production realization write or admission check.
 
 Assertions preserve per-member role/rationale and distinguish symbol/range resolution, whole-file locators, missing or stale locators and ranges beyond the recorded blob. A symbol defined twice carries both defining ranges. Changing a file can preserve an unchanged attributed range on both sides; the existing source fields retain their wire values beside the structured locator fields. No range is inferred by parsing a detail sentence.
 
@@ -67,7 +67,7 @@ No Domain Documentation source is configured for this slice.
 - `test_a_symbol_defined_twice_carries_every_defining_range` supplies the current fixture or assertion described above. [18]
 - `test_the_existing_source_fields_keep_their_published_values` supplies the current fixture or assertion described above. [19]
 - Fixture construction imports test-only row constructors; it does not call the retired canonical writer. [20]
-- RowStore inserts index-shaped fixture rows without the retired production admission plane. [21]
+- RowStore writes text-tree fixture rows without the retired production admission plane. [21]
 
 The rows name the fixture, the reader and each case, plus the owners they drive.
 

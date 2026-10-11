@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0add0d691edd9fadf0873b47c05c3556c94fb585",
+            "blob": "cd35c66bb9c9d8af0f23fd2579f5e610cf4ee8da",
             "content": "sha256:60788cf6b3cf57e313ccacab456fb49fd9601a1930fa8f8de28c01088b22a2af",
             "locator": {
               "kind": "symbol",
@@ -19,12 +19,12 @@
         },
         {
           "anchor": {
-            "blob": "0add0d691edd9fadf0873b47c05c3556c94fb585",
+            "blob": "cd35c66bb9c9d8af0f23fd2579f5e610cf4ee8da",
             "content": "sha256:25f3731d7eb981c6583df927b9c4a1742b18ec9e96ed7271aff4ce079be6026e",
             "locator": {
-              "end": 223,
+              "end": 230,
               "kind": "line_range",
-              "start": 159
+              "start": 166
             },
             "path": "mcp/src/agents_remember/kernel/git_command.py"
           },

@@ -55,14 +55,12 @@ twenty-one types (ICR-R31@v1). The absence of state is the point: the review sur
 component state (`ReviewSurface.tsx`), exactly as the change-set viewer owns its component state, so
 this module never appears in `data/store.ts` and no `useDashboard` selector reads it.
 
-**`ReviewPagedCollection` names three bounded collections, and only two of them are walkable with no
-cursor (ICR-R10, extended by ICR-R31@v1).** The union is
-`"knowledge" | "records" | "family_members"` because the *server* accepts all three — narrowing it
-would misdescribe the wire — and `REVIEW_PAGED_COLLECTIONS` lists all three.
-`REVIEW_WALKABLE_COLLECTIONS` is the separate, smaller set a request may name with **no** cursor:
-`family_members` is excluded because it is not one walk but the set of per-family roster walks a single
-response composed, so naming it without a cursor addresses no single page and earns the server's own
-`comparison_page_unreadable` refusal rather than serving an arbitrary walk's first page. Its walk is
+**`ReviewPagedCollection` names two bounded collections, and only one of them is walkable with no
+cursor.** The union is `"knowledge" | "family_members"` — `records` left with the review matrix
+that read the retired envelope tables (MIK-R74 rule 1), so no records page exists and naming it
+earns the collection's own refusal. `REVIEW_WALKABLE_COLLECTIONS` is `['knowledge']` alone:
+`family_members` is not one walk but the set of per-family roster walks a response composed, so
+naming it without a cursor addresses no single page. Its walk is
 reached instead by continuing `ReviewFamilyRosterPage.continuation` on the family that published it.
 The two constants therefore answer two different questions — which collections the wire carries, and
 which collections a control may offer as a first page — and neither is derivable from the other.
@@ -80,8 +78,8 @@ is fed text only when the server said `present`, and an `absent`, `binary` or `u
 with its own `detail` instead of an empty string. The client never manufactures the text it renders.
 
 **`ReviewUnresolvedReference` is the client's own way of displaying "cannot be resolved".** It carries
-`field`, an optional `recorded_reference` and a `detail`, and it appears inside five different
-interfaces — the knowledge pane, the authored effect, the source pane, the evidence link and the
+`field`, an optional `recorded_reference` and a `detail`, and it appears inside four different
+interfaces — the knowledge pane, the source pane, the evidence link and the
 evidence pane — so an unresolved attribution is a rendered fact on every surface that can have one.
 
 **The identity pair is `ReviewCandidateRef` and `ComparisonIdentity`.** `ReviewCandidateRef` carries
@@ -91,9 +89,8 @@ which is the client half of the server's "a browser cannot choose which dataset 
 `selector_digest`, both snapshot digests and both optional code tree ids, so the surface renders the
 comparison's identity rather than deriving one.
 
-**The three panes are three interfaces whose fields are the panes' own statements.**
-`ReviewKnowledgePane` carries `invariant_ids`, `family_ids`, the two `ReviewSideContent` statements,
-the two condition lists, the `revision_groups`, the `field_changes`, the `authored_effects`, the
+**The knowledge pane carries signals, not authored effects.** `ReviewKnowledgePane` carries `invariant_ids`, `family_ids`, the two `ReviewSideContent` statements,
+the two condition lists, the `revision_groups`, the `field_changes`, the
 `signals`, the `assessments` and its own `unresolved` rows. `ReviewSourcePane` carries the `locations`,
 the `remaining` counts, the optional `expansion_reference` and `expansion_command`, the attributed and
 unattributed changed paths and its own `unresolved` rows. `ReviewEvidencePane` carries
@@ -216,7 +213,7 @@ entry half's two types and `intentReviewEntries`, then the expansion half's four
   absent key means the body did not come from this route, and it is never rendered as
   `no_family_recorded`, which would assert that a measured scope held no family.
 - **A collection may be named with no cursor only when it has a first page.** `REVIEW_WALKABLE_COLLECTIONS`
-  is that set — `knowledge` and `records` — while `family_members` is a member of the wire union and not
+  is that set — `knowledge` alone — while `family_members` is a member of the wire union and not
   of it: it is a set of per-family walks, so a cursor-less request for it earns the server's
   `comparison_page_unreadable` and its walk is continued from the roster page that published the cursor.
 - **Unresolved is displayed, not filled in.** `ReviewUnresolvedReference` appears wherever an
@@ -265,7 +262,7 @@ construct below the source pane — and every anchor in a row occurs inside the 
 - The shared shape that makes an unresolved reference a displayed fact on every surface that can have one. [5]
 - The candidate reference, which carries task identities and no path, and the comparison identity carried rather than derived. [6]
 - The per-side revision count and the field transition whose absent value is the recorded fact. [7]
-- The authored record with its examined inputs, and the detection fact with its versions and scope limitations and no severity. [8]
+- The detection fact with its versions and scope limitations and no severity. [8]
 - The assessment display with its author, examined inputs, binding state and evidence refs. [9]
 - The three panes, each carrying its own `unresolved` rows. [10]
 - The selected source location with its optional role and its three-member change state. [11]
@@ -309,11 +306,10 @@ one a later reader must not undo:** the route serializes with `exclude_none=True
 for a real response. Every consumer reads through the normaliser, and none constructs or parses a
 cursor — the server's own token is echoed back.
 
-**ICR-R31@v1 adds the third member and the walkable subset.** `ReviewPagedCollection` is now
-`"knowledge" | "records" | "family_members"` and `REVIEW_PAGED_COLLECTIONS` lists all three, because
-the *server* accepts all three — narrowing the union would misdescribe the wire.
-`REVIEW_WALKABLE_COLLECTIONS` is the separate two-member set a request may name with **no** cursor, and
-it is the set the collection picker offers. `family_members` is not one walk but the set of per-family
+**ICR-R31@v1 added the third member and the walkable subset; MIK-R74 rule 1 removed `records` again.** `ReviewPagedCollection` is now
+`"knowledge" | "family_members"`, and `REVIEW_WALKABLE_COLLECTIONS` is `['knowledge']` alone, because
+the *server* accepts the two and serves a first page only for `knowledge` — narrowing either
+would misdescribe the wire. `family_members` is not one walk but the set of per-family
 roster walks a response composed, so naming it without a cursor addresses no single page and fetches the
 server's own `comparison_page_unreadable` refusal rather than an arbitrary walk's first page; its walk
 is continued from `ReviewFamilyRosterPage.continuation` on the family that published it, and a response

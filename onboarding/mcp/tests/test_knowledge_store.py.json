@@ -23,7 +23,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e4fc1a849557a256d000a2a4f98c444ef5400e7d",
+            "blob": "18bf95513cea9638fc5f978e605aa03076a27454",
             "content": "sha256:5a7d444f6d5aa6950d3170e1dfb74ced2b56bfcb496f38dd0485d8bcd71c6898",
             "locator": {
               "kind": "symbol",
@@ -111,7 +111,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "46a3e8499bd8a9d67da47151cc402524ab74cb40",
+            "blob": "733bd550a5a70e4eb0042ab43da924d8485fa513",
             "content": "sha256:1c162353d3f25d8f5abeb326b08d895a8b08a5afe8bf5f6990aabc56a12e2d2e",
             "locator": {
               "kind": "symbol",
@@ -144,12 +144,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f47be3b1f6dbad3ecc71cc8fccbb681b81e244d9",
+            "blob": "512be564b35aaf6f9d3b9709113b613309efe221",
             "content": "sha256:ab4c000ebb434e9339018678bac61a62e5a6bd96d610521ef2e3883e622b137f",
             "locator": {
-              "end": 155,
+              "end": 160,
               "kind": "line_range",
-              "start": 155
+              "start": 160
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -178,12 +178,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f0a8a39bba7649aa8f49814e8f35a32dcecbd6a9",
+            "blob": "008585e26ec337eafd1554ed18033421299bdc72",
             "content": "sha256:25f186ecbae93039740b1f0446e90df3c6f206b4528261e50259dee629c43465",
             "locator": {
-              "end": 1664,
+              "end": 1689,
               "kind": "line_range",
-              "start": 1656
+              "start": 1681
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -239,7 +239,7 @@
         },
         {
           "anchor": {
-            "blob": "46a3e8499bd8a9d67da47151cc402524ab74cb40",
+            "blob": "733bd550a5a70e4eb0042ab43da924d8485fa513",
             "content": "sha256:9abec06ac0b4ae746be660704479f56815b1d97a40eaca2e7c85f0c97ed11b1e",
             "locator": {
               "kind": "symbol",

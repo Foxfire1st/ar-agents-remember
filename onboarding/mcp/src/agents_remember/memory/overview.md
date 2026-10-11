@@ -144,7 +144,7 @@ revision rows carried `sha256(record)` instead, so every index was refused there
   `family_revision` row now carries `revision_payload_digest`/`family_revision_payload_digest` over exactly the
   projected cells, so an index reads as a dataset for the revision readers too.
 - [`knowledge_index/schema.py`](knowledge_index/schema.py.md): `INDEX_FORMAT` is `ar-knowledge-index/v2`, so a v1
-  cache is treated as absent and rebuilt rather than reused.
+  cache is treated as absent and rebuilt rather than reused. (MIK-R74 later bumped the format to v3 with (path, id) history-row keys.)
 - [`knowledge_index/query.py`](knowledge_index/query.py.md): `record_ids(kind)`, every record ID of one kind in the
   tree, for the reviewer's per-side currentness.
 
@@ -325,7 +325,7 @@ The earlier store used sealed rows, lock-guarded batches, generation dispatch, c
 - Logical identity excludes physical layout, paths, timestamps and Git locations.
 - Scope/family relationships are authored, never inferred from directory proximity.
 
-- Retained logical encoder, one pinned schema and read-only store. [65]
+- The retained logical body encoder and logical digest operate with the one composed CURRENT_GENERATION; its structural guard checks the pin, and the store opener is read-only. No deleted generation registry supplies these current owners. [65]
 
 
 ## Evidence

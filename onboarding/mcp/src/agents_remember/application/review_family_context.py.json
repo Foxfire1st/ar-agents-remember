@@ -3,7 +3,43 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "09755c1ec83fa9aa2d5aa1888091ae3f978d1183",
+        "blob": "dc06e359c8d4842453f54d5f81f0734cc0406ddd",
+        "content": "sha256:5a4b4e0e83d9a4eac2a212fd5fc7d40fe5f174f33673387ba0075d15d0802f30",
+        "locator": {
+          "kind": "symbol",
+          "name": "_entry"
+        }
+      },
+      "id": "RLZ-26ASPC",
+      "invariant": "INV-RT13RESK",
+      "origin": {
+        "handoffEntry": "L74-E2",
+        "leaf": "260928-MIK-L74"
+      },
+      "rationale": "Heads and entry composition are the two touched owners whose retained-revision rule the decision records.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "dc06e359c8d4842453f54d5f81f0734cc0406ddd",
+        "content": "sha256:62a46c8729b2d8dc2fb0db1d4d4bd75e2134f73e58820049f40503c09059a21a",
+        "locator": {
+          "kind": "symbol",
+          "name": "_heads"
+        }
+      },
+      "id": "RLZ-2AJPB3",
+      "invariant": "INV-RT13RESK",
+      "origin": {
+        "handoffEntry": "L74-E2",
+        "leaf": "260928-MIK-L74"
+      },
+      "rationale": "Heads and entry composition are the two touched owners whose retained-revision rule the decision records.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "dc06e359c8d4842453f54d5f81f0734cc0406ddd",
         "content": "sha256:e6142c6ea77e6017929c7c6057fe99d2b883c1b6b83117d8f7151715790bbba2",
         "locator": {
           "kind": "symbol",
@@ -20,8 +56,8 @@
     },
     {
       "anchor": {
-        "blob": "09755c1ec83fa9aa2d5aa1888091ae3f978d1183",
-        "content": "sha256:d799ee05d689bad242115620e1d7c0a1695e217d1cc1e84e804328f6652aff12",
+        "blob": "dc06e359c8d4842453f54d5f81f0734cc0406ddd",
+        "content": "sha256:62a46c8729b2d8dc2fb0db1d4d4bd75e2134f73e58820049f40503c09059a21a",
         "locator": {
           "kind": "symbol",
           "name": "_heads"
@@ -32,13 +68,13 @@
       "origin": {
         "leaf": "260921-ICR-L46"
       },
-      "rationale": "Selects each side's family heads through the shared revision_heads rule over only the predecessor edges touching that side's selected revisions, so the head is the authored successor and not whichever historical revision still lists the member.",
+      "rationale": "Selects each side's family heads through the shared revision_heads rule over the selected revisions: every retained revision is a head, so a head is never an authored successor.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "09755c1ec83fa9aa2d5aa1888091ae3f978d1183",
-        "content": "sha256:0d57404ce56e5c2fdc5d4d176325362a873f6085e7f13de9b01e502bfe032184",
+        "blob": "dc06e359c8d4842453f54d5f81f0734cc0406ddd",
+        "content": "sha256:5a4b4e0e83d9a4eac2a212fd5fc7d40fe5f174f33673387ba0075d15d0802f30",
         "locator": {
           "kind": "symbol",
           "name": "_entry"
@@ -59,7 +95,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "09755c1ec83fa9aa2d5aa1888091ae3f978d1183",
+            "blob": "dc06e359c8d4842453f54d5f81f0734cc0406ddd",
             "content": "sha256:c3a1c68003c00535b8f19dc02b4f5d41b5949bd9c0ff5d05a3a5ed710299d8f8",
             "locator": {
               "kind": "symbol",
@@ -75,7 +111,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "09755c1ec83fa9aa2d5aa1888091ae3f978d1183",
+            "blob": "dc06e359c8d4842453f54d5f81f0734cc0406ddd",
             "content": "sha256:75289f6047406dd94b3371a8fc45309f32287d9542608b0845d6bcab7d3f8500",
             "locator": {
               "kind": "symbol",
@@ -91,7 +127,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "09755c1ec83fa9aa2d5aa1888091ae3f978d1183",
+            "blob": "dc06e359c8d4842453f54d5f81f0734cc0406ddd",
             "content": "sha256:c8234964ac91da50fbb3f70efa6b1c13325c1a37484866c7e21ca8c6d55c062e",
             "locator": {
               "kind": "symbol",
@@ -107,7 +143,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "09755c1ec83fa9aa2d5aa1888091ae3f978d1183",
+            "blob": "dc06e359c8d4842453f54d5f81f0734cc0406ddd",
             "content": "sha256:194981a2a7e1d110b4a8eb0b79985a63c12c4e6d4427e584979ac1bf87f467ea",
             "locator": {
               "kind": "symbol",
@@ -123,7 +159,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "09755c1ec83fa9aa2d5aa1888091ae3f978d1183",
+            "blob": "dc06e359c8d4842453f54d5f81f0734cc0406ddd",
             "content": "sha256:e6142c6ea77e6017929c7c6057fe99d2b883c1b6b83117d8f7151715790bbba2",
             "locator": {
               "kind": "symbol",
@@ -171,7 +207,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "09755c1ec83fa9aa2d5aa1888091ae3f978d1183",
+            "blob": "dc06e359c8d4842453f54d5f81f0734cc0406ddd",
             "content": "sha256:53c688ea20a29692d02513ddff87bb99f09ee9f651f7a08058ff82167001ec0f",
             "locator": {
               "kind": "symbol",
@@ -187,7 +223,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "09755c1ec83fa9aa2d5aa1888091ae3f978d1183",
+            "blob": "dc06e359c8d4842453f54d5f81f0734cc0406ddd",
             "content": "sha256:f2cefb08011b42b79a51d3f5190ff123fd1e99028db7abfffa64b1b49008f09c",
             "locator": {
               "kind": "symbol",
@@ -203,7 +239,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "09755c1ec83fa9aa2d5aa1888091ae3f978d1183",
+            "blob": "dc06e359c8d4842453f54d5f81f0734cc0406ddd",
             "content": "sha256:ac7d7062b2023eb5ca318fa7f3edfa6a99735c2de330110bed82b920aef8b629",
             "locator": {
               "kind": "symbol",

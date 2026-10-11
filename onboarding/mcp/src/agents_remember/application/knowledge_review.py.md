@@ -119,20 +119,12 @@ so the surface never renders a pane from a partial matrix. `REVIEW_MATRIX_KINDS`
 view is asked for — the five record kinds — rather than a selection policy of this leaf's; the view
 applies its own registered traversal over them.
 
-**The matrix's own answer is what states the two matrix-owned collections' availability, and the
-composition reports it rather than deriving it.** Immediately after the rows are in hand,
-`compose_review` calls `review_evidence_records.with_selection_channels(records, rows,
-MatrixSelection(page=published_page if request.page_of == "records" else None,
-remaining=_matrix_rows_remaining(matrix), unreadable=matrix_refusal))`, which adds the `authored_effects` channel from the rows the
-view returned and carries the view's **own** declared bound: the remaining count reads
-the served view, so a review that rendered a bounded page reports
-the bound instead of presenting the page it read as the whole selection.
+**The records bundle arrives already marked, and the composition renders it as it arrives.** `compose_review` takes the `ReviewRecordInputs` bundle as a parameter (defaulting to `EMPTY_REVIEW_RECORDS`); subject states come from `subject_states(records)` and the pane's signals from `records.signals`. No selection helper builds channels here — `with_selection_channels`, `MatrixSelection` and `_matrix_rows_remaining` left with the review matrix (MIK-R74 rule 1) — and the authored-effects channel arrives unavailable with its removal as the reason rather than being counted from view rows. A review that rendered a bounded page reports the served view's own bound instead of presenting the page it read as the whole selection.
 
-**The five subjects the payload states are assembled from the matrix rows and the supplied records,
-and the two authored/mechanical collections never mix.** `_knowledge_pane` renders identities, both
+**The five subjects the payload states are assembled from the comparison and the supplied records.** `_knowledge_pane` renders identities, both
 sides' exact statements and conditions, the retained-revision groups, every field transition the
-comparison reported, the authored records (`AUTHORED_EFFECT_KINDS`), the detection signals, the
-assessment displays and one unresolved-author reference per authored row. The other two panes are no
+comparison reported, the detection signals, the
+assessment displays and no authored rows or unresolved-author references (the matrix renderers are gone with the matrix). The other two panes are no
 longer composed here: `source_pane` (in `review_source_inventory`) renders the inventory first and
 then the measured attribution partition — the selected locations, the six published remaining
 counts, the expansion reference and command, and the three bucket lists read from the partition
@@ -198,10 +190,7 @@ limitations — a limit a reader has to open a pane to discover is a limit the r
 (`ICR-R14@v1`). The resolver used to read the published assessment collection and collapse an absent
 authority and an unreadable one into `EMPTY_REVIEW_RECORDS`; both of those are now *states* on the
 bundle, and the whole collection resolution lives in
-[`application/review_evidence_records.py`](review_evidence_records.py.md). The adapter keeps the name in
-`__all__` and imports it from the owner (the import block at the top of the file is the re-export) `AUTHORED_EFFECT_KINDS` moved
-with it for the same reason and is imported back here: the kinds a channel counts and the kinds
-`_knowledge_pane` renders are one declaration, so they cannot drift.
+[`application/review_evidence_records.py`](review_evidence_records.py.md). No channel-counting kinds are declared or re-exported here: the authored-effects channel is unavailable with its removal as the reason, and what `_knowledge_pane` renders for signals comes from `records.signals`.
 
 **The family context carries change-kind facts on a tree comparison (MIK-L33, MIK-R33).** `compose_review` publishes
 `family_context=with_change_kinds(family.context, resolved.trees)`: for a tree comparison every family entry comes back
@@ -325,7 +314,7 @@ what the anchors are resolved against.
 - The comparison's declared limits, omissions and side-absences **plus the inventory's own state**, carried as counted facts at the top level. [21]
 - **The staleness rule — now owned by the sibling module: agreement, or an absent previous binding, is `current`; disagreement is `stale` with the carried identity retained as the labelled previous input and the moved axis named. This leaf deleted the private `_staleness` rather than keeping it as an alias.** [22]
 - **Submission as the other statement of the same fact, and the payload validators that refuse a payload where the two disagree — including the one that ties `comparison is None` to `not_compared` and to the knowledge pane's selection state.** [23]
-- The panes: identities and authored records never rendered as mechanical facts, the whole-task inventory, the six published remaining counts and the measured partition, and the evidence pane's two independent absence states — the last two now the extracted modules' own functions, called by both compositions. [24]
+- The panes: identities never rendered as mechanical facts and no authored rows at all, the whole-task inventory, the six published remaining counts and the measured partition, and the evidence pane's two independent absence states — the last two now the extracted modules' own functions, called by both compositions. [24]
 - **Pane 1's delegation, and the one wire-visible change this leaf made: the import of the statement-side module and the four calls inside `_knowledge_pane` that replaced the adapter's private `_side_content`/`_conditions`/`_field_changes`, where a changed structured field is now served as each side's own projection instead of `None`.** [25]
 - **The cases that measure this adapter's one-sided output through the real composition: an addition, a removal, a one-sided field row, and a structured value served as its own projection on both sides.** [26]
 - The per-subject assessment projection that reports an unmeasured assessment as not measured and a subject without an authored assessment as unassessed — now the extracted record renderer's, so both compositions display an unassessed collection identically. [27]
@@ -369,11 +358,8 @@ request's `page_of`/`continuation`/`page_size` are offered to that collection's 
 and the matrix are read at that position, and the one page the request named is published beside the
 panes — with the refusal it earned when a requested page could not be served.
 
-Two renames came with it, and a reader should read them as renames rather than new behavior:
-`_rows_remaining` is now `_matrix_rows_remaining` (it takes the matrix's own selection rather than a bare
-view result), and the task-context branch of the selection channels is now the extracted
-`without_selected_matrix`. A refused cursor leaves the payload with no page and the matrix channels
-`unavailable`, never a measured zero: a refused read has no counts, and a page of invented zeros would be
+Two renames came with the matrix retirement, and a reader should read the retired names as gone rather than new behavior:
+the task-context branch builds no selection channels anymore, and a refused cursor leaves the payload with no page and the removed collection earning `comparison_page_unreadable`, never a measured zero: a refused read has no counts, and a page of invented zeros would be
 a lie about a read that did not happen.
 
 ## 260921-ICR-L26 The Adapter Classifies Before It Renders, And The Two Row Renderers Move Out

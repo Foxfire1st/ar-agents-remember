@@ -55,7 +55,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1453f6697881214fb57c2f593254dbbf8b5696b3",
+            "blob": "020c5f0900fbacb7da2003e4ad340aa7d0225e5f",
             "content": "sha256:9b9bbb6d063d3891a682c5c434e92388fa9a733a2f32013b715355483bc9f022",
             "locator": {
               "kind": "symbol",
@@ -71,7 +71,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1453f6697881214fb57c2f593254dbbf8b5696b3",
+            "blob": "020c5f0900fbacb7da2003e4ad340aa7d0225e5f",
             "content": "sha256:94eedcf69cd83e5ad3444c1af91a4f65d306c3250901b7f1efb9df293f44dbb3",
             "locator": {
               "kind": "symbol",
@@ -111,146 +111,6 @@
               "name": "RowStore"
             },
             "path": "mcp/tests/knowledge_rows_test_support.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "18": {
-      "note": "**The union with labels and presence, and the fix-round F1 pin that the rows stay globally kind-grouped when retired subjects exist.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1453f6697881214fb57c2f593254dbbf8b5696b3",
-            "content": "sha256:721204869dfe8e932e7ed24149b7e6f9ceec74fcd15d94d42efcb6b28d2b7fad",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_the_catalogue_unions_both_snapshots_with_labels_and_presence"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "1453f6697881214fb57c2f593254dbbf8b5696b3",
-            "content": "sha256:077b4b89c21a14513474a10a9a8313a67eeaf90a7c5033f6505d6f630c1a3a66",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_the_catalogue_stays_kind_grouped_when_retired_subjects_exist"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "19": {
-      "note": "**The retired and added rows: a before-only subject stays listed and opens one-sided; an after-only subject is listed beside the retired half.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1453f6697881214fb57c2f593254dbbf8b5696b3",
-            "content": "sha256:723e9bc8ebc7b5ae629d7b2914de98ec899d14938be687fea93fcc8962abe5d1",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_retired_before_only_subject_stays_listed_and_reviewable"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "1453f6697881214fb57c2f593254dbbf8b5696b3",
-            "content": "sha256:82f9e18d7513f0d3204e00164f05471291a0200d14c0edfb8b5dc4b662a32901",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_newly_added_after_only_subject_is_listed_beside_the_retired_half"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "20": {
-      "note": "The statement-free family listing and the packet's conforming example: every row opens through the normal review.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1453f6697881214fb57c2f593254dbbf8b5696b3",
-            "content": "sha256:08509b21b630b55839619af31678a787c7c35577f78d9d523cd0e727a0056317",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_family_subject_is_listed_without_an_establishable_statement_side"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "1453f6697881214fb57c2f593254dbbf8b5696b3",
-            "content": "sha256:91f329845ed144069386d5d3cd501b01e844bc782a1c1efa47b9a424524006d4",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_every_catalogue_row_opens_through_the_normal_review"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "21": {
-      "note": "**The failure/recovery boundary: a recorded but unselectable subject is listed and its open carries the comparison's own reason.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1453f6697881214fb57c2f593254dbbf8b5696b3",
-            "content": "sha256:70c4487c085e859426fff8b923c478a5ec3f2ddd0c413245598fd23d36b68a40",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_recorded_but_unselectable_subject_is_listed_and_its_open_carries_the_reason"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "22": {
-      "note": "The labelled totals on the served entry result, and the zero-subject boundary beside the measured source inventory.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1453f6697881214fb57c2f593254dbbf8b5696b3",
-            "content": "sha256:18e8abf41c282c46d3a08d9ecc90015d08a5ae055eb234115225ca0553d2ec37",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_the_entry_route_carries_labelled_totals_for_the_whole_catalogue"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "1453f6697881214fb57c2f593254dbbf8b5696b3",
-            "content": "sha256:3baafbd58f2b0976db78e71c7a881d205671e764b41be2b97d026eb26ce413e2",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_zero_subjects_is_a_valid_catalogue_beside_the_source_inventory"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "23": {
-      "note": "**The bounded-loading tripwire: both diff bindings rigged, the route answers with the whole catalogue, so loading never compared.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1453f6697881214fb57c2f593254dbbf8b5696b3",
-            "content": "sha256:94eedcf69cd83e5ad3444c1af91a4f65d306c3250901b7f1efb9df293f44dbb3",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_catalogue_loading_runs_no_comparison"
-            }
           },
           "kind": "test"
         }

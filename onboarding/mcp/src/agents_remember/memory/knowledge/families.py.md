@@ -12,11 +12,11 @@ Family identity and sealed family-revision reads over a memory tree's derived in
 
 ### Logic
 
-get_family reads one family identity or returns None. get_family_revision reads the exact revision row together with its stored predecessor set and passes the aggregate to records.decode_family_revision_row, which verifies its payload seal. list_family_revision_ids enumerates the family's retained revision identities in stable order; _family_predecessors reads that exact revision's predecessor edges.
+get_family reads one family identity or returns None. get_family_revision reads the exact revision row and passes it to records.decode_family_revision_row, which verifies its payload seal; text records hold no predecessor edge, so the decoded revision carries none. list_family_revision_ids enumerates the family's retained revision identities in stable order.
 
 ### Invariants And Boundaries
 
-- Reading a revision verifies its guarantee, origin state, acceptance reference, provenance and predecessor set as one sealed aggregate.
+- Reading a revision verifies its guarantee, origin state, acceptance reference and provenance as one sealed aggregate.
 - Memberships are separate authored relations; these readers do not derive or complete a guarantee from members.
 - These functions only read through the supplied opened store. They create no family, revision or lineage edge and manufacture no acceptance or Git state.
 - The derived-index table declarations remain separate from the text-file authoring route.
@@ -61,7 +61,7 @@ No configured domain documentation could be checked.
 - The retained family identity, exact revision and revision enumeration reads. [9]
 
 
-- The family revision payload mapping and digest include the sorted predecessor set. [12]
+- The family revision payload mapping and digest. [12]
 
 
 - The retained family revision value shapes. [13]

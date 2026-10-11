@@ -570,7 +570,7 @@
         },
         {
           "anchor": {
-            "blob": "6212eb167b92e58fc738c440b92575ca390218c3",
+            "blob": "0949ba0ebbf02b7ceccbe81478df2eabe7073177",
             "content": "sha256:431fb418b0d54e3248cf586194613977c3720b9ecca105cb1a62736610d2c578",
             "locator": {
               "kind": "symbol",
@@ -582,12 +582,12 @@
         },
         {
           "anchor": {
-            "blob": "6212eb167b92e58fc738c440b92575ca390218c3",
+            "blob": "0949ba0ebbf02b7ceccbe81478df2eabe7073177",
             "content": "sha256:4341e46efbdfae6a0ca5076bf8c944921cd5c547f25c3a131015ad56962a41fa",
             "locator": {
-              "end": 549,
+              "end": 554,
               "kind": "line_range",
-              "start": 549
+              "start": 554
             },
             "path": "mcp/src/agents_remember/worktrees/route_review.py"
           },

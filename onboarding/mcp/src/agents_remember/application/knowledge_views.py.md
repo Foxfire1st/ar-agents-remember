@@ -6,13 +6,13 @@
 
 ## Purpose
 
-The application seam for five knowledge views over a memory tree's derived index. It admits, opens, dispatches and returns a typed answer; it decides no semantic authority and keeps no durable state.
+The application seam for three knowledge views over a memory tree's derived index. It admits, opens, dispatches and returns a typed answer; it decides no semantic authority and keeps no durable state. `review_matrix` and `curation_queue` left with the envelope tables they read (MIK-R74 rule 1); the seam serves `source_context`, `invariant` and `family` only.
 
 ## Code Commentary
 
 ### Logic
 
-Ordering, namespace and continuation bindings are checked before rows are read. A different snapshot is refused with both digests named; a malformed cursor is refused instead of becoming position zero. The seam admits the cursor once and passes the offset to the five renderers in `knowledge_view_rows.py`. Their returned next position governs continuation and remaining count.
+Ordering, namespace and continuation bindings are checked before rows are read. A different snapshot is refused with both digests named; a malformed cursor is refused instead of becoming position zero. The seam admits the cursor once and passes the offset to the three renderers in `knowledge_view_rows.py`. Their returned next position governs continuation and remaining count.
 
 ### Invariants And Boundaries
 
@@ -168,7 +168,7 @@ The current seam, derived-index reader and typed cursor models establish the bou
 - The derived-index seam checks ordering, namespace and continuation binding before reading rows and returns a typed refusal. [4]
 
 - The dispatch, the error-to-refusal conversion, the distinct-subject check, the counts call and the payload assembly, all through the renderer table. [5]
-- The required quantity set, the withheld-row accounting, the review-matrix dependency mismatch count, and the payload table whose five names must agree with the renderer table's. [6]
+- The seam serves exactly three views [6]
 
 - The context owns its snapshot and _snapshot_of carries that identity into the cursor binding. [7]
 
@@ -179,7 +179,7 @@ The current seam, derived-index reader and typed cursor models establish the bou
 
 - The request the seam admits, the result it returns, and the refusal vocabulary both of them use. [11]
 
-- The admitted ordering inputs and the current source-context and curation-queue renderers. [12]
+- The admitted ordering inputs and the current source-context renderer. [12]
 
 
 - The former projection writer and MCP seam call were retired. The current public knowledge tool reads a converted tree through read_tree_page, rather than calling read_knowledge_view. [15]

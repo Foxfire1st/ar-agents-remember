@@ -18,8 +18,182 @@
         }
       ]
     },
+    "11": {
+      "note": "The application constructs ContextPacketV2 from Git, resolved paths, memory, worktree, provider, drift and freshness facts.\n\nAnchor: `ContextPacketV2 construction`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1b1b9671292115c6dd9de74936534444e0f8affe",
+            "content": "sha256:dc135d824f6cf2d0bef71424650c9b9e0d0d7e64aff4674f84ea456e84860ea7",
+            "locator": {
+              "end": 111,
+              "kind": "line_range",
+              "start": 89
+            },
+            "path": "mcp/src/agents_remember/application/context_packet.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Provider readiness in the packet uses compact provider summary models.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2640f116c7d6bce95de2167c335b1075abea76c6",
+            "content": "sha256:aa8802cf3a6f79cf3698078969a314a147c82a800f2ca8d741f1f69cd2116aaa",
+            "locator": {
+              "kind": "symbol",
+              "name": "ProviderSummary"
+            },
+            "path": "mcp/src/agents_remember/models/providers.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "RepoState and VALID_REPO_STATES define the producer vocabulary; git_facts_to_packet supplies the dict RepoSummary validates.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e0b9c668414f020ae86262032fdc39d1813a4a6a",
+            "content": "sha256:480d9cdb8c2ad41bcb78577f1274d487b46d5a34f41aa3b2a711df089ebe957b",
+            "locator": {
+              "kind": "symbol",
+              "name": "RepoState"
+            },
+            "path": "mcp/src/agents_remember/kernel/git_facts.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e0b9c668414f020ae86262032fdc39d1813a4a6a",
+            "content": "sha256:b44351d2f446fb73f8da4e1bb72a2b848c63eab7e9e5f0038ed845f53137ab65",
+            "locator": {
+              "kind": "symbol",
+              "name": "VALID_REPO_STATES"
+            },
+            "path": "mcp/src/agents_remember/kernel/git_facts.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e0b9c668414f020ae86262032fdc39d1813a4a6a",
+            "content": "sha256:3a29d1589c232d2e550fbb81b4dea411cf8497d2fefa18cc8ea3e1407af2deb3",
+            "locator": {
+              "kind": "symbol",
+              "name": "git_facts_to_packet"
+            },
+            "path": "mcp/src/agents_remember/kernel/git_facts.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "FreshnessState and VALID_FRESHNESS_STATES define the producer vocabulary; freshness_to_packet supplies the freshness dict.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "79ef372a5f71986f703d7b1e8404f3cbabfa76c2",
+            "content": "sha256:600c17fc2e6730f83045d514a964e513489ce452fae8a87c0ba9d3edd35598c1",
+            "locator": {
+              "kind": "symbol",
+              "name": "FreshnessState"
+            },
+            "path": "mcp/src/agents_remember/kernel/git_freshness.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "79ef372a5f71986f703d7b1e8404f3cbabfa76c2",
+            "content": "sha256:cc7e4a0f93077ad5cb44fbb6ac4aabf037f139938f6d304eba3e72b4c6c60436",
+            "locator": {
+              "kind": "symbol",
+              "name": "VALID_FRESHNESS_STATES"
+            },
+            "path": "mcp/src/agents_remember/kernel/git_freshness.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "79ef372a5f71986f703d7b1e8404f3cbabfa76c2",
+            "content": "sha256:9984c8ad73edd4b1ae9bb4f539820b50aa01b1392924e78e500b233200ff0228",
+            "locator": {
+              "kind": "symbol",
+              "name": "freshness_to_packet"
+            },
+            "path": "mcp/src/agents_remember/kernel/git_freshness.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "ReadableMemoryMode is external/disabled for persisted reads; the startable MemoryMode is external only. Packet memory.mode and worktree.memoryMode use the readable alias.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "78d1d271f759310ef0703c1bd3d090cc691975db",
+            "content": "sha256:0ab91f6651c0b75ef9521ae37583791f356c1d9cfc048daed07d26989df17dff",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReadableMemoryMode"
+            },
+            "path": "mcp/src/agents_remember/kernel/memory_mode.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fb6bb78f1bf68d8d0e98f9b32d4931b31ccc4568",
+            "content": "sha256:d5f2b1e90a27e0837f372df75428fc9ecd1eaa950ff7c04a03ff3fde4674393a",
+            "locator": {
+              "kind": "symbol",
+              "name": "MemorySummary"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3ff8738a74b90a9cde9779804b87b348f22f8127",
+            "content": "sha256:42e9ad3f73ef20b9a4b7ea28756b32d3e08d8b6992ab8a1afeebf70a5a3ebb29",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorktreeSummary"
+            },
+            "path": "mcp/src/agents_remember/models/worktree.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "worktree_status_packet returns WorktreeSummary directly; the packet constructs its worktree block rather than validating a dict.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ea5764081bbb7a9fa9f16d71c4164e1626564383",
+            "content": "sha256:1178f685feb181073285f1905be1da7df392287846aa5176dc75bf4b54b3c7ef",
+            "locator": {
+              "kind": "symbol",
+              "name": "worktree_status_packet"
+            },
+            "path": "mcp/src/agents_remember/application/worktree_status.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "7": {
-      "note": "Packet vocabularies imported from producers",
+      "note": "ContextPacketV2 carries the nested packet objects; RepoSummary, BranchFreshness and MemorySummary use vocabularies imported from the owning producers.\n\nAnchor: `producer imports`",
       "targets": [
         {
           "anchor": {
@@ -28,6 +202,51 @@
             "locator": {
               "kind": "symbol",
               "name": "ContextPacketV2"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fb6bb78f1bf68d8d0e98f9b32d4931b31ccc4568",
+            "content": "sha256:3d79e5f31cc572da5d19abb96d5a8cf7bb78492003837d490b0bdda44fc4c151",
+            "locator": {
+              "kind": "symbol",
+              "name": "RepoSummary"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fb6bb78f1bf68d8d0e98f9b32d4931b31ccc4568",
+            "content": "sha256:f07212f0f308abb6b7f46a881046044368ff20ea3e415c1fca0f09565d360532",
+            "locator": {
+              "kind": "symbol",
+              "name": "BranchFreshness"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fb6bb78f1bf68d8d0e98f9b32d4931b31ccc4568",
+            "content": "sha256:d5f2b1e90a27e0837f372df75428fc9ecd1eaa950ff7c04a03ff3fde4674393a",
+            "locator": {
+              "kind": "symbol",
+              "name": "MemorySummary"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fb6bb78f1bf68d8d0e98f9b32d4931b31ccc4568",
+            "content": "sha256:a85d19634e8a41d007ebd2bd4d333d60499e82006893bb379faaad8b6198469f",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 9
             }
           },
           "kind": "code"
@@ -51,7 +270,7 @@
       ]
     },
     "9": {
-      "note": "Mode field reads legacy `disabled` as-is\n\nAnchor: `mode`",
+      "note": "Mode field reads legacy `disabled` as-is\n\nAnchor: `source range`",
       "targets": [
         {
           "anchor": {

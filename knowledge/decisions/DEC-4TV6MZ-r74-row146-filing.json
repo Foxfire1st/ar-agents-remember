@@ -1,0 +1,53 @@
+{
+  "admission": {
+    "criteria": [
+      "constrains_future_work"
+    ],
+    "justification": "Records the by-design appendix row-146 filing choice so future filing work keeps it."
+  },
+  "alternatives": [
+    {
+      "option": "File per-call reports through the existing filing facets; reads file no per-call report and admitted writes stay within the rule-6 (a)/(b)/(c) list.",
+      "reason": "The row's by-design choice keeps filing inside the existing facets and the read boundary.",
+      "status": "chosen"
+    },
+    {
+      "option": "File reports outside the existing facets or attach default report side effects to reads.",
+      "reason": "Contradicts the row's explicit by-design filing and the read boundary.",
+      "reconsider_when": "Appendix row 146 is revised to require new filing facets.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Future filing work uses the existing facets and keeps reads free of default report side effects."
+  ],
+  "context": "MIK-R74 appendix row 146 by-design choice, authored under rule 8; existing filing-facet decisions are credited, not replaced.",
+  "decider": "curator (260928-MIK-L74 memory repair)",
+  "id": "DEC-4TV6MZ",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "96d40632f177b320536d7d5714aa414da5585df1",
+        "content": "sha256:9b073451d4940e5a3c27c6743adc9ad668bcb8a42210e897b74b13aabbeadc8a",
+        "locator": {
+          "kind": "symbol",
+          "name": "prune_tool_reports"
+        },
+        "path": "mcp/src/agents_remember/kernel/primitives/tool_reports.py"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "l74-repair-list.json"
+    },
+    "handoffEntry": "L74-MEM-01-row146",
+    "leaf": "260928-MIK-L74",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

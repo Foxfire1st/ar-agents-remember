@@ -10,7 +10,9 @@ Knowledge-row test support.
 
 ## Code Commentary
 
-Test helpers that build valid and deliberately invalid row documents across the row kinds.
+Test helpers that build valid and deliberately invalid row documents across the row kinds —
+as text trees (invariant/family records and file sidecars with entries), never by inserting rows.
+Caller-side identities are projected to the tree's own; provenance is carried, not projected.
 
 ## Evidence
 

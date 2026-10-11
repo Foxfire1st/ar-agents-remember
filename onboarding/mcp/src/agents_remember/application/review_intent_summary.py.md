@@ -54,7 +54,7 @@ clock-corrected by the 12:10:21 entry; refined by the leaf's 16:15:11 ruling on 
   (`KnowledgeStorageError`/`apsw.Error`), is **`unavailable`** with the owner's refusal and no counts.
 
 **Read shape.** `_read_side` opens one snapshot read-only and reads, through the shipped
-`read_queries` owners, the predecessor edges, each identity's retained revision ids, the head rows'
+`read_queries` owners, each identity's retained revision ids, the head rows'
 compared fields, the heads' realization claims and the family heads' memberships; then closes it.
 `_tally` walks the union of identities and `_classify` places each one. It runs no subject comparison
 and loads no subject content beyond each head's own fields.

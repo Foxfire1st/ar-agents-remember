@@ -14,7 +14,7 @@
 
 - `is_indexed_path(path)` is the file filter: a `.json` file not excluded by MIK-R22's shared `is_excluded_from_knowledge` (no `*.index.json` route cache, nothing in a hidden directory), under `knowledge/` but not `knowledge/census/` (MIK-R20 owns those schemas), or under `onboarding/`. Everything else contributes to the key only.
 - `git_tree_snapshot(repository, revision)` resolves `revision^{tree}`, lists it with `read_git_tree_bytes`, and reads every indexed blob with one `kernel.git_command.read_git_blobs_bytes` call, bytes unchanged.
-- `directory_snapshot(directory)` refuses a directory outside a Git working tree, then captures: `_capture` copies the repository's own index (for its stat cache) into a temporary directory, clears `assume-unchanged` and `skip-worktree` on the copy (`_clear_index_flags`, one `update-index` per flag because it applies only the last such option), runs `git add --all -- .` and `git write-tree [--prefix=…]` with an isolated index and object directory whose alternate is the real object database, and lists the captured tree. It then reads the files from disk and checks each against its captured blob id (`_blob_id`, SHA-1 or SHA-256 by the tree id's length); a mismatch retakes the capture, up to three attempts, and then raises `MemoryTreeError`.
+- `directory_snapshot(directory)` refuses a directory outside a Git working tree, then captures: `_capture` copies the repository's own index (for its stat cache) into a temporary directory, selectively clears `assume-unchanged` and `skip-worktree` on the copy (`_clear_index_flags`, one `update-index` per flag because it applies only the last such option), runs `git add --all -- .` and `git write-tree [--prefix=…]` with an isolated index and object directory whose alternate is the real object database, and lists the captured tree. A path that sparse checkout leaves out keeps its committed blob in the capture (`_captured_bytes` reads it through objects); a file absent without that flag is captured as deleted (MIK-R74 rule 5). It then reads the files from disk and checks each against its captured blob id (`_blob_id`, SHA-1 or SHA-256 by the tree id's length); a mismatch retakes the capture, up to three attempts, and then raises `MemoryTreeError`.
 - `directory_key(directory)` is the capture alone, without reading files — what the cache uses to decide reuse.
 
 ### Conventions
@@ -36,7 +36,7 @@
 
 ### Todos
 
-Review R1 noted that a sparse checkout would capture its skipped files as deleted; memory repositories are not sparse.
+None recorded. Sparse-checkout absence keeps the committed blob (MIK-R74 rule 5); ordinary absence is still captured as deleted.
 
 ## Evidence
 

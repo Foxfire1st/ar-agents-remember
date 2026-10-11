@@ -23,8 +23,14 @@ exception leaves the index, the refs and every owned file as they were.
 
 `BaselineRequest`, `baseline_status`, and `baseline_adopt` are the service entry points. CLI parsing
 adapts into the request object, and `resolve_request_context` passes topology and coordination hints
-through the shared resolver. Drift discovery includes sidecar and inline onboarding and writes its
-report before the adoption decision.
+through the shared resolver. Drift measurement uses the shared summary. An adoption selects
+`write_report=not dry_run` before either storage-format branch: its dry-run preview files neither
+the drift report nor observer snapshot and advertises no unfiled path. A mutating adoption keeps
+its report-producing default and files the report before the adoption decision. The registered
+baseline-status read accepts only the repository identifier and constructs a request with
+`report=None`, so it selects `write_report=False`. Its converted payload omits `drift_report` rather
+than advertising an unfiled path. An explicit internal or CLI report-path request is a producer;
+that arm is not exposed as an exception to the registered read.
 
 `ledger_status` reports the derived Git-history view or an unavailable-history diagnostic.
 `base_payload` reuses that observation to classify `already-adopted` when readable history supplies a
@@ -35,7 +41,8 @@ A resolvable HEAD whose ancestry cannot be read reports top-level `unavailable`.
 returns that refusal before cache preparation, content staging, or ref mutation; accepting drift
 cannot override unreadable history. An unborn repository has no resolvable HEAD, so its unavailable
 initial walk does not by itself block bootstrap: it remains `ready` subject to the ordinary drift
-rules. Drift reporting still precedes the adoption decision.
+rules. Drift reporting precedes the adoption decision only for the mutating producer; dry-run
+measurement preserves the summary without filing report or snapshot.
 
 `has_adopted_baseline` remains the direct bootstrap guard inside `adopt_initial_baseline`. Actionable
 drift still blocks new adoption unless `accept_drift` is explicit.
@@ -65,6 +72,10 @@ application layer; the optional converted comparison base stays with the applica
 a contract. The converted payload reports three blocking states — `blocked-invalid` while validator
 violations exist, `blocked-drift` while stale anchors exist and drift was not accepted, and
 `unavailable` as before — and `accept_drift` accepts stale anchors only, never a validator violation.
+With filing disabled, `run_drift` returns the measured summary and `None`: it still refuses a failed
+measurement, but does not raise merely because a read requested no report. Measured fields and the
+adoption gate are preserved; absence of a report is an output distinction, not permission to skip
+converted validation.
 
 The converted adoption never writes the worktree's own index before validation passes.
 `_private_staging_index` holds a mtime-preserving copy of the worktree index for one interval (an
@@ -145,6 +156,10 @@ No additional configured cross-repository evidence is claimed.
 - A dry run, a refusal or an exception leaves the index, the refs and every owned file as they were. [16]
 - Publication records exactly the validated tree; a moved branch refuses instead of publishing past validation. [17]
 - Converted adoption stages, validates with no bases paired with the code commit, and commits exactly that tree. [18]
+
+- Registered status requests select unfiled measurement; an absent report pointer is omitted while measurement and explicit producer behavior remain intact. \[19] [19]
+
+- Adoption previews select suppression before measuring; mutating adoption preserves its report-producing mode. [20]
 
 - Cache preparation and refresh are separate from Git commit publication. [3]
 - Shared staging excludes derived paths from the content commit. [4]

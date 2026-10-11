@@ -10,7 +10,7 @@ Composes review evidence from the selected candidate's published curator assessm
 
 ## Code Commentary
 
-A resolved candidate reads the immutable curator authority and its artifact references. The returned channels distinguish an assessment collection from the currentness measurement of its exact dependency binding. Canonical detection, verification-observation and evidence-claim collections are retired and explicitly unavailable; they are not measured empty. An unresolved candidate yields unavailable channels. A task-context read without a selected matrix says not-selected for that collection. The removed `_claim_record` projection is not a current reader.
+A resolved candidate reads the immutable curator authority and its artifact references. The returned channels distinguish an assessment collection from the currentness measurement of its exact dependency binding. Canonical detection, verification-observation and evidence-claim collections are retired and explicitly unavailable; they are not measured empty. Authored effects are unavailable with their removal as the reason: the review matrix left with the retired envelope tables (MIK-R74 rule 1), so no review reads it now. An unresolved candidate yields unavailable channels. The removed `_claim_record` projection is not a current reader.
 
 ### Logic
 
@@ -37,8 +37,11 @@ reported `not-measured` on its own display rather than promoted to current.
 detail, count, unreadable identities, next action) and `_channel` attaches the owner from the single
 `_COLLECTION_OWNERS` declaration, so a channel's `owner` names **which authority to look at** rather
 than which code path happened to run. `_answered` is the owner-answered pair (`recorded` with a count,
-or `none_recorded` with a real zero); `_absent`, `_unavailable` and `_not_selected` are the three
-non-answers, and only `_unavailable` takes unreadable identities.
+or `none_recorded` with a real zero); `_absent` and `_unavailable` are the non-answers, and only
+`_unavailable` takes unreadable identities. The two removal constructors state unavailability with
+its reason: `_removed_matrix_channel` for authored effects (the matrix left with the retired envelope
+tables, MIK-R74 rule 1) and `_retired_channel` for the three retired canonical classes (no writer or
+record format on a converted tree, MIK-R26).
 
 ### Invariants And Boundaries
 
@@ -55,11 +58,11 @@ non-answers, and only `_unavailable` takes unreadable identities.
 
 ### Repo-Internal References
 
-- Three of the six collection owners are retired canonical records (MIK-R26): `detection_signals`, `verification_observations` and `evidence_claims` name retired-canonical records; `assessments`, `authored_effects` and `assessment_currentness` have live owners. [42]
+- Three collection owners are retired canonical records (MIK-R26): `detection_signals`, `verification_observations` and `evidence_claims` name retired-canonical records and are unavailable through `_retired_channel`; `assessments` and `assessment_currentness` have live owners, and `authored_effects` is unavailable through `_removed_matrix_channel` — the matrix left with the retired envelope tables (MIK-R74 rule 1). [42]
 
 - `review_records_for_resolution` owns the current boundary described above. [30]
 - `_retired_channel` owns the current boundary described above. [31]
-- `without_selected_matrix` owns the current boundary described above. [32]
+- `_removed_matrix_channel` owns the current boundary described above. [32]
 
 ### Docs References
 
@@ -70,28 +73,23 @@ No configured domain documentation could be checked.
 
 ### Repo-Internal References
 
-- **The record kinds the authored-effects channel counts, moved here beside the channel that reports them, and the same declaration for the claims collection.** [33]
+- **The authored-effects channel states the removal, not a count:** `_removed_matrix_channel` reports `unavailable` with the rule-1 removal as its reason and no count, and the knowledge pane carries no such collection. [33]
 - **The currentness owner the bundle names, and the measurement this module now delegates instead of stating.** [34]
 - Assessment collection availability comes from the durable curator bridge: captured records, measured empty, uncaptured, and unreadable expected inputs remain distinct. [35]
 - **The unresolvable-candidate bundle: every collection unavailable, one entry per class, because nothing resolved and so no owner was asked.** [36]
 - The one channel construction point: the answer varies, the owner does not. [37]
 - **The availability vocabulary this module builds, and the validator that makes "a count nobody measured" unrepresentable.** [38]
-- **The task-context composition's call site: no matrix was read, so the matrix-owned collections are reported `not_selected`.** [39]
+- **The task-context composition carries the same bundle: the matrix-owned collections are unavailable with their removal or retirement as the reason, never a measured zero.** [39]
 - **The channel list as part of the served payload, one entry per class the composition read.** [40]
 - All owner records are collected for the already resolved comparison pair. [41]
 
-## 260921-ICR-L10 A Stated Remainder Always Names The Action That Reaches It
+## 260921-ICR-L10 A Stated Remainder Always Names The Action That Reaches It (retired with the matrix)
 
-`260921-ICR-L10` (`ICR-R10@v1`) makes the matrix channels tell the truth about a page. The
-channels now take a `MatrixSelection` — the published page **only when it is this collection's page**,
-the owner's own remainder, and any refusal — so a sentence about a bound always names the way to reach
-it: when the request paged the comparison, the note names the request that does reach the records
-(`pageOf=records`) instead of claiming a cursor that continues the comparison, and a refused read is
-reported `unavailable` rather than as a measured zero.
-
-The task-context branch is now the extracted `without_selected_matrix`, the one implementation of "this
-review read no matrix", which is why `review_task_context.py` calls it rather than repeating the
-construction.
+`260921-ICR-L10` (`ICR-R10@v1`) made the matrix channels tell the truth about a page through
+`MatrixSelection` and the extracted `without_selected_matrix`. Both left with the review matrix
+that read the retired envelope tables (MIK-R74 rule 1): no records page exists, no records cursor
+is admitted, and the removed collection earns the `comparison_page_unreadable` refusal instead of a
+walk. Retained here as the history of the remainder rule, not as current machinery.
 
 ## 260921-ICR-L12 The Record Bundle Is Read For The Record The Request Named
 

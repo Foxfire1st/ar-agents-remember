@@ -73,12 +73,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "863986f5f429c7e0e5821471bcf7cd11a3543cbf",
+            "blob": "e671178c83020db94dbc2339e22ecd6dffa2f37a",
             "content": "sha256:3530f22d3813fd43ee3bd9f757d4126737d49a69e4ec9bf6828e8d91919f2243",
             "locator": {
-              "end": 523,
+              "end": 504,
               "kind": "line_range",
-              "start": 523
+              "start": 504
             },
             "path": "mcp/src/agents_remember/application/review_family_rosters.py"
           },
@@ -137,12 +137,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1863cffa06d71d79ae64ac0462a1fae69a504fd0",
+            "blob": "543945bb7dc1155a69972fc527d327fdeb3ae45c",
             "content": "sha256:db5a418a3c076a03ca27d659eb8334041f770e840d3eb18561cbd12125f8bfe4",
             "locator": {
-              "end": 292,
+              "end": 346,
               "kind": "line_range",
-              "start": 264
+              "start": 318
             },
             "path": "mcp/tests/test_review_family_member_sources.py"
           },
@@ -155,12 +155,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1863cffa06d71d79ae64ac0462a1fae69a504fd0",
+            "blob": "543945bb7dc1155a69972fc527d327fdeb3ae45c",
             "content": "sha256:c2ff3b4c9fcd508151e2f6b490712ba4c14004ff9e0275a888fa6a107256bc5f",
             "locator": {
-              "end": 313,
+              "end": 367,
               "kind": "line_range",
-              "start": 295
+              "start": 349
             },
             "path": "mcp/tests/test_review_family_member_sources.py"
           },
@@ -173,12 +173,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1863cffa06d71d79ae64ac0462a1fae69a504fd0",
+            "blob": "543945bb7dc1155a69972fc527d327fdeb3ae45c",
             "content": "sha256:a3901b80d1e05ba00baceeef1cf96cb080bd1bd206b4a8521be841ed1b7045b2",
             "locator": {
-              "end": 387,
+              "end": 443,
               "kind": "line_range",
-              "start": 366
+              "start": 422
             },
             "path": "mcp/tests/test_review_family_member_sources.py"
           },

@@ -1,0 +1,53 @@
+{
+  "admission": {
+    "criteria": [
+      "constrains_future_work"
+    ],
+    "justification": "Binds every future review-evidence change to keep authored effects unavailable with the rule-1 removal as the reason, never a measured zero or a not-selected placeholder."
+  },
+  "alternatives": [
+    {
+      "option": "authored_effects is unavailable through _removed_matrix_channel with the MIK-R74 rule-1 removal as its reason; the task-context composition carries the same bundle.",
+      "reason": "The review matrix left with the retired envelope tables, so no review reads authored effects; a not-selected placeholder would claim a matrix was consulted that no longer exists.",
+      "status": "chosen"
+    },
+    {
+      "option": "Report authored_effects not_selected on the task-context path.",
+      "reason": "Keeps the pre-R74 task-context sentence, but nothing constructs a not-selected channel anymore and the matrix it implies is gone.",
+      "reconsider_when": "The rejected shape gains a governed producer and contract.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Future evidence-channel work keeps the removal reason on authored_effects and does not reintroduce a selection vocabulary for it."
+  ],
+  "context": "MIK-R74 rule 1 retires the review matrix that read the retired envelope tables; the task-context docstring still names not-selected, which is stale code text carried as a Reviewer code concern.",
+  "decider": "curator (260928-MIK-L74 memory curation)",
+  "id": "DEC-NAYAH3",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "f0080ac8512cae6107e8cf65f880a151ca6d19c5",
+        "content": "sha256:0c12f822fa0ee249909f98839c83617fc5537294eeb6d62d67035ff096d35949",
+        "locator": {
+          "kind": "symbol",
+          "name": "_removed_matrix_channel"
+        },
+        "path": "mcp/src/agents_remember/application/review_evidence_records.py"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "l74-ingest-list.json"
+    },
+    "handoffEntry": "L74-P3",
+    "leaf": "260928-MIK-L74",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

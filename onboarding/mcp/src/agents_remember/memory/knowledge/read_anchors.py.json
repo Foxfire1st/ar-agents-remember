@@ -301,12 +301,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1863cffa06d71d79ae64ac0462a1fae69a504fd0",
+            "blob": "543945bb7dc1155a69972fc527d327fdeb3ae45c",
             "content": "sha256:974be0d8c6aad9c0556486f3a2b34d605f5188f720aed629c10b69d632df0b4e",
             "locator": {
-              "end": 353,
+              "end": 409,
               "kind": "line_range",
-              "start": 341
+              "start": 397
             },
             "path": "mcp/tests/test_review_family_member_sources.py"
           },
@@ -314,12 +314,12 @@
         },
         {
           "anchor": {
-            "blob": "1863cffa06d71d79ae64ac0462a1fae69a504fd0",
+            "blob": "543945bb7dc1155a69972fc527d327fdeb3ae45c",
             "content": "sha256:56d86807fe1700866bb64dbea52a81ff44f6336055fb71dbbd8e885f41045e21",
             "locator": {
-              "end": 363,
+              "end": 419,
               "kind": "line_range",
-              "start": 356
+              "start": 412
             },
             "path": "mcp/tests/test_review_family_member_sources.py"
           },
@@ -350,12 +350,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "91e4a83282691ee1303a098b598590e266225430",
+            "blob": "d3aff0e96bc5b889c22b50c0e0b2888133963c9c",
             "content": "sha256:43dd430782d42ac17564c616c1abc263724d0267f34793bc7fbf2fb7bbb316ec",
             "locator": {
-              "end": 644,
+              "end": 570,
               "kind": "line_range",
-              "start": 539
+              "start": 465
             },
             "path": "mcp/tests/test_knowledge_read_paths.py"
           },
@@ -420,7 +420,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "624f38412c884053c110c5b5b9a024d9c6458aaa",
+            "blob": "beb6950c6a52b96e321ecc6a5edd6278cc6591c7",
             "content": "sha256:4801f656e0af8f515cdf17268378304f2a795cdf7fafebf6ba2a5a98f641366a",
             "locator": {
               "end": 453,
@@ -433,7 +433,7 @@
         },
         {
           "anchor": {
-            "blob": "624f38412c884053c110c5b5b9a024d9c6458aaa",
+            "blob": "beb6950c6a52b96e321ecc6a5edd6278cc6591c7",
             "content": "sha256:f138d9a59dd9b44e0923dd827bdfee315cabd3cc6439b23d847f6a6d3bcd8751",
             "locator": {
               "end": 275,

@@ -6,20 +6,27 @@
 
 ## Purpose
 
-Shared read-side rows for divergent revisions, overlapping families and realization claims.
+Shared single-revision knowledge fixture built through the text-backed operations.
 
 ## Code Commentary
 
 ### Logic
 
-One dataset holds the base revision and two different same-label successors. The graph half adds invariants, overlapping families, family successors and three realizations including an absent source path. BranchingKnowledgeFixture retains their identities and reopens persisted rows. [1] [2]
+One text memory tree holds three single-revision invariants that share nothing but their derived
+display: the divergent-successor revisions the old fixture authored beside one identity are gone,
+because a text record holds exactly one revision (MIK-R74 rule 3). The graph half adds the realized
+revision, its recorded realizations (including an absent source path) and the overlapping families.
+`BranchingKnowledgeFixture` retains the projected identities the tree produced and reopens persisted rows. [1] [2]
 
-Construction uses the test-only RowStore, which computes production seals and inserts index-shaped rows without retired write-admission guards. [5]
+Construction builds a real text tree through the rows builder, never by inserting rows — so a later
+leaf inherits a real index it can trust. The module is test support, not production code: it decides
+nothing and is imported by tests and later leaves' fixtures only. [5]
 
 ### Invariants And Boundaries
 
 - Friendly display labels are not revision identity.
 - An unavailable source does not erase a fixture claim.
+- Several separately recorded revisions stay separately addressable, and both decode with no predecessors.
 - This fixture is not production write authority.
 
 
@@ -89,10 +96,10 @@ No configured domain documentation could be checked.
 - One builder constructs both halves. [2]
 
 
-- The test-only builder supplies rows without canonical write rules. [5]
+- The text-backed builder supplies rows without canonical write rules. [5]
 
 
-- Both same-label successors remain readable. [7]
+- Separately recorded revisions remain separately addressable, decoding with no predecessors. [7]
 
 
 

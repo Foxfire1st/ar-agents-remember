@@ -34,7 +34,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "02f29acb662ca678a1c2f6997c6c88f631ec55ca",
+            "blob": "cd38a258fd87d1b34a7065a56773638207d7e0ac",
             "content": "sha256:e75eed75b1ca85e95163733a3d07486168d1859a54acd81823f40f9c1c616fd9",
             "locator": {
               "kind": "symbol",
@@ -117,7 +117,7 @@
         },
         {
           "anchor": {
-            "blob": "0cc1ed4aa2ead143a66f5ee6b69cf490138fd7ae",
+            "blob": "f9105a09d9fdee4eeed9ab2b715723940337949e",
             "content": "sha256:f85866fb872c92ee60595940e4e9ca33e81e178dc4ae608c2c14185f7e223d49",
             "locator": {
               "kind": "symbol",
@@ -129,12 +129,12 @@
         },
         {
           "anchor": {
-            "blob": "0cc1ed4aa2ead143a66f5ee6b69cf490138fd7ae",
+            "blob": "f9105a09d9fdee4eeed9ab2b715723940337949e",
             "content": "sha256:26e70e6c99e67a6cd53faba6d137da429a9134c4310c0fc049752880e2c654ed",
             "locator": {
-              "end": 377,
+              "end": 374,
               "kind": "line_range",
-              "start": 339
+              "start": 336
             },
             "path": "mcp/src/agents_remember/models/knowledge/review.py"
           },
@@ -193,7 +193,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0cc1ed4aa2ead143a66f5ee6b69cf490138fd7ae",
+            "blob": "f9105a09d9fdee4eeed9ab2b715723940337949e",
             "content": "sha256:7534f6d7561ed9bef13ee60831fed901abe08ac3102a36b9b2d9f4d66dff2ccd",
             "locator": {
               "kind": "symbol",
@@ -222,12 +222,12 @@
         },
         {
           "anchor": {
-            "blob": "656c6acccc15cb4da02e3931dd492b4f0e2eef71",
+            "blob": "e82e48a3fe51cf1b33e2db3907db00759c429781",
             "content": "sha256:821f4720a95daabc0de925407b70118a600332e89ea3a834fc1bd56711e19e73",
             "locator": {
-              "end": 84,
+              "end": 83,
               "kind": "line_range",
-              "start": 80
+              "start": 79
             },
             "path": "mcp/src/agents_remember/application/knowledge_review.py"
           },

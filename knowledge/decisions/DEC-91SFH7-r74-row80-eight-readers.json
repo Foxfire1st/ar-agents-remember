@@ -1,0 +1,53 @@
+{
+  "admission": {
+    "criteria": [
+      "constrains_future_work"
+    ],
+    "justification": "Records the by-design appendix row-80 reader choice so future index work keeps it."
+  },
+  "alternatives": [
+    {
+      "option": "Retain the eight logical readers without a second ix_* implementation; the physical ix_* index tables are an access aid, not a second reader population.",
+      "reason": "The row's by-design choice separates logical readers from physical index aids.",
+      "status": "chosen"
+    },
+    {
+      "option": "Implement a second reader population over the ix_* tables.",
+      "reason": "Contradicts the row's explicit by-design retention.",
+      "reconsider_when": "Appendix row 80 is revised to require ix_* readers.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Future index work keeps eight logical readers and does not treat ix_* tables as a reader population."
+  ],
+  "context": "MIK-R74 appendix row 80 by-design choice, authored under rule 8.",
+  "decider": "curator (260928-MIK-L74 memory repair)",
+  "id": "DEC-91SFH7",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "ec5bf0677108161ea883091d9613a34d21a3697c",
+        "content": "sha256:37710426cf694c85158fb041b0a5ece12a253bfbb37dbddd70f41690043d01be",
+        "locator": {
+          "kind": "symbol",
+          "name": "CANONICAL_TABLES"
+        },
+        "path": "mcp/src/agents_remember/memory/knowledge/schema.py"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "l74-repair-list.json"
+    },
+    "handoffEntry": "L74-MEM-01-row80",
+    "leaf": "260928-MIK-L74",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

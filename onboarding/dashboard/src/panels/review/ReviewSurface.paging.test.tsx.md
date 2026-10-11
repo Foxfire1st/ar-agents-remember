@@ -7,7 +7,7 @@
 ## Purpose
 
 The mounted-surface cases for `ICR-R10@v1`'s page control: the **real** `ReviewSurface` over the
-**real** review client, with only `fetch` stubbed. Every request is built by the shipped client and
+**real** review client, with `fetch` stubbed and the catalogue hook isolated for comparison-focused cases. Every request is built by the shipped client and
 every response travels the way the browser's does — status, body, the shared decode in
 `data/reviewTransport.ts`, the component tree — and no assertion reads a prop the test itself passed.
 
@@ -28,13 +28,7 @@ carries the cursor the server published rather than the one the client was stand
 bounds move from `16 of 103` to `32 of 103` — the two facts that separate a working control from a
 button that re-fetches its own page.
 
-**A refused page renders the refusal rather than an empty state.** The refusal case consumes
-`RECORDS_PAGE_REFUSAL_RESPONSE` — a **captured** server body (see
-`recordsPageRefusal.captured.ts`) — and asserts the key's *absence* before rendering it, then the code,
-both of the owner's digests read out of the captured body, the live first-page action, the absence of
-the bounds sentence, and that "no remainder to reach" appears nowhere. The capture matters because the
-route serializes with `exclude_none=True`: a refused page **omits** the `page` key, and a hand-built
-body sending `page: null` hid exactly that difference from the round-1 case.
+**The retired records collection cannot be asked for: the control is gone and no such request goes out.** The picker offers `knowledge` only — `records` left with the review matrix (MIK-R74 rule 1) — and the case asserts no `pageOf=records` request is ever issued; a stale attempt resolves to the whole review with no collection paged and no refusal rendered. The reset case asks `pageOf=knowledge` deliberately and states the reset as its own action, with the first page one click away.
 
 **One normaliser owns the two spellings of "no page".** The component reads `carriedPage(payload)`
 instead of touching `payload.page`, so no consumer can reintroduce the `!== null` comparison that made
@@ -50,7 +44,7 @@ sentence carrying two meanings is how `total` came to mean two different numbers
 
 ### Conventions
 
-- Only `fetch` is stubbed; the client, the decode and the component are the shipped ones.
+- `fetch` and the comparison-focused catalogue hook are isolated; the review client, decode and component are the shipped ones.
 - Page bodies are the measured shape of the real route's answer in this leaf's evidence run, and the two
   cursors are the server's own opaque strings — the client neither constructs nor parses one.
 - Each case is named for the behavior it protects, and the header states the defects it fails against.
@@ -80,22 +74,52 @@ No configured domain documentation could be checked.
 
 ### Repo-Internal References
 
-- **The module's own statement of what it exercises, of the defect it catches, and of the two wrong repairs it also fails against.** [1]
-- The two opaque cursors, verbatim from the evidence run: one per collection, which is why mixing them up would be a defect. [2]
-- The captured server body the refusal case renders. [3]
+
+- The mounted cases use the shipped ReviewSurface and review client with fetch stubbed; useReviewCatalogue is additionally isolated for comparison-focused cases. [1]
+
+
+- The paging fixtures retain KNOWLEDGE_CURSOR and RECORDS_CURSOR as opaque strings; no client-side cursor decoding is asserted. [2]
+
+- No captured refused-records body exists: the retired collection earns no request, so no refusal is rendered from a capture.
+
 - **The bounds, the scope and the one action that reaches the rest.** [4]
+
+
 - **The advancing case: the second request carries the cursor the server published, and the bounds move.** [5]
+
+
 - **No next action for a body that published no cursor, whatever it reported.** [6]
+
+
 - A named collection asked for deliberately, and a reset stated as its own action. [7]
-- **The refused records page rendered from the CAPTURED body, with its code, both identities and a live first-page action.** [8]
+
+
+- The retired records page earns no request and renders no refusal: records left with the review matrix (MIK-R74 rule 1). [8]
+
+
 - **A reset worded from its refusal code, so a foreign cursor is not called a moved comparison.** [9]
-- **The two collections' totals kept apart in the sentence the reader sees.** [10]
+
+
+- The bounds sentence distinguishes walk from selection totals on the surviving knowledge collection. [10]
+
+
 - The whole review stays reachable and the selector travels through a paged request. [11]
+
+
 - **The one normaliser of the two spellings of "no page", and the bounds sentence built from the page's own basis.** [12]
+
+
 - The page contract on the client, including the basis field and the separate refusal. [13]
+
+
 - **The control the cases drive: the page picker, the actions, the bounds line and the refusal block.** [14]
+
+
 - The read target key includes page position, making a page change a distinct read. [15]
+
+
 - The published page shape these bodies have: the surface's own page value and its two refusal codes. [16]
+
 
 ### Cross-Repo References
 

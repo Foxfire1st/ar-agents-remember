@@ -6,11 +6,9 @@
 
 ## Purpose
 
-The review surface's **page arithmetic** for `ICR-R10@v1`: how one bounded collection's page is
-*stated* on the review surface. Two collections are composed into one review — the **knowledge
-comparison**, whose page is the shipped comparison's own window of its before/after union, and the
-**review matrix records**, whose page is the shipped view's own window of its selection — and this
-module owns the one thing that is neither owner's: the page value the response publishes.
+The review surface's **page arithmetic**: how one bounded collection's page is
+*stated* on the review surface. The **knowledge comparison's** page is the shipped comparison's own window of its before/after union, and this
+module owns the one thing that is neither owner's: the page value the response publishes. The records page left with the review matrix that read the retired envelope tables (MIK-R74 rule 1): `records_page`, `RecordsPagePosition` and `records_page_refusal` are deleted.
 
 The two ownership boundaries the module exists to hold are stated in its own docstring:
 
@@ -45,31 +43,12 @@ decoder reads back *is* one of its cursors, so a refusal on it is a binding mism
 new-generation action; a token it does not read back was never this collection's, so the caller's
 mistake is about *which walk* the token belongs to and the owner's own remedy travels through instead.
 
-**`records_page_refusal` names the token the reader actually sent.** The view's own snapshot refusal
-names its *view* as the offending input — true of the walk, useless to the reader — so the presented
-cursor is named instead: it is the value the reader sent and the value they must discard. A view
-refusal for a reason that is not about the cursor at all (an unreadable snapshot, an ambiguous row set)
-is published as `comparison_refused` with the owner's own words, because none of those is a statement
-about a page.
-
-**`comparison_page` and `records_page` publish the pair of numbers the owners actually measured, and
-declare what `total` counts.** The comparison measures its whole selection, so its total is the
-selection's own size on every page and `returned` is cumulative over the walk. The view measures its
-remainder from where the *walk* stands, so its `total` is `returned + remaining` — the size of the
-selection this walk still covers — and `records_page` checks the rows it returned against the bound the
-caller asked for, because a page that reports a bound it did not apply is how a narrow window comes to
-read as the whole selection.
-
 **`reset_comparison_page` is the packet's failure behavior made one value.** A cursor for a moved
 snapshot is refused with the explicit new-generation action, and the page that travels with the refusal
 is the first page of the comparison that is there now — the last coherent page of this generation —
 rather than no page, an empty page, or a window taken at a position from the generation that moved. The
 refused cursor stays named on the refusal's own `offending_input`/`expected`/`observed` identities, and
 `continued_from` is `None` because a reset page followed nothing.
-
-**`RecordsPagePosition` is one value rather than four arguments** because the four describe one thing —
-the page's own position in its walk. A caller that could pass three of them could state a page whose
-scope, cursor and bound disagreed with each other.
 
 ### Conventions
 

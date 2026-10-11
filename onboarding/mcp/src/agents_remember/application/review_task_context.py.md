@@ -32,11 +32,13 @@ It exists as its own module because it is a **different composition, not a degra
 - **Nothing here selects, ranks or concludes.** The records the caller supplied are rendered by
   `application/review_record_rendering.py`, the same renderer the subject review uses, so an
   unassessed assessment collection reads identically in both.
-- **A collection it never read is reported `not_selected`, not absent.** Since `ICR-R14@v1` the
-  composition states the availability of the two matrix-owned collections from its own honest
-  position: it read no review matrix, so `authored_effects` is `not_selected` with a next action
-  rather than omitted or reported as an owner's empty answer. "The review did not ask" and "the owner
-  holds none" are different facts, and this is the one place the difference is decided.
+- **A collection it never read is reported `unavailable`, not absent.** The composition reads no
+  review matrix, so the matrix-owned authored-effects collection arrives `unavailable` with the
+  removal as its reason (owner `MIK-R74:removed-review-matrix`) rather than omitted or reported
+  as an owner's empty answer. Under `ICR-R14@v1` this composition reported `not_selected` with a
+  next action; that channel is superseded — no selection channel is constructed anymore. "The
+  review did not ask" and "the owner holds none" are different facts, and this is the one place
+  the difference is decided.
 
 **A knowledge half that is present but cannot be read is *stated*, not raised — and a candidate
 receipt that exists and does not validate is stated three times.** The pair's own preflight
@@ -91,12 +93,9 @@ because this composition reads no matrix it cannot select for; and the staleness
 pair. `submission` is `submission(stale=False)` — nothing about a task-context review is stale, because
 nothing was compared.
 
-**The one added call is `with_selection_channels(records, (), selected=False)`, and it exists because a
-review that did not ask may not report an owner's absence.** It runs first, before the subject states
-are projected, and adds the two matrix-owned collections' availability to the bundle: with no matrix
-read they are `not_selected`, with no count and a next action, instead of appearing as empty
-collections the composition never asked about. The same call in the subject composition passes the rows
-the view returned, so one function states both compositions' positions from the same vocabulary.
+**The records arrive with the matrix-owned collections already marked, and this composition renders them as they arrive.** The `records` bundle is built by `review_records_for`/`review_records_of` before this composition runs, so the availability of the two matrix-owned collections is stated there; this composition renders the caller's observations, signals, claims and assessments from the same bundle, because those collections do
+not depend on a selection at all: the claims collection is the candidate's own and arrives with its
+links unselected, not unsupplied.
 
 **The limitations list is where every absence is stated, in the vocabulary's own words.**
 `limitation:no_knowledge_subject_selected` leads, followed by the unreadable-half declaration,
@@ -154,13 +153,14 @@ only, and it writes nothing.
 - **The candidate is re-checked immediately before publication**, by the same operation the subject
   composition calls, so a capture input that moved is a named refusal in both.
 - **The records are the caller's and are rendered, not selected.** The task-context composition reads
-  no review matrix, so `authored_effects` and `evidence_links` are empty here — and since
-  `ICR-R14@v1` the matrix-owned collection says *why* it is empty (`not_selected`, no count, a next
-  action) instead of leaving the reader to guess between "not read" and "read and empty". The
+  no review matrix. The matrix-owned authored-effects collection arrives `unavailable` with the
+  removal as its reason instead of leaving the reader to guess between "not read" and "read and
+  empty" — under `ICR-R14@v1` it said *why* it was empty (`not_selected`, no count, a next action);
+  that channel is superseded and no selection channel is constructed anymore. The
   caller's observations, signals, claims and assessments still render, because those collections do
-  not depend on a selection at all: the claims collection is the candidate's own and arrives with its
-  links unselected, not unsupplied.
-- **The selection channels are added before the subject states are projected**, so the payload the
+  not depend on a selection at all: the claims collection is the candidate's own and arrives with
+  no evidence links.
+- **The record bundle is built before the subject states are projected**, so the payload the
   validators check and the payload the channels describe are built from the same bundle.
 - **Rank.** The composition lives at the application tier beside the adapter that calls it, because
   `serving` may not import these operations and the HTTP shim does transport only.
@@ -192,8 +192,8 @@ an absent dataset half changes the *reason* it states, never its ability to answ
 - The module's own statement of what a task-context review asks, the three things it does not do, and why it is a different composition rather than a degraded one. [1]
 - The module's two published names: the composition and its pair measurement. [2]
 - **The pair preflight this composition consults and never raises for: a half that is present and cannot be read is a named state, the receipt question asked twice, and the declaration each earns is this response's own.** [3]
-- **The composition: the candidate re-derived immediately before the payload, the selection channels added first, the receipt asked before and after the pair read, the carried reference, `comparison=None`, the three panes, the `not_compared` staleness statement and the five declared limitations.** [4]
-- **The selection-channel call that makes "this review did not ask" a stated fact rather than an empty collection, and the function that states both compositions' positions from one vocabulary.** [5]
+- **The composition: the candidate re-derived immediately before the payload, the receipt asked before and after the pair read, the carried reference, `comparison=None`, the three panes, the `not_compared` staleness statement and the five declared limitations.** [4]
+- **The unavailable matrix channel that makes "this review did not ask" a stated fact rather than an empty collection, and the removal reason it carries.** [5]
 - **The pair's own attribution: each half opened read-only when it is there, a side that cannot be bound carried as unavailable, and only the side that cannot be bound marked so.** [6]
 - **Pane 1 for a review that compared nothing: two `unresolved` sides rather than two empty ones, the caller's records rendered as the subject path renders them, and the two selection-state fields.** [7]
 - **The reason the payload states, in its three ordered states — an unreadable half, an absent half, and a pair that was simply not selected over — and the sentence that says the inventory does not depend on knowledge availability, with the next action to act on it.** [8]
@@ -202,7 +202,7 @@ an absent dataset half changes the *reason* it states, never its ability to answ
 - The boundary that produces a selector-less request at all: the transport admitting "both parameters omitted" as the task context. [11]
 - The browser entry that offers the task-context target for every live leaf. [12]
 - **The case that measures this composition through the real route: neither dataset half present, the payload's three states, the inventory equal to an independent Git observation, and the real HTTP route answering 200 with no selector parameters.** [13]
-- **The case that measures the selection channel itself: the same fixture read through the task-context entry reports the matrix-owned collection `not_selected` while the candidate-owned collections stay supplied.** [14]
+- **The case that measures the unavailable channel itself: the same fixture read through the task-context entry reports the matrix-owned collection `unavailable` with the removal as its reason while the candidate-owned collections stay supplied.** [14]
 - The dashboard case that measures the same entry from the browser side: the server offers no subject and the target is still `review: {}`. [15]
 
 ### Cross-Repo References

@@ -14,7 +14,7 @@ in-process with no repository working tree, no network and no integration marker
 **The attribution partition's nine cases live next door.** `260921-ICR-L4` appended nine `ICR-R04@v1`
 cases here (22 cases, 1384 lines). `260921-ICR-L57` moved them verbatim into
 [`test_knowledge_diff_attribution.py`](test_knowledge_diff_attribution.py.md) to bring this module back
-under the 1200-line rail, which leaves these thirteen cases in 790 lines. That module imports `diff_seed`
+under the 1200-line rail, which leaves these thirteen cases in 714 lines. That module imports `diff_seed`
 and `run_diff` from here, so both drive the comparison the same way.
 
 Every case is named for the property it protects rather than for the fixture state it happens to use,
@@ -42,40 +42,17 @@ a case names the record it is about rather than a position in the stream.
 
 **The two cases the review made load-bearing:**
 
-| Node | Line | What it owns |
-| --- | ---: | --- |
-| `test_a_realization_the_candidate_removed_keeps_its_baseline_source_in_the_union` | `:309` | The packet's **first non-conforming example**: the removed claim stays in the union with its before-side anchor at `exact_recorded_blob` and its path still in `attributed_changed_paths`. It is also the node mutation rows `M1` and `M2` kill — `M1` on `assert 'unchanged' == 'removed'` |
-| `test_a_record_the_other_snapshot_holds_but_the_selection_missed_is_not_an_absence` | `:424` | Present-but-outside-the-selection is **not** deletion, and the two states are asserted **side by side** so the distinction cannot collapse. Its second half is the rule-2 subsumption measurement through the **published read surface** |
+| Node | What it owns |
+| --- | --- |
+| `test_a_realization_the_candidate_removed_keeps_its_baseline_source_in_the_union` | The packet's **first non-conforming example**: the removed claim stays in the union with its before-side anchor at `exact_recorded_blob` and its path still in `attributed_changed_paths`. It is also the node mutation rows `M1` and `M2` kill — `M1` on `assert 'unchanged' == 'removed'` |
+| `test_a_revised_statement_arrives_as_a_successor_alongside_the_revision_it_replaced` | The revised statement reads as a removal beside an unrelated addition — never a succession — with each side present outside the other's selection, because the candidate selected another exact revision of the same identity |
 
-**The rule-2 subsumption half, as measured on these bytes.** For every authored edge each side declares,
-that side's own tables hold **both** revisions it names — asserted per table, each predecessor table
-asked with its own probe (`invariant_revision_is_recorded` at `:500`, `family_revision_is_recorded` at
-`:509`), with the union identity asserted back against `fetch_predecessor_edges` at `:530`. The split is
-the fix round 2 repair: `fetch_predecessor_edges` unions both tables, so asking the invariant probe about
-a *family* endpoint was a false alarm on a legal snapshot — measured, one schema-valid family edge made
-the pre-fix form fail at `:474`, while a dangling family edge now fails at `:509` and a dangling
-invariant edge at `:500`. **The family half is nevertheless unexercised**: the fixture authors 0
-`family_predecessor` rows (measured 2 invariant / 0 family before, 4 / 0 after), and the case's docstring
-says so.
-
-**The corrected coverage-rule reason, which is the leaf's most-corrected contract.** The ablation forms
-(the fix rounds' own runs, reproduced independently by the final verification round on these bytes):
-
-| Variant | Edit | Result on the owning nodes |
-| --- | --- | --- |
-| `A` | rule 1 removed | **2 assertion kills** — `assert 'absent_from_snapshot' == 'present_outside_selection'` |
-| `B` | rule 2 removed | 7 passed — no state changes, because `_supersedes` is called 0 times on this population |
-| `C` | rule 3's answer forced **absent** | **7 passed, and all 28 nodes of the two modules survive** |
-| `C'` | rule 3's answer forced **present** | **2 assertion kills** — `assert 'present_outside_selection' == 'absent_from_snapshot'` |
-| `D` | rules 1 + 2 removed | 2 kills, the same two nodes as `A` |
-| `E` | collapsed to one rule | 2 kills — the collapse is measurably wrong |
-| `G` | rule 1 removed **and** rule 3 forced absent | 2 kills — rule 2 does not cover them |
-
-So **rule 1 is load-bearing alone**, **rule 3 is load-bearing in the forced-present direction**, and
-**rule 2 cannot decide a state its neighbours do not** (it is kept as a short-circuit over
-already-loaded lineage). The `2 failed` that an earlier artifact published for variant `C` belongs to
-variant **`G`**; `C`'s own log records all survivors. **Collapsing the rules is wrong because it turns a
-missing selection into a real absence** — the reverse of what the leaf first claimed.
+**The corrected coverage-rule reason, which is the leaf's most-corrected contract.** Two ways of
+establishing that the other snapshot holds a record — the other side *selected* another exact
+revision of the same identity, and the other side's *tables* hold the record by its own key —
+and they are not two independent deciders: removing the first turns a missing selection into a real
+absence, while forcing the second present turns a genuine deletion into a missing selection.
+**Collapsing the rules is wrong because it turns a missing selection into a real absence** — the reverse of what the leaf first claimed.
 
 **The nodes that hold the response's honesty properties:**
 
@@ -93,16 +70,15 @@ missing selection into a real absence** — the reverse of what the leaf first c
 ### Conventions
 
 - Cases assert against `DiffFixture`'s **named identity fields**, never against a stream position.
-- `superseding_revisions` is the one shared assertion helper; it exists because three cases read the same
-  supersession pair.
-- A case that needs a *different* snapshot state builds it through the public store operations
-  (`add_unrelated_revision` in the boundary module, a real write in the continuation case) rather than by
-  hand-editing a file.
+- `superseding_revisions` is the one shared assertion helper: the revisions the candidate holds that
+  the baseline's selection does not reach — named for the coverage state, not for a succession.
+- A case that needs a *different* snapshot state builds it through the public rows builder
+  (`rebuild_after_tree` carries a whole candidate-side delta) rather than by hand-editing a file.
 
 ### Invariants And Boundaries
 
 - **Unit lane by behaviour, not by preference.** The module builds its two snapshots under `tmp_path`
-  through the public store operations and drives the seam in-process; the only subprocesses are the
+  through the rows builder and drives the seam in-process; the only subprocesses are the
   fixture's own `git` calls.
 - **No weakened evidence.** No `skip`, `xfail`, `deselect`, per-file ignore, widened limit or deleted
   node; thirteen cases before and after fix round 2's test-side edit.
@@ -137,13 +113,13 @@ No configured domain documentation could be checked.
 
 - The unit marker, the fixture, the seed and the public-seam driver every case uses. [1]
 - The two readers that let a case name a record rather than a position. [2]
-- **The revised statement as a successor pair, and the divergent revision groups an identity seed retains per side.** [3]
+- **The revised statement as removal beside unrelated addition, and the divergent revision groups an identity seed retains per side.** [3]
 - **The source-only change: `record_field_changed=False` with `source_observation_changed=True`, on identical recorded anchors.** [4]
 - The statement-only change that still returns the attributed code. [5]
 - **The unchanged sibling returned on both sides rather than omitted, with one item each way across the record/source split.** [6]
 - **The packet's first non-conforming example, and the node `M1`/`M2` kill.** [7]
 - **The explicit per-side selectors addressing two different exact revisions of one identity.** [8]
-- **The present-outside-versus-absent distinction side by side, and the per-table rule-2 subsumption assertion with its dangling-edge failure lines.** [9]
+- **The present-outside-versus-absent distinction side by side.** [9]
 - **The filter narrowing the display and never the comparison, and the filter bound into the comparison identity.** [10]
 - **`M26`'s node: the limitation validator, whose failing assertion on the frozen file is at `:658`.** [11]
 - **`M25`'s node: the truncated comparison, whose failing assertion on the frozen file is at `:716`.** [12]

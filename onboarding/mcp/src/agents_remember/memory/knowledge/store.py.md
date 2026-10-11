@@ -17,7 +17,7 @@ The APSW-backed read surface over a memory tree's derived knowledge index. Opene
 
 OpenedKnowledgeStore is a frozen context-manager value. Its exit closes the owned handle and never suppresses a failure. It has no resource-lock path.
 
-get_repository and get_invariant read the namespace's identities. list_invariants and list_families enumerate every recorded identity of their kind in stable identity order, without filtering or deriving one kind from another. get_revision reads an exact revision and its predecessor set and delegates seal verification to records.decode_revision_row.
+get_repository and get_invariant read the namespace's identities. list_invariants and list_families enumerate every recorded identity of their kind in stable identity order, without filtering or deriving one kind from another. get_revision reads an exact revision with an empty predecessor set — text records are numbered revisions of one file and hold no predecessor edge (MIK-R74 rule 1) — and delegates seal verification to records.decode_revision_row.
 
 - `list_invariants` returns every invariant identity the namespace records — `repository_id`, `invariant_id`,
   `display_label`, `label_provenance` — decoded through `records.decode_invariant_row` and **ordered by the
@@ -46,7 +46,7 @@ ever deleted to make the database look clean, and SQLite already does the right 
 
 ### Invariants And Boundaries
 
-- Every exact revision read re-derives the payload seal over the row and predecessor edges.
+- Every exact revision read verifies the stored seal as recorded; decoded revisions carry no predecessors.
 - The supplied namespace scopes the read queries; the store manufactures neither a namespace nor acceptance.
 - Both openers use a connection that cannot write. Only the index builder writes derived-index rows.
 - close closes this owned read handle and leaves cache cleanup to its owner; it unlinks no WAL or journal peer.
@@ -75,7 +75,7 @@ No configured domain documentation could be checked.
 - Closing the owned read handle unlinks no cache peers. [2]
 
 
-- The exact revision read decodes the stored row and predecessor set. [3]
+- The exact revision read decodes the stored row. [3]
 
 
 - Every invariant and family identity is enumerated in stable order. [4]

@@ -8,7 +8,7 @@
 Checks review evidence-channel states and currentness measurement of published immutable curator assessments.
 
 ## Code Commentary
-The converted fixture publishes assessments through their own authority. Cases distinguish unpublished from corrupt/unreadable authority, not-selected matrix collection, measured binding/currentness axes and stale candidates. Retained immutable generations survive damage to the live authority; an unresolvable candidate leaves collections unavailable. Channel counts are refused when their owner did not measure them. Canonical detection, evidence-claim and verification-observation producers and their former tests are removed; no empty-count replacement or executed run is claimed.
+The converted fixture publishes assessments through their own authority. Cases distinguish unpublished from corrupt/unreadable authority, the retired matrix collection (unavailable with its removal as the reason), measured binding/currentness axes and stale candidates. Retained immutable generations survive damage to the live authority; an unresolvable candidate leaves collections unavailable. Channel counts are refused when their owner did not measure them. Canonical detection, evidence-claim and verification-observation producers and their former tests are removed; no empty-count replacement or executed run is claimed.
 
 ### Invariants And Boundaries
 - **The production port is the entry under test.** Every case except the two that drive the bundle and

@@ -33,7 +33,8 @@ what makes `request.experiment` this run's own selection input: the tool's `expe
 supplies it, the `AR_EXPERIMENT` environment variable of the server process is the documented
 fallback for a short-lived CLI/developer run, and the install payload names which one supplied
 the mode in its record's `selectionSource`, so a long-lived server cannot leave an ambient switch
-behind unnoticed. The `write_tool_report` label follows `request.dry_run`. The builder then
+behind unnoticed. A dry run is a preview and files nothing (rule 6); only an executed install
+files its report, and only then does the answer carry the path. The builder then
 response-budgets the
 result (S4, 2.5.1): the full install detail goes to a temp report via
 `write_tool_report`, and `compact_runtime_install_payload` returns summary

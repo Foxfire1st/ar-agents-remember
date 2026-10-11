@@ -12,7 +12,7 @@ Bind a retained four-tree comparison to the exact code and memory trees a comple
 
 ### Logic
 
-`select_review_comparison` selects the highest retained tree record, names unreadable or conflicting records, and reports historical dataset generations alone as `legacy-limit`. Recording reads the delivered code and memory-content commit trees from the comparison's own repositories and records their exact match verdicts.
+`select_review_comparison` selects the highest retained tree record, names unreadable or conflicting records, and reports historical dataset generations alone as `legacy-limit`. Recording reads the delivered code and memory-content commit trees from the comparison's own repositories and records their exact match verdicts. A delivery without a memory commit on a leaf that holds a comparison writes no receipt (ruling 814778): the caller answers not-recorded with that reason.
 
 Read-back distinguishes missing, unreadable and recorded phase receipts. A current receipt must describe the retained comparison. Historical v1 receipts remain readable as `legacy-limit`; their recorded source and dataset identities prove no exact reviewed memory tree. Later comparisons label successors without rewriting earlier receipts.
 

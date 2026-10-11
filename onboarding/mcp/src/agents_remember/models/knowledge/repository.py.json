@@ -36,12 +36,12 @@
         },
         {
           "anchor": {
-            "blob": "5e27550d32bfd12f38a8b3393ad8622114eb677a",
+            "blob": "ec5bf0677108161ea883091d9613a34d21a3697c",
             "content": "sha256:3af5982a81b1ac20e0c0455e33681e976661b9104fbc971bca2af85f91ab84f7",
             "locator": {
-              "end": 344,
+              "end": 291,
               "kind": "line_range",
-              "start": 337
+              "start": 284
             },
             "path": "mcp/src/agents_remember/memory/knowledge/schema.py"
           },
@@ -70,7 +70,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e4fc1a849557a256d000a2a4f98c444ef5400e7d",
+            "blob": "18bf95513cea9638fc5f978e605aa03076a27454",
             "content": "sha256:5a7d444f6d5aa6950d3170e1dfb74ced2b56bfcb496f38dd0485d8bcd71c6898",
             "locator": {
               "kind": "symbol",
@@ -82,7 +82,7 @@
         },
         {
           "anchor": {
-            "blob": "e4fc1a849557a256d000a2a4f98c444ef5400e7d",
+            "blob": "18bf95513cea9638fc5f978e605aa03076a27454",
             "content": "sha256:e6d4e725d111f5a961626b85278bd8696a5f851a65bc42c2aba348b5aa7d6fbc",
             "locator": {
               "end": 106,

@@ -48,12 +48,12 @@
         },
         {
           "anchor": {
-            "blob": "d3ab002e5da5b90d87d71b0c5d27cc1cd2fab435",
+            "blob": "7fe00a759778edee005a11e3fcbbe33b7891bab9",
             "content": "sha256:7b1d45cc8be40a3115d239d6a8e55756b96cfc2364de86feafb3aef5414b8c19",
             "locator": {
-              "end": 565,
+              "end": 575,
               "kind": "line_range",
-              "start": 562
+              "start": 572
             },
             "path": "mcp/src/agents_remember/memory/baseline.py"
           },

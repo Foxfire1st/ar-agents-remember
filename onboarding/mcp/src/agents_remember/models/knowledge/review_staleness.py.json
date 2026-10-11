@@ -85,12 +85,12 @@
         },
         {
           "anchor": {
-            "blob": "0cc1ed4aa2ead143a66f5ee6b69cf490138fd7ae",
+            "blob": "f9105a09d9fdee4eeed9ab2b715723940337949e",
             "content": "sha256:8980e37eb52f85329d39409e1121708f681cfa2a94fe60232b5518f5bdb87c9e",
             "locator": {
-              "end": 66,
+              "end": 65,
               "kind": "line_range",
-              "start": 63
+              "start": 62
             },
             "path": "mcp/src/agents_remember/models/knowledge/review.py"
           },
@@ -98,12 +98,12 @@
         },
         {
           "anchor": {
-            "blob": "0cc1ed4aa2ead143a66f5ee6b69cf490138fd7ae",
+            "blob": "f9105a09d9fdee4eeed9ab2b715723940337949e",
             "content": "sha256:98d609340f47245f52af514a299b39a137d28ef6c149edc71e4831f904503dce",
             "locator": {
-              "end": 67,
+              "end": 66,
               "kind": "line_range",
-              "start": 64
+              "start": 63
             },
             "path": "mcp/src/agents_remember/models/knowledge/review.py"
           },
@@ -116,7 +116,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0cc1ed4aa2ead143a66f5ee6b69cf490138fd7ae",
+            "blob": "f9105a09d9fdee4eeed9ab2b715723940337949e",
             "content": "sha256:60f8245e26872ab7d3cc717591296fbc7b92122d500d501f0056eed402c42b2d",
             "locator": {
               "kind": "symbol",
@@ -128,7 +128,7 @@
         },
         {
           "anchor": {
-            "blob": "0cc1ed4aa2ead143a66f5ee6b69cf490138fd7ae",
+            "blob": "f9105a09d9fdee4eeed9ab2b715723940337949e",
             "content": "sha256:9de3ecb13f26f40a6609ccbb99916e3f0d4f2ce3ecdf4e96249c62d1129e9d5b",
             "locator": {
               "kind": "symbol",
@@ -192,7 +192,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e824e6ccecef1fd4afa834be30a9359c7cac5045",
+            "blob": "083bfa8a894d7c237c473d61e2a406eb6e49c127",
             "content": "sha256:b5d9ba51fb12b3d8f75f56225b0ad35b2e9b276a7a749d2bb8359a3e32ef608d",
             "locator": {
               "kind": "symbol",

@@ -1,0 +1,45 @@
+{
+  "admission": {
+    "criteria": [
+      "constrains_future_work"
+    ],
+    "justification": "Binds reads, previews and dry runs to file no per-call report: only an executed mutating action files one."
+  },
+  "alternatives": [
+    {
+      "option": "Diagnostic reads, watcher status, install dry-run previews and carryover plans carry content answers with no reportPath; executed mutations file their report.",
+      "reason": "A per-call report on every read would turn the tool Reports dir into unreadable noise and hide the executed actions that matter.",
+      "status": "chosen"
+    },
+    {
+      "option": "File a per-call report for every read, preview and dry run.",
+      "reason": "Buries executed-action reports in noise and hides what matters.",
+      "reconsider_when": "Per-call reports gain a governed retention and triage owner.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Future tool builders keep rule-6(c) filing: preview answers carry markers, not report pointers."
+  ],
+  "context": "Worker P13: reads, previews and dry runs file no per-call temp/tool-reports report.",
+  "decider": "curator (260928-MIK-L74 memory curation)",
+  "id": "DEC-SQVH0Q",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "route:mcp/src/agents_remember/mcp/tools"
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "l74-ingest-list.json"
+    },
+    "handoffEntry": "L74-P13",
+    "leaf": "260928-MIK-L74",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

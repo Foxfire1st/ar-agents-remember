@@ -19,7 +19,8 @@ merge, and the two guarded mutation families: private preparation and closeout r
 - `git_environment()` copies the process environment and removes the eight repository selectors of
   `GIT_REPOSITORY_SELECTOR_ENV` (`GIT_DIR`, `GIT_WORK_TREE`, `GIT_INDEX_FILE`, `GIT_OBJECT_DIRECTORY`,
   `GIT_ALTERNATE_OBJECT_DIRECTORIES`, `GIT_COMMON_DIR`, `GIT_NAMESPACE`, `GIT_PREFIX`). An exported selector
-  therefore cannot aim a command at another repository.
+  therefore cannot aim a command at another repository. Every command additionally runs with
+  `GIT_OPTIONAL_LOCKS=0` (rule 6): a read must never take a lock the repository did not ask for.
 - `_git_argv` builds `git -C <work dir> -c core.longpaths=true -c safe.directory=<repo root> <args>`.
   `safe.directory` names the one repository the command is about, never a wildcard.
 - `_run_git` runs that argv with the work directory as `cwd`, captures both streams, sets `check=False`, and

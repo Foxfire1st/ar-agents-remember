@@ -31,12 +31,14 @@ include_review_required=None, messages: CarryoverCommitMessages = DEFAULT_CARRYO
 is being carried. These unrelated carryover signatures remain flat; memory quality is the
 deliberate nested discriminated request contract published by `mcp/registration/memory.py`.
 
-The two carryover builders additionally file the full application entry point result under
-`temp/tool-reports/memory_carryover_plan/` / `.../memory_carryover_apply/` via
-`write_tool_report`, then return `compact_carryover_payload(full, reportPath)`:
+The carryover apply builder files the full application entry point result under
+`temp/tool-reports/memory_carryover_apply/` via
+`write_tool_report`, then returns `compact_carryover_payload(full, reportPath)`:
 per-decision `source_path` lists in `decisions` (each list capped at
 `MAX_INLINE_CARRYOVER_PATHS` = 25 with a `... (+N more in report)` marker),
-`carriedPaths` for apply, and `reportPath` inline. The `candidates` array — and
+`carriedPaths` for apply, and `reportPath` inline. A carryover plan is a read and files no
+per-call report (rule 6): the answer is the plan with `... (+N more, no report filed)` markers
+and no `reportPath` key. The `candidates` array — and
 `carried`, which apply duplicated verbatim — never reach the wire; before this,
 a 28-file apply response cost 7.7k tokens (GitHub #52).
 

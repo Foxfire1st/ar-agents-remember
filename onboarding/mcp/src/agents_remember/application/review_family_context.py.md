@@ -14,9 +14,11 @@ Composes comparison-bound family context beside the primary review: directly rel
 
 The entry point requires a bound selected subject, opens the two sides through the existing roster-side owner and closes both. A missing selection, unavailable knowledge and measured no-family remain distinct outcomes.
 
-For an invariant identity or exact invariant revision, `_applicable_invariant` reads only the policy’s frozen direct family identity set. `_compose` unions those identities across the bound snapshots; sibling rosters do not discover additional families. `_entry` then resolves each known identity on both snapshots through `_applicable_family`. A primary member absent on one side therefore cannot erase an independently recorded family or restrict its heads to a historical membership-bearing predecessor.
+For an invariant identity or exact invariant revision, `_applicable_invariant` reads only the policy’s frozen direct family identity set. `_compose` unions those identities across the bound snapshots; sibling rosters do not discover additional families. `_entry` then resolves each known identity on both snapshots through `_applicable_family`. A primary member absent on one side therefore cannot erase an independently recorded family.
 
-Family-identity composition considers every recorded revision of that family. `_heads` delegates to the existing authored predecessor/head rule. An explicitly requested family revision instead remains exact wherever recorded, with the family owner’s complete revision list retained for history. Competing or unresolved heads are not chosen by label, version or order: the selection and each candidate head’s own guarantee remain inspectable without an invented selected roster.
+Family-identity composition considers every recorded revision of that family. Heads are what the
+head rule establishes over the selected revisions — every retained revision is a head, so several
+retained revisions are several heads. An explicitly requested family revision instead remains exact wherever recorded, with the family owner’s complete revision list retained for history. Multiple heads are not chosen by label, version or order: the selection and each candidate head’s own guarantee remain inspectable without an invented selected roster.
 
 For a resolved pair or genuine one-sided family, `read_family_roster` supplies each selected revision’s own guarantee and exact memberships. The existing cursor is offered to before, then to after only if before did not bind it, so one continuation advances one existing walk. Partial/unreadable sides retain their reason and the roster owner’s counts; a completed multi-page walk does not imply that its final page contains all members.
 
@@ -31,8 +33,8 @@ Keep the existing comparison, family, authored-head, roster and source/evidence 
 - Direct invariant policy discovers family identities; independent family owners select their revision populations and heads.
 - Membership absence, genuine family absence, memberless recorded families and unreadable scope are different facts.
 - Retained old memberships cannot pin the family to a superseded head; exact family-revision requests remain exact.
-- A family revision’s roster is its own explicitly recorded membership, never inherited from a predecessor.
-- Ambiguous heads remain unresolved candidates, and no semantic guarantee verdict is inferred.
+- A family revision’s roster is its own explicitly recorded membership, never inherited.
+- Multiple heads remain unchosen candidates, and no semantic guarantee verdict is inferred.
 - Existing bounded continuation, primary operands and complete source inventory remain independently owned.
 
 ### Todos

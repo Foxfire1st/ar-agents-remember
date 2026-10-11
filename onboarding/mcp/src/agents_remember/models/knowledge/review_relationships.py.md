@@ -11,7 +11,7 @@ The closed vocabulary for recorded before/after relationship movements. Both rec
 
 `ReviewRelationshipSide` distinguishes `recorded`, `absent`, `unresolved`, `ungoverned`, `unavailable` and `not_recorded`. A recorded identity with no route, unread route declarations and an identity absent from the snapshot are different facts. `route_unavailable` keeps an unread declaration visible instead of converting it into ungoverned.
 
-The movement validates its transition against its sides, requires a recorded pairing basis for paired sides and names an identity gap when identity could not be established. Authored split, merge and successor relations carry their exact recorded revisions. Git rename detection remains a labelled inference, never proof of invariant movement.
+The movement validates its transition against its sides, requires a recorded pairing basis for paired sides and names an identity gap when identity could not be established. Pairing bases are recorded relations only — the same recorded row, or the same governed identity's own recorded governing-route association. Git rename detection remains a labelled inference, never proof of invariant movement.
 
 ### Invariants And Boundaries
 
@@ -35,13 +35,13 @@ Every claim on this card is checkable in the uncommitted candidate: the module's
 fourteen definitions, the application modules that fill these values, the review vocabulary that
 re-exports them, and the cases that measure the shape through the production composition.
 
-- **The module's own statement of the five rules its shape enforces: both sides, the carried identity, no blank state, the labelled authored lineage, and the rename as an inference.** [1]
+- **The module's own statement of the five rules its shape enforces: both sides, the carried identity, no blank state, recorded-only pairing bases, and the rename as an inference.** [1]
 - The published vocabulary. [2]
-- The four relationship kinds, the two side names, the five side states, the six transitions, the three lineage kinds and the seven gap codes. [3]
-- **The eight recorded relations a pairing may name, and the single-member rename basis.** [4]
+- The four relationship kinds, the two side names, the five side states, the six transitions and the seven gap codes. [3]
+- **The two recorded relations a pairing may name, and the single-member rename basis.** [4]
 - **The unresolved fact as a value: its side, its field, its code and its sentence.** [5]
 - **One snapshot's recorded side, with the validator that refuses a recorded side carrying no relationship identity.** [6]
-- The author's own edge with every related revision, and the absence of any field a similarity could occupy. [7]
+- A recorded relation with every related revision, and the absence of any field a similarity could occupy. [7]
 - **The labelled rename inference, with the validator that ties a pairing to its state and refuses a similarity word on an unmeasured inference.** [8]
 - **The movement's four validators: the transition must match its sides, a gap must name a displayed side, a pairing must state its basis, and an absent identity must state itself.** [9]
 - The application module that builds the movements, and the display module that renders them. [10]

@@ -130,7 +130,7 @@ No Domain Documentation source is configured for this slice.
 - `test_the_published_cursor_continues_exactly_the_walk_that_minted_it` supplies the current fixture or assertion described above. [45]
 - `test_a_roster_walk_larger_than_one_page_terminates_with_a_page_and_no_failure` supplies the current fixture or assertion described above. [46]
 - Fixture construction imports test-only row constructors; it does not call the retired canonical writer. [47]
-- RowStore inserts index-shaped fixture rows without the retired production admission plane. [48]
+- RowStore writes text-tree fixture rows without the retired production admission plane. [48]
 
 Every claim on this card is checkable in the module's own cases and in the owners they drive. The three
 details a reader should carry: **every population is authored through the store's own operations over

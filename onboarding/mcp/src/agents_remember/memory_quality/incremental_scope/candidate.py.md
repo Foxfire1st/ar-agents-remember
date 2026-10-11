@@ -21,8 +21,8 @@ roots, identities, or fallbacks (worker handover: notes/reports/260831-CCR-L26-w
 cit:([`ContractScopeAuthority`], mcp/src/agents_remember/memory_quality/incremental_scope/candidate.py:41-48).
 `observe_scope_candidate` refuses non-leaf or non-external contracts (`candidate-not-external-leaf`,
 `candidate-memory-root-missing`), resolves the pair, captures the future code candidate tree and the
-memory candidate tree (a Git index staged from the memory worktree under
-`reports/.scope-candidate-*/`), observes the task pair, and derives code/memory `GitTreeDelta`s
+memory candidate tree (a Git index staged from the memory worktree in the system temp directory —
+rule 6: unrecorded scratch must not create the enclosure's `reports/` directory), observes the task pair, and derives code/memory `GitTreeDelta`s
 cit:([`observe_scope_candidate`], mcp/src/agents_remember/memory_quality/incremental_scope/candidate.py:51-95).
 `observe_contract_task_pair` uses the closeout door as the immutable task baseline: it requires a
 typed `TaskIntentIdentity`, exact contract/task/base-commit identity, and matching candidate trees,

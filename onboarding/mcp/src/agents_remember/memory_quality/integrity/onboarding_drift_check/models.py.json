@@ -7,11 +7,36 @@
       "targets": [
         {
           "anchor": {
-            "blob": "597c57b254ec08a62dcc4dfced2687498c5c2660",
+            "blob": "b2516e18ff95d4d77de4285a6b610fada5d5f4c5",
             "content": "sha256:8f0c78909c98191b6046d39ddedf7d4eaa25fd71f9dd3a5bf6615fc4ee0eb9e4",
             "locator": {
               "kind": "symbol",
               "name": "not_checked"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b2516e18ff95d4d77de4285a6b610fada5d5f4c5",
+            "content": "sha256:d40dea78696f8a990093cafdaa16ab6f1592cac82fe8762035e47ad0236fa3be",
+            "locator": {
+              "kind": "symbol",
+              "name": "summarize_rows"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b2516e18ff95d4d77de4285a6b610fada5d5f4c5",
+            "content": "sha256:26c1c4f6dfc976407a946dd1c877931ac154aceee412dc06fb07f1f50f8df632",
+            "locator": {
+              "end": 34,
+              "kind": "line_range",
+              "start": 33
             },
             "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py"
           },

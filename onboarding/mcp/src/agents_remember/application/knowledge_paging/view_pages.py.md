@@ -13,7 +13,7 @@
 ### Logic
 
 - `VIEW_POLICY`/`VIEW_POLICY_VERSION` come from the views' `TRAVERSAL_POLICY`.
-- `read_whole_view(database_path, context, request)`: walks the renderer's own 64-row slices to the end. `WholeView.manifest_digest` digests each row's identity (subject, fact kind, position; a curation row's work item and disposition) under `VIEW_RENDERER_VERSION`, independent of how anchors resolved.
+- `read_whole_view(database_path, context, request)`: walks the renderer's own 64-row slices to the end. `WholeView.manifest_digest` digests each row's identity (subject, fact kind, position) under `VIEW_RENDERER_VERSION`, independent of how anchors resolved.
 - `view_rows(whole, family)`: in a family view every row belongs to the one family, and the first row carries the family's reference, so every later page starts with it.
 - `family_reference(index_path, tree_key, family_revision_id)`: the family's revision ID, text ID and title, read from the index (the real family view has no `joint_guarantee` row to take it from).
 - `view_page_payload(whole, cut, continuation, *, index_complete)`: the view's own payload type with the page slice as `rows`, `counts.rows_returned`/`rows_remaining` for the page, the shared token in `continuation`, and completeness false on a partial index.

@@ -6,7 +6,7 @@
 
 ## Purpose
 
-Builds the rows a knowledge view serves.
+Builds the rows a knowledge view serves (three renderers: source context, invariant, family). [1]
 
 ## Code Commentary
 

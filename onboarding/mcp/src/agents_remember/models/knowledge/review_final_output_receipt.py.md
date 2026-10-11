@@ -7,7 +7,7 @@
 Defines exact final-output receipts for tree-bound comparisons while decoding the historical receipt format separately.
 
 ## Code Commentary
-FinalOutputReceipt binds the recorded code and knowledge trees and their comparison digest. `tree_match_state` and `tree_output_verdict` compare the actually supplied identities; an unread half is not matching. LegacyFinalOutputReceipt retains the historical code/logical-dataset shape and its validator functions without reopening that dataset. The removed _code_clause/_knowledge_clause helpers are not current rendering owners. A receipt is data about exact compared outputs, never leaf or Git acceptance.
+FinalOutputReceipt binds the recorded code and knowledge trees and their comparison digest. The v2 verdict is two-valued (`bound`/`moved`): `unmeasured` belongs to the v1 generation record only, and no product path writes it into a v2 receipt. `delivered_memory_content_commit` and `delivered_memory_tree_id` are required, and `code_match`/`memory_match` are measured matches against the reviewed input. `tree_match_state` and `tree_output_verdict` compare the actually supplied identities; an unread half is not matching. LegacyFinalOutputReceipt retains the historical code/logical-dataset shape and its validator functions without reopening that dataset. The removed _code_clause/_knowledge_clause helpers are not current rendering owners. A receipt is data about exact compared outputs, never leaf or Git acceptance.
 
 ### Invariants And Boundaries
 

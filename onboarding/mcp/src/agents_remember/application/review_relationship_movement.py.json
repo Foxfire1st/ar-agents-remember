@@ -2,51 +2,60 @@
   "path": "mcp/src/agents_remember/application/review_relationship_movement.py",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "**The module's own statement of the contract: the union both snapshots record, one value per relationship, the ruling that the page is not the store, and the unresolved-and-not-denied rule.**",
+    "17": {
+      "note": "One traversal over the union both snapshots record",
       "targets": [
         {
           "anchor": {
-            "blob": "2010ceb201503bdba78bee89fd27919ced5b4c4a",
-            "content": "sha256:fff934dfcda5aff44a91daa122a2d3139fd4f05c109babd2142bf85c39003b34",
+            "blob": "ef187decf43719b1a1570c5972cac7257604534b",
+            "content": "sha256:2ea2f46af9e05187675e949ead20622fa59dfd6719e7e95a65adecfcb72cb8c2",
             "locator": {
               "kind": "symbol",
               "name": "relationship_movements"
             }
           },
           "kind": "code"
-        },
+        }
+      ]
+    },
+    "18": {
+      "note": "Pairing by the same recorded row, one movement per relationship",
+      "targets": [
         {
           "anchor": {
-            "blob": "2010ceb201503bdba78bee89fd27919ced5b4c4a",
-            "content": "sha256:9b3aa448ed5420cf475712303dbc0d9f872200aaad3566927f8fd977df663dc7",
+            "blob": "ef187decf43719b1a1570c5972cac7257604534b",
+            "content": "sha256:aec603aba535df52494cf8a07345d717a0a7446e1b81df6ff1372ed2d6823399",
             "locator": {
-              "end": 58,
-              "kind": "line_range",
-              "start": 1
+              "kind": "symbol",
+              "name": "_movements"
             }
           },
           "kind": "code"
         }
       ]
     },
-    "10": {
-      "note": "**The tested search value: what was read, what was found on the line, and the shape of the line's ends.**",
+    "19": {
+      "note": "The search published for a one-sided sentence",
       "targets": [
         {
           "anchor": {
-            "blob": "e437ee9bba5c14761a4d4fb336ef4294cee7ca27",
-            "content": "sha256:2df471bf8e1d88854d687e972f483e1d99acfa61b4d0d55cd8e1d39af281525c",
+            "blob": "ef187decf43719b1a1570c5972cac7257604534b",
+            "content": "sha256:e63cb0e1884f10bf1baf211781b92cd7acd854a006c2c96a9a8912a2da0735a7",
             "locator": {
               "kind": "symbol",
               "name": "_search_of"
             }
           },
           "kind": "code"
-        },
+        }
+      ]
+    },
+    "20": {
+      "note": "Same-citation matching without authored lines",
+      "targets": [
         {
           "anchor": {
-            "blob": "e437ee9bba5c14761a4d4fb336ef4294cee7ca27",
+            "blob": "ef187decf43719b1a1570c5972cac7257604534b",
             "content": "sha256:568cabb776accefef69576f5c767b8cd42d028928a5d71a70a0fa7647d9f00e3",
             "locator": {
               "kind": "symbol",
@@ -57,487 +66,17 @@
         }
       ]
     },
-    "11": {
-      "note": "**The pairing rules: the same recorded row, or an authored replacement of a withdrawn row; member-wise family pairing; the family edge alone never pairs.**",
+    "21": {
+      "note": "Continuation by recorded rows only",
       "targets": [
         {
           "anchor": {
-            "blob": "e437ee9bba5c14761a4d4fb336ef4294cee7ca27",
-            "content": "sha256:26915e799a394e561ff91783f7d8690c6324440322815883b0b3a09163cea218",
-            "locator": {
-              "kind": "symbol",
-              "name": "_matching"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e437ee9bba5c14761a4d4fb336ef4294cee7ca27",
-            "content": "sha256:602503f0bbf6f8ec03fe10c88560437e2b703d7edd714d2bc99ff4b0929f68d8",
+            "blob": "ef187decf43719b1a1570c5972cac7257604534b",
+            "content": "sha256:f8fe44e0eb0e1ad4a63a61709655df5fa51539621474b89d22c129f35b7af403",
             "locator": {
               "kind": "symbol",
               "name": "_continues"
             }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e437ee9bba5c14761a4d4fb336ef4294cee7ca27",
-            "content": "sha256:3db221f79409735ac8d61a306e08bf50a5be2726fe315c526ee241bc707d21c2",
-            "locator": {
-              "kind": "symbol",
-              "name": "_replaced"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "0556bb2e8a16d427b3eab0e3c8f503007d1aaf33",
-            "content": "sha256:4c7d45c60a427e115001812a0f977ea1ca8ebbf4da632999330199d1fb914556",
-            "locator": {
-              "kind": "symbol",
-              "name": "authored_successor"
-            },
-            "path": "mcp/src/agents_remember/application/review_recorded_relationships.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "12": {
-      "note": "The adapter's one call: the union traversed from the comparison's own page items and the resolved dataset halves, threaded into the source pane.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "75a68c3874ea545bd49e863046a120e320587404",
-            "content": "sha256:cccdeadc30f88b4527694d3c2e46f16c82c0784cb1d38b04bece61b9ec6bd1d8",
-            "locator": {
-              "kind": "symbol",
-              "name": "compose_review"
-            },
-            "path": "mcp/src/agents_remember/application/knowledge_review.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "13": {
-      "note": "The wire vocabulary the movements fill, with the validators that refuse an unstated pairing, a transition without its sides and an unexplained absent identity.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e3e8df3624cd2d7cb440199d304479c1fa4dba64",
-            "content": "sha256:88313a99b690437de0e806fac0ad2c236476cf98fa1869d1e61d7147b0b7ea73",
-            "locator": {
-              "kind": "symbol",
-              "name": "ReviewRelationshipMovement"
-            },
-            "path": "mcp/src/agents_remember/models/knowledge/review_relationships.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "255c5c146eeeb6582e90058eeeebba11883abeba",
-            "content": "sha256:4f50da618aef51d589ff04c2eae034e7bf3ba3e6f1a7fb4a9d723ec933e24886",
-            "locator": {
-              "kind": "symbol",
-              "name": "ReviewRelationshipSide"
-            },
-            "path": "mcp/src/agents_remember/models/knowledge/review_relationships.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "255c5c146eeeb6582e90058eeeebba11883abeba",
-            "content": "sha256:d66bc7ec8d86b7063f512eb3680268b6c76dee3a198d5f0a77246fcb21838c03",
-            "locator": {
-              "kind": "symbol",
-              "name": "ReviewPairingBasis"
-            },
-            "path": "mcp/src/agents_remember/models/knowledge/review_relationships.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "255c5c146eeeb6582e90058eeeebba11883abeba",
-            "content": "sha256:dbb303f7154392ff1ba8e3c3282cb88136c0bf2900c10461e7cf3ba0af409717",
-            "locator": {
-              "kind": "symbol",
-              "name": "ReviewRelationshipGap"
-            },
-            "path": "mcp/src/agents_remember/models/knowledge/review_relationships.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "14": {
-      "note": "Each text-declared family route is displayed separately; an unread route side is never ungoverned.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4fbe8a393d04d0bc0f0af6d31ed7a7880fd4c684",
-            "content": "sha256:abdee66ffdb9bb1ec2aacbfb304a67bde6ff1f9f5d68085f48b2f0b97cd770ab",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_familys_declared_route_set_is_the_governing_association_read_from_text"
-            },
-            "path": "mcp/tests/test_knowledge_review_relationship_movement.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "4fbe8a393d04d0bc0f0af6d31ed7a7880fd4c684",
-            "content": "sha256:a3228e55bfb2cfb17777ec323257d38273b2c23ca70020ac9e3201deb902eebb",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_each_declared_route_is_one_relationship_and_an_unread_side_is_never_ungoverned"
-            },
-            "path": "mcp/tests/test_knowledge_review_relationship_movement.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "15": {
-      "note": "The reach cases the master's ruling required: a member identity's movement at its own established head, a multi-ended line unresolved and never denied, and the address view's qualification.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "c78b77e8fcfad5e154ea2c3872161c04594b8d11",
-            "content": "sha256:e4dbb54d8a15ee68d463c40cd0bce76d95c017f50d04a4ec650abb459d82514c",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_member_identities_moved_realization_is_displayed_at_its_own_head"
-            },
-            "path": "mcp/tests/test_knowledge_review_relationship_reach.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "c78b77e8fcfad5e154ea2c3872161c04594b8d11",
-            "content": "sha256:63587cf3ad5d27d687240c0b146377141a407c975c485896eca1fea42f300397",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_member_line_with_no_single_head_is_unresolved_and_never_denied"
-            },
-            "path": "mcp/tests/test_knowledge_review_relationship_reach.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "c78b77e8fcfad5e154ea2c3872161c04594b8d11",
-            "content": "sha256:a233254a6f74fa66fce0f8af2fba90246d5e64ec4e4a5c39159a127bb39c6393",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_pairing_is_qualified_and_an_address_resemblance_never_pairs"
-            },
-            "path": "mcp/tests/test_knowledge_review_relationship_reach.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "16": {
-      "note": "The authored-line cases of the third round: a split line that records relationships is named and never denied, a multi-ended line never claims a unique head, and an intermediate descendant is displayed.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "68da54a994600430cd822cc275f9511c1db37765",
-            "content": "sha256:d2fa3dbc1ae5ff4db88dc6c39a004af41044aab58616f0372e0e912cdc0328b9",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_split_line_that_records_relationships_names_them_and_never_denies"
-            },
-            "path": "mcp/tests/test_knowledge_review_relationship_line.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "68da54a994600430cd822cc275f9511c1db37765",
-            "content": "sha256:887e669a5699e36b7e8edb003f765832b2ea5cea4ddaf0b070b388bc65a08c40",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_multi_head_line_with_relationships_never_claims_a_unique_head"
-            },
-            "path": "mcp/tests/test_knowledge_review_relationship_line.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "68da54a994600430cd822cc275f9511c1db37765",
-            "content": "sha256:2c823e1e287336470cf7d0239e5972b1124fa591a6002d927639513e369720dc",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_relationship_on_an_intermediate_descendant_is_displayed"
-            },
-            "path": "mcp/tests/test_knowledge_review_relationship_line.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "2": {
-      "note": "The published surface: the sources value, the traversal and the re-exported address view.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e437ee9bba5c14761a4d4fb336ef4294cee7ca27",
-            "content": "sha256:233d2c9ae2f7322d67eb612dcb44f30aaead0d095c3df5a457f20bd47c0f4f44",
-            "locator": {
-              "kind": "symbol",
-              "name": "__all__"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "The declared stream order and why the governing route is last.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e437ee9bba5c14761a4d4fb336ef4294cee7ca27",
-            "content": "sha256:42645ba132a7d66d481f25513ef7bc70c25381e6b1b9d861452638d623e025f1",
-            "locator": {
-              "kind": "symbol",
-              "name": "_KIND_ORDER"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "4": {
-      "note": "**Everything one traversal reads as one frozen value, because it is one measurement.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e437ee9bba5c14761a4d4fb336ef4294cee7ca27",
-            "content": "sha256:d53c3239d838ce8c30e49a540ec93b5ef6dcec07826b1b2a155f79ba683ddf40",
-            "locator": {
-              "kind": "symbol",
-              "name": "RelationshipSources"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "5": {
-      "note": "Both index snapshots feed the authored union and its plural text-route associations.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e437ee9bba5c14761a4d4fb336ef4294cee7ca27",
-            "content": "sha256:496b3dcefa9ca0d521d8ef5cd9057719d8d06766aa30b6c86639856a97e3389c",
-            "locator": {
-              "kind": "symbol",
-              "name": "relationship_movements"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "055c11c9366f9b384a3122b4ad7c84c014d9bb12",
-            "content": "sha256:57d30816f3ff627710b39d39ab1786f0d06a779cadc6efdcccd5cacc76924c58",
-            "locator": {
-              "kind": "symbol",
-              "name": "governing_route_movements"
-            },
-            "path": "mcp/src/agents_remember/application/review_governing_route.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "6": {
-      "note": "**The traversal: candidate sides first, one movement per relationship, the unpaired baseline sides displayed one-sided, the stream in declared order.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e437ee9bba5c14761a4d4fb336ef4294cee7ca27",
-            "content": "sha256:fd4144e98012ad7df59c6fc523733060207a40f5401b400863a90e8b188c5fad",
-            "locator": {
-              "kind": "symbol",
-              "name": "_movements"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "0556bb2e8a16d427b3eab0e3c8f503007d1aaf33",
-            "content": "sha256:71c191eba1829189e31c94cfa4fec3130df35a9e20560b93be7aae715b47f0f5",
-            "locator": {
-              "kind": "symbol",
-              "name": "read_snapshot_relationships"
-            },
-            "path": "mcp/src/agents_remember/application/review_recorded_relationships.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d3778adb8516a03d5dd5fc2d32a221efcdd0c61d",
-            "content": "sha256:8a5a091a5ffdc35fd29bc7ecaf5a0352431c3b706814476a3c28b4aa6022bbac",
-            "locator": {
-              "kind": "symbol",
-              "name": "paired_movement"
-            },
-            "path": "mcp/src/agents_remember/application/review_relationship_display.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d3778adb8516a03d5dd5fc2d32a221efcdd0c61d",
-            "content": "sha256:c3985f97818b1dc5e6deaba6ad8df7340a8ac686e580254e5ff81c07c264bfdc",
-            "locator": {
-              "kind": "symbol",
-              "name": "single_sided_movement"
-            },
-            "path": "mcp/src/agents_remember/application/review_relationship_display.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e437ee9bba5c14761a4d4fb336ef4294cee7ca27",
-            "content": "sha256:0660c6e474ad2bab8c1948e2768741e398329d812529ec6174bbf03797e973c1",
-            "locator": {
-              "kind": "symbol",
-              "name": "_movement_order"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e437ee9bba5c14761a4d4fb336ef4294cee7ca27",
-            "content": "sha256:3622787be621f9568f88397f5bd77c1ad92a306a689e9def71da6578ff6d628f",
-            "locator": {
-              "end": 140,
-              "kind": "line_range",
-              "start": 108
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "7": {
-      "note": "**The whole authored line is read, not its head, and rows the page already selected are skipped so a record is displayed once.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e437ee9bba5c14761a4d4fb336ef4294cee7ca27",
-            "content": "sha256:196d015ac2afd1fcdbc8904aec7a53a4582442cb2bb1f45366e9e30c8f056434",
-            "locator": {
-              "kind": "symbol",
-              "name": "_line_relationships"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e437ee9bba5c14761a4d4fb336ef4294cee7ca27",
-            "content": "sha256:7fd8ae633286ca5c22cfc69c9d2e26c9f031492d3c2f87995e60baf6b09bba79",
-            "locator": {
-              "kind": "symbol",
-              "name": "_ids"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "8": {
-      "note": "The citations one baseline side's lines are built from — a realization one invariant revision, a membership its family *and* member revisions.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e437ee9bba5c14761a4d4fb336ef4294cee7ca27",
-            "content": "sha256:480a3c1a3a8638e0f3eba5c0dbdd30754a29130f99bc144e48a4c876653b9764",
-            "locator": {
-              "kind": "symbol",
-              "name": "_line_citations"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e437ee9bba5c14761a4d4fb336ef4294cee7ca27",
-            "content": "sha256:70e4f178808d8d98486d337204c24988d6509875eeb65160ca79fa02cc52f425",
-            "locator": {
-              "kind": "symbol",
-              "name": "_lines_of"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e437ee9bba5c14761a4d4fb336ef4294cee7ca27",
-            "content": "sha256:539d0b12da5fb2be5c409aa7d7106318c94a3b0eb295bfdc4ac329bd1ddd0a78",
-            "locator": {
-              "kind": "symbol",
-              "name": "_line_revisions"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "9": {
-      "note": "**Only a row that *is* the line's uniquely established head may be described as one; an intermediate descendant or a multi-ended line takes the line basis.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e437ee9bba5c14761a4d4fb336ef4294cee7ca27",
-            "content": "sha256:c9f329f9266ad8595ffe6568f7858d146ecf9fe1bf6d6ae36058e7a33c026c60",
-            "locator": {
-              "kind": "symbol",
-              "name": "_is_line_head"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e437ee9bba5c14761a4d4fb336ef4294cee7ca27",
-            "content": "sha256:b7764422c2c95c9981815bc52d0110cb951a066a9891ee4384d274b175eb8bbb",
-            "locator": {
-              "kind": "symbol",
-              "name": "_pairing_basis"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "0556bb2e8a16d427b3eab0e3c8f503007d1aaf33",
-            "content": "sha256:84f74eecc2fdfaa33e34d94b3d7f9bb7c34f917ea8256d0aa83659accea9a6ac",
-            "locator": {
-              "kind": "symbol",
-              "name": "successor_line"
-            },
-            "path": "mcp/src/agents_remember/application/review_recorded_relationships.py"
           },
           "kind": "code"
         }

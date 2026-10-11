@@ -16,7 +16,9 @@ projection shared by memory readiness, closeout-door evidence, and closeout admi
 Live pointer loading delegates generation integrity to `curator_coherence_records`, addressed by the selected content digest. The same reader can open a named historical generation without reclaimed live quality files. `require_current_curator_coherence` remains strict: it observes live quality/dependencies and rechecks the original judgment inputs, so retained custody never grants live readiness. Path and namespace resolution now lives once in `curator_coherence_paths`.
 
 `observe_curator_coherence_source` captures the isolated add-all code tree, external-memory tree,
-candidate-relevant task topology, and exact ready memory-quality attestation. The stable manifest
+candidate-relevant task topology, and exact ready memory-quality attestation. Its throwaway index
+lives in the system temp directory: the capture is unrecorded scratch (rule 6) and must not create
+the enclosure's `reports/` directory. The stable manifest
 selects one generation under the leaf's task-local history. `load_curator_coherence_authority`
 proves manifest identity, content-addressed paths, record/report digests, deterministic projection,
 and judgment-evidence bytes. `require_current_curator_coherence` then compares that record with a

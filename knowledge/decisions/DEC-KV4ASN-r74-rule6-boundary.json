@@ -1,0 +1,53 @@
+{
+  "admission": {
+    "criteria": [
+      "constrains_future_work"
+    ],
+    "justification": "Binds all future read-boundary prose to the complete admitted-writes list, as MIK-R74 rule 8 requires."
+  },
+  "alternatives": [
+    {
+      "option": "A read is every tool its description calls a read; it may write only (a) coordination runtime cache files under <coordination root>/runtime/, (b) comparison-recorded objects, the task report and one review pin, and (c) closeout-preview worklist, quality reports and judged-tree objects; no other directory is created and failures refuse by name.",
+      "reason": "The architecture's What a Read May Write states exactly this boundary; compressed reads-file-nothing sentences omit the admitted writes the packet requires.",
+      "status": "chosen"
+    },
+    {
+      "option": "Reads, previews and dry runs file nothing.",
+      "reason": "Omits the admitted (a)/(b)/(c) writes and lets a reader infer that required reproducibility artifacts violate the policy.",
+      "reconsider_when": "The architecture's read boundary removes the admitted writes.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Future overview and route prose states the complete (a)/(b)/(c) boundary wherever it makes a general reads-file claim."
+  ],
+  "context": "MIK-R74 rule 8 requires the complete rule-6 boundary as an authored decision; three general overview sentences stated reads-file-nothing without the admitted list.",
+  "decider": "curator (260928-MIK-L74 memory repair)",
+  "id": "DEC-KV4ASN",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "192b18d0a8e6265484c21f184d2c794680cbb643",
+        "content": "sha256:0bd07e7f9916c8dd8bd3b1895cfe59ab98133f65123b7f48522ea8127fd31b4c",
+        "locator": {
+          "kind": "symbol",
+          "name": "drift_check_tool"
+        },
+        "path": "mcp/src/agents_remember/application/memory_tools.py"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "l74-repair-list.json"
+    },
+    "handoffEntry": "L74-MEM-02",
+    "leaf": "260928-MIK-L74",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

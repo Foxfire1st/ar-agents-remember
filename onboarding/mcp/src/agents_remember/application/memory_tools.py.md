@@ -59,7 +59,7 @@ their existing configured-authority and typed parameter-object boundaries.
 `route_index_refresh_tool` then forwards the resolver-owned code root, onboarding root, repository
 identity, and storage authority into `build_route_indexes`
 (`mcp/src/agents_remember/application/memory_tools.py:279-315`).
-Ordinary drift artifacts stay under the coordination temp root. The curator checklist is the
+Ordinary drift reads file no temp report (`DriftSummaryOutput(write_report=False)`). The curator checklist is the
 explicit enclosure-local exception and remains outside both Git worktrees. Baseline and carryover
 entry points preserve their separate service contracts.
 
@@ -90,7 +90,7 @@ filesystem checks.
   must not re-grow quality scope, registry, or checklist implementations.
 - Route-index refresh must forward resolver-owned repository and storage authority explicitly; it
   must not reconstruct path rules from directory layout or parser defaults.
-- Drift reports are temporary coordination artifacts, not durable onboarding content.
+- A drift read is read-only content and files no per-call report; it must not re-grow quality scope, registry, or checklist implementations.
 - Effectful refresh/init/baseline operations act by default and expose `dry_run` for preview;
   carryover remains an explicit plan/apply operation.
 

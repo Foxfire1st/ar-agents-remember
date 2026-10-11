@@ -5,26 +5,31 @@
 [mcp/tests route overview](overview.md)
 
 ## Purpose
-The one-sided statement contract drives real compose_review over two independently built read-side datasets. Their rows are assembled by knowledge_rows_test_support, the test-only builder; no production canonical database writer is involved. The after half holds an addition and the before half a removal, each selected by its own identity. [15]
+
+The one-sided statement contract drives real compose_review over two independently built read-side snapshots. Their entries are assembled by knowledge_rows_test_support, the test-only builder; no production canonical database writer is involved. The after half holds an addition and the before half a removal, each selected by its own identity. [15]
 
 The renderer half of the same requirement is `dashboard/src/panels/review/KnowledgeStatements.test.tsx`,
 which uses these same values. A change to either half's contract fails in one of the two.
 
 ## Code Commentary
+
 ### Logic
 
 **The fixture is two independently built snapshots, and that is the preservation boundary made
-mechanical.** The module-scoped `pair` fixture mints one random namespace, builds a
-`build_read_scope_fixture` tree for the "before" half and another for the "after" half **under the
-same namespace**, then authors four invariant revisions through `author_invariant`:
+mechanical.** The module-scoped `pair` fixture mints one random namespace and builds two
+`build_read_scope_fixture` trees — the "before" half and the "after" half **under the
+same namespace** — then adds one whole extra invariant apiece via `ExtraInvariantSeed`:
 `ADDED_*` into *after* only, `REMOVED_*` into *before* only, and one shared identity proposed in
 *before* and accepted in *after*. So the addition and the removal are a real difference between two
-real snapshots, not an edit of one dataset, and no stored identity is altered to produce a case.
-Module scope is documented in the fixture's own docstring: both datasets are read-only once built, no
+real snapshots, not an edit of one tree, and no stored identity is altered to produce a case.
+Module scope is documented in the fixture's own docstring: both trees are read-only once built, no
 case writes after the fixture is built, and a per-case rebuild would pay for two fixture trees to
 measure the same bytes.
 
-author_invariant uses the test-only RowStore builder to insert fixture identities and revisions and raises when its insert answer is not created. Production digest code seals the rows. The builder implements no retired label, lineage, duplicate or endpoint write rules. Only accepted origin data receives an acceptance reference. This constructs read-side data and proves no production write refusal. [5] [15]
+The extra-invariant seeds are written through the test-only rows builder; text records carry no
+authored acceptance event, so the accepting side's value is the recorded origin state. Only accepted
+origin data receives an acceptance reference. This constructs read-side data and proves no
+production write refusal. [5] [15]
 
 **`review` is the one composition call, and it fails loudly on a refusal.** It hands `compose_review`
 a hand-assembled `ReviewCandidateResolution` (the two databases, the two `git_root`s and the two
@@ -36,32 +41,32 @@ directly with `selector=None` instead, because that path is the point of the cas
 
 **The six cases, and the property each one owns.**
 
-- **An addition** (`:249-269`): the after side is `present` and carries `ADDED_STATEMENT` verbatim,
+- **An addition**: the after side is `present` and carries `ADDED_STATEMENT` verbatim,
   the before side is `absent` with `text is None` and its own no-record detail, and the comparison's
   own `side_absence:before:selector_absent` travels beside it in the payload's limitations. The
   reviewed subject is selected by its own recorded `InvariantIdentitySeed`.
-- **A removal** (`:272-285`): the mirror image, with `side_absence:after:selector_absent`.
-- **A one-sided field row** (`:288-317`): the shared revision identity is proposed in *before* and
+- **A removal**: the mirror image, with `side_absence:after:selector_absent`.
+- **A one-sided field row**: the shared revision identity is proposed in *before* and
   accepted in *after*, so the comparison reports the transition and each side's own value; the roster
   is asserted **by exact key set** (`acceptance_ref`, `lifecycle`, `payload_digest`, `provenance`),
   `acceptance_ref` keeps `before_value is None` beside `after_value == SHARED_ACCEPTANCE_REF`, and
   `lifecycle` is `("proposed", "accepted")`. Dropping the row, or printing the side that did record a
   value as blank, is what a one-sided statement must not become.
-- **A structured value** (`:320-350`): the `provenance` row the comparison reports as *changed*
+- **A structured value**: the `provenance` row the comparison reports as *changed*
   carries a value on **both** sides, the two differ, and each is parsed back out of its marker and
   checked against the fixture's own stored authorship envelope (`actor_ref`, `operation_id`,
   `authorization_ref`) — so the projection invents nothing. The case also pins the projection's
   canonicality: `structured_value_text({"b": 1, "a": 2}) == structured_value_text({"a": 2, "b": 1})`.
-- **A one-sided record keeps an empty roster** (`:353-369`): an addition reports
+- **A one-sided record keeps an empty roster**: an addition reports
   `field_changes == ()` and `before_conditions == ()` while `after_conditions == CONDITIONS`, because
   the comparison reports such a record through its coverage and nine field rows would state nine
   differences where there is one absence.
-- **No subject compared** (`:370-408`): `selection_state == "task_context"`, `comparison is None`,
+- **No subject compared**: `selection_state == "task_context"`, `comparison is None`,
   both sides `unresolved` with `text is None` and **the same** detail ("no knowledge operand was
   compared"), and an empty roster — the case a one-sided rendering must not swallow.
 
-**The fixture helpers are typed and named.** `AuthoredInvariant` is a frozen dataclass carrying the
-identities, the words and the origin state; `OneSidedPair` is a frozen dataclass carrying the
+**The fixture helpers are typed and named.** `ExtraInvariantSeed` carries the identities, the
+words and the origin state for one whole extra invariant; `OneSidedPair` carries the
 namespace, the two `ReadScopeFixture`s and the six identities the cases select subjects by. Every id
 is drawn once (`uuid4()`), so a case asserts against the exact identity the review was asked for
 rather than against a shape that could be anything.
@@ -104,6 +109,13 @@ claims.
 
 ## Evidence
 
+### Docs References
+
+No domain documentation source is configured for this repository (`system/sources.md` carries no
+`Domain Documentation` entries). The statements below are grounded in repository source only.
+
+No configured domain documentation could be checked.
+
 ### Repo-Internal References
 
 Every claim on this card is checkable in the shipped candidate: the module's own docstring and case
@@ -111,14 +123,13 @@ bodies, the fixture module it builds on, the store operations it authors through
 drives, the owner of the projection it asserts against, and the catalogue and lane rows that register
 it.
 
-- Fixture insertion through test-only builder, with acceptance provenance tied to accepted origin. [5]
-
-- Read fixture and test-only row builder supply both datasets. [15]
-
 - **The module's own scope statement: six cases over the real adapter and two real datasets, and the load-bearing properties each one owns.** [1]
 - The module's whole lane declaration. [2]
 - The authored identities and words every case asserts against, drawn once in the builder. [3]
-- **The two frozen fixture values: one invariant to author (with the origin state that alone decides its acceptance reference) and the pair of snapshots plus the identities cases select by.** [4]
+- **The two fixture values: one extra invariant seed (with the origin state that alone decides its acceptance reference) and the pair of snapshots plus the identities cases select by.** [4]
+
+- Fixture insertion through test-only builder, with acceptance provenance tied to accepted origin. [5]
+
 - **The fixture: two independently built snapshots under one namespace, and the four authored revisions that make an addition, a removal and a real transition.** [6]
 - The one composition call, with the hand-assembled resolution and the loud failure on a refusal. [7]
 - **The addition and the removal: the complete present-side statement, the named absent side with `text is None`, and the comparison's own side-absence code.** [8]
@@ -128,17 +139,12 @@ it.
 - **The task-context case: no comparison, both sides unresolved with the same reason and no text, and no roster.** [12]
 - **The projection owner whose markers and canonicality this module asserts.** [13]
 - The adapter entry point the cases drive, and the one-sided contract its pane values carry. [14]
+
+- Read fixture and test-only row builder supply both datasets. [15]
+
 - **The lane row that selects this module, and the artifact consumer row that registers it against the fixture it consumes.** [16]
 - The `consumer_scope = "exact"` artifact whose list this module joined. [17]
 - **The renderer half that uses these same values, which is what makes a change to either half fail in one of the two.** [18]
-
-
-### Docs References
-
-No domain documentation source is configured for this repository (`system/sources.md` carries no
-`Domain Documentation` entries). The statements below are grounded in repository source only.
-
-No configured domain documentation could be checked.
 
 ### Cross-Repo References
 

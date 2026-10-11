@@ -1,0 +1,87 @@
+{
+  "path": "mcp/tests/test_review_block_state_values_through_real_tools.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Sync records current when the line leaves both trees",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "62379365f38281b843be8ccd7c3de12a7a3362ac",
+            "content": "sha256:c9f1ecaf392562179e757dc842d21100896249eed72192a67193cdeba61087e4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_sync_records_current_when_the_carried_line_leaves_both_trees"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Closeout receipt is moved when code changes after review",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "62379365f38281b843be8ccd7c3de12a7a3362ac",
+            "content": "sha256:fb94d6ed9519cd5f68a252fb3889ec3af56b920ae57ea5d63118678f9db94f7c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_closeout_receipt_is_moved_when_code_changes_after_review"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Integration receipt is bound when both trees match",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "62379365f38281b843be8ccd7c3de12a7a3362ac",
+            "content": "sha256:d350012c0983f73963eb510723945adb8b42fa24c8ae784a7faa53c4b8b2c1e1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_integration_receipt_is_bound_when_both_trees_match"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Memory capture fault records unmeasured",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "62379365f38281b843be8ccd7c3de12a7a3362ac",
+            "content": "sha256:fba2faea35a9ef7b95a2049915235bf96e34829d5af0667884f2b4fd64c19f4b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_sync_records_unmeasured_when_the_memory_capture_faults"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "A memory-disabled leaf records no comparison",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "62379365f38281b843be8ccd7c3de12a7a3362ac",
+            "content": "sha256:0b63f999feac4a5117f78c368d718aa540e7eb8eb16f72fc12fb67c584bb3cd0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_memory_disabled_leaf_records_no_comparison"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,53 @@
+{
+  "admission": {
+    "criteria": [
+      "constrains_future_work"
+    ],
+    "justification": "Records the by-design appendix row-82 comparison choice so future comparison work keeps it."
+  },
+  "alternatives": [
+    {
+      "option": "Compare trees rather than branch history: the comparison reads the two bound snapshots' retained revisions, never a branch lineage.",
+      "reason": "The row's by-design choice fixes tree comparison as the comparison's subject.",
+      "status": "chosen"
+    },
+    {
+      "option": "Compare branch history.",
+      "reason": "Contradicts the row's explicit by-design tree comparison.",
+      "reconsider_when": "Appendix row 82 is revised to require history comparison.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Future comparison work reads bound-snapshot trees and never substitutes branch lineage."
+  ],
+  "context": "MIK-R74 appendix row 82 by-design choice, authored under rule 8.",
+  "decider": "curator (260928-MIK-L74 memory repair)",
+  "id": "DEC-3CTJVB",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "852cea86d073e1cbf816739d07ffecc61c93b1c3",
+        "content": "sha256:47863079c3fdff9d8b7d323c0f403ee5b7b45222ff702700d84132610eca6906",
+        "locator": {
+          "kind": "symbol",
+          "name": "select_subject_revisions"
+        },
+        "path": "mcp/src/agents_remember/application/review_revision_comparison.py"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "l74-repair-list.json"
+    },
+    "handoffEntry": "L74-MEM-01-row82",
+    "leaf": "260928-MIK-L74",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

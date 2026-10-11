@@ -60,8 +60,8 @@ No configured domain documentation was available.
 - The record-landing tool's response model is registered immediately after its checkpoint sibling, matching the advertised order. [6]
 - The three rows the capsule-and-skill registrar needs, at the mapping's tail to match their appended roster position. [7]
 - The choke point validates against this registry before emitting the envelope. [8]
-- The five rows the knowledge registrar needs, at the mapping's tail to match their appended roster position. [9]
-- The five strict response contracts those rows map to, in the module that declares them and exports exactly those five names. [10]
+- The three rows the knowledge registrar needs, at the mapping's tail to match their appended roster position. [9]
+- The three strict response contracts those rows map to, in the module that declares them. [10]
 - The three strict contracts the capsule rows map to, including the shared success/refusal capsule envelope. [11]
 
 ### Runtime Source References

@@ -20,7 +20,24 @@ The same value must mean the same thing on every field of one response: `memory.
 
 ## Evidence
 
-- Packet vocabularies imported from producers [7]
+
+- ContextPacketV2 carries the nested packet objects; RepoSummary, BranchFreshness and MemorySummary use vocabularies imported from the owning producers. [7]
+
+
 - Memory mode is the shared readable alias [8]
+
+
 - Mode field reads legacy `disabled` as-is [9]
+
+
 - Startup/bootstrap response contract [10]
+
+
+The following source-backed definitions and producer seams retain the broader response and vocabulary account alongside the readable-mode correction; they are declarations, not evidence of an executor run.
+
+- The application constructs ContextPacketV2 from Git, resolved paths, memory, worktree, provider, drift and freshness facts. [11]
+- Provider readiness in the packet uses compact provider summary models. [12]
+- RepoState and VALID_REPO_STATES define the producer vocabulary; git_facts_to_packet supplies the dict RepoSummary validates. [13]
+- FreshnessState and VALID_FRESHNESS_STATES define the producer vocabulary; freshness_to_packet supplies the freshness dict. [14]
+- ReadableMemoryMode is external/disabled for persisted reads; the startable MemoryMode is external only. Packet memory.mode and worktree.memoryMode use the readable alias. [15]
+- worktree_status_packet returns WorktreeSummary directly; the packet constructs its worktree block rather than validating a dict. [16]

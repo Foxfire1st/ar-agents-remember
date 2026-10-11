@@ -22,7 +22,14 @@ repair where it is observable — at the entry point, through the real MCP adapt
 
 ### 260921-ICR-L32 The Write Plane Must Be Named By Both Its Entry Points
 
-One case, `test_the_write_plane_is_named_by_both_its_shipped_entry_points`, drives the mounted `knowledge_change` refusal and asserts that the detail it returns names **both** shipped CLI entry points that reach the one writer — `agents-remember knowledge-ingest` and `agents-remember knowledge-bootstrap` — instead of only the first. It is the guard that makes the D55 correction a pinned property rather than a sentence someone must remember to keep true: the singular form was true when `ICR-R20@v1` wrote it, and the second route `ICR-R29@v1` shipped left it incomplete.
+One case, `test_the_write_plane_is_named_by_both_its_shipped_entry_points`, reads the advertised
+`knowledge_read` description off the live server and asserts that it names **both** shipped CLI entry
+points that reach the one writer — `agents-remember knowledge-ingest` and
+`agents-remember knowledge-bootstrap` — instead of only the first. No mounted tool writes
+(`knowledge_change` left the registered set with the canonical database), so the read's description
+carries the route. It is the guard that makes the D55 correction a pinned property rather than a
+sentence someone must remember to keep true: the singular form was true when `ICR-R20@v1` wrote it,
+and the second route `ICR-R29@v1` shipped left it incomplete.
 
 ### Logic
 

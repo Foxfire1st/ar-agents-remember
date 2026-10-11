@@ -92,12 +92,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1863cffa06d71d79ae64ac0462a1fae69a504fd0",
+            "blob": "543945bb7dc1155a69972fc527d327fdeb3ae45c",
             "content": "sha256:db5a418a3c076a03ca27d659eb8334041f770e840d3eb18561cbd12125f8bfe4",
             "locator": {
-              "end": 292,
+              "end": 346,
               "kind": "line_range",
-              "start": 264
+              "start": 318
             },
             "path": "mcp/tests/test_review_family_member_sources.py"
           },

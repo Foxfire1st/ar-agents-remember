@@ -1,0 +1,57 @@
+{
+  "admission": {
+    "criteria": [
+      "constrains_future_work"
+    ],
+    "justification": "Binds the review surface to the three served views: a retired view stays retired on every path, including paging and task context."
+  },
+  "alternatives": [
+    {
+      "option": "review_matrix and curation_queue views, the records page/cursor and MatrixSelection are gone; the removed collection earns comparison_page_unreadable with no channel row.",
+      "reason": "Views that read the retired envelope tables cannot be served; a measured zero would claim a walk that never happened.",
+      "status": "chosen"
+    },
+    {
+      "option": "Keep serving review_matrix/curation_queue views and the records page over the envelope tables.",
+      "reason": "There are no envelope tables; the views would read nothing and the page would walk no collection.",
+      "reconsider_when": "A governed collection with a real owner needs a served walk.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Re-adding a records walk requires a governed collection with a real owner, not a revived cursor over a removed view."
+  ],
+  "context": "MIK-R74 rule 1 retires the matrix/queue surfaces; bounded pagination, the knowledge pane and the task-context composition all carry the refusal instead of a page.",
+  "decider": "curator (260928-MIK-L74 memory curation)",
+  "id": "DEC-4B9GFT",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "f0080ac8512cae6107e8cf65f880a151ca6d19c5",
+        "content": "sha256:8a3e09b08d614e4917acaee1113f4fcb16811776b199633a77947c36e8933738",
+        "locator": {
+          "kind": "symbol",
+          "name": "review_records_for_resolution"
+        },
+        "path": "mcp/src/agents_remember/application/review_evidence_records.py"
+      }
+    },
+    {
+      "relation": "constrains",
+      "target": "route:mcp/src/agents_remember/application/knowledge_paging"
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "l74-ingest-list.json"
+    },
+    "handoffEntry": "retired-records-advertised",
+    "leaf": "260928-MIK-L74",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

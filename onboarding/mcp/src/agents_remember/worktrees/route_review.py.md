@@ -51,7 +51,9 @@ by application start/admission and direct closeout.
 ### Conventions
 
 Public failures use a typed status on `RouteReviewError`; private candidate identity is derived from
-the contract with an isolated temporary Git index. Evidence digests are SHA-256 of the exact task-
+the contract with an isolated temporary Git index. The index path is scratch namespace only
+(rule 6): it names the system temp directory, never the enclosure's `reports/` directory, which a
+read would otherwise create and leave behind empty. Evidence digests are SHA-256 of the exact task-
 relative files, never mtimes or filenames; the digest declaration participates in the shared
 evidence-dependency encoding.
 

@@ -6,36 +6,32 @@
 
 ## Purpose
 
-The sealed revision payloads, on **both** lineage graphs and through the read path. The predecessor set
-is inside every revision digest, which is what binds a stored revision identity to the exact edge set it
-was authored with. This module owns the executable evidence for that field on both payloads, because
-neither single-graph module owns the shared mechanism:
+The sealed revision payloads, at the model and through the read path. A revision's
+`payload_digest` seals its stored row: a row whose text was rewritten behind its identity is
+refused on decode rather than served as the revision that identity names. The predecessors field
+is still inside the digest — sealing with and without a predecessor changes it — but decoded
+predecessors are always `()`: the edge tables are gone with the schema (rule 1), so there is no
+edge table left to tamper with. This module owns the executable evidence for that seal on both
+payloads:
 
-- the invariant payload (L1) is exercised for its aggregate round-trip but never for the field alone, so
-  a payload that dropped the predecessor set would keep every L1 node green;
-- the family payload has the same shape, and its seal node lives in
-  `test_knowledge_family_revision.py` next to the revision rules it belongs to.
-
-Each digest node holds **every other field equal**, and each read node edits the edge *table* behind a
-stored row — the only way to change a sealed predecessor set without rewriting the row itself — then
-asserts that reading the revision back refuses rather than serving a revision whose identity no longer
-describes it.
+- the digest covers the stored cells (the seal unit test pins one field's contribution);
+- the aggregates refuse self-contradictory construction (a predecessor named twice, a revision as
+  its own predecessor, acceptance mismatches);
+- each read node rewrites one stored cell behind a sealed row — the only way to change sealed
+  content without rewriting the row through the writer, which recomputes the seal — then asserts
+  that decoding the row refuses rather than serving content its identity no longer describes.
 
 ## Code Commentary
 
 ### Logic
 
-- The two digest nodes (`test_an_invariant_revision_digest_seals_its_predecessor_set` and its family
-  sibling in `test_knowledge_family_revision.py`) are field-isolating: the two seeds differ **only** in
-  the predecessor set, so removing `"predecessors"` from the matching canonical payload makes the node
-  fail at its own digest assertion with two identical digests.
-- The four read nodes are the read-path half. Each asserts the pre-edit stored state first, then
-  performs a raw `INSERT` or `DELETE` on `family_predecessor` / `invariant_predecessor` behind the seal,
-  then asserts that the reader raises `KnowledgeStorageError` with the payload-digest message rather
+- The digest node is field-isolating: the two seeds differ **only** in
+  the predecessor set, so omitting `"predecessors"` from the canonical payload seals both to one
+  digest and fails the node. The construction node refuses self-contradictory aggregates.
+- The two read nodes are the read-path half. Each asserts the pre-edit stored state first
+  (including `predecessors == ()`), then rewrites one stored cell behind the seal, then asserts
+  that the decode raises `KnowledgeStorageError` with the payload-digest message rather
   than returning the altered aggregate.
-- The raw edge statements are module constants (`_FAMILY_EDGE_INSERT`, `_FAMILY_EDGE_DELETE`,
-  `_INVARIANT_EDGE_INSERT`, `_INVARIANT_EDGE_DELETE`) because a raw write through the operation is
-  exactly what the seal is supposed to prevent.
 
 ### Conventions
 
@@ -43,8 +39,8 @@ describes it.
   added is load-bearing" while no mutation of the sealing field was caught by any node in the
   repository (sealed finding `260915-KS-L2-RV-1`). Its docstring records that origin, so a later reader
   knows why the file exists rather than treating it as duplicate coverage.
-- Both directions of edge tampering are covered on both graphs: an added edge and an independently
-  **removed** edge.
+- Both directions of cell tampering are covered on both payloads: the invariant statement and the
+  family guarantee.
 - The read nodes assert the pre-mutation state before mutating, so a no-op raw write would leave the
   read succeeding and fail the node — the assertion cannot pass for an incidental reason.
 
@@ -53,9 +49,9 @@ describes it.
 - **The predecessor set is inside both payloads.** The payload version strings differ
   (`invariant-revision-payload/v1` vs `family-revision-payload/v1`) precisely because the two seal
   different field sets, so a digest can never be mistaken for the other object's identity.
-- **A stored revision's identity covers its stored edges**, read from the database alongside the row,
-  so an edge edited behind the seal is a storage defect rather than a new revision.
-- **The seal is verified on read, not only computed on write** — that is what the four read nodes
+- **A stored revision's identity covers its stored row**, so a cell edited behind the seal is a
+  storage defect rather than a new revision.
+- **The seal is verified on read, not only computed on write** — that is what the two read nodes
   establish.
 - **Boundary.** This module owns the sealed-field evidence only. The family revision *rules* are
   `test_knowledge_family_revision.py`; the relation payload triggers are

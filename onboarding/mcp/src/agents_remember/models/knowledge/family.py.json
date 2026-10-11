@@ -140,7 +140,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0ee5929321e3f7a958a51aecc7f15c63d890c86c",
+            "blob": "4a64ad09c79633786d6408b2e814119580ad51e7",
             "content": "sha256:bd50e8d8c0e3c813bcc4211881a122e30b03650166e0c9697b1a7497bbbd4741",
             "locator": {
               "kind": "symbol",
@@ -157,7 +157,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "66102e9850b5f1c88cdba3b4cbd1af7d321197e8",
+            "blob": "fafa18088da97ad02199d8d81db836c10e274a58",
             "content": "sha256:c51a165b94e9dd6de79384fdbe979368a7dc0a52f33cd560713ccc13b1c1a432",
             "locator": {
               "kind": "symbol",
@@ -181,7 +181,7 @@
         },
         {
           "anchor": {
-            "blob": "66102e9850b5f1c88cdba3b4cbd1af7d321197e8",
+            "blob": "fafa18088da97ad02199d8d81db836c10e274a58",
             "content": "sha256:8efde8a6ffa20dfab43f421de39f55bccfb3cd8f9f7b726e5a5c635dee4daf87",
             "locator": {
               "kind": "symbol",
@@ -198,12 +198,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5e27550d32bfd12f38a8b3393ad8622114eb677a",
+            "blob": "ec5bf0677108161ea883091d9613a34d21a3697c",
             "content": "sha256:a2c109f5b538bccec7bed1c2a1630ec11650ba7e3662eb56a6ae5da4b43890eb",
             "locator": {
-              "end": 232,
+              "end": 199,
               "kind": "line_range",
-              "start": 222
+              "start": 189
             },
             "path": "mcp/src/agents_remember/memory/knowledge/schema.py"
           },
@@ -211,12 +211,12 @@
         },
         {
           "anchor": {
-            "blob": "5e27550d32bfd12f38a8b3393ad8622114eb677a",
+            "blob": "ec5bf0677108161ea883091d9613a34d21a3697c",
             "content": "sha256:3e977c51c5929aa0a81269ce041aa7f1fdb6c0188dcc01bf5ea2067dd425fcbb",
             "locator": {
-              "end": 250,
+              "end": 217,
               "kind": "line_range",
-              "start": 233
+              "start": 200
             },
             "path": "mcp/src/agents_remember/memory/knowledge/schema.py"
           },

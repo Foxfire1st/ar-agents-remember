@@ -38,8 +38,10 @@ unknown attribution: …", or one pending/unknown line (`data-attribution-state`
 with no registered attribution" list (`data-attribution-source="landed"`); the reviewer rendered it with the base and
 the candidate and found the details' text byte-identical.
 
-The renderers are unchanged from the surface. `KnowledgePane` mounts `KnowledgeFacts`, `AuthoredRecords`
-and delegates its statements to `KnowledgeStatements`. `SourcePane` carries a
+The renderers are unchanged from the surface. `KnowledgePane` mounts `KnowledgeFacts`,
+`DetectionSignals` and delegates its statements to `KnowledgeStatements`. The authored-effects
+collection left with the retired envelope tables: no `authored-effects` list renders here, only the
+detection signals (facts, not findings). `SourcePane` carries a
 `review-source-explorer-pointer` (the inventory itself is `SourceExplorer.tsx`'s) and the attribution side
 of the same records. `EvidencePane` lists evidence links and observations. `SubmissionBlock` prints the
 server's staleness and submission boundary, including the `not-measured` line

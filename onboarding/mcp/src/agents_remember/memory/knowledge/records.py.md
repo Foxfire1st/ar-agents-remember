@@ -21,8 +21,8 @@ refuses duplicate keys so ambiguous stored text is a refusal rather than last-on
 discriminated union) are the typed-column specializations.
 
 Row codecs: `decode_repository_row`, `decode_invariant_row` (which also derives
-`invariant_row_digest` — the expected-row digest a label edit names), `decode_revision_row`,
-`decode_predecessor_rows`.
+`invariant_row_digest` — the expected-row digest a label edit names), `decode_revision_row`
+(`decode_predecessor_rows` is deleted with the predecessor edge tables).
 
 **The graph half's codecs are all here too**: `family_row_digest` / `decode_family_row`,
 `decode_family_revision_row`, `member_row_digest` / `decode_member_row`. Each expected-row digest is computed over a mapping carrying
@@ -37,16 +37,13 @@ stored origin state to the two authored states and raises `KnowledgeStorageError
 recomputes `revision_payload_digest` and raises `KnowledgeStorageError` when the stored digest differs. A reader
 that decoded a row without recomputing its digest would accept a rewritten payload as its own identity.
 
-`decode_family_revision_row` applies the same rule to the family payload, and it takes the predecessor set as an
-argument for a reason: the caller (`families.get_family_revision`) reads the **stored predecessor edges** from
-`family_predecessor` and passes them in, so the digest is recomputed over the stored row *plus* the stored edges.
-An edge edited behind a sealed revision therefore breaks the seal on read — the only way to change a sealed
-predecessor set without rewriting the row itself, and the reason the seal is verified rather than trusted.
+`decode_family_revision_row` applies the same rule to the family payload, and it still takes the predecessor tuple as an
+argument: callers pass the empty tuple, since the predecessor edge tables are gone and decoded predecessors are always (). A cell rewritten behind a sealed revision therefore breaks the seal on read — the only way to change sealed
+content without rewriting the row itself, and the reason the seal is verified rather than trusted.
 
 ### Invariants And Boundaries
 
-- The clause order of `conditions`/`exclusions` is preserved through storage; only the predecessor **set** is
-  sorted, because that order is not authored information while clause order is.
+- The clause order of `conditions`/`exclusions` is preserved through storage; cell order otherwise follows the stored row, since no predecessor set is decoded anymore.
 
 - The row codecs never write and never decide a refusal: they convert. Refusal policy belongs to `store.py`, and
   the factories to `refusals.py`.
@@ -81,8 +78,8 @@ No configured domain documentation could be checked.
 
 - - The canonical JSON typed-column encoding used for every structured column. [16]
 - - The read path re-derives the seal and treats a mismatch as a damaged store. [17]
-- - The predecessor edge rows and their sorted decode. [18]
-- - The family identity and family revision codecs, including the seal-verifying decode that reads the stored edges. [19]
+- - The predecessor edge tables are gone, so no edge rows are decoded and decoded predecessors are always (). [18]
+- - The family identity and family revision codecs, including the seal-verifying decode over the stored cells. [19]
 - - The relation codecs and their table-scoped expected-row digests. [20]
 - - The digest the read path recomputes, for both payloads. [21]
 - - The canonical encoder and duplicate-key-refusing decoder this module stores through. [22]

@@ -10,9 +10,9 @@ Builds the two-snapshot knowledge and Git fixture used by the diff and review re
 
 ## Code Commentary
 
-`build_diff_fixture` copies the read-scope fixture into before and candidate datasets, then applies named fixture transitions: successor revisions, realization removals/additions, an unrelated revision and the corresponding source-tree changes. The selected source trees and logical dataset identities remain independently observable.
+`build_diff_fixture` builds the read-scope topology twice — baseline and candidate — as two text trees through the rows builder, the candidate carrying exactly one authored change of each kind the packet distinguishes: a revised statement (another revision number of the same text ID, reported as removal beside unrelated addition), a source change with no record change, a removed and an added realization, and unchanged siblings. Both trees mint the same text IDs in the same order, so unchanged rows project the same UUIDs on both sides and pair as themselves. The selected source trees and logical identities remain independently observable.
 
-Fixture rows are inserted by RowStore and realization constructors imported from knowledge_rows_test_support. Realization row digests come from knowledge_row_codec_test_support.claim_row_digest, not a production encoder in records.py. Production read/comparison owners consume those index-shaped datasets. The helper provides no canonical writer, lock, label/lineage/duplicate admission guarantee or claim_no_rewrite enforcement. Historical write-shaped helper names describe fixture construction only.
+Fixture rows are written by RowStore and realization constructors imported from knowledge_rows_test_support. Claim digests are re-sealed through the one production owner rather than restated in the fixture. Production read/comparison owners consume those text trees. The helper provides no canonical writer, lock or claim_no_rewrite enforcement.
 
 
 `build_diff_fixture(directory) -> DiffFixture` builds the baseline with the **shared read-scope
@@ -85,15 +85,15 @@ No Domain Documentation source is configured for this slice.
 ### Repo-Internal References
 
 - `build_diff_fixture` supplies the current fixture or assertion described above. [40]
-- `_author_revised_revision` supplies the current fixture or assertion described above. [41]
+- `rebuild_after_tree` supplies the current fixture or assertion described above. [41]
 - Fixture construction imports test-only row constructors; it does not call the retired canonical writer. [42]
-- RowStore inserts index-shaped fixture rows without the retired production admission plane. [43]
+- RowStore writes text-tree fixture rows without the retired production admission plane. [43]
 
-- **The candidate's two new source paths, its revised statement and its authored words, and the whole candidate tree as one table.** [56]
+- **The candidate's two new source paths, its revised statement and its authored words, and the whole candidate tree rebuilt by one call.** [56]
 - The three small value types: one candidate-only realization's identities, one side of the comparison, and the fixture with every identity a case asserts against. [57]
-- **The fixture builder: the shared baseline, the copied database, the curating candidate and the two live trees.** [58]
-- **The revised statement as a successor pair: the fixture authors the successor with its own identity and the baseline revision as exact predecessor (`mcp/tests/diff_scope_test_support.py:287-315`); the `duplicate_identity` code exists in the storage refusal vocabulary (`mcp/src/agents_remember/models/knowledge/result.py:160`) but no call site raises it, and `RowStore` inserts/seals rows (`mcp/tests/knowledge_rows_test_support.py:274-322`) without a semantic check — so the successor shape is fixture-authored, not substrate-compelled.**
-- **The fourth revision neither side selects, which is what makes `present_outside_selection` measurable.** [60]
+- **The fixture builder: the shared baseline, the rebuilt candidate tree carrying the whole candidate-side delta, and the two live trees.** [58]
+- **The revised statement as removal beside unrelated addition: the candidate carries the same retry record with a different statement at another revision number, and text records hold no predecessor edge (rule 1), so the pair is never a succession.**
+- **A fourth retry revision neither side selects is gone with the multi-revision trees: one text record holds one revision (rule 3).** [60]
 - **The added claim, whose recorded identity is the blob the candidate tree really holds.** [61]
 - **The candidate tree, the object-store borrow that lets one repository name both trees, and the hermetic Git environment.** [62]
 - **The fixture's loud-failure rule: a building step that does not do what it says fails the fixture.** [63]

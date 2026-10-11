@@ -51,7 +51,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a2e32055df9ed4e20616122a8838f1eea2783fa2",
+            "blob": "1b1b9671292115c6dd9de74936534444e0f8affe",
             "content": "sha256:514fad889468a806ec57d17b62cd9ab44b6ebefa44cbd0699a45ced8dd108303",
             "locator": {
               "kind": "symbol",
@@ -63,12 +63,12 @@
         },
         {
           "anchor": {
-            "blob": "a2e32055df9ed4e20616122a8838f1eea2783fa2",
+            "blob": "1b1b9671292115c6dd9de74936534444e0f8affe",
             "content": "sha256:5d447d35f33dba40c66d1c4aff55d65dd1ed9c19199b789d5f91a7c3f67b330a",
             "locator": {
-              "end": 103,
+              "end": 104,
               "kind": "line_range",
-              "start": 60
+              "start": 61
             },
             "path": "mcp/src/agents_remember/application/context_packet.py"
           },

@@ -41,8 +41,8 @@ bullets:
   its worklist computation could not start, because the bound on computations was reached or the
   request's deadline passed while it waited for a child, and `inputs_changing` when an input the view
   read moved again while the view was computed a second time.
-- `ReviewPagedCollection` names the three collections a cursor can address: `knowledge`, `records` and
-  `family_members`. `MAXIMUM_REVIEW_PAGE_SIZE` is the view owner's `MAX_VIEW_ROWS`.
+- `ReviewPagedCollection` names the two collections a cursor can address: `knowledge` and
+  `family_members` — `records` left with the review matrix (MIK-R74 rule 1). `MAXIMUM_REVIEW_PAGE_SIZE` is the view owner's `MAX_VIEW_ROWS`.
   `REVIEW_PAGE_RESET_NEXT_ACTION` is the action text of a `comparison_page_reset`.
 - `ReviewSubjectKind` is `invariant` or `family`. `ReviewSubjectPresence` is `before_only`, `after_only` or
   `both`. `ReviewSideState` is `present`, `absent`, `binary` or `unresolved`. `ReviewHistoryRef` has the
@@ -69,10 +69,10 @@ bullets:
 
 - `ReviewSideContent` carries text exactly when its state is `present`.
 - `ReviewKnowledgePane` holds identities, both statements and conditions, revision groups, field changes,
-  authored effects, signals, assessments, context and applicability. Its single `assessment` must be one
+  signals, assessments, context and applicability. Its single `assessment` must be one
   of its `assessments`. `selection_detail` is present exactly for the `task_context` state, and a
-  recorded revision selection requires `subject_selected`. Authored effects (`ReviewAuthoredEffect`) and
-  mechanical signals (`ReviewSignal`) are separate types; a signal has no author, severity or verdict
+  recorded revision selection requires `subject_selected`. The authored-effects branch is deleted
+  (MIK-R74 rule 1); mechanical signals (`ReviewSignal`) carry no author, severity or verdict
   field.
 - `ReviewAssessmentDisplay` must carry a non-blank author and at least one examined input.
 - `ReviewSourcePane` holds the inventory, the selected locations, the relationship movements, the
@@ -348,7 +348,7 @@ the existing curator authority's and is deliberately not modelled here.
 - The module docstring: no record kind, and the five prohibitions of the display. [35]
 - The closed set of refusal codes, with the two codes of the leaf-wide tree view. [36]
 - The three proposed dispositions. [37]
-- The three paged collections. [38]
+- The two paged collections. [38]
 - A side carries text exactly when present. [39]
 - The request and its cursor rule. [40]
 - The comparison identity and its all-or-nothing knowledge half. [41]

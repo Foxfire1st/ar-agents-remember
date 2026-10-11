@@ -42,12 +42,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1fbf726840dd4b6a9af88200a7606ff07c1d2247",
+            "blob": "8c2cdf2ffa4da4b20abca610d35e2747c10c1d86",
             "content": "sha256:d8ba60258043350ed65bfa39511b003625b721264ef2217885c03bc23a56258b",
             "locator": {
-              "end": 301,
+              "end": 279,
               "kind": "line_range",
-              "start": 292
+              "start": 270
             },
             "path": "dashboard/src/panels/review/ReviewRecordPanes.tsx"
           },

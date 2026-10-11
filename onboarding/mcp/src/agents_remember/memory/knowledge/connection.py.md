@@ -21,9 +21,9 @@ as busy rather than block indefinitely. The operation never retries against a re
 generation's DDL inside one immediate transaction and then writes `PRAGMA user_version`; on a populated one it
 delegates to `inspect_schema`. **Initialization declares a generation; it does not select one.** An empty database
 has no version to read, so "the dataset decides" cannot govern this path: creation asks
-`schema_generations.generation_of_new_store()` for the newest generation this build supports (`CURRENT_GENERATION`,
+`schema.generation_of_new_store()` for the single composed generation this build supports (`CURRENT_GENERATION`,
 `ar-knowledge-sqlite/v9`, user_version 9) and takes the DDL *and* the version marker from that one record, instead of reading the running
-build's `SCHEMA_USER_VERSION` and its module-level DDL. The version marker is still written **after** the DDL
+build's `SCHEMA_USER_VERSION` and its module-level DDL. The generations-registry modules are deleted; the one schema module declares the generation. The version marker is still written **after** the DDL
 commits, so a crash between the two leaves a complete but unversioned database that the next open refuses instead
 of guessing — the opposite order could leave a database claiming a generation it does not have.
 
@@ -32,13 +32,13 @@ statement, returning a plain tuple or `None`. Every reader in the package asks t
 owner of the shape — the graph modules' three reads call it rather than repeating the pattern at each call site.
 
 `inspect_schema` **selects the generation from the database itself**, then requires *that* generation's structure:
-it resolves `PRAGMA user_version` against the generation registry (never against the running build), calls
+it resolves `PRAGMA user_version` against the single composed generation (never against the running build), calls
 `_require_declared_tables(connection, declared)` (every table the selected generation declares is present and every
 table's declared column tuple is identical to that generation's manifest) and `_require_declared_triggers(connection,
 declared)` (no immutability trigger of that generation is missing). The returned `KnowledgeSchemaIdentity` carries
 the selected generation's `schema_name`, `user_version` and recorded `fingerprint`, so the identity a caller receives
 describes the dataset that was opened rather than the build that opened it. Every refusal this module raises for a database's declared structure is still fail-closed and still
-names the fact that was missing. A version the registry does not contain is refused by the registry lookup before
+names the fact that was missing. A version the single generation does not declare is refused by the lookup before
 these checks run: it is not migrated, repaired or re-read under another generation to obtain a green result.
 
 `immediate_transaction` returns the `_ImmediateTransaction` context manager, whose `__enter__` runs
@@ -55,19 +55,16 @@ by a reader. `foreign_keys` is deliberately not set there, because no statement 
 - **One key space, and it is the dataset's.** An open SQLite file declares its generation through
   `PRAGMA user_version` alone — the application schema name is not stored in the file — so this module resolves a
   database's generation by version and reports the generation's *own* `schema_name` afterwards. A caller that holds
-  a name instead (a portable artifact, which does carry one) resolves a different key space in
-  `schema_generations`; the two are not interchangeable.
-- The registry is the only schema source this module consults. `connection.py` no longer imports the `schema`
-  declarations module at all: creation, validation and the identity it returns all route through
-  `schema_generations`, so there is one place where "which generations exist" is answered.
+  a name instead (a portable artifact, which does carry one) resolves it through `schema.generation_for_name` against the single generation; the two key spaces are not interchangeable.
+- The single schema module is the only schema source this module consults. `connection.py` routes creation, validation and the identity it returns through
+  `schema` (the generations-registry modules are deleted), so there is one place where "which generation exists" is answered.
 
 ### Invariants And Boundaries
 
 - Missing immutability triggers refuse at open, because a database without them can rewrite a sealed revision and
-  therefore is not this schema. The trigger set it is measured against is the **selected generation's**, so each
-  registered generation is held to its own declarations.
+  therefore is not this schema. The trigger set it is measured against is the **single generation's**, so every database is held to the one declarations set.
 - **A database's generation is read, never assumed.** `inspect_schema` measures an existing database against the
-  generation that database declares (through `PRAGMA user_version` resolved against the registry) and returns that
+  generation that database declares (through `PRAGMA user_version` resolved against the single composed generation) and returns that
   generation's identity. The build's own newest generation decides exactly one thing in this module — what a
   *created* store declares — because an empty database has no declaration to read.
 - **A generation this build does not register is refused, not interpreted.** An unregistered `user_version` raises

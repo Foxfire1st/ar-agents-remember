@@ -1,0 +1,53 @@
+{
+  "admission": {
+    "criteria": [
+      "constrains_future_work"
+    ],
+    "justification": "Binds revision-head selection to retained revisions only: order, presence and guessed succession never elect a head."
+  },
+  "alternatives": [
+    {
+      "option": "Heads are the retained revisions of the union; one text record holds one revision (rule 3); a further revision outside the union states only what was read.",
+      "reason": "Successor edges left with the authored lineage; sorted identity strings and stream position are not authorship and must not elect heads.",
+      "status": "chosen"
+    },
+    {
+      "option": "Elect heads from sorted order or stream presence when no edge is recorded.",
+      "reason": "Guesses a winner the authors never recorded, which is exactly the denial the head rule exists to prevent.",
+      "reconsider_when": "The rejected shape gains a governed producer and contract.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Future selection work keeps the retained-population rule and the retraction display for unrecorded pairings."
+  ],
+  "context": "MIK-R74 rule 3: single-revision text records with no predecessor edge; revision selection, line display and one-sided statements all read heads from what is retained.",
+  "decider": "curator (260928-MIK-L74 memory curation)",
+  "id": "DEC-D7NNB1",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "852cea86d073e1cbf816739d07ffecc61c93b1c3",
+        "content": "sha256:cd200333cedd787528382ee9b8eae7d82d634115d54b5d4dff4cc91a0fccd39b",
+        "locator": {
+          "kind": "symbol",
+          "name": "revision_heads"
+        },
+        "path": "mcp/src/agents_remember/application/review_revision_comparison.py"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "l74-ingest-list.json"
+    },
+    "handoffEntry": "MIK-R74@v1/rule-3-heads",
+    "leaf": "260928-MIK-L74",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

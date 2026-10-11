@@ -1,0 +1,57 @@
+{
+  "admission": {
+    "criteria": [
+      "constrains_future_work"
+    ],
+    "justification": "Binds sparse reads to committed bytes: a skipped worktree is a stated skip, never an assumed-unchanged silent pass."
+  },
+  "alternatives": [
+    {
+      "option": "Sparse-absent paths read committed bytes and keep skip-worktree; assume-unchanged is cleared otherwise.",
+      "reason": "Assuming unchanged without reading would certify bytes the read never saw.",
+      "status": "chosen"
+    },
+    {
+      "option": "Assume unchanged for sparse-absent paths without reading.",
+      "reason": "Certifies bytes the read never saw.",
+      "reconsider_when": "Sparse absence gains a governed attestation distinct from a read.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Sparse-path reads keep the committed-bytes rule and clear assume-unchanged whenever the path is actually read."
+  ],
+  "context": "MIK-R74 rule 5 sparse blobs: every consumer builds text trees plus build_index; sparse absence is handled at the read, not the cache.",
+  "decider": "curator (260928-MIK-L74 memory curation)",
+  "id": "DEC-7QEF6H",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "4704ae2a186d2b6381f58a2cf3af63ecdd54cfdc",
+        "content": "sha256:8ec1849c58de688008a7b133aa89395036e6cb06713b23600629d8ea257de9c4",
+        "locator": {
+          "kind": "symbol",
+          "name": "_captured_bytes"
+        },
+        "path": "mcp/src/agents_remember/memory/knowledge_index/tree.py"
+      }
+    },
+    {
+      "relation": "constrains",
+      "target": "route:mcp/src/agents_remember/memory/knowledge"
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "l74-ingest-list.json"
+    },
+    "handoffEntry": "L74-P5",
+    "leaf": "260928-MIK-L74",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

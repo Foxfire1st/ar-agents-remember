@@ -391,12 +391,12 @@
         },
         {
           "anchor": {
-            "blob": "d3ab002e5da5b90d87d71b0c5d27cc1cd2fab435",
+            "blob": "7fe00a759778edee005a11e3fcbbe33b7891bab9",
             "content": "sha256:ebd8def7005648fdd3cd109b8a1423b9bd7d99e3c5b0e7dc3dc1fa8bcc0efaba",
             "locator": {
-              "end": 558,
+              "end": 568,
               "kind": "line_range",
-              "start": 551
+              "start": 561
             },
             "path": "mcp/src/agents_remember/memory/baseline.py"
           },
@@ -409,7 +409,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d3ab002e5da5b90d87d71b0c5d27cc1cd2fab435",
+            "blob": "7fe00a759778edee005a11e3fcbbe33b7891bab9",
             "content": "sha256:bf362a4869836a58bd9398725054613b098abc324776ebd66726107f6b454efe",
             "locator": {
               "kind": "symbol",
@@ -421,7 +421,7 @@
         },
         {
           "anchor": {
-            "blob": "d3ab002e5da5b90d87d71b0c5d27cc1cd2fab435",
+            "blob": "7fe00a759778edee005a11e3fcbbe33b7891bab9",
             "content": "sha256:f4919bee988d4473dce9ce42789930a3b179417eb1c07e1d5ba1f0c40270d283",
             "locator": {
               "kind": "symbol",
@@ -446,12 +446,12 @@
         },
         {
           "anchor": {
-            "blob": "d3ab002e5da5b90d87d71b0c5d27cc1cd2fab435",
+            "blob": "7fe00a759778edee005a11e3fcbbe33b7891bab9",
             "content": "sha256:5a6b1c2938cdd94d020e4577fede262e2d07ac0c0819d28ab391196777696fd2",
             "locator": {
-              "end": 605,
+              "end": 617,
               "kind": "line_range",
-              "start": 596
+              "start": 608
             },
             "path": "mcp/src/agents_remember/memory/baseline.py"
           },

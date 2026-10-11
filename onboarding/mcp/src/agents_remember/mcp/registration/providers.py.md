@@ -27,8 +27,8 @@ watcher), while `invalidate-indexes` DELETEs and rebuilds every index from scrat
 plus a full graph re-index, slow and CPU-heavy. The retired `refresh` action is not listed; the
 application entry point rejects it with guidance. Indexing runs inside the watcher and is never time-capped.
 
-All three forward keyword-for-keyword to `mcp/tools/providers.py`; the diagnostics and watcher
-payloads are report-filed and compacted there, not here.
+All three forward keyword-for-keyword to `mcp/tools/providers.py`; the watcher
+payload is report-filed and compacted there, not here, while diagnostics answers carry the compact diagnosis with no per-call report (rule 6).
 
 ### Invariants And Boundaries
 

@@ -113,16 +113,15 @@ not a coverage promise.
 
 ### The SQLite Binding Is A Binary Wheel With A Build-Time Capability (260915-KS-L1)
 
-`apsw==3.53.4.0` is the repository's first binary-wheel runtime dependency whose required capability is a
-**build-time SQLite option** rather than a Python API. Three facts justify the exact pin:
+`apsw==3.53.4.0` is the repository's binary-wheel SQLite binding for the derived knowledge index.
+Three facts justify the exact pin:
 
-1. **Why APSW at all.** APSW is the only declared binding that exposes SQLite's session and changeset machinery —
-   the operations a later merge leaf needs to capture and apply a candidate's changes. The standard library's
-   `sqlite3` module exposes neither session nor changeset, so the choice is not a preference between two bindings
-   with the same reach.
-2. **Why the pin is exact, not a range.** Session support is compiled in through SQLite's `ENABLE_SESSION` build
-   option, so the capability belongs to the specific wheel rather than to the APSW project version line. An exact
-   pin makes "this wheel has session support" a proven property of the locked artifact instead of an assumption
+1. **Why APSW at all.** The index is built and queried through APSW (index build, query and projection
+   modules, plus the tool-layer reads); the standard library's `sqlite3` module is not the binding this
+   surface is proven against, so the choice is not a preference between two bindings with the same reach.
+2. **Why the pin is exact, not a range.** The index's schema relies on build-time SQLite
+   features (STRICT tables, deferrable foreign keys, `RAISE(ABORT)` triggers, recursive CTEs), so the capability belongs to the specific wheel rather than to the APSW project version line. An exact
+   pin makes "this wheel has the proven features" a proven property of the locked artifact instead of an assumption
    about whatever resolution picks next; a range would silently admit a build without it.
 3. **What was actually proven, and what was not.** The leaf's spike installed the pinned release from a prebuilt
    `cp313` manylinux x86_64 wheel (no compiler, no source build, no fallback) and exercised one-row

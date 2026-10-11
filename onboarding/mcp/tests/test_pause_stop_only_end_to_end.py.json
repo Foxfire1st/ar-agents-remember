@@ -102,12 +102,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f47be3b1f6dbad3ecc71cc8fccbb681b81e244d9",
+            "blob": "512be564b35aaf6f9d3b9709113b613309efe221",
             "content": "sha256:732f1903a69af76a07aa2cbdff538529f00d9eecb4145aa164f538dc6a461b59",
             "locator": {
-              "end": 384,
+              "end": 389,
               "kind": "line_range",
-              "start": 384
+              "start": 389
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -177,12 +177,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f47be3b1f6dbad3ecc71cc8fccbb681b81e244d9",
+            "blob": "512be564b35aaf6f9d3b9709113b613309efe221",
             "content": "sha256:732f1903a69af76a07aa2cbdff538529f00d9eecb4145aa164f538dc6a461b59",
             "locator": {
-              "end": 384,
+              "end": 389,
               "kind": "line_range",
-              "start": 384
+              "start": 389
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -195,12 +195,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f0a8a39bba7649aa8f49814e8f35a32dcecbd6a9",
+            "blob": "008585e26ec337eafd1554ed18033421299bdc72",
             "content": "sha256:10222c726850775c8f75bd3f68ece30f43b7d64e5d73211cecaefe6a5eeeb9ed",
             "locator": {
-              "end": 415,
+              "end": 421,
               "kind": "line_range",
-              "start": 415
+              "start": 421
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -213,7 +213,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a816e4076dcc166e5d7e42c0346f56b8f240b224",
+            "blob": "d9ce9e68830e30957a97bbaf68b8a5c4b9aa34bd",
             "content": "sha256:e08910fde0433cf4e5dd401ba3aeee7fd2d672dced015beb97314466a885e0c6",
             "locator": {
               "kind": "symbol",

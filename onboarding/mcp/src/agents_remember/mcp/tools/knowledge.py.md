@@ -26,7 +26,7 @@ Integrity runs the knowledge validator and returns the latest leaf worklist for 
 
 ### Logic
 
-`knowledge_read_payload` refuses a view outside `source_context`, `invariant`, `family`, `review_matrix` and `curation_queue` through `_refused_read(view, repositoryId, "unknown_view", ...)` rather than picking a default view; a read the seam refused is returned as its typed refusal rather than as an empty page.
+`knowledge_read_payload` refuses a view outside `source_context`, `invariant` and `family` through `_refused_read(view, repositoryId, "unknown_view", ...)` rather than picking a default view (`review_matrix` and `curation_queue` left with the retired envelope tables, so they earn the unknown-view refusal); a read the seam refused is returned as its typed refusal rather than as an empty page.
 
 **The read context's source-resolution pair is completed rather than half-supplied, and the mount hands
 over a default repository rather than half a pair.** `_source_resolution(request, workspace_root)`
@@ -192,7 +192,7 @@ No configured domain documentation could be checked.
 - - The flat read request's optional source-path seed, beside the unnamed-by-default ordering MIK-R02 introduced. [76]
 - - The one refusal envelope the read operation returns for an unknown view and for a view the seam refused. [77]
 - - The one refusal envelope the read operation returns for an unknown view and for a view the seam refused. [78]
-- - The read builder: the five-view closure, the shared dataset selection (a converted memory tree reads through its index), the resolver call, the seam call, and the payload returned as the view payload itself — with every completeness statement forced to `false` when that index is partial. [79]
+- - The read builder: the three-view closure, the shared dataset selection (a converted memory tree reads through its index), the resolver call, the seam call, and the payload returned as the view payload itself — with every completeness statement forced to `false` when that index is partial. [79]
 - - The source-resolution pair completed rather than half-supplied: the caller's own root with its current tree (refused by name when it has none, since MIK-R01), the mount's workspace default used only when a tree can be resolved from it, and neither half when Git cannot answer for it. [80]
 - - **Every way resolving and opening a selection can fail, refused the same way on every handler: a named root with no code tree is `selected_input_unavailable` naming the root (MIK-R01), a tree, Git or cache failure is `snapshot_unavailable` naming the tree, anything else the dataset refusal it was before.** [81]
 

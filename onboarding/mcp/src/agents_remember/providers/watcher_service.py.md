@@ -14,7 +14,7 @@ Configured provider-watcher lifecycle service shared by upper performers.
 
 Module-level surface:
 
-- `run_configured_watchers` (function, lines 16-43) — Run one watcher action against temporary settings derived from live config.
+- `run_configured_watchers` (function, lines 16-43) — Run one watcher action against temporary settings derived from live config. The answer carries the aggregated state built in memory with `currentStateFile: None`: status files none (rule 6).
 
 ### Conventions
 

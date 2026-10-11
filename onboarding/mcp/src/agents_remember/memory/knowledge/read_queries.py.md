@@ -14,7 +14,7 @@ whatever transaction the caller holds and therefore observe **one snapshot**.
 
 ### Logic
 
-**Fifteen public readers** — ten the read half needed, five L8's comparison added — each one statement:
+**Fourteen public readers** — ten the read half needed, four the comparison added — each one statement:
 
 | Reader | What it returns |
 | --- | --- |
@@ -29,9 +29,8 @@ whatever transaction the caller holds and therefore observe **one snapshot**.
 | `invariant_revision_is_recorded` / `family_revision_is_recorded` | whether one snapshot holds one named revision of each kind, by exact identity |
 | `membership_is_recorded` | whether one snapshot holds one named `member_id` |
 | `realization_claim_is_recorded` | whether one snapshot holds one named claim — **looked up without its anchor**, because a comparison asks whether the *relationship* is still recorded and a claim whose anchor is a separate row is still that relationship |
-| `fetch_predecessor_edges` | every `(successor_revision_id, predecessor_revision_id)` edge one snapshot records, as the `UNION ALL` of `invariant_predecessor` and `family_predecessor` |
 
-**The five existence and predecessor readers are L8's addition, and they exist for one reason: a
+**The four existence readers exist for one reason: a
 comparison has to distinguish three states a single read never needs to tell apart** — a record the other
 snapshot **does not hold**, a record it holds but the other side's declared selection **did not reach**,
 and a record both sides selected. Only the first is absence; the second is a fact about the selection, and
@@ -39,13 +38,7 @@ reporting it as a deletion is the design's own named misreading. These lookups a
 and nothing else, by exact identity, one statement each; the caller already holds the selected set that
 answers the second. `_row_exists` is the shared shape: a `SELECT 1` whose row presence is the answer.
 
-**`fetch_predecessor_edges` deliberately unions both predecessor tables**, because a comparison asks the
-same question of either kind — and the union is why a consumer must **not** ask one table's probe about
-the other table's endpoint: that was measured as a false alarm on a legal snapshot (one schema-valid
-family edge made the pre-diff assertion fail at `test_knowledge_diff_scope.py:474`), and the fix was to
-split the per-table question rather than to narrow the union. The edges returned are **authored**: they
-are what an author declared when they wrote the successor, so a comparison pairs two revisions without
-comparing labels, versions or insertion order — none of which an author guarantees.
+**One order column per filled table.** `_ORDER_COLUMNS` names seven tables — every filled table except `repository` — each by its primary key's distinguishing column, so two datasets holding the same records read in the same order and page identically.
 
 **Two rules make these readers safe to compose, and both are contract rather than style:**
 
@@ -62,8 +55,6 @@ comparing labels, versions or insertion order — none of which an author guaran
 key — which is not every table's leading column list — so two datasets holding the same records read in
 the same order and page identically. The selection layer's own final sort is a second, independent
 statement of the item order (see `read.py`'s `_sort_key`).
-
-**Five declared order columns for the appended tables.** `evidence_claim` and its two subject join tables are ordered by `claim_id`, the coverage table by its two-endpoint key in the order the DDL names them, and `verification_observation` by `observation_id`. The column named is the *second* of each key because the first is the namespace: a table keyed `(repository_id, identity)` is ordered by its identity. Ordering a read by a stored key rather than by insertion order is what makes two datasets holding the same records page identically, and the coverage table's pair key is why a relation's rows are ordered by the pair rather than by either half.
 
 ### Conventions
 
@@ -103,17 +94,33 @@ No configured domain documentation could be checked.
 
 ### Repo-Internal References
 
+
 - **The declared read order per table, and the refusal of a table this reader does not own.** [1]
+
+
 - **The declared read order per table, and the refusal of a table this reader does not own.** [2]
+
+
 - The identity-label reader and the identity's retained revisions. [3]
+
+
 - The two revision readers, and the shared row fetcher their order column is checked by. [4]
-- **The edge readers the frozen family set is derived from, and the family identity of a revision.** [5]
+
+
+- **The family-set readers and the family identity of a revision.** [5]
+
+
 - The path seed's entry point and the claims of the selected invariant set. [6]
+
+
 - **The shared existence shape, and the four probes that answer "does this snapshot hold this record, by this key".** [7]
-- **The predecessor-edge union both tables feed, and the reason a consumer must ask each table with its own probe.** [8]
+
+
 - **The one cell decoder a read page and the logical digest share, made public for exactly this reuse.** [9]
+
+
 - The declarations these statements are built from. [10]
-- **The node that asserts the union identity back against the two per-table edge sets, and the two dangling-edge failure lines.** [11]
+
 
 ### Cross-Repo References
 

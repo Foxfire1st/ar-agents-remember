@@ -3,8 +3,26 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "a052c7649e04f9df319c1eb28521f65e5a314970",
-        "content": "sha256:79bf54e417095b381827f162b7099f502b6d05eb46a0584a47578881ef423860",
+        "blob": "852cea86d073e1cbf816739d07ffecc61c93b1c3",
+        "content": "sha256:cd200333cedd787528382ee9b8eae7d82d634115d54b5d4dff4cc91a0fccd39b",
+        "locator": {
+          "kind": "symbol",
+          "name": "revision_heads"
+        }
+      },
+      "id": "RLZ-05D37Y",
+      "invariant": "INV-RT13RESK",
+      "origin": {
+        "handoffEntry": "L74-MEM-E1",
+        "leaf": "260928-MIK-L74"
+      },
+      "rationale": "revision_heads is the retained-revision head rule the invariant's conditions restate: every retained revision is a head, sorted for rendering determinism only; no predecessor edge is read.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "852cea86d073e1cbf816739d07ffecc61c93b1c3",
+        "content": "sha256:cd200333cedd787528382ee9b8eae7d82d634115d54b5d4dff4cc91a0fccd39b",
         "locator": {
           "kind": "symbol",
           "name": "revision_heads"
@@ -15,8 +33,26 @@
       "origin": {
         "leaf": "260921-ICR-L46"
       },
-      "rationale": "Supplies the head rule the summary shares with the reviewer: a head is a revision of the selected population that no other member names as predecessor, where only edges with both endpoints inside the population count.",
+      "rationale": "States the retained-revision head rule the summary shares with the reviewer: every retained revision of the selected population is a head; sorted order is rendering determinism only.",
       "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "852cea86d073e1cbf816739d07ffecc61c93b1c3",
+        "content": "sha256:cd200333cedd787528382ee9b8eae7d82d634115d54b5d4dff4cc91a0fccd39b",
+        "locator": {
+          "kind": "symbol",
+          "name": "revision_heads"
+        }
+      },
+      "id": "RLZ-H11EAN",
+      "invariant": "INV-WCEGX72X",
+      "origin": {
+        "handoffEntry": "L74-E4",
+        "leaf": "260928-MIK-L74"
+      },
+      "rationale": "revision_heads is the head rule whose retained-revision meaning the decision records.",
+      "role": "unclassified"
     }
   ],
   "references": {
@@ -64,7 +100,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a052c7649e04f9df319c1eb28521f65e5a314970",
+            "blob": "852cea86d073e1cbf816739d07ffecc61c93b1c3",
             "content": "sha256:c6c8ff96a735f723fcf3f389188a6aa07e156c58d9f12c6e98350800d3dcd05b",
             "locator": {
               "kind": "symbol",
@@ -92,12 +128,12 @@
         },
         {
           "anchor": {
-            "blob": "656c6acccc15cb4da02e3931dd492b4f0e2eef71",
+            "blob": "e82e48a3fe51cf1b33e2db3907db00759c429781",
             "content": "sha256:4d1b7b70a80121d98b6db5c9eb1c04c54a91c50bf88679ebebc5c255dbabaf5e",
             "locator": {
-              "end": 495,
+              "end": 437,
               "kind": "line_range",
-              "start": 495
+              "start": 437
             },
             "path": "mcp/src/agents_remember/application/knowledge_review.py"
           },
@@ -221,7 +257,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a052c7649e04f9df319c1eb28521f65e5a314970",
+            "blob": "852cea86d073e1cbf816739d07ffecc61c93b1c3",
             "content": "sha256:bc97735803710b56eeaf9d4adf3fff7de8d9bfe361866eb3a4505bc8721d0eba",
             "locator": {
               "kind": "symbol",
@@ -233,26 +269,15 @@
       ]
     },
     "4": {
-      "note": "The whole rule in one pure function: heads are members no other member names as predecessor; both-endpoints-in-population filter; sorted order as rendering determinism only.",
+      "note": "The whole rule in one pure function: every retained revision is a head; sorted order as rendering determinism only.",
       "targets": [
         {
           "anchor": {
-            "blob": "a052c7649e04f9df319c1eb28521f65e5a314970",
-            "content": "sha256:79bf54e417095b381827f162b7099f502b6d05eb46a0584a47578881ef423860",
+            "blob": "852cea86d073e1cbf816739d07ffecc61c93b1c3",
+            "content": "sha256:cd200333cedd787528382ee9b8eae7d82d634115d54b5d4dff4cc91a0fccd39b",
             "locator": {
               "kind": "symbol",
               "name": "revision_heads"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "a052c7649e04f9df319c1eb28521f65e5a314970",
-            "content": "sha256:924f3b29ab2993b1cf5b1b718abbb35cce891627164cc20d972a98a981860baa",
-            "locator": {
-              "kind": "symbol",
-              "name": "_touching"
             }
           },
           "kind": "code"
@@ -260,15 +285,26 @@
       ]
     },
     "5": {
-      "note": "The read-only edge read: one snapshot opened read-only, both predecessor tables, closed before returning.",
+      "note": "No edge read: no snapshot is opened for edges and no predecessor table is consulted; populations come from the comparison's own union items.",
       "targets": [
         {
           "anchor": {
-            "blob": "a052c7649e04f9df319c1eb28521f65e5a314970",
-            "content": "sha256:bb502ccad90f4f8b56377c27acfdd6c84a5c8c438a9d7e01fbbea77d3aff4222",
+            "blob": "852cea86d073e1cbf816739d07ffecc61c93b1c3",
+            "content": "sha256:47863079c3fdff9d8b7d323c0f403ee5b7b45222ff702700d84132610eca6906",
             "locator": {
               "kind": "symbol",
-              "name": "read_snapshot_edges"
+              "name": "select_subject_revisions"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "852cea86d073e1cbf816739d07ffecc61c93b1c3",
+            "content": "sha256:8cf7bbe832ed3665732737edcd4e3d12ffeb57478617f02873a00105c9f7b1b7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_side_population"
             }
           },
           "kind": "code"
@@ -302,7 +338,7 @@
         },
         {
           "anchor": {
-            "blob": "a052c7649e04f9df319c1eb28521f65e5a314970",
+            "blob": "852cea86d073e1cbf816739d07ffecc61c93b1c3",
             "content": "sha256:8cf7bbe832ed3665732737edcd4e3d12ffeb57478617f02873a00105c9f7b1b7",
             "locator": {
               "kind": "symbol",
@@ -313,7 +349,7 @@
         },
         {
           "anchor": {
-            "blob": "a052c7649e04f9df319c1eb28521f65e5a314970",
+            "blob": "852cea86d073e1cbf816739d07ffecc61c93b1c3",
             "content": "sha256:706dc5e60313c850ab1c86a86df7865c4b9e8faed0dde7b9c62fad2616d2ca17",
             "locator": {
               "kind": "symbol",
@@ -325,37 +361,15 @@
       ]
     },
     "7": {
-      "note": "The three-way routing: invalid graph first, one-sided for a known-empty side, combine for two nonempty sides.",
+      "note": "Established populations route one-sided for a known-empty side and combine for two nonempty sides; no invalid-graph branch remains.",
       "targets": [
         {
           "anchor": {
-            "blob": "a052c7649e04f9df319c1eb28521f65e5a314970",
-            "content": "sha256:915e4a9f1fd865ec38d5d1bcce5054a9d5f10231ecc8b262c94a4aa97db71275",
+            "blob": "852cea86d073e1cbf816739d07ffecc61c93b1c3",
+            "content": "sha256:17d9ccf54775408e7dbe7a81bcf9f95dbf92e735804e6eab8cd9eb647a4acb27",
             "locator": {
               "kind": "symbol",
               "name": "_decide"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "a052c7649e04f9df319c1eb28521f65e5a314970",
-            "content": "sha256:13c131ba29cf2492e4e8df8a3780d642035dc89aed0ee20500de24dd6ebac6d2",
-            "locator": {
-              "kind": "symbol",
-              "name": "_invalid_graph_detail"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "a052c7649e04f9df319c1eb28521f65e5a314970",
-            "content": "sha256:bc52f11df126197eabe37c3a42f881e6ee8b9af4286d29aa497b37ab973c4df4",
-            "locator": {
-              "kind": "symbol",
-              "name": "_unretained_endpoint"
             }
           },
           "kind": "code"
@@ -378,7 +392,7 @@
         },
         {
           "anchor": {
-            "blob": "a052c7649e04f9df319c1eb28521f65e5a314970",
+            "blob": "852cea86d073e1cbf816739d07ffecc61c93b1c3",
             "content": "sha256:c29010611cc7b5329d1f8983856b5c997f576d84ad82db5b2d664033002e0d63",
             "locator": {
               "kind": "symbol",
@@ -389,7 +403,7 @@
         },
         {
           "anchor": {
-            "blob": "a052c7649e04f9df319c1eb28521f65e5a314970",
+            "blob": "852cea86d073e1cbf816739d07ffecc61c93b1c3",
             "content": "sha256:f897965200b35a363c70ff63c527ead603b57c2495862ddf23b8bb0b486a99f0",
             "locator": {
               "kind": "symbol",
@@ -400,7 +414,7 @@
         },
         {
           "anchor": {
-            "blob": "a052c7649e04f9df319c1eb28521f65e5a314970",
+            "blob": "852cea86d073e1cbf816739d07ffecc61c93b1c3",
             "content": "sha256:a5ce7ef0b25be87e209e5ec4cdf80c87d35145e593e55f5e358e82384215949c",
             "locator": {
               "kind": "symbol",

@@ -121,7 +121,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9f0492ab5aba8203333707f64fbc4914d432963f",
+            "blob": "277ebccbb726f435786d7fd734c4159f846cfa93",
             "content": "sha256:ad679459dab5c2a84e88aa007ca1ff7991d2f7b4e12468d39d6e6dd8d70cf7da",
             "locator": {
               "kind": "symbol",
@@ -132,7 +132,7 @@
         },
         {
           "anchor": {
-            "blob": "9f0492ab5aba8203333707f64fbc4914d432963f",
+            "blob": "277ebccbb726f435786d7fd734c4159f846cfa93",
             "content": "sha256:e0aaeab559961677d040e05cfb3e9c9618f232238087944f80a0f7bb869cf72d",
             "locator": {
               "kind": "symbol",
@@ -143,7 +143,7 @@
         },
         {
           "anchor": {
-            "blob": "9f0492ab5aba8203333707f64fbc4914d432963f",
+            "blob": "277ebccbb726f435786d7fd734c4159f846cfa93",
             "content": "sha256:7633f099fdba63fb16e8f14ec87229e741b1f8582cd227650747290af3931796",
             "locator": {
               "kind": "symbol",
@@ -165,7 +165,7 @@
         },
         {
           "anchor": {
-            "blob": "9f0492ab5aba8203333707f64fbc4914d432963f",
+            "blob": "277ebccbb726f435786d7fd734c4159f846cfa93",
             "content": "sha256:aa31a30134ac48b4e2fa021ba12348952bc175109748677b0055eda78b00c6b9",
             "locator": {
               "kind": "symbol",
@@ -176,7 +176,7 @@
         },
         {
           "anchor": {
-            "blob": "9f0492ab5aba8203333707f64fbc4914d432963f",
+            "blob": "277ebccbb726f435786d7fd734c4159f846cfa93",
             "content": "sha256:234438e92bcdfd40b01a8e0668ddc7fb72f2107a495439a2b632080f58dfb96e",
             "locator": {
               "kind": "symbol",
@@ -187,7 +187,7 @@
         },
         {
           "anchor": {
-            "blob": "9f0492ab5aba8203333707f64fbc4914d432963f",
+            "blob": "277ebccbb726f435786d7fd734c4159f846cfa93",
             "content": "sha256:4199685d04e067a3f2cdb58ae0fdc6ed3fe8b96153affd7023008949c814ef55",
             "locator": {
               "kind": "symbol",
@@ -203,7 +203,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9f0492ab5aba8203333707f64fbc4914d432963f",
+            "blob": "277ebccbb726f435786d7fd734c4159f846cfa93",
             "content": "sha256:33c93a5f2d5c04b33720a374772dbcb76749a98b08faa21fb593d3e9a52633ef",
             "locator": {
               "kind": "symbol",
@@ -214,7 +214,7 @@
         },
         {
           "anchor": {
-            "blob": "9f0492ab5aba8203333707f64fbc4914d432963f",
+            "blob": "277ebccbb726f435786d7fd734c4159f846cfa93",
             "content": "sha256:bb31bddcdb417f5b7f273c9d787f3c7cb07c6bd620eb71056f23936bd86be795",
             "locator": {
               "kind": "symbol",
@@ -225,7 +225,7 @@
         },
         {
           "anchor": {
-            "blob": "9f0492ab5aba8203333707f64fbc4914d432963f",
+            "blob": "277ebccbb726f435786d7fd734c4159f846cfa93",
             "content": "sha256:c0542bfa5669f90a05e0b39daf9b58df15d129ceec4518252f17e00c214e0276",
             "locator": {
               "kind": "symbol",
@@ -236,7 +236,7 @@
         },
         {
           "anchor": {
-            "blob": "9f0492ab5aba8203333707f64fbc4914d432963f",
+            "blob": "277ebccbb726f435786d7fd734c4159f846cfa93",
             "content": "sha256:37933c004aabd5d44817aeea27c512aa73d337c6d11ac21bf6529765175cdafc",
             "locator": {
               "kind": "symbol",
@@ -247,7 +247,7 @@
         },
         {
           "anchor": {
-            "blob": "9f0492ab5aba8203333707f64fbc4914d432963f",
+            "blob": "277ebccbb726f435786d7fd734c4159f846cfa93",
             "content": "sha256:7cc90345a1a65f79aa7a0772d4517ca23f9725f62f2cd6dfbb20fa6b2e3b464b",
             "locator": {
               "kind": "symbol",
@@ -372,12 +372,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f0a8a39bba7649aa8f49814e8f35a32dcecbd6a9",
+            "blob": "008585e26ec337eafd1554ed18033421299bdc72",
             "content": "sha256:1ee3acb2ab43db1554c9afb0bf7495e701a128cd330d8b564d140f73eba5b034",
             "locator": {
-              "end": 2075,
+              "end": 2115,
               "kind": "line_range",
-              "start": 2072
+              "start": 2112
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },

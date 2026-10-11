@@ -89,11 +89,11 @@ all produced by the modules that own them.
 
 **The pane cases assert the rendering against the comparison's own values — and since leaf
 `260921-ICR-L7` the knowledge-pane case asserts the recorded selection, not the old both-sides
-statements.** The fixture's retry identity is branchy on both snapshots (the baseline retains two
-successor heads of the base revision, the candidate three), so `ICR-R07@v1` reports an explicit
-ambiguous selection: the case asserts the selection names every head and every retained revision
-with no pair, both statements are `unresolved` carrying the ambiguity statement as their detail,
-conditions are empty, and the field changes are exactly the comparison's own. The two source-pane cases read the
+statements.** One text record holds one revision (rule 3), so the retry identity holds one head
+per snapshot — the baseline's subject revision and the candidate's revised one — and `ICR-R07@v1`
+reports an explicit compared selection: the case asserts both statements render the compared
+heads' own words, the recorded selection names the compared pair, and the pane's field changes are
+exactly the comparison's own. The two source-pane cases read the
 unchanged sibling, the removed claim's before-side, the unmapped path counted through the expansion and
 the records outside the selection. One case is dedicated to a missing role staying unclassified and
 never being guessed from a name, which is the `ReviewSourceLocation.role` boundary asserted at the

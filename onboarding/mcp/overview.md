@@ -679,7 +679,7 @@ and the archive hook that deletes a task's review artifacts.
   - `serving/review_trees.py` (new), `_app_common.py`, `app.py` and `cli/dashboard.py`: `GET /api/review/trees`.
   - `worktrees/services.py` (`ReviewArtifactCleanupPort`) and `worktrees/modules/finalize.py`
     (`_with_review_artifact_cleanup` → `taskArchive.reviewArtifacts`).
-  - L23's `memory/knowledge_index/projection.py`, `schema.py` (`INDEX_FORMAT` v2) and `query.py` (`record_ids`):
+  - L23's `memory/knowledge_index/projection.py`, `schema.py` (`INDEX_FORMAT` v2, now v3 under MIK-R74 with (path, id) history-row keys) and `query.py` (`record_ids`):
     the revision rows carry the store's own seal.
   - Dashboard: `dashboard/src/data/reviewTrees.ts` (adapter and hook), its test and real captured body, and
     `panels/review/ReviewSurface.gitTrees.test.tsx` with three real captured bodies and their receipt.
@@ -1462,7 +1462,7 @@ loader. At this altitude the package-wide facts are three:
 
 **The record half of a review now has an owner of its own.** `application/review_evidence_records.py`
 resolves, for one resolved candidate, every answerable owner-produced collection — the curator authority's
-published assessments and the review matrix's authored effects — plus the dependency-currentness
+published assessments (the review matrix's authored effects left with the retired envelope tables under MIK-R74 rule 1, reported unavailable with the removal as the reason) — plus the dependency-currentness
 measurement this resolution produces (`comparison_currentness_measurement` against the bound comparison).
 The detection owner's signals, the evidence owner's verification observations and evidence claims belong
 to the retired canonical store: their channels remain visible as unavailable with no measured count. The resolver used to be a private function at the bottom
@@ -3605,8 +3605,7 @@ packet owns lives there, because no new application behaviour and no new refusal
 
 `260921-ICR-L10` (`ICR-R10@v1`) carries the two bounded review collections' **existing**
 snapshot-bound cursors through composition, transport and a reachable control, without minting a second
-pagination authority. The knowledge comparison's own knowledge-diff cursor and the review matrix's own
-view continuation are the only cursors; a new `application/review_pagination.py` owns how a page of
+pagination authority. The knowledge comparison's own knowledge-diff cursor is the only cursor (the review matrix's view continuation left with the matrix under MIK-R74 rule 1); a new `application/review_pagination.py` owns how a page of
 either is stated and how a moved generation is mapped onto the surface's explicit new-generation action;
 the review models publish `ReviewCollectionPage` (with the constructor check that refuses a remainder
 without a cursor) and a separate `page_refusal`; the serving route admits the page size in its own

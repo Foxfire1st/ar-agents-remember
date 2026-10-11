@@ -6,7 +6,7 @@
 
 ## Purpose
 
-The five query views of `KS-R20@v1`, declared so that the design's rule is "structural" rather than
+The three query views, declared so that the design's rule is "structural" rather than
 documented: the module's docstring quotes `Doc13:233` — the product's views are "deterministic selections and
 renderings of stored knowledge, observed changes, and existing assessments -- not new model-authored answers"
 — and draws its two consequences here. The first is that a view returns "recorded facts and their provenance
@@ -15,8 +15,8 @@ classes, and nothing it computed", every ordered or qualified value carrying a
 view "reads through a port and never through a database", `KnowledgeViewReader` being the only way this
 vocabulary obtains a row. **What it deliberately does not have**, in the docstring's own words: "There is no
 field anywhere below for a score, a rank, a weight, a severity, a percentage, a summary or a conclusion -- so a
-view cannot acquire one by accident"; no sixth view or synonym, because "The five names are the contract" and
-"the name a caller passes is one of these five"; and no connection, path or candidate tree, so that "A view
+view cannot acquire one by accident"; no fourth view or synonym, because "The three names are the contract" and
+"the name a caller passes is one of these three"; and no connection, path or candidate tree, so that "A view
 module that opened a connection, or that read the candidate tree to reconstruct what a record says, would not
 typecheck against this interface at all". It also does not present a bounded response as a complete one: the
 completeness field is spelled `complete_within_declared_scope` "so that no reader can take it for a statement
@@ -27,18 +27,16 @@ fail `ViewPayload`'s own validator".
 
 ### Logic
 
-**The five names are a closed literal in the design's order, and each payload pins the one it is.**
-`ViewName = Literal["source_context", "invariant", "family", "review_matrix", "curation_queue"]` with
-`VIEW_NAMES = get_args(ViewName)` is `Doc13:235-239`'s list "spelled the same and in the same order";
-the constant is now declared as `tuple[ViewName, ...]` rather than `tuple[str, ...]`, so a consumer that
+**The three names are a closed literal in the design's order, and each payload pins the one it is.**
+`ViewName = Literal["source_context", "invariant", "family"]` with
+`VIEW_NAMES = get_args(ViewName)`; the constant is declared as `tuple[ViewName, ...]`, so a consumer that
 iterates it is iterating **admitted view names** and does not have to re-narrow what `get_args` erased —
-the runtime value is the same five strings, and a caller holding a plain `str` must still satisfy
+the runtime value is the same three strings, and a caller holding a plain `str` must still satisfy
 `ViewRequest`'s own check. `VIEW_PURPOSES: Mapping[str, str]` supplies one published phrase per view for the interface `KS-R22@v1` mounts
 and, as its comment says, describes "what the view selects; they are not a second content list and they carry no
-ordering claim". Each of `SourceContextView`, `InvariantView`, `FamilyView`, `ReviewMatrixView` and
-`CurationQueueView` narrows `view` to a single-member `Literal` and adds one `rows` tuple of its own row type,
-`ViewPayloadUnion` discriminates the union on `view`, and `VIEW_PAYLOADS` lists the five classes in the same
-declared order.
+ordering claim". Each of `SourceContextView`, `InvariantView` and `FamilyView` narrows `view` to a single-member `Literal` and adds one `rows` tuple of its own row type,
+`ViewPayloadUnion` discriminates the union on `view`, and `VIEW_PAYLOADS` lists the three classes in the same
+declared order. `review_matrix` and `curation_queue` left with the envelope tables they read (MIK-R74 rule 1).
 
 **Every required quantity is present on every view, and an absent measurement is stated rather than zero.**
 `CountState = Literal["counted", "not_applicable"]` with the `COUNTED` and `NOT_APPLICABLE` members,
@@ -82,24 +80,9 @@ assessment is absent says so here, and the absence is never filled with a favour
 `InvariantRow.fact_kind` is a nine-member `Literal` and its `conditions_omitted` flag exists because a compact
 view "may shorten prose it is licensed to shorten, but it may not drop the conditions under which the invariant
 applies". `FamilyRow.change_locus` is `Literal["member_record", "attributed_source", "both", "neither"]`,
-requirement 1.2's distinction made into a field. `ReviewMatrixRow` holds references rather than "re-rendered
-content for the records other leaves own", with `assessment_status` reading `assessed`, `missing` or `stale` and
-`source_change_state` reading `changed`, `unchanged` or `not_selected` because source is selected "by the
-*registered links*, not by a path comparison"; it deliberately does not restate a requirement revision or an
-effect claim, since that "would become a second renderer of it". The same separation governs the curation
-queue, where machine work and curator judgment are two models and never one row's merged content:
-`MachineWorkItem` carries a work item id, a condition code, the condition vocabulary version, matched facts and
-a registered scope status — and "deliberately no field for a disposition, a rationale or an author", which is
-requirement 1.6 as a shape obligation. `CuratorDisposition` symmetrically carries its own id, disposition, rationale, author
-reference, origin state and provenance, "and no field here for a condition code, a matched fact or a detection
-identity". `CurationQueueRow` composes them as an `item` plus an optional `disposition`, so a row carries at
-most one separately attributed disposition, and `NoConsequenceStatement` adds
-`_require_the_claim_only_when_authored`, which refuses a `claim_ref` exactly when the statement is not an
-authored one ("a mechanical determination writes no authored record to name"). `require_distinct_row_subjects`
-completes the row contract: it refuses a row set in which one `(record_kind, record_id, revision_id)` appears
-twice, under code `ambiguous_row_identity`, "rather than choosing which row is authoritative".
+requirement 1.2's distinction made into a field.
 
-**A realization row reports the place its claim was recorded at, and what it reports is the recorded value rather than a derived one.** `InvariantRow` and `FamilyRow` now declare the same three optional fields — `role: RealizationRole | None`, `path: str | None` bounded by `REFERENCE_MAX_LENGTH`, and `locator: SourceLocator | None` — so a view that answers "where is this realized" carries a place and not only prose. The row used to carry the claim id, the invariant revision id and the authored rationale, which told a caller that a realization existed and nothing about where; the location was already recorded against the claim, so the projection was dropping an answer it had been handed rather than failing to find one. Nothing is derived: the fields travel exactly as the store recorded them, through the same locator decoder `SourceContextRow.locator` already used, so two views cannot disagree about one claim's place and no view reads a filename out of a statement. Both models are one shape behind more than one row kind, so the fields appear on every row of their view as explicit `null`s — the convention this module already had for `SourceContextRow.anchor_state`, because `knowledge_read_payload` serializes with `model_dump(mode="json")` and no `exclude_none`. **`ReviewMatrixRow` and `CurationQueueRow` deliberately do not gain them**: no candidate feeding either view sets a `path` or a `locator`, so there is no recorded location for them to drop and an added field would be a field nothing can populate.
+**A realization row reports the place its claim was recorded at, and what it reports is the recorded value rather than a derived one.** `InvariantRow` and `FamilyRow` now declare the same three optional fields — `role: RealizationRole | None`, `path: str | None` bounded by `REFERENCE_MAX_LENGTH`, and `locator: SourceLocator | None` — so a view that answers "where is this realized" carries a place and not only prose. The row used to carry the claim id, the invariant revision id and the authored rationale, which told a caller that a realization existed and nothing about where; the location was already recorded against the claim, so the projection was dropping an answer it had been handed rather than failing to find one. Nothing is derived: the fields travel exactly as the store recorded them, through the same locator decoder `SourceContextRow.locator` already used, so two views cannot disagree about one claim's place and no view reads a filename out of a statement. Both models are one shape behind more than one row kind, so the fields appear on every row of their view as explicit `null`s — the convention this module already had for `SourceContextRow.anchor_state`, because `knowledge_read_payload` serializes with `model_dump(mode="json")` and no `exclude_none`.
 
 **The payload's validator is the structural form of honest bounding.** `ViewPayload` carries the view name, the
 `KnowledgeReadSnapshot`, the counts, the completeness statement, an optional continuation, a `limitations` tuple
@@ -112,7 +95,7 @@ digest to be the payload's snapshot, and refuses any `ordering_rule_ids` entry t
 `MAX_VIEW_ROWS = 64` is the declared page size — it "bounds one response; it never narrows a selection" — and
 `ViewRequest.limit` both defaults to it and is bounded by it with `ge=1, le=MAX_VIEW_ROWS`.
 
-**The reader port is a protocol of five methods, and the result carries exactly one outcome.** `ViewSourceRow`
+**The reader port is a protocol of seven methods, and the result carries exactly one outcome.** `ViewSourceRow`
 is the recorded row as the port hands it over, its `payload` being the record revision's recorded payload
 decoded from the store's `TEXT_JSON` column, and its docstring states that a view "reads these values; it does
 not recompose them, and it never derives a field from a symbol name, a path prefix, a directory depth or a file
@@ -158,21 +141,19 @@ Declarations that must agree are one declaration. `VIEW_NAMES` is `get_args(View
 runtime effect); `COUNT_QUANTITIES` is
 the list `ViewCounts` declares field for field; `ORDERING_PROVENANCE_RULE` is the one place the declared
 tiebreak pair is spelled and `ordering_position` reads it; `MAX_VIEW_ROWS` is simultaneously the declared page
-size and `ViewRequest.limit`'s default and upper bound; and `VIEW_PAYLOADS` lists the same five classes
+size and `ViewRequest.limit`'s default and upper bound; and `VIEW_PAYLOADS` lists the same three classes
 `ViewPayloadUnion` discriminates, with every payload subclass adding only its own narrowed `view` literal and its
 `rows` tuple. Vocabularies belonging to other modules are imported rather than re-declared: `OrderingInput`,
 `ORDERING_INPUTS`, `Provenance`, `AUTHORED_CLASS`, `MECHANICAL_RULES` and `mechanical_rule` from
 `models/knowledge/classification.py`, `RealizationRole` from `models/knowledge/graph.py`, and
 `AnchorResolutionState` together with `KnowledgeReadSnapshot` from `models/knowledge/read.py`. `__all__` names the
-forty-five public names this module adds — eight constants, five payload classes, twenty-seven other classes and
-type aliases, and five module functions — and it does not name the private helpers `_counted` and
-`_not_applicable`.
+forty-one public names this module adds, and it does not name private helpers.
 
 ### Invariants And Boundaries
 
-- **Five views and no sixth.** `ViewName` is a five-member `Literal`, `VIEW_NAMES` is `get_args` of it — and
-  is *typed* as the five names (`tuple[ViewName, ...]`), so a reader or a type checker sees the admitted
-  vocabulary rather than five arbitrary strings, while the request's own field check is still what refuses a
+- **Three views and no fourth.** `ViewName` is a three-member `Literal`, `VIEW_NAMES` is `get_args` of it — and
+  is *typed* as the three names (`tuple[ViewName, ...]`), so a reader or a type checker sees the admitted
+  vocabulary rather than three arbitrary strings, while the request's own field check is still what refuses a
   caller-assembled name — each
   payload narrows `view` to its own single member, and `ViewPayloadUnion` discriminates on that field, so a
   caller-assembled view name cannot be spelled into existence.
@@ -187,19 +168,16 @@ type aliases, and five module functions — and it does not name the private hel
   and `require_admitted_ordering_input` returns a typed refusal for anything outside `ORDERING_INPUTS` with the
   admitted set as its `expected`; `ViewRequest.ordering_input` defaults to `stable_ordering` rather than replacing
   a fifth input a caller names.
-- **A view reads through the port and holds nothing else.** `KnowledgeViewReader` declares five methods
-  (`snapshot`, `registered_counts`, `rows`, `family_member_rows`, `anchor_state`) and no path, connection or
+- **A view reads through the port and holds nothing else.** `KnowledgeViewReader` declares seven methods
+  (`snapshot`, `registered_counts`, `invariant_rows`, `family_rows`, `realization_rows`, `family_member_rows`, `anchor_state`) and no path, connection or
   candidate tree, and every row a payload carries is built from `ViewSourceRow` values or `SubjectRef`
   references.
-- **A recorded entity that its generic read cannot reach gets its own port method.** `family_member_rows()`
-  exists because membership lives in its own generation-1 table and is not copied into the envelope
+- **A recorded membership that a generic kind read cannot reach gets its own port method.** `family_member_rows()`
+  exists because membership lives in its own table and is not copied into the envelope
   `rows(record_kind)` reads; the alternative — asking the envelope for the kind by name — answers "no rows" on
   a dataset that holds membership, which is an empty answer indistinguishable from a real absence at the call
   site. The port method is the typed spelling of the question, so a reader that cannot answer it fails to
   satisfy the protocol rather than returning empty.
-- **Machine work and curator judgment stay in separate models.** `MachineWorkItem` declares no disposition,
-  rationale or author field and `CuratorDisposition` declares no condition code, matched fact or detection
-  identity, so a `CurationQueueRow` cannot present a detector's row wearing a curator's name or the reverse.
 - **An unclassifiable value is reported, not classified.** `UnresolvedLimitation` carries `code`, `detail` and
   an optional `subject` and no class, severity or ranking, and `Provenance` in
   `models/knowledge/classification.py` has no constructor for an empty class, so the value is not emitted with
@@ -209,8 +187,7 @@ type aliases, and five module functions — and it does not name the private hel
   realization claim, and both views decode the one stored locator through the same adapter
   `SourceContextRow` uses, so two views cannot disagree about one claim's place and no view reads a path out
   of authored prose. The fields are optional because a row kind that has no location must be able to say so:
-  every `statement` row of the invariant view carries `None` in all three. `ReviewMatrixRow` and
-  `CurationQueueRow` declare none, because no candidate feeding either view sets a `path` or a `locator`.
+  every `statement` row of the invariant view carries `None` in all three.
 - **An unreadable read is not an empty row set.** `ViewReaderError` is a `RuntimeError`, `ViewRefusal` is a
   state whose holder "has no rows", and `ViewResult._require_one_outcome` refuses a result that carries both a
   payload and a refusal or neither.

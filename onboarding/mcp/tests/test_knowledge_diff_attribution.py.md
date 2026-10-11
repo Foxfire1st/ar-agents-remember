@@ -94,7 +94,7 @@ No Domain Documentation source is configured for this slice.
 - `test_one_uninspected_snapshot_turns_every_unmapped_change_into_undetermined_attribution` supplies the current fixture or assertion described above. [16]
 - `test_an_unavailable_partition_states_no_total_and_never_a_measured_zero` supplies the current fixture or assertion described above. [17]
 - Fixture construction imports test-only row constructors; it does not call the retired canonical writer. [18]
-- RowStore inserts index-shaped fixture rows without the retired production admission plane. [19]
+- RowStore writes text-tree fixture rows without the retired production admission plane. [19]
 
 ### Docs References
 

@@ -503,24 +503,23 @@ rule, the seam, and the deletion.
 ## 260921-ICR-L7 The Statement Sides Are Rendered From Selected Heads, And The Both-Sides Preference Is Deleted
 
 This route gained **one module and one seam**, and the leaf they belong to (`260921-ICR-L7`, primary
-requirement `ICR-R07@v1`) is about a single rule with a deletion behind it: *the primary statement
-comparison uses an explicit before/after revision selection, and a retained predecessor both snapshots
-happen to hold is never chosen for both sides.* The per-file detail lives in the new sidecars; what
+requirement `ICR-R07@v1`) is about a single rule with a deletion behind it, superseded by MIK-R74
+rule 1 for head selection: *the primary statement comparison uses an explicit before/after revision
+selection, and heads are retained revisions, never authored-successor selections.* The per-file detail lives in the new sidecars; what
 belongs at this route's altitude is the rule, the seam, and the deletion.
 
 - **Head selection now has an owner.** `application/review_revision_comparison.py` owns the one rule
-  the packet states — a head is a retained revision with no recorded successor for that identity in
-  the selected snapshot population, where "recorded successor" means an authored predecessor edge and
-  nothing else. Unique heads compare head-to-head (before `r1` against after `r1 → r2 → r3` defaults
-  to `r1` versus `r3`); a known-empty side stays an `ICR-R06@v1` addition/removal; multiple heads, a
-  successor cycle, or a dangling authored edge yield explicit ambiguous/unresolved selections that
-  still list every head and every retained revision; intermediate revisions stay selectable through
-  the comparison's own per-side selector. No collection order, no both-sides presence, no timestamp
-  and no text similarity participates.
+  the packet states — every retained revision is a head (MIK-R74 rule 1: text records hold no
+  predecessor edge, so no recorded successor relation narrows the population). Unique heads compare
+  head-to-head; a known-empty side stays an `ICR-R06@v1` addition/removal; multiple heads are an
+  explicit ambiguity that still lists every head and every retained revision. Under `ICR-R07@v1` a
+  head was a retained revision with no recorded successor (an authored predecessor edge); that rule
+  is superseded and the edge readers are deleted. No collection order, no both-sides presence, no
+  timestamp and no text similarity participates.
 - **The seam is the same "keep the adapter a delegator" rule this route has applied four times
   before.** `application/knowledge_review.py` (825 → 843 lines) gains one import plus the one call in
-  `compose_review` that computes the selection from the comparison's own union items and the two
-  snapshots' own authored edges, and `_knowledge_pane` renders it through the new `_selected_statements`
+  `compose_review` that computes the selection from the comparison's own union items, and
+  `_knowledge_pane` renders it through the new `_selected_statements`
   — a compared or one-sided selection renders the heads' own recorded sides, an ambiguous or
   unresolved selection renders the explicit non-pair on both sides with empty conditions. The private
   both-sides preference (`_identity_item`, `_selector_record_id`) is **deleted, not forked**, and
@@ -528,17 +527,16 @@ belongs at this route's altitude is the rule, the seam, and the deletion.
   the vocabulary file (`models/knowledge/revision_selection.py`) so that file stays under the soft
   rail, and is carried on the pane as the optional `revision_selection`.
 - **Exactly two existing surface tests were rewritten from the old rule to ambiguity assertions, and
-  the old rule is falsified beside the new one.** The pane case and the knowledge-only case now assert
-  the explicitly ambiguous selection (the fixture's retry identity is branchy on both snapshots) with
-  both sides `unresolved`; the ten new cases prove the two chain defaults with exact ids, selectable
-  history, both forks, the one-sided removal, the cycle, the dangling edge, order-independence, and
-  the pane's own head statements. Family-subject multi-revision choice beyond this packet stays
+  the old rule is falsified beside the new one.** Under MIK-R74 the selection cases were rebuilt for
+  retained heads (single-retained-revision pair, heads-are-retained-population, text-backed
+  snapshots); the ICR-R07 ten-case list (chains, forks, cycle, dangling edge) is superseded.
+  Family-subject multi-revision choice beyond this packet stays
   R08/R09's; browser rendering of the recorded value stays R25's.
 
 - **The new policy owner: the one head rule, what it reads, what it returns, and why it is its own module.** [29]
 - **The adapter's one call: the selection computed once in `compose_review` and rendered by the pane.** [30]
 - **The recorded value the policy returns into, carried on the pane.** [31]
-- **The ten cases that measure the policy, and the two rewritten surface cases beside them.** [32]
+- The retained-selection cases assert the single retained pair, known-empty removal, sorted retained population and the pane's own recorded statements; the former chain/fork policy cases are retired. These are source assertions, not a new execution claim. [32]
 
 ## 260921-ICR-L3 The Review's Content Read Becomes Its Own Owner, And A Path Is Admitted Only By A Measured Change Set
 
@@ -602,11 +600,14 @@ panels route.
 
 **A new owner on this route, and it is the composition's record half.**
 [`application/review_evidence_records.py`](review_evidence_records.py.md) is `ICR-R14@v1`'s production
-owner: for one resolved candidate it reads **all five** owner-produced collections — the curator
+owner: for one resolved candidate it reads the owner-produced collections — the curator
 authority's published assessments, the detection owner's signals, the evidence owner's verification
-observations and evidence claims, and the review matrix's authored effects — plus the one quantity
+observations and evidence claims — through the removed-matrix and retired channels, with the review
+matrix's authored effects unavailable and the removal as its reason — plus the one quantity
 nobody in this composition measures (dependency currentness), and hands them over as the bundle the
-surface renders. It produces no record, re-derives no owner's content and decides nothing.
+surface renders. It produces no record, re-derives no owner's content and decides nothing. Under
+`ICR-R14@v1` it read all five collections including the matrix's authored effects; the matrix left
+with the retired envelope tables under MIK-R74 rule 1.
 
 **What moved, and why this route is the one that changed.** `review_records_for` used to be a private
 resolver at the bottom of [`knowledge_review.py`](knowledge_review.py.md) that read the published
@@ -632,10 +633,10 @@ every non-answer must state what would produce one.
   (`unreadable`) while its siblings are supplied. That needed two new reads from this route's owners —
   `detection.recorded_run_ids` and `evidence_records.claim_ids` — so the guard could reuse each owner's
   own single-record reader instead of growing a second reader of the same tables.
-- **The matrix-owned collections are reported from the matrix's own answer.** The two compositions call
-  `with_selection_channels`: the subject composition passes the rows the view returned and the view's
-  declared `rows_remaining` (through `_rows_remaining`), and the task-context composition — which reads
-  no matrix — reports `not_selected` rather than an absence it never asked about.
+- **The matrix-owned authored-effects collection is reported from the removed-matrix channel as
+  unavailable with the removal as its reason.** The `not_selected` value stays in the channel
+  vocabulary for a collection a composition never read because it selected no operand, but no
+  selection channel constructs it anymore.
 - **Nothing is measured here that R15 owns.** The currentness channel states `not_measured` and names
   `review_assessment_store.assessment_currentness_for_record`, so no unmeasured assessment is promoted
   to `current`.
@@ -644,9 +645,9 @@ every non-answer must state what would produce one.
 or related context (that is `ICR-R26@v1`'s applicability classification, and the bundle supplies the
 records unfiltered), and what dependency currentness is (R15's measurement).
 
-- **The new production owner: the five collections plus the non-measurement, each read through its owner with its availability fact.** [47]
+- The production owner loads curator assessments and measures their dependency currentness. Five collection channel keys remain as vocabulary, but detection signals, verification observations and evidence claims are retired/unavailable and authored effects are unavailable because the matrix was removed; this is not five loaded collections. [47]
 - **The availability vocabulary, and the validator that refuses a count no owner measured.** [49]
-- **The selection channels, added where the matrix's own answer is; and the task-context position that never asked.** [50]
+- The removed matrix's channel is unavailable with its removal reason and no measured count. Task context labels supplied candidate inputs without a selected subject; neither path constructs the removed selection-channel or matrix-remainder machinery. [50]
 - **The adapter that lost the private resolver and re-exports the owner's, and the port the production app reads it through.** [51]
 - **The cases that measure the whole thing through the production port, including the two per-record damage cases.** [52]
 ## 260921-ICR-L4 The Attribution Accounting Gets An Acquisition Owner, And Every Route Reads One Partition
@@ -2155,16 +2156,15 @@ lacks.
 
 - The read-side row counts now resolve the dataset's own generation instead of the build's table list. [192]
 - The diff-side row counts do the same, so coverage describes the dataset it measured. [193]
-- The generation selector both now call, and the declaration a created store makes. [194]
-- **The generation selector both now call — which reads the dataset's own declared version and refuses an unregistered one rather than widening.** [195]
-- **The declaration a created store makes, which is the registry's last entry rather than a second literal — generation 5 since `KS-R18@v1` appended it.** [196]
-- **The generation selector this route's read and diff helpers call, which reads the dataset's own declared version and refuses an unregistered one rather than widening.** [197]
-- **The declaration a created store makes: the registry's last entry, which is generation 5 since `KS-R18@v1`.** [198]
-
-- One pinned derived-index schema replaces the retired registry of openable canonical generations. [199]
+- The retained opened-file selector accepts only this build's one schema, and a created store declares the composed CURRENT_GENERATION; neither is registry dispatch. [194]
+- Another declared user_version is refused rather than migrated or guessed at; the separately retained structural guard checks the composed schema against its recorded fingerprint. [195]
+- A created store declares the one composed CURRENT_GENERATION, not a registry's last entry or generation 5. [196]
+- The retained opened-file selector reads PRAGMA user_version and accepts only the one declared derived-index schema; other versions are refused with conversion guidance. [197]
+- The created-file declaration is the one composed CURRENT_GENERATION; no openable-generation registry is consulted. [198]
+- The composed CURRENT_GENERATION and its fingerprint guard declare one structurally pinned derived-index schema, replacing the retired registry of openable canonical generations. [199]
 
 - **The two members this leaf registered on the shared operation vocabulary.** [201]
-- The generation selector both now call, and the declaration a created store makes. [202]
+- The retained opened-file selector and composed CURRENT_GENERATION carry the one-schema opened/created-file contract, not registry or mixed-generation dispatch. [202]
 
 ## 260915-KS-L11 The Facet Selection Joins As A Sixth Seam
 
@@ -2310,7 +2310,7 @@ disagree fails at construction rather than at a reader. `VIEW_RENDERER_VERSION` 
 view and a projection both record, and `RECORDED_GRAPH` and `TRAVERSAL_POLICY` name two of the four inputs
 `ViewCompleteness` is scoped to, as values rather than as prose.
 
-**`application/knowledge_view_render.py` is where the five views are actually decided, and four properties
+**`application/knowledge_view_render.py` is where the three views are actually decided, and four properties
 are enforced together because a renderer satisfying three of them is a renderer that will lose the
 fourth.** Ordering comes from one of the four admitted inputs and it is named: `order_candidates` is the only
 ordering path, it dispatches through the registry, and it reports per position which input produced it and
@@ -2713,8 +2713,8 @@ name (`candidate_unresolved`, `offending_input="baseline"`) rather than half-res
 baseline endpoint that cannot be bound is a state a caller must act on, not a `None` to read past.
 
 **The endpoints are re-checked at the last possible moment, and that is the adapter's own new
-behaviour.** `compose_review` calls `require_current_candidate_identity` after the comparison and the
-review-matrix read and immediately before it builds the payload; the shipped capture owner is re-run and
+behaviour.** `compose_review` calls `require_current_candidate_identity` after the comparison and
+immediately before it builds the payload; the shipped capture owner is re-run and
 any field that disagrees produces the named refusal carrying **both** complete identities
 (`expected`/`observed`) and the exact side that moved. The recheck is deliberately not part of
 resolution: a capture that was current when it was taken can be stale by the time a payload would be
@@ -2722,7 +2722,7 @@ returned, and a moved input must not be published as the candidate's own compari
 action is to reopen the review so the candidate is captured again — the surface substitutes neither the
 moved `HEAD`, nor another branch, nor a different working tree.
 
-**What did not move.** Selection, the comparison (`diff_knowledge_scope`), L20's review matrix, the five
+**What did not move.** Selection, the comparison (`diff_knowledge_scope`), the five
 published remaining counts, the staleness/submission coupling, the entry list and the receipt-derived
 namespace are all unchanged, and the adapter still selects nothing. The three published path constants
 keep their single spelling and their import path: the sibling module defines them, the adapter re-exports
@@ -2802,8 +2802,8 @@ before anything that can refuse. A request whose `selector` is `None` is then an
 the `task_context` selection state — and, since the sync that brought leaf `260921-ICR-L5`'s landed work
 into this candidate, with a **third** state for a half that is present but cannot be read: that fact is
 *stated* (the pane's reason plus `limitation:knowledge_half_unreadable`) instead of refusing the review
-that never reads a dataset; a request that names a subject keeps the shipped path through the
-new `_open_dataset_pair` and `_review_matrix` steps, including every refusal it already had. The
+that never reads a dataset; a request that names a subject keeps the shipped path through
+`_open_dataset_pair`, including every refusal it already had. The
 inventory's own state is declared at the top level beside the comparison's limits
 (`limitation:source_inventory_unavailable`, `limitation:source_inventory_partial`), so a limit is never
 only inside a pane.
@@ -2836,21 +2836,20 @@ than two implementations that could disagree about which paths changed.
 through review composition. The new module on this route is `review_pagination.py`: the page arithmetic
 and the reset mapping, beside the review adapter rather than inside it. **It mints no cursor and
 re-derives no binding** — the continuation a page publishes is the owner's own opaque token, the
-comparison's `knowledge-diff-cursor/v1` for the knowledge collection and the view's snapshot-bound
-continuation for the records one — and it reads `total`/`returned`/`remaining` off the owners'
-`KnowledgeDiffCounts` and `ViewCounts` rather than subtracting two of them to invent the third.
+comparison's `knowledge-diff-cursor/v1` for the knowledge collection — and it reads
+`total`/`returned`/`remaining` off the owner's `KnowledgeDiffCounts` rather than subtracting two of
+them to invent the third. Under the retired records paging the continuation was the view's
+snapshot-bound token with counts off `ViewCounts` as well; both are gone with the matrix.
 
 The adapter (`knowledge_review.py`) grew the wiring and stays a delegator: a request's cursor is offered
-to the collection it names, the comparison and the matrix are read at that position, and the one page the
+to the collection it names, the comparison is read at that position, and the one page the
 request named is published beside the panes — with the refusal it earned when a requested page could not
-be served. Two refactors came with it and a reader should know they are renames rather than new
-behavior: `_rows_remaining` is now `_matrix_rows_remaining` (it takes the matrix's own selection rather
-than a bare view result), and the task-context branch of the selection channels is now the extracted
-`without_selected_matrix`, one implementation of "this review read no matrix".
+be served.
 
-`review_evidence_records.py` gained `MatrixSelection` — the published page, the owner's own remainder
-and any refusal — so a stated remainder always names the action that reaches it, and a refused read is
-reported `unavailable` rather than as a measured zero. The one distinction the fix rounds turned into
+`review_evidence_records.py` reports a refused read `unavailable` with the removal as its reason
+rather than as a measured zero: the matrix-sourced remainder machinery (`MatrixSelection`,
+`_matrix_rows_remaining`, `without_selected_matrix`) is deleted, and a `page_of=records` request
+earns `records_collection_refusal`. The one distinction the fix rounds turned into
 code: only the owners' binding-mismatch code is a moved generation and earns the new-generation action;
 everything else is `comparison_page_unreadable` with the owner's own remedy, and the two directions are
 told apart by asking the owner's own decoder rather than by reading refusal text.
@@ -3029,7 +3028,7 @@ re-runs a comparison, and nothing here is a review authority beside the shipped 
 
 ## 260921-ICR-L31 The Comparison-Bound Family Review Context
 
-The existing family-context composition discovers direct family identities through the invariant read policy, then resolves each independently on both bound snapshots through the family owner and authored head rule. Primary membership absence cannot erase a known family’s counterpart or pin it to a retained historical predecessor. Explicit family revisions remain exact, memberless competing heads remain ambiguous, and genuinely absent/unreadable scope remains distinct.
+The existing family-context composition discovers direct family identities through the invariant read policy, then resolves each independently on both bound snapshots through the family owner and the retained-head rule. Primary membership absence cannot erase a known family’s counterpart. Explicit family revisions remain exact, memberless competing heads remain ambiguous, and genuinely absent/unreadable scope remains distinct. Under `ICR-R31@v1` heads were authored-head selections; that rule is superseded by MIK-R74 rule 1 — every retained revision is a head.
 
 The roster owner still reads each selected family revision’s own guarantee, exact memberships and bounded content/claims. Continuation advances its existing comparison/subject-bound walk; a complete final page need not carry the whole roster. No extra family is discovered through sibling rosters. Primary invariant operands, evidence and complete source inventory remain independently composed by their existing owners.
 
@@ -4254,3 +4253,9 @@ The native Investigator launch resolver admits Projects, sprint and sprint/maste
 - This source owns the route’s Investigator selection or execution boundary. [414]
 
 - Current imported source owns this scoped route boundary. [415]
+
+## 260928-MIK-L74 The derived index sheds the dataset shape
+
+The public knowledge views are source context, invariant and family; review-matrix and curation-queue views left with the retired envelope tables. Authored effects are unavailable with the removal as the reason. There is no reviewer records collection or records cursor: the surviving knowledge-comparison page uses its own cursor, while family members use their separately bound continuation. Revision selection treats every retained revision as a head, never deriving succession from a predecessor edge. Relationship movement pairs only on recorded relationships; unpaired changes remain retraction and addition. The index declares eight logical tables plus its `ix_*` tables, not an old canonical dataset.
+
+Rule 6 covers tools described as reads, every dashboard GET, `worktree_status`, previews and dry runs. They change no local branch, HEAD, working-tree file, Git index, task document or requirement packet; Git runs with `GIT_OPTIONAL_LOCKS=0`. Reads file no per-call report and may write only (a) cache files under `<coordination root>/runtime/`, (b) a recorded comparison's task report, captured objects and one pin under `refs/ar/review/`, (c) a closeout preview's enclosure worklist, quality reports and judged-tree objects, and (d) when a context-read caller asks for freshness, one configured-upstream `git fetch` inside the Git directory: fetched objects, remote-tracking refs and their reflogs, `FETCH_HEAD`, default-followed tags and Git's own fetch housekeeping. It changes no local branch, HEAD, index or working-tree file; without the argument it fetches nothing. Outside these named permissions it changes no ref or tag. No directory is created except to hold one of those files. Unrecorded tree captures use a scratch object directory, never the repository. Failure to keep the boundary is a named refusal, not a fallback write elsewhere.

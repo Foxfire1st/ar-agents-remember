@@ -517,12 +517,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "923faffc20359156074cf02aed9860c41b8b29dd",
+            "blob": "f84799b8607720d59167369281b8ab441bb956ee",
             "content": "sha256:bfb55936f3767abe2ffe70c120e449eea1f901a74fe802942dccde0fa063dc1a",
             "locator": {
-              "end": 467,
+              "end": 455,
               "kind": "line_range",
-              "start": 467
+              "start": 455
             },
             "path": "dashboard/src/data/review.ts"
           },

@@ -18,8 +18,10 @@ metadata table, so legacy discovery would answer an unread "checked, 0" instead 
 ### Logic
 
 The helper discovers sidecar onboarding, inline onboarding, and entity catalog
-rows through `drift.py`, writes the normal Markdown report under coordination
-temp, and returns counts plus a bounded actionable sample. `not_checked()`
+rows through `drift.py` and returns counts plus a bounded actionable sample. A read files nothing
+at all (rule 6): the Markdown report and the observer snapshot are written only for an explicit
+report-producing caller (`output.write_report`), and readers of the snapshot directory tolerate its
+absence. `not_checked()`
 provides the stable context-packet response when callers do not request drift.
 
 Since 260731-EFA-L4 all three builders return the shared
@@ -37,7 +39,7 @@ the packet crashed on precisely the call meant to explain a missing onboarding
 root. No return value here changed; the shape was named, not altered.
 
 Slice 3b adds `_write_drift_snapshot(code_repository_root, context, rows)`: at the
-end of `run_drift_summary` it persists what the run already computed as a durable
+end of `run_drift_summary`, for a report-producing caller, it persists what the run already computed as a durable
 `ar-drift-snapshot/v1` JSON (counts by classification + `actionableCount` + the
 per-sidecar rows + `checkedAt` + the current branch) under
 `observer.paths.drift_snapshot_dir(coordination_root)`. The observer reducer reads
@@ -54,10 +56,12 @@ Task 32 routes the snapshot filename through
 cleanup now share one filename contract.
 
 `DriftSummaryOutput` makes internal report materialization explicit. Ordinary drift calls retain
-the existing temp Markdown write and bounded actionable sample. The full leaf quality call instead
-supplies the final enclosure checklist path, requests all serialized rows, and suppresses the
-intermediate drift-only Markdown write; the observer snapshot still records the path that the
-unified renderer publishes.
+the bounded actionable sample; registered drift/context read callers pass `write_report=False`.
+Both legacy and converted branches then file neither a Markdown report nor an observer snapshot,
+and omit `reportPath`. Converted measurement still runs through `converted_knowledge_check` and
+returns its measured fields unchanged. An internal caller retaining the default `True` remains a
+producer. The full leaf quality caller names its enclosure checklist and requests serialized rows;
+when it suppresses intermediate filing, that same flag suppresses the observer write as well.
 
 ### Invariants And Boundaries
 
@@ -70,8 +74,8 @@ unified renderer publishes.
   belongs on `models.DriftStatus` — never as a bare string returned only from
   here, because the two wire models validate against that alias and would refuse
   the packet at the boundary.
-- **Status decides which keys ride.** `checked` carries
-  `count`/`actionableCount`/`reportPath`/`actionableSample`; `error` carries
+- **Status and output mode decide which keys ride.** `checked` carries
+  `count`/`actionableCount`/`actionableSample`, and `reportPath` only when filing was requested; `error` carries
   `error`; `notChecked` carries nothing. They are `NotRequired` on the TypedDict,
   so consumers narrow on `status` and read with `.get`.
 - A standalone drift report stays under coordination temp. A full leaf quality call may name the
@@ -105,7 +109,7 @@ unified renderer publishes.
 
 - A converted tree is measured from the converted check alone; legacy discovery never runs there. [10]
 - The converted result names every measured field; zero means empty, never unread. [11]
-- The converted report and the observer snapshot are written from the same measured result. [12]
+- The converted branch gates report, observer snapshot and reportPath together; unfiled reads retain the same measured packet. [12]
 
 - `ACTIONABLE_CLASSIFICATIONS` and, since 260731-EFA-L4, `DriftSummaryPacket`/`DriftStatus` are sourced from the shared models module (`DriftStatus` declared in `models/drift.py`). [3]
 - The context-packet wire model that validates this packet's `status` — the one that used to lack `error`. [4]

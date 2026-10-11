@@ -6,7 +6,7 @@
 
 ## Purpose
 
-Candidate selection and ordering for the five knowledge views. Final row projections live in `knowledge_view_rows.py`; both halves share this module's candidates, ordering and classification.
+Candidate selection and ordering for the three knowledge views. Final row projections live in `knowledge_view_rows.py`; both halves share this module's candidates, ordering and classification. The review-matrix/curation-queue candidate supply is deleted with the views that read the retired envelope tables (MIK-R74 rule 1).
 
 ## Code Commentary
 
@@ -275,10 +275,9 @@ statement rather than cited as a file.
 - The total sort key ending in record identity and the registered rule ids an ordering touched. [9]
 - The position that carries the class of the input, and the no-consequence statement built from either branch with its paging helper. [10]
 - The attachment read that fetches a subject's own decisions, and the rule that only one declared position may order. [11]
-- The per-view selection functions and the five renderers they feed, each returning rows with the limitations, the rule ids and the selection's own size. [12]
+- The per-view selection functions and the three renderers they feed, each returning rows with the limitations, the rule ids and the selection's own size. [12]
 - The two projections that carry a row's recorded location into the response, the candidate builder each copies from rather than re-deriving, and the single decoder both share with the source-context view. [13]
-- The renderer's own ordering-and-paging step with the token-tail offset recovery, and the two views that carry the classification fields and the queue shapes. [14]
-- The queue row that separates a machine work item from an attributed curator disposition, with the disposition vocabulary version it states. [15]
+- The renderer's own ordering-and-paging step with the token-tail offset recovery, and the two views that carry the classification fields. [14]
 - The four admitted ordering inputs and the closed two-member class set the module imports instead of re-declaring, the registry holding one ordering rule per admitted input, and the declared stable tiebreak every position must name. [16]
 - The limitation record a withheld value becomes, the position shape, and the refusal of one subject at two positions. [17]
 - The reader port the module reads through and the store-side reader that answers it, including the per-kind row cache. [18]

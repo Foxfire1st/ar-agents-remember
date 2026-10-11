@@ -120,7 +120,7 @@ No Domain Documentation source is configured for this slice.
 - `test_every_page_declares_the_same_snapshot_and_manifest_and_the_union_equals_the_selection` supplies the current fixture or assertion described above. [21]
 - `test_a_refused_read_leaves_every_table_and_the_logical_digest_unchanged` supplies the current fixture or assertion described above. [22]
 - Fixture construction imports test-only row constructors; it does not call the retired canonical writer. [23]
-- RowStore inserts index-shaped fixture rows without the retired production admission plane. [24]
+- RowStore writes text-tree fixture rows without the retired production admission plane. [24]
 
 ### Docs References
 

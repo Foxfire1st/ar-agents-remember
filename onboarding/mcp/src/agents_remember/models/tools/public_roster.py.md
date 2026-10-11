@@ -6,10 +6,8 @@
 
 ## Purpose
 
-`public_roster.py` holds the single definition of `PUBLIC_TOOLS` — the ordered tuple of the **74** tool
-names the MCP server advertises as its public surface (66 until 260915-KS-L20 appended the five
-`knowledge_*` operations; 63 until 260915-CAPS-L4 added `role_capsule_compile`, `skill_catalog_list`
-and `skill_catalog_read`; 62 until 260831-LOCR-L37 added `worktree_pause`). It is a
+`public_roster.py` holds the single definition of `PUBLIC_TOOLS` — the ordered tuple of the **73** tool
+names the MCP server advertises as its public surface. It is a
 **zero-runtime-import leaf**: it
 imports nothing, defines nothing else, and exists only so a `models` response model can read the
 roster without importing `mcp`.
@@ -46,16 +44,14 @@ PUBLIC_TOOLS = (
     # Role start and role messaging by role agents.
     "role_start",
     "role_message",
-    # The knowledge operation family: read, change, diff, integrity and projection.
+    # Knowledge operations over a memory tree: read, diff and integrity.
     "knowledge_read",
-    "knowledge_change",
     "knowledge_diff",
     "knowledge_integrity_check",
-    "knowledge_project",
 )
 ```
 
-`PUBLIC_TOOLS` spans **L22-L100**; the file is 100 lines. The only other statement is
+`PUBLIC_TOOLS` spans **L22-L99**; the file is 99 lines. The only other statement is
 `from __future__ import annotations` at L20 — no imports, no helpers, no package-level side effects.
 
 ### Conventions
@@ -106,21 +102,54 @@ special-cased, and it matches `layers.toml`'s own doctrine: wire vocabulary is d
 and imported by whoever decides it. The layering checker returned to its exact baseline of 16
 violations with no `models → mcp` edge and no new cycle.
 
+## 260928-MIK-L74 The Roster Tail Holds Three Knowledge Names
+
+`knowledge_change` and `knowledge_project` are gone from the tail: the roster ends `knowledge_read`,
+`knowledge_diff`, `knowledge_integrity_check` under the comment "Knowledge operations over a memory
+tree: read, diff and integrity", and holds **73** names. The KS-L20 five-name append above is the
+history of how the tail arrived; this section is its current state.
+
+
+- PUBLIC_TOOLS is the single ordered 73-name roster; its tail is knowledge_read, knowledge_diff and knowledge_integrity_check. \[13] [13]
+
+
 ## Evidence
 
 ### Repo-Internal References
 
-- The roster's single definition, 74 ordered names, in a module that imports nothing. [1]
+
+- PUBLIC_TOOLS is the single ordered 73-name roster; its tail is knowledge_read, knowledge_diff and knowledge_integrity_check. [1]
+
+
 - The stop's advertised name, placed immediately after its sync sibling in the working half of the tuple. [2]
-- The three capsule/skill-serving advertised names, appended at the tail with the registrar and registry rows that publish them. [3]
-- The five `knowledge_*` names 260915-KS-L20 appended at the tail, with the comment naming the family, published in the same change as their registrar and registry rows. [4]
+
+
+- The capsule/skill-serving names role_capsule_compile, skill_catalog_list and skill_catalog_read appear consecutively in PUBLIC_TOOLS. [3]
+
+
+- The knowledge family at the roster tail contains knowledge_read, knowledge_diff and knowledge_integrity_check; knowledge_change and knowledge_project are no longer advertised. [4]
+
+
 - The adapter re-exports this object through `__all__` instead of declaring its own tuple. [5]
+
+
 - The response model that reads the roster to enforce the worktree surface's next-move vocabulary. [6]
+
+
 - The by-name response-model registry the roster is compared against, and the deliberate non-public names it excludes. [7]
+
+
 - The live registered-order comparison that treats this tuple as the advertised authority. [8]
+
+
 - The executor that pins the worktree surface's enforcement of this roster in both directions. [9]
+
+
 - The registrar that publishes the three capsule/skill names, whose order the tuple must match. [10]
-- The registrar that publishes the five `knowledge_*` names appended to `TOOL_REGISTRARS` in the same change. [11]
+
+
+- register_knowledge_tools registers the three read/diff/integrity tools and does not register the retired knowledge_change or knowledge_project tools. [11]
+
 
 ### Cross-Repo References
 
@@ -128,4 +157,5 @@ No cross-repository implementation dependency governs this repository-local tupl
 
 ### Runtime Source References
 
-- Frozen implementation of PUBLIC_TOOLS supporting the stated file behavior. [12]
+
+- PUBLIC_TOOLS is the single ordered 73-name roster; its tail is knowledge_read, knowledge_diff and knowledge_integrity_check. [12]

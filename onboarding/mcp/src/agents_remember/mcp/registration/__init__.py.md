@@ -26,9 +26,8 @@ Two public names:
 `register_knowledge_tools` from `knowledge.py` remains last. The current role-agent registrar
 `register_role_agent_tools` sits immediately before it, matching the advertised role names before the
 knowledge tail. Historically the knowledge registrar was appended so no existing tool's registration order moved — registration order is part of the advertised contract, and the
-advertised tuple `PUBLIC_TOOLS` therefore gained its five names at its own tail as well
-(`knowledge_read`, `knowledge_change`, `knowledge_diff`, `knowledge_integrity_check`,
-`knowledge_project`; 66 → 72 names). Before PNT, its immediate predecessor was `register_capsule_and_skill_tools` from
+advertised tuple `PUBLIC_TOOLS` therefore gained its knowledge names at its own tail as well
+(`knowledge_read`, `knowledge_diff`, `knowledge_integrity_check`). Before PNT, its immediate predecessor was `register_capsule_and_skill_tools` from
 `capsule_serving.py`, appended in 260915-CAPS-L4; the role-agent registrar now separates them.
 
 `__all__` exports both. The module docstring states the division this package exists to enforce:
@@ -65,7 +64,7 @@ register_role_agent_tools is added to TOOL_REGISTRARS in the existing registrati
 - The `create_server` consumer iterates `TOOL_REGISTRARS`. [1]
 - The advertised tool-name list's one definition, re-exported unchanged by the adapter. [2]
 - The registrar appended last so no existing registration order moved. [3]
-- The five advertised names the appended registrar publishes, at the tail of both surfaces. [4]
+- The three advertised names the appended registrar publishes, at the tail of both surfaces. [4]
 - The capsule registrar historically appended immediately before knowledge, before the role-agent insertion. [5]
 - The three advertised names the capsule/skill registrar publishes, immediately before the knowledge tail. [6]
 - The live registered-order comparison that makes a registrar-without-roster-name a surface violation. [7]

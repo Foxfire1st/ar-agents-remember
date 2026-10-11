@@ -34,7 +34,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "624f38412c884053c110c5b5b9a024d9c6458aaa",
+            "blob": "beb6950c6a52b96e321ecc6a5edd6278cc6591c7",
             "content": "sha256:3bee079b0807815d5d2bfd9840144db2a31d59f93241d877b5b3697d51180f74",
             "locator": {
               "end": 977,
@@ -52,12 +52,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "61493ab06ab1c25137186e0a59838d91236bd92e",
+            "blob": "fa63d5fbf9caebb043ef9070bfdb5baa45e3cd1b",
             "content": "sha256:9be0f34229e5bd75b5a71958a3cc5aeb9616a7c013cfd8ad3637eba43d153246",
             "locator": {
-              "end": 981,
+              "end": 919,
               "kind": "line_range",
-              "start": 962
+              "start": 900
             },
             "path": "mcp/tests/test_knowledge_read_scope.py"
           },
@@ -65,12 +65,12 @@
         },
         {
           "anchor": {
-            "blob": "61493ab06ab1c25137186e0a59838d91236bd92e",
+            "blob": "fa63d5fbf9caebb043ef9070bfdb5baa45e3cd1b",
             "content": "sha256:459997fbd9b6470aa25c1ed76aca90b6bf9501b1289a3879f65b99adbb791af1",
             "locator": {
-              "end": 1000,
+              "end": 938,
               "kind": "line_range",
-              "start": 982
+              "start": 920
             },
             "path": "mcp/tests/test_knowledge_read_scope.py"
           },
@@ -222,12 +222,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "61493ab06ab1c25137186e0a59838d91236bd92e",
+            "blob": "fa63d5fbf9caebb043ef9070bfdb5baa45e3cd1b",
             "content": "sha256:88e836e2f828f2e4894ab0b6a7d0684b6ed834358ff502038b72c0d81c08b7cd",
             "locator": {
-              "end": 1058,
+              "end": 996,
               "kind": "line_range",
-              "start": 1001
+              "start": 939
             },
             "path": "mcp/tests/test_knowledge_read_scope.py"
           },

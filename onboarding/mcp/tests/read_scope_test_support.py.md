@@ -6,14 +6,14 @@
 
 ## Purpose
 
-Constructs an index-shaped dataset and a real Git tree with the topology needed by bounded scope-read tests.
+Constructs a text memory tree and a real Git tree with the topology needed by bounded scope-read tests: the `P -> I1`, `F1 -> {I1, J1}`, `G1 -> {J1, K1}` graph, where the sibling invariant one family shares with a second family the seed never reaches is the whole stopping rule.
 
 ## Code Commentary
 
 
 The fixture retains exact invariant/family/revision identities, source locators, applicability, conditions, exclusions and memberships. Its topology deliberately distinguishes directly containing families, sibling realizations, an advertised unreached family, absent/unparsed/mismatched sources and explicit stopping boundaries. Callers use the returned identities rather than inferring relationships from names.
 
-RowStore, revision, family, membership and realization constructors are imported from knowledge_rows_test_support and insert test-only rows. Their production-shaped names do not make them shipped authoring operations or establish the retired storage admission rules. The Git source and current read owners are real; dataset construction is a test fixture.
+RowStore and the revision, family, membership and realization constructors are imported from knowledge_rows_test_support and build a text tree through the rows builder, never by inserting database rows — every identity is one the projection produced. Their production-shaped names do not make them shipped authoring operations. A text record holds exactly one revision (rule 3): the predecessor/successor revisions the old fixture authored beside one identity are gone. The Git source and current read owners are real; tree construction is a test fixture.
 
 ### Logic
 
@@ -88,7 +88,7 @@ No Domain Documentation source is configured for this slice.
 - `_create_revision` supplies the current fixture or assertion described above. [13]
 - `_create_realization` supplies the current fixture or assertion described above. [14]
 - Fixture construction imports test-only row constructors; it does not call the retired canonical writer. [15]
-- RowStore inserts index-shaped fixture rows without the retired production admission plane. [16]
+- RowStore writes text-tree fixture rows without the retired production admission plane. [16]
 
 ### Docs References
 
@@ -100,7 +100,7 @@ No configured domain documentation could be checked.
 - **The fixture's declared topology and why this graph and not the shared branching one.** [17]
 - The graph constants: the labels, statements, conditions and the four direct family guarantees. [18]
 - The recorded paths, including the two the read is measured against (absent and mismatched). [19]
-- **The partly-authored retry ordering identity the fix round introduced, and the predecessor label that makes the ordering case deterministic.** [20]
+- **The retry ordering identity the fix round introduced; the predecessor/successor revisions the old fixture authored beside one identity are gone (rule 3).** [20]
 - The public builder and the value types a case reads. [21]
 - **The governed-artifact and contract rows that make this module part of the catalog.** [22]
 

@@ -88,8 +88,10 @@ surface.
   status read.
 - Provider status is read-only from the MCP caller perspective; setup history
   belongs in provider setup summary logs.
-- Dashboard refreshes go through the same current-state writer as MCP status, so
-  the persisted provider contract has one owner.
+- Dashboard refreshes persist through the current-state writer; ordinary status reads build the
+  same aggregated state with no file behind them (rule 6 admits only runtime caches,
+  recorded-comparison reports/objects/pin, and closeout-preview worklist/reports/judged trees), so the persisted provider contract has
+  one owner and reads file no per-call report.
 - `noWorkspace` remains a degraded state; status adds restart/rebind guidance
   rather than treating missing workspaces as acceptable readiness.
 - Container liveness alone must never produce global `ok: true`; content-level

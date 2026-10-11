@@ -1,0 +1,53 @@
+{
+  "admission": {
+    "criteria": [
+      "constrains_future_work"
+    ],
+    "justification": "Binds drift and observer reads to file-only operation: a read never grows scope, registry, checklist or snapshot output on its own."
+  },
+  "alternatives": [
+    {
+      "option": "Drift reads the file and returns its summary; Markdown report and observer snapshot exist only behind an explicit output.write_report caller.",
+      "reason": "Read-only content must not re-grow the artifacts it inspects; surprise writes turn every read into a producer.",
+      "status": "chosen"
+    },
+    {
+      "option": "File a temp Markdown report on every drift read.",
+      "reason": "Turns every read into a producer and re-grows the artifacts the read inspects.",
+      "reconsider_when": "An explicit report-producing caller is absent and readers need file-backed reports by default.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Future read paths keep write_report-gating and never attach a default report side effect to a summary value."
+  ],
+  "context": "MIK-R74 rule-6 read hygiene: DriftSummaryOutput(write_report=False); memory_tools and the onboarding drift summary state the same boundary.",
+  "decider": "curator (260928-MIK-L74 memory curation)",
+  "id": "DEC-36E9TQ",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "32de932826f54b5c2618ae3a0d35321f25ebd06a",
+        "content": "sha256:e098ee4e11e5f4953ce1b20cf872b66510016cb8b83cd146ea456923daa77c52",
+        "locator": {
+          "kind": "symbol",
+          "name": "DriftSummaryOutput"
+        },
+        "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "l74-ingest-list.json"
+    },
+    "handoffEntry": "L74-P16",
+    "leaf": "260928-MIK-L74",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

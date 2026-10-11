@@ -350,11 +350,12 @@ forwards `_tool_payload` to `application/tool_response.py::complete_tool_respons
 | `__init__.py`   | Facade re-exporting the full builder surface and `_tool_payload`.          |
 
 Since 2.5.1 this route also owns the response token-budget layer: the verbose
-tools (`runtime_install`, `provider_diagnostics`, `provider_watchers`, and
-since 2.5.2 the carryover plan/apply pair) write their full result to
+tools (`runtime_install`, `provider_watchers`, and
+since 2.5.2 the carryover apply) write their full result to
 `temp/tool-reports/<tool>/` via `mcp/tool_reports.py` (keep-last-5 / 7-day
 write-time prune, secret redaction) and return a compact outcome with an
 inline `reportPath` through the per-domain `compact_*_payload` helpers.
+`provider_diagnostics` answers with the compact diagnosis and no `reportPath`, and the carryover plan likewise files no per-call report. Rule 6 covers tools described as reads, every dashboard GET, `worktree_status`, previews and dry runs: they change no local branch, HEAD, working-tree file, Git index, task document or requirement packet, and Git runs with `GIT_OPTIONAL_LOCKS=0`. The only admitted writes are (a) cache files under `<coordination root>/runtime/`, (b) a recorded comparison's task report, captured objects and one pin under `refs/ar/review/`, (c) a closeout preview's enclosure worklist, quality reports and judged-tree objects, and (d) when a context-read caller asks for freshness, one configured-upstream `git fetch` inside the Git directory: fetched objects, remote-tracking refs and their reflogs, `FETCH_HEAD`, default-followed tags and Git's own fetch housekeeping. It changes no local branch, HEAD, index or working-tree file; without the argument it fetches nothing. Outside these named permissions it changes no ref or tag. A read creates no directory except to hold one of those files. Unrecorded tree captures write objects to scratch, never into the repository. If a read cannot keep the boundary it refuses by name, never falling back to another write location.
 
 ## Invariants And Boundaries
 
