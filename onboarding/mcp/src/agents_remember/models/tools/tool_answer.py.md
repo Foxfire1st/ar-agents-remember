@@ -1,5 +1,28 @@
 # mcp/src/agents_remember/models/tools/tool_answer.py
 
+## Current operative account — MIK-R112
+
+The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
+
+- Current L112 final bounds are runtime_install=600 and dispatch_agent=1500.
+- interim_leaf_for now returns None without an explicit interim row.
+
+### Superseded inventory
+
+- Pre-repair card claim: Card says L112 rows remain interim until landing. This is superseded archival wording, not a current prescription.
+
+### Source and authority bounds
+
+- Source comparison: `mcp/src/agents_remember/models/tools/tool_answer.py:151-178`.
+- Source comparison: `mcp/src/agents_remember/models/tools/tool_answer.py:180-213`.
+
+Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
+
+## Historical original card — preserved, not the current operative account
+
+<details>
+<summary>Retained original source accounts and producer history</summary>
+
 ## Governing Overview
 
 [models overview](../overview.md)
@@ -31,3 +54,5 @@ The answer-shaping choke for every tool answer (MIK-R108 rules 1, 2, 4, 6): it s
 - The twenty-entry cap recurses through retained list items and mappings. [2]
 - The measured short form fits 400 with fixed part, location, cut error and short scalars. [3]
 - Each tool resolves its own bound from the exception table or the default. [4]
+
+</details>

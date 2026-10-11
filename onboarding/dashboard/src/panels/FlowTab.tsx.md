@@ -4,7 +4,28 @@
 
 [panels overview](overview.md)
 
-## Purpose
+
+## Current enclosure-only composition
+
+ToolNode uses n.ridesNote when supplied, otherwise the default string: ⊘ awaiting-developer · ${rides} — rides this call (agent never fires it); the next turn clears it. This is static rendered design prose, not a lifecycle tool invocation.
+
+### Maintenance boundaries
+
+Replace the old auto-fire/next-AR-tool explanation and literal with the exact current default; retain bespoke ridesNote precedence, navigation, segment union and nextStatus rendering. Do not infer a notification runtime implementation from this UI string.
+
+Source/test/fixture inspection is not a fresh mounted capture or a passing test run.
+Historical provider-shaped input data and retained compatibility definitions do not
+restore removed provider visuals or tool exposure.
+
+- ToolNode uses n.ridesNote when supplied, otherwise the default string: ⊘ awaiting-developer · ${rides} — rides this call — source ownership, not executed visual proof. [6]
+
+## Historical superseded account (non-operative)
+
+The prior onboarding below is retained for provenance and unrelated design history.
+It is not current provider-render, fallback, prototype-parity or execution guidance.
+Current behavior and its limits are the operative contract above.
+
+
 
 The **lifecycle-design canvas** (orchestration leaf 260703-L0): FlowTab is no longer the single
 hardcoded build-job diagram it was at task 26. It is now a **pure segment renderer + model nav** — the

@@ -1,5 +1,25 @@
 # test_context_packet.py
 
+## Current operative account — MIK-R112
+
+The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
+
+- The allowed-repo case now expects providers.state=skipped and items=[].
+- It asserts diagnosticsTool is absent, not published.
+- Unknown-repo refusal and behind-branch/ledger mapping cases remain.
+
+### Source and authority bounds
+
+- Source comparison: `mcp/tests/test_context_packet.py:27-62`.
+- Source comparison: `mcp/tests/test_context_packet.py:64-106`.
+
+Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
+
+## Historical original card — preserved, not the current operative account
+
+<details>
+<summary>Retained original source accounts and producer history</summary>
+
 ## Governing Overview
 
 [Test suite overview](overview.md)
@@ -47,3 +67,5 @@ The retained source anchors below support the fixture roles and assertion bounda
 No cross-repository implementation evidence is required for these local test and fixture claims.
 
 Fixture repositories and protocol doubles do not establish a live external integration.
+
+</details>

@@ -1,5 +1,29 @@
 # mcp/src/agents_remember/benchmarks/runner_modules Overview
 
+## Current operative account — MIK-R112
+
+The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
+
+- benchmark_lifecycle_settings no longer takes a workspace or derives provider blocks from it.
+- The shared generator emits enabled=false and an empty provider map.
+
+### Superseded inventory
+
+- Pre-repair card claim: The card still says every benchmark builds indexes and that MCP benchmark application callers exist. This is superseded archival wording, not a current prescription.
+
+### Source and authority bounds
+
+- Source comparison: `mcp/src/agents_remember/benchmarks/runner_modules/mcp_registration.py:239-240,256-300`.
+- Source comparison: `mcp/src/agents_remember/providers/settings.py:33-55`.
+- Source comparison: `git diff HEAD -- mcp/src/agents_remember/application/benchmark_tools.py (deleted file)`.
+
+Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
+
+## Historical original card — preserved, not the current operative account
+
+<details>
+<summary>Retained original source accounts and producer history</summary>
+
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
 | sourceRoute            | `mcp/src/agents_remember/benchmarks/runner_modules` |
@@ -95,3 +119,5 @@ intact.
 ## 260731-EFA-L9 Route Impact — Caller Re-Points
 
 The benchmark runner callers were rewritten by the L9 caller wave: `McpRuntimeConfig` imports now come from `kernel/primitives/runtime_config.py` (the former `mcp/config.py` home) and tool-report/command-capture helpers from `kernel/primitives/`. Runner behavior and benchmark case handling are unchanged.
+
+</details>

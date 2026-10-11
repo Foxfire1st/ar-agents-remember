@@ -6,14 +6,15 @@
     ],
     "justification": "Spans host agents and the AR server: one bound server per created agent plus narrow Claude-only server_info preapproval, with D124's assignment_read removal, bounds the multi-agent surface FAM-N17BB4 launches into."
   },
-  "applicability": "Every host agent created for a role launch.",
+  "applicability": "Role launches under the runtime provider capability branch.",
   "conditions": [
-    "The agent binding names this launch's AR server.",
-    "Preapproval is the Claude-only server_info identity read."
+    "The task-server definition is supplied only when accepts_tool_servers is true.",
+    "Any preapproval is the Claude-only server_info identity read."
   ],
   "exclusions": [
     "The removed assignment_read grant and any alternative task reader.",
-    "Broad tool grants, which no launch carries."
+    "Broad tool grants, which no launch carries.",
+    "An unconditional one-server or host-actual exclusion claim for a provider that declares supportsMcpServers=false."
   ],
   "id": "INV-N9D91D",
   "origin": {
@@ -27,9 +28,9 @@
     "leaf": "260928-MIK-L71",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "Each created host agent receives its own bound AR server; Claude-only preapproval is narrow server_info identity access. D124 removes assignment_read and its former grant instead of keeping an alternative task reader.",
+  "statement": "A created host agent whose provider accepts MCP definitions receives its own bound AR task-server definition; an explicitly unsupported provider receives no definition and no harness-configuration fallback. Claude-only preapproval remains narrow server_info identity access. D124 removes assignment_read and its former grant, not a replacement task reader.",
   "status": "proposed",
   "supersedes": []
 }

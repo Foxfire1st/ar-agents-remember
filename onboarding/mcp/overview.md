@@ -1,5 +1,29 @@
 # mcp/ — MCP Package Overview
 
+## Current operative account — MIK-R112
+
+The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
+
+- Retrieval doctrine now uses onboarding/route indexes and harness-native search, not CGC/GrepAI.
+
+### Superseded inventory
+
+- Pre-repair card claim: Current route context says lifecycle settings are generated from enabled MCP providers. This is superseded archival wording, not a current prescription.
+- Pre-repair card claim: Current route context advertises provider_status and provider tools. This is superseded archival wording, not a current prescription.
+
+### Source and authority bounds
+
+- Source comparison: `mcp/src/agents_remember/providers/settings.py:32 (def lifecycle_settings_from_config)`.
+- Source comparison: `mcp/src/agents_remember/install/provider_watchers.py:128 (def stop_provider_watchers_before_refresh)`.
+- Source comparison: `mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md:12 (## Retrieval Substrates)`.
+
+Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
+
+## Historical original card — preserved, not the current operative account
+
+<details>
+<summary>Retained original source accounts and producer history</summary>
+
 ## Imported native host package boundary
 
 The package now contains strict Paseo configuration, bounded provision/status/stop, native bridge/catalog/frame integration, immutable role-launch intent and identity-bound task tools. Explicit-model and native-default creation use the same declared feature channel while retaining native permission/tool behavior. Converted MIK readers/writers, worklists and review/lifecycle owners remain intact. Transport, source qualification, authored knowledge and paired publication each require their own evidence.
@@ -3803,3 +3827,5 @@ The publication's snapshot/override iteration over topology paths answers no loo
 - The two lane rows. [37]
 - The two lane rows. [233]
 - The waiting bound counts computations, not the requests sharing them. [242]
+
+</details>

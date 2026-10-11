@@ -1,5 +1,16 @@
 # podstage.html
 
+## Current operative account — MIK-R112
+
+The self-contained HTML scenario player remains choreography/prototype history. Its current notice retires provider engine labels and fault/seed/retry/reindex scenes; they are not shipped dashboard states. Preserve its SVG/helpers and original authored scenario parameters as specimens, not mounted renderer equivalence or live provider capability. No page is run and no mounted evidence is claimed.
+
+The original prose, exact parameters, references and dated producer accounts below remain intact as history, not present-tense authority for superseded behavior. Current evidence is the source path `docs/design/engine-room/podstage.html` and the source-specific before/after extents preserved in the residual-hunk account. No code edit, proof rerun or new execution acceptance is claimed.
+
+## Historical original card — preserved, not the current operative account
+
+<details>
+<summary>Original source account and historical evidence</summary>
+
 ## Governing Overview
 
 [engine-room/ design overview](overview.md)
@@ -98,3 +109,5 @@ This is an in-repo design prototype with no cross-repository or external-system 
 cross-repo references found.
 
 _None._
+
+</details>

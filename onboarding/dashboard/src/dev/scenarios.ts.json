@@ -7,12 +7,83 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a487415b9d5df3f817b748f597c7ce8378b252f2",
+            "blob": "5a89964f4b120409c705e8442660ac0594dc7b1b",
             "content": "sha256:cadad09a94cb94b1287b43051b72029281203b9f7ab821d9f86348adcf9c6053",
             "locator": {
               "kind": "symbol",
               "name": "erFrame"
             }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "ScenarioFrame remains a full WorkspaceProjection plus caption/duration; existing fixture identities and timeline order r — source ownership, not executed visual proof.\n\nAnchor: `function erFrame(scenarioName: string, caption: string, durMs?: number): ScenarioFrame {`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a89964f4b120409c705e8442660ac0594dc7b1b",
+            "content": "sha256:086529b4b739db18a4f6fe83169c1973088e37ec8501a464b29c89e6fa633dc9",
+            "locator": {
+              "end": 183,
+              "kind": "line_range",
+              "start": 34
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "ScenarioFrame remains a full WorkspaceProjection plus caption/duration; existing fixture identities and timeline order r — source ownership, not executed visual proof.\n\nAnchor: `{setupLine ? (`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b8f943240da1fdfbe832351f9f1f6646dbaebe0e",
+            "content": "sha256:c0d658b66cc9df003669db192eb18900b22185e916463037258830a7c5ee10d4",
+            "locator": {
+              "end": 82,
+              "kind": "line_range",
+              "start": 74
+            },
+            "path": "dashboard/src/panels/engine-room/DiagnosticsPanel.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "ScenarioFrame remains a full WorkspaceProjection plus caption/duration; existing fixture identities and timeline order r — source ownership, not executed visual proof.\n\nAnchor: `export const EDGE_GEOM: Record<string, readonly [number, number, number, number]> = {`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f23ae83b49025d9b10e7b6bc846ede9a6d48563e",
+            "content": "sha256:08637b0be18477ff7379995dd690b3a5a93b5459302261b5a2809394edeec517",
+            "locator": {
+              "end": 90,
+              "kind": "line_range",
+              "start": 68
+            },
+            "path": "dashboard/src/panels/engine-room/geometry.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "ScenarioFrame remains a full WorkspaceProjection plus caption/duration; existing fixture identities and timeline order r — source ownership, not executed visual proof.\n\nAnchor: `export function resolveBlocks(node: EngineProcessNode) {`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "87821aabab3b972a5513d33de296765a0bab6d47",
+            "content": "sha256:0d6701c6f9f8dea02887d89fcc89e2938a9793f492de6a504b9b08fae8cf2c5c",
+            "locator": {
+              "end": 120,
+              "kind": "line_range",
+              "start": 93
+            },
+            "path": "dashboard/src/panels/engine-room/scene.ts"
           },
           "kind": "code"
         }
@@ -39,7 +110,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a487415b9d5df3f817b748f597c7ce8378b252f2",
+            "blob": "5a89964f4b120409c705e8442660ac0594dc7b1b",
             "content": "sha256:dbd4e595ed8877c525078fde8c58d9cb61b85a3707902aa8424c4dea29ce4f35",
             "locator": {
               "kind": "symbol",
@@ -55,7 +126,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "727a12ef1854578e89447d0ece47aaf2cf78225b",
+            "blob": "c25943bc8dde59686e3cd56112ad7650690f984c",
             "content": "sha256:dc3d533f4116127b5df39faefb769bfbf78c1cc3fbe6d76186cd26b24499c789",
             "locator": {
               "end": 834,

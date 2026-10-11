@@ -1,5 +1,16 @@
 # skills/l-01-agent-lifecycles/templates/turn-report.md
 
+## Current operative account — MIK-R112
+
+The canonical worker report retains exact candidate, immutable requirement-attempt/journal links, measured command/evidence limits, findings and continuation inputs. Retrieval inventory now distinguishes onboarding semantics and route-index relationships, not provider query tools. The source provides direct-handover and pending/refusal/recovery slots carrying exact candidate/evidence references; no courier reply or terminal outcome substitutes for the recorded requirement verdict. Completed turns remain distinct from requirement acceptance, and source wording is not new native evidence.
+
+The original prose, exact parameters, references and dated producer accounts below remain intact as history, not present-tense authority for superseded behavior. Current evidence is the source path `skills/l-01-agent-lifecycles/templates/turn-report.md` and the source-specific before/after extents preserved in the residual-hunk account. No code edit, proof rerun or new execution acceptance is claimed.
+
+## Historical original card — preserved, not the current operative account
+
+<details>
+<summary>Original source account and historical evidence</summary>
+
 ## Governing Overview
 
 [lifecycle overview](../overview.md)
@@ -83,3 +94,5 @@ Attempt publication is phase-sensitive: validate before append, and treat append
 review handoff as one formal boundary. A malformed row that never reached review is preserved by a
 non-attempt correction/void record without consuming the next attempt ID; after handoff, only an
 independent reviewer rejection permits a successor.
+
+</details>

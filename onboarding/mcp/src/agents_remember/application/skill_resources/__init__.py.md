@@ -1,5 +1,28 @@
 # mcp/src/agents_remember/application/skill_resources/__init__.py
 
+## Current operative account — MIK-R112
+
+The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
+
+
+
+### Superseded inventory
+
+- Pre-repair card claim: Card lists role_capsule_compile_tool and skill_catalog_*_tool as package re-exports. This is superseded archival wording, not a current prescription.
+- Pre-repair card claim: Card describes three public MCP tools alongside resources and extension methods. This is superseded archival wording, not a current prescription.
+
+### Source and authority bounds
+
+- Source comparison: `mcp/src/agents_remember/application/skill_resources/__init__.py:43 (from .operation import)`.
+- Source comparison: `mcp/src/agents_remember/mcp/registration/capsule_serving.py:69 (def register_capsule_and_skill_tools)`.
+
+Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
+
+## Historical original card — preserved, not the current operative account
+
+<details>
+<summary>Retained original source accounts and producer history</summary>
+
 ## Governing Overview
 
 [application overview](../overview.md)
@@ -109,3 +132,5 @@ extension specification, SEP-2640) — the URL the leaf's own `notes/source-evid
 
 No cross-repository implementation dependency governs this package. The MCP SDK it registers
 against is a pinned external dependency (`mcp==1.29.1` at this leaf), not a sibling repository.
+
+</details>

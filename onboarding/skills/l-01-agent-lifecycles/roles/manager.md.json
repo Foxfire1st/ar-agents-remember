@@ -108,7 +108,7 @@
         "handoffEntry": "MIK-R93@v1 rules1,2,2a,5,6,7",
         "leaf": "260928-MIK-L93"
       },
-      "rationale": "This self-contained role source states the obligations in every capsule that uses this role.",
+      "rationale": "This role/operation source points to operations/orientation.md for developer questions and relayed answers; it is not a self-contained duplicated full-clause home or native delivered-message witness.",
       "role": "primary-authority"
     },
     {
@@ -151,8 +151,8 @@
     },
     {
       "anchor": {
-        "blob": "46d18773aa6937313486349b75682a4a696c16bb",
-        "content": "sha256:94ce773d444b6cbd72eef80b4cce941d8abadb406acbc4a9303d21445d9119af",
+        "blob": "3ddb3dd453cf996eb2c34dcb5952386da975c162",
+        "content": "sha256:76fda6077990c8e235ec56a7fb66b8695540a806bb9f2ef4cd4a502ed7cab773",
         "locator": {
           "kind": "file"
         }

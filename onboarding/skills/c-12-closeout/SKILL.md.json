@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "bfcc41ae6043eb3d94e95c89af39f7d55715817a",
+        "blob": "4f2a56a9bd6cfab06353e5c8fc4206ad08966dab",
         "content": "sha256:68dcf69c3376477b1a55ced5f4651d4b15be4f0aac1d0a327fda32802bd98072",
         "locator": {
-          "end": 280,
+          "end": 277,
           "kind": "line_range",
-          "start": 275
+          "start": 272
         }
       },
       "id": "RLZ-DMZR23",
@@ -22,12 +22,12 @@
     },
     {
       "anchor": {
-        "blob": "bfcc41ae6043eb3d94e95c89af39f7d55715817a",
+        "blob": "4f2a56a9bd6cfab06353e5c8fc4206ad08966dab",
         "content": "sha256:db688c1dd25915329fea0ff9c80c78a77f5a13eea4e89f0b0f3f3153429ce092",
         "locator": {
-          "end": 259,
+          "end": 256,
           "kind": "line_range",
-          "start": 253
+          "start": 250
         }
       },
       "id": "RLZ-RM75GK",
@@ -41,12 +41,12 @@
     },
     {
       "anchor": {
-        "blob": "bfcc41ae6043eb3d94e95c89af39f7d55715817a",
+        "blob": "4f2a56a9bd6cfab06353e5c8fc4206ad08966dab",
         "content": "sha256:3eddab67ff76eff578ff1c63ab336676f92140c7b0131e055ab68c0aaff94424",
         "locator": {
-          "end": 244,
+          "end": 241,
           "kind": "line_range",
-          "start": 244
+          "start": 241
         }
       },
       "id": "RLZ-S7NJK5",
@@ -60,12 +60,12 @@
     },
     {
       "anchor": {
-        "blob": "bfcc41ae6043eb3d94e95c89af39f7d55715817a",
+        "blob": "4f2a56a9bd6cfab06353e5c8fc4206ad08966dab",
         "content": "sha256:68dcf69c3376477b1a55ced5f4651d4b15be4f0aac1d0a327fda32802bd98072",
         "locator": {
-          "end": 280,
+          "end": 277,
           "kind": "line_range",
-          "start": 275
+          "start": 272
         }
       },
       "id": "RLZ-YZB03G",
@@ -193,6 +193,23 @@
             "content": "sha256:6c39185e43557436960f1ed38b205f1643c5cf628596df4161f827b0cfb2ca13",
             "locator": {
               "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Current preview/handoff/STOP and owner-authority instruction; not runtime acceptance.\n\nAnchor: 135-143",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4f2a56a9bd6cfab06353e5c8fc4206ad08966dab",
+            "content": "sha256:3d2c5914a7ba54fd8d39f36f3963dcf1b95fa154f1d242a81bd0fb177a80663a",
+            "locator": {
+              "end": 143,
+              "kind": "line_range",
+              "start": 135
             }
           },
           "kind": "code"

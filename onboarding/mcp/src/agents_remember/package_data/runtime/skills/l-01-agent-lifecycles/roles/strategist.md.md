@@ -1,5 +1,28 @@
 # l-01-agent-lifecycles/roles/strategist.md
 
+## Current operative account — MIK-R112
+
+The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
+
+- Current role removes that capability.
+
+### Superseded inventory
+
+- Pre-repair card claim: Card says message_parent carries strategist clarification. This is superseded archival wording, not a current prescription.
+- Pre-repair card claim: Card’s absolute never-edits-task-docs account omits the explicit own-draft task_doc.attach_master exception. This is superseded archival wording, not a current prescription.
+
+### Source and authority bounds
+
+- Source comparison: `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/strategist.md:83 (## What you may do)`.
+- Source comparison: `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/strategist.md:97 (one exception)`.
+
+Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
+
+## Historical original card — preserved, not the current operative account
+
+<details>
+<summary>Retained original source accounts and producer history</summary>
+
 ## Governing Overview
 
 [MCP package overview](../../../../../../../overview.md)
@@ -156,3 +179,5 @@ If an explicit graph is later chosen, complete every master attachment first and
 ## CCR-L42 current candidate
 
 A successor strategy review now carries the sealed issue list, fixed/unfixed dispositions, and subset rule; it cannot perform a new portfolio sweep, add a lens or route, or turn an outside-list observation into a finding. Three rounds remain the ordinary maximum and further work requires developer authorization.
+
+</details>

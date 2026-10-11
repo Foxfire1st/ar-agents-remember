@@ -1,5 +1,28 @@
 # l-01-agent-lifecycles/roles/designer.md
 
+## Current operative account — MIK-R112
+
+The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
+
+- Current permitted-actions block removes message_parent.
+
+### Superseded inventory
+
+- Pre-repair card claim: Card tells a designer to use message_parent for clarification/escalation. This is superseded archival wording, not a current prescription.
+- Pre-repair card claim: Card describes inherited/self-contained/operator-knob structure not present in the current Inputs/Process/Outputs source. This is superseded archival wording, not a current prescription.
+
+### Source and authority bounds
+
+- Source comparison: `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/designer.md:76 (## What you may do)`.
+- Source comparison: `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/designer.md:30 (## Process)`.
+
+Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
+
+## Historical original card — preserved, not the current operative account
+
+<details>
+<summary>Retained original source accounts and producer history</summary>
+
 ## Governing Overview
 
 [MCP package overview](../../../../../../../overview.md)
@@ -65,3 +88,5 @@ No meaningful cross-repo references found.
 ## 260712-TRH-L4 Generated-Copy Doctrine
 
 This sidecar describes the generated runtime copy, not canonical ownership. The source is synchronized from the canonical l-01-agent-lifecycles doctrine by the skill-sync process. L4 defines spawned-unbriefed → harness-ready → briefed: spawn is creation only, exact-session readiness proves the target harness is ready, and one durable dispatch-brief advances the seat only with delivered plus harness-log-confirmed proof. Spawned-only or not-ready is not active work; sessionCommands remain launch configuration and promptKeywords apply once after readiness.
+
+</details>

@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "512be564b35aaf6f9d3b9709113b613309efe221",
-        "content": "sha256:b34cd52a387bf092bd2484b6a8602413c0028077ff493f0aff91311cbb09d3f1",
+        "blob": "41badf6f39fc2d4cf9f9ea407296ab4606e9e08b",
+        "content": "sha256:5cd042577ebdf51367a272d69b23bf04c0c30cae34914b48cb521233162e663d",
         "locator": {
           "end": 372,
           "kind": "line_range",
@@ -22,8 +22,8 @@
     },
     {
       "anchor": {
-        "blob": "512be564b35aaf6f9d3b9709113b613309efe221",
-        "content": "sha256:d78be9a4046b8ffdab5120a0a748737d28d92bec8743be7d5acec6847feb659b",
+        "blob": "41badf6f39fc2d4cf9f9ea407296ab4606e9e08b",
+        "content": "sha256:2bc4851e806a4d81b457b0153c5968bdd9d936be780b1c20bf8222ffba533e73",
         "locator": {
           "end": 270,
           "kind": "line_range",
@@ -46,7 +46,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "512be564b35aaf6f9d3b9709113b613309efe221",
+            "blob": "41badf6f39fc2d4cf9f9ea407296ab4606e9e08b",
             "content": "sha256:18493d816ddfe444c965fada22a49da99138e70b2c7d80a72152bd3ef8ea7fd3",
             "locator": {
               "end": 20,
@@ -63,12 +63,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "512be564b35aaf6f9d3b9709113b613309efe221",
+            "blob": "41badf6f39fc2d4cf9f9ea407296ab4606e9e08b",
             "content": "sha256:d7cf84bf950903f2b5bd9eb709520a6cd1fe182a4afec71fcbc3cb138679b6dc",
             "locator": {
-              "end": 188,
+              "end": 189,
               "kind": "line_range",
-              "start": 187
+              "start": 188
             }
           },
           "kind": "test"
@@ -86,6 +86,52 @@
               "end": 318,
               "kind": "line_range",
               "start": 5
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "838": {
+      "note": "The module the lane names.\n\nAnchor: `mcp/tests/test_knowledge_reader_tree_coverage.py`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a306e6c17747dcb7de5c2287af5e111db4c020d7",
+            "content": "sha256:878a18b29990b14d6c6250e5f5ce32e5195dd294a176447263d559b1bdc606ad",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_knowledge_reader_tree_coverage.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "839": {
+      "note": "The new module joins this lane.\n\nAnchor: `mcp/tests/test-evidence-lanes.toml`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "41badf6f39fc2d4cf9f9ea407296ab4606e9e08b",
+            "content": "sha256:c6983e5b5593561bd34a3d74544c79fef7f3bbef033b55e09831afaedf33d392",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "840": {
+      "note": "The lane catalog with the host module rows.\n\nAnchor: `mcp/tests/test-evidence-lanes.toml`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "41badf6f39fc2d4cf9f9ea407296ab4606e9e08b",
+            "content": "sha256:c6983e5b5593561bd34a3d74544c79fef7f3bbef033b55e09831afaedf33d392",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "test"

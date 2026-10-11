@@ -70,12 +70,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b0d7382b4819faead86b68a4f342dbe0defbeebc",
+            "blob": "9497a2a6d77f0ed77aecb6974b68c559795a7bbd",
             "content": "sha256:25dafd1d62944c5e0729d8a899e4a8bdc50f736a45c48b70250bdfe273a95535",
             "locator": {
-              "end": 284,
+              "end": 207,
               "kind": "line_range",
-              "start": 276
+              "start": 199
             }
           },
           "kind": "code"
@@ -113,6 +113,24 @@
               "start": 1
             },
             "path": "mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/codegraphcontext-high-level-methods.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "Current instruction contract and retained-read replacement, not historical provider/tool examples.\n\nAnchor: ---",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9497a2a6d77f0ed77aecb6974b68c559795a7bbd",
+            "content": "sha256:8d7fad9105a553ac4b98ba9b585eeaf4ea6f6dfb423bd3f00e84da746413bae1",
+            "locator": {
+              "end": 207,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "skills/c-04-retrieval-strategy-router/SKILL.md"
           },
           "kind": "code"
         }
@@ -191,12 +209,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b0d7382b4819faead86b68a4f342dbe0defbeebc",
+            "blob": "9497a2a6d77f0ed77aecb6974b68c559795a7bbd",
             "content": "sha256:29d1e5f5d4bd57331ba0ab76c2165ca5519a3b74c7aa4dbae0cc801be1e2a41e",
             "locator": {
-              "end": 242,
+              "end": 165,
               "kind": "line_range",
-              "start": 234
+              "start": 157
             }
           },
           "kind": "code"

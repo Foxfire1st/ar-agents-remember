@@ -52,7 +52,7 @@
         "handoffEntry": "MIK-R93@v1 rules6,11,13",
         "leaf": "260928-MIK-L93"
       },
-      "rationale": "The declared-source census adds fourteen replaced instruction statements and the corpus tests seed each obsolete statement on its exact surface.",
+      "rationale": "The declared-source retirement census now includes the historical fourteen replacement clauses and additional R93/R98 and later groups; it is not a current exactly-fourteen-only inventory. The guard cases remain source-specific controls, not native evidence.",
       "role": "support"
     }
   ],

@@ -15,7 +15,7 @@
         "handoffEntry": "MIK-R93@v1 rules1,2,2a,5,6,7",
         "leaf": "260928-MIK-L93"
       },
-      "rationale": "This operation is delivered with more than one role and states the same conditional routing and recovery without relying on another role source.",
+      "rationale": "This role/operation source points to operations/orientation.md for developer questions and relayed answers; it is not a self-contained duplicated full-clause home or native delivered-message witness.",
       "role": "primary-authority"
     },
     {

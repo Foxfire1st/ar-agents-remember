@@ -6,6 +6,28 @@
 
 ## Purpose
 
+Build only the retained structural dispatch answer.
+
+## Code Commentary
+
+The thin `dispatch_agent_payload` adapter forwards a typed DispatchAgentRequest and a
+StructuralAgentRuntime constructed from private overrides to the application dispatcher,
+then crosses `_tool_payload` once. Parent/child messaging, rename and retire adapters are
+removed. Native role_message is owned elsewhere, not an alias or a leaf-ref compatibility
+shim here. Public dispatch identity is the canonical task document and role; private runtime
+correlation and authorization remain application/plane responsibilities.
+
+## Current model evidence
+
+- Current source section contains excerpt `from agents_remember.application.structural.agent_tools import (`; DTO/control ownership is not execution acceptance. [3]
+
+## Historical superseded account (non-operative)
+
+Prior removed-tool/current-roster claims below are preserved provenance, not current
+registration, runtime capability or execution evidence.
+
+
+
 Adapts strict structural request DTOs to application services for dispatch, parent/child messaging,
 retirement, and rename. It replaces the removed public leaf/exact-id addressing adapter.
 

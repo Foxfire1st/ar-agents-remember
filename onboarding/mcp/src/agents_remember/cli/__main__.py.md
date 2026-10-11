@@ -7,10 +7,10 @@
 ## Purpose
 
 `cli/__main__.py` is the umbrella `agents-remember` console entrypoint: a single front door
-that dispatches subcommands. It registers **sixteen** of them — `dashboard`, `memory-citations`,
+that dispatches subcommands. It registers **seventeen** of them — `dashboard`, `memory-citations`,
 `memory-backfill`, `knowledge-ingest`, `knowledge-bootstrap`, `knowledge-format`,
 `knowledge-convert`, `knowledge-validate`, `knowledge-index`, `knowledge-worklist`, `knowledge-routes`,
-`knowledge-census`, `knowledge-copies`, `tool-log-stats` (MIK-R108 rule 8), `paseo` and `upgrade-user-settings` — and
+`knowledge-census`, `knowledge-copies`, `tool-log-stats` (MIK-R108 rule 8), `paseo`, `upgrade-user-settings` and `providers-remove` — and
 further CLI adapters slot in as subparsers. Backed by the
 `agents-remember = agents_remember.cli.__main__:main` console script.
 
@@ -123,3 +123,5 @@ The paseo command group joins existing knowledge-ingest, taskless bootstrap and 
 
 - Frozen implementation of build_parser supporting the stated file behavior. [16]
 - Frozen implementation of main supporting the stated file behavior. [17]
+
+- The current umbrella additionally registers providers-remove as an explicit operator command; it does not restore any provider setup or MCP provider tool. [19]

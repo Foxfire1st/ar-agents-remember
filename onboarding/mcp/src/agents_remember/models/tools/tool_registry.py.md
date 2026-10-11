@@ -1,5 +1,27 @@
 # mcp/src/agents_remember/models/tools/tool_registry.py
 
+## Current operative account — MIK-R112
+
+The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
+
+- Current registry removes those rows and retains role_start/role_message plus three knowledge query rows.
+
+### Superseded inventory
+
+- Pre-repair card claim: Card says public registry includes structural message/child/gate responses. This is superseded archival wording, not a current prescription.
+- Pre-repair card claim: Card presents capsule/skill tool rows as currently registered. This is superseded archival wording, not a current prescription.
+
+### Source and authority bounds
+
+- Source comparison: `mcp/src/agents_remember/models/tools/tool_registry.py:120 (TOOL_RESPONSE_MODELS:)`.
+
+Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
+
+## Historical original card — preserved, not the current operative account
+
+<details>
+<summary>Retained original source accounts and producer history</summary>
+
 ## Governing Overview
 
 [models overview](../overview.md)
@@ -202,3 +224,5 @@ handler cannot translate a refusal into an empty result or a default. `knowledge
 that re-rendered a view in its own format would create a second renderer and therefore a second place
 for that rule to be violated. `KnowledgeIntegrityCheckResponse` carries `compatible: null` beside an
 explicit `unresolved` list rather than manufacturing a verdict from a passing test.
+
+</details>

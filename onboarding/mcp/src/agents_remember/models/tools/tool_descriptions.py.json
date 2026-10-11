@@ -1,0 +1,59 @@
+{
+  "path": "mcp/src/agents_remember/models/tools/tool_descriptions.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "050cd562cb433eda08dabca6e1ae07bda10c5e2d",
+        "content": "sha256:dffbce854b34a5f99b69f582bf3cafca0040fbdc4a09d215dcc99e4fc751bfbf",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-G92RK7",
+      "invariant": "INV-4HS3E5",
+      "origin": {
+        "handoffEntry": "L112-R7-DESCRIPTION-CONTRACT",
+        "leaf": "260928-MIK-L112"
+      },
+      "rationale": "This declaration module owns the two ordinary ceilings, the retained dispatch description length and the interim description-owner map; it preserves future owner responsibility without reintroducing an exception table for finalized tools.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The module declares ordinary description and argument-description ceilings of 600 and 120 characters.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "050cd562cb433eda08dabca6e1ae07bda10c5e2d",
+            "content": "sha256:4fac5d65f93af6c8e35b6f75a4a3758d68c039ad0e96016385216bf2932a9ab0",
+            "locator": {
+              "end": 23,
+              "kind": "line_range",
+              "start": 22
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The retained description length and the interim owner map preserve later-leaf ownership during the transition.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "050cd562cb433eda08dabca6e1ae07bda10c5e2d",
+            "content": "sha256:fc23b26f95b233547e30a11ddf04f878e82f73e89ca915a1c8d7102d4765eaf0",
+            "locator": {
+              "end": 68,
+              "kind": "line_range",
+              "start": 25
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

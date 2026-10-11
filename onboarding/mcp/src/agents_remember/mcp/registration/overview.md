@@ -1,5 +1,29 @@
 # mcp/src/agents_remember/mcp/registration
 
+## Current operative account — MIK-R112
+
+The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
+
+- Capsule section says three public tools are registered; current registrar registers resources only.
+
+### Superseded inventory
+
+- Pre-repair card claim: Layout lists deleted provider/search/benchmark/lifecycle/gate/orchestration registrar files. This is superseded archival wording, not a current prescription.
+- Pre-repair card claim: Layout still advertises ping, skills_install and removed structural tools. This is superseded archival wording, not a current prescription.
+
+### Source and authority bounds
+
+- Source comparison: `mcp/src/agents_remember/mcp/registration/capsule_serving.py:69 (def register_capsule_and_skill_tools)`.
+- Source comparison: `mcp/src/agents_remember/mcp/registration/core.py:32 (def _register_identity_tools)`.
+- Source comparison: `mcp/src/agents_remember/mcp/registration/sessions.py:17 (def register_session_tools)`.
+
+Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
+
+## Historical original card — preserved, not the current operative account
+
+<details>
+<summary>Retained original source accounts and producer history</summary>
+
 ## Native role operation registration
 
 role_agents mounts the native role_start/role_message family for the bound task server. Core registration retains exact reader context/canonical task references and advertises typed request/failure shapes. Existing broader registration and converted knowledge families retain their owners. Native actor identity comes from real bindings/responses; titles, folders and projections grant no additional authority.
@@ -628,3 +652,5 @@ The read registrar receives workspace default and coordination root; the latter 
 The `runtime_install` tool's description now states the host step, the named absent-block state and the host part of the result, and the tool still takes no parameter for the host.
 
 - The installation tool registration. [28]
+
+</details>

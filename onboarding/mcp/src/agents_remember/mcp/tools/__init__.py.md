@@ -6,6 +6,32 @@
 
 ## Purpose
 
+Provide the current import facade for pure MCP response/payload adapters, not the public roster.
+
+## Code Commentary
+
+The facade retains dispatch, role start/message, context/runtime/resolve/server information,
+quality sync/start/poll, citation fix, baseline/carryover/init/routes, worktree/closeout/task and
+trusted terminal/operator/hosted-readiness/internal adapters. `_tool_payload` is intentionally
+re-exported for response tests. Benchmark/provider/search/ping/skills-install/drift/migration,
+structural message/rename/retire and six lifecycle builder exports are no longer present.
+Gate create/wait/response-wait and lifecycle block imports remain internal compatibility seams;
+the source explicitly distinguishes them from agent-facing registration. An import or response
+label does not advertise a callable tool. Current closeout exports are closeout_queue and
+curator_coherence, not the historical closeout_door. Domain owners still implement their own
+behavior; this facade does not confer authority or replace registration/roster parity checks.
+
+## Current evidence
+
+- Current source excerpt `from .base import PUBLIC_TOOLS, RESERVED_TOOLS, TRANSPORT` identifies this section's adapter/control owner, not an executed success. [17]
+
+## Historical superseded account (non-operative)
+
+Prior descriptions/evidence remain below for provenance. They are not current public
+registration, provider/lifecycle/skill-install instructions or execution acceptance.
+
+
+
 Facade that preserves the public import surface of the former `mcp/tools.py`.
 L11 re-exports `task_reopen_payload` from `.task_doc` — the task-domain payload
 module — not from `.worktree`.

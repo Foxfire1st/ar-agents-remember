@@ -9,9 +9,10 @@
 Canonical agent doctrine for the Agents Remember worktree lifecycle. It defines the public,
 contract-addressed route from intent/start through source reconciliation, closeout handoff,
 integration, terminal cleanup, and reopen recovery while keeping private selector, journal, ref,
-and queue mechanics behind their APIs. Closeout and integration are Git transactions; automatic
-quality, test, memory-quality, certification, review, and hook execution do not become lifecycle
-prerequisites.
+and queue mechanics behind their APIs. Closeout and integration consume the completed full
+Curator memory-quality result, any required current coherence, and mandatory invariant gates.
+They do not start an automatic test, independent-review or curation campaign. Publication-route
+hook behavior stays explicit rather than becoming a blanket waiver.
 
 ## Code Commentary
 
@@ -137,3 +138,11 @@ rather than by a governed maintenance pass. The remaining sibling sidecars under
 deliberately left untouched pending a follow-up decision on whether this mirror should be governed or
 removed. That mismatch between the declared path rules and the enforced checking scope is itself the
 recorded defect.
+
+## Current handoff boundary
+
+Preview and human-pinned authorization remain separate from mutation. Retired explicit
+lifecycle signal calls are not replacement APIs; next-turn/session wording in the instruction
+is not evidence of implemented L113 runtime handling.
+
+- Current preview/handoff/STOP and owner-authority instruction; not runtime acceptance. [7]

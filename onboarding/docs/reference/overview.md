@@ -1,5 +1,29 @@
 # docs/reference
 
+## Current operative account — MIK-R112
+
+The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
+
+- Source reference now records drift_check as pre-MIK-R112 history.
+- Settings reference retires skills_install and benchmark tool gates.
+
+### Superseded inventory
+
+- Pre-repair card claim: Card still presents drift_check as a currently callable contract-scoped memory tool. This is superseded archival wording, not a current prescription.
+
+### Source and authority bounds
+
+- Source comparison: `docs/reference/drift-c02.md:9-10`.
+- Source comparison: `docs/reference/mcp-tools.md:10-14,30-37,63-68`.
+- Source comparison: `docs/reference/settings-json.md:111-116,335-343`.
+
+Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
+
+## Historical original card — preserved, not the current operative account
+
+<details>
+<summary>Retained original source accounts and producer history</summary>
+
 ## Paseo-native tool and independent-tier reference
 
 The tool reference describes bound role_start/role_message alongside retained converted MIK owners. Role launches resolve provider, model, effort, mode and feature choices against the host catalog with per-choice sources: service-tier and fast-mode speed features may come from settings or a start call, while permission-bearing and unknown features, like mode and notes, belong to user settings or the host profile. Unsupported effective values refuse before creation, exact saved calls replay unchanged, and role reports collect from isolated folders before removal. Current catalog availability is an observation rather than a permanent availability invariant.
@@ -335,3 +359,5 @@ The reference documents now state the build-owned host contract, the product Nod
 
 - The settings document's host section. [5]
 - The runtime layout document. [6]
+
+</details>

@@ -20,6 +20,75 @@
         }
       ]
     },
+    "10": {
+      "note": "Authored cases now assert zero provider gauges/wires, absent seed clone conduits/refusal/fault/reindex markers, retained — source ownership, not executed visual proof.\n\nAnchor: `describe(\"EnclosureCanvas — T9B/T9C refused-conduit flash (shared red/amber primitive)\", () => {`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4b5841a80afd1c24f5c4591cd1c03f80465df6fb",
+            "content": "sha256:905dec7ad9f2d13b705cc490aad8fa352735cccbc53f691bc702f0feaa63ce72",
+            "locator": {
+              "end": 566,
+              "kind": "line_range",
+              "start": 474
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "Authored cases now assert zero provider gauges/wires, absent seed clone conduits/refusal/fault/reindex markers, retained — source ownership, not executed visual proof.\n\nAnchor: `describe(\"EnclosureCanvas — integration conflict (T14C · terminal)\", () => {`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c79d43b0288a8e6cb720b2654b7ae74b85989dee",
+            "content": "sha256:1a40357152e9c5fdbd0a3945e29dba4e792a6b11b7071e508e6ddbd2351763ef",
+            "locator": {
+              "end": 614,
+              "kind": "line_range",
+              "start": 590
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "Authored cases now assert zero provider gauges/wires, absent seed clone conduits/refusal/fault/reindex markers, retained — source ownership, not executed visual proof.\n\nAnchor: `export function resolveBlocks(node: EngineProcessNode) {`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "87821aabab3b972a5513d33de296765a0bab6d47",
+            "content": "sha256:7b465945c75c12ce4b647aa292d5c7a198cfa7e142aba362860e45d3dca8b09c",
+            "locator": {
+              "end": 103,
+              "kind": "line_range",
+              "start": 93
+            },
+            "path": "dashboard/src/panels/engine-room/scene.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The T7B successor asserts fleeting/retry/abandon/no-disabled-memory and absence of retired provider block/dropout/gauges/separate chips.\n\nAnchor: 533-549",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c79d43b0288a8e6cb720b2654b7ae74b85989dee",
+            "content": "sha256:d38333dbc85ba79be9eab657efa6f600b228f7353ed01e416f318195d82515e4",
+            "locator": {
+              "end": 549,
+              "kind": "line_range",
+              "start": 533
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
     "2": {
       "note": "The scenario fixtures it renders; `engine-cgc-seed-refused` now seeds `edges({ cgc: \"stale\", … })`.",
       "targets": [
@@ -42,12 +111,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f4ae80e7d4e2eb6857f7a0dddfd26bb36e176178",
+            "blob": "c79d43b0288a8e6cb720b2654b7ae74b85989dee",
             "content": "sha256:775cc049096f9cac7be03c885a072d957cb6621a4d5ac0a538c670741bbd91b4",
             "locator": {
-              "end": 45,
+              "end": 39,
               "kind": "line_range",
-              "start": 38
+              "start": 32
             }
           },
           "kind": "test"
@@ -59,7 +128,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "eea270bf10b885af35285fb98b6205dcb491dd5c",
+            "blob": "f23ae83b49025d9b10e7b6bc846ede9a6d48563e",
             "content": "sha256:521843cc89ecb7ccc1a3e9ff68b46d002a1a62ccc357caad545cc1093ebb3ae7",
             "locator": {
               "kind": "symbol",
@@ -120,6 +189,40 @@
               "start": 69
             },
             "path": "dashboard/src/test/setup.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Authored cases now assert zero provider gauges/wires, absent seed clone conduits/refusal/fault/reindex markers, retained — source ownership, not executed visual proof.\n\nAnchor: `it(\"isolates repeating transforms from the text-heavy structural SVG\", () => {`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c79d43b0288a8e6cb720b2654b7ae74b85989dee",
+            "content": "sha256:7f2f52c91b590979a35b58d345fa3f102d77ac13cb54ad7d0fc297ebde2f0685",
+            "locator": {
+              "end": 85,
+              "kind": "line_range",
+              "start": 67
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "Authored cases now assert zero provider gauges/wires, absent seed clone conduits/refusal/fault/reindex markers, retained — source ownership, not executed visual proof.\n\nAnchor: `it(\"renders one flow conduit per known model edge\", () => {`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c79d43b0288a8e6cb720b2654b7ae74b85989dee",
+            "content": "sha256:74c1aa3d3af092d41a54fa14f1e2c065346d3f454b35164406ebd70748de2247",
+            "locator": {
+              "end": 264,
+              "kind": "line_range",
+              "start": 183
+            }
           },
           "kind": "test"
         }

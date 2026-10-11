@@ -1,5 +1,27 @@
 # mcp/tests/test_provider_current_state.py
 
+## Current operative account — MIK-R112
+
+The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
+
+- Current test is named stop_only_recovery and forbids action=restart.
+- Other current-state fixture/readiness assertions remain.
+
+### Superseded inventory
+
+- Pre-repair card claim: Card explicitly claims GrepAI no-workspace restart recovery. This is superseded archival wording, not a current prescription.
+
+### Source and authority bounds
+
+- Source comparison: `mcp/tests/test_provider_current_state.py:100-130`.
+
+Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
+
+## Historical original card — preserved, not the current operative account
+
+<details>
+<summary>Retained original source accounts and producer history</summary>
+
 ## Governing Overview
 
 [Tests overview](overview.md)
@@ -57,3 +79,5 @@ to removed methods are superseded by this current inventory.
 This card establishes test behavior, not a separate cross-repository protocol or live installation.
 
 No external evidence is needed for these assertions.
+
+</details>

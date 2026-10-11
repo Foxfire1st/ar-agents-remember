@@ -24,7 +24,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "727a12ef1854578e89447d0ece47aaf2cf78225b",
+            "blob": "c25943bc8dde59686e3cd56112ad7650690f984c",
             "content": "sha256:ba149021a0a6054211ec39d9bb653f3bb07d5453a9590b70d7cb658258a396e6",
             "locator": {
               "end": 1165,
@@ -41,7 +41,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "727a12ef1854578e89447d0ece47aaf2cf78225b",
+            "blob": "c25943bc8dde59686e3cd56112ad7650690f984c",
             "content": "sha256:f7b876097caa5bb7a951c46fde939e2577942ca901f74198d2dec85e566fcc08",
             "locator": {
               "end": 955,
@@ -53,7 +53,7 @@
         },
         {
           "anchor": {
-            "blob": "727a12ef1854578e89447d0ece47aaf2cf78225b",
+            "blob": "c25943bc8dde59686e3cd56112ad7650690f984c",
             "content": "sha256:38bad0e3d8615f750e61f6d064fba42554a1d22cde88fe535dcd82dbb7785acb",
             "locator": {
               "end": 982,
@@ -65,7 +65,7 @@
         },
         {
           "anchor": {
-            "blob": "727a12ef1854578e89447d0ece47aaf2cf78225b",
+            "blob": "c25943bc8dde59686e3cd56112ad7650690f984c",
             "content": "sha256:bf2d99be1ea3bf92179953f84507723acd7f515730c761bcf2745a405673683c",
             "locator": {
               "end": 1157,
@@ -90,6 +90,93 @@
               "start": 260
             },
             "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "Fixture schema still carries {name, processes, workspace}, ProviderNode/ProviderBootNode factories, provider edges/runti — source ownership, not executed visual proof.\n\nAnchor: `export interface EngineRoomScenario {`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c25943bc8dde59686e3cd56112ad7650690f984c",
+            "content": "sha256:a092949116ef3967a792b8c23f3bf715f33963ca85d2051ae7bb9438aa1e94d9",
+            "locator": {
+              "end": 37,
+              "kind": "line_range",
+              "start": 19
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "Fixture schema still carries {name, processes, workspace}, ProviderNode/ProviderBootNode factories, provider edges/runti — source ownership, not executed visual proof.\n\nAnchor: `// --- T7B (05o) provider-plan block arc ----------------------------------------`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c25943bc8dde59686e3cd56112ad7650690f984c",
+            "content": "sha256:1581f37b8d8e44e1f142a2dc2b0693f42fffd23a762cb3ac44edf553e13010ed",
+            "locator": {
+              "end": 590,
+              "kind": "line_range",
+              "start": 535
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "Fixture schema still carries {name, processes, workspace}, ProviderNode/ProviderBootNode factories, provider edges/runti — source ownership, not executed visual proof.\n\nAnchor: `// amber center-out reindex pulse (driven by seedFallback) + the soft indicator. One device-mgmt identity`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c25943bc8dde59686e3cd56112ad7650690f984c",
+            "content": "sha256:69af9c5095a1ceeb6d5d2e49fde60fa88c6b032879e05901217b39b19e2a75f2",
+            "locator": {
+              "end": 852,
+              "kind": "line_range",
+              "start": 832
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "Fixture schema still carries {name, processes, workspace}, ProviderNode/ProviderBootNode factories, provider edges/runti — source ownership, not executed visual proof.\n\nAnchor: `{setupLine ? (`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b8f943240da1fdfbe832351f9f1f6646dbaebe0e",
+            "content": "sha256:c0d658b66cc9df003669db192eb18900b22185e916463037258830a7c5ee10d4",
+            "locator": {
+              "end": 82,
+              "kind": "line_range",
+              "start": 74
+            },
+            "path": "dashboard/src/panels/engine-room/DiagnosticsPanel.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "Fixture schema still carries {name, processes, workspace}, ProviderNode/ProviderBootNode factories, provider edges/runti — source ownership, not executed visual proof.\n\nAnchor: `export const EDGE_GEOM: Record<string, readonly [number, number, number, number]> = {`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f23ae83b49025d9b10e7b6bc846ede9a6d48563e",
+            "content": "sha256:08637b0be18477ff7379995dd690b3a5a93b5459302261b5a2809394edeec517",
+            "locator": {
+              "end": 90,
+              "kind": "line_range",
+              "start": 68
+            },
+            "path": "dashboard/src/panels/engine-room/geometry.ts"
           },
           "kind": "code"
         }
@@ -135,7 +222,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "727a12ef1854578e89447d0ece47aaf2cf78225b",
+            "blob": "c25943bc8dde59686e3cd56112ad7650690f984c",
             "content": "sha256:8ee50046f058c8158efcdcde36ad8a9be983836c172241f93fb9177d68e88d2d",
             "locator": {
               "kind": "symbol",
@@ -162,7 +249,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "727a12ef1854578e89447d0ece47aaf2cf78225b",
+            "blob": "c25943bc8dde59686e3cd56112ad7650690f984c",
             "content": "sha256:dc99b32a910b1c07a8d043335b5dfdc7ec1ac6a782e272da43d943566ab0bff6",
             "locator": {
               "kind": "symbol",
@@ -178,7 +265,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "727a12ef1854578e89447d0ece47aaf2cf78225b",
+            "blob": "c25943bc8dde59686e3cd56112ad7650690f984c",
             "content": "sha256:e2b99293561a6547d88ae7fb9e6bc50ef4d55d11b98840129575d9abe7b703c3",
             "locator": {
               "kind": "symbol",
@@ -189,7 +276,7 @@
         },
         {
           "anchor": {
-            "blob": "727a12ef1854578e89447d0ece47aaf2cf78225b",
+            "blob": "c25943bc8dde59686e3cd56112ad7650690f984c",
             "content": "sha256:5ef14be86bbf47a95bcc3454e0e3d678933ca8bd4192c8c19e92a4de588a29fb",
             "locator": {
               "kind": "symbol",
@@ -200,7 +287,7 @@
         },
         {
           "anchor": {
-            "blob": "727a12ef1854578e89447d0ece47aaf2cf78225b",
+            "blob": "c25943bc8dde59686e3cd56112ad7650690f984c",
             "content": "sha256:911f0b30b440b3970fcf8c179dbd853d02f7e77ce1d208bde766cb2f72d08afb",
             "locator": {
               "end": 139,
@@ -217,7 +304,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "727a12ef1854578e89447d0ece47aaf2cf78225b",
+            "blob": "c25943bc8dde59686e3cd56112ad7650690f984c",
             "content": "sha256:dc3d533f4116127b5df39faefb769bfbf78c1cc3fbe6d76186cd26b24499c789",
             "locator": {
               "end": 834,
@@ -234,7 +321,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "727a12ef1854578e89447d0ece47aaf2cf78225b",
+            "blob": "c25943bc8dde59686e3cd56112ad7650690f984c",
             "content": "sha256:f8d6d619c6ea3369f6ce21bc7af381da9fc4f58e2aa6f4f15cab8522aabd8d9e",
             "locator": {
               "kind": "symbol",
@@ -250,7 +337,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "727a12ef1854578e89447d0ece47aaf2cf78225b",
+            "blob": "c25943bc8dde59686e3cd56112ad7650690f984c",
             "content": "sha256:5a1834d863e9bb5fb199156f6a21ff31cbc6bad7fb5eafffe11f2a72fbfe553b",
             "locator": {
               "end": 991,

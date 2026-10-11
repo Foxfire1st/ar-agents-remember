@@ -174,6 +174,41 @@
           "kind": "code"
         }
       ]
+    },
+    "8": {
+      "note": "Current source excerpt `\"\"\"MCP response adapters for lifecycle application operations.\"\"\"` identifies this section's adapter/control owner, not an executed success.\n\nAnchor: 1-21",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bc8673cd300d9276c7e667c57f2fe16deb013df5",
+            "content": "sha256:4bd9f9e66fea482421e2eac94c4f7f006b5cde4b52d3cfddb80ab18da38eb8e1",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Current source excerpt `TOOL_RESPONSE_MODELS: dict[str, type[ResponseEnvelope]] = {` identifies this section's adapter/control owner, not an executed success.\n\nAnchor: 120-183",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2feb4ad814b0f23f06a843578432e92ee658d51e",
+            "content": "sha256:499044fcdb46669e553c0833ab39c3813695ddccab7bfd0320107e679ba8c70d",
+            "locator": {
+              "end": 183,
+              "kind": "line_range",
+              "start": 120
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
+          },
+          "kind": "code"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

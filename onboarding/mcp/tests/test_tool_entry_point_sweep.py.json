@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "99b2576c60f8486c3086bb6446973f8299d4a116",
+        "blob": "3db37f8a4af0b5bb9ec7beb1d26e299324496c26",
         "content": "sha256:1e375aa9fbefa7ef55854a0e6e81b6c658903efd95fea7139692bf68de1a2369",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "99b2576c60f8486c3086bb6446973f8299d4a116",
+        "blob": "3db37f8a4af0b5bb9ec7beb1d26e299324496c26",
         "content": "sha256:7991154da41374bfca8f6450500696a9e20feb064efc8e791cfde2e12ff52dd4",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "99b2576c60f8486c3086bb6446973f8299d4a116",
+        "blob": "3db37f8a4af0b5bb9ec7beb1d26e299324496c26",
         "content": "sha256:7991154da41374bfca8f6450500696a9e20feb064efc8e791cfde2e12ff52dd4",
         "locator": {
           "kind": "symbol",
@@ -54,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "99b2576c60f8486c3086bb6446973f8299d4a116",
+        "blob": "3db37f8a4af0b5bb9ec7beb1d26e299324496c26",
         "content": "sha256:7991154da41374bfca8f6450500696a9e20feb064efc8e791cfde2e12ff52dd4",
         "locator": {
           "kind": "symbol",
@@ -73,7 +73,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "99b2576c60f8486c3086bb6446973f8299d4a116",
+        "blob": "3db37f8a4af0b5bb9ec7beb1d26e299324496c26",
         "content": "sha256:534a557df83cbcab5a5cf8a41bc85a33ca4e8e8d829e376fbca13c56df9fe2f3",
         "locator": {
           "kind": "symbol",
@@ -91,12 +91,12 @@
     },
     {
       "anchor": {
-        "blob": "99b2576c60f8486c3086bb6446973f8299d4a116",
+        "blob": "3db37f8a4af0b5bb9ec7beb1d26e299324496c26",
         "content": "sha256:cf13fcd4aed8c76d143d9756a4c825aace6cb7f067668fe241e8fe04cbb5c49d",
         "locator": {
-          "end": 92,
+          "end": 115,
           "kind": "line_range",
-          "start": 86
+          "start": 109
         }
       },
       "id": "RLZ-6VVBP4",
@@ -110,7 +110,7 @@
     },
     {
       "anchor": {
-        "blob": "99b2576c60f8486c3086bb6446973f8299d4a116",
+        "blob": "3db37f8a4af0b5bb9ec7beb1d26e299324496c26",
         "content": "sha256:7991154da41374bfca8f6450500696a9e20feb064efc8e791cfde2e12ff52dd4",
         "locator": {
           "kind": "symbol",
@@ -128,12 +128,12 @@
     },
     {
       "anchor": {
-        "blob": "99b2576c60f8486c3086bb6446973f8299d4a116",
+        "blob": "3db37f8a4af0b5bb9ec7beb1d26e299324496c26",
         "content": "sha256:534a557df83cbcab5a5cf8a41bc85a33ca4e8e8d829e376fbca13c56df9fe2f3",
         "locator": {
-          "end": 101,
+          "end": 124,
           "kind": "line_range",
-          "start": 94
+          "start": 117
         }
       },
       "id": "RLZ-B0D6N2",
@@ -147,7 +147,7 @@
     },
     {
       "anchor": {
-        "blob": "99b2576c60f8486c3086bb6446973f8299d4a116",
+        "blob": "3db37f8a4af0b5bb9ec7beb1d26e299324496c26",
         "content": "sha256:8302a031037ec0811de6b2d01ec3d144c2d51a1eda3e1eb266938d85312aacbf",
         "locator": {
           "end": 26,
@@ -166,7 +166,7 @@
     },
     {
       "anchor": {
-        "blob": "99b2576c60f8486c3086bb6446973f8299d4a116",
+        "blob": "3db37f8a4af0b5bb9ec7beb1d26e299324496c26",
         "content": "sha256:1e375aa9fbefa7ef55854a0e6e81b6c658903efd95fea7139692bf68de1a2369",
         "locator": {
           "kind": "symbol",
@@ -184,7 +184,7 @@
     },
     {
       "anchor": {
-        "blob": "99b2576c60f8486c3086bb6446973f8299d4a116",
+        "blob": "3db37f8a4af0b5bb9ec7beb1d26e299324496c26",
         "content": "sha256:534a557df83cbcab5a5cf8a41bc85a33ca4e8e8d829e376fbca13c56df9fe2f3",
         "locator": {
           "kind": "symbol",
@@ -202,8 +202,8 @@
     },
     {
       "anchor": {
-        "blob": "99b2576c60f8486c3086bb6446973f8299d4a116",
-        "content": "sha256:39996bd6680d3e40684c64d2b2e3714a7b881a2f0ecf0ede828ba2606f9b53ff",
+        "blob": "3db37f8a4af0b5bb9ec7beb1d26e299324496c26",
+        "content": "sha256:71610944d53a5bafbf56a2b7442fb6377aa8cdf179efd96b02b3e2ae8493a65c",
         "locator": {
           "kind": "symbol",
           "name": "EntryPointProbeTests"
@@ -220,7 +220,7 @@
     },
     {
       "anchor": {
-        "blob": "99b2576c60f8486c3086bb6446973f8299d4a116",
+        "blob": "3db37f8a4af0b5bb9ec7beb1d26e299324496c26",
         "content": "sha256:b49022c9deeed0a84490b978b301fe516f420e645d3b0ea7f9c542dfe8a6d770",
         "locator": {
           "kind": "symbol",
@@ -238,12 +238,11 @@
     },
     {
       "anchor": {
-        "blob": "99b2576c60f8486c3086bb6446973f8299d4a116",
-        "content": "sha256:ff7ee380d4f8bfe2cfe0f505a5044faab7241de60b346a9c756aac3f301b4382",
+        "blob": "3db37f8a4af0b5bb9ec7beb1d26e299324496c26",
+        "content": "sha256:534a557df83cbcab5a5cf8a41bc85a33ca4e8e8d829e376fbca13c56df9fe2f3",
         "locator": {
-          "end": 84,
-          "kind": "line_range",
-          "start": 70
+          "kind": "symbol",
+          "name": "ENVELOPE_LOSING_RAISERS"
         }
       },
       "id": "RLZ-WQDNDW",
@@ -252,17 +251,16 @@
         "handoffEntry": "MIK-R130@v1 rules 4+5 + failure/recovery",
         "leaf": "260928-MIK-L130"
       },
-      "rationale": "The raiser pin records the four measured lifecycle preconditions owned by L111.",
+      "rationale": "The actual ENVELOPE_LOSING_RAISERS declaration holds the four named worktree operations owned by the retained historical repair account; source declarations are not this Curator's observed failures.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "99b2576c60f8486c3086bb6446973f8299d4a116",
-        "content": "sha256:12ea2d2de0b0c2e9f29445ef89c05b4349a712cdccf616bbe79e1a69a71e4179",
+        "blob": "3db37f8a4af0b5bb9ec7beb1d26e299324496c26",
+        "content": "sha256:17ad49c49bee633b673e5481327505991854f0f36441ebc2266603b65e789608",
         "locator": {
-          "end": 58,
-          "kind": "line_range",
-          "start": 38
+          "kind": "symbol",
+          "name": "T34_REPAIRED_TOOLS"
         }
       },
       "id": "RLZ-Y2XJG0",
@@ -271,7 +269,7 @@
         "handoffEntry": "MIK-R130 W03 sweep pin prose",
         "leaf": "260928-MIK-L130"
       },
-      "rationale": "The T34 and current-pin prose names the repaired nine, the four L111 raisers, the bare L110 answer, and the repair rule.",
+      "rationale": "The current T34 declaration keeps only memory_baseline_adopt after the eight code-search tools were retired; the adjacent source distinguishes named worktree pins from the empty ambient-state population, without a new failure-census claim.",
       "role": "support"
     }
   ],

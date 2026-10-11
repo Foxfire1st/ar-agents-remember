@@ -29,3 +29,20 @@ The public message refusal vocabulary includes investigator-capacity. This names
 
 
 - The current source implements this file’s stated Investigator boundary. [5]
+
+## Current second-server observation
+
+RoleStartResponse declares `secondCopyLoaded: bool = False`. It records whether this
+launch also carries the product's other server; unsupported one-launch exclusion keeps
+the server-choice sentence in the brief. This response declaration is not host-actual
+ambient exclusion/evidence5 or a first-real-agent invocation proof. The recorded D200
+host-rule-six/evidence5 disposition assigns host-actual work to L132; no first-real-agent
+obligation remains with L112. L112's source/input projection and supplied response/receipt
+facts do not establish host consumption or exclusion. Existing F07/CODE history and
+UUID/selection/refusal/messaging/wait/preparation and
+requested-versus-observed semantics remain unchanged.
+
+## Current model evidence
+
+- Current source section contains excerpt `class RoleStartResponse(ToolResponse):`; DTO/control ownership is not execution acceptance. [6]
+- Current source section contains excerpt `def harness_carries_one_server(harness_id: str `; DTO/control ownership is not execution acceptance. [7]

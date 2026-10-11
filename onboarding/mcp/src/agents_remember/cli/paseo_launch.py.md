@@ -1,5 +1,28 @@
 # mcp/src/agents_remember/cli/paseo_launch.py
 
+## Current operative account — MIK-R112
+
+The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
+
+- Saved calls now carry serverExclusion alongside agent/workspace.
+- agent_create_input removes only agents-remember from supplied MCP maps and forwards the record.
+- serviceTier is projected into featureValues.service_tier.
+
+### Source and authority bounds
+
+- Source comparison: `mcp/src/agents_remember/cli/paseo_launch.py:371-424`.
+- Source comparison: `mcp/src/agents_remember/cli/paseo_launch.py:445-477`.
+- Source comparison: `mcp/src/agents_remember/cli/paseo_launch.py:480-558`.
+
+Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
+
+The pre-successor CUR-C03 source overwrote mixed featureValues. The moving producer candidate now merges the retained map with service_tier, preserving other keys in source. Its genuine successor custody/independent disposition remains separate; the serverExclusion data/bridge projection is not host-actual suppression. That obligation stays assignedL132.
+
+## Historical original card — preserved, not the current operative account
+
+<details>
+<summary>Retained original source accounts and producer history</summary>
+
 ## Governing Overview
 
 [Route overview](../../../overview.md)
@@ -37,3 +60,5 @@ is archived and refused when the response returns. Ordinary launches without a m
 ## MIK-R95 Preparation Outcome And Phase
 
 The launch outcome carries `workspace_preparation` (`created`, `found` or `opened`) taken from the public open result, and `role_launch_progress.starting()` moves the one working notice to the starting phase once the workspace call returns. Task placement therefore reports a real created/found outcome, while a Projects open reports `opened` and no invented creation outcome.
+
+</details>

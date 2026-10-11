@@ -4,7 +4,29 @@
 
 [engine-room overview](overview.md)
 
-## Purpose
+
+## Current enclosure-only composition
+
+Builder takes engineProcesses and lifecycles only, maps node/lifecycle/gate/enclosureKey, sorts phase priority then leafId/taskName, returns { processes }; no provider grouping or legacy fallback. PHASE_ORDER still includes provider-setup as a projected phase name.
+
+### Maintenance boundaries
+
+Replace signature, return shape and provider/fallback paragraphs with two-input pure join. Preserve clock/React/inference-free rule and stable key/sorting. Do not rename projected phases or claim groupEngines itself was deleted.
+
+Source/test/fixture inspection is not a fresh mounted capture or a passing test run.
+Historical provider-shaped input data and retained compatibility definitions do not
+restore removed provider visuals or tool exposure.
+
+- Builder takes engineProcesses and lifecycles only, maps node/lifecycle/gate/enclosureKey, sorts phase priority then leaf — source ownership, not executed visual proof. [10]
+- Builder takes engineProcesses and lifecycles only, maps node/lifecycle/gate/enclosureKey, sorts phase priority then leaf — source ownership, not executed visual proof. [11]
+
+## Historical superseded account (non-operative)
+
+The prior onboarding below is retained for provenance and unrelated design history.
+It is not current provider-render, fallback, prototype-parity or execution guidance.
+Current behavior and its limits are the operative contract above.
+
+
 
 The enclosure-centered Engine Room process map's pure builder: it projects the resolved server collections into an `EngineRoomModel` for rendering — joining each server-composed process node to its live lifecycle, exposing the lifecycle's projected gate, lifting the shared workspace (official/main) provider stack, exposing each enclosure's stable key, and falling back to the legacy `groupEngines` view for older projections that carry worktree providers but no process surface. It is React-free, clock-free, and does no semantic inference — the server already supplies the fact-state honesty.
 

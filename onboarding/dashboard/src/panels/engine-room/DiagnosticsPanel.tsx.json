@@ -7,11 +7,28 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0d30db957c81c2551f69f43be9bae56bcfdca8c6",
+            "blob": "b8f943240da1fdfbe832351f9f1f6646dbaebe0e",
             "content": "sha256:b0448c920f01a9e14300fb5c17751232ed4536dbf63c27667d28e819ae48f78b",
             "locator": {
               "kind": "symbol",
               "name": "CommitRow"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The setup row is now labeled Setup. The seedFallback-only Seed row is removed. Summary/health/phase, refs/lineage, setup — source ownership, not executed visual proof.\n\nAnchor: `function PhaseLineList({`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b8f943240da1fdfbe832351f9f1f6646dbaebe0e",
+            "content": "sha256:1f6f1572d53e9545c71a40e57145f6b1bc0225df7e9046caa1cfeced095d6d11",
+            "locator": {
+              "end": 194,
+              "kind": "line_range",
+              "start": 111
             }
           },
           "kind": "code"
@@ -39,7 +56,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0d30db957c81c2551f69f43be9bae56bcfdca8c6",
+            "blob": "b8f943240da1fdfbe832351f9f1f6646dbaebe0e",
             "content": "sha256:0693d69fb010f7e2e2e804d63311a55cc3f14abefd151cf40fc790c573906213",
             "locator": {
               "end": 52,
@@ -131,7 +148,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "30cb14732f6d4d548c1ee9550ab342b849d1eb10",
+            "blob": "b130c9f33b2078e3adf38d6e87cde8c376ba65b9",
             "content": "sha256:62037153cf0b147b87950ac58603f70f56d3ea0b2daf892759e0fdf10a74a172",
             "locator": {
               "kind": "symbol",
@@ -276,6 +293,23 @@
               "start": 39
             },
             "path": "dashboard/src/panels/EngineRoom.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The setup row is now labeled Setup. The seedFallback-only Seed row is removed. Summary/health/phase, refs/lineage, setup — source ownership, not executed visual proof.\n\nAnchor: `// 5k F3 — during the power-down (cleanup-pending / abandon) the runtimes are being torn down, so the`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b8f943240da1fdfbe832351f9f1f6646dbaebe0e",
+            "content": "sha256:3ab07b309a10a715de512cd408ac198be24eabd495e06c95ce3fc7103632654a",
+            "locator": {
+              "end": 109,
+              "kind": "line_range",
+              "start": 49
+            }
           },
           "kind": "code"
         }

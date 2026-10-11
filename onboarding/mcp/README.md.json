@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "04f1b6f3d5716d4d9b68b9724f0c1948b18304ab",
-        "content": "sha256:3213a3f88c93c01ce8d794611e3629f37c241e8ae24e68edbf5d5138a75ccf8c",
+        "blob": "ca9f52755ac2ee86086515764e0c399ef699b1cc",
+        "content": "sha256:3fe12ce46e7c95c90cad9ac520a03002f091fae0bc5c5ab3df87d3cad2ca0e7e",
         "locator": {
-          "end": 86,
+          "end": 85,
           "kind": "line_range",
-          "start": 49
+          "start": 48
         }
       },
       "id": "RLZ-16EXW2",
@@ -59,6 +59,52 @@
               "start": 282
             },
             "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Package-first onboarding explicitly retires provider installation, indexing and watching.\n\nAnchor: whole-file",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ca9f52755ac2ee86086515764e0c399ef699b1cc",
+            "content": "sha256:3d834001ee4d2e99f5f19acee7ff12c36e748f5722e4817d6d3a5afd2c566b95",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Retained install knobs, unused provider keys and asked-only container removal do not re-enable provider setup.\n\nAnchor: whole-file",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ca9f52755ac2ee86086515764e0c399ef699b1cc",
+            "content": "sha256:3d834001ee4d2e99f5f19acee7ff12c36e748f5722e4817d6d3a5afd2c566b95",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The advertised families are the retained registrar tuple, not the README's broad historical tool labels.\n\nAnchor: whole-file",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "15396e17a8d6bc3592053c499e32dc655982f46f",
+            "content": "sha256:7214cc6d02be039cb9c725635336955fc02a9de932e9e7d67917b0081e935aff",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/__init__.py"
           },
           "kind": "code"
         }
@@ -166,7 +212,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1c2dfb4f0f87317da6302be2ab2a2cb173460c1d",
+            "blob": "fbc24d6811b722123b1235591e8a5d01ed6a04c9",
             "content": "sha256:a648e98f3a9e63b69d2d8b4c412cb573b29d59ec98cb93ebfd37bc1a14aa28a0",
             "locator": {
               "kind": "symbol",

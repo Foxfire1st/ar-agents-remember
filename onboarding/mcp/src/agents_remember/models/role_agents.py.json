@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "e913b02fe5e1c58f028814fea000f332dd3c0b45",
+        "blob": "87de380185252a8d36591cdffb8add47cfd31c2e",
         "content": "sha256:efa8b017b9fe55cc9079b18ccb846d217a27656c0c7e9a33d4c93535d77d201e",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "e913b02fe5e1c58f028814fea000f332dd3c0b45",
+        "blob": "87de380185252a8d36591cdffb8add47cfd31c2e",
         "content": "sha256:7fb555bc9408240767b57fe97ee031289336323a495483d6cd8c6c2a90e92862",
         "locator": {
           "kind": "symbol",
@@ -60,7 +60,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e913b02fe5e1c58f028814fea000f332dd3c0b45",
+            "blob": "87de380185252a8d36591cdffb8add47cfd31c2e",
             "content": "sha256:ed6afc080fca36133e5efaf0e9145faed0c6ef07bae11ed60f146295bfc32a3c",
             "locator": {
               "kind": "symbol",
@@ -115,6 +115,41 @@
               "kind": "line_range",
               "start": 1
             }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Current source section contains excerpt `class RoleStartResponse(ToolResponse):`; DTO/control ownership is not execution acceptance.\n\nAnchor: RoleStartResponse",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "87de380185252a8d36591cdffb8add47cfd31c2e",
+            "content": "sha256:eeb94c36a0ac86536647ffc6ca532a44c05b96994533e3dd090cb2671573d3ca",
+            "locator": {
+              "end": 123,
+              "kind": "line_range",
+              "start": 94
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Current source section contains excerpt `def harness_carries_one_server(harness_id: str `; DTO/control ownership is not execution acceptance.\n\nAnchor: harness_carries_one_server",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5c1a5652c560c4ecb686dae2da334d5124d8e8cf",
+            "content": "sha256:574d8aaacbee830c13562531ca218deea858eb3b9033bd25910d9c878636d324",
+            "locator": {
+              "end": 78,
+              "kind": "line_range",
+              "start": 69
+            },
+            "path": "mcp/src/agents_remember/application/agent_binding.py"
           },
           "kind": "code"
         }

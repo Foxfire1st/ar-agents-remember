@@ -24,7 +24,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "12db828427142b75b334b28d19bad731c1ef45f7",
+            "blob": "2dc248c73a83b5fddc1b5884cbd6a534aa870820",
             "content": "sha256:e7b043904ab116bd8e728f9a3d560335e0db2d03ff6449d3dbaf13127ade46d0",
             "locator": {
               "kind": "symbol",
@@ -103,12 +103,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "12db828427142b75b334b28d19bad731c1ef45f7",
+            "blob": "2dc248c73a83b5fddc1b5884cbd6a534aa870820",
             "content": "sha256:c49e71899d252f15f18a099f7bbdd1c95729543eadffa00e8ce8c4523095fb75",
             "locator": {
-              "end": 132,
+              "end": 95,
               "kind": "line_range",
-              "start": 130
+              "start": 93
             }
           },
           "kind": "test"
@@ -164,6 +164,41 @@
               "start": 509
             },
             "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Tests use the two-argument builder. Provider factory/workspace lift and fallback exclusivity cases are removed; an empty — source ownership, not executed visual proof.\n\nAnchor: `describe(\"buildEngineRoomModel\", () => {`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2dc248c73a83b5fddc1b5884cbd6a534aa870820",
+            "content": "sha256:98747470f8a4055950f3d02d5d330bfa456520e421b98d432e1634c81f638341",
+            "locator": {
+              "end": 122,
+              "kind": "line_range",
+              "start": 57
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "Tests use the two-argument builder. Provider factory/workspace lift and fallback exclusivity cases are removed; an empty — source ownership, not executed visual proof.\n\nAnchor: `export function buildEngineRoomModel(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "17b5df5bbd40a7851bc8af3aa48a9c214f8d7bed",
+            "content": "sha256:06edae3b1f707ca3a669467fa064fdfbee75dac11f606210f04b52db81317568",
+            "locator": {
+              "end": 54,
+              "kind": "line_range",
+              "start": 30
+            },
+            "path": "dashboard/src/panels/engine-room/buildEngineRoomModel.ts"
           },
           "kind": "code"
         }

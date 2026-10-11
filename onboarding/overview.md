@@ -1,5 +1,34 @@
 # agents-remember — Onboarding Overview
 
+## Current operative account — MIK-R112
+
+The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
+
+- Current c-04 copies route semantics/relationships to harness-native search.
+
+### Superseded inventory
+
+- Pre-repair card claim: Root overview still advertises CGC/GrepAI/provider tools as live retrieval and setup. This is superseded archival wording, not a current prescription.
+- Pre-repair card claim: It still lists removed lifecycle/gate/message/skills/benchmark routes in current feature rows. This is superseded archival wording, not a current prescription.
+
+### Source and authority bounds
+
+- Source comparison: `skills/c-04-retrieval-strategy-router/SKILL.md:12-53`.
+- Source comparison: `docs/getting-started.md:197-206`.
+- Source comparison: `docs/tool-details.md:11-34,64-95`.
+
+Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
+
+### Retained L74 read-boundary qualification
+
+The incoming qualified boundary is preserved here, not replaced by the parked shorter report-only wording.
+
+| Tool report files | Executed mutating actions file verbose payloads as report files under `temp/tool-reports/<tool>/`; the response keeps the outcome and a `reportPath`. Reads are the tools described as reads, every dashboard GET, `worktree_status`, previews and dry runs. They change no local branch, HEAD, working-tree file, Git index, task document or requirement packet; Git runs with `GIT_OPTIONAL_LOCKS=0`. Reads file no per-call report. Their only admitted writes are (a) cache files under `<coordination root>/runtime/`, (b) a recorded comparison's task report, captured objects and one pin under `refs/ar/review/`, (c) a closeout preview's enclosure worklist, quality reports and judged-tree objects, and (d) when a context-read caller asks for freshness, one configured-upstream `git fetch` inside the Git directory: fetched objects, remote-tracking refs and their reflogs, `FETCH_HEAD`, default-followed tags and Git's own fetch housekeeping. It changes no local branch, HEAD, index or working-tree file; without the argument it fetches nothing. Outside these named permissions it changes no ref or tag. No directory is created except to hold one of those files. Unrecorded tree captures use a scratch object directory, never the repository. A read that cannot keep this boundary refuses by name, with no fallback write location. Retention is applied when a report is written. | `kernel/primitives/tool_reports.py` |
+
+## Historical original card — preserved, not the current operative account
+
+<details>
+<summary>Retained original source accounts and producer history</summary>
 
 ## What This Repo Is
 
@@ -823,3 +852,5 @@ MIK-R37**: no production memory tree is converted, and database reads carry no `
 The root route gained the host-lifecycle family: the product's install brings the build's own host on a Node the product brings, every dashboard start makes sure it runs, one shared authority names it, and neither an install nor a dashboard stop removes a running host. The host modules moved from `cli/` into `serving/paseo/` so the install and serving ranks share them, and the one renderer invocation writes the single shared `<coordinationRoot>/system/settings.json` host block; the per-harness starter files carry only harness infrastructure settings, and the renderer code that creates the block is not itself a destination.
 
 - The shared host entry the install composes. [144]
+
+</details>

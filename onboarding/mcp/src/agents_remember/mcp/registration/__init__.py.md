@@ -1,5 +1,27 @@
 # mcp/src/agents_remember/mcp/registration/__init__.py
 
+## Current operative account — MIK-R112
+
+The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
+
+- Current TOOL_REGISTRARS has nine entries.
+- Capsule/skill family is now resource-only.
+
+### Superseded inventory
+
+- Pre-repair card claim: Card declares fifteen registrars and lists six retired families. This is superseded archival wording, not a current prescription.
+
+### Source and authority bounds
+
+- Source comparison: `mcp/src/agents_remember/mcp/registration/__init__.py:33 (TOOL_REGISTRARS:)`.
+
+Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
+
+## Historical original card — preserved, not the current operative account
+
+<details>
+<summary>Retained original source accounts and producer history</summary>
+
 ## Governing Overview
 
 [registration route overview](overview.md)
@@ -72,3 +94,5 @@ register_role_agent_tools is added to TOOL_REGISTRARS in the existing registrati
 ### Runtime Source References
 
 - Frozen implementation of TOOL_REGISTRARS supporting the stated file behavior. [8]
+
+</details>

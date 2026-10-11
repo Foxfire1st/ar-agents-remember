@@ -7,13 +7,48 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e21098fd928c9d619bc89b750a9475bd3dde3fb5",
+            "blob": "17b5df5bbd40a7851bc8af3aa48a9c214f8d7bed",
             "content": "sha256:e7f9ce6712d90215ad1ca5cfbca8fbf5cc3871ba9d2d35168dc3b0b5074d1406",
             "locator": {
-              "end": 33,
+              "end": 30,
               "kind": "line_range",
-              "start": 33
+              "start": 30
             }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Builder takes engineProcesses and lifecycles only, maps node/lifecycle/gate/enclosureKey, sorts phase priority then leaf — source ownership, not executed visual proof.\n\nAnchor: `const PHASE_ORDER: Record<string, number> = {`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "17b5df5bbd40a7851bc8af3aa48a9c214f8d7bed",
+            "content": "sha256:3e76e3203dc83dde5a88edc9d75febaf3d79581889e818034cd575c19a05de3a",
+            "locator": {
+              "end": 54,
+              "kind": "line_range",
+              "start": 7
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Builder takes engineProcesses and lifecycles only, maps node/lifecycle/gate/enclosureKey, sorts phase priority then leaf — source ownership, not executed visual proof.\n\nAnchor: `export function groupEngines(providers: ProviderNode[]): EngineStack[] {`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b130c9f33b2078e3adf38d6e87cde8c376ba65b9",
+            "content": "sha256:39686253ab57b49c197444f777ca38607c1940957b35e49682d31bdd1f4e3594",
+            "locator": {
+              "end": 165,
+              "kind": "line_range",
+              "start": 147
+            },
+            "path": "dashboard/src/data/selectors.ts"
           },
           "kind": "code"
         }
@@ -24,12 +59,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e21098fd928c9d619bc89b750a9475bd3dde3fb5",
+            "blob": "17b5df5bbd40a7851bc8af3aa48a9c214f8d7bed",
             "content": "sha256:81e01e1435083a2c1a1c5a6ed80c9025a7fbda19131c779b302def0d11420bea",
             "locator": {
-              "end": 47,
+              "end": 39,
               "kind": "line_range",
-              "start": 47
+              "start": 39
             }
           },
           "kind": "code"
@@ -58,7 +93,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5e6bbe43f55f80235591a68efa88089992e0933f",
+            "blob": "1ffc2f02408d6dff5a12c0dc71c9bdd17a195784",
             "content": "sha256:781de27d3b75f15264927e15d255afd82b244214d46a860e3643990507c267dd",
             "locator": {
               "kind": "symbol",
@@ -75,12 +110,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e21098fd928c9d619bc89b750a9475bd3dde3fb5",
+            "blob": "17b5df5bbd40a7851bc8af3aa48a9c214f8d7bed",
             "content": "sha256:34d515708beb1a5b626922d2ccf7fc43eb03e1bafd0ee33512cfabc8f228f8b9",
             "locator": {
-              "end": 50,
+              "end": 42,
               "kind": "line_range",
-              "start": 50
+              "start": 42
             }
           },
           "kind": "code"
@@ -92,7 +127,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5e6bbe43f55f80235591a68efa88089992e0933f",
+            "blob": "1ffc2f02408d6dff5a12c0dc71c9bdd17a195784",
             "content": "sha256:781de27d3b75f15264927e15d255afd82b244214d46a860e3643990507c267dd",
             "locator": {
               "kind": "symbol",
@@ -109,7 +144,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "30cb14732f6d4d548c1ee9550ab342b849d1eb10",
+            "blob": "b130c9f33b2078e3adf38d6e87cde8c376ba65b9",
             "content": "sha256:39686253ab57b49c197444f777ca38607c1940957b35e49682d31bdd1f4e3594",
             "locator": {
               "kind": "symbol",

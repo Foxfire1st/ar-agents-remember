@@ -1,5 +1,16 @@
 # mcp/src/agents_remember/application/ - MCP Application Layer Overview
 
+## Current operative route — MIK-R112 after L74
+
+The application layer composes the exact launched actor/role/canonical task and request bindings with retained context, paired source/onboarding reads, memory quality/citation fixing and worktree/structural operations. Native folder/display labels do not create task authority. Provider setup/search, ping, lifecycle signals, child-supervision and other retired public registrations are not restored by internal services or the historical route inventory. Current runtime installation stops leftover watchers and reports old enabled keys unused; it does not start provider indexing. The supported source/input server-definition branch and composed prompt do not establish host-actual ambient suppression or new CODE acceptance.
+
+L74 read-boundary qualifications remain with their actual reader owners: a read that cannot preserve its named cache/capture/report/ref permissions refuses without a fallback write location. Converted read identity/index composition and current retained operations are distinct from archival database/seam history below. All original route text, links, references and dated closure statements are preserved rather than promoted into a fresh runtime claim.
+
+## Historical prior application route — preserved, not the current operative account
+
+<details>
+<summary>Original route corpus and source/producer custody</summary>
+
 ## Native actor binding and converted reader composition
 
 agent_binding and task_scoped_mcp retain actor, role, canonical task, request and source/settings identity for the launched task server. role_launch_context chooses the work scope without deriving it from a native folder or display title. memory_tools/read_files compose these exact bindings with retained converted MIK card/citation/knowledge behavior; writes and lifecycle publication remain with their admitted owners.
@@ -4259,3 +4270,5 @@ The native Investigator launch resolver admits Projects, sprint and sprint/maste
 The public knowledge views are source context, invariant and family; review-matrix and curation-queue views left with the retired envelope tables. Authored effects are unavailable with the removal as the reason. There is no reviewer records collection or records cursor: the surviving knowledge-comparison page uses its own cursor, while family members use their separately bound continuation. Revision selection treats every retained revision as a head, never deriving succession from a predecessor edge. Relationship movement pairs only on recorded relationships; unpaired changes remain retraction and addition. The index declares eight logical tables plus its `ix_*` tables, not an old canonical dataset.
 
 Rule 6 covers tools described as reads, every dashboard GET, `worktree_status`, previews and dry runs. They change no local branch, HEAD, working-tree file, Git index, task document or requirement packet; Git runs with `GIT_OPTIONAL_LOCKS=0`. Reads file no per-call report and may write only (a) cache files under `<coordination root>/runtime/`, (b) a recorded comparison's task report, captured objects and one pin under `refs/ar/review/`, (c) a closeout preview's enclosure worklist, quality reports and judged-tree objects, and (d) when a context-read caller asks for freshness, one configured-upstream `git fetch` inside the Git directory: fetched objects, remote-tracking refs and their reflogs, `FETCH_HEAD`, default-followed tags and Git's own fetch housekeeping. It changes no local branch, HEAD, index or working-tree file; without the argument it fetches nothing. Outside these named permissions it changes no ref or tag. No directory is created except to hold one of those files. Unrecorded tree captures use a scratch object directory, never the repository. Failure to keep the boundary is a named refusal, not a fallback write elsewhere.
+
+</details>

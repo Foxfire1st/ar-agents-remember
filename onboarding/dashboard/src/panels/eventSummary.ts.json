@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "d23908b375ed9c6971426892abe1439883faa3d6",
+        "blob": "02b856c5abc15a186564c83888ec1016bd161179",
         "content": "sha256:ef649fbdcf67961ba5bccd75c6b25d32135ff1e0fe1b5e6b80f96550d18acb28",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "d23908b375ed9c6971426892abe1439883faa3d6",
+        "blob": "02b856c5abc15a186564c83888ec1016bd161179",
         "content": "sha256:fe55ae947b3a6fa962f00b29ba3e007c2b1a331d5ff9136f442fee3e8a425c32",
         "locator": {
           "kind": "symbol",
@@ -51,6 +51,74 @@
               "name": "ObserverEvent"
             },
             "path": "dashboard/src/types/event.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Existing unknown-tool humanization statement remains correct. TOOL_LABELS loses cgc callers/callees/complexity/dependenc — source ownership, not executed visual proof.\n\nAnchor: `const TOOL_LABELS: Record<string, string> = {`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "02b856c5abc15a186564c83888ec1016bd161179",
+            "content": "sha256:e7c4b3581a01a7c689b0129e8b740af8f540d77b02b7391b44f3ff5752263ed4",
+            "locator": {
+              "end": 81,
+              "kind": "line_range",
+              "start": 65
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Existing unknown-tool humanization statement remains correct. TOOL_LABELS loses cgc callers/callees/complexity/dependenc — source ownership, not executed visual proof.\n\nAnchor: `function summarizeToolCompleted(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "02b856c5abc15a186564c83888ec1016bd161179",
+            "content": "sha256:458a1c01cd0a65a98c1a833fe1a2a66467c8b1dda4976f474cb5a13fdacfdb1b",
+            "locator": {
+              "end": 209,
+              "kind": "line_range",
+              "start": 186
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Existing unknown-tool humanization statement remains correct. TOOL_LABELS loses cgc callers/callees/complexity/dependenc — source ownership, not executed visual proof.\n\nAnchor: `function toolLabel(tool: string   undefined): string {`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "02b856c5abc15a186564c83888ec1016bd161179",
+            "content": "sha256:764513e20e271bf3f5dcce21d3aade9741dbfbb0fa46a656067f0e402912b624",
+            "locator": {
+              "end": 480,
+              "kind": "line_range",
+              "start": 475
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "Existing unknown-tool humanization statement remains correct. TOOL_LABELS loses cgc callers/callees/complexity/dependenc — source ownership, not executed visual proof.\n\nAnchor: `function humanizeIdentifier(value: string): string {`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "02b856c5abc15a186564c83888ec1016bd161179",
+            "content": "sha256:36a7c05e51281e9730978ebe57af84a5b8ad06e58890bdd8895882cb4d83c569",
+            "locator": {
+              "end": 516,
+              "kind": "line_range",
+              "start": 508
+            }
           },
           "kind": "code"
         }
@@ -207,7 +275,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d23908b375ed9c6971426892abe1439883faa3d6",
+            "blob": "02b856c5abc15a186564c83888ec1016bd161179",
             "content": "sha256:ff4226bd5ed17704780445b06a57d0a29161f1e105b288bc293d963d7dcce2d0",
             "locator": {
               "kind": "symbol",

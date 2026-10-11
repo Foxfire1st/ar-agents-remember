@@ -8,12 +8,14 @@
   },
   "applicability": "The shipped settings reference and the onboarding path for provider, mode and feature choices.",
   "conditions": [
-    "Every accepted key states its reader/enforcer or its explicit no-reader boundary.",
-    "Onboarding reads choices from the existing public options catalog with the host running."
+    "Accepted settings keys are documented separately with their actual reader or explicit no-reader boundary; a parsed key or reference sentence is not evidence of enforcement.",
+    "orchestration.spawn.harness is read through settings.spawn_harness by role defaults and the terminal spawn resolver; concurrency limits remain accepted but unenforced.",
+    "Onboarding obtains provider, mode and feature choices through the existing public options catalog with the host running."
   ],
   "exclusions": [
-    "qualityGate, concurrency, spawn and loops keys presented as enforced.",
-    "Stale key inventories."
+    "Grouping qualityGate, concurrency, spawn and loops under one no-reader or enforcement claim.",
+    "Enforcement inferred solely from parsing or source-reference prose.",
+    "Stale inventories or unverified installed/native execution claims."
   ],
   "id": "INV-DKN3CG",
   "origin": {
@@ -27,7 +29,7 @@
     "leaf": "260928-MIK-L71",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "The reference retains every accepted settings key and states its reader/enforcer or no-reader boundary. Onboarding obtains provider/mode/feature choices from the existing public options catalog with the host running.",
   "status": "proposed",

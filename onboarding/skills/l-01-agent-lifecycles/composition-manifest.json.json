@@ -4,12 +4,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "9f01b458769e29ba24c9cc3c0ff187e9e5eb2cf2",
+        "blob": "2d42ad92abef03a1873de4fd715985616f122689",
         "content": "sha256:f0e5f1ddda35f33ad0d76ff1c2fe6870a84e9a567b5aca9d8c3003a70d1f4843",
         "locator": {
-          "end": 226,
+          "end": 224,
           "kind": "line_range",
-          "start": 226
+          "start": 224
         }
       },
       "id": "RLZ-031YY4",
@@ -23,12 +23,12 @@
     },
     {
       "anchor": {
-        "blob": "9f01b458769e29ba24c9cc3c0ff187e9e5eb2cf2",
+        "blob": "2d42ad92abef03a1873de4fd715985616f122689",
         "content": "sha256:2fa7b5ec23e247702fc2471a649873e5be15b3bf2f7940224fab1131e612af55",
         "locator": {
-          "end": 333,
+          "end": 329,
           "kind": "line_range",
-          "start": 333
+          "start": 329
         }
       },
       "id": "RLZ-5G6AGC",
@@ -42,12 +42,10 @@
     },
     {
       "anchor": {
-        "blob": "9f01b458769e29ba24c9cc3c0ff187e9e5eb2cf2",
-        "content": "sha256:10f49137fc38a63b3d11d5282b2df9d58108369b16886813042cf27958e2d460",
+        "blob": "2d42ad92abef03a1873de4fd715985616f122689",
+        "content": "sha256:3fae356dfa9d2c469e49f0e31c0ea0a69a50f9fe5700edc53292037aac0490fe",
         "locator": {
-          "end": 611,
-          "kind": "line_range",
-          "start": 1
+          "kind": "file"
         }
       },
       "id": "RLZ-6W76SN",
@@ -56,12 +54,12 @@
         "handoffEntry": "MIK-R98@v1 §6",
         "leaf": "260928-MIK-L98"
       },
-      "rationale": "The canonical manifest is the owner of requested tool identities.",
+      "rationale": "The canonical composition manifest declares the Investigator retained request list; a request is instruction metadata, not a runtime authority grant.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "9f01b458769e29ba24c9cc3c0ff187e9e5eb2cf2",
+        "blob": "2d42ad92abef03a1873de4fd715985616f122689",
         "content": "sha256:d4a12d5c146197e4304e0b7d638b884b09f48878c611eddf27b3afd7a3702606",
         "locator": {
           "end": 27,
@@ -80,7 +78,7 @@
     },
     {
       "anchor": {
-        "blob": "9f01b458769e29ba24c9cc3c0ff187e9e5eb2cf2",
+        "blob": "2d42ad92abef03a1873de4fd715985616f122689",
         "content": "sha256:e91a9e18b058506863abb8bfafb7e45d6c8b6f8f7023b93dcdce5c0f8413ddfc",
         "locator": {
           "end": 36,
@@ -99,12 +97,12 @@
     },
     {
       "anchor": {
-        "blob": "9f01b458769e29ba24c9cc3c0ff187e9e5eb2cf2",
+        "blob": "2d42ad92abef03a1873de4fd715985616f122689",
         "content": "sha256:049e07153602a51202aa82c5e8a72bf741f8b30e6dac36373c2c308edc359ff2",
         "locator": {
-          "end": 180,
+          "end": 178,
           "kind": "line_range",
-          "start": 180
+          "start": 178
         }
       },
       "id": "RLZ-HGSMDT",
@@ -118,12 +116,12 @@
     },
     {
       "anchor": {
-        "blob": "9f01b458769e29ba24c9cc3c0ff187e9e5eb2cf2",
+        "blob": "2d42ad92abef03a1873de4fd715985616f122689",
         "content": "sha256:f184b155d9ef15df3ea506df8864ca5d9f62fb2f256c485415c047e030de9d72",
         "locator": {
-          "end": 608,
+          "end": 593,
           "kind": "line_range",
-          "start": 600
+          "start": 585
         }
       },
       "id": "RLZ-NNHVHW",
@@ -137,7 +135,7 @@
     },
     {
       "anchor": {
-        "blob": "9f01b458769e29ba24c9cc3c0ff187e9e5eb2cf2",
+        "blob": "2d42ad92abef03a1873de4fd715985616f122689",
         "content": "sha256:28505dbb3f7e2ed85116de1c35f58e92c921b4259d27ba9e27b961993fc25988",
         "locator": {
           "end": 57,

@@ -1,5 +1,28 @@
 # mcp/src/agents_remember/application/terminal_tools.py
 
+## Current operative account — MIK-R112
+
+The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
+
+- _spawn_launch_request now applies with_server_exclusion to plan.launch_args.
+- Capsule/workspace resolution remains unchanged.
+
+### Superseded inventory
+
+- Pre-repair card claim: Caller tool filters are merged rather than discarded. This is superseded archival wording, not a current prescription.
+
+### Source and authority bounds
+
+- Source comparison: `mcp/src/agents_remember/application/terminal_tools.py:748-792`.
+- Source comparison: `mcp/src/agents_remember/application/agent_binding.py:147-173`.
+
+Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
+
+## Historical original card — preserved, not the current operative account
+
+<details>
+<summary>Retained original source accounts and producer history</summary>
+
 ## Governing Overview
 
 [overview](overview.md)
@@ -139,3 +162,5 @@ Spawn refusal construction moved to `terminal_spawn_results.py`. This facade
 now consumes that application-owned translator and preserves source-lineage
 detail/projection on attach and spawn, rather than duplicating the terminal
 opener's structural policy.
+
+</details>

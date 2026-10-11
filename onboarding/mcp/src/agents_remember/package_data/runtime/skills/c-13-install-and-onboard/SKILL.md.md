@@ -1,5 +1,29 @@
 # c-13-install-and-onboard/SKILL.md
 
+## Current operative account — MIK-R112
+
+The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
+
+- Current Stage 6 is Retire Providers with stop-only/unused-key observation.
+- skills_install maintenance and old provider recovery evidence are obsolete.
+
+### Superseded inventory
+
+- Pre-repair card claim: Card ends setup by configuring and starting provider watchers. This is superseded archival wording, not a current prescription.
+
+### Source and authority bounds
+
+- Source comparison: `mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md:16-23`.
+- Source comparison: `mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md:404-413`.
+- Source comparison: `mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md:464-474`.
+
+Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
+
+## Historical original card — preserved, not the current operative account
+
+<details>
+<summary>Retained original source accounts and producer history</summary>
+
 ## Governing Overview
 
 [MCP package overview](../../../../../../overview.md)
@@ -172,3 +196,5 @@ a development leaf, worktree or enclosure to give the writer an argument list it
 The installed skill's preflight checks that the shared settings name a host, its runtime stage says that `runtime_install` brings the host and how to read the host part, and its report has a host line and ends with the one start. No step tells the user to run the provision as part of an install; the terminal provision is the explicit transition.
 
 - The package copy of the install skill. [8]
+
+</details>

@@ -1,5 +1,27 @@
 # l-01-agent-lifecycles/templates/manager-brief.md
 
+## Current operative account — MIK-R112
+
+The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
+
+- Current template requires reporting stuck/abandoned own-master seats, never force-retiring by hand.
+- Automatic completed-seat handling remains a separate retained path.
+
+### Superseded inventory
+
+- Pre-repair card claim: Card instructs child retirement through retire_child. This is superseded archival wording, not a current prescription.
+
+### Source and authority bounds
+
+- Source comparison: `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/manager-brief.md:139-150`.
+
+Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
+
+## Historical original card — preserved, not the current operative account
+
+<details>
+<summary>Retained original source accounts and producer history</summary>
+
 ## Governing Overview
 
 [MCP package overview](../../../../../../../overview.md)
@@ -123,3 +145,5 @@ The manager brief now carries review mode, the sealed baseline, the preceding re
 ## MIK-R95 Shared Start Preparation
 
 The dispatched Manager briefing now sends each leaf role through `role_start` as the operation that prepares its admitted environment: no separate `worktree_status`/`worktree_start` call precedes it. If a start reports moved source, the manager follows the contract-addressed `worktree_sync` recovery the start names and re-reads status, without inferring a source branch or carrying a prior super tip forward. The bundled runtime copy and the source skill template are byte-identical.
+
+</details>

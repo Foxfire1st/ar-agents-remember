@@ -845,3 +845,20 @@ Selected sprint/master Investigator execution is per request: the existing launc
 
 - **The review route's own decode: the body is the answer whatever the status.** [32]
 - The route's Role-chats pane owner. [35]
+
+
+## Current enclosure-only composition
+
+The root already says Engine Room has no product-bar entry and is exercised through injected initialView. The changed source is dev/scenarios.ts, not product routing. Its provider fixture/caption history no longer establishes a mounted provider visualization.
+
+### Maintenance boundaries
+
+Keep the four-destination/retained-layer routing and source-lineage boundary. Add only a narrow dev-fixture/render distinction: named seed/clone scenarios survive as historical projected inputs, while EngineRoom gauges/arcs and provider fallback are retired. Do not promote design specimens or dev frame names to production or mounted/e2e evidence.
+
+Source/test/fixture inspection is not a fresh mounted capture or a passing test run.
+Historical provider-shaped input data and retained compatibility definitions do not
+restore removed provider visuals or tool exposure.
+
+- The root already says Engine Room has no product-bar entry and is exercised through injected initialView. The changed so — source ownership, not executed visual proof. [41]
+- The root already says Engine Room has no product-bar entry and is exercised through injected initialView. The changed so — source ownership, not executed visual proof. [42]
+- The root already says Engine Room has no product-bar entry and is exercised through injected initialView. The changed so — source ownership, not executed visual proof. [43]

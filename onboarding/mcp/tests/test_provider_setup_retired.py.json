@@ -1,0 +1,22 @@
+{
+  "path": "mcp/tests/test_provider_setup_retired.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The complete file owns the behavior and limits described above; documentation/tests are not fresh execution evidence.\n\nAnchor: 1-81",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bac05c23eb65a6d37d363e5d18f1adf812c6bf1d",
+            "content": "sha256:cbc5e78848c0408d543c2562c502cdeb3dad731a12fcb15f40974367d928aa8c",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

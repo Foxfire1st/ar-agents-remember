@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "3e6cf4595b45bd9657a72f1ec7c6c14acac25a9b",
+        "blob": "71244a690a5bb61ebaabab3ab6c04f7a0a57e2f5",
         "content": "sha256:7d8d0418c163fc59ff2fcd6399c1d99cd6d6c1440e2761c31cbd1578985e9604",
         "locator": {
-          "end": 498,
+          "end": 495,
           "kind": "line_range",
-          "start": 483
+          "start": 480
         }
       },
       "id": "RLZ-QGSRZ5",
@@ -22,12 +22,12 @@
     },
     {
       "anchor": {
-        "blob": "3e6cf4595b45bd9657a72f1ec7c6c14acac25a9b",
+        "blob": "71244a690a5bb61ebaabab3ab6c04f7a0a57e2f5",
         "content": "sha256:7d8d0418c163fc59ff2fcd6399c1d99cd6d6c1440e2761c31cbd1578985e9604",
         "locator": {
-          "end": 498,
+          "end": 495,
           "kind": "line_range",
-          "start": 483
+          "start": 480
         }
       },
       "id": "RLZ-YSSZK6",
@@ -46,12 +46,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3e6cf4595b45bd9657a72f1ec7c6c14acac25a9b",
+            "blob": "71244a690a5bb61ebaabab3ab6c04f7a0a57e2f5",
             "content": "sha256:07d0a1f9b62f3472228b098386bf593631716ca922f77c4d558bf0595d49221c",
             "locator": {
-              "end": 250,
+              "end": 248,
               "kind": "line_range",
-              "start": 238
+              "start": 236
             }
           },
           "kind": "code"
@@ -129,6 +129,23 @@
             "content": "sha256:c253bd3e4e46fa28b91d2abbf126d738830871d0638d26980a7648e3efd2a111",
             "locator": {
               "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Current preview/handoff/STOP and owner-authority instruction; not runtime acceptance.\n\nAnchor: 146-156",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "71244a690a5bb61ebaabab3ab6c04f7a0a57e2f5",
+            "content": "sha256:5af852018e292ca80d066d13f81cfb659998ba102775edb02792dd54389a8ada",
+            "locator": {
+              "end": 156,
+              "kind": "line_range",
+              "start": 146
             }
           },
           "kind": "code"

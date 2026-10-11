@@ -1,5 +1,27 @@
 # Structural Application Services Overview
 
+## Current operative account — MIK-R112
+
+The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
+
+- Current agent_tools.py retains dispatch and private initial-brief/rollback helpers only.
+
+### Superseded inventory
+
+- Pre-repair card claim: Card assigns parent/child messaging, retirement and rename to agent_tools.py. This is superseded archival wording, not a current prescription.
+
+### Source and authority bounds
+
+- Source comparison: `mcp/src/agents_remember/application/structural/agent_tools.py:438 (def dispatch_agent_tool)`.
+- Source comparison: `mcp/src/agents_remember/application/structural/agent_tools.py:708 (def _curator_route_review_refusal)`.
+
+Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
+
+## Historical original card — preserved, not the current operative account
+
+<details>
+<summary>Retained original source accounts and producer history</summary>
+
 | Field | Value |
 |---|---|
 | sourceRoute | `mcp/src/agents_remember/application/structural/` |
@@ -209,3 +231,5 @@ so planning and messaging remain valid while a seat is vacant or replaced.
 ## CCR-L42 Refresh Validation Parity
 
 The parity candidate composes the sidecar and governing route body/history checks in `worktrees/modules/onboarding.py::validate_memory_refresh_attestations`; curator memory preparation and closeout call that shared validator independently for both surfaces. This route's existing ownership and source behavior remain unchanged by the validation wiring.
+
+</details>

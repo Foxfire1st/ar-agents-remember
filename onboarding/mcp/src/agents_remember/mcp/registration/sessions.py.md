@@ -6,6 +6,32 @@
 
 ## Purpose
 
+Register the retained `dispatch_agent` tool on the canonical task-document/role boundary.
+
+## Code Commentary
+
+`register_session_tools` registers only `dispatch_agent(task_document_ref, role, brief,
+label=None)` and builds the typed `DispatchAgentRequest`. It does not register child
+retirement or rename operations. The structural application still owns dispatch cleanup.
+A plane-hosted caller is proven from plane-injected identity and authorized for direct-child
+scope; an ambient launcher has no parent seat but is still validated against document altitude.
+A present invalid/stale/mismatched/unbound/unauthorized plane identity is a refusal, never an
+ambient fallback. Harness selection, readiness, runtime identity, pinned initial brief,
+correlation and retries stay private in both modes. Queued briefing is already durable.
+This is the retained L112 dispatch contract, not the later L113 retirement and not evidence
+of a first real hosted-agent invocation.
+
+## Current evidence
+
+- Current source excerpt `def register_session_tools(server: FastMCP, config: McpRuntimeConfig) -> None:` identifies this section's adapter/control owner, not an executed success. [4]
+
+## Historical superseded account (non-operative)
+
+Prior descriptions/evidence remain below for provenance. They are not current public
+registration, provider/lifecycle/skill-install instructions or execution acceptance.
+
+
+
 Registers agent dispatch and structural child/self seat-management operations. `dispatch_agent`
 accepts BOTH caller kinds: plane-hosted seats (identity proven from plane-injected process context)
 and ambient launchers (no `AR_HOSTED_SESSION_ID`, caller kind resolved from the process environment);

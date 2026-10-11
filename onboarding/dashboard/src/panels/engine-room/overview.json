@@ -45,6 +45,60 @@
         }
       ]
     },
+    "10": {
+      "note": "Route still owns enclosure visualization, model/types, branch/coupler/ledger, straight worktree/sync/integration conduit — source ownership, not executed visual proof.\n\nAnchor: `export function OfficialLineLayer({`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "596dec5c6c7c633b293640144a05def6c8ef4578",
+            "content": "sha256:0b75b11bb39be418cd7ac4a0f535284d932b9e1757e220fc93b14bbb10461c2c",
+            "locator": {
+              "end": 252,
+              "kind": "line_range",
+              "start": 187
+            },
+            "path": "dashboard/src/panels/engine-room/sceneLayers.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Route still owns enclosure visualization, model/types, branch/coupler/ledger, straight worktree/sync/integration conduit — source ownership, not executed visual proof.\n\nAnchor: `function fxSignature(node: EngineProcessNode): string {`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "745dcb2438f071de87e63481375c2c3790c15d3b",
+            "content": "sha256:6768f05bbb4d1c870d56b55b932e64ce7df3837770597212bc88985fec5c8df5",
+            "locator": {
+              "end": 145,
+              "kind": "line_range",
+              "start": 54
+            },
+            "path": "dashboard/src/panels/engine-room/useEngineTimeline.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Route still owns enclosure visualization, model/types, branch/coupler/ledger, straight worktree/sync/integration conduit — source ownership, not executed visual proof.\n\nAnchor: `it(\"reads a provider-plan block as the pre-contract fleeting state — no engine-anchored block, no dropout, no provider gate\", () => {`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4b5841a80afd1c24f5c4591cd1c03f80465df6fb",
+            "content": "sha256:d6d744c77f67bb72dcba7f28b1ff179a09ee53b36bece00a42eb0a286aad8c68",
+            "locator": {
+              "end": 555,
+              "kind": "line_range",
+              "start": 533
+            },
+            "path": "dashboard/src/panels/engine-room/EnclosureProcessMap.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
     "2": {
       "note": "The served `EngineProcessNode` / `Analytics.engineProcesses` contract.",
       "targets": [
@@ -170,6 +224,42 @@
               "name": "EngineProcessEdge"
             },
             "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Route still owns enclosure visualization, model/types, branch/coupler/ledger, straight worktree/sync/integration conduit — source ownership, not executed visual proof.\n\nAnchor: `/**`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "17b5df5bbd40a7851bc8af3aa48a9c214f8d7bed",
+            "content": "sha256:47a2fa749c01368bcf4c9c1ae687629c064281b1f05da19c65317b9bc516d9ef",
+            "locator": {
+              "end": 54,
+              "kind": "line_range",
+              "start": 21
+            },
+            "path": "dashboard/src/panels/engine-room/buildEngineRoomModel.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Route still owns enclosure visualization, model/types, branch/coupler/ledger, straight worktree/sync/integration conduit — source ownership, not executed visual proof.\n\nAnchor: `export function resolveEngines(node: EngineProcessNode) {`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "87821aabab3b972a5513d33de296765a0bab6d47",
+            "content": "sha256:e9e8e787363c60741961873934c51da146d412b09bad46bd4ec2313a5b312d3b",
+            "locator": {
+              "end": 120,
+              "kind": "line_range",
+              "start": 52
+            },
+            "path": "dashboard/src/panels/engine-room/scene.ts"
           },
           "kind": "code"
         }

@@ -1,5 +1,26 @@
 # mcp/tests/test_tool_entry_point_sweep.py
 
+## Current operative account — MIK-R112
+
+The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
+
+- EntryPointWorld, classifier/constants and control classes are now defined in this file, not only extracted owners.
+- STATE_DEPENDENT_RAISERS is empty and the derived matrix population retains lifecycle_finalize_task only.
+- UNMARKED_NOT_OK is empty; the surviving T34 advertised family is memory_baseline_adopt only.
+
+### Source and authority bounds
+
+- Source comparison: `mcp/tests/test_tool_entry_point_sweep.py:117-168,192`.
+- Source comparison: `mcp/tests/test_tool_entry_point_sweep.py:358-912,1220-1415`.
+- Source comparison: `mcp/tests/test_tool_entry_point_sweep.py:1013-1092`.
+
+Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
+
+## Historical original card — preserved, not the current operative account
+
+<details>
+<summary>Retained original source accounts and producer history</summary>
+
 ## Governing Overview
 
 [Test suite overview](overview.md)
@@ -224,3 +245,5 @@ the real entry point — and this module grew **1274 → 1353 lines** in the cha
 (`T66`, deferred), so the pin stays and names itself as an open, measured defect.
 
 Current pins (L130): `ENVELOPE_LOSING_RAISERS` holds `worktree_checkpoint_landing`, `worktree_cleanup`, `worktree_integrate` and `worktree_record_landing` (owner L111, repaired under MIK-R111 rule 7); `UNMARKED_NOT_OK` holds `memory_quality_check` (owner L110, repaired under MIK-R110 rule 4). A repair removes its entry in the same change; each pin stays asserted equal to what the sweep observes, in both directions.
+
+</details>

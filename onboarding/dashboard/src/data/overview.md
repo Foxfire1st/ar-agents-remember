@@ -766,3 +766,19 @@ said something the server did not:
 - **The bounded-collection union that lists `family_members` because the server accepts it, and the mirror that never narrows it.** [56]
 - **The set a request may name with no cursor, and the reason `family_members` is not in it.** [57]
 - **The optional family context whose absence says the body did not come from this route.** [58]
+
+
+## Current enclosure-only composition
+
+selectors.ts changes only the memory-mirror comment from drift_check to drift reporting. driftSegments still uses projected counts; engineState/groupEngines remain defined even though EngineRoom no longer consumes them.
+
+### Maintenance boundaries
+
+No existing Markdown claim in this overview specifically promises drift_check. Preserve catalog/authority prose; if recording L112, say drift display consumes reporting facts, not an exposed drift_check tool, and separate retained selector definitions from the retired EngineRoom provider consumer. Do not delete this route or assert provider selectors were removed.
+
+Source/test/fixture inspection is not a fresh mounted capture or a passing test run.
+Historical provider-shaped input data and retained compatibility definitions do not
+restore removed provider visuals or tool exposure.
+
+- selectors.ts changes only the memory-mirror comment from drift_check to drift reporting. driftSegments still uses projec — source ownership, not executed visual proof. [83]
+- selectors.ts changes only the memory-mirror comment from drift_check to drift reporting. driftSegments still uses projec — source ownership, not executed visual proof. [84]

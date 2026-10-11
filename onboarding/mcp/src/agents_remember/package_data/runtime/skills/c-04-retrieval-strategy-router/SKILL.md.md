@@ -6,6 +6,46 @@
 
 ## Purpose
 
+The shipped retrieval router selects the missing-context contract first: Semantics for
+unknown location, Relationship for known anchors with unknown connections, and Intent
+for hidden repository obligations. It uses harness-native search, not retired providers.
+
+## Code Commentary
+
+Semantics searches onboarding/overviews; Relationship searches configured repository
+code. Hits are route hints and require bounded source confirmation. Intent pairs source
+and deterministic onboarding through `read_ar_files`, including governing overviews and
+published knowledge, before source decisions. Native reads remain edit preconditions
+once building starts, not substitutes for the research paired-read contract.
+
+Knowledge is authored text under `knowledge/` and onboarding sidecars, indexed through
+a disposable derived cache. There is no knowledge database publication destination.
+Taskless reads use the canonical memory tree; leaf reads use its contract memory worktree,
+with no fallback. Recorded, legacy-format and named seed-absence/refusal states are
+separate observations. A bounded page is not a smaller scope.
+
+Family-complete reads return own invariant/member entries, containing families and
+remaining members, advertised additional families, then ancestor-routed chain families.
+Follow actual continuation through `knowledge_read` using `memoryRoot`, returned view and
+opaque token; do not supply old databasePath/repositoryId arguments or treat a cache path
+as the memory root. Continue until the returned terminal page confirms completeness.
+
+Generated route indexes give child routes, file-card coverage and hot-path hints. Absence
+from `coveredFiles` skips a card probe only; source reading remains permitted. Neither a
+semantic hit, index membership nor an instruction request confers runtime authority.
+
+## Current evidence
+
+- Current instruction contract and retained-read replacement, not historical provider/tool examples. [15]
+
+## Historical superseded body (non-operative)
+
+The following text is the prior onboarding account, retained for provenance.
+It is not current setup, query, publication, or tool-call guidance; the current
+contract above replaces its provider/tool/database and hook generalizations.
+
+
+
 `c-04-retrieval-strategy-router` skill is the retrieval strategy router for context-backed source work. It chooses
 between semantic search, relationship graph queries, and intent-oriented
 onboarding/source confirmation before broad source reads.

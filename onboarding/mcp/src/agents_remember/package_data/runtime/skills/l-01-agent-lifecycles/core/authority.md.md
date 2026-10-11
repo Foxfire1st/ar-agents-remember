@@ -6,9 +6,7 @@
 
 ## Purpose
 
-The shared **seat authority** block: the rules that apply to every seat in the corpus. A role file
-states its own seat's side of a rule and never restates the whole of it; this file is authored once and
-composed into every capsule.
+The retained **seat authority** corpus block: it states structural binding, dispatch and escalation rules for the old shared-core composition route. Its own source still says it is composed into a capsule; that is retained corpus doctrine, not the current native delivery mechanism. The native role launcher selects one role and one operation and does not inject this shared core. A source clause or historical composition account is not proof it reached a launched agent.
 
 ## Code Commentary
 

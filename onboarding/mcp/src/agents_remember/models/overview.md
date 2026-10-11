@@ -1,5 +1,29 @@
 # mcp/src/agents_remember/models/ - Response Contract Models Overview
 
+## Current operative account — MIK-R112
+
+The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
+
+- Public roster/response registry remove provider and other retired operations.
+- Current answer vocabulary adds landed L112 bounds and clears L112 interim ownership.
+
+### Superseded inventory
+
+- Pre-repair card claim: Current compact-context guidance points troubleshooting at provider_diagnostics. This is superseded archival wording, not a current prescription.
+
+### Source and authority bounds
+
+- Source comparison: `mcp/src/agents_remember/models/tools/public_roster.py:22 (PUBLIC_TOOLS =)`.
+- Source comparison: `mcp/src/agents_remember/models/tools/tool_answer.py:151 (L112_FINAL_BOUNDS)`.
+- Source comparison: `mcp/src/agents_remember/models/tools/tool_registry.py:120 (TOOL_RESPONSE_MODELS:)`.
+
+Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
+
+## Historical original card — preserved, not the current operative account
+
+<details>
+<summary>Retained original source accounts and producer history</summary>
+
 ## Native identity and requested launch options
 
 role_agents/role_launcher describe native start/message and launcher wire contracts. TaskDocumentRef and TaskScopedReaderContext retain repository/path identity separately from provider actor/workspace IDs. Dynamic model/effort/mode/feature validation respects explicit overrides, with per-choice sources and observed values. Immutable sessionOptions records requested native creation values; agent mode and serviceTier are observed only when the host reports them. The declared schema alone certifies no launch, acceptance or publication.
@@ -2602,3 +2626,5 @@ The roster holds 73 names: the former knowledge_change and knowledge_project too
 `RuntimeInstallResponse` now carries the host part of the install result (provision report, Node payload, configured/settings-path and restart message); the response's other fields are unchanged.
 
 - The response shape. [286]
+
+</details>

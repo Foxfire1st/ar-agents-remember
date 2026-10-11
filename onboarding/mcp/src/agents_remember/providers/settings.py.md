@@ -1,5 +1,28 @@
 # mcp/src/agents_remember/providers/settings.py
 
+## Current operative account — MIK-R112
+
+The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
+
+- Current generator takes no config and returns enabled=false with providers={}.
+- Detailed Docker settings helpers remain but are not called by that generator.
+
+### Superseded inventory
+
+- Pre-repair card claim: Card says generated settings depend on runtime provider/repository maps. This is superseded archival wording, not a current prescription.
+
+### Source and authority bounds
+
+- Source comparison: `mcp/src/agents_remember/providers/settings.py:32-47`.
+- Source comparison: `mcp/src/agents_remember/providers/settings.py:50-59`.
+
+Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
+
+## Historical original card — preserved, not the current operative account
+
+<details>
+<summary>Retained original source accounts and producer history</summary>
+
 ## Governing Overview
 
 [overview.md](../../../overview.md)
@@ -70,3 +93,5 @@ file for lower-level lifecycle functions that already accept `--from-settings`.
 - Runtime install uses generated lifecycle settings when installing provider dependencies from the MCP tool. [3]
 - GrepAI lifecycle settings define Docker mode, shared network, runner image/container, Postgres backend, and Ollama embedder backend. [4]
 - CodeGraphContext lifecycle settings define Docker runner image/build/lock/container settings and FalkorDB backend settings. [5]
+
+</details>

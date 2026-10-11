@@ -1,5 +1,29 @@
 # mcp/src/agents_remember/application/structural/agent_tools.py
 
+## Current operative account — MIK-R112
+
+The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
+
+- dispatch_agent_tool and bounded rollback still survive.
+
+### Superseded inventory
+
+- Pre-repair card claim: Purpose still includes parent/child messaging, retirement and rename. This is superseded archival wording, not a current prescription.
+- Pre-repair card claim: Logic names deleted _message_tool and public retire/rename functions. This is superseded archival wording, not a current prescription.
+
+### Source and authority bounds
+
+- Source comparison: `mcp/src/agents_remember/application/structural/agent_tools.py:438-527`.
+- Source comparison: `mcp/src/agents_remember/application/structural/agent_tools.py:233-280`.
+- Source comparison: `git diff HEAD -- mcp/src/agents_remember/application/structural/agent_tools.py: removal after _curator_route_review_refusal`.
+
+Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
+
+## Historical original card — preserved, not the current operative account
+
+<details>
+<summary>Retained original source accounts and producer history</summary>
+
 ## Governing Overview
 
 [Structural application services](overview.md)
@@ -125,3 +149,5 @@ messages persist document-and-role addresses and resolve the current occupant on
 so vacancy and replacement do not turn runtime session ids into public authority. Receipt mutation is
 composed through `DispatchBriefReceiptStore`, keeping dispatch commit evidence separate from the
 general terminal lifecycle surface while reusing the same atomic catalog storage boundary.
+
+</details>

@@ -6,6 +6,37 @@
 
 ## Purpose
 
+The packaged coordinator tools example separates shared coordinator commands from each
+repository memory layer's checks and workflow instructions. It is a template, not provider
+execution authority or the actual advertised MCP roster.
+
+## Code Commentary
+
+Repository-specific commands belong in memory `system/tools.md`; resolve the selected
+repository before choosing its task, memory or validation paths. Source/package-owned
+legacy lifecycle and Docker mechanics are distinct from coordinator-local scripts and
+shared authoritative settings. Discovery evidence never replaces verified source/intent.
+
+The current example retains pre-retirement provider dependency/setup, enabled-provider
+and include_providers wording. These are legacy specimen descriptions, not current calls
+against the L112 candidate: the two retired providers never count as enabled, normal setup
+starts nothing, and former provider search/status/watcher tools are absent. Runtime
+installation retains scaffold/copy and old-watcher-stop behavior; explicit deletion is
+separately requested through providers-remove. Do not revive provider workflows or alter
+managed configuration because an old command shape appears in this template.
+
+## Current evidence
+
+- Current instruction contract and retained-read replacement, not historical provider/tool examples. [6]
+
+## Historical superseded body (non-operative)
+
+The following text is the prior onboarding account, retained for provenance.
+It is not current setup, query, publication, or tool-call guidance; the current
+contract above replaces its provider/tool/database and hook generalizations.
+
+
+
 This example documents the coordinator-level tools surface, including the shared provider setup entrypoint and expected lifecycle command shapes for configured context providers.
 
 ## Code Commentary

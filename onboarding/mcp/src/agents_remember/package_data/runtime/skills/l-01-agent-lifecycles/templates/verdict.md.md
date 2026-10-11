@@ -1,5 +1,28 @@
 # l-01-agent-lifecycles/templates/verdict.md
 
+## Current operative account — MIK-R112
+
+The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
+
+
+
+### Superseded inventory
+
+- Pre-repair card claim: Card describes two variants; current template has four named seam variants plus loop adaptation. This is superseded archival wording, not a current prescription.
+- Pre-repair card claim: Card says every bound criterion is reported; current rule 6 scopes fix-verification to sealed-baseline evidence. This is superseded archival wording, not a current prescription.
+
+### Source and authority bounds
+
+- Source comparison: `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/verdict.md:6 (Variants are)`.
+- Source comparison: `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/verdict.md:28 (6. **Report the phase-appropriate)`.
+
+Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
+
+## Historical original card — preserved, not the current operative account
+
+<details>
+<summary>Retained original source accounts and producer history</summary>
+
 ## Governing Overview
 
 [MCP package overview](../../../../../../../overview.md)
@@ -100,3 +123,5 @@ owning seat's bounded invalidation record.
 This packaged projection preserves the canonical phase boundary: validate before append; a
 malformed never-handed-off row receives a non-attempt correction/void without consuming an ID;
 a malformed handed-off attempt requires independent rejection before successor handoff.
+
+</details>

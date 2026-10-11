@@ -1,5 +1,29 @@
 # mcp/tests
 
+## Current operative account — MIK-R112
+
+The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
+
+- Current lane counts are 321 unit, 2 public-contract, 103 integration, 22 architecture, 14 provider-conformance.
+
+### Superseded inventory
+
+- Pre-repair card claim: Card says sweep pins four lifecycle raisers; current pin is empty and population retains lifecycle_finalize_task. This is superseded archival wording, not a current prescription.
+- Pre-repair card claim: Card pins 450 manifest lines/432 entries; current file has 480 lines/462 entries. This is superseded archival wording, not a current prescription.
+
+### Source and authority bounds
+
+- Source comparison: `mcp/tests/test_tool_entry_point_sweep.py:164 (EXPECTED_LIFECYCLE_STATE_POPULATION)`.
+- Source comparison: `mcp/tests/test_tool_entry_point_sweep.py:1065 (four-state matrix observes no raiser)`.
+- Source comparison: `mcp/tests/test-evidence-lanes.toml:4 ([files])`.
+
+Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
+
+## Historical original card — preserved, not the current operative account
+
+<details>
+<summary>Retained original source accounts and producer history</summary>
+
 | Field | Value |
 | --- | --- |
 | sourceRoute | `mcp/tests/` |
@@ -753,3 +777,5 @@ The family-population tests read expected membership and claim identities from t
 - The lane registration the fail-closed manifest requires for that module (row 165 after the KS-L2 and KS-L3 insertions). [1694]
 - The architecture-fitness lane registration the fail-closed manifest requires for that proof. [1695]
 - The rewritten contract-scoped activation forcing suite and its shared-source-pair fixture. [1696]
+
+</details>

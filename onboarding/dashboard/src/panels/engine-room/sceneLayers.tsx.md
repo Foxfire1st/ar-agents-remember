@@ -4,7 +4,29 @@
 
 [panels/engine-room overview](overview.md)
 
-## Purpose
+
+## Current enclosure-only composition
+
+OfficialLineLayer now composes OfficialCoupler only; WorktreeEngineLayer name survives but renders Worktree WarpCoupler only. Provider gauges/wires/wireMotion, DropoutOverlay and ProviderBlock branch are deleted; PointerOverlays is source/node/edge based and FxOverlay passes attention/surgeXs only.
+
+### Maintenance boundaries
+
+Keep layer composition/Motion/static-CSS boundary but rename documented responsibilities to official/worktree ledger links. Delete dropout/provider-wire/gauge layers from inventory; specify surviving pointers, memory flags, landing/closeout and integration refusal/STOP/attention. Do not delete the surviving WorktreeEngineLayer merely because its name is historical.
+
+Source/test/fixture inspection is not a fresh mounted capture or a passing test run.
+Historical provider-shaped input data and retained compatibility definitions do not
+restore removed provider visuals or tool exposure.
+
+- OfficialLineLayer now composes OfficialCoupler only; WorktreeEngineLayer name survives but renders Worktree WarpCoupler  — source ownership, not executed visual proof. [3]
+- OfficialLineLayer now composes OfficialCoupler only; WorktreeEngineLayer name survives but renders Worktree WarpCoupler  — source ownership, not executed visual proof. [4]
+
+## Historical superseded account (non-operative)
+
+The prior onboarding below is retained for provenance and unrelated design history.
+It is not current provider-render, fallback, prototype-parity or execution guidance.
+Current behavior and its limits are the operative contract above.
+
+
 
 The composed scene layers of the Engine Room canvas, extracted from
 `EnclosureCanvas.tsx` by the 260731-EFA-L8 responsibility split. Each layer owns one

@@ -6,6 +6,41 @@
 
 ## Purpose
 
+Pin the retained citation-fix wiring and narrow authority refusal while recording migration
+MCP retirement separately from application-level migration reachability.
+
+## Code Commentary
+
+The registration case builds a test server and requires citation_migrate absent from the
+registered names, public roster and response models. The two historically plural authority
+cases now iterate citation_fix only. Their assertions pin configured-contract refusal fields,
+no operation envelope key, and unchanged propagation of the same unrelated AuthorityError
+object. They do not test a current migration MCP payload adapter.
+
+The migration reachability case invokes the application function under a mocked leaf writer
+scope and mocked migration routine. It asserts the guard's operation name and the resolved
+onboarding/code/memory root arguments plus dry_run/only values. These call-shape assertions
+are not proof of a real production migration, real runtime registration, hosted-agent use or
+filesystem confinement when the guard is mocked. Temporary test fixtures and historical
+class/method names are retained; no new execution or PASS is claimed by this card.
+
+## Current evidence
+
+- Negative registration/roster/model assertions for citation_migrate. [9]
+
+- Retained citation_fix-only configured-contract-authority refusal assertions. [10]
+
+- Retained citation_fix-only same-exception propagation assertion. [11]
+
+- Mocked guard/application migration call-shape evidence, not a live migration or confinement witness. [12]
+
+## Historical superseded account (non-operative)
+
+Prior two-tool registration/refusal descriptions below are preserved history, not the
+current advertised roster or current test assertion scope.
+
+
+
 Pins that **`citation_migrate` is reachable as an MCP tool, not only as a CLI subcommand.**
 
 The recorded defect (S0 of `260915-CAPS-L21`): `citation_migrate_tool` existed in

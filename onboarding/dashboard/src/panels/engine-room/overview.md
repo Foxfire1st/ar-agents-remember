@@ -18,7 +18,32 @@ with `styles.ts` as the re-export barrel. `EnclosureCanvas.tsx` was split into
 `remote.tsx`, and `sceneLayers.tsx`. `fixtures.ts` was trimmed to 1,197 physical
 lines (FL1). The scene model and motion contracts are unchanged.
 
-## Purpose
+
+## Current enclosure-only composition
+
+Route still owns enclosure visualization, model/types, branch/coupler/ledger, straight worktree/sync/integration conduits, landing/closeout, source scans/memory movement, gate/recovery/attention/STOP and GSAP/Motion gates. Provider stacks/gauges/arcs/provider-specific block/dropout/fault/reindex and boot rows are retired.
+
+### Maintenance boundaries
+
+Rewrite current route model and visual guarantees around enclosure-only composition; replace all-eight prototype parity with surviving vs historical modes. Remove stack/fallback and provider signal ownership/evidence, retain ledger coupler/surge/popovers and integration fixture flash rationale. Separate static fixture/specimen history from mounted/e2e evidence. The current T7B title and assertion body agree on fleeting enclosure, retry/abandon, no disabled-memory choice and no retired provider markers or gauges; the bound CUR-C02 successor closed that mismatch. This bounded closure is retained producer evidence, not a new mounted capture, e2e run or full-suite PASS.
+
+Source/test/fixture inspection is not a fresh mounted capture or a passing test run.
+Historical provider-shaped input data and retained compatibility definitions do not
+restore removed provider visuals or tool exposure.
+
+- Route still owns enclosure visualization, model/types, branch/coupler/ledger, straight worktree/sync/integration conduit — source ownership, not executed visual proof. [8]
+- Route still owns enclosure visualization, model/types, branch/coupler/ledger, straight worktree/sync/integration conduit — source ownership, not executed visual proof. [9]
+- Route still owns enclosure visualization, model/types, branch/coupler/ledger, straight worktree/sync/integration conduit — source ownership, not executed visual proof. [10]
+- Route still owns enclosure visualization, model/types, branch/coupler/ledger, straight worktree/sync/integration conduit — source ownership, not executed visual proof. [11]
+- Route still owns enclosure visualization, model/types, branch/coupler/ledger, straight worktree/sync/integration conduit — source ownership, not executed visual proof. [12]
+
+## Historical superseded account (non-operative)
+
+The prior onboarding below is retained for provenance and unrelated design history.
+It is not current provider-render, fallback, prototype-parity or execution guidance.
+Current behavior and its limits are the operative contract above.
+
+
 
 `engine-room/` is the enclosure-centered, state-backed Engine Room process map (slice 5e). The server
 composes the semantics (`analytics.engineProcesses`, one node per enclosure with observed/derived/planned/

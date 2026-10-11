@@ -2,7 +2,7 @@
 
 ## Purpose
 
-This companion file defines the four `l-01-session-job-lifecycle` skill job lenses (bug, feature, triage, research). A lens is picked during `reframe-research`, is re-pickable, and tunes only three things: the opening move, the retrieval lean, and the `decide` default. It never changes the spine (now stated in the canonical phase enum: `request -> trust-checkpoint -> reframe-research -> decide -> build -> close`).
+This `l-01-agent-lifecycles` companion defines four job lenses (bug, feature, triage, research) for scoping seats such as Orchestrator and Designer. A dispatched role does not pick a new lens: its brief already carries its flavor. A lens is picked during `reframe-research`, is re-pickable, and tunes only the opening move, retrieval lean and `decide` default. The listed `request -> trust-checkpoint -> reframe-research -> decide -> build -> close` axis is this retained orchestrator/scoping account, not a universal phase rule or injected shared-core contract for every native role.
 
 ## Code Commentary
 

@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9e4625511abcd31de1a3a3afa8101ac284b2c384",
+            "blob": "596dec5c6c7c633b293640144a05def6c8ef4578",
             "content": "sha256:b56ae47574d8caa3f3a7597513dfa0879cce5166256d39b1d81d0411c18fb9ac",
             "locator": {
               "kind": "symbol",
@@ -45,7 +45,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9e4625511abcd31de1a3a3afa8101ac284b2c384",
+            "blob": "596dec5c6c7c633b293640144a05def6c8ef4578",
             "content": "sha256:3a3d936c331078a39deeda6dd25e1473fc2d2e44c618665130ffb2fcf7794758",
             "locator": {
               "kind": "symbol",
@@ -56,7 +56,7 @@
         },
         {
           "anchor": {
-            "blob": "9e4625511abcd31de1a3a3afa8101ac284b2c384",
+            "blob": "596dec5c6c7c633b293640144a05def6c8ef4578",
             "content": "sha256:1122c3a00450fd296887ef2c236764e2be8a6fc8fb472db4005cc6fa0628293c",
             "locator": {
               "kind": "symbol",
@@ -78,12 +78,46 @@
         },
         {
           "anchor": {
-            "blob": "9e4625511abcd31de1a3a3afa8101ac284b2c384",
+            "blob": "596dec5c6c7c633b293640144a05def6c8ef4578",
             "content": "sha256:2491f0e8fe78d3ad5c0685f0f524570eb80490167132d6ea70461cdaacafee3e",
             "locator": {
-              "end": 30,
+              "end": 26,
               "kind": "line_range",
-              "start": 30
+              "start": 26
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "OfficialLineLayer now composes OfficialCoupler only; WorktreeEngineLayer name survives but renders Worktree WarpCoupler  — source ownership, not executed visual proof.\n\nAnchor: `export function OfficialLineLayer({`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "596dec5c6c7c633b293640144a05def6c8ef4578",
+            "content": "sha256:0b75b11bb39be418cd7ac4a0f535284d932b9e1757e220fc93b14bbb10461c2c",
+            "locator": {
+              "end": 252,
+              "kind": "line_range",
+              "start": 187
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "OfficialLineLayer now composes OfficialCoupler only; WorktreeEngineLayer name survives but renders Worktree WarpCoupler  — source ownership, not executed visual proof.\n\nAnchor: `export function RefusedOverlay({`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "596dec5c6c7c633b293640144a05def6c8ef4578",
+            "content": "sha256:261bed3150be9f810ab3854fc8835fc55b9b8fe33d9e67befe0cc0484621cfd2",
+            "locator": {
+              "end": 555,
+              "kind": "line_range",
+              "start": 403
             }
           },
           "kind": "code"

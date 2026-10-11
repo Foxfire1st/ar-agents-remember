@@ -1,0 +1,147 @@
+{
+  "path": "mcp/tests/test_tool_descriptions.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "b06fdbb1db80e083e1b8cd3e951b42b84c1fd880",
+        "content": "sha256:621a18fcf94d84672efed80ec1f7413ceefd27169a395ca3288a8e7b3ef6af78",
+        "locator": {
+          "kind": "symbol",
+          "name": "ToolDescriptionBoundsTests.test_tool_descriptions_hold_bounds_and_name_where_the_rest_is"
+        }
+      },
+      "facet": "Checks actual registered descriptions, roster equality, interim/retained length pins, the ordinary 600-character ceiling and the existence of the final longer-explanation pointer.",
+      "id": "PRF-605PY3",
+      "invariant": "INV-4HS3E5",
+      "origin": {
+        "handoffEntry": "L112-R7-DESCRIPTION-CONTRACT",
+        "leaf": "260928-MIK-L112"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b06fdbb1db80e083e1b8cd3e951b42b84c1fd880",
+        "content": "sha256:4d9e31c0efc4df117116615d822bd651db0a2eafbb615bd8099b0a2afbd87479",
+        "locator": {
+          "kind": "symbol",
+          "name": "ToolDescriptionBoundsTests.test_model_description_bound_holds_with_positive_control"
+        }
+      },
+      "facet": "The pure published-model shape control rejects a 121-character description and accepts the 120-character boundary; this facet is not a whole-build schema PASS.",
+      "id": "PRF-85JGE7",
+      "invariant": "INV-4HS3E5",
+      "origin": {
+        "handoffEntry": "L112-R7-DESCRIPTION-CONTRACT",
+        "leaf": "260928-MIK-L112"
+      }
+    }
+  ],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "b06fdbb1db80e083e1b8cd3e951b42b84c1fd880",
+        "content": "sha256:621a18fcf94d84672efed80ec1f7413ceefd27169a395ca3288a8e7b3ef6af78",
+        "locator": {
+          "kind": "symbol",
+          "name": "ToolDescriptionBoundsTests.test_tool_descriptions_hold_bounds_and_name_where_the_rest_is"
+        }
+      },
+      "id": "RLZ-1A6RH2",
+      "invariant": "INV-4HS3E5",
+      "origin": {
+        "handoffEntry": "L112-R7-DESCRIPTION-CONTRACT",
+        "leaf": "260928-MIK-L112"
+      },
+      "rationale": "The live-registration check compares the advertised roster and actual description text, applies transition length pins before the ordinary ceiling, and resolves the final pointer for ordinary descriptions.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The registered description check compares the actual advertised roster, preserves transition length pins and checks the ordinary ceiling and longer-explanation pointer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b06fdbb1db80e083e1b8cd3e951b42b84c1fd880",
+            "content": "sha256:621a18fcf94d84672efed80ec1f7413ceefd27169a395ca3288a8e7b3ef6af78",
+            "locator": {
+              "end": 227,
+              "kind": "line_range",
+              "start": 186
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Published input schemas are inspected recursively, checking each node including model/composition/container descriptions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b06fdbb1db80e083e1b8cd3e951b42b84c1fd880",
+            "content": "sha256:0140a757b49a50d2a7ac9d162e6f1ae07e94c52a4e303d830452e86840c7472f",
+            "locator": {
+              "end": 168,
+              "kind": "line_range",
+              "start": 112
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The pure model control rejects 121 characters and accepts the 120-character boundary, separately from the live whole-schema assertion.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b06fdbb1db80e083e1b8cd3e951b42b84c1fd880",
+            "content": "sha256:5bccb0b1177b2567dde4198f4d99af0b07b54955838020456e93103bf905c8e6",
+            "locator": {
+              "end": 262,
+              "kind": "line_range",
+              "start": 229
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Pointer interpretation distinguishes local documentation/skill paths from the recognized URI spelling without a local filesystem target.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b06fdbb1db80e083e1b8cd3e951b42b84c1fd880",
+            "content": "sha256:cf40aaf5ab05442b11d417c481a33b2dd9934d17d3d5e2f2923ecfd12aa35aa5",
+            "locator": {
+              "end": 178,
+              "kind": "line_range",
+              "start": 171
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Moved material, packaged byte equality and disposable installed-reference read-back protect the longer explanation; the install probe patches watcher operations.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b06fdbb1db80e083e1b8cd3e951b42b84c1fd880",
+            "content": "sha256:0d73af9887d2e686a5abce05db9e1b18738e9017717fd2f7836992406c755a29",
+            "locator": {
+              "end": 340,
+              "kind": "line_range",
+              "start": 264
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

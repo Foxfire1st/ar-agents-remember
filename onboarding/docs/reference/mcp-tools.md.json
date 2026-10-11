@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "57bc112f3d06f99c9bb21869db735d61ed5a7bc9",
+        "blob": "fb05d3562deb40c5112d16386be5776a7512fede",
         "content": "sha256:789c07c35bb07b48125149f8d927a74707c811ea4548e4b14a347d9b741504dd",
         "locator": {
           "end": 162,
@@ -22,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "57bc112f3d06f99c9bb21869db735d61ed5a7bc9",
+        "blob": "fb05d3562deb40c5112d16386be5776a7512fede",
         "content": "sha256:789c07c35bb07b48125149f8d927a74707c811ea4548e4b14a347d9b741504dd",
         "locator": {
           "end": 162,
@@ -40,6 +40,40 @@
       "role": "unclassified"
     }
   ],
-  "references": {},
+  "references": {
+    "1": {
+      "note": "Current candidate roster is the literal PUBLIC_TOOLS, measured as 39 distinct names, not the reference header's 40.\n\nAnchor: PUBLIC_TOOLS",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "87c035014ffba48579ba191d88383f81fbb48973",
+            "content": "sha256:46bcd614015b5844aa8ee6eda9941f0cf14e07a3675f87c16d1e895c9b3fe43a",
+            "locator": {
+              "end": 65,
+              "kind": "line_range",
+              "start": 22
+            },
+            "path": "mcp/src/agents_remember/models/tools/public_roster.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Source reference records retirement of structural/lifecycle/provider/benchmark/capsule tools; backend existence is not advertisement.\n\nAnchor: whole-file",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fb05d3562deb40c5112d16386be5776a7512fede",
+            "content": "sha256:a9e053f9ea5b40fffbddb7938fe0ac11cd19c25680f88e8ba19847633fc9ba5c",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
   "schema": "ar-onboarding-file/v1"
 }

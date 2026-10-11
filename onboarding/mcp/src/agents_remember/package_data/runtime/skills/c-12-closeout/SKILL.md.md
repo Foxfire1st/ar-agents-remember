@@ -5,6 +5,39 @@
 [mcp overview](../../../../../../overview.md)
 
 ## Purpose
+
+The shipped closeout instruction defines the approved code/memory Git transaction and
+its refusal/recovery boundaries. Implementation, curation and Git authority stay separate.
+
+## Code Commentary
+
+Preview immutable inputs before applying only enabled transaction legs. Refuse unresolved
+conflicts, wrong checkout/ref identity, blank messages or missing authority before unsafe
+mutation; resume an accepted generation through its exact journal-backed control, never
+a queue row, synthesized message or raw Git. Do not push automatically.
+
+The Curator completes full memory quality and any required current coherence authority
+before closeout; the transaction consumes that evidence and mandatory invariant gate,
+not a newly run curation/test/review campaign. Code tests and independent review retain
+separate owning workflows, rather than becoming automatic transaction prerequisites.
+
+Hook effects depend on publication route. `commit-tree` legs run no pre-commit/message
+hooks; prepared code uses its documented no-verify policy, prepared ordinary memory has
+its own ordinary hooks, and ref transactions can run reference-transaction hooks. Do not
+teach blanket suppression across all routes. Cleanup/finalization/retirement remain distinct
+operations and preserve abandoned-row, correlation and unfinished-successor safeguards.
+
+## Current evidence
+
+- Current instruction contract and retained-read replacement, not historical provider/tool examples. [18]
+
+## Historical superseded body (non-operative)
+
+The following text is the prior onboarding account, retained for provenance.
+It is not current setup, query, publication, or tool-call guidance; the current
+contract above replaces its provider/tool/database and hook generalizations.
+
+
 This skill documents c-12-closeout as the shared closeout contract for approved Agents
 Remember edits in repositories that use external memory. Applicable authority remains separate from
 implementation approval: standalone, final, or unclear work uses the explicit developer route, while

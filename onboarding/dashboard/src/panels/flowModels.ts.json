@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2448f87bab9a04dd5ea11428abbbfdc77d2c8524",
+            "blob": "961c2555c5c6b450368c73fcf95955843fce4474",
             "content": "sha256:1302ac5c8bc41c07628c2237d0f9408b56f22824a907e7ff97856585ae5e171c",
             "locator": {
               "end": 119,
@@ -50,6 +50,92 @@
               "name": "lifecycle_start_payload"
             },
             "path": "mcp/src/agents_remember/mcp/tools/lifecycle.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Current ownership/control, without execution or runtime tool exposure inferred.\n\nAnchor: `{ kind: \"start\", label: \"▸ developer approves the architect's strategist proposal → dispatch on sprint document\", next: \"portfolio pass\", nextStatus: \"proposed\" },`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cde515f1032c70023bdaad5a4686e28ca90b4250",
+            "content": "sha256:a3164d42ebdfe94381b906c9478c835c3770a9b3e2fb7cc0aaff1be4db631993",
+            "locator": {
+              "end": 179,
+              "kind": "line_range",
+              "start": 158
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Current ownership/control, without execution or runtime tool exposure inferred.\n\nAnchor: `kind: \"rundown\",`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cde515f1032c70023bdaad5a4686e28ca90b4250",
+            "content": "sha256:8004328b8e36d7b82b96f1f2ee2cc5494e48f7cc3d0718d066ac20aca5a5a6a6",
+            "locator": {
+              "end": 237,
+              "kind": "line_range",
+              "start": 214
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Current ownership/control, without execution or runtime tool exposure inferred.\n\nAnchor: `{`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cde515f1032c70023bdaad5a4686e28ca90b4250",
+            "content": "sha256:280bc57ba9d036f2d807d35dc7663dad22e73b5f092921ac9dff18a1b10e58ad",
+            "locator": {
+              "end": 338,
+              "kind": "line_range",
+              "start": 328
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Current ownership/control, without execution or runtime tool exposure inferred.\n\nAnchor: `\"otherwise the architect may use the same method inline. At the front of the pipeline AND mid-flight it helps the developer think a master through — the tasks/AGENTS.md doctrine (meta-questioning, reframe before execution, \" +`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cde515f1032c70023bdaad5a4686e28ca90b4250",
+            "content": "sha256:6a07df986346bb600cf5ca0eb09f49640d6e4a008f7654113755e8bf6efcad29",
+            "locator": {
+              "end": 380,
+              "kind": "line_range",
+              "start": 376
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Current ownership/control, without execution or runtime tool exposure inferred.\n\nAnchor: `const DEFAULT_RIDES_NOTE = (rides: string) =>`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "961c2555c5c6b450368c73fcf95955843fce4474",
+            "content": "sha256:f9c8b8682995b43dde28add3554d45a2eb12fcf412cc3b8500f98be087278abc",
+            "locator": {
+              "end": 67,
+              "kind": "line_range",
+              "start": 57
+            },
+            "path": "dashboard/src/panels/FlowTab.tsx"
           },
           "kind": "code"
         }

@@ -94,3 +94,21 @@ repository's observer event contract.
 ### Cross-Repo References
 
 No meaningful cross-repo references found.
+
+
+## Current enclosure-only composition
+
+Existing unknown-tool humanization statement remains correct. TOOL_LABELS loses cgc callers/callees/complexity/dependencies/symbol, drift_check, grepai_search and lifecycle gate/phase/resume/start entries. Old retained events are not deleted: those IDs now reach toolLabel mechanical humanization, with failure suffix/caller/outcome context unchanged.
+
+### Maintenance boundaries
+
+Extend the tool.completed paragraph with exact removed label-map scope and historical fallback behavior; preserve event visibility/context-ready rules and L114 caller/outcome grammar. Do not say tool history is hidden or that all lifecycle event kinds are retired; label-map removal is not event deletion.
+
+Source/test/fixture inspection is not a fresh mounted capture or a passing test run.
+Historical provider-shaped input data and retained compatibility definitions do not
+restore removed provider visuals or tool exposure.
+
+- Existing unknown-tool humanization statement remains correct. TOOL_LABELS loses cgc callers/callees/complexity/dependenc — source ownership, not executed visual proof. [10]
+- Existing unknown-tool humanization statement remains correct. TOOL_LABELS loses cgc callers/callees/complexity/dependenc — source ownership, not executed visual proof. [11]
+- Existing unknown-tool humanization statement remains correct. TOOL_LABELS loses cgc callers/callees/complexity/dependenc — source ownership, not executed visual proof. [12]
+- Existing unknown-tool humanization statement remains correct. TOOL_LABELS loses cgc callers/callees/complexity/dependenc — source ownership, not executed visual proof. [13]

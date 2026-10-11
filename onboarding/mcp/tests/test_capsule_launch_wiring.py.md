@@ -1,5 +1,25 @@
 # mcp/tests/test_capsule_launch_wiring.py
 
+## Current operative account — MIK-R112
+
+The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
+
+- D13 now asserts role_capsule_compile is absent from registered tools.
+- The second arm compiles directly and asserts ok/instructions, not equality with a public MCP reply.
+- The surrounding producer-to-consumer capsule tests remain.
+
+### Source and authority bounds
+
+- Source comparison: `mcp/tests/test_capsule_launch_wiring.py:1017-1050`.
+- Source comparison: `git diff HEAD -- mcp/tests/test_capsule_launch_wiring.py (D13 successor)`.
+
+Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
+
+## Historical original card — preserved, not the current operative account
+
+<details>
+<summary>Retained original source accounts and producer history</summary>
+
 ## Governing Overview
 
 [mcp/tests overview](overview.md)
@@ -162,3 +182,4 @@ the fixture it is pinned against lives in this repository.
 
 - The recorded vendor boundary is the thread-open request, and the capsule travels the instruction field it declares. [20]
 
+</details>

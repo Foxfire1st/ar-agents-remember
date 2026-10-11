@@ -14,8 +14,9 @@ Exports strict/flexible response contracts for MCP payload consumers.
 
 ### Logic
 
-The initializer is a single import surface over twelve owning modules plus one curated package,
-and it owns no model of its own. Its behaviour is entirely in what it makes nameable:
+The initializer collects concrete model exports, canonical memory-mode vocabulary and the
+curated conversations package. It defines no response model of its own; its behavior is in
+what the actual imports and __all__ make nameable:
 
 - cit:([`StrictResponseModel`], mcp/src/agents_remember/models/base.py:13-16), cit:([`FlexibleResponseModel`], mcp/src/agents_remember/models/base.py:19-30) and cit:([`ResponseModel`], mcp/src/agents_remember/models/base.py:66-88) arrive from
   `base.py` along with their envelope siblings, so a consumer can type a response without
@@ -63,7 +64,12 @@ None recorded.
 
 ### Role Runtime and Scope
 
-Add AgentBindingPayload, RoleStartResponse and RoleMessageResponse to the existing export surface. Their definitions remain in core and role_agents; importing the facade does not allocate agents or define another response vocabulary.
+AgentBindingPayload, RoleStartResponse and RoleMessageResponse are defined in core and
+role_agents, but this initializer currently re-exports none of those three. Consumers use
+the defining modules rather than assume the facade contains them. Importing the facade
+allocates no agent and defines no second response vocabulary. PingResponse was removed
+from both the core import and __all__; retained legacy provider/benchmark model exports
+do not advertise their removed tools.
 
 ## Evidence
 
@@ -81,3 +87,7 @@ The initializer now also re-exports the curated conversation wire-model surface 
 `models/conversations/` (R6) — the shared evidence/control-wire contracts, conversation
 primitives/identity/cursors/content/capabilities/status/stream/history/operation DTOs, and
 telemetry — keeping the package initializer exports-only.
+
+## Current export evidence
+
+- Current explicit imports and __all__ omit PingResponse and do not re-export the three role-binding/role-message/start models. [3]

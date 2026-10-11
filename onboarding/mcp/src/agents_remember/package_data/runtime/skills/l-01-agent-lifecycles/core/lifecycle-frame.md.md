@@ -6,6 +6,37 @@
 
 ## Purpose
 
+The shipped minimal lifecycle frame describes effects/signals, dispatch-time seat binding,
+trust intake and response ownership. It does not advertise removed lifecycle MCP tools.
+
+## Code Commentary
+
+The signal table describes fleeting start, phase movement, developer handoff, persistent
+promotion by worktree start, re-adoption, unsaved-work disposition and terminal recording
+as effects rather than model tool calls. Lifecycle correlation is server-side and belongs
+to the seat's own contract. A non-mutating spawned seat need not instantiate one; no seat
+adopts or advances another seat's lifecycle. Dispatch binding is a separate identity fact.
+
+Architect/orchestrator trust intake reports repository/memory/drift/freshness before relying
+on managed context; spawned roles consume the compiled facts instead of rerunning it.
+The source still contains legacy provider-start/degradation and include_providers example
+wording. Those are not current permission to invoke removed provider/lifecycle tools or
+supply removed arguments to the candidate's advertised context-packet schema. Retired
+providers perform no normal install/start/index/watch; preserve report/order/no-kill safety
+boundaries without teaching the obsolete setup route as implemented.
+
+## Current evidence
+
+- Current instruction contract and retained-read replacement, not historical provider/tool examples. [1]
+
+## Historical superseded body (non-operative)
+
+The following text is the prior onboarding account, retained for provenance.
+It is not current setup, query, publication, or tool-call guidance; the current
+contract above replaces its provider/tool/database and hook generalizations.
+
+
+
 The shared **minimal lifecycle frame**: the six signals every session shares, which seats run them,
 the opening trust checkpoint, and how every seat meets a provider degradation.
 

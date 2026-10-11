@@ -1538,3 +1538,20 @@ first family and drops keyboard focus (review R2 observation O-R2-1; the remount
 `ReviewSurface.tsx` is 931 lines, over the 900-line soft rail (L47-R1-F5, routed to L48).
 **Both were delivered by `260921-ICR-L48`** (see *Current family-centered review ownership* above): a late
 catalogue no longer moves an engaged reader and never remounts, and `ReviewSurface.tsx` is 585 lines.
+
+
+## Current enclosure-only composition
+
+Panels parent already delegates engine-room detail to child overview and keeps source-lineage diagnostics read-only. Selected deltas retire EngineRoom provider presentation/fallback and change static FlowTab/flowModels text and eventSummary label map; child panel identities and projection authority remain.
+
+### Maintenance boundaries
+
+Preserve strategic child inventory and L23 lineage ownership; append a bounded L112 composition note separating retired provider presentation from surviving enclosure/ledger/gate/landing owners. Name static flow prose and historical tool-label fallback as separate changed seams. No blanket no-impact or claim that the unrelated parent sections were rewritten; retain historical performance notes as history, not acceptance.
+
+This is static source/fixture inspection, not executed or mounted evidence.
+
+- Current ownership/control, without execution or runtime tool exposure inferred. [155]
+- Current ownership/control, without execution or runtime tool exposure inferred. [156]
+- Current ownership/control, without execution or runtime tool exposure inferred. [157]
+- Current ownership/control, without execution or runtime tool exposure inferred. [158]
+- Current ownership/control, without execution or runtime tool exposure inferred. [159]

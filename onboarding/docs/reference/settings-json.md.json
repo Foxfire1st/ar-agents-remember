@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "0b9976229d0ff1dc9160e745f66c5dd00b294ae5",
-        "content": "sha256:7647050bb6d71373c7e5ad6c2d094fcbff248414ebf25db90053aaa8e1e4d94f",
+        "blob": "9a09d000e7ce185b3e976285c531ec3e782f596a",
+        "content": "sha256:dbb212d4fbd5b79f65de1e419cdf3ef11ac208d34f6cdeef532acccccff16172",
         "locator": {
           "kind": "file"
         }
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "0b9976229d0ff1dc9160e745f66c5dd00b294ae5",
-        "content": "sha256:7647050bb6d71373c7e5ad6c2d094fcbff248414ebf25db90053aaa8e1e4d94f",
+        "blob": "9a09d000e7ce185b3e976285c531ec3e782f596a",
+        "content": "sha256:dbb212d4fbd5b79f65de1e419cdf3ef11ac208d34f6cdeef532acccccff16172",
         "locator": {
           "kind": "file"
         }
@@ -32,7 +32,7 @@
         "handoffEntry": "L71-CURRENT242-W-18",
         "leaf": "260928-MIK-L71"
       },
-      "rationale": "The settings reference preserves the accepted key inventory and the distinction between role launch readers and qualityGate/concurrency/spawn/loops keys lacking an actual enforcing reader.",
+      "rationale": "The reference maps accepted settings keys individually. spawn.harness has actual role-default/terminal readers; concurrency is explicitly unenforced, while qualityGate resource policy is a separately described key whose enforcement cannot be inferred merely from this document.",
       "role": "presentation"
     }
   ],

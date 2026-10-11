@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3aae1758cd2ff1b2b8a0fcc6e91c7200b83e3b65",
+            "blob": "20c9d9f402b167437783b95ffaf17af921dfc915",
             "content": "sha256:23ea81197aac68aedc17b34d1695a96196360c484b8549646f78e0c73797b994",
             "locator": {
               "kind": "symbol",
@@ -67,6 +67,23 @@
               "end": 94,
               "kind": "line_range",
               "start": 91
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Current source excerpt `def register_session_tools(server: FastMCP, config: McpRuntimeConfig) -> None:` identifies this section's adapter/control owner, not an executed success.\n\nAnchor: 17-51",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "20c9d9f402b167437783b95ffaf17af921dfc915",
+            "content": "sha256:cbde7182114b6399191727261540e64fb8ae69a1794af9d5bcba5e1cdd0e0654",
+            "locator": {
+              "end": 51,
+              "kind": "line_range",
+              "start": 17
             }
           },
           "kind": "code"

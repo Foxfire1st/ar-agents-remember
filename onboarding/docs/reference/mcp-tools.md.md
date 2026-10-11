@@ -5,6 +5,46 @@
 [overview.md](overview.md)
 ## Purpose
 
+Map retained MCP operation families while distinguishing source-document history from the
+candidate's actual advertised roster and current request schemas.
+
+## Code Commentary
+
+The candidate literal PUBLIC_TOOLS has 39 distinct entries. This reference source still
+states 40 and contains older databasePath/repositoryId knowledge rows plus removed
+knowledge_change/knowledge_project and other historical transport rows; those are not
+current calls. The map is not the roster. Confirm the selected server's exact schema and
+use memoryRoot/repositoryRoot/codeTreeId for the retained converted-tree reads and opaque
+view/token continuations, never legacy database arguments as a workaround.
+
+Retained core operations cover information/context/paired source reads/runtime scaffold;
+dispatch remains canonical task-document/role while role start/message keep native sender
+and recipient authority. Retired structural messages/rename/retire, lifecycle signals,
+public gates, provider/search, benchmark and capsule/catalog adapters are not replacements.
+Skills capability/resources/methods remain distinct from tools; session-driven source prose
+is not evidence of implemented L113 ambient handling.
+
+Memory operations retain full scoped quality, citation fix, initialization/baseline/carryover
+and generated routes. A bounded answer/page does not narrow the scope. The actual Curator
+writer is knowledge-ingest under the admitted checkout route; fixer is the task tool, preview
+first. Worktree/closeout/task-document operations keep exact contract, generation, preview,
+explicit enabled-leg inputs and their owning-seat/human authority. task_doc operation lists
+and concurrency/refusal prose require current schema confirmation and do not authorize a
+Curator Git/gate/landing act. Original dispatch/readiness/inbox/queue histories remain below
+but cannot advertise removed tools or turn a transport acceptance into implementation PASS.
+
+## Current evidence
+
+- Current candidate roster is the literal PUBLIC_TOOLS, measured as 39 distinct names, not the reference header's 40. [1]
+- Source reference records retirement of structural/lifecycle/provider/benchmark/capsule tools; backend existence is not advertisement. [2]
+
+## Historical superseded account (non-operative)
+
+Earlier transport inventories and database-shaped tool examples below are preserved
+provenance, not the current roster, request schema or callable-operation guide.
+
+
+
 Reference documentation records the three-state dispatch contract, readiness proof, settings timing, public hosted_session_readiness, tool census, and concurrency ruling.
 The memory-tool reference also distinguishes the full contract-scoped curator checklist from
 subset/official quality calls, including its stable enclosure path, zeroable curator count, and

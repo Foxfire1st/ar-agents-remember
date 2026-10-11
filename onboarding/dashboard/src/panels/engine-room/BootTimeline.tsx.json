@@ -31,12 +31,12 @@
         },
         {
           "anchor": {
-            "blob": "1752c54fbf1720ecd899afb14e1e26ad7e19be4a",
+            "blob": "33e18afe1b7a4d27a0a989faa241924eb5afc6ef",
             "content": "sha256:86a24e3b169e9590101ed78d462c0b7de45f6bcb6ec3603d1af9e5fc3dbbfdb2",
             "locator": {
-              "end": 56,
+              "end": 33,
               "kind": "line_range",
-              "start": 56
+              "start": 33
             }
           },
           "kind": "code"
@@ -55,12 +55,12 @@
         },
         {
           "anchor": {
-            "blob": "1752c54fbf1720ecd899afb14e1e26ad7e19be4a",
+            "blob": "33e18afe1b7a4d27a0a989faa241924eb5afc6ef",
             "content": "sha256:c5c79d18083d274fb29eee7997ec2963afd493731731960a864626a7ae57449d",
             "locator": {
-              "end": 66,
+              "end": 39,
               "kind": "line_range",
-              "start": 66
+              "start": 39
             }
           },
           "kind": "code"
@@ -137,7 +137,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1752c54fbf1720ecd899afb14e1e26ad7e19be4a",
+            "blob": "33e18afe1b7a4d27a0a989faa241924eb5afc6ef",
             "content": "sha256:28abac8c02d21ae2f066d7fae2bfba8659fc0c2549db082966c7c3cedfdf3700",
             "locator": {
               "kind": "symbol",
@@ -148,7 +148,7 @@
         },
         {
           "anchor": {
-            "blob": "1752c54fbf1720ecd899afb14e1e26ad7e19be4a",
+            "blob": "33e18afe1b7a4d27a0a989faa241924eb5afc6ef",
             "content": "sha256:61f589c5c9db15c7a1f2f1bb25c82ca846af1fe99d32ee49469285c1e820b542",
             "locator": {
               "kind": "symbol",
@@ -159,7 +159,7 @@
         },
         {
           "anchor": {
-            "blob": "1752c54fbf1720ecd899afb14e1e26ad7e19be4a",
+            "blob": "33e18afe1b7a4d27a0a989faa241924eb5afc6ef",
             "content": "sha256:044468d2da86177b5ff76cb127f2c69423abfd20f0fa3903991fdbb3f3411b8c",
             "locator": {
               "kind": "symbol",
@@ -222,6 +222,40 @@
               "start": 503
             },
             "path": "dashboard/src/panels/engine-room/layout.styles.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "bootSteps now returns Contract anchor (complete), Code worktree (exists-derived), then Ledger-map · memory worktree for  — source ownership, not executed visual proof.\n\nAnchor: `function materialized(exists: boolean   undefined): StepState {`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "33e18afe1b7a4d27a0a989faa241924eb5afc6ef",
+            "content": "sha256:24e1766fdf74d527f911cd4376f5b7502cab4fc7c67e23c048444941ebaba205",
+            "locator": {
+              "end": 50,
+              "kind": "line_range",
+              "start": 29
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "bootSteps now returns Contract anchor (complete), Code worktree (exists-derived), then Ledger-map · memory worktree for  — source ownership, not executed visual proof.\n\nAnchor: `const DISPOSE_PHASES = new Set([`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "33e18afe1b7a4d27a0a989faa241924eb5afc6ef",
+            "content": "sha256:4a474e90da0060a41349f979ef7b8e99a7353a69c60ee85559bccbc2719b29aa",
+            "locator": {
+              "end": 145,
+              "kind": "line_range",
+              "start": 54
+            }
           },
           "kind": "code"
         }

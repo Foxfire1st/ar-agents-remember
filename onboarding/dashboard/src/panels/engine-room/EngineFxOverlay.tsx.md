@@ -4,7 +4,30 @@
 
 [Engine Room overview](overview.md)
 
-## Purpose
+
+## Current enclosure-only composition
+
+EngineFxOverlayProps now contains attention and surgeXs only; sparse sibling SVG renders SurgeLines and AttentionGroup. ReindexGroup and dimensions/reindexAt were removed; fixed shared viewBox and aria-hidden remain.
+
+### Maintenance boundaries
+
+Delete reindex geometry/spine/divisions and unchanged-choreography claims for that removed effect. Describe only ledger-coupler surge and attention breathing, selector ownership in timeline and surviving structural hit targets. Do not retire the whole overlay.
+
+Source/test/fixture inspection is not a fresh mounted capture or a passing test run.
+Historical provider-shaped input data and retained compatibility definitions do not
+restore removed provider visuals or tool exposure.
+
+- EngineFxOverlayProps now contains attention and surgeXs only; sparse sibling SVG renders SurgeLines and AttentionGroup.  — source ownership, not executed visual proof. [3]
+- EngineFxOverlayProps now contains attention and surgeXs only; sparse sibling SVG renders SurgeLines and AttentionGroup.  — source ownership, not executed visual proof. [4]
+- EngineFxOverlayProps now contains attention and surgeXs only; sparse sibling SVG renders SurgeLines and AttentionGroup.  — source ownership, not executed visual proof. [5]
+
+## Historical superseded account (non-operative)
+
+The prior onboarding below is retained for provenance and unrelated design history.
+It is not current provider-render, fallback, prototype-parity or execution guidance.
+Current behavior and its limits are the operative contract above.
+
+
 
 Renders the Engine Room's repeating decorative SVG effects in a sparse sibling overlay while the
 structural enclosure canvas remains unchanged.

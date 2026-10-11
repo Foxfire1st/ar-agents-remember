@@ -1,5 +1,29 @@
 # l-01-agent-lifecycles/templates/worker-brief.md
 
+## Current operative account — MIK-R112
+
+The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
+
+- Tool-surface retrieval no longer lists CGC/GrepAI calls.
+- The worker now continues its own sync after Curator content repair and Manager capture/verify/stage.
+
+### Superseded inventory
+
+- Pre-repair card claim: The card’s live CCR-R12 paragraph still calls the ledger a transaction leg. This is superseded archival wording, not a current prescription.
+
+### Source and authority bounds
+
+- Source comparison: `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/worker-brief.md:37-46`.
+- Source comparison: `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/worker-brief.md:7-15,99-118`.
+- Source comparison: `mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md:315-322`.
+
+Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
+
+## Historical original card — preserved, not the current operative account
+
+<details>
+<summary>Retained original source accounts and producer history</summary>
+
 ## Governing Overview
 
 [MCP package overview](../../../../../../../overview.md)
@@ -113,3 +137,5 @@ a malformed handed-off attempt requires independent rejection before successor h
 ## CCR-L42 current candidate
 
 The worker brief now distinguishes baseline from fix-verification, carries the immutable issue packet, rejects unknown or outside-list scope, and records targeted check reruns separately from certification and review-round accounting.
+
+</details>

@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "73cc62598a7f61bfef776bc2393a2b4bf0f56edd",
+            "blob": "745dcb2438f071de87e63481375c2c3790c15d3b",
             "content": "sha256:42a580b2d43b802623baf299778905d1334edb1f54d8b1592e27ab5d14b54b64",
             "locator": {
               "kind": "symbol",
@@ -46,6 +46,58 @@
             "path": "dashboard/src/panels/engine-room/EnclosureProcessMap.test.tsx"
           },
           "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "EngineFxOverlayProps now contains attention and surgeXs only; sparse sibling SVG renders SurgeLines and AttentionGroup.  — source ownership, not executed visual proof.\n\nAnchor: `type EngineFxOverlayProps = {`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "df68c2254ed8f38e966883668dcf5caea64390d7",
+            "content": "sha256:e460d74b819d6e593b50a4761ea6d894b0ed8eadd3bd5917d22cd1629cc40169",
+            "locator": {
+              "end": 45,
+              "kind": "line_range",
+              "start": 10
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "EngineFxOverlayProps now contains attention and surgeXs only; sparse sibling SVG renders SurgeLines and AttentionGroup.  — source ownership, not executed visual proof.\n\nAnchor: `function AttentionGroup() {`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "df68c2254ed8f38e966883668dcf5caea64390d7",
+            "content": "sha256:b8724ffb43760168db57fa8deed72ab051b37dae691396ae060e36aaa9d88696",
+            "locator": {
+              "end": 93,
+              "kind": "line_range",
+              "start": 48
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "EngineFxOverlayProps now contains attention and surgeXs only; sparse sibling SVG renders SurgeLines and AttentionGroup.  — source ownership, not executed visual proof.\n\nAnchor: `export function FxOverlay({`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "596dec5c6c7c633b293640144a05def6c8ef4578",
+            "content": "sha256:5660a844685d16a7fcb82d0bc89bb5f6cc1e64cda592fe4e844c558948fa0f5e",
+            "locator": {
+              "end": 555,
+              "kind": "line_range",
+              "start": 527
+            },
+            "path": "dashboard/src/panels/engine-room/sceneLayers.tsx"
+          },
+          "kind": "code"
         }
       ]
     }

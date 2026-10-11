@@ -4,7 +4,28 @@
 
 [panels/engine-room overview](overview.md)
 
-## Purpose
+
+## Current enclosure-only composition
+
+engines.tsx now exports BranchNode only, with ref-derived flags/materialisation, pruned style, full title/truncated branch, landing entry and delayed detach Motion. EngineGauge and all frame/charge/decorations, boot crossing effect and timeout are removed.
+
+### Maintenance boundaries
+
+Rewrite file purpose/logic/conventions as branch-node ownership. Remove gauge palette, charge/fault/boot-pulse and runtime-state evidence. Preserve factState register, branch flags and Motion boundaries; filename survival is not survival of the gauge.
+
+Source/test/fixture inspection is not a fresh mounted capture or a passing test run.
+Historical provider-shaped input data and retained compatibility definitions do not
+restore removed provider visuals or tool exposure.
+
+- engines.tsx now exports BranchNode only, with ref-derived flags/materialisation, pruned style, full title/truncated bran — source ownership, not executed visual proof. [3]
+
+## Historical superseded account (non-operative)
+
+The prior onboarding below is retained for provenance and unrelated design history.
+It is not current provider-render, fallback, prototype-parity or execution guidance.
+Current behavior and its limits are the operative contract above.
+
+
 
 The branch-node and engine-gauge renderers of the Engine Room scene, extracted from
 `EnclosureCanvas.tsx` by the 260731-EFA-L8 responsibility split. `BranchNode` draws a

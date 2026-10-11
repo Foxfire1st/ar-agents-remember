@@ -57,3 +57,20 @@ No relevant domain documentation was found.
 No cross-repository implementation source governs this file.
 
 No applicable cross-repository source was found.
+
+
+## Current enclosure-only composition
+
+The Markdown primitive list does not name ProviderBlock, so that list is still valid. Source deletes ProviderBlock and ENGINE import only; Gate, NodeBlock, FleetingEnclosure, TerminalStop, RefusedConduit, recovery/attention/moved/lane/closeout primitives survive. RefusedConduit returns null when no conduitPathD.
+
+### Maintenance boundaries
+
+Keep the listed generic badge responsibilities. Add a precise retirement boundary for ProviderBlock, and qualify RefusedConduit by geometry: old seed kinds may still derive polarity but have no path/render; integration flashes survive. Refresh shifted evidence locators without claiming all failure badges were deleted.
+
+Source/test/fixture inspection is not a fresh mounted capture or a passing test run.
+Historical provider-shaped input data and retained compatibility definitions do not
+restore removed provider visuals or tool exposure.
+
+- The Markdown primitive list does not name ProviderBlock, so that list is still valid. Source deletes ProviderBlock and E — source ownership, not executed visual proof. [3]
+- The Markdown primitive list does not name ProviderBlock, so that list is still valid. Source deletes ProviderBlock and E — source ownership, not executed visual proof. [4]
+- The Markdown primitive list does not name ProviderBlock, so that list is still valid. Source deletes ProviderBlock and E — source ownership, not executed visual proof. [5]

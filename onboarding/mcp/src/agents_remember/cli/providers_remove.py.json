@@ -1,0 +1,22 @@
+{
+  "path": "mcp/src/agents_remember/cli/providers_remove.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The complete file owns the behavior and limits described above; documentation/tests are not fresh execution evidence.\n\nAnchor: 1-253",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "32fe9198f3fdff09fbd7cdc31a4cc816397df286",
+            "content": "sha256:51649aa30a6810a9378e2bbf530473cec380a9be66887256d473d6703782570c",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

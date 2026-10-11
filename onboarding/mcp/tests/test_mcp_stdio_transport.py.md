@@ -1,5 +1,26 @@
 # mcp/tests/test_mcp_stdio_transport.py
 
+## Current operative account — MIK-R112
+
+The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
+
+- Current baseline test calls server_info.
+
+### Superseded inventory
+
+- Pre-repair card claim: Card says a ping test proves the stdio harness. This is superseded archival wording, not a current prescription.
+
+### Source and authority bounds
+
+- Source comparison: `mcp/tests/test_mcp_stdio_transport.py:166 (def test_server_info_returns_over_stdio)`.
+
+Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
+
+## Historical original card — preserved, not the current operative account
+
+<details>
+<summary>Retained original source accounts and producer history</summary>
+
 ## Governing Overview
 
 [overview.md](../overview.md)
@@ -40,3 +61,5 @@ has a real auto-carry candidate. A `ping` test proves the harness itself.
 ## 260815-DAG-L4 Integration-Authority Forcing
 
 This task extends this suite's production-bound fixtures or assertions for task-derived protected-ref ownership, durable closeout/integration authority, external-memory parity, and fail-closed recovery. The suite continues to exercise the real owner named in its existing purpose; the L4 delta adds exact negative or crash/retry evidence rather than a test-only bypass.
+
+</details>

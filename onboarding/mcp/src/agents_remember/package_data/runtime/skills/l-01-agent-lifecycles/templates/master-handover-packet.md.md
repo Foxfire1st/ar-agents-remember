@@ -1,5 +1,28 @@
 # l-01-agent-lifecycles/templates/master-handover-packet.md
 
+## Current operative account — MIK-R112
+
+The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
+
+- Current rule 5 names role_message by role plus task references.
+- Current rule 1 makes independent master-exit review conditional on explicit request.
+
+### Superseded inventory
+
+- Pre-repair card claim: Card names message_parent for clarification/blocking issues. This is superseded archival wording, not a current prescription.
+
+### Source and authority bounds
+
+- Source comparison: `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/master-handover-packet.md:33 (5. Do not address)`.
+- Source comparison: `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/master-handover-packet.md:15 (Include an independent)`.
+
+Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
+
+## Historical original card — preserved, not the current operative account
+
+<details>
+<summary>Retained original source accounts and producer history</summary>
+
 ## Governing Overview
 
 [MCP package overview](../../../../../../../overview.md)
@@ -84,3 +107,5 @@ tree. The one full gate boundary is before the final organizational ref movement
 block landing. Candidate/code/memory ancestry and per-leaf ledger/commit evidence use canonical
 stable refs with row ids or JSON pointers, never branch names, bare assertions, or copied maps.
 Carry-over remains a documented recovery fact, never the normal landing strategy.
+
+</details>

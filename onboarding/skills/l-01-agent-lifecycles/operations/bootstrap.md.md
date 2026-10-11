@@ -1,5 +1,16 @@
 # skills/l-01-agent-lifecycles/operations/bootstrap.md
 
+## Current operative account — MIK-R112
+
+The canonical first-hour procedure retains context, developer-owned setup decisions, external memory/scaffold, knowledge-foundation read/report and baseline adoption through their actual owners. The changed provider-gap row now reads server_info unused keys, not removed status/diagnostic tools. Source step 8 still speaks of configuring/deferred provider indexing, so that retained source intent is disclosed rather than taught as an available post-R112 installer/query path; no product provider setup/start/watch is thereby restored. This source procedure is not a new bootstrap launch/capsule or indexing execution witness. Record actual failures rather than presenting an intended complete setup as observed.
+
+The original prose, exact parameters, references and dated producer accounts below remain intact as history, not present-tense authority for superseded behavior. Current evidence is the source path `skills/l-01-agent-lifecycles/operations/bootstrap.md` and the source-specific before/after extents preserved in the residual-hunk account. No code edit, proof rerun or new execution acceptance is claimed.
+
+## Historical original card — preserved, not the current operative account
+
+<details>
+<summary>Original source account and historical evidence</summary>
+
 ## Governing Overview
 
 [lifecycle overview](../overview.md)
@@ -19,3 +30,5 @@ A brief, ticket, leaf document, worktree contract or gate is not an input here, 
 - The bootstrap carrier is a taskless free agent whose capsule arrives as session environment. [1]
 - The eight setup steps run through their owning surfaces, ending in baseline adoption. [2]
 - The seat reads and reports the knowledge foundation but never authors records. [3]
+
+</details>

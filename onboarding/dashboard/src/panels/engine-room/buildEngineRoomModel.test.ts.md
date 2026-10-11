@@ -4,7 +4,29 @@
 
 [engine-room overview](overview.md)
 
-## Purpose
+
+## Current enclosure-only composition
+
+Tests use the two-argument builder. Provider factory/workspace lift and fallback exclusivity cases are removed; an empty-input case asserts zero processes. Lifecycle join/gate, stable worktreeGroup key and active-before-cleanup ordering remain.
+
+### Maintenance boundaries
+
+Remove provider helper descriptions, usesFallback/fallbackStacks assertions and mutual-exclusion invariant; document authored empty-surface behavior and surviving joins/key/order cases. Do not call the empty-process assertion a proof of provider-state deletion beyond the new builder API.
+
+Source/test/fixture inspection is not a fresh mounted capture or a passing test run.
+Historical provider-shaped input data and retained compatibility definitions do not
+restore removed provider visuals or tool exposure.
+
+- Tests use the two-argument builder. Provider factory/workspace lift and fallback exclusivity cases are removed; an empty — source ownership, not executed visual proof. [8]
+- Tests use the two-argument builder. Provider factory/workspace lift and fallback exclusivity cases are removed; an empty — source ownership, not executed visual proof. [9]
+
+## Historical superseded account (non-operative)
+
+The prior onboarding below is retained for provenance and unrelated design history.
+It is not current provider-render, fallback, prototype-parity or execution guidance.
+Current behavior and its limits are the operative contract above.
+
+
 
 Vitest suite pinning the pure `buildEngineRoomModel` builder for the enclosure-centered Engine Room process map. It locks the behaviors that keep the client seam inference-free: joining each server-composed process node to its live lifecycle by `lifecycleId`, exposing the lifecycle gate, lifting workspace-scoped providers into `workspaceEngines`, falling back to legacy per-worktree stacks only when worktree providers exist but no process nodes do, sorting active leaf enclosures ahead of cleanup/retired siblings, and (slice 5f S0) exposing `enclosureKey = worktreeGroup` stably across a fleeting→real id swap. Local `node`/`lifecycle`/`worktreeEngine` factories build minimal fixtures so each case isolates one rule.
 

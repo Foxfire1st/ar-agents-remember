@@ -6,6 +6,30 @@
 
 ## Purpose
 
+Declare the canonical task/role structural dispatch request and response only.
+
+## Code Commentary
+
+StructuralRole retains canonical roles and the earlier system-specialist spelling; the
+response role validator delegates canonicalization. DispatchAgentRequest is a frozen
+record of task_document_ref, role, brief and optional label. StructuralTargetResponse names
+work/role/status/detail, not a runtime occupant, and declares optional deliveryState and
+adapterDeliveryState; DispatchAgentResponse retains those fields and its operation label.
+Parent/child message, retirement and rename DTOs and AgentMessageKind are removed. The old
+six-consumer/three-producer inventory is history. Untouched internal gate/activation models
+remain separate owners; retirement here does not erase their state or authority.
+
+## Current model evidence
+
+- Current source section contains excerpt `StructuralRole = Literal[`; DTO/control ownership is not execution acceptance. [3]
+
+## Historical superseded account (non-operative)
+
+Prior removed-tool/current-roster claims below are preserved provenance, not current
+registration, runtime capability or execution evidence.
+
+
+
 Defines strict agent-facing DTOs for dispatch, parent/child messaging, retirement, and rename. The
 wire contains stable work-domain identity and intentionally has no runtime addressing fields.
 

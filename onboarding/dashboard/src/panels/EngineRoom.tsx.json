@@ -19,6 +19,59 @@
         }
       ]
     },
+    "10": {
+      "note": "EngineRoom subscribes to process/ledger slices and lifecycles, uses buildEngineRoomModel(engineProcesses, lifecycles), a — source ownership, not executed visual proof.\n\nAnchor: `function EngineRoomImpl() {`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "20386ce24dbf50d2623c264f361b4a10dff165c5",
+            "content": "sha256:f4ab1c90d9929275a97a8d0b49974149ee57fa99ffef5ce6bac0243de71c121d",
+            "locator": {
+              "end": 177,
+              "kind": "line_range",
+              "start": 93
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "EngineRoom subscribes to process/ledger slices and lifecycles, uses buildEngineRoomModel(engineProcesses, lifecycles), a — source ownership, not executed visual proof.\n\nAnchor: `/**`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "17b5df5bbd40a7851bc8af3aa48a9c214f8d7bed",
+            "content": "sha256:47a2fa749c01368bcf4c9c1ae687629c064281b1f05da19c65317b9bc516d9ef",
+            "locator": {
+              "end": 54,
+              "kind": "line_range",
+              "start": 21
+            },
+            "path": "dashboard/src/panels/engine-room/buildEngineRoomModel.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "EngineRoom subscribes to process/ledger slices and lifecycles, uses buildEngineRoomModel(engineProcesses, lifecycles), a — source ownership, not executed visual proof.\n\nAnchor: `export function OfficialLineLayer({`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "596dec5c6c7c633b293640144a05def6c8ef4578",
+            "content": "sha256:0b75b11bb39be418cd7ac4a0f535284d932b9e1757e220fc93b14bbb10461c2c",
+            "locator": {
+              "end": 252,
+              "kind": "line_range",
+              "start": 187
+            },
+            "path": "dashboard/src/panels/engine-room/sceneLayers.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "§4.2 3-zone room (`Panel fill` → `roomShell` → header + `roomGrid` [stack \\| `roomStage` \\| `roomZone`]).\n\nAnchor: `roomShell`",
       "targets": [
@@ -53,7 +106,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9cb152993c6abde275ec7569438fad326e9a3ae1",
+            "blob": "20386ce24dbf50d2623c264f361b4a10dff165c5",
             "content": "sha256:58d15a56ecc549ad38344568d9dcf75211615fbbe42a58e947aca64d28a6163e",
             "locator": {
               "kind": "symbol",
@@ -120,7 +173,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "30cb14732f6d4d548c1ee9550ab342b849d1eb10",
+            "blob": "b130c9f33b2078e3adf38d6e87cde8c376ba65b9",
             "content": "sha256:39686253ab57b49c197444f777ca38607c1940957b35e49682d31bdd1f4e3594",
             "locator": {
               "kind": "symbol",
@@ -132,7 +185,7 @@
         },
         {
           "anchor": {
-            "blob": "30cb14732f6d4d548c1ee9550ab342b849d1eb10",
+            "blob": "b130c9f33b2078e3adf38d6e87cde8c376ba65b9",
             "content": "sha256:93e13492ef4088c8368594cf9da93e076e02cafdd0db09ad5e78eca35bc3f159",
             "locator": {
               "end": 46,
@@ -145,7 +198,7 @@
         },
         {
           "anchor": {
-            "blob": "30cb14732f6d4d548c1ee9550ab342b849d1eb10",
+            "blob": "b130c9f33b2078e3adf38d6e87cde8c376ba65b9",
             "content": "sha256:7c8d459bab45b55e012757985b0777a92df02785f6c09e2ae35eb93eb4a80bbc",
             "locator": {
               "end": 127,

@@ -6,6 +6,29 @@
 
 ## Purpose
 
+Historical retirement record for the removed GrepAI method catalog. This source
+file is absent from both the current authored skills and packaged runtime; it is not a
+shipped callable-method guide. Earlier method examples below are retained history only.
+
+## Current replacement and boundaries
+
+The current c-04 router uses harness-native onboarding/overview search for Semantics,
+harness-native code search for Relationship, and retained paired source/onboarding reads
+for Intent. Removed provider tool names are not alternative methods to invoke. Legacy
+backend modules/settings or historical examples do not restore model-facing authority.
+
+## Current evidence
+
+- Current instruction contract and retained-read replacement, not historical provider/tool examples. [7]
+
+## Historical superseded body (non-operative)
+
+The following text is the prior onboarding account, retained for provenance.
+It is not current setup, query, publication, or tool-call guidance; the current
+contract above replaces its provider/tool/database and hook generalizations.
+
+
+
 This sibling reference teaches agents how to use GrepAI after `c-04-retrieval-strategy-router` skill selects the
 `Semantics` substrate. It documents high-leverage search and trace patterns
 with synthetic MCP call shapes and JSON-oriented example outputs so agents can

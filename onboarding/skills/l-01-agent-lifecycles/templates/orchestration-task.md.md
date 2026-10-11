@@ -1,5 +1,16 @@
 # skills/l-01-agent-lifecycles/templates/orchestration-task.md
 
+## Current operative account — MIK-R112
+
+The canonical artifact retains mechanical facts, judgments, evidence-backed edges, effective priorities, explicit or graph-less topology and durable adoption. Graph-less canonical order breaks equal-priority ties only: every contract owns its activation and no source-pair selection pauses another master. Query-inventory slots no longer require CGC/GrepAI. The ledger is a consumer cache, not a third closeout transaction leg; code and memory-content outputs and completed targeted/curation evidence retain their owning transaction authority.
+
+The original prose, exact parameters, references and dated producer accounts below remain intact as history, not present-tense authority for superseded behavior. Current evidence is the source path `skills/l-01-agent-lifecycles/templates/orchestration-task.md` and the source-specific before/after extents preserved in the residual-hunk account. No code edit, proof rerun or new execution acceptance is claimed.
+
+## Historical original card — preserved, not the current operative account
+
+<details>
+<summary>Original source account and historical evidence</summary>
+
 ## Governing Overview
 
 [lifecycle skill overview](../overview.md)
@@ -56,3 +67,5 @@ No Domain Documentation source is configured for this memory root.
 ### Cross-Repo References
 
 No meaningful cross-repository reference applies to this repository-owned orchestration template.
+
+</details>

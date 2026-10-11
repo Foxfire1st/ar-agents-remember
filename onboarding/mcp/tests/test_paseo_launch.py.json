@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "8f100ce7f5f5381456d67cea47b8638ce0acea36",
+        "blob": "5e2f8775b4a1e35aa5e9d7277163ce92b520773e",
         "content": "sha256:2200041761481afb1a77501bfcdb24006626a7641f1a37c9bc4b85a1fc79e8d9",
         "locator": {
           "kind": "symbol",
@@ -20,24 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "8f100ce7f5f5381456d67cea47b8638ce0acea36",
-        "content": "sha256:6f8f73bbd0ca2b47008d31312529a915e665f412e8eeb3e58b2829507fd558f5",
-        "locator": {
-          "kind": "symbol",
-          "name": "RolePreparationChildTests.test_both_entry_points_prepare_in_the_existing_child"
-        }
-      },
-      "facet": "The launcher route and role_start both prepare through the same checked child.",
-      "id": "PRF-9QSPDZ",
-      "invariant": "INV-5ATS9T",
-      "origin": {
-        "handoffEntry": "MIK-R95@v1 rule5",
-        "leaf": "260928-MIK-L95"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "8f100ce7f5f5381456d67cea47b8638ce0acea36",
+        "blob": "5e2f8775b4a1e35aa5e9d7277163ce92b520773e",
         "content": "sha256:2200041761481afb1a77501bfcdb24006626a7641f1a37c9bc4b85a1fc79e8d9",
         "locator": {
           "kind": "symbol",
@@ -54,8 +37,25 @@
     },
     {
       "anchor": {
-        "blob": "8f100ce7f5f5381456d67cea47b8638ce0acea36",
-        "content": "sha256:6f5415749e051b95df4fbdf743dc3b137dbc1c78d9c9b49b5925b471076a98d6",
+        "blob": "5e2f8775b4a1e35aa5e9d7277163ce92b520773e",
+        "content": "sha256:6f8f73bbd0ca2b47008d31312529a915e665f412e8eeb3e58b2829507fd558f5",
+        "locator": {
+          "kind": "symbol",
+          "name": "RolePreparationChildTests.test_both_entry_points_prepare_in_the_existing_child"
+        }
+      },
+      "facet": "The shared dispatch case checks the existing-child argv/request and same-enclosure reuse for Worker then Reviewer dispatch; it does not call a separate role_start entry point or establish native launch proof.",
+      "id": "PRF-P0B9WG",
+      "invariant": "INV-5ATS9T",
+      "origin": {
+        "handoffEntry": "L112-semantic-replacement-PRF-9QSPDZ",
+        "leaf": "260928-MIK-L112"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "5e2f8775b4a1e35aa5e9d7277163ce92b520773e",
+        "content": "sha256:8a7e15e7cc437e5cad674cb9bbbc949a93d5794d4e176be94a159e5562abc012",
         "locator": {
           "kind": "symbol",
           "name": "RoleFolderAndIdentityTests.test_each_role_class_gets_one_agent_in_its_folder_with_title_and_labels"
@@ -71,7 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "8f100ce7f5f5381456d67cea47b8638ce0acea36",
+        "blob": "5e2f8775b4a1e35aa5e9d7277163ce92b520773e",
         "content": "sha256:f817446786d0d1171f345de2b1bda721ed1b85cfa59d661141ad5603710f34f2",
         "locator": {
           "kind": "symbol",
@@ -88,7 +88,7 @@
     },
     {
       "anchor": {
-        "blob": "8f100ce7f5f5381456d67cea47b8638ce0acea36",
+        "blob": "5e2f8775b4a1e35aa5e9d7277163ce92b520773e",
         "content": "sha256:c22d39abcd0ca89b2038cc515eba85e3ac507957499dfca37e62e1f082595a4c",
         "locator": {
           "kind": "symbol",

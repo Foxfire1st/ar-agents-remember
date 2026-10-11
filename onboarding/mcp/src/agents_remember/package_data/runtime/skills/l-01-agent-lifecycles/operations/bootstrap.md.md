@@ -1,5 +1,29 @@
 # l-01-agent-lifecycles/operations/bootstrap.md
 
+## Current operative account — MIK-R112
+
+The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
+
+- The missing-provider observation now uses server_info unused keys, not provider diagnostics.
+- The early seven-step account is stale beside the current eight-step workflow and its knowledge-foundation step.
+
+### Superseded inventory
+
+- Pre-repair card claim: The operative card still says capsule delivery is absent; current Failure handling explicitly supersedes that gap. This is superseded archival wording, not a current prescription.
+
+### Source and authority bounds
+
+- Source comparison: `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/bootstrap.md:54-89`.
+- Source comparison: `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/bootstrap.md:99-110`.
+- Source comparison: `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/bootstrap.md:161-176`.
+
+Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
+
+## Historical original card — preserved, not the current operative account
+
+<details>
+<summary>Retained original source accounts and producer history</summary>
+
 ## Governing Overview
 
 [MCP package overview](../../../../../../../overview.md)
@@ -150,3 +174,5 @@ foundation's state — recorded at an identity, or the named state that says it 
 **This card describes a generated copy**, propagated from
 `skills/l-01-agent-lifecycles/operations/bootstrap.md` by `scripts/sync-skills.py` into this package-owned
 copy and the eight harness starter packages.
+
+</details>

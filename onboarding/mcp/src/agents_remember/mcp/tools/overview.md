@@ -1,5 +1,29 @@
 # mcp/src/agents_remember/mcp/tools
 
+## Current operative account — MIK-R112
+
+The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
+
+- capsule_serving.py, benchmark.py and providers.py were deleted.
+- structural_agent.py now adapts dispatch_agent only; internal gate/block helpers remain separate.
+
+### Superseded inventory
+
+- Pre-repair card claim: Current Where Registration Lives Now still lists benchmark/provider/message_parent/message_child builders. This is superseded archival wording, not a current prescription.
+
+### Source and authority bounds
+
+- Source comparison: `mcp/src/agents_remember/mcp/tools/structural_agent.py:1-33`.
+- Source comparison: `mcp/src/agents_remember/mcp/tools/__init__.py:11-84`.
+- Source comparison: `git diff HEAD -- mcp/src/agents_remember/mcp/tools/capsule_serving.py (deleted file)`.
+
+Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
+
+## Historical original card — preserved, not the current operative account
+
+<details>
+<summary>Retained original source accounts and producer history</summary>
+
 ## Native role payloads and scoped reader adapters
 
 Native role payloads delegate starts/messages through the actual caller binding; core/read-file adapters preserve exact task context and converted knowledge contracts. Configured tier refuses on terminal spawning because that transport has no native feature channel. Paseo validates/transports the independent choice, and structured requested/observed/refusal provenance remains explicit.
@@ -709,3 +733,5 @@ Read selects a converted memory root and its derived index. Legacy roots and dat
 
 
 - Legacy paths and unheld current seeds refuse truthfully. [35]
+
+</details>

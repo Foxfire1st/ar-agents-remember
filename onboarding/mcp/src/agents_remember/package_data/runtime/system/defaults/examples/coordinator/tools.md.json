@@ -24,7 +24,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "50f1f044fc74b316290010e6c58cc5acab8d47e8",
+            "blob": "8808e0d416208721b7111c768defa77dea8537d0",
             "content": "sha256:f0f3a77bdbcb06318717dbf5636269fa324e62ba299f7bbdaf607d91f44e93f7",
             "locator": {
               "end": 22,
@@ -41,12 +41,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "50f1f044fc74b316290010e6c58cc5acab8d47e8",
+            "blob": "8808e0d416208721b7111c768defa77dea8537d0",
             "content": "sha256:39cec743efc6c8438ab6d6f37e984b9d28839514ebc48ece8655a45ca61472da",
             "locator": {
-              "end": 42,
+              "end": 39,
               "kind": "line_range",
-              "start": 42
+              "start": 39
             }
           },
           "kind": "code"
@@ -58,12 +58,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "50f1f044fc74b316290010e6c58cc5acab8d47e8",
+            "blob": "8808e0d416208721b7111c768defa77dea8537d0",
             "content": "sha256:3b88064d5d0d90075521e5fb4c5d6545224ffd833eb7166ae21400c0d807e5ab",
             "locator": {
-              "end": 75,
+              "end": 72,
               "kind": "line_range",
-              "start": 69
+              "start": 66
             }
           },
           "kind": "code"
@@ -75,13 +75,31 @@
       "targets": [
         {
           "anchor": {
-            "blob": "50f1f044fc74b316290010e6c58cc5acab8d47e8",
+            "blob": "8808e0d416208721b7111c768defa77dea8537d0",
             "content": "sha256:f544f3f8e9bd70c0dcdf1fffe98147f47cebde772669bd1c5d95ae595327bff7",
             "locator": {
-              "end": 78,
+              "end": 75,
               "kind": "line_range",
-              "start": 77
+              "start": 74
             }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Current instruction contract and retained-read replacement, not historical provider/tool examples.\n\nAnchor: # Coordinator Tools Example",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8808e0d416208721b7111c768defa77dea8537d0",
+            "content": "sha256:6e625afe6aaff7c24e43232f03444b839d91fc757c63005b6b9147f22ddf1b04",
+            "locator": {
+              "end": 88,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "system/defaults/examples/coordinator/tools.md"
           },
           "kind": "code"
         }

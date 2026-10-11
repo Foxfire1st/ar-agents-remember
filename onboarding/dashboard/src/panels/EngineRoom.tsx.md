@@ -10,7 +10,30 @@ The engine-room style module split moved `engineRoomStyles` imports to the new
 `engine-room/styles` barrel (which re-exports the six style domains); rendering and
 data flow are unchanged.
 
-## Purpose
+
+## Current enclosure-only composition
+
+EngineRoom subscribes to process/ledger slices and lifecycles, uses buildEngineRoomModel(engineProcesses, lifecycles), and renders selected process or the no-enclosures empty state. No OfficialStrip, provider subscription or fallback path. Official ledger lookup, selection, gate diagnostics, leaf-first header and pulse remain.
+
+### Maintenance boundaries
+
+Rewrite purpose, input/model grammar, render branches and evidence to enclosure-only composition. Remove OfficialStrip grouping/title semantics and fallback testids; keep officialLedger by selected repo, gen remount and lifecycle/gate/visibility behavior. Explicitly retain ledger couplers, not provider gauges.
+
+Source/test/fixture inspection is not a fresh mounted capture or a passing test run.
+Historical provider-shaped input data and retained compatibility definitions do not
+restore removed provider visuals or tool exposure.
+
+- EngineRoom subscribes to process/ledger slices and lifecycles, uses buildEngineRoomModel(engineProcesses, lifecycles), a — source ownership, not executed visual proof. [10]
+- EngineRoom subscribes to process/ledger slices and lifecycles, uses buildEngineRoomModel(engineProcesses, lifecycles), a — source ownership, not executed visual proof. [11]
+- EngineRoom subscribes to process/ledger slices and lifecycles, uses buildEngineRoomModel(engineProcesses, lifecycles), a — source ownership, not executed visual proof. [12]
+
+## Historical superseded account (non-operative)
+
+The prior onboarding below is retained for provenance and unrelated design history.
+It is not current provider-render, fallback, prototype-parity or execution guidance.
+Current behavior and its limits are the operative contract above.
+
+
 
 The engine room (note 08 twin-engine pod): each worktree's provider stack = CGC (its code repo) +
 GrepAI (its memory repo). It builds a render model with `buildEngineRoomModel` and surfaces the

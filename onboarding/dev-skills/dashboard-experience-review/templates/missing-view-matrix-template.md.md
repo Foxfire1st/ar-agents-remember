@@ -1,5 +1,16 @@
 # dev-skills/dashboard-experience-review/templates/missing-view-matrix-template.md
 
+## Current operative account — MIK-R112
+
+The matrix uses workflow steps and states the running system can actually reach, together with forced UI states. The changed source removes the provider-state row enumeration and provider_status observation; retained worktree_status/server_info and live DOM evidence decide reachability. A blank settled cell remains a finding, never proof a retired provider view should return. The conductor remains findings-only and this template grants no mutation.
+
+The original prose, exact parameters, references and dated producer accounts below remain intact as history, not present-tense authority for superseded behavior. Current evidence is the source path `dev-skills/dashboard-experience-review/templates/missing-view-matrix-template.md` and the source-specific before/after extents preserved in the residual-hunk account. No code edit, proof rerun or new execution acceptance is claimed.
+
+## Historical original card — preserved, not the current operative account
+
+<details>
+<summary>Original source account and historical evidence</summary>
+
 ## Governing Overview
 
 [overview.md](../../overview.md)
@@ -44,3 +55,5 @@ No relevant external documentation found.
 ### Cross-Repo References
 
 No meaningful cross-repo references found.
+
+</details>

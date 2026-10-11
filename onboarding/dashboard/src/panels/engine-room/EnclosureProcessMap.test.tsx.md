@@ -4,7 +4,34 @@
 
 [engine-room overview](overview.md)
 
-## Purpose
+
+## Current enclosure-only composition
+
+Authored cases now assert zero provider gauges/wires, absent seed clone conduits/refusal/fault/reindex markers, retained couplers and no provider-engine scan. Workspace fixtures were removed. Integration conflict flashes/STOP, source scans, memory movement, ledgers and visibility/backdrop cases remain. The current T7B successor positively asserts the fleeting enclosure, retry and abandon inside its text, no disabled-memory choice, no separate provider block/dropout/recovery chips and zero provider gauges. Its title and body now agree.
+
+### Maintenance boundaries
+
+Provider cases retain absence assertions, not WORKSPACE_ENGINES/runtime/petal/clone arc guarantees. CUR-C02's former title/body contradiction is closed by the Owner-bound, independently passed test-only successor; the historical F06 adaptation, its replacement by L50 at the earlier sync, and the old provider-shaped account remain provenance, not current assertions. Retained producer streams record whole-file59 passed and filtered3 passed/56 skipped with this case explicitly passing; those are bounded inherited execution evidence, not a Curator rerun, live dashboard census, host-actual obligation or whole-code/memory acceptance. Replay title still overclaims bent geometry: its body tests data-strategy only.
+
+Source/test/fixture inspection is not a fresh mounted capture or a passing test run.
+Historical provider-shaped input data and retained compatibility definitions do not
+restore removed provider visuals or tool exposure.
+
+- The T7B successor asserts fleeting/retry/abandon/no-disabled-memory and absence of retired provider block/dropout/gauges/separate chips. [13]
+
+- Authored cases now assert zero provider gauges/wires, absent seed clone conduits/refusal/fault/reindex markers, retained — source ownership, not executed visual proof. [8]
+- Authored cases now assert zero provider gauges/wires, absent seed clone conduits/refusal/fault/reindex markers, retained — source ownership, not executed visual proof. [9]
+- Authored cases now assert zero provider gauges/wires, absent seed clone conduits/refusal/fault/reindex markers, retained — source ownership, not executed visual proof. [10]
+- Authored cases now assert zero provider gauges/wires, absent seed clone conduits/refusal/fault/reindex markers, retained — source ownership, not executed visual proof. [11]
+- Authored cases now assert zero provider gauges/wires, absent seed clone conduits/refusal/fault/reindex markers, retained — source ownership, not executed visual proof. [12]
+
+## Historical superseded account (non-operative)
+
+The prior onboarding below is retained for provenance and unrelated design history.
+It is not current provider-render, fallback, prototype-parity or execution guidance.
+Current behavior and its limits are the operative contract above.
+
+
 
 Vitest + `@testing-library/react` render test for the Engine Room pod stage: it pins the **fleeting**
 (pre-contract blocked-start) promote-in-place rendering plus the **bird's-eye scene** (5g G1) — the flow

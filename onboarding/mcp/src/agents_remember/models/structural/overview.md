@@ -1,5 +1,25 @@
 # Structural Wire Models Overview
 
+## Current operative account — MIK-R112
+
+The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
+
+- agent.py now has DispatchAgentRequest/Response and StructuralTargetResponse only.
+- Message/retire/rename request and response schemas were removed.
+- Structural work-domain identity and internal activation/gate separation remain.
+
+### Source and authority bounds
+
+- Source comparison: `mcp/src/agents_remember/models/structural/agent.py:15-63`.
+- Source comparison: `git diff HEAD -- mcp/src/agents_remember/models/structural/agent.py (removed DTO families)`.
+
+Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
+
+## Historical original card — preserved, not the current operative account
+
+<details>
+<summary>Retained original source accounts and producer history</summary>
+
 | Field | Value |
 |---|---|
 | sourceRoute | `mcp/src/agents_remember/models/structural/` |
@@ -108,3 +128,5 @@ identity vocabulary.
 
 - Commit-derived verification metadata awaits governed closeout; the activation-model path,
   contract-scoped vocabulary, and citations are reconciled to the frozen candidate.
+
+</details>

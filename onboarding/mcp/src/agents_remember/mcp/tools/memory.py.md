@@ -6,6 +6,40 @@
 
 ## Purpose
 
+Adapt retained memory quality, citations, route indexes, initialization, baseline and carryover operations.
+
+## Code Commentary
+
+Quality sync/start/poll wrappers forward their discriminated typed requests to the matching
+controller method. Drift-check and citation-migrate adapters are absent. Citation fix alone
+catches exactly ConfiguredContractAuthorityError and returns configured-contract-authority-invalid
+with developer-decision guidance; unrelated exceptions propagate. Converted citation answers
+bound each named list and expose full count/truncation fields, including authoring lists;
+legacy answers pass through unchanged. A bounded answer is not a reduced operation scope.
+The source's suggestion to run memory-citations for full lists is legacy CLI wording, not
+permission to evade a checkout execution guard: this leaf's admitted fixer is the scoped
+agents-remember-task citation_fix tool, preview before apply. Full logs can be read as evidence.
+`memory_carryover_plan` is a read: its adapter compacts the result with `report_path=None`,
+files no per-call report and exposes no `reportPath`. Capped path summaries say
+`no report filed`; omitted candidate detail is not promised in a nonexistent report.
+Only the mutating `memory_carryover_apply` files the full result before compaction and
+returns that report's path with source-path decisions and bounded path summaries.
+Retained response logs are separate custody, not reports filed by the read-plan branch.
+Previews and actual operations retain their separate authority and dry-run semantics.
+
+## Current evidence
+
+- Current source excerpt `def memory_quality_check_payload(` identifies this section's adapter/control owner, not an executed success. [7]
+
+- Current source excerpt `def _bounded_lists(payload: dict[str, Any], names: tuple[str, ...]) -> dict[str, Any]:` identifies this section's adapter/control owner, not an executed success. [8]
+
+## Historical superseded account (non-operative)
+
+Prior descriptions/evidence remain below for provenance. They are not current public
+registration, provider/lifecycle/skill-install instructions or execution acceptance.
+
+
+
 Memory, drift, route-index, baseline, and carryover payload builders.
 
 ## Code Commentary

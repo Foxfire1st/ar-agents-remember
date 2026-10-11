@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5e6bbe43f55f80235591a68efa88089992e0933f",
+            "blob": "1ffc2f02408d6dff5a12c0dc71c9bdd17a195784",
             "content": "sha256:781de27d3b75f15264927e15d255afd82b244214d46a860e3643990507c267dd",
             "locator": {
               "kind": "symbol",
@@ -93,7 +93,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "30cb14732f6d4d548c1ee9550ab342b849d1eb10",
+            "blob": "b130c9f33b2078e3adf38d6e87cde8c376ba65b9",
             "content": "sha256:55a92aa6b203fe4ef20cffe894615dd109c84cc8d6ce32a8e773cf437e755d33",
             "locator": {
               "kind": "symbol",
@@ -105,13 +105,48 @@
         },
         {
           "anchor": {
-            "blob": "30cb14732f6d4d548c1ee9550ab342b849d1eb10",
+            "blob": "b130c9f33b2078e3adf38d6e87cde8c376ba65b9",
             "content": "sha256:39686253ab57b49c197444f777ca38607c1940957b35e49682d31bdd1f4e3594",
             "locator": {
               "kind": "symbol",
               "name": "groupEngines"
             },
             "path": "dashboard/src/data/selectors.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "EngineRoomModel now has processes: EngineProcessView[] only; EngineProcessView retains enclosureKey,node,lifecycle?,gate — source ownership, not executed visual proof.\n\nAnchor: `// The Engine Room render model (slice 5e). The server composes the enclosure-centered`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1ffc2f02408d6dff5a12c0dc71c9bdd17a195784",
+            "content": "sha256:9f7428b8f4e98f3c586a8469b4edd67e9ecd2d1167882427069848006b22b1e1",
+            "locator": {
+              "end": 29,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "EngineRoomModel now has processes: EngineProcessView[] only; EngineProcessView retains enclosureKey,node,lifecycle?,gate — source ownership, not executed visual proof.\n\nAnchor: `const lifecycleById = new Map(lifecycles.map((lifecycle) => [lifecycle.id, lifecycle]));`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "17b5df5bbd40a7851bc8af3aa48a9c214f8d7bed",
+            "content": "sha256:5bf4491d4af8180586d33c7703a755647d255e4c2e31b8eb3d146d93190b781c",
+            "locator": {
+              "end": 49,
+              "kind": "line_range",
+              "start": 34
+            },
+            "path": "dashboard/src/panels/engine-room/buildEngineRoomModel.ts"
           },
           "kind": "code"
         }

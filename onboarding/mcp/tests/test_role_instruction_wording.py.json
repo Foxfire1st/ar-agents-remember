@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "2904663d67c2961d4be16fb038aac76e17f9b907",
+        "blob": "4e60e0c6742ab8a2452c205e8c8762503c4aeadf",
         "content": "sha256:97cd0a5a2694c0c0ce2469a0bcaddc3291407cc50bdbbae3565e97a8272dfbb3",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "2904663d67c2961d4be16fb038aac76e17f9b907",
+        "blob": "4e60e0c6742ab8a2452c205e8c8762503c4aeadf",
         "content": "sha256:2784247703adc1e43cba86b6ac1f4f9a4319aaf49d06b318f6c2465ae04c16ba",
         "locator": {
           "kind": "symbol",
@@ -37,24 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "2904663d67c2961d4be16fb038aac76e17f9b907",
-        "content": "sha256:019cae151d62077453201bd313cfee3956bb0ee26905f12f5af87155606c7230",
-        "locator": {
-          "kind": "symbol",
-          "name": "InstructionFileWordingTests.test_investigator_scope_report_and_authority_are_explicit"
-        }
-      },
-      "facet": "Pins the Investigator concern, allowed scratch checking, no code/memory/task mutation, report/order boundary, intake channel and exact fourteen requested tools against the canonical role and manifest.",
-      "id": "PRF-0KYXS7",
-      "invariant": "INV-YT1AD8",
-      "origin": {
-        "handoffEntry": "MIK-R98@v1 §2",
-        "leaf": "260928-MIK-L98"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "2904663d67c2961d4be16fb038aac76e17f9b907",
+        "blob": "4e60e0c6742ab8a2452c205e8c8762503c4aeadf",
         "content": "sha256:97cd0a5a2694c0c0ce2469a0bcaddc3291407cc50bdbbae3565e97a8272dfbb3",
         "locator": {
           "kind": "symbol",
@@ -71,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "2904663d67c2961d4be16fb038aac76e17f9b907",
+        "blob": "4e60e0c6742ab8a2452c205e8c8762503c4aeadf",
         "content": "sha256:97cd0a5a2694c0c0ce2469a0bcaddc3291407cc50bdbbae3565e97a8272dfbb3",
         "locator": {
           "kind": "symbol",
@@ -88,7 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "2904663d67c2961d4be16fb038aac76e17f9b907",
+        "blob": "4e60e0c6742ab8a2452c205e8c8762503c4aeadf",
         "content": "sha256:7d8931039e806a10450e1ca5275fa785aa4dd76cee511fc83214ab68972342a1",
         "locator": {
           "kind": "symbol",
@@ -105,7 +88,7 @@
     },
     {
       "anchor": {
-        "blob": "2904663d67c2961d4be16fb038aac76e17f9b907",
+        "blob": "4e60e0c6742ab8a2452c205e8c8762503c4aeadf",
         "content": "sha256:413440fdc4e871dc50752f0c616d58deaf7cae1d5119fb76394cba67eedbee52",
         "locator": {
           "kind": "symbol",
@@ -122,7 +105,7 @@
     },
     {
       "anchor": {
-        "blob": "2904663d67c2961d4be16fb038aac76e17f9b907",
+        "blob": "4e60e0c6742ab8a2452c205e8c8762503c4aeadf",
         "content": "sha256:02afda3c94b27ad74f341d907eede7abdaf148c9be262c498424edf8c82635ac",
         "locator": {
           "kind": "symbol",
@@ -139,7 +122,7 @@
     },
     {
       "anchor": {
-        "blob": "2904663d67c2961d4be16fb038aac76e17f9b907",
+        "blob": "4e60e0c6742ab8a2452c205e8c8762503c4aeadf",
         "content": "sha256:97cd0a5a2694c0c0ce2469a0bcaddc3291407cc50bdbbae3565e97a8272dfbb3",
         "locator": {
           "kind": "symbol",
@@ -156,41 +139,41 @@
     },
     {
       "anchor": {
-        "blob": "2904663d67c2961d4be16fb038aac76e17f9b907",
-        "content": "sha256:019cae151d62077453201bd313cfee3956bb0ee26905f12f5af87155606c7230",
+        "blob": "4e60e0c6742ab8a2452c205e8c8762503c4aeadf",
+        "content": "sha256:58b7e6205b4af5723db7c9753504997b2d94acd813bd8c677f8b91d449f2e601",
         "locator": {
           "kind": "symbol",
           "name": "InstructionFileWordingTests.test_investigator_scope_report_and_authority_are_explicit"
         }
       },
-      "facet": "Pins the Investigator concern, allowed scratch checking, no code/memory/task mutation, report/order boundary, intake channel and exact fourteen requested tools against the canonical role and manifest.",
-      "id": "PRF-95VTT0",
+      "facet": "The wording check requires a report before provider/system state change and an explicit authorized order from the developer or actual named parent; it grants no retired provider operation.",
+      "id": "PRF-6YJJ90",
       "invariant": "INV-MM63KX",
       "origin": {
-        "handoffEntry": "MIK-R98@v1 §4",
-        "leaf": "260928-MIK-L98"
+        "handoffEntry": "L112-current-proof-INV-MM63KX",
+        "leaf": "260928-MIK-L112"
       }
     },
     {
       "anchor": {
-        "blob": "2904663d67c2961d4be16fb038aac76e17f9b907",
-        "content": "sha256:019cae151d62077453201bd313cfee3956bb0ee26905f12f5af87155606c7230",
+        "blob": "4e60e0c6742ab8a2452c205e8c8762503c4aeadf",
+        "content": "sha256:1b654b5e1a131a4ca5470c7ef22680187aac0df72de5c59246e2af26abba6b33",
         "locator": {
           "kind": "symbol",
-          "name": "InstructionFileWordingTests.test_investigator_scope_report_and_authority_are_explicit"
+          "name": "InstructionFileWordingTests.test_every_role_organises_its_harness_work_with_seat_boundaries"
         }
       },
-      "facet": "Pins the Investigator concern, allowed scratch checking, no code/memory/task mutation, report/order boundary, intake channel and exact fourteen requested tools against the canonical role and manifest.",
-      "id": "PRF-BK9S30",
-      "invariant": "INV-YNHABM",
+      "facet": "The canonical-source wording guard checks every listed role's autonomy/boundary clauses, absence of the retired fixed fan-out wording, Worker no-role-start and exactly one Curator writer; it is not delivered-capsule execution evidence.",
+      "id": "PRF-BV411J",
+      "invariant": "INV-7VZRZW",
       "origin": {
-        "handoffEntry": "MIK-R98@v1 §6",
-        "leaf": "260928-MIK-L98"
+        "handoffEntry": "L112-semantic-replacement-PRF-SB6671",
+        "leaf": "260928-MIK-L112"
       }
     },
     {
       "anchor": {
-        "blob": "2904663d67c2961d4be16fb038aac76e17f9b907",
+        "blob": "4e60e0c6742ab8a2452c205e8c8762503c4aeadf",
         "content": "sha256:e252a12a157f0d6e266fa5565130b1360ca3f5c49fd9e3218a7d60bd95687224",
         "locator": {
           "kind": "symbol",
@@ -207,24 +190,7 @@
     },
     {
       "anchor": {
-        "blob": "2904663d67c2961d4be16fb038aac76e17f9b907",
-        "content": "sha256:019cae151d62077453201bd313cfee3956bb0ee26905f12f5af87155606c7230",
-        "locator": {
-          "kind": "symbol",
-          "name": "InstructionFileWordingTests.test_investigator_scope_report_and_authority_are_explicit"
-        }
-      },
-      "facet": "Pins the Investigator concern, allowed scratch checking, no code/memory/task mutation, report/order boundary, intake channel and exact fourteen requested tools against the canonical role and manifest.",
-      "id": "PRF-CPH5K1",
-      "invariant": "INV-H0WCGX",
-      "origin": {
-        "handoffEntry": "MIK-R98@v1 §3",
-        "leaf": "260928-MIK-L98"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "2904663d67c2961d4be16fb038aac76e17f9b907",
+        "blob": "4e60e0c6742ab8a2452c205e8c8762503c4aeadf",
         "content": "sha256:97cd0a5a2694c0c0ce2469a0bcaddc3291407cc50bdbbae3565e97a8272dfbb3",
         "locator": {
           "kind": "symbol",
@@ -241,7 +207,7 @@
     },
     {
       "anchor": {
-        "blob": "2904663d67c2961d4be16fb038aac76e17f9b907",
+        "blob": "4e60e0c6742ab8a2452c205e8c8762503c4aeadf",
         "content": "sha256:0aa27888040347c52cbc287b60220d7c8feea34797bf1d54d3fb94b16161b1db",
         "locator": {
           "kind": "symbol",
@@ -258,7 +224,24 @@
     },
     {
       "anchor": {
-        "blob": "2904663d67c2961d4be16fb038aac76e17f9b907",
+        "blob": "4e60e0c6742ab8a2452c205e8c8762503c4aeadf",
+        "content": "sha256:97cd0a5a2694c0c0ce2469a0bcaddc3291407cc50bdbbae3565e97a8272dfbb3",
+        "locator": {
+          "kind": "symbol",
+          "name": "InstructionFileWordingTests.test_current_coordination_and_curator_rules"
+        }
+      },
+      "facet": "The wording case requires non-leaf checks to be assigned to Investigator by the actual permitted coordinating role; a forbidden start is routed to the known parent/reporting recipient, and a parentless role reports in its own chat without inventing an Architect. This is source-clause coverage, not a runtime role-start result or a fourteen-tool census.",
+      "id": "PRF-EP4JYF",
+      "invariant": "INV-NC6F6V",
+      "origin": {
+        "handoffEntry": "L112-current-coordinating-investigator-proof",
+        "leaf": "260928-MIK-L112"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "4e60e0c6742ab8a2452c205e8c8762503c4aeadf",
         "content": "sha256:afa8632a9d7e5fdcc3d4e7dba83aba4ddf56f213fc81b2576dba47c452bc811d",
         "locator": {
           "kind": "symbol",
@@ -275,24 +258,58 @@
     },
     {
       "anchor": {
-        "blob": "2904663d67c2961d4be16fb038aac76e17f9b907",
-        "content": "sha256:019cae151d62077453201bd313cfee3956bb0ee26905f12f5af87155606c7230",
+        "blob": "4e60e0c6742ab8a2452c205e8c8762503c4aeadf",
+        "content": "sha256:58b7e6205b4af5723db7c9753504997b2d94acd813bd8c677f8b91d449f2e601",
         "locator": {
           "kind": "symbol",
           "name": "InstructionFileWordingTests.test_investigator_scope_report_and_authority_are_explicit"
         }
       },
-      "facet": "Pins the Investigator concern, allowed scratch checking, no code/memory/task mutation, report/order boundary, intake channel and exact fourteen requested tools against the canonical role and manifest.",
-      "id": "PRF-NHJ0KC",
-      "invariant": "INV-WAY665",
+      "facet": "The wording check pins scratch/repository-sandbox checks, one named report, actual-parent notification, and the report-before-remediation instruction; no real remediation is executed.",
+      "id": "PRF-JAXCF6",
+      "invariant": "INV-YT1AD8",
       "origin": {
-        "handoffEntry": "MIK-R98@v1 §1",
-        "leaf": "260928-MIK-L98"
+        "handoffEntry": "L112-current-proof-INV-YT1AD8",
+        "leaf": "260928-MIK-L112"
       }
     },
     {
       "anchor": {
-        "blob": "2904663d67c2961d4be16fb038aac76e17f9b907",
+        "blob": "4e60e0c6742ab8a2452c205e8c8762503c4aeadf",
+        "content": "sha256:58b7e6205b4af5723db7c9753504997b2d94acd813bd8c677f8b91d449f2e601",
+        "locator": {
+          "kind": "symbol",
+          "name": "InstructionFileWordingTests.test_investigator_scope_report_and_authority_are_explicit"
+        }
+      },
+      "facet": "The wording check requires one scoped concern of any kind and the canonical Investigator source/identity; it is an instruction-contract check, not a runtime permission proof.",
+      "id": "PRF-NEMYKT",
+      "invariant": "INV-WAY665",
+      "origin": {
+        "handoffEntry": "L112-current-proof-INV-WAY665",
+        "leaf": "260928-MIK-L112"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "4e60e0c6742ab8a2452c205e8c8762503c4aeadf",
+        "content": "sha256:58b7e6205b4af5723db7c9753504997b2d94acd813bd8c677f8b91d449f2e601",
+        "locator": {
+          "kind": "symbol",
+          "name": "InstructionFileWordingTests.test_investigator_scope_report_and_authority_are_explicit"
+        }
+      },
+      "facet": "The wording check pins no code/enclosure/Git/memory/task mutation, declined orders for code or memory changes, and no role start. It checks instructions, not runtime enforcement.",
+      "id": "PRF-RF6C6D",
+      "invariant": "INV-H0WCGX",
+      "origin": {
+        "handoffEntry": "L112-current-proof-INV-H0WCGX",
+        "leaf": "260928-MIK-L112"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "4e60e0c6742ab8a2452c205e8c8762503c4aeadf",
         "content": "sha256:97cd0a5a2694c0c0ce2469a0bcaddc3291407cc50bdbbae3565e97a8272dfbb3",
         "locator": {
           "kind": "symbol",
@@ -309,53 +326,36 @@
     },
     {
       "anchor": {
-        "blob": "2904663d67c2961d4be16fb038aac76e17f9b907",
-        "content": "sha256:1b654b5e1a131a4ca5470c7ef22680187aac0df72de5c59246e2af26abba6b33",
-        "locator": {
-          "kind": "symbol",
-          "name": "InstructionFileWordingTests.test_every_role_organises_its_harness_work_with_seat_boundaries"
-        }
-      },
-      "facet": "Requires every role's delivered text to carry its freedom and boundary clauses and forbids the removed fixed fan-out policy.",
-      "id": "PRF-SB6671",
-      "invariant": "INV-7VZRZW",
-      "origin": {
-        "handoffEntry": "R99-14-harness-work",
-        "leaf": "260928-MIK-L99"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "2904663d67c2961d4be16fb038aac76e17f9b907",
-        "content": "sha256:019cae151d62077453201bd313cfee3956bb0ee26905f12f5af87155606c7230",
+        "blob": "4e60e0c6742ab8a2452c205e8c8762503c4aeadf",
+        "content": "sha256:58b7e6205b4af5723db7c9753504997b2d94acd813bd8c677f8b91d449f2e601",
         "locator": {
           "kind": "symbol",
           "name": "InstructionFileWordingTests.test_investigator_scope_report_and_authority_are_explicit"
         }
       },
-      "facet": "Pins the Investigator concern, allowed scratch checking, no code/memory/task mutation, report/order boundary, intake channel and exact fourteen requested tools against the canonical role and manifest.",
-      "id": "PRF-TBGN85",
+      "facet": "The wording check pins concern delivery in the actual parent first message, asking that parent once for missing scope, and developer-request intake without a parent.",
+      "id": "PRF-RKBZZC",
       "invariant": "INV-A8E0YE",
       "origin": {
-        "handoffEntry": "MIK-R98@v1 §5",
-        "leaf": "260928-MIK-L98"
+        "handoffEntry": "L112-current-proof-INV-A8E0YE",
+        "leaf": "260928-MIK-L112"
       }
     },
     {
       "anchor": {
-        "blob": "2904663d67c2961d4be16fb038aac76e17f9b907",
-        "content": "sha256:019cae151d62077453201bd313cfee3956bb0ee26905f12f5af87155606c7230",
+        "blob": "4e60e0c6742ab8a2452c205e8c8762503c4aeadf",
+        "content": "sha256:58b7e6205b4af5723db7c9753504997b2d94acd813bd8c677f8b91d449f2e601",
         "locator": {
           "kind": "symbol",
           "name": "InstructionFileWordingTests.test_investigator_scope_report_and_authority_are_explicit"
         }
       },
-      "facet": "Pins the Investigator concern, allowed scratch checking, no code/memory/task mutation, report/order boundary, intake channel and exact fourteen requested tools against the canonical role and manifest.",
-      "id": "PRF-Y8YVW3",
-      "invariant": "INV-NC6F6V",
+      "facet": "The wording check asserts exactly the seven retained Investigator requests in canonical order and pins the role no-mutation boundaries; fourteen legacy provider/search requests are not the current assertion.",
+      "id": "PRF-SQW3RM",
+      "invariant": "INV-YNHABM",
       "origin": {
-        "handoffEntry": "MIK-R98@v1 §9",
-        "leaf": "260928-MIK-L98"
+        "handoffEntry": "L112-current-proof-INV-YNHABM",
+        "leaf": "260928-MIK-L112"
       }
     }
   ],

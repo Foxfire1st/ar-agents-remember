@@ -1,5 +1,30 @@
 # mcp/src/agents_remember/cli/role_launch_preparation.py
 
+## Current operative account — MIK-R112
+
+The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
+
+- R112 adds launch-aware AR tool guidance; host route keeps the other-server choice because exclusion_applied=False.
+
+### Superseded inventory
+
+- Pre-repair card claim: Card’s preservation account exempts only older R98 wording changes. This is superseded archival wording, not a current prescription.
+
+### Source and authority bounds
+
+- Source comparison: `mcp/src/agents_remember/cli/role_launch_preparation.py:135 (def _ar_tool_server_usage)`.
+- Source comparison: `mcp/src/agents_remember/cli/role_launch_preparation.py:679 ("arMcpUsage": _ar_tool_server_usage)`.
+- Source comparison: `mcp/src/agents_remember/cli/role_launch_preparation.py:775 (+ capsule.codex_delivery.trusted_instructions)`.
+
+Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
+
+The pre-successor CUR-C04 source concatenated the baseline rather than composed notes. The current moving producer candidate now inserts the composed instructions; source correction is visible, but its genuine successor custody/independent disposition has not yet been adopted. Metadata and a source edit alone are not a CODE PASS or host-actual witness.
+
+## Historical original card — preserved, not the current operative account
+
+<details>
+<summary>Retained original source accounts and producer history</summary>
+
 ## Governing Overview
 
 [Route overview](../../../overview.md)
@@ -51,3 +76,5 @@ Investigator’s actual started_by parent selects the concern-from-first-message
 
 - Frozen implementation of the narrow parented-coordinator handover values. [4]
 - Checks reuse, explicit refresh and changed daemon home in the key. [5]
+
+</details>

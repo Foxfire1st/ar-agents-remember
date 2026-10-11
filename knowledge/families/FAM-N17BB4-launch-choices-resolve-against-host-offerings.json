@@ -5,7 +5,7 @@
     ],
     "justification": "The eight member obligations hold only together: catalog resolution, layer retention, repository refusal, mode selection, feature acceptance, note composition, repeat stability and server binding jointly guarantee that every launch choice the host offered is carried and everything else is refused. No member was grouped by directory or route; each was read against its source and the Worker expanded evidence."
   },
-  "guarantee": "A role launch resolves every host launch choice against the host's own offerings and carries the accepted values onto the actual create call; anything unresolvable, incompatible, permission-bearing from an unauthorized layer, or unknown is refused by name before the run, and each created agent receives only its own bound AR server.",
+  "guarantee": "A role launch resolves host launch choices against the host's own offerings and carries accepted values onto the create payload; unresolvable, incompatible, permission-bearing from an unauthorized layer, or unknown choices are refused by name before the run. AR supplies that agent's own bound task-server definition only when the provider accepts MCP definitions; an explicitly unsupported provider receives no definition and no harness-configuration fallback. This source/input projection and narrow server_info preapproval do not establish host-actual ambient exclusion or first-agent consumption; those witnesses are not credited by L112 curation.",
   "id": "FAM-N17BB4",
   "members": [
     "INV-AFTG56",
@@ -25,7 +25,7 @@
     "leaf": "260928-MIK-L71",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "routes": [
     "mcp",
     "dashboard/src/cockpit"

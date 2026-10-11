@@ -6,6 +6,45 @@
 
 ## Purpose
 
+Build retained server information, scoped context, runtime installation and context-resolution answers.
+
+## Code Commentary
+
+`server_info_payload` receives the boot-resolved serving build, reports unusedProviderKeys and
+optional launch agentBinding/toolServer, and does not publish tools/reservedTools or pretend to
+remeasure build identity. `context_packet_payload` resolves the reader's exact task context
+before calling the application builder. Resolve-context retains TaskRef locator ownership.
+Runtime installation forwards its per-call request unchanged; the request experiment takes
+precedence over the documented environment fallback. With `request.dry_run=true`, the
+adapter passes `report_path=None`: the preview files no per-call report and exposes no
+`reportPath`. Only an executed install files the full result before response compaction
+and supplies that report's path. Compaction projects only declared RUNTIME_INSTALL_ANSWER_FIELDS;
+for a list of messages it retains string entries among the first five original entries,
+truncates each to the short-string bound plus an ellipsis when needed, and reports overflow
+from original list length. The rebind digest retains attempted/ok and phase/action/ok for
+mapping-shaped runs. For an executed install, full detail can be reopened in its filed
+report. Retained response logs are separate custody, not a per-call report for a preview;
+the compactor's overflow wording does not establish that an unfiled preview has a report.
+Removed ping and skills-install
+adapters do not supply a generic restart or skill installation tool.
+
+## Current evidence
+
+- Current source excerpt `def server_info_payload(` identifies this section's adapter/control owner, not an executed success. [3]
+
+- Current source excerpt `class ServerInfoResponse(ResponseModel):` identifies this section's adapter/control owner, not an executed success. [4]
+
+- Current source excerpt `def runtime_install_payload(` identifies this section's adapter/control owner, not an executed success. [5]
+
+- Current source excerpt `# Rule 2: a list with more entries is cut; the answer keeps the count, the` identifies this section's adapter/control owner, not an executed success. [6]
+
+## Historical superseded account (non-operative)
+
+Prior descriptions/evidence remain below for provenance. They are not current public
+registration, provider/lifecycle/skill-install instructions or execution acceptance.
+
+
+
 Server, context, install, and skills payload builders.
 
 Builds server-info and orientation/install tool payloads through the shared token envelope.

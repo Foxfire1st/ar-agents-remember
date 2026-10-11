@@ -4,7 +4,30 @@
 
 [engine-room overview](overview.md)
 
-## Purpose
+
+## Current enclosure-only composition
+
+fxSignature now joins phase, running edge kinds, landing ref states, failed/stale edge descriptors and memoryMode; effect separately depends on worktreeGroup. buildFx has no fault/reindex loops; it keeps source scan, coupler surge, breath, stop, geometry-backed refuse and packet plus DrawSVG/retract/off-screen pause.
+
+### Maintenance boundaries
+
+Remove provider/runtime/seedFallback signature and fault/reindex tween guarantee/reference. Keep dynamic running/failed/stale edge signature (including historical seed descriptors as data, although geometry prevents seed render), one-shot integration refusal, draw stamps/retraction, visibility pause and effects-off gate. Do not claim GSAP or all surge effects were retired.
+
+Source/test/fixture inspection is not a fresh mounted capture or a passing test run.
+Historical provider-shaped input data and retained compatibility definitions do not
+restore removed provider visuals or tool exposure.
+
+- fxSignature now joins phase, running edge kinds, landing ref states, failed/stale edge descriptors and memoryMode; effec — source ownership, not executed visual proof. [11]
+- fxSignature now joins phase, running edge kinds, landing ref states, failed/stale edge descriptors and memoryMode; effec — source ownership, not executed visual proof. [12]
+- fxSignature now joins phase, running edge kinds, landing ref states, failed/stale edge descriptors and memoryMode; effec — source ownership, not executed visual proof. [13]
+
+## Historical superseded account (non-operative)
+
+The prior onboarding below is retained for provenance and unrelated design history.
+It is not current provider-render, fallback, prototype-parity or execution guidance.
+Current behavior and its limits are the operative contract above.
+
+
 
 The Engine Room canvas **GSAP motion substrate** (slice 05k, the `05f` §8 correction target). One
 `gsap.context` per enclosure, scoped to the `EnclosureCanvas` `<svg>` root, owns ONLY the GSAP-native parts:

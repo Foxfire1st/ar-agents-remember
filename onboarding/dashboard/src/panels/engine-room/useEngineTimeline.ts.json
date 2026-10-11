@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "73cc62598a7f61bfef776bc2393a2b4bf0f56edd",
+            "blob": "745dcb2438f071de87e63481375c2c3790c15d3b",
             "content": "sha256:f44fc9a5411b50ad06ae79bc2481b87e3fbf3fa9882a08caf0a2b70031ca10ae",
             "locator": {
               "kind": "symbol",
@@ -40,7 +40,7 @@
         },
         {
           "anchor": {
-            "blob": "73cc62598a7f61bfef776bc2393a2b4bf0f56edd",
+            "blob": "745dcb2438f071de87e63481375c2c3790c15d3b",
             "content": "sha256:42a580b2d43b802623baf299778905d1334edb1f54d8b1592e27ab5d14b54b64",
             "locator": {
               "kind": "symbol",
@@ -66,6 +66,58 @@
             "path": "dashboard/src/panels/engine-room/EnclosureProcessMap.test.tsx"
           },
           "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "fxSignature now joins phase, running edge kinds, landing ref states, failed/stale edge descriptors and memoryMode; effec — source ownership, not executed visual proof.\n\nAnchor: `function fxSignature(node: EngineProcessNode): string {`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "745dcb2438f071de87e63481375c2c3790c15d3b",
+            "content": "sha256:6768f05bbb4d1c870d56b55b932e64ce7df3837770597212bc88985fec5c8df5",
+            "locator": {
+              "end": 145,
+              "kind": "line_range",
+              "start": 54
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "fxSignature now joins phase, running edge kinds, landing ref states, failed/stale edge descriptors and memoryMode; effec — source ownership, not executed visual proof.\n\nAnchor: `export function useEngineTimeline(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "745dcb2438f071de87e63481375c2c3790c15d3b",
+            "content": "sha256:42a580b2d43b802623baf299778905d1334edb1f54d8b1592e27ab5d14b54b64",
+            "locator": {
+              "end": 232,
+              "kind": "line_range",
+              "start": 153
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "fxSignature now joins phase, running edge kinds, landing ref states, failed/stale edge descriptors and memoryMode; effec — source ownership, not executed visual proof.\n\nAnchor: `export const EDGE_GEOM: Record<string, readonly [number, number, number, number]> = {`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f23ae83b49025d9b10e7b6bc846ede9a6d48563e",
+            "content": "sha256:2b2820cb214df32a336ee7fcae8d5de9400d01fc6ea2f10aafa7cc40c458bc3a",
+            "locator": {
+              "end": 118,
+              "kind": "line_range",
+              "start": 68
+            },
+            "path": "dashboard/src/panels/engine-room/geometry.ts"
+          },
+          "kind": "code"
         }
       ]
     },
@@ -125,12 +177,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "73cc62598a7f61bfef776bc2393a2b4bf0f56edd",
+            "blob": "745dcb2438f071de87e63481375c2c3790c15d3b",
             "content": "sha256:ec6c8a92fe60e866c893835bc50f3db70dcf9a7af921e051de4129d2035e170a",
             "locator": {
-              "end": 212,
+              "end": 197,
               "kind": "line_range",
-              "start": 194
+              "start": 179
             }
           },
           "kind": "code"
@@ -153,7 +205,7 @@
         },
         {
           "anchor": {
-            "blob": "73cc62598a7f61bfef776bc2393a2b4bf0f56edd",
+            "blob": "745dcb2438f071de87e63481375c2c3790c15d3b",
             "content": "sha256:42a580b2d43b802623baf299778905d1334edb1f54d8b1592e27ab5d14b54b64",
             "locator": {
               "kind": "symbol",

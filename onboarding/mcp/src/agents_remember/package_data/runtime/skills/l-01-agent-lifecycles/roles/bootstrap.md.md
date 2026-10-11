@@ -1,5 +1,29 @@
 # l-01-agent-lifecycles/roles/bootstrap.md
 
+## Current operative account — MIK-R112
+
+The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
+
+- Current manifest’s bootstrap tool list has four retained setup tools.
+- Role still forbids task/code/knowledge authoring and delegates its procedure.
+
+### Superseded inventory
+
+- Pre-repair card claim: Evidence says the bootstrap manifest declares five tools. This is superseded archival wording, not a current prescription.
+
+### Source and authority bounds
+
+- Source comparison: `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/bootstrap.md:20-24`.
+- Source comparison: `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/bootstrap.md:70-90`.
+- Source comparison: `.agents/skills/l-01-agent-lifecycles/composition-manifest.json:roles.bootstrap.tools`.
+
+Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
+
+## Historical original card — preserved, not the current operative account
+
+<details>
+<summary>Retained original source accounts and producer history</summary>
+
 ## Governing Overview
 
 [MCP package overview](../../../../../../../overview.md)
@@ -163,3 +187,5 @@ and those are separate facts rather than one verdict.
 
 **This card describes a generated copy**, propagated from `skills/l-01-agent-lifecycles/roles/bootstrap.md`
 by `scripts/sync-skills.py` into this package-owned copy and the eight harness starter packages.
+
+</details>

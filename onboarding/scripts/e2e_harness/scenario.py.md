@@ -1,5 +1,16 @@
 # scenario.py
 
+## Current operative account — MIK-R112
+
+The fixture defines and records the authored role-chain, message and replacement checkpoints. Current checkpoint owners name role_message; C05 text names dispatch_agent replacement, while _retire_manager still waits for termination and asserts vacancy before _replace_manager. That source/test-intent discrepancy is disclosed, not turned into a current successful vacancy witness. The companion response route requests replacement rather than the removed retire_child tool. Historical acceptance and exact fixture evidence remain historical; no script, sandbox, host or acceptance run is performed.
+
+The original prose, exact parameters, references and dated producer accounts below remain intact as history, not present-tense authority for superseded behavior. Current evidence is the source path `scripts/e2e_harness/scenario.py` and the source-specific before/after extents preserved in the residual-hunk account. No code edit, proof rerun or new execution acceptance is claimed.
+
+## Historical original card — preserved, not the current operative account
+
+<details>
+<summary>Original source account and historical evidence</summary>
+
 ## Governing Overview
 
 [Ambient Role-Chat E2E Harness](overview.md)
@@ -66,3 +77,5 @@ No Domain Documentation source is configured.
 No meaningful cross-repository reference applies.
 
 - All task and repository addresses come from the disposable fixture. [4]
+
+</details>

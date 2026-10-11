@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "8967dc869ac85e8d0b0de245a1f12830d6fe0ed4",
-        "content": "sha256:6e65f75be61e0d4587961b4a591f4b468b4336a9e2fc86e195a1f57ece106db2",
+        "blob": "c6b847c5c7627c6094bd425abb7559f7ae21e43e",
+        "content": "sha256:10c2683a39e2cd0749f0d56b67466d02117322706907419831ba9da450bc64d7",
         "locator": {
           "kind": "file"
         }
@@ -15,13 +15,13 @@
         "handoffEntry": "MIK-R93@v1 rules1,2,2a,5,6,7",
         "leaf": "260928-MIK-L93"
       },
-      "rationale": "This self-contained role source states the obligations in every capsule that uses this role.",
+      "rationale": "This role/operation source points to operations/orientation.md for developer questions and relayed answers; it is not a self-contained duplicated full-clause home or native delivered-message witness.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "92d77de38f56692ee2acd4020a27b98b6da32b80",
-        "content": "sha256:f4df63783a374243c4d50985adcda99dc17770a2165624cb75dfcdb6f728cd77",
+        "blob": "c6b847c5c7627c6094bd425abb7559f7ae21e43e",
+        "content": "sha256:10c2683a39e2cd0749f0d56b67466d02117322706907419831ba9da450bc64d7",
         "locator": {
           "kind": "file"
         }
@@ -37,8 +37,8 @@
     },
     {
       "anchor": {
-        "blob": "8967dc869ac85e8d0b0de245a1f12830d6fe0ed4",
-        "content": "sha256:6e65f75be61e0d4587961b4a591f4b468b4336a9e2fc86e195a1f57ece106db2",
+        "blob": "c6b847c5c7627c6094bd425abb7559f7ae21e43e",
+        "content": "sha256:10c2683a39e2cd0749f0d56b67466d02117322706907419831ba9da450bc64d7",
         "locator": {
           "kind": "file"
         }
@@ -54,8 +54,8 @@
     },
     {
       "anchor": {
-        "blob": "8967dc869ac85e8d0b0de245a1f12830d6fe0ed4",
-        "content": "sha256:6e65f75be61e0d4587961b4a591f4b468b4336a9e2fc86e195a1f57ece106db2",
+        "blob": "c6b847c5c7627c6094bd425abb7559f7ae21e43e",
+        "content": "sha256:10c2683a39e2cd0749f0d56b67466d02117322706907419831ba9da450bc64d7",
         "locator": {
           "kind": "file"
         }
@@ -71,7 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "8967dc869ac85e8d0b0de245a1f12830d6fe0ed4",
+        "blob": "c6b847c5c7627c6094bd425abb7559f7ae21e43e",
         "content": "sha256:92dcedcd2497d46774810fe5ab551db0448e9b4111eca2c52f1ab3b4edb6e0a1",
         "locator": {
           "end": 21,
@@ -90,12 +90,12 @@
     },
     {
       "anchor": {
-        "blob": "8967dc869ac85e8d0b0de245a1f12830d6fe0ed4",
+        "blob": "c6b847c5c7627c6094bd425abb7559f7ae21e43e",
         "content": "sha256:5dd86b5521e960c9e9bc9d583ffe68e6f76a0c0b91618675c0d9cafde6536c6f",
         "locator": {
-          "end": 164,
+          "end": 198,
           "kind": "line_range",
-          "start": 163
+          "start": 197
         }
       },
       "id": "RLZ-QBXQTV",
@@ -109,8 +109,8 @@
     },
     {
       "anchor": {
-        "blob": "8967dc869ac85e8d0b0de245a1f12830d6fe0ed4",
-        "content": "sha256:6e65f75be61e0d4587961b4a591f4b468b4336a9e2fc86e195a1f57ece106db2",
+        "blob": "c6b847c5c7627c6094bd425abb7559f7ae21e43e",
+        "content": "sha256:10c2683a39e2cd0749f0d56b67466d02117322706907419831ba9da450bc64d7",
         "locator": {
           "kind": "file"
         }
@@ -126,8 +126,8 @@
     },
     {
       "anchor": {
-        "blob": "8967dc869ac85e8d0b0de245a1f12830d6fe0ed4",
-        "content": "sha256:6e65f75be61e0d4587961b4a591f4b468b4336a9e2fc86e195a1f57ece106db2",
+        "blob": "c6b847c5c7627c6094bd425abb7559f7ae21e43e",
+        "content": "sha256:10c2683a39e2cd0749f0d56b67466d02117322706907419831ba9da450bc64d7",
         "locator": {
           "kind": "file"
         }

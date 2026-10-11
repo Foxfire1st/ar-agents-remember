@@ -11,7 +11,32 @@ The file was trimmed to 1,197 physical lines in the fix round (FL1): the transie
 comment/blank lines were removed, closing the 1,202-line physical breach against the
 L7 detector's `wc -l` semantics. Scenario content is unchanged.
 
-## Purpose
+
+## Current enclosure-only composition
+
+Fixture schema still carries {name, processes, workspace}, ProviderNode/ProviderBootNode factories, provider edges/runtime fields and historical names. Only seedFallback comment changes to explicitly retired render; those inputs no longer generate engine visual charge/reindex/arcs.
+
+### Maintenance boundaries
+
+Preserve fixture data shape and historical scenarios; replace statements equating fixture runtime/seed fields with current gauge/arrows. Explain completed/failed/current phase strings can still appear in diagnostics, while seedFallback has no dedicated render. Integration/memory/landing/ledger fixtures still exercise surviving owners; fixture data is not served or mounted proof.
+
+Source/test/fixture inspection is not a fresh mounted capture or a passing test run.
+Historical provider-shaped input data and retained compatibility definitions do not
+restore removed provider visuals or tool exposure.
+
+- Fixture schema still carries {name, processes, workspace}, ProviderNode/ProviderBootNode factories, provider edges/runti — source ownership, not executed visual proof. [13]
+- Fixture schema still carries {name, processes, workspace}, ProviderNode/ProviderBootNode factories, provider edges/runti — source ownership, not executed visual proof. [14]
+- Fixture schema still carries {name, processes, workspace}, ProviderNode/ProviderBootNode factories, provider edges/runti — source ownership, not executed visual proof. [15]
+- Fixture schema still carries {name, processes, workspace}, ProviderNode/ProviderBootNode factories, provider edges/runti — source ownership, not executed visual proof. [16]
+- Fixture schema still carries {name, processes, workspace}, ProviderNode/ProviderBootNode factories, provider edges/runti — source ownership, not executed visual proof. [17]
+
+## Historical superseded account (non-operative)
+
+The prior onboarding below is retained for provenance and unrelated design history.
+It is not current provider-render, fallback, prototype-parity or execution guidance.
+Current behavior and its limits are the operative contract above.
+
+
 
 Provides the scenario fixtures for the enclosure-centered Engine Room process map (slice 5e, 05e §11). Each `EngineRoomScenario` is a set of server-shaped `EngineProcessNode`s plus the official/workspace provider stack, so the dev gallery and component tests can render the map without a live projection. The set covers the discrete boot/lifecycle states (bootstrap, setup running, GrepAI failure, CGC fallback, memory blocked, sync needed, cleanup pending) and a step-through of one enclosure being assembled after `worktree_start`.
 

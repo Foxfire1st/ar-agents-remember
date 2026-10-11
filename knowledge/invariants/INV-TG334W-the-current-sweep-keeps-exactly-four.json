@@ -7,8 +7,9 @@
   },
   "applicability": "The serving-build evidence pins carried by the current sweep.",
   "conditions": [
-    "Exactly four lifecycle error-arm pins and one unmarked memory_quality_check pin remain.",
-    "Exact pin equality and the original T34 controls hold."
+    "Identify the self-contained merged sweep and separate shared-world populations independently.",
+    "Derive the current positive population from retained advertised tools and keep deliberate empty pins.",
+    "Retain exact pin equality and historical L110/L111 repair ownership without renewing historical observations."
   ],
   "exclusions": [
     "Product repairs in this leaf, which belong to L111 for lifecycle and L110 for MQ projection.",
@@ -26,9 +27,9 @@
     "leaf": "260928-MIK-L71",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "The current sweep keeps exactly four lifecycle error-arm pins and one unmarked memory_quality_check pin; exact pin equality and the original T34 nine repaired-tool positive/regression controls remain, with product repairs deferred to L111/L110.",
+  "statement": "The self-contained merged sweep retains four named worktree envelope-loss pins, an empty ambient-state raiser pin and an empty unmarked-not-ok pin; its current T34 positive population is memory_baseline_adopt, not the eight retired search tools. The separate shared entry-point world retains its historical memory_quality_check pin. Exact-equality and same-change repair ownership controls remain; declarations are not a new observed failure census.",
   "status": "proposed",
   "supersedes": []
 }

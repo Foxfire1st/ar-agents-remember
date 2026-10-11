@@ -87,7 +87,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1aec2a93a63198029966c9fb7ab761e9f4efc178",
+            "blob": "d06676341570635e258bd9bb0d5b770f8f44cb21",
             "content": "sha256:a6a3dc6a1fe961cae3f0047ee5735dcdddbcb9d94d288137268b1e4335540f16",
             "locator": {
               "kind": "symbol",
@@ -109,6 +109,58 @@
               "kind": "symbol",
               "name": "ServerInfoResponse"
             }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Current source section contains excerpt `class ServerInfoResponse(ResponseModel):`; DTO/control ownership is not execution acceptance.\n\nAnchor: ServerInfoResponse",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d06676341570635e258bd9bb0d5b770f8f44cb21",
+            "content": "sha256:82a24160957dbff49d3c0544da9812cfda1d3a23dbe4a2f3ad87e19927e91d46",
+            "locator": {
+              "end": 60,
+              "kind": "line_range",
+              "start": 43
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Current source section contains excerpt `class ServingBuildPayload(BaseModel):`; DTO/control ownership is not execution acceptance.\n\nAnchor: ServingBuildPayload",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d06676341570635e258bd9bb0d5b770f8f44cb21",
+            "content": "sha256:9b9d2bf08c051b4d8c9c8dec2286050649bb82493a92c20fd3aca1c2206a9746",
+            "locator": {
+              "end": 26,
+              "kind": "line_range",
+              "start": 13
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Current source section contains excerpt `def server_info_payload(`; DTO/control ownership is not execution acceptance.\n\nAnchor: server_info_payload",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0bc907fb8d4d8335de3b53129c4c97728185aa5f",
+            "content": "sha256:aadc3bd37d3243e6db4abdd3828d14d4ae83d4527708ff5beea200f9f02adfcd",
+            "locator": {
+              "end": 56,
+              "kind": "line_range",
+              "start": 26
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/core.py"
           },
           "kind": "code"
         }

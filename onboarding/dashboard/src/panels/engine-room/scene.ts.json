@@ -56,11 +56,62 @@
         },
         {
           "anchor": {
-            "blob": "8c1406f9ffcfd4797058662e7bc6893c83b0e3cf",
+            "blob": "87821aabab3b972a5513d33de296765a0bab6d47",
             "content": "sha256:43725cd7ddc2af69520742a7ee724db1b5d43dcad2005d95c9e59491bd7c1407",
             "locator": {
               "kind": "symbol",
               "name": "resolveRecovery"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "resolveEngines(node) now derives hasMemory only. EnclosureScene drops provider nodes/predicted runtimes/workspace provid — source ownership, not executed visual proof.\n\nAnchor: `export interface EnclosureScene {`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "87821aabab3b972a5513d33de296765a0bab6d47",
+            "content": "sha256:21e2a65cf85ce877b65d3e96cccec2087ec87590761bac1479f8da606650bc09",
+            "locator": {
+              "end": 120,
+              "kind": "line_range",
+              "start": 17
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "resolveEngines(node) now derives hasMemory only. EnclosureScene drops provider nodes/predicted runtimes/workspace provid — source ownership, not executed visual proof.\n\nAnchor: `export function resolveBlockPointer(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "87821aabab3b972a5513d33de296765a0bab6d47",
+            "content": "sha256:7e47d5a4af61363947c875f3f607466d5df33698e6646e7986af1a2d55888648",
+            "locator": {
+              "end": 188,
+              "kind": "line_range",
+              "start": 154
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "resolveEngines(node) now derives hasMemory only. EnclosureScene drops provider nodes/predicted runtimes/workspace provid — source ownership, not executed visual proof.\n\nAnchor: `export function resolveScene(node: EngineProcessNode): EnclosureScene {`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "87821aabab3b972a5513d33de296765a0bab6d47",
+            "content": "sha256:75a2788971f419e32439c8eb770d20572edf96d889012f0cddb028e8b09b14db",
+            "locator": {
+              "end": 264,
+              "kind": "line_range",
+              "start": 223
             }
           },
           "kind": "code"

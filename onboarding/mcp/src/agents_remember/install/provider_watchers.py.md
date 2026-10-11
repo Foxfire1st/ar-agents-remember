@@ -1,5 +1,25 @@
 # mcp/src/agents_remember/install/provider_watchers.py
 
+## Current operative account — MIK-R112
+
+The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
+
+- complete_provider_watcher_rebind was deleted.
+- Pre-refresh stop returns its result instead of raising on failure.
+- A failed stop sets report.ok=false and records recovery; no start/status/retry cycle remains here.
+
+### Source and authority bounds
+
+- Source comparison: `mcp/src/agents_remember/install/provider_watchers.py:128-146`.
+- Source comparison: `git diff HEAD -- mcp/src/agents_remember/install/provider_watchers.py (removed complete_provider_watcher_rebind)`.
+
+Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
+
+## Historical original card — preserved, not the current operative account
+
+<details>
+<summary>Retained original source accounts and producer history</summary>
+
 ## Governing Overview
 
 [mcp/overview.md](../../../overview.md)
@@ -90,3 +110,5 @@ regression suite.
 No sibling repository evidence is needed for this helper.
 
 No meaningful cross-repo references found.
+
+</details>

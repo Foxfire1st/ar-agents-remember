@@ -1,5 +1,16 @@
 # skills/l-01-agent-lifecycles/criteria/plan-review.md
 
+## Current operative account — MIK-R112
+
+The canonical catalog retains independent, evidence-class-matched review, exact priority/blast-radius reasoning and either explicit-graph or graph-less topology. Current PR-3 reads implicated dependents through retained paired/knowledge reads rather than CGC/GrepAI tools. Graph-less canonical order is only an equal-priority tie-break: per-contract activation serializes no sibling master and selecting one does not pause another. A source-pair-selected one-master-at-a-time account is superseded, not current planning authority.
+
+The original prose, exact parameters, references and dated producer accounts below remain intact as history, not present-tense authority for superseded behavior. Current evidence is the source path `skills/l-01-agent-lifecycles/criteria/plan-review.md` and the source-specific before/after extents preserved in the residual-hunk account. No code edit, proof rerun or new execution acceptance is claimed.
+
+## Historical original card — preserved, not the current operative account
+
+<details>
+<summary>Original source account and historical evidence</summary>
+
 ## Governing Overview
 
 [lifecycle skill overview](../overview.md)
@@ -58,3 +69,5 @@ No Domain Documentation source is configured for this memory root.
 ### Cross-Repo References
 
 No meaningful cross-repository reference applies to this repository-owned review criterion.
+
+</details>

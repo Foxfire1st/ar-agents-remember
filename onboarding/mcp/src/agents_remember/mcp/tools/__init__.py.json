@@ -41,12 +41,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f0ca175f86e8f783a45f05c22fe3201683cb1c69",
+            "blob": "6a9e16e0399eac88f3a66ff9243508ddca2c5710",
             "content": "sha256:218d13cfa0841258c627be215df00b1f9e19bcb9d40a8b411b297ae088958f81",
             "locator": {
-              "end": 46,
+              "end": 29,
               "kind": "line_range",
-              "start": 46
+              "start": 29
             }
           },
           "kind": "code"
@@ -111,12 +111,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f0ca175f86e8f783a45f05c22fe3201683cb1c69",
+            "blob": "6a9e16e0399eac88f3a66ff9243508ddca2c5710",
             "content": "sha256:8f8e8dcfff2c6c1171451ad26878db4b4e152bd866a2ad6bd63f5b6bd6fcedd9",
             "locator": {
-              "end": 92,
+              "end": 53,
               "kind": "line_range",
-              "start": 92
+              "start": 53
             }
           },
           "kind": "code"
@@ -185,17 +185,34 @@
         }
       ]
     },
+    "17": {
+      "note": "Current source excerpt `from .base import PUBLIC_TOOLS, RESERVED_TOOLS, TRANSPORT` identifies this section's adapter/control owner, not an executed success.\n\nAnchor: 9-135",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6a9e16e0399eac88f3a66ff9243508ddca2c5710",
+            "content": "sha256:c41df0d18a069b78ed34320acebf6849dec6e89a1846b36a9ddcc9fe1aff7465",
+            "locator": {
+              "end": 135,
+              "kind": "line_range",
+              "start": 9
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "`gate_response_wait_payload` is listed in `__all__`.\n\nAnchor: \"__all__ = [\"",
       "targets": [
         {
           "anchor": {
-            "blob": "f0ca175f86e8f783a45f05c22fe3201683cb1c69",
+            "blob": "6a9e16e0399eac88f3a66ff9243508ddca2c5710",
             "content": "sha256:ed4d77a0a5436bf22b0d8c7ff20f7ff77c4f1cb32c6a8c91d502d82ca66676b4",
             "locator": {
-              "end": 118,
+              "end": 79,
               "kind": "line_range",
-              "start": 118
+              "start": 79
             }
           },
           "kind": "code"
@@ -207,7 +224,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "38cf83279988cbcecd8e45164ef3986c630f3b20",
+            "blob": "ab7cbbc9ff35452db14688bb3cf213cff0c82c2a",
             "content": "sha256:ed00419defc3a2e29139fc4381282faeecc8c336ffe5d6a380921436e011d5cd",
             "locator": {
               "kind": "symbol",
@@ -275,12 +292,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f0ca175f86e8f783a45f05c22fe3201683cb1c69",
+            "blob": "6a9e16e0399eac88f3a66ff9243508ddca2c5710",
             "content": "sha256:cecfae3cb4b0d4d8643cb5455ee04bc593fb17e2877d1071efacabde7220497b",
             "locator": {
-              "end": 61,
+              "end": 42,
               "kind": "line_range",
-              "start": 61
+              "start": 42
             }
           },
           "kind": "code"
@@ -309,12 +326,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f0ca175f86e8f783a45f05c22fe3201683cb1c69",
+            "blob": "6a9e16e0399eac88f3a66ff9243508ddca2c5710",
             "content": "sha256:6885abeb8ba145e8fca758ac8fb90e71ec45cb4f9d09202db5b04aa1af21de09",
             "locator": {
-              "end": 67,
+              "end": 48,
               "kind": "line_range",
-              "start": 67
+              "start": 48
             }
           },
           "kind": "code"

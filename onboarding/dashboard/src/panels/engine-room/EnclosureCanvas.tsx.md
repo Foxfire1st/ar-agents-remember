@@ -13,7 +13,31 @@ canvas keeps the composition and motion wiring (`useEngineTimeline`, Motion,
 AnimatePresence); the scene packet now comes from `scene.resolveScene`. Behavior is
 unchanged.
 
-## Purpose
+
+## Current enclosure-only composition
+
+Canvas accepts node, gateNode, officialLedger and resolves resolveScene(node). It still composes branches, shell, worktree/official ledger couplers, surviving conduits, landing, closeout and non-provider overlays. Provider prop/runtime derivations, gauges/wires/dropout, seed/clone paths and fault/reindex visuals are retired.
+
+### Maintenance boundaries
+
+Replace the long active prototype-parity/engine-charge/provider-plan narrative, marker inventory and obsolete references with the composition boundary in current canvas and surviving sibling owners. T7B is the contract-not-written fleeting case, source-node scans remain T1B/T3B. Explicitly keep ledger link/surge/popovers and integration refusal/STOP; history/specimens must be labeled historical, not mounted current parity.
+
+Source/test/fixture inspection is not a fresh mounted capture or a passing test run.
+Historical provider-shaped input data and retained compatibility definitions do not
+restore removed provider visuals or tool exposure.
+
+- Canvas accepts node, gateNode, officialLedger and resolves resolveScene(node). It still composes branches, shell, worktr — source ownership, not executed visual proof. [32]
+- Canvas accepts node, gateNode, officialLedger and resolves resolveScene(node). It still composes branches, shell, worktr — source ownership, not executed visual proof. [33]
+- Canvas accepts node, gateNode, officialLedger and resolves resolveScene(node). It still composes branches, shell, worktr — source ownership, not executed visual proof. [34]
+- Canvas accepts node, gateNode, officialLedger and resolves resolveScene(node). It still composes branches, shell, worktr — source ownership, not executed visual proof. [35]
+
+## Historical superseded account (non-operative)
+
+The prior onboarding below is retained for provenance and unrelated design history.
+It is not current provider-render, fallback, prototype-parity or execution guidance.
+Current behavior and its limits are the operative contract above.
+
+
 
 The Engine Room pod-stage **bird's-eye** (5g G1): one `EngineProcessNode` rendered as the two-world canvas
 from the design prototype (`dashboard/public/_proto/podstage.html`) — official line ↔ worktree enclosure,

@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "71425687075f4a988fd84c19d4d0f5b5809980fb",
+            "blob": "efb364dc374fa80ecd59103fe9f95d72b224e6ee",
             "content": "sha256:e194f41623f1cc3a215c0f2f16e86ea0647034b09cf9fa2df064108f892beb8c",
             "locator": {
               "kind": "symbol",
@@ -28,6 +28,23 @@
             "locator": {
               "kind": "symbol",
               "name": "EngineGauge"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "engines.tsx now exports BranchNode only, with ref-derived flags/materialisation, pruned style, full title/truncated bran — source ownership, not executed visual proof.\n\nAnchor: `function branchFlags(refNode: CommitRefNode): string {`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "efb364dc374fa80ecd59103fe9f95d72b224e6ee",
+            "content": "sha256:0e0667d744dbb8ef27086a4c00432339ee0ec0aecaf7cdc9127d5d48438423fb",
+            "locator": {
+              "end": 115,
+              "kind": "line_range",
+              "start": 20
             }
           },
           "kind": "code"

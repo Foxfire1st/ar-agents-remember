@@ -1,5 +1,27 @@
 # mcp/src/agents_remember/application/context_packet.py
 
+## Current operative account — MIK-R112
+
+The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
+
+- Current request removes provider inclusion/detail knobs and always passes include_providers=False.
+
+### Superseded inventory
+
+- Pre-repair card claim: Card directs detailed troubleshooting to provider_diagnostics. This is superseded archival wording, not a current prescription.
+
+### Source and authority bounds
+
+- Source comparison: `mcp/src/agents_remember/application/context_packet.py:99 (include_providers=False)`.
+- Source comparison: `mcp/src/agents_remember/models/tools/public_roster.py:22 (PUBLIC_TOOLS =)`.
+
+Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
+
+## Historical original card — preserved, not the current operative account
+
+<details>
+<summary>Retained original source accounts and producer history</summary>
+
 ## Governing Overview
 
 [application overview](overview.md)
@@ -115,3 +137,5 @@ The current source seams include `ContextPacketError`, `ContextPacketRequest`, `
 - The current module exposes `ContextPacketError`, `ContextPacketRequest`, `build_context_packet` at this ownership boundary. [8]
 
 - A leaf drift block compares against the leaf's converted base and agrees with the drift tool. [9]
+
+</details>

@@ -4,7 +4,28 @@
 
 [panels overview](overview.md)
 
-## Purpose
+
+## Current enclosure-only composition
+
+Static nine-model registry survives. Strategist/orchestrator/designer use route indexes/onboarding/read_ar_files; orchestrator closes with turn end instead of lifecycle_end; COMMS message node uses role_message and task refs. Custom ridesNote survives. Current strategist rundown is optional portfolio pass, not mandatory pre-run.
+
+### Maintenance boundaries
+
+Replace provider-tool toolkit, auto-fire wording and retired lifecycle_start runtime-owner evidence with current static source anchors. Update terminal/message node semantics and correct already-stale mandatory strategist pre-run claim to explicitly approved optional pass. Keep models as design records, not proof of live tools; note remaining structural parent/child prose is not a message_parent/message_child API.
+
+This is static source/fixture inspection, not executed or mounted evidence.
+
+- Current ownership/control, without execution or runtime tool exposure inferred. [4]
+- Current ownership/control, without execution or runtime tool exposure inferred. [5]
+- Current ownership/control, without execution or runtime tool exposure inferred. [6]
+- Current ownership/control, without execution or runtime tool exposure inferred. [7]
+- Current ownership/control, without execution or runtime tool exposure inferred. [8]
+
+## Historical superseded account (non-operative)
+
+Previous prose below is preserved history, not current provider or tool guidance.
+
+
 
 The **flow-model registry** for the `FlowTab` design canvas (orchestration leaf 260703-L0): the content
 side of the canvas split. `FlowTab.tsx` owns the segment renderer + model nav; **this module owns every

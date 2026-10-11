@@ -70,6 +70,24 @@
           "kind": "code"
         }
       ]
+    },
+    "5": {
+      "note": "Current instruction contract and retained-read replacement, not historical provider/tool examples.\n\nAnchor: ---",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9497a2a6d77f0ed77aecb6974b68c559795a7bbd",
+            "content": "sha256:8d7fad9105a553ac4b98ba9b585eeaf4ea6f6dfb423bd3f00e84da746413bae1",
+            "locator": {
+              "end": 207,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "skills/c-04-retrieval-strategy-router/SKILL.md"
+          },
+          "kind": "code"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

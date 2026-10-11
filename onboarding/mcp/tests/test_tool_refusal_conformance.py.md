@@ -1,5 +1,29 @@
 # mcp/tests/test_tool_refusal_conformance.py
 
+## Current operative account — MIK-R112
+
+The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
+
+- Current source has four shapes, 12 bare raisers, five always-answer pins and 17 test definitions.
+- Navigation oracle distinguishes available artifact, missing echo and no declared path.
+
+### Superseded inventory
+
+- Pre-repair card claim: Card’s 67-tool/three-shape and eighteen-raiser census is obsolete. This is superseded archival wording, not a current prescription.
+
+### Source and authority bounds
+
+- Source comparison: `mcp/tests/test_tool_refusal_conformance.py:153-226`.
+- Source comparison: `mcp/tests/test_tool_refusal_conformance.py:248-389`.
+- Source comparison: `mcp/tests/test_tool_refusal_conformance.py:456-514,620-684`.
+
+Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
+
+## Historical original card — preserved, not the current operative account
+
+<details>
+<summary>Retained original source accounts and producer history</summary>
+
 ## Governing Overview
 
 [mcp/tests overview](overview.md)
@@ -132,3 +156,5 @@ the fixture's own disposable coordination root. No production cross-repository a
 claimed by this census.
 
 No repository or external-system boundary is proved by this module.
+
+</details>

@@ -33,6 +33,23 @@
           "kind": "code"
         }
       ]
+    },
+    "3": {
+      "note": "Current explicit imports and __all__ omit PingResponse and do not re-export the three role-binding/role-message/start models.\n\nAnchor: __all__",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f9a7cb21d40139fe134b605e55e1ebc0801c829e",
+            "content": "sha256:d3abfac33d0df7ba5082be24b416ad5791799e4c50d337daf4fa8d896ccfb2d8",
+            "locator": {
+              "end": 166,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

@@ -1,5 +1,26 @@
 # mcp/src/agents_remember/application/skill_resources/operation.py
 
+## Current operative account — MIK-R112
+
+The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
+
+- role_capsule_compile_tool, skill_catalog_list_tool and skill_catalog_read_tool were deleted.
+- CapsuleOperationRequest, SkillCatalogRequest and skill_catalog_registry survive.
+- The claimed local unreadable_skills re-export is gone.
+
+### Source and authority bounds
+
+- Source comparison: `mcp/src/agents_remember/application/skill_resources/operation.py:1-7`.
+- Source comparison: `mcp/src/agents_remember/application/skill_resources/operation.py:22-64`.
+- Source comparison: `mcp/src/agents_remember/application/skill_resources/operation.py:64-68`.
+
+Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
+
+## Historical original card — preserved, not the current operative account
+
+<details>
+<summary>Retained original source accounts and producer history</summary>
+
 ## Governing Overview
 
 [application overview](../overview.md)
@@ -79,3 +100,5 @@ after checking live sources.
 ### Cross-Repo References
 
 No meaningful cross-repository reference applies.
+
+</details>

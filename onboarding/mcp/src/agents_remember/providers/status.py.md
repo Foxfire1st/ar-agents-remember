@@ -1,5 +1,26 @@
 # mcp/src/agents_remember/providers/status.py
 
+## Current operative account — MIK-R112
+
+The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
+
+- _watchers_status now calls write_lifecycle_settings without config.
+- The generator emits no enabled provider blocks.
+- context_packet now always requests a skipped provider summary rather than live diagnostics.
+
+### Source and authority bounds
+
+- Source comparison: `mcp/src/agents_remember/providers/status.py:229-241`.
+- Source comparison: `mcp/src/agents_remember/providers/settings.py:33-55`.
+- Source comparison: `mcp/src/agents_remember/application/context_packet.py:95-102`.
+
+Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
+
+## Historical original card — preserved, not the current operative account
+
+<details>
+<summary>Retained original source accounts and producer history</summary>
+
 ## Governing Overview
 
 [mcp/overview.md](../../../overview.md)
@@ -121,3 +142,5 @@ surface.
 - Provider status appends restart guidance when projected GrepAI state reports `indexingState: noWorkspace`. [7]
 
 | `refresh_current_provider_state` calls the regular provider-status projection and returns the current-state payload for dashboard-owned refreshes. | `refresh_current_provider_state` | mcp/src/agents_remember/providers/status.py:157-167 |
+
+</details>

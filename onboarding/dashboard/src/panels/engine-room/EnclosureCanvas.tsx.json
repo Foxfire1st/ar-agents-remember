@@ -23,7 +23,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "eea270bf10b885af35285fb98b6205dcb491dd5c",
+            "blob": "f23ae83b49025d9b10e7b6bc846ede9a6d48563e",
             "content": "sha256:96ae224a660d306e828d63dac5c820748e724ec62b58b9affa6c2b6db358a4e8",
             "locator": {
               "kind": "symbol",
@@ -40,12 +40,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9e4625511abcd31de1a3a3afa8101ac284b2c384",
+            "blob": "596dec5c6c7c633b293640144a05def6c8ef4578",
             "content": "sha256:2491f0e8fe78d3ad5c0685f0f524570eb80490167132d6ea70461cdaacafee3e",
             "locator": {
-              "end": 30,
+              "end": 26,
               "kind": "line_range",
-              "start": 30
+              "start": 26
             },
             "path": "dashboard/src/panels/engine-room/sceneLayers.tsx"
           },
@@ -53,12 +53,12 @@
         },
         {
           "anchor": {
-            "blob": "73cc62598a7f61bfef776bc2393a2b4bf0f56edd",
+            "blob": "745dcb2438f071de87e63481375c2c3790c15d3b",
             "content": "sha256:6779453514cca1cceb7a5413a587e4de5c1d477eeb60ce79ded43b485bbcfe7a",
             "locator": {
-              "end": 83,
+              "end": 79,
               "kind": "line_range",
-              "start": 83
+              "start": 79
             },
             "path": "dashboard/src/panels/engine-room/useEngineTimeline.ts"
           },
@@ -66,12 +66,12 @@
         },
         {
           "anchor": {
-            "blob": "73cc62598a7f61bfef776bc2393a2b4bf0f56edd",
+            "blob": "745dcb2438f071de87e63481375c2c3790c15d3b",
             "content": "sha256:008c8fe11be65228379f6d81493136f504b76d9437b5ee82249ec83a8094a5d2",
             "locator": {
-              "end": 168,
+              "end": 153,
               "kind": "line_range",
-              "start": 168
+              "start": 153
             },
             "path": "dashboard/src/panels/engine-room/useEngineTimeline.ts"
           },
@@ -84,12 +84,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "eea270bf10b885af35285fb98b6205dcb491dd5c",
+            "blob": "f23ae83b49025d9b10e7b6bc846ede9a6d48563e",
             "content": "sha256:01ba4509f31fe8778b87627f2ca5e73f17a9de32f15699d24d87f9997bcbdc15",
             "locator": {
-              "end": 124,
+              "end": 109,
               "kind": "line_range",
-              "start": 124
+              "start": 109
             },
             "path": "dashboard/src/panels/engine-room/geometry.ts"
           },
@@ -97,12 +97,12 @@
         },
         {
           "anchor": {
-            "blob": "eea270bf10b885af35285fb98b6205dcb491dd5c",
+            "blob": "f23ae83b49025d9b10e7b6bc846ede9a6d48563e",
             "content": "sha256:9de7b5259c1101ca01ed494e61c6e5222637b655b061c4c38878ed904145a16b",
             "locator": {
-              "end": 110,
+              "end": 95,
               "kind": "line_range",
-              "start": 110
+              "start": 95
             },
             "path": "dashboard/src/panels/engine-room/geometry.ts"
           },
@@ -115,24 +115,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3e8bac7662cfcef7ae4bddc696e4824dcde4491f",
+            "blob": "e496e2924af2443fe26b4b8712a14c6cadf07d7c",
             "content": "sha256:c02df1bbf869b332eef2a6b354c56982ebf7ea1447ba1777b798d1afbed742d4",
             "locator": {
-              "end": 85,
+              "end": 81,
               "kind": "line_range",
-              "start": 85
+              "start": 81
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "795cc832381626b813bfd71d42ce2a60ee147cbb",
+            "blob": "335b9c69049161a6e78cfc89526cc9ecd0eacfbe",
             "content": "sha256:ca5ddd6c1557eb0f78551f357738316c1aaefa0b13697d913ac593b6036ebe85",
             "locator": {
-              "end": 281,
+              "end": 252,
               "kind": "line_range",
-              "start": 265
+              "start": 236
             },
             "path": "dashboard/src/panels/engine-room/badges.tsx"
           },
@@ -251,7 +251,7 @@
         },
         {
           "anchor": {
-            "blob": "06fce412d2ac099ba308eb4c54b879d98bd0c879",
+            "blob": "20ebb84787f6b5ab1be931ed6560c0e33431166b",
             "content": "sha256:bc7761246e433e81634fb60150c551f85df6ad4cfec1841068f69e4ff21eb71f",
             "locator": {
               "kind": "symbol",
@@ -263,7 +263,7 @@
         },
         {
           "anchor": {
-            "blob": "795cc832381626b813bfd71d42ce2a60ee147cbb",
+            "blob": "335b9c69049161a6e78cfc89526cc9ecd0eacfbe",
             "content": "sha256:6d5c4b4f5e5abea5b273bf4c033289512dcf8825e2849a0db32c18ca2c4a65f8",
             "locator": {
               "kind": "symbol",
@@ -292,12 +292,12 @@
         },
         {
           "anchor": {
-            "blob": "795cc832381626b813bfd71d42ce2a60ee147cbb",
+            "blob": "335b9c69049161a6e78cfc89526cc9ecd0eacfbe",
             "content": "sha256:3fb1d931931185d1a3d50004bcfe00cadeac3a2b8e7f47636c52f84c75459f1b",
             "locator": {
-              "end": 342,
+              "end": 313,
               "kind": "line_range",
-              "start": 315
+              "start": 286
             },
             "path": "dashboard/src/panels/engine-room/badges.tsx"
           },
@@ -305,12 +305,12 @@
         },
         {
           "anchor": {
-            "blob": "3e8bac7662cfcef7ae4bddc696e4824dcde4491f",
+            "blob": "e496e2924af2443fe26b4b8712a14c6cadf07d7c",
             "content": "sha256:cff6b6de4ab221332cb1d50852c6e5d0a188b992c1acc75ac119155c88344862",
             "locator": {
-              "end": 22,
+              "end": 21,
               "kind": "line_range",
-              "start": 22
+              "start": 21
             }
           },
           "kind": "code"
@@ -322,7 +322,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "71425687075f4a988fd84c19d4d0f5b5809980fb",
+            "blob": "efb364dc374fa80ecd59103fe9f95d72b224e6ee",
             "content": "sha256:e194f41623f1cc3a215c0f2f16e86ea0647034b09cf9fa2df064108f892beb8c",
             "locator": {
               "kind": "symbol",
@@ -401,12 +401,12 @@
         },
         {
           "anchor": {
-            "blob": "73cc62598a7f61bfef776bc2393a2b4bf0f56edd",
+            "blob": "745dcb2438f071de87e63481375c2c3790c15d3b",
             "content": "sha256:008c8fe11be65228379f6d81493136f504b76d9437b5ee82249ec83a8094a5d2",
             "locator": {
-              "end": 168,
+              "end": 153,
               "kind": "line_range",
-              "start": 168
+              "start": 153
             },
             "path": "dashboard/src/panels/engine-room/useEngineTimeline.ts"
           },
@@ -427,12 +427,12 @@
         },
         {
           "anchor": {
-            "blob": "06fce412d2ac099ba308eb4c54b879d98bd0c879",
+            "blob": "20ebb84787f6b5ab1be931ed6560c0e33431166b",
             "content": "sha256:9ea55aa4d0e2f00594c7716f5205a8f4a5e7c52b56f90340af61c21c32a6e163",
             "locator": {
-              "end": 70,
+              "end": 56,
               "kind": "line_range",
-              "start": 70
+              "start": 56
             },
             "path": "dashboard/src/panels/engine-room/conduits.tsx"
           },
@@ -440,12 +440,12 @@
         },
         {
           "anchor": {
-            "blob": "06fce412d2ac099ba308eb4c54b879d98bd0c879",
+            "blob": "20ebb84787f6b5ab1be931ed6560c0e33431166b",
             "content": "sha256:40532a889f3c50d7bbec6bdd8852898e432f697ee458d73b3a154b343aaecb88",
             "locator": {
-              "end": 139,
+              "end": 116,
               "kind": "line_range",
-              "start": 139
+              "start": 116
             },
             "path": "dashboard/src/panels/engine-room/conduits.tsx"
           },
@@ -474,7 +474,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "30cb14732f6d4d548c1ee9550ab342b849d1eb10",
+            "blob": "b130c9f33b2078e3adf38d6e87cde8c376ba65b9",
             "content": "sha256:7c8d459bab45b55e012757985b0777a92df02785f6c09e2ae35eb93eb4a80bbc",
             "locator": {
               "kind": "symbol",
@@ -681,7 +681,7 @@
         },
         {
           "anchor": {
-            "blob": "06fce412d2ac099ba308eb4c54b879d98bd0c879",
+            "blob": "20ebb84787f6b5ab1be931ed6560c0e33431166b",
             "content": "sha256:af04d8265cc40bfccbed32971b55fe866421fc464998921a604bab56ab592465",
             "locator": {
               "end": 8,
@@ -699,7 +699,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "795cc832381626b813bfd71d42ce2a60ee147cbb",
+            "blob": "335b9c69049161a6e78cfc89526cc9ecd0eacfbe",
             "content": "sha256:8d22ebe4a1b59525e0d161afdf756a21523b88f314f1a2f20ea3b86479674407",
             "locator": {
               "kind": "symbol",
@@ -711,7 +711,7 @@
         },
         {
           "anchor": {
-            "blob": "795cc832381626b813bfd71d42ce2a60ee147cbb",
+            "blob": "335b9c69049161a6e78cfc89526cc9ecd0eacfbe",
             "content": "sha256:740853105fb827af1f337b0ab353ea399aefceb0c40af5fbec07b9c0942d53bc",
             "locator": {
               "kind": "symbol",
@@ -767,7 +767,7 @@
         },
         {
           "anchor": {
-            "blob": "06fce412d2ac099ba308eb4c54b879d98bd0c879",
+            "blob": "20ebb84787f6b5ab1be931ed6560c0e33431166b",
             "content": "sha256:af04d8265cc40bfccbed32971b55fe866421fc464998921a604bab56ab592465",
             "locator": {
               "end": 8,
@@ -780,7 +780,7 @@
         },
         {
           "anchor": {
-            "blob": "06fce412d2ac099ba308eb4c54b879d98bd0c879",
+            "blob": "20ebb84787f6b5ab1be931ed6560c0e33431166b",
             "content": "sha256:ab43b7b72654bdd8efb907c3bc47fb1ec01519862f48570a0bd8d6754d4f4ada",
             "locator": {
               "end": 10,
@@ -876,17 +876,88 @@
         }
       ]
     },
+    "32": {
+      "note": "Canvas accepts node, gateNode, officialLedger and resolves resolveScene(node). It still composes branches, shell, worktr — source ownership, not executed visual proof.\n\nAnchor: `export function EnclosureCanvas({`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e496e2924af2443fe26b4b8712a14c6cadf07d7c",
+            "content": "sha256:afaedef990ec259adf1c701d501e8d6bc19c4a4b0f43c664a97395ef438b4bbf",
+            "locator": {
+              "end": 85,
+              "kind": "line_range",
+              "start": 40
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "33": {
+      "note": "Canvas accepts node, gateNode, officialLedger and resolves resolveScene(node). It still composes branches, shell, worktr — source ownership, not executed visual proof.\n\nAnchor: `export function resolveEngines(node: EngineProcessNode) {`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "87821aabab3b972a5513d33de296765a0bab6d47",
+            "content": "sha256:e9e8e787363c60741961873934c51da146d412b09bad46bd4ec2313a5b312d3b",
+            "locator": {
+              "end": 120,
+              "kind": "line_range",
+              "start": 52
+            },
+            "path": "dashboard/src/panels/engine-room/scene.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "34": {
+      "note": "Canvas accepts node, gateNode, officialLedger and resolves resolveScene(node). It still composes branches, shell, worktr — source ownership, not executed visual proof.\n\nAnchor: `export function OfficialLineLayer({`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "596dec5c6c7c633b293640144a05def6c8ef4578",
+            "content": "sha256:0b75b11bb39be418cd7ac4a0f535284d932b9e1757e220fc93b14bbb10461c2c",
+            "locator": {
+              "end": 252,
+              "kind": "line_range",
+              "start": 187
+            },
+            "path": "dashboard/src/panels/engine-room/sceneLayers.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "35": {
+      "note": "Canvas accepts node, gateNode, officialLedger and resolves resolveScene(node). It still composes branches, shell, worktr — source ownership, not executed visual proof.\n\nAnchor: `export const EDGE_GEOM: Record<string, readonly [number, number, number, number]> = {`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f23ae83b49025d9b10e7b6bc846ede9a6d48563e",
+            "content": "sha256:08637b0be18477ff7379995dd690b3a5a93b5459302261b5a2809394edeec517",
+            "locator": {
+              "end": 90,
+              "kind": "line_range",
+              "start": 68
+            },
+            "path": "dashboard/src/panels/engine-room/geometry.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "4": {
       "note": "`RemoteStrip` / `RemoteChip` / `PrBadge` + `remoteTone` — the remote/landing dock (`landing[]` refs; 5i positions them by `REMOTE_POS`, PR as a merge-arrow).\n\nAnchor: \"export function RemoteChip({ refNode }: { refNode: LandingRefNode }) {\"; \"export function PrBadge({ refNode }: { refNode: LandingRefNode }) {\"; \"export function RemoteStrip({ refs }: { refs: LandingRefNode[] }) {\"; \"export function remoteTone(ref: LandingRefNode): RemoteTone {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "eea270bf10b885af35285fb98b6205dcb491dd5c",
+            "blob": "f23ae83b49025d9b10e7b6bc846ede9a6d48563e",
             "content": "sha256:48e4471c46c5e77b156cddce3896f776b78fceec4a14beb69aa7811ee0e0787b",
             "locator": {
-              "end": 214,
+              "end": 199,
               "kind": "line_range",
-              "start": 210
+              "start": 195
             },
             "path": "dashboard/src/panels/engine-room/geometry.ts"
           },
@@ -894,12 +965,12 @@
         },
         {
           "anchor": {
-            "blob": "eea270bf10b885af35285fb98b6205dcb491dd5c",
+            "blob": "f23ae83b49025d9b10e7b6bc846ede9a6d48563e",
             "content": "sha256:05f0730014fa8f578250c620537d569878dd9613341a9e9aa949945aca5ab9a1",
             "locator": {
-              "end": 226,
+              "end": 211,
               "kind": "line_range",
-              "start": 221
+              "start": 206
             },
             "path": "dashboard/src/panels/engine-room/geometry.ts"
           },
@@ -951,12 +1022,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "06fce412d2ac099ba308eb4c54b879d98bd0c879",
+            "blob": "20ebb84787f6b5ab1be931ed6560c0e33431166b",
             "content": "sha256:8ee46de492ec378055253e4331466f27100a77515545657b09238ab1b625cffd",
             "locator": {
-              "end": 192,
+              "end": 169,
               "kind": "line_range",
-              "start": 192
+              "start": 169
             },
             "path": "dashboard/src/panels/engine-room/conduits.tsx"
           },
@@ -964,12 +1035,12 @@
         },
         {
           "anchor": {
-            "blob": "06fce412d2ac099ba308eb4c54b879d98bd0c879",
+            "blob": "20ebb84787f6b5ab1be931ed6560c0e33431166b",
             "content": "sha256:40532a889f3c50d7bbec6bdd8852898e432f697ee458d73b3a154b343aaecb88",
             "locator": {
-              "end": 139,
+              "end": 116,
               "kind": "line_range",
-              "start": 139
+              "start": 116
             },
             "path": "dashboard/src/panels/engine-room/conduits.tsx"
           },
@@ -977,12 +1048,12 @@
         },
         {
           "anchor": {
-            "blob": "06fce412d2ac099ba308eb4c54b879d98bd0c879",
+            "blob": "20ebb84787f6b5ab1be931ed6560c0e33431166b",
             "content": "sha256:0cef58c270896c6b43dc77d6982cb066cfb846e839c786198597d9144e621735",
             "locator": {
-              "end": 184,
+              "end": 161,
               "kind": "line_range",
-              "start": 184
+              "start": 161
             },
             "path": "dashboard/src/panels/engine-room/conduits.tsx"
           },
@@ -995,7 +1066,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "eea270bf10b885af35285fb98b6205dcb491dd5c",
+            "blob": "f23ae83b49025d9b10e7b6bc846ede9a6d48563e",
             "content": "sha256:90c16dfc396d21ee0a085a71634a4c56c6d84875cd5a754a95bece8cc000f5c9",
             "locator": {
               "kind": "symbol",
@@ -1007,7 +1078,7 @@
         },
         {
           "anchor": {
-            "blob": "eea270bf10b885af35285fb98b6205dcb491dd5c",
+            "blob": "f23ae83b49025d9b10e7b6bc846ede9a6d48563e",
             "content": "sha256:5166e294340ce58f455f399c2243cee796943b0f1d66393864174f2c847ce040",
             "locator": {
               "kind": "symbol",
@@ -1019,7 +1090,7 @@
         },
         {
           "anchor": {
-            "blob": "eea270bf10b885af35285fb98b6205dcb491dd5c",
+            "blob": "f23ae83b49025d9b10e7b6bc846ede9a6d48563e",
             "content": "sha256:ff6911f85df31bad4de0da609cc4d401fe65ca495ea6edfda6dcacc3d2ee1897",
             "locator": {
               "kind": "symbol",
@@ -1060,12 +1131,12 @@
         },
         {
           "anchor": {
-            "blob": "06fce412d2ac099ba308eb4c54b879d98bd0c879",
+            "blob": "20ebb84787f6b5ab1be931ed6560c0e33431166b",
             "content": "sha256:98598c934f80c1305d7d7d1680010aaca0134918246c4aed9fe3d2c98ac8ffde",
             "locator": {
-              "end": 205,
+              "end": 182,
               "kind": "line_range",
-              "start": 192
+              "start": 169
             },
             "path": "dashboard/src/panels/engine-room/conduits.tsx"
           },
@@ -1091,12 +1162,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "eea270bf10b885af35285fb98b6205dcb491dd5c",
+            "blob": "f23ae83b49025d9b10e7b6bc846ede9a6d48563e",
             "content": "sha256:f820aa981797fc47b54c59e4e731d9a78554a5af157170480df6886681bb6fab",
             "locator": {
-              "end": 70,
+              "end": 68,
               "kind": "line_range",
-              "start": 70
+              "start": 68
             },
             "path": "dashboard/src/panels/engine-room/geometry.ts"
           },
@@ -1104,7 +1175,7 @@
         },
         {
           "anchor": {
-            "blob": "eea270bf10b885af35285fb98b6205dcb491dd5c",
+            "blob": "f23ae83b49025d9b10e7b6bc846ede9a6d48563e",
             "content": "sha256:b51ae28f444ac35f5bf668478a310540b3da583b088f3d67ef117135bd9deda0",
             "locator": {
               "end": 12,
@@ -1117,7 +1188,7 @@
         },
         {
           "anchor": {
-            "blob": "06fce412d2ac099ba308eb4c54b879d98bd0c879",
+            "blob": "20ebb84787f6b5ab1be931ed6560c0e33431166b",
             "content": "sha256:6e86c00555fd2056b7a08acfefc7f36a7bddb4ec69652e6a43b58fd11aa6418c",
             "locator": {
               "end": 22,
@@ -1130,12 +1201,12 @@
         },
         {
           "anchor": {
-            "blob": "06fce412d2ac099ba308eb4c54b879d98bd0c879",
+            "blob": "20ebb84787f6b5ab1be931ed6560c0e33431166b",
             "content": "sha256:9ea55aa4d0e2f00594c7716f5205a8f4a5e7c52b56f90340af61c21c32a6e163",
             "locator": {
-              "end": 70,
+              "end": 56,
               "kind": "line_range",
-              "start": 70
+              "start": 56
             },
             "path": "dashboard/src/panels/engine-room/conduits.tsx"
           },
@@ -1161,12 +1232,12 @@
         },
         {
           "anchor": {
-            "blob": "eea270bf10b885af35285fb98b6205dcb491dd5c",
+            "blob": "f23ae83b49025d9b10e7b6bc846ede9a6d48563e",
             "content": "sha256:bc3ef64fcc0bd157d1be0a685b53a99a4bfe0ccec456b8086cdc40d2a00947cf",
             "locator": {
-              "end": 268,
+              "end": 253,
               "kind": "line_range",
-              "start": 268
+              "start": 253
             },
             "path": "dashboard/src/panels/engine-room/geometry.ts"
           },

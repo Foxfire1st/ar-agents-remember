@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "456c0ea5679c22be7fe3f24882008f2eec27f544",
+            "blob": "8773923a76db6c263ae8dadaeaa3928daf69b4fc",
             "content": "sha256:55f5ba971a49d36fcd6b52b94c4ad8c8e4d3279be607cc34303c5a334dffbd52",
             "locator": {
               "kind": "symbol",
@@ -30,6 +30,23 @@
               "name": "dispatch_agent_tool"
             },
             "path": "mcp/src/agents_remember/application/structural/agent_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Current source section contains excerpt `from agents_remember.application.structural.agent_tools import (`; DTO/control ownership is not execution acceptance.\n\nAnchor: 7-33",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8773923a76db6c263ae8dadaeaa3928daf69b4fc",
+            "content": "sha256:d21018f3039afca5d5895f29f0af85d8e9a47f625c36950165a8cc8401d92be6",
+            "locator": {
+              "end": 33,
+              "kind": "line_range",
+              "start": 7
+            }
           },
           "kind": "code"
         }

@@ -23,12 +23,64 @@
       "targets": [
         {
           "anchor": {
-            "blob": "06fce412d2ac099ba308eb4c54b879d98bd0c879",
+            "blob": "20ebb84787f6b5ab1be931ed6560c0e33431166b",
             "content": "sha256:98598c934f80c1305d7d7d1680010aaca0134918246c4aed9fe3d2c98ac8ffde",
             "locator": {
               "kind": "symbol",
               "name": "LandingFlows"
             }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Conduit returns null for edge kinds without EDGE_GEOM; all supported paths are straight, replay only changes title/data- — source ownership, not executed visual proof.\n\nAnchor: `function isReplayLane(edge: EngineProcessEdge, strategy: string   undefined): boolean {`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "20ebb84787f6b5ab1be931ed6560c0e33431166b",
+            "content": "sha256:e7df94c3ceede135a351909460ec857fc3cb4710d068eebbcd9d21bc66ed6e6e",
+            "locator": {
+              "end": 112,
+              "kind": "line_range",
+              "start": 22
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Conduit returns null for edge kinds without EDGE_GEOM; all supported paths are straight, replay only changes title/data- — source ownership, not executed visual proof.\n\nAnchor: `function LandingFlow({ d, state, kind }: { d: string; state: FlowState; kind: string }) {`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "20ebb84787f6b5ab1be931ed6560c0e33431166b",
+            "content": "sha256:6c586b13bf25766b1384c30a9fcdb4440b9cd6ddcc6762b5f2be0289f4b9298e",
+            "locator": {
+              "end": 182,
+              "kind": "line_range",
+              "start": 116
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Conduit returns null for edge kinds without EDGE_GEOM; all supported paths are straight, replay only changes title/data- — source ownership, not executed visual proof.\n\nAnchor: `export const EDGE_GEOM: Record<string, readonly [number, number, number, number]> = {`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f23ae83b49025d9b10e7b6bc846ede9a6d48563e",
+            "content": "sha256:08637b0be18477ff7379995dd690b3a5a93b5459302261b5a2809394edeec517",
+            "locator": {
+              "end": 90,
+              "kind": "line_range",
+              "start": 68
+            },
+            "path": "dashboard/src/panels/engine-room/geometry.ts"
           },
           "kind": "code"
         }

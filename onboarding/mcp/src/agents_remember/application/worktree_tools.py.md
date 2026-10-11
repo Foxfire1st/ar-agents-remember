@@ -1,5 +1,28 @@
 # mcp/src/agents_remember/application/worktree_tools.py
 
+## Current operative account — MIK-R112
+
+The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
+
+- Current start calls parameterless write_lifecycle_settings().
+- Persistent-session refusal now asks for a new session with no switch tool.
+
+### Superseded inventory
+
+- Pre-repair card claim: Card says generated start settings use authority.apply(config)’s live provider map. This is superseded archival wording, not a current prescription.
+
+### Source and authority bounds
+
+- Source comparison: `mcp/src/agents_remember/application/worktree_tools.py:128-178`.
+- Source comparison: `mcp/src/agents_remember/application/worktree_tools.py:145-161`.
+
+Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
+
+## Historical original card — preserved, not the current operative account
+
+<details>
+<summary>Retained original source accounts and producer history</summary>
+
 ## Governing Overview
 
 [Owning overview](overview.md)
@@ -458,3 +481,5 @@ field is additive: a caller that does not read it sees the sync result it always
 ## Governing Overview
 
 [governing overview](overview.md)
+
+</details>

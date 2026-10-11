@@ -6,6 +6,34 @@
 
 ## Purpose
 
+Retain provider state/response DTOs for legacy and internal backend consumers, not MCP tools.
+
+## Code Commentary
+
+Strict identities, target-repo states, watcher discriminators and ProviderSummary remain,
+as do flexible provider-native responses. Nullable ok/watcher/refresh fields preserve unknown
+state rather than coercing it into success; list fields default empty and watcher kinds
+remain typed. ProviderSummary no longer has diagnosticsTool. Legacy status diagnostics and
+watcher response shapes, metrics/indexState and reportPath fields still exist in this model
+module, but removed MCP registrars/adapters do not make those operations callable. The current
+context packet asks for a skipped projection, not provider readiness or restart permission.
+No promise of current provider_diagnostics compaction is inferred from a retained DTO.
+
+## Current model evidence
+
+- Current source section contains excerpt `class ContextProviderItem(StrictResponseModel):`; DTO/control ownership is not execution acceptance. [3]
+
+- Current source section contains excerpt `TOOL_RESPONSE_MODELS: dict[str, type[ResponseEnvelope]] = {`; DTO/control ownership is not execution acceptance. [4]
+
+- Current source section contains excerpt `providers=ProviderSummary.model_validate(`; DTO/control ownership is not execution acceptance. [5]
+
+## Historical superseded account (non-operative)
+
+Prior removed-tool/current-roster claims below are preserved provenance, not current
+registration, runtime capability or execution evidence.
+
+
+
 `providers.py` defines provider response models for compact readiness,
 dedicated diagnostics, watcher lifecycle, GrepAI, and CodeGraphContext tools.
 

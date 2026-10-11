@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "0482315deb6222f2909773abb02b19d56146a0f5",
+        "blob": "3ce5c2b014933fcf959d0b42094dd943a34e9693",
         "content": "sha256:ff5daff4dd37ba2cddd3058ae438a18152c47935c27eb0a088e81d744b00ff25",
         "locator": {
           "kind": "symbol",
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "0482315deb6222f2909773abb02b19d56146a0f5",
-        "content": "sha256:fa38e6b23d0512939df6b4f03cccca030ef299efe4e63c8a7b7cb98c4ac04854",
+        "blob": "3ce5c2b014933fcf959d0b42094dd943a34e9693",
+        "content": "sha256:bc2764b0d63093e46e4fb47591faebae59cb74380b1ce675f3379b937855590e",
         "locator": {
           "kind": "symbol",
           "name": "run_launch_call"
@@ -39,8 +39,8 @@
     },
     {
       "anchor": {
-        "blob": "0482315deb6222f2909773abb02b19d56146a0f5",
-        "content": "sha256:51dee9b48e02226c1323d144f9faf49e2ac024446db2d48be7f3405854d99239",
+        "blob": "3ce5c2b014933fcf959d0b42094dd943a34e9693",
+        "content": "sha256:9f496576e51d2f5af71c36ba12d2e015cb326cb14b13ae30c4f9b64b7f723e37",
         "locator": {
           "kind": "symbol",
           "name": "build_launch_call"
@@ -57,8 +57,8 @@
     },
     {
       "anchor": {
-        "blob": "0482315deb6222f2909773abb02b19d56146a0f5",
-        "content": "sha256:51dee9b48e02226c1323d144f9faf49e2ac024446db2d48be7f3405854d99239",
+        "blob": "3ce5c2b014933fcf959d0b42094dd943a34e9693",
+        "content": "sha256:9f496576e51d2f5af71c36ba12d2e015cb326cb14b13ae30c4f9b64b7f723e37",
         "locator": {
           "kind": "symbol",
           "name": "build_launch_call"
@@ -70,12 +70,12 @@
         "handoffEntry": "L71-CURRENT242-W-08",
         "leaf": "260928-MIK-L71"
       },
-      "rationale": "The saved call constructs one TOOL_SERVER_NAME entry from this agent binding and adds only the exact Claude identity-read preapproval names; foreign configured AR servers receive no grant.",
+      "rationale": "build_launch_call supplies the agent-bound task server and narrow Claude server_info preapproval only in the accepts_tool_servers branch. A provider explicitly lacking that capability receives neither definition nor a harness-file fallback; this is not host-actual exclusion evidence.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "0482315deb6222f2909773abb02b19d56146a0f5",
+        "blob": "3ce5c2b014933fcf959d0b42094dd943a34e9693",
         "content": "sha256:ff5daff4dd37ba2cddd3058ae438a18152c47935c27eb0a088e81d744b00ff25",
         "locator": {
           "kind": "symbol",
@@ -93,7 +93,7 @@
     },
     {
       "anchor": {
-        "blob": "0482315deb6222f2909773abb02b19d56146a0f5",
+        "blob": "3ce5c2b014933fcf959d0b42094dd943a34e9693",
         "content": "sha256:bb5f95ed4aa40134659f1b481854cfdb2c08726f5de6f52d4bf1c4b03b5eb3dc",
         "locator": {
           "kind": "symbol",
@@ -111,7 +111,7 @@
     },
     {
       "anchor": {
-        "blob": "0482315deb6222f2909773abb02b19d56146a0f5",
+        "blob": "3ce5c2b014933fcf959d0b42094dd943a34e9693",
         "content": "sha256:b23b5a34c786635449ee1f046d515494ee161ef24d4367d029d5cf01b1609f88",
         "locator": {
           "kind": "symbol",
@@ -129,8 +129,8 @@
     },
     {
       "anchor": {
-        "blob": "0482315deb6222f2909773abb02b19d56146a0f5",
-        "content": "sha256:51dee9b48e02226c1323d144f9faf49e2ac024446db2d48be7f3405854d99239",
+        "blob": "3ce5c2b014933fcf959d0b42094dd943a34e9693",
+        "content": "sha256:9f496576e51d2f5af71c36ba12d2e015cb326cb14b13ae30c4f9b64b7f723e37",
         "locator": {
           "kind": "symbol",
           "name": "build_launch_call"
@@ -142,13 +142,13 @@
         "handoffEntry": "PNT-R04@v1 §1 / F1",
         "leaf": "260928-MIK-L90"
       },
-      "rationale": "Persists the one definition under the canonical task-server name.",
+      "rationale": "The saved call retains the one supported task-server definition only when the provider accepts tool servers; unsupported providers have no definition and no harness-configuration fallback. The record is not host-actual suppression evidence.",
       "role": "propagation-persistence"
     },
     {
       "anchor": {
-        "blob": "0482315deb6222f2909773abb02b19d56146a0f5",
-        "content": "sha256:fa38e6b23d0512939df6b4f03cccca030ef299efe4e63c8a7b7cb98c4ac04854",
+        "blob": "3ce5c2b014933fcf959d0b42094dd943a34e9693",
+        "content": "sha256:bc2764b0d63093e46e4fb47591faebae59cb74380b1ce675f3379b937855590e",
         "locator": {
           "kind": "symbol",
           "name": "run_launch_call"
@@ -165,8 +165,8 @@
     },
     {
       "anchor": {
-        "blob": "0482315deb6222f2909773abb02b19d56146a0f5",
-        "content": "sha256:51dee9b48e02226c1323d144f9faf49e2ac024446db2d48be7f3405854d99239",
+        "blob": "3ce5c2b014933fcf959d0b42094dd943a34e9693",
+        "content": "sha256:9f496576e51d2f5af71c36ba12d2e015cb326cb14b13ae30c4f9b64b7f723e37",
         "locator": {
           "kind": "symbol",
           "name": "build_launch_call"

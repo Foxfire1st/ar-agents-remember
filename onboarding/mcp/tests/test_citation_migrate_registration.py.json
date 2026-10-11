@@ -3,36 +3,36 @@
   "proves": [
     {
       "anchor": {
-        "blob": "b66e438d366393a10d739b54b1a04aa82506677a",
-        "content": "sha256:bcbac1c556eea291d079d8e13e34aeb8e45f1c4949d770f0f125b2f2b49303e5",
+        "blob": "b0f0a8f5d35241679c8c7ae2f3266628049542a7",
+        "content": "sha256:baa25afaeb105e46bbcf68e4b8bbbe34beb68be1306cf22c8ab12c7c5f25eee7",
         "locator": {
           "kind": "symbol",
           "name": "CitationMigrateRegistrationTests.test_citation_tools_propagate_other_authority_errors"
         }
       },
-      "facet": "Requires an unrelated `AuthorityError` to leave both builders as the same exception object.",
-      "id": "PRF-DD2R01",
+      "facet": "The citation_fix-only loop requires an unrelated AuthorityError to propagate as the same exception object; it does not test a retired migration adapter.",
+      "id": "PRF-7D1MZH",
       "invariant": "INV-ZA39KM",
       "origin": {
-        "handoffEntry": "MIK-R70@v1 rule 5",
-        "leaf": "260928-MIK-L70"
+        "handoffEntry": "L112-retained-citation-authority",
+        "leaf": "260928-MIK-L112"
       }
     },
     {
       "anchor": {
-        "blob": "b66e438d366393a10d739b54b1a04aa82506677a",
-        "content": "sha256:47c21fb887a24232541272af1ed142c408e233db3afbe6443e137ec8a3e4dc57",
+        "blob": "b0f0a8f5d35241679c8c7ae2f3266628049542a7",
+        "content": "sha256:0acd2450a45d829ef37d4b394e7e39548164fd088f47feb6a707ed9d94720b74",
         "locator": {
           "kind": "symbol",
           "name": "CitationMigrateRegistrationTests.test_citation_tools_name_a_configured_contract_authority_refusal"
         }
       },
-      "facet": "Requires both payload builders to answer the mismatch with the named status, the failing side and name, and the sibling next action.",
-      "id": "PRF-E5H183",
+      "facet": "The citation_fix-only assertion loop requires ok false, no operation envelope key, the configured-contract-authority-invalid status, exact repo/contract, side/name in detail and developer-decision.",
+      "id": "PRF-B4QVEG",
       "invariant": "INV-ZA39KM",
       "origin": {
-        "handoffEntry": "MIK-R70@v1 rule 5",
-        "leaf": "260928-MIK-L70"
+        "handoffEntry": "L112-retained-citation-authority",
+        "leaf": "260928-MIK-L112"
       }
     }
   ],
@@ -52,6 +52,54 @@
             "path": "mcp/src/agents_remember/application/memory_tools.py"
           },
           "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Retained citation_fix-only configured-contract-authority refusal assertions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b0f0a8f5d35241679c8c7ae2f3266628049542a7",
+            "content": "sha256:0acd2450a45d829ef37d4b394e7e39548164fd088f47feb6a707ed9d94720b74",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_citation_tools_name_a_configured_contract_authority_refusal"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "Retained citation_fix-only same-exception propagation assertion.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b0f0a8f5d35241679c8c7ae2f3266628049542a7",
+            "content": "sha256:baa25afaeb105e46bbcf68e4b8bbbe34beb68be1306cf22c8ab12c7c5f25eee7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_citation_tools_propagate_other_authority_errors"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "Mocked guard/application migration call-shape evidence, not a live migration or confinement witness.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b0f0a8f5d35241679c8c7ae2f3266628049542a7",
+            "content": "sha256:0686b148a28c4008b14d3ffe1ab517efd2f56b595e453209b357a086d2533199",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_tool_invokes_the_migration_over_the_leaf_memory_onboarding_root"
+            }
+          },
+          "kind": "test"
         }
       ]
     },
@@ -94,7 +142,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bc203f51a480dfd6aa1e061eba5b13c974ed0a86",
+            "blob": "bf7a9187fcf8680e4e5ae4e2771128a75e72372a",
             "content": "sha256:0822b243970bd428eb7342e198c11877e43e2cccb85c4309125e8917ebd6a9cf",
             "locator": {
               "kind": "symbol",
@@ -128,7 +176,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "97539a1d3035c51bdfc8174a6c7de015195b7f61",
+            "blob": "2feb4ad814b0f23f06a843578432e92ee658d51e",
             "content": "sha256:b0f056003cfce510855c7b66dfeaeebebcd86c393fee53b96f267dea414e1223",
             "locator": {
               "kind": "symbol",
@@ -167,6 +215,22 @@
             "locator": {
               "kind": "symbol",
               "name": "CitationMigrateRegistrationTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "Negative registration/roster/model assertions for citation_migrate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b0f0a8f5d35241679c8c7ae2f3266628049542a7",
+            "content": "sha256:be11367bb8424b91d8513f8cc8c546c8d6db5f7ddfeb9cbf9cb64476e6c0850e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_tool_is_not_registered_advertised_or_modelled"
             }
           },
           "kind": "test"

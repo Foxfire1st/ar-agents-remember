@@ -46,7 +46,7 @@ None recorded.
 
 ## CCR-R12@v5 Handoff Boundary
 
-This template records the exact checks and their failed or not-run status as handoff evidence, together with the curator's complete memory-quality result. Closeout and integration consume the prepared code, memory-content, and ledger transaction and carry that completed curation as a prerequisite; full code quality, full tests, certification, and review are explicit requests rather than automatic template gates.
+This template records exact checks and failed or not-run status as handoff evidence, together with the Curator's complete memory-quality result. The neighboring c-09 owner defines two transaction outputs: code and prepared memory-content. The consumer ledger is a computed cache, not a transaction leg, recovery authority or publication prerequisite. Closeout and integration consume completed targeted-check and curation evidence rather than making this template a runner of full quality, full tests, certification or independent review.
 
 ## Evidence
 

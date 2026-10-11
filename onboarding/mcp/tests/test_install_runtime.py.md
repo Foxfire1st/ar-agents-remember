@@ -1,5 +1,28 @@
 # test_install_runtime.py
 
+## Current operative account — MIK-R112
+
+The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
+
+- Current cases assert a single old-watcher stop and zero dependency installs.
+- Failed stop continues and reports process/recovery evidence.
+
+### Superseded inventory
+
+- Pre-repair card claim: Card claims provider dependency failure restarts/checks watchers. This is superseded archival wording, not a current prescription.
+
+### Source and authority bounds
+
+- Source comparison: `mcp/tests/test_install_runtime.py:131-164`.
+- Source comparison: `mcp/tests/test_install_runtime.py:166-242`.
+
+Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
+
+## Historical original card — preserved, not the current operative account
+
+<details>
+<summary>Retained original source accounts and producer history</summary>
+
 ## Governing Overview
 
 [Test suite overview](overview.md)
@@ -48,3 +71,5 @@ The retained source anchors below support the fixture roles and assertion bounda
 No cross-repository implementation evidence is required for these local test and fixture claims.
 
 Fixture repositories and protocol doubles do not establish a live external integration.
+
+</details>

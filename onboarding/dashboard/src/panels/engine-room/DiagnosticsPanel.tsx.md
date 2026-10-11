@@ -4,7 +4,29 @@
 
 [engine-room overview](overview.md)
 
-## Purpose
+
+## Current enclosure-only composition
+
+The setup row is now labeled Setup. The seedFallback-only Seed row is removed. Summary/health/phase, refs/lineage, setupState/currentPhase/heartbeat, completed and failed phase text, source files and gate responder remain; cleanup/abandoned still changes completed markers to muted ◦ and setup text to powering down.
+
+### Maintenance boundaries
+
+Replace provider-specific Setup wording and remove dedicated Seed-row guarantee. Explain historical provider phase strings may remain as generic server-projected diagnostics; seedFallback alone no longer produces text. Keep gate-boundary and honest ref/missingFacts behavior.
+
+Source/test/fixture inspection is not a fresh mounted capture or a passing test run.
+Historical provider-shaped input data and retained compatibility definitions do not
+restore removed provider visuals or tool exposure.
+
+- The setup row is now labeled Setup. The seedFallback-only Seed row is removed. Summary/health/phase, refs/lineage, setup — source ownership, not executed visual proof. [9]
+- The setup row is now labeled Setup. The seedFallback-only Seed row is removed. Summary/health/phase, refs/lineage, setup — source ownership, not executed visual proof. [10]
+
+## Historical superseded account (non-operative)
+
+The prior onboarding below is retained for provenance and unrelated design history.
+It is not current provider-render, fallback, prototype-parity or execution guidance.
+Current behavior and its limits are the operative contract above.
+
+
 
 Renders the diagnostics column for one enclosure pod in slice 5e's Engine Room process map. It presents the server-composed `EngineProcessNode` as read-only facts — phase/health, the four code/memory commit refs with their fact-state honesty, provider-setup progress, completed/failed phases — plus a "Missing observability" notice, action availability, and the contributing source files. Task 11 makes it the Engine Room's secondary gate-response surface: worktree-bound projected gates render compact `GateResponder`; non-gate actions remain display-only affordances. The panel re-derives nothing except one presentation-only `poweringDown` flag (slice 5k F3): during the power-down phases (`cleanup-pending`/`abandoned`) the providers are being torn down, so the diagnostics show "powering down" instead of an "ok" provider line and de-emphasize the now-stale completed-phase lines. That flag is derived from `node.phase` on the frontend because the live runtime is pre-05m and sends no power-down signal of its own.
 

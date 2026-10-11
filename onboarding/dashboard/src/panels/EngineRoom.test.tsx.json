@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9cb152993c6abde275ec7569438fad326e9a3ae1",
+            "blob": "20386ce24dbf50d2623c264f361b4a10dff165c5",
             "content": "sha256:58d15a56ecc549ad38344568d9dcf75211615fbbe42a58e947aca64d28a6163e",
             "locator": {
               "kind": "symbol",
@@ -19,7 +19,7 @@
         },
         {
           "anchor": {
-            "blob": "9cb152993c6abde275ec7569438fad326e9a3ae1",
+            "blob": "20386ce24dbf50d2623c264f361b4a10dff165c5",
             "content": "sha256:1dc7ebbc67959512746628e11ce54e25ff0cb9b3e0d2551374614a9bfccbc885",
             "locator": {
               "kind": "symbol",
@@ -129,6 +129,41 @@
               "name": "useShouldAnimate"
             },
             "path": "dashboard/src/panels/engine-room/useShouldAnimate.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The two official aggregation tests and workspace provider helper factories were removed. A new test asserts official-str — source ownership, not executed visual proof.\n\nAnchor: `describe(\"EngineRoom lifecycle phase motion (5f S5, T12–T18)\", () => {`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b7da5c1cb1b5932d8fc0544204df41597aa7c8c4",
+            "content": "sha256:1ccb656c8c16c67f259b34ed1bee448799d5cc9bf07560b90f582f2571d32c7d",
+            "locator": {
+              "end": 234,
+              "kind": "line_range",
+              "start": 130
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The two official aggregation tests and workspace provider helper factories were removed. A new test asserts official-str — source ownership, not executed visual proof.\n\nAnchor: `function EngineRoomImpl() {`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "20386ce24dbf50d2623c264f361b4a10dff165c5",
+            "content": "sha256:f4ab1c90d9929275a97a8d0b49974149ee57fa99ffef5ce6bac0243de71c121d",
+            "locator": {
+              "end": 177,
+              "kind": "line_range",
+              "start": 93
+            },
+            "path": "dashboard/src/panels/EngineRoom.tsx"
           },
           "kind": "code"
         }

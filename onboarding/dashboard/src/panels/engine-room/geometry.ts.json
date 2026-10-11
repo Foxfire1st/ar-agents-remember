@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "eea270bf10b885af35285fb98b6205dcb491dd5c",
+            "blob": "f23ae83b49025d9b10e7b6bc846ede9a6d48563e",
             "content": "sha256:90c16dfc396d21ee0a085a71634a4c56c6d84875cd5a754a95bece8cc000f5c9",
             "locator": {
               "kind": "symbol",
@@ -34,7 +34,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "eea270bf10b885af35285fb98b6205dcb491dd5c",
+            "blob": "f23ae83b49025d9b10e7b6bc846ede9a6d48563e",
             "content": "sha256:9d01763296cfa395218917f0b578f6da349947b0aec03d46064b3d09cd5883c5",
             "locator": {
               "kind": "symbol",
@@ -45,7 +45,7 @@
         },
         {
           "anchor": {
-            "blob": "eea270bf10b885af35285fb98b6205dcb491dd5c",
+            "blob": "f23ae83b49025d9b10e7b6bc846ede9a6d48563e",
             "content": "sha256:281c97ffe839783da21ba1cf64f67a1a8459c60abc261e1956f63b0a96c61068",
             "locator": {
               "kind": "symbol",
@@ -61,7 +61,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "eea270bf10b885af35285fb98b6205dcb491dd5c",
+            "blob": "f23ae83b49025d9b10e7b6bc846ede9a6d48563e",
             "content": "sha256:96ae224a660d306e828d63dac5c820748e724ec62b58b9affa6c2b6db358a4e8",
             "locator": {
               "kind": "symbol",
@@ -72,12 +72,81 @@
         },
         {
           "anchor": {
-            "blob": "eea270bf10b885af35285fb98b6205dcb491dd5c",
+            "blob": "f23ae83b49025d9b10e7b6bc846ede9a6d48563e",
             "content": "sha256:8c9d4ce0c0ed0a0879f1a5ee0ea038662470e23436de1e416d11af48e3650200",
             "locator": {
               "kind": "symbol",
               "name": "isBlocked"
             }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "ENGINE now holds w/h only; provider positions and seed clone EDGE_GEOM entries are deleted. conduitPathD returns a strai — source ownership, not executed visual proof.\n\nAnchor: `export type ConduitState =`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f23ae83b49025d9b10e7b6bc846ede9a6d48563e",
+            "content": "sha256:18f662700056b1315a89e66b7100c17bba2894f6e9447b3c5feef69c00694fac",
+            "locator": {
+              "end": 32,
+              "kind": "line_range",
+              "start": 12
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "ENGINE now holds w/h only; provider positions and seed clone EDGE_GEOM entries are deleted. conduitPathD returns a strai — source ownership, not executed visual proof.\n\nAnchor: `export const NODE_H = 62;`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f23ae83b49025d9b10e7b6bc846ede9a6d48563e",
+            "content": "sha256:133b2c5899d569d7ad431a974f37d9261ac4ca924e795fb2c47aa68e350f06c7",
+            "locator": {
+              "end": 118,
+              "kind": "line_range",
+              "start": 40
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "ENGINE now holds w/h only; provider positions and seed clone EDGE_GEOM entries are deleted. conduitPathD returns a strai — source ownership, not executed visual proof.\n\nAnchor: `export function landingFlowState(refs: LandingRefNode[], kind: string): FlowState {`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f23ae83b49025d9b10e7b6bc846ede9a6d48563e",
+            "content": "sha256:89a799c2dbb0ee2d96fa24a8399b9140de994a3eaed1d5d1cd755724cbe8ad6e",
+            "locator": {
+              "end": 263,
+              "kind": "line_range",
+              "start": 245
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "ENGINE now holds w/h only; provider positions and seed clone EDGE_GEOM entries are deleted. conduitPathD returns a strai — source ownership, not executed visual proof.\n\nAnchor: `export function RefusedConduit({ edge, polarity }: { edge: EngineProcessEdge; polarity: \"amber\"   \"red\" }) {`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "335b9c69049161a6e78cfc89526cc9ecd0eacfbe",
+            "content": "sha256:191cceb854d4d65537076a4bdc26ce0529ad9b74c59f5fe730120767011c51e4",
+            "locator": {
+              "end": 249,
+              "kind": "line_range",
+              "start": 236
+            },
+            "path": "dashboard/src/panels/engine-room/badges.tsx"
           },
           "kind": "code"
         }

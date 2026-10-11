@@ -4,7 +4,29 @@
 
 [engine-room overview](overview.md)
 
-## Purpose
+
+## Current enclosure-only composition
+
+bootSteps now returns Contract anchor (complete), Code worktree (exists-derived), then Ledger-map · memory worktree for external memory or skipped Memory (<mode>). EDGE_TO_STEP, edge lookup and provider-based steadyState helper are removed. Three mode headings and seven teardown milestones remain.
+
+### Maintenance boundaries
+
+Replace boot order and input ownership with contract/worktree materialization only; delete seed/clone/watchers and provider-presence completion rules and their evidence anchors. Preserve DISPOSE_PHASES, STEADY_PHASES, frontier from landing refs, conflict blocking and abandon-skipped semantics.
+
+Source/test/fixture inspection is not a fresh mounted capture or a passing test run.
+Historical provider-shaped input data and retained compatibility definitions do not
+restore removed provider visuals or tool exposure.
+
+- bootSteps now returns Contract anchor (complete), Code worktree (exists-derived), then Ledger-map · memory worktree for  — source ownership, not executed visual proof. [5]
+- bootSteps now returns Contract anchor (complete), Code worktree (exists-derived), then Ledger-map · memory worktree for  — source ownership, not executed visual proof. [6]
+
+## Historical superseded account (non-operative)
+
+The prior onboarding below is retained for provenance and unrelated design history.
+It is not current provider-render, fallback, prototype-parity or execution guidance.
+Current behavior and its limits are the operative contract above.
+
+
 
 Presentational sidebar for the slice 5e enclosure-centered Engine Room process map. Given one `EngineProcessNode`, it derives an ordered step list and per-step state, then renders them as a vertical `<ol>` timeline. The timeline runs in three modes (slice 5k F2/F4, refined in 05o): a **boot sequence** for the spin-up arc (contract anchor -> code worktree -> memory worktree/ledger -> CGC seed -> GrepAI clone -> watchers/steady state), a **steady state** label over the same completed boot checklist for a live fully-booted worktree, and a **tear-down sequence** during the landing/teardown arc (closeout -> push -> PR -> pull -> carryover -> cleanup -> retire). It reads the same projection facts (`edges`, `health`, `providers`, worktree `exists` flags, and the `landing[]` ref progression) as the map so the timeline and the map never disagree.
 

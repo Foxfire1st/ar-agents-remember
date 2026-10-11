@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "795cc832381626b813bfd71d42ce2a60ee147cbb",
+            "blob": "335b9c69049161a6e78cfc89526cc9ecd0eacfbe",
             "content": "sha256:72260e68bb2968276ba779c6259e9d106e7868bf8ca6056eb25666594f095028",
             "locator": {
               "kind": "symbol",
@@ -18,7 +18,7 @@
         },
         {
           "anchor": {
-            "blob": "795cc832381626b813bfd71d42ce2a60ee147cbb",
+            "blob": "335b9c69049161a6e78cfc89526cc9ecd0eacfbe",
             "content": "sha256:6d5c4b4f5e5abea5b273bf4c033289512dcf8825e2849a0db32c18ca2c4a65f8",
             "locator": {
               "kind": "symbol",
@@ -29,7 +29,7 @@
         },
         {
           "anchor": {
-            "blob": "795cc832381626b813bfd71d42ce2a60ee147cbb",
+            "blob": "335b9c69049161a6e78cfc89526cc9ecd0eacfbe",
             "content": "sha256:ca5ddd6c1557eb0f78551f357738316c1aaefa0b13697d913ac593b6036ebe85",
             "locator": {
               "kind": "symbol",
@@ -45,7 +45,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "795cc832381626b813bfd71d42ce2a60ee147cbb",
+            "blob": "335b9c69049161a6e78cfc89526cc9ecd0eacfbe",
             "content": "sha256:3fb1d931931185d1a3d50004bcfe00cadeac3a2b8e7f47636c52f84c75459f1b",
             "locator": {
               "kind": "symbol",
@@ -56,7 +56,7 @@
         },
         {
           "anchor": {
-            "blob": "795cc832381626b813bfd71d42ce2a60ee147cbb",
+            "blob": "335b9c69049161a6e78cfc89526cc9ecd0eacfbe",
             "content": "sha256:7faac7581dd0e4264b9835403e6d17675da5d527313de8131f5f2b2169726beb",
             "locator": {
               "kind": "symbol",
@@ -67,12 +67,64 @@
         },
         {
           "anchor": {
-            "blob": "795cc832381626b813bfd71d42ce2a60ee147cbb",
+            "blob": "335b9c69049161a6e78cfc89526cc9ecd0eacfbe",
             "content": "sha256:2ec5e657928e4527887bd1b9f848d1ab1efdb84e4d7bfb69dc59265c86b79a59",
             "locator": {
               "kind": "symbol",
               "name": "Gate"
             }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The Markdown primitive list does not name ProviderBlock, so that list is still valid. Source deletes ProviderBlock and E — source ownership, not executed visual proof.\n\nAnchor: `export function Gate({ edge }: { edge: EngineProcessEdge }) {`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "335b9c69049161a6e78cfc89526cc9ecd0eacfbe",
+            "content": "sha256:4ed78b69ad8760386710a19bcea19c6d0adb182bdad6cf181386f29b62874287",
+            "locator": {
+              "end": 138,
+              "kind": "line_range",
+              "start": 60
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The Markdown primitive list does not name ProviderBlock, so that list is still valid. Source deletes ProviderBlock and E — source ownership, not executed visual proof.\n\nAnchor: `export function RecoveryChips({ labels }: { labels: string[] }) {`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "335b9c69049161a6e78cfc89526cc9ecd0eacfbe",
+            "content": "sha256:39baba2d9b0c45efc10ed5ad88421cc1efd303e27218c15eba2e633edb46858f",
+            "locator": {
+              "end": 254,
+              "kind": "line_range",
+              "start": 141
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The Markdown primitive list does not name ProviderBlock, so that list is still valid. Source deletes ProviderBlock and E — source ownership, not executed visual proof.\n\nAnchor: `export const EDGE_GEOM: Record<string, readonly [number, number, number, number]> = {`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f23ae83b49025d9b10e7b6bc846ede9a6d48563e",
+            "content": "sha256:2b2820cb214df32a336ee7fcae8d5de9400d01fc6ea2f10aafa7cc40c458bc3a",
+            "locator": {
+              "end": 118,
+              "kind": "line_range",
+              "start": 68
+            },
+            "path": "dashboard/src/panels/engine-room/geometry.ts"
           },
           "kind": "code"
         }

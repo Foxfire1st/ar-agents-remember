@@ -1131,6 +1131,96 @@
         }
       ]
     },
+    "155": {
+      "note": "Current ownership/control, without execution or runtime tool exposure inferred.\n\nAnchor: `buildEngineRoomModel(engineProcesses, Object.values(lifecycles)),`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "20386ce24dbf50d2623c264f361b4a10dff165c5",
+            "content": "sha256:fe72de382df0b3d7f24adde324c8db7df4b51e35eb5d7e1ca3ce4be52c001fd9",
+            "locator": {
+              "end": 177,
+              "kind": "line_range",
+              "start": 119
+            },
+            "path": "dashboard/src/panels/EngineRoom.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "156": {
+      "note": "Current ownership/control, without execution or runtime tool exposure inferred.\n\nAnchor: `export function OfficialLineLayer({`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "596dec5c6c7c633b293640144a05def6c8ef4578",
+            "content": "sha256:0b75b11bb39be418cd7ac4a0f535284d932b9e1757e220fc93b14bbb10461c2c",
+            "locator": {
+              "end": 252,
+              "kind": "line_range",
+              "start": 187
+            },
+            "path": "dashboard/src/panels/engine-room/sceneLayers.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "157": {
+      "note": "Current ownership/control, without execution or runtime tool exposure inferred.\n\nAnchor: `const DEFAULT_RIDES_NOTE = (rides: string) =>`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "961c2555c5c6b450368c73fcf95955843fce4474",
+            "content": "sha256:f9c8b8682995b43dde28add3554d45a2eb12fcf412cc3b8500f98be087278abc",
+            "locator": {
+              "end": 67,
+              "kind": "line_range",
+              "start": 57
+            },
+            "path": "dashboard/src/panels/FlowTab.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "158": {
+      "note": "Current ownership/control, without execution or runtime tool exposure inferred.\n\nAnchor: `{ line: \"3 structural edges — route indexes · onboarding · read_ar_files → ORDER / CONFLICT / INDEPENDENT (new surfaces: declaration cross-reference)\" },`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cde515f1032c70023bdaad5a4686e28ca90b4250",
+            "content": "sha256:3b9e1a5f9a164a276a9d988e6b9f13255c09080c3d1256e29191a696ccbf2f7b",
+            "locator": {
+              "end": 237,
+              "kind": "line_range",
+              "start": 173
+            },
+            "path": "dashboard/src/panels/flowModels.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "159": {
+      "note": "Current ownership/control, without execution or runtime tool exposure inferred.\n\nAnchor: `const TOOL_LABELS: Record<string, string> = {`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "02b856c5abc15a186564c83888ec1016bd161179",
+            "content": "sha256:e7c4b3581a01a7c689b0129e8b740af8f540d77b02b7391b44f3ff5752263ed4",
+            "locator": {
+              "end": 81,
+              "kind": "line_range",
+              "start": 65
+            },
+            "path": "dashboard/src/panels/eventSummary.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "16": {
       "note": "The tree-comparison scope, the statement area and the changed guarantee.\n\nAnchor: \"export function IntentWordDiffScope({\"; \"export function IntentStatementBody({\"; \"export function guaranteeTextChange(\"",
       "targets": [

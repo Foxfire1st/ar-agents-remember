@@ -1,5 +1,29 @@
 # mcp/src/agents_remember/providers/lifecycle/ - Provider Lifecycle Facade Overview
 
+## Current operative account — MIK-R112
+
+The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
+
+- Both cli.py and __main__.py are deleted.
+- Facade’s current lazy export tuple no longer includes CLI.
+
+### Superseded inventory
+
+- Pre-repair card claim: Card tells readers to start with cli.py for parser/action dispatch. This is superseded archival wording, not a current prescription.
+
+### Source and authority bounds
+
+- Source comparison: `mcp/src/agents_remember/providers/lifecycle/__main__.py:absent (git diff HEAD: deleted file)`.
+- Source comparison: `mcp/src/agents_remember/providers/lifecycle/cli.py:absent (git diff HEAD: deleted file)`.
+- Source comparison: `mcp/src/agents_remember/providers/lifecycle/__init__.py:9 (_EXPORT_MODULES =)`.
+
+Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
+
+## Historical original card — preserved, not the current operative account
+
+<details>
+<summary>Retained original source accounts and producer history</summary>
+
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
 | sourceRoute            | `mcp/src/agents_remember/providers/lifecycle/` |
@@ -99,3 +123,5 @@ present so the response keeps its shape) and `_drop_verbose_plumbing` (drop the 
 mirror, then either drop the debug-only keys outright on success or keep them redacted on failure,
 because that detail is what makes a failure debuggable). The success/failure asymmetry is the point
 of the module and is now readable at the call site.
+
+</details>

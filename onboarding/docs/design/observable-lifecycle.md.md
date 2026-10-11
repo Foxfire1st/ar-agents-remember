@@ -1,5 +1,16 @@
 # docs/design/observable-lifecycle.md
 
+## Current operative account — MIK-R112
+
+The amended design retains states, phases, gates, event correlation and persistence tiers, but removes the model-facing lifecycle signal surface. Transitions are session-driven/guarded or system-owned; a raised gate records the ask, ending a turn is not a lifecycle_gate call and there is no restored lifecycle_resume/end/switch tool prescription. Design remains pre-implementation authority, not proof every design transition is shipped. Historical retention and inbox recovery accounts retain their original dated custody.
+
+The original prose, exact parameters, references and dated producer accounts below remain intact as history, not present-tense authority for superseded behavior. Current evidence is the source path `docs/design/observable-lifecycle.md` and the source-specific before/after extents preserved in the residual-hunk account. No code edit, proof rerun or new execution acceptance is claimed.
+
+## Historical original card — preserved, not the current operative account
+
+<details>
+<summary>Original source account and historical evidence</summary>
+
 ## Governing Overview
 
 [docs/design overview](overview.md)
@@ -40,3 +51,5 @@ metrics and compact normally.
 - Retention policy implementation follows this design split. [1]
 - Projection readers apply interaction TTL and pickup feedback. [2]
 - MCP `lifecycle_gate` exposes the unified public gate junction. [3]
+
+</details>

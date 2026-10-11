@@ -1,0 +1,61 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "The rejected aggregate/exception design and chosen per-tool/reference design constrain every later owner that rewrites or adds a tool description."
+  },
+  "alternatives": [
+    {
+      "option": "Use a 600-character ordinary per-tool ceiling and move longer calling/reference material to an openable skill or reference, preserving only explicit later-owner transition pins.",
+      "reason": "Every owning change can meet its own final bound without requiring an aggregate last leaf, and calling detail remains reachable without retransmitting it in every tool advertisement.",
+      "status": "chosen"
+    },
+    {
+      "option": "Use an aggregate description budget or a permanent exception table for selected large descriptions.",
+      "reason": "An aggregate is landing-order dependent, and permanent exceptions retain the repeated reference-material cost; the developer required the 600-character bound without such a table.",
+      "reconsider_when": "The developer changes the context-cost tradeoff or an evidenced ordinary tool cannot retain usable calling guidance with its pointer under the chosen ceiling.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Later description owners must maintain the pointer, ordinary character bounds and exact transition pins; argument descriptions cannot become a substitute storage location for long reference material."
+  ],
+  "context": "Repeated tool descriptions carried full calling/reference material. The task considered aggregate and exception bounds before the developer chose an ordinary per-tool ceiling and an openable longer explanation.",
+  "decider": "Developer D126 as recorded in the canonical MIK-R112@v1 packet and leaf decision log; D128 preserves dispatch_agent until its replacement lands.",
+  "id": "DEC-YDM2QT",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "INV-4HS3E5"
+    },
+    {
+      "relation": "explains",
+      "target": {
+        "blob": "b06fdbb1db80e083e1b8cd3e951b42b84c1fd880",
+        "content": "sha256:621a18fcf94d84672efed80ec1f7413ceefd27169a395ca3288a8e7b3ef6af78",
+        "locator": {
+          "kind": "symbol",
+          "name": "ToolDescriptionBoundsTests.test_tool_descriptions_hold_bounds_and_name_where_the_rest_is"
+        },
+        "path": "mcp/tests/test_tool_descriptions.py"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "MIK-R112@v1 rule 7, current primary SHA c98e45347f34e81db278c0341ecc7626d6638da0a3b51688d2fa861783a1971f; current source read after completed L50 sync at code HEAD 00d6b4d48ad47e076a87c594ff85456ef80978ef. The proof entries name the checks and their facets, not a fresh Curator test run or a claim that foreign overlong models are repaired. The Worker's and Reviewer's exact historical CODE PASS and failed-test evidence remain separate."
+      ],
+      "path": "notes/reports/role-launch/260928-MIK-L112-curator-65bce089-3714-468f-8b4c-68b77ee1d4dd.description-list.json"
+    },
+    "handoffEntry": "L112-R7-DESCRIPTION-CONTRACT",
+    "leaf": "260928-MIK-L112",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

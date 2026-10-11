@@ -4,7 +4,31 @@
 
 [panels/engine-room overview](overview.md)
 
-## Purpose
+
+## Current enclosure-only composition
+
+ENGINE now holds w/h only; provider positions and seed clone EDGE_GEOM entries are deleted. conduitPathD returns a straight line for known geometry or null. RuntimeState/runtimeState/chargeMotion and seed polarity arms still exist as helpers; no provider gauge renderer consumes them in this surface.
+
+### Maintenance boundaries
+
+Remove active provider position/wire/gauge render guarantees. Document surviving branch/coupler/landing constants and null-path rejection of old seed kinds. Keep the retained helper vocabulary as compatibility definitions, not active visuals; failed/stale integration refusal is still geometry-backed.
+
+Source/test/fixture inspection is not a fresh mounted capture or a passing test run.
+Historical provider-shaped input data and retained compatibility definitions do not
+restore removed provider visuals or tool exposure.
+
+- ENGINE now holds w/h only; provider positions and seed clone EDGE_GEOM entries are deleted. conduitPathD returns a strai — source ownership, not executed visual proof. [4]
+- ENGINE now holds w/h only; provider positions and seed clone EDGE_GEOM entries are deleted. conduitPathD returns a strai — source ownership, not executed visual proof. [5]
+- ENGINE now holds w/h only; provider positions and seed clone EDGE_GEOM entries are deleted. conduitPathD returns a strai — source ownership, not executed visual proof. [6]
+- ENGINE now holds w/h only; provider positions and seed clone EDGE_GEOM entries are deleted. conduitPathD returns a strai — source ownership, not executed visual proof. [7]
+
+## Historical superseded account (non-operative)
+
+The prior onboarding below is retained for provenance and unrelated design history.
+It is not current provider-render, fallback, prototype-parity or execution guidance.
+Current behavior and its limits are the operative contract above.
+
+
 
 The pure geometry and derivation layer of the Engine Room scene, extracted from
 `EnclosureCanvas.tsx` by the 260731-EFA-L8 responsibility split. It owns the canvas

@@ -4,7 +4,29 @@
 
 [engine-room overview](overview.md)
 
-## Purpose
+
+## Current enclosure-only composition
+
+EngineRoomModel now has processes: EngineProcessView[] only; EngineProcessView retains enclosureKey,node,lifecycle?,gate?. No ProviderNode/EngineStack imports. Commented server-composition and no-rederivation intent remains.
+
+### Maintenance boundaries
+
+Remove three provider/fallback fields and corresponding imports/consumption invariant/evidence. Keep view key and optional lifecycle/gate grammar. Describe actual builder ordering rather than imply server order is preserved unchanged.
+
+Source/test/fixture inspection is not a fresh mounted capture or a passing test run.
+Historical provider-shaped input data and retained compatibility definitions do not
+restore removed provider visuals or tool exposure.
+
+- EngineRoomModel now has processes: EngineProcessView[] only; EngineProcessView retains enclosureKey,node,lifecycle?,gate — source ownership, not executed visual proof. [7]
+- EngineRoomModel now has processes: EngineProcessView[] only; EngineProcessView retains enclosureKey,node,lifecycle?,gate — source ownership, not executed visual proof. [8]
+
+## Historical superseded account (non-operative)
+
+The prior onboarding below is retained for provenance and unrelated design history.
+It is not current provider-render, fallback, prototype-parity or execution guidance.
+Current behavior and its limits are the operative contract above.
+
+
 
 Declares the client render model for the enclosure-centered Engine Room process map. The server composes the deterministic process nodes (`analytics.engineProcesses`) carrying their fact-state honesty; this file only describes the shape the client builds by joining each node to its live lifecycle, exposing that lifecycle's gate, lifting the shared workspace stack, and keeping a legacy fallback. No semantics are re-derived here.
 

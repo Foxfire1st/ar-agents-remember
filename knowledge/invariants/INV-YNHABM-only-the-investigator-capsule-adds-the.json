@@ -7,8 +7,8 @@
   },
   "applicability": "Requested tools in the canonical Investigator capsule.",
   "conditions": [
-    "The original five requests and nine approved reading requests are composed.",
-    "Granted runtime authority remains independently admitted."
+    "The canonical manifest and the wording test name the same retained request list.",
+    "Runtime authority is independently admitted; a provider concern is read through retained evidence routes, and provider state change belongs to its owning leaf Worker."
   ],
   "exclusions": [
     "Requests do not authorize writes or enlarge another role’s requested tool set."
@@ -25,9 +25,9 @@
     "leaf": "260928-MIK-L98",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "Only the Investigator capsule adds the nine approved reading requests to its original five; requests grant no new runtime authority.",
+  "statement": "The Investigator capsule requests the retained context, source, knowledge, task-status and role-message interfaces; no retired provider or code-search operation is requested, and requested tools grant no additional runtime mutation authority.",
   "status": "proposed",
   "supersedes": []
 }

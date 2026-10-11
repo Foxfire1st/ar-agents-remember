@@ -4,7 +4,31 @@
 
 [dashboard/src overview](../overview.md)
 
-## Purpose
+
+## Current enclosure-only composition
+
+ScenarioFrame remains a full WorkspaceProjection plus caption/duration; existing fixture identities and timeline order remain. Edited S5/R4/P3-P6/D5 captions describe diagnostics and worktree/coupler state instead of retired gauges/arcs.
+
+### Maintenance boundaries
+
+Replace the current-visual claims for T9B/T9C/T7B and teardown with diagnostics-only seed failure/currentPhase facts, no seed arrows/flicker/reindex pulse/engine scan, and pre-contract fleeting state. Preserve historical frame names. Explicitly qualify remaining B3/B4, S3/S4, R3, memory/stale-base recovery and abandon captions as residual historical provider wording, not actual render proof; do not claim all captions were corrected.
+
+Source/test/fixture inspection is not a fresh mounted capture or a passing test run.
+Historical provider-shaped input data and retained compatibility definitions do not
+restore removed provider visuals or tool exposure.
+
+- ScenarioFrame remains a full WorkspaceProjection plus caption/duration; existing fixture identities and timeline order r — source ownership, not executed visual proof. [10]
+- ScenarioFrame remains a full WorkspaceProjection plus caption/duration; existing fixture identities and timeline order r — source ownership, not executed visual proof. [11]
+- ScenarioFrame remains a full WorkspaceProjection plus caption/duration; existing fixture identities and timeline order r — source ownership, not executed visual proof. [12]
+- ScenarioFrame remains a full WorkspaceProjection plus caption/duration; existing fixture identities and timeline order r — source ownership, not executed visual proof. [13]
+
+## Historical superseded account (non-operative)
+
+The prior onboarding below is retained for provenance and unrelated design history.
+It is not current provider-render, fallback, prototype-parity or execution guidance.
+Current behavior and its limits are the operative contract above.
+
+
 
 Slice 5i — the scenario MODEL behind the dev bench. A scenario is an ordered list of `ScenarioFrame`s,
 each a FULL `WorkspaceProjection` plus a caption; the `ScenarioPlayer` applies one complete frame at a

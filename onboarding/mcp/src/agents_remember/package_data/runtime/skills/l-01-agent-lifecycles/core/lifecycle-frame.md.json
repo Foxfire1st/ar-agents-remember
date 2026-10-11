@@ -1,0 +1,25 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/core/lifecycle-frame.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Current instruction contract and retained-read replacement, not historical provider/tool examples.\n\nAnchor: # Core — The Minimal Lifecycle Frame",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5d1cf7f9da0def48e90cb11650cf37b3c4c6cc73",
+            "content": "sha256:4ae5c8d558b043c492d6f04731ed7b27f4353a8157e8ebd6c346698b792b049b",
+            "locator": {
+              "end": 70,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "skills/l-01-agent-lifecycles/core/lifecycle-frame.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

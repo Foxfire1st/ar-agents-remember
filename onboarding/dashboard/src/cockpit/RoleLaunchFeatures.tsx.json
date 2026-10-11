@@ -34,7 +34,7 @@
         "handoffEntry": "L71-CURRENT242-W-17",
         "leaf": "260928-MIK-L71"
       },
-      "rationale": "The defaults component displays mode/settings/profile sources and instruction digest information so a user can inspect resolved launch choices.",
+      "rationale": "RoleLaunchDefaults presents actual resolved values and setting/profile sources and user instruction append/overwrite information; it does not display an instruction digest or prove the final native prompt.",
       "role": "presentation"
     }
   ],

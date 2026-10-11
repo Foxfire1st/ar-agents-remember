@@ -6,6 +6,32 @@
 
 ## Purpose
 
+Retain trusted exact/internal response adapters for application-owned gate operations.
+
+## Code Commentary
+
+Gate creation, wait, response wait, decisions, lifecycle-scoped decision matching and listing
+still delegate to application gate_tools and cross `_tool_payload` once. Lifecycle raise,
+decide and list adapters use internal response names; the `registered_*` compatibility names
+are not evidence of an advertised registration. Structural model-facing lifecycle-gate,
+gate-decide and gate-list adapters and their public registration are removed. Durable gate
+state, decision authority, unique matching and retention remain application/control-plane
+responsibilities, not deleted behavior. Exact private correlation stays separate from public
+canonical task identity; no alternative model-facing gate junction is introduced here.
+
+## Current evidence
+
+- Current source excerpt `def gate_create_payload(` identifies this section's adapter/control owner, not an executed success. [5]
+- Current source excerpt `TOOL_RESPONSE_MODELS: dict[str, type[ResponseEnvelope]] = {` identifies this section's adapter/control owner, not an executed success. [6]
+- Current source excerpt `from .capsule_serving import register_capsule_and_skill_tools` identifies this section's adapter/control owner, not an executed success. [7]
+
+## Historical superseded account (non-operative)
+
+Prior descriptions/evidence remain below for provenance. They are not current public
+registration, provider/lifecycle/skill-install instructions or execution acceptance.
+
+
+
 This module is the response-adapter boundary for gate application operations. Agent-facing builders
 accept structural requests and return document-and-role results. Exact gate/lifecycle correlations
 remain available only to trusted application and operator paths.

@@ -1,5 +1,27 @@
 # docs/design/ — Design Documentation Overview
 
+## Current operative account — MIK-R112
+
+The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
+
+- Design now removes model-facing signals while retaining session-driven states/gates.
+
+### Superseded inventory
+
+- Pre-repair card claim: Route Model still names lifecycle_gate as the public junction. This is superseded archival wording, not a current prescription.
+
+### Source and authority bounds
+
+- Source comparison: `docs/design/observable-lifecycle.md:1-5,73-94`.
+- Source comparison: `docs/design/observable-lifecycle.md:275-312`.
+
+Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
+
+## Historical original card — preserved, not the current operative account
+
+<details>
+<summary>Retained original source accounts and producer history</summary>
+
 | Field                  | Value                                       |
 | ---------------------- | ------------------------------------------- |
 | sourceRoute            | `docs/design/`                              |
@@ -184,3 +206,5 @@ rather than deleted, and this is a `T45` find — no check reads a number in pro
 `observable-lifecycle.md` (this route's design authority) refreshed its recovery runbook:
 `ladder-resolved` is legacy parse-compat (the timed escalation ladder is retired) and
 retired/absent-target rows resolve through the sweep's landing/ceiling/grace paths.
+
+</details>

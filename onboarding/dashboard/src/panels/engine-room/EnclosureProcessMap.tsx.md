@@ -4,7 +4,30 @@
 
 [engine-room overview](overview.md)
 
-## Purpose
+
+## Current enclosure-only composition
+
+EnclosureProcessMap no longer accepts/forwards workspaceEngines or imports ProviderNode. It forwards node/gateNode/officialLedger through normal and abandon branches; retains backdrop visibility/play-pause, cleanup vs abandon records and dissolve shell.
+
+### Maintenance boundaries
+
+Remove provider prop/type ownership and gauge wording. Retain official ledger forwarding/popover ownership independently of providers, plus keyed identity/teardown/backdrop scope. Point to canvas and scene layers rather than claim this wrapper owns retired primitives.
+
+Source/test/fixture inspection is not a fresh mounted capture or a passing test run.
+Historical provider-shaped input data and retained compatibility definitions do not
+restore removed provider visuals or tool exposure.
+
+- EnclosureProcessMap no longer accepts/forwards workspaceEngines or imports ProviderNode. It forwards node/gateNode/offic — source ownership, not executed visual proof. [11]
+- EnclosureProcessMap no longer accepts/forwards workspaceEngines or imports ProviderNode. It forwards node/gateNode/offic — source ownership, not executed visual proof. [12]
+- EnclosureProcessMap no longer accepts/forwards workspaceEngines or imports ProviderNode. It forwards node/gateNode/offic — source ownership, not executed visual proof. [13]
+
+## Historical superseded account (non-operative)
+
+The prior onboarding below is retained for provenance and unrelated design history.
+It is not current provider-render, fallback, prototype-parity or execution guidance.
+Current behavior and its limits are the operative contract above.
+
+
 
 The Engine Room pod-stage **shell** for one `EngineProcessNode` (5g G1). The bird's-eye render moved out
 to `EnclosureCanvas`, so this file is now a thin wrapper: a `motion.div` (`process-map`) that mounts at its

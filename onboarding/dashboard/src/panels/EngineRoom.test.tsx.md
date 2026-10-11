@@ -4,7 +4,29 @@
 
 [panels/ overview](overview.md)
 
-## Purpose
+
+## Current enclosure-only composition
+
+The two official aggregation tests and workspace provider helper factories were removed. A new test asserts official-strip and engine-room-fallback are absent while enclosure-canvas exists. Header, gate, lineage, leaf identity and memoized slice cases remain.
+
+### Maintenance boundaries
+
+Replace provider aggregation fixture/coverage paragraphs and OfficialStrip references with the authored absence case; retain phase-active, gate/lineage, leaf identity and narrowed-subscription cases. Label these test declarations/assertions, not a passing execution or mounted proof.
+
+Source/test/fixture inspection is not a fresh mounted capture or a passing test run.
+Historical provider-shaped input data and retained compatibility definitions do not
+restore removed provider visuals or tool exposure.
+
+- The two official aggregation tests and workspace provider helper factories were removed. A new test asserts official-str — source ownership, not executed visual proof. [6]
+- The two official aggregation tests and workspace provider helper factories were removed. A new test asserts official-str — source ownership, not executed visual proof. [7]
+
+## Historical superseded account (non-operative)
+
+The prior onboarding below is retained for provenance and unrelated design history.
+It is not current provider-render, fallback, prototype-parity or execution guidance.
+Current behavior and its limits are the operative contract above.
+
+
 
 Vitest + `@testing-library/react` render test for slice 5f S5's lifecycle-phase motion: the Engine Room
 header flags `data-phase-active` when the selected enclosure is in a human-gated lifecycle phase (sync /

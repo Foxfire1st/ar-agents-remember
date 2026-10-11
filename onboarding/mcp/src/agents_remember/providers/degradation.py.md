@@ -1,5 +1,29 @@
 # mcp/src/agents_remember/providers/degradation.py
 
+## Current operative account — MIK-R112
+
+The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
+
+- Current evaluator requires injected stop and alert ports.
+- MIK-R112 source names runtime/explicit removal, not agent-tool teardown.
+
+### Superseded inventory
+
+- Pre-repair card claim: Card describes an implemented _stop_provider_stacks default calling provider_watchers_tool. This is superseded archival wording, not a current prescription.
+
+### Source and authority bounds
+
+- Source comparison: `mcp/src/agents_remember/providers/degradation.py:268-285`.
+- Source comparison: `mcp/src/agents_remember/providers/degradation.py:281-337`.
+- Source comparison: `mcp/src/agents_remember/providers/degradation.py:637-666`.
+
+Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
+
+## Historical original card — preserved, not the current operative account
+
+<details>
+<summary>Retained original source accounts and producer history</summary>
+
 ## Governing Overview
 
 [overview.md](../../../overview.md) — `providers/` has no route-local overview of its own; the
@@ -283,3 +307,5 @@ Current alert/inbox vocabulary addresses Investigator. The degradation protocol�
 
 - The inbox record schema (`system-specialist` in `AgentRole`, `degradation-alert` in `InboxMessageKind`) this module posts against — vocabulary in models/operator_inbox.py since L9. [5]
 - Failing-first tests pinning hysteresis, inbox delivery parity, and failsafe-stop-failure durability. [11]
+
+</details>

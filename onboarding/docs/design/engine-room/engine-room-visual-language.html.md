@@ -1,5 +1,16 @@
 # engine-room-visual-language.html
 
+## Current operative account — MIK-R112
+
+The HTML remains an animated, named design-specimen page. Its current retirement notice distinguishes those specimens from the shipped room: provider engines, seed/clone arcs and fault/reindex effects no longer render; worktree/official warp couplers remain the stated live primitive. The engines and provider T7B mode are explicitly retained historical specimens, not current renderer authority. Colour/motion doctrine and examples remain source design data; no mounted screenshot/video witness is captured by this curation.
+
+The original prose, exact parameters, references and dated producer accounts below remain intact as history, not present-tense authority for superseded behavior. Current evidence is the source path `docs/design/engine-room/engine-room-visual-language.html` and the source-specific before/after extents preserved in the residual-hunk account. No code edit, proof rerun or new execution acceptance is claimed.
+
+## Historical original card — preserved, not the current operative account
+
+<details>
+<summary>Original source account and historical evidence</summary>
+
 ## Governing Overview
 
 [engine-room/ design overview](overview.md)
@@ -130,3 +141,5 @@ This is an in-repo design reference with no cross-repository or external-system 
 cross-repo references found.
 
 _None._
+
+</details>

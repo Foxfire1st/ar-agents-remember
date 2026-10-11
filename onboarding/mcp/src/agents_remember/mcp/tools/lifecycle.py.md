@@ -6,6 +6,30 @@
 
 ## Purpose
 
+Retain only the config-free lifecycle-block compatibility adapter.
+
+## Code Commentary
+
+`lifecycle_block_payload` accepts optional kind, prompt and options and forwards to
+`lifecycle_block_tool` through the shared response boundary. Its lifecycle_block response
+label is not an advertised tool. Six start/resume/turn-end/end/phase/switch builders and
+the corresponding public registrar are gone. This module no longer implements their
+front-half rundown or turn-end choreography. Application/observer lifecycle ownership
+survives elsewhere; retirement of model signals does not erase durable state or create
+new runtime-ID inputs or another public gate mechanism.
+
+## Current evidence
+
+- Current source excerpt `"""MCP response adapters for lifecycle application operations."""` identifies this section's adapter/control owner, not an executed success. [8]
+- Current source excerpt `TOOL_RESPONSE_MODELS: dict[str, type[ResponseEnvelope]] = {` identifies this section's adapter/control owner, not an executed success. [9]
+
+## Historical superseded account (non-operative)
+
+Prior descriptions/evidence remain below for provenance. They are not current public
+registration, provider/lifecycle/skill-install instructions or execution acceptance.
+
+
+
 Payload builders for lifecycle signal payloads. Each drives the
 process-singleton ambient lifecycle (`require_ambient`) and returns the modeled
 response through `_tool_payload`, so a lifecycle signal is itself an attributed

@@ -297,3 +297,8 @@ each behavioural case failing before its fix and passing after.
 - The two reviewer worklist test modules on that row's consumer list. [95]
 
 The converted-drift registration once tabled under keys 14/95 now stands as the [99] line above; keys 14 and 95 cite the catalog's durable-artifact and reviewer-worklist rows.
+
+
+## L112 post-L74 correspondence for parked comparison references
+
+The parked W03 comparison-consumer prose and its original261/262/263 target objects are retained verbatim in the Curator sync3-ten-carrier-intake account. The current L74 composition has no test_comparison_changeset.py and no catalog row naming it; those old consumer claims are not current registrations and are not re-anchored onto unrelated rows. Landed L74 qualified counts, replacement contracts, preview consumers and read-boundary-oracle registration above remain intact. The live catalog was statically parsed as13 contracts and88 artifacts at this intake; this measurement is not loader/test execution, CODE or memory acceptance. The incoming read-boundary replacement, not this archival disposition, owns the changed fixture model.

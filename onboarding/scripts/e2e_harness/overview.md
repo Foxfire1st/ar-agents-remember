@@ -1,5 +1,29 @@
 # Ambient Role-Chat E2E Harness Overview
 
+## Current operative account — MIK-R112
+
+The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
+
+- Scripted orchestrator-retire route now requests dispatch_agent, not retire_child.
+- Worker traffic and C04/C06/C08 owners now name role_message.
+
+### Superseded inventory
+
+- Pre-repair card claim: Card’s flow says orchestrator retires manager to create a real vacancy. This is superseded archival wording, not a current prescription.
+
+### Source and authority bounds
+
+- Source comparison: `scripts/e2e_harness/responses_server.py:181 ("worker-initial":)`.
+- Source comparison: `scripts/e2e_harness/responses_server.py:189 ("orchestrator-retire":)`.
+- Source comparison: `scripts/e2e_harness/scenario.py:94 (C05 =)`.
+
+Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
+
+## Historical original card — preserved, not the current operative account
+
+<details>
+<summary>Retained original source accounts and producer history</summary>
+
 | Field | Value |
 |---|---|
 | sourceRoute | `scripts/e2e_harness` |
@@ -225,3 +249,5 @@ execution owned by the lifecycle Dagger gate.
 ## Needs Verification
 
 None.
+
+</details>

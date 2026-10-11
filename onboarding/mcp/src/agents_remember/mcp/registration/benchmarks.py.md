@@ -1,5 +1,24 @@
 # mcp/src/agents_remember/mcp/registration/benchmarks.py
 
+## Current operative account — MIK-R112
+
+The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
+
+- The entire benchmark registrar file was deleted.
+- Neither codex_benchmark_prepare nor codex_benchmark_run is registered by this file anymore.
+
+### Source and authority bounds
+
+- Source comparison: `git diff HEAD -- mcp/src/agents_remember/mcp/registration/benchmarks.py (deleted file)`.
+- Source comparison: `mcp/src/agents_remember/mcp/registration/__init__.py:23-45`.
+
+Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
+
+## Historical original card — preserved, not the current operative account
+
+<details>
+<summary>Retained original source accounts and producer history</summary>
+
 ## Governing Overview
 
 [registration route overview](overview.md)
@@ -48,3 +67,5 @@ unless the MCP settings set `benchmarksEnabled`.
 - The payload builders these forward to. [1]
 - `BenchmarkSelection`, `BenchmarkPreparation`, `CodexBenchmarkRun`, and the `benchmarksEnabled` refusal. [2]
 - `CODEX_BENCHMARK_SANDBOX` and the sandbox allowlist. [3]
+
+</details>

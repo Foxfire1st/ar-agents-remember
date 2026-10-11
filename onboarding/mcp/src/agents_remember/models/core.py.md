@@ -6,6 +6,32 @@
 
 ## Purpose
 
+Declare boot/build identity, role-launched server binding and retained server information.
+
+## Code Commentary
+
+ServingBuildPayload and AgentBindingPayload forbid extra fields. Build identity is supplied
+at boot, not fabricated at each query; agent binding carries recorded canonical selection
+references and does not itself authorize work. ServerInfoResponse requires stdio transport,
+configured roots and servingBuild, with optional harnessSkillRoot/toolServer/agentBinding.
+Its allowedRepoIds and unusedProviderKeys lists default empty. Old provider configuration
+keys are unused metadata, not live capabilities. PingResponse is deleted; tools/reservedTools
+and allowedProviderIds are not current server-info inventory fields. Read-only information
+and DTO presence are distinct from actual runtime tool advertisement.
+
+## Current model evidence
+
+- Current source section contains excerpt `class ServerInfoResponse(ResponseModel):`; DTO/control ownership is not execution acceptance. [4]
+- Current source section contains excerpt `class ServingBuildPayload(BaseModel):`; DTO/control ownership is not execution acceptance. [5]
+- Current source section contains excerpt `def server_info_payload(`; DTO/control ownership is not execution acceptance. [6]
+
+## Historical superseded account (non-operative)
+
+Prior removed-tool/current-roster claims below are preserved provenance, not current
+registration, runtime capability or execution evidence.
+
+
+
 `core.py` defines response models for the core `ping` MCP tool and `server_info`
 tools.
 

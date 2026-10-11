@@ -1,5 +1,29 @@
 # mcp/tests/test_tool_response_conformance.py
 
+## Current operative account — MIK-R112
+
+The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
+
+- Structural-delivery witness now validates DispatchAgentResponse, not removed child/rename models.
+
+### Superseded inventory
+
+- Pre-repair card claim: Card’s current-source account pins 74 tools/21 modules/98 handlers; current source pins 39/19/63. This is superseded archival wording, not a current prescription.
+- Pre-repair card claim: Evidence says strict/flexible 48/36 split is pinned; source now derives both sets without numeric pins. This is superseded archival wording, not a current prescription.
+
+### Source and authority bounds
+
+- Source comparison: `mcp/tests/test_tool_response_conformance.py:225 (ROSTER_SIZE =)`.
+- Source comparison: `mcp/tests/test_tool_response_conformance.py:422 (def test_every_registered_model_is_strict_or_declared_flexible)`.
+- Source comparison: `mcp/tests/test_tool_response_conformance.py:991 (declared = set(DispatchAgentResponse.model_fields))`.
+
+Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
+
+## Historical original card — preserved, not the current operative account
+
+<details>
+<summary>Retained original source accounts and producer history</summary>
+
 ## Governing Overview
 
 [Test suite overview](overview.md)
@@ -107,3 +131,5 @@ they make no acceptance claim.
 No cross-repository implementation evidence is required for these local contract claims.
 
 No repository or external-system boundary is proved by this module.
+
+</details>

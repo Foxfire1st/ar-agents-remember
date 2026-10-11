@@ -4,7 +4,30 @@
 
 [panels/engine-room overview](overview.md)
 
-## Purpose
+
+## Current enclosure-only composition
+
+Conduit returns null for edge kinds without EDGE_GEOM; all supported paths are straight, replay only changes title/data-strategy. Opacity is 0 while retiring or planned, otherwise 1 with no clone-specific delay. Running draw/marker/packet and inner-path ghosting plus landing progression survive.
+
+### Maintenance boundaries
+
+Replace provider-edge and replay-shape assertions with geometry-gated worktree/ledger/sync/integration paths. Remove clone arc/transient-delay rules; document zero-delay opacity, running markers/packets and retained LandingFlows. Correct the already-stale replay-bend claim rather than preserve it through L112.
+
+Source/test/fixture inspection is not a fresh mounted capture or a passing test run.
+Historical provider-shaped input data and retained compatibility definitions do not
+restore removed provider visuals or tool exposure.
+
+- Conduit returns null for edge kinds without EDGE_GEOM; all supported paths are straight, replay only changes title/data- — source ownership, not executed visual proof. [3]
+- Conduit returns null for edge kinds without EDGE_GEOM; all supported paths are straight, replay only changes title/data- — source ownership, not executed visual proof. [4]
+- Conduit returns null for edge kinds without EDGE_GEOM; all supported paths are straight, replay only changes title/data- — source ownership, not executed visual proof. [5]
+
+## Historical superseded account (non-operative)
+
+The prior onboarding below is retained for provenance and unrelated design history.
+It is not current provider-render, fallback, prototype-parity or execution guidance.
+Current behavior and its limits are the operative contract above.
+
+
 
 The SVG conduit and landing-flow renderers of the Engine Room scene, extracted from
 `EnclosureCanvas.tsx` by the 260731-EFA-L8 responsibility split. `Conduit` draws a

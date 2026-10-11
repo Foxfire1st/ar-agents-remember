@@ -1665,6 +1665,42 @@
         }
       ]
     },
+    "83": {
+      "note": "selectors.ts changes only the memory-mirror comment from drift_check to drift reporting. driftSegments still uses projec — source ownership, not executed visual proof.\n\nAnchor: `// ── Engine room (note 08: two engines per pod = CGC + GrepAI) ──────────────────`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b130c9f33b2078e3adf38d6e87cde8c376ba65b9",
+            "content": "sha256:73baf9f583b0eefeca66d7142f703463cc5270d692f125353b4821f87c106d62",
+            "locator": {
+              "end": 188,
+              "kind": "line_range",
+              "start": 116
+            },
+            "path": "dashboard/src/data/selectors.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "84": {
+      "note": "selectors.ts changes only the memory-mirror comment from drift_check to drift reporting. driftSegments still uses projec — source ownership, not executed visual proof.\n\nAnchor: `function EngineRoomImpl() {`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "20386ce24dbf50d2623c264f361b4a10dff165c5",
+            "content": "sha256:65f2267c684137e9bbe30efdfeef61786eee83328daa7341dabee3c2e8c30532",
+            "locator": {
+              "end": 121,
+              "kind": "line_range",
+              "start": 93
+            },
+            "path": "dashboard/src/panels/EngineRoom.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "9": {
       "note": "The selection block every answer carries.",
       "targets": [

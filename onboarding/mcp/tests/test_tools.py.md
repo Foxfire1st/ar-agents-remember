@@ -1,5 +1,26 @@
 # test_tools.py
 
+## Current operative account — MIK-R112
+
+The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
+
+- Ping and typed CGC/GrepAI refusal tests were deleted.
+- server_info case now expects unusedProviderKeys and excludes tools/reservedTools.
+- Live-registration order, per-landing models/descriptions and curator publish-field assertions remain.
+
+### Source and authority bounds
+
+- Source comparison: `mcp/tests/test_tools.py:46-131`.
+- Source comparison: `mcp/tests/test_tools.py:168-279`.
+- Source comparison: `mcp/tests/test_tools.py:302-398`.
+
+Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
+
+## Historical original card — preserved, not the current operative account
+
+<details>
+<summary>Retained original source accounts and producer history</summary>
+
 ## Governing Overview
 
 [Tests overview](overview.md)
@@ -159,3 +180,5 @@ missing field. Two disagreements, pinned separately because either can regress a
 belong to the **integration** lane because that is where the two existing published-description pins
 live; the module was already registered, so this leaf added no lane row and **no line of
 `mcp/tests/test-evidence-lanes.toml` moved**.
+
+</details>

@@ -1,5 +1,27 @@
 # mcp/src/agents_remember/benchmarks/runner_modules/mcp_registration.py
 
+## Current operative account — MIK-R112
+
+The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
+
+- Current function takes no workspace and delegates to empty/disabled lifecycle settings.
+
+### Superseded inventory
+
+- Pre-repair card claim: Card says benchmark_lifecycle_settings(workspace) derives settings from benchmark_mcp_config(workspace). This is superseded archival wording, not a current prescription.
+
+### Source and authority bounds
+
+- Source comparison: `mcp/src/agents_remember/benchmarks/runner_modules/mcp_registration.py:239 (def benchmark_lifecycle_settings)`.
+- Source comparison: `mcp/src/agents_remember/benchmarks/runner_modules/mcp_registration.py:271 (settings_path = write_temp_provider_settings)`.
+
+Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
+
+## Historical original card — preserved, not the current operative account
+
+<details>
+<summary>Retained original source accounts and producer history</summary>
+
 ## Governing Overview
 
 [runner_modules overview](overview.md)
@@ -89,3 +111,5 @@ No external Domain Documentation source is configured for this memory repo.
 ### Cross-Repo References
 
 No configured sibling repository is required for this module.
+
+</details>

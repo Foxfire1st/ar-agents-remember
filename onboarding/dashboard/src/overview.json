@@ -765,6 +765,60 @@
         }
       ]
     },
+    "41": {
+      "note": "The root already says Engine Room has no product-bar entry and is exercised through injected initialView. The changed so — source ownership, not executed visual proof.\n\nAnchor: `const buildUp: Scenario = {`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a89964f4b120409c705e8442660ac0594dc7b1b",
+            "content": "sha256:a2ac11ed1b55413d56fa1567c5596a5e15e8997affd98f7e4a990231a183818a",
+            "locator": {
+              "end": 119,
+              "kind": "line_range",
+              "start": 43
+            },
+            "path": "dashboard/src/dev/scenarios.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "42": {
+      "note": "The root already says Engine Room has no product-bar entry and is exercised through injected initialView. The changed so — source ownership, not executed visual proof.\n\nAnchor: `buildEngineRoomModel(engineProcesses, Object.values(lifecycles)),`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "20386ce24dbf50d2623c264f361b4a10dff165c5",
+            "content": "sha256:fe72de382df0b3d7f24adde324c8db7df4b51e35eb5d7e1ca3ce4be52c001fd9",
+            "locator": {
+              "end": 177,
+              "kind": "line_range",
+              "start": 119
+            },
+            "path": "dashboard/src/panels/EngineRoom.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "43": {
+      "note": "The root already says Engine Room has no product-bar entry and is exercised through injected initialView. The changed so — source ownership, not executed visual proof.\n\nAnchor: `export function EnclosureCanvas({`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e496e2924af2443fe26b4b8712a14c6cadf07d7c",
+            "content": "sha256:afaedef990ec259adf1c701d501e8d6bc19c4a4b0f43c664a97395ef438b4bbf",
+            "locator": {
+              "end": 85,
+              "kind": "line_range",
+              "start": 40
+            },
+            "path": "dashboard/src/panels/engine-room/EnclosureCanvas.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "5": {
       "note": "Both master readers now ask for the per-leaf breakdown.\n\nAnchor: `includeLeaves`",
       "targets": [
