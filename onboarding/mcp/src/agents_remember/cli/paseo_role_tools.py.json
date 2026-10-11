@@ -365,14 +365,15 @@
   ],
   "references": {
     "1": {
-      "note": "Frozen implementation of start_rule_violation supporting the stated file behavior.\n\nAnchor: `start_rule_violation`",
+      "note": "Frozen implementation of start_rule_violation supporting the stated file behavior.",
       "targets": [
         {
           "anchor": {
-            "blob": "9ce6119c82df708fbfb7c2c1e117c46acc05f900",
-            "content": "sha256:3cc052be444ba2ae55f2c3018cd4617e888a96dd651d756e8dcaa84c2c3ca67a",
+            "blob": "3425928114982fd40fedd6687347ba864f4c25d5",
+            "content": "sha256:c48df9a1f1aaafe92bbecd9163de74c180b08fd1081068db975efb22b063708d",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "start_rule_violation"
             }
           },
           "kind": "code"
@@ -384,12 +385,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9ce6119c82df708fbfb7c2c1e117c46acc05f900",
-            "content": "sha256:3cc052be444ba2ae55f2c3018cd4617e888a96dd651d756e8dcaa84c2c3ca67a",
+            "blob": "3425928114982fd40fedd6687347ba864f4c25d5",
+            "content": "sha256:e289f6f0181f6709a1ab284d213a90d37141550a01bca71ad448b34674dcaa18",
             "locator": {
-              "end": 871,
-              "kind": "line_range",
-              "start": 1
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -401,7 +400,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "03bdd6a89c757c80f55f286339fcc7c88428b960",
+            "blob": "3425928114982fd40fedd6687347ba864f4c25d5",
             "content": "sha256:5e9f2c48437327f286469b2ceb26703f7cf5f19f90f6e45c218aa1e026dfa91a",
             "locator": {
               "kind": "symbol",
@@ -417,7 +416,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "03bdd6a89c757c80f55f286339fcc7c88428b960",
+            "blob": "3425928114982fd40fedd6687347ba864f4c25d5",
             "content": "sha256:6918c0d0e18d89fe0ad75d145d0bb5ebfa42121345d87e493ac0ee44b147f53d",
             "locator": {
               "kind": "symbol",
@@ -433,10 +432,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5a70a853d837fddb9bad651cdfee93218e014799",
-            "content": "sha256:96fe1b4aa6b7b31c4e9d327c2c422e18e7b492637d2087251c35f7031a5926ed",
+            "blob": "c76544371956ac0ee8854a916cd3e871c473c4c8",
+            "content": "sha256:90ee952af6da75b5bfc0523b99e4ed197091700e5d4760ee89206e698297e87f",
             "locator": {
-              "kind": "file"
+              "end": 250,
+              "kind": "line_range",
+              "start": 228
             },
             "path": "mcp/tests/test_paseo_role_tools.py"
           },
@@ -449,10 +450,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5a70a853d837fddb9bad651cdfee93218e014799",
-            "content": "sha256:96fe1b4aa6b7b31c4e9d327c2c422e18e7b492637d2087251c35f7031a5926ed",
+            "blob": "c76544371956ac0ee8854a916cd3e871c473c4c8",
+            "content": "sha256:e13ea398fc84bdfe9a6d72af9f0c39876b2159452630b7df1cc3dcb7bcc07a28",
             "locator": {
-              "kind": "file"
+              "end": 285,
+              "kind": "line_range",
+              "start": 251
             },
             "path": "mcp/tests/test_paseo_role_tools.py"
           },
@@ -519,7 +522,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "03bdd6a89c757c80f55f286339fcc7c88428b960",
+            "blob": "3425928114982fd40fedd6687347ba864f4c25d5",
             "content": "sha256:6360d6906f33f67364a091fa810512750413c1193bdccd08992ec081f5f091b8",
             "locator": {
               "kind": "symbol",

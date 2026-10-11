@@ -283,15 +283,10 @@ No relevant domain documentation was found for this file.
 ### Repo-Internal References
 
 - The product bar and its order are one list. [32]
-
 - The shell opens on Chats and renders the retained layers. [33]
-
 - Knowledge is a full-bleed, hidden-not-unmounted layer. [34]
-
 - Full-bleed is derived for the product and retained machine-map views. [35]
-
 - A page outside the bar mounts only through an injected view. [36]
-
 - The layer wrapper that hides without unmounting. [37]
 - The mode-bar primitive that renders the product entries. [38]
 - The Knowledge reader the retained layer mounts. [39]
