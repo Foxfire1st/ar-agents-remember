@@ -1,14 +1,53 @@
 {
   "path": "dashboard/src/cockpit/document-chat/DocumentChat.tsx",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "c4f3d6213c84f4f6b506b39448fc9b8aa79b7792",
+        "content": "sha256:026187949e745bfda4b4322d2484c0c094c54652e3bb154307a0f55ba35584b9",
+        "locator": {
+          "end": 33,
+          "kind": "line_range",
+          "start": 33
+        }
+      },
+      "id": "RLZ-6TQESZ",
+      "invariant": "INV-GY49SV",
+      "origin": {
+        "handoffEntry": "MIK-R122@v1 rule 5",
+        "leaf": "260928-MIK-L122"
+      },
+      "rationale": "The hideFrame wrapper is what hides the loaded frame without unloading it while the launcher or problem text takes its visual place.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "c4f3d6213c84f4f6b506b39448fc9b8aa79b7792",
+        "content": "sha256:026187949e745bfda4b4322d2484c0c094c54652e3bb154307a0f55ba35584b9",
+        "locator": {
+          "end": 33,
+          "kind": "line_range",
+          "start": 33
+        }
+      },
+      "id": "RLZ-DZNJEW",
+      "invariant": "INV-MN80QW",
+      "origin": {
+        "handoffEntry": "MIK-R122@v1 rule 6",
+        "leaf": "260928-MIK-L122"
+      },
+      "rationale": "The frame wrapper carries the agentless-hidden state, so it must remove the frame from reach exactly when no agent is shown.",
+      "role": "primary-authority"
+    }
+  ],
   "references": {
     "1": {
       "note": "The panel composes selection state, the bound launcher and the shared frame, exposing the launch control only when a target is shown.",
       "targets": [
         {
           "anchor": {
-            "blob": "6a2e070cc950c0cfa9beda495ad6a1f2668b4293",
-            "content": "sha256:862e001edff9137ce08a77767e0e61b1cf148a5c2a1ddf5a8ec49709cb4e6eac",
+            "blob": "c4f3d6213c84f4f6b506b39448fc9b8aa79b7792",
+            "content": "sha256:73ea67dd69cf37ffb0920a5b27f35e9d7d086931e5e5d009741a4d6f853b6fd1",
             "locator": {
               "kind": "symbol",
               "name": "DocumentChatImpl"
@@ -23,8 +62,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7266bf6211c0b4501d06a1bbdbe1ca04aea18e0b",
-            "content": "sha256:0673401dd46e700e4d4dcc08a392918f64b54fc9804c8cfb07c01143d844dbfa",
+            "blob": "c4f3d6213c84f4f6b506b39448fc9b8aa79b7792",
+            "content": "sha256:37c8c4ffdd2aac706cd129cae2846e5d7a26beb0359eee205470094e31b4cf6e",
             "locator": {
               "kind": "symbol",
               "name": "DocumentChatView"
@@ -39,11 +78,27 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7266bf6211c0b4501d06a1bbdbe1ca04aea18e0b",
+            "blob": "c4f3d6213c84f4f6b506b39448fc9b8aa79b7792",
             "content": "sha256:ed0b534193a145e513deed34e43d8053bd8cfa43a72e6725d20b58706e9ec1e6",
             "locator": {
               "kind": "symbol",
               "name": "DocumentChat"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The hidden frame wrapper stays mounted behind display:none and aria-hidden.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c4f3d6213c84f4f6b506b39448fc9b8aa79b7792",
+            "content": "sha256:37c8c4ffdd2aac706cd129cae2846e5d7a26beb0359eee205470094e31b4cf6e",
+            "locator": {
+              "kind": "symbol",
+              "name": "DocumentChatView"
             }
           },
           "kind": "code"

@@ -23,8 +23,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dbd3ef46e609e178b20798093e2c399bdf3e9b0f",
-            "content": "sha256:ba7d7fa6dca9b6458857973791fd7d36f6bb3a55568a13be15d803afb65e0ef9",
+            "blob": "f0c0a6b35e01547908dcf3f4feb27ba092dde069",
+            "content": "sha256:ce5c6ee6257fb25e46b745b74583807620f28985793f9849afcb273853e51c5e",
             "locator": {
               "kind": "file"
             },
@@ -39,14 +39,29 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dbd3ef46e609e178b20798093e2c399bdf3e9b0f",
-            "content": "sha256:ba7d7fa6dca9b6458857973791fd7d36f6bb3a55568a13be15d803afb65e0ef9",
+            "blob": "f0c0a6b35e01547908dcf3f4feb27ba092dde069",
+            "content": "sha256:ce5c6ee6257fb25e46b745b74583807620f28985793f9849afcb273853e51c5e",
             "locator": {
               "kind": "file"
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
           "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The River-hidden sidebar case keeps the same document-chat node across the EventRiver toggle.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "42c6d874a8dc18059aa27fc416cc5c40b91350b7",
+            "content": "sha256:d6838e62fc537f9d9b1e87843ae56e66e7c81896e6d0f3f1dc4f72fd136e10a7",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
         }
       ]
     }

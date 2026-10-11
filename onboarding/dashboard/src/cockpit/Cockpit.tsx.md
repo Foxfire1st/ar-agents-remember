@@ -80,9 +80,13 @@ shell's routing, rails or change-set plumbing changed with it: the target choose
   nothing).
 - **Selection and chat.** `selectedId` is a typed selection key normalized through
   `lifecycleSelectionKey`; `selectedLifecycleId` derives the lifecycle context. The right rail's
-  River/Chat toggle keeps the Event River on one side and mounts `DocumentChat` on the canonical
-  viewed task on the other (MIK-R95); the removed `RailChat` and its `viewedLeafKey` plumbing are
-  gone. The highlight composer is mounted once and filters targets by the current selection; its
+  River/Chat toggle keeps the Event River on one side and `DocumentChat` on the canonical
+  viewed task on the other (MIK-R95); since MIK-R122 the toggle keeps the `DocumentChat`
+  side mounted and hides it (`display:none` + `aria-hidden`) while the Event River mounts
+  conditionally, so the single chat frame element
+  stays mounted across the toggle. Draft and scroll restoration inside the host application
+  follows from element retention by construction; it is not natively observed. The removed `RailChat` and its
+  `viewedLeafKey` plumbing are gone. The highlight composer is mounted once and filters targets by the current selection; its
   former direct leaf-chat target was removed with the old panel.
 
 ### 260928-MIK-L114 Ready Last-Feed Handoff
@@ -343,4 +347,7 @@ record and the server owns which comparison that record is.
 
 ## MIK-R95 Document Rail
 
-The Chat side of the right rail now mounts `DocumentChat` on the canonical viewed task plus the shared task series; the `RailChat` module, its `viewedLeafKey` plumbing and the leaf-chat context it consumed were removed (rule 8). `RightRail` receives `series` and `active={!fullBleed}` instead of engine/context values, so the retained rail keeps one frame while a full-bleed page hides it. The highlight composer no longer receives a direct leaf-chat target.
+The Chat side of the right rail now mounts `DocumentChat` on the canonical viewed task plus the shared task series; the `RailChat` module, its `viewedLeafKey` plumbing and the leaf-chat context it consumed were removed (rule 8). `RightRail` receives `series` and `active={!fullBleed}` instead of engine/context values, so the retained rail keeps one frame while a full-bleed page hides it. Since MIK-R122 `RightRail` renders `DocumentChat` in an unkeyed stable keepalive wrapper and hides — never unmounts — the chat side, while the Event River still mounts only when shown, so one `DocumentChat` panel serves the whole dashboard lifetime after the first shown chat; the native iframe element itself is still replaced when the fallback loads, Retry refetches, or the host returns (generation rises, key follows). Where the selection names no effective agent the frame stays mounted behind the bound launcher; a matching Projects Architect remains an effective chat target and switches in the same frame (Owner no-document reading). The highlight composer no longer receives a direct leaf-chat target.
+
+- The right rail keeps the chat side mounted in an unkeyed stable wrapper and hides it when the river shows; the river still mounts conditionally. \[92] [92]
+- The hidden chat side stays mounted but out of reach behind display:none and aria-hidden. \[93] [93]

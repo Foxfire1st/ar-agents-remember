@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "Rail retention, message switching, counted loads and burst coalescing live in different files across shell, frame component, controller and chat panel; no member alone promises the one-loaded-chat lifetime, so the guarantee needs the joint reading."
+  },
+  "guarantee": "The Operations right rail keeps one chat panel for the dashboard lifetime after the first shown chat: the chat side stays mounted and hides instead of unmounting while the river side still mounts conditionally. Selection changes retarget the loaded application by message while the channel is ready without loading again; the frame element itself still loads for the fallback, Retry, or host return. Agentless selections hide the loaded frame behind the launcher, hidden chat is removed from reach, loads are counted once each, and each settled burst brings only its latest selection forward. River toggling changes visibility; only a ready selection change sends a switch message.",
+  "id": "FAM-0W20JV",
+  "members": [
+    "INV-VMREN3",
+    "INV-YFAHQM",
+    "INV-GY49SV",
+    "INV-MN80QW",
+    "INV-Y7WR54",
+    "INV-8P06Y0"
+  ],
+  "origin": {
+    "handoff": {
+      "path": "notes/reports/role-launch/260928-MIK-L122-curator-handoff.json"
+    },
+    "handoffEntry": "fam-sidebar-chat",
+    "leaf": "260928-MIK-L122",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "routes": [
+    "dashboard/src/cockpit"
+  ],
+  "schema": "ar-family/v1",
+  "status": "proposed",
+  "title": "One loaded sidebar chat switches by message and hides without unloading"
+}

@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "family_guarantee"
+    ],
+    "justification": "Burst coalescing is the rail family guarantee burst leg; typed per-case proofs were withdrawn as extractor-unsupported. Quiet-window prose claims only per-window latest forwarding."
+  },
+  "applicability": "Selection bursts arriving while the control channel is not ready, in same-turn and successive-turn patterns.",
+  "conditions": [
+    "A trailing settle window is armed per unavailable display.",
+    "Ready report, Retry, host return, deadline or superseding display preempts the window."
+  ],
+  "exclusions": [
+    "Ready channel, which switches by immediate message.",
+    "Settled selections, which are never asked twice."
+  ],
+  "id": "INV-8P06Y0",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "reviewer corrected 4-case oracle 4/4 (pair C, same C, ready retains frame + latest ar.open C, triple D; all zero-message-substitute) + full vitest population PASS + typecheck + eslint"
+      ],
+      "path": "notes/reports/role-launch/260928-MIK-L122-curator-handoff.json"
+    },
+    "handoffEntry": "MIK-R122@v1 recovery 3",
+    "leaf": "260928-MIK-L122",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Selections changed faster than the application answers resolve to exactly the latest selection loading after the burst settles, with no intermediate selection ever starting a load.",
+  "status": "proposed",
+  "supersedes": []
+}

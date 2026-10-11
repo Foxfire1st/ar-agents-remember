@@ -3,7 +3,26 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "30a4e1199324d773e4b19ec734f75103f710a5c8",
+        "blob": "e56f69d4c04fe4fd3fa4c346a4cb2b61d15aaeb7",
+        "content": "sha256:79f34ed58dd92c91af020d7039e307055979452894c760ead07b9b4c2a865403",
+        "locator": {
+          "end": 208,
+          "kind": "line_range",
+          "start": 181
+        }
+      },
+      "id": "RLZ-4H5EAG",
+      "invariant": "INV-VMREN3",
+      "origin": {
+        "handoffEntry": "MIK-R122@v1 rules 2-3",
+        "leaf": "260928-MIK-L122"
+      },
+      "rationale": "useFrameDescriptor latches creation on first actual showing; ordinary selection switches never rebuild it, while the fallback load, Retry and host return still replace the frame.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "e56f69d4c04fe4fd3fa4c346a4cb2b61d15aaeb7",
         "content": "sha256:e7f10478f69c9621b522854511bfaa1b47d7d6169d38cb3baf719cbd473dd0dc",
         "locator": {
           "kind": "symbol",
@@ -21,7 +40,7 @@
     },
     {
       "anchor": {
-        "blob": "30a4e1199324d773e4b19ec734f75103f710a5c8",
+        "blob": "e56f69d4c04fe4fd3fa4c346a4cb2b61d15aaeb7",
         "content": "sha256:e7f10478f69c9621b522854511bfaa1b47d7d6169d38cb3baf719cbd473dd0dc",
         "locator": {
           "kind": "symbol",
@@ -39,8 +58,27 @@
     },
     {
       "anchor": {
-        "blob": "30a4e1199324d773e4b19ec734f75103f710a5c8",
-        "content": "sha256:a0441a0296f68cfd10eb544a04124e4bcfd0e395d60f7903f70fb671a2f3b4b4",
+        "blob": "e56f69d4c04fe4fd3fa4c346a4cb2b61d15aaeb7",
+        "content": "sha256:e53008b2ba387a8845906759f284a52cc958aac5c12cb93db62d6a46730f3ae3",
+        "locator": {
+          "end": 266,
+          "kind": "line_range",
+          "start": 266
+        }
+      },
+      "id": "RLZ-93GQVS",
+      "invariant": "INV-Y7WR54",
+      "origin": {
+        "handoffEntry": "MIK-R122@v1 rule 7",
+        "leaf": "260928-MIK-L122"
+      },
+      "rationale": "data-generation exposes the count on the mounted pane where tests already assert frame identity.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "e56f69d4c04fe4fd3fa4c346a4cb2b61d15aaeb7",
+        "content": "sha256:28565c89d5d15d948b9da7a2b44836a5e8a58a5395bb9de2c89e2f10a62a9636",
         "locator": {
           "kind": "symbol",
           "name": "EmbeddedFrame"
@@ -57,8 +95,8 @@
     },
     {
       "anchor": {
-        "blob": "30a4e1199324d773e4b19ec734f75103f710a5c8",
-        "content": "sha256:a0441a0296f68cfd10eb544a04124e4bcfd0e395d60f7903f70fb671a2f3b4b4",
+        "blob": "e56f69d4c04fe4fd3fa4c346a4cb2b61d15aaeb7",
+        "content": "sha256:28565c89d5d15d948b9da7a2b44836a5e8a58a5395bb9de2c89e2f10a62a9636",
         "locator": {
           "kind": "symbol",
           "name": "EmbeddedFrame"
@@ -74,6 +112,55 @@
       "role": "presentation"
     }
   ],
-  "references": {},
+  "references": {
+    "1": {
+      "note": "One stable controller consumes execution targets and trusted plugin messages.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e56f69d4c04fe4fd3fa4c346a4cb2b61d15aaeb7",
+            "content": "sha256:e63627eaabc551a450a0eac64dca2cbbf16c4f5a7f5bfea5b6661398b3bd5ced",
+            "locator": {
+              "kind": "symbol",
+              "name": "useFrameController"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The descriptor is fetched on first activation and each explicit Retry.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e56f69d4c04fe4fd3fa4c346a4cb2b61d15aaeb7",
+            "content": "sha256:b3a0c76585b428404e446e554d337f430aa650dec09450eb3f926f09719185a6",
+            "locator": {
+              "kind": "symbol",
+              "name": "useFrameDescriptor"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The mounted pane exposes the load count and keys the frame element by generation only.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e56f69d4c04fe4fd3fa4c346a4cb2b61d15aaeb7",
+            "content": "sha256:28565c89d5d15d948b9da7a2b44836a5e8a58a5395bb9de2c89e2f10a62a9636",
+            "locator": {
+              "kind": "symbol",
+              "name": "EmbeddedFrame"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
   "schema": "ar-onboarding-file/v1"
 }

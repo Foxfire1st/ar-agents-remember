@@ -1,0 +1,890 @@
+{
+  "closed": true,
+  "leaf": "260928-MIK-L122",
+  "rows": [
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-4S93MX",
+          "revision": 1
+        },
+        {
+          "id": "INV-7D9QDG",
+          "revision": 1
+        },
+        {
+          "id": "INV-7QV5CQ",
+          "revision": 1
+        },
+        {
+          "id": "INV-A3AK6R",
+          "revision": 1
+        },
+        {
+          "id": "INV-QS9SRX",
+          "revision": 1
+        },
+        {
+          "id": "INV-STRQX4",
+          "revision": 1
+        },
+        {
+          "id": "INV-WEZ24E",
+          "revision": 1
+        },
+        {
+          "id": "INV-X60KEC",
+          "revision": 1
+        },
+        {
+          "id": "INV-XQMXT2",
+          "revision": 1
+        },
+        {
+          "id": "INV-YJ2H50",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-0717WH",
+      "items": [
+        "sha256:5642ae61bfc67e4ae08a7c054e97498207ea1bdb3388b2e20c02ab25fe0ea855"
+      ],
+      "reason": "Host-list navigation ownership is untouched across the base move: the leaf changes frame lifetime and switch scheduling under the same ownership, and the rail-level joint obligation is carried by the new family record. All ten members examined at current revisions.",
+      "revision": 2,
+      "subject": "FAM-8GST1A"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-0ADDAJ",
+      "items": [
+        "sha256:0be152ef1a49ec72b2da033cde05ed91923c5b1ad424c6dd6b4e232d443d195e"
+      ],
+      "reason": "Test-expectation adaptation to keepalive toggle assertions; carries no product obligation.",
+      "subject": "hunk:sha256:0be152ef1a49ec72b2da033cde05ed91923c5b1ad424c6dd6b4e232d443d195e"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-0GAX2M",
+      "items": [
+        "sha256:f5465eda6253495cce30de151aca5d79a32a2cea21b811bc22ffd12274444055"
+      ],
+      "reason": "Dev-only rig adaptation to the real right rail; carries no product obligation.",
+      "subject": "hunk:sha256:f5465eda6253495cce30de151aca5d79a32a2cea21b811bc22ffd12274444055"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-33HQ2K",
+      "items": [
+        "sha256:87afc42227dbeef371c8a0eb35d3a7075d2ebe629e6b3b677ce807f2bf0fb9c3"
+      ],
+      "reason": "Dev-only rig adaptation to the real right rail; carries no product obligation.",
+      "subject": "hunk:sha256:87afc42227dbeef371c8a0eb35d3a7075d2ebe629e6b3b677ce807f2bf0fb9c3"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "b7d20cc3f2f13a0cd95a326cc08f7364481fa80c",
+            "content": "sha256:abd10bcacdbaf00edce13e267510e59396b0c7bf5c7b8d6cc2e75d796d5057ad",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleLauncher"
+            },
+            "path": "dashboard/src/cockpit/role-launcher/RoleLauncher.tsx"
+          },
+          "before": {
+            "blob": "b7d20cc3f2f13a0cd95a326cc08f7364481fa80c",
+            "content": "sha256:abd10bcacdbaf00edce13e267510e59396b0c7bf5c7b8d6cc2e75d796d5057ad",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleLauncher"
+            },
+            "path": "dashboard/src/cockpit/role-launcher/RoleLauncher.tsx"
+          },
+          "id": "RLZ-MKCYCH"
+        },
+        {
+          "after": {
+            "blob": "e56f69d4c04fe4fd3fa4c346a4cb2b61d15aaeb7",
+            "content": "sha256:28565c89d5d15d948b9da7a2b44836a5e8a58a5395bb9de2c89e2f10a62a9636",
+            "locator": {
+              "kind": "symbol",
+              "name": "EmbeddedFrame"
+            },
+            "path": "dashboard/src/cockpit/PaseoChatFrame.tsx"
+          },
+          "before": {
+            "blob": "30a4e1199324d773e4b19ec734f75103f710a5c8",
+            "content": "sha256:a0441a0296f68cfd10eb544a04124e4bcfd0e395d60f7903f70fb671a2f3b4b4",
+            "locator": {
+              "kind": "symbol",
+              "name": "EmbeddedFrame"
+            },
+            "path": "dashboard/src/cockpit/PaseoChatFrame.tsx"
+          },
+          "id": "RLZ-Y4PJ59"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-3B5C0R",
+      "items": [
+        "sha256:03bd2d2172e85a2a488a5c444bee8c31a402554bb4d87274f0b72175a6fa346c"
+      ],
+      "reason": "Removed sidebar code and tests are untouched; the rail keeps no dashboard navigation either way.",
+      "revision": 1,
+      "subject": "INV-WEZ24E"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-3R517R",
+      "items": [
+        "sha256:5563c87bb31fe795dde17d8327b4fe16b520dafa6412d3704cccb33dc8c79715"
+      ],
+      "reason": "Test-expectation adaptation to keepalive toggle assertions; carries no product obligation.",
+      "subject": "hunk:sha256:5563c87bb31fe795dde17d8327b4fe16b520dafa6412d3704cccb33dc8c79715"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-4WT05Q",
+      "items": [
+        "sha256:402a1cad9956985a95eefad11ef27bf67c2d278ffb4a84d3ed01f4fb2f04fe0c"
+      ],
+      "reason": "Test-expectation adaptation to keepalive toggle assertions; carries no product obligation.",
+      "subject": "hunk:sha256:402a1cad9956985a95eefad11ef27bf67c2d278ffb4a84d3ed01f4fb2f04fe0c"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-72TQ6X",
+      "items": [
+        "sha256:56da07547b9da7c1b0476de7263567cbe770d9f1d97b89125db8d672e5540961"
+      ],
+      "reason": "Dev-only rig adaptation to the real right rail; carries no product obligation.",
+      "subject": "hunk:sha256:56da07547b9da7c1b0476de7263567cbe770d9f1d97b89125db8d672e5540961"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7G7D0A",
+      "items": [
+        "sha256:6e84211cfb5b7f871c1d609cdfc2645426e7cfa6fef1d25334cb8dc2aea3df5b"
+      ],
+      "reason": "Dev-only rig adaptation to the real right rail; carries no product obligation.",
+      "subject": "hunk:sha256:6e84211cfb5b7f871c1d609cdfc2645426e7cfa6fef1d25334cb8dc2aea3df5b"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "examined": [
+        {
+          "id": "INV-8P06Y0",
+          "revision": 1
+        },
+        {
+          "id": "INV-GY49SV",
+          "revision": 1
+        },
+        {
+          "id": "INV-MN80QW",
+          "revision": 1
+        },
+        {
+          "id": "INV-VMREN3",
+          "revision": 1
+        },
+        {
+          "id": "INV-Y7WR54",
+          "revision": 1
+        },
+        {
+          "id": "INV-YFAHQM",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-8K6ZZW",
+      "items": [],
+      "reason": "L122-M1-F04: guarantee restated with retained-panel versus native-generation scope, fallback/Retry/host-return exceptions, and River toggles visibility while ready selection changes send switch messages. Justification now explains the cross-file conjunction. All six members examined at current revisions.",
+      "revision": 1,
+      "subject": "FAM-0W20JV"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "dc93c2e121bcf6780acd62c38bc7587e63e769a7",
+            "content": "sha256:c26319ea1a18417c3770f0e47f8e96aec89a363e760412dded033408ea1c8b0e",
+            "locator": {
+              "kind": "symbol",
+              "name": "agentTimeoutText"
+            },
+            "path": "dashboard/src/cockpit/paseoFrameModel.ts"
+          },
+          "before": {
+            "blob": "dc93c2e121bcf6780acd62c38bc7587e63e769a7",
+            "content": "sha256:c26319ea1a18417c3770f0e47f8e96aec89a363e760412dded033408ea1c8b0e",
+            "locator": {
+              "kind": "symbol",
+              "name": "agentTimeoutText"
+            },
+            "path": "dashboard/src/cockpit/paseoFrameModel.ts"
+          },
+          "id": "RLZ-D21787"
+        },
+        {
+          "after": {
+            "blob": "b73f1c691a8e53a7f20a28b1f7631d67e5d7a9ca",
+            "content": "sha256:382fc918f40015eb0349a32e18c88c7a63ccc3954699071e5444161fa58cc988",
+            "locator": {
+              "kind": "symbol",
+              "name": "arm"
+            },
+            "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+          },
+          "before": {
+            "blob": "fb9ca83fa3143598c8efeddd62aebf30e3be5a69",
+            "content": "sha256:fd559019f9befd140955e05079a57e8fa101a960fc63d6434e7d4119407804f4",
+            "locator": {
+              "kind": "symbol",
+              "name": "arm"
+            },
+            "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+          },
+          "id": "RLZ-TW9MMS"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-9CSZA6",
+      "items": [
+        "sha256:32820b3d15407f55cc932dcc618aed29262667a3b2226f6d1b83859d8177596d"
+      ],
+      "reason": "The deadline still names the latest unanswered target with one guarded fallback; the settle window only precedes it.",
+      "revision": 1,
+      "subject": "INV-KSCJ1Q"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-C9NG67",
+      "items": [
+        "sha256:7000e27b89457bbfd52e774bef8771842238efa3940a5689be4681a90f0e8bcd"
+      ],
+      "reason": "Test-expectation adaptation to keepalive toggle assertions; carries no product obligation.",
+      "subject": "hunk:sha256:7000e27b89457bbfd52e774bef8771842238efa3940a5689be4681a90f0e8bcd"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-EBZHAF",
+      "items": [
+        "sha256:d61ea37494ad68340b4182a9e682c34c689d2deed9008c80dd85df4b02fd58e7"
+      ],
+      "reason": "Dev-only rig adaptation to the real right rail; carries no product obligation.",
+      "subject": "hunk:sha256:d61ea37494ad68340b4182a9e682c34c689d2deed9008c80dd85df4b02fd58e7"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-EQ9TH7",
+      "items": [
+        "sha256:4b70a504e6a15fdabaaa0af09ac08837773e9e60bf9f2856775323c5ab62cc0a"
+      ],
+      "reason": "Root route meaning unchanged: the new browser spec is covered by its own new card.",
+      "subject": "onboarding:overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "b73f1c691a8e53a7f20a28b1f7631d67e5d7a9ca",
+            "content": "sha256:3f1936de1758643ca02914d8e3193deeda73f6f0acbe73a19611841e03a56d0a",
+            "locator": {
+              "kind": "symbol",
+              "name": "PASEO_UNAVAILABLE_QUIET_MS"
+            },
+            "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-133RJY"
+        },
+        {
+          "after": {
+            "blob": "b73f1c691a8e53a7f20a28b1f7631d67e5d7a9ca",
+            "content": "sha256:ed4aae2488bbcfc94b8591ebd9536cb5eb1e07c01e0d4e6242118f603b3383a0",
+            "locator": {
+              "end": 145,
+              "kind": "line_range",
+              "start": 99
+            },
+            "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-AZSTHT"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-F8TKGK",
+      "items": [],
+      "reason": "L122-M1-F03 residual (pass2): RLZ-AZSTHT rationale now distinguishes immediate sync-call from actual forwarding — ready invokes sync and can post ar.open, waiting invokes sync but forwards nothing until ready/deadline, and a superseding display while unavailable only cancels/re-arms the window. RLZ-133RJY rationale retained. No timing, packet or source change.",
+      "revision": 1,
+      "subject": "INV-8P06Y0"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-GV4SCT",
+      "items": [
+        "sha256:88c3c09538ac10d576ccfeda96d2bd944f3f9a5a15d2744018a2629bdfa661e0"
+      ],
+      "reason": "Test-expectation adaptation to keepalive toggle assertions; carries no product obligation.",
+      "subject": "hunk:sha256:88c3c09538ac10d576ccfeda96d2bd944f3f9a5a15d2744018a2629bdfa661e0"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-H8C34D",
+      "items": [
+        "sha256:78fc52b30ba11f59b80c99a49ff7077c91d4108097a9871c9392a3d4b19db8bb"
+      ],
+      "reason": "New rule-8 walk spec covered by its own new card; route dashboard/e2e has no local overview so the root overview governs unchanged.",
+      "subject": "onboarding:dashboard/e2e/sidebar-chat-stays-loaded.spec.ts"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "e56f69d4c04fe4fd3fa4c346a4cb2b61d15aaeb7",
+            "content": "sha256:79f34ed58dd92c91af020d7039e307055979452894c760ead07b9b4c2a865403",
+            "locator": {
+              "end": 208,
+              "kind": "line_range",
+              "start": 181
+            },
+            "path": "dashboard/src/cockpit/PaseoChatFrame.tsx"
+          },
+          "before": "absent",
+          "id": "RLZ-4H5EAG"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-JA5PWK",
+      "items": [],
+      "reason": "L122-M1-F04: frame-lifetime rationale gains the fallback/Retry/host-return replacement exceptions. L122-M1-F06: typed helper proofs PRF-06G8H2/PRF-Z38G0Y removed; extractor binds no inline cases, so case evidence stays at file granularity in the cards and exact per-case scopes in prose. Statement, scope and admission structure otherwise retained with guarded_by_test honestly dropped.",
+      "revision": 1,
+      "subject": "INV-VMREN3"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "b73f1c691a8e53a7f20a28b1f7631d67e5d7a9ca",
+            "content": "sha256:3db0955128547a99ef8f35c57c23fa106bc61640c7573f7eded51610edbfcaaf",
+            "locator": {
+              "kind": "symbol",
+              "name": "receive"
+            },
+            "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+          },
+          "before": {
+            "blob": "fb9ca83fa3143598c8efeddd62aebf30e3be5a69",
+            "content": "sha256:3db0955128547a99ef8f35c57c23fa106bc61640c7573f7eded51610edbfcaaf",
+            "locator": {
+              "kind": "symbol",
+              "name": "receive"
+            },
+            "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+          },
+          "id": "RLZ-D6KWM4"
+        },
+        {
+          "after": {
+            "blob": "e56f69d4c04fe4fd3fa4c346a4cb2b61d15aaeb7",
+            "content": "sha256:28565c89d5d15d948b9da7a2b44836a5e8a58a5395bb9de2c89e2f10a62a9636",
+            "locator": {
+              "kind": "symbol",
+              "name": "EmbeddedFrame"
+            },
+            "path": "dashboard/src/cockpit/PaseoChatFrame.tsx"
+          },
+          "before": {
+            "blob": "30a4e1199324d773e4b19ec734f75103f710a5c8",
+            "content": "sha256:a0441a0296f68cfd10eb544a04124e4bcfd0e395d60f7903f70fb671a2f3b4b4",
+            "locator": {
+              "kind": "symbol",
+              "name": "EmbeddedFrame"
+            },
+            "path": "dashboard/src/cockpit/PaseoChatFrame.tsx"
+          },
+          "id": "RLZ-MDFGTP"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-JFFFVM",
+      "items": [
+        "sha256:9933f4c21d8d0abfb75270861cc2e6d1f653465278209f3fcee4e5dbb6092ba7"
+      ],
+      "reason": "Origin trust, window checks and clipboard delegation are untouched: the leaf changes frame lifetime and switch scheduling, never admission or policy.",
+      "revision": 1,
+      "subject": "INV-1PVR72"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "e56f69d4c04fe4fd3fa4c346a4cb2b61d15aaeb7",
+            "content": "sha256:e7f10478f69c9621b522854511bfaa1b47d7d6169d38cb3baf719cbd473dd0dc",
+            "locator": {
+              "kind": "symbol",
+              "name": "PaseoChatFrame"
+            },
+            "path": "dashboard/src/cockpit/PaseoChatFrame.tsx"
+          },
+          "before": {
+            "blob": "30a4e1199324d773e4b19ec734f75103f710a5c8",
+            "content": "sha256:e7f10478f69c9621b522854511bfaa1b47d7d6169d38cb3baf719cbd473dd0dc",
+            "locator": {
+              "kind": "symbol",
+              "name": "PaseoChatFrame"
+            },
+            "path": "dashboard/src/cockpit/PaseoChatFrame.tsx"
+          },
+          "id": "RLZ-6CV9KK"
+        },
+        {
+          "after": {
+            "blob": "ff4987d93eae4d0753859460c919930528520f63",
+            "content": "sha256:60216f4e71232be40f8204b615b7082c2b80e50fa5a7b80ea6bf49691cb8f57a",
+            "locator": {
+              "kind": "symbol",
+              "name": "installBridge"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+          },
+          "before": {
+            "blob": "ff4987d93eae4d0753859460c919930528520f63",
+            "content": "sha256:60216f4e71232be40f8204b615b7082c2b80e50fa5a7b80ea6bf49691cb8f57a",
+            "locator": {
+              "kind": "symbol",
+              "name": "installBridge"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+          },
+          "id": "RLZ-C3ZC91"
+        },
+        {
+          "after": {
+            "blob": "f22f2cbb0ddb8fbc0f9c531532d9b54837321c69",
+            "content": "sha256:bba4a3e903e9f0576a5649a3ca7187c3098e555ac5867220d34b7026bccb9886",
+            "locator": {
+              "kind": "symbol",
+              "name": "useDocumentChat"
+            },
+            "path": "dashboard/src/cockpit/document-chat/state.ts"
+          },
+          "before": {
+            "blob": "f22f2cbb0ddb8fbc0f9c531532d9b54837321c69",
+            "content": "sha256:bba4a3e903e9f0576a5649a3ca7187c3098e555ac5867220d34b7026bccb9886",
+            "locator": {
+              "kind": "symbol",
+              "name": "useDocumentChat"
+            },
+            "path": "dashboard/src/cockpit/document-chat/state.ts"
+          },
+          "id": "RLZ-G8BE9E"
+        },
+        {
+          "after": {
+            "blob": "56963a5e7f7c270ef1a197dd00bbc8d4d43e3db5",
+            "content": "sha256:55a3b12e080473f5095f2fc24130ef453580e1a6e98be6198835cfc810510e89",
+            "locator": {
+              "kind": "symbol",
+              "name": "documentChatBinding"
+            },
+            "path": "dashboard/src/cockpit/document-chat/model.ts"
+          },
+          "before": {
+            "blob": "56963a5e7f7c270ef1a197dd00bbc8d4d43e3db5",
+            "content": "sha256:55a3b12e080473f5095f2fc24130ef453580e1a6e98be6198835cfc810510e89",
+            "locator": {
+              "kind": "symbol",
+              "name": "documentChatBinding"
+            },
+            "path": "dashboard/src/cockpit/document-chat/model.ts"
+          },
+          "id": "RLZ-S0YF0Z"
+        },
+        {
+          "after": {
+            "blob": "b73f1c691a8e53a7f20a28b1f7631d67e5d7a9ca",
+            "content": "sha256:97f773b29efb485f0421d55e642afdcf67ce6ac7f942886ded01cfd91f043ec4",
+            "locator": {
+              "kind": "symbol",
+              "name": "PaseoFrameControl"
+            },
+            "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+          },
+          "before": {
+            "blob": "fb9ca83fa3143598c8efeddd62aebf30e3be5a69",
+            "content": "sha256:8b3cde819f2a7cbadd67febc508062a74a9cf276cc03398507ce9b233c1c8294",
+            "locator": {
+              "kind": "symbol",
+              "name": "PaseoFrameControl"
+            },
+            "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+          },
+          "id": "RLZ-SFPH0W"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-JQ928V",
+      "items": [
+        "sha256:ccb9178d974dc510ec047cd4c7fbed27ebf06fe3b7344b584f14bb1146b4906b"
+      ],
+      "reason": "Rail resolution and ready steering keep their recorded meaning across the 95d8ca3a base move: covered entries re-resolved at C with IDs retained, no intent change. The leaf extends switching with a trailing settle and rail keepalive, recorded as its own invariant revisions.",
+      "revision": 1,
+      "subject": "INV-7D9QDG"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "b73f1c691a8e53a7f20a28b1f7631d67e5d7a9ca",
+            "content": "sha256:c64e5950d382d7483e1ffb818cf626e54d16934e0b03bedc59758a441a8fc05d",
+            "locator": {
+              "kind": "symbol",
+              "name": "display"
+            },
+            "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+          },
+          "before": {
+            "blob": "fb9ca83fa3143598c8efeddd62aebf30e3be5a69",
+            "content": "sha256:7e466cd87bd082eec95ecf3801ade2ab9baf82ee38264394cd171bdcc0288ec4",
+            "locator": {
+              "kind": "symbol",
+              "name": "display"
+            },
+            "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+          },
+          "id": "RLZ-KJHW38"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-KEVGMS",
+      "items": [
+        "sha256:e2f2a0e23f81ca81dbbbb96845790b2b93610205cff39b05fb25585d7609c1ec"
+      ],
+      "reason": "No new navigation is added; the message switch keeps the recorded selection and navigation-error kinds.",
+      "revision": 1,
+      "subject": "INV-QS9SRX"
+    },
+    {
+      "covers": [],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-MSPS4Z",
+      "items": [],
+      "reason": "L122-M1-F06: typed helper proof PRF-92CSHS removed; extractor binds no inline cases. The separate DocumentChat hideFrame realization is retained unchanged.",
+      "revision": 1,
+      "subject": "INV-GY49SV"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-N34EZP",
+      "items": [
+        "sha256:4e5c049643749a6cdf836e6deb5c9b7769280778d2b8f2f4063d0c5d4d87d36f"
+      ],
+      "reason": "Test-expectation adaptation to keepalive toggle assertions; carries no product obligation.",
+      "subject": "hunk:sha256:4e5c049643749a6cdf836e6deb5c9b7769280778d2b8f2f4063d0c5d4d87d36f"
+    },
+    {
+      "covers": [],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-NTRPD3",
+      "items": [],
+      "reason": "L122-M1-F06: typed helper proofs PRF-0D02N3/PRF-AGMAM2 removed; extractor binds no inline cases. Retained as the rail family selection leg with family_guarantee admission; the ready-only scope already excludes the unavailable fallback, so no universal-element claim is made.",
+      "revision": 1,
+      "subject": "INV-YFAHQM"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-72Y8R3",
+          "revision": 1
+        },
+        {
+          "id": "INV-BTK24H",
+          "revision": 1
+        },
+        {
+          "id": "INV-KSCJ1Q",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-PQ4R4Z",
+      "items": [
+        "sha256:4c6f3b7277dd495072a404aa27e06177fb0ad243ccf6ad18fd284bc72649f958"
+      ],
+      "reason": "Message-first settlement with named-problem fallback keeps its guarantee; trailing settle is the mechanism that brings the latest target forward inside it.",
+      "revision": 1,
+      "subject": "FAM-JY9AN3"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-QA18JV",
+      "items": [
+        "sha256:006e1288daf4dbe9734b4428b493f02887bf509c8ac63c6a429d5cfb67db8848"
+      ],
+      "reason": "Test-expectation adaptation to keepalive toggle assertions; carries no product obligation.",
+      "subject": "hunk:sha256:006e1288daf4dbe9734b4428b493f02887bf509c8ac63c6a429d5cfb67db8848"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-QKT292",
+      "items": [
+        "sha256:82a06e6e9bb8b61ff7c025c584163b7d3f728395e9ed85acaa8a56aab3907b10"
+      ],
+      "reason": "Test-expectation adaptation to keepalive toggle assertions; carries no product obligation.",
+      "subject": "hunk:sha256:82a06e6e9bb8b61ff7c025c584163b7d3f728395e9ed85acaa8a56aab3907b10"
+    },
+    {
+      "covers": [],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-S919RV",
+      "items": [],
+      "reason": "L122-M1-F06: typed helper proofs PRF-673X6X/PRF-VAMNSD removed; extractor binds no inline cases. Counted-load structure retained.",
+      "revision": 1,
+      "subject": "INV-Y7WR54"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-SBERMK",
+      "items": [
+        "sha256:7e7162ffdf8d3f8613d615456b6716f0883598cb54bfd6308fd3aa675787cd6c"
+      ],
+      "reason": "Dev-only rig adaptation to the real right rail; carries no product obligation.",
+      "subject": "hunk:sha256:7e7162ffdf8d3f8613d615456b6716f0883598cb54bfd6308fd3aa675787cd6c"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-SP3M26",
+      "items": [
+        "sha256:ff2272c55ad1ed0c744acfbb64f0ab358b2035f17dd4e600172ab6072afd0deb"
+      ],
+      "reason": "Test-expectation adaptation to keepalive toggle assertions; carries no product obligation.",
+      "subject": "hunk:sha256:ff2272c55ad1ed0c744acfbb64f0ab358b2035f17dd4e600172ab6072afd0deb"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "b73f1c691a8e53a7f20a28b1f7631d67e5d7a9ca",
+            "content": "sha256:8f180e88d61732ee0612d14b892690e730a29d94cc74051080436e0d752d7bf8",
+            "locator": {
+              "kind": "symbol",
+              "name": "start"
+            },
+            "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+          },
+          "before": {
+            "blob": "fb9ca83fa3143598c8efeddd62aebf30e3be5a69",
+            "content": "sha256:7313736abc6b0ffd0d6fe6e09627cf2d3f5e2e59e23efb8ffeac36f5751e472e",
+            "locator": {
+              "kind": "symbol",
+              "name": "start"
+            },
+            "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+          },
+          "id": "RLZ-9XE68C"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-TJ4QZ2",
+      "items": [
+        "sha256:5acb215c53e5607a41e4ade5429e136eff12e119375639c366faed6a2b4127e6"
+      ],
+      "reason": "L122-M1-F05: RLZ-9XE68C rationale drops the nonexistent catalog-reset claim; selected-set reset and co-targets retained. Tab-set intersection and launch-intent reset keep their meaning; the settle window only orders when sync runs.",
+      "revision": 1,
+      "subject": "INV-C71CTF"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "f0c0a6b35e01547908dcf3f4feb27ba092dde069",
+            "content": "sha256:83b223cb410abb3db07fecf8f0f5e54797e883c5726dcdf383914f7cecbccb2c",
+            "locator": {
+              "end": 740,
+              "kind": "line_range",
+              "start": 729
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "before": "absent",
+          "id": "RLZ-VF6VZ5"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-VW33ZT",
+      "items": [],
+      "reason": "L122-M1-F02: RLZ-VF6VZ5 re-anchored from the fullBleed rail (715-719) to the railView hiding construct (729-740) with corrected authority rationale; the separate DocumentChat hideFrame realization is retained. L122-M1-F06: typed helper proof PRF-C4CJEC removed; extractor binds no inline cases.",
+      "revision": 1,
+      "subject": "INV-MN80QW"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-W638G8",
+      "items": [
+        "sha256:0bd602ce7bb4f214b3a690137ec1abf1e4e8cd0d5644ac893258ea2bd60bcde8"
+      ],
+      "reason": "Route meaning unchanged: keepalive is Cockpit-internal, no route created, moved or retired.",
+      "subject": "onboarding:dashboard/src/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-X4CGVD",
+      "items": [
+        "sha256:b31a19d0a16859c4bfbc59acd9256526b260d0d4a48d5f394e5b065880f6f299"
+      ],
+      "reason": "Test-expectation adaptation to keepalive toggle assertions; carries no product obligation.",
+      "subject": "hunk:sha256:b31a19d0a16859c4bfbc59acd9256526b260d0d4a48d5f394e5b065880f6f299"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-XJ0DSX",
+      "items": [
+        "sha256:ed01c1d9a68afdbb278afdbded3bbd5fa5126f7e3304156ff8b01a95c420434f"
+      ],
+      "reason": "Dev-only rig adaptation to the real right rail; carries no product obligation.",
+      "subject": "hunk:sha256:ed01c1d9a68afdbb278afdbded3bbd5fa5126f7e3304156ff8b01a95c420434f"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "c7a1314caf2e8d8c90443415ff08066baaf34253",
+            "content": "sha256:767349aebd53c8c3913af0c1a90c6fd3cd8eaccd23ecb2f5bb55a1fd07dc3cbd",
+            "locator": {
+              "kind": "symbol",
+              "name": "useHighlightTargets"
+            },
+            "path": "dashboard/src/panels/HighlightComposer.tsx"
+          },
+          "before": {
+            "blob": "c7a1314caf2e8d8c90443415ff08066baaf34253",
+            "content": "sha256:767349aebd53c8c3913af0c1a90c6fd3cd8eaccd23ecb2f5bb55a1fd07dc3cbd",
+            "locator": {
+              "kind": "symbol",
+              "name": "useHighlightTargets"
+            },
+            "path": "dashboard/src/panels/HighlightComposer.tsx"
+          },
+          "id": "RLZ-14MHD7"
+        },
+        {
+          "after": {
+            "blob": "f0c0a6b35e01547908dcf3f4feb27ba092dde069",
+            "content": "sha256:c20568f61f713e413277771110ea364e78609d037dd595a5b5c78849c3e3ceab",
+            "locator": {
+              "kind": "symbol",
+              "name": "RightRail"
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "before": {
+            "blob": "76c1e952f0b6c4c9d708c3edf4cd8b28c0f764ff",
+            "content": "sha256:46ebd9c016ca5f8c1aa57ef07918594923f009cf3494e0642b465c9ac9541e3c",
+            "locator": {
+              "kind": "symbol",
+              "name": "RightRail"
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "id": "RLZ-8C3WDX"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-Z7V7HM",
+      "items": [
+        "sha256:525b7cb814ebfc30d48b86b92c601d1baa2f962fafd8d7c71ce6bd55d52c03e0"
+      ],
+      "reason": "Removed rail panel, helper and highlight target stay removed; covered entries re-resolved at C with IDs retained after the base move, no meaning change.",
+      "revision": 1,
+      "subject": "INV-X60KEC"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "f0c0a6b35e01547908dcf3f4feb27ba092dde069",
+            "content": "sha256:abc706fc66c912bf079523425599965ecc4855f669690a4a31d28a309280dd04",
+            "locator": {
+              "kind": "symbol",
+              "name": "MainLayers"
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "before": {
+            "blob": "76c1e952f0b6c4c9d708c3edf4cd8b28c0f764ff",
+            "content": "sha256:abc706fc66c912bf079523425599965ecc4855f669690a4a31d28a309280dd04",
+            "locator": {
+              "kind": "symbol",
+              "name": "MainLayers"
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "id": "RLZ-1Q53AD"
+        },
+        {
+          "after": {
+            "blob": "e56f69d4c04fe4fd3fa4c346a4cb2b61d15aaeb7",
+            "content": "sha256:e7f10478f69c9621b522854511bfaa1b47d7d6169d38cb3baf719cbd473dd0dc",
+            "locator": {
+              "kind": "symbol",
+              "name": "PaseoChatFrame"
+            },
+            "path": "dashboard/src/cockpit/PaseoChatFrame.tsx"
+          },
+          "before": {
+            "blob": "30a4e1199324d773e4b19ec734f75103f710a5c8",
+            "content": "sha256:e7f10478f69c9621b522854511bfaa1b47d7d6169d38cb3baf719cbd473dd0dc",
+            "locator": {
+              "kind": "symbol",
+              "name": "PaseoChatFrame"
+            },
+            "path": "dashboard/src/cockpit/PaseoChatFrame.tsx"
+          },
+          "id": "RLZ-7BAFW6"
+        },
+        {
+          "after": {
+            "blob": "b73f1c691a8e53a7f20a28b1f7631d67e5d7a9ca",
+            "content": "sha256:c64e5950d382d7483e1ffb818cf626e54d16934e0b03bedc59758a441a8fc05d",
+            "locator": {
+              "kind": "symbol",
+              "name": "display"
+            },
+            "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+          },
+          "before": {
+            "blob": "fb9ca83fa3143598c8efeddd62aebf30e3be5a69",
+            "content": "sha256:7e466cd87bd082eec95ecf3801ade2ab9baf82ee38264394cd171bdcc0288ec4",
+            "locator": {
+              "kind": "symbol",
+              "name": "display"
+            },
+            "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+          },
+          "id": "RLZ-AVC402"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-ZD66JB",
+      "items": [
+        "sha256:ebb420aa72478a5949efe778c6f5c0a6d34479538b9f22e4f5518494c81e9761"
+      ],
+      "reason": "The Chats persistent pane is explicitly out of scope and untouched; covered entries re-resolved at C with IDs retained after the base move, no meaning change.",
+      "revision": 2,
+      "subject": "INV-D0QATN"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

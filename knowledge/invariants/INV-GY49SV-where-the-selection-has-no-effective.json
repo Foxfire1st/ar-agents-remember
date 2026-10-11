@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "Hide-behind-launcher needs both the rail panel wrapper and its state hook; typed per-case proofs were withdrawn as extractor-unsupported."
+  },
+  "applicability": "Selections with no effective agent, including no selected document with and without a matching Projects Architect.",
+  "conditions": [
+    "A matching unarchived Projects Architect counts as an effective agent target."
+  ],
+  "exclusions": [
+    "Chats page.",
+    "Agent-bearing selections, which take the message-switch path."
+  ],
+  "id": "INV-GY49SV",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "sidebarChatStaysLoaded.test.tsx (ghost keeps element behind aria-hidden wrapper; return switches back) + model.ts documentChatBinding/documentChatAgent (unchanged)"
+      ],
+      "path": "notes/reports/role-launch/260928-MIK-L122-curator-handoff.json"
+    },
+    "handoffEntry": "MIK-R122@v1 rule 5",
+    "leaf": "260928-MIK-L122",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Where the selection has no effective agent the frame is hidden and stays loaded with the bound launcher or problem text shown, and a returning agent selection switches back in the same frame.",
+  "status": "proposed",
+  "supersedes": []
+}

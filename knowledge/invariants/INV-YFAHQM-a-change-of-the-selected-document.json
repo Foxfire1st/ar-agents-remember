@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "family_guarantee"
+    ],
+    "justification": "The ready message-switch is the rail family guarantee selection leg; typed per-case proofs were withdrawn as extractor-unsupported."
+  },
+  "applicability": "Selection changes between master, tasks and roles while the control channel is ready, inside and across workspaces.",
+  "conditions": [
+    "The loaded application answers ar.open for the target agent.",
+    "The target carries agent and workspace."
+  ],
+  "exclusions": [
+    "Unavailable channel, which takes the fallback load path.",
+    "Selections with no effective agent, which take the hidden-frame path."
+  ],
+  "id": "INV-YFAHQM",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "sidebarChatStaysLoaded.test.tsx (ar.open with workspaceId, element and generation unchanged) + e2e/document-chat-cross-workspace.spec.ts (L121 retained)"
+      ],
+      "path": "notes/reports/role-launch/260928-MIK-L122-curator-handoff.json"
+    },
+    "handoffEntry": "MIK-R122@v1 rule 4",
+    "leaf": "260928-MIK-L122",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A change of the selected document switches the loaded application to the other agent's chat by ar.open message, inside and across workspaces, without loading the frame again.",
+  "status": "proposed",
+  "supersedes": []
+}

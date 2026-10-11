@@ -21,6 +21,8 @@ switches, the right-rail River/Chat toggle and its persistence, and the resizabl
   mounts `memory`, `hangar`, `engine` and `topology` through `initialView` and asserts each page
   renders with its expected `data-fullbleed` and rail visibility.
 - Keep-alive, rail-toggle, persistence and rail-width assertions are otherwise unchanged.
+- Since MIK-R122 the toggle cases assert the same document-chat node across the River/Chat
+  switch (hidden, never unmounted) and both rail asides stay mounted under full-bleed views.
 
 ### Conventions
 
@@ -39,8 +41,9 @@ No additional work is asserted by this card.
 ### FEUI-L9R Reviewed Candidate Delta
 
 The serving-build suite now distinguishes a stale executing bundle from a matching one. It pins
-`data-client-build-current="false"` plus an explicit reload control for a mismatch, and `true` with
-no reload control for an exact fingerprint match. The test never exercises an automatic reload
+`data-client-build-current="false"` plus a tooltip reload cue for a mismatch (no explicit
+reload-dashboard-client control exists), and `true` with no redundant reload button
+for an exact fingerprint match. The test never exercises an automatic reload
 because the product contract requires operator timing.
 
 ### Logic
@@ -145,18 +148,14 @@ No relevant domain documentation was found for this file.
 
 ### Repo-Internal References
 
-
 - The suite mounts the shell and switches views through the mode bar. [13]
-
-
 - The layout matrix sources the retained pages only through their injected views. [14]
-
 - The view list the bar renders. [15]
+- The L1 composition cases cover all four reader entry paths, unchanged-revision analytics churn, and late A-to-B response discard. [31]
 
 - `CockpitShell` under test, and the `fullBleed` derivation the rails-hide cases exercise. [28]
 - `GALLERY` fixtures + the `applySnapshot` hydration pattern. [29]
 - The shared jsdom stubs the render relies on. [30]
-- The L1 composition cases cover all four reader entry paths, unchanged-revision analytics churn, and late A-to-B response discard. [31]
 - The current Chats case proves existence of a `role-chats-pane` node, no Sessions route or old-chat selector, and same-node hide/reveal persistence. [32]
 - The production source census establishes the sole current `<RoleChatsPane>` JSX mount. [33]
 - The `withStates` helper + the two `task-metrics` cases (`2 awaiting you`; nothing at zero). [34]
@@ -165,6 +164,9 @@ No relevant domain documentation was found for this file.
 - The `Task progress: …; phase: …` label on `data-testid="task-state"` that React Aria's `role="option"` absorbs. [37]
 - The typed builder the local `taskDoc` factory now delegates to (and the header explaining why the `createdAt` it removed compiled before). [38]
 - `metricsFor()` — the client mirror of `reducer.py::_metrics` these seeds now call instead of listing buckets. [39]
+
+- The toggle cases assert the same document-chat node across the River/Chat switch. [40]
+- Both rail asides stay mounted under full-bleed views. [41]
 
 ### Cross-Repo References
 

@@ -36,6 +36,24 @@
       },
       "rationale": "This hook binds the canonical document scope to the selected live launch-record result, retains the exact successful request target and rejects completions for a different document. Its output drives the existing shared frame and bound launcher.",
       "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "f22f2cbb0ddb8fbc0f9c531532d9b54837321c69",
+        "content": "sha256:e0954c03fd62547d8e493e828b125719dbea042b63266e3e8463003c4ce86b18",
+        "locator": {
+          "kind": "symbol",
+          "name": "chatPresentation"
+        }
+      },
+      "id": "RLZ-VZXF7A",
+      "invariant": "INV-GY49SV",
+      "origin": {
+        "handoffEntry": "MIK-R122@v1 rule 5",
+        "leaf": "260928-MIK-L122"
+      },
+      "rationale": "chatPresentation decides hideFrame versus launcher from availability and target presence, which is the no-agent condition.",
+      "role": "support"
     }
   ],
   "references": {

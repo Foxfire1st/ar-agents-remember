@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "Counted loads span the sole generation riser and the exposed counter; typed per-case proofs were withdrawn as extractor-unsupported."
+  },
+  "applicability": "Document-load counting on the Operations chat frame.",
+  "conditions": [
+    "Loads are counted by generation rises on the mounted pane."
+  ],
+  "exclusions": [
+    "Fallback load, Retry and host return, which each load once by construction.",
+    "Chats page frame."
+  ],
+  "id": "INV-Y7WR54",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "PaseoChatFrame.test.tsx (fallback loads agent URL once in a new element; late ready posts without reload) + data-generation assertions in sidebarChatStaysLoaded.test.tsx"
+      ],
+      "path": "notes/reports/role-launch/260928-MIK-L122-curator-handoff.json"
+    },
+    "handoffEntry": "MIK-R122@v1 rule 7",
+    "leaf": "260928-MIK-L122",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The frame loads again only for the MIK-R121 fallback load, Retry, and host return, and tests can read the number of loads from the frame generation.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -7,8 +7,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "12592f4adf979b69e1fcedad008c179aaf692d0a",
-            "content": "sha256:3beae6d765d9bd9f2daf7b24fe21bf785c7acdf73b25fbca3af0cf7b2c258fc7",
+            "blob": "749003c3ac12737a2a171752504de9b262a35d63",
+            "content": "sha256:3eb42073d4a7770fafe854cc9f9d91390e6d696645d1bb572c13068e958b9bdd",
             "locator": {
               "kind": "file"
             }
@@ -22,8 +22,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "12592f4adf979b69e1fcedad008c179aaf692d0a",
-            "content": "sha256:3beae6d765d9bd9f2daf7b24fe21bf785c7acdf73b25fbca3af0cf7b2c258fc7",
+            "blob": "749003c3ac12737a2a171752504de9b262a35d63",
+            "content": "sha256:3eb42073d4a7770fafe854cc9f9d91390e6d696645d1bb572c13068e958b9bdd",
             "locator": {
               "kind": "file"
             }
@@ -37,8 +37,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dbd3ef46e609e178b20798093e2c399bdf3e9b0f",
-            "content": "sha256:ba7d7fa6dca9b6458857973791fd7d36f6bb3a55568a13be15d803afb65e0ef9",
+            "blob": "f0c0a6b35e01547908dcf3f4feb27ba092dde069",
+            "content": "sha256:ce5c6ee6257fb25e46b745b74583807620f28985793f9849afcb273853e51c5e",
             "locator": {
               "kind": "file"
             },
@@ -53,7 +53,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "76c1e952f0b6c4c9d708c3edf4cd8b28c0f764ff",
+            "blob": "f0c0a6b35e01547908dcf3f4feb27ba092dde069",
             "content": "sha256:19ba28765718f373b4b70dd594224499bd1aeb2c6cf77d848967a7e4dc4ade1f",
             "locator": {
               "kind": "symbol",
@@ -70,7 +70,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0ce57d97fc8c668f37239e1badf03e0144d7df2c",
+            "blob": "749003c3ac12737a2a171752504de9b262a35d63",
             "content": "sha256:0006f532816355515ca7b8825f236bddaa6c76fc721f96234f8f71b2e07b3932",
             "locator": {
               "kind": "symbol",
@@ -100,16 +100,14 @@
       ]
     },
     "31": {
-      "note": "The L1 composition cases cover all four reader entry paths, unchanged-revision analytics churn, and late A-to-B response discard.\n\nAnchor: `CockpitShell`",
+      "note": "The L1 composition cases cover all four reader entry paths, unchanged-revision analytics churn, and late A-to-B response discard.",
       "targets": [
         {
           "anchor": {
-            "blob": "23c0bc4e9a1dd7cb000ea663313435e26be970ce",
-            "content": "sha256:42f54ef3f595ba66543dccae792c03e27376b9bd9d10c7914c84d71563a67db2",
+            "blob": "749003c3ac12737a2a171752504de9b262a35d63",
+            "content": "sha256:3eb42073d4a7770fafe854cc9f9d91390e6d696645d1bb572c13068e958b9bdd",
             "locator": {
-              "end": 441,
-              "kind": "line_range",
-              "start": 333
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -121,12 +119,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0ce57d97fc8c668f37239e1badf03e0144d7df2c",
+            "blob": "749003c3ac12737a2a171752504de9b262a35d63",
             "content": "sha256:dcbca4b3c626c1009559e837cf8833f2e00bccc1211ecac30198cb4598a36e14",
             "locator": {
-              "end": 807,
+              "end": 810,
               "kind": "line_range",
-              "start": 779
+              "start": 782
             }
           },
           "kind": "test"
@@ -138,12 +136,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "76c1e952f0b6c4c9d708c3edf4cd8b28c0f764ff",
+            "blob": "f0c0a6b35e01547908dcf3f4feb27ba092dde069",
             "content": "sha256:605a3c8c62f810db79cee396a2e28df327b841366e5a9f81e5c3f15fef51af35",
             "locator": {
-              "end": 810,
+              "end": 818,
               "kind": "line_range",
-              "start": 805
+              "start": 813
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -156,7 +154,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0ce57d97fc8c668f37239e1badf03e0144d7df2c",
+            "blob": "749003c3ac12737a2a171752504de9b262a35d63",
             "content": "sha256:7e3ee178fab22c2723bf326d2b17a5fda3173a28fdac77ae925c9578ecb1865f",
             "locator": {
               "kind": "symbol",
@@ -172,7 +170,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0ce57d97fc8c668f37239e1badf03e0144d7df2c",
+            "blob": "749003c3ac12737a2a171752504de9b262a35d63",
             "content": "sha256:e5d87286054a19ade1d7fb042fe56ff23faa4a7753171d51d1052315288c2c74",
             "locator": {
               "kind": "symbol",
@@ -262,6 +260,36 @@
             "path": "dashboard/src/types/projection.ts"
           },
           "kind": "code"
+        }
+      ]
+    },
+    "40": {
+      "note": "The toggle cases assert the same document-chat node across the River/Chat switch.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "749003c3ac12737a2a171752504de9b262a35d63",
+            "content": "sha256:3eb42073d4a7770fafe854cc9f9d91390e6d696645d1bb572c13068e958b9bdd",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "41": {
+      "note": "Both rail asides stay mounted under full-bleed views.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "749003c3ac12737a2a171752504de9b262a35d63",
+            "content": "sha256:3eb42073d4a7770fafe854cc9f9d91390e6d696645d1bb572c13068e958b9bdd",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
         }
       ]
     }

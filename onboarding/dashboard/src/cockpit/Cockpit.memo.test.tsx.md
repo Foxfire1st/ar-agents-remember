@@ -21,6 +21,11 @@ layers survives switches.
   the keep-alive assertions use the File Viewer layer in place of the Engine Room layer.
 - The rail-visibility counts shrink accordingly (Chats hides the rails, Operations shows them again);
   the memo gate itself is unchanged.
+- Since MIK-R122 the suite also pins the right-rail chat keep-alive: the River-hidden
+  sidebar case keeps the same document-chat node across the EventRiver presence/absence
+  toggle, and the memoized rail toggle still updates. Sidebar ARIA on the right rail is
+  source, not asserted by this suite; the separate top-level visibility cases cover
+  other panes.
 
 ### Conventions
 
@@ -50,8 +55,9 @@ No configured live documentation source was available for this pass.
 - The keep-alive case observes the File Viewer layer identity instead of the Engine Room. [13]
 
 - The hidden-not-unmounted wrapper whose identity survives a switch. [14]
-
 - The mounted layers the render counts observe. [15]
+
+- The River-hidden sidebar case keeps the same document-chat node across the EventRiver toggle. [16]
 
 ### Cross-Repo References
 

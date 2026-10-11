@@ -3,12 +3,12 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The harness renders the real document chat for the switched Projects/Master/Task document.",
+      "note": "The harness renders the real right rail for the switched Projects/Master/Task/ghost document with river/chat toggle buttons.",
       "targets": [
         {
           "anchor": {
-            "blob": "44682bfd43affb2f07183305e4f621d3a6f2f30a",
-            "content": "sha256:c8fd89ad6d1a710abe5ce0e76dc6733df6ce554756c9df4648ee7c486979e7cd",
+            "blob": "5f666dad742fab0147d7e75b25301898deb45e61",
+            "content": "sha256:6a1b59d59605fcadea4dd160da48229ddeb0fb1724655b7a2f9fb4333fdbb801",
             "locator": {
               "kind": "symbol",
               "name": "DocumentChatHarness"
@@ -23,7 +23,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "44682bfd43affb2f07183305e4f621d3a6f2f30a",
+            "blob": "5f666dad742fab0147d7e75b25301898deb45e61",
             "content": "sha256:24bb77e19199b87e9749bcbdd745b44569cfeedac012d75f6917fb652558b251",
             "locator": {
               "kind": "symbol",

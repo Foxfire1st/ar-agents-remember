@@ -10,23 +10,21 @@ The controller steers one existing frame and owns its bounded native control-cha
 
 ## Code Commentary
 
-Wanted/seen, pending/settled and URL-loaded IDs distinguish launch intent, unanswered control and an already loaded route. Ready navigation posts ar.open without replacement; transient options absence does not resend a seen actor. Receive checks exact configured origin/current iframe window. Start/stop reset the selected-ID set for the next frame lifetime; the controller no longer holds a catalog. The message switch keeps `selection` and `navigation-error`; the `hierarchy`/`hierarchy-error` kinds and the deliberate chat-navigation click went with the dashboard sidebar (MIK-R75 rules 7 to 9), and Parent errors still require a currently selected source child.
+Wanted/seen, pending/settled and URL-loaded IDs distinguish launch intent, unanswered control and an already loaded route. Ready navigation posts ar.open without replacement; transient options absence does not resend a seen actor. Receive checks exact configured origin/current iframe window. Start/stop reset the selected-ID set for the next frame lifetime; the controller no longer holds a catalog. The message switch keeps `selection` and `navigation-error`; the `hierarchy`/`hierarchy-error` kinds and the deliberate chat-navigation click went with the dashboard sidebar (MIK-R75 rules 7 to 9), and Parent errors still require a currently selected source child. Since MIK-R122 a selection change while the channel is unavailable clears and re-arms one trailing settle window (`PASEO_UNAVAILABLE_QUIET_MS`); a change while ready invokes sync and can post `ar.open` at once, while a change while waiting invokes sync but forwards nothing until the ready report or deadline, with no timer elsewhere. The window's expiry brings its latest selection forward; the ready report, Retry, host return or a new deadline also syncs, while a superseding display while unavailable only cancels and re-arms the window. Each expiry may load its latest changed URL once; two settled windows with different latest URLs bring each forward, so no per-episode one-load cap or total-burst bound is claimed.
 
 ## Invariants And Boundaries
 
-The existing 10-second unavailable path keeps the frame and may load the requested actor URL once; explicit Retry changes generation. Shown replies never establish selected rows. The dashboard draws no other chat navigation; no fallback is proposed.
+The existing 10-second unavailable path keeps the frame and may load the requested actor URL once; explicit Retry changes generation. A trailing settle window coalesces bursts first: each settled window forwards only its latest selection, and the deadline still names the latest unanswered target. Shown replies never establish selected rows. The dashboard draws no other chat navigation; no fallback is proposed.
 
 ## Evidence
 
 The current source and test assertions below establish the documented ownership; test citations do not claim a rerun in this pass.
 
-| Finding | Anchor | Source at frozen tree |
-| --- | --- | --- |
-| Current source owner or exact assertion described above. | `receive` | `dashboard/src/cockpit/paseoFrameControl.ts:122-129` |
-| Current source owner or exact assertion described above. | `onMessage` | `dashboard/src/cockpit/paseoFrameControl.ts:131-158` |
-| Current source owner or exact assertion described above. | `sync` | `dashboard/src/cockpit/paseoFrameControl.ts:163-175` |
-| Unloaded, unknown and hidden DOM IDs are not published; plural visible IDs are intersected after load and recomputed on SDK removals, reconnect snapshots and teardown. | `validates visible selections against current SDK IDs, recovering after catalog load and clearing removed or reconnected IDs` | `dashboard/src/cockpit/paseoHierarchy.test.ts:244-274` |
-| Deferred lookup is ignored after tab/relation changes; a still-visible split-pane caller can open its current parent, and missing/archived parents or root transitions do not replace the child. | `checks current visible caller and parent relation, including deferred navigation, unavailable parents and root transitions` | `dashboard/src/cockpit/paseoHierarchy.test.ts:134-164` |
+- A selection change while ready invokes sync and can post ar.open at once; while waiting it invokes sync but forwards nothing until the ready report or deadline; while unavailable it clears and re-arms one trailing settle window for the latest selection. [1]
+- The settle window's expiry brings its latest selection forward; the ready report, Retry, host return or a new deadline also syncs, while a superseding display while unavailable only cancels and re-arms the window. [2]
+- The switch posts ar.open by message while ready and loads a changed latest URL when its settle window expires while unavailable. [3]
+- A document load raises the generation by exactly one. [4]
+- Only the embedded application's messages from the exact origin and window are admitted. [5]
 
 ## MIK-R95 Document Steering
 

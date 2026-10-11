@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "76c1e952f0b6c4c9d708c3edf4cd8b28c0f764ff",
+        "blob": "f0c0a6b35e01547908dcf3f4feb27ba092dde069",
         "content": "sha256:abc706fc66c912bf079523425599965ecc4855f669690a4a31d28a309280dd04",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "76c1e952f0b6c4c9d708c3edf4cd8b28c0f764ff",
+        "blob": "f0c0a6b35e01547908dcf3f4feb27ba092dde069",
         "content": "sha256:abc706fc66c912bf079523425599965ecc4855f669690a4a31d28a309280dd04",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "76c1e952f0b6c4c9d708c3edf4cd8b28c0f764ff",
+        "blob": "f0c0a6b35e01547908dcf3f4feb27ba092dde069",
         "content": "sha256:abc706fc66c912bf079523425599965ecc4855f669690a4a31d28a309280dd04",
         "locator": {
           "kind": "symbol",
@@ -57,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "76c1e952f0b6c4c9d708c3edf4cd8b28c0f764ff",
+        "blob": "f0c0a6b35e01547908dcf3f4feb27ba092dde069",
         "content": "sha256:c23dd6b971f43b7988e7fc3e7f775c1292d6394236c1f6e028713d6a03a65c40",
         "locator": {
           "kind": "symbol",
@@ -75,8 +75,8 @@
     },
     {
       "anchor": {
-        "blob": "76c1e952f0b6c4c9d708c3edf4cd8b28c0f764ff",
-        "content": "sha256:46ebd9c016ca5f8c1aa57ef07918594923f009cf3494e0642b465c9ac9541e3c",
+        "blob": "f0c0a6b35e01547908dcf3f4feb27ba092dde069",
+        "content": "sha256:c20568f61f713e413277771110ea364e78609d037dd595a5b5c78849c3e3ceab",
         "locator": {
           "kind": "symbol",
           "name": "RightRail"
@@ -93,7 +93,7 @@
     },
     {
       "anchor": {
-        "blob": "76c1e952f0b6c4c9d708c3edf4cd8b28c0f764ff",
+        "blob": "f0c0a6b35e01547908dcf3f4feb27ba092dde069",
         "content": "sha256:eb6b28ccc4c28cc6b133ccc8c8c4ef5e93f9dc219708120b4b6ddc8827a6976b",
         "locator": {
           "kind": "symbol",
@@ -111,7 +111,44 @@
     },
     {
       "anchor": {
-        "blob": "76c1e952f0b6c4c9d708c3edf4cd8b28c0f764ff",
+        "blob": "f0c0a6b35e01547908dcf3f4feb27ba092dde069",
+        "content": "sha256:c20568f61f713e413277771110ea364e78609d037dd595a5b5c78849c3e3ceab",
+        "locator": {
+          "kind": "symbol",
+          "name": "RightRail"
+        }
+      },
+      "id": "RLZ-NTTB53",
+      "invariant": "INV-VMREN3",
+      "origin": {
+        "handoffEntry": "MIK-R122@v1 rules 2-3",
+        "leaf": "260928-MIK-L122"
+      },
+      "rationale": "RightRail is the one place that swapped river/chat by mount; its keepalive wrapper is what now preserves the frame element across the toggle.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "f0c0a6b35e01547908dcf3f4feb27ba092dde069",
+        "content": "sha256:83b223cb410abb3db07fecf8f0f5e54797e883c5726dcdf383914f7cecbccb2c",
+        "locator": {
+          "end": 740,
+          "kind": "line_range",
+          "start": 729
+        }
+      },
+      "id": "RLZ-VF6VZ5",
+      "invariant": "INV-MN80QW",
+      "origin": {
+        "handoffEntry": "MIK-R122@v1 rule 6",
+        "leaf": "260928-MIK-L122"
+      },
+      "rationale": "The railView-controlled keepalive wrapper hides the chat exactly when the river shows; the outer fullBleed rail stays visible regardless, so reachability is the wrapper doing.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "f0c0a6b35e01547908dcf3f4feb27ba092dde069",
         "content": "sha256:19ba28765718f373b4b70dd594224499bd1aeb2c6cf77d848967a7e4dc4ade1f",
         "locator": {
           "kind": "symbol",
@@ -256,12 +293,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "76c1e952f0b6c4c9d708c3edf4cd8b28c0f764ff",
+            "blob": "f0c0a6b35e01547908dcf3f4feb27ba092dde069",
             "content": "sha256:f29095a6b0e65991918d78538811f694e2d7cf4045c8a92d963b95d6ff19bd85",
             "locator": {
-              "end": 927,
+              "end": 935,
               "kind": "line_range",
-              "start": 895
+              "start": 903
             }
           },
           "kind": "code"
@@ -273,7 +310,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "76c1e952f0b6c4c9d708c3edf4cd8b28c0f764ff",
+            "blob": "f0c0a6b35e01547908dcf3f4feb27ba092dde069",
             "content": "sha256:67c3b106e684a02d421281e64e67f5430bfa6f712e56f1edb6b45412eb0fdccc",
             "locator": {
               "kind": "symbol",
@@ -289,7 +326,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "76c1e952f0b6c4c9d708c3edf4cd8b28c0f764ff",
+            "blob": "f0c0a6b35e01547908dcf3f4feb27ba092dde069",
             "content": "sha256:146e733ec4294046cd9deced51210017286f0328f30d8a0e286e903dac76e087",
             "locator": {
               "end": 455,
@@ -306,7 +343,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "76c1e952f0b6c4c9d708c3edf4cd8b28c0f764ff",
+            "blob": "f0c0a6b35e01547908dcf3f4feb27ba092dde069",
             "content": "sha256:041333e586753988ecd046c93fdd43769ae2ab30c44e8c98c592f5294cd70d0d",
             "locator": {
               "end": 457,
@@ -323,7 +360,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "76c1e952f0b6c4c9d708c3edf4cd8b28c0f764ff",
+            "blob": "f0c0a6b35e01547908dcf3f4feb27ba092dde069",
             "content": "sha256:8a8976027b22047c4030a7ac855a24105253185203e0163cfc631decc487d093",
             "locator": {
               "kind": "symbol",
@@ -339,7 +376,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "76c1e952f0b6c4c9d708c3edf4cd8b28c0f764ff",
+            "blob": "f0c0a6b35e01547908dcf3f4feb27ba092dde069",
             "content": "sha256:7ab813a18528ed7b0291017e86822ecbd10c8156f14da45ac0088e4a3f8e8eeb",
             "locator": {
               "kind": "symbol",
@@ -403,7 +440,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "76c1e952f0b6c4c9d708c3edf4cd8b28c0f764ff",
+            "blob": "f0c0a6b35e01547908dcf3f4feb27ba092dde069",
             "content": "sha256:eb6b28ccc4c28cc6b133ccc8c8c4ef5e93f9dc219708120b4b6ddc8827a6976b",
             "locator": {
               "kind": "symbol",
@@ -419,7 +456,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "76c1e952f0b6c4c9d708c3edf4cd8b28c0f764ff",
+            "blob": "f0c0a6b35e01547908dcf3f4feb27ba092dde069",
             "content": "sha256:23ba3275b061f4cbf0f2fde4d10d2b79b5778515123efa1f56d588b6f2aeb510",
             "locator": {
               "end": 392,
@@ -483,12 +520,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "76c1e952f0b6c4c9d708c3edf4cd8b28c0f764ff",
+            "blob": "f0c0a6b35e01547908dcf3f4feb27ba092dde069",
             "content": "sha256:83d942e922042383c5a9f498adc4f9c472321ed48c102103243c2b18ef1cb262",
             "locator": {
-              "end": 880,
+              "end": 888,
               "kind": "line_range",
-              "start": 876
+              "start": 884
             }
           },
           "kind": "code"
@@ -619,7 +656,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "76c1e952f0b6c4c9d708c3edf4cd8b28c0f764ff",
+            "blob": "f0c0a6b35e01547908dcf3f4feb27ba092dde069",
             "content": "sha256:5508205699e2921a6ee43f076c77433055462f36900b4236837b797b06254e6a",
             "locator": {
               "kind": "symbol",
@@ -652,7 +689,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "76c1e952f0b6c4c9d708c3edf4cd8b28c0f764ff",
+            "blob": "f0c0a6b35e01547908dcf3f4feb27ba092dde069",
             "content": "sha256:08b8bd133a0e18ed1096568fc817b9ab856652a56f71ff512bb6015ffa2ca149",
             "locator": {
               "end": 21,
@@ -669,7 +706,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "76c1e952f0b6c4c9d708c3edf4cd8b28c0f764ff",
+            "blob": "f0c0a6b35e01547908dcf3f4feb27ba092dde069",
             "content": "sha256:abc706fc66c912bf079523425599965ecc4855f669690a4a31d28a309280dd04",
             "locator": {
               "kind": "symbol",
@@ -685,12 +722,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "76c1e952f0b6c4c9d708c3edf4cd8b28c0f764ff",
+            "blob": "f0c0a6b35e01547908dcf3f4feb27ba092dde069",
             "content": "sha256:f6179dfd4a7754a006d432553b55091449c4bb05a8eeda501fd31b3e488c87fa",
             "locator": {
-              "end": 805,
+              "end": 813,
               "kind": "line_range",
-              "start": 805
+              "start": 813
             }
           },
           "kind": "code"
@@ -702,7 +739,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "76c1e952f0b6c4c9d708c3edf4cd8b28c0f764ff",
+            "blob": "f0c0a6b35e01547908dcf3f4feb27ba092dde069",
             "content": "sha256:eeeccc8f1fdaa58fb21299088471a3654662916f1e14c89d09f7d201d379eea2",
             "locator": {
               "kind": "symbol",
@@ -718,16 +755,48 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0ce57d97fc8c668f37239e1badf03e0144d7df2c",
+            "blob": "749003c3ac12737a2a171752504de9b262a35d63",
             "content": "sha256:c913cc52dedb36161f21c530f23496a7d67ba6e1e6ef4190bfe2fc9a2493ec89",
             "locator": {
-              "end": 779,
+              "end": 782,
               "kind": "line_range",
-              "start": 779
+              "start": 782
             },
             "path": "dashboard/src/cockpit/Cockpit.test.tsx"
           },
           "kind": "test"
+        }
+      ]
+    },
+    "92": {
+      "note": "The right rail keeps the chat side mounted in an unkeyed stable wrapper and hides it when the river shows; the river still mounts conditionally. [92]\n\nAnchor: `RightRail`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f0c0a6b35e01547908dcf3f4feb27ba092dde069",
+            "content": "sha256:ce5c6ee6257fb25e46b745b74583807620f28985793f9849afcb273853e51c5e",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "93": {
+      "note": "The hidden chat side stays mounted but out of reach behind display:none and aria-hidden. [93]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f0c0a6b35e01547908dcf3f4feb27ba092dde069",
+            "content": "sha256:83b223cb410abb3db07fecf8f0f5e54797e883c5726dcdf383914f7cecbccb2c",
+            "locator": {
+              "end": 740,
+              "kind": "line_range",
+              "start": 729
+            }
+          },
+          "kind": "code"
         }
       ]
     }

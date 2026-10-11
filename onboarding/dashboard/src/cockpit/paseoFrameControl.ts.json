@@ -3,8 +3,44 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "fb9ca83fa3143598c8efeddd62aebf30e3be5a69",
-        "content": "sha256:7313736abc6b0ffd0d6fe6e09627cf2d3f5e2e59e23efb8ffeac36f5751e472e",
+        "blob": "b73f1c691a8e53a7f20a28b1f7631d67e5d7a9ca",
+        "content": "sha256:3f1936de1758643ca02914d8e3193deeda73f6f0acbe73a19611841e03a56d0a",
+        "locator": {
+          "kind": "symbol",
+          "name": "PASEO_UNAVAILABLE_QUIET_MS"
+        }
+      },
+      "id": "RLZ-133RJY",
+      "invariant": "INV-8P06Y0",
+      "origin": {
+        "handoffEntry": "MIK-R122@v1 recovery 3",
+        "leaf": "260928-MIK-L122"
+      },
+      "rationale": "PASEO_UNAVAILABLE_QUIET_MS names the settle delay the trailing window waits after the last unavailable selection before forwarding; it bounds no total burst, and the corrected oracle drains actually scheduled work rather than asserting this duration.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "b73f1c691a8e53a7f20a28b1f7631d67e5d7a9ca",
+        "content": "sha256:4016e5d864b00574fc395d70ecad5ca07d8ca8ad2f214d8aa2ee7839dc1fb4f6",
+        "locator": {
+          "kind": "symbol",
+          "name": "load"
+        }
+      },
+      "id": "RLZ-3FTZB5",
+      "invariant": "INV-Y7WR54",
+      "origin": {
+        "handoffEntry": "MIK-R122@v1 rule 7",
+        "leaf": "260928-MIK-L122"
+      },
+      "rationale": "load is the only place the generation rises, so every document load is counted exactly once and message switches never count.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "b73f1c691a8e53a7f20a28b1f7631d67e5d7a9ca",
+        "content": "sha256:8f180e88d61732ee0612d14b892690e730a29d94cc74051080436e0d752d7bf8",
         "locator": {
           "kind": "symbol",
           "name": "start"
@@ -16,13 +52,13 @@
         "handoffEntry": "PNT-R05@v3 §6 / trusted visible selection",
         "leaf": "260928-MIK-L90"
       },
-      "rationale": "Clears catalog and selected IDs for the next frame lifetime before accepting the new channel's trusted selection set.",
+      "rationale": "start/stop reset the selected-ID set for the next frame lifetime before accepting the new channel trusted selection set; the controller holds no catalog.",
       "role": "propagation-persistence"
     },
     {
       "anchor": {
-        "blob": "fb9ca83fa3143598c8efeddd62aebf30e3be5a69",
-        "content": "sha256:7e466cd87bd082eec95ecf3801ade2ab9baf82ee38264394cd171bdcc0288ec4",
+        "blob": "b73f1c691a8e53a7f20a28b1f7631d67e5d7a9ca",
+        "content": "sha256:c64e5950d382d7483e1ffb818cf626e54d16934e0b03bedc59758a441a8fc05d",
         "locator": {
           "kind": "symbol",
           "name": "display"
@@ -39,7 +75,7 @@
     },
     {
       "anchor": {
-        "blob": "fb9ca83fa3143598c8efeddd62aebf30e3be5a69",
+        "blob": "b73f1c691a8e53a7f20a28b1f7631d67e5d7a9ca",
         "content": "sha256:ccebaf97a0998a6e49ca24b323b70f5a5a8b81452b343b7e47d70be8ea7f1f36",
         "locator": {
           "kind": "symbol",
@@ -57,7 +93,26 @@
     },
     {
       "anchor": {
-        "blob": "fb9ca83fa3143598c8efeddd62aebf30e3be5a69",
+        "blob": "b73f1c691a8e53a7f20a28b1f7631d67e5d7a9ca",
+        "content": "sha256:ed4aae2488bbcfc94b8591ebd9536cb5eb1e07c01e0d4e6242118f603b3383a0",
+        "locator": {
+          "end": 145,
+          "kind": "line_range",
+          "start": 99
+        }
+      },
+      "id": "RLZ-AZSTHT",
+      "invariant": "INV-8P06Y0",
+      "origin": {
+        "handoffEntry": "MIK-R122@v1 recovery 3",
+        "leaf": "260928-MIK-L122"
+      },
+      "rationale": "display clears and re-arms the single trailing settle window while unavailable; its expiry forwards the latest selection, and the ready report, Retry, host return or deadline also syncs, while a superseding display while unavailable only cancels and re-arms the window. Each expiry may load its latest changed URL once; no per-episode cap is claimed.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "b73f1c691a8e53a7f20a28b1f7631d67e5d7a9ca",
         "content": "sha256:3db0955128547a99ef8f35c57c23fa106bc61640c7573f7eded51610edbfcaaf",
         "locator": {
           "kind": "symbol",
@@ -75,8 +130,8 @@
     },
     {
       "anchor": {
-        "blob": "fb9ca83fa3143598c8efeddd62aebf30e3be5a69",
-        "content": "sha256:7e466cd87bd082eec95ecf3801ade2ab9baf82ee38264394cd171bdcc0288ec4",
+        "blob": "b73f1c691a8e53a7f20a28b1f7631d67e5d7a9ca",
+        "content": "sha256:c64e5950d382d7483e1ffb818cf626e54d16934e0b03bedc59758a441a8fc05d",
         "locator": {
           "kind": "symbol",
           "name": "display"
@@ -93,7 +148,7 @@
     },
     {
       "anchor": {
-        "blob": "fb9ca83fa3143598c8efeddd62aebf30e3be5a69",
+        "blob": "b73f1c691a8e53a7f20a28b1f7631d67e5d7a9ca",
         "content": "sha256:ccebaf97a0998a6e49ca24b323b70f5a5a8b81452b343b7e47d70be8ea7f1f36",
         "locator": {
           "kind": "symbol",
@@ -111,8 +166,8 @@
     },
     {
       "anchor": {
-        "blob": "fb9ca83fa3143598c8efeddd62aebf30e3be5a69",
-        "content": "sha256:8b3cde819f2a7cbadd67febc508062a74a9cf276cc03398507ce9b233c1c8294",
+        "blob": "b73f1c691a8e53a7f20a28b1f7631d67e5d7a9ca",
+        "content": "sha256:97f773b29efb485f0421d55e642afdcf67ce6ac7f942886ded01cfd91f043ec4",
         "locator": {
           "kind": "symbol",
           "name": "PaseoFrameControl"
@@ -129,8 +184,8 @@
     },
     {
       "anchor": {
-        "blob": "fb9ca83fa3143598c8efeddd62aebf30e3be5a69",
-        "content": "sha256:fd559019f9befd140955e05079a57e8fa101a960fc63d6434e7d4119407804f4",
+        "blob": "b73f1c691a8e53a7f20a28b1f7631d67e5d7a9ca",
+        "content": "sha256:382fc918f40015eb0349a32e18c88c7a63ccc3954699071e5444161fa58cc988",
         "locator": {
           "kind": "symbol",
           "name": "arm"
@@ -144,8 +199,104 @@
       },
       "rationale": "arm owns the request deadline; the named problem must cover the never-ready selection there, or a missing chat ends unnamed.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "b73f1c691a8e53a7f20a28b1f7631d67e5d7a9ca",
+        "content": "sha256:09184bf04e9bdc5991d0b6235cadf321286ea66115b21b16423c50fb478d139f",
+        "locator": {
+          "kind": "symbol",
+          "name": "sync"
+        }
+      },
+      "id": "RLZ-YV57VE",
+      "invariant": "INV-YFAHQM",
+      "origin": {
+        "handoffEntry": "MIK-R122@v1 rule 4",
+        "leaf": "260928-MIK-L122"
+      },
+      "rationale": "sync is the single switch mechanism: message while ready, URL load only while unavailable; selection changes flow through it without touching the frame element.",
+      "role": "primary-authority"
     }
   ],
-  "references": {},
+  "references": {
+    "1": {
+      "note": "A selection change while ready invokes sync and can post ar.open at once; while waiting it invokes sync but forwards nothing until the ready report or deadline; while unavailable it clears and re-arms one trailing settle window for the latest selection.\n\nAnchor: `display`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b73f1c691a8e53a7f20a28b1f7631d67e5d7a9ca",
+            "content": "sha256:fea9c52128fdbb62aa0b835b99905c08e8dfd8801a5d8e5fb7f51bec83495442",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The settle window's expiry brings its latest selection forward; the ready report, Retry, host return or a new deadline also syncs, while a superseding display while unavailable only cancels and re-arms the window.\n\nAnchor: `onSettle`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b73f1c691a8e53a7f20a28b1f7631d67e5d7a9ca",
+            "content": "sha256:fea9c52128fdbb62aa0b835b99905c08e8dfd8801a5d8e5fb7f51bec83495442",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The switch posts ar.open by message while ready and loads a changed latest URL when its settle window expires while unavailable.\n\nAnchor: `sync`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b73f1c691a8e53a7f20a28b1f7631d67e5d7a9ca",
+            "content": "sha256:fea9c52128fdbb62aa0b835b99905c08e8dfd8801a5d8e5fb7f51bec83495442",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "A document load raises the generation by exactly one.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b73f1c691a8e53a7f20a28b1f7631d67e5d7a9ca",
+            "content": "sha256:4016e5d864b00574fc395d70ecad5ca07d8ca8ad2f214d8aa2ee7839dc1fb4f6",
+            "locator": {
+              "kind": "symbol",
+              "name": "load"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Only the embedded application's messages from the exact origin and window are admitted.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b73f1c691a8e53a7f20a28b1f7631d67e5d7a9ca",
+            "content": "sha256:3db0955128547a99ef8f35c57c23fa106bc61640c7573f7eded51610edbfcaaf",
+            "locator": {
+              "kind": "symbol",
+              "name": "receive"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
   "schema": "ar-onboarding-file/v1"
 }

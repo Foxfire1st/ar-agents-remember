@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "The keepalive obligation needs both the rail shell wrapper and the frame descriptor latch; neither file alone promises the retained element. Typed per-case proofs were withdrawn as extractor-unsupported; case evidence lives at file granularity in the cards."
+  },
+  "applicability": "Operations right-rail document chat after the first shown chat, for dashboard-open lifetime.",
+  "conditions": [
+    "The frame was created on first showing; creation stays lazy.",
+    "The rail keeps its document position; no reparenting."
+  ],
+  "exclusions": [
+    "Chats page, whose behaviour is unchanged.",
+    "Host application or version change.",
+    "Eager mount on dashboard open."
+  ],
+  "id": "INV-VMREN3",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "dashboard/src/cockpit/sidebarChatStaysLoaded.test.tsx (toggle keeps element; switch keeps element; ghost keeps element) + e2e/sidebar-chat-stays-loaded.spec.ts (walk, execution owed on Owner path)"
+      ],
+      "path": "notes/reports/role-launch/260928-MIK-L122-curator-handoff.json"
+    },
+    "handoffEntry": "MIK-R122@v1 rules 2-3",
+    "leaf": "260928-MIK-L122",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The Operations right rail keeps one DocumentChat mounted and hides it instead of unmounting it, so the single chat frame stays loaded and keeps draft and scroll across the river toggle.",
+  "status": "proposed",
+  "supersedes": []
+}

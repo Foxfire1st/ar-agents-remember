@@ -1,0 +1,53 @@
+{
+  "path": "dashboard/src/cockpit/PaseoChatFrame.test.tsx",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The fallback cases load the agent URL once and reload on Retry.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "591dbf41db6c3a7b91ba72ef9279d4c5de774d8c",
+            "content": "sha256:f2fe6f80cbda9a54efa83f931a51372c13e8dbe2a2e0b2205a506fd9536c487f",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The no-second-load case pins the settle behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "591dbf41db6c3a7b91ba72ef9279d4c5de774d8c",
+            "content": "sha256:f2fe6f80cbda9a54efa83f931a51372c13e8dbe2a2e0b2205a506fd9536c487f",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The workspace cases move by message without reload.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "591dbf41db6c3a7b91ba72ef9279d4c5de774d8c",
+            "content": "sha256:f2fe6f80cbda9a54efa83f931a51372c13e8dbe2a2e0b2205a506fd9536c487f",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

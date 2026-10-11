@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "Out-of-reach hiding spans both rail wrappers, and the Cockpit realization is re-anchored to the railView hiding construct. The unit no-focus case is cited at file granularity, not as typed proof."
+  },
+  "applicability": "Rail-hidden and agentless-hidden chat wrappers.",
+  "conditions": [
+    "Hidden state is display:none plus aria-hidden on the wrapper."
+  ],
+  "exclusions": [
+    "Native keyboard and screen-reader traversal, which are not demonstrated.",
+    "Visible chat, where no hiding applies."
+  ],
+  "id": "INV-MN80QW",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "sidebarChatStaysLoaded.test.tsx (no focus stays inside the hidden chat; keepalive aria-hidden true)"
+      ],
+      "path": "notes/reports/role-launch/260928-MIK-L122-curator-handoff.json"
+    },
+    "handoffEntry": "MIK-R122@v1 rule 6",
+    "leaf": "260928-MIK-L122",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A hidden chat takes no keyboard focus and stays out of the accessibility tree.",
+  "status": "proposed",
+  "supersedes": []
+}
