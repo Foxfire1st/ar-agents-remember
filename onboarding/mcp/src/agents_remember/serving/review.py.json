@@ -114,12 +114,12 @@
         },
         {
           "anchor": {
-            "blob": "005c44f99677f29c3777322502b77b732a3a0252",
+            "blob": "889df3540da11d28e4b0bef1fe9c557748e265d4",
             "content": "sha256:34b105f9d3ba8507204767efe7f0f7b36c6916ed2dc0f0eef4a74d0377356928",
             "locator": {
-              "end": 160,
+              "end": 161,
               "kind": "line_range",
-              "start": 151
+              "start": 152
             },
             "path": "mcp/src/agents_remember/models/knowledge/review.py"
           },

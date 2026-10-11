@@ -1,5 +1,6 @@
 {
   "path": "mcp/tests/test_knowledge_review_subject_isolation.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "21": {

@@ -1,6 +1,25 @@
 {
   "path": "dashboard/src/data/reviewTrees.ts",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "a95b2d43ef2dd642b13233f95c918ee5c87d603e",
+        "content": "sha256:f2ff0ca348be835eff180ffa1b7fd9adf6dcf061294bb33e422c0e6b100e264c",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReviewTreesResult"
+        }
+      },
+      "id": "RLZ-YEGQZR",
+      "invariant": "INV-4GFK5N",
+      "origin": {
+        "handoffEntry": "CUR-4GFK5N-data-route",
+        "leaf": "260928-MIK-L86"
+      },
+      "rationale": "The worklist view reads its items from this result's worklist field; the transport the view renders.",
+      "role": "support"
+    }
+  ],
   "references": {
     "10": {
       "note": "The module comment: what the adapter carries and the three answers it keeps apart.",
@@ -231,6 +250,38 @@
             "path": "dashboard/src/data/reviewTrees.supersede.test.ts"
           },
           "kind": "test"
+        }
+      ]
+    },
+    "25": {
+      "note": "Busy-retry discipline is unchanged",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f7b8e86cf0840761ccfe208e9946045b59a7e757",
+            "content": "sha256:2332d9911e48030dc495c1cf2190d1252b337b2282ee85801a638237cd3ce47d",
+            "locator": {
+              "kind": "symbol",
+              "name": "TRANSIENT_CODES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "26": {
+      "note": "The trees / not-converted / unavailable phases are unchanged",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f7b8e86cf0840761ccfe208e9946045b59a7e757",
+            "content": "sha256:81a11dfb791b2edc493db8a893333ac5cbce9b3b5b65050f3875edc86f6da04a",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewTreesRead"
+            }
+          },
+          "kind": "code"
         }
       ]
     }

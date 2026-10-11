@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Durable repair-verification obligation from R1 findings fixed on W02 and sealed in R2 (verdict b8956ffd, eleven-dispositions 42a8ec7a); ReviewSurface.worklistRepair.test.tsx absent/incomplete/partial/complete cases; browser/report.md complete673/100of600"
+  },
+  "applicability": "Empty and partial worklist assertions.",
+  "conditions": [
+    "Only a complete bound non-absent worklist establishes true empty or measured zero.",
+    "Incomplete and absent inputs keep reasons with available partial items; no false absence."
+  ],
+  "exclusions": [
+    "Zero totals from incomplete inputs."
+  ],
+  "id": "INV-TEDBFZ",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "ReviewSurface.worklistRepair.test.tsx absent/incomplete/partial/complete cases; browser/report.md complete673/100of600"
+      ],
+      "path": "notes/reports/l86-curator-W03/handoff-phase1.json"
+    },
+    "handoffEntry": "L86-CODE-R1-F11",
+    "leaf": "260928-MIK-L86",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Only a complete bound non-absent worklist may establish true empty or measured zero; incomplete and absent inputs retain reasons and any available partial items without false absence.",
+  "status": "proposed",
+  "supersedes": []
+}

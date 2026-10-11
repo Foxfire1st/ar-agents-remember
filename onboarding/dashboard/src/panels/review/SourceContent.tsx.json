@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "605a94e6165911a70c8720cc9da1642652343d76",
+        "blob": "9408212dc6bbb8b39c81e874b707478b36dd6319",
         "content": "sha256:67561911e791ad675588a1b92724f44d6823a545a126458297a30dae3d909e5d",
         "locator": {
           "kind": "symbol",
@@ -17,6 +17,24 @@
       },
       "rationale": "Reads a file's content through the surface's cache under the exact request key and binds its answer and failure to that key.",
       "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "9408212dc6bbb8b39c81e874b707478b36dd6319",
+        "content": "sha256:80c602650fbe4d18212c300d5b20ea986bab9d8f666fd0f5ef6ddc9897a00f99",
+        "locator": {
+          "kind": "symbol",
+          "name": "SourceContent"
+        }
+      },
+      "id": "RLZ-ZWGEY3",
+      "invariant": "INV-VPD8AJ",
+      "origin": {
+        "handoffEntry": "MIK-R86@v1 rule 18",
+        "leaf": "260928-MIK-L86"
+      },
+      "rationale": "It remains the generation-bound full-file reader that supplies the preserved card intent-marker rendering.",
+      "role": "presentation"
     }
   ],
   "references": {
@@ -37,7 +55,7 @@
         },
         {
           "anchor": {
-            "blob": "605a94e6165911a70c8720cc9da1642652343d76",
+            "blob": "9408212dc6bbb8b39c81e874b707478b36dd6319",
             "content": "sha256:e056304b0eeabd88ad4cbdd60bdf46651ad857ad1e0104e42abff6b043ae8ea0",
             "locator": {
               "end": 43,
@@ -49,12 +67,12 @@
         },
         {
           "anchor": {
-            "blob": "605a94e6165911a70c8720cc9da1642652343d76",
+            "blob": "9408212dc6bbb8b39c81e874b707478b36dd6319",
             "content": "sha256:493cf7fae8ecbc416f49722a5361b6bcb1aea05163e96e29bd491a1e938001d1",
             "locator": {
-              "end": 218,
+              "end": 224,
               "kind": "line_range",
-              "start": 218
+              "start": 224
             }
           },
           "kind": "code"
@@ -66,7 +84,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "605a94e6165911a70c8720cc9da1642652343d76",
+            "blob": "9408212dc6bbb8b39c81e874b707478b36dd6319",
             "content": "sha256:80c602650fbe4d18212c300d5b20ea986bab9d8f666fd0f5ef6ddc9897a00f99",
             "locator": {
               "kind": "symbol",
@@ -77,7 +95,7 @@
         },
         {
           "anchor": {
-            "blob": "605a94e6165911a70c8720cc9da1642652343d76",
+            "blob": "9408212dc6bbb8b39c81e874b707478b36dd6319",
             "content": "sha256:67561911e791ad675588a1b92724f44d6823a545a126458297a30dae3d909e5d",
             "locator": {
               "kind": "symbol",
@@ -89,28 +107,16 @@
       ]
     },
     "11": {
-      "note": "The read's request type and hook, exported for the lane's focused diff (MIK-L32).\n\nAnchor: \"export interface SourceContentRequest {\"; \"export function useSourceContentRead(request: SourceContentRequest): {\"",
+      "note": "The generation-keyed SourceContentRequest and useSourceContentRead remain exported; the focused-lane caller is retired and the retained card Full file consumer passes the review’s own code trees.",
       "targets": [
         {
           "anchor": {
-            "blob": "605a94e6165911a70c8720cc9da1642652343d76",
-            "content": "sha256:cd67ccbc1c2a62f4a7e8ecf326cb9e6fb460ef2faed9fa4f784d4a43893b2e39",
+            "blob": "9408212dc6bbb8b39c81e874b707478b36dd6319",
+            "content": "sha256:a4075a66393cdd657d0cfdf4ae7a54e9d3d522327f762113aff725801aa25bf8",
             "locator": {
-              "end": 198,
+              "end": 211,
               "kind": "line_range",
-              "start": 198
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "605a94e6165911a70c8720cc9da1642652343d76",
-            "content": "sha256:5ff78a91e5b9a991b0ca6de7f267874a90d8dacc651219055f2bc3bcc1ab7123",
-            "locator": {
-              "end": 210,
-              "kind": "line_range",
-              "start": 210
+              "start": 204
             }
           },
           "kind": "code"
@@ -122,7 +128,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "605a94e6165911a70c8720cc9da1642652343d76",
+            "blob": "9408212dc6bbb8b39c81e874b707478b36dd6319",
             "content": "sha256:e2c660504a4c2f69fe3af846b25a863e4f6343183342ee62dcfef32ea262ef5c",
             "locator": {
               "end": 70,
@@ -158,24 +164,6 @@
               "name": "sideMarks"
             },
             "path": "dashboard/src/panels/review/IntentMarkers.tsx"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "14": {
-      "note": "The lane's focused diff reading through it.\n\nAnchor: \"const { result, problem, retry } = useSourceContentRead({\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "7d9298b315a6d1c8cdaaf2a0da0f6e38f0ef0d21",
-            "content": "sha256:37eecc2c67cbf4a7da250f1d7f70095a0ff2958b8647e6e2282a1c1f343dfa95",
-            "locator": {
-              "end": 218,
-              "kind": "line_range",
-              "start": 218
-            },
-            "path": "dashboard/src/panels/review/LaneFileFocus.tsx"
           },
           "kind": "code"
         }
@@ -290,7 +278,7 @@
         },
         {
           "anchor": {
-            "blob": "ed265675478575ff8a4d1556006a4a3afd4aa87a",
+            "blob": "1da3bab20ae2b0b070c790c820476038d043758c",
             "content": "sha256:0f6ace113180807badb9c2aa564233c50bb797a8363183bfe8ebac814ded9d5a",
             "locator": {
               "end": 4,
@@ -502,7 +490,7 @@
         },
         {
           "anchor": {
-            "blob": "f84799b8607720d59167369281b8ab441bb956ee",
+            "blob": "549d07c35309c25062a49eb856d3689a5a9c9b5f",
             "content": "sha256:75319702001c25b9863f52aece77d448458d187ed5fff17846d210bc1cde33d4",
             "locator": {
               "kind": "symbol",
@@ -553,7 +541,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "605a94e6165911a70c8720cc9da1642652343d76",
+            "blob": "9408212dc6bbb8b39c81e874b707478b36dd6319",
             "content": "sha256:80c602650fbe4d18212c300d5b20ea986bab9d8f666fd0f5ef6ddc9897a00f99",
             "locator": {
               "kind": "symbol",
@@ -564,7 +552,7 @@
         },
         {
           "anchor": {
-            "blob": "605a94e6165911a70c8720cc9da1642652343d76",
+            "blob": "9408212dc6bbb8b39c81e874b707478b36dd6319",
             "content": "sha256:d1ec3349d49aef33830b013037d5a9a6665b7aa80500c57888e28ec81c0f988f",
             "locator": {
               "kind": "symbol",
@@ -575,71 +563,13 @@
         },
         {
           "anchor": {
-            "blob": "605a94e6165911a70c8720cc9da1642652343d76",
+            "blob": "9408212dc6bbb8b39c81e874b707478b36dd6319",
             "content": "sha256:45c7a786f6965cb866020baa5be418052e8cd8b2c5376101190b5e4ca8ca1ea2",
             "locator": {
               "end": 71,
               "kind": "line_range",
               "start": 71
             }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "20": {
-      "note": "Inventory navigation carries the exact listed trees, and the central expression card reuses this source renderer.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "15f7110353dadebfae32b945340bc81624d0fd9b",
-            "content": "sha256:d6237d6db50ea62c295b613500bcfabea3b9f225c2be8e95100800ea196bc3a9",
-            "locator": {
-              "kind": "symbol",
-              "name": "inventoryEntry"
-            },
-            "path": "dashboard/src/panels/review/SourceExplorer.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "77d3784bf09b731e42d063c488853eec6d499d97",
-            "content": "sha256:fdc389bfbbb89b8165fdbf576417cc03aed096459bae9b6f3ef1dd88fe89e53c",
-            "locator": {
-              "kind": "symbol",
-              "name": "ExpressionCard"
-            },
-            "path": "dashboard/src/panels/review/ReviewExpressions.tsx"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "21": {
-      "note": "**The parent that owns the open row and passes the two published tree ids down, so the read is the generation the reader was looking at — the explorer and its rows now, not `ReviewSurface.tsx`.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "15f7110353dadebfae32b945340bc81624d0fd9b",
-            "content": "sha256:7a9918cfbbeca0fe8a60beee6bfca6dae9a51d703b41789f89f7c4a9233ae972",
-            "locator": {
-              "kind": "symbol",
-              "name": "SourceExplorer"
-            },
-            "path": "dashboard/src/panels/review/SourceExplorer.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "15f7110353dadebfae32b945340bc81624d0fd9b",
-            "content": "sha256:eb0d94f603c3f21dcb6426d17428e00487a4e353eb973e050d57c4e430581f4c",
-            "locator": {
-              "kind": "symbol",
-              "name": "InventoryRows"
-            },
-            "path": "dashboard/src/panels/review/SourceExplorer.tsx"
           },
           "kind": "code"
         }
@@ -838,16 +768,155 @@
         }
       ]
     },
+    "27": {
+      "note": "The generation-keyed SourceContentRequest and useSourceContentRead remain exported; the focused-lane caller is retired and the retained card Full file consumer passes the review’s own code trees.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9408212dc6bbb8b39c81e874b707478b36dd6319",
+            "content": "sha256:4748280803296a22d4acdebd302c814ef0d0248271eddd61697f6a3647b0b5f7",
+            "locator": {
+              "end": 223,
+              "kind": "line_range",
+              "start": 216
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "28": {
+      "note": "The generation-keyed SourceContentRequest and useSourceContentRead remain exported; the focused-lane caller is retired and the retained card Full file consumer passes the review’s own code trees.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "10bd037f0b55003954928f8873757630e8d12f9e",
+            "content": "sha256:86459cf18e5fe3f8695e2fb0d6df410dd37eca6db4b4210dc234582ad5b10d66",
+            "locator": {
+              "end": 621,
+              "kind": "line_range",
+              "start": 582
+            },
+            "path": "dashboard/src/panels/review/ExpressionCards.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "29": {
+      "note": "The central card Full file and retained dataset expression renderer supply the exact inventory trees to this source renderer; inventory navigation itself belongs to the comparison viewer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "10bd037f0b55003954928f8873757630e8d12f9e",
+            "content": "sha256:1dcdadd6be389471b1193b5acb990a279c302ca6cd950a578a2add5621ea07a8",
+            "locator": {
+              "end": 622,
+              "kind": "line_range",
+              "start": 583
+            },
+            "path": "dashboard/src/panels/review/ExpressionCards.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "3": {
       "note": "Text renderability is determined by the supplied text value, rather than inferred from a present-state label.",
       "targets": [
         {
           "anchor": {
-            "blob": "605a94e6165911a70c8720cc9da1642652343d76",
+            "blob": "9408212dc6bbb8b39c81e874b707478b36dd6319",
             "content": "sha256:394c63bb5fb4f1d291035820f78174a48b8a72dfe6b409d3f85d0ddaec2e6ec6",
             "locator": {
               "kind": "symbol",
               "name": "textual"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "30": {
+      "note": "The central card Full file and retained dataset expression renderer supply the exact inventory trees to this source renderer; inventory navigation itself belongs to the comparison viewer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f715a0ae08b0747d62ac23144d24a5bd2c745f38",
+            "content": "sha256:7d3f470d4b91306c2f4b6ac33d1ff0bb3fd3eb177bf25eee2c3bf2718a378e72",
+            "locator": {
+              "end": 234,
+              "kind": "line_range",
+              "start": 225
+            },
+            "path": "dashboard/src/panels/review/ReviewExpressions.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "31": {
+      "note": "Cached content read keyed on the two bound trees",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9408212dc6bbb8b39c81e874b707478b36dd6319",
+            "content": "sha256:67561911e791ad675588a1b92724f44d6823a545a126458297a30dae3d909e5d",
+            "locator": {
+              "end": 256,
+              "kind": "line_range",
+              "start": 216
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "32": {
+      "note": "Cached content read keyed on the two bound trees",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9408212dc6bbb8b39c81e874b707478b36dd6319",
+            "content": "sha256:e8dc29ab1e6055f2ed6193584d5a2618af9ab670ade3c9d0fc0549ae6ed9a94a",
+            "locator": {
+              "end": 232,
+              "kind": "line_range",
+              "start": 214
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "33": {
+      "note": "Retained bound full-file source renderer for expression cards and dataset expression views",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9408212dc6bbb8b39c81e874b707478b36dd6319",
+            "content": "sha256:80c602650fbe4d18212c300d5b20ea986bab9d8f666fd0f5ef6ddc9897a00f99",
+            "locator": {
+              "end": 311,
+              "kind": "line_range",
+              "start": 258
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "34": {
+      "note": "Retained bound full-file source renderer for expression cards and dataset expression views",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9408212dc6bbb8b39c81e874b707478b36dd6319",
+            "content": "sha256:cb66cd95d5ff750dc91f865d6f9388ef907ea40f5e80c9f99f08af0a59be8724",
+            "locator": {
+              "end": 274,
+              "kind": "line_range",
+              "start": 256
             }
           },
           "kind": "code"
@@ -902,7 +971,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "605a94e6165911a70c8720cc9da1642652343d76",
+            "blob": "9408212dc6bbb8b39c81e874b707478b36dd6319",
             "content": "sha256:b84fd31944c3c27d5bc513725f1bf10f9e0660fd1009f5d4b8300735f0ad354b",
             "locator": {
               "end": 127,
@@ -919,7 +988,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "605a94e6165911a70c8720cc9da1642652343d76",
+            "blob": "9408212dc6bbb8b39c81e874b707478b36dd6319",
             "content": "sha256:d23d8a2d7c48c308d86f8012ba07731f13f1319ac4fc8a9f17b9eb683a7f9e95",
             "locator": {
               "kind": "symbol",

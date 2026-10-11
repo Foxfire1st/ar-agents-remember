@@ -8,6 +8,7 @@
 
 The shared kit of the mounted walked-tree tests (`ReviewSurface.walk.test.tsx`, `ReviewSurface.walkFresh.test.tsx`, `ReviewSurface.walkPartial.test.tsx`, `ReviewSurface.walkStore.test.tsx`), also used by `walkedTree.test.ts` and by the key case at the end of `ReviewSurface.navigation.test.tsx`. It provides a served world made of captured bodies, a `fetch` stub that answers from it and logs every request, and small readers of the mounted reviewer. `ReviewSurface` is the real component; only `fetch` is stubbed.
 
+Serve the mounted walked-tree tests (`ReviewSurface.walk*.test.tsx`, `walkedTree.test.ts` and the navigation key case): a served world made of captured bodies, a `fetch` stub that answers from it and logs every request, and small readers of the mounted reviewer. `ReviewSurface` is the real component; only `fetch` is stubbed, and the old catalogue is augmented with the explicit synthetic outline adapter while every original capture keeps its bytes.
 ## Code Commentary
 
 ### Serving
@@ -51,3 +52,9 @@ The default world is the served answers of the scratch leaf 260928-MIK-L33 (`wal
 - The click on the second family's row after both families are shown in the expected order. [9]
 
 - The receipt of the real-data bodies. [10]
+- Fetch stub answering from the served world [11]
+- Real-data world of the scratch leaf [12]
+- Per-test world with triage order and tree view reset [13]
+- Suite installation with timeout and cleanup [14]
+- Mounted-surface readers of the tree [15]
+- Single presses with asserted request counts [16]

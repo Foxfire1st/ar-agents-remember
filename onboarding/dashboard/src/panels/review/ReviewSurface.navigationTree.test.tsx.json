@@ -1,0 +1,74 @@
+{
+  "path": "dashboard/src/panels/review/ReviewSurface.navigationTree.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Stored view and order reset for each case\n\nAnchor: `treeViewStore`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "962625bf0dbae5fd0ce178b9ec7cbce5ad020912",
+            "content": "sha256:baf2d4c2f0194da395428bb2d37a12f298b3a0c272b3790ffbf47649311eaf74",
+            "locator": {
+              "end": 16,
+              "kind": "line_range",
+              "start": 12
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Disclosure contract for every mounted view",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "962625bf0dbae5fd0ce178b9ec7cbce5ad020912",
+            "content": "sha256:2845bb0267aa3ffe6510da6a56d9e232ac6b79a76c713d662284ecdcfbe17db9",
+            "locator": {
+              "kind": "symbol",
+              "name": "disclosureContract"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "First-change derivation from the captured outline\n\nAnchor: `firstOutlineChange`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "962625bf0dbae5fd0ce178b9ec7cbce5ad020912",
+            "content": "sha256:0cd28d0a300648feab0aac23e5328febba7bf2203314d8a0a1687644244e8e04",
+            "locator": {
+              "end": 37,
+              "kind": "line_range",
+              "start": 29
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Changed and All counts from the captured outline\n\nAnchor: `outlineCounts`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "962625bf0dbae5fd0ce178b9ec7cbce5ad020912",
+            "content": "sha256:12e8f7ae4bda2fb17f4a38ed90a32f1da9ec2d463a68d206a7ae41e84d55ced9",
+            "locator": {
+              "end": 47,
+              "kind": "line_range",
+              "start": 39
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

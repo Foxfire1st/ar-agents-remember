@@ -18,6 +18,55 @@
         }
       ]
     },
+    "10": {
+      "note": "One diff column with per-column persisted flags",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "48d2681013595d0c214aa1dad92fe4c6829747d3",
+            "content": "sha256:2bc1398dd3ec7b90773d3096b013611104061ad8a5f0dbc3830875bd304a1f53",
+            "locator": {
+              "kind": "symbol",
+              "name": "ChangeSetPane"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Narrow comparisons default to inline without touching the persisted flag",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "48d2681013595d0c214aa1dad92fe4c6829747d3",
+            "content": "sha256:9c92d46dd85a6c0e969025e71ea0f65f0278a2ff5ceb55c47151df81da0cfa01",
+            "locator": {
+              "kind": "symbol",
+              "name": "shownInline"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Markdown files offer the rendered prose mode\n\nAnchor: `showRendered`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "48d2681013595d0c214aa1dad92fe4c6829747d3",
+            "content": "sha256:b172c4b4c4ed43c82eed823fc213204d5ca676877d6c91939163b9a1b61c4109",
+            "locator": {
+              "end": 206,
+              "kind": "line_range",
+              "start": 201
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "Highlight-off renders the plain L2 FilePane on the after-content.",
       "targets": [

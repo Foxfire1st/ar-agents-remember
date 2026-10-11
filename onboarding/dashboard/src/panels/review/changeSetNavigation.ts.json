@@ -1,0 +1,39 @@
+{
+  "path": "dashboard/src/panels/review/changeSetNavigation.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Viewer opener for a filter, path and kind",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3c0821a6ef30f811a80d5e79d7b3bbe66a730be3",
+            "content": "sha256:060d98a26eddbf0870a25b697b76fb653a84622c88dd1f55ab53cb38d35f533d",
+            "locator": {
+              "kind": "symbol",
+              "name": "OpenReviewChanges"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Context shared by rail, worklist and center",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3c0821a6ef30f811a80d5e79d7b3bbe66a730be3",
+            "content": "sha256:c8238bc6246c8ce055fa8ea52df5a423d25158710d8806275426a5c9dc74eae3",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewChangeSetNavigation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

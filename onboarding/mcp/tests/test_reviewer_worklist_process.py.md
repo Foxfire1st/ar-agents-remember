@@ -93,11 +93,7 @@ comparison pin is idempotent. The module is in the `integration` lane.
 
 ### Git configuration, executor, pin
 
-- `test_the_reviewers_diff_reads_do_not_depend_on_the_users_git_configuration`: the leaf-wide view and the
-  review are read once under an empty global Git configuration and once under one that sets
-  `diff.noprefix`, `diff.mnemonicPrefix`, `diff.srcPrefix`, `diff.dstPrefix`, `diff.external`,
-  `diff.renames`, `diff.colorMoved`, `color.ui` and `core.quotePath`. Both bodies are identical, and every
-  patch starts with `diff --git a/`.
+- `test_the_reviewers_diff_reads_do_not_depend_on_the_users_git_configuration`: reading under clean and hostile global Git configurations produces equal leaf-wide/review bodies; both tree bodies explicitly lack `knowledge_diff`. This case no longer loops through aggregate memory patches or asserts every patch prefix.
 - `test_every_parsed_diff_names_its_own_prefix_colour_and_driver`: the two argument tuples of the source
   inventory hold `PARSED_DIFF_OPTIONS`, and the worklist's blob diff holds the prefix options, `--no-color`
   and `--no-ext-diff`.
@@ -133,3 +129,7 @@ comparison pin is idempotent. The module is in the `integration` lane.
 - The process owner under test. [22]
 
 - Owner-local time proves the remaining child deadline without an elapsed-speed assertion. [23]
+- Parity bodies carry no knowledge diff under hostile gitconfig [24]
+
+- Published rename and raw-diff command texts equal the intercepted executed arguments; the raw/numstat commands carry the parsed-diff options. [25]
+- Published rename and raw-diff command texts equal the intercepted executed arguments; the raw/numstat commands carry the parsed-diff options. [26]

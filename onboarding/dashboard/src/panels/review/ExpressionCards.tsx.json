@@ -3,7 +3,43 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "7df7fdf55ac873fb7b9cc26e52cdf9a9797977fc",
+        "blob": "10bd037f0b55003954928f8873757630e8d12f9e",
+        "content": "sha256:da56b425e8d2aafceaa433acc3059f7a875271ed403f220a4b1341db4999d1e2",
+        "locator": {
+          "kind": "symbol",
+          "name": "CardCurrentness"
+        }
+      },
+      "id": "RLZ-8XV20R",
+      "invariant": "INV-A9V761",
+      "origin": {
+        "handoffEntry": "L86-CODE-R1-F06",
+        "leaf": "260928-MIK-L86"
+      },
+      "rationale": "It renders the owner-supplied per-side state reasons outside disclosures.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "10bd037f0b55003954928f8873757630e8d12f9e",
+        "content": "sha256:9c488c85bfdc894c5be594878df6304aa523c3f6da137c6acccd1d2c0604a950",
+        "locator": {
+          "kind": "symbol",
+          "name": "EntryIdentifiers"
+        }
+      },
+      "id": "RLZ-DB9HX0",
+      "invariant": "INV-9VPYCZ",
+      "origin": {
+        "handoffEntry": "L86-CODE-R1-F07",
+        "leaf": "260928-MIK-L86"
+      },
+      "rationale": "It consolidates the selected entries once outside the card repetition.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "10bd037f0b55003954928f8873757630e8d12f9e",
         "content": "sha256:32cabadfc61cc0f183651fd230ebe785d4857ded556394afc431e1452e7fdc0c",
         "locator": {
           "kind": "symbol",
@@ -65,37 +101,14 @@
       ]
     },
     "11": {
-      "note": "The inventory jump, the full file through the landed content read (with its pane name for the intent markers since MIK-L34), and a file opened from the explorer.",
+      "note": "Cards open their own full file with marker identity and link all changed files to the comparison viewer; no explorer OpenedFile is rendered.\n\nAnchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "7df7fdf55ac873fb7b9cc26e52cdf9a9797977fc",
-            "content": "sha256:7208a406b85d23c976192f7c221941a0d643c7e23bf2345f2556c171fdccd987",
+            "blob": "10bd037f0b55003954928f8873757630e8d12f9e",
+            "content": "sha256:6ea318a93346c861f094594348ca8cfaa4e551e6dc8ef221c2423da4103ba428",
             "locator": {
-              "kind": "symbol",
-              "name": "InventoryLink"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "7df7fdf55ac873fb7b9cc26e52cdf9a9797977fc",
-            "content": "sha256:723771698aa4b8c52cad549382ec20d3b37bf3894ca8554510363c0e4ffb2bb3",
-            "locator": {
-              "kind": "symbol",
-              "name": "FullFile"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "7df7fdf55ac873fb7b9cc26e52cdf9a9797977fc",
-            "content": "sha256:2cb33b46195eb8d1429ab6d76f53e93ef860f2ec0ecdf72664392d724c7611c2",
-            "locator": {
-              "kind": "symbol",
-              "name": "OpenedFile"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -186,6 +199,106 @@
         }
       ]
     },
+    "16": {
+      "note": "Card collection assembly with grouping, order and counts",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "10bd037f0b55003954928f8873757630e8d12f9e",
+            "content": "sha256:698a647b4adeaefd20ff7292d8ed050c81005d8c5d7b1677cf701d52dca7435c",
+            "locator": {
+              "kind": "symbol",
+              "name": "ExpressionCards"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "10bd037f0b55003954928f8873757630e8d12f9e",
+            "content": "sha256:06971865f56c00cf17e4ccee230ccb26f0aefa86ed3cee69860a047bb1c367bc",
+            "locator": {
+              "end": 155,
+              "kind": "line_range",
+              "start": 137
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "Grouped ready cards with returning-card state",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "10bd037f0b55003954928f8873757630e8d12f9e",
+            "content": "sha256:4ad483977ffa7147ebc1c1f57bd06a648433d23fe61e10c79e8a5758fb9fb5c3",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReadyCards"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "10bd037f0b55003954928f8873757630e8d12f9e",
+            "content": "sha256:d58b143aa40a7973d398504dfcaf5583b58d0749828477ba92f974cd7ed08c4a",
+            "locator": {
+              "end": 198,
+              "kind": "line_range",
+              "start": 180
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "One focused card with roles, voices and excerpts",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "10bd037f0b55003954928f8873757630e8d12f9e",
+            "content": "sha256:60a4a9d3e0c2ec692a5bcc1bf71ff6a55890770a024eb45f576c8ed3355c1c41",
+            "locator": {
+              "kind": "symbol",
+              "name": "FocusedCard"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "10bd037f0b55003954928f8873757630e8d12f9e",
+            "content": "sha256:84f4dae308f60b8fd03bc93601650d88379b6699412bee6d8521127f778ae151",
+            "locator": {
+              "end": 367,
+              "kind": "line_range",
+              "start": 349
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "Link from a card to the full changed-file inventory",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "10bd037f0b55003954928f8873757630e8d12f9e",
+            "content": "sha256:a53187d9b0475a8b77ae182519e2e396841a4b8982704f0584348a9f80082cc1",
+            "locator": {
+              "kind": "symbol",
+              "name": "InventoryLink"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "Loading, unavailable and not-a-tree-comparison states.",
       "targets": [
@@ -196,6 +309,34 @@
             "locator": {
               "kind": "symbol",
               "name": "ExpressionCards"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "In-card full file with markers through the shared pane",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "10bd037f0b55003954928f8873757630e8d12f9e",
+            "content": "sha256:1dcdadd6be389471b1193b5acb990a279c302ca6cd950a578a2add5621ea07a8",
+            "locator": {
+              "kind": "symbol",
+              "name": "FullFile"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "10bd037f0b55003954928f8873757630e8d12f9e",
+            "content": "sha256:222146fbd85e5e526a4a807488010e2391265dd1ce9a85a76dbcacd42fac68e8",
+            "locator": {
+              "end": 599,
+              "kind": "line_range",
+              "start": 581
             }
           },
           "kind": "code"
@@ -218,7 +359,7 @@
         },
         {
           "anchor": {
-            "blob": "7df7fdf55ac873fb7b9cc26e52cdf9a9797977fc",
+            "blob": "10bd037f0b55003954928f8873757630e8d12f9e",
             "content": "sha256:32cabadfc61cc0f183651fd230ebe785d4857ded556394afc431e1452e7fdc0c",
             "locator": {
               "kind": "symbol",
@@ -234,7 +375,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7df7fdf55ac873fb7b9cc26e52cdf9a9797977fc",
+            "blob": "10bd037f0b55003954928f8873757630e8d12f9e",
             "content": "sha256:932b01d473be8eb0ba8728c7ce2d4d20493b5486ccff158548a36a5b62e626d6",
             "locator": {
               "kind": "symbol",
@@ -245,7 +386,7 @@
         },
         {
           "anchor": {
-            "blob": "7df7fdf55ac873fb7b9cc26e52cdf9a9797977fc",
+            "blob": "10bd037f0b55003954928f8873757630e8d12f9e",
             "content": "sha256:622715ea4ed9ef3c85e0e1e41d1d6f81e3319f64a612fb1ff1d019522cb98be1",
             "locator": {
               "end": 185,
@@ -262,7 +403,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7df7fdf55ac873fb7b9cc26e52cdf9a9797977fc",
+            "blob": "10bd037f0b55003954928f8873757630e8d12f9e",
             "content": "sha256:b693112743946824c9835e510dcf73e4a5835fac66be517b358180d61ea52804",
             "locator": {
               "kind": "symbol",
@@ -273,7 +414,7 @@
         },
         {
           "anchor": {
-            "blob": "7df7fdf55ac873fb7b9cc26e52cdf9a9797977fc",
+            "blob": "10bd037f0b55003954928f8873757630e8d12f9e",
             "content": "sha256:73dca720d19c272d146f0c686f1bb011ef47131c6e15e95fee5e04d08b9c94ed",
             "locator": {
               "kind": "symbol",
@@ -284,7 +425,7 @@
         },
         {
           "anchor": {
-            "blob": "7df7fdf55ac873fb7b9cc26e52cdf9a9797977fc",
+            "blob": "10bd037f0b55003954928f8873757630e8d12f9e",
             "content": "sha256:a27f4f90b504fe28479ac3ff5971dbc513d7a0b19c8ce6cff3837ad12f2c7611",
             "locator": {
               "kind": "symbol",
@@ -295,7 +436,7 @@
         },
         {
           "anchor": {
-            "blob": "7df7fdf55ac873fb7b9cc26e52cdf9a9797977fc",
+            "blob": "10bd037f0b55003954928f8873757630e8d12f9e",
             "content": "sha256:6a5ff5eccdc7e6e0820b935d480c47cf96402c18d831e90ffa9847fcfe0a6f74",
             "locator": {
               "kind": "symbol",
@@ -327,7 +468,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7df7fdf55ac873fb7b9cc26e52cdf9a9797977fc",
+            "blob": "10bd037f0b55003954928f8873757630e8d12f9e",
             "content": "sha256:9c391e19b40fc23a4d959226b2202402c3e074276b552929342bc321b40f034c",
             "locator": {
               "kind": "symbol",

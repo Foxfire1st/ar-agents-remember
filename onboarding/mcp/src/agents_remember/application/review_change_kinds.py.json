@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "94a748941e53de00baa9e62505f4f1ee7c66d3d3",
+            "blob": "ed9d096aee0b281a72e27c202576c36a53b888e4",
             "content": "sha256:9e5efdee50db1b31016c8d8c4dfed99b08bcfc8a152dcda368b635b848d3cfa5",
             "locator": {
               "end": 33,
@@ -24,7 +24,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "94a748941e53de00baa9e62505f4f1ee7c66d3d3",
+            "blob": "ed9d096aee0b281a72e27c202576c36a53b888e4",
             "content": "sha256:aa79ae63ffbd53aac3ffc15133454659fda37e6091ad70569be86191c8e29a8b",
             "locator": {
               "kind": "symbol",
@@ -62,7 +62,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "94a748941e53de00baa9e62505f4f1ee7c66d3d3",
+            "blob": "ed9d096aee0b281a72e27c202576c36a53b888e4",
             "content": "sha256:6dd3007bc65f8d696a0a6296e764bc37817200694a60a10f54af00c2464b7207",
             "locator": {
               "kind": "symbol",
@@ -89,7 +89,7 @@
         },
         {
           "anchor": {
-            "blob": "94a748941e53de00baa9e62505f4f1ee7c66d3d3",
+            "blob": "ed9d096aee0b281a72e27c202576c36a53b888e4",
             "content": "sha256:37b1faa1498ab2fe64c3540650354aab2725a29734be695e095f3a51738a419f",
             "locator": {
               "kind": "symbol",
@@ -105,7 +105,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "94a748941e53de00baa9e62505f4f1ee7c66d3d3",
+            "blob": "ed9d096aee0b281a72e27c202576c36a53b888e4",
             "content": "sha256:2c89aad673abb897ff397448a2607643f5520ff7adae2e6ff7527002f6ee8d5c",
             "locator": {
               "kind": "symbol",
@@ -116,7 +116,7 @@
         },
         {
           "anchor": {
-            "blob": "94a748941e53de00baa9e62505f4f1ee7c66d3d3",
+            "blob": "ed9d096aee0b281a72e27c202576c36a53b888e4",
             "content": "sha256:bee5e8ea9e7b01025acecf40d33515acd158951b906ab4bf2e1a9ad373627ebd",
             "locator": {
               "kind": "symbol",
@@ -132,14 +132,97 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e82e48a3fe51cf1b33e2db3907db00759c429781",
+            "blob": "0ace720dda858a7f68a249b7fe9e3501b85f088b",
             "content": "sha256:df335d4a125139d744fd24d04fcc90476e7739486a731c2c73afa5927cfabd48",
             "locator": {
-              "end": 525,
+              "end": 527,
               "kind": "line_range",
-              "start": 525
+              "start": 527
             },
             "path": "mcp/src/agents_remember/application/knowledge_review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "Meaning facts come from the shared index-only module\n\nAnchor: `RecordChanges`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ed9d096aee0b281a72e27c202576c36a53b888e4",
+            "content": "sha256:af2776447a89b28fc199b2491504ca9f1a81d587afcd42dc92730406797405d7",
+            "locator": {
+              "end": 66,
+              "kind": "line_range",
+              "start": 60
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "One comparison's facts ride beside the lane reader",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ed9d096aee0b281a72e27c202576c36a53b888e4",
+            "content": "sha256:0b8d329d6950e159091d2fb8fc8112289ce0db4c2ac4f58814c669840a64183c",
+            "locator": {
+              "kind": "symbol",
+              "name": "meaning"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "The family badge maps the shared guarantee onto badge words",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ed9d096aee0b281a72e27c202576c36a53b888e4",
+            "content": "sha256:39d290d8adb15d41a549871142293dd26d15a4ec1ca18fde3672e386502813ab",
+            "locator": {
+              "kind": "symbol",
+              "name": "_guarantee"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "Member intent and membership are the shared facts directly",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ed9d096aee0b281a72e27c202576c36a53b888e4",
+            "content": "sha256:02e076de6b859d7f80d4a047b31730ced11efb09774247e868b0faf95267cbbb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_intent"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "The local _intent delegates revision, retired-presence and same-revision wording classification to shared RecordChanges.intent, presence and wording.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "01e7092a2503a3e8c512aff009445560570c1b57",
+            "content": "sha256:73cd2857614c7ca5912fcd4e525cfdf5fa82df4fbfb7981e967e2aaba4f2b071",
+            "locator": {
+              "end": 166,
+              "kind": "line_range",
+              "start": 145
+            },
+            "path": "mcp/src/agents_remember/application/review_record_changes.py"
           },
           "kind": "code"
         }
@@ -161,7 +244,7 @@
         },
         {
           "anchor": {
-            "blob": "94a748941e53de00baa9e62505f4f1ee7c66d3d3",
+            "blob": "ed9d096aee0b281a72e27c202576c36a53b888e4",
             "content": "sha256:dfc0748b87c6f412da2fa705bd08ed0bb08ef5143e10d70c2b8eceb3a40dedb8",
             "locator": {
               "kind": "symbol",
@@ -172,17 +255,55 @@
         }
       ]
     },
-    "3": {
-      "note": "A fact's three states, and its reasons with the entries that established nothing first (review R2-3).",
+    "20": {
+      "note": "The local _intent delegates revision, retired-presence and same-revision wording classification to shared RecordChanges.intent, presence and wording.",
       "targets": [
         {
           "anchor": {
-            "blob": "94a748941e53de00baa9e62505f4f1ee7c66d3d3",
-            "content": "sha256:0fd8bc8a743204d4c2b0f2ac027fbb6dbed33b4b5704d0fabe825afe18512ab0",
+            "blob": "01e7092a2503a3e8c512aff009445560570c1b57",
+            "content": "sha256:cc570d9c52a473c527d9778b5970716706dd111579b46bbf35f5818e457e37aa",
             "locator": {
-              "kind": "symbol",
-              "name": "_Fact"
-            }
+              "end": 204,
+              "kind": "line_range",
+              "start": 190
+            },
+            "path": "mcp/src/agents_remember/application/review_record_changes.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "The local _intent delegates revision, retired-presence and same-revision wording classification to shared RecordChanges.intent, presence and wording.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "01e7092a2503a3e8c512aff009445560570c1b57",
+            "content": "sha256:598502a0c56526bc2d164e81a0c254e2c731ddb8d80f0af738e511d0a8db2ec2",
+            "locator": {
+              "end": 17,
+              "kind": "line_range",
+              "start": 16
+            },
+            "path": "mcp/src/agents_remember/application/review_record_changes.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The shared Fact exposes established/unknown/not_established states and orders unresolved reasons from non-establishing entries first.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "01e7092a2503a3e8c512aff009445560570c1b57",
+            "content": "sha256:795a3a4f913df9261c866591cec46b79afe7d4c2bfcce03581ba118201eab79c",
+            "locator": {
+              "end": 89,
+              "kind": "line_range",
+              "start": 45
+            },
+            "path": "mcp/src/agents_remember/application/review_record_changes.py"
           },
           "kind": "code"
         }
@@ -204,7 +325,7 @@
         },
         {
           "anchor": {
-            "blob": "94a748941e53de00baa9e62505f4f1ee7c66d3d3",
+            "blob": "ed9d096aee0b281a72e27c202576c36a53b888e4",
             "content": "sha256:d571492cd9c2f9d26450f1f01790af8c7ae5cfa69ca908eac207d81b9d21fcc5",
             "locator": {
               "kind": "symbol",
@@ -231,7 +352,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "94a748941e53de00baa9e62505f4f1ee7c66d3d3",
+            "blob": "ed9d096aee0b281a72e27c202576c36a53b888e4",
             "content": "sha256:07ce1edf356f21af4331839ef8a4a4d356b0b1ae1c92cb544edfa4916e34fe06",
             "locator": {
               "kind": "symbol",
@@ -242,7 +363,7 @@
         },
         {
           "anchor": {
-            "blob": "94a748941e53de00baa9e62505f4f1ee7c66d3d3",
+            "blob": "ed9d096aee0b281a72e27c202576c36a53b888e4",
             "content": "sha256:58205f9aa4c67bbda425b7c9c248bfa77f8b4f8c5f0eb1544c4a014056e348a7",
             "locator": {
               "kind": "symbol",
@@ -254,37 +375,16 @@
       ]
     },
     "6": {
-      "note": "Intent: the revision, presence (retired counts as removed) and a same revision whose text differs.",
+      "note": "The local _intent delegates revision, retired-presence and same-revision wording classification to shared RecordChanges.intent, presence and wording.",
       "targets": [
         {
           "anchor": {
-            "blob": "94a748941e53de00baa9e62505f4f1ee7c66d3d3",
-            "content": "sha256:c22afa54133d18347a5f09f76335564a970e96623c14e5eef398e723c8fe8908",
+            "blob": "ed9d096aee0b281a72e27c202576c36a53b888e4",
+            "content": "sha256:02e076de6b859d7f80d4a047b31730ced11efb09774247e868b0faf95267cbbb",
             "locator": {
-              "kind": "symbol",
-              "name": "_intent"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "94a748941e53de00baa9e62505f4f1ee7c66d3d3",
-            "content": "sha256:2ea2feb2fee7a4cbd9282e7e19c5f2948f8e54a4f35825b52ce0dba394726166",
-            "locator": {
-              "kind": "symbol",
-              "name": "_presence"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "94a748941e53de00baa9e62505f4f1ee7c66d3d3",
-            "content": "sha256:fd8e46c32dbaefbbf0abbc127eb6dfb921df2a712bc1868a2504f268ecb616b0",
-            "locator": {
-              "kind": "symbol",
-              "name": "_WORDING"
+              "end": 266,
+              "kind": "line_range",
+              "start": 265
             }
           },
           "kind": "code"

@@ -30,6 +30,7 @@ A rejected response is never a successful replacement. Exact identity and comple
 
 None recorded.
 
+Captured outline families and members mount the cycle with a review cache and cursor helpers, advancing walks per side with loaded and complete inventories. Cases assert exact retained content, structured page-refusal failure, loaded claim scope across content-only, completed and unavailable shapes, accumulated-context resets, and selected intent, evidence, siblings and open layout preserved while late paths render.
 ## Evidence
 
 ### Docs References
@@ -57,3 +58,8 @@ The cases below exercise the actual read cycle and rendered outcome boundary.
 No external repository or live service is exercised by these mounted cases.
 
 No cross-repository reference is required.
+- Captured outline families and members [10]
+- Complete-inventory expectation helper [11]
+- Cycle mount helper with cache and fetch [12]
+- Family centre mount with roster continuation [13]
+- Late-path rendering beside preserved selection [14]

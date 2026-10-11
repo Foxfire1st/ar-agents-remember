@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "New reviewer obligation from MIK-R86@v1 (packet a78d9ae3, Architect qualification 2026-10-08 11:18:45 UTC); implemented on the W03 successor tree 95f61633, whole-primary CODE PASS verdict 3663bf07. Evidence: FamilyTree.triage.test.tsx; ReviewSurface.navigationTree.test.tsx"
+  },
+  "applicability": "The one-line sidebar filter.",
+  "conditions": [
+    "Matches family titles/identifiers and invariant identifiers/summaries inside the current view.",
+    "A matching family shows with its members of that view."
+  ],
+  "exclusions": [
+    "Searching guarantee/statement texts (no longer in the sidebar)."
+  ],
+  "id": "INV-DEDX8T",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "FamilyTree.triage.test.tsx; ReviewSurface.navigationTree.test.tsx"
+      ],
+      "path": "notes/reports/l86-curator-W03/handoff-phase1.json"
+    },
+    "handoffEntry": "MIK-R86@v1 rule 9",
+    "leaf": "260928-MIK-L86",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The filter matches family titles and record identifiers and invariant summaries within the chosen view.",
+  "status": "proposed",
+  "supersedes": []
+}

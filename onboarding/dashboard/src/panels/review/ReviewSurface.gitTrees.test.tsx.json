@@ -19,6 +19,22 @@
         }
       ]
     },
+    "10": {
+      "note": "Leaf-wide remaining counts beside the cards",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "56003e40e4863c3345c847dc891127b033e63591",
+            "content": "sha256:d72b854f5ff156d09af67bfda59176513954a06bae9ad2ef486461b2354c7c8a",
+            "locator": {
+              "kind": "symbol",
+              "name": "remaining"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
     "2": {
       "note": "The stub: cards body for a named selection, a lane-less answer for the lane read (MIK-L32), leaf-wide body otherwise, every URL recorded.\n\nAnchor: \"const withoutLane = (body: ReviewTreesResult) => ({\"; \"function serve(\"",
       "targets": [
@@ -98,6 +114,66 @@
               "end": 315,
               "kind": "line_range",
               "start": 289
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Changed-invariants fixture for the converted leaf",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "56003e40e4863c3345c847dc891127b033e63591",
+            "content": "sha256:7c4dbfa817ffdc9a61ddb43a3fa5b92d8eb1f98ddb125462ad2084caac31f225",
+            "locator": {
+              "kind": "symbol",
+              "name": "CHANGED"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Per-route captured world with member and family cards",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "56003e40e4863c3345c847dc891127b033e63591",
+            "content": "sha256:03165c9dd2c4e775259d0e4f00d82de6bd53398ebf2fcb9d878c5a7edfc4b1ba",
+            "locator": {
+              "kind": "symbol",
+              "name": "serve"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "56003e40e4863c3345c847dc891127b033e63591",
+            "content": "sha256:a115db9a645309fa71aa4a864b6f954a81c3c7b410720ca8afec42fc6e962677",
+            "locator": {
+              "end": 60,
+              "kind": "line_range",
+              "start": 42
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "Touched member resolution in the rendered centre",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "56003e40e4863c3345c847dc891127b033e63591",
+            "content": "sha256:d0cfaf5a601a7a36e62e3382724e1d7a506384138959dcbdf67ff1cc37a3c869",
+            "locator": {
+              "kind": "symbol",
+              "name": "touched"
             }
           },
           "kind": "test"

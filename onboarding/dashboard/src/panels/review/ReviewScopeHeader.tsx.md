@@ -18,7 +18,9 @@ read under the new selection (`ICR-R26` isolation under a retained shell).
 
 `ReviewScopeHeader` renders the record label (`recordLabelOf`), the task's source inventory count (or
 "Source inventory unavailable"), and "Read-only"; then an optional currentness line; then the disclosure
-with the task identifiers, the comparison line, the before → after code trees and the family-context line.
+with normal task identifiers, comparison identity and before → after code trees. `FamilyScope` remains
+open with selected-subject family state and limitations; pending/unavailable metadata renders open
+read-state content rather than a normal closed provenance disclosure.
 
 **Two kinds of line.** The inventory, the code trees and the record label are the **task's**, whichever
 subject is selected, so they always come from the payload the workspace is mounted over. The comparison
@@ -73,3 +75,6 @@ No configured domain documentation could be checked.
 No cross-repository behavior is implemented in this file.
 
 No meaningful cross-repo references found.
+- Scope header with record label, inventory and scope [6]
+- Family scope block with limitations [7]
+- Subject scope derivation from catalogue or task context [8]

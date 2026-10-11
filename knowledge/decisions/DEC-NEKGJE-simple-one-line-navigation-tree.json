@@ -1,0 +1,41 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "Both shapes were live (old sidebar vs tree); every later rail change must keep one-line rows and keep texts out of the sidebar."
+  },
+  "alternatives": [
+    {
+      "option": "One line per family and invariant with one short change badge; Changed-but-default views and filter shorten the tree; texts, reasons and records live in the main page only.",
+      "reason": "D48 as carried by the packet rules 1-11: finding one's way needs density, and the main page already shows every text.",
+      "status": "chosen"
+    },
+    {
+      "option": "Keep the prose sidebar with guarantee/member statements, breakdown lines and per-row disclosures in the rail.",
+      "reason": "D48 rules it out: 24,713 px and 183 disclosures beside a main page showing the same texts.",
+      "reconsider_when": "A named reader workflow proves it must judge change kinds from inside the rail without opening the main page.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Later rail work keeps one-line rows, badge words and the Changed default; record texts stay out of the sidebar."
+  ],
+  "context": "Developer direction D48 on the L86 reviewer sidebar (2026-10-04): a simple tree of one-line entries with the full lines in the main page, everything collapsed open by default, and the installed primitives reused instead of redeveloped.",
+  "decider": "Developer direction D48 (2026-10-04).",
+  "id": "DEC-NEKGJE",
+  "links": [],
+  "origin": {
+    "handoff": {
+      "path": "notes/reports/l86-curator-W03/handoff-phase1.json"
+    },
+    "handoffEntry": "DEC-D47-tree",
+    "leaf": "260928-MIK-L86",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

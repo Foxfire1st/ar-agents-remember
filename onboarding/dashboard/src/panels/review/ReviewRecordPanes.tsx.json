@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "8c2cdf2ffa4da4b20abca610d35e2747c10c1d86",
-        "content": "sha256:5e7273270ed2d813c473958ee49a2c97510aa9f21aa0e317af39f74f56f99d72",
+        "blob": "a7012ac6dceefc718fa6357c032beac7a950841a",
+        "content": "sha256:e1b0479daed03aa463ba1b2cf87f7f185c1558cffc9de30e70db94afee3890e9",
         "locator": {
           "kind": "symbol",
           "name": "ReviewTechnicalDetails"
@@ -67,6 +67,57 @@
               "start": 359
             },
             "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The open record facts filter authored fields and display detection signals and combined unresolved references.\n\nAnchor: current inclusive source extent",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a7012ac6dceefc718fa6357c032beac7a950841a",
+            "content": "sha256:315fcb5d88a6d6d194475bbdeca1f599db68ae1e3071877da303a7736f3f18b5",
+            "locator": {
+              "end": 69,
+              "kind": "line_range",
+              "start": 27
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "Main-page facts render lane/landed counts, staleness, submission reason and optional All changes callback.\n\nAnchor: current inclusive source extent",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a7012ac6dceefc718fa6357c032beac7a950841a",
+            "content": "sha256:862842592f5d9d34e76e9258a4e1237e2d4af789453a683c1e9c48d1cf610b47",
+            "locator": {
+              "end": 119,
+              "kind": "line_range",
+              "start": 70
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "Compact provenance identities remain in the technical disclosure, with pending state and paging outside it.\n\nAnchor: current inclusive source extent",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a7012ac6dceefc718fa6357c032beac7a950841a",
+            "content": "sha256:e1b0479daed03aa463ba1b2cf87f7f185c1558cffc9de30e70db94afee3890e9",
+            "locator": {
+              "end": 187,
+              "kind": "line_range",
+              "start": 121
+            }
           },
           "kind": "code"
         }

@@ -14,6 +14,7 @@ it, and which test modules or source files consume it. Every stable contract ide
 `mcp/test_support/agents_remember_test_support/testing/evidence_lifecycle.py` loads and validates
 the file.
 
+`evidence-lifecycle.toml` declares durable evidence ownership, lifetime and replacement contracts. The current comparison changeset test is an exact-scope consumer of six artifact rows; this is catalog membership, not a claim that an invocation ran or passed.
 ## Current master-retirement registration
 
 The consumers of the `mcp/tests/curator_coherence_test_support.py` artifact include `test_abandoned_series_closeout.py`, `test_master_retirement.py` and `test_standalone_master_retirement.py`, and the consumer list of the `mcp/tests/fixtures/repository_profiles/node/package-lock.json` artifact includes `test_master_retirement.py` and `test_standalone_master_retirement.py`. No governed contract or artifact is added.
@@ -126,6 +127,7 @@ default unit run includes.
 The command keeps a comment that follows a table header on its line, and comment lines that stand
 directly above a table header, with that row. It refuses a comment inside a list.
 
+`mcp/tests/test_comparison_changeset.py` is currently listed on six `consumer_scope = "exact"` artifact rows: `anchor_fixture_models.py`, `diff_scope_test_support.py`, the repository-profile Node `package-lock.json`, `knowledge_row_codec_test_support.py`, `knowledge_rows_test_support.py` and `read_scope_test_support.py` (all beneath `mcp/tests`). Those declarations record the comparison module's artifact population, not evidence execution.
 ## 260928-MIK-L99 — a leaf's agents hand over to each other
 
 The catalog's consumer list names `test_leaf_handover.py` and `test_leaf_handover_review_rounds.py`; the lane catalog registers `test_leaf_retirement_wording.py`. No module artifact rows were added for the three new test modules, and the changed wording and turn-truth test artifacts keep their existing rows.
@@ -170,6 +172,24 @@ files are both gone removed without file restores.
 
 - The loader that validates the file and refuses a catalog that is not canonical. [13]
 - The Node lockfile fixture's row: an exact consumer scope and the start of its consumer list. [94]
+
+- The registered-preview comparator retains its own declared artifact and consumers. [260]
+- The comparison test consumes the shared read-scope fixture registered under knowledge-read-scope-cases. [264]
+
+
+
+
+- The comparison test is covered [261]
+
+
+
+
+
+
+- It consumes the cold-start/topology artifact too [262]
+
+
+
 
 ## Current catalog registration
 
@@ -308,7 +328,11 @@ The converted-drift test module joins the consumer lists it exercises with: one 
 each behavioural case failing before its fix and passing after.
 - The converted-drift module is registered as a consumer of the evidence it exercises. [99]
 - The durable-artifact consumer entries this catalog now declares; lane rows belong to test-evidence-lanes.toml. [14]
-- The two reviewer worklist test modules on that row's consumer list. [95]
+
+
+- It consumes the knowledge-read-scope topology fixture [264]
+
+
 
 - The Node lockfile fixture lists the worktree-environment regression module as an exact consumer; this is reachability accounting, not a lifecycle execution result. [261]
 
@@ -317,4 +341,14 @@ The converted-drift registration once tabled under keys 14/95 now stands as the 
 
 ## L112 post-L74 correspondence for parked comparison references
 
-The parked W03 comparison-consumer prose and its original261/262/263 target objects are retained verbatim in the Curator sync3-ten-carrier-intake account. The current L74 composition has no test_comparison_changeset.py and no catalog row naming it; those old consumer claims are not current registrations and are not re-anchored onto unrelated rows. Landed L74 qualified counts, replacement contracts, preview consumers and read-boundary-oracle registration above remain intact. The live catalog was statically parsed as13 contracts and88 artifacts at this intake; this measurement is not loader/test execution, CODE or memory acceptance. The incoming read-boundary replacement, not this archival disposition, owns the changed fixture model.
+Historical L112 post-L74 intake: the parked W03 comparison-consumer prose and original261/262/263 targets were preserved in the Curator sync3-ten-carrier account. That intermediate intake reported no comparison module/consumer; it is superseded, not the current registration contract. The current source retains test_comparison_changeset.py and six exact catalog consumer rows, including read_scope_test_support for knowledge-read-scope-cases. The current parsed catalog has13 contracts and90 artifacts on the450ade9c/e06f241b pair; this source observation is not loader/test execution or CODE/MEMORY acceptance. Incoming qualified contracts, preview consumers and read-boundary registrations are retained, not replaced by old W03 claims.
+- The two reviewer worklist test modules on that row's consumer list. [95]
+
+
+
+
+
+
+
+
+- The read_scope_test_support artifact registers test_comparison_changeset as an exact consumer of knowledge-read-scope-cases. [264]

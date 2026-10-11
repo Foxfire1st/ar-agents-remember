@@ -19,6 +19,56 @@
         }
       ]
     },
+    "10": {
+      "note": "Expected destination order with reason sentences",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a3dfe0b9d6f0550b62e468a08b338d35c3d8c973",
+            "content": "sha256:9d58c8f479deb5faf57064edc60b9f835f13e781893f62214d5cf73b970bf8d2",
+            "locator": {
+              "kind": "symbol",
+              "name": "expected"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "Held-lane rail keeping All usable\n\nAnchor: `rail`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a3dfe0b9d6f0550b62e468a08b338d35c3d8c973",
+            "content": "sha256:44b1bb6c79b4128a725fc7110fe5748ffd2b4f62a09fbaa251d4b653ec008b41",
+            "locator": {
+              "end": 57,
+              "kind": "line_range",
+              "start": 41
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "Unanswered worklist reading in its own view\n\nAnchor: `rail`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a3dfe0b9d6f0550b62e468a08b338d35c3d8c973",
+            "content": "sha256:38437d1a1bc95ee1156bc6ad202d2c4e2708d83ed591c08ccd802a20a4040010",
+            "locator": {
+              "end": 83,
+              "kind": "line_range",
+              "start": 72
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
     "2": {
       "note": "The fetch stub, with a held read.\n\nAnchor: \"function answer(url: URL): unknown {\"; \"function serve(hold?\"",
       "targets": [
@@ -132,6 +182,22 @@
               "end": 258,
               "kind": "line_range",
               "start": 231
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "Lane fixture with destinations and file counts",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a3dfe0b9d6f0550b62e468a08b338d35c3d8c973",
+            "content": "sha256:d987dbb9be8890dcabfba1d461847ddf283759e0937dc7fefd2bd4dce3cb6e7a",
+            "locator": {
+              "kind": "symbol",
+              "name": "lane"
             }
           },
           "kind": "test"

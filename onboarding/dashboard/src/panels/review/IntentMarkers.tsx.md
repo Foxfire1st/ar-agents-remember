@@ -11,8 +11,9 @@ names the invariants whose recorded ranges meet its changed lines; following one
 position, and `Back to <file>` returns to the hunk with focus on its marker.** Every mark comes from the one per-file
 classification (MIK-R32) through `hunkMarkers.ts`, placed on the side line numbers it names, and sits in the diff's own
 gutter (`file-viewer/markGutter.tsx`); a mark's list opens below the pane. The module serves every diff surface of a
-tree comparison's workspace: the landed source-content view (the explorer's opened file, `Expand full file`, a card's
-and the lane's full file), the lane's focused windows (through `LaneFileFocus.tsx`) and the card excerpts. Nothing here
+tree comparison's workspace that still use these readers: the cards' full-file source-content view and
+card excerpts. The retired explorer/lane full-file and focused-window callers are not current integration
+surfaces. Nothing here
 edits, comments on or assesses a change (the adopted Exclusions).
 
 ## Code Commentary
@@ -22,7 +23,7 @@ edits, comments on or assesses a change (the adopted Exclusions).
 - **One pane's marks (`usePaneMarking`).** Given `{ path, pane, file, layout, window, whole? }` inside the workspace's
   scope: a file with a file-level mark gets only that note (`FileMarkNote`); otherwise every owner hunk is placed by
   `markAnchor`, and each placed hunk becomes a `PaneMark` whose node is its `MarkButton`. The pane name
-  (`opened`, `file`, `lane-full`, `lane-window:<hunk>`, `card:<key>`, `card-excerpt:<key>`) makes a return land in the
+  (including `card:<key>` and `card-excerpt:<key>`) makes a return land in the
   pane the marker was followed from: `returningHunk` picks the scope's `returning` hunk for this path and pane, which
   becomes the gutter's `reveal` and reopens its list (initial state and effect), and `onRevealed` is the scope's
   `settle`. A whole-text pane names the hunks it could not place (`PastTextNote`: past the bounded text) instead of
@@ -37,14 +38,14 @@ edits, comments on or assesses a change (the adopted Exclusions).
   through the scope (`follow({ path, pane, hunk }, target)`); the per-side unknown lines; and one sentence per tone,
   for a linked hunk "Listed because a recorded range meets a changed line of this hunk; that asserts no coverage,
   correctness or preservation." (ICR-R34 rule 5).
-- **The file-level mark.** `FileMark` (for a view that draws it once above several panes, the lane's windows) and
+- **File-level mark.** `FileMark` and
   `FileMarkNote`: one mark for the whole file of a confirmed-unregistered path, or one note that neither side's
   knowledge could be read; nothing for a file with per-hunk marks or outside a workspace.
-- **The source-content view (`useSourceMarking`).** Reads the classification through `useMarkClassification` (only
-  for a changed file; the caller's `classification` when it holds one, as the lane's full file does), places marks
-  only when `describesDrawn` holds (the classification's two side blobs are the drawn objects' ids), over each whole
-  side (`sideWindow`, `sourceInput`: the layout on screen when both sides are drawn, else split placement), and
-  prefixes `MarkReadNote`.
+- **The source-content view (`useSourceMarking`).** For a changed file it uses
+  `useMarkClassification`, accepting a classification if its caller already holds one. The current
+  card Full file caller supplies the pane name and uses the shared scope read, not a lane Full file
+  owner. Marks are placed only when the classification describes the drawn blobs, over each whole
+  side in the shown layout, prefixed by `MarkReadNote`.
 - **Never silence (`MarkReadNote`).** A changed file shows why it has no marks: `unlisted` ("the change inventory is
   partial and does not list this path, so its classification is not read"; review R1 F5), `loading`, `unavailable`
   with the owner's code and detail, or `other-content` ("the classification describes other content of this path
@@ -69,13 +70,12 @@ edits, comments on or assesses a change (the adopted Exclusions).
 
 ### Invariants And Boundaries
 
-- **Candidate invariant (not ingested): every hunk drawn in any diff surface carries its mark: lane windows, full
-  files and card excerpts, including hunks inside collapsed runs.** Realized by `usePaneMarking` (every owner hunk a
+- **Candidate invariant (not ingested): surviving card full-file/excerpt surfaces mark the owner hunks
+  they draw, including hunks inside collapsed runs.** Realized by `usePaneMarking` (every owner hunk a
   pane draws is placed), `useSourceMarking` (full files), `useExcerptMarking` (card excerpts, only the drawn sides
-  compared), `LaneFileFocus.useWindowMarking` (a window marks each neighbour its context shows: the L32 F5 carry,
-  ruling 2026-09-30T13:07:38) and `markGutter.expandMarkedRuns` (no mark in a collapsed run, ruling Q4); a mark is
+  compared) and `markGutter.expandMarkedRuns` (no mark in a collapsed run, ruling Q4); a mark is
   withheld only when the drawn text is not the classified text, and then the pane says so. Proved by
-  `IntentMarkers.test.tsx` (full diff, lane windows with three marks in the F5 window, card excerpts with an unreadable
+  `IntentMarkers.test.tsx` (retained full-file/card cases and card excerpts with an unreadable
   memory side, the other-content and unchanged cases), `markGutter.test.tsx` (collapsed runs), the surface case's card
   excerpts, and the mutation sets (M7, Q4-1 to Q4-4, F1, N3 and R2-3 all caught).
 - Nothing here computes an intersection: marks and lists are `hunkMarkers.ts`'s reading of the owner's response.
@@ -105,7 +105,9 @@ No configured live documentation source was available for this pass.
 - Card excerpts: only the drawn sides compared (review R1 F1); an unchanged file's card never active. [8]
 - Why a changed file shows no marks: unlisted, loading, unavailable or other content; never silence (review R1 F5). [9]
 - One side's marks, and `Back to <file>`. [10]
-- The renderers that place it: the source view, the lane windows and full file, and the card excerpts. [11]
+
+- Surviving cards render excerpt markers and their full-file SourceContent markers; removed lane/explorer callers are not integration evidence. [13]
+
 - The renderer cases. [12]
 
 ### Cross-Repo References

@@ -20,7 +20,7 @@ controls and state.
 
 The center supplies `linksIncomplete` from the selected family's real completeness state. Loaded linked-file counts and empty-expression copy describe only what has loaded, and incomplete scope points to roster continuation. Missing links do not assert absent stored attribution or unchanged expressions.
 
-For selected invariants, expression selection also uses the exact retained revisions of the authoritative subject read. A confirmed no-family subject can still reach its registered source expressions through payload attribution; the full inventory remains independently reachable.
+For selected invariants, expression selection uses the exact retained revisions of the authoritative subject read. A confirmed no-family subject can still use its registered source locations. Independent changed-file actions use All changes in the comparison viewer when a recorded tree comparison is available; without that range the action states `comparison_not_recorded`, rather than inventing an explorer or comparison.
 
 expressionSelection joins exact selected invariant revision IDs to attributed locations and member sources, then intersects those paths with the complete measured source inventory. A separately selected inventory file remains inspectable and is labelled outside selected intent when appropriate. Without semantic selection it opens the selected file or first inventory entry. ExpressionCard delegates bytes to SourceContent with the inventory exact before/after tree IDs. Layout, full-file disclosure and open path remain caller-owned state.
 
@@ -30,11 +30,11 @@ Use the existing owner interfaces and exact recorded identities; keep transient 
 
 ### Invariants And Boundaries
 
-Linked expressions do not replace or filter the full source inventory in the rail. An unlisted source reference is not an invented changed file. The component reads no arbitrary dataset or working-tree path.
+Linked expression selection does not redefine the complete source inventory. An unlisted source reference is not an invented changed file. The retained dataset expression renderer is not a full-inventory rail; current independent changed-file navigation is the comparison-page destination, with named refusal when no recorded range exists. This component reads no arbitrary dataset or working-tree path.
 
 ### Todos
 
-None recorded. A partial or unavailable roster remains explicitly incomplete; the independent source explorer still reaches the complete change.
+None recorded. A partial or unavailable roster remains explicitly incomplete; semantic continuation stays in the main reading area. Independent changed-file inspection belongs to the comparison page when its recorded range is available, not a source explorer.
 
 ## Evidence
 
@@ -59,3 +59,7 @@ The named constructs own this behavior; reads and validation use their existing 
 No independent cross-repository interface is introduced by this source.
 
 No additional cross-repository evidence is required.
+- Dataset-only expression accordion in the central path [6]
+- Shared diff layout and full-file controls for cards reuse [7]
+- Revision-to-location join for the selected intent [8]
+- Card byte delegation with exact inventory tree identities [9]

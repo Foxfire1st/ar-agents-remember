@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "9c563bdc8c08ff9ac7ad435c187715c423a9cffb",
+        "blob": "52421fd8c85c1d68fe261ca9e829757796226adf",
         "content": "sha256:74471e933b7f1282d2b582656b01f556829f0c7f7cc23c680357692ebd1152da",
         "locator": {
           "kind": "symbol",
@@ -17,6 +17,24 @@
       },
       "rationale": "Suppresses the surface-level loading line and problem block when the workspace states them for the requested subject, so the problem is stated once.",
       "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "52421fd8c85c1d68fe261ca9e829757796226adf",
+        "content": "sha256:5f92f2865c97e98c45bd53aac3a91bae430ec443ba8b3144489a6a5af0ca080f",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReviewProblemBlock"
+        }
+      },
+      "id": "RLZ-DT74AZ",
+      "invariant": "INV-P4Z520",
+      "origin": {
+        "handoffEntry": "MIK-R86@v1 rule 19",
+        "leaf": "260928-MIK-L86"
+      },
+      "rationale": "It draws the owners refusal reason and next action as visible review content rather than a closed disclosure.",
+      "role": "presentation"
     }
   ],
   "references": {
@@ -288,6 +306,34 @@
         }
       ]
     },
+    "18": {
+      "note": "Single refusal and failure block with code and next action",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52421fd8c85c1d68fe261ca9e829757796226adf",
+            "content": "sha256:5f92f2865c97e98c45bd53aac3a91bae430ec443ba8b3144489a6a5af0ca080f",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewProblemBlock"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52421fd8c85c1d68fe261ca9e829757796226adf",
+            "content": "sha256:c79f35b27fde46d3750ea2849a607dfc1b10342fe1163481741c9e9e95d0ea24",
+            "locator": {
+              "end": 131,
+              "kind": "line_range",
+              "start": 113
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "The one projection and the one accessor this module imports, from the review client's public entry.\n\nAnchor: `intentOnlyRefusal`; `reviewProblemFromRefusal`; `unreadableAnswer`",
       "targets": [
@@ -299,6 +345,34 @@
               "end": 32,
               "kind": "line_range",
               "start": 27
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "Labelling for a retained comparison generation",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52421fd8c85c1d68fe261ca9e829757796226adf",
+            "content": "sha256:74471e933b7f1282d2b582656b01f556829f0c7f7cc23c680357692ebd1152da",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewOutcomeRegion"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52421fd8c85c1d68fe261ca9e829757796226adf",
+            "content": "sha256:b1bc4c6a8156a04931c9381f33297f8b2a7c0e74367811bb6a921224d0880177",
+            "locator": {
+              "end": 262,
+              "kind": "line_range",
+              "start": 244
             }
           },
           "kind": "code"

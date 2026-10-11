@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "5d77382de6201dd84f65486143dbdb9fe604d09c",
+        "blob": "9f3728452dcaf4228b55db9908a448ac50f1d8bf",
         "content": "sha256:b1b19551e80087c12870584fdf904149991f4a9635040745830291ccbbe5277d",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "5d77382de6201dd84f65486143dbdb9fe604d09c",
+        "blob": "9f3728452dcaf4228b55db9908a448ac50f1d8bf",
         "content": "sha256:65b31236193cb40763aecbc742393f0d2fb9a7e0b70c99cb92ba9b2e7de0fca9",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "5d77382de6201dd84f65486143dbdb9fe604d09c",
+        "blob": "9f3728452dcaf4228b55db9908a448ac50f1d8bf",
         "content": "sha256:536a62a5a3d836fc36d852da801119f7b7a10323545636c560f5768f966c8309",
         "locator": {
           "kind": "symbol",
@@ -54,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "5d77382de6201dd84f65486143dbdb9fe604d09c",
+        "blob": "9f3728452dcaf4228b55db9908a448ac50f1d8bf",
         "content": "sha256:261b2d4fda9f21295213f1caadd4b31c5b7e155912fa35bf9e2197b7d552618d",
         "locator": {
           "kind": "symbol",
@@ -71,7 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "5d77382de6201dd84f65486143dbdb9fe604d09c",
+        "blob": "9f3728452dcaf4228b55db9908a448ac50f1d8bf",
         "content": "sha256:19711165baf68f525bf6de693f7ad2c025d344d72bc1a2e4ad2a7d966ff419d0",
         "locator": {
           "kind": "symbol",
@@ -88,24 +88,7 @@
     },
     {
       "anchor": {
-        "blob": "5d77382de6201dd84f65486143dbdb9fe604d09c",
-        "content": "sha256:ecf0ddf2b4f662e41c6e25694d0e91074aac979713a53f51d25d5d4e4e449921",
-        "locator": {
-          "kind": "symbol",
-          "name": "all"
-        }
-      },
-      "facet": "A row of the list of all invariants drops the kept family at the click, before the answer: the tree is then the family of the answer on screen alone, and after the answer the chosen subject's.",
-      "id": "PRF-E6WSQM",
-      "invariant": "INV-9ZKYWQ",
-      "origin": {
-        "handoffEntry": "MIK-R39@v1-other-selections-start-afresh",
-        "leaf": "260928-MIK-L39"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "5d77382de6201dd84f65486143dbdb9fe604d09c",
+        "blob": "9f3728452dcaf4228b55db9908a448ac50f1d8bf",
         "content": "sha256:a51ce9d9c89c789f522997a9e4e06249e568e69d091f4365063e217e5646a9e8",
         "locator": {
           "kind": "symbol",
@@ -122,7 +105,7 @@
     },
     {
       "anchor": {
-        "blob": "5d77382de6201dd84f65486143dbdb9fe604d09c",
+        "blob": "9f3728452dcaf4228b55db9908a448ac50f1d8bf",
         "content": "sha256:ba9bff7f15ac08d1879ae9700e5079031561ba3cb9bc8f0010aae1f6b16707e2",
         "locator": {
           "kind": "symbol",
@@ -139,7 +122,7 @@
     },
     {
       "anchor": {
-        "blob": "5d77382de6201dd84f65486143dbdb9fe604d09c",
+        "blob": "9f3728452dcaf4228b55db9908a448ac50f1d8bf",
         "content": "sha256:8704e60bf72cc159b310bdf55dbc6d27173df6e79824ab2e35eb4ce9323766ba",
         "locator": {
           "kind": "symbol",
@@ -158,8 +141,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "5d77382de6201dd84f65486143dbdb9fe604d09c",
-        "content": "sha256:cef2059f5666e0b526ac6c5dfa0193b8c3c076c7b74b4f6b90fa2d0d34ef4f49",
+        "blob": "88a5dda00d5feecff1b44460ab0c7524ec641428",
+        "content": "sha256:febc3932047c074026ec227a046b64c56da06e4648ea8183c4ee6f02245e2fa8",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-EGKB4G",
+      "invariant": "INV-TJE3KM",
+      "origin": {
+        "handoffEntry": "MIK-R86@v1 W03 source-currentness native resolution",
+        "leaf": "260928-MIK-L86"
+      },
+      "rationale": "Source-currentness proof of the existing admitted semantics; not a new invariant or product scope.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "9f3728452dcaf4228b55db9908a448ac50f1d8bf",
+        "content": "sha256:07103ee542f385824e39a71f8fda7e898d89ad78d5f455f7110a68063c26053d",
         "locator": {
           "end": 423,
           "kind": "line_range",
@@ -182,7 +182,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5d77382de6201dd84f65486143dbdb9fe604d09c",
+            "blob": "9f3728452dcaf4228b55db9908a448ac50f1d8bf",
             "content": "sha256:c49012eb39a946361f4da49be14645c6e7d00804927010d501a9c64e2b049969",
             "locator": {
               "kind": "symbol",
@@ -504,7 +504,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7c6601ddf7269a084e197eb6ae1f071a8c3acef6",
+            "blob": "f7e576bc05a33889caaab2fe6c0396c6d8805922",
             "content": "sha256:2bea560c5f336151a88c4c7f72860d44ec8070841375b4f546fdeee71624801b",
             "locator": {
               "kind": "symbol",
@@ -578,6 +578,74 @@
               "end": 281,
               "kind": "line_range",
               "start": 238
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "42": {
+      "note": "Tree row resolution in the mounted rail",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9f3728452dcaf4228b55db9908a448ac50f1d8bf",
+            "content": "sha256:0d3fdef193990b45efef6aa48d1dbed2332860cc088b6b9a7353e59c1dedc901",
+            "locator": {
+              "end": 51,
+              "kind": "line_range",
+              "start": 50
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "43": {
+      "note": "Per-comparison tree routes for lane, file and cards",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9f3728452dcaf4228b55db9908a448ac50f1d8bf",
+            "content": "sha256:95cf331c02188201538ba4449fe0a4db65424e02c61bf09a7422b7747dc8921e",
+            "locator": {
+              "end": 203,
+              "kind": "line_range",
+              "start": 185
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "44": {
+      "note": "Failed-refresh turn helper for scroll expectations",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9f3728452dcaf4228b55db9908a448ac50f1d8bf",
+            "content": "sha256:4ed6f48a69cf0ea3774a4cd340af306300f8be355e80cbc91ce016a6f5f805dd",
+            "locator": {
+              "end": 596,
+              "kind": "line_range",
+              "start": 574
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "45": {
+      "note": "Failed-refresh turn helper for scroll expectations",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9f3728452dcaf4228b55db9908a448ac50f1d8bf",
+            "content": "sha256:700cb9c17699d47a9240ac55876b0d9fb7650a8d2ac00a81fc6f202f14ea3666",
+            "locator": {
+              "end": 585,
+              "kind": "line_range",
+              "start": 569
             }
           },
           "kind": "test"

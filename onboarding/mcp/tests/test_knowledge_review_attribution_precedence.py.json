@@ -1,5 +1,6 @@
 {
   "path": "mcp/tests/test_knowledge_review_attribution_precedence.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "10": {

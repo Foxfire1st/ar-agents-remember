@@ -23,9 +23,7 @@ and Git children do not depend on the machine. The module also exports the helpe
   wraps the collaborator `isolated_leaf_worklist`. The view passes the comparison's candidate trees as
   `candidate` and its base commits as `base`, takes no directory snapshot and no code capture of its own,
   and is computed once per comparison.
-- **Never kept after a failure.** A worklist that comes back `incomplete` is returned and computed again
-  at the next read. A diff behind which a Git read failed is returned and not kept, also when the repeated
-  read succeeded.
+- **Never kept after a failure:** the current test recomputes each incomplete worklist and leaves its memo empty; a recovered complete worklist may then be kept. A changed or inconsistently read external input makes the remembered view unavailable. No memory-patch failure/recovery is asserted.
 - **Unreadable task input.** `test_an_unreadable_task_input_is_observed_and_never_memoized_even_when_the_worklist_completes`
   makes one task JSON unreadable or absent. Because the computation runs in a child process, the test
   replays the same failure identity into the child's reply (`_reply` is wrapped). The complete answer is
@@ -38,9 +36,7 @@ and Git children do not depend on the machine. The module also exports the helpe
 - **Memo bounds.** The view memo holds at most `CAPACITY` entries at two population sizes, serves nothing
   older than `MAX_AGE_SECONDS`, never answers another key, and has no key for a recorded comparison or for
   a leaf whose memory head or parent tip cannot be read.
-- **Knowledge diff.** The diff asks Git three questions at two sizes and equals the per-file reference.
-  Literal file names with pattern characters select only their own patch, at two file counts and both
-  `quotePath` settings.
+- **Retired knowledge-diff subjects:** the aggregate three-Git-question/per-file-parity and literal two-size patch-selection cases were removed from this module. Its nine current top-level test definitions retain resolution/capture counts, exact supplied candidate/base operands, no leaf memory-tree diff, observed task-read refusal/recovery, bounded memo reuse and freshness; no current literal aggregate patch proof is claimed.
 - **Freshness.** A read after an edit shows the new content, also for a same-size rewrite in the second of
   the index write, and nothing composed is kept on the server.
 
@@ -54,13 +50,16 @@ The same-size, same-second Git rewrite scenario imports the single `rewrite_in_t
 - The recheck refuses a moved candidate. [9]
 - A held converted base tree is not written again. [10]
 - The leaf-wide view passes the captured trees and base commits and is computed once. [11]
-- An incomplete worklist and a diff behind a failed read are not kept. [12]
+- Incomplete worklist recomputation, complete recovery and changed/conflicting external-read rejection; no memory patch is read. [12]
 - An unreadable or absent task input is observed and nothing is kept. [13]
 - An edit restored during the computation is computed twice and answered as inputs_changing. [14]
 - The memo's bounds and keys. [15]
-- Three Git questions and the per-file reference answers. [16]
-- Literal file names keep exact patches. [17]
+- Historical removed aggregate three-Git-question/per-file-reference test, not current evidence.
+- Historical removed literal-filename two-size patch test, not current evidence.
 
 - The shared owner establishes a same-size rewrite in the index-write second. [19]
 
 - A read after an edit shows the new content. [18]
+- The leaf view is computed once per exact comparison [20]
+- No diff invocation spans the two memory trees [21]
+- The worklist gets the comparison's own candidate trees [22]

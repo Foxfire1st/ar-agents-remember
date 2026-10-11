@@ -2,24 +2,6 @@
   "path": "dashboard/src/panels/review/worklistGroups.ts",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "The lane's gate items for one opened file, from the unexplained groups (MIK-L32).\n\nAnchor: \"const groups = worklistGroups(gate.worklist).unexplained.filter((group) => group.path === path);\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "7d9298b315a6d1c8cdaaf2a0da0f6e38f0ef0d21",
-            "content": "sha256:6613de03ec906d4f3cf504e1ca8a2b3df1c054e4ebdb758f5e37596a456bd3ac",
-            "locator": {
-              "end": 473,
-              "kind": "line_range",
-              "start": 473
-            },
-            "path": "dashboard/src/panels/review/LaneFileFocus.tsx"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "2": {
       "note": "The module's own statement: grouping only, the four groups, and that history rows answer the unexplained items while this structure and the lane only list them.\n\nAnchor: \"Grouping only\"; \"They are answered by history rows\"; \"(MIK-R10) that the closeout gate enforces; this structure and the MIK-R32 lane only list them.\"",
       "targets": [
@@ -177,7 +159,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8a178d876684d0169dafd905b8770b7cc6730ff7",
+            "blob": "63b06ce06cdbb42cfbd708a236c0af1a6ffee709",
             "content": "sha256:1868095f0bdbc8a5ab5c1a9ec35b3a48e57c7c38426fdc4adeaa43cefd1490e2",
             "locator": {
               "kind": "symbol",

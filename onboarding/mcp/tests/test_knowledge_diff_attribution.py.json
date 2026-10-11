@@ -1,5 +1,6 @@
 {
   "path": "mcp/tests/test_knowledge_diff_attribution.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "14": {

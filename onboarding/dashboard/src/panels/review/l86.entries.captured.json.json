@@ -1,0 +1,58 @@
+{
+  "path": "dashboard/src/panels/review/l86.entries.captured.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Catalogue subjects with presence\n\nAnchor: `entries`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bafb666fe25c4466b1e16a9acf28e399e5bee1e4",
+            "content": "sha256:cc982e94c0e865b94a6061c9125f087a967526f43b6e704a7cecbff76647ce2f",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Navigation tree with meaning changes\n\nAnchor: `outline`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bafb666fe25c4466b1e16a9acf28e399e5bee1e4",
+            "content": "sha256:cc982e94c0e865b94a6061c9125f087a967526f43b6e704a7cecbff76647ce2f",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Labelled catalogue totals\n\nAnchor: `total_subjects`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bafb666fe25c4466b1e16a9acf28e399e5bee1e4",
+            "content": "sha256:cc982e94c0e865b94a6061c9125f087a967526f43b6e704a7cecbff76647ce2f",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

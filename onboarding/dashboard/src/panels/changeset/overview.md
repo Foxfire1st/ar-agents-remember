@@ -10,14 +10,12 @@
 
 ## 260928-MIK-L34 The Diff Pane Can Carry Marks On Its File Lines
 
-`MIK-R34` reaches this route through one governed source. [`DiffPane.tsx`](DiffPane.tsx.md) gains an optional `marks`
-prop for the reviewer's per-hunk intent markers, inert when absent: through `file-viewer/markGutter.tsx`'s
-`useMarkedPane`, each editor gets a marks gutter first in its extensions (`gutterFor("before" | "after", first)`, no
-extension without marks), the pane calls `drawn` once its editors exist (which expands a collapsed run holding a mark)
-and at teardown, `placement` joins the effect's dependencies, and the marks' portals render after the host. To keep the
-component within the function-size rule the split and inline view builders were extracted unchanged into `splitView`
-and `inlineView` over a shared `DiffBuild`. The Change-Set Viewer (`ChangeSetPane`) passes no marks, so its diff is
-exactly the landed one; the reviewer's source view, lane windows and card excerpts are the only callers that pass them.
+`MIK-R34` reaches this route through `DiffPane.tsx`'s optional `marks`, inert when absent.
+Through the shipped `useMarkedPane`, the editors install a marks gutter, call `drawn` when ready
+and at teardown, include placement in their effect dependencies and render mark portals. Split
+and inline builders retain their shared `DiffBuild`. `ChangeSetPane` passes no marks, so comparison
+viewer diffs remain unmarked; the current review marker callers are card Full file through
+`SourceContent` and card excerpts through `ExpressionCards`, not lane windows or an explorer.
 
 - The optional marks and the marked pane. [1]
 - The two extracted view builders, each with its marks gutter. [2]
@@ -168,15 +166,18 @@ until a file is picked; the back link restores the railed Operations view.
 - The markdown renderer the sidecar column + rendered-markdown toggle reuse. [14]
 - The siege-tank empty-state backdrop shown until a file is picked. [15]
 
+- Comparison requests are built for the recorded trees [27]
+- One file's diff reads on the comparison's trees [28]
+- Lane filters apply over the held lane facts [29]
 ## 260915-KS-L22 The Review Variant Beside The Change-Set Actions
 
-This route gained the reviewer's target variant and the entry that produces it, and nothing else on
-it changed. `ChangeSetTarget` now carries an optional `review?: { selectorKind; selectorId }` — the
-reviewed subject's recorded identity — and the variant is a *dispatch* field rather than a fifth
-change-set mode: the change-set viewer is never mounted for a target that carries it, so the three
-ranges this screen already owns (`scope`, `master`, and `leaf` with its `mode`) keep their meaning
-exactly and no request this route makes is ever issued from a review. The declaration says as much
-in its own comment, which is where a reader arriving at the type will look first.
+This route retains the review target variant as a cockpit dispatch field, not an extra
+change-set mode. Presence of `ChangeSetTarget.review` selects `ReviewSurface` at that entry;
+its optional selector names a recorded subject rather than a path. The reviewer's current
+All/Unexplained/Unknown changes destinations separately mount `ChangeSetViewer` with a recorded
+`comparison`, issuing comparison list and per-file diff requests. The original enclosure, master
+and leaf committed/working ranges retain their meanings; a review is no longer excluded from
+all change-set requests.
 
 `changeSetBar.tsx` renders the reviewer entry **beside** the working and committed actions and never
 in their place: a third `ChangeSetButton` labelled "Intent review" appears only when the bar's target
@@ -206,7 +207,7 @@ review belongs to the `panels/review/` child route; this route owns the target v
 that sets it, which is the boundary the two cards divide.
 
 - The target variant this route's type gained. [16]
-- The declaration's own statement that no change-set request comes from a review, and that an empty object on the field is the task-context entry rather than a missing selector. [17]
+- The review field is a cockpit dispatch identity; an empty object opens the task-context review. Its current comparison-page actions can mount the change-set viewer and issue comparison requests. [17]
 - **The reviewer entry: offered for every leaf beside the working/committed actions (the recorded comparison for a closed leaf, `ICR-R12`).** [18]
 - **The identity the entry carries instead of a filesystem path (since `260921-ICR-L47`): the task context only, `review: {}` for a live leaf and `{ historical: true }` for a closed one — no subject.** [19]
 - **The read that supplies the subject now belongs to the reviewer, taking the comparison's task context and nothing else.** [20]
@@ -258,3 +259,4 @@ is, exactly as it already owned which candidate the live read resolves.
 The committed and working change-set actions themselves are unchanged — this route's own resolution of
 a series or a leaf change-set reads nothing about records — and the change is additive for every
 existing caller.
+The change-set viewer opens on a review comparison: `comparison=<number>` names the leaf's recorded comparison (code `code_base.tree` to `code_candidate.tree`; memory limited to `knowledge/` and `onboarding/`), answered in the leaf view's shape with `mode: "comparison"`. `comparisonChangeset` builds the request; `diffRequestFor` reads one file's diff on the recorded trees; `filteredChangeSet` applies the All/Unexplained/Unknown-attribution filter with per-row badges. The header carries the back control, the comparison number and the two code trees; the opener's selection, scroll and focus are restored on return with no new request. At 40rem and narrower the lists stack above the diff.

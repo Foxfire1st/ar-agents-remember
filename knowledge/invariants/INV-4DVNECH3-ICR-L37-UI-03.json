@@ -18,6 +18,6 @@
   "revision": 3,
   "schema": "ar-invariant/v1",
   "statement": "The complete changed-file inventory remains reachable independently of semantic selection, with mapped, unmapped and unknown attribution stated from the backend's classification: the mapped and unmapped partitions of a dataset review, and the unexplained-changes lane's per-file bucket of a tree comparison.",
-  "status": "proposed",
+  "status": "retired",
   "supersedes": []
 }

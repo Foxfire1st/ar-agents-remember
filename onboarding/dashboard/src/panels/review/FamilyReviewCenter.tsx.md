@@ -8,10 +8,11 @@
 
 The centre of the reviewer: for the selection of the family tree it renders the family guarantee, the
 member context, the selected intent, the code and test expressions, the evidence, and for a tree
-comparison the leaf's knowledge panel. Layout, the open path and the leaf-wide tree read are passed in by
+comparison the worklist items about the selected record. Layout, the open path and the leaf-wide tree read are passed in by
 the workspace; the file itself reads only the entries of the selected invariants, through
 `useReviewTreeEntries`.
 
+The centre of the reviewer renders the family guarantee, the member context, the selected intent, the code and test expressions, and the evidence for the selected family or member. It carries the catalogue outline for member rows and draws planning marks only from a leaf-wide worklist that belongs to the comparison on screen. Layout, the open path and the leaf-wide tree read arrive by props; the file reads only the entries of the selected invariants.
 ## Code Commentary
 
 ### Which centre
@@ -30,16 +31,16 @@ the workspace; the file itself reads only the entries of the selected invariants
 
 ### What each centre shows
 
-- `FamilyCenter`: the family's label with its comparison details, the guarantee comparison
-  (`GuaranteeComparisonBlock`), the member context (`FamilyMemberContext`) with the distinct member
-  revisions ordered by `orderMemberRows`, the expressions, a disclosure with the realization resolution
-  details, the family's evidence, and the knowledge panel.
-- `MemberCenter`: the member's label and family line (`MemberFamilyLabel`), the guarantee comparison when a
-  family entry exists, the selected intent (`SelectedStatement`, with the subject's rows kept per side by
-  `subjectRows`), the expressions, a disclosure with the independent facts and the roster revision
-  context, the subject's evidence, the knowledge panel, and the roster continuation.
-- `UnselectedCenter`: the selected statements, or the sentence that this is a source-only view, and the
-  knowledge panel opened.
+- `FamilyCenter`: the family label with open comparison details, the guarantee comparison
+  (`GuaranteeComparisonBlock`), `FamilyMemberContext` with distinct member revisions ordered by
+  `orderMemberRows`, the expressions, an open realization-resolution section, the family evidence
+  and the selected record's worklist items.
+- `MemberCenter`: the member label and `MemberFamilyLabel`, the family guarantee when present,
+  `SelectedStatement` with `subjectRows` kept per side, the expressions, open independent facts and
+  selected roster-revision context, subject evidence, selected-record worklist items and the roster
+  continuation. These semantic facts are not behind a disclosure.
+- `UnselectedCenter`: selected statements or an explicit unselected/source-only sentence; the leaf's
+  complete worklist is a separate workspace destination, not an automatically embedded patch panel.
 - `UnavailableMember`: the guarantee comparison, the member's statement, the sentence that this page
   did not supply the member's invariant identity, and the roster continuation. It shows no knowledge
   panel.
@@ -62,17 +63,12 @@ no invariant, the hook returns `null` and `ReviewExpressions` renders the file v
 `ExpressionCards` renders the cards with the planning marks of `pinnedWorklist`, which passes the
 leaf-wide read's worklist only when that read answered for the comparison the payload was composed over.
 
-### The knowledge panel
+### Record worklist items
 
-`knowledgePanel(leafTrees, payload, open)` decides what stands in the panel's place:
-
-- no leaf-wide read at all (`null`, a dataset review): nothing;
-- a read in the phase `trees`: `LeafKnowledgeChanges` with the trees and the payload's comparison number;
-- a read in any other phase: `LeafKnowledgeNotice` with that read, which shows that the view is being
-  computed or that it is unavailable, and nothing for `not-converted`.
-
-The family, member and unselected centres all receive the panel from this one function; the unselected
-centre receives it opened.
+The selected family/member receives `SubjectWorklistItems` bound to its canonical record identity and
+the payload's comparison. A missing/mismatched/unavailable read remains explicit; no subject filter is
+invented from labels. The complete worklist belongs to `LeafWorklistView` in the workspace's own view.
+Neither subject review nor that worklist embeds knowledge-file patches.
 
 ## Evidence
 
@@ -83,10 +79,15 @@ centre receives it opened.
 - The independent facts of a member. [16]
 - The member centre. [17]
 - The exported wrapper sets the word-diff scope. [18]
-- The body chooses one of four centres and passes the knowledge panel to each. [19]
 - Planning marks only from a leaf-wide read of the same comparison. [20]
-- The panel, the notice, or nothing. [21]
+
 - Cards for a tree comparison, the file view for a dataset review. [22]
 - The invariants one selection reads. [23]
 - The selected entry, member, rows and listed paths. [24]
-- The notice says that it is computing. [25]
+
+- Guarantee rendering for one side or a compared pair [26]
+- One expression row per collection with verdict and occurrences [27]
+- Member review centre with subject rows and states [28]
+- Card read assembly for the selected centre [31]
+
+- Builds expressions and selected-record SubjectKnowledge, then chooses member, unselected, unavailable-member or family content; the unavailable-member branch receives expressions but not the knowledge panel. [19]

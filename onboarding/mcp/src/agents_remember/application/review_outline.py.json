@@ -1,0 +1,90 @@
+{
+  "path": "mcp/src/agents_remember/application/review_outline.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "9a96a4b59bc56d9286341e084c6afeeb5d7c8d27",
+        "content": "sha256:0a24d9025cb38ca864f94e945da678b160952d8e1a5fae9b98b886be9bbfc02c",
+        "locator": {
+          "kind": "symbol",
+          "name": "read_review_outline"
+        }
+      },
+      "id": "RLZ-PDDHZB",
+      "invariant": "INV-S44D2D",
+      "origin": {
+        "handoffEntry": "MIK-R86@v1 rule 1",
+        "leaf": "260928-MIK-L86"
+      },
+      "rationale": "It selects the two derived indexes and builds their ordered record union without a source blob or subject-review read.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The tree is enumerated without source, roster or subject reads",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a96a4b59bc56d9286341e084c6afeeb5d7c8d27",
+            "content": "sha256:0a24d9025cb38ca864f94e945da678b160952d8e1a5fae9b98b886be9bbfc02c",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_review_outline"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Both sides' records are registered once for shared meaning facts",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a96a4b59bc56d9286341e084c6afeeb5d7c8d27",
+            "content": "sha256:5688b2148c4255ecb6182cb7e1e34f3867b65d8f10bb0a29455fccd59bb80cf6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_outline"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Members follow the family record's order with join/leave facts",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a96a4b59bc56d9286341e084c6afeeb5d7c8d27",
+            "content": "sha256:8dbeaf070b96b042318ed1affd9e0c34fc76e38e35f75eea13acc6ea44a2a931",
+            "locator": {
+              "kind": "symbol",
+              "name": "_members"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Summaries cut at 120 characters on word boundaries",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a96a4b59bc56d9286341e084c6afeeb5d7c8d27",
+            "content": "sha256:6758ee1138ef4e1f95e7e8c6b7d9df9569ab2227f682c1f74196e6769bd4bebe",
+            "locator": {
+              "kind": "symbol",
+              "name": "_summary"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

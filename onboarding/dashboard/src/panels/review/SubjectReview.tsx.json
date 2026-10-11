@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "3752a210e35717d0b1b067a89cd0dec33e988ea4",
-        "content": "sha256:9635725047309d8545115e099e722d59e8889d6751caa802181b917a1bf43821",
+        "blob": "a5275eb0e1935676698eadc6ddd1e957136f6dc1",
+        "content": "sha256:0309f930b6ffe3a07e62d8480481a5e1d831ce6cdba84b7c5db75d10fd54c577",
         "locator": {
           "kind": "symbol",
           "name": "SelectedStatement"
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "3752a210e35717d0b1b067a89cd0dec33e988ea4",
-        "content": "sha256:ff1de57ce20cbfe06b0326d8f51cda6ad9953b2c84c73ea6e0ef53f23c035217",
+        "blob": "a5275eb0e1935676698eadc6ddd1e957136f6dc1",
+        "content": "sha256:7c4a80628d8877b092a0fd6824d0cc886072800a962243f51928f7458c88ab54",
         "locator": {
           "kind": "symbol",
           "name": "SubjectEvidence"
@@ -63,6 +63,106 @@
             "locator": {
               "kind": "symbol",
               "name": "AssessmentAbsence"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Changed authored fields beside the statement",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a5275eb0e1935676698eadc6ddd1e957136f6dc1",
+            "content": "sha256:3b718bbf60c1e303ac1b3f329e148074c4947b8abaf0271bdeed22cca573f98d",
+            "locator": {
+              "kind": "symbol",
+              "name": "ChangedFields"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a5275eb0e1935676698eadc6ddd1e957136f6dc1",
+            "content": "sha256:47a48388465279239185356014b211aeb56359ab6a5b44a5174aa187f9fa212d",
+            "locator": {
+              "end": 185,
+              "kind": "line_range",
+              "start": 167
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Selected statement with revision resolution and sides",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a5275eb0e1935676698eadc6ddd1e957136f6dc1",
+            "content": "sha256:0309f930b6ffe3a07e62d8480481a5e1d831ce6cdba84b7c5db75d10fd54c577",
+            "locator": {
+              "kind": "symbol",
+              "name": "SelectedStatement"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a5275eb0e1935676698eadc6ddd1e957136f6dc1",
+            "content": "sha256:ebd494f7f614f3207f760fb2d24efd88d432fec481b36dbf413392fa4376b657",
+            "locator": {
+              "end": 271,
+              "kind": "line_range",
+              "start": 253
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "Direct applicability treatment of the selected subject",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a5275eb0e1935676698eadc6ddd1e957136f6dc1",
+            "content": "sha256:b965358110e73518e2f920714484e1c7312f300c9841ee3785c81436bdaca3de",
+            "locator": {
+              "kind": "symbol",
+              "name": "Applicability"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "Evidence channel for the selected subject",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a5275eb0e1935676698eadc6ddd1e957136f6dc1",
+            "content": "sha256:7c4a80628d8877b092a0fd6824d0cc886072800a962243f51928f7458c88ab54",
+            "locator": {
+              "kind": "symbol",
+              "name": "SubjectEvidence"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a5275eb0e1935676698eadc6ddd1e957136f6dc1",
+            "content": "sha256:1ef52114b87889ff87f54a9401f179143cf112738d3f6ba1d08ab8d168a34be3",
+            "locator": {
+              "end": 420,
+              "kind": "line_range",
+              "start": 402
             }
           },
           "kind": "code"

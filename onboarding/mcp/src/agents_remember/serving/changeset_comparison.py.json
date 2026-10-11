@@ -1,0 +1,108 @@
+{
+  "path": "mcp/src/agents_remember/serving/changeset_comparison.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "30971ab15c58d068972151ebe7526002779182d5",
+        "content": "sha256:f3ec8aa18e0d9d282e79ac204dccaddbd652209745cd39958060b210a10efb1c",
+        "locator": {
+          "kind": "symbol",
+          "name": "comparison_changeset"
+        }
+      },
+      "id": "RLZ-9JM0HE",
+      "invariant": "INV-31006K",
+      "origin": {
+        "handoffEntry": "MIK-R86@v1 rule 12",
+        "leaf": "260928-MIK-L86"
+      },
+      "rationale": "It obtains the numbered record and lists its exact code and scoped memory tree ranges without substituting a live range.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "30971ab15c58d068972151ebe7526002779182d5",
+        "content": "sha256:4b21a74e7d64f63a8df861e72f951fb8f24fa338f35f2da810ae512b27ab35f4",
+        "locator": {
+          "kind": "symbol",
+          "name": "comparison_file_diff"
+        }
+      },
+      "id": "RLZ-S0QJD9",
+      "invariant": "INV-NGZMXY",
+      "origin": {
+        "handoffEntry": "L86-CODE-R1-F01",
+        "leaf": "260928-MIK-L86"
+      },
+      "rationale": "It confines the lexical Git path and applies it unchanged to recorded tree lookups.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Comparison N loads from the leaf's comparison record",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "30971ab15c58d068972151ebe7526002779182d5",
+            "content": "sha256:3092e49db7bc8b6a343d522b949931b4c8bd211ecfa3e439c9e44b707b2b7874",
+            "locator": {
+              "kind": "symbol",
+              "name": "recorded_comparison"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "One diff per half supplies status and counts, renames off",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "30971ab15c58d068972151ebe7526002779182d5",
+            "content": "sha256:783ab7b384ab9f8d28393380340e929d7bf278f5c796745cd79c2abd4c23390c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_files"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The list echoes trees with code, memory and counters",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "30971ab15c58d068972151ebe7526002779182d5",
+            "content": "sha256:f3ec8aa18e0d9d282e79ac204dccaddbd652209745cd39958060b210a10efb1c",
+            "locator": {
+              "kind": "symbol",
+              "name": "comparison_changeset"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "File diffs read immutable trees and confine memory paths",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "30971ab15c58d068972151ebe7526002779182d5",
+            "content": "sha256:4b21a74e7d64f63a8df861e72f951fb8f24fa338f35f2da810ae512b27ab35f4",
+            "locator": {
+              "kind": "symbol",
+              "name": "comparison_file_diff"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

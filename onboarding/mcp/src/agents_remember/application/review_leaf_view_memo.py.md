@@ -7,7 +7,7 @@
 ## Purpose
 
 The bounded memo of the reviewer's leaf-wide view in the process that serves the reviewer. It keeps the
-two computed parts of a live comparison, the knowledge diff and the worklist view, under a key of exact
+settled worklist view of a live comparison under a key of exact
 identities and together with every row the computation recorded outside the trees. It keeps no composed
 answer, writes nothing to disk, and is empty after a restart.
 
@@ -79,3 +79,6 @@ gets here, so an edit of a worktree is a new tree and a new key.
 - Not read, same bytes, other bytes, a conflict and an unnamed document, each judged. [15]
 - Count and age bounds, and no answer for another key. [16]
 - A view behind which a read failed is not kept. [17]
+- The memo keeps the settled worklist over the comparison's trees [18]
+- An unsettled worklist or unreadable side is never kept [19]
+- The kept parts hold the worklist view and nothing else [20]

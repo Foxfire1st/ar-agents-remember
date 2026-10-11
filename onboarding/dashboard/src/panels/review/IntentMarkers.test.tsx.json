@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "317e4539a4945706ae96b01891449a4dd8b125ff",
-        "content": "sha256:4fe71a402c116ee8ebc0459412a327881b67dac552f014ed7da45fcda064801a",
+        "blob": "972d0ead16d5bf44ce37f9d1e2895ae530d0216a",
+        "content": "sha256:632c95b22eb1567f95235d6c309315fc63419a364303d1e38a92f1f50e556153",
         "locator": {
           "kind": "file"
         }
@@ -41,6 +41,55 @@
             "locator": {
               "kind": "symbol",
               "name": "expansionOf"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "Hunk-order helpers for mark assertions",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "972d0ead16d5bf44ce37f9d1e2895ae530d0216a",
+            "content": "sha256:e5720a484468ca6d0eb07d71afa25433681927a26fb8a9285a739ca244ff5713",
+            "locator": {
+              "kind": "symbol",
+              "name": "inHunkOrder"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "Shown-mark extraction from the rendered diff",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "972d0ead16d5bf44ce37f9d1e2895ae530d0216a",
+            "content": "sha256:91e944c6d5dfc991cca6f8ede6c98d5de09b74b567e903c7bfa2ae9579fe841a",
+            "locator": {
+              "kind": "symbol",
+              "name": "shownMarks"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "Unchanged-file classifier for no-mark shapes\n\nAnchor: `classify`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "972d0ead16d5bf44ce37f9d1e2895ae530d0216a",
+            "content": "sha256:6fe63a3555b9b2d6f832eb7a552ffbe9fccf80828c0a6d9f7a0480ad051172f5",
+            "locator": {
+              "end": 333,
+              "kind": "line_range",
+              "start": 319
             }
           },
           "kind": "test"
@@ -143,6 +192,62 @@
               "end": 432,
               "kind": "line_range",
               "start": 414
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Per-side expansion builder for mark scenarios",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "972d0ead16d5bf44ce37f9d1e2895ae530d0216a",
+            "content": "sha256:f3d8ad67c29a580defbe6f822279966a7e42f1ae49f97a0635cb12e2bf4f1579",
+            "locator": {
+              "kind": "symbol",
+              "name": "expansionOf"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "972d0ead16d5bf44ce37f9d1e2895ae530d0216a",
+            "content": "sha256:8ee36b060fdfa3b5ad7aa404a05ccf4fe0b605e3ad7e61b43680d7164ae377ae",
+            "locator": {
+              "end": 76,
+              "kind": "line_range",
+              "start": 60
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "Scope builder for files under test",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "972d0ead16d5bf44ce37f9d1e2895ae530d0216a",
+            "content": "sha256:0ff2a69e7b052935bec19c9adfa334b19d6a7710e88cc5367fc42eb629ecc728",
+            "locator": {
+              "kind": "symbol",
+              "name": "scopeOf"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "972d0ead16d5bf44ce37f9d1e2895ae530d0216a",
+            "content": "sha256:d42562153644bfd9bdee9d3c493425299ffda316dd50083d243d6d70dae4b198",
+            "locator": {
+              "end": 121,
+              "kind": "line_range",
+              "start": 105
             }
           },
           "kind": "test"

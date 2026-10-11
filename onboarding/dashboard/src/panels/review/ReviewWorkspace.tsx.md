@@ -12,6 +12,8 @@ Own the family-centered review layout and its transient inspection state: one sc
 - The family tree in the rail is the tree the reader has walked (`walkedTree.ts`, requirement MIK-R39). A selection of a row the tree shows keeps every family it shows; every other selection starts the tree afresh.
 - For a tree comparison the rail offers the two destinations of the unexplained-changes lane after the families (MIK-R32), and the workspace is the scope of the diffs' per-hunk intent markers (MIK-R34).
 
+Own the review workspace layout and its transient display state: the family navigation tree in the rail with the change-set destinations after it, and the intent, worklist and evidence reading area in the center.
+- Changed files open in the change-set viewer the product already has (`ReviewChangeSetNavigation`); the reviewer keeps no file list of its own (MIK-R86). The workspace holds no source explorer and no unexplained-lane components.
 ## Code Commentary
 
 ### State above the reads
@@ -20,24 +22,31 @@ Own the family-centered review layout and its transient inspection state: one sc
 
 - the reader's explicit family or member choice (`chosen`), the search text, the diff layout (`split` at first), the full-file disclosure (off at first, so changed regions are the initial display) and the opened path;
 - the element that opened an expression: `openFromCenter` remembers it and `closePath(null)` returns focus to it; `setOpenPath` sets the path without moving focus (an intent marker's follow and return use it);
-- the lane selection on screen (`lane`): choosing a family clears it, and choosing a family or a lane destination reveals the center (`revealCenter` scrolls the surface to its top);
+- the worklist-open flag (`worklist`): choosing a subject leaves the worklist view; showing the worklist reveals the reading area;
 - the reading-area column's ref (`center`);
 - `focusSelection`, a ref to the pending `FocusRequest` (below);
 - `treeIntent` and `beginSelection(keepTree)`: every selection gets the next number and says whether it keeps the walked tree.
 
+`useWorkspaceState` is called by the surface, above the pane switch, so a page read or a selection never resets it. It holds the reader's explicit family or member choice (`chosen`, cleared out of the worklist view on choose), the search text, the diff layout (`split` at first), the full-file flag, the opened path (with `openFromCenter` remembering the opener for focus return, and `setOpenPath` moving none for a marker follow and return), the lane worklist flag, the center column ref, the pending `focusSelection` request, and `treeIntent` with `beginSelection(keepTree)`.
 ### The layout
 
 `ReviewWorkspace` is a thin wrapper. It builds the intent markers' scope with `useIntentMarkerScope` from the task context, the payload's tree comparison number (`treeComparisonNumber(payload.limitations)`), the change inventory (`markerInventory`) and the workspace's own moves (`workspaceMarkerMoves(state, navigation)`), and provides it around `WorkspaceBody`. A dataset review names no tree comparison.
 
 `WorkspaceBody` renders, in one grid: `ReviewScopeHeader` (with a `status` of `pending` or `unavailable` while the subject is unanswered), the "Jump to selected review" button of the stacked layout, `MarkerReturn`, `WorkspaceRail` and `WorkspaceCenter`. The root publishes `data-diff-layout`, `data-full-file` and, while a followed marker's way back is shown, `data-marker-return="open"` (`useMarkerReturnState`).
 
-`WorkspaceRail` holds the "Families & invariants" panel (the catalogue navigation with the family tree inside it, or the tree alone when there is no navigation, then `RailLaneDestinations`) and the `SourceExplorer`. `sourceAttribution` picks the explorer's labels: on a tree comparison (a `laneRead` is present) every changed path takes its label from the lane's classification through `explorerAttribution`; a dataset review uses the payload's attributed and unattributed path lists, and everything else is "Attribution unknown".
+`WorkspaceRail` holds one compact family/invariant outline tree and change-set/worklist destinations.
+There is no `SourceExplorer`, `RailLaneDestinations` or local changed-file list; the held server lane
+feeds destination counts/filters without classifying files again.
 
+- `WorkspaceRail` draws the walked tree (`walkedTreeOf`: walked families, kept families with their read-for labels, the walk notice) inside `ReviewNavigation` with the lane counts (`laneCounts`) and the destinations (`ReviewDestinations`: unexplained-changes, unknown-attribution and all-changes buttons opening the change-set viewer, plus the worklist button with the leaf trees' count).
+- `WorkspaceCenter` swaps one column between the unanswered subject's `ReadingStatusCenter`, the `LeafWorklistView` (with change-set openers for memory and path items), and the answered reading: context notes, `FamilyReviewCenter`, main facts and the roster page note.
 ### The unanswered subject
 
 `ReviewWorkspace` takes an optional `reading: ReadingStatus | null`. The surface sets it only when the subject on screen has no answer; `payload` is then the last admitted answer of this task context, used for the shell only. `ReadingStatus` carries the read cycle's key for the requested question, the requested subject, its label and, for a failed or refused read, the owner's problem block (`null` while pending).
 
-`WorkspaceCenter` is the reading-area column: one DOM node (`review-center-column`) for the life of the workspace. It swaps only its content: `ReadingStatusCenter` (`review-reading-pending` or `review-reading-problem`), else the lane's center while a lane destination is chosen and a lane read exists, else the answered subject's `FamilyReviewCenter` and `RosterPageNote`. While unanswered, the tree marks only the reader's explicit choice; no mark is derived from the earlier payload.
+`WorkspaceCenter` is one reading-area column for the workspace's lifetime. Only its content swaps:
+requested-subject status, the own worklist view, or answered-subject context notes, `FamilyReviewCenter`,
+`ReviewMainFacts` and roster continuation. Earlier payload content never masquerades as the pending subject.
 
 ### The walked tree
 
@@ -50,9 +59,12 @@ Own the family-centered review layout and its transient inspection state: one sc
 
 `walkedTreeOf` turns the walk into what `FamilyTree` draws (`WalkedTree`): the walked entries; the kept families with the label of the subject each was last read for; the walk's notice; and `subjectState`, the sentence "For the selected subject: …" when the selected subject's own context is not composed. `readForLabel` builds the label as the subject's kind followed by the catalogue's label for it, or by `subjectTitle` of the answer that carried the family when the catalogue has no such row; it is "an earlier subject" when the answer named no subject.
 
-`WorkspaceRail` passes the navigation the identifiers of every family the tree shows (`loadedFamilyIds`) and `listLoaded`, which is true while the tree holds a kept family. While a lane destination is on screen it passes the tree no selection, so no family node is marked current.
+`WorkspaceRail` passes the catalogue outline, current subject/selection and walked entries to compact
+navigation; those identities and badges are independent of loaded semantic roster pages.
 
-`FamilyRailContext` draws `FamilyTree` when the selected subject's context is composed (`recorded` or `partial`) or the walk holds a family; otherwise `FamilyNotComposed`. It gives the tree the selected subject's own context (`NO_FAMILY_CONTEXT` when the answer has none), the walked tree, and `tree`, which is true for a tree comparison. One case comes first: for an invariant that an intent marker opened on an unknown membership the tree has no row for (`useInvariantTargetState`), it shows `InvariantTargetState` alone when the subject's context is not composed, and above the tree when it is composed.
+`FamilyRailContext` supplies `FamilyTree` with outline/catalogue admission, loading/problem state,
+context/walk, subject selection and traversal eligibility. Unknown marker membership has its explicit
+reading-area state; it does not fabricate membership or replace the complete outline with a partial roster.
 
 ### Focus after a selection
 
@@ -70,10 +82,12 @@ A selection leaves a `FocusRequest` in `focusSelection`: `from` (the element tha
 
 Because the effect also runs when the tree intent changes, a selection that needs no new answer (the subject already selected, chosen again) lands focus when it is made.
 
-### The lane and the leaf's tree view
+### Held lane and the leaf's worklist read
 
 - `WorkspaceCenter` reads the leaf-wide `/api/review/trees` view through `useReviewTrees`, pinned to the payload's comparison number, and only for a tree comparison (the hook's `enabled` flag is false otherwise). The result goes to `FamilyReviewCenter` as `leafTrees`.
-- While a lane destination is chosen, `UnexplainedLaneCenter` receives the lane read, the task with the comparison number, the payload's inventory, the layout and `gateRead(leafTrees, comparison)`: the gate's items come only from a leaf-wide read that answered for the same comparison (`reading` until it answers, `none` with the reason otherwise).
+- Lane destinations open the comparison change-set viewer with held classification filters. The own
+  worklist view receives leafTrees and comparison binding separately; no `UnexplainedLaneCenter` or
+  lane-focused file view remains.
 
 ### The stacked layout
 
@@ -84,12 +98,12 @@ At or below 60rem the grid is one column. `markerReturn` is then sticky at `top:
 - Styles are module-level constants built with `css` from `../../../styled-system/css`: `workspace`, `shell`, `muted`, `title`, `jump`, `markerReturn` and `rail`.
 - Test ids rendered here: `review-workspace`, `review-jump-to-selection`, `review-center-column`, `review-reading-pending`, `review-reading-problem`, `review-roster-walk`, and, for an uncomposed context, `review-family-tree`, `review-family-context` and `review-family-limitation`.
 - The file makes no `fetch` call, and its one `useEffect` is in `useSelectionFocus`. It calls `useReviewTrees` for the leaf-wide tree view; the lane read arrives from the surface as `laneRead`.
-- The file is 923 lines.
+
 
 ### Invariants And Boundaries
 
-- Semantic selection never filters the changed-file population: the source explorer always receives the whole inventory.
-- On a tree comparison the explorer's labels are the lane's buckets; a dataset review keeps the payload's lists.
+- Semantic selection never filters the complete comparison change-set population; All changes remains usable independently of lane availability.
+- Lane destinations use held server classification and never substitute another comparison's inventory or facts.
 - Confirmed no-family, unselected, absent and unreadable context are different states with different sentences (`emptyFamilyDescription`), and an unknown membership opened from an intent marker is its own state.
 - While `reading` is set, nothing of the earlier payload's subject is rendered as the requested subject's reading: the center shows only the requested subject's status, and the marks are the reader's explicit choice only.
 - The reading area shows nothing of a kept family: its mark and its content come from the selected subject's own answer.
@@ -108,7 +122,7 @@ At or below 60rem the grid is one column. `markerReturn` is then sticky at `top:
 - A row of the walked tree, a kept family's included, is selected through the navigation with `keepTree`. [26]
 - What the tree draws: the walked entries, the kept families with the subject each was last read for, the notice and the selected subject's state. [27]
 - The label of the subject a kept family was last read for. [28]
-- The rail: the navigation with the tree inside it, the families the tree shows, the kept flag, the lane destinations and the source explorer. [29]
+- The rail renders outline navigation and change-set/worklist destinations, without a source explorer or changed-file list. [29]
 - The tree is drawn when the subject's context is composed or the walk holds a family; an unknown-membership target has its own state. [30]
 - Only a render made after the request answers it; a pending subject and an unanswered scroll-only request keep it. [31]
 - A scroll-only request brings the node into view; any other moves focus only if the reader has not moved it. [32]
@@ -117,9 +131,7 @@ At or below 60rem the grid is one column. `markerReturn` is then sticky at `top:
 - The in-tree and stacked test that gates every reveal. [46]
 - The answered in-tree selection on the stacked layout focuses the selected row without scrolling to it and reveals the reading area; every other selection keeps its original focus call. [47]
 - What a selection focuses: a followed marker's unknown-membership state, else the tree's current node. [33]
-- The explorer's labels: a tree comparison's from the lane, a dataset review's from the payload's lists. [34]
-- The gate's items for the lane come only from the same comparison's leaf-wide read. [35]
-- The lane's rail nodes, for a tree comparison only. [36]
+
 - The workspace carries the state of the way back. [37]
 - The way back's sticky box in the stacked layout. [38]
 - The sentences of the uncomposed context states. [39]
@@ -127,3 +139,8 @@ At or below 60rem the grid is one column. `markerReturn` is then sticky at `top:
 - The workspace's moves for an intent marker: select the target through the navigation, and restore the reading position. [41]
 - The scope header's record label lives in the header's module. [42]
 - The triage bar sticks below the way back at the workspace's offset. [43]
+- Display state owned above the pane switch [48]
+- Rail, center and jump control composition [50]
+- Lane counts feeding the navigation summary [52]
+- Change-set and worklist destinations, no file list [53]
+- Focus landing on the selection's answer [55]

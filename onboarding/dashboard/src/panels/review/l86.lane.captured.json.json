@@ -1,0 +1,41 @@
+{
+  "path": "dashboard/src/panels/review/l86.lane.captured.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Lane destinations with per-file buckets\n\nAnchor: `lane`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "800ce4e6b44dfe58a87d0ad10caf149c27d3cca5",
+            "content": "sha256:ca89fd115354131d7e7495ff644f99c500ecb3fedde466fc74c216b2a419bd6b",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Recorded comparison the lane classifies\n\nAnchor: `comparison`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "800ce4e6b44dfe58a87d0ad10caf149c27d3cca5",
+            "content": "sha256:ca89fd115354131d7e7495ff644f99c500ecb3fedde466fc74c216b2a419bd6b",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

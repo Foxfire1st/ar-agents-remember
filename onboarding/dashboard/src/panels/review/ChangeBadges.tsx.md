@@ -6,12 +6,10 @@
 
 ## Purpose
 
-**The family tree's change-kind badges, family breakdown and triage controls (MIK-R33, adopting ICR-R32@v1 rules 2, 3,
-6 and 9's status placement).** Every value it renders is the server's fact or a count of them (`changeTriage.ts`); it
-decides no fact. `FamilyTree.tsx` mounts it only when the context carries change facts (a tree comparison); a dataset
-review renders none of it. It is also where a followed intent marker's unknown membership (MIK-L34) is stated once on a
-tree comparison's member row, as a tag on the membership line.
+**Outline navigation badges, reading-area change facts, and triage controls.** Values rendered here are delivered facts or counts computed by `changeTriage.ts`; the module decides no fact. `FamilyTree.tsx` mounts `OutlineChangeBadge` from each outline row's badge, and that component renders nothing when no badge is supplied. It does not mount the full member/guarantee fact renderers. Those detailed reasons and followed-marker membership attribution belong to the reading area; their absence does not invent dataset change facts.
 
+Render the family tree's change badges and its triage bar: one short badge per outline row saying what changed, the delivered per-member and guarantee facts with their reasons on the main page, and the order, traversal and status controls above the tree.
+- `OutlineChangeBadge` draws the tree row's one badge; the member and guarantee badges below state the delivered facts in the main page only, never in the tree.
 ## Code Commentary
 
 ### Logic
@@ -21,9 +19,9 @@ tree comparison's member row, as a tag on the membership line.
   differs" for `text_differs`), then the reason lines. Its `title` holds the kind's meaning and every evidence and
   reason line. A returned member the facts do not describe reads `unknown` with "no change facts were delivered for this
   member" (`UNDESCRIBED_CHANGE`), never `unchanged`.
-- **Reasons, labelled by what is unknown (merge round).** `UnknownReason` draws "change kind unknown: <first reason>
-  (and N more)" and `MembershipReason` draws "membership unknown: …", each in view beside the badge with every reason in
-  its `title` (ruling 16:22:22 items 4 and 9). The family row's `GuaranteeChangeBadge` draws "guarantee unknown: …".
+- **Reasons, labelled by what is unknown.** `UnknownReason` and `MembershipReason` expose every delivered
+  reason joined in open reading content, also preserving title text. The guarantee fact names its own
+  unknown reason; no closed disclosure or first-reason-only truncation substitutes for it.
 - **One statement per fact on a named family's member (ruling 17:47:43's merge plan).** `useMemberChange` reads
   `MarkerTargetState.useMemberTarget` (the same check L34's `MemberTargetNote` uses, so the two cannot disagree on the
   target). When a followed marker's unknown-membership target is this row, the membership line carries the tagged
@@ -31,12 +29,12 @@ tree comparison's member row, as a tag on the membership line.
   comparison know a membership the marker could not confirm, the line names "the marker's classification: …" and the
   badge keeps the comparison's fact (`membershipLine`); on real data that case does not arise (review R3 point 2).
 - **The accessible description (review R3-1).** `describedBy` always orders the badge, then the change-kind reason,
-  then the membership, whatever the drawn order; `FamilyTree.useMemberNodeIds` puts it in `aria-describedby` while the
-  node's name stays its subject.
+  then the membership, whatever the drawn order. Compact outline row names are title+badge; the removed
+  `FamilyTree.useMemberNodeIds` integration is not a current sidebar contract.
 - **`FamilyBreakdown`.** "Members by change: 1 intent · 2 impl · 0 membership · 1 unknown of 5", scoped as "… of N
   returned (T total)" or "(total unknown)" (`breakdownText`); never labelled as the `+N −N` intent count.
 - **`TriageControls` in the sticky `triageBar`.** The order button ("Order: changes first" / "Order: authored"), "↑
-  Previous change (k)" and "↓ Next change (j)" with the keymap owner's effective bindings in their labels and
+  Previous" and "↓ Next" with the keymap owner's effective bindings in their titles and
   `aria-keyshortcuts`, and the polite `role="status"` line. The bar sticks at `top: var(--review-sticky-top, 0)`, below
   L34's sticky `Back to <file>` while it is open in the stacked layout (`ReviewWorkspace` sets the variable; the merge
   round's shared offset), and its panel-coloured top shadow covers the scroll container's padding strip when stuck.
@@ -49,22 +47,13 @@ tree comparison's member row, as a tag on the membership line.
   `review-member-target-tag`, `review-guarantee-change`, `review-family-breakdown` (`data-partial`),
   `review-triage-bar`, `review-triage-controls`, `review-tree-order` (`data-order`), `review-previous-change`,
   `review-next-change`, `review-change-status`.
-- 359 lines.
+
 
 ### Invariants And Boundaries
 
-- **Candidate invariant (not ingested; no speculative ingestion): each fact is stated once per node, both visually and
-  to assistive technology.** Realized by `MemberChangeBadge` (one badge, one change-kind reason line, one membership
-  line; the marker's state as a tag on that line, L34's note not drawn), the `text_differs` note replacing the side
-  tag's "· same revision · text differs" and the family badge replacing the guarantee block's "· unchanged"
-  (`FamilyTree.tsx`), and `describedBy` with `FamilyTree.useMemberNodeIds` (name = subject, description = facts, ruled
-  order). Proved by `FamilyTree.triage.test.tsx` ("states each fact once per node…", "says why an unknown is unknown…",
-  the three "one statement per fact on a member" cases), `ReviewSurface.triageMarkers.test.tsx` case 1 and L34's
-  adjusted `ReviewSurface.markers.test.tsx` step (name and description on real data), the merge-round mutations (tag
-  dropped; L34's note beside the badge; description with membership first; the marker's reason preferred) and the R3
-  mutations (no `aria-labelledby`; facts in the name; a dataset row not described; the side tag left out of the name),
-  all caught, and the worker's and the reviewer's CDP reads at 390 px.
-- An unknown badge is never unexplained, and the status of an end or a partial family is announced where the reader is
+- Delivered semantic facts are stated in the reading area, not duplicated as sidebar disclosures.
+  A marker's unknown membership shares one membership reason line without replacing comparison facts.
+- An unknown semantic badge is never unexplained, and an end status is announced where the reader is
   looking (the sticky bar; the live region stays).
 
 ### Todos
@@ -72,6 +61,7 @@ tree comparison's member row, as a tag on the membership line.
 Review R3-2 (accepted as a note): at 390 px, as the tree section scrolls out, the sticky bar slides up under the sticky
 Back for one step; Back stays on top and clickable.
 
+- `OutlineChangeBadge` maps an `OutlineBadge` to a pill colour (`added`/`removed`/`changed` read as intent, `code changed` as implementation, `joined`/`left` as membership) and titles it with `OUTLINE_MEANING`; an aggregate `N changed` badge keeps the explanatory title instead.
 ## Evidence
 
 ### Docs References
@@ -97,3 +87,8 @@ No configured live documentation source was available for this pass.
 ### Cross-Repo References
 
 No cross-repo boundary is crossed by this file.
+- Row badge maps outline kinds to pill colours with meaning titles [12]
+- Badge meanings for each outline kind [13]
+- Marker target joined to delivered facts with ordered description [16]
+- Membership line keeps both the marker reason and the comparison fact [17]
+- Triage bar with order switch, traversal buttons and polite status [18]

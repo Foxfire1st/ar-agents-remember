@@ -17,10 +17,7 @@ MIK-L31 from L25's). Only `fetch` is stubbed, so the URL and the body travel the
 
 ### Logic
 
-- **The tree view of a converted leaf:** the four trees (code base `8a2d4b47`), the pinning refs (under
-  `refs/ar/review/260928_maintained-invariant-knowledge/260928-MIK-L31/1`, the directory-name namespace of ruling
-  02:32:42 (a)) and both knowledge sides; the currentness read through `code_tree.tree_id`; the memory diff grouped by record and by source path with currentness per
-  side; the worklist items, their history rows without a currency mark, and the gate linkage.
+- **The tree view of the captured converted leaf:** the four trees, directory-name pinning refs and both complete knowledge sides; per-side currentness is checked against each side's own comparison code tree. The surviving worklist case checks its computed/bound state, a touched invariant, the family history row without a `current` key, and linked source hunks. This suite does not assert a grouped memory diff or literal history patches.
 - **One wire convention (MIK-L25 review F9, settled by MIK-L31):** no camelCase key anywhere in the real body,
   including the owners' own documents (`stale_members`, `owner_kind` present); `treeComparisonNumber` reads
   `review:trees:<n>` and nothing else, and `reviewTrees` sends `invariants=a,b` with `comparison=7`.
@@ -61,3 +58,6 @@ No configured live documentation source was available for this pass.
 ### Cross-Repo References
 
 No cross-repo boundary is crossed by this file.
+- The suite runs the adapter over the real captured body [5]
+- Currentness is read per side on the comparison's code trees [6]
+- Recorded comparisons stay addressable by number, never path [7]

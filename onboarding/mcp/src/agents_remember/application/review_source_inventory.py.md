@@ -288,8 +288,10 @@ odd name.
 - **The cases that measure this module against real repositories: population and per-path status against an independent Git observation, the tab/newline name, one entry per renderability kind, unavailable versus measured-empty with its control, the paths-only partial rendering, and the non-UTF-8 byte form.** [61]
 - The independent, byte-safe Git observation both review suites compare against, deliberately a different Git question and deliberately read through the production runner. [62]
 - **The cases that measure the inventory through the real composition and the real route: no knowledge at all, an unusual name carried by the shipped capture, non-text and mode-changed paths, and a non-UTF-8 name that leaves the review openable and partial.** [63]
-- The surface that renders the inventory in all three of its states, with the byte-form rows beside the named ones. [64]
-- The complete inventory remains navigable at its listed generation; source expansion is centralized and byte-form names stay explicitly unaddressable. [65]
+
+
+
+
 
 ### Cross-Repo References
 
@@ -298,3 +300,8 @@ the shipped runner and carries no identity that ranges beyond the repository nam
 names.
 
 No meaningful cross-repo references found.
+
+- The current comparison viewer renders named changed-file rows and explicit byte-form cannot-open rows in All changes; the backend inventory supplies wire data, not this UI. [66]
+- Comparison list/diff requests use the held comparison number; changed-file controls open only eligible listed files, while byte-form paths remain displayed cannot-open facts. [67]
+- Comparison list/diff requests use the held comparison number; changed-file controls open only eligible listed files, while byte-form paths remain displayed cannot-open facts. [68]
+- Comparison list/diff requests use the held comparison number; changed-file controls open only eligible listed files, while byte-form paths remain displayed cannot-open facts. [69]

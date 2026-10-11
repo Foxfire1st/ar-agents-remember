@@ -13,7 +13,7 @@
     "Folding the same answer again gives the same walk, so a render that finds nothing new stores nothing."
   ],
   "exclusions": [
-    "The one read a kept family's continuation control makes when the reader uses it: it is the read of the selection of that family.",
+    "Explicit subject-bound main-page roster pagination performs its requested review read; retained walk folding itself performs none. A kept-family handler branch is not a sidebar control.",
     "Server-side state, routes and response fields: none exists for the walked tree."
   ],
   "id": "INV-BS5PFE",
@@ -28,7 +28,7 @@
     "leaf": "260928-MIK-L39",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "Keeping the walked tree issues no request: a selection issues one review read for a subject the read cache does not hold and none for one it holds, and nothing is read for a kept family.",
   "status": "proposed",

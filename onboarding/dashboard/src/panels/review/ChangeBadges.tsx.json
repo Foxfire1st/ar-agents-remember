@@ -79,6 +79,86 @@
         }
       ]
     },
+    "12": {
+      "note": "Row badge maps outline kinds to pill colours with meaning titles",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "342a8e6bec7faff90ae4e959a5b0e95904f5aeb2",
+            "content": "sha256:533ad6c5b6073c8daba2320f4e36c2b8e3aaa2661c73746bb58a72d0f6167097",
+            "locator": {
+              "kind": "symbol",
+              "name": "OutlineChangeBadge"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "Badge meanings for each outline kind",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "342a8e6bec7faff90ae4e959a5b0e95904f5aeb2",
+            "content": "sha256:58f5b1c8a8f73f03a47933442e684a0f32345d780320c0c9b4ccd4af126da561",
+            "locator": {
+              "kind": "symbol",
+              "name": "OUTLINE_MEANING"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "Marker target joined to delivered facts with ordered description",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "342a8e6bec7faff90ae4e959a5b0e95904f5aeb2",
+            "content": "sha256:46ff82ef10a3b8bd6e9f61d4ec11dcaa3339383a1784209d1fc549c54adf69f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "useMemberChange"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "Membership line keeps both the marker reason and the comparison fact",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "342a8e6bec7faff90ae4e959a5b0e95904f5aeb2",
+            "content": "sha256:7d4657e0edc60acead71332a5f0dee9cad72caa2fca430aec4dcb624a89dcf33",
+            "locator": {
+              "kind": "symbol",
+              "name": "membershipLine"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "Triage bar with order switch, traversal buttons and polite status",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "342a8e6bec7faff90ae4e959a5b0e95904f5aeb2",
+            "content": "sha256:cac7508dba66fd904c3711ec7c524cfdbb5527a9e21110439797a02c94c50d99",
+            "locator": {
+              "kind": "symbol",
+              "name": "TriageControls"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "The kind styles on existing tokens; an unknown is dashed.",
       "targets": [

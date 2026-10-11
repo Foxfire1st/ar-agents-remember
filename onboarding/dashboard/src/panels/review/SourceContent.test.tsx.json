@@ -276,94 +276,12 @@
         }
       ]
     },
-    "20": {
-      "note": "The surface the cases render: the openable row that mounts the renderer, and the inventory that owns the open row and passes the published generation down.\n\nAnchor: `review-inventory-open`; `SourceContent`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "15f7110353dadebfae32b945340bc81624d0fd9b",
-            "content": "sha256:7a9918cfbbeca0fe8a60beee6bfca6dae9a51d703b41789f89f7c4a9233ae972",
-            "locator": {
-              "kind": "symbol",
-              "name": "SourceExplorer"
-            },
-            "path": "dashboard/src/panels/review/SourceExplorer.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "15f7110353dadebfae32b945340bc81624d0fd9b",
-            "content": "sha256:1a92eb2827db3d3ee46c359773bc9bfff390ba41e2bcfe1664f75f02fd3e76bc",
-            "locator": {
-              "end": 103,
-              "kind": "line_range",
-              "start": 103
-            },
-            "path": "dashboard/src/panels/review/SourceExplorer.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "7c6601ddf7269a084e197eb6ae1f071a8c3acef6",
-            "content": "sha256:b3b59fcd9e19bc1410570a8b897946cc90cb1b8406e4717e69a55b59c19d3775",
-            "locator": {
-              "end": 338,
-              "kind": "line_range",
-              "start": 294
-            },
-            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "9092b00bfc271ae8c42fc42a899c837dd1652356",
-            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
-            "locator": {
-              "end": 10,
-              "kind": "line_range",
-              "start": 10
-            },
-            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "9092b00bfc271ae8c42fc42a899c837dd1652356",
-            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
-            "locator": {
-              "end": 51,
-              "kind": "line_range",
-              "start": 51
-            },
-            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "9092b00bfc271ae8c42fc42a899c837dd1652356",
-            "content": "sha256:82f3cfd11da6150197aceed08406ac64b050340de7bc04124a4cb7efa671340b",
-            "locator": {
-              "end": 279,
-              "kind": "line_range",
-              "start": 279
-            },
-            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "21": {
       "note": "The renderer under test, and the rules its cases are the evidence for.",
       "targets": [
         {
           "anchor": {
-            "blob": "605a94e6165911a70c8720cc9da1642652343d76",
+            "blob": "9408212dc6bbb8b39c81e874b707478b36dd6319",
             "content": "sha256:80c602650fbe4d18212c300d5b20ea986bab9d8f666fd0f5ef6ddc9897a00f99",
             "locator": {
               "kind": "symbol",
@@ -375,7 +293,7 @@
         },
         {
           "anchor": {
-            "blob": "605a94e6165911a70c8720cc9da1642652343d76",
+            "blob": "9408212dc6bbb8b39c81e874b707478b36dd6319",
             "content": "sha256:b84fd31944c3c27d5bc513725f1bf10f9e0660fd1009f5d4b8300735f0ad354b",
             "locator": {
               "kind": "symbol",
@@ -387,7 +305,7 @@
         },
         {
           "anchor": {
-            "blob": "605a94e6165911a70c8720cc9da1642652343d76",
+            "blob": "9408212dc6bbb8b39c81e874b707478b36dd6319",
             "content": "sha256:d23d8a2d7c48c308d86f8012ba07731f13f1319ac4fc8a9f17b9eb683a7f9e95",
             "locator": {
               "kind": "symbol",
@@ -424,12 +342,12 @@
         },
         {
           "anchor": {
-            "blob": "605a94e6165911a70c8720cc9da1642652343d76",
+            "blob": "9408212dc6bbb8b39c81e874b707478b36dd6319",
             "content": "sha256:982097bda2d22d901e34d3b9e5cc28baf2a1e3c086812f8d535019974ec2b2f5",
             "locator": {
-              "end": 257,
+              "end": 263,
               "kind": "line_range",
-              "start": 197
+              "start": 203
             },
             "path": "dashboard/src/panels/review/SourceContent.tsx"
           },
@@ -437,7 +355,7 @@
         },
         {
           "anchor": {
-            "blob": "605a94e6165911a70c8720cc9da1642652343d76",
+            "blob": "9408212dc6bbb8b39c81e874b707478b36dd6319",
             "content": "sha256:d6f484c7126a30c0dba0a748d0f124384bab95e70deeeec0e68c4f21d10382ee",
             "locator": {
               "end": 126,
@@ -450,7 +368,7 @@
         },
         {
           "anchor": {
-            "blob": "605a94e6165911a70c8720cc9da1642652343d76",
+            "blob": "9408212dc6bbb8b39c81e874b707478b36dd6319",
             "content": "sha256:d90bfacc766d36e055b969e38d8cc21f087d1e0bafc1cc31706404b51a48ba75",
             "locator": {
               "end": 138,
@@ -498,12 +416,48 @@
         }
       ]
     },
+    "24": {
+      "note": "Comparison changed paths open through the existing viewer; retained cards use SourceContent for structured full-file metadata.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0e0f3a0a209313492e7cb61a2066cf40519f66e",
+            "content": "sha256:9c9b27ee0e7f147e6abc60cce474321f9c5fa305d79d661c79e0318c95ffe1b4",
+            "locator": {
+              "end": 1091,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "Comparison changed paths open through the existing viewer; retained cards use SourceContent for structured full-file metadata.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9408212dc6bbb8b39c81e874b707478b36dd6319",
+            "content": "sha256:fa271a9d1202d60b3a08afec024e6437f2204020db132e100eae771729f52d59",
+            "locator": {
+              "end": 311,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "dashboard/src/panels/review/SourceContent.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "3": {
       "note": "The task context and the two generation ids every case reads at.",
       "targets": [
         {
           "anchor": {
-            "blob": "5e53d394f64fbaf6b065bebfc2b705404424d645",
+            "blob": "f9f036b92a418d64f25ea75ceb4825f6f8faa18a",
             "content": "sha256:6d9b35ddfdeecb9861344bad9f21612ce4d133aec2d7460e0326c5e8a14f467f",
             "locator": {
               "kind": "symbol",
@@ -514,7 +468,7 @@
         },
         {
           "anchor": {
-            "blob": "5e53d394f64fbaf6b065bebfc2b705404424d645",
+            "blob": "f9f036b92a418d64f25ea75ceb4825f6f8faa18a",
             "content": "sha256:b1b9c7a9f1ddc559bf410213f7b8f29b2bd4ea357b4f983da787d6439555306c",
             "locator": {
               "kind": "symbol",
@@ -530,7 +484,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5e53d394f64fbaf6b065bebfc2b705404424d645",
+            "blob": "f9f036b92a418d64f25ea75ceb4825f6f8faa18a",
             "content": "sha256:4e70bbd2752a1d0f050ef6d232697920763130e226a4946fb9ede4fa379142fc",
             "locator": {
               "kind": "symbol",
@@ -541,7 +495,7 @@
         },
         {
           "anchor": {
-            "blob": "5e53d394f64fbaf6b065bebfc2b705404424d645",
+            "blob": "f9f036b92a418d64f25ea75ceb4825f6f8faa18a",
             "content": "sha256:ee61cce498ee558809daaf6cbdd87424f6c240ba929b15c034602774a337f035",
             "locator": {
               "kind": "symbol",
@@ -552,7 +506,7 @@
         },
         {
           "anchor": {
-            "blob": "5e53d394f64fbaf6b065bebfc2b705404424d645",
+            "blob": "f9f036b92a418d64f25ea75ceb4825f6f8faa18a",
             "content": "sha256:64e7ee1b6bbacf38ea2f472e9acb9374d97485c562fe3f5c32d37f35ef38ad16",
             "locator": {
               "kind": "symbol",
@@ -563,7 +517,7 @@
         },
         {
           "anchor": {
-            "blob": "5e53d394f64fbaf6b065bebfc2b705404424d645",
+            "blob": "f9f036b92a418d64f25ea75ceb4825f6f8faa18a",
             "content": "sha256:6daa505b0d5a17ba188ca39e1223eeb136782ef0aa1815c3f78af681b73086e3",
             "locator": {
               "kind": "symbol",
@@ -574,7 +528,7 @@
         },
         {
           "anchor": {
-            "blob": "5e53d394f64fbaf6b065bebfc2b705404424d645",
+            "blob": "f9f036b92a418d64f25ea75ceb4825f6f8faa18a",
             "content": "sha256:32450d0de751315c973120ac6198ba2380a25677a3feca95dfecf25f388d7fbe",
             "locator": {
               "kind": "symbol",
@@ -590,7 +544,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5e53d394f64fbaf6b065bebfc2b705404424d645",
+            "blob": "f9f036b92a418d64f25ea75ceb4825f6f8faa18a",
             "content": "sha256:498f23c656fe1fa0e9b0bf17fcb3a6827719139071ed749a6f9e48906babb323",
             "locator": {
               "kind": "symbol",
@@ -606,7 +560,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5e53d394f64fbaf6b065bebfc2b705404424d645",
+            "blob": "f9f036b92a418d64f25ea75ceb4825f6f8faa18a",
             "content": "sha256:5a93baf023a29f941b1aefe5c519b4cca9085acfc795646d427875853ff7fb1a",
             "locator": {
               "kind": "symbol",
@@ -617,7 +571,7 @@
         },
         {
           "anchor": {
-            "blob": "5e53d394f64fbaf6b065bebfc2b705404424d645",
+            "blob": "f9f036b92a418d64f25ea75ceb4825f6f8faa18a",
             "content": "sha256:e8047ff6e6469b4711184b94a2b92960871562af4f3c4779988676a277685d07",
             "locator": {
               "kind": "symbol",
@@ -628,7 +582,7 @@
         },
         {
           "anchor": {
-            "blob": "5e53d394f64fbaf6b065bebfc2b705404424d645",
+            "blob": "f9f036b92a418d64f25ea75ceb4825f6f8faa18a",
             "content": "sha256:7aaecc0e5ee62e59a8c8c5c7dbc524b7d57d1d0c33ca6d2f30d819741000140e",
             "locator": {
               "kind": "symbol",
@@ -650,7 +604,7 @@
         },
         {
           "anchor": {
-            "blob": "5e53d394f64fbaf6b065bebfc2b705404424d645",
+            "blob": "f9f036b92a418d64f25ea75ceb4825f6f8faa18a",
             "content": "sha256:7a2da90b5c6a630d91e3577f655523e5592247ce906dbc52a3ab1c59c703a35d",
             "locator": {
               "kind": "symbol",
@@ -666,7 +620,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5e53d394f64fbaf6b065bebfc2b705404424d645",
+            "blob": "f9f036b92a418d64f25ea75ceb4825f6f8faa18a",
             "content": "sha256:59cb81e5769e4b1a1ce3b27c8cd19d1ca7dfe050993bea772a1b2f51d48fdb83",
             "locator": {
               "kind": "symbol",
@@ -693,7 +647,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5e53d394f64fbaf6b065bebfc2b705404424d645",
+            "blob": "f9f036b92a418d64f25ea75ceb4825f6f8faa18a",
             "content": "sha256:c3228295d6f017631522e9ab13954408bdddac0fb851b1e33a804b2b673ceede",
             "locator": {
               "kind": "symbol",
@@ -704,7 +658,7 @@
         },
         {
           "anchor": {
-            "blob": "5e53d394f64fbaf6b065bebfc2b705404424d645",
+            "blob": "f9f036b92a418d64f25ea75ceb4825f6f8faa18a",
             "content": "sha256:b1bebaad14022b24b5b7892255ca88cbdccdb48b506bfe19cdaf522fe775867e",
             "locator": {
               "kind": "symbol",
@@ -715,7 +669,7 @@
         },
         {
           "anchor": {
-            "blob": "5e53d394f64fbaf6b065bebfc2b705404424d645",
+            "blob": "f9f036b92a418d64f25ea75ceb4825f6f8faa18a",
             "content": "sha256:e5713c02dad94bb5403ad96edf7f91706a6c83e163da88d07aa26a009578a4ad",
             "locator": {
               "kind": "symbol",

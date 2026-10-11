@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "00b6a54df559165d59f5c46c8a1ab31d6701367a",
+        "blob": "1d2ce3087885774bc27b08dba49bdac96fcaa15a",
         "content": "sha256:68997ff7d2cf0414b3c209e1f50fa32b2716ce3a54d5f5064231efaa6ff66f27",
         "locator": {
           "kind": "symbol",
@@ -21,26 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "00b6a54df559165d59f5c46c8a1ab31d6701367a",
-        "content": "sha256:0c33f4ff9cc589138ae44e6d02cf8d3b6f851239b6b87f359d3b3a0a9c62a0aa",
-        "locator": {
-          "kind": "symbol",
-          "name": "CatalogueFamilies"
-        }
-      },
-      "id": "RLZ-534RCM",
-      "invariant": "INV-9ZKYWQ",
-      "origin": {
-        "handoffEntry": "MIK-R39@v1-other-selections-start-afresh",
-        "leaf": "260928-MIK-L39"
-      },
-      "rationale": "Places the tree, as one keyed child, where the first family it shows stands in the catalogue. While the tree holds a kept family it also lists a catalogue row for every family the tree shows. A catalogue row selects without options, which starts the tree afresh with that family alone. The case \"starts afresh at the family row of the subject already selected\" of `dashboard/src/panels/review/ReviewSurface.walkFresh.test.tsx` tests a row that names the selected subject.",
-      "role": "presentation"
-    },
-    {
-      "anchor": {
-        "blob": "00b6a54df559165d59f5c46c8a1ab31d6701367a",
-        "content": "sha256:9413f7df828e707acd31a1c8799e2cd20451930fbd8dd55086d2ab09cef28501",
+        "blob": "1d2ce3087885774bc27b08dba49bdac96fcaa15a",
+        "content": "sha256:0f41a9e2d507fe7766185518e6c08c76cefe82a73862688b1c5f7a3aa99fa958",
         "locator": {
           "kind": "symbol",
           "name": "useReviewNavigation"
@@ -56,7 +38,43 @@
     },
     {
       "anchor": {
-        "blob": "00b6a54df559165d59f5c46c8a1ab31d6701367a",
+        "blob": "1d2ce3087885774bc27b08dba49bdac96fcaa15a",
+        "content": "sha256:8d88230fc9eb29adac1bee57b1b2aa2e4da2a0a7abe027989c247357ee6a15d2",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReviewNavigation"
+        }
+      },
+      "id": "RLZ-F8W21K",
+      "invariant": "INV-QAR0F3",
+      "origin": {
+        "handoffEntry": "MIK-R86@v1 rule 6",
+        "leaf": "260928-MIK-L86"
+      },
+      "rationale": "It renders the outline and lane totals as one summary, retaining explicit loading and unavailable values.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "1d2ce3087885774bc27b08dba49bdac96fcaa15a",
+        "content": "sha256:a0b2fafe30cb36e103b0264be04de090dd9f5418df933ce58bc88398ae5a9e53",
+        "locator": {
+          "kind": "symbol",
+          "name": "initialSubject"
+        }
+      },
+      "id": "RLZ-GRV9V6",
+      "invariant": "INV-MGXG8S",
+      "origin": {
+        "handoffEntry": "MIK-R86@v1 rule 7",
+        "leaf": "260928-MIK-L86"
+      },
+      "rationale": "It applies the first-real-change selection to an unnamed entry while keeping an explicit subject authoritative.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "1d2ce3087885774bc27b08dba49bdac96fcaa15a",
         "content": "sha256:9ab07617d668d06418fea3d3b6c2381aaf882d9e8e0904d135fe0ea1fa723623",
         "locator": {
           "kind": "symbol",
@@ -73,7 +91,7 @@
     },
     {
       "anchor": {
-        "blob": "00b6a54df559165d59f5c46c8a1ab31d6701367a",
+        "blob": "1d2ce3087885774bc27b08dba49bdac96fcaa15a",
         "content": "sha256:26cf22d37531dad22a1d29776e25369192889e02820270e33cc11aac1de5a895",
         "locator": {
           "kind": "symbol",
@@ -90,8 +108,8 @@
     },
     {
       "anchor": {
-        "blob": "00b6a54df559165d59f5c46c8a1ab31d6701367a",
-        "content": "sha256:9413f7df828e707acd31a1c8799e2cd20451930fbd8dd55086d2ab09cef28501",
+        "blob": "1d2ce3087885774bc27b08dba49bdac96fcaa15a",
+        "content": "sha256:0f41a9e2d507fe7766185518e6c08c76cefe82a73862688b1c5f7a3aa99fa958",
         "locator": {
           "kind": "symbol",
           "name": "useReviewNavigation"
@@ -107,8 +125,8 @@
     },
     {
       "anchor": {
-        "blob": "00b6a54df559165d59f5c46c8a1ab31d6701367a",
-        "content": "sha256:9413f7df828e707acd31a1c8799e2cd20451930fbd8dd55086d2ab09cef28501",
+        "blob": "1d2ce3087885774bc27b08dba49bdac96fcaa15a",
+        "content": "sha256:0f41a9e2d507fe7766185518e6c08c76cefe82a73862688b1c5f7a3aa99fa958",
         "locator": {
           "kind": "symbol",
           "name": "useReviewNavigation"
@@ -124,8 +142,8 @@
     },
     {
       "anchor": {
-        "blob": "00b6a54df559165d59f5c46c8a1ab31d6701367a",
-        "content": "sha256:9413f7df828e707acd31a1c8799e2cd20451930fbd8dd55086d2ab09cef28501",
+        "blob": "1d2ce3087885774bc27b08dba49bdac96fcaa15a",
+        "content": "sha256:0f41a9e2d507fe7766185518e6c08c76cefe82a73862688b1c5f7a3aa99fa958",
         "locator": {
           "kind": "symbol",
           "name": "useReviewNavigation"
@@ -146,7 +164,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "00b6a54df559165d59f5c46c8a1ab31d6701367a",
+            "blob": "1d2ce3087885774bc27b08dba49bdac96fcaa15a",
             "content": "sha256:68997ff7d2cf0414b3c209e1f50fa32b2716ce3a54d5f5064231efaa6ff66f27",
             "locator": {
               "kind": "symbol",
@@ -162,60 +180,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "00b6a54df559165d59f5c46c8a1ab31d6701367a",
+            "blob": "1d2ce3087885774bc27b08dba49bdac96fcaa15a",
             "content": "sha256:8813a8858741137b603631d0bf6d52d3ba1c8a5a399362be070af9789715a658",
             "locator": {
               "kind": "symbol",
               "name": "ReviewNavigationState"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "13": {
-      "note": "A catalogue row selects its subject with no options.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "00b6a54df559165d59f5c46c8a1ab31d6701367a",
-            "content": "sha256:6bcbf369aefda464495c9f2c01d27bafc9483126f34b98dea6be4536de4e5a19",
-            "locator": {
-              "kind": "symbol",
-              "name": "SubjectButton"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "14": {
-      "note": "The rail: summary, family rows with the tree, all invariants, the statements and the two buttons.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "00b6a54df559165d59f5c46c8a1ab31d6701367a",
-            "content": "sha256:0d2898874fbc86782d88e5f5bf55ba8dea807d155511991cb54dfbf627d4ae26",
-            "locator": {
-              "end": 165,
-              "kind": "line_range",
-              "start": 101
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "15": {
-      "note": "The tree is one keyed child at the place of the first family it shows; with a kept family every family keeps its row.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "00b6a54df559165d59f5c46c8a1ab31d6701367a",
-            "content": "sha256:0c33f4ff9cc589138ae44e6d02cf8d3b6f851239b6b87f359d3b3a0a9c62a0aa",
-            "locator": {
-              "kind": "symbol",
-              "name": "CatalogueFamilies"
             }
           },
           "kind": "code"
@@ -227,7 +196,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "00b6a54df559165d59f5c46c8a1ab31d6701367a",
+            "blob": "1d2ce3087885774bc27b08dba49bdac96fcaa15a",
             "content": "sha256:26cf22d37531dad22a1d29776e25369192889e02820270e33cc11aac1de5a895",
             "locator": {
               "kind": "symbol",
@@ -239,15 +208,14 @@
       ]
     },
     "17": {
-      "note": "Subject choice, the comparison-keyed catalogue, the expiring hold, the generation bump and the engagement freeze.",
+      "note": "Subject choice is outline-first; full observed generation quarantines catalogue rows, the bounded hold expires and engagement preserves the reader's choice.\n\nAnchor: `useReviewNavigation`",
       "targets": [
         {
           "anchor": {
-            "blob": "00b6a54df559165d59f5c46c8a1ab31d6701367a",
-            "content": "sha256:9413f7df828e707acd31a1c8799e2cd20451930fbd8dd55086d2ab09cef28501",
+            "blob": "1d2ce3087885774bc27b08dba49bdac96fcaa15a",
+            "content": "sha256:ecc7f0093d30a2dbe8ec141692e9aa90dfea2481fe99d8762bb1b2c10b851c58",
             "locator": {
-              "kind": "symbol",
-              "name": "useReviewNavigation"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -259,7 +227,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "00b6a54df559165d59f5c46c8a1ab31d6701367a",
+            "blob": "1d2ce3087885774bc27b08dba49bdac96fcaa15a",
             "content": "sha256:9ab07617d668d06418fea3d3b6c2381aaf882d9e8e0904d135fe0ea1fa723623",
             "locator": {
               "kind": "symbol",
@@ -271,15 +239,14 @@
       ]
     },
     "19": {
-      "note": "The surface-side snapshot report.",
+      "note": "Surface-side observation reports complete comparison generation, including code-only movement.\n\nAnchor: `useObservedComparison`",
       "targets": [
         {
           "anchor": {
-            "blob": "00b6a54df559165d59f5c46c8a1ab31d6701367a",
-            "content": "sha256:e8636b3d0a28a7c9116e3adbf593a8958258fc7b401ad606841d515e32bdce86",
+            "blob": "1d2ce3087885774bc27b08dba49bdac96fcaa15a",
+            "content": "sha256:ecc7f0093d30a2dbe8ec141692e9aa90dfea2481fe99d8762bb1b2c10b851c58",
             "locator": {
-              "kind": "symbol",
-              "name": "useObservedComparison"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -287,15 +254,14 @@
       ]
     },
     "20": {
-      "note": "The default subject: an explicit target, else the first family, else the first entry.",
+      "note": "initialSubject keeps an explicit target, otherwise chooses the first real outlined change; no real change means no subject, with catalogue fallback only without an outline.\n\nAnchor: `initialSubject`",
       "targets": [
         {
           "anchor": {
-            "blob": "00b6a54df559165d59f5c46c8a1ab31d6701367a",
-            "content": "sha256:0a8dafc4b94db5879fb7ff1a13c4767f0ddf97348bed303722febc89d1347280",
+            "blob": "1d2ce3087885774bc27b08dba49bdac96fcaa15a",
+            "content": "sha256:ecc7f0093d30a2dbe8ec141692e9aa90dfea2481fe99d8762bb1b2c10b851c58",
             "locator": {
-              "kind": "symbol",
-              "name": "initialSubject"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -320,38 +286,18 @@
       ]
     },
     "22": {
-      "note": "The workspace passes the families the tree shows and the kept flag.",
+      "note": "The workspace supplies walked entries to navigation counts and catalogue outline/admission to the compact tree.\n\nAnchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "5ff876f9b2c2f34b58783e9658a88bb4d5cec25c",
-            "content": "sha256:80951b78a9193578ebd71e056a8a9104518e94f052ab8e45313c657ca6b36e55",
+            "blob": "79b9df933874721d54216189dfe94463118877aa",
+            "content": "sha256:c0b1b3930f4981807c20a685f3e5769dd61c526c959e81bf4fe790f98e16364b",
             "locator": {
-              "end": 617,
-              "kind": "line_range",
-              "start": 610
+              "kind": "file"
             },
             "path": "dashboard/src/panels/review/ReviewWorkspace.tsx"
           },
           "kind": "code"
-        }
-      ]
-    },
-    "23": {
-      "note": "The mounted case of the catalogue rows beside a kept family and of the tree's place among them.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "c03d822684615321e5d3468512cebb7ef546913c",
-            "content": "sha256:8ff9ac5fddb428d2aed99911d0f76f955a3946a92fd0ef9af119fed91ef680d0",
-            "locator": {
-              "end": 193,
-              "kind": "line_range",
-              "start": 169
-            },
-            "path": "dashboard/src/panels/review/ReviewSurface.walk.test.tsx"
-          },
-          "kind": "test"
         }
       ]
     },
@@ -368,6 +314,115 @@
             "path": "dashboard/src/panels/review/ReviewSurface.navigation.test.tsx"
           },
           "kind": "test"
+        }
+      ]
+    },
+    "25": {
+      "note": "Rail section with summary, tree slot and destinations",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1d2ce3087885774bc27b08dba49bdac96fcaa15a",
+            "content": "sha256:8d88230fc9eb29adac1bee57b1b2aa2e4da2a0a7abe027989c247357ee6a15d2",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewNavigation"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1d2ce3087885774bc27b08dba49bdac96fcaa15a",
+            "content": "sha256:a784c1fcc98ceb94b39412ce6f967be4cbb95ae7abc3003a35c75dab25199560",
+            "locator": {
+              "end": 92,
+              "kind": "line_range",
+              "start": 64
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "26": {
+      "note": "Summary counts from outline over walked entries\n\nAnchor: `navigationSummary`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1d2ce3087885774bc27b08dba49bdac96fcaa15a",
+            "content": "sha256:8f7bdbae2559b33230329256df0782848e0757ec05c169b63493ab7de90c5a65",
+            "locator": {
+              "end": 104,
+              "kind": "line_range",
+              "start": 94
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "27": {
+      "note": "One-line changed-family/invariant/lane summary",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1d2ce3087885774bc27b08dba49bdac96fcaa15a",
+            "content": "sha256:ebe73e7633a72c538544a6424e8137841e1cf06eebe2cb4d0efaba21eca45a20",
+            "locator": {
+              "kind": "symbol",
+              "name": "summaryText"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "28": {
+      "note": "Outline-first opening subject, none without real change",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1d2ce3087885774bc27b08dba49bdac96fcaa15a",
+            "content": "sha256:a0b2fafe30cb36e103b0264be04de090dd9f5418df933ce58bc88398ae5a9e53",
+            "locator": {
+              "kind": "symbol",
+              "name": "initialSubject"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "30": {
+      "note": "Choice, settling, comparison generation and engage",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1d2ce3087885774bc27b08dba49bdac96fcaa15a",
+            "content": "sha256:0f41a9e2d507fe7766185518e6c08c76cefe82a73862688b1c5f7a3aa99fa958",
+            "locator": {
+              "kind": "symbol",
+              "name": "useReviewNavigation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "32": {
+      "note": "Surface-side comparison generation reporting",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1d2ce3087885774bc27b08dba49bdac96fcaa15a",
+            "content": "sha256:053a1179c87186403f843ef806d7dd502ee2b6a5c1d428fb33163e019e0cf484",
+            "locator": {
+              "kind": "symbol",
+              "name": "useObservedComparison"
+            }
+          },
+          "kind": "code"
         }
       ]
     }

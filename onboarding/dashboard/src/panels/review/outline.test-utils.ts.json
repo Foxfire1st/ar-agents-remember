@@ -1,0 +1,73 @@
+{
+  "path": "dashboard/src/panels/review/outline.test-utils.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Synthetic catalogue and outline over captures",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da70b96889270aa3be940996835c52260687b5c0",
+            "content": "sha256:28fa17ae667135822b761afcd9c6e45c73374a9d6ed9d6f978931396ee4a8610",
+            "locator": {
+              "kind": "symbol",
+              "name": "syntheticCatalogue"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Per-member change from presence, facts and revisions",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da70b96889270aa3be940996835c52260687b5c0",
+            "content": "sha256:21796cbf510e1292cd589c6796f4d4332fa585ef7c5e09d3e87ab184b7335aa3",
+            "locator": {
+              "kind": "symbol",
+              "name": "memberChange"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Guarantee comparison for family change\n\nAnchor: `joint_guarantee`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da70b96889270aa3be940996835c52260687b5c0",
+            "content": "sha256:4882a4cb67a55533fb147844ae076267091e7aa67fd3eb80e096a862463b23aa",
+            "locator": {
+              "end": 72,
+              "kind": "line_range",
+              "start": 69
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Explicit synthetic labelling in the outline detail\n\nAnchor: `Synthetic index outline`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da70b96889270aa3be940996835c52260687b5c0",
+            "content": "sha256:f6766749b2cc7d21b4d55b12fd5c7c399b80d074f20b8d19f6f8b6c00e05c9f2",
+            "locator": {
+              "end": 53,
+              "kind": "line_range",
+              "start": 48
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

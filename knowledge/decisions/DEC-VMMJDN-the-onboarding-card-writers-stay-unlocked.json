@@ -70,8 +70,8 @@
       "alternative": 1,
       "relation": "reconsider_on",
       "target": {
-        "blob": "197ac9c813cefe56583faa7429ebada46d168acd",
-        "content": "sha256:92c85531f69abf9a3040ff3c5d72e0f39be116fe5a1488b03ed2ee702f7e9c01",
+        "blob": "536d026ee5c551dea3daf51ed3731520f4b16401",
+        "content": "sha256:83e70239fb2fe29685ed990efe29b609d050cf2a0b0b59e99215e570c384646f",
         "locator": {
           "kind": "symbol",
           "name": "citation_fix_tool"
@@ -83,8 +83,8 @@
       "alternative": 1,
       "relation": "reconsider_on",
       "target": {
-        "blob": "4a21aa165bef8c474739108eb18c85115a3b3354",
-        "content": "sha256:d12084a98d779f4b69ab321b1a361cf4cd4c6d183775a0396da895b04935ae88",
+        "blob": "536d026ee5c551dea3daf51ed3731520f4b16401",
+        "content": "sha256:a50d2c3e7bb227cf80120eb7e2169138ffa607f5301aaad6b7a227d9aa93a372",
         "locator": {
           "kind": "symbol",
           "name": "citation_migrate_tool"
@@ -117,7 +117,7 @@
     "leaf": "260928-MIK-L37",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-decision/v1",
   "status": "active",
   "supersedes": []

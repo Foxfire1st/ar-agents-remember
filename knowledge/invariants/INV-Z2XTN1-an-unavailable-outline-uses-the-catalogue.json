@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "New reviewer obligation from MIK-R86@v1 (packet a78d9ae3, Architect qualification 2026-10-08 11:18:45 UTC); implemented on the W03 successor tree 95f61633, whole-primary CODE PASS verdict 3663bf07. Evidence: FamilyTree.triage.test.tsx; unavailable catalogue tests"
+  },
+  "applicability": "Tree behavior without an outline or converted memory.",
+  "conditions": [
+    "Lists catalogue families/invariants as one-line rows without badges; summary gives the reason; view is All; opens as today."
+  ],
+  "exclusions": [
+    "Change badges or the Changed view without an outline."
+  ],
+  "id": "INV-Z2XTN1",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "FamilyTree.triage.test.tsx; unavailable catalogue tests"
+      ],
+      "path": "notes/reports/l86-curator-W03/handoff-phase1.json"
+    },
+    "handoffEntry": "MIK-R86@v1 rule 11",
+    "leaf": "260928-MIK-L86",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "An unavailable outline uses the catalogue as plain one-line rows, names its reason and uses the existing initial subject choice.",
+  "status": "proposed",
+  "supersedes": []
+}

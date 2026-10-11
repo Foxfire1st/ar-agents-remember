@@ -6,24 +6,16 @@
 
 ## Purpose
 
-**The family tree over real served answers** of the MIK-L33 worker's converted scratch copy of the real repositories
-(`triageReal.family`, `triageReal.shared`; provenance `triageReal.capture-provenance.json`), with scratch-authored
-knowledge edits and the changed files' entries re-recorded as a curator does. 3 cases.
+**Three fact-presentation cases using immutable MIK-L33 served-body captures.** `MainFacts` mounts guarantee, breakdown and member badges in sections, not `FamilyTree` or `ReviewSurface`. The third case overlays the captured member facts onto explicitly synthetic outline index fields.
 
+Prove the immutable MIK-L33 capture facts stay visible in the main page: every delivered change fact and reason outside disclosures, per-family guarantees and membership, and the walked-facts overlay that feeds outline badges.
 ## Code Commentary
 
 ### Logic
 
-- **FAM-R6R095RW:** all 24 members kept (25 rows: the revised member's two rows); triage order starts
-  INV-2E8MG43K `intent` (with "same revision; text differs"), INV-ZS9ZS878 `intent` (`+impl`, both rows), six
-  `implementation`, INV-2TQGXFAX `membership`, then unchanged; INV-21SDZECS's repaired stale entry reads "re-anchored
-  (stale at base)" in its title; the carried INV-ZY0YMXMQ stays `unchanged`; INV-VPX81HXV reads `implementation` with
-  `+unknown` and names RLZ-YRVX77Q4 first (review R2-3); the breakdown reads "2 intent · 6 impl · 1 membership · 0
-  unknown of 24".
-- **An incomplete roster page is not unreturned members** (ruling 16:22:22 item 8): the family's pages are
-  `complete: false` while all 24 are returned, so `j` never stops at its continuation.
-- **The shared member and the revised guarantee:** INV-2TQGXFAX `membership` in FAM-R6R095RW and `unchanged` in
-  FAM-2HBJREC2, whose own row shows the guarantee `intent`.
+- The main-facts harness renders 24 change badges and the exact 2 intent / 6 implementation / 1 membership / 0 unknown breakdown. It checks the repaired-realization title, same-revision wording mark, both unknown-realization reasons, implementation mark, and absence of `details`.
+- The shared-body case asserts per-family guarantee/member pairs: unchanged/membership and intent/unchanged.
+- The synthetic outline overlay has 24 members, two `changed`, six `code changed`, one `joined`, family badge `9 changed`, and intent precedence for INV-ZS9ZS878. No surviving case traverses a mounted tree with `j` or checks continuation focus.
 
 ### Conventions
 
@@ -37,6 +29,7 @@ The bodies describe a scratch copy, not current project knowledge; the facts are
 
 No additional work is asserted by this card.
 
+- The three cases prove: all 24 badges with every reason in view and no `details` elements; per-family guarantees with occurrence membership across the shared member's two families; and the synthetic outline overlay where walked implementation facts become `code changed` badges under intent-then-membership precedence with an aggregate family count.
 ## Evidence
 
 ### Docs References
@@ -48,9 +41,13 @@ No configured live documentation source was available for this pass.
 ### Repo-Internal References
 
 - The suite's statement: real served answers of a scratch copy with scratch-authored knowledge edits. [1]
-- The real family badged, changes first, all 24 members kept. [2]
-- An incomplete page is not unreturned members; the shared member and the revised guarantee. [3]
+- Captured family facts in the standalone main-facts harness: badges, breakdown, reason text and no disclosures. [2]
+- Shared occurrence membership and guarantee kinds in the main-facts harness. [3]
 
 ### Cross-Repo References
 
 No cross-repo boundary is crossed by this file.
+- Main-page fact harness over captured bodies [4]
+- Every fact and reason kept outside disclosures [5]
+- Guarantees and membership preserved per family [6]
+- Walked facts overlaid onto outline badges [7]

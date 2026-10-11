@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "4527c1a55df306503a92176f7027d7c5a4eb30e0",
+        "blob": "16857f2dc76aee57f3d36e398de620019282feaa",
         "content": "sha256:ea269e8db3327392747ef193461b4298bcea39a4795fe4845132c3688657f7ea",
         "locator": {
           "kind": "symbol",
@@ -20,24 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "4527c1a55df306503a92176f7027d7c5a4eb30e0",
-        "content": "sha256:c6bf841289235e0836074cf621de34f88129fdddf61317fb8a828e2d00265f26",
-        "locator": {
-          "kind": "symbol",
-          "name": "invariantLabel"
-        }
-      },
-      "facet": "After a family, then an invariant, then the first family again by its row, the other families of the invariant's review are still in the tree, each tagged as kept and last read for the invariant, and the selected family carries no tag.",
-      "id": "PRF-AAQWVQ",
-      "invariant": "INV-NSG0D4",
-      "origin": {
-        "handoffEntry": "MIK-R39@v1-in-tree-selection-adds-rows",
-        "leaf": "260928-MIK-L39"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "4527c1a55df306503a92176f7027d7c5a4eb30e0",
+        "blob": "16857f2dc76aee57f3d36e398de620019282feaa",
         "content": "sha256:11a4d36f79e91beeeb71664962b2017e8c85204267fc882725ab3ac7a500a8ac",
         "locator": {
           "kind": "symbol",
@@ -56,8 +39,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "4527c1a55df306503a92176f7027d7c5a4eb30e0",
-        "content": "sha256:9a8a937dcaf98d7bfc39e36f29c74601d23b9730d1d8d3fd2f26fdcca130b93a",
+        "blob": "16857f2dc76aee57f3d36e398de620019282feaa",
+        "content": "sha256:0b6d5c8760afd5be3651851fa0f5dec48146deffe270d98bf1b39eefb1622d70",
         "locator": {
           "kind": "file"
         }
@@ -240,6 +223,134 @@
             "path": "dashboard/src/panels/review/walk.test-utils.tsx"
           },
           "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "Shared-member world with outline and families",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16857f2dc76aee57f3d36e398de620019282feaa",
+            "content": "sha256:63c56a74e111f77e8305ee9130fd5f8045a961562b65a4c1d91579ca0c0b3f2a",
+            "locator": {
+              "kind": "symbol",
+              "name": "sharedNavigationWorld"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "16857f2dc76aee57f3d36e398de620019282feaa",
+            "content": "sha256:8c557932b98b8cb878a9fc2ad684bfd96a382405869383f959ee4ffb9f1333b6",
+            "locator": {
+              "end": 735,
+              "kind": "line_range",
+              "start": 717
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "21": {
+      "note": "Outline reply with auxiliary refusal for the shared world",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16857f2dc76aee57f3d36e398de620019282feaa",
+            "content": "sha256:dd9f737deda3010813e215af1a8dc79744f6814e30894165dea9a3a65921b7f4",
+            "locator": {
+              "kind": "symbol",
+              "name": "outlineReply"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "16857f2dc76aee57f3d36e398de620019282feaa",
+            "content": "sha256:f43857602334bd555a4bb1222bbcdf7f07b96d742b3c48ed17456cb4b7651fc3",
+            "locator": {
+              "end": 782,
+              "kind": "line_range",
+              "start": 764
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "22": {
+      "note": "Mount of the shared world with request capture",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16857f2dc76aee57f3d36e398de620019282feaa",
+            "content": "sha256:60b5af76435e80cbc2ba2b700f8cb7085a564af7950b673376ee7e2624c1437d",
+            "locator": {
+              "kind": "symbol",
+              "name": "mountSharedWorld"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "23": {
+      "note": "Newer-generation world for superseding answers",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16857f2dc76aee57f3d36e398de620019282feaa",
+            "content": "sha256:cb50d106b30f134fa5f77a9fea007f6db5129ae0d47f1f8adf6df924a1863e39",
+            "locator": {
+              "kind": "symbol",
+              "name": "generationWorld"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "16857f2dc76aee57f3d36e398de620019282feaa",
+            "content": "sha256:40b17928ed7e7726156e4315bd745f6c59b5888aa3d2abe09e6d9481fbc81b6f",
+            "locator": {
+              "end": 891,
+              "kind": "line_range",
+              "start": 873
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "24": {
+      "note": "Held next-catalogue with releases for late answers",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16857f2dc76aee57f3d36e398de620019282feaa",
+            "content": "sha256:4133bffde8e4b3d42b2ec59434834a0ff44f9d0c2a20b09f8c85e4c090ea87bb",
+            "locator": {
+              "kind": "symbol",
+              "name": "holdNextCatalogue"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "16857f2dc76aee57f3d36e398de620019282feaa",
+            "content": "sha256:4b5308fb6e12df07ed0ea0ede948fb28905dbb2baba20cbca8f61a8d75f60f4c",
+            "locator": {
+              "end": 917,
+              "kind": "line_range",
+              "start": 899
+            }
+          },
+          "kind": "test"
         }
       ]
     },

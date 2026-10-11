@@ -9,6 +9,7 @@
 Defines strict served HTTP response models. Terminal catalog, open, conflict, and assignment
 responses now expose canonical task-document binding rather than leaf-key identity.
 
+`serving/response_contract.py` declares the response model of every HTTP route the serving app registers. In W03 it adds the comparison change-set: a recorded review comparison as the viewer reads it, never a working or landed range.
 ## Code Commentary
 
 `WireResponse` is frozen, generates camelCase aliases and forbids extra fields. Separate refusal models declare which identifier each status may echo; an untyped status-plus-arbitrary-data envelope would discard this boundary. Internal population by field name is allowed, so wire validation must still distinguish the emitted alias form. The removed route-conformance matrices are historical evidence, not an active coverage claim. cit:([`WireResponse`], mcp/src/agents_remember/serving/response_contract.py:89-109).
@@ -30,6 +31,7 @@ projections can distinguish the owner of an exact reviewer generation without co
 ancestry or a runtime id.
 
 
+`ComparisonTrees` echoes the four trees the list was measured over (`code_base`, `code_tip`, `memory_base`, `memory_tip`); `ComparisonChangeSet` extends `TaskChangeSet` with `mode: "comparison"`, the comparison number and those trees, so the viewer renders it with the same columns and counters. `LeafChangeSet` documents the recorded/unrecorded leaf states beside it. No existing contract changes.
 ## 260831-CCR-L23 Task-Local Requirement Models
 
 L23 added the strict task-local requirement response models under the shared
@@ -153,3 +155,7 @@ No Domain Documentation source is configured.
 ### Cross-Repo References
 
 No cross-repository implementation dependency governs this file.
+
+- The comparison list carries its four measured code/memory trees. [13]
+- ComparisonChangeSet extends TaskChangeSet with comparison mode, number and trees. [14]
+- LeafChangeSet retains explicit working/committed and recorded/unrecorded states. [15]

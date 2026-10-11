@@ -1,5 +1,41 @@
 {
   "path": "mcp/tests/test_review_change_kinds.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "183fb7a0b2115c1a19dce2ed1429c14017e79a72",
+        "content": "sha256:aeda00b292d6ac803238e7450dd3b0ae259976d3a9b1b5a6411d54ba065bb394",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_outline_states_unknown_records_and_unavailable_membership_or_indexes"
+        }
+      },
+      "facet": "Unknown/unavailable outline states",
+      "id": "PRF-C1YGTN",
+      "invariant": "INV-S44D2D",
+      "origin": {
+        "handoffEntry": "MIK-R86@v1 rule 1",
+        "leaf": "260928-MIK-L86"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "183fb7a0b2115c1a19dce2ed1429c14017e79a72",
+        "content": "sha256:b89943cde40c8d4eea4d96ec97ea8e931bbc2e55c5cce26b2d3246359c9ad193",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_outline_reads_only_indexes_and_preserves_catalogue_fields"
+        }
+      },
+      "facet": "Outline from indexes only with catalogue bytes preserved",
+      "id": "PRF-XG9875",
+      "invariant": "INV-S44D2D",
+      "origin": {
+        "handoffEntry": "MIK-R86@v1 rule 1",
+        "leaf": "260928-MIK-L86"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "1": {
@@ -13,6 +49,22 @@
               "end": 36,
               "kind": "line_range",
               "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "Corrupt records, dataset reviews and lost indexes are named states",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "183fb7a0b2115c1a19dce2ed1429c14017e79a72",
+            "content": "sha256:aeda00b292d6ac803238e7450dd3b0ae259976d3a9b1b5a6411d54ba065bb394",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_outline_states_unknown_records_and_unavailable_membership_or_indexes"
             }
           },
           "kind": "test"
@@ -178,6 +230,39 @@
               "start": 246
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The outline reads indexes only and keeps catalogue bytes",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "183fb7a0b2115c1a19dce2ed1429c14017e79a72",
+            "content": "sha256:b89943cde40c8d4eea4d96ec97ea8e931bbc2e55c5cce26b2d3246359c9ad193",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_outline_reads_only_indexes_and_preserves_catalogue_fields"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "Families, membership and summaries match the detail's facts\n\nAnchor: `outline`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "183fb7a0b2115c1a19dce2ed1429c14017e79a72",
+            "content": "sha256:892041863457a56688b5869acebf8a484cfb84ad581b09a33f28fe597cd30c4a",
+            "locator": {
+              "end": 736,
+              "kind": "line_range",
+              "start": 734
+            }
           },
           "kind": "test"
         }

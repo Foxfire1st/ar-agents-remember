@@ -19,6 +19,74 @@
         }
       ]
     },
+    "10": {
+      "note": "First-real-change opening and no-change selection\n\nAnchor: `initialSubject`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3c7639681b045e86348666e96ba33def7c7d6be2",
+            "content": "sha256:a497920b4bed16953c0055b673c1cc29c454dc5bcd30269adcbf9ae41056d3da",
+            "locator": {
+              "end": 151,
+              "kind": "line_range",
+              "start": 134
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "Kept families, filtering and unknown-skipping traversal\n\nAnchor: `review-family-kept`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3c7639681b045e86348666e96ba33def7c7d6be2",
+            "content": "sha256:071f627e2eebee14ef95c37fa5601f77c087d93a23a971d91c98aed2755a5f2d",
+            "locator": {
+              "end": 170,
+              "kind": "line_range",
+              "start": 152
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "Catalogue-only listing and summary count states\n\nAnchor: `outlineCounts`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3c7639681b045e86348666e96ba33def7c7d6be2",
+            "content": "sha256:a7ef16cb663b8db13675913d0166c71b7fe77a4623a534a246b40495c279fbb3",
+            "locator": {
+              "end": 219,
+              "kind": "line_range",
+              "start": 171
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "Conditional polite comparison-reset status\n\nAnchor: `review-change-status`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3c7639681b045e86348666e96ba33def7c7d6be2",
+            "content": "sha256:3cd36152deb9edc77588599c5b8a738a3784f7034e91e3e8c4c3a2d255b67c20",
+            "locator": {
+              "end": 252,
+              "kind": "line_range",
+              "start": 221
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
     "2": {
       "note": "The harness: the zone with a textarea, a contenteditable region and a terminal-zone control.\n\nAnchor: \"data-kbzone=\\\"pty\\\"\"",
       "targets": [
@@ -97,6 +165,55 @@
               "end": 640,
               "kind": "line_range",
               "start": 476
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Synthetic outline exercising every badge branch",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3c7639681b045e86348666e96ba33def7c7d6be2",
+            "content": "sha256:fcad79eae8ada07260043dc704e2b7f13b7c4306fcfd006925ee17506644a208",
+            "locator": {
+              "kind": "symbol",
+              "name": "outline"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Mounted tree harness with kept-family support",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3c7639681b045e86348666e96ba33def7c7d6be2",
+            "content": "sha256:bd6b2c4c77682e54e8c4cacab4576b966a019fd2d647478037b8be5f2304e627",
+            "locator": {
+              "kind": "symbol",
+              "name": "Harness"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "Compact rows and persisted views\n\nAnchor: `review-tree-view`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3c7639681b045e86348666e96ba33def7c7d6be2",
+            "content": "sha256:76a8716e16ec84b951358aade5099dbd2c54d66ea5f4d2854a304790716f7af0",
+            "locator": {
+              "end": 133,
+              "kind": "line_range",
+              "start": 109
             }
           },
           "kind": "test"

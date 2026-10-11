@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "cda7fc4b409d9cc0fc82d054ec8c237fffbee12f",
+        "blob": "13351816b627d4c17c8e47547ab42767044476f2",
         "content": "sha256:209e1c2849c607bdd5d46126d880bfa8c565e494b57902065da3f8fe0057ccbb",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "cda7fc4b409d9cc0fc82d054ec8c237fffbee12f",
+        "blob": "13351816b627d4c17c8e47547ab42767044476f2",
         "content": "sha256:fe23b30006ef4be89563c0548e217ba643853d12811316d0ccc9e6a6203aa65f",
         "locator": {
           "kind": "symbol",
@@ -115,6 +115,78 @@
               "start": 401
             },
             "path": "dashboard/src/panels/review/ReviewWorkspace.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Scope header with record label, inventory and scope",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "13351816b627d4c17c8e47547ab42767044476f2",
+            "content": "sha256:617cc376f77bde9927d55903c9cd9b19ba1db76d502091f184d7fb432e1e140c",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewScopeHeader"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "13351816b627d4c17c8e47547ab42767044476f2",
+            "content": "sha256:01bc62333d111814ac7a55a86a786bd13f29f94d60b2878f381680a7637cd1f0",
+            "locator": {
+              "end": 26,
+              "kind": "line_range",
+              "start": 8
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Family scope block with limitations",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "13351816b627d4c17c8e47547ab42767044476f2",
+            "content": "sha256:a24eec38d512c60b98f99a1bea0ce2c56695a52812c42af76a00e3098eac22c7",
+            "locator": {
+              "kind": "symbol",
+              "name": "FamilyScope"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Subject scope derivation from catalogue or task context",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "13351816b627d4c17c8e47547ab42767044476f2",
+            "content": "sha256:209e1c2849c607bdd5d46126d880bfa8c565e494b57902065da3f8fe0057ccbb",
+            "locator": {
+              "kind": "symbol",
+              "name": "subjectScopeOf"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "13351816b627d4c17c8e47547ab42767044476f2",
+            "content": "sha256:b2f874abd58cd3e8db26c3c380f5bfce62c4342ed8cd3481f32d48bf334e6a2a",
+            "locator": {
+              "end": 148,
+              "kind": "line_range",
+              "start": 130
+            }
           },
           "kind": "code"
         }

@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "New reviewer obligation from MIK-R86@v1 (packet a78d9ae3, Architect qualification 2026-10-08 11:18:45 UTC); implemented on the W03 successor tree 95f61633, whole-primary CODE PASS verdict 3663bf07. Evidence: ReviewSurface.walk*.test.tsx; changeTraversal.test.tsx"
+  },
+  "applicability": "Row selection, traversal and keyboard in the tree.",
+  "conditions": [
+    "Family rows open family reviews; member rows open member reviews under that family (no roster page).",
+    "Every row is an in-tree selection (walk keeps, selection removes nothing); j/k move across real changes skipping unknown; arrows move focus, Enter/Space select.",
+    "Catalogue rows, all-invariant list and roster continuation no longer exist in the tree."
+  ],
+  "exclusions": [
+    "MIK-R39 rules 8-10 catalogue controls inside the tree."
+  ],
+  "id": "INV-S34RA5",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "ReviewSurface.walk*.test.tsx; changeTraversal.test.tsx"
+      ],
+      "path": "notes/reports/l86-curator-W03/handoff-phase1.json"
+    },
+    "handoffEntry": "MIK-R86@v1 rule 8",
+    "leaf": "260928-MIK-L86",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Outline selection preserves the walked tree and keyboard traversal skips unknown and unchanged stops.",
+  "status": "proposed",
+  "supersedes": []
+}

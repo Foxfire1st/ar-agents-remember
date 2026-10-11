@@ -8,7 +8,7 @@
 
 The reviewer's tree view of one leaf whose memory is converted. `read_review_trees` is the port behind
 `GET /api/review/trees`. For the comparison a query names it answers one of four things: the leaf-wide view
-(knowledge diff, currentness of each side, worklist), the realization and proof entries of named
+(currentness of each side and worklist, not a knowledge diff), the realization and proof entries of named
 invariants, the unexplained-changes lane, or the classification of one changed file. Each memory side is
 read through the index of its Git tree; the module opens no other database and writes no review copy.
 
@@ -33,11 +33,12 @@ read through the index of its Git tree; the module opens no other database and w
 
 ### The leaf-wide parts and their memo
 
-`_leaf_wide_parts` returns the knowledge diff and the worklist view of a comparison, or a refusal.
+`_leaf_wide_parts` returns the worklist view of a comparison, or a refusal. The standalone
+`knowledge_tree_diff` remains exported for shared consumers but is not called on this leaf-wide path.
 
 1. It takes the memo key (`leaf_view_key`) and returns the kept parts when `remembered` has them. A
    comparison without a key is computed and never kept.
-2. Otherwise `_compute_leaf_parts` computes the diff and the worklist inside one recording block and
+2. Otherwise `_compute_leaf_parts` computes the worklist inside one recording block and
    returns the parts, whether they are settled, and the recorded rows. The rows are also replayed into the
    caller's own recording, on success and on failure.
 3. `moved_inputs` compares the rows with the key and with the file system. When nothing moved, the parts
@@ -50,8 +51,8 @@ read through the index of its Git tree; the module opens no other database and w
    error's own code and action and the offending input "reviewer worklist process"; it is not computed
    again and nothing is kept.
 
-The parts are settled only when both knowledge sides are readable, every Git read of the diff succeeded on
-its first attempt, and the worklist is a computed, `complete` one.
+The leaf-wide parts are settled only when both knowledge sides are readable and the worklist is a
+computed, `complete` one. Standalone diff-read completeness does not enter that memo judgment.
 
 ### The worklist view
 
@@ -67,7 +68,10 @@ its first attempt, and the worklist is a computed, `complete` one.
   the item's `facts.row`. `_governing` keeps, for each owner, only the rows of that owner's latest attempt
   file.
 
-### The knowledge diff
+### The standalone knowledge diff
+
+`knowledge_tree_diff` and its measured helper remain in this module for shared consumers. Their
+patch machinery is not part of `read_review_trees`' leaf-wide answer or its worklist memo.
 
 - `_measured_tree_diff` asks Git three questions whatever the number of changed files: the raw listing
   (`_listed_changes`), one patch of the two trees (`_patches`) and one batch of blobs (`_documents`).
@@ -91,13 +95,14 @@ its first attempt, and the worklist is a computed, `complete` one.
 tree, the before memory at the code base and the after memory at the code candidate, and adds the index
 state. An unreadable side answers with the reason.
 
+`read_review_trees` resolves live vs recorded-number comparisons and fans out to focused card/lane/file reads or the leaf-wide `_view`. `_view` answers comparison, knowledge sides, code sides, currentness and worklist with no `knowledge_diff`; `_leaf_wide_parts` computes only the worklist. This removes patch computation from that route, not the retained standalone diff API or its models. Comparison memory files open in the change-set viewer instead of an embedded leaf-wide patch panel.
 ## Evidence
 
 - The port: refusal, not converted, one focused answer or the leaf-wide view. [23]
 - A numbered leaf-wide read is live only for the current number; a focused read reopens. [24]
 - The leaf-wide result with its re-keyed currentness. [25]
 - Kept parts, one computation, one more when an input moved, then the refusal; process failures are refusals. [26]
-- One recorded computation of diff and worklist; the rows are replayed to the caller. [27]
+- One recorded computation of worklist only; readable sides and settled worklist govern memo eligibility and reads replay to the caller. [27]
 - Identifier-shaped keys only are re-spelled. [28]
 - Three Git questions and the completeness of their reads. [29]
 - The raw listing with the parsed-diff options. [30]
@@ -115,8 +120,12 @@ state. An unreadable side answers with the reason.
 - An overload from the process owner becomes the reviewer_busy refusal. [42]
 - The diff and the review are identical under a hostile Git configuration. [43]
 - The view captures nothing itself and is computed once per comparison. [44]
-- Three Git children for the diff, with the per-file reference answers. [45]
-- Literal file names select only their own patch. [46]
-- The tree view on the fixture: diff groups, currentness per side, worklist. [47]
+- Historical removed latency-test assertion: three Git children for the diff, with per-file reference answers; not current test proof.
+- Historical removed latency-test assertion: literal file names select only their own patch; not current test proof.
 - Rows are found by the row subject an item names. [48]
 - No review path opens a database other than the derived index. [49]
+- The tree view answers comparison, currentness and worklist [50]
+- The leaf-wide answer carries comparison, sides and worklist only [51]
+- Leaf-wide parts resolve to the worklist or a refusal [52]
+
+- The current tree-view fixture proves per-side currentness, computed worklist and linked hunks with no knowledge_diff and no leaf-wide focused entries. [47]

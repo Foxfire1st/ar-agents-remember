@@ -6,7 +6,7 @@
 
 ## Purpose
 
-**MIK-R35's rendering cases (30), with accessible-text assertions.** The knowledge pane and member rows start from
+**MIK-R35's rendering cases (26 test declarations, including one three-shape `it.each`), with accessible-text assertions.** The knowledge pane and member rows start from
 the real served invariant review of the converted scratch leaf (`gitTrees.invariant.captured.json`, a tree
 comparison `review:trees:1`), and the family cases from `gitTrees.family.captured.json`; `review()` derives the
 second revision by changing exactly the field each case is about, as `statementWording.test.tsx` does, and mounts
@@ -49,11 +49,7 @@ the real `SelectedStatement` inside `IntentWordDiffScope`. Assertions read what 
   revision with different text diffed (and `guaranteeTextChange` null for identical text or a missing side); no
   control for a whitespace-only guarantee; a one-sided guarantee labelled a known absence only when the other side is
   `not_recorded`.
-- **Labels of one revision whose texts differ (3; review R1 F2):** the navigator's joint guarantee shows both texts
-  ("Joint guarantee · before · same revision, text differs") on a tree comparison and stays "Joint guarantee ·
-  unchanged" for a dataset or identical text; the member tag reads "· same revision · text differs", "· same
-  revision" (a side's content not on the page) or "· unchanged revision" (dataset, identical); the centre details'
-  fact is `same_revision_text_changed` only on a tree comparison.
+- **Labels of one revision whose texts differ (one surviving helper case; historical R1 F2 subject):** `guaranteeFact` returns `same_revision_text_changed` for differing bytes on a tree comparison, `unchanged_revision` for the same differing fixture on the dataset path, and `unchanged_revision` for identical captured bytes. The navigator guarantee and member-tag rendering cases were removed.
 
 ### Conventions
 
@@ -63,11 +59,7 @@ the real `SelectedStatement` inside `IntentWordDiffScope`. Assertions read what 
 
 ### Invariants And Boundaries
 
-- These cases prove the three candidate invariants recorded on `IntentWordDiff.tsx.md` at unit level, and the one on
-  `SubjectReview.tsx.md` (each side's text only from that side's own row, or from its pane or filtered field rows).
-  Every mutation the worker ran (M1–M11, R1–R2, G1–G12) and the reviewer's R1 survivors (X9–X11, X13, X19) are
-  caught by the focused suite (this file, `wordDiff.test.ts` and `ReviewSurface.wordDiff.test.tsx`); the reviewer's
-  Y12, the one R2 survivor, fails the R2-1 case here.
+- Retained unit-level cases cover selected-side statement sourcing, prose diff and guarantee rendering, plus the narrow `guaranteeFact` helper classification. The earlier worker/reviewer mutation accounts are historical run records for their named source trees, not a claim that the removed navigator-label tests still execute or that those probes were rerun here.
 
 ### Todos
 
@@ -93,8 +85,12 @@ No configured live documentation source was available for this pass.
 - Whitespace-only, the rewrite and the preference. [6]
 - One-sided, unavailable, ambiguous and dataset statements. [7]
 - The family guarantee. [8]
-- F2's labels: the navigator's guarantee and member tag, and the details fact. [9]
+- F2's retained helper case: the centre-details guarantee fact for same-revision differing text. [9]
 
 ### Cross-Repo References
 
 No cross-repo boundary is crossed by this file.
+- Base statement fixture for diff passages [10]
+- Review mount helper with scope and revision options [11]
+- Tree scope fixture for comparison passages [12]
+- Layout persistence assertions across passages [13]

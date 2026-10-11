@@ -6,42 +6,30 @@
 
 ## Purpose
 
-Tests of `LeafKnowledgeNotice` in `LeafKnowledgeChanges.tsx`: what the knowledge panel's place shows while
-the leaf-wide tree read has no tree answer.
+Three standalone worklist-component cases mount `LeafWorklistView` and `SubjectWorklistItems` over the retained `laneReview.trees` capture and explicit read states. This file no longer mounts `LeafKnowledgeNotice` or a held `ReviewSurface` continuity journey.
 
 ## Code Commentary
 
 ### Component cases
 
-Each of the three component cases renders `LeafKnowledgeNotice` alone with one read state.
-
-- "says that it is computing": for `loading`, the element with the test ID
-  `review-leaf-knowledge-computing` contains "Computing the knowledge changes" and has the role `status`.
-- "names the failure and its action when the read is unavailable": for `unavailable` with a
-  `reviewer_busy` problem, the element with the test ID `review-leaf-knowledge-unavailable` contains
-  "are unavailable: the reviewer is computing other worklists" and ends the action with "retry.".
-- "draws nothing for a dataset review": for `not-converted` the rendered text is empty.
+Each of the three current cases mounts worklist components: visible loading/failure/unconverted statuses; all delivered items and file links with identifiers-only disclosure boundaries and click callbacks; and selected-record item filtering, honest empty wording and comparison-mismatch refusal.
 
 ### Mounted surface cases
 
-Two cases — one with a family selection, one with an invariant selection — mount the real
-`ReviewSurface` with captured family/invariant payloads and a `fetch` stub whose plain `/trees`
-request is held open. Each proves the held read is visible through the centre's status node (role
-`status`, "Computing the knowledge changes", no closed `details` ancestor), then resolves the held
-request with a refused `candidate_unresolved` answer and proves the same status node now reads "are
-unavailable" and the centre shows the failure's "Restart the dashboard." next action — status
-continuity from held read to final failure, not a fresh notice.
+No surviving case mounts a family/invariant surface with a held leaf-wide read. The retained component cases assert a status for pending reads, a next action for unavailable reads, and explicit unconverted-memory wording rather than an empty notice.
 
 ### Limits
 
-This is mounted jsdom evidence of the notice and its status-node continuity. It is not browser,
-screen-reader or completion-announcement proof, and it does not prove the accepted A1 completion
-limit.
+This is standalone jsdom component/callback evidence, not mounted-surface status-node continuity, browser or screen-reader completion-announcement proof.
 
 ## Evidence
 
-- The loading notice and its status role. [1]
-- The unavailable notice with detail and action. [2]
-- Nothing for a dataset review. [3]
-- The component under test. [4]
-- The held read and its final failure through the mounted surface, for both selections. [5]
+- Pending, unavailable and unconverted worklist states, including subject-item loading. [1]
+- Delivered worklist items, file links and callback invocations with identifiers-only disclosures. [2]
+- Record-specific items, honest empty wording and comparison mismatch. [3]
+- The current worklist components under test. [4]
+- Historical removed notice/surface-continuity account; no current mounted-surface proof is claimed. [5]
+- Leaf-wide tree fixture for notice states [6]
+- Notice mount helper for read states [7]
+- Changed paths with items for file links [8]
+- Record-only fixture for the honest empty state [9]

@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Bounded W03 test-port obligation from the amended packet scope (Architect qualification 2026-10-08 11:18:45 UTC); assertion-fates.md; packet-lineage.json; W02-to-W03.patch"
+  },
+  "applicability": "The amended-rule19 test scope for direct pane-3 assessment.",
+  "conditions": [
+    "Dataset context, applicability counts, historical detail and pre-label assertions retire; direct treatment and sibling isolation remain.",
+    "Only the named retired assertions and then-unused local fixtures leave; shared captures stay byte-identical."
+  ],
+  "exclusions": [
+    "Retiring failure/immutable/focus/layout/expression assertions; restoring old-payload support."
+  ],
+  "id": "INV-56ZH3C",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "assertion-fates.md; packet-lineage.json; W02-to-W03.patch"
+      ],
+      "path": "notes/reports/l86-curator-W03/handoff-phase1.json"
+    },
+    "handoffEntry": "MIK-R86@v1 rule19 W03 dataset-fact retirement",
+    "leaf": "260928-MIK-L86",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The named dataset context, applicability counts, historical detail and pre-label assertions retire under the amended rule19 while pane3 direct treatment and sibling isolation remain.",
+  "status": "proposed",
+  "supersedes": []
+}

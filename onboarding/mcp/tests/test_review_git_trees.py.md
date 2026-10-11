@@ -25,13 +25,8 @@ state a live review reads. `World.contract()` writes the leaf's enclosure contra
   repeated read reuses the record. A read writes only review refs, comparison objects and the record, and
   a repeat writes nothing. Committed candidates need no ref, and a failed pin refuses naming the
   repository and the ref. Pins are named by the task directory, and archival removes them.
-- **Tree view.** The view shows the knowledge diff, the currentness of each side and the worklist. A
-  partial index shows its state on the affected side. No review path opens a database other than the
-  derived index.
-- **Reopen and conversion.** A comparison reopens from its tree IDs and names a tree Git cannot produce.
-  An unconverted before side is compared as its conversion. A comparison recorded before the conversion
-  keeps its code sides only. An unconverted leaf keeps the dataset review, and a tree comparison is never
-  frozen into a dataset generation.
+- **Tree view:** the renamed current test asserts per-side currentness, a computed bound worklist with history rows/linkage, no leaf-wide entries and absence of `knowledge_diff`; partial index state remains named per side.
+- **Reopen and conversion:** converted-base and historical reopen assertions retain exact tree/side states. An unconverted leaf is now source-only with `legacy-unavailable` knowledge: no candidate database or review pins, refused tree read, measured source context and explicit intent-unavailable limitation. No current test asserts dataset-review preservation for that leaf.
 - **Route.** The route serves the port, keeps a live leaf's computed worklist for a numbered read of its
   current comparison, passes named invariants to the port, answers 400 for a name longer than 64
   characters and for more than 500 names, and answers 503 when no port is wired.
@@ -51,17 +46,13 @@ state a live review reads. `World.contract()` writes the leaf's enclosure contra
   failed pin refuses naming the repository and the ref; **a read writes only review refs and comparison objects,
   and a repeat writes nothing** (every ref, every object and every record file, bytes and mtime, compared by
   `_state`; ruling 22:22:37 Q5).
-- **Rule 2 and 3:** the tree view shows the knowledge diff grouped by record and by source, the currentness per
-  side and the worklist; a partial index shows its state on the affected side. Since MIK-L31 every key is
-  snake_case, including the owners' own documents (`code_tree`, `tree_id`, `stale_members`, `owner_kind`; MIK-L25
-  review F9), and the leaf-wide view carries no entries.
+- **Rule 2 and 3:** currentness is bound to each code tree (the edited after side is stale), and the computed/bound worklist has touched/reached subjects, history rows without currency marks and linked source hunks. `knowledge_diff` is absent and entries are read only per selection. Existing snake_case owner fields and partial-side index assertions remain.
 - **Rule 4:** a comparison reopens from its tree ids and names a tree Git can no longer produce (the refs deleted
   and both repositories garbage-collected; the code trees too, review F4); an unconverted before side is compared as
   its conversion; a comparison recorded before the conversion keeps its code sides only.
 - **The no-`.sqlite` check:** every `apsw.Connection` and `sqlite3.connect` is recorded and every open lies inside
   `runtime/knowledge-index` (ruling 22:22:37 Q1).
-- **Preservation:** an unconverted leaf keeps the dataset review; a tree comparison is never frozen into a dataset
-  generation.
+- **Current unconverted path:** source remains readable, knowledge is `legacy-unavailable`, tree view is refused, no candidate database exists and no pins are written. The retired dataset-preservation test is historical, not current evidence.
 - **Naming:** pins are named by the task directory name, and archival removes them (ruling 02:32:42 (a); the one
   case here that calls the hook, to prove the round trip).
 - **The route:** served over the port, and 503 when unwired. Since MIK-L31: the numbered read for the live leaf's
@@ -98,24 +89,19 @@ state a live review reads. `World.contract()` writes the leaf's enclosure contra
 
 ### Invariants And Boundaries
 
-- These cases prove the candidate invariants recorded on `application/review_tree_comparison.py`: pins before
-  display and idempotent re-reads; directory-name refs; `unavailable-history` never substituted; unconverted reads
-  unchanged. Since MIK-L31 they also prove the one recorded on `application/review_tree_entries.py` (a card excerpt
-  only from the pinned tree's exact blob, bounded, with per-side state) and the server half of the one on
-  `application/review_tree_knowledge.py` (a numbered read answers for exactly that comparison).
-- The radon D block `test_the_tree_view_shows_…` rose from D26 to D28 in MIK-L31 (review R1, pre-existing D).
+- Retained pins/reopen/index/card assertions remain source-bound. The unconverted path's current proof is source-only plus explicit unavailable knowledge, not the former unchanged dataset review. The removed grouped-knowledge-diff test and its historical radon grade are not current witnesses.
 
 ### Todos
 
 No additional work is asserted by this card.
 
+The renamed `test_the_tree_view_shows_currentness_per_side_and_the_worklist_without_a_knowledge_diff` asserts `"knowledge_diff" not in view.model_dump(by_alias=True)` alongside per-side currentness against each side's own code tree (body edit makes the after side stale), the computed bound worklist with items, history rows and gate linkage, and per-selection (never leaf-wide) card entries. The unconverted-base case carries the same absence assertion. Fixture, pin, legacy and archive behaviour are unchanged.
 ## Evidence
 
 - The module docstring: the fixture world. [15]
 - The fixture's state and helpers. [16]
 - Four trees, pinned candidates, and reuse. [17]
 - A repeat read writes nothing. [18]
-- The tree view on the fixture. [19]
 - Reopening names a tree Git cannot produce. [20]
 - The route serves the port and refuses without one. [21]
 - Rows are found by the row subject an item names, through the real isolated computation. [22]
@@ -132,9 +118,8 @@ No configured live documentation source was available for this pass.
 - Pins and reuse. [24]
 - A repeat read writes nothing. [25]
 - Committed candidates and the refused pin. [26]
-- The tree view (every key snake_case, no entries leaf-wide, the history row's `owner_kind`) and the partial index. [27]
 - Reopen, the converted base, and the legacy comparison. [28]
-- No database but the index; unconverted unchanged; never frozen. [29]
+- No database but the derived index; unconverted leaf is source-only with explicit legacy-unavailable knowledge. [29]
 - Directory-name pins, and the route with the pinned numbered read, the cards read and the key bounds. [30]
 - The cards read: four entries located on both sides, each helper's per-entry facts. [31]
 - Unavailable against absent, and the history row found through `facts.row`. [32]
@@ -146,3 +131,7 @@ No configured live documentation source was available for this pass.
 ### Cross-Repo References
 
 No cross-repo boundary is crossed by this file.
+
+- The tree-view fixture preserves per-side currentness and computed linked worklist while omitting knowledge_diff. [19]
+- The leaf-wide tree answer omits knowledge_diff and focused entries, keeps snake_case currentness and leaf-owned history rows; a separate case names the affected side’s partial index. [27]
+- The leaf-wide tree answer omits knowledge_diff and focused entries, keeps snake_case currentness and leaf-owned history rows; a separate case names the affected side’s partial index. [37]

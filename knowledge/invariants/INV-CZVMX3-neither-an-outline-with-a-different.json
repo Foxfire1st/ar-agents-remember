@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Durable repair-verification obligation from R1 findings fixed on W02 and sealed in R2 (verdict b8956ffd, eleven-dispositions 42a8ec7a); ReviewSurface.navigation.test.tsx four held/failed/late generation cases; ReviewSurface.sealedPageRepair.test.tsx opened N versus new N+1; l86-repair-W2/tree.md"
+  },
+  "applicability": "Comparison generation quarantine for outline and opened page.",
+  "conditions": [
+    "The catalogue quarantines old outline semantics against the current generation.",
+    "A held page is enriched only when task, number and generation match; an opened page stores its full generation, inventory and lane."
+  ],
+  "exclusions": [
+    "One presentation context across two comparisons."
+  ],
+  "id": "INV-CZVMX3",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "ReviewSurface.navigation.test.tsx four held/failed/late generation cases; ReviewSurface.sealedPageRepair.test.tsx opened N versus new N+1; l86-repair-W2/tree.md"
+      ],
+      "path": "notes/reports/l86-curator-W03/handoff-phase1.json"
+    },
+    "handoffEntry": "L86-CODE-R1-F04",
+    "leaf": "260928-MIK-L86",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Neither an outline with a different comparison walk nor an opened page with a different inventory or lane is admitted into one presentation context.",
+  "status": "proposed",
+  "supersedes": []
+}

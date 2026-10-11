@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Bounded W03 test-port obligation from the amended packet scope (Architect qualification 2026-10-08 11:18:45 UTC); ports-fifth.log: retained direct record treatment and sibling isolation; assertion-fates.md"
+  },
+  "applicability": "A selected subject's directly assessed record in pane 3.",
+  "conditions": [
+    "The subject's own finding, disposition, rationale and stale binding stay with its own record; a sibling's judgment is never displayed on the selected record.",
+    "Applies under amended rule 19 until L57 replaces the pane; deterministic, model-free."
+  ],
+  "exclusions": [
+    "Sibling-judgment display; dataset-context/count/history/pre-label assertions (retired)."
+  ],
+  "id": "INV-N6GRSD",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "ports-fifth.log: retained direct record treatment and sibling isolation; assertion-fates.md"
+      ],
+      "path": "notes/reports/l86-curator-W03/handoff-phase1.json"
+    },
+    "handoffEntry": "MIK-R86@v1 rule19 W03 retained direct treatment",
+    "leaf": "260928-MIK-L86",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A selected subject retains its direct assessment treatment and does not display the supplied sibling judgment in pane 3.",
+  "status": "proposed",
+  "supersedes": []
+}

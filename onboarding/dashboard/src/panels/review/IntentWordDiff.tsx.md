@@ -19,11 +19,11 @@ review keeps the landed rendering (ruling Q3).
 
 - **The scope (`TreeComparisonScope`, `IntentWordDiffScope`, `useTreeComparison`).** One React context says
   whether the renderers below read a tree comparison. `FamilyReviewCenter` sets it from its payload
-  (`IntentWordDiffScope`, via `treeComparisonNumber`), and `FamilyTree` from its `tree` prop, because the family
-  navigator is mounted by the workspace outside the centre (review R1 F2). Only inside a true scope is intent wording
+  (`IntentWordDiffScope`, via `treeComparisonNumber`). The compact outline navigator no longer mounts a
+  semantic word-diff scope. Only inside a true scope is intent wording
   word-diffed and does any label compare text bytes rather than revision identities.
 - **Passages (rules 1, 3 and 4).** `TextPassage` renders one field: `identical` as plain prose, `whitespace_only` as
-  `WhitespaceOnly` (the after text once, labelled "whitespace-only change", with a disclosure of both exact texts,
+  `WhitespaceOnly` (the after text once, labelled "whitespace-only change", with both exact texts open,
   whitespace made visible), and `words` as `Prose` inline or `SideBySide`. A rewrite (above `REWRITE_RATIO`) is
   shown side by side even when the preference is inline and says why ("Mostly rewritten: n of m words changed
   (p%), above the 50% rewrite ratio…"); its **"Show inline"** applies to that passage only, is not saved, and resets
@@ -78,17 +78,15 @@ review keeps the landed rendering (ruling Q3).
 - `offersLayout` and `drawsPassage` compute `textDiff` / `alignLists` a second time beside the passages' memoized
   diffs; this is bounded (about 12 ms at the cell limit) and has no functional effect (review R2-3, accepted as a
   note at 2026-09-30T12:43:15).
-- The file is 699 lines, under the 1,200 bound.
+
 
 ### Invariants And Boundaries
 
 - **Candidate invariant (not ingested): on tree comparisons, no review surface calls a changed text unchanged; the
   byte comparison decides, even at the same revision.** Realized here by `guaranteeTextChange`, `guaranteeFact` and
   the scope, with `textFirstComparison` (`statementWording.ts`), `SubjectReview.authoredSides`, and
-  `FamilyTree.guaranteesOf` / `memberSideTag`. Proved by the "labels of one revision whose texts differ" and F1 probe
-  cases of `IntentWordDiff.test.tsx`, and the same-revision guarantee case of `ReviewSurface.wordDiff.test.tsx`
-  (centre label, rail notes and details fact); the reviewer's R2 grep found no remaining tree-path "unchanged" label
-  that is not byte-gated.
+  the reading area's guarantee/statement renderers. Same-revision differing-text comparisons remain a
+  central reading concern; removed sidebar text-label tests are not current proof of compact navigation.
 - **Candidate invariant (not ingested): a changed intent field reads as one passage with removed and added words
   marked in place, and both texts are reconstructed byte for byte.** Realized by `TextPassage` and `Mark` over
   `wordDiff.textDiff`; proved by the accessible-text assertions here and `wordDiff.test.ts`'s reassembly case.
@@ -118,10 +116,10 @@ No configured live documentation source was available for this pass.
 ### Repo-Internal References
 
 - The module's own statement of rules 1, 1a, 3, 4, 5 and 7, and the dataset boundary. [1]
-- The tree-comparison scope the centre and the navigator set. [2]
+- IntentWordDiffScope gates the centre's semantic wording comparisons; the compact navigator no longer supplies a tree prop or renders full intent passages. [2]
 - The one layout control. [3]
 - A mark: struck or underlined, announced, whitespace as hidden glyphs with a closing space. [4]
-- Whitespace-only rendering with both exact texts disclosed. [5]
+- Whitespace-only rendering with both exact texts open. [5]
 - One passage per changed field; the rewrite fallback, its reason and the unsaved "Show inline". [6]
 - Aligned lists, including moved items. [7]
 - The R06 indication: known absent, or a side that could not be read. [8]
@@ -130,8 +128,12 @@ No configured live documentation source was available for this pass.
 - The statement area of a tree comparison's selected invariant. [11]
 - The guarantee's changed text, including one revision whose texts differ, and the details fact. [12]
 - The changed-guarantee block and the one-sided guarantee label. [13]
-- Where the centre and the navigator set the scope. [14]
+- The reading-area FamilyReviewCenter owns the payload-bound word-diff scope, not the outline sidebar. [14]
 
 ### Cross-Repo References
 
 No cross-repo boundary is crossed by this file.
+- Tree comparison scope gating every intent passage [15]
+- Word diff passages for changed authored text [16]
+- Statement text passages with layout and metadata [17]
+- Guarantee text change with compact revision metadata [18]

@@ -13,7 +13,7 @@
   side that was unconverted when compared, the conversion it was read as. It is written under
   `notes/reports/review-comparisons/<leaf>/<n>.json` by `application/review_tree_comparison.py`.
 - `ReviewTreesResult` is what `GET /api/review/trees` returns for one leaf: `trees`, `not-converted` or `refused`,
-  with the comparison, each knowledge side, each reopened code side, the knowledge diff, the per-side currentness
+  with the comparison, each knowledge side, each reopened code side, the per-side currentness
   and the worklist view; or, for a cards read that names invariants (MIK-R31), the comparison, the sides and
   `entries` only (`ReviewTreeEntry`, `models/knowledge/review_tree_entries.py`); or, since MIK-L32, for a lane read
   (`lane=files`) the comparison, the sides and `lane`, or for a file read (`file=<path>`) `file_classification`
@@ -68,6 +68,11 @@ from the tree and never retained with the comparison.
   the route boundary (`application/review_tree_knowledge.py`, `snake_keys`), so the whole body follows the model
   fields' convention.
 
+`ReviewTreesResult` no longer has a `knowledge_diff` field. The standalone diff models
+`ReviewKnowledgeFileChange`, `ReviewKnowledgeRecordGroup`, `ReviewKnowledgeSourceGroup` and
+`ReviewKnowledgeTreeDiff` remain available for shared consumers; their presence does not put patches
+back into the route answer. Comparison records, side/index states, code sides, currentness, worklist,
+per-selection entries and focused lane/file answers retain their distinct contracts.
 ## Evidence
 
 ### Docs References
@@ -93,3 +98,10 @@ No configured live documentation source was available for this pass.
 ### Cross-Repo References
 
 No cross-repo boundary is crossed by this file.
+- The result keeps currentness beside sides [11]
+- The result keeps the worklist where the diff was [12]
+
+- Code sides and shared standalone diff carriers remain; only ReviewTreesResult’s leaf-wide knowledge_diff field is removed. [10]
+- Code sides and shared standalone diff carriers remain; only ReviewTreesResult’s leaf-wide knowledge_diff field is removed. [13]
+- Code sides and shared standalone diff carriers remain; only ReviewTreesResult’s leaf-wide knowledge_diff field is removed. [14]
+- Code sides and shared standalone diff carriers remain; only ReviewTreesResult’s leaf-wide knowledge_diff field is removed. [15]

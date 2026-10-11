@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Durable repair-verification obligation from R1 findings fixed on W02 and sealed in R2 (verdict b8956ffd, eleven-dispositions 42a8ec7a); ReviewSurface.sealedPageRepair.test.tsx all non-tree All triggers, refusal, focus and zero changeset reads"
+  },
+  "applicability": "Complete-file actions without a recorded comparison number.",
+  "conditions": [
+    "Named structured comparison_not_recorded state with back and Escape.",
+    "No substitute range is read and no changeset request issues."
+  ],
+  "exclusions": [
+    "Silently ignoring the action."
+  ],
+  "id": "INV-5RTVBT",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "ReviewSurface.sealedPageRepair.test.tsx all non-tree All triggers, refusal, focus and zero changeset reads"
+      ],
+      "path": "notes/reports/l86-curator-W03/handoff-phase1.json"
+    },
+    "handoffEntry": "L86-CODE-R1-F08",
+    "leaf": "260928-MIK-L86",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Every complete-file action without a recorded comparison number returns the named structured comparison_not_recorded state with back and Escape and requests no substitute range.",
+  "status": "proposed",
+  "supersedes": []
+}

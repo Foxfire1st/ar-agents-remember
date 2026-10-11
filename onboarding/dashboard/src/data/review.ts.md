@@ -42,6 +42,7 @@ declared with `?` and never given a fallback value. The expansion types mirror
 `models/knowledge/review_source_content.py` the same way, which is the second model module this client
 now speaks — the source-content route has its own wire shape rather than reusing the comparison's.
 
+`data/review.ts` is the same-origin client for the Intent Reviewer API: typed results mirroring the application models, route-local decode that preserves typed refusals, and no store mutation. In W03 it mirrors the new outline models and carries the outline on the catalogue answer.
 ## Code Commentary
 
 ### Logic
@@ -238,6 +239,7 @@ One routed item is recorded rather than fixed, because it is a different route, 
   committed-leaf review) / R24 (usable review navigation)**. Measured in this leaf; not fixed here, to
   keep the blast radius to the review route.
 
+The outline mirror types (`ReviewOutlineChange`, `ReviewOutlineMember`, `ReviewOutlineFamily`, `ReviewOutlineInvariant`, `ReviewOutline`) match `models/knowledge/review_outline.py` field for field: families with authored-order members carrying `both` | `joined` | `left`, invariants with identifier and 120-character summary, and an `outlined` | `unavailable` state. `ReviewEntryListResult` gains optional `outline`; the catalogue read (`intentReviewEntries`) needs no new endpoint because the server attaches the field to the existing answer. All other payload, refusal and paging types are untouched.
 ## Evidence
 
 ### Docs References
@@ -290,6 +292,13 @@ one repository namespace in the query string.
 
 No meaningful cross-repo references found.
 
+- The outline mirror matches the server model's five changes [28]
+
+- The tree carries families with members and invariants with summaries [29]
+
+- The catalogue answer optionally carries the outline [30]
+
+- Catalogue reads need no new endpoint [31]
 ## 260921-ICR-L10 The Page Contract On The Client, And The One Normaliser Of "No Page"
 
 `260921-ICR-L10` (`ICR-R10@v1`) gives this client the page it was missing. It gained

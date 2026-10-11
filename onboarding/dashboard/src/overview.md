@@ -701,13 +701,12 @@ The generated lifecycle phase union and schema now include `recovering-private-p
 
 ## 260915-KS-L22 The Reviewer Takeover Beside The Change-Set Viewer
 
-The cockpit gained a second identity for an existing full-page takeover without gaining a second
-takeover. `ChangeSetTarget` — the value the detail panel and the doc readers hand the shell — now
-carries an optional `review` variant holding the reviewed subject's recorded identity, and
-`ChangeSetTakeover` dispatches on its presence: `target.review` selects `data-view="intent-review"`
-and mounts `panels/review/ReviewSurface` in place of `panels/changeset/ChangeSetViewer`. The
-change-set viewer is therefore never mounted for a review and no change-set request is made from
-one, which is the reason the variant's own declaration gives for it.
+The cockpit gained a second identity for its existing full-page takeover without a second shell
+mode. `ChangeSetTarget` carries an optional `review` variant naming the reviewed subject, and
+`ChangeSetTakeover` dispatches on its presence: a review target mounts `ReviewSurface` under
+`data-view="intent-review"`, while an ordinary change-set target mounts `ChangeSetViewer`. This entry
+dispatch does not forbid the reviewer from opening the viewer: its current All/Unexplained/Unknown
+changes actions mount `ChangeSetViewer` on the recorded comparison over the retained review.
 
 The entry that produces such a target is added **beside** the change-set actions, never in their
 place. `DocChangeSetBar` renders a third `ChangeSetButton` labelled "Intent review" only when the leaf
@@ -733,17 +732,16 @@ views are; the discriminator is the `data-view` marker, not a new shell mode, na
 store. Route-shape, takeovers and layer retention are as the L23 and CCR-R18 sections above record
 them, with one more `data-view` value on the same takeover.
 
-The surface itself is display-only and belongs to the `panels/review/` child route; its data comes
-from the read-only client on the `data/` route, which mutates no store. What this route records is
-the dispatch: a review is a change-set target that says it is one, so the cockpit reaches the
-reviewer with no second takeover path. `260921-ICR-L3` changed nothing here — it added one child
-component (`panels/review/SourceContent.tsx`, which a listed inventory row opens into) and one client
-function (`reviewSourceContent`), and its own record lives in the `panels/` route overview.
+The surface is display-only and belongs to `panels/review/`; its read-only client belongs to
+`data/` and mutates no store. This route records the cockpit dispatch, while reviewer composition
+owns its comparison-page destinations. The L3 source-content renderer survives in expression
+card Full file (and the retained dataset expression view), but changed-file navigation is no
+longer a listed source-explorer row: it reuses the comparison-bound change-set viewer.
 
 - The target variant that turns the existing takeover into a review. [18]
-- The declaration's own reason: the change-set viewer is never mounted for a review — the field's **presence** is what marks a review target, and an empty object is the task-context entry. [19]
+- The dispatch field's presence marks a review target, and an empty object is the task-context entry. This cockpit dispatch is distinct from the reviewer's comparison-viewer mount. [19]
 - The dispatch, and the `intent-review` view marker it selects. [20]
-- The surface a review target mounts in the change-set viewer's place — whose listed inventory entries, since `260921-ICR-L3`, also open into the entry's own content. [21]
+- The surface a cockpit review target mounts; its changed-file destinations open the existing viewer on the recorded comparison, while card Full file retains bound SourceContent. [21]
 - **The reviewer entry: offered for every leaf; since `260921-ICR-L47` it carries no subject (the reviewer chooses one) and shows the comparison's changed-intent counts.** [22]
 - **The one predicate both gated entries share.** [23]
 - The shared catalogue hook takes repository/task context and calls the existing subject catalogue client. [24]
@@ -764,7 +762,9 @@ comparison identity, and the rendering of an inventory in all three of its state
 - **The review target whose selector is optional, with presence marking a review and an empty object meaning the task context.** [26]
 - **The takeover branch that mounts the surface for a target with or without a selector.** [27]
 - **The client's inventory types and the request that omits the selector when there is none.** [28]
-- **The panel's inventory rendering, in all three states, with byte-form rows beside the named ones — re-derived against this candidate, where the review surface's lower half moved.** [29]
+
+- **The panel's inventory rendering, in all three states, with byte-form rows beside the named ones — re-derived against this candidate, where the review surface's lower half moved.** [41]
+
 - The case that measures the browser half: no subject offered, and the target is still a review. [30]
 
 ## 260921-ICR-L16 The Review Route's Refusals Reach The Reader

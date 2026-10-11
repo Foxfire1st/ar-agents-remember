@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Durable repair-verification obligation from R1 findings fixed on W02 and sealed in R2 (verdict b8956ffd, eleven-dispositions 42a8ec7a); ReviewSurface.worklistRepair.test.tsx; browser/report.md one group/10family/12member entries and exact digests"
+  },
+  "applicability": "Entry identifiers for a card selection.",
+  "conditions": [
+    "One disclosure lists every selected realization/proof identifier with per-side blob and content digests."
+  ],
+  "exclusions": [
+    "Per-card repetition of the identifier list."
+  ],
+  "id": "INV-9VPYCZ",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "ReviewSurface.worklistRepair.test.tsx; browser/report.md one group/10family/12member entries and exact digests"
+      ],
+      "path": "notes/reports/l86-curator-W03/handoff-phase1.json"
+    },
+    "handoffEntry": "L86-CODE-R1-F07",
+    "leaf": "260928-MIK-L86",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A selection has one entry-identifiers disclosure containing every realization/proof identifier and its supplied per-side blob and content digest.",
+  "status": "proposed",
+  "supersedes": []
+}

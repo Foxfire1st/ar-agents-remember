@@ -1,5 +1,6 @@
 {
   "path": "mcp/tests/test_knowledge_diff_boundaries.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "26": {

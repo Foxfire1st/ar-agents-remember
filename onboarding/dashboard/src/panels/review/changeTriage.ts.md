@@ -11,6 +11,7 @@ Weights, labels and meanings; a family's counts, returned and total, partial and
 text; family and member order; and the union of two deliveries across an admitted roster walk. Nothing here decides a
 fact; an entry without `change_kinds` (a dataset review) is left exactly as the landed tree shows it.
 
+Hold the family tree's triage rules as pure functions over the delivered facts: the outline the tree draws, with its badges, order, counts and opening row, plus the per-member change facts the main page states. Nothing here decides a fact; an entry without `change_kinds` (a dataset review) is left exactly as the landed tree shows it.
 ## Code Commentary
 
 ### Logic
@@ -26,10 +27,7 @@ fact; an entry without `change_kinds` (a dataset review) is left exactly as the 
 - **`breakdownText`.** "`a` intent · `b` impl · `c` membership · `d` unknown of T", or "… of N returned (T total)",
   or "… of N returned (total unknown)" (review R1 F2).
 - **`orderFamilies`.** By weight, then the context's order; `authored` or no facts keeps the landed order.
-- **`orderMemberRows`.** By weight (triage order only), then `authored_position` (the family record's `members` list,
-  ruling 16:22:22 item 7), then the landed row order; the rows of one occurrence stay together, and no sibling is
-  removed. Used by the tree and, on a tree comparison, by the centre's member list (review R1 note: the centre follows
-  the tree).
+- **`orderMemberRows`.** By weight (triage order only), then `authored_position` (the family record's `members` list), then landed row order; an occurrence's revision rows stay together and no sibling is removed. `FamilyReviewCenter` uses it for its semantic member list. Compact sidebar ordering instead comes from `outlineGroups` over outline rows and badges; it does not consume `orderMemberRows`.
 - **`mergeChangeKinds`.** Every occurrence either delivery described is kept; the newer family-level facts apply.
 
 ### Conventions
@@ -38,22 +36,16 @@ Pure, typed functions exported for the tree, the badges, the centre and the walk
 
 ### Invariants And Boundaries
 
-- **Candidate invariant (not ingested): triage order never hides unchanged siblings, and traversal never forces
-  unreturned pages to load.** Realized here by `orderFamilies` and `orderMemberRows` (reorder only) and by
-  `familyTriage`'s `partial`/`scoped` over the returned members only; with `changeTraversal.ts` (which walks the
-  rendered nodes and stops at a partial family's continuation control without activating it). Proved by
-  `changeTriage.test.ts` ("lists changes first … keeping every sibling", "scopes a partial page…", "sorts a partial
-  family above a complete unchanged one"), `FamilyTree.triage.test.tsx` ("lists changes first and keeps unchanged
-  siblings…", "stops at the continuation control…"), `FamilyTree.triageReal.test.tsx` (all 24 members kept; an
-  incomplete page is not unreturned members), and the mutations "members ordered without weight", "an incomplete roster
-  page counts as unreturned members", "a walk merge forgets earlier facts" and "no stop at a partial family's
-  continuation", all caught.
+- **Returned-member triage scope.** `orderFamilies` and `orderMemberRows` reorder the delivered population without removing its unchanged siblings; `familyTriage` scopes counts to returned members. Current `changeTriage.test.ts` asserts returned occurrence counts, partial/unknown totals, sibling-preserving order and delivery unions. Compact outline navigation is a different population: `changeTraversal.ts` walks rendered eligible tree nodes and does not stop at a removed partial-family continuation control. The prior FamilyTree continuation-stop and mutation account is historical, not current proof; no fresh execution is claimed.
 - A total the server could not read never lets the returned members pass for the whole family (`scoped`).
 
 ### Todos
 
 No additional work is asserted by this card.
 
+- `OutlineBadge` is what a tree row shows: the outline's own change, `code changed` (walked implementation facts under an unchanged outline row), `joined`/`left` membership, or an aggregate `N changed` family count. `realChange` is true for every badge except `unknown`, `unchanged` and none.
+- `outlineGroups` builds the drawn groups: outline families with their members in triage order (by `badgeWeight`: intent-class changes first, then implementation, then membership), unlisted invariants in their own group, and a catalogue-only listing without badges when no outline is admitted. `memberBadge` overlays walked member facts and membership onto the outline row with intent-then-membership precedence; an unchanged family with changed members aggregates to `N changed`.
+- `firstOutlineChange` opens the reviewer on the first real change (an added, removed or changed family, else the first changed member); `outlineCounts` counts changed families and changed invariants for the navigation summary.
 ## Evidence
 
 ### Docs References
@@ -71,8 +63,15 @@ No configured live documentation source was available for this pass.
 - The breakdown text, never the intent count. [5]
 - Families and member rows ordered, siblings kept, one occurrence's rows together. [6]
 - The union of two deliveries across a roster walk. [7]
-- The centre's member list follows the tree's order. [8]
+- The centre retains `orderMemberRows` for its semantic roster; compact sidebar rows use `outlineGroups`. [8]
 
 ### Cross-Repo References
 
 No cross-repo boundary is crossed by this file.
+- Row badge vocabulary with aggregate counts [9]
+- Real-change predicate excluding unknown and unchanged [10]
+- Drawn groups from outline, walked facts and catalogue [11]
+- Walked-fact and membership overlay with precedence [12]
+- Triage sort weights for outline badges [13]
+- Opening row on the first real change [14]
+- Summary counts of changed families and invariants [15]

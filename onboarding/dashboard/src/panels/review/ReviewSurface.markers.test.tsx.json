@@ -41,6 +41,38 @@
         }
       ]
     },
+    "10": {
+      "note": "Spoken announcement of the followed marker return",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "589811ed9ea144eba15514df7afe4f621eb07723",
+            "content": "sha256:38c3b7c1a1b2222754797bc6d71114d08a4fa72ed58dc378f16722af333dfb3e",
+            "locator": {
+              "kind": "symbol",
+              "name": "focusedAnnouncement"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "Centre review beside the unknown-membership state",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "589811ed9ea144eba15514df7afe4f621eb07723",
+            "content": "sha256:33cc2f64bde4db0e286d7ad8fcf42115006fbface5b2cba88386cc4e6260bc22",
+            "locator": {
+              "kind": "symbol",
+              "name": "centerReview"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
     "2": {
       "note": "Case 1: two marks from one classification read.\n\nAnchor: \"opens a changed file with one marker per hunk, from the one classification\"",
       "targets": [
@@ -131,6 +163,66 @@
               "end": 312,
               "kind": "line_range",
               "start": 311
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "In-card Full file opening for the marked file",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "589811ed9ea144eba15514df7afe4f621eb07723",
+            "content": "sha256:fbea8e7b48c50ddfde82be649a1347ecd5ece662fc340d754b6526d9463bfc0b",
+            "locator": {
+              "kind": "symbol",
+              "name": "openFullFile"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Per-hunk mark extraction for assertions",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "589811ed9ea144eba15514df7afe4f621eb07723",
+            "content": "sha256:e5fd69a2b5af5647c8927da30047d6a8cdf7c6e0aa2f1289dff07ee58f17d4f6",
+            "locator": {
+              "kind": "symbol",
+              "name": "marksOf"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "Unknown-membership world with unattributed links",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "589811ed9ea144eba15514df7afe4f621eb07723",
+            "content": "sha256:7773d679f29736f44a896d36bfa4998fffa528e7645c13da5c37c52da4c5344d",
+            "locator": {
+              "kind": "symbol",
+              "name": "serveUnknown"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "589811ed9ea144eba15514df7afe4f621eb07723",
+            "content": "sha256:a6b2aa71217f7df9bf9be8aac27736bdeb2916f64e114a592f0bd2a17316eacf",
+            "locator": {
+              "end": 253,
+              "kind": "line_range",
+              "start": 237
             }
           },
           "kind": "test"

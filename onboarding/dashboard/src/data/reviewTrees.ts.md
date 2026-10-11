@@ -10,15 +10,17 @@ The client adapter of the reviewer's tree view, `GET /api/review/trees`. It decl
 answer, builds the request, turns an answer into a read state, and provides the two React hooks that read
 the leaf-wide view and the entries of one selection. Every key of the wire types is snake_case.
 
+`data/reviewTrees.ts` is the tree-view adapter for one leaf: the four-tree comparison, knowledge-side states, per-side currentness, the worklist view, and the focused card entries. In W03 it no longer carries the memory-tree knowledge diff; changed knowledge files are read on the change-set page instead.
 ## Code Commentary
 
 ### Types
 
 - `ReviewTreesResult` has the state `trees`, `not-converted` or `refused`, with the comparison
   (`ReviewTreeComparison`: four tree sides, the pinning refs, an optional converted base), the knowledge
-  sides with their index state, the code sides of a reopened comparison, the knowledge diff grouped by
-  record and by source path, the currentness of each side, the worklist view, the entries of named
+  sides with their index state, the code sides of a reopened comparison,
+  the currentness of each side, the worklist view, the entries of named
   invariants, or the refusal.
+  It has no `knowledge_diff` field; changed memory files are read through the comparison change-set viewer.
 - `ReviewWorklistView` has the source `computed`, `persisted` or `absent`, the `bound` flag, the items, the
   history rows, the changes with their linkage, and the incomplete entries.
 - `ReviewTreeEntry` locates one realization or proof entry on both code sides (`ReviewTreeEntrySide`).
@@ -59,6 +61,7 @@ the leaf-wide view and the entries of one selection. Every key of the wire types
   from the comparison the review payload names, with the same abort on cleanup. It returns `null` without
   a comparison number or without invariants, and keeps an answer together with the question it answers.
 
+The deleted `ReviewKnowledgeTreeDiff` family (`ReviewKnowledgeFileChange`, record/source groupings, the `knowledge_diff` field on `ReviewTreesResult`) was the Git diff of the two memory trees grouped by record and source path with per-file patches. The leaf-wide answer keeps everything else byte-identical: comparison record, knowledge sides, code sides, currentness, worklist and entries. `reviewTrees` addressing (recorded number vs live, focused card/lane/file reads), the busy-retry discipline (`TRANSIENT_CODES`, `BUSY_DELAYS_MS`) and the `ReviewTreesRead` phases are unchanged.
 ## Evidence
 
 - The module comment: what the adapter carries and the three answers it keeps apart. [10]
@@ -75,3 +78,5 @@ the leaf-wide view and the entries of one selection. Every key of the wire types
 - A superseded read is aborted and only the newer answer is shown. [21]
 - The reader keeps showing loading while it retries, and its delays add up to at least 25 seconds. [22]
 - Unavailable is shown only after the bounded number of retries. [23]
+- Busy-retry discipline is unchanged [25]
+- The trees / not-converted / unavailable phases are unchanged [26]

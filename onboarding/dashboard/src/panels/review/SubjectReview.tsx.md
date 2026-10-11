@@ -102,3 +102,7 @@ The selected subject is checked before either central statement or evidence is p
 No independent cross-repository interface is introduced.
 
 No additional cross-repository evidence is required.
+- Changed authored fields beside the statement [11]
+- Selected statement with revision resolution and sides [12]
+- Direct applicability treatment of the selected subject [13]
+- Evidence channel for the selected subject [14]

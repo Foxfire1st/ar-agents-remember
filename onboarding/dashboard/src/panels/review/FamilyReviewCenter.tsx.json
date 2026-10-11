@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "90570046945a8192a9dd675068fa67bc5432efb2",
-        "content": "sha256:96fbae51c041a77b745790c2267462b9abef6aff06ca3489390ded77a0b6e35a",
+        "blob": "715eb904920c915dbb44d4a6589c801f539f92cf",
+        "content": "sha256:b567ee6915ee1c9fca9925a25fad2b9ad0151c27e6c20d818e21a7cf8f91ad27",
         "locator": {
           "kind": "symbol",
           "name": "ReviewCenterBody"
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "90570046945a8192a9dd675068fa67bc5432efb2",
-        "content": "sha256:6e85744d51880d00fd34feb58f7dbe50462b7d6c5c6f3f53a43a755f697d670f",
+        "blob": "715eb904920c915dbb44d4a6589c801f539f92cf",
+        "content": "sha256:d6d373fbd973ebd7730f45b12c7e5edeb658d803d8a7b287111ae9e12ac28b6e",
         "locator": {
           "kind": "symbol",
           "name": "MemberCenter"
@@ -37,8 +37,26 @@
     },
     {
       "anchor": {
-        "blob": "90570046945a8192a9dd675068fa67bc5432efb2",
-        "content": "sha256:6e85744d51880d00fd34feb58f7dbe50462b7d6c5c6f3f53a43a755f697d670f",
+        "blob": "715eb904920c915dbb44d4a6589c801f539f92cf",
+        "content": "sha256:2861fc7f1a180414784790d186323d44393a821c03b4583eb353a9dd7d562c97",
+        "locator": {
+          "kind": "symbol",
+          "name": "CenterExpressions"
+        }
+      },
+      "id": "RLZ-MF5CT6",
+      "invariant": "INV-DYDMDD",
+      "origin": {
+        "handoffEntry": "MIK-R86@v1 rule 17",
+        "leaf": "260928-MIK-L86"
+      },
+      "rationale": "It keeps the cards Full file callback on the card state, while the surrounding non-card path actions use the comparison page.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "715eb904920c915dbb44d4a6589c801f539f92cf",
+        "content": "sha256:d6d373fbd973ebd7730f45b12c7e5edeb658d803d8a7b287111ae9e12ac28b6e",
         "locator": {
           "kind": "symbol",
           "name": "MemberCenter"
@@ -49,7 +67,25 @@
       "origin": {
         "leaf": "260921-ICR-L46"
       },
-      "rationale": "Lays out the member view as one section: the family guarantee comparison when a family entry is present, the selected intent statement, and the bound source expressions directly after it, with the roster member's own statement and realization claims under a disclosure in the same section.",
+      "rationale": "Lays out the selected member’s optional family guarantee comparison, selected intent and bound expressions in one main-page section. Statement, membership, realization claims and attributed paths are open resolution content, not a disclosure; evidence and selected-record knowledge follow them, with roster continuation in the main page when a family context exists.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "715eb904920c915dbb44d4a6589c801f539f92cf",
+        "content": "sha256:82b12541db763fd15594100311f1562bf38d7501c303868451a6ab6f555d06c5",
+        "locator": {
+          "kind": "symbol",
+          "name": "FamilyReviewCenter"
+        }
+      },
+      "id": "RLZ-Y4FPEE",
+      "invariant": "INV-777108",
+      "origin": {
+        "handoffEntry": "MIK-R86@v1 rule 10",
+        "leaf": "260928-MIK-L86"
+      },
+      "rationale": "It renders the guarantee, member meaning and reasons in the reading area rather than repeating them in navigation.",
       "role": "presentation"
     }
   ],
@@ -91,7 +127,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "90570046945a8192a9dd675068fa67bc5432efb2",
+            "blob": "715eb904920c915dbb44d4a6589c801f539f92cf",
             "content": "sha256:213f9df01bcaec61c984b00cbdcffffc910aaf9274175d8cccf67254ecd7d816",
             "locator": {
               "kind": "symbol",
@@ -123,7 +159,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "90570046945a8192a9dd675068fa67bc5432efb2",
+            "blob": "715eb904920c915dbb44d4a6589c801f539f92cf",
             "content": "sha256:2c6781d39960e1c72f46cc3b195c463595b4085f55f9e13c13d455cf9d8727e1",
             "locator": {
               "kind": "symbol",
@@ -155,7 +191,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "90570046945a8192a9dd675068fa67bc5432efb2",
+            "blob": "715eb904920c915dbb44d4a6589c801f539f92cf",
             "content": "sha256:82b12541db763fd15594100311f1562bf38d7501c303868451a6ab6f555d06c5",
             "locator": {
               "kind": "symbol",
@@ -167,15 +203,16 @@
       ]
     },
     "19": {
-      "note": "The body chooses one of four centres and passes the knowledge panel to each.",
+      "note": "Builds expressions and selected-record SubjectKnowledge, then chooses member, unselected, unavailable-member or family content; the unavailable-member branch receives expressions but not the knowledge panel.",
       "targets": [
         {
           "anchor": {
-            "blob": "90570046945a8192a9dd675068fa67bc5432efb2",
-            "content": "sha256:96fbae51c041a77b745790c2267462b9abef6aff06ca3489390ded77a0b6e35a",
+            "blob": "715eb904920c915dbb44d4a6589c801f539f92cf",
+            "content": "sha256:1ee1bfe1c76748c88bca6e7e707bdd1821fa77701f25073e67a12d23971d5912",
             "locator": {
-              "kind": "symbol",
-              "name": "ReviewCenterBody"
+              "end": 1003,
+              "kind": "line_range",
+              "start": 895
             }
           },
           "kind": "code"
@@ -187,27 +224,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "90570046945a8192a9dd675068fa67bc5432efb2",
+            "blob": "715eb904920c915dbb44d4a6589c801f539f92cf",
             "content": "sha256:038b3d1c9c429981856a618e8043946b542358f6000ba46ec351e0cf7a19912c",
             "locator": {
               "kind": "symbol",
               "name": "pinnedWorklist"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "21": {
-      "note": "The panel, the notice, or nothing.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "c8a125a74b9d7014d7b984a5bf3da22343fdba2f",
-            "content": "sha256:18f55d6fbfab265117bafa7d2ba64ca5f86a622e35ae8f08f36aed7b811f0d54",
-            "locator": {
-              "kind": "symbol",
-              "name": "knowledgePanel"
             }
           },
           "kind": "code"
@@ -235,7 +256,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "90570046945a8192a9dd675068fa67bc5432efb2",
+            "blob": "715eb904920c915dbb44d4a6589c801f539f92cf",
             "content": "sha256:83a5e0d2563d6cb3c95a4e2703398f9266533abecb267ee5a532f3d1973ab95b",
             "locator": {
               "kind": "symbol",
@@ -251,7 +272,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "90570046945a8192a9dd675068fa67bc5432efb2",
+            "blob": "715eb904920c915dbb44d4a6589c801f539f92cf",
             "content": "sha256:1ae8a407aec5579d0318999ae2df118422e510ff0c1cba32ece9c64e9c00edc2",
             "locator": {
               "kind": "symbol",
@@ -262,21 +283,115 @@
         }
       ]
     },
-    "25": {
-      "note": "The notice says that it is computing.",
+    "26": {
+      "note": "Guarantee rendering for one side or a compared pair",
       "targets": [
         {
           "anchor": {
-            "blob": "0a465c6d3fd211d0bd8b533f9b4d10a896c0fbc5",
-            "content": "sha256:706697df5eae0b852f7920d2b3077882845d83bd56dc61ddb1173e5b4b2735cf",
+            "blob": "715eb904920c915dbb44d4a6589c801f539f92cf",
+            "content": "sha256:7919a12c47c71c557cab780885137a68a85de5cc2b18492628909897a1799999",
             "locator": {
-              "end": 33,
-              "kind": "line_range",
-              "start": 28
-            },
-            "path": "dashboard/src/panels/review/LeafKnowledgeNotice.test.tsx"
+              "kind": "symbol",
+              "name": "GuaranteeBlock"
+            }
           },
-          "kind": "test"
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "715eb904920c915dbb44d4a6589c801f539f92cf",
+            "content": "sha256:604daa2026617f8f4881f7a7e0ead47e22294270c840fc7283742fa79ea180e8",
+            "locator": {
+              "end": 129,
+              "kind": "line_range",
+              "start": 111
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "27": {
+      "note": "One expression row per collection with verdict and occurrences",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "715eb904920c915dbb44d4a6589c801f539f92cf",
+            "content": "sha256:faef715c94226048b5b745c58260017be12348faad48f1af8f9cf054dc14fce6",
+            "locator": {
+              "kind": "symbol",
+              "name": "FamilyExpressionRow"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "715eb904920c915dbb44d4a6589c801f539f92cf",
+            "content": "sha256:55cd11703891fbabf3b434450b569f39863f6224a98a8ba9eac9cb7bcda5c617",
+            "locator": {
+              "end": 408,
+              "kind": "line_range",
+              "start": 390
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "28": {
+      "note": "Member review centre with subject rows and states",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "715eb904920c915dbb44d4a6589c801f539f92cf",
+            "content": "sha256:d6d373fbd973ebd7730f45b12c7e5edeb658d803d8a7b287111ae9e12ac28b6e",
+            "locator": {
+              "kind": "symbol",
+              "name": "MemberCenter"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "715eb904920c915dbb44d4a6589c801f539f92cf",
+            "content": "sha256:634d50bc4a9891bcca05b5472b3683802665800911bfec436ba41d92a538eafc",
+            "locator": {
+              "end": 771,
+              "kind": "line_range",
+              "start": 753
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "31": {
+      "note": "Card read assembly for the selected centre",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "715eb904920c915dbb44d4a6589c801f539f92cf",
+            "content": "sha256:2861fc7f1a180414784790d186323d44393a821c03b4583eb353a9dd7d562c97",
+            "locator": {
+              "kind": "symbol",
+              "name": "CenterExpressions"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "715eb904920c915dbb44d4a6589c801f539f92cf",
+            "content": "sha256:8eaee263de3ef8160a2c69b32db6d5345b2ad0d409f651d28a1aa418dc49b9ed",
+            "locator": {
+              "end": 1070,
+              "kind": "line_range",
+              "start": 1052
+            }
+          },
+          "kind": "code"
         }
       ]
     }

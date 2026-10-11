@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Bounded W03 test-port obligation from the amended packet scope (Architect qualification 2026-10-08 11:18:45 UTC)."
+  },
+  "applicability": "Narrow workspace grid and header.",
+  "conditions": [
+    "Shrinking reading track with a single narrow track; wrapped header row; technical provenance keeps the comparison identity."
+  ],
+  "exclusions": [
+    "Reconstructing removed disclosure child order."
+  ],
+  "id": "INV-Z938DS",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "ports-fifth.log: constrains the disclosure's grid track and wraps the header row; assertion-fates.md"
+      ],
+      "path": "notes/reports/l86-curator-W03/handoff-phase1.json"
+    },
+    "handoffEntry": "MIK-R86@v1 preservation W03 grid and header",
+    "leaf": "260928-MIK-L86",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The current workspace declares a shrinking reading track and single narrow track while its header wraps and technical provenance retains the comparison identity.",
+  "status": "proposed",
+  "supersedes": []
+}

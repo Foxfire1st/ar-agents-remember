@@ -1,0 +1,41 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "The amendment bounds all later port work: ports preserve assertions through current elements, never restore retired payload support."
+  },
+  "alternatives": [
+    {
+      "option": "Port the eight cases test-only to current elements preserving failure/immutable/focus/layout/expression assertions; retire only the named context/count/history/pre-label assertions and unused fixtures.",
+      "reason": "Canonical decision: preserves all semantic assertions through current elements without production change.",
+      "status": "chosen"
+    },
+    {
+      "option": "Restore old-payload support, compatibility DOM and production guards so every old assertion passes unmodified.",
+      "reason": "The amendment explicitly refuses it: pre-label payloads are unsupported and R57 removes assessments universally.",
+      "reconsider_when": "A supported comparison is found carrying a pre-label payload that must be judged.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Later port work preserves assertions through current elements; retired payload support stays retired until L57."
+  ],
+  "context": "Architect qualification 2026-10-08 11:18:45 UTC amending MIK-R86@v1 (packet a78d9ae3) with referenced MIK-R57@v2: six family/two narrow cases port test-only to current elements with assertions preserved; dataset-context/count/history/pre-label assertions retire; direct pane-3 treatment and sibling isolation remain until L57.",
+  "decider": "Architect canonical decision 2026-10-08 11:18:45 UTC.",
+  "id": "DEC-D0ZZXM",
+  "links": [],
+  "origin": {
+    "handoff": {
+      "path": "notes/reports/l86-curator-W03/handoff-phase1.json"
+    },
+    "handoffEntry": "DEC-amendment",
+    "leaf": "260928-MIK-L86",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

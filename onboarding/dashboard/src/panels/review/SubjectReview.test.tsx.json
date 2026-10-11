@@ -35,6 +35,94 @@
           "kind": "test"
         }
       ]
+    },
+    "3": {
+      "note": "Assessed family fixture with successor revision",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08687180d4d05bf47c8c7371aee3101de7aec3aa",
+            "content": "sha256:0d008e2d05d73286d0bbf97ee98fa97099e8d358bdfd4a26283cdde4cf66523f",
+            "locator": {
+              "kind": "symbol",
+              "name": "assessedFamily"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Family-less subject fixture for no-family intent",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08687180d4d05bf47c8c7371aee3101de7aec3aa",
+            "content": "sha256:070d659b2121a72a6c1b8bdffc49e157c4646c8c09e2dc2ad2a2f6df56de4a0c",
+            "locator": {
+              "kind": "symbol",
+              "name": "noFamily"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Per-subject serving world with request capture",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08687180d4d05bf47c8c7371aee3101de7aec3aa",
+            "content": "sha256:d646b7ccab93d270d364ac25ab80f57cffe8ba46885b4316ac14226bbc5f13d5",
+            "locator": {
+              "kind": "symbol",
+              "name": "serve"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "08687180d4d05bf47c8c7371aee3101de7aec3aa",
+            "content": "sha256:bd73f7e1cb504e5879c4a569fd41896eefd931c150e18883a74e2a090221271f",
+            "locator": {
+              "end": 43,
+              "kind": "line_range",
+              "start": 25
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Centre mount helper for subject journeys",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08687180d4d05bf47c8c7371aee3101de7aec3aa",
+            "content": "sha256:e56d1bd09b823300e3ee2681891e4b19695696d75bfd1365554d3bafa4f377c5",
+            "locator": {
+              "kind": "symbol",
+              "name": "mount"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "08687180d4d05bf47c8c7371aee3101de7aec3aa",
+            "content": "sha256:ed28654e297b9f8c4c205ce4714165de1dfdc9a3a97906bb3418697f6183c588",
+            "locator": {
+              "end": 97,
+              "kind": "line_range",
+              "start": 83
+            }
+          },
+          "kind": "test"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Bounded W03 test-port obligation from the amended packet scope (Architect qualification 2026-10-08 11:18:45 UTC); ports-fifth.log: shows an explicit failure and the coherent accumulated review for wrong subject; assertion-fates.md"
+  },
+  "applicability": "Wrong-subject continuations in the family read cycle.",
+  "conditions": [
+    "An explicit failure displays while the coherent selected statement, evidence, siblings and complete file inventory are retained.",
+    "Applies to mounted family read-cycle continuations reached from the current elements."
+  ],
+  "exclusions": [
+    "Replacing coherent content with failure text; silent continuation drops."
+  ],
+  "id": "INV-KBXRZC",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "ports-fifth.log: shows an explicit failure and the coherent accumulated review for wrong subject; assertion-fates.md"
+      ],
+      "path": "notes/reports/l86-curator-W03/handoff-phase1.json"
+    },
+    "handoffEntry": "MIK-R86@v1 preservation W03 wrong subject",
+    "leaf": "260928-MIK-L86",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A wrong subject continuation displays its explicit failure while retaining the coherent selected statement, evidence, siblings and complete file inventory.",
+  "status": "proposed",
+  "supersedes": []
+}

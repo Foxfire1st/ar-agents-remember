@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Owner-admitted single field after paired completion; fixture contract pin."
+  },
+  "applicability": "The document-chat shared fixture's series shape.",
+  "conditions": [
+    "chatSeries names the current SeriesNode required abandonedCount as zero.",
+    "No production behavior or extra fixture value changes."
+  ],
+  "exclusions": [
+    "Production or broader fixture changes."
+  ],
+  "id": "INV-S732G2",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Owner canonical86 seam disposition plus final typecheck/build, candidate inventory and W03-to-current.patch"
+      ],
+      "path": "notes/reports/l86-curator-W03/handoff-phase1.json"
+    },
+    "handoffEntry": "MIK-R86@v1 W03 source-currentness fixture seam",
+    "leaf": "260928-MIK-L86",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The existing chatSeries fixture names the current SeriesNode required abandonedCount as zero; no production behavior or extra fixture value changes.",
+  "status": "retired",
+  "supersedes": []
+}

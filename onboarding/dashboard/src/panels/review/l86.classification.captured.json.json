@@ -1,0 +1,41 @@
+{
+  "path": "dashboard/src/panels/review/l86.classification.captured.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Typed refusal naming the unchanged path\n\nAnchor: `refusal`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37d9cab7cd3060dccc38368f3a06cf60d10efc51",
+            "content": "sha256:5b554e683ec0c799d7927b7a81abadaae4846e74e4871708d9afc20aa117ec76",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Recorded comparison the refusal is about\n\nAnchor: `comparison`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37d9cab7cd3060dccc38368f3a06cf60d10efc51",
+            "content": "sha256:5b554e683ec0c799d7927b7a81abadaae4846e74e4871708d9afc20aa117ec76",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

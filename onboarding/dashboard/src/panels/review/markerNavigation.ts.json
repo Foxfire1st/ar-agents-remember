@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "cd0288dd34f9b6a7edf2a34ce42a87390dd6336c",
-        "content": "sha256:3e38270051c480f867573ff94df63bce2a545217a016e4ee2fb1f4f104336441",
+        "blob": "2c55e47896fbccfc402e8646015896baec1e0606",
+        "content": "sha256:17543e0eff829c6a438a2b9426243cbaaf5b05c4e573d9e900a0f947043d3850",
         "locator": {
           "kind": "symbol",
           "name": "restore"
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "cd0288dd34f9b6a7edf2a34ce42a87390dd6336c",
+        "blob": "2c55e47896fbccfc402e8646015896baec1e0606",
         "content": "sha256:ed08b19995151ab81c016fbc65af12e630b097656ebe654cde43da6ffb3dc654",
         "locator": {
           "kind": "symbol",
@@ -44,12 +44,45 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cd0288dd34f9b6a7edf2a34ce42a87390dd6336c",
+            "blob": "2c55e47896fbccfc402e8646015896baec1e0606",
             "content": "sha256:4dd42bea78c55fcc09ea2533e2011287c50e3ee4efd083ca4618cc3668c65bae",
             "locator": {
               "end": 8,
               "kind": "line_range",
               "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Capture/open pair built from workspace state",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2c55e47896fbccfc402e8646015896baec1e0606",
+            "content": "sha256:5adb0563f1b308eae62564e17c9af2d1dd5c34bd0a2d6a34ad45ae90c259c166",
+            "locator": {
+              "kind": "symbol",
+              "name": "workspaceMarkerMoves"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Restores the captured subject and chosen context, clears the selection focus request for marker return, then restores worklist, open path, diff layout and full-file mode.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2c55e47896fbccfc402e8646015896baec1e0606",
+            "content": "sha256:17543e0eff829c6a438a2b9426243cbaaf5b05c4e573d9e900a0f947043d3850",
+            "locator": {
+              "end": 74,
+              "kind": "line_range",
+              "start": 57
             }
           },
           "kind": "code"
@@ -93,7 +126,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cd0288dd34f9b6a7edf2a34ce42a87390dd6336c",
+            "blob": "2c55e47896fbccfc402e8646015896baec1e0606",
             "content": "sha256:ed08b19995151ab81c016fbc65af12e630b097656ebe654cde43da6ffb3dc654",
             "locator": {
               "kind": "symbol",
@@ -105,15 +138,14 @@
       ]
     },
     "5": {
-      "note": "The return: subject, then lane, opened path, layout and full file; the tree's focus request cleared.\n\nAnchor: \"state.focusSelection.current = null;\"",
+      "note": "Return restores subject, worklist flag, opened path, layout and full file with selection focus cleared; no lane destination is captured.\n\nAnchor: `workspaceMarkerMoves`",
       "targets": [
         {
           "anchor": {
-            "blob": "cd0288dd34f9b6a7edf2a34ce42a87390dd6336c",
-            "content": "sha256:3e38270051c480f867573ff94df63bce2a545217a016e4ee2fb1f4f104336441",
+            "blob": "2c55e47896fbccfc402e8646015896baec1e0606",
+            "content": "sha256:cbef0f774205691fa6f16d737959e5d61ec40f9baa33fa61513257ccd6e7a00e",
             "locator": {
-              "kind": "symbol",
-              "name": "restore"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -125,12 +157,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5ff876f9b2c2f34b58783e9658a88bb4d5cec25c",
+            "blob": "79b9df933874721d54216189dfe94463118877aa",
             "content": "sha256:12c29394bf9144fcad060c75b0da85c518e704f7309ae20586709d3020563dd0",
             "locator": {
-              "end": 314,
+              "end": 278,
               "kind": "line_range",
-              "start": 314
+              "start": 278
             },
             "path": "dashboard/src/panels/review/ReviewWorkspace.tsx"
           },
@@ -179,7 +211,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "00b6a54df559165d59f5c46c8a1ab31d6701367a",
+            "blob": "1d2ce3087885774bc27b08dba49bdac96fcaa15a",
             "content": "sha256:68997ff7d2cf0414b3c209e1f50fa32b2716ce3a54d5f5064231efaa6ff66f27",
             "locator": {
               "kind": "symbol",

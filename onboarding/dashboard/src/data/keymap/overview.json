@@ -35,12 +35,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "049d819910de65c1a893439dc57ab92d95609e5c",
+            "blob": "422af74afc1f13f1a92ba91451b83632760e6750",
             "content": "sha256:59fddd7a855198e28ae7d6d9c2b4d8f88fd74e7c450e98d2a0436422e618b498",
             "locator": {
-              "end": 184,
+              "end": 158,
               "kind": "line_range",
-              "start": 182
+              "start": 156
             },
             "path": "dashboard/src/panels/review/changeTraversal.ts"
           },

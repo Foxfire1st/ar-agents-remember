@@ -13,6 +13,7 @@ declared endpoints, bound to the generation the list published), or — L4a — 
 by a `DetailPanel` change-set button and hosted by `CockpitShell` as a full-bleed takeover (its `onBack`
 clears it, restoring the rails).
 
+`ChangeSetViewer` is the change-set viewer screen: a takeover that lists changed code and onboarding files and opens per-file diffs. It serves four selectors with one rendering — an enclosure scope, a series-master net, a leaf committed/working delta, and (new in W03) a recorded review comparison — and, when opened from the reviewer, filters that comparison's list by the lane destinations with per-row badges and one explanatory sentence.
 ## Code Commentary
 
 ### Logic
@@ -33,13 +34,7 @@ REFUSED or that measured empty is NAMED rather than left as an empty pane (see
 the 260921-ICR-L33 section below); stale refresh results are ignored after
 teardown.
 
-Props are `{ repo, scope?, master?, leaf?, mode?, generation?, onBack, onOpenLeaf? }` (`ChangeSetTarget` +
-`onBack`, plus the 260921-ICR-L33 re-target hook the cockpit supplies). Selection
-precedence is **`leaf > master > scope`**: on mount / target change an effect fetches `leaf ?
-leafChangeset(repo, master, leaf, mode) : master ? masterChangeset(repo, master, { includeLeaves: true, pins }) : taskChangeset(repo,
-scope)` into `data` (a `live` flag drops a stale resolve; a `FilesApiError` is shown as `code
-(httpStatus)`), and resets the selection/diff/partner state. `isLeaf = Boolean(leaf)`; `isSeries =
-Boolean(master) && !leaf` (a `leaf` carries `master` as its qualifier, so series mode is master-without-leaf).
+Props are `ChangeSetTarget` plus `onBack`, optional `onOpenLeaf` and optional `reviewContext` (`ViewerProps`). `ChangeSetTarget` carries `comparison?: number`, while `reviewContext` is a viewer prop, not a target field. A set comparison selects `comparisonChangeset` first; otherwise selection precedence remains leaf > master > scope, with `includeLeaves: true` and generation pins on master reads. The target-change effect fetches that selected request, ignores stale completion and resets file/diff/partner state. A leaf still qualifies its master; series mode remains master-without-leaf.
 A second effect **polls the working view** every 2.5s (gated on `mode === "working"`): it refreshes `data`
 (so a file edited *after* the viewer opened shows up in the list, and the counters track) AND re-fetches the
 currently-open file's diff (`active`) so an edit to the file you are LOOKING AT updates in place. The
@@ -78,7 +73,7 @@ answer, and the pick-a-file backdrop no longer stands in for it. Column 3 mounts
 (`keyPrefix="changeset.partner"`) when a partner is loaded.
 
 
-**`ChangeSetTarget.review` became a target that may carry no subject.** Its type is now `{ selectorKind?: ReviewSelectorKind; selectorId?: string }`, and the comment above it records the two facts a reader needs: the field's **presence** is what marks a target as a review (the cockpit's takeover dispatch is what reads it, and the change-set viewer is never mounted for one, so no change-set request is made from a review), and an **empty object** is the task-context entry — the review opened from the task alone, which lists the complete source inventory and is what a task with no recorded invariant still has. Nothing else in the module changed: the viewer reads the field only to decide whether it is a review target at all.
+**`ChangeSetTarget.review` is a cockpit dispatch identity that may carry no subject.** Its optional selector fields (and `historical` flag) are read by the cockpit: presence selects `ReviewSurface`, and an empty object opens the task-context review. This dispatch is distinct from the reviewer's All/Unexplained/Unknown changes actions, which mount `ChangeSetViewer` with a recorded `comparison` and viewer-owned `reviewContext`, issuing comparison list and file-diff reads.
 
 **260921-ICR-L13 bound the series view to its listed generation.** `ChangeSetTarget` gained an
 optional `generation?: MasterNetPins` — the exact recorded endpoints a listing published; empty /
@@ -101,15 +96,12 @@ no-file canvas. `data-testid`s: `changeset-viewer`, `changeset-back`, `changeset
 `pane-placeholder` (now the **error** display only — the no-file empty state is the `EmptyStateBackdrop`,
 whose own `empty-backdrop` testid appears only when motion is enabled), `changeset-open-sidecar`.
 
-**260915-KS-L22** gave `ChangeSetTarget` one more member and deliberately no behaviour: an optional
-`review?: { selectorKind: ReviewSelectorKind; selectorId: string }`, the Intent Reviewer's own
-selector, naming the reviewed subject's recorded identity rather than a filesystem path. The member
-is carried by the *target* and read by the cockpit's takeover dispatch, which is what decides between
-this viewer and `ReviewSurface`; the component itself never reads `review`, and `Cockpit` mounts
-`ChangeSetViewer` only on the branch where `target.review` is absent. That is the invariant to hold
-when reading this file: a review target can reach this module's type without reaching its mount, so
-**no change-set request is ever made from a review**, and the `ReviewSelectorKind` import is a type
-import on that account.
+**260915-KS-L22 introduced `ChangeSetTarget.review` as a cockpit dispatch field.** The cockpit's
+review branch mounts `ReviewSurface`, not this viewer, and the optional selector names a recorded
+subject rather than a path. That entry dispatch remains separate from the current reviewer's
+comparison-page destination: `ReviewSurface` can mount `ChangeSetViewer` over the retained review
+with a `comparison` number and `reviewContext`, so a review can now issue change-set requests.
+`ReviewSelectorKind` remains a type import for the dispatch field.
 
 ### Invariants And Boundaries
 
@@ -120,6 +112,7 @@ per-file diffs: an enclosure `scope` diffs base→worktree, **master mode** the 
 qualifier. The back link is the only exit it controls (the Cockpit host also clears the takeover on a
 mode-bar switch or a node `open`). Placeholders are stable-size (no flip-flop).
 
+`ChangeSetTarget` carries `comparison?: number`; `ViewerProps` (and the exported component props) carry `reviewContext?: ReviewChangeContext`. A set comparison is selected first (`changesetListRequest` delegates to `comparisonChangeset`, `diffRequestFor` to `comparisonFileDiff`); otherwise leaf > master > scope is unchanged. The review filter state (`all` | `unexplained` | `unknown`) starts from the reviewer's page and narrows the list through `filteredChangeSet`; `ReviewFilters` shows destination counts and `FILTER_NOTES` under a non-all filter. The comparison header names `comparison N · leaf`, offers `← Back to intent review`, and displays the two abbreviated code trees through `ComparisonTreesTag`, not all four operands. `useComparisonFirstFile` opens the initial file. Comparisons do not auto-poll; non-comparison targets remain unfiltered and retain their existing behavior.
 ## Evidence
 
 ### Repo-Internal References
@@ -135,6 +128,11 @@ mode-bar switch or a node `open`). Placeholders are stable-size (no flip-flop).
 - The DetailPanel controls that open it with a change-set target. [9]
 - The loading, back, and master-file NET-diff behavior pinned in the tests, plus the new generation-binding case. [10]
 
+- A comparison target reads through the new comparison client [18]
+- Per-file diffs on a comparison read the recorded trees [19]
+- The filter row shows each destination with its lane file count [20]
+- The comparison header names its number and offers the way back [21]
+- The filter's first file opens on entry [22]
 ## 260921-ICR-L12 The Review Target Carries Which Record It Is Read From
 
 `260921-ICR-L12` (`ICR-R12@v1`) adds one optional field to this module's `ChangeSetTarget`:

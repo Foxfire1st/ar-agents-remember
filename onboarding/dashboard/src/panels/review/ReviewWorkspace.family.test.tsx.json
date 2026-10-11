@@ -24,24 +24,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "df2dc8d38e17e09c77fd2020604f1822bf6b9e78",
+            "blob": "801cf14ff73ecb0b1f3df068c31a9aec2d7ef94a",
             "content": "sha256:78041fc941ba4fdbb20f3aa82097165a4a597506ae8d23c55bddf85ba1d47996",
             "locator": {
-              "end": 142,
+              "end": 121,
               "kind": "line_range",
-              "start": 142
+              "start": 121
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "df2dc8d38e17e09c77fd2020604f1822bf6b9e78",
+            "blob": "801cf14ff73ecb0b1f3df068c31a9aec2d7ef94a",
             "content": "sha256:dd92132024ce9183156324866988a4fa3d0fec254a946361a6e1b992f98f5d9d",
             "locator": {
-              "end": 146,
+              "end": 132,
               "kind": "line_range",
-              "start": 146
+              "start": 132
             }
           },
           "kind": "test"
@@ -81,12 +81,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "df2dc8d38e17e09c77fd2020604f1822bf6b9e78",
+            "blob": "801cf14ff73ecb0b1f3df068c31a9aec2d7ef94a",
             "content": "sha256:4c883b57e00177cc48fa8029916e1982d28bb3b2a6dce3800ee06ac60cedc32f",
             "locator": {
-              "end": 179,
+              "end": 165,
               "kind": "line_range",
-              "start": 179
+              "start": 165
             }
           },
           "kind": "test"
@@ -111,16 +111,16 @@
       ]
     },
     "14": {
-      "note": "Case 1: the recorded families, their authored guarantees, the full member statements with unchanged siblings included, the recorded sharing, and the opener on every member row.\n\nAnchor: \"renders the recorded families, their authored guarantees and the full member statements\"",
+      "note": "Case 1 asserts two compact family rows, no tree disclosures/central guarantees inside the tree, selected central guarantee/member text, and at least five member-open controls; it does not assert recorded sharing or an opener on every member.\n\nAnchor: current first case assertions",
       "targets": [
         {
           "anchor": {
-            "blob": "df2dc8d38e17e09c77fd2020604f1822bf6b9e78",
-            "content": "sha256:c51cbbd1a205a20a96d38d39c838f619a566d7298d28fd66ca14fe8b9eb1722e",
+            "blob": "801cf14ff73ecb0b1f3df068c31a9aec2d7ef94a",
+            "content": "sha256:52c967e2b88c3dd6d954e51674151a8f0558be5902e89074c8e423fad151c6b0",
             "locator": {
-              "end": 223,
+              "end": 195,
               "kind": "line_range",
-              "start": 185
+              "start": 171
             }
           },
           "kind": "test"
@@ -540,7 +540,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f8135bda4f4dee8a955d2749f28f82df50cbaa0e",
+            "blob": "a25a1fcc8f4dc61d8fc2f05e79105414b62f67ae",
             "content": "sha256:4282b40ca237191be2db1ed269467c4359a964ff096e898ae7543d3e903c6ec7",
             "locator": {
               "kind": "symbol",
@@ -557,7 +557,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f8135bda4f4dee8a955d2749f28f82df50cbaa0e",
+            "blob": "a25a1fcc8f4dc61d8fc2f05e79105414b62f67ae",
             "content": "sha256:b5071870f1a8f6bba6b80bd2e8013d422201e276d4edc918b0dd1aa5b822126c",
             "locator": {
               "kind": "symbol",
@@ -569,12 +569,12 @@
         },
         {
           "anchor": {
-            "blob": "f8135bda4f4dee8a955d2749f28f82df50cbaa0e",
+            "blob": "a25a1fcc8f4dc61d8fc2f05e79105414b62f67ae",
             "content": "sha256:5484d77c1f447fda7b3779c79db7f45fda838200d1c38f515176eaadddfac547",
             "locator": {
-              "end": 330,
+              "end": 199,
               "kind": "line_range",
-              "start": 305
+              "start": 174
             },
             "path": "dashboard/src/panels/review/FamilyTree.tsx"
           },
@@ -582,12 +582,12 @@
         },
         {
           "anchor": {
-            "blob": "f8135bda4f4dee8a955d2749f28f82df50cbaa0e",
+            "blob": "a25a1fcc8f4dc61d8fc2f05e79105414b62f67ae",
             "content": "sha256:0ffb80a4003cea6f3c13d535471f9e5858e0fdea3b58b8b787e90cdd116554ca",
             "locator": {
-              "end": 330,
+              "end": 199,
               "kind": "line_range",
-              "start": 321
+              "start": 190
             },
             "path": "dashboard/src/panels/review/FamilyTree.tsx"
           },
@@ -595,12 +595,12 @@
         },
         {
           "anchor": {
-            "blob": "f8135bda4f4dee8a955d2749f28f82df50cbaa0e",
+            "blob": "a25a1fcc8f4dc61d8fc2f05e79105414b62f67ae",
             "content": "sha256:b81cb5627053aa8f2aa3434632217386d4e1b255859ff8e4aa493af5565174cd",
             "locator": {
-              "end": 330,
+              "end": 199,
               "kind": "line_range",
-              "start": 324
+              "start": 193
             },
             "path": "dashboard/src/panels/review/FamilyTree.tsx"
           },
@@ -626,7 +626,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f8135bda4f4dee8a955d2749f28f82df50cbaa0e",
+            "blob": "a25a1fcc8f4dc61d8fc2f05e79105414b62f67ae",
             "content": "sha256:0333052dac0303645f8625277c45768f4163d55bcbb1f745c4e684cfde134955",
             "locator": {
               "kind": "symbol",
@@ -660,12 +660,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f8135bda4f4dee8a955d2749f28f82df50cbaa0e",
+            "blob": "a25a1fcc8f4dc61d8fc2f05e79105414b62f67ae",
             "content": "sha256:3c9efbf2d9d606a17118f92df45cc5b55fdd56629d40f53c6bbb3bca91621a2e",
             "locator": {
-              "end": 328,
+              "end": 197,
               "kind": "line_range",
-              "start": 295
+              "start": 164
             },
             "path": "dashboard/src/panels/review/FamilyTree.tsx"
           },
@@ -690,7 +690,7 @@
         },
         {
           "anchor": {
-            "blob": "f8135bda4f4dee8a955d2749f28f82df50cbaa0e",
+            "blob": "a25a1fcc8f4dc61d8fc2f05e79105414b62f67ae",
             "content": "sha256:4282b40ca237191be2db1ed269467c4359a964ff096e898ae7543d3e903c6ec7",
             "locator": {
               "kind": "symbol",
@@ -707,7 +707,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "90570046945a8192a9dd675068fa67bc5432efb2",
+            "blob": "715eb904920c915dbb44d4a6589c801f539f92cf",
             "content": "sha256:23dabe198b2110ee22cc820c70b27542796903fbb3c1d167653bb2e6f927955b",
             "locator": {
               "kind": "symbol",
@@ -719,7 +719,7 @@
         },
         {
           "anchor": {
-            "blob": "90570046945a8192a9dd675068fa67bc5432efb2",
+            "blob": "715eb904920c915dbb44d4a6589c801f539f92cf",
             "content": "sha256:5f05d06e36376653ff0cac44b7bb66da9d768519922276b264bbb861aaa6f5b9",
             "locator": {
               "kind": "symbol",
@@ -806,23 +806,6 @@
         }
       ]
     },
-    "46": {
-      "note": "The source explorer retains the complete inventory independently of semantic selection.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "15f7110353dadebfae32b945340bc81624d0fd9b",
-            "content": "sha256:7a9918cfbbeca0fe8a60beee6bfca6dae9a51d703b41789f89f7c4a9233ae972",
-            "locator": {
-              "kind": "symbol",
-              "name": "SourceExplorer"
-            },
-            "path": "dashboard/src/panels/review/SourceExplorer.tsx"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "47": {
       "note": "The workspace hook preserves display state and the source opener needed for focus return.\n\nAnchor: \"export function useWorkspaceState(): WorkspaceState {\"",
       "targets": [
@@ -841,6 +824,40 @@
         }
       ]
     },
+    "48": {
+      "note": "Served world from immutable captures",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "801cf14ff73ecb0b1f3df068c31a9aec2d7ef94a",
+            "content": "sha256:e0661c5eca64b1196fbf218e65505d87c37b7b4cc1618fc128868e7143680ef1",
+            "locator": {
+              "end": 149,
+              "kind": "line_range",
+              "start": 121
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "49": {
+      "note": "Mounted surface on queued bodies",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "801cf14ff73ecb0b1f3df068c31a9aec2d7ef94a",
+            "content": "sha256:a34137ea6e19c8dab41657fdb16a184cef2a676f0ee3d9f913e04b518ab0c7b2",
+            "locator": {
+              "end": 163,
+              "kind": "line_range",
+              "start": 151
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
     "5": {
       "note": "The two collection constants the walk case pins, and the captured refusal body the no-family-context case mounts.\n\nAnchor: `REVIEW_PAGED_COLLECTIONS`; `REVIEW_WALKABLE_COLLECTIONS`; `RECORDS_PAGE_REFUSAL_RESPONSE`",
       "targets": [
@@ -852,6 +869,108 @@
               "end": 49,
               "kind": "line_range",
               "start": 44
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "50": {
+      "note": "Synthetic outline adapter for pre-R86 captures",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "801cf14ff73ecb0b1f3df068c31a9aec2d7ef94a",
+            "content": "sha256:6cc710f510a87c5d362ec9c51fa779949dd1bfef25632dffcc0ef84ae6bacd78",
+            "locator": {
+              "end": 23,
+              "kind": "line_range",
+              "start": 23
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "51": {
+      "note": "Guarantee shapes and member-statement preservation",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "801cf14ff73ecb0b1f3df068c31a9aec2d7ef94a",
+            "content": "sha256:bc19aebbdb1bba25a21a34ed7d7a3c04f94882000ef4610061c7a75d21f4bcc4",
+            "locator": {
+              "end": 197,
+              "kind": "line_range",
+              "start": 171
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "52": {
+      "note": "Cursor continuations and cross-walk refusal",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "801cf14ff73ecb0b1f3df068c31a9aec2d7ef94a",
+            "content": "sha256:c7ce04b8f6118f787a85a5b409ca767e3c1f4e72739fe3b8c03f133ba08df3e2",
+            "locator": {
+              "end": 330,
+              "kind": "line_range",
+              "start": 285
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "53": {
+      "note": "Bounded roster stated as its carried part",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "801cf14ff73ecb0b1f3df068c31a9aec2d7ef94a",
+            "content": "sha256:0b79555d1ac9866ff75c7c640afa5e0a1f10a4ca6c4d153bc031b6cc5e02bd4c",
+            "locator": {
+              "end": 423,
+              "kind": "line_range",
+              "start": 401
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "54": {
+      "note": "State retained across two center page requests",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "801cf14ff73ecb0b1f3df068c31a9aec2d7ef94a",
+            "content": "sha256:49de8aaccd0a57ff5a1729ccaa9747bdd65385f8954da76084c66eb1fb9ccf1d",
+            "locator": {
+              "end": 754,
+              "kind": "line_range",
+              "start": 699
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "55": {
+      "note": "Deduplicated expression excerpts over the capture",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "801cf14ff73ecb0b1f3df068c31a9aec2d7ef94a",
+            "content": "sha256:c1d926b6e34e8771b72ccec6a9772972eeac071d33fbb76404469aff8d400e3e",
+            "locator": {
+              "end": 845,
+              "kind": "line_range",
+              "start": 764
             }
           },
           "kind": "test"
@@ -892,12 +1011,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "df2dc8d38e17e09c77fd2020604f1822bf6b9e78",
+            "blob": "801cf14ff73ecb0b1f3df068c31a9aec2d7ef94a",
             "content": "sha256:c822a15fa99f372272bee76c901f2e711e1eeab0cca77c9c880072e98c092d72",
             "locator": {
-              "end": 77,
+              "end": 57,
               "kind": "line_range",
-              "start": 77
+              "start": 57
             }
           },
           "kind": "test"
@@ -922,16 +1041,28 @@
       ]
     },
     "9": {
-      "note": "The typed refusal the explorer's reads are answered with, so no case asserts on a file's bytes.\n\nAnchor: \"const SOURCE_REFUSAL\"",
+      "note": "The fixture defines a typed source-content refusal and routes that URL to it; this is stub configuration, not proof of an explorer read or file-byte assertion.\n\nAnchor: fixture refusal and fetch dispatch",
       "targets": [
         {
           "anchor": {
-            "blob": "df2dc8d38e17e09c77fd2020604f1822bf6b9e78",
-            "content": "sha256:70bc7ba3d08dfd08c91f6fed77f7398b369f81735141772465cbc6f70e68ef7c",
+            "blob": "801cf14ff73ecb0b1f3df068c31a9aec2d7ef94a",
+            "content": "sha256:62dd80739af6f78d2d3a9c6af582b868019ca298c14544b89f072e8c93fce9ec",
             "locator": {
-              "end": 114,
+              "end": 104,
               "kind": "line_range",
-              "start": 114
+              "start": 94
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "801cf14ff73ecb0b1f3df068c31a9aec2d7ef94a",
+            "content": "sha256:aee85cbd7d1a1e54c8c8029665ee891675a28e6997fe969be1df65fbf266ec2b",
+            "locator": {
+              "end": 148,
+              "kind": "line_range",
+              "start": 121
             }
           },
           "kind": "test"

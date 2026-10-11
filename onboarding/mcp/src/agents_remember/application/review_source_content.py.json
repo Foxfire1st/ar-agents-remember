@@ -670,12 +670,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "005c44f99677f29c3777322502b77b732a3a0252",
+            "blob": "889df3540da11d28e4b0bef1fe9c557748e265d4",
             "content": "sha256:bd6c5bf6eca62d44c807319571d642d9c42dffef1af37cc88ba79a795855c8f6",
             "locator": {
-              "end": 160,
+              "end": 161,
               "kind": "line_range",
-              "start": 159
+              "start": 160
             },
             "path": "mcp/src/agents_remember/models/knowledge/review.py"
           },
@@ -857,7 +857,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "605a94e6165911a70c8720cc9da1642652343d76",
+            "blob": "e5e3edfefa314b759bf8bd08815f5f4fd84f7899",
             "content": "sha256:80c602650fbe4d18212c300d5b20ea986bab9d8f666fd0f5ef6ddc9897a00f99",
             "locator": {
               "kind": "symbol",
@@ -869,7 +869,7 @@
         },
         {
           "anchor": {
-            "blob": "605a94e6165911a70c8720cc9da1642652343d76",
+            "blob": "e5e3edfefa314b759bf8bd08815f5f4fd84f7899",
             "content": "sha256:b84fd31944c3c27d5bc513725f1bf10f9e0660fd1009f5d4b8300735f0ad354b",
             "locator": {
               "kind": "symbol",

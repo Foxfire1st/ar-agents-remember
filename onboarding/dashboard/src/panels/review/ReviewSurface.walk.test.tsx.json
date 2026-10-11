@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "33733dedbf46e8e4767ea854f6b545ba419a0be7",
+        "blob": "7d0ade55777d022632b8de4cfdf32b219a1c7261",
         "content": "sha256:7ec621df8b3a737555a4592b72ab1eb71914033cff209d9afcbce8d1c02fb5ac",
         "locator": {
           "kind": "symbol",
@@ -20,41 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "33733dedbf46e8e4767ea854f6b545ba419a0be7",
-        "content": "sha256:c2fa8247a50a3b8f2502df1971e0a9c6380fe40daa9117b7c0bb346897eee439",
-        "locator": {
-          "kind": "symbol",
-          "name": "held"
-        }
-      },
-      "facet": "With the answer that brings a later family held back, one, three and five further presses of `j` report that there is no later change. Once the answer is shown the message is gone, and the next `j` moves to that family.",
-      "id": "PRF-EK0SWK",
-      "invariant": "INV-CK3PTB",
-      "origin": {
-        "handoffEntry": "MIK-R39@v1-end-message-belongs-to-its-rows",
-        "leaf": "260928-MIK-L39"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "33733dedbf46e8e4767ea854f6b545ba419a0be7",
-        "content": "sha256:a1cfaede49f8f4f820083d70a85b19b405ec3090ad8343524fe59c6299146148",
-        "locator": {
-          "kind": "symbol",
-          "name": "rows"
-        }
-      },
-      "facet": "While the tree holds a kept family the catalogue lists a row for every family the tree shows, without badges, and the tree stays a child of the navigation itself. Choosing such a row starts afresh with that family alone and reads nothing, because its review is already held.",
-      "id": "PRF-EWNQ4E",
-      "invariant": "INV-9ZKYWQ",
-      "origin": {
-        "handoffEntry": "MIK-R39@v1-other-selections-start-afresh",
-        "leaf": "260928-MIK-L39"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "33733dedbf46e8e4767ea854f6b545ba419a0be7",
+        "blob": "7d0ade55777d022632b8de4cfdf32b219a1c7261",
         "content": "sha256:fbe243212b4c2edd2a1a59768fc3a237a2a15d0d24c9be62e3601b8a2767da6a",
         "locator": {
           "kind": "symbol",
@@ -71,8 +37,8 @@
     },
     {
       "anchor": {
-        "blob": "33733dedbf46e8e4767ea854f6b545ba419a0be7",
-        "content": "sha256:a2f7e93bb547e63527979dcaccd23a3bf8a0707406b280ae91909e8c67e1d9d2",
+        "blob": "7d0ade55777d022632b8de4cfdf32b219a1c7261",
+        "content": "sha256:a5d9054a3b17ea9562d64c9a4b0a82f205d28200b959041bc00a3db21bfb0cfe",
         "locator": {
           "kind": "symbol",
           "name": "sharedRow"
@@ -88,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "33733dedbf46e8e4767ea854f6b545ba419a0be7",
+        "blob": "7d0ade55777d022632b8de4cfdf32b219a1c7261",
         "content": "sha256:fbe243212b4c2edd2a1a59768fc3a237a2a15d0d24c9be62e3601b8a2767da6a",
         "locator": {
           "kind": "symbol",
@@ -104,7 +70,25 @@
       }
     }
   ],
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "7d0ade55777d022632b8de4cfdf32b219a1c7261",
+        "content": "sha256:56836f6c92fc3622fbf05cf8bcfff9c85f63a9c3eed0c340cc5bf55c579ac0e1",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-5M6DKD",
+      "invariant": "INV-TJE3KM",
+      "origin": {
+        "handoffEntry": "MIK-R86@v1 W03 source-currentness native resolution",
+        "leaf": "260928-MIK-L86"
+      },
+      "rationale": "Source-currentness proof of the existing admitted semantics; not a new invariant or product scope.",
+      "role": "support"
+    }
+  ],
   "references": {
     "10": {
       "note": "By key: seven changes, the second family, the kept first family, the end messages, the way back, and the review requests of each press.",
@@ -256,6 +240,71 @@
             "path": "dashboard/src/panels/review/walk.test-utils.tsx"
           },
           "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "Accessible description extraction for selected rows",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7d0ade55777d022632b8de4cfdf32b219a1c7261",
+            "content": "sha256:c6c9a6390b5222283e62ee39d3dbaad19c57243675d54f6c3ea07324428833cc",
+            "locator": {
+              "kind": "symbol",
+              "name": "descriptionOf"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "20": {
+      "note": "Shared-member row resolution across families",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7d0ade55777d022632b8de4cfdf32b219a1c7261",
+            "content": "sha256:a5d9054a3b17ea9562d64c9a4b0a82f205d28200b959041bc00a3db21bfb0cfe",
+            "locator": {
+              "kind": "symbol",
+              "name": "sharedRow"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "21": {
+      "note": "Kept-family row with tag and apart counts",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7d0ade55777d022632b8de4cfdf32b219a1c7261",
+            "content": "sha256:ba3ea367c32f35930a9505d8c61557a96ea53269cc5a0b8e9fd7630fde276dc6",
+            "locator": {
+              "kind": "symbol",
+              "name": "keptRow"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "22": {
+      "note": "Filter field journeys hiding kept families\n\nAnchor: `filter`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7d0ade55777d022632b8de4cfdf32b219a1c7261",
+            "content": "sha256:75f0c59cf468b0d933369d781e4e318d90a6ee08f99b2b240e45a1e6eb846d5b",
+            "locator": {
+              "end": 186,
+              "kind": "line_range",
+              "start": 172
+            }
+          },
+          "kind": "test"
         }
       ]
     },

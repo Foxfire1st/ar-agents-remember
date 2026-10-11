@@ -16,14 +16,15 @@ L4a adds the **doc-reader leaf views** — a single leaf's `committed` (**the co
 commits**) or `working` (uncommitted) change-set, resolved by leaf-id straight off the persisted
 enclosure contract, so the viewer works with no live worktree.
 
+`serving/changeset.py` registers the read-only change-set API: enclosure, leaf and master selectors with the 400/404 JSON idiom. In W03 both routes accept a recorded-comparison selector that reads the comparison's immutable trees through `serving/changeset_comparison.py`, refusing any `mode` combination.
 ## Code Commentary
 
 ### 260731-EFA-L4 Current Delta — The Three Routes Now Declare What They Answer With
 
-- `GET /api/changeset/task` cit:(["/api/changeset/task"], mcp/src/agents_remember/serving/changeset.py:669-669) declares `response_model=LeafChangeSet | TaskChangeSet`
-  with `responses=SCOPED_READ_RESPONSES`. **Two success shapes**, because the `leaf` selector is
-  what picks between them: `LeafChangeSet` is `TaskChangeSet` plus the `mode` echo, so the union
-  is the route's real answer, not a convenience.
+- `GET /api/changeset/task` declares `response_model=ComparisonChangeSet | LeafChangeSet | TaskChangeSet`
+  with `responses=SCOPED_READ_RESPONSES`. There are three success shapes: a recorded `comparison`
+  selects the comparison response; otherwise a `leaf` selects the committed/working leaf view,
+  and the enclosure scope selects the task view. `comparison` combined with `mode` is refused.
 - `GET /api/changeset/file-diff` cit:(["/api/changeset/file-diff"], mcp/src/agents_remember/serving/changeset.py:682-682) declares `response_model=FileDiff` with
   `responses=SCOPED_READ_RESPONSES`.
 - `GET /api/changeset/master` cit:(["/api/changeset/master"], mcp/src/agents_remember/serving/changeset.py:708-708) declares `response_model=MasterChangeSet` with
@@ -184,6 +185,7 @@ sidecar pairing from `kernel/sidecar_pairing.route_sidecar_status`.
   `working` remains the one view whose after-side is a filesystem location, and its own `mode` says
   so.
 
+`ChangesetTaskRef` and `ChangesetFileRef` gain `comparison: int | None`. When set, `_task_response` and `_file_response` divert to `_comparison_response`, which requires master+leaf, loads the leaf contract and produces `comparison_changeset` or `comparison_file_diff`; without it the leaf/master/scope paths run exactly as before. `_comparison_mode_refusal` rejects `comparison` combined with `mode` on both routes, and `_leaf_json` threads the new parameter through the existing Authority/FileNotFound mapping. The task route's response model widens to `ComparisonChangeSet | LeafChangeSet | TaskChangeSet`.
 ## Evidence
 
 ### Repo-Internal References
@@ -202,6 +204,10 @@ sidecar pairing from `kernel/sidecar_pairing.route_sidecar_status`.
 | The shared scoped-read refusal table declares 400 and 404 response envelopes. | "SCOPED_READ_RESPONSES: dict[int" | mcp/src/agents_remember/serving/response_contract.py:1136-1169 |
 | Current production declaration; the removed broad suite supplies no current execution proof. | `register_changeset_routes` | mcp/src/agents_remember/serving/changeset.py:325-719 |
 
+- Comparison and mode cannot be combined on either route [24]
+- Both selectors carry the optional comparison number [25]
+- A set comparison diverts to the recorded-trees producer [26]
+- List reads divert; leaf and scope paths run as before [27]
 ## 260731-EFA-L2 Current Delta
 
 `leaf_file_diff` and the `GET` file-diff route now take one `ChangesetFileRef` instead of six query

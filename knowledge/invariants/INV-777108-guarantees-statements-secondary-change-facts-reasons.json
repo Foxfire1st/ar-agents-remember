@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "New reviewer obligation from MIK-R86@v1 (packet a78d9ae3, Architect qualification 2026-10-08 11:18:45 UTC); implemented on the W03 successor tree 95f61633, whole-primary CODE PASS verdict 3663bf07. Evidence: SubjectReview.test.tsx; ReviewSurface.wordDiff.test.tsx; disclosureContract"
+  },
+  "applicability": "Reviewer-needed content in the main page, never behind a disclosure.",
+  "conditions": [
+    "Family review: kind breakdown, per-member badge/marks/sides/reasons; guarantee-unknown reason beside the guarantee.",
+    "Member review: same badge/marks/reasons under Selected intent; followed-marker state first with its focus.",
+    "Header states abnormal family-context state/limitations; unselected states name failure + next action."
+  ],
+  "exclusions": [
+    "Moving reasons into sidebar badges or disclosures."
+  ],
+  "id": "INV-777108",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "SubjectReview.test.tsx; ReviewSurface.wordDiff.test.tsx; disclosureContract"
+      ],
+      "path": "notes/reports/l86-curator-W03/handoff-phase1.json"
+    },
+    "handoffEntry": "MIK-R86@v1 rule 10",
+    "leaf": "260928-MIK-L86",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Guarantees, statements, secondary change facts, reasons and abnormal family context are visible in the main reading area.",
+  "status": "proposed",
+  "supersedes": []
+}

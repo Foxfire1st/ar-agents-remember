@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "New reviewer obligation from MIK-R86@v1 (packet a78d9ae3, Architect qualification 2026-10-08 11:18:45 UTC); implemented on the W03 successor tree 95f61633, whole-primary CODE PASS verdict 3663bf07. Evidence: l86-browser/browser-results.json: narrow stack and no sideways scroll"
+  },
+  "applicability": "Narrow viewports of the comparison page.",
+  "conditions": [
+    "At 40rem and narrower lists stack first (at most 40% height, own scroll) with inline diffs; nothing scrolls sideways; above 40rem unchanged."
+  ],
+  "exclusions": [
+    "Cockpit selector layout changes."
+  ],
+  "id": "INV-STW97J",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "l86-browser/browser-results.json: narrow stack and no sideways scroll"
+      ],
+      "path": "notes/reports/l86-curator-W03/handoff-phase1.json"
+    },
+    "handoffEntry": "MIK-R86@v1 rule 16",
+    "leaf": "260928-MIK-L86",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The review page stacks lists and diff at forty rem or narrower, caps the lists at forty percent height and starts the diff inline.",
+  "status": "proposed",
+  "supersedes": []
+}

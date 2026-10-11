@@ -6,12 +6,7 @@
 
 ## Purpose
 
-**MIK-R34 at the real renderers (21 cases): the landed source-content view (the explorer's opened file, `Expand full
-file`, a card's and the lane's full file), the lane's focused windows, and the card excerpts.** Every classification
-is a real served per-file body of MIK-L32's lane fixture world (`hunkMarkers.classifier.captured.json`), and every diff
-draws the exact blob texts that body names; only `fetch` is stubbed. The workspace's marker scope is a plain value
-(`scopeOf`), so each case asserts what the reader sees and what a followed marker asks the workspace to select. The card
-cases use the landed `gitTrees.cards` and `gitTrees.family` captures.
+**MIK-R34 at the retained renderers: full diffs, no-mark states, marker returns, a card's Full file and card excerpts.** The file contains 18 `it` declarations. Captured hunk classifications and source texts feed `SourceContent`; the scope is a plain test value, and excerpt entries/read states are constructed explicitly where needed. The original MIK-L32 lane-fixture provenance and `gitTrees.cards`/`gitTrees.family` capture identities remain historical inputs, but the lane-window/full-lane test block is gone.
 
 ## Code Commentary
 
@@ -29,26 +24,26 @@ cases use the landed `gitTrees.cards` and `gitTrees.family` captures.
 - **The return (3).** A return reopens the list, brings the hunk into view and focuses the mark; after a return a blur
   leaves focus on the body and the hold gives it back, while after the reader's key it does not (review R2-F1); a pane
   the marker was not followed from is not reopened.
-- **The lane's windows (3).** The `lines.txt` L4 window draws the L2 replace and the L6 delete as context and carries
-  three marks, and a neighbour's list follows from that window's pane (the L32 F5 carry); the more-hunks wording for
-  both kinds of file; the lane's full file reopens on a return with its list and focus.
-- **Cards (5).** The card a marker was followed from reopens, not the first card of its path; an excerpt keeps its
-  drawn side's marks when the other memory side cannot be read (`2:1:2:1 · 1 intent · unknown`, review R1 F1);
-  no mark when either drawn side is other content though the other matches (review R2); an unchanged file's card never
-  reads nor speaks (review R2); a drawn side of other content says why.
+**Historical pre-R86 card account — superseded, not current assertion evidence.**
+
+> - **The lane's windows (3).** The `lines.txt` L4 window draws the L2 replace and the L6 delete as context and carries
+>   three marks, and a neighbour's list follows from that window's pane (the L32 F5 carry); the more-hunks wording for
+>   both kinds of file; the lane's full file reopens on a return with its list and focus.
+- **Card Full file and excerpts.** Full file reopens the originating card rather than the first same-path card. Excerpts keep the readable drawn side's mark when the other memory side is unavailable; differing drawn blobs suppress marks and explain other content. The unchanged-file excerpt case flushes effects and asserts no classification call and no marks-state note.
 
 ### Conventions
 
-- `serve` answers the content read with `expansionOf(body)` (the exact texts and object ids) and a lane file read with
-  the body; `open` mounts `SourceContent` inside `IntentMarkerScope.Provider`.
+- `serve` answers source content from the constructed expansion and can answer an explicitly supplied per-file body; `open` mounts `SourceContent` under a plain `IntentMarkerScope.Provider`. This helper capability is not a surviving lane-window UI assertion.
 - Marks are read in the owner's hunk order (`inHunkOrder`), with `described` giving label, spans and editor.
 
 ### Invariants And Boundaries
 
-- Proves the candidate invariant recorded on `IntentMarkers.tsx.md` (every drawn hunk carries its mark) and part of
-  the return invariant recorded on `MarkerTargetState.tsx.md`. The worker's final mutation sets (M1–M17, Q3-1 to
-  Q4-4, N1, N3, N11, F1, F2, F3a, F3b, F5, R2-1 to R2-7) are each caught by these files; the reviewer sampled them at
-  R2 and R3.
+**Historical pre-R86 card account — superseded, not current assertion evidence.**
+
+> - Proves the candidate invariant recorded on `IntentMarkers.tsx.md` (every drawn hunk carries its mark) and part of
+>   the return invariant recorded on `MarkerTargetState.tsx.md`. The worker's final mutation sets (M1–M17, Q3-1 to
+>   Q4-4, N1, N3, N11, F1, F2, F3a, F3b, F5, R2-1 to R2-7) are each caught by these files; the reviewer sampled them at
+>   R2 and R3.
 
 ### Todos
 
@@ -68,7 +63,9 @@ No configured live documentation source was available for this pass.
 - A full diff's marks, lists, follow, proofs and the unread side. [2]
 - Files without per-hunk marks, the partial inventory and past-text notes. [3]
 - The return: list, view and focus; the hold never against the reader. [4]
-- The lane's windows: every drawn hunk marked (F5), the wording, the full file's return. [5]
+**Historical pre-R86 card account — superseded, not current assertion evidence.**
+
+> - The lane's windows: every drawn hunk marked (F5), the wording, the full file's return. [5]
 - Cards: the exact card reopened; excerpts with an unreadable side, other content, an unchanged file. [6]
 
 ### Cross-Repo References
@@ -79,3 +76,8 @@ No cross-repo boundary is crossed by this file.
 ### Clock And Settlement Evidence
 
 - The return-focus hold controls `requestAnimationFrame` with fake time: after blur another frame restores the returned mark, while Escape ends the hold and a subsequent 250 ms fake advance leaves focus on the body. The unchanged excerpt case flushes mounted effects before asserting that classification was not read. [7]
+- Per-side expansion builder for mark scenarios [8]
+- Scope builder for files under test [9]
+- Hunk-order helpers for mark assertions [10]
+- Shown-mark extraction from the rendered diff [11]
+- Unchanged-file classifier for no-mark shapes [12]

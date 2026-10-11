@@ -1,0 +1,58 @@
+{
+  "path": "dashboard/src/panels/review/l86.family.captured.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Selected family's full review body\n\nAnchor: `payload`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "53d54605936af6a249f702c74a4f6ca0a066f934",
+            "content": "sha256:f1ed3484ce6cbdb36188b7a4557c9b178e539c40f53268fde8fc1894229772e9",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Seven member invariants of the family\n\nAnchor: `family_ids`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "53d54605936af6a249f702c74a4f6ca0a066f934",
+            "content": "sha256:f1ed3484ce6cbdb36188b7a4557c9b178e539c40f53268fde8fc1894229772e9",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Per-side revision selection\n\nAnchor: `revision_groups`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "53d54605936af6a249f702c74a4f6ca0a066f934",
+            "content": "sha256:f1ed3484ce6cbdb36188b7a4557c9b178e539c40f53268fde8fc1894229772e9",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

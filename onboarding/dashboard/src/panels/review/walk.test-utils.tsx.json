@@ -34,6 +34,174 @@
         }
       ]
     },
+    "11": {
+      "note": "Fetch stub answering from the served world",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e70824e3c32b3e86eda516a55f32bea2a0e4370b",
+            "content": "sha256:227b979c553e18491b648c175cf77cea37ccf29d8d5f6c3242ff3206a3432565",
+            "locator": {
+              "kind": "symbol",
+              "name": "serve"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e70824e3c32b3e86eda516a55f32bea2a0e4370b",
+            "content": "sha256:cf69ddea8b485728e35fc437eba3f85492ade989867494768ea26f34c81c9c63",
+            "locator": {
+              "end": 74,
+              "kind": "line_range",
+              "start": 55
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Real-data world of the scratch leaf",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e70824e3c32b3e86eda516a55f32bea2a0e4370b",
+            "content": "sha256:61bfe7c10f11eb066fed43641f63da6d0f21a3a4183e85bd3e201f16cd020d88",
+            "locator": {
+              "kind": "symbol",
+              "name": "CHANGES"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e70824e3c32b3e86eda516a55f32bea2a0e4370b",
+            "content": "sha256:8b79512a59012838aef60f3af29c46267fb443391d0815cd45399041e936433a",
+            "locator": {
+              "end": 139,
+              "kind": "line_range",
+              "start": 131
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "Per-test world with triage order and tree view reset",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e70824e3c32b3e86eda516a55f32bea2a0e4370b",
+            "content": "sha256:152aabb0ef7544d509c4f5ee38c71f6f08fc1aa857078792554ab4ba19f59265",
+            "locator": {
+              "kind": "symbol",
+              "name": "serveWorld"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e70824e3c32b3e86eda516a55f32bea2a0e4370b",
+            "content": "sha256:7bfd52518d89ca2bbbdac01f36afe60a43742292a6b0de0b20107ef299de41ec",
+            "locator": {
+              "end": 223,
+              "kind": "line_range",
+              "start": 209
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "Suite installation with timeout and cleanup",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e70824e3c32b3e86eda516a55f32bea2a0e4370b",
+            "content": "sha256:fd76d28bd54ed848a69ffc14ec34d4be85e6714a0f48bfe2d398553d64e85319",
+            "locator": {
+              "kind": "symbol",
+              "name": "installWorld"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e70824e3c32b3e86eda516a55f32bea2a0e4370b",
+            "content": "sha256:5b7f03e313f34ad497e087b103f10eba04c0c985bb5294b117b0f470061142a4",
+            "locator": {
+              "end": 234,
+              "kind": "line_range",
+              "start": 226
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "Mounted-surface readers of the tree",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e70824e3c32b3e86eda516a55f32bea2a0e4370b",
+            "content": "sha256:1c8780ae59c81648a13ade5d35f18f358420b4340a02893c6ef1119baa7736e4",
+            "locator": {
+              "kind": "symbol",
+              "name": "selectedNode"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e70824e3c32b3e86eda516a55f32bea2a0e4370b",
+            "content": "sha256:67a862bd3830221f217050adf1aaf0e56853012ea2f55748931412b09beb9d99",
+            "locator": {
+              "end": 100,
+              "kind": "line_range",
+              "start": 94
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "Single presses with asserted request counts",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e70824e3c32b3e86eda516a55f32bea2a0e4370b",
+            "content": "sha256:d531fa9db9564f6c91c5efb8549f059367051d96118fc2f4991ad6f7b9d9f015",
+            "locator": {
+              "kind": "symbol",
+              "name": "step"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e70824e3c32b3e86eda516a55f32bea2a0e4370b",
+            "content": "sha256:99fcc614a2537f7f726cf56587e4adc14f9a25612a47b0e0fa7d37bc0d1cb1c5",
+            "locator": {
+              "end": 266,
+              "kind": "line_range",
+              "start": 250
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "The real-data world: the changes in `j` order and the bodies by subject.",
       "targets": [

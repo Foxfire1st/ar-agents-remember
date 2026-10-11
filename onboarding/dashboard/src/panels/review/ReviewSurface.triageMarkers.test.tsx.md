@@ -6,23 +6,14 @@
 
 ## Purpose
 
-**MIK-L33 with MIK-L34 in the mounted reviewer, on real data (the merge round):** following an intent marker to a member
-whose membership is unknown, the member's one membership statement, the shared sticky offset while the way back is
-open, and `j` after a return. The bodies are MIK-L34's scenario rebuilt under `/tmp/mik-l33-merge` and re-captured over
-the merged tree, comparison 3 (`markerUnknown.*`), and that comparison's expression cards (`triageMarker.cards`); the
-one synthetic body is the empty subject catalogue. 2 cases.
+**Two mounted MIK-L33/L34 marker-preservation cases.** The retained comparison-3 markerUnknown/triageMarker captures provide target facts. Labelled synthetic index and initial-family adapters expose the originating card; target replies remain untouched. The current cases assert central unknown-membership content and J/focus behavior after a card-marker return, not a sidebar reason or a measured sticky offset.
 
 ## Code Commentary
 
 ### Logic
 
-- **Case 1:** following notes.py:124's "FAM-4V4GSQCS r1 · membership unknown" opens INV-Z66EMHMH's row with one
-  membership statement (the tagged **Attribution unknown** line with the comparison's reason; no
-  `review-member-target-state`), its name the served statement plus " · before only" and its description "impl +unknown
-  Attribution unknown opened from an intent marker · membership unknown: …" with "Attribution unknown" once (R3-1); the
-  workspace carries `data-marker-return` and the triage bar is present; Back returns focus to the hunk.
-- **Case 2:** from Z66's card, following INV-413DC8XE's "No recorded family" and pressing Back holds focus on the
-  card's marker; `j` then focuses and selects the next change, and the released hold does not take focus back.
+- **Case 1:** the origin card's Full file supplies the notes.py:124 marker. The followed member is selected/focused; the centre contains exactly the membership-why state with the captured reason outside disclosures and an implementation/unknown badge. The compact row contains no member-state node, its name includes the ID and `code changed`, and neither its name nor description includes the unknown-membership reason. Back returns hunk focus and clears the marker-return state.
+- **Case 2:** after following the confirmed-no-family occurrence from the member's excerpt and returning, controlled animation frames keep the originating card marker focused. J releases that hold and focuses the next eligible compact row, asks its member invariant, and after effects/another frame leaves focus on that next row.
 
 ### Conventions
 
@@ -36,6 +27,7 @@ Proves the merged statement on real data (candidate invariant on `ChangeBadges.t
 
 No additional work is asserted by this card.
 
+The replay world combines captured marker targets with synthetic catalogue/initial-family adapters. Unknown membership is stated once in open central content; after a returned card marker's hold, J focuses the next selected row and the released hold does not take focus back.
 ## Evidence
 
 ### Docs References
@@ -58,3 +50,8 @@ No cross-repo boundary is crossed by this file.
 ### Clock And Settlement Evidence
 
 - Before J, fake animation frames leave the returned marker focused while the return hold is active. J releases that hold and focuses the next triage row; after the selected reply/effects are flushed and another frame advances, the next row remains focused. The released return hold does not steal focus back. [4]
+- Link key derivation for unattributed marker links [5]
+- View helper opening the marker panel journey [6]
+- Selected-member resolution for the followed marker [7]
+- Origin card of the followed marker [8]
+- Stop assertions for j after the marker return [9]

@@ -1,5 +1,6 @@
 {
   "path": "mcp/tests/test_knowledge_requirement_reference_contract.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {

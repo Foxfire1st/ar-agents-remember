@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "New reviewer obligation from MIK-R86@v1 (packet a78d9ae3, Architect qualification 2026-10-08 11:18:45 UTC); implemented on the W03 successor tree 95f61633, whole-primary CODE PASS verdict 3663bf07. Evidence: leaf-view-8.log; l86-parity/ordered-comparison.json"
+  },
+  "applicability": "The knowledge diff leaves the leaf-wide view.",
+  "conditions": [
+    "GET review/trees answers carry no knowledge_diff with its file lists/patches; every other part byte-identical; server skips the two-tree listing/patch/blob reads and memo input.",
+    "First leaf-wide view drops three Git children (~2.29M to ~0.8M bytes for L37); memory diff reads move to the change-set page ordered by path with record/sidecar naming.",
+    "Removed computation's tests leave with it; governed decision + requirement-packet choice recorded for anchored invariants."
+  ],
+  "exclusions": [
+    "Keeping the patch/blob reads for this view."
+  ],
+  "id": "INV-2K9NMR",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "leaf-view-8.log; l86-parity/ordered-comparison.json",
+        "mcp/src/agents_remember/models/knowledge/review_trees.py module contract; stored record knowledge/invariants/INV-2K9NMR (revision 1)"
+      ],
+      "path": "notes/reports/l86-curator-W03/handoff-phase1.json"
+    },
+    "handoffEntry": "MIK-R86@v1 rule 22",
+    "leaf": "260928-MIK-L86",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The leaf-wide answer omits knowledge_diff and no longer computes memory-tree patches, while its remaining fields and memo conditions remain intact.",
+  "status": "proposed",
+  "supersedes": []
+}

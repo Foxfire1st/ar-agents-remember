@@ -1,0 +1,99 @@
+{
+  "path": "dashboard/src/panels/review/ReviewSurface.sealedPageRepair.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Captured family, member, trees and lane fixtures",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a158ea13ae9dd9c393641aa1048a0d83198a5920",
+            "content": "sha256:7824765ad33c6e8054a3743266bff6c530e93a0cb1a5b88910a0743f768bbbc4",
+            "locator": {
+              "kind": "symbol",
+              "name": "family"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Admitted response wrapper for synthetic replies",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a158ea13ae9dd9c393641aa1048a0d83198a5920",
+            "content": "sha256:ee1b3e63032c9a9ed16241dd87ec666452ddfb2e788d3b1d471a7f421ff12fd9",
+            "locator": {
+              "kind": "symbol",
+              "name": "response"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Tree-less family with unconverted outline for F08",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a158ea13ae9dd9c393641aa1048a0d83198a5920",
+            "content": "sha256:22340e42277ce25264db07eae006426b910599f2d7e525a587083e4e90793c64",
+            "locator": {
+              "kind": "symbol",
+              "name": "nonTree"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Newer-comparison lane and trees held for F04",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a158ea13ae9dd9c393641aa1048a0d83198a5920",
+            "content": "sha256:726589c7bac62a52c5726b04036ec5ec0ee7c2cc502d0879af4a8dc214c2604f",
+            "locator": {
+              "kind": "symbol",
+              "name": "nextLane"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a158ea13ae9dd9c393641aa1048a0d83198a5920",
+            "content": "sha256:3a00d2ad8c50bb6f648e67d59c2aeef5612d61bb2cc9f677b6f9011dc838a958",
+            "locator": {
+              "end": 118,
+              "kind": "line_range",
+              "start": 100
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Synthetic linked binary and mode-only inventory for F10",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a158ea13ae9dd9c393641aa1048a0d83198a5920",
+            "content": "sha256:e94f3b3e62efc5aee13b6dd962014550a55747b542eb7423b1b34b5180bc3beb",
+            "locator": {
+              "kind": "symbol",
+              "name": "data"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

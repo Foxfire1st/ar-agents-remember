@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "New reviewer obligation from MIK-R86@v1 (packet a78d9ae3, Architect qualification 2026-10-08 11:18:45 UTC); implemented on the W03 successor tree 95f61633, whole-primary CODE PASS verdict 3663bf07. Evidence: l86-browser/browser-results.json and marker smoke"
+  },
+  "applicability": "Disclosure counts on the L37 review.",
+  "conditions": [
+    "No sidebar/page disclosures; at most 20 per main-page view (family, invariant, worklist with one full file open, after refresh); none holds rule-19 never-content; count independent of leaf size.",
+    "Appendix B groups with per-view maxima; report gives per-view/per-class numbers."
+  ],
+  "exclusions": [
+    "Per-file/per-item/per-card/per-member disclosures."
+  ],
+  "id": "INV-S545PW",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "l86-browser/browser-results.json and marker smoke"
+      ],
+      "path": "notes/reports/l86-curator-W03/handoff-phase1.json"
+    },
+    "handoffEntry": "MIK-R86@v1 rule 20",
+    "leaf": "260928-MIK-L86",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The L37 tree has no disclosures and each captured main view stays under twenty, including an open full file.",
+  "status": "proposed",
+  "supersedes": []
+}

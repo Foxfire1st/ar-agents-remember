@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "New reviewer obligation from MIK-R86@v1 (packet a78d9ae3, Architect qualification 2026-10-08 11:18:45 UTC); implemented on the W03 successor tree 95f61633, whole-primary CODE PASS verdict 3663bf07. Evidence: ReviewSurface.lane.test.tsx; l86-browser/browser-results.json"
+  },
+  "applicability": "Unexplained/unknown-attribution as page filters.",
+  "conditions": [
+    "All/Unexplained/Unknown-attribution control with file counts; tree rows open the page with the filter set.",
+    "One sentence above the list says why files are grouped; every code row carries one badge; counts/badges from the held lane answer; disabled-with-reason while unread.",
+    "All also names unrepresentable (non-text) paths as unopenable rows. Cockpit-opened viewer has no filter/badge."
+  ],
+  "exclusions": [
+    "Intent markers on the page; per-file Why disclosures."
+  ],
+  "id": "INV-VFT6GP",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "ReviewSurface.lane.test.tsx; l86-browser/browser-results.json"
+      ],
+      "path": "notes/reports/l86-curator-W03/handoff-phase1.json"
+    },
+    "handoffEntry": "MIK-R86@v1 rule 14",
+    "leaf": "260928-MIK-L86",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Unexplained and unknown destinations filter the existing page using the held lane order, counts and badges, with one reason sentence and honest pending controls.",
+  "status": "proposed",
+  "supersedes": []
+}

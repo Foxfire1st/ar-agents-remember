@@ -505,6 +505,70 @@
         }
       ]
     },
+    "24": {
+      "note": "Comparison and mode cannot be combined on either route",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2186995d20205912e217dc39a14fa95fcb0e42f3",
+            "content": "sha256:ae8d7d25de15fcbc92fc7ca95d1759cd952a733ad7c61de2c6e063b395f8a3c2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_comparison_mode_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "Both selectors carry the optional comparison number",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2186995d20205912e217dc39a14fa95fcb0e42f3",
+            "content": "sha256:b3780f421b8f45bf0fdb7463f7aa13e84e884685954f385045f4a39d7c2d3c58",
+            "locator": {
+              "kind": "symbol",
+              "name": "ChangesetTaskRef"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "26": {
+      "note": "A set comparison diverts to the recorded-trees producer",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2186995d20205912e217dc39a14fa95fcb0e42f3",
+            "content": "sha256:55aa0b4cd09d17a2a64c5f38eb6fa2e4cf087c48b39741e7896135ad46427606",
+            "locator": {
+              "kind": "symbol",
+              "name": "_comparison_response"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "27": {
+      "note": "List reads divert; leaf and scope paths run as before",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2186995d20205912e217dc39a14fa95fcb0e42f3",
+            "content": "sha256:ca1db91a82d45f1573b07634ad045f8a3f970591d7f629392387daca7af711bf",
+            "locator": {
+              "kind": "symbol",
+              "name": "_task_response"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "3": {
       "note": "Sidecar presence is derived from governing route indexes or a mirrored sidecar-file probe.\n\nAnchor: \"def route_sidecar_status(\"",
       "targets": [

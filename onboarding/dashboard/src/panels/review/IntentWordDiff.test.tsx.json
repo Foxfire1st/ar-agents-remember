@@ -19,6 +19,82 @@
         }
       ]
     },
+    "10": {
+      "note": "Base statement fixture for diff passages",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "686c3a2bf83d624af58885dc548a7ded1358a066",
+            "content": "sha256:d7862d63efefdd6a90744765227882f4323bb66d26317275393786890c3d811a",
+            "locator": {
+              "kind": "symbol",
+              "name": "STATEMENT"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "Review mount helper with scope and revision options",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "686c3a2bf83d624af58885dc548a7ded1358a066",
+            "content": "sha256:39d2c2b8e8d4354fdcff4dc7552cb8b1aafd5bb8941865f15c3b160daeb19779",
+            "locator": {
+              "kind": "symbol",
+              "name": "review"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "686c3a2bf83d624af58885dc548a7ded1358a066",
+            "content": "sha256:43cf09de750801064b79ec2b638072c0d2b4f8a793df45f0df8781260b081aa0",
+            "locator": {
+              "end": 88,
+              "kind": "line_range",
+              "start": 72
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "Tree scope fixture for comparison passages",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "686c3a2bf83d624af58885dc548a7ded1358a066",
+            "content": "sha256:ccbfc110efbab806328f5a58acad45d6cfa23967c8ced350a48d3d2949888c7f",
+            "locator": {
+              "kind": "symbol",
+              "name": "scope"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "Layout persistence assertions across passages",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "686c3a2bf83d624af58885dc548a7ded1358a066",
+            "content": "sha256:87d5cabff4fa1c6c487a0ba196fa87d152fec5e33e3e5f3246678a6b61073097",
+            "locator": {
+              "kind": "symbol",
+              "name": "layouts"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
     "2": {
       "note": "The one-field successor, per-side rows and the tree or dataset scope.\n\nAnchor: \"function review(change: Partial<ReviewFamilyMember> = {}, options: Options = {}) {\"",
       "targets": [

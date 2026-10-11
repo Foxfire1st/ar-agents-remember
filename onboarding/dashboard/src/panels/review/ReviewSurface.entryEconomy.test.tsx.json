@@ -3,8 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "812f2b24ae68e5e0cd0b2d62537cdac763915647",
-        "content": "sha256:ffa863bc0811d502b8b27155ac158522845fea743cd2b0ef2ffc54523aa80529",
+        "blob": "cf6e436713451eeeb371eb3426f138ed1e478b01",
+        "content": "sha256:9abf06d7d2ae32dc0a9c2584effbe77a5a8e35ffcd244d31df5e60dea1a1a366",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-8RJ7C2",
+      "invariant": "INV-TJE3KM",
+      "origin": {
+        "handoffEntry": "MIK-R86@v1 W03 source-currentness native resolution",
+        "leaf": "260928-MIK-L86"
+      },
+      "rationale": "Source-currentness proof of the existing admitted semantics; not a new invariant or product scope.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "cf6e436713451eeeb371eb3426f138ed1e478b01",
+        "content": "sha256:9abf06d7d2ae32dc0a9c2584effbe77a5a8e35ffcd244d31df5e60dea1a1a366",
         "locator": {
           "kind": "file"
         }
@@ -31,6 +48,23 @@
               "end": 12,
               "kind": "line_range",
               "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "Held-catalogue journey keeping All changes reachable\n\nAnchor: `opened`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cf6e436713451eeeb371eb3426f138ed1e478b01",
+            "content": "sha256:dc002c958866303b743309a8a099e8d6f9e91c95c043619ef850b919c2a97442",
+            "locator": {
+              "end": 223,
+              "kind": "line_range",
+              "start": 209
             }
           },
           "kind": "test"
@@ -138,6 +172,66 @@
               "end": 234,
               "kind": "line_range",
               "start": 192
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Recorded catalogue, family and review fixture identities",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cf6e436713451eeeb371eb3426f138ed1e478b01",
+            "content": "sha256:fad140451470da52b86b3b1ad9b55b5a4016239092b83f8dff056655f46b5ba2",
+            "locator": {
+              "kind": "symbol",
+              "name": "CATALOGUE"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Family review capture served for the chosen subject",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cf6e436713451eeeb371eb3426f138ed1e478b01",
+            "content": "sha256:c3ade64bdc103abe38625e0ada3ffd439739a7d338a201e9f94ee4735eb9444f",
+            "locator": {
+              "kind": "symbol",
+              "name": "familyReview"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "cf6e436713451eeeb371eb3426f138ed1e478b01",
+            "content": "sha256:f14193d18ede58c6653733ea4d65ea675fb93c5ba0afe33bd825e39120c4dbdb",
+            "locator": {
+              "end": 67,
+              "kind": "line_range",
+              "start": 51
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "Catalogue-once counting on the entry journey",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cf6e436713451eeeb371eb3426f138ed1e478b01",
+            "content": "sha256:5082783a806084c6e9ee5f2c2543002c88942fa6f912ed0cc979a51c40e36edb",
+            "locator": {
+              "kind": "symbol",
+              "name": "catalogueReads"
             }
           },
           "kind": "test"

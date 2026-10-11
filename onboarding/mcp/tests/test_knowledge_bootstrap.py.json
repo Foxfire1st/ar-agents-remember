@@ -1,5 +1,6 @@
 {
   "path": "mcp/tests/test_knowledge_bootstrap.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "34": {

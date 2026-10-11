@@ -222,7 +222,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0c44b80be6a1bb8d176afa67b62e37be8d5615c7",
+            "blob": "fc194aa17593ec2d603455736dcb23d65070cffc",
             "content": "sha256:8b7d8c2c71b1e4ba6645618c7c548f5a017cb664da092acdb96be0dbdbbe25a0",
             "locator": {
               "kind": "symbol",
@@ -580,7 +580,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "656c6acccc15cb4da02e3931dd492b4f0e2eef71",
+            "blob": "96f9c2c462d6757477aaa793daca305881c2460b",
             "content": "sha256:6dda3053ddc4fb807706f55c13825da45037daaa69c86979ec2debed051cacef",
             "locator": {
               "kind": "symbol",
@@ -643,35 +643,73 @@
         }
       ]
     },
-    "64": {
-      "note": "The surface that renders the inventory in all three of its states, with the byte-form rows beside the named ones.",
+    "66": {
+      "note": "The current comparison viewer renders named changed-file rows and explicit byte-form cannot-open rows in All changes; the backend inventory supplies wire data, not this UI.",
       "targets": [
         {
           "anchor": {
-            "blob": "15f7110353dadebfae32b945340bc81624d0fd9b",
-            "content": "sha256:7a9918cfbbeca0fe8a60beee6bfca6dae9a51d703b41789f89f7c4a9233ae972",
+            "blob": "d0e0f3a0a209313492e7cb61a2066cf40519f66e",
+            "content": "sha256:b2ec49d2f92bf5284cf495d38922a0cf1f413a850af10d33bde03a59bc2198a7",
             "locator": {
-              "kind": "symbol",
-              "name": "SourceExplorer"
+              "end": 447,
+              "kind": "line_range",
+              "start": 386
             },
-            "path": "dashboard/src/panels/review/SourceExplorer.tsx"
+            "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
           },
           "kind": "code"
         }
       ]
     },
-    "65": {
-      "note": "The complete inventory remains navigable at its listed generation; source expansion is centralized and byte-form names stay explicitly unaddressable.",
+    "67": {
+      "note": "Comparison list/diff requests use the held comparison number; changed-file controls open only eligible listed files, while byte-form paths remain displayed cannot-open facts.",
       "targets": [
         {
           "anchor": {
-            "blob": "15f7110353dadebfae32b945340bc81624d0fd9b",
-            "content": "sha256:d6237d6db50ea62c295b613500bcfabea3b9f225c2be8e95100800ea196bc3a9",
+            "blob": "d0e0f3a0a209313492e7cb61a2066cf40519f66e",
+            "content": "sha256:a639c15f49843ec3b8f34eac2a4600ce8c364f779e7c13383656a8ccb261498e",
             "locator": {
-              "kind": "symbol",
-              "name": "inventoryEntry"
+              "end": 294,
+              "kind": "line_range",
+              "start": 253
             },
-            "path": "dashboard/src/panels/review/SourceExplorer.tsx"
+            "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "68": {
+      "note": "Comparison list/diff requests use the held comparison number; changed-file controls open only eligible listed files, while byte-form paths remain displayed cannot-open facts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0e0f3a0a209313492e7cb61a2066cf40519f66e",
+            "content": "sha256:865c82754f467bf036bfe18c67ddd34244574fa9d71fa1ab5da362bad0b03bd0",
+            "locator": {
+              "end": 423,
+              "kind": "line_range",
+              "start": 408
+            },
+            "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "69": {
+      "note": "Comparison list/diff requests use the held comparison number; changed-file controls open only eligible listed files, while byte-form paths remain displayed cannot-open facts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0e0f3a0a209313492e7cb61a2066cf40519f66e",
+            "content": "sha256:88dd072192c5403c9ddc1b3a98a1fdd4aa799f6ba13af7b94c5df1e2c289bdc7",
+            "locator": {
+              "end": 908,
+              "kind": "line_range",
+              "start": 871
+            },
+            "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
           },
           "kind": "code"
         }

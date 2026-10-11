@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "388e9fadead831b814783a7bd7841862b17286a6",
-        "content": "sha256:a9a1dab64ce12b8a0b32699555065fc19b7e6e2ff44a4c071f5fce18836de620",
+        "blob": "6b955e7c32ca67236929f8712150d021ab074c81",
+        "content": "sha256:e1c6201c9a232bad9e3389c37e6e84f56c30279fee2f80d7797714cdef089cb2",
         "locator": {
           "kind": "file"
         }
@@ -17,6 +17,23 @@
       },
       "rationale": "This suite observes held returned-marker focus before J, then delivers the selected reply and advances another frame before asserting that the next triage row keeps focus after J releases the return hold.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "6b955e7c32ca67236929f8712150d021ab074c81",
+        "content": "sha256:e1c6201c9a232bad9e3389c37e6e84f56c30279fee2f80d7797714cdef089cb2",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-FRC8YH",
+      "invariant": "INV-TJE3KM",
+      "origin": {
+        "handoffEntry": "MIK-R86@v1 W03 source-currentness native resolution",
+        "leaf": "260928-MIK-L86"
+      },
+      "rationale": "Source-currentness proof of the existing admitted semantics; not a new invariant or product scope.",
+      "role": "support"
     }
   ],
   "references": {
@@ -82,6 +99,86 @@
               "end": 253,
               "kind": "line_range",
               "start": 205
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Link key derivation for unattributed marker links",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6b955e7c32ca67236929f8712150d021ab074c81",
+            "content": "sha256:368774ede18ea6bf713e68aceb6f8965c0e21d90a0a5eeef0ff399dc19f61331",
+            "locator": {
+              "kind": "symbol",
+              "name": "keyOf"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "View helper opening the marker panel journey",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6b955e7c32ca67236929f8712150d021ab074c81",
+            "content": "sha256:c1b4223afcc51f4ca62c2ccfeba38a5350962aa9a2d8bc127b447acba3502cec",
+            "locator": {
+              "kind": "symbol",
+              "name": "View"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Selected-member resolution for the followed marker",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6b955e7c32ca67236929f8712150d021ab074c81",
+            "content": "sha256:7f96bc48024e56ee0130b81db424a99f084dc0dc3b3bfec77c55cd968ffb41e3",
+            "locator": {
+              "kind": "symbol",
+              "name": "selectedMember"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Origin card of the followed marker",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6b955e7c32ca67236929f8712150d021ab074c81",
+            "content": "sha256:5fd7b2c7190a9739ceef578d99d333ff85211c8e002b04fff3b1dbfc8b350167",
+            "locator": {
+              "kind": "symbol",
+              "name": "originCard"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "Stop assertions for j after the marker return",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6b955e7c32ca67236929f8712150d021ab074c81",
+            "content": "sha256:3d73c96d55b1d21c8b1f98fd1a6bfeee0acfa3989290dc56975a3229cb71d8c2",
+            "locator": {
+              "kind": "symbol",
+              "name": "stops"
             }
           },
           "kind": "test"

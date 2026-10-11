@@ -8,9 +8,9 @@
   },
   "applicability": "The mounted intent reviewer's reading area after a selection of a row the family tree shows, on the stacked layout (60rem and narrower), while the read is answered.",
   "conditions": [
-    "The selection is in-tree: a family or member row of the tree, the visible previous-change and next-change controls, `j`, `k`, a member opened from the reading area's member list, or a kept family's continuation control.",
-    "The reveal focuses the selected row without scrolling to it and scrolls the start of the reading area into view, in the answer of that selection.",
-    "Every other selection and every wider layout keeps the scrolling behavior it had before the ruling; the explicit Jump control remains for the callers OR-R033 leaves unchanged."
+    "The in-tree selection caller requests retention: a compact family/member outline row, previous/next controls, j/k or a member opened from the main-page roster. No kept-family continuation control is rendered in the sidebar.",
+    "The eligible latest completed selection focuses its chosen row without scrolling it and reveals the reading-area start on the stacked layout.",
+    "Wider layouts and other callers retain their own reveal behavior; the explicit Jump control remains for unaffected callers."
   ],
   "exclusions": [
     "A read that ends failed or refused; its status reveal is the subject of INV-BMFR2T.",
@@ -29,7 +29,7 @@
     "leaf": "260928-MIK-L39",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "On the stacked layout (60rem and narrower) the answer of an in-tree selection scrolls the start of the reading area into view and puts focus on the selected row without scrolling to it; every other selection and every wider layout scrolls as before.",
   "status": "proposed",

@@ -9,15 +9,16 @@
   },
   "applicability": "The family tree of the mounted intent reviewer and every way a subject is selected in it.",
   "conditions": [
-    "The outside selections are: a row of the subject catalogue or of the list of all invariants, also when it names a subject the tree shows or the subject already selected; \"All source changes\"; the offer to open the task context after a refusal; an intent marker followed, and the return from it; and the subject the reviewer opens with, including the first family a late catalogue answer selects.",
-    "A selection is an outside selection unless its caller passes `keepTree`. Only the handlers of a tree row and of a kept family's continuation control pass it.",
-    "After an outside selection the tree shows only the families of the answer on screen until the selection's own answer replaces them.",
-    "Another comparison is recognised by the read cache's own test of the pair of code trees and of knowledge snapshots. When that drops kept rows, a polite status beside the tree says so.",
-    "While the tree holds a kept family, the catalogue lists a row for every family the tree shows, without badges. Choosing such a row starts the tree afresh with that family alone."
+    "Subject selection defaults to outside unless its current caller passes keepTree; compact outline rows and main-page member selection request retention.",
+    "Marker entry/return, the offer to open task context after refusal and initial subject selection follow their actual outside-selection handlers.",
+    "Reset drops retained reads, not the complete comparison index outline. Pending selection retains a frame until its own answer arrives.",
+    "Compatibility uses the read cache's code-tree/knowledge-snapshot generation test; incompatible context is not folded into the same walk.",
+    "All changes now opens the existing comparison viewer without an intent review request; viewer return restores the retained reviewer inspection state."
   ],
   "exclusions": [
-    "The search filter, the order control, a roster continuation of a family of the selected subject, a lane destination, a refresh of the subject catalogue, the page controls, opening a file, and a failed or refused read. They neither keep nor start afresh: the tree stays as it is.",
-    "What a refresh does to the scroll position of the rail. The invariant on the focus request states that rule."
+    "Filter/order changes, current-subject roster paging, worklist/page controls, file opening and failed/refused reads are not implicit outside subject selections.",
+    "No separate badge-free catalogue of kept families or all-invariants subject list is promised.",
+    "Scroll/focus requests retain their separately documented owners."
   ],
   "id": "INV-9ZKYWQ",
   "origin": {
@@ -31,9 +32,9 @@
     "leaf": "260928-MIK-L39",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "Every subject selection that is not a selection of a row the family tree shows starts the walked tree afresh at the moment it is made, and so do a refresh of the review and an answer of another comparison: the kept families are dropped, and rows of two comparisons are never shown together.",
+  "statement": "Explicit in-tree subject selections preserve the retained walk; other subject selections and review refresh reset it. Answers from incompatible comparisons never mix retained context. Opening and returning from the comparison viewer change no intent selection and do not reset the walk.",
   "status": "proposed",
   "supersedes": []
 }

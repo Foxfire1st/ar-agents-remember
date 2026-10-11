@@ -6,13 +6,13 @@
 
 ## 260928-MIK-L33 Change-Kind Badges, Triage Order And `j`/`k` In The Family Tree Of A Tree Comparison
 
-**Route meaning extended (MIK-R33, adopting ICR-R32@v1 with the storage substitutions).** In the review workspace's
-family tree, on a tree comparison, every family occurrence and member occurrence shows what kind of recorded change
-brings it into review (`intent`, `implementation`, `membership`, `unknown` or `unchanged`, with secondary marks);
-the tree lists the most review-relevant changes first without hiding unchanged siblings, and `j`/`k` (and visible
-controls) move between the changes. Every fact is the server's, delivered with the roster
-(`application/review_change_kinds.py`); this route orders, counts and traverses by them and never recomputes one. A
-dataset review renders exactly the landed tree (no badges, breakdown or controls; landed order; `j`/`k` inert). The
+**Current route contract (MIK-L33 facts retained under the L86 outline composition).** The sidebar
+shows compact family/invariant outline rows with one navigation badge and Changed/All views.
+`outlineGroups` orders those rows; `j`/`k` and the visible controls visit shown real changes, not
+unknown/unchanged rows or roster continuation. The main reading area retains full guarantees,
+statements, semantic member facts, secondary marks, breakdowns and reasons. Those facts remain the
+server's; the browser never classifies source hunks. Without an available outline the compact
+catalogue fallback is unbadged in All. The retained dataset expression renderer is separate.
 new modules under `review/`, governed here like L31's, L32's, L34's and L35's (no `panels/review/` overview):
 - [`review/changeTriage.ts`](review/changeTriage.ts.md): the pure rules (weights, labels and meanings; a family's
   counts, returned, total, `partial` and `scoped` state and weight; the breakdown text; family and member order; the
@@ -20,8 +20,8 @@ new modules under `review/`, governed here like L31's, L32's, L34's and L35's (n
 - [`review/ChangeBadges.tsx`](review/ChangeBadges.tsx.md): the member badge and marks, the labelled reason lines
   ("change kind unknown", "membership unknown", "guarantee unknown"), the family's guarantee badge, the breakdown, and
   the sticky triage bar with the order control, previous/next and the polite status.
-- [`review/changeTraversal.ts`](review/changeTraversal.ts.md): the stops in displayed order, the partial family's
-  continuation stop, the ends, and the keymap owner's `j`/`k` bound on the reviewer's zone.
+- [`review/changeTraversal.ts`](review/changeTraversal.ts.md): shown real-change stops in displayed
+  order, select/end outcomes and the keymap owner's `j`/`k` binding; no partial-roster stop.
 - [`review/triageOrderPreference.ts`](review/triageOrderPreference.ts.md): the browser-local order preference
   (`review.tree-order.v1`; triage when storage is unavailable).
 - Tests (36 cases): [`review/changeTriage.test.ts`](review/changeTriage.test.ts.md) (12),
@@ -43,15 +43,14 @@ new modules under `review/`, governed here like L31's, L32's, L34's and L35's (n
   re-captured in the merge round and now carry `change_kinds` (their cards say so). All 22 sha256 values and byte
   counts match their receipts (checked by this curation).
 
-**Hooks in the landed renderers.** [`review/FamilyTree.tsx`](review/FamilyTree.tsx.md): the orders, the badges and
-breakdown, the traversal's data attributes, the triage bar, and the member row's one statement per fact (the change
-badge or MIK-L34's note; the name the subject only, the facts described). [`review/familyWalkMerge.ts`](review/familyWalkMerge.ts.md)
-unions the facts of an admitted roster continuation. [`review/FamilyReviewCenter.tsx`](review/FamilyReviewCenter.tsx.md):
-the family centre's member list follows the tree's order. [`review/ReviewSurface.tsx`](review/ReviewSurface.tsx.md):
-the root is the keymap owner's `review` zone. [`review/ReviewWorkspace.tsx`](review/ReviewWorkspace.tsx.md): the
-stacked layout's one sticky offset while a marker's way back is open. [`review/MarkerTargetState.tsx`](review/MarkerTargetState.tsx.md):
-`useMemberTarget` shared with the badge, and the note's `id`. The data mirror (`data/reviewFamily.ts`) and the keymap
-(`data/keymap/`) have their own MIK-L33 sections.
+**Current renderer hooks.** [`review/FamilyTree.tsx`](review/FamilyTree.tsx.md) consumes the catalogue
+outline for one-line rows, persisted view/order and real-change traversal.
+[`review/familyWalkMerge.ts`](review/familyWalkMerge.ts.md) still merges admitted semantic roster
+continuations; [`review/FamilyReviewCenter.tsx`](review/FamilyReviewCenter.tsx.md) uses
+`orderMemberRows` for its main-page roster facts, not as the sidebar's row generator.
+[`review/ReviewSurface.tsx`](review/ReviewSurface.tsx.md) retains the keyboard zone.
+[`review/MarkerTargetState.tsx`](review/MarkerTargetState.tsx.md) supplies main-page target/context
+state and the shared exact-member check; no `MemberNode` note is mounted in the compact tree.
 
 **Rulings** (`33_review-triage-order-and-change-kind-badges.json`). 2026-09-30T15:11:20: start; the `implementation`
 fact (b) comes from L32's per-file classification, with no second hunk classifier; built beside L34. 16:22:22 (worker
@@ -86,11 +85,11 @@ sliding under Back for one step); R3-3 routed to this curation. **Resolved:** MI
 3. Changed intent text is never `unchanged`, even at the same revision (realized by `_intent`'s byte comparison and the
    `text_differs` note; proved by INV-PPPPPP on the server and in the tree, and INV-2E8MG43K on real data; recorded on
    `application/review_change_kinds.py.md`).
-4. Triage order never hides unchanged siblings, and traversal never forces unreturned pages to load (realized by
-   `orderFamilies`/`orderMemberRows` and `changeTraversal`'s continuation stop; recorded on `review/changeTriage.ts.md`).
-5. Each fact is stated once per node, both visually and to assistive technology (realized by `MemberChangeBadge`, the
-   replaced side-tag and guarantee labels, and `aria-labelledby`/`aria-describedby`; proved by the tree and surface
-   cases, the merge and R3 mutations and the CDP reads at 390 px; recorded on `review/ChangeBadges.tsx.md`).
+4. `orderFamilies`/`orderMemberRows` retain every supplied semantic sibling in the main-page data;
+   compact navigation uses `outlineGroups` and never loads a roster page through change traversal.
+5. Secondary change facts and membership/unknown reasons are main-page content; compact navigation
+   has one title and one badge. The earlier MIK-L33 node-description/browser measurement account is
+   historical, not current compact-tree proof.
 
 **Inert before MIK-R37:** only a converted leaf's tree comparison carries `change_kinds`; the worker's preservation
 rerun found 29 of 29 unconverted reads identical to base once the null `change_kinds` is dropped (the served body
@@ -224,10 +223,10 @@ dataset review renders exactly as before. The new modules under `review/`, gover
   classification read per listed changed path per surface, the followed marker and the return) and `markerInventory`
   (a partial or unmeasured inventory is partial: review R2).
 - [`review/markerNavigation.ts`](review/markerNavigation.ts.md): the workspace's moves (select the target through the
-  rail's own selection; restore subject, lane, opened path, layout and full file; clear the tree's focus request).
-- [`review/MarkerTargetState.tsx`](review/MarkerTargetState.tsx.md): the `Attribution unknown` state of a followed
-  marker's unknown membership, on the member row, in the rail (focusable, named and described: review R1 F3) and in the
-  centre, never `No recorded family`, with the review's own context kept beside it.
+  worklist selection, opened path, layout and full file; clear the tree's focus request).
+- [`review/MarkerTargetState.tsx`](review/MarkerTargetState.tsx.md): main-page `Attribution unknown`
+  state and member-center label, never confirmed `No recorded family`; the review's context stays
+  open beside it. The exported member note has no production compact-tree mount.
 - [`file-viewer/markGutter.tsx`](file-viewer/markGutter.tsx.md), governed by the file-viewer overview: the CodeMirror
   marks gutter, collapsed runs expanded for a mark, the reveal and its bounded, passive hold.
 - Tests (59 cases): [`review/hunkMarkers.test.ts`](review/hunkMarkers.test.ts.md) (12),
@@ -249,18 +248,16 @@ dataset review renders exactly as before. The new modules under `review/`, gover
   [memberUnknown](review/markerUnknown.memberUnknown.captured.json.md), [noFamily](review/markerUnknown.noFamily.captured.json.md);
   and comparison 2's [card entries](review/markerReturn.cards.captured.json.md)). All thirteen sha256 values match.
 
-**Hooks in the landed renderers.** [`changeset/DiffPane.tsx`](changeset/DiffPane.tsx.md) and
-[`file-viewer/FilePane.tsx`](file-viewer/FilePane.tsx.md) take an optional `marks` (an unmarked pane is the landed one).
-[`review/SourceContent.tsx`](review/SourceContent.tsx.md) threads an optional `markers` prop to its panes.
-[`review/LaneFileFocus.tsx`](review/LaneFileFocus.tsx.md) marks every owner hunk a window draws, draws the file-level
-mark once above the windows, hands the lane's own classification to the full file and reopens it on a return.
-[`review/ExpressionCards.tsx`](review/ExpressionCards.tsx.md) marks its excerpts, names each full-file pane and reopens
-the exact card on a return. [`review/ReviewWorkspace.tsx`](review/ReviewWorkspace.tsx.md) is a thin wrapper providing
-the scope around the landed body (`WorkspaceBody`), with `setOpenPath`, the `Back to <file>` control (sticky below
-60rem), the rail's target state and its focus preference. [`review/FamilyTree.tsx`](review/FamilyTree.tsx.md) renders
-the member-row note (an import and one element) and [`review/FamilyReviewCenter.tsx`](review/FamilyReviewCenter.tsx.md)
-the centre's family line through `MemberFamilyLabel` (one expression; `memberContextLabel` moved out). The data adapter
-gains `readFileClassification` (the data overview's MIK-L34 section).
+**Current marker integrations.** [`changeset/DiffPane.tsx`](changeset/DiffPane.tsx.md) and
+[`file-viewer/FilePane.tsx`](file-viewer/FilePane.tsx.md) retain optional marks; unmarked panes are
+unchanged. [`review/SourceContent.tsx`](review/SourceContent.tsx.md) threads markers for card Full
+file, and [`review/ExpressionCards.tsx`](review/ExpressionCards.tsx.md) marks excerpts and reopens the
+exact card on return. No `LaneFileFocus` windows or explorer Full file mount survives.
+[`review/ReviewWorkspace.tsx`](review/ReviewWorkspace.tsx.md) retains the marker scope, return control
+and focus integration, with target/context explanations in the main reading area.
+[`review/FamilyReviewCenter.tsx`](review/FamilyReviewCenter.tsx.md) retains `MemberFamilyLabel`; the
+compact tree mounts no semantic member note. The data adapter retains `readFileClassification`
+(the data overview's MIK-L34 section), and the dataset expression view stays unmarked.
 
 **Rulings.** 2026-09-30T13:07:38: the L32 review F5 carry (every hunk visible in a window is marked). 15:11:20: start;
 markers come from L32's per-file response; the "shows every one" wording made accurate. 16:19:34: Q1 the visible Back
@@ -284,10 +281,10 @@ more-hunks note no longer says "the full file shows every one".
    (realized by `hunkMarkers.ts` and the scope's one read per changed file; proved by `hunkMarkers.test.ts` over six
    real scenarios, the surface case's one read with `comparison=2`, and the mutation sets; recorded on
    `hunkMarkers.ts.md`).
-2. Every hunk drawn in any diff surface carries its mark: lane windows, full files, card excerpts, including hunks inside
-   collapsed runs (realized by `usePaneMarking`, `useSourceMarking`, `useExcerptMarking`, `LaneFileFocus.useWindowMarking`
-   and `markGutter.expandMarkedRuns`; proved by `IntentMarkers.test.tsx`, `markGutter.test.tsx` and the surface case's
-   card excerpts; recorded on `IntentMarkers.tsx.md`).
+2. Retained card Full file and changed-card excerpts place the owner hunks they draw, including
+   collapsed runs, through `usePaneMarking`, `useSourceMarking`, `useExcerptMarking` and the shipped
+   gutter. The former lane-window integration is historical, not a current marker surface;
+   current proof-subject qualification is handled separately on the named proof cards.
 3. Unknown membership is always distinguishable from confirmed no-family (realized by the target's state and reason,
    `occurrenceLabel` and `MarkerTargetState.tsx`; proved by the surface case on real comparison 3 and
    `MarkerTargetState.test.tsx`; recorded on `MarkerTargetState.tsx.md`).
@@ -301,7 +298,7 @@ more-hunks note no longer says "the full file shows every one".
 - Every owner hunk a pane draws is placed; the list and the reveal of a return. [6]
 - A lane window marks each neighbour its context shows (the L32 F5 carry). [7]
 - The scope provided around the landed workspace body. [8]
-- The unknown-membership state in the rail. [9]
+- The unknown-membership target state in the main reading area. [9]
 
 ## 260928-MIK-L32 The Unexplained-Changes Lane: Two Destinations After The Families, And One Classification Everywhere
 
@@ -898,7 +895,7 @@ Chats inspector is supplementary, default closed, and toggleable.
 | Responsibility | File onboarding |
 | --- | --- |
 | Review child route — the family tree and the central reading path | [FamilyTree.tsx](review/FamilyTree.tsx.md) · [FamilyReviewCenter.tsx](review/FamilyReviewCenter.tsx.md) |
-| Review child route — the workspace and the source explorer | [ReviewWorkspace.tsx](review/ReviewWorkspace.tsx.md) · [SourceExplorer.tsx](review/SourceExplorer.tsx.md) |
+| Review child route — the workspace and comparison-page file destination | [ReviewWorkspace.tsx](review/ReviewWorkspace.tsx.md) · [ChangeSetViewer.tsx](changeset/ChangeSetViewer.tsx.md) |
 | Review child route — the leaf's knowledge panel and its notice | [LeafKnowledgeChanges.tsx](review/LeafKnowledgeChanges.tsx.md) · [LeafKnowledgeNotice.test.tsx](review/LeafKnowledgeNotice.test.tsx.md) |
 | Review child route — the mounted family composition cases | [ReviewWorkspace.family.test.tsx](review/ReviewWorkspace.family.test.tsx.md) |
 | Review child route — the walked tree and the traversal between changes | [walkedTree.ts](review/walkedTree.ts.md) · [changeTraversal.ts](review/changeTraversal.ts.md) |
@@ -953,10 +950,10 @@ No applicable cross-repository source was found.
 | The reading-area column and its pending/problem statements. | `WorkspaceCenter` | dashboard/src/panels/review/ReviewWorkspace.tsx:450-528 |
 | The bounded per-comparison cache and its generation rule. | `ReviewReadCache` | dashboard/src/panels/review/ReviewReadCache.ts:106-160 |
 | The mounted delayed-reply cases. | `keeps the reviewer mounted across family → invariant → family, pending only in the reading area, and reuses what it read` | dashboard/src/panels/review/ReviewSurface.navigation.test.tsx:335-443 |
-| Inventory rows preserve path/status and control state; optional inline content expansion uses the listed tree pair. | `inventoryEntry` | dashboard/src/panels/review/SourceExplorer.tsx:58-117 |
-| Byte-named paths remain listed and explicitly cannot be addressed by this text request vocabulary. | `byteNamedEntry` | dashboard/src/panels/review/SourceExplorer.tsx:118-131 |
-| Inventory rows receive their expansion state from the workspace and bind expansion to the inventory tree IDs. | `InventoryRows` | dashboard/src/panels/review/SourceExplorer.tsx:170-223 |
-| The source pane, which since `260921-ICR-L24` points at the explorer, and the explorer mount that forwards the task context an expansion request carries (the pane moved to `ReviewRecordPanes.tsx` in L48). | `SourcePane` | dashboard/src/panels/review/ReviewRecordPanes.tsx:292-358 |
+| Changed-file rows retain path/status, badges and open/partner controls in the comparison page. | `ChangeList` | dashboard/src/panels/changeset/ChangeSetViewer.tsx:386-448 |
+| All comparison code lists keep byte-form paths as explicitly nonopenable facts. | `ChangeList` | dashboard/src/panels/changeset/ChangeSetViewer.tsx:408-414 |
+| Comparison file expansion binds the recorded comparison through the existing diff client. | `diffRequestFor` | dashboard/src/panels/changeset/ChangeSetViewer.tsx:277-295 |
+| The main attribution display retains the held lane facts and an All changes action in the central reading path; no source explorer is mounted. | `WorkspaceCenter` | dashboard/src/panels/review/ReviewWorkspace.tsx:480-509 |
 | The central statement applies the 13:40 wording rule through the subject renderer (MIK-L31), and a dataset review's source expressions delegate to bound source content. | `ExpressionCard` | dashboard/src/panels/review/ReviewExpressions.tsx:182-240 |
 | Source operands are rendered from their declared states; unavailable content does not become an invented diff operand. | `Sides` | dashboard/src/panels/review/SourceContent.tsx:71-128 |
 | The expansion states bounded content and the admitted path relation alongside the actual source rendering. | `boundedNote` | dashboard/src/panels/review/SourceContent.tsx:129-140 |
@@ -979,8 +976,8 @@ No applicable cross-repository source was found.
 | The refusal rendering, which left the surface for the outcome owner: one block prints every field the owner published, and both the surface and the expansion pane render it. | `ReviewProblemBlock` | dashboard/src/panels/review/ReviewOutcome.tsx:115-182 |
 | **The one renderer this child reuses, fed both operands when both sides recorded one and the available operand beside a named absence when one side did not — reached through the statement area `260921-ICR-L6` gave its own component.** | `KnowledgeStatements` | dashboard/src/panels/review/KnowledgeStatements.tsx:94-121 |
 | **The target whose selectors are optional, and the header line that names the whole task when there is none.** | `ReviewTarget` | dashboard/src/panels/review/ReviewSurface.tsx:44-50 |
-| **The inventory rendering: all three states, the count, the byte-form rows and the reproducing command.** | `InventoryRows` | dashboard/src/panels/review/SourceExplorer.tsx:170-223 |
-| **The source pane that opens with the inventory, and the knowledge pane's selection line that survives an absent comparison identity — a pane that since `260921-ICR-L6` also delegates its statement area and since `260921-ICR-L3` opens each listed entry into its own content.** | `SourcePane` | dashboard/src/panels/review/ReviewRecordPanes.tsx:292-358 |
+| The comparison viewer owns the changed-file list, code/memory rows and explicitly nonopenable byte paths. | `ChangeList` | dashboard/src/panels/changeset/ChangeSetViewer.tsx:386-448 |
+| The reviewer's All changes destination opens that page without becoming a separate inventory renderer; central cards retain bound Full file. | `ReviewDestinations` | dashboard/src/panels/review/ReviewWorkspace.tsx:674-713 |
 | **The detail-panel entry that is offered for every live leaf, with the server's subject catalogue as a refinement.** | `useReviewCatalogue` | dashboard/src/data/useReviewCatalogue.ts:79-111 |
 | The fixture that answers the entry read with a subject, an empty list or a refusal. | `stubCounters` | dashboard/src/panels/detail-panel/test-utils.tsx:423-452 |
 | The three cases those three answers are measured by. | `shows a committed button on a leaf doc reader (no live enclosure) and opens the leaf target` | dashboard/src/panels/detail-panel/changeSetBar.test.tsx:36-131 |
@@ -989,11 +986,11 @@ No applicable cross-repository source was found.
 | The read key names the actual question, and retention is shown only for that same question. | `targetKeyOf` | dashboard/src/panels/review/ReviewReadCycle.ts:88-108 |
 | **The entry's own read state on a control that never disappears — since `260921-ICR-L47` a brief word from the changed-intent summary read, with the owner's explanation in a disclosure (the catalogue-based `ReviewEntryState` recorded above is gone).** | `IntentCounts` | dashboard/src/panels/detail-panel/intentReviewEntry.tsx:31-68 |
 | The source pane keeps shared transport failure rendering separate from the source owner typed refusal. | `SourceContent` | dashboard/src/panels/review/SourceContent.tsx:252-304 |
-| The family hierarchy shows authored guarantees and member statements with full sibling context and keyboard traversal; on a tree comparison it also badges, orders and traverses the changes without hiding a sibling (MIK-L33). | `FamilyTree` | dashboard/src/panels/review/FamilyTree.tsx:865-942 |
-| **The one family-roster walk control, continuing at the cursor the roster page published; since MIK-L33 it names its family for the traversal's partial-family message.** | `RosterNext` | dashboard/src/panels/review/FamilyTree.tsx:295-328 |
+| The compact hierarchy shows outline titles and one badge, with persisted Changed/All and displayed real-change traversal; full semantic content stays in the center. | `FamilyTree` | dashboard/src/panels/review/FamilyTree.tsx:442-503 |
+| The main-page family/member roster continues only at the side's published cursor; it is not a navigation stop. | `RosterNext` | dashboard/src/panels/review/FamilyTree.tsx:164-197 |
 | **The unified central reading path, in one column and in the packet's order; since MIK-L31 the expressions slot holds the focused cards for a tree comparison.** | `FamilyCenter` | dashboard/src/panels/review/FamilyReviewCenter.tsx:646-720 |
 | **The workspace's selection, preferences and narrow-screen route, and the one hook owned above the pane switch.** | `useWorkspaceState` | dashboard/src/panels/review/ReviewWorkspace.tsx:219-273 |
-| **The complete source change explorer, and why it is its own module rather than part of the surface.** | `SourceExplorer` | dashboard/src/panels/review/SourceExplorer.tsx:224-303 |
+| The existing comparison viewer owns changed-file inspection; card Full file remains a separate bound source renderer. | `ReviewChangeOverlay` | dashboard/src/panels/review/ReviewSurface.tsx:580-604 |
 | **The mounted family composition cases and the captured server bodies they are driven with.** | `renders the recorded families, their authored guarantees and the full member statements` | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:176-215 |
 | The surface mounts the workspace and retains technical records/paging panes in a disclosure (rendered by `ReviewRecordPanes.tsx` since L48, only for an answer); state is held above the read cycle. | `ReviewPanes` | dashboard/src/panels/review/ReviewSurface.tsx:303-371 |
 | **The page request whose `of` is the server's own collection union.** | `ReviewPageRequest` | dashboard/src/panels/review/ReviewReadCycle.ts:79-87 |
@@ -1362,12 +1359,12 @@ recorded read, and a later read of the same question all carry nothing.
 surface became a composition of owners rather than the owner of everything.** Five modules are new in
 `panels/review/`, and each one owns exactly what its neighbours must not:
 
-- [`FamilyTree.tsx`](review/FamilyTree.tsx.md) — a recorded family is the semantic parent of the review
-  population: the family label, then the family revision's own independently authored joint guarantee
-  printed whole, then the complete member statements of the roster the page carried **including the
-  unchanged siblings**. It is one roving-focus group with arrow-key traversal and `aria-current` on the
-  current node, and it carries the route's **one** family-roster walk control (`RosterNext`), which
-  continues the walk at the cursor the family's own roster page published.
+- [`FamilyTree.tsx`](review/FamilyTree.tsx.md) — in the historical L24 composition it printed the
+  family guarantee and complete returned member statements, including unchanged siblings, and
+  mounted roster continuation inside the semantic tree. The current compact tree instead draws
+  outline titles and one badge; full guarantee/member facts and the retained exported `RosterNext`
+  cursor control belong to `FamilyReviewCenter`. Arrow-key focus and `aria-current` remain navigation
+  behavior, not a second semantic reading surface.
 - [`FamilyReviewCenter.tsx`](review/FamilyReviewCenter.tsx.md) — the unified central reading path: for a
   **member** selection the family guarantee and the selected intent first, then the linked expressions, then
   the recorded execution evidence and the authored assessment; for a **family** selection the guarantee,
@@ -1380,10 +1377,10 @@ surface became a composition of owners rather than the owner of everything.** Fi
   narrow-screen route from the tree to the selected review. `useWorkspaceState()` is called once, by the
   surface **above** `ReviewPanes`, because that switch returns `null` while a page read is in flight: a
   page request can no longer reset the reader's selection or display choices.
-- [`SourceExplorer.tsx`](review/SourceExplorer.tsx.md) — the complete source change explorer, moved out
-  of `ReviewSurface.tsx` whole: every changed path of the comparison's bound pair, openable at the
-  generation the listing named, with the inventory's three states, the byte-form rows and the reproducing
-  command. The family navigation is an attribution lens over it and never an exclusion filter.
+- The historical L24 `SourceExplorer.tsx` module rendered the complete source list and inline
+  bound expansion. It is absent from current source: the comparison page's `ChangeSetViewer` now
+  owns changed-file rows/diffs, and the central card Full file (plus dataset expression renderer)
+  retains `SourceContent`. Attribution does not redefine the comparison's full changed-file list.
 - [`ReviewWorkspace.family.test.tsx`](review/ReviewWorkspace.family.test.tsx.md) — the case module that
   drives the real surface over the real client with only `fetch` stubbed, against the seven
   `familyReview.*.captured.json` bodies the server published.
@@ -1399,12 +1396,12 @@ representable for a truncated family roster to be continued.
 
 ## 260921-ICR-L36 The Family Column's Third Part: The Deduplicated Changed Expression Excerpts
 
-**Route meaning changed on the review child route: a whole-family selection now presents the family's own
-changed expression excerpts, deduplicated, between its member context and the shared source explorer.** The
-accepted design's whole-family line asks for three things — the full guarantee, all members including the
-unchanged sibling, and deduplicated changed expression excerpts — and the centre composed only the first
-two, so a reader who selected a whole family saw no expressions at all. Three sources changed and no Python
-did: the payload already carried every fact, so the whole change is client-side.
+**Historical L36 route change:** whole-family selection gained deduplicated changed expression
+excerpts after its guarantee and recorded member context. That composition then sat beside the
+source explorer; the current source has no explorer and uses comparison-page file destinations.
+The accepted three-part family reading order remains, with focused cards on tree comparisons and
+the retained expression renderer when no card read applies. The L36 source/test changes recorded
+below describe that increment, not a new verification of current production.
 `review/FamilyReviewCenter.tsx` gains the collection and the helpers it needed;
 `review/ReviewWorkspace.family.test.tsx` gains the mounted case over the real captured body; and
 `review/familyExpressions.test.ts` is a **new unit lane** that holds the arithmetic with no DOM, because the
@@ -1458,16 +1455,13 @@ to re-derive from the source.**
   the served family records 4 changed expression rows over 2 distinct addresses (8 rows counting both
   sides), and the mounted product renders **2** rows — `renderedDistinct: 2` against `renderedRowSum: 8`.
 
-**The composition, and what it did not disturb.** The family column now runs guarantee → complete recorded
-member context → the excerpt collection → the shared source explorer, which is the accepted design's
-"lead with its own guarantee comparison and complete member context, then relevant expressions"; the
-member-context card was **extracted** from `FamilyCenter` unchanged (`FamilyMemberContext`) so the column
-reads as the three things it composes. **A3's member order is untouched** — the member selection's
-`data-testid` blocks in document order are the same list before and after — and the three lines this leaf
-re-measured on the new build (A5's unchanged-member expressions, A3's order, B4's full-file disclosure)
-are present and unchanged. Two sentences the member-level attribution used to spell inline are now **one
-owner each** (`unlistedPathNote`, `listedOrPlainPath`) because the collection needs the same two facts about
-the same path, and two copies could drift into disagreeing about one path.
+**Historical L36 composition and preservation measurements.** At that increment the family
+column ran guarantee → complete recorded member context → excerpt collection alongside the source
+explorer. `FamilyMemberContext` was extracted from `FamilyCenter`, and the L36 record reported A3
+member order and the A5/A3/B4 measured lines unchanged on that build. `unlistedPathNote` and
+`listedOrPlainPath` shared the two path facts. These are dated preservation claims, not a current
+explorer contract or a fresh execution result; current file navigation uses the comparison page
+and the retained card/dataset content owners.
 
 **The honest bound on the divergent rendering, and it travels with the claim.** The divergent case is
 evidenced against the **captured `familyReview.walkFinal` body through a labelled fixture** — measured on the
@@ -1523,9 +1517,9 @@ The existing ReviewReadCycle retains exact member content and source claims only
 
 **`review/` — the reviewer.**
 
-- The reviewer reads the catalogue **once when it opens**, keyed on the comparison
-  (`repo/master/leaf/history` plus a generation that moves only when the displayed snapshot pair
-  changes), not on the analytics document (`review/ReviewNavigation.tsx`, `data/useReviewCatalogue.ts`).
+- The reviewer reads its catalogue on entry for task/history and the displayed complete generation
+  (code trees and known snapshots). Code-only movement invalidates it too; same-generation snapshot
+  enrichment alone does not add a local generation bump (`review/ReviewNavigation.tsx`).
 - Its first review read is **held** until the catalogue chooses a subject, so a prompt catalogue costs
   one subject read instead of a whole-task read and then a subject read. The hold is **bounded**
   (`SUBJECT_HOLD_MS = 750`, L47-R1-F1): a slow or stalled catalogue releases into the task-context review

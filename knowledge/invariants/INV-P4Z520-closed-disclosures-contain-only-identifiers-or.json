@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "New reviewer obligation from MIK-R86@v1 (packet a78d9ae3, Architect qualification 2026-10-08 11:18:45 UTC); implemented on the W03 successor tree 95f61633, whole-primary CODE PASS verdict 3663bf07. Evidence: ReviewSurface.navigationTree.test.tsx disclosureContract; l86-browser/browser-results.json"
+  },
+  "applicability": "Disclosure discipline in the detail view.",
+  "conditions": [
+    "A disclosure stays closed by default only for identifiers or provenance classes, named via data-disclosure; never for statements, effects, diffs, rationales, reasons, open-work counts or abnormal states.",
+    "Statement/effect/diff/rationale/reason components mark data-review-content roots for the disclosure test."
+  ],
+  "exclusions": [
+    "Closed disclosures for merely-long content."
+  ],
+  "id": "INV-P4Z520",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "ReviewSurface.navigationTree.test.tsx disclosureContract; l86-browser/browser-results.json"
+      ],
+      "path": "notes/reports/l86-curator-W03/handoff-phase1.json"
+    },
+    "handoffEntry": "MIK-R86@v1 rule 19",
+    "leaf": "260928-MIK-L86",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Closed disclosures contain only identifiers or normal provenance, and required review content is marked and drawn outside them.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -89,6 +89,78 @@
         }
       ]
     },
+    "14": {
+      "note": "Unknown-attribution marker constant and row text",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "24fb3dfbfbc4b61a1e00dec767bc96b6ad08ef80",
+            "content": "sha256:189ca7f84d37c7d3192ef9bc1c5d75cd1b0f4b887a0583652c8b7a211d2fed7e",
+            "locator": {
+              "kind": "symbol",
+              "name": "ATTRIBUTION_UNKNOWN"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "Unknown-target note on the member row",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "24fb3dfbfbc4b61a1e00dec767bc96b6ad08ef80",
+            "content": "sha256:52115f4989e98d3509cf06bba43115e4d2fddb2ea8f73c42f757e06988482f4a",
+            "locator": {
+              "kind": "symbol",
+              "name": "MemberTargetNote"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "24fb3dfbfbc4b61a1e00dec767bc96b6ad08ef80",
+            "content": "sha256:b1a396d3f91d7aef8a0e57f8bf4dc890c6e2f484b3f19ea3398b729cad2ae7f4",
+            "locator": {
+              "end": 87,
+              "kind": "line_range",
+              "start": 69
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "Invariant target state in rail and centre",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "24fb3dfbfbc4b61a1e00dec767bc96b6ad08ef80",
+            "content": "sha256:34c2fac167671acf667272fe2d892f148ec96dd370f15dce313224b10e7cbd25",
+            "locator": {
+              "kind": "symbol",
+              "name": "InvariantTargetState"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "24fb3dfbfbc4b61a1e00dec767bc96b6ad08ef80",
+            "content": "sha256:3e0a712ad514f042f0b7f87e4b5c9df03ce9784b9dd3e9ecd69b57bb0a46dd05",
+            "locator": {
+              "end": 134,
+              "kind": "line_range",
+              "start": 116
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "Only a `membership_unknown` target shows anything.",
       "targets": [

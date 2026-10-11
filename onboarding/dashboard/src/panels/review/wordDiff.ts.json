@@ -65,12 +65,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "614ec14e1439e60bff77b58274dd261140375aa0",
+            "blob": "553269791356dd9c19a93d3c0b2ce537092be34e",
             "content": "sha256:400b673dcf7fbcb9033f20b0c6f5dfbcd96cb034a746175dde4dac94a193a7c7",
             "locator": {
-              "end": 613,
+              "end": 637,
               "kind": "line_range",
-              "start": 559
+              "start": 583
             },
             "path": "dashboard/src/panels/review/IntentWordDiff.tsx"
           },

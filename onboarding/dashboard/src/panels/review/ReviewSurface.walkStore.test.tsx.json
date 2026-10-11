@@ -3,24 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "071edcc28b275e9a13c191a87a60e28eb8eae0cf",
-        "content": "sha256:e709e207b865e9b0b0d335da23285f82474379a312cfd90f2251e9c80ae13344",
-        "locator": {
-          "kind": "symbol",
-          "name": "control"
-        }
-      },
-      "facet": "With a kept family whose members are not all returned, `j` from its last returned change focuses its continuation control, says that further members are not yet returned and reads nothing, and the next `j` moves on. The control then asks the family's review with its cursor in one read, the other family becomes the kept one, more members are returned, and they survive the next selection.",
-      "id": "PRF-BA80DP",
-      "invariant": "INV-MWCCQM",
-      "origin": {
-        "handoffEntry": "MIK-R39@v1-kept-partial-family-stop",
-        "leaf": "260928-MIK-L39"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "071edcc28b275e9a13c191a87a60e28eb8eae0cf",
+        "blob": "47b10780305cf686f14f09b1236a2a1efc124b75",
         "content": "sha256:a9cdfbb04e490fe360252b1f5df5152a03653f864b088492d0daab98be6c90e2",
         "locator": {
           "kind": "symbol",
@@ -39,8 +22,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "071edcc28b275e9a13c191a87a60e28eb8eae0cf",
-        "content": "sha256:cefe0eca812637aed82cae54c6397cc0bdb2f82d38f9bfdd866368bfe376edc1",
+        "blob": "47b10780305cf686f14f09b1236a2a1efc124b75",
+        "content": "sha256:fe15fe3d0abc74bba9bba7d320e33385fb2e67a29a89b68fb0efeafe4ba79c03",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-3ZASGD",
+      "invariant": "INV-TJE3KM",
+      "origin": {
+        "handoffEntry": "MIK-R86@v1 W03 source-currentness native resolution",
+        "leaf": "260928-MIK-L86"
+      },
+      "rationale": "Source-currentness proof of the existing admitted semantics; not a new invariant or product scope.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "47b10780305cf686f14f09b1236a2a1efc124b75",
+        "content": "sha256:635f1e7192dbc79f7ee1c04c40b08a6d36c0b838460208703362edb0101f126f",
         "locator": {
           "end": 127,
           "kind": "line_range",
@@ -53,13 +53,13 @@
         "handoffEntry": "R4-F1",
         "leaf": "260928-MIK-L39"
       },
-      "rationale": "This case is where a failed read after an in-tree key step is asserted on the store-authored comparison: the selection mark, the displayed failure and the kept families.",
+      "rationale": "This store-authored comparison case retains both families through j/k navigation, then explicitly clicks the unknown member row to trigger a failed read and asserts the selected row and displayed refusal. The failed read is not a failed keyboard step.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "071edcc28b275e9a13c191a87a60e28eb8eae0cf",
-        "content": "sha256:cb741b44a0c6e59993502ea4cdbe24a1e4fc6ee8df1bfdfcbe7059537e8e8ce1",
+        "blob": "47b10780305cf686f14f09b1236a2a1efc124b75",
+        "content": "sha256:80294103366a589b11d097947595faf6dc9408f4e6ac0b743dff4857109b5d73",
         "locator": {
           "end": 58,
           "kind": "line_range",
@@ -94,6 +94,39 @@
         }
       ]
     },
+    "10": {
+      "note": "The explicitly selected unknown row names the deliberately failed invariant read and remains selected after failure.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "47b10780305cf686f14f09b1236a2a1efc124b75",
+            "content": "sha256:723e143302c98d4f6aa09f0b464bc79e51e0f3047860e4a17ff8b495dd9844a6",
+            "locator": {
+              "end": 132,
+              "kind": "line_range",
+              "start": 121
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "Reading-area opener preserving the first family",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "47b10780305cf686f14f09b1236a2a1efc124b75",
+            "content": "sha256:a9cdfbb04e490fe360252b1f5df5152a03653f864b088492d0daab98be6c90e2",
+            "locator": {
+              "kind": "symbol",
+              "name": "opener"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
     "2": {
       "note": "The answers served by subject and by continuation, including the deliberate failure of INV-GGGGGG's read.",
       "targets": [
@@ -111,16 +144,16 @@
       ]
     },
     "3": {
-      "note": "`j` onto a member of the second family only keeps the first family, `k` returns, and a further `k` selects a member of the kept family whose read deliberately fails: the row stays selected, the failure is shown and both families stay.",
+      "note": "j selects the second family’s changed member and k returns; an explicit selection of the unknown INV-GGGGGG row fails, leaves that row selected, shows the failure and preserves both families.",
       "targets": [
         {
           "anchor": {
-            "blob": "66cfe38ffa950ca558b3fb74d6ec1913e5f534b1",
-            "content": "sha256:9598b4139c4da57f9e1d01a7e6fa15ae637b1728bb7d6806ec10c7968c505ae6",
+            "blob": "47b10780305cf686f14f09b1236a2a1efc124b75",
+            "content": "sha256:bd7831ae0842a541baf15f6c50439a41617f83a2698b93cb2c235fe5314d8d11",
             "locator": {
-              "end": 131,
+              "end": 132,
               "kind": "line_range",
-              "start": 100
+              "start": 101
             }
           },
           "kind": "test"
@@ -128,16 +161,16 @@
       ]
     },
     "4": {
-      "note": "`j` stops at a kept family's continuation control and reads nothing; the control continues the family by selecting it; the continued members survive a later selection.",
+      "note": "A partial family has nine complete synthetic-outline rows and no sidebar continuation; its main-page control sends the cursor in one request and keeps the same outline on subsequent family selection.",
       "targets": [
         {
           "anchor": {
-            "blob": "66cfe38ffa950ca558b3fb74d6ec1913e5f534b1",
-            "content": "sha256:f28e99dcf84f437c35ed710a615f090b9447e2aa0a033db97f5deaa690e55058",
+            "blob": "47b10780305cf686f14f09b1236a2a1efc124b75",
+            "content": "sha256:70b726d6730dbf4694c45e3e5fa806bd9b75cc58564a42ad259af44aa9966543",
             "locator": {
-              "end": 186,
+              "end": 160,
               "kind": "line_range",
-              "start": 133
+              "start": 134
             }
           },
           "kind": "test"
@@ -174,6 +207,90 @@
             "path": "dashboard/src/panels/review/walkStore.capture-provenance.json"
           },
           "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Subject and cursor answer selection for the store",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "47b10780305cf686f14f09b1236a2a1efc124b75",
+            "content": "sha256:dc3487a2b2a578ff8fa321b73efe216701dd30b4883de7184e94c04329bbab16",
+            "locator": {
+              "kind": "symbol",
+              "name": "selector"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "47b10780305cf686f14f09b1236a2a1efc124b75",
+            "content": "sha256:5305e06c7d37170de303878ac3e7360d343024a35e3a392437df245a3032468d",
+            "locator": {
+              "end": 63,
+              "kind": "line_range",
+              "start": 47
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Store view helper with row labels",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "47b10780305cf686f14f09b1236a2a1efc124b75",
+            "content": "sha256:c1b4223afcc51f4ca62c2ccfeba38a5350962aa9a2d8bc127b447acba3502cec",
+            "locator": {
+              "kind": "symbol",
+              "name": "View"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "47b10780305cf686f14f09b1236a2a1efc124b75",
+            "content": "sha256:32c0b1664ca331fc9bb74c0de52321648a1ca22b53d55562229b437d07eeafe5",
+            "locator": {
+              "end": 99,
+              "kind": "line_range",
+              "start": 91
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "Family-row click helper for j journeys",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "47b10780305cf686f14f09b1236a2a1efc124b75",
+            "content": "sha256:990352ca982080ca0b1e0a170f2a58992b8516f64bc8532c915ead12e2baa27e",
+            "locator": {
+              "kind": "symbol",
+              "name": "clickFamilyRow"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "47b10780305cf686f14f09b1236a2a1efc124b75",
+            "content": "sha256:d215f191d91b038dd896b4eb584fa07b7f1dce4eccfaef339fc83676c89325ed",
+            "locator": {
+              "end": 104,
+              "kind": "line_range",
+              "start": 94
+            }
+          },
+          "kind": "test"
         }
       ]
     }

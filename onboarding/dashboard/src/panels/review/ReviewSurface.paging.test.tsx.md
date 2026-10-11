@@ -63,6 +63,7 @@ sentence carrying two meanings is how `total` came to mean two different numbers
 
 None recorded.
 
+Cursor fixtures name knowledge and records pages with published cursors, served through a typed fetch signature with body, payload and refusal records. Cases assert bounds lines, control labels, second-page requests carrying the selector, reset wording from refusal codes, and both collections staying reachable with the whole review intact.
 ## Evidence
 
 ### Docs References
@@ -127,3 +128,13 @@ No cross-repository behavior is exercised in this file: the component, the clien
 this repository's, and `fetch` is the only boundary crossed.
 
 No meaningful cross-repo references found.
+
+- Records-page cursor fixture for advances [17]
+
+- Cursor-carrying payload builder for paged answers [18]
+
+- Typed fetch signature for paged requests [19]
+
+- Subject mount helper for paged journeys [20]
+
+- The stubbed published-shape case distinguishes foreign-cursor reset wording from a moved comparison; it does not test an automatic repair journey. [21]

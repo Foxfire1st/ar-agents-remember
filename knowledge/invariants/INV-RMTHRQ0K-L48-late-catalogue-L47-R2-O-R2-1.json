@@ -1,13 +1,15 @@
 {
   "admission": "legacy-unassessed",
-  "applicability": "The reviewer opened with no subject, when the subject catalogue answers after the bounded first-read wait (SUBJECT_HOLD_MS) has already released the task-context read.",
+  "applicability": "Initial unnamed reviewer entry and a catalogue answer after SUBJECT_HOLD_MS releases task-context reading.",
   "conditions": [
-    "A reader gesture is a pointerdown, keydown, wheel or touchstart observed passively on the surface root.",
-    "Engagement is ignored while the hold is still settling, and never overwrites an explicit selection made by the same gesture."
+    "Pointerdown, keydown, wheel and touchstart are observed passively on the surface root; engagement is ignored while the hold is settling and never overrides an explicit same-gesture selection.",
+    "An outlined result is searched in the current persisted triage/authored order. When that outline has no real change, no subject is selected merely to force a first family.",
+    "Catalogue-first fallback applies only when no outlined result is available; a supplied named subject has priority."
   ],
   "exclusions": [
-    "A catalogue that answers within the bounded wait, which selects its first subject as before.",
-    "A refused or empty catalogue."
+    "No unconditional first-family or timely-first-subject promise.",
+    "A refused or empty catalogue supplies no fabricated subject.",
+    "Persisted order preferences are not ignored."
   ],
   "id": "INV-RMTHRQ0K",
   "origin": {
@@ -15,9 +17,9 @@
     "legacyId": "fbe573f5-a662-433d-842c-6211b227de24",
     "task": "260921-ICR"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "When the subject catalogue answers after the bounded first-read wait, a reader who has acted in the reviewer (pointer, key, wheel or touch) keeps the subject, view and focus they have and the catalogue only fills the navigation; a reader who has not acted is landed on the first family in the same mounted workspace.",
+  "statement": "After the bounded unnamed-entry wait, an engaged reader keeps their selected subject, view and focus when the catalogue answers. An unengaged reader follows initialSubject: the first real outline change in the persisted order, otherwise the existing catalogueFirst fallback. A named subject always wins.",
   "status": "proposed",
   "supersedes": []
 }

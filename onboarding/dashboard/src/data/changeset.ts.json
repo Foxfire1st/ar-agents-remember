@@ -7,36 +7,84 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ed265675478575ff8a4d1556006a4a3afd4aa87a",
+            "blob": "1da3bab20ae2b0b070c790c820476038d043758c",
             "content": "sha256:c87098c78ba81a649a35582f80b2ce8ab8fe1bfaa70cfbda110c34cad0657b48",
             "locator": {
-              "end": 63,
+              "end": 61,
               "kind": "line_range",
-              "start": 63
+              "start": 61
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "ed265675478575ff8a4d1556006a4a3afd4aa87a",
+            "blob": "1da3bab20ae2b0b070c790c820476038d043758c",
             "content": "sha256:3653ba1ba3e72665595c656794db67d919c4c907aba3c304fc3b47ff62a21943",
             "locator": {
-              "end": 69,
+              "end": 67,
               "kind": "line_range",
-              "start": 69
+              "start": 67
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "ed265675478575ff8a4d1556006a4a3afd4aa87a",
+            "blob": "1da3bab20ae2b0b070c790c820476038d043758c",
             "content": "sha256:6e718064d432e3f615529ebd114610cc6182210cdbbaf5888f87bfa3102c05a1",
             "locator": {
-              "end": 76,
+              "end": 74,
               "kind": "line_range",
-              "start": 76
+              "start": 74
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "File diffs name which half of the comparison they read",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1da3bab20ae2b0b070c790c820476038d043758c",
+            "content": "sha256:b2f1b1e79a343b046ec3f627073fb977b0b67f72a543096eb08f73e33bc6cd75",
+            "locator": {
+              "kind": "symbol",
+              "name": "FileDiff"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The comparison list reuses the task endpoint with a number",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1da3bab20ae2b0b070c790c820476038d043758c",
+            "content": "sha256:bfcdf3eb7f75c0b62276e3e2958ac4412ca710fdd09f9abebf3dc8c7db4d9bb1",
+            "locator": {
+              "kind": "symbol",
+              "name": "comparisonChangeset"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The comparison file diff adds kind and path",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1da3bab20ae2b0b070c790c820476038d043758c",
+            "content": "sha256:de2d059adaf595f3407bd8cbe2e2ce6c2fc3b40ce10177e1898f64135efd289f",
+            "locator": {
+              "kind": "symbol",
+              "name": "comparisonFileDiff"
             }
           },
           "kind": "code"
@@ -48,7 +96,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ed265675478575ff8a4d1556006a4a3afd4aa87a",
+            "blob": "1da3bab20ae2b0b070c790c820476038d043758c",
             "content": "sha256:16f4fc80e1ee01ca1cf10038008ecf98f96f1d6ebf5e3ca1897d329aeb4a8722",
             "locator": {
               "kind": "symbol",
@@ -77,18 +125,15 @@
       ]
     },
     "4": {
-      "note": "Reuses the L1 files client's shared `getJson`/`qs` transport + `FilesApiError`.\n\nAnchor: \"export const qs\"",
+      "note": "Change-set reads use qs and their own refusal-preserving getChangeSetJson, throwing ReviewTransportError rather than discarding refusal detail.\n\nAnchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "69f443587646541eb1434c6090c484772f0ac10a",
-            "content": "sha256:a4ec5d18d9e2d69fc7161f77421ca6f300ae59ded246c4b59c8e1242906c6c57",
+            "blob": "1da3bab20ae2b0b070c790c820476038d043758c",
+            "content": "sha256:febb2273e3f71e88a9caf2e3d49d2190e870f23783ccd49d984070344364767e",
             "locator": {
-              "end": 104,
-              "kind": "line_range",
-              "start": 104
-            },
-            "path": "dashboard/src/data/files.ts"
+              "kind": "file"
+            }
           },
           "kind": "code"
         }
@@ -99,12 +144,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "67dee1b6373245dfe7985d415a8a2f92ddbbf61a",
+            "blob": "2186995d20205912e217dc39a14fa95fcb0e42f3",
             "content": "sha256:a1c6875e67d150246d40eb2ce98bfba02431de162fd326f2098a9315c9572e88",
             "locator": {
-              "end": 657,
+              "end": 735,
               "kind": "line_range",
-              "start": 657
+              "start": 735
             },
             "path": "mcp/src/agents_remember/serving/changeset.py"
           },
@@ -163,6 +208,22 @@
             "path": "dashboard/src/data/changeset.test.ts"
           },
           "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "A comparison answer is the task shape plus identity",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1da3bab20ae2b0b070c790c820476038d043758c",
+            "content": "sha256:1a4ba82be6b143ff3ca51af70f8f89aa90b911011c08e3373efcdc3c5c4baddd",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskChangeset"
+            }
+          },
+          "kind": "code"
         }
       ]
     }

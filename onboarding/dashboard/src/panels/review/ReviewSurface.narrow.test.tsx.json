@@ -1,6 +1,45 @@
 {
   "path": "dashboard/src/panels/review/ReviewSurface.narrow.test.tsx",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "8f22ef3789c393100c831c46c794b57345db17c3",
+        "content": "sha256:cd2f0d45024624856536b2df642d6cf52ca6e7d507ec1f1b123d01330d428e4f",
+        "locator": {
+          "end": 182,
+          "kind": "line_range",
+          "start": 163
+        }
+      },
+      "id": "RLZ-HNY7R7",
+      "invariant": "INV-58S9SG",
+      "origin": {
+        "handoffEntry": "MIK-R86@v1 preservation W03 pane shrink-wrap",
+        "leaf": "260928-MIK-L86"
+      },
+      "rationale": "The ported shrink-wrap case asserting zero-minimum widths and inherited wrapping.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "8f22ef3789c393100c831c46c794b57345db17c3",
+        "content": "sha256:c0e28ea82896f1a4a7c418c06b9d00517822fbf8a255ce209f982520f32dd1fc",
+        "locator": {
+          "end": 200,
+          "kind": "line_range",
+          "start": 183
+        }
+      },
+      "id": "RLZ-SG0RRV",
+      "invariant": "INV-Z938DS",
+      "origin": {
+        "handoffEntry": "MIK-R86@v1 preservation W03 grid and header",
+        "leaf": "260928-MIK-L86"
+      },
+      "rationale": "The ported grid/header case asserting the narrow track and wrapped header.",
+      "role": "unclassified"
+    }
+  ],
   "references": {
     "1": {
       "note": "**The fixture: a complete payload whose `comparison.reference` is one unbreakable 64-character token — the measured 539 px culprit — with the digest-shaped fields alongside it.**\n\nAnchor: \"1678adab6416222068ba391db5b8b48d7c38b5b8c859adeac36fad3d0a2a\"",
@@ -23,7 +62,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f84799b8607720d59167369281b8ab441bb956ee",
+            "blob": "549d07c35309c25062a49eb856d3689a5a9c9b5f",
             "content": "sha256:9624cf94c71075e6f6e98ec6e957d2057507ac25f87b466d7d11c0ed15d7adb2",
             "locator": {
               "kind": "symbol",
@@ -47,12 +86,40 @@
         }
       ]
     },
-    "2": {
-      "note": "The `ReviewResult` the real client decodes, and the mount that stubs only `fetch` and waits for both the surface root and the disclosure.\n\nAnchor: `review-surface`; `review-details`",
+    "11": {
+      "note": "Complete payload with the unbreakable reference token",
       "targets": [
         {
           "anchor": {
-            "blob": "e21a156e0562dfdc8b14d360b1ec2339938cd3de",
+            "blob": "9225fa87be8dfbd26700f8620014dc2bba87434d",
+            "content": "sha256:e5098754580075d9ac90d9661f08ae5062d64191645eeeae0e021744202482d8",
+            "locator": {
+              "kind": "symbol",
+              "name": "payload"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8f22ef3789c393100c831c46c794b57345db17c3",
+            "content": "sha256:d888b71a45b5448099bc8936e7632ab4ac9bbc49028932e3ec3d4ce6e2f42c8f",
+            "locator": {
+              "end": 62,
+              "kind": "line_range",
+              "start": 46
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "Admitted review wrapper served to the mount",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8f22ef3789c393100c831c46c794b57345db17c3",
             "content": "sha256:7d027d4f3671fb4c0a222d6868638c7574a6e5f231d6c092937b7ac89e7e9d19",
             "locator": {
               "kind": "symbol",
@@ -60,14 +127,72 @@
             }
           },
           "kind": "test"
-        },
+        }
+      ]
+    },
+    "13": {
+      "note": "Mount through the real surface and fetch boundary",
+      "targets": [
         {
           "anchor": {
-            "blob": "e21a156e0562dfdc8b14d360b1ec2339938cd3de",
+            "blob": "8f22ef3789c393100c831c46c794b57345db17c3",
             "content": "sha256:7cc59c3b1d7f5f91cacdfb75ac5001582af4eb7f4ee61015da1b2b9350683380",
             "locator": {
               "kind": "symbol",
               "name": "mount"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8f22ef3789c393100c831c46c794b57345db17c3",
+            "content": "sha256:f92a786d949a4bb1cb9d5fcffdc1daa888e6e68135c171b7ea858d0c6dd5a6ff",
+            "locator": {
+              "end": 138,
+              "kind": "line_range",
+              "start": 120
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The constructed ReviewResult and real mount wait for the surface and disclosure; fetch and the catalogue hook are isolated, and layout assertions do not measure geometry.\n\nAnchor: current fixture and renderer owners",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8f22ef3789c393100c831c46c794b57345db17c3",
+            "content": "sha256:3cd1c159a6b2bc875ecf884170f33dc75b536cc1abad9b60cd201a129e7f9a7e",
+            "locator": {
+              "end": 40,
+              "kind": "line_range",
+              "start": 32
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8f22ef3789c393100c831c46c794b57345db17c3",
+            "content": "sha256:7d027d4f3671fb4c0a222d6868638c7574a6e5f231d6c092937b7ac89e7e9d19",
+            "locator": {
+              "end": 120,
+              "kind": "line_range",
+              "start": 115
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8f22ef3789c393100c831c46c794b57345db17c3",
+            "content": "sha256:7cc59c3b1d7f5f91cacdfb75ac5001582af4eb7f4ee61015da1b2b9350683380",
+            "locator": {
+              "end": 141,
+              "kind": "line_range",
+              "start": 122
             }
           },
           "kind": "test"
@@ -79,12 +204,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6f836d466fd71b805a0207a76782620da56bb77b",
+            "blob": "8f22ef3789c393100c831c46c794b57345db17c3",
             "content": "sha256:9d9a37e62c532687cef01eddb22b605ddc65f2eaaa05c0af1cc48dbfc8321264",
             "locator": {
-              "end": 148,
+              "end": 146,
               "kind": "line_range",
-              "start": 145
+              "start": 143
             }
           },
           "kind": "test"
@@ -96,7 +221,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6f836d466fd71b805a0207a76782620da56bb77b",
+            "blob": "8f22ef3789c393100c831c46c794b57345db17c3",
             "content": "sha256:dacb0ed08c45cd5c3cf841d13b11037582ad438414d4fe33dd08721e3ded2fa0",
             "locator": {
               "kind": "symbol",
@@ -112,12 +237,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e21a156e0562dfdc8b14d360b1ec2339938cd3de",
+            "blob": "8f22ef3789c393100c831c46c794b57345db17c3",
             "content": "sha256:c8c60cfcb165008f3277486f5360a47c2be22266a654267cefe3041805d5090b",
             "locator": {
-              "end": 158,
+              "end": 161,
               "kind": "line_range",
-              "start": 148
+              "start": 151
             }
           },
           "kind": "test"

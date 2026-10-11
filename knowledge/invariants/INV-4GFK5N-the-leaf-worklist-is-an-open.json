@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "New reviewer obligation from MIK-R86@v1 (packet a78d9ae3, Architect qualification 2026-10-08 11:18:45 UTC); implemented on the W03 successor tree 95f61633, whole-primary CODE PASS verdict 3663bf07. Evidence: LeafKnowledgeNotice.test.tsx; ReviewSurface.navigationTree.test.tsx; L37 673 items"
+  },
+  "applicability": "The leaf worklist as its own view.",
+  "conditions": [
+    "Row Worklist shows the view in the main page (tree keeps rows, marked while shown; tree rows return to reviews); non-converted leaves read not-available with reason.",
+    "View holds status line, change-set link (no file list, no patch), per-side currentness + non-current invariants, grouped one-line items with state part, per-file unexplained groups with page links, one gate-linkage line, one Identifiers disclosure per group.",
+    "Under a subject only that record's items (one line each) or the none/reading/unavailable states."
+  ],
+  "exclusions": [
+    "Drawing the full worklist under every subject; raw patches; Item-facts dumps; per-item/file disclosures."
+  ],
+  "id": "INV-4GFK5N",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "LeafKnowledgeNotice.test.tsx; ReviewSurface.navigationTree.test.tsx; L37 673 items",
+        "dashboard/src/data/reviewTrees.ts ReviewTreesResult.worklist field; stored record knowledge/invariants/INV-4GFK5N (revision 1)"
+      ],
+      "path": "notes/reports/l86-curator-W03/handoff-phase1.json"
+    },
+    "handoffEntry": "MIK-R86@v1 rule 21",
+    "leaf": "260928-MIK-L86",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The leaf worklist is an open view of its own with item facts, history linkage and currentness, and subjects show only their own items.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -33,7 +33,10 @@ answers for the *intent* half alone and only as a separate question the reader a
 
 ### Logic
 
-ReviewProblemBlock leads with a compact unavailable label and preserves code, reason, offending input and recovery inside Reason and recovery. Network retry and the explicit source-review action keep their existing eligibility rules. Refusal, transport failure, loading and measured empty remain distinct.
+ReviewProblemBlock leads with a compact unavailable label and preserves code, reason, offending input
+and recovery in open `data-review-content` reason/state content, not a closed Reason and recovery
+disclosure. Network retry and the explicit source-review action retain their eligibility rules.
+Refusal, transport failure, loading and measured empty remain distinct.
 
 **`ReviewRead` is the read's four phases, and the three that are not panes are rendered here.** The
 union is `{phase:"loading"} | {phase:"reviewed", payload} | {phase:"refused", problem} |
@@ -58,7 +61,7 @@ comparison at all, so the comparison the surface already had stays on screen.
 **Since `260921-ICR-L48`, `shownPayload` decides the subject's reading, not whether the shell stays.** It
 is still keyed to the question on screen, so a newly selected subject that fails or is refused has no
 shown payload. What the surface keeps around it is the read cycle's `frame` (the task context's last
-admitted payload): when a frame exists, the workspace, navigation and source explorer stay mounted and the
+admitted payload): when a frame exists, the workspace and outline navigation stay mounted and the
 requested subject's pending state, failure or refusal is stated **in the reading area**, labelled with that
 subject, through this module's own `ReviewProblemBlock` (the surface passes it the subject label). Only a
 read with no frame at all — the reviewer's first read — still renders its loading line or problem block
@@ -206,3 +209,5 @@ No cross-repository behavior is implemented in this file. The module renders one
 records and carries no identity that ranges beyond it.
 
 No meaningful cross-repo references found.
+- Single refusal and failure block with code and next action [18]
+- Labelling for a retained comparison generation [20]

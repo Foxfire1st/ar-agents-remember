@@ -1,6 +1,43 @@
 {
   "path": "dashboard/src/panels/review/changeTriage.ts",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "947d5bdc3e3ce1cc991b3b3e1679a45d13994c4b",
+        "content": "sha256:1bb786f40ea6fb174005970fdfc3794f4871c1d5d99ca1689c7c23250e56d8fb",
+        "locator": {
+          "kind": "symbol",
+          "name": "catalogueGroups"
+        }
+      },
+      "id": "RLZ-AQK9Y4",
+      "invariant": "INV-Z2XTN1",
+      "origin": {
+        "handoffEntry": "MIK-R86@v1 rule 11",
+        "leaf": "260928-MIK-L86"
+      },
+      "rationale": "It projects identity-only catalogue entries into plain rows when a comparison cannot supply an outline.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "947d5bdc3e3ce1cc991b3b3e1679a45d13994c4b",
+        "content": "sha256:c64474e7c48b7362b9cd54e3cc6f44e35f050800313d748f7e13e8763f1f8672",
+        "locator": {
+          "kind": "symbol",
+          "name": "outlineGroups"
+        }
+      },
+      "id": "RLZ-BKFAEY",
+      "invariant": "INV-W09GQM",
+      "origin": {
+        "handoffEntry": "MIK-R86@v1 rule 3",
+        "leaf": "260928-MIK-L86"
+      },
+      "rationale": "It combines outline record and membership changes with walked-family code facts before assigning the displayed row badge.",
+      "role": "presentation"
+    }
+  ],
   "references": {
     "1": {
       "note": "The module's statement: pure functions over the delivered facts; a dataset entry is left as landed.\n\nAnchor: \"Pure functions over the delivered facts\"; \"here decides a fact\"",
@@ -13,6 +50,102 @@
               "end": 4,
               "kind": "line_range",
               "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Real-change predicate excluding unknown and unchanged",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "947d5bdc3e3ce1cc991b3b3e1679a45d13994c4b",
+            "content": "sha256:bb8b3fd922eccaa236360315caffc1024db94b0eb7c18f996aabb638b0ea39dd",
+            "locator": {
+              "kind": "symbol",
+              "name": "realChange"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Drawn groups from outline, walked facts and catalogue",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "947d5bdc3e3ce1cc991b3b3e1679a45d13994c4b",
+            "content": "sha256:c64474e7c48b7362b9cd54e3cc6f44e35f050800313d748f7e13e8763f1f8672",
+            "locator": {
+              "kind": "symbol",
+              "name": "outlineGroups"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Walked-fact and membership overlay with precedence",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "947d5bdc3e3ce1cc991b3b3e1679a45d13994c4b",
+            "content": "sha256:ba3849529427f59c598d4a4d52c7d70e8ad666aa9672991634fdc51a903906cc",
+            "locator": {
+              "kind": "symbol",
+              "name": "memberBadge"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "Triage sort weights for outline badges",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "947d5bdc3e3ce1cc991b3b3e1679a45d13994c4b",
+            "content": "sha256:ed9e585504b5367554df53855e6984b3d69f2b480b6339284a557417342e09a8",
+            "locator": {
+              "kind": "symbol",
+              "name": "badgeWeight"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "Opening row on the first real change",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "947d5bdc3e3ce1cc991b3b3e1679a45d13994c4b",
+            "content": "sha256:33359ff3913befe7af2dba06efc84781f6c270cb84b1766e6f111d069059a567",
+            "locator": {
+              "kind": "symbol",
+              "name": "firstOutlineChange"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "Summary counts of changed families and invariants",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "947d5bdc3e3ce1cc991b3b3e1679a45d13994c4b",
+            "content": "sha256:3e56699d92e48c8c527f56c66fd2413e916edaa226cf45510f3af960bd0202a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "outlineCounts"
             }
           },
           "kind": "code"
@@ -161,6 +294,22 @@
               "start": 672
             },
             "path": "dashboard/src/panels/review/FamilyReviewCenter.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Row badge vocabulary with aggregate counts",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "947d5bdc3e3ce1cc991b3b3e1679a45d13994c4b",
+            "content": "sha256:249922bfb94020359b3300bc1872e1c19a7fdca49e6f072a62c839e84149dcdd",
+            "locator": {
+              "kind": "symbol",
+              "name": "OutlineBadge"
+            }
           },
           "kind": "code"
         }

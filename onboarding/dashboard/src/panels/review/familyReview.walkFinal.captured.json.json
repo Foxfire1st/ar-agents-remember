@@ -125,12 +125,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f8135bda4f4dee8a955d2749f28f82df50cbaa0e",
+            "blob": "a25a1fcc8f4dc61d8fc2f05e79105414b62f67ae",
             "content": "sha256:6926b0ee4af40a1e359eae3d4e8fdf7579e530c94ade0b94aa4a1cb1228e23d4",
             "locator": {
-              "end": 259,
+              "end": 140,
               "kind": "line_range",
-              "start": 259
+              "start": 140
             },
             "path": "dashboard/src/panels/review/FamilyTree.tsx"
           },
@@ -138,12 +138,12 @@
         },
         {
           "anchor": {
-            "blob": "f8135bda4f4dee8a955d2749f28f82df50cbaa0e",
+            "blob": "a25a1fcc8f4dc61d8fc2f05e79105414b62f67ae",
             "content": "sha256:e9aa7248f2db400940dd0214f4d4e89352a3676d651a2de8ddda299d4202e6af",
             "locator": {
-              "end": 260,
+              "end": 141,
               "kind": "line_range",
-              "start": 260
+              "start": 141
             },
             "path": "dashboard/src/panels/review/FamilyTree.tsx"
           },

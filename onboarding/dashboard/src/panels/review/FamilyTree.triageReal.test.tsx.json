@@ -52,6 +52,73 @@
           "kind": "test"
         }
       ]
+    },
+    "4": {
+      "note": "Main-page fact harness over captured bodies",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d89f0da6abbd0e77f67540bdfffae056ee37b2d0",
+            "content": "sha256:35a32e8bdb54c0531b3312ea2792dec1a01dd557a368f0ba959124a292507178",
+            "locator": {
+              "kind": "symbol",
+              "name": "MainFacts"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Every fact and reason kept outside disclosures\n\nAnchor: `review-change-why`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d89f0da6abbd0e77f67540bdfffae056ee37b2d0",
+            "content": "sha256:046b80b040e2511af8bda0edb67d012a4fe7b9f80121332298c0d71f96095072",
+            "locator": {
+              "end": 90,
+              "kind": "line_range",
+              "start": 67
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Guarantees and membership preserved per family\n\nAnchor: `review-guarantee-change`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d89f0da6abbd0e77f67540bdfffae056ee37b2d0",
+            "content": "sha256:d9eb178dca1c6a741984691bd912e8d9c6914fad5780ad194ab091e95f88a885",
+            "locator": {
+              "end": 102,
+              "kind": "line_range",
+              "start": 91
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Walked facts overlaid onto outline badges\n\nAnchor: `outlineGroups`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d89f0da6abbd0e77f67540bdfffae056ee37b2d0",
+            "content": "sha256:3ba8b82f28bd2e4e51ab93dd39f1e906e0415ff5028348523721d9543e2ee6c4",
+            "locator": {
+              "end": 146,
+              "kind": "line_range",
+              "start": 104
+            }
+          },
+          "kind": "test"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

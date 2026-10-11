@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "78e06c642582b7ee2331e01b9d0a2e718e80a76a",
+        "blob": "b091850b14a462c669ea9cc063448e546c594bea",
         "content": "sha256:9844fc1d2387b435f56b5611556eafa68e6d997fca353bd6e560e2dc418b9b40",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "78e06c642582b7ee2331e01b9d0a2e718e80a76a",
+        "blob": "b091850b14a462c669ea9cc063448e546c594bea",
         "content": "sha256:940c00d4ee17489dfe6c436f4085b4200b37bb91538425adcc468fc0927cebb7",
         "locator": {
           "kind": "symbol",
@@ -37,8 +37,8 @@
     },
     {
       "anchor": {
-        "blob": "78e06c642582b7ee2331e01b9d0a2e718e80a76a",
-        "content": "sha256:ee1412d1f7feebd38fec601c9439dc99296a4d3fbf2506786f78b7e45eeb14fb",
+        "blob": "b091850b14a462c669ea9cc063448e546c594bea",
+        "content": "sha256:eb41ce34317a35a1adcc663dcbd58c5664caf5d401a36ec890a87e6a36a542c9",
         "locator": {
           "kind": "symbol",
           "name": "test_the_view_memo_is_bounded_by_count_and_by_age_and_never_answers_another_key"
@@ -54,24 +54,24 @@
     },
     {
       "anchor": {
-        "blob": "78e06c642582b7ee2331e01b9d0a2e718e80a76a",
-        "content": "sha256:ff87cbe5920e612dd80de9bc80ec548cc1084b42d37a57e7d672420da375d03a",
+        "blob": "b091850b14a462c669ea9cc063448e546c594bea",
+        "content": "sha256:4c3f3a30d164c6bb0614de5ad42b2ad7e705671deae823ac73778c8d6bed1948",
         "locator": {
           "kind": "symbol",
           "name": "test_a_view_behind_which_a_read_failed_is_never_kept"
         }
       },
-      "facet": "First aggregate failure followed by successful bounded recovery produces no kept view and the next read recomputes.",
-      "id": "PRF-E4BSR5",
+      "facet": "Each incomplete isolated-worklist answer recomputes and leaves the leaf-view memo empty; the next complete answer may be memoized. Changed or conflicting outside-tree input observations cause misses. This is worklist memo recovery, not aggregate Git-diff failure or patch recovery.",
+      "id": "PRF-DHRMPP",
       "invariant": "INV-5M9WY3",
       "origin": {
-        "handoffEntry": "L40-actual-read-memo",
-        "leaf": "260928-MIK-L40"
+        "handoffEntry": "L86-A2-facet-replacement-PRF-E4BSR5",
+        "leaf": "260928-MIK-L86"
       }
     },
     {
       "anchor": {
-        "blob": "78e06c642582b7ee2331e01b9d0a2e718e80a76a",
+        "blob": "b091850b14a462c669ea9cc063448e546c594bea",
         "content": "sha256:9b68592881d68647cf2c066f5a7cdf0871cded3077ac462e1a5d7108e78d26c6",
         "locator": {
           "kind": "symbol",
@@ -88,24 +88,7 @@
     },
     {
       "anchor": {
-        "blob": "78e06c642582b7ee2331e01b9d0a2e718e80a76a",
-        "content": "sha256:1372fb827d05f2e7ae116ce01e04a089e95361b448283f255853c4a322e63bfb",
-        "locator": {
-          "kind": "symbol",
-          "name": "test_the_knowledge_diff_asks_git_three_questions_and_answers_what_the_per_file_diff_answered"
-        }
-      },
-      "facet": "Ordinary diff bodies, additions/deletions, rename/type change and truncation equal the unchanged-case per-file reference with bounded children.",
-      "id": "PRF-K0PSED",
-      "invariant": "INV-7MH0BR",
-      "origin": {
-        "handoffEntry": "L40-literal-batched-diff",
-        "leaf": "260928-MIK-L40"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "78e06c642582b7ee2331e01b9d0a2e718e80a76a",
+        "blob": "b091850b14a462c669ea9cc063448e546c594bea",
         "content": "sha256:dee8372d4236881bf68aa738ad8acbe6b7eb7eff94d5efd391ab8f75a4522b33",
         "locator": {
           "kind": "symbol",
@@ -122,8 +105,8 @@
     },
     {
       "anchor": {
-        "blob": "78e06c642582b7ee2331e01b9d0a2e718e80a76a",
-        "content": "sha256:237dcb6e790963763ceb0cea5bd3ccfb39ed9c659e3901d5533b51cf1b0158ba",
+        "blob": "b091850b14a462c669ea9cc063448e546c594bea",
+        "content": "sha256:196f95ccb6ea59ed068e37704ba566888dabc1f4e932077ab56cd1c71bfcfae5",
         "locator": {
           "kind": "symbol",
           "name": "test_the_leaf_wide_view_captures_nothing_itself_and_is_computed_once_per_comparison"
@@ -139,24 +122,7 @@
     },
     {
       "anchor": {
-        "blob": "78e06c642582b7ee2331e01b9d0a2e718e80a76a",
-        "content": "sha256:b7a65f76462b0b41d6b2c51d49f0851886d05801217ede7711f4051e79cea2e4",
-        "locator": {
-          "kind": "symbol",
-          "name": "test_exact_filename_patches_keep_quoted_bytes_and_do_not_expand_to_siblings_at_two_sizes"
-        }
-      },
-      "facet": "At two file counts and both quotePath settings, unusual names select only their exact patch with fixed children and exact literal-reference bytes.",
-      "id": "PRF-T54N25",
-      "invariant": "INV-7MH0BR",
-      "origin": {
-        "handoffEntry": "L40-literal-batched-diff",
-        "leaf": "260928-MIK-L40"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "78e06c642582b7ee2331e01b9d0a2e718e80a76a",
+        "blob": "b091850b14a462c669ea9cc063448e546c594bea",
         "content": "sha256:926061922e555bd502b491b56c00c250273dc9c1db29bd4c91ce4cb39f9bce08",
         "locator": {
           "kind": "symbol",
@@ -172,14 +138,32 @@
       }
     }
   ],
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "b091850b14a462c669ea9cc063448e546c594bea",
+        "content": "sha256:cdc71100602f660f58eeee48cf036c7917c20027059e27fc7fe8dfa6a60e566d",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-AKBEXR",
+      "invariant": "INV-TJE3KM",
+      "origin": {
+        "handoffEntry": "MIK-R86@v1 W03 source-currentness native resolution",
+        "leaf": "260928-MIK-L86"
+      },
+      "rationale": "Source-currentness proof of the existing admitted semantics; not a new invariant or product scope.",
+      "role": "support"
+    }
+  ],
   "references": {
     "10": {
       "note": "A held converted base tree is not written again.",
       "targets": [
         {
           "anchor": {
-            "blob": "78e06c642582b7ee2331e01b9d0a2e718e80a76a",
+            "blob": "b091850b14a462c669ea9cc063448e546c594bea",
             "content": "sha256:9844fc1d2387b435f56b5611556eafa68e6d997fca353bd6e560e2dc418b9b40",
             "locator": {
               "kind": "symbol",
@@ -227,7 +211,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "78e06c642582b7ee2331e01b9d0a2e718e80a76a",
+            "blob": "b091850b14a462c669ea9cc063448e546c594bea",
             "content": "sha256:9b68592881d68647cf2c066f5a7cdf0871cded3077ac462e1a5d7108e78d26c6",
             "locator": {
               "kind": "symbol",
@@ -243,7 +227,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "78e06c642582b7ee2331e01b9d0a2e718e80a76a",
+            "blob": "b091850b14a462c669ea9cc063448e546c594bea",
             "content": "sha256:926061922e555bd502b491b56c00c250273dc9c1db29bd4c91ce4cb39f9bce08",
             "locator": {
               "kind": "symbol",
@@ -264,38 +248,6 @@
             "locator": {
               "kind": "symbol",
               "name": "test_the_view_memo_is_bounded_by_count_and_by_age_and_never_answers_another_key"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "16": {
-      "note": "Three Git questions and the per-file reference answers.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "78e06c642582b7ee2331e01b9d0a2e718e80a76a",
-            "content": "sha256:1372fb827d05f2e7ae116ce01e04a089e95361b448283f255853c4a322e63bfb",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_the_knowledge_diff_asks_git_three_questions_and_answers_what_the_per_file_diff_answered"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "17": {
-      "note": "Literal file names keep exact patches.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "78e06c642582b7ee2331e01b9d0a2e718e80a76a",
-            "content": "sha256:b7a65f76462b0b41d6b2c51d49f0851886d05801217ede7711f4051e79cea2e4",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_exact_filename_patches_keep_quoted_bytes_and_do_not_expand_to_siblings_at_two_sizes"
             }
           },
           "kind": "test"
@@ -334,6 +286,68 @@
         }
       ]
     },
+    "20": {
+      "note": "The leaf view is computed once per exact comparison",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b091850b14a462c669ea9cc063448e546c594bea",
+            "content": "sha256:196f95ccb6ea59ed068e37704ba566888dabc1f4e932077ab56cd1c71bfcfae5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_leaf_wide_view_captures_nothing_itself_and_is_computed_once_per_comparison"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b091850b14a462c669ea9cc063448e546c594bea",
+            "content": "sha256:d74f38bbf014f59438eb1804f38db829010b4b9bfca5b9c62ea28373b8cd3e97",
+            "locator": {
+              "end": 404,
+              "kind": "line_range",
+              "start": 398
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "21": {
+      "note": "No diff invocation spans the two memory trees\n\nAnchor: `memory_base`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b091850b14a462c669ea9cc063448e546c594bea",
+            "content": "sha256:429bb4b7db9f05f105b61a10cd77dd4e6c5970c6ac4ef7262dc54a64759ad3af",
+            "locator": {
+              "end": 420,
+              "kind": "line_range",
+              "start": 414
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "22": {
+      "note": "The worklist gets the comparison's own candidate trees\n\nAnchor: `isolated_leaf_worklist`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b091850b14a462c669ea9cc063448e546c594bea",
+            "content": "sha256:543e27839f38703ce41b4b3f677d80d4f728017db1d1269ff4de6293c0b2ebfe",
+            "locator": {
+              "end": 407,
+              "kind": "line_range",
+              "start": 403
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
     "6": {
       "note": "The module docstring: the port every case enters through and the machine-independent counts.",
       "targets": [
@@ -356,7 +370,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "78e06c642582b7ee2331e01b9d0a2e718e80a76a",
+            "blob": "b091850b14a462c669ea9cc063448e546c594bea",
             "content": "sha256:48f9ee9256011b8a8b0332bf8612e863c8141989b64b25128b98eee398b4382e",
             "locator": {
               "kind": "symbol",
@@ -372,7 +386,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "78e06c642582b7ee2331e01b9d0a2e718e80a76a",
+            "blob": "b091850b14a462c669ea9cc063448e546c594bea",
             "content": "sha256:dee8372d4236881bf68aa738ad8acbe6b7eb7eff94d5efd391ab8f75a4522b33",
             "locator": {
               "kind": "symbol",
@@ -388,7 +402,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "78e06c642582b7ee2331e01b9d0a2e718e80a76a",
+            "blob": "b091850b14a462c669ea9cc063448e546c594bea",
             "content": "sha256:940c00d4ee17489dfe6c436f4085b4200b37bb91538425adcc468fc0927cebb7",
             "locator": {
               "kind": "symbol",

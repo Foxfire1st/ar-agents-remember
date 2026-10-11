@@ -69,6 +69,57 @@
           "kind": "test"
         }
       ]
+    },
+    "5": {
+      "note": "The suite runs the adapter over the real captured body\n\nAnchor: `reviewTrees`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7cb79f025ffabce1162052d97c84f0331da5e31a",
+            "content": "sha256:37278a01b8bdd900aa4b3bd3ecd5a2fb1d42539c1eb09bb27b78390c49df22ce",
+            "locator": {
+              "end": 62,
+              "kind": "line_range",
+              "start": 51
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Currentness is read per side on the comparison's code trees\n\nAnchor: `invariantCurrentness`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7cb79f025ffabce1162052d97c84f0331da5e31a",
+            "content": "sha256:e0285aed9104903107fdef1460b28bab30ac9c9df063b368940979ff7087d5c7",
+            "locator": {
+              "end": 91,
+              "kind": "line_range",
+              "start": 80
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Recorded comparisons stay addressable by number, never path\n\nAnchor: `treeComparisonNumber`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7cb79f025ffabce1162052d97c84f0331da5e31a",
+            "content": "sha256:4d8ac73d501c87fe79a8523a5efd641bed737f45336b654907049188fd6be739",
+            "locator": {
+              "end": 135,
+              "kind": "line_range",
+              "start": 128
+            }
+          },
+          "kind": "test"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

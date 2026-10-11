@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "88161394c6c5da9849b68814df49684caaf4ef53",
+            "blob": "f3a43c1115838d6d74fae8feb11a5dfdc0549278",
             "content": "sha256:27644ac10e81c3acc6933009f55045741f6f76394b296eeb3184973373589403",
             "locator": {
               "end": 25,
@@ -19,12 +19,28 @@
         }
       ]
     },
+    "10": {
+      "note": "Spoken announcements of changed passages",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f3a43c1115838d6d74fae8feb11a5dfdc0549278",
+            "content": "sha256:0322c7ec50097c63ef9b7e3eee63ff2b7ad183c08487e0827de71e865ffd3e94",
+            "locator": {
+              "kind": "symbol",
+              "name": "passages"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
     "2": {
       "note": "The successor revisions, including one guarantee revision whose text changes.\n\nAnchor: \"function successor(result: ReviewResult, tree: boolean, sameRevision = false): ReviewResult {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "88161394c6c5da9849b68814df49684caaf4ef53",
+            "blob": "f3a43c1115838d6d74fae8feb11a5dfdc0549278",
             "content": "sha256:e916acc9818b4ad73dfac93a9e8f7257460267fd3a5df36e07fa28a28895d56f",
             "locator": {
               "end": 63,
@@ -41,7 +57,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "88161394c6c5da9849b68814df49684caaf4ef53",
+            "blob": "f3a43c1115838d6d74fae8feb11a5dfdc0549278",
             "content": "sha256:47a0b0aa955e101da60257bb093c83ee54158df8ab41ff7debade0642148be91",
             "locator": {
               "end": 92,
@@ -58,7 +74,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "88161394c6c5da9849b68814df49684caaf4ef53",
+            "blob": "f3a43c1115838d6d74fae8feb11a5dfdc0549278",
             "content": "sha256:4f55f2064002048aaa9645bd51b80a30590e6f41a9f1fff057ce4971e94ba8ba",
             "locator": {
               "end": 150,
@@ -88,20 +104,91 @@
       ]
     },
     "6": {
-      "note": "The rail prop that makes the navigator compare bytes on a tree comparison.\n\nAnchor: \"tree={treeComparisonNumber(payload.limitations) !== undefined}\"",
+      "note": "When same-revision guarantee text differs, the tree review’s center states the changed text/fact; neither tree nor dataset review renders the old rail guarantee node.",
       "targets": [
         {
           "anchor": {
-            "blob": "5ff876f9b2c2f34b58783e9658a88bb4d5cec25c",
-            "content": "sha256:8b8a282349f4220a28f862da92e4b94efbbbc191ad646aa3b70f1f1bfef63cea",
+            "blob": "f3a43c1115838d6d74fae8feb11a5dfdc0549278",
+            "content": "sha256:edaca1097fa4a039d817bc43dbb4b73741d11139f2e514a82950042db7444405",
             "locator": {
-              "end": 737,
+              "end": 172,
               "kind": "line_range",
-              "start": 737
-            },
-            "path": "dashboard/src/panels/review/ReviewWorkspace.tsx"
+              "start": 154
+            }
           },
-          "kind": "code"
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Successor member and family for diff journeys",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f3a43c1115838d6d74fae8feb11a5dfdc0549278",
+            "content": "sha256:34599d959427a26bf204a2b50aba32da216c9efef41b4ceddc7bcf0d4e204216",
+            "locator": {
+              "kind": "symbol",
+              "name": "successor"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f3a43c1115838d6d74fae8feb11a5dfdc0549278",
+            "content": "sha256:c5aa7bcf911f14d0a5d004a117c2057f3fd478495348d30da77ea183da3705e0",
+            "locator": {
+              "end": 51,
+              "kind": "line_range",
+              "start": 33
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Selection payload with statement and guarantee",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f3a43c1115838d6d74fae8feb11a5dfdc0549278",
+            "content": "sha256:4d280c06794f3e3e8b005d5a76ca5c23dd83a8a2d1e11783df6196213805500d",
+            "locator": {
+              "kind": "symbol",
+              "name": "selection"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "Per-route captured world for entries and cards",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f3a43c1115838d6d74fae8feb11a5dfdc0549278",
+            "content": "sha256:47a0b0aa955e101da60257bb093c83ee54158df8ab41ff7debade0642148be91",
+            "locator": {
+              "kind": "symbol",
+              "name": "serve"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f3a43c1115838d6d74fae8feb11a5dfdc0549278",
+            "content": "sha256:73c6e1b76d6a7e1a4da205bcc5747b10c8c9945ce301c77b46d6e1ddbebeac2b",
+            "locator": {
+              "end": 79,
+              "kind": "line_range",
+              "start": 63
+            }
+          },
+          "kind": "test"
         }
       ]
     }

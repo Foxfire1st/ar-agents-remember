@@ -7,11 +7,10 @@
 ## Purpose
 
 The mounted-surface half of ICR-R16: the **real `ReviewSurface` over the real review client, for every
-state that is not a plain success.** Fifteen cases in two `describe` blocks (twelve mounted, three
-region-level).
+state that is not a plain success.** The current source has nineteen plain `it` declarations across three `describe` groups; this structural declaration census is not a runtime case total or new execution receipt.
 
 Its evidentiary claim is narrow and stated in the module header: `ReviewSurface` is the real component
-and `intentReview` the real client; **only `fetch` is stubbed**, so each response travels the way the
+and `intentReview` the real client; **`fetch` is stubbed and the catalogue hook is explicitly mocked**, so each response travels the way the
 browser's does — status, body, the shared decode in `data/reviewTransport.ts`, the component tree — and
 **no assertion reads a prop this test itself passed**: every case asserts what the rendered DOM
 contains. The refusal bodies are the measured output of the real route over real HTTP in this leaf's
@@ -68,14 +67,7 @@ one subject, then re-renders the surface for a **different** subject whose read 
 new header carries no `review-retained-generation` and no `data-comparison` — so a payload read for
 another question cannot appear under this one.
 
-**Since `260921-ICR-L48` the same case also pins what stays.** The Architect's L48-R1 ruling keeps the
-workspace mounted when a newly selected subject's read fails, so the case now asserts that the failure is
-stated in the reading area labelled with the requested subject (`review-reading-problem` with
-`data-problem-subject="invariant:a-different-subject"`), that the task's own source inventory
-(`review-inventory`, six changed files) **stays**, and that no `review-center` (A's reading) is rendered.
-The earlier assertion that `review-inventory` disappears was **superseded** by that ruling, not weakened:
-the inventory belongs to the task, not to either subject, and R26 isolation is still asserted on the
-subject-bound parts.
+**Current cross-target isolation:** changing the selected subject and failing its read keeps a subject-labelled problem and the task's `6 changed files` scope text. The previous subject's centre, retained-generation note, known-empty note and comparison attribute are absent. Source inspection retains an All changes destination and no source explorer or inline inventory entries; this is not a proof of the retired rendered complete-inventory owner.
 
 **`describe("the outcome region's two statements about a measured-empty payload")` pins the rule where
 it lives, and says why there.** The comment above it records the measured reachability fact: the state
@@ -98,7 +90,7 @@ awaits the DOM via `findBy*`/`waitFor` rather than asserting synchronously.
 
 ### Invariants And Boundaries
 
-- **Only `fetch` is stubbed.** The URL, the status, the body, the shared decode and the component tree
+- **`fetch` and the catalogue hook are isolated.** The URL, the status, the body, the shared decode and the component tree
   are all the real ones.
 - **Every assertion reads rendered output.** No case asserts a prop it passed or a value it computed;
   each reads `data-review-state`, `data-review-code`, a `data-testid` or `textContent` from the DOM.
@@ -120,6 +112,7 @@ awaits the DOM via `findBy*`/`waitFor` rather than asserting synchronously.
 
 None recorded.
 
+Fixtures cover dataset-absent, bad-request, unwired, bad-path and inventory refusals with task-context and empty payloads, mounted per subject with fetch stubs. Cases assert the loading line, refusal codes with offending inputs, retry rendering answers, retained known-empty stated once, generation claims across flushes, and the no-previous-target rule. The refresh arc asserts same-question re-reads, failed-refresh retention, and no live identity leaking into recorded reads.
 ## Evidence
 
 ### Docs References
@@ -135,7 +128,10 @@ Every claim on this card is checkable in the shipped candidate: the module's own
 statement, the measured bodies with their digests, the reduced payload builders, the two stubs, and the
 fifteen cases grouped by what they pin. Every anchor in a row occurs inside the range that row cites.
 
-- **The header's own provenance — the real component and client with only `fetch` stubbed, DOM-only assertions, measured bodies with digests — and its statement of the defect these cases control for.** [1]
+
+
+- The module mounts the real comparison surface/client over recorded bodies and DOM assertions, with fetch stubbed and an explicit catalogue-hook mock; historical header wording is not a claim that only fetch is isolated. [1]
+
 - The real component, the real region and the real types under test. [2]
 - **The measured refusal bodies, each carrying the digest of the run that produced it, and the reduced task-context fixture labelled as reduced.** [3]
 - **The two payload builders: the task-context answer, and the measured empty one that is the only route to the known-empty statement.** [4]
@@ -163,13 +159,18 @@ same-origin `fetch` and names one repository namespace.
 
 No meaningful cross-repo references found.
 
+- Dataset-absent refusal fixture with reason and next action [22]
+- Inventory refusal detail for source inspection [23]
+- Task-context payload for intent-only journeys [24]
+- Per-subject serving world with fetch capture [25]
+- Subject mount helper through the real surface [26]
 ## 260921-ICR-L17 The Refresh Path, The Carried Identity And The Read Race
 
 `260921-ICR-L17` (`ICR-R17@v1`) adds a third `describe` block — sixteen cases become twenty-two — and
 extends the import list with `act`, which is what lets a case put two React updates in one flush.
 
 **What the new block measures.** `describe("the review surface's refresh control and read race
-(ICR-R17)")` drives the real surface over the real client with only `fetch` stubbed, and its six cases
+(ICR-R17)")` drives the real surface over the real client with `fetch` stubbed and the catalogue hook explicitly mocked, and its current refresh cases
 pin one property each:
 
 - **the refresh path end to end** — the read carries the identity on screen, the notice names both

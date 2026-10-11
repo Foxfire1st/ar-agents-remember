@@ -1,21 +1,20 @@
 {
   "admission": {
     "criteria": [
-      "guarded_by_test",
       "prevents_costly_mistake"
     ],
-    "justification": "Pattern expansion can attach another file's patch to an indexed address, while per-file recovery destroys scaling; exact-section binding protects source meaning and the two-size operation pins child bounds."
+    "justification": "Literal pathname binding prevents assigning a matching sibling's patch to another indexed address. The retained public helper also preserves successful-path aggregate scaling and refuses section mismatches. Its implementation remains live; removed aggregate tests and the unrelated typed-path test are not claimed as present guards or performance acceptance."
   },
-  "applicability": "Knowledge/onboarding file diffs between exact memory Git trees in the reviewer.",
+  "applicability": "Retained public knowledge/onboarding memory-file comparison between exact Git trees; not the leaf-wide review/trees answer.",
   "conditions": [
     "Successful raw listing, aggregate patch and blob reads use a bounded number of Git children independent of filename count.",
     "Quoted Unicode, tabs/newlines, metacharacters, rename/type changes and section ordering retain exact Git path/content identity.",
     "Section/listing mismatch refuses explicitly, and recovered failure cannot be cached as complete."
   ],
   "exclusions": [
-    "The authorized response correction removes only accidental metacharacter expansion into a matching sibling patch.",
     "Unaffected response content, ordering, evidence, refusal behavior and byte-parity checks remain unchanged.",
-    "The existing response model's admitted Unicode pathname domain is unchanged."
+    "The existing response model's admitted Unicode pathname domain is unchanged.",
+    "The leaf-wide review does not invoke this aggregate diff. The removed aggregate latency/path regression tests and unrelated typed-path-admission proof provide no current performance certification."
   ],
   "id": "INV-7MH0BR",
   "origin": {
@@ -30,7 +29,7 @@
     "leaf": "260928-MIK-L40",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "Every filename supplied by the knowledge index is a literal path; [x], ? and * must not select a sibling's patch through accidental Git pathspec pattern expansion.",
   "status": "proposed",

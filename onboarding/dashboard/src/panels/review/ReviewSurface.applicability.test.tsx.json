@@ -1,6 +1,45 @@
 {
   "path": "dashboard/src/panels/review/ReviewSurface.applicability.test.tsx",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "414196eb7345aa87d3ccc1cba87aed4b4d7945ca",
+        "content": "sha256:193841472451def1aaae2bd2392ffb01adbc40daf5ebbe6eba9ae69b6fdd2e33",
+        "locator": {
+          "end": 208,
+          "kind": "line_range",
+          "start": 188
+        }
+      },
+      "id": "RLZ-NRGQ48",
+      "invariant": "INV-N6GRSD",
+      "origin": {
+        "handoffEntry": "MIK-R86@v1 rule19 W03 retained direct treatment",
+        "leaf": "260928-MIK-L86"
+      },
+      "rationale": "The ported case asserting the subject's own direct treatment without a sibling judgment.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "78ea0fbfa154134bd920f96cd3b88d6f3ce81a9b",
+        "content": "sha256:3ab6324e8a4c22adcb7062d00833c4a32793f599a5055a11a25876b6dc412b3f",
+        "locator": {
+          "end": 209,
+          "kind": "line_range",
+          "start": 1
+        }
+      },
+      "id": "RLZ-SM4EZ9",
+      "invariant": "INV-56ZH3C",
+      "origin": {
+        "handoffEntry": "MIK-R86@v1 rule19 W03 dataset-fact retirement",
+        "leaf": "260928-MIK-L86"
+      },
+      "rationale": "The whole amended applicability module whose retired assertions this decision delimits.",
+      "role": "unclassified"
+    }
+  ],
   "references": {
     "1": {
       "note": "**The two label fixtures the cases mount, each naming its own subject and references.**",
@@ -111,6 +150,66 @@
               "name": "test_a_sibling_subjects_assessment_is_context_and_never_the_selected_subjects"
             },
             "path": "mcp/tests/test_knowledge_review_subject_isolation.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "Direct and sibling labelled assessments of the fixture",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "78ea0fbfa154134bd920f96cd3b88d6f3ce81a9b",
+            "content": "sha256:2258a030ac3d0741971a96dbce87444c2393ec66e620068faceaea8b88d15389",
+            "locator": {
+              "kind": "symbol",
+              "name": "directLabel"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "Synthetic comparison payload with retained revision selection",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "78ea0fbfa154134bd920f96cd3b88d6f3ce81a9b",
+            "content": "sha256:0b51d975604a07a54e0e9190272b099134ce718ba6553b1f8f08a155422c95be",
+            "locator": {
+              "kind": "symbol",
+              "name": "payload"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "78ea0fbfa154134bd920f96cd3b88d6f3ce81a9b",
+            "content": "sha256:c5a40d9ff200ef66c77d3db8f33d81a766e91f2ac9bf0cb4959e49a336b1c3f7",
+            "locator": {
+              "end": 59,
+              "kind": "line_range",
+              "start": 43
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "Admitted review wrapper for served answers",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "78ea0fbfa154134bd920f96cd3b88d6f3ce81a9b",
+            "content": "sha256:f4ae42c06c83d0e9acf1cafb27ed816f10042759156a44dc8cb1a1c791767bb5",
+            "locator": {
+              "kind": "symbol",
+              "name": "reviewed"
+            }
           },
           "kind": "test"
         }

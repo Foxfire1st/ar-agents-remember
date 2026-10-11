@@ -1,0 +1,41 @@
+{
+  "path": "dashboard/src/panels/review/l86.member-cards.captured.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Located entries of the member and neighbours\n\nAnchor: `entries`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d494b31a0ff7243ea030e6a2ca0d4f7af567540c",
+            "content": "sha256:3bc297d359f1021e9f8d757a44ef9d85adbe79502de612da2ee3b187125c8a30",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Recorded comparison the entries are located on\n\nAnchor: `comparison`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d494b31a0ff7243ea030e6a2ca0d4f7af567540c",
+            "content": "sha256:3bc297d359f1021e9f8d757a44ef9d85adbe79502de612da2ee3b187125c8a30",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

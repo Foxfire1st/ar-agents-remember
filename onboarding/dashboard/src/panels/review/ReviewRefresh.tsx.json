@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "b75dc4600fc8ed399cc0ccaf319ef4110246f091",
-        "content": "sha256:9d9b2f5be1a91836f53343561c2574a168c6f99ea485c674d96be89fc4267154",
+        "blob": "08e0c87565275401e0c5e2b30a49075fca660f5d",
+        "content": "sha256:09455b0c17d0ab2919580013164d8c255f72bac4bc20f5c57dcfd7548c9b25c0",
         "locator": {
           "kind": "symbol",
           "name": "ReviewRefresh"
@@ -60,12 +60,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e6ee0abfb8a942010dadb27c554387b248eb8fd4",
+            "blob": "4190152010c7774139c24b4c0fd6469d34985bb5",
             "content": "sha256:5acd976324e27e7fa0b67bb913e4266dbb3212819a44e4f3989d58a4ba143df3",
             "locator": {
-              "end": 652,
+              "end": 656,
               "kind": "line_range",
-              "start": 625
+              "start": 629
             },
             "path": "dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx"
           },
@@ -90,6 +90,87 @@
         }
       ]
     },
+    "13": {
+      "note": "Refresh control with the generation sentence",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08e0c87565275401e0c5e2b30a49075fca660f5d",
+            "content": "sha256:09455b0c17d0ab2919580013164d8c255f72bac4bc20f5c57dcfd7548c9b25c0",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewRefresh"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "08e0c87565275401e0c5e2b30a49075fca660f5d",
+            "content": "sha256:bbcddebb4571ac4a7221e09140e1e733ed409708c88e976b4040f7a8d0f7167f",
+            "locator": {
+              "end": 65,
+              "kind": "line_range",
+              "start": 47
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The refresh control invokes the separate intent-entry revalidation callback as well as onRefresh; revalidation increments the task entry’s generation rather than carrying the review’s previous identity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08e0c87565275401e0c5e2b30a49075fca660f5d",
+            "content": "sha256:49a1389ba50f20e562325ca75f3cebaf05d9101c356bce3de14ff0f192300310",
+            "locator": {
+              "end": 67,
+              "kind": "line_range",
+              "start": 58
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The refresh control invokes the separate intent-entry revalidation callback as well as onRefresh; revalidation increments the task entry’s generation rather than carrying the review’s previous identity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "701f0ed34d661ec7a976642ac4b7713502d1cb46",
+            "content": "sha256:d1caed502ba2ed4bcf3899889b8c6614d7fdd8a6f33ce4e2a8d30c90a176f1e9",
+            "locator": {
+              "end": 49,
+              "kind": "line_range",
+              "start": 43
+            },
+            "path": "dashboard/src/data/intentEntryRevalidation.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The refresh control invokes the separate intent-entry revalidation callback as well as onRefresh; revalidation increments the task entry’s generation rather than carrying the review’s previous identity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "701f0ed34d661ec7a976642ac4b7713502d1cb46",
+            "content": "sha256:942284b737c288d710402e1bed4baab4d3936b8050ee7033576a029af7a35a41",
+            "locator": {
+              "end": 62,
+              "kind": "line_range",
+              "start": 60
+            },
+            "path": "dashboard/src/data/intentEntryRevalidation.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "**The module's own statement of what a refresh is — the two possible answers and never a blend — that a failed refresh keeps the old generation, and what it deliberately is not (no polling loop, no dataset choice, the identity belongs to one question).**",
       "targets": [
@@ -106,7 +187,7 @@
         },
         {
           "anchor": {
-            "blob": "b75dc4600fc8ed399cc0ccaf319ef4110246f091",
+            "blob": "08e0c87565275401e0c5e2b30a49075fca660f5d",
             "content": "sha256:d51cff487d0e0dc18d18dc1aa29aaafd775a8205d3cdc3d13238465dbf325d98",
             "locator": {
               "kind": "symbol",
@@ -117,7 +198,7 @@
         },
         {
           "anchor": {
-            "blob": "b75dc4600fc8ed399cc0ccaf319ef4110246f091",
+            "blob": "08e0c87565275401e0c5e2b30a49075fca660f5d",
             "content": "sha256:ac8f80b71eb762968bd1af20273afec1ac7bc915f5c1981cde18ee4f6614f2b7",
             "locator": {
               "end": 31,
@@ -134,7 +215,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b75dc4600fc8ed399cc0ccaf319ef4110246f091",
+            "blob": "08e0c87565275401e0c5e2b30a49075fca660f5d",
             "content": "sha256:d933e0737b671228dd5d2f8345a77f8b1b5d91b8215c4899c6301f32bce8d4c4",
             "locator": {
               "end": 35,
@@ -151,7 +232,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b75dc4600fc8ed399cc0ccaf319ef4110246f091",
+            "blob": "08e0c87565275401e0c5e2b30a49075fca660f5d",
             "content": "sha256:3f0f55024440f6a0589d875ebc3dea380813705b28ddc021555d0c14154ff77f",
             "locator": {
               "kind": "symbol",
@@ -162,7 +243,7 @@
         },
         {
           "anchor": {
-            "blob": "b75dc4600fc8ed399cc0ccaf319ef4110246f091",
+            "blob": "08e0c87565275401e0c5e2b30a49075fca660f5d",
             "content": "sha256:2b4f9311188d4363d201539da51a11c66570ec0ca58943db218b11a6d3a9573d",
             "locator": {
               "kind": "symbol",
@@ -173,7 +254,7 @@
         },
         {
           "anchor": {
-            "blob": "b75dc4600fc8ed399cc0ccaf319ef4110246f091",
+            "blob": "08e0c87565275401e0c5e2b30a49075fca660f5d",
             "content": "sha256:1dac12a2fe1b8e3b38da9b0e4d2d3882d7a1f6522b7baaa174b11e47d202aaf5",
             "locator": {
               "end": 40,
@@ -206,12 +287,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b75dc4600fc8ed399cc0ccaf319ef4110246f091",
+            "blob": "08e0c87565275401e0c5e2b30a49075fca660f5d",
             "content": "sha256:10e8445a7e39e796d738b1857f267c73dc665510c7e1e17cc6736e3cded75fb7",
             "locator": {
-              "end": 88,
+              "end": 87,
               "kind": "line_range",
-              "start": 87
+              "start": 86
             }
           },
           "kind": "code"
@@ -223,7 +304,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b75dc4600fc8ed399cc0ccaf319ef4110246f091",
+            "blob": "08e0c87565275401e0c5e2b30a49075fca660f5d",
             "content": "sha256:d51cff487d0e0dc18d18dc1aa29aaafd775a8205d3cdc3d13238465dbf325d98",
             "locator": {
               "kind": "symbol",
@@ -239,7 +320,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b75dc4600fc8ed399cc0ccaf319ef4110246f091",
+            "blob": "08e0c87565275401e0c5e2b30a49075fca660f5d",
             "content": "sha256:d51cff487d0e0dc18d18dc1aa29aaafd775a8205d3cdc3d13238465dbf325d98",
             "locator": {
               "kind": "symbol",
@@ -255,7 +336,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7c6601ddf7269a084e197eb6ae1f071a8c3acef6",
+            "blob": "f7e576bc05a33889caaab2fe6c0396c6d8805922",
             "content": "sha256:218ee1a1f3fdf06979bf7cc3815ca96c127497b4116dc8f5145cc72917612792",
             "locator": {
               "kind": "symbol",

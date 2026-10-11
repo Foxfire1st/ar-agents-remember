@@ -36,12 +36,12 @@
         },
         {
           "anchor": {
-            "blob": "ed265675478575ff8a4d1556006a4a3afd4aa87a",
+            "blob": "1da3bab20ae2b0b070c790c820476038d043758c",
             "content": "sha256:9cb7c1608471f6293a509aa3b3a4375373af844a648aa37982391749ac30f15b",
             "locator": {
-              "end": 79,
+              "end": 77,
               "kind": "line_range",
-              "start": 78
+              "start": 76
             },
             "path": "dashboard/src/data/changeset.ts"
           },
@@ -49,12 +49,12 @@
         },
         {
           "anchor": {
-            "blob": "ed265675478575ff8a4d1556006a4a3afd4aa87a",
+            "blob": "1da3bab20ae2b0b070c790c820476038d043758c",
             "content": "sha256:b52cb6555d13a6037152c24e113693ceb949967d977b1db78682129a9278753e",
             "locator": {
-              "end": 158,
+              "end": 156,
               "kind": "line_range",
-              "start": 158
+              "start": 156
             },
             "path": "dashboard/src/data/changeset.ts"
           },
@@ -169,12 +169,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "86545416eae45e7557f551de907178a8e9174476",
+            "blob": "d0e0f3a0a209313492e7cb61a2066cf40519f66e",
             "content": "sha256:820db497595b065edcce8a209717bec28e5769ccb4bf4e60888edc4bcd8879f6",
             "locator": {
-              "end": 47,
+              "end": 58,
               "kind": "line_range",
-              "start": 46
+              "start": 57
             },
             "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
           },
@@ -298,7 +298,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "86545416eae45e7557f551de907178a8e9174476",
+            "blob": "d0e0f3a0a209313492e7cb61a2066cf40519f66e",
             "content": "sha256:35ef29daaaa65e6822669c6c30993e82853488ce26864fe60f897edf8a1a998d",
             "locator": {
               "kind": "symbol",
@@ -391,7 +391,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7c6601ddf7269a084e197eb6ae1f071a8c3acef6",
+            "blob": "f7e576bc05a33889caaab2fe6c0396c6d8805922",
             "content": "sha256:adca9206f69580ac76715414d13bcff3f68a4002df6cdd9dcc7abbc99826d1aa",
             "locator": {
               "kind": "symbol",
@@ -403,13 +403,65 @@
         },
         {
           "anchor": {
-            "blob": "7c6601ddf7269a084e197eb6ae1f071a8c3acef6",
+            "blob": "f7e576bc05a33889caaab2fe6c0396c6d8805922",
             "content": "sha256:218ee1a1f3fdf06979bf7cc3815ca96c127497b4116dc8f5145cc72917612792",
             "locator": {
               "kind": "symbol",
               "name": "ReviewSurface"
             },
             "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "27": {
+      "note": "Comparison requests are built for the recorded trees\n\nAnchor: `comparisonChangeset`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0e0f3a0a209313492e7cb61a2066cf40519f66e",
+            "content": "sha256:87dd373ebbe17730c5b9b58709d917d86c1216b96016fc924b1a41c634e35117",
+            "locator": {
+              "end": 275,
+              "kind": "line_range",
+              "start": 255
+            },
+            "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "28": {
+      "note": "One file's diff reads on the comparison's trees",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0e0f3a0a209313492e7cb61a2066cf40519f66e",
+            "content": "sha256:ceb70fcc398df510fd323bfc265183451ca0fbdac12b4d52a7258ef237d52e01",
+            "locator": {
+              "kind": "symbol",
+              "name": "diffRequestFor"
+            },
+            "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "29": {
+      "note": "Lane filters apply over the held lane facts",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e992022b063f62ec9f96f68da3bfe3ff7408c46",
+            "content": "sha256:8bf1d07a52431616198b78b8466407e2048feeda505aafd24f78a466da02568e",
+            "locator": {
+              "kind": "symbol",
+              "name": "filteredChangeSet"
+            },
+            "path": "dashboard/src/panels/changeset/reviewChangeSet.ts"
           },
           "kind": "code"
         }
@@ -573,7 +625,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "67dee1b6373245dfe7985d415a8a2f92ddbbf61a",
+            "blob": "2186995d20205912e217dc39a14fa95fcb0e42f3",
             "content": "sha256:4c1ee7ea52690bf26e08d81dae077c82c25e2b12b98eac954503f2824feda89e",
             "locator": {
               "kind": "symbol",

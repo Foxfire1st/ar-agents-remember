@@ -1,26 +1,90 @@
 {
   "path": "dashboard/src/panels/review/ReviewSurface.walkPartial.test.tsx",
-  "proves": [
+  "proves": [],
+  "realizes": [
     {
       "anchor": {
-        "blob": "f551e3387ce7c217fc7e10d1fc784a34c79058d1",
-        "content": "sha256:30699e6f5fb3f15414629a199c30dd4dea887ffc9adb82f5ab3ecb6345ee55f4",
+        "blob": "ac38a5b8e05f1421fbd9f7c3390f18ecdcdd5685",
+        "content": "sha256:ff427dd95b2772c27b4d14a5a83ec80b9109172d7ecf2d5a96482e5b791c5e52",
         "locator": {
-          "kind": "symbol",
-          "name": "control"
+          "kind": "file"
         }
       },
-      "facet": "On the served bodies of a real family with members not yet returned: `j` stops at the kept family's control with no request, and the control asks the family's review with that cursor and returns more members.",
-      "id": "PRF-R7064H",
-      "invariant": "INV-MWCCQM",
+      "id": "RLZ-6E2ZTY",
+      "invariant": "INV-TJE3KM",
       "origin": {
-        "handoffEntry": "MIK-R39@v1-kept-partial-family-stop",
-        "leaf": "260928-MIK-L39"
-      }
+        "handoffEntry": "MIK-R86@v1 W03 source-currentness native resolution",
+        "leaf": "260928-MIK-L86"
+      },
+      "rationale": "Source-currentness proof of the existing admitted semantics; not a new invariant or product scope.",
+      "role": "support"
     }
   ],
-  "realizes": [],
   "references": {
+    "10": {
+      "note": "Continued-page fixture for the partial family",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ac38a5b8e05f1421fbd9f7c3390f18ecdcdd5685",
+            "content": "sha256:3beaddff3dc97a22caa74d3be192c26f7824dff6b1fecb52d8ce31ebfdf7eb82",
+            "locator": {
+              "kind": "symbol",
+              "name": "PAGE"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "Held previous world for the partial journey",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ac38a5b8e05f1421fbd9f7c3390f18ecdcdd5685",
+            "content": "sha256:9b1c45f65c325e0eeec7abe21ad2d9d746638c8959d4bc758f36317e2d5090ef",
+            "locator": {
+              "kind": "symbol",
+              "name": "previous"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "Main-page continuation control with its cursor",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ac38a5b8e05f1421fbd9f7c3390f18ecdcdd5685",
+            "content": "sha256:7f5e7ef61827635d3f4b6dcb80d8f2a8c854c5b17ad724a9df79207c706bc3c5",
+            "locator": {
+              "kind": "symbol",
+              "name": "control"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "Continuation request carrying family and cursor",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ac38a5b8e05f1421fbd9f7c3390f18ecdcdd5685",
+            "content": "sha256:9ef769dfbd9cb7dd5f61cc57fde1f709c53e1b9ac59c50e0abb94bef6401ccc8",
+            "locator": {
+              "kind": "symbol",
+              "name": "request"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
     "5": {
       "note": "The file's statement of its data.",
       "targets": [
@@ -43,12 +107,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f551e3387ce7c217fc7e10d1fc784a34c79058d1",
+            "blob": "ac38a5b8e05f1421fbd9f7c3390f18ecdcdd5685",
             "content": "sha256:b7e92e537708a0317e678c0b4062786af5ae1cb2481c0928a6600722c18419b2",
             "locator": {
-              "end": 44,
+              "end": 39,
               "kind": "line_range",
-              "start": 35
+              "start": 30
             }
           },
           "kind": "test"
@@ -56,16 +120,16 @@
       ]
     },
     "7": {
-      "note": "`j` stops at the control of a kept real partial family and reads nothing; the control continues the family by selecting it; the end message is gone once the continuation returned members.",
+      "note": "A partial family keeps all 24 synthetic-outline rows; continuation is a main-page control that sends the unchanged family cursor in one review read.",
       "targets": [
         {
           "anchor": {
-            "blob": "de806e6b3ebc6ae9b1b27774bf900b7bb3acc57b",
-            "content": "sha256:e7c2afa1723b6f63cbb679f36928965aeca0febe9ede157c16cc1bb77ca0ce06",
+            "blob": "ac38a5b8e05f1421fbd9f7c3390f18ecdcdd5685",
+            "content": "sha256:972ac664b13a253c8b16ef5ec3c37426f2ad19aa9ca6851d2f680e5f6fa81b6e",
             "locator": {
-              "end": 94,
+              "end": 65,
               "kind": "line_range",
-              "start": 47
+              "start": 41
             }
           },
           "kind": "test"

@@ -1,0 +1,88 @@
+{
+  "path": "mcp/src/agents_remember/application/review_record_changes.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Each record and membership list is read once per read",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "01e7092a2503a3e8c512aff009445560570c1b57",
+            "content": "sha256:09d4844530989c9fcd0b09d6c9e519b6296d1b868d6d60302a38b3b6f13bab3e",
+            "locator": {
+              "kind": "symbol",
+              "name": "RecordChanges"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Family change comes from guarantee text and liveness",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "01e7092a2503a3e8c512aff009445560570c1b57",
+            "content": "sha256:6ac79db15f1629827643ada7e41d9ba74958b1fa5d5f20db7d42439419a319df",
+            "locator": {
+              "kind": "symbol",
+              "name": "guarantee"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Invariant change comes from revision, then authored wording",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "01e7092a2503a3e8c512aff009445560570c1b57",
+            "content": "sha256:73cd2857614c7ca5912fcd4e525cfdf5fa82df4fbfb7981e967e2aaba4f2b071",
+            "locator": {
+              "kind": "symbol",
+              "name": "intent"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Roster change comes from listing on each side\n\nAnchor: `membership`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "01e7092a2503a3e8c512aff009445560570c1b57",
+            "content": "sha256:dda8958adb5998248e4f9f30502680b32cb314c9f03c095ea862346071185a9d",
+            "locator": {
+              "end": 176,
+              "kind": "line_range",
+              "start": 168
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "One-sided records settle as added, removed or retired",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "01e7092a2503a3e8c512aff009445560570c1b57",
+            "content": "sha256:bbad9f4079f0a0dbe70f7a3193b16140794b776e20dc4eff78235ff7ab8e618a",
+            "locator": {
+              "kind": "symbol",
+              "name": "presence"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

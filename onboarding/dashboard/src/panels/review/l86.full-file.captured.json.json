@@ -1,0 +1,41 @@
+{
+  "path": "dashboard/src/panels/review/l86.full-file.captured.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Full-file expansion at the bound trees\n\nAnchor: `expansion`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "63d1a3ecd1c0203fa623ad16c41668db95c06293",
+            "content": "sha256:0c2c7dbd2ed1b89e8167eeffff50abc7add2eb8e27e24305c85be918084c9015",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Read through the source-content operation\n\nAnchor: `operation`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "63d1a3ecd1c0203fa623ad16c41668db95c06293",
+            "content": "sha256:0c2c7dbd2ed1b89e8167eeffff50abc7add2eb8e27e24305c85be918084c9015",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

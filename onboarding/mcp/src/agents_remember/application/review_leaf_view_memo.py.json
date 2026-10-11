@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "e6b6e18a039a38854a26c80d11402708236430ab",
+        "blob": "3f742aa3361052dfbb72adf003a4e351803ace3d",
         "content": "sha256:0eec46ab95cb5f05e7213fdd08b93624900f6c42f7f2a2489eb9fc962d333de2",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "e6b6e18a039a38854a26c80d11402708236430ab",
+        "blob": "3f742aa3361052dfbb72adf003a4e351803ace3d",
         "content": "sha256:e6fdc11115c06b7bad72c50bf3c42316da8996f1ee1044cf5a6e119e0ee8c03e",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "e6b6e18a039a38854a26c80d11402708236430ab",
+        "blob": "3f742aa3361052dfbb72adf003a4e351803ace3d",
         "content": "sha256:35f92df78ce63288a00fbcc92031c1beb900e56b76cd35980fbc49c62d82ae4b",
         "locator": {
           "kind": "symbol",
@@ -57,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "e6b6e18a039a38854a26c80d11402708236430ab",
+        "blob": "3f742aa3361052dfbb72adf003a4e351803ace3d",
         "content": "sha256:0eec46ab95cb5f05e7213fdd08b93624900f6c42f7f2a2489eb9fc962d333de2",
         "locator": {
           "kind": "symbol",
@@ -75,7 +75,7 @@
     },
     {
       "anchor": {
-        "blob": "e6b6e18a039a38854a26c80d11402708236430ab",
+        "blob": "3f742aa3361052dfbb72adf003a4e351803ace3d",
         "content": "sha256:3d16e67ac7e159315d363192723bd7f0f5adb2bd2d1b2413e9cf426c08a17e71",
         "locator": {
           "kind": "symbol",
@@ -93,7 +93,7 @@
     },
     {
       "anchor": {
-        "blob": "e6b6e18a039a38854a26c80d11402708236430ab",
+        "blob": "3f742aa3361052dfbb72adf003a4e351803ace3d",
         "content": "sha256:6798b8709c203b1597e511d4bd7157d8a2dccfb7bc3bc241286a11d07b98424a",
         "locator": {
           "kind": "symbol",
@@ -242,6 +242,67 @@
             "path": "mcp/tests/test_review_read_latency.py"
           },
           "kind": "test"
+        }
+      ]
+    },
+    "18": {
+      "note": "The memo keeps the settled worklist over the comparison's trees",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f742aa3361052dfbb72adf003a4e351803ace3d",
+            "content": "sha256:9c75b33f0f400bb0a585da6e8fbabff6d9dc3e52776c32f7fd8be8ac80d25129",
+            "locator": {
+              "kind": "symbol",
+              "name": "worklist"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3f742aa3361052dfbb72adf003a4e351803ace3d",
+            "content": "sha256:f94f926fdc8221d0e3c769419c3ecb53a20206ea97f6ed2e2b29815e98a3db9e",
+            "locator": {
+              "end": 5,
+              "kind": "line_range",
+              "start": 3
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "An unsettled worklist or unreadable side is never kept\n\nAnchor: `complete`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f742aa3361052dfbb72adf003a4e351803ace3d",
+            "content": "sha256:dec0d512600422ea502f0e3c32e5f7e51f79d230b1d0f9abb8e14f61d15514f5",
+            "locator": {
+              "end": 29,
+              "kind": "line_range",
+              "start": 27
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "The kept parts hold the worklist view and nothing else",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f742aa3361052dfbb72adf003a4e351803ace3d",
+            "content": "sha256:6ba8c03194f13fb0acc0163892a02b44bf534953a0813e1da8510ffac309c76c",
+            "locator": {
+              "kind": "symbol",
+              "name": "LeafViewParts"
+            }
+          },
+          "kind": "code"
         }
       ]
     },

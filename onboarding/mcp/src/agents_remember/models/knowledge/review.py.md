@@ -27,6 +27,7 @@ bullets:
   carries its matched condition, its inputs, its versions and its scope limitations and has no field
   for a voice, a severity or a disposition.
 
+`models/knowledge/review.py` fixes the Intent Reviewer's wire shapes: the review payload, its panes, refusals, paging and the subject catalogue result. In W03 `ReviewEntryListResult` gains the optional outline of the comparison the catalogue describes.
 ## Code Commentary
 
 ### Constants and closed vocabularies
@@ -343,6 +344,7 @@ tuple and still mean "no subject was selected" rather than "the question was not
 None recorded. The module ships the review surface display-only; the assessment-publication path is
 the existing curator authority's and is deliberately not modelled here.
 
+The addition is one optional field, `outline: ReviewOutline | None`, defaulting to none so older producers and refused reads validate unchanged; the `_require_one_outcome` validator (entries vs refusal exclusivity) is untouched. The outline model itself lives in `models/knowledge/review_outline.py` and is imported here. No other shape changes; the packet's byte-parity exception covers this field only.
 ## Evidence
 
 - The module docstring: no record kind, and the five prohibitions of the display. [35]

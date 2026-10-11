@@ -24,28 +24,26 @@ never recomputes a fact. The five new types are imported from `reviewFamily.ts` 
 
 ## 260928-MIK-L34 One File's Classification As A Single Read, For The Per-Hunk Intent Markers
 
-[`reviewLane.ts`](reviewLane.ts.md) gains `readFileClassification(repo, master, leaf, comparison, path)`: the same
-`file=<path>` read of the tree view route as `useReviewFileClassification`, as a promise rather than a hook, resolving
-to `ready` or `unavailable` (a thrown transport error becomes `unavailable` with the owner's problem, never a
-rejection). Its one caller is the per-hunk intent markers' scope (`panels/review/intentMarkerScope.ts`, MIK-R34),
-which keeps one answer per changed path for the surface on screen, so a file opened again, in another pane or card,
-asks nothing. Every mark is built from this answer unchanged (ruling 2026-09-30T16:19:34 Q2 kept MIK-R32's response
-as it is). A dataset review names no comparison, so the scope asks nothing.
+[`reviewLane.ts`](reviewLane.ts.md) exports `readFileClassification(repo, master, leaf, comparison, path)`,
+a promise-based `file=<path>` read of the tree-view route. It resolves to `ready` or `unavailable`;
+a thrown transport error becomes `unavailable` with the owner's problem, never a rejected promise.
+The per-hunk marker scope keeps one answer per changed path per surface, so reopening the same file
+asks nothing. `useReviewFileClassification` is no longer an exported hook. A dataset review names no
+comparison and its marker scope asks nothing.
 
 - One file's classification as a single read; a transport failure is `unavailable`. [2]
 - The scope that keeps it per surface, only for a tree comparison. [3]
 
 ## 260928-MIK-L32 The Unexplained-Changes Lane Adapter, And The Entry's Count On The Summary
 
-One new adapter, [`reviewLane.ts`](reviewLane.ts.md) (carded, governed here), carries the server's one classification
-of a tree comparison's changed paths (MIK-R32, `models/knowledge/review_lane.py`) as types, snake_case as served, and
-reads it through the tree view route: `useReviewLane` asks `lane=files` for the two destinations (`Unexplained
-changes`, `Unknown attribution`) and every measured path's bucket (`paths`, which the source explorer's labels and the
-technical details take on a tree comparison: rulings 2026-09-30T12:19:20 Q1 and 13:07:38 F1), and
-`useReviewFileClassification` asks `file=<path>` for one changed path's hunks, classes, links and reasons. Each answer
-is kept with the URL it answers, so a superseded answer never draws; an answer without the value it was asked for
-reads `unavailable`, never an empty lane. A dataset review names no tree comparison, so both hooks ask nothing. The
-surface makes the one lane read and hands it down.
+[`reviewLane.ts`](reviewLane.ts.md) carries the server's one classification of a tree comparison's
+changed paths as served snake_case types. `useReviewLane` asks `lane=files` for Unexplained changes,
+Unknown attribution and measured path buckets. The surface supplies that one answer to main/technical
+attribution facts and captures it for comparison-page filters and per-file badges; no source explorer
+labels remain. `readFileClassification` separately asks `file=<path>` for one changed path's hunks,
+classes, links and reasons through the marker scope. The lane hook keeps each answer bound to its
+URL; a superseded answer never draws, and a missing requested value is unavailable, not an empty
+lane. A dataset review names no comparison, so the lane hook and marker scope ask nothing.
 
 [`reviewIntentSummary.ts`](reviewIntentSummary.ts.md) now carries `attribution`, the lane's file-level count
 (`ReviewLaneSummary`), from the same summary response, on the counted/partial state and on the refused state alike

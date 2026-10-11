@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "New reviewer obligation from MIK-R86@v1 (packet a78d9ae3, Architect qualification 2026-10-08 11:18:45 UTC); implemented on the W03 successor tree 95f61633, whole-primary CODE PASS verdict 3663bf07. Evidence: candidate.json removed paths; IntentMarkers.test.tsx"
+  },
+  "applicability": "Removed reviewer file lists.",
+  "conditions": [
+    "SourceExplorer, UnexplainedLane, LaneFileFocus with tests; DiffLayout type; their exclusive laneFocus/reviewLane/markerNavigation helpers.",
+    "SourceContent stays for card Full file + MIK-R34 markers; no server answer loses a field."
+  ],
+  "exclusions": [
+    "Removing inventory/lane-classification readers (marker scope, cards, details, page keep them)."
+  ],
+  "id": "INV-VPD8AJ",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "candidate.json removed paths; IntentMarkers.test.tsx"
+      ],
+      "path": "notes/reports/l86-curator-W03/handoff-phase1.json"
+    },
+    "handoffEntry": "MIK-R86@v1 rule 18",
+    "leaf": "260928-MIK-L86",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The old SourceExplorer, UnexplainedLane and LaneFileFocus are removed while SourceContent remains the card full-file renderer.",
+  "status": "proposed",
+  "supersedes": []
+}

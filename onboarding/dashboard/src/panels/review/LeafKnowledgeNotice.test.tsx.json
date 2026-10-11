@@ -86,6 +86,70 @@
           "kind": "code"
         }
       ]
+    },
+    "6": {
+      "note": "Leaf-wide tree fixture for notice states",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a7a2dc69a4a6d5be62212e183d2e3cc81126a0db",
+            "content": "sha256:b9f6eef55ad33e4d7f2a4d97fd381c3c9e3986341e58b2d1c87ae7b20cd2b5b3",
+            "locator": {
+              "kind": "symbol",
+              "name": "trees"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Notice mount helper for read states",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a7a2dc69a4a6d5be62212e183d2e3cc81126a0db",
+            "content": "sha256:379e6f86ad024297759f7e1336a6a77a33f9c47d1fc0d1e02a6ccc503c01331d",
+            "locator": {
+              "kind": "symbol",
+              "name": "open"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Changed paths with items for file links",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a7a2dc69a4a6d5be62212e183d2e3cc81126a0db",
+            "content": "sha256:ee8ecb224bee063a82f693db6d97b3fe5db95e285e6fd69ca3fac0f8f6174693",
+            "locator": {
+              "kind": "symbol",
+              "name": "changes"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "Record-only fixture for the honest empty state",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a7a2dc69a4a6d5be62212e183d2e3cc81126a0db",
+            "content": "sha256:c89afe76d25d4d821d1f544a1e845c961704b20567db4d7afd5891f84d055c7a",
+            "locator": {
+              "kind": "symbol",
+              "name": "record"
+            }
+          },
+          "kind": "test"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

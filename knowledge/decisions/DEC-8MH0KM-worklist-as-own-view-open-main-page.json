@@ -1,0 +1,41 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "Both shapes were live (SourceExplorer/UnexplainedLane/panel vs page); every later file/worklist/disclosure change must keep the single page, the own view and the count."
+  },
+  "alternatives": [
+    {
+      "option": "Change-set page on the comparison's trees with filters and return; worklist behind its own tree row; at most twenty disclosures per main-page view; knowledge diff out of the leaf-wide view.",
+      "reason": "D48 as carried by rules 12-22: one diff owner, one worklist place, no per-file/per-item disclosures.",
+      "status": "chosen"
+    },
+    {
+      "option": "Reviewer-owned file lists with focused diffs plus the Knowledge-changes panel with raw patches and per-item facts dumps.",
+      "reason": "D48 rules it out: three file lists for the same 179 files and 1,037 panel disclosures.",
+      "reconsider_when": "A comparison the change-set routes cannot name must still be judged file by file inside the review.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Later file/worklist/disclosure work keeps the single comparison page, the own worklist view and the disclosure count."
+  ],
+  "context": "Developer direction D48 with D47 on the L86 main page (2026-10-04): unexplained/unknown attribution opens a full-page diff viewer with return; no source-change bar; default to changed first; the leaf worklist as a view of its own.",
+  "decider": "Developer direction D48 with D47 (2026-10-04).",
+  "id": "DEC-8MH0KM",
+  "links": [],
+  "origin": {
+    "handoff": {
+      "path": "notes/reports/l86-curator-W03/handoff-phase1.json"
+    },
+    "handoffEntry": "DEC-D48-worklist",
+    "leaf": "260928-MIK-L86",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

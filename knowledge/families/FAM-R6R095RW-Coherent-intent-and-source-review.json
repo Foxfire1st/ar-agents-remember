@@ -6,7 +6,6 @@
     "INV-21SDZECS",
     "INV-2E8MG43K",
     "INV-49H32B3F",
-    "INV-4DVNECH3",
     "INV-53F058MT",
     "INV-555EHWM8",
     "INV-8VQR13WX",
@@ -25,19 +24,22 @@
     "INV-Z385RTQS",
     "INV-ZE4QPG25",
     "INV-ZS9ZS878",
-    "INV-ZY0YMXMQ"
+    "INV-ZY0YMXMQ",
+    "INV-DYDMDD",
+    "INV-J1DFZS"
   ],
   "origin": {
     "leaf": "260921-ICR-L46",
     "legacyId": "e19e8b3f-aa4c-4c5b-891d-accdd3462cd0",
     "task": "260921-ICR"
   },
-  "revision": 5,
+  "revision": 6,
   "routes": [
     "dashboard/src/data",
     "dashboard/src/panels/detail-panel",
     "dashboard/src/panels/review",
-    "mcp/src/agents_remember/application"
+    "mcp/src/agents_remember/application",
+    "dashboard/src/panels/changeset"
   ],
   "schema": "ar-family/v1",
   "status": "proposed",

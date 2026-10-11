@@ -14,6 +14,7 @@ changed-file inventory stay one step away from every card (rule 5). The grouping
 `focusedCards.ts`'s. **Since MIK-R34** every excerpt that draws changed lines, and every full file, carries the
 per-hunk intent markers of the hunks it draws.
 
+The central reading path's code and test expressions for a tree comparison: one focused card per path and range, the authored rationale above the excerpt, a changed range as its diff and an unchanged range once, labelled. Full-file inspection stays inside the card with its intent markers, and the complete changed-file inventory stays one link away in the change-set viewer.
 ## Code Commentary
 
 ### Logic
@@ -23,12 +24,12 @@ per-hunk intent markers of the hunks it draws.
   otherwise `ReadyCards` renders the cards.
 - **`ReadyCards`.** A counts line (`n locations · k changed · m unchanged`, plus `not comparable` when some are
   undetermined, with `data-changed-count` and `data-unchanged-count`), the `ScopeLine` when the roster is bounded,
-  an explicit "no realization or proof entry" line when there are none, an `OpenedFile` for a path the explorer
-  opened that no card shows, then one `FocusedCard` per card.
+  an explicit "no realization or proof entry" line when there are none, then one `FocusedCard` per card.
+  There is no `OpenedFile` rendering path outside those cards.
 - **One full file at a time, in the card that asked (review F1).** The open state is the card's key; a path opened
-  from the source explorer opens in the first card of that path. One click gives one `SourceContent` read in the
+  by a card reads in that card. One click gives one `SourceContent` read in the
   clicked card; clicking again closes it. **A return to an intent marker (MIK-L34) reopens the exact card it was
-  followed from:** each card's full file is the pane `card:<key>` (the explorer's opened file is `opened`), and
+  followed from:** each card's full file is the pane `card:<key>`, and
   `ReadyCards` starts from, and follows, `returnedCard` of the marker scope's `returning` pane, not the first card of
   the path.
 - **The bounded roster (review F2).** `ScopeLine` says "These cards cover the loaded n of m members", points to the
@@ -38,7 +39,7 @@ per-hunk intent markers of the hunks it draws.
   rationale directly above the excerpt), then the side lines (`Before · L…`, `After · L…`, or one "Before and after
   · … · the same text on both sides" line for an unchanged card whose ranges match), then the excerpt, the
   MIK-R03 not-current marks (`<entry> <state> on the <side> side`), and the actions: **Full file**,
-  **All changed files (n)** (scrolls to and focuses the source explorer) and **Entry details**.
+  **All changed files (n)** (opens the comparison change-set viewer) and the grouped identifiers disclosure.
 - **A voice (`Voice`).** The heading names the invariant, the role (or "proof facet"), MIK-R11's planning mark
   when the workspace passed one (`touched invariant · planned`), and "added" or "retired in this leaf". The body is
   the authored rationale (or facet); a missing one is "No authored rationale is recorded for <ID>." (rule 2), never
@@ -80,7 +81,7 @@ per-hunk intent markers of the hunks it draws.
   loaded n of m** (`ScopeLine`, with `cardScope`).
 - The renderer writes no explanation of its own; every sentence about an entry is the entry's authored text or a
   fixed state label.
-- Diagnostic clutter stays in "Entry details" (IDs, blobs, content identities, MIK-R03 reasons).
+- Identifier/blob/content provenance stays in a grouped disclosure; not-current reasons remain open in the reading path.
 - **An excerpt that draws a changed line draws its hunk's intent mark** (MIK-L34; the candidate invariant recorded
   on `IntentMarkers.tsx.md`): nothing here decides a mark; the excerpt passes the sides it draws and places what
   `useExcerptMarking` returns.
@@ -111,7 +112,7 @@ No configured live documentation source was available for this pass.
 - Unchanged once, changed as a diff, sides that are not both regions shown apart; each marks the owner hunks whose changed lines it draws, on the sides it draws (MIK-L34). [8]
 - The excerpt marking: only the drawn sides compared, a mismatch said, an unchanged file's card never active. [9]
 - Entry details kept out of the reading path. [10]
-- The inventory jump, the full file through the landed content read (with its pane name for the intent markers since MIK-L34), and a file opened from the explorer. [11]
+- Cards open their own full file with marker identity and link all changed files to the comparison viewer; no explorer OpenedFile is rendered. [11]
 - The one caller, which mounts cards only for a tree comparison. [12]
 - The card-state cases. [13]
 - The F1 case. [14]
@@ -120,3 +121,8 @@ No configured live documentation source was available for this pass.
 ### Cross-Repo References
 
 No cross-repo boundary is crossed by this file.
+- Card collection assembly with grouping, order and counts [16]
+- Grouped ready cards with returning-card state [17]
+- One focused card with roles, voices and excerpts [18]
+- Link from a card to the full changed-file inventory [19]
+- In-card full file with markers through the shared pane [20]

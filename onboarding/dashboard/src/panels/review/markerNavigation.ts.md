@@ -19,10 +19,10 @@ target in the tree through the rail's own selection, and the return puts the rea
   opens at its member row (shared, before-only or removed memberships alike); without a family the invariant is
   selected alone (`No recorded family`, or the unknown state the target carries). A workspace without navigation sets
   the family selection directly.
-- **The return (`restore`).** `capture` records the subject, the family selection, the lane destination, the opened
+- **The return (`restore`).** `capture` records the subject, the family selection, the worklist-open flag, the opened
   path, the diff layout and the full-file choice. The restore selects the subject and family again and **clears
-  `focusSelection`**, so focus goes to the originating marker and not to the tree's selection; then the lane (after the
-  subject, because choosing a subject leaves the lane and the return may be into it), the opened path, the layout and
+  `focusSelection`**, so focus goes to the originating marker and not to the tree's selection; then the worklist flag (after the
+  subject selection), the opened path, the layout and
   the full-file choice.
 - **Back navigation.** The reviewer has no in-reviewer back history, so the way back is the visible `Back to <file>`
   control only; there is no browser-history integration.
@@ -47,6 +47,7 @@ target in the tree through the rail's own selection, and the return puts the rea
 
 No additional work is asserted by this card.
 
+- `restore` re-selects the captured subject and choice (clearing the tree's focus request so focus returns to the originating marker, not the tree selection), then restores the worklist flag, path, layout and full-file flag after the subject. There is no lane destination in the recorded position.
 ## Evidence
 
 ### Docs References
@@ -61,7 +62,7 @@ No configured live documentation source was available for this pass.
 - The recorded reading position. [2]
 - Capture and open, as the scope's moves. [3]
 - Following: close the file, select the invariant with its member context. [4]
-- The return: subject, then lane, opened path, layout and full file; the tree's focus request cleared. [5]
+- Return restores subject, worklist flag, opened path, layout and full file with selection focus cleared; no lane destination is captured. [5]
 - The workspace that passes them to its scope. [6]
 - The moves' cases. [7]
 - A follow and its return select with two arguments only, so both start the walked tree afresh. [8]
@@ -70,3 +71,6 @@ No configured live documentation source was available for this pass.
 ### Cross-Repo References
 
 No cross-repo boundary is crossed by this file.
+- Capture/open pair built from workspace state [10]
+
+- Restores the captured subject and chosen context, clears the selection focus request for marker return, then restores worklist, open path, diff layout and full-file mode. [12]

@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Bounded W03 test-port obligation from the amended packet scope (Architect qualification 2026-10-08 11:18:45 UTC)."
+  },
+  "applicability": "Mounted narrow comparison panes.",
+  "conditions": [
+    "Zero minimum widths with inherited anywhere wrapping for long comparison identities."
+  ],
+  "exclusions": [
+    "Geometry measurements (declaration pins only)."
+  ],
+  "id": "INV-58S9SG",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "ports-fifth.log: lets every complete-payload pane shrink and wrap its long identities; assertion-fates.md"
+      ],
+      "path": "notes/reports/l86-curator-W03/handoff-phase1.json"
+    },
+    "handoffEntry": "MIK-R86@v1 preservation W03 pane shrink-wrap",
+    "leaf": "260928-MIK-L86",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The current mounted reading area uses zero minimum widths and inherits anywhere wrapping for its long comparison identity.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -3,15 +3,16 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "**The module's own statement of what it exercises and the defect it catches, including that only `fetch` is stubbed.**",
+      "note": "The real surface and intent client drive the comparison read; the module isolates fetch and explicitly mocks the catalogue hook, so its historical only-fetch header is not current fixture provenance.\n\nAnchor: current fixture and renderer owners",
       "targets": [
         {
           "anchor": {
-            "blob": "7c6601ddf7269a084e197eb6ae1f071a8c3acef6",
+            "blob": "f7e576bc05a33889caaab2fe6c0396c6d8805922",
             "content": "sha256:218ee1a1f3fdf06979bf7cc3815ca96c127497b4116dc8f5145cc72917612792",
             "locator": {
-              "kind": "symbol",
-              "name": "ReviewSurface"
+              "end": 915,
+              "kind": "line_range",
+              "start": 849
             },
             "path": "dashboard/src/panels/review/ReviewSurface.tsx"
           },
@@ -19,11 +20,12 @@
         },
         {
           "anchor": {
-            "blob": "923faffc20359156074cf02aed9860c41b8b29dd",
-            "content": "sha256:a152f07db96bb7862f632571fd4595a32ef8103c304bc492ba591d2efacc3ba0",
+            "blob": "549d07c35309c25062a49eb856d3689a5a9c9b5f",
+            "content": "sha256:1b0ba6ded67ab3766300e0dea9ad82553875fd843dd265dabad3cab47290aa26",
             "locator": {
-              "kind": "symbol",
-              "name": "intentReview"
+              "end": 571,
+              "kind": "line_range",
+              "start": 546
             },
             "path": "dashboard/src/data/review.ts"
           },
@@ -31,10 +33,10 @@
         },
         {
           "anchor": {
-            "blob": "b3ca80016b54a4c39bf61537e1d2416adbbb190a",
-            "content": "sha256:76742721dec55362b2d772ab0226d9249bb9defee9c434a23d1a7b554425399d",
+            "blob": "7d1ad2e4d5fa1bd4ed215742eeb0f27e42fdc2bf",
+            "content": "sha256:a58fd71ee0744ed2be4615cd010b4ee16a9cbc15c00d40884b83202f1dfcd11e",
             "locator": {
-              "end": 14,
+              "end": 29,
               "kind": "line_range",
               "start": 1
             }
@@ -77,7 +79,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "76c1e952f0b6c4c9d708c3edf4cd8b28c0f764ff",
+            "blob": "f0c0a6b35e01547908dcf3f4feb27ba092dde069",
             "content": "sha256:c8a70740d4932f44fcd17ddf4a9effdd40f8e1654cf88a9bfacb1b2ff0886d5f",
             "locator": {
               "kind": "symbol",
@@ -159,12 +161,104 @@
         }
       ]
     },
+    "14": {
+      "note": "Nothing-recorded fixture for the absent history",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7d1ad2e4d5fa1bd4ed215742eeb0f27e42fdc2bf",
+            "content": "sha256:30731de57eaf3e3a2a4d78ad6712d4e5d45c9f347c37e2ebdcf0a5848ca0953f",
+            "locator": {
+              "kind": "symbol",
+              "name": "NOTHING_RECORDED"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "7d1ad2e4d5fa1bd4ed215742eeb0f27e42fdc2bf",
+            "content": "sha256:ec5f4e833b48a1a4a4a603dc54b6ec8d312607473af27e7d241883cce890cd59",
+            "locator": {
+              "end": 52,
+              "kind": "line_range",
+              "start": 36
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "Per-history serving world for entries and reviews",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7d1ad2e4d5fa1bd4ed215742eeb0f27e42fdc2bf",
+            "content": "sha256:3608c2a5d942a094260eecb101db9522fbf19960acb7be6e17143af47a207a89",
+            "locator": {
+              "kind": "symbol",
+              "name": "serving"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "Stubbed fetch with captured request URLs",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7d1ad2e4d5fa1bd4ed215742eeb0f27e42fdc2bf",
+            "content": "sha256:dd63d7a572ffe9647e795c55e10a8d43ed66713b0bf98ba57f93d1efba76bd38",
+            "locator": {
+              "kind": "symbol",
+              "name": "fetchFn"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "Provenance of the recorded leaf answer",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7d1ad2e4d5fa1bd4ed215742eeb0f27e42fdc2bf",
+            "content": "sha256:4f9927d485c9efef75cbf70d6f1d9584d4e82c763e2f03582bdb78f522fc84d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "provenance"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "18": {
+      "note": "Live-candidate fetch mock claiming no record",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7d1ad2e4d5fa1bd4ed215742eeb0f27e42fdc2bf",
+            "content": "sha256:9344e9ab75a47dc78959b733268554a009da7fc866bfafb028f48525b0a6e6e8",
+            "locator": {
+              "kind": "symbol",
+              "name": "fetchMock"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
     "2": {
       "note": "The one real task context the cases name, and the subject the historical target carries.",
       "targets": [
         {
           "anchor": {
-            "blob": "b3ca80016b54a4c39bf61537e1d2416adbbb190a",
+            "blob": "7d1ad2e4d5fa1bd4ed215742eeb0f27e42fdc2bf",
             "content": "sha256:e2719c50ff744f564b09dca1bbcd75610a850ea419c3ab070d8ac80d7dd5c416",
             "locator": {
               "kind": "symbol",
@@ -175,7 +269,7 @@
         },
         {
           "anchor": {
-            "blob": "b3ca80016b54a4c39bf61537e1d2416adbbb190a",
+            "blob": "7d1ad2e4d5fa1bd4ed215742eeb0f27e42fdc2bf",
             "content": "sha256:12aca035c21a8b22449ded77dedb77c8bcc657b43dbe150b2e1a8472a42b2dbe",
             "locator": {
               "kind": "symbol",
@@ -186,7 +280,7 @@
         },
         {
           "anchor": {
-            "blob": "b3ca80016b54a4c39bf61537e1d2416adbbb190a",
+            "blob": "7d1ad2e4d5fa1bd4ed215742eeb0f27e42fdc2bf",
             "content": "sha256:fa63ac2fa5a11aea6b52abe6d8e8ccc0734602fb298b3bb890073cf6539d0245",
             "locator": {
               "kind": "symbol",
@@ -197,7 +291,7 @@
         },
         {
           "anchor": {
-            "blob": "b3ca80016b54a4c39bf61537e1d2416adbbb190a",
+            "blob": "7d1ad2e4d5fa1bd4ed215742eeb0f27e42fdc2bf",
             "content": "sha256:1f3e22adf8636d5ebff1a8b8ff3a5d2e36ad8ae2e6ed3307a2d8daae328721b4",
             "locator": {
               "kind": "symbol",
@@ -213,7 +307,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b3ca80016b54a4c39bf61537e1d2416adbbb190a",
+            "blob": "7d1ad2e4d5fa1bd4ed215742eeb0f27e42fdc2bf",
             "content": "sha256:30731de57eaf3e3a2a4d78ad6712d4e5d45c9f347c37e2ebdcf0a5848ca0953f",
             "locator": {
               "kind": "symbol",
@@ -229,7 +323,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b3ca80016b54a4c39bf61537e1d2416adbbb190a",
+            "blob": "7d1ad2e4d5fa1bd4ed215742eeb0f27e42fdc2bf",
             "content": "sha256:3608c2a5d942a094260eecb101db9522fbf19960acb7be6e17143af47a207a89",
             "locator": {
               "kind": "symbol",
@@ -240,7 +334,7 @@
         },
         {
           "anchor": {
-            "blob": "b3ca80016b54a4c39bf61537e1d2416adbbb190a",
+            "blob": "7d1ad2e4d5fa1bd4ed215742eeb0f27e42fdc2bf",
             "content": "sha256:2d485bcf01b951cec2cf27bd4f94e156091be2c15026ed7e5e4963373f260239",
             "locator": {
               "kind": "symbol",
@@ -256,12 +350,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b3ca80016b54a4c39bf61537e1d2416adbbb190a",
+            "blob": "7d1ad2e4d5fa1bd4ed215742eeb0f27e42fdc2bf",
             "content": "sha256:471a029dce11b154a0f12e2b6441d2ab9236ab844732a659c219319251ebb2f8",
             "locator": {
-              "end": 112,
+              "end": 116,
               "kind": "line_range",
-              "start": 76
+              "start": 80
             }
           },
           "kind": "test"
@@ -273,12 +367,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b3ca80016b54a4c39bf61537e1d2416adbbb190a",
+            "blob": "7d1ad2e4d5fa1bd4ed215742eeb0f27e42fdc2bf",
             "content": "sha256:7c10eb74753090dd70380ac51df7b9bd59a2214017f00dca55fe88278aec334e",
             "locator": {
-              "end": 133,
+              "end": 137,
               "kind": "line_range",
-              "start": 114
+              "start": 118
             }
           },
           "kind": "test"
@@ -314,12 +408,12 @@
         },
         {
           "anchor": {
-            "blob": "7c6601ddf7269a084e197eb6ae1f071a8c3acef6",
+            "blob": "f7e576bc05a33889caaab2fe6c0396c6d8805922",
             "content": "sha256:adca9206f69580ac76715414d13bcff3f68a4002df6cdd9dcc7abbc99826d1aa",
             "locator": {
-              "end": 51,
+              "end": 60,
               "kind": "line_range",
-              "start": 44
+              "start": 53
             },
             "path": "dashboard/src/panels/review/ReviewSurface.tsx"
           },
@@ -327,12 +421,12 @@
         },
         {
           "anchor": {
-            "blob": "7c6601ddf7269a084e197eb6ae1f071a8c3acef6",
+            "blob": "f7e576bc05a33889caaab2fe6c0396c6d8805922",
             "content": "sha256:e0597fde3cbd7226ded9bc5e68cca5c9af2ec6e5b602115ef7c72801ba2b3adb",
             "locator": {
-              "end": 537,
+              "end": 773,
               "kind": "line_range",
-              "start": 528
+              "start": 764
             },
             "path": "dashboard/src/panels/review/ReviewSurface.tsx"
           },
@@ -340,12 +434,12 @@
         },
         {
           "anchor": {
-            "blob": "7c6601ddf7269a084e197eb6ae1f071a8c3acef6",
+            "blob": "f7e576bc05a33889caaab2fe6c0396c6d8805922",
             "content": "sha256:2f8c0943c3b2993756ad046e5b4cd83e16cdb76452df9818b7cb62870588d4f5",
             "locator": {
-              "end": 629,
+              "end": 865,
               "kind": "line_range",
-              "start": 629
+              "start": 865
             },
             "path": "dashboard/src/panels/review/ReviewSurface.tsx"
           },
@@ -399,7 +493,7 @@
         },
         {
           "anchor": {
-            "blob": "f84799b8607720d59167369281b8ab441bb956ee",
+            "blob": "549d07c35309c25062a49eb856d3689a5a9c9b5f",
             "content": "sha256:fad4f51a8c6ff540f5328ea7996610aaf93437ee9a0c72cc52727f9ec31714a7",
             "locator": {
               "end": 461,
@@ -412,7 +506,7 @@
         },
         {
           "anchor": {
-            "blob": "f84799b8607720d59167369281b8ab441bb956ee",
+            "blob": "549d07c35309c25062a49eb856d3689a5a9c9b5f",
             "content": "sha256:c95afe924915b87709c688acd7330bc222124ce005b14e3536ccb70616013693",
             "locator": {
               "end": 478,
@@ -425,7 +519,7 @@
         },
         {
           "anchor": {
-            "blob": "f84799b8607720d59167369281b8ab441bb956ee",
+            "blob": "549d07c35309c25062a49eb856d3689a5a9c9b5f",
             "content": "sha256:6fc09748618c4a3d071d86e8154403b431e4b843f386551ec6f2c5b2aa322b74",
             "locator": {
               "end": 486,

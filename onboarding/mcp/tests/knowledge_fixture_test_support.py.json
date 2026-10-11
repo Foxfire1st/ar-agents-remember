@@ -1,5 +1,6 @@
 {
   "path": "mcp/tests/knowledge_fixture_test_support.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {

@@ -1,5 +1,6 @@
 {
   "path": "mcp/tests/diff_scope_test_support.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "40": {

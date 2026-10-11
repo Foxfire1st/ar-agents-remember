@@ -1,0 +1,41 @@
+{
+  "path": "dashboard/src/panels/review/l86.diff.captured.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Recorded before content\n\nAnchor: `before`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0001460b9270c3ec77b70599422787ec2c450aa6",
+            "content": "sha256:d9c4d0967b736cbeab0413a5b2619fd04c5d2804fd724fa1c804ad73af572b56",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Recorded after content\n\nAnchor: `after`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0001460b9270c3ec77b70599422787ec2c450aa6",
+            "content": "sha256:d9c4d0967b736cbeab0413a5b2619fd04c5d2804fd724fa1c804ad73af572b56",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

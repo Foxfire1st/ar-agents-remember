@@ -1,0 +1,109 @@
+{
+  "path": "mcp/tests/test_comparison_changeset.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "c7526b6cbfbb42906ef104c261abe6878262c042",
+        "content": "sha256:9ddf2d332e7f5b6a2635f16d434bf083afeeb91f24194bdf50bac142e6a01644",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_comparison_paths_ignore_current_aliases_on_both_git_halves"
+        }
+      },
+      "facet": "Comparison paths ignore current aliases",
+      "id": "PRF-E8MCJT",
+      "invariant": "INV-31006K",
+      "origin": {
+        "handoffEntry": "MIK-R86@v1 rule 12",
+        "leaf": "260928-MIK-L86"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "c7526b6cbfbb42906ef104c261abe6878262c042",
+        "content": "sha256:d6e124db718e578f4b5a50d0d80ee21f849b2779c394622d527e846ee47ee59e",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_recorded_comparison_is_exact_including_dirty_and_rename_and_scoped_memory"
+        }
+      },
+      "facet": "Recorded comparison exact incl. dirty/rename/scoped memory",
+      "id": "PRF-YBQ6AD",
+      "invariant": "INV-31006K",
+      "origin": {
+        "handoffEntry": "MIK-R86@v1 rule 12",
+        "leaf": "260928-MIK-L86"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The body validates as the new comparison contract\n\nAnchor: `ComparisonChangeSet`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c7526b6cbfbb42906ef104c261abe6878262c042",
+            "content": "sha256:d4d29bf566314736e92a7fb146e78e218468cc74eb7e448983ee141b2d80bb0b",
+            "locator": {
+              "end": 16,
+              "kind": "line_range",
+              "start": 13
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Exact lists, renames, scoped memory and refusal ladder",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c7526b6cbfbb42906ef104c261abe6878262c042",
+            "content": "sha256:d6e124db718e578f4b5a50d0d80ee21f849b2779c394622d527e846ee47ee59e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_recorded_comparison_is_exact_including_dirty_and_rename_and_scoped_memory"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Git calls are counted through the serving owner module\n\nAnchor: `owner`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c7526b6cbfbb42906ef104c261abe6878262c042",
+            "content": "sha256:5b541793733ae3476f76c7fbb5e33ca49a4c949d2f4af079bbbeb285269fb5c1",
+            "locator": {
+              "end": 101,
+              "kind": "line_range",
+              "start": 93
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Historical paths ignore current filesystem aliases",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c7526b6cbfbb42906ef104c261abe6878262c042",
+            "content": "sha256:9ddf2d332e7f5b6a2635f16d434bf083afeeb91f24194bdf50bac142e6a01644",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_comparison_paths_ignore_current_aliases_on_both_git_halves"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

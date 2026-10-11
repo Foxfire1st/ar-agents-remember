@@ -30,10 +30,7 @@ tree comparison's token stand for a dataset review, which keeps the landed rende
   with…"; the guarantee is `review-center-guarantee-changed` with `data-word-diff="true"` and "Changed guarantee ·
   revision r2 → r3"; no code editor draws the prose. The family review word-diffs its guarantee too.
 - **Case 2, the dataset review (ruling Q3):** no passage, and the guarantee keeps its `DiffPane`.
-- **Case 3, review R1 F2 (same-revision guarantee):** on the tree review the centre reads "Changed guarantee ·
-  revision r2 → r2 · the same revision on both sides; its text differs", the rail reads "Joint guarantee · before ·
-  same revision, text differs" and "… after · same revision, text differs", and the details fact is
-  `guarantee: same_revision_text_changed`; the dataset form keeps "Joint guarantee · unchanged".
+- **Case 3, same-revision differing guarantee:** the tree review's centre shows the changed-guarantee label and `guarantee: same_revision_text_changed`; no rail guarantee node is mounted. The dataset-shaped fixture also has no rail guarantee node and retains a centre `DiffPane`. No surviving assertion compares before/after rail guarantee text.
 
 ### Conventions
 
@@ -42,9 +39,7 @@ tree comparison's token stand for a dataset review, which keeps the landed rende
 
 ### Invariants And Boundaries
 
-- Proves, through the real surface, two candidate invariants recorded on `IntentWordDiff.tsx.md`: no tree-comparison
-  surface calls a changed text unchanged (the centre, the rail and the details), and dataset reviews get no word
-  diff. The mutation G8 (the rail not told it reads a tree comparison) fails case 3.
+- The mounted cases retain centre statement/guarantee word diff and dataset-shaped non-word-diff rendering. Historical mutation G8 concerned the retired navigator guarantee; it is not a current rail-text proof in this file.
 
 ### Todos
 
@@ -69,8 +64,13 @@ No configured live documentation source was available for this pass.
 - The fetch stub; every `/trees` read without `invariants` gets the leaf-wide body, L32's lane read included (it reads unavailable). [3]
 - The tree review's two passages, and the dataset review as landed. [4]
 - Review R1 F2 through the real surface. [5]
-- The rail prop that makes the navigator compare bytes on a tree comparison. [6]
 
 ### Cross-Repo References
 
 No cross-repo boundary is crossed by this file.
+- Successor member and family for diff journeys [7]
+- Selection payload with statement and guarantee [8]
+- Per-route captured world for entries and cards [9]
+- Spoken announcements of changed passages [10]
+
+- When same-revision guarantee text differs, the tree review’s center states the changed text/fact; neither tree nor dataset review renders the old rail guarantee node. [6]

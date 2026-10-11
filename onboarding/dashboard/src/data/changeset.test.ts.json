@@ -129,12 +129,12 @@
         },
         {
           "anchor": {
-            "blob": "67dee1b6373245dfe7985d415a8a2f92ddbbf61a",
+            "blob": "2186995d20205912e217dc39a14fa95fcb0e42f3",
             "content": "sha256:e4edb7d19e6feb771c212a3d227a85334f9630457949ea7ddcfee68a79d81c46",
             "locator": {
-              "end": 642,
+              "end": 654,
               "kind": "line_range",
-              "start": 642
+              "start": 654
             },
             "path": "mcp/src/agents_remember/serving/changeset.py"
           },

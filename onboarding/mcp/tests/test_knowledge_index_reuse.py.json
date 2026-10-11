@@ -1,5 +1,6 @@
 {
   "path": "mcp/tests/test_knowledge_index_reuse.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "10": {

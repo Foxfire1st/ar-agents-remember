@@ -1,5 +1,6 @@
 {
   "path": "mcp/tests/test_knowledge_review_attributed_source_content.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "11": {

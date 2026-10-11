@@ -7,7 +7,7 @@
 ## Purpose
 
 **The regression pin for B7's narrow-width repair, asserted on the reviewer's OWN root.** This module mounts
-the real `ReviewSurface` over the real review client through the real `fetch` boundary — only `fetch` is stubbed
+the real `ReviewSurface` over the real review client through the real `fetch` boundary — `fetch` is stubbed and the catalogue hook is explicitly mocked
 — and then holds the DOM to the **three declarations** the round-3 layout fix consists of. It exists because the
 defect it pins was a *missing declaration*, not a wrong computation: no amount of asserting rendered text could
 have caught it, and jsdom cannot lay anything out to catch it either.
@@ -40,13 +40,7 @@ dropped again; it does not claim to be the measurement.
 
 The comparison-focused cases isolate the shared catalogue hook so its additional request cannot consume a comparison fixture. The ordinary-entry catalogue/comparison interaction is covered separately by ReviewSurface.navigation.test.tsx. Assertions follow the compact labels, central display controls and changed-region default without weakening the existing record, paging or refusal contracts.
 
-**One fixture builder and one mount, so the three cases cannot drift apart.** `payload()` returns a complete
-`ReviewPayload` whose `comparison.reference` is one 64-character token (`:41`) and whose digests are
-`"d".repeat(64)`-shaped (`:43-48`) — the measured 539 px culprit, kept because a fixture that had been made
-easier would no longer exercise the shape. `reviewed` wraps it as the `ReviewResult` the client decodes, and
-`mount()` stubs `fetch` with that body, renders `ReviewSurface` with the real repo/master/leaf, and **waits for
-both `review-surface` and `review-details`** before returning the surface root — the second wait is what makes
-the disclosure's grid present when case 3 reads it, rather than a race the case would win by luck.
+`payload()` retains the unbreakable comparison reference. The mount waits for both the real surface and provenance details before returning the surface root. The current second and third cases assert reading-area/workspace Panda atomic classes and header declarations, not the removed inline technical panes or a disclosure's second-child grid.
 
 **Case 1 — the reviewer's own vertical scrollport (`:140-150`).** Asserts `surface.dataset.testid` is
 `review-surface`, then `surface.style.overflowY === "auto"`, `height === "100%"`, and `minHeight` **zero-length**.
@@ -54,15 +48,9 @@ The `dataset.testid` assertion is the one that names the root explicitly, and th
 Intent Reviewer's surface mounted by `Cockpit`, **not** the inner `review-workspace` — the overflow this pins was
 inside *this* root, which is exactly the distinction round 2's classifier got wrong.
 
-**Case 2 — every complete-payload pane may shrink and wrap (`:152-162`).** Queries `[data-pane]` and asserts, for
-each, `minWidth` zero-length and `overflowWrap === "anywhere"`. It asserts the element set is **non-empty before
-comparing anything** (`:157`), so a query that silently found no panes cannot make the loop vacuous — the
-failure mode a "for each of none" assertion would otherwise hide.
+**Case 2 — reading-area declaration pins.** Exactly three scope-header/centre-column/unselected nodes are selected. The surface carries `ov-wrap_anywhere`; each selected node carries `min-w_0`, writes no local overflow-wrap style and has no resetting `ov-wrap_` class. The scope displays the fixture reference.
 
-**Case 3 — the disclosure's grid track and the header row (`:164-177`).** Reads the disclosure's **second child**
-(the first is its `<summary>`) and asserts it is a `DIV` whose `gridTemplateColumns` is `minmax(0, 1fr)`; then
-reads `review-subject`, takes its parent, and asserts the header row's `flexWrap === "wrap"` and the subject's
-own `overflowWrap === "anywhere"`.
+**Case 3 — provenance details and workspace declaration pins.** Details are labelled `provenance` and retain the fixture reference. The workspace carries the two-track grid class and narrow one-track media class, the root header wraps, and surface/scope classes retain anywhere wrap and min-width zero. These are DOM/style/class assertions; jsdom proves no pixel geometry.
 
 **One serialisation detail, handled rather than worked around.** `isZeroLength` accepts `"0"` or `"0px"`, with
 the reason in the comment: React writes a numeric `0` as `"0"` and jsdom keeps it, so the assertion is on the
@@ -85,9 +73,7 @@ prose is not what this pin is about.
 - **The assertions are declarations, and the module says so.** No case reads a pixel, and none may be read as
   evidence that the layout is correct at 320 px — that evidence is the served-bundle probe. A future reader who
   needs layout truth must run the browser-class route, which is Dagger-gated.
-- **Non-empty input is asserted before anything is compared.** Case 2 asserts `panes.length > 0` first, so the
-  loop cannot pass by iterating nothing; the same discipline is why case 3 asserts `tagName === "DIV"` on the
-  grid rather than reading `style` off an optional.
+- The second case asserts an exact nonempty set of three reading-area nodes before checking their atomic classes. The third asserts the workspace grid exists before checking its classes. Neither case reads layout geometry.
 - **The fixture stays hard.** The 64-character unbreakable reference is the defect's own shape; making the
   fixture easier would make the pin green about a payload that never failed.
 - **Boundary.** This module measures nothing and starts no server. It owns one stubbed `fetch` and three
@@ -117,12 +103,15 @@ names, the component each case asserts against, and the measured evidence the pi
 row occurs inside the range that row cites.
 
 - **The fixture: a complete payload whose `comparison.reference` is one unbreakable 64-character token — the measured 539 px culprit — with the digest-shaped fields alongside it.** [1]
-- The `ReviewResult` the real client decodes, and the mount that stubs only `fetch` and waits for both the surface root and the disclosure. [2]
+
+
+- The constructed ReviewResult and real mount wait for the surface and disclosure; fetch and the catalogue hook are isolated, and layout assertions do not measure geometry. [2]
+
 - The teardown cleans the mounted tree and restores stubbed globals. [3]
 - **The tolerated serialisations of a numeric zero, and why the assertion is on the length rather than on `"0px"`.** [4]
 - The own-root scrollport case checks the reviewer height and vertical overflow boundary. [5]
-- **Case 2: every `[data-pane]` is a grid item that may shrink (`min-width: 0`) and wrap its long identities (`overflow-wrap: anywhere`), with the non-empty input asserted first so the loop cannot be vacuous.** [6]
-- **Case 3: the disclosure's grid track is `minmax(0, 1fr)` — not the implicit `auto` — and the header row wraps while the subject span carries its own break opportunity.** [7]
+- Case 2: exactly three reading-area nodes carry min-width-zero atomic classes and inherit the surface's anywhere wrap without resetting it. [6]
+- Case 3: provenance details retain the reference, the workspace has wide/narrow grid atomic classes, and the root header wraps. [7]
 - The pane helper's own declaration, which the pin's first case depends on (moved unchanged into `ReviewRecordPanes.tsx` by L48). [8]
 - The pane helper's own declaration, which the pin's first case depends on (moved unchanged into `ReviewRecordPanes.tsx` by L48). [9]
 - The shared client whose read this module mounts through, and whose decode the fixture satisfies. [10]
@@ -133,3 +122,6 @@ No cross-repository behavior is exercised in this file. Every response is served
 `fetch` and names one repository namespace.
 
 No meaningful cross-repo references found.
+- Complete payload with the unbreakable reference token [11]
+- Admitted review wrapper served to the mount [12]
+- Mount through the real surface and fetch boundary [13]

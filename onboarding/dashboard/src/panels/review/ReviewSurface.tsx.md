@@ -14,6 +14,7 @@ It decides three things:
 - **what every subject selection does**, including whether it keeps the walked family tree or starts it afresh (requirement MIK-R39);
 - **what the reader's refresh does** beside re-reading.
 
+The Intent Reviewer surface composes one subject catalogue, one comparison read cycle and the family-centered workspace, and stays mounted across every selection. It decides which payload the workspace shows, what each subject selection keeps or restarts, what the refresh control re-reads, and when the change-set viewer opens as a full page over the reviewer with a way back.
 ## Code Commentary
 
 ### `useSurface`
@@ -24,7 +25,7 @@ It decides three things:
 - It holds the reader state of this file: `instead` (the failure after which the reader chose the task context), `selection` (the page request), the `useWorkspaceState()` value and one `ReviewReadCache`, created once per mounted surface.
 - `useReviewReadCycle` reads the review for the task context, the subject, the page request and the history view. `hold: navigation.settling` makes the first read wait for the catalogue's first subject, for at most the navigation's bound.
 - The retained payload is shown only when its full target key (`targetKeyOf`) equals the key of the question on screen (`coherent`), and `shown` is `shownPayload(read, coherent)`.
-- `useObservedComparison` reports the shown comparison to the navigation, which re-reads its catalogue only when the displayed snapshot pair changes.
+- `useObservedComparison` reports the shown complete comparison generation (code trees and known snapshots) to navigation. Code-only movement invalidates the catalogue too; enrichment of the same generation from unknown to known snapshots updates identity without an extra local generation bump.
 - `useRefreshReview` gives the hook `refreshReview` and `retryReview` (below); the reading area's problem block and the surface's outcome region share the one `retryReview`.
 - `reading` is computed with `readingStatusOf` only when a `frame` exists and no payload answers the question on screen. The status is keyed to the read cycle's target key and names the requested subject: `kind:id`, labelled from the catalogue entry when there is one, or "all source changes" for the task context. For a failed or refused read it carries the owner's `ReviewProblemBlock`, labelled with that subject, with retry for a failed read and the offer to open the task context for an intent-only refusal (`insteadFor`).
 
@@ -35,7 +36,7 @@ It decides three things:
 `selectSubject(subject, context, options)` is the `onSelect` the workspace and the navigation receive. In this order it:
 
 1. leaves a focus request in the workspace state: the element that has focus now, and the number of the tree intent that is current before this selection (`after`);
-2. calls `workspace.beginSelection(options?.keepTree === true)`. Only a caller that passes `keepTree` keeps the walked tree; every caller that passes no options starts it afresh. The workspace passes `keepTree` for a row of the tree and for a kept family's roster continuation. The catalogue rows, the list of all invariants, "All source changes" and an intent marker's follow and return pass none;
+2. calls `workspace.beginSelection(options?.keepTree === true)`. A caller passing `keepTree` keeps the walked tree; a subject selection without it starts the walk afresh. Outline rows, reading-area member selections and kept-family roster continuation use the existing in-tree selection path. The removed catalogue shortcuts and all-invariants list are not callers; All changes opens the comparison page without selecting a subject. Marker follow/return retain their existing selection owner;
 3. gives the subject to the navigation;
 4. clears `instead`;
 5. sets the page request to `options?.page`, which is absent for every selection except a kept family's roster continuation, so an ordinary selection also clears the earlier page request;
@@ -64,7 +65,7 @@ It decides three things:
 
 ### `ReviewPanes`
 
-`ReviewPanes` renders the workspace over `shown ?? (reading ? frame : null)` and passes `reading` only when nothing answers. It calls `useReviewLane` once, with the tree comparison number of the payload on screen, and hands the result to both `ReviewWorkspace` and `ReviewTechnicalDetails`, so every part of a tree comparison shows one classification. A dataset review names no tree comparison, and the hook is then called with no comparison number. `ReviewTechnicalDetails` receives the answer alone (or an `unanswered` label), so records are never shown under another subject, and the page controls are rendered only for an answer.
+`ReviewPanes` renders the workspace over `shown ?? (reading ? frame : null)` and passes `reading` only when nothing answers. It calls `useReviewLane` once for the displayed tree comparison, passes the answer to the workspace and technical details, and captures that lane and inventory when a comparison page opens. A dataset review names no tree comparison, so the hook asks nothing. The mounted reviewer becomes hidden and inert while the overlay is open; technical details receive the answer alone (or an `unanswered` label), and page controls render only for an answer.
 
 ### The root and the header
 
@@ -88,8 +89,8 @@ It decides three things:
 
 - Exports: `ReviewTarget` and `ReviewSurface`.
 - The record panes live in `ReviewRecordPanes.tsx`, the outcome states in `ReviewOutcome.tsx`, the refresh control in `ReviewRefresh.tsx`, the read cycle in `ReviewReadCycle.ts` and the workspace in `ReviewWorkspace.tsx`. This file composes them.
-- No component of this file calls `useState`: the reader state is held by `useSurface`.
-- The file is 679 lines.
+- `useSurface` holds the subject/read state and cache; `useReviewChangePage`, called by `ReviewPanes`, holds the change-page state and opener reference.
+- The current file is 915 lines.
 
 ### Invariants And Boundaries
 
@@ -107,12 +108,11 @@ useSurface gets recorded subjects through useReviewNavigation and passes the cho
 
 **The mounted shell (L48).** `useSurface` owns one `ReviewReadCache` per mounted surface (`useState(() => new ReviewReadCache())`), passes it to the read cycle and provides it to source content through `ReviewReadCacheContext`. It computes `reading` with `readingStatusOf` only when a `frame` exists and no payload answers the question on screen: the status is keyed to the read cycle's target key, names the requested subject (`kind:id`, labelled from the catalogue entry when there is one) and, for a failed or refused read, carries the owner's `ReviewProblemBlock` labelled with that subject (retry for a transport failure, the source-changes offer for an intent-only refusal). `ReviewPanes` renders the workspace over `shown ?? (reading ? frame : null)`, passes `reading` only when nothing answers, and hands `ReviewTechnicalDetails` the answer alone (or an `unanswered` label), so records are never shown under another subject; the page controls render only for an answer. The root publishes `data-review-pending` or `data-review-unavailable` with the requested subject, and `ReviewOutcomeRegion` receives `readingInWorkspace` so the read is stated once. `useReaderEngagement` on the root reports reader gestures to `navigation.engage` (the late-catalogue rule, see `ReviewNavigation.tsx`).
 
-**One lane read for the tree comparison on screen (MIK-L32; review R1 F1, ruling 2026-09-30T13:07:38).**
+**One lane read for the displayed tree comparison (MIK-L32, retained by L86).**
 `ReviewPanes` calls `useReviewLane(repo, master, leaf, treeComparisonNumber(payload.limitations))` once and hands
-the result as `laneRead` to both `ReviewWorkspace` (the lane's rail destinations, its center and the source
-explorer's labels) and `ReviewTechnicalDetails` (the source pane's attribution counts and lists), so every surface of
-a tree comparison shows the one classification and there is exactly one `lane=files` request per comparison. A
-dataset review names no tree comparison, so the hook asks nothing and both receive `null`.
+the answer to `ReviewWorkspace` and `ReviewTechnicalDetails`. Current sidebar destinations and main attribution
+facts use it, and the comparison page captures the same lane with its inventory instead of classifying again.
+There is no lane center or source explorer. A dataset review names no tree comparison, so the hook asks nothing.
 
 **The reviewer's keyboard zone (MIK-L33, MIK-R33 rule 7).** The surface root carries `data-kbzone="review"`, the
 keymap owner's `review` zone (`data/keymap/zones.ts`). The family tree binds its `j`/`k` change traversal
@@ -121,11 +121,10 @@ the owner's routing keeps them inert in inputs, textareas, contenteditable regio
 file's only MIK-L33 change.
 
 Since `260921-ICR-L47`, `useSurface` passes `hold: navigation.settling` to `useReviewReadCycle`, so the
-reviewer's first read waits (at most `SUBJECT_HOLD_MS`) for the catalogue to choose a subject, and calls
-`useObservedComparison(navigation.observeComparison, shown)` so the navigation re-reads its catalogue only
-when the displayed snapshot pair changes. The file grew by 3 lines to 931, over the 900-line soft rail
-(L47-R1-F5, routed to L48, which reworks this file). **L48 closed it:** the record panes moved to
-`ReviewRecordPanes.tsx`, leaving this file at 585 lines.
+first review read waits at most `SUBJECT_HOLD_MS` for the opening subject. `useObservedComparison` reports
+the displayed complete generation: code trees and known snapshots, including code-only movement. The
+L47 growth to 931 lines and L48 extraction to 585 lines are historical measurements, not this file
+size; the current file is 915 lines and retains the extracted record-pane owner.
 
 ### Conventions
 
@@ -136,20 +135,13 @@ as a type from it, its read cycle (`ReviewPageRequest`, `targetKeyOf`, `useRevie
 `./ReviewReadCycle`, the refresh control and its one derivation from `./ReviewRefresh`, the read phases
 plus the region from `./ReviewOutcome`, and the workspace together with its state hook from
 `./ReviewWorkspace` — which is what makes one module the owner of the outcome states. It declares no
-client of its own, **no longer imports `DiffPane`** — the diff engine is reached through
-`KnowledgeStatements`, which is what keeps one rule in one place — and **no longer imports
-`SourceContent`**, because an openable row is mounted by `SourceExplorer.tsx` now. Inline `style`
-objects are used throughout,
-matching the cockpit panels' idiom, and
-every list item carries a stable `key` derived from the record's own identifiers (`assessment_id`,
-`record_kind:record_id`, `signal_id`, `item_id:field`, `claim_id:path`, `claim_id`). Data attributes
-carry the machine-readable facts — `data-pane`, `data-binding`, `data-change-state`,
-`data-submission-state`, `data-testid` — so the surface's behaviour is inspectable without reading its
-text. Sub-components are plain functions taking the payload or the pane they render; **none of them
-holds state**, and the only reader state this file owns is `instead`, `selection`, the
-`useWorkspaceState()` value and (L48) the surface's read cache, all held by `useSurface` for
-`ReviewSurface`. The per-record keys and `data-*` attributes listed above now live with the record
-renderers in `ReviewRecordPanes.tsx`. `data-side-state` **no longer
+client of its own and **does not import `DiffPane` or `SourceContent`**: statement diffs remain with
+`KnowledgeStatements`, and source bytes remain with the card Full file renderer (and the retained
+dataset expression renderer), not a `SourceExplorer`. The surface imports `ChangeSetViewer` for the
+comparison overlay. Panda `css` and the local inline layout declarations style the composition. The
+per-record stable keys and `data-*` facts belong to `ReviewRecordPanes.tsx`; they are not declarations
+of this surface. `useSurface` holds `instead`, `selection`, the `useWorkspaceState()` value and the
+read cache, while `useReviewChangePage` owns the overlay state and opener reference. `data-side-state` **no longer
 appears in this file**: it moved with the statement area into
 `KnowledgeStatements.tsx`, where the same attribute still spells a side's declared state.
 
@@ -163,6 +155,7 @@ None recorded. The assessment-publication control is deliberately not shipped by
 the Source pane's expansion is a read: no control on this surface writes, and the byte-form rows stay
 identification-only until this vocabulary can carry a path as bytes.
 
+Paged collections render through a refusal-aware picker with bounds lines and one next or reset action. The panes mount over the coherent payload with the lane read and the comparison beside them, under one technical disclosure. The change-set overlay opens the existing viewer on the review comparison for the lane destinations and All changes, retains its lane and inventory while a held subject answers another comparison, shows the route refusal where no comparison is recorded, and returns with selection, scroll and focus and no new request.
 ## Evidence
 
 - The surface's hook: navigation, reader state, the cache, the read cycle, the coherent payload, the refresh and retry handlers and the reading status. [32]
@@ -182,6 +175,14 @@ identification-only until this vocabulary can carry a path as bytes.
 - The selection options a caller may pass. [46]
 - The mounted cases of which selections keep the walked tree and which start it afresh, of the stacked reveal of an in-tree read, and of the scroll after a refresh and after the retry of a failed refresh. [47]
 - The mounted cases of the mounted shell, the pending and problem states and the focus order. [48]
+- Subject labels and retry/instead routing for pending or refused reads [49]
+- Refusal rendering for pages that cannot be opened [50]
+- Refused-page extraction for paged collections [51]
+- Pane assembly over the coherent payload, lane and comparison [52]
+- Held lane read while the change-set page is open [53]
+- Open and close behavior of the change-set overlay [54]
+- What every subject selection keeps, restarts or opens [55]
+- Wiring of navigation, workspace, read cycle, cache and refresh [56]
 
 ### Docs References
 

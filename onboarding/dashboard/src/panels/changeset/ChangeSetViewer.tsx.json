@@ -1,6 +1,61 @@
 {
   "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "d0e0f3a0a209313492e7cb61a2066cf40519f66e",
+        "content": "sha256:a2404de56cc8ff34fa1806257de3e9f76a05ea6dd8b7db911f5510bf0020ca46",
+        "locator": {
+          "kind": "symbol",
+          "name": "ChangeSetWorkspace"
+        }
+      },
+      "id": "RLZ-850PX0",
+      "invariant": "INV-STW97J",
+      "origin": {
+        "handoffEntry": "MIK-R86@v1 rule 16",
+        "leaf": "260928-MIK-L86"
+      },
+      "rationale": "It chooses a vertical panel group for a narrow review page and limits the list panel before drawing the diff panel.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "d0e0f3a0a209313492e7cb61a2066cf40519f66e",
+        "content": "sha256:a2404de56cc8ff34fa1806257de3e9f76a05ea6dd8b7db911f5510bf0020ca46",
+        "locator": {
+          "kind": "symbol",
+          "name": "ChangeSetWorkspace"
+        }
+      },
+      "id": "RLZ-AGW2DT",
+      "invariant": "INV-9HMJ13",
+      "origin": {
+        "handoffEntry": "L86-CODE-R1-F09",
+        "leaf": "260928-MIK-L86"
+      },
+      "rationale": "It passes the same narrow state to both existing panes.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "d0e0f3a0a209313492e7cb61a2066cf40519f66e",
+        "content": "sha256:ea938b81e12504e03ca2a95192640036cb293d96762add432d1ad4908ef99abc",
+        "locator": {
+          "kind": "symbol",
+          "name": "ChangeSetViewer"
+        }
+      },
+      "id": "RLZ-Y7Q86F",
+      "invariant": "INV-J1DFZS",
+      "origin": {
+        "handoffEntry": "MIK-R86@v1 rule 13",
+        "leaf": "260928-MIK-L86"
+      },
+      "rationale": "It routes the comparison selector through the existing list and diff components and retains a visible route refusal.",
+      "role": "presentation"
+    }
+  ],
   "references": {
     "1": {
       "note": "The mount/target-change effect selects the leaf, task, or master request (the master branch now threads the entry `generation` as pins), fetches it through `req.then`, and reruns when target inputs change.\n\nAnchor: \"const req = changesetListRequest(repo\"; \"void req.then(\"; \"const listRequest = leafChangeset(repo, m, leaf, \\\"working\\\");\"; \"masterChangeset(repo\"; \"taskChangeset(repo, scope ?? \\\"\\\")\"",
@@ -351,6 +406,39 @@
         }
       ]
     },
+    "18": {
+      "note": "A comparison target reads through the new comparison client\n\nAnchor: `comparisonChangeset`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0e0f3a0a209313492e7cb61a2066cf40519f66e",
+            "content": "sha256:ebcc4df562b380af31c3b2a69484e03793d01d4d2d3cd7c581205031cbc237ed",
+            "locator": {
+              "end": 263,
+              "kind": "line_range",
+              "start": 260
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "Per-file diffs on a comparison read the recorded trees",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0e0f3a0a209313492e7cb61a2066cf40519f66e",
+            "content": "sha256:ceb70fcc398df510fd323bfc265183451ca0fbdac12b4d52a7258ef237d52e01",
+            "locator": {
+              "kind": "symbol",
+              "name": "diffRequestFor"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "The series view is bound to its listed generation: the list response's own generation when it names one (else the entry's pins) flows into every file expansion, with a digest/currentness/scope caption.\n\nAnchor: \"boundSeriesGeneration\"; \"seriesListMeta\"; \"SeriesGenerationTag\"; \"changeset-generation\"",
       "targets": [
@@ -398,6 +486,66 @@
               "end": 324,
               "kind": "line_range",
               "start": 324
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "The filter row shows each destination with its lane file count",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0e0f3a0a209313492e7cb61a2066cf40519f66e",
+            "content": "sha256:eb980aed1c1d1b029510d9a4b9b3c91ed7f9240426dd3cc668addc4032d3433b",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewFilters"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "The comparison header names its number and offers the way back",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0e0f3a0a209313492e7cb61a2066cf40519f66e",
+            "content": "sha256:ea938b81e12504e03ca2a95192640036cb293d96762add432d1ad4908ef99abc",
+            "locator": {
+              "kind": "symbol",
+              "name": "ChangeSetViewer"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "The filter's first file opens on entry",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0e0f3a0a209313492e7cb61a2066cf40519f66e",
+            "content": "sha256:3adafdc77488d2aa4ba5641890a19041497b13ec21130bc4d8173aac6ddd83bd",
+            "locator": {
+              "kind": "symbol",
+              "name": "useComparisonFirstFile"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d0e0f3a0a209313492e7cb61a2066cf40519f66e",
+            "content": "sha256:3db223daf07c3d05fc18695a641fe6f1cd40c5ba3ba56cdf06ada756d7b121ca",
+            "locator": {
+              "end": 836,
+              "kind": "line_range",
+              "start": 831
             }
           },
           "kind": "code"

@@ -1,6 +1,83 @@
 {
   "path": "dashboard/src/panels/review/ReviewReadCycle.family.test.tsx",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "e3355cbeb890e107225cee720162b7b673fa6a5f",
+        "content": "sha256:975eff3cc0e51986b5ee0525f29eb3c057d1caf69b8998fd6e11badc11ef4e48",
+        "locator": {
+          "end": 380,
+          "kind": "line_range",
+          "start": 300
+        }
+      },
+      "id": "RLZ-B07ZXV",
+      "invariant": "INV-EF52CQ",
+      "origin": {
+        "handoffEntry": "MIK-R86@v1 preservation W03 page refusal",
+        "leaf": "260928-MIK-L86"
+      },
+      "rationale": "The ported page-refusal case asserting explicit failure with coherent review retained.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "e3355cbeb890e107225cee720162b7b673fa6a5f",
+        "content": "sha256:7b243be98a9341d2d7833d7bdc1d811f3addc59ad4d11b40f1e1f9b26860fe13",
+        "locator": {
+          "end": 644,
+          "kind": "line_range",
+          "start": 510
+        }
+      },
+      "id": "RLZ-BJ6TQM",
+      "invariant": "INV-79SPV4",
+      "origin": {
+        "handoffEntry": "MIK-R86@v1 preservation W03 late expression",
+        "leaf": "260928-MIK-L86"
+      },
+      "rationale": "The ported late-expression case asserting reachability with layout preserved.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "e3355cbeb890e107225cee720162b7b673fa6a5f",
+        "content": "sha256:975eff3cc0e51986b5ee0525f29eb3c057d1caf69b8998fd6e11badc11ef4e48",
+        "locator": {
+          "end": 380,
+          "kind": "line_range",
+          "start": 300
+        }
+      },
+      "id": "RLZ-HWXRDM",
+      "invariant": "INV-KBXRZC",
+      "origin": {
+        "handoffEntry": "MIK-R86@v1 preservation W03 wrong subject",
+        "leaf": "260928-MIK-L86"
+      },
+      "rationale": "The ported wrong-subject case asserting explicit failure with coherent review retained.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "e3355cbeb890e107225cee720162b7b673fa6a5f",
+        "content": "sha256:975eff3cc0e51986b5ee0525f29eb3c057d1caf69b8998fd6e11badc11ef4e48",
+        "locator": {
+          "end": 380,
+          "kind": "line_range",
+          "start": 300
+        }
+      },
+      "id": "RLZ-VZXBHS",
+      "invariant": "INV-HC2KB7",
+      "origin": {
+        "handoffEntry": "MIK-R86@v1 preservation W03 conflicting content",
+        "leaf": "260928-MIK-L86"
+      },
+      "rationale": "The ported conflicting-content case asserting explicit failure with coherent review retained.",
+      "role": "unclassified"
+    }
+  ],
   "references": {
     "1": {
       "note": "**The header's provenance paragraph: bodies from the public authorship and real review route; `familyPaging.captured.json` re-captured by MIK-L31 and recorded in the receipt; the walked family opened by its `family_id`.**\n\nAnchor: \"re-captured by MIK-L31 with ICR-L44's\"; \"familyReview.capture-provenance.json\"; \"rather than relying on its position\"",
@@ -13,6 +90,134 @@
               "end": 28,
               "kind": "line_range",
               "start": 22
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "Captured outline families and members",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e3355cbeb890e107225cee720162b7b673fa6a5f",
+            "content": "sha256:4e62f773ff04213634df97c852575afd59789a9ce555bef01b74d03f5bb54cb2",
+            "locator": {
+              "kind": "symbol",
+              "name": "capturedOutline"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e3355cbeb890e107225cee720162b7b673fa6a5f",
+            "content": "sha256:45b9c7f1758ea9fe9789baf5d73ac26050b74cbdea062cf39469d4ac75e8fe29",
+            "locator": {
+              "end": 73,
+              "kind": "line_range",
+              "start": 57
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "Complete-inventory expectation helper",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e3355cbeb890e107225cee720162b7b673fa6a5f",
+            "content": "sha256:27fc0524b0ad4afae9f7010495647393c8c192375dff91d74ea2e34847c897f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "expectCompleteInventory"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e3355cbeb890e107225cee720162b7b673fa6a5f",
+            "content": "sha256:ac21d560f2cae6af446b2ba315dfe7796808dbc45fe526e7be4a48ba46587cbb",
+            "locator": {
+              "end": 107,
+              "kind": "line_range",
+              "start": 91
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "Cycle mount helper with cache and fetch",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e3355cbeb890e107225cee720162b7b673fa6a5f",
+            "content": "sha256:2ae3228d95fe14e38b22d533e394945dd0e4a3e547b9ac06a933b8e54fbad027",
+            "locator": {
+              "kind": "symbol",
+              "name": "mountCycle"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e3355cbeb890e107225cee720162b7b673fa6a5f",
+            "content": "sha256:9af5aebeb79ee16793c283593a654755ed78141a2fabffa0071fac028be5bb73",
+            "locator": {
+              "end": 137,
+              "kind": "line_range",
+              "start": 121
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "Family centre mount with roster continuation",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e3355cbeb890e107225cee720162b7b673fa6a5f",
+            "content": "sha256:42915066a00f8a15aa04b06f5b50d80817cbdce071a32cc0e45c29b603166e7e",
+            "locator": {
+              "kind": "symbol",
+              "name": "mountFamilyCenter"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e3355cbeb890e107225cee720162b7b673fa6a5f",
+            "content": "sha256:c1d128055f5e65e22d8a77d90906149f917e9de3c4c5cd63c1ea1bddbb40a624",
+            "locator": {
+              "end": 394,
+              "kind": "line_range",
+              "start": 378
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "Late-path rendering beside preserved selection",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e3355cbeb890e107225cee720162b7b673fa6a5f",
+            "content": "sha256:3aaf658b7001bd212d5c48c1e6a75929bda8c6fc36f06c4c6501d53e8fb61e8c",
+            "locator": {
+              "kind": "symbol",
+              "name": "latePaths"
             }
           },
           "kind": "test"

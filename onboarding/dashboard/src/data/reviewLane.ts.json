@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d0f7a951d7362705b3037fbcc09014d35eeb3da6",
+            "blob": "88413807ae37c2090f387e7240b7777c106afbf7",
             "content": "sha256:ed505ec47b788133675374579a5a550f1e6cf56418799e02d1e4efcbcc200d64",
             "locator": {
               "end": 16,
@@ -24,12 +24,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7c6601ddf7269a084e197eb6ae1f071a8c3acef6",
+            "blob": "f7e576bc05a33889caaab2fe6c0396c6d8805922",
             "content": "sha256:c0a3de7fe67b48f89e71059b05fe33dad9eb0330cae7845b7e3356b1a1751d68",
             "locator": {
-              "end": 341,
+              "end": 352,
               "kind": "line_range",
-              "start": 336
+              "start": 347
             },
             "path": "dashboard/src/panels/review/ReviewSurface.tsx"
           },
@@ -66,12 +66,56 @@
         }
       ]
     },
+    "12": {
+      "note": "The lane is read per comparison through the tree-view route",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "88413807ae37c2090f387e7240b7777c106afbf7",
+            "content": "sha256:ca044fb554d86b53ee7a9f656cea4fe94166872e1b7e6a168623a2f29fb13b6a",
+            "locator": {
+              "kind": "symbol",
+              "name": "useReviewLane"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The hook-form file read leaves with the focused lane view",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "88413807ae37c2090f387e7240b7777c106afbf7",
+            "content": "sha256:e4fd818a484a072780fa152651b5dfbad944eb2facc444b0b97448528dc2b176",
+            "locator": {
+              "kind": "symbol",
+              "name": "laneUrl"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "88413807ae37c2090f387e7240b7777c106afbf7",
+            "content": "sha256:6b222a4c44c7561f5c4d5b2931f2100478fbc795600b76993c659acef530e92a",
+            "locator": {
+              "end": 256,
+              "kind": "line_range",
+              "start": 248
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "The entry's count: totals only when counted.",
       "targets": [
         {
           "anchor": {
-            "blob": "d0f7a951d7362705b3037fbcc09014d35eeb3da6",
+            "blob": "88413807ae37c2090f387e7240b7777c106afbf7",
             "content": "sha256:e82fdd7d6309a4161f9dc2cc880e216df96dc89630d50018a09e324a0a37edee",
             "locator": {
               "kind": "symbol",
@@ -87,7 +131,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d0f7a951d7362705b3037fbcc09014d35eeb3da6",
+            "blob": "88413807ae37c2090f387e7240b7777c106afbf7",
             "content": "sha256:d5e75c4289a51117ee095dd569352bdbb37ed8bf83987e3b91aa1333fcdba41e",
             "locator": {
               "kind": "symbol",
@@ -98,7 +142,7 @@
         },
         {
           "anchor": {
-            "blob": "d0f7a951d7362705b3037fbcc09014d35eeb3da6",
+            "blob": "88413807ae37c2090f387e7240b7777c106afbf7",
             "content": "sha256:2850ce6c8646c12bb58d689ffbb2dbe156fa004f7a52c2893b615b52dab1d53e",
             "locator": {
               "kind": "symbol",
@@ -114,7 +158,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d0f7a951d7362705b3037fbcc09014d35eeb3da6",
+            "blob": "88413807ae37c2090f387e7240b7777c106afbf7",
             "content": "sha256:72fc1761b8a733ac25a03f51abe9eb21c35011f7e13d3a7b9e1dbc07564a107e",
             "locator": {
               "kind": "symbol",
@@ -125,7 +169,7 @@
         },
         {
           "anchor": {
-            "blob": "d0f7a951d7362705b3037fbcc09014d35eeb3da6",
+            "blob": "88413807ae37c2090f387e7240b7777c106afbf7",
             "content": "sha256:1750aa24fce9157a2212b9301afca3550b1138ff5ac8cd2d2d5454be97aef8b1",
             "locator": {
               "kind": "symbol",
@@ -136,7 +180,7 @@
         },
         {
           "anchor": {
-            "blob": "d0f7a951d7362705b3037fbcc09014d35eeb3da6",
+            "blob": "88413807ae37c2090f387e7240b7777c106afbf7",
             "content": "sha256:79c99187876fb3bcca1d90c817283adbde84eddd2efc60a7973ea7abae94008e",
             "locator": {
               "kind": "symbol",
@@ -152,7 +196,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d0f7a951d7362705b3037fbcc09014d35eeb3da6",
+            "blob": "88413807ae37c2090f387e7240b7777c106afbf7",
             "content": "sha256:db847eeeb253d265ec8d73796aa715fac4b8d09fca424aeb4ea9e8b7d956bd0f",
             "locator": {
               "kind": "symbol",
@@ -163,7 +207,7 @@
         },
         {
           "anchor": {
-            "blob": "d0f7a951d7362705b3037fbcc09014d35eeb3da6",
+            "blob": "88413807ae37c2090f387e7240b7777c106afbf7",
             "content": "sha256:899b2a9e8ec6be0f995ce1a6ae41fcae5bda1749fbaf8e489de391f7921fc627",
             "locator": {
               "kind": "symbol",
@@ -179,7 +223,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d0f7a951d7362705b3037fbcc09014d35eeb3da6",
+            "blob": "88413807ae37c2090f387e7240b7777c106afbf7",
             "content": "sha256:46b959119dcff79d88307fb45283ee89124e6235b0b06838f5acbb768616560e",
             "locator": {
               "kind": "symbol",
@@ -191,26 +235,14 @@
       ]
     },
     "7": {
-      "note": "The two reads: the lane (none for a dataset review) and one file.",
+      "note": "The lane hook asks nothing without a comparison; one-file classification remains a single-shot marker read, not a hook.\n\nAnchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "d0f7a951d7362705b3037fbcc09014d35eeb3da6",
-            "content": "sha256:ca044fb554d86b53ee7a9f656cea4fe94166872e1b7e6a168623a2f29fb13b6a",
+            "blob": "88413807ae37c2090f387e7240b7777c106afbf7",
+            "content": "sha256:c8b456228d52e3892e0765c8af2e0ad511d95bd9bce48223993b411f561ed60a",
             "locator": {
-              "kind": "symbol",
-              "name": "useReviewLane"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d0f7a951d7362705b3037fbcc09014d35eeb3da6",
-            "content": "sha256:85ae7bf244b16c318bb7fcecf8bf2ae78463929ac183ea270e2af2f0ab260cdd",
-            "locator": {
-              "kind": "symbol",
-              "name": "useReviewFileClassification"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -222,7 +254,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d0f7a951d7362705b3037fbcc09014d35eeb3da6",
+            "blob": "88413807ae37c2090f387e7240b7777c106afbf7",
             "content": "sha256:3ab1fb18ca09c216fe1c383361d6ed98476f8a2756d27a6f27df31eddca8b5a9",
             "locator": {
               "kind": "symbol",

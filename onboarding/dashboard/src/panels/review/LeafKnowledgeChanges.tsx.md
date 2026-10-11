@@ -6,63 +6,54 @@
 
 ## Purpose
 
-The panel "Knowledge changes in this leaf" of the reviewer's centre, for a tree comparison. It renders
-the leaf-wide tree read: the Git diff of the two memory trees, the currentness of each side, and the
-worklist with the history rows about its items. While that read has no tree answer, the same place shows
-a notice instead: that the view is being computed, or that it is unavailable and why.
+Render the leaf's worklist in its own open reading view and the selected record's applicable worklist
+items in subject review. The comparison-bound tree read supplies currentness and worklist facts, not
+knowledge-file patches. Missing, incomplete, unbound and unavailable measurements stay explicit.
 
+The leaf's worklist as its own open view, plus the worklist items about the selected record under a subject's review. The view reports recorded facts one line per item in open groups, with status, currentness, gate linkage and file lines that open the change-set page. It lists no knowledge file and draws no patch; identifiers close into one list per group.
 ## Code Commentary
 
-### The notice (`LeafKnowledgeNotice`)
+### Read and measurement states
 
-- It renders a visible `<section>` with the panel's own title and a status paragraph; there is no
-  collapsed disclosure.
-- For the read phase `loading` the status paragraph reads "Computing the knowledge changes of this leaf.
-  The first read of a large leaf takes several seconds; the review stays usable." The paragraph has
-  `role="status"` and the test ID `review-leaf-knowledge-computing`; the container has the test ID
-  `review-leaf-knowledge-pending`.
-- For the phase `unavailable` the status paragraph reads "The knowledge changes of this leaf are
-  unavailable: <detail>"; a separately rendered paragraph follows with "Next: <next action>." when the
-  failure names one. The container has the test ID `review-leaf-knowledge-unavailable`.
-- For every other phase it renders nothing. A dataset review (`not-converted`) therefore shows no panel.
-- The notice exists so that the place of the panel is never empty while a tree read is expected: an absent
-  panel would read as "this leaf changed no knowledge".
+`ReadNotice` renders loading, not-converted, unavailable/recovery and fallback-unavailable states as open
+status content. `completeWorklist` requires non-absent source, complete state, comparison binding and no
+incomplete entries. `WorklistProblems` names the missing measurement; it never infers no applicable item
+or complete gate linkage from an incomplete answer.
 
-### The panel (`LeafKnowledgeChanges`)
+### Own worklist view and subject items
 
-- **Status line.** The number of changed knowledge files, or "knowledge diff unavailable"; then the
-  worklist's state, item count and source, with "not bound to this comparison" when the worklist is not
-  bound; "no worklist applies" when the worklist's source is `absent`; "no worklist" when the answer
-  carries none. When the read answered for another comparison than the review shows, the line names both
-  comparison numbers.
+- **Status line.** State, item measurement, source and comparison binding; absent/unavailable is not an
+  empty measured result. A comparison mismatch is named rather than silently adopted.
 - **Degraded sides.** One line for each knowledge side that is not available or was read from a partial
   index (`degradedKnowledgeSides`).
-- **Diff** (`KnowledgeDiff`). By record, with the entries a sidecar change touched; by source path; then
-  history and other knowledge files. Each file is a disclosure with its patch, and a truncated patch says
-  so.
-- **Currentness** (`Currentness`). One disclosure per side, "before at the code base" and "after at the
-  code candidate". Its summary gives the counts of current, stale, unverifiable and unrealized invariants,
-  or the reason the side is unverifiable, or "not read"; its list gives every invariant that is not
-  current with those of its entries that are not current and their reasons.
-- **Worklist** (`Worklist`). Knowledge items with their planning mark, the planned effects no row
-  delivered, the other kinds grouped by kind, the unexplained items (`UnexplainedGroups`: one disclosure
-  per file, split by coverage state), and the gate linkage of each changed file: how many of its hunks
-  are linked. Each item shows its subject, kind, planning mark and "answered" when a row satisfies it,
-  the history rows about it by owner, disposition and identity, or "no history row about it", and its
-  facts in a nested disclosure.
+- **No embedded diff.** Neither `KnowledgeDiff` nor the old `LeafKnowledgeChanges`/`LeafKnowledgeNotice`
+  exports remain. Memory patches are comparison change-set reads, not worklist content.
+- **Currentness** (`Currentness`). Open per-side counts/reasons and non-current invariants not already
+  named by worklist items, with their non-current entries and reasons.
+- **Worklist groups** (`WorklistGroupsView`). Open knowledge, planned-undelivered, other-kind and
+  unexplained-file groups. One line per item exposes recorded state, history and facts; identifiers are
+  collected into one disclosure per group. File buttons call `onOpenPath` into the comparison viewer.
+- **Gate linkage** (`GateLinkage`). Complete and partial linkage have different text; an absent/incomplete
+  measurement does not claim all hunks measured.
+- **Subject items** (`SubjectWorklistItems`). Canonical record identity and comparison must match before
+  filtering items. Only a complete bound measurement can assert that no item names the selected record.
 - The panel offers no disposition of an item. The grouping (`worklistGroups`) and the linkage counts
   (`hunkLinkage`) come from `worklistGroups.ts`; this file renders them.
 
 ## Evidence
 
-- The module comment: what the panel shows, and that history rows answer the unexplained changes. [11]
-- The panel: status line, degraded sides, diff, currentness, worklist. [12]
-- The notice for a loading and for an unavailable read; nothing for any other phase. [13]
-- The worklist's status text. [14]
-- The diff by record, by source path, and history and other files. [15]
-- Currentness per side. [16]
-- The unexplained groups by file and coverage state. [17]
-- Knowledge items, planned effects, other kinds, unexplained groups and the gate linkage. [18]
-- The notice says that it is computing, as a status region. [19]
-- The notice names the failure and its action. [20]
-- The notice draws nothing for a dataset review. [21]
+- The module renders own-view worklist and subject items without patches; history remains recorded fact, not a UI disposition. [11]
+- LeafWorklistView composes open status, degraded sides, worklist groups, currentness and gate linkage. [12]
+- ReadNotice exposes loading, not-converted and unavailable/recovery states as status content. [13]
+- Status distinguishes absent source, complete bound item counts and partial/unbound reported items. [14]
+- Open currentness names non-current invariants not already represented in worklist items and their entry reasons. [16]
+- Open unexplained groups preserve coverage state and link their paths to the comparison viewer. [17]
+- Worklist groups and linkage remain recorded facts, with complete and incomplete measurement distinguished. [18]
+
+- One-line rendering of a worklist entry with facts and state [22]
+- Completeness rule for the worklist measurement [23]
+- Items about the selected record under a subject review [24]
+- Items about the record on the worklist view path [25]
+- Grouped open worklist with status, currentness and linkage [26]
+- One-line gate linkage of changed hunks to recorded knowledge [27]
+- The worklist as its own view in the main page [28]

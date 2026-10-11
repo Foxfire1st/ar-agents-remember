@@ -1,0 +1,39 @@
+{
+  "path": "dashboard/src/panels/review/markerCatalogue.test-utils.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Recorded facts carried into the synthetic outline",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b66804a28e84252b133932aaa6c57c5d4718ec72",
+            "content": "sha256:9dd8639f9ed708bd4a553bd9797e2546055eacc4945be6b54afdd294323e0813",
+            "locator": {
+              "kind": "symbol",
+              "name": "syntheticMarkerCatalogue"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Family review reached from the captured selection",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b66804a28e84252b133932aaa6c57c5d4718ec72",
+            "content": "sha256:3395c6c446e067c97a1938b8aa4add295ab7d84f88948126a3cf6e96389cf189",
+            "locator": {
+              "kind": "symbol",
+              "name": "syntheticMarkerFamilyReview"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

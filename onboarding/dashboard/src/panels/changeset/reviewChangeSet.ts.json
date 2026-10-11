@@ -1,0 +1,124 @@
+{
+  "path": "dashboard/src/panels/changeset/reviewChangeSet.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "0e992022b063f62ec9f96f68da3bfe3ff7408c46",
+        "content": "sha256:8bf1d07a52431616198b78b8466407e2048feeda505aafd24f78a466da02568e",
+        "locator": {
+          "kind": "symbol",
+          "name": "filteredChangeSet"
+        }
+      },
+      "id": "RLZ-K0RP08",
+      "invariant": "INV-VFT6GP",
+      "origin": {
+        "handoffEntry": "MIK-R86@v1 rule 14",
+        "leaf": "260928-MIK-L86"
+      },
+      "rationale": "It joins the held destination paths to the existing changed-file rows in destination order and suppresses the memory list under a filter.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "0e992022b063f62ec9f96f68da3bfe3ff7408c46",
+        "content": "sha256:1c602c6358d2aa366794dfcd11061192f9c8c4cad68d5a515a5ee6f99e919116",
+        "locator": {
+          "kind": "symbol",
+          "name": "fileBadge"
+        }
+      },
+      "id": "RLZ-Q2P6B6",
+      "invariant": "INV-CC4HSS",
+      "origin": {
+        "handoffEntry": "L86-CODE-R1-F10",
+        "leaf": "260928-MIK-L86"
+      },
+      "rationale": "It reads exact inventory non-text facts before destination-specific lane badge facts.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Three filters name the two lane destinations plus all",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e992022b063f62ec9f96f68da3bfe3ff7408c46",
+            "content": "sha256:542611513065194cbcd0ada275e8aa05a65d8d51d3c1541154aeccbfd0dea445",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewChangeFilter"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Each non-all filter explains itself in one sentence",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e992022b063f62ec9f96f68da3bfe3ff7408c46",
+            "content": "sha256:9b90c034d40b5a183b72f834d419c7b486d592456f1f43be05b8c644d501ed97",
+            "locator": {
+              "kind": "symbol",
+              "name": "FILTER_NOTES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Destination files come from the held lane, never a new read",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e992022b063f62ec9f96f68da3bfe3ff7408c46",
+            "content": "sha256:3f2564afd871c13f0a9b107cd079dac0e036a9e0624c1feb81843d72374db506",
+            "locator": {
+              "kind": "symbol",
+              "name": "laneFiles"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The filter intersects code paths and empties the memory half",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e992022b063f62ec9f96f68da3bfe3ff7408c46",
+            "content": "sha256:8bf1d07a52431616198b78b8466407e2048feeda505aafd24f78a466da02568e",
+            "locator": {
+              "kind": "symbol",
+              "name": "filteredChangeSet"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Rows carry bucket or hunk-count badges, non-text first",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e992022b063f62ec9f96f68da3bfe3ff7408c46",
+            "content": "sha256:1c602c6358d2aa366794dfcd11061192f9c8c4cad68d5a515a5ee6f99e919116",
+            "locator": {
+              "kind": "symbol",
+              "name": "fileBadge"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

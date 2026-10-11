@@ -6,6 +6,47 @@
 
 ## Purpose
 
+Render one admitted review payload's open main-page facts separately from compact technical identities. `ReviewMainFacts` owns the visible changed non-authored fields, detection signals, unresolved references, attribution counts, staleness and submission reason. `ReviewTechnicalDetails` keeps only record/provenance identities in its Technical details disclosure. Neither export computes a review, fetches, publishes or selects a subject.
+
+## Code Commentary
+
+### Logic
+
+- `RecordFacts` excludes statement, applicability, conditions, exclusions, essential_conditions and joint_guarantee from its non-authored field-change list. It renders detection signals and combines knowledge/source/evidence/link unresolved references, with reason content explicitly marked in the open page.
+- `ReviewMainFacts({ payload, laneRead, onAllChanges })` consumes the optional lane read for attribution count wording, otherwise displays the payload's landed counts. It prints non-current staleness, the assessment submission state/reason and next action. Its optional All changes button invokes the supplied callback; it does not fetch or own comparison selection. There is no SourceExplorer pointer or LaneAttributionLists renderer here.
+- `ReviewTechnicalDetails({ payload, unanswered, paging })` renders a pending/unavailable paragraph outside the disclosure when payload is null, then the supplied paging node and always-mounted provenance `<details>`. With a payload it prints comparison/policy, retained revision groups, source expansion reference/command, evidence/observation/assessment IDs and the dispositions accepted by the existing authority. Those dispositions are not publication approval.
+- The TechnicalDetails type still permits an optional laneRead compatibility prop, but this export does not destructure or use it; current lane attribution is in ReviewMainFacts. No old KnowledgePane, SourcePane, EvidencePane, SubmissionBlock or KnowledgeStatements delegation survives in this module.
+
+### Invariants And Boundaries
+
+The parent owns admitted payload/subject binding. A pending or unavailable subject receives no old payload's identities in TechnicalDetails. Authored content, non-authored changes and reasons must not be described as hidden behind Technical details: current main-page renderers own them. The supplied paging node is outside that disclosure. This card describes source composition, not a new browser run, narrow-width proof or whole-CODE verdict.
+
+## Evidence
+
+### Repo-Internal References
+
+
+
+- The open record facts filter authored fields and display detection signals and combined unresolved references. [12]
+
+
+
+
+- Main-page facts render lane/landed counts, staleness, submission reason and optional All changes callback. [13]
+
+
+
+
+- Compact provenance identities remain in the technical disclosure, with pending state and paging outside it. [14]
+
+
+## Historical pre-R86 account — preserved, superseded, not current assertions
+
+<details>
+<summary>Original renderer corpus, evidence identities and historical source/test custody</summary>
+
+## Purpose
+
 The review's record panes: the knowledge, source, evidence and submission records of **one admitted
 payload**, behind the workspace's "Technical details" disclosure. Extracted verbatim from
 `ReviewSurface.tsx` in `260921-ICR-L48` (the L47-R1-F5 file budget: that file went 931 → 585 lines),
@@ -109,3 +150,5 @@ No cross-repository behavior is implemented in this file. The panes render one r
 records.
 
 No meaningful cross-repo references found.
+
+</details>

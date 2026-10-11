@@ -1,5 +1,6 @@
 {
   "path": "mcp/tests/test_review_intent_summary.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "10": {

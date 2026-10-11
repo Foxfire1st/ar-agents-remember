@@ -1273,6 +1273,15 @@ The watcher keeps one naming dependency on the actual lock owner; it does not ac
 - The shared naming primitive appends the same physical lock suffix. [21]
 - Every-directory filtering retains lock suffix exclusion. [22]
 
+
+
+- A comparison with a mode is refused, not substituted [108]
+
+
+
+
+
+
 ## 260915-CAPS-L7 The Eve Capsule Launch Proof
 
 The eve adapter's route now **proves** the capsule binding it carries, before a process exists. This is
@@ -1718,3 +1727,7 @@ The existing terminal observation loop now also ticks a `LeafArchiveRecovery` cu
 debt left by a closing that could not write it is settled after restart without a person calling
 recovery. No second scheduler, queue or timer is added.
 
+The change-set routes accept `comparison=<number>` with repo, master and leaf: the range is the leaf's recorded comparison, answered in the leaf view's shape with `mode: "comparison"`. A `comparison` together with `mode` is refused (400); an unknown number or an unreadable tree is refused by name (404). Every other selector keeps its bytes. `comparison_changeset` serves the comparison over the recorded trees with one Git diff per half.
+
+- A numbered recorded comparison is looked up exactly; code/memory ranges use its recorded sides (converted memory base when present), and the list returns those four tree operands. [108]
+- A numbered recorded comparison is looked up exactly; code/memory ranges use its recorded sides (converted memory base when present), and the list returns those four tree operands. [109]

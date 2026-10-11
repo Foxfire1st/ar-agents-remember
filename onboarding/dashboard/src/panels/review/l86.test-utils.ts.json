@@ -1,0 +1,111 @@
+{
+  "path": "dashboard/src/panels/review/l86.test-utils.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Frozen-answer loader for every captured reply",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "599a5e6ebe94c5639bdcaa15638e23e3e50a0f83",
+            "content": "sha256:c86cfcdde86992ccdb167e60e91d76c49c3343b484f2c0b7b63b2e2168c7d370",
+            "locator": {
+              "kind": "symbol",
+              "name": "captured"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Selected-member identity from capture provenance",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "599a5e6ebe94c5639bdcaa15638e23e3e50a0f83",
+            "content": "sha256:4e981a339f5b726045b75018372315d9bc104bfdd9d3c14ca34ff59e9a4ccc27",
+            "locator": {
+              "kind": "symbol",
+              "name": "selectedMemberId"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Recorded L37 target for all mounted journeys",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "599a5e6ebe94c5639bdcaa15638e23e3e50a0f83",
+            "content": "sha256:b843b83ed489482ee39bc37541e9d9f850a7a68242696e2631797bbed720d2bc",
+            "locator": {
+              "kind": "symbol",
+              "name": "target"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Fetch stub with asked capture and held replies",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "599a5e6ebe94c5639bdcaa15638e23e3e50a0f83",
+            "content": "sha256:e2c184b86038ecddbcb9e58ad0dbf689590e54f95b0b273da0f364376c4140db",
+            "locator": {
+              "kind": "symbol",
+              "name": "serve"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "599a5e6ebe94c5639bdcaa15638e23e3e50a0f83",
+            "content": "sha256:c28206adc3938dfe7fe7a4a3bc0c8a8935d7b13da355cf5bd9aee8e0b6fff226",
+            "locator": {
+              "end": 49,
+              "kind": "line_range",
+              "start": 31
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Per-route reply selection for review and viewer routes",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "599a5e6ebe94c5639bdcaa15638e23e3e50a0f83",
+            "content": "sha256:1e782b79ddd49e604e3d7dace48a7b8b2e19841c0b6b7be6c809e66242958c27",
+            "locator": {
+              "kind": "symbol",
+              "name": "replyFor"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "599a5e6ebe94c5639bdcaa15638e23e3e50a0f83",
+            "content": "sha256:178a937400053c34ae66604521425fb8a5a5b69bbc5ee8790b05a31b42b5647f",
+            "locator": {
+              "end": 80,
+              "kind": "line_range",
+              "start": 64
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

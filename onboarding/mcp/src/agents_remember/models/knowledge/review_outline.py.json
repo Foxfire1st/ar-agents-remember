@@ -1,0 +1,71 @@
+{
+  "path": "mcp/src/agents_remember/models/knowledge/review_outline.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Members pair selector identity with join/leave membership",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1cda0d86a398308bab232df61f14691f70920777",
+            "content": "sha256:87e159658b191cd193d08993cecb103e286da4ad3f1c220c9b6756364b59b1b2",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewOutlineMember"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Families carry title, change and ordered members",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1cda0d86a398308bab232df61f14691f70920777",
+            "content": "sha256:bd678499c7f19ac5fe5445d113093e73fcd1e05e43a46ab88bb1b5aabfbd81fc",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewOutlineFamily"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The tree is outlined content or an unavailable reason",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1cda0d86a398308bab232df61f14691f70920777",
+            "content": "sha256:dd986d2c96aa968a9ae1b4907f22b090e3b33ec128eeab659839c0d1d8d9c90d",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewOutline"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "An unavailable outline never carries a partial tree",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1cda0d86a398308bab232df61f14691f70920777",
+            "content": "sha256:4147cb8d92ef0df9eb88fac6ad2526e4b011df951fdd9e975c37ab9ec4f36a03",
+            "locator": {
+              "kind": "symbol",
+              "name": "_unavailable_lists_nothing"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

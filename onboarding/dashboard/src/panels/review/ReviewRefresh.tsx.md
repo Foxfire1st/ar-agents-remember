@@ -38,7 +38,9 @@ never announce a candidate publication for a question the reader had merely swit
 
 ### Logic
 
-The notice leads with Comparison current or Comparison updated; exact previous/current bindings and the explanation of whole-comparison replacement remain inside Generation details. The displayed comparison is still the subject of the claim.
+The notice leads with Comparison current or Comparison updated; exact previous/current bindings and
+whole-comparison replacement are open generation-state content, not hidden Generation details.
+The displayed comparison remains the subject of the claim.
 
 **The module header is the contract, and it is the thing the first fix round had to make true.** It
 states the two possible answers, the failed-refresh rule, and the boundary (no polling, no dataset
@@ -174,3 +176,8 @@ No cross-repository behavior is implemented in this file. The claim it renders i
 repository namespace's candidate comparison, answered by the same-origin dashboard route.
 
 No meaningful cross-repo references found.
+- Refresh control with the generation sentence [13]
+
+- The refresh control invokes the separate intent-entry revalidation callback as well as onRefresh; revalidation increments the task entry’s generation rather than carrying the review’s previous identity. [14]
+- The refresh control invokes the separate intent-entry revalidation callback as well as onRefresh; revalidation increments the task entry’s generation rather than carrying the review’s previous identity. [15]
+- The refresh control invokes the separate intent-entry revalidation callback as well as onRefresh; revalidation increments the task entry’s generation rather than carrying the review’s previous identity. [16]

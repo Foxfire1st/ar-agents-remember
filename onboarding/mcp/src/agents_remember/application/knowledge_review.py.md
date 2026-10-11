@@ -8,6 +8,8 @@
 
 The review adapter assembles the shipped source, knowledge and owner-record operations over one canonical task resolution. It selects no semantic frontier, authors no verdict and stores no composed answer.
 
+The review adapter assembles the shipped source, knowledge and owner-record operations over one canonical task resolution. It selects no semantic frontier, authors no verdict and stores no composed answer. In W03 the catalogue answer it builds also carries the navigation outline.
+
 ## Shared resolution at the dashboard operation
 
 `read_complete_knowledge_review` is the complete dashboard operation: resolve the candidate once, collect owner records through `review_records_of`, and compose over that same resolution. The existing publication currentness check still recaptures both live worktrees and refuses a moved candidate. Record-only and older composition entry points keep their owned operations; they do not become another capture implementation. No composed review answer is stored on the server.
@@ -253,6 +255,9 @@ MIK-L33's base).
 - **Rank is the reason for the ports.** `serving/review.py` takes `read_knowledge_review` and
   `list_knowledge_review_entries` as ports supplied by the composition root, because a serving module
   may not import them.
+### The Catalogue Outline (MIK-R86)
+
+The W03 change is two lines: `list_knowledge_review_entries` attaches `outline=read_review_outline(resolved)` to the answered `ReviewEntryListResult`. The outline is computed from the same resolved candidate (its two memory index databases), so the tree is complete at the first catalogue paint with no added request. A refused entry read (`_entry_refused`) carries the resolution's refusal verbatim and no outline. Resolution, matrix, paging, staleness and rendering paths are untouched.
 
 ## Evidence
 
@@ -350,6 +355,12 @@ No meaningful cross-repo references found.
 ### Repo-Internal References
 
 - The dashboard operation shares one resolution with records and composition. [47]
+
+- The catalogue answer attaches the outline to the resolved candidate [48]
+
+
+- The answered outcome carries entries, totals and outline [49]
+
 ## 260921-ICR-L10 The Adapter Offers A Cursor To The Collection It Names
 
 `260921-ICR-L10` (`ICR-R10@v1`) carries a request's cursor to the collection that names it. The

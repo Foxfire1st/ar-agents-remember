@@ -8,12 +8,13 @@
 
 **The dashboard adapter of the unexplained-changes lane (MIK-R32).** It carries the server's one classification
 (`models/knowledge/review_lane.py`) as TypeScript types, snake_case as served, and reads it through the tree view
-route (`serving/review_trees.py`): `useReviewLane` asks `lane=files` for the two destinations, and
-`useReviewFileClassification` asks `file=<path>` for one changed path. MIK-R34's per-hunk intent markers read the same
-per-file answer through `readFileClassification`, a single read without a hook that their scope keeps per surface. The
+route (`serving/review_trees.py`): `useReviewLane` asks `lane=files` for the two destinations.
+MIK-R34's per-hunk intent markers read one path's `file=<path>` answer through `readFileClassification`,
+a single read without a hook that their scope keeps per surface. The
 entry's own count (`ReviewLaneSummary`) travels on the changed-intent summary (`reviewIntentSummary.ts`). A dataset
 review asks this adapter nothing.
 
+`data/reviewLane.ts` carries the unexplained-changes lane of a tree comparison: per-file buckets, per-hunk classes, and the two destinations, all classified once by the server. In W03 the per-file classification hook is gone; the single-shot read remains for the intent markers, and destinations are consumed through the change-set filter instead of a focused lane view.
 ## Code Commentary
 
 ### Logic
@@ -31,7 +32,7 @@ review asks this adapter nothing.
   owner's refusal (`reviewProblemFromRefusal`), and otherwise `unavailable` as an unreadable answer (an answer
   without the lane, as the landed git-trees captures give, is never read as an empty lane).
 - `useReviewLane(repo, master, leaf, comparison)` returns `null`, and makes no request, when `comparison` is
-  `undefined` (a dataset review); `useReviewFileClassification` also when no path is open.
+  `undefined`. There is no `useReviewFileClassification` export or focused lane-view hook.
 - **`readFileClassification(repo, master, leaf, comparison, path)` (MIK-R34).** The same `file=<path>` read as a
   promise rather than a hook: it resolves to `ready` or `unavailable` through `readOf`, and a thrown transport error
   becomes `unavailable` with `reviewProblemFromCause`, never a rejection. Its one caller is the marker scope's cache
@@ -53,6 +54,7 @@ review asks this adapter nothing.
 
 No additional work is asserted by this card.
 
+`useReviewLane` still reads a comparison's `lane=files` answer through the tree-view route and picks the lane payload; `readFileClassification` still fetches one path's `file=` classification as a single read for the per-hunk intent markers. The removed `useReviewFileClassification` hook belonged to the deleted `LaneFileFocus` component: nothing mounts a focused per-file lane view any more, so no hook-form read is needed. Bucket, hunk and destination types are unchanged.
 ## Evidence
 
 ### Docs References
@@ -70,7 +72,7 @@ No configured live documentation source was available for this pass.
 - A destination, one path's bucket, and the lane with `paths`. [4]
 - The read states, and an answer without its value read as unavailable. [5]
 - One answer kept with its URL; `null` asks nothing. [6]
-- The two reads: the lane (none for a dataset review) and one file. [7]
+- The lane hook asks nothing without a comparison; one-file classification remains a single-shot marker read, not a hook. [7]
 - One file's classification as a single read for the intent markers; a transport failure is `unavailable`. [8]
 - Its one caller: the marker scope's per-surface cache, only for a tree comparison. [9]
 - The one lane read of the surface. [10]
@@ -79,3 +81,5 @@ No configured live documentation source was available for this pass.
 ### Cross-Repo References
 
 No cross-repo boundary is crossed by this file.
+- The lane is read per comparison through the tree-view route [12]
+- The hook-form file read leaves with the focused lane view [14]

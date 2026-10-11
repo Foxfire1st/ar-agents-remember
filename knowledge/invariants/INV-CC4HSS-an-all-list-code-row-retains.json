@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Durable repair-verification obligation from R1 findings fixed on W02 and sealed in R2 (verdict b8956ffd, eleven-dispositions 42a8ec7a); ReviewSurface.sealedPageRepair.test.tsx linked binary/mode-only versus text and cockpit controls"
+  },
+  "applicability": "All-list code rows for non-text inventory changes.",
+  "conditions": [
+    "Linked binary, symlink, submodule or mode-only rows keep one non-text badge outside lane destinations.",
+    "All-linked text and cockpit entries keep their own behavior."
+  ],
+  "exclusions": [
+    "Lane-destination changes."
+  ],
+  "id": "INV-CC4HSS",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "ReviewSurface.sealedPageRepair.test.tsx linked binary/mode-only versus text and cockpit controls"
+      ],
+      "path": "notes/reports/l86-curator-W03/handoff-phase1.json"
+    },
+    "handoffEntry": "L86-CODE-R1-F10",
+    "leaf": "260928-MIK-L86",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "An All-list code row retains a non-text badge for a linked binary, symlink, submodule or mode-only inventory change even if no lane destination lists it.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -6,16 +6,15 @@
 
 ## Purpose
 
-What one listed inventory row opens **into**: the complete available content of the file at the two
+The retained card Full file renderer: complete available content at the two
 bound code trees the listing published, plus each side's own declared state and measured object
-identity. The Source pane lists what a task changed; this module is the renderer that answers the
-question the listing raises but cannot itself answer — *what are the bytes?* — and it is the whole of
-ICR-R03's rendering half.
+identity. R86 changed-path inventory actions use the comparison change-set viewer; this module preserves
+the structured side/currentness/truncation/path-bound facts and intent markers of card full-file reads.
 
 It exists because the pane before it printed a path, a status and a reproducing command and had **no
 source-content interaction at all**: a row labelled as an expansion showed no bytes, so a reader had to
 leave the surface and run the command to learn what actually changed. The module's header states that
-history and then the rules that replace it, and `ReviewSurface.tsx` reaches it from the row it renders.
+history and rendering rules; the central expression card is its surviving full-file owner.
 
 Since ICR-R16 the pane also renders the **other** answer shape this route can give. Its *typed*
 refusal (`state: "refused"`) is still R03's, rendered by this module's own `refusalBlock` and untouched;
@@ -32,22 +31,21 @@ same viewer here as everywhere else on the cockpit.
 
 Since ICR-R24@v3 it also takes the reader's two display preferences from its caller. The optional
 `mode` (a `DiffMode`) and `collapse` props are threaded straight into `DiffPane` rather than decided
-here, because the explorer above owns the diff layout and the full-file disclosure — and because a
+here, because the workspace/card owns the diff layout and the full-file disclosure — and because a
 layout switch there must not be able to reset an expansion here. Their defaults (`"split"` and `false`)
 are exactly the shipped rendering: a split diff of the whole file.
 
-Since MIK-R34 it also draws the **per-hunk intent markers** of the diff it shows, through an optional
-`markers` prop (`SourceMarkers`: the pane's name within the workspace, and the file's classification when
-the caller already holds it, as the lane's full file does). The marks themselves are decided in
-`IntentMarkers.tsx` from MIK-R32's one per-file classification; this module only threads them into the two
-panes it already reuses. Outside a tree comparison's review workspace there is no marker scope, and the
-view is exactly the landed one.
+Since MIK-R34 it also draws per-hunk intent markers through optional `markers` (`SourceMarkers`):
+the pane name and an optional classification already held by a caller. The current card Full file
+caller supplies its pane name, and `IntentMarkers` obtains the classification through the shared
+scope. Lane/explorer Full file callers are not current integrations. This renderer only threads
+marks into the existing panes; outside a tree comparison's marker scope the view stays unmarked.
 
 ## Code Commentary
 
 ### Logic
 
-Expansion leads with the actual content diff; the source side states, measured identities and boundary details remain available in a disclosure. Split/inline layout and collapse are supplied by the workspace, so content rendering remains bound to the exact listed trees.
+Expansion renders the bound source content through the shipped panes. Side states and abnormal/truncated details remain open; only measured object ids and byte lengths sit inside each side's Object identity disclosure. Normal currentness/generation/reproduction provenance has a separate disclosure, while non-current reasons, leaf-change-set admission and truncation notes remain visible. Layout and collapse are caller-supplied.
 
 **Every branch is decided by each side's declared `state`, and never by inspecting its text.** The
 header states the rule and the three cases it produces; `Sides` implements them by asking the two
@@ -57,21 +55,17 @@ predicate (`side.text !== undefined`) and it is deliberately *not* `state === "p
 recorded target is content a reader can be shown, while a `binary` side is not text and an `absent`
 side is a measured fact about that endpoint rather than an empty file.
 
-**The state line is drawn for both sides in every branch, and it carries the identity.** `sideLine`
-renders `before (state) · object <id> · <n> byte(s)` inside a paragraph carrying
-`data-testid="review-source-<name>-state"` and `data-side-state={side.state}`, with
-`data-side-truncated` beside it. The long `detail` is appended only when `needsDetail` holds —
-`side.state !== "present" || side.truncated` — because a complete untruncated `present` side needs no
-explanation, while every other state is exactly the thing the reader has to be told about. The two
-identity facts are optional and are printed only when the server measured them, so a side that has no
-object (an `absent` endpoint) says less rather than claiming an identity it does not have.
+**Both sides always state their declared state; measured identity is identifiers-only.** `sideLine`
+puts the before/after state in `review-source-<name>-state`, with `data-side-state` and
+`data-side-truncated`. Object id and byte length are optional measured facts inside Object identity;
+no object is invented for an absent endpoint. The long detail is outside that disclosure when
+`side.state !== "present" || side.truncated`, so non-present and bounded-side reasons remain open.
 
-**Both sides `present` → the shipped two-sided diff, over the two files' own bytes.** `DiffPane` is
-called with `before.text ?? ""`, `after.text ?? ""`, `language={expansion.language}` and the caller's
-`mode`/`collapse` — which default to `"split"` and `false`, the same shape the change-set viewer and the
-statement area use, and which the explorer sets when the reader has chosen an inline layout or asked
-for the whole file. The `?? ""` can only apply to a `present` side, which the model guarantees carries
-text.
+**Both sides `present` → the shipped two-sided diff over their own bytes.** `DiffPane` receives
+`before.text ?? ""`, `after.text ?? ""`, `language={expansion.language}` and caller `mode`/`collapse`
+(defaults `"split"`/`false`). The card Full file and retained dataset expression callers supply
+layout and full-file collapse state; no source explorer controls this renderer. The empty fallback
+applies only to `present` sides whose model supplies text.
 
 **One side `present` (or `symlink`) and the other not textual → the readable operand as content, the
 unavailable side's own reason above it, and an explicit no-diff line.** `review-source-no-diff-claimed`
@@ -92,9 +86,10 @@ different listed generation is a different read and an unrelated re-render is no
 describes the generation the reader was looking at even after the branch moved, which is what makes the
 `currentness` line meaningful.
 
-**`currentness`, `path_bound` and the command are the read's own provenance, and each is stated only
-when it is the fact.** `review-source-currentness` always prints the three-member `currentness` with
-its detail (a superseded read says so rather than silently showing newer bytes);
+**`currentness`, `path_bound` and the command are the read's own provenance.** Normal currentness and
+endpoint identities may live in provenance; non-current reasons remain open. The existing
+`review-source-path-bound` paragraph is outside the current-only branch, after stale reason and before
+Sides, so leaf-change-set admission remains visible for superseded content too;
 `review-source-generation` prints `generation <before> → <after> · <status>` plus `mode changed` when
 the recorded status carried one; `review-source-path-bound` is rendered **only** when
 `path_bound === "leaf_change_set"`, because the ordinary `requested_generation` bound is the row's own
@@ -139,10 +134,9 @@ is offered to the cache, which keeps it only when it is `content` with an expans
 outside a review surface has no provider and reads every time, as before. The retry clears the failure
 and bumps `attempt`, which is on the effect's dependencies, so a retried read is a real read.
 
-**Exported for the unexplained-changes lane (MIK-L32).** `SourceContentRequest` and `useSourceContentRead` are now
-exported (L32's only change to this file: two words). `LaneFileFocus.tsx` makes the same keyed, cached read of the
-listed generation for a file the lane opens and cuts its focused hunk windows from the two exact side texts, so the
-lane opens exactly the bytes the source explorer would, and a file already opened in the explorer is not read again.
+**Retained exported read API.** `SourceContentRequest` and `useSourceContentRead` remain exported,
+generation-keyed and cache-aware. Their former LaneFileFocus/source-explorer consumers are retired;
+exports do not imply a focused-lane window or inventory-row renderer still exists.
 
 **The per-hunk intent markers of this view (MIK-L34).** `SourceContent` and `Expansion` pass the optional `markers`
 down to `Sides`, which asks `IntentMarkers.useSourceMarking(expansion, mode, markers)` once. The answer is three
@@ -194,7 +188,7 @@ match the cockpit panels' idiom.
   workspace render the landed pane.
 - **The diff layout and the full-file disclosure are inputs, never state.** `mode` and `collapse` arrive
   as props and are threaded into `DiffPane`; this module holds no display preference of its own, so a
-  layout switch in the explorer cannot reset an expansion, and the defaults (`"split"`, `false`) are
+  layout switch in the workspace/card cannot reset an expansion, and the defaults (`"split"`, `false`) are
   exactly the shipped rendering.
 - **Display-only, and refusal-safe.** One read per request key and mounted review surface (a reopened
   file at the same trees is served from the surface's cache), no write, no control; a
@@ -228,33 +222,33 @@ No configured domain documentation could be checked.
 
 ### Repo-Internal References
 
-Every claim on this card is checkable in the shipped candidate: the module's own header and helpers,
-the two renderers it reuses rather than declares, the client function it reads through, the wire types
-it consumes, the surface that mounts it from an openable row, and the case module that drives the real
-surface over the real client.
+The rendering claims on this card are grounded in the current helpers, the shipped panes, the
+client and wire types, the expression card Full file mount and retained dataset expression mount.
+The retired inventory/lane mounts are historical owners, not current integration witnesses. Test
+provenance and current assertion scope are qualified separately; no execution is claimed here.
 
 - **The header's own record of the defect and of the three rendering rules, including the rule that an `absent` side is a measured fact rather than an empty file.** [1]
 - SourceContent obtains bound bytes through the client; its operand renderers reuse the existing diff and file panes. [2]
 - Text renderability is determined by the supplied text value, rather than inferred from a present-state label. [3]
-- **One side's state line, carrying its declared state, its measured object identity and size, and the detail only when the state is not a complete untruncated text.** [4]
+- Each side's declared state and abnormal/truncated detail remain open; measured object id and size alone sit inside Object identity. [4]
 - The single readable operand drawn in the shipped viewer, in its own testid host, for a textual side only. [5]
 
 - **The branch itself: both sides present draw the shipped two-sided diff, neither textual stops at the state lines, and the one-sided case states that no diff is claimed before drawing each readable side; each branch places the view's intent-marker note, marks and list around the panes it draws (MIK-L34).** [6]
 - **The bounded read stated as a prefix of the object, naming which sides are truncated.** [7]
 - **The typed refusal rendered with its code, detail, next action and offending input, and with no content beside it.** [8]
-- **The read's own provenance: currentness always, the generation and status line, the leaf-change-set bound only when that is the measured bound, and the reproducing command; the optional `markers` passed on to the sides (MIK-L34).** [9]
+- Expansion preserves non-current reason and the existing leaf-change-set admission paragraph openly before Sides, even when superseded; normal endpoint provenance and marker threading remain. [9]
 - **The four outcomes in order — transport error, loading, typed refusal, expansion — over one read keyed on the task context, the path and the two published generation ids.** [10]
-- The read's request type and hook, exported for the lane's focused diff (MIK-L32). [11]
 - Where a view's intent markers come from: the pane's name and the classification a caller already holds (MIK-L34). [12]
 - The marking of this view, and each side's own marks for the one-sided panes. [13]
-- The lane's focused diff reading through it. [14]
 - **The key the read is bound to, and the cache it reads through (L48).** [15]
 - The client function this module reads through: the typed refusal is read out of the body whatever the HTTP status, and only a body that is not this route's answer throws. [16]
 - **The wire shape a side is: the closed six-member state literal, the optional `text` that is present only for the two textual states, and the identity facts the state line prints.** [17]
 - **The wire shape one opened entry is: the two sides, both generation ids, the three-member currentness, and the `path_bound` that says which measured change set admitted the path.** [18]
 - The response envelope whose two states are the two rendered answers. [19]
-- Inventory navigation carries the exact listed trees, and the central expression card reuses this source renderer. [20]
-- **The parent that owns the open row and passes the two published tree ids down, so the read is the generation the reader was looking at — the explorer and its rows now, not `ReviewSurface.tsx`.** [21]
+
+- The central card Full file and retained dataset expression renderer supply the exact inventory trees to this source renderer; inventory navigation itself belongs to the comparison viewer. [29]
+- The central card Full file and retained dataset expression renderer supply the exact inventory trees to this source renderer; inventory navigation itself belongs to the comparison viewer. [30]
+
 - Central expression expansion reuses this bound source renderer. [22]
 - **The cases that drive the real surface and the real client over a stubbed transport: the addition, the two-sided modification, the binary side, the symlink target and the submodule pointer.** [23]
 - **The generation and boundedness cases: a superseded read keeps the listed generation's text on screen, and a truncated side is stated as a prefix beside its object size.** [24]
@@ -271,3 +265,15 @@ No cross-repository behavior is implemented in this file. The renderer draws one
 records at one repository's two bound code trees, and carries no identity that ranges beyond it.
 
 No meaningful cross-repo references found.
+- Per-hunk intent markers on the drawn full file [27]
+- Typed route refusal with code and next action [28]
+
+- Cached content read keyed on the two bound trees [31]
+- Cached content read keyed on the two bound trees [32]
+
+- Retained bound full-file source renderer for expression cards and dataset expression views [33]
+- Retained bound full-file source renderer for expression cards and dataset expression views [34]
+
+- The generation-keyed SourceContentRequest and useSourceContentRead remain exported; the focused-lane caller is retired and the retained card Full file consumer passes the review’s own code trees. [11]
+- The generation-keyed SourceContentRequest and useSourceContentRead remain exported; the focused-lane caller is retired and the retained card Full file consumer passes the review’s own code trees. [27]
+- The generation-keyed SourceContentRequest and useSourceContentRead remain exported; the focused-lane caller is retired and the retained card Full file consumer passes the review’s own code trees. [28]

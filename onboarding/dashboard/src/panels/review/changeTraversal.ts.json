@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "049d819910de65c1a893439dc57ab92d95609e5c",
-        "content": "sha256:3139e238afa80bfa91f918f2af005bccbd3424da6d1c344d40d2ac9f7ca16ea9",
+        "blob": "422af74afc1f13f1a92ba91451b83632760e6750",
+        "content": "sha256:27f0da7229df6d1083e6f0d81ec04a3d06ffef905a735430b6cd6537314f97b1",
         "locator": {
           "kind": "symbol",
           "name": "itemsOf"
@@ -16,12 +16,12 @@
         "handoffEntry": "MIK-R39@v1-kept-partial-family-stop",
         "leaf": "260928-MIK-L39"
       },
-      "rationale": "Lists the tree's rendered nodes and continuation controls in displayed order. A control is a stop when its family's item is marked `data-members-unreturned`, which the tree sets for every family it draws, kept or not.",
+      "rationale": "Lists only the rendered [data-tree-node] rows in displayed order, with each occurrence and a real-change predicate that excludes unknown and unchanged. It does not list roster continuation controls or inspect unreturned-member counts.",
       "role": "support"
     },
     {
       "anchor": {
-        "blob": "049d819910de65c1a893439dc57ab92d95609e5c",
+        "blob": "422af74afc1f13f1a92ba91451b83632760e6750",
         "content": "sha256:6ebe7990d0b985364c72a68e8ef53fc9bb45844f2a1cb6eec60145914029335a",
         "locator": {
           "kind": "symbol",
@@ -34,12 +34,12 @@
         "handoffEntry": "MIK-R39@v1-end-message-belongs-to-its-rows",
         "leaf": "260928-MIK-L39"
       },
-      "rationale": "Takes the string that names what the tree shows and says the message of every move through `useStatusFor`: the empty message for a move that selected a row, the stop message at a continuation control, the end message at an end.",
+      "rationale": "Binds the move status to the identity of the shown rows through useStatusFor. A selection clears the status; an end reports no earlier/later change and preserves the selection. Shown order/view/row changes invalidate the old status; no continuation-stop message exists.",
       "role": "propagation-persistence"
     },
     {
       "anchor": {
-        "blob": "049d819910de65c1a893439dc57ab92d95609e5c",
+        "blob": "422af74afc1f13f1a92ba91451b83632760e6750",
         "content": "sha256:612c3cee6a94e2b191d9d42e6374fdebdfa07b595632f62d8458702779b318bb",
         "locator": {
           "kind": "symbol",
@@ -57,8 +57,8 @@
     },
     {
       "anchor": {
-        "blob": "049d819910de65c1a893439dc57ab92d95609e5c",
-        "content": "sha256:0eb9bbd2a2cc6669a3c686ffd10d710542006ef5452cb3c9121f678d25711e3b",
+        "blob": "422af74afc1f13f1a92ba91451b83632760e6750",
+        "content": "sha256:7130f52a0b62856ae1670706ac5dadc2579465d01cd989fd4ba70ebabdf79bff",
         "locator": {
           "kind": "symbol",
           "name": "forward"
@@ -70,22 +70,38 @@
         "handoffEntry": "MIK-R39@v1-kept-partial-family-stop",
         "leaf": "260928-MIK-L39"
       },
-      "rationale": "Going forward it returns a family's continuation control as the stop when that family has unreturned members, with the family's label for the message, and never a selection: the move only focuses the control. It reads the rendered tree, so a kept family's control is a stop like any other.",
+      "rationale": "Chooses the next real-change row after the current position and skips the current occurrence; if none exists it returns end. Traversal selects/focuses a row, never a roster-continuation stop or automatic page read.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "422af74afc1f13f1a92ba91451b83632760e6750",
+        "content": "sha256:6fe520444a058ae2686dbbe9b10e1720a255b57b3b7f1a2267174a886f81adc2",
+        "locator": {
+          "kind": "symbol",
+          "name": "nextChange"
+        }
+      },
+      "id": "RLZ-WYVRS8",
+      "invariant": "INV-S34RA5",
+      "origin": {
+        "handoffEntry": "MIK-R86@v1 rule 8",
+        "leaf": "260928-MIK-L86"
+      },
+      "rationale": "It traverses the displayed tree positions using their primary change attribute and skips unknown or unchanged positions.",
+      "role": "presentation"
     }
   ],
   "references": {
     "11": {
-      "note": "The module's statement: stops, ends, the partial-family stop and the keymap binding.",
+      "note": "The module enumerates shown real-change rows, excludes unknown/unchanged and retains end messages/keymap ownership without roster stops.\n\nAnchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "049d819910de65c1a893439dc57ab92d95609e5c",
-            "content": "sha256:b7649b0f8bc764eb20600c990293f122a0ff2a7c06f0bc9afc55196ebe42ec76",
+            "blob": "422af74afc1f13f1a92ba91451b83632760e6750",
+            "content": "sha256:1469c0c939141cbb510b7f47a64120e899550b43da0fe68b6115f8cadbf36e8e",
             "locator": {
-              "end": 12,
-              "kind": "line_range",
-              "start": 1
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -113,7 +129,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "049d819910de65c1a893439dc57ab92d95609e5c",
+            "blob": "422af74afc1f13f1a92ba91451b83632760e6750",
             "content": "sha256:4bbcfc2c5fe239de6ecdd4f67d8b4da125ac7bc0084e08c2990bf8e69f6fc0e9",
             "locator": {
               "kind": "symbol",
@@ -125,26 +141,16 @@
       ]
     },
     "14": {
-      "note": "The forward walk and its stop at a family's continuation control.",
+      "note": "The forward walk selects the next shown real-change occurrence, or returns end; no continuation control is a traversal stop.",
       "targets": [
         {
           "anchor": {
-            "blob": "049d819910de65c1a893439dc57ab92d95609e5c",
-            "content": "sha256:3c09dbed5bb062ab09e48dc731d537329b4b682e9963ce31cf9c1e71c257d436",
+            "blob": "422af74afc1f13f1a92ba91451b83632760e6750",
+            "content": "sha256:7130f52a0b62856ae1670706ac5dadc2579465d01cd989fd4ba70ebabdf79bff",
             "locator": {
-              "kind": "symbol",
-              "name": "stopsForward"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "049d819910de65c1a893439dc57ab92d95609e5c",
-            "content": "sha256:0eb9bbd2a2cc6669a3c686ffd10d710542006ef5452cb3c9121f678d25711e3b",
-            "locator": {
-              "kind": "symbol",
-              "name": "forward"
+              "end": 59,
+              "kind": "line_range",
+              "start": 52
             }
           },
           "kind": "code"
@@ -172,7 +178,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "049d819910de65c1a893439dc57ab92d95609e5c",
+            "blob": "422af74afc1f13f1a92ba91451b83632760e6750",
             "content": "sha256:6fe520444a058ae2686dbbe9b10e1720a255b57b3b7f1a2267174a886f81adc2",
             "locator": {
               "kind": "symbol",
@@ -199,7 +205,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "049d819910de65c1a893439dc57ab92d95609e5c",
+            "blob": "422af74afc1f13f1a92ba91451b83632760e6750",
             "content": "sha256:612c3cee6a94e2b191d9d42e6374fdebdfa07b595632f62d8458702779b318bb",
             "locator": {
               "kind": "symbol",
@@ -215,7 +221,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "049d819910de65c1a893439dc57ab92d95609e5c",
+            "blob": "422af74afc1f13f1a92ba91451b83632760e6750",
             "content": "sha256:6ebe7990d0b985364c72a68e8ef53fc9bb45844f2a1cb6eec60145914029335a",
             "locator": {
               "kind": "symbol",
@@ -231,12 +237,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7c6601ddf7269a084e197eb6ae1f071a8c3acef6",
+            "blob": "f7e576bc05a33889caaab2fe6c0396c6d8805922",
             "content": "sha256:f47346ef6886c811d4b38b3e7e0fd5e46ad460796d23fc069ade7fd0d768c588",
             "locator": {
-              "end": 626,
+              "end": 862,
               "kind": "line_range",
-              "start": 625
+              "start": 861
             },
             "path": "dashboard/src/panels/review/ReviewSurface.tsx"
           },
@@ -245,15 +251,16 @@
       ]
     },
     "20": {
-      "note": "The tree passes the rows it shows: the order and each shown family with its member-row count.",
+      "note": "The tree keys traversal status by order, view and each shown row's family, selector and badge.",
       "targets": [
         {
           "anchor": {
-            "blob": "f8135bda4f4dee8a955d2749f28f82df50cbaa0e",
-            "content": "sha256:ea5f55111683e71b9aba64ddb6036a94323b57ff2808082ffaaecbc35f483492",
+            "blob": "a25a1fcc8f4dc61d8fc2f05e79105414b62f67ae",
+            "content": "sha256:bf536a0004944ce4f58146df7679816933698bf5f9b0fd2cd023f5defa2f61f9",
             "locator": {
-              "kind": "symbol",
-              "name": "rowsShown"
+              "end": 462,
+              "kind": "line_range",
+              "start": 436
             },
             "path": "dashboard/src/panels/review/FamilyTree.tsx"
           },
@@ -279,21 +286,51 @@
         }
       ]
     },
-    "22": {
-      "note": "The mounted cases of a status dropped when a held answer brings a later change, for one, three and five further presses.",
+    "23": {
+      "note": "Rendered-row stops excluding unknown and unchanged",
       "targets": [
         {
           "anchor": {
-            "blob": "c03d822684615321e5d3468512cebb7ef546913c",
-            "content": "sha256:ce66640c6d469cd74ef629bb75b35c9c0df0ca25d4730d94578df8a1d3c08a24",
+            "blob": "422af74afc1f13f1a92ba91451b83632760e6750",
+            "content": "sha256:27f0da7229df6d1083e6f0d81ec04a3d06ffef905a735430b6cd6537314f97b1",
             "locator": {
-              "end": 259,
-              "kind": "line_range",
-              "start": 215
-            },
-            "path": "dashboard/src/panels/review/ReviewSurface.walk.test.tsx"
+              "kind": "symbol",
+              "name": "itemsOf"
+            }
           },
-          "kind": "test"
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "Forward and backward steps over occurrences",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "422af74afc1f13f1a92ba91451b83632760e6750",
+            "content": "sha256:7130f52a0b62856ae1670706ac5dadc2579465d01cd989fd4ba70ebabdf79bff",
+            "locator": {
+              "kind": "symbol",
+              "name": "forward"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "26": {
+      "note": "Stayed-selection messages at either end",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "422af74afc1f13f1a92ba91451b83632760e6750",
+            "content": "sha256:c69741528186ee674d3d64972cc1721e98a24a98f10492061fc228c2543d438a",
+            "locator": {
+              "kind": "symbol",
+              "name": "outcomeMessage"
+            }
+          },
+          "kind": "code"
         }
       ]
     }

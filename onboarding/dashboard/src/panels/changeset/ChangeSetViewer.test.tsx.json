@@ -2,6 +2,40 @@
   "path": "dashboard/src/panels/changeset/ChangeSetViewer.test.tsx",
   "realizes": [],
   "references": {
+    "10": {
+      "note": "The lane destinations and inventory travel in the context\n\nAnchor: `reviewContext`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4cfe67fb3ddc8444cd70872d60e5d0787d8a1e0a",
+            "content": "sha256:4c9655462bcf72b7146b1e9cd5d11abf1b8f0f1198916d812acc6dd6abe0371e",
+            "locator": {
+              "end": 575,
+              "kind": "line_range",
+              "start": 568
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "An empty filter clears the diff instead of keeping a stale one\n\nAnchor: `changeset-pane`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4cfe67fb3ddc8444cd70872d60e5d0787d8a1e0a",
+            "content": "sha256:e38dc804a615717dfa7c8fd2d80f8385ac7f3425662a5fa01a3c225e7ef54369",
+            "locator": {
+              "end": 597,
+              "kind": "line_range",
+              "start": 593
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
     "7": {
       "note": "The case mounts the shell explicitly on Operations.\n\nAnchor: `CockpitShell`",
       "targets": [
@@ -30,6 +64,23 @@
             "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
           },
           "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The comparison case mounts with number and review context\n\nAnchor: `comparison`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4cfe67fb3ddc8444cd70872d60e5d0787d8a1e0a",
+            "content": "sha256:fb0e60624509ac10433e489da00cf875efde399e841c645c6ab366d9ce199170",
+            "locator": {
+              "end": 569,
+              "kind": "line_range",
+              "start": 562
+            }
+          },
+          "kind": "test"
         }
       ]
     }

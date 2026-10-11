@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Durable repair-verification obligation from R1 findings fixed on W02 and sealed in R2 (verdict b8956ffd, eleven-dispositions 42a8ec7a); ReviewSurface.worklistRepair.test.tsx; browser/report.md INV2/FAM1 actual route answers"
+  },
+  "applicability": "Selected-subject UUID resolution to worklist records.",
+  "conditions": [
+    "Resolution runs through the bound outline to canonical INV/FAM identifiers.",
+    "Missing identity is exposed, never rendered as empty work."
+  ],
+  "exclusions": [
+    "Empty-work claims from unresolvable subjects."
+  ],
+  "id": "INV-VQFVF8",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "ReviewSurface.worklistRepair.test.tsx; browser/report.md INV2/FAM1 actual route answers"
+      ],
+      "path": "notes/reports/l86-curator-W03/handoff-phase1.json"
+    },
+    "handoffEntry": "L86-CODE-R1-F02",
+    "leaf": "260928-MIK-L86",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Selected subject UUIDs resolve through the bound outline to canonical INV/FAM record identifiers before selecting worklist items.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -26,6 +26,7 @@ These fixtures are not current project knowledge, new authored judgments or moun
 
 No additional work is asserted by this card.
 
+Assessed family and invariant fixtures serve with successor revisions and a family-less subject, counting requests per route. The member case asserts owner-before-concern ordering with retained context, the successor case asserts both authoritative revision identities beside their statements, and the no-family case asserts statement, expressions and evidence share one centre without invented family.
 ## Evidence
 
 ### Docs References
@@ -46,3 +47,7 @@ The case or captured property below records the input this card describes.
 Capture provenance names disposable repository evidence; it grants no production knowledge authority.
 
 No additional production cross-repository contract is asserted.
+- Assessed family fixture with successor revision [3]
+- Family-less subject fixture for no-family intent [4]
+- Per-subject serving world with request capture [5]
+- Centre mount helper for subject journeys [6]

@@ -2,21 +2,20 @@
   "admission": {
     "criteria": [
       "spans_locations",
-      "guarded_by_test",
       "prevents_costly_mistake"
     ],
-    "justification": "A kept family's cursor was published for an earlier subject. Sent with the review on screen it is refused by the server, and skipped silently it hides the changes among the members not yet returned. The stop tells the reader that members are missing, and selecting the family is the one request the server answers. The rule is realized in the traversal, the walk module, the workspace and the surface, and cases on store-authored and on served bodies guard it."
+    "justification": "Walked-tree merging and workspace page dispatch must not lose delivered members or bind a continuation cursor to the wrong subject. The exact partial/store assertion ranges are retained as bounded non-typed case evidence, not as a supported named-symbol proof or fresh runtime certification."
   },
-  "applicability": "A kept family of the walked tree whose roster the server returned in part.",
+  "applicability": "Retained walked family context and explicit main-page roster continuation within one mounted reviewer comparison.",
   "conditions": [
-    "The stop is the same as for a family of the selected subject: focus moves to the control, a polite message names the family, and the next `j` moves on.",
-    "No selection and no key step loads a page of a kept family. Its breakdown counts the returned members only.",
-    "The control of a kept family selects the family as the subject and asks its review with the cursor as the page; the control of a family in the selected subject's context asks a page of the review on screen.",
-    "When two answers carry one family side, the tree keeps every member either returned and the position of the read that walked further, so the control holds the furthest cursor."
+    "Same-revision family-side reads merge returned members and keep the furthest published cursor.",
+    "The main-page continuation control requests the cursor published for its current selected subject; the handler can select a kept family with its retained cursor, but the compact sidebar renders no kept-family continuation control.",
+    "Forward traversal selects the next rendered real-change occurrence or returns end; neither selection nor traversal automatically reads a roster page."
   ],
   "exclusions": [
-    "Continuing a kept family in place, without selecting it. The server continues a roster only for a subject whose context holds the family.",
-    "`k`: continuation controls are not backward stops."
+    "No j-stop, control-focus, polite-family-stop or next-j promise for a partial kept family in the sidebar.",
+    "A retained incomplete roster is not a complete index outline and does not certify absent member content.",
+    "Backward traversal does not page a roster."
   ],
   "id": "INV-MWCCQM",
   "origin": {
@@ -30,9 +29,9 @@
     "leaf": "260928-MIK-L39",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "`j` past the last returned member of a kept family whose members are not all returned stops at that family's continuation control, says so and issues no request; using the control selects that family, keeps the tree and continues its roster from the furthest cursor the tree holds for it.",
+  "statement": "Within one walked family-side revision, folding roster reads retains every returned member and the furthest page position. Roster continuation is an explicit subject-bound page request; change-traversal keys never request a roster page.",
   "status": "proposed",
   "supersedes": []
 }

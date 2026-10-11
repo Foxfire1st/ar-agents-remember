@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Bounded W03 test-port obligation from the amended packet scope (Architect qualification 2026-10-08 11:18:45 UTC); ports-fifth.log: keeps selected intent, evidence, siblings, focus and open layout while a late source expression becomes reachable; assertion-fates.md"
+  },
+  "applicability": "Late source expressions in the family read cycle.",
+  "conditions": [
+    "Selected intent, evidence, siblings, focus, inline layout and explicitly open files are preserved while every captured late expression becomes reachable.",
+    "The first reachable card is explicitly collapsed/reopened so continuation preservation is real."
+  ],
+  "exclusions": [
+    "Freezing text before the editor is awaited; vacuous open-state claims."
+  ],
+  "id": "INV-79SPV4",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "ports-fifth.log: keeps selected intent, evidence, siblings, focus and open layout while a late source expression becomes reachable; assertion-fates.md"
+      ],
+      "path": "notes/reports/l86-curator-W03/handoff-phase1.json"
+    },
+    "handoffEntry": "MIK-R86@v1 preservation W03 late expression",
+    "leaf": "260928-MIK-L86",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Continuations preserve selected statement, evidence, siblings, focus, inline layout and an explicitly open file while making every captured late source expression reachable.",
+  "status": "proposed",
+  "supersedes": []
+}

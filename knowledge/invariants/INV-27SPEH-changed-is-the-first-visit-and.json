@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "New reviewer obligation from MIK-R86@v1 (packet a78d9ae3, Architect qualification 2026-10-08 11:18:45 UTC); implemented on the W03 successor tree 95f61633, whole-primary CODE PASS verdict 3663bf07. Evidence: FamilyTree.triage.test.tsx; ReviewSurface.navigationTree.test.tsx"
+  },
+  "applicability": "The Changed/All view switch and first-visit default.",
+  "conditions": [
+    "Changed (default, incl. first visit and no-storage browsers) shows real changes + holders + selected/kept rows; All shows every row.",
+    "Switch state in words, stored like the order preference; view/filter/order changes start nothing afresh.",
+    "Empty Changed view reads the no-recorded-meaning line plus the switch."
+  ],
+  "exclusions": [
+    "Hiding kept/selected rows when switching views."
+  ],
+  "id": "INV-27SPEH",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "FamilyTree.triage.test.tsx; ReviewSurface.navigationTree.test.tsx"
+      ],
+      "path": "notes/reports/l86-curator-W03/handoff-phase1.json"
+    },
+    "handoffEntry": "MIK-R86@v1 rule 5",
+    "leaf": "260928-MIK-L86",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Changed is the first-visit and no-storage default; All is persisted, while selections and walked families remain available.",
+  "status": "proposed",
+  "supersedes": []
+}

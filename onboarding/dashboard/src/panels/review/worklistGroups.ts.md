@@ -20,10 +20,9 @@ takes the cards' planning marks from `planningMarks`.
   `unexplained_file`) and every other kind, listed by kind.
 - **Unexplained grouping (carried from L10, ruling 2026-09-30T01:56:39).** Items can be numerous (160 on ICR L47), so
   `unexplainedGroups` groups them by `facts.path` and then by `facts.coverage.state` (`coverage not recorded` when
-  absent), sorted, with a count per file. Since MIK-L32 the unexplained-changes lane shows an opened file's groups
-  from here (`LaneFileFocus.GateItems` filters `unexplained` by path); MIK-R32 excludes any disposition, so nothing
-  here or there offers one. The module header says so too: the items are answered by MIK-R10's history rows, which
-  the closeout gate enforces, and this structure and the lane only list them.
+  absent), sorted, with a count per file. `LeafKnowledgeChanges.tsx` renders these open worklist groups;
+  the retired `LaneFileFocus.GateItems` is no longer a consumer. No display offers a disposition:
+  MIK-R10 history rows answer the items and the closeout gate enforces that boundary.
 - **Rows by `facts.row` (PS-1, accepted at 05:36:19).** `rowSubjects` returns the item's own subject and, when
   different, the subject its `facts.row` names: an unexplained hunk is answered by a `hunk:…` row, so the row is
   found by that subject. The server's `_row_subjects` does the same when it collects the rows.
@@ -37,7 +36,7 @@ takes the cards' planning marks from `planningMarks`.
 
 ### Invariants And Boundaries
 
-- Grouping only: no disposition is offered or decided. MIK-L32's lane reuses the grouping for display and adds none
+- Grouping only: no disposition is offered or decided. The worklist reading view lists recorded facts and adds none
   (MIK-R32's Exclusions forbid assessment, approval or waiver of unexplained changes).
 - Card planning marks come from here only through `FamilyReviewCenter.pinnedWorklist`, which passes the worklist of a
   leaf-wide read of the same comparison and nothing otherwise (see the candidate invariant on that card).
@@ -61,7 +60,9 @@ No configured live documentation source was available for this pass.
 
 ### Repo-Internal References
 
-- The lane's gate items for one opened file, from the unexplained groups (MIK-L32). [1]
+
+
+
 - The module's own statement: grouping only, the four groups, and that history rows answer the unexplained items while this structure and the lane only list them. [2]
 - The group shapes. [3]
 - Rows found by the item's subject and by its `facts.row`. [4]

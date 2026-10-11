@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "7c6601ddf7269a084e197eb6ae1f071a8c3acef6",
-        "content": "sha256:bba8130e7e5738ce194cf62ba56d0343a009b3bee32441ac2a9027770f8aca48",
+        "blob": "f7e576bc05a33889caaab2fe6c0396c6d8805922",
+        "content": "sha256:02a7877a8a5657b33ff4d76c39b8036e07f0196520193e347b68ccd5d0c89ac6",
         "locator": {
           "kind": "symbol",
           "name": "ReviewPanes"
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "7c6601ddf7269a084e197eb6ae1f071a8c3acef6",
+        "blob": "f7e576bc05a33889caaab2fe6c0396c6d8805922",
         "content": "sha256:218ee1a1f3fdf06979bf7cc3815ca96c127497b4116dc8f5145cc72917612792",
         "locator": {
           "kind": "symbol",
@@ -38,8 +38,8 @@
     },
     {
       "anchor": {
-        "blob": "7c6601ddf7269a084e197eb6ae1f071a8c3acef6",
-        "content": "sha256:a4cb15f991923645d5bd6bd9654729ebd68da71c047ec096d8112ba5087c5a36",
+        "blob": "f7e576bc05a33889caaab2fe6c0396c6d8805922",
+        "content": "sha256:476ed0ab6ce7610c55491e0e93898501945429e429ce6336f035ddefc2298730",
         "locator": {
           "kind": "symbol",
           "name": "subjectSelection"
@@ -56,8 +56,26 @@
     },
     {
       "anchor": {
-        "blob": "7c6601ddf7269a084e197eb6ae1f071a8c3acef6",
-        "content": "sha256:a4cb15f991923645d5bd6bd9654729ebd68da71c047ec096d8112ba5087c5a36",
+        "blob": "f7e576bc05a33889caaab2fe6c0396c6d8805922",
+        "content": "sha256:07cdaba2c6896f7456615d82c3b2376f586a052e490727e6d7ae8fc9c82e6b9d",
+        "locator": {
+          "kind": "symbol",
+          "name": "useHeldPageLane"
+        }
+      },
+      "id": "RLZ-8F97SH",
+      "invariant": "INV-CZVMX3",
+      "origin": {
+        "handoffEntry": "L86-CODE-R1-F04",
+        "leaf": "260928-MIK-L86"
+      },
+      "rationale": "It only enriches the stored opened page when task, number and generation match.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "f7e576bc05a33889caaab2fe6c0396c6d8805922",
+        "content": "sha256:476ed0ab6ce7610c55491e0e93898501945429e429ce6336f035ddefc2298730",
         "locator": {
           "kind": "symbol",
           "name": "subjectSelection"
@@ -74,8 +92,8 @@
     },
     {
       "anchor": {
-        "blob": "7c6601ddf7269a084e197eb6ae1f071a8c3acef6",
-        "content": "sha256:a4cb15f991923645d5bd6bd9654729ebd68da71c047ec096d8112ba5087c5a36",
+        "blob": "f7e576bc05a33889caaab2fe6c0396c6d8805922",
+        "content": "sha256:476ed0ab6ce7610c55491e0e93898501945429e429ce6336f035ddefc2298730",
         "locator": {
           "kind": "symbol",
           "name": "subjectSelection"
@@ -91,7 +109,25 @@
     },
     {
       "anchor": {
-        "blob": "7c6601ddf7269a084e197eb6ae1f071a8c3acef6",
+        "blob": "f7e576bc05a33889caaab2fe6c0396c6d8805922",
+        "content": "sha256:64567a9191da8b5a9c6bc9761bbfda3d2249c432bd853a14aa1a9c046efbf83e",
+        "locator": {
+          "kind": "symbol",
+          "name": "useReviewChangePage"
+        }
+      },
+      "id": "RLZ-AXHF0H",
+      "invariant": "INV-CZVMX3",
+      "origin": {
+        "handoffEntry": "L86-CODE-R1-F04",
+        "leaf": "260928-MIK-L86"
+      },
+      "rationale": "It stores the complete comparison task, generation, number, inventory and held lane at opening.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "f7e576bc05a33889caaab2fe6c0396c6d8805922",
         "content": "sha256:2bea560c5f336151a88c4c7f72860d44ec8070841375b4f546fdeee71624801b",
         "locator": {
           "kind": "symbol",
@@ -109,7 +145,7 @@
     },
     {
       "anchor": {
-        "blob": "7c6601ddf7269a084e197eb6ae1f071a8c3acef6",
+        "blob": "f7e576bc05a33889caaab2fe6c0396c6d8805922",
         "content": "sha256:2bea560c5f336151a88c4c7f72860d44ec8070841375b4f546fdeee71624801b",
         "locator": {
           "kind": "symbol",
@@ -127,8 +163,26 @@
     },
     {
       "anchor": {
-        "blob": "7c6601ddf7269a084e197eb6ae1f071a8c3acef6",
-        "content": "sha256:a4cb15f991923645d5bd6bd9654729ebd68da71c047ec096d8112ba5087c5a36",
+        "blob": "f7e576bc05a33889caaab2fe6c0396c6d8805922",
+        "content": "sha256:64567a9191da8b5a9c6bc9761bbfda3d2249c432bd853a14aa1a9c046efbf83e",
+        "locator": {
+          "kind": "symbol",
+          "name": "useReviewChangePage"
+        }
+      },
+      "id": "RLZ-GARJX5",
+      "invariant": "INV-5RTVBT",
+      "origin": {
+        "handoffEntry": "L86-CODE-R1-F08",
+        "leaf": "260928-MIK-L86"
+      },
+      "rationale": "It retains an explicit unavailable page state instead of silently ignoring All.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "f7e576bc05a33889caaab2fe6c0396c6d8805922",
+        "content": "sha256:476ed0ab6ce7610c55491e0e93898501945429e429ce6336f035ddefc2298730",
         "locator": {
           "kind": "symbol",
           "name": "subjectSelection"
@@ -140,13 +194,13 @@
         "handoffEntry": "MIK-R39@v1-other-selections-start-afresh",
         "leaf": "260928-MIK-L39"
       },
-      "rationale": "Its `selectSubject` is the one handler of every subject selection and begins it with the tree intent `keep` only when the options say so; every other selection begins with `keep` false. Its `openTaskContext`, the offer after a refusal, begins a selection that does not keep. The cases \"starts afresh at \"All source changes\"\" and \"keeps every row when a selected subject is refused, and starts afresh at the offer of the task context\" of `dashboard/src/panels/review/ReviewSurface.walkFresh.test.tsx` test two of these entry points.",
+      "rationale": "The subject-selection handler records focus intent and keeps the walked reads only when options request keepTree. The explicit offer to open task context after refusal begins with keep false and clears chosen context/page selection. The retained walkFresh cases preserve every outline row during refusal and test the task-context reset; All changes is now a comparison-viewer action whose return preserves the walk without a subject read, not a resetting subject selection.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "7c6601ddf7269a084e197eb6ae1f071a8c3acef6",
-        "content": "sha256:a4cb15f991923645d5bd6bd9654729ebd68da71c047ec096d8112ba5087c5a36",
+        "blob": "f7e576bc05a33889caaab2fe6c0396c6d8805922",
+        "content": "sha256:476ed0ab6ce7610c55491e0e93898501945429e429ce6336f035ddefc2298730",
         "locator": {
           "kind": "symbol",
           "name": "subjectSelection"
@@ -163,7 +217,7 @@
     },
     {
       "anchor": {
-        "blob": "7c6601ddf7269a084e197eb6ae1f071a8c3acef6",
+        "blob": "f7e576bc05a33889caaab2fe6c0396c6d8805922",
         "content": "sha256:ed42abbe8b4b69f82670123053f5462afd7d5f4004110fe9e68e5e351b9f61e6",
         "locator": {
           "kind": "symbol",
@@ -181,7 +235,25 @@
     },
     {
       "anchor": {
-        "blob": "7c6601ddf7269a084e197eb6ae1f071a8c3acef6",
+        "blob": "f7e576bc05a33889caaab2fe6c0396c6d8805922",
+        "content": "sha256:64567a9191da8b5a9c6bc9761bbfda3d2249c432bd853a14aa1a9c046efbf83e",
+        "locator": {
+          "kind": "symbol",
+          "name": "useReviewChangePage"
+        }
+      },
+      "id": "RLZ-PM1C59",
+      "invariant": "INV-YZZEZY",
+      "origin": {
+        "handoffEntry": "MIK-R86@v1 rule 15",
+        "leaf": "260928-MIK-L86"
+      },
+      "rationale": "It retains the mounted workspace and opener while the page is active, then restores focus without changing the review question.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "f7e576bc05a33889caaab2fe6c0396c6d8805922",
         "content": "sha256:a4bfba333df278c94115c450a4e5f448cd733666f83696b2e21e3f11659b69dd",
         "locator": {
           "kind": "symbol",
@@ -469,6 +541,206 @@
             "path": "dashboard/src/panels/review/ReviewSurface.navigation.test.tsx"
           },
           "kind": "test"
+        }
+      ]
+    },
+    "49": {
+      "note": "Subject labels and retry/instead routing for pending or refused reads",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f7e576bc05a33889caaab2fe6c0396c6d8805922",
+            "content": "sha256:9d05576749a2cac68e2eb36f928e3062f38f12ba0886506c5c346e3869e36bc2",
+            "locator": {
+              "kind": "symbol",
+              "name": "subjectLabel"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "50": {
+      "note": "Refusal rendering for pages that cannot be opened",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f7e576bc05a33889caaab2fe6c0396c6d8805922",
+            "content": "sha256:2ac3593c79bf492bd67cbcf9f54f6d06f295da3959010408194f1709f081012c",
+            "locator": {
+              "kind": "symbol",
+              "name": "PageRefusalBlock"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f7e576bc05a33889caaab2fe6c0396c6d8805922",
+            "content": "sha256:1a9dc49f9eb4b2b050d4554316d80d7fe5008aa4ae685c9bbeecabd858d225ed",
+            "locator": {
+              "end": 133,
+              "kind": "line_range",
+              "start": 115
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "51": {
+      "note": "Refused-page extraction for paged collections",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f7e576bc05a33889caaab2fe6c0396c6d8805922",
+            "content": "sha256:3c5cd7a6164ab032af1f4e555b632f830d0787a1eba0a38caac7023eac9f7cd5",
+            "locator": {
+              "kind": "symbol",
+              "name": "refusedPageOf"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "52": {
+      "note": "Pane assembly over the coherent payload, lane and comparison",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f7e576bc05a33889caaab2fe6c0396c6d8805922",
+            "content": "sha256:02a7877a8a5657b33ff4d76c39b8036e07f0196520193e347b68ccd5d0c89ac6",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewPanes"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f7e576bc05a33889caaab2fe6c0396c6d8805922",
+            "content": "sha256:afc0e46d211f2f0226a97ae8377522d32b71f05612d69c6a070f00f8486ce8c3",
+            "locator": {
+              "end": 344,
+              "kind": "line_range",
+              "start": 326
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "53": {
+      "note": "Held lane read while the change-set page is open",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f7e576bc05a33889caaab2fe6c0396c6d8805922",
+            "content": "sha256:07cdaba2c6896f7456615d82c3b2376f586a052e490727e6d7ae8fc9c82e6b9d",
+            "locator": {
+              "kind": "symbol",
+              "name": "useHeldPageLane"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f7e576bc05a33889caaab2fe6c0396c6d8805922",
+            "content": "sha256:7f8d2b9efedca12a37118a2da290951009b7e0a9613c442036bc10758e520033",
+            "locator": {
+              "end": 477,
+              "kind": "line_range",
+              "start": 459
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "54": {
+      "note": "Open and close behavior of the change-set overlay",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f7e576bc05a33889caaab2fe6c0396c6d8805922",
+            "content": "sha256:64567a9191da8b5a9c6bc9761bbfda3d2249c432bd853a14aa1a9c046efbf83e",
+            "locator": {
+              "kind": "symbol",
+              "name": "useReviewChangePage"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f7e576bc05a33889caaab2fe6c0396c6d8805922",
+            "content": "sha256:2e0b2731c3af6612a5d4a440b1e0ea2d3b37ff80d692f7cfeb0327aad003fd47",
+            "locator": {
+              "end": 515,
+              "kind": "line_range",
+              "start": 495
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "55": {
+      "note": "What every subject selection keeps, restarts or opens",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f7e576bc05a33889caaab2fe6c0396c6d8805922",
+            "content": "sha256:476ed0ab6ce7610c55491e0e93898501945429e429ce6336f035ddefc2298730",
+            "locator": {
+              "kind": "symbol",
+              "name": "subjectSelection"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f7e576bc05a33889caaab2fe6c0396c6d8805922",
+            "content": "sha256:48099ba961bff1f1cbb4b179e2e79011a2e177d585fa8d3695f59f37f0ab38e3",
+            "locator": {
+              "end": 704,
+              "kind": "line_range",
+              "start": 686
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "56": {
+      "note": "Wiring of navigation, workspace, read cycle, cache and refresh",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f7e576bc05a33889caaab2fe6c0396c6d8805922",
+            "content": "sha256:ed42abbe8b4b69f82670123053f5462afd7d5f4004110fe9e68e5e351b9f61e6",
+            "locator": {
+              "kind": "symbol",
+              "name": "useSurface"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f7e576bc05a33889caaab2fe6c0396c6d8805922",
+            "content": "sha256:2384a5ba7c8e5cf046e06397a796914e08d11c2b22e3ed298328b0948e39a7b6",
+            "locator": {
+              "end": 737,
+              "kind": "line_range",
+              "start": 719
+            }
+          },
+          "kind": "code"
         }
       ]
     }

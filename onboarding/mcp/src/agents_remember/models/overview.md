@@ -2633,3 +2633,12 @@ The roster holds 73 names: the former knowledge_change and knowledge_project too
 - The response shape. [286]
 
 </details>
+
+## 260928-MIK-L86 Compact review catalogue
+
+The review-entry result carries an optional index-only outline beside the complete
+entry population and counts. Outline navigation does not carry authored semantic
+statements or a second source inventory. The existing TaskReopenResponse citation
+keeps its original subject; outline ownership is cited separately.
+
+- ReviewEntryListResult gains the optional ReviewOutline field beside its entry population and counts. [291]

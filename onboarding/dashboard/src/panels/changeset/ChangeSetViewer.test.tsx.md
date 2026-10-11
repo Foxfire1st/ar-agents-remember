@@ -12,6 +12,7 @@ asserts the takeover is absent initially with the Operations rails present. Dire
 and `DetailPanel` cases elsewhere cover the viewer and its open callback; no cockpit case asserts a
 rendered positive takeover.
 
+The viewer's screen tests render `ChangeSetViewer` (with the diff column mocked) over stubbed fetch answers. They cover loading, error retention, scope/leaf/master listings, working-view polling discipline, generation-pinned expansions, per-leaf net attribution, refusals and measured-empty states — and, new in W03, the comparison selector with a review context, including the empty-filter boundary.
 ## Code Commentary
 
 ### Logic
@@ -34,6 +35,7 @@ Knowledge reader or the product tab list.
 
 No additional work is asserted by this card.
 
+The W03 coverage mounts the viewer with `comparison={5}` and a full `reviewContext` (lane destinations plus inventory) so the filter buttons and the filtered list run as the reviewer opens them. The boundary test switches to `Unknown attribution (0)` on an empty destination and asserts the list reads `No changed file in this filter` with the diff pane cleared, proving a filter that matches nothing is an explicit empty state rather than a stale diff. Existing scope/leaf/master cases are unchanged and still pin master expansions to the listed generation.
 ## Evidence
 
 ### Docs References
@@ -52,3 +54,6 @@ No configured live documentation source was available for this pass.
 ### Cross-Repo References
 
 No cross-repo boundary is crossed by this file.
+- The comparison case mounts with number and review context [9]
+- The lane destinations and inventory travel in the context [10]
+- An empty filter clears the diff instead of keeping a stale one [11]

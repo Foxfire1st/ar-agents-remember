@@ -10,7 +10,7 @@
 reaches the server as the record the reader asked for, and the surface *states* which record it is
 reading. `ReviewSurface` is the real component and `intentReview` the real client, so the query string
 asserted below is the one the browser builds, and the provenance line is read out of the rendered DOM
-rather than from a prop this test passed itself. Only `fetch` is stubbed.
+rather than from a prop this test passed itself. `fetch` and the catalogue hook are isolated.
 
 The defect these two cases catch is the packet's own: a closed leaf's review used to be offered only
 while the enclosure was live, and the surface had no way to name the record it wanted, so a leaf whose
@@ -50,7 +50,7 @@ read from without opening a pane. The case asserts the rendered sentence contain
 and that the refusal region carries `data-review-code="candidate_not_live"` with the
 "records no comparison generation" detail — the shape a closed leaf with nothing recorded really earns.
 
-**Only `fetch` is stubbed; everything else is the shipped client.** `serving()` returns the refusal body
+**`fetch` is stubbed and the catalogue hook is explicitly mocked; the review comparison transport remains the shipped client.** `serving()` returns the refusal body
 with a 404 status, which is how the route answers a refusal, and `requestUrl()` reads the first call's
 URL from the fetch mock. The component still resolves through the shared review decode, the real
 `intentReview`, and the real panes' rendering path, so the assertions are about produced behaviour
@@ -83,6 +83,7 @@ the surface stops showing an action the server supplied. `afterEach` calls `clea
 
 None recorded.
 
+The serving world answers entries and reviews per history value, with a nothing-recorded fixture for the absent case. The leaf-history case asserts the recorded request and its provenance, while the live-candidate case asserts the no-record claim with its refusal. Request URLs are captured for exactness.
 ## Evidence
 
 ### Docs References
@@ -101,7 +102,10 @@ rather than reinterpreting; the live read's query string is unchanged from every
 the entry that supplies `history="recorded"` is the change-set bar's closed-leaf branch, which is where
 the "Intent review (recorded)" label is chosen.
 
-- **The module's own statement of what it exercises and the defect it catches, including that only `fetch` is stubbed.** [1]
+
+
+- The real surface and intent client drive the comparison read; the module isolates fetch and explicitly mocks the catalogue hook, so its historical only-fetch header is not current fixture provenance. [1]
+
 - The one real task context the cases name, and the subject the historical target carries. [2]
 - **The refusal a closed leaf with nothing recorded earns, carried verbatim from the server so the case fails if the surface stops showing the action.** [3]
 - The test server stub supplies the response body; requestUrl reads the actual request emitted by the client. [4]
@@ -121,3 +125,8 @@ No cross-repository behavior is exercised by this module. It drives one reposito
 through a stubbed transport.
 
 No meaningful cross-repo references found.
+- Nothing-recorded fixture for the absent history [14]
+- Per-history serving world for entries and reviews [15]
+- Stubbed fetch with captured request URLs [16]
+- Provenance of the recorded leaf answer [17]
+- Live-candidate fetch mock claiming no record [18]

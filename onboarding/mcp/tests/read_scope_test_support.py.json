@@ -1,5 +1,6 @@
 {
   "path": "mcp/tests/read_scope_test_support.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "11": {

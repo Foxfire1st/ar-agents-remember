@@ -14,6 +14,7 @@ guarantee, the deduplicated member total, and one `ReviewMemberChange` per retur
 (`trees` is `None`) gets its context back exactly as composed, so nothing here runs before a converted leaf's tree
 comparison (inert until MIK-R37). The browser orders, counts and traverses by these facts and never recomputes one.
 
+`review_change_kinds` computes the MIK-R33 change-kind facts of a tree comparison's family context for the members a roster page returned: intent, implementation and membership per member occurrence, travelling on each family context entry for the browser to order and traverse by. In W03 the recorded-meaning facts (guarantee, intent, membership) are delegated to the shared `RecordChanges`, so the detail badges and the navigation outline use one definition.
 ## Code Commentary
 
 ### Logic
@@ -26,10 +27,10 @@ comparison (inert until MIK-R37). The browser orders, counts and traverses by th
 - **Returned members only.** `_returned` takes each member occurrence once by the roster's `member_id` (the same on
   both sides for one invariant under one family), so a revised member's two revision rows share one fact set and a
   member no page returned is never described (ICR-R32 rule 5).
-- **`intent` (`_intent`, `_presence`).** The invariant record's `revision` in K_B against K_C; a record live on one
-  side only is `added` or `removed`, and a `retired` record counts as removed (ruling 16:22:22 item 6a). **One revision
-  whose authored text differs** (`_WORDING`: statement, applicability, conditions, exclusions, compared byte for byte)
-  is `intent` marked `text_differs`, never `unchanged` (ruling 16:22:22 item 5, the master's byte-comparison rule).
+- **`intent` (`_intent` → shared `RecordChanges.intent`).** The shared index-only owner compares
+  live/retired presence, revision and byte-for-byte `statement`, `applicability`, `conditions` and
+  `exclusions`. A same-revision wording difference sets `text_differs` and establishes intent;
+  presence/wording helpers are not local `_presence`, `_WORDING` or `_wording` declarations here.
 - **`implementation` (a) (`_entry_changes`).** An entry of the member added, retired or re-anchored between the sides.
   A changed anchor is a re-anchor unless it is the writer's mechanical carry (`classify.carried_mechanically` with the
   worklist `Classifier`'s class of the K_B entry, `_base_class`): of MIK-R08 definition 7's exemptions only that one is
@@ -50,10 +51,9 @@ comparison (inert until MIK-R37). The browser orders, counts and traverses by th
   `unreadable`).
 - **`membership` (`_membership`).** Whether this family's record lists the invariant on each side; unknown when a
   side's family record cannot be read.
-- **Reasons (`_Fact.reasons`, `_member`).** Each unknown fact names why; entries that established nothing come first
-  (review R2-3). The change kind's reasons (intent, implementation, unresolved ranges) and the membership's reasons are
-  kept apart (`unknown_reasons` and `membership_reasons`, the merge round), and `evidence` names only what established
-  each established fact, all bounded.
+- **Reasons (shared `Fact.reasons`, local `_member`).** Each unknown fact names why; unresolved
+  reasons for entries that established nothing come first. The local member assembly keeps
+  change-kind and membership reasons apart and names bounded evidence only for established facts.
 - **Family level.** `_guarantee`: `intent` when the `guarantee` text differs or the family is live on one side only,
   `unchanged` when the same, `unknown` when a side cannot be read. `_members_total`: the deduplicated union of live
   members on either side, `None` only when the family's own record file or a listed member's own file fails to parse
@@ -62,12 +62,11 @@ comparison (inert until MIK-R37). The browser orders, counts and traverses by th
 
 ### Conventions
 
-- Module-private helpers around one dataclass (`_ChangeKinds`) that holds the lane and two memo caches; `_Fact` and
-  `_Known` are small mutable/frozen dataclasses local to the module. The public surface is `with_change_kinds` only.
-- Every reason string is built here in the reviewer's words and bounded by the lane's `bounded_text` or the model's
-  clipping; the model derives `primary` and `marks` from the facts (`ReviewMemberChange.of`), so this module never
-  sets them by hand.
-- 671 lines (the application card's size note; under the 1,200-line limit).
+- `_ChangeKinds` retains the lane, local implementation caches and a shared `RecordChanges`
+  reader. `Fact` and `Known` are imported from `review_record_changes.py`, not local dataclasses.
+  `with_change_kinds` remains the public entry. Shared recorded-meaning reasons and local
+  implementation/evidence reasons remain bounded; `ReviewMemberChange.of` derives primary/marks.
+- The current module is 538 lines, under the 1,200-line limit.
 
 ### Invariants And Boundaries
 
@@ -90,7 +89,7 @@ comparison (inert until MIK-R37). The browser orders, counts and traverses by th
   `test_the_total_is_unknown_only_when_the_familys_own_records_fail`, with the mutations "an unparsed sidecar is
   ignored", "an unread family record reads unchanged" and "a withheld range leaves nothing unknown", all caught.
 - **Candidate invariant (not ingested): changed intent text is never `unchanged`, even at the same revision.**
-  Realized by `_intent`'s `_wording` comparison and `text_differs`. Proved by
+  Realized by `_intent` delegating to `RecordChanges.intent` and its shared `wording` comparison with `text_differs`. Proved by
   `test_every_member_occurrence_carries_its_kind_from_the_recorded_comparison` (INV-PPPPPP reworded in
   `applicability` reads `intent` with `text_differs`, INV-EEEEEE beside it reads `unchanged`), and the mutation "a
   same-revision text change reads unchanged", caught.
@@ -108,6 +107,7 @@ comparison (inert until MIK-R37). The browser orders, counts and traverses by th
 - Review R3-2 (accepted): when the whole comparison or an invariant identity cannot be read, `unknown_reasons` and
   `membership_reasons` carry the same detail, which the tree draws as two lines for two unknown facts.
 
+`_ChangeKinds` holds `meaning: RecordChanges` beside the lane. `_guarantee` maps shared `added`/`removed`/`changed` results to the detail badge word `intent`, while `unknown` and `unchanged` remain unchanged; the outline may retain added/removed/changed, so the two vocabularies are not identical. `_intent` and `_membership` return the shared facts directly. Member identity/authored position, implementation facts over realization/proof entries and lane hunks, evidence shaping and unread-side fallback stay local. The public entry and refusal behavior remain unchanged.
 ## Evidence
 
 ### Docs References
@@ -120,10 +120,8 @@ No configured live documentation source was available for this pass.
 
 - The module's statement: facts computed here, for returned members only, each read from the comparison itself. [1]
 - The entry point: one lane per read, a dataset review's context unchanged, unreadable trees make every fact unknown. [2]
-- A fact's three states, and its reasons with the entries that established nothing first (review R2-3). [3]
 - The family's own row and its total over the family's own records (review R1 note). [4]
 - One member occurrence: three facts, bounded evidence, and the change kind's reasons apart from the membership's. [5]
-- Intent: the revision, presence (retired counts as removed) and a same revision whose text differs. [6]
 - Membership on each side of this family's record. [7]
 - Implementation (a): added, retired or re-anchored; only the mechanical carry is exempt (review R1 F1); stale-at-base repairs worded apart. [8]
 - Implementation (b) through the lane's links only, and definition 8 on a changed non-text file. [9]
@@ -136,3 +134,13 @@ No configured live documentation source was available for this pass.
 ### Cross-Repo References
 
 No cross-repo boundary is crossed by this file.
+- Meaning facts come from the shared index-only module [15]
+- One comparison's facts ride beside the lane reader [16]
+- The family badge maps the shared guarantee onto badge words [17]
+- Member intent and membership are the shared facts directly [18]
+
+- The shared Fact exposes established/unknown/not_established states and orders unresolved reasons from non-establishing entries first. [3]
+- The local _intent delegates revision, retired-presence and same-revision wording classification to shared RecordChanges.intent, presence and wording. [6]
+- The local _intent delegates revision, retired-presence and same-revision wording classification to shared RecordChanges.intent, presence and wording. [19]
+- The local _intent delegates revision, retired-presence and same-revision wording classification to shared RecordChanges.intent, presence and wording. [20]
+- The local _intent delegates revision, retired-presence and same-revision wording classification to shared RecordChanges.intent, presence and wording. [21]

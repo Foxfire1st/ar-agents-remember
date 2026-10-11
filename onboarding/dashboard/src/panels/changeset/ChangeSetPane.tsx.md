@@ -14,12 +14,12 @@ onboarding doc reads exactly as nicely here as it does in the file reader. The C
 one for the selected file (column 2) and a second for the code↔sidecar partner (column 3), each with its
 own flag namespace.
 
+`ChangeSetPane` renders one open file of the change-set viewer: a toolbar of persisted toggles over a `DiffPane` / `FilePane`. It presents the collapsed change-set diff by default, the whole file with changes still marked, or the plain file, and flips split/inline for whichever diff is shown. On a narrow comparison viewport it defaults to inline through a session-only flag instead of the persisted one.
 ## Code Commentary
 
 ### Logic
 
-Props are `{ diff: FileDiff, keyPrefix: string }`. Four `usePersistedFlag` toggles keyed by
-`${keyPrefix}.{fullfile,inline,highlight,rendered}`. `before`/`after` come from `diff.before?.content` /
+Props are `{ diff: FileDiff, keyPrefix: string, narrow?: boolean }`, with `narrow=false`. Four persisted flags use `${keyPrefix}.{fullfile,inline,highlight,rendered}`; `narrow` selects the session-only inline flag (initially true), leaving the persisted inline preference untouched.
 `diff.after?.content` (`?? ""`). `isMarkdown = diff.language === "markdown"` and `showRendered =
 isMarkdown && rendered` gate the **rendered-markdown** mode: when on, the body is a scrollable, padded
 `mdScroll` surface (`data-testid="changeset-rendered"`) holding `<Markdown>{after || before}</Markdown>`
@@ -64,3 +64,6 @@ path. The per-column `keyPrefix` keeps the code column and the sidecar column's 
 - The plain read-only pane reused for highlight-off / full-file-plain. [7]
 - The `FileDiff` shape it renders. [8]
 - The screen that mounts it for the file + partner columns. [9]
+- One diff column with per-column persisted flags [10]
+- Narrow comparisons default to inline without touching the persisted flag [11]
+- Markdown files offer the rendered prose mode [12]

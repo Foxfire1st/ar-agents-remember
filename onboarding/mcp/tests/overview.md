@@ -160,7 +160,7 @@ consumer lines is the repair.
 
 ## Reviewer operation and shared capture proof cards
 
-- [test_review_read_latency.py](test_review_read_latency.py.md) drives the dashboard operation and protects exact supplied trees, canonical consumed task reads, bounded/failure-sensitive memo reuse and literal batched patches. Its counts of resolutions, captures and Git children do not depend on the machine.
+- [test_review_read_latency.py](test_review_read_latency.py.md) drives the composed dashboard ports over the fixture world and protects exact supplied trees, observed consumed task reads, bounded/failure-sensitive worklist memo reuse, no leaf memory-tree diff, resolution/capture/Git-child counts and fresh post-edit answers. Its removed aggregate/literal batched-patch cases are historical, not current evidence.
 - [test_reviewer_worklist_process.py](test_reviewer_worklist_process.py.md) (integration lane) proves the isolated worklist computation with real child processes: the child's answer equals the computation in the calling process, every transport failure is an explicit refusal that is not kept, identical requests share one child and the bound counts computations, a child and its Git processes do not outlive their requests or the dashboard, reviewer diffs do not depend on the user's Git configuration, tree reads run on their own threads, and creating a comparison pin is idempotent.
 - [test_reviewer_worklist_reads.py](test_reviewer_worklist_reads.py.md) (integration lane) proves what the leaf-wide view and the invariant gate record as read and how a kept result follows those reads: task documents, settings, contracts, requirement packets, root directories and a ledger are changed under real child processes, and a kept view depends only on the task documents it read.
 
@@ -796,3 +796,19 @@ The family-population tests read expected membership and claim identities from t
 - The rewritten contract-scoped activation forcing suite and its shared-source-pair fixture. [1696]
 
 </details>
+
+
+
+
+- The comparison selector proof over recorded trees [1711]
+
+
+
+
+
+
+- Shared outline/change facts keep one definition [1712]
+
+
+
+- Shared outline/change facts keep one definition [1713]

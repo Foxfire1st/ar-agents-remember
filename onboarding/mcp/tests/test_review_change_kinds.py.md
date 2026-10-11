@@ -12,6 +12,7 @@ base and the leaf's candidate, resolved and composed exactly as the reviewer doe
 kind and the review rounds' extra cases. It is the world the dashboard's `triage.*` bodies are captured from
 (`triage.capture-provenance.json`).
 
+`test_review_change_kinds.py` proves the MIK-R33 change-kind facts over a live leaf on four real Git trees, one member per badge kind. In W03 it also proves the outline: index-only reads, catalogue preservation, authored membership order, summary cuts, and the unknown/unavailable states.
 ## Code Commentary
 
 ### Logic
@@ -56,6 +57,7 @@ R1 fix round, 4 of 4 at R2, 9 of 9 at the merge round) were run against these ca
 
 No additional work is asserted by this card.
 
+`test_the_outline_reads_only_indexes_and_preserves_catalogue_fields` rewrites family membership (a leave-and-join) and an invariant statement, then forbids source, roster, subject-review, lane-classify, blob, index-family/invariant and compose calls: the catalogue entries must equal the subject catalogue's, the dump without `outline` must keep its exact fields, and the outline must show added/removed/changed/unchanged with candidate-first member order, `joined`/`left` membership, word-cut summaries and `text_uuid` selector ids — including that a code-changed but meaning-unchanged invariant reads `unchanged`. `test_the_outline_states_unknown_records_and_unavailable_membership_or_indexes` covers corrupt invariant/family records (`unknown` / `unavailable` naming unparseable files), the dataset case (`trees=None`, no converted memory) and a missing index database.
 ## Evidence
 
 ### Docs References
@@ -77,3 +79,6 @@ No configured live documentation source was available for this pass.
 ### Cross-Repo References
 
 No cross-repo boundary is crossed by this file.
+- The outline reads indexes only and keeps catalogue bytes [8]
+- Families, membership and summaries match the detail's facts [9]
+- Corrupt records, dataset reviews and lost indexes are named states [10]

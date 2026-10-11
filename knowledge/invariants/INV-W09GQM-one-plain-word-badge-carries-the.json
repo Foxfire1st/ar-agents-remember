@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "New reviewer obligation from MIK-R86@v1 (packet a78d9ae3, Architect qualification 2026-10-08 11:18:45 UTC); implemented on the W03 successor tree 95f61633, whole-primary CODE PASS verdict 3663bf07. Evidence: FamilyTree.triage.test.tsx and FamilyTree.triageReal.test.tsx"
+  },
+  "applicability": "Badge assignment on every outline row.",
+  "conditions": [
+    "One badge per row from MIK-R33 precedence (intent, implementation, membership, unknown, unchanged).",
+    "Family N-changed badge only when the family record is unchanged and N members carry real change.",
+    "Meaning rides the word + one-sentence tooltip, never color alone."
+  ],
+  "exclusions": [
+    "Secondary marks and reasons (main page).",
+    "code-changed for unread families before MIK-R64 supplies it."
+  ],
+  "id": "INV-W09GQM",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "FamilyTree.triage.test.tsx and FamilyTree.triageReal.test.tsx"
+      ],
+      "path": "notes/reports/l86-curator-W03/handoff-phase1.json"
+    },
+    "handoffEntry": "MIK-R86@v1 rule 3",
+    "leaf": "260928-MIK-L86",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "One plain-word badge carries the precedence of the established intent, code and membership facts.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -1,0 +1,41 @@
+{
+  "path": "dashboard/src/panels/review/l86.member.captured.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Selected member's full review body\n\nAnchor: `payload`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "31e4c76f97c1d3a4f4a115d18b1bd26ddad0b511",
+            "content": "sha256:297c19a6b007ddab7379fa9a807efb3fabb569d293c8047bb526675282e0a544",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Both snapshots' recorded statements\n\nAnchor: `before_statement`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "31e4c76f97c1d3a4f4a115d18b1bd26ddad0b511",
+            "content": "sha256:297c19a6b007ddab7379fa9a807efb3fabb569d293c8047bb526675282e0a544",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

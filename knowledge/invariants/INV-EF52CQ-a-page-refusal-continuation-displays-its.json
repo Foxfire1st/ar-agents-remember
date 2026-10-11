@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Bounded W03 test-port obligation from the amended packet scope (Architect qualification 2026-10-08 11:18:45 UTC); ports-fifth.log: shows an explicit failure and the coherent accumulated review for page refusal; assertion-fates.md"
+  },
+  "applicability": "Page-refusal continuations in the family read cycle.",
+  "conditions": [
+    "An explicit failure displays while the coherent selected statement, evidence, siblings and complete file inventory are retained, including structured page refusals."
+  ],
+  "exclusions": [
+    "Unnamed refusal states; losing the selected review."
+  ],
+  "id": "INV-EF52CQ",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "ports-fifth.log: shows an explicit failure and the coherent accumulated review for page refusal; assertion-fates.md"
+      ],
+      "path": "notes/reports/l86-curator-W03/handoff-phase1.json"
+    },
+    "handoffEntry": "MIK-R86@v1 preservation W03 page refusal",
+    "leaf": "260928-MIK-L86",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A page refusal continuation displays its explicit failure while retaining the coherent selected statement, evidence, siblings and complete file inventory.",
+  "status": "proposed",
+  "supersedes": []
+}

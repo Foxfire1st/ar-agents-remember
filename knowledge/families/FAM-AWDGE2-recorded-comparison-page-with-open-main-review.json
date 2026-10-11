@@ -1,0 +1,58 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "Comparison page, open main page and own worklist view only together end the four-file-list pattern: the page without filters re-lists, the main page without disclosure discipline re-hides reasons, and the worklist under every subject re-adds 870 lines per review. The failure-continuation members keep the same coherent rendering under adverse reads."
+  },
+  "guarantee": "Changed files are read in the change-set viewer on the comparison's own recorded trees with lane filters, per-row badges and a return that restores the reader's place; the main page keeps everything a reviewer needs to judge a change open with at most twenty disclosures per view; the leaf's worklist is a view of its own with one line per item; the leaf-wide view carries no knowledge diff.",
+  "id": "FAM-AWDGE2",
+  "members": [
+    "INV-31006K",
+    "INV-J1DFZS",
+    "INV-VFT6GP",
+    "INV-YZZEZY",
+    "INV-STW97J",
+    "INV-DYDMDD",
+    "INV-VPD8AJ",
+    "INV-P4Z520",
+    "INV-S545PW",
+    "INV-4GFK5N",
+    "INV-2K9NMR",
+    "INV-KBXRZC",
+    "INV-HC2KB7",
+    "INV-EF52CQ",
+    "INV-79SPV4",
+    "INV-58S9SG",
+    "INV-Z938DS",
+    "INV-NGZMXY",
+    "INV-VQFVF8",
+    "INV-75Y48P",
+    "INV-A9V761",
+    "INV-9VPYCZ",
+    "INV-5RTVBT",
+    "INV-9HMJ13",
+    "INV-CC4HSS",
+    "INV-TEDBFZ"
+  ],
+  "origin": {
+    "handoff": {
+      "path": "notes/reports/l86-curator-W03/handoff-phase1.json"
+    },
+    "handoffEntry": "l86-page",
+    "leaf": "260928-MIK-L86",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "routes": [
+    "dashboard/src/panels/changeset",
+    "dashboard/src/panels/review",
+    "dashboard/src/data",
+    "mcp/src/agents_remember/application",
+    "mcp/src/agents_remember/serving",
+    "mcp/src/agents_remember/models/knowledge"
+  ],
+  "schema": "ar-family/v1",
+  "status": "proposed",
+  "title": "Recorded-comparison page with open main review"
+}

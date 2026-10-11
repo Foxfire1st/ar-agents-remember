@@ -1,0 +1,58 @@
+{
+  "path": "dashboard/src/panels/review/SubjectWorklistIdentity.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "8afe7fd5f94829d01d23900528da865527e4996d",
+        "content": "sha256:eaab7f80395a7a530df26e02554c2fc3bb17e146a513115c332833f452d3846f",
+        "locator": {
+          "kind": "symbol",
+          "name": "canonicalWorklistRecord"
+        }
+      },
+      "id": "RLZ-349RNF",
+      "invariant": "INV-VQFVF8",
+      "origin": {
+        "handoffEntry": "L86-CODE-R1-F02",
+        "leaf": "260928-MIK-L86"
+      },
+      "rationale": "It performs the explicit selector-to-record lookup, exposing missing identity rather than empty work.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Canonical record joined by selector id",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8afe7fd5f94829d01d23900528da865527e4996d",
+            "content": "sha256:eaab7f80395a7a530df26e02554c2fc3bb17e146a513115c332833f452d3846f",
+            "locator": {
+              "kind": "symbol",
+              "name": "canonicalWorklistRecord"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Per-subject worklist items for the comparison",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8afe7fd5f94829d01d23900528da865527e4996d",
+            "content": "sha256:63d7688b26a553dd4b7d1c77a3b2b93c48eaded227543dda02a0de7a841c7ef9",
+            "locator": {
+              "kind": "symbol",
+              "name": "SubjectKnowledge"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

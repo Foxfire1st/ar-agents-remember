@@ -8,7 +8,7 @@
 
 Ordinary-entry navigation through the real shared catalogue and comparison clients, and the acceptance module for what happens **between** a selection and its answer: the mounted reviewer, the subject-bound pending and problem states, per-comparison reuse, the latest selection winning, focus the reader moved, a late catalogue, and the order in which a selection's focus request is answered. Only `fetch` is stubbed; the cases mount the real `ReviewSurface`.
 
-The file holds 11 `it` blocks, one of them an `it.each` over a failed and a refused read.
+The current file contains 15 test declarations, including the failed/refused and memory/code-generation `it.each` blocks. Declaration counts are static source facts, not execution results.
 
 ## Code Commentary
 
@@ -16,16 +16,16 @@ The file holds 11 `it` blocks, one of them an `it.each` over a failed and a refu
 
 The first two cases answer immediately and prove eventual content:
 
-- **Ordinary entry**: the fetched catalogue opens a recorded family, another family is selected in the same workspace, and the full source population, the display preferences and focus are kept. The case waits for its focus assertion, because selection focus is applied in a passive effect.
+- **Ordinary entry:** the captured catalogue opens a family, another family is selected without remounting the workspace, display preferences remain and focus lands as asserted. The case explicitly asserts that no source explorer is mounted; it does not assert a rendered full inline source population.
 - **Unreadable knowledge** stays source-only, with no invented family and no prompt to select one.
 
 The next cases run against `delayedServer`, which answers the catalogue and source content at once (or holds the catalogue on request) but holds every review reply until the case releases it: answered, refused by the owner, or lost in transport.
 
-- **Mounted across family → invariant → family**: the workspace, navigation, family tree and open disclosures are the same DOM nodes throughout; only the reading area shows `review-reading-pending`, labelled with the requested subject; nothing of the previous subject appears under the new one; returning to a subject already read issues no review and no content request. At its end the case asserts the walked tree: the invariant's review showed further families, and after the first family's row is selected again those families are still in the tree, each marked `data-family-kept` and tagged "kept · last read for invariant …" with the invariant's label, while the selected family carries no such mark.
+- **Mounted across family → invariant → family:** subject-bound pending output excludes stale reading/binding/currentness content while the workspace, navigation, centre, selected row, open provenance disclosure, focus and rail scroll are retained. A cached return makes no new review or content read. Other families remain `data-family-kept=true` with the visible tag `kept`; the selected family is not marked kept.
 - **Latest of rapid selections**: A → B → C settles on C; a superseded answer is neither shown nor kept, so choosing B again asks again.
 - **Late catalogue, reader working and reader idle** (two cases): after the bounded wait, an engaged reader is not moved; an idle reader lands on the first family without a remount.
-- **The task-context answer the bounded wait released** is kept when the catalogue answers before it, and "All source changes" later reuses it without another request.
-- **Failed and refused selection** (`it.each`): the shell stays mounted with its complete source explorer, and exactly one owner block is shown in the reading area, labelled with the requested subject. Retry asks for that subject again after a failure; after a refusal another subject is chosen directly.
+- **Late task-context answer:** a subjectless read released by the bounded wait can complete after the selected family, without replacing that family's reading; this case does not later click All changes to assert task-answer reuse.
+- **Failed/refused selection:** one subject-labelled problem is shown while shell/navigation rows remain mounted; stale selection/binding/currentness output is absent. Failure Retry asks the same subject again, while a refused selection can return to an already read family without another review.
 - **Moved focus**: focus the reader moved while the subject was pending is kept when the answer lands, and a reader who stayed on the selecting control still lands on the selected node.
 
 The last two cases force an order a loaded machine produces on its own: the reader selects again in the turn in which the previous answer's commit becomes visible, before React has run that commit's passive effects. A late effect of the earlier render must leave the new selection's focus request alone (`FocusRequest.after` in `ReviewWorkspace.tsx`).
@@ -44,6 +44,7 @@ The last two cases force an order a loaded machine produces on its own: the read
 - The cases are scoped executable evidence. They do not certify the mounted product journey in a browser.
 - jsdom has no layout engine. The rail's `scrollTop` retention these cases assert holds while a subject is pending; scroll position after an answer is not claimed here.
 
+The retained fetch-replay worlds measure request counts, selected DOM/focus and assigned scroll state, not a complete rendered source explorer. Added synthetic worlds assert two distinct shared-member occurrences reached by `j`/`k` and next/previous controls with one invariant read, plus old-generation outline quarantine, unavailable rereads and ignored superseded late catalogue answers for memory/code-generation changes.
 ## Evidence
 
 - The module's own statement of what it pins, why its replies are held, and what the two forced-order cases force. [8]
@@ -51,10 +52,15 @@ The last two cases force an order a loaded machine produces on its own: the read
 - Mounted shell, subject-labelled pending area, zero-request return, and the families of the invariant's review kept and tagged after the first family is selected again. [10]
 - Latest selection wins; a superseded answer is not kept. [11]
 - Late catalogue with and without reader engagement. [12]
-- The released task-context answer is kept and reused. [13]
+- The late task-context answer does not displace the selected family; this case no longer asserts an All changes reuse click. [13]
 - Failed or refused selection stated in the reading area for the requested subject. [14]
 - Focus the reader moved while pending is kept. [15]
 - Forced order by pointer: focus lands on the family chosen before the previous answer's effects have run. [16]
 - Forced order by key: every `j` pressed in that turn is kept and focus lands on each selected row. [17]
 - The guard the forced-order cases pin. [18]
 - The real-data world the key case is served from. [19]
+- Shared-member world with outline and families [20]
+- Outline reply with auxiliary refusal for the shared world [21]
+- Mount of the shared world with request capture [22]
+- Newer-generation world for superseding answers [23]
+- Held next-catalogue with releases for late answers [24]

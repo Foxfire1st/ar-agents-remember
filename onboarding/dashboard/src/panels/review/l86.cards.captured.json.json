@@ -1,0 +1,41 @@
+{
+  "path": "dashboard/src/panels/review/l86.cards.captured.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Located entries of the named invariants\n\nAnchor: `entries`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c4144b1d66ce493f4a8faa17440bc2e9d0f3100c",
+            "content": "sha256:c27cc4b1a4bd0d3b4a607ca92a80968d28b297970a4357e6f5fe8a827173590d",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Recorded comparison the entries are located on\n\nAnchor: `comparison`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c4144b1d66ce493f4a8faa17440bc2e9d0f3100c",
+            "content": "sha256:c27cc4b1a4bd0d3b4a607ca92a80968d28b297970a4357e6f5fe8a827173590d",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

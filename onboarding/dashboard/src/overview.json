@@ -227,12 +227,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "86545416eae45e7557f551de907178a8e9174476",
+            "blob": "d0e0f3a0a209313492e7cb61a2066cf40519f66e",
             "content": "sha256:820db497595b065edcce8a209717bec28e5769ccb4bf4e60888edc4bcd8879f6",
             "locator": {
-              "end": 47,
+              "end": 58,
               "kind": "line_range",
-              "start": 46
+              "start": 57
             },
             "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
           },
@@ -371,12 +371,12 @@
         },
         {
           "anchor": {
-            "blob": "f84799b8607720d59167369281b8ab441bb956ee",
+            "blob": "549d07c35309c25062a49eb856d3689a5a9c9b5f",
             "content": "sha256:81e9e12c0c00606d352fdec65d8459fe7a8f3fffe284126ac6f40d3945762837",
             "locator": {
-              "end": 717,
+              "end": 744,
               "kind": "line_range",
-              "start": 711
+              "start": 738
             },
             "path": "dashboard/src/data/review.ts"
           },
@@ -476,47 +476,6 @@
         }
       ]
     },
-    "29": {
-      "note": "**The panel's inventory rendering, in all three states, with byte-form rows beside the named ones — re-derived against this candidate, where the review surface's lower half moved.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "15f7110353dadebfae32b945340bc81624d0fd9b",
-            "content": "sha256:7a9918cfbbeca0fe8a60beee6bfca6dae9a51d703b41789f89f7c4a9233ae972",
-            "locator": {
-              "kind": "symbol",
-              "name": "SourceExplorer"
-            },
-            "path": "dashboard/src/panels/review/SourceExplorer.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "15f7110353dadebfae32b945340bc81624d0fd9b",
-            "content": "sha256:d6237d6db50ea62c295b613500bcfabea3b9f225c2be8e95100800ea196bc3a9",
-            "locator": {
-              "kind": "symbol",
-              "name": "inventoryEntry"
-            },
-            "path": "dashboard/src/panels/review/SourceExplorer.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "15f7110353dadebfae32b945340bc81624d0fd9b",
-            "content": "sha256:dd634c8abc3c5cbaba7972e433155b23438defcbdab07a46166e5698b6bb2e3c",
-            "locator": {
-              "kind": "symbol",
-              "name": "byteNamedEntry"
-            },
-            "path": "dashboard/src/panels/review/SourceExplorer.tsx"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "3": {
       "note": "The retained Knowledge layer renders the reader beside the path tree; the former transient ViewBody case is gone.",
       "targets": [
@@ -603,7 +562,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9c563bdc8c08ff9ac7ad435c187715c423a9cffb",
+            "blob": "52421fd8c85c1d68fe261ca9e829757796226adf",
             "content": "sha256:74471e933b7f1282d2b582656b01f556829f0c7f7cc23c680357692ebd1152da",
             "locator": {
               "kind": "symbol",

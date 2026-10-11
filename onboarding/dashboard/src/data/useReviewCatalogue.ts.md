@@ -10,6 +10,7 @@ Own the **reviewer's** subject-catalogue read: every recorded subject of the com
 Since `260921-ICR-L47` (`ICR-R24@v3`) it belongs to the reviewer only; the task entry shows the
 changed-intent summary (`data/reviewIntentSummary.ts`) and reads no catalogue.
 
+`useReviewCatalogue` reads the reviewer's subject catalogue once per comparison identity and quarantines stale semantic fields across generations. In W03 it also carries the navigation outline and binds reads to the comparison generation the reviewer observes.
 ## Code Commentary
 
 ### Logic
@@ -24,8 +25,9 @@ republished (the former `facts`/`stale` inputs tied to the global analytics docu
 `catalogueAnswer` maps an answer to the read state: the complete recorded subjects with the supplied totals
 (or totals counted from the page when a body predates them), known-empty, the owner's refusal, or an
 unreadable answer; a thrown request becomes `reviewProblemFromCause`. A sequence number drops superseded
-completions, and an answer is exposed only when its `comparisonKey` matches the current one, so a generation
-re-read of the same comparison keeps the listed subjects on screen (marked loading) until it lands.
+completions. Each keyed effect starts a fresh loading read; an answer is exposed only when its
+comparison and observed generation match the current target. A generation reread quarantines prior
+subjects and outline until its own answer lands, rather than showing stale semantic rows while loading.
 
 ### Conventions
 
@@ -42,6 +44,7 @@ entry.
 
 No additional work is asserted by this card.
 
+`ReviewCatalogueRead` gains `generation` and `outline`; `catalogueAnswer` lifts `result.outline` onto the read. `ReviewCatalogueKey` gains `comparisonGeneration`, tracked in a ref and bound onto each answer so a re-read of the same comparison quarantines the prior outline until its own answer lands. `catalogueForComparison` now also clears `outline` (with entries) when the catalogue's generation no longer matches the payload's, and `boundGeneration` reconciles the stored generation with the observed one. Superseded answers are still dropped by sequence number.
 ## Evidence
 
 ### Docs References
@@ -66,3 +69,7 @@ The named constructs own this behavior; reads and validation use their existing 
 No independent cross-repository interface is introduced by this source.
 
 No additional cross-repository evidence is required.
+- Catalogue reads carry generation and outline [7]
+- The server's outline is lifted onto the read [8]
+- A moved comparison clears entries and outline together [9]
+- Stored and observed generations are reconciled [10]

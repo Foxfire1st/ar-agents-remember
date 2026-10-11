@@ -17,6 +17,23 @@
       },
       "rationale": "The imported chatSeries fixture supplies the actual abandonedCount zero required by incoming schema for its in-progress leaf; it introduces no product fallback.",
       "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "a73752bcf3161fa40923fdecda01334846d91122",
+        "content": "sha256:1b16f5b96d9c5b1a83131ff7248694b154a9de83cab91531213f3cf2a85ffbcc",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-Q2VGW2",
+      "invariant": "INV-S732G2",
+      "origin": {
+        "handoffEntry": "MIK-R86@v1 W03 source-currentness fixture seam",
+        "leaf": "260928-MIK-L86"
+      },
+      "rationale": "Source-currentness proof of the existing admitted semantics; not a new invariant or product scope.",
+      "role": "support"
     }
   ],
   "references": {

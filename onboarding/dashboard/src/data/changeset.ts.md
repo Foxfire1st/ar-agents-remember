@@ -8,10 +8,11 @@
 
 Same-origin browser client for the L3 read-only change-set API. It exposes typed helpers over the three
 GET endpoints (`/api/changeset/task`, `/file-diff`, `/master`), returns camelCase-typed results, and
-reuses `data/files.ts`'s shared transport (`getJson`/`qs`) so the serving error idiom (a thrown
-`FilesApiError`) is mapped once. It holds no state — the Change-Set Viewer owns its component state and
+uses the shared `qs` query builder with its own `getChangeSetJson` refusal-preserving transport.
+A failure throws `ReviewTransportError`, carrying the route's refusal details. It holds no state — the Change-Set Viewer owns its component state and
 calls these helpers directly.
 
+`data/changeset.ts` is the same-origin client for the read-only change-set API: typed results, a thrown `ReviewTransportError` carrying the route's refusal, and no store mutation. In W03 it also addresses a recorded review comparison: `TaskChangeset` optionally echoes the comparison number and its four trees, and two new readers fetch a comparison's list and per-file diffs.
 ## Code Commentary
 
 ### Logic
@@ -60,7 +61,7 @@ Data contracts plus three fetch helpers:
 - `taskChangeset(repo, scope, base?)`, `fileDiff(repo, scope, kind, path, base?)`,
   `masterChangeset(repo, master, options?, base?)`, and `masterFileDiff(repo, master, kind, path, base?)` (the series
   net before/after via `/file-diff?master=`) each build their query string with `qs` (`URLSearchParams`)
-  and delegate to `getJson` (imported from `./files`).
+  and delegate to this module's `getChangeSetJson`.
 - L4a leaf helpers: `leafChangeset(repo, master, leaf, mode, base?)` and
   `leafFileDiff(repo, master, leaf, kind, path, mode, base?)`, where `mode: LeafMode` (`"committed" |
   "working"`). They ride the **same** `/api/changeset/task` and `/file-diff` routes with a `leaf` + `mode`
@@ -70,16 +71,17 @@ Data contracts plus three fetch helpers:
 ### Conventions
 
 Reuses the L1 files client's house style: a `base = ""` same-origin default, typed return values, the
-single shared `getJson`/`qs` transport, the shared thrown `FilesApiError`, and no store mutation. The
+shared `qs` query builder, refusal-preserving `getChangeSetJson`, thrown `ReviewTransportError`, and no store mutation. The
 interfaces mirror `serving/changeset.py`'s dict shapes exactly.
 
 ### Invariants And Boundaries
 
 Transport only — never mutates a store, never interprets diff content; it maps HTTP to typed results or a
-thrown `FilesApiError` (the serving idiom: 404 `unknown-repo`/`unknown-scope`/`not-found` — e.g. a
+thrown `ReviewTransportError` (including 404 `unknown-repo`/`unknown-scope`/`not-found` — e.g. a
 completed task whose worktree is gone — and 400 `bad-path`) and stops there. Same-origin by default; the
 FastAPI dashboard server owns repo/scope resolution and path safety.
 
+`TaskChangeset` carries optional `comparison` and `trees` (`codeBase`, `codeTip`, `memoryBase`, `memoryTip`), so a comparison answer uses the task shape with its identity attached. `FileDiff.kind` remains the existing `code` | `memory` discriminator. `comparisonChangeset` and `comparisonFileDiff` call the existing task and file-diff endpoints with `comparison` as a query parameter, which the server treats as the comparison selector (refusing any `mode` combination). Existing scope, leaf and master readers retain their request shapes.
 ## Evidence
 
 ### Docs References
@@ -95,7 +97,7 @@ No configured Domain Documentation source exists for this file.
 - Generation pins, the published generation identity, and the `committed`/`working` leaf-row state the master client threads and mirrors. [1]
 - Typed result contracts mirror the L3 endpoints' camelCase JSON (changed files, counters, file-diff, master accumulation), and (260921-ICR-L25) the leaf view's `state`/`stateDetail` pair that keeps an unrecorded range apart from a measured-empty one. [2]
 - Three `base`-arg GET helpers build the `/task`, `/file-diff`, `/master` URLs via the shared `qs`. [3]
-- Reuses the L1 files client's shared `getJson`/`qs` transport + `FilesApiError`. [4]
+- Change-set reads use qs and their own refusal-preserving getChangeSetJson, throwing ReviewTransportError rather than discarding refusal detail. [4]
 - The serving layer that defines the endpoints + response shapes this client mirrors. [5]
 - `ChangeSetViewer` orchestrates `taskChangeset`/`fileDiff`/`masterChangeset` + renders `FilesApiError.code`. [6]
 - `DetailPanel`'s change-set button fetches counters via `taskChangeset`/`masterChangeset`. [7]
@@ -107,3 +109,7 @@ This card maps a repository-local agents-remember source. Import and task-bounda
 cross-repository implementation source that governs its behavior.
 
 No applicable cross-repository source was found.
+- A comparison answer is the task shape plus identity [9]
+- File diffs name which half of the comparison they read [10]
+- The comparison list reuses the task endpoint with a number [11]
+- The comparison file diff adds kind and path [12]
