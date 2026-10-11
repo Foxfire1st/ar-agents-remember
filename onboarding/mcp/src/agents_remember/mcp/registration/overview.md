@@ -1,5 +1,10 @@
 # mcp/src/agents_remember/mcp/registration
 
+## Message and evidence transport
+
+The existing role_message registration adds file-only body, attachments and filed-message/reply/hash/limit/successor response fields through its strict models. Registered tool identity remains the same while input/result shape extends; no message index/search/public dashboard tool is introduced. Whole payloads are not copied into wake text.
+
+
 ## Current operative account — MIK-R112
 
 Closeout and landing descriptions separate each route's exact invariant judgment from broad quality/certification/review. Direct landing exposes optional leaf_id; leaf integration rejudges its closeout pair; master final/checkpoint/recorded routes declare validator, net staleness, chain and history checks.

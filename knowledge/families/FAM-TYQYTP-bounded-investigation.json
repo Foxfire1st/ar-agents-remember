@@ -5,7 +5,7 @@
     ],
     "justification": "The member boundaries together protect the end-to-end promise: a concern alone cannot constrain writes or remediation, and a slot guard alone cannot preserve request/report identity and primary-chat ownership."
   },
-  "guarantee": "A supplied concern may be investigated across source, task, memory and provider evidence, with checks confined to scratch or repository tooling sandbox; its report reaches the actual starter before any explicitly ordered provider/system remediation, while no order grants code, memory, task or role-start authority.",
+  "guarantee": "One supplied concern may be investigated across source/task/memory/provider evidence with checks only in scratch or repository tooling sandbox. Its named report returns to the supplied parent role/task reporting address, which may resolve a replacement occupant, before any explicitly ordered provider/system remediation. Actual starter remains concern and question provenance; no order gives code, memory, task or role-start authority.",
   "id": "FAM-TYQYTP",
   "members": [
     "INV-WAY665",
@@ -23,7 +23,7 @@
     "leaf": "260928-MIK-L98",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "routes": [
     "skills/l-01-agent-lifecycles/roles",
     "skills/l-01-agent-lifecycles",

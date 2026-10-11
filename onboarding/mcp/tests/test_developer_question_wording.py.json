@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "31872dc970f4edd5f8c5c9216a5a60431105bc8e",
+        "blob": "387f7657e824f6bdf14d470a49720a49a625a57f",
         "content": "sha256:560c310997b2a7ff934065bb8a489b3e1be52e294cb7e8876cc385b280e4eab1",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "31872dc970f4edd5f8c5c9216a5a60431105bc8e",
+        "blob": "387f7657e824f6bdf14d470a49720a49a625a57f",
         "content": "sha256:ece909d587bfb4b1b2f1d3b82d362afc61f400b5f280c1627bd99c4047e67928",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "31872dc970f4edd5f8c5c9216a5a60431105bc8e",
+        "blob": "387f7657e824f6bdf14d470a49720a49a625a57f",
         "content": "sha256:19d28f4d232caef57721e6e512145676b42b4b3527a8f5cea05dc692b37fecd5",
         "locator": {
           "kind": "symbol",
@@ -54,8 +54,8 @@
     },
     {
       "anchor": {
-        "blob": "31872dc970f4edd5f8c5c9216a5a60431105bc8e",
-        "content": "sha256:718c44929c67a7198c45bd7587557647866333de6e21107c4810fc8d547954d2",
+        "blob": "387f7657e824f6bdf14d470a49720a49a625a57f",
+        "content": "sha256:feb497f5846ac4fefd8dfeb12f419f02f3fd18ca884682e332b423036f00f58d",
         "locator": {
           "kind": "symbol",
           "name": "test_leaf_owner_relation_keeps_peer_results_and_named_parent_occasions"
@@ -71,7 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "31872dc970f4edd5f8c5c9216a5a60431105bc8e",
+        "blob": "387f7657e824f6bdf14d470a49720a49a625a57f",
         "content": "sha256:f1e0c160a5d37c58d17e9940f3c860554276bd061ffde0c3fcd11fc243c2bb10",
         "locator": {
           "kind": "symbol",
@@ -158,6 +158,22 @@
             "content": "sha256:a2844d5eacbbfa62864441cd24984ee9e40d109eef7400a8752c36b350cd1f05",
             "locator": {
               "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The compiled leaf ownerRelation carries the current Manager role/task returnAddress separately from descriptive starter identity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "387f7657e824f6bdf14d470a49720a49a625a57f",
+            "content": "sha256:feb497f5846ac4fefd8dfeb12f419f02f3fd18ca884682e332b423036f00f58d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_leaf_owner_relation_keeps_peer_results_and_named_parent_occasions"
             }
           },
           "kind": "test"

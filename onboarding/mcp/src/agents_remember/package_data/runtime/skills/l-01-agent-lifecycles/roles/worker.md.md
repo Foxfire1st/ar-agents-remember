@@ -1,5 +1,21 @@
 # mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/worker.md
 
+## Current supported-pair account — R100/R116 composition
+
+The Manager starts the three leaf seats as a set; Worker cannot start its checker or accept/publish its own implementation. Its stage requires final candidate meeting the requirement, relevant tests/lint/type checks passing and the report with Reviewer. Own failures are corrected on its own ground; blocked/unrun evidence remains explicit. A record-only repair stays on the same review round only with candidate unchanged; repeated cases demand property/construction reasoning rather than case chasing.
+
+This account controls the named changed seams; contradictory earlier card wording below is retained only as historical evidence. Unchanged role duties and R117 file-only wake/report transport are preserved. Source inspection supplies no new runtime test, CODE verdict, review counter or acceptance.
+
+- The Manager starts the three leaf seats as a set; Worker cannot start its checker or accept/publish its own implementation. Its stage requires final candidate meeting the requirement, relevant tests/lint/type checks passing and the report with Reviewer. Own failures are corrected on its own ground; blocked/unrun evidence remains explicit. A record-only repair stays on the same review round only with candidate unchanged; repeated cases demand property/construction reasoning rather than case chasing. [6]
+
+
+## Message/file transport
+
+This packaged copy makes role messages short wake-ups naming requested work or a handover and its files. Complete report, verdict, list and evidence contents travel through file-only `body` or existing-file `attach`, never pasted into message text. Within a shared task, message files remain with its record and a leaf workspace exposes the message-folder link. Wake text uses the effective settings limit, not a number pinned in this role/template. This transport account changes neither the file's existing role/write boundaries nor requirement, review, curation or landing authority.
+
+- Messages wake; complete payloads and evidence travel as files. [5]
+
+
 ## Governing Overview
 
 [MCP package overview](../../../../../../../overview.md)

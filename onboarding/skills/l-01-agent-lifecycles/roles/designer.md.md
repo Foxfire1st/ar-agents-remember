@@ -1,5 +1,10 @@
 # skills/l-01-agent-lifecycles/roles/designer.md
 
+## Message/file transport
+
+This canonical role/operation requires messages to be short wake-ups naming requested work or a handover and its files. Report, verdict, list and evidence contents travel through file-only `body` or existing-file `attach`, not pasted into message text. Within a shared task, files stay with its record and a leaf workspace exposes the message-folder link. Text uses the effective settings limit without a pinned number. The canonical source and generated copies share this contract; transport does not change their existing write/start powers, peer destinations or independent acceptance authority.
+
+
 ## Governing Overview
 
 [overview.md](overview.md)
@@ -15,8 +20,7 @@ when a separate design conversation would add no value.
 The designer binds to `(sprint document, designer)`, has no leaf worktree, and returns a master-scoped
 task design plus its declared cross-master blind spot to the architect. It reframes intent, retrieves
 evidence, measures the within-master blast radius, authors the requirement-derived task topology,
-and never implements. A dispatched designer uses `message_parent`; an architect may perform the
-same method inline without changing roles.
+and never implements. A dispatched designer returns through the admitted `role_message` transport and supplied parent role/task address; an architect may perform the same method inline without changing roles. The earlier `message_parent` wording describes the retired hosting path, not a current tool grant.
 
 When separately hosted, designer is target-only. Its architect ordinarily creates or switches the
 seat with one `dispatch_agent` call on the sprint document and is the plane-hosted caller. An

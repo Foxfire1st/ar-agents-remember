@@ -7,10 +7,10 @@
   },
   "applicability": "Terminal/finalizer-attested meanings in operations/curation.md, roles/curator.md and roles/reviewer.md.",
   "conditions": [
-    "Terminal-only-ended truth is directly stated at operations/curation.md:265.",
-    "Owner validation is owned by core/acceptance.md:14-19; the gate owner validates before advancing state.",
-    "roles/curator.md:146 composes the curation handoff home by explicit referral; roles/reviewer.md retains local turn-only truth.",
-    "The three scoped local surfaces state only the terminal half locally; the rostered common home core/acceptance.md states both halves (terminal truth :3-8, owner validation :14-19)."
+    "The curation operation directly states terminal-only-ended truth.",
+    "The gate owner validates semantic acceptance at core/acceptance before advancing state.",
+    "Curator composes the operation handoff home; Reviewer retains local turn-only truth.",
+    "The scoped local surfaces state terminal truth while the accepted common home owns both terminal truth and owner validation."
   ],
   "exclusions": [
     "Sweep-wide wording changes in settled role documents outside the retained corpus.",
@@ -28,9 +28,9 @@
     "leaf": "260928-MIK-L70",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-invariant/v1",
-  "statement": "Terminal/finalizer-only-ended truth is stated in operations/curation.md:265 and retained through the role documents' composed handoff referrals; owner validation lives at the accepted common home core/acceptance.md:14-19. Participation is by direct statement and explicit referral, not by each of these three documents stating both halves locally.",
+  "statement": "Terminal/finalizer evidence states only that a turn ended. The curation handoff home and composed Curator/Reviewer referrals retain that local truth; semantic owner validation remains at the accepted common acceptance home, not a duplicated both-halves local requirement.",
   "status": "proposed",
   "supersedes": []
 }

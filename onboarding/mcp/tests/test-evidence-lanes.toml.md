@@ -1,5 +1,14 @@
 # mcp/tests/test-evidence-lanes.toml
 
+## Current paired source contract — scoped assertions and incoming catalogs
+
+The source-declared `unit-regression` population includes held/native-retirement/set-start, comparison/coherence-file/takeover, shaped answer-row and uv-minimum bootstrap suites. `test_citation_document_transaction.py` is instead declared in `integration`. Earlier role-message file/wording/role-agent rows are absent from this candidate’s declared lane lists; source declarations, not prior prose, control those memberships. None of this establishes test execution.
+
+This section supersedes contrary earlier prose only for these changed seams; retained evidence and useful unaffected accounts are not deleted or promoted to new proof.
+
+- The current source declares the selected lane population; citation-document transaction is integration, not unit-regression. [844]
+
+
 ## Governing Overview
 
 [tests route overview](overview.md)
@@ -10,8 +19,7 @@ The canonical evidence-lane catalog: which test modules belong to which lane, so
 
 ## Code Commentary
 
-The catalog assigns each current test module exactly one evidence lane, one module
-path per row, kept sorted within the lane. The extracted capsule serving-surface and
+The catalog records its declared test-module paths under evidence lanes, not an independently verified inventory of every filesystem module. On the admitted L147 successor the parsed lists are unique and sorted within each lane; that observation does not retroactively qualify the older frozen ordering. Source declarations and their loader checks, not this prose, decide current membership. The extracted capsule serving-surface and
 memory-opt-out refusal suites remain in `unit-regression`; those incoming registrations
 are not additions authored by this leaf. L112 adds `test_context_packet_cli.py`,
 `test_provider_setup_retired.py`, `test_providers_remove.py`, `test_role_single_server.py`

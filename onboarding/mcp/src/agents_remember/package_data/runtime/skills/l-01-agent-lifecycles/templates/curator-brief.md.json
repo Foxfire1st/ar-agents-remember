@@ -38,7 +38,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7d45989aa2a810edb7efe59ec07fd9350438bc9f",
+            "blob": "1060ffa0e57f77e37902afeb00b2e97c2111208b",
             "content": "sha256:c8d477c28ddba2f0c2bbcea66e65c1766bf20d7f2d6561a55e35889c1356b408",
             "locator": {
               "end": 1,
@@ -100,7 +100,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bd9c524b3c9a092280ad27f4cca66c65f1b4f12c",
+            "blob": "9ed3eed183138140309e8b6704ff47c697f7ee3c",
             "content": "sha256:f2bf6365652ab4bd956193f0f6688638f4f988f94c796220bd405708300a45b0",
             "locator": {
               "end": 1,
@@ -164,6 +164,23 @@
               "kind": "file"
             },
             "path": "skills/l-01-agent-lifecycles/operations/curation.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The brief retains exact paired roots, producer fields and source-lineage requirements. Its MEMORY review is separately sealed/counted; beyond-settings authority is architect/developer approval recorded by Manager, not a fresh CODE baseline. File-only report material, passed-candidate evidence and independent acceptance are distinct.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9ed3eed183138140309e8b6704ff47c697f7ee3c",
+            "content": "sha256:f899ad49f60b3ed23ffe08b60022d66029714f29df767d418beb8f2784f533bc",
+            "locator": {
+              "end": 128,
+              "kind": "line_range",
+              "start": 1
+            }
           },
           "kind": "code"
         }

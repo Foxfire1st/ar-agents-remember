@@ -12,6 +12,8 @@ Defines typed role knobs and inherited agentic settings defaults.
 
 ## Code Commentary
 
+`KNOWN_ORCHESTRATION_FIELDS` admits `roleMessageLimit`, and `AgenticSettings.role_message_limit` uses the shared `DEFAULT_ROLE_MESSAGE_LIMIT` of 1000. This bound counts role-message wake text, not sender/file pointer lines or full-file payloads. The core owns the typed setting/default; the loader validates it and the message facade reads the effective limit per call.
+
 L23 had added the closed `QualityExecutor` choice defaulting `orchestration.qualityGate.executor` to `local`. CCR-R22@v1 (L22, commit `685f83c44055`) removed the executor field entirely: `QualityExecutor` is deleted, `KNOWN_QUALITY_GATE_FIELDS` now contains only `memoryCapBytes`, and `QualityGateSettings` carries only `memory_cap_bytes` -- executor identity belongs to the repository certification profile, not to agentic settings.
 
 - `AgenticSettingsError`

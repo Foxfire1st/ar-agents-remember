@@ -1,0 +1,108 @@
+{
+  "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "09f339b7c9d38caf120e180d2ae2331bdebc0bcb",
+        "content": "sha256:09cfd507ab1eafdf2dc904cd5c5b9e3bca3fe88ff57a6e3746a2428ea406a0aa",
+        "locator": {
+          "kind": "symbol",
+          "name": "flushHeldLines"
+        }
+      },
+      "id": "RLZ-S39QFR",
+      "invariant": "INV-1ZKP4R",
+      "origin": {
+        "handoffEntry": "L117-R11",
+        "leaf": "260928-MIK-L117"
+      },
+      "rationale": "Synchronous claim ownership plus send-point rechecks make overlapping flushes deliver once and honor restarts.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "09f339b7c9d38caf120e180d2ae2331bdebc0bcb",
+        "content": "sha256:9269a8f06d37cd197480018986cd10f245238a2c5f3f7aa6636bf66c02df565e",
+        "locator": {
+          "kind": "symbol",
+          "name": "noteTurnEnded"
+        }
+      },
+      "id": "RLZ-ZA95M4",
+      "invariant": "INV-1ZKP4R",
+      "origin": {
+        "handoffEntry": "L117-R11",
+        "leaf": "260928-MIK-L117"
+      },
+      "rationale": "The turn-end decision owns the four-fact line and every silence, hold and drop case the sealed criteria require.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Timeline tool-call recipients, not sibling traffic, determine whether the turn returned to its parent.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "09f339b7c9d38caf120e180d2ae2331bdebc0bcb",
+            "content": "sha256:1b16087babfe019291dbc1298d8285f125485f1a7372d9d36f73465fd34fd954",
+            "locator": {
+              "kind": "symbol",
+              "name": "turnHasReturnToParent"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Descendant restart removes held lines and invalidates claimed ancestor lines.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "09f339b7c9d38caf120e180d2ae2331bdebc0bcb",
+            "content": "sha256:0e6976c85db0f4b004ef7eb9adbf2fd71c7a4b4073fd30f63495d828b129ceb9",
+            "locator": {
+              "kind": "symbol",
+              "name": "noteTurnStarted"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Synchronous claim ownership and send-point rechecks prevent overlapping flushes owning one deferred line.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "09f339b7c9d38caf120e180d2ae2331bdebc0bcb",
+            "content": "sha256:09cfd507ab1eafdf2dc904cd5c5b9e3bca3fe88ff57a6e3746a2428ea406a0aa",
+            "locator": {
+              "kind": "symbol",
+              "name": "flushHeldLines"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Role/parent facts, return and permission state decide whether a silent end produces, holds or drops its line.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "09f339b7c9d38caf120e180d2ae2331bdebc0bcb",
+            "content": "sha256:9269a8f06d37cd197480018986cd10f245238a2c5f3f7aa6636bf66c02df565e",
+            "locator": {
+              "kind": "symbol",
+              "name": "noteTurnEnded"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

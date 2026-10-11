@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "cde27c9b473014b9a483a810bfa2ccad9f823d5e",
-        "content": "sha256:2327e63af306b4dc50ad0a04d9e6bf8ae4a456932e0a1a5860a0cb2977c1a2b5",
+        "blob": "74664e390089e844ad6ecf64a792247e0289eec8",
+        "content": "sha256:01abf3c0329550b85732ab218a47c8633bc74926f9069d25d4cdda9243e2275a",
         "locator": {
           "kind": "file"
         }
@@ -19,6 +19,24 @@
       "role": "propagation-persistence"
     }
   ],
-  "references": {},
+  "references": {
+    "1": {
+      "note": "Messages wake; complete payloads and evidence travel as files.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "74664e390089e844ad6ecf64a792247e0289eec8",
+            "content": "sha256:d0dd37230635b4bf60eb9afa2f995a981c26d820d440db56374f8aaa8e0cceca",
+            "locator": {
+              "end": 110,
+              "kind": "line_range",
+              "start": 110
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
   "schema": "ar-onboarding-file/v1"
 }

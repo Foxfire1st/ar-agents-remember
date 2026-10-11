@@ -1,5 +1,14 @@
 # mcp/tests/evidence-lifecycle.toml
 
+## Current paired source contract — scoped assertions and incoming catalogs
+
+The current incoming catalogs add explicit consumer registrations for held queues, native retirement, role_start_set, comparison changesets, shaped memory-tool rows, coherence file transport, takeover and uv-minimum bootstrap cases. The permanent shared tool_answer_l110_rows support has its own artifact/contract declaration; removed role-message file/wording/role-agent consumer rows are not restored by historical prose. Catalog ownership/membership are not execution proof.
+
+This section supersedes contrary earlier prose only for these changed seams; retained evidence and useful unaffected accounts are not deleted or promoted to new proof.
+
+- Current source-declared consumer and artifact registrations carry ownership/reachability, not execution evidence. [265]
+
+
 ## Governing Overview
 
 [mcp/tests route overview](overview.md)

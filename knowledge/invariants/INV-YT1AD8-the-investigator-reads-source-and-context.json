@@ -8,7 +8,8 @@
   "applicability": "Investigator evidence gathering and report delivery.",
   "conditions": [
     "Checks run only in scratch or the repository tooling sandbox.",
-    "The report path and actual starter come from the handover."
+    "The report path, actual launch parent and reporting role/task address come from the handover.",
+    "A replacement occupant may receive the ordinary report return without changing fixed launch-parent identity or the actual-parent-ID developer-question channel."
   ],
   "exclusions": [
     "Changes to a code checkout, leaf enclosure, memory or task state."
@@ -25,9 +26,9 @@
     "leaf": "260928-MIK-L98",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "The Investigator reads source and context, runs checks only in scratch or a repository-tooling sandbox, writes the named report and tells its actual starter.",
+  "statement": "The Investigator reads source and context, runs checks only in scratch or a repository-tooling sandbox, writes the named report and returns its path to the supplied parent role/task reporting address; initial concern and developer-question provenance remain the actual starter.",
   "status": "proposed",
   "supersedes": []
 }

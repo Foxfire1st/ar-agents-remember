@@ -1,5 +1,10 @@
 # mcp/tests/test_developer_question_wording.py
 
+## Message transport contract coverage
+
+The compiled leaf ownerRelation carries the current Manager role/task returnAddress separately from descriptive starter identity. Direct peer routes and no routine parent-result order remain. This return-shape assertion does not supersede the separate actual-parent-ID developer-question channel or demonstrate native replacement delivery.
+
+
 ## Governing Overview
 
 [tests route overview](overview.md)
@@ -14,8 +19,20 @@ The module reads the delivered canonical role and operation texts and requires t
 
 ## Evidence
 
+
 - The parentable roles carry the question, recovery, provenance and notice clauses. [1]
+
+
 - Every starter role carries the upward notice and unchanged downward answer duties. [2]
+
+
 - The three operations keep conditional routing and pending recovery. [3]
+
+
 - The leaf ownerRelation keeps peer results and named parent occasions. [4]
+
+
 - Each exact retired directive is detected as an independent sentence. [5]
+
+
+- The compiled leaf ownerRelation carries the current Manager role/task returnAddress separately from descriptive starter identity. [6]

@@ -6,12 +6,7 @@
 
 ## Purpose
 
-Owns the **realization a curator hand-off target authors** — its role and its rationale — for the
-ordinary curator writer (`knowledge_curator_ingest.py`). It resolves each target's role and rationale
-(the target's own values first, then the entry's explicit default) and decides, before any identity is
-minted, whether an entry that would write new realizations is admissible. The writer never generates
-rationale text: an unexplained target refuses its entry by name. This module holds no I/O and writes
-nothing; the ingest calls it.
+Owns the pure **realization value guard** shared by curator hand-off callers: role, rationale and route defaults are resolved per target, and malformed values return a named entry/target diagnostic. The converted caller is `knowledge_writer/handoff.py::_targets`; `knowledge_writer/writer.py::write_knowledge` refuses the whole hand-off on those problems and writes nothing. This helper performs no I/O and cannot establish a partial-commit policy. Earlier `knowledge_curator_ingest.py` allocation/replay and sibling commits are historical per-entry behavior only while that path exists.
 
 ## Code Commentary
 
@@ -60,10 +55,7 @@ nothing; the ingest calls it.
   stored claim model requires non-blank text, so absence cannot be stored.
 - **Per target wins.** A target's own `rationale` / `role` always beats the entry-level default; the
   entry default is an explicit authored value, never a fallback the writer invents.
-- **Checked only on admission.** The caller (`knowledge_curator_ingest._resolve_creation`) does not ask
-  these questions of an entry whose recorded allocation the candidate already stores: its exact retry
-  writes nothing and replays as at base. A recorded-but-uncommitted allocation is still checked. This
-  module does not itself know about allocations.
+- **Caller-owned admission, not a replay exemption.** Converted `_targets` validates every supplied list run, including entries written by an earlier run. The historical per-entry caller skipped an exact committed allocation and checked a recorded-but-uncommitted allocation; that allocation policy belongs to its earlier mode only. This pure module knows nothing about allocations or transaction writes.
 - **Not a quality judgment.** It checks that an explanation was *stated*, not that it is good.
 - **History untouched.** Stored claims holding the old generated sentence "The statement is realized at
   <path>." are never re-read or rewritten here.
@@ -86,6 +78,9 @@ No domain documentation source is configured for this repository (`system/source
 No configured domain documentation could be checked.
 
 ### Repo-Internal References
+
+- Converted target parsing collects the pure guard's named problems and the writer refuses the whole handoff before its physical write step. [8]
+
 
 - **The module's own statement: per target first, checked at admission, no route spelled by a placeholder, and what it does not cover.** [1]
 - The five refusal codes and the producer-facing keys. [2]

@@ -1,5 +1,10 @@
 # skills/l-01-agent-lifecycles/roles
 
+## Message and evidence transport
+
+The canonical roles share file-carried message evidence and replacement-transparent role/task ordinary report returns; actual-parent-ID questions and quoted-answer provenance remain separate. Bootstrap remains taskless setup/report-only, Investigator remains bounded read/report, and leaf peer handovers remain direct. A carrier change or a host-authored silent-turn wake gives no role a new write/start/acceptance power.
+
+
 
 ## The curator's converted-memory steps (260928-MIK-L37)
 
@@ -39,7 +44,7 @@ copy and the eight harness starter copies are synced by `sync-skills.py`.
 
 ## Curator successor-family examination
 
-The curator role requires explicit stored membership IDs and authored bases when retaining unchanged siblings in a justified family successor. It preserves each existing invariant revision and checks the ordinary published roster. The role’s code, task-state and Git prohibitions remain unchanged.
+For converted memory, the Curator names the family’s stable invariant-member IDs and authors retention/coverage bases without revising unchanged invariant meanings. Readback examines the stored family, members/revisions and routes. Legacy membership-row selectors and a published dataset roster are earlier interface evidence, not the converted family’s current selector/readback prescription. The role’s code, task-state and Git prohibitions remain unchanged.
 
 
 ## Curator authors a rationale for every realization target (260921-ICR-L45)
@@ -515,7 +520,7 @@ Investigator handles one concern of any kind in Projects, a selected sprint or a
 
 ## Refreshed current evidence
 
-- The curator process carries exact retained-sibling authoring and readback. [3]
+- The retained-sibling process is read under its storage interface: converted families use invariant-member identities and stored family/revision readback, not legacy membership-row selectors. [3]
 - The curator owns affected onboarding and admitted knowledge authoring, with full diagnostics and a structured handoff; source code, task and lifecycle writes stay outside the seat. [9]
 - Manager is one master-scoped owner of the builder/reviewer/curator closeout chain. [10]
 - Worker is one leaf-scoped builder whose terminal artifact is the turn report. [11]

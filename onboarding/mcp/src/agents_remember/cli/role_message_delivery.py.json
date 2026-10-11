@@ -1,0 +1,250 @@
+{
+  "path": "mcp/src/agents_remember/cli/role_message_delivery.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "133a5e37a6c09fe0dece21dcbe5367d088208087",
+        "content": "sha256:43ff80ac4a020487f8c49af37dcfe2b253d5467cc659e08c7225673203a66e42",
+        "locator": {
+          "kind": "symbol",
+          "name": "_live_successor"
+        }
+      },
+      "id": "RLZ-1A15HS",
+      "invariant": "INV-ZYW4CT",
+      "origin": {
+        "handoffEntry": "L117-R09",
+        "leaf": "260928-MIK-L117"
+      },
+      "rationale": "The successor lookup resolves replacement on the same selection so a stale id never silently delivers elsewhere.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "133a5e37a6c09fe0dece21dcbe5367d088208087",
+        "content": "sha256:f1ec2e99a70d406bc9090d8934122faa44d6f7126c1778f76962e2a9f525aa24",
+        "locator": {
+          "kind": "symbol",
+          "name": "_ensure_recipient_link"
+        }
+      },
+      "id": "RLZ-1YKGH7",
+      "invariant": "INV-D22ZTW",
+      "origin": {
+        "handoffEntry": "L117-R05",
+        "leaf": "260928-MIK-L117"
+      },
+      "rationale": "The inbound helper attempts the recipient own-leaf messages link when its receipt supplies a leaf and workspace. Missing context skips the attempt; path resolution and occupied/divergent paths can warn and continue without replacement, so the helper does not prove an old workspace is never linkless.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "133a5e37a6c09fe0dece21dcbe5367d088208087",
+        "content": "sha256:bf857446a1db2cdadcb598d7e15f2be034bf154432ca5c4d616788550eb9d646",
+        "locator": {
+          "kind": "symbol",
+          "name": "_file_long_reply"
+        }
+      },
+      "id": "RLZ-24SKNM",
+      "invariant": "INV-HJ9MR9",
+      "origin": {
+        "handoffEntry": "L117-R06",
+        "leaf": "260928-MIK-L117"
+      },
+      "rationale": "The helper cuts and files a reply longer than the supplied character limit when invoked with a filed message, or discloses failed filing while returning the prefix. The current unheld dispatcher invokes it only with a filed identity; held-drain waits omit the helper and are not qualified by this witness.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "133a5e37a6c09fe0dece21dcbe5367d088208087",
+        "content": "sha256:f91c9e416bdcd8a24bc709034d4fa5726cfdd55d6a45482fba331564f0cffc50",
+        "locator": {
+          "kind": "symbol",
+          "name": "_store_message"
+        }
+      },
+      "id": "RLZ-H23TQ7",
+      "invariant": "INV-VH983B",
+      "origin": {
+        "handoffEntry": "L117-R04",
+        "leaf": "260928-MIK-L117"
+      },
+      "rationale": "The shared _store_message publishes the complete message when the resolved-recipient facade prologue invokes it. The unfinished-start hold returns before that prologue, so this witness does not prove filing or body/attachment retention for every public path; the normative filing obligation and Owner/Worker implementation gap remain.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "133a5e37a6c09fe0dece21dcbe5367d088208087",
+        "content": "sha256:7ea6bf8c36fc2317df3cf3a9f8d89e759fac7f4c52fa594cda3aec0c34634497",
+        "locator": {
+          "kind": "symbol",
+          "name": "_refuse_over_limit"
+        }
+      },
+      "id": "RLZ-JXK2W7",
+      "invariant": "INV-A87E4H",
+      "origin": {
+        "handoffEntry": "L117-R01",
+        "leaf": "260928-MIK-L117"
+      },
+      "rationale": "An over-limit text refuses as message-too-long naming count and limit instead of truncating.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "133a5e37a6c09fe0dece21dcbe5367d088208087",
+        "content": "sha256:5ff8485f235d15c81552b3c5bc9dfca4b1da8b38a66c41a3d81ed191a8a56744",
+        "locator": {
+          "kind": "symbol",
+          "name": "_discard_copies"
+        }
+      },
+      "id": "RLZ-MKR97R",
+      "invariant": "INV-PRVEVY",
+      "origin": {
+        "handoffEntry": "L117-R02",
+        "leaf": "260928-MIK-L117"
+      },
+      "rationale": "Preparation and store failures discard every message-owned copy before the message-file-failed refusal.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "133a5e37a6c09fe0dece21dcbe5367d088208087",
+        "content": "sha256:7b5071f64bf3e66e005d048fe1f9a292f5917e5545f7fb689247190c6356d33b",
+        "locator": {
+          "kind": "symbol",
+          "name": "sender_line"
+        }
+      },
+      "id": "RLZ-S0SZP3",
+      "invariant": "INV-VH983B",
+      "origin": {
+        "handoffEntry": "L117-R04",
+        "leaf": "260928-MIK-L117"
+      },
+      "rationale": "The sender line names the wake-up's origin so the recipient never confuses a wake-up with content.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "133a5e37a6c09fe0dece21dcbe5367d088208087",
+        "content": "sha256:78916eaa8221a6d488a649c136a140981d73d689bd5a11d962230aa37a2d7e80",
+        "locator": {
+          "kind": "symbol",
+          "name": "_archived_with_successor"
+        }
+      },
+      "id": "RLZ-TR3S12",
+      "invariant": "INV-ZYW4CT",
+      "origin": {
+        "handoffEntry": "L117-R09",
+        "leaf": "260928-MIK-L117"
+      },
+      "rationale": "The archived refusal names the live successor instead of failing closed without a path forward.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "133a5e37a6c09fe0dece21dcbe5367d088208087",
+        "content": "sha256:78916eaa8221a6d488a649c136a140981d73d689bd5a11d962230aa37a2d7e80",
+        "locator": {
+          "kind": "symbol",
+          "name": "_archived_with_successor"
+        }
+      },
+      "id": "RLZ-XV9NR8",
+      "invariant": "INV-82ZTHK",
+      "origin": {
+        "handoffEntry": "MIK-R93@v1 rule12",
+        "leaf": "260928-MIK-L93"
+      },
+      "rationale": "This refusal constructor returns the changed nextAction wording while preserving the refusal reason and runtime delivery behavior.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Count only text and refuse excess without silently moving or truncating it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "133a5e37a6c09fe0dece21dcbe5367d088208087",
+            "content": "sha256:7ea6bf8c36fc2317df3cf3a9f8d89e759fac7f4c52fa594cda3aec0c34634497",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refuse_over_limit"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Archived id refusal names a same-selection live successor without changing recipient identity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "133a5e37a6c09fe0dece21dcbe5367d088208087",
+            "content": "sha256:78916eaa8221a6d488a649c136a140981d73d689bd5a11d962230aa37a2d7e80",
+            "locator": {
+              "kind": "symbol",
+              "name": "_archived_with_successor"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Prepare/file before send, preserve capacity and revive boundaries, and retain attempted refusals.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "133a5e37a6c09fe0dece21dcbe5367d088208087",
+            "content": "sha256:9e00ed02f3ee8d633407c10d6e903098e8704420f304b1acf41ba895c9e30a28",
+            "locator": {
+              "kind": "symbol",
+              "name": "_deliver"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Long replies are filed whole or explicitly disclose the failed filing while returning only the prefix.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "133a5e37a6c09fe0dece21dcbe5367d088208087",
+            "content": "sha256:bf857446a1db2cdadcb598d7e15f2be034bf154432ca5c4d616788550eb9d646",
+            "locator": {
+              "kind": "symbol",
+              "name": "_file_long_reply"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The composed facade calls this shared publisher to render/store the whole message; storage failure discards message-owned attachment copies and refuses before native send, while success returns the filed identity and wake payload.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "133a5e37a6c09fe0dece21dcbe5367d088208087",
+            "content": "sha256:f91c9e416bdcd8a24bc709034d4fa5726cfdd55d6a45482fba331564f0cffc50",
+            "locator": {
+              "kind": "symbol",
+              "name": "_store_message"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

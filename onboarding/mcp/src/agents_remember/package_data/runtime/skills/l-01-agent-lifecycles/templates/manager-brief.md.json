@@ -16,6 +16,23 @@
           "kind": "code"
         }
       ]
+    },
+    "2": {
+      "note": "The compiled master brief preserves the monotonic sealed finding list across rounds within the settings limit and names recorded architect/developer approval beyond it. Values in the brief cannot create a routine transaction gate or alter role/operation authority; direct peer file packages and Manager transaction ordering remain separate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d3152cd1695aae699e86dd5886be89e2d5bfd875",
+            "content": "sha256:1266a47d86d8d06e3b10715cdb3f962442fe47362fe6883c86225a451af4ae91",
+            "locator": {
+              "end": 181,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

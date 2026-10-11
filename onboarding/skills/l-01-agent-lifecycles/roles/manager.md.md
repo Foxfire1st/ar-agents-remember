@@ -1,5 +1,19 @@
 # skills/l-01-agent-lifecycles/roles/manager.md
 
+## Current supported-pair account — R100/R116 composition
+
+A leaf Worker/Reviewer/Curator is started as one set, not Worker+Reviewer followed by Curator at freeze. Manager keeps whole-stage sync/closeout/integration/task/start boundaries and repairs own recording/address/input faults. Extra rounds beyond settings are requested from the task architect with the Worker property/construction account and recorded approval. Permission-held messages are product-owned for delivery; ordinary leaf peer artifacts are not couriered through Manager.
+
+This account controls the named changed seams; contradictory earlier card wording below is retained only as historical evidence. Unchanged role duties and R117 file-only wake/report transport are preserved. Source inspection supplies no new runtime test, CODE verdict, review counter or acceptance.
+
+- A leaf Worker/Reviewer/Curator is started as one set, not Worker+Reviewer followed by Curator at freeze. Manager keeps whole-stage sync/closeout/integration/task/start boundaries and repairs own recording/address/input faults. Extra rounds beyond settings are requested from the task architect with the Worker property/construction account and recorded approval. Permission-held messages are product-owned for delivery; ordinary leaf peer artifacts are not couriered through Manager. [9]
+
+
+## Message/file transport and return addressing
+
+Messages are short wake-ups naming work and files; report/verdict/evidence content travels in file-only `body` or existing-file `attach`, not pasted text. Within a shared task the files stay in its record and a leaf workspace exposes the folder link. Wake text uses the settings limit without a pinned number. Ordinary report-written notices and final report-path returns use the supplied parent role/task address, including an instructed reporting-recipient change. Developer-needed questions remain addressed to the actual parent/instructed-recipient ID. These are distinct message purposes, not an ID exception to the return rule. Fixed launch-parent identity and existing role/peer/write/acceptance boundaries remain preserved.
+
+
 ## Governing Overview
 
 [roles overview](overview.md)
@@ -42,8 +56,7 @@ than a condition the worker is expected to repair.
 
 When all leaves land, an adversarial master-exit verdict becomes evidence on the handover seam; the
 manager writes the master-handover packet and remains reachable at `(master document, manager)`.
-Ordinary follow-ups and escalations use native `role_message` between parent and child so
-replacements are transparent.
+Ordinary report returns use the parent role and task references so replacement does not strand them. Developer escalations retain the supplied actual-parent or explicitly instructed-recipient ID channel and its refusal semantics.
 
 Before starting the Worker, the manager compiles the exact stable IDs applicable to the leaf, including
 inherited master requirements. It requires one complete worker envelope per ID and gives that same

@@ -1,0 +1,39 @@
+{
+  "path": "mcp/tests/test_paseo_role_agents.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Round-trip and unchanged republish preserve fact data and file mtime.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37f3a95fcca67d1d7b98e09655ad32f2d1dfec31",
+            "content": "sha256:08aac0a0196a05c30d1bb2ab4d4fc51f53983d02b7b27e5feb78cf9a9e8cd8de",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleAgentPublishTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Start hooks publish only when required runtime/report facts exist.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37f3a95fcca67d1d7b98e09655ad32f2d1dfec31",
+            "content": "sha256:4252ae60b5bc1413303593cbed96c27a16ced92762547ac62f567a7f14389eda",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleStartPublishesForPluginTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

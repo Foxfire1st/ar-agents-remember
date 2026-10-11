@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "8e1c8a592a55478c12d7244b3087fa8789a4c908",
-        "content": "sha256:eee0ae43b3d96dd48b5d26b01d738b2e33a820f6c4ac5727396327b2af8a7756",
+        "blob": "2235a3e382d20aa35f1bba0b8099a09a5a904cf8",
+        "content": "sha256:84b1ac8420f0ebc7a470a1ee418285ad57634586954cfbcb5010a5a61fd3cb34",
         "locator": {
           "kind": "file"
         }
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "8e1c8a592a55478c12d7244b3087fa8789a4c908",
-        "content": "sha256:eee0ae43b3d96dd48b5d26b01d738b2e33a820f6c4ac5727396327b2af8a7756",
+        "blob": "2235a3e382d20aa35f1bba0b8099a09a5a904cf8",
+        "content": "sha256:84b1ac8420f0ebc7a470a1ee418285ad57634586954cfbcb5010a5a61fd3cb34",
         "locator": {
           "kind": "file"
         }
@@ -36,6 +36,24 @@
       "role": "primary-authority"
     }
   ],
-  "references": {},
+  "references": {
+    "1": {
+      "note": "Delta scope remains monotonic over the preceding rejected set. Rounds within the settings limit are ordinary; beyond it requires recorded approval under the review operation. This changes no target-only dispatch authority, role write boundary, requirement or acceptance owner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2235a3e382d20aa35f1bba0b8099a09a5a904cf8",
+            "content": "sha256:84b1ac8420f0ebc7a470a1ee418285ad57634586954cfbcb5010a5a61fd3cb34",
+            "locator": {
+              "end": 125,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
   "schema": "ar-onboarding-file/v1"
 }

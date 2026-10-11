@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "ab878e7ff87bfeccf7dbc9b7f8a8244e459d3888",
-        "content": "sha256:a23026e4aade193458c493a521ab277fa101dc6b7db0f5478ba0218ec1a4bf17",
+        "blob": "d3152cd1695aae699e86dd5886be89e2d5bfd875",
+        "content": "sha256:1266a47d86d8d06e3b10715cdb3f962442fe47362fe6883c86225a451af4ae91",
         "locator": {
           "kind": "file"
         }
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "ab878e7ff87bfeccf7dbc9b7f8a8244e459d3888",
-        "content": "sha256:a23026e4aade193458c493a521ab277fa101dc6b7db0f5478ba0218ec1a4bf17",
+        "blob": "d3152cd1695aae699e86dd5886be89e2d5bfd875",
+        "content": "sha256:1266a47d86d8d06e3b10715cdb3f962442fe47362fe6883c86225a451af4ae91",
         "locator": {
           "kind": "file"
         }
@@ -57,7 +57,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ab878e7ff87bfeccf7dbc9b7f8a8244e459d3888",
+            "blob": "d3152cd1695aae699e86dd5886be89e2d5bfd875",
             "content": "sha256:1305e15ab630ef8c13130106ad2612492fce7446bd856eef28fea19da46a7214",
             "locator": {
               "end": 152,
@@ -93,6 +93,23 @@
             "content": "sha256:a23026e4aade193458c493a521ab277fa101dc6b7db0f5478ba0218ec1a4bf17",
             "locator": {
               "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The compiled master brief preserves the monotonic sealed finding list across rounds within the settings limit and names recorded architect/developer approval beyond it. Values in the brief cannot create a routine transaction gate or alter role/operation authority; direct peer file packages and Manager transaction ordering remain separate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d3152cd1695aae699e86dd5886be89e2d5bfd875",
+            "content": "sha256:1266a47d86d8d06e3b10715cdb3f962442fe47362fe6883c86225a451af4ae91",
+            "locator": {
+              "end": 181,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"

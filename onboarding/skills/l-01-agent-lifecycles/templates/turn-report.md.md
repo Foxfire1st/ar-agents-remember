@@ -1,5 +1,10 @@
 # skills/l-01-agent-lifecycles/templates/turn-report.md
 
+## Message/file transport
+
+This canonical template requires messages to be short wake-ups naming requested work or a handover and its files. Report, verdict, list and evidence contents travel through file-only `body` or existing-file `attach`, not pasted into message text. Within a shared task, files stay with its record and a leaf workspace exposes the message-folder link. Text uses the effective settings limit without a pinned number. The canonical source and generated copies share this contract; transport does not change their existing write/start powers, peer destinations or independent acceptance authority.
+
+
 ## Current operative account — MIK-R112
 
 The canonical worker report retains exact candidate, immutable requirement-attempt/journal links, measured command/evidence limits, findings and continuation inputs. Retrieval inventory now distinguishes onboarding semantics and route-index relationships, not provider query tools. The source provides direct-handover and pending/refusal/recovery slots carrying exact candidate/evidence references; no courier reply or terminal outcome substitutes for the recorded requirement verdict. Completed turns remain distinct from requirement acceptance, and source wording is not new native evidence.

@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Naming a live same-selection successor prevents lost returns to an archived parent without silently changing recipient authority."
+  },
+  "applicability": "An id-addressed archived role-message recipient with a later live execution on the same selection.",
+  "conditions": [
+    "Successor resolution is based on recorded selection and actual live status."
+  ],
+  "exclusions": [
+    "role_start assignment briefs",
+    "Developer chat text and native host chat display",
+    "Messages via removed earlier orchestration tools",
+    "No silent retargeting or unarchive; without a live successor the archived refusal remains."
+  ],
+  "id": "INV-ZYW4CT",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "SuccessorTests and RegisteredRefusalTests successor cases (L117-C1-F07); checks-attempt4/pytest-focused.log; worker report Attempt 4"
+      ],
+      "path": "ingest-wave1.json"
+    },
+    "handoffEntry": "L117-R09",
+    "leaf": "260928-MIK-L117",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "An archived recipient id with a live successor on the same selection refuses naming that successor agent, with its id reaching the caller.",
+  "status": "proposed",
+  "supersedes": []
+}

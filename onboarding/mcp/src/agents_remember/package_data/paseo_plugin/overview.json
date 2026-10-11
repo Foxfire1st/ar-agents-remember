@@ -1,0 +1,40 @@
+{
+  "path": "mcp/src/agents_remember/package_data/paseo_plugin",
+  "references": {
+    "1": {
+      "note": "Keep embed RPC while wiring turn, permission and archive events to product-owned decisions; asynchronous handler failures are logged.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9b7786810e75cffea857615f9eb5306eea34bbfd",
+            "content": "sha256:89c725b26ce26eab4dc6347fcb56332e31044f110d84469b5f3a9626717af629",
+            "locator": {
+              "kind": "symbol",
+              "name": "contribute"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/index.server.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Read fresh role/task/report facts for notifications without polling or source inference.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f681eb532cb05a8e3b97f5c47f6d2a0fc3a17936",
+            "content": "sha256:ba900179adad25bcba73d9745f14250bd7d31d99a91f548c8c3b51ef72b0062d",
+            "locator": {
+              "kind": "symbol",
+              "name": "readRoleAgents"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/role_agents.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-route/v1"
+}

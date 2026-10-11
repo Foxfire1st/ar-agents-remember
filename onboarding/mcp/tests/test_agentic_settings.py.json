@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "5e220bb602f1de33401797d8050b8f6985650929",
+        "blob": "330a11e101f4a7b3a83946e12533aa5ef9d060fd",
         "content": "sha256:ae234319694472d18f50dd4299b55f88f835a90a1dc53f5f0320ae8a87a4bfa4",
         "locator": {
           "kind": "symbol",
@@ -55,7 +55,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4dfcee32bf4196d3494512eb0ba5e4b9728bad6f",
+            "blob": "330a11e101f4a7b3a83946e12533aa5ef9d060fd",
             "content": "sha256:1c6e155dd5c56f208f1d8e8deaf47dac157f8ade06f352405543020f06702609",
             "locator": {
               "kind": "symbol",
@@ -71,7 +71,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4dfcee32bf4196d3494512eb0ba5e4b9728bad6f",
+            "blob": "330a11e101f4a7b3a83946e12533aa5ef9d060fd",
             "content": "sha256:1d39c06835183b2b1e12fccbf8c7c82e2413c0ac349ed59c0cf704988f5893a6",
             "locator": {
               "kind": "symbol",
@@ -87,7 +87,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4dfcee32bf4196d3494512eb0ba5e4b9728bad6f",
+            "blob": "330a11e101f4a7b3a83946e12533aa5ef9d060fd",
             "content": "sha256:d1224bfa84f8c3bf6a7ea2a3727e48fdb4b68c32130f0f0231ab92ff0baca653",
             "locator": {
               "kind": "symbol",
@@ -103,11 +103,44 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4dfcee32bf4196d3494512eb0ba5e4b9728bad6f",
+            "blob": "330a11e101f4a7b3a83946e12533aa5ef9d060fd",
             "content": "sha256:cee1cd7598e85607c010fb7a2edb2fb05a779b432e43e5e5101d7659c053da09",
             "locator": {
               "kind": "symbol",
               "name": "test_executor_authority_is_not_accepted_in_agentic_settings"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "Settings-load cases pin the role-message wake-text limit: absence uses its declared default, positive whole numbers and repository-layer precedence work, and zero/negative/fractional/string/boolean values refuse with the field named.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "330a11e101f4a7b3a83946e12533aa5ef9d060fd",
+            "content": "sha256:a9fdf47ceaceb3558fd0fc0a45c2a3342fb41f969c27e9172cdb2566b2280b9d",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleMessageLimitSettingsTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "Current review-limit cases expect fallback5 and accept positive maxRounds values4/99 in global/repository layers; zero, negative and fractional values refuse with the settings field named. This supersedes the historical hard-three ceiling, not the independent character-limit parsing cases. These are load/merge assertions, not native review-round authority or a new execution.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "330a11e101f4a7b3a83946e12533aa5ef9d060fd",
+            "content": "sha256:b912cf88b7005c604185faaf2c758474db11d0573f18bb3655fefdb991f05689",
+            "locator": {
+              "end": 680,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "test"
@@ -119,7 +152,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4dfcee32bf4196d3494512eb0ba5e4b9728bad6f",
+            "blob": "330a11e101f4a7b3a83946e12533aa5ef9d060fd",
             "content": "sha256:1c6e155dd5c56f208f1d8e8deaf47dac157f8ade06f352405543020f06702609",
             "locator": {
               "kind": "symbol",
@@ -130,7 +163,7 @@
         },
         {
           "anchor": {
-            "blob": "4dfcee32bf4196d3494512eb0ba5e4b9728bad6f",
+            "blob": "330a11e101f4a7b3a83946e12533aa5ef9d060fd",
             "content": "sha256:75f14323cb00ebfe6d4ac5fcf3e7f14efdf6000df0ddcb61c4efcdaa7c27146e",
             "locator": {
               "kind": "symbol",
@@ -146,8 +179,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "afb499a59e6ff782ed7a9bbab6d306c12f67090e",
-            "content": "sha256:f4ff80e5f0877a7b0f8d26fa89588683eaa63ed9b5086a799c8974ae4957baa1",
+            "blob": "330a11e101f4a7b3a83946e12533aa5ef9d060fd",
+            "content": "sha256:9b87340f4a80eec936773b7f4bf317dd6f25827c5df66011bcb7ebf86db6db03",
             "locator": {
               "kind": "symbol",
               "name": "test_local_leaf_overrides_global_leaf_and_siblings_survive"
@@ -162,7 +195,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4dfcee32bf4196d3494512eb0ba5e4b9728bad6f",
+            "blob": "330a11e101f4a7b3a83946e12533aa5ef9d060fd",
             "content": "sha256:024f21c3058af680dae2e6b93d44f0ef306d6a7a7c75dcaa26927f38c85046e8",
             "locator": {
               "kind": "symbol",
@@ -178,8 +211,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4dfcee32bf4196d3494512eb0ba5e4b9728bad6f",
-            "content": "sha256:84c7a2eb7b7c6e1ba24a3a291efdb642fd9beed2fb990fba489d429d9a622748",
+            "blob": "6d656cd21510937787fabd6593531bb2335f9f52",
+            "content": "sha256:a64763ca5ff5ac6f8035e7397c88da07eed0bb35c38d597eb4c47e79bcd551f8",
             "locator": {
               "kind": "symbol",
               "name": "test_absent_files_mean_documented_defaults"
@@ -194,8 +227,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "afb499a59e6ff782ed7a9bbab6d306c12f67090e",
-            "content": "sha256:77b05d963acc5b2edfa246f5e8c8a342915bc946c6eefa9cdc8d9817daaeec93",
+            "blob": "330a11e101f4a7b3a83946e12533aa5ef9d060fd",
+            "content": "sha256:f45fe864f6ad3dace4527ed04464f861de03e76876026d702dbb291e9fd988a0",
             "locator": {
               "kind": "symbol",
               "name": "test_local_gate_delegation_is_refused_global_layer_only"
@@ -210,8 +243,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "afb499a59e6ff782ed7a9bbab6d306c12f67090e",
-            "content": "sha256:ff27a5da0dc29a3bba6b10744816a434b55eb2df1690e643343f5676ebba6dda",
+            "blob": "330a11e101f4a7b3a83946e12533aa5ef9d060fd",
+            "content": "sha256:01357f8c1cd0f749380d19038205226c7e091d4e3f351ce39f35b551b1dfb030",
             "locator": {
               "kind": "symbol",
               "name": "test_malformed_json_fails_loud_with_path"
@@ -226,7 +259,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4dfcee32bf4196d3494512eb0ba5e4b9728bad6f",
+            "blob": "330a11e101f4a7b3a83946e12533aa5ef9d060fd",
             "content": "sha256:13a25c42267cce5feceb8403717f608809634a7d879ac82d2f1546bbfe9e35be",
             "locator": {
               "kind": "symbol",
@@ -242,7 +275,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4dfcee32bf4196d3494512eb0ba5e4b9728bad6f",
+            "blob": "330a11e101f4a7b3a83946e12533aa5ef9d060fd",
             "content": "sha256:7c8394fea600480afddd9ca7203c793b1988a71cf9cd0dc19e8c25e8379a201b",
             "locator": {
               "kind": "symbol",

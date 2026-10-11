@@ -25,7 +25,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2122be11efd7189de483677896745d9f50b251c4",
+            "blob": "c8e75a34a51405b6de8203b38c4e806b63c28e22",
             "content": "sha256:1cb90f1f30c7fd4ec6057a1bda9e839c9c9b4d6c0e4b955db518baac0f2b3156",
             "locator": {
               "end": 6,
@@ -95,6 +95,23 @@
               "start": 22
             },
             "path": "skills/l-01-agent-lifecycles/operations/closeout.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Messages wake; complete payloads and evidence travel as files.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d1f6148040f344edcc1f1cdca4c337de383684fb",
+            "content": "sha256:bcc83704ec5d619e63b0686763738958a79038b47e9174fad4a2d651aa23b0b3",
+            "locator": {
+              "end": 37,
+              "kind": "line_range",
+              "start": 37
+            }
           },
           "kind": "code"
         }

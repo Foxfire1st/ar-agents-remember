@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "01c7b20b4f7d9c3f858781923568788fc5e85cef",
-        "content": "sha256:b7d1f3f4eb422b95f6ba892038c59c307cd1037fd239cb7249a982a247e1919e",
+        "blob": "61a8e042a6dcf7669c7255a1e50dfe4848f5d7f9",
+        "content": "sha256:c87421a58478f5c1d5d54ea1b3bfc4942a0b01041d2f96d0f85ecd94fc4bfd66",
         "locator": {
           "kind": "file"
         }
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "01c7b20b4f7d9c3f858781923568788fc5e85cef",
-        "content": "sha256:b7d1f3f4eb422b95f6ba892038c59c307cd1037fd239cb7249a982a247e1919e",
+        "blob": "61a8e042a6dcf7669c7255a1e50dfe4848f5d7f9",
+        "content": "sha256:c87421a58478f5c1d5d54ea1b3bfc4942a0b01041d2f96d0f85ecd94fc4bfd66",
         "locator": {
           "kind": "file"
         }
@@ -36,6 +36,24 @@
       "role": "primary-authority"
     }
   ],
-  "references": {},
+  "references": {
+    "1": {
+      "note": "Canonical Bootstrap message instructions use wake text and file-carried body/attachments without a pinned settings limit.\n\nAnchor: Messages",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "61a8e042a6dcf7669c7255a1e50dfe4848f5d7f9",
+            "content": "sha256:ff714056759f645a3ef1f2ae15362f164ebc2590b124b5da9c97c66d11b31809",
+            "locator": {
+              "end": 127,
+              "kind": "line_range",
+              "start": 124
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
   "schema": "ar-onboarding-file/v1"
 }

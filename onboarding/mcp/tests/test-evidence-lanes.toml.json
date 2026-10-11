@@ -46,7 +46,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c7a2d8a9a3a1afbddf87f815452a4f3de97e0328",
+            "blob": "9f31b7c2d55c568826cfdbefce91301427adf48d",
             "content": "sha256:18493d816ddfe444c965fada22a49da99138e70b2c7d80a72152bd3ef8ea7fd3",
             "locator": {
               "end": 23,
@@ -63,12 +63,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c7a2d8a9a3a1afbddf87f815452a4f3de97e0328",
+            "blob": "9f31b7c2d55c568826cfdbefce91301427adf48d",
             "content": "sha256:d7cf84bf950903f2b5bd9eb709520a6cd1fe182a4afec71fcbc3cb138679b6dc",
             "locator": {
-              "end": 196,
+              "end": 204,
               "kind": "line_range",
-              "start": 195
+              "start": 203
             }
           },
           "kind": "test"
@@ -143,12 +143,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c7a2d8a9a3a1afbddf87f815452a4f3de97e0328",
+            "blob": "9f31b7c2d55c568826cfdbefce91301427adf48d",
             "content": "sha256:6af2d7f28912ba7425c1cb69a1fa691c5a2c8c17dbc07527bd5c18525ee8f089",
             "locator": {
-              "end": 348,
+              "end": 356,
               "kind": "line_range",
-              "start": 348
+              "start": 356
             }
           },
           "kind": "test"
@@ -160,12 +160,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c7a2d8a9a3a1afbddf87f815452a4f3de97e0328",
+            "blob": "9f31b7c2d55c568826cfdbefce91301427adf48d",
             "content": "sha256:773d961a55b66d78a8b5f148e4213a686db9d6c93da204a12002bdded6aea8f2",
             "locator": {
-              "end": 350,
+              "end": 358,
               "kind": "line_range",
-              "start": 339
+              "start": 347
             }
           },
           "kind": "test"
@@ -196,6 +196,23 @@
               "name": "test_every_support_write_of_the_user_settings_goes_through_the_guard"
             },
             "path": "mcp/tests/test_user_settings_guard.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "844": {
+      "note": "The current source declares the selected lane population; citation-document transaction is integration, not unit-regression.\n\nAnchor: lines 1-513",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9f31b7c2d55c568826cfdbefce91301427adf48d",
+            "content": "sha256:118153883dd7afa84dec5ad957697685c8af4de41bbedbdfab9bfa6981764ec3",
+            "locator": {
+              "end": 513,
+              "kind": "line_range",
+              "start": 1
+            }
           },
           "kind": "test"
         }

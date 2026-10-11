@@ -12,7 +12,8 @@
     "No sibling agent id is listed, because the occupant can change."
   ],
   "exclusions": [
-    "Every other role and every role started without a leaf, whose handover keeps its other values byte for byte."
+    "Other roles and non-leaf launches receive no leafSeats peer block; unrelated values stay preserved, except approved message carrier and parent-role/task return metadata.",
+    "Native launch-parent identity, actual-parent-ID developer questions and independent seat authority are not changed by replacement-transparent report returns."
   ],
   "id": "INV-W58B84",
   "origin": {
@@ -27,7 +28,7 @@
     "leaf": "260928-MIK-L99",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "Only a leaf Worker, Reviewer or Curator handover gains leafSeats with all three seat roles and exact sibling role-message arguments containing canonical sprint, master and leaf references without sibling agent IDs.",
   "status": "proposed",

@@ -1,6 +1,6 @@
 {
   "admission": "legacy-unassessed",
-  "guarantee": "Every realization target the converted file writer admits carries its author's nonblank explanation and a role from the stated target or explicit entry default; role absence is unclassified. The parser refuses malformed text, unknown roles, absent-literal routes and missing or overlong rationales before writes, naming the offending target. Stored historical claims are not retroactively reauthored; this guarantee asserts no database allocation-journal replay.",
+  "guarantee": "Every realization target the converted file writer admits carries its author's nonblank explanation and a role from the stated target or explicit entry default; role absence is unclassified. The parser refuses malformed text, unknown roles, absent-literal routes and missing or overlong rationales before writes, naming the offending target. Stored historical claims are not retroactively reauthored; this guarantee asserts no database allocation-journal replay. In converted mode a malformed target refuses the whole hand-off and writes nothing; naming one offending entry does not admit sibling commits. The earlier per-entry sibling-commit clause is retained as legacy-mode provenance only while that path exists, not as a converted fallback.",
   "id": "FAM-KQQE74ZT",
   "members": [
     "INV-0FBA8M52",
@@ -14,7 +14,7 @@
     "legacyId": "6a969d42-7652-45ed-946f-4d958ae49499",
     "task": "260921-ICR"
   },
-  "revision": 3,
+  "revision": 4,
   "routes": [
     "mcp/src/agents_remember/application",
     "skills/l-01-agent-lifecycles/roles",

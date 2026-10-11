@@ -1,0 +1,194 @@
+{
+  "path": "mcp/src/agents_remember/cli/role_message_files.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "b88f616b0da5d17187a7a327472cdb88c372111a",
+        "content": "sha256:3e0922a83eba1c5808e2fd7e6163d2185ad419bbd2d73a2eee0b01462d3b0c4d",
+        "locator": {
+          "kind": "symbol",
+          "name": "record_attachments"
+        }
+      },
+      "id": "RLZ-90YE88",
+      "invariant": "INV-KD90E4",
+      "origin": {
+        "handoffEntry": "L117-R03",
+        "leaf": "260928-MIK-L117"
+      },
+      "rationale": "Inside-record files are named with hash and outside files are copied and named, so the filed message is self-contained.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "b88f616b0da5d17187a7a327472cdb88c372111a",
+        "content": "sha256:b7bf420db4ab0682673fe8a34f04f7b563888f25603a178af660630c0b51ad06",
+        "locator": {
+          "kind": "symbol",
+          "name": "narrowed_scope"
+        }
+      },
+      "id": "RLZ-9SYRG0",
+      "invariant": "INV-D22ZTW",
+      "origin": {
+        "handoffEntry": "L117-R05",
+        "leaf": "260928-MIK-L117"
+      },
+      "rationale": "The narrowest shared folder is chosen deterministically so sender and recipient file and read in one place.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "b88f616b0da5d17187a7a327472cdb88c372111a",
+        "content": "sha256:02a7ce14490cf257201423204d41235ec8c9e117514746393b9f421771971f9a",
+        "locator": {
+          "kind": "symbol",
+          "name": "mark_undelivered"
+        }
+      },
+      "id": "RLZ-BEXV67",
+      "invariant": "INV-PRVEVY",
+      "origin": {
+        "handoffEntry": "L117-R02",
+        "leaf": "260928-MIK-L117"
+      },
+      "rationale": "Refused deliveries stay auditable as .undelivered.md files naming the refusal instead of vanishing.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "b88f616b0da5d17187a7a327472cdb88c372111a",
+        "content": "sha256:b53be49f492e169bb4e5f88aca08b26e74cfca4098733c021704f3d39cdc5d7e",
+        "locator": {
+          "kind": "symbol",
+          "name": "store_message_file"
+        }
+      },
+      "id": "RLZ-ENB0YN",
+      "invariant": "INV-PRVEVY",
+      "origin": {
+        "handoffEntry": "L117-R02",
+        "leaf": "260928-MIK-L117"
+      },
+      "rationale": "The single staged write plus atomic link is the all-or-nothing unit the pre-delivery transaction rolls back to.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "b88f616b0da5d17187a7a327472cdb88c372111a",
+        "content": "sha256:c879bf81e1874fdb9c314b127cfb4ae95fb9909a0b42b8724f615df9c7ff0e81",
+        "locator": {
+          "kind": "symbol",
+          "name": "render_message_file"
+        }
+      },
+      "id": "RLZ-SD0DFX",
+      "invariant": "INV-KD90E4",
+      "origin": {
+        "handoffEntry": "L117-R03",
+        "leaf": "260928-MIK-L117"
+      },
+      "rationale": "Head, message, body and attachments render in one stable shape the tests pin byte for byte.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Stage and sync the payload once, allocate with a bounded cache and atomic no-overwrite link.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b88f616b0da5d17187a7a327472cdb88c372111a",
+            "content": "sha256:b53be49f492e169bb4e5f88aca08b26e74cfca4098733c021704f3d39cdc5d7e",
+            "locator": {
+              "kind": "symbol",
+              "name": "store_message_file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Scope storage to the narrowest shared task, or the sender class's taskless execution record.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b88f616b0da5d17187a7a327472cdb88c372111a",
+            "content": "sha256:b7bf420db4ab0682673fe8a34f04f7b563888f25603a178af660630c0b51ad06",
+            "locator": {
+              "kind": "symbol",
+              "name": "narrowed_scope"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Validate/hash every attachment before the copy phase.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b88f616b0da5d17187a7a327472cdb88c372111a",
+            "content": "sha256:3e0922a83eba1c5808e2fd7e6163d2185ad419bbd2d73a2eee0b01462d3b0c4d",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_attachments"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Preserve occupied or divergent workspace links with warnings.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b88f616b0da5d17187a7a327472cdb88c372111a",
+            "content": "sha256:5c1fd9021a652a6a04be5edcb57863ea6bcedfe986a33449070e33d14b40e77f",
+            "locator": {
+              "kind": "symbol",
+              "name": "ensure_messages_link"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Failed copies remove their partial target and earlier message-owned copies.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b88f616b0da5d17187a7a327472cdb88c372111a",
+            "content": "sha256:0e52eec2a28d3115dd168e02dc4289aead0b698d59bf3081d6de4dcd9a763b34",
+            "locator": {
+              "kind": "symbol",
+              "name": "_copy_planned"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Retain refused-file detail, returning the original path if marking fails.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b88f616b0da5d17187a7a327472cdb88c372111a",
+            "content": "sha256:02a7ce14490cf257201423204d41235ec8c9e117514746393b9f421771971f9a",
+            "locator": {
+              "kind": "symbol",
+              "name": "mark_undelivered"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

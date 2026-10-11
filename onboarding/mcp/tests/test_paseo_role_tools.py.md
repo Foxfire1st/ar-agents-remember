@@ -1,5 +1,14 @@
 # mcp/tests/test_paseo_role_tools.py
 
+## Current paired source contract — scoped assertions and incoming catalogs
+
+The controlled fixture patches both facade-local and retained delivery-module bridge/resolve/topology names, plus held-store and retirement bridge callers. Occupied-seat refusal names its holder; registered-tool assertions expect role_start, role_start_set and role_message and test unbound set refusal. Existing caller/scope/start-lock/override boundaries remain; source assertions and registration are not fresh execution acceptance.
+
+This section supersedes contrary earlier prose only for these changed seams; retained evidence and useful unaffected accounts are not deleted or promoted to new proof.
+
+- The controlled fixture patches both facade-local and retained delivery-module bridge/resolve/topology names, plus held-store and retirement bridge callers. Occupied-seat refusal names its holder; registered-tool assertions expect role_start, role_start_set and role_message and test unbound set refusal. Existing caller/scope/start-lock/override boundaries remain; source assertions and registration are not fresh execution acceptance. [3]
+
+
 ## Governing Overview
 
 [Route overview](overview.md)

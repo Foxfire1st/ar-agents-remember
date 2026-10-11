@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "d8b96f944107324e7d949b72e6720852d5c8091d",
-        "content": "sha256:a1c76a6b875f5f9fb67137cbc5ad88ad17572169a6041584d8ebd40d27d0ef11",
+        "blob": "2c5c534759960bc097163dbf856ad76efe13bbb6",
+        "content": "sha256:a46b4873a071d8f2db00ee8f89f0bfe310d51555495013ffa11d32e934134b2a",
         "locator": {
           "kind": "symbol",
           "name": "InstructionFileWordingTests.test_current_coordination_and_curator_rules"
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "d8b96f944107324e7d949b72e6720852d5c8091d",
+        "blob": "2c5c534759960bc097163dbf856ad76efe13bbb6",
         "content": "sha256:2784247703adc1e43cba86b6ac1f4f9a4319aaf49d06b318f6c2465ae04c16ba",
         "locator": {
           "kind": "symbol",
@@ -37,8 +37,8 @@
     },
     {
       "anchor": {
-        "blob": "d8b96f944107324e7d949b72e6720852d5c8091d",
-        "content": "sha256:a1c76a6b875f5f9fb67137cbc5ad88ad17572169a6041584d8ebd40d27d0ef11",
+        "blob": "2c5c534759960bc097163dbf856ad76efe13bbb6",
+        "content": "sha256:a46b4873a071d8f2db00ee8f89f0bfe310d51555495013ffa11d32e934134b2a",
         "locator": {
           "kind": "symbol",
           "name": "InstructionFileWordingTests.test_current_coordination_and_curator_rules"
@@ -54,8 +54,8 @@
     },
     {
       "anchor": {
-        "blob": "d8b96f944107324e7d949b72e6720852d5c8091d",
-        "content": "sha256:a1c76a6b875f5f9fb67137cbc5ad88ad17572169a6041584d8ebd40d27d0ef11",
+        "blob": "2c5c534759960bc097163dbf856ad76efe13bbb6",
+        "content": "sha256:a46b4873a071d8f2db00ee8f89f0bfe310d51555495013ffa11d32e934134b2a",
         "locator": {
           "kind": "symbol",
           "name": "InstructionFileWordingTests.test_current_coordination_and_curator_rules"
@@ -71,8 +71,8 @@
     },
     {
       "anchor": {
-        "blob": "d8b96f944107324e7d949b72e6720852d5c8091d",
-        "content": "sha256:7d8931039e806a10450e1ca5275fa785aa4dd76cee511fc83214ab68972342a1",
+        "blob": "2c5c534759960bc097163dbf856ad76efe13bbb6",
+        "content": "sha256:761d2075f42e5ff5c9f0e52344ba296eeb882e5f7b2b21d22a4c97ba445b37c4",
         "locator": {
           "kind": "symbol",
           "name": "HandoverTextWordingTests.test_developer_question_channel_matches_role_and_parent"
@@ -88,24 +88,7 @@
     },
     {
       "anchor": {
-        "blob": "d8b96f944107324e7d949b72e6720852d5c8091d",
-        "content": "sha256:413440fdc4e871dc50752f0c616d58deaf7cae1d5119fb76394cba67eedbee52",
-        "locator": {
-          "kind": "symbol",
-          "name": "HandoverTextWordingTests.test_owner_relation_routes_developer_questions_and_preserves_coordinators"
-        }
-      },
-      "facet": "Requires the leaf roles' direct peer routes and no parent-result ordering in the composed ownerRelation while the coordinating-role text is preserved.",
-      "id": "PRF-24G8R8",
-      "invariant": "INV-8AMSGV",
-      "origin": {
-        "handoffEntry": "MIK-R93@v1 rules1,2,7,10",
-        "leaf": "260928-MIK-L93"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "d8b96f944107324e7d949b72e6720852d5c8091d",
+        "blob": "2c5c534759960bc097163dbf856ad76efe13bbb6",
         "content": "sha256:02afda3c94b27ad74f341d907eede7abdaf148c9be262c498424edf8c82635ac",
         "locator": {
           "kind": "symbol",
@@ -122,8 +105,8 @@
     },
     {
       "anchor": {
-        "blob": "d8b96f944107324e7d949b72e6720852d5c8091d",
-        "content": "sha256:a1c76a6b875f5f9fb67137cbc5ad88ad17572169a6041584d8ebd40d27d0ef11",
+        "blob": "2c5c534759960bc097163dbf856ad76efe13bbb6",
+        "content": "sha256:a46b4873a071d8f2db00ee8f89f0bfe310d51555495013ffa11d32e934134b2a",
         "locator": {
           "kind": "symbol",
           "name": "InstructionFileWordingTests.test_current_coordination_and_curator_rules"
@@ -139,7 +122,7 @@
     },
     {
       "anchor": {
-        "blob": "d8b96f944107324e7d949b72e6720852d5c8091d",
+        "blob": "2c5c534759960bc097163dbf856ad76efe13bbb6",
         "content": "sha256:58b7e6205b4af5723db7c9753504997b2d94acd813bd8c677f8b91d449f2e601",
         "locator": {
           "kind": "symbol",
@@ -156,7 +139,24 @@
     },
     {
       "anchor": {
-        "blob": "d8b96f944107324e7d949b72e6720852d5c8091d",
+        "blob": "2c5c534759960bc097163dbf856ad76efe13bbb6",
+        "content": "sha256:9b60e8277b32dad834a8530448abc060c323db5230d0f37e77f7ca596e41c6f6",
+        "locator": {
+          "kind": "symbol",
+          "name": "HandoverTextWordingTests.test_owner_relation_routes_developer_questions_and_preserves_coordinators"
+        }
+      },
+      "facet": "The compiled ownerRelation requires leaf peer arguments, no routine parent result and current-Manager role/task returns. Coordinating roles retain named developer-needed categories/final-report duties and captured starter provenance, not byte-identical addressing text. Parentless relation equality is separately asserted; this case is not native delivery or the developerQuestions-ID discriminator.",
+      "id": "PRF-8AD3VX",
+      "invariant": "INV-8AMSGV",
+      "origin": {
+        "handoffEntry": "CUR-L117-owner-relation-facet",
+        "leaf": "260928-MIK-L117"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "2c5c534759960bc097163dbf856ad76efe13bbb6",
         "content": "sha256:0aa27888040347c52cbc287b60220d7c8feea34797bf1d54d3fb94b16161b1db",
         "locator": {
           "kind": "symbol",
@@ -173,7 +173,7 @@
     },
     {
       "anchor": {
-        "blob": "d8b96f944107324e7d949b72e6720852d5c8091d",
+        "blob": "2c5c534759960bc097163dbf856ad76efe13bbb6",
         "content": "sha256:1b654b5e1a131a4ca5470c7ef22680187aac0df72de5c59246e2af26abba6b33",
         "locator": {
           "kind": "symbol",
@@ -190,7 +190,7 @@
     },
     {
       "anchor": {
-        "blob": "d8b96f944107324e7d949b72e6720852d5c8091d",
+        "blob": "2c5c534759960bc097163dbf856ad76efe13bbb6",
         "content": "sha256:e252a12a157f0d6e266fa5565130b1360ca3f5c49fd9e3218a7d60bd95687224",
         "locator": {
           "kind": "symbol",
@@ -207,8 +207,8 @@
     },
     {
       "anchor": {
-        "blob": "d8b96f944107324e7d949b72e6720852d5c8091d",
-        "content": "sha256:a1c76a6b875f5f9fb67137cbc5ad88ad17572169a6041584d8ebd40d27d0ef11",
+        "blob": "2c5c534759960bc097163dbf856ad76efe13bbb6",
+        "content": "sha256:a46b4873a071d8f2db00ee8f89f0bfe310d51555495013ffa11d32e934134b2a",
         "locator": {
           "kind": "symbol",
           "name": "InstructionFileWordingTests.test_current_coordination_and_curator_rules"
@@ -224,7 +224,7 @@
     },
     {
       "anchor": {
-        "blob": "d8b96f944107324e7d949b72e6720852d5c8091d",
+        "blob": "2c5c534759960bc097163dbf856ad76efe13bbb6",
         "content": "sha256:0aa27888040347c52cbc287b60220d7c8feea34797bf1d54d3fb94b16161b1db",
         "locator": {
           "kind": "symbol",
@@ -241,8 +241,8 @@
     },
     {
       "anchor": {
-        "blob": "d8b96f944107324e7d949b72e6720852d5c8091d",
-        "content": "sha256:a1c76a6b875f5f9fb67137cbc5ad88ad17572169a6041584d8ebd40d27d0ef11",
+        "blob": "2c5c534759960bc097163dbf856ad76efe13bbb6",
+        "content": "sha256:a46b4873a071d8f2db00ee8f89f0bfe310d51555495013ffa11d32e934134b2a",
         "locator": {
           "kind": "symbol",
           "name": "InstructionFileWordingTests.test_current_coordination_and_curator_rules"
@@ -258,7 +258,7 @@
     },
     {
       "anchor": {
-        "blob": "d8b96f944107324e7d949b72e6720852d5c8091d",
+        "blob": "2c5c534759960bc097163dbf856ad76efe13bbb6",
         "content": "sha256:afa8632a9d7e5fdcc3d4e7dba83aba4ddf56f213fc81b2576dba47c452bc811d",
         "locator": {
           "kind": "symbol",
@@ -275,24 +275,24 @@
     },
     {
       "anchor": {
-        "blob": "d8b96f944107324e7d949b72e6720852d5c8091d",
+        "blob": "2c5c534759960bc097163dbf856ad76efe13bbb6",
         "content": "sha256:58b7e6205b4af5723db7c9753504997b2d94acd813bd8c677f8b91d449f2e601",
         "locator": {
           "kind": "symbol",
           "name": "InstructionFileWordingTests.test_investigator_scope_report_and_authority_are_explicit"
         }
       },
-      "facet": "The wording check pins scratch/repository-sandbox checks, one named report, actual-parent notification, and the report-before-remediation instruction; no real remediation is executed.",
-      "id": "PRF-JAXCF6",
+      "facet": "The source-wording check requires scratch/repository-sandbox checks, one named report, the report-is-written/path-notice substring and report-before-authorized-remediation. It does not assert the report destination’s concrete agent ID or role/task address and executes neither native successor delivery nor remediation. Initial concern and remediation authorization retain actual-parent provenance separately.",
+      "id": "PRF-K30NGN",
       "invariant": "INV-YT1AD8",
       "origin": {
-        "handoffEntry": "L112-current-proof-INV-YT1AD8",
-        "leaf": "260928-MIK-L112"
+        "handoffEntry": "CUR-L117-investigator-report-facet",
+        "leaf": "260928-MIK-L117"
       }
     },
     {
       "anchor": {
-        "blob": "d8b96f944107324e7d949b72e6720852d5c8091d",
+        "blob": "2c5c534759960bc097163dbf856ad76efe13bbb6",
         "content": "sha256:58b7e6205b4af5723db7c9753504997b2d94acd813bd8c677f8b91d449f2e601",
         "locator": {
           "kind": "symbol",
@@ -309,7 +309,7 @@
     },
     {
       "anchor": {
-        "blob": "d8b96f944107324e7d949b72e6720852d5c8091d",
+        "blob": "2c5c534759960bc097163dbf856ad76efe13bbb6",
         "content": "sha256:58b7e6205b4af5723db7c9753504997b2d94acd813bd8c677f8b91d449f2e601",
         "locator": {
           "kind": "symbol",
@@ -326,8 +326,8 @@
     },
     {
       "anchor": {
-        "blob": "d8b96f944107324e7d949b72e6720852d5c8091d",
-        "content": "sha256:a1c76a6b875f5f9fb67137cbc5ad88ad17572169a6041584d8ebd40d27d0ef11",
+        "blob": "2c5c534759960bc097163dbf856ad76efe13bbb6",
+        "content": "sha256:a46b4873a071d8f2db00ee8f89f0bfe310d51555495013ffa11d32e934134b2a",
         "locator": {
           "kind": "symbol",
           "name": "InstructionFileWordingTests.test_current_coordination_and_curator_rules"
@@ -343,7 +343,7 @@
     },
     {
       "anchor": {
-        "blob": "d8b96f944107324e7d949b72e6720852d5c8091d",
+        "blob": "2c5c534759960bc097163dbf856ad76efe13bbb6",
         "content": "sha256:58b7e6205b4af5723db7c9753504997b2d94acd813bd8c677f8b91d449f2e601",
         "locator": {
           "kind": "symbol",
@@ -360,7 +360,7 @@
     },
     {
       "anchor": {
-        "blob": "d8b96f944107324e7d949b72e6720852d5c8091d",
+        "blob": "2c5c534759960bc097163dbf856ad76efe13bbb6",
         "content": "sha256:58b7e6205b4af5723db7c9753504997b2d94acd813bd8c677f8b91d449f2e601",
         "locator": {
           "kind": "symbol",
@@ -404,6 +404,40 @@
             "content": "sha256:781f13fff7e82c8f65c055d5495460f797b97a8ea96b615f4bed2b361311c492",
             "locator": {
               "end": 1010,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Compiled parented handovers distinguish fixed starter identity from ordinary return role/task addresses; leaf returns name the current Manager.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2c5c534759960bc097163dbf856ad76efe13bbb6",
+            "content": "sha256:9b60e8277b32dad834a8530448abc060c323db5230d0f37e77f7ca596e41c6f6",
+            "locator": {
+              "end": 847,
+              "kind": "line_range",
+              "start": 800
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Current protected instruction/compiled/tool-description sentences require the Manager-owned three-seat set and product-held permission/start/turn messages with ordered delivery and no prompt answering or sender resubmission. Description census includes role_start_set beside role_start/role_message. Investigator report-notice substring, actual-parent developer questions and ordinary role/task report return stay distinct; no wording case proves a concrete live recipient or host consumption.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2c5c534759960bc097163dbf856ad76efe13bbb6",
+            "content": "sha256:50ebd32be68efd83aef997a6600537f9d7d1160163aaacc9c5bb51b76b9a8e23",
+            "locator": {
+              "end": 1096,
               "kind": "line_range",
               "start": 1
             }

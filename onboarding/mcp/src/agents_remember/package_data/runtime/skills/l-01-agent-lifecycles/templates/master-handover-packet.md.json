@@ -25,7 +25,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3ddb3dd453cf996eb2c34dcb5952386da975c162",
+            "blob": "f7480a7d53c7d2a6d0efa9e62ef1bcfc4d815804",
             "content": "sha256:767f90a220cf3937f52a492d1e9a388836428f8df86ac37ae7ad43153be8c3c7",
             "locator": {
               "end": 6,
@@ -105,14 +105,31 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9f01b458769e29ba24c9cc3c0ff187e9e5eb2cf2",
+            "blob": "2d42ad92abef03a1873de4fd715985616f122689",
             "content": "sha256:f0116d2c13b9fc636ee7ae12c36af301c9c008f20c12cd728ea26804623ef4e8",
             "locator": {
-              "end": 355,
+              "end": 351,
               "kind": "line_range",
-              "start": 349
+              "start": 345
             },
             "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Messages wake; complete payloads and evidence travel as files.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f1c9bd864ffbf898739b388c71032b59177a01e3",
+            "content": "sha256:0ca8be97cdffbac4f57a89fb6c9e27c4f8b9acb8ea3d19a6ea2d54bcb598fd2e",
+            "locator": {
+              "end": 36,
+              "kind": "line_range",
+              "start": 36
+            }
           },
           "kind": "code"
         }

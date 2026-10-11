@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "eb2f5035bf64a05d32fa24337e8b18a52ec18702",
-        "content": "sha256:77bb08986e76a06f9bf1cd1f69ea9edcbd3f47b7472314887a76bba9ce2d1243",
+        "blob": "19a6220f46d38a1397214ef87d0348e7a25c87d5",
+        "content": "sha256:4e7292a4269762ce90664490f4f81d441b4cd0eb2f9b955cfd110fc159d15776",
         "locator": {
           "kind": "symbol",
           "name": "send_role_message"
@@ -21,12 +21,30 @@
     },
     {
       "anchor": {
-        "blob": "eb2f5035bf64a05d32fa24337e8b18a52ec18702",
+        "blob": "19a6220f46d38a1397214ef87d0348e7a25c87d5",
+        "content": "sha256:68dd03c55d195ea34ce52b0977c306487e68c20d24155ca2a4d45d506c606f82",
+        "locator": {
+          "kind": "symbol",
+          "name": "role_message_limit"
+        }
+      },
+      "id": "RLZ-737EJY",
+      "invariant": "INV-A87E4H",
+      "origin": {
+        "handoffEntry": "L117-R01",
+        "leaf": "260928-MIK-L117"
+      },
+      "rationale": "The per-call limit read keeps a changed number effective for the next call without a restart.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "19a6220f46d38a1397214ef87d0348e7a25c87d5",
         "content": "sha256:666f5bdfbaafc35247966c94cecc0c6f709c29cc484a8b1630a6ceca53c54d55",
         "locator": {
-          "end": 331,
+          "end": 378,
           "kind": "line_range",
-          "start": 278
+          "start": 325
         }
       },
       "id": "RLZ-7HPMFG",
@@ -40,8 +58,8 @@
     },
     {
       "anchor": {
-        "blob": "eb2f5035bf64a05d32fa24337e8b18a52ec18702",
-        "content": "sha256:14d8f279879ba7b310a63c1b1434c88d3d068e745e13eb5eab67da4e452a329a",
+        "blob": "19a6220f46d38a1397214ef87d0348e7a25c87d5",
+        "content": "sha256:be483005f08cd68788ef4e585defc960e7a279129a0122fa2689400717fb478f",
         "locator": {
           "kind": "symbol",
           "name": "_deliver"
@@ -58,7 +76,7 @@
     },
     {
       "anchor": {
-        "blob": "eb2f5035bf64a05d32fa24337e8b18a52ec18702",
+        "blob": "19a6220f46d38a1397214ef87d0348e7a25c87d5",
         "content": "sha256:b0bf53728de4411d8749e98977b4e10f4c738ce7008aaa357f16a50f9d6b6b5d",
         "locator": {
           "kind": "symbol",
@@ -76,7 +94,7 @@
     },
     {
       "anchor": {
-        "blob": "eb2f5035bf64a05d32fa24337e8b18a52ec18702",
+        "blob": "19a6220f46d38a1397214ef87d0348e7a25c87d5",
         "content": "sha256:30415cc3de8770663243189a3306756bc53585d7818bdad9f3c9701f4a705a19",
         "locator": {
           "kind": "symbol",
@@ -89,12 +107,12 @@
         "handoffEntry": "PNT-R06@v1 §5 / G7 / F3 / A1",
         "leaf": "260928-MIK-L90"
       },
-      "rationale": "Reads receipt-named agents, stopping at first live only for task-bound selection.",
+      "rationale": "Reads receipt-named agents from the host, retains the first archived ID, and stops at the first live agent only when first_only is true. The public selector sets that flag for non-leaf task-bound selections, but scans leaf-seat and taskless candidates for explicit ambiguity rather than choosing one.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "eb2f5035bf64a05d32fa24337e8b18a52ec18702",
+        "blob": "19a6220f46d38a1397214ef87d0348e7a25c87d5",
         "content": "sha256:ad40121ea7b1878b4bc174b81d9228a1fea52e358e83954ce111c8eb26fae0db",
         "locator": {
           "kind": "symbol",
@@ -112,7 +130,7 @@
     },
     {
       "anchor": {
-        "blob": "eb2f5035bf64a05d32fa24337e8b18a52ec18702",
+        "blob": "19a6220f46d38a1397214ef87d0348e7a25c87d5",
         "content": "sha256:504575e3456b64d092dc7207367c47f23f711d6ceebedffe2b0bad7a1419c513",
         "locator": {
           "kind": "symbol",
@@ -130,7 +148,7 @@
     },
     {
       "anchor": {
-        "blob": "eb2f5035bf64a05d32fa24337e8b18a52ec18702",
+        "blob": "19a6220f46d38a1397214ef87d0348e7a25c87d5",
         "content": "sha256:13d18faab6f1cfc943a5beb402c7b520278d3de7892245035abe9426ef87c470",
         "locator": {
           "kind": "symbol",
@@ -148,12 +166,11 @@
     },
     {
       "anchor": {
-        "blob": "eb2f5035bf64a05d32fa24337e8b18a52ec18702",
-        "content": "sha256:45926546c4f1c21b83115847ceaa045fcbd87d62767ac4ef84bc58570a96a4cf",
+        "blob": "19a6220f46d38a1397214ef87d0348e7a25c87d5",
+        "content": "sha256:9ea52cfb37eeb2aae5eaf9ec68667906533418b48e968c924dc98b32df5c906f",
         "locator": {
-          "end": 97,
-          "kind": "line_range",
-          "start": 97
+          "kind": "symbol",
+          "name": "_CANDIDATE_LIMIT"
         }
       },
       "id": "RLZ-HJ854G",
@@ -167,7 +184,7 @@
     },
     {
       "anchor": {
-        "blob": "eb2f5035bf64a05d32fa24337e8b18a52ec18702",
+        "blob": "19a6220f46d38a1397214ef87d0348e7a25c87d5",
         "content": "sha256:7091f164e8a80474cd1ff08c45fd12d0c6c95e2907037dfed4406e193a891d75",
         "locator": {
           "kind": "symbol",
@@ -185,7 +202,7 @@
     },
     {
       "anchor": {
-        "blob": "eb2f5035bf64a05d32fa24337e8b18a52ec18702",
+        "blob": "19a6220f46d38a1397214ef87d0348e7a25c87d5",
         "content": "sha256:4da243e498ffe93f8bf0e4cd2466b5da0d94d6a5d1f9f6bd243f977e812ac7ed",
         "locator": {
           "kind": "symbol",
@@ -203,7 +220,7 @@
     },
     {
       "anchor": {
-        "blob": "eb2f5035bf64a05d32fa24337e8b18a52ec18702",
+        "blob": "19a6220f46d38a1397214ef87d0348e7a25c87d5",
         "content": "sha256:ebc1a4ad94a8accb33e831864452ec335ea91e81251b9bee90dff501552948a5",
         "locator": {
           "kind": "symbol",
@@ -221,7 +238,7 @@
     },
     {
       "anchor": {
-        "blob": "eb2f5035bf64a05d32fa24337e8b18a52ec18702",
+        "blob": "19a6220f46d38a1397214ef87d0348e7a25c87d5",
         "content": "sha256:13d18faab6f1cfc943a5beb402c7b520278d3de7892245035abe9426ef87c470",
         "locator": {
           "kind": "symbol",
@@ -239,8 +256,8 @@
     },
     {
       "anchor": {
-        "blob": "eb2f5035bf64a05d32fa24337e8b18a52ec18702",
-        "content": "sha256:14d8f279879ba7b310a63c1b1434c88d3d068e745e13eb5eab67da4e452a329a",
+        "blob": "19a6220f46d38a1397214ef87d0348e7a25c87d5",
+        "content": "sha256:be483005f08cd68788ef4e585defc960e7a279129a0122fa2689400717fb478f",
         "locator": {
           "kind": "symbol",
           "name": "_deliver"
@@ -257,7 +274,7 @@
     },
     {
       "anchor": {
-        "blob": "eb2f5035bf64a05d32fa24337e8b18a52ec18702",
+        "blob": "19a6220f46d38a1397214ef87d0348e7a25c87d5",
         "content": "sha256:7781bfcbcbdf5f6706a7e352e24f8ab303f89836ba57b562ec6410dc1480f2bc",
         "locator": {
           "kind": "symbol",
@@ -275,8 +292,8 @@
     },
     {
       "anchor": {
-        "blob": "eb2f5035bf64a05d32fa24337e8b18a52ec18702",
-        "content": "sha256:77bb08986e76a06f9bf1cd1f69ea9edcbd3f47b7472314887a76bba9ce2d1243",
+        "blob": "19a6220f46d38a1397214ef87d0348e7a25c87d5",
+        "content": "sha256:4e7292a4269762ce90664490f4f81d441b4cd0eb2f9b955cfd110fc159d15776",
         "locator": {
           "kind": "symbol",
           "name": "send_role_message"
@@ -293,7 +310,7 @@
     },
     {
       "anchor": {
-        "blob": "eb2f5035bf64a05d32fa24337e8b18a52ec18702",
+        "blob": "19a6220f46d38a1397214ef87d0348e7a25c87d5",
         "content": "sha256:263fc31278fc9bea43e7e85be88f6e272b56f0b509dcbebb5ed747fc7c1df019",
         "locator": {
           "kind": "symbol",
@@ -306,12 +323,12 @@
         "handoffEntry": "PNT-R06@v1 §5 / G7 / F3 / A1",
         "leaf": "260928-MIK-L90"
       },
-      "rationale": "Requires one address form and refuses self or unfinished launch.",
+      "rationale": "The facade resolver requires exactly one receipt-bound address form and refuses self-addressing. For an unfinished start it raises recipient-busy with a holdReason that send_role_message converts to workspace holding when the store is known, rather than proving unconditional terminal refusal.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "eb2f5035bf64a05d32fa24337e8b18a52ec18702",
+        "blob": "19a6220f46d38a1397214ef87d0348e7a25c87d5",
         "content": "sha256:c48df9a1f1aaafe92bbecd9163de74c180b08fd1081068db975efb22b063708d",
         "locator": {
           "kind": "symbol",
@@ -329,25 +346,7 @@
     },
     {
       "anchor": {
-        "blob": "eb2f5035bf64a05d32fa24337e8b18a52ec18702",
-        "content": "sha256:15f784f3eee6c7848c2e723385b7d7f40f79b8f05caccf2489f686ff7b5381e5",
-        "locator": {
-          "kind": "symbol",
-          "name": "_archived"
-        }
-      },
-      "id": "RLZ-XV9NR8",
-      "invariant": "INV-82ZTHK",
-      "origin": {
-        "handoffEntry": "MIK-R93@v1 rule12",
-        "leaf": "260928-MIK-L93"
-      },
-      "rationale": "This refusal constructor returns the changed nextAction wording while preserving the refusal reason and runtime delivery behavior.",
-      "role": "presentation"
-    },
-    {
-      "anchor": {
-        "blob": "eb2f5035bf64a05d32fa24337e8b18a52ec18702",
+        "blob": "19a6220f46d38a1397214ef87d0348e7a25c87d5",
         "content": "sha256:df975f80addf619cf119a02cba4faf1530fea468e99ab8f61bf23e117625bf51",
         "locator": {
           "kind": "symbol",
@@ -365,7 +364,7 @@
     },
     {
       "anchor": {
-        "blob": "eb2f5035bf64a05d32fa24337e8b18a52ec18702",
+        "blob": "19a6220f46d38a1397214ef87d0348e7a25c87d5",
         "content": "sha256:c48df9a1f1aaafe92bbecd9163de74c180b08fd1081068db975efb22b063708d",
         "locator": {
           "kind": "symbol",
@@ -388,7 +387,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3425928114982fd40fedd6687347ba864f4c25d5",
+            "blob": "19a6220f46d38a1397214ef87d0348e7a25c87d5",
             "content": "sha256:c48df9a1f1aaafe92bbecd9163de74c180b08fd1081068db975efb22b063708d",
             "locator": {
               "kind": "symbol",
@@ -408,6 +407,70 @@
             "content": "sha256:e289f6f0181f6709a1ab284d213a90d37141550a01bca71ad448b34674dcaa18",
             "locator": {
               "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Public message call uses local resolution, report collection, prologue filing and held/native dispatch rather than the retained delivery-module dispatcher.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "19a6220f46d38a1397214ef87d0348e7a25c87d5",
+            "content": "sha256:4e7292a4269762ce90664490f4f81d441b4cd0eb2f9b955cfd110fc159d15776",
+            "locator": {
+              "kind": "symbol",
+              "name": "send_role_message"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Prologue constructs the filed identity from shared attachment/link/store primitives before any public delivery.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "19a6220f46d38a1397214ef87d0348e7a25c87d5",
+            "content": "sha256:3a7224adba3f381792787f4a9173805e50b9663c5d3c77f636a47809b3e16c2b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_file_message"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "Unheld native dispatch owns capacity/send/resume and invokes shared long-reply filing after its wait.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "19a6220f46d38a1397214ef87d0348e7a25c87d5",
+            "content": "sha256:be483005f08cd68788ef4e585defc960e7a279129a0122fa2689400717fb478f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_deliver"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "Upstream held-message ordering is decided before native send; permission holding never answers a prompt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "19a6220f46d38a1397214ef87d0348e7a25c87d5",
+            "content": "sha256:b260b056e4a6b1c7d46eba9bb9d542ea4e64399c5f22056b4df951c0d602c1d3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_deliver_or_hold"
             }
           },
           "kind": "code"
@@ -451,12 +514,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c76544371956ac0ee8854a916cd3e871c473c4c8",
+            "blob": "e006b3303818553be37843dc6619a766ad1e8735",
             "content": "sha256:90ee952af6da75b5bfc0523b99e4ed197091700e5d4760ee89206e698297e87f",
             "locator": {
-              "end": 250,
+              "end": 260,
               "kind": "line_range",
-              "start": 228
+              "start": 238
             },
             "path": "mcp/tests/test_paseo_role_tools.py"
           },
@@ -469,12 +532,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c76544371956ac0ee8854a916cd3e871c473c4c8",
+            "blob": "e006b3303818553be37843dc6619a766ad1e8735",
             "content": "sha256:e13ea398fc84bdfe9a6d72af9f0c39876b2159452630b7df1cc3dcb7bcc07a28",
             "locator": {
-              "end": 285,
+              "end": 295,
               "kind": "line_range",
-              "start": 251
+              "start": 261
             },
             "path": "mcp/tests/test_paseo_role_tools.py"
           },
@@ -487,12 +550,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a1ee28417c5d634e56ba98aa1c5e2a0045a5c682",
+            "blob": "6000d8bf74427856cdb63998060ae1683b61be90",
             "content": "sha256:80a3281585d1be4c73b123a58af65b844ed7c70176c54b2d15b4da26359046ef",
             "locator": {
-              "end": 412,
+              "end": 455,
               "kind": "line_range",
-              "start": 365
+              "start": 408
             },
             "path": "mcp/tests/test_paseo_role_messages.py"
           },
@@ -505,12 +568,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a1ee28417c5d634e56ba98aa1c5e2a0045a5c682",
+            "blob": "6000d8bf74427856cdb63998060ae1683b61be90",
             "content": "sha256:73c6210b150df4fca36173f0acfba672fdfc608265398abef7a007a2ad8571e9",
             "locator": {
-              "end": 204,
+              "end": 226,
               "kind": "line_range",
-              "start": 177
+              "start": 199
             },
             "path": "mcp/tests/test_paseo_role_messages.py"
           },
@@ -523,12 +586,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a1ee28417c5d634e56ba98aa1c5e2a0045a5c682",
+            "blob": "6000d8bf74427856cdb63998060ae1683b61be90",
             "content": "sha256:cc436df495e1fb520007242b039758f2930cf4c00b1253b9f55899e983710df7",
             "locator": {
-              "end": 335,
+              "end": 358,
               "kind": "line_range",
-              "start": 305
+              "start": 328
             },
             "path": "mcp/tests/test_paseo_role_messages.py"
           },
@@ -541,7 +604,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3425928114982fd40fedd6687347ba864f4c25d5",
+            "blob": "19a6220f46d38a1397214ef87d0348e7a25c87d5",
             "content": "sha256:6360d6906f33f67364a091fa810512750413c1193bdccd08992ec081f5f091b8",
             "locator": {
               "kind": "symbol",

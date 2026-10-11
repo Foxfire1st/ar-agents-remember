@@ -1,5 +1,19 @@
 # test_agentic_settings.py
 
+## Current paired source contract — scoped assertions and incoming catalogs
+
+Current review-limit cases expect fallback5 and accept positive maxRounds values4/99 in global/repository layers; zero, negative and fractional values refuse with the settings field named. This supersedes the historical hard-three ceiling, not the independent character-limit parsing cases. These are load/merge assertions, not native review-round authority or a new execution.
+
+This section supersedes contrary earlier prose only for these changed seams; retained evidence and useful unaffected accounts are not deleted or promoted to new proof.
+
+- Current review-limit cases expect fallback5 and accept positive maxRounds values4/99 in global/repository layers; zero, negative and fractional values refuse with the settings field named. This supersedes the historical hard-three ceiling, not the independent character-limit parsing cases. These are load/merge assertions, not native review-round authority or a new execution. [15]
+
+
+## Message transport contract coverage
+
+Settings-load cases pin the role-message wake-text limit: absence uses its declared default, positive whole numbers and repository-layer precedence work, and zero/negative/fractional/string/boolean values refuse with the field named. These are parser/merge assertions, not a live-server reload witness; per-call enforcement has its separate message tests.
+
+
 ## Governing Overview
 
 [Test suite overview](overview.md)
@@ -60,11 +74,19 @@ No configured domain evidence applies to the file-local claims above.
 
 The retained source anchors below support the fixture roles and assertion boundaries described above. They identify current behavior, not a request to restore historical test counts or percentage targets.
 
+
 - Local leaf overrides global leaf and siblings survive. [3]
+
 - Arrays replace never concatenate. [4]
+
 - Absent files mean documented defaults. [5]
+
+
 - Local gate delegation is refused global layer only. [6]
+
+
 - Malformed json fails loud with path. [7]
+
 - Human pinned gate kind cannot be delegated. [8]
 - Level override deep merges over the flat default. [9]
 - New id adds a harness with defaults derived. [10]
@@ -77,3 +99,5 @@ The retained source anchors below support the fixture roles and assertion bounda
 No cross-repository implementation evidence is required for these local test and fixture claims.
 
 Fixture repositories and protocol doubles do not establish a live external integration.
+
+- Settings-load cases pin the role-message wake-text limit: absence uses its declared default, positive whole numbers and repository-layer precedence work, and zero/negative/fractional/string/boolean values refuse with the field named. [14]

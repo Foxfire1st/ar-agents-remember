@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "053ba7c4260bcc5540d0519e5481b47d344c469d",
-        "content": "sha256:6fe62a36cf7fa9ec3bffe1b9f7f3dcf8383b2a673d84f267479568d5b327433b",
+        "blob": "ec9c3e6658331150d5e253965df7876d572ba086",
+        "content": "sha256:b6f88d3195695321b41c9182d1c837378fb680523f732d21c670ba9f10b95594",
         "locator": {
           "kind": "file"
         }
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "053ba7c4260bcc5540d0519e5481b47d344c469d",
-        "content": "sha256:6fe62a36cf7fa9ec3bffe1b9f7f3dcf8383b2a673d84f267479568d5b327433b",
+        "blob": "ec9c3e6658331150d5e253965df7876d572ba086",
+        "content": "sha256:b6f88d3195695321b41c9182d1c837378fb680523f732d21c670ba9f10b95594",
         "locator": {
           "kind": "file"
         }
@@ -78,6 +78,23 @@
             "content": "sha256:5f44de52981907402d31c4456912475ca60726182153bbaf24efecd63e2d3727",
             "locator": {
               "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "A record-only repair is checked on the last recorded round only when every candidate finding is closed and candidate bytes are identical; begin_review is not called and the count stays. A changed candidate instead requires the ordinary next round. Fix verification within the settings limit is an ordinary round; a beyond-limit round needs recorded architect/developer approval, not the superseded unconditional D107 further-look account. Separate MEMORY reports/counts do not reset CODE.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ec9c3e6658331150d5e253965df7876d572ba086",
+            "content": "sha256:b6f88d3195695321b41c9182d1c837378fb680523f732d21c670ba9f10b95594",
+            "locator": {
+              "end": 31,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"

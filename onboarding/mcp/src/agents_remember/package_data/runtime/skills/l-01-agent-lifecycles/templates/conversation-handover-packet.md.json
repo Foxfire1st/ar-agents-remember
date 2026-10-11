@@ -43,7 +43,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2122be11efd7189de483677896745d9f50b251c4",
+            "blob": "c8e75a34a51405b6de8203b38c4e806b63c28e22",
             "content": "sha256:1cb90f1f30c7fd4ec6057a1bda9e839c9c9b4d6c0e4b955db518baac0f2b3156",
             "locator": {
               "end": 6,
@@ -74,7 +74,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3ddb3dd453cf996eb2c34dcb5952386da975c162",
+            "blob": "f7480a7d53c7d2a6d0efa9e62ef1bcfc4d815804",
             "content": "sha256:767f90a220cf3937f52a492d1e9a388836428f8df86ac37ae7ad43153be8c3c7",
             "locator": {
               "end": 6,
@@ -95,6 +95,23 @@
               "start": 144
             },
             "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Messages wake; complete payloads and evidence travel as files.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c97de9034a9c793a29c0cb695e9a14ab1b789721",
+            "content": "sha256:a679d21b092f72d96dab9b6882231da820b3706a9218d1087815bbc8981376dc",
+            "locator": {
+              "end": 14,
+              "kind": "line_range",
+              "start": 14
+            }
           },
           "kind": "code"
         }

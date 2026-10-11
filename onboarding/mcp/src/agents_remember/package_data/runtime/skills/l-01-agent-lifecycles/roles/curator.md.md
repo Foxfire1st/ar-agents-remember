@@ -1,5 +1,21 @@
 # l-01-agent-lifecycles/roles/curator.md
 
+## Current supported-pair account — R100/R116 composition
+
+Batch changed-card citation previews and repairs with one documents list per wave. The stage writes, checks and publishes task knowledge with the installed build and a clean quality check; own-input/coherence faults are corrected through the same admitted tool, never relabeled or bypassed. Valid product/permission/authority/out-of-ground blockers stop dependent work. MEMORY beyond-settings authority comes from architect/developer through the recorded Manager act; independent review and publication are not acceptance.
+
+This account controls the named changed seams; contradictory earlier card wording below is retained only as historical evidence. Unchanged role duties and R117 file-only wake/report transport are preserved. Source inspection supplies no new runtime test, CODE verdict, review counter or acceptance.
+
+- Batch changed-card citation previews and repairs with one documents list per wave. The stage writes, checks and publishes task knowledge with the installed build and a clean quality check; own-input/coherence faults are corrected through the same admitted tool, never relabeled or bypassed. Valid product/permission/authority/out-of-ground blockers stop dependent work. MEMORY beyond-settings authority comes from architect/developer through the recorded Manager act; independent review and publication are not acceptance. [9]
+
+
+## Message/file transport
+
+This packaged copy makes role messages short wake-ups naming requested work or a handover and its files. Complete report, verdict, list and evidence contents travel through file-only `body` or existing-file `attach`, never pasted into message text. Within a shared task, message files remain with its record and a leaf workspace exposes the message-folder link. Wake text uses the effective settings limit, not a number pinned in this role/template. This transport account changes neither the file's existing role/write boundaries nor requirement, review, curation or landing authority.
+
+- Messages wake; complete payloads and evidence travel as files. [8]
+
+
 ## Governing Overview
 
 [MCP package overview](../../../../../../../overview.md)

@@ -23,6 +23,8 @@ below the shared 900-second floor.
 
 ## Code Commentary
 
+`_parse_orchestration` parses `roleMessageLimit` through the shared positive-integer validator with the field/source named in failures, and defaults an absent/null value to `DEFAULT_ROLE_MESSAGE_LIMIT`. The facade exports that constant. Dynamic role-message enforcement is a separate consumer: the delivered wake text is bounded, while body and attachment payload files are not.
+
 ### 260714-ACPUI-L2 Dynamic Native Launch Authority
 
 `RoleKnobs.model` and `RoleKnobs.effort` remain stripped, non-empty settings values at this parser

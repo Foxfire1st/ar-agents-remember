@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "219e63f090437e6767ad21a8414c5fdacb889a30",
+        "blob": "7c2d000caba1da2642b41537f45ea0e68d3e2416",
         "content": "sha256:46f1ba247426a51bdbc0582688ec4bf236587c6044e4bf69131f40088de7167e",
         "locator": {
-          "end": 50,
+          "end": 52,
           "kind": "line_range",
-          "start": 50
+          "start": 52
         }
       },
       "id": "RLZ-1GCP9C",
@@ -22,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "219e63f090437e6767ad21a8414c5fdacb889a30",
+        "blob": "7c2d000caba1da2642b41537f45ea0e68d3e2416",
         "content": "sha256:1a037eb21173fb839661b344bf5886756e560da5642dc4347b03911c6587ed3c",
         "locator": {
           "end": 36,
@@ -41,12 +41,12 @@
     },
     {
       "anchor": {
-        "blob": "219e63f090437e6767ad21a8414c5fdacb889a30",
+        "blob": "7c2d000caba1da2642b41537f45ea0e68d3e2416",
         "content": "sha256:64b014bf72a3ddf76a265ac494a328b3a6dd7cefdbc2e4057605d5664f140527",
         "locator": {
-          "end": 52,
+          "end": 54,
           "kind": "line_range",
-          "start": 52
+          "start": 54
         }
       },
       "id": "RLZ-418WGG",
@@ -60,8 +60,8 @@
     },
     {
       "anchor": {
-        "blob": "219e63f090437e6767ad21a8414c5fdacb889a30",
-        "content": "sha256:3f1194f47ff5053d9036e0393ba29177097877063e6d21e6dd2e1dae0c0e188b",
+        "blob": "7c2d000caba1da2642b41537f45ea0e68d3e2416",
+        "content": "sha256:01ffd5a2f517267c91241d5c46f132656278c72a8300271ad8affc6060588d92",
         "locator": {
           "kind": "file"
         }
@@ -77,7 +77,7 @@
     },
     {
       "anchor": {
-        "blob": "219e63f090437e6767ad21a8414c5fdacb889a30",
+        "blob": "7c2d000caba1da2642b41537f45ea0e68d3e2416",
         "content": "sha256:b86ed0ec194e278b441cef1148daa0cf7592bd50a2542659a5f085efe326d984",
         "locator": {
           "end": 22,
@@ -96,8 +96,8 @@
     },
     {
       "anchor": {
-        "blob": "219e63f090437e6767ad21a8414c5fdacb889a30",
-        "content": "sha256:3f1194f47ff5053d9036e0393ba29177097877063e6d21e6dd2e1dae0c0e188b",
+        "blob": "7c2d000caba1da2642b41537f45ea0e68d3e2416",
+        "content": "sha256:01ffd5a2f517267c91241d5c46f132656278c72a8300271ad8affc6060588d92",
         "locator": {
           "kind": "file"
         }
@@ -113,7 +113,7 @@
     },
     {
       "anchor": {
-        "blob": "219e63f090437e6767ad21a8414c5fdacb889a30",
+        "blob": "7c2d000caba1da2642b41537f45ea0e68d3e2416",
         "content": "sha256:4a9dc567094ef1b313f0aa20658894f0313277c6e1e16e7c914234496a883352",
         "locator": {
           "end": 10,
@@ -132,7 +132,7 @@
     },
     {
       "anchor": {
-        "blob": "219e63f090437e6767ad21a8414c5fdacb889a30",
+        "blob": "7c2d000caba1da2642b41537f45ea0e68d3e2416",
         "content": "sha256:8954e24288f5e81d675e3ce856592924eb75933b4cc3ca2626896200d59d9581",
         "locator": {
           "end": 24,
@@ -151,7 +151,7 @@
     },
     {
       "anchor": {
-        "blob": "219e63f090437e6767ad21a8414c5fdacb889a30",
+        "blob": "7c2d000caba1da2642b41537f45ea0e68d3e2416",
         "content": "sha256:beb680d06c4adf9d4d1fa54719c8035f522b3291e395fe1ceded3bba42016d85",
         "locator": {
           "end": 18,
@@ -170,8 +170,8 @@
     },
     {
       "anchor": {
-        "blob": "219e63f090437e6767ad21a8414c5fdacb889a30",
-        "content": "sha256:3f1194f47ff5053d9036e0393ba29177097877063e6d21e6dd2e1dae0c0e188b",
+        "blob": "7c2d000caba1da2642b41537f45ea0e68d3e2416",
+        "content": "sha256:01ffd5a2f517267c91241d5c46f132656278c72a8300271ad8affc6060588d92",
         "locator": {
           "kind": "file"
         }
@@ -187,7 +187,7 @@
     },
     {
       "anchor": {
-        "blob": "219e63f090437e6767ad21a8414c5fdacb889a30",
+        "blob": "7c2d000caba1da2642b41537f45ea0e68d3e2416",
         "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
         "locator": {
           "end": 43,
@@ -206,7 +206,7 @@
     },
     {
       "anchor": {
-        "blob": "219e63f090437e6767ad21a8414c5fdacb889a30",
+        "blob": "7c2d000caba1da2642b41537f45ea0e68d3e2416",
         "content": "sha256:4b2c97839463054b2f5307414e25c52bc948a6e1929f9f1a2b90ef7baf9d2a19",
         "locator": {
           "end": 32,
@@ -225,7 +225,7 @@
     },
     {
       "anchor": {
-        "blob": "219e63f090437e6767ad21a8414c5fdacb889a30",
+        "blob": "7c2d000caba1da2642b41537f45ea0e68d3e2416",
         "content": "sha256:cff008a580b31483b82250166a7d30f245042524986ab6a536f026323e0baaf1",
         "locator": {
           "end": 8,
@@ -244,8 +244,8 @@
     },
     {
       "anchor": {
-        "blob": "219e63f090437e6767ad21a8414c5fdacb889a30",
-        "content": "sha256:3f1194f47ff5053d9036e0393ba29177097877063e6d21e6dd2e1dae0c0e188b",
+        "blob": "7c2d000caba1da2642b41537f45ea0e68d3e2416",
+        "content": "sha256:01ffd5a2f517267c91241d5c46f132656278c72a8300271ad8affc6060588d92",
         "locator": {
           "kind": "file"
         }
@@ -270,6 +270,23 @@
             "content": "sha256:6931c760b8fd2e788ffd552539d4905466c01f2fdffab9e66e97ada5085b1ee2",
             "locator": {
               "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Architect may grant a beyond-settings round for a concrete shrinking repair set; an unchanged failed repair or disputed requirement meaning needs a ruling instead of another round. Permission/non-finished starts are held by the product, and held permission notices propagate without message resubmission. Scope/parent identity and orchestration release stay distinct from native transport and AR acceptance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7c2d000caba1da2642b41537f45ea0e68d3e2416",
+            "content": "sha256:01ffd5a2f517267c91241d5c46f132656278c72a8300271ad8affc6060588d92",
+            "locator": {
+              "end": 66,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"

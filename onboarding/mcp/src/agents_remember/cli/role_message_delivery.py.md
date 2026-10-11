@@ -1,0 +1,33 @@
+# Role message delivery transaction
+
+## Governing Overview
+
+[Repository MCP overview](../../../overview.md)
+
+## Purpose
+
+Provide the shared text-limit, message-file/attachment/store/link, successor and long-reply helpers selected by the composed `paseo_role_tools` message flow. Filing primitives remain in `role_message_files`. Attempt-4 recipient-resolution/native-dispatch routines remain in this module, but the current public call uses facade-local resolution, held ordering and `_deliver`; those retained routines are not current-path enforcement.
+
+## Contract
+
+The retained Attempt-4 resolver accepts exactly one receipt-bound agent ID or a role plus selection references and refuses self, unfinished-start, absent and ambiguous recipients. Its refusal of unfinished starts is historical private-dispatch behavior, not the current facade’s holding path. Current public resolution holds an unfinished-start message when its recipient store is known; taskless and leaf-seat scans preserve their explicit ambiguity rules. Archived-ID advice names a same-selection successor without silently redirecting or unarchiving.
+
+Only `text` counts against the supplied settings limit; over-limit text refuses with count/limit and `body`/`attach` alternatives. The resolved-recipient facade prologue uses shared attachment/link/store primitives to publish a complete file before its native-send path; link establishment can warn and continue without replacing an occupied path. The unfinished-start hold bypasses this prologue and does not establish its file/pointer guarantee. On filed branches, wake text names a path/hash rather than pasting body/attachment contents. Investigator admission precedes native send/resume. The retained private dispatcher discards message-owned files on pre-attempt capacity failure; the current facade instead catches its local capacity refusal after filing and retains the refusal record. Neither private cleanup nor successful unheld delivery establishes every composed branch’s behavior.
+
+The current facade owns native closed-session revive under the scope verifier and upstream permission/busy holding under R100. Holding never answers a prompt; unexpected host replacement is disclosed rather than credited as intentional steering. The shared long-reply helper files a whole recipient-to-sender reply and carries its bounded prefix/file identity when the unheld dispatcher invokes it with a filed message. `_held_then_delivered` merges the held wait without invoking this helper, so its reply is not qualified by that cut/file behavior. Facade-local wait is outside the capacity lock. Retained Attempt-4 dispatch code is historical evidence, not current-path enforcement or a promise that these implementation gaps are resolved.
+
+## Boundaries
+
+If a long wait reply cannot be filed, the prefix is still returned with truncation detail and a warning; do not claim the full reply was retained then. Report collection failure is separately owned by the facade and does not negate a taken message. Sender/recipient link warnings do not grant authority to replace existing paths. Successor naming does not grant the caller permission to start a role.
+
+## Evidence
+
+- Count only text and refuse excess without silently moving or truncating it. [1]
+- Archived id refusal names a same-selection live successor without changing recipient identity. [2]
+- Retained Attempt-4 dispatcher prepares/files and preserves capacity/revive boundaries; the successor public dispatcher is facade-local instead. [3]
+- When invoked with a filed message, the long-reply helper files the whole reply or discloses failed filing while returning the prefix; held-drain waits do not invoke it. [4]
+
+## Current shared file publisher
+
+- The composed facade calls this shared publisher to render/store the whole message; storage failure discards message-owned attachment copies and refuses before native send, while success returns the filed identity and wake payload. [5]
+

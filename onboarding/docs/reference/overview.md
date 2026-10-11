@@ -1,5 +1,10 @@
 # docs/reference
 
+## Message and evidence transport
+
+The settings reference now separates the per-call roleMessageLimit wake-text bound from complete body/attachment/reply file payloads. The existing role_message contract declares its new fields without creating a new public message/search/dashboard tool. Parsed keys, current source and installed/live execution remain distinct evidence.
+
+
 ## Current operative account — MIK-R112
 
 The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.

@@ -1,0 +1,110 @@
+{
+  "path": "mcp/tests/test_role_message_files.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Boundary settings and reload assertions distinguish bounded wake text from file payload.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "694ad09985aa2a08b420012645a2d3412a0da4c7",
+            "content": "sha256:7da92962a58b0a3c52b928ce56a133952cc04697af02ef4348185c05e0ea4306",
+            "locator": {
+              "kind": "symbol",
+              "name": "MessageLimitTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Message fixtures inspect stored payloads, pointers, reply files and workspace links.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1f5aac227185888ad902cd1c256dea4999fdc024",
+            "content": "sha256:c2e99627c2467be4042ae7aaf184519d5bbab8f123953745263b649e16e59eb4",
+            "locator": {
+              "kind": "symbol",
+              "name": "MessageFileTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Faults and collisions exercise rollback and retained concurrent payloads.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "694ad09985aa2a08b420012645a2d3412a0da4c7",
+            "content": "sha256:caae0475b3c9189baf871c50e95d79bd9b5ba544e6269a198933f2190cc25b93",
+            "locator": {
+              "kind": "symbol",
+              "name": "TransactionTests"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "694ad09985aa2a08b420012645a2d3412a0da4c7",
+            "content": "sha256:303f44eb9c69744a4356a19a5d646a5b93def7afb102d5247a4d0fe584472977",
+            "locator": {
+              "kind": "symbol",
+              "name": "CollisionCostTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Successor guidance and strict refusal fields remain separate from automatic retargeting.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1f5aac227185888ad902cd1c256dea4999fdc024",
+            "content": "sha256:a38c525b5384cef537177a2e29943a50727a2b8a628345c08f7f3981ed9e6ad9",
+            "locator": {
+              "kind": "symbol",
+              "name": "SuccessorAndReturnTests"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "1f5aac227185888ad902cd1c256dea4999fdc024",
+            "content": "sha256:d29eca0ce59213e66b462404ee66651e14b069f29f50974367875a4647cc6f55",
+            "locator": {
+              "kind": "symbol",
+              "name": "RegisteredRefusalTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The composed file fixtures patch facade utc_stem, pin retained refusal files on a non-holdable unresumable session instead of busy holding, and archive the old holder before constructing successor fixtures. Full-payload/collision/rollback/strict-response checks remain controlled in-process cases; currentness does not claim a runtime pass or promote an old busy-refusal case.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "694ad09985aa2a08b420012645a2d3412a0da4c7",
+            "content": "sha256:a2c04da78896a7e664491b1b3cbac7802881c63d935d84e78fe0b4304738ce72",
+            "locator": {
+              "end": 670,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

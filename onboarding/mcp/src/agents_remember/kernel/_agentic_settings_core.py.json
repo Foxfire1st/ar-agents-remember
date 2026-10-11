@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "74d7447932d35bbb3717919b4cd09c2ab234efd6",
-        "content": "sha256:912387d0500f2f99062f15404ea5ff1b2027051fabd435f17225b482996eed79",
+        "blob": "e9db2163f4d7a768918193e6c5889cd487ea2dde",
+        "content": "sha256:506ecd9150e5f0a86fbfb009d5abb814aec2d5119ec6381ccbf36b5cdbd6e35c",
         "locator": {
           "kind": "file"
         }
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "74d7447932d35bbb3717919b4cd09c2ab234efd6",
+        "blob": "e9db2163f4d7a768918193e6c5889cd487ea2dde",
         "content": "sha256:83dc3d5d9258c885b9054f7ede52253c2c01c2ef1894983e70bfcdbf5e12fda4",
         "locator": {
           "kind": "symbol",
@@ -35,6 +35,24 @@
       },
       "rationale": "This constant is the default the settings number falls back to; the packet fixes it at five.",
       "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "e9db2163f4d7a768918193e6c5889cd487ea2dde",
+        "content": "sha256:edf08077df33dca884d1cf6a6eac91966d4d92395739fc691acfbf1e5ae1cf16",
+        "locator": {
+          "kind": "symbol",
+          "name": "DEFAULT_ROLE_MESSAGE_LIMIT"
+        }
+      },
+      "id": "RLZ-WVCM13",
+      "invariant": "INV-A87E4H",
+      "origin": {
+        "handoffEntry": "L117-R01",
+        "leaf": "260928-MIK-L117"
+      },
+      "rationale": "The default bound lives with the settings contract so an unnamed limit is 1000 everywhere the limit is read.",
+      "role": "enforcement"
     }
   ],
   "references": {

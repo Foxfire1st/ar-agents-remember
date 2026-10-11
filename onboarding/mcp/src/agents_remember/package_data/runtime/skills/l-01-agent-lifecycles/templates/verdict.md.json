@@ -37,7 +37,7 @@
         },
         {
           "anchor": {
-            "blob": "5571757729bab29324c91b86fc899ba99e5798bb",
+            "blob": "b0dbbc40ee147ee5010f8fcdcba4f80c51e3ad21",
             "content": "sha256:9e48a5b880362e7d94e9a4ac7540b37b8f0cab9e35ac38e4e839f9455a99bf02",
             "locator": {
               "end": 280,
@@ -79,7 +79,7 @@
         },
         {
           "anchor": {
-            "blob": "5571757729bab29324c91b86fc899ba99e5798bb",
+            "blob": "b0dbbc40ee147ee5010f8fcdcba4f80c51e3ad21",
             "content": "sha256:a45e660d7d80c66e3241773e14ec7da11d042cef76bd83c8ff9c845a7207814f",
             "locator": {
               "end": 219,
@@ -121,7 +121,7 @@
         },
         {
           "anchor": {
-            "blob": "5571757729bab29324c91b86fc899ba99e5798bb",
+            "blob": "b0dbbc40ee147ee5010f8fcdcba4f80c51e3ad21",
             "content": "sha256:a45e660d7d80c66e3241773e14ec7da11d042cef76bd83c8ff9c845a7207814f",
             "locator": {
               "end": 219,
@@ -138,7 +138,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "db65f4af62b9d4f8da76f7526082c27f6d7f02db",
+            "blob": "67514785547fc2ec1102911ba96fa1c82e14c4fe",
             "content": "sha256:9357f70d536f6d74252a667d23baea6a5f5b9fac9b52d716f3b9ec17e4c04949",
             "locator": {
               "end": 4,
@@ -164,12 +164,12 @@
         },
         {
           "anchor": {
-            "blob": "8967dc869ac85e8d0b0de245a1f12830d6fe0ed4",
+            "blob": "4ca50207925e6c252a868cc97ff789bfb791f2f6",
             "content": "sha256:630d661f56caa155c60c87d057f0633beb087b7abd94262641d2d0503662b038",
             "locator": {
-              "end": 146,
+              "end": 180,
               "kind": "line_range",
-              "start": 145
+              "start": 179
             },
             "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
           },
@@ -182,12 +182,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8967dc869ac85e8d0b0de245a1f12830d6fe0ed4",
+            "blob": "4ca50207925e6c252a868cc97ff789bfb791f2f6",
             "content": "sha256:bdde864e193387263731cdd066f3fceac9c073557afb12f618b8e90a8b51b9d1",
             "locator": {
-              "end": 126,
+              "end": 160,
               "kind": "line_range",
-              "start": 126
+              "start": 160
             },
             "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md"
           },
@@ -195,12 +195,12 @@
         },
         {
           "anchor": {
-            "blob": "8967dc869ac85e8d0b0de245a1f12830d6fe0ed4",
+            "blob": "4ca50207925e6c252a868cc97ff789bfb791f2f6",
             "content": "sha256:ca04194485304fe905d26b1663078884c16d5d36f479d9d3e1179a77fdf24011",
             "locator": {
-              "end": 138,
+              "end": 172,
               "kind": "line_range",
-              "start": 138
+              "start": 172
             },
             "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md"
           },
@@ -208,12 +208,12 @@
         },
         {
           "anchor": {
-            "blob": "8967dc869ac85e8d0b0de245a1f12830d6fe0ed4",
+            "blob": "4ca50207925e6c252a868cc97ff789bfb791f2f6",
             "content": "sha256:afe4d46254ffa875b8d24856a06bb4a4e94f143f5108cc8ee5c24d537a56354a",
             "locator": {
-              "end": 144,
+              "end": 178,
               "kind": "line_range",
-              "start": 144
+              "start": 178
             },
             "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md"
           },
@@ -247,6 +247,40 @@
               "start": 1
             },
             "path": "skills/l-01-agent-lifecycles/operations/review.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Messages wake; complete payloads and evidence travel as files.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b0dbbc40ee147ee5010f8fcdcba4f80c51e3ad21",
+            "content": "sha256:d0dd37230635b4bf60eb9afa2f995a981c26d820d440db56374f8aaa8e0cceca",
+            "locator": {
+              "end": 372,
+              "kind": "line_range",
+              "start": 372
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The Reviewer records ordinary CODE round/result; the task document and recorded architect/developer approval govern beyond-settings work. Fix verification is an ordinary round, not an unqualified D107 extra look. Verdict content is carried as a file, and remains evidence for the gate owner rather than a decision. The supported-sync source had a disclosed trailing stashed-change marker absent from K_B; that static composition observation was sent to Worker and Reviewer for the assigned D140, not silently adopted as clean source or a new CODE PASS.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b0dbbc40ee147ee5010f8fcdcba4f80c51e3ad21",
+            "content": "sha256:5bcd6e2ca335c16ccf9ec8c9e8fb18dd9a1df56054167a193ddb3dab6732493d",
+            "locator": {
+              "end": 372,
+              "kind": "line_range",
+              "start": 1
+            }
           },
           "kind": "code"
         }

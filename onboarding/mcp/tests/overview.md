@@ -1,5 +1,10 @@
 # mcp/tests
 
+## Message and evidence transport
+
+Message transport coverage is split across settings validation, filesystem/collision/rollback, strict body/attachment and bounded reply tests, archived-successor/start-authority checks, source/compiled-return wording and private turn-end decision cases. Catalog membership and controlled-runtime assertions do not establish live host callbacks, every-harness consumption or independent acceptance. Actual-parent-ID developer questions stay distinct from role/task ordinary returns.
+
+
 ## Current operative account — MIK-R112
 
 Landing regression suites distinguish exact-pair refusal, authentic history ownership, record retention, merge-chain admission, explicit direct owner and honest post-publication aftermath. Coherence closed-out is an integration case; dependency bounds/old-record compatibility are model/publication witnesses. Read-boundary and synthetic cutover fixtures that hold another gate passing prove only their declared surface, never that gate's acceptance.

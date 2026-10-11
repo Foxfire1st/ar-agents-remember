@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "The public producer, file storage, lifecycle or native transport owners must preserve this same boundary across their distinct source locations."
+  },
+  "applicability": "Role-agent handover return addresses and ordinary returns after parent replacement.",
+  "conditions": [
+    "A leaf return uses its master Manager role and canonical references."
+  ],
+  "exclusions": [
+    "role_start assignment briefs",
+    "Developer chat text and native host chat display",
+    "Messages via removed earlier orchestration tools",
+    "Developer-question and authorization routing are not independently defined by the ordinary-return guarantee."
+  ],
+  "id": "INV-V5KJ19",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "ReturnAddressTests incl. Manager-replacement reachability; checks-attempt4/pytest-focused.log; worker report Attempt 4"
+      ],
+      "path": "ingest-wave1.json"
+    },
+    "handoffEntry": "L117-R10",
+    "leaf": "260928-MIK-L117",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A return goes to the parent's role with its task references from the handover return address, never to an id read from an earlier message, surviving replacement.",
+  "status": "proposed",
+  "supersedes": []
+}

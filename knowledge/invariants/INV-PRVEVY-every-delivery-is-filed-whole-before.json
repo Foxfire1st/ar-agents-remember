@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "The public producer, file storage, lifecycle or native transport owners must preserve this same boundary across their distinct source locations."
+  },
+  "applicability": "Validated role_message deliveries and host-refused native send attempts.",
+  "conditions": [
+    "A message can proceed past pre-delivery validation and selection capacity admission."
+  ],
+  "exclusions": [
+    "role_start assignment briefs",
+    "Developer chat text and native host chat display",
+    "Messages via removed earlier orchestration tools",
+    "Validation/admission refusals before a native send attempt do not retain a delivery record."
+  ],
+  "id": "INV-PRVEVY",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "MessageFileTests, RefusedFileTests and _FailingWriter fault-injection (L117-C1-F01); op counts at sizes 10/40 plus concurrency (L117-C1-F08); checks-attempt4/pytest-focused.log; worker report Attempt 4"
+      ],
+      "path": "ingest-wave1.json"
+    },
+    "handoffEntry": "L117-R02",
+    "leaf": "260928-MIK-L117",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Every delivery is filed whole before send: one staged write plus fsync plus one atomic link per message; a refused delivery keeps a .undelivered.md file naming the refusal.",
+  "status": "proposed",
+  "supersedes": []
+}

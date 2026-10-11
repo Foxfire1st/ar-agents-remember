@@ -40,7 +40,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bd559c3f7fb918ede5de2be0bc9321df45f1aa62",
+            "blob": "65a10dcac925975e4ae642d264a343857bdae9c4",
             "content": "sha256:1ef76bbb155772d5cbaa602f79f34e50cffadb32e4ac0a79cb63cf1861214d37",
             "locator": {
               "end": 1,
@@ -62,6 +62,23 @@
             "content": "sha256:14d91261080606e51d51bb41a0a158e126a96153181de8b4bc99481e62f8b4bb",
             "locator": {
               "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The Manager starts Worker, Reviewer and Curator together through one role_start_set; Worker opens immediately, the other seats are held unless first Reviewer work is supplied. Public messaging takes a unique live seat, refuses ambiguity, and holds behind already-held messages when a start, permission prompt or non-steerable turn prevents delivery. Permission decisions are never answered by transport; the upward notice names the role/task/agent/permission, and the product delivers held work when admissible without sender resubmission. CODE and MEMORY lanes keep separate counts; the settings limit and recorded architect/developer authority govern extra rounds. Direct peer packages are not relayed by Manager.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "65a10dcac925975e4ae642d264a343857bdae9c4",
+            "content": "sha256:4d0e8fe886c1806091a9355cad05d3d28199bf7b5bd9d1f5d4283c0ee015b2be",
+            "locator": {
+              "end": 29,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"

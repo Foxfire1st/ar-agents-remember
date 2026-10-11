@@ -3,8 +3,27 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "9a09d000e7ce185b3e976285c531ec3e782f596a",
-        "content": "sha256:dbb212d4fbd5b79f65de1e419cdf3ef11ac208d34f6cdeef532acccccff16172",
+        "blob": "dec37505d547db9bb1a9748059249ce9d3dd579c",
+        "content": "sha256:b7624384d1a59a37d1bd4c095894acf62a770e90aa2af4a60d86a95044d25346",
+        "locator": {
+          "end": 758,
+          "kind": "line_range",
+          "start": 738
+        }
+      },
+      "id": "RLZ-DYXENX",
+      "invariant": "INV-A87E4H",
+      "origin": {
+        "handoffEntry": "L117-R01",
+        "leaf": "260928-MIK-L117"
+      },
+      "rationale": "The bound, its default, its scope and its refusal are documented where settings are documented.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "dec37505d547db9bb1a9748059249ce9d3dd579c",
+        "content": "sha256:d045b1c62b1848d2fc10934f07da45c510e639e7794a43a8a7aa2330aadd4efc",
         "locator": {
           "kind": "file"
         }
@@ -20,8 +39,8 @@
     },
     {
       "anchor": {
-        "blob": "9a09d000e7ce185b3e976285c531ec3e782f596a",
-        "content": "sha256:dbb212d4fbd5b79f65de1e419cdf3ef11ac208d34f6cdeef532acccccff16172",
+        "blob": "dec37505d547db9bb1a9748059249ce9d3dd579c",
+        "content": "sha256:d045b1c62b1848d2fc10934f07da45c510e639e7794a43a8a7aa2330aadd4efc",
         "locator": {
           "kind": "file"
         }

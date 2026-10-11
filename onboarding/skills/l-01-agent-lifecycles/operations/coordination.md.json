@@ -3,8 +3,27 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "242c039fe8f8dcdf2fa048af3388d6d6affda342",
-        "content": "sha256:e6c2add5f82ab4bff3021f5f8faa022cb5292380415827eb65ada2f6d22bc8cc",
+        "blob": "65a10dcac925975e4ae642d264a343857bdae9c4",
+        "content": "sha256:c9b63c1e3adebd96a786775a959d55a38d3743b94be125d317c288ac4fafbf8a",
+        "locator": {
+          "end": 21,
+          "kind": "line_range",
+          "start": 21
+        }
+      },
+      "id": "RLZ-3PNEK4",
+      "invariant": "INV-6R279E",
+      "origin": {
+        "handoffEntry": "L117-R07",
+        "leaf": "260928-MIK-L117"
+      },
+      "rationale": "The coordination operation carries the same rule for every seat that sends or receives.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "65a10dcac925975e4ae642d264a343857bdae9c4",
+        "content": "sha256:4d0e8fe886c1806091a9355cad05d3d28199bf7b5bd9d1f5d4283c0ee015b2be",
         "locator": {
           "kind": "file"
         }
@@ -20,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "242c039fe8f8dcdf2fa048af3388d6d6affda342",
+        "blob": "65a10dcac925975e4ae642d264a343857bdae9c4",
         "content": "sha256:cf493f936208176596c3c4236d6b340db2bfc43a7da45174fa3f346c4578ccbc",
         "locator": {
           "end": 19,
@@ -39,7 +58,7 @@
     },
     {
       "anchor": {
-        "blob": "242c039fe8f8dcdf2fa048af3388d6d6affda342",
+        "blob": "65a10dcac925975e4ae642d264a343857bdae9c4",
         "content": "sha256:cf493f936208176596c3c4236d6b340db2bfc43a7da45174fa3f346c4578ccbc",
         "locator": {
           "end": 19,
@@ -58,12 +77,12 @@
     },
     {
       "anchor": {
-        "blob": "242c039fe8f8dcdf2fa048af3388d6d6affda342",
+        "blob": "65a10dcac925975e4ae642d264a343857bdae9c4",
         "content": "sha256:fd97efca3521a234676e5b0bcdc806fbdd0827156b2fbdf22900b9a55b5410f8",
         "locator": {
-          "end": 21,
+          "end": 23,
           "kind": "line_range",
-          "start": 21
+          "start": 23
         }
       },
       "id": "RLZ-P0ZH30",
@@ -77,7 +96,7 @@
     },
     {
       "anchor": {
-        "blob": "242c039fe8f8dcdf2fa048af3388d6d6affda342",
+        "blob": "65a10dcac925975e4ae642d264a343857bdae9c4",
         "content": "sha256:59e877c574495767f31cf0b20fa0a22d6f52860614cfc0e1def7045aa6fab7d2",
         "locator": {
           "end": 5,
@@ -96,8 +115,8 @@
     },
     {
       "anchor": {
-        "blob": "242c039fe8f8dcdf2fa048af3388d6d6affda342",
-        "content": "sha256:e6c2add5f82ab4bff3021f5f8faa022cb5292380415827eb65ada2f6d22bc8cc",
+        "blob": "65a10dcac925975e4ae642d264a343857bdae9c4",
+        "content": "sha256:4d0e8fe886c1806091a9355cad05d3d28199bf7b5bd9d1f5d4283c0ee015b2be",
         "locator": {
           "kind": "file"
         }
@@ -112,6 +131,24 @@
       "role": "primary-authority"
     }
   ],
-  "references": {},
+  "references": {
+    "1": {
+      "note": "The Manager starts Worker, Reviewer and Curator together through one role_start_set; Worker opens immediately, the other seats are held unless first Reviewer work is supplied. Public messaging takes a unique live seat, refuses ambiguity, and holds behind already-held messages when a start, permission prompt or non-steerable turn prevents delivery. Permission decisions are never answered by transport; the upward notice names the role/task/agent/permission, and the product delivers held work when admissible without sender resubmission. CODE and MEMORY lanes keep separate counts; the settings limit and recorded architect/developer authority govern extra rounds. Direct peer packages are not relayed by Manager.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "65a10dcac925975e4ae642d264a343857bdae9c4",
+            "content": "sha256:4d0e8fe886c1806091a9355cad05d3d28199bf7b5bd9d1f5d4283c0ee015b2be",
+            "locator": {
+              "end": 29,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
   "schema": "ar-onboarding-file/v1"
 }

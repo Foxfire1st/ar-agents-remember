@@ -1,0 +1,58 @@
+{
+  "path": "mcp/tests/test_role_message_wording.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The product surface inventory and positive/negative controls qualify the wording oracle.\n\nAnchor: `RoleMessageWordingTests.test_the_surface_census_matches_the_product_inventory`; `RoleMessageWordingTests.test_the_oracle_catches_directives_and_keeps_legal_lines`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cecab4606d8747d3f486572f39f2125cf31fbb28",
+            "content": "sha256:bbd21ddb4eaf78a34493f5f4e865d5d8ccf1618d7b40d6371fa4506e78767f9b",
+            "locator": {
+              "end": 246,
+              "kind": "line_range",
+              "start": 221
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Roles, operations and templates must express the file-message contract.\n\nAnchor: `RoleMessageWordingTests.test_every_role_text_states_messages_as_files`; `RoleMessageWordingTests.test_every_handover_template_states_messages_as_files`; `RoleMessageWordingTests.test_the_messaging_operations_state_messages_as_files`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cecab4606d8747d3f486572f39f2125cf31fbb28",
+            "content": "sha256:1de39e87afc108bc02e331a4c803db49d54dc66a87b3b384828a04df14bfba65",
+            "locator": {
+              "end": 273,
+              "kind": "line_range",
+              "start": 248
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Parentless compiled capsules preserve file-message markers.\n\nAnchor: `RoleMessageWordingTests.test_compiled_capsules_state_messages_as_files`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cecab4606d8747d3f486572f39f2125cf31fbb28",
+            "content": "sha256:58e0a07f5d777e2048fb7857c36b79290675afc1109c14005702a5734f680351",
+            "locator": {
+              "end": 289,
+              "kind": "line_range",
+              "start": 275
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

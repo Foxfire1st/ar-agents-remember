@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "7ee823b7415cee2590781a41ffb8b929ceb23f65",
+        "blob": "4ca50207925e6c252a868cc97ff789bfb791f2f6",
         "content": "sha256:2127da3e03bc26085319233af46b94eef3a73611aa3fe3c9f1aedc29aebd6742",
         "locator": {
           "end": 239,
@@ -22,8 +22,8 @@
     },
     {
       "anchor": {
-        "blob": "7ee823b7415cee2590781a41ffb8b929ceb23f65",
-        "content": "sha256:2fac39dffe7628a86b93166cb362263ee9f206432040a2ca1e20d923ccd3f44f",
+        "blob": "4ca50207925e6c252a868cc97ff789bfb791f2f6",
+        "content": "sha256:bc081814229b193817472cd75d39545e18112ec84ec36cf89fb8506943ae1c5d",
         "locator": {
           "kind": "file"
         }
@@ -39,8 +39,8 @@
     },
     {
       "anchor": {
-        "blob": "7ee823b7415cee2590781a41ffb8b929ceb23f65",
-        "content": "sha256:2fac39dffe7628a86b93166cb362263ee9f206432040a2ca1e20d923ccd3f44f",
+        "blob": "4ca50207925e6c252a868cc97ff789bfb791f2f6",
+        "content": "sha256:bc081814229b193817472cd75d39545e18112ec84ec36cf89fb8506943ae1c5d",
         "locator": {
           "kind": "file"
         }
@@ -56,8 +56,8 @@
     },
     {
       "anchor": {
-        "blob": "7ee823b7415cee2590781a41ffb8b929ceb23f65",
-        "content": "sha256:2fac39dffe7628a86b93166cb362263ee9f206432040a2ca1e20d923ccd3f44f",
+        "blob": "4ca50207925e6c252a868cc97ff789bfb791f2f6",
+        "content": "sha256:bc081814229b193817472cd75d39545e18112ec84ec36cf89fb8506943ae1c5d",
         "locator": {
           "kind": "file"
         }
@@ -73,8 +73,8 @@
     },
     {
       "anchor": {
-        "blob": "7ee823b7415cee2590781a41ffb8b929ceb23f65",
-        "content": "sha256:2fac39dffe7628a86b93166cb362263ee9f206432040a2ca1e20d923ccd3f44f",
+        "blob": "4ca50207925e6c252a868cc97ff789bfb791f2f6",
+        "content": "sha256:bc081814229b193817472cd75d39545e18112ec84ec36cf89fb8506943ae1c5d",
         "locator": {
           "kind": "file"
         }
@@ -90,7 +90,7 @@
     },
     {
       "anchor": {
-        "blob": "7ee823b7415cee2590781a41ffb8b929ceb23f65",
+        "blob": "4ca50207925e6c252a868cc97ff789bfb791f2f6",
         "content": "sha256:92dcedcd2497d46774810fe5ab551db0448e9b4111eca2c52f1ab3b4edb6e0a1",
         "locator": {
           "end": 21,
@@ -109,7 +109,7 @@
     },
     {
       "anchor": {
-        "blob": "7ee823b7415cee2590781a41ffb8b929ceb23f65",
+        "blob": "4ca50207925e6c252a868cc97ff789bfb791f2f6",
         "content": "sha256:5dd86b5521e960c9e9bc9d583ffe68e6f76a0c0b91618675c0d9cafde6536c6f",
         "locator": {
           "end": 198,
@@ -128,8 +128,8 @@
     },
     {
       "anchor": {
-        "blob": "7ee823b7415cee2590781a41ffb8b929ceb23f65",
-        "content": "sha256:2fac39dffe7628a86b93166cb362263ee9f206432040a2ca1e20d923ccd3f44f",
+        "blob": "4ca50207925e6c252a868cc97ff789bfb791f2f6",
+        "content": "sha256:bc081814229b193817472cd75d39545e18112ec84ec36cf89fb8506943ae1c5d",
         "locator": {
           "kind": "file"
         }
@@ -145,8 +145,8 @@
     },
     {
       "anchor": {
-        "blob": "7ee823b7415cee2590781a41ffb8b929ceb23f65",
-        "content": "sha256:2fac39dffe7628a86b93166cb362263ee9f206432040a2ca1e20d923ccd3f44f",
+        "blob": "4ca50207925e6c252a868cc97ff789bfb791f2f6",
+        "content": "sha256:bc081814229b193817472cd75d39545e18112ec84ec36cf89fb8506943ae1c5d",
         "locator": {
           "kind": "file"
         }
@@ -167,7 +167,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7ee823b7415cee2590781a41ffb8b929ceb23f65",
+            "blob": "4ca50207925e6c252a868cc97ff789bfb791f2f6",
             "content": "sha256:de88a9e1ed720c73df9acdf2680d2b6b9b32bc76b1f295ef78493200f8281439",
             "locator": {
               "end": 101,
@@ -184,7 +184,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3998b8cc7deef5905046e2146a555c05c4ec818f",
+            "blob": "b0dbbc40ee147ee5010f8fcdcba4f80c51e3ad21",
             "content": "sha256:7626ba80bd5da998b74d17dd724a798b3b59af5f9c42c97f8b4d56b9c918b552",
             "locator": {
               "end": 55,
@@ -202,7 +202,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7ee823b7415cee2590781a41ffb8b929ceb23f65",
+            "blob": "4ca50207925e6c252a868cc97ff789bfb791f2f6",
             "content": "sha256:31f922fec6d47cab57b1346e20eea944703f5dc7303dd5ac02dfa874d6694562",
             "locator": {
               "end": 131,
@@ -219,7 +219,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7ee823b7415cee2590781a41ffb8b929ceb23f65",
+            "blob": "4ca50207925e6c252a868cc97ff789bfb791f2f6",
             "content": "sha256:6e496165f569558e9be2890f58fdbf115dfb83e1977232bf4eb80b324a7f3546",
             "locator": {
               "end": 104,
@@ -255,6 +255,23 @@
             "content": "sha256:2fac39dffe7628a86b93166cb362263ee9f206432040a2ca1e20d923ccd3f44f",
             "locator": {
               "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The whole requirement verdict, findings and coverage ends this independent stage. Reviewer records ordinary begin/result within the actual review-state settings limit; Manager records architect/developer authorization beyond it. A record-only check preserves the last round only on byte-identical candidate with all candidate findings closed. A finding states the broken required property; a case is its proof, not a replacement finding or automatic new round. MEMORY stays a separate sealed lane.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4ca50207925e6c252a868cc97ff789bfb791f2f6",
+            "content": "sha256:bc081814229b193817472cd75d39545e18112ec84ec36cf89fb8506943ae1c5d",
+            "locator": {
+              "end": 249,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"

@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "0e257ea17bb8d14a7ae8aea840fd9429558309ba",
-        "content": "sha256:b888be9c022fa12e809146599d3513e9e3a3838d308d17943e62e83f50e4332b",
+        "blob": "bab862b563d9cfcd13b59d0aed6d3ae0e6c098c3",
+        "content": "sha256:881d78e98580e78164d74ed75e4d671d645fbc965aad9d32e4cc74cd1ba50278",
         "locator": {
           "kind": "file"
         }
@@ -91,7 +91,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0e257ea17bb8d14a7ae8aea840fd9429558309ba",
+            "blob": "bab862b563d9cfcd13b59d0aed6d3ae0e6c098c3",
             "content": "sha256:4e568132297bd1cba5578b07d8fd196d1b317e7048f927a07b9ed5290cdd4297",
             "locator": {
               "end": 4,
@@ -108,7 +108,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0e257ea17bb8d14a7ae8aea840fd9429558309ba",
+            "blob": "bab862b563d9cfcd13b59d0aed6d3ae0e6c098c3",
             "content": "sha256:4e568132297bd1cba5578b07d8fd196d1b317e7048f927a07b9ed5290cdd4297",
             "locator": {
               "end": 4,
@@ -129,6 +129,23 @@
             "content": "sha256:b888be9c022fa12e809146599d3513e9e3a3838d308d17943e62e83f50e4332b",
             "locator": {
               "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "A leaf Worker/Reviewer/Curator is started as one set, not Worker+Reviewer followed by Curator at freeze. Manager keeps whole-stage sync/closeout/integration/task/start boundaries and repairs own recording/address/input faults. Extra rounds beyond settings are requested from the task architect with the Worker property/construction account and recorded approval. Permission-held messages are product-owned for delivery; ordinary leaf peer artifacts are not couriered through Manager.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bab862b563d9cfcd13b59d0aed6d3ae0e6c098c3",
+            "content": "sha256:881d78e98580e78164d74ed75e4d671d645fbc965aad9d32e4cc74cd1ba50278",
+            "locator": {
+              "end": 70,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"

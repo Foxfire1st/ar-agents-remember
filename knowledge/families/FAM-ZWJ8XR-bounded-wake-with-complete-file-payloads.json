@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "A text bound alone loses complete evidence, filing alone can leak full payload into recipient context, and file-only delivery alone cannot retain the full waited reply; the independent limit, storage, input, pointer and reply obligations together provide recoverable evidence with bounded conversational context."
+  },
+  "guarantee": "For admitted successful shared-task role_message filing and delivery, wake/reply text is bounded without truncating complete submitted body or attachment files; recipients receive wake text and owned file/hash pointers rather than the full payload, and a supplied waited native reply is preserved completely beside the message while its returned text is bounded. Input/storage/native-send refusals retain their separately named outcomes; this does not certify live host/plugin consumption, role powers or acceptance.",
+  "id": "FAM-ZWJ8XR",
+  "members": [
+    "INV-A87E4H",
+    "INV-PRVEVY",
+    "INV-KD90E4",
+    "INV-VH983B",
+    "INV-HJ9MR9"
+  ],
+  "origin": {
+    "handoff": {
+      "path": "ingest-final-traces-and-joint-family.json"
+    },
+    "handoffEntry": "curator-bounded-file-transport",
+    "leaf": "260928-MIK-L117",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "routes": [
+    "mcp/src/agents_remember/cli",
+    "mcp/src/agents_remember/kernel",
+    "mcp/src/agents_remember/models",
+    "docs/reference"
+  ],
+  "schema": "ar-family/v1",
+  "status": "proposed",
+  "title": "Bounded wake context with complete recoverable message payloads"
+}

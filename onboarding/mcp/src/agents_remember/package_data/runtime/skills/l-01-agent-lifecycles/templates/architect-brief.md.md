@@ -1,5 +1,12 @@
 # l-01-agent-lifecycles/templates/architect-brief.md
 
+## Message/file transport
+
+This packaged copy makes role messages short wake-ups naming requested work or a handover and its files. Complete report, verdict, list and evidence contents travel through file-only `body` or existing-file `attach`, never pasted into message text. Within a shared task, message files remain with its record and a leaf workspace exposes the message-folder link. Wake text uses the effective settings limit, not a number pinned in this role/template. This transport account changes neither the file's existing role/write boundaries nor requirement, review, curation or landing authority.
+
+- Messages wake; complete payloads and evidence travel as files. [4]
+
+
 ## Governing Overview
 
 [MCP package overview](../../../../../../../overview.md)

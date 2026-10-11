@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "0e257ea17bb8d14a7ae8aea840fd9429558309ba",
+        "blob": "bab862b563d9cfcd13b59d0aed6d3ae0e6c098c3",
         "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
         "locator": {
           "end": 23,
@@ -22,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "0e257ea17bb8d14a7ae8aea840fd9429558309ba",
+        "blob": "bab862b563d9cfcd13b59d0aed6d3ae0e6c098c3",
         "content": "sha256:9584ec2f0e50c087c52bdf05ad3a15badcc93a89e7a6cf725a1ec41b45dec705",
         "locator": {
           "end": 38,
@@ -41,8 +41,8 @@
     },
     {
       "anchor": {
-        "blob": "0e257ea17bb8d14a7ae8aea840fd9429558309ba",
-        "content": "sha256:b888be9c022fa12e809146599d3513e9e3a3838d308d17943e62e83f50e4332b",
+        "blob": "bab862b563d9cfcd13b59d0aed6d3ae0e6c098c3",
+        "content": "sha256:881d78e98580e78164d74ed75e4d671d645fbc965aad9d32e4cc74cd1ba50278",
         "locator": {
           "kind": "file"
         }
@@ -58,8 +58,8 @@
     },
     {
       "anchor": {
-        "blob": "0e257ea17bb8d14a7ae8aea840fd9429558309ba",
-        "content": "sha256:37a7e5c5bba6813aac0662f50d8212345bd1687ae66f9f805fc2b346385557bb",
+        "blob": "bab862b563d9cfcd13b59d0aed6d3ae0e6c098c3",
+        "content": "sha256:d98606f040ac27eea89b8ae26808b500633327a2f24dbdc3ea15c5320e941113",
         "locator": {
           "end": 8,
           "kind": "line_range",
@@ -77,8 +77,8 @@
     },
     {
       "anchor": {
-        "blob": "0e257ea17bb8d14a7ae8aea840fd9429558309ba",
-        "content": "sha256:b888be9c022fa12e809146599d3513e9e3a3838d308d17943e62e83f50e4332b",
+        "blob": "bab862b563d9cfcd13b59d0aed6d3ae0e6c098c3",
+        "content": "sha256:881d78e98580e78164d74ed75e4d671d645fbc965aad9d32e4cc74cd1ba50278",
         "locator": {
           "kind": "file"
         }
@@ -94,8 +94,8 @@
     },
     {
       "anchor": {
-        "blob": "0e257ea17bb8d14a7ae8aea840fd9429558309ba",
-        "content": "sha256:b888be9c022fa12e809146599d3513e9e3a3838d308d17943e62e83f50e4332b",
+        "blob": "bab862b563d9cfcd13b59d0aed6d3ae0e6c098c3",
+        "content": "sha256:881d78e98580e78164d74ed75e4d671d645fbc965aad9d32e4cc74cd1ba50278",
         "locator": {
           "kind": "file"
         }
@@ -111,7 +111,7 @@
     },
     {
       "anchor": {
-        "blob": "0e257ea17bb8d14a7ae8aea840fd9429558309ba",
+        "blob": "bab862b563d9cfcd13b59d0aed6d3ae0e6c098c3",
         "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
         "locator": {
           "end": 27,
@@ -130,7 +130,7 @@
     },
     {
       "anchor": {
-        "blob": "0e257ea17bb8d14a7ae8aea840fd9429558309ba",
+        "blob": "bab862b563d9cfcd13b59d0aed6d3ae0e6c098c3",
         "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
         "locator": {
           "end": 29,
@@ -149,8 +149,8 @@
     },
     {
       "anchor": {
-        "blob": "0e257ea17bb8d14a7ae8aea840fd9429558309ba",
-        "content": "sha256:b888be9c022fa12e809146599d3513e9e3a3838d308d17943e62e83f50e4332b",
+        "blob": "bab862b563d9cfcd13b59d0aed6d3ae0e6c098c3",
+        "content": "sha256:881d78e98580e78164d74ed75e4d671d645fbc965aad9d32e4cc74cd1ba50278",
         "locator": {
           "kind": "file"
         }
@@ -166,8 +166,8 @@
     },
     {
       "anchor": {
-        "blob": "0e257ea17bb8d14a7ae8aea840fd9429558309ba",
-        "content": "sha256:b888be9c022fa12e809146599d3513e9e3a3838d308d17943e62e83f50e4332b",
+        "blob": "bab862b563d9cfcd13b59d0aed6d3ae0e6c098c3",
+        "content": "sha256:881d78e98580e78164d74ed75e4d671d645fbc965aad9d32e4cc74cd1ba50278",
         "locator": {
           "kind": "file"
         }
@@ -183,7 +183,7 @@
     },
     {
       "anchor": {
-        "blob": "0e257ea17bb8d14a7ae8aea840fd9429558309ba",
+        "blob": "bab862b563d9cfcd13b59d0aed6d3ae0e6c098c3",
         "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
         "locator": {
           "end": 31,
@@ -202,8 +202,8 @@
     },
     {
       "anchor": {
-        "blob": "0e257ea17bb8d14a7ae8aea840fd9429558309ba",
-        "content": "sha256:b888be9c022fa12e809146599d3513e9e3a3838d308d17943e62e83f50e4332b",
+        "blob": "bab862b563d9cfcd13b59d0aed6d3ae0e6c098c3",
+        "content": "sha256:881d78e98580e78164d74ed75e4d671d645fbc965aad9d32e4cc74cd1ba50278",
         "locator": {
           "kind": "file"
         }
@@ -219,7 +219,7 @@
     },
     {
       "anchor": {
-        "blob": "0e257ea17bb8d14a7ae8aea840fd9429558309ba",
+        "blob": "bab862b563d9cfcd13b59d0aed6d3ae0e6c098c3",
         "content": "sha256:f8498c5d1fbb04ed7bf90df08e2805cbfca9e61dfd848a86a4a05151fa48c986",
         "locator": {
           "end": 51,
@@ -352,6 +352,23 @@
             "content": "sha256:b888be9c022fa12e809146599d3513e9e3a3838d308d17943e62e83f50e4332b",
             "locator": {
               "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "A leaf Worker/Reviewer/Curator is started as one set, not Worker+Reviewer followed by Curator at freeze. Manager keeps whole-stage sync/closeout/integration/task/start boundaries and repairs own recording/address/input faults. Extra rounds beyond settings are requested from the task architect with the Worker property/construction account and recorded approval. Permission-held messages are product-owned for delivery; ordinary leaf peer artifacts are not couriered through Manager.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bab862b563d9cfcd13b59d0aed6d3ae0e6c098c3",
+            "content": "sha256:881d78e98580e78164d74ed75e4d671d645fbc965aad9d32e4cc74cd1ba50278",
+            "locator": {
+              "end": 70,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"

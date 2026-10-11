@@ -1,5 +1,21 @@
 # l-01-agent-lifecycles/templates/verdict.md
 
+## Current supported-pair account — R100/R116 composition
+
+The Reviewer records ordinary CODE round/result; the task document and recorded architect/developer approval govern beyond-settings work. Fix verification is an ordinary round, not an unqualified D107 extra look. Verdict content is carried as a file, and remains evidence for the gate owner rather than a decision. The supported-sync source had a disclosed trailing stashed-change marker absent from K_B; that static composition observation was sent to Worker and Reviewer for the assigned D140, not silently adopted as clean source or a new CODE PASS.
+
+This account controls the named changed seams; contradictory earlier card wording below is retained only as historical evidence. Unchanged role duties and R117 file-only wake/report transport are preserved. Source inspection supplies no new runtime test, CODE verdict, review counter or acceptance.
+
+- The Reviewer records ordinary CODE round/result; the task document and recorded architect/developer approval govern beyond-settings work. Fix verification is an ordinary round, not an unqualified D107 extra look. Verdict content is carried as a file, and remains evidence for the gate owner rather than a decision. The supported-sync source had a disclosed trailing stashed-change marker absent from K_B; that static composition observation was sent to Worker and Reviewer for the assigned D140, not silently adopted as clean source or a new CODE PASS. [9]
+
+
+## Message/file transport
+
+This packaged copy makes role messages short wake-ups naming requested work or a handover and its files. Complete report, verdict, list and evidence contents travel through file-only `body` or existing-file `attach`, never pasted into message text. Within a shared task, message files remain with its record and a leaf workspace exposes the message-folder link. Wake text uses the effective settings limit, not a number pinned in this role/template. This transport account changes neither the file's existing role/write boundaries nor requirement, review, curation or landing authority.
+
+- Messages wake; complete payloads and evidence travel as files. [8]
+
+
 ## Current operative account — MIK-R112
 
 The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.

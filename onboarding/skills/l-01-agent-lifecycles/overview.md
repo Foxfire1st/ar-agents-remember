@@ -1,5 +1,10 @@
 # skills/l-01-agent-lifecycles
 
+## Message and evidence transport
+
+Canonical role/operation/template instructions now share the explicit wake-text versus file-payload contract: body/attach carry complete material, settings govern text without a pinned number, shared task storage has a leaf workspace link, and ordinary returns use supplied parent role/task references. Developer questions retain actual-parent-ID routing. The generator, existing write/start powers and separate review/landing authority remain unchanged.
+
+
 
 ## The governing row and the rationale cover in the curator hand-off template (260928-MIK-L37)
 
@@ -195,7 +200,7 @@ in this route changed.
 
 ## Explicit sibling selection in curation
 
-A curator adding obligations to a family successor reads and names the exact old membership IDs with authored retention bases. Canonical role, operation and handoff carriers require this selection and published roster readback; no unchanged invariant is revised merely to populate the successor. The existing writer and role boundaries remain.
+On converted memory, a family records stable invariant IDs in `members`; the Curator reads each existing member and authors its retention/coverage basis, then reads back the stored family, full member/revision account and routes. No unchanged invariant is revised merely to populate a successor. The earlier exact membership-row selector and published-roster readback belong to the legacy dataset interface, not current file-family selectors. Retain that history separately from the converted writer and role boundaries.
 
 - The canonical handoff explains exact stored-sibling selection and readback. [17]
 
@@ -205,7 +210,7 @@ The curator hand-off target shape is now `{path, locator, governing_route, ratio
 carries its own authored rationale (why that place carries the obligation) and an optional role, with the
 entry-level `realization_rationale` / `realization_role` as an explicit default. The writer generates no
 rationale and refuses an unexplained, non-text, unknown-role, over-long or placeholder-route (`absent`)
-target by name before minting; an exact retry of an already committed entry is not checked again. The
+target by name before minting. The committed-entry retry exemption describes the retained legacy per-entry path only; converted ingestion validates the whole submitted list again before writes, including retries, and malformed converted target values refuse that whole handoff without writing. The
 canonical template states that its element shape supersedes rule 1's in the external schema note
 revision 1 (the rest of rule 1 stands); the curator role (Process step 3) and the curation operation (step
 3) carry the same duty, and `c-14-knowledge-bootstrap` step 3 carries it for the foundation route. The

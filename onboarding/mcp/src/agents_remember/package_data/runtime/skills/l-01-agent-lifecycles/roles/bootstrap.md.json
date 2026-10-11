@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "01c7b20b4f7d9c3f858781923568788fc5e85cef",
-        "content": "sha256:b7d1f3f4eb422b95f6ba892038c59c307cd1037fd239cb7249a982a247e1919e",
+        "blob": "61a8e042a6dcf7669c7255a1e50dfe4848f5d7f9",
+        "content": "sha256:c87421a58478f5c1d5d54ea1b3bfc4942a0b01041d2f96d0f85ecd94fc4bfd66",
         "locator": {
           "kind": "file"
         }
@@ -25,7 +25,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a0e62b1361ebc00a003ce4bd08ad611a104aed67",
+            "blob": "61a8e042a6dcf7669c7255a1e50dfe4848f5d7f9",
             "content": "sha256:10142a79d25fd343a320bd8f36a2d54aef2f38490150509c33882ef53e4c3ecc",
             "locator": {
               "end": 6,
@@ -223,12 +223,29 @@
         }
       ]
     },
+    "15": {
+      "note": "Messages wake; complete payloads and evidence travel as files.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "61a8e042a6dcf7669c7255a1e50dfe4848f5d7f9",
+            "content": "sha256:d0dd37230635b4bf60eb9afa2f995a981c26d820d440db56374f8aaa8e0cceca",
+            "locator": {
+              "end": 126,
+              "kind": "line_range",
+              "start": 126
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "The role declares no inherited core blocks — it is a free agent, not a task seat, and is started by a call.\n\nAnchor: \"not a task seat: your brief is not a brief — you are started by a call\"",
       "targets": [
         {
           "anchor": {
-            "blob": "a0e62b1361ebc00a003ce4bd08ad611a104aed67",
+            "blob": "61a8e042a6dcf7669c7255a1e50dfe4848f5d7f9",
             "content": "sha256:24de17b349e7820522fa438e30cf86d270e77294bfd88d5cc9620730435a9953",
             "locator": {
               "end": 10,
@@ -241,7 +258,7 @@
         },
         {
           "anchor": {
-            "blob": "a0e62b1361ebc00a003ce4bd08ad611a104aed67",
+            "blob": "61a8e042a6dcf7669c7255a1e50dfe4848f5d7f9",
             "content": "sha256:2ff016b3a731db33aef4c70678c5306f6e196492cebf0e3d5ea349d423a57844",
             "locator": {
               "end": 26,
@@ -259,7 +276,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a0e62b1361ebc00a003ce4bd08ad611a104aed67",
+            "blob": "61a8e042a6dcf7669c7255a1e50dfe4848f5d7f9",
             "content": "sha256:24de17b349e7820522fa438e30cf86d270e77294bfd88d5cc9620730435a9953",
             "locator": {
               "end": 10,
@@ -298,7 +315,7 @@
         },
         {
           "anchor": {
-            "blob": "a0e62b1361ebc00a003ce4bd08ad611a104aed67",
+            "blob": "61a8e042a6dcf7669c7255a1e50dfe4848f5d7f9",
             "content": "sha256:2ff016b3a731db33aef4c70678c5306f6e196492cebf0e3d5ea349d423a57844",
             "locator": {
               "end": 26,
@@ -334,7 +351,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a0e62b1361ebc00a003ce4bd08ad611a104aed67",
+            "blob": "61a8e042a6dcf7669c7255a1e50dfe4848f5d7f9",
             "content": "sha256:24de17b349e7820522fa438e30cf86d270e77294bfd88d5cc9620730435a9953",
             "locator": {
               "end": 10,
@@ -347,7 +364,7 @@
         },
         {
           "anchor": {
-            "blob": "a0e62b1361ebc00a003ce4bd08ad611a104aed67",
+            "blob": "61a8e042a6dcf7669c7255a1e50dfe4848f5d7f9",
             "content": "sha256:2ff016b3a731db33aef4c70678c5306f6e196492cebf0e3d5ea349d423a57844",
             "locator": {
               "end": 26,
@@ -378,7 +395,7 @@
         },
         {
           "anchor": {
-            "blob": "a0e62b1361ebc00a003ce4bd08ad611a104aed67",
+            "blob": "61a8e042a6dcf7669c7255a1e50dfe4848f5d7f9",
             "content": "sha256:b1276d29fa6221147599f9ed1c13f4db489fcbea26b78eec82cad2b909098091",
             "locator": {
               "end": 59,
@@ -391,12 +408,12 @@
         },
         {
           "anchor": {
-            "blob": "a0e62b1361ebc00a003ce4bd08ad611a104aed67",
+            "blob": "61a8e042a6dcf7669c7255a1e50dfe4848f5d7f9",
             "content": "sha256:3c7ed1a44ded21ad10cf8b9b5b98170c8c201f9eb385b325f85be10730182f48",
             "locator": {
-              "end": 85,
+              "end": 83,
               "kind": "line_range",
-              "start": 85
+              "start": 83
             },
             "path": "skills/l-01-agent-lifecycles/roles/bootstrap.md"
           },
@@ -404,7 +421,7 @@
         },
         {
           "anchor": {
-            "blob": "a0e62b1361ebc00a003ce4bd08ad611a104aed67",
+            "blob": "61a8e042a6dcf7669c7255a1e50dfe4848f5d7f9",
             "content": "sha256:91f2c2c0861c239ad04888e7c48e94a9a4b935f6694087b0cc8d26961b0b32ea",
             "locator": {
               "end": 31,
@@ -443,7 +460,7 @@
         },
         {
           "anchor": {
-            "blob": "a0e62b1361ebc00a003ce4bd08ad611a104aed67",
+            "blob": "61a8e042a6dcf7669c7255a1e50dfe4848f5d7f9",
             "content": "sha256:b09236398b19751ace1b0623aa98a5631176b6aad54ecd1a815b6a9086a8dbe4",
             "locator": {
               "end": 32,
@@ -456,12 +473,12 @@
         },
         {
           "anchor": {
-            "blob": "a0e62b1361ebc00a003ce4bd08ad611a104aed67",
+            "blob": "61a8e042a6dcf7669c7255a1e50dfe4848f5d7f9",
             "content": "sha256:e00098052d2e842ec1bb6b7fefc62c595578f2d04b56384ca064bec7e8a03953",
             "locator": {
-              "end": 103,
+              "end": 101,
               "kind": "line_range",
-              "start": 103
+              "start": 101
             },
             "path": "skills/l-01-agent-lifecycles/roles/bootstrap.md"
           },
@@ -469,7 +486,7 @@
         },
         {
           "anchor": {
-            "blob": "a0e62b1361ebc00a003ce4bd08ad611a104aed67",
+            "blob": "61a8e042a6dcf7669c7255a1e50dfe4848f5d7f9",
             "content": "sha256:40efe14b0741c4e08a0e72d714fe8ca1cb6ba8158ac4ad414b15f5d375eee261",
             "locator": {
               "end": 70,
@@ -487,7 +504,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "90d0e2a70ed4f9b3c23a1465b0bed91600d810df",
+            "blob": "2b43fdbcebb97cf40df4da7ac53147caffafd2a5",
             "content": "sha256:0a167d25b360e154c02dd9fdac113e52bbb0b78f701733c88a7ceee773d3179f",
             "locator": {
               "end": 1,
@@ -505,12 +522,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9f01b458769e29ba24c9cc3c0ff187e9e5eb2cf2",
+            "blob": "2d42ad92abef03a1873de4fd715985616f122689",
             "content": "sha256:4bfb1faa8a0a63c2e4f582f0a9df847b07f5a05768f278f6bf0b4543ad7c88da",
             "locator": {
-              "end": 524,
+              "end": 510,
               "kind": "line_range",
-              "start": 524
+              "start": 510
             },
             "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
           },

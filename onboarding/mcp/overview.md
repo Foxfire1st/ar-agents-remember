@@ -1,5 +1,10 @@
 # mcp/ — MCP Package Overview
 
+## Message and evidence transport
+
+Role-message transport spans existing strict contracts and registration, dynamic settings, task-owned message-file storage and the delivery facade. Full payloads remain files while wake/reply text is bounded; same-ID source relocations preserve receipt/capacity/archive authority. The private host plugin adds mechanical turn-end wakes, not a new semantic acceptance or task-state writer.
+
+
 ## Current operative account — MIK-R112
 
 Converted-memory landing admission is exact-pair judgment on every publication/recording route, not trust in a previous verdict. Leaf recovery, integration and recording share one leaf-pair judge; master final/checkpoint/recorded routes combine validator, net staleness, chain proof and new-history ownership. This does not make full MQC or independent review a landing-time operation.

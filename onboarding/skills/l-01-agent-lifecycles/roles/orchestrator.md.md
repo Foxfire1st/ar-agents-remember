@@ -1,5 +1,19 @@
 # skills/l-01-agent-lifecycles/roles/orchestrator.md
 
+## Current supported-pair account — R100/R116 composition
+
+The only changed permission seam now answers held, propagates the named child permission upward, and leaves eventual delivery to the product; no prompt is answered and no duplicate message is sent. Sprint/master containment, Manager coordination, ordinary role/task returns and actual-parent-ID developer questions retain their distinct authority.
+
+This account controls the named changed seams; contradictory earlier card wording below is retained only as historical evidence. Unchanged role duties and R117 file-only wake/report transport are preserved. Source inspection supplies no new runtime test, CODE verdict, review counter or acceptance.
+
+- The only changed permission seam now answers held, propagates the named child permission upward, and leaves eventual delivery to the product; no prompt is answered and no duplicate message is sent. Sprint/master containment, Manager coordination, ordinary role/task returns and actual-parent-ID developer questions retain their distinct authority. [20]
+
+
+## Message/file transport and return addressing
+
+Messages are short wake-ups naming work and files; report/verdict/evidence content travels in file-only `body` or existing-file `attach`, not pasted text. Within a shared task the files stay in its record and a leaf workspace exposes the folder link. Wake text uses the settings limit without a pinned number. Ordinary report-written notices and final report-path returns use the supplied parent role/task address, including an instructed reporting-recipient change. Developer-needed questions remain addressed to the actual parent/instructed-recipient ID. These are distinct message purposes, not an ID exception to the return rule. Fixed launch-parent identity and existing role/peer/write/acceptance boundaries remain preserved.
+
+
 ## Governing Overview
 
 [l-01 role overview](overview.md)

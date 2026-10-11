@@ -32,7 +32,7 @@
       "origin": {
         "leaf": "260921-ICR-L45"
       },
-      "rationale": "Asks the entry-level values first and then each target check in order, returning the first failing check with every target that fails it.",
+      "rationale": "The shared realization_refusal validator names malformed rationale/role/length defects and offending targets before authoring. It supplies entry-local diagnostics; its caller owns whole-converted-operation refusal, so the helper alone does not establish sibling commits.",
       "role": "primary-authority"
     },
     {
@@ -331,6 +331,35 @@
               "name": "PROSE_MAX_LENGTH"
             },
             "path": "mcp/src/agents_remember/models/knowledge/base.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Converted target parsing collects the pure guard's named problems and the writer refuses the whole handoff before its physical write step.\n\nAnchor: `_targets`, `write_knowledge`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "51bec83a0fb7d1d5f7feea7563ddfa0f4a69c131",
+            "content": "sha256:5a5c4f47f8364e929f773c384fae0cc2ce8bc3c390fd6fabf3568e5b71a52a22",
+            "locator": {
+              "kind": "symbol",
+              "name": "_targets"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/handoff.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "da500d2404d720403d8aa5129db2c2088a4ddadd",
+            "content": "sha256:9167964a51c55a52013fae20c85aed606e89f9ff71dc4037a6689b27c7b38b06",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_knowledge"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/writer.py"
           },
           "kind": "code"
         }

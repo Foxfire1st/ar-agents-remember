@@ -18,7 +18,7 @@ is absent for id-addressed recipients, so the durable receipt's recorded role is
 the context variable the completed event reads. Nothing is guessed — with no role on
 receipt or call the event stays literal.
 
-## 260928-MIK-R93 — parent-first refusal remedies
+## R93 refusal-remedy account — local and shared recovery owners
 
 Four `nextAction` remedies that still leave the message transportable (`_archived`, `_resume` scope-changed, `_resume` cannot-resume, `_undelivered`) now name the parent with `role_message` on `agents-remember-task` first and the own chat only for an agent without one. The no-runtime and host-unreachable remedies keep their own-chat advice, while unavailable-recipient delivery now uses the held-store owner rather than asking the sender to repeat a message that was taken as held.
 
@@ -27,6 +27,16 @@ Four `nextAction` remedies that still leave the message transportable (`_archive
 Only the leaf’s owning Manager may call `start_leaf_set`; the ordinary caller may-start matrix still guards each seat. `dispatch_leaf_set` prepares Worker, Reviewer and Curator as siblings, opens Worker immediately and leaves Reviewer/Curator held unless reviewer work is carried. A repeat retains the deterministic per-seat request identities. Single-role starts retain their ordinary opening, with explicit authorized replacement for an occupied leaf seat.
 
 `send_role_message` does not let a new message overtake waiting work. A held answer names its reason, waiting ID and sender/total counts, rather than claiming acceptance by the host. `withdraw_held_message_id` withdraws only the sender’s uncommitted waiting message; a live delivery claim refuses withdrawal. Archived-recipient answers still expose the sender’s retained terminal outcomes. The host permission guard remains: holding never answers the prompt.
+
+## Current role-message facade and recovery owner
+
+The supported successor composition is not the Attempt-4 thin facade. `role_message_limit` reloads effective settings and `send_role_message` applies the shared text refusal. Only after recipient resolution succeeds does the ordinary prologue collect reports, locate the recipient, file the message and dispatch locally. An unfinished-start resolution instead returns through `_hold_for_unresolved` before report collection and `_file_message`; its `_MessageSend` has no filed identity, so this branch does not establish a retained body/attachment file or file/hash wake pointer. That implementation gap does not weaken the normative filing obligation.
+
+`_deliver_or_hold` preserves held-message ordering. Its unheld branch enters facade-local `_deliver`, admits Investigator capacity before native send/resume, waits outside the lock and invokes the imported long-reply helper only when `filed` exists. `_held_then_delivered` merges `wait_for_turn` directly without that helper, so a successful held drain does not establish the ordinary character-cut/full-reply-file guarantee. The local capacity refusal is caught by the prologue and retains the filed refusal record; the retained private delivery-module dispatcher’s pre-attempt discard is not this local branch. These are source-attribution limits for Owner/Worker disposition, not a new runtime result, waiver or CODE repair. Body/attachments travel as a file/hash line only on branches whose filed identity exists.
+
+`role_message_delivery` is the selected shared library for file preparation/storage, links, text refusal, successor naming and long-reply filing; its retained private resolution and `_deliver` routines are not this public call path. The prologue's shared archived answer can name a known live successor, while local resume/refusal constructors preserve their own explicit recovery boundaries. No-runtime/host-unreachable advice, actual-parent-ID questions and ordinary role/task returns remain separate; no remedy unarchives an old agent.
+
+The Worker successor/addendum reports the composed 1835-line file breaches the 1200-line F04 rail, unlike its earlier 583-line facade. The original ONE D140 records that limitation. Architect ruling b17b9a0a permits size-named landing and assigns the later split to L68; it neither waives the rail nor repairs this file. This source-ownership account is not MEMORY acceptance or a new CODE PASS; ONE D140 is not reopened here.
 
 ## Feature passthrough, choice metadata and message-time collection
 
@@ -70,3 +80,10 @@ Architect, Orchestrator and Manager may start Investigator only within their adm
 
 - Checks all 49 caller/target pairs against exact table. [4]
 - Checks own orchestrator sprint and manager sprint/master binding containment. [5]
+
+## Supported successor's operative seams
+
+- Public message call uses local resolution, report collection, prologue filing and held/native dispatch rather than the retained delivery-module dispatcher. [11]
+- The resolved-recipient prologue constructs a filed identity from shared attachment/link/store primitives; unfinished-start holding returns before this function is called. [12]
+- Unheld native dispatch owns capacity/send/resume and invokes shared long-reply filing after its wait. [13]
+- Upstream held-message ordering is decided before native send; permission holding never answers a prompt. [14]

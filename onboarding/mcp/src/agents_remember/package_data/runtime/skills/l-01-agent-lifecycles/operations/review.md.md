@@ -1,5 +1,21 @@
 # operations/review.md
 
+## Current supported-pair account — R100/R116 composition
+
+A record-only repair is checked on the last recorded round only when every candidate finding is closed and candidate bytes are identical; begin_review is not called and the count stays. A changed candidate instead requires the ordinary next round. Fix verification within the settings limit is an ordinary round; a beyond-limit round needs recorded architect/developer approval, not the superseded unconditional D107 further-look account. Separate MEMORY reports/counts do not reset CODE.
+
+This account controls the named changed seams; contradictory earlier card wording below is retained only as historical evidence. Unchanged role duties and R117 file-only wake/report transport are preserved. Source inspection supplies no new runtime test, CODE verdict, review counter or acceptance.
+
+- A record-only repair is checked on the last recorded round only when every candidate finding is closed and candidate bytes are identical; begin_review is not called and the count stays. A changed candidate instead requires the ordinary next round. Fix verification within the settings limit is an ordinary round; a beyond-limit round needs recorded architect/developer approval, not the superseded unconditional D107 further-look account. Separate MEMORY reports/counts do not reset CODE. [4]
+
+
+## Message/file transport
+
+This packaged copy makes role messages short wake-ups naming requested work or a handover and its files. Complete report, verdict, list and evidence contents travel through file-only `body` or existing-file `attach`, never pasted into message text. Within a shared task, message files remain with its record and a leaf workspace exposes the message-folder link. Wake text uses the effective settings limit, not a number pinned in this role/template. This transport account changes neither the file's existing role/write boundaries nor requirement, review, curation or landing authority.
+
+- Messages wake; complete payloads and evidence travel as files. [3]
+
+
 ## Governing Overview
 
 [MCP package overview](../../../../../../../overview.md)

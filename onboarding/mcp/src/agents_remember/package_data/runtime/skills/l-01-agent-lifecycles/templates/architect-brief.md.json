@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "090227ddbf3517ad95c4044c66d1229cfcb79006",
+            "blob": "6911f4e91b865b417e527ca7e981e32791b8022a",
             "content": "sha256:5435dccb3334bda8a6528f218deaa9ae72c3f25a488101ec37b0d2a7cf8b1bd3",
             "locator": {
               "end": 10,
@@ -24,7 +24,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "090227ddbf3517ad95c4044c66d1229cfcb79006",
+            "blob": "6911f4e91b865b417e527ca7e981e32791b8022a",
             "content": "sha256:2dec3eaffd9b9e82c6bb63fe8382fae18ea3250db16acaf10dd984147d04f292",
             "locator": {
               "end": 60,
@@ -36,7 +36,7 @@
         },
         {
           "anchor": {
-            "blob": "090227ddbf3517ad95c4044c66d1229cfcb79006",
+            "blob": "6911f4e91b865b417e527ca7e981e32791b8022a",
             "content": "sha256:01cdacc64123d8d2b1c8c6fad5c3859df5e808aed2d3c719f87f021947c27fc3",
             "locator": {
               "end": 61,
@@ -85,6 +85,23 @@
               "start": 195
             },
             "path": "scripts/sync-skills.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Messages wake; complete payloads and evidence travel as files.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6911f4e91b865b417e527ca7e981e32791b8022a",
+            "content": "sha256:cdc29e21a0bc1843f14bbc319bf7b79a8b8c1bf76e464bc37653d5cde0107b0a",
+            "locator": {
+              "end": 75,
+              "kind": "line_range",
+              "start": 74
+            }
           },
           "kind": "code"
         }

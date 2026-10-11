@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "The public producer, file storage, lifecycle or native transport owners must preserve this same boundary across their distinct source locations."
+  },
+  "applicability": "role_message wait results whose final reply exceeds the effective character limit.",
+  "conditions": [
+    "The bridge exposes the complete final text to policy."
+  ],
+  "exclusions": [
+    "role_start assignment briefs",
+    "Developer chat text and native host chat display",
+    "Messages via removed earlier orchestration tools",
+    "A filing failure explicitly reports truncation and warning instead of claiming retained whole text."
+  ],
+  "id": "INV-HJ9MR9",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Long-wait-reply cut+file cases in mcp/tests/test_paseo_role_messages.py and whole-reply bridge test; checks-attempt4/pytest-focused.log; worker report Attempt 4"
+      ],
+      "path": "ingest-wave1.json"
+    },
+    "handoffEntry": "L117-R06",
+    "leaf": "260928-MIK-L117",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A wait reply over the limit is filed whole as recipient to sender while the answer carries the cut plus the file line; the bridge returns the whole reply and cuts nothing itself.",
+  "status": "proposed",
+  "supersedes": []
+}

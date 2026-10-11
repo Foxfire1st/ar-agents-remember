@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "The producer-facing declaration, canonical guidance and distinct runtime/contract owners must agree across their locations; one path alone cannot preserve this message transport boundary."
+  },
+  "applicability": "Wake text supplied to registered role_message calls.",
+  "conditions": [
+    "Read the effective roleMessageLimit on each call; count message text characters before constructing sender/file pointer lines."
+  ],
+  "exclusions": [
+    "Full body/attachment payloads and full filed replies have no limit from this setting.",
+    "Plugin-authored host lifecycle lines are a distinct native event path, not a role_message settings-reload witness.",
+    "role_start assignment briefs and developer chat/host display are outside this message-text contract."
+  ],
+  "id": "INV-A87E4H",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_role_message_files.py::MessageLimitTests (exact-limit, over-limit with count/limit, changed-number, non-whole-number); RegisteredRefusalTests through FastMCP; checks-attempt4/pytest-focused.log; worker report Attempt 4"
+      ],
+      "path": "ingest-wave2-r01-r07.json"
+    },
+    "handoffEntry": "L117-R01",
+    "leaf": "260928-MIK-L117",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "One role_message text holds at most the settings' orchestration.roleMessageLimit (default 1000 where unnamed), reloaded from the settings file on every call; sender and file lines are outside the count.",
+  "status": "proposed",
+  "supersedes": []
+}

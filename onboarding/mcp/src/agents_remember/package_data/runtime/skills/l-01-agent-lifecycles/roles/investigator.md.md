@@ -1,5 +1,10 @@
 # mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/investigator.md
 
+## Message/file transport and return addressing
+
+Messages are short wake-ups naming work and files; report/verdict/evidence content travels in file-only `body` or existing-file `attach`, not pasted text. Within a shared task the files stay in its record and a leaf workspace exposes the folder link. Wake text uses the settings limit without a pinned number. Ordinary report-written notices and final report-path returns use the supplied parent role/task address, including an instructed reporting-recipient change. Developer-needed questions remain addressed to the actual parent/instructed-recipient ID. These are distinct message purposes, not an ID exception to the return rule. Fixed launch-parent identity and existing role/peer/write/acceptance boundaries remain preserved.
+
+
 ## Governing Overview
 
 [Route overview](../../../../../../../overview.md)

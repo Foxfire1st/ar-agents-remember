@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "7d45989aa2a810edb7efe59ec07fd9350438bc9f",
-        "content": "sha256:b452f9d492d739ac5d896f41fc8f6c4fde43983f9bb1d5548a80fb721f3912c2",
+        "blob": "1060ffa0e57f77e37902afeb00b2e97c2111208b",
+        "content": "sha256:9b7afe1fc87811e3660c8ed578e1f87b1719dd4525d650ef4b6f27bad05c6006",
         "locator": {
           "kind": "file"
         }
@@ -63,6 +63,23 @@
             "content": "sha256:b452f9d492d739ac5d896f41fc8f6c4fde43983f9bb1d5548a80fb721f3912c2",
             "locator": {
               "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "MEMORY review stays separately sealed/counted and never opens or resets CODE review. Beyond the settings limit the architect or developer authorizes the pass and Manager records it. Curator owns corrected input/body/coherence work; transaction steps and external effects stay with their owners. The installed-build quality/coherence outcome and direct Reviewer handover remain separate from independent acceptance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1060ffa0e57f77e37902afeb00b2e97c2111208b",
+            "content": "sha256:9b7afe1fc87811e3660c8ed578e1f87b1719dd4525d650ef4b6f27bad05c6006",
+            "locator": {
+              "end": 302,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"

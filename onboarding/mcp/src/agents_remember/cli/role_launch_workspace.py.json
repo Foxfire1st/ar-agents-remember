@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "8e00cf0dd6d16533b701282b72d5ad8f9eba3225",
+        "blob": "cd7637af42a3f418715ec10f089bc072a5cc79d3",
         "content": "sha256:16b8206380a8f6c2cf8e474b1b8a569816b1237e30754d8aaecd3e3cd17d0c4b",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "8e00cf0dd6d16533b701282b72d5ad8f9eba3225",
+        "blob": "cd7637af42a3f418715ec10f089bc072a5cc79d3",
         "content": "sha256:7bed85c3ee2f4d1ae1c5b044416633c88910d9c88b9339b2c63237f830a60da3",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "8e00cf0dd6d16533b701282b72d5ad8f9eba3225",
+        "blob": "cd7637af42a3f418715ec10f089bc072a5cc79d3",
         "content": "sha256:d6fde4cb534c458665bcbbcaf1b3e0d6a124b41dcac11ecfe26c05a0a7987503",
         "locator": {
           "kind": "symbol",
@@ -57,7 +57,25 @@
     },
     {
       "anchor": {
-        "blob": "8e00cf0dd6d16533b701282b72d5ad8f9eba3225",
+        "blob": "cd7637af42a3f418715ec10f089bc072a5cc79d3",
+        "content": "sha256:cb430d253a9c2b63fcc122062f3be8cd0ca6fade4f825ee4dc4c97f3af2b9795",
+        "locator": {
+          "kind": "symbol",
+          "name": "link_leaf_workspace_messages"
+        }
+      },
+      "id": "RLZ-JX5TWD",
+      "invariant": "INV-D22ZTW",
+      "origin": {
+        "handoffEntry": "L117-R05",
+        "leaf": "260928-MIK-L117"
+      },
+      "rationale": "The workspace owner attempts the messages link during preparation and records its path. Occupied non-links or divergent links are preserved with a warning and launch continues; successful creation, not every attempted launch, establishes readability. Inbound link establishment is attempted again.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "cd7637af42a3f418715ec10f089bc072a5cc79d3",
         "content": "sha256:d6fde4cb534c458665bcbbcaf1b3e0d6a124b41dcac11ecfe26c05a0a7987503",
         "locator": {
           "kind": "symbol",
@@ -75,7 +93,7 @@
     },
     {
       "anchor": {
-        "blob": "8e00cf0dd6d16533b701282b72d5ad8f9eba3225",
+        "blob": "cd7637af42a3f418715ec10f089bc072a5cc79d3",
         "content": "sha256:1d362164da7db151e71462781701fa326cc8dc10a271661bb475223d16689e94",
         "locator": {
           "kind": "symbol",
@@ -93,8 +111,8 @@
     },
     {
       "anchor": {
-        "blob": "8e00cf0dd6d16533b701282b72d5ad8f9eba3225",
-        "content": "sha256:e3dcd4ea741e42a153abc69a6837b3d0aa49f30d11fc6b0a05959e0ad0128dbb",
+        "blob": "cd7637af42a3f418715ec10f089bc072a5cc79d3",
+        "content": "sha256:172faea7564e760eb75384b7f4b09534e6d23f3b3ac4bb289ed4ad20bfc0aff4",
         "locator": {
           "kind": "symbol",
           "name": "_resolve_workspace"
@@ -111,7 +129,7 @@
     },
     {
       "anchor": {
-        "blob": "8e00cf0dd6d16533b701282b72d5ad8f9eba3225",
+        "blob": "cd7637af42a3f418715ec10f089bc072a5cc79d3",
         "content": "sha256:a23cf9cfa008bf8a2ee317fb605d5039754507de4e00f40c91703884303d46c6",
         "locator": {
           "kind": "symbol",
@@ -129,7 +147,7 @@
     },
     {
       "anchor": {
-        "blob": "8e00cf0dd6d16533b701282b72d5ad8f9eba3225",
+        "blob": "cd7637af42a3f418715ec10f089bc072a5cc79d3",
         "content": "sha256:26cbb4abc68e5d67daed1998e00b4db205be18fc3eefa6d190344b501db21ec8",
         "locator": {
           "kind": "symbol",

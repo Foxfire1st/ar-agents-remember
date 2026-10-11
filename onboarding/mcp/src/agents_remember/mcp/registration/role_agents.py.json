@@ -3,8 +3,26 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "6a305fab4b14b38062c36abc8987444ff1ecce7e",
-        "content": "sha256:128ab161ab9373987180022e5251a7175c4e2cf98770080f77ab9a025436560c",
+        "blob": "45d5630e75c274559d8d915d28fcc5ed701bcf9a",
+        "content": "sha256:6f37eee1306f0b1290af83d70a8b34f34565b01541c5e96286bee19acc88c754",
+        "locator": {
+          "kind": "symbol",
+          "name": "role_message"
+        }
+      },
+      "id": "RLZ-7RVFSN",
+      "invariant": "INV-XZ766Y",
+      "origin": {
+        "handoffEntry": "L117-R08",
+        "leaf": "260928-MIK-L117"
+      },
+      "rationale": "The existing role_message registration declares body/attach and waiting-message inputs and delegates to the role-message payload owner without adding a public tool. Its documented output promises are not universal producer/DTO completeness proof: held turnId is absent from RoleMessageResponse, and held filing/wait gaps remain Owner/Worker-owned.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "45d5630e75c274559d8d915d28fcc5ed701bcf9a",
+        "content": "sha256:bd96eeacf7d910d62f6238d345e235ebd8178f70a637b98361a487903eb35336",
         "locator": {
           "kind": "file"
         }
@@ -21,12 +39,12 @@
   ],
   "references": {
     "1": {
-      "note": "Frozen implementation of register_role_agent_tools supporting the stated file behavior.\n\nAnchor: `register_role_agent_tools`",
+      "note": "Current registration declares the public input/delegation surface and its normative promises; it does not independently qualify composed filing, held waits or DTO completeness.\n\nAnchor: register_role_agent_tools",
       "targets": [
         {
           "anchor": {
-            "blob": "376d0f3b5c0248d94e11bdb05977acd6d52b61c3",
-            "content": "sha256:930c9fc6a71ff2a85c4f024b7721851938a53a37214c85646c0920727e4be234",
+            "blob": "45d5630e75c274559d8d915d28fcc5ed701bcf9a",
+            "content": "sha256:bd96eeacf7d910d62f6238d345e235ebd8178f70a637b98361a487903eb35336",
             "locator": {
               "kind": "file"
             }

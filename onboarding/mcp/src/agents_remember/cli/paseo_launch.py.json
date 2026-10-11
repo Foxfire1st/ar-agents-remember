@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "3750bfb92ce0bcf53c2f684037ce678e13ca1d9a",
+        "blob": "fcf59cc63bd67401f035bd26fe21e6018d385cb5",
         "content": "sha256:ff5daff4dd37ba2cddd3058ae438a18152c47935c27eb0a088e81d744b00ff25",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,25 @@
     },
     {
       "anchor": {
-        "blob": "3750bfb92ce0bcf53c2f684037ce678e13ca1d9a",
+        "blob": "fcf59cc63bd67401f035bd26fe21e6018d385cb5",
+        "content": "sha256:2d7a0ad20596b244c29a60076925cb0acf9ba4264f7eebe8ce2f3bb128deb756",
+        "locator": {
+          "kind": "symbol",
+          "name": "StartingAgent"
+        }
+      },
+      "id": "RLZ-1MPXAK",
+      "invariant": "INV-V5KJ19",
+      "origin": {
+        "handoffEntry": "L117-R10",
+        "leaf": "260928-MIK-L117"
+      },
+      "rationale": "The starter carries its own task references so the started agent's return address names a role, not a replaceable id.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "fcf59cc63bd67401f035bd26fe21e6018d385cb5",
         "content": "sha256:bc2764b0d63093e46e4fb47591faebae59cb74380b1ce675f3379b937855590e",
         "locator": {
           "kind": "symbol",
@@ -39,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "3750bfb92ce0bcf53c2f684037ce678e13ca1d9a",
+        "blob": "fcf59cc63bd67401f035bd26fe21e6018d385cb5",
         "content": "sha256:c327cf439bbbe64126236f89ce74fe605de29465d19085f2f677cae5c31e7d5b",
         "locator": {
           "kind": "symbol",
@@ -57,7 +75,7 @@
     },
     {
       "anchor": {
-        "blob": "3750bfb92ce0bcf53c2f684037ce678e13ca1d9a",
+        "blob": "fcf59cc63bd67401f035bd26fe21e6018d385cb5",
         "content": "sha256:c327cf439bbbe64126236f89ce74fe605de29465d19085f2f677cae5c31e7d5b",
         "locator": {
           "kind": "symbol",
@@ -75,7 +93,7 @@
     },
     {
       "anchor": {
-        "blob": "3750bfb92ce0bcf53c2f684037ce678e13ca1d9a",
+        "blob": "fcf59cc63bd67401f035bd26fe21e6018d385cb5",
         "content": "sha256:ff5daff4dd37ba2cddd3058ae438a18152c47935c27eb0a088e81d744b00ff25",
         "locator": {
           "kind": "symbol",
@@ -93,7 +111,7 @@
     },
     {
       "anchor": {
-        "blob": "3750bfb92ce0bcf53c2f684037ce678e13ca1d9a",
+        "blob": "fcf59cc63bd67401f035bd26fe21e6018d385cb5",
         "content": "sha256:bb5f95ed4aa40134659f1b481854cfdb2c08726f5de6f52d4bf1c4b03b5eb3dc",
         "locator": {
           "kind": "symbol",
@@ -111,7 +129,7 @@
     },
     {
       "anchor": {
-        "blob": "3750bfb92ce0bcf53c2f684037ce678e13ca1d9a",
+        "blob": "fcf59cc63bd67401f035bd26fe21e6018d385cb5",
         "content": "sha256:b23b5a34c786635449ee1f046d515494ee161ef24d4367d029d5cf01b1609f88",
         "locator": {
           "kind": "symbol",
@@ -129,7 +147,7 @@
     },
     {
       "anchor": {
-        "blob": "3750bfb92ce0bcf53c2f684037ce678e13ca1d9a",
+        "blob": "fcf59cc63bd67401f035bd26fe21e6018d385cb5",
         "content": "sha256:c327cf439bbbe64126236f89ce74fe605de29465d19085f2f677cae5c31e7d5b",
         "locator": {
           "kind": "symbol",
@@ -147,7 +165,7 @@
     },
     {
       "anchor": {
-        "blob": "3750bfb92ce0bcf53c2f684037ce678e13ca1d9a",
+        "blob": "fcf59cc63bd67401f035bd26fe21e6018d385cb5",
         "content": "sha256:bc2764b0d63093e46e4fb47591faebae59cb74380b1ce675f3379b937855590e",
         "locator": {
           "kind": "symbol",
@@ -165,7 +183,7 @@
     },
     {
       "anchor": {
-        "blob": "3750bfb92ce0bcf53c2f684037ce678e13ca1d9a",
+        "blob": "fcf59cc63bd67401f035bd26fe21e6018d385cb5",
         "content": "sha256:c327cf439bbbe64126236f89ce74fe605de29465d19085f2f677cae5c31e7d5b",
         "locator": {
           "kind": "symbol",

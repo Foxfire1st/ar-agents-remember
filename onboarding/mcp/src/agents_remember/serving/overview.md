@@ -1,5 +1,10 @@
 # mcp/src/agents_remember/serving/ — Dashboard Serving Layer Overview
 
+## Message and evidence transport
+
+Started-agent metadata is published to the private plugin using product-owned parent/role/task/report facts. The host turn-end callback can send a fixed metadata wake when the role sent no parent message, holding it while the parent is busy or permission-waiting. It does not read semantic verdict content, approve work, bypass permission or add a public message/dashboard endpoint; runtime consumption remains an independent witness.
+
+
 ## Native API composition and persistent frame delivery
 
 Serving adds native role routes beside retained MIK review/read ports, with exact selected source/configuration authority. The lifespan additionally owns the native held-message sweep task: it advances workspace-local waiting work without a model or browser poll, contains a failed sweep, and drains an in-flight threaded sweep on cancellation. This is independent of the retained hosted-seat notifier and adds no caller to removed hosting. Frame/plugin delivery binds the permitted parent origin, bridge protocol and native selection. Requested launch intent, visible execution and independent acceptance remain separate. Imported source does not imply that a running installation has already been replaced.

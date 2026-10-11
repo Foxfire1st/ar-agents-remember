@@ -7,7 +7,8 @@
   },
   "applicability": "The four brief templates (manager, worker, curator, architect) and their value rows.",
   "conditions": [
-    "Brief rows carry leaf values; role and operation texts win on disagreement."
+    "Brief rows carry leaf values; role and operation texts win on disagreement.",
+    "Only the approved message-carrier guidance is repeated across templates; no fixed limit or new role/start/write grant is introduced."
   ],
   "exclusions": [
     "Role and operation texts, which own the rules."
@@ -24,9 +25,9 @@
     "leaf": "260928-MIK-L101",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "Brief templates keep handed-over inputs and asked outputs; parts repeating role text or ordering inside cut.",
+  "statement": "Brief templates carry handed-over inputs and requested outputs; role/operation sources keep procedural authority. The specifically approved message/file/body/attach/settings/return guidance is a bounded shared transport exception, not permission to duplicate other role procedures.",
   "status": "proposed",
   "supersedes": []
 }

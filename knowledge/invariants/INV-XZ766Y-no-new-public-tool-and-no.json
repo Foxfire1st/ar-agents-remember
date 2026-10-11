@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "The producer-facing declaration, canonical guidance and distinct runtime/contract owners must agree across their locations; one path alone cannot preserve this message transport boundary."
+  },
+  "applicability": "The public role_message registration/input/result surface for message-file transport.",
+  "conditions": [
+    "Declare body/attach and returned file/hash/refusal fields on existing strict contracts."
+  ],
+  "exclusions": [
+    "No new message search/index/dashboard view is introduced.",
+    "The private host plugin event receiver is not an added public message tool."
+  ],
+  "id": "INV-XZ766Y",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "RegisteredRefusalTests through FastMCP (L117-C1-F07); evidence-lifecycle PASS (88); checks-attempt4/pytest-focused.log; worker report Attempt 4"
+      ],
+      "path": "ingest-wave3-r08.json"
+    },
+    "handoffEntry": "L117-R08",
+    "leaf": "260928-MIK-L117",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "No new public tool and no dashboard change carry messages; the surface stays the registered role_message tool with body/attach/file/hash declared on its contracts.",
+  "status": "proposed",
+  "supersedes": []
+}

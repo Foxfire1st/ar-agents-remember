@@ -1,0 +1,57 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "The canonical ruling explicitly weighed a unified role-addressed question channel against preserved parent-ID question provenance."
+  },
+  "alternatives": [
+    {
+      "option": "Keep actual-parent-ID developer questions and use role/task for ordinary returns",
+      "reason": "Question provenance and return replacement safety are independent obligations; changing one transport rule does not authorize superseding another requirement.",
+      "status": "chosen"
+    },
+    {
+      "option": "Use the return role/task address for developer questions too",
+      "reason": "The return rule speaks of returns, while the question rule explicitly names actual parent identity.",
+      "reconsider_when": "The owning question requirement is explicitly revised to permit a replacement-role question channel.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Compilation/tests must preserve actual-parent-ID questions while ordinary reports return by supplied role/task references. Do not treat a general transport remedy or source inference as question-routing authority."
+  ],
+  "context": "A compiled handover had inferred that the return role/task address should also replace its developerQuestions actual-parent ID, contradicting the preserved question-channel requirement.",
+  "decider": "Architect 97e0320d-431f-4f4c-8c86-66a6dca880a7, canonical notes/run3/L117-A-QUESTION-STAYS-ADDRESSED-TO-THE-PARENTS-AGENT-ID-RULING.json",
+  "id": "DEC-2J4702",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "INV-8AMSGV"
+    },
+    {
+      "relation": "constrains",
+      "target": "INV-9S49CW"
+    },
+    {
+      "relation": "constrains",
+      "target": "INV-V5KJ19"
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/run3/L117-A-QUESTION-STAYS-ADDRESSED-TO-THE-PARENTS-AGENT-ID-RULING.json"
+      ],
+      "path": "ingest-joint-routes-and-continuing-decisions-v2.json"
+    },
+    "handoffEntry": "CUR-L117-DEC-QADDR",
+    "leaf": "260928-MIK-L117",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

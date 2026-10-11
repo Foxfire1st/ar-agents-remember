@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "62bb8b2bc5d91b72c1f2ebf7beba2514920b5260",
+        "blob": "6000d8bf74427856cdb63998060ae1683b61be90",
         "content": "sha256:73c6210b150df4fca36173f0acfba672fdfc608265398abef7a007a2ad8571e9",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "62bb8b2bc5d91b72c1f2ebf7beba2514920b5260",
+        "blob": "6000d8bf74427856cdb63998060ae1683b61be90",
         "content": "sha256:0d887ee4303cafd713b36360b93c477d10326f2a109bc6124a1889ddb53f1d46",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "62bb8b2bc5d91b72c1f2ebf7beba2514920b5260",
+        "blob": "6000d8bf74427856cdb63998060ae1683b61be90",
         "content": "sha256:6768d7198b70269dd6fee20dd72888c5eaf84b3d3635d924deadc26c28796103",
         "locator": {
           "kind": "symbol",
@@ -54,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "62bb8b2bc5d91b72c1f2ebf7beba2514920b5260",
+        "blob": "6000d8bf74427856cdb63998060ae1683b61be90",
         "content": "sha256:cc436df495e1fb520007242b039758f2930cf4c00b1253b9f55899e983710df7",
         "locator": {
           "kind": "symbol",
@@ -71,7 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "62bb8b2bc5d91b72c1f2ebf7beba2514920b5260",
+        "blob": "6000d8bf74427856cdb63998060ae1683b61be90",
         "content": "sha256:80a3281585d1be4c73b123a58af65b844ed7c70176c54b2d15b4da26359046ef",
         "locator": {
           "kind": "symbol",
@@ -98,6 +98,40 @@
             "content": "sha256:8481e18dadd4ce7a48150307abc7b280838f754c71f1425e5dd9f927b7d77676",
             "locator": {
               "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Controlled-runtime cases now require one timestamp/sender/recipient message file and returned SHA-256, preserving unchanged bodyless delivered text and existing receipts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6000d8bf74427856cdb63998060ae1683b61be90",
+            "content": "sha256:b863f4715bd0df0bac60435ae413601ed47f28466251612ecb51872f75a2dfd7",
+            "locator": {
+              "end": 141,
+              "kind": "line_range",
+              "start": 81
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Composed controlled-runtime cases hold permission/start-unfinished/unwritable-turn messages and deliver waiting work in order; two live leaf occupants refuse ambiguity and completed holders retain the seat until archived. Non-holdable failed resumes retain undelivered message files. Busy holding is not a general undelivered-file refusal or a sender-retry instruction. Current fixtures patch facade-local native/resolve owners; files, sender-line composition, limits, wait and independent report collection remain source assertions, not live host proof.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6000d8bf74427856cdb63998060ae1683b61be90",
+            "content": "sha256:1d08915b801fdbdffda8b9ca88983dce2909053de5d7d73b20736f6d9180950e",
+            "locator": {
+              "end": 961,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "test"

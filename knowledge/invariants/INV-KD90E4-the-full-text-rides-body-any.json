@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "The public producer, file storage, lifecycle or native transport owners must preserve this same boundary across their distinct source locations."
+  },
+  "applicability": "role_message body and attach preparation.",
+  "conditions": [
+    "Every attachment is a readable existing file."
+  ],
+  "exclusions": [
+    "role_start assignment briefs",
+    "Developer chat text and native host chat display",
+    "Messages via removed earlier orchestration tools",
+    "Payload files have no ceiling imposed by the wake-text limit."
+  ],
+  "id": "INV-KD90E4",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_role_message_files.py::AttachmentTests (inside named, outside copied+named, missing refused unwritten, 200k body whole); checks-attempt4/pytest-focused.log; worker report Attempt 4"
+      ],
+      "path": "ingest-wave1.json"
+    },
+    "handoffEntry": "L117-R03",
+    "leaf": "260928-MIK-L117",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The full text rides body (any length, file only); attach carries paths of files that exist, recorded with SHA-256 and copied into the folder when outside the task record.",
+  "status": "proposed",
+  "supersedes": []
+}

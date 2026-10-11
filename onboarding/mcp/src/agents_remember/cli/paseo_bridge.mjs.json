@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "815b1103875f8ef80b6211246307189b2de8dc37",
-        "content": "sha256:0592f0904287500d5cec57894822e6b5ad7517322b6d4f8e8bc1d39aad0e3337",
+        "blob": "6e91ce5e36ddf05526818d37181392dc909b8016",
+        "content": "sha256:39197ae574cefffe61d7daf9afbde1dc53ba156518a066e5c7bfe912cfc323fd",
         "locator": {
           "kind": "file"
         }
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "815b1103875f8ef80b6211246307189b2de8dc37",
+        "blob": "6e91ce5e36ddf05526818d37181392dc909b8016",
         "content": "sha256:20cd3eac1b53dfc4ba83bbde509ce1126af97244cf6eaddeb2cf453ea722281c",
         "locator": {
           "kind": "symbol",
@@ -38,7 +38,7 @@
     },
     {
       "anchor": {
-        "blob": "815b1103875f8ef80b6211246307189b2de8dc37",
+        "blob": "6e91ce5e36ddf05526818d37181392dc909b8016",
         "content": "sha256:1eb47e79656d46d170216bb1f9900e74a177c1225bbc89c59edaf3309a15c509",
         "locator": {
           "kind": "symbol",
@@ -56,7 +56,25 @@
     },
     {
       "anchor": {
-        "blob": "815b1103875f8ef80b6211246307189b2de8dc37",
+        "blob": "6e91ce5e36ddf05526818d37181392dc909b8016",
+        "content": "sha256:7a10d57d523966bba3cebe6f4f6b5dd321cc23e068c9c8daf909957b772839ae",
+        "locator": {
+          "kind": "symbol",
+          "name": "closingText"
+        }
+      },
+      "id": "RLZ-XV2YYX",
+      "invariant": "INV-HJ9MR9",
+      "origin": {
+        "handoffEntry": "L117-R06",
+        "leaf": "260928-MIK-L117"
+      },
+      "rationale": "The bridge hands over the whole final text so transport never silently truncates what policy must file.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "6e91ce5e36ddf05526818d37181392dc909b8016",
         "content": "sha256:773f6528c0313df70b181925f552765ca75485f7368e6d53d10dbc13e95a2c7c",
         "locator": {
           "kind": "symbol",
@@ -73,6 +91,23 @@
       "role": "enforcement"
     }
   ],
-  "references": {},
+  "references": {
+    "1": {
+      "note": "The native bridge returns the assembled whole final reply without a character cut; the separate delivery policy owns truncation and filing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6e91ce5e36ddf05526818d37181392dc909b8016",
+            "content": "sha256:7a10d57d523966bba3cebe6f4f6b5dd321cc23e068c9c8daf909957b772839ae",
+            "locator": {
+              "kind": "symbol",
+              "name": "closingText"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
   "schema": "ar-onboarding-file/v1"
 }

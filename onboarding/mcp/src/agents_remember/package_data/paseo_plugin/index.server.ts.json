@@ -1,0 +1,41 @@
+{
+  "path": "mcp/src/agents_remember/package_data/paseo_plugin/index.server.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The server entry reads the embed list at load and registers the existing embed RPC.\n\nAnchor: `23-26`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9b7786810e75cffea857615f9eb5306eea34bbfd",
+            "content": "sha256:35ecc2899a8c36630d942bdebe99144e8e526d74f6e49718f19a83d8009715dd",
+            "locator": {
+              "end": 26,
+              "kind": "line_range",
+              "start": 23
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Native turn, permission and archive callbacks share one tracker; turn-end reads facts fresh and asynchronous callback errors are caught.\n\nAnchor: `28-70`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9b7786810e75cffea857615f9eb5306eea34bbfd",
+            "content": "sha256:f9aa22b18abc6b15b51c7fe832aa4144cfd41e6f4b98061f559761be15183630",
+            "locator": {
+              "end": 70,
+              "kind": "line_range",
+              "start": 28
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

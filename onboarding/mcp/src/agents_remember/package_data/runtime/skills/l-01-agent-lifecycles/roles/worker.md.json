@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "66c08f5e3dfef4d20032c78eef3074203be6cd11",
-        "content": "sha256:f2ce8ad198de33e2d9d18cea99af65996e13aa486402c1e6e5635f4436e760b9",
+        "blob": "9a1a94bce648addb46d0c0aeb66232634c3b06c9",
+        "content": "sha256:9b5e86f4b8ae371a8083b1657da4e7b6ef2c81cad98ae7b123d61fecc9766dc7",
         "locator": {
           "kind": "file"
         }
@@ -59,7 +59,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "66c08f5e3dfef4d20032c78eef3074203be6cd11",
+            "blob": "9a1a94bce648addb46d0c0aeb66232634c3b06c9",
             "content": "sha256:5f3d1154ebbd6680d1333d73a7b95ee7d823f0fe4084db5391fde6c9c649dc5a",
             "locator": {
               "end": 4,
@@ -76,7 +76,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "66c08f5e3dfef4d20032c78eef3074203be6cd11",
+            "blob": "9a1a94bce648addb46d0c0aeb66232634c3b06c9",
             "content": "sha256:5f3d1154ebbd6680d1333d73a7b95ee7d823f0fe4084db5391fde6c9c649dc5a",
             "locator": {
               "end": 4,
@@ -97,6 +97,23 @@
             "content": "sha256:f2ce8ad198de33e2d9d18cea99af65996e13aa486402c1e6e5635f4436e760b9",
             "locator": {
               "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The Manager starts the three leaf seats as a set; Worker cannot start its checker or accept/publish its own implementation. Its stage requires final candidate meeting the requirement, relevant tests/lint/type checks passing and the report with Reviewer. Own failures are corrected on its own ground; blocked/unrun evidence remains explicit. A record-only repair stays on the same review round only with candidate unchanged; repeated cases demand property/construction reasoning rather than case chasing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a1a94bce648addb46d0c0aeb66232634c3b06c9",
+            "content": "sha256:9b5e86f4b8ae371a8083b1657da4e7b6ef2c81cad98ae7b123d61fecc9766dc7",
+            "locator": {
+              "end": 60,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"

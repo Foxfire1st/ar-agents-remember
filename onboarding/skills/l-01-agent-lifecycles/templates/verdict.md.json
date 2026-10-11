@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "3998b8cc7deef5905046e2146a555c05c4ec818f",
-        "content": "sha256:1f41172a1262e34baf0a0854e3375a2779503cd6a3805e236b6de2f37c22a2fd",
+        "blob": "b0dbbc40ee147ee5010f8fcdcba4f80c51e3ad21",
+        "content": "sha256:5bcd6e2ca335c16ccf9ec8c9e8fb18dd9a1df56054167a193ddb3dab6732493d",
         "locator": {
           "kind": "file"
         }
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "3998b8cc7deef5905046e2146a555c05c4ec818f",
-        "content": "sha256:1f41172a1262e34baf0a0854e3375a2779503cd6a3805e236b6de2f37c22a2fd",
+        "blob": "b0dbbc40ee147ee5010f8fcdcba4f80c51e3ad21",
+        "content": "sha256:5bcd6e2ca335c16ccf9ec8c9e8fb18dd9a1df56054167a193ddb3dab6732493d",
         "locator": {
           "kind": "file"
         }
@@ -91,6 +91,23 @@
             "content": "sha256:1f41172a1262e34baf0a0854e3375a2779503cd6a3805e236b6de2f37c22a2fd",
             "locator": {
               "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The Reviewer records ordinary CODE round/result; the task document and recorded architect/developer approval govern beyond-settings work. Fix verification is an ordinary round, not an unqualified D107 extra look. Verdict content is carried as a file, and remains evidence for the gate owner rather than a decision. The supported-sync source had a disclosed trailing stashed-change marker absent from K_B; that static composition observation was sent to Worker and Reviewer for the assigned D140, not silently adopted as clean source or a new CODE PASS.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b0dbbc40ee147ee5010f8fcdcba4f80c51e3ad21",
+            "content": "sha256:5bcd6e2ca335c16ccf9ec8c9e8fb18dd9a1df56054167a193ddb3dab6732493d",
+            "locator": {
+              "end": 372,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"

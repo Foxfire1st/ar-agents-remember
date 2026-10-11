@@ -1,0 +1,42 @@
+{
+  "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/role_agents.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "f681eb532cb05a8e3b97f5c47f6d2a0fc3a17936",
+        "content": "sha256:ba900179adad25bcba73d9745f14250bd7d31d99a91f548c8c3b51ef72b0062d",
+        "locator": {
+          "kind": "symbol",
+          "name": "readRoleAgents"
+        }
+      },
+      "id": "RLZ-42490J",
+      "invariant": "INV-1ZKP4R",
+      "origin": {
+        "handoffEntry": "L117-R11",
+        "leaf": "260928-MIK-L117"
+      },
+      "rationale": "The plugin reads the role-start-published facts fresh on every turn end, so no reload or poll is needed.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Absent configuration/file yields no records, while malformed present facts throw; each read reconstructs the typed fact set.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f681eb532cb05a8e3b97f5c47f6d2a0fc3a17936",
+            "content": "sha256:ba900179adad25bcba73d9745f14250bd7d31d99a91f548c8c3b51ef72b0062d",
+            "locator": {
+              "kind": "symbol",
+              "name": "readRoleAgents"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

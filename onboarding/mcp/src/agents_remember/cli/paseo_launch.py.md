@@ -2,6 +2,8 @@
 
 ## Current operative account — MIK-R112
 
+`StartingAgent` also carries the starter's canonical sprint/master/task references beside its native id, role and subject. Handover preparation uses those references to publish a role-addressed return route that survives parent replacement; they are not caller-supplied launch-mode authority or evidence that a host consumed a launch setting.
+
 The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
 
 - Saved calls carry serverExclusion alongside agent/workspace.

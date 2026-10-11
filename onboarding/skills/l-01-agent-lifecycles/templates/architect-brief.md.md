@@ -1,5 +1,10 @@
 # skills/l-01-agent-lifecycles/templates/architect-brief.md
 
+## Message/file transport
+
+This canonical template requires messages to be short wake-ups naming requested work or a handover and its files. Report, verdict, list and evidence contents travel through file-only `body` or existing-file `attach`, not pasted into message text. Within a shared task, files stay with its record and a leaf workspace exposes the message-folder link. Text uses the effective settings limit without a pinned number. The canonical source and generated copies share this contract; transport does not change their existing write/start powers, peer destinations or independent acceptance authority.
+
+
 ## Governing Overview
 
 [lifecycle overview](../overview.md)

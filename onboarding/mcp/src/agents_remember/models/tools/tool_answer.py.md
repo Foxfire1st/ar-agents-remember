@@ -2,6 +2,8 @@
 
 ## Current operative account — MIK-R112
 
+The retained `role_message` exception describes the normative cut/file policy for waited replies; it does not implement character cutting or full-text storage. Its 4000-token ceiling and common envelope/list/short-form shaping algorithms are unchanged. The composed unheld dispatcher calls the delivery helper when a filed identity exists, while the held-drain wait merges its result without that helper. This table therefore does not prove every waited reply is character-bounded and filed; the implementation gap remains Owner/Worker-owned rather than a narrowed requirement.
+
 The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
 
 - Current L112 final bounds are runtime_install=600 and dispatch_agent=1500.

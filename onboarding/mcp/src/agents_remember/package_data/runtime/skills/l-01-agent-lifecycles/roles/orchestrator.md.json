@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "c9cacfb76a8c15ba282a38df25f56260fb38d116",
-        "content": "sha256:da295c73778501a3940302209902bcc248cf34b05222d4ff8520eee76e1281f0",
+        "blob": "2d58c15304831b65be687127ce05ace5c0f87cec",
+        "content": "sha256:e1a2eef2ab61b6c4b36edb85b55641d0b0460fb89690d702aaf89192901bd682",
         "locator": {
           "kind": "file"
         }
@@ -40,10 +40,27 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cd187129994e86112236dc28d7d52fa0251cb361",
+            "blob": "2d58c15304831b65be687127ce05ace5c0f87cec",
             "content": "sha256:bb027ed51e4124b2628d15f8c590801a98ebfc067500116bf652c11ab16d5e86",
             "locator": {
               "end": 4,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The only changed permission seam now answers held, propagates the named child permission upward, and leaves eventual delivery to the product; no prompt is answered and no duplicate message is sent. Sprint/master containment, Manager coordination, ordinary role/task returns and actual-parent-ID developer questions retain their distinct authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d58c15304831b65be687127ce05ace5c0f87cec",
+            "content": "sha256:e1a2eef2ab61b6c4b36edb85b55641d0b0460fb89690d702aaf89192901bd682",
+            "locator": {
+              "end": 56,
               "kind": "line_range",
               "start": 1
             }

@@ -1,5 +1,10 @@
 # agents-remember — Onboarding Overview
 
+## Message and evidence transport
+
+Inter-agent messages are wake requests and file pointers, not semantic report or verdict payloads. The file transport, settings bound and replacement-safe ordinary returns preserve peer-seat, fixed launch-parent, question/provenance and acceptance boundaries. Native turn-end metadata is a control-plane wake, not agent cognition or a verdict. Canonical instructions and explicitly generated copies share these rules without gaining separate authority.
+
+
 ## Current operative account — MIK-R112
 
 Maintained converted knowledge is judged wherever a pair is published or recorded, not merely at the earlier closeout. Leaf routes share exact-pair judgment; master routes enforce leaf/parent-only chain and authentic newly closed history. Curator MQC/coherence remain pre-closeout authoring evidence, not broad checks invoked by landing.

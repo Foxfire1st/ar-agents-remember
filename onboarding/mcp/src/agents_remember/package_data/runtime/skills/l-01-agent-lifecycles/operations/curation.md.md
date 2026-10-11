@@ -1,5 +1,21 @@
 # operations/curation.md
 
+## Current supported-pair account — R100/R116 composition
+
+MEMORY review stays separately sealed/counted and never opens or resets CODE review. Beyond the settings limit the architect or developer authorizes the pass and Manager records it. Curator owns corrected input/body/coherence work; transaction steps and external effects stay with their owners. The installed-build quality/coherence outcome and direct Reviewer handover remain separate from independent acceptance.
+
+This account controls the named changed seams; contradictory earlier card wording below is retained only as historical evidence. Unchanged role duties and R117 file-only wake/report transport are preserved. Source inspection supplies no new runtime test, CODE verdict, review counter or acceptance.
+
+- MEMORY review stays separately sealed/counted and never opens or resets CODE review. Beyond the settings limit the architect or developer authorizes the pass and Manager records it. Curator owns corrected input/body/coherence work; transaction steps and external effects stay with their owners. The installed-build quality/coherence outcome and direct Reviewer handover remain separate from independent acceptance. [4]
+
+
+## Message/file transport
+
+This packaged copy makes role messages short wake-ups naming requested work or a handover and its files. Complete report, verdict, list and evidence contents travel through file-only `body` or existing-file `attach`, never pasted into message text. Within a shared task, message files remain with its record and a leaf workspace exposes the message-folder link. Wake text uses the effective settings limit, not a number pinned in this role/template. This transport account changes neither the file's existing role/write boundaries nor requirement, review, curation or landing authority.
+
+- Messages wake; complete payloads and evidence travel as files. [3]
+
+
 ## Governing Overview
 
 [MCP package overview](../../../../../../../overview.md)

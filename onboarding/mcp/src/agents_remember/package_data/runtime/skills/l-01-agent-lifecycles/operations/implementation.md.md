@@ -1,5 +1,12 @@
 # operations/implementation.md
 
+## Message/file transport
+
+This packaged copy makes role messages short wake-ups naming requested work or a handover and its files. Complete report, verdict, list and evidence contents travel through file-only `body` or existing-file `attach`, never pasted into message text. Within a shared task, message files remain with its record and a leaf workspace exposes the message-folder link. Wake text uses the effective settings limit, not a number pinned in this role/template. This transport account changes neither the file's existing role/write boundaries nor requirement, review, curation or landing authority.
+
+- Messages wake; complete payloads and evidence travel as files. [3]
+
+
 ## Governing Overview
 
 [MCP package overview](../../../../../../../overview.md)
@@ -20,7 +27,7 @@ Canonical skills/l-01-agent-lifecycles/operations/implementation.md owns the ins
 
 ## Invariants And Boundaries
 
-Leave the candidate uncommitted. No Worker self-acceptance, independent Reviewer work, Curator writes, closeout, merge or push. Put developer questions in the own chat or send a blocker to the actual bound parent; keep the same task after uncertainty.
+Leave the candidate uncommitted. No Worker self-acceptance, independent Reviewer work, Curator writes, closeout, merge or push. Developer questions and code concerns go to the actual bound parent under the Worker role’s developer-question rule; the own-chat alternative applies only without a parent or with an unreachable parent, not as a peer choice while a bound parent is reachable. Ordinary file handovers use role/task return addressing. An unreachable-Manager transport notice remains pending for recording/retry rather than being turned into a developer question. Keep the same task after uncertainty.
 
 ## Code Commentary
 

@@ -1,13 +1,32 @@
 {
   "path": "mcp/src/agents_remember/serving/paseo/paseo_plugin_files.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "39da481b0833efb0af34ffefac5d90eebd5c81aa",
+        "content": "sha256:7d5201880d9bad6a4427795595441b98a39ddec3f0a128eb5d7885118df15a52",
+        "locator": {
+          "kind": "symbol",
+          "name": "publish_role_agent"
+        }
+      },
+      "id": "RLZ-VXB4Y7",
+      "invariant": "INV-1ZKP4R",
+      "origin": {
+        "handoffEntry": "L117-R11",
+        "leaf": "260928-MIK-L117"
+      },
+      "rationale": "The role start publishes each agent's role, task and report place where the plugin reads them.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "The home-owned plugin files and their content checks.",
       "targets": [
         {
           "anchor": {
-            "blob": "acc8ef1150aef064e6a14f31b89cf8b81274591f",
+            "blob": "39da481b0833efb0af34ffefac5d90eebd5c81aa",
             "content": "sha256:e3d77c2abcfa749bb54917053d4a7912ccb7856d26e6383a6c667489509e7a02",
             "locator": {
               "kind": "symbol",

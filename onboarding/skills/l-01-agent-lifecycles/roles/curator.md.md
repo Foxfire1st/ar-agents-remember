@@ -1,5 +1,19 @@
 # skills/l-01-agent-lifecycles/roles/curator.md
 
+## Current supported-pair account — R100/R116 composition
+
+Batch changed-card citation previews and repairs with one documents list per wave. The stage writes, checks and publishes task knowledge with the installed build and a clean quality check; own-input/coherence faults are corrected through the same admitted tool, never relabeled or bypassed. Valid product/permission/authority/out-of-ground blockers stop dependent work. MEMORY beyond-settings authority comes from architect/developer through the recorded Manager act; independent review and publication are not acceptance.
+
+This account controls the named changed seams; contradictory earlier card wording below is retained only as historical evidence. Unchanged role duties and R117 file-only wake/report transport are preserved. Source inspection supplies no new runtime test, CODE verdict, review counter or acceptance.
+
+- Batch changed-card citation previews and repairs with one documents list per wave. The stage writes, checks and publishes task knowledge with the installed build and a clean quality check; own-input/coherence faults are corrected through the same admitted tool, never relabeled or bypassed. Valid product/permission/authority/out-of-ground blockers stop dependent work. MEMORY beyond-settings authority comes from architect/developer through the recorded Manager act; independent review and publication are not acceptance. [10]
+
+
+## Message/file transport
+
+This canonical role/operation requires messages to be short wake-ups naming requested work or a handover and its files. Report, verdict, list and evidence contents travel through file-only `body` or existing-file `attach`, not pasted into message text. Within a shared task, files stay with its record and a leaf workspace exposes the message-folder link. Text uses the effective settings limit without a pinned number. The canonical source and generated copies share this contract; transport does not change their existing write/start powers, peer destinations or independent acceptance authority.
+
+
 ## Governing Overview
 
 [roles overview](overview.md)
@@ -13,10 +27,23 @@ Defines the curator’s current leaf and repository-foundation responsibilities:
 ### Logic
 
 The leaf intake includes the task, accepted requirement revision, captured change set, existing onboarding, producer handoff, exact worktree contract and the cards, sidecars and records of that leaf's memory worktree; there is no dataset to publish. Producer fields remain owned by their producer; the curator supplies semantic scope, family/source examination and resolved outcomes.
+The leaf intake includes the task, accepted requirement revision, captured change set, existing onboarding, producer handoff, exact worktree contract and selected converted memory root. Producer fields remain owned by their producer; the Curator supplies semantic scope, family/source examination and resolved outcomes. A taskless foundation assignment uses its separately admitted knowledge location and does not manufacture a leaf enclosure.
+
+Families are declared explicitly with their authored guarantee, exact stored invariant member IDs and routes; no family is inferred from directory or anchor similarity. Examine the existing records and invariant/family revisions before qualifying changed meaning, and read the actual stored member/route population back. Converted memory has no published dataset or database membership-revision selector.
+
+The writer is the admitted knowledge-ingest file route for leaves and knowledge-bootstrap route for genuinely taskless foundation work. Read actual written records, sidecar entries, history rows, carried maintenance and physical paths separately. The command writes converted files into the memory branch and publishes no dataset; the next task reads its base files. Full contract-scoped memory quality and the structured coherence authority are evidence, never semantic acceptance or permission to bypass a typed refusal.
+
+### Historical pre-conversion dataset model — not the operative converted contract
+
+The paragraphs below preserve the original published-dataset/membership model and its field names for provenance. MIK-R26 retired that model; it is not a current capability or intake prerequisite:
+
+The leaf intake includes the task, accepted requirement revision, captured change set, existing onboarding, producer handoff, exact worktree contract and declared published dataset. Producer fields remain owned by their producer; the curator supplies semantic scope, family/source examination and resolved outcomes.
 
 Family coverage is authored from the stored member obligations, their evidence and applicable intent. The family guarantee and routes are independent judgments, not inferred from a shared path or label. The admitted file writer records members and examined revisions, and the Curator reads the actual written family back through the bound knowledge reader; it fabricates no sibling record or obsolete dataset-roster field.
 
 The writer is the shipped knowledge-ingest route for leaves and the admitted knowledge-bootstrap route for taskless foundation work. The writer report's written/planned/refused state, actual record and sidecar-entry IDs, history rows and bound code/memory tree identities are read as separate facts; file writing is not a Git commit or acceptance. The full contract-scoped memory-quality operation and, when admitted, structured coherence remain evidence rather than semantic approval from tests. A typed refusal is reported honestly.
+
+### Current retained Curator duties
 
 The curator does not edit code, task/lifecycle state or Git transaction records, directly write SQLite, invent future commit stamps, or repair source movement. Repository-foundation work follows c-14 under real setup authority and does not manufacture an enclosure.
 

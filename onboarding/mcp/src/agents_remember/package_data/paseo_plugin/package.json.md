@@ -10,7 +10,7 @@ The private manifest defines canonical plugin source packaging and standalone ty
 
 ## Code Commentary
 
-The file list includes native manifest, entries and client/server/shared directories. @getpaseo/plugin is pinned to 0.11.1; the command declares nonemitting tsc. Other listed development dependencies supply the package's types.
+The file list includes native manifest, entries and client/server/shared directories. @getpaseo/plugin is pinned to 0.11.1; typecheck declares nonemitting tsc, while test runs the server decision tests through Node's experimental type stripping. Other listed development dependencies supply the package's types. A host-free decision test command is not a live-plugin installation or event-delivery witness.
 
 ## Invariants And Boundaries
 

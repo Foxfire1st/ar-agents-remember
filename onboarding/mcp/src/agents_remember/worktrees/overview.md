@@ -1,5 +1,10 @@
 # mcp/src/agents_remember/worktrees
 
+## Message and evidence transport
+
+A leaf workspace may expose the shared task-owned messages folder through a link. Role-report cleanup unlinks that workspace view rather than deleting canonical message files. Canonical report collection/fsync/readback and transaction/removal authority remain with their existing owners; message filing is not a new report-read side effect.
+
+
 | Field | Value |
 | --- | --- |
 | sourceRoute | `mcp/src/agents_remember/worktrees` |

@@ -1,5 +1,10 @@
 # mcp/src/agents_remember/models/ - Response Contract Models Overview
 
+## Message and evidence transport
+
+RoleMessageCall and RoleMessageRefusal/response models carry file-only body/attachment inputs and named file/hash/limit/successor outcomes. The existing answer exception describes bounded returned reply text with complete reply-file retention, not loss of the complete native reply. These declarations are source contracts, not proof of installed host consumption.
+
+
 ## Current operative account — MIK-R112
 
 The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.

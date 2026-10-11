@@ -1,0 +1,24 @@
+{
+  "path": "mcp/src/agents_remember/package_data/paseo_plugin/tsconfig.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Strict nonemitting analysis permits explicit TypeScript imports and applies to the declared TS/TSX source population.\n\nAnchor: `13-24`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "91d0f24354bc9c5f23b93498be55bf0636cb39ac",
+            "content": "sha256:223609865a968b8c84682f878aa15ce275f540b5ef0b617c13be63f923dac9b4",
+            "locator": {
+              "end": 24,
+              "kind": "line_range",
+              "start": 13
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

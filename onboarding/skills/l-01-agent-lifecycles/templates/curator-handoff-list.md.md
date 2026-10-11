@@ -1,5 +1,10 @@
 # skills/l-01-agent-lifecycles/templates/curator-handoff-list.md
 
+## Message/file transport
+
+This canonical template requires messages to be short wake-ups naming requested work or a handover and its files. Report, verdict, list and evidence contents travel through file-only `body` or existing-file `attach`, not pasted into message text. Within a shared task, files stay with its record and a leaf workspace exposes the message-folder link. Text uses the effective settings limit without a pinned number. The canonical source and generated copies share this contract; transport does not change their existing write/start powers, peer destinations or independent acceptance authority.
+
+
 ## Governing Overview
 
 [lifecycle skill overview](../overview.md)
@@ -14,23 +19,33 @@ Defines the producer/curator handoff data boundary. Nine producer fields travel 
 
 Producer entries identify one obligation and all its targets together. Target locators are required; evidence locators may be absent. Statements and producer dispositions are preserved rather than paraphrased. Applicability, conditions and exclusions are authored before invariant ingest.
 
+Converted memory declares a family as a `records` item with its own title, guarantee, exact invariant member IDs and code routes. Nothing is inferred from a shared path or anchor. Read the actual stored members/routes and relevant revisions; a restated guarantee uses the governing changed history row with authored effect and full examined base/candidate member union. This file writer publishes no dataset and uses no database membership-revision selector.
+
+### Historical database membership declaration — not the converted writer
+
+MIK-R26 retired the earlier declaration/allocation interface. Its original selector and retention syntax are preserved below only as provenance, not current authoring instructions:
+
 The family plane distinguishes declared guarantees, exact memberships, deliberate no-family and unexamined entries. A successor declaration may include `retain_memberships`, with each item exactly `member_id` and a nonblank `basis`. Read the exact family view first: a family_member row’s subject.record_id is the stored membership ID, and its statement names the invariant revision.
 
 The references must resolve in the selected dataset within an explicitly declared same-family predecessor. Omitted/empty retention keeps none. No current-head lookup or implicit roster inheritance is permitted. Repeated IDs, duplicate new endpoints and retain/retire conflicts refuse. A changed nonempty retention set or basis under an allocated declaration key is a content conflict.
 
 The public writer adds successor edges while leaving old records unchanged. Check `retainedFromMemberId`, measured unchanged-sibling counts and the published exact roster. This syntax extends a declaration carried by a genuine obligation; it is not a standalone family-only operation. External evidence retains document identity and provenance instead of fabricated Git anchors.
 
+### Current target-value contract with legacy provenance
+
+- Converted target guards refuse the whole run with no writes and recheck each supplied list, rather than replaying a committed per-entry allocation. [17]
+
+
 Since leaf `260921-ICR-L45` (developer ruling "require rationale"; Architect rulings on reviews R1–R3)
 each `target` element is `{path, locator, governing_route, rationale, role}`: `rationale` is the required
 authored explanation of why that place carries the obligation, `role` is optional (omit to inherit the
 entry's `realization_role`; only when neither level states one is the claim `unclassified`), and an entry
 may state `realization_rationale` / `realization_role` as an explicit default. The writer never generates a
-rationale. It refuses, per entry and before minting, a target with no rationale
+rationale. The value validator identifies an offending entry before admitted writes: a target with no rationale
 (`realization_rationale_absent`), non-string values (`realization_value_not_text`), unknown role words
 including `"absent"` (`realization_role_unknown`), rationales over 20000 characters
 (`realization_rationale_too_long`), and the placeholder route word `absent` in any case
-(`realization_governing_route_absent_literal`) — a missing route is spelled by omitting the key. An exact
-retry of an already committed entry is not checked again. The authority paragraph states that this element
+(`realization_governing_route_absent_literal`) — a missing route is spelled by omitting the key. In converted mode any such target/value refusal refuses the whole hand-off and writes nothing; every run checks the supplied list again. The earlier per-entry allocation replay, where an exact committed retry was not checked again and sibling entries could commit, is legacy-mode provenance only while that path exists, not a converted fallback. The authority paragraph states that this element
 shape supersedes rule 1's `{path, locator, governing_route}` in the external schema note
 *260915-KS-curator-handoff-list-schema.md* revision 1 (not edited; it lives outside this repository), while
 the rest of rule 1 stands; the verbatim worked examples predate per-target rationale and say so.
