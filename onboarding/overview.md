@@ -6,6 +6,16 @@ The current source facts below replace the former operative inventory. The separ
 
 - Current c-04 copies route semantics/relationships to harness-native search.
 
+Candidate commands run in the task's own code-worktree environment, built from its frozen lock
+with its source installed. Repository tool notes own the bootstrap command and interpreter choice;
+product role inputs point to those notes and run records name the interpreter actually used.
+Installed AR tools and memory-operation commands remain operations of the landed product.
+The existing hook-selection policy is separate and unchanged. Ignored environment directories are
+not candidate transaction content; accounting tests do not stand in for live cleanup evidence.
+
+- Worktree bootstrap consumes the calling root's lock and source, with explicit replacement and successful-backup removal. [309]
+- Generic worker inputs point to tool notes and require the actual interpreter in run records. [310]
+
 ### Superseded inventory
 
 - Pre-repair card claim: Root overview still advertises CGC/GrepAI/provider tools as live retrieval and setup. This is superseded archival wording, not a current prescription.

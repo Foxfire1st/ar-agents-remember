@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "A local builder alone does not stop generic instructions borrowing the primary interpreter, instruction wording alone does not bind the source/lock, and neither excludes environment directories from transaction accounting; together they close those distinct failure paths."
+  },
+  "guarantee": "Product instructions delegate candidate execution to repository-defined worktree setup; the build consumes that worktree's lock and source, and ignored environments stay outside lifecycle candidate inventories. Together these separate candidate execution from the landed product without making environment files transaction content. Live transaction/cleanup proof and language-server success are not implied.",
+  "id": "FAM-H734XJ",
+  "members": [
+    "INV-2FS4D1",
+    "INV-4AQ26N",
+    "INV-RCFXFA"
+  ],
+  "origin": {
+    "handoff": {
+      "path": "writer-projection-final.json"
+    },
+    "handoffEntry": "candidate-environment-family",
+    "leaf": "260928-MIK-L136",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "routes": [
+    ".",
+    "dashboard",
+    "mcp/tests",
+    "scripts",
+    "skills/l-01-agent-lifecycles/templates"
+  ],
+  "schema": "ar-family/v1",
+  "status": "proposed",
+  "title": "Candidate environments are local without owning the product runtime"
+}

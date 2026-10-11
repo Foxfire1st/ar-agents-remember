@@ -1,0 +1,61 @@
+{
+  "path": "dashboard/.gitignore",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "43efc604596aeac2aa788d1336e754f407f587a1",
+        "content": "sha256:4d56952b0fb13bf8f9b6c13a6d4c34a075bac3af447636a1df4335d7576e2f97",
+        "locator": {
+          "end": 1,
+          "kind": "line_range",
+          "start": 1
+        }
+      },
+      "id": "RLZ-5R4FH9",
+      "invariant": "INV-RCFXFA",
+      "origin": {
+        "handoffEntry": "MIK-R136 rule 6",
+        "leaf": "260928-MIK-L136"
+      },
+      "rationale": "This ignore rule is what keeps dashboard/node_modules out of the same inventories.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The dashboard ignore rule excludes its Node dependency tree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43efc604596aeac2aa788d1336e754f407f587a1",
+            "content": "sha256:4d56952b0fb13bf8f9b6c13a6d4c34a075bac3af447636a1df4335d7576e2f97",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The accounting test rejects environment paths, but its Node half is structural when no Node tree is installed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a177dd386845d2f9f41c60ac7884e3644bbad24",
+            "content": "sha256:15de6b181acfaacae9313a07c413776d4e8d0bf123771ea719f74878d22e7651",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_candidate_accounting_excludes_worktree_environments"
+            },
+            "path": "mcp/tests/test_worktree_own_environment.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

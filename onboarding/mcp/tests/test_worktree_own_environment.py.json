@@ -1,0 +1,160 @@
+{
+  "path": "mcp/tests/test_worktree_own_environment.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "4a177dd386845d2f9f41c60ac7884e3644bbad24",
+        "content": "sha256:07d369082bba32393797225673368f15b55744f61957647b11b5c5113f405624",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_worker_brief_template_names_no_candidate_interpreter"
+        }
+      },
+      "facet": "All ten worker-brief surfaces contain the tool-notes pointer and actual-interpreter recording rule and no forbidden interpreter tokens.",
+      "id": "PRF-1A4Z2S",
+      "invariant": "INV-4AQ26N",
+      "origin": {
+        "handoffEntry": "MIK-R136 rule 3",
+        "leaf": "260928-MIK-L136"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "4a177dd386845d2f9f41c60ac7884e3644bbad24",
+        "content": "sha256:15de6b181acfaacae9313a07c413776d4e8d0bf123771ea719f74878d22e7651",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_candidate_accounting_excludes_worktree_environments"
+        }
+      },
+      "facet": "A real built venv is required and product working-path enumeration contains neither .venv nor node_modules; without a Node install that half is structural, and no transaction or cleanup is invoked.",
+      "id": "PRF-7X0RJ1",
+      "invariant": "INV-RCFXFA",
+      "origin": {
+        "handoffEntry": "MIK-R136 rule 6",
+        "leaf": "260928-MIK-L136"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "4a177dd386845d2f9f41c60ac7884e3644bbad24",
+        "content": "sha256:1ed433becb49a8350fe3995d2bdc1b24e990cb3d7ec4fe6f1f8ef052fe6cfca3",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_no_role_operation_or_template_names_a_candidate_interpreter"
+        }
+      },
+      "facet": "The canonical roles, operations and templates census returns no named candidate-interpreter tokens.",
+      "id": "PRF-CRAXQY",
+      "invariant": "INV-4AQ26N",
+      "origin": {
+        "handoffEntry": "MIK-R136 rule 3",
+        "leaf": "260928-MIK-L136"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "4a177dd386845d2f9f41c60ac7884e3644bbad24",
+        "content": "sha256:cb9682c662985f74bb3eb713b7e30a30d7965aaaa590f17743e525744bf75c5b",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_guard_reports_the_retired_interpreter_line"
+        }
+      },
+      "facet": "The predicate rejects the retired interpreter/PYTHONPATH line and does not reject the shipped template.",
+      "id": "PRF-EJGMWR",
+      "invariant": "INV-4AQ26N",
+      "origin": {
+        "handoffEntry": "MIK-R136 rule 3",
+        "leaf": "260928-MIK-L136"
+      }
+    }
+  ],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "4a177dd386845d2f9f41c60ac7884e3644bbad24",
+        "content": "sha256:15de6b181acfaacae9313a07c413776d4e8d0bf123771ea719f74878d22e7651",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_candidate_accounting_excludes_worktree_environments"
+        }
+      },
+      "id": "RLZ-XWH1BM",
+      "invariant": "INV-RCFXFA",
+      "origin": {
+        "handoffEntry": "MIK-R136 rule 6",
+        "leaf": "260928-MIK-L136"
+      },
+      "rationale": "This case executes the product's own closeout-tier enumeration on a root holding a real venv and asserts neither environment directory is carried.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "All shipped worker briefs must delegate environment setup and record the actual interpreter.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a177dd386845d2f9f41c60ac7884e3644bbad24",
+            "content": "sha256:07d369082bba32393797225673368f15b55744f61957647b11b5c5113f405624",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_worker_brief_template_names_no_candidate_interpreter"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Canonical instruction surfaces contain no named candidate-interpreter tokens.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a177dd386845d2f9f41c60ac7884e3644bbad24",
+            "content": "sha256:1ed433becb49a8350fe3995d2bdc1b24e990cb3d7ec4fe6f1f8ef052fe6cfca3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_no_role_operation_or_template_names_a_candidate_interpreter"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The token predicate rejects the retired wording rather than passing vacuously.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a177dd386845d2f9f41c60ac7884e3644bbad24",
+            "content": "sha256:cb9682c662985f74bb3eb713b7e30a30d7965aaaa590f17743e525744bf75c5b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_guard_reports_the_retired_interpreter_line"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The accounting case requires a built venv and excludes either environment directory from the working inventory; it does not run the lifecycle.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a177dd386845d2f9f41c60ac7884e3644bbad24",
+            "content": "sha256:15de6b181acfaacae9313a07c413776d4e8d0bf123771ea719f74878d22e7651",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_candidate_accounting_excludes_worktree_environments"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

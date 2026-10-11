@@ -183,18 +183,89 @@ coverage artifacts as diagnostics. A direct host result cannot replace that auth
 
 ---
 
+### Task Worktree Environments
+
+Every command a task runs on its candidate (a test, a lint, a type check, a
+script of its own) runs in an environment built in the task's own code
+worktree, with the candidate's source installed — never with the primary
+checkout's interpreter, whose installed product is the primary checkout's
+source.
+
+Build it with the one command, run from the code worktree root. Fresh intake:
+
+```text
+scripts/bootstrap-mcp-venv.sh
+```
+
+After a sync that changed the lock file (`mcp/uv.lock`), the same script with
+the explicit recreation flag (an existing environment is never overwritten
+implicitly):
+
+```text
+scripts/bootstrap-mcp-venv.sh --replace
+```
+
+Run it at intake, before the first command on the candidate, and again after
+such a sync. The script reuses the shared canonical Python runtime after
+verifying it (no write there when it is valid; rebuilt from verified source
+only when it is not) and writes the environment itself below the worktree
+only, at `mcp/.venv`. With `--replace` the previous environment is moved
+aside under a name carrying the worktree's directory name and the second
+(`agents-remember/venv-backups` under the cache home) and removed again after
+the successful recreation, so no backup of the run is left; a failed
+recreation keeps its candidate there for diagnosis under the same naming.
+That cache, like `uv`'s own package cache, is tool scratch, not the candidate.
+Rule 1 in short: a run touches nothing of the primary checkout and nothing of
+another worktree. It refuses to run when `uv` is not the pinned version
+(`AR_UV_VERSION` in `scripts/python-runtime-contract.env`) instead of falling
+back to another interpreter.
+
+Run every command on the candidate with the worktree's own interpreter,
+`<code worktree>/mcp/.venv/bin/python`:
+
+```text
+mcp/.venv/bin/python -m pytest ...
+```
+
+The worktree environment installs the candidate editable, so its own `mcp/src`
+is on that interpreter's path without any `PYTHONPATH`. `mcp/test_support` is
+not installed — it is test-only support — so commands that use it keep
+`PYTHONPATH=mcp/test_support`, and only that.
+
+A script run outside pytest (a script of its own, a one-line probe) runs with
+the worktree's interpreter and shows which source it ran:
+
+```text
+<code worktree>/mcp/.venv/bin/python script.py
+```
+
+The script prints the file it actually imported (for example
+`agents_remember.__file__`), so its record shows the candidate ran, not the
+landed product. No `PYTHONPATH` is set for `mcp/src`: the worktree environment
+installs the candidate editable.
+
+Operating the product is not testing the candidate: the AR tools an agent
+calls and the product's command line for memory operations are the landed
+product. The candidate is run only in its own environment.
+
+Dashboard tasks only: a task that builds or tests the dashboard installs its
+modules in the worktree with `npm ci`, run in the worktree's `dashboard/`.
+Other tasks install nothing there.
+
+---
+
 ### Test Catalogs
 
 The two test catalogs are `mcp/tests/test-evidence-lanes.toml` (the lane of every test file) and
 `mcp/tests/evidence-lifecycle.toml` (the governed test artifacts and their consumers). One module
 validates both and, with `--write`, rewrites both to canonical form. Run it from the source
-repository root with the Python of the MCP development environment (`mcp/.venv/bin/python`; in a
-linked worktree, the primary checkout's) and with `mcp/test_support` and `mcp/src` on `PYTHONPATH`,
-as the hook gate does:
+repository root with the worktree's own interpreter (`mcp/.venv/bin/python`, built as
+Task Worktree Environments above says) and with `mcp/test_support` on `PYTHONPATH`
+(`mcp/src` needs none: the worktree environment installs the candidate editable):
 
 ```text
-PYTHONPATH=mcp/test_support:mcp/src python -m agents_remember_test_support.testing.evidence_lifecycle --project-root .          # Validate both catalogs.
-PYTHONPATH=mcp/test_support:mcp/src python -m agents_remember_test_support.testing.evidence_lifecycle --project-root . --write  # Rewrite both catalogs to canonical form.
+PYTHONPATH=mcp/test_support mcp/.venv/bin/python -m agents_remember_test_support.testing.evidence_lifecycle --project-root .          # Validate both catalogs.
+PYTHONPATH=mcp/test_support mcp/.venv/bin/python -m agents_remember_test_support.testing.evidence_lifecycle --project-root . --write  # Rewrite both catalogs to canonical form.
 ```
 
 - Run the validator after any change to a catalog and before a commit; the fast hook tier runs it

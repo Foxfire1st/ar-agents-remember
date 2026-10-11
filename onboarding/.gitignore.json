@@ -1,0 +1,61 @@
+{
+  "path": ".gitignore",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "14138f5e07311df459db334ccecc0ab4ddb8388e",
+        "content": "sha256:08239aadebf9a9b105e2efecca3129f9198067993418529ddc8117d41997b7ec",
+        "locator": {
+          "end": 11,
+          "kind": "line_range",
+          "start": 11
+        }
+      },
+      "id": "RLZ-8DYW03",
+      "invariant": "INV-RCFXFA",
+      "origin": {
+        "handoffEntry": "MIK-R136 rule 6",
+        "leaf": "260928-MIK-L136"
+      },
+      "rationale": "This ignore rule is what keeps mcp/.venv out of every Git inventory the lifecycle accounting reads.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The repository ignore rules exclude Node modules and local virtual environments while retaining the MCP lock.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "14138f5e07311df459db334ccecc0ab4ddb8388e",
+            "content": "sha256:9570d858420a629f9e5695297afbf7636c8034b483549125c2e8c22190fa91fe",
+            "locator": {
+              "end": 17,
+              "kind": "line_range",
+              "start": 8
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The accounting regression requires a real venv and checks product enumeration; it does not execute cleanup.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a177dd386845d2f9f41c60ac7884e3644bbad24",
+            "content": "sha256:15de6b181acfaacae9313a07c413776d4e8d0bf123771ea719f74878d22e7651",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_candidate_accounting_excludes_worktree_environments"
+            },
+            "path": "mcp/tests/test_worktree_own_environment.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

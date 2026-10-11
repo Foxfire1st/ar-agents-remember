@@ -57,8 +57,13 @@ refuses a catalog that is not in this form; each finding names the row and the c
 it:
 
 ```text
-python -m agents_remember_test_support.testing.evidence_lifecycle --project-root . --write
+PYTHONPATH=mcp/test_support mcp/.venv/bin/python -m agents_remember_test_support.testing.evidence_lifecycle --project-root . --write
 ```
+
+Run this candidate command in the code worktree's environment, built as the repository tool notes
+say. Its editable install supplies `mcp/src`; only the uninstalled `mcp/test_support` needs the
+explicit path. The worktree-environment regression module is a consumer of the Node lockfile
+fixture through the repository test support; this registration changes no artifact's guarantee.
 
 The command orders rows and lists, removes duplicate lines, and sets the `consumers` list of an
 `exact` or `exact-source` row to the set that the dependency facts derive from the source tree. A
@@ -295,6 +300,8 @@ each behavioural case failing before its fix and passing after.
 - The converted-drift module is registered as a consumer of the evidence it exercises. [99]
 - The durable-artifact consumer entries this catalog now declares; lane rows belong to test-evidence-lanes.toml. [14]
 - The two reviewer worklist test modules on that row's consumer list. [95]
+
+- The Node lockfile fixture lists the worktree-environment regression module as an exact consumer; this is reachability accounting, not a lifecycle execution result. [261]
 
 The converted-drift registration once tabled under keys 14/95 now stands as the [99] line above; keys 14 and 95 cite the catalog's durable-artifact and reviewer-worklist rows.
 

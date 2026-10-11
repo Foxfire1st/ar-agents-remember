@@ -3,8 +3,27 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "6b2be743c563ab4e5c629a951843fc07dc5fefad",
-        "content": "sha256:b1169f76b6065da61f0db22a3e7bac0d025e425eef3c8c42035d196ce9eb46de",
+        "blob": "55f0b87c1a8f74e894bfe8a1fdf38f0018662813",
+        "content": "sha256:1e546a9c150fa884bdb29ec9e0659cc43d21acb34fa93743b9253dd0713cd856",
+        "locator": {
+          "end": 50,
+          "kind": "line_range",
+          "start": 47
+        }
+      },
+      "id": "RLZ-05PN1D",
+      "invariant": "INV-4AQ26N",
+      "origin": {
+        "handoffEntry": "MIK-R136 rule 3",
+        "leaf": "260928-MIK-L136"
+      },
+      "rationale": "This bullet is the only product surface that ever named a candidate interpreter, and now carries the pointer-and-record rule plus its nine generated copies.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "55f0b87c1a8f74e894bfe8a1fdf38f0018662813",
+        "content": "sha256:9c0e64117a1486566f89e2d40a97db629240248916e24fc04429cb738d105807",
         "locator": {
           "kind": "file"
         }
@@ -21,16 +40,16 @@
   ],
   "references": {
     "1": {
-      "note": "The brief binds the exact owned requirement revision and evidence classes.\n\nAnchor: \"## Owned primary requirement (exactly one stable-ID + version)\"",
+      "note": "The brief binds the exact owned requirement revision and evidence classes.",
       "targets": [
         {
           "anchor": {
-            "blob": "3440d8578a7983551d72df22aae6d308a513e021",
-            "content": "sha256:77b775e9ef685c7e183e9c22ff723c0c31766e7aee0876edcfa960868f8345f8",
+            "blob": "55f0b87c1a8f74e894bfe8a1fdf38f0018662813",
+            "content": "sha256:720876cdc6e73ca6770102b04acbaccace61212f81e47d93b4c053ebc4944eae",
             "locator": {
-              "end": 105,
+              "end": 85,
               "kind": "line_range",
-              "start": 72
+              "start": 66
             }
           },
           "kind": "code"
@@ -38,14 +57,14 @@
       ]
     },
     "2": {
-      "note": "The same block compiles leaf manifestation, attempt/predecessor lineage, and candidate identity before handoff.\n\nAnchor: \"## Owned primary requirement (exactly one stable-ID + version)\"",
+      "note": "The same block compiles leaf manifestation, attempt/predecessor lineage, and candidate identity before handoff.",
       "targets": [
         {
           "anchor": {
-            "blob": "3440d8578a7983551d72df22aae6d308a513e021",
-            "content": "sha256:77b775e9ef685c7e183e9c22ff723c0c31766e7aee0876edcfa960868f8345f8",
+            "blob": "55f0b87c1a8f74e894bfe8a1fdf38f0018662813",
+            "content": "sha256:9a62816320fbf2076937d1060c54e19a97e82e10a8f18e9790c0bf59ee01afcc",
             "locator": {
-              "end": 105,
+              "end": 83,
               "kind": "line_range",
               "start": 72
             }
@@ -55,16 +74,16 @@
       ]
     },
     "3": {
-      "note": "Repository-defined checks and artifact lifecycle remain separate obligations.\n\nAnchor: \"## Targeted checks (before you report)\"",
+      "note": "Repository-defined checks and artifact lifecycle remain separate obligations.",
       "targets": [
         {
           "anchor": {
-            "blob": "250ab4dff58b882eac75a847aeb79e76ad466123",
-            "content": "sha256:7e0601fd6dfa7b2edb9a2b42d346ebcf05920dcf95fb2e87d920e5d09f4c3af8",
+            "blob": "55f0b87c1a8f74e894bfe8a1fdf38f0018662813",
+            "content": "sha256:c36a4802a96727cf7580a062e722ff7c6906bce0f0c10d6acdb71ee7b3b88cf2",
             "locator": {
-              "end": 164,
+              "end": 103,
               "kind": "line_range",
-              "start": 142
+              "start": 101
             }
           },
           "kind": "code"
@@ -72,16 +91,16 @@
       ]
     },
     "4": {
-      "note": "The final report requires envelopes, checks, curator inputs, and continuity state.\n\nAnchor: \"## Turn report (mandatory, last act)\"",
+      "note": "The final report links attempt records, check outcomes, curator inputs and continuity state.",
       "targets": [
         {
           "anchor": {
-            "blob": "250ab4dff58b882eac75a847aeb79e76ad466123",
-            "content": "sha256:1f0a44d214a7cc67feaed4ee43fd70f75197a4d66d6ae296427aaa9f1d446e0f",
+            "blob": "55f0b87c1a8f74e894bfe8a1fdf38f0018662813",
+            "content": "sha256:7f1ff56086739ee1f987c2e145b6c844af9643d7a80715d7cd5004f34602bcaf",
             "locator": {
-              "end": 201,
+              "end": 126,
               "kind": "line_range",
-              "start": 173
+              "start": 122
             }
           },
           "kind": "code"
@@ -93,7 +112,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bb49a2c6a235a9cc42250ed17ece09d06ee588d4",
+            "blob": "55f0b87c1a8f74e894bfe8a1fdf38f0018662813",
             "content": "sha256:9cf63b296a22fc74f4ac75dd8631a392fb0e001fcd8ec537b6592d62705e8d48",
             "locator": {
               "end": 11,
@@ -106,16 +125,16 @@
       ]
     },
     "6": {
-      "note": "The brief carries the worker's curator hand-off list, producer fields filled and curator fields null.\n\nAnchor: \"Your curator hand-off list:\"; \"because those are the curator's to fill\"",
+      "note": "The brief carries the worker's curator hand-off list, producer fields filled and curator fields null.",
       "targets": [
         {
           "anchor": {
-            "blob": "bb49a2c6a235a9cc42250ed17ece09d06ee588d4",
-            "content": "sha256:78fe5309e78e61b2b7f77fc06e617d23493c1e09b86c451b30e44c5176411930",
+            "blob": "55f0b87c1a8f74e894bfe8a1fdf38f0018662813",
+            "content": "sha256:b8d9716eaeb6280fd92a6db335f2e4862270ec3190e06ea190f5af911e7170e3",
             "locator": {
-              "end": 112,
+              "end": 118,
               "kind": "line_range",
-              "start": 106
+              "start": 105
             }
           },
           "kind": "code"
@@ -123,16 +142,34 @@
       ]
     },
     "7": {
-      "note": "Curation is the standing exception: the curator always runs it complete, and closeout and integration carry the result.\n\nAnchor: \"curation does not, because the curator always runs it complete\"",
+      "note": "Curation is the standing complete operation; the curation owner, not the generic worker brief, carries that prerequisite.",
       "targets": [
         {
           "anchor": {
-            "blob": "3440d8578a7983551d72df22aae6d308a513e021",
-            "content": "sha256:486c089782ce37b6f82fc061d5327483d651f7d98030a1fea849ab7e3748fc14",
+            "blob": "59b96abdc86d2d0203bea462255eaee46b8bbd64",
+            "content": "sha256:26a36d764d17ca13bc148f258ae5202c05b753f34ec70340523944c7a0f96858",
             "locator": {
-              "end": 168,
+              "end": 155,
               "kind": "line_range",
-              "start": 162
+              "start": 149
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The candidate-environment input delegates the build command to repository tool notes and requires the run record's actual interpreter.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "55f0b87c1a8f74e894bfe8a1fdf38f0018662813",
+            "content": "sha256:1e546a9c150fa884bdb29ec9e0659cc43d21acb34fa93743b9253dd0713cd856",
+            "locator": {
+              "end": 50,
+              "kind": "line_range",
+              "start": 47
             }
           },
           "kind": "code"

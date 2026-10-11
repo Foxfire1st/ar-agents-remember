@@ -21,6 +21,12 @@ and the targeted-check contract), or `../core/acceptance.md` (the acceptance env
 lineage, and completion truth); the rows carry this leaf's *values*, and those files win on
 disagreement.
 
+The candidate-environment input points to the repository's `system/tools.md`, not an interpreter
+path or source `PYTHONPATH`. The Worker builds the worktree's own environment as those notes say
+and runs every candidate command in it. A missing bootstrap command is disclosed in the record,
+and a run record names the interpreter actually used. Repository-specific interpreter selection
+stays in the tool notes; the brief does not choose the primary checkout's environment.
+
 The spawning seat lists every applicable stable ID and version with its immutable packet, corpus
 approval, evidence classes, and any already-approved changed delivery. The worker opens those
 packets before editing and records a separate acceptance envelope for each revision. The envelope
@@ -95,10 +101,15 @@ No external Domain Documentation source governs this worker template.
 - The brief binds the exact owned requirement revision and evidence classes. [1]
 - The same block compiles leaf manifestation, attempt/predecessor lineage, and candidate identity before handoff. [2]
 - Repository-defined checks and artifact lifecycle remain separate obligations. [3]
-- The final report requires envelopes, checks, curator inputs, and continuity state. [4]
+- The final report links attempt records, check outcomes, curator inputs and continuity state. [4]
+
 - The template declares itself an input-feeder whose stated rules live in the seat's own files. [5]
+
 - The brief carries the worker's curator hand-off list, producer fields filled and curator fields null. [6]
-- Curation is the standing exception: the curator always runs it complete, and closeout and integration carry the result. [7]
+
+- Curation is the standing complete operation; the curation owner, not the generic worker brief, carries that prerequisite. [7]
+
+- The candidate-environment input delegates the build command to repository tool notes and requires the run record's actual interpreter. [8]
 
 ### Cross-Repo References
 

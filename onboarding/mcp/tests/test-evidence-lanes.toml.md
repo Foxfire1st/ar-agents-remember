@@ -19,14 +19,21 @@ and `test_tool_descriptions.py` to that lane. Earlier line/population totals wer
 source-snapshot observations, not a current or permanent count. Canonical source
 membership is the authority; registration never proves that the tests ran.
 
+The worktree-environment regression module is also in `unit-regression`. Candidate test and
+catalog commands use the worktree's own environment as repository tool notes prescribe; the
+editable install supplies the candidate source, and test-support imports alone need their
+explicit path.
+
 ## Evidence
 
 - Extracted capsule surface suite in unit-regression [835]
 - Opt-out refusal suites in unit-regression [836]
-- Lane lists with one row per module [837]
+- Lane lists retain one path per module, with the worktree-environment guard registered in unit-regression. [837]
 
 - The module the lane names. [838]
 
 - The new module joins this lane. [839]
 
 - The lane catalog with the host module rows. [840]
+
+- The worktree-environment regression module belongs to unit-regression. [841]

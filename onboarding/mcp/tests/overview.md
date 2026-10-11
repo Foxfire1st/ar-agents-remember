@@ -4,7 +4,15 @@
 
 The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
 
-- Current lane counts are 321 unit, 2 public-contract, 103 integration, 22 architecture, 14 provider-conformance.
+Current lane populations are derived from `test-evidence-lanes.toml`, not pinned in this overview.
+The worktree-environment module joins `unit-regression` and the Node lockfile fixture's supported
+consumer list. Its cases protect ten worker-brief copies, canonical instruction wording, the
+retired-wording discriminator and ignored-environment accounting. Candidate tests and catalog
+validation use the code worktree's own environment as repository tool notes prescribe. A built
+venv is required by the accounting case; Node coverage is structural without an installed Node
+environment, and neither that case nor catalog membership proves live sync, closeout or cleanup.
+
+- The four-case module protects shipped instruction wording and ignored-environment accounting, with no lifecycle execution. [1708]
 
 ### Superseded inventory
 

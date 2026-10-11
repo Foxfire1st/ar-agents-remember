@@ -7,6 +7,15 @@ The current source facts below replace the former operative inventory. The separ
 - Tool-surface retrieval no longer lists CGC/GrepAI calls.
 - The worker now continues its own sync after Curator content repair and Manager capture/verify/stage.
 
+The candidate-environment input points to the repository's `system/tools.md`, not a concrete
+interpreter or source `PYTHONPATH`. Build the code worktree's own environment and run every
+candidate command in it. Disclose a missing build command, and name the interpreter actually
+used in the run record. Installed AR tools and memory-operation commands remain the landed
+product. This preserves the template's input-feeder role rather than moving interpreter policy
+into the product.
+
+- The packaged candidate-environment input is the canonical tool-notes pointer and actual-interpreter reporting contract. [1]
+
 ### Superseded inventory
 
 - Pre-repair card claim: The card’s live CCR-R12 paragraph still calls the ledger a transaction leg. This is superseded archival wording, not a current prescription.
@@ -48,6 +57,12 @@ the packet carry this leaf's *values* for those contracts.
 
 ### Logic
 
+The candidate-environment input carries the canonical template's pointer to the repository's
+`system/tools.md`: build the code worktree's own environment and run every candidate command in
+it. It names no interpreter or source `PYTHONPATH`; a missing build command is disclosed, and each
+run record names the interpreter used. Installed AR tools and memory-operation commands remain
+the landed product, not a way to execute the candidate.
+
 The synchronized brief names the next review-handoff attempt without advancing it during internal
 runs and requires a lightweight content-addressed record plus a separate protocol-event log.
 
@@ -81,6 +96,8 @@ This template records the exact checks and their failed or not-run status as han
 
 ## Evidence
 
+The candidate-environment evidence now belongs to the current operative account above.
+
 ### Cross-Repo Evidence
 
 No sibling repository evidence is needed for this doctrine file.
@@ -89,10 +106,9 @@ No meaningful cross-repo references found.
 
 #### 260731-EFA-L17 — Change-Set-Scoped Leaf Checks
 
-The worker brief's Checks section makes the pinned Dagger graph the Agents Remember acceptance
-boundary. Leaf work selects targeted mode and supplies its explicit leaf diff base; full mode is
-not a worker check and runs once at master integration. Direct host pytest/wrapper commands are
-refused, never acceptance or fallback. `memory_quality_check` stays a per-leaf closeout gate.
+The former Dagger-only worker-check instruction is superseded by the handoff boundary above:
+focused candidate checks run in the repository-defined worktree environment; certification remains
+an explicitly requested product operation and a focused host result cannot replace its authority.
 
 ## L23 Final Candidate Disposition
 
@@ -102,9 +118,9 @@ acceptance or carry durable-operation secrets.
 
 ## R39 Generic Worker Brief Contract
 
-The template tells the dispatcher to copy repository-specific acceptance command, environment,
-and evidence requirements from resolved memory. It forbids an invented runner or fallback and
-keeps acceptance at leaf closeout and master integration only.
+The template tells the dispatcher to copy repository-specific command, environment and evidence
+requirements from resolved memory. It forbids an invented runner or fallback; run records state
+what actually ran and do not decide closeout or integration authority.
 
 ## 260815-DAG-L2 Nature-Aware Worker Input
 

@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "41badf6f39fc2d4cf9f9ea407296ab4606e9e08b",
+        "blob": "42b30f5281205130732ba7365a8632af8e834b46",
         "content": "sha256:5cd042577ebdf51367a272d69b23bf04c0c30cae34914b48cb521233162e663d",
         "locator": {
-          "end": 372,
+          "end": 373,
           "kind": "line_range",
-          "start": 372
+          "start": 373
         }
       },
       "id": "RLZ-NJFH31",
@@ -22,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "41badf6f39fc2d4cf9f9ea407296ab4606e9e08b",
+        "blob": "42b30f5281205130732ba7365a8632af8e834b46",
         "content": "sha256:2bc4851e806a4d81b457b0153c5968bdd9d936be780b1c20bf8222ffba533e73",
         "locator": {
           "end": 270,
@@ -46,7 +46,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "41badf6f39fc2d4cf9f9ea407296ab4606e9e08b",
+            "blob": "42b30f5281205130732ba7365a8632af8e834b46",
             "content": "sha256:18493d816ddfe444c965fada22a49da99138e70b2c7d80a72152bd3ef8ea7fd3",
             "locator": {
               "end": 20,
@@ -63,7 +63,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "41badf6f39fc2d4cf9f9ea407296ab4606e9e08b",
+            "blob": "42b30f5281205130732ba7365a8632af8e834b46",
             "content": "sha256:d7cf84bf950903f2b5bd9eb709520a6cd1fe182a4afec71fcbc3cb138679b6dc",
             "locator": {
               "end": 189,
@@ -132,6 +132,23 @@
             "content": "sha256:c6983e5b5593561bd34a3d74544c79fef7f3bbef033b55e09831afaedf33d392",
             "locator": {
               "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "841": {
+      "note": "The worktree-environment regression module belongs to unit-regression.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "42b30f5281205130732ba7365a8632af8e834b46",
+            "content": "sha256:6af2d7f28912ba7425c1cb69a1fa691c5a2c8c17dbc07527bd5c18525ee8f089",
+            "locator": {
+              "end": 331,
+              "kind": "line_range",
+              "start": 331
             }
           },
           "kind": "test"

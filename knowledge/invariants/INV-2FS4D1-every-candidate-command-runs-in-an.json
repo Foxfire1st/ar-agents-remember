@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Borrowing the primary checkout interpreter can import the landed source instead of the candidate and misreport candidate tests or scripts as verified."
+  },
+  "applicability": "Commands a task runs on its own code candidate: tests, lint, type checks and agent scripts.",
+  "conditions": [
+    "Build the environment at intake before the first candidate command, from that worktree's frozen lock with its source installed editable.",
+    "Repeat the documented build with explicit replacement after a sync changes the lock.",
+    "The shared interpreter, uv cache and rollback cache are disclosed shared effects; primary checkout and other worktrees are not written."
+  ],
+  "exclusions": [
+    "Installed AR tools and memory-operation CLI, which operate the landed product.",
+    "Certification environments and the preserved Git-hook selection policy.",
+    "Automatic worktree-start setup before the ten-start measurement warrants it."
+  ],
+  "id": "INV-2FS4D1",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "scripts/bootstrap-mcp-venv.sh --replace in leaf worktree, exit 0, 157-line log scratch l136-evidence/replace-run2.txt; freeze A3 journal 260928-MIK-L136-A3"
+      ],
+      "path": "writer-projection-final.json"
+    },
+    "handoffEntry": "MIK-R136 rule 1",
+    "leaf": "260928-MIK-L136",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Every candidate command runs in an environment built in the task's own code worktree by the one documented command, at intake and after lock-changing syncs, with the candidate's source installed.",
+  "status": "proposed",
+  "supersedes": []
+}

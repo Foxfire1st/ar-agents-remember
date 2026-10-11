@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "8b783c4396603539a29b4f8e531079aa2d064ee0",
+        "blob": "785b03997d6bda8c57fe4b2270eb8623f2756bfa",
         "content": "sha256:44f74a8a9388e3fe0278ce9be7fa45c71fd738851df51b3fdd746bd141b82371",
         "locator": {
           "end": 34,
@@ -19,6 +19,25 @@
       },
       "rationale": "This line selects the interpreter every later venv command runs under; deriving it from AR_PYTHON_MINOR keeps the venv on the contract's runtime after a contract bump.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "785b03997d6bda8c57fe4b2270eb8623f2756bfa",
+        "content": "sha256:0648d1c96cc73605d1d763734badac13121f7d1e66a90539c2a4952d189e7fc1",
+        "locator": {
+          "end": 106,
+          "kind": "line_range",
+          "start": 43
+        }
+      },
+      "id": "RLZ-MNKE2T",
+      "invariant": "INV-2FS4D1",
+      "origin": {
+        "handoffEntry": "MIK-R136 rule 1",
+        "leaf": "260928-MIK-L136"
+      },
+      "rationale": "The script is the commanded mechanism: uv pin, lazy backup-root creation, per-worktree-second backup naming, and removal of a successful run's backup.",
+      "role": "enforcement"
     }
   ],
   "references": {
@@ -27,7 +46,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8b783c4396603539a29b4f8e531079aa2d064ee0",
+            "blob": "785b03997d6bda8c57fe4b2270eb8623f2756bfa",
             "content": "sha256:e3bca03eab729bcf372f59c5d58adbfd6dced450a3ac2901f65502333be4b8eb",
             "locator": {
               "end": 41,
@@ -40,14 +59,14 @@
       ]
     },
     "2": {
-      "note": "Existing environments require explicit replacement and are restored after a failed recreation.\n\nAnchor: \"restore_previous() {\"",
+      "note": "Existing environments require explicit replacement; backup names distinguish worktree directories, and failed recreation restores the predecessor.\n\nAnchor: `restore_previous`",
       "targets": [
         {
           "anchor": {
-            "blob": "8b783c4396603539a29b4f8e531079aa2d064ee0",
-            "content": "sha256:6ed3d84283105ec9922f12817c909f433c3464e9f16a8c96767fbf44fdc1fa7e",
+            "blob": "785b03997d6bda8c57fe4b2270eb8623f2756bfa",
+            "content": "sha256:38d8b91d4fdbe5042d4c8ac4ec8f42b5f9e463c8f896c4e3fafd8010e5098a15",
             "locator": {
-              "end": 81,
+              "end": 84,
               "kind": "line_range",
               "start": 53
             }
@@ -57,17 +76,35 @@
       ]
     },
     "3": {
-      "note": "uv is pinned to the exact interpreter and lock, followed by runtime and dependency proof.\n\nAnchor: \"--no-managed-python\"; \"uv pip check\"",
+      "note": "uv consumes the worktree's frozen lock and exact interpreter; successful runtime and dependency proof precede removal of the replaced backup.",
       "targets": [
         {
           "anchor": {
-            "blob": "8b783c4396603539a29b4f8e531079aa2d064ee0",
-            "content": "sha256:23236a76125bf83fb9c3196ee2d0fe3e90a8092bbee5741fb9458f9fdf997b7a",
+            "blob": "785b03997d6bda8c57fe4b2270eb8623f2756bfa",
+            "content": "sha256:6573d9c4c75b7a727013202efb30f7b46df46b7f937f49aa7d6bd754bf0a7ef6",
             "locator": {
-              "end": 103,
+              "end": 107,
               "kind": "line_range",
-              "start": 83
+              "start": 86
             }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Hook environment selection retains its separate local-then-shared policy and probes runtime and quality imports before selection.\n\nAnchor: `dev_python_ready`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a486f91a07d193d41b89d8871627f47ebfc2d324",
+            "content": "sha256:6339e324331abc4a751b5e2afaf6d5755334b353b121f4245bb978a4aff7aa40",
+            "locator": {
+              "end": 80,
+              "kind": "line_range",
+              "start": 53
+            },
+            "path": ".githooks/_gate.sh"
           },
           "kind": "code"
         }

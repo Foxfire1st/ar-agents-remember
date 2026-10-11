@@ -6,12 +6,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3e6cf4595b45bd9657a72f1ec7c6c14acac25a9b",
+            "blob": "71244a690a5bb61ebaabab3ab6c04f7a0a57e2f5",
             "content": "sha256:c6e72960e0a1a170399bd784eeadc15a7c60ad7af6b4c7df51d972a4645d89dc",
             "locator": {
-              "end": 531,
+              "end": 527,
               "kind": "line_range",
-              "start": 524
+              "start": 520
             },
             "path": "skills/c-09-git-worktree-manager/SKILL.md"
           },
@@ -147,12 +147,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8670aacc9070692522816494fd7703d079763d2a",
+            "blob": "6ebb200020acfc5c807c9619d18ce2d89b4fb555",
             "content": "sha256:e3c72ae438028c9730b62b5f0f0c9dc9bbba52cfee90d1e749d6160af5fff97c",
             "locator": {
-              "end": 145,
+              "end": 146,
               "kind": "line_range",
-              "start": 139
+              "start": 140
             },
             "path": "mcp/src/agents_remember/providers/settings.py"
           },
@@ -160,12 +160,12 @@
         },
         {
           "anchor": {
-            "blob": "8670aacc9070692522816494fd7703d079763d2a",
+            "blob": "6ebb200020acfc5c807c9619d18ce2d89b4fb555",
             "content": "sha256:c41b044188e0f74c442582ca8551b77a6ced32e3d8f3275560afa03392596ac3",
             "locator": {
-              "end": 312,
+              "end": 313,
               "kind": "line_range",
-              "start": 306
+              "start": 307
             },
             "path": "mcp/src/agents_remember/providers/settings.py"
           },
@@ -653,12 +653,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1c2dfb4f0f87317da6302be2ab2a2cb173460c1d",
+            "blob": "fbc24d6811b722123b1235591e8a5d01ed6a04c9",
             "content": "sha256:c49482e1392005a1d4105aa1077df95f426e690642b52eea93c95b90b3586a79",
             "locator": {
-              "end": 62,
+              "end": 58,
               "kind": "line_range",
-              "start": 59
+              "start": 55
             },
             "path": "mcp/src/agents_remember/install/runtime.py"
           },
@@ -737,12 +737,12 @@
         },
         {
           "anchor": {
-            "blob": "b0d7382b4819faead86b68a4f342dbe0defbeebc",
+            "blob": "9497a2a6d77f0ed77aecb6974b68c559795a7bbd",
             "content": "sha256:406f87f15ce148145e4262e6b00a47abb1430a2d305a0ee94b24bbb10bf6b654",
             "locator": {
-              "end": 255,
+              "end": 178,
               "kind": "line_range",
-              "start": 255
+              "start": 178
             },
             "path": "skills/c-04-retrieval-strategy-router/SKILL.md"
           },
@@ -1060,12 +1060,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3e6cf4595b45bd9657a72f1ec7c6c14acac25a9b",
+            "blob": "71244a690a5bb61ebaabab3ab6c04f7a0a57e2f5",
             "content": "sha256:10504dfc6142bea874588a95b095a471fb2fe64d00aa13f21acbe842d6f73baa",
             "locator": {
-              "end": 525,
+              "end": 521,
               "kind": "line_range",
-              "start": 525
+              "start": 521
             },
             "path": "skills/c-09-git-worktree-manager/SKILL.md"
           },
@@ -1114,12 +1114,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b0d7382b4819faead86b68a4f342dbe0defbeebc",
+            "blob": "9497a2a6d77f0ed77aecb6974b68c559795a7bbd",
             "content": "sha256:2323579f171d497442f4be347cd62cd83f5dfcc289d765477e54094c5cd17a5c",
             "locator": {
-              "end": 234,
+              "end": 157,
               "kind": "line_range",
-              "start": 234
+              "start": 157
             },
             "path": "mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md"
           },
@@ -1186,12 +1186,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b0d7382b4819faead86b68a4f342dbe0defbeebc",
+            "blob": "9497a2a6d77f0ed77aecb6974b68c559795a7bbd",
             "content": "sha256:e86958c8e67c3a377f785c52f764af1aae01110083a6ab022ecb53d63fdcb90d",
             "locator": {
-              "end": 218,
+              "end": 141,
               "kind": "line_range",
-              "start": 218
+              "start": 141
             },
             "path": "skills/c-04-retrieval-strategy-router/SKILL.md"
           },
@@ -1276,12 +1276,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8216517a6b46f398e278ef4cb431f4ddc445a7f6",
+            "blob": "c6b847c5c7627c6094bd425abb7559f7ae21e43e",
             "content": "sha256:3e0d284e7352197b7a755cc6479812368c704f6581caeb736137d6968202f96b",
             "locator": {
-              "end": 104,
+              "end": 102,
               "kind": "line_range",
-              "start": 104
+              "start": 102
             },
             "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md"
           },
@@ -1294,12 +1294,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b0d7382b4819faead86b68a4f342dbe0defbeebc",
+            "blob": "9497a2a6d77f0ed77aecb6974b68c559795a7bbd",
             "content": "sha256:0e6ea027256d8995280cdaf4406d1cd2c748524b62e9b46b90a35b903fccb9da",
             "locator": {
-              "end": 244,
+              "end": 167,
               "kind": "line_range",
-              "start": 244
+              "start": 167
             },
             "path": "mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md"
           },
@@ -1802,12 +1802,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b0d7382b4819faead86b68a4f342dbe0defbeebc",
+            "blob": "9497a2a6d77f0ed77aecb6974b68c559795a7bbd",
             "content": "sha256:f41a923914b71b2a332f28fc8a608b95adfc57782aa46c52307916ae4ea93706",
             "locator": {
-              "end": 173,
+              "end": 96,
               "kind": "line_range",
-              "start": 173
+              "start": 96
             },
             "path": "mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md"
           },
@@ -1820,12 +1820,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b0d7382b4819faead86b68a4f342dbe0defbeebc",
+            "blob": "9497a2a6d77f0ed77aecb6974b68c559795a7bbd",
             "content": "sha256:f41a923914b71b2a332f28fc8a608b95adfc57782aa46c52307916ae4ea93706",
             "locator": {
-              "end": 173,
+              "end": 96,
               "kind": "line_range",
-              "start": 173
+              "start": 96
             },
             "path": "mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md"
           },
@@ -2061,6 +2061,22 @@
         }
       ]
     },
+    "309": {
+      "note": "Worktree bootstrap consumes the calling root's lock and source, with explicit replacement and successful-backup removal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "785b03997d6bda8c57fe4b2270eb8623f2756bfa",
+            "content": "sha256:ea2908f466435c3212f0aee21a96ad0608f5463a52671eacc2ecc5b59534df94",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "scripts/bootstrap-mcp-venv.sh"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "31": {
       "note": "The order declares `certification` between `models` and `controlplane`.",
       "targets": [
@@ -2087,6 +2103,24 @@
               "start": 105
             },
             "path": "layers.toml"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "310": {
+      "note": "Generic worker inputs point to tool notes and require the actual interpreter in run records.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "55f0b87c1a8f74e894bfe8a1fdf38f0018662813",
+            "content": "sha256:1e546a9c150fa884bdb29ec9e0659cc43d21acb34fa93743b9253dd0713cd856",
+            "locator": {
+              "end": 50,
+              "kind": "line_range",
+              "start": 47
+            },
+            "path": "skills/l-01-agent-lifecycles/templates/worker-brief.md"
           },
           "kind": "code"
         }
@@ -2258,12 +2292,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b0d7382b4819faead86b68a4f342dbe0defbeebc",
+            "blob": "9497a2a6d77f0ed77aecb6974b68c559795a7bbd",
             "content": "sha256:29d1e5f5d4bd57331ba0ab76c2165ca5519a3b74c7aa4dbae0cc801be1e2a41e",
             "locator": {
-              "end": 242,
+              "end": 165,
               "kind": "line_range",
-              "start": 234
+              "start": 157
             },
             "path": "skills/c-04-retrieval-strategy-router/SKILL.md"
           },
@@ -2832,7 +2866,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e3d31273a3274cc4e9f7d744cb4a33adf2d72b36",
+            "blob": "600d957fbae19a9fa062ba008b9f3ecaa8783b9b",
             "content": "sha256:0b78b88c587e579b0bd5cf3dad8acabfaa6f93c5d66dbb9748bdf2d0a1da2982",
             "locator": {
               "end": 77,
@@ -2850,7 +2884,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bfcc41ae6043eb3d94e95c89af39f7d55715817a",
+            "blob": "4f2a56a9bd6cfab06353e5c8fc4206ad08966dab",
             "content": "sha256:9870afeebbc17ba8d42b43355df0733ba20f2e1b8edeab0ed21eb1f7855e449f",
             "locator": {
               "end": 15,
@@ -2863,7 +2897,7 @@
         },
         {
           "anchor": {
-            "blob": "bfcc41ae6043eb3d94e95c89af39f7d55715817a",
+            "blob": "4f2a56a9bd6cfab06353e5c8fc4206ad08966dab",
             "content": "sha256:3b514cfb3c68949d1e6d0573e52c68270da03fccbab4b2cbd35a86d33c170f22",
             "locator": {
               "end": 89,

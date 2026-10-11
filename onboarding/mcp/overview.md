@@ -6,6 +6,13 @@ The current source facts below replace the former operative inventory. The separ
 
 - Retrieval doctrine now uses onboarding/route indexes and harness-native search, not CGC/GrepAI.
 
+The packaged worker brief delegates candidate setup to repository tool notes: build the code
+worktree's own environment, run candidate checks in it, disclose a missing build command and
+record the interpreter actually used. This does not replace the landed tool server or memory CLI
+with the candidate, alter the shared runtime pin, or make a focused test a certification result.
+
+- The packaged candidate-environment input delegates setup to repository tool notes and records the used interpreter. [286]
+
 ### Superseded inventory
 
 - Pre-repair card claim: Current route context says lifecycle settings are generated from enabled MCP providers. This is superseded archival wording, not a current prescription.
