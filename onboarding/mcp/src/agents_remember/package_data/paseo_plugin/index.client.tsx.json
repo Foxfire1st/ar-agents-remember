@@ -3,7 +3,26 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "a2001d6e520b502e337614bca40b6d88a344ff78",
+        "blob": "7a911176ca4d33e489181a9a449033e8159c3178",
+        "content": "sha256:cadfc8a26cf3200125a3bd1f6933210b113f3d22140941ac5f6f22f5d7e6bc2f",
+        "locator": {
+          "end": 45,
+          "kind": "line_range",
+          "start": 45
+        }
+      },
+      "id": "RLZ-KH1XR2",
+      "invariant": "INV-0TCWT9",
+      "origin": {
+        "handoffEntry": "MIK-R123@v1:sentences-0.11.1",
+        "leaf": "260928-MIK-L123"
+      },
+      "rationale": "The supported-navigation comment pins the confirmed server release.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "7a911176ca4d33e489181a9a449033e8159c3178",
         "content": "sha256:2435dd76eddda2e36714e64353544bafd0588204102d720d76d5f8fbb6ffc0d9",
         "locator": {
           "kind": "symbol",
@@ -20,6 +39,39 @@
       "role": "primary-authority"
     }
   ],
-  "references": {},
+  "references": {
+    "1": {
+      "note": "The supported screen forwards the requested agent alone, or the workspace, through its native navigation prop.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7a911176ca4d33e489181a9a449033e8159c3178",
+            "content": "sha256:2435dd76eddda2e36714e64353544bafd0588204102d720d76d5f8fbb6ffc0d9",
+            "locator": {
+              "kind": "symbol",
+              "name": "OpenTarget"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The entry contributes the theme/open screen and delegates the web page and typed embed-list RPC to the client helper.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7a911176ca4d33e489181a9a449033e8159c3178",
+            "content": "sha256:63f9553a6aebbe56eb3ff37576b0426d198157245e0b5cbcba931f64545ee0d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "contribute"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
   "schema": "ar-onboarding-file/v1"
 }

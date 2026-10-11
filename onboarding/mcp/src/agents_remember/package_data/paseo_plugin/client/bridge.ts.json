@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "66f63b526cfeef92f3048946ce23151a0e05a04b",
-        "content": "sha256:7b4a0e79c9da07da0586bbebc998f4c35b0a992f810acadc29f9170977f8bf44",
+        "blob": "ff4987d93eae4d0753859460c919930528520f63",
+        "content": "sha256:60216f4e71232be40f8204b615b7082c2b80e50fa5a7b80ea6bf49691cb8f57a",
         "locator": {
           "kind": "symbol",
           "name": "installBridge"
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "66f63b526cfeef92f3048946ce23151a0e05a04b",
+        "blob": "ff4987d93eae4d0753859460c919930528520f63",
         "content": "sha256:38a4834dc2dba60ca9b9146a51899241bc6de67efa6968a9f896939865129db7",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "66f63b526cfeef92f3048946ce23151a0e05a04b",
+        "blob": "ff4987d93eae4d0753859460c919930528520f63",
         "content": "sha256:569e5af472233cc7c4add15ef13ead26bdbcbd417434a8d5698bd5f25c5dcde7",
         "locator": {
           "kind": "symbol",
@@ -57,8 +57,8 @@
     },
     {
       "anchor": {
-        "blob": "66f63b526cfeef92f3048946ce23151a0e05a04b",
-        "content": "sha256:7b4a0e79c9da07da0586bbebc998f4c35b0a992f810acadc29f9170977f8bf44",
+        "blob": "ff4987d93eae4d0753859460c919930528520f63",
+        "content": "sha256:60216f4e71232be40f8204b615b7082c2b80e50fa5a7b80ea6bf49691cb8f57a",
         "locator": {
           "kind": "symbol",
           "name": "installBridge"
@@ -75,8 +75,27 @@
     },
     {
       "anchor": {
-        "blob": "66f63b526cfeef92f3048946ce23151a0e05a04b",
-        "content": "sha256:7b4a0e79c9da07da0586bbebc998f4c35b0a992f810acadc29f9170977f8bf44",
+        "blob": "ff4987d93eae4d0753859460c919930528520f63",
+        "content": "sha256:e254a7d83e9d0c46f8ca2487305e131b228a772c4f0f4d238b0d70e7073b3641",
+        "locator": {
+          "end": 262,
+          "kind": "line_range",
+          "start": 261
+        }
+      },
+      "id": "RLZ-B533QM",
+      "invariant": "INV-0TCWT9",
+      "origin": {
+        "handoffEntry": "MIK-R123@v1:sentences-0.11.1",
+        "leaf": "260928-MIK-L123"
+      },
+      "rationale": "This exact comment extent names the selected Paseo0.11.1 release and web-build identifier. It does not bind the separate re-read/chat-seen statement at271-273, and supplies no recorded browser assertion.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "ff4987d93eae4d0753859460c919930528520f63",
+        "content": "sha256:60216f4e71232be40f8204b615b7082c2b80e50fa5a7b80ea6bf49691cb8f57a",
         "locator": {
           "kind": "symbol",
           "name": "installBridge"
@@ -93,7 +112,7 @@
     },
     {
       "anchor": {
-        "blob": "66f63b526cfeef92f3048946ce23151a0e05a04b",
+        "blob": "ff4987d93eae4d0753859460c919930528520f63",
         "content": "sha256:6736f96eb1e1da16ab9ba899639e926ef2efc84411913ea49f00569ee459db9a",
         "locator": {
           "kind": "symbol",
@@ -111,7 +130,7 @@
     },
     {
       "anchor": {
-        "blob": "66f63b526cfeef92f3048946ce23151a0e05a04b",
+        "blob": "ff4987d93eae4d0753859460c919930528520f63",
         "content": "sha256:dc2febbb6af49e5234bfc30e74df9fc6cb40241d185d0f37c39eab80914bbafa",
         "locator": {
           "kind": "symbol",
@@ -129,7 +148,7 @@
     },
     {
       "anchor": {
-        "blob": "66f63b526cfeef92f3048946ce23151a0e05a04b",
+        "blob": "ff4987d93eae4d0753859460c919930528520f63",
         "content": "sha256:3675faa5b02f7fffe24de8f89ffd0b72d0a388f953ce1288dd1c735677af2bb4",
         "locator": {
           "kind": "symbol",
@@ -147,8 +166,8 @@
     },
     {
       "anchor": {
-        "blob": "66f63b526cfeef92f3048946ce23151a0e05a04b",
-        "content": "sha256:7b4a0e79c9da07da0586bbebc998f4c35b0a992f810acadc29f9170977f8bf44",
+        "blob": "ff4987d93eae4d0753859460c919930528520f63",
+        "content": "sha256:60216f4e71232be40f8204b615b7082c2b80e50fa5a7b80ea6bf49691cb8f57a",
         "locator": {
           "kind": "symbol",
           "name": "installBridge"
@@ -165,8 +184,8 @@
     },
     {
       "anchor": {
-        "blob": "66f63b526cfeef92f3048946ce23151a0e05a04b",
-        "content": "sha256:7b4a0e79c9da07da0586bbebc998f4c35b0a992f810acadc29f9170977f8bf44",
+        "blob": "ff4987d93eae4d0753859460c919930528520f63",
+        "content": "sha256:60216f4e71232be40f8204b615b7082c2b80e50fa5a7b80ea6bf49691cb8f57a",
         "locator": {
           "kind": "symbol",
           "name": "installBridge"
@@ -183,8 +202,8 @@
     },
     {
       "anchor": {
-        "blob": "66f63b526cfeef92f3048946ce23151a0e05a04b",
-        "content": "sha256:7b4a0e79c9da07da0586bbebc998f4c35b0a992f810acadc29f9170977f8bf44",
+        "blob": "ff4987d93eae4d0753859460c919930528520f63",
+        "content": "sha256:60216f4e71232be40f8204b615b7082c2b80e50fa5a7b80ea6bf49691cb8f57a",
         "locator": {
           "kind": "symbol",
           "name": "installBridge"
@@ -201,7 +220,7 @@
     },
     {
       "anchor": {
-        "blob": "66f63b526cfeef92f3048946ce23151a0e05a04b",
+        "blob": "ff4987d93eae4d0753859460c919930528520f63",
         "content": "sha256:3f61656bb07a906a7620eb85454f8c4871076c905c10ab0f3ceceaf1a74fdb0a",
         "locator": {
           "kind": "symbol",
@@ -216,8 +235,127 @@
       },
       "rationale": "Requires both exact origin and the actual parent window for inbound dashboard commands.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "ff4987d93eae4d0753859460c919930528520f63",
+        "content": "sha256:4d0b85612cbb056de0c4af30dbed5e100621c7e70deb255cbc9765d2958f6974",
+        "locator": {
+          "end": 15,
+          "kind": "line_range",
+          "start": 15
+        }
+      },
+      "id": "RLZ-YP5PVQ",
+      "invariant": "INV-0TCWT9",
+      "origin": {
+        "handoffEntry": "MIK-R123@v1:sentences-0.11.1",
+        "leaf": "260928-MIK-L123"
+      },
+      "rationale": "The navigation comment pins which server release resolveNavigateToAgent was confirmed on.",
+      "role": "presentation"
     }
   ],
-  "references": {},
+  "references": {
+    "1": {
+      "note": "The embed list must pair the parent's origin with this page's serving origin.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ff4987d93eae4d0753859460c919930528520f63",
+            "content": "sha256:3675faa5b02f7fffe24de8f89ffd0b72d0a388f953ce1288dd1c735677af2bb4",
+            "locator": {
+              "kind": "symbol",
+              "name": "isListedParent"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Inbound commands require the exact listed parent's origin and window.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ff4987d93eae4d0753859460c919930528520f63",
+            "content": "sha256:3f61656bb07a906a7620eb85454f8c4871076c905c10ab0f3ceceaf1a74fdb0a",
+            "locator": {
+              "kind": "symbol",
+              "name": "isParentMessage"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The bridge owns current open generations, selection intersection, display confirmation and teardown.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ff4987d93eae4d0753859460c919930528520f63",
+            "content": "sha256:60216f4e71232be40f8204b615b7082c2b80e50fa5a7b80ea6bf49691cb8f57a",
+            "locator": {
+              "kind": "symbol",
+              "name": "installBridge"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The pinned display gate checks route, stored tab identity and visible chat before acknowledging; its dated native observations and qualification limits are separate from that executable predicate.\n\nAnchor: `installBridge`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ff4987d93eae4d0753859460c919930528520f63",
+            "content": "sha256:c4961898bd1bdffc1200002e95a0d6642bb7a5b37a952f9e45ae8dab3fceae6a",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Unloaded, unknown and hidden DOM IDs are not published; plural visible IDs are intersected after load and recomputed on SDK removals, reconnect snapshots and teardown.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7b08eb07c65d6d5a2f28e34173ee6e003c53dfec",
+            "content": "sha256:eff7158b8daa84e87c948353c87e9f27a2133095b96ae0d9aab47d87f410f13c",
+            "locator": {
+              "end": 321,
+              "kind": "line_range",
+              "start": 292
+            },
+            "path": "dashboard/src/cockpit/paseoHierarchy.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Deferred lookup is ignored after tab/relation changes; a still-visible split-pane caller can open its current parent, and missing/archived parents or root transitions do not replace the child.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7b08eb07c65d6d5a2f28e34173ee6e003c53dfec",
+            "content": "sha256:890e7bb3fc1c80fb03108cec7db2e3c10d14fd115a4bbc51691de6ac00b39974",
+            "locator": {
+              "end": 233,
+              "kind": "line_range",
+              "start": 181
+            },
+            "path": "dashboard/src/cockpit/paseoHierarchy.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
   "schema": "ar-onboarding-file/v1"
 }

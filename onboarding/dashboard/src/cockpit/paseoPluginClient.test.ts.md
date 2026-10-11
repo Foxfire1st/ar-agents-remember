@@ -20,10 +20,8 @@ The old initial-open sidebar claim is superseded. Plain-page/SDK fixtures do not
 
 The current source and test assertions below establish the documented ownership; test citations do not claim a rerun in this pass.
 
-| Finding | Anchor | Source at frozen tree |
-| --- | --- | --- |
-| Current source owner or exact assertion described above. | `one reload per page load` | `dashboard/src/cockpit/paseoPluginClient.test.ts:63-93` |
-| Current source owner or exact assertion described above. | `who frames the page` | `dashboard/src/cockpit/paseoPluginClient.test.ts:227-257` |
-| Current source owner or exact assertion described above. | `starting the client part` | `dashboard/src/cockpit/paseoPluginClient.test.ts:735-765` |
-| Saves standalone look/sidebar values before storing the AR appearance, and keeps earlier saved values when the last recorded writer was a frame. | `applyEmbedLook` | `mcp/src/agents_remember/package_data/paseo_plugin/client/look.ts:158-182` |
-| Waits for an exact embed-list match before trusting a new parent and drops a previously trusted bridge when the refreshed list excludes it. | `startClientPart` | `mcp/src/agents_remember/package_data/paseo_plugin/client/start.ts:26-88` |
+- A page is replaced once and the resulting page consumes its reload flag without replacing itself again. [1]
+- Parent detection, exact origin pairing and the actual parent window are asserted separately from top-level or lookalike pages. [2]
+- The client-part cases distinguish standalone, listed and unlisted frames, waiting for the embed list before opening the trusted channel. [3]
+- Saves standalone look/sidebar values before storing the AR appearance, and keeps earlier saved values when the last recorded writer was a frame. [4]
+- Waits for an exact embed-list match before trusting a new parent and drops a previously trusted bridge when the refreshed list excludes it. [5]

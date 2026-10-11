@@ -16,14 +16,14 @@ Remembered user values are persisted before AR overwrite. Exact writer/seen/time
 
 Storage keys, whole-app writes, the host toggle's aria-expanded and the shared clock are pinned unsupported dependencies. The migration never touches the list on later loads and never repeats its automatic click. Styling/polling literals stay local; no new compatibility branch is introduced.
 
+The early menu-click guard uses a structural optional `closest` probe rather than the DOM library's `Element` type, because this plugin package compiles without that library. It keeps the same null and optional-method runtime checks; the type-only substitution does not change who owns the sidebar choice.
+
 ## Evidence
 
 The current source and test assertions below establish the documented ownership; test citations do not claim a rerun in this pass.
 
-| Finding | Anchor | Source at frozen tree |
-| --- | --- | --- |
-| Current source owner or exact assertion described above. | `applyEmbedLook` | `mcp/src/agents_remember/package_data/paseo_plugin/client/look.ts:160-184` |
-| Current source owner or exact assertion described above. | `restoreStandaloneLook` | `mcp/src/agents_remember/package_data/paseo_plugin/client/look.ts:197-236` |
-| Current source owner or exact assertion described above. | `recordAppWrite` | `mcp/src/agents_remember/package_data/paseo_plugin/client/look.ts:244-265` |
-| Current source owner or exact assertion described above. | `openNativeSidebarOnce` | `mcp/src/agents_remember/package_data/paseo_plugin/client/look.ts:272-315` |
-| The standalone preference is persisted before the application settings can be overwritten with the embedded appearance. | `never overwrites the user's look before it is kept` | `dashboard/src/cockpit/paseoPluginLook.test.ts:86-97` |
+- Current source owner or exact assertion described above. [1]
+- Current source owner or exact assertion described above. [2]
+- Current source owner or exact assertion described above. [3]
+- Current source owner or exact assertion described above. [4]
+- The standalone preference is persisted before the application settings can be overwritten with the embedded appearance. [5]

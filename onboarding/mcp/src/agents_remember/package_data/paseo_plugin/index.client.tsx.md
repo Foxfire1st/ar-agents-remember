@@ -20,7 +20,5 @@ Dashboard tests/typechecks helper modules; entry/server compilation is separate 
 
 The current source and test assertions below establish the documented ownership; test citations do not claim a rerun in this pass.
 
-| Finding | Anchor | Source at frozen tree |
-| --- | --- | --- |
-| Current source owner or exact assertion described above. | `OpenTarget` | `mcp/src/agents_remember/package_data/paseo_plugin/index.client.tsx:45-75` |
-| Current source owner or exact assertion described above. | `contribute` | `mcp/src/agents_remember/package_data/paseo_plugin/index.client.tsx:55-76` |
+- The supported screen forwards the requested agent alone, or the workspace, through its native navigation prop. [1]
+- The entry contributes the theme/open screen and delegates the web page and typed embed-list RPC to the client helper. [2]

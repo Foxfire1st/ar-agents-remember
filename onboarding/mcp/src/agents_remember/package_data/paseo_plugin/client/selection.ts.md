@@ -16,12 +16,12 @@ workspace-tab-agent_<id> plus aria-selected, positive bounds and checkVisibility
 
 This is one explicitly unsupported pinned DOM dependency; hidden caches, focus, color and URL cannot establish native selection. The fan-out adds no second identity parser and retains no earlier selection.
 
+Its header identifies Paseo 0.11.1 as the release whose tab signs were read. That version attribution is not a compatibility promise for later releases or a claim that a recorded browser test exercised every selection path.
+
 ## Evidence
 
 The current source and test assertions below establish the documented ownership; test citations do not claim a rerun in this pass.
 
-| Finding | Anchor | Source at frozen tree |
-| --- | --- | --- |
-| Current source owner or exact assertion described above. | `watchSelectedChats` | `mcp/src/agents_remember/package_data/paseo_plugin/client/selection.ts:12-41` |
-| Current source owner or exact assertion described above. | `checkVisibility` | `mcp/src/agents_remember/package_data/paseo_plugin/client/selection.ts:18-41` |
-| Unloaded, unknown and hidden DOM IDs are not published; plural visible IDs are intersected after load and recomputed on SDK removals, reconnect snapshots and teardown. | `validates visible selections against current SDK IDs, recovering after catalog load and clearing removed or reconnected IDs` | `dashboard/src/cockpit/paseoHierarchy.test.ts:244-274` |
+- The one publisher observes changed visible selections and releases its observers/listeners on teardown. [1]
+- Candidate identities come from selected tab markers with positive bounds and checkVisibility, not focus or URL. [2]
+- Unloaded, unknown and hidden DOM IDs are not published; plural visible IDs are intersected after load and recomputed on SDK removals, reconnect snapshots and teardown. [3]

@@ -1,13 +1,52 @@
 {
   "path": "dashboard/src/dev/FakePaseoHost.tsx",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "53e1143222b86e5440474c01f85daaff2896c07c",
+        "content": "sha256:bb4cc6a75b9dcdc539056a6084c3919bc210b3a8704fd8ddf34157cabd8654e1",
+        "locator": {
+          "end": 8,
+          "kind": "line_range",
+          "start": 7
+        }
+      },
+      "id": "RLZ-4GYJ06",
+      "invariant": "INV-0TCWT9",
+      "origin": {
+        "handoffEntry": "MIK-R123@v1:sentences-0.11.1",
+        "leaf": "260928-MIK-L123"
+      },
+      "rationale": "The dev fake's navigation model pins the release truth it follows.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "53e1143222b86e5440474c01f85daaff2896c07c",
+        "content": "sha256:3baf427123d4616f83a628e7d51e5edcc6f3c08811f106eb2f578c9835988e1c",
+        "locator": {
+          "end": 80,
+          "kind": "line_range",
+          "start": 80
+        }
+      },
+      "id": "RLZ-D48XR3",
+      "invariant": "INV-0TCWT9",
+      "origin": {
+        "handoffEntry": "MIK-R123@v1:sentences-0.11.1",
+        "leaf": "260928-MIK-L123"
+      },
+      "rationale": "Second navigation-truth comment in the same fake, same confirmation.",
+      "role": "support"
+    }
+  ],
   "references": {
     "1": {
       "note": "The page runs the real plugin client part against the stubbed two-workspace SDK.",
       "targets": [
         {
           "anchor": {
-            "blob": "5dff4706457149e8e5aabf35af9878a3e8a8b0b6",
+            "blob": "53e1143222b86e5440474c01f85daaff2896c07c",
             "content": "sha256:7cea2441050e26f33a024ea5169233cde9d604f6fa6a573e1d55bd742527d81c",
             "locator": {
               "kind": "symbol",
@@ -23,8 +62,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5dff4706457149e8e5aabf35af9878a3e8a8b0b6",
-            "content": "sha256:59f8b033dd6300205b4c692e5d5df7e1cf41b548588ddde908c4f6324cc49b1b",
+            "blob": "53e1143222b86e5440474c01f85daaff2896c07c",
+            "content": "sha256:cea66ea9daa0e4f089242c9e07ded96f8e773c625b5acf9b5c85fe1931700946",
             "locator": {
               "kind": "symbol",
               "name": "createFakeClient"

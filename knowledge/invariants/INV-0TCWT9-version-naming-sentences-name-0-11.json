@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Source comments, the plugin adapter, fixture labels and process-stop description jointly date the compatibility claims; relabeling a pin as a runtime confirmation would mislead later upgrades into trusting an unexercised display or message path."
+  },
+  "applicability": "Version attribution in host/plugin source explanations and source-derived fixtures when a build moves its host pin.",
+  "conditions": [
+    "Name the release actually examined for each claim, preserving prior confirmation dates where no repeated check exists.",
+    "Separate package/source inspection, a visible chat, recorded assertion, native-host send and actual AR message-route evidence."
+  ],
+  "exclusions": [
+    "No MIK-R121 recorded browser-test claim on0.11.1: F02 is seen, not asserted.",
+    "F06 AR idle/in-turn message bars and denied-once proof remain not met/not shown; no current host-kink removal or model-catalog availability is inferred."
+  ],
+  "id": "INV-0TCWT9",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "R8 closeout, new freeze (base 120fc025b740e57522d1c1189cdd63524f6543f0, tree 64e80014cd836e724fec2d9bd845b3454ec46a51, change 66521585be77e1b61d5ab5ddf4c76b83462009c860823778853d3b977fbb9adb; ONE comment sentence in client/bridge.ts:273, no behavior). F04 three lines added as record (each unchanged; bridge lines own-read, release anchors from architect check). F02 seen-not-asserted; F06 not met (pin lands without). Review complete, no sixth round (architect own check, D208)."
+      ],
+      "path": "curator-writer-projection.json"
+    },
+    "handoffEntry": "MIK-R123@v1:sentences-0.11.1",
+    "leaf": "260928-MIK-L123",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Version-naming sentences name 0.11.1 where the confirmation was repeated on the new release, keep the confirmation version where it was not, and describe the 0.11.1 boot-identity predicate truthfully.",
+  "status": "proposed",
+  "supersedes": []
+}

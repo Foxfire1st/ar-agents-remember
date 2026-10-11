@@ -1,0 +1,1000 @@
+{
+  "closed": true,
+  "leaf": "260928-MIK-L123",
+  "rows": [
+    {
+      "disposition": "no_impact",
+      "id": "ROW-19SFGX",
+      "items": [
+        "sha256:bb522f1842d0dbbcf1c4e627dd93bb6e81e84202a9fc362230450b4c9931e8bc"
+      ],
+      "reason": "Only the upstream-stop explanation changes. Product process/home proof and start-only dashboard supervision remain; boot-id fallback adds no install, configure or reload authority to readers.",
+      "subject": "onboarding:mcp/src/agents_remember/serving/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "ff4987d93eae4d0753859460c919930528520f63",
+            "content": "sha256:60216f4e71232be40f8204b615b7082c2b80e50fa5a7b80ea6bf49691cb8f57a",
+            "locator": {
+              "kind": "symbol",
+              "name": "installBridge"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+          },
+          "before": {
+            "blob": "66f63b526cfeef92f3048946ce23151a0e05a04b",
+            "content": "sha256:7b4a0e79c9da07da0586bbebc998f4c35b0a992f810acadc29f9170977f8bf44",
+            "locator": {
+              "kind": "symbol",
+              "name": "installBridge"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+          },
+          "id": "RLZ-W98CK3"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-4954SE",
+      "items": [
+        "sha256:6c4e55d2af3ff5c68905423b1841d49553a7c96b8ab42844c05258e63848e0d1"
+      ],
+      "reason": "Preserves the complete stored intent and entry set: the installBridge delta changes only release/source attribution comments, not trusted origins, selection intersection, Parent/lifetime checks, page isolation or the shown predicate. Re-anchor existing entries on the actual candidate; no runtime proof is claimed.",
+      "revision": 1,
+      "subject": "INV-0286SX"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-505Q2K",
+      "items": [
+        "sha256:d1dbe36adc1490b57b01c1e2b90182db3ad3603e1e22b6e5c0c8d34c96d55046"
+      ],
+      "reason": "The hunk updates only the documented release attribution to0.11.1. It changes no native-selection, navigation or bridge predicate; actual runtime qualification remains separately limited under D208/F02/F06. The local pin/comment is not a new executable invariant.",
+      "subject": "hunk:sha256:d1dbe36adc1490b57b01c1e2b90182db3ad3603e1e22b6e5c0c8d34c96d55046"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-4S93MX",
+          "revision": 1
+        },
+        {
+          "id": "INV-7D9QDG",
+          "revision": 1
+        },
+        {
+          "id": "INV-7QV5CQ",
+          "revision": 1
+        },
+        {
+          "id": "INV-A3AK6R",
+          "revision": 1
+        },
+        {
+          "id": "INV-QS9SRX",
+          "revision": 1
+        },
+        {
+          "id": "INV-STRQX4",
+          "revision": 1
+        },
+        {
+          "id": "INV-WEZ24E",
+          "revision": 1
+        },
+        {
+          "id": "INV-X60KEC",
+          "revision": 1
+        },
+        {
+          "id": "INV-XQMXT2",
+          "revision": 1
+        },
+        {
+          "id": "INV-YJ2H50",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-60ATGR",
+      "items": [
+        "sha256:5642ae61bfc67e4ae08a7c054e97498207ea1bdb3388b2e20c02ab25fe0ea855"
+      ],
+      "reason": "Examined all ten current members and the family guarantee/routes/admission, including untouched launch/rail/sidebar/storage owners. The host pin and structural type/comment changes add no dashboard navigation, alter no user sidebar ownership, restore no dead Parent control and change no shared frame or page-mode policy. F02/F06 are qualification limitations, not a rewritten guarantee. Membership/routes/guarantee stay at revision2; the version-specific pin and attribution records are not grouped into this navigation family.",
+      "revision": 2,
+      "subject": "FAM-8GST1A"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-6QH5ZN",
+      "items": [
+        "sha256:72f954746be0b968c48caede60a098ee8819c794ed84d751149a5bacf7ea7f1a"
+      ],
+      "reason": "The hunk updates only the documented release attribution to0.11.1. It changes no native-selection, navigation or bridge predicate; actual runtime qualification remains separately limited under D208/F02/F06. The local pin/comment is not a new executable invariant.",
+      "subject": "hunk:sha256:72f954746be0b968c48caede60a098ee8819c794ed84d751149a5bacf7ea7f1a"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R123",
+          "packet": "requirements/MIK-R123-v1-the-products-host-is-paseo-0-11-1.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "16a71f6d77830e0f962c81ab013cbbf98166c0a7",
+            "content": "sha256:36619c9d8e1b0de03f22fa80021619e453a171348c64e63977d783531b929eb0",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 3
+            },
+            "path": "mcp/src/agents_remember/serving/paseo/paseo_process_record.py"
+          },
+          "before": "absent",
+          "id": "RLZ-0PMK4H"
+        },
+        {
+          "after": {
+            "blob": "53e1143222b86e5440474c01f85daaff2896c07c",
+            "content": "sha256:bb4cc6a75b9dcdc539056a6084c3919bc210b3a8704fd8ddf34157cabd8654e1",
+            "locator": {
+              "end": 8,
+              "kind": "line_range",
+              "start": 7
+            },
+            "path": "dashboard/src/dev/FakePaseoHost.tsx"
+          },
+          "before": "absent",
+          "id": "RLZ-4GYJ06"
+        },
+        {
+          "after": {
+            "blob": "61f51e32545075f0c3a400773e296c06920f7044",
+            "content": "sha256:ac52629fbaedd46ef0da6cb38dacde606e28cfad5c032b06dc4c2c8874f66d0c",
+            "locator": {
+              "end": 3,
+              "kind": "line_range",
+              "start": 3
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/selection.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-4K7D1K"
+        },
+        {
+          "after": {
+            "blob": "d5a0d19746b1c82be2d5ea717faceb41b243d811",
+            "content": "sha256:5de1f247d1863d8bccc61be24e00d01530da95a636000ff36bd5ac3ae5b59b83",
+            "locator": {
+              "end": 2029,
+              "kind": "line_range",
+              "start": 2029
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": "absent",
+          "id": "RLZ-A31DQW"
+        },
+        {
+          "after": {
+            "blob": "ff4987d93eae4d0753859460c919930528520f63",
+            "content": "sha256:e254a7d83e9d0c46f8ca2487305e131b228a772c4f0f4d238b0d70e7073b3641",
+            "locator": {
+              "end": 262,
+              "kind": "line_range",
+              "start": 261
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-B533QM"
+        },
+        {
+          "after": {
+            "blob": "53e1143222b86e5440474c01f85daaff2896c07c",
+            "content": "sha256:3baf427123d4616f83a628e7d51e5edcc6f3c08811f106eb2f578c9835988e1c",
+            "locator": {
+              "end": 80,
+              "kind": "line_range",
+              "start": 80
+            },
+            "path": "dashboard/src/dev/FakePaseoHost.tsx"
+          },
+          "before": "absent",
+          "id": "RLZ-D48XR3"
+        },
+        {
+          "after": {
+            "blob": "f35554b84dfd9d05f9382dc8c85d29f138b43d9f",
+            "content": "sha256:ee3043d464cd7c79ebe0bfaa104da5f43c026a8cd18a88367ca3e8a7b843ed9a",
+            "locator": {
+              "end": 388,
+              "kind": "line_range",
+              "start": 388
+            },
+            "path": "dashboard/src/cockpit/paseoPluginClient.test.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-HT5WNG"
+        },
+        {
+          "after": {
+            "blob": "7a911176ca4d33e489181a9a449033e8159c3178",
+            "content": "sha256:cadfc8a26cf3200125a3bd1f6933210b113f3d22140941ac5f6f22f5d7e6bc2f",
+            "locator": {
+              "end": 45,
+              "kind": "line_range",
+              "start": 45
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/index.client.tsx"
+          },
+          "before": "absent",
+          "id": "RLZ-KH1XR2"
+        },
+        {
+          "after": {
+            "blob": "ff4987d93eae4d0753859460c919930528520f63",
+            "content": "sha256:4d0b85612cbb056de0c4af30dbed5e100621c7e70deb255cbc9765d2958f6974",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 15
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-YP5PVQ"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "introduce",
+      "id": "ROW-71CK0W",
+      "items": [],
+      "reason": "Records truthful release attribution across the adapter, navigation/stop explanations and fixture labels; scope preserves older confirmation dates and explicitly excludes unasserted F02, unmet F06 and unshown denial/kink claims. The sole curator projection maps the toml target1979 to2022 under the producer's post-sync clarification, never edits the original. Additive current-pair successor under Manager1110 and sealed MEMORY R1 F02: qualify RLZ-B533QM strictly to release/build labels261-262, not the reread at271-273; source/eye-seen is not a recorded assertion. Preserve all nine entry IDs, statement/scope/admission/proofs/producer originals; re-anchor the stash-only RLZ-A31DQW to the identical FakePaseo release sentence at2029 after the owner sync, not a new producer target.",
+      "revision": 1,
+      "subject": "INV-0TCWT9"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "61f51e32545075f0c3a400773e296c06920f7044",
+            "content": "sha256:e19a2d1ae40f78ba801b1d0f5341bf7edf1d2d3719f876847c4ea14d0216ded6",
+            "locator": {
+              "kind": "symbol",
+              "name": "watchSelectedChats"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/selection.ts"
+          },
+          "before": {
+            "blob": "7f35409c0ead21784b841b92101dc1bb086c6d98",
+            "content": "sha256:e19a2d1ae40f78ba801b1d0f5341bf7edf1d2d3719f876847c4ea14d0216ded6",
+            "locator": {
+              "kind": "symbol",
+              "name": "watchSelectedChats"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/selection.ts"
+          },
+          "id": "RLZ-6G1VXD"
+        },
+        {
+          "after": {
+            "blob": "ff4987d93eae4d0753859460c919930528520f63",
+            "content": "sha256:60216f4e71232be40f8204b615b7082c2b80e50fa5a7b80ea6bf49691cb8f57a",
+            "locator": {
+              "kind": "symbol",
+              "name": "installBridge"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+          },
+          "before": {
+            "blob": "66f63b526cfeef92f3048946ce23151a0e05a04b",
+            "content": "sha256:7b4a0e79c9da07da0586bbebc998f4c35b0a992f810acadc29f9170977f8bf44",
+            "locator": {
+              "kind": "symbol",
+              "name": "installBridge"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+          },
+          "id": "RLZ-9G4ASB"
+        },
+        {
+          "after": {
+            "blob": "fb9ca83fa3143598c8efeddd62aebf30e3be5a69",
+            "content": "sha256:ccebaf97a0998a6e49ca24b323b70f5a5a8b81452b343b7e47d70be8ea7f1f36",
+            "locator": {
+              "kind": "symbol",
+              "name": "onMessage"
+            },
+            "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+          },
+          "before": {
+            "blob": "fb9ca83fa3143598c8efeddd62aebf30e3be5a69",
+            "content": "sha256:ccebaf97a0998a6e49ca24b323b70f5a5a8b81452b343b7e47d70be8ea7f1f36",
+            "locator": {
+              "kind": "symbol",
+              "name": "onMessage"
+            },
+            "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+          },
+          "id": "RLZ-N3QWTS"
+        },
+        {
+          "after": {
+            "blob": "488a64d6f312cfee515a31864870bf15f9877317",
+            "content": "sha256:1a6bdc960720b7b64950acc70396a5a8d02a604419bac4a428394c2091a5b673",
+            "locator": {
+              "kind": "symbol",
+              "name": "restoreStandaloneLook"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/look.ts"
+          },
+          "before": {
+            "blob": "4e39d1a69bf0cc22669c1e5d6e0373a88101efd0",
+            "content": "sha256:1a6bdc960720b7b64950acc70396a5a8d02a604419bac4a428394c2091a5b673",
+            "locator": {
+              "kind": "symbol",
+              "name": "restoreStandaloneLook"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/look.ts"
+          },
+          "id": "RLZ-PVXBE8"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-8AAFRW",
+      "items": [
+        "sha256:c996352fe2c68ca6808f0f8bc1b261e308a3f65e04a9fc3a91bc4ff17c7e9ae9"
+      ],
+      "reason": "Preserves the complete stored intent and entry set: the installBridge delta changes only release/source attribution comments, not trusted origins, selection intersection, Parent/lifetime checks, page isolation or the shown predicate. Re-anchor existing entries on the actual candidate; no runtime proof is claimed.",
+      "revision": 1,
+      "subject": "INV-STRQX4"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "61f51e32545075f0c3a400773e296c06920f7044",
+            "content": "sha256:e19a2d1ae40f78ba801b1d0f5341bf7edf1d2d3719f876847c4ea14d0216ded6",
+            "locator": {
+              "kind": "symbol",
+              "name": "watchSelectedChats"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/selection.ts"
+          },
+          "before": {
+            "blob": "7f35409c0ead21784b841b92101dc1bb086c6d98",
+            "content": "sha256:e19a2d1ae40f78ba801b1d0f5341bf7edf1d2d3719f876847c4ea14d0216ded6",
+            "locator": {
+              "kind": "symbol",
+              "name": "watchSelectedChats"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/selection.ts"
+          },
+          "id": "RLZ-EZBH44"
+        },
+        {
+          "after": {
+            "blob": "ff4987d93eae4d0753859460c919930528520f63",
+            "content": "sha256:60216f4e71232be40f8204b615b7082c2b80e50fa5a7b80ea6bf49691cb8f57a",
+            "locator": {
+              "kind": "symbol",
+              "name": "installBridge"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+          },
+          "before": {
+            "blob": "66f63b526cfeef92f3048946ce23151a0e05a04b",
+            "content": "sha256:7b4a0e79c9da07da0586bbebc998f4c35b0a992f810acadc29f9170977f8bf44",
+            "locator": {
+              "kind": "symbol",
+              "name": "installBridge"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+          },
+          "id": "RLZ-PG0AHJ"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-A8XX0E",
+      "items": [
+        "sha256:a9fbfed93dcacb50fbd98a078e00ddfa379ff996cf09c6b383f4d20f996972fe"
+      ],
+      "reason": "Preserves the complete stored intent and entry set: the installBridge delta changes only release/source attribution comments, not trusted origins, selection intersection, Parent/lifetime checks, page isolation or the shown predicate. Re-anchor existing entries on the actual candidate; no runtime proof is claimed.",
+      "revision": 1,
+      "subject": "INV-C71CTF"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "d5a0d19746b1c82be2d5ea717faceb41b243d811",
+            "content": "sha256:d6f66d2fe5b94cf5141963e65ab1af1cbe1ba7d9e1f5a044c7a08e5cef74a3c1",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "489a86544a897d148b1853238ebae690c4a051d2",
+            "content": "sha256:831db0beaa91bafd81461531aadec2f1a05095f55ae434a3087d9856e617d53c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-GRTJG0"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-BFRYQ1",
+      "items": [
+        "sha256:4e26a6833ee4874d5aa92dc341bcde982627dc1a2bd265ce35b45c01f2cfb83d"
+      ],
+      "reason": "The invariant is already retired and remains retired: a historical union-merge account is not promoted into current intent. The whole-file catalog anchor changes only because the FakePaseo source-version label moves to0.11.1; retained consumers and lifecycle contract do not change. Owner-admitted stash composition: retain the retired statement/role/origin and refresh the whole-file anchor on the actual synced0.11.1 candidate. The old ROW-BFRYQ1 after tuple is historical; re-present its complete cover against the new paired base. No historical two-consumer detail is promoted into current intent.",
+      "revision": 1,
+      "subject": "INV-MSCRAN"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "488a64d6f312cfee515a31864870bf15f9877317",
+            "content": "sha256:2fa6e193e1e6fd4d4bc0bc6774c0f4e658eed694141e9956877cefe775a81d53",
+            "locator": {
+              "kind": "symbol",
+              "name": "openNativeSidebarOnce"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/look.ts"
+          },
+          "before": {
+            "blob": "4e39d1a69bf0cc22669c1e5d6e0373a88101efd0",
+            "content": "sha256:99b566bd250bc1597eef7158e494a7e31df6280a8b4281071e763dba4823d390",
+            "locator": {
+              "kind": "symbol",
+              "name": "openNativeSidebarOnce"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/look.ts"
+          },
+          "id": "RLZ-9Q1AQP"
+        },
+        {
+          "after": {
+            "blob": "63cdd4af0f74c96d9ea324025b176003dc6269d8",
+            "content": "sha256:732ad30d942e3371b616a1d77863a69fb72c772e1d23ff8a19a5db498b19043b",
+            "locator": {
+              "kind": "symbol",
+              "name": "bootstrapEmbed"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/load.ts"
+          },
+          "before": {
+            "blob": "63cdd4af0f74c96d9ea324025b176003dc6269d8",
+            "content": "sha256:732ad30d942e3371b616a1d77863a69fb72c772e1d23ff8a19a5db498b19043b",
+            "locator": {
+              "kind": "symbol",
+              "name": "bootstrapEmbed"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/load.ts"
+          },
+          "id": "RLZ-TZ0Y3A"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-C2CDE4",
+      "items": [
+        "sha256:7a8ea0eefc2dab9b83a8a28157465361e2c0d86bb4ce43e89b4d1161c6a6e095"
+      ],
+      "reason": "Preserves the one-time sidebar migration and user-ownership contract: Element.closest is replaced only by a structural optional-method type, with the same null/optional-call branch and no new automatic click. Existing load/migration entries retain their IDs and meaning.",
+      "revision": 1,
+      "subject": "INV-7QV5CQ"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-GREA7A",
+      "items": [
+        "sha256:7f31370f5f15fd2848d25e9c8f5ad5ada5d93ef504336e431b88eec3f5bfd7eb"
+      ],
+      "reason": "Only the two pinned native-navigation attribution comments move to0.11.1; the DEV-only two-workspace/four-agent real-bridge rig, native agent-owned workspace lookup and stall/compact controls are unchanged. No live-host or recorded assertion is claimed.",
+      "subject": "onboarding:dashboard/src/dev/FakePaseoHost.tsx"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-HJZVJQ",
+      "items": [
+        "sha256:b18ee261883c4328fc36c6274015e89bf6a3e2cdbcb49dfabf1d3303a4b60748"
+      ],
+      "reason": "The existing contract card is version-independent: one release-owned host/package/version and separately pinned Node archives. Changing only the host value to0.11.1 preserves that ownership and the existing Node evidence.",
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_host/contract.json"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-JR7X50",
+      "items": [
+        "sha256:24525506b5077231b959f58befd9a6c8e8199a2ce57c7e11076b7388e7149bb1"
+      ],
+      "reason": "Only the FakePaseo support source-version sentence changes to0.11.1 at current line2022. Artifact identity, ownership, fidelity, permanence, replacement contract and consumers do not change; catalog declarations remain accounting, never execution evidence.",
+      "subject": "onboarding:mcp/tests/evidence-lifecycle.toml"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "ff4987d93eae4d0753859460c919930528520f63",
+            "content": "sha256:60216f4e71232be40f8204b615b7082c2b80e50fa5a7b80ea6bf49691cb8f57a",
+            "locator": {
+              "kind": "symbol",
+              "name": "installBridge"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+          },
+          "before": {
+            "blob": "66f63b526cfeef92f3048946ce23151a0e05a04b",
+            "content": "sha256:7b4a0e79c9da07da0586bbebc998f4c35b0a992f810acadc29f9170977f8bf44",
+            "locator": {
+              "kind": "symbol",
+              "name": "installBridge"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+          },
+          "id": "RLZ-1P5780"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-JTM6G6",
+      "items": [
+        "sha256:162a7fa48baa309eb8808b480a549d29d06e1809e4c57d213453a206f6a73958"
+      ],
+      "reason": "Preserves the complete stored intent and entry set: the installBridge delta changes only release/source attribution comments, not trusted origins, selection intersection, Parent/lifetime checks, page isolation or the shown predicate. Re-anchor existing entries on the actual candidate; no runtime proof is claimed.",
+      "revision": 1,
+      "subject": "INV-XENPC7"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-M838J9",
+      "items": [
+        "sha256:a9efed0b0d9c6e371df38c5e4f2b2194cdfa42d6333d48a90d2447690c97f623"
+      ],
+      "reason": "The native iframe/navigation and dashboard ownership are unchanged: selected host attribution comments and the DEV rig introduce no runtime route or load-bearing entity. F02 seen-not-asserted does not alter the executable shown obligation.",
+      "subject": "onboarding:dashboard/src/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "7d5323ca23bf7ba51e9dc9bdab0ba798d5f12795",
+            "content": "sha256:7d73c6ca0c817a4eea8e25241354f5b5a6dd458722848980580458b77cb21d6c",
+            "locator": {
+              "kind": "symbol",
+              "name": "DocumentChatReadTests.test_read_filters_archived_and_missing_agents_and_keeps_document_workspaces"
+            },
+            "path": "mcp/tests/test_role_document_chats.py"
+          },
+          "before": {
+            "blob": "7d5323ca23bf7ba51e9dc9bdab0ba798d5f12795",
+            "content": "sha256:7d73c6ca0c817a4eea8e25241354f5b5a6dd458722848980580458b77cb21d6c",
+            "locator": {
+              "kind": "symbol",
+              "name": "DocumentChatReadTests.test_read_filters_archived_and_missing_agents_and_keeps_document_workspaces"
+            },
+            "path": "mcp/tests/test_role_document_chats.py"
+          },
+          "id": "PRF-TEWFNK"
+        },
+        {
+          "after": {
+            "blob": "30a4e1199324d773e4b19ec734f75103f710a5c8",
+            "content": "sha256:e7f10478f69c9621b522854511bfaa1b47d7d6169d38cb3baf719cbd473dd0dc",
+            "locator": {
+              "kind": "symbol",
+              "name": "PaseoChatFrame"
+            },
+            "path": "dashboard/src/cockpit/PaseoChatFrame.tsx"
+          },
+          "before": {
+            "blob": "30a4e1199324d773e4b19ec734f75103f710a5c8",
+            "content": "sha256:e7f10478f69c9621b522854511bfaa1b47d7d6169d38cb3baf719cbd473dd0dc",
+            "locator": {
+              "kind": "symbol",
+              "name": "PaseoChatFrame"
+            },
+            "path": "dashboard/src/cockpit/PaseoChatFrame.tsx"
+          },
+          "id": "RLZ-6CV9KK"
+        },
+        {
+          "after": {
+            "blob": "ff4987d93eae4d0753859460c919930528520f63",
+            "content": "sha256:60216f4e71232be40f8204b615b7082c2b80e50fa5a7b80ea6bf49691cb8f57a",
+            "locator": {
+              "kind": "symbol",
+              "name": "installBridge"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+          },
+          "before": {
+            "blob": "66f63b526cfeef92f3048946ce23151a0e05a04b",
+            "content": "sha256:7b4a0e79c9da07da0586bbebc998f4c35b0a992f810acadc29f9170977f8bf44",
+            "locator": {
+              "kind": "symbol",
+              "name": "installBridge"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+          },
+          "id": "RLZ-C3ZC91"
+        },
+        {
+          "after": {
+            "blob": "f22f2cbb0ddb8fbc0f9c531532d9b54837321c69",
+            "content": "sha256:bba4a3e903e9f0576a5649a3ca7187c3098e555ac5867220d34b7026bccb9886",
+            "locator": {
+              "kind": "symbol",
+              "name": "useDocumentChat"
+            },
+            "path": "dashboard/src/cockpit/document-chat/state.ts"
+          },
+          "before": {
+            "blob": "f22f2cbb0ddb8fbc0f9c531532d9b54837321c69",
+            "content": "sha256:bba4a3e903e9f0576a5649a3ca7187c3098e555ac5867220d34b7026bccb9886",
+            "locator": {
+              "kind": "symbol",
+              "name": "useDocumentChat"
+            },
+            "path": "dashboard/src/cockpit/document-chat/state.ts"
+          },
+          "id": "RLZ-G8BE9E"
+        },
+        {
+          "after": {
+            "blob": "56963a5e7f7c270ef1a197dd00bbc8d4d43e3db5",
+            "content": "sha256:55a3b12e080473f5095f2fc24130ef453580e1a6e98be6198835cfc810510e89",
+            "locator": {
+              "kind": "symbol",
+              "name": "documentChatBinding"
+            },
+            "path": "dashboard/src/cockpit/document-chat/model.ts"
+          },
+          "before": {
+            "blob": "56963a5e7f7c270ef1a197dd00bbc8d4d43e3db5",
+            "content": "sha256:55a3b12e080473f5095f2fc24130ef453580e1a6e98be6198835cfc810510e89",
+            "locator": {
+              "kind": "symbol",
+              "name": "documentChatBinding"
+            },
+            "path": "dashboard/src/cockpit/document-chat/model.ts"
+          },
+          "id": "RLZ-S0YF0Z"
+        },
+        {
+          "after": {
+            "blob": "fb9ca83fa3143598c8efeddd62aebf30e3be5a69",
+            "content": "sha256:8b3cde819f2a7cbadd67febc508062a74a9cf276cc03398507ce9b233c1c8294",
+            "locator": {
+              "kind": "symbol",
+              "name": "PaseoFrameControl"
+            },
+            "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+          },
+          "before": {
+            "blob": "fb9ca83fa3143598c8efeddd62aebf30e3be5a69",
+            "content": "sha256:8b3cde819f2a7cbadd67febc508062a74a9cf276cc03398507ce9b233c1c8294",
+            "locator": {
+              "kind": "symbol",
+              "name": "PaseoFrameControl"
+            },
+            "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+          },
+          "id": "RLZ-SFPH0W"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-MWFBF7",
+      "items": [
+        "sha256:fa1f076c123913548ed171c594c03e390e8101712630cdafe3676223277f84e6"
+      ],
+      "reason": "Preserves the complete stored intent and entry set: the installBridge delta changes only release/source attribution comments, not trusted origins, selection intersection, Parent/lifetime checks, page isolation or the shown predicate. Re-anchor existing entries on the actual candidate; no runtime proof is claimed.",
+      "revision": 1,
+      "subject": "INV-7D9QDG"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R123",
+          "packet": "requirements/MIK-R123-v1-the-products-host-is-paseo-0-11-1.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "784c91e1289ccf7b4973d0d62398b6396b69d502",
+            "content": "sha256:aadccbcd760a7054acc1096d495efedca13af4239aa0b0fd89d8f075fb6f4186",
+            "locator": {
+              "end": 8,
+              "kind": "line_range",
+              "start": 8
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_host/package-lock.json"
+          },
+          "before": "absent",
+          "id": "RLZ-1JV04N"
+        },
+        {
+          "after": {
+            "blob": "a1b9f77f7da973558f9aa1f0fd2c90f5f13267a4",
+            "content": "sha256:c267b6d3a54fb2778dd39f9944c0c3c0568c97cddd7a18a61979bad0163983b2",
+            "locator": {
+              "end": 17,
+              "kind": "line_range",
+              "start": 17
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/package.json"
+          },
+          "before": "absent",
+          "id": "RLZ-2KGG45"
+        },
+        {
+          "after": {
+            "blob": "bb060ddecf3452831ba085f5fd4ec58536341d04",
+            "content": "sha256:69df4c3afc11dffe09049fc619f978a4653714f776271a42fec2795ebcd1df8a",
+            "locator": {
+              "end": 3,
+              "kind": "line_range",
+              "start": 3
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_host/contract.json"
+          },
+          "before": "absent",
+          "id": "RLZ-BJF204"
+        },
+        {
+          "after": {
+            "blob": "ad807480ade26be8b178323b62b5a82b4a2c20e8",
+            "content": "sha256:3bf6c23b4d7dc165fad6922f210201f947d6ed82b9f9b0c3fbb32a3c3e0dff03",
+            "locator": {
+              "end": 5,
+              "kind": "line_range",
+              "start": 5
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/paseo-plugin.json"
+          },
+          "before": "absent",
+          "id": "RLZ-WCNGVZ"
+        },
+        {
+          "after": {
+            "blob": "4483760e1b0d1b2411325b30e595827a9c02a631",
+            "content": "sha256:326b95ab1a9d6f8f848932a94c607a7c2b80876ffa034eb14be3f2cf7b7c9a8a",
+            "locator": {
+              "end": 3,
+              "kind": "line_range",
+              "start": 3
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_host/package.json"
+          },
+          "before": "absent",
+          "id": "RLZ-ZGMB8Z"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "introduce",
+      "id": "ROW-N1E4EY",
+      "items": [],
+      "reason": "Records the selected0.11.1 build packaging obligation across its five current consumers without replacing the broader build-owned-host invariant or claiming the developer installation already moved. Additive MEMORY R1 F03 qualification: RLZ-1JV04N remains line8 and is a root dependency declaration, not resolution/integrity evidence730-733. Preserve all five entry identities, broader whole-lock reference, invariant statement/scope/admission and original producer data; no npm, lock or runtime change.",
+      "revision": 1,
+      "subject": "INV-JS6GJ7"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-P4GRJM",
+      "items": [
+        "sha256:59a2263f5fc1312f79de6a2694ddd584f204733d8719642afb33de927b454ea3"
+      ],
+      "reason": "The hunk updates only the documented release attribution to0.11.1. It changes no native-selection, navigation or bridge predicate; actual runtime qualification remains separately limited under D208/F02/F06. The local pin/comment is not a new executable invariant.",
+      "subject": "hunk:sha256:59a2263f5fc1312f79de6a2694ddd584f204733d8719642afb33de927b454ea3"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "54a788a16637a596ec8c014ed26785119c17306e",
+            "content": "sha256:1b2a77ac877c603a391748189753868f8a71da1a8826c6ef30044a03b6e29d49",
+            "locator": {
+              "kind": "symbol",
+              "name": "documentSidebar"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/sidebar.ts"
+          },
+          "before": {
+            "blob": "54a788a16637a596ec8c014ed26785119c17306e",
+            "content": "sha256:1b2a77ac877c603a391748189753868f8a71da1a8826c6ef30044a03b6e29d49",
+            "locator": {
+              "kind": "symbol",
+              "name": "documentSidebar"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/sidebar.ts"
+          },
+          "id": "RLZ-6M98MR"
+        },
+        {
+          "after": {
+            "blob": "54a788a16637a596ec8c014ed26785119c17306e",
+            "content": "sha256:49398c2b3570fe515dcbf89a6c9c782bab1241a36973425e7beede681c50ab8f",
+            "locator": {
+              "kind": "symbol",
+              "name": "preserveSidebarChoice"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/sidebar.ts"
+          },
+          "before": {
+            "blob": "54a788a16637a596ec8c014ed26785119c17306e",
+            "content": "sha256:49398c2b3570fe515dcbf89a6c9c782bab1241a36973425e7beede681c50ab8f",
+            "locator": {
+              "kind": "symbol",
+              "name": "preserveSidebarChoice"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/sidebar.ts"
+          },
+          "id": "RLZ-P0SXSZ"
+        },
+        {
+          "after": {
+            "blob": "ff4987d93eae4d0753859460c919930528520f63",
+            "content": "sha256:60216f4e71232be40f8204b615b7082c2b80e50fa5a7b80ea6bf49691cb8f57a",
+            "locator": {
+              "kind": "symbol",
+              "name": "installBridge"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+          },
+          "before": {
+            "blob": "66f63b526cfeef92f3048946ce23151a0e05a04b",
+            "content": "sha256:7b4a0e79c9da07da0586bbebc998f4c35b0a992f810acadc29f9170977f8bf44",
+            "locator": {
+              "kind": "symbol",
+              "name": "installBridge"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+          },
+          "id": "RLZ-TWYV9Y"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-QA08ST",
+      "items": [
+        "sha256:95f9a1252a5c197fc6a4d6bcd0f8093761bd96588a49219a448455e61aafed16"
+      ],
+      "reason": "Preserves the complete stored intent and entry set: the installBridge delta changes only release/source attribution comments, not trusted origins, selection intersection, Parent/lifetime checks, page isolation or the shown predicate. Re-anchor existing entries on the actual candidate; no runtime proof is claimed.",
+      "revision": 1,
+      "subject": "INV-4S93MX"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "d5a0d19746b1c82be2d5ea717faceb41b243d811",
+            "content": "sha256:b34cd52a387bf092bd2484b6a8602413c0028077ff493f0aff91311cbb09d3f1",
+            "locator": {
+              "end": 1246,
+              "kind": "line_range",
+              "start": 1246
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "489a86544a897d148b1853238ebae690c4a051d2",
+            "content": "sha256:48571c4607c20d2c7c557bf79d48716f204249e2a357ddc0848c501293890e83",
+            "locator": {
+              "end": 1244,
+              "kind": "line_range",
+              "start": 1244
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-1WK7P0"
+        },
+        {
+          "after": {
+            "blob": "d5a0d19746b1c82be2d5ea717faceb41b243d811",
+            "content": "sha256:b34cd52a387bf092bd2484b6a8602413c0028077ff493f0aff91311cbb09d3f1",
+            "locator": {
+              "end": 469,
+              "kind": "line_range",
+              "start": 469
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "489a86544a897d148b1853238ebae690c4a051d2",
+            "content": "sha256:b34cd52a387bf092bd2484b6a8602413c0028077ff493f0aff91311cbb09d3f1",
+            "locator": {
+              "end": 469,
+              "kind": "line_range",
+              "start": 469
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-TB9TST"
+        },
+        {
+          "after": {
+            "blob": "d5a0d19746b1c82be2d5ea717faceb41b243d811",
+            "content": "sha256:d78be9a4046b8ffdab5120a0a748737d28d92bec8743be7d5acec6847feb659b",
+            "locator": {
+              "end": 1394,
+              "kind": "line_range",
+              "start": 1394
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "489a86544a897d148b1853238ebae690c4a051d2",
+            "content": "sha256:d3ffdc9d4b8e10ae5195fe11bd9c6e114d2017f7a53c0334010e9f3d6f4ca064",
+            "locator": {
+              "end": 1390,
+              "kind": "line_range",
+              "start": 1390
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-VQZWNZ"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-QH659Z",
+      "items": [],
+      "reason": "Owner-admitted four-way stash composition, semantic fields identical across oldbase/parked/landed: restore the actual catalog declarations instead of accepting coincidental landed line extents. RLZ-1WK7P0 second archive-module registration moves from incorrectly rebound1244 to verified1246; RLZ-TB9TST affirms first archive registration469; RLZ-VQZWNZ moves from incorrectly rebound1390 to verified report-test registration1394. Preserve ID/invariant/role/rationale/origin and stored obligation; source files themselves are not changed. This is identity-preserving memory composition, not a new test/result or a new producer obligation.",
+      "revision": 1,
+      "subject": "INV-0H8WBQ"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-SE893J",
+      "items": [
+        "sha256:fffbed52a5f6eb6b292a8408fd885a950e93acd9339166fee41368729d8160e0"
+      ],
+      "reason": "The card already states the single exact dependency follows the contract and installation consumes the lock. The0.11.1 literal changes the selected release, not that contract.",
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_host/package.json"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-VAEMVH",
+      "items": [
+        "sha256:db591fae7865e53c3d73dc13d33deff35644ffb9fe5c9f7589ef136ec7cebd07"
+      ],
+      "reason": "The support catalog dates its stand-in as0.11.1 without adding/removing a contract, artifact, consumer, test lane or test behavior. No test or certification is rerun in curation.",
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-VS0N76",
+      "items": [
+        "sha256:48143c0bcaf4fd2920edd98f9cf50416374fbbc864c9ea87da4966c75ef1ab79"
+      ],
+      "reason": "The selected host pin moves without changing install/start boundaries, release-owned configuration, native transport, knowledge ownership or package routes. Current host ownership paragraph already states the general contract.",
+      "subject": "onboarding:mcp/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-ZZDDSE",
+      "items": [
+        "sha256:c5a447fb498312bc1de9051da1da6469b494f5ab9d24a6648f2a1692ffd487a0"
+      ],
+      "reason": "The npm-generated dependency/integrity refresh selects0.11.1 while retaining the complete lock and byte-concordance obligation. Transitive version/integrity/engine/peer metadata is resolution data, not a new product feature or architectural obligation.",
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_host/package-lock.json"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

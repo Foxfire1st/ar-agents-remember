@@ -1,13 +1,33 @@
 {
   "path": "mcp/src/agents_remember/serving/paseo/paseo_process_record.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "16a71f6d77830e0f962c81ab013cbbf98166c0a7",
+        "content": "sha256:36619c9d8e1b0de03f22fa80021619e453a171348c64e63977d783531b929eb0",
+        "locator": {
+          "end": 7,
+          "kind": "line_range",
+          "start": 3
+        }
+      },
+      "id": "RLZ-0PMK4H",
+      "invariant": "INV-0TCWT9",
+      "origin": {
+        "handoffEntry": "MIK-R123@v1:sentences-0.11.1",
+        "leaf": "260928-MIK-L123"
+      },
+      "rationale": "The stop-semantics note pins the release whose stopDaemonInstance behavior it describes, now bootId-first with age fallback.",
+      "role": "presentation"
+    }
+  ],
   "references": {
     "1": {
-      "note": "The home record trust rule.",
+      "note": "The home record trust rule remains an independent check of the recorded PID's actual home and process.",
       "targets": [
         {
           "anchor": {
-            "blob": "24d60685c994f22ebdbe51b1d363ab6780a19ffe",
+            "blob": "16a71f6d77830e0f962c81ab013cbbf98166c0a7",
             "content": "sha256:89ca2b671107da33d70a1214d576e719008cf92e3e9b9da985b899a554edfbda",
             "locator": {
               "kind": "symbol",
@@ -15,27 +35,15 @@
             }
           },
           "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "24d60685c994f22ebdbe51b1d363ab6780a19ffe",
-            "content": "sha256:2cfc2b89e0ca81756ca02c88dabe4a58ea5201a35a4a930715d09f7a3e53c918",
-            "locator": {
-              "end": 95,
-              "kind": "line_range",
-              "start": 45
-            }
-          },
-          "kind": "code"
         }
       ]
     },
     "2": {
-      "note": "The process facts including executable and session names.",
+      "note": "The process facts include executable and session-variable names, never values.",
       "targets": [
         {
           "anchor": {
-            "blob": "24d60685c994f22ebdbe51b1d363ab6780a19ffe",
+            "blob": "16a71f6d77830e0f962c81ab013cbbf98166c0a7",
             "content": "sha256:e84fc71115ff5a8c0e1fe632c3eb844e3b7d9d15b950bbab8d7939a5b82cfa80",
             "locator": {
               "kind": "symbol",
@@ -43,15 +51,18 @@
             }
           },
           "kind": "code"
-        },
+        }
+      ]
+    },
+    "3": {
+      "note": "The module describes the 0.11.1 boot-id-first stop predicate without treating liveness as proof of home ownership.",
+      "targets": [
         {
           "anchor": {
-            "blob": "24d60685c994f22ebdbe51b1d363ab6780a19ffe",
-            "content": "sha256:826d5b219e422922f961b55c80797a5e6720cbf6e48eb7bce4b51b22ebf50450",
+            "blob": "16a71f6d77830e0f962c81ab013cbbf98166c0a7",
+            "content": "sha256:9717f41d831710507148e329e4a547f047686e5172cc3c72883e4ecbd201dd85",
             "locator": {
-              "end": 128,
-              "kind": "line_range",
-              "start": 98
+              "kind": "file"
             }
           },
           "kind": "code"

@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Five independently consumed packaging locations must agree, or provisioning can install a host different from the contract or compile a plugin against another SDK; the installed-host transition and future-version compatibility are not inferred from these pins."
+  },
+  "applicability": "The packaged build selecting Paseo0.11.1: release-owned host contract, reproducible host package tree, plugin SDK dependency and host requirement.",
+  "conditions": [
+    "The build selects the exact0.11.1 host release; package declarations and npm-written lock must agree."
+  ],
+  "exclusions": [
+    "An already running older host remains observable until explicit provision; this statement does not claim the developer installation was upgraded.",
+    "The product Node release remains independently pinned; the plugin minimum range does not prove compatibility of later releases."
+  ],
+  "id": "INV-JS6GJ7",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "R8 closeout, new freeze (base 120fc025b740e57522d1c1189cdd63524f6543f0, tree 64e80014cd836e724fec2d9bd845b3454ec46a51, change 66521585be77e1b61d5ab5ddf4c76b83462009c860823778853d3b977fbb9adb; ONE comment sentence in client/bridge.ts:273, no behavior). F04 three lines added as record (each unchanged; bridge lines own-read, release anchors from architect check). F02 seen-not-asserted; F06 not met (pin lands without). Review complete, no sixth round (architect own check, D208)."
+      ],
+      "path": "curator-writer-projection.json"
+    },
+    "handoffEntry": "MIK-R123@v1:pin-0.11.1",
+    "leaf": "260928-MIK-L123",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The build pins the host to Paseo 0.11.1 in the host contract, the host package and its npm-written lock, the plugin dependency and the plugin host requirement.",
+  "status": "proposed",
+  "supersedes": []
+}

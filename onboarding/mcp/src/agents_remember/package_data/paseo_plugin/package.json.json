@@ -1,0 +1,61 @@
+{
+  "path": "mcp/src/agents_remember/package_data/paseo_plugin/package.json",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "a1b9f77f7da973558f9aa1f0fd2c90f5f13267a4",
+        "content": "sha256:c267b6d3a54fb2778dd39f9944c0c3c0568c97cddd7a18a61979bad0163983b2",
+        "locator": {
+          "end": 17,
+          "kind": "line_range",
+          "start": 17
+        }
+      },
+      "id": "RLZ-2KGG45",
+      "invariant": "INV-JS6GJ7",
+      "origin": {
+        "handoffEntry": "MIK-R123@v1:pin-0.11.1",
+        "leaf": "260928-MIK-L123"
+      },
+      "rationale": "The plugin builds against the host SDK, so its @getpaseo/plugin development dependency follows the pinned host.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The plugin's development SDK is pinned to 0.11.1.\n\nAnchor: `0.11.1`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a1b9f77f7da973558f9aa1f0fd2c90f5f13267a4",
+            "content": "sha256:0d5fd1b53a5104318d0dc8c8b501f0f1819ea5c832aef8f91ecb35b17b09ae5b",
+            "locator": {
+              "end": 26,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Current source owner or exact assertion described above.\n\nAnchor: `typecheck`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a1b9f77f7da973558f9aa1f0fd2c90f5f13267a4",
+            "content": "sha256:0d5fd1b53a5104318d0dc8c8b501f0f1819ea5c832aef8f91ecb35b17b09ae5b",
+            "locator": {
+              "end": 26,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

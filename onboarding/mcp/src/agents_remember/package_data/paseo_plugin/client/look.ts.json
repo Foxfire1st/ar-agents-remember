@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "4e39d1a69bf0cc22669c1e5d6e0373a88101efd0",
+        "blob": "488a64d6f312cfee515a31864870bf15f9877317",
         "content": "sha256:ac2b86c53fed17a5654d903a3a6c3bdbd146d33b0969d0c0077846252ee43133",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "4e39d1a69bf0cc22669c1e5d6e0373a88101efd0",
+        "blob": "488a64d6f312cfee515a31864870bf15f9877317",
         "content": "sha256:1a6bdc960720b7b64950acc70396a5a8d02a604419bac4a428394c2091a5b673",
         "locator": {
           "kind": "symbol",
@@ -39,8 +39,8 @@
     },
     {
       "anchor": {
-        "blob": "4e39d1a69bf0cc22669c1e5d6e0373a88101efd0",
-        "content": "sha256:99b566bd250bc1597eef7158e494a7e31df6280a8b4281071e763dba4823d390",
+        "blob": "488a64d6f312cfee515a31864870bf15f9877317",
+        "content": "sha256:2fa6e193e1e6fd4d4bc0bc6774c0f4e658eed694141e9956877cefe775a81d53",
         "locator": {
           "kind": "symbol",
           "name": "openNativeSidebarOnce"
@@ -57,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "4e39d1a69bf0cc22669c1e5d6e0373a88101efd0",
+        "blob": "488a64d6f312cfee515a31864870bf15f9877317",
         "content": "sha256:2489c2655c8c9107fc7247e595db39ea255c75abdd98551c20dd39cd2236bfae",
         "locator": {
           "kind": "symbol",
@@ -75,7 +75,7 @@
     },
     {
       "anchor": {
-        "blob": "4e39d1a69bf0cc22669c1e5d6e0373a88101efd0",
+        "blob": "488a64d6f312cfee515a31864870bf15f9877317",
         "content": "sha256:1a6bdc960720b7b64950acc70396a5a8d02a604419bac4a428394c2091a5b673",
         "locator": {
           "kind": "symbol",
@@ -92,6 +92,89 @@
       "role": "enforcement"
     }
   ],
-  "references": {},
+  "references": {
+    "1": {
+      "note": "Current source owner or exact assertion described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "488a64d6f312cfee515a31864870bf15f9877317",
+            "content": "sha256:2489c2655c8c9107fc7247e595db39ea255c75abdd98551c20dd39cd2236bfae",
+            "locator": {
+              "kind": "symbol",
+              "name": "applyEmbedLook"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Current source owner or exact assertion described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "488a64d6f312cfee515a31864870bf15f9877317",
+            "content": "sha256:1a6bdc960720b7b64950acc70396a5a8d02a604419bac4a428394c2091a5b673",
+            "locator": {
+              "kind": "symbol",
+              "name": "restoreStandaloneLook"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Current source owner or exact assertion described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "488a64d6f312cfee515a31864870bf15f9877317",
+            "content": "sha256:ac2b86c53fed17a5654d903a3a6c3bdbd146d33b0969d0c0077846252ee43133",
+            "locator": {
+              "kind": "symbol",
+              "name": "recordAppWrite"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Current source owner or exact assertion described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "488a64d6f312cfee515a31864870bf15f9877317",
+            "content": "sha256:2fa6e193e1e6fd4d4bc0bc6774c0f4e658eed694141e9956877cefe775a81d53",
+            "locator": {
+              "kind": "symbol",
+              "name": "openNativeSidebarOnce"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The standalone preference is persisted before the application settings can be overwritten with the embedded appearance.\n\nAnchor: `never overwrites the user's look before it is kept`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c1c42d4e0f2704ec9a78df23906ae39024387d2f",
+            "content": "sha256:b5cd904bb91d4036ef691850d149528755b83ff5fb05fa928689f505a7d7415a",
+            "locator": {
+              "end": 97,
+              "kind": "line_range",
+              "start": 86
+            },
+            "path": "dashboard/src/cockpit/paseoPluginLook.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
   "schema": "ar-onboarding-file/v1"
 }

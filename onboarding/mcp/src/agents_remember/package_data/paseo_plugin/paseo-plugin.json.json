@@ -1,0 +1,61 @@
+{
+  "path": "mcp/src/agents_remember/package_data/paseo_plugin/paseo-plugin.json",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "ad807480ade26be8b178323b62b5a82b4a2c20e8",
+        "content": "sha256:3bf6c23b4d7dc165fad6922f210201f947d6ed82b9f9b0c3fbb32a3c3e0dff03",
+        "locator": {
+          "end": 5,
+          "kind": "line_range",
+          "start": 5
+        }
+      },
+      "id": "RLZ-WCNGVZ",
+      "invariant": "INV-JS6GJ7",
+      "origin": {
+        "handoffEntry": "MIK-R123@v1:pin-0.11.1",
+        "leaf": "260928-MIK-L123"
+      },
+      "rationale": "The plugin declares the host it requires; the requirement line follows the pinned host.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Current source owner or exact assertion described above.\n\nAnchor: `ar-plugin`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ad807480ade26be8b178323b62b5a82b4a2c20e8",
+            "content": "sha256:63f92462a2194c23e274b09cf6fb556f284d70ffc303d5c64263fbdee302fd2c",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The plugin manifest requires Paseo >=0.11.1.\n\nAnchor: `>=0.11.1`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ad807480ade26be8b178323b62b5a82b4a2c20e8",
+            "content": "sha256:63f92462a2194c23e274b09cf6fb556f284d70ffc303d5c64263fbdee302fd2c",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}
