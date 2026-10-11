@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "2e61c5b715ff2ad0a5d8cd26a98da4aaa866b6b2",
-        "content": "sha256:3056ced3ff338f180c1dc8cc6f34f32df1c14c711c62506f0f4b0d1c2ea47c77",
+        "blob": "b70b13d88cfb4875c2e73574dfaaa2d12d4303e6",
+        "content": "sha256:da4f9e5c7445b0656438a4b3a6fb7b8cd76d6c5baaf8de813ce0e6cc355f9ebe",
         "locator": {
           "kind": "symbol",
           "name": "direct_gate_verdict"
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "2e61c5b715ff2ad0a5d8cd26a98da4aaa866b6b2",
+        "blob": "b70b13d88cfb4875c2e73574dfaaa2d12d4303e6",
         "content": "sha256:67d47854920238903c844bd4769263945e3ecae17cf2d940b09799639597a8b1",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "2e61c5b715ff2ad0a5d8cd26a98da4aaa866b6b2",
+        "blob": "b70b13d88cfb4875c2e73574dfaaa2d12d4303e6",
         "content": "sha256:54b4f95134fee9ba49567b3c59a20dbc524e5b99411883ad7a0dfab929a9e8a1",
         "locator": {
           "kind": "symbol",
@@ -57,8 +57,8 @@
     },
     {
       "anchor": {
-        "blob": "2e61c5b715ff2ad0a5d8cd26a98da4aaa866b6b2",
-        "content": "sha256:987a28acd25a51da6e8a58012ff2505de02d6d9283b136886e5daff24ef2fdbe",
+        "blob": "b70b13d88cfb4875c2e73574dfaaa2d12d4303e6",
+        "content": "sha256:432ff046e10433c7569e56f86456caa342921364f14b881c5fa017a21fd151a0",
         "locator": {
           "kind": "symbol",
           "name": "leaf_gate_refusal"
@@ -75,7 +75,7 @@
     },
     {
       "anchor": {
-        "blob": "2e61c5b715ff2ad0a5d8cd26a98da4aaa866b6b2",
+        "blob": "b70b13d88cfb4875c2e73574dfaaa2d12d4303e6",
         "content": "sha256:7e62f02406a1bca57e4306035af6d5886206e02c2f674f2f64628597fec7b90e",
         "locator": {
           "kind": "symbol",
@@ -93,7 +93,7 @@
     },
     {
       "anchor": {
-        "blob": "2e61c5b715ff2ad0a5d8cd26a98da4aaa866b6b2",
+        "blob": "b70b13d88cfb4875c2e73574dfaaa2d12d4303e6",
         "content": "sha256:af8b2c9e843bfc7c5eabd24e8644f08d5fb63f5ae14434c16fb50f90c8489845",
         "locator": {
           "kind": "symbol",
@@ -111,7 +111,7 @@
     },
     {
       "anchor": {
-        "blob": "2e61c5b715ff2ad0a5d8cd26a98da4aaa866b6b2",
+        "blob": "b70b13d88cfb4875c2e73574dfaaa2d12d4303e6",
         "content": "sha256:bf9ad0ae5b340ad7844846ce7287ddf9286eaa8eb85b52fd028133538d3eaa61",
         "locator": {
           "kind": "symbol",
@@ -126,6 +126,24 @@
       },
       "rationale": "Carries the lock to both entries of the certified (prepared) closeout for unconverted memory; converted memory is decided by that closeout's own refusal.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "b70b13d88cfb4875c2e73574dfaaa2d12d4303e6",
+        "content": "sha256:9055645ff3ba79a95ca391f43fa641ca8854b33ff9d2eebacc5fb23fb7d03327",
+        "locator": {
+          "kind": "symbol",
+          "name": "HistoryClosing"
+        }
+      },
+      "id": "RLZ-XXWZ1F",
+      "invariant": "INV-KSJZS0",
+      "origin": {
+        "handoffEntry": "MIK-R52@v1 rule 9 honest-refusal",
+        "leaf": "260928-MIK-L52"
+      },
+      "rationale": "The closing whose restore() reports the takeback outcome.",
+      "role": "unclassified"
     }
   ],
   "references": {
@@ -134,7 +152,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2e61c5b715ff2ad0a5d8cd26a98da4aaa866b6b2",
+            "blob": "b70b13d88cfb4875c2e73574dfaaa2d12d4303e6",
             "content": "sha256:54b4f95134fee9ba49567b3c59a20dbc524e5b99411883ad7a0dfab929a9e8a1",
             "locator": {
               "kind": "symbol",
@@ -150,7 +168,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2e61c5b715ff2ad0a5d8cd26a98da4aaa866b6b2",
+            "blob": "b70b13d88cfb4875c2e73574dfaaa2d12d4303e6",
             "content": "sha256:af8b2c9e843bfc7c5eabd24e8644f08d5fb63f5ae14434c16fb50f90c8489845",
             "locator": {
               "kind": "symbol",
@@ -166,8 +184,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2e61c5b715ff2ad0a5d8cd26a98da4aaa866b6b2",
-            "content": "sha256:987a28acd25a51da6e8a58012ff2505de02d6d9283b136886e5daff24ef2fdbe",
+            "blob": "b70b13d88cfb4875c2e73574dfaaa2d12d4303e6",
+            "content": "sha256:432ff046e10433c7569e56f86456caa342921364f14b881c5fa017a21fd151a0",
             "locator": {
               "kind": "symbol",
               "name": "leaf_gate_refusal"
@@ -182,8 +200,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2e61c5b715ff2ad0a5d8cd26a98da4aaa866b6b2",
-            "content": "sha256:3056ced3ff338f180c1dc8cc6f34f32df1c14c711c62506f0f4b0d1c2ea47c77",
+            "blob": "b70b13d88cfb4875c2e73574dfaaa2d12d4303e6",
+            "content": "sha256:da4f9e5c7445b0656438a4b3a6fb7b8cd76d6c5baaf8de813ce0e6cc355f9ebe",
             "locator": {
               "kind": "symbol",
               "name": "direct_gate_verdict"
@@ -198,7 +216,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2e61c5b715ff2ad0a5d8cd26a98da4aaa866b6b2",
+            "blob": "b70b13d88cfb4875c2e73574dfaaa2d12d4303e6",
             "content": "sha256:24721572f575894b915f5f8db78f5871a6688aae3dcadad1969af45942dc481b",
             "locator": {
               "kind": "symbol",

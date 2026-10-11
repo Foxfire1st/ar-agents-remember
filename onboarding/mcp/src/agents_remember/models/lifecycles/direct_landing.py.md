@@ -20,7 +20,7 @@ facts required by the execution and recovery owners, without ledger cache state.
 `DirectLandingOperationInput` is a strict Pydantic model with `extra="forbid"`. It carries the
 configuration and contract paths, effective direct input, approval note, gate-policy snapshot,
 exact code commit/tree and candidate tree, memory repository/branch/ref, and `memoryBefore` snapshot.
-Hash and ref fields have declared shape constraints. The validator requires the direct-landing
+Optional `leafId` is part of immutable request/retry identity; older journals default it to `None`. Hash and ref fields have declared shape constraints. The validator requires the direct-landing
 route and a nonblank accepted approval note.
 
 The model does not read Git, verify repository existence, or decide whether a live branch matches
@@ -59,10 +59,14 @@ the current working-candidate behavior; historical entries below retain their or
 
 - The accepted input contains code/memory identity and validates route plus intent. [1]
 - The shared snapshot keeps actual object identity and optional content-only comparison. [2]
+
 - The coordinator captures the accepted candidate from actual Git facts. [3]
+
 - The strict model carries code/memory identity and its `_accepted_direct_plan_is_exact` validator requires the direct-landing route plus a nonblank approval note. [4]
 - The shared snapshot's `_require_state_evidence` validator keeps actual object identity: `observed is not before` is refused while `observed == before` is reconciled. [5]
+
 - Recovery checks the typed facts against the current repositories and refs. [6]
+
 
 ### Cross-Repo References
 

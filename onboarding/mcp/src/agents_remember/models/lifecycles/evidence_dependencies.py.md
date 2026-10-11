@@ -46,6 +46,8 @@ cit:([`validate_evidence_dependency_graph`], mcp/src/agents_remember/models/life
 `dependency` and `canonical_sha256` are the two builder helpers every domain uses to construct edges
 cit:([`dependency`, `canonical_sha256`], mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:243-252; mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:354-358).
 
+`MAX_EVIDENCE_DEPENDENCIES` is derived from the coherence model's bounded judgment and assessment populations, fixed dependencies and validator edge. It covers record builders whose own models bound their payloads, without changing dependency schema, names or meaning. Coherence judgments may cite distinct evidence files; sharing evidence is valid when that file actually supports each judgment, never a workaround for an arbitrary cap. Master-scope route review has no own finite model bound and remains subject to the shared refusal, as the explicit scope ruling states.
+
 ### Conventions
 
 - One `EvidenceDependencyPolicy` per record type at all times; the module-level registry is the only
@@ -72,6 +74,9 @@ No additional file-local TODO is established by this candidate review.
 
 ## Evidence
 
+- Shared evidence capacity follows from the bounded coherence payload. [6]
+
+
 ### Docs References
 
 No configured Domain Documentation applies; the dependency encoding is repository-owned.
@@ -83,7 +88,9 @@ The encoding has no external authority.
 Every consumer record type binds its own edges through this single encoding; the mutation/cycle
 matrix in the evidence-dependency test suite fixes the contract.
 
+
 - The dependency-kind vocabulary and closeout-door policy contain no ledger-provenance input. [1]
+
 - The memory-quality attestation binds candidate-state, code/memory trees, report bytes, and validators. [2]
 - The closeout door binds code/memory candidate trees, topology, intent, and the review/memory/admission/scheduling provenance records. [3]
 - Lifecycle operations declare the admitted candidate, door, plan, and normalized operation input. [4]

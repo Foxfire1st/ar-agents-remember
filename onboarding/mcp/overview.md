@@ -2,6 +2,9 @@
 
 ## Current operative account — MIK-R112
 
+Converted-memory landing admission is exact-pair judgment on every publication/recording route, not trust in a previous verdict. Leaf recovery, integration and recording share one leaf-pair judge; master final/checkpoint/recorded routes combine validator, net staleness, chain proof and new-history ownership. This does not make full MQC or independent review a landing-time operation.
+
+
 The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
 
 - Retrieval doctrine now uses onboarding/route indexes and harness-native search, not CGC/GrepAI.

@@ -53,6 +53,8 @@ expected set from the attestation's current source facts and refuses
 `memory-quality-attestation-dependencies-stale` on any mismatch
 cit:([`memory_quality_attestation_dependencies`, `require_memory_quality_attestation_dependencies`], mcp/src/agents_remember/models/lifecycles/curator_coherence.py:112-149; mcp/src/agents_remember/models/lifecycles/curator_coherence.py:152-175).
 
+Judgment and assessment bounds are shared declarations consumed by the dependency-capacity derivation and publication guard. Over-model payloads refuse with the bound and actual count before artifact writes. The dependency schema and preexisting record encoding remain compatible; capacity is not an invitation to point unrelated judgments at a shared evidence file.
+
 ### Conventions
 
 All authority models are frozen and reject extra fields. Caller judgments omit lifecycle-owned
@@ -90,13 +92,21 @@ The lifecycle schema has no external authority.
 
 - The quality attestation validates exact candidate count and uniqueness. [1]
 - Immutable record validation enforces exact candidate-to-judgment coverage. [2]
+
 - The discriminated action request separates read actions from publication CAS input, and names the publication fields it is missing. [3]
+
 - **The one declaration of what `publish` requires, and the per-member flag marking the two `prepare` does not derive.** [4]
 - **The refusal that names every missing publication member by request field name, in declaration order, and calls out a missing delivery identity.** [5]
 - **The sibling refusal that names the publication-only field a read action received.** [6]
+
 - **The statement of the complete publication input set, read from the declaration at call time.** [7]
+
+
 - **Which publication fields a request supplied, `judgments` included, and the validator that refuses on it.** [8]
+
+
 - The R03 dependency vocabulary used by this record type. [9]
+
 
 The following declarations carry the changed boundary.
 

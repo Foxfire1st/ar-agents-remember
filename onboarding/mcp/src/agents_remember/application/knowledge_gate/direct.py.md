@@ -17,18 +17,11 @@ commit's tree and K_C the memory checkout's exact candidate tree. The worktree l
 
 ### Logic
 
-- **The leaf (ruling 2026-09-30T14:38:47, gap 2).** The route names no leaf, so the leaf is the owner of the one
-  open leaf history file in K_C (`_open_histories`: `knowledge/history/*.json` with the history schema,
-  `closed: false` and a string `leaf`; a file that does not parse is skipped, because the validator names it). None,
-  or more than one, refuses: "it names no leaf, and the memory candidate holds N open leaf history file(s) …". A
-  direct-mode leaf of a converted repository therefore records its rows, or an empty `rows`, in its own file, which
-  the landing then closes. No public schema change; unconverted direct landing is unchanged.
+- **The named leaf.** Optional `leaf_id` selects the direct publication's owner explicitly. A valid name with no file creates a closed rowless history; another leaf's open file or an invalid name refuses. Without a supplied name, the owner is inferred from exactly one open leaf history file, and none/several refuses while naming `leaf_id` as the remedy. Owner selection is separate from closing and exact-tree admission.
 - **`direct_verdict`** returns `DirectGateVerdict(applies, owner, refusal)`; a missing memory repository or a series
   line with no head refuses; a `SubprocessError` anywhere is a named refusal through `git_failure`.
-- **`_verdict`:** a replay of an already published landing (HEAD's trailer names this code commit and HEAD's tree is
-  the candidate) commits nothing and is not gated (`applies` false). Otherwise it finds the owner, recomputes the
-  worklist over `_DirectSides`, and judges it with `validation_bases=(head,)` (the series memory head, the line it
-  lands on) and `base_code_commit` = the published code commit.
+- **`_source`** recognizes a no-publication replay only when the memory head's code trailer and tree equal the requested inputs, returning `applies=false`. Otherwise it selects the explicit or inferred owner. `direct_verdict` validates any retained pre-closing source identity against the closed candidate before asking `_verdict` to recompute and judge the exact series sides.
+- **`_verdict`** recomputes the selected owner's worklist and judges it against the series memory head and published code base. Supplying `leaf_id` changes owner selection, not the obligation to answer every item.
 - **`_worklist`:** an unpublished or non-ancestor B is `incomplete` (`pairing`); the owner's task document is read
   strictly (`strict_leaf_doc`, fail closed: `LeafDocumentUnresolved` is `incomplete`, the L11 carry); the run goes
   through `leaf.worklist_over` (L08's run, MIK-R30's onboarding items, MIK-R10's settling) over `ExplicitSides`; a
@@ -54,11 +47,18 @@ commit's tree and K_C the memory checkout's exact candidate tree. The worktree l
 
 ## Evidence
 
+- A supplied valid owner selects rowless closed history while other open owners refuse. [14]
+
+
 ### Repo-Internal References
 
 - `_open_histories` implements the retained boundary described above. [6]
+
 - `_source` implements the retained boundary described above. [7]
+
+
 - `direct_verdict` implements the retained boundary described above. [8]
+
 
 ### Docs References
 
@@ -70,9 +70,13 @@ No configured live documentation source was available for this pass.
 
 ### Repo-Internal References
 
+
 - The module docstring: the four sides and the leaf a direct landing names. [9]
+
 - The open leaf history files of a candidate. [10]
-- The verdict; a replay is not gated; exactly one owner. [11]
+
+- The direct verdict binds the explicit or inferred owner; only an exact no-publication replay skips a fresh gate. [11]
+
 - The worklist over the series sides, failing closed. [12]
 - The route test. [13]
 

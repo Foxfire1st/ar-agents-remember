@@ -1,11 +1,5 @@
 # mcp/src/agents_remember/worktrees/series_closeout.py
 
-| Field | Value |
-| --- | --- |
-| verificationStatus | working-candidate |
-
-The body describes the uncommitted LCA L9 working candidate. The commit fields identify the latest real commit touching this source file; they do not claim that the candidate is committed or accepted.
-
 ## Governing Overview
 
 [Nearest governing route overview](overview.md)
@@ -22,7 +16,9 @@ The final route resolves canonical master/leaf task membership through `series_l
 
 Without a recorded sync, the oldest leaf starts at the exact series base. With sync history, the origin is proved against the first sync's old bases and each leaf must remain on that line. The series spine must contain every landing and only admitted inter-leaf/source transitions. Memory-side history inspection excludes root memory.md content; the removed special ledger-recording commit exception is not an authority rule.
 
-Every step of that spine is proved by **enumerating** what it adds — `rev-list --no-merges --full-history <later> --not <earlier>`, the memory side additionally excluding `.` with `:(top,exclude)memory.md` — and admitting a commit only when it is an official position one of the chain's own contracts synced with, or when a recorded position that lies **inside that step** reaches it. The second clause is what stops the rule refusing the shape it names: when a step's endpoint is the merge of the previous landing with a synced position, the whole step *is* that position's own line. Measured on the 260915-KS master, the step is L5's landing `7db50f8f` to L6's recorded base `8dfc11b8`; `8dfc11b8` is the merge of `7db50f8f` with the synced super-line position `8dd62345`, every commit the step adds is reachable from `8dd62345`, and only the position itself used to be admitted (register row D-60). *Inside* means strictly after the step's start and at or before its end, so a position that merely descends **from** the step stays outside it and still cannot vacate a commit the step genuinely introduced. The admission stays bounded to the positions the call was given, and the step is never *subtracted* from the revision walk: removing a position's whole ancestry is what once made the check pass vacuously.
+Every admitted spine step enumerates ordinary and merge commits with full history. A master's line may hold only landed-leaf history and reconciled parent positions. A recorded position lying inside a step may admit its reachable history; a later position outside the step cannot vacate an introduced commit. Merges additionally require a recorded managed-sync produced head, membership inside a landed leaf's own history, or parent-line origin. Older sync entries without produced-head metadata preserve their explicit compatibility admission. Every foreign commit is named with the remedy to move the change into a leaf rather than leaving it on the master line.
+
+Final, checkpoint and recorded master landings invoke this proof over their own exact code/memory endpoints. Checkpoint and recorded routes omit unlanded leaves; an empty landed population may hold only recorded bases and reconciled parent history, never a free master workbench. Recorded landing does not replace its endpoints with mutable branch tips.
 
 Both checkpoint capture and final memory recording use `series_memory_closeout`: re-read the exact code work ref, capture the actual memory work ref, and prove its recorded-base ancestry. They do not select an output from cached rows or require a fixed-point table. A code tip with no corresponding memory trailer can therefore still be captured without inventing attribution.
 
@@ -60,13 +56,19 @@ These current source spans identify the implementation owners and the specific a
 - Final closeout and series integration re-prove canonical completion. [1]
 - Checkpoint capture retains code and applicable external-memory refs, and publication revalidates that explicit captured candidate. [2]
 
+
 - Leaf membership, output identity, and ordering remain exact. [3]
+
+
 
 - Recorded origins and admitted substantive history preserve reconciled series proof. [4]
 
+
 - Series cleanliness and actual memory-ref capture exclude cache authority. [5]
 
+
 - Recorded origins and admitted substantive history preserve reconciled series proof. [6]
+
 
 ### Cross-Repo References
 
@@ -74,7 +76,11 @@ The operation and fixture boundaries described here are defined by same-reposito
 
 - The landing chain is built from the exact enclosures of the non-abandoned rows and then proved. [7]
 - An unordered chain names the leaf pairs and the contract cells to repair. [8]
+
 - An empty leaf chain skips leaf-origin validation; spine validation still proves the series ref from its recorded or pre-sync base and admitted source positions. [9]
 
+
+
 - With no landed leaf, a spine side proves the series ref from the chain origin and still refuses commits that belong to no landed leaf and to no recorded position. [10]
+
 - An incomplete master names itself, its status and the action that clears it. [11]

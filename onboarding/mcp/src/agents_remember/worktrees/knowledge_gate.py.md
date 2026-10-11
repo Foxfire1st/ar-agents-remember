@@ -14,14 +14,18 @@
 
 Otherwise the gate is unchanged. **Applicability (rule 6).** `converted_memory(repository, *treeishes)` is true when any named side holds `knowledge/layout.json`; a side Git cannot read raises `GateProbeError`, never "unconverted". The cutover lock then refuses the route once the memory repository holds converted memory anywhere, naming the crossing sync. **No bypass (rule 5).** `GATE_UNBOUND`: a converted route with no bound `knowledge_gate` is refused. No function takes a flag that skips the gate.
 
-`parent_memory_tip(contract)` is the tip of `memory_source_branch`, the validator's base for a leaf. `leaf_gate_refusal` is the closeout validator's gate: probe, port, then the tip, then `port.leaf_refusal`. `direct_gate_verdict` probes the candidate tree and `HEAD`, then asks `port.direct_verdict`. `landing_gate_refusal` probes the landed memory commit and its bases, then runs the validator. `prepared_closeout_refusal` refuses the certified closeout on converted memory with `PREPARED_CLOSEOUT_UNCLOSABLE`, since it cannot set `closed: true`.
+`parent_memory_tip(contract)` is the tip of `memory_source_branch`, the validator's base for a leaf. `leaf_gate_refusal` is the closeout validator's gate: probe, port, then the tip, then `port.leaf_refusal`. `direct_gate_verdict` probes the candidate tree and `HEAD`, then forwards optional `leaf_id` to `port.direct_verdict`. Landing callers can suppress worklist persistence without suppressing judgment. `landing_gate_refusal` probes the landed memory commit and its bases, then runs the validator. `prepared_closeout_refusal` refuses the certified closeout on converted memory with `PREPARED_CLOSEOUT_UNCLOSABLE`, since it cannot set `closed: true`.
 
-`close_owner_history(memory_root, owner)` sets `closed: true` in the owner's latest history file and returns a `HistoryClosing` whose `restore()` puts the previous bytes back. A direct landing's closing outlives the call in per-generation receipts (`keep_direct_closing` / `forget_direct_closing` / `settle_direct_closing`); a restore happens only while the file's bytes still equal the closed bytes, so a later edit is never overwritten. A probe Git cannot answer is never unconverted memory.
+`close_owner_history(memory_root, owner)` sets `closed: true` in the owner's latest history file and returns a `HistoryClosing` whose `restore()` returns whether it restored owned bytes, preserving a concurrent edit instead of overwriting it. A direct landing's closing outlives the call in per-generation receipts (`keep_direct_closing` / `forget_direct_closing` / `settle_direct_closing`); a restore happens only while the file's bytes still equal the closed bytes, so a later edit is never overwritten. A probe Git cannot answer is never unconverted memory.
 
 ## Evidence
 
 - Disabled contract refused before the cutover probe [19]
 - Disabled contract refused before the prepared verdict [20]
+
 - Disabled contract refused before the validator gate [21]
+
+
 - Disabled contract refused before the direct verdict [22]
+
 - Conversion probe reads one marker, nothing else [23]

@@ -20,7 +20,7 @@ separate routes.
 ### Logic
 
 `DirectLandingRequest` carries the exact code commit, memory message, approval intent, optional
-candidate tree, and dry-run selection. The policy gate requires `directExecutionEnabled`.
+candidate tree, optional `leaf_id`, and dry-run selection. The supplied leaf identity participates in operation input and retry identity. The policy gate requires `directExecutionEnabled`.
 `_direct_landing_after_policy` requires a series contract, normalizes the effective memory message,
 requires intent, and rereads configured contract authority. The application boundary owns configured
 admission and serialized execution; this module consumes the admitted contract.
@@ -54,8 +54,7 @@ preview payload and object count identical to base).
 - **The gate.** `_direct_gate_owner(contract, code_commit)` probes `checkout_memory_converted`, captures the exact tree
   the memory-content commit would record (`_memory_content_tree`: a private index under the worktree group's
   `reports/`, `MEMORY_CONTENT_EXCLUDES`), and asks `direct_gate_verdict` through the port; any refusal raises
-  `direct-landing-knowledge-gate-refused`. It returns the leaf that owns the one open history file (ruling
-  2026-09-30T14:38:47 gap 2). The preview calls it too, so it refuses exactly as the apply.
+  `direct-landing-knowledge-gate-refused`. It returns the explicitly supplied valid leaf identity, or infers the sole open history owner when the caller omits `leaf_id`; wrong/open and invalid owners refuse by name. The preview calls it too, so it refuses exactly as the apply.
 - **The closing and the exact tree.** `_close_gated_leaf` gates, closes the owner's history file
   (`close_owner_history`, MIK-R07 rule 7), and validates the exact tree it will commit through
   `memory_commit_refusal(..., leaf_publication=True)` against `HEAD` (`direct-landing-knowledge-validation-refused`).
@@ -80,11 +79,21 @@ preview payload and object count identical to base).
   already-landed (R3-1, SHA-1 and SHA-256) cases in `test_knowledge_gate_routes.py`.
 
 - The module docstring's gate and closing paragraphs. [1]
+
 - The preview refuses as the apply. [2]
+
+
 - Settle, exact retry, prepare, admit, and settle again. [3]
+
+
 - Only a created generation keeps the closing. [4]
+
+
 - The prepared input, the candidate and the closing. [5]
+
+
 - The exact memory tree, the gate and the closing validated as a leaf publication. [6]
+
 
 ### Conventions
 
@@ -119,13 +128,23 @@ No configured external domain-documentation evidence.
 These repository-relative targets were checked in the L9 code checkout. The cited ranges support
 the current working-candidate behavior; historical entries below retain their original scope.
 
+
 - Policy, normalized request, exact code proof, and the preview, which writes no memory content and since MIK-R09 refuses exactly as the apply on converted memory. [7]
+
+
 - Memory admission captures the prepared content snapshot and typed candidate (since MIK-R09 in `_operation_candidate`, after the gate's closing). [8]
+
+
 - Generation creation and action-required public projection. [9]
+
+
 - The application owns configured admission and execution serialization. [10]
+
 - The focused integration scenario verifies cache-independent publication and recovery. [11]
 
+
 - Unconverted memory: the lock refuses it once the repository holds converted memory, else the landing is ungated as before. [12]
+
 
 ### Cross-Repo References
 

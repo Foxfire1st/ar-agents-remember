@@ -113,6 +113,9 @@ in any statement of the fix's reach.
 
 ## Purpose
 
+The knowledge validator refuses deletion of any record a comparison base holds: retirement retains its file. A merge-moved disagreeing row is report-only only outside leaf publication; at publication every mismatch refuses. These narrow mandatory invariant checks are not the full curator memory-quality operation.
+
+
 `memory_quality/` owns memory-layer quality control for the MCP package. It
 groups integrity checks that compare onboarding to source state and style
 checks that enforce repository memory conventions.

@@ -3,25 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "8f92bbe9948b98fa7072f2ae69b1fb50bc6f098f",
-        "content": "sha256:9b489c9891393b3cbeb5b43f0486a0d5796d44c43ad1aa2f6cf6fdd0b2093aaa",
-        "locator": {
-          "kind": "symbol",
-          "name": "test_every_route_refuses_unconverted_memory_once_the_repository_holds_converted_memory"
-        }
-      },
-      "facet": "Fourteen route entries refuse unconverted memory, naming the converted branch and the crossing sync, while a sibling branch is converted, and each returns nothing once that branch is deleted.",
-      "id": "PRF-0VDDSE",
-      "invariant": "INV-JT28KJ",
-      "origin": {
-        "handoffEntry": "L37-cutover-lock",
-        "leaf": "260928-MIK-L37"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "8f92bbe9948b98fa7072f2ae69b1fb50bc6f098f",
-        "content": "sha256:9562e96fdf3bbfa214287193ff0d97a5c78cdee9dc78e8e37287cf4fc0138c22",
+        "blob": "71f46c2b7658cabd8f043846644d5e73558e3757",
+        "content": "sha256:c9ad8ff46286820f69e1c70a99eee754b9816d334d5cf20047a66f68087062e2",
         "locator": {
           "kind": "symbol",
           "name": "test_the_converting_candidate_is_gated_never_locked"
@@ -37,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "8f92bbe9948b98fa7072f2ae69b1fb50bc6f098f",
+        "blob": "71f46c2b7658cabd8f043846644d5e73558e3757",
         "content": "sha256:09bc52594a04902e96d6482a082ca175014285361638bf4a4c5fd7fdd1557248",
         "locator": {
           "kind": "symbol",
@@ -54,24 +37,24 @@
     },
     {
       "anchor": {
-        "blob": "8f92bbe9948b98fa7072f2ae69b1fb50bc6f098f",
-        "content": "sha256:e9ba6eff80a4b51f831b83c7de639bb2c014cd4d57ae0af15f1ceb9f74b93e9d",
+        "blob": "71f46c2b7658cabd8f043846644d5e73558e3757",
+        "content": "sha256:9b489c9891393b3cbeb5b43f0486a0d5796d44c43ad1aa2f6cf6fdd0b2093aaa",
         "locator": {
           "kind": "symbol",
-          "name": "test_no_read_selects_the_database_of_a_converted_tree"
+          "name": "test_every_route_refuses_unconverted_memory_once_the_repository_holds_converted_memory"
         }
       },
-      "facet": "For a leaf resolved to a tree comparison the unchanged-knowledge freeze returns the tree-comparison refusal and never reads the memory base's dataset.",
-      "id": "PRF-JR10RF",
-      "invariant": "INV-T9M21FB4",
+      "facet": "The13 declared route probes refuse unconverted memory while a converted sibling exists. After that branch is deleted, the knowledge-ingest probe still refuses legacy format and names conversion/crossing sync; the remaining12 probes return None. No successful landing is asserted.",
+      "id": "PRF-M1DGK1",
+      "invariant": "INV-JT28KJ",
       "origin": {
-        "handoffEntry": "L37-unchanged-knowledge-converted-refusal",
-        "leaf": "260928-MIK-L37"
+        "handoffEntry": "L52-M1-F05-cutover-proof-correction",
+        "leaf": "260928-MIK-L52"
       }
     },
     {
       "anchor": {
-        "blob": "8f92bbe9948b98fa7072f2ae69b1fb50bc6f098f",
+        "blob": "71f46c2b7658cabd8f043846644d5e73558e3757",
         "content": "sha256:c2b341a1b32b233ee06f2d9e5e1ca6f432e3512a98b01ca63e8e0989ab775859",
         "locator": {
           "kind": "symbol",
@@ -90,7 +73,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "8f92bbe9948b98fa7072f2ae69b1fb50bc6f098f",
+        "blob": "71f46c2b7658cabd8f043846644d5e73558e3757",
         "content": "sha256:09bc52594a04902e96d6482a082ca175014285361638bf4a4c5fd7fdd1557248",
         "locator": {
           "kind": "symbol",
@@ -108,8 +91,8 @@
     },
     {
       "anchor": {
-        "blob": "8f92bbe9948b98fa7072f2ae69b1fb50bc6f098f",
-        "content": "sha256:d41fdb55a660149ded7a89d8ee8435fd7fdbbc085817ea2f7a55a6fc098428f8",
+        "blob": "71f46c2b7658cabd8f043846644d5e73558e3757",
+        "content": "sha256:d2c324cfe8da1e7acd1a3399410b9a42df71458f93e702e616f056ba63f9cfb6",
         "locator": {
           "kind": "symbol",
           "name": "_blocked"
@@ -131,7 +114,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8f92bbe9948b98fa7072f2ae69b1fb50bc6f098f",
+            "blob": "71f46c2b7658cabd8f043846644d5e73558e3757",
             "content": "sha256:9b489c9891393b3cbeb5b43f0486a0d5796d44c43ad1aa2f6cf6fdd0b2093aaa",
             "locator": {
               "kind": "symbol",
@@ -147,7 +130,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8f92bbe9948b98fa7072f2ae69b1fb50bc6f098f",
+            "blob": "71f46c2b7658cabd8f043846644d5e73558e3757",
             "content": "sha256:e9ba6eff80a4b51f831b83c7de639bb2c014cd4d57ae0af15f1ceb9f74b93e9d",
             "locator": {
               "kind": "symbol",
@@ -163,7 +146,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8f92bbe9948b98fa7072f2ae69b1fb50bc6f098f",
+            "blob": "71f46c2b7658cabd8f043846644d5e73558e3757",
             "content": "sha256:c2b341a1b32b233ee06f2d9e5e1ca6f432e3512a98b01ca63e8e0989ab775859",
             "locator": {
               "kind": "symbol",
@@ -179,7 +162,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8f92bbe9948b98fa7072f2ae69b1fb50bc6f098f",
+            "blob": "71f46c2b7658cabd8f043846644d5e73558e3757",
             "content": "sha256:c2b341a1b32b233ee06f2d9e5e1ca6f432e3512a98b01ca63e8e0989ab775859",
             "locator": {
               "kind": "symbol",
@@ -195,7 +178,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8f92bbe9948b98fa7072f2ae69b1fb50bc6f098f",
+            "blob": "71f46c2b7658cabd8f043846644d5e73558e3757",
             "content": "sha256:09bc52594a04902e96d6482a082ca175014285361638bf4a4c5fd7fdd1557248",
             "locator": {
               "kind": "symbol",
@@ -211,7 +194,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8f92bbe9948b98fa7072f2ae69b1fb50bc6f098f",
+            "blob": "71f46c2b7658cabd8f043846644d5e73558e3757",
             "content": "sha256:2bc2b425f0f364554aef6962bd40ccd62d750fab9c4f61ca5b294ab8a4369bea",
             "locator": {
               "kind": "symbol",
@@ -227,8 +210,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8f92bbe9948b98fa7072f2ae69b1fb50bc6f098f",
-            "content": "sha256:9562e96fdf3bbfa214287193ff0d97a5c78cdee9dc78e8e37287cf4fc0138c22",
+            "blob": "71f46c2b7658cabd8f043846644d5e73558e3757",
+            "content": "sha256:c9ad8ff46286820f69e1c70a99eee754b9816d334d5cf20047a66f68087062e2",
             "locator": {
               "kind": "symbol",
               "name": "test_the_converting_candidate_is_gated_never_locked"
@@ -243,7 +226,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8f92bbe9948b98fa7072f2ae69b1fb50bc6f098f",
+            "blob": "71f46c2b7658cabd8f043846644d5e73558e3757",
             "content": "sha256:e9ba6eff80a4b51f831b83c7de639bb2c014cd4d57ae0af15f1ceb9f74b93e9d",
             "locator": {
               "kind": "symbol",
@@ -276,7 +259,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8f92bbe9948b98fa7072f2ae69b1fb50bc6f098f",
+            "blob": "71f46c2b7658cabd8f043846644d5e73558e3757",
             "content": "sha256:44fc3d4b551bc1610ec66f0b9dd8ca390d33832ead0f8e6fd17cd58dc0490c37",
             "locator": {
               "kind": "symbol",

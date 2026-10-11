@@ -46,7 +46,9 @@ separate support module was an unregistered evidence artifact on the worker's fi
   8. `test_the_closeout_validator_refuses_until_the_gate_passes_and_never_runs_ungated`: through the real
      `require_current_curator_coherence`; `ports(gate=False)` refuses with `GATE_UNBOUND`.
   9. `test_the_closeout_memory_commit_closes_the_history_file_and_validates_its_exact_tree`: an R22.3 refusal before
-     `begin_git_mutation`, then the commit with `closed: true` and the `Code-Commit` trailer.
+     `begin_git_mutation` with original history bytes restored. After repair the test raises the sentinel
+     `reached the commit` at `begin_git_mutation`, proving reachability only: no memory commit or trailer
+     is created or read back by this witness.
   10. `test_direct_landing_gates_names_its_leaf_closes_its_history_and_restores_on_refusal`.
   11. `test_record_landing_checks_the_landed_memory_commit_is_closed_and_valid`: not closed, closed, no commit named,
       a marker violation, and an earlier leaf commit judged new.
@@ -100,15 +102,23 @@ No configured live documentation source was available for this pass.
 
 - The closeout validator and the closeout memory commit. [6]
 
+
 - Direct, record, master and checkpoint landing. [7]
+
 - The insertion-only symmetry, the unconverted leaf, the prepared path. [8]
+
 
 - The memo and the approval state. [9]
 
+
+
 - The lane row. [10]
 
+
 - The closeout test answers the items its code commit opens, because the memory commit is gated. [11]
+
 - The memo key names the parent tip and the leaf's memory HEAD. [12]
+
 
 ### Cross-Repo References
 

@@ -2,6 +2,9 @@
 
 ## Current operative account — MIK-R112
 
+Closeout and landing descriptions separate each route's exact invariant judgment from broad quality/certification/review. Direct landing exposes optional leaf_id; leaf integration rejudges its closeout pair; master final/checkpoint/recorded routes declare validator, net staleness, chain and history checks.
+
+
 The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
 
 - Capsule section says three public tools are registered; current registrar registers resources only.

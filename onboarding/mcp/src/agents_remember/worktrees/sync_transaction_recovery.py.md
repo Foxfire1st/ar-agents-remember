@@ -15,7 +15,7 @@ heads were restored when deterministic authority is absent or incomplete.
 ### Logic
 
 `finalize_sync` re-reads and validates the contract and completed work branches, writes the new base
-pair plus sync log, publishes the terminal journal first, then removes temporary worktrees and refs, and
+pair plus sync log including actual `codeHeadTo`/`memoryHeadTo` produced heads for landing-chain merge admission, publishes the terminal journal first, then removes temporary worktrees and refs, and
 finally (since MIK-R08) returns the completed result through `with_recomputed_worklist`.
 `_require_completed_branches` proves each final branch head is the exact operation-created head, and
 performs no ledger re-judgement: a completed memory side is proved as Git history, and the derived
@@ -93,7 +93,9 @@ No Domain Documentation source is configured for this memory root.
 - Ref reconstruction and contract/base constraints come from the sync authority module. [2]
 - Exact merge attribution is proven in the Git module. [3]
 - Rollback proof is centralized in the Git module. [3]
+
 - Finalization refuses while a side still parks its candidate, and cancellation clears a conflicted reapply, rolls back, and returns the parked candidate or reports a typed manual repair. [4]
+
 - The completed result gains the recomputed worklist summary; every failure leaves it unchanged. [5]
 - The completed-branch proof addresses only operation-created heads and reads no ledger rows. [6]
 

@@ -34,12 +34,8 @@ that entry's anchor in the candidate (`reanchor_mismatches` over `sidecar_entry_
   moved)` for every disagreeing invariant row. With more than one base (a merge), `_BaseRows.agreed` asks each parent,
   lazily, whether it holds the **identical row** at the same path and whether that row agreed with **that parent's**
   entries; if some parent does, the mismatch was caused by the merge (`moved`).
-  - `check_history_rows` refuses an unknown subject and an unmoved mismatch ("covered entries … no longer carry its
-    'after' anchor … name the row again through the writer").
-  - `check_merged_history_rows` reports a moved one ("the merge moved covered entries …; the leaf's next gate checks
-    the row against its new base"), and does not refuse the sync. At the leaf's next gate there is one base, so the
-    strict rule applies and the curator re-records the row (MIK-R09 Failure and Recovery: after a sync, stale items
-    reopen).
+  - `check_history_rows` refuses unknown subjects and every disagreeing row at a leaf publication, including a mismatch a merge moved. At a merge that is not a leaf publication, an unmoved mismatch still refuses.
+  - `check_merged_history_rows` reports moved mismatches only for non-publication merges. This sync exemption never admits a disagreeing row on a leaf publication; the next leaf gate rechecks its current rows.
 - The revision and examined-member bindings are currentness, not validity: a row whose invariant changed revision
   afterwards reopens its item at the gate and is not invalid here.
 - **A leaf's attempt files are one history (L37, decision record DEC-0AEQ28; INV-MS9BMJ).**
@@ -81,16 +77,11 @@ that entry's anchor in the candidate (`reanchor_mismatches` over `sidecar_entry_
 - **A sync merge refuses a row only when the leaf's own side had it wrong.** Proved by
   `test_a_sync_merge_refuses_a_history_row_only_when_the_leaf_s_own_side_had_it_wrong` in
   `test_knowledge_validator_routes.py` ("consistent" syncs; "already wrong" is refused by `R09-history-rows`).
-- Note (review R3): the validator itself has no deletion-against-base rule; "records are never deleted" is held by
-  the tools, and this rule now enforces it for every record a history row names.
+- Record deletion is independently refused by `rules_admission.check_record_kept` (`R27.4-record-kept`) for every ID a comparison base holds; retirement changes status and retains the file. Subject resolution here is not a substitute for that comparison.
 
 ### Todos
 
-- **Accepted note (R2-4):** record landing falls back to the landed commit's parents as bases when
-  `memory_base_commit` is empty, which could reach the merge exemption at a leaf route; leaf contracts always carry
-  `memory_base_commit`, so it is practically unreachable.
-- The byte-for-byte check of a new history file against its leaf's recorded closeout commit was offered by review R2
-  and not required (ruling 17:59:48).
+- The former missing-memory-base fallback and leaf merged-row exemption are superseded. Recorded leaf landing requires the named memory base and rejudges the exact pair; every master landing authenticates newly closed history against its owner publication. Those are current route obligations, not accepted limits.
 
 ## Judging Only Published Rows (MIK-R48)
 
@@ -105,6 +96,9 @@ file are exempt inside a judged file.
 
 ## Evidence
 
+- Leaf publication refuses merged-row mismatches; only a non-publication merge gets report-only treatment. [19]
+
+
 ### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
@@ -115,16 +109,22 @@ No configured live documentation source was available for this pass.
 
 ### Repo-Internal References
 
+
 - The module docstring: the two checks, which files, frozen attempts, the governing changed row, rows the merge moved. [1]
+
 
 - The files the re-anchor check reads. [2]
 
 - A merge parent's rows, read only when a row disagrees. [3]
 
 - Every disagreeing row that no later attempt of its owner answers again, and whether the merge moved it. [4]
-- The refusing check over every file's subjects and the unmoved mismatches. [5]
 
-- The report-only check of rows the merge moved. [6]
+- The refusing check rejects all mismatches at a leaf publication and only unmoved mismatches at a non-publication merge. [5]
+
+
+
+- Report-only moved-row treatment applies only to a non-publication merge. [6]
+
 - The two rules registered on import. [7]
 - The context flag a leaf publication sets. [8]
 - A ghost subject in a closed file is refused at master landing. [9]
@@ -136,10 +136,14 @@ No configured live documentation source was available for this pass.
 - A later row of another disposition that would replace the leaf's changed row. [14]
 - The refusal names the changed row it replaces. [15]
 
+
 - Changed row remains governing in every attempt. [16]
 
 
+
+
 - Parent-line change may be answered by any later row. [17]
+
 
 
 ### Cross-Repo References

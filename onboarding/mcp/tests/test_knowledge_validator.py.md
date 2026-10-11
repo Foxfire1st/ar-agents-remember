@@ -6,11 +6,13 @@
 
 ## Purpose
 
-**MIK-R22 rules 1–9 at unit level, over converted fixture trees.** Each test changes one thing in the fixture tree and checks that exactly the owning rule answers, with its rendered file, field and rule (`_only`). Since leaf 260928-MIK-L27 its last section also proves MIK-R27's admission rules, which that packet adds to the registry (rule 9). Registered in the `unit-regression` lane; 46 collected cases (9 of them MIK-R27's).
+**MIK-R22 rules 1–9 at unit level, over converted fixture trees.** Each test changes one thing in the fixture tree and checks that exactly the owning rule answers, with its rendered file, field and rule (`_only`). Since leaf 260928-MIK-L27 its last section also proves MIK-R27's admission rules, which that packet adds to the registry (rule 9). Registered in the `unit-regression` lane; this account describes source assertions, not a fresh collection count.
 
 ## Code Commentary
 
 ### Logic
+
+The admission registry pin includes refusing `R27.4-record-kept`; reports on old admission do not waive base-held record retention.
 
 - **Baseline:** the fixture tree passes every rule, MIK-R04's route rules included; the report-only set **owned by MIK-R22** (filtered by `owner.startswith("MIK-R22")` since leaf 260928-MIK-L04) is pinned to `R22.3-sidecar-without-markdown`, `R22.3-unresolved-target` and `R22.6-carried-stale`, so a later packet's report-only rules do not break the pin. Since MIK-R27 the fixture tree's only violation is the one report-only `R27.4-legacy-unassessed` count (`LEGACY_COUNT`: its Doc14 family is an export), and the four report-only pins in the rule 3 and rule 6 cases, plus the standalone conversion's, each gain `LEGACY_COUNT` and stay exact.
 - **Rule 1:** a bad field, a non-canonical file (naming the formatter), a file outside the layout, and a misplaced sidecar.
@@ -31,7 +33,8 @@
   - exported, retired and merge-parent records are never refused;
   - **a forged legacy ID does not make a record exported** (ruling 23:04:57 F2): the genuine export is only reported, and the same record under `INV-F0RG3D` is refused as new, for the claim and for `legacy-unassessed`;
   - the legacy count names live records by kind and drops assessed and retired (demoted) ones;
-  - the three rules are registered, `R27.2-new-record` refusing and the other two report-only, none writer-reported.
+  - all four admission rules are registered: `R27.2-new-record` and `R27.4-record-kept` refuse;
+    existing-record admission and legacy-count rules are report-only. None is writer-reported.
 
 ### Conventions
 
@@ -72,7 +75,9 @@ Representative cases; the full list is in the module.
 - MIK-R27: an existing record whose test was deleted is only reported. [9]
 - MIK-R27: exported, retired and merge-parent records are never refused. [10]
 - MIK-R27: a forged legacy ID does not make a record exported. [11]
+
 - MIK-R27: the legacy count and the rules' registration flags. [12]
+
 - A later rule runs everywhere; report-only never refuses. [13]
 
 ### Cross-Repo References

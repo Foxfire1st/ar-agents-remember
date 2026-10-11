@@ -41,8 +41,7 @@ the worktree layer through `memory_commit_refusal`, the one route entry point ev
 
 ### Conventions
 
-- A master's record landing gets the validator only: the staleness check needs the parent line's code tip from before
-  the landing, which the after-the-fact route cannot know (accepted smaller choice, ruling 14:38:47).
+- A master's recorded landing uses the recorded series code base for net staleness. All master landing routes also authenticate each newly closed history file against a landed leaf enclosure, recorded direct publication, or admitted crossing sync. The candidate file must be closed and byte-identical to that owner's publication; one failed file yields its named reason. A base-held closed file stays frozen, and no new history means no owner-contract/journal read. Unreadable enclosures, journals and Git inputs refuse. The earlier validator-only recorded-master limit is superseded.
 - The request type, `LandingGateRequest`, lives in `worktrees/services.py`; the unconverted exemption is decided by the
   worktree layer's marker probe before it asks.
 
@@ -63,6 +62,9 @@ the worktree layer through `memory_commit_refusal`, the one route entry point ev
 
 ## Evidence
 
+- Every newly closed master history file is authenticated against its owner publication. [9]
+
+
 ### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
@@ -73,12 +75,18 @@ No configured live documentation source was available for this pass.
 
 ### Repo-Internal References
 
+
 - The module docstring: master routes and record landing. [1]
+
 - The finding codes. [2]
+
 - The refusal and the named remedy. [3]
+
 - The closed history file in the landed commit. [4]
 - The master's net staleness, refusing anything not current. [5]
+
 - The master route test. [6]
+
 
 - The leaf's latest history file in the landed commit; an unlistable directory is an unreadable input. [7]
 - Record landing refuses when the landed history cannot be listed. [8]

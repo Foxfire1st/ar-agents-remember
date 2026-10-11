@@ -1,0 +1,74 @@
+{
+  "path": "mcp/tests/test_history_ownership.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "7e18cf9aabc6cc74d145b510074c8be7404321c2",
+        "content": "sha256:beb36979d11993ac6df558b8dcb9bff7d425e72b9ad204f8bb888daf2673a1fd",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_edited_closed_file_refuses_naming_it"
+        }
+      },
+      "facet": "Edited closed history differs from the owner publication and refuses by its filename.",
+      "id": "PRF-7HPHWH",
+      "invariant": "INV-3FA4VG",
+      "origin": {
+        "handoffEntry": "MIK-R52@v1 rule 5 history-ownership",
+        "leaf": "260928-MIK-L52"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Recorded owner publication admits byte-identical newly closed history.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7e18cf9aabc6cc74d145b510074c8be7404321c2",
+            "content": "sha256:37911b178f4a4e0945b7099983e5690327e71988500da2c81e208c94f52ff95e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_newly_closed_file_with_its_leaf_owner_passes"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Changed closed history is refused by file.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7e18cf9aabc6cc74d145b510074c8be7404321c2",
+            "content": "sha256:beb36979d11993ac6df558b8dcb9bff7d425e72b9ad204f8bb888daf2673a1fd",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_edited_closed_file_refuses_naming_it"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "An unreadable enclosure is not silently skipped.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7e18cf9aabc6cc74d145b510074c8be7404321c2",
+            "content": "sha256:1065a353af9cf4aa583543e77e26b7828905757fe37dec505228e24d433c2c11",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_unreadable_enclosure_refuses_naming_it"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

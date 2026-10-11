@@ -1,0 +1,91 @@
+{
+  "path": "mcp/tests/test_integration_refusal_footprint.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "135632f88a874b3c2d23e07b31fb2e8843f95324",
+        "content": "sha256:c35939cf0ca072018d6ba360e7177293f866cd7a75a78710ca301255fcba6f26",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_edited_closeout_cell_is_judged_as_edited"
+        }
+      },
+      "facet": "A recorded pair with a base-held record deleted is judged as that edited tree and refuses.",
+      "id": "PRF-HT6J20",
+      "invariant": "INV-78GNBA",
+      "origin": {
+        "handoffEntry": "MIK-R52@v1 rule 6 record-kept",
+        "leaf": "260928-MIK-L52"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "135632f88a874b3c2d23e07b31fb2e8843f95324",
+        "content": "sha256:21c33d0ee1b05af684bd6c3a3d22994088b3266f2bd0a33d355d00819f50e288",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_refused_leaf_integration_apply_writes_nothing"
+        }
+      },
+      "facet": "Refused leaf apply leaves its snapshotted publication state unchanged.",
+      "id": "PRF-KPPB2W",
+      "invariant": "INV-5JEN5D",
+      "origin": {
+        "handoffEntry": "MIK-R52@v1 rule 3 leaf-integration",
+        "leaf": "260928-MIK-L52"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Apply refusal preserves contract, worklist and refs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "135632f88a874b3c2d23e07b31fb2e8843f95324",
+            "content": "sha256:21c33d0ee1b05af684bd6c3a3d22994088b3266f2bd0a33d355d00819f50e288",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_refused_leaf_integration_apply_writes_nothing"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Recorded landing refusal also preserves its footprint.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "135632f88a874b3c2d23e07b31fb2e8843f95324",
+            "content": "sha256:9622426385ea5ffa5a50ecd5e33d5a220d6d8e8aad13bbd76a0bf77ac53aad1f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_refused_record_landing_writes_nothing"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Changed cells produce their actual record-kept finding.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "135632f88a874b3c2d23e07b31fb2e8843f95324",
+            "content": "sha256:c35939cf0ca072018d6ba360e7177293f866cd7a75a78710ca301255fcba6f26",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_edited_closeout_cell_is_judged_as_edited"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

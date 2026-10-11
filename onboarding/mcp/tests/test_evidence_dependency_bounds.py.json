@@ -1,0 +1,91 @@
+{
+  "path": "mcp/tests/test_evidence_dependency_bounds.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "36095c36cbdbc76df02280415b7d1414ebb5493f",
+        "content": "sha256:e246b511755166c835464d878e83cd00338238015576d75da7691959d9e1fd52",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_maximum_coherence_publication_validates_at_capacity"
+        }
+      },
+      "facet": "Maximum legal judgment/assessment population with precise evidence publishes and validates.",
+      "id": "PRF-B4QRXX",
+      "invariant": "INV-SRS98B",
+      "origin": {
+        "handoffEntry": "MIK-R52@v1 rule 12 bounded-builders",
+        "leaf": "260928-MIK-L52"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "36095c36cbdbc76df02280415b7d1414ebb5493f",
+        "content": "sha256:9d09b49479a9cc27a5cf74d5048e42cd4d828b4179857182bd6ae6dbcef2aa25",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_old_coherence_record_still_loads"
+        }
+      },
+      "facet": "The retained pre-derivation coherence record parses and its dependency declaration remains within the derived bound.",
+      "id": "PRF-R5ZKGD",
+      "invariant": "INV-SRS98B",
+      "origin": {
+        "handoffEntry": "MIK-R52@v1 rule 12 bounded-builders",
+        "leaf": "260928-MIK-L52"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "An admitted maximum record publishes and validates with its distinct dependencies.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "36095c36cbdbc76df02280415b7d1414ebb5493f",
+            "content": "sha256:e246b511755166c835464d878e83cd00338238015576d75da7691959d9e1fd52",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_maximum_coherence_publication_validates_at_capacity"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Out-of-model input leaves evidence destinations and authority unchanged.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "36095c36cbdbc76df02280415b7d1414ebb5493f",
+            "content": "sha256:1fcfc144f561a3d3174c8e4289e46e75e860540832977216f507b6f03e37bf00",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_oversize_publication_refuses_before_any_write"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The complete pre-derivation record retains compatible encoding.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "36095c36cbdbc76df02280415b7d1414ebb5493f",
+            "content": "sha256:9d09b49479a9cc27a5cf74d5048e42cd4d828b4179857182bd6ae6dbcef2aa25",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_old_coherence_record_still_loads"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

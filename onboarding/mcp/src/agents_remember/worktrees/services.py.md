@@ -20,10 +20,7 @@ Defines the service protocols and process-local binding consumed by worktree lif
 
 Since MIK-R09, `KnowledgeValidationPort.leaf_refusal(...)` judges a commit that publishes a leaf (closeout, direct landing, a leaf's recorded landing): the leaf's own history file is re-anchor-checked whatever its `closed` flag (review R1 F1), unless it is closed in a base or in a frozen commit; `memory_commit_refusal` chooses it when `leaf_publication` is set. Since L37 it takes a `LeafPublication(candidate_tree, bases, frozen=())` in place of the tree and the bases. `frozen` are the commits the candidate sits on when they are not bases: a history file closed there was closed by an earlier closeout of the same leaf that was not integrated, and stays frozen (decision record DEC-0AEQ28). `LandingGateRequest.frozen` carries the same commits for a recorded landing; the caller names them only for the memory commit the leaf's contract records as its completed closeout.
 
-**`KnowledgeGatePort` (MIK-R09).** Bound by the composition layer (`application/knowledge_gate/adapter.KnowledgeGate`); each method recomputes from the exact trees it is given, trusts nothing persisted, and returns the refusal naming every finding, or `None`:
-- `leaf_refusal(contract, *, code_tree, memory_tree, parent_memory_tip)`: the gate over a leaf's exact closeout candidate (the closeout validator);
-- `direct_verdict(contract, *, code_commit, memory_tree) -> DirectGateVerdict(applies, owner, refusal)`: direct landing's verdict and the leaf whose history file it closes;
-- `landing_refusal(LandingGateRequest)`: a landing's closed-history and net-staleness checks. `LandingGateRequest` names the landed memory commit and its `memory_bases` (the parent line's memory tip for a master or checkpoint landing, the task's memory base or the commit's parents for a recorded landing), the code repository and commit, `code_base` (the parent line's code tip whose merge base with the code commit starts the master's net diff; `None`: no staleness check) and `leaf_owner` (a leaf's recorded landing: its history file must be closed).
+**`KnowledgeGatePort`.** Composition binds the exact-tree gate. `leaf_refusal` takes `persist_worklist=True`; landing refusal callers set it false. `direct_verdict` and `direct_source` take optional `leaf_id`, so named ownership survives the port rather than being inferred independently. `LandingGateRequest` carries memory bases, paired code and code base, optional leaf owner, frozen commits and optional `series_contract`. The series contract identifies the owner population for every newly closed history file. Recorded leaf landing requires the named memory base; recorded master landing uses its series code base for net staleness. A recorded closeout's parent-frozen files remain frozen when the judged commit descends from that closeout; a hand-closed unrelated commit freezes nothing.
 
 The worktree layer reaches it only through `worktrees/knowledge_gate.py`, whose marker probes decide applicability first.
 
@@ -84,7 +81,9 @@ The protocols establish the downward dependency boundary; the application suppli
 - The mandatory gate's port, its landing request and the direct-landing verdict (MIK-R09). [3]
 
 
+
 - The mandatory gate's port, its landing request and the direct-landing verdict (MIK-R09). [23]
+
 
 
 - The crossing sync's port, its request and plan view, and the step failure it raises. [4]
@@ -96,13 +95,19 @@ The protocols establish the downward dependency boundary; the application suppli
 - The bundle exposes optional capabilities, including `knowledge_validation`, `knowledge_crossing`, `knowledge_worklist`, (since MIK-R25) `review_artifact_cleanup` and (since MIK-R09) `knowledge_gate`; provider setup inputs stay opaque. [9]
 
 
+
 - Bind the composition-provided services for this process. [10]
+
+
 
 
 - Clear the bound services (tests and process teardown). [11]
 
 
+
+
 - Reading unbound worktree services refuses instead of constructing ambient owners. [12]
+
 
 
 - The default application bundle binds rails, the prepared continuation and certification, the knowledge validator with its base converter, and the knowledge crossing. [13]
@@ -132,7 +137,9 @@ Prepared-memory certification is an explicit typed service alongside the continu
 
 - `WorktreeServicesUnboundError` owns the corresponding behavior described above. [18]
 
+
 - Bind the composition-provided services for this process. [19]
+
 
 - `reset_worktree_services` owns the corresponding behavior described above. [20]
 - `worktree_services` owns the corresponding behavior described above. [21]

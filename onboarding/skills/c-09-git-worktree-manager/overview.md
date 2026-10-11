@@ -6,6 +6,9 @@
 
 ## Purpose
 
+The public guidance names the judgment per route: leaf integration and recorded landing rejudge actual pairs; master final/checkpoint/recorded landings run validator, net staleness, chain and history ownership. Preview runs the same admission without mutating refused state. Public direct recovery availability must not be inferred from executor settlement.
+
+
 This route owns the agent-facing Git worktree lifecycle: start, attach, status, source-pair
 selection, resumable synchronization, closeout routing, integration, finalization, cleanup,
 abandonment, and reopen recovery. The skill describes public contract-addressed operations; it does

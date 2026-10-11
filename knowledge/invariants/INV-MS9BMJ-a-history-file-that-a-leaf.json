@@ -10,12 +10,12 @@
   "applicability": "The history files of a leaf on converted memory that writes rows after a closeout closed its latest file: a leaf reopened after its integration, and a leaf that continues after a completed closeout that was not integrated.",
   "conditions": [
     "The leaf's latest attempt file is closed in the writer's base, the leaf's memory HEAD commit.",
-    "For the validator and the gate, a comparison base holds the file closed, or the contract records the closeout that closed it as completed."
+    "For the validator and the gate, a comparison base holds the file closed, or the contract records the closeout that closed it as completed.",
+    "For recorded landing and integration, the recorded closeout parents remain frozen when the judged memory commit equals or descends from that closeout; other ancestry freezes nothing."
   ],
   "exclusions": [
     "A wave or a crossing owner, which has one history file.",
     "A file closed only in the uncommitted candidate: it is still the write target and is refused by name.",
-    "A continued leaf landed through a commit other than its recorded closeout commit: nothing is frozen for it, and every row is checked against the landed tree.",
     "The retired database-era realization site; the obligation is recorded on converted memory only.",
     "The retired dataset-era realization sites; the obligation is recorded on converted memory only."
   ],
@@ -32,7 +32,7 @@
     "leaf": "260928-MIK-L37",
     "task": "260928-MIK"
   },
-  "revision": 3,
+  "revision": 4,
   "schema": "ar-invariant/v1",
   "statement": "A history file that a leaf's recorded closeout closed is frozen, also while the parent line does not hold it yet: the leaf's later rows go to its next attempt file.",
   "status": "proposed",

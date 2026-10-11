@@ -27,7 +27,7 @@ An unchanged stat-matching file is not reconverted solely because attributes, fi
 `require_git` reports failed commands through transport-safe diagnostics while preserving the
 runner's raw successful output. The removed local runner is not restored: repository-selector
 scrubbing, standard-input ownership, encoding, and timeout policy stay in `kernel.git_command`.
-Branch resolution uses explicit local refs, and repository identity uses Git's shared object store.
+Branch resolution uses explicit local refs, and repository identity uses Git's shared object store. Landing callers use `require_readable_commit` and `require_ancestor`: only ancestry return codes 0/1 mean true/false; a failed object or ancestry read refuses with the caller's input name rather than acting absent.
 
 `worktree_candidate_tree(..., exclude_paths=())` uses a private temporary index per observation. It
 seeds from HEAD, removes excluded entries before materialization, stages through an exclusion-aware

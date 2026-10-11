@@ -7,8 +7,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cc9d129e43bc39aafd9fb367b61c3b0abce5e664",
-            "content": "sha256:321135dc6437125426b29067e3c5a37f51171016fe28dc9b03a11b9d372a5818",
+            "blob": "6230c3e5be5c089ead09c2ad0f4823e17d7002ca",
+            "content": "sha256:22147f0f4120bd845beffdf25314be66e2e2a0f4000fbcee91725f22b40cb9c7",
             "locator": {
               "kind": "symbol",
               "name": "KnowledgeGate"
@@ -19,14 +19,14 @@
       ]
     },
     "2": {
-      "note": "The leaf refusal over the candidate trees.\n\nAnchor: \"def leaf_refusal(\"",
+      "note": "The leaf refusal over the candidate trees.\n\nAnchor: `KnowledgeGate.leaf_refusal`",
       "targets": [
         {
           "anchor": {
-            "blob": "6de8211023be496991a77c1083363a6e426e0d20",
-            "content": "sha256:6ea914dcd8d6ab1ac157d74afc565ebfb96445f80c1813ed3ebdde6444f0cc1f",
+            "blob": "6230c3e5be5c089ead09c2ad0f4823e17d7002ca",
+            "content": "sha256:8dfac2fbdb13213ef9b0822fd2752a82b4c9591184903e0d1ac36200a8de5931",
             "locator": {
-              "end": 38,
+              "end": 40,
               "kind": "line_range",
               "start": 25
             }
@@ -36,16 +36,28 @@
       ]
     },
     "3": {
-      "note": "The direct and landing answers.\n\nAnchor: \"def direct_verdict(\"; \"def landing_refusal(self, request: LandingGateRequest)\"",
+      "note": "The direct and landing answers.\n\nAnchor: `KnowledgeGate.direct_verdict`; `KnowledgeGate.landing_refusal`",
       "targets": [
         {
           "anchor": {
-            "blob": "cc9d129e43bc39aafd9fb367b61c3b0abce5e664",
-            "content": "sha256:1072ee9cd332889e549e145fdffd517808873ff7176fe096a5d6c702527c5526",
+            "blob": "6230c3e5be5c089ead09c2ad0f4823e17d7002ca",
+            "content": "sha256:f10d37ba4e7f6db150572373878db5fad883cad21227a845cec0bbe1b0de1aa1",
             "locator": {
-              "end": 42,
+              "end": 57,
               "kind": "line_range",
-              "start": 36
+              "start": 42
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6230c3e5be5c089ead09c2ad0f4823e17d7002ca",
+            "content": "sha256:52a47b90aced3ef39cfe72ce87955c6e18d48b31aed192a55763f4917dcfe796",
+            "locator": {
+              "end": 72,
+              "kind": "line_range",
+              "start": 71
             }
           },
           "kind": "code"

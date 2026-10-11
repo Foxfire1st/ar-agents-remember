@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "b1cc35c9b446e484b65429c35a505444368a9a30",
-        "content": "sha256:d729e3ba5b4fa56caa130994f5b320abd7e417b2184be52b3ee0c4796f984e18",
+        "blob": "89cda38de3084e4cbbe2521a9c668510f6314878",
+        "content": "sha256:7fd67179e3e04aac48c980da9cec80db4504b6df9d29d7af1b7cf16ab7a8cc9a",
         "locator": {
           "kind": "symbol",
           "name": "test_behind_entry_gate_sites_refuse_a_disabled_contract"
@@ -26,8 +26,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b1cc35c9b446e484b65429c35a505444368a9a30",
-            "content": "sha256:ddb9f745c730d70c1f83b98a65c2414fdeb23479ef4e39a0290e070e4695dca0",
+            "blob": "89cda38de3084e4cbbe2521a9c668510f6314878",
+            "content": "sha256:9e665306e703209fa0765ef44cf37b8d96281cf3ae6ec7da63512f0ba5cca33d",
             "locator": {
               "kind": "file"
             }
@@ -41,8 +41,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b1cc35c9b446e484b65429c35a505444368a9a30",
-            "content": "sha256:ddb9f745c730d70c1f83b98a65c2414fdeb23479ef4e39a0290e070e4695dca0",
+            "blob": "89cda38de3084e4cbbe2521a9c668510f6314878",
+            "content": "sha256:9e665306e703209fa0765ef44cf37b8d96281cf3ae6ec7da63512f0ba5cca33d",
             "locator": {
               "kind": "file"
             }
@@ -56,8 +56,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b1cc35c9b446e484b65429c35a505444368a9a30",
-            "content": "sha256:ddb9f745c730d70c1f83b98a65c2414fdeb23479ef4e39a0290e070e4695dca0",
+            "blob": "89cda38de3084e4cbbe2521a9c668510f6314878",
+            "content": "sha256:9e665306e703209fa0765ef44cf37b8d96281cf3ae6ec7da63512f0ba5cca33d",
             "locator": {
               "kind": "file"
             }
@@ -71,8 +71,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b1cc35c9b446e484b65429c35a505444368a9a30",
-            "content": "sha256:ddb9f745c730d70c1f83b98a65c2414fdeb23479ef4e39a0290e070e4695dca0",
+            "blob": "89cda38de3084e4cbbe2521a9c668510f6314878",
+            "content": "sha256:9e665306e703209fa0765ef44cf37b8d96281cf3ae6ec7da63512f0ba5cca33d",
             "locator": {
               "kind": "file"
             }
@@ -86,8 +86,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b1cc35c9b446e484b65429c35a505444368a9a30",
-            "content": "sha256:ddb9f745c730d70c1f83b98a65c2414fdeb23479ef4e39a0290e070e4695dca0",
+            "blob": "89cda38de3084e4cbbe2521a9c668510f6314878",
+            "content": "sha256:9e665306e703209fa0765ef44cf37b8d96281cf3ae6ec7da63512f0ba5cca33d",
             "locator": {
               "kind": "file"
             }
@@ -101,8 +101,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b1cc35c9b446e484b65429c35a505444368a9a30",
-            "content": "sha256:ddb9f745c730d70c1f83b98a65c2414fdeb23479ef4e39a0290e070e4695dca0",
+            "blob": "89cda38de3084e4cbbe2521a9c668510f6314878",
+            "content": "sha256:9e665306e703209fa0765ef44cf37b8d96281cf3ae6ec7da63512f0ba5cca33d",
             "locator": {
               "kind": "file"
             }
@@ -116,8 +116,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b1cc35c9b446e484b65429c35a505444368a9a30",
-            "content": "sha256:ddb9f745c730d70c1f83b98a65c2414fdeb23479ef4e39a0290e070e4695dca0",
+            "blob": "89cda38de3084e4cbbe2521a9c668510f6314878",
+            "content": "sha256:9e665306e703209fa0765ef44cf37b8d96281cf3ae6ec7da63512f0ba5cca33d",
             "locator": {
               "kind": "file"
             }
@@ -131,8 +131,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b1cc35c9b446e484b65429c35a505444368a9a30",
-            "content": "sha256:ddb9f745c730d70c1f83b98a65c2414fdeb23479ef4e39a0290e070e4695dca0",
+            "blob": "89cda38de3084e4cbbe2521a9c668510f6314878",
+            "content": "sha256:9e665306e703209fa0765ef44cf37b8d96281cf3ae6ec7da63512f0ba5cca33d",
             "locator": {
               "kind": "file"
             }

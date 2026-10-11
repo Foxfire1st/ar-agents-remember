@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "91d0dce825020d677826f306891b612f23e5abb9",
+        "blob": "64fdd7117fe49540f412b6c871be515d8f20e49c",
         "content": "sha256:5c18c16620ec34c7d404d568453053b4f51579ee908ce8786bb2554821ef1ed4",
         "locator": {
-          "end": 200,
+          "end": 205,
           "kind": "line_range",
-          "start": 131
+          "start": 136
         }
       },
       "id": "RLZ-GP3TR9",
@@ -98,12 +98,12 @@
       ]
     },
     "4": {
-      "note": "Finalization refuses while a side still parks its candidate, and cancellation clears a conflicted reapply, rolls back, and returns the parked candidate or reports a typed manual repair.\n\nAnchor: \"require_parked_wip_settled(record)\"; \"restore_cancelled_wip(store, record)\"",
+      "note": "Finalization refuses while a side still parks its candidate, and cancellation clears a conflicted reapply, rolls back, and returns the parked candidate or reports a typed manual repair.",
       "targets": [
         {
           "anchor": {
-            "blob": "91d0dce825020d677826f306891b612f23e5abb9",
-            "content": "sha256:9c5760e4bc86f585066e6683af4bdbfddaf9454ccfbc970f775f7a64bebc9561",
+            "blob": "64fdd7117fe49540f412b6c871be515d8f20e49c",
+            "content": "sha256:389eac49e3c8952118585caff232b3b627fdbb12c5c4a66931173b9c27e56aac",
             "locator": {
               "kind": "symbol",
               "name": "finalize_sync"
@@ -113,7 +113,7 @@
         },
         {
           "anchor": {
-            "blob": "91d0dce825020d677826f306891b612f23e5abb9",
+            "blob": "64fdd7117fe49540f412b6c871be515d8f20e49c",
             "content": "sha256:281c7b4b0435e9938358c5cf452b0edb9478f113094ca158e3f66baffa5efa3f",
             "locator": {
               "kind": "symbol",
@@ -129,7 +129,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "91d0dce825020d677826f306891b612f23e5abb9",
+            "blob": "64fdd7117fe49540f412b6c871be515d8f20e49c",
             "content": "sha256:4914b185c2e5d37db635c28801ec25eb7e089977c7b791b1c9b13703c40528f7",
             "locator": {
               "kind": "symbol",
@@ -140,7 +140,7 @@
         },
         {
           "anchor": {
-            "blob": "91d0dce825020d677826f306891b612f23e5abb9",
+            "blob": "64fdd7117fe49540f412b6c871be515d8f20e49c",
             "content": "sha256:891cae08c8d5b0e773a64d1940b51a1ac566213ac0137ba3f1bd58f7c4aefb56",
             "locator": {
               "kind": "symbol",
@@ -156,7 +156,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "91d0dce825020d677826f306891b612f23e5abb9",
+            "blob": "64fdd7117fe49540f412b6c871be515d8f20e49c",
             "content": "sha256:4c14ef1128e8d76827f7b5aad6fdd4f416ba99102bb37715a114928c26fcb5a9",
             "locator": {
               "kind": "symbol",
@@ -172,7 +172,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "91d0dce825020d677826f306891b612f23e5abb9",
+            "blob": "64fdd7117fe49540f412b6c871be515d8f20e49c",
             "content": "sha256:240c55de9a37e148eb19c7dde3e3957920456dc91e5892d294c8541ee50b6200",
             "locator": {
               "kind": "symbol",

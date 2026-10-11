@@ -1,0 +1,91 @@
+{
+  "path": "mcp/tests/test_direct_landing_leaf_identity.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "1d97e7f7bc98ce535ba25753359cd3fb245fa2bb",
+        "content": "sha256:be7d9c36b69278661f21646c6a970232a29947dfb1f66bf285a6c8ac3ca10a77",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_control_recover_on_the_interrupted_running_generation_is_refused"
+        }
+      },
+      "facet": "The public interrupted direct generation recover refuses as lifecycle-control-not-legal; it is not executor success.",
+      "id": "PRF-JJE0TB",
+      "invariant": "INV-6DFQ9P",
+      "origin": {
+        "handoffEntry": "MIK-R52@v1 rule 8 direct-leaf-identity",
+        "leaf": "260928-MIK-L52"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "1d97e7f7bc98ce535ba25753359cd3fb245fa2bb",
+        "content": "sha256:d628479a888fdf111eb15cea5368bf5bff957152928dfe54d46dbb42f2c86bd3",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_public_direct_landing_with_the_supplied_open_leaf_lands_and_records_the_leaf"
+        }
+      },
+      "facet": "The public supplied-owner route records and closes the supplied open leaf.",
+      "id": "PRF-Y7VF8B",
+      "invariant": "INV-6DFQ9P",
+      "origin": {
+        "handoffEntry": "MIK-R52@v1 rule 8 direct-leaf-identity",
+        "leaf": "260928-MIK-L52"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The supplied identity reaches the operation record and closed history.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1d97e7f7bc98ce535ba25753359cd3fb245fa2bb",
+            "content": "sha256:d628479a888fdf111eb15cea5368bf5bff957152928dfe54d46dbb42f2c86bd3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_public_direct_landing_with_the_supplied_open_leaf_lands_and_records_the_leaf"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Public recover is currently unavailable and preserves the generation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1d97e7f7bc98ce535ba25753359cd3fb245fa2bb",
+            "content": "sha256:be7d9c36b69278661f21646c6a970232a29947dfb1f66bf285a6c8ac3ca10a77",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_control_recover_on_the_interrupted_running_generation_is_refused"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The real executor settles the kept receipt independently of public-control legality.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1d97e7f7bc98ce535ba25753359cd3fb245fa2bb",
+            "content": "sha256:548934e82e5e220b140fd93002e4dcd1e92ec5c4e6729607d544809cd40c6431",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_recovery_through_operation_control_settles_the_kept_closing_receipt"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

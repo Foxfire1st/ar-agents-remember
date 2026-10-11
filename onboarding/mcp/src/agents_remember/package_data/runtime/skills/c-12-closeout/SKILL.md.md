@@ -6,6 +6,9 @@
 
 ## Purpose
 
+This generated runtime skill propagates the canonical root skill's exact-pair landing guidance. It distinguishes leaf rejudgment from the master validator/staleness/chain/history checks and separates public direct recover refusal from the real executor's receipt settlement. Edit the canonical skill and regenerate copies; this file is no second authority.
+
+
 The shipped closeout instruction defines the approved code/memory Git transaction and
 its refusal/recovery boundaries. Implementation, curation and Git authority stay separate.
 

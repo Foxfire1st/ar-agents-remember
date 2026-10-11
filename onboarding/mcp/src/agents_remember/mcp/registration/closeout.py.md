@@ -10,7 +10,7 @@ The registered closeout and integration tools advertise transaction previews and
 closeout apply validates explicit approval, candidate/source identity, and Git safety before
 committing code, refreshing and committing attributed external memory, and refreshing the
 consumer ledger cache when possible.
-Integration validates the prepared pair and publishes it through the existing ref-atomic path.
+Integration rejudges a converted leaf's closeout-cell pair before refs move in preview and apply. Master final, checkpoint and recorded routes run validator, net staleness, actual-endpoint chain proof and new-history ownership. Recorded leaf landing runs the shared leaf-pair judgment and keeps the closed-history check. Direct landing accepts `leaf_id`, or infers the sole open owner. These descriptions do not add broad quality/certification/review gates.
 Neither public route promises or invokes strict code quality, memory quality, selected
 certification, curator coherence, or independent review during normal execution; full suites are
 only an explicit developer request. The older altitude-ladder wording below is historical
@@ -193,9 +193,13 @@ No configured external domain source applies.
 
 ### Repo-Internal References
 
+
 - Registered direct/ordinary closeout and integration tools expose no ledger message or landed-ledger argument. [1]
+
 - The payload builders these forward to. [2]
+
 - The checkpoint-landing tool declaration and the payload builder it forwards to. [3]
+
 - `CloseoutCommitMessages` and `CloseoutApproval` remain distinct request concepts. [4]
 - Refuse to stage anywhere except a task's own throwaway worktree. [5]
 - Refuse before staging when the checkout has unresolved conflicts. [6]

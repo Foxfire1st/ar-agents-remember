@@ -29,19 +29,47 @@ That suite requires refusal of the account's real settings path and verifies the
 recursive support scanner without writing a real account. Its registration is
 selection evidence, not an execution or acceptance claim.
 
+The landing, ownership, strict-refusal and dependency-bound suites are selected in `unit-regression`; `test_curator_coherence_closed_out.py` is in `integration`. These catalog memberships select the population and certify no invocation.
+
 ## Evidence
 
+
 - Extracted capsule surface suite in unit-regression [835]
+
+
+
 - Opt-out refusal suites in unit-regression [836]
+
+
+
+
 - Lane lists retain one path per module, with the worktree-environment guard registered in unit-regression. [837]
+
+
 
 - The module the lane names. [838]
 
+
+
 - The new module joins this lane. [839]
+
+
+
+
 
 - The lane catalog with the host module rows. [840]
 
+
+
+
+
 - The worktree-environment regression module belongs to unit-regression. [841]
 
+
+
+
+
 - The guard suite is selected in unit-regression; its cases refuse real-path writes on made-up accounts. [842]
+
+
 - The guard and recursive scanner cases carry the support-settings contract. [843]

@@ -58,6 +58,9 @@ The retention module measures custody and releases refs earlier freezes created;
 
 ## What This Area Is
 
+The landing chain includes ordinary and merge commits. Final uses every canonical non-abandoned leaf; checkpoint and recorded landing use the landed population up to their actual endpoints. A line with no landed leaf contains only recorded bases and reconciled parent positions. Sync logs record produced code/memory heads for merge admission; legacy logs retain their explicit no-head compatibility.
+
+
 Task-document copy publication belongs to `task_document_copies.py`. It retains the own-leaf
 rendered file and index outside both Git worktrees. After canonical publication, refresh walks
 only the written documents' parent task folders, uses the task-domain iterator to exclude

@@ -1,0 +1,58 @@
+{
+  "path": "mcp/tests/test_master_chain_offenders.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "e5318345905e4d7b2daee5e1c3032271c5b64a9e",
+        "content": "sha256:905c4d16f1a83c4a9ea7f367cc42e3d1dd8802b62fa2402b46850da01daa998f",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_six_foreign_commits_are_all_named"
+        }
+      },
+      "facet": "All six foreign commits appear in the chain refusal.",
+      "id": "PRF-54QWWX",
+      "invariant": "INV-3BGCAT",
+      "origin": {
+        "handoffEntry": "MIK-R52@v1 rule 4 master-chain-proof",
+        "leaf": "260928-MIK-L52"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "All foreign commits are named, not a five-entry sample.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e5318345905e4d7b2daee5e1c3032271c5b64a9e",
+            "content": "sha256:905c4d16f1a83c4a9ea7f367cc42e3d1dd8802b62fa2402b46850da01daa998f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_six_foreign_commits_are_all_named"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "A sync-recorded merge remains admissible.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e5318345905e4d7b2daee5e1c3032271c5b64a9e",
+            "content": "sha256:7aa2cafb882c1db3241c522b6855cdead29ad157b56382638a2f1e86cf038963",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_admitted_sync_merge_passes"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

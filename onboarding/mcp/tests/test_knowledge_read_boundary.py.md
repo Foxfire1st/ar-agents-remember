@@ -10,7 +10,7 @@
 
 ## Code Commentary
 
-The main knowledge roster covers family, invariant and source-context reads, named unsupported-view refusals, a diff, integrity and published intent. A second case mutates one read to create a directory and shows the oracle catching it. Enclosure comparisons, reviewer GETs, server-info/resolver/gate/file reads, the context packet and internal drift check, baseline status/adoption previews, adopted-seat status and dry runs, the carryover/queue refusal paths and remaining dashboard GETs keep their selected protected populations unchanged. This is the file's explicit roster, not universal execution of every registered tool or live-session route. The oracle lives in `read_boundary_oracle_test_support.py`.
+The main knowledge roster covers family, invariant and source-context reads, named unsupported-view refusals, a diff, integrity and published intent. A second case mutates one read to create a directory and shows the oracle catching it. Enclosure comparisons, reviewer GETs, server-info/resolver/gate/file reads, the context packet and internal drift check, baseline status/adoption previews, adopted-seat status and dry runs, the carryover/queue refusal paths and remaining dashboard GETs keep their selected protected populations unchanged. This is the file's explicit roster, not universal execution of every registered tool or live-session route. Its adopted-seat integration dry run holds the leaf rejudgment passing: that fixture proves the read boundary, not acceptance of its pair by the landing gate. The oracle lives in `read_boundary_oracle_test_support.py`.
 
 Skill coverage uses the retained registry and response builders: list the catalog, read a URI it advertised and reject a bogus URI. The skill case keeps its historical test identifier, but its current assertions cover only those catalog operations.
 
@@ -34,5 +34,7 @@ values; the summary/projection owners carry those separate contracts.
 - Skill catalog list, advertised-URI read and bogus-URI refusal preserve the fixture. [9]
 - Baseline adoption dry run preserves the converted fixture. [10]
 - Freshness is opt-in: no unrequested fetch, and a requested fetch changes only its bounded Git footprint. [11]
+
 - Adopted-seat status, preview, integrate and reopen dry runs respect the oracle's preview allowance. [12]
+
 - Remaining preview, carryover and queue paths answer or name their refusals without landing or protected-state mutation. [13]

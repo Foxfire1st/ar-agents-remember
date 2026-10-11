@@ -2,6 +2,9 @@
 
 ## Current operative account — MIK-R112
 
+Landing regression suites distinguish exact-pair refusal, authentic history ownership, record retention, merge-chain admission, explicit direct owner and honest post-publication aftermath. Coherence closed-out is an integration case; dependency bounds/old-record compatibility are model/publication witnesses. Read-boundary and synthetic cutover fixtures that hold another gate passing prove only their declared surface, never that gate's acceptance.
+
+
 The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
 
 Current lane populations are derived from `test-evidence-lanes.toml`, not pinned in this overview.

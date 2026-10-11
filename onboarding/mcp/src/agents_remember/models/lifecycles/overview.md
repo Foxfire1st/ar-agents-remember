@@ -28,6 +28,9 @@ projection, and tool payload assembly remain in observer, worktree, application,
 
 ## Operating Model
 
+Direct operation input carries optional leafId as retry identity while old journals default it to None. Shared evidence-dependency capacity follows from bounded record populations, including coherence judgments and assessments; valid unrelated evidence need not be coarsened to a bare historical count. Model bounds still refuse before artifact writes.
+
+
 The package centralizes related model definitions without introducing a package facade.
 `responses.py` owns the lifecycle state/phase vocabularies consumed by observer code;
 `operation.py` separates private durable execution identity from the task-addressed public view.

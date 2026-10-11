@@ -23,10 +23,10 @@
     "The closeout does not run the memory-quality suite and does not require the coherence record; the curator runs the suite at intake and after repairs, and the orchestrator watches it (D34).",
     "The gate judges the exact pair the closeout commits, before the memory commit's Git mutation, also for a recovered closeout and when nothing is left to commit (leaf decision 2026-10-01T17:17:07, ruling A).",
     "The closeout preview asks the same gate, so it never answers would-closeout for a leaf the apply refuses, as long as the preview is called only on explicit request (leaf decision 2026-10-01T22:49:36, Q4).",
-    "A leaf's integration does not judge the recorded pair again: the gate stays at the commit (leaf decision 2026-10-01T22:49:36, Q1)."
+    "Leaf integration and recorded landing rejudge the pair before publication/recording; MIK-R52@v1 explicitly supersedes the earlier Q1 integration limit while preserving D34's narrow invariant-only check."
   ],
   "context": "The first closeout of the cutover leaf committed its memory with three worklist items open: the gate was called only from the coherence validator, which the plain worktree closeout does not require. The developer's account of the earlier loosening, quoted in D34: several checks that all ran at the closeout caused back and forth and unintended churn, so the developer loosened them; the coder runs its focused tests, and the curator runs its check at the start so that it gets a full list. The architect offered two options (leaf decision 2026-10-01T17:17:07, ruling A, as the first), and the developer chose.",
-  "decider": "developer (260928-MIK DEVELOPER-DIRECTION D34: \"option 1 is fine\"), on the architect's recommendation (leaf document decisions 2026-10-01T17:17:07, ruling A, and 2026-10-01T18:04:23); the consequences for the preview and for integration are the architect's rulings of 2026-10-01T22:49:36 (Q4 and Q1) under D31 and D34",
+  "decider": "developer (260928-MIK DEVELOPER-DIRECTION D34: \"option 1 is fine\"), on the architect's recommendation (leaf document decisions 2026-10-01T17:17:07, ruling A, and 2026-10-01T18:04:23); the consequences for the preview and for integration are the architect's rulings of 2026-10-01T22:49:36 (Q4 and Q1) under D31 and D34; integration consequence replaced by the approved MIK-R52@v1 under D47",
   "id": "DEC-TJ0CX7",
   "links": [
     {
@@ -79,7 +79,7 @@
     "leaf": "260928-MIK-L37",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-decision/v1",
   "status": "active",
   "supersedes": []

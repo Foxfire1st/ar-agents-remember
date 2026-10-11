@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "501e843eb81c280a37a2da43c76b36539bc126c0",
+            "blob": "136d4c18901e0406361b0361c272d806dc80da93",
             "content": "sha256:1a82503335dfe34106b68ebfc42a8b0a4b73c46da93b5a15cea929aba31ba7eb",
             "locator": {
               "kind": "symbol",
@@ -19,12 +19,12 @@
       ]
     },
     "11": {
-      "note": "The verdict; a replay is not gated; exactly one owner.",
+      "note": "The direct verdict binds the explicit or inferred owner; only an exact no-publication replay skips a fresh gate.",
       "targets": [
         {
           "anchor": {
-            "blob": "501e843eb81c280a37a2da43c76b36539bc126c0",
-            "content": "sha256:54b6cb7c466287f7ef2e9d5a01ae4b66601375e047d96cab34838ff7e1c6efa6",
+            "blob": "136d4c18901e0406361b0361c272d806dc80da93",
+            "content": "sha256:7cd0923beec23ea1e1cc61d019f64db3a6059820df36f44045a21fb077dad60e",
             "locator": {
               "kind": "symbol",
               "name": "direct_verdict"
@@ -39,7 +39,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "501e843eb81c280a37a2da43c76b36539bc126c0",
+            "blob": "136d4c18901e0406361b0361c272d806dc80da93",
             "content": "sha256:0e49b4be19d35dc91f3c53b2777953d9cbe81b16fc4a50805dfb5a63a297bfe1",
             "locator": {
               "kind": "symbol",
@@ -55,7 +55,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d942a315e886f9a4c077004752d2af6adc4726e0",
+            "blob": "8d2b8ca9151405443484521494eda9b6f76f45f1",
             "content": "sha256:9684007c3c4abd98a35440692ff27c4bfedc74612fd78ea7e019334e29471b59",
             "locator": {
               "kind": "symbol",
@@ -67,12 +67,28 @@
         }
       ]
     },
+    "14": {
+      "note": "A supplied valid owner selects rowless closed history while other open owners refuse.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "136d4c18901e0406361b0361c272d806dc80da93",
+            "content": "sha256:9cede2e178d47bc78d5b916533657992992e4f36515b9828d7716dc07668e9f9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_named_source"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "6": {
       "note": "`_open_histories` implements the retained boundary described above.",
       "targets": [
         {
           "anchor": {
-            "blob": "501e843eb81c280a37a2da43c76b36539bc126c0",
+            "blob": "136d4c18901e0406361b0361c272d806dc80da93",
             "content": "sha256:1a82503335dfe34106b68ebfc42a8b0a4b73c46da93b5a15cea929aba31ba7eb",
             "locator": {
               "kind": "symbol",
@@ -88,8 +104,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "501e843eb81c280a37a2da43c76b36539bc126c0",
-            "content": "sha256:bd873bdcf78298beecac19a1079f5bb2b6ff9f78c0eaac94855c3fa8fee2de71",
+            "blob": "136d4c18901e0406361b0361c272d806dc80da93",
+            "content": "sha256:044ae1162ac1195544e4268a00102177d3f1824342cff341664587f9ba561431",
             "locator": {
               "kind": "symbol",
               "name": "_source"
@@ -104,8 +120,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "501e843eb81c280a37a2da43c76b36539bc126c0",
-            "content": "sha256:54b6cb7c466287f7ef2e9d5a01ae4b66601375e047d96cab34838ff7e1c6efa6",
+            "blob": "136d4c18901e0406361b0361c272d806dc80da93",
+            "content": "sha256:7cd0923beec23ea1e1cc61d019f64db3a6059820df36f44045a21fb077dad60e",
             "locator": {
               "kind": "symbol",
               "name": "direct_verdict"
@@ -120,8 +136,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "501e843eb81c280a37a2da43c76b36539bc126c0",
-            "content": "sha256:54b6cb7c466287f7ef2e9d5a01ae4b66601375e047d96cab34838ff7e1c6efa6",
+            "blob": "136d4c18901e0406361b0361c272d806dc80da93",
+            "content": "sha256:7cd0923beec23ea1e1cc61d019f64db3a6059820df36f44045a21fb077dad60e",
             "locator": {
               "kind": "symbol",
               "name": "direct_verdict"
@@ -131,10 +147,10 @@
         },
         {
           "anchor": {
-            "blob": "501e843eb81c280a37a2da43c76b36539bc126c0",
-            "content": "sha256:5ff58a4999312dc66b9f030eabe122f5111a543451b8a08dc908d5305e61579a",
+            "blob": "136d4c18901e0406361b0361c272d806dc80da93",
+            "content": "sha256:584a22c8a82c8025f118ee4cabe8eab1a65111db4db91df38b664aeadf68be0a",
             "locator": {
-              "end": 18,
+              "end": 21,
               "kind": "line_range",
               "start": 1
             }

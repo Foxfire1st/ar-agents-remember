@@ -1,0 +1,58 @@
+{
+  "path": "mcp/tests/test_closeout_refusal_aftermath.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "fba297f078a4f8bfc008311ec7860b3216a51041",
+        "content": "sha256:04cc4761df5e5a170c7099764e3e728f03c332edf4de8257e0f6a50d5b96b5bf",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_refused_closeout_leaves_an_edited_ignore_file_alone_and_names_it"
+        }
+      },
+      "facet": "A concurrently edited ignore file survives refused closeout and the diagnostic names it.",
+      "id": "PRF-KDZ3DJ",
+      "invariant": "INV-KSJZS0",
+      "origin": {
+        "handoffEntry": "MIK-R52@v1 rule 9 honest-refusal",
+        "leaf": "260928-MIK-L52"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Refusal names the published code output and says nothing is integrated.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fba297f078a4f8bfc008311ec7860b3216a51041",
+            "content": "sha256:5b45722830e70a20a795d9ef0638ba9861aff6171ee86e3d835e7c17f3c6fdf0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_closeout_refusal_after_the_code_commit_says_what_is_true"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Concurrent ignore-file bytes survive while unchanged history closing is restored.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fba297f078a4f8bfc008311ec7860b3216a51041",
+            "content": "sha256:04cc4761df5e5a170c7099764e3e728f03c332edf4de8257e0f6a50d5b96b5bf",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_refused_closeout_leaves_an_edited_ignore_file_alone_and_names_it"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

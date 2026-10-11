@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "1a31dae5cb0e746d7093a7225a558928989e3519",
-        "content": "sha256:0ebf4a5e3e684b912685fc0c90666637f1884a59f1ae8c895d4b53db53e665d1",
+        "blob": "44e98fa7dc63fac5b25cc92ee9bb1c28f6999150",
+        "content": "sha256:83359b4306c44b3d04e27cbb1c63bc883464a7a728bac450c985bf94d044f798",
         "locator": {
           "kind": "symbol",
           "name": "external_closeout_commits"
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "1a31dae5cb0e746d7093a7225a558928989e3519",
-        "content": "sha256:c7bbb91f8ab877928b918ed5abff23ca3ab64f391f0c1a94b5f90de643a24563",
+        "blob": "44e98fa7dc63fac5b25cc92ee9bb1c28f6999150",
+        "content": "sha256:9ef98f7c45ae2442c3282c3838e1d1f91ee1797ba67685a67894576e1b8bbe75",
         "locator": {
           "kind": "symbol",
           "name": "_commit_memory_content"
@@ -39,8 +39,8 @@
     },
     {
       "anchor": {
-        "blob": "1a31dae5cb0e746d7093a7225a558928989e3519",
-        "content": "sha256:0ebf4a5e3e684b912685fc0c90666637f1884a59f1ae8c895d4b53db53e665d1",
+        "blob": "44e98fa7dc63fac5b25cc92ee9bb1c28f6999150",
+        "content": "sha256:83359b4306c44b3d04e27cbb1c63bc883464a7a728bac450c985bf94d044f798",
         "locator": {
           "kind": "symbol",
           "name": "external_closeout_commits"
@@ -57,8 +57,26 @@
     },
     {
       "anchor": {
-        "blob": "1a31dae5cb0e746d7093a7225a558928989e3519",
-        "content": "sha256:c7bbb91f8ab877928b918ed5abff23ca3ab64f391f0c1a94b5f90de643a24563",
+        "blob": "44e98fa7dc63fac5b25cc92ee9bb1c28f6999150",
+        "content": "sha256:0300da511c4f3ecc757b4a3c97c4fc0911cbc1150136e0aee4085a9e019aa146",
+        "locator": {
+          "kind": "symbol",
+          "name": "leaf_pair_refusal"
+        }
+      },
+      "id": "RLZ-7TKTT1",
+      "invariant": "INV-M0J963",
+      "origin": {
+        "handoffEntry": "MIK-R52@v1 rule 1 one-pair-judgment",
+        "leaf": "260928-MIK-L52"
+      },
+      "rationale": "The single pair judge all leaf routes call; unreadable bases/sides refuse by name.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "44e98fa7dc63fac5b25cc92ee9bb1c28f6999150",
+        "content": "sha256:9ef98f7c45ae2442c3282c3838e1d1f91ee1797ba67685a67894576e1b8bbe75",
         "locator": {
           "kind": "symbol",
           "name": "_commit_memory_content"
@@ -75,8 +93,8 @@
     },
     {
       "anchor": {
-        "blob": "1a31dae5cb0e746d7093a7225a558928989e3519",
-        "content": "sha256:c7bbb91f8ab877928b918ed5abff23ca3ab64f391f0c1a94b5f90de643a24563",
+        "blob": "44e98fa7dc63fac5b25cc92ee9bb1c28f6999150",
+        "content": "sha256:9ef98f7c45ae2442c3282c3838e1d1f91ee1797ba67685a67894576e1b8bbe75",
         "locator": {
           "kind": "symbol",
           "name": "_commit_memory_content"
@@ -93,7 +111,7 @@
     },
     {
       "anchor": {
-        "blob": "1a31dae5cb0e746d7093a7225a558928989e3519",
+        "blob": "44e98fa7dc63fac5b25cc92ee9bb1c28f6999150",
         "content": "sha256:2e6b71f194f95ae3a119d49987ce890f73f507d3bc12bc37744e49d9eef068f6",
         "locator": {
           "kind": "symbol",
@@ -111,8 +129,8 @@
     },
     {
       "anchor": {
-        "blob": "1a31dae5cb0e746d7093a7225a558928989e3519",
-        "content": "sha256:c7bbb91f8ab877928b918ed5abff23ca3ab64f391f0c1a94b5f90de643a24563",
+        "blob": "44e98fa7dc63fac5b25cc92ee9bb1c28f6999150",
+        "content": "sha256:9ef98f7c45ae2442c3282c3838e1d1f91ee1797ba67685a67894576e1b8bbe75",
         "locator": {
           "kind": "symbol",
           "name": "_commit_memory_content"
@@ -129,8 +147,8 @@
     },
     {
       "anchor": {
-        "blob": "1a31dae5cb0e746d7093a7225a558928989e3519",
-        "content": "sha256:c7bbb91f8ab877928b918ed5abff23ca3ab64f391f0c1a94b5f90de643a24563",
+        "blob": "44e98fa7dc63fac5b25cc92ee9bb1c28f6999150",
+        "content": "sha256:9ef98f7c45ae2442c3282c3838e1d1f91ee1797ba67685a67894576e1b8bbe75",
         "locator": {
           "kind": "symbol",
           "name": "_commit_memory_content"
@@ -147,7 +165,7 @@
     },
     {
       "anchor": {
-        "blob": "1a31dae5cb0e746d7093a7225a558928989e3519",
+        "blob": "44e98fa7dc63fac5b25cc92ee9bb1c28f6999150",
         "content": "sha256:8b005244c058f89a5173a0a1d8c6a01fcba28076d5dd37dc456d66ade779e9e5",
         "locator": {
           "kind": "symbol",
@@ -165,8 +183,8 @@
     },
     {
       "anchor": {
-        "blob": "1a31dae5cb0e746d7093a7225a558928989e3519",
-        "content": "sha256:c7bbb91f8ab877928b918ed5abff23ca3ab64f391f0c1a94b5f90de643a24563",
+        "blob": "44e98fa7dc63fac5b25cc92ee9bb1c28f6999150",
+        "content": "sha256:9ef98f7c45ae2442c3282c3838e1d1f91ee1797ba67685a67894576e1b8bbe75",
         "locator": {
           "kind": "symbol",
           "name": "_commit_memory_content"
@@ -183,7 +201,7 @@
     },
     {
       "anchor": {
-        "blob": "1a31dae5cb0e746d7093a7225a558928989e3519",
+        "blob": "44e98fa7dc63fac5b25cc92ee9bb1c28f6999150",
         "content": "sha256:de0378335937c87f8c461adc352207ef562d860dc1e63f6cbafa60e6f76dcaf4",
         "locator": {
           "kind": "symbol",
@@ -201,8 +219,8 @@
     },
     {
       "anchor": {
-        "blob": "1a31dae5cb0e746d7093a7225a558928989e3519",
-        "content": "sha256:c7bbb91f8ab877928b918ed5abff23ca3ab64f391f0c1a94b5f90de643a24563",
+        "blob": "44e98fa7dc63fac5b25cc92ee9bb1c28f6999150",
+        "content": "sha256:9ef98f7c45ae2442c3282c3838e1d1f91ee1797ba67685a67894576e1b8bbe75",
         "locator": {
           "kind": "symbol",
           "name": "_commit_memory_content"
@@ -219,8 +237,8 @@
     },
     {
       "anchor": {
-        "blob": "1a31dae5cb0e746d7093a7225a558928989e3519",
-        "content": "sha256:c7bbb91f8ab877928b918ed5abff23ca3ab64f391f0c1a94b5f90de643a24563",
+        "blob": "44e98fa7dc63fac5b25cc92ee9bb1c28f6999150",
+        "content": "sha256:9ef98f7c45ae2442c3282c3838e1d1f91ee1797ba67685a67894576e1b8bbe75",
         "locator": {
           "kind": "symbol",
           "name": "_commit_memory_content"
@@ -237,8 +255,8 @@
     },
     {
       "anchor": {
-        "blob": "1a31dae5cb0e746d7093a7225a558928989e3519",
-        "content": "sha256:c7bbb91f8ab877928b918ed5abff23ca3ab64f391f0c1a94b5f90de643a24563",
+        "blob": "44e98fa7dc63fac5b25cc92ee9bb1c28f6999150",
+        "content": "sha256:9ef98f7c45ae2442c3282c3838e1d1f91ee1797ba67685a67894576e1b8bbe75",
         "locator": {
           "kind": "symbol",
           "name": "_commit_memory_content"
@@ -255,7 +273,7 @@
     },
     {
       "anchor": {
-        "blob": "1a31dae5cb0e746d7093a7225a558928989e3519",
+        "blob": "44e98fa7dc63fac5b25cc92ee9bb1c28f6999150",
         "content": "sha256:03d448a1a189c5dc86ddc1581159132595ef51a869616415d5da9690872f42ed",
         "locator": {
           "kind": "symbol",
@@ -273,8 +291,8 @@
     },
     {
       "anchor": {
-        "blob": "1a31dae5cb0e746d7093a7225a558928989e3519",
-        "content": "sha256:c7bbb91f8ab877928b918ed5abff23ca3ab64f391f0c1a94b5f90de643a24563",
+        "blob": "44e98fa7dc63fac5b25cc92ee9bb1c28f6999150",
+        "content": "sha256:9ef98f7c45ae2442c3282c3838e1d1f91ee1797ba67685a67894576e1b8bbe75",
         "locator": {
           "kind": "symbol",
           "name": "_commit_memory_content"
@@ -291,7 +309,7 @@
     },
     {
       "anchor": {
-        "blob": "1a31dae5cb0e746d7093a7225a558928989e3519",
+        "blob": "44e98fa7dc63fac5b25cc92ee9bb1c28f6999150",
         "content": "sha256:6733de358d09058db7ab9672204df11f721366208bfd9ed54924fe325d71e265",
         "locator": {
           "kind": "symbol",
@@ -309,7 +327,7 @@
     },
     {
       "anchor": {
-        "blob": "1a31dae5cb0e746d7093a7225a558928989e3519",
+        "blob": "44e98fa7dc63fac5b25cc92ee9bb1c28f6999150",
         "content": "sha256:de0378335937c87f8c461adc352207ef562d860dc1e63f6cbafa60e6f76dcaf4",
         "locator": {
           "kind": "symbol",
@@ -327,8 +345,8 @@
     },
     {
       "anchor": {
-        "blob": "1a31dae5cb0e746d7093a7225a558928989e3519",
-        "content": "sha256:c7bbb91f8ab877928b918ed5abff23ca3ab64f391f0c1a94b5f90de643a24563",
+        "blob": "44e98fa7dc63fac5b25cc92ee9bb1c28f6999150",
+        "content": "sha256:9ef98f7c45ae2442c3282c3838e1d1f91ee1797ba67685a67894576e1b8bbe75",
         "locator": {
           "kind": "symbol",
           "name": "_commit_memory_content"
@@ -345,8 +363,8 @@
     },
     {
       "anchor": {
-        "blob": "1a31dae5cb0e746d7093a7225a558928989e3519",
-        "content": "sha256:8d4fef8bd6c5c58914c6af197676edd4695b894527205834a84265c711ebfc2b",
+        "blob": "44e98fa7dc63fac5b25cc92ee9bb1c28f6999150",
+        "content": "sha256:182a12a341a97c4b5960eff651b8e356bdecaad0f4fa29123c64b60c55d961ef",
         "locator": {
           "kind": "symbol",
           "name": "require_gated_recovery"
@@ -368,8 +386,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1a31dae5cb0e746d7093a7225a558928989e3519",
-            "content": "sha256:0ebf4a5e3e684b912685fc0c90666637f1884a59f1ae8c895d4b53db53e665d1",
+            "blob": "44e98fa7dc63fac5b25cc92ee9bb1c28f6999150",
+            "content": "sha256:83359b4306c44b3d04e27cbb1c63bc883464a7a728bac450c985bf94d044f798",
             "locator": {
               "kind": "symbol",
               "name": "external_closeout_commits"
@@ -384,8 +402,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1a31dae5cb0e746d7093a7225a558928989e3519",
-            "content": "sha256:c7bbb91f8ab877928b918ed5abff23ca3ab64f391f0c1a94b5f90de643a24563",
+            "blob": "44e98fa7dc63fac5b25cc92ee9bb1c28f6999150",
+            "content": "sha256:9ef98f7c45ae2442c3282c3838e1d1f91ee1797ba67685a67894576e1b8bbe75",
             "locator": {
               "kind": "symbol",
               "name": "_commit_memory_content"
@@ -400,8 +418,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1a31dae5cb0e746d7093a7225a558928989e3519",
-            "content": "sha256:68a09f3e58948fc67192dbbe53c5f10ddd935558261cf032752aaa6e5641366f",
+            "blob": "44e98fa7dc63fac5b25cc92ee9bb1c28f6999150",
+            "content": "sha256:d6b2cc5edcc679b09f7bea7166af1fe1f654aeacc7d82c0ac11fc86295067b56",
             "locator": {
               "kind": "symbol",
               "name": "_restore_preparations"
@@ -416,7 +434,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1a31dae5cb0e746d7093a7225a558928989e3519",
+            "blob": "44e98fa7dc63fac5b25cc92ee9bb1c28f6999150",
             "content": "sha256:de0378335937c87f8c461adc352207ef562d860dc1e63f6cbafa60e6f76dcaf4",
             "locator": {
               "kind": "symbol",
@@ -432,7 +450,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1a31dae5cb0e746d7093a7225a558928989e3519",
+            "blob": "44e98fa7dc63fac5b25cc92ee9bb1c28f6999150",
             "content": "sha256:6733de358d09058db7ab9672204df11f721366208bfd9ed54924fe325d71e265",
             "locator": {
               "kind": "symbol",
@@ -448,8 +466,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1a31dae5cb0e746d7093a7225a558928989e3519",
-            "content": "sha256:8d4fef8bd6c5c58914c6af197676edd4695b894527205834a84265c711ebfc2b",
+            "blob": "44e98fa7dc63fac5b25cc92ee9bb1c28f6999150",
+            "content": "sha256:182a12a341a97c4b5960eff651b8e356bdecaad0f4fa29123c64b60c55d961ef",
             "locator": {
               "kind": "symbol",
               "name": "require_gated_recovery"
@@ -464,8 +482,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5b2a4ae3f3757a7c03f71c2afdd2082c5bf38392",
-            "content": "sha256:34f04b6b57aac6604805a6905a669f16b208a605bec1ff24ec7489b710dcf867",
+            "blob": "44e98fa7dc63fac5b25cc92ee9bb1c28f6999150",
+            "content": "sha256:03d448a1a189c5dc86ddc1581159132595ef51a869616415d5da9690872f42ed",
             "locator": {
               "kind": "symbol",
               "name": "candidate_gate_verdict"
@@ -480,8 +498,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1a31dae5cb0e746d7093a7225a558928989e3519",
-            "content": "sha256:0ebf4a5e3e684b912685fc0c90666637f1884a59f1ae8c895d4b53db53e665d1",
+            "blob": "44e98fa7dc63fac5b25cc92ee9bb1c28f6999150",
+            "content": "sha256:83359b4306c44b3d04e27cbb1c63bc883464a7a728bac450c985bf94d044f798",
             "locator": {
               "kind": "symbol",
               "name": "external_closeout_commits"
@@ -496,7 +514,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1a31dae5cb0e746d7093a7225a558928989e3519",
+            "blob": "44e98fa7dc63fac5b25cc92ee9bb1c28f6999150",
             "content": "sha256:cca6c023e9edb39ea6c2f2c46f00c83c67ed8c2c81bc0f273185f18259a6064b",
             "locator": {
               "kind": "symbol",
@@ -508,15 +526,15 @@
       ]
     },
     "32": {
-      "note": "Any failure before the commit restores the file.",
+      "note": "Before publication, owned history closing restores only unchanged prepared bytes and preserves concurrent edits.",
       "targets": [
         {
           "anchor": {
-            "blob": "1a31dae5cb0e746d7093a7225a558928989e3519",
-            "content": "sha256:c7bbb91f8ab877928b918ed5abff23ca3ab64f391f0c1a94b5f90de643a24563",
+            "blob": "44e98fa7dc63fac5b25cc92ee9bb1c28f6999150",
+            "content": "sha256:d6b2cc5edcc679b09f7bea7166af1fe1f654aeacc7d82c0ac11fc86295067b56",
             "locator": {
               "kind": "symbol",
-              "name": "_commit_memory_content"
+              "name": "_restore_preparations"
             }
           },
           "kind": "code"
@@ -528,8 +546,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1a31dae5cb0e746d7093a7225a558928989e3519",
-            "content": "sha256:0ebf4a5e3e684b912685fc0c90666637f1884a59f1ae8c895d4b53db53e665d1",
+            "blob": "44e98fa7dc63fac5b25cc92ee9bb1c28f6999150",
+            "content": "sha256:83359b4306c44b3d04e27cbb1c63bc883464a7a728bac450c985bf94d044f798",
             "locator": {
               "kind": "symbol",
               "name": "external_closeout_commits"
@@ -540,12 +558,12 @@
       ]
     },
     "34": {
-      "note": "`_commit_memory_content` reuses clean content or commits attributed memory with root memory.md excluded; since MIK-R09 it validates a converted leaf's exact tree first and restores the closing on any failure before the commit; since L37 it also runs the mandatory gate and stages the commit from the judged tree.",
+      "note": "Closeout reuses clean memory or publishes the judged tree with root memory.md excluded; unpublished refusal restores only unchanged owned preparations.",
       "targets": [
         {
           "anchor": {
-            "blob": "1a31dae5cb0e746d7093a7225a558928989e3519",
-            "content": "sha256:c7bbb91f8ab877928b918ed5abff23ca3ab64f391f0c1a94b5f90de643a24563",
+            "blob": "44e98fa7dc63fac5b25cc92ee9bb1c28f6999150",
+            "content": "sha256:9ef98f7c45ae2442c3282c3838e1d1f91ee1797ba67685a67894576e1b8bbe75",
             "locator": {
               "kind": "symbol",
               "name": "_commit_memory_content"
@@ -560,7 +578,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1a31dae5cb0e746d7093a7225a558928989e3519",
+            "blob": "44e98fa7dc63fac5b25cc92ee9bb1c28f6999150",
             "content": "sha256:0b819e606d55516db053afe7c44c1ae304eed817f524ba0d3a79e49e82a63319",
             "locator": {
               "kind": "symbol",
@@ -576,7 +594,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1a31dae5cb0e746d7093a7225a558928989e3519",
+            "blob": "44e98fa7dc63fac5b25cc92ee9bb1c28f6999150",
             "content": "sha256:aacbed3245544671ec9cdbebb43e65a9a21ee5fe355233a9cd58e98b7552b899",
             "locator": {
               "kind": "symbol",
@@ -592,8 +610,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1a31dae5cb0e746d7093a7225a558928989e3519",
-            "content": "sha256:0ebf4a5e3e684b912685fc0c90666637f1884a59f1ae8c895d4b53db53e665d1",
+            "blob": "44e98fa7dc63fac5b25cc92ee9bb1c28f6999150",
+            "content": "sha256:83359b4306c44b3d04e27cbb1c63bc883464a7a728bac450c985bf94d044f798",
             "locator": {
               "kind": "symbol",
               "name": "external_closeout_commits"
@@ -608,7 +626,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1a31dae5cb0e746d7093a7225a558928989e3519",
+            "blob": "44e98fa7dc63fac5b25cc92ee9bb1c28f6999150",
             "content": "sha256:6733de358d09058db7ab9672204df11f721366208bfd9ed54924fe325d71e265",
             "locator": {
               "kind": "symbol",
@@ -624,7 +642,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1a31dae5cb0e746d7093a7225a558928989e3519",
+            "blob": "44e98fa7dc63fac5b25cc92ee9bb1c28f6999150",
             "content": "sha256:8b005244c058f89a5173a0a1d8c6a01fcba28076d5dd37dc456d66ade779e9e5",
             "locator": {
               "kind": "symbol",
@@ -640,8 +658,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5b2a4ae3f3757a7c03f71c2afdd2082c5bf38392",
-            "content": "sha256:34f04b6b57aac6604805a6905a669f16b208a605bec1ff24ec7489b710dcf867",
+            "blob": "44e98fa7dc63fac5b25cc92ee9bb1c28f6999150",
+            "content": "sha256:03d448a1a189c5dc86ddc1581159132595ef51a869616415d5da9690872f42ed",
             "locator": {
               "kind": "symbol",
               "name": "candidate_gate_verdict"
@@ -656,7 +674,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1a31dae5cb0e746d7093a7225a558928989e3519",
+            "blob": "44e98fa7dc63fac5b25cc92ee9bb1c28f6999150",
             "content": "sha256:2e6b71f194f95ae3a119d49987ce890f73f507d3bc12bc37744e49d9eef068f6",
             "locator": {
               "kind": "symbol",
@@ -672,8 +690,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1a31dae5cb0e746d7093a7225a558928989e3519",
-            "content": "sha256:8d4fef8bd6c5c58914c6af197676edd4695b894527205834a84265c711ebfc2b",
+            "blob": "44e98fa7dc63fac5b25cc92ee9bb1c28f6999150",
+            "content": "sha256:182a12a341a97c4b5960eff651b8e356bdecaad0f4fa29123c64b60c55d961ef",
             "locator": {
               "kind": "symbol",
               "name": "require_gated_recovery"
@@ -688,7 +706,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1a31dae5cb0e746d7093a7225a558928989e3519",
+            "blob": "44e98fa7dc63fac5b25cc92ee9bb1c28f6999150",
             "content": "sha256:de0378335937c87f8c461adc352207ef562d860dc1e63f6cbafa60e6f76dcaf4",
             "locator": {
               "kind": "symbol",
@@ -700,12 +718,12 @@
       ]
     },
     "44": {
-      "note": "A refused closeout takes back the ignore rule it recorded.",
+      "note": "Refusal preserves and names edited ignore bytes instead of overwriting them.",
       "targets": [
         {
           "anchor": {
-            "blob": "1a31dae5cb0e746d7093a7225a558928989e3519",
-            "content": "sha256:68a09f3e58948fc67192dbbe53c5f10ddd935558261cf032752aaa6e5641366f",
+            "blob": "44e98fa7dc63fac5b25cc92ee9bb1c28f6999150",
+            "content": "sha256:d6b2cc5edcc679b09f7bea7166af1fe1f654aeacc7d82c0ac11fc86295067b56",
             "locator": {
               "kind": "symbol",
               "name": "_restore_preparations"

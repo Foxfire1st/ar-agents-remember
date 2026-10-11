@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "8df56352222cae3f9048acae41cad9951a373f0b",
+        "blob": "c24d6db63454e6ef80c78275021a81c01e040158",
         "content": "sha256:e5954b7cbee7f73cfc32a9b994fcb5588566838d7421c753e4c6538f5231be08",
         "locator": {
           "kind": "symbol",
@@ -21,11 +21,11 @@
     },
     {
       "anchor": {
-        "blob": "8df56352222cae3f9048acae41cad9951a373f0b",
-        "content": "sha256:8135cad9b222b0270b45d030ee357afa35a0b77af84cef8d8f461cad5d32d055",
+        "blob": "c24d6db63454e6ef80c78275021a81c01e040158",
+        "content": "sha256:9b2e295967e9c9fc5f4c3259fcd8e3fed0da4fbd4d2e30532358793d7a442038",
         "locator": {
           "kind": "symbol",
-          "name": "_landing_request"
+          "name": "_leaf_pair_recorded_refusal"
         }
       },
       "id": "RLZ-5Z5DFP",
@@ -34,13 +34,31 @@
         "handoffEntry": "L37-frozen-attempts",
         "leaf": "260928-MIK-L37"
       },
-      "rationale": "Hands the landing check the landed commit's parents as frozen only when the landed commit is the memory commit the contract records as its completed closeout; a commit made by any other hand freezes nothing.",
+      "rationale": "The actual recorded-leaf branch delegates to leaf_pair_refusal; its recorded-closeout helper freezes the recorded closeout parents when the judged memory equals or descends from it, and freezes nothing for unrelated ancestry. The master request builder is not leaf enforcement.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "8df56352222cae3f9048acae41cad9951a373f0b",
-        "content": "sha256:ea23d3e0a5458ab3d0bff86cb483f8f2300f1f2cee57d9e8aa84e982372d230b",
+        "blob": "c24d6db63454e6ef80c78275021a81c01e040158",
+        "content": "sha256:e5954b7cbee7f73cfc32a9b994fcb5588566838d7421c753e4c6538f5231be08",
+        "locator": {
+          "kind": "symbol",
+          "name": "record_landing_result"
+        }
+      },
+      "id": "RLZ-AQ9CB7",
+      "invariant": "INV-HAQRFD",
+      "origin": {
+        "handoffEntry": "MIK-R52@v1 rule 2 recorded-leaf-landing",
+        "leaf": "260928-MIK-L52"
+      },
+      "rationale": "The public recorded route; gate then chain, refusals raised naming the cause.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "c24d6db63454e6ef80c78275021a81c01e040158",
+        "content": "sha256:6a04ed42f6bdbe4b3b89ae68473df6d4faf013f0cde52a06ea720adce42b6699",
         "locator": {
           "kind": "symbol",
           "name": "_knowledge_gate_refusal"
@@ -58,16 +76,16 @@
   ],
   "references": {
     "1": {
-      "note": "The module docstring's gate and probe-first paragraphs.\n\nAnchor: \"On converted memory the record route commits no memory but still checks the landed memory commit\"",
+      "note": "The module docstring's gate and probe-first paragraphs.",
       "targets": [
         {
           "anchor": {
-            "blob": "8df56352222cae3f9048acae41cad9951a373f0b",
-            "content": "sha256:f3b036f83d474bd74722a5edaebe761dc013ae5bbae2a2e7f8451b617026c70c",
+            "blob": "c24d6db63454e6ef80c78275021a81c01e040158",
+            "content": "sha256:78b0f2b0eafce3df121a726bca9004428d02ce72efbb9e8ad69b222624d7a0e8",
             "locator": {
-              "end": 24,
+              "end": 28,
               "kind": "line_range",
-              "start": 15
+              "start": 1
             }
           },
           "kind": "code"
@@ -110,15 +128,16 @@
       ]
     },
     "12": {
-      "note": "The MCP tool and payload that expose this operation. (`worktree_record_landing`)",
+      "note": "The MCP tool and payload that expose this operation. (`worktree_record_landing`)\n\nAnchor: `_register_integration_command_tools.worktree_record_landing`",
       "targets": [
         {
           "anchor": {
-            "blob": "d9ce9e68830e30957a97bbaf68b8a5c4b9aa34bd",
-            "content": "sha256:a7c4259dae4e7432e7a04bea6d1195d1e64059773a9dba44a1234a83e23e367f",
+            "blob": "8db0c4a8a33eafcca543f0f9f74c2d94e1ec8895",
+            "content": "sha256:0011607207211e55b1c805ed40422e7535d9cb0fd8eb39ce1653541507c3d329",
             "locator": {
-              "kind": "symbol",
-              "name": "worktree_record_landing"
+              "end": 260,
+              "kind": "line_range",
+              "start": 232
             },
             "path": "mcp/src/agents_remember/mcp/registration/closeout.py"
           },
@@ -131,8 +150,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e77dbabae8b914a6fd3fd7a8b12467c3c5055259",
-            "content": "sha256:3a51b6a6cc0ebeede629aaf887bea427ca903d3029517f03e0c302a2289f73d0",
+            "blob": "eb80373e70f522caa2dda6609d31fe738fc2fefb",
+            "content": "sha256:a80c928b9b90ede0a248d30f8fc52e8d63feaf13b076be23e1e59b361ec36a5a",
             "locator": {
               "kind": "symbol",
               "name": "worktree_record_landing_tool"
@@ -157,8 +176,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c4e1ee51d62f77e078f26f24ba5af719fcee5e32",
-            "content": "sha256:93e402d78b4c47289168347505c4e0bcdb60e2672560e4fcd2786dc2a889a716",
+            "blob": "c24d6db63454e6ef80c78275021a81c01e040158",
+            "content": "sha256:6a04ed42f6bdbe4b3b89ae68473df6d4faf013f0cde52a06ea720adce42b6699",
             "locator": {
               "kind": "symbol",
               "name": "_knowledge_gate_refusal"
@@ -169,27 +188,28 @@
       ]
     },
     "16": {
-      "note": "Only the recorded closeout commit freezes what it was made on.",
+      "note": "The recorded closeout and its descendants use the recorded-closeout parent freezing policy.",
       "targets": [
         {
           "anchor": {
-            "blob": "8df56352222cae3f9048acae41cad9951a373f0b",
-            "content": "sha256:8135cad9b222b0270b45d030ee357afa35a0b77af84cef8d8f461cad5d32d055",
+            "blob": "44e98fa7dc63fac5b25cc92ee9bb1c28f6999150",
+            "content": "sha256:2ea8760c0b1d4239a31cf4e7dcde14c55ce924f31413f325114ad872d8c6bb11",
             "locator": {
               "kind": "symbol",
-              "name": "_landing_request"
-            }
+              "name": "_frozen_recorded_closeout"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
           },
           "kind": "code"
         }
       ]
     },
     "17": {
-      "note": "A hand-closed file is refused also when landed one commit later, or through a merge.",
+      "note": "Newly added or hand-closed history is still judged on the actual landed tree.",
       "targets": [
         {
           "anchor": {
-            "blob": "690ead62160c1245c795067d4e119ae6d4e80a22",
+            "blob": "b77fdd007c84e03ec75cccfb3736ffbb57118884",
             "content": "sha256:bc681f97490d8ba99a5cd312417633ead8bb68f74605ee7a8a3d1dee5954cba1",
             "locator": {
               "kind": "symbol",
@@ -206,7 +226,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8df56352222cae3f9048acae41cad9951a373f0b",
+            "blob": "c24d6db63454e6ef80c78275021a81c01e040158",
             "content": "sha256:6edb891f498478825ee6f4dae434bdf0e06bf5f2957162656c61eda1ba855855",
             "locator": {
               "kind": "symbol",
@@ -217,7 +237,7 @@
         },
         {
           "anchor": {
-            "blob": "8df56352222cae3f9048acae41cad9951a373f0b",
+            "blob": "c24d6db63454e6ef80c78275021a81c01e040158",
             "content": "sha256:142e1ce0a7275d9ccc270af5231d9c4c8a937494d01a2fd2801579a649abb3ef",
             "locator": {
               "kind": "symbol",
@@ -228,7 +248,7 @@
         },
         {
           "anchor": {
-            "blob": "8df56352222cae3f9048acae41cad9951a373f0b",
+            "blob": "c24d6db63454e6ef80c78275021a81c01e040158",
             "content": "sha256:a1b596b6f0429719e7b4397794458ef506cbb5acb0fd7b2bedaa4a15628afefa",
             "locator": {
               "kind": "symbol",
@@ -244,8 +264,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c4e1ee51d62f77e078f26f24ba5af719fcee5e32",
-            "content": "sha256:93e402d78b4c47289168347505c4e0bcdb60e2672560e4fcd2786dc2a889a716",
+            "blob": "c24d6db63454e6ef80c78275021a81c01e040158",
+            "content": "sha256:6a04ed42f6bdbe4b3b89ae68473df6d4faf013f0cde52a06ea720adce42b6699",
             "locator": {
               "kind": "symbol",
               "name": "_knowledge_gate_refusal"
@@ -255,8 +275,8 @@
         },
         {
           "anchor": {
-            "blob": "8df56352222cae3f9048acae41cad9951a373f0b",
-            "content": "sha256:8135cad9b222b0270b45d030ee357afa35a0b77af84cef8d8f461cad5d32d055",
+            "blob": "c24d6db63454e6ef80c78275021a81c01e040158",
+            "content": "sha256:8f22be077df113664044ec0008c38deb3b0d46fe6fa096f99295a2f0a1b98fbe",
             "locator": {
               "kind": "symbol",
               "name": "_landing_request"
@@ -266,7 +286,7 @@
         },
         {
           "anchor": {
-            "blob": "8df56352222cae3f9048acae41cad9951a373f0b",
+            "blob": "c24d6db63454e6ef80c78275021a81c01e040158",
             "content": "sha256:26447a338805e76253ac2be226fb1d747384f5a0668542febde9a45489442f3c",
             "locator": {
               "kind": "symbol",
@@ -278,16 +298,15 @@
       ]
     },
     "4": {
-      "note": "The gate runs before the dry-run and apply branches.\n\nAnchor: \"_require_knowledge_gate(contract, commit, args.landed_memory_content_commit.strip())\"",
+      "note": "The gate runs before the dry-run and apply branches.",
       "targets": [
         {
           "anchor": {
-            "blob": "8df56352222cae3f9048acae41cad9951a373f0b",
-            "content": "sha256:2dd77c3cb7f0b22ef748390e32660b647405d5dd8c40beb9441f62a3f486f60e",
+            "blob": "c24d6db63454e6ef80c78275021a81c01e040158",
+            "content": "sha256:e5954b7cbee7f73cfc32a9b994fcb5588566838d7421c753e4c6538f5231be08",
             "locator": {
-              "end": 242,
-              "kind": "line_range",
-              "start": 242
+              "kind": "symbol",
+              "name": "record_landing_result"
             }
           },
           "kind": "code"
@@ -299,8 +318,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c4e1ee51d62f77e078f26f24ba5af719fcee5e32",
-            "content": "sha256:ba4270ec0157e79338912f11f9d78b4b12a8aeaeda4a5976751f046174799819",
+            "blob": "c24d6db63454e6ef80c78275021a81c01e040158",
+            "content": "sha256:e5954b7cbee7f73cfc32a9b994fcb5588566838d7421c753e4c6538f5231be08",
             "locator": {
               "kind": "symbol",
               "name": "record_landing_result"
@@ -332,7 +351,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6cfdec1af86890182716df842f338bd4955bda31",
+            "blob": "7a32ae3f63b70f77abf362afa28237ea54b9abc9",
             "content": "sha256:9b0569f5ca05d19067afede918008bfa44c9c8bb9da3886a679c479845156ce7",
             "locator": {
               "kind": "symbol",
@@ -345,28 +364,15 @@
       ]
     },
     "8": {
-      "note": "The `already-recorded` guard covers both landing states, so a checkpointed series is never upgraded into a reclaimable integration. (`contract.integration_status in {\"completed\", \"checkpointed\"}`)\n\nAnchor: `integration_status`; \"already-recorded\"",
+      "note": "The `already-recorded` guard covers both landing states, so a checkpointed series is never upgraded into a reclaimable integration. (`contract.integration_status in {\"completed\", \"checkpointed\"}`)",
       "targets": [
         {
           "anchor": {
-            "blob": "8df56352222cae3f9048acae41cad9951a373f0b",
-            "content": "sha256:9c3f5d2c194083193c864ed94c6628a421221898b376460ff11e8c801032e303",
+            "blob": "c24d6db63454e6ef80c78275021a81c01e040158",
+            "content": "sha256:e5954b7cbee7f73cfc32a9b994fcb5588566838d7421c753e4c6538f5231be08",
             "locator": {
-              "end": 202,
-              "kind": "line_range",
-              "start": 202
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "8df56352222cae3f9048acae41cad9951a373f0b",
-            "content": "sha256:2dfdfd9a65625d68ba4b9bed1cbe5c2b804ff4f09c6a3a05006f731449c0c718",
-            "locator": {
-              "end": 208,
-              "kind": "line_range",
-              "start": 208
+              "kind": "symbol",
+              "name": "record_landing_result"
             }
           },
           "kind": "code"
@@ -374,27 +380,15 @@
       ]
     },
     "9": {
-      "note": "The summary the checkpointed half returns, naming the still-open series and the route that completes it. (`This contract already records a checkpointed integration`)\n\nAnchor: \"This contract already records a checkpointed integration\"",
+      "note": "The checkpointed summary preserves its still-open state and names worktree_integrate as its completion route.",
       "targets": [
         {
           "anchor": {
-            "blob": "8df56352222cae3f9048acae41cad9951a373f0b",
-            "content": "sha256:9db17d68dfdaf16e8709349c7c942ea72fe3b4dba2de6fd6db2a1b21259f3611",
+            "blob": "c24d6db63454e6ef80c78275021a81c01e040158",
+            "content": "sha256:e5954b7cbee7f73cfc32a9b994fcb5588566838d7421c753e4c6538f5231be08",
             "locator": {
               "kind": "symbol",
-              "name": "checkpointed"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "8df56352222cae3f9048acae41cad9951a373f0b",
-            "content": "sha256:756cc38e13d31592539c0bad896f4c064849b2c2e74372eb78292d0e122c2776",
-            "locator": {
-              "end": 212,
-              "kind": "line_range",
-              "start": 212
+              "name": "record_landing_result"
             }
           },
           "kind": "code"

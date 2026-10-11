@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "feca10f9ea780816bbeae9ebad3b6b2501ba7813",
+            "blob": "b4a18d8d7b6ad9854406020bc18250c9ff02c8fe",
             "content": "sha256:6d9bec47a3ce05ec5ba85973654dc3b4317c0440f45e1bc3afee9f4758562752",
             "locator": {
               "kind": "symbol",
@@ -36,12 +36,12 @@
       ]
     },
     "3": {
-      "note": "The coordinator captures the accepted candidate from actual Git facts.\n\nAnchor: `candidateTree`",
+      "note": "The coordinator captures the accepted candidate from actual Git facts.",
       "targets": [
         {
           "anchor": {
-            "blob": "4c12320737a261f83da37ee21e7897a5739d4d4e",
-            "content": "sha256:0fec0d018cc7316c21def5fe0988c9dc7b7fd6276e829cbea4295d0d8547f58d",
+            "blob": "fbf5d24148b7b54165d4139154db5fe28aa19800",
+            "content": "sha256:47a5fea09f62e34b6e2a1f2790f3d0ef5f664d34589b807e89dfb9a42f00950b",
             "locator": {
               "kind": "symbol",
               "name": "_prepare_direct_landing_candidate"
@@ -57,7 +57,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "feca10f9ea780816bbeae9ebad3b6b2501ba7813",
+            "blob": "b4a18d8d7b6ad9854406020bc18250c9ff02c8fe",
             "content": "sha256:6d9bec47a3ce05ec5ba85973654dc3b4317c0440f45e1bc3afee9f4758562752",
             "locator": {
               "kind": "symbol",
@@ -90,8 +90,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "be974cfb747b9a8d6a659199e705f46c2d155e57",
-            "content": "sha256:bb957c9d78a2300e16abeab2e90c595dbca16da3d9cbcf3b2c721b1a5a1cfc05",
+            "blob": "b7cf5d8bc1072379437f9008a7e43f97c869764b",
+            "content": "sha256:ca537360d3319f5eecbae48a65fee2fe084e7f90085a43db8f171eb14755fa99",
             "locator": {
               "kind": "symbol",
               "name": "classify_direct_landing_recovery"

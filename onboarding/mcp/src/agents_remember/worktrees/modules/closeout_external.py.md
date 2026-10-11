@@ -5,12 +5,12 @@
 [Governing route overview](overview.md)
 ## Purpose
 
-Owns the external-memory content leg of the admitted closeout transaction after the code output is accepted. A new memory-content commit carries the accepted code commit in its `Code-Commit:` trailer; the later disposable ledger refresh is informational and creates no commit.
+Owns the external-memory content leg of the admitted closeout transaction after the code output is accepted. The shared `leaf_pair_refusal` also judges recovery, recorded leaf landing and leaf integration with caller-supplied validator bases and a worklist recomputed over the exact commit trees. A new memory-content commit carries the accepted code commit in its `Code-Commit:` trailer; the later disposable ledger refresh is informational and creates no commit.
 ## Code Commentary
 
 A series delegates to its series owner. An ordinary leaf resumes an already recorded memory output only after the recovery gate; otherwise it refreshes the owned metadata/index inputs, closes the converted leaf's latest history file and calls `_commit_memory_content`. The cutover lock refuses an unconverted leaf once its repository holds converted memory.
 
-For converted memory, the history closing and cache ignore rule are present before `_exact_memory_tree` captures the intended output. `_refuse_ungated_memory` validates that exact tree against the parent memory tip and runs the leaf invariant gate with the exact accepted code tree. Even a clean output reused as HEAD is judged. This is the closeout's mandatory invariant gate, not an additional full MQC or curator-coherence operation. Preview reads the same candidate verdict; recovered outputs are judged before resuming.
+For converted memory, the history closing and cache ignore rule are present before `_exact_memory_tree` captures the intended output. `_refuse_ungated_memory` validates that exact tree against the parent memory tip and runs the leaf invariant gate with the exact accepted code tree. Even a clean output reused as HEAD is judged. This is the closeout's mandatory invariant gate, not an additional full MQC or curator-coherence operation. Preview reads the same candidate verdict; recovered outputs are judged against the parent line as it stands when recovery reads it. An earlier pass does not guarantee a later pass on moved inputs. A refusal after code publication names the actual code commit, says nothing is integrated and explains that rerunning completes the pair.
 
 `_commit_memory_content` binds the contract work branch and the tip observed before judgment. It rechecks that admission, prepares the cache exclusion, and refuses a staged output different from the judged tree before mutation intent. It publishes the judged object through `publish_tree_commit`; content written after the final check cannot enter that commit and stays uncommitted. The exact accepted memory message supplies code attribution. An unconverted route, where admitted, stages actual content under its existing owner rather than claiming a converted-tree gate.
 
@@ -35,7 +35,7 @@ official memory line's tip), `external_closeout_commits` now:
   index with the commit's own exclusions; `_refuse_ungated_memory`: validated through `memory_commit_refusal` as a
   leaf publication against the parent line's memory tip, paired with the closeout's code commit; the carried L22
   obligation and the L27 admission base). The L37 section below describes the gate;
-- restores the file on a refusal or on any failure before the commit begins (a failed tree capture, a failed or
+- restores its own unchanged prepared file on a refusal or failure before publication, preserving any concurrent edit (a failed tree capture, a failed or
   timed-out tip read, which is named, or `prepare_memory_cache`), so a refused closeout leaves the file as the leaf
   wrote it (review R1 F2, ruling 2026-09-30T16:07:55). The closing flag is written inside the same memory commit,
   which keeps its `Code-Commit` trailer (MIK-R09 Preservation: the paired c-12 transaction).
@@ -68,8 +68,7 @@ and `test_the_closeout_s_exact_tree_re_anchor_checks_the_file_it_has_just_closed
   4. `begin_git_mutation` receives the judged tree as `expected_output_tree`, and `stage_tree` makes the index
      exactly that tree. A file written after step 3 is not committed and stays an uncommitted change.
 
-  Any failure before the commit begins restores the history closing and the `.gitignore` bytes
-  (`_restore_preparations`). The closeout commits the code before the memory (`closeout.py::_closeout_commit_phase`),
+  Any failure before the commit begins restores route-owned history/ignore bytes only while they still match this call's preparations; concurrent edits are preserved and named (`_restore_preparations`). The closeout commits the code before the memory (`closeout.py::_closeout_commit_phase`),
   so a refusal here leaves the code commit made and no memory committed; a rerun takes that commit as it is and
   completes once the gate passes. Unconverted memory has no judged tree and stages from the working tree as before.
 - **`candidate_gate_verdict(contract, code_tree)`** asks the gate about the accepted code candidate tree and the
@@ -109,13 +108,23 @@ None recorded.
 
 ### Repo-Internal References
 
+
 - `external_closeout_commits` supplies the exact current transaction boundary above. [23]
+
+
 - `_commit_memory_content` supplies the exact current transaction boundary above. [24]
+
+
 - `_restore_preparations` supplies the exact current transaction boundary above. [25]
+
 - `_require_judged_tree` supplies the exact current transaction boundary above. [26]
 - `_refuse_ungated_memory` supplies the exact current transaction boundary above. [27]
+
 - `require_gated_recovery` supplies the exact current transaction boundary above. [28]
+
+
 - `candidate_gate_verdict` supplies the exact current transaction boundary above. [29]
+
 ### Docs References
 
 No external Domain Documentation source is configured for this slice. The current behavior is repository-owned and is supported by the source references below.
@@ -131,21 +140,37 @@ No additional cross-repository evidence applies.
 ## 260821-CLIVE-L2 Current Contract
 
 The current entry point is `external_closeout_commits`. Closed admission, immutable generation input, root-journal mutation evidence, and same-generation recovery still govern memory content. Ledger-specific intent, mapping reconciliation, and commits have been removed from this owner rather than retained as a parallel route.
+
 - The converted leaf's history file is closed before the memory commit. [30]
+
 - The owner of the history file the closeout closes. [31]
-- Any failure before the commit restores the file. [32]
+
+- Before publication, owned history closing restores only unchanged prepared bytes and preserves concurrent edits. [32]
+
+
 - `external_closeout_commits` resumes or creates the memory output (since MIK-R09 closing a converted leaf's history file first; since L37 after asking the cutover lock for unconverted memory, and judging a recovered memory commit before it resumes), then refreshes its informational cache. [33]
-- `_commit_memory_content` reuses clean content or commits attributed memory with root memory.md excluded; since MIK-R09 it validates a converted leaf's exact tree first and restores the closing on any failure before the commit; since L37 it also runs the mandatory gate and stages the commit from the judged tree. [34]
+
+
+- Closeout reuses clean memory or publishes the judged tree with root memory.md excluded; unpublished refusal restores only unchanged owned preparations. [34]
+
 - `_refresh_external_memory` refreshes onboarding, overview, entity, and generated index data before content publication. [35]
 - `_report_memory_commit` reports verified-existing code/memory outputs without fabricated mutation evidence. [36]
+
 - The lock is asked before any stamping or commit of unconverted memory. [37]
+
 - The validator and the mandatory gate over the leaf's exact memory output. [38]
 - The exact tree the memory commit records. [39]
+
 - The one verdict the preview and the apply's preflight read. [40]
+
 - The preflight before the approval is claimed or anything is committed. [41]
+
 - A recovered closeout is judged like a fresh one. [42]
+
 - A commit whose tree is not the judged tree is refused before the memory commit's Git mutation begins. [43]
-- A refused closeout takes back the ignore rule it recorded. [44]
+
+- Refusal preserves and names edited ignore bytes instead of overwriting them. [44]
+
 - Cache rendering returns informational state and creates no Git commit. [45]
 - The public closeout refuses an open item and commits once it is answered. [46]
 - A file rewritten while the gate runs is never committed unjudged. [47]

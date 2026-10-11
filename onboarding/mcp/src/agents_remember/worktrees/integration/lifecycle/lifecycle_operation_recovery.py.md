@@ -20,6 +20,8 @@ integration boundary's typed `DirectLandingError` enters public recovery transla
 unexpected `RuntimeError` is an invariant defect and propagates instead of being mislabeled as a
 recoverable operation outcome. This centralizes the public error vocabulary without hiding defects.
 
+After the real direct recovery executor completes its attempt, the same call settles the kept closing receipt: completed/cancelled generations release it; an unreadable receipt refuses by named status, path and action. This executor contract does not establish that the public lifecycle control admits recover for an intent-less interrupted direct generation; the public-control limitation and its repair remain separately owned.
+
 ### Conventions
 
 Pure classifiers return typed observations; mutation owners publish write-ahead intent and exact evidence before advancing. Public projections carry bounded expected/observed facts and executable task-addressed next actions without leaking private operation identity.
@@ -39,6 +41,9 @@ None recorded beyond the explicit terminal-archive boundary recorded by the gove
 
 ## Evidence
 
+- Real direct recovery settles the kept closing receipt in the same call. [3]
+
+
 ### Docs References
 
 No configured Domain Documentation source applies to this repository-internal lifecycle seam.
@@ -47,8 +52,12 @@ No configured Domain Documentation source applies to this repository-internal li
 
 The source file is the direct evidence for this file-specific ownership boundary.
 
+
 - The module defines `recover_direct_landing`; `direct_recovery_refusal`; `reconcile_control_mutations` as its public seam. [1]
+
+
 - One translator reclassifies typed direct failures against current evidence while invariant runtime errors remain loud. [2]
+
 
 ### Cross-Repo References
 

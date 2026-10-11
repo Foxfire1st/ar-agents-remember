@@ -42,12 +42,12 @@ every commit route refuse while any exists. None is report-only, and there is no
   2. With no tip given, `_resolved_tip` reads the parent line's memory tip from the contract
      (`worktrees.knowledge_gate.parent_memory_tip`); a failure is one `incomplete` finding (`parent memory line`), and
      that result is not memoised.
-  3. The memo (`memo.memo_key`, `memo.remembered`): a hit re-persists the kept worklist beside the contract and returns
+  3. The memo (`memo.memo_key`, `memo.remembered`): a hit re-persists the kept worklist only when `persist_worklist` is true and returns
      the kept verdict.
   4. On a miss, `_evaluate` runs inside `recorded_reads()`, so every requirement file and settings file the
      evaluation reads is recorded (ruling 15:09:25), and `memo.remember` keeps the verdict with that read set when it
      is memoisable.
-- **`_evaluate`** recomputes, persists the worklist (`_persist`; a write failure never changes the verdict) and
+- **`_evaluate`** recomputes, optionally persists the worklist (`_persist`; a write failure never changes the verdict) and
   calls `judge` with `validation_bases=(parent tip,)` and the contract's cache.
 - **`judge(document, path, trees, owner)`**: an incomplete run is one finding per named input; a complete one goes
   through `_item_findings`; the validator's refusing findings are appended.
@@ -82,7 +82,7 @@ every commit route refuse while any exists. None is report-only, and there is no
 
 - The admission base is the parent line's memory tip (the L27 carry, ruling 2026-09-29T22:11:24): every record first
   created in the leaf, in however many commits, is judged new by `R27.2-new-record`.
-- The worklist the gate computed is the one persisted beside the contract and rendered in the checklist.
+- Ordinary quality/closeout runs persist the recomputed worklist beside the contract; landing refusal callers explicitly disable that persistence, including memo hits, so judgment changes no worklist file.
 
 ### Invariants And Boundaries
 
@@ -132,8 +132,12 @@ No configured live documentation source was available for this pass.
 - The verdict: memoisable, brief and refusal. [4]
 - The recompute that never raises. [5]
 
+
 - Probe, tip, memo, then the recorded evaluation. [6]
+
+
 - The evaluation and the judgment. [7]
+
 
 - K_C and C read once; the invariant kinds first; a failed read is incomplete. [8]
 
@@ -148,7 +152,9 @@ No configured live documentation source was available for this pass.
 
 - The gate names the attempt the writer writes. [14]
 
+
 - The gate reads the leaf's memory HEAD beside the parent tip, and keys its memo on both. [15]
+
 - The leaf's memory HEAD, or nothing when it cannot be read. [16]
 - The commits whose closed history files are frozen for the writer: the bases and HEAD. [17]
 - The validator inside the gate is handed the frozen commit's history files. [18]

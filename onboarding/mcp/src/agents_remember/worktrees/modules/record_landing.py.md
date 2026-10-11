@@ -69,33 +69,34 @@ every finding):
   (`test_record_landing_on_unconverted_memory_never_reads_the_landed_commit`, `would-record`; `unconverted.sh`
   agrees with base, including an unreadable memory commit).
 - **A converted line must name its memory commit** (`_unnamed_memory_commit_refusal`).
-- **The request (`_landing_request`).** An unreadable landed commit on a converted line is refused, named. The
-  validator's base is the parent line the task last synced from (`memory_base_commit`), so every record the task
-  introduced is judged new (the L27 carry); only when it is unset are the commit's parents used (note R2-4). A leaf
-  contract names `leaf_owner`, so the landing also requires the leaf's history file to be `closed` in the landed
-  commit and validates it as a leaf publication (`landing_gate_refusal`); a master's record landing gets the
-  validator without the staleness check (accepted choice, ruling 14:38:47). A memory commit made before the
-  repository was converted carries no marker and is exempt.
+- **The leaf pair.** Converted leaf recording requires the contract's memory base by name; no landed-parent fallback replaces a missing base. The actual landed memory commit is judged by `leaf_pair_refusal` with a recomputed worklist over its exact tree. Code is the recorded closeout code commit when the landed commit contains it, otherwise the landed code commit. An unreadable recorded object/ancestry refuses rather than silently selecting another pair. The latest leaf history file must remain closed.
+- **The master pair.** Recorded master landing also runs validator, net staleness from the series code base, newly closed history ownership, and the full admitted code/memory chain up to the supplied landed commits, not today's branch tips. A converted route refuses unreadable inputs before either dry-run or apply recording; recording publishes no memory commit or ref.
 - **Tests:** `test_record_landing_checks_the_landed_memory_commit_is_closed_and_valid`,
   `test_record_landing_refuses_through_its_route_entry`, and
   `test_a_hand_closed_leaf_file_is_refused_at_closeout_validation_and_record_landing` (F1); real data `closeout.txt`
   step 3.
 
+
 - The module docstring's gate and probe-first paragraphs. [1]
+
 - Probe the line first; an unconverted line's commit is only probed. [2]
+
 
 - The gate's request over the landed commit, based on the task's memory base. [3]
 
+
+
 - The gate runs before the dry-run and apply branches. [4]
 
-- **What is frozen at a recorded landing (L37, decision record DEC-0AEQ28; INV-MS9BMJ).** `_landing_request` names
-  the landed commit's parents as `frozen` only when the landed commit is the memory commit that
-  `closed_out_memory(contract)` reads from the contract as its completed closeout: that commit is judged as the
-  closeout judged it, with what it was made on frozen. A commit made by any other hand (a child of the closeout
-  commit, a merge made afterwards) freezes nothing, so every row of the leaf is checked against the landed tree.
 
-- Only the recorded closeout commit freezes what it was made on. [16]
-- A hand-closed file is refused also when landed one commit later, or through a merge. [17]
+- **Recorded-closeout freezing.** The shared pair judge freezes history files closed in the parents of the contract's recorded closeout memory commit when the judged commit is that commit or descends from it, including a later merge. It freezes nothing for a commit outside that ancestry; newly added rows remain checked. This deliberately supersedes the former exact-recorded-commit-only limit.
+
+
+- The recorded closeout and its descendants use the recorded-closeout parent freezing policy. [16]
+
+
+- Newly added or hand-closed history is still judged on the actual landed tree. [17]
+
 
 ### Conventions
 
@@ -150,19 +151,31 @@ No configured external source applies.
 
 The following current source boundaries establish the ledger-retirement behavior.
 
+
 - `record_landing_result` validates the recorded code landing, since MIK-R09 checks the landed memory commit on converted memory (before the dry-run and apply branches), and forwards the actual code/memory facts. [5]
+
 
 - The shared writer this route calls, and the cell it publishes. (`record_landed_integration`) [6]
 - The local route that already recorded its own landing. (`_integrated_result`) [7]
+
 - The `already-recorded` guard covers both landing states, so a checkpointed series is never upgraded into a reclaimable integration. (`contract.integration_status in {"completed", "checkpointed"}`) [8]
-- The summary the checkpointed half returns, naming the still-open series and the route that completes it. (`This contract already records a checkpointed integration`) [9]
+
+
+- The checkpointed summary preserves its still-open state and names worktree_integrate as its completion route. [9]
+
 - Cleanup refuses until the cell this route sets reads completed. (`integration_status`) [10]
 - The dashboard PR probe whose `None`/`missing` polarity must not be read as "never landed". (`_pr_for`) [11]
+
 - The MCP tool and payload that expose this operation. (`worktree_record_landing`) [12]
+
+
 - The application-layer entry point that confines the contract and builds the arguments. (`worktree_record_landing_tool`) [13]
+
 - The PR landing-tail recording step in operator doctrine. (`worktree_record_landing`) [14]
 
+
 - Unconverted memory: the lock decides, before a memory commit is required. [15]
+
 
 ### Cross-Repo References
 

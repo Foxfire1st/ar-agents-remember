@@ -1,13 +1,31 @@
 {
   "path": "mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "747ceef9f19039b540d51ee10fd567e30e334606",
+        "content": "sha256:48800da83af555058a5c5a04ae8c6bd574fa9199c6bd208756df69d57a07535e",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-631Z8E",
+      "invariant": "INV-SRS98B",
+      "origin": {
+        "handoffEntry": "MIK-R52@v1 rule 12 bounded-builders",
+        "leaf": "260928-MIK-L52"
+      },
+      "rationale": "Holds MAX_EVIDENCE_DEPENDENCIES derived from the model bounds with the stating comment.",
+      "role": "unclassified"
+    }
+  ],
   "references": {
     "1": {
       "note": "The dependency-kind vocabulary and closeout-door policy contain no ledger-provenance input.",
       "targets": [
         {
           "anchor": {
-            "blob": "90f5a68fa9584c2eb07433aa104cdf5df93e0ad2",
+            "blob": "747ceef9f19039b540d51ee10fd567e30e334606",
             "content": "sha256:0c38c0ed7c6d897b122d6df1b6c57ffefa01d5623b3c300023adcbe647c9acb7",
             "locator": {
               "kind": "symbol",
@@ -18,7 +36,7 @@
         },
         {
           "anchor": {
-            "blob": "90f5a68fa9584c2eb07433aa104cdf5df93e0ad2",
+            "blob": "747ceef9f19039b540d51ee10fd567e30e334606",
             "content": "sha256:91d5d38c7dfe98df935839ac5ec8ffa60aa6860e9222a315a5d9bdaaa47c3cba",
             "locator": {
               "kind": "symbol",
@@ -29,7 +47,7 @@
         },
         {
           "anchor": {
-            "blob": "90f5a68fa9584c2eb07433aa104cdf5df93e0ad2",
+            "blob": "747ceef9f19039b540d51ee10fd567e30e334606",
             "content": "sha256:ed923bfca34ced297e3b8070019c32b2d8bb71829ef8886708656363e02eb369",
             "locator": {
               "end": 50,
@@ -41,12 +59,12 @@
         },
         {
           "anchor": {
-            "blob": "90f5a68fa9584c2eb07433aa104cdf5df93e0ad2",
+            "blob": "747ceef9f19039b540d51ee10fd567e30e334606",
             "content": "sha256:5ed2fc4181087a160f31eaf80c2695c71aef44c113995c55fd347e5292a74d59",
             "locator": {
-              "end": 211,
+              "end": 238,
               "kind": "line_range",
-              "start": 141
+              "start": 168
             }
           },
           "kind": "code"
@@ -58,7 +76,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6417eae61914675261b64fc0873dea8c2e563fa3",
+            "blob": "7e534abbc8eddc596c09dd188591a8e33755c064",
             "content": "sha256:4676069cc230f2d693f3d2151b6f44515a5fb8acf09f1c4c70fd9aa076319157",
             "locator": {
               "kind": "symbol",
@@ -70,7 +88,7 @@
         },
         {
           "anchor": {
-            "blob": "6417eae61914675261b64fc0873dea8c2e563fa3",
+            "blob": "7e534abbc8eddc596c09dd188591a8e33755c064",
             "content": "sha256:d7247170560d289489c2f59175a79451f8a910ea4c72fa8374b72899f4cd8743",
             "locator": {
               "kind": "symbol",
@@ -164,6 +182,22 @@
               "name": "require_current_route_review_task_intent"
             },
             "path": "mcp/src/agents_remember/worktrees/route_review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Shared evidence capacity follows from the bounded coherence payload.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "747ceef9f19039b540d51ee10fd567e30e334606",
+            "content": "sha256:2f7e86ce4a345257854385bcf365ffdb5763947d2e5cb2ac1e70a998d7b46854",
+            "locator": {
+              "kind": "symbol",
+              "name": "MAX_EVIDENCE_DEPENDENCIES"
+            }
           },
           "kind": "code"
         }

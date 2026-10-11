@@ -2,6 +2,9 @@
 
 ## Current operative route — MIK-R112 after L74
 
+The knowledge-gate adapters carry explicit leaf identity and persistence policy. Landing refusals judge without persisting a worklist; master admission resolves newly closed history to actual leaf/direct/sync publication owners and compares exact bytes. Recorded master landing has net staleness from its recorded series code base, not a validator-only exception.
+
+
 The application layer composes the exact launched actor/role/canonical task and request bindings with retained context, paired source/onboarding reads, memory quality/citation fixing and worktree/structural operations. Native folder/display labels do not create task authority. Provider setup/search, ping, lifecycle signals, child-supervision and other retired public registrations are not restored by internal services or the historical route inventory. Current runtime installation stops leftover watchers and reports old enabled keys unused; it does not start provider indexing. The supported source/input server-definition branch and composed prompt do not establish host-actual ambient suppression or new CODE acceptance.
 
 L74 read-boundary qualifications remain with their actual reader owners: a read that cannot preserve its named cache/capture/report/ref permissions refuses without a fallback write location. Converted read identity/index composition and current retained operations are distinct from archival database/seam history below. All original route text, links, references and dated closure statements are preserved rather than promoted into a fresh runtime claim.

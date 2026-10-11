@@ -6,11 +6,10 @@
 
 ## Purpose
 
-Tests of the invariant gate at every public route that commits or records a leaf's memory. Each route test
-enters through the route's own entry point, so removing that route's gate call makes it fail: the worktree
-closeout, direct landing apply and preview, record landing, and the master and checkpoint landing. The
-module also holds the tests of the gate's read set, its memo key and its treatment of Git failures. All
-of them use the gate module's fixture world (`Gated`).
+Tests the invariant gate through public worktree closeout, direct landing preview/apply and recorded-leaf
+entry points, plus the gate's read set, memo key and Git failures using `Gated`. Public master/checkpoint
+chain coverage lives in `test_master_chain_public_routes.py`. This module's synthetic master net-staleness
+probes call `integration_gate_block` directly with chain proof held passing; they do not prove that chain.
 
 ## Code Commentary
 
@@ -19,8 +18,7 @@ of them use the gate module's fixture world (`Gated`).
 - A leaf history file that was closed by hand is refused at closeout validation and at record landing.
 - The worktree closeout refuses an invalid candidate, restores the history file it had closed, and commits
   the file closed once the candidate is valid.
-- Record landing, the master and checkpoint landings, and direct landing preview and apply each refuse
-  through their own entry.
+- Recorded leaf landing refuses a hand-edited on-disk enclosure with no memory base through its public route. Master chain/ownership public-route coverage is owned by the companion master-chain suites; direct preview/apply and closeout retain their own route cases.
 - Direct landing: an input conflict or a failed create restores the closed file; an exact retry of a
   generation in flight reaches it before the gate; cancelling restores the file the generation closed but
   never a file edited since; another generation's request never replaces a kept closing; a closing kept by
@@ -53,7 +51,8 @@ of them use the gate module's fixture world (`Gated`).
 ### Logic
 
 - **Fixtures:** `world`, `ports` (the default validator and gate bound), `_answer` (current rows for every item),
-  `_record` (a record-landing request), `_closeout` (the external closeout with only the journal hooks stubbed),
+  `_record` (a record-landing request), `_closeout` (actual external closeout mutation/commit proof with `_refresh_external_memory`,
+  `report_operation_progress` and `refresh_memory_cache` patched),
   `_configured`/`_land` (a configured, located series for `direct_landing(config, request, series)`), `_admitted`,
   `_receipts`, `_cancel`, `_commits`, `_history`, `_contradicting_row`, `_incomplete` and `_lost_line_range`.
 - **Route entries (R1 F5):**
@@ -61,7 +60,7 @@ of them use the gate module's fixture world (`Gated`).
     is refused, `begin_git_mutation` never runs, the file's open bytes are back; once repaired, the commit holds the
     file with `closed: true` and the same rows.
   - `test_record_landing_refuses_through_its_route_entry`;
-    `test_the_master_and_checkpoint_landings_refuse_through_the_integration_route`;
+    `test_a_hand_edited_enclosure_contract_refuses_through_the_public_recorded_route`;
     `test_direct_landing_preview_and_apply_refuse_through_their_route_entry` (including two open files, M20).
 - **F1:** `test_a_hand_closed_leaf_file_is_refused_at_closeout_validation_and_record_landing` (a row whose `after`
   contradicts K_C, after R2-1 made the ghost subject refuse everywhere).
@@ -73,7 +72,9 @@ of them use the gate module's fixture world (`Gated`).
   `test_an_unreadable_closing_receipt_is_a_named_refusal_at_apply_and_at_cancel` (R2-5; the worker is never
   terminated); `test_a_closing_the_memory_line_already_holds_is_never_restored`, parametrised over `sha1` and `sha256`
   memory repositories (R3-1; kills N16 and a hardcoded-SHA-1 mutation).
-- **F4:** `test_a_timed_out_blob_read_or_an_unverifiable_entry_refuses_a_master_landing`.
+- **F4:** `test_a_timed_out_blob_read_or_an_unverifiable_entry_refuses_a_master_landing` calls the
+  integration gate helper with an explicit operation and chain proof held passing. It proves named
+  validator/net-staleness failures, not public chain acceptance.
 - **R2-1 and the scoping:** `test_a_hand_committed_closed_history_file_with_a_ghost_subject_is_refused_at_master_landing`
   (N21); `test_a_sibling_s_file_closed_in_the_base_is_not_re_anchor_checked_at_a_leaf_route` (N01);
   `test_the_closeout_s_exact_tree_re_anchor_checks_the_file_it_has_just_closed` (N08) and
@@ -118,10 +119,14 @@ of them use the gate module's fixture world (`Gated`).
 ## Evidence
 
 - The module docstring: every route test enters through the route's own entry. [13]
+
 - The closeout refuses, restores the file and commits it closed once valid. [14]
+
 - Record landing refuses through its route entry. [15]
 - Direct landing preview and apply refuse through their entry. [16]
+
 - The recorded rows of the settings resolution, and a conflicting read that is never kept. [17]
+
 - Another parent tip is another evaluation. [18]
 - A failed Git read inside the gate is never a verdict. [19]
 - A marker probe Git cannot answer is never unconverted memory. [20]
@@ -137,14 +142,20 @@ No configured live documentation source was available for this pass.
 ### Repo-Internal References
 
 - The module docstring: each route test enters through its own entry point. [22]
-- F1 and the worktree closeout, record, master and checkpoint route entries. [23]
+- A hand-closed history file is refused at closeout validation and recorded landing. [23]
 - Direct landing's route entries and its closing across calls. [24]
+
 - Master landing refuses anything not current; ghost subjects; the scoping. [25]
+
 - The exact trees re-anchor-check the file they just closed; an unavailable object. [26]
 - The admission base, the memo key and record landing on unconverted memory. [27]
 - Git failures, probes and the read set. [28]
+
 - R3-1 and R3-2. [29]
+
+
 - The lane row. [30]
+
 - A Git failure asking for a recorded blob is named by the trees and the lane. [31]
 - An unwritable closing receipt restores the file and admits nothing. [32]
 - A hand-closed file is refused also one commit later and through a merge. [33]

@@ -1,0 +1,58 @@
+{
+  "path": "mcp/tests/test_curator_coherence_closed_out.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "66bac1d2656394169414a2c104e800a11b4064b2",
+        "content": "sha256:0656045846a2dbe92f1ceee595fd92d0ffeec6500803557fb0e54fdd3053d9ec",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_status_and_validate_answer_closed_out_after_the_closeout"
+        }
+      },
+      "facet": "After completed closeout both status and validate answer closed-out with actual recorded identities.",
+      "id": "PRF-RFW9MQ",
+      "invariant": "INV-PFVBQM",
+      "origin": {
+        "handoffEntry": "MIK-R52@v1 rule 10 closed-out-answer",
+        "leaf": "260928-MIK-L52"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Completed closeout returns its two commits and coherence digest.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "66bac1d2656394169414a2c104e800a11b4064b2",
+            "content": "sha256:0656045846a2dbe92f1ceee595fd92d0ffeec6500803557fb0e54fdd3053d9ec",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_status_and_validate_answer_closed_out_after_the_closeout"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The shortcut never invents a missing record.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "66bac1d2656394169414a2c104e800a11b4064b2",
+            "content": "sha256:aca1fddd80b07ca6c37fc3b7169ab38acdd8009ff386b8891b7d846397d6650d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_completed_closeout_without_a_record_answers_absent"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

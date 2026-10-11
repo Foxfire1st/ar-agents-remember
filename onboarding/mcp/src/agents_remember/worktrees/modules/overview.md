@@ -6,6 +6,9 @@
 
 ## Governing Overview
 
+The integration_gate module owns pre-publication invariant admission for preview and apply: exact leaf-pair rejudgment or master validator/staleness/history plus chain proof. Refused admission persists neither contract nor worklist. Recorded landing judges supplied landed endpoints rather than mutable tips. Git object/ancestry unreadability is a named refusal, never absence.
+
+
 [worktrees overview](../overview.md)
 
 ## 260928-MIK-L37 The Memory Routes Ask The Cutover Lock, And The Onboarding Gate Reads Every History File

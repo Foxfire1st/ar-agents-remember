@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake",
+      "guarded_by_test"
+    ],
+    "justification": "The ordinary sync exemption must not admit stale authored covers at a leaf publication."
+  },
+  "applicability": "History-row validation of converted leaf publications and ordinary merges.",
+  "conditions": [
+    "A leaf publication checks every disagreeing row, including merge-moved rows."
+  ],
+  "exclusions": [
+    "A merge which is not a leaf publication retains its report-only moved-row lane."
+  ],
+  "id": "INV-9CSYZS",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "role-reports/worker/7c2e9d14-6a1b-4f53-8e20-52a0c3d9b152/role-launch/260928-MIK-L52-worker-7c2e9d14-6a1b-4f53-8e20-52a0c3d9b152.md (SHA-256 ef7cff4d9b5140ebecdc1997c2df1fa8dc3ad81222e17dc63b2746cccab1bdf6); mcp/tests/test_knowledge_validator_routes.py (merge-moved leaf publication)"
+      ],
+      "path": "knowledge-wave.json"
+    },
+    "handoffEntry": "MIK-R52@v1 rule 7 strict-rows",
+    "leaf": "260928-MIK-L52",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "At a leaf publication every disagreeing row refuses, including rows a merge moved; the report-only treatment applies only to non-publication merges.",
+  "status": "proposed",
+  "supersedes": []
+}

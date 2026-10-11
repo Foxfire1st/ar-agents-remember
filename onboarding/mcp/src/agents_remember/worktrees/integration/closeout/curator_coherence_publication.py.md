@@ -40,7 +40,7 @@ and validation material in detail, without changing generation integrity or CAS 
 publication lock. Inside the lock it rereads the contract, rechecks predecessor, source identities,
 and evidence bytes, atomically installs a deterministic content-addressed record/report directory,
 optionally freezes the attempt pointer, rechecks again, and writes the stable authority last.
-`validate` delegates to the shared currentness validator. Publication fingerprints contain all
+Before closeout, `validate` delegates to the shared currentness validator. After completed closeout, status and validate with a retained authority instead return `closed-out`, its recorded code/memory commits and record digest, and compare nothing with the live tree: coherence is validated before closeout. Without an authority the ordinary `absent` path remains. This historical response is not current readiness or integration acceptance. Publication fingerprints contain all
 semantic input, so exact retries converge even after a crash left a generation but not the pointer.
 
 Under CCR-R03@v1 `_record` now builds the immutable record's `curator-coherence/v1` dependency
@@ -77,8 +77,13 @@ None recorded.
 
 ## Evidence
 
+- Completed closeout answers recorded identities without a live-tree comparison. [11]
+
+
 - Preparation files the exact candidate set and reading rendering. [9]
+
 - Optional file-sourced judgments retain exact-set, evidence and CAS validation. [10]
+
 
 ### Docs References
 
@@ -89,16 +94,24 @@ The publication transaction is repository-owned.
 ### Repo-Internal References
 
 - The public action dispatcher keeps one tool surface. [1]
+
 - **The prepare response composes its summary from the request model's publication declaration, so it states every publication input.** [2]
+
+
 - **The statement `prepare` carries, defined on the request-model route rather than here.** [3]
+
+
 - Publication rechecks contract, predecessor, candidates, attestation, topology, and evidence before selecting authority. [4]
+
 - Immutable generation installation is directory-atomic and collision-safe. [5]
 - Attempt snapshots point at immutable generation artifacts. [6]
 - R03 record construction binds the declared dependency set. [7]
 
 The following declarations carry the changed boundary.
 
+
 - Full generation integrity is proved before canonical authority replacement. [8]
+
 
 ### Cross-Repo References
 

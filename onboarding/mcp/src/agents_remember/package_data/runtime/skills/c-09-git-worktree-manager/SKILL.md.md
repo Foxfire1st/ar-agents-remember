@@ -6,6 +6,9 @@
 
 ## Purpose
 
+This generated runtime skill propagates the canonical root skill's exact-pair landing guidance. It distinguishes leaf rejudgment from the master validator/staleness/chain/history checks and separates public direct recover refusal from the real executor's receipt settlement. Edit the canonical skill and regenerate copies; this file is no second authority.
+
+
 Documents `c-09-git-worktree-manager`, the Git worktree lifecycle manager for Agents Remember tasks: worktree start, attach/status, external-memory compatibility before start, integration, lifecycle finalization, and cleanup, plus reopening (`task_reopen` resets a fully landed leaf to planning under its exact leaf id). Closeout sequencing belongs to `c-12-closeout`; this skill only supplies the worktree-specific configured leaf path and the integration/finalization follow-up rules.
 
 ## Code Commentary

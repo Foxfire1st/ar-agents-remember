@@ -25,6 +25,8 @@ The converted-onboarding bootstrap test is a consumer of the two existing artifa
 
 ### Structure
 
+The old coherence-record fixture is an exact retained external-recorded artifact, owned and consumed by `test_evidence_dependency_bounds.py`; its permanence protects old-record compatibility under the derived dependency bound. The landing/gate suites register their actual shared support consumers, never a new execution claim.
+
 - Two top-level values: `schema_version = "ar-test-evidence-lifecycle/v3"` and
   `large_fixture_bytes`, the size from which any non-source file under `mcp/tests` counts as a
   governed fixture.
@@ -171,22 +173,34 @@ files are both gone removed without file restores.
 - A line that the union brings back for a deleted file is refused and then removed by the command. [12]
 
 - The loader that validates the file and refuses a catalog that is not canonical. [13]
+
+
 - The Node lockfile fixture's row: an exact consumer scope and the start of its consumer list. [94]
 
-- The registered-preview comparator retains its own declared artifact and consumers. [260]
+
+
+- The registered-preview comparator's artifact retains its replacement contract and direct/transitive consumers. [260]
+
+
 - The comparison test consumes the shared read-scope fixture registered under knowledge-read-scope-cases. [264]
 
 
 
 
-- The comparison test is covered [261]
+
+
+- The Node lockfile fixture lists the worktree-environment regression module as an exact consumer; this is reachability accounting, not a lifecycle execution result. [261]
 
 
 
 
 
 
-- It consumes the cold-start/topology artifact too [262]
+
+
+- The permanent shared settings guard declares its owner, replacement node and exact consumers. [262]
+
+
 
 
 
@@ -195,14 +209,16 @@ files are both gone removed without file restores.
 
 At the landed L71 checkpoint, the catalog holds 13 contract rows and 87 governed artifacts. The shared `preview_read_only_test_support.py` artifact declares the registered-preview call-record comparison as permanent local-composition evidence, with the existing repeatable-preview test as its replacement contract. Its exact consumers are `test_worktree_start_preview.py` and `test_master_retirement_readiness.py`: the latter reaches the support transitively through the preview fixture. That consumer addition leaves the row's metadata, existing direct consumer and every other catalog row unchanged. Artifact and consumer declarations establish ownership and reachability, not test execution or acceptance. This landed population is not a count of the separately composed L74 working catalog.
 
-- The registered-preview comparator's artifact row retains its replacement contract and lists both direct and transitive consumers. [260]
+
+
 The admitted lifecycle replacement, landed upstream of L74, replaced the earlier 32-contract catalog with 13 contracts; `tool_log_witness` predates L74 and the river-scale measurement (`l114_e4_river_scale.py`) is also carried upstream content. Earlier per-leaf artifact counts are historical, not the current composed population. L74's rule-test consumers and the landed preview consumers are both retained; the working catalog's final row population must be read from the completed composition, not inferred from either historical count.
 
 ## Shared support settings guard
 
 The permanent `_user_settings_guard.py` artifact owns the shared settings-path refusal, with the existing support-write guard test as its replacement node and source-derived exact consumers. The world, structural-seat and Paseo-runtime helpers refuse the account's real settings path before settings-parent creation or mutation; the Paseo unlink branch is guarded too. A moved pytest configuration remains supported. This registration and its derived consumers declare ownership and reachability, not execution or acceptance. Historical landed catalog counts above are not current composition counts.
 
-- The permanent shared settings guard declares its owner, replacement node and exact consumers. [262]
+
+
 - The replacement case recursively scans shared support for unguarded settings-path access. [263]
 
 ## 260928-MIK-L74 The derived index sheds the dataset shape
@@ -215,8 +231,13 @@ L74 rebinds the `knowledge-identity-branching-fixture` contract and its four art
 
 
 
-| Conversation-open support (`mcp/tests/conversation_open_test_support.py`) declares its permanent owner and real replacement contract. [258] |  | mcp/tests/evidence-lifecycle.toml |
-| Eve event support (`mcp/tests/eve_adapter_event_test_support.py`) declares its permanent owner and exact consumers. [259] |  | mcp/tests/evidence-lifecycle.toml |
+
+- Conversation-open support (`mcp/tests/conversation_open_test_support.py`) declares its permanent owner and real replacement contract. [258]
+
+
+- Eve event support (`mcp/tests/eve_adapter_event_test_support.py`) declares its permanent owner and exact consumers. [259]
+
+
 
 ## 260928-MIK-L129 Repeated-cleanup regression test consumers
 
@@ -224,7 +245,11 @@ L74 rebinds the `knowledge-identity-branching-fixture` contract and its four art
 
 ## Refreshed current evidence
 
+
+
 - Worklist process support declares its permanent local-composition contract. [98]
+
+
 ### Conventions
 
 The catalog is a policy/configuration input and is not counted as an artifact inside itself.
@@ -281,67 +306,218 @@ Source declarations and test assertions are distinguished from execution and acc
 - The four retained knowledge contracts and their evidence nodes. [213]
 - The referenced transaction test definition exists in the current source. [214]
 - The referenced transaction test definition exists in the current source. [215]
+
+
 - The artifact the first pair belongs to, and the scope both lists carry. [216]
+
+
+
+
 - The fixture module it builds on rather than duplicating, so no third enclosure fixture was introduced. [217]
+
+
+
+
 - **The row registered for the member-source cases, at the end of the read-scope artifact's exact consumer list.** [218]
+
+
+
+
 - **The fixture it extends rather than duplicating, and the observation helper its cases read bytes back through.** [219]
+
+
+
+
 - **The three consumer entries on the diff-cases artifact's exact list, appended newest-last.** [220]
+
+
+
+
 - **The same three on the read-scope artifact's exact list.** [221]
+
+
+
+
 - The enclosure the three modules extend rather than duplicating. [222]
+
+
+
+
 - The read-scope artifact's consumer list with the new exact consumer. [223]
+
+
+
+
 - The nine new fixture rows for the Doc14 knowledge-file examples. [224]
+
+
+
+
 - The consumer additions: the conversion toolchain case on the curator-coherence and read-scope rows, the crossing case on the merge-case and generation rows. [225]
+
+
+
+
 - The three consumer additions, one on each exact row. [226]
+
+
+
+
 - The three rows they belong to. [227]
+
+
+
+
 - The consumer addition. [228]
+
+
+
+
 - The row it belongs to. [229]
+
+
+
+
 - The consumer addition. [230]
+
+
+
+
 - The row it belongs to. [231]
+
+
+
+
 - The paging module's consumer line on the package-lock row. [232]
+
+
+
+
 - None [233]
+
+
+
+
 - The planned-effects module's consumer line. [234]
+
+
+
+
 - The row it belongs to. [235]
+
+
+
+
 - The leaf-read module's consumer line on the package-lock row. [236]
+
+
+
+
 - None [237]
+
+
+
+
 - The two rows it belongs to. [238]
+
+
+
+
 - The unexplained-change module's consumer line on the package-lock row. [239]
+
+
+
+
 - The row it belongs to. [240]
+
+
+
+
 - The route-chain module's consumer lines on the four rows. [241]
+
+
+
+
 - The reconsideration module's consumer line on the package-lock row. [242]
+
+
+
+
 - The row it belongs to. [243]
 
+
+
+
+
 - The schema version and the large-fixture discovery threshold remain explicit. [244]
+
+
+
+
 - The four retained knowledge contracts and their evidence nodes. [245]
+
+
+
+
 - Closeout fixture support names the retained code/memory transaction replacement. [246]
+
+
+
+
 - Closeout-input support declares the cleanup-guidance consumer. [247]
+
+
+
+
 - None [248]
+
+
+
+
 - None [249]
+
+
+
+
 - None [250]
+
+
+
+
 - None [251]
+
+
 - The referenced transaction test definition exists in the current source. [252]
 - None [253]
 - Closeout-input support names the same retained code/memory transaction replacement node. [254]
+
+
 - None [255]
+
+
+
+
 - None [256]
+
+
 - The referenced transaction test definition exists in the current source. [257]
 The converted-drift test module joins the consumer lists it exercises with: one test per packet rule,
 each behavioural case failing before its fix and passing after.
+
+
 - The converted-drift module is registered as a consumer of the evidence it exercises. [99]
+
+
+
+
 - The durable-artifact consumer entries this catalog now declares; lane rows belong to test-evidence-lanes.toml. [14]
 
 
-- It consumes the knowledge-read-scope topology fixture [264]
 
 
 
-- The Node lockfile fixture lists the worktree-environment regression module as an exact consumer; this is reachability accounting, not a lifecycle execution result. [261]
-
-The converted-drift registration once tabled under keys 14/95 now stands as the [99] line above; keys 14 and 95 cite the catalog's durable-artifact and reviewer-worklist rows.
 
 
-## L112 post-L74 correspondence for parked comparison references
-
-Historical L112 post-L74 intake: the parked W03 comparison-consumer prose and original261/262/263 targets were preserved in the Curator sync3-ten-carrier account. That intermediate intake reported no comparison module/consumer; it is superseded, not the current registration contract. The current source retains test_comparison_changeset.py and six exact catalog consumer rows, including read_scope_test_support for knowledge-read-scope-cases. The current parsed catalog has13 contracts and90 artifacts on the450ade9c/e06f241b pair; this source observation is not loader/test execution or CODE/MEMORY acceptance. Incoming qualified contracts, preview consumers and read-boundary registrations are retained, not replaced by old W03 claims.
 - The two reviewer worklist test modules on that row's consumer list. [95]
 
 
@@ -349,6 +525,9 @@ Historical L112 post-L74 intake: the parked W03 comparison-consumer prose and or
 
 
 
+The converted-drift registration once tabled under keys 14/95 now stands as the converted-drift evidence line above; keys 14 and 95 cite the catalog's durable-artifact and reviewer-worklist rows.
 
 
-- The read_scope_test_support artifact registers test_comparison_changeset as an exact consumer of knowledge-read-scope-cases. [264]
+## L112 post-L74 correspondence for parked comparison references
+
+Historical L112 post-L74 intake: the parked W03 comparison-consumer prose and original261/262/263 targets were preserved in the Curator sync3-ten-carrier account. That intermediate intake reported no comparison module/consumer; it is superseded, not the current registration contract. The current source retains test_comparison_changeset.py and six exact catalog consumer rows, including read_scope_test_support for knowledge-read-scope-cases. The current parsed catalog has13 contracts and90 artifacts on the450ade9c/e06f241b pair; this source observation is not loader/test execution or CODE/MEMORY acceptance. Incoming qualified contracts, preview consumers and read-boundary registrations are retained, not replaced by old W03 claims.

@@ -1,0 +1,112 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/modules/integration_gate.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "b7c1cdbb6b82fa751e51722404352099fba9aa25",
+        "content": "sha256:24d7192cf2a23f2fb4db1d2286bcde370e7e67fe20194f37934b87ad17ddb87e",
+        "locator": {
+          "kind": "symbol",
+          "name": "_leaf_landing_lock"
+        }
+      },
+      "id": "RLZ-57S6TY",
+      "invariant": "INV-JT28KJ",
+      "origin": {
+        "handoffEntry": "L37-cutover-lock",
+        "leaf": "260928-MIK-L37"
+      },
+      "rationale": "Refuses a leaf's integration only when neither the landed memory commit nor the line it lands on holds the marker and the repository is locked, so the converting leaf's own landing onto its unconverted line is never locked.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "b7c1cdbb6b82fa751e51722404352099fba9aa25",
+        "content": "sha256:ba0f45687a8d0a9c237f8191b49fee25aef4d9515b6f927ee7e37a2a5006f76e",
+        "locator": {
+          "kind": "symbol",
+          "name": "integration_gate_block"
+        }
+      },
+      "id": "RLZ-DH6NBY",
+      "invariant": "INV-JT28KJ",
+      "origin": {
+        "handoffEntry": "L37-cutover-lock",
+        "leaf": "260928-MIK-L37"
+      },
+      "rationale": "Runs for every contract with external memory, in preview and apply alike: a leaf goes to the landing lock and a series to the landing gate, and a refusal becomes the blocked payload.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "b7c1cdbb6b82fa751e51722404352099fba9aa25",
+        "content": "sha256:24d7192cf2a23f2fb4db1d2286bcde370e7e67fe20194f37934b87ad17ddb87e",
+        "locator": {
+          "kind": "symbol",
+          "name": "_leaf_landing_lock"
+        }
+      },
+      "id": "RLZ-G7040T",
+      "invariant": "INV-5JEN5D",
+      "origin": {
+        "handoffEntry": "MIK-R52@v1 rule 3 leaf-integration",
+        "leaf": "260928-MIK-L52"
+      },
+      "rationale": "The leaf lock: cutover probe then the closeout-cell pair judgment.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "b7c1cdbb6b82fa751e51722404352099fba9aa25",
+        "content": "sha256:ba0f45687a8d0a9c237f8191b49fee25aef4d9515b6f927ee7e37a2a5006f76e",
+        "locator": {
+          "kind": "symbol",
+          "name": "integration_gate_block"
+        }
+      },
+      "id": "RLZ-PS6FJJ",
+      "invariant": "INV-95NQR7",
+      "origin": {
+        "handoffEntry": "L50-CODE-R1-F02",
+        "leaf": "260928-MIK-L50"
+      },
+      "rationale": "Lifecycle landing, gate and closeout routes refuse a non-external contract themselves once the caller passes its explicit operation.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Integration admission preserves the no-write refusal boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b7c1cdbb6b82fa751e51722404352099fba9aa25",
+            "content": "sha256:ba0f45687a8d0a9c237f8191b49fee25aef4d9515b6f927ee7e37a2a5006f76e",
+            "locator": {
+              "kind": "symbol",
+              "name": "integration_gate_block"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The exact closeout pair is rejudged against the current parent memory tip.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b7c1cdbb6b82fa751e51722404352099fba9aa25",
+            "content": "sha256:c506cf487d705b7c737c62e4efae3ee3f6b7ace3b5011aa31df484fb80afe5b7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_closeout_pair_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

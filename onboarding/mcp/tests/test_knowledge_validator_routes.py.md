@@ -6,11 +6,13 @@
 
 ## Purpose
 
-**MIK-R22 rule 8: where the validator runs, with a refusal test at each point wired in this leaf.** The cases cover the Git tree readers, the commit-route adapter, the worktree gate, the managed sync after a merge (automatic and retained-conflict paths), and the curator's `knowledge-validate` command. Registered in the `unit-regression` lane (the integration lane is at its 400-case ceiling); 7 collected cases.
+**MIK-R22 rule 8: where the validator runs, with a refusal test at each point wired in this leaf.** The cases cover the Git tree readers, the commit-route adapter, the worktree gate, the managed sync after a merge (automatic and retained-conflict paths), and the curator's `knowledge-validate` command. Registered in the `unit-regression` lane. Earlier collected-case and integration-ceiling figures are historical, not current collection or policy evidence; no fresh collection is claimed.
 
 ## Code Commentary
 
 ### Logic
+
+`test_a_merge_moved_row_refuses_at_leaf_publication` takes the same real moved-row merge into the leaf-publication validator and requires `R09-history-rows`, never the report-only merged spelling. Ordinary managed-sync merge treatment remains separate.
 
 - `test_git_trees_are_read_exactly_and_the_route_index_cache_is_ignored`: exact bytes through `read_git_blobs_bytes`, the cache and hidden directories skipped, a dot-named card read, and the directory and Git readers equal.
 - `test_the_commit_route_adapter_refuses_naming_every_violation`: `GitKnowledgeValidation` over real commits: unconverted memory passes, a converted commit over an unconverted base is refused, an unreadable base is refused ("cannot read"), and a hand-added `[4]` is refused with its rendered line.

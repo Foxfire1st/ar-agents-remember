@@ -16,6 +16,8 @@ hook behavior stays explicit rather than becoming a blanket waiver.
 
 ## Code Commentary
 
+Every later converted landing is judged again: leaf integration judges the closeout pair, recorded leaf landing judges the supplied landed memory against the recorded memory base, with the recorded closeout code when the landed code equals or descends from it, otherwise the landed code, and master final/checkpoint/recorded routes run validator, net staleness, chain and authentic-history checks. Direct landing may name its leaf; an intent-less direct generation's public recover currently refuses, whereas the real executor settles the kept closing receipt. This is the actual guidance boundary, not a promise of public recovery.
+
 ### Logic
 
 Atomic-series implementation admission is separate from task planning and is a contract-scoped
@@ -107,18 +109,28 @@ No Domain Documentation source is configured for this memory root.
 
 - Canonical contract-scoped admission and task/queue separation. [1]
 
+
 - Resumable retained-conflict transaction and explicit cancellation doctrine. [2]
+
+
 
 
 - Exact cleanup/finalization boundary. [3]
 
 
+
+
 - The finalizer paragraph names the folder master's row and refuses a sub-task naming none whose folder `task.json` is not a master (MIK-R38). [4]
+
+
 
 - Public implementation facade preserves the same contract-addressed API. [5]
 
 
+
+
 - The preview asks the mandatory gate on converted memory. [6]
+
 
 - Bounded no-remains exception: with no locator, folder or branches, cleanup or abandon finishes directly, recording terminal state and reason in the surviving contract.
 

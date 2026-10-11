@@ -15,6 +15,8 @@ The probes distinguish a definite repository absence from an unreadable or ambig
 
 ### Logic
 
+The integration gate moved to `modules/integration_gate.py`. The synthetic master gate probe holds chain proof passing because it has no canonical task/enclosure population; it is gate/cutover evidence, not a chain-proof witness. The converted leaf case allows a validator refusal but asserts it is never an unconverted-memory lock.
+
 - `test_the_prepared_closeout_refuses_by_the_lock_at_both_entry_points`: `execute_selected_closeout` and
   `_realize_prepared_memory` both raise with the code `unconverted-memory-locked`.
 - `test_a_converted_worktree_locks_too_and_an_unanswered_probe_refuses`: an uncommitted marker in a registered
@@ -25,12 +27,13 @@ The probes distinguish a definite repository absence from an unreadable or ambig
 - `test_a_bare_repository_git_cannot_open_refuses_by_name` (review R2-3): a healthy bare repository holds no lines;
   one Git cannot open refuses.
 - `test_the_converting_candidate_is_gated_never_locked`: a candidate that holds the marker is judged by the gate
-  (the port is called once) and never by the lock; a crossing sync and a code-only sync pass; the leaf's own
-  converted commit lands on its unconverted line; a repository-level run on a converted checkout is not locked.
+  (the port is called once) and never by the lock; a crossing sync and a code-only sync pass; the converted leaf pair reaches judgment without the cutover-lock refusal, while its
+  synthetic validator may still refuse; a repository-level run on a converted checkout is not locked.
 
-- `test_no_read_selects_the_database_of_a_converted_tree` (L23 F8): with the dataset reader patched to fail,
-  `resolve_published_intent`, the final-output receipt and the sync rebinding answer `not-recorded`, and the
-  unchanged-knowledge freeze returns the tree-comparison refusal.
+- `test_no_read_selects_the_database_of_a_converted_tree`: `resolve_published_intent` selects a derived
+  database beneath the coordination runtime/knowledge-index directory, not the legacy `knowledge.sqlite`.
+  The legacy bytes remain unchanged. This test calls no freeze, final-output receipt or sync rebinding and
+  installs no dataset-reader failure patch; it is not a proof of unchanged-knowledge freeze refusal.
 - `test_hand_off_evidence_is_a_list_of_strings` (L24 carry).
 
 ### Conventions
@@ -47,7 +50,7 @@ The probes distinguish a definite repository absence from an unreadable or ambig
 
 - Each guard is pinned by a mutation that the case kills (worker and reviewer mutation runs, 33 in review R2).
 
-The following is the original proof inventory, before MIK-R26 removed the frozen-database case; it is not the current proof-entry inventory. The surviving cutover and unchanged-knowledge proof relations remain recorded.
+The following is the original proof inventory, before MIK-R26 removed the frozen-database case; it is not the current proof-entry inventory. Only the surviving cutover assertions remain current proof evidence; the historical unchanged-knowledge relation is withdrawn because its bound test no longer exercises that API.
 
 - The file holds proof entries (`proves`) for INV-JT28KJ (the cutover lock), INV-1XKX9ERN (the frozen database) and
   INV-T9M21FB4 (the unchanged-knowledge freeze refuses a converted leaf).
@@ -78,7 +81,9 @@ No configured live documentation source was available for this pass.
 - A converted worktree locks, and an unanswered probe refuses. [14]
 - Only a definite non-repository is unlocked. [15]
 - A bare repository Git cannot open refuses by name. [16]
+
 - The converting candidate is gated, never locked. [17]
+
 - No read selects the database of a converted tree. [18]
 - The lock under test. [19]
 - One unconverted commit under both branches. [20]

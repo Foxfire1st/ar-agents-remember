@@ -10,6 +10,9 @@
 
 ## What This Area Is
 
+The real direct recovery executor settles its kept closing receipt in the same call. Public lifecycle control may refuse recover for a direct generation that binds no task intent; executor settlement and public admission are distinct claims.
+
+
 The durable lifecycle-operation authority: enclosure location, journal storage, generation start
 and retry, public projection, legal controls, cancellation, and completed-disposition checks.
 

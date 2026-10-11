@@ -2,6 +2,9 @@
 
 ## Current operative account — MIK-R112
 
+Maintained converted knowledge is judged wherever a pair is published or recorded, not merely at the earlier closeout. Leaf routes share exact-pair judgment; master routes enforce leaf/parent-only chain and authentic newly closed history. Curator MQC/coherence remain pre-closeout authoring evidence, not broad checks invoked by landing.
+
+
 The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
 
 - Current c-04 copies route semantics/relationships to harness-native search.

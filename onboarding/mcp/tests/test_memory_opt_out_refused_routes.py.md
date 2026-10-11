@@ -10,7 +10,7 @@ MIK-R50 rules 3-4: a contract on disk that carries the removed `disabled` mode s
 
 ## Code Commentary
 
-Rule 3 keeps three surfaces reading legacy contracts without refusal: status shows leaf, series, and degraded unknown-cell contracts as they are; attach resumes live worktrees since the removed mode is not its business; and the way out works end to end — abandon dry run, abandon real run, then a modeless restart at the same address that lands external — while abandon keeps its own refusals (a dirty worktree still blocks, force still overrides) regardless of mode.
+Rule 3 keeps three surfaces reading legacy contracts without refusal: status shows leaf, series, and degraded unknown-cell contracts as they are; attach resumes live worktrees since the removed mode is not its business; and the way out works end to end — abandon dry run, abandon real run, then a modeless restart at the same task address whose successor contract has external memory. The dirty legacy case proves abandon-blocked and retained worktrees, not a forced retry. No later landing of the restarted task is invoked or asserted here.
 
 Admission refuses a published legacy contract with status, reason, the raw cell where the read degraded, and the abandon-first way out projected to a dry-run abandon call, never asking a developer decision. A leaf start under a disabled series names the series escape rather than an edge correction.
 
@@ -18,11 +18,26 @@ Rule 4 refuses without the configured-authority check across the lifecycle layer
 
 ## Evidence
 
+
 - Rules 3-4 scope and the companion-module split [1]
+
+
 - Rule 3 readable surfaces: status, degraded read, attach [2]
+
+
 - Admission refusal with abandon-first projection [3]
+
+
 - Abandon way out and abandon's own mode-independent refusals [4]
+
+
 - Disabled series names the series escape [5]
+
+
 - Lifecycle-layer refusals without authority, incl. preview-equals-apply [6]
+
+
 - Knowledge-gate and behind-entry-gate refusals by name [7]
+
+
 - Tool-level closeout, reopen, cleanup, finalize refusals [8]

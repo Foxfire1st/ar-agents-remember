@@ -10,7 +10,7 @@
 and decision record states which admission criterion it meets, with a one-sentence justification
 (the shape is MIK-R21 rule 4, in `models/knowledge_files/shapes.py`). Admission governs **creation, not
 maintenance**: the same failure is refused on a new record and only reported on every other one.
-Importing the module registers three rules; `validator.py` imports it next to the other rule modules,
+Importing the module registers the three admission rules and the refusing record-kept comparison rule; `validator.py` imports it next to the other rule modules,
 so every place the validator runs (the writer, `validate_tree`, `require_valid_commit`, the managed
 sync, `knowledge-validate`) runs them.
 
@@ -19,6 +19,7 @@ sync, `knowledge-validate`) runs them.
 | `R27.2-new-record` | refusing | refuses a new record that fails admission, naming the record and the criterion |
 | `R27.2-existing-record` | report-only | reports every other record whose checkable criterion no longer holds |
 | `R27.4-legacy-unassessed` | report-only | one tree-level finding counting the live records still `legacy-unassessed`, by kind |
+| `R27.4-record-kept` | refusing | every ID held by a comparison base remains in the candidate; leave use with `status: retired`, never deletion |
 
 ## Code Commentary
 
@@ -80,7 +81,7 @@ sync, `knowledge-validate`) runs them.
 
 ### Conventions
 
-- None of the three rules sets `writer_reports`, so the writer (MIK-R12) refuses exactly as every
+- None of these rules sets `writer_reports`, so the writer (MIK-R12) refuses exactly as every
   commit route does.
 - Messages name the record ("new invariant INV-…") and the criterion; the refusal text asks for the
   reason "in words".
@@ -94,7 +95,7 @@ sync, `knowledge-validate`) runs them.
   proved by `test_a_new_record_whose_justification_is_only_a_reference_is_refused`,
   `test_a_new_record_without_a_criterion_or_marked_legacy_unassessed_is_refused` and
   `test_an_unsupported_checkable_criterion_on_a_new_record_is_refused_naming_it`.
-- **Existing and exported records are only reported, never refused.** Realized by the report-only
+- **Admission defects on existing and exported records are only reported.** Deletion is separately refused by record-kept; this is not a general exemption from validator rules. Admission maintenance is realized by the report-only
   `R27.2-existing-record` and the `new` split in `_admitted_records`; proved by
   `test_an_existing_record_whose_test_was_deleted_is_only_reported` and
   `test_exported_retired_and_merged_records_are_never_refused`.
@@ -138,6 +139,9 @@ sync, `knowledge-validate`) runs them.
 
 ## Evidence
 
+- Records present in a comparison base are retained; retirement never deletes the file. [21]
+
+
 ### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
@@ -164,14 +168,18 @@ The detector, novelty, the entry facts, the three rules and their proofs.
 - A new record is refused for legacy-unassessed, a reference-only justification or an unsupported claim. [9]
 - Every other record's unsupported claim is only reported. [10]
 - The live legacy-unassessed records are counted in one finding. [11]
-- The three rules, one refusing and two report-only, none writer-reported, registered on import. [12]
+
+- The admission rules and independent record-kept refusal are registered on import; report-only admission maintenance does not waive deletion. [12]
+
 - The derivation the conversion writes and the export test reuses. [13]
 - Reference-only justifications are refused, and real prose is admitted. [14]
 - An unsupported checkable criterion on a new record is refused, naming it. [15]
 - An existing record whose test was deleted is only reported. [16]
 - A forged legacy ID does not make a record exported. [17]
 - The writer refuses a new invariant whose claim the tree does not support, and writes nothing. [18]
+
 - A decision is never an export, so a legacy ID exempts it from nothing (L13 review F6). [19]
+
 - A decision whose legacy ID derives its own ID, marked legacy-unassessed, is refused as new. [20]
 
 ### Cross-Repo References
