@@ -1,0 +1,26 @@
+{
+  "path": "skills/c-03-repo-bootstrap/templates/bootstrap-handoff-template.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "e571ee41081537c5ecfd720478858ebd01f53a79",
+        "content": "sha256:a6b85da827e1caa5eeb353362b0a463658a5b1df880d7e3c41a5a7b6e8792868",
+        "locator": {
+          "end": 90,
+          "kind": "line_range",
+          "start": 54
+        }
+      },
+      "id": "RLZ-TA29GV",
+      "invariant": "INV-TJADR1",
+      "origin": {
+        "handoffEntry": "MIK-R45@v2 rule 5",
+        "leaf": "260928-MIK-L45"
+      },
+      "rationale": "The handoff shape carrying fixer, baseline, and both-moment knowledge state sections.",
+      "role": "presentation"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

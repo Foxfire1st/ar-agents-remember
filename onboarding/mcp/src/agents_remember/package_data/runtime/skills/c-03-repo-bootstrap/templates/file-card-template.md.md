@@ -8,7 +8,7 @@ This template defines the file-card work order that constrains a future file-lev
 
 ### Logic
 
-The file card records source and onboarding targets, classification, governing context, why the file matters, what the worker must explain, required inputs, allowed and disallowed reads, required onboarding sections, reference expectations, traps, open questions, and done criteria.
+The file card records source/onboarding targets, classification, context, inputs, bounded reads, explanations, traps and done criteria. The required output is a converted card: source-path title, relative Governing Overview link, prose sections and temporary citation-table evidence, passed through the fixer to numbered evidence and a sidecar. No metadata stamps, Update History, manually authored JSON or number selection belong to that output.
 
 ### Conventions
 
@@ -20,7 +20,7 @@ A file card does not replace `c-05-create-or-update-onboarding-files` skill. It 
 
 ### Todos
 
-Fill verification metadata after the source file is committed.
+No file-local follow-up; reference anchors carry currentness.
 
 ### Docs References
 
@@ -32,7 +32,7 @@ No relevant external documentation found.
 
 ### Repo-Internal References
 
-- The file card template records classification, governing context, worker inputs, allowed/disallowed reads, required sections, reference expectations, traps, questions, and done criteria. [1]
+- The bounded work order requires converted title/link/prose and temporary citation tables, then fixer-authored evidence and sidecars. [1]
 - `c-03-repo-bootstrap` skill Phase 4G writes file cards for priority source files and requires them before file-level onboarding unless the repo is tiny. [2]
 - `c-03-repo-bootstrap` skill Phase 4H says each file worker receives one file card and follows `c-05-create-or-update-onboarding-files` skill for file-level onboarding. [3]
 

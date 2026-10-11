@@ -44,11 +44,15 @@ while it still points where validation saw it, and the recorded tree is verified
 run, or any exception in the owned interval leaves the index, the refs and every owned file as they
 were — the prepared ignore line is given back only while its bytes are provably still ours, so a
 concurrent external edit is preserved, and the raised error keeps its name. The worktree's own
-index is written only after validation passes. The baseline drift block carries the converted
-measurement with its three blocking states (`blocked-invalid` while validator violations exist,
-`blocked-drift` while stale anchors exist unaccepted, `unavailable` as before), and `accept_drift`
-accepts stale anchors only, never a violation. Where the validator is not bound, the adoption
-refuses; it never commits unvalidated.
+index is written only after validation passes. Before first adoption the baseline payload additionally
+reports `blocked-legacy-cards` and the listed cards when the detector finds an old metadata-key
+first cell or Update History heading. Prose mentions do not count. `already-adopted` still takes
+precedence for attributed history. Other states remain `blocked-invalid`, `blocked-drift` and
+`unavailable`; `accept_drift` clears stale anchors only, never old-format-card or validator refusals.
+The format check belongs to adoption, not ordinary validation of an existing baseline. Where the
+validator is not bound, adoption refuses; it never commits unvalidated.
+
+- Converted first adoption preserves attributed-history precedence, lists legacy cards and refuses them without a drift waiver. [145]
 
 ## Requirement Endpoints, Approval State And Their Recorded Reads
 
@@ -268,7 +272,13 @@ rather than restating the path.
 
 The former detection/evidence owners isolated individual damaged database rows. Those classes and readers are retired. Current review preserves curator assessments/evidence, marks canonical channels unavailable without counts, and never substitutes proof/worklist rows for them. [28] [31]
 
-## 260915-KS-L41 Membership Is Read From Its Own Table, And A Run's Inputs Become An Identity
+## Historical retired account — 260915-KS-L41 Membership Is Read From Its Own Table, And A Run's Inputs Become An Identity
+
+This entire dated block records the former database-backed membership and run-input detection
+account. `knowledge/detection.py` is retired; its owner claims and present-tense behavior below are
+historical, non-operative descriptions. They do not replace the current text-tree authority or
+authorize restoring the retired detector. The original causal explanation and evidence identities
+remain for provenance.
 
 This route owns the knowledge store's reader port implementation and the detection record module, and
 this leaf changed both for the same reason: a question was being asked of a structure that could not
@@ -476,7 +486,13 @@ index schema, the key and the cache are unchanged.
 
 knowledge_census owns Git-reading and artifact-writing for the file-based census; memory_quality owns its bounded measurement/report. The earlier migration-to-canonical-store writer is retired. [65]
 
-## 260915-KS-L23 The Substrate's Own Contradictions, And The Two Behaviour Fixes Under Them
+## Historical retired account — 260915-KS-L23 The Substrate's Own Contradictions, And The Two Behaviour Fixes Under Them
+
+This entire dated block, including its ownership table, records the former SQLite substrate and
+its repairs. `knowledge/merge_changeset.py` and `knowledge/schema_generations.py` are retired; their
+canonical-owner clauses below are historical, not current source ownership. Preserve the incident
+and correction account as provenance, without restoring those modules or weakening the current
+text-tree/derived-index boundary.
 
 This route's knowledge substrate was already built by `L10`–`L22`; `KS-R23@v1` fixed **two behaviour
 defects inside it** and repaired **three docstrings that disagreed with their own registries**. All of

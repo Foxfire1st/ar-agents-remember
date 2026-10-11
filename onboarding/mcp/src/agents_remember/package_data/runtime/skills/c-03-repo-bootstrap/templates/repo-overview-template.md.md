@@ -8,11 +8,11 @@ This template defines the root repo overview created or refreshed by `c-03-repo-
 
 ### Logic
 
-The template records repo metadata, route-based verification fields, purpose, hot-path summary, architecture, code structure with local-overview status, functional areas, cross-repo references, build/dev commands, invariants, glossary terms, docs references, next exploration targets, needs verification, and update history.
+The converted root template preserves purpose, hot paths, architecture, structure, functional areas, boundary references, build commands, invariants, glossary and exploration guidance. It has no metadata table or Update History; authors supply temporary citation tables and the fixer emits numbered evidence and sidecar anchors.
 
 ### Conventions
 
-The root overview is the minimum successful bootstrap output and should stay high-signal. Its `## Hot Path Summary` gives `c-04-retrieval-strategy-router` skill and the route-index generator a compact discovery summary. Detailed local routing moves into route-local overviews once they exist. Its `sourceRoute` is `<repo-root>`, and `lastVerifiedCommitHash` plus `lastVerifiedCommitDate` describe the source commit `c-02-memory-quality-control` skill should compare against for repo-wide overview drift.
+The root overview is the minimum bootstrap output and stays high-signal. Its Hot Path Summary gives retrieval and generated indexes a compact discovery summary. Detailed local routing belongs in route overviews. Currentness comes from resolved reference anchors, not sourceRoute/commit stamps.
 
 ### Invariants And Boundaries
 
@@ -20,7 +20,7 @@ The root overview gives repo-wide context. It should not become a catch-all area
 
 ### Todos
 
-Fill verification metadata after the source file is committed.
+No file-local follow-up; run the fixer on authored citation-table input.
 
 ### Docs References
 
@@ -32,7 +32,7 @@ No relevant external documentation found.
 
 ### Repo-Internal References
 
-- The repo overview template defines metadata, route-based verification fields, repo purpose, hot-path summary, architecture, code structure, functional areas, cross-repo references, build/dev commands, invariants, glossary, docs references, next work, verification needs, and update history. [1]
+- The converted root template preserves substantive overview sections and requires fixer-authored references instead of metadata/history. [1]
 - `c-03-repo-bootstrap` skill treats the root repo overview as the minimum successful bootstrap output. [2]
 - `c-03-repo-bootstrap` skill Phase 3 synthesizes the root repo overview from state, input ledger, scout report, area briefs, and existing overview when present. [3]
 

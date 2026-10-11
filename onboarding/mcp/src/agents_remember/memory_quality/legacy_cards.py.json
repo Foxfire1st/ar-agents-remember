@@ -1,0 +1,75 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/legacy_cards.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "86dcf9173a4e07e5e056b38f0aec2223cbc2814f",
+        "content": "sha256:ee93a535bd952fef0f778e273e3d67f3dc1bef7e23061f095bba75c6f1ed3eb9",
+        "locator": {
+          "kind": "symbol",
+          "name": "find_legacy_cards"
+        }
+      },
+      "id": "RLZ-T6G3MN",
+      "invariant": "INV-QR6DSA",
+      "origin": {
+        "handoffEntry": "MIK-R45@v2 rule 3",
+        "leaf": "260928-MIK-L45"
+      },
+      "rationale": "The adoption-only detector matching metadata-key first cells and the history heading.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Legacy signs are metadata-key first cells or the Update History heading; later-cell prose mentions do not count.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "86dcf9173a4e07e5e056b38f0aec2223cbc2814f",
+            "content": "sha256:72142bff26b074df513dcae41fc6d4e668a50dabc7c3086d96949a1ac09b4d65",
+            "locator": {
+              "kind": "symbol",
+              "name": "_is_legacy_card"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Discovery is root-relative, sorted, Markdown-only and leaves unreadable-file handling to its callers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "86dcf9173a4e07e5e056b38f0aec2223cbc2814f",
+            "content": "sha256:ee93a535bd952fef0f778e273e3d67f3dc1bef7e23061f095bba75c6f1ed3eb9",
+            "locator": {
+              "kind": "symbol",
+              "name": "find_legacy_cards"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "First adoption refuses the listed cards without allowing accept_drift to lift that refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0f4f518448f7365c8faf94b3602c463a8f4add25",
+            "content": "sha256:bc89365e4597d139bd67aa8bc5de94e80ae2b709f1713129da4483d7e4fa1545",
+            "locator": {
+              "kind": "symbol",
+              "name": "_converted_adopt_gate"
+            },
+            "path": "mcp/src/agents_remember/memory/baseline.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

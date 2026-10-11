@@ -12,7 +12,7 @@ The curator review records wave status, files reviewed, compliance checks, refer
 
 ### Conventions
 
-Curator reviews are quality gates. They verify route-local placement, strict one-to-one file onboarding, backlinks, reference buckets, source evidence, no absolute paths, append-only history, and low-confidence handling.
+Curator reviews verify route-local placement, one-to-one file onboarding, backlinks, reference buckets, source evidence and low-confidence handling. Converted-card checks require no citation table left after the fixer and every numbered marker resolving to its sidecar reference; append-only card history is not prescribed.
 
 ### Invariants And Boundaries
 
@@ -20,7 +20,7 @@ Automated bootstrap mode may skip pauses, but it must not skip curator review ar
 
 ### Todos
 
-Fill verification metadata after the source file is committed.
+No file-local follow-up; reference anchors carry currentness.
 
 ### Docs References
 
@@ -32,7 +32,7 @@ No relevant external documentation found.
 
 ### Repo-Internal References
 
-- The curator template records wave metadata, reviewed files, and a compliance checklist for placement, references, links, history, low-confidence claims, and state updates. [1]
+- The review checklist preserves placement/reference/state checks and requires completed citation conversion with every numbered marker resolved. [1]
 - The template captures reference-health issues, bucket corrections, required fixes, developer questions, and next-wave recommendations. [2]
 - `c-03-repo-bootstrap` skill Phase 4I requires a curator review after each overview or onboarding wave. [3]
 

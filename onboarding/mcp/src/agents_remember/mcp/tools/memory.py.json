@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "5643a838f58ef6bc9e501bf108feae5fd3f7e67a",
-        "content": "sha256:b5f86e3740df1827d88595d128202919c6cc2e879d1096b7b80d34cd8adfdd5e",
+        "blob": "4f90514bfd9638960c4e5bffe878df58c2e763c8",
+        "content": "sha256:6ee103c8825c424ba619ceb729e8d59ca82a6bfb34444c6959c46c5bc4d171f7",
         "locator": {
           "kind": "symbol",
           "name": "citation_fix_payload"
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "5643a838f58ef6bc9e501bf108feae5fd3f7e67a",
-        "content": "sha256:c75638d3fba46f829216fa1fe0d84a571e51166c8edd7cf85a680b7c49e81423",
+        "blob": "4f90514bfd9638960c4e5bffe878df58c2e763c8",
+        "content": "sha256:d3f622fc4d9f4c5ecba385b0dbf495db20bdefab71304abd6bbdb5033341f253",
         "locator": {
           "kind": "symbol",
           "name": "_citation_authority_refusal"
@@ -34,7 +34,7 @@
         "handoffEntry": "MIK-R70@v1 rule 5",
         "leaf": "260928-MIK-L70"
       },
-      "rationale": "The single builder of the refusal both entry points return, so its status, detail and next action are stated once.",
+      "rationale": "The single refusal builder used by the retained citation_fix_payload states configured-contract-authority-invalid, detail and next action once; the former MCP migration caller is retired.",
       "role": "primary-authority"
     }
   ],
@@ -44,7 +44,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5643a838f58ef6bc9e501bf108feae5fd3f7e67a",
+            "blob": "4f90514bfd9638960c4e5bffe878df58c2e763c8",
             "content": "sha256:fbabee3e8414d55363ba542adaf2f26747e94ff6b238ae1aa8ea34d7714aabf2",
             "locator": {
               "kind": "symbol",
@@ -60,7 +60,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5643a838f58ef6bc9e501bf108feae5fd3f7e67a",
+            "blob": "4f90514bfd9638960c4e5bffe878df58c2e763c8",
             "content": "sha256:7c44d946957d2476123e216465be3f31715a16cb1db44b9338824fa83ce2b312",
             "locator": {
               "kind": "symbol",
@@ -89,12 +89,12 @@
       ]
     },
     "4": {
-      "note": "The two citation tools answer a configured-contract authority mismatch with the product's named refusal and next action.",
+      "note": "The retained citation-fix adapter's configured-contract-authority refusal names the status and next action; the former MCP migration caller is retired.",
       "targets": [
         {
           "anchor": {
-            "blob": "5643a838f58ef6bc9e501bf108feae5fd3f7e67a",
-            "content": "sha256:c75638d3fba46f829216fa1fe0d84a571e51166c8edd7cf85a680b7c49e81423",
+            "blob": "4f90514bfd9638960c4e5bffe878df58c2e763c8",
+            "content": "sha256:d3f622fc4d9f4c5ecba385b0dbf495db20bdefab71304abd6bbdb5033341f253",
             "locator": {
               "kind": "symbol",
               "name": "_citation_authority_refusal"
@@ -145,7 +145,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5643a838f58ef6bc9e501bf108feae5fd3f7e67a",
+            "blob": "4f90514bfd9638960c4e5bffe878df58c2e763c8",
             "content": "sha256:3ad14df6f0cb0c228b49fdd388fc0034b0993668f75311d52fefb5ce45a86309",
             "locator": {
               "end": 40,
@@ -162,12 +162,28 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5643a838f58ef6bc9e501bf108feae5fd3f7e67a",
+            "blob": "4f90514bfd9638960c4e5bffe878df58c2e763c8",
             "content": "sha256:91efc6cb9c35e004c197d83521a8f0a8893232470d8d0fae53a490b0ba2f34ec",
             "locator": {
               "end": 118,
               "kind": "line_range",
               "start": 118
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The retained citation-fix payload forwards the optional contract and translates only configured-contract authority mismatch.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4f90514bfd9638960c4e5bffe878df58c2e763c8",
+            "content": "sha256:6ee103c8825c424ba619ceb729e8d59ca82a6bfb34444c6959c46c5bc4d171f7",
+            "locator": {
+              "kind": "symbol",
+              "name": "citation_fix_payload"
             }
           },
           "kind": "code"

@@ -1,6 +1,26 @@
 {
   "path": "skills/l-01-agent-lifecycles/operations/bootstrap.md",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "2b43fdbcebb97cf40df4da7ac53147caffafd2a5",
+        "content": "sha256:ab6ab45af96477b755825e21d49465572095d619234a8b6151c5918759b2faef",
+        "locator": {
+          "end": 92,
+          "kind": "line_range",
+          "start": 49
+        }
+      },
+      "id": "RLZ-942ZBQ",
+      "invariant": "INV-DE9ZZF",
+      "origin": {
+        "handoffEntry": "MIK-R45@v2 rule 4",
+        "leaf": "260928-MIK-L45"
+      },
+      "rationale": "The first-hour operation order the bootstrap seat follows.",
+      "role": "primary-authority"
+    }
+  ],
   "references": {
     "1": {
       "note": "The bootstrap carrier is a taskless free agent whose capsule arrives as session environment.",
@@ -41,6 +61,23 @@
             "content": "sha256:af419059a10bda4a648f7dd256c9f8c0b9bbe410ba0962516cbfb335b33368cd",
             "locator": {
               "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Fresh setup orders scaffold/fixer before baseline and foundation; earlier foundation needs committed memory.\n\nAnchor: \"Scaffold the first onboarding\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2b43fdbcebb97cf40df4da7ac53147caffafd2a5",
+            "content": "sha256:a8f2952c31509b42c8ed45bb2c16eb135bb75c0b308d2590da5931cb38decafa",
+            "locator": {
+              "end": 90,
+              "kind": "line_range",
+              "start": 67
             }
           },
           "kind": "code"

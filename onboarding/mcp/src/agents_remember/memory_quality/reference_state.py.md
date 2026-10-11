@@ -54,6 +54,7 @@ run's converted check reports the same states.
 ### Conventions
 
 - Sidecars are rewritten through `canonical_text`, in the MIK-R21 canonical format.
+- `fix_references` accepts an explicit memory-relative sidecar exclusion set. The converted fixer passes cards refused by authoring through that set, so the later mechanical stage does not rewrite them. The ordinary one-document scope, stale-reference reporting and successful-sibling behavior remain separate from that no-write boundary.
 
 ### Invariants And Boundaries
 
@@ -91,7 +92,7 @@ The format test, the anchor states, the check and the fixer.
 
 - References are checked, and only mechanical moves are fixed. [6]
 
-- The fixer can be scoped to one sidecar, and names unreadable sidecars. [7]
+- The mechanical fixer scopes one sidecar, names unreadable sidecars, and skips the explicit authoring-refused exclusion set before refresh or write. [7]
 
 
 

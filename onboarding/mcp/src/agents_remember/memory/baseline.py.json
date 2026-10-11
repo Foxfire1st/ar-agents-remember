@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "7fe00a759778edee005a11e3fcbbe33b7891bab9",
+        "blob": "0f4f518448f7365c8faf94b3602c463a8f4add25",
         "content": "sha256:cc55d303f53ff1958d9fd1741839de322edfa51c40afd98fa1c19ac593928c20",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,25 @@
     },
     {
       "anchor": {
-        "blob": "7fe00a759778edee005a11e3fcbbe33b7891bab9",
+        "blob": "0f4f518448f7365c8faf94b3602c463a8f4add25",
+        "content": "sha256:bc89365e4597d139bd67aa8bc5de94e80ae2b709f1713129da4483d7e4fa1545",
+        "locator": {
+          "kind": "symbol",
+          "name": "_converted_adopt_gate"
+        }
+      },
+      "id": "RLZ-DBYDCH",
+      "invariant": "INV-QR6DSA",
+      "origin": {
+        "handoffEntry": "MIK-R45@v2 rule 3",
+        "leaf": "260928-MIK-L45"
+      },
+      "rationale": "The adoption gate refusing legacy trees before validator/drift checks regardless of accept_drift.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "0f4f518448f7365c8faf94b3602c463a8f4add25",
         "content": "sha256:a843cdf2df6a5134b51b80ebd09ca644412133b8a1488a0f351b077259ebd0b0",
         "locator": {
           "kind": "symbol",
@@ -39,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "7fe00a759778edee005a11e3fcbbe33b7891bab9",
+        "blob": "0f4f518448f7365c8faf94b3602c463a8f4add25",
         "content": "sha256:a843cdf2df6a5134b51b80ebd09ca644412133b8a1488a0f351b077259ebd0b0",
         "locator": {
           "kind": "symbol",
@@ -57,7 +75,7 @@
     },
     {
       "anchor": {
-        "blob": "7fe00a759778edee005a11e3fcbbe33b7891bab9",
+        "blob": "0f4f518448f7365c8faf94b3602c463a8f4add25",
         "content": "sha256:cc55d303f53ff1958d9fd1741839de322edfa51c40afd98fa1c19ac593928c20",
         "locator": {
           "kind": "symbol",
@@ -80,7 +98,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7fe00a759778edee005a11e3fcbbe33b7891bab9",
+            "blob": "0f4f518448f7365c8faf94b3602c463a8f4add25",
             "content": "sha256:87089c2e6dbfe2eafe63643a5244b85b3c3c85bbd1dc809587118b6951816fd7",
             "locator": {
               "kind": "symbol",
@@ -91,12 +109,12 @@
         },
         {
           "anchor": {
-            "blob": "7fe00a759778edee005a11e3fcbbe33b7891bab9",
+            "blob": "0f4f518448f7365c8faf94b3602c463a8f4add25",
             "content": "sha256:3b86a90a082ae2efbbd19c39b7c27b6766f4880aa40670557a243987a426f1f0",
             "locator": {
-              "end": 111,
+              "end": 112,
               "kind": "line_range",
-              "start": 100
+              "start": 101
             }
           },
           "kind": "code"
@@ -154,12 +172,12 @@
       ]
     },
     "13": {
-      "note": "The converted payload carries the rule-2 fields with its three blocking states.",
+      "note": "Converted status preserves attributed-adoption precedence and reports legacyCards/blocked-legacy-cards before validator or stale-reference refusals.",
       "targets": [
         {
           "anchor": {
-            "blob": "d3ab002e5da5b90d87d71b0c5d27cc1cd2fab435",
-            "content": "sha256:f6a5aacad919ed209b0db850627b7a9b024195eae6f3fbcfa3466c1a02ccd345",
+            "blob": "0f4f518448f7365c8faf94b3602c463a8f4add25",
+            "content": "sha256:eb2963d90eda099691facce8ee9412d683057ae44ae0123d49dd5788efed4b0b",
             "locator": {
               "kind": "symbol",
               "name": "_converted_base_payload"
@@ -170,12 +188,12 @@
       ]
     },
     "14": {
-      "note": "The converted gate accepts stale anchors only, never a validator violation.",
+      "note": "First adoption refuses listed old-format cards before validator/stale checks; accept_drift cannot clear either legacy-card or validator refusals.",
       "targets": [
         {
           "anchor": {
-            "blob": "7fe00a759778edee005a11e3fcbbe33b7891bab9",
-            "content": "sha256:d5bdb8775f823a6c09b29bd1ff98a6d41047306eec4aeb0a797fa20a26cdcc86",
+            "blob": "0f4f518448f7365c8faf94b3602c463a8f4add25",
+            "content": "sha256:bc89365e4597d139bd67aa8bc5de94e80ae2b709f1713129da4483d7e4fa1545",
             "locator": {
               "kind": "symbol",
               "name": "_converted_adopt_gate"
@@ -190,7 +208,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7fe00a759778edee005a11e3fcbbe33b7891bab9",
+            "blob": "0f4f518448f7365c8faf94b3602c463a8f4add25",
             "content": "sha256:cc55d303f53ff1958d9fd1741839de322edfa51c40afd98fa1c19ac593928c20",
             "locator": {
               "kind": "symbol",
@@ -206,7 +224,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7fe00a759778edee005a11e3fcbbe33b7891bab9",
+            "blob": "0f4f518448f7365c8faf94b3602c463a8f4add25",
             "content": "sha256:8f61fbdb19a0d72ca64a8b12883c45ae6a7019e7515bda561dac19329b513500",
             "locator": {
               "kind": "symbol",
@@ -222,7 +240,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7fe00a759778edee005a11e3fcbbe33b7891bab9",
+            "blob": "0f4f518448f7365c8faf94b3602c463a8f4add25",
             "content": "sha256:16574456357e2ebd9f54cb1c9f92f87d55f506ae015b435dc8ea01fa24abebc1",
             "locator": {
               "kind": "symbol",
@@ -238,7 +256,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7fe00a759778edee005a11e3fcbbe33b7891bab9",
+            "blob": "0f4f518448f7365c8faf94b3602c463a8f4add25",
             "content": "sha256:b2ad19235dd4a94b434ca408826e16e4982738b32fb2146de39064310deb0815",
             "locator": {
               "kind": "symbol",
@@ -254,7 +272,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7fe00a759778edee005a11e3fcbbe33b7891bab9",
+            "blob": "0f4f518448f7365c8faf94b3602c463a8f4add25",
             "content": "sha256:79cec44ba1024bebf5ff5e832397510412388715ba5d984f3c53da9baeca5614",
             "locator": {
               "kind": "symbol",
@@ -276,7 +294,7 @@
         },
         {
           "anchor": {
-            "blob": "7fe00a759778edee005a11e3fcbbe33b7891bab9",
+            "blob": "0f4f518448f7365c8faf94b3602c463a8f4add25",
             "content": "sha256:c07ea107acf4f6aaa5fef6fdd99d7ab4343420e9edea4ecaf9d38c2324f06b58",
             "locator": {
               "kind": "symbol",
@@ -292,7 +310,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7fe00a759778edee005a11e3fcbbe33b7891bab9",
+            "blob": "0f4f518448f7365c8faf94b3602c463a8f4add25",
             "content": "sha256:ae0d53d8ece2974def4f707eff77ab5d8955a1b916fbfa0cd0bf4b88e11fd199",
             "locator": {
               "kind": "symbol",
@@ -303,12 +321,12 @@
         },
         {
           "anchor": {
-            "blob": "7fe00a759778edee005a11e3fcbbe33b7891bab9",
+            "blob": "0f4f518448f7365c8faf94b3602c463a8f4add25",
             "content": "sha256:2287c0cf045f9c6fe1a22f6ed90f2672feefdceeff9d1df91de61a943458bdf7",
             "locator": {
-              "end": 203,
+              "end": 204,
               "kind": "line_range",
-              "start": 167
+              "start": 168
             }
           },
           "kind": "code"
@@ -320,7 +338,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7fe00a759778edee005a11e3fcbbe33b7891bab9",
+            "blob": "0f4f518448f7365c8faf94b3602c463a8f4add25",
             "content": "sha256:aea9defabe69732b041f5242876b4bbe943870ccb26a99621de8495f2ca8c922",
             "locator": {
               "kind": "symbol",
@@ -399,7 +417,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7fe00a759778edee005a11e3fcbbe33b7891bab9",
+            "blob": "0f4f518448f7365c8faf94b3602c463a8f4add25",
             "content": "sha256:6c003dff711cbfdebdf5a90aa5acd07e71ac5bb9d10652e1b12e295036c5b20a",
             "locator": {
               "kind": "symbol",
@@ -410,19 +428,19 @@
         },
         {
           "anchor": {
-            "blob": "7fe00a759778edee005a11e3fcbbe33b7891bab9",
+            "blob": "0f4f518448f7365c8faf94b3602c463a8f4add25",
             "content": "sha256:491f41882733e596faf95a0c8b934e96c585c9e9e07b0e5d31eb5f1b465401cb",
             "locator": {
-              "end": 83,
+              "end": 84,
               "kind": "line_range",
-              "start": 75
+              "start": 76
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "7fe00a759778edee005a11e3fcbbe33b7891bab9",
+            "blob": "0f4f518448f7365c8faf94b3602c463a8f4add25",
             "content": "sha256:d8445b203b66c95d257fffc5ea97a6a596f8997ef552a6d9781b6b410a6d1c15",
             "locator": {
               "kind": "symbol",
@@ -433,7 +451,7 @@
         },
         {
           "anchor": {
-            "blob": "7fe00a759778edee005a11e3fcbbe33b7891bab9",
+            "blob": "0f4f518448f7365c8faf94b3602c463a8f4add25",
             "content": "sha256:f4919bee988d4473dce9ce42789930a3b179417eb1c07e1d5ba1f0c40270d283",
             "locator": {
               "kind": "symbol",
@@ -449,7 +467,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7fe00a759778edee005a11e3fcbbe33b7891bab9",
+            "blob": "0f4f518448f7365c8faf94b3602c463a8f4add25",
             "content": "sha256:ae0d53d8ece2974def4f707eff77ab5d8955a1b916fbfa0cd0bf4b88e11fd199",
             "locator": {
               "kind": "symbol",

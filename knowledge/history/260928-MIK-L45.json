@@ -1,0 +1,2301 @@
+{
+  "closed": true,
+  "leaf": "260928-MIK-L45",
+  "rows": [
+    {
+      "disposition": "no_impact",
+      "id": "ROW-01XBZF",
+      "items": [
+        "sha256:d0c105c5ae3909cdfb20b9ee410fdea0a6b12692d53733c221d2c2229cad2e2e",
+        "sha256:632635c05c8c62fc50168f6838a2053cfdeee841cef58f01b1b40790ce207cce"
+      ],
+      "reason": "Reviewed every changed extent against the canonical source skills/c-03-repo-bootstrap/templates/repo-overview-template.md. This source is canonical/generated instruction text, with no separately owned onboarding card at this path. The durable converted contract is authored in the visible package-copy card and rule-shaped knowledge; mirrors remain derived byte-equal copies, not another intent owner. No parallel hidden/canonical card is created.",
+      "subject": "onboarding:.github-vscode/skills/c-03-repo-bootstrap/templates/repo-overview-template.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-090425",
+      "items": [
+        "sha256:85c415a1ba6fe2db229f324aaec264bd1ae3d6f68220105dc39c1409dc8d8397"
+      ],
+      "reason": "Reviewed every changed extent against the canonical source skills/c-03-repo-bootstrap/templates/bootstrap-handoff-template.md. This source is canonical/generated instruction text, with no separately owned onboarding card at this path. The durable converted contract is authored in the visible package-copy card and rule-shaped knowledge; mirrors remain derived byte-equal copies, not another intent owner. No parallel hidden/canonical card is created.",
+      "subject": "onboarding:.hermes/skills/c-03-repo-bootstrap/templates/bootstrap-handoff-template.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-0EFM32",
+      "items": [
+        "sha256:264a8cdbeb273ecb4599a2738f89ef7a0da82b9378ffc6c85f9a8b0fc627c051"
+      ],
+      "reason": "Reviewed every changed extent against the canonical source skills/c-03-repo-bootstrap/templates/curator-review-template.md. This source is canonical/generated instruction text, with no separately owned onboarding card at this path. The durable converted contract is authored in the visible package-copy card and rule-shaped knowledge; mirrors remain derived byte-equal copies, not another intent owner. No parallel hidden/canonical card is created.",
+      "subject": "onboarding:.github-vscode/skills/c-03-repo-bootstrap/templates/curator-review-template.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-0ENVJH",
+      "items": [
+        "sha256:8e46b8920913a7ea3cedcc64753a6f2a7a9a138f7860d9ebcb29460bd4818a5c"
+      ],
+      "reason": "Reviewed changed source extents and the existing card; the existing broader purpose/ownership contract remains correct. Source-specific current coverage is recorded in the updated package/test card, not a new route purpose.",
+      "subject": "onboarding:mcp/tests/test-evidence-lanes.toml"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-0QVKZZ",
+      "items": [
+        "sha256:2287f7eaadba83afac73c0bf372b9f0cd0e23414956fe270089df2009ebd65d4"
+      ],
+      "reason": "Reviewed every changed extent against the canonical source skills/c-03-repo-bootstrap/templates/curator-review-template.md. This source is canonical/generated instruction text, with no separately owned onboarding card at this path. The durable converted contract is authored in the visible package-copy card and rule-shaped knowledge; mirrors remain derived byte-equal copies, not another intent owner. No parallel hidden/canonical card is created.",
+      "subject": "onboarding:skills/c-03-repo-bootstrap/templates/curator-review-template.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-0SQTYF",
+      "items": [
+        "sha256:0db1b3b4c3ad642ff19e2e5800e5ca5061a1f17df946c5f46a54f9804d5ef193",
+        "sha256:6bbb302fdf5af466faedf50a5b4dbd6bdaa121449e4e6cee1290aae91358f437"
+      ],
+      "reason": "Reviewed every changed extent against the canonical source skills/c-03-repo-bootstrap/templates/file-card-template.md. This source is canonical/generated instruction text, with no separately owned onboarding card at this path. The durable converted contract is authored in the visible package-copy card and rule-shaped knowledge; mirrors remain derived byte-equal copies, not another intent owner. No parallel hidden/canonical card is created.",
+      "subject": "onboarding:.claude/skills/c-03-repo-bootstrap/templates/file-card-template.md"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-0T27VE",
+      "items": [
+        "sha256:6459881521def647e71254d2c032c8a935f59e50f8c199f5507c649fab3717ad"
+      ],
+      "reason": "The detector import, legacyCards measurement/state and adoption gate implement MIK-R45 rule 3; the existing attributed-commit/validation invariant is not changed by this added first-adoption-only format boundary. The new rule-3 invariant and updated card own it, not the older baseline entries. Exact extents: [{\"base\": [649, 0], \"candidate\": [652, 2]}]",
+      "subject": "hunk:sha256:6459881521def647e71254d2c032c8a935f59e50f8c199f5507c649fab3717ad"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-11T4QV",
+      "items": [
+        "sha256:90b60325c361586315e3ec1e65ee3d184f7ddde48653000d6b4123492a0d5c83",
+        "sha256:5f3d5772ef8ce989e926903e7a65f11c9611bccd65db9a916c88160927dcd92b",
+        "sha256:2ca1e074952345ef1311e19e011b6e2c003587cae44a0a5cf9ef82cd198d3ca4",
+        "sha256:bf4ab53b313d51938c163c9817720287c690731aa8107bd14486b4a492d074b9",
+        "sha256:0d07cf8dac183c93786e245cd630b1891fd01beb2adc2932d304e557e6662df1",
+        "sha256:5ad41112109d835c1ac355c71b32f026b84fcac195dcb5c999e5250124ad03f4",
+        "sha256:e292d15931f4784df79592ae20b5edec4188c2fba7e1732e66e54868b6447c95",
+        "sha256:65f204b16702522ee5b7c9e430735f76ef7113c6cb42a90abe07bc532be664c7",
+        "sha256:4e01e4fc142edaf2b4b5832e94041a400f69ebb26ed5705f8f37f99e75375c08"
+      ],
+      "reason": "Reviewed every changed extent against the canonical source skills/c-03-repo-bootstrap/SKILL.md. This source is canonical/generated instruction text, with no separately owned onboarding card at this path. The durable converted contract is authored in the visible package-copy card and rule-shaped knowledge; mirrors remain derived byte-equal copies, not another intent owner. No parallel hidden/canonical card is created.",
+      "subject": "onboarding:skills/c-03-repo-bootstrap/SKILL.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-15DXQQ",
+      "items": [
+        "sha256:1e60c9e3b56ce8248198a4e8e9c19670fb91f3b9c5c73f37a54656501c00645d",
+        "sha256:cd460662cc66676c8f10363464a7c3260cadc2e288483a5bb0277c7ddad44be8",
+        "sha256:2e0aeb6b1f874bf7ee9c4e7f13fe6ea629045890bc8610936f9c8edd6d09ba27"
+      ],
+      "reason": "Reviewed every changed extent against the canonical source skills/c-03-repo-bootstrap/templates/route-local-overview-template.md. This source is canonical/generated instruction text, with no separately owned onboarding card at this path. The durable converted contract is authored in the visible package-copy card and rule-shaped knowledge; mirrors remain derived byte-equal copies, not another intent owner. No parallel hidden/canonical card is created.",
+      "subject": "onboarding:.claude/skills/c-03-repo-bootstrap/templates/route-local-overview-template.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-2067MK",
+      "items": [
+        "sha256:3a9491be542b5be7054d30b274f99ec2ab1c411ad043261cdea4323e30a62a15"
+      ],
+      "reason": "Reviewed every changed extent against the canonical source skills/c-03-repo-bootstrap/templates/bootstrap-handoff-template.md. This source is canonical/generated instruction text, with no separately owned onboarding card at this path. The durable converted contract is authored in the visible package-copy card and rule-shaped knowledge; mirrors remain derived byte-equal copies, not another intent owner. No parallel hidden/canonical card is created.",
+      "subject": "onboarding:.github-vscode/skills/c-03-repo-bootstrap/templates/bootstrap-handoff-template.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-23ZQ3A",
+      "items": [
+        "sha256:74350c5e12a4b6bee15783b018be096454116afad778d4ee5a2666d5c003b5e6",
+        "sha256:753cfdbc2df9455e718a000df68e5662951b6a52eb8323739ceb9da7d36dc826",
+        "sha256:40245b424c9cd69412425acc273749b96cc40e5bc90b210dc1ca054001ec543a"
+      ],
+      "reason": "Reviewed every changed extent against the canonical source skills/c-03-repo-bootstrap/templates/route-local-overview-template.md. This source is canonical/generated instruction text, with no separately owned onboarding card at this path. The durable converted contract is authored in the visible package-copy card and rule-shaped knowledge; mirrors remain derived byte-equal copies, not another intent owner. No parallel hidden/canonical card is created.",
+      "subject": "onboarding:.agents/skills/c-03-repo-bootstrap/templates/route-local-overview-template.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-2NWNAS",
+      "items": [
+        "sha256:7871b2109e7d7fd9d217a7687bfd3efe69b976432c13897101f5b34f729d4225"
+      ],
+      "reason": "Reviewed every changed extent against the canonical source skills/c-03-repo-bootstrap/templates/bootstrap-handoff-template.md. This source is canonical/generated instruction text, with no separately owned onboarding card at this path. The durable converted contract is authored in the visible package-copy card and rule-shaped knowledge; mirrors remain derived byte-equal copies, not another intent owner. No parallel hidden/canonical card is created.",
+      "subject": "onboarding:.codex/skills/c-03-repo-bootstrap/templates/bootstrap-handoff-template.md"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R45",
+          "packet": "requirements/MIK-R45-v2-bootstrap-produces-converted-onboarding.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v2"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "7c2c913f067df83ccb08c9f4721828096b4a6b48",
+            "content": "sha256:b2f617cdb552929185c4164ebb8a992f89da1d976317b2eb29e731dccc9b396a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/c-13-install-and-onboard/SKILL.md"
+          },
+          "before": {
+            "blob": "a1673082b9fb1d7b07998c4d9b12abd32b8f4220",
+            "content": "sha256:7083ddfec289274205becd71fc831c10f01fbf5f599bfeb48a4def5b9c80f17d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/c-13-install-and-onboard/SKILL.md"
+          },
+          "id": "RLZ-KW0J8V"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-2RX7Q1",
+      "items": [
+        "sha256:f59a5113590b98ae7bf1daa3d6a5e5fba360afdcc0dd96be032c6cac86cf1092"
+      ],
+      "reason": "Stage 5 ordering changes onboarding/fixer/baseline/foundation, not the public host options catalog, accepted-key readers or explicit no-reader boundary. The host-running choice remains; the broader statement/scope are preserved.",
+      "revision": 2,
+      "subject": "INV-DKN3CG"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-2TDVKJ",
+      "items": [
+        "sha256:2ba89fd6a81ae01f85aa09331d653da5fbc245ae89062203f73ba094cb252c22"
+      ],
+      "reason": "The active account does not require every citation/index write to carry a leaf contract. Existing [117] authority composition and [270] converted mechanical refresh are compatible with the shared measured exception. The cited detailed passages and [389] imported-source custody lie in the expressly historical corpus. Parent can document the five-check admission plus refused-card preservation in a current addendum without treating these old groups as fresh proof or blindly renewing them.",
+      "subject": "onboarding:mcp/src/agents_remember/application/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-34C5WH",
+      "items": [
+        "sha256:a1cd8cc89dcf823e8f200b0a4d45f3143442d8923f4941531b2da781c48e7ebb",
+        "sha256:bbb084847d3ed78e995045e6f0c1975b2ce529c6960076a44d6cab5ab30d56aa"
+      ],
+      "reason": "Reviewed every changed extent against the canonical source skills/c-03-repo-bootstrap/templates/file-card-template.md. This source is canonical/generated instruction text, with no separately owned onboarding card at this path. The durable converted contract is authored in the visible package-copy card and rule-shaped knowledge; mirrors remain derived byte-equal copies, not another intent owner. No parallel hidden/canonical card is created.",
+      "subject": "onboarding:.cursor/skills/c-03-repo-bootstrap/templates/file-card-template.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-34G7MV",
+      "items": [
+        "sha256:1035f690fee577138a192fbd8607475b602f8bb6051ce3137dbeffe45cdd070f"
+      ],
+      "reason": "Reviewed every changed extent against the canonical source skills/c-03-repo-bootstrap/templates/curator-review-template.md. This source is canonical/generated instruction text, with no separately owned onboarding card at this path. The durable converted contract is authored in the visible package-copy card and rule-shaped knowledge; mirrors remain derived byte-equal copies, not another intent owner. No parallel hidden/canonical card is created.",
+      "subject": "onboarding:.hermes/skills/c-03-repo-bootstrap/templates/curator-review-template.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-35K7ZR",
+      "items": [
+        "sha256:e42008ff9aebb68eec007562bca2843539ede828546b53f9f64d837a8e479a83",
+        "sha256:e26873a3f15e3582392a1506b24c78a5b4b3524b94020391fa9e32e215c3fbaa",
+        "sha256:47409045277f3a703ffee7772b86178d6620fe345b367074259ad5f6e1b608ad"
+      ],
+      "reason": "Reviewed every changed extent against the canonical source skills/c-03-repo-bootstrap/templates/route-local-overview-template.md. This source is canonical/generated instruction text, with no separately owned onboarding card at this path. The durable converted contract is authored in the visible package-copy card and rule-shaped knowledge; mirrors remain derived byte-equal copies, not another intent owner. No parallel hidden/canonical card is created.",
+      "subject": "onboarding:.cursor/skills/c-03-repo-bootstrap/templates/route-local-overview-template.md"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R45",
+          "packet": "requirements/MIK-R45-v2-bootstrap-produces-converted-onboarding.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v2"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "4308e49f7ea958d2f655efb8c8c6b72c587e4f48",
+            "content": "sha256:f471158d375413d998bf6a06bae943ebaac8887cc753a654248dd515d3d4d8d1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_delivered_answer_that_keeps_an_envelope_field_is_unvalidatable"
+            },
+            "path": "mcp/tests/test_tool_entry_point_controls.py"
+          },
+          "before": {
+            "blob": "3b92604bc8c87671a5bbf10bd47f760545a00760",
+            "content": "sha256:f471158d375413d998bf6a06bae943ebaac8887cc753a654248dd515d3d4d8d1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_delivered_answer_that_keeps_an_envelope_field_is_unvalidatable"
+            },
+            "path": "mcp/tests/test_tool_entry_point_controls.py"
+          },
+          "id": "PRF-2JJY17"
+        },
+        {
+          "after": {
+            "blob": "4308e49f7ea958d2f655efb8c8c6b72c587e4f48",
+            "content": "sha256:c40a1fda5ad323d0abfb6e2d5bf416ee86b1bdbae52a260cf3402caec4070fed",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_empty_or_guidance_only_next_refusal_stays_bare"
+            },
+            "path": "mcp/tests/test_tool_entry_point_controls.py"
+          },
+          "before": {
+            "blob": "3b92604bc8c87671a5bbf10bd47f760545a00760",
+            "content": "sha256:c40a1fda5ad323d0abfb6e2d5bf416ee86b1bdbae52a260cf3402caec4070fed",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_empty_or_guidance_only_next_refusal_stays_bare"
+            },
+            "path": "mcp/tests/test_tool_entry_point_controls.py"
+          },
+          "id": "PRF-9EZEPF"
+        },
+        {
+          "after": {
+            "blob": "4308e49f7ea958d2f655efb8c8c6b72c587e4f48",
+            "content": "sha256:6af557a0c09d5f975aa94d95bfd02f9c09e603ca8b8bd8b1d41d71112f4e4932",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_key_inside_a_retained_list_item_is_unvalidatable"
+            },
+            "path": "mcp/tests/test_tool_entry_point_controls.py"
+          },
+          "before": {
+            "blob": "3b92604bc8c87671a5bbf10bd47f760545a00760",
+            "content": "sha256:6af557a0c09d5f975aa94d95bfd02f9c09e603ca8b8bd8b1d41d71112f4e4932",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_key_inside_a_retained_list_item_is_unvalidatable"
+            },
+            "path": "mcp/tests/test_tool_entry_point_controls.py"
+          },
+          "id": "PRF-AKGZDH"
+        },
+        {
+          "after": {
+            "blob": "4308e49f7ea958d2f655efb8c8c6b72c587e4f48",
+            "content": "sha256:dfe996194515fd253997ddfb6705fbaac0c075af8c661519072383d951395c3c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_key_inside_a_kept_nested_mapping_is_unvalidatable"
+            },
+            "path": "mcp/tests/test_tool_entry_point_controls.py"
+          },
+          "before": {
+            "blob": "3b92604bc8c87671a5bbf10bd47f760545a00760",
+            "content": "sha256:dfe996194515fd253997ddfb6705fbaac0c075af8c661519072383d951395c3c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_key_inside_a_kept_nested_mapping_is_unvalidatable"
+            },
+            "path": "mcp/tests/test_tool_entry_point_controls.py"
+          },
+          "id": "PRF-BWS0VM"
+        },
+        {
+          "after": {
+            "blob": "4308e49f7ea958d2f655efb8c8c6b72c587e4f48",
+            "content": "sha256:506006a312cd19ba3a4ee993ab3f35be10ba6578e5457a1897c824139ef0cb91",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_code_only_refusal_carries_its_identity"
+            },
+            "path": "mcp/tests/test_tool_entry_point_controls.py"
+          },
+          "before": {
+            "blob": "3b92604bc8c87671a5bbf10bd47f760545a00760",
+            "content": "sha256:506006a312cd19ba3a4ee993ab3f35be10ba6578e5457a1897c824139ef0cb91",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_code_only_refusal_carries_its_identity"
+            },
+            "path": "mcp/tests/test_tool_entry_point_controls.py"
+          },
+          "id": "PRF-H0310T"
+        },
+        {
+          "after": {
+            "blob": "4308e49f7ea958d2f655efb8c8c6b72c587e4f48",
+            "content": "sha256:0fa6a0ccd9526f61ba8106f1b77029fa7a6cc084687d119ace4fc941ab4d84ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_wrapper_over_an_uncut_list_is_unvalidatable"
+            },
+            "path": "mcp/tests/test_tool_entry_point_controls.py"
+          },
+          "before": {
+            "blob": "3b92604bc8c87671a5bbf10bd47f760545a00760",
+            "content": "sha256:0fa6a0ccd9526f61ba8106f1b77029fa7a6cc084687d119ace4fc941ab4d84ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_wrapper_over_an_uncut_list_is_unvalidatable"
+            },
+            "path": "mcp/tests/test_tool_entry_point_controls.py"
+          },
+          "id": "PRF-HFA1AY"
+        },
+        {
+          "after": {
+            "blob": "4308e49f7ea958d2f655efb8c8c6b72c587e4f48",
+            "content": "sha256:94d769f5492e53bf816e48eed616d219d3e8cfab7a676cbf2f0885631b062a44",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_handler_that_bypasses_the_choke_point_arrives_as_unvalidatable"
+            },
+            "path": "mcp/tests/test_tool_entry_point_controls.py"
+          },
+          "before": {
+            "blob": "3b92604bc8c87671a5bbf10bd47f760545a00760",
+            "content": "sha256:94d769f5492e53bf816e48eed616d219d3e8cfab7a676cbf2f0885631b062a44",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_handler_that_bypasses_the_choke_point_arrives_as_unvalidatable"
+            },
+            "path": "mcp/tests/test_tool_entry_point_controls.py"
+          },
+          "id": "PRF-WNABDT"
+        },
+        {
+          "after": {
+            "blob": "4308e49f7ea958d2f655efb8c8c6b72c587e4f48",
+            "content": "sha256:1fba3c3c2388fb9fb8875f7fd1b1edc14c1d7b7da61374b0da8fcfefca0cae66",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_next_only_refusal_carries_its_next_action"
+            },
+            "path": "mcp/tests/test_tool_entry_point_controls.py"
+          },
+          "before": {
+            "blob": "3b92604bc8c87671a5bbf10bd47f760545a00760",
+            "content": "sha256:1fba3c3c2388fb9fb8875f7fd1b1edc14c1d7b7da61374b0da8fcfefca0cae66",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_next_only_refusal_carries_its_next_action"
+            },
+            "path": "mcp/tests/test_tool_entry_point_controls.py"
+          },
+          "id": "PRF-XP45PK"
+        },
+        {
+          "after": {
+            "blob": "4308e49f7ea958d2f655efb8c8c6b72c587e4f48",
+            "content": "sha256:6af557a0c09d5f975aa94d95bfd02f9c09e603ca8b8bd8b1d41d71112f4e4932",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_key_inside_a_retained_list_item_is_unvalidatable"
+            },
+            "path": "mcp/tests/test_tool_entry_point_controls.py"
+          },
+          "before": {
+            "blob": "3b92604bc8c87671a5bbf10bd47f760545a00760",
+            "content": "sha256:6af557a0c09d5f975aa94d95bfd02f9c09e603ca8b8bd8b1d41d71112f4e4932",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_key_inside_a_retained_list_item_is_unvalidatable"
+            },
+            "path": "mcp/tests/test_tool_entry_point_controls.py"
+          },
+          "id": "RLZ-3QAT32"
+        },
+        {
+          "after": {
+            "blob": "4308e49f7ea958d2f655efb8c8c6b72c587e4f48",
+            "content": "sha256:506006a312cd19ba3a4ee993ab3f35be10ba6578e5457a1897c824139ef0cb91",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_code_only_refusal_carries_its_identity"
+            },
+            "path": "mcp/tests/test_tool_entry_point_controls.py"
+          },
+          "before": {
+            "blob": "3b92604bc8c87671a5bbf10bd47f760545a00760",
+            "content": "sha256:506006a312cd19ba3a4ee993ab3f35be10ba6578e5457a1897c824139ef0cb91",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_code_only_refusal_carries_its_identity"
+            },
+            "path": "mcp/tests/test_tool_entry_point_controls.py"
+          },
+          "id": "RLZ-4B9V28"
+        },
+        {
+          "after": {
+            "blob": "4308e49f7ea958d2f655efb8c8c6b72c587e4f48",
+            "content": "sha256:f471158d375413d998bf6a06bae943ebaac8887cc753a654248dd515d3d4d8d1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_delivered_answer_that_keeps_an_envelope_field_is_unvalidatable"
+            },
+            "path": "mcp/tests/test_tool_entry_point_controls.py"
+          },
+          "before": {
+            "blob": "3b92604bc8c87671a5bbf10bd47f760545a00760",
+            "content": "sha256:f471158d375413d998bf6a06bae943ebaac8887cc753a654248dd515d3d4d8d1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_delivered_answer_that_keeps_an_envelope_field_is_unvalidatable"
+            },
+            "path": "mcp/tests/test_tool_entry_point_controls.py"
+          },
+          "id": "RLZ-DJ43FG"
+        },
+        {
+          "after": {
+            "blob": "4308e49f7ea958d2f655efb8c8c6b72c587e4f48",
+            "content": "sha256:7ceeb49a6751144d825e834bd62f07eb1396da7a57c67d18846a86dfa311ed37",
+            "locator": {
+              "end": 26,
+              "kind": "line_range",
+              "start": 26
+            },
+            "path": "mcp/tests/test_tool_entry_point_controls.py"
+          },
+          "before": {
+            "blob": "3b92604bc8c87671a5bbf10bd47f760545a00760",
+            "content": "sha256:7ceeb49a6751144d825e834bd62f07eb1396da7a57c67d18846a86dfa311ed37",
+            "locator": {
+              "end": 26,
+              "kind": "line_range",
+              "start": 26
+            },
+            "path": "mcp/tests/test_tool_entry_point_controls.py"
+          },
+          "id": "RLZ-JVS9GH"
+        },
+        {
+          "after": {
+            "blob": "4308e49f7ea958d2f655efb8c8c6b72c587e4f48",
+            "content": "sha256:cdb6b316e08fde79922d3052458bc3358fbcbbe7a82093419a564c41950cceea",
+            "locator": {
+              "end": 30,
+              "kind": "line_range",
+              "start": 30
+            },
+            "path": "mcp/tests/test_tool_entry_point_controls.py"
+          },
+          "before": {
+            "blob": "3b92604bc8c87671a5bbf10bd47f760545a00760",
+            "content": "sha256:f333e5c90bc0df97931c834224d5aa0786f412b1621f6f02557356e332f5bf8b",
+            "locator": {
+              "end": 30,
+              "kind": "line_range",
+              "start": 30
+            },
+            "path": "mcp/tests/test_tool_entry_point_controls.py"
+          },
+          "id": "RLZ-JWBN5A"
+        },
+        {
+          "after": {
+            "blob": "4308e49f7ea958d2f655efb8c8c6b72c587e4f48",
+            "content": "sha256:dfe996194515fd253997ddfb6705fbaac0c075af8c661519072383d951395c3c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_key_inside_a_kept_nested_mapping_is_unvalidatable"
+            },
+            "path": "mcp/tests/test_tool_entry_point_controls.py"
+          },
+          "before": {
+            "blob": "3b92604bc8c87671a5bbf10bd47f760545a00760",
+            "content": "sha256:dfe996194515fd253997ddfb6705fbaac0c075af8c661519072383d951395c3c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_key_inside_a_kept_nested_mapping_is_unvalidatable"
+            },
+            "path": "mcp/tests/test_tool_entry_point_controls.py"
+          },
+          "id": "RLZ-N13MBQ"
+        },
+        {
+          "after": {
+            "blob": "4308e49f7ea958d2f655efb8c8c6b72c587e4f48",
+            "content": "sha256:0fa6a0ccd9526f61ba8106f1b77029fa7a6cc084687d119ace4fc941ab4d84ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_wrapper_over_an_uncut_list_is_unvalidatable"
+            },
+            "path": "mcp/tests/test_tool_entry_point_controls.py"
+          },
+          "before": {
+            "blob": "3b92604bc8c87671a5bbf10bd47f760545a00760",
+            "content": "sha256:0fa6a0ccd9526f61ba8106f1b77029fa7a6cc084687d119ace4fc941ab4d84ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_wrapper_over_an_uncut_list_is_unvalidatable"
+            },
+            "path": "mcp/tests/test_tool_entry_point_controls.py"
+          },
+          "id": "RLZ-P6CT6J"
+        },
+        {
+          "after": {
+            "blob": "4308e49f7ea958d2f655efb8c8c6b72c587e4f48",
+            "content": "sha256:1fba3c3c2388fb9fb8875f7fd1b1edc14c1d7b7da61374b0da8fcfefca0cae66",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_next_only_refusal_carries_its_next_action"
+            },
+            "path": "mcp/tests/test_tool_entry_point_controls.py"
+          },
+          "before": {
+            "blob": "3b92604bc8c87671a5bbf10bd47f760545a00760",
+            "content": "sha256:1fba3c3c2388fb9fb8875f7fd1b1edc14c1d7b7da61374b0da8fcfefca0cae66",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_next_only_refusal_carries_its_next_action"
+            },
+            "path": "mcp/tests/test_tool_entry_point_controls.py"
+          },
+          "id": "RLZ-PEMT69"
+        },
+        {
+          "after": {
+            "blob": "4308e49f7ea958d2f655efb8c8c6b72c587e4f48",
+            "content": "sha256:f471158d375413d998bf6a06bae943ebaac8887cc753a654248dd515d3d4d8d1",
+            "locator": {
+              "kind": "symbol",
+              "name": "ChokePointControlTests.test_a_delivered_answer_that_keeps_an_envelope_field_is_unvalidatable"
+            },
+            "path": "mcp/tests/test_tool_entry_point_controls.py"
+          },
+          "before": {
+            "blob": "3b92604bc8c87671a5bbf10bd47f760545a00760",
+            "content": "sha256:f471158d375413d998bf6a06bae943ebaac8887cc753a654248dd515d3d4d8d1",
+            "locator": {
+              "kind": "symbol",
+              "name": "ChokePointControlTests.test_a_delivered_answer_that_keeps_an_envelope_field_is_unvalidatable"
+            },
+            "path": "mcp/tests/test_tool_entry_point_controls.py"
+          },
+          "id": "RLZ-YCW5V7"
+        },
+        {
+          "after": {
+            "blob": "4308e49f7ea958d2f655efb8c8c6b72c587e4f48",
+            "content": "sha256:c40a1fda5ad323d0abfb6e2d5bf416ee86b1bdbae52a260cf3402caec4070fed",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_empty_or_guidance_only_next_refusal_stays_bare"
+            },
+            "path": "mcp/tests/test_tool_entry_point_controls.py"
+          },
+          "before": {
+            "blob": "3b92604bc8c87671a5bbf10bd47f760545a00760",
+            "content": "sha256:c40a1fda5ad323d0abfb6e2d5bf416ee86b1bdbae52a260cf3402caec4070fed",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_empty_or_guidance_only_next_refusal_stays_bare"
+            },
+            "path": "mcp/tests/test_tool_entry_point_controls.py"
+          },
+          "id": "RLZ-Z6EA10"
+        },
+        {
+          "after": {
+            "blob": "4308e49f7ea958d2f655efb8c8c6b72c587e4f48",
+            "content": "sha256:5b3a075d836e607c7f44727508e07f16e20695d73b3bde2a7046a07f4c4f81ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_answer_without_a_readable_whole_result_is_unvalidatable"
+            },
+            "path": "mcp/tests/test_tool_entry_point_controls.py"
+          },
+          "before": {
+            "blob": "3b92604bc8c87671a5bbf10bd47f760545a00760",
+            "content": "sha256:5b3a075d836e607c7f44727508e07f16e20695d73b3bde2a7046a07f4c4f81ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_answer_without_a_readable_whole_result_is_unvalidatable"
+            },
+            "path": "mcp/tests/test_tool_entry_point_controls.py"
+          },
+          "id": "RLZ-ZGH1TW"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-3BKY59",
+      "items": [
+        "sha256:ce6a7df630d37a3de2d22326e4c4fbda894a59018ffcb7da0ba44f8c7202491c"
+      ],
+      "reason": "The input validation control now omits required repo_id because contract_path is optional. It still distinguishes argument-model failure from response-model failure. Envelope, uncut-detail, shaping and genuine-next controls remain unchanged; their precise facets were examined rather than inferred from green tests.",
+      "revision": 1,
+      "subject": "INV-T8FDTX"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-4WK8S5",
+      "items": [
+        "sha256:64ab537f8d58515b4bcc82b8dd3303afb21e756014cc287e9dfeb2196ee2b766"
+      ],
+      "reason": "Unit-regression registration of the converted-onboarding module changes accounting only, not lane selection/execution or existing invariant meaning. Exact extents: [{\"base\": [16, 0], \"candidate\": [17, 1]}]",
+      "subject": "hunk:sha256:64ab537f8d58515b4bcc82b8dd3303afb21e756014cc287e9dfeb2196ee2b766"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-5CE6GM",
+      "items": [
+        "sha256:a9f7a1f49770f7a0fad1f25437c6c13cf6b70ad2730437301109a488d7b01ed1",
+        "sha256:2ad378449353f435db9714675dee45a2dcc7a01ef9706ab7d535e9591da4983c",
+        "sha256:8a9e7846909cf586090008b2791f8ce81504e45df805617fa533a9a4b74bfe22",
+        "sha256:beb64f9efc6757a135607d8e4e1e45b90ab274f2e6d760a5071998355508a3bd",
+        "sha256:af3ec128fa1ccd3751835632886256fa4346b785f86024b4a394d7a2f1a2b774",
+        "sha256:0b316ae82a93ccfaab8e6bae008be96cf631cb5968fb4dd4c452ef5f8671dc9d",
+        "sha256:7c3991f24ab914053b2c44b8b8d4fc8639e99eacc5159bfb7f2d89b1ad1f7f4b",
+        "sha256:1633ae2652fd868afbc2e7ce66d10e75423c2f459bbf3b61a66c818194e84a18"
+      ],
+      "reason": "Reviewed every changed extent against the canonical source skills/c-13-install-and-onboard/SKILL.md. This source is canonical/generated instruction text, with no separately owned onboarding card at this path. The durable converted contract is authored in the visible package-copy card and rule-shaped knowledge; mirrors remain derived byte-equal copies, not another intent owner. No parallel hidden/canonical card is created.",
+      "subject": "onboarding:.openclaw/workspace/skills/c-13-install-and-onboard/SKILL.md"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R45",
+          "packet": "requirements/MIK-R45-v2-bootstrap-produces-converted-onboarding.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v2"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "7c2c913f067df83ccb08c9f4721828096b4a6b48",
+            "content": "sha256:b2f617cdb552929185c4164ebb8a992f89da1d976317b2eb29e731dccc9b396a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/c-13-install-and-onboard/SKILL.md"
+          },
+          "before": {
+            "blob": "a1673082b9fb1d7b07998c4d9b12abd32b8f4220",
+            "content": "sha256:7083ddfec289274205becd71fc831c10f01fbf5f599bfeb48a4def5b9c80f17d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/c-13-install-and-onboard/SKILL.md"
+          },
+          "id": "RLZ-88JBV4"
+        },
+        {
+          "after": {
+            "blob": "7c2c913f067df83ccb08c9f4721828096b4a6b48",
+            "content": "sha256:b2f617cdb552929185c4164ebb8a992f89da1d976317b2eb29e731dccc9b396a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md"
+          },
+          "before": {
+            "blob": "a1673082b9fb1d7b07998c4d9b12abd32b8f4220",
+            "content": "sha256:7083ddfec289274205becd71fc831c10f01fbf5f599bfeb48a4def5b9c80f17d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md"
+          },
+          "id": "RLZ-K2M1WN"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-5G88AD",
+      "items": [
+        "sha256:ac6ff2ad34030d3b4df2d547e27be326708fea450f6f3e02e8bdc994527759a4"
+      ],
+      "reason": "All 72 changed mirrors are byte-equal to the eight canonical sources. Existing generator propagation and retirement/first-read boundaries are preserved; no hand-edit or new role is introduced.",
+      "revision": 1,
+      "subject": "INV-NNQR91"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "68c48a9951b8061bca00a8d8656f503b8100ecd9",
+            "content": "sha256:96e1a404f6667bf5439ebda3b1c333e7e8a55be1c65f5c7763e7777c03fcb944",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_route_index_apply_without_contract_is_refused_after_the_baseline"
+            },
+            "path": "mcp/tests/test_bootstrap_converted_onboarding.py"
+          },
+          "before": "absent",
+          "id": "PRF-428BQW"
+        },
+        {
+          "after": {
+            "blob": "68c48a9951b8061bca00a8d8656f503b8100ecd9",
+            "content": "sha256:c40c77bc5ff6c01e2cf5017ce510f6cf2db7d51e04eaaf71dcdc4ba7679d4522",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_refused_reauthor_card_and_sidecar_stay_byte_identical"
+            },
+            "path": "mcp/tests/test_bootstrap_converted_onboarding.py"
+          },
+          "before": "absent",
+          "id": "PRF-7AJHGY"
+        },
+        {
+          "after": {
+            "blob": "68c48a9951b8061bca00a8d8656f503b8100ecd9",
+            "content": "sha256:6e5ff03295b12a84cc65ac4ec3535205965c8ee0fb0fbf1267b9c179dbfa2377",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_fixer_without_contract_is_refused_once_the_baseline_exists"
+            },
+            "path": "mcp/tests/test_bootstrap_converted_onboarding.py"
+          },
+          "before": "absent",
+          "id": "PRF-HEDA55"
+        },
+        {
+          "after": {
+            "blob": "68c48a9951b8061bca00a8d8656f503b8100ecd9",
+            "content": "sha256:b4f38fc73891c4b8d8cb16b30b2ce6b3036060f458df7fa86e5de528d675b7a0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_route_index_apply_without_contract_is_admitted_before_the_baseline"
+            },
+            "path": "mcp/tests/test_bootstrap_converted_onboarding.py"
+          },
+          "before": "absent",
+          "id": "PRF-NDCGFQ"
+        },
+        {
+          "after": {
+            "blob": "68c48a9951b8061bca00a8d8656f503b8100ecd9",
+            "content": "sha256:d2bbebca6d59f7c7e0e64b70af22fc4b2b5741a7c65bea3d87bf06850304b17b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_fixer_without_contract_authors_cards_before_the_baseline"
+            },
+            "path": "mcp/tests/test_bootstrap_converted_onboarding.py"
+          },
+          "before": "absent",
+          "id": "PRF-WSA1G4"
+        },
+        {
+          "after": {
+            "blob": "291bc4d7b0c07f2ce0ef62152c72d94fc5aa7a89",
+            "content": "sha256:1b676566623ede7fef41052717338fc5b5ff0b89bc0cf883ab16ee803100edb9",
+            "locator": {
+              "kind": "symbol",
+              "name": "fix_references"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/reference_state.py"
+          },
+          "before": "absent",
+          "id": "RLZ-3XM7BA"
+        },
+        {
+          "after": {
+            "blob": "197ac9c813cefe56583faa7429ebada46d168acd",
+            "content": "sha256:5eb51bb0f75bb9bbc4037112040d28689dd7e72f767901e9fed98024bb44dbac",
+            "locator": {
+              "kind": "symbol",
+              "name": "_pre_baseline_official_scope"
+            },
+            "path": "mcp/src/agents_remember/application/memory_tools.py"
+          },
+          "before": "absent",
+          "id": "RLZ-5KQY0P"
+        },
+        {
+          "after": {
+            "blob": "197ac9c813cefe56583faa7429ebada46d168acd",
+            "content": "sha256:92c85531f69abf9a3040ff3c5d72e0f39be116fe5a1488b03ed2ee702f7e9c01",
+            "locator": {
+              "kind": "symbol",
+              "name": "citation_fix_tool"
+            },
+            "path": "mcp/src/agents_remember/application/memory_tools.py"
+          },
+          "before": "absent",
+          "id": "RLZ-S74G2D"
+        },
+        {
+          "after": {
+            "blob": "197ac9c813cefe56583faa7429ebada46d168acd",
+            "content": "sha256:93bef3cbe4b811f19a4cfc92299509d1385cc9a8bb7253481cbff896be99d6d9",
+            "locator": {
+              "kind": "symbol",
+              "name": "route_index_refresh_tool"
+            },
+            "path": "mcp/src/agents_remember/application/memory_tools.py"
+          },
+          "before": "absent",
+          "id": "RLZ-W1WY9N"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-60ZMRX",
+      "items": [],
+      "reason": "Introduces the scoped measured fixer/index admission obligation under the approved packet. Proof facets describe assertions, not a fresh execution claim.",
+      "revision": 1,
+      "subject": "INV-13QTT2"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-6PA7GA",
+      "items": [
+        "sha256:cdd65bdd62be696e82646fc1aecab64948be83f863307cdc0a0522f17432eba7",
+        "sha256:ebbb5cdd38a03858f69bb8cd66d578e974dcb873e97ac634b63da3d15cc64dc8",
+        "sha256:eb2544f2a593af8b96f4bb58cc4dcfd76acaa08feea6bb17c8630c16035594fc",
+        "sha256:23feb1240352d6416634baf0febae8d0f55d18a6654a3b6bb611760ccedfc749",
+        "sha256:4e052c2d4bf04648848a6f5cf56a1a821926d8e70170d4728a11b4e0cc588d86",
+        "sha256:0e7133ac4af385662d885e6ff4dd585e6518c0b28968a354ce413f31525ab7d4",
+        "sha256:cd8ea8890536646c4db2df4e78d387da059f40ef025a89631b7399ee89d01cfa",
+        "sha256:ae6e404c266219cdbbc6537416f56aecfab5bab0286c0420ccc3839c49e38240"
+      ],
+      "reason": "Reviewed every changed extent against the canonical source skills/c-13-install-and-onboard/SKILL.md. This source is canonical/generated instruction text, with no separately owned onboarding card at this path. The durable converted contract is authored in the visible package-copy card and rule-shaped knowledge; mirrors remain derived byte-equal copies, not another intent owner. No parallel hidden/canonical card is created.",
+      "subject": "onboarding:.codex/skills/c-13-install-and-onboard/SKILL.md"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "7656737d8a85082c04251a5d697b1278db2e051a",
+            "content": "sha256:48571c4607c20d2c7c557bf79d48716f204249e2a357ddc0848c501293890e83",
+            "locator": {
+              "end": 1294,
+              "kind": "line_range",
+              "start": 1294
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "94cc38ce27dcb9da546d651241fb271f366268bb",
+            "content": "sha256:48571c4607c20d2c7c557bf79d48716f204249e2a357ddc0848c501293890e83",
+            "locator": {
+              "end": 1292,
+              "kind": "line_range",
+              "start": 1292
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-1WK7P0"
+        },
+        {
+          "after": {
+            "blob": "31f439bb178c104fafd1395b834c964ab329b230",
+            "content": "sha256:b34cd52a387bf092bd2484b6a8602413c0028077ff493f0aff91311cbb09d3f1",
+            "locator": {
+              "end": 380,
+              "kind": "line_range",
+              "start": 380
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "af05acbbf882de6c4ac284d7c3ee707238fb5a08",
+            "content": "sha256:5cd042577ebdf51367a272d69b23bf04c0c30cae34914b48cb521233162e663d",
+            "locator": {
+              "end": 374,
+              "kind": "line_range",
+              "start": 374
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-NJFH31"
+        },
+        {
+          "after": {
+            "blob": "7656737d8a85082c04251a5d697b1278db2e051a",
+            "content": "sha256:b34cd52a387bf092bd2484b6a8602413c0028077ff493f0aff91311cbb09d3f1",
+            "locator": {
+              "end": 518,
+              "kind": "line_range",
+              "start": 518
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "94cc38ce27dcb9da546d651241fb271f366268bb",
+            "content": "sha256:b34cd52a387bf092bd2484b6a8602413c0028077ff493f0aff91311cbb09d3f1",
+            "locator": {
+              "end": 517,
+              "kind": "line_range",
+              "start": 517
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-TB9TST"
+        },
+        {
+          "after": {
+            "blob": "7656737d8a85082c04251a5d697b1278db2e051a",
+            "content": "sha256:d3ffdc9d4b8e10ae5195fe11bd9c6e114d2017f7a53c0334010e9f3d6f4ca064",
+            "locator": {
+              "end": 1440,
+              "kind": "line_range",
+              "start": 1440
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "94cc38ce27dcb9da546d651241fb271f366268bb",
+            "content": "sha256:d3ffdc9d4b8e10ae5195fe11bd9c6e114d2017f7a53c0334010e9f3d6f4ca064",
+            "locator": {
+              "end": 1438,
+              "kind": "line_range",
+              "start": 1438
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-VQZWNZ"
+        },
+        {
+          "after": {
+            "blob": "31f439bb178c104fafd1395b834c964ab329b230",
+            "content": "sha256:d78be9a4046b8ffdab5120a0a748737d28d92bec8743be7d5acec6847feb659b",
+            "locator": {
+              "end": 274,
+              "kind": "line_range",
+              "start": 274
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "af05acbbf882de6c4ac284d7c3ee707238fb5a08",
+            "content": "sha256:2bc4851e806a4d81b457b0153c5968bdd9d936be780b1c20bf8222ffba533e73",
+            "locator": {
+              "end": 270,
+              "kind": "line_range",
+              "start": 270
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-ZTDYFT"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-6YBPYW",
+      "items": [],
+      "reason": "Historical prior-sync qualification for three restored evidence-lifecycle entries: Manager-admitted composition of three same-ID evidence-lifecycle realizations after restoring the landed sidecar. Current landed source tuples map through the two retained bootstrap-test consumer additions onto identical lines. No invariant statement, scope, rationale or role is changed. These history covers preserve landed identity and report the parked reference differences, not a claim that obsolete parked bytes are current. Current supported successor renews these restored anchors. L45-M1-F05 repairs two additional same-ID catalog registrations to the actual archive and report module lines; the invariant meaning, other entries, roles and origins are preserved.",
+      "revision": 1,
+      "subject": "INV-0H8WBQ"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-75EY17",
+      "items": [
+        "sha256:24525506b5077231b959f58befd9a6c8e8199a2ce57c7e11076b7388e7149bb1"
+      ],
+      "reason": "Reviewed changed source extents and the existing card; the existing broader purpose/ownership contract remains correct. Source-specific current coverage is recorded in the updated package/test card, not a new route purpose.",
+      "subject": "onboarding:mcp/tests/evidence-lifecycle.toml"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7HWC52",
+      "items": [
+        "sha256:22bdb57688cc0add602063eca9d08712f2edfab046b12301619efb1b3bab0e9a"
+      ],
+      "reason": "The detector import, legacyCards measurement/state and adoption gate implement MIK-R45 rule 3; the existing attributed-commit/validation invariant is not changed by this added first-adoption-only format boundary. The new rule-3 invariant and updated card own it, not the older baseline entries. Exact extents: [{\"base\": [641, 0], \"candidate\": [643, 1]}]",
+      "subject": "hunk:sha256:22bdb57688cc0add602063eca9d08712f2edfab046b12301619efb1b3bab0e9a"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-7QDV8V",
+      "items": [
+        "sha256:20076991ea82642681486100295f4762094d26f683324d8ed2cf1cc61b42099b",
+        "sha256:b3e70f7d7b73182c9bd3914fee32e6d1055381de73f6322069e7877d1ed8acb6"
+      ],
+      "reason": "Reviewed every changed extent against the canonical source skills/c-03-repo-bootstrap/templates/file-card-template.md. This source is canonical/generated instruction text, with no separately owned onboarding card at this path. The durable converted contract is authored in the visible package-copy card and rule-shaped knowledge; mirrors remain derived byte-equal copies, not another intent owner. No parallel hidden/canonical card is created.",
+      "subject": "onboarding:.github-vscode/skills/c-03-repo-bootstrap/templates/file-card-template.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-7V884G",
+      "items": [
+        "sha256:549de6490c93bb6a17bcf79d1adeaaff4cb117476b12bdd8a4a7c4dea5823c1d"
+      ],
+      "reason": "Reviewed every changed extent against the canonical source skills/c-03-repo-bootstrap/templates/curator-review-template.md. This source is canonical/generated instruction text, with no separately owned onboarding card at this path. The durable converted contract is authored in the visible package-copy card and rule-shaped knowledge; mirrors remain derived byte-equal copies, not another intent owner. No parallel hidden/canonical card is created.",
+      "subject": "onboarding:.codex/skills/c-03-repo-bootstrap/templates/curator-review-template.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-8E52CA",
+      "items": [
+        "sha256:ecd6464e7b07105e510f779b703e5412afc868b086037861e2e94db966222496"
+      ],
+      "reason": "Reviewed every changed extent against the canonical source skills/c-03-repo-bootstrap/templates/bootstrap-handoff-template.md. This source is canonical/generated instruction text, with no separately owned onboarding card at this path. The durable converted contract is authored in the visible package-copy card and rule-shaped knowledge; mirrors remain derived byte-equal copies, not another intent owner. No parallel hidden/canonical card is created.",
+      "subject": "onboarding:.pi/skills/c-03-repo-bootstrap/templates/bootstrap-handoff-template.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-8GFVMC",
+      "items": [
+        "sha256:4bb0c9fdd057ac5e28cbd4364f4b71017dc4af70201b3663b118fee926b1b82b"
+      ],
+      "reason": "The package's current account makes the inherited CLI inventory historical. Its document-only converted fixing remains supported; it does not assert --contract is mandatory. Reference [158] still describes attributed memory output/cache, not an exhaustive adoption-gate list. New pre-baseline admission and regenerated installer ordering may merit a parent-authored current route addendum, but no existing operative sentence contradicts them; do not mechanically refresh historical [158] solely because baseline.py changed.",
+      "subject": "onboarding:mcp/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-90C6CK",
+      "items": [
+        "sha256:67658f0db05c44d7f55fd5f081c95276ce9c19b0c50f6099111ded5a33ccf05b"
+      ],
+      "reason": "The predecessor no-current-census judgment was false: its operative tests overview still pinned stale lane populations. The admitted successor overview removes those static counts and derives current populations from the complete catalog arrays; the former inventory is explicitly historical. L45 adds a unit-regression module and lifecycle consumer entries without changing fixture/composition/catalog policy. This corrects the coverage account and credits the existing route repair, not a fresh test/journey execution.",
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-91RFB6",
+      "items": [
+        "sha256:16bdcac557bd1a7014f0865078e575b43929293af025b88fe37bb82113607840"
+      ],
+      "reason": "The detector import, legacyCards measurement/state and adoption gate implement MIK-R45 rule 3; the existing attributed-commit/validation invariant is not changed by this added first-adoption-only format boundary. The new rule-3 invariant and updated card own it, not the older baseline entries. Exact extents: [{\"base\": [701, 1], \"candidate\": [706, 1]}]",
+      "subject": "hunk:sha256:16bdcac557bd1a7014f0865078e575b43929293af025b88fe37bb82113607840"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-94YK1B",
+      "items": [
+        "sha256:e026f0fea49f1e1356dea0ce9ac1ee30116d88e1c6d4d9441d8a35dee6033ff5",
+        "sha256:457e8e3d84c9b592dee214475f4624dcf3bbf13a0ff91ef2a651b03d264153f5",
+        "sha256:6b6b8cc9408a0531f3535b096082d2f1b86e745fb7c176d8a68b06aa15091ae6",
+        "sha256:a9d48469422d83d1123d0cd79d66485bd576f0f757e46b8db23d35df1a98a354",
+        "sha256:cff738c2ccdc42988dcf9aa43f06ecbd19be88120438b69e077463a644cc1e7b",
+        "sha256:6967f37a095e1c3e31bc13f1d6825bbcc06671dbd90da82855956b7dab8d2535",
+        "sha256:ebdd8fc5a644b771c6132a51fe752d1fa69a60f9c1e3ac7a557f7787eadb7cb8",
+        "sha256:d5e1a5390a59268c5304b5c1d2c3296c2028d810f913a9985ed6df7d18ada802"
+      ],
+      "reason": "Reviewed every changed extent against the canonical source skills/c-13-install-and-onboard/SKILL.md. This source is canonical/generated instruction text, with no separately owned onboarding card at this path. The durable converted contract is authored in the visible package-copy card and rule-shaped knowledge; mirrors remain derived byte-equal copies, not another intent owner. No parallel hidden/canonical card is created.",
+      "subject": "onboarding:.pi/skills/c-13-install-and-onboard/SKILL.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-99GHGA",
+      "items": [
+        "sha256:7055ebde96bfe2c6d63ad798ec7c841e19ce9e26c1837f0958b25527df8e05e2",
+        "sha256:c5b54d16ae11a5d577c2d36614c0f375f72d93cd8328385514e8b96cd26c67ef",
+        "sha256:48beb0fb0683e2b92c240117187214f06882faf29fdde26134a26bb6402795bc",
+        "sha256:2a846f338ccc9b5a1ee8d9428c4271ff1ccebd01cb89b66ac172c0fb3f36cea4",
+        "sha256:1cb301f062e600b174036b8ecf2d489226d50f586504295f29e06c02767220a9",
+        "sha256:807e884d04e8e04fe51a66a6f2e771b6d4cfdef3f13ce4edc7debbe60411c087",
+        "sha256:1dea7b7171029b140e4b44c42cc6bd68c636f08a9c1728478739d7afafd8e21e",
+        "sha256:fd0b984f29cad6c4c7e03eac793070af0b04d1ac0e9d7a015ed353989bc468d9",
+        "sha256:fca2c63222801b722e68a38f0000bc97486b62472c82b98373ff2453d339a702"
+      ],
+      "reason": "Reviewed every changed extent against the canonical source skills/c-03-repo-bootstrap/SKILL.md. This source is canonical/generated instruction text, with no separately owned onboarding card at this path. The durable converted contract is authored in the visible package-copy card and rule-shaped knowledge; mirrors remain derived byte-equal copies, not another intent owner. No parallel hidden/canonical card is created.",
+      "subject": "onboarding:.claude/skills/c-03-repo-bootstrap/SKILL.md"
+    },
+    {
+      "disposition": "assigned",
+      "examined": [
+        {
+          "id": "INV-13QTT2",
+          "revision": 1
+        },
+        {
+          "id": "INV-4XD2ZF",
+          "revision": 1
+        },
+        {
+          "id": "INV-DE9ZZF",
+          "revision": 1
+        },
+        {
+          "id": "INV-QR6DSA",
+          "revision": 1
+        },
+        {
+          "id": "INV-TJADR1",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-9S3FW3",
+      "items": [],
+      "reason": "Joint first-baseline guarantee is placed at actual enforcement and author-facing routes; these routes jointly realize its members, not a directory-inferred family.",
+      "revision": 1,
+      "subject": "FAM-VDDPC6"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-9S996N",
+      "items": [
+        "sha256:e1648c1bd90f1282b503f30d01e26eca68f714e2b8d732e25b392ec6c103baf9",
+        "sha256:a90db1c749725c0025a6c298c9639a804ef373d4b3132bab2ff30599b9c6e902",
+        "sha256:a4a5d116b01615d40f26ccd70910795ba12f58a65337ad078729b53b6cb25808",
+        "sha256:0e17bf28985890f825926ba73fc7e8edff928e43d9a670141eb79b0f3123e656",
+        "sha256:330ad43b69f7406c142d5ec971900dd5264aea5972f2757a1597f02d607431e6",
+        "sha256:db3c13897191b8256c0586d846ba5bd1e6df48c307f2cf44908b7909ce55ad39",
+        "sha256:1801f8d004f6f5d9a6a665bb1fa99d9fe65a637f111369622dddeef6a658e35b",
+        "sha256:10d5e0bd0cd00e50ec46eab95da324a25b575ec10968885f7ac0890365b573bb"
+      ],
+      "reason": "Reviewed changed source extents and the existing card; the existing broader purpose/ownership contract remains correct. Source-specific current coverage is recorded in the updated package/test card, not a new route purpose.",
+      "subject": "onboarding:skills/l-01-agent-lifecycles/operations/bootstrap.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-9SV755",
+      "items": [
+        "sha256:8ee8e42fb544c377625141222a657318224e44013a2776368abf1a5c0dd66f31"
+      ],
+      "reason": "Reviewed every changed extent against the canonical source skills/c-03-repo-bootstrap/templates/bootstrap-handoff-template.md. This source is canonical/generated instruction text, with no separately owned onboarding card at this path. The durable converted contract is authored in the visible package-copy card and rule-shaped knowledge; mirrors remain derived byte-equal copies, not another intent owner. No parallel hidden/canonical card is created.",
+      "subject": "onboarding:.cursor/skills/c-03-repo-bootstrap/templates/bootstrap-handoff-template.md"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-A8ZKQC",
+      "items": [
+        "sha256:6199d6706ef6a53f20aeb06a4205aca353140e8fb6be10618776198dca22941f"
+      ],
+      "reason": "The detector import, legacyCards measurement/state and adoption gate implement MIK-R45 rule 3; the existing attributed-commit/validation invariant is not changed by this added first-adoption-only format boundary. The new rule-3 invariant and updated card own it, not the older baseline entries. Exact extents: [{\"base\": [703, 0], \"candidate\": [709, 8]}]",
+      "subject": "hunk:sha256:6199d6706ef6a53f20aeb06a4205aca353140e8fb6be10618776198dca22941f"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-AANSKG",
+      "items": [
+        "sha256:53d92b734164d18611373822b96c6a89f3dc91a2883b6ce155a986a1137c8a0a",
+        "sha256:28cb894acbd2ccfd4a6bb8aabd815d9ea3822798750c7140c93b2b532a9af66f"
+      ],
+      "reason": "Reviewed every changed extent against the canonical source skills/c-03-repo-bootstrap/templates/file-card-template.md. This source is canonical/generated instruction text, with no separately owned onboarding card at this path. The durable converted contract is authored in the visible package-copy card and rule-shaped knowledge; mirrors remain derived byte-equal copies, not another intent owner. No parallel hidden/canonical card is created.",
+      "subject": "onboarding:.pi/skills/c-03-repo-bootstrap/templates/file-card-template.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-B0QWC2",
+      "items": [
+        "sha256:ee47990ddda74aefe78bb95153c873774de99dc86099c63282402c1eff596dad",
+        "sha256:cb107caa8cce0a0ecdf529bcda8e37a36050fbf48774d85278e03d8b73d4fc7c",
+        "sha256:2f81a30fd8ffca99efc64478a404481a9c3d055da53091b23dc6f708feff9d03",
+        "sha256:bae044021fcdda1c71b0979fec9efe5a8f3045e8e3ee96ce0f0e3629daf217a9",
+        "sha256:551c6ce6cfa1167d82858d6b79a4239848681d7695aa9b17bae99c8bf1ec34d1",
+        "sha256:5df7e8ae105bb75af5e6487bd305008fbac3458f9a0340562de7dfd90fe68dfe",
+        "sha256:c612a2c7e56f8adf36980e0cc4479f23fd6a48cb4a34affe1ec5771cd3aa251e",
+        "sha256:58f8f8221f5ced8d57557b1d0c309fb9628cd14fc6b864afbfa75df52cf8b4f9"
+      ],
+      "reason": "Reviewed every changed extent against the canonical source skills/c-13-install-and-onboard/SKILL.md. This source is canonical/generated instruction text, with no separately owned onboarding card at this path. The durable converted contract is authored in the visible package-copy card and rule-shaped knowledge; mirrors remain derived byte-equal copies, not another intent owner. No parallel hidden/canonical card is created.",
+      "subject": "onboarding:.github-vscode/skills/c-13-install-and-onboard/SKILL.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-B49M8P",
+      "items": [
+        "sha256:3c9cb67a6f9f64251dd1de2b026ef693f55738f34a6089f3208175522cbbe0c4",
+        "sha256:19d7afd6579f21a021f01d0f1ad7005f31e61d74c19361d352436ec4cd6fb538"
+      ],
+      "reason": "Reviewed every changed extent against the canonical source skills/c-03-repo-bootstrap/templates/repo-overview-template.md. This source is canonical/generated instruction text, with no separately owned onboarding card at this path. The durable converted contract is authored in the visible package-copy card and rule-shaped knowledge; mirrors remain derived byte-equal copies, not another intent owner. No parallel hidden/canonical card is created.",
+      "subject": "onboarding:.claude/skills/c-03-repo-bootstrap/templates/repo-overview-template.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-B9ESD1",
+      "items": [
+        "sha256:01f6e3dd6c6eb76b29746b4c23e6097c89b3a19a38b6f12b9a52779bf7226209",
+        "sha256:e1e2ae59326816a740ab2a86bd17ab4223e9b85338f4640e9a8a2c5c16c297a4",
+        "sha256:05cd845e1ed629b76b6743aff3981b57bd8cbd103e5436c403ae8dd1f94f2c90"
+      ],
+      "reason": "Reviewed every changed extent against the canonical source skills/c-03-repo-bootstrap/templates/route-local-overview-template.md. This source is canonical/generated instruction text, with no separately owned onboarding card at this path. The durable converted contract is authored in the visible package-copy card and rule-shaped knowledge; mirrors remain derived byte-equal copies, not another intent owner. No parallel hidden/canonical card is created.",
+      "subject": "onboarding:.hermes/skills/c-03-repo-bootstrap/templates/route-local-overview-template.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-BCEDKZ",
+      "items": [
+        "sha256:050c05bc5c14f423bf94cab64e1634e7290fd7f2cb92b00906f5d35f3e646cb5"
+      ],
+      "reason": "Reviewed every changed extent against the canonical source skills/c-03-repo-bootstrap/templates/curator-review-template.md. This source is canonical/generated instruction text, with no separately owned onboarding card at this path. The durable converted contract is authored in the visible package-copy card and rule-shaped knowledge; mirrors remain derived byte-equal copies, not another intent owner. No parallel hidden/canonical card is created.",
+      "subject": "onboarding:.pi/skills/c-03-repo-bootstrap/templates/curator-review-template.md"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "68c48a9951b8061bca00a8d8656f503b8100ecd9",
+            "content": "sha256:aeaf023db4a80d4b0934eb86a019c15e2f04f9fa9b92d35b9ccf61b676234109",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_bootstrap_skill_texts_state_the_fixer_and_the_order"
+            },
+            "path": "mcp/tests/test_bootstrap_converted_onboarding.py"
+          },
+          "before": "absent",
+          "id": "PRF-CE9T0C"
+        },
+        {
+          "after": {
+            "blob": "68c48a9951b8061bca00a8d8656f503b8100ecd9",
+            "content": "sha256:7df2d56f0ac21de21fcbbe6236f55e6442beea3396cd235b483e00804926a655",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_bootstrap_skill_texts_carry_no_legacy_card_format"
+            },
+            "path": "mcp/tests/test_bootstrap_converted_onboarding.py"
+          },
+          "before": "absent",
+          "id": "PRF-XZYTAM"
+        },
+        {
+          "after": {
+            "blob": "8fa7b6cd0ae00dd9cc6d62bfd3db41e065bd282f",
+            "content": "sha256:fbed87131347850556d091f871bbc46d3bf3e25cd93dc488eb2de2a4cc6d3043",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/c-03-repo-bootstrap/templates/repo-overview-template.md"
+          },
+          "before": "absent",
+          "id": "RLZ-XVJ78F"
+        },
+        {
+          "after": {
+            "blob": "6169b610d2b722a17c4d18645df947444b62f260",
+            "content": "sha256:6ad4811c6e1b63b32169d54f8972b21deaed2bd9b17dcd0582348af6067edfda",
+            "locator": {
+              "end": 408,
+              "kind": "line_range",
+              "start": 386
+            },
+            "path": "skills/c-03-repo-bootstrap/SKILL.md"
+          },
+          "before": "absent",
+          "id": "RLZ-Y7TKM9"
+        },
+        {
+          "after": {
+            "blob": "fa9652b7955ac13a939df93d5c942c699b737e72",
+            "content": "sha256:49d930ab16ba128785730282330dfc838f84e124991c56a65ae66e30d8f39d9e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/c-03-repo-bootstrap/templates/route-local-overview-template.md"
+          },
+          "before": "absent",
+          "id": "RLZ-YDPBTQ"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-BYD27S",
+      "items": [],
+      "reason": "Introduces the scoped converted authoring obligation under the approved packet. Proof facets describe assertions, not a fresh execution claim.",
+      "revision": 1,
+      "subject": "INV-4XD2ZF"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-C46TN3",
+      "items": [
+        "sha256:ca4897c560461012112beed7ccc8a1de2765263a9ad89d8186e37860975bb187",
+        "sha256:e2313e23c5b45d29c1934a71627cdc5dd583d87b75a74e2db4b15850cb44c876",
+        "sha256:4a1b1c580d11ef4b77db01561d77d0458132187c4d0c68caa4b27dd863d78391",
+        "sha256:9d1d35385adcff6a79e0fad9af246bf652b457a5b7063f2afbb0dce6db707740",
+        "sha256:e19804e9b0ab7c3270c4385e3b70303f27acba8f4e75fde0ad169dad86ab9d45",
+        "sha256:921f2a955f66b47f244b7c714712f61d71332bd1926bc35bd7fcaed162d7e7e7",
+        "sha256:e27482f208faeffc3524a3476bac8c5677612c02d6adca6a9e7d997e2dd5d9fc",
+        "sha256:fd08a4f2ab1552919f514248dea096a25d32ac6ca9b66af18dce126730318d52"
+      ],
+      "reason": "Reviewed every changed extent against the canonical source skills/c-13-install-and-onboard/SKILL.md. This source is canonical/generated instruction text, with no separately owned onboarding card at this path. The durable converted contract is authored in the visible package-copy card and rule-shaped knowledge; mirrors remain derived byte-equal copies, not another intent owner. No parallel hidden/canonical card is created.",
+      "subject": "onboarding:.cursor/skills/c-13-install-and-onboard/SKILL.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-CE9CP2",
+      "items": [
+        "sha256:8b0f98a5f4c69d4327370c9f0273019cf71219341db18e0c28c63a6708f2d94e",
+        "sha256:21c546bde683384af67305b8149543383aff74853fd2728c59d2a8840346048e",
+        "sha256:c6e82bc8849cc54e6d0a242d529d876527131241dd8eb01f634b5b08e6cc44f8",
+        "sha256:8378cea4727153a4eab4e48cdcf450a86e46004b99834137a11ad0ef93106442",
+        "sha256:50a98a79375380986788d1d4223c1bf3139f9ec81795e3f433bc373adad285e5",
+        "sha256:f8ef3178a2af46cb4afbb968f552a8167b08a523a41017625fa021fda66eeb12",
+        "sha256:fe04ce5f839ffb1f636df58ae323a00a86dc9b9b54abb8a69b5d5c5919f2a2de",
+        "sha256:6008d5581668514d0b650346f3fc45c9889a35c93bf94100bffc822c399f6a34"
+      ],
+      "reason": "Reviewed every changed extent against the canonical source skills/l-01-agent-lifecycles/operations/bootstrap.md. This source is canonical/generated instruction text, with no separately owned onboarding card at this path. The durable converted contract is authored in the visible package-copy card and rule-shaped knowledge; mirrors remain derived byte-equal copies, not another intent owner. No parallel hidden/canonical card is created.",
+      "subject": "onboarding:.pi/skills/l-01-agent-lifecycles/operations/bootstrap.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-CG3AF8",
+      "items": [
+        "sha256:682a7f805e9d0a8c9787cea60b468025429dc1384b1191cbf05152daba25f7c3",
+        "sha256:807bb0a1fe7cf49ac820d67371a64adb0b436515f5e830e360aa9178273b1527"
+      ],
+      "reason": "Reviewed every changed extent against the canonical source skills/c-03-repo-bootstrap/templates/repo-overview-template.md. This source is canonical/generated instruction text, with no separately owned onboarding card at this path. The durable converted contract is authored in the visible package-copy card and rule-shaped knowledge; mirrors remain derived byte-equal copies, not another intent owner. No parallel hidden/canonical card is created.",
+      "subject": "onboarding:.agents/skills/c-03-repo-bootstrap/templates/repo-overview-template.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-CQV85P",
+      "items": [
+        "sha256:36908a733dad46b21b7c1640eca4dff68b72075e30f081f5ac411b44095d48fe",
+        "sha256:ffa19fb8d7eeb855a3eec03d938b3f4736a065228f4e43d670be9bb29ed7366b",
+        "sha256:cb3a9a8cc6477adbe38c965433565dda9b2ab849a4895832678e1ef5103a868f",
+        "sha256:072ab06fcb7e1e7db2cbb57e792990f5c1038cc6d8102a5f89e3f1e0ab1fb6b6",
+        "sha256:418205a28aa992fce8f538d90a5faa23cd30edd18134560cf69484e33bd22c3f",
+        "sha256:d85680dfef50602b347b2784a7b0ab27ad5a13be7592ca30e97679f98647a589",
+        "sha256:6793e25fcef4de56dc6eb7b9bc7679432e055346cc739177175127e0e650e976",
+        "sha256:76642ff0db51b73861c2080545cbe8962ff4333736c00d9eac15acdfd30e2c0d"
+      ],
+      "reason": "Reviewed every changed extent against the canonical source skills/c-13-install-and-onboard/SKILL.md. This source is canonical/generated instruction text, with no separately owned onboarding card at this path. The durable converted contract is authored in the visible package-copy card and rule-shaped knowledge; mirrors remain derived byte-equal copies, not another intent owner. No parallel hidden/canonical card is created.",
+      "subject": "onboarding:.claude/skills/c-13-install-and-onboard/SKILL.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-CYE0TE",
+      "items": [
+        "sha256:8b10388277d0fcc06c54dbcf058c27c5cc495b2cdb89616ffa2504430851aa88",
+        "sha256:7dadf384143c1cb3cdde4bee4c24465c2cf7c5cd195032544ee3a7f451d997de"
+      ],
+      "reason": "Reviewed every changed extent against the canonical source skills/c-03-repo-bootstrap/templates/file-card-template.md. This source is canonical/generated instruction text, with no separately owned onboarding card at this path. The durable converted contract is authored in the visible package-copy card and rule-shaped knowledge; mirrors remain derived byte-equal copies, not another intent owner. No parallel hidden/canonical card is created.",
+      "subject": "onboarding:.hermes/skills/c-03-repo-bootstrap/templates/file-card-template.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-D0BFX5",
+      "items": [
+        "sha256:dfcf42f5c89c08febbd3a2c81a45322251091cf658223d5deef56de03a31bedb"
+      ],
+      "reason": "Historical transport ownership remains compatible: optional contract_path is forwarded to the same application owner and existing bounded output still preserves scalar admission. No operative required-contract assertion or changed transport cap was found. The [43] symbol is unchanged by the payload type adjustment; no broad route/reference refresh is justified.",
+      "subject": "onboarding:mcp/src/agents_remember/mcp/tools/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-DAYC46",
+      "items": [
+        "sha256:a022f2269c32cc913e565ac3285b8cd10fb2d3f92a457d620d80bb28dc594663",
+        "sha256:6f0b5f12520fa5e4bdcf5a04a97ff3f9d3e2a6f1c8c8754a3e5db31cfa788a27",
+        "sha256:3599f6b9445bf763d7008a3f74a6e0dcf2ec15bb0c2d90abb1ab0c43064078a2",
+        "sha256:2df27365b8bf0aa28de3d2e431262b7db0a89baa9df25068621e3b1914833439",
+        "sha256:7a3f43e843fcfbaf97b7c2e8502a6151a970ee32afbca8d3c14efac44afa969b",
+        "sha256:78a0c7ca2314ef1e7f3a490106a42356e28c472ccc83ac56a573e8f05d7a5947",
+        "sha256:00452ad97c652bfa5d1aa92cfd4bca9b7c77a7c7e88289334270ad7a49b2bfed",
+        "sha256:6bfe4a2c52a63a824c6c0159a456cc16dd51eff97365d1301e15423ca3b6f2fd"
+      ],
+      "reason": "Reviewed every changed extent against the canonical source skills/l-01-agent-lifecycles/operations/bootstrap.md. This source is canonical/generated instruction text, with no separately owned onboarding card at this path. The durable converted contract is authored in the visible package-copy card and rule-shaped knowledge; mirrors remain derived byte-equal copies, not another intent owner. No parallel hidden/canonical card is created.",
+      "subject": "onboarding:.hermes/skills/l-01-agent-lifecycles/operations/bootstrap.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-DCC4M9",
+      "items": [
+        "sha256:b66518c1d919ecd974171391a0ebcd80f9cb5cc14cb3d7b4d1bc5afaa743719a"
+      ],
+      "reason": "Reviewed every changed extent against the canonical source skills/c-03-repo-bootstrap/templates/bootstrap-handoff-template.md. This source is canonical/generated instruction text, with no separately owned onboarding card at this path. The durable converted contract is authored in the visible package-copy card and rule-shaped knowledge; mirrors remain derived byte-equal copies, not another intent owner. No parallel hidden/canonical card is created.",
+      "subject": "onboarding:.agents/skills/c-03-repo-bootstrap/templates/bootstrap-handoff-template.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-EGKPQA",
+      "items": [
+        "sha256:6028795979ed2725196433f6b948706b80b20c40d3a1dceb9bdb34d579fb6e4e",
+        "sha256:a67c9118fbb56a26fedf0964bdb712132f1ef548dd41ab6ae0fb2b114b028872"
+      ],
+      "reason": "Reviewed every changed extent against the canonical source skills/c-03-repo-bootstrap/templates/file-card-template.md. This source is canonical/generated instruction text, with no separately owned onboarding card at this path. The durable converted contract is authored in the visible package-copy card and rule-shaped knowledge; mirrors remain derived byte-equal copies, not another intent owner. No parallel hidden/canonical card is created.",
+      "subject": "onboarding:.agents/skills/c-03-repo-bootstrap/templates/file-card-template.md"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "68c48a9951b8061bca00a8d8656f503b8100ecd9",
+            "content": "sha256:aeaf023db4a80d4b0934eb86a019c15e2f04f9fa9b92d35b9ccf61b676234109",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_bootstrap_skill_texts_state_the_fixer_and_the_order"
+            },
+            "path": "mcp/tests/test_bootstrap_converted_onboarding.py"
+          },
+          "before": "absent",
+          "id": "PRF-GNXD7B"
+        },
+        {
+          "after": {
+            "blob": "2b43fdbcebb97cf40df4da7ac53147caffafd2a5",
+            "content": "sha256:ab6ab45af96477b755825e21d49465572095d619234a8b6151c5918759b2faef",
+            "locator": {
+              "end": 92,
+              "kind": "line_range",
+              "start": 49
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/bootstrap.md"
+          },
+          "before": "absent",
+          "id": "RLZ-942ZBQ"
+        },
+        {
+          "after": {
+            "blob": "7c2c913f067df83ccb08c9f4721828096b4a6b48",
+            "content": "sha256:b65adc0e7f264ca00f1b0121555776dde8597dc61153038da307f04461f6b867",
+            "locator": {
+              "end": 410,
+              "kind": "line_range",
+              "start": 353
+            },
+            "path": "skills/c-13-install-and-onboard/SKILL.md"
+          },
+          "before": "absent",
+          "id": "RLZ-P2BV6G"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-EYMPXK",
+      "items": [],
+      "reason": "Introduces the scoped true setup order obligation under the approved packet. Proof facets describe assertions, not a fresh execution claim.",
+      "revision": 1,
+      "subject": "INV-DE9ZZF"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-F25635",
+      "items": [
+        "sha256:84dd23dd45fa44341c11e8fd9c98ccfb988fb83d41e322596e34801352622b27"
+      ],
+      "reason": "Reviewed every changed extent against the canonical source skills/c-03-repo-bootstrap/templates/bootstrap-handoff-template.md. This source is canonical/generated instruction text, with no separately owned onboarding card at this path. The durable converted contract is authored in the visible package-copy card and rule-shaped knowledge; mirrors remain derived byte-equal copies, not another intent owner. No parallel hidden/canonical card is created.",
+      "subject": "onboarding:.openclaw/workspace/skills/c-03-repo-bootstrap/templates/bootstrap-handoff-template.md"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "68c48a9951b8061bca00a8d8656f503b8100ecd9",
+            "content": "sha256:bbf40a5dd7a8405ee2b54caacbdccc421798a758f7354c47460c2c4d46fa02cd",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_prose_and_code_mentions_of_legacy_keys_are_not_legacy_cards"
+            },
+            "path": "mcp/tests/test_bootstrap_converted_onboarding.py"
+          },
+          "before": "absent",
+          "id": "PRF-3WT3DE"
+        },
+        {
+          "after": {
+            "blob": "68c48a9951b8061bca00a8d8656f503b8100ecd9",
+            "content": "sha256:e2f2027b7147037382a217aae8b50ab879338177e946112b38ccf987133092a2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_each_old_format_sign_blocks_the_baseline"
+            },
+            "path": "mcp/tests/test_bootstrap_converted_onboarding.py"
+          },
+          "before": "absent",
+          "id": "PRF-50SGBX"
+        },
+        {
+          "after": {
+            "blob": "68c48a9951b8061bca00a8d8656f503b8100ecd9",
+            "content": "sha256:931b3211e0e950d9b6e022f121c414d2c93b58c72db1fd42d629aa8729ce9f9e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_accept_drift_does_not_lift_blocked_legacy_cards"
+            },
+            "path": "mcp/tests/test_bootstrap_converted_onboarding.py"
+          },
+          "before": "absent",
+          "id": "PRF-65Z793"
+        },
+        {
+          "after": {
+            "blob": "68c48a9951b8061bca00a8d8656f503b8100ecd9",
+            "content": "sha256:17b3cb140ea7f1cd4028912d1e438c78f2738f3dcff04ccdc7029df410e08cd6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_legacy_cards_cannot_refuse_an_adopted_repository"
+            },
+            "path": "mcp/tests/test_bootstrap_converted_onboarding.py"
+          },
+          "before": "absent",
+          "id": "PRF-FW08J9"
+        },
+        {
+          "after": {
+            "blob": "0f4f518448f7365c8faf94b3602c463a8f4add25",
+            "content": "sha256:bc89365e4597d139bd67aa8bc5de94e80ae2b709f1713129da4483d7e4fa1545",
+            "locator": {
+              "kind": "symbol",
+              "name": "_converted_adopt_gate"
+            },
+            "path": "mcp/src/agents_remember/memory/baseline.py"
+          },
+          "before": "absent",
+          "id": "RLZ-DBYDCH"
+        },
+        {
+          "after": {
+            "blob": "86dcf9173a4e07e5e056b38f0aec2223cbc2814f",
+            "content": "sha256:ee93a535bd952fef0f778e273e3d67f3dc1bef7e23061f095bba75c6f1ed3eb9",
+            "locator": {
+              "kind": "symbol",
+              "name": "find_legacy_cards"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/legacy_cards.py"
+          },
+          "before": "absent",
+          "id": "RLZ-T6G3MN"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-F4R2PT",
+      "items": [],
+      "reason": "The scoped first-baseline format-gate meaning, applicability, conditions, exclusions and other proof facets are unchanged. Withdraw the overstrong exact-already-adopted proof and replace it with the assertion-supported adopted-status non-refusal facet. Preserved producer originals do not make their old stronger facet current truth.",
+      "revision": 1,
+      "subject": "INV-QR6DSA"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "68c48a9951b8061bca00a8d8656f503b8100ecd9",
+            "content": "sha256:2a3acd5341c608f7d7ffdbb801d52a81b71628597deef476b866eb3ac7d14c50",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_bootstrap_journey_from_init_to_second_fixer_refusal"
+            },
+            "path": "mcp/tests/test_bootstrap_converted_onboarding.py"
+          },
+          "before": "absent",
+          "id": "PRF-457VY3"
+        },
+        {
+          "after": {
+            "blob": "6169b610d2b722a17c4d18645df947444b62f260",
+            "content": "sha256:a4d86301510eacc639687b0a0df2e090fb9b804c52f74361f1797087fc145aa1",
+            "locator": {
+              "end": 1119,
+              "kind": "line_range",
+              "start": 1066
+            },
+            "path": "skills/c-03-repo-bootstrap/SKILL.md"
+          },
+          "before": "absent",
+          "id": "RLZ-EJQ1ZY"
+        },
+        {
+          "after": {
+            "blob": "e571ee41081537c5ecfd720478858ebd01f53a79",
+            "content": "sha256:a6b85da827e1caa5eeb353362b0a463658a5b1df880d7e3c41a5a7b6e8792868",
+            "locator": {
+              "end": 90,
+              "kind": "line_range",
+              "start": 54
+            },
+            "path": "skills/c-03-repo-bootstrap/templates/bootstrap-handoff-template.md"
+          },
+          "before": "absent",
+          "id": "RLZ-TA29GV"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-FWKPFN",
+      "items": [],
+      "reason": "Introduces the scoped moment-specific handoff obligation under the approved packet. Proof facets describe assertions, not a fresh execution claim.",
+      "revision": 1,
+      "subject": "INV-TJADR1"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R45",
+          "packet": "requirements/MIK-R45-v2-bootstrap-produces-converted-onboarding.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v2"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "4f90514bfd9638960c4e5bffe878df58c2e763c8",
+            "content": "sha256:6ee103c8825c424ba619ceb729e8d59ca82a6bfb34444c6959c46c5bc4d171f7",
+            "locator": {
+              "kind": "symbol",
+              "name": "citation_fix_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/memory.py"
+          },
+          "before": {
+            "blob": "5643a838f58ef6bc9e501bf108feae5fd3f7e67a",
+            "content": "sha256:b5f86e3740df1827d88595d128202919c6cc2e879d1096b7b80d34cd8adfdd5e",
+            "locator": {
+              "kind": "symbol",
+              "name": "citation_fix_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/memory.py"
+          },
+          "id": "RLZ-HPM03Q"
+        },
+        {
+          "after": {
+            "blob": "4f90514bfd9638960c4e5bffe878df58c2e763c8",
+            "content": "sha256:d3f622fc4d9f4c5ecba385b0dbf495db20bdefab71304abd6bbdb5033341f253",
+            "locator": {
+              "kind": "symbol",
+              "name": "_citation_authority_refusal"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/memory.py"
+          },
+          "before": {
+            "blob": "5643a838f58ef6bc9e501bf108feae5fd3f7e67a",
+            "content": "sha256:c75638d3fba46f829216fa1fe0d84a571e51166c8edd7cf85a680b7c49e81423",
+            "locator": {
+              "kind": "symbol",
+              "name": "_citation_authority_refusal"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/memory.py"
+          },
+          "id": "RLZ-VVT227"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-G3R6VV",
+      "items": [
+        "sha256:8e72e1e7eb612516d1d28bad2b7ad3c1be5958069e07a31bc7122aed38f086eb"
+      ],
+      "reason": "Optional contract_path is forwarded to the application admission owner; the configured-authority exception catch remains narrow and preserves the same refusal payload. No other exception is newly translated and retired MCP migration is not restored. L45-M1-F05: only the retained citation_fix_payload consumes the refusal builder now; its same-ID rationale no longer claims the retired MCP migration caller.",
+      "revision": 2,
+      "subject": "INV-ZA39KM"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-G42X8V",
+      "items": [
+        "sha256:78674eb3c1bfcc4470214b545098c05f6ee1a8ea95b69d17501e1c4cfe4a4724"
+      ],
+      "reason": "Reviewed changed source extents and the existing card; the existing broader purpose/ownership contract remains correct. Source-specific current coverage is recorded in the updated package/test card, not a new route purpose.",
+      "subject": "onboarding:mcp/tests/test_tool_entry_point_controls.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-G4F8Y4",
+      "items": [
+        "sha256:be37aa4cefaa81170697f30687ac911f2377d89136f5fdf758c82a8ae2dcfec6",
+        "sha256:5ba0836dae18a34e7f238d3044b9c80d29dd2f0a9adedf5ab70b897af504a5fe",
+        "sha256:97d19276541d232efc2c3f716fe7b07e0a9b6fa0b7dc8d3dafa6e235d22390bc",
+        "sha256:ca55ea21c20d84c833976c582cc2694758d7dc01c6adac9564f50756d122ae56",
+        "sha256:8e4326b29fdfe3e6f32a1319b7e6977d6d83168d1fd1ab3961941653541fd34d",
+        "sha256:83982250901f8907896a1b15d7b6082d90a9d0e3dc68aaf206495a621437e7e6",
+        "sha256:0bacd3da7568593a40fa2f1276c3576651013ba5723d1c08de2e804feb609906",
+        "sha256:3598ef88db52880cb034e74b47a1c140b52e65e32854d8de9d2af7db8e20e4f8",
+        "sha256:e18775e780cb76effa11915c01b2cafe4c37994fa1ce9f3e6b1d4143d5474e9e"
+      ],
+      "reason": "Reviewed every changed extent against the canonical source skills/c-03-repo-bootstrap/SKILL.md. This source is canonical/generated instruction text, with no separately owned onboarding card at this path. The durable converted contract is authored in the visible package-copy card and rule-shaped knowledge; mirrors remain derived byte-equal copies, not another intent owner. No parallel hidden/canonical card is created.",
+      "subject": "onboarding:.cursor/skills/c-03-repo-bootstrap/SKILL.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-GFV99A",
+      "items": [
+        "sha256:a407bb89ac21b1b158df281dab3f5700f09793f0d45179ae52f8f67ca2e2c38e",
+        "sha256:e34fa4230f7c7cf85c90ac16d18e15238f298b19d03b13e27cbe39a91e52b71c"
+      ],
+      "reason": "Reviewed every changed extent against the canonical source skills/c-03-repo-bootstrap/templates/repo-overview-template.md. This source is canonical/generated instruction text, with no separately owned onboarding card at this path. The durable converted contract is authored in the visible package-copy card and rule-shaped knowledge; mirrors remain derived byte-equal copies, not another intent owner. No parallel hidden/canonical card is created.",
+      "subject": "onboarding:.openclaw/workspace/skills/c-03-repo-bootstrap/templates/repo-overview-template.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-GHCQHY",
+      "items": [
+        "sha256:b5d786214e3838b859c5e58b7826a7fad99e578d08ff621e4dcd78f1032b0688",
+        "sha256:08d965bfcb43b3f41aa7c88af71ff87fb951cb58e6dd17b9fdff8e51bf1b9e9e"
+      ],
+      "reason": "Reviewed every changed extent against the canonical source skills/c-03-repo-bootstrap/templates/repo-overview-template.md. This source is canonical/generated instruction text, with no separately owned onboarding card at this path. The durable converted contract is authored in the visible package-copy card and rule-shaped knowledge; mirrors remain derived byte-equal copies, not another intent owner. No parallel hidden/canonical card is created.",
+      "subject": "onboarding:skills/c-03-repo-bootstrap/templates/repo-overview-template.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-GNDRCA",
+      "items": [
+        "sha256:e927aca1571142bd20d56d36b982fce8d5d1f73ad44b088d6fdb9ce1f75e7a36",
+        "sha256:4334ae3b7203fb67f3474ebc4890f9a00d4c3dcd1a64ee88f0ce87d0b8f8b3bb",
+        "sha256:7563409157a5afedd530503c08e63df5c643a65f987b1724286ef1f1bb257953"
+      ],
+      "reason": "Reviewed every changed extent against the canonical source skills/c-03-repo-bootstrap/templates/route-local-overview-template.md. This source is canonical/generated instruction text, with no separately owned onboarding card at this path. The durable converted contract is authored in the visible package-copy card and rule-shaped knowledge; mirrors remain derived byte-equal copies, not another intent owner. No parallel hidden/canonical card is created.",
+      "subject": "onboarding:.pi/skills/c-03-repo-bootstrap/templates/route-local-overview-template.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-GSY8FW",
+      "items": [
+        "sha256:410c7e2e4803e374afb5aecd769e32f42760a0ada9c6e2b5ae46caf5bc22cf68",
+        "sha256:c669e305eef005a2a5140cbd3153fca92d27a2155c6ef3ef9e13ee7e68ec2fd5"
+      ],
+      "reason": "Reviewed every changed extent against the canonical source skills/c-03-repo-bootstrap/templates/repo-overview-template.md. This source is canonical/generated instruction text, with no separately owned onboarding card at this path. The durable converted contract is authored in the visible package-copy card and rule-shaped knowledge; mirrors remain derived byte-equal copies, not another intent owner. No parallel hidden/canonical card is created.",
+      "subject": "onboarding:.pi/skills/c-03-repo-bootstrap/templates/repo-overview-template.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-GTZ6RZ",
+      "items": [
+        "sha256:acb010a314e38c0dd182f22656d36d5e59dfe25b6d0b5fdf90a8dd537ba10f07",
+        "sha256:b4629a4412e41f44eef06ef81ff5d55fd5586d4f518bf8c2419073c806ca42ed",
+        "sha256:150dfe14c333fc1cd73166b48348b02cca06101d6b80c1c6a0b149c3cac1eda3",
+        "sha256:dda1f950a603704ed243aa7c0030ee687da2127a30c11ca56feb164598aa7078",
+        "sha256:381a09f87b3be73eaff5b761e3464284a52e3dfe3a37b364dbfdab4412f94c1a",
+        "sha256:04ba0ffbb40fd1b854569a2a82a65f6907c8f396202aacb40dee382da3e0aaba",
+        "sha256:d514f25851378e9cc8b909a56f77252db41db52687ca317ba64c7aee5107adf0",
+        "sha256:38b8334e8594cec55d1d2d1c67a1cb402ab6179bbb30de9e87578cf96225a6f5"
+      ],
+      "reason": "Reviewed every changed extent against the canonical source skills/l-01-agent-lifecycles/operations/bootstrap.md. This source is canonical/generated instruction text, with no separately owned onboarding card at this path. The durable converted contract is authored in the visible package-copy card and rule-shaped knowledge; mirrors remain derived byte-equal copies, not another intent owner. No parallel hidden/canonical card is created.",
+      "subject": "onboarding:.openclaw/workspace/skills/l-01-agent-lifecycles/operations/bootstrap.md"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-GXFD71",
+      "items": [
+        "sha256:a21ffc70fc37d24da88bac6100182461dcb3e85d09bb96bdd524c2c61ccc6856"
+      ],
+      "reason": "The detector import, legacyCards measurement/state and adoption gate implement MIK-R45 rule 3; the existing attributed-commit/validation invariant is not changed by this added first-adoption-only format boundary. The new rule-3 invariant and updated card own it, not the older baseline entries. Exact extents: [{\"base\": [662, 0], \"candidate\": [667, 1]}]",
+      "subject": "hunk:sha256:a21ffc70fc37d24da88bac6100182461dcb3e85d09bb96bdd524c2c61ccc6856"
+    },
+    {
+      "disposition": "still_rejected",
+      "id": "ROW-HCV02S",
+      "items": [
+        "sha256:3451fa2cb8e91172ec7d9ca763689411ef431106794e3fea8c22ec1088de8af8"
+      ],
+      "reason": "The changed fixer/index entry points still write cards/sidecars/indexes only. Neither commits nor writes knowledge records/database, so the rejected alternative's reconsider_when is not met. Narrow measured pre-baseline admission protects leaf-dependent roots; it is not a reversal of the conversion-writer exception.",
+      "subject": "reconsider:DEC-VMMJDN#1"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R45",
+          "packet": "requirements/MIK-R45-v2-bootstrap-produces-converted-onboarding.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v2"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "7c2c913f067df83ccb08c9f4721828096b4a6b48",
+            "content": "sha256:b2f617cdb552929185c4164ebb8a992f89da1d976317b2eb29e731dccc9b396a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/c-13-install-and-onboard/SKILL.md"
+          },
+          "before": {
+            "blob": "a1673082b9fb1d7b07998c4d9b12abd32b8f4220",
+            "content": "sha256:7083ddfec289274205becd71fc831c10f01fbf5f599bfeb48a4def5b9c80f17d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/c-13-install-and-onboard/SKILL.md"
+          },
+          "id": "RLZ-G2F9YV"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-J3EBMB",
+      "items": [
+        "sha256:e51493f4c0f1d0724aeefcdf16534c241601d28a57fd5d983ffe25956410326a"
+      ],
+      "reason": "Install ordering gains converted onboarding before adoption and foundation afterward; runtime_install remains installation, dashboard --daemon remains the one start and terminal provision remains explicit transition only. No host ownership changes.",
+      "revision": 1,
+      "subject": "INV-H7WNWS"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-JNE868",
+      "items": [
+        "sha256:50ecfa5321ac14af9f44733ae453f391cdbd69211dabce02abd0bde05aea9149",
+        "sha256:fd487cb0fe2b23500ff48b339eff09ba30730571dab3792eb37d3848c01c5436",
+        "sha256:6037a09723e575a31cb241fca69694a036fc06bc9b96d91f11e0ad6039f9f99c",
+        "sha256:ebca82d480cc97ff92890d6bc6c533bd9844e1c71868b2dfc0ba4dcb810e24da",
+        "sha256:2a98ef0e4f93a3ca3b608bdf151d93766cae2a212d7aca36f91ca60e8befdd8e",
+        "sha256:fc960e293337e6ff4aa8d8b62848a0062f206fa0c02da9b6eb6250cb3ee0532a",
+        "sha256:137c316129af0006b1bb57b5059331e64428df5d4b9e588c3fae73b21b696060",
+        "sha256:8a3f780e45e85f3030426bb82e04d97a16d6a34c3b8b3484dbde52e62dab8ca0"
+      ],
+      "reason": "Reviewed every changed extent against the canonical source skills/l-01-agent-lifecycles/operations/bootstrap.md. This source is canonical/generated instruction text, with no separately owned onboarding card at this path. The durable converted contract is authored in the visible package-copy card and rule-shaped knowledge; mirrors remain derived byte-equal copies, not another intent owner. No parallel hidden/canonical card is created.",
+      "subject": "onboarding:.cursor/skills/l-01-agent-lifecycles/operations/bootstrap.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-JP8A0B",
+      "items": [
+        "sha256:9dbf759fc74f0f1cc016e7347820eee81ca62fd858def8872eaf4118c773c89d"
+      ],
+      "reason": "Reviewed every changed extent against the canonical source skills/c-03-repo-bootstrap/templates/bootstrap-handoff-template.md. This source is canonical/generated instruction text, with no separately owned onboarding card at this path. The durable converted contract is authored in the visible package-copy card and rule-shaped knowledge; mirrors remain derived byte-equal copies, not another intent owner. No parallel hidden/canonical card is created.",
+      "subject": "onboarding:.claude/skills/c-03-repo-bootstrap/templates/bootstrap-handoff-template.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-K3TSSY",
+      "items": [
+        "sha256:630ce838ac14bc5dd9a9461b7a8f9840b12c3f102a47803bd01043b9ad90847d"
+      ],
+      "reason": "Current root account has no mandatory-contract, foundation-before-baseline or transient-onboarding-bootstrap prescription. Historical bootstrap overview at line 316 remains compatible with a root-only result. L45 changes setup/card authoring, not the retained L74 runtime report permission/retention boundary; do not conflate the onboarding/bootstrap audit trail with tool reports or rewrite the archival feature row as operative.",
+      "subject": "onboarding:overview"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-K95HTS",
+      "items": [
+        "sha256:722b61de878d271189ff20d6df84a8f3be036c022254e32bbc6386172811ddb5",
+        "sha256:3d05e60f647f05917d04c8f700a41927ad636da075ebae197b6d158534aede3a",
+        "sha256:91f1ac4c5b3ea9a63b856d726a1e625f467db1a6e42c837166dd1399fe50902b",
+        "sha256:5b28240c5a05ae7cb8192ef10857face3373401776bcf8155760093f6b060fe4",
+        "sha256:c39ef77053585a9828de7d07864db4c2525843d1c6087361c271b3134025e2a8",
+        "sha256:3ecd19589df9dd890d6c6c5b856cf2eee9cfc5775b19f5230c42480c1457a06a",
+        "sha256:322e793a541732d721f388588afe9da9547a2f0872034386713b5b844052805e",
+        "sha256:c84948692d2a233a5f07ac259461265f3692f996ee2b95be28acad0af56d9f5f",
+        "sha256:0c0a54257dfb70a3c3e526b63b3b3e2fc588865434d766dff1aa4c84faf2c838"
+      ],
+      "reason": "Reviewed every changed extent against the canonical source skills/c-03-repo-bootstrap/SKILL.md. This source is canonical/generated instruction text, with no separately owned onboarding card at this path. The durable converted contract is authored in the visible package-copy card and rule-shaped knowledge; mirrors remain derived byte-equal copies, not another intent owner. No parallel hidden/canonical card is created.",
+      "subject": "onboarding:.pi/skills/c-03-repo-bootstrap/SKILL.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-KCT37Q",
+      "items": [
+        "sha256:63b2cb2f39ff7fcf0131b47181e955ee16662d289b3190f9e38a6f2659d8d31b",
+        "sha256:5fbf9178463e73db3bdc18542e9cd3de04447541deb3a3e9a2e436c134800d49",
+        "sha256:703c588068d294a89295feec9b79c36800fce841d52e45333b5bba92dee159c9",
+        "sha256:390c90fd1af91aa37301957b7f036cd7d118360a6cbbc76087f4e005e16ce01c",
+        "sha256:c0f0905087406f439be9a6ea864683b5c23503e369127620431d956967ebf4cc",
+        "sha256:47903b897ca08d8677aa7bc6c96a2cb44f7442e898d1971f18c9dcf43bc61173",
+        "sha256:606e1787d84163e85929dd22a3485f8e332cd0e1a369a0da06733d26a77dd0fe",
+        "sha256:ac98ebcaee24c579d3ea15ccd036ef30275c66bd5b0ceee8f74210bc06db9a09",
+        "sha256:40920a5c8013f103eb3da58087be843f2b772d040fc8a2ccadfe068967703b56"
+      ],
+      "reason": "Reviewed every changed extent against the canonical source skills/c-03-repo-bootstrap/SKILL.md. This source is canonical/generated instruction text, with no separately owned onboarding card at this path. The durable converted contract is authored in the visible package-copy card and rule-shaped knowledge; mirrors remain derived byte-equal copies, not another intent owner. No parallel hidden/canonical card is created.",
+      "subject": "onboarding:.hermes/skills/c-03-repo-bootstrap/SKILL.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-M3A9RR",
+      "items": [
+        "sha256:eeea15e2a74a6f12bd30f04b6c304ee10264b4481df84471478ea62fa4869b24"
+      ],
+      "reason": "Reviewed every changed extent against the canonical source skills/c-03-repo-bootstrap/templates/curator-review-template.md. This source is canonical/generated instruction text, with no separately owned onboarding card at this path. The durable converted contract is authored in the visible package-copy card and rule-shaped knowledge; mirrors remain derived byte-equal copies, not another intent owner. No parallel hidden/canonical card is created.",
+      "subject": "onboarding:.claude/skills/c-03-repo-bootstrap/templates/curator-review-template.md"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-M5TY43",
+      "items": [
+        "sha256:421e60619ea3b9c38e28f340f60ad0449ddafb6a6a20eaacdd6dc3f6175a859f"
+      ],
+      "reason": "The detector import, legacyCards measurement/state and adoption gate implement MIK-R45 rule 3; the existing attributed-commit/validation invariant is not changed by this added first-adoption-only format boundary. The new rule-3 invariant and updated card own it, not the older baseline entries. Exact extents: [{\"base\": [697, 1], \"candidate\": [702, 1]}]",
+      "subject": "hunk:sha256:421e60619ea3b9c38e28f340f60ad0449ddafb6a6a20eaacdd6dc3f6175a859f"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-MNQMGG",
+      "items": [
+        "sha256:92fdf2ae4d36eb9f2b2a96de4c7d18d6dbc3a12836d4227b8c95e08c69e9d89c",
+        "sha256:4966c64cec699bdaf2a7e247a601b2b614722ccf3d76880cedf8df026461d507"
+      ],
+      "reason": "Reviewed every changed extent against the canonical source skills/c-03-repo-bootstrap/templates/repo-overview-template.md. This source is canonical/generated instruction text, with no separately owned onboarding card at this path. The durable converted contract is authored in the visible package-copy card and rule-shaped knowledge; mirrors remain derived byte-equal copies, not another intent owner. No parallel hidden/canonical card is created.",
+      "subject": "onboarding:.cursor/skills/c-03-repo-bootstrap/templates/repo-overview-template.md"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-NX259E",
+      "items": [
+        "sha256:d2649f0705305ed7cad4beb079fbed60f72a4a99b8cf009ac910860997750495"
+      ],
+      "reason": "The control switches its omitted required field to repo_id, keeping argument-validation classification while contract_path becomes optional. No separate invariant beyond the preserved delivered-answer/validation distinction is required. Exact extents: [{\"base\": [297, 1], \"candidate\": [297, 2]}]",
+      "subject": "hunk:sha256:d2649f0705305ed7cad4beb079fbed60f72a4a99b8cf009ac910860997750495"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-P2DT6Q",
+      "items": [
+        "sha256:3e0e9238139a922469408c3bc4f5fb935638d7a5820da856188f4a159d7651a1",
+        "sha256:0b19891d00d4060c22dfdb1a928046e7192c2e4f34aab35b1aca9ffc38cda215"
+      ],
+      "reason": "Reviewed every changed extent against the canonical source skills/c-03-repo-bootstrap/templates/repo-overview-template.md. This source is canonical/generated instruction text, with no separately owned onboarding card at this path. The durable converted contract is authored in the visible package-copy card and rule-shaped knowledge; mirrors remain derived byte-equal copies, not another intent owner. No parallel hidden/canonical card is created.",
+      "subject": "onboarding:.hermes/skills/c-03-repo-bootstrap/templates/repo-overview-template.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-P63VKT",
+      "items": [
+        "sha256:b45fd421a4cc3128ca151ba3f8a1da2eaf9c365cab6b80effbca507be78fd17a",
+        "sha256:a10107b1e6c4e166b88972302a0ed0ef1b353010cfb5cdfedc81bcdfcfa15285",
+        "sha256:5a701ba5b4776b866558752648d8345258e04d6551de899963e21753f80e9290",
+        "sha256:93abbfc5b1a415900390be181904d08d23761e7f7a800c11099f23de60872817",
+        "sha256:4a2e9596f552606d4d9c39d2ace171b68735842383280c87b4870cd44d5e6c7e",
+        "sha256:46637d119ac5e4f50dc4877b1f1a7f30595fe06b238a252853d7348cde5184f6",
+        "sha256:ccce8b04deaab393cb508e73d78d199e8ebe9358f41961cca05ca58127c5b763",
+        "sha256:12ab87772e7ef7e863905ee74ea3f45942c8dc90f327906056a7400b7b71a985"
+      ],
+      "reason": "Reviewed every changed extent against the canonical source skills/l-01-agent-lifecycles/operations/bootstrap.md. This source is canonical/generated instruction text, with no separately owned onboarding card at this path. The durable converted contract is authored in the visible package-copy card and rule-shaped knowledge; mirrors remain derived byte-equal copies, not another intent owner. No parallel hidden/canonical card is created.",
+      "subject": "onboarding:.github-vscode/skills/l-01-agent-lifecycles/operations/bootstrap.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-Q7R398",
+      "items": [
+        "sha256:3be08079fc186f2dd650221c454a9e12150405662e94d7d06c26de558003a287",
+        "sha256:5963791030aa7025b01470d05dc31527e96de1ab9cd9e1af0447be7c4e5fe386",
+        "sha256:4d8b397d85afd090e9e13483a8b2ed72a1e74b56e4f577e8d1bb4af7211b7a62"
+      ],
+      "reason": "Reviewed every changed extent against the canonical source skills/c-03-repo-bootstrap/templates/route-local-overview-template.md. This source is canonical/generated instruction text, with no separately owned onboarding card at this path. The durable converted contract is authored in the visible package-copy card and rule-shaped knowledge; mirrors remain derived byte-equal copies, not another intent owner. No parallel hidden/canonical card is created.",
+      "subject": "onboarding:skills/c-03-repo-bootstrap/templates/route-local-overview-template.md"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-QCT0AE",
+      "items": [
+        "sha256:46f30498e474c4b91c56be373545f57bc6d0b3bd45e29413149e913f276c193d"
+      ],
+      "reason": "The control switches its omitted required field to repo_id, keeping argument-validation classification while contract_path becomes optional. No separate invariant beyond the preserved delivered-answer/validation distinction is required. Exact extents: [{\"base\": [303, 1], \"candidate\": [304, 1]}]",
+      "subject": "hunk:sha256:46f30498e474c4b91c56be373545f57bc6d0b3bd45e29413149e913f276c193d"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-63Z0MN",
+          "revision": 1
+        },
+        {
+          "id": "INV-DKN3CG",
+          "revision": 2
+        },
+        {
+          "id": "INV-NNQR91",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-QH517T",
+      "items": [
+        "sha256:8e7e19a836a19cb5287fbb87dcc8235a16713f275254baffa5b6f12f4204e586"
+      ],
+      "reason": "Examined all three members: launcher untouched, accepted settings/readers unchanged, canonical text propagated to all 72 changed mirrors. Bootstrap setup order adds no joint launcher guarantee; existing guarantee, routes and membership preserved.",
+      "revision": 1,
+      "subject": "FAM-GDXSJG"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-QW87TX",
+      "items": [
+        "sha256:4d37bf8a1569d1d9a45152696870af9f42f14418fe2a6e4f942e6a03490ba5d1",
+        "sha256:0a73e0cb2024c058b3c49c549d9ffae95224ef4d9c8d00bcaaa2dd8a2096c0b1"
+      ],
+      "reason": "Reviewed every changed extent against the canonical source skills/c-03-repo-bootstrap/templates/file-card-template.md. This source is canonical/generated instruction text, with no separately owned onboarding card at this path. The durable converted contract is authored in the visible package-copy card and rule-shaped knowledge; mirrors remain derived byte-equal copies, not another intent owner. No parallel hidden/canonical card is created.",
+      "subject": "onboarding:.openclaw/workspace/skills/c-03-repo-bootstrap/templates/file-card-template.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-QWVNAY",
+      "items": [
+        "sha256:7bc29275cac1e4963204f612db3ce07d1f5b6e3a8de5acb2c2759ac49d1fe992",
+        "sha256:97df421a06478bfea1d2762b6b06b025cdc72841191acc87148bdf86030fde9f",
+        "sha256:6004a8a0cd7d7c6e2adf5773dc930adda3b06ccc4088065de9a008e51d9c9656",
+        "sha256:175666e4ff9a9f705aaa786a6a6a4088fa13f57809efa04954f1370d2db15be7",
+        "sha256:435de45db9c5ea1626709127c5ac35fe5de62964e1e3783468d01bcc79c0e701",
+        "sha256:3c7d8da5e78116a7d12363af22e1234a5dcac8c7d6f28078de6c89a5be48adf5",
+        "sha256:e176f5336607bdb1e07c824b569b869ba6f4fee6e1e03fd2b72aefbdd8da93de",
+        "sha256:ddfd22c121e44e3228f67cad02eeea86362f8c68c28bcadb23ccbaa7c91a18ef",
+        "sha256:ea661f6911411a0d198c6545bd029f53798cbaded9b9e92df32385d631d42afa"
+      ],
+      "reason": "Reviewed every changed extent against the canonical source skills/c-03-repo-bootstrap/SKILL.md. This source is canonical/generated instruction text, with no separately owned onboarding card at this path. The durable converted contract is authored in the visible package-copy card and rule-shaped knowledge; mirrors remain derived byte-equal copies, not another intent owner. No parallel hidden/canonical card is created.",
+      "subject": "onboarding:.codex/skills/c-03-repo-bootstrap/SKILL.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-R0YTXR",
+      "items": [
+        "sha256:18277dff5e0627df9f08114ef1123f842a81b8467d1f380374c80dc9cac47f5f",
+        "sha256:52129fce367767e8d8a93f1c410ffe09f32d4489ef6ed7f5bbcd78c1ba3c45e3",
+        "sha256:c61d219015bf4bdcd245da60b1174485c05ee78d09854cbf37a3531433062b6a",
+        "sha256:fc57a28406a9317b93648bd6c67388ccb409673862c81d6c7b3a0cfecaa7ec7d",
+        "sha256:eff220c7b6805a8c2a0ce3fca5a347abaaaf329fd7697b8cb14b18af0e1c8409",
+        "sha256:b8bb6a34e93e99be92f0fca100ab4957e9216cc5e5dfce825c1f02aff04a8f94",
+        "sha256:5d6b907136e1ec4efd51d963dd36a6bfc476168941a06c1eec89acbbba770db9",
+        "sha256:53cd5e9be766b84fbde575249e2e36e443dff21778cf6661c204faa5ed061ec1",
+        "sha256:10b37d377d868cd6aaeeb4aec6be5417370f363f259f58c2b56d03ed47060d0a"
+      ],
+      "reason": "Reviewed every changed extent against the canonical source skills/c-03-repo-bootstrap/SKILL.md. This source is canonical/generated instruction text, with no separately owned onboarding card at this path. The durable converted contract is authored in the visible package-copy card and rule-shaped knowledge; mirrors remain derived byte-equal copies, not another intent owner. No parallel hidden/canonical card is created.",
+      "subject": "onboarding:.openclaw/workspace/skills/c-03-repo-bootstrap/SKILL.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-RN79PS",
+      "items": [
+        "sha256:8c346389d37d30d926923b57b9f733a6eb95d3a7fea7722714de8d40bbfa472b",
+        "sha256:3b4814aef1d76f1ab3efc3e288d4c43eeaa617d0f73349918df1eba9074fa75f",
+        "sha256:32c3787d88bfa0b89a9905b88468e976aefde9e3933ae430188d157be828e61a",
+        "sha256:609a62480a1cf709ba723d3329e8b99f9115a96a789d281d36811eb0e413a4bd",
+        "sha256:a218f0f10c29f9d3da07eebd3a302fd5770bdbcd0b41ce16c43b9fe55229b2b4",
+        "sha256:58a8069e519ef6576b613d4dc8e810f1be158264b47bd3f60f54a5db1e8a17ab",
+        "sha256:1839df53cfddef57c5a4addf74ece6a7b46ada79e712ffa38d52027e80198c31",
+        "sha256:08ba57d0c3646edd955b966d59376ae33a5e96cfe901f32b8d5629dccc3cf6de",
+        "sha256:04874b3a2d7602c5c4ea53875022c577eb8c64b158d0422b284ae4529e18a2b4"
+      ],
+      "reason": "Reviewed every changed extent against the canonical source skills/c-03-repo-bootstrap/SKILL.md. This source is canonical/generated instruction text, with no separately owned onboarding card at this path. The durable converted contract is authored in the visible package-copy card and rule-shaped knowledge; mirrors remain derived byte-equal copies, not another intent owner. No parallel hidden/canonical card is created.",
+      "subject": "onboarding:.agents/skills/c-03-repo-bootstrap/SKILL.md"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-SW8XCC",
+      "items": [
+        "sha256:e1cc8dedbd46ba5348b8d74bc59f128a0755d776f4a396c1c6950be535feda18"
+      ],
+      "reason": "The detector import, legacyCards measurement/state and adoption gate implement MIK-R45 rule 3; the existing attributed-commit/validation invariant is not changed by this added first-adoption-only format boundary. The new rule-3 invariant and updated card own it, not the older baseline entries. Exact extents: [{\"base\": [47, 0], \"candidate\": [48, 1]}]",
+      "subject": "hunk:sha256:e1cc8dedbd46ba5348b8d74bc59f128a0755d776f4a396c1c6950be535feda18"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-TCABB3",
+      "items": [
+        "sha256:3f32729471666e0525f1b92f8ca3cbd38ac44ee89fe934066df782f1d1428eb8",
+        "sha256:f5b60b3b202ad2cc42e23f39219eb5181a4cb60467746ebac317c3a2ebaaf912",
+        "sha256:e0431dac389461ee4c18f488148bd9b132d3b4f525df0c7f1b3a41cfb7527c0d"
+      ],
+      "reason": "Reviewed every changed extent against the canonical source skills/c-03-repo-bootstrap/templates/route-local-overview-template.md. This source is canonical/generated instruction text, with no separately owned onboarding card at this path. The durable converted contract is authored in the visible package-copy card and rule-shaped knowledge; mirrors remain derived byte-equal copies, not another intent owner. No parallel hidden/canonical card is created.",
+      "subject": "onboarding:.codex/skills/c-03-repo-bootstrap/templates/route-local-overview-template.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-TDMBQ7",
+      "items": [
+        "sha256:a9d6c880d9163d432db76b9a5d69d46f893a88bbe46be1d6e0bdde34af3f8ecc"
+      ],
+      "reason": "Reviewed every changed extent against the canonical source skills/c-03-repo-bootstrap/templates/curator-review-template.md. This source is canonical/generated instruction text, with no separately owned onboarding card at this path. The durable converted contract is authored in the visible package-copy card and rule-shaped knowledge; mirrors remain derived byte-equal copies, not another intent owner. No parallel hidden/canonical card is created.",
+      "subject": "onboarding:.cursor/skills/c-03-repo-bootstrap/templates/curator-review-template.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-TKQ3ZP",
+      "items": [
+        "sha256:dd6daba7d1e6bfd9d00d318f74509c0df5be9ff5e9869e51a26a7ef6b783e8e3",
+        "sha256:0d9c20ccffd1bd362e767000dc73299cc7321134a31a578cf47327a9292386cd"
+      ],
+      "reason": "Reviewed every changed extent against the canonical source skills/c-03-repo-bootstrap/templates/file-card-template.md. This source is canonical/generated instruction text, with no separately owned onboarding card at this path. The durable converted contract is authored in the visible package-copy card and rule-shaped knowledge; mirrors remain derived byte-equal copies, not another intent owner. No parallel hidden/canonical card is created.",
+      "subject": "onboarding:skills/c-03-repo-bootstrap/templates/file-card-template.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-TN5PPD",
+      "items": [
+        "sha256:837d9e8ff407b15ae3dd16fa78841a829fa8f802562d1b3b0db450949b3a7053",
+        "sha256:d4dc9262f8f095b4aee9cb9791b7c396385105200c7b76f3d0ce80bb8a1af41a",
+        "sha256:2ae7ad0ea217eee2fd83f4c60936fffe1eed3aa46170ffe7fece4a938c8eca48"
+      ],
+      "reason": "Reviewed every changed extent against the canonical source skills/c-03-repo-bootstrap/templates/route-local-overview-template.md. This source is canonical/generated instruction text, with no separately owned onboarding card at this path. The durable converted contract is authored in the visible package-copy card and rule-shaped knowledge; mirrors remain derived byte-equal copies, not another intent owner. No parallel hidden/canonical card is created.",
+      "subject": "onboarding:.openclaw/workspace/skills/c-03-repo-bootstrap/templates/route-local-overview-template.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-TSND7E",
+      "items": [
+        "sha256:f8faa18d766987b1028e8d326ad5cb157e44928629cf9b3f8a637799ed757043",
+        "sha256:7192de5fc83465b4b5fee918520a2ed1cb689535f57bcb21ae8b17916ee6eb58",
+        "sha256:116d36bb0bebabb35a9907a4c511bb921b7f3f62fc94a92fd50a910921e008f3"
+      ],
+      "reason": "Reviewed every changed extent against the canonical source skills/c-03-repo-bootstrap/templates/route-local-overview-template.md. This source is canonical/generated instruction text, with no separately owned onboarding card at this path. The durable converted contract is authored in the visible package-copy card and rule-shaped knowledge; mirrors remain derived byte-equal copies, not another intent owner. No parallel hidden/canonical card is created.",
+      "subject": "onboarding:.github-vscode/skills/c-03-repo-bootstrap/templates/route-local-overview-template.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-VR1AAJ",
+      "items": [
+        "sha256:b9c683f13cded70039add4315cc1a34f8487950fa0500e83152995bc16732519",
+        "sha256:d76b72be1695db1ba72c76b3a2f790c37b47322bb8df34a84a347f96eafc07d1",
+        "sha256:1fecf1b806369c22703ec635db7b1ccc272687d77b94ae1cf50a1605e818b665",
+        "sha256:cbf43a0c95565dcf98fe4eeb47d6ba8f55e18d79285f442420b275189d3cf25b",
+        "sha256:71bc04fb53485c0f6e44076e784a4a7b698bd2537448fca4287d13b3798513af",
+        "sha256:da6cd6b42e79bfc2d0faee4898315085fb41b95343687b9772b47a7b24080cad",
+        "sha256:960301edeb3585ad4289f51183a96490c233752b514c2b13e099c272504affda",
+        "sha256:21ad460741b9420ae9a382f6e46e78e27aa9b168e6fb7af6a0010c1251890a77",
+        "sha256:841c110d171185cda1904e8006f88300ba0fb3b94fad9f85dba3054b93ded3b9"
+      ],
+      "reason": "Reviewed every changed extent against the canonical source skills/c-03-repo-bootstrap/SKILL.md. This source is canonical/generated instruction text, with no separately owned onboarding card at this path. The durable converted contract is authored in the visible package-copy card and rule-shaped knowledge; mirrors remain derived byte-equal copies, not another intent owner. No parallel hidden/canonical card is created.",
+      "subject": "onboarding:.github-vscode/skills/c-03-repo-bootstrap/SKILL.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-W8F3A3",
+      "items": [
+        "sha256:8a070213e3761417002d3d582b7d00611a6e8bcc564476fa670650c45d2ef0bb"
+      ],
+      "reason": "Reviewed every changed extent against the canonical source skills/c-03-repo-bootstrap/templates/curator-review-template.md. This source is canonical/generated instruction text, with no separately owned onboarding card at this path. The durable converted contract is authored in the visible package-copy card and rule-shaped knowledge; mirrors remain derived byte-equal copies, not another intent owner. No parallel hidden/canonical card is created.",
+      "subject": "onboarding:.agents/skills/c-03-repo-bootstrap/templates/curator-review-template.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-WNXK5J",
+      "items": [
+        "sha256:893a0e51e7169360c9f3d42318bedc75f9ec4d87596895bf38aebecee59efa81",
+        "sha256:27368b957f455f33cb74100a490b94ed2e052720b0b079dc48a3b876f46edeb8",
+        "sha256:a7a70cbc706fe268a11ea1a97531d6d057c00f5896894a3c56f19d5750779c05",
+        "sha256:54003442cb2fe0f2abb42c14c310e1785719dd00aae71f18fdcfcd7aa776f36f",
+        "sha256:2461d8c56f167fcd12b4d48bea229c5a9ecc15de780612f6af0e0f08bdbf3a19",
+        "sha256:02a893f8bea7f3612f3c742be5331c672c69118542c9bdac19fab325a58b797c",
+        "sha256:337421de36b623610829d2df4d8e0a1e309ba38c54500fdd0a6a8fd1d1775715",
+        "sha256:f54d26913a639a77de26bc8d67a4cd10353ffe884b9b62f38114566afbc7df10"
+      ],
+      "reason": "Reviewed every changed extent against the canonical source skills/l-01-agent-lifecycles/operations/bootstrap.md. This source is canonical/generated instruction text, with no separately owned onboarding card at this path. The durable converted contract is authored in the visible package-copy card and rule-shaped knowledge; mirrors remain derived byte-equal copies, not another intent owner. No parallel hidden/canonical card is created.",
+      "subject": "onboarding:.codex/skills/l-01-agent-lifecycles/operations/bootstrap.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-WVB5JK",
+      "items": [
+        "sha256:d8235df3da99b04193309deea4dbe7447a6bfc71fbd25ad78bbb969c99facee2",
+        "sha256:a35be97b79f53dd9e53ca6436b2548f8bac91688ae067a0f56380ce816b5b2cd",
+        "sha256:28e3cb3597d41c109664730ff96fdd9fe068c1abdbc5f5cde294a8df0e20605e",
+        "sha256:5f1e089d7bfdbce03983799ac870d703ae6ba1c00a7113dcc316f270d6a9ff74",
+        "sha256:14b5b904a4a7f443031768f0c28e4c7b3f7917478c6dd74d4b3422c1c13ea987",
+        "sha256:d800a2f511e48f499464c1b08273231463d1b1f818cba14d8e456f35a76e1752",
+        "sha256:004483034136db7f5a1204f5fb63206dbf9d01ddc844e22417f8a4d68bf0d2ee",
+        "sha256:87ac19c1170b95edbfc92d99c22869f17c6953da5f4ec1b62a9f59495e3c5288"
+      ],
+      "reason": "Reviewed every changed extent against the canonical source skills/l-01-agent-lifecycles/operations/bootstrap.md. This source is canonical/generated instruction text, with no separately owned onboarding card at this path. The durable converted contract is authored in the visible package-copy card and rule-shaped knowledge; mirrors remain derived byte-equal copies, not another intent owner. No parallel hidden/canonical card is created.",
+      "subject": "onboarding:.agents/skills/l-01-agent-lifecycles/operations/bootstrap.md"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R45",
+          "packet": "requirements/MIK-R45-v2-bootstrap-produces-converted-onboarding.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v2"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "7656737d8a85082c04251a5d697b1278db2e051a",
+            "content": "sha256:1894b8740451d7a8cba3e630bd6f5f5c78454690585dcdbb593a46cc4ca64fb3",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "94cc38ce27dcb9da546d651241fb271f366268bb",
+            "content": "sha256:ac705e058d346b0a7fc90b95ea99f374a4f34de27116debd35c7ec7e91c7a82e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-GRTJG0"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-WVTRT1",
+      "items": [
+        "sha256:6ae3a9290705b96d6b8a8ad924f5f1c7a420bd60c7847ed08772fa06b719bb1a"
+      ],
+      "reason": "Supported post-sync landed/candidate composition: Two new consumer rows register the converted-onboarding module. This does not undo the documented historical union-merge recovery or change evidence ownership; the historical incident statement is not a current population count. Re-derived every same-ID cover from the new landed source to current working lines; no meaning, role or rationale change. The next supported base changed the catalog; renew the full-file same-ID cover from current source, retaining its historical incident meaning, role and rationale.",
+      "revision": 1,
+      "subject": "INV-MSCRAN"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-WW4XPJ",
+      "items": [
+        "sha256:7c81891fc43c58a625fdf05b840f8dde3ff9ff0639f521e0ab861e5cb1bc5aee",
+        "sha256:5f2a549c8712f2e0379f03c33c6f72a65aa2613a6f9aab18c436ac4e8f1306b7",
+        "sha256:0d96f358b1048329d536800871d59e9120ff20fd52690cef28722d2791022031",
+        "sha256:518bc0f7f6b0446fbbbad0922b759d162b3e4bfe14ed06be119e8a67866b4da7",
+        "sha256:93e39cb1e1f2f3254645f84b25bc74dfe37bc24436db87fba12f80a1f76fb903",
+        "sha256:9d7c5bacbf4ae91c91708cb4e7f20bca44fd34796c31275d195f5b61d48aa675",
+        "sha256:a287b5dc8b64e7ab9507e87ebe83c3cba1dca736847f74e8f3364da1aebd0a3a",
+        "sha256:d94a8691655fad4f44fc7fc29572f2f7e26838c09374a505acf0816eeba474df"
+      ],
+      "reason": "Reviewed every changed extent against the canonical source skills/c-13-install-and-onboard/SKILL.md. This source is canonical/generated instruction text, with no separately owned onboarding card at this path. The durable converted contract is authored in the visible package-copy card and rule-shaped knowledge; mirrors remain derived byte-equal copies, not another intent owner. No parallel hidden/canonical card is created.",
+      "subject": "onboarding:.hermes/skills/c-13-install-and-onboard/SKILL.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-YD71YV",
+      "items": [
+        "sha256:466c1562cb1ce980bca2b4008589ab1f88300d344d6c09d6ddcf27a041e1c4d7",
+        "sha256:1a689734c129b24490600305b8516c4d05c1afe1b2e3aa2cc34b03331c5a85f3"
+      ],
+      "reason": "Reviewed every changed extent against the canonical source skills/c-03-repo-bootstrap/templates/file-card-template.md. This source is canonical/generated instruction text, with no separately owned onboarding card at this path. The durable converted contract is authored in the visible package-copy card and rule-shaped knowledge; mirrors remain derived byte-equal copies, not another intent owner. No parallel hidden/canonical card is created.",
+      "subject": "onboarding:.codex/skills/c-03-repo-bootstrap/templates/file-card-template.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-Z2JB0G",
+      "items": [
+        "sha256:dc11018586f077ec1d988709b5cea74c918dda6e740a4ada8edf80680748c3b6",
+        "sha256:f4fa7044c1a0535215211dd7d122a177d37c9b5ed8080c212c617103d9253fdf",
+        "sha256:d8928111c72b536a2db5bd2ee7535731db3d2de4c0338368dcfee9267142c88a",
+        "sha256:24150d9b1568c12e7f42576d688d73a1b3ca04be499b4f914054e751cafca732",
+        "sha256:b7f72056c6cb2597e74cdb7274ea289977d5a3141eed5aecb4f07f7f5aeb6a90",
+        "sha256:289dc4d8a39318947ae11ef78685c7204570dd7c2a148c8b677cf9bcfc2ab4b1",
+        "sha256:d2f4ac2d563067d04188c250c4774043f113b4a30d292364b0e23c5903f5bd3b",
+        "sha256:06277a600a426efee97cc123f0e61f476fe02bd69a39fa5606d1700b8a4b767d"
+      ],
+      "reason": "Reviewed every changed extent against the canonical source skills/c-13-install-and-onboard/SKILL.md. This source is canonical/generated instruction text, with no separately owned onboarding card at this path. The durable converted contract is authored in the visible package-copy card and rule-shaped knowledge; mirrors remain derived byte-equal copies, not another intent owner. No parallel hidden/canonical card is created.",
+      "subject": "onboarding:.agents/skills/c-13-install-and-onboard/SKILL.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-Z64TVG",
+      "items": [
+        "sha256:e427479360f88a86e92bc60d0087c75b2bf539920ffb7afbe84cb6896a2941ec",
+        "sha256:413cfe6bedcaf90e27d30f940da75e1688b9dc75b4c02e3a5d33ad15264b244d"
+      ],
+      "reason": "Reviewed every changed extent against the canonical source skills/c-03-repo-bootstrap/templates/repo-overview-template.md. This source is canonical/generated instruction text, with no separately owned onboarding card at this path. The durable converted contract is authored in the visible package-copy card and rule-shaped knowledge; mirrors remain derived byte-equal copies, not another intent owner. No parallel hidden/canonical card is created.",
+      "subject": "onboarding:.codex/skills/c-03-repo-bootstrap/templates/repo-overview-template.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-ZBT7MD",
+      "items": [
+        "sha256:07dce787a072208e2090955b48a9699612abaf6afb01f2c1de85ea72442aec84"
+      ],
+      "reason": "Reviewed every changed extent against the canonical source skills/c-03-repo-bootstrap/templates/bootstrap-handoff-template.md. This source is canonical/generated instruction text, with no separately owned onboarding card at this path. The durable converted contract is authored in the visible package-copy card and rule-shaped knowledge; mirrors remain derived byte-equal copies, not another intent owner. No parallel hidden/canonical card is created.",
+      "subject": "onboarding:skills/c-03-repo-bootstrap/templates/bootstrap-handoff-template.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-ZDYQJB",
+      "items": [
+        "sha256:2cfeba89d0ce0e979c7289e76d1e443d64e8a08bf7c4251cb3023dc6c39ca5b7",
+        "sha256:d873109bccaa821b037bc662ecd066e3578b5b817f5a5cf94aed2b0af238263d",
+        "sha256:dcd4aa2aea034c02c015e07109e8fc8bea629290fcb0f2004d21b2f6fa63d088",
+        "sha256:f4ae538a875f356cac4e04e5b14fe0bbe623caa4e8239ee410f9d0091752fc0a",
+        "sha256:82c2f401aa2a128a3b32b7c031d73750d33f50bf31fd6093be0086ecd12ba7fd",
+        "sha256:28b11aeb80ead5d5a8ecbef07c1349777e25f63f3993dd36db090c1ddf6279b4",
+        "sha256:d9709efcb99f77941b0f667d69b564746c908fc234fed7bf7f495f15d34d240a",
+        "sha256:c48d543f1dd64f0f5b871c20692792b05c33143470a86f275c03f2cfce0e8736"
+      ],
+      "reason": "Reviewed every changed extent against the canonical source skills/l-01-agent-lifecycles/operations/bootstrap.md. This source is canonical/generated instruction text, with no separately owned onboarding card at this path. The durable converted contract is authored in the visible package-copy card and rule-shaped knowledge; mirrors remain derived byte-equal copies, not another intent owner. No parallel hidden/canonical card is created.",
+      "subject": "onboarding:.claude/skills/l-01-agent-lifecycles/operations/bootstrap.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-ZJHYZE",
+      "items": [
+        "sha256:f40ec76dd8e3e62ae7d539ede02bf5656c03eac8bb1138f4a1615819abbbd92c"
+      ],
+      "reason": "Reviewed every changed extent against the canonical source skills/c-03-repo-bootstrap/templates/curator-review-template.md. This source is canonical/generated instruction text, with no separately owned onboarding card at this path. The durable converted contract is authored in the visible package-copy card and rule-shaped knowledge; mirrors remain derived byte-equal copies, not another intent owner. No parallel hidden/canonical card is created.",
+      "subject": "onboarding:.openclaw/workspace/skills/c-03-repo-bootstrap/templates/curator-review-template.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-ZT2CW7",
+      "items": [
+        "sha256:5886b820b69ef2f7d4ef1c9c5116d8165b547c731ca738288210d0317e02ffdb"
+      ],
+      "reason": "The flat-schema and converted document behavior remain true; historical flat-signature wording is not a current required-contract promise. New optional contract_path and two-admission descriptions need disclosure if parent expands the current route account, but no mandatory-contract claim is operative here. Preserve historical [23] custody rather than presenting its old line range as current evidence. Validation and stale-only drift acceptance remain unchanged by the independent legacy-card gate.",
+      "subject": "onboarding:mcp/src/agents_remember/mcp/registration/overview"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

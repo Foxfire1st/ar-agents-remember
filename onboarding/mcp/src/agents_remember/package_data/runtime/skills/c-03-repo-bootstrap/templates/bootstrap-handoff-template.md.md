@@ -8,7 +8,7 @@ This template defines the final or pause-point bootstrap handoff artifact, inclu
 
 ### Logic
 
-The template records run mode, current status, completed coverage, slice maintenance results, deferred coverage, open questions, risks, completed waves, recommended next waves, closeout decision status, developer decisions, and instructions for future agents.
+The template records run mode, status, coverage, slice maintenance, questions, risks, waves, closeout decisions and future usage. It also records the clean fixer dry-run result, baseline state/commit and knowledge state with its next step. Pre-baseline context-not-admitted/memory_revision_unavailable is not post-baseline not-recorded; cards never establish a knowledge foundation.
 
 ### Conventions
 
@@ -20,7 +20,7 @@ The handoff summarizes trusted and deferred bootstrap coverage; it should not tu
 
 ### Todos
 
-Fill verification metadata after the source file is committed.
+No file-local follow-up; reference anchors carry currentness.
 
 ### Docs References
 
@@ -33,7 +33,7 @@ No relevant external documentation found.
 ### Repo-Internal References
 
 - The handoff template records run status and artifact coverage across root overview, plans, maps, packs, route overviews, and file onboarding. [1]
-- The handoff captures slice maintenance results, trusted/deferred coverage, open questions, risks, waves, closeout boundary status, decisions, and future-agent usage order. [2]
+- Handoff preserves coverage/decision fields and adds clean Fixer State, Baseline State and moment-specific Knowledge Foundation State. [2]
 - `c-03-repo-bootstrap` skill Phase 5 writes `bootstrap/handoff.md` from this template and makes handoff the automated-bootstrap boundary before separate closeout. [3]
 
 ### Cross-Repo References

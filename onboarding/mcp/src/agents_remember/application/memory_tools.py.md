@@ -10,7 +10,7 @@
 route-index refresh, memory initialization, baseline adoption, and memory carryover. Memory-quality
 scope, execution, and async control now belong to the dedicated typed controller.
 
-Provides the existing memory-facing application tool entry points and leaf-only card writer guard.
+Provides the memory-facing application entry points and the ordinary leaf writer guard. Citation fixing and route-index apply also share one measured pre-baseline admission on the configured converted memory root.
 
 ## Code Commentary
 
@@ -20,7 +20,7 @@ Provides the existing memory-facing application tool entry points and leaf-only 
 that deleted a file carries that anchor as carried and stale rather than refusing it as newly written;
 without a contract the base is the memory checkout's converted `HEAD`, as the converted check already
 does. `memory_baseline_status_tool` reports `ok=false` for `blocked-drift`, `blocked-invalid` and
-`unavailable`.
+`blocked-legacy-cards` and `unavailable`.
 The baseline owner returns `unavailable` when an existing memory HEAD resolves but its Git
 attribution history cannot be read. An unborn repository can remain `ready` under the existing
 drift rules. This adapter preserves the owner's state and details; cache-file availability does
@@ -41,15 +41,18 @@ carryover planning/apply (`mcp/src/agents_remember/application/memory_tools.py:3
 excludes** (`mcp/src/agents_remember/application/memory_tools.py:44-55`).
 `intent_note` remains a separate apply approval argument.
 
-**One construction point serves all four citation operations.** `_citation_trees` builds the
-citation `Trees` for `citation_check_tool`, `citation_source_index_build_tool`, `citation_fix_tool`
-and `citation_migrate_tool`
-(`mcp/src/agents_remember/application/memory_tools.py:140-156`). It validates the caller's excludes
-through `validate_caller_excludes` and hands them to `Trees`, so a caller-supplied exclude and the
-memory layer's `system/settings.json` register are read at one place rather than four. `Trees` takes
-the excludes as a value: two operations over one root may carry different caller excludes and neither
-changes the other's population. A caller that adds excludes is asserting a **narrower** population
-than the register alone, and a pattern that cannot mean anything is refused by name.
+**One construction point serves the legacy `Trees` branches.** `_citation_trees` builds the
+citation `Trees` for legacy check/fix, source-index build and migration. It validates the caller's
+excludes through `validate_caller_excludes` and hands them to `Trees`, where they narrow that
+invocation's population alongside the memory layer's `system/settings.json` register. The value is
+call-local, and a meaningless pattern is refused by name.
+
+This is not a converted-path filtering guarantee. Converted check/fix returns before constructing
+`Trees`: caller-exclusion syntax is validated, but `operation_scope.excludes` is not forwarded to
+converted reference checking, card authoring or mechanical refresh. Converted fixing forwards the
+named `document` to both stages and excludes authoring-refused sidecars from mechanical refresh;
+that internal exclusion set is distinct from caller globs. Source-index build and migration remain
+legacy-format operations.
 
 Memory-quality resolution, checklist composition, sync/start/poll control, and public run outcomes
 were extracted to `application/memory_scope.py` and `application/memory_quality_controller.py`.
@@ -100,7 +103,9 @@ None known for the MX-FIX-4 application entry point boundary.
 
 ### Role Runtime and Scope
 
-When a task-scoped config has replaced repo.memory_root with a leaf root, _refuse_official_memory gets the original configured repository only after require_configured_contract_repositories proves repository lineage and candidate worktree identity. The same returned authority supplies the official root; official-memory rewrites still refuse. Preserve the converted citation/foundation behavior inherited from MIK.
+When a task-scoped config has replaced repo.memory_root with a leaf root, `_refuse_official_memory` obtains the original configured repository only after `require_configured_contract_repositories` proves repository lineage and candidate worktree identity. That guard remains the ordinary leaf route. Without a contract, the existing fixer and route-index apply admit only a declared repository whose resolved memory root is the declared converted root, has no attributed baseline, and has no linked memory worktree. An unreadable worktree list refuses. The result names `admission: pre-baseline`; a failed condition writes nothing and names the leaf route. Once a baseline exists the contractless write is refused. This is a card/index admission, not permission to author knowledge or to commit.
+
+Both converted fixer admissions use the same authoring and mechanical-refresh composition. Sidecars of cards refused by authoring are excluded from mechanical refresh, so neither stage changes that card or its sidecar. Successful siblings may still be authored; a refused run is not a claim that the whole bootstrap is complete.
 
 ## Evidence
 
@@ -126,8 +131,13 @@ No configured domain documentation could be checked.
 - The one execution path both the report and the closeout gate run through. [16]
 - The curator worklist publication that follows a full scoped call. [17]
 - On a converted tree the citation check reports the sidecar references' state instead of reading citation tables. [18]
-- On a converted tree the citation fixer authors the cards' citation rows into sidecar references, then re-records mechanically moved anchors; one named document scopes both. [19]
-- The one construction point that carries a caller's excludes into all four citation operations. [20]
+- The shared converted fixer authors references, then refreshes mechanical moves, excluding every authoring-refused sidecar; one named document scopes both stages. [19]
+
+- Contractless writes share the measured declared-root, converted-format, no-baseline and no-linked-worktree admission; every failed condition names the leaf route. [31]
+- The existing citation fixer selects pre-baseline admission or the ordinary leaf contract and reports the measuring build. [32]
+- Route-index apply uses the same pre-baseline admission; scoped operations still use the resolver-owned roots and storage. [33]
+
+- The shared construction point applies caller excludes to legacy Trees branches, not converted check/fix. [20]
 - The scope object the caller's excludes ride with, validated at construction. [21]
 - The refusal rule for a caller exclude that cannot mean anything. [22]
 - **The admission whose location this block reports, so the location a curator is told to populate is the one the bootstrap publishes to.** [24]

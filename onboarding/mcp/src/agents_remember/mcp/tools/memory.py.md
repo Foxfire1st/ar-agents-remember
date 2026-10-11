@@ -27,6 +27,12 @@ returns that report's path with source-path decisions and bounded path summaries
 Retained response logs are separate custody, not reports filed by the read-plan branch.
 Previews and actual operations retain their separate authority and dry-run semantics.
 
+The citation-fix adapter forwards optional `contract_path` unchanged to the application owner.
+That owner admits the ordinary leaf route or measured pre-baseline route; scalar `admission`
+survives converted-answer bounding. The exact configured-contract-authority catch stays narrow.
+
+- The retained citation-fix payload forwards the optional contract and translates only configured-contract authority mismatch. [9]
+
 ## Current evidence
 
 - Current source excerpt `def memory_quality_check_payload(` identifies this section's adapter/control owner, not an executed success. [7]
@@ -121,7 +127,12 @@ result is passed through unchanged, because its complete repair list is that fix
 - Each named list capped, with its full count. [2]
 - The response caps every list, says so, and keeps the full counts. [3]
 
-## The Citation Tools Answer A Configured-Authority Mismatch
+## Historical two-caller account — configured-authority mismatch
+
+The following two-caller description is retained history. The current MCP adapter has only
+`citation_fix_payload`: migration's MCP caller is retired. `_citation_authority_refusal` builds
+the retained citation-fix adapter's narrow configured-contract-authority refusal; it is not a
+current second-caller contract.
 
 `citation_fix_payload` and `citation_migrate_payload` call their application entry point inside a `try`
 that catches exactly `ConfiguredContractAuthorityError`. The catch returns `_citation_authority_refusal`:
@@ -134,7 +145,7 @@ empty because the sweep's probe meets only that condition. The refusal is built 
 tools cannot answer the same condition differently; `citation_fix`'s answer still passes through
 `bounded_citation_fix`.
 
-- The two citation tools answer a configured-contract authority mismatch with the product's named refusal and next action. [4]
+- The retained citation-fix adapter's configured-contract-authority refusal names the status and next action; the former MCP migration caller is retired. [4]
 - The refusal carries the failing side and name in its detail, for both tools. [5]
 
 - Only that error is translated: every other error, an `AuthorityError` among them, still propagates unchanged. [6]

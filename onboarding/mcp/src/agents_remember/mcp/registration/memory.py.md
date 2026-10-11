@@ -7,6 +7,10 @@ The current source facts below replace the former operative inventory. The separ
 - drift_check is no longer a registered memory tool.
 - citation_migrate registration was deleted while citation_fix remains.
 - Typed MQC sync/start/poll, baseline/carryover and citation exclude boundaries survive.
+- `citation_fix` exposes optional `contract_path` and states its two admissions: the ordinary leaf enclosure, or the configured converted root before its attributed baseline with no linked worktree. Route-index apply uses the same measured exception; other unscoped index calls remain read-only previews. Transport declarations do not bypass the application guard.
+
+- The public fixer signature and description state the optional contract and ordinary/pre-baseline admissions. [17]
+- The index description retains pre-baseline apply and qualifies other unscoped calls as read-only previews. [18]
 
 ### Source and authority bounds
 

@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bc203f51a480dfd6aa1e061eba5b13c974ed0a86",
+            "blob": "58446701110928b148de99d43451baf3dd617a98",
             "content": "sha256:99fbd92d2c75f350e741595b0cf2b7a2e9c461ba524b20ce45e7e99ac40b9aea",
             "locator": {
               "kind": "symbol",
@@ -23,7 +23,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "64ed07104830ebbd27790981e850b19d32fb3f08",
+            "blob": "4f90514bfd9638960c4e5bffe878df58c2e763c8",
             "content": "sha256:a1b7fedb447ac47c48a0a76ef0c38a981dccebe6aee175fd18cc4e77ed5d77e3",
             "locator": {
               "kind": "symbol",
@@ -40,7 +40,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "64ed07104830ebbd27790981e850b19d32fb3f08",
+            "blob": "4f90514bfd9638960c4e5bffe878df58c2e763c8",
             "content": "sha256:6451c893d8b61f5f409e6f0ff41ff4962cf4de18e82baed771e9e751ff0cc38a",
             "locator": {
               "kind": "symbol",
@@ -73,7 +73,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6397c2b97bb2dca8ac893f4d4d75882042721023",
+            "blob": "197ac9c813cefe56583faa7429ebada46d168acd",
             "content": "sha256:ab62910d1dada62078530161905e63919f621b57b1c23302febddf16c8683644",
             "locator": {
               "kind": "symbol",
@@ -90,7 +90,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6397c2b97bb2dca8ac893f4d4d75882042721023",
+            "blob": "197ac9c813cefe56583faa7429ebada46d168acd",
             "content": "sha256:88d9294a6341261126fa2bd4111f7a9d9401d41930bee82161559219259a0e16",
             "locator": {
               "kind": "symbol",
@@ -123,7 +123,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bc203f51a480dfd6aa1e061eba5b13c974ed0a86",
+            "blob": "58446701110928b148de99d43451baf3dd617a98",
             "content": "sha256:feee078e0f5210c2c1392ca50a48354f4a1c3f0db0c52680bfe511d12c2b16ba",
             "locator": {
               "kind": "symbol",
@@ -134,12 +134,44 @@
         },
         {
           "anchor": {
-            "blob": "bc203f51a480dfd6aa1e061eba5b13c974ed0a86",
+            "blob": "58446701110928b148de99d43451baf3dd617a98",
             "content": "sha256:83875e7c9a132ae78c2caa057945d352a1cf686b620844d8301374d615b5c477",
             "locator": {
-              "end": 245,
+              "end": 196,
               "kind": "line_range",
-              "start": 225
+              "start": 176
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "The public fixer signature and description state the optional contract and ordinary/pre-baseline admissions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "58446701110928b148de99d43451baf3dd617a98",
+            "content": "sha256:6568c2bd71187ff2f5fde35c7948d18f6c4f4b5693b8b5980626c9e9c48c3dd4",
+            "locator": {
+              "kind": "symbol",
+              "name": "citation_fix"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "The index description retains pre-baseline apply and qualifies other unscoped calls as read-only previews.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "58446701110928b148de99d43451baf3dd617a98",
+            "content": "sha256:3760df5e0685eed3753753f1ed08c11a38c71e4371cf245e8f50823c849eae43",
+            "locator": {
+              "kind": "symbol",
+              "name": "route_index_refresh"
             }
           },
           "kind": "code"
@@ -168,7 +200,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "64ed07104830ebbd27790981e850b19d32fb3f08",
+            "blob": "4f90514bfd9638960c4e5bffe878df58c2e763c8",
             "content": "sha256:a9de81dbbdf4642cdad7ec87883e50f74e457a6689267d0c456b3eda641ebe61",
             "locator": {
               "kind": "symbol",
@@ -185,7 +217,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6397c2b97bb2dca8ac893f4d4d75882042721023",
+            "blob": "197ac9c813cefe56583faa7429ebada46d168acd",
             "content": "sha256:33ec530cd7ea134f868737123e2ef344fae4d4c7609e21308019028ba0037442",
             "locator": {
               "kind": "symbol",
@@ -215,7 +247,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6397c2b97bb2dca8ac893f4d4d75882042721023",
+            "blob": "197ac9c813cefe56583faa7429ebada46d168acd",
             "content": "sha256:9d8d695f42fefc4b5e4d8e2094742e6eb75f0700834a0beee3387672628132f3",
             "locator": {
               "kind": "symbol",
@@ -227,12 +259,12 @@
         },
         {
           "anchor": {
-            "blob": "6397c2b97bb2dca8ac893f4d4d75882042721023",
+            "blob": "197ac9c813cefe56583faa7429ebada46d168acd",
             "content": "sha256:26494e9f7665bf9eddcdde616b8c858e1b74b9e7a8fbe3f1289c9849eb396bf6",
             "locator": {
-              "end": 364,
+              "end": 464,
               "kind": "line_range",
-              "start": 353
+              "start": 453
             },
             "path": "mcp/src/agents_remember/application/memory_tools.py"
           },
@@ -240,12 +272,12 @@
         },
         {
           "anchor": {
-            "blob": "6397c2b97bb2dca8ac893f4d4d75882042721023",
+            "blob": "197ac9c813cefe56583faa7429ebada46d168acd",
             "content": "sha256:7eaec590e90cef9afda608cb18f4d74465b0695311c5b03d70bb5de17e1d7cf7",
             "locator": {
-              "end": 548,
+              "end": 663,
               "kind": "line_range",
-              "start": 529
+              "start": 644
             },
             "path": "mcp/src/agents_remember/application/memory_tools.py"
           },
@@ -258,7 +290,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6397c2b97bb2dca8ac893f4d4d75882042721023",
+            "blob": "197ac9c813cefe56583faa7429ebada46d168acd",
             "content": "sha256:fb8ceefb686b824a7cb0fa229a36df02de76b9182621156d94032651e48368f0",
             "locator": {
               "kind": "symbol",
@@ -270,12 +302,12 @@
         },
         {
           "anchor": {
-            "blob": "6397c2b97bb2dca8ac893f4d4d75882042721023",
+            "blob": "197ac9c813cefe56583faa7429ebada46d168acd",
             "content": "sha256:3bd53f467745ee3f70e010103aefb9efa75c118a6ab83d70904f666b62aa6130",
             "locator": {
-              "end": 563,
+              "end": 678,
               "kind": "line_range",
-              "start": 549
+              "start": 664
             },
             "path": "mcp/src/agents_remember/application/memory_tools.py"
           },
@@ -305,7 +337,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "64ed07104830ebbd27790981e850b19d32fb3f08",
+            "blob": "4f90514bfd9638960c4e5bffe878df58c2e763c8",
             "content": "sha256:376bec3b46afe08cc4835f775fda796868adc38a828138644f0e1ef290104d4a",
             "locator": {
               "kind": "symbol",
@@ -322,7 +354,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "64ed07104830ebbd27790981e850b19d32fb3f08",
+            "blob": "4f90514bfd9638960c4e5bffe878df58c2e763c8",
             "content": "sha256:a9de81dbbdf4642cdad7ec87883e50f74e457a6689267d0c456b3eda641ebe61",
             "locator": {
               "kind": "symbol",

@@ -463,16 +463,16 @@
       ]
     },
     "31": {
-      "note": "The bootstrap operation's step 6, with the seat gate quoted and the knowledge step made independent of the operation's other steps.\n\nAnchor: \"Reach the repository's knowledge foundation.\"",
+      "note": "The bootstrap operation uses scaffold/fixer step 5, baseline step 6 and curator foundation step 7; earlier foundation needs an existing memory commit.\n\nAnchor: \"Scaffold the first onboarding\"",
       "targets": [
         {
           "anchor": {
-            "blob": "a23f5b44e754e4da5bcee68076a04de1759893e1",
-            "content": "sha256:7db1ec2922f6d3e90129b8bc8d8c660fe5c5aac1d43a01f849f554ec30adee80",
+            "blob": "2b43fdbcebb97cf40df4da7ac53147caffafd2a5",
+            "content": "sha256:a8f2952c31509b42c8ed45bb2c16eb135bb75c0b308d2590da5931cb38decafa",
             "locator": {
-              "end": 84,
+              "end": 90,
               "kind": "line_range",
-              "start": 73
+              "start": 67
             },
             "path": "skills/l-01-agent-lifecycles/operations/bootstrap.md"
           },
@@ -503,12 +503,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "90d0e2a70ed4f9b3c23a1465b0bed91600d810df",
+            "blob": "2b43fdbcebb97cf40df4da7ac53147caffafd2a5",
             "content": "sha256:fc4d9d777fded2d360523c94cc8f2ca77352c14373a669f68590a79ac90cc2d1",
             "locator": {
-              "end": 144,
+              "end": 147,
               "kind": "line_range",
-              "start": 142
+              "start": 145
             },
             "path": "skills/l-01-agent-lifecycles/operations/bootstrap.md"
           },
@@ -779,12 +779,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0e55dad68ba351cb50941db3bf47c3f4c03e9e77",
+            "blob": "586885e474b1e2233e43320bcd2e025b76ff1a83",
             "content": "sha256:7f253eb3a6dc84c2f05e11a63f48ceb9f2375ce47664b33ac5834253c5d28098",
             "locator": {
-              "end": 68,
+              "end": 67,
               "kind": "line_range",
-              "start": 65
+              "start": 64
             },
             "path": "skills/l-01-agent-lifecycles/criteria/plan-review.md"
           },
@@ -792,7 +792,7 @@
         },
         {
           "anchor": {
-            "blob": "cf36d2fc186bcf9baf70dce388adfcfb0b54b637",
+            "blob": "bb4db7953d86ff9e3decee6726196f7f4c408d75",
             "content": "sha256:12ebc97b2d77f7483bbc3dea7f2eba537a01d844f6f7d6a5d6fb9c5ddebd3d3a",
             "locator": {
               "end": 172,
@@ -994,12 +994,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9f01b458769e29ba24c9cc3c0ff187e9e5eb2cf2",
+            "blob": "2d42ad92abef03a1873de4fd715985616f122689",
             "content": "sha256:d57e6c86c345ef738158691821006e2dff2df7a1971c337f7602738c9a812159",
             "locator": {
-              "end": 609,
+              "end": 594,
               "kind": "line_range",
-              "start": 600
+              "start": 585
             },
             "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
           },
@@ -1134,12 +1134,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8216517a6b46f398e278ef4cb431f4ddc445a7f6",
+            "blob": "c6b847c5c7627c6094bd425abb7559f7ae21e43e",
             "content": "sha256:6e496165f569558e9be2890f58fdbf115dfb83e1977232bf4eb80b324a7f3546",
             "locator": {
-              "end": 106,
+              "end": 104,
               "kind": "line_range",
-              "start": 104
+              "start": 102
             },
             "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
           },

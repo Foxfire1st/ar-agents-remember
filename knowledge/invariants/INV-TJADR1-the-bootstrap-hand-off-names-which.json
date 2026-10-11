@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "Skill and template must report the same actual state so a card corpus is not mistaken for authored knowledge."
+  },
+  "applicability": "Bootstrap handoff at the actual moment it reports cards, fixer, attributed baseline and knowledge state.",
+  "conditions": [
+    "A clean tree dry run means no remaining citation-table authoring and no refused card.",
+    "Knowledge before the first memory revision reports context-not-admitted/memory_revision_unavailable; absent knowledge after adoption reports not-recorded.",
+    "The actual product next step is carried for each state."
+  ],
+  "exclusions": [
+    "Declaring foundation completion because cards or a baseline exist.",
+    "Changing product state to match an inaccurate example in prose.",
+    "Confusing onboarding/bootstrap audit retention with transient memory-root/bootstrap staging."
+  ],
+  "id": "INV-TJADR1",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "journey read-back (cards, sidecars bcc0d9df commit, text/v2 read) + composed journey test proving both knowledge moments (context-not-admitted/memory_revision_unavailable pre-baseline, not-recorded post-baseline); architect ruling rule 5(a) notes/run3/L45-THE-HAND-OFF-NAMES-THE-STATE-MEMORY-INIT-REPORTS-AT-THAT-MOMENT-RULING.json"
+      ],
+      "path": "knowledge-authoring.json"
+    },
+    "handoffEntry": "MIK-R45@v2 rule 5",
+    "leaf": "260928-MIK-L45",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The bootstrap hand-off names which cards exist, a clean fixer dry run, the baseline state, and the knowledge state memory_init reports at that moment with its named next step, never claiming a foundation because cards exist.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -8,7 +8,7 @@ This skill describes repository onboarding bootstrap. It defines a minimum root-
 
 ### Logic
 
-`c-03-repo-bootstrap` skill resolves context with `c-08-ar-coordination-context-resolver` skill, writes all bootstrap paths relative to the resolved `onboarding_root`, and builds bootstrap memory in phases. The minimum output is `overview.md`; larger runs proceed through source inventory, area research, coverage planning, governing route mapping, route-local overview cards, route-local overview waves, docs and boundary evidence packs, file cards, file-level onboarding waves, curator reviews, and handoff. Existing-memory slice maintenance starts from verified existing memory and handles expansion, refresh, move, or cleanup for a bounded source slice. For moved or deleted routes, it now asks whether documented behavior moved, split, merged, or actually disappeared before removing stale artifacts. Root and route-local overviews record route-based verification metadata and a compact `## Hot Path Summary` so `c-02-memory-quality-control` skill can later detect deterministic overview drift by `sourceRoute` and `c-04-retrieval-strategy-router` skill can use generated route-index hot-path hints as part of the Intent substrate.
+`c-03-repo-bootstrap` skill resolves context with `c-08-ar-coordination-context-resolver` skill, writes all bootstrap paths relative to the resolved `onboarding_root`, and builds bootstrap memory in phases. The minimum output is `overview.md`; larger runs proceed through source inventory, area research, coverage planning, governing route mapping, route-local overview cards, route-local overview waves, docs and boundary evidence packs, file cards, file-level onboarding waves, curator reviews, and handoff. Existing-memory slice maintenance starts from verified existing memory and handles expansion, refresh, move, or cleanup for a bounded source slice. For moved or deleted routes, it now asks whether documented behavior moved, split, merged, or actually disappeared before removing stale artifacts. Root and route-local overviews use reference-anchor currentness and a compact `## Hot Path Summary`; generated route-index hot-path hints support Intent discovery. Cards have no metadata stamps or Update History. Citation tables are temporary fixer input, replaced by numbered evidence and fixer-authored sidecars; authors do not choose numbers or write sidecar JSON.
 
 ### Conventions
 
@@ -37,7 +37,16 @@ No relevant external documentation found.
 - `c-03-repo-bootstrap` skill preserves thin orchestrator behavior, confidence tags, `c-08-ar-coordination-context-resolver` skill topology resolution, cross-repo read-only semantics, and `c-05-create-or-update-onboarding-files` skill ownership of file-level onboarding. [3]
 - Automated mode starts only after source inventory is accepted or corrected, writes artifacts relative to the resolved `onboarding_root`, and treats common excludes as `settings.json` path-rule defaults. [4]
 - The skill lists all bootstrap templates used for ledgers, state, plans, route maps, evidence packs, cards, waves, reviews, and handoff. [5]
-- Phase 3 and Phase 4D require route-based overview verification metadata and `Hot Path Summary` sections so `c-02-memory-quality-control` skill can compare recorded `sourceRoute` scopes and `c-04-retrieval-strategy-router` skill can use compact route hints inside the Intent substrate. [6]
+- Root and route overviews obtain currentness from reference anchors and fixer-authored evidence, retaining compact hot-path summaries. [6]
+
+### Converted authoring and handoff
+
+Before first adoption no leaf enclosure exists: use the existing fixer without a contract and verify `pre-baseline` admission. The application owner measures the declared converted root, absence of attributed baseline and absence of linked memory worktrees; after adoption a contractless write refuses and names the leaf route. This is not a knowledge writer or commit route.
+
+The handoff names cards, a clean tree fixer dry run, baseline state/commit and the knowledge state at that moment with its actual next step. Fresh unborn memory reports context-not-admitted/memory_revision_unavailable; after adoption an unrecorded foundation reports not-recorded. Onboarding is not a foundation. The onboarding-relative bootstrap artifacts ship as an audit trail unless removed beforehand; only memory-root-level bootstrap is excluded from content commits.
+
+- The author-facing rules require temporary citation tables and verified contractless pre-baseline admission, with no manual sidecar JSON or number allocation. [9]
+- Handoff distinguishes card, fixer, baseline and knowledge outcomes, and preserves the onboarding/bootstrap audit trail. [10]
 - Existing-memory slice maintenance reuses current memory, covers expansion, refresh, move handling, deleted-slice cleanup, asks whether moved/deleted route behavior relocated before removal, and supports cleanup, move, preservation, or removal plans. [7]
 - Phase 4 classifies deleted, moved, and stale onboarding routes; Phase 5 handoff records removed/moved/retired memory and keeps closeout outside automated bootstrap. [8]
 

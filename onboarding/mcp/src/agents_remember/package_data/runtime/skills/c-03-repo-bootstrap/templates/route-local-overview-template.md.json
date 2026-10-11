@@ -3,14 +3,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The route-local overview template defines route metadata, route verification fields, hot-path summary, scope, structures, flows, load-bearing files, local invariants, and traps.\n\nAnchor: `# <Area Or Route Name> Overview`",
+      "note": "The converted route template preserves local explanatory sections without metadata stamps or Update History.\n\nAnchor: \"Overview\"",
       "targets": [
         {
           "anchor": {
-            "blob": "94cea8e61d3767a7105a39e7210b2f7bc6c2158f",
-            "content": "sha256:387744d3734d968266f138e0c1df1878bb28e6a8e03d9033591414f36331e622",
+            "blob": "fa9652b7955ac13a939df93d5c942c699b737e72",
+            "content": "sha256:49d930ab16ba128785730282330dfc838f84e124991c56a65ae66e30d8f39d9e",
             "locator": {
-              "end": 112,
+              "end": 102,
               "kind": "line_range",
               "start": 1
             }
@@ -24,12 +24,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "94cea8e61d3767a7105a39e7210b2f7bc6c2158f",
+            "blob": "fa9652b7955ac13a939df93d5c942c699b737e72",
             "content": "sha256:7efe57f4bfc5e89da15bbf68c5cce16511fde7fe706b41efc1a30daccea60ee6",
             "locator": {
-              "end": 68,
+              "end": 62,
               "kind": "line_range",
-              "start": 61
+              "start": 55
             }
           },
           "kind": "code"
@@ -37,16 +37,16 @@
       ]
     },
     "3": {
-      "note": "The template maps file-level onboarding, child overviews, usage order, needs verification, and update history.\n\nAnchor: `## File-Level Onboarding Map`",
+      "note": "The route template maps file cards, child overviews, usage order and unresolved verification needs without a card-history section.\n\nAnchor: \"File-Level Onboarding\"",
       "targets": [
         {
           "anchor": {
-            "blob": "94cea8e61d3767a7105a39e7210b2f7bc6c2158f",
-            "content": "sha256:18c8b23e6f4c670f72dec0542235a9899ee2a4a6132d64ba0021c669621d1925",
+            "blob": "fa9652b7955ac13a939df93d5c942c699b737e72",
+            "content": "sha256:0eebbcf481918d37ee55792266a3da4a0e9489d11dadc3c8aaeb8260a9c0948a",
             "locator": {
-              "end": 90,
+              "end": 102,
               "kind": "line_range",
-              "start": 85
+              "start": 79
             }
           },
           "kind": "code"
@@ -58,12 +58,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b9ec22daf954427bed34246cce40441df6a34a69",
+            "blob": "6169b610d2b722a17c4d18645df947444b62f260",
             "content": "sha256:aeefbf0cc992fece9816f25ca40cdb691676e52c2159cb3135a7a581ebbf98a1",
             "locator": {
-              "end": 877,
+              "end": 878,
               "kind": "line_range",
-              "start": 877
+              "start": 878
             },
             "path": "mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/SKILL.md"
           },

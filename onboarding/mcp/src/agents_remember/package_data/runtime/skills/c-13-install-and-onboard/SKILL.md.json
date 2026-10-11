@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "a1673082b9fb1d7b07998c4d9b12abd32b8f4220",
-        "content": "sha256:7083ddfec289274205becd71fc831c10f01fbf5f599bfeb48a4def5b9c80f17d",
+        "blob": "7c2c913f067df83ccb08c9f4721828096b4a6b48",
+        "content": "sha256:b2f617cdb552929185c4164ebb8a992f89da1d976317b2eb29e731dccc9b396a",
         "locator": {
           "kind": "file"
         }
@@ -59,12 +59,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "02677b4e360f93f17905c5bb061817767369ac52",
+            "blob": "7c2c913f067df83ccb08c9f4721828096b4a6b48",
             "content": "sha256:eeb898b2049eaf96fc7d04985513eea1dde217ca27f6b92d33ef542852b80a0d",
             "locator": {
-              "end": 151,
+              "end": 152,
               "kind": "line_range",
-              "start": 132
+              "start": 133
             }
           },
           "kind": "code"
@@ -105,7 +105,7 @@
         },
         {
           "anchor": {
-            "blob": "02677b4e360f93f17905c5bb061817767369ac52",
+            "blob": "7c2c913f067df83ccb08c9f4721828096b4a6b48",
             "content": "sha256:e0de6277dfb0665d61964d21c74dcd5c9795894e6b81026b8cab7862c0a468d3",
             "locator": {
               "end": 332,
@@ -117,7 +117,7 @@
         },
         {
           "anchor": {
-            "blob": "02677b4e360f93f17905c5bb061817767369ac52",
+            "blob": "7c2c913f067df83ccb08c9f4721828096b4a6b48",
             "content": "sha256:6f7e7448490dca4c7224498afe0987c29f76330c23fa3253ac20b39fb5ff6b9d",
             "locator": {
               "end": 342,
@@ -153,12 +153,12 @@
         },
         {
           "anchor": {
-            "blob": "02677b4e360f93f17905c5bb061817767369ac52",
+            "blob": "7c2c913f067df83ccb08c9f4721828096b4a6b48",
             "content": "sha256:80eeb0c2b0bae92cbd87bd26e58606b84e1e7f256f91abfcaf10150b091012d9",
             "locator": {
-              "end": 403,
+              "end": 407,
               "kind": "line_range",
-              "start": 403
+              "start": 407
             }
           },
           "kind": "code"
@@ -221,6 +221,23 @@
             "content": "sha256:131bf15e0ce4474852f7641cab645c2fa9ac9a58b83d687207ff10b784df643c",
             "locator": {
               "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Stage 5 orders onboarding/fixer before adoption and foundation, preserving existing-memory handling and explicit audit retention.\n\nAnchor: \"Stage 5\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7c2c913f067df83ccb08c9f4721828096b4a6b48",
+            "content": "sha256:c4245130abd226b2e11557a309648489ed8ed7e97f7fdd1cc500529470d6eb54",
+            "locator": {
+              "end": 407,
+              "kind": "line_range",
+              "start": 355
             }
           },
           "kind": "code"

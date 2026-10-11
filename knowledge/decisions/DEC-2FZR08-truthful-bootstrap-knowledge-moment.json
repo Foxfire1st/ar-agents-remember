@@ -1,0 +1,63 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "Changing the product to fit an inaccurate example was considered and rejected; future handoffs must retain admitted versus unrecorded state instead of claiming unseen knowledge."
+  },
+  "alternatives": [
+    {
+      "option": "Keep product behavior and name the actual pre-/post-baseline states and next steps in handoff text.",
+      "reason": "A fresh memory line is not admitted until a commit exists; not-recorded belongs to the post-baseline read.",
+      "status": "chosen"
+    },
+    {
+      "option": "Change the product to report not-recorded on the unborn memory line.",
+      "reason": "It would assert a knowledge state the product cannot yet know.",
+      "reconsider_when": "The public path gains an admitted knowledge state before any memory revision, under an explicit owner ruling.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "No product state change; rule 4 order stays.",
+    "The public two-moment test remains the proof of the distinction."
+  ],
+  "context": "Rule 5's example mislabeled the pre-baseline memory_init result not-recorded even though there is no memory revision to admit.",
+  "decider": "Architect 97e0320d-431f-4f4c-8c86-66a6dca880a7, ruling 2026-10-11T03:27:45+02:00 under D47.",
+  "id": "DEC-2FZR08",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "INV-TJADR1"
+    },
+    {
+      "alternative": 1,
+      "relation": "reconsider_on",
+      "target": {
+        "blob": "197ac9c813cefe56583faa7429ebada46d168acd",
+        "content": "sha256:7b520fc9b22cbf25310bc93079df0b862908d53ceb2833165f870ee544025537",
+        "locator": {
+          "kind": "symbol",
+          "name": "memory_init_tool"
+        },
+        "path": "mcp/src/agents_remember/application/memory_tools.py"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/run3/L45-THE-HAND-OFF-NAMES-THE-STATE-MEMORY-INIT-REPORTS-AT-THAT-MOMENT-RULING.json; MIK-R45@v2 rules 4/5; D47"
+      ],
+      "path": "knowledge-authoring.json"
+    },
+    "handoffEntry": "L45-actual-knowledge-moment",
+    "leaf": "260928-MIK-L45",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

@@ -6,6 +6,10 @@ The current source facts below replace the former operative inventory. The separ
 
 - Current Stage 6 is Retire Providers with stop-only/unused-key observation.
 - skills_install maintenance and old provider recovery evidence are obsolete.
+- New-memory Stage 5 runs onboarding through c-03 and the fixer, then the first attributed baseline, then the curator-owned knowledge foundation that needs that memory commit. A memory tree that already has a commit may reach its foundation earlier. Contractless fixing is only the measured pre-baseline exception, not an invented leaf or knowledge-write permission.
+- Onboarding/bootstrap audit files are retained by adoption unless removed beforehand; only memory-root-level bootstrap is excluded. Onboarding, adoption and foundation remain separate outcomes with actual states and next actions.
+
+- Stage 5 orders onboarding/fixer before adoption and foundation, preserving existing-memory handling and explicit audit retention. [9]
 
 ### Superseded inventory
 

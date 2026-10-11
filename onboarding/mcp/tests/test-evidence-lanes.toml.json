@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "af05acbbf882de6c4ac284d7c3ee707238fb5a08",
-        "content": "sha256:5cd042577ebdf51367a272d69b23bf04c0c30cae34914b48cb521233162e663d",
+        "blob": "31f439bb178c104fafd1395b834c964ab329b230",
+        "content": "sha256:b34cd52a387bf092bd2484b6a8602413c0028077ff493f0aff91311cbb09d3f1",
         "locator": {
-          "end": 374,
+          "end": 380,
           "kind": "line_range",
-          "start": 374
+          "start": 380
         }
       },
       "id": "RLZ-NJFH31",
@@ -17,17 +17,17 @@
         "handoffEntry": "L76-link-catalog-registrations",
         "leaf": "260928-MIK-L76"
       },
-      "rationale": "The integration lane registers the new archive test module so its evidence lane population names it.",
+      "rationale": "The integration lane registers test_leaf_agent_archive.py so its evidence population names the archive test module.",
       "role": "support"
     },
     {
       "anchor": {
-        "blob": "af05acbbf882de6c4ac284d7c3ee707238fb5a08",
-        "content": "sha256:2bc4851e806a4d81b457b0153c5968bdd9d936be780b1c20bf8222ffba533e73",
+        "blob": "31f439bb178c104fafd1395b834c964ab329b230",
+        "content": "sha256:d78be9a4046b8ffdab5120a0a748737d28d92bec8743be7d5acec6847feb659b",
         "locator": {
-          "end": 270,
+          "end": 274,
           "kind": "line_range",
-          "start": 270
+          "start": 274
         }
       },
       "id": "RLZ-ZTDYFT",
@@ -36,7 +36,7 @@
         "handoffEntry": "MIK-R75@v1-R1-03-root-repin",
         "leaf": "260928-MIK-L75"
       },
-      "rationale": "The unit-regression lane row that puts the new module in the population the governance checks run over.",
+      "rationale": "The unit-regression lane registers test_role_report.py in the report module population covered by the governance checks.",
       "role": "support"
     }
   ],

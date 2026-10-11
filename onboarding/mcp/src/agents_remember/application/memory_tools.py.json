@@ -1,6 +1,61 @@
 {
   "path": "mcp/src/agents_remember/application/memory_tools.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "197ac9c813cefe56583faa7429ebada46d168acd",
+        "content": "sha256:5eb51bb0f75bb9bbc4037112040d28689dd7e72f767901e9fed98024bb44dbac",
+        "locator": {
+          "kind": "symbol",
+          "name": "_pre_baseline_official_scope"
+        }
+      },
+      "id": "RLZ-5KQY0P",
+      "invariant": "INV-13QTT2",
+      "origin": {
+        "handoffEntry": "MIK-R45@v2 rule 2",
+        "leaf": "260928-MIK-L45"
+      },
+      "rationale": "The single admission helper both fixer entry points share; its five ordered checks are the whole gate.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "197ac9c813cefe56583faa7429ebada46d168acd",
+        "content": "sha256:92c85531f69abf9a3040ff3c5d72e0f39be116fe5a1488b03ed2ee702f7e9c01",
+        "locator": {
+          "kind": "symbol",
+          "name": "citation_fix_tool"
+        }
+      },
+      "id": "RLZ-S74G2D",
+      "invariant": "INV-13QTT2",
+      "origin": {
+        "handoffEntry": "MIK-R45@v2 rule 2",
+        "leaf": "260928-MIK-L45"
+      },
+      "rationale": "The fixer entry point whose optional contract_path carries the two admissions.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "197ac9c813cefe56583faa7429ebada46d168acd",
+        "content": "sha256:93bef3cbe4b811f19a4cfc92299509d1385cc9a8bb7253481cbff896be99d6d9",
+        "locator": {
+          "kind": "symbol",
+          "name": "route_index_refresh_tool"
+        }
+      },
+      "id": "RLZ-W1WY9N",
+      "invariant": "INV-13QTT2",
+      "origin": {
+        "handoffEntry": "MIK-R45@v2 rule 2",
+        "leaf": "260928-MIK-L45"
+      },
+      "rationale": "The index apply entry point taking the same admission through the same helper.",
+      "role": "primary-authority"
+    }
+  ],
   "references": {
     "1": {
       "note": "Baseline status reports unsuccessful `ok` for unavailable Git history as well as blocked drift, while preserving the owner's payload.",
@@ -56,7 +111,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6397c2b97bb2dca8ac893f4d4d75882042721023",
+            "blob": "197ac9c813cefe56583faa7429ebada46d168acd",
             "content": "sha256:fb8ceefb686b824a7cb0fa229a36df02de76b9182621156d94032651e48368f0",
             "locator": {
               "kind": "symbol",
@@ -72,7 +127,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6397c2b97bb2dca8ac893f4d4d75882042721023",
+            "blob": "197ac9c813cefe56583faa7429ebada46d168acd",
             "content": "sha256:a738650c51f142460dc464c4cf913e575a87bdee5b03fbf173184be588845401",
             "locator": {
               "kind": "symbol",
@@ -156,7 +211,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6397c2b97bb2dca8ac893f4d4d75882042721023",
+            "blob": "197ac9c813cefe56583faa7429ebada46d168acd",
             "content": "sha256:e70224a236d01d2ea1af736d759b241d6eba717fa9b73aa02f1b26da17162fbf",
             "locator": {
               "kind": "symbol",
@@ -167,7 +222,7 @@
         },
         {
           "anchor": {
-            "blob": "e8421ed724191966dedc24b309e74eaf2439eeb9",
+            "blob": "291bc4d7b0c07f2ce0ef62152c72d94fc5aa7a89",
             "content": "sha256:5222022946ed0872ef074f7f24e823e660c3d191c7983b3bdcd3731db2da5b2f",
             "locator": {
               "kind": "symbol",
@@ -180,12 +235,12 @@
       ]
     },
     "19": {
-      "note": "On a converted tree the citation fixer authors the cards' citation rows into sidecar references, then re-records mechanically moved anchors; one named document scopes both.",
+      "note": "The shared converted fixer authors references, then refreshes mechanical moves, excluding every authoring-refused sidecar; one named document scopes both stages.",
       "targets": [
         {
           "anchor": {
-            "blob": "6397c2b97bb2dca8ac893f4d4d75882042721023",
-            "content": "sha256:b5997ec1a8de4019d0f2182c551c008e9b4cb5fc84dedafab04b440121279f2c",
+            "blob": "197ac9c813cefe56583faa7429ebada46d168acd",
+            "content": "sha256:b4057a1a006a3c5e2a9d3a6b17a77bfae0e3c294c0cfb5193a27bd7ed62cbe74",
             "locator": {
               "kind": "symbol",
               "name": "_converted_citation_fix"
@@ -200,7 +255,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7fe00a759778edee005a11e3fcbbe33b7891bab9",
+            "blob": "0f4f518448f7365c8faf94b3602c463a8f4add25",
             "content": "sha256:f4919bee988d4473dce9ce42789930a3b179417eb1c07e1d5ba1f0c40270d283",
             "locator": {
               "kind": "symbol",
@@ -213,11 +268,11 @@
       ]
     },
     "20": {
-      "note": "The one construction point that carries a caller's excludes into all four citation operations.",
+      "note": "The shared construction point applies caller excludes to legacy Trees branches, not converted check/fix.",
       "targets": [
         {
           "anchor": {
-            "blob": "6397c2b97bb2dca8ac893f4d4d75882042721023",
+            "blob": "197ac9c813cefe56583faa7429ebada46d168acd",
             "content": "sha256:88d9294a6341261126fa2bd4111f7a9d9401d41930bee82161559219259a0e16",
             "locator": {
               "kind": "symbol",
@@ -233,7 +288,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6397c2b97bb2dca8ac893f4d4d75882042721023",
+            "blob": "197ac9c813cefe56583faa7429ebada46d168acd",
             "content": "sha256:ab62910d1dada62078530161905e63919f621b57b1c23302febddf16c8683644",
             "locator": {
               "kind": "symbol",
@@ -266,7 +321,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6397c2b97bb2dca8ac893f4d4d75882042721023",
+            "blob": "197ac9c813cefe56583faa7429ebada46d168acd",
             "content": "sha256:7b520fc9b22cbf25310bc93079df0b862908d53ceb2833165f870ee544025537",
             "locator": {
               "kind": "symbol",
@@ -340,7 +395,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6397c2b97bb2dca8ac893f4d4d75882042721023",
+            "blob": "197ac9c813cefe56583faa7429ebada46d168acd",
             "content": "sha256:105d762bd4cebcc835c97e7d3aa1b77ca4afc2886c24c154da22856426cf1b37",
             "locator": {
               "kind": "symbol",
@@ -367,7 +422,7 @@
         },
         {
           "anchor": {
-            "blob": "6397c2b97bb2dca8ac893f4d4d75882042721023",
+            "blob": "197ac9c813cefe56583faa7429ebada46d168acd",
             "content": "sha256:d12084a98d779f4b69ab321b1a361cf4cd4c6d183775a0396da895b04935ae88",
             "locator": {
               "kind": "symbol",
@@ -394,7 +449,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6397c2b97bb2dca8ac893f4d4d75882042721023",
+            "blob": "197ac9c813cefe56583faa7429ebada46d168acd",
             "content": "sha256:752848b4867967cdcbbc2e0bbbead222c7bf0b552f0d9e8fe80885e9c83e785d",
             "locator": {
               "kind": "symbol",
@@ -410,7 +465,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6397c2b97bb2dca8ac893f4d4d75882042721023",
+            "blob": "197ac9c813cefe56583faa7429ebada46d168acd",
             "content": "sha256:a7b0a1176435d908d3ae89aa58f11a71872c9f42db473b2e31b7a6f04ed254a9",
             "locator": {
               "kind": "symbol",
@@ -426,7 +481,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6397c2b97bb2dca8ac893f4d4d75882042721023",
+            "blob": "197ac9c813cefe56583faa7429ebada46d168acd",
             "content": "sha256:fb8ceefb686b824a7cb0fa229a36df02de76b9182621156d94032651e48368f0",
             "locator": {
               "kind": "symbol",
@@ -447,6 +502,54 @@
             "locator": {
               "kind": "symbol",
               "name": "drift_check_tool"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "31": {
+      "note": "Contractless writes share the measured declared-root, converted-format, no-baseline and no-linked-worktree admission; every failed condition names the leaf route.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "197ac9c813cefe56583faa7429ebada46d168acd",
+            "content": "sha256:5eb51bb0f75bb9bbc4037112040d28689dd7e72f767901e9fed98024bb44dbac",
+            "locator": {
+              "kind": "symbol",
+              "name": "_pre_baseline_official_scope"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "32": {
+      "note": "The existing citation fixer selects pre-baseline admission or the ordinary leaf contract and reports the measuring build.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "197ac9c813cefe56583faa7429ebada46d168acd",
+            "content": "sha256:92c85531f69abf9a3040ff3c5d72e0f39be116fe5a1488b03ed2ee702f7e9c01",
+            "locator": {
+              "kind": "symbol",
+              "name": "citation_fix_tool"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "33": {
+      "note": "Route-index apply uses the same pre-baseline admission; scoped operations still use the resolver-owned roots and storage.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "197ac9c813cefe56583faa7429ebada46d168acd",
+            "content": "sha256:93bef3cbe4b811f19a4cfc92299509d1385cc9a8bb7253481cbff896be99d6d9",
+            "locator": {
+              "kind": "symbol",
+              "name": "route_index_refresh_tool"
             }
           },
           "kind": "code"
@@ -566,7 +669,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6397c2b97bb2dca8ac893f4d4d75882042721023",
+            "blob": "197ac9c813cefe56583faa7429ebada46d168acd",
             "content": "sha256:a738650c51f142460dc464c4cf913e575a87bdee5b03fbf173184be588845401",
             "locator": {
               "kind": "symbol",

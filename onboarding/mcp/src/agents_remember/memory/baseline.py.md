@@ -68,10 +68,15 @@ ledger-only commit.
 Drift is measured with the one shared summary: `run_drift` calls `run_drift_summary` and no longer
 classifies by itself, so the drift block of the baseline tools carries the converted rule-2 fields
 on a converted tree and keeps today's behaviour elsewhere. The memory layer imports nothing from the
-application layer; the optional converted comparison base stays with the application callers that own
-a contract. The converted payload reports three blocking states — `blocked-invalid` while validator
-violations exist, `blocked-drift` while stale anchors exist and drift was not accepted, and
-`unavailable` as before — and `accept_drift` accepts stale anchors only, never a validator violation.
+application layer; the optional converted comparison base stays with callers that own a contract.
+Before first adoption, the converted payload also reports `blocked-legacy-cards` with the listed
+cards when a metadata-key first cell names `doc_type`, `lastVerifiedCommitHash` or
+`lastVerifiedCommitDate`, or a card has `## Update History`. Prose mentions do not count.
+Existing attributed adoption retains `already-adopted` precedence. The other blocking states remain
+`blocked-invalid` for validator violations, `blocked-drift` for stale anchors and `unavailable`
+for unreadable existing history. `accept_drift` accepts stale anchors only: it never clears
+legacy-card or validator refusals. This is an adoption-only check, not a new ordinary-operation
+validator rule for repositories that already have a baseline.
 With filing disabled, `run_drift` returns the measured summary and `None`: it still refuses a failed
 measurement, but does not raise merely because a read requested no report. Measured fields and the
 adoption gate are preserved; absence of a report is an output distinction, not permission to skip
@@ -108,7 +113,7 @@ cache computation, while the shared Git module owns content staging.
 - A resolvable HEAD with unavailable ancestry cannot be adopted as a new baseline, even with drift accepted.
 - Attribution is stored in the real memory commit, not reconstructed from a hand-written pair.
 - Repeating adoption with readable attributed history returns `already-adopted` without another commit.
-- **`bootstrap/` is excluded from the baseline commit, not deleted from the worktree.** The exclusion
+- **Memory-root-level `bootstrap/` is excluded from the baseline commit, not deleted from the worktree; `onboarding/bootstrap/` audit artifacts are retained unless removed before adoption.** The exclusion
   must ride the staging call; a bare `git add` before `commit_if_dirty` is inert.
 - **The worktree's own index is never written before validation passes.** Prepare, stage and tree
   commands of the owned interval address the private copy; only the `.gitignore` file guard is kept,
@@ -150,8 +155,8 @@ source is configured for this file's claims.
 No additional configured cross-repository evidence is claimed.
 
 - Drift is measured with the one shared summary; the memory layer classifies nothing by itself. [12]
-- The converted payload carries the rule-2 fields with its three blocking states. [13]
-- The converted gate accepts stale anchors only, never a validator violation. [14]
+- Converted status preserves attributed-adoption precedence and reports legacyCards/blocked-legacy-cards before validator or stale-reference refusals. [13]
+- First adoption refuses listed old-format cards before validator/stale checks; accept_drift cannot clear either legacy-card or validator refusals. [14]
 - The whole owned interval runs on a private index copy; an exception restores owned bytes, then keeps its name. [15]
 - A dry run, a refusal or an exception leaves the index, the refs and every owned file as they were. [16]
 - Publication records exactly the validated tree; a moved branch refuses instead of publishing past validation. [17]

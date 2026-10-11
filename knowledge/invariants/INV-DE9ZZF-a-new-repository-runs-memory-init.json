@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "Operation and installer order must agree so new users do not invoke a foundation writer on an unborn memory line."
+  },
+  "applicability": "First-hour bootstrap/install procedure for newly initialized memory with no commit.",
+  "conditions": [
+    "The existing fixer produces initial converted onboarding before attributed adoption.",
+    "The foundation uses the baseline commit and is authored by the curator through its own route.",
+    "Memory that already has a commit may reach its foundation before onboarding/adoption."
+  ],
+  "exclusions": [
+    "Making onboarding mandatory for every foundation.",
+    "A fabricated task, leaf or enclosure as a foundation prerequisite.",
+    "Bootstrap seat authoring knowledge or owning ordinary Git/closeout transactions."
+  ],
+  "id": "INV-DE9ZZF",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_bootstrap_converted_onboarding.py::test_bootstrap_skill_texts_state_the_fixer_and_the_order; composed journey test (init, cards, fixer, status, adopt, reads, refusal)"
+      ],
+      "path": "knowledge-authoring.json"
+    },
+    "handoffEntry": "MIK-R45@v2 rule 4",
+    "leaf": "260928-MIK-L45",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A new repository runs memory_init, first onboarding with the fixer, baseline adoption, then the knowledge foundation, which needs the baseline commit; only a memory that already has a commit may run the foundation earlier.",
+  "status": "proposed",
+  "supersedes": []
+}

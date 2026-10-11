@@ -4,7 +4,11 @@
 
 The canonical first-hour procedure retains context, developer-owned setup decisions, external memory/scaffold, knowledge-foundation read/report and baseline adoption through their actual owners. The changed provider-gap row now reads server_info unused keys, not removed status/diagnostic tools. Source step 8 still speaks of configuring/deferred provider indexing, so that retained source intent is disclosed rather than taught as an available post-R112 installer/query path; no product provider setup/start/watch is thereby restored. This source procedure is not a new bootstrap launch/capsule or indexing execution witness. Record actual failures rather than presenting an intended complete setup as observed.
 
-The original prose, exact parameters, references and dated producer accounts below remain intact as history, not present-tense authority for superseded behavior. Current evidence is the source path `skills/l-01-agent-lifecycles/operations/bootstrap.md` and the source-specific before/after extents preserved in the residual-hunk account. No code edit, proof rerun or new execution acceptance is claimed.
+For fresh memory the procedure orders first onboarding with the existing pre-baseline fixer in step 5, attributed baseline adoption in step 6, and the curator's knowledge foundation in step 7. The foundation needs that memory commit; an earlier foundation is possible only when memory already has a commit. Before adoption the fresh knowledge read reports context-not-admitted/memory_revision_unavailable, not not-recorded; after adoption an absent foundation is not-recorded. This carrier reads/reports and never authors foundation records.
+
+- Fresh setup orders scaffold/fixer before baseline and foundation; earlier foundation needs committed memory. [4]
+
+The original prose, exact parameters, references and dated producer accounts below remain intact as history, not present-tense authority for superseded behavior. No code edit, proof rerun or new execution acceptance is claimed.
 
 ## Historical original card — preserved, not the current operative account
 

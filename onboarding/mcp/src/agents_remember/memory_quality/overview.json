@@ -281,7 +281,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "64ed07104830ebbd27790981e850b19d32fb3f08",
+            "blob": "4f90514bfd9638960c4e5bffe878df58c2e763c8",
             "content": "sha256:a9de81dbbdf4642cdad7ec87883e50f74e457a6689267d0c456b3eda641ebe61",
             "locator": {
               "kind": "symbol",
@@ -564,7 +564,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bc203f51a480dfd6aa1e061eba5b13c974ed0a86",
+            "blob": "58446701110928b148de99d43451baf3dd617a98",
             "content": "sha256:b09603e04b6cf4b9e5b34d9a79fe6b45ec4c7aa6be6dcfb94875d51f2f3bb880",
             "locator": {
               "kind": "symbol",
@@ -1619,6 +1619,40 @@
               "name": "_executed_result"
             },
             "path": "mcp/src/agents_remember/memory_quality/final_certification/catalog.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "78": {
+      "note": "Adoption-only card discovery is sorted and root-relative; unreadable files remain with validator/drift owners.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "86dcf9173a4e07e5e056b38f0aec2223cbc2814f",
+            "content": "sha256:ee93a535bd952fef0f778e273e3d67f3dc1bef7e23061f095bba75c6f1ed3eb9",
+            "locator": {
+              "kind": "symbol",
+              "name": "find_legacy_cards"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/legacy_cards.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "79": {
+      "note": "Mechanical refresh skips sidecars refused by citation authoring before refresh/write.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "291bc4d7b0c07f2ce0ef62152c72d94fc5aa7a89",
+            "content": "sha256:1b676566623ede7fef41052717338fc5b5ff0b89bc0cf883ab16ee803100edb9",
+            "locator": {
+              "kind": "symbol",
+              "name": "fix_references"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/reference_state.py"
           },
           "kind": "code"
         }

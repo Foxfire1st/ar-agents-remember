@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "The root/route templates and authoring instruction must agree or the first attributed tree silently contains legacy cards."
+  },
+  "applicability": "Initial root, route and file onboarding produced by the bootstrap skill in converted memory.",
+  "conditions": [
+    "Currentness is carried by resolved reference anchors.",
+    "Authors write prose and temporary citation tables; the existing fixer allocates numbered references and authors sidecars."
+  ],
+  "exclusions": [
+    "Metadata stamps, card Update History and hand-authored sidecar JSON.",
+    "Input ledgers or report templates that legitimately use tables but are not onboarding cards."
+  ],
+  "id": "INV-4XD2ZF",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_bootstrap_converted_onboarding.py::test_bootstrap_skill_texts_carry_no_legacy_card_format; mcp/tests/test_sync_scripts.py (72 generated copies byte-equal); evidence/run-new-module.txt (18 passed)"
+      ],
+      "path": "knowledge-authoring.json"
+    },
+    "handoffEntry": "MIK-R45@v2 rule 1",
+    "leaf": "260928-MIK-L45",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Bootstrap onboarding cards are written in the converted shape: no metadata table, no Update History, citation tables as fixer input, currentness from reference anchors.",
+  "status": "proposed",
+  "supersedes": []
+}

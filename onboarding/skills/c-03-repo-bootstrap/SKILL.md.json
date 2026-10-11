@@ -1,0 +1,45 @@
+{
+  "path": "skills/c-03-repo-bootstrap/SKILL.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "6169b610d2b722a17c4d18645df947444b62f260",
+        "content": "sha256:a4d86301510eacc639687b0a0df2e090fb9b804c52f74361f1797087fc145aa1",
+        "locator": {
+          "end": 1119,
+          "kind": "line_range",
+          "start": 1066
+        }
+      },
+      "id": "RLZ-EJQ1ZY",
+      "invariant": "INV-TJADR1",
+      "origin": {
+        "handoffEntry": "MIK-R45@v2 rule 5",
+        "leaf": "260928-MIK-L45"
+      },
+      "rationale": "The handoff content contract naming both knowledge moments with their next steps.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "6169b610d2b722a17c4d18645df947444b62f260",
+        "content": "sha256:6ad4811c6e1b63b32169d54f8972b21deaed2bd9b17dcd0582348af6067edfda",
+        "locator": {
+          "end": 408,
+          "kind": "line_range",
+          "start": 386
+        }
+      },
+      "id": "RLZ-Y7TKM9",
+      "invariant": "INV-4XD2ZF",
+      "origin": {
+        "handoffEntry": "MIK-R45@v2 rule 1",
+        "leaf": "260928-MIK-L45"
+      },
+      "rationale": "Citation And Reference Rules keep the table grammar and state the fixer replaces each table; this is the author-facing contract for converted cards.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

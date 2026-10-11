@@ -1,0 +1,342 @@
+{
+  "path": "mcp/tests/test_bootstrap_converted_onboarding.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "68c48a9951b8061bca00a8d8656f503b8100ecd9",
+        "content": "sha256:bbf40a5dd7a8405ee2b54caacbdccc421798a758f7354c47460c2c4d46fa02cd",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_prose_and_code_mentions_of_legacy_keys_are_not_legacy_cards"
+        }
+      },
+      "facet": "Legacy-key mentions in non-key table cells do not make a converted card legacy.",
+      "id": "PRF-3WT3DE",
+      "invariant": "INV-QR6DSA",
+      "origin": {
+        "handoffEntry": "MIK-R45@v2 rule 3",
+        "leaf": "260928-MIK-L45"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "68c48a9951b8061bca00a8d8656f503b8100ecd9",
+        "content": "sha256:96e1a404f6667bf5439ebda3b1c333e7e8a55be1c65f5c7763e7777c03fcb944",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_route_index_apply_without_contract_is_refused_after_the_baseline"
+        }
+      },
+      "facet": "Contractless index apply after adoption refuses.",
+      "id": "PRF-428BQW",
+      "invariant": "INV-13QTT2",
+      "origin": {
+        "handoffEntry": "MIK-R45@v2 rule 2",
+        "leaf": "260928-MIK-L45"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "68c48a9951b8061bca00a8d8656f503b8100ecd9",
+        "content": "sha256:2a3acd5341c608f7d7ffdbb801d52a81b71628597deef476b866eb3ac7d14c50",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_bootstrap_journey_from_init_to_second_fixer_refusal"
+        }
+      },
+      "facet": "The composed public path reports context-not-admitted/memory_revision_unavailable with nextAction before baseline, then not-recorded with knowledge-bootstrap nextAction afterward; it reads converted evidence and refuses the second contractless fixer.",
+      "id": "PRF-457VY3",
+      "invariant": "INV-TJADR1",
+      "origin": {
+        "handoffEntry": "MIK-R45@v2 rule 5",
+        "leaf": "260928-MIK-L45"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "68c48a9951b8061bca00a8d8656f503b8100ecd9",
+        "content": "sha256:e2f2027b7147037382a217aae8b50ab879338177e946112b38ccf987133092a2",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_each_old_format_sign_blocks_the_baseline"
+        }
+      },
+      "facet": "Each parameterized legacy sign makes status blocked-legacy-cards, ok false and lists the card.",
+      "id": "PRF-50SGBX",
+      "invariant": "INV-QR6DSA",
+      "origin": {
+        "handoffEntry": "MIK-R45@v2 rule 3",
+        "leaf": "260928-MIK-L45"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "68c48a9951b8061bca00a8d8656f503b8100ecd9",
+        "content": "sha256:931b3211e0e950d9b6e022f121c414d2c93b58c72db1fd42d629aa8729ce9f9e",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_accept_drift_does_not_lift_blocked_legacy_cards"
+        }
+      },
+      "facet": "For every legacy sign adoption refuses with both accept_drift values.",
+      "id": "PRF-65Z793",
+      "invariant": "INV-QR6DSA",
+      "origin": {
+        "handoffEntry": "MIK-R45@v2 rule 3",
+        "leaf": "260928-MIK-L45"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "68c48a9951b8061bca00a8d8656f503b8100ecd9",
+        "content": "sha256:c40c77bc5ff6c01e2cf5017ce510f6cf2db7d51e04eaaf71dcdc4ba7679d4522",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_refused_reauthor_card_and_sidecar_stay_byte_identical"
+        }
+      },
+      "facet": "A refused reauthor keeps both card and sidecar hashes identical and excludes its sidecar from rewrittenSidecars.",
+      "id": "PRF-7AJHGY",
+      "invariant": "INV-13QTT2",
+      "origin": {
+        "handoffEntry": "MIK-R45@v2 rule 2",
+        "leaf": "260928-MIK-L45"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "68c48a9951b8061bca00a8d8656f503b8100ecd9",
+        "content": "sha256:aeaf023db4a80d4b0934eb86a019c15e2f04f9fa9b92d35b9ccf61b676234109",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_bootstrap_skill_texts_state_the_fixer_and_the_order"
+        }
+      },
+      "facet": "The bootstrap instructions tell the author to run the fixer, replace citation tables and never write sidecar JSON.",
+      "id": "PRF-CE9T0C",
+      "invariant": "INV-4XD2ZF",
+      "origin": {
+        "handoffEntry": "MIK-R45@v2 rule 1",
+        "leaf": "260928-MIK-L45"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "68c48a9951b8061bca00a8d8656f503b8100ecd9",
+        "content": "sha256:17b3cb140ea7f1cd4028912d1e438c78f2738f3dcff04ccdc7029df410e08cd6",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_legacy_cards_cannot_refuse_an_adopted_repository"
+        }
+      },
+      "facet": "After successful adoption and addition of a legacy heading, status is either already-adopted or ready; this assertion excludes blocked-legacy-cards but does not require exact already-adopted.",
+      "id": "PRF-FW08J9",
+      "invariant": "INV-QR6DSA",
+      "origin": {
+        "handoffEntry": "L45-M2-F01-supported-non-refusal-proof",
+        "leaf": "260928-MIK-L45"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "68c48a9951b8061bca00a8d8656f503b8100ecd9",
+        "content": "sha256:aeaf023db4a80d4b0934eb86a019c15e2f04f9fa9b92d35b9ccf61b676234109",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_bootstrap_skill_texts_state_the_fixer_and_the_order"
+        }
+      },
+      "facet": "Installer and operation text place scaffold before adoption before foundation, and operation names already-committed memory exception.",
+      "id": "PRF-GNXD7B",
+      "invariant": "INV-DE9ZZF",
+      "origin": {
+        "handoffEntry": "MIK-R45@v2 rule 4",
+        "leaf": "260928-MIK-L45"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "68c48a9951b8061bca00a8d8656f503b8100ecd9",
+        "content": "sha256:6e5ff03295b12a84cc65ac4ec3535205965c8ee0fb0fbf1267b9c179dbfa2377",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_fixer_without_contract_is_refused_once_the_baseline_exists"
+        }
+      },
+      "facet": "After adoption the same contractless fixer raises with already-adopted and leaf-contract guidance.",
+      "id": "PRF-HEDA55",
+      "invariant": "INV-13QTT2",
+      "origin": {
+        "handoffEntry": "MIK-R45@v2 rule 2",
+        "leaf": "260928-MIK-L45"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "68c48a9951b8061bca00a8d8656f503b8100ecd9",
+        "content": "sha256:b4f38fc73891c4b8d8cb16b30b2ce6b3036060f458df7fa86e5de528d675b7a0",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_route_index_apply_without_contract_is_admitted_before_the_baseline"
+        }
+      },
+      "facet": "Contractless index apply before adoption reports pre-baseline and creates an index.",
+      "id": "PRF-NDCGFQ",
+      "invariant": "INV-13QTT2",
+      "origin": {
+        "handoffEntry": "MIK-R45@v2 rule 2",
+        "leaf": "260928-MIK-L45"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "68c48a9951b8061bca00a8d8656f503b8100ecd9",
+        "content": "sha256:d2bbebca6d59f7c7e0e64b70af22fc4b2b5741a7c65bea3d87bf06850304b17b",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_fixer_without_contract_authors_cards_before_the_baseline"
+        }
+      },
+      "facet": "An admitted call reports pre-baseline and writes numbered evidence plus a JSON sidecar.",
+      "id": "PRF-WSA1G4",
+      "invariant": "INV-13QTT2",
+      "origin": {
+        "handoffEntry": "MIK-R45@v2 rule 2",
+        "leaf": "260928-MIK-L45"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "68c48a9951b8061bca00a8d8656f503b8100ecd9",
+        "content": "sha256:7df2d56f0ac21de21fcbbe6236f55e6442beea3396cd235b483e00804926a655",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_bootstrap_skill_texts_carry_no_legacy_card_format"
+        }
+      },
+      "facet": "The canonical bootstrap skill/template inventory contains no legacy stamp or Update History strings.",
+      "id": "PRF-XZYTAM",
+      "invariant": "INV-4XD2ZF",
+      "origin": {
+        "handoffEntry": "MIK-R45@v2 rule 1",
+        "leaf": "260928-MIK-L45"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Contractless fixing authors converted evidence and sidecars under measured pre-baseline admission.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "68c48a9951b8061bca00a8d8656f503b8100ecd9",
+            "content": "sha256:d2bbebca6d59f7c7e0e64b70af22fc4b2b5741a7c65bea3d87bf06850304b17b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_fixer_without_contract_authors_cards_before_the_baseline"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Refused re-authoring preserves the exact card and sidecar bytes across both fixer stages.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "68c48a9951b8061bca00a8d8656f503b8100ecd9",
+            "content": "sha256:c40c77bc5ff6c01e2cf5017ce510f6cf2db7d51e04eaaf71dcdc4ba7679d4522",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_refused_reauthor_card_and_sidecar_stay_byte_identical"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Every old-format sign remains blocked through adoption with either accept_drift value.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "68c48a9951b8061bca00a8d8656f503b8100ecd9",
+            "content": "sha256:931b3211e0e950d9b6e022f121c414d2c93b58c72db1fd42d629aa8729ce9f9e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_accept_drift_does_not_lift_blocked_legacy_cards"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Prose mentions of metadata names do not falsely become legacy cards.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "68c48a9951b8061bca00a8d8656f503b8100ecd9",
+            "content": "sha256:bbf40a5dd7a8405ee2b54caacbdccc421798a758f7354c47460c2c4d46fa02cd",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_prose_and_code_mentions_of_legacy_keys_are_not_legacy_cards"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Installer and bootstrap operation keep onboarding, adoption and foundation in the required order.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "68c48a9951b8061bca00a8d8656f503b8100ecd9",
+            "content": "sha256:aeaf023db4a80d4b0934eb86a019c15e2f04f9fa9b92d35b9ccf61b676234109",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_bootstrap_skill_texts_state_the_fixer_and_the_order"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The first baseline retains onboarding/bootstrap audit artifacts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "68c48a9951b8061bca00a8d8656f503b8100ecd9",
+            "content": "sha256:14de0beabf7ae995cc83bf4eabcb495e44444d5a01830aa5967b66b3bd280200",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_first_baseline_retains_onboarding_bootstrap_audit_trail"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The composed unit scenario fixes three cards, adopts, reads text/v2, distinguishes both knowledge moments and refuses a second contractless fixer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "68c48a9951b8061bca00a8d8656f503b8100ecd9",
+            "content": "sha256:2a3acd5341c608f7d7ffdbb801d52a81b71628597deef476b866eb3ac7d14c50",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_bootstrap_journey_from_init_to_second_fixer_refusal"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

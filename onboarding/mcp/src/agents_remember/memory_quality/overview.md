@@ -50,6 +50,21 @@ memory tree that holds `knowledge/layout.json`.
 
 ## Converted Drift Names What It Measured
 
+### First-baseline card format and refused-card preservation
+
+`legacy_cards.py` is an adoption-only detector, not a new ordinary knowledge-validator rule.
+It returns sorted onboarding Markdown paths with metadata-key first cells or an Update History
+heading; later-cell prose mentions remain valid. Baseline status/adoption own the listed
+`blocked-legacy-cards` refusal and do not allow drift acceptance to clear it. Already-attributed
+adoption retains its existing precedence.
+
+The mechanical reference fixer accepts an explicit sidecar exclusion set. The converted authoring
+composition supplies refused cards through that set, so their card/sidecar bytes are preserved
+while successful siblings and ordinary mechanical moves keep their existing behavior.
+
+- Adoption-only card discovery is sorted and root-relative; unreadable files remain with validator/drift owners. [78]
+- Mechanical refresh skips sidecars refused by citation authoring before refresh/write. [79]
+
 On a converted tree the drift summary is built from the converted knowledge check and nothing else.
 It reports how many reference anchors of the onboarding cards are current and how many are stale
 against the code, which files the knowledge validator refuses, and the two roots that were read —
@@ -530,7 +545,7 @@ real behavior, but must not be equated with the new affected-closure/full-certif
 - The application surface projects readiness with no affected-closure plan. [16]
 - Full certification requires explicit evidence and predecessor authority supplied by its caller. [17]
 
-## The Shared Exclusion Register, And The Ruled Caps (260915-CAPS-L14)
+## The Legacy Trees Exclusion Register, And The Ruled Caps (260915-CAPS-L14)
 
 One register, **three sources**, all reduced to one answer — *is this path outside the candidate
 population, and which rule said so*. The register is a **record** as much as a filter: it is
@@ -541,12 +556,17 @@ produced an index instead of reconstructing it from the checkout.
 | --- | --- | --- |
 | `pathRules.exclude` | `onboarding.pathRules.exclude.paths` in the memory layer's `system/settings.json` — the register the exclusion review agrees with the user **before** closeout | the same `matches_any` the storage resolver and the drift check already use |
 | `gitignore` | the code repository's own `.gitignore` | inside a Git work tree **Git is the authority** (`ls-files --exclude-standard` already removed them) and the register records the patterns; outside a work tree `FallbackIgnoreMatcher` applies them |
-| `caller` | `exclude=` on the `citation_fix` MCP tool and `--exclude` on the CLI, scoped to that one call | exactly like `pathRules.exclude` |
+| `caller` | `exclude=` on the `citation_fix` MCP tool and `--exclude` on the CLI, scoped to that one call's legacy Trees branch | exactly like `pathRules.exclude` on that branch; not forwarded by converted check/fix |
 
 `exclusion_register.py` owns the register; `citation_index_settings.py` owns the two settings keys
 (`onboarding.pathRules.exclude` and the optional `onboarding.citationIndex`) and accepts both at the
 `onboarding` level **or** the document root. The register, the caps and the settings key are
-**mode-independent**: nothing on this route branches on the memory storage mode.
+independent of one particular legacy operation within `Trees`, not independent of the selected
+storage-format branch. Converted check/fix returns before `Trees` and does not forward caller
+globs to reference checking, card authoring or mechanical refresh. Converted fixing uses document
+selection and its internally computed authoring-refused-sidecar set. Validation of a caller glob
+does not establish filtering on that branch. The register/cap/index-generation account here applies
+to the legacy acquisition route, not to the converted writer's population.
 
 **The register's `.gitignore` rule deliberately diverges from Git, and the divergence is pinned.**
 Git does not re-include a file whose parent directory is excluded; the register does, because its
@@ -640,7 +660,13 @@ memory-candidate owner. None of the three carries a closeout dependency.
 | `memory_candidate_pair.py` | [../worktrees/modules/memory_candidate_pair.py.md](../worktrees/modules/memory_candidate_pair.py.md) | **relocated out** by `806649b9`; card moved with it |
 | `memory_census_scope.py` | [memory_census_scope.py.md](memory_census_scope.py.md) | covered |
 
-## 260915-KS-L16 The Family-Review Pipeline, And The Actionability Formula Given A Name
+## Historical retired account — 260915-KS-L16 The Family-Review Pipeline, And The Actionability Formula Given A Name
+
+This entire dated block records the former SQLite-era family-review pipeline, including its
+actionability formula and owner claims. `family_review.py` is retired; the present-tense descriptions
+below are historical quotations, not current owners or instructions. The operative text-tree and
+derived-index boundary is stated in this overview's current account above. Evidence identities are
+retained for provenance, not as authority to restore the pipeline.
 
 `KS-R16@v1` owns the pipeline *between* the record leaves, and this route owns the half that carries a fact
 from one to the next without becoming a second source of any of them: `memory_quality/family_review.py`
@@ -721,7 +747,12 @@ module's own header cites `application/memory_tools.py:100` for `_refuse_officia
 it pins, that definition is at **`:105`** (`:100` is `"onboardingRoot": scope.onboarding_root.as_posix(),`)
 — recorded as the leaf's `R2-3`.
 
-## 260921-ICR-L15 Measured assessment currentness
+## Historical retired account — 260921-ICR-L15 Measured assessment currentness
+
+This entire dated block describes the former family-review vocabulary, projection reader and
+checklist pipeline. Its `family_review.py` and related owner clauses are historical, non-operative
+accounts; they do not describe the current converted text-tree route. The causal explanation and
+citation identities remain for provenance without restoring those owners.
 
 `ICR-R15@v1` splits one fact this route's section used to fold together — *a record's binding moved* — from
 two it never stated: *nothing measured this record*, and *a measurement found it still current*. The route

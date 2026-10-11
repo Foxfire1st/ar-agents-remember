@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "71e1844e0419f672280423d900eac4bede5cdd7a",
+            "blob": "bdef8f1a09431af3f053941c45b38b5dceabf082",
             "content": "sha256:c59b1c021b9ab901580c7dc4fd8701f42e7414c80def8ed2dc645277960e7274",
             "locator": {
               "end": 40,
@@ -36,12 +36,28 @@
         }
       ]
     },
+    "11": {
+      "note": "Tree-wide enumeration excludes hidden entries relative to the memory root, not hidden ancestors outside that root.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bdef8f1a09431af3f053941c45b38b5dceabf082",
+            "content": "sha256:7e3d5e175fa1a2b9ffbde9cf235a00ec17d67124e2d0816b434062d27d3d3510",
+            "locator": {
+              "kind": "symbol",
+              "name": "_cards"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "The entry: author in memory first, then write the cards that passed.",
       "targets": [
         {
           "anchor": {
-            "blob": "71e1844e0419f672280423d900eac4bede5cdd7a",
+            "blob": "bdef8f1a09431af3f053941c45b38b5dceabf082",
             "content": "sha256:9d3fbd5c0cfdfbead4c902953d9802b9d2dd4cfa712d461b3174a814aa78cb4c",
             "locator": {
               "kind": "symbol",
@@ -57,7 +73,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "71e1844e0419f672280423d900eac4bede5cdd7a",
+            "blob": "bdef8f1a09431af3f053941c45b38b5dceabf082",
             "content": "sha256:8daa6629906d4c216d6ce6135c557b82d9c064f4c8c0ef755fcd60cbf5d6777e",
             "locator": {
               "kind": "symbol",
@@ -73,7 +89,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "71e1844e0419f672280423d900eac4bede5cdd7a",
+            "blob": "bdef8f1a09431af3f053941c45b38b5dceabf082",
             "content": "sha256:14d5f4ea97b2f8ed7170ff5549d33528e493359b93959273ce694e621b9fe148",
             "locator": {
               "kind": "symbol",
@@ -89,7 +105,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "71e1844e0419f672280423d900eac4bede5cdd7a",
+            "blob": "bdef8f1a09431af3f053941c45b38b5dceabf082",
             "content": "sha256:c8fb1829ffe2f8da2520f380d0fe0d9bd7c48974b7861e33b7cacc2444a4634c",
             "locator": {
               "kind": "symbol",
@@ -105,7 +121,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "71e1844e0419f672280423d900eac4bede5cdd7a",
+            "blob": "bdef8f1a09431af3f053941c45b38b5dceabf082",
             "content": "sha256:3c14c12500a9f14b25be8fd9c376810b7d6716a252d633d9435d951122bdb7d3",
             "locator": {
               "kind": "symbol",
@@ -138,7 +154,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "71e1844e0419f672280423d900eac4bede5cdd7a",
+            "blob": "bdef8f1a09431af3f053941c45b38b5dceabf082",
             "content": "sha256:82dfd3e55eeae211238e5f46695e37de83130fee22142419132fb53db93f623e",
             "locator": {
               "kind": "symbol",
@@ -154,7 +170,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "71e1844e0419f672280423d900eac4bede5cdd7a",
+            "blob": "bdef8f1a09431af3f053941c45b38b5dceabf082",
             "content": "sha256:380a00b881e365da16c6bbb64325b8c4cf6d9c8af01af937f0c085aca07c1914",
             "locator": {
               "kind": "symbol",

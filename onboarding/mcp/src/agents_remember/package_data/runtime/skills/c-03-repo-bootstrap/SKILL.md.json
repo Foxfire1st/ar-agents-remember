@@ -19,12 +19,29 @@
         }
       ]
     },
+    "10": {
+      "note": "Handoff distinguishes card, fixer, baseline and knowledge outcomes, and preserves the onboarding/bootstrap audit trail.\n\nAnchor: \"The handoff lists\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6169b610d2b722a17c4d18645df947444b62f260",
+            "content": "sha256:ca994fa46b4c8bf66d3ec4c6f8964e98abd6d22d3a5061f90997d0a86310ffcc",
+            "locator": {
+              "end": 1116,
+              "kind": "line_range",
+              "start": 1066
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "The design requires durable route-local overview placement directly in the mirrored onboarding hierarchy, generated route indexes with hot-path hints, and self-sufficient file-level onboarding.\n\nAnchor: `### Locality-first memory`",
       "targets": [
         {
           "anchor": {
-            "blob": "b9ec22daf954427bed34246cce40441df6a34a69",
+            "blob": "6169b610d2b722a17c4d18645df947444b62f260",
             "content": "sha256:0d28f7b38a2ef89a23b2ab4dc0fe86709f849057921352d3dfc715655b624d18",
             "locator": {
               "end": 61,
@@ -41,7 +58,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b9ec22daf954427bed34246cce40441df6a34a69",
+            "blob": "6169b610d2b722a17c4d18645df947444b62f260",
             "content": "sha256:6ca61bf333182384fb47290936371abdfc9548162228445d295774f35ce6f52f",
             "locator": {
               "end": 162,
@@ -58,7 +75,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b9ec22daf954427bed34246cce40441df6a34a69",
+            "blob": "6169b610d2b722a17c4d18645df947444b62f260",
             "content": "sha256:b1824914d9036c3433eef09c0a954ead5be8cfef505dc84d0ed3bf595c9ab7b2",
             "locator": {
               "end": 241,
@@ -75,7 +92,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b9ec22daf954427bed34246cce40441df6a34a69",
+            "blob": "6169b610d2b722a17c4d18645df947444b62f260",
             "content": "sha256:92c3bb3fabe1dc7b0d79e4c8d3666a50e3f50ae464f9be5cf93c61b192c5e7f8",
             "locator": {
               "end": 385,
@@ -88,16 +105,16 @@
       ]
     },
     "6": {
-      "note": "Phase 3 and Phase 4D require route-based overview verification metadata and `Hot Path Summary` sections so `c-02-memory-quality-control` skill can compare recorded `sourceRoute` scopes and `c-04-retrieval-strategy-router` skill can use compact route hints inside the Intent substrate.\n\nAnchor: `sourceRoute`",
+      "note": "Root and route overviews obtain currentness from reference anchors and fixer-authored evidence, retaining compact hot-path summaries.\n\nAnchor: \"Currentness\"",
       "targets": [
         {
           "anchor": {
-            "blob": "b9ec22daf954427bed34246cce40441df6a34a69",
-            "content": "sha256:2213071398439c28862d7aedc90c252e7951c5e7683d7709f69327abce19d1e9",
+            "blob": "6169b610d2b722a17c4d18645df947444b62f260",
+            "content": "sha256:90d21359d3c0c325dfb48c578f1eb89738c6d11ba7f77ccd37c5cf9c86c7f78d",
             "locator": {
-              "end": 721,
+              "end": 911,
               "kind": "line_range",
-              "start": 686
+              "start": 685
             }
           },
           "kind": "code"
@@ -109,12 +126,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b9ec22daf954427bed34246cce40441df6a34a69",
+            "blob": "6169b610d2b722a17c4d18645df947444b62f260",
             "content": "sha256:5e6397efae7e6d9bfdbe5af8a869ad8ea4f19a2b053ccb497cf2016e8bcf8b23",
             "locator": {
-              "end": 532,
+              "end": 533,
               "kind": "line_range",
-              "start": 491
+              "start": 492
             }
           },
           "kind": "code"
@@ -132,6 +149,23 @@
               "end": 1064,
               "kind": "line_range",
               "start": 745
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The author-facing rules require temporary citation tables and verified contractless pre-baseline admission, with no manual sidecar JSON or number allocation.\n\nAnchor: \"These tables\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6169b610d2b722a17c4d18645df947444b62f260",
+            "content": "sha256:2c8e915d513ca966b6aa0b0c65d9dcd5a414849afe95d79d612a512e0003b11a",
+            "locator": {
+              "end": 407,
+              "kind": "line_range",
+              "start": 386
             }
           },
           "kind": "code"

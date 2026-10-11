@@ -290,7 +290,13 @@ substitutes for the foundation, and the foundation substitutes for neither.
 
 - The bootstrap role's step 5: reach the foundation, report the state it read, hand the authoring on, and never report a repository whose knowledge is not recorded as ready. [29]
 - The bootstrap role's prohibition: the seat reads and reports the foundation's state and never authors records. [30]
-- The bootstrap operation's step 6, with the seat gate quoted and the knowledge step made independent of the operation's other steps. [31]
+For a new memory root, initial onboarding with the existing pre-baseline fixer comes before the
+attributed baseline, and the foundation then uses that memory commit. Earlier foundation is admitted
+only when memory already has a commit. Fresh initialization reports context-not-admitted with
+memory_revision_unavailable until the first commit; after baseline an absent foundation is
+not-recorded. Onboarding, baseline and authored knowledge remain separate facts.
+
+- The bootstrap operation uses scaffold/fixer step 5, baseline step 6 and curator foundation step 7; earlier foundation needs an existing memory commit. [31]
 - The four knowledge rows the operation's failure table gains, keeping `unusable` and a refused admission distinct from `not-recorded`. [32]
 - The bootstrap operation's own prohibition on authoring the foundation, and the completion line that carries the foundation's state. [33]
 - The procedure these carriers delegate to, and its own statement that a taskless curator seat **now exists** and authors the foundation when no task does — the statement L27 landed in the opposite form and `260921-ICR-L32` reversed. [34]

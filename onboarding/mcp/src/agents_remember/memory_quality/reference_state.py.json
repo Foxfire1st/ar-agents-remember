@@ -1,13 +1,32 @@
 {
   "path": "mcp/src/agents_remember/memory_quality/reference_state.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "291bc4d7b0c07f2ce0ef62152c72d94fc5aa7a89",
+        "content": "sha256:1b676566623ede7fef41052717338fc5b5ff0b89bc0cf883ab16ee803100edb9",
+        "locator": {
+          "kind": "symbol",
+          "name": "fix_references"
+        }
+      },
+      "id": "RLZ-3XM7BA",
+      "invariant": "INV-13QTT2",
+      "origin": {
+        "handoffEntry": "MIK-R45@v2 rule 2",
+        "leaf": "260928-MIK-L45"
+      },
+      "rationale": "The mechanical re-recording stage whose exclude set keeps refused cards byte-identical (F01 repair, shared class).",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "A tree is converted exactly when it has the layout marker.",
       "targets": [
         {
           "anchor": {
-            "blob": "e8421ed724191966dedc24b309e74eaf2439eeb9",
+            "blob": "291bc4d7b0c07f2ce0ef62152c72d94fc5aa7a89",
             "content": "sha256:5222022946ed0872ef074f7f24e823e660c3d191c7983b3bdcd3731db2da5b2f",
             "locator": {
               "kind": "symbol",
@@ -40,7 +59,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e8421ed724191966dedc24b309e74eaf2439eeb9",
+            "blob": "291bc4d7b0c07f2ce0ef62152c72d94fc5aa7a89",
             "content": "sha256:d5a4f8ee36bc919ed6b1287b5f92f206fe02510d168390e7b7bccff76cec6fc7",
             "locator": {
               "kind": "symbol",
@@ -56,7 +75,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e8421ed724191966dedc24b309e74eaf2439eeb9",
+            "blob": "291bc4d7b0c07f2ce0ef62152c72d94fc5aa7a89",
             "content": "sha256:d5a78ce00a59a66e7d0d29b949c031082d0301ae2901b304f5781a3e56080dc3",
             "locator": {
               "kind": "symbol",
@@ -72,7 +91,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e8421ed724191966dedc24b309e74eaf2439eeb9",
+            "blob": "291bc4d7b0c07f2ce0ef62152c72d94fc5aa7a89",
             "content": "sha256:3a48d929bee49d77e968dce8842e753c75ec437f33c6d3730a2a811c6c4ca49a",
             "locator": {
               "kind": "symbol",
@@ -83,7 +102,7 @@
         },
         {
           "anchor": {
-            "blob": "e8421ed724191966dedc24b309e74eaf2439eeb9",
+            "blob": "291bc4d7b0c07f2ce0ef62152c72d94fc5aa7a89",
             "content": "sha256:6d63bbaf8d5a866d9817c9baf298afafcd70c7f6920a11b44db26bd6e70d3554",
             "locator": {
               "kind": "symbol",
@@ -99,7 +118,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e8421ed724191966dedc24b309e74eaf2439eeb9",
+            "blob": "291bc4d7b0c07f2ce0ef62152c72d94fc5aa7a89",
             "content": "sha256:d5a4f8ee36bc919ed6b1287b5f92f206fe02510d168390e7b7bccff76cec6fc7",
             "locator": {
               "kind": "symbol",
@@ -115,7 +134,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e8421ed724191966dedc24b309e74eaf2439eeb9",
+            "blob": "291bc4d7b0c07f2ce0ef62152c72d94fc5aa7a89",
             "content": "sha256:f0274d6ddcde7d15035f21e86d63b74b10e7e3ad3d5bfc51a50ed7bd43f33f73",
             "locator": {
               "kind": "symbol",
@@ -155,12 +174,12 @@
       ]
     },
     "7": {
-      "note": "The fixer can be scoped to one sidecar, and names unreadable sidecars.",
+      "note": "The mechanical fixer scopes one sidecar, names unreadable sidecars, and skips the explicit authoring-refused exclusion set before refresh or write.",
       "targets": [
         {
           "anchor": {
-            "blob": "e8421ed724191966dedc24b309e74eaf2439eeb9",
-            "content": "sha256:86ea7c2796d9ad1ea4f1141671be57d678471dedb914c18f7dfb9a0c563fab53",
+            "blob": "291bc4d7b0c07f2ce0ef62152c72d94fc5aa7a89",
+            "content": "sha256:1b676566623ede7fef41052717338fc5b5ff0b89bc0cf883ab16ee803100edb9",
             "locator": {
               "kind": "symbol",
               "name": "fix_references"
@@ -175,7 +194,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e8421ed724191966dedc24b309e74eaf2439eeb9",
+            "blob": "291bc4d7b0c07f2ce0ef62152c72d94fc5aa7a89",
             "content": "sha256:07a0bef1bc7377859aacb0aef7f7b38f3f96e55066de087d91841260ec44257f",
             "locator": {
               "kind": "symbol",
@@ -191,7 +210,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e8421ed724191966dedc24b309e74eaf2439eeb9",
+            "blob": "291bc4d7b0c07f2ce0ef62152c72d94fc5aa7a89",
             "content": "sha256:d5a4f8ee36bc919ed6b1287b5f92f206fe02510d168390e7b7bccff76cec6fc7",
             "locator": {
               "kind": "symbol",

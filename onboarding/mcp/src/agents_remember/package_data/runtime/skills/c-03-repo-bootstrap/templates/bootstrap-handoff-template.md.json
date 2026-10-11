@@ -20,14 +20,14 @@
       ]
     },
     "2": {
-      "note": "The handoff captures slice maintenance results, trusted/deferred coverage, open questions, risks, waves, closeout boundary status, decisions, and future-agent usage order.\n\nAnchor: `## Slice Maintenance Results`; `## Trusted Coverage`; `## Deferred Coverage`; `## Open Questions`; `## Known Risks`; `## Completed Waves`; `## Recommended Next Waves`; `## Closeout Boundary`; `## Developer Decisions Recorded`; `## How Future Agents Should Use This Bootstrap`",
+      "note": "Handoff preserves coverage/decision fields and adds clean Fixer State, Baseline State and moment-specific Knowledge Foundation State.\n\nAnchor: \"Fixer State\"",
       "targets": [
         {
           "anchor": {
-            "blob": "c99fd330c04fa33cd17f5075ad722c6390892cd2",
-            "content": "sha256:96a8ea650c83228768e6986a4dcdc179ab6a687dba557b5d8a908ee756ea9875",
+            "blob": "e571ee41081537c5ecfd720478858ebd01f53a79",
+            "content": "sha256:962f713b8645e9adae08f0d7c308a9bc2865c338b6d9ceb3652f01729be78e3c",
             "locator": {
-              "end": 82,
+              "end": 113,
               "kind": "line_range",
               "start": 22
             }

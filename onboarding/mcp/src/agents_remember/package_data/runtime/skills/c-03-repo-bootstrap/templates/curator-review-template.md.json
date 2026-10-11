@@ -3,16 +3,16 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The curator template records wave metadata, reviewed files, and a compliance checklist for placement, references, links, history, low-confidence claims, and state updates.\n\nAnchor: `# Curator Review — <wave>`",
+      "note": "The review checklist preserves placement/reference/state checks and requires completed citation conversion with every numbered marker resolved.\n\nAnchor: \"Compliance Checklist\"",
       "targets": [
         {
           "anchor": {
-            "blob": "3f446c396e22a636d74416015a4cc980f1e1125c",
-            "content": "sha256:eb5d0fb400165434afe61320870f5da00b43f65fbe0d519b6f8059590c141df9",
+            "blob": "a6b878b1f5f1cde36700ed40ec9303794c4356ac",
+            "content": "sha256:afe8714a9fe4bed9f0288240b5f95b7864d22f8133843715094bf1174367f16d",
             "locator": {
-              "end": 62,
+              "end": 39,
               "kind": "line_range",
-              "start": 1
+              "start": 20
             }
           },
           "kind": "code"
@@ -24,12 +24,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3f446c396e22a636d74416015a4cc980f1e1125c",
+            "blob": "a6b878b1f5f1cde36700ed40ec9303794c4356ac",
             "content": "sha256:c3d9b980651ed0515c0b79357a197ead6defc52b76023aa2fd32caf5dace2368",
             "locator": {
-              "end": 62,
+              "end": 63,
               "kind": "line_range",
-              "start": 40
+              "start": 41
             }
           },
           "kind": "code"

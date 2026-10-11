@@ -1,0 +1,69 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "A separate new bootstrap tool and empty-baseline-first task path were weighed against reusing the fixer; the chosen single-owner admission constrains future authority changes."
+  },
+  "alternatives": [
+    {
+      "option": "Reuse the existing fixer with a measured pre-baseline admission.",
+      "reason": "It preserves one writer and guards the declared converted root while no attributed line or dependent worktree exists.",
+      "status": "chosen"
+    },
+    {
+      "option": "Introduce onboarding_citations_bootstrap with a separate admission and authorization.",
+      "reason": "The existing fixer already performs the work; a second path duplicates authority.",
+      "reconsider_when": "The existing fixer no longer supports the required first-card authoring without duplicating its implementation.",
+      "status": "rejected"
+    },
+    {
+      "option": "Adopt an empty baseline first and require a leaf/worktree/closeout for the first overview.",
+      "reason": "It inserts a task between a new user and the first overview, contrary to the taskless bootstrap boundary.",
+      "reconsider_when": "The developer deliberately changes the first-hour taskless boundary.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "The configured-root exception is measured, not asserted by a caller.",
+    "After attributed baseline or with linked memory worktrees, the ordinary leaf guard applies."
+  ],
+  "context": "First onboarding must contain anchored converted cards before adoption, but an unborn memory root cannot supply a leaf worktree.",
+  "decider": "Architect under D47; MIK-R45@v2 supersedes v1 before leaf implementation.",
+  "id": "DEC-VDK7V6",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "INV-13QTT2"
+    },
+    {
+      "alternative": 1,
+      "relation": "reconsider_on",
+      "target": {
+        "blob": "197ac9c813cefe56583faa7429ebada46d168acd",
+        "content": "sha256:5eb51bb0f75bb9bbc4037112040d28689dd7e72f767901e9fed98024bb44dbac",
+        "locator": {
+          "kind": "symbol",
+          "name": "_pre_baseline_official_scope"
+        },
+        "path": "mcp/src/agents_remember/application/memory_tools.py"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "requirements/MIK-R45-v2-bootstrap-produces-converted-onboarding.md §§Why no new write path, Revision History; D47"
+      ],
+      "path": "knowledge-authoring.json"
+    },
+    "handoffEntry": "L45-existing-fixer-choice",
+    "leaf": "260928-MIK-L45",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

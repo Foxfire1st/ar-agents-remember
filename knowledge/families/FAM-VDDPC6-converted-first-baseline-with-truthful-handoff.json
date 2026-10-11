@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "Converted templates alone cannot reach adoption without a writable measured fixer, the adoption gate alone cannot create anchors, and valid cards/baseline alone cannot truthfully claim foundation state; all five obligations form the fresh-setup guarantee."
+  },
+  "guarantee": "A new repository reaches an attributed first baseline with converted anchored onboarding through the existing authority-measured fixer, and the ordered setup/handoff never treats those cards or that baseline as a knowledge foundation.",
+  "id": "FAM-VDDPC6",
+  "members": [
+    "INV-4XD2ZF",
+    "INV-13QTT2",
+    "INV-QR6DSA",
+    "INV-DE9ZZF",
+    "INV-TJADR1"
+  ],
+  "origin": {
+    "handoff": {
+      "path": "knowledge-authoring.json"
+    },
+    "handoffEntry": "L45-converted-first-baseline-family",
+    "leaf": "260928-MIK-L45",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "routes": [
+    "mcp/src/agents_remember/application",
+    "mcp/src/agents_remember/memory",
+    "mcp/src/agents_remember/memory_quality",
+    "skills/c-03-repo-bootstrap",
+    "skills/c-13-install-and-onboard",
+    "skills/l-01-agent-lifecycles/operations"
+  ],
+  "schema": "ar-family/v1",
+  "status": "proposed",
+  "title": "converted-first-baseline-with-truthful-handoff"
+}

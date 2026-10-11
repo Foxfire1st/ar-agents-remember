@@ -347,7 +347,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "71e1844e0419f672280423d900eac4bede5cdd7a",
+            "blob": "bdef8f1a09431af3f053941c45b38b5dceabf082",
             "content": "sha256:9d3fbd5c0cfdfbead4c902953d9802b9d2dd4cfa712d461b3174a814aa78cb4c",
             "locator": {
               "kind": "symbol",
@@ -398,7 +398,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "71e1844e0419f672280423d900eac4bede5cdd7a",
+            "blob": "bdef8f1a09431af3f053941c45b38b5dceabf082",
             "content": "sha256:82dfd3e55eeae211238e5f46695e37de83130fee22142419132fb53db93f623e",
             "locator": {
               "kind": "symbol",
@@ -450,12 +450,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "512be564b35aaf6f9d3b9709113b613309efe221",
+            "blob": "7c389111f8d4f3d6c6696c73dd6d19336cae1fe9",
             "content": "sha256:313ed0aea69f94d6889c191e0ef012ae79630aae743f75e7373d0b3122379659",
             "locator": {
-              "end": 332,
+              "end": 338,
               "kind": "line_range",
-              "start": 332
+              "start": 338
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -468,7 +468,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "008585e26ec337eafd1554ed18033421299bdc72",
+            "blob": "3214f9b499355d3da8ecadb6e5b4d1398cfb7ea0",
             "content": "sha256:e3dcb550aa48a2eadb5856507ceee47fed75ccdabdce0ab3733ba900c9f495df",
             "locator": {
               "end": 25,
@@ -873,6 +873,23 @@
               "name": "CensusWriter"
             },
             "path": "mcp/src/agents_remember/memory/knowledge_census/writer.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "145": {
+      "note": "Converted first adoption preserves attributed-history precedence, lists legacy cards and refuses them without a drift waiver.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0f4f518448f7365c8faf94b3602c463a8f4add25",
+            "content": "sha256:bc89365e4597d139bd67aa8bc5de94e80ae2b709f1713129da4483d7e4fa1545",
+            "locator": {
+              "kind": "symbol",
+              "name": "_converted_adopt_gate"
+            },
+            "path": "mcp/src/agents_remember/memory/baseline.py"
           },
           "kind": "code"
         }

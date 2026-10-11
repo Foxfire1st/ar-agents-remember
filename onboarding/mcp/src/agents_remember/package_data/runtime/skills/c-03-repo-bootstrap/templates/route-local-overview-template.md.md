@@ -8,11 +8,11 @@ This template defines durable route-local overview files that live in the mirror
 
 ### Logic
 
-The template records route metadata, route-based verification fields, parent overview, area explanation, hot-path summary, scope boundaries, structures, operating model, flows, load-bearing files, local invariants, canonical reference sections, file-level onboarding map, child overviews, usage guidance, verification needs, and update history.
+The converted route template preserves area explanation, hot paths, scope, structures, flows, local invariants, canonical reference buckets, file/child maps and usage guidance. Location carries route identity, and resolved reference anchors carry currentness; metadata stamps and Update History are absent.
 
 ### Conventions
 
-Route-local overviews use canonical `Repo-Internal References`, `Cross-Repo References`, and `Docs References` buckets. Their `## Hot Path Summary` stays short because it is copied into generated route indexes for `c-04-retrieval-strategy-router` skill discovery. Links from nested route-local overviews to root `bootstrap/` evidence packs must be calculated relative to the overview's depth. Their `sourceRoute`, `lastVerifiedCommitHash`, and `lastVerifiedCommitDate` fields give `c-02-memory-quality-control` skill the deterministic route scope to compare later.
+Route overviews keep repo-internal, cross-repo and domain-reference buckets. Hot Path Summary stays compact for generated-index discovery. Evidence-pack links are calculated at the overview's depth. Temporary citation tables go through the fixer; JSON references and their numbers are not authored manually.
 
 ### Invariants And Boundaries
 
@@ -20,7 +20,7 @@ Route-local overviews are durable memory, but they are not replacements for file
 
 ### Todos
 
-Fill verification metadata after the source file is committed.
+No file-local follow-up; run the fixer on authored citation-table input.
 
 ### Docs References
 
@@ -32,9 +32,9 @@ No relevant external documentation found.
 
 ### Repo-Internal References
 
-- The route-local overview template defines route metadata, route verification fields, hot-path summary, scope, structures, flows, load-bearing files, local invariants, and traps. [1]
+- The converted route template preserves local explanatory sections without metadata stamps or Update History. [1]
 - The template uses canonical repo-internal, cross-repo, and docs reference sections, with depth-aware evidence-pack link placeholders. [2]
-- The template maps file-level onboarding, child overviews, usage order, needs verification, and update history. [3]
+- The route template maps file cards, child overviews, usage order and unresolved verification needs without a card-history section. [3]
 - `c-03-repo-bootstrap` skill Phase 4D writes route-local overviews in mirrored source folders using this template. [4]
 
 ### Cross-Repo References

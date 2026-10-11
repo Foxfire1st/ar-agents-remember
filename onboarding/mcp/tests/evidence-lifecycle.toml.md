@@ -20,6 +20,8 @@ The consumers of the `mcp/tests/curator_coherence_test_support.py` artifact incl
 
 ## Code Commentary
 
+The converted-onboarding bootstrap test is a consumer of the two existing artifacts its imports reach. No new artifact or contract is introduced by that registration, and it remains accounting rather than execution evidence.
+
 ### Structure
 
 - Two top-level values: `schema_version = "ar-test-evidence-lifecycle/v3"` and

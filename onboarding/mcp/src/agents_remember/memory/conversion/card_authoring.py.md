@@ -36,8 +36,7 @@ on a converted tree) calls `author_card_references` to turn it into references.
 
 ### Conventions
 
-- `_cards` lists every `.md` under `onboarding/` outside dot-directories, or the one card `only` names (refused when
-  it names no card).
+- `_cards` lists every `.md` under `onboarding/` outside dot-directories within the memory tree, or the one card `only` names (refused when it names no card). Hidden ancestors of the selected memory root do not hide that whole tree: filtering uses root-relative path parts.
 - The authored finding's markers are escaped (`escape_markers`) so a literal `[n]` in the finding is not read as a
   reference.
 
@@ -85,6 +84,8 @@ No configured live documentation source was available for this pass.
 - A re-authoring is refused while another evidence line still cites its number. [5]
 - The sidecar a card without one gets. [6]
 - The fixer calls this module on a converted tree, scoped to one document when one is named. [7]
+
+- Tree-wide enumeration excludes hidden entries relative to the memory root, not hidden ancestors outside that root. [11]
 
 - Two tables with no blank line between them are refused when either holds citations. [8]
 - A delimiter row: every cell three dashes or more. [9]

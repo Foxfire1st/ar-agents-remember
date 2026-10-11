@@ -3,14 +3,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The repo overview template defines metadata, route-based verification fields, repo purpose, hot-path summary, architecture, code structure, functional areas, cross-repo references, build/dev commands, invariants, glossary, docs references, next work, verification needs, and update history.\n\nAnchor: `# <repo> — Onboarding Overview`",
+      "note": "The converted root template preserves substantive overview sections and requires fixer-authored references instead of metadata/history.\n\nAnchor: \"Overview\"",
       "targets": [
         {
           "anchor": {
-            "blob": "b0d25e794d910da952d9aa38fd2fdaedc069a6e1",
-            "content": "sha256:cb2230807aa6754e065df88288f816525872fc565e87deba7f4dec0140944333",
+            "blob": "8fa7b6cd0ae00dd9cc6d62bfd3db41e065bd282f",
+            "content": "sha256:fbed87131347850556d091f871bbc46d3bf3e25cd93dc488eb2de2a4cc6d3043",
             "locator": {
-              "end": 83,
+              "end": 76,
               "kind": "line_range",
               "start": 1
             }
@@ -42,12 +42,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b9ec22daf954427bed34246cce40441df6a34a69",
+            "blob": "6169b610d2b722a17c4d18645df947444b62f260",
             "content": "sha256:7486477afec572c00f0c627d5568d976227831d4a9619a279d2e6abac8d55819",
             "locator": {
-              "end": 610,
+              "end": 611,
               "kind": "line_range",
-              "start": 610
+              "start": 611
             },
             "path": "mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/SKILL.md"
           },

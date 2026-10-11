@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "a1673082b9fb1d7b07998c4d9b12abd32b8f4220",
-        "content": "sha256:7083ddfec289274205becd71fc831c10f01fbf5f599bfeb48a4def5b9c80f17d",
+        "blob": "7c2c913f067df83ccb08c9f4721828096b4a6b48",
+        "content": "sha256:b2f617cdb552929185c4164ebb8a992f89da1d976317b2eb29e731dccc9b396a",
         "locator": {
           "kind": "file"
         }
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "a1673082b9fb1d7b07998c4d9b12abd32b8f4220",
-        "content": "sha256:7083ddfec289274205becd71fc831c10f01fbf5f599bfeb48a4def5b9c80f17d",
+        "blob": "7c2c913f067df83ccb08c9f4721828096b4a6b48",
+        "content": "sha256:b2f617cdb552929185c4164ebb8a992f89da1d976317b2eb29e731dccc9b396a",
         "locator": {
           "kind": "file"
         }
@@ -37,8 +37,8 @@
     },
     {
       "anchor": {
-        "blob": "a1673082b9fb1d7b07998c4d9b12abd32b8f4220",
-        "content": "sha256:7083ddfec289274205becd71fc831c10f01fbf5f599bfeb48a4def5b9c80f17d",
+        "blob": "7c2c913f067df83ccb08c9f4721828096b4a6b48",
+        "content": "sha256:b2f617cdb552929185c4164ebb8a992f89da1d976317b2eb29e731dccc9b396a",
         "locator": {
           "kind": "file"
         }
@@ -51,6 +51,25 @@
       },
       "rationale": "Onboarding uses the public dashboard options route per agent kind, so a fresh install needs no guessed task-bound role selection or second catalog.",
       "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "7c2c913f067df83ccb08c9f4721828096b4a6b48",
+        "content": "sha256:b65adc0e7f264ca00f1b0121555776dde8597dc61153038da307f04461f6b867",
+        "locator": {
+          "end": 410,
+          "kind": "line_range",
+          "start": 353
+        }
+      },
+      "id": "RLZ-P2BV6G",
+      "invariant": "INV-DE9ZZF",
+      "origin": {
+        "handoffEntry": "MIK-R45@v2 rule 4",
+        "leaf": "260928-MIK-L45"
+      },
+      "rationale": "The installer Stage 5 order for a scaffolded memory repo.",
+      "role": "primary-authority"
     }
   ],
   "references": {},

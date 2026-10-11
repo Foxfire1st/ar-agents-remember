@@ -6,6 +6,9 @@ The current source facts below replace the former operative inventory. The separ
 
 - The missing-provider observation now uses server_info unused keys, not provider diagnostics.
 - The early seven-step account is stale beside the current eight-step workflow and its knowledge-foundation step.
+- In the current workflow step 5 authors initial onboarding with the existing pre-baseline fixer, step 6 adopts its attributed baseline, and step 7 reads/reports the foundation and hands authoring to the curator. New memory needs the baseline commit before foundation; earlier foundation is admitted only when memory already has a commit. Neither cards nor a baseline claim that knowledge records exist.
+
+- The bootstrap operation orders scaffold/fixer, attributed adoption and then foundation; the earlier-foundation exception needs an existing memory commit. [12]
 
 ### Superseded inventory
 
