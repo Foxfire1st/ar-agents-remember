@@ -29,6 +29,17 @@ Transport vocabulary changes no semantic judgment, candidate identity or accepta
 
 Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
 
+The reconsideration satisfying function accepts `superseded=frozenset()` after its item and rows.
+A matching row still closes an item; without a row, a valid reconsideration subject also closes when
+its decision ID belongs to the supplied superseded set. The empty default preserves two-argument
+behavior. Supersession is derived, never stored; subject spelling, triggers, dispositions, row kinds
+and decision status schema are unchanged. MIK-R148 rule3 is pure-function plus fresh-run agreement:
+the worklist supplies both-side context and omits superseded items before judging, while the registered
+gate wrapper keeps rows-only calling. A manually constructed old item is not promised closed by
+that wrapper.
+
+- Rows and supplied superseded IDs close items; default context remains empty. [292]
+
 ## Historical original card — preserved, not the current operative account
 
 <details>

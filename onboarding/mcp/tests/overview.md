@@ -50,6 +50,16 @@ Support settings writes use [`_user_settings_guard.py`](_user_settings_guard.py.
 
 Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
 
+The existing reconsideration suite now protects candidate-side supersession: a successor suppresses
+its base item and appears in the skipped-link summary; the same changed target without a successor
+still raises; an unrelated supersedes target preserves the base item and raises no new candidate
+item. The successor case separately checks explicit-set versus default stored-predicate behavior.
+These are source-described assertions, not a new execution or acceptance. The taken file has1,223
+lines against the1,200 rail; b17b9a0a/mark48 leaves splitting to L68, not a general waiver or a split
+delivered here. Existing fixtures, source catalogs, lane ownership and certification policy are unchanged.
+
+- Candidate successor, unchanged/no-successor and unrelated-candidate controls protect the boundary. [1714]
+
 ## Historical original card — preserved, not the current operative account
 
 <details>

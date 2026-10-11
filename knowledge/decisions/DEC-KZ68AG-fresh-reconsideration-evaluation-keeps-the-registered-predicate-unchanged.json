@@ -1,0 +1,74 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "Adding predicate context was explicitly weighed against exact fresh computation; the chosen boundary constrains future judging paths and identifies the consumer change that reopens the rejected wiring."
+  },
+  "alternatives": [
+    {
+      "option": "Use the pure function with supplied context and the fresh worklist; keep the registered predicate unchanged.",
+      "reason": "Both production judges compute exact worklists before judging; no superseded item reaches the registered predicate, and the implementation stays within the taken-change preservation boundary.",
+      "status": "chosen"
+    },
+    {
+      "option": "Carry the superseded set through the registered gate predicate as additional context.",
+      "reason": "No product path was found that judges a persisted superseded item; extra wiring would alter scope and the preserved implementation without a current consumer.",
+      "reconsider_when": "A production path is identified that hands the registered predicate a persisted superseded item instead of the fresh evaluation's worklist.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Do not describe rule3 agreement as unconditional agreement for arbitrarily manufactured stored items.",
+    "If a persisted-item production consumer appears, return the gate-context question to requirement authority before claiming agreement."
+  ],
+  "context": "The pure satisfying function can close an old superseded item when supplied context, but its registered gate caller supplies only rows. The implementation computes a fresh worklist and suppresses that item before judging, so wiring context would broaden the task and depart from the taken implementation without protecting an actual production path.",
+  "decider": "architect 97e0320d-431f-4f4c-8c86-66a6dca880a7 under MIK-R148@v1, ruling a00091c0",
+  "id": "DEC-KZ68AG",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "INV-83YJKE"
+    },
+    {
+      "relation": "explains",
+      "target": {
+        "blob": "560551a2058c73a9283f51e12e765737384373cb",
+        "content": "sha256:d933a755a1153049feff1f7157f4afed912fe5f0ff83b43663061e60bc24506f",
+        "locator": {
+          "kind": "symbol",
+          "name": "recompute_for_gate"
+        },
+        "path": "mcp/src/agents_remember/application/knowledge_gate/gate.py"
+      }
+    },
+    {
+      "relation": "explains",
+      "target": {
+        "blob": "136d4c18901e0406361b0361c272d806dc80da93",
+        "content": "sha256:0e49b4be19d35dc91f3c53b2777953d9cbe81b16fc4a50805dfb5a63a297bfe1",
+        "locator": {
+          "kind": "symbol",
+          "name": "_worklist"
+        },
+        "path": "mcp/src/agents_remember/application/knowledge_gate/direct.py"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Canonical architect a00091c0 ruling notes/run3/L148-THE-GATE-RECOMPUTES-SO-THE-FUNCTION-AND-THE-FRESH-RUN-MEET-RULE-3-AND-THE-JOURNAL-IS-WRITTEN-NOW-RULING.json; Reviewer round1/stored-rule-impact.md production gate.py/direct.py walk; MIK-R148@v1 and MIK-R14@v2."
+      ],
+      "path": "knowledge-wave1-rebound.json"
+    },
+    "handoffEntry": "L148-rule3-fresh-evaluation-choice",
+    "leaf": "260928-MIK-L148",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

@@ -36,8 +36,11 @@ it reads no tree, no Git and no task document.
   `<repository>/<task path>#<id>@<version>`. The worklist fills `facts.changed[].target` with it, and the writer
   compares a K_C link with the fired target through it before any refresh, so a link re-authored after the worklist
   fired is never refreshed onto the wrong target.
-- **The predicate (rule 5).** `reconsideration_item_open(item, rows_by_subject)` is open unless the leaf has a row
-  with the item's subject. The row kind admits only `still_rejected` and `raise`, so any such row satisfies it.
+- **The predicate.** `reconsideration_item_open(item, rows_by_subject, superseded=frozenset())` closes an item
+  when the leaf has a row with its subject, or its parsed decision ID belongs to the supplied superseded set.
+  The row kind still admits only `still_rejected` and `raise`. The default empty set preserves the existing
+  two-argument behavior; unknown/malformed subjects and unrelated IDs stay open without a matching row.
+  This pure function does not derive supersession or read a knowledge tree.
 
 ### Conventions
 
@@ -48,10 +51,14 @@ it reads no tree, no Git and no task document.
 
 ### Invariants And Boundaries
 
-- **The worklist's `satisfiedBy` and the gate's predicate agree by construction.** Realized by the registrant
-  calling `reconsideration_item_open` to fill `satisfiedBy`; proved by
-  `test_still_rejected_answers_the_candidate_and_the_stored_predicate_agrees` and on every real candidate of the
-  worker's and reviewers' runs ("agrees with satisfiedBy: True").
+- **Agreement belongs to the same fresh evaluation.** The worklist passes the superseded set derived from
+  K_B and K_C, skips those decisions before constructing items, and uses this function for `satisfiedBy`.
+  Both production judging paths recompute the worklist; the registered gate predicate remains two-argument
+  and receives only items that fresh run produced. A manually constructed old superseded item stays open
+  with the default empty set, but closes when the correct set is supplied. MIK-R148 rule3 is met by the pure
+  function together with the fresh run (architect ruling a00091c0), not by new context wiring or persisted-item
+  support. The answered-item test preserves row agreement; the candidate-successor test proves the
+  context-dependent stored-item result and suppression.
 - **A decision target never triggers (one hop).** No trigger here names a decision; the registrant skips a
   `DEC-` target (rule 3).
 - **Unconverted memory reads are unchanged.** Nothing reads this module on an unconverted leaf, which gets no
@@ -84,9 +91,27 @@ No configured live documentation source was available for this pass.
 - The subject spelled and parsed. [6]
 - One question per subject and leaf. [7]
 - The one spelling of a link target, compared before a refresh (N1). [8]
-- The satisfying rule over a stored item, for the gate. [9]
+
+- The pure stored-item rule closes matching rows or supplied superseded IDs; empty default preserves two-argument behavior. [9]
+
 - The row kind, the subject parser and the item kind are registered with MIK-R14 as owner. [10]
 - The stored predicate agrees with `satisfiedBy` on the answered item. [11]
+
+
+
+- A candidate successor suppresses the base decision and lists its ID; the stored rule requires supplied context. [12]
+
+- Without a successor the changed target still raises. [13]
+
+- An unrelated candidate decision suppresses nothing and raises no item itself. [14]
+
+
+
+- The closeout gate recomputes its worklist and reads no earlier persisted document. [15]
+
+- Direct landing computes its worklist over exact sides before judging. [16]
+
+- The registered row predicate keeps the two-argument satisfying-function call. [17]
 
 ### Cross-Repo References
 

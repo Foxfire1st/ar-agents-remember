@@ -6,7 +6,7 @@
 
 ## Purpose
 
-**The MIK-R14@v2 cases (29 collected): reconsideration surfacing over real Git code and converted memory
+**The MIK-R14@v2 reconsideration cases, including same-leaf supersession (MIK-R148@v1), over real Git code and converted memory
 repositories.** The fixture is MIK-R08's (`test_knowledge_worklist.World`) plus two decisions in K_B: D18
 (`DEC-D18TXT`: the rejected "Canonical SQLite" reconsidered on an assumption record, the deferred "Both, kept in
 sync" on a symbol anchor (`third` in `pkg/review.py`) and on the requirement endpoint `MIK-R21@v1`) and D12
@@ -53,14 +53,19 @@ uses.
   - rulings 10:05:18 and 10:39:15 (R4): a rerun after more code changes carries the anchor; committed lookalikes and
     re-authors stay refused; a link reverted after a committed refresh is refreshed again; a version approved after
     the refresh needs the new item named;
+  - same-leaf supersession: a candidate successor suppresses its base decision despite a changed target and
+    the skipped summary names that successor; the stored predicate closes only when supplied the superseded
+    set. The unchanged two-argument rule stays open. Without a successor the item still fires; an unrelated
+    candidate decision suppresses nothing and raises no item itself. `_candidate_successor` constructs the
+    candidate decision; no test claims newly wired gate context.
   - rulings 11:01:18 and 11:24:12 (R5): a second change inside the anchored range needs the new item, and a stale
     worklist is refused as a stale item; a curator-set unapproved version (v4) and an anchor re-pointed to other code
     are re-authored.
 
 ### Conventions
 
-- The module is in the `unit-regression` lane (`test-evidence-lanes.toml:128`); the evidence catalog derives it as a
-  consumer of `fixtures/repository_profiles/node/package-lock.json` (`evidence-lifecycle.toml:839`, the Forty-second
+- The module is in the `unit-regression` lane (`test-evidence-lanes.toml:253`); the evidence catalog derives it as a
+  consumer of `fixtures/repository_profiles/node/package-lock.json` (`evidence-lifecycle.toml:1446`, the Forty-second
   deliberate re-pin).
 - Refusal cases assert the decision file is byte-identical afterwards.
 
@@ -71,12 +76,16 @@ uses.
   check, `_place_record`, the N1 key check, `alternative != index`, the idempotent branches, the carried and
   new-change states, the R5-2 upper bound, the stale-item check, the packet comparison): each removal fails at least
   one case here.
-- **Accepted note R6-2 (ruling 11:53:13):** the module is 1,172 lines, 28 under the 1,200 limit; the next addition
-  splits it (for example into surfacing and writer-refresh cases).
+- **Size boundary.** The earlier R6-2 account was 1,172 lines and required a split before another case.
+  The taken supersession regressions now leave 1,223 lines, above the 1,200 rail. The bounded b17b9a0a/mark48
+  disposition permits this gate change without splitting these taken bytes; L68 owns the split. This is a
+  disclosed limit, not a size PASS, a raised threshold or permission for further growth. Surfacing versus
+  writer-refresh remains the smallest documented extraction seam.
 
 ### Todos
 
-- Split the module before the next case is added (R6-2).
+- L68 owns the split of the oversized module; do not treat the bounded taken-change disposition as a
+  general exception for another case.
 
 ## Evidence
 
@@ -109,8 +118,24 @@ No configured live documentation source was available for this pass.
 - R3-1: idempotent reruns. [16]
 - R4: carried anchor, committed lookalikes, a reverted link, a newer approved version. [17]
 - R5: a second change in the range, an unapproved version, an anchor re-pointed to other code. [18]
-- The unit-lane row. [19]
-- The catalog consumer row. [20]
+
+
+- The unit-regression list includes this test module. [19]
+
+
+
+
+- The evidence catalog consumer list includes this test module. [20]
+
+
+
+
+
+- A candidate successor suppresses the base decision and lists its ID; the stored rule requires supplied context. [21]
+
+- Without a successor the changed target still raises. [22]
+
+- An unrelated candidate decision suppresses nothing and raises no item itself. [23]
 
 ### Cross-Repo References
 

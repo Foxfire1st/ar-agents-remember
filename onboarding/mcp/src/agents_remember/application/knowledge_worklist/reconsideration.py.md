@@ -20,9 +20,12 @@ returns the items, each with `satisfiedBy`, and a `reconsideration.links` summar
 - **What is read.** Every decision of **K_B** (`_Evaluation.run`), each of its `reconsider_on` links through
   L13's `reconsider_links` (only links that name a `rejected` or `deferred` alternative). A decision absent from
   K_B raises nothing: it was authored in this leaf (worker note 10, like MIK-R08's K_B-only invariants).
-- **Superseded decisions are skipped (ruling 04:37:56 Q5).** A decision whose `derived_status` is `superseded`
-  (supersession derived from K_B, review F8) is not evaluated; each of its links is listed in the summary as
-  `skipped: superseded` with `trigger: null` (`_skipped`). The successor carries its own links.
+- **Superseded decisions are skipped.** Supersession is derived from the decisions of **K_B and K_C**,
+  while link evaluation still ranges over K_B decisions only. A successor authored in the candidate therefore
+  silences its base decision even when a linked target changed. Each skipped link reports `skipped: superseded`,
+  `trigger: null` and the `successors` IDs (`_skipped`). A candidate decision without that supersession
+  suppresses nothing and raises no item merely by being new. This extends Q5 through MIK-R148@v1; it does not
+  add a trigger or change the meaning of the two answering rows.
 - **Triggers (rule 1), one per target type** (`_evaluate`):
   - a record ID (`_record_trigger`): `record_file` when its record file's location or bytes differ K_B→K_C
     (`KnowledgeSide.record_file`, as MIK-R08 compares records), else `history_row` when this leaf's history file
@@ -30,8 +33,9 @@ returns the items, each with `satisfiedBy`, and a `reconsideration.links` summar
   - a `DEC-` target never fires: the summary notes "one hop: a change to a decision never chains on" (rule 3);
   - a `route:<dir>` target (`_route_trigger`, ruling Q1) fires only through `history_row`: a row of this leaf
     with disposition `rerouted`, `retired` or `deleted` whose subject is the route itself or a family whose routes
-    in K_B or K_C contain the directory (exact string match, review F8). No directory-absence trigger exists, and
-    the validator keeps allowing route targets;
+    in K_B or K_C contain the directory (exact string match, review F8). A family `changed` row also fires when
+    its routes differ between K_B and K_C; a guarantee-only change with unchanged routes does not.
+    No directory-absence trigger exists, and the validator keeps allowing route targets;
   - an anchor (`_anchor_trigger`) is classified by L08's own `Classifier.classify_anchor`, like an entry but never
     one: `touched` or `moved_or_absent` fires `anchor`; `stale_at_base` fires `anchor_stale` (review F3, ruling
     05:31:11), so a stale link anchor asks for a judgment instead of going quiet. The summary records the class.
@@ -48,7 +52,10 @@ returns the items, each with `satisfiedBy`, and a `reconsideration.links` summar
   `item_id` over the kind, the subject and each fired link's `[link, target, trigger, identity]`, so a new change
   to the same target gives a new ID while the subject stays the same.
 - **`satisfiedBy`.** The leaf's rows by subject (from K_C's history file of the owner leaf) feed
-  `reconsideration_item_open`, the model's stored predicate; `satisfiedBy` names the row or is `null`.
+  `reconsideration_item_open`, with the superseded-decision IDs derived by this run; `satisfiedBy` names the row
+  or is `null`. Superseded links are skipped before item construction. The gate and direct judge recompute
+  their worklist, so their unchanged two-argument predicate receives only items of that fresh evaluation,
+  not an old persisted superseded item (MIK-R148 rule3, architect ruling a00091c0).
 - **Summary.** `reconsideration_candidates` returns `ReconsiderationRun(items, {"links": evaluated})`, which
   `compute.py` persists as the document's `reconsideration` key.
 
@@ -98,19 +105,31 @@ No configured live documentation source was available for this pass.
 
 ### Repo-Internal References
 
-- The module docstring: what is read, the five triggers, route and superseded rulings, and the items. [1]
+
+- The module docstring: base-only link evaluation, both-side supersession, unchanged triggers and row meanings. [1]
+
 - The route dispositions and the decision prefix of the one-hop guard. [2]
 - The kind registered with its facts, satisfying row and owner. [3]
 - What the triggers read: both sides, the anchor classifier, the owner and the coordination root. [4]
 - The run's items and link summary. [5]
-- A superseded decision's link, listed as skipped. [6]
-- K_B decisions only, the superseded skip, and one item per changed alternative. [7]
-- One link into the summary, with its fired facts. [8]
+
+- A superseded link reports skipped, null trigger and successor IDs. [6]
+
+
+- Supersession uses K_B and K_C decisions while link evaluation remains K_B-only. [7]
+
+
+- Skipped-link summary or fired-link evaluation. [8]
+
 - Record targets: route, one-hop note, record file, then a triggering row. [9]
-- A route fires only through a rerouting, retiring or deleting row (Q1). [10]
+
+- A route fires through rerouting/retiring/deleting rows, or a changed family row whose routes differ. [10]
+
 - An anchor classified like an entry; `stale_at_base` fires `anchor_stale` (F3). [11]
 - A requirement fires only when resolved and a newer version is approved; facts carry `latestPacket` (F4). [12]
-- The item: facts, `changed`, the ID over fired identities, and `satisfiedBy` from the stored predicate. [13]
+
+- The item facts/ID and row satisfaction use the run's superseded set. [13]
+
 - The entry point `compute.py` calls. [14]
 - The packet's conforming example: a revised assumption surfaces the rejected alternative. [15]
 - `rerouted` fires and `no_impact` does not. [16]
@@ -120,6 +139,22 @@ No configured live documentation source was available for this pass.
 - A route target fires only on a retiring row; code gone with no row raises nothing. [20]
 - A superseded decision raises nothing and its links are listed skipped. [21]
 - A stale link anchor raises `anchor_stale`. [22]
+
+
+
+- A candidate successor suppresses the base decision and lists its ID; the stored rule requires supplied context. [24]
+
+- Without a successor the changed target still raises. [25]
+
+- An unrelated candidate decision suppresses nothing and raises no item itself. [26]
+
+
+
+- The closeout gate recomputes its worklist and reads no earlier persisted document. [27]
+
+- Direct landing computes its worklist over exact sides before judging. [28]
+
+- The registered row predicate keeps the two-argument satisfying-function call. [29]
 
 ### Cross-Repo References
 

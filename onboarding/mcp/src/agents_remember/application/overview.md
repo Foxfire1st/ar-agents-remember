@@ -15,6 +15,19 @@ projection belongs to `memory_quality/answer.py`; execution/readiness stay with 
 Citation scope admits a finite list only for fixing, preserving singleton behavior and the original
 leaf writer guard. These transport changes confer no semantic or Git acceptance.
 
+Reconsideration derives supersession from the decisions of both K_B and K_C while evaluating only
+base decisions' rejected/deferred links. A candidate successor suppresses its base decision; each skipped
+link still names its successor IDs with a null trigger. A candidate-only decision raises nothing by
+being new, and an unrelated candidate decision suppresses nothing. This is the MIK-R148@v1 reading of
+MIK-R14/Q5, preserving the existing triggers and still_rejected/raise meanings. The pure stored-item
+rule accepts the same superseded set; gate and direct judging compute fresh worklists, so the unchanged
+two-argument registered predicate never receives a superseded item from that evaluation. No new
+predicate wiring or persisted-item support is implied.
+
+- Both-side supersession suppresses base items and reports the successor IDs. [452]
+
+- Skipped links carry successors with a null trigger. [453]
+
 ## Historical prior application route — preserved, not the current operative account
 
 <details>

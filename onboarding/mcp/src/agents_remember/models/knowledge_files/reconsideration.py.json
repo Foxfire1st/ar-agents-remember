@@ -1,13 +1,32 @@
 {
   "path": "mcp/src/agents_remember/models/knowledge_files/reconsideration.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "42c565522bb5fcf7774ff7f640226cdb0463a5ac",
+        "content": "sha256:31a2f56932da49beab78b1ad7113659a48f696d65c5318576fdeccd5e22d0bae",
+        "locator": {
+          "kind": "symbol",
+          "name": "reconsideration_item_open"
+        }
+      },
+      "id": "RLZ-G9C5CR",
+      "invariant": "INV-83YJKE",
+      "origin": {
+        "handoffEntry": "MIK-R148@v1",
+        "leaf": "260928-MIK-L148"
+      },
+      "rationale": "This construct enforces the base decision's suppression under the evaluation's base-and-candidate supersession context rather than making the Curator reopen an already superseded alternative.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "The module docstring: the subject, the triggers, the rows and the one satisfying rule.\n\nAnchor: \"Reconsideration candidates (MIK-R14@v2)\"",
       "targets": [
         {
           "anchor": {
-            "blob": "58334ba5f68df4d25f46adef9beceb408863da59",
+            "blob": "42c565522bb5fcf7774ff7f640226cdb0463a5ac",
             "content": "sha256:6290b0977c99f47e93cb497d2d8377f3650d0c1260a05ae3c2b964b794cfa1d8",
             "locator": {
               "end": 24,
@@ -24,7 +43,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e499f1cf47ad6bc42fb86c1314767b975f0653ac",
+            "blob": "4c8880a5bea27aef3f0432a094116c46f2b7ed0d",
             "content": "sha256:712bb410527b2cbc91df02a7c2fb2ebd60d3703f3bfaa17fa011c2b130ea508d",
             "locator": {
               "kind": "symbol",
@@ -41,7 +60,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e499f1cf47ad6bc42fb86c1314767b975f0653ac",
+            "blob": "4c8880a5bea27aef3f0432a094116c46f2b7ed0d",
             "content": "sha256:3879c9dc6c6e7ec429fe38296c8f446a091e114846feedfe154fca532119efb6",
             "locator": {
               "kind": "symbol",
@@ -53,12 +72,114 @@
         }
       ]
     },
+    "12": {
+      "note": "A candidate successor suppresses the base decision and lists its ID; the stored rule requires supplied context.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c8880a5bea27aef3f0432a094116c46f2b7ed0d",
+            "content": "sha256:a74ed3998baca1be473bbfcfc4f34ac6bc10ab987f4a9d44310faea235464b80",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_candidate_successor_silences_its_base_decision"
+            },
+            "path": "mcp/tests/test_reconsideration_surfacing.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "Without a successor the changed target still raises.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c8880a5bea27aef3f0432a094116c46f2b7ed0d",
+            "content": "sha256:9d3d211848ee1ac49b9825d9df092c32e27308e87f85e7039c8a39c79e340018",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_changed_target_without_a_successor_still_raises"
+            },
+            "path": "mcp/tests/test_reconsideration_surfacing.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "An unrelated candidate decision suppresses nothing and raises no item itself.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c8880a5bea27aef3f0432a094116c46f2b7ed0d",
+            "content": "sha256:adee2d6b45036cf05c1527ff6b89e010db6c60e4b9515527b8b2f9bfd15baff0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_candidate_decision_that_supersedes_nothing_keeps_the_item"
+            },
+            "path": "mcp/tests/test_reconsideration_surfacing.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "The closeout gate recomputes its worklist and reads no earlier persisted document.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "560551a2058c73a9283f51e12e765737384373cb",
+            "content": "sha256:d933a755a1153049feff1f7157f4afed912fe5f0ff83b43663061e60bc24506f",
+            "locator": {
+              "kind": "symbol",
+              "name": "recompute_for_gate"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_gate/gate.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "Direct landing computes its worklist over exact sides before judging.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "136d4c18901e0406361b0361c272d806dc80da93",
+            "content": "sha256:0e49b4be19d35dc91f3c53b2777953d9cbe81b16fc4a50805dfb5a63a297bfe1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_worklist"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_gate/direct.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "The registered row predicate keeps the two-argument satisfying-function call.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4e30c21d7d4d45c8dc277c76b63ad78a79157eda",
+            "content": "sha256:e67cf5c84b5d33f2c93ed3f88b172b400878bde0fbecccd7fb5cc0d7321f76f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_by_rows"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_gate/predicates.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "The kind and the two row dispositions.",
       "targets": [
         {
           "anchor": {
-            "blob": "58334ba5f68df4d25f46adef9beceb408863da59",
+            "blob": "42c565522bb5fcf7774ff7f640226cdb0463a5ac",
             "content": "sha256:05bd514fbcca6164283757265a8ff61999faddc9c67bafef1b95066c41e69f7b",
             "locator": {
               "kind": "symbol",
@@ -69,7 +190,7 @@
         },
         {
           "anchor": {
-            "blob": "58334ba5f68df4d25f46adef9beceb408863da59",
+            "blob": "42c565522bb5fcf7774ff7f640226cdb0463a5ac",
             "content": "sha256:97b4c305f0392ed5ed4249d01b0892816bd1b9ca47219fb16aa51b34b3c5695d",
             "locator": {
               "kind": "symbol",
@@ -85,7 +206,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "58334ba5f68df4d25f46adef9beceb408863da59",
+            "blob": "42c565522bb5fcf7774ff7f640226cdb0463a5ac",
             "content": "sha256:f6458876ed595a509c8ca1931e5c7b3c6af522ba3dbbd94805ed8c56ab31b9c8",
             "locator": {
               "kind": "symbol",
@@ -101,7 +222,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "58334ba5f68df4d25f46adef9beceb408863da59",
+            "blob": "42c565522bb5fcf7774ff7f640226cdb0463a5ac",
             "content": "sha256:e527b260e6e1f9d7a7daf0201957aa93445603e501e44f2021f495a7e785c963",
             "locator": {
               "kind": "symbol",
@@ -112,7 +233,7 @@
         },
         {
           "anchor": {
-            "blob": "58334ba5f68df4d25f46adef9beceb408863da59",
+            "blob": "42c565522bb5fcf7774ff7f640226cdb0463a5ac",
             "content": "sha256:5d3869691ae424644e5501cd5d97bb3edc87d7ba9594e60481332392eff2d77a",
             "locator": {
               "kind": "symbol",
@@ -128,7 +249,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "58334ba5f68df4d25f46adef9beceb408863da59",
+            "blob": "42c565522bb5fcf7774ff7f640226cdb0463a5ac",
             "content": "sha256:0006ceaecb6230c1bedf879110bab18aa9f67954ade5ca569b765ce680e475eb",
             "locator": {
               "kind": "symbol",
@@ -144,7 +265,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "58334ba5f68df4d25f46adef9beceb408863da59",
+            "blob": "42c565522bb5fcf7774ff7f640226cdb0463a5ac",
             "content": "sha256:2a4a6589d3fb13673301999bb2e4ae5de4d47a10baa1f5a7af30f683fe5fcffc",
             "locator": {
               "kind": "symbol",
@@ -155,7 +276,7 @@
         },
         {
           "anchor": {
-            "blob": "58334ba5f68df4d25f46adef9beceb408863da59",
+            "blob": "42c565522bb5fcf7774ff7f640226cdb0463a5ac",
             "content": "sha256:8b29952a1b68f643cb6e2c441557da6a49b9ddb3d67db073b9c2bde9eec80bd1",
             "locator": {
               "kind": "symbol",
@@ -171,7 +292,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "58334ba5f68df4d25f46adef9beceb408863da59",
+            "blob": "42c565522bb5fcf7774ff7f640226cdb0463a5ac",
             "content": "sha256:47ee4ad4b205d31da33eef5debffd1255006c7d7019dd107977236cf5921209a",
             "locator": {
               "kind": "symbol",
@@ -187,7 +308,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "58334ba5f68df4d25f46adef9beceb408863da59",
+            "blob": "42c565522bb5fcf7774ff7f640226cdb0463a5ac",
             "content": "sha256:2932a907e6720df1bec89e1b1fd9b66517b46196b9d4bb030e3556cb53078dd3",
             "locator": {
               "kind": "symbol",
@@ -199,12 +320,12 @@
       ]
     },
     "9": {
-      "note": "The satisfying rule over a stored item, for the gate.",
+      "note": "The pure stored-item rule closes matching rows or supplied superseded IDs; empty default preserves two-argument behavior.",
       "targets": [
         {
           "anchor": {
-            "blob": "58334ba5f68df4d25f46adef9beceb408863da59",
-            "content": "sha256:101cd958471aeb9cff4c7082fb839b56dd03196d81c0e27337200b3ad8e8a75e",
+            "blob": "42c565522bb5fcf7774ff7f640226cdb0463a5ac",
+            "content": "sha256:31a2f56932da49beab78b1ad7113659a48f696d65c5318576fdeccd5e22d0bae",
             "locator": {
               "kind": "symbol",
               "name": "reconsideration_item_open"
