@@ -60,7 +60,7 @@ Seven classes, 35 cases, `unittest.TestCase` throughout, no `pytest` marks.
   shape in a temporary document (`:617-625`) so the zero it reports over the repository is a measured
   zero rather than an instrument that never fires.
 - **The budget screen** (`BudgetAgreementTests`, `:698-936`). The declared pair is read from
-  `pyproject.toml` at run time, never restated; the repaired sentence must state that pair; the
+  `pyproject.toml` at run time. A separate ruling assertion pins 5000/1000, and the stub mirror must follow it; the repaired sentence must state that pair and the declaration's current 298/299 lines. The
   declarations on `conftest.py` must register both names and state no value; the two stale-figure
   classes are counted separately; and the superseded-pair worklist is pinned as **the count
   `superseded_pair_sites` returns**, not as a literal.
@@ -188,6 +188,8 @@ No configured domain evidence applies to the file-local claims above.
 
 ### Repo-Internal References
 
+- The enforced collected-case pair is 5000 unit/1000 integration; the unit-only policy raise leaves the guard unchanged. [33]
+
 The anchors below identify current behaviour of this module; they are not execution evidence and they
 make no acceptance claim.
 
@@ -214,7 +216,8 @@ make no acceptance claim.
 - The census constant: the pinned tuple the live arm compares against, and what each entry means. [21]
 - The live arm that reds when the pinned population moves in either direction. [22]
 - The two section-boundary bounds of the worklist rule, each with its direction, measured on planted documents. [23]
-- The budget screen: the declared pair read from `pyproject.toml`, never restated here. [24]
+
+- The budget screen reads the declaration and current line positions dynamically, separately pins the ruled5000/1000 pair and its stub mirror, and bounds the live T56 sentence check. [24]
 - The repaired sentence held by a case now that its stale entry is gone, so a repair is not a gap. [25]
 - Both figures asserted separately at every pinned site, so a site that has moved on is red. [26]
 - The two figure classes counted separately: a live claim is not a dated record, and the worklist is larger than the set a repair moves. [27]

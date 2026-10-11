@@ -1,13 +1,52 @@
 {
   "path": "pyproject.toml",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "6fdaf3bc5c0ebf2ced1c450d5973ed55b2515f3c",
+        "content": "sha256:ea38bd02048757c226c712940d3afe9bfb62df60a3c7b191c001c9b0384d4d32",
+        "locator": {
+          "end": 299,
+          "kind": "line_range",
+          "start": 299
+        }
+      },
+      "id": "RLZ-WMQ90H",
+      "invariant": "INV-3NAQA6",
+      "origin": {
+        "handoffEntry": "MIK-R146@v1 rule 1 — integration declaration",
+        "leaf": "260928-MIK-L146"
+      },
+      "rationale": "The paired rail the requirement explicitly excludes from the raise; it must read 1000 beside the moved unit line.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "6fdaf3bc5c0ebf2ced1c450d5973ed55b2515f3c",
+        "content": "sha256:aa2545dd84aeacc48cd6f0d64b019b9e53453d60579bee15ae65878cfb55d8c4",
+        "locator": {
+          "end": 298,
+          "kind": "line_range",
+          "start": 298
+        }
+      },
+      "id": "RLZ-YH43T3",
+      "invariant": "INV-Q2VTFP",
+      "origin": {
+        "handoffEntry": "MIK-R146@v1 rule 1 — unit declaration",
+        "leaf": "260928-MIK-L146"
+      },
+      "rationale": "This line is the single declared unit rail the guard enforces; the leaf's whole purpose is this number.",
+      "role": "primary-authority"
+    }
+  ],
   "references": {
     "1": {
       "note": "Python lint policy and signature exception.\n\nAnchor: `[tool.ruff]`",
       "targets": [
         {
           "anchor": {
-            "blob": "11afdcbd034529ba6e12f7c6ab8fb204ee9a77d6",
+            "blob": "6fdaf3bc5c0ebf2ced1c450d5973ed55b2515f3c",
             "content": "sha256:2792983e259ca96490c0a14b7760063dfb856f7574c85e87d1368bc18df2c9ed",
             "locator": {
               "end": 42,
@@ -20,11 +59,11 @@
       ]
     },
     "10": {
-      "note": "Budgets, populations, collection and strictness, including the integration ceiling raise and its tradeoff block.\n\nAnchor: \"[tool.pytest.ini_options]\"; `integration_case_budget`; `unit_case_budget`",
+      "note": "Budgets, populations, collection and strictness, including the dated ceiling policy and tradeoff blocks.",
       "targets": [
         {
           "anchor": {
-            "blob": "11afdcbd034529ba6e12f7c6ab8fb204ee9a77d6",
+            "blob": "6fdaf3bc5c0ebf2ced1c450d5973ed55b2515f3c",
             "content": "sha256:8676e641465a6551e9e9cffd7faa1e6a42f9b724809813c903d7edcb52f3006f",
             "locator": {
               "end": 121,
@@ -36,19 +75,7 @@
         },
         {
           "anchor": {
-            "blob": "11afdcbd034529ba6e12f7c6ab8fb204ee9a77d6",
-            "content": "sha256:eca452c277bed0a9b6a0ecf167d83cfe0cd07624844a0850e506764962e1bedd",
-            "locator": {
-              "end": 279,
-              "kind": "line_range",
-              "start": 278
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "11afdcbd034529ba6e12f7c6ab8fb204ee9a77d6",
+            "blob": "6fdaf3bc5c0ebf2ced1c450d5973ed55b2515f3c",
             "content": "sha256:81b16cca85b0b25e4e7e136558f566f01f0171aafbc8a615cab157dbcc6ef180",
             "locator": {
               "end": 250,
@@ -60,12 +87,41 @@
         },
         {
           "anchor": {
-            "blob": "11afdcbd034529ba6e12f7c6ab8fb204ee9a77d6",
-            "content": "sha256:8612608546709a0bfdf3d45e09a71b9b231777290a008168e11c6dca91f2b17b",
+            "blob": "6fdaf3bc5c0ebf2ced1c450d5973ed55b2515f3c",
+            "content": "sha256:ce36f45d8abc47ff28e835599564f9783a30a7b30220e19ba24e701ff8307f49",
             "locator": {
-              "end": 291,
+              "end": 299,
               "kind": "line_range",
-              "start": 284
+              "start": 278
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6fdaf3bc5c0ebf2ced1c450d5973ed55b2515f3c",
+            "content": "sha256:dd5577851fe3fe9c37895c6012bac452dccdd62d9ae4ee4be581195e6f85d39d",
+            "locator": {
+              "end": 331,
+              "kind": "line_range",
+              "start": 324
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The enforced collected-case pair is 5000 unit/1000 integration; the unit-only policy raise leaves the guard unchanged.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6fdaf3bc5c0ebf2ced1c450d5973ed55b2515f3c",
+            "content": "sha256:ce36f45d8abc47ff28e835599564f9783a30a7b30220e19ba24e701ff8307f49",
+            "locator": {
+              "end": 299,
+              "kind": "line_range",
+              "start": 278
             }
           },
           "kind": "code"
@@ -77,7 +133,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "11afdcbd034529ba6e12f7c6ab8fb204ee9a77d6",
+            "blob": "6fdaf3bc5c0ebf2ced1c450d5973ed55b2515f3c",
             "content": "sha256:54226af6623b38088f837a8849f191ef0a6bc0cc939457fe4c3b356422afd788",
             "locator": {
               "end": 67,
@@ -94,7 +150,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "11afdcbd034529ba6e12f7c6ab8fb204ee9a77d6",
+            "blob": "6fdaf3bc5c0ebf2ced1c450d5973ed55b2515f3c",
             "content": "sha256:a84fa19603d69cd6ae0f321ee068a5a6f2958752833cc5b1e2b3f2366990959c",
             "locator": {
               "end": 88,
@@ -111,7 +167,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "11afdcbd034529ba6e12f7c6ab8fb204ee9a77d6",
+            "blob": "6fdaf3bc5c0ebf2ced1c450d5973ed55b2515f3c",
             "content": "sha256:1f442416c90f39b61a1a4bb12cf74370eb23b32e31060fec454ec836aa198973",
             "locator": {
               "end": 119,
@@ -128,7 +184,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "11afdcbd034529ba6e12f7c6ab8fb204ee9a77d6",
+            "blob": "6fdaf3bc5c0ebf2ced1c450d5973ed55b2515f3c",
             "content": "sha256:8676e641465a6551e9e9cffd7faa1e6a42f9b724809813c903d7edcb52f3006f",
             "locator": {
               "end": 121,
@@ -141,28 +197,16 @@
       ]
     },
     "6": {
-      "note": "**The declared budget pair as the file now declares it — `unit_case_budget` 4000 / `integration_case_budget` 1000, raised from 3000 / 600 by `260918-TSIP-L13`'s second developer-ruled raise on 2026-09-20; that earlier pair had itself been raised from 2300 / 400 by `260918-TSIP-L7` on 2026-09-19, and from 2200 / 400 before that by the truth-coverage census and staged-migration leaf over its own measured 2206-case candidate.** The earlier raises this row has carried are retained as the history they are: this candidate's own owning seat moved 1500 -> 1600, the merge onto the moved super line moved it to 2200 over a 2035-case population, and `260915-KS-L21` moved it to **2300** over a 2206-case population.\n\nAnchor: \"unit_case_budget = 4000\"; \"integration_case_budget = 1000\"",
+      "note": "**The declared budget pair as the file now declares it — `unit_case_budget` 5000 / `integration_case_budget` 1000, the unit ceiling raised from 4000 by the developer's D226 direction; the integration ceiling remains unchanged. The prior pair was raised from 3000 / 600 by `260918-TSIP-L13`'s second developer-ruled raise on 2026-09-20; that earlier pair had itself been raised from 2300 / 400 by `260918-TSIP-L7` on 2026-09-19, and from 2200 / 400 before that by the truth-coverage census and staged-migration leaf over its own measured 2206-case candidate.** The earlier raises this row has carried are retained as the history they are: this candidate's own owning seat moved 1500 -> 1600, the merge onto the moved super line moved it to 2200 over a 2035-case population, and `260915-KS-L21` moved it to **2300** over a 2206-case population.",
       "targets": [
         {
           "anchor": {
-            "blob": "11afdcbd034529ba6e12f7c6ab8fb204ee9a77d6",
-            "content": "sha256:247bbb930b2420b58c6de2e29c3947ee8d23cf69de7f980abf10f28c0d922079",
+            "blob": "6fdaf3bc5c0ebf2ced1c450d5973ed55b2515f3c",
+            "content": "sha256:7ca1f565fd182e830ad0aa7fce4036ac2f1d1e288723a65fa93aff404e4c216d",
             "locator": {
-              "end": 278,
+              "end": 299,
               "kind": "line_range",
-              "start": 278
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "11afdcbd034529ba6e12f7c6ab8fb204ee9a77d6",
-            "content": "sha256:ea38bd02048757c226c712940d3afe9bfb62df60a3c7b191c001c9b0384d4d32",
-            "locator": {
-              "end": 279,
-              "kind": "line_range",
-              "start": 279
+              "start": 298
             }
           },
           "kind": "code"
@@ -174,7 +218,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "11afdcbd034529ba6e12f7c6ab8fb204ee9a77d6",
+            "blob": "6fdaf3bc5c0ebf2ced1c450d5973ed55b2515f3c",
             "content": "sha256:3c474735527fc75e1b5d70fe5af5f6575b5f9ed4cfce0e11f930dd6eeb1978d8",
             "locator": {
               "end": 202,
@@ -191,7 +235,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "11afdcbd034529ba6e12f7c6ab8fb204ee9a77d6",
+            "blob": "6fdaf3bc5c0ebf2ced1c450d5973ed55b2515f3c",
             "content": "sha256:48767497e5fb0fa14513f5c759a89e3fd2492913705a6b01f3e3304c6e9f352f",
             "locator": {
               "end": 243,
@@ -208,12 +252,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "11afdcbd034529ba6e12f7c6ab8fb204ee9a77d6",
+            "blob": "6fdaf3bc5c0ebf2ced1c450d5973ed55b2515f3c",
             "content": "sha256:d5bb04ae02b170c0f8e9b8906f1cc58f832a292ddc281709514a9062a0f86314",
             "locator": {
-              "end": 331,
+              "end": 351,
               "kind": "line_range",
-              "start": 331
+              "start": 351
             }
           },
           "kind": "code"

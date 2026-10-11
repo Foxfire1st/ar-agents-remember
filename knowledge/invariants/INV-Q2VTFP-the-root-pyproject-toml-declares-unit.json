@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "A stale current-budget declaration or mirror can either prevent all collection or make a green boundary screen prove a ceiling the repository no longer uses."
+  },
+  "applicability": "The repository root selected-case budget declarations and this screen's current5000/1000 policy on the maintained-invariant line.",
+  "conditions": [
+    "Selected parametrized cases are classified by the integration marker.",
+    "The guard reads the root pytest ini configuration; a subsequent deliberate policy raise must update these stated values and mirrors together."
+  ],
+  "exclusions": [
+    "Historical/as-of budget readings and synthetic pre-raise fixtures.",
+    "Full-suite runtime measurement, test consolidation, evidence-lane catalog repair and certification authority.",
+    "Foreign-tree exact population pins are not a currentness guarantee on arbitrary memory trees."
+  ],
+  "id": "INV-Q2VTFP",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "root pyproject.toml read; whole-tree pytest --collect-only exit 0 (scratch after-collect.log); worker report role-launch/260928-MIK-L146-worker-cb4e4d02-f0ec-4c7f-8b12-a1a410ef312d.md"
+      ],
+      "path": "curator-ingest-v1.json"
+    },
+    "handoffEntry": "MIK-R146@v1 rule 1 — unit declaration",
+    "leaf": "260928-MIK-L146",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The root pyproject.toml declares unit_case_budget = 5000.",
+  "status": "accepted",
+  "supersedes": []
+}

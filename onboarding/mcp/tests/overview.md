@@ -270,7 +270,8 @@ that a repeated archive-hook attempt keeps its receipts. The test catalog files 
 ## Evidence
 
 - The default options select the unit population and four workers. [1]
-- The two case budgets are declared in the repository-root configuration. [2]
+
+- The two case budgets are declared in the repository-root configuration as5000/1000. [2]
 - The isolation of the pytest process and the two registered plugins. [3]
 - Integration files are not imported in a run that excludes integration. [5]
 - The collected cases are counted against the two budgets. [6]
@@ -318,7 +319,7 @@ as a consumer in both governed test-evidence catalogs.
 `test_transaction_only_worktree_delivery.py` exercises real public closeout and paired integration. It checks actual code/memory refs and the memory-content `Code-Commit:` trailer, source movement refusals, configured-hook behavior, interrupted recovery and cache rebuilds. Missing, malformed or changed cache bytes do not create commit objects or gate delivery. The suite retains real content/ref failures instead of replacing them with cache checks. This overview describes coverage, not a current aggregate test result.
 ## Development And Certification Policy
 
-Ordinary Python development is supported directly through `mcp/.venv/bin/python -m pytest`; four workers run the isolated unit population. `-m integration` selects the small real-boundary population and `-m ""` selects both. Focused file/node execution, including serial debugging, is valid development work and does not acquire certification authority. **The budgets are declared once, in the repository-root `pyproject.toml` under `[tool.pytest.ini_options]` — `unit_case_budget` = 4000 at `:278` and `integration_case_budget` = 1000 at `:279` when this was read — and `mcp/tests/conftest.py` carries no number of its own**: it registers the two ini names with `addini` and no `default=`, because `mcp/pyproject.toml` declares no `[tool.pytest.ini_options]` and the root file is the `inifile` pytest reads. Read the pair from there; it moves, and the dated tradeoff comment above it records every raise. The 150/200/250/400/600 integration ceilings and the 1000/1100/1250/1500/2300/3000 unit ceilings named below are the dated readings of the leaves that raised them, kept as as-of records — none is the current rail. Extend or consolidate distinct behavior protection before adding cases; do not restore deleted matrices, private-branch tests or unused fixture machinery because an old milestone names them.
+Ordinary Python development is supported directly through `mcp/.venv/bin/python -m pytest`; four workers run the isolated unit population. `-m integration` selects the small real-boundary population and `-m ""` selects both. Focused file/node execution, including serial debugging, is valid development work and does not acquire certification authority. **The budgets are declared once, in the repository-root `pyproject.toml` under `[tool.pytest.ini_options]` — `unit_case_budget` = 5000 at `:298` and `integration_case_budget` = 1000 at `:299` under the current developer-ruled unit raise — and `mcp/tests/conftest.py` carries no number of its own**: it registers the two ini names with `addini` and no `default=`, because `mcp/pyproject.toml` declares no `[tool.pytest.ini_options]` and the root file is the `inifile` pytest reads. Read the pair from there; it moves, and the dated tradeoff comment above it records every raise. The 150/200/250/400/600 integration ceilings and the 1000/1100/1250/1500/2300/3000 unit ceilings named below are the dated readings of the leaves that raised them, kept as as-of records — none is the current rail. Extend or consolidate distinct behavior protection before adding cases; do not restore deleted matrices, private-branch tests or unused fixture machinery because an old milestone names them.
 
 Coverage, including changed-line coverage, is diagnostic only. No percentage floor requires additional tests. Production-only CRAP retains 20 as a review trigger, not a delivery blocker; tests and verification support are excluded. Lint, formatting, typing, structural rules and test failures still enforce. Diagnostic-tool execution errors remain visible failures distinct from metric findings. There is no coverage baseline, score-exception registry or ratchet.
 
@@ -373,7 +374,7 @@ Preparation does not grant a final certificate. The interactive catalog projecti
 
 Candidate capture uses an isolated add-all index and stable observed HEAD, leaving the user's real index unchanged. External-memory identity binds configured repositories, worktree roots, branches, bases, onboarding root and contract digest; the cache path is informational. A changed pair or candidate must refuse stale publication. Metadata stamping and cache refresh cannot substitute for substantive memory repair.
 
-The current manifest records 450 lines and 432 entries: 299 unit-regression, 2 public-contract, 95 integration, 22 architecture-fitness and 14 provider-conformance, with stress-durability and migration empty; the declared collected-case budgets are 4,000 unit and 1,000 integration (`pyproject.toml:278-279`). The `test-evidence-lanes.toml` card owns the per-lane brackets; membership is selection and cost classification only, never execution or acceptance evidence.
+The current manifest records 450 lines and 432 entries: 299 unit-regression, 2 public-contract, 95 integration, 22 architecture-fitness and 14 provider-conformance, with stress-durability and migration empty; the declared collected-case budgets are 5,000 unit and 1,000 integration (`pyproject.toml:298-299`). The `test-evidence-lanes.toml` card owns the per-lane brackets; membership is selection and cost classification only, never execution or acceptance evidence.
 
 260831-LOCR-L30 registered eight more members and, in doing so, repaired a manifest that could not
 load. `load_lane_manifest` is fail-closed — it derives the repository's actual test modules and
@@ -444,6 +445,8 @@ accepts it. That branch had **zero** coverage before this module.
 - Registered preview preserves startup/Git state while checking call records. [1706]
 - The shared comparator checks call-day paths, causal directory entries, log details and completed-call river records. [1707]
 ### Repo-Internal References
+
+- The enforced collected-case pair is 5000 unit/1000 integration; the unit-only policy raise leaves the guard unchanged. [1714]
 
 These current source and policy ranges establish the development/certification distinction and the
 existing memory preparation surfaces. A citation is source evidence, not a recorded test execution.

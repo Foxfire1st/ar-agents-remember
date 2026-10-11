@@ -1720,7 +1720,7 @@ and re-resolve the incumbent or staged heir at delivery; public outcomes omit ru
 
 ## Development And Certification Policy
 
-Ordinary Python development is supported directly through `mcp/.venv/bin/python -m pytest`; four workers run the isolated unit population. `-m integration` selects the small real-boundary population and `-m ""` selects both. Focused file/node execution, including serial debugging, is valid development work and does not acquire certification authority. The repository declares `unit_case_budget = 4000` and `integration_case_budget = 1000` parametrized collected cases (`pyproject.toml:278-279`), raised from 3000 / 600 by the 260918-TSIP-L13 budget-and-landable-closeout leaf on 2026-09-20 under a second direct developer decision — the pair before that having been raised from 2300 / 400 by the 260918-TSIP-L7 agreement leaf under a direct developer decision. Extend or consolidate distinct behavior protection before adding cases; do not restore deleted matrices, private-branch tests or unused fixture machinery because an old milestone names them.
+Ordinary Python development is supported directly through `mcp/.venv/bin/python -m pytest`; four workers run the isolated unit population. `-m integration` selects the small real-boundary population and `-m ""` selects both. Focused file/node execution, including serial debugging, is valid development work and does not acquire certification authority. The repository declares `unit_case_budget = 5000` and `integration_case_budget = 1000` parametrized collected cases (`pyproject.toml:298-299`), the unit ceiling raised from 4000 under D226 without changing integration or guard behavior. The preceding pair was raised from 3000 / 600 by the 260918-TSIP-L13 budget-and-landable-closeout leaf on 2026-09-20 under a second direct developer decision — the pair before that having been raised from 2300 / 400 by the 260918-TSIP-L7 agreement leaf under a direct developer decision. Extend or consolidate distinct behavior protection before adding cases; do not restore deleted matrices, private-branch tests or unused fixture machinery because an old milestone names them.
 
 Coverage, including changed-line coverage, is diagnostic only. No percentage floor requires additional tests. Production-only CRAP retains 20 as a review trigger, not a delivery blocker; tests and verification support are excluded. Lint, formatting, typing, structural rules and test failures still enforce. Diagnostic-tool execution errors remain visible failures distinct from metric findings. There is no coverage baseline, score-exception registry or ratchet.
 
@@ -1770,6 +1770,8 @@ starter copies this route governs) says that an abandoned row does not block a m
 ## Evidence
 
 ### Repo-Internal References
+
+- The enforced collected-case pair is 5000 unit/1000 integration; the unit-only policy raise leaves the guard unchanged. [287]
 
 These current source and policy ranges establish the development/certification distinction and the existing memory preparation surfaces. A citation is source evidence, not a recorded test execution.
 

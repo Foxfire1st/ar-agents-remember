@@ -1,13 +1,52 @@
 {
   "path": "mcp/tests/test_suite_budget.py",
-  "realizes": [],
+  "proves": [
+    {
+      "anchor": {
+        "blob": "d1776ec98316a40e56eb96143c777bc04b370a56",
+        "content": "sha256:dfb975b002026525cc8ccdf35158210f1e10fc85d8496eecbe06b240ce745b48",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_stub_matches_the_declared_pair"
+        }
+      },
+      "facet": "Asserts both stub constants equal the two root pytest ini declarations, independently of the synthetic enforcement population.",
+      "id": "PRF-W4G24B",
+      "invariant": "INV-F0WP8H",
+      "origin": {
+        "handoffEntry": "MIK-R146@v1 rule 3 — budget screen mirror",
+        "leaf": "260928-MIK-L146"
+      }
+    }
+  ],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "d1776ec98316a40e56eb96143c777bc04b370a56",
+        "content": "sha256:8ec6c33f5ab18ba03eec2ab4d1020aed5517e1e9075283b3b3dc01818a94d1d9",
+        "locator": {
+          "end": 17,
+          "kind": "line_range",
+          "start": 16
+        }
+      },
+      "id": "RLZ-40PJ49",
+      "invariant": "INV-F0WP8H",
+      "origin": {
+        "handoffEntry": "MIK-R146@v1 rule 3 — budget screen mirror",
+        "leaf": "260928-MIK-L146"
+      },
+      "rationale": "The stub is the deliberate second copy of the numbers; leaving it at 4000 would prove a ceiling nobody uses.",
+      "role": "support"
+    }
+  ],
   "references": {
     "1": {
       "note": "Proves selected-case budget admission without recursive pytest collection, over a synthetic population.",
       "targets": [
         {
           "anchor": {
-            "blob": "20e6ec94ebb4d0bd06c74a80113fa5b5cad9fa44",
+            "blob": "d1776ec98316a40e56eb96143c777bc04b370a56",
             "content": "sha256:cc3e8849bac0b8d1afbedd3d2f8f3616195f6b014305fb612e86249da44ed182",
             "locator": {
               "kind": "symbol",
@@ -18,7 +57,7 @@
         },
         {
           "anchor": {
-            "blob": "20e6ec94ebb4d0bd06c74a80113fa5b5cad9fa44",
+            "blob": "d1776ec98316a40e56eb96143c777bc04b370a56",
             "content": "sha256:1124446ec97f490d03a274ca6bf80efc50758754a3123d210da234cb94b5c5d4",
             "locator": {
               "end": 41,
@@ -35,7 +74,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "20e6ec94ebb4d0bd06c74a80113fa5b5cad9fa44",
+            "blob": "d1776ec98316a40e56eb96143c777bc04b370a56",
             "content": "sha256:9134ae5e2ff9950b195edf03b1b5b85f02939ac565ab2a0f533db786c703e9a2",
             "locator": {
               "kind": "symbol",
@@ -47,12 +86,12 @@
       ]
     },
     "3": {
-      "note": "Refuses a `default=` on either budget declaration, so a dead number cannot return to the tree.",
+      "note": "Refuses a default on either budget declaration, so a dead number cannot return to the tree.",
       "targets": [
         {
           "anchor": {
-            "blob": "20e6ec94ebb4d0bd06c74a80113fa5b5cad9fa44",
-            "content": "sha256:ab1421ffdda72ca6c0aef4e9d4f3129ab1400f21bf1e558912c42007bda56149",
+            "blob": "d1776ec98316a40e56eb96143c777bc04b370a56",
+            "content": "sha256:c9f2490ea91d3c6be34a5804af22b2170a22faecbadd576682d4d45993650d65",
             "locator": {
               "kind": "symbol",
               "name": "test_the_option_declarations_state_no_budget_of_their_own"
@@ -67,7 +106,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "20e6ec94ebb4d0bd06c74a80113fa5b5cad9fa44",
+            "blob": "d1776ec98316a40e56eb96143c777bc04b370a56",
             "content": "sha256:69ea7da23d36e3a8de6a02e2d18474d5bfd7ee0cc075ce22192fb1651013376c",
             "locator": {
               "kind": "symbol",
@@ -75,6 +114,24 @@
             }
           },
           "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The enforced collected-case pair is 5000 unit/1000 integration; the unit-only policy raise leaves the guard unchanged.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6fdaf3bc5c0ebf2ced1c450d5973ed55b2515f3c",
+            "content": "sha256:ce36f45d8abc47ff28e835599564f9783a30a7b30220e19ba24e701ff8307f49",
+            "locator": {
+              "end": 299,
+              "kind": "line_range",
+              "start": 278
+            },
+            "path": "pyproject.toml"
+          },
+          "kind": "code"
         }
       ]
     }

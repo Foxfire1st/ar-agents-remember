@@ -142,7 +142,7 @@ about, which registered them in **both** registries without a single import crea
 
 ## Development And Certification Policy
 
-Ordinary Python development is supported directly through `mcp/.venv/bin/python -m pytest`; four workers run the isolated unit population. `-m integration` selects the small real-boundary population and `-m ""` selects both. Focused file/node execution, including serial debugging, is valid development work and does not acquire certification authority. The repository declares budgets of 4,000 unit and 1,000 integration parametrized collected cases. Extend or consolidate distinct behavior protection before adding cases; do not restore deleted matrices, private-branch tests or unused fixture machinery because an old milestone names them.
+Ordinary Python development is supported directly through `mcp/.venv/bin/python -m pytest`; four workers run the isolated unit population. `-m integration` selects the small real-boundary population and `-m ""` selects both. Focused file/node execution, including serial debugging, is valid development work and does not acquire certification authority. The repository declares budgets of 5,000 unit and 1,000 integration parametrized collected cases. Extend or consolidate distinct behavior protection before adding cases; do not restore deleted matrices, private-branch tests or unused fixture machinery because an old milestone names them.
 
 Coverage, including changed-line coverage, is diagnostic only. No percentage floor requires additional tests. Production-only CRAP retains 20 as a review trigger, not a delivery blocker; tests and verification support are excluded. Lint, formatting, typing, structural rules and test failures still enforce. Diagnostic-tool execution errors remain visible failures distinct from metric findings. There is no coverage baseline, score-exception registry or ratchet.
 
@@ -150,6 +150,8 @@ Only genuine Dagger admission and the existing lifecycle owners can issue immuta
 ## Evidence
 
 ### Repo-Internal References
+
+- The enforced collected-case pair is 5000 unit/1000 integration; the unit-only policy raise leaves the guard unchanged. [12]
 
 These current source and policy ranges establish the development/certification distinction and the existing memory preparation surfaces. A citation is source evidence, not a recorded test execution.
 
@@ -184,7 +186,7 @@ this route's *consumers*, and three of those changes are things a reader of the 
   canonical and only the oracle objects.
 - **The collected-case budget is declared once, at the repository root.** The never-effective `default=1100` /
   `default=300` declarations in `mcp/tests/conftest.py` are removed (item 12); the enforced pair lives in the
-  repository root `pyproject.toml` `[tool.pytest.ini_options]` at `:278-279` and is currently **4000 unit / 1000 integration**. A
+  repository root `pyproject.toml` `[tool.pytest.ini_options]` at `:298-299` and is currently **5000 unit / 1000 integration**. A
   budget the parser declares and the repository does not enforce is worse than no declaration, because a reader
   believes it.
 - **A registry row is a line, not an identity.** `mcp/tests/evidence-lifecycle.toml` gained appended `consumers` rows

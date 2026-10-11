@@ -126,23 +126,24 @@ arms above; a branch hand-re-established at a **rewritten** tip that happens to 
 is adopted as `present` without consulting the proof, which is the case the unrelated-tip refusal is
 paired with to keep the pair honest.
 
-### `S2`: the reader, and why the budget check is true in either landing order
+### `S2`: the reader, original L7 landing orders, and the current budget boundary
 
-This module cannot assert the *value* of the case ceilings on a base where the sibling's ruled raise
-has not landed, so it asserts the **relation** and states which order each half is true in.
 `_declared_screen_boundaries` reads the pair the budget screen actually runs with
-(`test_selected_case_budgets` hands the hook its own rails, and those rails are what the screen
-proves boundaries for) by walking the `parametrize` marks pytest resolved on the screen's own
-members — literal ints, module constants, or a computed expression all resolve identically. The
-earlier reader parsed the module's *source* with an AST and understood only literal ints, so it
-returned `(0, 0)` the moment the sibling owning that file wrote its row as named constants, and the
-case failed on the tree where the raise *had* landed while passing on the shape the sibling happened
-not to choose. Reading the interface rather than the shape is what makes the agreement arm true and
-falsifiable in **both** orders: below the ruling it asserts the pre-raise pair exactly and asserts it
-is *not* the declared one; at or above the ruling it asserts the screen follows the declaration. Drift
-between screen and declaration in either direction fails. The ruling arm is a plain assertion once
-the raise has landed and a **skip naming the owner and the pair** while it has not, so a pending
-sibling edit is reported rather than charged to this leaf.
+(`test_selected_case_budgets` hands the hook its own rails) by walking the `parametrize` marks
+pytest resolved on the screen's own members. Literal ints, module constants and computed
+expressions therefore resolve alike. The original L7 account contrasts a 2300/400 declaration
+with a 1000/250 screen before that raise, and a matching 3000/600 pair after it; reading the
+interface rather than literal-only source syntax addressed the named-constant reader defect.
+That dated account is not a general guarantee for every later raise or landing order.
+
+With the current ruled constants 5000/1000, the agreement method compares the declaration tuple
+lexicographically with that ruled tuple. At or above it, the screen must equal the declaration.
+Below it, the screen must equal the fixed 1000/250 legacy pair and differ from the declaration.
+A synchronized 4000/1000 or 3000/600 pair thus enters the legacy branch and fails; the method does
+not accept every intermediate matched pair. The separate ruling method skips when either
+individual declaration is below its ruled value, otherwise requires exactly 5000/1000. Its skip
+does not skip or qualify the agreement method. These are current assertion boundaries, not
+proof of arbitrary mixed-state publication or a whole-suite compatibility claim. [17] [18] [19]
 
 ### Conventions
 
@@ -169,7 +170,7 @@ sibling edit is reported rather than charged to this leaf.
   check is what makes that true for this module. Deleting the check, or skipping it together with the
   route, is outside what any in-repo case can prevent and is recorded as such rather than presented
   as proof.
-- The two budget figures inside the module — the ruled 4000/1000 constants and the pre-raise 1000/250
+- The two budget figures inside the module — the ruled 5000/1000 constants and the pre-raise 1000/250
   pair — are **this module's declared inputs and the ruling's values**, never a second copy of the
   repository's ceilings: the ceilings themselves are read from `pyproject.toml` at run time. Do not
   restate either pair here; read them there.
@@ -202,6 +203,8 @@ No external domain claim is required.
 
 ### Repo-Internal References
 
+- The enforced collected-case pair is 5000 unit/1000 integration; the unit-only policy raise leaves the guard unchanged. [25]
+
 Each row names one construct and cites the exact span that construct occupies in the reviewed
 candidate, so the row is falsifiable by the source alone.
 
@@ -221,7 +224,7 @@ candidate, so the row is falsifiable by the source alone.
 - With both landing cells empty on both sides there is nothing to reconstruct or re-cut from, and the reopen refuses. [14]
 - An existing ref at a tip that is neither the source tip nor the recorded landing is refused, not moved — the arm the reconstruction must not swallow. [15]
 - The reachable direction: a work branch on the source tip whose line still holds the landing is adopted, so "refuse harder" cannot pass. [16]
-- The budget screen and the declaration agree in either landing order, and drift between them fails in both directions. [17]
+- The current agreement method asserts screen equals declaration at or above the ruled tuple; below it asserts the fixed 1000/250 screen and inequality. Its original L7 landing-order account is historical, not generic later-raise compatibility. [17]
 - The ruling arm: a plain assertion once the ruled pair is declared, and a skip naming the owner and the observed pair while it is not. [18]
 - The screen's proved pair is read from the `parametrize` marks the screen runs with, so literals and named constants resolve alike. [19]
 - The case ceilings are read from the repository-root declaration rather than copied, so this check cannot rot into a third copy of the number. [20]

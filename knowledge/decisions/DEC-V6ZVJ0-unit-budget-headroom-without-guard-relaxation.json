@@ -1,0 +1,68 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "Immediate headroom was chosen over postponing the blocked rail to test-debt work; later work must preserve enforcement and synchronize every operative value with any deliberately changed policy."
+  },
+  "alternatives": [
+    {
+      "option": "Raise only the unit ceiling to5000 now and carry all live citations and screen mirrors.",
+      "reason": "Restores collection headroom without changing guard behavior, integration capacity or test inventory.",
+      "status": "chosen"
+    },
+    {
+      "option": "Retain4000 and leave the over-budget line for test-debt consolidation at master end.",
+      "reason": "The old ceiling blocks whole-tree collections needed by removal tasks and master verification.",
+      "reconsider_when": "The developer deliberately changes policy after measured unit-population and protection/cost evidence; a smaller population alone does not silently lower the rail.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Integration remains1000 and over-budget/absent-rail refusal is unchanged.",
+    "No cases are removed, merged or skipped for this headroom choice.",
+    "Whole-lane runtime belongs to the master's one full suite, not this leaf.",
+    "Further increases require developer authority and a stated tradeoff."
+  ],
+  "context": "The unit population already exceeded the4000 ceiling and stopped whole-tree collection. The architect initially left this for test-debt work; the developer instead ordered immediate5000 headroom.",
+  "decider": "Developer D226; approved MIK-R146@v1.",
+  "id": "DEC-V6ZVJ0",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "INV-Q2VTFP"
+    },
+    {
+      "relation": "constrains",
+      "target": "INV-3NAQA6"
+    },
+    {
+      "relation": "constrains",
+      "target": "INV-F0WP8H"
+    },
+    {
+      "relation": "constrains",
+      "target": "INV-Z3DDAX"
+    },
+    {
+      "relation": "constrains",
+      "target": "INV-RBJQVS"
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "DEVELOPER-DIRECTION.md:494, MIK-R146@v1 required behavior1-4; canonical leaf decisions preserve enforcement and admit literal mirror changes."
+      ],
+      "path": "curator-ingest-v1.json"
+    },
+    "handoffEntry": "curator-D226-policy",
+    "leaf": "260928-MIK-L146",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

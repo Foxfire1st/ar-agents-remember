@@ -6,12 +6,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "11afdcbd034529ba6e12f7c6ab8fb204ee9a77d6",
+            "blob": "6fdaf3bc5c0ebf2ced1c450d5973ed55b2515f3c",
             "content": "sha256:002c95e9664b637b3ae9616eda783b0f69e2004e6b7eb5c068d564f4a966e355",
             "locator": {
-              "end": 289,
+              "end": 309,
               "kind": "line_range",
-              "start": 286
+              "start": 306
             },
             "path": "pyproject.toml"
           },
@@ -5330,7 +5330,7 @@
       ]
     },
     "1714": {
-      "note": "Candidate successor, unchanged/no-successor and unrelated-candidate controls protect the boundary.",
+      "note": "Candidate successor, unchanged/no-successor and unrelated-candidate controls protect the boundary.\n\nThe enforced collected-case pair is 5000 unit/1000 integration; the unit-only policy raise leaves the guard unchanged.",
       "targets": [
         {
           "anchor": {
@@ -5344,6 +5344,19 @@
             "path": "mcp/tests/test_reconsideration_surfacing.py"
           },
           "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6fdaf3bc5c0ebf2ced1c450d5973ed55b2515f3c",
+            "content": "sha256:ce36f45d8abc47ff28e835599564f9783a30a7b30220e19ba24e701ff8307f49",
+            "locator": {
+              "end": 299,
+              "kind": "line_range",
+              "start": 278
+            },
+            "path": "pyproject.toml"
+          },
+          "kind": "code"
         }
       ]
     },
@@ -5384,16 +5397,16 @@
       ]
     },
     "2": {
-      "note": "The two case budgets are declared in the repository-root configuration.",
+      "note": "The two case budgets are declared in the repository-root configuration as5000/1000.",
       "targets": [
         {
           "anchor": {
-            "blob": "11afdcbd034529ba6e12f7c6ab8fb204ee9a77d6",
-            "content": "sha256:eca452c277bed0a9b6a0ecf167d83cfe0cd07624844a0850e506764962e1bedd",
+            "blob": "6fdaf3bc5c0ebf2ced1c450d5973ed55b2515f3c",
+            "content": "sha256:7ca1f565fd182e830ad0aa7fce4036ac2f1d1e288723a65fa93aff404e4c216d",
             "locator": {
-              "end": 279,
+              "end": 299,
               "kind": "line_range",
-              "start": 278
+              "start": 298
             },
             "path": "pyproject.toml"
           },

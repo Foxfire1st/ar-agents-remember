@@ -1,13 +1,52 @@
 {
   "path": "mcp/tests/test_task_reopen_series_extension.py",
-  "realizes": [],
+  "proves": [
+    {
+      "anchor": {
+        "blob": "5ba5bc35ee1abc11e1bb23387ef79702dd7c2e95",
+        "content": "sha256:2339248abd1341a806450d008527a393ea10dfa6cee82decb60383120897f1ed",
+        "locator": {
+          "kind": "symbol",
+          "name": "SeriesExtensionRouteTests.test_the_declared_case_rails_carry_the_developer_ruling"
+        }
+      },
+      "facet": "When neither observed rail is below the ruling, asserts the root pair equals both ruled constants; otherwise reports a skip naming the pending owner and observed values.",
+      "id": "PRF-RGEXBJ",
+      "invariant": "INV-RBJQVS",
+      "origin": {
+        "handoffEntry": "MIK-R146@v1 rule 3 — ruled-rail constant",
+        "leaf": "260928-MIK-L146"
+      }
+    }
+  ],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "5ba5bc35ee1abc11e1bb23387ef79702dd7c2e95",
+        "content": "sha256:46e7f3eaf85fb12768f47a99d31cc0972226562e183ab86bed3d6df4b701d676",
+        "locator": {
+          "end": 93,
+          "kind": "line_range",
+          "start": 87
+        }
+      },
+      "id": "RLZ-PTRC2W",
+      "invariant": "INV-RBJQVS",
+      "origin": {
+        "handoffEntry": "MIK-R146@v1 rule 3 — ruled-rail constant",
+        "leaf": "260928-MIK-L146"
+      },
+      "rationale": "The constant's own message orders it to move with a deliberate raise; otherwise this module asserts a stale ruling.",
+      "role": "support"
+    }
+  ],
   "references": {
     "1": {
       "note": "The nine-step route — reopen, author the new row with its `file` cell, start, work, close out, integrate, finalize, close the master out, land it — runs in order and records completion on its last line.",
       "targets": [
         {
           "anchor": {
-            "blob": "57dbf7731c9d0037644a05bebcc126a851e92c68",
+            "blob": "5ba5bc35ee1abc11e1bb23387ef79702dd7c2e95",
             "content": "sha256:2a54026d6b1d7c0c80f69d06189600998fc6fe98aae6ac62fdf5bc0a41624586",
             "locator": {
               "kind": "symbol",
@@ -23,7 +62,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "57dbf7731c9d0037644a05bebcc126a851e92c68",
+            "blob": "5ba5bc35ee1abc11e1bb23387ef79702dd7c2e95",
             "content": "sha256:7786d64f81ebe70f8f903eb4c01db6ed781ab9ae606f330b30f483be0eedc25d",
             "locator": {
               "kind": "symbol",
@@ -39,7 +78,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "57dbf7731c9d0037644a05bebcc126a851e92c68",
+            "blob": "5ba5bc35ee1abc11e1bb23387ef79702dd7c2e95",
             "content": "sha256:e70d657a6a3c331935f85bf26c3ba59c2dbf148b788b18a06202b9c404c1b097",
             "locator": {
               "kind": "symbol",
@@ -55,7 +94,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "57dbf7731c9d0037644a05bebcc126a851e92c68",
+            "blob": "5ba5bc35ee1abc11e1bb23387ef79702dd7c2e95",
             "content": "sha256:259f0d699bc1f08fc0c4a2ea40f9fb2cd794bdee4e7a415ccaf26e27b71105e3",
             "locator": {
               "kind": "symbol",
@@ -71,7 +110,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "57dbf7731c9d0037644a05bebcc126a851e92c68",
+            "blob": "5ba5bc35ee1abc11e1bb23387ef79702dd7c2e95",
             "content": "sha256:262a61d41ec7f123abfdcc14875f4fd0dd9fb47b352787f209281b7471fd821a",
             "locator": {
               "kind": "symbol",
@@ -87,7 +126,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "57dbf7731c9d0037644a05bebcc126a851e92c68",
+            "blob": "5ba5bc35ee1abc11e1bb23387ef79702dd7c2e95",
             "content": "sha256:8da1a417dad7f6bcb18a562befb0f31caa1884151e6d4f9863bcd8db9e9d14ba",
             "locator": {
               "kind": "symbol",
@@ -103,7 +142,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "57dbf7731c9d0037644a05bebcc126a851e92c68",
+            "blob": "5ba5bc35ee1abc11e1bb23387ef79702dd7c2e95",
             "content": "sha256:beb46ed6388068282eae596a73b946aeef5cddba66ca0c7a777aba6627b1d8bb",
             "locator": {
               "kind": "symbol",
@@ -119,7 +158,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "57dbf7731c9d0037644a05bebcc126a851e92c68",
+            "blob": "5ba5bc35ee1abc11e1bb23387ef79702dd7c2e95",
             "content": "sha256:6d5391d693229210fb0f4be1b2474b1fa2c7bb67ddbe320ac32db76ae0911c24",
             "locator": {
               "kind": "symbol",
@@ -131,15 +170,16 @@
       ]
     },
     "17": {
-      "note": "The budget screen and the declaration agree in either landing order, and drift between them fails in both directions.",
+      "note": "The current agreement method asserts screen equals declaration at or above the ruled tuple; below it asserts the fixed 1000/250 screen and inequality. Its original L7 landing-order account is historical, not generic later-raise compatibility.\n\nAnchor: `SeriesExtensionRouteTests.test_the_budget_screen_and_the_declaration_agree_in_either_landing_order`",
       "targets": [
         {
           "anchor": {
-            "blob": "57dbf7731c9d0037644a05bebcc126a851e92c68",
+            "blob": "5ba5bc35ee1abc11e1bb23387ef79702dd7c2e95",
             "content": "sha256:69ae0128ebfdfa89941aead61248f1121d689b5711b4f7bc481c71d9ae03b46a",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_budget_screen_and_the_declaration_agree_in_either_landing_order"
+              "end": 355,
+              "kind": "line_range",
+              "start": 307
             }
           },
           "kind": "test"
@@ -151,7 +191,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "57dbf7731c9d0037644a05bebcc126a851e92c68",
+            "blob": "5ba5bc35ee1abc11e1bb23387ef79702dd7c2e95",
             "content": "sha256:2339248abd1341a806450d008527a393ea10dfa6cee82decb60383120897f1ed",
             "locator": {
               "kind": "symbol",
@@ -167,7 +207,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "57dbf7731c9d0037644a05bebcc126a851e92c68",
+            "blob": "5ba5bc35ee1abc11e1bb23387ef79702dd7c2e95",
             "content": "sha256:f68b9db1ff10d57e3f5d91676192e612855ac41fe91113100de85f1e7cefa9c2",
             "locator": {
               "kind": "symbol",
@@ -183,7 +223,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "57dbf7731c9d0037644a05bebcc126a851e92c68",
+            "blob": "5ba5bc35ee1abc11e1bb23387ef79702dd7c2e95",
             "content": "sha256:df5d74f838fc1f876b2598b1750b4f4b5d7074db7186fa1178175de0907a7ac9",
             "locator": {
               "kind": "symbol",
@@ -199,7 +239,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "57dbf7731c9d0037644a05bebcc126a851e92c68",
+            "blob": "5ba5bc35ee1abc11e1bb23387ef79702dd7c2e95",
             "content": "sha256:f0f0f568d8dbcd69743a2e05ba64c8b470175f7871af7851fcdbc977d25160c3",
             "locator": {
               "kind": "symbol",
@@ -215,7 +255,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "57dbf7731c9d0037644a05bebcc126a851e92c68",
+            "blob": "5ba5bc35ee1abc11e1bb23387ef79702dd7c2e95",
             "content": "sha256:77ef5d051e6a2a19678fc4c190dbace66f4543121c7400f8ed2d2fc39c36d104",
             "locator": {
               "kind": "symbol",
@@ -231,7 +271,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "57dbf7731c9d0037644a05bebcc126a851e92c68",
+            "blob": "5ba5bc35ee1abc11e1bb23387ef79702dd7c2e95",
             "content": "sha256:b2377d3a2994d5ea5d6ac96a62edfbce4ce266366c80201dc0e452a3a028b4af",
             "locator": {
               "kind": "symbol",
@@ -247,7 +287,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "57dbf7731c9d0037644a05bebcc126a851e92c68",
+            "blob": "5ba5bc35ee1abc11e1bb23387ef79702dd7c2e95",
             "content": "sha256:60a9fc8673ffb7b24358e1a6a653d0c7a96f8a0ef703f85ef81d8df38d7cde9c",
             "locator": {
               "kind": "symbol",
@@ -263,7 +303,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "57dbf7731c9d0037644a05bebcc126a851e92c68",
+            "blob": "5ba5bc35ee1abc11e1bb23387ef79702dd7c2e95",
             "content": "sha256:f1929db39cd0d9445a87d050cc25354ae9c502cf5f18a022c5a8b826d887526f",
             "locator": {
               "kind": "symbol",
@@ -274,12 +314,30 @@
         }
       ]
     },
+    "25": {
+      "note": "The enforced collected-case pair is 5000 unit/1000 integration; the unit-only policy raise leaves the guard unchanged.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6fdaf3bc5c0ebf2ced1c450d5973ed55b2515f3c",
+            "content": "sha256:ce36f45d8abc47ff28e835599564f9783a30a7b30220e19ba24e701ff8307f49",
+            "locator": {
+              "end": 299,
+              "kind": "line_range",
+              "start": 278
+            },
+            "path": "pyproject.toml"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "3": {
       "note": "The developer's symptom is pinned with its remedy: the operator-visible source lineage reads `unavailable` before the reopen and `current` after it.",
       "targets": [
         {
           "anchor": {
-            "blob": "57dbf7731c9d0037644a05bebcc126a851e92c68",
+            "blob": "5ba5bc35ee1abc11e1bb23387ef79702dd7c2e95",
             "content": "sha256:2b7304d215a38bbbabd09085c1956c68936c88531dac5bc63d1178032d03b4c9",
             "locator": {
               "kind": "symbol",
@@ -295,7 +353,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "57dbf7731c9d0037644a05bebcc126a851e92c68",
+            "blob": "5ba5bc35ee1abc11e1bb23387ef79702dd7c2e95",
             "content": "sha256:3bc49d0434ed50560b8d3f3497fe619028d20091c25a238069ed1e41a52691b9",
             "locator": {
               "kind": "symbol",
@@ -311,7 +369,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "57dbf7731c9d0037644a05bebcc126a851e92c68",
+            "blob": "5ba5bc35ee1abc11e1bb23387ef79702dd7c2e95",
             "content": "sha256:a353e24d0a516d1ad4f0bab7790041133504ba54ac5ef413fb8ff6f8a8ba406f",
             "locator": {
               "kind": "symbol",
@@ -327,7 +385,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "57dbf7731c9d0037644a05bebcc126a851e92c68",
+            "blob": "5ba5bc35ee1abc11e1bb23387ef79702dd7c2e95",
             "content": "sha256:6df4822283d839db73a57b35c332ce7115e2dac131a528e3c1afa4750c2a1539",
             "locator": {
               "kind": "symbol",
@@ -343,7 +401,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "57dbf7731c9d0037644a05bebcc126a851e92c68",
+            "blob": "5ba5bc35ee1abc11e1bb23387ef79702dd7c2e95",
             "content": "sha256:f496f2f3ed99c7d66ab0de5f1791424285968fd1a5e27e5c006eb302b8d97fda",
             "locator": {
               "kind": "symbol",
@@ -359,7 +417,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "57dbf7731c9d0037644a05bebcc126a851e92c68",
+            "blob": "5ba5bc35ee1abc11e1bb23387ef79702dd7c2e95",
             "content": "sha256:493fc6d6bcaa59e700069a35c3aac2ab274759394767c00c7e9bb109bd640643",
             "locator": {
               "kind": "symbol",
@@ -375,7 +433,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "57dbf7731c9d0037644a05bebcc126a851e92c68",
+            "blob": "5ba5bc35ee1abc11e1bb23387ef79702dd7c2e95",
             "content": "sha256:ec25862f330266dc1f8f9396744522d0b488847967720d00b96f6cd1f7514d71",
             "locator": {
               "kind": "symbol",

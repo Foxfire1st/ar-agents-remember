@@ -123,6 +123,8 @@ an internal nonce-attested Dagger invocation and explicitly refuses host executi
 evidence-location clarification; the dashboard architecture is unchanged.
 ### Repo-Internal References
 
+- The enforced collected-case pair is 5000 unit/1000 integration; the unit-only policy raise leaves the guard unchanged. [27]
+
 The engine-room design reference child route ([engine-room overview](engine-room/overview.md), living spec + prototype) governs the dashboard engine room.
 The dashboard engine-room renderer ([dashboard engine-room overview](../../dashboard/src/panels/engine-room/overview.md)) is governed by the engine-room design docs.
 - FEUI-L8's canonical scenario, accessibility, performance, and invariant evidence.
@@ -161,7 +163,7 @@ still-valid content is carried by `python-evidence-system.md`, `python-pytest-bo
 with the accepted authority model.
 ## Integrated IAS Recovery Contract
 
-`python-pytest-bootstrap.md` now permits ordinary isolated host pytest for development and the repository declares `unit_case_budget = 4000` / `integration_case_budget = 1000` (`pyproject.toml:278-279`). It **superseded** the 2,000 / 300 figures this paragraph carried (themselves raised 1000 → 1500 → 2000 (unit) and 150 → 250 → 300 (integration) by `260915-CAPS-L8`, `260831-LOCR-L37` and the 2026-09-17 ruling); 4346e697/TSIP-L13 raised them to 4,000 / 1,000. Coverage is diagnostic, and production CRAP20 prompts review rather than blocking delivery. Focused checks support leaf work; full-suite execution and whole-candidate review belong at the end of the assembled master. Dagger admission remains mandatory for certification; the retired Candidate-A analyzer and route-measurement machinery are not restored.
+`python-pytest-bootstrap.md` now permits ordinary isolated host pytest for development and the repository declares `unit_case_budget = 5000` / `integration_case_budget = 1000` (`pyproject.toml:298-299`). It **superseded** the 2,000 / 300 figures this paragraph carried (themselves raised 1000 → 1500 → 2000 (unit) and 150 → 250 → 300 (integration) by `260915-CAPS-L8`, `260831-LOCR-L37` and the 2026-09-17 ruling); 4346e697/TSIP-L13 raised them to 4,000 / 1,000. Coverage is diagnostic, and production CRAP20 prompts review rather than blocking delivery. Focused checks support leaf work; full-suite execution and whole-candidate review belong at the end of the assembled master. Dagger admission remains mandatory for certification; the retired Candidate-A analyzer and route-measurement machinery are not restored.
 ## CCR-L42 Review-Authority Route Update
 
 `python-test-evidence.md` now names `worktrees.route_review_scope.require_current_route_review` as
@@ -198,8 +200,8 @@ reads test policy** (`AGENTS.md` routes a seat here for "the current test policy
 which is why the statement went here and not only into the comment at the registration site.
 
 **The budget figure in this overview's body was wrong and is corrected in the paragraph above:**
-the repository declares `unit_case_budget = 4000` and `integration_case_budget = 1000`
-(`pyproject.toml:278-279`), changed by 4346e697/TSIP-L13 from 2,000 unit / 300 integration. The superseded values are recorded
+the repository declares `unit_case_budget = 5000` and `integration_case_budget = 1000`
+(`pyproject.toml:298-299`), with the unit ceiling now raised under D226 and integration unchanged. The preceding raise by 4346e697/TSIP-L13 superseded the 2,000 unit / 300 integration figures. The superseded values are recorded
 rather than deleted, and this is a `T45` find — no check reads a number in prose.
 ## 260713-TES-L5 Route Impact — Fact-Relay Recovery Language
 

@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "A stale current-budget declaration or mirror can either prevent all collection or make a green boundary screen prove a ceiling the repository no longer uses."
+  },
+  "applicability": "The repository root selected-case budget declarations and this screen's current5000/1000 policy on the maintained-invariant line.",
+  "conditions": [
+    "Selected parametrized cases are classified by the integration marker.",
+    "The guard reads the root pytest ini configuration; a subsequent deliberate policy raise must update these stated values and mirrors together."
+  ],
+  "exclusions": [
+    "Historical/as-of budget readings and synthetic pre-raise fixtures.",
+    "Full-suite runtime measurement, test consolidation, evidence-lane catalog repair and certification authority.",
+    "Foreign-tree exact population pins are not a currentness guarantee on arbitrary memory trees."
+  ],
+  "id": "INV-3NAQA6",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "root pyproject.toml read; integration lane 774 ≤ 1000 (scratch after-collect.log)"
+      ],
+      "path": "curator-ingest-v1.json"
+    },
+    "handoffEntry": "MIK-R146@v1 rule 1 — integration declaration",
+    "leaf": "260928-MIK-L146",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The root pyproject.toml keeps integration_case_budget = 1000.",
+  "status": "accepted",
+  "supersedes": []
+}

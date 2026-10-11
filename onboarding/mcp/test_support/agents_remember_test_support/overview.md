@@ -66,6 +66,8 @@ are refreshed after the move and include the complete source population.
 
 ### Repo-Internal References
 
+- The enforced collected-case pair is 5000 unit/1000 integration; the unit-only policy raise leaves the guard unchanged. [3]
+
 These owners bind the package's executable rail scope to the repository selector.
 
 - The adapter rederives the selector and compares each executable path population exactly. [1]
@@ -85,8 +87,8 @@ Ordinary isolated host pytest is supported for development; only the certifying 
 **The case budgets this package's rails run under are not declared here.** Earlier revisions of this
 overview and of the cards beneath it named a pair (1,000 unit / 150, later 250, integration) as a
 current reading; the enforced pair is the repository root `pyproject.toml`'s
-`[tool.pytest.ini_options]` pair — `unit_case_budget = 4000` and `integration_case_budget = 1000` at
-`pyproject.toml:278-279`, re-read 2026-09-20 by `260918-TSIP-L13` on memory `682bbdfd` / code `1bcf73e7` — and it moves. Read it there, and see
+`[tool.pytest.ini_options]` pair — `unit_case_budget = 5000` and `integration_case_budget = 1000` at
+`pyproject.toml:298-299`, with the unit ceiling raised under D226 and integration unchanged. The earlier 4000/1000 reading belongs to `260918-TSIP-L13` on memory `682bbdfd` / code `1bcf73e7`, not the current 5000 value. The pair moves. Read it there, and see
 `system/tools.md` for why the pair is the root file's rather than any test-local default.
 
 ## Three Owners That Landed After This Route's Last Review

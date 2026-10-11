@@ -6,7 +6,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6c43e96c6af35a6657dac43bcaaf8ea1ac60ac5d",
+            "blob": "33499878da9455edf3e26f06902bb2c88d5c9b83",
             "content": "sha256:a62bb8c45df35c9c6c30bbabd7c153b9e310625c037dae73cf42f5173db622d7",
             "locator": {
               "end": 18,
@@ -60,7 +60,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6c43e96c6af35a6657dac43bcaaf8ea1ac60ac5d",
+            "blob": "33499878da9455edf3e26f06902bb2c88d5c9b83",
             "content": "sha256:d3a5fe9a7130b3987509ea35a6d2e752fe3952f95dca87b75b72d6f6d0e08562",
             "locator": {
               "end": 1,
@@ -170,6 +170,24 @@
               "start": 92
             },
             "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "27": {
+      "note": "The enforced collected-case pair is 5000 unit/1000 integration; the unit-only policy raise leaves the guard unchanged.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6fdaf3bc5c0ebf2ced1c450d5973ed55b2515f3c",
+            "content": "sha256:ce36f45d8abc47ff28e835599564f9783a30a7b30220e19ba24e701ff8307f49",
+            "locator": {
+              "end": 299,
+              "kind": "line_range",
+              "start": 278
+            },
+            "path": "pyproject.toml"
           },
           "kind": "code"
         }

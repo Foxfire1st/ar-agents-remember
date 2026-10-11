@@ -55,14 +55,32 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a6eadd9ff1cf0a28a7754688d343ff8f802d2f04",
+            "blob": "f5c17fb7f80b774e5cb4ba1a1d1dd4340013f711",
             "content": "sha256:3ce49a20f19472550af8664ba24c6ef8fae1490721a9b3c86878794e3064af7b",
             "locator": {
-              "end": 979,
+              "end": 1025,
               "kind": "line_range",
-              "start": 944
+              "start": 990
             },
             "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The enforced collected-case pair is 5000 unit/1000 integration; the unit-only policy raise leaves the guard unchanged.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6fdaf3bc5c0ebf2ced1c450d5973ed55b2515f3c",
+            "content": "sha256:ce36f45d8abc47ff28e835599564f9783a30a7b30220e19ba24e701ff8307f49",
+            "locator": {
+              "end": 299,
+              "kind": "line_range",
+              "start": 278
+            },
+            "path": "pyproject.toml"
           },
           "kind": "code"
         }

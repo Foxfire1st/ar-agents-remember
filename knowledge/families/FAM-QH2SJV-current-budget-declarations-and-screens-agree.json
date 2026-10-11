@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "The declaration alone does not keep copied boundary inputs current; each screen alone can agree with its own obsolete constants. Their jointly pinned pair makes policy and independent views agree."
+  },
+  "guarantee": "The root declares5000 unit and1000 integration selected cases, and the budget boundary stub, citation-agreement declaration pin and reopened-series ruling screen all follow that same pair. No screen can independently retain an obsolete rail while the declaration advances. Historical figures and below-ruling fixture branches are not declarations.",
+  "id": "FAM-QH2SJV",
+  "members": [
+    "INV-Q2VTFP",
+    "INV-3NAQA6",
+    "INV-F0WP8H",
+    "INV-Z3DDAX",
+    "INV-RBJQVS"
+  ],
+  "origin": {
+    "handoff": {
+      "path": "curator-ingest-v1.json"
+    },
+    "handoffEntry": "budget-views-agree",
+    "leaf": "260928-MIK-L146",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "routes": [
+    ".",
+    "mcp/tests"
+  ],
+  "schema": "ar-family/v1",
+  "status": "proposed",
+  "title": "The current selected-case rails and their screens agree"
+}

@@ -12,7 +12,7 @@ Proves selected-case budget admission without recursive pytest collection.
 
 ### Logic
 
-Four cases, and they now split the two things the old version of this module ran together. `test_selected_case_budgets` is the parametrized one: it feeds the actual collection-finish hook a **synthetic** selected item population — 1000 unit/250 integration passes, 1001 unit or 251 integration raises the refusal requiring an explicit tradeoff — so those two numbers are the *test's inputs*, deliberately not the repository's rails, and the marker-shaped item double classifies each already-collected item. Three further cases pin the rail itself: `test_the_effective_budgets_are_the_repository_rails` asserts that the running configuration's `inifile` **is** the repository-root `pyproject.toml` and that the two ini values equal the root file's own declarations, reading the enforced configuration rather than either file's text; `test_the_option_declarations_state_no_budget_of_their_own` walks `conftest.py`'s AST and refuses a `default=` on either `addini` declaration, so the dead number cannot come back; and `test_an_absent_rail_refuses_by_name_instead_of_running_unbounded` states that an absent rail resolves to `0` and is refused by the `budget < 1` guard rather than read as "no ceiling". This is boundary arithmetic and refusal evidence, not a second inventory scan or a real nested pytest session.
+The parametrized `test_selected_case_budgets` drives the actual collection-finish hook with synthetic selected item populations: the declared 5000 unit/1000 integration pair passes, 5001 unit or 1001 integration raises the explicit-tradeoff refusal. `STUB_UNIT`/`STUB_INTEGRATION` deliberately duplicate the declared pair, and `test_the_stub_matches_the_declared_pair` ties both constants to the root configuration so a stale mirror cannot keep proving an obsolete ceiling. The marker-shaped item double classifies already-collected items; no recursive pytest collection is spawned. The other checks pin the effective repository-root inifile and both runtime ini values, prohibit a `default=` on either ini declaration, and require an absent rail to resolve to 0 and refuse by name rather than run unbounded. These are enforcement boundaries, not an inventory scan or an execution-time measurement.
 
 ### Conventions
 
@@ -21,7 +21,7 @@ boundary when changing policy rather than adding duplicate metric or collection 
 
 ### Invariants And Boundaries
 
-There is **no per-declaration default budget to state.** `mcp/tests/conftest.py` registers the two ini names with `addini` and carries no `default=`; the enforced pair lives once, in the repository-root `pyproject.toml` under `[tool.pytest.ini_options]`, and was **2300 unit / 400 integration** when this was written — read it there, it moves. The 1000/250 figures inside the parametrized case are that case's own inputs. Coverage is diagnostic; production
+There is **no per-declaration default budget to state.** `mcp/tests/conftest.py` registers the two ini names with `addini` and carries no `default=`; the enforced pair lives once, in the repository-root `pyproject.toml` under `[tool.pytest.ini_options]`, and was **2300 unit / 400 integration** when this was written — read it there, it moves. The stub now follows the declared 5000/1000 pair; the 2300/400 figure above is only the dated reading, not a current input. The boundary proof and its tie to the declaration are separate checks. Coverage is diagnostic; production
 CRAP 20 triggers review without failing delivery. Full suites and whole-candidate review occur at
 master completion. A green unit result is not a certification certificate.
 
@@ -39,11 +39,14 @@ No external domain claim is needed.
 
 ### Repo-Internal References
 
+- The enforced collected-case pair is 5000 unit/1000 integration; the unit-only policy raise leaves the guard unchanged. [5]
+
 The exact functions below establish the tested boundary and its test doubles.
 
 - Proves selected-case budget admission without recursive pytest collection, over a synthetic population. [1]
 - Proves the enforced inifile and the running configuration's values are the root `pyproject.toml`'s own declarations. [2]
-- Refuses a `default=` on either budget declaration, so a dead number cannot return to the tree. [3]
+
+- Refuses a default on either budget declaration, so a dead number cannot return to the tree. [3]
 - States that an absent rail resolves to `0` and is refused by name instead of running unbounded. [4]
 
 ### Cross-Repo References
