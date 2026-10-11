@@ -3,11 +3,11 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Every registered read leaves nothing but cache",
+      "note": "Selected knowledge reads, refusals, diff, integrity and published intent leave only the allowed footprint.",
       "targets": [
         {
           "anchor": {
-            "blob": "fe4a506b6ba61d45e23fb13fd3be34e004617399",
+            "blob": "51ed7a492a1aa739b39830c2786077891beb6b76",
             "content": "sha256:228db8db105a5f557edf0a1405a8235be2ff5fd41f7b771d1f158f9998f18e75",
             "locator": {
               "kind": "symbol",
@@ -18,12 +18,76 @@
         }
       ]
     },
-    "2": {
-      "note": "A mutated read is caught, so the roster cannot pass vacuously",
+    "10": {
+      "note": "Baseline adoption dry run preserves the converted fixture.",
       "targets": [
         {
           "anchor": {
-            "blob": "fe4a506b6ba61d45e23fb13fd3be34e004617399",
+            "blob": "51ed7a492a1aa739b39830c2786077891beb6b76",
+            "content": "sha256:14919254d7b0f8ada7b564efaa0218345e2f430e72aac61c49201452a99edd2e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_converted_adopt_dry_run_writes_nothing"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "Freshness is opt-in: no unrequested fetch, and a requested fetch changes only its bounded Git footprint.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "51ed7a492a1aa739b39830c2786077891beb6b76",
+            "content": "sha256:b9eb482f0980a5141ea8b8443b00becbe4db810a1ea07ce4dc4dd47f30552fdd",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_context_packet_freshness_fetch_is_bounded"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "Adopted-seat status, preview, integrate and reopen dry runs respect the oracle's preview allowance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "51ed7a492a1aa739b39830c2786077891beb6b76",
+            "content": "sha256:72f1e217c747325f00bc909f79191c5224aa7f3af8825ad19b7c51adc78b2675",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_adopted_seat_status_preview_and_dry_runs"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "Remaining preview, carryover and queue paths answer or name their refusals without landing or protected-state mutation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "51ed7a492a1aa739b39830c2786077891beb6b76",
+            "content": "sha256:02dbdc423ec06b16151bad30e0b30625acc6b47a03a9597f6d8232298488d6c3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_remaining_preview_plan_and_queue_reads_write_nothing"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "A mutated read is caught, so the roster cannot pass vacuously.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "51ed7a492a1aa739b39830c2786077891beb6b76",
             "content": "sha256:68ed06c8047a5e41dce8001aa2c6b1396ebd08e0bc6cededdde83bdffdc5a1e6",
             "locator": {
               "kind": "symbol",
@@ -35,11 +99,11 @@
       ]
     },
     "3": {
-      "note": "Enclosure reads record only comparisons and previews",
+      "note": "Enclosure reads attribute comparison objects and allow only preview effects.",
       "targets": [
         {
           "anchor": {
-            "blob": "fe4a506b6ba61d45e23fb13fd3be34e004617399",
+            "blob": "51ed7a492a1aa739b39830c2786077891beb6b76",
             "content": "sha256:25583a31f1533c64a3645bea4320896909679aa18520a642711456dd10f5e7b7",
             "locator": {
               "kind": "symbol",
@@ -51,11 +115,11 @@
       ]
     },
     "4": {
-      "note": "Review GET routes read without writing",
+      "note": "Review GET routes read without other protected-state changes.",
       "targets": [
         {
           "anchor": {
-            "blob": "fe4a506b6ba61d45e23fb13fd3be34e004617399",
+            "blob": "51ed7a492a1aa739b39830c2786077891beb6b76",
             "content": "sha256:501c4a09fdd8a79b95e0b1fbc5ede4bbaf4183678ed4c06e3ee5d2b7c9fd7ad2",
             "locator": {
               "kind": "symbol",
@@ -67,11 +131,11 @@
       ]
     },
     "5": {
-      "note": "Remaining dashboard GETs read without writing",
+      "note": "Remaining dashboard GETs read without writing.",
       "targets": [
         {
           "anchor": {
-            "blob": "fe4a506b6ba61d45e23fb13fd3be34e004617399",
+            "blob": "51ed7a492a1aa739b39830c2786077891beb6b76",
             "content": "sha256:bae3bd60b0574df21a451c139c8f7982b7eb87e6111c2e80815e0e188f57d2a2",
             "locator": {
               "kind": "symbol",
@@ -83,15 +147,63 @@
       ]
     },
     "6": {
-      "note": "Converted drift and registered baseline status are exercised under the filing oracle; dictionary assertions and the array-valued fixture do not establish clean-card or returned-field semantics. [6]",
+      "note": "Converted drift and registered baseline status use the filing oracle; dictionary assertions and the array-valued fixture do not establish clean-card or returned-field semantics.",
       "targets": [
         {
           "anchor": {
-            "blob": "fe4a506b6ba61d45e23fb13fd3be34e004617399",
-            "content": "sha256:efdffdb3ccb4193db2cc887ed672cb779bae9c945c79b2e889001660b6008094",
+            "blob": "51ed7a492a1aa739b39830c2786077891beb6b76",
+            "content": "sha256:4efdc28d533ae0a1f85c777830fb21798740e7693b65a7525925802453dea47c",
             "locator": {
               "kind": "symbol",
               "name": "test_converted_drift_check_read_writes_nothing"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Server-info, resolver, gate and file reads preserve the synthetic seat.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "51ed7a492a1aa739b39830c2786077891beb6b76",
+            "content": "sha256:4ad062f66a540775adc8c310de882ec1814e5bb4ddf56e6e070721e474dd1b4e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_miscellaneous_description_called_reads_write_nothing"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Context-packet, internal drift and baseline-status paths preserve the selected memory-backed seat, including a named missing-root refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "51ed7a492a1aa739b39830c2786077891beb6b76",
+            "content": "sha256:59d8216b202ca12ffde96a272818e822ac3e4daceae6d947d1ae33924196e45e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_memory_backed_reads_write_nothing"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "Skill catalog list, advertised-URI read and bogus-URI refusal preserve the fixture.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "51ed7a492a1aa739b39830c2786077891beb6b76",
+            "content": "sha256:87a7db096e1c7ff7c155e019995a19e3eedf7ae8b10905b12de86d541078e5dd",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_diagnostic_watcher_and_skill_reads_write_nothing"
             }
           },
           "kind": "test"

@@ -6,11 +6,13 @@
 
 ## Purpose
 
-**MIK-R74 rule 6: a read changes no branch, tag or HEAD, no worktree file, no Git index, no task document and no requirement packet.** A test runs every read against scratch clones and compares before and after — refs and HEAD, the index file, the working trees, the task folder — and fails on any difference outside (a) `runtime/` caches, (b) a recorded comparison with its pin ref, and (c) a preview's worklist, reports and judged-tree objects.
+**MIK-R74 rule 6: a read changes no branch, tag or HEAD, no worktree file, no Git index, no task document and no requirement packet.** The selected knowledge, enclosure, memory, skill and dashboard read roster runs against scratch fixtures and compares refs/HEAD, index files, working trees, task files, object stores and directories. Its oracle distinguishes allowed `runtime/` caches, attributed comparison objects and pin refs, and preview worklists, reports and judged-tree objects. The dedicated freshness case additionally permits only the requested fetch's remote-tracking refs, objects, reflogs and `FETCH_HEAD`; without that request nothing fetches or changes.
 
 ## Code Commentary
 
-The main roster case runs every registered read; a second case mutates one read to create a directory and shows the harness catching it, so the first case cannot pass vacuously. Enclosure reads record only comparisons and previews; reviewer GET routes, miscellaneous description-called reads, memory-backed reads, seat status previews and dry runs, code-search plan/refusal reads, diagnostic/watcher/skill reads, and the remaining dashboard GETs each read without writing. The oracle lives in `read_boundary_oracle_test_support.py`.
+The main knowledge roster covers family, invariant and source-context reads, named unsupported-view refusals, a diff, integrity and published intent. A second case mutates one read to create a directory and shows the oracle catching it. Enclosure comparisons, reviewer GETs, server-info/resolver/gate/file reads, the context packet and internal drift check, baseline status/adoption previews, adopted-seat status and dry runs, the carryover/queue refusal paths and remaining dashboard GETs keep their selected protected populations unchanged. This is the file's explicit roster, not universal execution of every registered tool or live-session route. The oracle lives in `read_boundary_oracle_test_support.py`.
+
+Skill coverage uses the retained registry and response builders: list the catalog, read a URI it advertised and reject a bogus URI. The skill case keeps its historical test identifier, but its current assertions cover only those catalog operations.
 
 The converted-drift case applies the same before/after filing oracle to drift and registered
 baseline-status calls. Its original run caught report, observer-snapshot and directory creation;
@@ -21,10 +23,16 @@ values; the summary/projection owners carry those separate contracts.
 
 ## Evidence
 
-- Every registered read leaves nothing but cache [1]
-- A mutated read is caught, so the roster cannot pass vacuously [2]
-- Enclosure reads record only comparisons and previews [3]
-- Review GET routes read without writing [4]
-- Remaining dashboard GETs read without writing [5]
-
-- Converted drift and registered baseline status are exercised under the filing oracle; dictionary assertions and the array-valued fixture do not establish clean-card or returned-field semantics. \[6] [6]
+- Selected knowledge reads, refusals, diff, integrity and published intent leave only the allowed footprint. [1]
+- A mutated read is caught, so the roster cannot pass vacuously. [2]
+- Enclosure reads attribute comparison objects and allow only preview effects. [3]
+- Review GET routes read without other protected-state changes. [4]
+- Remaining dashboard GETs read without writing. [5]
+- Converted drift and registered baseline status use the filing oracle; dictionary assertions and the array-valued fixture do not establish clean-card or returned-field semantics. [6]
+- Server-info, resolver, gate and file reads preserve the synthetic seat. [7]
+- Context-packet, internal drift and baseline-status paths preserve the selected memory-backed seat, including a named missing-root refusal. [8]
+- Skill catalog list, advertised-URI read and bogus-URI refusal preserve the fixture. [9]
+- Baseline adoption dry run preserves the converted fixture. [10]
+- Freshness is opt-in: no unrequested fetch, and a requested fetch changes only its bounded Git footprint. [11]
+- Adopted-seat status, preview, integrate and reopen dry runs respect the oracle's preview allowance. [12]
+- Remaining preview, carryover and queue paths answer or name their refusals without landing or protected-state mutation. [13]

@@ -2,45 +2,13 @@
   "path": "mcp/tests/test_knowledge_report_filing.py",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "Diagnostics reads file nothing",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "06659b431472e8bbbb883e764dd1f9a5f0c9f313",
-            "content": "sha256:2f4bdd6dca9f8aa96aea40d5cfbc9e4b6bcce53d610a9227fe743914b78e3bc3",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_diagnostics_read_files_nothing"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "2": {
-      "note": "Watcher status and dry runs file nothing",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "9917ce0d840db10ff32814dc9e3a9854c80feea4",
-            "content": "sha256:22ba07af0c42ba6548c05b9874e18c54d288152ad6951bda0bb49f130d299bf1",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_watchers_status_and_dry_run_file_nothing"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
     "3": {
-      "note": "Install dry run files nothing",
+      "note": "Install dry run files no per-call report.",
       "targets": [
         {
           "anchor": {
-            "blob": "06659b431472e8bbbb883e764dd1f9a5f0c9f313",
-            "content": "sha256:4a8bc106f78a155474fb2bf8861232a33ba0f5b83abfd6813b45cfa08347173e",
+            "blob": "4f0f9c395beb747f52292cce4db00dc568a439dc",
+            "content": "sha256:b8350954de9c094c637628fb9f5108aa2256e74e13b16529e38b28d59b86338d",
             "locator": {
               "kind": "symbol",
               "name": "test_install_dry_run_files_nothing"
@@ -51,11 +19,11 @@
       ]
     },
     "4": {
-      "note": "Carryover plan refusal files nothing",
+      "note": "Carryover authority refusal files no per-call report.",
       "targets": [
         {
           "anchor": {
-            "blob": "9917ce0d840db10ff32814dc9e3a9854c80feea4",
+            "blob": "4f0f9c395beb747f52292cce4db00dc568a439dc",
             "content": "sha256:997a96dbb5eb94cebaa2fb58873124aa6c42e6c7be96bb92ed7f6feb4fd6e981",
             "locator": {
               "kind": "symbol",
@@ -67,12 +35,12 @@
       ]
     },
     "5": {
-      "note": "Compacts omit the pointer only when nothing is filed",
+      "note": "The surviving install and carryover compactors omit or retain the pointer according to the supplied report path.",
       "targets": [
         {
           "anchor": {
-            "blob": "9917ce0d840db10ff32814dc9e3a9854c80feea4",
-            "content": "sha256:dea48e7c675bd5ed1a3245a19ed83c34cb4628e30beace032938cc86978cec92",
+            "blob": "4f0f9c395beb747f52292cce4db00dc568a439dc",
+            "content": "sha256:f41ff819b3b6ddb53492702d27f82bf8f68fd4442ec130cd4a2daef61ad11d8c",
             "locator": {
               "kind": "symbol",
               "name": "test_compacts_omit_the_pointer_only_when_nothing_is_filed"
@@ -83,11 +51,11 @@
       ]
     },
     "6": {
-      "note": "Drift-summary read files no temp report",
+      "note": "Non-reporting drift-summary mode files no Markdown report or observer log and returns no report pointer.",
       "targets": [
         {
           "anchor": {
-            "blob": "9917ce0d840db10ff32814dc9e3a9854c80feea4",
+            "blob": "4f0f9c395beb747f52292cce4db00dc568a439dc",
             "content": "sha256:0dff613f80ee368d75ce702d321a3c4fa4254d4de15a4e38b5e018179ef8f503",
             "locator": {
               "kind": "symbol",
@@ -99,15 +67,47 @@
       ]
     },
     "7": {
-      "note": "Explicit report producer still writes both",
+      "note": "The explicit default-output report producer still writes the report and observer snapshot.",
       "targets": [
         {
           "anchor": {
-            "blob": "9917ce0d840db10ff32814dc9e3a9854c80feea4",
+            "blob": "4f0f9c395beb747f52292cce4db00dc568a439dc",
             "content": "sha256:6038495b6483375dbc135263b1e4d3db90cc3abccf6b5ea62da3362bd75194e6",
             "locator": {
               "kind": "symbol",
               "name": "test_explicit_report_producer_still_writes_both"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Base payload omits drift_report without a supplied report and keeps it with one.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4f0f9c395beb747f52292cce4db00dc568a439dc",
+            "content": "sha256:7d7e72a6779745cb5fd0f64d70cb8b400ad1a7178c892d1352cd1b453cbb93fe",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_base_payload_omits_drift_report_without_filing"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The retained internal drift authority refusal creates no temporary report directory.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4f0f9c395beb747f52292cce4db00dc568a439dc",
+            "content": "sha256:cb7ae027608a6bad23d9741e127361cd93ba0ce98bb691ddc78e3ec63dc858dc",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_drift_check_refusal_files_nothing"
             }
           },
           "kind": "test"
