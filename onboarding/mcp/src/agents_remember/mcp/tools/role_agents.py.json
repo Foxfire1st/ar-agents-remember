@@ -3,7 +3,26 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "39bd9a4dbbf6d9951c4929856a574d14c520023f",
+        "blob": "3b40fe32dafe16f0574adf7375fa95ca040a3fdf",
+        "content": "sha256:bbcdfbc6744fe3c117b70454a1ccdbdb061d976429d770e556855d98b88a5cb7",
+        "locator": {
+          "end": 24,
+          "kind": "line_range",
+          "start": 19
+        }
+      },
+      "id": "RLZ-4GA95T",
+      "invariant": "INV-RTQCXN",
+      "origin": {
+        "handoffEntry": "L100-R100-set-start-and-held-seats",
+        "leaf": "260928-MIK-L100"
+      },
+      "rationale": "The tool entry point carries the set call through the single payload choke point.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "3b40fe32dafe16f0574adf7375fa95ca040a3fdf",
         "content": "sha256:3269bf4844a96cc66faaba066289476830b4ff4dda0d47fe28d0f831d985c687",
         "locator": {
           "kind": "symbol",
@@ -21,7 +40,7 @@
     },
     {
       "anchor": {
-        "blob": "39bd9a4dbbf6d9951c4929856a574d14c520023f",
+        "blob": "3b40fe32dafe16f0574adf7375fa95ca040a3fdf",
         "content": "sha256:f068b965486730039857669797d0cd0f9636ab759e0ec73b6f927b9e9a3dd3a2",
         "locator": {
           "kind": "symbol",

@@ -10,7 +10,7 @@ Owns durable current-line launch receipts, immutable saved-call replay, report b
 
 ## Code Commentary
 
-Receipt creation is exclusive and complete before native launch; unknown outcomes retain replayRequest with original UUID/prompt/options. Resolved receipts drop replayRequest. Taskless canonical storage/migration remains bounded to exact receipt identities; old schema at current address refuses, previous host receipts are not execution authority. Public execution whitelists lifecycle fields and requested/observed tier disclosure, never task acceptance.
+Receipt creation is exclusive and complete before native launch; unknown outcomes retain replayRequest with original UUID/prompt/options. Resolved ordinary receipts drop replayRequest. A created held seat instead keeps its saved call and opening handover, reports `held`, and restores the artifact from `heldOpeningPrompt` on retry without inventing a first message. Public projection names an eligible leaf holder for the launcher; closing-mark refusals still override retry/revive/start affordances without erasing archival debt. Taskless canonical storage/migration remains bounded to exact receipt identities; old schema at current address refuses, previous host receipts are not execution authority. Public execution whitelists lifecycle fields and requested/observed tier disclosure, never task acceptance.
 
 ## Closing mark and archive settlement (MIK-R76)
 

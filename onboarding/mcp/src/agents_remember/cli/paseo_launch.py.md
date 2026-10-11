@@ -4,7 +4,8 @@
 
 The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
 
-- Saved calls now carry serverExclusion alongside agent/workspace.
+- Saved calls carry serverExclusion alongside agent/workspace.
+- A held `RoleLaunch` retains all resolved creation choices but omits `agent.prompt`; its compiled opening handover remains in the receipt for the first addressed work. An ordinary launch still sends its prompt at creation. This is product-held state, not a rewrite of the host’s idle state.
 - agent_create_input removes only agents-remember from supplied MCP maps and forwards the record.
 - serviceTier is projected into featureValues.service_tier.
 

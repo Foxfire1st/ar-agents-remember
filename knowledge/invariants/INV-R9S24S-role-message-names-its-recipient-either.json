@@ -8,7 +8,7 @@
   "applicability": "role_message recipient lookup through current-line receipts.",
   "conditions": [],
   "exclusions": [
-    "Task-bound lookup uses current/newest earlier live receipt, not every historical native agent."
+    "An archived or vanished agent is not a live leaf-seat occupant."
   ],
   "id": "INV-R9S24S",
   "origin": {
@@ -22,7 +22,7 @@
     "leaf": "260928-MIK-L90",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "`role_message` names its recipient either by an agent id that a receipt of this line records, or by a role plus task references, which resolves through the selection's receipts to its one live agent; several live agents are refused with their ids and never chosen among, and of a taskless role at most 24 executions that are not already stopped or rejected are asked about, a longer list being refused as ambiguous with the statement that it was cut.",
   "status": "proposed",

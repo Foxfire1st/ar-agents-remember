@@ -18,7 +18,7 @@ observer health.
 Startup, in order: migrate the control-plane identity logs; compact the workspace event river once; start
 the observer-health lifetime; observe the terminal catalog once (`_prime_terminal_observation`); prime the
 projection; then create the tasks for the projector, the metrics loop, the terminal observation loop, the
-agent notifier loop, the relay death watch and the river compaction loop. A heap diagnostic task and a
+agent notifier loop, the native held-message delivery loop, the relay death watch and the river compaction loop. A heap diagnostic task and a
 memory trim task are added only when their environment switches are set.
 
 Shutdown, in order:
@@ -41,6 +41,8 @@ Shutdown, in order:
   the last good settings for that sweep; with none, the sweep is skipped.
 - `_to_thread_drained_on_cancel` runs a function on a thread and, when the awaiting task is cancelled,
   waits for the thread to finish before the cancellation propagates.
+
+The native `_held_delivery_loop` is independent of the earlier hosted-seat notifier. It runs `sweep_held_messages` through `_to_thread_drained_on_cancel`, contains a failed sweep and sleeps fifteen seconds after that attempt. Its task joins the same shutdown collection, so cancellation drains an in-flight sweep before teardown. The loop needs neither a browser poll nor a model turn; durable waiting text stays held while serving is stopped.
 
 ### Payloads
 

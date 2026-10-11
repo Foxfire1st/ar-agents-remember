@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "The recorded behavioral fixture assertions guard this obligation; the proof facets distinguish their limited fixture behavior from real-host or full-final acceptance."
+  },
+  "applicability": "Shipped canonical and generated leaf-start, leaf-recipient and direct-freeze instruction clauses.",
+  "conditions": [
+    "The owning Manager prepares Worker, Reviewer and Curator as siblings with the one public set operation.",
+    "Worker opens at once; Reviewer and Curator open with addressed work, with the optional Reviewer-work exception.",
+    "Positive obligations and exact retired-sentence guards remain source-confined and generated copies are derived."
+  ],
+  "exclusions": [
+    "Changing the role may-start matrix or permission policy.",
+    "A wording test as evidence of real host execution."
+  ],
+  "id": "INV-MTRR08",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "49 wording tests pass with 466 subtests; obsolete-sentence reinsertion and set-start removal both caught; sync-skills --check clean on all nine generated copy surfaces"
+      ],
+      "path": "l100-knowledge-handoff.json"
+    },
+    "handoffEntry": "L100-R100-doctrine-coherence",
+    "leaf": "260928-MIK-L100",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The instruction class states the held set preparation and the refusing resolver coherently: the resolver reaches a seat's single live agent, and the Manager starts Worker, Reviewer and Curator as one role_start_set with Reviewer and Curator held; the three obsolete sentences are registered retired with source-confined guards on all copies.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -1,0 +1,86 @@
+{
+  "path": "mcp/src/agents_remember/cli/role_retire.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "5e5213b418e557c9da4b543d0669c0905d1af51b",
+        "content": "sha256:c4a09ad1ec544cd29b1694a272d7ed9a69e5c6ca29d912bc3aa15e8f7c5c960b",
+        "locator": {
+          "end": 385,
+          "kind": "line_range",
+          "start": 347
+        }
+      },
+      "id": "RLZ-HPM77Q",
+      "invariant": "INV-ECNV2S",
+      "origin": {
+        "handoffEntry": "L100-R100-8-unique-target",
+        "leaf": "260928-MIK-L100"
+      },
+      "rationale": "The total of matching current and archived records over one refuses the retirement before any host call or disk write, enumerating both sides.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The native entry checks original-starter authority before idempotent success or archive.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e5213b418e557c9da4b543d0669c0905d1af51b",
+            "content": "sha256:dbadc38790da980e77dbdf1e5514b45ca03dd21f73253d539c6fbba07f844821",
+            "locator": {
+              "kind": "symbol",
+              "name": "_retire_seat"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Unknown and ambiguous native targets refuse before retirement.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e5213b418e557c9da4b543d0669c0905d1af51b",
+            "content": "sha256:c4a09ad1ec544cd29b1694a272d7ed9a69e5c6ca29d912bc3aa15e8f7c5c960b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_locate_seat"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Host archive precedes receipt recording; failure is reported rather than rounded up.\n\nAnchor: `_archive_retiree`, `_record_retirement`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e5213b418e557c9da4b543d0669c0905d1af51b",
+            "content": "sha256:2b780c8e92bc6e501dd3d3d184a6e7a10c00e1adb6b25966ea70f70b59d6ea87",
+            "locator": {
+              "kind": "symbol",
+              "name": "_archive_retiree"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5e5213b418e557c9da4b543d0669c0905d1af51b",
+            "content": "sha256:0287a7b93b80ace0499272372d526e23219621e696e6198e78390737d5c6ad21",
+            "locator": {
+              "kind": "symbol",
+              "name": "_record_retirement"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

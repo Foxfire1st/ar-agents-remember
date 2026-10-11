@@ -6,7 +6,7 @@
 
 ## Purpose and current source account
 
-Dispatch creates each role in its exact selected folder with compiled title/labels/binding and stores the receipt around the native call. Missing or unusable replies remain retryable, repeats converge on one identity, conflicts refuse and closed executions archive before replacement. Real enclosure child tests coexist with fake host responses.
+Dispatch creates each role in its exact selected folder with compiled title/labels/binding and stores the receipt around the native call. Missing or unusable replies remain retryable, repeats converge on one identity, conflicts refuse and a closed leaf execution still names its unarchived holder. Only an explicit authorized replacement retires that holder; the successor’s handover names the predecessor reports. Host-read failure refuses rather than freeing a seat. Real enclosure child tests coexist with fake host responses.
 
 ## Evidence
 

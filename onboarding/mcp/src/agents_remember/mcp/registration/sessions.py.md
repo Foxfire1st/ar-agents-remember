@@ -6,13 +6,15 @@
 
 ## Purpose
 
-Register the retained `dispatch_agent` tool on the canonical task-document/role boundary.
+Register structural dispatch and the native receipt-tracked retirement entry on the canonical task-document/role boundary.
 
 ## Code Commentary
 
-`register_session_tools` registers only `dispatch_agent(task_document_ref, role, brief,
-label=None)` and builds the typed `DispatchAgentRequest`. It does not register child
-retirement or rename operations. The structural application still owns dispatch cleanup.
+`register_session_tools` registers `dispatch_agent(task_document_ref, role, brief,
+label=None)` and builds the typed `DispatchAgentRequest`. It also registers `retire_child`
+with the native agent ID, reason and explicit interruption flag, building `RetireChildRequest`.
+This restores only native receipt-tracked retirement; rename and old parent/child messaging
+remain removed. An absent or unknown native ID is refused, not routed through removed hosting. The structural application still owns dispatch cleanup.
 A plane-hosted caller is proven from plane-injected identity and authorized for direct-child
 scope; an ambient launcher has no parent seat but is still validated against document altitude.
 A present invalid/stale/mismatched/unbound/unauthorized plane identity is a refusal, never an

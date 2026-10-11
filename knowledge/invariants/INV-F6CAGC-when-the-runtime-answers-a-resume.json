@@ -7,7 +7,9 @@
     "justification": "Persistent native refusal prevents repeated Revive pretending recovery or implicitly replacing the original agent identity."
   },
   "applicability": "Answered native resume whose session remains closed.",
-  "conditions": [],
+  "conditions": [
+    "A new leaf request cannot implicitly replace an unarchived holder, even when closed: replacement names that holder, verifies original-starter or launcher authority, records retirement and preserves predecessor reports."
+  ],
   "exclusions": [
     "Unreachable resume remains unconfirmed under its separate failure path."
   ],
@@ -23,7 +25,7 @@
     "leaf": "260928-MIK-L90",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "When the runtime answers a resume and the session is still closed, the receipt becomes `failed` with the runtime's reason as detail, `canRevive` false and a private `resumeRefused {reason, at}` record, answered with HTTP 200; while the session stays closed every later refresh keeps the status, that reason and `canRevive` false, a second Revive is refused after one read, the record is dropped once the session is seen open, and a new agent comes only from a new Start, which archives this one.",
   "status": "proposed",

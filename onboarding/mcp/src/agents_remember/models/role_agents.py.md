@@ -12,6 +12,10 @@ Defines typed role-tool calls, results and finite refusal vocabulary.
 
 RoleStartCall extends canonical selection with required UUID and optional override; result distinguishes launch status and saved execution status. `RoleStartCall` adds `feature_values` for speed choices beside agent/model/effort. `RoleStartResponse` carries launch `choices`, a `warning` and `taskDocumentFiles`; `RoleMessageResponse` carries `reportCollection` for the sender's collected execution reports. RoleMessageCall permits agent ID or exact role references and bounded wait; response distinguishes refusal, delivered/resumed/steered/wait facts and final reply. Public detail/nextAction retain native failure causes without claiming semantic acceptance.
 
+## Held set and message wire states
+
+`RoleStartSetCall` carries one set request UUID and exact leaf references with separate Worker/Reviewer/Curator choices, optional Reviewer first work and replacement IDs. `SeatLaunchOverride` carries speed choices only. Both single starts and set replacement carry explicit interruption permission. `RoleStartStatus` and `RoleMessageStatus` admit `held`: a held seat exists without a turn, and a held message is product-stored rather than host-accepted. Message output names waiting IDs/counts, retained terminal lines and held-seat opening; withdrawal is a distinct input. `RoleStartSetResponse` reports each seat and partial completion without implying task acceptance.
+
 ## Evidence
 
 - Frozen implementation of RoleStartCall supporting the stated file behavior. [1]

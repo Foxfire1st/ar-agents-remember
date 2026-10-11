@@ -9,9 +9,10 @@
   "applicability": "Every canonical role source or multi-role operation delivered in a capsule whose handover can name a parent.",
   "conditions": [
     "The delivered text states the parent-routed question channel and the final-await ending for a role with a parent.",
-    "A busy or permission-prompt refusal keeps the question under 'Pending developer questions' in the report and is retried before the turn ends.",
+    "An actual busy refusal keeps the question under 'Pending developer questions' in the report and is retried before the turn ends.",
     "Only an unreachable parent (archived, not found, not resumable, no runtime configured, host unreachable) opens the own chat.",
-    "A relayed answer is recognized only with the three rule-5 marks and is recorded with the quoted words where the role requires a record."
+    "A relayed answer is recognized only with the three rule-5 marks and is recorded with the quoted words where the role requires a record.",
+    "A product-held answer is taken waiting work and is not sent again; the developer-only permission prompt and upward named-chat notice remain."
   ],
   "exclusions": [
     "Dashboard-started and other parentless roles, which keep the own-chat sentence.",
@@ -30,7 +31,7 @@
     "leaf": "260928-MIK-L93",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "Each delivered parentable role instructs questions to the parent, independent work without a developer wait, pending-report recovery for busy delivery, own-chat recovery only for an unreachable parent, and recorded quoted developer answers with the receiving agent ID.",
   "status": "proposed",

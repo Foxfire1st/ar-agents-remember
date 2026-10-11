@@ -7,6 +7,7 @@ The current source facts below replace the former operative inventory. The separ
 - EntryPointWorld, classifier/constants and control classes are now defined in this file, not only extracted owners.
 - STATE_DEPENDENT_RAISERS is empty and the derived matrix population retains lifecycle_finalize_task only.
 - UNMARKED_NOT_OK is empty; the surviving T34 advertised family is memory_baseline_adopt only.
+- The benign invocation census includes role_start_set and native retire_child under the same roster-equality and envelope checks. Fixture caller/no-target refusals do not prove a bound Manager set or successful retirement.
 
 ### Source and authority bounds
 

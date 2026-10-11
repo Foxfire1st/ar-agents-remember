@@ -6,7 +6,7 @@
 
 ## Purpose
 
-Declare the canonical task/role structural dispatch request and response only.
+Declare canonical structural dispatch models and the native receipt-tracked retirement request/response.
 
 ## Code Commentary
 
@@ -15,7 +15,7 @@ response role validator delegates canonicalization. DispatchAgentRequest is a fr
 record of task_document_ref, role, brief and optional label. StructuralTargetResponse names
 work/role/status/detail, not a runtime occupant, and declares optional deliveryState and
 adapterDeliveryState; DispatchAgentResponse retains those fields and its operation label.
-Parent/child message, retirement and rename DTOs and AgentMessageKind are removed. The old
+Parent/child messaging, rename DTOs and AgentMessageKind remain removed. RetireChildRequest and RetireChildResponse are restored for native retirement only: the request carries agent_id and explicit interrupt_turn, and the native owner verifies the original starter and unique recorded target before effects. This is not restoration of the former plane-hosting API. The old
 six-consumer/three-producer inventory is history. Untouched internal gate/activation models
 remain separate owners; retirement here does not erase their state or authority.
 

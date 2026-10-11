@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "The recorded behavioral fixture assertions guard this obligation; the proof facets distinguish their limited fixture behavior from real-host or full-final acceptance."
+  },
+  "applicability": "Native retirement of Worker, Reviewer or Curator by the recorded original starter.",
+  "conditions": [
+    "Resolve all matching current and archived receipts before any archive effect.",
+    "Require the original starter even for a repeat reporting already-retired.",
+    "An active turn requires explicit interruption permission."
+  ],
+  "exclusions": [
+    "The removed hosted-seat retirement machinery.",
+    "Dashboard replacement, which has a separate checked launch entry.",
+    "Task acceptance or leaf-close archival debt."
+  ],
+  "id": "INV-ECNV2S",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_native_retire.py::NativeRetireTests::test_a_current_plus_history_record_is_refused_without_effects passes; scratch/worker/5e0b3a10-7a35-4c5e-9f11-100000000001/xdg/r6-probe-final0.txt sha c484e288071f: ambiguous-agent, no archive, receipt bytes unchanged"
+      ],
+      "path": "l100-knowledge-handoff.json"
+    },
+    "handoffEntry": "L100-R100-8-unique-target",
+    "leaf": "260928-MIK-L100",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Retirement enumerates every matching current and archived record first and refuses an agent recorded more than once, in any mix, with no host call and no disk write; starter authority is verified before retirement and idempotent success.",
+  "status": "proposed",
+  "supersedes": []
+}

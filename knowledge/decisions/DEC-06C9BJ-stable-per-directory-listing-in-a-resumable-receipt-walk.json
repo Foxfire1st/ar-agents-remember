@@ -1,0 +1,49 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "Stable per-pass order allows rotation to visit every receipt without a materialized full census; the ruling explicitly accepts one-directory listing cost."
+  },
+  "alternatives": [
+    {
+      "option": "Retain stable per-directory listing with yielded-path/read caps and no whole-fleet path set.",
+      "reason": "Stable per-pass order allows rotation to visit every receipt without a materialized full census; the ruling explicitly accepts one-directory listing cost.",
+      "status": "chosen"
+    },
+    {
+      "option": "Require a constant bound on every directory’s listed names in each check.",
+      "reason": "That criterion would require another store layout; the current requirement does not ask for it.",
+      "reconsider_when": "The store layout or approved performance requirement changes so a single-directory listing becomes an inadmissible cost.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Do not claim zero scandir names or a constant total tick cost; preserve the measured 65/257-name owner disposal independently of the Reviewer’s historical BLOCK."
+  ],
+  "context": "The bounded-path/read walk still sorts one directory’s names once per stable pass.",
+  "decider": "Architect ruling 589c51a1 under D158, recorded by the Manager; MIK-R100@v1",
+  "id": "DEC-06C9BJ",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "route:mcp/src/agents_remember/cli"
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_held_queue.py::HeldSweepBoundsTests::test_idle_fleet_reads_stay_bounded_at_two_sizes passes with zero rglob yields; scratch/worker/5e0b3a10-7a35-4c5e-9f11-100000000001/xdg/r6-probe-after.txt sha 628ed08eb73c: 0 enumerated paths all six cycles at 64/256, reads<=32 (rglob API; per-directory scandir listings materialize once per pass, disclosed residual for Architect inspection)"
+      ],
+      "path": "l100-knowledge-handoff.json"
+    },
+    "handoffEntry": "L100-R100-4a-bounded-census",
+    "leaf": "260928-MIK-L100",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

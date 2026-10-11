@@ -14,7 +14,9 @@ The Architect delegates coordination first to one Manager for one master or one 
 
 Architect may start every role except Architect; Orchestrator may start Manager, Worker, Reviewer, Curator and Investigator under its sprint; Manager may start Worker, Reviewer, Curator and Investigator under its master. Other roles start none. An unknown start is reconciled by the same request ID. A rejected candidate returns finding-specific repair to the same Worker.
 
-`role_message` names one recipient by actual agent ID or unambiguous role/task selection, attributes the sender and never cancels a running turn. Busy, permission, unfinished-start, missing, archived and ambiguous outcomes remain explicit. A wait reports the consumed turn or a pending/timeout/uncertain outcome; it is not semantic completion. Dashboard-started agents need no parent.
+The Manager prepares a leaf’s Worker, Reviewer and Curator as siblings in one `role_start_set` call. Worker opens; Reviewer and Curator stay held until addressed work, unless the call carries Reviewer work. This replaces staggered Curator creation at the first freeze without changing who may start which role or the direct leaf repair loop.
+
+`role_message` names one recipient by actual agent ID or unambiguous role/task selection, attributes the sender and never cancels a running turn. Two live leaf occupants refuse with both IDs; no newest candidate is selected. Unavailable starts, permission prompts and unwritable turns hold work in FIFO order. The sender does not resend held work. Capacity, missing, archived and ambiguous outcomes remain explicit. A wait reports the consumed turn or a pending/timeout/uncertain outcome; it is not semantic completion. Dashboard-started agents need no parent.
 
 ## Conventions
 
@@ -22,7 +24,7 @@ Canonical skills/l-01-agent-lifecycles/operations/coordination.md owns the instr
 
 ## Invariants And Boundaries
 
-Use only `role_start`/`role_message` on `agents-remember-task`. Preserve canonical task and paired paths; do not create an independent Paseo Git worktree, background scheduler, duplicate owner or acceptance ledger. Avoid mutually waiting agents.
+Use the bound `role_start`, Manager leaf `role_start_set` and `role_message` on `agents-remember-task`. A held permission answer still requires the upward named-chat notice; only the developer answers the prompt. Product delivery removes the parent’s second-send duty. Preserve canonical task and paired paths; do not create an independent Paseo Git worktree, background scheduler, duplicate owner or acceptance ledger. Avoid mutually waiting agents.
 
 ## Code Commentary
 

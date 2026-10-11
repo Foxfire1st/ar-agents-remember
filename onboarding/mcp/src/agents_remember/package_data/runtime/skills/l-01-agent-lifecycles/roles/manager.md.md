@@ -12,7 +12,7 @@ A Manager coordinates one selected master’s leaf owners and evidence at Projec
 
 Use the supplied sprint/master/requirement/candidate/report references. Read the rendered task-document files named in the handover, read with the harness's own file tools before acting; change documents through `task_doc` only, because edits to copies are never read back and are lost on the next publication. Each leaf owns one primary requirement; inherited/adjacent requirements remain constraints. Leaf work uses the AR paired enclosure rather than an independent Paseo worktree.
 
-Start the Worker and Reviewer together and the Curator at the first freeze, under the selected master, and retain their actual IDs. The leaf's Reviewer sends finding-specific repair to the same Worker directly; independent review runs when required by task/plan, and fix verification preserves its sealed baseline.
+Start a leaf’s Worker, Reviewer and Curator as one `role_start_set` under the selected master and retain their actual IDs. Worker opens at once; Reviewer and Curator are held until their first addressed work, unless Reviewer work is supplied in the call. The leaf's Reviewer sends finding-specific repair to the same Worker directly; independent review runs when required by task/plan, and fix verification preserves its sealed baseline.
 
 Inspect actual deliverables, complete changed-file diff, checks and reports before handoff. Preserve requirement/finding IDs and separate implementation, review, curation and publication facts. Its own decisions cover leaf order and starts, operational problems, ordinary requirement readings, repair rounds, landing checks and delegated closeout/integration; only the four developer-needed categories plus the once-only final report go to the parent or the instructed reporting recipient. A real parent is addressed from the handover; dashboard launch needs none.
 
@@ -36,7 +36,7 @@ Canonical skills/l-01-agent-lifecycles/roles/manager.md owns the instruction. sc
 Use existing AR task/data and paired Git owners under actual authority. No Curator memory edit, self-review, uncertain duplicate, shell-commit substitution, invented parent or unverified landing claim.
 
 - Installation cannot widen manager authority beyond one canonical master.
-- Runtime packaging cannot expose child occupant ids to the manager model.
+- Native report/agent identities are supplied by the bound start; packaging does not invent a parent or confer authority over another master’s seats.
 - Builder, reviewer, curator, closeout, and handover separation matches canonical doctrine exactly.
 
 ## Working folders and reports

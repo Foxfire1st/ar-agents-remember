@@ -9,7 +9,8 @@
   "applicability": "The role launcher when the document rail or the Chats page binds it to a canonical selection.",
   "conditions": [
     "Concurrent selected-task Investigator starts remain subject to the backend’s complete eight-slot admission.",
-    "The row remains controls only and does not replace the primary document chat."
+    "The row remains controls only and does not replace the primary document chat.",
+    "An explicit original-starter or dashboard-authorized holder replacement is separate from another ordinary singleton start; held naming does not open a second agent."
   ],
   "exclusions": [
     "Which roles a role may start and the Investigator offering are MIK-R98's; until it lands the earlier role name is offered for Projects only.",
@@ -28,9 +29,9 @@
     "leaf": "260928-MIK-L95",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-invariant/v1",
-  "statement": "The bound launcher adopts an existing open request, marks it running and preserves any uncertain request identity. Ordinary singleton roles and Projects retain the second-start prohibition; a selected sprint/master Investigator uses per-request executions, may start another admitted request, and retains the exact selected UUID across Result/report, Retry, Revive and remount.",
+  "statement": "The bound launcher adopts an existing open request and preserves its product status, including held without a turn and preserves any uncertain request identity. Ordinary singleton roles and Projects retain the second-start prohibition; a selected sprint/master Investigator uses per-request executions, may start another admitted request, and retains the exact selected UUID across Result/report, Retry, Revive and remount.",
   "status": "proposed",
   "supersedes": []
 }

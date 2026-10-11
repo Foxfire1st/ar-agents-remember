@@ -4,7 +4,7 @@
 
 The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
 
-- Public roster/response registry remove provider and other retired operations.
+- Public roster/response registry keep provider and the other retired operations removed while adding role_start_set and native retire_child. Role launch and message response vocabularies admit product-held state, per-seat results, waiting counts and explicit replacement/withdrawal operands without caller-controlled permission policy.
 - Current answer vocabulary adds landed L112 bounds and clears L112 interim ownership.
 
 ### Superseded inventory

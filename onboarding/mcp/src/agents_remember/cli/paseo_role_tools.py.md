@@ -6,11 +6,11 @@
 
 ## Purpose
 
-Implements agent-bound role_start and role_message over the same public launch/runtime owners.
+Implements single-role starts, the Manager-owned leaf-set start and receipt-bound role messaging over the public launch/runtime owners.
 
 ## Code Commentary
 
-Caller binding decides may-start pairs and sprint/master containment. Starts call launcher dispatch with native parent, and only starter or dashboard may replay a stored request. Recipients resolve through current-line receipts; self, unfinished launch and ambiguous/cut taskless candidate sets refuse. Native message delivery/resume/wait results keep explicit refusal and uncertain-delivery shapes; no second hosted AR seat is created here.
+Caller binding decides may-start pairs and sprint/master containment. Starts call launcher dispatch with native parent, and only starter or dashboard may replay a stored request. Recipients resolve through current-line receipts. Self-addresses and ambiguous/cut candidate sets refuse; a leaf seat with two live agents is ambiguous too. An unfinished start, permission prompt or unwritable running turn instead holds a message in the recipient workspace when its receipt locates that store. Native message delivery/resume/wait results keep explicit refusal and uncertain-delivery shapes; no second hosted AR seat is created here.
 
 Since 260928-MIK-L114 `send_role_message` carries the resolved recipient's role for the
 river (`_carry_resolved_target_role`): the payload builder only sees the call, whose role
@@ -20,7 +20,13 @@ receipt or call the event stays literal.
 
 ## 260928-MIK-R93 — parent-first refusal remedies
 
-Four `nextAction` remedies that still leave the message transportable (`_archived`, `_resume` scope-changed, `_resume` cannot-resume, `_undelivered`) now name the parent with `role_message` on `agents-remember-task` first and the own chat only for an agent without one. The no-runtime and host-unreachable remedies keep their own-chat advice, and no refusal reason, code or delivery algorithm changed.
+Four `nextAction` remedies that still leave the message transportable (`_archived`, `_resume` scope-changed, `_resume` cannot-resume, `_undelivered`) now name the parent with `role_message` on `agents-remember-task` first and the own chat only for an agent without one. The no-runtime and host-unreachable remedies keep their own-chat advice, while unavailable-recipient delivery now uses the held-store owner rather than asking the sender to repeat a message that was taken as held.
+
+## Leaf sets and held-message admission
+
+Only the leaf’s owning Manager may call `start_leaf_set`; the ordinary caller may-start matrix still guards each seat. `dispatch_leaf_set` prepares Worker, Reviewer and Curator as siblings, opens Worker immediately and leaves Reviewer/Curator held unless reviewer work is carried. A repeat retains the deterministic per-seat request identities. Single-role starts retain their ordinary opening, with explicit authorized replacement for an occupied leaf seat.
+
+`send_role_message` does not let a new message overtake waiting work. A held answer names its reason, waiting ID and sender/total counts, rather than claiming acceptance by the host. `withdraw_held_message_id` withdraws only the sender’s uncommitted waiting message; a live delivery claim refuses withdrawal. Archived-recipient answers still expose the sender’s retained terminal outcomes. The host permission guard remains: holding never answers the prompt.
 
 ## Feature passthrough, choice metadata and message-time collection
 

@@ -5,6 +5,7 @@
 The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
 
 - Capsule section says three public tools are registered; current registrar registers resources only.
+- role_agents.py registers the Manager-owned role_start_set beside single starts and messages, with validated speed-only per-seat choices; sessions.py registers native receipt-tracked retire_child beside dispatch. Native retirement and set preparation use their existing scope/response owners, not the removed hosting APIs.
 
 ### Superseded inventory
 

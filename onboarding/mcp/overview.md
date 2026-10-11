@@ -5,6 +5,7 @@
 The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
 
 - Retrieval doctrine now uses onboarding/route indexes and harness-native search, not CGC/GrepAI.
+- Native role launch additionally prepares the Manager’s three-seat leaf set, with held siblings, explicit holder replacement and original-starter retirement. Workspace-local held delivery lives in `cli/role_held_messages.py` and the serving lifespan actor, not the removed hosted-seat path. Permission prompts remain developer-owned and execution receipts remain separate from task acceptance.
 
 The packaged worker brief delegates candidate setup to repository tool notes: build the code
 worktree's own environment, run candidate checks in it, disclose a missing build command and

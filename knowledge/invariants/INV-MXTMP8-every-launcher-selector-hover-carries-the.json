@@ -28,9 +28,9 @@
     "leaf": "260928-MIK-L133",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "Launcher role, agent, model, effort and selectable-feature hovers retain their complete chosen-or-default label, purpose and applicable default provenance. Document-selector hovers retain the complete label, purpose and canonical identity for a matched selected option; an empty or unmatched optionIndex instead names only the purpose (Sprint, Master or Task), not the visible placeholder or an identity. Choices, dispatch payloads, disabled branches and permission policy remain unchanged.",
+  "statement": "Launcher role, agent, model, effort and selectable-feature hovers retain their complete chosen-or-default label, purpose and applicable default provenance. Document-selector hovers retain the complete label, purpose and canonical identity for a matched selected option; an empty or unmatched optionIndex instead names only the purpose (Sprint, Master or Task), not the visible placeholder or an identity. Hover treatment changes neither offered choices nor dispatch payloads, disabled-state policy or permission policy; separately ruled product-held naming and occupancy retain their runtime owner.",
   "status": "accepted",
   "supersedes": []
 }

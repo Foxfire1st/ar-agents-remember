@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "87de380185252a8d36591cdffb8add47cfd31c2e",
+        "blob": "6cf7f1c93234772dfc0bf3a97034b942d68655d4",
         "content": "sha256:efa8b017b9fe55cc9079b18ccb846d217a27656c0c7e9a33d4c93535d77d201e",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "87de380185252a8d36591cdffb8add47cfd31c2e",
+        "blob": "6cf7f1c93234772dfc0bf3a97034b942d68655d4",
         "content": "sha256:7fb555bc9408240767b57fe97ee031289336323a495483d6cd8c6c2a90e92862",
         "locator": {
           "kind": "symbol",
@@ -36,6 +36,25 @@
       },
       "rationale": "The answer model admits opened as its own value, so a host outcome that does not exist is never rendered as created or found.",
       "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "6cf7f1c93234772dfc0bf3a97034b942d68655d4",
+        "content": "sha256:d9d6a2973a94509b76cf42d4ee79b64677d590f9f7de0709c5198c96a8f70e41",
+        "locator": {
+          "end": 79,
+          "kind": "line_range",
+          "start": 56
+        }
+      },
+      "id": "RLZ-YG8KWM",
+      "invariant": "INV-RTQCXN",
+      "origin": {
+        "handoffEntry": "L100-R100-set-start-and-held-seats",
+        "leaf": "260928-MIK-L100"
+      },
+      "rationale": "The set call model fixes the one-call shape the entry point validates.",
+      "role": "enforcement"
     }
   ],
   "references": {

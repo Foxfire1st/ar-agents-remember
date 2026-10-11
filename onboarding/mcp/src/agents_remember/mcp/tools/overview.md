@@ -5,7 +5,8 @@
 The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
 
 - capsule_serving.py, benchmark.py and providers.py were deleted.
-- structural_agent.py now adapts dispatch_agent only; internal gate/block helpers remain separate.
+- structural_agent.py adapts structural dispatch and the restored native receipt-tracked retirement entry; removed parent/child messaging and rename remain absent. The native retire adapter forwards to original-starter checks, not the removed hosted-seat path. Internal gate/block helpers remain separate.
+- role_agents.py also forwards the Manager’s leaf-set operation through the same payload finalization owner; adding the operation does not broaden caller permissions or move task acceptance into the adapter.
 
 ### Superseded inventory
 

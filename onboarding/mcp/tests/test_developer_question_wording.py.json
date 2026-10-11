@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "fff064c87fd819aef2586c03c20d201f511247c4",
+        "blob": "31872dc970f4edd5f8c5c9216a5a60431105bc8e",
         "content": "sha256:560c310997b2a7ff934065bb8a489b3e1be52e294cb7e8876cc385b280e4eab1",
         "locator": {
           "kind": "symbol",
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "fff064c87fd819aef2586c03c20d201f511247c4",
-        "content": "sha256:e976d4362da84b99537ee22d9d06d2153695ee6acf110a3e4c8934589c2668a5",
+        "blob": "31872dc970f4edd5f8c5c9216a5a60431105bc8e",
+        "content": "sha256:ece909d587bfb4b1b2f1d3b82d362afc61f400b5f280c1627bd99c4047e67928",
         "locator": {
           "kind": "symbol",
           "name": "test_each_parent_has_upward_notice_and_unchanged_downward_answer_duties"
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "fff064c87fd819aef2586c03c20d201f511247c4",
+        "blob": "31872dc970f4edd5f8c5c9216a5a60431105bc8e",
         "content": "sha256:19d28f4d232caef57721e6e512145676b42b4b3527a8f5cea05dc692b37fecd5",
         "locator": {
           "kind": "symbol",
@@ -54,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "fff064c87fd819aef2586c03c20d201f511247c4",
+        "blob": "31872dc970f4edd5f8c5c9216a5a60431105bc8e",
         "content": "sha256:718c44929c67a7198c45bd7587557647866333de6e21107c4810fc8d547954d2",
         "locator": {
           "kind": "symbol",
@@ -71,8 +71,8 @@
     },
     {
       "anchor": {
-        "blob": "fff064c87fd819aef2586c03c20d201f511247c4",
-        "content": "sha256:2c9872c8b748d6ac703d2a38a03cd5fa537388dab1bd3fa7fb14d416335b4ba3",
+        "blob": "31872dc970f4edd5f8c5c9216a5a60431105bc8e",
+        "content": "sha256:f1e0c160a5d37c58d17e9940f3c860554276bd061ffde0c3fcd11fc243c2bb10",
         "locator": {
           "kind": "symbol",
           "name": "test_each_parentable_role_has_question_recovery_and_answer_provenance"

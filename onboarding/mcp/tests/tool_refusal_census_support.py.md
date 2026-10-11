@@ -7,6 +7,7 @@ The current source facts below replace the former operative inventory. The separ
 - The failure table no longer contains lifecycle/provider/benchmark/old structural/capsule-skill calls.
 - drive_census arranges current.start through ambient API, not world.call lifecycle_start.
 - Returned rows carry both delivered payload and whole result read from log.
+- Failure inputs include role_start_set without a bound caller and native retire_child with an unknown native ID. The roster equality remains the population authority; these inputs do not own an acceptance assertion or restore the old structural plane.
 
 ### Source and authority bounds
 

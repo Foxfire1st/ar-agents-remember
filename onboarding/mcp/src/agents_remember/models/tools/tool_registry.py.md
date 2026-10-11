@@ -4,7 +4,7 @@
 
 The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
 
-- Current registry removes those rows and retains role_start/role_message plus three knowledge query rows.
+- Current registry retains role_start/role_message and the three knowledge query rows, and adds role_start_set=RoleStartSetResponse plus native retire_child=RetireChildResponse. These entries share the existing response-model boundary; the other removed operations remain unadvertised.
 
 ### Superseded inventory
 

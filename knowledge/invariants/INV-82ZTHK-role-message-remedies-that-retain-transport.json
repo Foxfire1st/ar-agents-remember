@@ -8,7 +8,8 @@
   "applicability": "The nextAction remedy text of a role_message refusal that still leaves the message transportable.",
   "conditions": [
     "The recipient-archived, scope-changed and resume/undelivered refusals name the parent with role_message first and the own chat only for an agent without one.",
-    "The refusal reason, its code and the delivery algorithm are unchanged."
+    "The refusal reason, its code and the delivery algorithm are unchanged.",
+    "An unfinished start, pending permission or unwritable running turn can produce held rather than host-accepted delivery; the permission guard still forbids sending into the prompt."
   ],
   "exclusions": [
     "No-runtime and host-unreachable refusals, whose own-chat advice stays.",
@@ -26,7 +27,7 @@
     "leaf": "260928-MIK-L93",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "Role-message remedies that retain transport name the parent before the parentless own chat, while no-runtime and host-unreachable remedies retain their own-chat advice.",
   "status": "proposed",

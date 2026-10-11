@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "5e2f8775b4a1e35aa5e9d7277163ce92b520773e",
+        "blob": "df95227739f98f72a737ef257efd88b1bc1b14ac",
         "content": "sha256:2200041761481afb1a77501bfcdb24006626a7641f1a37c9bc4b85a1fc79e8d9",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "5e2f8775b4a1e35aa5e9d7277163ce92b520773e",
+        "blob": "df95227739f98f72a737ef257efd88b1bc1b14ac",
         "content": "sha256:2200041761481afb1a77501bfcdb24006626a7641f1a37c9bc4b85a1fc79e8d9",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "5e2f8775b4a1e35aa5e9d7277163ce92b520773e",
+        "blob": "df95227739f98f72a737ef257efd88b1bc1b14ac",
         "content": "sha256:6f8f73bbd0ca2b47008d31312529a915e665f412e8eeb3e58b2829507fd558f5",
         "locator": {
           "kind": "symbol",
@@ -54,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "5e2f8775b4a1e35aa5e9d7277163ce92b520773e",
+        "blob": "df95227739f98f72a737ef257efd88b1bc1b14ac",
         "content": "sha256:8a7e15e7cc437e5cad674cb9bbbc949a93d5794d4e176be94a159e5562abc012",
         "locator": {
           "kind": "symbol",
@@ -71,8 +71,8 @@
     },
     {
       "anchor": {
-        "blob": "5e2f8775b4a1e35aa5e9d7277163ce92b520773e",
-        "content": "sha256:f817446786d0d1171f345de2b1bda721ed1b85cfa59d661141ad5603710f34f2",
+        "blob": "df95227739f98f72a737ef257efd88b1bc1b14ac",
+        "content": "sha256:efb058c8ca5c6a9df9153a195baff04ee4188e2855945750b226565550720f3b",
         "locator": {
           "kind": "symbol",
           "name": "RepeatAndConflictTests.test_a_task_bound_receipt_is_created_exclusively"
@@ -88,7 +88,7 @@
     },
     {
       "anchor": {
-        "blob": "5e2f8775b4a1e35aa5e9d7277163ce92b520773e",
+        "blob": "df95227739f98f72a737ef257efd88b1bc1b14ac",
         "content": "sha256:c22d39abcd0ca89b2038cc515eba85e3ac507957499dfca37e62e1f082595a4c",
         "locator": {
           "kind": "symbol",

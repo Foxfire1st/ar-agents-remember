@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "a1ee28417c5d634e56ba98aa1c5e2a0045a5c682",
+        "blob": "62bb8b2bc5d91b72c1f2ebf7beba2514920b5260",
         "content": "sha256:73c6210b150df4fca36173f0acfba672fdfc608265398abef7a007a2ad8571e9",
         "locator": {
           "kind": "symbol",
@@ -20,8 +20,25 @@
     },
     {
       "anchor": {
-        "blob": "a1ee28417c5d634e56ba98aa1c5e2a0045a5c682",
-        "content": "sha256:34044f64f03267a3953fd04b2a63d99f95879761b7ab9eff2e4c998eddd4e55a",
+        "blob": "62bb8b2bc5d91b72c1f2ebf7beba2514920b5260",
+        "content": "sha256:0d887ee4303cafd713b36360b93c477d10326f2a109bc6124a1889ddb53f1d46",
+        "locator": {
+          "kind": "symbol",
+          "name": "RoleMessageTests.test_a_leaf_seat_with_two_live_agents_refuses_by_role"
+        }
+      },
+      "facet": "A leaf role address refuses both live occupants instead of choosing the newest.",
+      "id": "PRF-3VCEZ3",
+      "invariant": "INV-RTQCXN",
+      "origin": {
+        "handoffEntry": "L100-R100-set-start-and-held-seats",
+        "leaf": "260928-MIK-L100"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "62bb8b2bc5d91b72c1f2ebf7beba2514920b5260",
+        "content": "sha256:6768d7198b70269dd6fee20dd72888c5eaf84b3d3635d924deadc26c28796103",
         "locator": {
           "kind": "symbol",
           "name": "test_a_role_resolves_through_the_receipts_to_its_live_agent"
@@ -37,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "a1ee28417c5d634e56ba98aa1c5e2a0045a5c682",
+        "blob": "62bb8b2bc5d91b72c1f2ebf7beba2514920b5260",
         "content": "sha256:cc436df495e1fb520007242b039758f2930cf4c00b1253b9f55899e983710df7",
         "locator": {
           "kind": "symbol",
@@ -54,7 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "a1ee28417c5d634e56ba98aa1c5e2a0045a5c682",
+        "blob": "62bb8b2bc5d91b72c1f2ebf7beba2514920b5260",
         "content": "sha256:80a3281585d1be4c73b123a58af65b844ed7c70176c54b2d15b4da26359046ef",
         "locator": {
           "kind": "symbol",

@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "2122be11efd7189de483677896745d9f50b251c4",
+        "blob": "d7bf74bc660d55b477b5698fd496803aea57b3fd",
         "content": "sha256:3767076c4cfae0efae1f47f2b392acbcc14f0e6343a822e5137a2ea4dcfc8fc8",
         "locator": {
           "end": 12,
@@ -22,8 +22,8 @@
     },
     {
       "anchor": {
-        "blob": "2122be11efd7189de483677896745d9f50b251c4",
-        "content": "sha256:3bb6cd523f2b6cb6fe20e4a21cefca3c3e375f2d4dd7d52692171b9d314a8759",
+        "blob": "d7bf74bc660d55b477b5698fd496803aea57b3fd",
+        "content": "sha256:d99430e5b69788af75ad2214a5c8fb312c751978f1cfef213aa88f2ce866aa52",
         "locator": {
           "kind": "file"
         }
@@ -39,8 +39,27 @@
     },
     {
       "anchor": {
-        "blob": "2122be11efd7189de483677896745d9f50b251c4",
-        "content": "sha256:3bb6cd523f2b6cb6fe20e4a21cefca3c3e375f2d4dd7d52692171b9d314a8759",
+        "blob": "d7bf74bc660d55b477b5698fd496803aea57b3fd",
+        "content": "sha256:192abee0ba936a2346e5374ed7b68c822f2a5aa8d33acffa18bbf681a1617217",
+        "locator": {
+          "end": 30,
+          "kind": "line_range",
+          "start": 30
+        }
+      },
+      "id": "RLZ-6P4D1B",
+      "invariant": "INV-MTRR08",
+      "origin": {
+        "handoffEntry": "L100-R100-doctrine-coherence",
+        "leaf": "260928-MIK-L100"
+      },
+      "rationale": "The startup sentence now states the one set call with Worker open and Reviewer/Curator held, and hands the freeze to the Reviewer directly.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "d7bf74bc660d55b477b5698fd496803aea57b3fd",
+        "content": "sha256:d99430e5b69788af75ad2214a5c8fb312c751978f1cfef213aa88f2ce866aa52",
         "locator": {
           "kind": "file"
         }
@@ -56,8 +75,8 @@
     },
     {
       "anchor": {
-        "blob": "2122be11efd7189de483677896745d9f50b251c4",
-        "content": "sha256:3bb6cd523f2b6cb6fe20e4a21cefca3c3e375f2d4dd7d52692171b9d314a8759",
+        "blob": "d7bf74bc660d55b477b5698fd496803aea57b3fd",
+        "content": "sha256:d99430e5b69788af75ad2214a5c8fb312c751978f1cfef213aa88f2ce866aa52",
         "locator": {
           "kind": "file"
         }
@@ -73,8 +92,8 @@
     },
     {
       "anchor": {
-        "blob": "2122be11efd7189de483677896745d9f50b251c4",
-        "content": "sha256:3bb6cd523f2b6cb6fe20e4a21cefca3c3e375f2d4dd7d52692171b9d314a8759",
+        "blob": "d7bf74bc660d55b477b5698fd496803aea57b3fd",
+        "content": "sha256:d99430e5b69788af75ad2214a5c8fb312c751978f1cfef213aa88f2ce866aa52",
         "locator": {
           "kind": "file"
         }
@@ -90,8 +109,8 @@
     },
     {
       "anchor": {
-        "blob": "2122be11efd7189de483677896745d9f50b251c4",
-        "content": "sha256:3bb6cd523f2b6cb6fe20e4a21cefca3c3e375f2d4dd7d52692171b9d314a8759",
+        "blob": "d7bf74bc660d55b477b5698fd496803aea57b3fd",
+        "content": "sha256:d99430e5b69788af75ad2214a5c8fb312c751978f1cfef213aa88f2ce866aa52",
         "locator": {
           "kind": "file"
         }
@@ -107,7 +126,7 @@
     },
     {
       "anchor": {
-        "blob": "2122be11efd7189de483677896745d9f50b251c4",
+        "blob": "d7bf74bc660d55b477b5698fd496803aea57b3fd",
         "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
         "locator": {
           "end": 29,

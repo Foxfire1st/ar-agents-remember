@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "The recorded behavioral fixture assertions guard this obligation; the proof facets distinguish their limited fixture behavior from real-host or full-final acceptance."
+  },
+  "applicability": "Recovery of an in-flight native held-message batch or FIFO part.",
+  "conditions": [
+    "The original durable claim fixes batch membership while later admissions wait behind it.",
+    "The host deduplicates a repeated member-derived message ID when exactly-once delivery is required."
+  ],
+  "exclusions": [
+    "A new independent message, which has its own identity.",
+    "Exactly-once behavior by a host that does not deduplicate."
+  ],
+  "id": "INV-PJA167",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_held_queue.py::HeldQueueRecoveryTests::test_a_split_recovery_keeps_the_part_id_on_a_deduping_host passes; scratch/worker/5e0b3a10-7a35-4c5e-9f11-100000000001/xdg/r6-probe-final1.txt sha 62ef60d4589d: received [A,B,C], B once"
+      ],
+      "path": "l100-knowledge-handoff.json"
+    },
+    "handoffEntry": "L100-R100-4b-immutable-id",
+    "leaf": "260928-MIK-L100",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A stale-claim resume reuses the stored claim and resends surviving members under their original member-derived send ids, so a deduplicating host settles the resend; recovery is at-least-once by contract.",
+  "status": "proposed",
+  "supersedes": []
+}

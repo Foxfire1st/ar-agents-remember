@@ -11,12 +11,11 @@
     "An answer within the receiver's authority is labelled as its own answer, not the developer's.",
     "An upward relay keeps the question unchanged with the originating role, task and agent id, and adds the receiver's recommendation separately.",
     "The top names every waiting agent with role, task number and purpose, and agent id, or the words 'not supplied' where a permission name is absent.",
-    "Until MIK-R100 lands, the held message is tried once in each turn the parent takes, and the top supplies that occasion at its next turn."
+    "A product-held message is delivered after the prompt is answered and is not resent by the parent."
   ],
   "exclusions": [
     "Answering a harness permission prompt, which only the developer does in the waiting chat.",
-    "The dashboard waiting mark, which this packet excludes.",
-    "The automatic held-message delivery that MIK-R100 rule 4a will land."
+    "The dashboard waiting mark, which this packet excludes."
   ],
   "id": "INV-7FMDAS",
   "origin": {
@@ -30,9 +29,9 @@
     "leaf": "260928-MIK-L93",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "Each coordinating role answers within its own authority, relays other questions unchanged with original role/task/ID and a separate recommendation, returns developer words and receiving-agent ID unchanged, and names each permission-waiting chat with one held-message retry per naturally occurring turn until R100.",
+  "statement": "Each coordinating role answers within its own authority, relays other questions unchanged with original role/task/ID and a separate recommendation, returns developer words and receiving-agent ID unchanged, and names each permission-waiting chat; product-held delivery removes the parent’s second sending without answering the prompt.",
   "status": "proposed",
   "supersedes": []
 }

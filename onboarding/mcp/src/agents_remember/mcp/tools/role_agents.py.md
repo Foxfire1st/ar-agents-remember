@@ -6,7 +6,7 @@
 
 ## Purpose
 
-Builds role_start/role_message payloads at the shared response-model/token boundary.
+Builds single-start, leaf-set-start and role-message payloads at the shared response-model/token boundary.
 
 ## Code Commentary
 
@@ -16,6 +16,8 @@ Since 260928-MIK-L114 the two payload builders set `call_target_role` around the
 point so the river names the started or addressed role: the role rides a context variable,
 never the answer. For an id-addressed message `send_role_message` carries the role from
 the resolved recipient's durable receipt instead.
+
+`role_start_set_payload` forwards to the one Manager-owned set entry and crosses `_tool_payload` once under its own operation. A set has three seats, so it supplies no invented single target role to the event context. Single-role and message context handling remains unchanged.
 
 ## Evidence
 

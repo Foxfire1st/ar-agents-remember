@@ -1,0 +1,31 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "Durable discovery, immutable replay identity, FIFO partition choice and bounded rotating receipt walks jointly preserve deliverability through interruption; no one member alone promises that ordered recovery under the host size limit."
+  },
+  "guarantee": "An admitted native held FIFO batch remains discoverable across receipt-counter and delivery-record interruptions, retains immutable replay identities, and reaches the host in the fewest complete-message parts under its stable size limit, without building a whole-fleet receipt-path census.",
+  "id": "FAM-S140B6",
+  "members": [
+    "INV-ATA2Z7",
+    "INV-PJA167",
+    "INV-Y1SDE2",
+    "INV-TTYYP8"
+  ],
+  "origin": {
+    "handoff": {
+      "path": "l100-knowledge-handoff.json"
+    },
+    "handoffEntry": "held-delivery-family",
+    "leaf": "260928-MIK-L100",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "routes": [
+    "mcp/src/agents_remember/cli"
+  ],
+  "schema": "ar-family/v1",
+  "status": "proposed",
+  "title": "Native held delivery preserves order through recovery and bounded rotation"
+}

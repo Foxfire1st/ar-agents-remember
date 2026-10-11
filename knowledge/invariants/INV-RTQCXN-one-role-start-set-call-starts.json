@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "The recorded behavioral fixture assertions guard this obligation; the proof facets distinguish their limited fixture behavior from real-host or full-final acceptance."
+  },
+  "applicability": "One owning Manager’s set request for a canonical leaf and receipt-bound held-seat opening.",
+  "conditions": [
+    "The set request derives stable per-role seat request identities and retries partial creation without a fourth agent.",
+    "Optional Reviewer work opens Reviewer; ordinary preparation leaves Reviewer and Curator without turns.",
+    "One unarchived agent holds a leaf seat, including while closed; explicit authorized replacement and ambiguous-resolver refusal retain that rule."
+  ],
+  "exclusions": [
+    "A held manual single-role launcher start.",
+    "Taskless role capacity or a broadened role may-start table.",
+    "A real-host sandbox witness; evidence item five remains not shown."
+  ],
+  "id": "INV-RTQCXN",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_role_start_set.py and held-message suites pass on 3c2285d1; sealed round-1 closure carried through rounds 2-6 verdicts"
+      ],
+      "path": "l100-knowledge-handoff.json"
+    },
+    "handoffEntry": "L100-R100-set-start-and-held-seats",
+    "leaf": "260928-MIK-L100",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "One role_start_set call starts the leaf's Worker open at once with Reviewer and Curator held, repeat sends are identical, held seats open via role_message with held receipts, and one-seat occupancy with resolver refusal holds.",
+  "status": "proposed",
+  "supersedes": []
+}

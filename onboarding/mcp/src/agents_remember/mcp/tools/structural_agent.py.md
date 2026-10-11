@@ -6,14 +6,15 @@
 
 ## Purpose
 
-Build only the retained structural dispatch answer.
+Build structural dispatch and native receipt-tracked retirement answers through the shared response boundary.
 
 ## Code Commentary
 
 The thin `dispatch_agent_payload` adapter forwards a typed DispatchAgentRequest and a
 StructuralAgentRuntime constructed from private overrides to the application dispatcher,
-then crosses `_tool_payload` once. Parent/child messaging, rename and retire adapters are
-removed. Native role_message is owned elsewhere, not an alias or a leaf-ref compatibility
+then crosses `_tool_payload` once. Parent/child messaging and rename adapters remain removed. `retire_child_payload`
+now delegates only to `role_retire.retire_native_seat`, with no old structural-plane fallback;
+an empty agent ID is refused there. It crosses `_tool_payload` under `retire_child`. Native role_message is owned elsewhere, not an alias or a leaf-ref compatibility
 shim here. Public dispatch identity is the canonical task document and role; private runtime
 correlation and authorization remain application/plane responsibilities.
 

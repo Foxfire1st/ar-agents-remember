@@ -1,0 +1,265 @@
+{
+  "path": "mcp/src/agents_remember/cli/role_held_messages.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "4a8b3dce81d0edf2c9378ff9949386fae16c4cae",
+        "content": "sha256:eb280fb438737f80f512e6673551d06abef185c4477bc26bada04d554f76014e",
+        "locator": {
+          "end": 1180,
+          "kind": "line_range",
+          "start": 1165
+        }
+      },
+      "id": "RLZ-3FQBKH",
+      "invariant": "INV-ATA2Z7",
+      "origin": {
+        "handoffEntry": "L100-R100-4a-recovery",
+        "leaf": "260928-MIK-L100"
+      },
+      "rationale": "A present zero counter no longer ends the check: it falls through to the store count, so a crash between admission and counter publication cannot orphan the message.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "4a8b3dce81d0edf2c9378ff9949386fae16c4cae",
+        "content": "sha256:aff90a2262b69173c8b753fb409d7ceb8be5e2a60229ac16c4532cb4624f2152",
+        "locator": {
+          "end": 973,
+          "kind": "line_range",
+          "start": 856
+        }
+      },
+      "id": "RLZ-5S4KME",
+      "invariant": "INV-Y1SDE2",
+      "origin": {
+        "handoffEntry": "L100-R100-4b-minimum-partition",
+        "leaf": "260928-MIK-L100"
+      },
+      "rationale": "Every round attempts the whole remainder first and only a refused whole probes down, so a learned budget below capacity never forces an avoidable split; the budget stays a lower bound.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "4a8b3dce81d0edf2c9378ff9949386fae16c4cae",
+        "content": "sha256:8d914404284fa140e6994a45e4eea82925b5338fd8cfe4cfe473ab554c46604b",
+        "locator": {
+          "end": 536,
+          "kind": "line_range",
+          "start": 494
+        }
+      },
+      "id": "RLZ-D3TNNK",
+      "invariant": "INV-PJA167",
+      "origin": {
+        "handoffEntry": "L100-R100-4b-immutable-id",
+        "leaf": "260928-MIK-L100"
+      },
+      "rationale": "The stale-claim branch returns the stored claim unchanged instead of recomputing it from survivors, so the resend keeps its id.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "4a8b3dce81d0edf2c9378ff9949386fae16c4cae",
+        "content": "sha256:aff90a2262b69173c8b753fb409d7ceb8be5e2a60229ac16c4532cb4624f2152",
+        "locator": {
+          "end": 973,
+          "kind": "line_range",
+          "start": 856
+        }
+      },
+      "id": "RLZ-EJV806",
+      "invariant": "INV-ATA2Z7",
+      "origin": {
+        "handoffEntry": "L100-R100-4a-recovery",
+        "leaf": "260928-MIK-L100"
+      },
+      "rationale": "Each delivered part is staged before its texts leave the store, so a stop after deletion still leaves the end recoverable without resending.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "4a8b3dce81d0edf2c9378ff9949386fae16c4cae",
+        "content": "sha256:6ed0a0a863576ae8bf9200d435a12b3d1e55d0f2e6dc860f646d33ed669fe725",
+        "locator": {
+          "end": 1162,
+          "kind": "line_range",
+          "start": 1128
+        }
+      },
+      "id": "RLZ-HDQJ4X",
+      "invariant": "INV-TTYYP8",
+      "origin": {
+        "handoffEntry": "L100-R100-4a-bounded-census",
+        "leaf": "260928-MIK-L100"
+      },
+      "rationale": "Each tick pulls at most 32 paths and reads at most 32 receipts, restarting exhausted walks the next tick.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "4a8b3dce81d0edf2c9378ff9949386fae16c4cae",
+        "content": "sha256:593d022d6af211f9f4b19e3d00fb3cfb77762307a9a2710b8ca988e1fd64c322",
+        "locator": {
+          "end": 1046,
+          "kind": "line_range",
+          "start": 1020
+        }
+      },
+      "id": "RLZ-JNDNS0",
+      "invariant": "INV-TTYYP8",
+      "origin": {
+        "handoffEntry": "L100-R100-4a-bounded-census",
+        "leaf": "260928-MIK-L100"
+      },
+      "rationale": "The lazy per-directory walk yields candidate paths without any recursive glob or fleet-wide sort; skipped subtrees are never descended into.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "4a8b3dce81d0edf2c9378ff9949386fae16c4cae",
+        "content": "sha256:e0af81109d09a11c33d4d49b08811d1401bd9eeb25a69002b1bb557878cfc67b",
+        "locator": {
+          "end": 1083,
+          "kind": "line_range",
+          "start": 1049
+        }
+      },
+      "id": "RLZ-JRXFCD",
+      "invariant": "INV-TTYYP8",
+      "origin": {
+        "handoffEntry": "L100-R100-4a-bounded-census",
+        "leaf": "260928-MIK-L100"
+      },
+      "rationale": "The resumable walk suspends between yields and reports exhaustion, so ticks share one pass without rebuilding it.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "4a8b3dce81d0edf2c9378ff9949386fae16c4cae",
+        "content": "sha256:a022dd86710bc5d781fcaf47a401e733ad52f568bdf5b5b59347190ff14f51f7",
+        "locator": {
+          "end": 834,
+          "kind": "line_range",
+          "start": 817
+        }
+      },
+      "id": "RLZ-KV9BPM",
+      "invariant": "INV-PJA167",
+      "origin": {
+        "handoffEntry": "L100-R100-4b-immutable-id",
+        "leaf": "260928-MIK-L100"
+      },
+      "rationale": "Part send ids derive from member messages, so any drain resending the same members recomputes the same id for a deduplicating host.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "4a8b3dce81d0edf2c9378ff9949386fae16c4cae",
+        "content": "sha256:bc8c173ee7fbca4444ccf0bc8104680db9b6fd0f21dfbbab8b15a8b0e74fafdf",
+        "locator": {
+          "end": 808,
+          "kind": "line_range",
+          "start": 751
+        }
+      },
+      "id": "RLZ-XRBVHQ",
+      "invariant": "INV-ATA2Z7",
+      "origin": {
+        "handoffEntry": "L100-R100-4a-recovery",
+        "leaf": "260928-MIK-L100"
+      },
+      "rationale": "The opening handover stages its ends before removal for the same deletion-to-staging window on the open path.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Admission appends under the store lock and refuses overflow without dropping text.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a8b3dce81d0edf2c9378ff9949386fae16c4cae",
+            "content": "sha256:2a9a09a4734dcd36cf53f50564b67039f00fc3011f99af0c5c4a9e6266384aed",
+            "locator": {
+              "kind": "symbol",
+              "name": "hold_message"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A drain delegates claim/readiness checks and whole-first FIFO delivery.\n\nAnchor: `drain_held`, `_deliver_waiting`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a8b3dce81d0edf2c9378ff9949386fae16c4cae",
+            "content": "sha256:3586b8567ef61568d042f6d0dbd9b648fc1d2cc56d040bbcf88c080ca0d0fddc",
+            "locator": {
+              "kind": "symbol",
+              "name": "drain_held"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4a8b3dce81d0edf2c9378ff9949386fae16c4cae",
+            "content": "sha256:aff90a2262b69173c8b753fb409d7ceb8be5e2a60229ac16c4532cb4624f2152",
+            "locator": {
+              "kind": "symbol",
+              "name": "_deliver_waiting"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Terminal lines are published separately from ended text and retain failure state.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a8b3dce81d0edf2c9378ff9949386fae16c4cae",
+            "content": "sha256:4b27071f93f0065dbdfdf3201d3b1dd7d22d3de4c08715bdb1374f4d2cef1d8f",
+            "locator": {
+              "kind": "symbol",
+              "name": "apply_drain_to_receipt"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Yielded receipt paths, reads and drains are capped; one directory’s names are materialized in stable order per pass.\n\nAnchor: `_walk_candidate_paths`, `sweep_held_messages`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a8b3dce81d0edf2c9378ff9949386fae16c4cae",
+            "content": "sha256:593d022d6af211f9f4b19e3d00fb3cfb77762307a9a2710b8ca988e1fd64c322",
+            "locator": {
+              "kind": "symbol",
+              "name": "_walk_candidate_paths"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4a8b3dce81d0edf2c9378ff9949386fae16c4cae",
+            "content": "sha256:6ed0a0a863576ae8bf9200d435a12b3d1e55d0f2e6dc860f646d33ed669fe725",
+            "locator": {
+              "kind": "symbol",
+              "name": "sweep_held_messages"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

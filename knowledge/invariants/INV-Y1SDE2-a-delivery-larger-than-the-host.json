@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "The recorded behavioral fixture assertions guard this obligation; the proof facets distinguish their limited fixture behavior from real-host or full-final acceptance."
+  },
+  "applicability": "FIFO held deliveries to a host with a stable monotone byte-size admission limit.",
+  "conditions": [
+    "Attempt the whole remaining FIFO batch before treating any earlier accepted size as a budget.",
+    "A refused whole probes descending complete-message prefixes.",
+    "Sender attribution and whole messages are retained in each admitted part."
+  ],
+  "exclusions": [
+    "A transient busy refusal is not proof of a permanent byte capacity.",
+    "Splitting a single message into fragments or summarizing its text."
+  ],
+  "id": "INV-Y1SDE2",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_held_queue.py variable-length two-delivery and six-message three-delivery tests pass; scratch/worker/5e0b3a10-7a35-4c5e-9f11-100000000001/xdg/r6-probe-after.txt sha 628ed08eb73c: 214-byte witness accepted [191,214] actual=2"
+      ],
+      "path": "l100-knowledge-handoff.json"
+    },
+    "handoffEntry": "L100-R100-4b-minimum-partition",
+    "leaf": "260928-MIK-L100",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A delivery larger than the host admits is split into the minimum admitted deliveries in order: the whole remainder is attempted first, a refused whole probes down for the longest fitting prefix, and the learned budget is a lower bound only.",
+  "status": "proposed",
+  "supersedes": []
+}

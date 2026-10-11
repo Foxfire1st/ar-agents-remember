@@ -48,7 +48,7 @@ does not duplicate their authority.
 
 Closeout, integration, task acceptance and admitted memory remain with their owning AR/Curator seats. Worker leaves the code candidate uncommitted and writes the exact canonical report, then freezes the candidate and sends it directly to the leaf's Reviewer; after code PASS it sends its structured hand-off list to the Curator. The Manager receives only its authority or recovery matters, not routine report notices or relayed contents. A question for the developer goes to the parent named in the handover; a Worker without a parent asks in its own chat.
 
-The Manager starts the Worker and Reviewer together and the Curator at the first freeze; no seat starts the one that checks it. Worker starts no role. Unknown results and compaction recover the same task/agent/report rather than inventing a new owner.
+The Manager prepares Worker, Reviewer and Curator as siblings in one role_start_set: Worker opens at once; Reviewer and Curator remain held for their first addressed work unless Reviewer work is carried in the set. No seat starts the one that checks it. Worker starts no role. Unknown results and compaction recover the same task/agent/report rather than inventing a new owner.
 
 ## Conventions
 
@@ -83,7 +83,7 @@ The Worker now freezes its candidate and sends it directly to the leaf's Reviewe
 
 ## 260928-MIK-L93 — a question for the developer goes up the chain
 
-With a parent the Worker sends every developer question to it with `role_message` on `agents-remember-task`, saying what it holds back and recommends, and keeps working without ending its turn on the question. A busy or permission-prompt refusal stays pending under **Pending developer questions** in its report and is retried before the turn ends; only an unreachable parent opens the own chat, and having no work left does not. A relayed answer counts only with the developer's quoted words and the receiving agent's id, recorded where the role requires a record. The retired own-chat sentence is registered against return.
+With a parent the Worker sends every developer question to it with `role_message` on `agents-remember-task`, saying what it holds back and recommends, and keeps working without ending its turn on the question. An actual busy refusal stays pending under **Pending developer questions** in its report and is retried before the turn ends; a product-held answer is waiting work owned by delivery and is not resent; only an unreachable parent opens the own chat, and having no work left does not. A relayed answer counts only with the developer's quoted words and the receiving agent's id, recorded where the role requires a record. The retired own-chat sentence is registered against return.
 
 ## Evidence
 

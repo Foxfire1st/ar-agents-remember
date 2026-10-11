@@ -2,7 +2,7 @@
 
 ## Native API composition and persistent frame delivery
 
-Serving adds native role routes beside retained MIK review/read ports, with exact selected source/configuration authority. Frame/plugin delivery binds the permitted parent origin, bridge protocol and native selection. Requested launch intent, visible execution and independent acceptance remain separate. Imported source does not imply that a running installation has already been replaced.
+Serving adds native role routes beside retained MIK review/read ports, with exact selected source/configuration authority. The lifespan additionally owns the native held-message sweep task: it advances workspace-local waiting work without a model or browser poll, contains a failed sweep, and drains an in-flight threaded sweep on cancellation. This is independent of the retained hosted-seat notifier and adds no caller to removed hosting. Frame/plugin delivery binds the permitted parent origin, bridge protocol and native selection. Requested launch intent, visible execution and independent acceptance remain separate. Imported source does not imply that a running installation has already been replaced.
 
 - Current imported source owns this scoped route boundary. [84]
 - Current imported source owns this scoped route boundary. [85]

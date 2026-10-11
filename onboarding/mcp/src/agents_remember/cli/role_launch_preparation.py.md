@@ -4,7 +4,8 @@
 
 The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
 
-- R112 adds launch-aware AR tool guidance; host route keeps the other-server choice because exclusion_applied=False.
+- Launch-aware AR tool guidance retains the host route’s other-server choice because exclusion_applied=False.
+- The compiled role-message guidance distinguishes host acceptance from product holding: permission prompts, unfinished starts and unwritable turns are held and later delivered in order. A held permission wait still reports permission-pending. Actual parent identity, leaf peer references, permission non-bypass and report ownership do not change; product holding grants no right to answer a harness permission prompt.
 
 ### Superseded inventory
 

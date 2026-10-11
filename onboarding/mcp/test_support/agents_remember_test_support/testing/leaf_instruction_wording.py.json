@@ -1,6 +1,26 @@
 {
   "path": "mcp/test_support/agents_remember_test_support/testing/leaf_instruction_wording.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "dbb9ac7e75945045ca2c27726119fe88231f948e",
+        "content": "sha256:4ae08cafe90f1b70f5b3a77366af04014967be4758d960684d311f6be1d54609",
+        "locator": {
+          "end": 102,
+          "kind": "line_range",
+          "start": 100
+        }
+      },
+      "id": "RLZ-645J3W",
+      "invariant": "INV-MTRR08",
+      "origin": {
+        "handoffEntry": "L100-R100-doctrine-coherence",
+        "leaf": "260928-MIK-L100"
+      },
+      "rationale": "The positive set-start obligation fails if the repaired sentence is removed.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "The affirmative clause tables are the wording guards' data.",

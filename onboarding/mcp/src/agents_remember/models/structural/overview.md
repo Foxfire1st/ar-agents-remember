@@ -4,8 +4,8 @@
 
 The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
 
-- agent.py now has DispatchAgentRequest/Response and StructuralTargetResponse only.
-- Message/retire/rename request and response schemas were removed.
+- agent.py retains DispatchAgentRequest/Response and StructuralTargetResponse and restores RetireChildRequest/Response for native receipt-tracked retirement. The request carries the target agent ID and explicit turn-interruption permission; original-starter authority is checked by the native retirement owner.
+- The removed message/rename schemas and former hosted-seat path remain removed; restoring native retirement models does not restore them.
 - Structural work-domain identity and internal activation/gate separation remain.
 
 ### Source and authority bounds

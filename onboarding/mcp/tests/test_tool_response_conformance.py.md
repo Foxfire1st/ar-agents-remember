@@ -4,7 +4,8 @@
 
 The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
 
-- Structural-delivery witness now validates DispatchAgentResponse, not removed child/rename models.
+- Structural dispatch retains DispatchAgentResponse; native retirement’s restored response model is separate from removed child/rename models.
+- The current declarations pin 41 public tools, 19 adapter modules and 65 handlers/call sites, including role_start_set and native retire_child. These are declared census guards, not a fresh execution result.
 
 ### Superseded inventory
 

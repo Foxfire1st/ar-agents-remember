@@ -8,6 +8,8 @@
 
 The native Worker implements one selected leaf’s approved primary requirement and explicit preservation constraints in its paired code enclosure.
 
+The Manager prepares this seat alongside its Reviewer and Curator. Preparing held siblings changes no Worker duty: freeze and hand over directly to Reviewer, then send the exact producer list to Curator after the ruled code disposition. The Worker starts no role and never starts its own checker.
+
 ## Current Contract
 
 Resolve apparent missing task facts from the rendered task-document files named in the handover, read with the harness's own file tools before acting; change documents through `task_doc` only, because edits to copies are never read back and are lost on the next publication. Confirm paired code/read-only-memory/report bindings; do not load the whole task hierarchy or infer a different task.

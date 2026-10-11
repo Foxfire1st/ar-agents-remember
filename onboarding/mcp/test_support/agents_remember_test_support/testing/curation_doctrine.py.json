@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "4ca283a6e70de51aba22a2a26dfe036ace2cffcc",
-        "content": "sha256:f83316ddddc0183a1c86c688bf4fe3a2f639fa8a39192d7d622a4320f315d3b5",
+        "blob": "9345bfdd0441dceed1d649557b20183d31fe520a",
+        "content": "sha256:61d118edebbd6c51973dee05211b23e32ad85649f909d676022be0fb8a813846",
         "locator": {
           "kind": "symbol",
           "name": "RETIRED_CURATION_STATEMENTS"
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "4ca283a6e70de51aba22a2a26dfe036ace2cffcc",
-        "content": "sha256:f83316ddddc0183a1c86c688bf4fe3a2f639fa8a39192d7d622a4320f315d3b5",
+        "blob": "9345bfdd0441dceed1d649557b20183d31fe520a",
+        "content": "sha256:61d118edebbd6c51973dee05211b23e32ad85649f909d676022be0fb8a813846",
         "locator": {
           "kind": "symbol",
           "name": "RETIRED_CURATION_STATEMENTS"
@@ -39,8 +39,8 @@
     },
     {
       "anchor": {
-        "blob": "4ca283a6e70de51aba22a2a26dfe036ace2cffcc",
-        "content": "sha256:f83316ddddc0183a1c86c688bf4fe3a2f639fa8a39192d7d622a4320f315d3b5",
+        "blob": "9345bfdd0441dceed1d649557b20183d31fe520a",
+        "content": "sha256:61d118edebbd6c51973dee05211b23e32ad85649f909d676022be0fb8a813846",
         "locator": {
           "kind": "symbol",
           "name": "RETIRED_CURATION_STATEMENTS"
@@ -54,6 +54,25 @@
       },
       "rationale": "The declared-source retirement census now includes the historical fourteen replacement clauses and additional R93/R98 and later groups; it is not a current exactly-fourteen-only inventory. The guard cases remain source-specific controls, not native evidence.",
       "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "9345bfdd0441dceed1d649557b20183d31fe520a",
+        "content": "sha256:8f981c11f1290686733d9086a5107bdf08e1dfc3328aa7937b4143a226db6598",
+        "locator": {
+          "end": 575,
+          "kind": "line_range",
+          "start": 559
+        }
+      },
+      "id": "RLZ-MNMZ2H",
+      "invariant": "INV-MTRR08",
+      "origin": {
+        "handoffEntry": "L100-R100-doctrine-coherence",
+        "leaf": "260928-MIK-L100"
+      },
+      "rationale": "The three obsolete sentences are registered retired with source-confined probes, so reinsertion is caught.",
+      "role": "enforcement"
     }
   ],
   "references": {

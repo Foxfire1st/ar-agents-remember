@@ -1,0 +1,53 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "Native held delivery must continue when the old chat-hosting machinery is removed, so sharing that owning path would couple the new guarantee to retired infrastructure."
+  },
+  "alternatives": [
+    {
+      "option": "Keep native held persistence and delivery independent of hosted-seat/control-plane stores.",
+      "reason": "Native held delivery must continue when the old chat-hosting machinery is removed, so sharing that owning path would couple the new guarantee to retired infrastructure.",
+      "status": "chosen"
+    },
+    {
+      "option": "Reuse persisted hosted-seat messaging and its control-plane stores.",
+      "reason": "Reuse would add a caller to machinery the developer decided to remove.",
+      "reconsider_when": "A separately approved hosting boundary is reinstated and demonstrates equivalent native lifetime/permission semantics.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Native code may share an independent storage primitive but adds no hosted-seat caller; removal belongs to its separately ruled leaf."
+  ],
+  "context": "The earlier hosted-seat message machinery was first proposed for reuse, then marked for removal.",
+  "decider": "Developer D115/D126, MIK-R100@v1 rules 4b/12",
+  "id": "DEC-SJC44Y",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "route:mcp/src/agents_remember/cli"
+    },
+    {
+      "relation": "constrains",
+      "target": "route:mcp/src/agents_remember/serving"
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "MIK-R100@v1 rule 4b states that the held-message store does not rest on the product’s own hosting; rule 12 records D126 removal and forbids new hosted-seat callers. This is an authored decision input, not a changed Worker field."
+      ],
+      "path": "l100-knowledge-handoff.json"
+    },
+    "handoffEntry": "curator-D115-D126-native-store",
+    "leaf": "260928-MIK-L100",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}
