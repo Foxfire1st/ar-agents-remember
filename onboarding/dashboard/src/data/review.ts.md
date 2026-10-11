@@ -6,6 +6,26 @@
 
 ## Purpose
 
+The client mirrors the public read-only reviewer answer across review.py, review_outline.py and review_meaning_effects.py and delegates same-origin decoding/failures to the shared review transport. Existing review, catalogue, source expansion, pagination and task-identity request ownership are unchanged; this module makes no store mutation and performs no runtime schema validation. family_context keeps its independent optional-context semantics, while meaning_effects is optional on the TypeScript wire solely so the presentation guard can reject a missing required-current-build field. Older catalogue captures without meaning labels remain unbadged, not measured none.
+
+## Code Commentary
+
+### Read-only browser wire boundary
+
+The mirrored recorded-meaning vocabulary separates steps, none and unavailable per addressed record. The subject payload carries meaning_effects; it is optional in the browser type only to recognize an invalid older/missing-field response, not to turn omission into none. Outline rows carry their own state and ordered labels, independently of which family has been read. The wire field changes no transport route or store ownership.
+
+- The client mirrors the public read-only reviewer answer across review.py, review_outline.py and review_meaning_effects.py and delegates same-origin decoding/failures to the shared review transport. Existing review, catalogue, source expansion, pagination and task-identity request ownership are unchanged; this module makes no store mutation and performs no runtime schema validation. family_context keeps its independent optional-context semantics, while meaning_effects is optional on the TypeScript wire solely so the presentation guard can reject a missing required-current-build field. Older catalogue captures without meaning labels remain unbadged, not measured none. The mirrored recorded-meaning vocabulary separates steps, none and unavailable per addressed record. The subject payload carries meaning_effects; it is optional in the browser type only to recognize an invalid older/missing-field response, not to turn omission into none. Outline rows carry their own state and ordered labels, independently of which family has been read. The wire field changes no transport route or store ownership. [33]
+
+<details>
+<summary>Historical prior account (not the current contract)</summary>
+
+
+## Governing Overview
+
+[dashboard/src/data route overview](overview.md)
+
+## Purpose
+
 The browser-side, same-origin client for the read-only Intent Reviewer API
 (`mcp/src/agents_remember/serving/review.py`). It now exports **three** requests, one per thing the
 surface asks for: `intentReview` renders one comparison, `intentReviewEntries` asks which subjects that
@@ -44,6 +64,12 @@ now speaks — the source-content route has its own wire shape rather than reusi
 
 `data/review.ts` is the same-origin client for the Intent Reviewer API: typed results mirroring the application models, route-local decode that preserves typed refusals, and no store mutation. In W03 it mirrors the new outline models and carries the outline on the catalogue answer.
 ## Code Commentary
+
+### Recorded reviewer judgments
+
+The mirrored recorded-meaning vocabulary separates steps, none and unavailable per addressed record. The subject payload carries meaning_effects; it is optional in the browser type only to recognize an invalid older/missing-field response, not to turn omission into none. Outline rows carry their own state and ordered labels, independently of which family has been read. The wire field changes no transport route or store ownership.
+
+- The mirrored recorded-meaning vocabulary separates steps, none and unavailable per addressed record. [32]
 
 ### Logic
 
@@ -397,3 +423,5 @@ have to reconstruct it from the server.
 
 The change is one member and one comment: no other field of `ReviewStaleness` moves, and the
 `moved` list stays empty for this state because there is no replaced identity to name.
+
+</details>

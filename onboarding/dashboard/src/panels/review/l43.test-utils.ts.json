@@ -1,0 +1,23 @@
+{
+  "path": "dashboard/src/panels/review/l43.test-utils.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The fetch replacement records existing review-route requests and rejects unknown routes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1a9ca94d23bbe07da2ae8ebaccebe6e0580562b4",
+            "content": "sha256:dbb4b3bf5ba1803732f785859b1a4648809eb0d2ea081788acb7e29b70ff0163",
+            "locator": {
+              "kind": "symbol",
+              "name": "serve"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

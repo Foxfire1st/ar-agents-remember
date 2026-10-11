@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7da4c42bdbcb4b77509ee90a396b89e64062ab5c",
+            "blob": "41e22b40c941cf3fbfe8acbfcd61224b2ce90e6f",
             "content": "sha256:7a1ce10aa1acd01f9762ef625f90e32f77cfa31f0bbf419fa7229a63002f07ab",
             "locator": {
               "end": 23,
@@ -182,12 +182,42 @@
         }
       ]
     },
+    "16": {
+      "note": "The no-selected-subject composition carries a present empty ReviewMeaningEffects field.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "41e22b40c941cf3fbfe8acbfcd61224b2ce90e6f",
+            "content": "sha256:006b3e2188ecd43eeeaabc59deacadc186e639c918cca4465c4782fddaaf0245",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "Task context returns the measured source inventory and named source/knowledge availability without selecting a knowledge record or constructing a comparison. Its entry recheck precedes receipt and attribution reads. The attribution and pane builders remain separately owned and make no selection-channel or review-matrix request. A valid empty meaning field names no addressed record; it is not none for a particular invariant. The no-selected-subject composition carries a present empty ReviewMeaningEffects field. Empty means no addressed record in this answer, not a measured no-step judgment about an invariant. A current response without the required field is invalid in the browser, including the source-only branch. This does not select a subject or resurrect the retired matrix-owned authored_effects channel; recorded history effects are a separately owned response projection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "41e22b40c941cf3fbfe8acbfcd61224b2ce90e6f",
+            "content": "sha256:006b3e2188ecd43eeeaabc59deacadc186e639c918cca4465c4782fddaaf0245",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "The module's two published names: the composition and its pair measurement.",
       "targets": [
         {
           "anchor": {
-            "blob": "7da4c42bdbcb4b77509ee90a396b89e64062ab5c",
+            "blob": "41e22b40c941cf3fbfe8acbfcd61224b2ce90e6f",
             "content": "sha256:44c6aa5cb6c37b127537e72ec321e8fa147b8ef70d3a6f9d1b5209033770e2dc",
             "locator": {
               "kind": "symbol",
@@ -215,7 +245,7 @@
         },
         {
           "anchor": {
-            "blob": "7da4c42bdbcb4b77509ee90a396b89e64062ab5c",
+            "blob": "41e22b40c941cf3fbfe8acbfcd61224b2ce90e6f",
             "content": "sha256:121f7f8590a4a5afa7cdd56e8da654eabadfdda7d142384d6857d77673e51771",
             "locator": {
               "kind": "symbol",
@@ -290,7 +320,7 @@
         },
         {
           "anchor": {
-            "blob": "7da4c42bdbcb4b77509ee90a396b89e64062ab5c",
+            "blob": "41e22b40c941cf3fbfe8acbfcd61224b2ce90e6f",
             "content": "sha256:121f7f8590a4a5afa7cdd56e8da654eabadfdda7d142384d6857d77673e51771",
             "locator": {
               "kind": "symbol",
@@ -370,7 +400,7 @@
         },
         {
           "anchor": {
-            "blob": "7da4c42bdbcb4b77509ee90a396b89e64062ab5c",
+            "blob": "41e22b40c941cf3fbfe8acbfcd61224b2ce90e6f",
             "content": "sha256:79fd888b8c6c7f4de52274ca85424cd36f875cd8d38809ca6fe5adf8acec19ce",
             "locator": {
               "kind": "symbol",
@@ -381,7 +411,7 @@
         },
         {
           "anchor": {
-            "blob": "7da4c42bdbcb4b77509ee90a396b89e64062ab5c",
+            "blob": "41e22b40c941cf3fbfe8acbfcd61224b2ce90e6f",
             "content": "sha256:4d3417443940ad9cdeb83698d665f80b00cf62584dfe5707ef62b5903b36c724",
             "locator": {
               "kind": "symbol",
@@ -408,7 +438,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7da4c42bdbcb4b77509ee90a396b89e64062ab5c",
+            "blob": "41e22b40c941cf3fbfe8acbfcd61224b2ce90e6f",
             "content": "sha256:7d1071b571bbff289d4970fd937c12afd69555ca0d276e8ad908e430e9433c70",
             "locator": {
               "kind": "symbol",
@@ -419,7 +449,7 @@
         },
         {
           "anchor": {
-            "blob": "f9105a09d9fdee4eeed9ab2b715723940337949e",
+            "blob": "2689495ed37e76bf667151b6a75a7ac2577896b2",
             "content": "sha256:428eed53ee5c5de6afe6f6707241af38aa575b8323c254cad2d647d5ebf4ba26",
             "locator": {
               "kind": "symbol",
@@ -500,7 +530,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f9105a09d9fdee4eeed9ab2b715723940337949e",
+            "blob": "2689495ed37e76bf667151b6a75a7ac2577896b2",
             "content": "sha256:4d2fbd2e9a158dd3998321393a307ae206a87835b4fcef156c334862c7080385",
             "locator": {
               "kind": "symbol",
@@ -512,7 +542,7 @@
         },
         {
           "anchor": {
-            "blob": "f9105a09d9fdee4eeed9ab2b715723940337949e",
+            "blob": "2689495ed37e76bf667151b6a75a7ac2577896b2",
             "content": "sha256:a3a55d27feef337bafc7155d31eb1ba6b44f05c77293658eb95b6329b91849c9",
             "locator": {
               "kind": "symbol",

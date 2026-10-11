@@ -6,6 +6,26 @@
 
 ## Purpose
 
+Task context returns the measured source inventory and named source/knowledge availability without selecting a knowledge record or constructing a comparison. Its entry recheck precedes receipt and attribution reads. The attribution and pane builders remain separately owned and make no selection-channel or review-matrix request. A valid empty meaning field names no addressed record; it is not none for a particular invariant.
+
+## Code Commentary
+
+### No selected knowledge operand
+
+The no-selected-subject composition carries a present empty ReviewMeaningEffects field. Empty means no addressed record in this answer, not a measured no-step judgment about an invariant. A current response without the required field is invalid in the browser, including the source-only branch. This does not select a subject or resurrect the retired matrix-owned authored_effects channel; recorded history effects are a separately owned response projection.
+
+- Task context returns the measured source inventory and named source/knowledge availability without selecting a knowledge record or constructing a comparison. Its entry recheck precedes receipt and attribution reads. The attribution and pane builders remain separately owned and make no selection-channel or review-matrix request. A valid empty meaning field names no addressed record; it is not none for a particular invariant. The no-selected-subject composition carries a present empty ReviewMeaningEffects field. Empty means no addressed record in this answer, not a measured no-step judgment about an invariant. A current response without the required field is invalid in the browser, including the source-only branch. This does not select a subject or resurrect the retired matrix-owned authored_effects channel; recorded history effects are a separately owned response projection. [17]
+
+<details>
+<summary>Historical prior account (not the current contract)</summary>
+
+
+## Governing Overview
+
+[application route overview](overview.md)
+
+## Purpose
+
 The **task-context review**: the source entry that needs no selected subject. A review of a *task*
 asks a different question from a review of a subject — the subject review asks "what changed about
 this recorded invariant", this one asks "what did this task change at all" — and its answer is the
@@ -63,6 +83,12 @@ the non-conforming example the packet names. Making the task context answerable 
 review from "a review of a selected subject" into "a review of the task, refined by a subject".
 
 ## Code Commentary
+
+### Recorded reviewer judgments
+
+The no-selected-subject composition carries a present empty ReviewMeaningEffects field. Empty means no addressed record in this answer, not a measured no-step judgment about an invariant. A current response without the required field is invalid in the browser, including the source-only branch. This does not select a subject or resurrect the retired matrix-owned authored_effects channel; recorded history effects are a separately owned response projection.
+
+- The no-selected-subject composition carries a present empty ReviewMeaningEffects field. [16]
 
 ### Logic
 
@@ -280,3 +306,5 @@ to what this entry reads.
 **Citation accounting:** one row was re-anchored to the ``submission`` call site this row describes
 (the composition's own tail, not the import of the same name) after this leaf's additions moved it. No
 claim cell was re-worded and no stamp was advanced beyond the honest basis below.
+
+</details>

@@ -1,5 +1,33 @@
 # dashboard/src/panels/ — Cockpit Panels Overview
 
+## Purpose
+
+Dashboard panel compositions and their separately owned reading, navigation, source and evidence surfaces. Reviewer navigation is catalogue-outline driven; full guarantees/statements, selected-record knowledge and source/evidence reading stay in the main page, not in the rail. The current reviewer slice below supersedes older matrix/tree/worklist and knowledge-panel placement accounts preserved as history.
+
+## Hot Path Summary
+
+Trace review reads through ReviewSurface and ReviewWorkspace, compact catalogue-outline navigation through FamilyTree, selected family/member content through FamilyReviewCenter, recorded owner judgments through MeaningEffects, and independent source/evidence/worklist owners without another candidate request.
+
+## Recorded reviewer judgments
+
+The reviewer adds a compact recorded-effect badge to eligible changed outline rows while keeping navigation one line. MeaningEffects owns the open Recorded steps block beside selected intent/guarantee content and all nine keyboard-operable label explanations. Family/member and no-subject centers reject missing current fields without inventing labels. Worklist rows show their governing row’s effect only; earlier attempt judgments remain in the reading area.
+
+The meaning-state join never changes the selected subject, primary change badge, family roster paging or source inspection state. Keyboard explanations use a native button; the complete Recorded steps block is open, while existing source/evidence disclosures keep their own owners. Older authored-envelope effect lists remain retired and are not the new recorded-history block.
+
+- The compact navigation keeps its own row facts and optional recorded-label badge; semantic record content lives in the main page. [161]
+- Selected family and invariant centers join recorded steps to their own identities and preserve independent guarantee/statement/source/evidence content. [162]
+- The recorded-history block owns full step fields, strict states and native keyboard explanations, not a computed verdict. [163]
+
+<details>
+<summary>Historical prior panel account (not the current reviewer contract)</summary>
+
+
+## Recorded reviewer judgments
+
+The reviewer adds a compact recorded-effect badge to eligible changed outline rows while keeping navigation one line. MeaningEffects owns the open Recorded steps block beside selected intent/guarantee content and all nine keyboard-operable label explanations. Family/member and no-subject centers reject missing current fields without inventing labels. Worklist rows show their governing row’s effect only; earlier attempt judgments remain in the reading area.
+
+- The reviewer adds a compact recorded-effect badge to eligible changed outline rows while keeping navigation one line. [160]
+
 | Field                  | Value                                            |
 | ---------------------- | ------------------------------------------------ |
 | sourceRoute            | `dashboard/src/panels/`                          |
@@ -7,7 +35,7 @@
 ## 260928-MIK-L33 Change-Kind Badges, Triage Order And `j`/`k` In The Family Tree Of A Tree Comparison
 
 **Current route contract (MIK-L33 facts retained under the L86 outline composition).** The sidebar
-shows compact family/invariant outline rows with one navigation badge and Changed/All views.
+shows compact family/invariant outline rows with one change badge, an eligible recorded-effect badge and Changed/All views.
 `outlineGroups` orders those rows; `j`/`k` and the visible controls visit shown real changes, not
 unknown/unchanged rows or roster continuation. The main reading area retains full guarantees,
 statements, semantic member facts, secondary marks, breakdowns and reasons. Those facts remain the
@@ -1549,3 +1577,5 @@ This is static source/fixture inspection, not executed or mounted evidence.
 - Current ownership/control, without execution or runtime tool exposure inferred. [157]
 - Current ownership/control, without execution or runtime tool exposure inferred. [158]
 - Current ownership/control, without execution or runtime tool exposure inferred. [159]
+
+</details>

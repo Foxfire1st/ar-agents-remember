@@ -3,7 +3,43 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "947d5bdc3e3ce1cc991b3b3e1679a45d13994c4b",
+        "blob": "1e222a11645bef99a66457ef1e9ff68d8a883083",
+        "content": "sha256:2d0df6a17726c69577bbc1e97c6f3e4dbef468d49b15c98c1e12a7e52a050748",
+        "locator": {
+          "kind": "symbol",
+          "name": "memberMeaning"
+        }
+      },
+      "id": "RLZ-08NGSN",
+      "invariant": "INV-76C676",
+      "origin": {
+        "handoffEntry": "L43-C-recorded-effect-propagation",
+        "leaf": "260928-MIK-L43"
+      },
+      "rationale": "This member join selects the member’s own family occurrence or invariant answer, never its family’s labels.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "1e222a11645bef99a66457ef1e9ff68d8a883083",
+        "content": "sha256:67021a87fbc959540a2d8159025c1be96534e8fe2fc2bca10ec89b49e7f89b23",
+        "locator": {
+          "kind": "symbol",
+          "name": "OutlineRow"
+        }
+      },
+      "id": "RLZ-845A8V",
+      "invariant": "INV-76C676",
+      "origin": {
+        "handoffEntry": "L43-C-recorded-effect-consumer-closures",
+        "leaf": "260928-MIK-L43"
+      },
+      "rationale": "The compact outline-row contract carries the delivered own meaning state and sequence separately from its change badge.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "1e222a11645bef99a66457ef1e9ff68d8a883083",
         "content": "sha256:1bb786f40ea6fb174005970fdfc3794f4871c1d5d99ca1689c7c23250e56d8fb",
         "locator": {
           "kind": "symbol",
@@ -21,8 +57,8 @@
     },
     {
       "anchor": {
-        "blob": "947d5bdc3e3ce1cc991b3b3e1679a45d13994c4b",
-        "content": "sha256:c64474e7c48b7362b9cd54e3cc6f44e35f050800313d748f7e13e8763f1f8672",
+        "blob": "1e222a11645bef99a66457ef1e9ff68d8a883083",
+        "content": "sha256:7d0308073cdf3310fb4c9705b7e37f9c98246cd6220faa7bc7e007fa9e998007",
         "locator": {
           "kind": "symbol",
           "name": "outlineGroups"
@@ -36,6 +72,24 @@
       },
       "rationale": "It combines outline record and membership changes with walked-family code facts before assigning the displayed row badge.",
       "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "1e222a11645bef99a66457ef1e9ff68d8a883083",
+        "content": "sha256:d28e035ee4651ba0922693da921f9ac186d85438463120e2b56278bf241a2d1d",
+        "locator": {
+          "kind": "symbol",
+          "name": "outlineMember"
+        }
+      },
+      "id": "RLZ-Q4XYYN",
+      "invariant": "INV-76C676",
+      "origin": {
+        "handoffEntry": "L43-C-recorded-effect-consumer-closures",
+        "leaf": "260928-MIK-L43"
+      },
+      "rationale": "A member outline row receives the member-specific meaning join, not the family’s judgment.",
+      "role": "propagation-persistence"
     }
   ],
   "references": {
@@ -44,7 +98,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "83d6c30fd23ee6d4d9ce60765a46470f2b2362b1",
+            "blob": "1e222a11645bef99a66457ef1e9ff68d8a883083",
             "content": "sha256:199d2eaaf45f7d8bbdc6e01b02d3abaecbc2195736171c397fb431d73032740e",
             "locator": {
               "end": 4,
@@ -61,7 +115,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "947d5bdc3e3ce1cc991b3b3e1679a45d13994c4b",
+            "blob": "1e222a11645bef99a66457ef1e9ff68d8a883083",
             "content": "sha256:bb8b3fd922eccaa236360315caffc1024db94b0eb7c18f996aabb638b0ea39dd",
             "locator": {
               "kind": "symbol",
@@ -93,7 +147,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "947d5bdc3e3ce1cc991b3b3e1679a45d13994c4b",
+            "blob": "1e222a11645bef99a66457ef1e9ff68d8a883083",
             "content": "sha256:ba3849529427f59c598d4a4d52c7d70e8ad666aa9672991634fdc51a903906cc",
             "locator": {
               "kind": "symbol",
@@ -109,7 +163,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "947d5bdc3e3ce1cc991b3b3e1679a45d13994c4b",
+            "blob": "1e222a11645bef99a66457ef1e9ff68d8a883083",
             "content": "sha256:ed9e585504b5367554df53855e6984b3d69f2b480b6339284a557417342e09a8",
             "locator": {
               "kind": "symbol",
@@ -125,7 +179,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "947d5bdc3e3ce1cc991b3b3e1679a45d13994c4b",
+            "blob": "1e222a11645bef99a66457ef1e9ff68d8a883083",
             "content": "sha256:33359ff3913befe7af2dba06efc84781f6c270cb84b1766e6f111d069059a567",
             "locator": {
               "kind": "symbol",
@@ -141,11 +195,41 @@
       "targets": [
         {
           "anchor": {
-            "blob": "947d5bdc3e3ce1cc991b3b3e1679a45d13994c4b",
+            "blob": "1e222a11645bef99a66457ef1e9ff68d8a883083",
             "content": "sha256:3e56699d92e48c8c527f56c66fd2413e916edaa226cf45510f3af960bd0202a1",
             "locator": {
               "kind": "symbol",
               "name": "outlineCounts"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "OutlineRow also carries the delivered meaning state and ordered labels.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1e222a11645bef99a66457ef1e9ff68d8a883083",
+            "content": "sha256:5917f98bf29aaf0d482c53e02c3da74df2153be2c488db6d5d7871863197ed80",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "These helpers hold navigation grouping, ordering, primary badge precedence, counts and member change facts as pure projections of the delivered outline and kept family context. Existing semantic roster ordering is separate from compact sidebar ordering. Recorded meaning is transported as the own row’s typed state/labels, never a new CHANGE_KIND, sorting weight, count or computed overall effect. An older catalogue-only listing without an admitted outline remains unbadged. OutlineRow also carries the delivered meaning state and ordered labels. memberMeaning takes the exact member’s answer from its family outline occurrence, falling back to the invariant outline entry; it never assigns the family’s labels to a member. This transports recorded judgments beside existing primary change/ordering facts and neither reclassifies change kinds nor computes a net effect.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1e222a11645bef99a66457ef1e9ff68d8a883083",
+            "content": "sha256:5917f98bf29aaf0d482c53e02c3da74df2153be2c488db6d5d7871863197ed80",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -157,7 +241,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "83d6c30fd23ee6d4d9ce60765a46470f2b2362b1",
+            "blob": "1e222a11645bef99a66457ef1e9ff68d8a883083",
             "content": "sha256:91226cb48158f75abd6bed1dd97f3d0492039ec83c3994d5e7d3af2443436ce8",
             "locator": {
               "kind": "symbol",
@@ -168,7 +252,7 @@
         },
         {
           "anchor": {
-            "blob": "83d6c30fd23ee6d4d9ce60765a46470f2b2362b1",
+            "blob": "1e222a11645bef99a66457ef1e9ff68d8a883083",
             "content": "sha256:8051511d88d2a9d7473ef2f6f9a0dc5f22bb82c6e87c4d4591dc494f675e4a85",
             "locator": {
               "kind": "symbol",
@@ -179,7 +263,7 @@
         },
         {
           "anchor": {
-            "blob": "83d6c30fd23ee6d4d9ce60765a46470f2b2362b1",
+            "blob": "1e222a11645bef99a66457ef1e9ff68d8a883083",
             "content": "sha256:0d16541a9c15811aacbf114d94f168aefd7f21e548c3013289068de034a60b1e",
             "locator": {
               "kind": "symbol",
@@ -195,7 +279,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "83d6c30fd23ee6d4d9ce60765a46470f2b2362b1",
+            "blob": "1e222a11645bef99a66457ef1e9ff68d8a883083",
             "content": "sha256:d468b58cdc4781433b2802cbd66d15ed0680538cc1d6d20be3239f440bac504c",
             "locator": {
               "kind": "symbol",
@@ -211,7 +295,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "83d6c30fd23ee6d4d9ce60765a46470f2b2362b1",
+            "blob": "1e222a11645bef99a66457ef1e9ff68d8a883083",
             "content": "sha256:70873f42f0a38448afbed7e1b469ab45d7f1f426e7837c186f4f27b8f5894250",
             "locator": {
               "kind": "symbol",
@@ -227,7 +311,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "83d6c30fd23ee6d4d9ce60765a46470f2b2362b1",
+            "blob": "1e222a11645bef99a66457ef1e9ff68d8a883083",
             "content": "sha256:9de5945ee7c73ec46edd1a96588dcdcec7d9406da8ebd404e64848b32977dedf",
             "locator": {
               "kind": "symbol",
@@ -243,7 +327,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "83d6c30fd23ee6d4d9ce60765a46470f2b2362b1",
+            "blob": "1e222a11645bef99a66457ef1e9ff68d8a883083",
             "content": "sha256:9436ab5f4df9a143bb65caef3be77dc6190f79d09c451e4781aadc5a1879b387",
             "locator": {
               "kind": "symbol",
@@ -254,7 +338,7 @@
         },
         {
           "anchor": {
-            "blob": "83d6c30fd23ee6d4d9ce60765a46470f2b2362b1",
+            "blob": "1e222a11645bef99a66457ef1e9ff68d8a883083",
             "content": "sha256:35406d4d2b813e6cd12d4e1c012c40d64e8273010dfe1edb9955766d468d84d0",
             "locator": {
               "kind": "symbol",
@@ -270,7 +354,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "83d6c30fd23ee6d4d9ce60765a46470f2b2362b1",
+            "blob": "1e222a11645bef99a66457ef1e9ff68d8a883083",
             "content": "sha256:ee64c2bf4972913abb3f3618ae1734e9cbb14259ba9782ab8f1828e33c324513",
             "locator": {
               "kind": "symbol",
@@ -286,12 +370,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "90570046945a8192a9dd675068fa67bc5432efb2",
+            "blob": "401279764e9f59409054becaec08871155df7fcf",
             "content": "sha256:5e8e308dbbaa2289b957d593152f696b8df7163595618a6aed13e6e9bde2f43b",
             "locator": {
-              "end": 672,
+              "end": 640,
               "kind": "line_range",
-              "start": 672
+              "start": 640
             },
             "path": "dashboard/src/panels/review/FamilyReviewCenter.tsx"
           },
@@ -304,7 +388,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "947d5bdc3e3ce1cc991b3b3e1679a45d13994c4b",
+            "blob": "1e222a11645bef99a66457ef1e9ff68d8a883083",
             "content": "sha256:249922bfb94020359b3300bc1872e1c19a7fdca49e6f072a62c839e84149dcdd",
             "locator": {
               "kind": "symbol",

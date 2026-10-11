@@ -6,6 +6,26 @@
 
 ## Purpose
 
+The complete read resolves the bound candidate once, collects owner records and composes over that resolution. Catalogue and subject routes use that same bound pair and the public source inventory; there is no stored composed answer or caller-chosen memory path. Current converted memory comes from the two derived Git-tree indexes; canonical dataset constants and review-matrix construction are retired. The input recheck precedes the later family/applicability and meaning projection reads, so this module does not promise a last-after-every-read recheck.
+
+## Code Commentary
+
+### One comparison, existing public routes
+
+compose_review attaches recorded meaning effects from the candidate index already held by its resolution. _meaning_subjects selects the addressed invariant/family plus returned family/member identities on both sides and deduplicates exact record/kind pairs. A roster continuation therefore carries its returned members’ own steps; a source/path selector invents no knowledge record. The before index is only an identity fallback for retired or after-absent UUIDs. History is read from the after tree exclusively, with no extra route, candidate resolution or wait for the leaf-wide worklist.
+
+- The complete read resolves the bound candidate once, collects owner records and composes over that resolution. Catalogue and subject routes use that same bound pair and the public source inventory; there is no stored composed answer or caller-chosen memory path. Current converted memory comes from the two derived Git-tree indexes; canonical dataset constants and review-matrix construction are retired. The input recheck precedes the later family/applicability and meaning projection reads, so this module does not promise a last-after-every-read recheck. compose_review attaches recorded meaning effects from the candidate index already held by its resolution. _meaning_subjects selects the addressed invariant/family plus returned family/member identities on both sides and deduplicates exact record/kind pairs. A roster continuation therefore carries its returned members’ own steps; a source/path selector invents no knowledge record. The before index is only an identity fallback for retired or after-absent UUIDs. History is read from the after tree exclusively, with no extra route, candidate resolution or wait for the leaf-wide worklist. [51]
+
+<details>
+<summary>Historical prior account (not the current contract)</summary>
+
+
+## Governing Overview
+
+[application route overview](overview.md)
+
+## Purpose
+
 The review adapter assembles the shipped source, knowledge and owner-record operations over one canonical task resolution. It selects no semantic frontier, authors no verdict and stores no composed answer.
 
 The review adapter assembles the shipped source, knowledge and owner-record operations over one canonical task resolution. It selects no semantic frontier, authors no verdict and stores no composed answer. In W03 the catalogue answer it builds also carries the navigation outline.
@@ -15,6 +35,12 @@ The review adapter assembles the shipped source, knowledge and owner-record oper
 `read_complete_knowledge_review` is the complete dashboard operation: resolve the candidate once, collect owner records through `review_records_of`, and compose over that same resolution. The existing publication currentness check still recaptures both live worktrees and refuses a moved candidate. Record-only and older composition entry points keep their owned operations; they do not become another capture implementation. No composed review answer is stored on the server.
 
 ## Code Commentary
+
+### Recorded reviewer judgments
+
+compose_review attaches recorded meaning effects from the candidate index already held by its resolution. _meaning_subjects selects the addressed invariant/family plus returned family/member identities on both sides and deduplicates exact record/kind pairs. A roster continuation therefore carries its returned members’ own steps; a source/path selector invents no knowledge record. The before index is only an identity fallback for retired or after-absent UUIDs. History is read from the after tree exclusively, with no extra route, candidate resolution or wait for the leaf-wide worklist.
+
+- compose_review attaches recorded meaning effects from the candidate index already held by its resolution. [50]
 
 ### Logic
 
@@ -532,3 +558,5 @@ and the private `_absent_pair_refusal` moved there unchanged as `absent_pair_ref
 every refusal's wording are unchanged; the module shrank 1112 → 1075 lines and gained no feature logic.
 The summary itself is a separate port wired by the composition root; it does not pass through this
 adapter.
+
+</details>

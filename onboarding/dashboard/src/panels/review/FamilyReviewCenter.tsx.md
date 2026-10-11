@@ -15,6 +15,12 @@ the workspace; the file itself reads only the entries of the selected invariants
 The centre of the reviewer renders the family guarantee, the member context, the selected intent, the code and test expressions, and the evidence for the selected family or member. It carries the catalogue outline for member rows and draws planning marks only from a leaf-wide worklist that belongs to the comparison on screen. Layout, the open path and the leaf-wide tree read arrive by props; the file reads only the entries of the selected invariants.
 ## Code Commentary
 
+### Recorded reviewer judgments
+
+The selected family/member reading area joins MeaningBlock to its own canonical record beside the guarantee or intent content, never to a kept family’s history. The no-subject and member-without-identity branches use MeaningFieldGuard: a missing field is failure while a present empty collection remains valid. Recorded steps are open content outside disclosures, preserve own row revisions and reasons, and do not replace the before/after wording diff or the independent source/evidence owners.
+
+- The selected family/member reading area joins MeaningBlock to its own canonical record beside the guarantee or intent content, never to a kept family’s history. [32]
+
 ### Which centre
 
 - `FamilyReviewCenter` wraps the body in `IntentWordDiffScope`, which marks a tree comparison for the

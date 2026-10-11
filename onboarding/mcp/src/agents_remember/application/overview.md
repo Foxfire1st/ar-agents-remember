@@ -28,6 +28,12 @@ predicate wiring or persisted-item support is implied.
 
 - Skipped links carry successors with a null trigger. [453]
 
+### Recorded reviewer judgments
+
+The reviewer projection reads the reviewed owner’s history from the resolved after index, ordered by attempt-file numbers, and supplies identical record-specific labels to outline and subject responses. Baseline indexes name retired/after-absent UUIDs only; unavailable history is not no-step history. Existing composition resolves no second candidate and creates no new route, authored verdict or net-effect judgment.
+
+- The reviewer projection reads the reviewed owner’s history from the resolved after index, ordered by attempt-file numbers, and supplies identical record-specific labels to outline and subject responses. [454]
+
 ## Historical prior application route — preserved, not the current operative account
 
 <details>

@@ -6,6 +6,26 @@
 
 ## Purpose
 
+The model module owns the read-only review wire answer and its self-consistency checks, not record storage, comparison resolution or authored verdicts. KnowledgeReviewPayload requires ReviewMeaningEffects and retains existing panes, source inventory, currentness and pagination ownership. ReviewKnowledgePane carries signals and selected record content, not the retired ReviewAuthoredEffect channel. Refusal names are imported/re-exported from review_refusal.py; additional request/outline vocabulary has its own current owners. The optional entry-list outline is distinct from required meaning fields inside current answers; old outline-only byte-parity wording does not exempt the new payload field.
+
+## Code Commentary
+
+### Public answer shapes and consistency
+
+KnowledgeReviewPayload requires meaning_effects in the current server response; the separate review_meaning_effects model owns its recorded-step vocabulary. The field carries owner-recorded facts and has no conclusion/net-effect slot. Catalogue outline rows retain their own typed meaning projection. Existing panes, refusal/currentness and pagination ownership remain unchanged; a no-subject composition supplies a valid empty record collection.
+
+- The model module owns the read-only review wire answer and its self-consistency checks, not record storage, comparison resolution or authored verdicts. KnowledgeReviewPayload requires ReviewMeaningEffects and retains existing panes, source inventory, currentness and pagination ownership. ReviewKnowledgePane carries signals and selected record content, not the retired ReviewAuthoredEffect channel. Refusal names are imported/re-exported from review_refusal.py; additional request/outline vocabulary has its own current owners. The optional entry-list outline is distinct from required meaning fields inside current answers; old outline-only byte-parity wording does not exempt the new payload field. KnowledgeReviewPayload requires meaning_effects in the current server response; the separate review_meaning_effects model owns its recorded-step vocabulary. The field carries owner-recorded facts and has no conclusion/net-effect slot. Catalogue outline rows retain their own typed meaning projection. Existing panes, refusal/currentness and pagination ownership remain unchanged; a no-subject composition supplies a valid empty record collection. [90]
+
+<details>
+<summary>Historical prior account (not the current contract)</summary>
+
+
+## Governing Overview
+
+[models route overview](../overview.md)
+
+## Purpose
+
 The Intent Reviewer surface's own vocabulary: what the three panes carry, and nothing more. This
 module **defines no record kind**. Every value here is a rendering of records another owner already
 stores, or a stated absence where no record exists. The one thing it does own is the shape of a
@@ -29,6 +49,12 @@ bullets:
 
 `models/knowledge/review.py` fixes the Intent Reviewer's wire shapes: the review payload, its panes, refusals, paging and the subject catalogue result. In W03 `ReviewEntryListResult` gains the optional outline of the comparison the catalogue describes.
 ## Code Commentary
+
+### Recorded reviewer judgments
+
+KnowledgeReviewPayload requires meaning_effects in the current server response; the separate review_meaning_effects model owns its recorded-step vocabulary. The field carries owner-recorded facts and has no conclusion/net-effect slot. Catalogue outline rows retain their own typed meaning projection. Existing panes, refusal/currentness and pagination ownership remain unchanged; a no-subject composition supplies a valid empty record collection.
+
+- KnowledgeReviewPayload requires meaning_effects in the current server response; the separate review_meaning_effects model owns its recorded-step vocabulary. [89]
 
 ### Constants and closed vocabularies
 
@@ -505,3 +531,5 @@ could have published cannot even be asserted as a previous input.
 **What a later reader must not undo.** The field is validated here as well as at the route. The route
 admits the spelling in its own vocabulary so a malformed value is a typed 400 rather than an uncaught
 `ValidationError`; this model's `pattern` is the second half of the same rule, not a duplicate of it.
+
+</details>

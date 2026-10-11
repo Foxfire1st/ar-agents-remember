@@ -7,8 +7,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1cda0d86a398308bab232df61f14691f70920777",
-            "content": "sha256:87e159658b191cd193d08993cecb103e286da4ad3f1c220c9b6756364b59b1b2",
+            "blob": "7e24140649ed6b8694133a25702f2cd0ac201e5c",
+            "content": "sha256:8c256f6084e026691d90502512322865d4af158f42b70c01f064a05d566fd5f6",
             "locator": {
               "kind": "symbol",
               "name": "ReviewOutlineMember"
@@ -23,8 +23,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1cda0d86a398308bab232df61f14691f70920777",
-            "content": "sha256:bd678499c7f19ac5fe5445d113093e73fcd1e05e43a46ab88bb1b5aabfbd81fc",
+            "blob": "7e24140649ed6b8694133a25702f2cd0ac201e5c",
+            "content": "sha256:9061a9f3e36e3731a9cf76eff9e1710c1c901ffa5c16030424cc312150a2beb9",
             "locator": {
               "kind": "symbol",
               "name": "ReviewOutlineFamily"
@@ -39,7 +39,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1cda0d86a398308bab232df61f14691f70920777",
+            "blob": "7e24140649ed6b8694133a25702f2cd0ac201e5c",
             "content": "sha256:dd986d2c96aa968a9ae1b4907f22b090e3b33ec128eeab659839c0d1d8d9c90d",
             "locator": {
               "kind": "symbol",
@@ -55,11 +55,26 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1cda0d86a398308bab232df61f14691f70920777",
+            "blob": "7e24140649ed6b8694133a25702f2cd0ac201e5c",
             "content": "sha256:4147cb8d92ef0df9eb88fac6ad2526e4b011df951fdd9e975c37ab9ec4f36a03",
             "locator": {
               "kind": "symbol",
               "name": "_unavailable_lists_nothing"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Every family, member and invariant outline row carries a required ReviewOutlineMeaning.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7e24140649ed6b8694133a25702f2cd0ac201e5c",
+            "content": "sha256:e116af9fd6b95c9b9fda221994e96dbb028bff201e9a969bb77273f6c2f313a4",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"

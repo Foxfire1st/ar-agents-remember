@@ -171,7 +171,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d0f7a951d7362705b3037fbcc09014d35eeb3da6",
+            "blob": "88413807ae37c2090f387e7240b7777c106afbf7",
             "content": "sha256:3ab1fb18ca09c216fe1c383361d6ed98476f8a2756d27a6f27df31eddca8b5a9",
             "locator": {
               "kind": "symbol",
@@ -485,12 +485,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f84799b8607720d59167369281b8ab441bb956ee",
+            "blob": "c1c7c67ada2e84e90b5ac05efb33bdb19e6951a4",
             "content": "sha256:faef4dafa9f822bbd133039f932b85f3ed53963e045da9f0fe5d9d5c12e62e89",
             "locator": {
-              "end": 546,
+              "end": 581,
               "kind": "line_range",
-              "start": 546
+              "start": 581
             },
             "path": "dashboard/src/data/review.ts"
           },
@@ -521,12 +521,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f84799b8607720d59167369281b8ab441bb956ee",
+            "blob": "c1c7c67ada2e84e90b5ac05efb33bdb19e6951a4",
             "content": "sha256:9638940a5240aa1ca24c1a58b12234c0b784036776af19bc5085579d9d922efb",
             "locator": {
-              "end": 726,
+              "end": 800,
               "kind": "line_range",
-              "start": 726
+              "start": 800
             },
             "path": "dashboard/src/data/review.ts"
           },
@@ -539,7 +539,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f84799b8607720d59167369281b8ab441bb956ee",
+            "blob": "c1c7c67ada2e84e90b5ac05efb33bdb19e6951a4",
             "content": "sha256:cfc7befc6219e0e7c595423f21071ccb794f0c8622a50e6090535c95f0a6dcc7",
             "locator": {
               "kind": "symbol",
@@ -563,12 +563,12 @@
         },
         {
           "anchor": {
-            "blob": "f84799b8607720d59167369281b8ab441bb956ee",
+            "blob": "c1c7c67ada2e84e90b5ac05efb33bdb19e6951a4",
             "content": "sha256:24c209e91cf40031f894eb6d0385fc2b83a75e687b0061b6ffdbe464622a4708",
             "locator": {
-              "end": 692,
+              "end": 727,
               "kind": "line_range",
-              "start": 692
+              "start": 727
             },
             "path": "dashboard/src/data/review.ts"
           },
@@ -598,7 +598,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f84799b8607720d59167369281b8ab441bb956ee",
+            "blob": "c1c7c67ada2e84e90b5ac05efb33bdb19e6951a4",
             "content": "sha256:635f83e1846e80f411f85c2a423cd281c202bef22c70570e321628d2ed70182c",
             "locator": {
               "end": 9,
@@ -611,7 +611,7 @@
         },
         {
           "anchor": {
-            "blob": "f84799b8607720d59167369281b8ab441bb956ee",
+            "blob": "c1c7c67ada2e84e90b5ac05efb33bdb19e6951a4",
             "content": "sha256:65c65313e55df1d75b591708ce6650e9eeb983dad33936e16bc6717594f1c485",
             "locator": {
               "end": 10,
@@ -647,7 +647,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f84799b8607720d59167369281b8ab441bb956ee",
+            "blob": "c1c7c67ada2e84e90b5ac05efb33bdb19e6951a4",
             "content": "sha256:9b1b00c8d99758ebca583aad6b9dd2478b4631ba89c975e3b1d9626474386b90",
             "locator": {
               "end": 4,
@@ -665,12 +665,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f84799b8607720d59167369281b8ab441bb956ee",
+            "blob": "c1c7c67ada2e84e90b5ac05efb33bdb19e6951a4",
             "content": "sha256:120ee0b56342b5eef6994cc6b88801676ac536ccce4757950a23d7d01ca2c02e",
             "locator": {
-              "end": 512,
+              "end": 547,
               "kind": "line_range",
-              "start": 512
+              "start": 547
             },
             "path": "dashboard/src/data/review.ts"
           },
@@ -683,12 +683,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f84799b8607720d59167369281b8ab441bb956ee",
+            "blob": "c1c7c67ada2e84e90b5ac05efb33bdb19e6951a4",
             "content": "sha256:e5e56934dda35c28531aacb932e8add4a2db538d633fbe3256495d98adc19df2",
             "locator": {
-              "end": 438,
+              "end": 465,
               "kind": "line_range",
-              "start": 438
+              "start": 465
             },
             "path": "dashboard/src/data/review.ts"
           },
@@ -701,7 +701,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f84799b8607720d59167369281b8ab441bb956ee",
+            "blob": "c1c7c67ada2e84e90b5ac05efb33bdb19e6951a4",
             "content": "sha256:f0562673993cbc1b914392217debb15c996e78e15fd7ad216ed341d97623e366",
             "locator": {
               "kind": "symbol",
@@ -713,7 +713,7 @@
         },
         {
           "anchor": {
-            "blob": "f84799b8607720d59167369281b8ab441bb956ee",
+            "blob": "c1c7c67ada2e84e90b5ac05efb33bdb19e6951a4",
             "content": "sha256:fa61b803b77cd44bd7425f4b38c5153b6416be5ea89e7fc711f68ffaa35c0541",
             "locator": {
               "kind": "symbol",
@@ -742,7 +742,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f84799b8607720d59167369281b8ab441bb956ee",
+            "blob": "c1c7c67ada2e84e90b5ac05efb33bdb19e6951a4",
             "content": "sha256:8c360500d2f45ded1ac5c1873960483d26dd7dccd7e48a99c18bc5ec20b176b0",
             "locator": {
               "kind": "symbol",
@@ -771,7 +771,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d0f7a951d7362705b3037fbcc09014d35eeb3da6",
+            "blob": "88413807ae37c2090f387e7240b7777c106afbf7",
             "content": "sha256:ed505ec47b788133675374579a5a550f1e6cf56418799e02d1e4efcbcc200d64",
             "locator": {
               "end": 16,
@@ -847,7 +847,7 @@
         },
         {
           "anchor": {
-            "blob": "605a94e6165911a70c8720cc9da1642652343d76",
+            "blob": "9408212dc6bbb8b39c81e874b707478b36dd6319",
             "content": "sha256:80c602650fbe4d18212c300d5b20ea986bab9d8f666fd0f5ef6ddc9897a00f99",
             "locator": {
               "kind": "symbol",
@@ -876,7 +876,7 @@
         },
         {
           "anchor": {
-            "blob": "f84799b8607720d59167369281b8ab441bb956ee",
+            "blob": "c1c7c67ada2e84e90b5ac05efb33bdb19e6951a4",
             "content": "sha256:75319702001c25b9863f52aece77d448458d187ed5fff17846d210bc1cde33d4",
             "locator": {
               "kind": "symbol",
@@ -944,12 +944,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f84799b8607720d59167369281b8ab441bb956ee",
+            "blob": "c1c7c67ada2e84e90b5ac05efb33bdb19e6951a4",
             "content": "sha256:66e1e3215cf562886d8e320a12b9d0c01fc0e876248931f5e27f07af43f229e0",
             "locator": {
-              "end": 752,
+              "end": 826,
               "kind": "line_range",
-              "start": 751
+              "start": 825
             },
             "path": "dashboard/src/data/review.ts"
           },
@@ -957,12 +957,12 @@
         },
         {
           "anchor": {
-            "blob": "f84799b8607720d59167369281b8ab441bb956ee",
+            "blob": "c1c7c67ada2e84e90b5ac05efb33bdb19e6951a4",
             "content": "sha256:60baed14bbecb537b3704d480d87ac1ce4fd443cf25883b425c73fc3f16e9f6a",
             "locator": {
-              "end": 762,
+              "end": 836,
               "kind": "line_range",
-              "start": 761
+              "start": 835
             },
             "path": "dashboard/src/data/review.ts"
           },
@@ -1004,7 +1004,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "605a94e6165911a70c8720cc9da1642652343d76",
+            "blob": "9408212dc6bbb8b39c81e874b707478b36dd6319",
             "content": "sha256:b84fd31944c3c27d5bc513725f1bf10f9e0660fd1009f5d4b8300735f0ad354b",
             "locator": {
               "end": 127,
@@ -1022,7 +1022,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d0f7a951d7362705b3037fbcc09014d35eeb3da6",
+            "blob": "88413807ae37c2090f387e7240b7777c106afbf7",
             "content": "sha256:ca044fb554d86b53ee7a9f656cea4fe94166872e1b7e6a168623a2f29fb13b6a",
             "locator": {
               "kind": "symbol",
@@ -1051,7 +1051,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ed265675478575ff8a4d1556006a4a3afd4aa87a",
+            "blob": "1da3bab20ae2b0b070c790c820476038d043758c",
             "content": "sha256:518ba97a2e876a750a674facde42ec49d1f01b376028d44f80204506341ecca1",
             "locator": {
               "kind": "symbol",
@@ -1063,7 +1063,7 @@
         },
         {
           "anchor": {
-            "blob": "ed265675478575ff8a4d1556006a4a3afd4aa87a",
+            "blob": "1da3bab20ae2b0b070c790c820476038d043758c",
             "content": "sha256:e2a13520375f7b850be1252be1a1a0852a60585640444d8778b26b8651a29b2c",
             "locator": {
               "kind": "symbol",
@@ -1087,12 +1087,12 @@
         },
         {
           "anchor": {
-            "blob": "ed265675478575ff8a4d1556006a4a3afd4aa87a",
+            "blob": "1da3bab20ae2b0b070c790c820476038d043758c",
             "content": "sha256:6e718064d432e3f615529ebd114610cc6182210cdbbaf5888f87bfa3102c05a1",
             "locator": {
-              "end": 76,
+              "end": 74,
               "kind": "line_range",
-              "start": 76
+              "start": 74
             },
             "path": "dashboard/src/data/changeset.ts"
           },
@@ -1169,7 +1169,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f84799b8607720d59167369281b8ab441bb956ee",
+            "blob": "c1c7c67ada2e84e90b5ac05efb33bdb19e6951a4",
             "content": "sha256:bfb55936f3767abe2ffe70c120e449eea1f901a74fe802942dccde0fa063dc1a",
             "locator": {
               "kind": "symbol",
@@ -1257,7 +1257,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6031ba19a7f7cdec74f8e6267d1d206624f03989",
+            "blob": "a95b2d43ef2dd642b13233f95c918ee5c87d603e",
             "content": "sha256:97721e68d0054cb2f2d703ac6d3af03d65725ddf332a62068b147090e630c36c",
             "locator": {
               "kind": "symbol",
@@ -1274,7 +1274,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6031ba19a7f7cdec74f8e6267d1d206624f03989",
+            "blob": "a95b2d43ef2dd642b13233f95c918ee5c87d603e",
             "content": "sha256:978feec7230dd633853c6e090a9ce5f9be60deb92c96b5e2f446663990e4ab4b",
             "locator": {
               "kind": "symbol",
@@ -1291,12 +1291,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6031ba19a7f7cdec74f8e6267d1d206624f03989",
+            "blob": "a95b2d43ef2dd642b13233f95c918ee5c87d603e",
             "content": "sha256:6b05bb6f8f5397db18de287811001a9b61522792739f52b9d17d44795c1f7924",
             "locator": {
-              "end": 274,
+              "end": 240,
               "kind": "line_range",
-              "start": 272
+              "start": 238
             },
             "path": "dashboard/src/data/reviewTrees.ts"
           },
@@ -1309,7 +1309,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6031ba19a7f7cdec74f8e6267d1d206624f03989",
+            "blob": "a95b2d43ef2dd642b13233f95c918ee5c87d603e",
             "content": "sha256:403bc04ae33422eee2d0d909e482f909678c61c9aa8f5697cb96549893b3740b",
             "locator": {
               "kind": "symbol",
@@ -1326,7 +1326,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6031ba19a7f7cdec74f8e6267d1d206624f03989",
+            "blob": "a95b2d43ef2dd642b13233f95c918ee5c87d603e",
             "content": "sha256:55e99e194c1c1409679f0f227721a4a9f8adc7a41423e7d67dd71b7d5779532b",
             "locator": {
               "kind": "symbol",
@@ -1343,7 +1343,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6031ba19a7f7cdec74f8e6267d1d206624f03989",
+            "blob": "a95b2d43ef2dd642b13233f95c918ee5c87d603e",
             "content": "sha256:a3d5442795eea509cb163dee4e42b5e386801f9bc9109659dc3c9f072c41fe9d",
             "locator": {
               "kind": "symbol",
@@ -1360,7 +1360,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6031ba19a7f7cdec74f8e6267d1d206624f03989",
+            "blob": "a95b2d43ef2dd642b13233f95c918ee5c87d603e",
             "content": "sha256:a4f5fdb7032e410d21d177f20618f471832c1e58a8e6aa56a4ee3b630e392b3d",
             "locator": {
               "kind": "symbol",
@@ -1377,7 +1377,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6031ba19a7f7cdec74f8e6267d1d206624f03989",
+            "blob": "a95b2d43ef2dd642b13233f95c918ee5c87d603e",
             "content": "sha256:61f17ead19e8fde64b33e30580d5de5192d3e5b7779072ba82195e12c5e793a8",
             "locator": {
               "kind": "symbol",
@@ -1495,12 +1495,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8dc09adce51f1234914f591afc712dc9db6a92ae",
+            "blob": "7cb79f025ffabce1162052d97c84f0331da5e31a",
             "content": "sha256:a35ba85e062c62ddd6d186bf3ea64d5e33e70720369b544e0efde3693b197709",
             "locator": {
-              "end": 135,
+              "end": 126,
               "kind": "line_range",
-              "start": 121
+              "start": 112
             },
             "path": "dashboard/src/data/reviewTrees.test.ts"
           },
@@ -1696,6 +1696,22 @@
               "start": 93
             },
             "path": "dashboard/src/panels/EngineRoom.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "85": {
+      "note": "The review wire mirror transports recorded meaning steps with their own attempts/revisions and distinguishes readable none from unavailable.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c1c7c67ada2e84e90b5ac05efb33bdb19e6951a4",
+            "content": "sha256:8c9c34025ed20acee37538e90719ba45449db08fa37c427bd2fd99ceba9208d5",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/data/review.ts"
           },
           "kind": "code"
         }

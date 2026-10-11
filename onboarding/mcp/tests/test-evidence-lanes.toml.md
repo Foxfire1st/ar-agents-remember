@@ -19,6 +19,12 @@ The canonical evidence-lane catalog: which test modules belong to which lane, so
 
 ## Code Commentary
 
+### Recorded reviewer judgments
+
+The recorded-meaning-effect regression module is selected in unit-regression. Its entry uses the same canonical ordering and exactly-one-lane rules as the existing suite; adding that membership certifies no invocation, timing or product acceptance.
+
+- The recorded-meaning test module is selected once in unit-regression; registration asserts no invocation or acceptance. [845]
+
 The catalog records its declared test-module paths under evidence lanes, not an independently verified inventory of every filesystem module. On the admitted L147 successor the parsed lists are unique and sorted within each lane; that observation does not retroactively qualify the older frozen ordering. Source declarations and their loader checks, not this prose, decide current membership. The extracted capsule serving-surface and
 memory-opt-out refusal suites remain in `unit-regression`; those incoming registrations
 are not additions authored by this leaf. L112 adds `test_context_packet_cli.py`,

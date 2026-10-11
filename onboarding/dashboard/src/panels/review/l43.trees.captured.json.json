@@ -1,0 +1,22 @@
+{
+  "path": "dashboard/src/panels/review/l43.trees.captured.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The captured body preserves its response state and comparison-bound facts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b3aa06b2b287c6bd2a1d298daab685c9ef8d3322",
+            "content": "sha256:4b0417cc7ad038c674bdf32b7d25e568bec5d0fc8f01372b510995fba3300af9",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

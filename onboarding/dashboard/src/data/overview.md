@@ -1,5 +1,11 @@
 # dashboard/src/data/ — Cockpit State And Authority Overview
 
+## Recorded reviewer judgments
+
+The review wire mirror transports recorded meaning steps with their own attempts/revisions and distinguishes readable none from unavailable. Subject answers and catalogue outline rows carry these facts through their existing routes; a browser-missing current field is a failure, not a default. Transport, paging and store owners remain independent.
+
+- The review wire mirror transports recorded meaning steps with their own attempts/revisions and distinguishes readable none from unavailable. [85]
+
 | Field                  | Value                                            |
 | ---------------------- | ------------------------------------------------ |
 | sourceRoute            | `dashboard/src/data/`                            |

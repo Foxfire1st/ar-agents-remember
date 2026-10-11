@@ -1,0 +1,92 @@
+{
+  "path": "mcp/src/agents_remember/application/review_meaning_effects.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "112a9855157f940bc999dde2c6fba752f6430f5e",
+        "content": "sha256:a69af279a9d52dd259d5c48e9012f2d184ec2c08052ba66c5cec283f7f74cdb0",
+        "locator": {
+          "kind": "symbol",
+          "name": "_answer"
+        }
+      },
+      "id": "RLZ-XEM6QG",
+      "invariant": "INV-76C676",
+      "origin": {
+        "handoffEntry": "L43-C-recorded-effect-propagation",
+        "leaf": "260928-MIK-L43"
+      },
+      "rationale": "The exact record answer maps identity and eligible after-history to steps, none or unavailable without inferring a label.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "112a9855157f940bc999dde2c6fba752f6430f5e",
+        "content": "sha256:917218f6cd072fa651459c79b1450851c5b41125b1954120ebbc188af0f1daa1",
+        "locator": {
+          "kind": "symbol",
+          "name": "review_meaning_effects"
+        }
+      },
+      "id": "RLZ-XVN2T4",
+      "invariant": "INV-76C676",
+      "origin": {
+        "handoffEntry": "MIK-R43@v2",
+        "leaf": "260928-MIK-L43"
+      },
+      "rationale": "This owner-scoped after-history projection supplies the record answers required by the packet.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The resolved after index and optional identity-only baseline feed one record projection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "112a9855157f940bc999dde2c6fba752f6430f5e",
+            "content": "sha256:917218f6cd072fa651459c79b1450851c5b41125b1954120ebbc188af0f1daa1",
+            "locator": {
+              "kind": "symbol",
+              "name": "review_meaning_effects"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The same owner-filtered projection supplies outline labels.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "112a9855157f940bc999dde2c6fba752f6430f5e",
+            "content": "sha256:e1d5160e69a84c1c9ec66202e863fab35f75d60db3777a95cfe7eee77e8e0492",
+            "locator": {
+              "kind": "symbol",
+              "name": "outline_meanings"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Only admitted dispositions form steps; old and half-recorded family cases remain distinct.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "112a9855157f940bc999dde2c6fba752f6430f5e",
+            "content": "sha256:35d72fd4c9430f82de11a387731782e629a9512d3df71276b43e2576117c51ea",
+            "locator": {
+              "kind": "symbol",
+              "name": "_family_step"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

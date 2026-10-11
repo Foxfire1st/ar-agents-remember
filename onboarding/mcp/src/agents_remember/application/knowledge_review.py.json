@@ -4,7 +4,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "0ace720dda858a7f68a249b7fe9e3501b85f088b",
+        "blob": "84a9c7a8a48ea7d1ffbe5362002e6560d1c3eda4",
         "content": "sha256:c6d3fc19ab7aae8cedf36503ebb6a47ab71e0bba1bd85dcc4c2bad56d4fe306b",
         "locator": {
           "kind": "symbol",
@@ -19,6 +19,42 @@
       },
       "rationale": "Resolves once and supplies the same pair to owner record collection and the review composition.",
       "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "84a9c7a8a48ea7d1ffbe5362002e6560d1c3eda4",
+        "content": "sha256:a762f70c4ed398f09e1aef2e9b8b387b78813ec302c0a52c9c99bfab84ceb77c",
+        "locator": {
+          "kind": "symbol",
+          "name": "_meaning_subjects"
+        }
+      },
+      "id": "RLZ-EGPA5N",
+      "invariant": "INV-76C676",
+      "origin": {
+        "handoffEntry": "L43-C-recorded-effect-consumer-closures",
+        "leaf": "260928-MIK-L43"
+      },
+      "rationale": "The subject set covers selected records and exactly the family/member identities returned by this response, including continuation pages.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "84a9c7a8a48ea7d1ffbe5362002e6560d1c3eda4",
+        "content": "sha256:8e3d359536a44431fb6bdcbd18b3bc00dc6a64e4da43b6a8a920f2ea31b5a35e",
+        "locator": {
+          "kind": "symbol",
+          "name": "compose_review"
+        }
+      },
+      "id": "RLZ-HX732X",
+      "invariant": "INV-76C676",
+      "origin": {
+        "handoffEntry": "MIK-R43@v2",
+        "leaf": "260928-MIK-L43"
+      },
+      "rationale": "The existing subject answer attaches the projection from its held comparison without another candidate resolution.",
+      "role": "propagation-persistence"
     }
   ],
   "references": {
@@ -51,7 +87,7 @@
         },
         {
           "anchor": {
-            "blob": "0ace720dda858a7f68a249b7fe9e3501b85f088b",
+            "blob": "84a9c7a8a48ea7d1ffbe5362002e6560d1c3eda4",
             "content": "sha256:bf2b35660e90380b885eeb16ffeb4c424c658bf32de81887aa75c3a2bd2d4810",
             "locator": {
               "end": 56,
@@ -242,7 +278,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0ace720dda858a7f68a249b7fe9e3501b85f088b",
+            "blob": "84a9c7a8a48ea7d1ffbe5362002e6560d1c3eda4",
             "content": "sha256:151736419cd320dfebf3e61db0f3e5f1fea5b47ed15927522a9bda5eb8768402",
             "locator": {
               "kind": "symbol",
@@ -352,12 +388,12 @@
         },
         {
           "anchor": {
-            "blob": "0ace720dda858a7f68a249b7fe9e3501b85f088b",
+            "blob": "84a9c7a8a48ea7d1ffbe5362002e6560d1c3eda4",
             "content": "sha256:c4127302ba62d88d836254ac430d88f9a721daa32c710b398bdb837e567b9f1f",
             "locator": {
-              "end": 564,
+              "end": 627,
               "kind": "line_range",
-              "start": 551
+              "start": 614
             }
           },
           "kind": "code"
@@ -410,7 +446,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0ace720dda858a7f68a249b7fe9e3501b85f088b",
+            "blob": "84a9c7a8a48ea7d1ffbe5362002e6560d1c3eda4",
             "content": "sha256:0b94f85fa9efd6d2146ae50b3fe5bd7031a0bc94699565a8560cf1486723b69e",
             "locator": {
               "kind": "symbol",
@@ -442,7 +478,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0ace720dda858a7f68a249b7fe9e3501b85f088b",
+            "blob": "84a9c7a8a48ea7d1ffbe5362002e6560d1c3eda4",
             "content": "sha256:05fd2b3385201155486a7ba8b77c230eb40395775f98879cdd8c6546e3db3a6b",
             "locator": {
               "kind": "symbol",
@@ -470,7 +506,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0ace720dda858a7f68a249b7fe9e3501b85f088b",
+            "blob": "84a9c7a8a48ea7d1ffbe5362002e6560d1c3eda4",
             "content": "sha256:080d639fe20f2c33e604a5aceb52e93da182a4e73218e8e0a9b1ead18a4b66c8",
             "locator": {
               "kind": "symbol",
@@ -481,7 +517,7 @@
         },
         {
           "anchor": {
-            "blob": "0ace720dda858a7f68a249b7fe9e3501b85f088b",
+            "blob": "84a9c7a8a48ea7d1ffbe5362002e6560d1c3eda4",
             "content": "sha256:a5e629944865662fd63096f5e667096535f06f43318c3577af724a384ddbc1ae",
             "locator": {
               "kind": "symbol",
@@ -530,7 +566,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0ace720dda858a7f68a249b7fe9e3501b85f088b",
+            "blob": "84a9c7a8a48ea7d1ffbe5362002e6560d1c3eda4",
             "content": "sha256:fab69dcec914d9426595b300b85a732e6c0b0b89fcd40b3871722673fb900ff6",
             "locator": {
               "kind": "symbol",
@@ -599,7 +635,7 @@
         },
         {
           "anchor": {
-            "blob": "1bd78065571accddd20722fd3a76b2ab334e70a8",
+            "blob": "2689495ed37e76bf667151b6a75a7ac2577896b2",
             "content": "sha256:79c7ad311c9c50ee8963feb58d3a1eef36b2f2429f94cf04c1ecb3297692f681",
             "locator": {
               "kind": "symbol",
@@ -611,7 +647,7 @@
         },
         {
           "anchor": {
-            "blob": "1bd78065571accddd20722fd3a76b2ab334e70a8",
+            "blob": "2689495ed37e76bf667151b6a75a7ac2577896b2",
             "content": "sha256:4d2fbd2e9a158dd3998321393a307ae206a87835b4fcef156c334862c7080385",
             "locator": {
               "kind": "symbol",
@@ -843,7 +879,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0ace720dda858a7f68a249b7fe9e3501b85f088b",
+            "blob": "84a9c7a8a48ea7d1ffbe5362002e6560d1c3eda4",
             "content": "sha256:9337a3581568d42aa4282acac4402465004c414e60fa2afbe608703069755e16",
             "locator": {
               "kind": "symbol",
@@ -878,7 +914,7 @@
         },
         {
           "anchor": {
-            "blob": "0ace720dda858a7f68a249b7fe9e3501b85f088b",
+            "blob": "84a9c7a8a48ea7d1ffbe5362002e6560d1c3eda4",
             "content": "sha256:f78438af62f0beadad9c301b70492e5e7270dc509e52b497435fcd32da7430cc",
             "locator": {
               "end": 92,
@@ -890,12 +926,12 @@
         },
         {
           "anchor": {
-            "blob": "0ace720dda858a7f68a249b7fe9e3501b85f088b",
+            "blob": "84a9c7a8a48ea7d1ffbe5362002e6560d1c3eda4",
             "content": "sha256:95ecaf3397b450e80769e5aa36681e2928afe7c2322e7d938c3ed0290a5801b5",
             "locator": {
-              "end": 334,
+              "end": 341,
               "kind": "line_range",
-              "start": 334
+              "start": 341
             }
           },
           "kind": "code"
@@ -1119,7 +1155,7 @@
         },
         {
           "anchor": {
-            "blob": "7da4c42bdbcb4b77509ee90a396b89e64062ab5c",
+            "blob": "41e22b40c941cf3fbfe8acbfcd61224b2ce90e6f",
             "content": "sha256:7d1071b571bbff289d4970fd937c12afd69555ca0d276e8ad908e430e9433c70",
             "locator": {
               "kind": "symbol",
@@ -1507,7 +1543,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0ace720dda858a7f68a249b7fe9e3501b85f088b",
+            "blob": "84a9c7a8a48ea7d1ffbe5362002e6560d1c3eda4",
             "content": "sha256:c6d3fc19ab7aae8cedf36503ebb6a47ab71e0bba1bd85dcc4c2bad56d4fe306b",
             "locator": {
               "kind": "symbol",
@@ -1523,12 +1559,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0ace720dda858a7f68a249b7fe9e3501b85f088b",
+            "blob": "84a9c7a8a48ea7d1ffbe5362002e6560d1c3eda4",
             "content": "sha256:26a7d945c0f726ac2f1d7962e21427c1ffb92c9e1fc2916dfb048a24cddf58d4",
             "locator": {
-              "end": 316,
+              "end": 323,
               "kind": "line_range",
-              "start": 308
+              "start": 315
             }
           },
           "kind": "code"
@@ -1540,12 +1576,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0ace720dda858a7f68a249b7fe9e3501b85f088b",
+            "blob": "84a9c7a8a48ea7d1ffbe5362002e6560d1c3eda4",
             "content": "sha256:9ba040bbab96632037f13972f6f76cf3c3ca4275e5f6c10c7e0f064d53b94b91",
             "locator": {
-              "end": 316,
+              "end": 323,
               "kind": "line_range",
-              "start": 312
+              "start": 319
             }
           },
           "kind": "code"
@@ -1587,6 +1623,36 @@
               "end": 140,
               "kind": "line_range",
               "start": 65
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "50": {
+      "note": "compose_review attaches recorded meaning effects from the candidate index already held by its resolution.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "84a9c7a8a48ea7d1ffbe5362002e6560d1c3eda4",
+            "content": "sha256:cc7cdbefcd61af3efa33d2b215c1b1ff66469e5f567067e7cd0e7498f1d674ee",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "51": {
+      "note": "The complete read resolves the bound candidate once, collects owner records and composes over that resolution. Catalogue and subject routes use that same bound pair and the public source inventory; there is no stored composed answer or caller-chosen memory path. Current converted memory comes from the two derived Git-tree indexes; canonical dataset constants and review-matrix construction are retired. The input recheck precedes the later family/applicability and meaning projection reads, so this module does not promise a last-after-every-read recheck. compose_review attaches recorded meaning effects from the candidate index already held by its resolution. _meaning_subjects selects the addressed invariant/family plus returned family/member identities on both sides and deduplicates exact record/kind pairs. A roster continuation therefore carries its returned members’ own steps; a source/path selector invents no knowledge record. The before index is only an identity fallback for retired or after-absent UUIDs. History is read from the after tree exclusively, with no extra route, candidate resolution or wait for the leaf-wide worklist.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "84a9c7a8a48ea7d1ffbe5362002e6560d1c3eda4",
+            "content": "sha256:cc7cdbefcd61af3efa33d2b215c1b1ff66469e5f567067e7cd0e7498f1d674ee",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -1657,7 +1723,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0ace720dda858a7f68a249b7fe9e3501b85f088b",
+            "blob": "84a9c7a8a48ea7d1ffbe5362002e6560d1c3eda4",
             "content": "sha256:cad473d9553028ef6f4d80aafcf02c0cb51d04ce26812204b6d80788ed0fe751",
             "locator": {
               "kind": "symbol",

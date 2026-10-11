@@ -5,7 +5,7 @@
     ],
     "justification": "Outline, badges, views, traversal and filter only together make the tree navigable: an outline without one-line rows is unreadable, badges without the Changed view hide changes, and traversal without kept rows loses the walk. No member alone delivers finding one's way."
   },
-  "guarantee": "The reviewer's sidebar is a navigation tree over the comparison outline: one line per family and invariant with one change badge, the Changed view showing what the leaf changed with the whole catalogue one switch away, nothing behind a disclosure, rows selected/traversed/filtered without ever removing a walked row, and every text, reason and record living in the main page.",
+  "guarantee": "The reviewer's sidebar is a navigation tree over the comparison outline: one line per family and invariant with one change badge and an eligible record’s compact recorded-effect sequence, the Changed view showing what the leaf changed with the whole catalogue one switch away, nothing behind a disclosure, rows selected/traversed/filtered without ever removing a walked row, and full texts, reasons and record-step details living in the main page. The outline badge and reading block display the same owner-recorded judgments in attempt order, without inferring a label or net effect.",
   "id": "FAM-A3YKR5",
   "members": [
     "INV-S44D2D",
@@ -20,7 +20,8 @@
     "INV-777108",
     "INV-Z2XTN1",
     "INV-AY7A8V",
-    "INV-CZVMX3"
+    "INV-CZVMX3",
+    "INV-76C676"
   ],
   "origin": {
     "handoff": {
@@ -30,11 +31,12 @@
     "leaf": "260928-MIK-L86",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "routes": [
     "dashboard/src/panels/review",
     "dashboard/src/data",
-    "mcp/src/agents_remember/application"
+    "mcp/src/agents_remember/application",
+    "mcp/src/agents_remember/models/knowledge"
   ],
   "schema": "ar-family/v1",
   "status": "proposed",

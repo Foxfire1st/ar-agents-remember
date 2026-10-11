@@ -3,7 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "7e8b489aa40c0446047743da29ba664e93a28402",
+        "blob": "32356a41b7d7fa401b64b90c8acadf53e35bcebb",
+        "content": "sha256:ce31c936c3b3c57d22b4a522e6d3379f06dd85d802bf16b677ae4681564b0df6",
+        "locator": {
+          "kind": "symbol",
+          "name": "ItemLine"
+        }
+      },
+      "id": "RLZ-3BAY7N",
+      "invariant": "INV-76C676",
+      "origin": {
+        "handoffEntry": "L43-C-recorded-effect-consumer-closures",
+        "leaf": "260928-MIK-L43"
+      },
+      "rationale": "The existing item line prints the delivered governing row effect after its disposition rather than fetching or synthesizing historical steps.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "32356a41b7d7fa401b64b90c8acadf53e35bcebb",
         "content": "sha256:0f7cc9ff6ccc6bb302ee5f060c61e6cd8bb4b05eca5fc67ac52269f941b5fe57",
         "locator": {
           "kind": "symbol",
@@ -21,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "7e8b489aa40c0446047743da29ba664e93a28402",
+        "blob": "32356a41b7d7fa401b64b90c8acadf53e35bcebb",
         "content": "sha256:4f5da64fc090439fd29f3356214a220f97ffc377e6c7496e0af78c42fa24ef30",
         "locator": {
           "kind": "symbol",
@@ -39,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "7e8b489aa40c0446047743da29ba664e93a28402",
+        "blob": "32356a41b7d7fa401b64b90c8acadf53e35bcebb",
         "content": "sha256:6530a087d633c779ef1f914dc3c71602a9703a1e17bcb5ff479566155f3e60a1",
         "locator": {
           "kind": "symbol",
@@ -57,7 +75,25 @@
     },
     {
       "anchor": {
-        "blob": "7e8b489aa40c0446047743da29ba664e93a28402",
+        "blob": "32356a41b7d7fa401b64b90c8acadf53e35bcebb",
+        "content": "sha256:d5ca192c0df4fe807649d9d3a6c3789826ff211e88c3c26d6918acf1dfc6a958",
+        "locator": {
+          "kind": "symbol",
+          "name": "rowEffect"
+        }
+      },
+      "id": "RLZ-P6MCM7",
+      "invariant": "INV-76C676",
+      "origin": {
+        "handoffEntry": "L43-C-recorded-effect-propagation",
+        "leaf": "260928-MIK-L43"
+      },
+      "rationale": "The governing row prints its delivered recorded effect or the historical omission label without fetching earlier attempts.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "32356a41b7d7fa401b64b90c8acadf53e35bcebb",
         "content": "sha256:f5a77e73e62df9cb8bc6a88da904d8c7f6fbe28e5f3dc4be7d1ed0e047ef355e",
         "locator": {
           "kind": "symbol",
@@ -213,7 +249,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7e8b489aa40c0446047743da29ba664e93a28402",
+            "blob": "32356a41b7d7fa401b64b90c8acadf53e35bcebb",
             "content": "sha256:f5a77e73e62df9cb8bc6a88da904d8c7f6fbe28e5f3dc4be7d1ed0e047ef355e",
             "locator": {
               "kind": "symbol",
@@ -229,7 +265,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7e8b489aa40c0446047743da29ba664e93a28402",
+            "blob": "32356a41b7d7fa401b64b90c8acadf53e35bcebb",
             "content": "sha256:f2cea9f8906c8a1e3bead7947ab68ff9e226caacb38143b1aad019ec36330067",
             "locator": {
               "kind": "symbol",
@@ -240,12 +276,12 @@
         },
         {
           "anchor": {
-            "blob": "7e8b489aa40c0446047743da29ba664e93a28402",
+            "blob": "32356a41b7d7fa401b64b90c8acadf53e35bcebb",
             "content": "sha256:b14f65c5cac21efd5c74ff9d97a7f9f6490d630c2c3918bf472c1f85b536dc6c",
             "locator": {
-              "end": 308,
+              "end": 319,
               "kind": "line_range",
-              "start": 290
+              "start": 301
             }
           },
           "kind": "code"
@@ -257,7 +293,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7e8b489aa40c0446047743da29ba664e93a28402",
+            "blob": "32356a41b7d7fa401b64b90c8acadf53e35bcebb",
             "content": "sha256:0f7cc9ff6ccc6bb302ee5f060c61e6cd8bb4b05eca5fc67ac52269f941b5fe57",
             "locator": {
               "kind": "symbol",
@@ -273,7 +309,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7e8b489aa40c0446047743da29ba664e93a28402",
+            "blob": "32356a41b7d7fa401b64b90c8acadf53e35bcebb",
             "content": "sha256:614debd5277b05b143801f0df215693fef7d12e663368c535f299c4588655765",
             "locator": {
               "kind": "symbol",
@@ -284,12 +320,12 @@
         },
         {
           "anchor": {
-            "blob": "7e8b489aa40c0446047743da29ba664e93a28402",
+            "blob": "32356a41b7d7fa401b64b90c8acadf53e35bcebb",
             "content": "sha256:14ad380db137a1e86893167502fdc75866dceaf954cf97d378a712a0356f3ecf",
             "locator": {
-              "end": 343,
+              "end": 354,
               "kind": "line_range",
-              "start": 325
+              "start": 336
             }
           },
           "kind": "code"
@@ -301,7 +337,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7e8b489aa40c0446047743da29ba664e93a28402",
+            "blob": "32356a41b7d7fa401b64b90c8acadf53e35bcebb",
             "content": "sha256:6530a087d633c779ef1f914dc3c71602a9703a1e17bcb5ff479566155f3e60a1",
             "locator": {
               "kind": "symbol",
@@ -312,12 +348,12 @@
         },
         {
           "anchor": {
-            "blob": "7e8b489aa40c0446047743da29ba664e93a28402",
+            "blob": "32356a41b7d7fa401b64b90c8acadf53e35bcebb",
             "content": "sha256:d0129fdd6aa878908c87ea94167fbd8675a42ff6f6a03b66da191b3db34ee738",
             "locator": {
-              "end": 434,
+              "end": 445,
               "kind": "line_range",
-              "start": 416
+              "start": 427
             }
           },
           "kind": "code"
@@ -329,7 +365,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7e8b489aa40c0446047743da29ba664e93a28402",
+            "blob": "32356a41b7d7fa401b64b90c8acadf53e35bcebb",
             "content": "sha256:4f5da64fc090439fd29f3356214a220f97ffc377e6c7496e0af78c42fa24ef30",
             "locator": {
               "kind": "symbol",
@@ -340,12 +376,40 @@
         },
         {
           "anchor": {
-            "blob": "7e8b489aa40c0446047743da29ba664e93a28402",
+            "blob": "32356a41b7d7fa401b64b90c8acadf53e35bcebb",
             "content": "sha256:a835b7aa06e37b49cd2e84345d3358a64a9c2045748aaa269fdf0ffe46bee980",
             "locator": {
-              "end": 455,
+              "end": 466,
               "kind": "line_range",
-              "start": 437
+              "start": 448
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "29": {
+      "note": "ItemLine prints the governing history row’s recorded effect after its disposition, reading the existing row document already delivered by the leaf-wide view.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "32356a41b7d7fa401b64b90c8acadf53e35bcebb",
+            "content": "sha256:ce31c936c3b3c57d22b4a522e6d3379f06dd85d802bf16b677ae4681564b0df6",
+            "locator": {
+              "kind": "symbol",
+              "name": "ItemLine"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "32356a41b7d7fa401b64b90c8acadf53e35bcebb",
+            "content": "sha256:27d35c45363cd40d6924653cadc67ede3c8dbe37526286d76538eddbe4482d59",
+            "locator": {
+              "end": 127,
+              "kind": "line_range",
+              "start": 79
             }
           },
           "kind": "code"

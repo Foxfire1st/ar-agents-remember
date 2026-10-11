@@ -13,6 +13,12 @@ knowledge-file patches. Missing, incomplete, unbound and unavailable measurement
 The leaf's worklist as its own open view, plus the worklist items about the selected record under a subject's review. The view reports recorded facts one line per item in open groups, with status, currentness, gate linkage and file lines that open the change-set page. It lists no knowledge file and draws no patch; identifiers close into one list per group.
 ## Code Commentary
 
+### Recorded reviewer judgments
+
+ItemLine prints the governing history row’s recorded effect after its disposition, reading the existing row document already delivered by the leaf-wide view. A changed row lacking an effect says effect not recorded; it does not infer an effect from its reason or family members. Earlier attempts belong to the separate reading-area recorded-step sequence: this worklist still names only the row that answers the item.
+
+- ItemLine prints the governing history row’s recorded effect after its disposition, reading the existing row document already delivered by the leaf-wide view. [29]
+
 ### Read and measurement states
 
 `ReadNotice` renders loading, not-converted, unavailable/recovery and fallback-unavailable states as open

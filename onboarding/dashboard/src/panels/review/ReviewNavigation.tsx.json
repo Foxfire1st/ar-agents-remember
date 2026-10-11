@@ -39,10 +39,11 @@
     {
       "anchor": {
         "blob": "1d2ce3087885774bc27b08dba49bdac96fcaa15a",
-        "content": "sha256:8d88230fc9eb29adac1bee57b1b2aa2e4da2a0a7abe027989c247357ee6a15d2",
+        "content": "sha256:14ea0fe41f1d3f751228d060bd99e91bdc30fd9e68e602ed69f0f000c58d0d66",
         "locator": {
-          "kind": "symbol",
-          "name": "ReviewNavigation"
+          "end": 113,
+          "kind": "line_range",
+          "start": 64
         }
       },
       "id": "RLZ-F8W21K",

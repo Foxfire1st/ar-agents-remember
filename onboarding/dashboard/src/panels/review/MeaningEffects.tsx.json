@@ -1,0 +1,92 @@
+{
+  "path": "dashboard/src/panels/review/MeaningEffects.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "d4823fec6a353711bfef2b0c84cdc7da2285a007",
+        "content": "sha256:7c2ad02ec4dff7bcada58ec040f3782e2714666b05bb2a007d3e5bd6ceed6aca",
+        "locator": {
+          "kind": "symbol",
+          "name": "RecordedStepsBlock"
+        }
+      },
+      "id": "RLZ-69E9XV",
+      "invariant": "INV-76C676",
+      "origin": {
+        "handoffEntry": "MIK-R43@v2",
+        "leaf": "260928-MIK-L43"
+      },
+      "rationale": "This component displays the recorded sequence and explanations, rather than inferred or net labels.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "d4823fec6a353711bfef2b0c84cdc7da2285a007",
+        "content": "sha256:9a227d032fcddc360e00fcebc2f3be7a03c28679194268fbf307e8fdaaee262c",
+        "locator": {
+          "kind": "symbol",
+          "name": "MeaningFieldGuard"
+        }
+      },
+      "id": "RLZ-HPZC5W",
+      "invariant": "INV-76C676",
+      "origin": {
+        "handoffEntry": "L43-C-recorded-effect-propagation",
+        "leaf": "260928-MIK-L43"
+      },
+      "rationale": "The no-subject/source-only branch rejects a missing current field but admits a present empty collection.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Badge text preserves the sequence while abbreviating long step lists.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d4823fec6a353711bfef2b0c84cdc7da2285a007",
+            "content": "sha256:f6d23ba3bd6f56978cdee6e3c7ccacdfe36e1cf2ff4ee0e708f38dd520591a28",
+            "locator": {
+              "kind": "symbol",
+              "name": "meaningBadgeText"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The complete step block distinguishes recorded steps, readable absence and unavailable reasons.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d4823fec6a353711bfef2b0c84cdc7da2285a007",
+            "content": "sha256:7c2ad02ec4dff7bcada58ec040f3782e2714666b05bb2a007d3e5bd6ceed6aca",
+            "locator": {
+              "kind": "symbol",
+              "name": "RecordedStepsBlock"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Unselected branches reject a missing required field without rejecting an empty one.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d4823fec6a353711bfef2b0c84cdc7da2285a007",
+            "content": "sha256:9a227d032fcddc360e00fcebc2f3be7a03c28679194268fbf307e8fdaaee262c",
+            "locator": {
+              "kind": "symbol",
+              "name": "MeaningFieldGuard"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

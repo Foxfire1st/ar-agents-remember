@@ -6,6 +6,26 @@
 
 ## Purpose
 
+The compact tree consumes the catalogue outline and retained walk/view state, not family guarantee/member statement blocks. One primary change-kind badge preserves existing intent/code/membership precedence and real-change traversal facts; the separately permitted recorded-effect sequence adds no grouping weight, count or stop. Open rows stay one flex line with title ellipsis, the whole-title tooltip and kept-family tag where applicable. Changed/All preference, title/summary filtering, retained selections/walked families and arrow/j/k handling remain owned by the existing tree hooks. Its accessible name includes title, the change badge and eligible recorded labels; full steps/reasons live in the reading area.
+
+## Code Commentary
+
+### Outline navigation, not semantic roster content
+
+Recorded meaning labels are an additional compact badge only for added, removed or changed record rows with steps. rowMeaningBadge uses the row’s own outline answer; nodeBadges adds the label sequence to the accessible name without changing the primary change fact or traversal stop. More than three steps abbreviate first/ellipsis/last; complete steps stay in the reading area. none carries no badge. The navigation remains one line and contains no guarantee/statement block or per-row disclosure.
+
+- The compact tree consumes the catalogue outline and retained walk/view state, not family guarantee/member statement blocks. One primary change-kind badge preserves existing intent/code/membership precedence and real-change traversal facts; the separately permitted recorded-effect sequence adds no grouping weight, count or stop. Open rows stay one flex line with title ellipsis, the whole-title tooltip and kept-family tag where applicable. Changed/All preference, title/summary filtering, retained selections/walked families and arrow/j/k handling remain owned by the existing tree hooks. Its accessible name includes title, the change badge and eligible recorded labels; full steps/reasons live in the reading area. Recorded meaning labels are an additional compact badge only for added, removed or changed record rows with steps. rowMeaningBadge uses the row’s own outline answer; nodeBadges adds the label sequence to the accessible name without changing the primary change fact or traversal stop. More than three steps abbreviate first/ellipsis/last; complete steps stay in the reading area. none carries no badge. The navigation remains one line and contains no guarantee/statement block or per-row disclosure. [49]
+
+<details>
+<summary>Historical prior account (not the current contract)</summary>
+
+
+## Governing Overview
+
+[dashboard/src/panels route overview](../overview.md)
+
+## Purpose
+
 Present recorded families and invariants as compact one-line navigation rows from the comparison's
 catalogue outline. Full authored guarantees, statements, membership facts and roster continuation belong
 to the selected subject's reading area, not this sidebar. Walked families retain their explicit kept
@@ -13,6 +33,12 @@ context; Changed/All controls visibility without making partial semantic rosters
 
 - Rows come from the catalogue outline (`outlineGroups`); without an admitted outline the catalogue entries are listed without badges.
 ## Code Commentary
+
+### Recorded reviewer judgments
+
+Recorded meaning labels are an additional compact badge only for added, removed or changed record rows with steps. rowMeaningBadge uses the row’s own outline answer; nodeBadges adds the label sequence to the accessible name without changing the primary change fact or traversal stop. More than three steps abbreviate first/ellipsis/last; complete steps stay in the reading area. none carries no badge. The navigation remains one line and contains no guarantee/statement block or per-row disclosure.
+
+- Recorded meaning labels are an additional compact badge only for added, removed or changed record rows with steps. [48]
 
 ### The component
 
@@ -27,7 +53,7 @@ status to shown identity/badge rows. A query filters row identifiers/titles, not
 
 ### A family and its members
 
-`OutlineNode` renders a button with one title, `OutlineChangeBadge`, and optional kept tag. It supplies
+`OutlineNode` renders a button with one title, `OutlineChangeBadge`, an eligible recorded-effect badge, and optional kept tag. It supplies
 subject kind/id, family, revision, occurrence and primary-change attributes, `aria-current`, title+badge
 accessible name and a kept-context description. An aggregate `N changed` family badge is marked unchanged
 for traversal: its changed member, not an unchanged family record, is the real-change stop.
@@ -78,7 +104,7 @@ It does not promise that Changed view displays every unchanged sibling's full te
 - A partial page never justifies a claim about the whole snapshot: the roster lines state returned, total and remaining counts, and missing content is named.
 - A roster continuation comes only from the cursor the family side's own page published.
 
-- `OutlineNode` draws one row button (`data-tree-node` of `family` or `member`) with the title, an `OutlineChangeBadge` and, for kept families, the `KeptTag`; the aggregate `N changed` family badge is marked `unchanged` for traversal so it points at the member, not the unchanged family record. `treeArrow` moves focus with the arrow keys within the list.
+- `OutlineNode` draws one row button (`data-tree-node` of `family` or `member`) with the title, an `OutlineChangeBadge`, the eligible recorded-effect badge and, for kept families, the `KeptTag`; the aggregate `N changed` family badge is marked `unchanged` for traversal so it points at the member, not the unchanged family record. `treeArrow` moves focus with the arrow keys within the list.
 - `useTreeRows` resolves `useTreeOrder` and the persisted `useTreeView` preference. With an admitted outline it honors Changed or All; Changed is the initial preference, not forced on every admission. Loading retains that preference, while an unavailable outline resolves to All with the switch disabled. `shownGroup` keeps selected rows and walked families visible and filters titles/summaries; `noChange` is stated only for an available outline in Changed with no real change.
 - Traversal runs over the shown outline through `useChangeTraversal`, keyed by `treeRowsKey` (order, view and row badges), so the status is dropped when the shown rows change.
 ## Evidence
@@ -101,3 +127,5 @@ It does not promise that Changed view displays every unchanged sibling's full te
 - Selection matching for subjects and family selections [45]
 - View filtering that keeps selection and walked rows [46]
 - Traversal keyed to the shown rows [47]
+
+</details>

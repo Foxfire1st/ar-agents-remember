@@ -1,0 +1,22 @@
+{
+  "path": "dashboard/src/panels/review/ReviewSurface.f04.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The mounted real-ingest fixture shows the sequence in both outline badge and reading block.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b6b9480e549e28cc2260452eb165c8bc72e98a50",
+            "content": "sha256:6b4e6aef45c4b6116395736bc8a71f54251655a3a3a2876ae7cba550dcb927f5",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

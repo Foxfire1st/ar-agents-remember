@@ -6,6 +6,26 @@
 
 ## Purpose
 
+These helpers hold navigation grouping, ordering, primary badge precedence, counts and member change facts as pure projections of the delivered outline and kept family context. Existing semantic roster ordering is separate from compact sidebar ordering. Recorded meaning is transported as the own row’s typed state/labels, never a new CHANGE_KIND, sorting weight, count or computed overall effect. An older catalogue-only listing without an admitted outline remains unbadged.
+
+## Code Commentary
+
+### Pure projection of delivered outline facts
+
+OutlineRow also carries the delivered meaning state and ordered labels. memberMeaning takes the exact member’s answer from its family outline occurrence, falling back to the invariant outline entry; it never assigns the family’s labels to a member. This transports recorded judgments beside existing primary change/ordering facts and neither reclassifies change kinds nor computes a net effect.
+
+- These helpers hold navigation grouping, ordering, primary badge precedence, counts and member change facts as pure projections of the delivered outline and kept family context. Existing semantic roster ordering is separate from compact sidebar ordering. Recorded meaning is transported as the own row’s typed state/labels, never a new CHANGE_KIND, sorting weight, count or computed overall effect. An older catalogue-only listing without an admitted outline remains unbadged. OutlineRow also carries the delivered meaning state and ordered labels. memberMeaning takes the exact member’s answer from its family outline occurrence, falling back to the invariant outline entry; it never assigns the family’s labels to a member. This transports recorded judgments beside existing primary change/ordering facts and neither reclassifies change kinds nor computes a net effect. [17]
+
+<details>
+<summary>Historical prior account (not the current contract)</summary>
+
+
+## Governing Overview
+
+[dashboard/src/panels route overview](../overview.md)
+
+## Purpose
+
 **The family tree's triage rules as pure functions over the delivered change facts (MIK-R33, ICR-R32@v1 rules 2 to 5).**
 Weights, labels and meanings; a family's counts, returned and total, partial and scoped state and weight; the breakdown
 text; family and member order; and the union of two deliveries across an admitted roster walk. Nothing here decides a
@@ -13,6 +33,12 @@ fact; an entry without `change_kinds` (a dataset review) is left exactly as the 
 
 Hold the family tree's triage rules as pure functions over the delivered facts: the outline the tree draws, with its badges, order, counts and opening row, plus the per-member change facts the main page states. Nothing here decides a fact; an entry without `change_kinds` (a dataset review) is left exactly as the landed tree shows it.
 ## Code Commentary
+
+### Recorded reviewer judgments
+
+OutlineRow also carries the delivered meaning state and ordered labels. memberMeaning takes the exact member’s answer from its family outline occurrence, falling back to the invariant outline entry; it never assigns the family’s labels to a member. This transports recorded judgments beside existing primary change/ordering facts and neither reclassifies change kinds nor computes a net effect.
+
+- OutlineRow also carries the delivered meaning state and ordered labels. [16]
 
 ### Logic
 
@@ -75,3 +101,5 @@ No cross-repo boundary is crossed by this file.
 - Triage sort weights for outline badges [13]
 - Opening row on the first real change [14]
 - Summary counts of changed families and invariants [15]
+
+</details>

@@ -6,7 +6,7 @@ The current incoming catalogs add explicit consumer registrations for held queue
 
 This section supersedes contrary earlier prose only for these changed seams; retained evidence and useful unaffected accounts are not deleted or promoted to new proof.
 
-- Current source-declared consumer and artifact registrations carry ownership/reachability, not execution evidence. [265]
+- Historical pre-L43 catalog witness: source-declared ownership and reachability are not execution evidence. This retained witness does not establish the current portable L37 fixture registrations. [265]
 
 
 ## Governing Overview
@@ -29,6 +29,12 @@ the file.
 The consumers of the `mcp/tests/curator_coherence_test_support.py` artifact include `test_abandoned_series_closeout.py`, `test_master_retirement.py` and `test_standalone_master_retirement.py`, and the consumer list of the `mcp/tests/fixtures/repository_profiles/node/package-lock.json` artifact includes `test_master_retirement.py` and `test_standalone_master_retirement.py`. No governed contract or artifact is added.
 
 ## Code Commentary
+
+### Recorded reviewer judgments
+
+The portable L37 attempt-1 and attempt-2 history fixtures are separate permanent fixture artifacts for the same recorded-meaning regression consumer. Their retained raw row bytes are not rewritten by canonical catalog order. The catalog also lists actual shared test support consumed by that module. These registrations declare evidence ownership and replacement, never that a test invocation, writer or closeout ran.
+
+- The portable L37 attempt-1 and attempt-2 history fixtures are separate permanent fixture artifacts for the same recorded-meaning regression consumer. [266]
 
 The converted-onboarding bootstrap test is a consumer of the two existing artifacts its imports reach. No new artifact or contract is introduced by that registration, and it remains accounting rather than execution evidence.
 

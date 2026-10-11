@@ -1,0 +1,22 @@
+{
+  "path": "dashboard/src/panels/review/ReviewSurface.meaning.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The mounted suite exercises badges, step blocks, keyboard activation and failure/empty branches.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "059951e4e996f668bfdbec7e4bf70bb1c6dd7b29",
+            "content": "sha256:d419f6aa5e0c2191f15f98f21ec800b27c496d1f5e6b8daa36e3a863adcc4423",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,210 @@
+{
+  "path": "mcp/tests/test_review_meaning_effects.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "d1b4d41c144f1f5d52f74d05f5169feb22797d61",
+        "content": "sha256:02d022c6e60c6fd9474d9afd392ffdf647b966f73a9ecaec14c1795c482d1aff",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_explanations_cover_the_vocabulary_on_both_sides_of_the_wire"
+        }
+      },
+      "facet": "The backend explanation order equals ADMITTED_EFFECT_LABELS and each label/sentence appears in the component from this checkout.",
+      "id": "PRF-044H6R",
+      "invariant": "INV-76C676",
+      "origin": {
+        "handoffEntry": "MIK-R43@v2",
+        "leaf": "260928-MIK-L43"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "d1b4d41c144f1f5d52f74d05f5169feb22797d61",
+        "content": "sha256:16ae2f7ece06c6c44132e113d42a8df0d2a49b2ac9f54f149a94e1131ad99603",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_roster_continuation_carries_the_steps_of_the_members_it_returns"
+        }
+      },
+      "facet": "Across composed family pages, the test covers every fixture member identity, restricts covered identities to members returned on that page, and checks the aggregate expected non-null effect-label multiset; it does not assert each member’s expected label sequence.",
+      "id": "PRF-5ZQYM4",
+      "invariant": "INV-76C676",
+      "origin": {
+        "handoffEntry": "MIK-R43@v2",
+        "leaf": "260928-MIK-L43"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "d1b4d41c144f1f5d52f74d05f5169feb22797d61",
+        "content": "sha256:ef9ee181d47d8b69668bc800215d7f4be5ccb66963530dca70fd6ce5e45de5ec",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_retired_selection_reads_its_steps_through_compose"
+        }
+      },
+      "facet": "A retired UUID selection retains its after-history weaken, clarify and retire sequence and matches the outline.",
+      "id": "PRF-9K17ND",
+      "invariant": "INV-76C676",
+      "origin": {
+        "handoffEntry": "MIK-R43@v2",
+        "leaf": "260928-MIK-L43"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "d1b4d41c144f1f5d52f74d05f5169feb22797d61",
+        "content": "sha256:7a1cd131c7b74ca30beaeb4abc4e7b52470e2a4ba00bf9bd02ecad4499d3fec0",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_family_steps_carry_the_rows_own_revision"
+        }
+      },
+      "facet": "The family answer retains its own revision/effect and an old row with both facts missing.",
+      "id": "PRF-E7MCVR",
+      "invariant": "INV-76C676",
+      "origin": {
+        "handoffEntry": "MIK-R43@v2",
+        "leaf": "260928-MIK-L43"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "d1b4d41c144f1f5d52f74d05f5169feb22797d61",
+        "content": "sha256:8f81b93c7acd385755d5035ef7d19bc19128a0680f65c7e12afc8bf17d391782",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_another_owners_row_is_never_a_step"
+        }
+      },
+      "facet": "The selected answer excludes the other owner’s row and replace label from its steps.",
+      "id": "PRF-NBWHMJ",
+      "invariant": "INV-76C676",
+      "origin": {
+        "handoffEntry": "MIK-R43@v2",
+        "leaf": "260928-MIK-L43"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "d1b4d41c144f1f5d52f74d05f5169feb22797d61",
+        "content": "sha256:106ec2ea5627b0986006186ab0f5af541b9b4f3c18892f47d30f7f056ef10831",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_outline_labels_equal_the_review_steps_for_a_read_family"
+        }
+      },
+      "facet": "The outline’s family labels equal the selected answer’s recorded steps including the old unrecorded family boundary.",
+      "id": "PRF-RC7VHT",
+      "invariant": "INV-76C676",
+      "origin": {
+        "handoffEntry": "MIK-R43@v2",
+        "leaf": "260928-MIK-L43"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "d1b4d41c144f1f5d52f74d05f5169feb22797d61",
+        "content": "sha256:84e53799262ceb615beb921aedf2ddfb3c8be5d6980f34f7b66ce29788d8cfd8",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_half_recorded_family_row_makes_the_display_unavailable"
+        }
+      },
+      "facet": "The projection over an index containing a family row with revision only reports unavailable naming that row.",
+      "id": "PRF-RQ2Q1E",
+      "invariant": "INV-76C676",
+      "origin": {
+        "handoffEntry": "MIK-R43@v2",
+        "leaf": "260928-MIK-L43"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "d1b4d41c144f1f5d52f74d05f5169feb22797d61",
+        "content": "sha256:ffe1c26347505159de76f5a9d6a6334be6553c9ecb3feb9b34ec4d77d9560806",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_attempts_read_in_attempt_order_not_row_or_revision_order"
+        }
+      },
+      "facet": "The composed selected answer reports attempts 1, 2 and 10 in path-attempt order with their recorded labels/revisions and row IDs.",
+      "id": "PRF-TWWF2D",
+      "invariant": "INV-76C676",
+      "origin": {
+        "handoffEntry": "MIK-R43@v2",
+        "leaf": "260928-MIK-L43"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "d1b4d41c144f1f5d52f74d05f5169feb22797d61",
+        "content": "sha256:e8aa8f433b807b318d4a5a87aab2522bc72a4a07368e713a14a05f7afc65131c",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_an_incomplete_index_is_unavailable_never_none"
+        }
+      },
+      "facet": "A composed answer over a partial after index reports unavailable with an incomplete reason, not readable absence.",
+      "id": "PRF-YCC2M5",
+      "invariant": "INV-76C676",
+      "origin": {
+        "handoffEntry": "MIK-R43@v2",
+        "leaf": "260928-MIK-L43"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The composed answer orders attempts numerically, including attempt ten.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d1b4d41c144f1f5d52f74d05f5169feb22797d61",
+            "content": "sha256:ffe1c26347505159de76f5a9d6a6334be6553c9ecb3feb9b34ec4d77d9560806",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_attempts_read_in_attempt_order_not_row_or_revision_order"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The retired selection retains its after-history sequence and outline equality.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d1b4d41c144f1f5d52f74d05f5169feb22797d61",
+            "content": "sha256:ef9ee181d47d8b69668bc800215d7f4be5ccb66963530dca70fd6ce5e45de5ec",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_retired_selection_reads_its_steps_through_compose"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The real historical sequences are portable checkout-owned fixtures.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d1b4d41c144f1f5d52f74d05f5169feb22797d61",
+            "content": "sha256:ad6b429f513176e7a60668cacc4c1d4ca3bc4428cefacdfcefe02564e68de3a4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_l37_sequences_from_the_real_history_files"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

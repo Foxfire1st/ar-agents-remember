@@ -1,0 +1,22 @@
+{
+  "path": "dashboard/src/panels/review/l43.invariant2.captured.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The captured body preserves its response state and comparison-bound facts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1a19b8d8968fddc7694f384ea4a65012e301e663",
+            "content": "sha256:e5d516f532b6cbec31b0fba1ef7d90460f0051f755a8b2d04953ee2a03bcc427",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

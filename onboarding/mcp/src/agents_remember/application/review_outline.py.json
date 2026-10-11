@@ -3,8 +3,26 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "9a96a4b59bc56d9286341e084c6afeeb5d7c8d27",
-        "content": "sha256:0a24d9025cb38ca864f94e945da678b160952d8e1a5fae9b98b886be9bbfc02c",
+        "blob": "9790ab86669fb4b97d1d18c13f01c70c2244e1d2",
+        "content": "sha256:61781573d82387aa678b49c8428e4eafe2accf3e8be16cb31a328966414115fb",
+        "locator": {
+          "kind": "symbol",
+          "name": "_outline"
+        }
+      },
+      "id": "RLZ-AXYH3M",
+      "invariant": "INV-76C676",
+      "origin": {
+        "handoffEntry": "L43-C-recorded-effect-propagation",
+        "leaf": "260928-MIK-L43"
+      },
+      "rationale": "The outline attaches the shared projection’s labels to its own record and member rows before any family is read.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "9790ab86669fb4b97d1d18c13f01c70c2244e1d2",
+        "content": "sha256:2885f9ab4ca65d7dd09253160009d79b09b58c288a67f930e34e217f63b1ad28",
         "locator": {
           "kind": "symbol",
           "name": "read_review_outline"
@@ -18,6 +36,24 @@
       },
       "rationale": "It selects the two derived indexes and builds their ordered record union without a source blob or subject-review read.",
       "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "9790ab86669fb4b97d1d18c13f01c70c2244e1d2",
+        "content": "sha256:9d31d7549c067265eee22fdd7a459a4b53f785f2d20553e128e6683805b73925",
+        "locator": {
+          "kind": "symbol",
+          "name": "_meaning_subjects"
+        }
+      },
+      "id": "RLZ-SDGM4Z",
+      "invariant": "INV-76C676",
+      "origin": {
+        "handoffEntry": "L43-C-recorded-effect-consumer-closures",
+        "leaf": "260928-MIK-L43"
+      },
+      "rationale": "The outline population enumerates candidate records then baseline-only identities with exact kinds, including each listed member, for the shared owner-history projection.",
+      "role": "support"
     }
   ],
   "references": {
@@ -26,8 +62,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9a96a4b59bc56d9286341e084c6afeeb5d7c8d27",
-            "content": "sha256:0a24d9025cb38ca864f94e945da678b160952d8e1a5fae9b98b886be9bbfc02c",
+            "blob": "9790ab86669fb4b97d1d18c13f01c70c2244e1d2",
+            "content": "sha256:2885f9ab4ca65d7dd09253160009d79b09b58c288a67f930e34e217f63b1ad28",
             "locator": {
               "kind": "symbol",
               "name": "read_review_outline"
@@ -42,8 +78,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9a96a4b59bc56d9286341e084c6afeeb5d7c8d27",
-            "content": "sha256:5688b2148c4255ecb6182cb7e1e34f3867b65d8f10bb0a29455fccd59bb80cf6",
+            "blob": "9790ab86669fb4b97d1d18c13f01c70c2244e1d2",
+            "content": "sha256:61781573d82387aa678b49c8428e4eafe2accf3e8be16cb31a328966414115fb",
             "locator": {
               "kind": "symbol",
               "name": "_outline"
@@ -58,7 +94,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9a96a4b59bc56d9286341e084c6afeeb5d7c8d27",
+            "blob": "9790ab86669fb4b97d1d18c13f01c70c2244e1d2",
             "content": "sha256:8dbeaf070b96b042318ed1affd9e0c34fc76e38e35f75eea13acc6ea44a2a931",
             "locator": {
               "kind": "symbol",
@@ -74,11 +110,26 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9a96a4b59bc56d9286341e084c6afeeb5d7c8d27",
+            "blob": "9790ab86669fb4b97d1d18c13f01c70c2244e1d2",
             "content": "sha256:6758ee1138ef4e1f95e7e8c6b7d9df9569ab2227f682c1f74196e6769bd4bebe",
             "locator": {
               "kind": "symbol",
               "name": "_summary"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The same recorded-meaning projection reads the reviewed owner’s after-index history once for the outline population.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9790ab86669fb4b97d1d18c13f01c70c2244e1d2",
+            "content": "sha256:6c7b74c9fa29f5435bd8328cf45993b8dbe9ff0a23aa9f0cde57a44f78f69e6c",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"

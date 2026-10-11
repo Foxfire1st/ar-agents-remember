@@ -3,7 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "a25a1fcc8f4dc61d8fc2f05e79105414b62f67ae",
+        "blob": "9bcabc6569d7f2765d324912c0997f4e5f11dc6a",
+        "content": "sha256:ddfc89ee479d865ad3114e7d5190eece4970307e501098567c40873ecc89f7d8",
+        "locator": {
+          "kind": "symbol",
+          "name": "rowMeaningBadge"
+        }
+      },
+      "id": "RLZ-60GFP7",
+      "invariant": "INV-76C676",
+      "origin": {
+        "handoffEntry": "L43-C-recorded-effect-propagation",
+        "leaf": "260928-MIK-L43"
+      },
+      "rationale": "The eligible row’s own outline labels form its compact badge without changing primary change facts or traversal stops.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "9bcabc6569d7f2765d324912c0997f4e5f11dc6a",
         "content": "sha256:ecde36a9d2b369d6de5ccd44051c3e0d34696f39ff21c368c4e4900f28a40e09",
         "locator": {
           "kind": "symbol",
@@ -21,8 +39,8 @@
     },
     {
       "anchor": {
-        "blob": "a25a1fcc8f4dc61d8fc2f05e79105414b62f67ae",
-        "content": "sha256:7876a97f0dd831513c369c66ca6641b9a1bbabbc119b2a421af92455818ad326",
+        "blob": "9bcabc6569d7f2765d324912c0997f4e5f11dc6a",
+        "content": "sha256:0d1dcf40075f5e57cfe31da288a8d5da2ecc009c1f678c77f161959e87c5779a",
         "locator": {
           "kind": "symbol",
           "name": "OutlineNode"
@@ -39,8 +57,8 @@
     },
     {
       "anchor": {
-        "blob": "a25a1fcc8f4dc61d8fc2f05e79105414b62f67ae",
-        "content": "sha256:7876a97f0dd831513c369c66ca6641b9a1bbabbc119b2a421af92455818ad326",
+        "blob": "9bcabc6569d7f2765d324912c0997f4e5f11dc6a",
+        "content": "sha256:0d1dcf40075f5e57cfe31da288a8d5da2ecc009c1f678c77f161959e87c5779a",
         "locator": {
           "kind": "symbol",
           "name": "OutlineNode"
@@ -57,7 +75,25 @@
     },
     {
       "anchor": {
-        "blob": "a25a1fcc8f4dc61d8fc2f05e79105414b62f67ae",
+        "blob": "9bcabc6569d7f2765d324912c0997f4e5f11dc6a",
+        "content": "sha256:c04559207febe234ab664a796e1cb3ed346e9108a9a92bdc0f68f87f8ffedc42",
+        "locator": {
+          "kind": "symbol",
+          "name": "nodeBadges"
+        }
+      },
+      "id": "RLZ-K8M23Z",
+      "invariant": "INV-76C676",
+      "origin": {
+        "handoffEntry": "L43-C-recorded-effect-consumer-closures",
+        "leaf": "260928-MIK-L43"
+      },
+      "rationale": "The row accessible name includes the eligible own recorded-effect sequence while its primary-change traversal classification remains unchanged.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "9bcabc6569d7f2765d324912c0997f4e5f11dc6a",
         "content": "sha256:68e512f44797dfd0b31567f195ce6e02e1e117cb3d915897e31599e2b7071025",
         "locator": {
           "kind": "symbol",
@@ -75,7 +111,7 @@
     },
     {
       "anchor": {
-        "blob": "a25a1fcc8f4dc61d8fc2f05e79105414b62f67ae",
+        "blob": "9bcabc6569d7f2765d324912c0997f4e5f11dc6a",
         "content": "sha256:ecde36a9d2b369d6de5ccd44051c3e0d34696f39ff21c368c4e4900f28a40e09",
         "locator": {
           "kind": "symbol",
@@ -93,7 +129,7 @@
     },
     {
       "anchor": {
-        "blob": "a25a1fcc8f4dc61d8fc2f05e79105414b62f67ae",
+        "blob": "9bcabc6569d7f2765d324912c0997f4e5f11dc6a",
         "content": "sha256:ecde36a9d2b369d6de5ccd44051c3e0d34696f39ff21c368c4e4900f28a40e09",
         "locator": {
           "kind": "symbol",
@@ -111,7 +147,7 @@
     },
     {
       "anchor": {
-        "blob": "a25a1fcc8f4dc61d8fc2f05e79105414b62f67ae",
+        "blob": "9bcabc6569d7f2765d324912c0997f4e5f11dc6a",
         "content": "sha256:ecde36a9d2b369d6de5ccd44051c3e0d34696f39ff21c368c4e4900f28a40e09",
         "locator": {
           "kind": "symbol",
@@ -129,7 +165,7 @@
     },
     {
       "anchor": {
-        "blob": "a25a1fcc8f4dc61d8fc2f05e79105414b62f67ae",
+        "blob": "9bcabc6569d7f2765d324912c0997f4e5f11dc6a",
         "content": "sha256:0333052dac0303645f8625277c45768f4163d55bcbb1f745c4e684cfde134955",
         "locator": {
           "kind": "symbol",
@@ -151,7 +187,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a25a1fcc8f4dc61d8fc2f05e79105414b62f67ae",
+            "blob": "9bcabc6569d7f2765d324912c0997f4e5f11dc6a",
             "content": "sha256:68e512f44797dfd0b31567f195ce6e02e1e117cb3d915897e31599e2b7071025",
             "locator": {
               "kind": "symbol",
@@ -167,7 +203,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a25a1fcc8f4dc61d8fc2f05e79105414b62f67ae",
+            "blob": "9bcabc6569d7f2765d324912c0997f4e5f11dc6a",
             "content": "sha256:eefd1aa08a716e243c5687dfe8e3e6e36ad8ede0eec1a926f6e2a444b263890e",
             "locator": {
               "kind": "symbol",
@@ -183,7 +219,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a25a1fcc8f4dc61d8fc2f05e79105414b62f67ae",
+            "blob": "9bcabc6569d7f2765d324912c0997f4e5f11dc6a",
             "content": "sha256:0333052dac0303645f8625277c45768f4163d55bcbb1f745c4e684cfde134955",
             "locator": {
               "kind": "symbol",
@@ -199,7 +235,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a25a1fcc8f4dc61d8fc2f05e79105414b62f67ae",
+            "blob": "9bcabc6569d7f2765d324912c0997f4e5f11dc6a",
             "content": "sha256:3c9efbf2d9d606a17118f92df45cc5b55fdd56629d40f53c6bbb3bca91621a2e",
             "locator": {
               "kind": "symbol",
@@ -215,7 +251,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a25a1fcc8f4dc61d8fc2f05e79105414b62f67ae",
+            "blob": "9bcabc6569d7f2765d324912c0997f4e5f11dc6a",
             "content": "sha256:50319d40ad93d146cb9c1589211684b18c23802f60f9cc17dc8d836c7425f5a6",
             "locator": {
               "kind": "symbol",
@@ -248,7 +284,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a25a1fcc8f4dc61d8fc2f05e79105414b62f67ae",
+            "blob": "9bcabc6569d7f2765d324912c0997f4e5f11dc6a",
             "content": "sha256:ecde36a9d2b369d6de5ccd44051c3e0d34696f39ff21c368c4e4900f28a40e09",
             "locator": {
               "kind": "symbol",
@@ -264,7 +300,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a25a1fcc8f4dc61d8fc2f05e79105414b62f67ae",
+            "blob": "9bcabc6569d7f2765d324912c0997f4e5f11dc6a",
             "content": "sha256:8b532d664b9b58de51b506ae65c0c6d6f05c95d0683511096396eaeaece300a4",
             "locator": {
               "kind": "symbol",
@@ -296,7 +332,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a25a1fcc8f4dc61d8fc2f05e79105414b62f67ae",
+            "blob": "9bcabc6569d7f2765d324912c0997f4e5f11dc6a",
             "content": "sha256:c0544018e4d6477a283fa4e0ddb7ecde0b2b195dd294c02967193e24f4f7145e",
             "locator": {
               "kind": "symbol",
@@ -312,7 +348,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a25a1fcc8f4dc61d8fc2f05e79105414b62f67ae",
+            "blob": "9bcabc6569d7f2765d324912c0997f4e5f11dc6a",
             "content": "sha256:c330b9ae246c23542ef334d9fbb4e1a6500c10498b29c943848aac55b3b97811",
             "locator": {
               "kind": "symbol",
@@ -328,7 +364,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a25a1fcc8f4dc61d8fc2f05e79105414b62f67ae",
+            "blob": "9bcabc6569d7f2765d324912c0997f4e5f11dc6a",
             "content": "sha256:f3bf0dbd57b18703ca5eac0e327530bb84da4ce9ae185328b3aaf2a9dc8a2d75",
             "locator": {
               "kind": "symbol",
@@ -344,12 +380,42 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a25a1fcc8f4dc61d8fc2f05e79105414b62f67ae",
+            "blob": "9bcabc6569d7f2765d324912c0997f4e5f11dc6a",
             "content": "sha256:a0c9e6be10161e3832e834cc7ce3d2ceefce34b7e1e44d43c8bdece194c2da0d",
             "locator": {
-              "end": 441,
+              "end": 465,
               "kind": "line_range",
-              "start": 436
+              "start": 460
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "48": {
+      "note": "Recorded meaning labels are an additional compact badge only for added, removed or changed record rows with steps.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9bcabc6569d7f2765d324912c0997f4e5f11dc6a",
+            "content": "sha256:8ded825875bfedd801447b50e987fc206df7354c9c481272427c68837586bacd",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "49": {
+      "note": "The compact tree consumes the catalogue outline and retained walk/view state, not family guarantee/member statement blocks. One primary change-kind badge preserves existing intent/code/membership precedence and real-change traversal facts; the separately permitted recorded-effect sequence adds no grouping weight, count or stop. Open rows stay one flex line with title ellipsis, the whole-title tooltip and kept-family tag where applicable. Changed/All preference, title/summary filtering, retained selections/walked families and arrow/j/k handling remain owned by the existing tree hooks. Its accessible name includes title, the change badge and eligible recorded labels; full steps/reasons live in the reading area. Recorded meaning labels are an additional compact badge only for added, removed or changed record rows with steps. rowMeaningBadge uses the row’s own outline answer; nodeBadges adds the label sequence to the accessible name without changing the primary change fact or traversal stop. More than three steps abbreviate first/ellipsis/last; complete steps stay in the reading area. none carries no badge. The navigation remains one line and contains no guarantee/statement block or per-row disclosure.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9bcabc6569d7f2765d324912c0997f4e5f11dc6a",
+            "content": "sha256:8ded825875bfedd801447b50e987fc206df7354c9c481272427c68837586bacd",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"

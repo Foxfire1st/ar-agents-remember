@@ -1,0 +1,22 @@
+{
+  "path": "dashboard/src/panels/review/l43r2.capture-provenance.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The provenance identifies its declared capture scope, producer and normalization.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "68b1e6a0805b7e1c017e7bda9756cbc5b589f209",
+            "content": "sha256:5ecf418f722ea41ed4c002f6f3b00fe9825aebcb6c0e083438fd88dfe4c44cda",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

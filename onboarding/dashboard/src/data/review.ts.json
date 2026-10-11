@@ -3,7 +3,79 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "549d07c35309c25062a49eb856d3689a5a9c9b5f",
+        "blob": "c1c7c67ada2e84e90b5ac05efb33bdb19e6951a4",
+        "content": "sha256:0c210fde76a737b61d56d4e1f7d6a076440583bd52b1d601bc51233ed6d1801e",
+        "locator": {
+          "kind": "symbol",
+          "name": "RecordedMeaningStep"
+        }
+      },
+      "id": "RLZ-33M2NT",
+      "invariant": "INV-76C676",
+      "origin": {
+        "handoffEntry": "L43-C-recorded-effect-consumer-closures",
+        "leaf": "260928-MIK-L43"
+      },
+      "rationale": "RecordedMeaningStep is a wire mirror that carries the backend’s record-specific step/state facts to the existing consumer without deriving an effect.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "c1c7c67ada2e84e90b5ac05efb33bdb19e6951a4",
+        "content": "sha256:9bc70399bb3fa2000398f77e31afd915567eb6516e030d4eabe29e9e9bdfed2f",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReviewMeaningEffects"
+        }
+      },
+      "id": "RLZ-4Y71E7",
+      "invariant": "INV-76C676",
+      "origin": {
+        "handoffEntry": "L43-C-recorded-effect-consumer-closures",
+        "leaf": "260928-MIK-L43"
+      },
+      "rationale": "ReviewMeaningEffects is a wire mirror that carries the backend’s record-specific step/state facts to the existing consumer without deriving an effect.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "c1c7c67ada2e84e90b5ac05efb33bdb19e6951a4",
+        "content": "sha256:82ae7dcdff6d1f33e7366b41b208c46e8d27b667e8a65082e04d936eb7780b2f",
+        "locator": {
+          "kind": "symbol",
+          "name": "RecordMeaningEffects"
+        }
+      },
+      "id": "RLZ-77JGEF",
+      "invariant": "INV-76C676",
+      "origin": {
+        "handoffEntry": "L43-C-recorded-effect-consumer-closures",
+        "leaf": "260928-MIK-L43"
+      },
+      "rationale": "RecordMeaningEffects is a wire mirror that carries the backend’s record-specific step/state facts to the existing consumer without deriving an effect.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "c1c7c67ada2e84e90b5ac05efb33bdb19e6951a4",
+        "content": "sha256:49fd36b2c6f71f21c8300a3aa062d6bf34b95850175b783044fd3036b8581e2f",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReviewOutlineMember"
+        }
+      },
+      "id": "RLZ-BJQJ18",
+      "invariant": "INV-76C676",
+      "origin": {
+        "handoffEntry": "L43-C-recorded-effect-consumer-closures",
+        "leaf": "260928-MIK-L43"
+      },
+      "rationale": "ReviewOutlineMember is a wire mirror that carries the backend’s record-specific step/state facts to the existing consumer without deriving an effect.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "c1c7c67ada2e84e90b5ac05efb33bdb19e6951a4",
         "content": "sha256:9c2cd627690533a90529995dd7d1e0fd9081fbabb1e4735b55bc538d7f18b93e",
         "locator": {
           "kind": "symbol",
@@ -17,6 +89,78 @@
       },
       "rationale": "Is the dashboard client's mirror of the served expansion: it declares the required admission and admission_detail fields and widens status to accept 'unchanged', so the client type carries why each path was opened as the server states it.",
       "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "c1c7c67ada2e84e90b5ac05efb33bdb19e6951a4",
+        "content": "sha256:3a187c6f2eb85d992131cdabacc3e09ee6d40e3f302d54b0d1bcdc880173ba57",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReviewOutlineFamily"
+        }
+      },
+      "id": "RLZ-G2TZ3G",
+      "invariant": "INV-76C676",
+      "origin": {
+        "handoffEntry": "L43-C-recorded-effect-consumer-closures",
+        "leaf": "260928-MIK-L43"
+      },
+      "rationale": "ReviewOutlineFamily is a wire mirror that carries the backend’s record-specific step/state facts to the existing consumer without deriving an effect.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "c1c7c67ada2e84e90b5ac05efb33bdb19e6951a4",
+        "content": "sha256:fe6c1012a4dbd67ab19719cea2fd1b28d39c36dfc6fa845988714be1f881155f",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReviewOutlineInvariant"
+        }
+      },
+      "id": "RLZ-VE7NFW",
+      "invariant": "INV-76C676",
+      "origin": {
+        "handoffEntry": "L43-C-recorded-effect-consumer-closures",
+        "leaf": "260928-MIK-L43"
+      },
+      "rationale": "ReviewOutlineInvariant is a wire mirror that carries the backend’s record-specific step/state facts to the existing consumer without deriving an effect.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "c1c7c67ada2e84e90b5ac05efb33bdb19e6951a4",
+        "content": "sha256:7e4c0ce4bbe39799ee714e0b38f6c7de88371a6748771b95b10117f0b6c3f2c6",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReviewPayload"
+        }
+      },
+      "id": "RLZ-WP7N1H",
+      "invariant": "INV-76C676",
+      "origin": {
+        "handoffEntry": "L43-C-recorded-effect-propagation",
+        "leaf": "260928-MIK-L43"
+      },
+      "rationale": "The payload mirror carries recorded meaning facts through the existing browser response and preserves omission for the failure guard.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "c1c7c67ada2e84e90b5ac05efb33bdb19e6951a4",
+        "content": "sha256:06f8008c7a34e3547d8089d7ca56174b9bebf704d9f650e0d5b0a6c711e95202",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReviewOutlineMeaning"
+        }
+      },
+      "id": "RLZ-XKCXRS",
+      "invariant": "INV-76C676",
+      "origin": {
+        "handoffEntry": "L43-C-recorded-effect-consumer-closures",
+        "leaf": "260928-MIK-L43"
+      },
+      "rationale": "ReviewOutlineMeaning is a wire mirror that carries the backend’s record-specific step/state facts to the existing consumer without deriving an effect.",
+      "role": "propagation-persistence"
     }
   ],
   "references": {
@@ -37,7 +181,7 @@
         },
         {
           "anchor": {
-            "blob": "549d07c35309c25062a49eb856d3689a5a9c9b5f",
+            "blob": "c1c7c67ada2e84e90b5ac05efb33bdb19e6951a4",
             "content": "sha256:635f83e1846e80f411f85c2a423cd281c202bef22c70570e321628d2ed70182c",
             "locator": {
               "end": 9,
@@ -364,7 +508,7 @@
         },
         {
           "anchor": {
-            "blob": "549d07c35309c25062a49eb856d3689a5a9c9b5f",
+            "blob": "c1c7c67ada2e84e90b5ac05efb33bdb19e6951a4",
             "content": "sha256:8180393cd0c5609e7551fcae068f9d4a94397f6829ea5768ff30b8c98aec0f40",
             "locator": {
               "kind": "symbol",
@@ -407,7 +551,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "549d07c35309c25062a49eb856d3689a5a9c9b5f",
+            "blob": "c1c7c67ada2e84e90b5ac05efb33bdb19e6951a4",
             "content": "sha256:f070fdc46e2aa0deac025a209506dd142cf571ba112e0f7b285934b77abe1814",
             "locator": {
               "kind": "symbol",
@@ -423,7 +567,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "549d07c35309c25062a49eb856d3689a5a9c9b5f",
+            "blob": "c1c7c67ada2e84e90b5ac05efb33bdb19e6951a4",
             "content": "sha256:1131cbde963456cf786de68b7804f632e590f707bb59bb2517e3d5078a03e0f8",
             "locator": {
               "kind": "symbol",
@@ -434,7 +578,7 @@
         },
         {
           "anchor": {
-            "blob": "549d07c35309c25062a49eb856d3689a5a9c9b5f",
+            "blob": "c1c7c67ada2e84e90b5ac05efb33bdb19e6951a4",
             "content": "sha256:8b1b0bb41c61ffbd5b96cd5fe17d6659e9c5e71b55c9d36cc7b8bb63aff11504",
             "locator": {
               "kind": "symbol",
@@ -488,7 +632,7 @@
         },
         {
           "anchor": {
-            "blob": "549d07c35309c25062a49eb856d3689a5a9c9b5f",
+            "blob": "c1c7c67ada2e84e90b5ac05efb33bdb19e6951a4",
             "content": "sha256:d9771cfc764ef8c1ce8e4242749764030b0ea3450a75d95a9ff2120683266d53",
             "locator": {
               "kind": "symbol",
@@ -531,7 +675,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "549d07c35309c25062a49eb856d3689a5a9c9b5f",
+            "blob": "c1c7c67ada2e84e90b5ac05efb33bdb19e6951a4",
             "content": "sha256:cfc7befc6219e0e7c595423f21071ccb794f0c8622a50e6090535c95f0a6dcc7",
             "locator": {
               "kind": "symbol",
@@ -607,7 +751,7 @@
         },
         {
           "anchor": {
-            "blob": "549d07c35309c25062a49eb856d3689a5a9c9b5f",
+            "blob": "c1c7c67ada2e84e90b5ac05efb33bdb19e6951a4",
             "content": "sha256:75319702001c25b9863f52aece77d448458d187ed5fff17846d210bc1cde33d4",
             "locator": {
               "kind": "symbol",
@@ -836,12 +980,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "549d07c35309c25062a49eb856d3689a5a9c9b5f",
+            "blob": "c1c7c67ada2e84e90b5ac05efb33bdb19e6951a4",
             "content": "sha256:37b39a5a0556c9351695d5ea82ebf193692dac70b83a111ca6b69bfc2cbcf5de",
             "locator": {
-              "end": 704,
+              "end": 739,
               "kind": "line_range",
-              "start": 704
+              "start": 739
             }
           },
           "kind": "code"
@@ -853,12 +997,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "549d07c35309c25062a49eb856d3689a5a9c9b5f",
+            "blob": "c1c7c67ada2e84e90b5ac05efb33bdb19e6951a4",
             "content": "sha256:729f0d6e7108bd5e77178bd2f63b05aa806923c561d34d238fb75e033bbbd7b3",
             "locator": {
-              "end": 728,
+              "end": 775,
               "kind": "line_range",
-              "start": 723
+              "start": 770
             }
           },
           "kind": "code"
@@ -897,12 +1041,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "549d07c35309c25062a49eb856d3689a5a9c9b5f",
+            "blob": "c1c7c67ada2e84e90b5ac05efb33bdb19e6951a4",
             "content": "sha256:ea6310572913384447fa21d6b8371c80c7951a226c541bf2a412efe71527683e",
             "locator": {
-              "end": 731,
+              "end": 778,
               "kind": "line_range",
-              "start": 731
+              "start": 778
             }
           },
           "kind": "code"
@@ -914,12 +1058,42 @@
       "targets": [
         {
           "anchor": {
-            "blob": "549d07c35309c25062a49eb856d3689a5a9c9b5f",
+            "blob": "c1c7c67ada2e84e90b5ac05efb33bdb19e6951a4",
             "content": "sha256:6e5aed5f9e75c36249c3ac82fc41b73ad452b2e93138e25f06cab45c61f75fc2",
             "locator": {
-              "end": 761,
+              "end": 808,
               "kind": "line_range",
-              "start": 753
+              "start": 800
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "32": {
+      "note": "The mirrored recorded-meaning vocabulary separates steps, none and unavailable per addressed record.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c1c7c67ada2e84e90b5ac05efb33bdb19e6951a4",
+            "content": "sha256:8c9c34025ed20acee37538e90719ba45449db08fa37c427bd2fd99ceba9208d5",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "33": {
+      "note": "The client mirrors the public read-only reviewer answer across review.py, review_outline.py and review_meaning_effects.py and delegates same-origin decoding/failures to the shared review transport. Existing review, catalogue, source expansion, pagination and task-identity request ownership are unchanged; this module makes no store mutation and performs no runtime schema validation. family_context keeps its independent optional-context semantics, while meaning_effects is optional on the TypeScript wire solely so the presentation guard can reject a missing required-current-build field. Older catalogue captures without meaning labels remain unbadged, not measured none. The mirrored recorded-meaning vocabulary separates steps, none and unavailable per addressed record. The subject payload carries meaning_effects; it is optional in the browser type only to recognize an invalid older/missing-field response, not to turn omission into none. Outline rows carry their own state and ordered labels, independently of which family has been read. The wire field changes no transport route or store ownership.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c1c7c67ada2e84e90b5ac05efb33bdb19e6951a4",
+            "content": "sha256:8c9c34025ed20acee37538e90719ba45449db08fa37c427bd2fd99ceba9208d5",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -931,7 +1105,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "549d07c35309c25062a49eb856d3689a5a9c9b5f",
+            "blob": "c1c7c67ada2e84e90b5ac05efb33bdb19e6951a4",
             "content": "sha256:dfe9f255a9428d0c5cd6076a77be5615934cd566078199b7fccd09c1a005b982",
             "locator": {
               "kind": "symbol",
@@ -947,7 +1121,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "549d07c35309c25062a49eb856d3689a5a9c9b5f",
+            "blob": "c1c7c67ada2e84e90b5ac05efb33bdb19e6951a4",
             "content": "sha256:3d54922b35241ac4274b64244f96d19effc2d5a3c879eac28844fc50170f6328",
             "locator": {
               "kind": "symbol",
@@ -963,7 +1137,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "549d07c35309c25062a49eb856d3689a5a9c9b5f",
+            "blob": "c1c7c67ada2e84e90b5ac05efb33bdb19e6951a4",
             "content": "sha256:0bb46dfc79f98f38cdaf1486167f00a530de97ac372327ef2a46db9bbde2cbfc",
             "locator": {
               "kind": "symbol",
@@ -974,7 +1148,7 @@
         },
         {
           "anchor": {
-            "blob": "549d07c35309c25062a49eb856d3689a5a9c9b5f",
+            "blob": "c1c7c67ada2e84e90b5ac05efb33bdb19e6951a4",
             "content": "sha256:8c360500d2f45ded1ac5c1873960483d26dd7dccd7e48a99c18bc5ec20b176b0",
             "locator": {
               "kind": "symbol",
@@ -1001,7 +1175,7 @@
         },
         {
           "anchor": {
-            "blob": "549d07c35309c25062a49eb856d3689a5a9c9b5f",
+            "blob": "c1c7c67ada2e84e90b5ac05efb33bdb19e6951a4",
             "content": "sha256:d20e1fcfc8b0b5ff0e73031f20d364ea59b9c6f22f3acaea4b252f1e1b9e0b23",
             "locator": {
               "kind": "symbol",
@@ -1028,7 +1202,7 @@
         },
         {
           "anchor": {
-            "blob": "549d07c35309c25062a49eb856d3689a5a9c9b5f",
+            "blob": "c1c7c67ada2e84e90b5ac05efb33bdb19e6951a4",
             "content": "sha256:c598721d35fec90c0b54f139a1168f92e03f37127663e481b7df619dde107b5c",
             "locator": {
               "kind": "symbol",
@@ -1044,7 +1218,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "549d07c35309c25062a49eb856d3689a5a9c9b5f",
+            "blob": "c1c7c67ada2e84e90b5ac05efb33bdb19e6951a4",
             "content": "sha256:2a13e34b4c4633a7d4c0de9e0ba93793ddfad107866c455bb094c3b92b87c7e0",
             "locator": {
               "kind": "symbol",

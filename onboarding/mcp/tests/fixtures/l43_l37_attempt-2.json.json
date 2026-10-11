@@ -1,0 +1,22 @@
+{
+  "path": "mcp/tests/fixtures/l43_l37_attempt-2.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The fixture carries the retained historical row documents.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f6f90510275cd214be3accf4b5e90ebe4694d071",
+            "content": "sha256:ad16fbf1084addb91796b15fccc20be99be91574b4c6608c3dfffd33016f7e10",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

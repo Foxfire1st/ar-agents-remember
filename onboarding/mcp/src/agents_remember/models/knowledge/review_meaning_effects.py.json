@@ -1,0 +1,74 @@
+{
+  "path": "mcp/src/agents_remember/models/knowledge/review_meaning_effects.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "e7b67b89778434c96e1b9f3f299c9a7fb7ab0592",
+        "content": "sha256:9a51ca22614379da4b305842c9ef7b00d37847af69599b6de439ebae27387004",
+        "locator": {
+          "kind": "symbol",
+          "name": "RecordMeaningEffects"
+        }
+      },
+      "id": "RLZ-3DQJ6S",
+      "invariant": "INV-76C676",
+      "origin": {
+        "handoffEntry": "L43-C-recorded-effect-propagation",
+        "leaf": "260928-MIK-L43"
+      },
+      "rationale": "This record answer model requires nonempty steps exactly for steps and the fixed absence text exactly for none.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Record answers enforce steps versus none/unavailable and the fixed absence text.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e7b67b89778434c96e1b9f3f299c9a7fb7ab0592",
+            "content": "sha256:9a51ca22614379da4b305842c9ef7b00d37847af69599b6de439ebae27387004",
+            "locator": {
+              "kind": "symbol",
+              "name": "RecordMeaningEffects"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Outline state and labels are validated together.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e7b67b89778434c96e1b9f3f299c9a7fb7ab0592",
+            "content": "sha256:376a3d1a86f3642987ca02103342fd43d06c1043aeb63ba293a63a9b825aaf39",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewOutlineMeaning"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The explanations match the admitted label vocabulary and order.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e7b67b89778434c96e1b9f3f299c9a7fb7ab0592",
+            "content": "sha256:026b49a08b1ab166c83ab244beed5eed6f2cd0f37235ade28ea7c499d1a442e8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_check_explanations_cover_the_vocabulary"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

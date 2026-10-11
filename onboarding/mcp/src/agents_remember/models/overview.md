@@ -40,6 +40,12 @@ that wrapper.
 
 - Rows and supplied superseded IDs close items; default context remains empty. [292]
 
+### Recorded reviewer judgments
+
+The recorded-meaning review models separate eligible steps, readable none and unavailable history. Each step keeps authored effect and own judged revision; old family omissions remain explicit and half-recorded rows are invalid. Subject payloads require the field, task context supplies it empty, and outline labels carry the same state/order independently of change-kind facts.
+
+- The recorded-meaning review models separate eligible steps, readable none and unavailable history. [293]
+
 ## Historical original card — preserved, not the current operative account
 
 <details>

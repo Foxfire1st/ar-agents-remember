@@ -60,6 +60,12 @@ delivered here. Existing fixtures, source catalogs, lane ownership and certifica
 
 - Candidate successor, unchanged/no-successor and unrelated-candidate controls protect the boundary. [1714]
 
+### Recorded reviewer judgments
+
+Recorded-meaning regression uses compose_review over converted trees, exact owner/attempt selection, outline and continuation equality, portable L37 historical fixtures and retired/before-only UUID witnesses. Mounted ReviewSurface captures cover badges, complete step fields, keyboard explanations and missing-versus-empty state. Retained capture/provenance and real-ingest family display are distinct evidence classes; registration or mounted display alone claims no new invocation or installed acceptance.
+
+- Recorded-meaning regression uses compose_review over converted trees, exact owner/attempt selection, outline and continuation equality, portable L37 historical fixtures and retired/before-only UUID witnesses. [1715]
+
 ## Historical original card — preserved, not the current operative account
 
 <details>

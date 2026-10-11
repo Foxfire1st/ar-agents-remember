@@ -7,9 +7,9 @@
   },
   "applicability": "Every family/invariant row of the reviewer's navigation tree, 390-2000 px wide.",
   "conditions": [
-    "The row shows title (ellipsis) + one change badge; family rows may add kept.",
+    "The row shows title (ellipsis) + one change badge; family rows may add kept, and eligible changed record rows may add their own compact recorded-effect sequence.",
     "Invariant titles are identifier + 120-char summary; hyphenated titles render hyphens as spaces.",
-    "The tooltip holds the whole title; the accessible name is title + badge."
+    "The tooltip holds the whole title; the accessible name is title + change badge + the eligible recorded-effect sequence."
   ],
   "exclusions": [
     "Guarantee/statement texts, reasons and marks (main page, rule 10).",
@@ -27,7 +27,7 @@
     "leaf": "260928-MIK-L86",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "Each family and invariant row stays one text line, with an ellipsis and a whole-title tooltip.",
   "status": "proposed",

@@ -1,0 +1,45 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "One owner-scoped projection, composition and display jointly prevent an unreadable history from appearing as absence and prevent inferred judgments; composed conversion/outline/retirement assertions guard distinct boundaries."
+  },
+  "applicability": "Recorded meaning-effect display for invariant and family records addressed by a converted Git-tree reviewer comparison.",
+  "conditions": [
+    "Only the reviewed owner’s after-tree history rows in its admitted attempt files are eligible; the baseline is an identity fallback only.",
+    "Invariant changed and deleted/retire rows and family changed rows supply authored labels, own judged revisions, attempts, row/history identities, reasons and open/closed facts.",
+    "Attempt order, never wording/revisions/dispositions/counts, determines the sequence; multiple steps are successive judgments, not one net effect.",
+    "A complete readable no-step history is none; unreadable/legacy sides, incomplete indexes and invalid relevant rows are unavailable, never none.",
+    "Old family rows missing both effect and own revision remain explicitly unrecorded; half-recorded rows fail.",
+    "Outline and subject answers use the same projection in existing response paths; returned continuation members retain their own steps, and the worklist shows the governing row only.",
+    "The reading block is outside disclosures; the tree remains one line with compact recorded labels and accessible names, and all nine label explanations are keyboard-operable.",
+    "A current subject/task response missing meaning_effects is a failure; a present empty field is valid."
+  ],
+  "exclusions": [
+    "Writing or backfilling historical effects, revision numbers or history files.",
+    "A label inferred from record text, members, reason, dispositions or counts; any leaf-wide net effect.",
+    "Installed delivery acceptance, latency acceptance and writer/closeout certification."
+  ],
+  "id": "INV-76C676",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Exact Worker260928-MIK-L43-worker-R3-MIK-R43-v2/Reviewer260928-MIK-L43-reviewer-R3-MIK-R43-v2; HEAD4b6a2660b4d8ef12f4ad2aceb464024e366143b6; memory9c69aa18649767cb1204928f69e37f31d0952499; tracked diff08c4dd5939ca6b2328d333397bae27dbc89a06cba25fecaf43591ddebc20e97d; all39 seals/25 proof seals verified, remaining empty. CODE PASS only. Actual isolated producer replay10/10 equality, actual served22-file asset graph, actual matching-width22 visible/unoccluded target views. notes/reports/reviewer/03ad56ea-8173-461d-8f04-a48ac9194646/r3/verdict-code-R3.md; notes/reports/260928-MIK-L43-requirement-attempt-journal.md#l43-r3-mik-r43-v2-reviewer-adjudication",
+        "Approved MIK-R43@v2 rules1-11; source-bound read of projection, outline/model/wire, row and missing-field consumer constructs at current Worker freeze. Adds attribution without rewriting either producer target array.",
+        "Source-bound complete consumer/type closure for the same INV-76C676 contract; original producer lists and prior writer outputs remain immutable. Completes record-specific transport/identity attribution, not a new invariant or CODE verdict."
+      ],
+      "path": "handoff-primary.json"
+    },
+    "handoffEntry": "MIK-R43@v2",
+    "leaf": "260928-MIK-L43",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Where the reviewer shows that the reviewed leaf changed the meaning of an invariant or the guarantee of a family, it also shows the effect that the leaf's curator recorded for that change.",
+  "status": "proposed",
+  "supersedes": []
+}
