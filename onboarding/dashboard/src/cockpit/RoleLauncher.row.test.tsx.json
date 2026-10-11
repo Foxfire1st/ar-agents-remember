@@ -1,0 +1,50 @@
+{
+  "path": "dashboard/src/cockpit/RoleLauncher.row.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Mounted assertions protect controls-only rendering, accessible names, selected-label/source hovers, informational chips, and shared recipe identity; overfull checks are DOM/source checks rather than pixel measurement.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1d5570fd7346333f8abeacc5dc55136bfdf6246b",
+            "content": "sha256:9ee4c58d75c77e0ce21fafaa6fcf956e4ad34a708fa4f502134ac1b2462b1578",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The default fixture supplies mode and choice provenance plus instruction metadata.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1d5570fd7346333f8abeacc5dc55136bfdf6246b",
+            "content": "sha256:45a90ddda2900fd23b3c2efac75e263c585e264fac18dbce2cedb555da4f7289",
+            "locator": {
+              "kind": "symbol",
+              "name": "roleDefaultsFixture"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "1d5570fd7346333f8abeacc5dc55136bfdf6246b",
+            "content": "sha256:56ec00729a200f32e02821e9c2ef76c89a889ae2e43aa567fabc04d6e310d6ec",
+            "locator": {
+              "end": 64,
+              "kind": "line_range",
+              "start": 44
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

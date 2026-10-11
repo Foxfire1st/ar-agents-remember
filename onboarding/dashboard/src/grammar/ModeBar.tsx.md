@@ -17,9 +17,10 @@ spacing so all four still fit at 40rem and narrower.
 
 Wraps React Aria `ToggleButtonGroup` (`selectionMode="single"`, `disallowEmptySelection`,
 `selectedKeys={[value]}`) + a `ToggleButton` per item. `onSelectionChange` reads the single key from
-the Set and calls `onChange`. The bar + buttons are Panda `css()`; the active look comes from the
-`_selected` condition (matches React Aria's `data-selected`) and `_focusVisible` gives a keyboard-only
-amber ring. The 40rem media query reduces the bar gap and button padding and drops button
+the Set and calls `onChange`. The bar uses local Panda `css()`; its buttons import `viewTabButton`
+from `viewTabLook.ts`, the one definition shared with launcher selectors, chips and buttons. The
+active look still comes from `_selected` (React Aria's `data-selected`) and `_focusVisible` gives a
+keyboard-only amber ring. The 40rem media query reduces the bar gap and button padding and drops button
 letter-spacing, so the four product entries fit the phone width.
 
 ### Conventions
@@ -49,9 +50,10 @@ No configured live documentation source was available for this pass.
 
 ### Repo-Internal References
 
-- The mode bar renders the caller's single-select item list. [3]
-- The phone widths keep the four product entries fitting. [4]
-- The cockpit supplies the four product entries and the opening view. [5]
+- The mode bar renders the caller's single-select item list using the imported shared tab class. [3]
+- The existing local phone-width spacing overrides stay on the bar. [4]
+- View tabs and launcher controls derive their metrics from one shared definition. [6]
+- The cockpit supplies the four product view entries; ModeBar does not own their list. [5]
 
 ### Cross-Repo References
 

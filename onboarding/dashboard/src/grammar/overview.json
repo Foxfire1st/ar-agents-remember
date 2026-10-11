@@ -19,6 +19,23 @@
         }
       ]
     },
+    "10": {
+      "note": "ModeBar and the launcher's controls share the visual definition without sharing selection or permission policy.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7f6cc9a11ef6150c90de6828e89f182239701808",
+            "content": "sha256:6b0d0c39b7a67456d5d8953831418de84ba58a2d67fe1cc92a13f8c1b11bbd7a",
+            "locator": {
+              "kind": "symbol",
+              "name": "viewTabMetrics"
+            },
+            "path": "dashboard/src/grammar/viewTabLook.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "The React Aria condition reconciliation (data-hovered/-focused).\n\nAnchor: \"[data-hovered]\"",
       "targets": [
@@ -38,16 +55,15 @@
       ]
     },
     "3": {
-      "note": "The route's sole React Aria import wraps the viewport toggle group.\n\nAnchor: \"export function ModeBar\"",
+      "note": "The route's React Aria owner wraps the viewport toggle group with the shared visual class.",
       "targets": [
         {
           "anchor": {
-            "blob": "a925093c75fc1c8ca373c37b48dbd315028e2d33",
-            "content": "sha256:0b91767ebd94474bd1117c5f3a4f569e732782bba11f51bb505e18c77470b589",
+            "blob": "9d29534ed485940b57584dd1b4a69148917831f6",
+            "content": "sha256:d9b40b9f1755c22b5b14b21e3a04540df2b3534594cb64506e9c69909dabcd38",
             "locator": {
-              "end": 52,
-              "kind": "line_range",
-              "start": 52
+              "kind": "symbol",
+              "name": "ModeBar"
             },
             "path": "dashboard/src/grammar/ModeBar.tsx"
           },

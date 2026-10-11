@@ -1,0 +1,102 @@
+{
+  "path": "dashboard/src/grammar/viewTabLook.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "7f6cc9a11ef6150c90de6828e89f182239701808",
+        "content": "sha256:6b0d0c39b7a67456d5d8953831418de84ba58a2d67fe1cc92a13f8c1b11bbd7a",
+        "locator": {
+          "kind": "symbol",
+          "name": "viewTabMetrics"
+        }
+      },
+      "id": "RLZ-5Z18NZ",
+      "invariant": "INV-3DKC7T",
+      "origin": {
+        "handoffEntry": "MIK-R133@v1 / L133-CODE-R3",
+        "leaf": "260928-MIK-L133"
+      },
+      "rationale": "Producer: the one shared definition both tabs and launcher controls take their look from; byte-identical since R1.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Shared visual metrics feed both tab and launcher recipes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7f6cc9a11ef6150c90de6828e89f182239701808",
+            "content": "sha256:6b0d0c39b7a67456d5d8953831418de84ba58a2d67fe1cc92a13f8c1b11bbd7a",
+            "locator": {
+              "kind": "symbol",
+              "name": "viewTabMetrics"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The tab class and selected launcher action retain the shared selected treatment; the complete small module contains both consumers and their common selected-look definition.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7f6cc9a11ef6150c90de6828e89f182239701808",
+            "content": "sha256:4fb5066153683885c79d89feeadbba7f2d0ea1180f43961ce483f7842fa71c68",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The common launcher selector retains source spelling, arrow and ellipsis.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7f6cc9a11ef6150c90de6828e89f182239701808",
+            "content": "sha256:040c954b7656cdd59f49156cb9e44c4a7040b204a1465576928e7cb5c658f8ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "launcherSelect"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7f6cc9a11ef6150c90de6828e89f182239701808",
+            "content": "sha256:82125123ba27b1ac88c92d7f23abfdef6fa6ab4629454adb7294f9cae850b5ce",
+            "locator": {
+              "end": 115,
+              "kind": "line_range",
+              "start": 84
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "ModeBar consumes the shared tab class without changing its single-select behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9d29534ed485940b57584dd1b4a69148917831f6",
+            "content": "sha256:d9b40b9f1755c22b5b14b21e3a04540df2b3534594cb64506e9c69909dabcd38",
+            "locator": {
+              "kind": "symbol",
+              "name": "ModeBar"
+            },
+            "path": "dashboard/src/grammar/ModeBar.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,30 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "Shared compact styling alone can truncate away the selected choice; complete hovers alone can leave a tall inconsistent or clipped row. Together the two obligations preserve readable choice information while controls share the existing tab look."
+  },
+  "guarantee": "The role launcher shares the view tabs’ compact visual authority without losing choice information: ordinary controls fit the ruled wide composition, excess controls wrap whole, and every selector retains its complete selected label and default provenance in hover.",
+  "id": "FAM-AW30YS",
+  "members": [
+    "INV-MXTMP8",
+    "INV-3DKC7T"
+  ],
+  "origin": {
+    "handoff": {
+      "path": "l133-post-sync-curated-handoff.json"
+    },
+    "handoffEntry": "compact-information-family",
+    "leaf": "260928-MIK-L133",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "routes": [
+    "dashboard/src/cockpit",
+    "dashboard/src/grammar"
+  ],
+  "schema": "ar-family/v1",
+  "status": "accepted",
+  "title": "Compact launcher controls preserve choice information"
+}

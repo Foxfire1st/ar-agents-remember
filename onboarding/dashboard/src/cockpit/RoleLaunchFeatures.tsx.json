@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "583ac7279440da656e98b3495ceecc02f5d1eb78",
-        "content": "sha256:85722fcbd0a13f750dbafdcdf12dc4cb137597f0cb2d6bb098ef3963edb7211c",
+        "blob": "d74019caf561c06c30e27402f947b5d2f992abef",
+        "content": "sha256:1f8d2c4ea0a5be7358fb903fa0a8c20521940ae022ff62492f83fcb8afe00010",
         "locator": {
           "kind": "symbol",
           "name": "FeatureControl"
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "583ac7279440da656e98b3495ceecc02f5d1eb78",
-        "content": "sha256:f1778a7b138e5a91d2d9b1a3757d6d32f5d56348c87f43474ed981fc3dc22f7c",
+        "blob": "d74019caf561c06c30e27402f947b5d2f992abef",
+        "content": "sha256:446bf54bd2236b60e09efd083497f0c6204a2ca94a1e8f5322e0930ae6113d2d",
         "locator": {
           "kind": "symbol",
           "name": "RoleLaunchDefaults"
@@ -34,18 +34,36 @@
         "handoffEntry": "L71-CURRENT242-W-17",
         "leaf": "260928-MIK-L71"
       },
-      "rationale": "RoleLaunchDefaults presents actual resolved values and setting/profile sources and user instruction append/overwrite information; it does not display an instruction digest or prove the final native prompt.",
+      "rationale": "RoleLaunchDefaults now presents only the applied mode and optional instruction metadata as chips with provenance in hover; agent/model/effort provenance belongs to their selectors in RoleLauncher.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "d74019caf561c06c30e27402f947b5d2f992abef",
+        "content": "sha256:1f8d2c4ea0a5be7358fb903fa0a8c20521940ae022ff62492f83fcb8afe00010",
+        "locator": {
+          "kind": "symbol",
+          "name": "FeatureControl"
+        }
+      },
+      "id": "RLZ-YFEGZV",
+      "invariant": "INV-MXTMP8",
+      "origin": {
+        "handoffEntry": "L133-R1-F01",
+        "leaf": "260928-MIK-L133"
+      },
+      "rationale": "Producer: this renderer adds the chosen-or-default feature label to the control hover keeping its default provenance.",
       "role": "presentation"
     }
   ],
   "references": {
     "1": {
-      "note": "The permission-bearing feature renders settings-owned text with no override control.",
+      "note": "Feature controls share the launcher look; permission values stay settings-owned chips, while selectors retain complete selected labels and default provenance.",
       "targets": [
         {
           "anchor": {
-            "blob": "583ac7279440da656e98b3495ceecc02f5d1eb78",
-            "content": "sha256:85722fcbd0a13f750dbafdcdf12dc4cb137597f0cb2d6bb098ef3963edb7211c",
+            "blob": "d74019caf561c06c30e27402f947b5d2f992abef",
+            "content": "sha256:1f8d2c4ea0a5be7358fb903fa0a8c20521940ae022ff62492f83fcb8afe00010",
             "locator": {
               "kind": "symbol",
               "name": "FeatureControl"
@@ -56,15 +74,27 @@
       ]
     },
     "2": {
-      "note": "The speed feature renders the host option select around the role default.",
+      "note": "Explicit feature values and identities remain in the override; an empty override is removed.",
       "targets": [
         {
           "anchor": {
-            "blob": "583ac7279440da656e98b3495ceecc02f5d1eb78",
-            "content": "sha256:26ef81fc28824c9c78870b9203bc48a8fd8e7220e6fd0bdffb319c187502d45b",
+            "blob": "d74019caf561c06c30e27402f947b5d2f992abef",
+            "content": "sha256:4a8a61908695dd7e21a1478307a377cfd208483ff704b8687ce339542aaeed0c",
             "locator": {
               "kind": "symbol",
               "name": "RoleLaunchFeatures"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d74019caf561c06c30e27402f947b5d2f992abef",
+            "content": "sha256:23a256a5602b21807e407cee37ba28d455bfd88831367149b68a91eb423b78c8",
+            "locator": {
+              "end": 90,
+              "kind": "line_range",
+              "start": 66
             }
           },
           "kind": "code"
@@ -72,12 +102,12 @@
       ]
     },
     "3": {
-      "note": "The defaults line carries mode, choice sources and instruction provenance.",
+      "note": "Mode and optional instruction chips replace the defaults sentence and carry provenance in hover.",
       "targets": [
         {
           "anchor": {
-            "blob": "583ac7279440da656e98b3495ceecc02f5d1eb78",
-            "content": "sha256:f1778a7b138e5a91d2d9b1a3757d6d32f5d56348c87f43474ed981fc3dc22f7c",
+            "blob": "d74019caf561c06c30e27402f947b5d2f992abef",
+            "content": "sha256:446bf54bd2236b60e09efd083497f0c6204a2ca94a1e8f5322e0930ae6113d2d",
             "locator": {
               "kind": "symbol",
               "name": "RoleLaunchDefaults"

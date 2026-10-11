@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "b7d20cc3f2f13a0cd95a326cc08f7364481fa80c",
-        "content": "sha256:abd10bcacdbaf00edce13e267510e59396b0c7bf5c7b8d6cc2e75d796d5057ad",
+        "blob": "adc4642adec27114ef5f06619f1a27e74899d2e7",
+        "content": "sha256:68a17818ad9491b09a4233b3949b3730131d8a6ba62db9066556e59847d5bd37",
         "locator": {
           "kind": "symbol",
           "name": "RoleLauncher"
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "b7d20cc3f2f13a0cd95a326cc08f7364481fa80c",
-        "content": "sha256:abd10bcacdbaf00edce13e267510e59396b0c7bf5c7b8d6cc2e75d796d5057ad",
+        "blob": "adc4642adec27114ef5f06619f1a27e74899d2e7",
+        "content": "sha256:68a17818ad9491b09a4233b3949b3730131d8a6ba62db9066556e59847d5bd37",
         "locator": {
           "kind": "symbol",
           "name": "RoleLauncher"
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "b7d20cc3f2f13a0cd95a326cc08f7364481fa80c",
+        "blob": "adc4642adec27114ef5f06619f1a27e74899d2e7",
         "content": "sha256:ae01e6a809cd47819b696aee450d63c9dec59f9e0be5b9c54b718c11e5fdabdb",
         "locator": {
           "kind": "symbol",
@@ -57,8 +57,8 @@
     },
     {
       "anchor": {
-        "blob": "b7d20cc3f2f13a0cd95a326cc08f7364481fa80c",
-        "content": "sha256:abd10bcacdbaf00edce13e267510e59396b0c7bf5c7b8d6cc2e75d796d5057ad",
+        "blob": "adc4642adec27114ef5f06619f1a27e74899d2e7",
+        "content": "sha256:68a17818ad9491b09a4233b3949b3730131d8a6ba62db9066556e59847d5bd37",
         "locator": {
           "kind": "symbol",
           "name": "RoleLauncher"
@@ -75,8 +75,8 @@
     },
     {
       "anchor": {
-        "blob": "b7d20cc3f2f13a0cd95a326cc08f7364481fa80c",
-        "content": "sha256:abd10bcacdbaf00edce13e267510e59396b0c7bf5c7b8d6cc2e75d796d5057ad",
+        "blob": "adc4642adec27114ef5f06619f1a27e74899d2e7",
+        "content": "sha256:68a17818ad9491b09a4233b3949b3730131d8a6ba62db9066556e59847d5bd37",
         "locator": {
           "kind": "symbol",
           "name": "RoleLauncher"
@@ -88,13 +88,13 @@
         "handoffEntry": "MIK-R95@v1 rule4",
         "leaf": "260928-MIK-L95"
       },
-      "rationale": "The shared row renders role and native agent/model/effort controls from the admitted selection and options. Bound-role gating suppresses reference pickers, marks an existing occupant running and disallows a second bound-row start while keeping the unbound Chats controls.",
+      "rationale": "The shared row hides already-bound references and retains singleton/Projects duplicate-start gating, while selected sprint/master Investigators keep their backend-admitted per-request exception and exact recovery identity.",
       "role": "unclassified"
     },
     {
       "anchor": {
-        "blob": "b7d20cc3f2f13a0cd95a326cc08f7364481fa80c",
-        "content": "sha256:abd10bcacdbaf00edce13e267510e59396b0c7bf5c7b8d6cc2e75d796d5057ad",
+        "blob": "adc4642adec27114ef5f06619f1a27e74899d2e7",
+        "content": "sha256:68a17818ad9491b09a4233b3949b3730131d8a6ba62db9066556e59847d5bd37",
         "locator": {
           "kind": "symbol",
           "name": "RoleLauncher"
@@ -111,8 +111,26 @@
     },
     {
       "anchor": {
-        "blob": "b7d20cc3f2f13a0cd95a326cc08f7364481fa80c",
-        "content": "sha256:1687dd751b97a7f56ed19607bf786050f7e969c393691f73db4bdc94c858e497",
+        "blob": "adc4642adec27114ef5f06619f1a27e74899d2e7",
+        "content": "sha256:68a17818ad9491b09a4233b3949b3730131d8a6ba62db9066556e59847d5bd37",
+        "locator": {
+          "kind": "symbol",
+          "name": "RoleLauncher"
+        }
+      },
+      "id": "RLZ-RKR5QW",
+      "invariant": "INV-3DKC7T",
+      "origin": {
+        "handoffEntry": "MIK-R133@v1 / L133-CODE-R3",
+        "leaf": "260928-MIK-L133"
+      },
+      "rationale": "Producer: the passed freeze delivers the requirement through this renderer plus RoleLaunchFeatures, the shared grammar seam (viewTabLook/ModeBar), and the row/R71 tests.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "adc4642adec27114ef5f06619f1a27e74899d2e7",
+        "content": "sha256:18e3536e6f348422306c2cf062f46b8f825a76a9b851c875a0abbac15532992e",
         "locator": {
           "kind": "symbol",
           "name": "roleLauncherGrid"
@@ -126,6 +144,24 @@
       },
       "rationale": "The grid carries the row of controls and, after the change, only the failure line: its height no longer follows the length of an answer.",
       "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "adc4642adec27114ef5f06619f1a27e74899d2e7",
+        "content": "sha256:68a17818ad9491b09a4233b3949b3730131d8a6ba62db9066556e59847d5bd37",
+        "locator": {
+          "kind": "symbol",
+          "name": "RoleLauncher"
+        }
+      },
+      "id": "RLZ-W3VMNM",
+      "invariant": "INV-MXTMP8",
+      "origin": {
+        "handoffEntry": "L133-R1-F01",
+        "leaf": "260928-MIK-L133"
+      },
+      "rationale": "Producer: this renderer owns the selected-value hovers repaired here (SHA-256 df6d027e0799297fce1b09ab6e07f3ad9568deea1c66c9f6a977d240643c7220 in the passed freeze).",
+      "role": "presentation"
     }
   ],
   "references": {
@@ -134,7 +170,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b7d20cc3f2f13a0cd95a326cc08f7364481fa80c",
+            "blob": "adc4642adec27114ef5f06619f1a27e74899d2e7",
             "content": "sha256:ae01e6a809cd47819b696aee450d63c9dec59f9e0be5b9c54b718c11e5fdabdb",
             "locator": {
               "kind": "symbol",
@@ -150,7 +186,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b7d20cc3f2f13a0cd95a326cc08f7364481fa80c",
+            "blob": "adc4642adec27114ef5f06619f1a27e74899d2e7",
             "content": "sha256:6e12c73e518e0dad2a470a82303f8f9f7e83170c8fbf27b24a3acdcc76b3dd43",
             "locator": {
               "kind": "symbol",
@@ -162,12 +198,12 @@
       ]
     },
     "3": {
-      "note": "The row is one control strip that can carry the preparation line.",
+      "note": "Preparation is carried by the Start label rather than an extra ordinary status line.",
       "targets": [
         {
           "anchor": {
-            "blob": "b7d20cc3f2f13a0cd95a326cc08f7364481fa80c",
-            "content": "sha256:1e6d5148e9e49d5b53b9d510ed2314664cf4a977a6bebe6975df543d2fd13c3b",
+            "blob": "adc4642adec27114ef5f06619f1a27e74899d2e7",
+            "content": "sha256:e3e8710314ea65b6238f5c89c5c6bcdcef478aedc0b04716e092b75e60c3768b",
             "locator": {
               "kind": "symbol",
               "name": "launcherRow"
@@ -178,14 +214,15 @@
       ]
     },
     "4": {
-      "note": "The exported launcher renders controls, progress and the single failure line for both hosts.\n\nAnchor: `RoleLauncher`",
+      "note": "The shared owner renders selectors, chips, progress-labelled actions and the existing failure line for both hosts.",
       "targets": [
         {
           "anchor": {
-            "blob": "1f46443e1b156e1c7d44349871b37aedccf14e1d",
-            "content": "sha256:6578d545246a821c520404288412ea57b53c1aec686c0ed990a9830e49aa5c3e",
+            "blob": "adc4642adec27114ef5f06619f1a27e74899d2e7",
+            "content": "sha256:68a17818ad9491b09a4233b3949b3730131d8a6ba62db9066556e59847d5bd37",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "RoleLauncher"
             }
           },
           "kind": "code"
@@ -193,16 +230,59 @@
       ]
     },
     "5": {
-      "note": "The current source implements this file’s stated Investigator boundary.",
+      "note": "The current source preserves singleton/Projects gating and the selected Investigator exception.",
       "targets": [
         {
           "anchor": {
-            "blob": "1f46443e1b156e1c7d44349871b37aedccf14e1d",
-            "content": "sha256:6578d545246a821c520404288412ea57b53c1aec686c0ed990a9830e49aa5c3e",
+            "blob": "adc4642adec27114ef5f06619f1a27e74899d2e7",
+            "content": "sha256:68a17818ad9491b09a4233b3949b3730131d8a6ba62db9066556e59847d5bd37",
             "locator": {
-              "end": 485,
+              "kind": "symbol",
+              "name": "RoleLauncher"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Whole-control wrapping replaces unconditional fixed-height/wide-nowrap presentation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "adc4642adec27114ef5f06619f1a27e74899d2e7",
+            "content": "sha256:18e3536e6f348422306c2cf062f46b8f825a76a9b851c875a0abbac15532992e",
+            "locator": {
+              "kind": "symbol",
+              "name": "roleLauncherGrid"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "adc4642adec27114ef5f06619f1a27e74899d2e7",
+            "content": "sha256:5d43d2c5be4fa761a4f2d7c9f401c9876ecd615c04f78723e824e94fd042e73c",
+            "locator": {
+              "end": 28,
               "kind": "line_range",
-              "start": 1
+              "start": 14
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The complete selected document label and identity survive truncation in hover; an empty or unmatched document selector instead names only its purpose.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "adc4642adec27114ef5f06619f1a27e74899d2e7",
+            "content": "sha256:7c92b67fc525f745f827a36d355664f07c534d0fc2dc95014268956909730ff1",
+            "locator": {
+              "kind": "symbol",
+              "name": "docSelectTitle"
             }
           },
           "kind": "code"

@@ -3,14 +3,15 @@
   "realizes": [],
   "references": {
     "3": {
-      "note": "The mode bar renders the caller's single-select item list.\n\nAnchor: `ModeBar`",
+      "note": "The mode bar renders the caller's single-select item list using the imported shared tab class.",
       "targets": [
         {
           "anchor": {
-            "blob": "a925093c75fc1c8ca373c37b48dbd315028e2d33",
-            "content": "sha256:dad9c6baca72127fe4b12f31eca7bb7c057e146ba03cee8ae6e156a0363c523f",
+            "blob": "9d29534ed485940b57584dd1b4a69148917831f6",
+            "content": "sha256:d9b40b9f1755c22b5b14b21e3a04540df2b3534594cb64506e9c69909dabcd38",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "ModeBar"
             }
           },
           "kind": "code"
@@ -18,14 +19,15 @@
       ]
     },
     "4": {
-      "note": "The phone widths keep the four product entries fitting.\n\nAnchor: `bar`",
+      "note": "The existing local phone-width spacing overrides stay on the bar.",
       "targets": [
         {
           "anchor": {
-            "blob": "a925093c75fc1c8ca373c37b48dbd315028e2d33",
-            "content": "sha256:dad9c6baca72127fe4b12f31eca7bb7c057e146ba03cee8ae6e156a0363c523f",
+            "blob": "9d29534ed485940b57584dd1b4a69148917831f6",
+            "content": "sha256:c07f4f7cea17f48dc3e98a6b1400f3aba861091e77f6e0c02e746c70c9f056f1",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "bar"
             }
           },
           "kind": "code"
@@ -33,16 +35,34 @@
       ]
     },
     "5": {
-      "note": "The cockpit supplies the four product entries and the opening view.",
+      "note": "The cockpit supplies the four product view entries; ModeBar does not own their list.",
       "targets": [
         {
           "anchor": {
-            "blob": "dbd3ef46e609e178b20798093e2c399bdf3e9b0f",
-            "content": "sha256:ba7d7fa6dca9b6458857973791fd7d36f6bb3a55568a13be15d803afb65e0ef9",
+            "blob": "76c1e952f0b6c4c9d708c3edf4cd8b28c0f764ff",
+            "content": "sha256:c23dd6b971f43b7988e7fc3e7f775c1292d6394236c1f6e028713d6a03a65c40",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "VIEWS"
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "View tabs and launcher controls derive their metrics from one shared definition.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7f6cc9a11ef6150c90de6828e89f182239701808",
+            "content": "sha256:6b0d0c39b7a67456d5d8953831418de84ba58a2d67fe1cc92a13f8c1b11bbd7a",
+            "locator": {
+              "kind": "symbol",
+              "name": "viewTabMetrics"
+            },
+            "path": "dashboard/src/grammar/viewTabLook.ts"
           },
           "kind": "code"
         }

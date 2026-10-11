@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "1881f80cde7c80b79201d14758e21c66b41dada8",
-        "content": "sha256:0c6452facbb4cd346afe4c99a59ebd24146df6cc5693c08464e464049906b354",
+        "blob": "c7db7d4dfd7a54b42ffc35bee11fd41e26b4e4a8",
+        "content": "sha256:29b7ea1b69957a636ed44c6ef636b993dbb8520b7ae53ed2f46e6b7f87813bad",
         "locator": {
           "kind": "file"
         }
@@ -15,7 +15,7 @@
         "handoffEntry": "L71-CURRENT242-W-17",
         "leaf": "260928-MIK-L71"
       },
-      "rationale": "The retained unchanged nine mounted assertions verify feature preservation in the extracted launcher; its passing proof is reused, not rerun here.",
+      "rationale": "The mounted R71 assertions retain explicit speed submission and feature preservation through model/effort changes, and read resolved mode/instruction provenance through chips and hover.",
       "role": "support"
     }
   ],
@@ -25,7 +25,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1881f80cde7c80b79201d14758e21c66b41dada8",
+            "blob": "c7db7d4dfd7a54b42ffc35bee11fd41e26b4e4a8",
             "content": "sha256:ca33f44bbe08e113c00a54a9be92f5690050d95355a3af301fca4f73861c5619",
             "locator": {
               "end": 168,
@@ -38,16 +38,16 @@
       ]
     },
     "2": {
-      "note": "Current source owner or exact assertion described above.\n\nAnchor: \"displays the configured tier\"",
+      "note": "Configured tier, incompatible-model refusal and foreign-agent default disclosure remain asserted.\n\nAnchor: \"displays the configured tier\"",
       "targets": [
         {
           "anchor": {
-            "blob": "74d1c9daf756aa23df630f88e5e1b1f423f9836e",
-            "content": "sha256:55ffba10251f4e8ee1f3e39ffba847866f036791c8408fe9388d7a0ef1f80d88",
+            "blob": "c7db7d4dfd7a54b42ffc35bee11fd41e26b4e4a8",
+            "content": "sha256:7251097b30db71f94077c3daf95778cb7e45cf8de0b34743b7111a1a092da2e8",
             "locator": {
-              "end": 85,
+              "end": 80,
               "kind": "line_range",
-              "start": 55
+              "start": 66
             }
           },
           "kind": "test"
@@ -59,12 +59,29 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1881f80cde7c80b79201d14758e21c66b41dada8",
+            "blob": "c7db7d4dfd7a54b42ffc35bee11fd41e26b4e4a8",
             "content": "sha256:42790e822f1ead18a7f00796fc2a24f117677da62ee7dfe4407b4836b74b7400",
             "locator": {
               "end": 198,
               "kind": "line_range",
               "start": 173
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Mounted R71 assertions read mode/instruction chips and their source hovers while retaining explicit-only feature submission and feature preservation.\n\nAnchor: \"submits only an explicit speed feature\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c7db7d4dfd7a54b42ffc35bee11fd41e26b4e4a8",
+            "content": "sha256:e896540db9ccd286928e6fe82b382fa53379b4bb37a2af577d3689a0f670172f",
+            "locator": {
+              "end": 250,
+              "kind": "line_range",
+              "start": 207
             }
           },
           "kind": "test"

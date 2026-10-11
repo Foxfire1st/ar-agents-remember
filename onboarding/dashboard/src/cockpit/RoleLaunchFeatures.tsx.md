@@ -6,14 +6,16 @@
 
 ## Purpose
 
-Renders host-offered speed controls and visible launch defaults with their provenance for the single role launcher.
+Renders host-offered feature controls and mode/instruction chips for the single role launcher, with provenance in each control's hover text rather than a running defaults sentence.
 
 ## Code Commentary
 
-`FeatureControl` renders one host-provided feature: a permission-bearing feature shows its label, default and a user-settings pointer with no control, while a speed feature offers a select of its host options around the role default. `RoleLaunchFeatures` maps the selected model's features, keeps explicit values in the agent override, and drops the override when no explicit value or identity remains. `RoleLaunchDefaults` shows the applied mode with its source, the agent/model/effort sources, the feature sources and the instruction provenance (baseline replaced or added) once options are ready.
+`FeatureControl` uses the shared `launcherSelect` for a non-permission feature, with the role-default option first and the complete selected label plus default provenance in `title`. A permission-bearing feature is a shared `launcherChip` naming its value; its hover points to the user's settings and it offers no override control. `RoleLaunchFeatures` maps all features of the selected model, keeps explicit values in the agent override, and drops the override only when no explicit value or identity remains.
+
+Once options are ready, `RoleLaunchDefaults` renders the host-labelled mode chip; its hover carries mode provenance and the host description. A foreign agent shows `At start`, with the resolution explanation in hover. An `Instructions` chip appears only when notes are present; its hover names their source and whether they replace or add to the baseline. Agent/model/effort provenance belongs to the corresponding selectors in `RoleLauncher`, not to a defaults line here. These are display changes, not permission or payload changes.
 
 ## Evidence
 
-- The permission-bearing feature renders settings-owned text with no override control. [1]
-- The speed feature renders the host option select around the role default. [2]
-- The defaults line carries mode, choice sources and instruction provenance. [3]
+- Feature controls share the launcher look; permission values stay settings-owned chips, while selectors retain complete selected labels and default provenance. [1]
+- Explicit feature values and identities remain in the override; an empty override is removed. [2]
+- Mode and optional instruction chips replace the defaults sentence and carry provenance in hover. [3]

@@ -31,7 +31,13 @@ Material).
 - `ModeBar.tsx` — the viewport switcher: a **React Aria `ToggleButtonGroup`** (single-select
   radiogroup) styled by Panda `_selected` / `_focusVisible` conditions; roving focus + arrow-key
   nav, look unchanged from the old `.modebar`. Since 260928-MIK-L79 it also narrows its spacing below
-  40rem so the four product entries fit a phone.
+  40rem so the four product entries fit a phone. Its button look now comes from `viewTabLook.ts`,
+  not a local copy; its React Aria behavior and existing phone spacing remain its own.
+- `viewTabLook.ts` — the shared view-tab/launcher presentation definition: tab metrics and selected
+  look feed `viewTabButton`, `launcherButton`, `launcherSelect` and `launcherChip`. Start adopts the
+  selected-tab look, Refresh the unselected one. Selectors retain source letter case and an arrow;
+  complete values and provenance remain the launcher's hover responsibility. The grammar owns visual
+  recipes, not launch choices, permission resolution or control availability.
 - `ExplorerTree.tsx` — the one shared async tree (260928-MIK-L79): the headless-tree adapter with the
   caller-supplied loader, row type, open behavior and suffix, a failed load shown as an alert with the
   loader's error text (no guaranteed directory name), a revision-driven re-read of every loaded branch
@@ -137,7 +143,8 @@ tree, Markdown renderer and code view are gone (the code view is `file-viewer/Fi
 
 - The Panda runtime these primitives import (`css`/`cva`/`cx`). [1]
 - The React Aria condition reconciliation (data-hovered/-focused). [2]
-- The route's sole React Aria import wraps the viewport toggle group. [3]
+- The route's React Aria owner wraps the viewport toggle group with the shared visual class. [3]
+- ModeBar and the launcher's controls share the visual definition without sharing selection or permission policy. [10]
 - The complete direct production `EvidenceBadge` renderer set (two files; re-derived by grepping `dashboard/src` for `EvidenceBadge`). [4]
 - The action-availability shape `Affordance` renders. [5]
 - The six lifecycle states `Dot`'s variant vocabulary must cover, and the suite that asserts the two lists agree in both directions. [6]

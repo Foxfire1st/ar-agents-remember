@@ -1,0 +1,799 @@
+{
+  "closed": true,
+  "leaf": "260928-MIK-L133",
+  "rows": [
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-3DZZJ5",
+      "items": [
+        "sha256:ef14b631cfc68da8ab958e38a18c9be1b97c010e84b350a23badd440ea502c9a"
+      ],
+      "reason": "These extents are local presentation imports/helpers/style relocation or whitespace supporting the R133 compact row; they introduce no separate governing invariant beyond the authored shared-row/complete-hover contracts and preserved launch policy. All extents inspected: [{\"candidate\": [106, 2], \"base\": [156, 2], \"content\": \"function launcherRow(progress?: string) {\\n  return { startLabel: progress ?? \\\"Start\\\" };\"}]",
+      "subject": "hunk:sha256:ef14b631cfc68da8ab958e38a18c9be1b97c010e84b350a23badd440ea502c9a"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-3HY06B",
+      "items": [
+        "sha256:7838a5208250537c5c397dc269fd81068944196dd1ac35f76a88ce0bb7b12ad0"
+      ],
+      "reason": "These extents are local presentation imports/helpers/style relocation or whitespace supporting the R133 compact row; they introduce no separate governing invariant beyond the authored shared-row/complete-hover contracts and preserved launch policy. All extents inspected: [{\"candidate\": [30, 4], \"base\": [24, 0], \"content\": \"// A selector's wrapper: no visible title (each selector keeps its accessible\\n// name and carries a hover text that says what it selects). It sizes to its\\n// value up to its cap and yields below it, so the full row still lands on one\\n// line; only a longer value ends in an ellipsis, whole in the hover text.\"}]",
+      "subject": "hunk:sha256:7838a5208250537c5c397dc269fd81068944196dd1ac35f76a88ce0bb7b12ad0"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R133",
+          "packet": "requirements/MIK-R133-v1-the-role-launcher-is-one-tight-row.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "adc4642adec27114ef5f06619f1a27e74899d2e7",
+            "content": "sha256:ae01e6a809cd47819b696aee450d63c9dec59f9e0be5b9c54b718c11e5fdabdb",
+            "locator": {
+              "kind": "symbol",
+              "name": "boundCanStart"
+            },
+            "path": "dashboard/src/cockpit/role-launcher/RoleLauncher.tsx"
+          },
+          "before": {
+            "blob": "b7d20cc3f2f13a0cd95a326cc08f7364481fa80c",
+            "content": "sha256:ae01e6a809cd47819b696aee450d63c9dec59f9e0be5b9c54b718c11e5fdabdb",
+            "locator": {
+              "kind": "symbol",
+              "name": "boundCanStart"
+            },
+            "path": "dashboard/src/cockpit/role-launcher/RoleLauncher.tsx"
+          },
+          "id": "RLZ-CSKAPQ"
+        },
+        {
+          "after": {
+            "blob": "adc4642adec27114ef5f06619f1a27e74899d2e7",
+            "content": "sha256:68a17818ad9491b09a4233b3949b3730131d8a6ba62db9066556e59847d5bd37",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleLauncher"
+            },
+            "path": "dashboard/src/cockpit/role-launcher/RoleLauncher.tsx"
+          },
+          "before": {
+            "blob": "b7d20cc3f2f13a0cd95a326cc08f7364481fa80c",
+            "content": "sha256:abd10bcacdbaf00edce13e267510e59396b0c7bf5c7b8d6cc2e75d796d5057ad",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleLauncher"
+            },
+            "path": "dashboard/src/cockpit/role-launcher/RoleLauncher.tsx"
+          },
+          "id": "RLZ-MKJATY"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-5M8F37",
+      "items": [
+        "sha256:7473467347f8d958b87d4754402a5be00222524343a1ed247b5ab1958eb09828"
+      ],
+      "reason": "R133 presentation-only delta preserves this stored obligation and its complete applicability/conditions/exclusions; re-anchor all touched/carried entries, with no statement or entry-set change. Whole-control wrapping concerns width/control count, not reply length.",
+      "revision": 2,
+      "subject": "INV-5MP23G"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R133",
+          "packet": "requirements/MIK-R133-v1-the-role-launcher-is-one-tight-row.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "adc4642adec27114ef5f06619f1a27e74899d2e7",
+            "content": "sha256:68a17818ad9491b09a4233b3949b3730131d8a6ba62db9066556e59847d5bd37",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleLauncher"
+            },
+            "path": "dashboard/src/cockpit/role-launcher/RoleLauncher.tsx"
+          },
+          "before": "absent",
+          "id": "RLZ-W3VMNM"
+        },
+        {
+          "after": {
+            "blob": "d74019caf561c06c30e27402f947b5d2f992abef",
+            "content": "sha256:1f8d2c4ea0a5be7358fb903fa0a8c20521940ae022ff62492f83fcb8afe00010",
+            "locator": {
+              "kind": "symbol",
+              "name": "FeatureControl"
+            },
+            "path": "dashboard/src/cockpit/RoleLaunchFeatures.tsx"
+          },
+          "before": "absent",
+          "id": "RLZ-YFEGZV"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-6486VR",
+      "items": [],
+      "reason": "Admit the durable cross-file presentation guarantee from the directly delivered passed Worker clause/finding; all original producer fields retained, scope and admission authored here. Vitest callbacks remain reference evidence rather than fabricated symbol proofs. M1-F01 withdraws the overbroad empty-document-placeholder promise: only matched document options recover label and identity; empty/unmatched document hovers state purpose. Non-document chosen/default labels and both existing realization IDs remain supported.",
+      "revision": 1,
+      "subject": "INV-MXTMP8"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7KMHSD",
+      "items": [
+        "sha256:c96fecae09d402712969aa5408821a4fc36a2df895786a1a33158e5b470d4821"
+      ],
+      "reason": "These extents are local presentation imports/helpers/style relocation or whitespace supporting the R133 compact row; they introduce no separate governing invariant beyond the authored shared-row/complete-hover contracts and preserved launch policy. All extents inspected: [{\"candidate\": [89, 1], \"base\": [45, 0], \"content\": \"    source={featureChoices?.[feature.id]?.source}\"}]",
+      "subject": "hunk:sha256:c96fecae09d402712969aa5408821a4fc36a2df895786a1a33158e5b470d4821"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R133",
+          "packet": "requirements/MIK-R133-v1-the-role-launcher-is-one-tight-row.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "adc4642adec27114ef5f06619f1a27e74899d2e7",
+            "content": "sha256:68a17818ad9491b09a4233b3949b3730131d8a6ba62db9066556e59847d5bd37",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleLauncher"
+            },
+            "path": "dashboard/src/cockpit/role-launcher/RoleLauncher.tsx"
+          },
+          "before": {
+            "blob": "b7d20cc3f2f13a0cd95a326cc08f7364481fa80c",
+            "content": "sha256:abd10bcacdbaf00edce13e267510e59396b0c7bf5c7b8d6cc2e75d796d5057ad",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleLauncher"
+            },
+            "path": "dashboard/src/cockpit/role-launcher/RoleLauncher.tsx"
+          },
+          "id": "RLZ-6DAG9Q"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-9GW843",
+      "items": [
+        "sha256:d3cf75bb5e061b117c20bd787b3678ba96d0a2a6f8b316f2f8b87eaf0b85b1f7"
+      ],
+      "reason": "R133 presentation-only delta preserves this stored obligation and its complete applicability/conditions/exclusions; re-anchor all touched/carried entries, with no statement or entry-set change. Whole-control wrapping concerns width/control count, not reply length.",
+      "revision": 1,
+      "subject": "INV-A0240E"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R133",
+          "packet": "requirements/MIK-R133-v1-the-role-launcher-is-one-tight-row.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "7f6cc9a11ef6150c90de6828e89f182239701808",
+            "content": "sha256:6b0d0c39b7a67456d5d8953831418de84ba58a2d67fe1cc92a13f8c1b11bbd7a",
+            "locator": {
+              "kind": "symbol",
+              "name": "viewTabMetrics"
+            },
+            "path": "dashboard/src/grammar/viewTabLook.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-5Z18NZ"
+        },
+        {
+          "after": {
+            "blob": "adc4642adec27114ef5f06619f1a27e74899d2e7",
+            "content": "sha256:68a17818ad9491b09a4233b3949b3730131d8a6ba62db9066556e59847d5bd37",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleLauncher"
+            },
+            "path": "dashboard/src/cockpit/role-launcher/RoleLauncher.tsx"
+          },
+          "before": "absent",
+          "id": "RLZ-RKR5QW"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-ANKXMN",
+      "items": [],
+      "reason": "Admit the durable cross-file presentation guarantee from the directly delivered passed Worker clause/finding; all original producer fields retained, scope and admission authored here. Vitest callbacks remain reference evidence rather than fabricated symbol proofs.",
+      "revision": 1,
+      "subject": "INV-3DKC7T"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ATQ4HZ",
+      "items": [
+        "sha256:624d74b790a81b50a08e6306defac1683d3789dc26e42984f6fb1dbf747f1b6e"
+      ],
+      "reason": "These extents are local presentation imports/helpers/style relocation or whitespace supporting the R133 compact row; they introduce no separate governing invariant beyond the authored shared-row/complete-hover contracts and preserved launch policy. All extents inspected: [{\"candidate\": [2, 2], \"base\": [2, 1], \"content\": \"import { css } from \\\"../../../styled-system/css\\\";\\nimport { launcherButton, launcherChip, launcherSelect } from \\\"../../grammar/viewTabLook\\\";\"}]",
+      "subject": "hunk:sha256:624d74b790a81b50a08e6306defac1683d3789dc26e42984f6fb1dbf747f1b6e"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-CPR7TD",
+      "items": [
+        "sha256:cb6336706c1c0c94534ecaf005b8b21c079c38f2dc59057225cfdb0a78967d79"
+      ],
+      "reason": "Reviewed the root route contract: one shared RoleChats/launcher owner, persistent frame, host-owned navigation, controls-only strip and retained default/override intent remain true. The visual recipe relocation is described at grammar overview and the six file-card homes, not as a new root-route workflow.",
+      "subject": "onboarding:dashboard/src/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-4S93MX",
+          "revision": 1
+        },
+        {
+          "id": "INV-7D9QDG",
+          "revision": 1
+        },
+        {
+          "id": "INV-7QV5CQ",
+          "revision": 1
+        },
+        {
+          "id": "INV-A3AK6R",
+          "revision": 1
+        },
+        {
+          "id": "INV-QS9SRX",
+          "revision": 1
+        },
+        {
+          "id": "INV-STRQX4",
+          "revision": 1
+        },
+        {
+          "id": "INV-WEZ24E",
+          "revision": 1
+        },
+        {
+          "id": "INV-X60KEC",
+          "revision": 1
+        },
+        {
+          "id": "INV-XQMXT2",
+          "revision": 1
+        },
+        {
+          "id": "INV-YJ2H50",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-D0S9MT",
+      "items": [
+        "sha256:5642ae61bfc67e4ae08a7c054e97498207ea1bdb3388b2e20c02ab25fe0ea855"
+      ],
+      "reason": "Examined every stored member, the recorded joint guarantee and routes against the complete six-file R133 delta. Launch authority, feature/permission resolution, exact request/navigation behavior and shipped propagation ownership stay unchanged; no family membership or route change is justified.",
+      "revision": 2,
+      "subject": "FAM-8GST1A"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-0EASG7",
+          "revision": 1
+        },
+        {
+          "id": "INV-68QN0P",
+          "revision": 1
+        },
+        {
+          "id": "INV-A0240E",
+          "revision": 1
+        },
+        {
+          "id": "INV-BS7TH8",
+          "revision": 1
+        },
+        {
+          "id": "INV-VZJRTM",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-DBWC3G",
+      "items": [
+        "sha256:47e2ec6193fcc972ec891b5ff194bc696dee85a0acf8a247e95711819415a873"
+      ],
+      "reason": "Examined every stored member, the recorded joint guarantee and routes against the complete six-file R133 delta. Launch authority, feature/permission resolution, exact request/navigation behavior and shipped propagation ownership stay unchanged; no family membership or route change is justified.",
+      "revision": 1,
+      "subject": "FAM-3NG1K9"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-DMNNEE",
+      "items": [
+        "sha256:f022d735e24d8f8b9acdaf482fa2ae9d28047190dabffdff49e7cbe4c539f9fa"
+      ],
+      "reason": "These extents are local presentation imports/helpers/style relocation or whitespace supporting the R133 compact row; they introduce no separate governing invariant beyond the authored shared-row/complete-hover contracts and preserved launch policy. All extents inspected: [{\"candidate\": [36, 3], \"base\": [27, 97], \"content\": \"  flexGrow: \\\"0\\\",\\n  flexBasis: \\\"auto\\\",\\n  minWidth: \\\"6rem\\\",\"}]",
+      "subject": "hunk:sha256:f022d735e24d8f8b9acdaf482fa2ae9d28047190dabffdff49e7cbe4c539f9fa"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-E64ERY",
+      "items": [
+        "sha256:b2677b014c859de2b294346e9d896656a351126d4290937e5d9ca080db49617c"
+      ],
+      "reason": "These extents are local presentation imports/helpers/style relocation or whitespace supporting the R133 compact row; they introduce no separate governing invariant beyond the authored shared-row/complete-hover contracts and preserved launch policy. All extents inspected: [{\"candidate\": [57, 1], \"base\": [126, 0], \"content\": \"  flex: \\\"0 0 auto\\\",\"}]",
+      "subject": "hunk:sha256:b2677b014c859de2b294346e9d896656a351126d4290937e5d9ca080db49617c"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-EKPYDV",
+      "items": [
+        "sha256:19727eccd348bf2d1c53d2db95bf7b728ca5e1b5b2012838431ee563968d6db5"
+      ],
+      "reason": "These extents are local presentation imports/helpers/style relocation or whitespace supporting the R133 compact row; they introduce no separate governing invariant beyond the authored shared-row/complete-hover contracts and preserved launch policy. All extents inspected: [{\"candidate\": [40, 15], \"base\": [124, 0], \"content\": \"// Selectors give way first: short-valued wrappers yield little, the\\n// default-valued wrappers most, each down to its floor; a chip or button never\\n// yields. The document caps keep the ordinary eleven-control row on one line\\n// at 1440 px; whatever still does not fit wraps by whole controls.\\nconst roleLauncherRoleField = css({ maxWidth: \\\"9rem\\\", flexShrink: 0.5, \\\"@media (min-width: 90rem)\\\": { minWidth: \\\"5.5rem\\\" } });\\nconst roleLauncherSprintField = css({ maxWidth: \\\"6rem\\\", flexShrink: 0.5, \\\"@media (min-width: 90rem)\\\": { minWidth: \\\"5rem\\\" } });\\nconst roleLauncherMasterField = css({ maxWidth: \\\"6rem\\\", flexShrink: 0.5, \\\"@media (min-width: 90rem)\\\": { minWidth: \\\"5rem\\\" } });\\nconst roleLauncherTaskField = css({ maxWidth: \\\"6rem\\\", flexShrink: 0.5, \\\"@media (min-width: 90rem)\\\": { minWidth: \\\"5rem\\\" } });\\nconst roleLauncherAgentField = css({ maxWidth: \\\"10rem\\\", flexShrink: 1.25, \\\"@media (min-width: 90rem)\\\": { minWidth: \\\"4.5rem\\\" } });\\nconst roleLauncherModelField = css({ maxWidth: \\\"10rem\\\", flexShrink: 1.25, \\\"@media (min-width: 90rem)\\\": { minWidth: \\\"4.5rem\\\" } });\\nconst roleLauncherEffortField = css({ maxWidth: \\\"10rem\\\", flexShrink: 1.25, \\\"@media (min-width: 90rem)\\\": { minWidth: \\\"4.5rem\\\" } });\\n// Every selector of the row is the one shared selector in\\n// ../../grammar/viewTabLook (imported as `launcherSelect` above): the row\\n// holds no copy of the tabs' look. Buttons likewise use the shared\\n// `launcherButton` (Start the selected-tab look, the rest the unselected one).\"}]",
+      "subject": "hunk:sha256:19727eccd348bf2d1c53d2db95bf7b728ca5e1b5b2012838431ee563968d6db5"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "examined": [
+        {
+          "id": "INV-43CXH6",
+          "revision": 1
+        },
+        {
+          "id": "INV-5MP23G",
+          "revision": 2
+        },
+        {
+          "id": "INV-6SGHBB",
+          "revision": 1
+        },
+        {
+          "id": "INV-8J056T",
+          "revision": 1
+        },
+        {
+          "id": "INV-C7AT8R",
+          "revision": 1
+        },
+        {
+          "id": "INV-DH5NRM",
+          "revision": 1
+        },
+        {
+          "id": "INV-EFDE52",
+          "revision": 1
+        },
+        {
+          "id": "INV-TA2JW5",
+          "revision": 1
+        },
+        {
+          "id": "INV-ZVQ7E3",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-ER4164",
+      "items": [
+        "sha256:a5209688ec158353f4e7bc0ef8e89b8d1681af44c45e029cb37b776339bbb664"
+      ],
+      "reason": "Examined every stored member, full guarantee and routes against the six-file presentation delta. Reply-independent height is preserved; the unconditional constant-height shorthand is clarified to admit whole-control wrapping by width/control count.",
+      "revision": 4,
+      "subject": "FAM-RT2XDA"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R133",
+          "packet": "requirements/MIK-R133-v1-the-role-launcher-is-one-tight-row.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "adc4642adec27114ef5f06619f1a27e74899d2e7",
+            "content": "sha256:68a17818ad9491b09a4233b3949b3730131d8a6ba62db9066556e59847d5bd37",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleLauncher"
+            },
+            "path": "dashboard/src/cockpit/role-launcher/RoleLauncher.tsx"
+          },
+          "before": {
+            "blob": "b7d20cc3f2f13a0cd95a326cc08f7364481fa80c",
+            "content": "sha256:abd10bcacdbaf00edce13e267510e59396b0c7bf5c7b8d6cc2e75d796d5057ad",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleLauncher"
+            },
+            "path": "dashboard/src/cockpit/role-launcher/RoleLauncher.tsx"
+          },
+          "id": "RLZ-MKCYCH"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-F1XN54",
+      "items": [
+        "sha256:fa370d83556a469b846ea93c52eac96b4cc36a1cc1d5589b1361c274e219516d"
+      ],
+      "reason": "R133 presentation-only delta preserves this stored obligation and its complete applicability/conditions/exclusions; re-anchor all touched/carried entries, with no statement or entry-set change. Whole-control wrapping concerns width/control count, not reply length.",
+      "revision": 1,
+      "subject": "INV-WEZ24E"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R133",
+          "packet": "requirements/MIK-R133-v1-the-role-launcher-is-one-tight-row.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "d74019caf561c06c30e27402f947b5d2f992abef",
+            "content": "sha256:1f8d2c4ea0a5be7358fb903fa0a8c20521940ae022ff62492f83fcb8afe00010",
+            "locator": {
+              "kind": "symbol",
+              "name": "FeatureControl"
+            },
+            "path": "dashboard/src/cockpit/RoleLaunchFeatures.tsx"
+          },
+          "before": {
+            "blob": "583ac7279440da656e98b3495ceecc02f5d1eb78",
+            "content": "sha256:85722fcbd0a13f750dbafdcdf12dc4cb137597f0cb2d6bb098ef3963edb7211c",
+            "locator": {
+              "kind": "symbol",
+              "name": "FeatureControl"
+            },
+            "path": "dashboard/src/cockpit/RoleLaunchFeatures.tsx"
+          },
+          "id": "RLZ-000KJN"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-FDAY6X",
+      "items": [
+        "sha256:daca6ded52a4fd0178f05bf815eb1759a126dbbd0287645ae0fd98cd8e8d2679"
+      ],
+      "reason": "R133 presentation-only delta preserves this stored obligation and its complete applicability/conditions/exclusions; re-anchor all touched/carried entries, with no statement or entry-set change. Whole-control wrapping concerns width/control count, not reply length.",
+      "revision": 1,
+      "subject": "INV-002A1G"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-63Z0MN",
+          "revision": 2
+        },
+        {
+          "id": "INV-DKN3CG",
+          "revision": 2
+        },
+        {
+          "id": "INV-NNQR91",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-GC3YB3",
+      "items": [
+        "sha256:8e7e19a836a19cb5287fbb87dcc8235a16713f275254baffa5b6f12f4204e586"
+      ],
+      "reason": "Examined every stored member, the recorded joint guarantee and routes against the complete six-file R133 delta. Launch authority, feature/permission resolution, exact request/navigation behavior and shipped propagation ownership stay unchanged; no family membership or route change is justified.",
+      "revision": 1,
+      "subject": "FAM-GDXSJG"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-J5AAP1",
+      "items": [
+        "sha256:e22c13334187aa32a47ca0b1580ab8d56e6decf754510640b0de769dcf977fa8"
+      ],
+      "reason": "These extents are local presentation imports/helpers/style relocation or whitespace supporting the R133 compact row; they introduce no separate governing invariant beyond the authored shared-row/complete-hover contracts and preserved launch policy. All extents inspected: [{\"candidate\": [1, 2], \"base\": [0, 0], \"content\": \"import { css } from \\\"../../styled-system/css\\\";\\nimport { launcherChip, launcherSelect } from \\\"../grammar/viewTabLook\\\";\"}]",
+      "subject": "hunk:sha256:e22c13334187aa32a47ca0b1580ab8d56e6decf754510640b0de769dcf977fa8"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R133",
+          "packet": "requirements/MIK-R133-v1-the-role-launcher-is-one-tight-row.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "c7db7d4dfd7a54b42ffc35bee11fd41e26b4e4a8",
+            "content": "sha256:29b7ea1b69957a636ed44c6ef636b993dbb8520b7ae53ed2f46e6b7f87813bad",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/cockpit/RoleChats.launcher.test.tsx"
+          },
+          "before": {
+            "blob": "1881f80cde7c80b79201d14758e21c66b41dada8",
+            "content": "sha256:0c6452facbb4cd346afe4c99a59ebd24146df6cc5693c08464e464049906b354",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/cockpit/RoleChats.launcher.test.tsx"
+          },
+          "id": "RLZ-DKX1HV"
+        },
+        {
+          "after": {
+            "blob": "d74019caf561c06c30e27402f947b5d2f992abef",
+            "content": "sha256:446bf54bd2236b60e09efd083497f0c6204a2ca94a1e8f5322e0930ae6113d2d",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleLaunchDefaults"
+            },
+            "path": "dashboard/src/cockpit/RoleLaunchFeatures.tsx"
+          },
+          "before": {
+            "blob": "583ac7279440da656e98b3495ceecc02f5d1eb78",
+            "content": "sha256:f1778a7b138e5a91d2d9b1a3757d6d32f5d56348c87f43474ed981fc3dc22f7c",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleLaunchDefaults"
+            },
+            "path": "dashboard/src/cockpit/RoleLaunchFeatures.tsx"
+          },
+          "id": "RLZ-G82K8R"
+        },
+        {
+          "after": {
+            "blob": "adc4642adec27114ef5f06619f1a27e74899d2e7",
+            "content": "sha256:68a17818ad9491b09a4233b3949b3730131d8a6ba62db9066556e59847d5bd37",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleLauncher"
+            },
+            "path": "dashboard/src/cockpit/role-launcher/RoleLauncher.tsx"
+          },
+          "before": {
+            "blob": "b7d20cc3f2f13a0cd95a326cc08f7364481fa80c",
+            "content": "sha256:abd10bcacdbaf00edce13e267510e59396b0c7bf5c7b8d6cc2e75d796d5057ad",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleLauncher"
+            },
+            "path": "dashboard/src/cockpit/role-launcher/RoleLauncher.tsx"
+          },
+          "id": "RLZ-N85X2R"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-MG4CRH",
+      "items": [
+        "sha256:247c0e0ebe7abc8eb27b18e3aec87d8f401ed7c7a5bbd41618eccdb952c3d68f"
+      ],
+      "reason": "R133 changes control presentation and retains the existing launch/permission/request/report obligation; each raising entry was compared against the candidate. Defaults/provenance are now in the corresponding control and hover rather than a running sentence.",
+      "revision": 2,
+      "subject": "INV-63Z0MN"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-N5ZT0Q",
+      "items": [
+        "sha256:4059827079eacfa702b2f0efbdf526db767cf87085b5104c554bfe030a037f00"
+      ],
+      "reason": "These extents are local presentation imports/helpers/style relocation or whitespace supporting the R133 compact row; they introduce no separate governing invariant beyond the authored shared-row/complete-hover contracts and preserved launch policy. All extents inspected: [{\"candidate\": [10, 2], \"base\": [9, 1], \"content\": \"import { EMPTY_ROLE_EFFORTS, EMPTY_ROLE_MODELS, LAUNCHER_ROLES, isTasklessRole, usesRequestReceipts, launchChoiceProblem, launchSelectionComplete, masterOptionsForSprint, optionIndex, roleAgentOverrideFor, roleDocumentScope, refAtOptionIndex, roleNeedsMaster, roleNeedsSprint, roleNeedsTask, sameRoleDocumentScope, sprintOptionsForDocs, taskOptionsForMaster, taskRefIdentity, type RoleAgentChoice, type RoleLaunchSelection, type LauncherRole, type RoleDefaults, type RoleScopedExecution, type RoleTaskOption } from \\\"../roleLaunchModel\\\";\\nimport type { TaskDocumentRef } from \\\"../../types/terminalCatalog\\\";\"}]",
+      "subject": "hunk:sha256:4059827079eacfa702b2f0efbdf526db767cf87085b5104c554bfe030a037f00"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R133",
+          "packet": "requirements/MIK-R133-v1-the-role-launcher-is-one-tight-row.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "adc4642adec27114ef5f06619f1a27e74899d2e7",
+            "content": "sha256:68a17818ad9491b09a4233b3949b3730131d8a6ba62db9066556e59847d5bd37",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleLauncher"
+            },
+            "path": "dashboard/src/cockpit/role-launcher/RoleLauncher.tsx"
+          },
+          "before": {
+            "blob": "b7d20cc3f2f13a0cd95a326cc08f7364481fa80c",
+            "content": "sha256:abd10bcacdbaf00edce13e267510e59396b0c7bf5c7b8d6cc2e75d796d5057ad",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleLauncher"
+            },
+            "path": "dashboard/src/cockpit/role-launcher/RoleLauncher.tsx"
+          },
+          "id": "RLZ-2RCSQR"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-N9S5CZ",
+      "items": [
+        "sha256:f526503ffec6964ffa4c478938a3ad029461f517e419770de1979bb23c305e67"
+      ],
+      "reason": "R133 presentation-only delta preserves this stored obligation and its complete applicability/conditions/exclusions; re-anchor all touched/carried entries, with no statement or entry-set change. Whole-control wrapping concerns width/control count, not reply length.",
+      "revision": 1,
+      "subject": "INV-6SGHBB"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-002A1G",
+          "revision": 1
+        },
+        {
+          "id": "INV-1Q4W04",
+          "revision": 1
+        },
+        {
+          "id": "INV-7DMXZ3",
+          "revision": 1
+        },
+        {
+          "id": "INV-AFTG56",
+          "revision": 1
+        },
+        {
+          "id": "INV-N9D91D",
+          "revision": 2
+        },
+        {
+          "id": "INV-VKTCC4",
+          "revision": 1
+        },
+        {
+          "id": "INV-WT3VCM",
+          "revision": 1
+        },
+        {
+          "id": "INV-YDDMGJ",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-QH0NE8",
+      "items": [
+        "sha256:2b552c50444d335ea5cda6caed550002c76873d49c5144f75fb1063d595fdb85"
+      ],
+      "reason": "Examined every stored member, the recorded joint guarantee and routes against the complete six-file R133 delta. Launch authority, feature/permission resolution, exact request/navigation behavior and shipped propagation ownership stay unchanged; no family membership or route change is justified.",
+      "revision": 2,
+      "subject": "FAM-N17BB4"
+    },
+    {
+      "disposition": "changed",
+      "effect": "introduce",
+      "examined": [
+        {
+          "id": "INV-3DKC7T",
+          "revision": 1
+        },
+        {
+          "id": "INV-MXTMP8",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-R2Z70M",
+      "items": [],
+      "reason": "The compact shared-look contract and complete-hover contract together preserve choice information without a tall prose row or clipped overflow; neither guarantees that alone. Place the joint obligation only at the cockpit and grammar realization routes. M1-F01 member applicability is qualified to matched selected documents; the family already speaks of selected labels, so its guarantee, members, routes and admission remain unchanged.",
+      "revision": 1,
+      "subject": "FAM-AW30YS"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-RY01GS",
+      "items": [
+        "sha256:362d054fb62b2ead2e117d6d945a00b4152feeb6ef57c3fa09ae9944760599a8"
+      ],
+      "reason": "These extents are local presentation imports/helpers/style relocation or whitespace supporting the R133 compact row; they introduce no separate governing invariant beyond the authored shared-row/complete-hover contracts and preserved launch policy. All extents inspected: [{\"candidate\": [79, 19], \"base\": [147, 0], \"content\": \"// Where a default comes from lives in the hover text of its control, in the\\n// form \\\"<key>: <value> · <source>\\\".\\nfunction defaultSourceTitle(key: string, choices: RoleDefaults[\\\"choices\\\"], fallbackValue: string): string {\\n  const choice = choices?.[key];\\n  const value = choice?.value === undefined || choice?.value === null ? fallbackValue : String(choice.value);\\n  return `${key}: ${value} · ${choice?.source ?? \\\"host default\\\"}`;\\n}\\n\\n// The hover text of a document selector: the complete rendered label it\\n// currently shows, what it selects, and the document identity behind it.\\nfunction docSelectTitle(options: RoleTaskOption[], ref: TaskDocumentRef | undefined, what: string, emptyText: string): string {\\n  const value = optionIndex(options, ref);\\n  if (value === \\\"\\\") return what;\\n  const selected = options[Number(value)];\\n  const label = selected ? selected.doc.title || selected.doc.id : emptyText;\\n  const identity = (selected && selected.ref ? `${selected.ref.repository}/${selected.ref.path}` : undefined) ?? taskRefIdentity(ref);\\n  return identity ? `${label} — ${what}: ${identity}` : `${label} — ${what}`;\\n}\\n\"}]",
+      "subject": "hunk:sha256:362d054fb62b2ead2e117d6d945a00b4152feeb6ef57c3fa09ae9944760599a8"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R133",
+          "packet": "requirements/MIK-R133-v1-the-role-launcher-is-one-tight-row.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "adc4642adec27114ef5f06619f1a27e74899d2e7",
+            "content": "sha256:18e3536e6f348422306c2cf062f46b8f825a76a9b851c875a0abbac15532992e",
+            "locator": {
+              "kind": "symbol",
+              "name": "roleLauncherGrid"
+            },
+            "path": "dashboard/src/cockpit/role-launcher/RoleLauncher.tsx"
+          },
+          "before": {
+            "blob": "b7d20cc3f2f13a0cd95a326cc08f7364481fa80c",
+            "content": "sha256:1687dd751b97a7f56ed19607bf786050f7e969c393691f73db4bdc94c858e497",
+            "locator": {
+              "kind": "symbol",
+              "name": "roleLauncherGrid"
+            },
+            "path": "dashboard/src/cockpit/role-launcher/RoleLauncher.tsx"
+          },
+          "id": "RLZ-TNTSC0"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-SC79VX",
+      "items": [
+        "sha256:91939180f04fcd20ac0869c82712f940a036f6e247dd3128a7eb77645bf37dab"
+      ],
+      "reason": "R133 presentation-only delta preserves this stored obligation and its complete applicability/conditions/exclusions; re-anchor all touched/carried entries, with no statement or entry-set change. Whole-control wrapping concerns width/control count, not reply length.",
+      "revision": 1,
+      "subject": "INV-43CXH6"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-V78KK4",
+      "items": [
+        "sha256:334c078c909a33666eb69c7019178abfa9ae1dab55c07412a0191cec258430f7"
+      ],
+      "reason": "These extents are local presentation imports/helpers/style relocation or whitespace supporting the R133 compact row; they introduce no separate governing invariant beyond the authored shared-row/complete-hover contracts and preserved launch policy. All extents inspected: [{\"candidate\": [84, 3], \"base\": [43, 0], \"content\": \"  const featureChoices = defaults.choices?.featureValues as\\n    | Record<string, { value?: unknown; source?: string }>\\n    | undefined;\"}]",
+      "subject": "hunk:sha256:334c078c909a33666eb69c7019178abfa9ae1dab55c07412a0191cec258430f7"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

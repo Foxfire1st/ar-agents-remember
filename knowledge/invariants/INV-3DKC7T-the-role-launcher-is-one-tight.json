@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "The renderer and shared grammar module must agree on a compact tab-derived look and complete whole-control recovery; copying styles or hiding excess controls would break that cross-file promise."
+  },
+  "applicability": "The shared dashboard role launcher and the grammar definition consumed by its controls and the view tabs.",
+  "conditions": [
+    "The ordinary eleven-control task-needing one-feature composition fits one line at 1440px.",
+    "Extra controls or insufficient width wrap by whole controls without an overflow menu.",
+    "Selectors retain source spelling and an arrow; ModeBar retains its own phone-spacing overrides.",
+    "Launch offerings, ordering, disabled logic and payload behavior remain unchanged."
+  ],
+  "exclusions": [
+    "An exact fixed pixel row height or an unconditional one-line requirement for excess features.",
+    "Changing embedded chat/navigation, launch permissions or saved defaults."
+  ],
+  "id": "INV-3DKC7T",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/260928-MIK-L133-requirement-attempt-journal.md#l133-code-r3-worker-attempt-01; notes/reports/worker/437c48c2-4a23-417d-b07f-4844ae875bf4/role-launch/260928-MIK-L133-worker-437c48c2-4a23-417d-b07f-4844ae875bf4.md (R3 sections)."
+      ],
+      "path": "l133-post-sync-curated-handoff.json"
+    },
+    "handoffEntry": "MIK-R133@v1 / L133-CODE-R3",
+    "leaf": "260928-MIK-L133",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The role launcher is one tight row in the look of the view tabs: ordinary eleven-control one-feature row one line at 1440px; excess controls wrap whole without clipping; view tabs and launcher controls share one definition; offered/sent behavior unchanged.",
+  "status": "accepted",
+  "supersedes": []
+}
