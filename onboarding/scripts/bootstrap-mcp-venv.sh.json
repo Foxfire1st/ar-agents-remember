@@ -3,12 +3,31 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "785b03997d6bda8c57fe4b2270eb8623f2756bfa",
-        "content": "sha256:44f74a8a9388e3fe0278ce9be7fa45c71fd738851df51b3fdd746bd141b82371",
+        "blob": "0b038d80d7b6c69f20e9a71e4f06de788fc04f87",
+        "content": "sha256:c7990cd41c831b2b3a0e2072a5122c9c7b039640de0829645104e43092a573ce",
         "locator": {
-          "end": 34,
+          "end": 84,
           "kind": "line_range",
-          "start": 34
+          "start": 55
+        }
+      },
+      "id": "RLZ-1HQYX3",
+      "invariant": "INV-DYK0F8",
+      "origin": {
+        "handoffEntry": "MIK-R139@v1 rule 3",
+        "leaf": "260928-MIK-L139"
+      },
+      "rationale": "The gate runs before the installer and any venv movement; all three refusals print minimum, finding and path.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "0b038d80d7b6c69f20e9a71e4f06de788fc04f87",
+        "content": "sha256:9435392e002571bf961c4280acc5c771813e2b7e52c1b75ff70e0b9ba29f1e28",
+        "locator": {
+          "end": 102,
+          "kind": "line_range",
+          "start": 102
         }
       },
       "id": "RLZ-3QQKJD",
@@ -22,12 +41,31 @@
     },
     {
       "anchor": {
-        "blob": "785b03997d6bda8c57fe4b2270eb8623f2756bfa",
-        "content": "sha256:0648d1c96cc73605d1d763734badac13121f7d1e66a90539c2a4952d189e7fc1",
+        "blob": "0b038d80d7b6c69f20e9a71e4f06de788fc04f87",
+        "content": "sha256:c7990cd41c831b2b3a0e2072a5122c9c7b039640de0829645104e43092a573ce",
         "locator": {
-          "end": 106,
+          "end": 84,
           "kind": "line_range",
-          "start": 43
+          "start": 55
+        }
+      },
+      "id": "RLZ-A242KW",
+      "invariant": "INV-F4X256",
+      "origin": {
+        "handoffEntry": "MIK-R139@v1 rule 2",
+        "leaf": "260928-MIK-L139"
+      },
+      "rationale": "The gate selects a PATH uv and contains no fetch, download or install step for uv.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "0b038d80d7b6c69f20e9a71e4f06de788fc04f87",
+        "content": "sha256:27b1ee6fecc1e365bd0e2d5c04d6343c2cea475bab24fb75bfb5a3d4c6e8447c",
+        "locator": {
+          "end": 169,
+          "kind": "line_range",
+          "start": 86
         }
       },
       "id": "RLZ-MNKE2T",
@@ -36,22 +74,60 @@
         "handoffEntry": "MIK-R136 rule 1",
         "leaf": "260928-MIK-L136"
       },
-      "rationale": "The script is the commanded mechanism: uv pin, lazy backup-root creation, per-worktree-second backup naming, and removal of a successful run's backup.",
+      "rationale": "The script builds the calling worktree environment from its lock/source after the numeric uv floor gate, uses lazy rollback storage and per-worktree-second backup names, and removes successful replacement backups.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "0b038d80d7b6c69f20e9a71e4f06de788fc04f87",
+        "content": "sha256:c7990cd41c831b2b3a0e2072a5122c9c7b039640de0829645104e43092a573ce",
+        "locator": {
+          "end": 84,
+          "kind": "line_range",
+          "start": 55
+        }
+      },
+      "id": "RLZ-N2K860",
+      "invariant": "INV-NQZ17H",
+      "origin": {
+        "handoffEntry": "MIK-R139@v1 rule 1",
+        "leaf": "260928-MIK-L139"
+      },
+      "rationale": "resolve_uv takes the PATH uv when version_at_least holds against AR_UV_VERSION and refuses otherwise.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "0b038d80d7b6c69f20e9a71e4f06de788fc04f87",
+        "content": "sha256:eb9c84a74c19b105670437f575050a2ac4b325eb8f9df35f927f4472a1834fc1",
+        "locator": {
+          "end": 49,
+          "kind": "line_range",
+          "start": 32
+        }
+      },
+      "id": "RLZ-RCRAQF",
+      "invariant": "INV-NQZ17H",
+      "origin": {
+        "handoffEntry": "MIK-R139@v1 rule 1",
+        "leaf": "260928-MIK-L139"
+      },
+      "rationale": "The comparator both the gate and the refusal text depend on; decimal parts, never text.",
+      "role": "support"
     }
   ],
   "references": {
     "1": {
-      "note": "The source-built interpreter is installed and capability-probed before venv mutation.\n\nAnchor: \"install-python-runtime.sh\"",
+      "note": "The source-built interpreter is installed and capability-probed before venv mutation.\n\nAnchor: `main`",
       "targets": [
         {
           "anchor": {
-            "blob": "785b03997d6bda8c57fe4b2270eb8623f2756bfa",
-            "content": "sha256:e3bca03eab729bcf372f59c5d58adbfd6dced450a3ac2901f65502333be4b8eb",
+            "blob": "0b038d80d7b6c69f20e9a71e4f06de788fc04f87",
+            "content": "sha256:790d070778d784e01660d4616f919c778b300480e804a256c1ecbe0b89bd9d04",
             "locator": {
-              "end": 41,
+              "end": 109,
               "kind": "line_range",
-              "start": 33
+              "start": 99
             }
           },
           "kind": "code"
@@ -59,16 +135,16 @@
       ]
     },
     "2": {
-      "note": "Existing environments require explicit replacement; backup names distinguish worktree directories, and failed recreation restores the predecessor.\n\nAnchor: `restore_previous`",
+      "note": "Existing environments require explicit replacement; backup names distinguish worktree directories, and failed recreation restores the predecessor.\n\nAnchor: `main`",
       "targets": [
         {
           "anchor": {
-            "blob": "785b03997d6bda8c57fe4b2270eb8623f2756bfa",
-            "content": "sha256:38d8b91d4fdbe5042d4c8ac4ec8f42b5f9e463c8f896c4e3fafd8010e5098a15",
+            "blob": "0b038d80d7b6c69f20e9a71e4f06de788fc04f87",
+            "content": "sha256:f3f525852453978f9661c4e15e35f3cd28f813345bbe38a77fcb4ebc076646b1",
             "locator": {
-              "end": 84,
+              "end": 142,
               "kind": "line_range",
-              "start": 53
+              "start": 111
             }
           },
           "kind": "code"
@@ -76,16 +152,16 @@
       ]
     },
     "3": {
-      "note": "uv consumes the worktree's frozen lock and exact interpreter; successful runtime and dependency proof precede removal of the replaced backup.",
+      "note": "uv consumes the worktree's frozen lock and exact interpreter; successful runtime and dependency proof precede removal of the replaced backup.\n\nAnchor: `main`",
       "targets": [
         {
           "anchor": {
-            "blob": "785b03997d6bda8c57fe4b2270eb8623f2756bfa",
-            "content": "sha256:6573d9c4c75b7a727013202efb30f7b46df46b7f937f49aa7d6bd754bf0a7ef6",
+            "blob": "0b038d80d7b6c69f20e9a71e4f06de788fc04f87",
+            "content": "sha256:4f3e19b4a52927ee818c2b6f91c773072ab22fe7b900654f0f26096d0086fa46",
             "locator": {
-              "end": 107,
+              "end": 168,
               "kind": "line_range",
-              "start": 86
+              "start": 144
             }
           },
           "kind": "code"
@@ -105,6 +181,23 @@
               "start": 53
             },
             "path": ".githooks/_gate.sh"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "A qualifying PATH uv is selected without installation before runtime/venv mutation, with minimum and observed identity in diagnostics.\n\nAnchor: `resolve_uv`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0b038d80d7b6c69f20e9a71e4f06de788fc04f87",
+            "content": "sha256:c7990cd41c831b2b3a0e2072a5122c9c7b039640de0829645104e43092a573ce",
+            "locator": {
+              "end": 84,
+              "kind": "line_range",
+              "start": 55
+            }
           },
           "kind": "code"
         }

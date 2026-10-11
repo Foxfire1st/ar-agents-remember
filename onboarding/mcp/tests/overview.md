@@ -12,6 +12,12 @@ validation use the code worktree's own environment as repository tool notes pres
 venv is required by the accounting case; Node coverage is structural without an installed Node
 environment, and neither that case nor catalog membership proves live sync, closeout or cleanup.
 
+The uv-minimum regression module separately checks decimal ordering, equal/newer admission,
+missing/older/unreadable refusals, reported identity and rollback after failed sync. Its PATH
+shims are gate witnesses, not real successful-build proof. The rollback case requires an
+existing environment and checker-valid runtime, and can skip when the latter is unavailable.
+Candidate tests use scratch XDG homes; registration is still not execution evidence.
+
 - The four-case module protects shipped instruction wording and ignored-environment accounting, with no lifecycle execution. [1708]
 
 ### Shared support settings isolation — MIK-R135

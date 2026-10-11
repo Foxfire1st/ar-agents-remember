@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Moving an existing environment before discovering an unsupported uv can destroy a usable candidate environment for a gate failure."
+  },
+  "applicability": "The initial uv gate of host worktree environment bootstrap, before runtime installation or venv mutation.",
+  "conditions": [
+    "Version-command failure or unreadable dotted version is unsupported.",
+    "Diagnostics include the minimum and available path/version information; absence has no executable path to report."
+  ],
+  "exclusions": [
+    "Later runtime validation or frozen-sync failures follow their separate preserved recovery paths.",
+    "The diagnostic retains the first version token, not an arbitrary multiline version-command transcript."
+  ],
+  "id": "INV-DYK0F8",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "test_older_uv_is_refused_before_anything_is_touched; test_missing_uv_is_refused; test_unreadable_version_is_refused_with_its_text; test_unreadable_version_output_is_never_reported_empty (F02 probes); test_refusal_leaves_an_existing_environment_alone"
+      ],
+      "path": "writer-projection-final.json"
+    },
+    "handoffEntry": "MIK-R139@v1 rule 3",
+    "leaf": "260928-MIK-L139",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "An older uv, no uv, or an unreadable version text is refused before anything is moved or created, naming the lowest accepted version, the found version or text, and the path found.",
+  "status": "proposed",
+  "supersedes": []
+}

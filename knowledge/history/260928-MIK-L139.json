@@ -1,0 +1,251 @@
+{
+  "closed": true,
+  "leaf": "260928-MIK-L139",
+  "rows": [
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-03GW13",
+      "items": [
+        "sha256:bfbfb3c4ab028e346c43ad0a87fb7333a07442e048f96044c421efa58a69ac0e"
+      ],
+      "reason": "These uncovered extents are comments, initial gate-identity storage or removal of the obsolete trailing blank line; the resolve_uv/comparator targets carry actual admission behavior. Delete-only whitespace has no invariant.",
+      "subject": "hunk:sha256:bfbfb3c4ab028e346c43ad0a87fb7333a07442e048f96044c421efa58a69ac0e"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-2FS4D1",
+          "revision": 1
+        },
+        {
+          "id": "INV-4AQ26N",
+          "revision": 1
+        },
+        {
+          "id": "INV-RCFXFA",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-1EY33M",
+      "items": [
+        "sha256:da482c725bdc1c24b20f7c03f0e20cef68bc60aa6fc3605383a40735a77a940c"
+      ],
+      "reason": "Examined all three members: worktree lock/source execution, generic instruction ownership and ignored environment accounting remain separate from landed product operation. Host uv floor changes none of that guarantee or its recorded routes.",
+      "revision": 1,
+      "subject": "FAM-H734XJ"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "9ca96b9d574b4102dd3f618143650c908242455b",
+            "content": "sha256:04b77e0816bfbe9cfe8a4616e3ca1b229fd90065587c30a5fe2dd50222f1969b",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "d083c3a94a8fb8aa8c4c2e38236ec9651beb8759",
+            "content": "sha256:f0abb1987c23554c2a2ffc0add1ca632cb171cb5e494e2c4b53a45d3db0f2801",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-GRTJG0"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-47QGY4",
+      "items": [
+        "sha256:f704625192cb3116ab8040c918e2df4000e6d659a5043f8ec32b5cc64247a363"
+      ],
+      "reason": "INV-MSCRAN remains retired; canonical test catalogs remain reference authorities, not a resurrected obligation. Owner-supported L116 paired sync added independent candidate-identity and review-limit-wording consumer/lane membership. Preserve the incoming references and authored meanings of all seven same-ID realizations; renew this existing row cover against the new live whole-file bytes while automatic carrying renews the other mapped current anchors. This changes currency, not retired meaning, family guarantee or producer disposition.",
+      "revision": 1,
+      "subject": "INV-MSCRAN"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-5Y956M",
+      "items": [
+        "sha256:a3366eb02106bab48a01b4c6db364d05772dcd597abe5b1dbed6531660a63502"
+      ],
+      "reason": "The added module registration is local lane-accounting data; no new runtime or evidence guarantee is introduced.",
+      "subject": "hunk:sha256:a3366eb02106bab48a01b4c6db364d05772dcd597abe5b1dbed6531660a63502"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-7VGMWY",
+          "revision": 1
+        },
+        {
+          "id": "INV-XG226D",
+          "revision": 1
+        },
+        {
+          "id": "INV-Y2SXDZ",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-6BRKZB",
+      "items": [
+        "sha256:b0a8c6f0c9af35e209a4ee7a26910d9b3b86d6cc0d56b7cac8f8a88c3a6acc06"
+      ],
+      "reason": "Examined package range, minor-derived managed runtime selection and pre-import version refusal. Host uv minimum does not change the exact Python runtime or package support line; routes and guarantee remain unchanged.",
+      "revision": 1,
+      "subject": "FAM-Z69A94"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-7QTAZ4",
+      "items": [
+        "sha256:24525506b5077231b959f58befd9a6c8e8199a2ce57c7e11076b7388e7149bb1"
+      ],
+      "reason": "Read the full card and changed Node-lock fixture consumer extent: this is another supported consumer of the existing artifact, not a new artifact/contract or execution guarantee. Existing reachability-accounting, canonical form and registration intent hold.",
+      "subject": "onboarding:mcp/tests/evidence-lifecycle.toml"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-B0CFHX",
+      "items": [
+        "sha256:a7c238e82a9ac3163272822d6a6518107e396e1a1142dfa95bc8730c9a5873b2"
+      ],
+      "reason": "The added local setup paragraph presents the admitted host-floor/no-install policy; source realizations and its governing decision carry durable obligations, and this prose creates no separate cross-location invariant.",
+      "subject": "hunk:sha256:a7c238e82a9ac3163272822d6a6518107e396e1a1142dfa95bc8730c9a5873b2"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "0b038d80d7b6c69f20e9a71e4f06de788fc04f87",
+            "content": "sha256:27b1ee6fecc1e365bd0e2d5c04d6343c2cea475bab24fb75bfb5a3d4c6e8447c",
+            "locator": {
+              "end": 169,
+              "kind": "line_range",
+              "start": 86
+            },
+            "path": "scripts/bootstrap-mcp-venv.sh"
+          },
+          "before": {
+            "blob": "785b03997d6bda8c57fe4b2270eb8623f2756bfa",
+            "content": "sha256:0648d1c96cc73605d1d763734badac13121f7d1e66a90539c2a4952d189e7fc1",
+            "locator": {
+              "end": 106,
+              "kind": "line_range",
+              "start": 43
+            },
+            "path": "scripts/bootstrap-mcp-venv.sh"
+          },
+          "id": "RLZ-MNKE2T"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-DN2JZ7",
+      "items": [
+        "sha256:751e1ef066e7a18653a2798cbd4893896d598d3e729f5a812c51613d55d32c16"
+      ],
+      "reason": "The worktree-local lock/source environment obligation and disclosed shared effects remain. D218 changes uv admission only; its old uv-pin realization wording is corrected, with main owning setup, explicit replace and rollback.",
+      "revision": 1,
+      "subject": "INV-2FS4D1"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "0b038d80d7b6c69f20e9a71e4f06de788fc04f87",
+            "content": "sha256:9435392e002571bf961c4280acc5c771813e2b7e52c1b75ff70e0b9ba29f1e28",
+            "locator": {
+              "end": 102,
+              "kind": "line_range",
+              "start": 102
+            },
+            "path": "scripts/bootstrap-mcp-venv.sh"
+          },
+          "before": {
+            "blob": "785b03997d6bda8c57fe4b2270eb8623f2756bfa",
+            "content": "sha256:44f74a8a9388e3fe0278ce9be7fa45c71fd738851df51b3fdd746bd141b82371",
+            "locator": {
+              "end": 34,
+              "kind": "line_range",
+              "start": 34
+            },
+            "path": "scripts/bootstrap-mcp-venv.sh"
+          },
+          "id": "RLZ-3QQKJD"
+        },
+        {
+          "after": {
+            "blob": "82f5032efd68a6a8f06f4a79d9e4f47574a04567",
+            "content": "sha256:8f102a3527f31b86aae97b2522e8f43e52c893643ecfe4667ab56e70ff603020",
+            "locator": {
+              "end": 57,
+              "kind": "line_range",
+              "start": 57
+            },
+            "path": "scripts/install-python-runtime.sh"
+          },
+          "before": {
+            "blob": "82f5032efd68a6a8f06f4a79d9e4f47574a04567",
+            "content": "sha256:8f102a3527f31b86aae97b2522e8f43e52c893643ecfe4667ab56e70ff603020",
+            "locator": {
+              "end": 57,
+              "kind": "line_range",
+              "start": 57
+            },
+            "path": "scripts/install-python-runtime.sh"
+          },
+          "id": "RLZ-NY6TTR"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-EY82KH",
+      "items": [
+        "sha256:9789f86c987359b900f29ab4eb4c0cdc668f06680b46e5f6077d9425d5db9f95"
+      ],
+      "reason": "Canonical minor-derived Python selection and exact runtime checks are unchanged; relocation through main is not a change of runtime intent. The comparator is not the interpreter-selection witness.",
+      "revision": 1,
+      "subject": "INV-XG226D"
+    },
+    {
+      "disposition": "still_rejected",
+      "id": "ROW-G0FWJ3",
+      "items": [
+        "sha256:65e8eb9ca14ffeff34f8c9e7b1410e4777fbda246c56adcc08c7c550a7d8fbca"
+      ],
+      "reason": "The changed source adds bounded multi-document citation fixing and honest result locations/recovery. citation_fix_tool still delegates only onboarding reference/card maintenance; citation_migrate_tool still rewrites onboarding citation shape. Neither commits Git or authors knowledge records/database, so the ruled exception and rejection condition remain unchanged; stale reconsider_on anchors are renewed, not the alternative reversed.",
+      "subject": "reconsider:DEC-VMMJDN#1"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-KFEEC3",
+      "items": [
+        "sha256:d883ed0e24209bf13328543e04869e4c7aa3e56070e47a481dce457f8203a5c4"
+      ],
+      "reason": "These uncovered extents are comments, initial gate-identity storage or removal of the obsolete trailing blank line; the resolve_uv/comparator targets carry actual admission behavior. Delete-only whitespace has no invariant.",
+      "subject": "hunk:sha256:d883ed0e24209bf13328543e04869e4c7aa3e56070e47a481dce457f8203a5c4"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-NDV92T",
+      "items": [
+        "sha256:8e46b8920913a7ea3cedcc64753a6f2a7a9a138f7860d9ebcb29460bd4818a5c"
+      ],
+      "reason": "Read the complete card and added unit-regression row: a bootstrap regression module is a declared population member, not proof of execution; lane ownership and derived rather than fixed population totals remain unchanged.",
+      "subject": "onboarding:mcp/tests/test-evidence-lanes.toml"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-Z45BSK",
+      "items": [
+        "sha256:7b4f6c13f50b83ea1ce7b6065e8922a741e61fc3256544c864db907796ef8729"
+      ],
+      "reason": "These uncovered extents are comments, initial gate-identity storage or removal of the obsolete trailing blank line; the resolve_uv/comparator targets carry actual admission behavior. Delete-only whitespace has no invariant.",
+      "subject": "hunk:sha256:7b4f6c13f50b83ea1ce7b6065e8922a741e61fc3256544c864db907796ef8729"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

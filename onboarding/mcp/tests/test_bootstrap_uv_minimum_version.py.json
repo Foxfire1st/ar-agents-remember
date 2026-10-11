@@ -1,0 +1,226 @@
+{
+  "path": "mcp/tests/test_bootstrap_uv_minimum_version.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "47d5630cf129aba00d36b74b9d5788f635542297",
+        "content": "sha256:14d56426a0e123bd49eb278a274f35823b16d06b3074cbc2f908242ec61d2474",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_older_uv_is_refused_before_anything_is_touched"
+        }
+      },
+      "facet": "Actual main refuses older uv with its version/path/minimum and no backup cache.",
+      "id": "PRF-76GYQ5",
+      "invariant": "INV-DYK0F8",
+      "origin": {
+        "handoffEntry": "MIK-R139@v1 rule 3",
+        "leaf": "260928-MIK-L139"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "47d5630cf129aba00d36b74b9d5788f635542297",
+        "content": "sha256:98e0608f07a2967960a96a6a1e1dabd32ab9c2849286f00186f367379fdb74b0",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_unreadable_version_is_refused_with_its_text"
+        }
+      },
+      "facet": "Actual main refuses unreadable output with its reported token.",
+      "id": "PRF-AQHQ3Z",
+      "invariant": "INV-DYK0F8",
+      "origin": {
+        "handoffEntry": "MIK-R139@v1 rule 3",
+        "leaf": "260928-MIK-L139"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "47d5630cf129aba00d36b74b9d5788f635542297",
+        "content": "sha256:69763c88255f11bf68402d4f1d839165bfd458b1c4deacbe2fa082a628558848",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_gate_uses_a_newer_uv_as_it_is"
+        }
+      },
+      "facet": "A newer PATH shim is admitted and reports version/path/minimum.",
+      "id": "PRF-EFMSJW",
+      "invariant": "INV-NQZ17H",
+      "origin": {
+        "handoffEntry": "MIK-R139@v1 rule 1",
+        "leaf": "260928-MIK-L139"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "47d5630cf129aba00d36b74b9d5788f635542297",
+        "content": "sha256:4bafef54b5ad35dceb0de00855fd622ea9328ed5f41a55c958c228df96da4b9a",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_gate_uses_the_contract_version_itself"
+        }
+      },
+      "facet": "An equal PATH version remains admitted.",
+      "id": "PRF-EJVG3M",
+      "invariant": "INV-NQZ17H",
+      "origin": {
+        "handoffEntry": "MIK-R139@v1 rule 1",
+        "leaf": "260928-MIK-L139"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "47d5630cf129aba00d36b74b9d5788f635542297",
+        "content": "sha256:dd1907b55523402f3600f2e84a8d636cb1526d81e8f25f7159c7d1800c0a76a3",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_script_brings_no_uv_itself"
+        }
+      },
+      "facet": "The bootstrap text contains no curl, wget or uv== pin; this is a narrow textual no-fetch guard.",
+      "id": "PRF-FJSAR0",
+      "invariant": "INV-F4X256",
+      "origin": {
+        "handoffEntry": "MIK-R139@v1 rule 2",
+        "leaf": "260928-MIK-L139"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "47d5630cf129aba00d36b74b9d5788f635542297",
+        "content": "sha256:428753c848f23bca61213c85f076ba7ae43b918409899d3d783387c967129763",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_missing_uv_is_refused"
+        }
+      },
+      "facet": "Actual main refuses missing uv before printing an accepted-build identity.",
+      "id": "PRF-TB9JAQ",
+      "invariant": "INV-DYK0F8",
+      "origin": {
+        "handoffEntry": "MIK-R139@v1 rule 3",
+        "leaf": "260928-MIK-L139"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "47d5630cf129aba00d36b74b9d5788f635542297",
+        "content": "sha256:a1356092a1a60b54bc25f2190223356276caba8d8fb3b4cdd83980e39717ea24",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_version_comparison_is_numeric"
+        }
+      },
+      "facet": "The decimal comparator covers lexical-order counterexamples, leading zeroes and missing trailing parts.",
+      "id": "PRF-VSQ4CR",
+      "invariant": "INV-NQZ17H",
+      "origin": {
+        "handoffEntry": "MIK-R139@v1 rule 1",
+        "leaf": "260928-MIK-L139"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "47d5630cf129aba00d36b74b9d5788f635542297",
+        "content": "sha256:919b4c229d33f0528235da33afcbb7f5cf52b0f9ea03a03e85d8bb727a9632b2",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_refusal_leaves_an_existing_environment_alone"
+        }
+      },
+      "facet": "Older-uv refusal preserves the existing-venv marker when present and creates no backup cache.",
+      "id": "PRF-VSSAYC",
+      "invariant": "INV-DYK0F8",
+      "origin": {
+        "handoffEntry": "MIK-R139@v1 rule 3",
+        "leaf": "260928-MIK-L139"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "47d5630cf129aba00d36b74b9d5788f635542297",
+        "content": "sha256:cbfedb20d14becc7095131e0f304bb7ed21b62a1cf9895ec4b9dab444220008d",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_unreadable_version_output_is_never_reported_empty"
+        }
+      },
+      "facet": "Single-token and nonzero-exit output keep the token; only genuinely empty output reports empty.",
+      "id": "PRF-YJBH45",
+      "invariant": "INV-DYK0F8",
+      "origin": {
+        "handoffEntry": "MIK-R139@v1 rule 3",
+        "leaf": "260928-MIK-L139"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Decimal-part ordering rejects lexical-order mistakes and treats missing parts as zero.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "47d5630cf129aba00d36b74b9d5788f635542297",
+            "content": "sha256:a1356092a1a60b54bc25f2190223356276caba8d8fb3b4cdd83980e39717ea24",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_version_comparison_is_numeric"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The gate accepts a newer PATH uv and prints its exact version/path/minimum.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "47d5630cf129aba00d36b74b9d5788f635542297",
+            "content": "sha256:69763c88255f11bf68402d4f1d839165bfd458b1c4deacbe2fa082a628558848",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_gate_uses_a_newer_uv_as_it_is"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Unreadable and failed version outputs retain their diagnostic token rather than inventing empty text.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "47d5630cf129aba00d36b74b9d5788f635542297",
+            "content": "sha256:cbfedb20d14becc7095131e0f304bb7ed21b62a1cf9895ec4b9dab444220008d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_unreadable_version_output_is_never_reported_empty"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "A failed sync names both versions and restores an existing environment when the checker-valid runtime prerequisite is met.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "47d5630cf129aba00d36b74b9d5788f635542297",
+            "content": "sha256:da4c143dda2accfc333596e6eaf0c2b6c05829fc30e3a0279485f81c255e9955",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_sync_failure_names_both_uv_versions"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -16,8 +16,12 @@ imports the candidate's own source, not the primary checkout's installed source.
 
 The script loads the canonical runtime contract, delegates source-build installation, and probes
 the base interpreter before touching the venv. It selects the interpreter binary from the
-contract's minor value (`python$AR_PYTHON_MINOR`, `bootstrap-mcp-venv.sh:34`), so the venv follows
-a contract bump. It requires the pinned uv version. An explicit
+contract's minor value (`python$AR_PYTHON_MINOR`), so the venv follows a contract bump.
+Before invoking the runtime installer or moving an environment, it resolves the PATH uv and
+accepts the contract version or newer by decimal-part comparison. Missing, older, unreadable
+or failed version output is refused with the minimum and available version/path; the first
+reported version token is retained on refusal. It installs no uv. The gate prints the
+accepted version and path; a failed frozen sync repeats that identity and minimum. An explicit
 `--replace` moves the old venv to the user's cache rollback directory; a failed environment
 recreation retains the failed candidate for diagnosis and restores the predecessor. Both backup
 names include the worktree directory name and UTC second. After uv sync, runtime proof and
@@ -66,9 +70,12 @@ No external source is required for the repository-owned bootstrap sequence.
 - The source-built interpreter is installed and capability-probed before venv mutation. [1]
 
 - Existing environments require explicit replacement; backup names distinguish worktree directories, and failed recreation restores the predecessor. [2]
+
 - uv consumes the worktree's frozen lock and exact interpreter; successful runtime and dependency proof precede removal of the replaced backup. [3]
 
 - Hook environment selection retains its separate local-then-shared policy and probes runtime and quality imports before selection. [4]
+
+- A qualifying PATH uv is selected without installation before runtime/venv mutation, with minimum and observed identity in diagnostics. [5]
 
 ### Cross-Repo References
 

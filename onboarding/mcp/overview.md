@@ -11,6 +11,8 @@ The packaged worker brief delegates candidate setup to repository tool notes: bu
 worktree's own environment, run candidate checks in it, disclose a missing build command and
 record the interpreter actually used. This does not replace the landed tool server or memory CLI
 with the candidate, alter the shared runtime pin, or make a focused test a certification result.
+Host bootstrap accepts the contract uv minimum or newer from PATH without installing uv;
+the certified container retains its exact contract version.
 
 - The packaged candidate-environment input delegates setup to repository tool notes and records the used interpreter. [286]
 

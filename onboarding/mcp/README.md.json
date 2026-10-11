@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "ca9f52755ac2ee86086515764e0c399ef699b1cc",
+        "blob": "51232152049671e86bb8d535cd0ce21f1c3325e5",
         "content": "sha256:3fe12ce46e7c95c90cad9ac520a03002f091fae0bc5c5ab3df87d3cad2ca0e7e",
         "locator": {
           "end": 85,
@@ -105,6 +105,23 @@
               "kind": "file"
             },
             "path": "mcp/src/agents_remember/mcp/registration/__init__.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "Host bootstrap accepts the contract uv minimum or newer, installs none, and permits self-updating installations.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "51232152049671e86bb8d535cd0ce21f1c3325e5",
+            "content": "sha256:e6c0ed572be8e8989fc9e41bccaba055d6a03e9fc6b00816942bf9ae687f551a",
+            "locator": {
+              "end": 100,
+              "kind": "line_range",
+              "start": 96
+            }
           },
           "kind": "code"
         }

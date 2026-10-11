@@ -216,9 +216,13 @@ the successful recreation, so no backup of the run is left; a failed
 recreation keeps its candidate there for diagnosis under the same naming.
 That cache, like `uv`'s own package cache, is tool scratch, not the candidate.
 Rule 1 in short: a run touches nothing of the primary checkout and nothing of
-another worktree. It refuses to run when `uv` is not the pinned version
-(`AR_UV_VERSION` in `scripts/python-runtime-contract.env`) instead of falling
-back to another interpreter.
+another worktree. The `uv` on PATH must be `AR_UV_VERSION` from
+`scripts/python-runtime-contract.env` or newer; the script compares decimal
+version parts, prints the used version/path, and installs no uv. Self-updating
+installs (for example snap) are supported. Missing, older, unreadable or
+failed version output is refused before environment creation or movement,
+without an interpreter fallback. The certified container keeps installing
+exactly the contract uv, and the exact Python runtime checks are unchanged.
 
 Run every command on the candidate with the worktree's own interpreter,
 `<code worktree>/mcp/.venv/bin/python`:

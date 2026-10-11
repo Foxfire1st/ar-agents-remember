@@ -10,6 +10,9 @@ Candidate commands run in the task's own code-worktree environment, built from i
 with its source installed. Repository tool notes own the bootstrap command and interpreter choice;
 product role inputs point to those notes and run records name the interpreter actually used.
 Installed AR tools and memory-operation commands remain operations of the landed product.
+Host bootstrap uses the machine's PATH uv at the contract minimum or newer, installs no uv,
+and refuses unsupported version output before setup mutations. The container's exact uv
+and Python runtime pins remain separate.
 The existing hook-selection policy is separate and unchanged. Ignored environment directories are
 not candidate transaction content; accounting tests do not stand in for live cleanup evidence.
 

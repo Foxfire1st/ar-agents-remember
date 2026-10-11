@@ -86,6 +86,9 @@ the workspace and never the user's home directory.
 - Keep requirements practical and package-level: Python `>=3.14,<3.15`, uv/pip, an
   MCP-capable harness and Git. Docker/Ollama requirements describe historical
   leftover containers, not enabled provider tools or a required new setup step.
+- Host environment setup uses the PATH uv at `AR_UV_VERSION` or newer; it installs no uv.
+  A self-updating uv works without a product-managed copy. The certified container still
+  installs the exact contract uv; the host minimum does not relax the Python runtime pin.
 - Keep the Linux/WSL development-runtime section aligned with the canonical exact 3.14.8
   source-build contract. `scripts/bootstrap-mcp-venv.sh` is the supported project-venv path;
   system Python and uv-managed standalone interpreters are not substitutes.
@@ -127,6 +130,8 @@ as current install/start/index/watch authority.
 - The `runtime_install` flags the README documents (`install_provider_deps`, `no_cache`) and the runner-integrity manifest behind `runnerIntegrityFailed` are owned by the install/runtime layer. [6]
 
 - Requirements and the development-runtime section state the bounded package line, the historical published range, and the canonical exact source build. [7]
+
+- Host bootstrap accepts the contract uv minimum or newer, installs none, and permits self-updating installations. [13]
 
 ## 260821-DAGQC-L2 Memory-Quality Call Grammar
 
