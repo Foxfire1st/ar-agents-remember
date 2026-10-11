@@ -1,5 +1,24 @@
 {
   "path": "mcp/tests/test_agentic_settings.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "5e220bb602f1de33401797d8050b8f6985650929",
+        "content": "sha256:ae234319694472d18f50dd4299b55f88f835a90a1dc53f5f0320ae8a87a4bfa4",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_review_round_limit_takes_any_positive_setting_and_refuses_non_positive"
+        }
+      },
+      "facet": "Exercises positive maxRounds including values beyond the old hard cap and refuses non-positive/non-integer inputs; this is the settings parser, not live-review execution.",
+      "id": "PRF-CZCQV2",
+      "invariant": "INV-K76Z77",
+      "origin": {
+        "handoffEntry": "L116-W3-settings-default",
+        "leaf": "260928-MIK-L116"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "1": {

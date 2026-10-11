@@ -6,7 +6,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b5f664cebbb1579f8082617443e5ca9aa7751791",
+            "blob": "04814ff876e661164bc6d9eed803001e33812ab0",
             "content": "sha256:c4a79f969d539ba5ec8670fff476d4c6262cefd3b99b934e47777a8a342971d3",
             "locator": {
               "end": 96,
@@ -137,12 +137,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b6c41de0a6a4ae3730f383e859b62040c2605cdb",
+            "blob": "8e1c8a592a55478c12d7244b3087fa8789a4c908",
             "content": "sha256:079de00442547608494ea779313d31548d090d062f696bc106bca3c6c57d6bc4",
             "locator": {
-              "end": 41,
+              "end": 49,
               "kind": "line_range",
-              "start": 41
+              "start": 49
             },
             "path": "skills/l-01-agent-lifecycles/roles/strategist.md"
           },
@@ -206,7 +206,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b3718dfae0d5962252de9c524dfdf51831e5365a",
+            "blob": "3a962df7626a9e1fe0da0d69825aa828e6c840c6",
             "content": "sha256:beb680d06c4adf9d4d1fa54719c8035f522b3291e395fe1ceded3bba42016d85",
             "locator": {
               "end": 18,
@@ -224,12 +224,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8216517a6b46f398e278ef4cb431f4ddc445a7f6",
+            "blob": "7ee823b7415cee2590781a41ffb8b929ceb23f65",
             "content": "sha256:6e496165f569558e9be2890f58fdbf115dfb83e1977232bf4eb80b324a7f3546",
             "locator": {
-              "end": 106,
+              "end": 104,
               "kind": "line_range",
-              "start": 104
+              "start": 102
             },
             "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
           },
@@ -242,7 +242,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3ddb3dd453cf996eb2c34dcb5952386da975c162",
+            "blob": "a6fd159294402ea7a7777acaf278ca37994dab53",
             "content": "sha256:37a7e5c5bba6813aac0662f50d8212345bd1687ae66f9f805fc2b346385557bb",
             "locator": {
               "end": 8,
@@ -373,6 +373,77 @@
         }
       ]
     },
+    "28": {
+      "note": "Current stage boundaries, settings-owned review budget and recorded approval duties are carried by these instruction sources.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3a962df7626a9e1fe0da0d69825aa828e6c840c6",
+            "content": "sha256:6d618187d9b382e036cb986293f002de67c08b34eff49d1eab8ba3476e800832",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "04814ff876e661164bc6d9eed803001e33812ab0",
+            "content": "sha256:d3955e5187354c53feaf6e8422dd573427359081977f04a00ba3cd78408255d9",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a6fd159294402ea7a7777acaf278ca37994dab53",
+            "content": "sha256:1e0495c4ed7b9b1b69b0beb3fbf2c1782c8cbaa5663999663e0c300dd6b9e553",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7ee823b7415cee2590781a41ffb8b929ceb23f65",
+            "content": "sha256:2fac39dffe7628a86b93166cb362263ee9f206432040a2ca1e20d923ccd3f44f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8e1c8a592a55478c12d7244b3087fa8789a4c908",
+            "content": "sha256:eee0ae43b3d96dd48b5d26b01d738b2e33a820f6c4ac5727396327b2af8a7756",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/strategist.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4e2518f9df42d5a8fa8e94aca8fe986faf417baf",
+            "content": "sha256:71beb73f05c8389dd5ad9f475c24d80d43683ba0890971a6daa6f0435d47ea14",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/worker.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "3": {
       "note": "The curator process carries exact retained-sibling authoring and readback.",
       "targets": [
@@ -443,7 +514,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b5f664cebbb1579f8082617443e5ca9aa7751791",
+            "blob": "04814ff876e661164bc6d9eed803001e33812ab0",
             "content": "sha256:5bb3097cbd4b8e9fdd82855d71fb764f4e2c97cf8dc68b021d2e3ed053a44a4d",
             "locator": {
               "end": 175,

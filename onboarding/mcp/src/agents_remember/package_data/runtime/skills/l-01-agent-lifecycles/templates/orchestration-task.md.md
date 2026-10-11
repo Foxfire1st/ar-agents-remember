@@ -139,4 +139,8 @@ one-selected-master-at-a-time and source-pair activation wording returns 0 hits 
 
 ## CCR-L42 current candidate
 
-The orchestration task template now specifies baseline sealing, fix-verification subset checks, review-mode fields, explicit developer authorization at the three-round limit, and task-document review lifecycle operations.
+The orchestration task template now specifies baseline sealing, fix-verification subset checks, review-mode fields, recorded Architect or developer approval beyond the settings limit, and task-document review lifecycle operations.
+
+## Current Contract Evidence
+
+- Current review-budget and preserved ownership obligations are defined by these source instructions. [5]

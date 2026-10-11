@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Prevents silently spending an obsolete hard-coded review budget, losing recorded allowance history or admitting a record-only/wording claim beyond its actual boundary."
+  },
+  "applicability": "Task review begin and public review-state answers for the ordinary CODE sequence and separately counted MEMORY lane.",
+  "conditions": [
+    "Live settings are resolved for begin; a newly admitted round recomputes the effective limit, while approved extras remain cumulative.",
+    "A valid begin replay while pending is idempotent and keeps the already-recorded round and limit."
+  ],
+  "exclusions": [
+    "No reset of count, sealed findings or lane identity.",
+    "No promise that arbitrary non-review task mutations re-read settings.",
+    "Per-call settings resolution is not a promise of limit recomputation/persistence on pending replay."
+  ],
+  "id": "INV-AF2DN3",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_task_doc_review_public.py (settings-driven evidence tests); evidence-attempt3/focused-pytest.log"
+      ],
+      "path": "handoff-independent-wave.json"
+    },
+    "handoffEntry": "L116-W3-settings-limit-answers",
+    "leaf": "260928-MIK-L116",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "begin_review recomputes and persists the task limit from the settings number plus approved extra rounds for each newly begun round, and supported answers carry that limit. A replay while that round is pending returns the unchanged document; it does not recompute or persist a replacement limit.",
+  "status": "proposed",
+  "supersedes": []
+}

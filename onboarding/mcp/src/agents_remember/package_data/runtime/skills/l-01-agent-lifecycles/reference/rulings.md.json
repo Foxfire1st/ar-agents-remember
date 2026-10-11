@@ -1,0 +1,22 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/reference/rulings.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The source retains this card's role/template responsibility and recorded-approval boundary; no new transaction authority is introduced.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "55567d5384be6298101a2ae73a96ece825f7c913",
+            "content": "sha256:11e497e3463a66fb0765d8ddc8930fdef1552f9d8581529fa24550aa548cdf46",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -262,6 +262,14 @@ failures never retry as ambient launches. Native sub-agents work inside the seat
 
 ## Invariants And Boundaries
 
+Worker ends with requirement-satisfying final bytes, passing focused tests/lint/types and report with Reviewer; Reviewer ends with a recorded whole-requirement verdict/coverage; Curator ends with installed-build knowledge publication and clean quality; Manager hands whole stages over and is exact at sync/closeout/integration/task-end/starts. Each of these stages repairs faults in its own work or instrument and corrects invalid input through the same tool, reports the repair, and continues. It stops for an open permission prompt, a guard/tool refusal that survives correct input or names unowned state, a requirement-meaning question, or an effect outside its own worktree, scratch folder and task. An unfinished final turn names what it awaits and from whom; the existing role-specific stops and write boundaries remain.
+
+When all candidate findings are closed and only the Worker’s report/evidence/hash/anchor remains to repair, the same Reviewer records the repaired record on its last round without `begin_review` or a count increase. This requires the candidate to remain byte-for-byte unchanged; a changed or unproven candidate requires `begin_review`, and remaining finding IDs can only shrink.
+
+A Reviewer finding states the required property the candidate breaks; the showing case is proof, not the finding. If a repair leaves that finding open, the Worker states the property for every case and proves the construction or changes it, reporting which. A beyond-limit request carries that property-and-construction account.
+
+The review budget comes from `orchestration.loops.defaults.maxRounds`, read when the next round begins; agents read the effective task limit, including approved extra rounds, from `task_doc`’s `reviewState.limit` on `agents-remember-task`. Code and memory reviews use the same settings limit with separate counts and sealed findings. Beyond-limit work needs a recorded architect or developer approval; the Manager asks the task’s Architect, not the developer.
+
 - One leaf owns one approved primary requirement; inherited/adjacent requirements remain preservation constraints or dependencies.
 - Task/workspace/recipient/parent identity is supplied or resolved by the owning AR boundary, never invented from Projects or a chat title.
 - A rejected candidate returns finding-specific repair to the same Worker. Requested fix-verification preserves the sealed baseline and outstanding IDs.
@@ -273,7 +281,7 @@ failures never retry as ambient launches. Native sub-agents work inside the seat
 
 ## CCR-R12@v5 Lifecycle Boundary
 
-Workers provide targeted checks and curators provide scoped onboarding checks with honest failed or not-run states. The prepared code and memory-content outputs move through the authorized Git transaction, whose commit legs suppress automatic quality and test hooks. The consumer ledger is refreshed without a commit while ordinary explicit Git hook policy outside the transaction remains unchanged; full quality, full tests, certification and independent review require an explicit developer request, while the Curator's complete leaf-scoped memory-quality check and coherence remain standing curation duties. Requested reviews retain the sealed monotonic three-round rule.
+Workers provide targeted checks and curators provide scoped onboarding checks with honest failed or not-run states. The prepared code and memory-content outputs move through the authorized Git transaction, whose commit legs suppress automatic quality and test hooks. The consumer ledger is refreshed without a commit while ordinary explicit Git hook policy outside the transaction remains unchanged; full quality, full tests, certification and independent review require an explicit developer request, while the Curator's complete leaf-scoped memory-quality check and coherence remain standing curation duties. Requested reviews retain the sealed monotonic finding set within the settings limit; beyond-limit work needs a recorded Architect or developer approval.
 
 ## 260928-MIK-L99 — a leaf's agents hand over to each other
 
@@ -349,8 +357,7 @@ The role files now distinguish a complete `reviewMode=baseline` from
 successor verifies only those outstanding IDs and cannot add routes, criteria, or new findings.
 The role chain also records that standalone and organizational leaves carry independent route
 review, atomic child leaves defer to the accumulated master integration review, and workers must
-document applicable targeted checks before handoff. Task-document authority and the three-round
-review limit remain in force.
+document applicable targeted checks before handoff. Task-document authority and the settings review limit remain in force; agents read the effective limit in `task_doc.reviewState.limit`.
 
 ## Ungoverned Mirror Status (known defect)
 
@@ -520,3 +527,7 @@ Investigator handles one concern of any kind in Projects, a selected sprint or a
 - Independent exact assigned review and sealed findings. [23]
 - Bound and preserved normal Curator duties. [24]
 - Taskless real concern and report-first remediation. [25]
+
+## Current Contract Evidence
+
+- Current stage boundaries, settings-owned review budget and recorded approval duties are carried by these instruction sources. [28]

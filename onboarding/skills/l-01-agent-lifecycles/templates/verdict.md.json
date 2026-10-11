@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "0a9f3db8294b34d5dd82a589bd5272af5e500d6d",
-        "content": "sha256:c127a6fe9c7a78cb6d1af0179e0a07ac8cf6d8c5cbf531580581eef86c9fd69f",
+        "blob": "3998b8cc7deef5905046e2146a555c05c4ec818f",
+        "content": "sha256:1f41172a1262e34baf0a0854e3375a2779503cd6a3805e236b6de2f37c22a2fd",
         "locator": {
           "kind": "file"
         }
@@ -15,13 +15,13 @@
         "handoffEntry": "MIK-R93@v1 rules6,11,13",
         "leaf": "260928-MIK-L93"
       },
-      "rationale": "This shared source retains its existing duty while replacing only the developer-question channel and required quote provenance.",
+      "rationale": "The verdict template carries Reviewer-owned CODE recording, separately counted MEMORY evidence, sealed successor findings and the Architect-or-developer recorded-approval requirement at the settings limit.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "0a9f3db8294b34d5dd82a589bd5272af5e500d6d",
-        "content": "sha256:c127a6fe9c7a78cb6d1af0179e0a07ac8cf6d8c5cbf531580581eef86c9fd69f",
+        "blob": "3998b8cc7deef5905046e2146a555c05c4ec818f",
+        "content": "sha256:1f41172a1262e34baf0a0854e3375a2779503cd6a3805e236b6de2f37c22a2fd",
         "locator": {
           "kind": "file"
         }
@@ -38,16 +38,14 @@
   ],
   "references": {
     "1": {
-      "note": "Independent exact-attempt/candidate adjudication is mandatory in every variant.\n\nAnchor: `## Mandatory Requirement Adjudication Block (repeat once per stable ID + version in every variant)`",
+      "note": "Independent exact-attempt/candidate adjudication is mandatory in every variant.",
       "targets": [
         {
           "anchor": {
-            "blob": "ed24680d7bb879b21cf1ec43537c154668e7a99c",
-            "content": "sha256:b6f3ffca7e5494d2174d4113b29c4e44a8f91c38b8a564532229efefc1788aee",
+            "blob": "3998b8cc7deef5905046e2146a555c05c4ec818f",
+            "content": "sha256:1f41172a1262e34baf0a0854e3375a2779503cd6a3805e236b6de2f37c22a2fd",
             "locator": {
-              "end": 111,
-              "kind": "line_range",
-              "start": 66
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -55,16 +53,14 @@
       ]
     },
     "2": {
-      "note": "Leaf review accounts for every material route and returns a recordable packet.\n\nAnchor: `## Standalone/Organizational Leaf Route-Review Variant`",
+      "note": "Leaf review accounts for every material route and returns a recordable packet.",
       "targets": [
         {
           "anchor": {
-            "blob": "999920693b5ae4d1b8f5066b7381a5fa43e444bb",
-            "content": "sha256:53598c81e1d9c2bfd8732e0bcc591ff5766ec20099772c77ea5f4ee2f1331761",
+            "blob": "3998b8cc7deef5905046e2146a555c05c4ec818f",
+            "content": "sha256:1f41172a1262e34baf0a0854e3375a2779503cd6a3805e236b6de2f37c22a2fd",
             "locator": {
-              "end": 176,
-              "kind": "line_range",
-              "start": 118
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -72,16 +68,29 @@
       ]
     },
     "3": {
-      "note": "Delta review retains accepted rows and rechecks rejected rows plus direct regressions.\n\nAnchor: `## Loop-Review Adaptation (leaf full-loop · plan review)`",
+      "note": "Delta review retains accepted rows and rechecks rejected rows plus direct regressions.",
       "targets": [
         {
           "anchor": {
-            "blob": "999920693b5ae4d1b8f5066b7381a5fa43e444bb",
-            "content": "sha256:98f543618c23c41430b153ec3ce7c6fb87d536a42e7a028002e87396c1891ba8",
+            "blob": "3998b8cc7deef5905046e2146a555c05c4ec818f",
+            "content": "sha256:1f41172a1262e34baf0a0854e3375a2779503cd6a3805e236b6de2f37c22a2fd",
             "locator": {
-              "end": 385,
-              "kind": "line_range",
-              "start": 369
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Current settings-budget, recorded approval and preserved stage/ownership boundaries are carried by this canonical instruction source.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3998b8cc7deef5905046e2146a555c05c4ec818f",
+            "content": "sha256:1f41172a1262e34baf0a0854e3375a2779503cd6a3805e236b6de2f37c22a2fd",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"

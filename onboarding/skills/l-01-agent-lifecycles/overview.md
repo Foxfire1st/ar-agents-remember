@@ -506,6 +506,8 @@ before host creation, so a parent move between status and start fails closed.
 
 ## Invariants And Boundaries
 
+The review budget comes from `orchestration.loops.defaults.maxRounds`, read when the next round begins; agents read the effective task limit, including approved extra rounds, from `task_doc`’s `reviewState.limit` on `agents-remember-task`. Code and memory reviews use the same settings limit with separate counts and sealed findings. Beyond-limit work needs a recorded architect or developer approval; the Manager asks the task’s Architect, not the developer. When all candidate findings are closed and only the Worker’s report/evidence/hash/anchor remains to repair, the same Reviewer records the repaired record on its last round without `begin_review` or a count increase. This requires the candidate to remain byte-for-byte unchanged; a changed or unproven candidate requires `begin_review`, and remaining finding IDs can only shrink.
+
 - Each task-bound role preserves its exact canonical requirement, paired workspace, report and admitted write surface.
 - Worker implements code and leaves it uncommitted; Reviewer independently supplies verdict evidence; Curator owns admitted memory/knowledge. Task and paired-Git owners retain semantic acceptance and publication.
 - Normal curation preserves MIK’s converted entries/records/history writer, authored target rationale, exact family/sibling coverage, full contract-scoped MQC and required coherence. Explicit report-only admission claims none of that normal pass complete.
@@ -517,7 +519,7 @@ before host creation, so a parent move between status and start fails closed.
 
 ## CCR-R12@v5 Lifecycle Boundary
 
-Workers provide targeted checks and curators provide scoped onboarding checks with honest failed or not-run states. The prepared code and memory-content outputs move through the authorized Git transaction, whose commit legs suppress automatic quality and test hooks. The consumer ledger is refreshed without a commit while ordinary explicit Git hook policy outside the transaction remains unchanged; full quality, full tests, certification and independent review require an explicit developer request, while the Curator's complete leaf-scoped memory-quality check and coherence remain standing curation duties. Requested reviews retain the sealed monotonic three-round rule.
+Workers provide targeted checks and curators provide scoped onboarding checks with honest failed or not-run states. The prepared code and memory-content outputs move through the authorized Git transaction, whose commit legs suppress automatic quality and test hooks. The consumer ledger is refreshed without a commit while ordinary explicit Git hook policy outside the transaction remains unchanged; full quality, full tests, certification and independent review require an explicit developer request, while the Curator's complete leaf-scoped memory-quality check and coherence remain standing curation duties. Requested reviews retain the sealed monotonic finding set within the settings limit; beyond-limit work needs a recorded Architect or developer approval.
 
 ## 260928-MIK-L99 — a leaf's agents hand over to each other
 
@@ -741,3 +743,7 @@ Investigator replaces the earlier narrow provider/system role with one scoped co
 - Role then operation, inert core and retained vocabulary distinction. [53]
 - Bound intake and preserved converted writer/family duties. [54]
 - Normal full curation and coherent handoff. [55]
+
+## Current Contract Evidence
+
+- Current stage boundaries, settings-owned review budget and recorded approval duties are carried by these instruction sources. [58]

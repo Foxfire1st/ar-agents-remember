@@ -3,7 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "95185967dd7ca4326d7c22ffeb56416e31f26d89",
+        "blob": "187bdfabde39f9cab43b20457ef4e371f715cf82",
+        "content": "sha256:b9ac16aba8556a7da127a1ea950124ebd44ef1807957da3bec6ef1ea1db7b84d",
+        "locator": {
+          "kind": "symbol",
+          "name": "_get_task_doc_result"
+        }
+      },
+      "id": "RLZ-993RTH",
+      "invariant": "INV-7HBKZR",
+      "origin": {
+        "handoffEntry": "L116-W3-effective-limit-answers",
+        "leaf": "260928-MIK-L116"
+      },
+      "rationale": "This read path answers the effective number on pre-limit records without rewriting history.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "187bdfabde39f9cab43b20457ef4e371f715cf82",
         "content": "sha256:ef74f01566444add66dcc592096c367c87f1023fbc7172a60dabfcc9eeaec0bd",
         "locator": {
           "kind": "symbol",

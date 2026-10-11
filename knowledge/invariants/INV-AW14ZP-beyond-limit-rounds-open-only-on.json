@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Prevents silently spending an obsolete hard-coded review budget, losing recorded allowance history or admitting a record-only/wording claim beyond its actual boundary."
+  },
+  "applicability": "Opening an extra review round after the effective settings budget is exhausted.",
+  "conditions": [
+    "A positive additionalRounds allowance and recorded approval with by and nonblank words are supplied at exhaustion."
+  ],
+  "exclusions": [
+    "The record shape does not authenticate its author.",
+    "Premature approval does not authorize an ordinary round."
+  ],
+  "id": "INV-AW14ZP",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_review_state.py (approval shape, legacy readability); evidence-attempt3/focused-pytest.log"
+      ],
+      "path": "handoff-independent-wave.json"
+    },
+    "handoffEntry": "L116-W3-beyond-limit-approval",
+    "leaf": "260928-MIK-L116",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Beyond-limit rounds open only on a recorded architect or developer approval with additional rounds.",
+  "status": "proposed",
+  "supersedes": []
+}

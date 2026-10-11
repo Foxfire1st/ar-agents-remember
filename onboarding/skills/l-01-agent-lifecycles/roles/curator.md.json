@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "97edddb8b77560c1d6dc6addefac91658084452b",
+        "blob": "128fa3a7f4a59afa387ac9963db075a27ca8d1c2",
         "content": "sha256:2ee6531903d4dd13daac46450c9c16ce39fd0aed29161dbfef6377ee5e587f1c",
         "locator": {
           "end": 28,
@@ -22,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "97edddb8b77560c1d6dc6addefac91658084452b",
+        "blob": "128fa3a7f4a59afa387ac9963db075a27ca8d1c2",
         "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
         "locator": {
           "end": 5,
@@ -41,7 +41,7 @@
     },
     {
       "anchor": {
-        "blob": "97edddb8b77560c1d6dc6addefac91658084452b",
+        "blob": "128fa3a7f4a59afa387ac9963db075a27ca8d1c2",
         "content": "sha256:16a9d98f68567c8c72b592219f4041dc5f7c428778d4dd320b32ed003368a50f",
         "locator": {
           "end": 139,
@@ -60,8 +60,8 @@
     },
     {
       "anchor": {
-        "blob": "97edddb8b77560c1d6dc6addefac91658084452b",
-        "content": "sha256:d0923362030cd8da1d868eec4f241d816ab114445f29ff7d83e456dada3e0fd6",
+        "blob": "128fa3a7f4a59afa387ac9963db075a27ca8d1c2",
+        "content": "sha256:14fbaf274fec9141c6b515816e20a8ffac22733d064b4a950782459b941b2ebd",
         "locator": {
           "kind": "file"
         }
@@ -77,12 +77,12 @@
     },
     {
       "anchor": {
-        "blob": "97edddb8b77560c1d6dc6addefac91658084452b",
+        "blob": "128fa3a7f4a59afa387ac9963db075a27ca8d1c2",
         "content": "sha256:4c0c4c01a89a7a026ec118d7fdd8ba3a00b35e8a5ee199391f24e20d679478e1",
         "locator": {
-          "end": 223,
+          "end": 231,
           "kind": "line_range",
-          "start": 221
+          "start": 229
         }
       },
       "id": "RLZ-DT71R6",
@@ -96,7 +96,7 @@
     },
     {
       "anchor": {
-        "blob": "97edddb8b77560c1d6dc6addefac91658084452b",
+        "blob": "128fa3a7f4a59afa387ac9963db075a27ca8d1c2",
         "content": "sha256:16982b1069215292a905dc7d1ebaccddab307de10f359aff1b57c1af343a81ca",
         "locator": {
           "end": 109,
@@ -115,8 +115,8 @@
     },
     {
       "anchor": {
-        "blob": "97edddb8b77560c1d6dc6addefac91658084452b",
-        "content": "sha256:d0923362030cd8da1d868eec4f241d816ab114445f29ff7d83e456dada3e0fd6",
+        "blob": "128fa3a7f4a59afa387ac9963db075a27ca8d1c2",
+        "content": "sha256:14fbaf274fec9141c6b515816e20a8ffac22733d064b4a950782459b941b2ebd",
         "locator": {
           "kind": "file"
         }
@@ -132,8 +132,8 @@
     },
     {
       "anchor": {
-        "blob": "97edddb8b77560c1d6dc6addefac91658084452b",
-        "content": "sha256:d0923362030cd8da1d868eec4f241d816ab114445f29ff7d83e456dada3e0fd6",
+        "blob": "128fa3a7f4a59afa387ac9963db075a27ca8d1c2",
+        "content": "sha256:14fbaf274fec9141c6b515816e20a8ffac22733d064b4a950782459b941b2ebd",
         "locator": {
           "kind": "file"
         }
@@ -148,12 +148,12 @@
     },
     {
       "anchor": {
-        "blob": "97edddb8b77560c1d6dc6addefac91658084452b",
+        "blob": "128fa3a7f4a59afa387ac9963db075a27ca8d1c2",
         "content": "sha256:fbff5bd01607b500321daf6e482a9a8f4ca6f4688dcd509b9d7c001202584f4d",
         "locator": {
-          "end": 229,
+          "end": 237,
           "kind": "line_range",
-          "start": 227
+          "start": 235
         }
       },
       "id": "RLZ-PDP66S",
@@ -167,7 +167,7 @@
     },
     {
       "anchor": {
-        "blob": "97edddb8b77560c1d6dc6addefac91658084452b",
+        "blob": "128fa3a7f4a59afa387ac9963db075a27ca8d1c2",
         "content": "sha256:600335da77cabad9fdb615ee1f3b745321cbf69f140554123c49cc7676aafef0",
         "locator": {
           "end": 21,
@@ -186,8 +186,8 @@
     },
     {
       "anchor": {
-        "blob": "97edddb8b77560c1d6dc6addefac91658084452b",
-        "content": "sha256:d0923362030cd8da1d868eec4f241d816ab114445f29ff7d83e456dada3e0fd6",
+        "blob": "128fa3a7f4a59afa387ac9963db075a27ca8d1c2",
+        "content": "sha256:14fbaf274fec9141c6b515816e20a8ffac22733d064b4a950782459b941b2ebd",
         "locator": {
           "kind": "file"
         }
@@ -203,7 +203,26 @@
     },
     {
       "anchor": {
-        "blob": "97edddb8b77560c1d6dc6addefac91658084452b",
+        "blob": "128fa3a7f4a59afa387ac9963db075a27ca8d1c2",
+        "content": "sha256:3a039c53a190c37787c5410d9efc47da507f8d69479228ec30ab9671de4ba450",
+        "locator": {
+          "end": 222,
+          "kind": "line_range",
+          "start": 215
+        }
+      },
+      "id": "RLZ-SHXSR1",
+      "invariant": "INV-CV3MW4",
+      "origin": {
+        "handoffEntry": "L116-W3-wording-oracle",
+        "leaf": "260928-MIK-L116"
+      },
+      "rationale": "This section is the curator stage-end contract: knowledge-written end state, repair-own-slips, four stops, and last-line rule.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "128fa3a7f4a59afa387ac9963db075a27ca8d1c2",
         "content": "sha256:51900cc8720c0bfed4bdfa12068c6bab7ad802039058e5be7d06d52ef3a125f6",
         "locator": {
           "end": 208,
@@ -222,8 +241,8 @@
     },
     {
       "anchor": {
-        "blob": "97edddb8b77560c1d6dc6addefac91658084452b",
-        "content": "sha256:d0923362030cd8da1d868eec4f241d816ab114445f29ff7d83e456dada3e0fd6",
+        "blob": "128fa3a7f4a59afa387ac9963db075a27ca8d1c2",
+        "content": "sha256:14fbaf274fec9141c6b515816e20a8ffac22733d064b4a950782459b941b2ebd",
         "locator": {
           "kind": "file"
         }
@@ -239,8 +258,8 @@
     },
     {
       "anchor": {
-        "blob": "97edddb8b77560c1d6dc6addefac91658084452b",
-        "content": "sha256:d0923362030cd8da1d868eec4f241d816ab114445f29ff7d83e456dada3e0fd6",
+        "blob": "128fa3a7f4a59afa387ac9963db075a27ca8d1c2",
+        "content": "sha256:14fbaf274fec9141c6b515816e20a8ffac22733d064b4a950782459b941b2ebd",
         "locator": {
           "kind": "file"
         }
@@ -329,12 +348,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b5f664cebbb1579f8082617443e5ca9aa7751791",
+            "blob": "128fa3a7f4a59afa387ac9963db075a27ca8d1c2",
             "content": "sha256:c4a79f969d539ba5ec8670fff476d4c6262cefd3b99b934e47777a8a342971d3",
             "locator": {
-              "end": 96,
+              "end": 99,
               "kind": "line_range",
-              "start": 93
+              "start": 96
             }
           },
           "kind": "code"
@@ -387,6 +406,21 @@
               "name": "family_effect_refusal"
             },
             "path": "mcp/src/agents_remember/application/knowledge_writer/handoff.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Current settings-budget, recorded approval and preserved stage/ownership boundaries are carried by this canonical instruction source.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "128fa3a7f4a59afa387ac9963db075a27ca8d1c2",
+            "content": "sha256:14fbaf274fec9141c6b515816e20a8ffac22733d064b4a950782459b941b2ebd",
+            "locator": {
+              "kind": "file"
+            }
           },
           "kind": "code"
         }

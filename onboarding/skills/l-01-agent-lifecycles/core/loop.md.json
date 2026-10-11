@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "db65f4af62b9d4f8da76f7526082c27f6d7f02db",
-        "content": "sha256:3c0c11a655d7a84e6a283329b5b1ae34b1c825b85ea012b5087325be43a96eae",
+        "blob": "67514785547fc2ec1102911ba96fa1c82e14c4fe",
+        "content": "sha256:ab6b6ef67d89a18db79dbca8a6adbf75cbc27a4e6b2fbd55e952395ee7676a32",
         "locator": {
           "kind": "file"
         }
@@ -15,7 +15,7 @@
         "handoffEntry": "MIK-R93@v1 rules6,11,13",
         "leaf": "260928-MIK-L93"
       },
-      "rationale": "This shared source retains its existing duty while replacing only the developer-question channel and required quote provenance.",
+      "rationale": "The loop doctrine names the settings-derived review limit, the task_doc review-state limit and sealed monotonic fix-verification; approval beyond that limit follows operations/review.md without changing parent routing for developer questions.",
       "role": "primary-authority"
     }
   ],
@@ -25,8 +25,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "db65f4af62b9d4f8da76f7526082c27f6d7f02db",
-            "content": "sha256:3c0c11a655d7a84e6a283329b5b1ae34b1c825b85ea012b5087325be43a96eae",
+            "blob": "67514785547fc2ec1102911ba96fa1c82e14c4fe",
+            "content": "sha256:ab6b6ef67d89a18db79dbca8a6adbf75cbc27a4e6b2fbd55e952395ee7676a32",
             "locator": {
               "kind": "file"
             }
@@ -36,12 +36,12 @@
       ]
     },
     "2": {
-      "note": "Review is opt-in with tiers tuning depth; at most three rounds with sealed lists.",
+      "note": "Review is opt-in with tiers tuning depth; rounds follow the settings limit and retain sealed lists.",
       "targets": [
         {
           "anchor": {
-            "blob": "db65f4af62b9d4f8da76f7526082c27f6d7f02db",
-            "content": "sha256:3c0c11a655d7a84e6a283329b5b1ae34b1c825b85ea012b5087325be43a96eae",
+            "blob": "67514785547fc2ec1102911ba96fa1c82e14c4fe",
+            "content": "sha256:ab6b6ef67d89a18db79dbca8a6adbf75cbc27a4e6b2fbd55e952395ee7676a32",
             "locator": {
               "kind": "file"
             }
@@ -55,8 +55,23 @@
       "targets": [
         {
           "anchor": {
-            "blob": "db65f4af62b9d4f8da76f7526082c27f6d7f02db",
-            "content": "sha256:3c0c11a655d7a84e6a283329b5b1ae34b1c825b85ea012b5087325be43a96eae",
+            "blob": "67514785547fc2ec1102911ba96fa1c82e14c4fe",
+            "content": "sha256:ab6b6ef67d89a18db79dbca8a6adbf75cbc27a4e6b2fbd55e952395ee7676a32",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Current settings-budget, recorded approval and preserved stage/ownership boundaries are carried by this canonical instruction source.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "67514785547fc2ec1102911ba96fa1c82e14c4fe",
+            "content": "sha256:ab6b6ef67d89a18db79dbca8a6adbf75cbc27a4e6b2fbd55e952395ee7676a32",
             "locator": {
               "kind": "file"
             }

@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "308164ec1fe3322d0b4a5a269cb74d351d714d22",
-        "content": "sha256:0e26822b02b5e8a2a23218265fc65791b625ff4da1b3c3844bdbfefdcfe1b1f7",
+        "blob": "74d7447932d35bbb3717919b4cd09c2ab234efd6",
+        "content": "sha256:912387d0500f2f99062f15404ea5ff1b2027051fabd435f17225b482996eed79",
         "locator": {
           "kind": "file"
         }
@@ -17,6 +17,24 @@
       },
       "rationale": "Role defaults retain accepted mode/notes/featureValues keys in the existing settings-owned schema rather than a second public policy schema.",
       "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "74d7447932d35bbb3717919b4cd09c2ab234efd6",
+        "content": "sha256:83dc3d5d9258c885b9054f7ede52253c2c01c2ef1894983e70bfcdbf5e12fda4",
+        "locator": {
+          "kind": "symbol",
+          "name": "DEFAULT_LOOP_MAX_ROUNDS"
+        }
+      },
+      "id": "RLZ-M5WB64",
+      "invariant": "INV-K76Z77",
+      "origin": {
+        "handoffEntry": "L116-W3-settings-default",
+        "leaf": "260928-MIK-L116"
+      },
+      "rationale": "This constant is the default the settings number falls back to; the packet fixes it at five.",
+      "role": "primary-authority"
     }
   ],
   "references": {

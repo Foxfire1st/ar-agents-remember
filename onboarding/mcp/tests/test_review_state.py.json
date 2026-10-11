@@ -1,5 +1,24 @@
 {
   "path": "mcp/tests/test_review_state.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "a73df28f30c70ae3eed1ab9d528460feaf6d6c40",
+        "content": "sha256:307329bba5850950f38996290293ab0ebfd45722bf6da1f20bdfc9b61bbf235b",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_legacy_developer_approval_record_stays_readable_and_counts"
+        }
+      },
+      "facet": "Legacy developerApproval is readable and its cumulative allowance still contributes to the effective budget; this does not authenticate a human approval.",
+      "id": "PRF-001XG2",
+      "invariant": "INV-AW14ZP",
+      "origin": {
+        "handoffEntry": "L116-W3-beyond-limit-approval",
+        "leaf": "260928-MIK-L116"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "1": {
@@ -46,11 +65,11 @@
       ]
     },
     "3": {
-      "note": "Successors reject new, duplicate, reintroduced and unresolved passing IDs.",
+      "note": "Successor witnesses reject new and duplicate IDs and a PASS with unresolved IDs; this extent does not exercise reintroduction of an eliminated ID.",
       "targets": [
         {
           "anchor": {
-            "blob": "8c88a767b5075f2bfc9209f767460a63b36a537e",
+            "blob": "a73df28f30c70ae3eed1ab9d528460feaf6d6c40",
             "content": "sha256:25a6532b52e6d0bb57b1fb4af1e5e155bd28259e523b672cd3f26659974707ea",
             "locator": {
               "kind": "symbol",
@@ -66,7 +85,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8c88a767b5075f2bfc9209f767460a63b36a537e",
+            "blob": "a73df28f30c70ae3eed1ab9d528460feaf6d6c40",
             "content": "sha256:94123191f1b26b3447e76c1df238a4c73bf9253c1eb22099a73729144a3d1ac5",
             "locator": {
               "kind": "symbol",

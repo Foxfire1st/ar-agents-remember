@@ -20,6 +20,11 @@ selected_path)`) into `build_route_review`, so the stamped review binds the cano
 
 ## Code Commentary
 
+### Settings and record-only seams
+
+`review_settings_limit` loads `orchestration.loops.defaults.maxRounds` afresh and translates a settings refusal to `review-settings-unreadable`. `_begin_task_review_bound` passes the selected number to the transition. `candidate_root_for_review` prefers an existing leaf code worktree and otherwise uses the configured repository root; unresolved identity cannot admit a same-round result. Generic and route recorders pass both the settings limit and authority-resolved identity. `_state_payload` takes `candidateTree` from the route builder, not from caller route evidence.
+
+
 ### Logic
 
 `TaskDocCall(dry_run, branch_addressed)` are call-level knobs that are not part of the edit;
@@ -28,15 +33,7 @@ selected_path)`) into `build_route_review`, so the stamped review binds the cano
 the flag is defined only for `record_route_review` and requires `config.direct_execution_enabled`
 (policy-gated, L16-R6).
 
-`_RouteReviewBinding` captures how a route-review call binds its leaf: a worktree contract
-(`contract`, `task_root`, `selected_path`) plus the `branch_addressed` opt-in. The binding form
-`_record_route_review_bound` refuses a master doc, requires a review object, proves the binding via
-`_require_route_review_binding`, then builds the stamped `RouteReviewRecord` through
-`build_route_review(contract, ResolvedTaskDocument(ref=document_ref(contract, selected_path),
-path=selected_path, document=doc), payload, branch_addressed=...)` (line 156-163) and re-validates
-the whole document. The legacy positional `_record_route_review` (line 120-132) preserves the
-pre-wave-2 call shape and its error dialect (master -> "record_route_review is valid only for a leaf
-task document"; no contract -> "requires the leaf worktree contract").
+`_RouteReviewBinding` captures the contract, task root, exact selected path and branch-addressed opt-in. `_record_route_review_bound` requires a review object. For a master it requires the canonical series/task.json binding and calls `build_master_route_review`; for a leaf it enforces exact leaf or sanctioned branch-addressed binding, rejects atomic-child route review, and calls `build_route_review` with the exact `ResolvedTaskDocument`. Both branches pass the plane-stamped route candidate and independently resolved candidate identity into the shared fixed-list transition, then revalidate the whole document. The legacy positional `_record_route_review` preserves the call shape and delegates to the same binding form.
 
 `_require_route_review_binding` is the L16-R9 error-dialect owner: a missing binding names the
 recovery ("re-stamp the series contract (series-contract.md) or use branch_addressed=true for

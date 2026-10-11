@@ -6,8 +6,7 @@
 
 ## Purpose
 
-Focused R27/R28 tests for the persisted fixed-list review state, ordinary three-round cap, and
-direct recorded developer-permission transition.
+Focused pure-state tests for the persisted sealed review sequence, settings-owned limit, recorded architect/developer allowances, and same-round record-only candidate binding. These tests pass settings/identity inputs directly; they do not exercise a live server or resolve repository identity themselves.
 
 ## Code Commentary
 
@@ -17,15 +16,7 @@ The fixture builds a minimal `TaskDocument` without `reviewState`, proving that 
 accepted as zero. The missing-state and explicit-zero tests then start round one and make the
 pending bit observable; replaying a pending begin is idempotent.
 
-The baseline test seals two findings on a blocking result, then verifies successor rounds advance
-to rounds two and three while retaining the baseline and shrinking remaining IDs to an empty list.
-The successor-refusal test rejects new IDs, duplicate IDs, and passing results with unresolved IDs.
-The final R27 test accepts recording without `begin_task_review` as the baseline and rejects a
-result without a valid verdict. The cap tests refuse a fourth ordinary round with an actionable
-count, accept one
-direct recorded developer approval only at exhaustion, accumulate a second allowance without
-resetting the sealed issue list, and leave exhausted state unchanged for malformed permission
-payloads.
+The baseline test seals two findings, advances through the ordinary fallback budget while preserving definitions and shrinking remaining IDs, and records a final same-round clean result using the supplied unchanged binding. Successor cases exercise rejection of new IDs, duplicate IDs and a PASS with unresolved IDs. They do not exercise reintroducing an eliminated ID; source monotonicity is a separate implementation contract. Default and explicit-limit cases prove exhaustion with count and limit; extra-round cases accumulate architect/developer allowances without resetting findings, normalize legacy developer input and keep old developerApproval records readable. Malformed approvals leave state unchanged. New cases cover same-round success, changed/unresolved/absent binding refusal, checked-tree validation, no re-sealing after a clean record, first/legacy-limit backfill and preservation of a positive stored limit.
 
 ### Conventions
 
@@ -39,8 +30,7 @@ the purported developer.
 
 - Tests preserve the small state model: missing/zero state, pending admission, sealed baseline and
   monotonic remaining IDs.
-- They preserve the ordinary three-round ceiling, cumulative explicit allowances, and pending
-  replay idempotence.
+- They preserve settings-budget exhaustion, cumulative recorded allowances and pending replay idempotence, not a fixed ordinary ceiling.
 - They do not prove authentication, human authorship, or integration review.
 
 ## Evidence
@@ -55,15 +45,17 @@ No configured external source applies.
 
 - Missing/zero state starts round one and pending replay is idempotent. [1]
 - Baseline sealing and successor rounds only shrink remaining IDs. [2]
-- Successors reject new, duplicate, reintroduced and unresolved passing IDs. [3]
+
+- Successor witnesses reject new and duplicate IDs and a PASS with unresolved IDs; this extent does not exercise reintroduction of an eliminated ID. [3]
+
 - Recording without begin starts the baseline and still requires a valid verdict. [4]
-- Ordinary exhaustion refuses a fourth round with count and limit. [5]
-- A direct developer permission adds cumulative rounds only after exhaustion and preserves findings. [6]
-- Malformed permission payloads leave exhausted state unchanged. [7]
+- Ordinary exhaustion refuses the next round beyond the fallback budget with count and limit. [5]
+- Recorded architect/developer approval adds cumulative rounds only at exhaustion and preserves findings; legacy developer words stay readable. [6]
+- Malformed approval payloads leave exhausted state unchanged. [7]
 
-## Source File Binding
+## Historical L41 Source File Binding
 
-The current L41 source bytes are SHA-256
+At the historical L41 preparation, the source bytes were SHA-256
 `b007e8ec8440b0aca8f7897f86108c982ec33e9c03e7517240993282874f5212`
 (`7707` bytes, `209` lines). The source is an uncommitted preparation candidate, so
 verification metadata remains blank until a genuine commit-owned refresh.

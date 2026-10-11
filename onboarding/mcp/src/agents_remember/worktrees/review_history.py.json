@@ -1,6 +1,97 @@
 {
   "path": "mcp/src/agents_remember/worktrees/review_history.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "6399fe4581ef10656a6aed93a214182c3b3f8c60",
+        "content": "sha256:87c43936a28a2bd1421e4a2a41beb432cb03df1a1af539bc4edd933a9eaeb5b7",
+        "locator": {
+          "kind": "symbol",
+          "name": "begin_task_review"
+        }
+      },
+      "id": "RLZ-A1773Z",
+      "invariant": "INV-AW14ZP",
+      "origin": {
+        "handoffEntry": "L116-W3-beyond-limit-approval",
+        "leaf": "260928-MIK-L116"
+      },
+      "rationale": "begin_task_review applies exhaustion/admission and spends recorded approved extras while admitting the next round; _parse_approval_exception validates/normalizes the approval input and does not itself spend the allowance.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "6399fe4581ef10656a6aed93a214182c3b3f8c60",
+        "content": "sha256:c78eee16d6f27c90ad8102a660057a7f673f86bb703e6ffc2ec28ea10cead2c8",
+        "locator": {
+          "kind": "symbol",
+          "name": "record_task_review"
+        }
+      },
+      "id": "RLZ-AM1W4N",
+      "invariant": "INV-EA9XDB",
+      "origin": {
+        "handoffEntry": "L116-W3-record-only-binding",
+        "leaf": "260928-MIK-L116"
+      },
+      "rationale": "This transition persists the binding on every recorded round and routes the baseline, pending, and record-only paths.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "6399fe4581ef10656a6aed93a214182c3b3f8c60",
+        "content": "sha256:c78eee16d6f27c90ad8102a660057a7f673f86bb703e6ffc2ec28ea10cead2c8",
+        "locator": {
+          "kind": "symbol",
+          "name": "record_task_review"
+        }
+      },
+      "id": "RLZ-F6A17D",
+      "invariant": "INV-7HBKZR",
+      "origin": {
+        "handoffEntry": "L116-W3-effective-limit-answers",
+        "leaf": "260928-MIK-L116"
+      },
+      "rationale": "This transition backfills the limit on first and pre-limit records while never rewriting a stored post-limit number.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "6399fe4581ef10656a6aed93a214182c3b3f8c60",
+        "content": "sha256:52ecdf4c314df46148e3cb14ee2ce21e1331c3570c485b2f7ad916e1d18a53e6",
+        "locator": {
+          "kind": "symbol",
+          "name": "_require_actual_unchanged"
+        }
+      },
+      "id": "RLZ-XK6MSW",
+      "invariant": "INV-EA9XDB",
+      "origin": {
+        "handoffEntry": "L116-W3-record-only-binding",
+        "leaf": "260928-MIK-L116"
+      },
+      "rationale": "This guard compares recorded and current bindings and refuses before write; it never compares caller strings.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "6399fe4581ef10656a6aed93a214182c3b3f8c60",
+        "content": "sha256:87c43936a28a2bd1421e4a2a41beb432cb03df1a1af539bc4edd933a9eaeb5b7",
+        "locator": {
+          "kind": "symbol",
+          "name": "begin_task_review"
+        }
+      },
+      "id": "RLZ-Y795T5",
+      "invariant": "INV-AF2DN3",
+      "origin": {
+        "handoffEntry": "L116-W3-settings-limit-answers",
+        "leaf": "260928-MIK-L116"
+      },
+      "rationale": "begin_task_review recomputes/persists the effective stored limit for a newly admitted round; a valid replay while pending returns the unchanged document before that recomputation.",
+      "role": "primary-authority"
+    }
+  ],
   "references": {
     "1": {
       "note": "Error/status boundary, cap-aware begin semantics, and pending admission.",

@@ -26,9 +26,7 @@ class — evidence of the wrong class is verdict laundering, not a pass.
 
 `## Complexity-scored tiers` scores blast radius × novelty × size into `direct`, `builder-verified`, or
 `full loop`, records the leaf's loop mark on the leaf doc with a decision-log entry, and states that the
-knobs tune depth but **never create a review when none was requested**. `## Rounds and convergence` caps a
-governed review at three rounds, restricts successor rounds to the sealed listed issues, and requires
-explicit developer authorization for any further round.
+knobs tune depth but **never create a review when none was requested**. `## Rounds and convergence` takes the review budget from the settings at each begin, exposes the effective task limit through `task_doc.reviewState.limit`, preserves sealed findings in fix-verification, and requires a recorded Architect or developer approval beyond the limit.
 
 `## Criteria catalogs`, `## Per-level agent sets`, and `## Requirement compilation precedes task topology`
 complete the block: the baseline runs its type's standing catalog under the promotion ratchet, each level
@@ -42,10 +40,14 @@ nowhere else.
 
 ### Invariants And Boundaries
 
+The review budget comes from `orchestration.loops.defaults.maxRounds`, read when the next round begins; agents read the effective task limit, including approved extra rounds, from `task_doc`’s `reviewState.limit` on `agents-remember-task`. Code and memory reviews use the same settings limit with separate counts and sealed findings. Beyond-limit work needs a recorded architect or developer approval; the Manager asks the task’s Architect, not the developer.
+
+Repaired candidate findings are verified as ordinary fix-verification rounds, not a D107 exception; the record-only unchanged-candidate check is distinct.
+
 - The owner never self-approves; the builder never lands; the reviewer never decides.
 - Review is created only by an explicit request — never by a closeout or integration step.
-- A governed review has at most three rounds; extra rounds need explicit developer authorization.
-- Reviews 2 and 3 verify only the original listed issues; an outside-list matter goes to the developer.
+- A governed review uses the settings limit; beyond-limit rounds need a recorded Architect or developer approval.
+- Fix-verification rounds verify only the original listed issues; an outside-list matter goes to the developer.
 - Requirement compilation precedes task topology, and a review cannot pass with a rejected requirement.
 
 ### Todos
@@ -66,7 +68,7 @@ No relevant documentation found after checking live sources.
 | The owner/builder/reviewer separation and the per-altitude table. | `# Core — The Three-Party Loop (one home — this file owns the loop doctrine)` | skills/l-01-agent-lifecycles/core/loop.md:1-15 |
 | Review is opt-in and explicit, and independence requires another agent. | `## Review is opt-in and explicit` | skills/l-01-agent-lifecycles/core/loop.md:17-26; skills/l-01-agent-lifecycles/core/loop.md:14-14 |
 | The three review tiers and the rule that knobs never create a review. | `## Complexity-scored tiers (per leaf, at dispatch, when review is requested)` | skills/l-01-agent-lifecycles/core/loop.md:28-49; skills/l-01-agent-lifecycles/core/loop.md:25-25 |
-| The three-round cap, the convergence rule, and the simple review rule. | `## Rounds and convergence` | skills/l-01-agent-lifecycles/core/loop.md:51-83; skills/l-01-agent-lifecycles/core/loop.md:46-46 |
+| The settings limit, the convergence rule, and the simple review rule. | `## Rounds and convergence` | skills/l-01-agent-lifecycles/core/loop.md:51-83; skills/l-01-agent-lifecycles/core/loop.md:46-46 |
 | The criteria-catalog binding and the promotion ratchet. | `## Criteria catalogs (the reviewer as test bench)` | skills/l-01-agent-lifecycles/core/loop.md:85-93; skills/l-01-agent-lifecycles/core/loop.md:78-78 |
 | Requirement compilation precedes task topology; packets are version-addressed and cold-readable. | `## Requirement compilation precedes task topology` | skills/l-01-agent-lifecycles/core/loop.md:99-115; skills/l-01-agent-lifecycles/core/loop.md:94-94 |
 
@@ -75,3 +77,7 @@ No relevant documentation found after checking live sources.
 No sibling-repository contract defines this instruction file.
 
 No meaningful cross-repo references found.
+
+## Current Contract Evidence
+
+- Current review-budget and preserved ownership obligations are defined by these source instructions. [1]

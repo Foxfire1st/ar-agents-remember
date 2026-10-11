@@ -10,6 +10,8 @@ Start and reach native role agents for exact canonical AR assignments while keep
 
 ## Current Contract
 
+The review budget comes from `orchestration.loops.defaults.maxRounds`, read when the next round begins; agents read the effective task limit, including approved extra rounds, from `task_doc`’s `reviewState.limit` on `agents-remember-task`. Code and memory reviews use the same settings limit with separate counts and sealed findings. Beyond-limit work needs a recorded architect or developer approval; the Manager asks the task’s Architect, not the developer. The Reviewer records its own CODE begin/result; MEMORY retains its separate sealed reports, IDs and pass count without opening or resetting CODE state.
+
 The Architect delegates coordination first to one Manager for one master or one Orchestrator for concurrent masters; direct coordination is only the developer’s choice. A bound start supplies the role, required canonical references and request ID, resolves the AR paired enclosure, writes the handover and returns the actual agent/report/artifact identities.
 
 Architect may start every role except Architect; Orchestrator may start Manager, Worker, Reviewer, Curator and Investigator under its sprint; Manager may start Worker, Reviewer, Curator and Investigator under its master. Other roles start none. An unknown start is reconciled by the same request ID. A rejected candidate returns finding-specific repair to the same Worker.
@@ -63,3 +65,7 @@ No meaningful cross-repo references found.
 The exact role-start permission table includes Investigator for Orchestrator under its sprint and Manager under its master; Architect retains its permitted coordinating scope. Other roles start none. Existing request-ID reconciliation, direct leaf repair and Manager transaction ownership remain unchanged.
 
 - This source owns the stated current Investigator scope or canonical vocabulary. [1]
+
+## Current Contract Evidence
+
+- Current review-budget and preserved ownership obligations are defined by these source instructions. [4]

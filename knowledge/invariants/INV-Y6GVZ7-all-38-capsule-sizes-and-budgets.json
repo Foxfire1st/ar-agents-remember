@@ -7,11 +7,12 @@
   },
   "applicability": "All 38 role, operation and launcher capsule budgets in skills/l-01-agent-lifecycles/capsule-budgets.json.",
   "conditions": [
-    "Each stored budget equals ceil(stored size_words * 11 / 10); fresh compiled sizes stay at or under budget; the budget test passes.",
-    "Registry raw total 83786 and A8 adjusted total 82200 are distinguished from the dated A8 compiled total 93905, which is a different composition and not a contract term."
+    "Each stored budget equals ceil(stored size_words * 11 / 10); fresh compiled sizes stay at or under budget, as checked by the budget test.",
+    "The current registry has 38 cells and its updates carry their decision record. Prior L101/A8 raw, adjusted and compiled totals remain dated evidence, not current-size guarantees."
   ],
   "exclusions": [
-    "Historical era sums (62748, a1b7 109616, master 107226) and the dated A8 compiled total 93905 as current contract terms."
+    "Historical era sums (62748, a1b7 109616, master 107226) and the dated A8 compiled total 93905 as current contract terms.",
+    "The L101 83786 raw and 82200 A8-adjusted totals as current contract terms."
   ],
   "id": "INV-Y6GVZ7",
   "origin": {
@@ -25,9 +26,9 @@
     "leaf": "260928-MIK-L101",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "The 38-cell capsule-budget registry records post-sweep sizes totaling 83786 raw words (A8 adjusted 82200); each budget is ceil(size_words*11/10), recorded same-change with decisions. The 93905 A8 compiled total is a dated leaf measurement retained in origin, not the reusable contract.",
+  "statement": "The 38-cell capsule-budget registry records current compiled capsule sizes with each budget equal to ceil(size_words*11/10), updated in the same change with its decisions; fresh compiled sizes stay within those budgets. Dated leaf totals are measurements, not reusable numeric contract terms.",
   "status": "proposed",
   "supersedes": []
 }

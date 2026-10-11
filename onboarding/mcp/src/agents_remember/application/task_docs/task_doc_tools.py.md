@@ -27,13 +27,18 @@ Completed-row terminal check now delegates to `task_sprint_linkage.validate_comp
 
 ## Code Commentary
 
+### Settings-owned review state
+
+`_prepare_task_doc_edit` loads the settings number for each begin and each record. Both generic and route results receive the authority-resolved identity of the candidate root, distinct from a checked-tree claim. `_get_task_doc_result` does no write: absent state receives the readable settings number, and a legacy state with `limit == 0` receives that number plus approved extras in the answer only. A positive stored limit stays the last begun limit. If settings cannot be read, get remains readable from stored state, while begin/record refuse. Preparation still precedes validation and transactional publication.
+
+
 ### Logic
 
 `task_doc_tool(config, target: TaskDocTarget, *, operation, edit: TaskDocEdit = NO_EDIT,
 call: TaskDocCall = DEFAULT_TASK_DOC_CALL)` — since 260731-EFA-L2 the arguments arrive as two
 objects that answer two different
 questions. `TaskDocTarget(repo_id, task_name, contract_path, slug)` is **which document**;
-`TaskDocEdit(fields, step, decision, subtask, section)` is **what the edit is**, with `NO_EDIT` the
+`TaskDocEdit(fields, step, decision, subtask, section, review)` is **what the edit is**, with `NO_EDIT` the
 shared empty value a `get` passes. Internally the operation table dispatches through one private
 `_Edit` view and a per-operation `_apply_set_status` / `_apply_set_field` / `_apply_set_step` /
 `_apply_set_subtask` / `_apply_set_section` / `_apply_append_decision` function behind `_apply`,
@@ -45,7 +50,7 @@ delegations to `task_doc_steps`, and `read_steps` dispatches in the special-op p
 It validates `operation` against `VALID_OPERATIONS`
 (`create`/`replace`/`set_status`/`set_step`/`add_step`/`remove_step`/`skip_step`/`read_steps`/
 `set_subtask`/`remove_subtask`/`set_section`/
-`append_decision`/`record_route_review`/`author_execution_graph`/
+`append_decision`/`begin_review`/`record_review`/`record_route_review`/`author_execution_graph`/
 `set_field`/`get` — `migrate_execution_topology` was removed in 260815-DAG-L13; a graph-less
 sprint runs the atomic-sequential default and `author_execution_graph` is the bootstrap seam), then `_resolve()`s the task root + optional contract: a
 `contract_path` can point at either a root `series-contract.md` or a leaf

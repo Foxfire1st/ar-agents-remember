@@ -7,7 +7,7 @@
 ## Purpose
 
 ``orchestration`` section parsers: loops, roles, concurrency, expectations, supervisor,
-escalation, spawn, and the quality gate (260731-EFA-L17).
+agent-notifier, spawn, and the quality gate (260731-EFA-L17).
 
 Parses role/default and other agentic settings sections.
 
@@ -27,12 +27,8 @@ L23 parsed `qualityGate.executor` as exactly `local` or `dagger` and refused any
 - `_optional_role_text`
 - `_parse_concurrency`
 - `_parse_expectations`
-- `_parse_supervisor`
-- `_require_supervisor_floor_seconds`
-- `_parse_escalation`
-- `_parse_escalation_sla_seconds`
-- `_parse_escalation_rung_seconds`
-- `_parse_respawn_after_rung`
+- `_parse_agent_notifier`
+- `_require_agent_notifier_floor_seconds`
 - `_parse_spawn`
 - `_parse_quality_gate` (260731-EFA-L17/L24: `orchestration.qualityGate`,
   absent/empty means adapter-runtime-managed, fail-loud unknown keys, positive-int
@@ -68,18 +64,15 @@ The module's own top-level surface is listed in Code Commentary; no cross-file c
 
 ## L23 Final Candidate Disposition
 
-The orchestration quality section projects Dagger-only executor policy through strict settings
-models. Unknown or legacy executor values fail validation instead of activating compatibility code.
+The quality section parses only optional `memoryCapBytes`; every `executor` key is refused as unknown. Executor identity is profile-owned, not a parser-selected adapter.
 
 ## R39 Dagger-Only Settings Refusal
 
-The parser accepts only the Dagger executor and describes every other value as forbidden host test
-execution, not a lower-authority diagnostic option. The optional cap is a container resource
-policy.
+The parser accepts no executor key, including a Dagger-valued key. The optional positive cap is resource-policy data; adapter execution policy is owned outside this parser.
 
 ## CCR-L42 current candidate
 
-Loop-default parsing now rejects `maxRounds` above `MAX_REVIEW_ROUNDS` with a typed settings error; positive values at or below the hard review limit retain the existing parsing contract.
+`_parse_loop_defaults` accepts every positive whole-number `maxRounds` and uses `DEFAULT_LOOP_MAX_ROUNDS` when absent. It no longer checks a hard ceiling. Zero, negative numbers, fractions and booleans still fail through `_require_positive_int` with the settings field; reviewer reuse and complexity parsing are unchanged.
 
 ## Investigator scope and request identity
 

@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "d7bf74bc660d55b477b5698fd496803aea57b3fd",
-        "content": "sha256:d99430e5b69788af75ad2214a5c8fb312c751978f1cfef213aa88f2ce866aa52",
+        "blob": "66c08f5e3dfef4d20032c78eef3074203be6cd11",
+        "content": "sha256:f2ce8ad198de33e2d9d18cea99af65996e13aa486402c1e6e5635f4436e760b9",
         "locator": {
           "kind": "file"
         }
@@ -59,7 +59,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2122be11efd7189de483677896745d9f50b251c4",
+            "blob": "66c08f5e3dfef4d20032c78eef3074203be6cd11",
             "content": "sha256:5f3d1154ebbd6680d1333d73a7b95ee7d823f0fe4084db5391fde6c9c649dc5a",
             "locator": {
               "end": 4,
@@ -76,12 +76,27 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2122be11efd7189de483677896745d9f50b251c4",
+            "blob": "66c08f5e3dfef4d20032c78eef3074203be6cd11",
             "content": "sha256:5f3d1154ebbd6680d1333d73a7b95ee7d823f0fe4084db5391fde6c9c649dc5a",
             "locator": {
               "end": 4,
               "kind": "line_range",
               "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Current stage boundaries, settings-owned review budget and recorded approval duties are carried by these instruction sources.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "66c08f5e3dfef4d20032c78eef3074203be6cd11",
+            "content": "sha256:f2ce8ad198de33e2d9d18cea99af65996e13aa486402c1e6e5635f4436e760b9",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"

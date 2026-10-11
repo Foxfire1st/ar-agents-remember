@@ -1,6 +1,25 @@
 {
   "path": "mcp/src/agents_remember/tasks/route_review.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "4e29dc59b541ab3eab9fbf66832372abe20353ef",
+        "content": "sha256:b963a9650ea973956f73bae4d1fd5f8d06d994fd6abf2772092395c89aaf232b",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReviewApproval"
+        }
+      },
+      "id": "RLZ-WDS7XN",
+      "invariant": "INV-AW14ZP",
+      "origin": {
+        "handoffEntry": "L116-W3-beyond-limit-approval",
+        "leaf": "260928-MIK-L116"
+      },
+      "rationale": "This model carries the recorded approval shape that the gate writes and later reads back.",
+      "role": "support"
+    }
+  ],
   "references": {
     "1": {
       "note": "Route and child-intent model shapes.",

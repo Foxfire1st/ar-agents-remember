@@ -2,6 +2,8 @@
 
 ## Current operative account — MIK-R112
 
+Successor strategy reviews keep the sealed baseline and verify only preceding outstanding IDs with fixed/unfixed dispositions; rounds within the settings limit are ordinary and beyond-limit work requires recorded approval. A changed plan that cannot be verified against the sealed baseline returns to the developer rather than resetting review.
+
 The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
 
 - Current role removes that capability.
@@ -181,3 +183,7 @@ If an explicit graph is later chosen, complete every master attachment first and
 A successor strategy review now carries the sealed issue list, fixed/unfixed dispositions, and subset rule; it cannot perform a new portfolio sweep, add a lens or route, or turn an outside-list observation into a finding. Three rounds remain the ordinary maximum and further work requires developer authorization.
 
 </details>
+
+## Current Contract Evidence
+
+- Current stage boundaries, settings-owned review budget and recorded approval duties are carried by these instruction sources. [9]

@@ -10,6 +10,8 @@ The native Architect owns the developer conversation, semantic requirements and 
 
 ## Current Contract
 
+For a task on its line the Architect may grant a round beyond the settings limit when the sealed list has shrunk and the open repair is concrete. A repeated failure with an unchanged repair, or a requirement-meaning dispute, instead receives a ruling and no further round. Developer approval remains an alternative recorded authority.
+
 Ask only for missing outcome/registered repository and recover current task decisions, approvals, exact requirements and reports before acting on existing work. New requirements are canonical stable-ID/version packets approved before task topology, with one primary revision per leaf.
 
 For one master the Architect first starts one Manager on that master; concurrent masters start one Orchestrator that starts one Manager per master; direct coordination and a single-master Orchestrator are the developer’s choices. Native `role_start` and `role_message` preserve actual agent/report/handover IDs, exact canonical task selection and same-request recovery. Finding-specific repair returns to the same Worker.
@@ -56,3 +58,8 @@ No meaningful cross-repo references found.
 This packaged copy derives from the canonical roles/architect.md. The Architect keeps the developer conversation and runs no suite, build or failure investigation in its own chat. Delegated checks go through the actual Manager or Orchestrator; developer-chosen direct coordination assigns a leaf check to Worker/Reviewer and a non-leaf concern to Investigator. Investigator starts remain within admitted Projects, sprint or master containment, and still-forbidden starts route to the actual parent or a parentless blocker. One Manager remains the default for one master. Mirror synchronization remains the owner; this file adds no independent instruction.
 
 - This source owns the stated current Investigator scope or canonical vocabulary. [1]
+
+## Current Contract Evidence
+
+
+- Current stage boundaries, settings-owned review budget and recorded approval duties are carried by these instruction sources. [4]

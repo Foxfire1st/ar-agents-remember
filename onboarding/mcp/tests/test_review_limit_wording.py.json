@@ -1,0 +1,122 @@
+{
+  "path": "mcp/tests/test_review_limit_wording.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "a9d5fecd3d69a477d1fdcf2134c5bfa205c4b1e1",
+        "content": "sha256:55c2095e15b43fdbe4f7bd2a029363db48c23da76db18a5a43947efdabf8bbce",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_stage_section_binding_fails_on_deletion_and_relocation"
+        }
+      },
+      "facet": "Deleting or relocating each required canonical-source facet outside the extracted stage section fails its predicate; not an installed agent-behavior witness.",
+      "id": "PRF-S1Q1AX",
+      "invariant": "INV-CV3MW4",
+      "origin": {
+        "handoffEntry": "L116-W3-wording-oracle",
+        "leaf": "260928-MIK-L116"
+      }
+    }
+  ],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "a9d5fecd3d69a477d1fdcf2134c5bfa205c4b1e1",
+        "content": "sha256:2dbaab4852fc1c95bca0dc735510379693e43c1bf198438e89efe440d4c9f92c",
+        "locator": {
+          "kind": "symbol",
+          "name": "_NUMBER"
+        }
+      },
+      "id": "RLZ-E1ZGXM",
+      "invariant": "INV-CV3MW4",
+      "origin": {
+        "handoffEntry": "L116-W3-wording-oracle",
+        "leaf": "260928-MIK-L116"
+      },
+      "rationale": "This grammar is the prohibited-number class the oracle defends: generative word forms plus digits, with label and allowance exemptions.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a9d5fecd3d69a477d1fdcf2134c5bfa205c4b1e1",
+        "content": "sha256:0082bede94098b533177d6979c25286c6a80ca2e7026b71482011ed23b72c19d",
+        "locator": {
+          "kind": "symbol",
+          "name": "_section_of"
+        }
+      },
+      "id": "RLZ-F81JKR",
+      "invariant": "INV-CV3MW4",
+      "origin": {
+        "handoffEntry": "L116-W3-wording-oracle",
+        "leaf": "260928-MIK-L116"
+      },
+      "rationale": "This extractor binds every facet assertion to the single stage section so whole-file presence can never satisfy the check.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Positive detector controls and intentional label/allowance exemptions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a9d5fecd3d69a477d1fdcf2134c5bfa205c4b1e1",
+            "content": "sha256:af98bd8aa55fb122c2c941301dd2eb8bef5362a48b52102b2c69487ad0b990b0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_number_detector_catches_limit_forms_and_exempts_labels"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Stage facets are bound to the extracted section rather than satisfied by relocated source text.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a9d5fecd3d69a477d1fdcf2134c5bfa205c4b1e1",
+            "content": "sha256:55c2095e15b43fdbe4f7bd2a029363db48c23da76db18a5a43947efdabf8bbce",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_stage_section_binding_fails_on_deletion_and_relocation"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a9d5fecd3d69a477d1fdcf2134c5bfa205c4b1e1",
+            "content": "sha256:5840480b321207a34a2c9cd7ce935af6f9d031dd1e1b59af65daeeea4086ae8e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_compiled_section_binding_fails_on_deletion_and_relocation"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The specified Reviewer, Worker and Manager property/construction sentences survive source and compiled projections.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a9d5fecd3d69a477d1fdcf2134c5bfa205c4b1e1",
+            "content": "sha256:2705e46482371922d94e3970e0acf1bbda85cbd87350ce62dfeb248111b2d881",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_rule_nine_sentences_hold_for_reviewer_worker_manager"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

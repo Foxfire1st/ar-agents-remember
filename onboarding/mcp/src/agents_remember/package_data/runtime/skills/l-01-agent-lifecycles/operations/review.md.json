@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9f01b458769e29ba24c9cc3c0ff187e9e5eb2cf2",
+            "blob": "2d42ad92abef03a1873de4fd715985616f122689",
             "content": "sha256:817cae232e058b3d1351eb59ba5f41c7ddf38b67e60124a44b46bc349b5117c9",
             "locator": {
               "end": 81,
@@ -25,7 +25,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dbf343f86d5bf2a3d00ecd6d2c4c255e646cd043",
+            "blob": "053ba7c4260bcc5540d0519e5481b47d344c469d",
             "content": "sha256:c2853f5a0d21fd3b9da0d29103c3f9f81a91fce4b4dc6cb9d5d5f5a155fc6cda",
             "locator": {
               "end": 1,
@@ -33,6 +33,21 @@
               "start": 1
             },
             "path": "skills/l-01-agent-lifecycles/operations/review.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Current review-budget and preserved ownership obligations are defined by these source instructions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "053ba7c4260bcc5540d0519e5481b47d344c469d",
+            "content": "sha256:6fe62a36cf7fa9ec3bffe1b9f7f3dcf8383b2a673d84f267479568d5b327433b",
+            "locator": {
+              "kind": "file"
+            }
           },
           "kind": "code"
         }

@@ -22,7 +22,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9f01b458769e29ba24c9cc3c0ff187e9e5eb2cf2",
+            "blob": "2d42ad92abef03a1873de4fd715985616f122689",
             "content": "sha256:401c1deb918a306873d6607751784145932c3d5bb4e54cabf33dd00290916776",
             "locator": {
               "end": 98,
@@ -40,7 +40,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4997f701b1ba9597df49638fa06ea0242e73fb66",
+            "blob": "bd559c3f7fb918ede5de2be0bc9321df45f1aa62",
             "content": "sha256:1ef76bbb155772d5cbaa602f79f34e50cffadb32e4ac0a79cb63cf1861214d37",
             "locator": {
               "end": 1,
@@ -48,6 +48,21 @@
               "start": 1
             },
             "path": "skills/l-01-agent-lifecycles/operations/coordination.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Current review-budget and preserved ownership obligations are defined by these source instructions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd559c3f7fb918ede5de2be0bc9321df45f1aa62",
+            "content": "sha256:14d91261080606e51d51bb41a0a158e126a96153181de8b4bc99481e62f8b4bb",
+            "locator": {
+              "kind": "file"
+            }
           },
           "kind": "code"
         }

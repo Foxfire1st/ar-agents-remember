@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "6a3954f423f0d59e486bd5716e38787d5ef84d61",
-        "content": "sha256:1ade4d5eeecd8a6753efa976feefc6042e50283a991613e583b1a04285c292e9",
+        "blob": "219e63f090437e6767ad21a8414c5fdacb889a30",
+        "content": "sha256:3f1194f47ff5053d9036e0393ba29177097877063e6d21e6dd2e1dae0c0e188b",
         "locator": {
           "kind": "file"
         }
@@ -40,7 +40,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b3718dfae0d5962252de9c524dfdf51831e5365a",
+            "blob": "219e63f090437e6767ad21a8414c5fdacb889a30",
             "content": "sha256:cff008a580b31483b82250166a7d30f245042524986ab6a536f026323e0baaf1",
             "locator": {
               "end": 8,
@@ -57,7 +57,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b3718dfae0d5962252de9c524dfdf51831e5365a",
+            "blob": "219e63f090437e6767ad21a8414c5fdacb889a30",
             "content": "sha256:4642e8ea8de713715fb38326664bdaf76cf0a44f38d3a41013c8c03980288394",
             "locator": {
               "end": 6,
@@ -65,6 +65,21 @@
               "start": 6
             },
             "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Current stage boundaries, settings-owned review budget and recorded approval duties are carried by these instruction sources.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "219e63f090437e6767ad21a8414c5fdacb889a30",
+            "content": "sha256:3f1194f47ff5053d9036e0393ba29177097877063e6d21e6dd2e1dae0c0e188b",
+            "locator": {
+              "kind": "file"
+            }
           },
           "kind": "code"
         }

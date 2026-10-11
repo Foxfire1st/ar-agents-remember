@@ -1,6 +1,61 @@
 {
   "path": "mcp/src/agents_remember/application/task_docs/task_doc_route_review.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "0886b1c8ee22aa00f963bf5664cb69c5161f4054",
+        "content": "sha256:11f874ff6a27ddc24e46a53e83f8b367646bb86d0e42e13810f3c12260b419fd",
+        "locator": {
+          "kind": "symbol",
+          "name": "_state_payload"
+        }
+      },
+      "id": "RLZ-9DNBPN",
+      "invariant": "INV-EA9XDB",
+      "origin": {
+        "handoffEntry": "L116-W3-record-only-binding",
+        "leaf": "260928-MIK-L116"
+      },
+      "rationale": "This adapter carries the plane-stamped tree into the generic state payload so the route sibling no longer records unbound.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "0886b1c8ee22aa00f963bf5664cb69c5161f4054",
+        "content": "sha256:6aba0097d56ada16731dab87617af5e7cf99708fdb95ec181d35e838eec7933d",
+        "locator": {
+          "kind": "symbol",
+          "name": "review_settings_limit"
+        }
+      },
+      "id": "RLZ-FGJ700",
+      "invariant": "INV-AF2DN3",
+      "origin": {
+        "handoffEntry": "L116-W3-settings-limit-answers",
+        "leaf": "260928-MIK-L116"
+      },
+      "rationale": "This reader resolves the in-force settings number per call and refuses the round when the file cannot be read.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "0886b1c8ee22aa00f963bf5664cb69c5161f4054",
+        "content": "sha256:b058daa859694f257c35e3861a3ec873f04337495ee248bb6a1952c5b4ac4140",
+        "locator": {
+          "kind": "symbol",
+          "name": "candidate_root_for_review"
+        }
+      },
+      "id": "RLZ-X47ZNW",
+      "invariant": "INV-EA9XDB",
+      "origin": {
+        "handoffEntry": "L116-W3-record-only-binding",
+        "leaf": "260928-MIK-L116"
+      },
+      "rationale": "This adapter resolves the candidate root from the leaf worktree contract with repository-root fallback.",
+      "role": "support"
+    }
+  ],
   "references": {
     "1": {
       "note": "Call-level knobs and the branch-addressed policy gate.",

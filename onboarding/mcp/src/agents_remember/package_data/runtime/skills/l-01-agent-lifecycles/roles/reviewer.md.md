@@ -2,6 +2,14 @@
 
 ## Current operative account — MIK-R112
 
+The review budget comes from `orchestration.loops.defaults.maxRounds`, read when the next round begins; agents read the effective task limit, including approved extra rounds, from `task_doc`’s `reviewState.limit` on `agents-remember-task`. Code and memory reviews use the same settings limit with separate counts and sealed findings. Beyond-limit work needs a recorded architect or developer approval; the Manager asks the task’s Architect, not the developer.
+
+The Reviewer’s stage ends when the verdict over the whole requirement, findings and coverage is recorded. Each of these stages repairs faults in its own work or instrument and corrects invalid input through the same tool, reports the repair, and continues. It stops for an open permission prompt, a guard/tool refusal that survives correct input or names unowned state, a requirement-meaning question, or an effect outside its own worktree, scratch folder and task. An unfinished final turn names what it awaits and from whom; the existing role-specific stops and write boundaries remain.
+
+When all candidate findings are closed and only the Worker’s report/evidence/hash/anchor remains to repair, the same Reviewer records the repaired record on its last round without `begin_review` or a count increase. This requires the candidate to remain byte-for-byte unchanged; a changed or unproven candidate requires `begin_review`, and remaining finding IDs can only shrink.
+
+A Reviewer finding states the required property the candidate breaks; the showing case is proof, not the finding. If a repair leaves that finding open, the Worker states the property for every case and proves the construction or changes it, reporting which. A beyond-limit request carries that property-and-construction account.
+
 The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
 
 - Current role starts with a cold requirement read before a code candidate/round.
@@ -198,3 +206,7 @@ malformed never-handed-off row receives a non-attempt correction/void without co
 a malformed handed-off attempt requires independent rejection before successor handoff.
 
 </details>
+
+## Current Contract Evidence
+
+- Current stage boundaries, settings-owned review budget and recorded approval duties are carried by these instruction sources. [31]

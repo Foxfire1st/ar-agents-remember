@@ -17,16 +17,21 @@ task-state transitions: `task_reopen`, `lifecycle_finalize_task`, `task_doc`.
 
 ## Code Commentary
 
+### Review description contract
+
+The registered `task_doc` description names the settings-owned limit and the answer’s `reviewState.limit`, approval `{by: architect|developer, text}` with positive `additionalRounds`, and legacy `developerApproval` input. It describes shrink-only sealed findings and the record-only check on the last round without a new begin when the candidate is unchanged. Actual identity proof and transition admission live in the application/worktree owners, not the registrar; the same-round exception qualifies the ordinary instruction to begin before publication.
+
+
 ### Logic
 
 `task_doc` is the JSON-primary authoring tool and carries the longest docstring on the surface,
 because the operation vocabulary is not in the types: `create` | `replace` | `set_status` |
 `set_step` | `add_step` | `remove_step` | `skip_step` | `read_steps` | `set_subtask` |
 `remove_subtask` | `set_section` | `append_decision` |
-`record_route_review` | `author_execution_graph` | `attach_master` | `detach_master` | `retire_master` |
+`begin_review` | `record_review` | `record_route_review` | `author_execution_graph` | `attach_master` | `detach_master` | `retire_master` |
 `archive_sprint` | `linkage_report` | `set_field` |
 `get` (`migrate_execution_topology` was removed in 260815-DAG-L13). The JSON document is the source of truth; `task.md` / `<slug>.md` is a generated render that
-is never parsed back. Everything mutates except `operation='get'`, and `dry_run=true` builds and
+is never parsed back. Read-only `get`, `read_steps` and report operations do not publish task edits; mutating operations prepare validated candidates, and `dry_run=true` builds and
 validates and returns `rendered`/`diff`/`wouldLose` **without** writing — the preview before
 adopting a hand-written `.md`. Master (`kind:"master"`) documents use `set_subtask` /
 `remove_subtask` / `set_section`; `remove_subtask` also deletes the leaf doc (json+md) unless
@@ -103,7 +108,7 @@ recreates everything.
 ### Invariants And Boundaries
 
 - Flat signature; `TaskDocTarget` / `TaskDocEdit` / `FinalizeTaskDocs` are built in the body.
-- `task_doc` is mutating except `get`, and registers `dry_run=False`.
+- `task_doc` registers `dry_run=False`; get/read_steps/report paths stay read-only, and dry-run mutating calls preview without publication.
 - **The operation vocabulary lives only in the description text.** `operation` is a plain `str`, not
   an enum and not a schema member, so adding or changing an operation is a description edit and
   nothing else — the 260831-LOCR-L33 step-plane change touched this module's description only, with

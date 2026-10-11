@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "59b96abdc86d2d0203bea462255eaee46b8bbd64",
-        "content": "sha256:681308a36b7737e6186bdb5a962918b28a8667253cc967b6c4fbbe4c53b62d20",
+        "blob": "7d45989aa2a810edb7efe59ec07fd9350438bc9f",
+        "content": "sha256:b452f9d492d739ac5d896f41fc8f6c4fde43983f9bb1d5548a80fb721f3912c2",
         "locator": {
           "kind": "file"
         }
@@ -48,6 +48,21 @@
               "end": 109,
               "kind": "line_range",
               "start": 105
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Current review-budget and preserved ownership obligations are defined by these source instructions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7d45989aa2a810edb7efe59ec07fd9350438bc9f",
+            "content": "sha256:b452f9d492d739ac5d896f41fc8f6c4fde43983f9bb1d5548a80fb721f3912c2",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"

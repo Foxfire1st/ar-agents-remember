@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Prevents silently spending an obsolete hard-coded review budget, losing recorded allowance history or admitting a record-only/wording claim beyond its actual boundary."
+  },
+  "applicability": "Supported task_doc get and direct-record projections of absent or legacy review limits.",
+  "conditions": [
+    "A zero stored limit is pre-limit absence; resolved settings and existing extras supply the effective value."
+  ],
+  "exclusions": [
+    "Positive stored post-limit values are not silently rewritten by get/record.",
+    "Unreadable settings leave get readable as stored history and refuse recording."
+  ],
+  "id": "INV-7HBKZR",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_review_state.py (backfill proofs); mcp/tests/test_task_doc_review_public.py (legacy get, direct record); evidence-attempt3/focused-pytest.log"
+      ],
+      "path": "handoff-independent-wave.json"
+    },
+    "handoffEntry": "L116-W3-effective-limit-answers",
+    "leaf": "260928-MIK-L116",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Supported get and direct-record answers carry the effective settings number plus approved extra rounds; a stored zero means the record predates limits, never a zero-round budget.",
+  "status": "proposed",
+  "supersedes": []
+}

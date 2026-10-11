@@ -1,0 +1,22 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/core/loop.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Current review-budget and preserved ownership obligations are defined by these source instructions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "67514785547fc2ec1102911ba96fa1c82e14c4fe",
+            "content": "sha256:ab6b6ef67d89a18db79dbca8a6adbf75cbc27a4e6b2fbd55e952395ee7676a32",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

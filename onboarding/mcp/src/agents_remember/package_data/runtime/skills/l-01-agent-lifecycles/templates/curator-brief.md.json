@@ -38,7 +38,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "59b96abdc86d2d0203bea462255eaee46b8bbd64",
+            "blob": "7d45989aa2a810edb7efe59ec07fd9350438bc9f",
             "content": "sha256:c8d477c28ddba2f0c2bbcea66e65c1766bf20d7f2d6561a55e35889c1356b408",
             "locator": {
               "end": 1,
@@ -100,7 +100,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "127f1c2cd5e306ba738ea00c932a9a4a7cb7730e",
+            "blob": "bd9c524b3c9a092280ad27f4cca66c65f1b4f12c",
             "content": "sha256:f2bf6365652ab4bd956193f0f6688638f4f988f94c796220bd405708300a45b0",
             "locator": {
               "end": 1,
@@ -137,6 +137,33 @@
               "name": "check_targets"
             },
             "path": "scripts/sync-skills.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "A normal Curator pass requires complete memory-quality/coherence before its independent memory handover; the input brief does not make that standing stage optional.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "128fa3a7f4a59afa387ac9963db075a27ca8d1c2",
+            "content": "sha256:14fbaf274fec9141c6b515816e20a8ffac22733d064b4a950782459b941b2ebd",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7d45989aa2a810edb7efe59ec07fd9350438bc9f",
+            "content": "sha256:b452f9d492d739ac5d896f41fc8f6c4fde43983f9bb1d5548a80fb721f3912c2",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
           },
           "kind": "code"
         }

@@ -66,7 +66,7 @@ The verdict template now addresses the Worker (and, on a pass, the Curator) dire
 
 ## 260928-MIK-R93 — a question for the developer goes up the chain
 
-A request for a round beyond the ordinary three goes to the parent with `role_message` on `agents-remember-task` where one exists, or to the own chat without one; the developer's quoted words and the recorded approval are still required before any extra review.
+The earlier fixed numeric/developer-only extra-review instruction is superseded: the settings limit is read through task_doc, and a pass beyond it needs recorded Architect or developer words. This preserves sealed findings, Reviewer bookkeeping and Manager gate authority.
 
 ## Evidence
 
@@ -77,7 +77,9 @@ No external Domain Documentation source governs this verdict template.
 ### Repo-Internal References
 
 - Independent exact-attempt/candidate adjudication is mandatory in every variant. [1]
+
 - Leaf review accounts for every material route and returns a recordable packet. [2]
+
 - Delta review retains accepted rows and rechecks rejected rows plus direct regressions. [3]
 
 ### Cross-Repo References
@@ -91,3 +93,7 @@ Attempt publication is phase-sensitive: validate before append, and treat append
 review handoff as one formal boundary. A malformed row that never reached review is preserved by a
 non-attempt correction/void record without consuming the next attempt ID; after handoff, only an
 independent reviewer rejection permits a successor.
+
+## Current Source Evidence
+
+- Current settings-budget, recorded approval and preserved stage/ownership boundaries are carried by this canonical instruction source. [4]

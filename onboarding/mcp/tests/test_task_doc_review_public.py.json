@@ -1,5 +1,41 @@
 {
   "path": "mcp/tests/test_task_doc_review_public.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "c93324eb724998150f14d5d107f03ca73e2e9571",
+        "content": "sha256:5b7409a26dbf4008105fd75138a049a2c938e233dad804f13da7bc55dcf09d4d",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_legacy_pre_limit_get_adds_approved_extra_rounds"
+        }
+      },
+      "facet": "Legacy get returns effective settings plus approved extra rounds and the retained developerApproval words; this test asserts returned values only and captures/asserts no before/after stored-document bytes.",
+      "id": "PRF-APP5PQ",
+      "invariant": "INV-7HBKZR",
+      "origin": {
+        "handoffEntry": "L116-W3-effective-limit-answers",
+        "leaf": "260928-MIK-L116"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "c93324eb724998150f14d5d107f03ca73e2e9571",
+        "content": "sha256:c49575f1730f7919a50d0984595d0396775d6ca69a5c56328e0969c54d97f35b",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_begin_review_follows_changed_settings_without_restart"
+        }
+      },
+      "facet": "Under an isolated public task_doc world, the next begin follows the changed settings number without a server restart.",
+      "id": "PRF-Q5FFF6",
+      "invariant": "INV-AF2DN3",
+      "origin": {
+        "handoffEntry": "L116-W3-settings-limit-answers",
+        "leaf": "260928-MIK-L116"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "1": {

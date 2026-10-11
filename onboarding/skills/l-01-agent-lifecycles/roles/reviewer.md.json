@@ -3,8 +3,27 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "c6b847c5c7627c6094bd425abb7559f7ae21e43e",
-        "content": "sha256:10c2683a39e2cd0749f0d56b67466d02117322706907419831ba9da450bc64d7",
+        "blob": "7ee823b7415cee2590781a41ffb8b929ceb23f65",
+        "content": "sha256:2127da3e03bc26085319233af46b94eef3a73611aa3fe3c9f1aedc29aebd6742",
+        "locator": {
+          "end": 239,
+          "kind": "line_range",
+          "start": 229
+        }
+      },
+      "id": "RLZ-165F81",
+      "invariant": "INV-CV3MW4",
+      "origin": {
+        "handoffEntry": "L116-W3-wording-oracle",
+        "leaf": "260928-MIK-L116"
+      },
+      "rationale": "The actual Reviewer stage section carries whole-verdict completion, own-slip repair, the protected stops/last-line account and authority-proven record-only handling; the prohibition list is not that construct.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "7ee823b7415cee2590781a41ffb8b929ceb23f65",
+        "content": "sha256:2fac39dffe7628a86b93166cb362263ee9f206432040a2ca1e20d923ccd3f44f",
         "locator": {
           "kind": "file"
         }
@@ -20,8 +39,8 @@
     },
     {
       "anchor": {
-        "blob": "c6b847c5c7627c6094bd425abb7559f7ae21e43e",
-        "content": "sha256:10c2683a39e2cd0749f0d56b67466d02117322706907419831ba9da450bc64d7",
+        "blob": "7ee823b7415cee2590781a41ffb8b929ceb23f65",
+        "content": "sha256:2fac39dffe7628a86b93166cb362263ee9f206432040a2ca1e20d923ccd3f44f",
         "locator": {
           "kind": "file"
         }
@@ -37,8 +56,8 @@
     },
     {
       "anchor": {
-        "blob": "c6b847c5c7627c6094bd425abb7559f7ae21e43e",
-        "content": "sha256:10c2683a39e2cd0749f0d56b67466d02117322706907419831ba9da450bc64d7",
+        "blob": "7ee823b7415cee2590781a41ffb8b929ceb23f65",
+        "content": "sha256:2fac39dffe7628a86b93166cb362263ee9f206432040a2ca1e20d923ccd3f44f",
         "locator": {
           "kind": "file"
         }
@@ -54,8 +73,8 @@
     },
     {
       "anchor": {
-        "blob": "c6b847c5c7627c6094bd425abb7559f7ae21e43e",
-        "content": "sha256:10c2683a39e2cd0749f0d56b67466d02117322706907419831ba9da450bc64d7",
+        "blob": "7ee823b7415cee2590781a41ffb8b929ceb23f65",
+        "content": "sha256:2fac39dffe7628a86b93166cb362263ee9f206432040a2ca1e20d923ccd3f44f",
         "locator": {
           "kind": "file"
         }
@@ -71,7 +90,7 @@
     },
     {
       "anchor": {
-        "blob": "c6b847c5c7627c6094bd425abb7559f7ae21e43e",
+        "blob": "7ee823b7415cee2590781a41ffb8b929ceb23f65",
         "content": "sha256:92dcedcd2497d46774810fe5ab551db0448e9b4111eca2c52f1ab3b4edb6e0a1",
         "locator": {
           "end": 21,
@@ -90,7 +109,7 @@
     },
     {
       "anchor": {
-        "blob": "c6b847c5c7627c6094bd425abb7559f7ae21e43e",
+        "blob": "7ee823b7415cee2590781a41ffb8b929ceb23f65",
         "content": "sha256:5dd86b5521e960c9e9bc9d583ffe68e6f76a0c0b91618675c0d9cafde6536c6f",
         "locator": {
           "end": 198,
@@ -109,8 +128,8 @@
     },
     {
       "anchor": {
-        "blob": "c6b847c5c7627c6094bd425abb7559f7ae21e43e",
-        "content": "sha256:10c2683a39e2cd0749f0d56b67466d02117322706907419831ba9da450bc64d7",
+        "blob": "7ee823b7415cee2590781a41ffb8b929ceb23f65",
+        "content": "sha256:2fac39dffe7628a86b93166cb362263ee9f206432040a2ca1e20d923ccd3f44f",
         "locator": {
           "kind": "file"
         }
@@ -126,8 +145,8 @@
     },
     {
       "anchor": {
-        "blob": "c6b847c5c7627c6094bd425abb7559f7ae21e43e",
-        "content": "sha256:10c2683a39e2cd0749f0d56b67466d02117322706907419831ba9da450bc64d7",
+        "blob": "7ee823b7415cee2590781a41ffb8b929ceb23f65",
+        "content": "sha256:2fac39dffe7628a86b93166cb362263ee9f206432040a2ca1e20d923ccd3f44f",
         "locator": {
           "kind": "file"
         }
@@ -148,12 +167,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8216517a6b46f398e278ef4cb431f4ddc445a7f6",
+            "blob": "7ee823b7415cee2590781a41ffb8b929ceb23f65",
             "content": "sha256:de88a9e1ed720c73df9acdf2680d2b6b9b32bc76b1f295ef78493200f8281439",
             "locator": {
-              "end": 103,
+              "end": 101,
               "kind": "line_range",
-              "start": 100
+              "start": 98
             }
           },
           "kind": "code"
@@ -165,7 +184,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5571757729bab29324c91b86fc899ba99e5798bb",
+            "blob": "3998b8cc7deef5905046e2146a555c05c4ec818f",
             "content": "sha256:7626ba80bd5da998b74d17dd724a798b3b59af5f9c42c97f8b4d56b9c918b552",
             "locator": {
               "end": 55,
@@ -183,12 +202,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8967dc869ac85e8d0b0de245a1f12830d6fe0ed4",
+            "blob": "7ee823b7415cee2590781a41ffb8b929ceb23f65",
             "content": "sha256:31f922fec6d47cab57b1346e20eea944703f5dc7303dd5ac02dfa874d6694562",
             "locator": {
-              "end": 97,
+              "end": 131,
               "kind": "line_range",
-              "start": 90
+              "start": 124
             }
           },
           "kind": "code"
@@ -200,12 +219,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8216517a6b46f398e278ef4cb431f4ddc445a7f6",
+            "blob": "7ee823b7415cee2590781a41ffb8b929ceb23f65",
             "content": "sha256:6e496165f569558e9be2890f58fdbf115dfb83e1977232bf4eb80b324a7f3546",
             "locator": {
-              "end": 106,
+              "end": 104,
               "kind": "line_range",
-              "start": 104
+              "start": 102
             }
           },
           "kind": "code"
@@ -213,16 +232,29 @@
       ]
     },
     "5": {
-      "note": "The seat's seam table fixes the five seams and where each verdict goes.\n\nAnchor: \"The seam you are reviewing\"",
+      "note": "The seat's seam table fixes the five seams and where each verdict goes.",
       "targets": [
         {
           "anchor": {
-            "blob": "fdf1b1be0264ac1bf51a1929dea5c3ad2ebea147",
-            "content": "sha256:a7db8b41cf2e1ea5f1b3c7ba248e89b089a9a2f3008d1b38abc1a705612fbeee",
+            "blob": "7ee823b7415cee2590781a41ffb8b929ceb23f65",
+            "content": "sha256:2fac39dffe7628a86b93166cb362263ee9f206432040a2ca1e20d923ccd3f44f",
             "locator": {
-              "end": 43,
-              "kind": "line_range",
-              "start": 34
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Current settings-budget, recorded approval and preserved stage/ownership boundaries are carried by this canonical instruction source.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7ee823b7415cee2590781a41ffb8b929ceb23f65",
+            "content": "sha256:2fac39dffe7628a86b93166cb362263ee9f206432040a2ca1e20d923ccd3f44f",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"

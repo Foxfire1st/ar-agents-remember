@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "The parser alone accepts a setting without spending it; the transition alone spends a number without resolving the live user choice; approval, answer and instruction projections alone cannot prevent a competing ceiling. Together the five scoped contracts keep settings authority and cumulative accounting consistent across the operation."
+  },
+  "guarantee": "A task review uses the live positive settings budget plus recorded approved extras, and its supported state answers preserve that accounting without resetting count or sealed findings. The fallback/validation, begin-time read, approval attribution, legacy-answer projection and number-free instruction contract together keep a user setting authoritative rather than overruled by a separate ceiling or prose. Code and memory counts remain separate.",
+  "id": "FAM-K65H24",
+  "members": [
+    "INV-K76Z77",
+    "INV-AF2DN3",
+    "INV-AW14ZP",
+    "INV-7HBKZR",
+    "INV-CV3MW4"
+  ],
+  "origin": {
+    "handoff": {
+      "path": "handoff-residual-independent.json"
+    },
+    "handoffEntry": "settings-budget-accounting",
+    "leaf": "260928-MIK-L116",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "routes": [
+    "mcp/src/agents_remember/kernel",
+    "mcp/src/agents_remember/worktrees",
+    "mcp/src/agents_remember/application/task_docs",
+    "mcp/src/agents_remember/tasks",
+    "skills/l-01-agent-lifecycles/roles",
+    "mcp/tests"
+  ],
+  "schema": "ar-family/v1",
+  "status": "proposed",
+  "title": "Settings-owned review budget and truthful accounting"
+}

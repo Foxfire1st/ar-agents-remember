@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Prevents silently spending an obsolete hard-coded review budget, losing recorded allowance history or admitting a record-only/wording claim beyond its actual boundary."
+  },
+  "applicability": "Canonical lifecycle sources, derived instruction mirrors and the declared compiled role/operation matrices.",
+  "conditions": [
+    "The explicit prohibited-number grammar and stage facet predicates apply; separate sync checks establish mirror equivalence."
+  ],
+  "exclusions": [
+    "Numeric round labels and approved allowance examples are permitted.",
+    "No real agent behavior or every possible paraphrase is proved by the wording suite.",
+    "Registered task_doc tool text and heading uniqueness are not independently checked by this test file."
+  ],
+  "id": "INV-CV3MW4",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_review_limit_wording.py (7 tests: corpus scan, compiled matrix, section hold, detector controls, source and compiled deletion/relocation proofs, rule 9); evidence-attempt3/focused-pytest.log"
+      ],
+      "path": "handoff-independent-wave.json"
+    },
+    "handoffEntry": "L116-W3-wording-oracle",
+    "leaf": "260928-MIK-L116",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "No role source or compiled capsule names a review-round number; each of the worker, reviewer, curator and manager texts holds its Where-your-stage-ends section with the rule 6-8 facets and the bound rule 5 and rule 9 sentences.",
+  "status": "proposed",
+  "supersedes": []
+}

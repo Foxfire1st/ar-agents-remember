@@ -91,7 +91,7 @@ are curator blockers, not authority to write current onboarding intent.
 
 ## CCR-R12@v5 Transaction Boundary
 
-This role card follows the transaction-only lifecycle boundary: the role reports its own targeted or scoped evidence with failed and not-run states visible and leaves closeout/integration to the authorized code, memory-content, and ledger Git transaction. Full quality, full tests, full memory quality, certification, and independent review are explicit operations only. Requested reviews retain the sealed finding list and monotonic three-round limit.
+This role card follows the transaction-only lifecycle boundary: the role reports its own targeted or scoped evidence with failed and not-run states visible and leaves closeout/integration to the authorized code, memory-content, and ledger Git transaction. The Manager does not run the other seats' checks itself: full code-quality/test/certification operations remain explicitly assigned, while a normal Curator pass supplies its standing complete memory-quality and coherence evidence for the transaction. Requested reviews retain the sealed finding list and monotonic finding set under the settings limit.
 
 ## 260928-MIK-L99 — a leaf's agents hand over to each other
 
@@ -159,8 +159,26 @@ The Manager retains its master’s leaf diff, direct repair and transaction owne
 ## Refreshed current evidence
 
 - One manager owns one canonical master and the complete leaf closeout chain. [1]
+
 - Hosted child dispatch uses leaf document, role, and complete brief without retained occupant ids. [2]
+
 - The leaf loop sequences builder, reviewer, exact-packet/adjudication curator intake, closeout, integration, and cleanup duties. [3]
+
 - Master exit and handover use durable verdict/packet evidence and structural ownership. [4]
+
 - Structural parent/child messages are the role's communication path. [5]
+
 - Manager dispatch compiles and preserves the exact per-ID acceptance set through reviewer and curator handoffs. [6]
+
+## Stage Boundary
+
+The Manager hands a whole stage with its end state to its owner, not a chain of steps; its exactness is at sync, closeout, integration, task end and agent starts.
+
+Own work/instrument slips and invalid caller input are repaired through the same admitted tool and work continues. Stops remain permission prompts, correct-input product/AR refusals or unowned state, requirement-meaning questions, and effects outside the worktree/scratch/task. An unfinished final turn names what is awaited and from whom. Worker/Reviewer repairs answer the required property and construction, not a succession of examples; extra-round requests carry that account.
+
+The review budget is the settings number `orchestration.loops.defaults.maxRounds`, read at each begin; the effective task limit includes approved extras and is read from `task_doc.reviewState.limit`. CODE and MEMORY retain separate counts under the same setting. Beyond-limit work needs recorded Architect or developer approval; the Manager asks the task Architect, not the developer.
+
+## Current Source Evidence
+
+
+- Current settings-budget, recorded approval and preserved stage/ownership boundaries are carried by this canonical instruction source. [8]

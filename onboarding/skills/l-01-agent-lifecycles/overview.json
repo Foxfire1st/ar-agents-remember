@@ -332,7 +332,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "59b96abdc86d2d0203bea462255eaee46b8bbd64",
+            "blob": "7d45989aa2a810edb7efe59ec07fd9350438bc9f",
             "content": "sha256:7911dad5dee9778d9367dec39533f5dcf3f60642bedaf63ee28eb02042c3800d",
             "locator": {
               "end": 34,
@@ -345,7 +345,7 @@
         },
         {
           "anchor": {
-            "blob": "59b96abdc86d2d0203bea462255eaee46b8bbd64",
+            "blob": "7d45989aa2a810edb7efe59ec07fd9350438bc9f",
             "content": "sha256:b23fb2fe3b819a62570e963ade7d20f7727d922c38367e4e057138eb064b9959",
             "locator": {
               "end": 31,
@@ -617,7 +617,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b5f664cebbb1579f8082617443e5ca9aa7751791",
+            "blob": "04814ff876e661164bc6d9eed803001e33812ab0",
             "content": "sha256:5bb3097cbd4b8e9fdd82855d71fb764f4e2c97cf8dc68b021d2e3ed053a44a4d",
             "locator": {
               "end": 175,
@@ -648,7 +648,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "59b96abdc86d2d0203bea462255eaee46b8bbd64",
+            "blob": "7d45989aa2a810edb7efe59ec07fd9350438bc9f",
             "content": "sha256:4bb2120609334875d35501cff5dec0dbb3432c282adc66d45f99426cd130839f",
             "locator": {
               "end": 236,
@@ -661,7 +661,7 @@
         },
         {
           "anchor": {
-            "blob": "59b96abdc86d2d0203bea462255eaee46b8bbd64",
+            "blob": "7d45989aa2a810edb7efe59ec07fd9350438bc9f",
             "content": "sha256:4bb773be0ccbdd16fa6ddd329fb3c1b0d56e247803de00be8382ff9796c2f600",
             "locator": {
               "end": 237,
@@ -792,7 +792,7 @@
         },
         {
           "anchor": {
-            "blob": "bb4db7953d86ff9e3decee6726196f7f4c408d75",
+            "blob": "2dd1fb9539d230c1d2dab90f178b8805278ec81d",
             "content": "sha256:12ebc97b2d77f7483bbc3dea7f2eba537a01d844f6f7d6a5d6fb9c5ddebd3d3a",
             "locator": {
               "end": 172,
@@ -925,7 +925,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b5f664cebbb1579f8082617443e5ca9aa7751791",
+            "blob": "04814ff876e661164bc6d9eed803001e33812ab0",
             "content": "sha256:c4a79f969d539ba5ec8670fff476d4c6262cefd3b99b934e47777a8a342971d3",
             "locator": {
               "end": 96,
@@ -1075,6 +1075,44 @@
         }
       ]
     },
+    "58": {
+      "note": "Current stage boundaries, settings-owned review budget and recorded approval duties are carried by these instruction sources.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd559c3f7fb918ede5de2be0bc9321df45f1aa62",
+            "content": "sha256:14d91261080606e51d51bb41a0a158e126a96153181de8b4bc99481e62f8b4bb",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/coordination.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7d45989aa2a810edb7efe59ec07fd9350438bc9f",
+            "content": "sha256:b452f9d492d739ac5d896f41fc8f6c4fde43983f9bb1d5548a80fb721f3912c2",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "053ba7c4260bcc5540d0519e5481b47d344c469d",
+            "content": "sha256:6fe62a36cf7fa9ec3bffe1b9f7f3dcf8383b2a673d84f267479568d5b327433b",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/review.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "6": {
       "note": "The admission section of the hand-off template.\n\nAnchor: `## The admission rule (MIK-R27)`",
       "targets": [
@@ -1134,7 +1172,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c6b847c5c7627c6094bd425abb7559f7ae21e43e",
+            "blob": "7ee823b7415cee2590781a41ffb8b929ceb23f65",
             "content": "sha256:6e496165f569558e9be2890f58fdbf115dfb83e1977232bf4eb80b324a7f3546",
             "locator": {
               "end": 104,

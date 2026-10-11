@@ -6,7 +6,7 @@
 
 ## Purpose
 
-The module proves the Reviewer-owned ordinary round through the registered MCP surface: a bound Reviewer opens and records rounds, repairs sealed findings, and the operation refuses changed finding ids and an unauthorized round beyond the limit. The test exercises code begin_review/record_review only; the memory lane's own separation is stated by the role texts, not exercised here. It composes the server in-process with a temporary configuration and a Reviewer binding, so a Manager binding is not needed between handovers.
+The module proves the Reviewer-owned ordinary round through the registered MCP surface: a bound Reviewer opens and records BLOCK rounds while retaining the same unresolved sealed finding, and the operation refuses changed finding ids and an unauthorized round beyond the limit. The test exercises code begin_review/record_review only; the memory lane's own separation is stated by the role texts, not exercised here. It composes the server in-process with a temporary configuration and a Reviewer binding, so a Manager binding is not needed between handovers.
 
 ## Code Commentary
 
@@ -14,4 +14,5 @@ The module is part of the leaf's direct hand-over and instruction-guard evidence
 
 ## Evidence
 
-- A bound Reviewer opens and repairs ordinary sealed rounds under the unchanged limits. [1]
+
+- A bound Reviewer opens and records ordinary CODE BLOCK rounds, retaining the same unresolved sealed ID; changed IDs and the next unapproved begin are refused. [1]

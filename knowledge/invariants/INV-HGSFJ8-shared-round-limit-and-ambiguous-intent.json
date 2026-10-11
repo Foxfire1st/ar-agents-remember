@@ -8,7 +8,7 @@
   },
   "applicability": "The shared lifecycle instructions that state round limits, ambiguous-intent routing and the retired-wording census, and their nine generated copies.",
   "conditions": [
-    "A request for an extra round or an ambiguous-intent decision goes through the parent where one exists and keeps the required record with the developer's quoted words.",
+    "The review limit is read from the settings and task_doc's review-state limit; a beyond-limit round or memory pass requires recorded approval naming the task's Architect or the developer and holding the approval words. The Manager asks the task's Architect for the extra round; developer decisions and ambiguous-intent questions keep the existing parent route and quoted developer-answer provenance.",
     "The retired census declares each independently restorable obsolete sentence at its actual carrier, retaining the R93 parent-routing entries and adding the R98 narrow-concern, old-permission and separate-assignment mutation clauses with explicit current reasons.",
     "A literal reinsertion of each registered sentence is detected while the current canonical and generated corpus stays clean."
   ],
@@ -29,7 +29,7 @@
     "leaf": "260928-MIK-L93",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-invariant/v1",
   "statement": "Shared round-limit and ambiguous-intent instructions send developer requests through the parent when one exists, preserve required authorization records, and retired wording cannot return to its declared source unnoticed.",
   "status": "proposed",

@@ -37,9 +37,9 @@ rewritten in place. A worker/reviewer classification cannot become semantic auth
 
 ## CCR-R12@v5 Transaction Boundary
 
-Current role duty remains targeted/scoped evidence with failed or unrun results visible, followed by the existing authorized paired Git transaction under its real contract. Requested independent review preserves the sealed monotonic finding set and three-round rule. The normal Curator authoring pass remains the standing full memory-quality/coherence exception; an explicitly report-only admission claims none of that normal pass complete. No finished turn or green check supplies semantic acceptance or Git publication.
+Current role duty remains targeted/scoped evidence with failed or unrun results visible, followed by the existing authorized paired Git transaction under its real contract. Requested independent review preserves the sealed monotonic finding set and settings-owned round limit. The normal Curator authoring pass remains the standing full memory-quality/coherence exception; an explicitly report-only admission claims none of that normal pass complete. No finished turn or green check supplies semantic acceptance or Git publication.
 
-This role card follows the transaction-only lifecycle boundary: the role reports its own targeted or scoped evidence with failed and not-run states visible and leaves closeout/integration to the authorized code, memory-content, and ledger Git transaction. Full quality, full tests, full memory quality, certification, and independent review are explicit operations only, save the normal Curator authoring pass, which remains the standing full memory-quality/coherence exception. Requested reviews retain the sealed finding list and monotonic three-round limit.
+This role card follows the transaction-only lifecycle boundary: the role reports its own targeted or scoped evidence with failed and not-run states visible and leaves closeout/integration to the authorized code, memory-content, and ledger Git transaction. Full quality, full tests, full memory quality, certification, and independent review are explicit operations only, save the normal Curator authoring pass, which remains the standing full memory-quality/coherence exception. Requested reviews retain the sealed finding list and settings-owned round limit.
 
 ## 260928-MIK-L99 — a leaf's agents hand over to each other
 
@@ -107,3 +107,5 @@ free a runtime selection.
 The Architect keeps the developer conversation and runs no suite, build or failure investigation in its own chat. Delegated checks go through the actual Manager or Orchestrator; developer-chosen direct coordination assigns a leaf check to Worker/Reviewer and a non-leaf concern to Investigator. Investigator starts remain within admitted Projects, sprint or master containment, and still-forbidden starts route to the actual parent or a parentless blocker. One Manager remains the default for one master.
 
 - This source owns the stated current Investigator scope or canonical vocabulary. [1]
+
+The earlier fixed-three budget wording is superseded by MIK-R116: the settings limit governs ordinary CODE and separately counted MEMORY rounds, with recorded Architect-or-developer extras. This updates the operative transaction-boundary account, not the retained historical task authority.

@@ -12,9 +12,15 @@ The Manager prepares this seat alongside its Reviewer and Curator. Preparing hel
 
 ## Current Contract
 
+The Worker’s stage ends when the candidate meets the requirement, focused tests/lint/type checks pass on final bytes, and the report is with the Reviewer. Each of these stages repairs faults in its own work or instrument and corrects invalid input through the same tool, reports the repair, and continues. It stops for an open permission prompt, a guard/tool refusal that survives correct input or names unowned state, a requirement-meaning question, or an effect outside its own worktree, scratch folder and task. An unfinished final turn names what it awaits and from whom; the existing role-specific stops and write boundaries remain.
+
+When all candidate findings are closed and only the Worker’s report/evidence/hash/anchor remains to repair, the same Reviewer records the repaired record on its last round without `begin_review` or a count increase. This requires the candidate to remain byte-for-byte unchanged; a changed or unproven candidate requires `begin_review`, and remaining finding IDs can only shrink.
+
+A Reviewer finding states the required property the candidate breaks; the showing case is proof, not the finding. If a repair leaves that finding open, the Worker states the property for every case and proves the construction or changes it, reporting which. A beyond-limit request carries that property-and-construction account.
+
 Resolve apparent missing task facts from the rendered task-document files named in the handover, read with the harness's own file tools before acting; change documents through `task_doc` only, because edits to copies are never read back and are lost on the next publication. Confirm paired code/read-only-memory/report bindings; do not load the whole task hierarchy or infer a different task.
 
-Inspect source before editing, make the smallest complete change and run relevant brief/repository checks. Keep failed and unrun results visible. When invariant/family context applies, inspect affected claims and relevant unchanged siblings; report out-of-scope manifestations rather than editing them.
+Inspect source before editing, make the smallest complete change and run relevant brief/repository checks. Repair failures in the Worker’s own work or instrument and continue; keep a failed or unrun check visible only when it cannot be made to pass on the Worker’s own ground, explicitly saying so. When invariant/family context applies, inspect affected claims and relevant unchanged siblings; report out-of-scope manifestations rather than editing them.
 
 Keep one truthful canonical report with changed files, exact requirement/candidate evidence, checks and limitations. The Worker freezes its candidate and hands it directly to the leaf's Reviewer; after code PASS it sends its hand-off list to the Curator. The Manager receives no routine report notice; a dashboard-started Worker has no parent and uses its own final chat reply. Applicable producer Curator handoff data stays verbatim.
 
@@ -75,3 +81,8 @@ Agent-authored temporary files, experiments and working copies live only in the 
 Workers copy repository-specific acceptance requirements from the resolved workflow, coding
 guidelines, and tools memory; they may not choose a familiar runner. Leaf closeout owns change-set
 acceptance, leaf integration does not rerun it, and full acceptance belongs to master integration.
+
+## Current Contract Evidence
+
+
+- Current stage boundaries, settings-owned review budget and recorded approval duties are carried by these instruction sources. [5]

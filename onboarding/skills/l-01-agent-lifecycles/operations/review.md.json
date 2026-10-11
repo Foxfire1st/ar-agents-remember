@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "dbf343f86d5bf2a3d00ecd6d2c4c255e646cd043",
-        "content": "sha256:5f44de52981907402d31c4456912475ca60726182153bbaf24efecd63e2d3727",
+        "blob": "053ba7c4260bcc5540d0519e5481b47d344c469d",
+        "content": "sha256:6fe62a36cf7fa9ec3bffe1b9f7f3dcf8383b2a673d84f267479568d5b327433b",
         "locator": {
           "kind": "file"
         }
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "dbf343f86d5bf2a3d00ecd6d2c4c255e646cd043",
-        "content": "sha256:5f44de52981907402d31c4456912475ca60726182153bbaf24efecd63e2d3727",
+        "blob": "053ba7c4260bcc5540d0519e5481b47d344c469d",
+        "content": "sha256:6fe62a36cf7fa9ec3bffe1b9f7f3dcf8383b2a673d84f267479568d5b327433b",
         "locator": {
           "kind": "file"
         }
@@ -53,14 +53,16 @@
       ]
     },
     "2": {
-      "note": "Fix-verification checks only the sealed outstanding IDs; rounds are bounded with a recorded D107 exception.",
+      "note": "Fix-verification checks the sealed outstanding IDs; ordinary rounds follow the settings limit and extras need recorded Architect-or-developer approval.",
       "targets": [
         {
           "anchor": {
-            "blob": "dbf343f86d5bf2a3d00ecd6d2c4c255e646cd043",
-            "content": "sha256:5f44de52981907402d31c4456912475ca60726182153bbaf24efecd63e2d3727",
+            "blob": "053ba7c4260bcc5540d0519e5481b47d344c469d",
+            "content": "sha256:1a639d2b4e6dfc151d10b9f49b90f357524b30c31c3d1322e36365e21d2e1bf7",
             "locator": {
-              "kind": "file"
+              "end": 19,
+              "kind": "line_range",
+              "start": 11
             }
           },
           "kind": "code"

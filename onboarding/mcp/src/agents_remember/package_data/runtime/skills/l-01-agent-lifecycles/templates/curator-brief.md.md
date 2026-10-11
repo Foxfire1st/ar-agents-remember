@@ -30,8 +30,7 @@ forward-learning observations as report capture candidates unless already ruled 
 
 As the final intake action, the curator runs the affected onboarding checks and records their exact
 scope and passed, failed, blocked, or not-run state. It repairs in-scope content findings and keeps
-dirty-source or commit-derived residuals separate before scoped diff checks; a full memory-quality
-operation is explicit and is not a closeout or integration gate.
+dirty-source or commit-derived residuals separate before scoped diff checks. A normal Curator authoring pass always runs the complete memory-quality operation and clears its coherence requirement before handing the memory candidate to the independent Reviewer. Closeout/integration consume that completed evidence; the Curator does not own those transactions.
 The leaf base is temporary comparison provenance only; real verification stamps and fingerprints
 remain closeout-owned.
 
@@ -40,8 +39,7 @@ remain closeout-owned.
 - Treat canonical `skills/` as the sole template owner and keep this file byte-identical through
   `scripts/sync-skills.py`.
 - Fill every placeholder from durable leaf evidence; never infer change-set or authority from chat.
-- Report completion with the affected scoped checks and any failed, blocked, or not-run result visible;
-  a full memory-quality worklist is outside routine closeout/integration.
+- Report completion only after the normal whole Curator pass, including full memory-quality/coherence, with every failed, blocked or not-run result visible. An explicit report-only admission remains distinct and claims none of normal curation complete.
 - Describe packaged behavior only as synchronized canonical behavior.
 
 ## Invariants And Boundaries
@@ -96,3 +94,5 @@ the stable authority, generation, projection, snapshot, candidate, and validatio
 ## CCR-L42 current candidate
 
 The curator brief now records route-review evidence for standalone and organizational leaves only. Atomic child leaves rely on the canonical-master integration review scope while preserving worker evidence and rejected or blocked revisions as unresolved blockers.
+
+- A normal Curator pass requires complete memory-quality/coherence before its independent memory handover; the input brief does not make that standing stage optional. [6]

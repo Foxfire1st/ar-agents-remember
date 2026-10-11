@@ -147,3 +147,7 @@ The manager brief now carries review mode, the sealed baseline, the preceding re
 The dispatched Manager briefing now sends each leaf role through `role_start` as the operation that prepares its admitted environment: no separate `worktree_status`/`worktree_start` call precedes it. If a start reports moved source, the manager follows the contract-addressed `worktree_sync` recovery the start names and re-reads status, without inferring a source branch or carrying a prior super tip forward. The bundled runtime copy and the source skill template are byte-identical.
 
 </details>
+
+## Source Evidence
+
+- The source retains this card's role/template responsibility and recorded-approval boundary; no new transaction authority is introduced. [1]

@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "d7bf74bc660d55b477b5698fd496803aea57b3fd",
+        "blob": "66c08f5e3dfef4d20032c78eef3074203be6cd11",
         "content": "sha256:3767076c4cfae0efae1f47f2b392acbcc14f0e6343a822e5137a2ea4dcfc8fc8",
         "locator": {
           "end": 12,
@@ -22,8 +22,8 @@
     },
     {
       "anchor": {
-        "blob": "d7bf74bc660d55b477b5698fd496803aea57b3fd",
-        "content": "sha256:d99430e5b69788af75ad2214a5c8fb312c751978f1cfef213aa88f2ce866aa52",
+        "blob": "66c08f5e3dfef4d20032c78eef3074203be6cd11",
+        "content": "sha256:f2ce8ad198de33e2d9d18cea99af65996e13aa486402c1e6e5635f4436e760b9",
         "locator": {
           "kind": "file"
         }
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "d7bf74bc660d55b477b5698fd496803aea57b3fd",
+        "blob": "66c08f5e3dfef4d20032c78eef3074203be6cd11",
         "content": "sha256:192abee0ba936a2346e5374ed7b68c822f2a5aa8d33acffa18bbf681a1617217",
         "locator": {
           "end": 30,
@@ -58,8 +58,8 @@
     },
     {
       "anchor": {
-        "blob": "d7bf74bc660d55b477b5698fd496803aea57b3fd",
-        "content": "sha256:d99430e5b69788af75ad2214a5c8fb312c751978f1cfef213aa88f2ce866aa52",
+        "blob": "66c08f5e3dfef4d20032c78eef3074203be6cd11",
+        "content": "sha256:f2ce8ad198de33e2d9d18cea99af65996e13aa486402c1e6e5635f4436e760b9",
         "locator": {
           "kind": "file"
         }
@@ -75,8 +75,8 @@
     },
     {
       "anchor": {
-        "blob": "d7bf74bc660d55b477b5698fd496803aea57b3fd",
-        "content": "sha256:d99430e5b69788af75ad2214a5c8fb312c751978f1cfef213aa88f2ce866aa52",
+        "blob": "66c08f5e3dfef4d20032c78eef3074203be6cd11",
+        "content": "sha256:f2ce8ad198de33e2d9d18cea99af65996e13aa486402c1e6e5635f4436e760b9",
         "locator": {
           "kind": "file"
         }
@@ -92,8 +92,8 @@
     },
     {
       "anchor": {
-        "blob": "d7bf74bc660d55b477b5698fd496803aea57b3fd",
-        "content": "sha256:d99430e5b69788af75ad2214a5c8fb312c751978f1cfef213aa88f2ce866aa52",
+        "blob": "66c08f5e3dfef4d20032c78eef3074203be6cd11",
+        "content": "sha256:f2ce8ad198de33e2d9d18cea99af65996e13aa486402c1e6e5635f4436e760b9",
         "locator": {
           "kind": "file"
         }
@@ -109,8 +109,8 @@
     },
     {
       "anchor": {
-        "blob": "d7bf74bc660d55b477b5698fd496803aea57b3fd",
-        "content": "sha256:d99430e5b69788af75ad2214a5c8fb312c751978f1cfef213aa88f2ce866aa52",
+        "blob": "66c08f5e3dfef4d20032c78eef3074203be6cd11",
+        "content": "sha256:f2ce8ad198de33e2d9d18cea99af65996e13aa486402c1e6e5635f4436e760b9",
         "locator": {
           "kind": "file"
         }
@@ -126,7 +126,26 @@
     },
     {
       "anchor": {
-        "blob": "d7bf74bc660d55b477b5698fd496803aea57b3fd",
+        "blob": "66c08f5e3dfef4d20032c78eef3074203be6cd11",
+        "content": "sha256:ce9ef75a40c1628d692cf5778fbde223142c3865e98638d765124d18a8808a79",
+        "locator": {
+          "end": 51,
+          "kind": "line_range",
+          "start": 40
+        }
+      },
+      "id": "RLZ-QDM8GH",
+      "invariant": "INV-CV3MW4",
+      "origin": {
+        "handoffEntry": "L116-W3-wording-oracle",
+        "leaf": "260928-MIK-L116"
+      },
+      "rationale": "This section is the worker stage-end contract: end state with final-byte conditions, repair-own-slips, four stops, last-line rule, and the record-only sentence.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "66c08f5e3dfef4d20032c78eef3074203be6cd11",
         "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
         "locator": {
           "end": 29,
@@ -173,6 +192,21 @@
               "end": 9,
               "kind": "line_range",
               "start": 8
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Current settings-budget, recorded approval and preserved stage/ownership boundaries are carried by this canonical instruction source.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "66c08f5e3dfef4d20032c78eef3074203be6cd11",
+            "content": "sha256:f2ce8ad198de33e2d9d18cea99af65996e13aa486402c1e6e5635f4436e760b9",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"

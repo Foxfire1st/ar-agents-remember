@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "56729722cf77a710251ce49edb0b45ee1333f5d1",
-        "content": "sha256:e51d892aa15487118445933ae26ca2af4823e90c36ede6d19f31345abe6d253d",
+        "blob": "ab878e7ff87bfeccf7dbc9b7f8a8244e459d3888",
+        "content": "sha256:a23026e4aade193458c493a521ab277fa101dc6b7db0f5478ba0218ec1a4bf17",
         "locator": {
           "kind": "file"
         }
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "56729722cf77a710251ce49edb0b45ee1333f5d1",
-        "content": "sha256:e51d892aa15487118445933ae26ca2af4823e90c36ede6d19f31345abe6d253d",
+        "blob": "ab878e7ff87bfeccf7dbc9b7f8a8244e459d3888",
+        "content": "sha256:a23026e4aade193458c493a521ab277fa101dc6b7db0f5478ba0218ec1a4bf17",
         "locator": {
           "kind": "file"
         }
@@ -32,34 +32,20 @@
         "handoffEntry": "MIK-R93@v1 rules6,11,13",
         "leaf": "260928-MIK-L93"
       },
-      "rationale": "This shared source retains its existing duty while replacing only the developer-question channel and required quote provenance.",
+      "rationale": "The Manager brief retains gate acceptance and records Architect-or-developer approval for beyond-settings-limit CODE or MEMORY review while preserving sealed findings and its existing dispatch/report boundaries.",
       "role": "primary-authority"
     }
   ],
   "references": {
     "1": {
-      "note": "The source edge and every requirement revision are compiled before worker dispatch.\n\nAnchor: \"## The source edge (plane-owned, load-bearing)\"; \"## Dispatch defaults\"",
+      "note": "The source edge and every requirement revision are compiled before worker dispatch.",
       "targets": [
         {
           "anchor": {
-            "blob": "55fcf43939ce4f50af0f26751cbb235a6e8da610",
-            "content": "sha256:634d7daf15c48cefbe8cd762e36608a2a28386332bcaccf55d860c03e93b1a72",
+            "blob": "ab878e7ff87bfeccf7dbc9b7f8a8244e459d3888",
+            "content": "sha256:a23026e4aade193458c493a521ab277fa101dc6b7db0f5478ba0218ec1a4bf17",
             "locator": {
-              "end": 42,
-              "kind": "line_range",
-              "start": 32
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e07366fe03a3b39abdb738f1194221ddd899c0b7",
-            "content": "sha256:4482cdb0bac5f040bd43faf42189fd3f934aff853c1c8d0c4c03b4df98c216ca",
-            "locator": {
-              "end": 176,
-              "kind": "line_range",
-              "start": 62
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -71,7 +57,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "55fcf43939ce4f50af0f26751cbb235a6e8da610",
+            "blob": "ab878e7ff87bfeccf7dbc9b7f8a8244e459d3888",
             "content": "sha256:1305e15ab630ef8c13130106ad2612492fce7446bd856eef28fea19da46a7214",
             "locator": {
               "end": 152,
@@ -84,16 +70,29 @@
       ]
     },
     "3": {
-      "note": "Attempt dispatch, bounded invalidation, and the non-gating master summary are explicit manager obligations.\n\nAnchor: \"## Dispatch defaults\"",
+      "note": "Attempt dispatch, bounded invalidation, and the non-gating master summary are explicit manager obligations.",
       "targets": [
         {
           "anchor": {
-            "blob": "e07366fe03a3b39abdb738f1194221ddd899c0b7",
-            "content": "sha256:4482cdb0bac5f040bd43faf42189fd3f934aff853c1c8d0c4c03b4df98c216ca",
+            "blob": "ab878e7ff87bfeccf7dbc9b7f8a8244e459d3888",
+            "content": "sha256:a23026e4aade193458c493a521ab277fa101dc6b7db0f5478ba0218ec1a4bf17",
             "locator": {
-              "end": 176,
-              "kind": "line_range",
-              "start": 62
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Current settings-budget, recorded approval and preserved stage/ownership boundaries are carried by this canonical instruction source.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ab878e7ff87bfeccf7dbc9b7f8a8244e459d3888",
+            "content": "sha256:a23026e4aade193458c493a521ab277fa101dc6b7db0f5478ba0218ec1a4bf17",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"

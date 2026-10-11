@@ -3,27 +3,27 @@
   "proves": [
     {
       "anchor": {
-        "blob": "5c1d1e4a1a87f05d24b75e78909efb058e0a68a6",
-        "content": "sha256:5358664a1b41c2e883ebfae2d7771e5bbd2c94d37f7f3df94dbccbb492f97f2d",
+        "blob": "e9e3b8a889f277e7a8f5d34c6cb79825dd994d42",
+        "content": "sha256:717ef3f153b6432006eff447860616dc8fc74f32306da0cc89d5fe5bcf37092a",
         "locator": {
           "kind": "symbol",
           "name": "test_reviewer_binding_opens_repairs_and_preserves_sealed_round_limits"
         }
       },
-      "facet": "Opens and records ordinary Reviewer-bound code rounds, refuses changed finding ids and an unauthorized fourth round. The test exercises code begin_review/record_review only; the memory lane's separate count is stated by the role texts and not exercised here.",
-      "id": "PRF-CPF7JN",
+      "facet": "Under one verified Reviewer binding, the test opens and records ordinary CODE rounds, preserves the original sealed finding and remaining IDs, refuses changed/new IDs and refuses beginning beyond the default settings-defined budget without approval. The test exercises CODE begin_review/record_review only; it does not exercise the separate MEMORY count, runtime settings changes, approval attribution, or the record-only unchanged-candidate path.",
+      "id": "PRF-PMEN4W",
       "invariant": "INV-V7M37D",
       "origin": {
-        "handoffEntry": "R99-2a-code-memory-lanes",
-        "leaf": "260928-MIK-L99"
+        "handoffEntry": "curator-V7-bounded-code-proof",
+        "leaf": "260928-MIK-L116"
       }
     }
   ],
   "realizes": [
     {
       "anchor": {
-        "blob": "5c1d1e4a1a87f05d24b75e78909efb058e0a68a6",
-        "content": "sha256:ae810cee90ec74fefcd6d60fe9bbae86fb0f70b202840fd37fa003777f6d8ed8",
+        "blob": "e9e3b8a889f277e7a8f5d34c6cb79825dd994d42",
+        "content": "sha256:486ca433713d952e74945c8aacf5bad076135c784e23ab3c3adf318be27a6bd4",
         "locator": {
           "kind": "file"
         }
@@ -40,12 +40,12 @@
   ],
   "references": {
     "1": {
-      "note": "A bound Reviewer opens and repairs ordinary sealed rounds under the unchanged limits.",
+      "note": "A bound Reviewer opens and records ordinary CODE BLOCK rounds, retaining the same unresolved sealed ID; changed IDs and the next unapproved begin are refused.",
       "targets": [
         {
           "anchor": {
-            "blob": "5c1d1e4a1a87f05d24b75e78909efb058e0a68a6",
-            "content": "sha256:5358664a1b41c2e883ebfae2d7771e5bbd2c94d37f7f3df94dbccbb492f97f2d",
+            "blob": "e9e3b8a889f277e7a8f5d34c6cb79825dd994d42",
+            "content": "sha256:717ef3f153b6432006eff447860616dc8fc74f32306da0cc89d5fe5bcf37092a",
             "locator": {
               "kind": "symbol",
               "name": "test_reviewer_binding_opens_repairs_and_preserves_sealed_round_limits"

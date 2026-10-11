@@ -10,6 +10,8 @@ Reconcile current intent, ruled change intent and implemented reality, maintain 
 
 ## Current Contract
 
+MEMORY review keeps separate sealed reports, finding IDs and its own pass count, opening no CODE round or resetting its verdict/baseline. Its budget is the same settings limit as CODE; a further pass needs the Architect’s or developer’s words recorded by the Manager.
+
 On a native Paseo admission, read the rendered task-document files named in the handover, read with the harness's own file tools before acting; change documents through `task_doc` only, because edits to copies are never read back and are lost on the next publication. Use `arMcpContext.readerArguments` and actual schemas. `task_context` carries the canonical task and enclosure contract. Read immutable baseline/candidate knowledge before semantic changes, contain outputs in the selected memory root and read admitted records back.
 
 MIK’s writer remains authoritative. On converted memory, admitted `knowledge-ingest --contract … --list … --authorization-ref … --commit --json` writes files with `entries`, `records` and `history`, including worklist/onboarding judgments and governing decisions; it publishes no dataset and refuses `--baseline`, `--publish` and `--publish-to`. Capsule-specific missing writer/command admission is reported as records not written; it does not erase MIK’s writer or admit another runtime/internal writer.
@@ -81,3 +83,7 @@ These references name the current owners and the behavior they establish.
 No sibling repository defines this file's contract.
 
 No meaningful cross-repository implementation dependency.
+
+## Current Contract Evidence
+
+- Current review-budget and preserved ownership obligations are defined by these source instructions. [3]

@@ -61,3 +61,7 @@ No relevant documentation found after checking live sources.
 No sibling-repository contract defines this instruction file.
 
 No meaningful cross-repo references found.
+
+## Source Evidence
+
+- The source retains this card's role/template responsibility and recorded-approval boundary; no new transaction authority is introduced. [1]

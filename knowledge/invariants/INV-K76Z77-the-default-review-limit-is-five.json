@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Prevents silently spending an obsolete hard-coded review budget, losing recorded allowance history or admitting a record-only/wording claim beyond its actual boundary."
+  },
+  "applicability": "Loading review loop defaults and seeding new default settings.",
+  "conditions": [
+    "A configured maxRounds is a positive whole number; absent values use the documented fallback."
+  ],
+  "exclusions": [
+    "Existing user settings are not rewritten by upgrade.",
+    "This does not change launch/permission settings."
+  ],
+  "id": "INV-K76Z77",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_agentic_settings.py; role-reports/.../role-launch/evidence-attempt3/focused-pytest.log"
+      ],
+      "path": "handoff-independent-wave.json"
+    },
+    "handoffEntry": "L116-W3-settings-default",
+    "leaf": "260928-MIK-L116",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The default review limit is five, and any configured number loads per use.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -1,0 +1,58 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "Two implemented designs collapsed distinct candidates; the ruled successful-tree/entry-representation construction constrains future identity changes and prevents silent reuse of an old verdict."
+  },
+  "alternatives": [
+    {
+      "option": "Use the HEAD tree only on successful lookup, otherwise unproven; fold untracked kind and link target or regular executable-bit/content without following links.",
+      "reason": "It makes failure an absence of proof and preserves the entry distinctions Git records rather than interpreting error prose or referent contents.",
+      "status": "chosen"
+    },
+    {
+      "option": "Classify missing-commit state from diagnostic text and hash the bytes reached by an untracked path.",
+      "reason": "Diagnostic text can contain unrelated phrases, and different link/regular representations can reach equal contents.",
+      "reconsider_when": "The requirement owner provides a different proven representation authority that preserves the same refusal and Git-entry distinctions.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Candidate identity remains authority-resolved; failed reads cannot authorize same-round reuse.",
+    "The selected native cases are bounded evidence of the construction, not a new review baseline or exhaustive witness campaign."
+  ],
+  "context": "A same-round result needs authority-resolved unchanged evidence. Error-string no-head classification and dereferenced equal-content links could collapse different candidates.",
+  "decider": "Architect failed-lookup ruling of 06:12 and link-representation ruling77f3ae46, under MIK-R116 rules5/9 and the named developer authority.",
+  "id": "DEC-RHD4E0",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "4efa5d510d120679ef8ca021d0603e382c537fce",
+        "content": "sha256:fbc826fa82f1b5192f7794b8af61ebba98e26674d93b92bf5086e8240f189573",
+        "locator": {
+          "kind": "symbol",
+          "name": "resolve_candidate_identity"
+        },
+        "path": "mcp/src/agents_remember/worktrees/candidate_identity.py"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "link-hunk-tests.json:16 native identity tests passed including three ruling cases and missing-target behavior; link-hunk-reading.md maps lstat/kind/readlink/exec/content construction to ruling77f3ae46."
+      ],
+      "path": "handoff-final-wave.json"
+    },
+    "handoffEntry": "L116-F01",
+    "leaf": "260928-MIK-L116",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

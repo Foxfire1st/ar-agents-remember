@@ -12,11 +12,11 @@ Defines the curator’s current leaf and repository-foundation responsibilities:
 
 ### Logic
 
-The leaf intake includes the task, accepted requirement revision, captured change set, existing onboarding, producer handoff, exact worktree contract and declared published dataset. Producer fields remain owned by their producer; the curator supplies semantic scope, family/source examination and resolved outcomes.
+The leaf intake includes the task, accepted requirement revision, captured change set, existing onboarding, producer handoff, exact worktree contract and the cards, sidecars and records of that leaf's memory worktree; there is no dataset to publish. Producer fields remain owned by their producer; the curator supplies semantic scope, family/source examination and resolved outcomes.
 
-When a family successor adds obligations, the curator selects unchanged siblings explicitly by stored membership ID and authored basis. The guarantee remains independently authored. The role prohibits manufacturing sibling invariant successors or assuming an inherited roster, and requires `retainedFromMemberId` and the published exact member set to be read back.
+Family coverage is authored from the stored member obligations, their evidence and applicable intent. The family guarantee and routes are independent judgments, not inferred from a shared path or label. The admitted file writer records members and examined revisions, and the Curator reads the actual written family back through the bound knowledge reader; it fabricates no sibling record or obsolete dataset-roster field.
 
-The writer is the shipped knowledge-ingest route for leaves and the admitted knowledge-bootstrap route for taskless foundation work. Per-entry results, both coverage planes and published identity are read as separate facts. The full contract-scoped memory-quality operation and, when admitted, structured coherence remain evidence rather than semantic approval from tests. A typed refusal is reported honestly.
+The writer is the shipped knowledge-ingest route for leaves and the admitted knowledge-bootstrap route for taskless foundation work. The writer report's written/planned/refused state, actual record and sidecar-entry IDs, history rows and bound code/memory tree identities are read as separate facts; file writing is not a Git commit or acceptance. The full contract-scoped memory-quality operation and, when admitted, structured coherence remain evidence rather than semantic approval from tests. A typed refusal is reported honestly.
 
 The curator does not edit code, task/lifecycle state or Git transaction records, directly write SQLite, invent future commit stamps, or repair source movement. Repository-foundation work follows c-14 under real setup authority and does not manufacture an enclosure.
 
@@ -94,12 +94,16 @@ The operative contract is defined by the repository sources cited below.
 These references name the current owners and the behavior they establish.
 
 - Required task, source, handoff and publication inputs. [1]
+
 - Three-way reconciliation, explicit retention, writer/readback and full quality duties. [2]
+
 - The curator’s prohibited writes and source-stamp boundary. [3]
+
 - Process step 3 requires an authored rationale on every hand-off target before ingest. [4]
 - Process step 3 lifts the decisions that keep governing code, on converted memory (MIK-R13). [5]
 
 - On converted memory the curator follows the converted-card workflow. [6]
+
 - On converted memory knowledge-ingest is the file writer and publishes no dataset. [7]
 
 ### Cross-Repo References
@@ -107,3 +111,16 @@ These references name the current owners and the behavior they establish.
 No sibling repository defines this file's contract.
 
 No meaningful cross-repository implementation dependency.
+
+## Stage Boundary
+
+The Curator ends with task knowledge written and checked through the installed build and full clean quality/coherence evidence; its memory candidate goes directly to the independent Reviewer.
+
+Own work/instrument slips and invalid caller input are repaired through the same admitted tool and work continues. Stops remain permission prompts, correct-input product/AR refusals or unowned state, requirement-meaning questions, and effects outside the worktree/scratch/task. An unfinished final turn names what is awaited and from whom. Worker/Reviewer repairs answer the required property and construction, not a succession of examples; extra-round requests carry that account.
+
+The review budget is the settings number `orchestration.loops.defaults.maxRounds`, read at each begin; the effective task limit includes approved extras and is read from `task_doc.reviewState.limit`. CODE and MEMORY retain separate counts under the same setting. Beyond-limit work needs recorded Architect or developer approval; the Manager asks the task Architect, not the developer.
+
+## Current Source Evidence
+
+
+- Current settings-budget, recorded approval and preserved stage/ownership boundaries are carried by this canonical instruction source. [9]

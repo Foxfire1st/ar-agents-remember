@@ -68,7 +68,7 @@ The manager brief no longer describes the manager -> builder -> reviewer -> cura
 
 ## 260928-MIK-R93 — a question for the developer goes up the chain
 
-The master-exit round-limit sentence now requests authorization through the parent with `role_message` on `agents-remember-task` where one exists, or in the own chat without one, and still records the developer's quoted answer before acting.
+The earlier developer-only extra-pass routing is superseded by the settings-owned budget and recorded Architect-or-developer approval. Actual developer questions still follow the bound-parent/parentless route; an Architect approval is not relabelled as the developer's answer.
 
 ## Evidence
 
@@ -80,6 +80,7 @@ No external Domain Documentation source governs this dispatch template.
 
 - The source edge and every requirement revision are compiled before worker dispatch. [1]
 - Master exit carries the full revision set and independent adjudications. [2]
+
 - Attempt dispatch, bounded invalidation, and the non-gating master summary are explicit manager obligations. [3]
 
 ### Cross-Repo References
@@ -97,3 +98,7 @@ independent reviewer rejection permits a successor.
 ## MIK-R95 Shared Start Preparation
 
 This template now sends each leaf role through `role_start` as the operation that prepares its admitted task environment; no separate `worktree_status`/`worktree_start` call precedes it. A start that reports moved source names the contract-addressed `worktree_sync` recovery to follow instead, and the brief still forbids inferring a source branch from the checkout or carrying a prior super tip forward. The bundled runtime copy is byte-identical to this source template.
+
+## Current Source Evidence
+
+- Current settings-budget, recorded approval and preserved stage/ownership boundaries are carried by this canonical instruction source. [4]

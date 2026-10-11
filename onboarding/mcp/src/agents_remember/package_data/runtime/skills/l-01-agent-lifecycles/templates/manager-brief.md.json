@@ -1,0 +1,22 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/manager-brief.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The source retains this card's role/template responsibility and recorded-approval boundary; no new transaction authority is introduced.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ab878e7ff87bfeccf7dbc9b7f8a8244e459d3888",
+            "content": "sha256:a23026e4aade193458c493a521ab277fa101dc6b7db0f5478ba0218ec1a4bf17",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

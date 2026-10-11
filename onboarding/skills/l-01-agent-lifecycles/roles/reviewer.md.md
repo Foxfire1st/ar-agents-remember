@@ -76,7 +76,7 @@ One reviewer role serves leaf, master, plan and super seams under an explicit as
 
 ## CCR-R12@v5 Transaction Boundary
 
-Current role duty remains targeted/scoped evidence with failed or unrun results visible, followed by the existing authorized paired Git transaction under its real contract. Requested independent review preserves the sealed monotonic finding set and three-round rule. The normal Curator authoring pass remains the standing full memory-quality/coherence exception; an explicitly report-only admission claims none of that normal pass complete. No finished turn or green check supplies semantic acceptance or Git publication.
+Current role duty remains targeted/scoped evidence with failed or unrun results visible, followed by the existing authorized paired Git transaction under its real contract. Requested independent review preserves the sealed monotonic finding set and settings budget. The normal Curator authoring pass remains the standing full memory-quality/coherence exception; an explicitly report-only admission claims none of that normal pass complete. No finished turn or green check supplies semantic acceptance or Git publication.
 
 ## 260928-MIK-L99 — a leaf's agents hand over to each other
 
@@ -84,7 +84,7 @@ The Reviewer delivers its verdict directly to the Worker and, on a pass, the exa
 
 ## 260928-MIK-L93 — a question for the developer goes up the chain
 
-A Reviewer with a parent sends a developer question (including the request for a round beyond the ordinary limit) to that parent with `role_message` on `agents-remember-task`, with what it holds back and recommends, and keeps working. A refusal stays pending under **Pending developer questions** and is retried; only an unreachable parent opens the own chat. The developer's quoted answer and the receiving agent's id are passed on unchanged, and the extra round is recorded with the quoted words. The retired own-chat and direct-ask sentences are registered against return. The code and memory lanes and their ordinary limits are untouched.
+A Reviewer with a parent sends developer questions through that actual parent, preserving the quoted words and receiving agent identity on the return path. The earlier developer-only extra-round instruction is superseded: rounds follow the settings limit, and beyond-limit approval names the Architect or developer and is recorded by the Manager. The separate CODE/MEMORY lanes and their sealed IDs remain; record-only unchanged-candidate checks do not increase the count.
 
 ## Evidence
 
@@ -100,6 +100,7 @@ Worker envelope, reviewer verdict template, manager exact-set dispatch, and gove
 - The verdict template structurally repeats one adjudication block per stable ID. [2]
 - The reviewer emits its own curator hand-off list in the shared producer shape. [3]
 - A leaf's declared knowledge effects are checked against its packet; a mismatch is a finding (MIK-R11). [4]
+
 - The seat's seam table fixes the five seams and where each verdict goes. [5]
 
 ### Cross-Repo References
@@ -120,3 +121,15 @@ Attempt publication is phase-sensitive: validate before append, and treat append
 review handoff as one formal boundary. A malformed row that never reached review is preserved by a
 non-attempt correction/void record without consuming the next attempt ID; after handoff, only an
 independent reviewer rejection permits a successor.
+
+## Stage Boundary
+
+The Reviewer ends with a recorded verdict over the whole assigned requirement, its findings and coverage. Record-only repairs use the last recorded round without a new begin only on the authority-proven unchanged candidate; the sealed remainder can only shrink.
+
+Own work/instrument slips and invalid caller input are repaired through the same admitted tool and work continues. Stops remain permission prompts, correct-input product/AR refusals or unowned state, requirement-meaning questions, and effects outside the worktree/scratch/task. An unfinished final turn names what is awaited and from whom. Worker/Reviewer repairs answer the required property and construction, not a succession of examples; extra-round requests carry that account.
+
+The review budget is the settings number `orchestration.loops.defaults.maxRounds`, read at each begin; the effective task limit includes approved extras and is read from `task_doc.reviewState.limit`. CODE and MEMORY retain separate counts under the same setting. Beyond-limit work needs recorded Architect or developer approval; the Manager asks the task Architect, not the developer.
+
+## Current Source Evidence
+
+- Current settings-budget, recorded approval and preserved stage/ownership boundaries are carried by this canonical instruction source. [6]

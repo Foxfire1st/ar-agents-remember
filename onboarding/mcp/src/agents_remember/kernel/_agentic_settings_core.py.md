@@ -21,8 +21,7 @@ L23 had added the closed `QualityExecutor` choice defaulting `orchestration.qual
 - `RoleKnobs`
 - `ConcurrencySettings`
 - `ExpectationSettings`
-- `SupervisorSettings`
-- `EscalationSettings`
+- `AgentNotifierSettings`
 - `QualityGateSettings` (260731-EFA-L17/L24: optional `orchestration.qualityGate.memoryCapBytes`; absent means host-managed RAM and swap; CCR-R22 removed the `executor` field -- the profile owns the adapter)
 - `AgenticSettings`
 - `agentic_settings_path`
@@ -75,10 +74,8 @@ graph; agentic settings cannot select or constrain a second runner.
 
 ## R39 Dagger Resource Ownership
 
-The quality-gate executor remains closed to Dagger. An omitted memory cap means the Dagger
-container runtime owns RAM and swap; an explicit cap reaches the graph inner wrapper. No host
-systemd or address-space fallback is part of lifecycle acceptance.
+Executor identity belongs to the repository certification profile, not to these agentic settings. This module declares an optional positive memory cap; its omitted value is runtime-managed. The adapter runtime and fallback policy are owned outside this module.
 
 ## CCR-L42 current candidate
 
-The review budget now has one `MAX_REVIEW_ROUNDS = 3` authority constant, and the seeded loop default uses it so a settings value cannot silently authorize a fourth review.
+The review budget uses the settings number `orchestration.loops.defaults.maxRounds`. `MAX_REVIEW_ROUNDS` is removed; `DEFAULT_LOOP_MAX_ROUNDS` is the fallback used by `LoopDefaults` and the reference seed when no number is named. Any positive whole number is accepted by the parser. The settings/transition owners, not role prose, determine the number in force.

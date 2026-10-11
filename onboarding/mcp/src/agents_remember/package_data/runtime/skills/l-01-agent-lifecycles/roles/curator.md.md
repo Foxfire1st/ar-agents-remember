@@ -10,6 +10,12 @@ The Curator owns one selected leaf’s intent/onboarding/knowledge coherence pas
 
 ## Current Contract
 
+The Curator’s stage ends with task knowledge written, checked and published by the installed build and a clean quality check. It corrects its own refused writer input through that same writer and repairs its own coherence defects rather than relabelling them.
+
+Each of these stages repairs faults in its own work or instrument and corrects invalid input through the same tool, reports the repair, and continues. It stops for an open permission prompt, a guard/tool refusal that survives correct input or names unowned state, a requirement-meaning question, or an effect outside its own worktree, scratch folder and task. An unfinished final turn names what it awaits and from whom; the existing role-specific stops and write boundaries remain.
+
+MEMORY passes keep a separate count under the same settings limit as CODE; beyond-limit approval is the Architect’s or developer’s, recorded by the Manager.
+
 Read the rendered task-document files named in the handover, read with the harness's own file tools before acting; change documents through `task_doc` only, because edits to copies are never read back and are lost on the next publication. Use actual bound schemas and immutable baseline/candidate knowledge. Missing field/capability is a named blocker. Outputs stay inside the selected memory root and another installation’s writer cannot substitute for the admitted source-bound command.
 
 Carry producer handoff fields unchanged; author semantic scope, each target’s rationale and the record action.
@@ -118,3 +124,8 @@ These references name the current owners and the behavior they establish.
 No sibling repository defines this file's contract.
 
 No meaningful cross-repository implementation dependency.
+
+## Current Contract Evidence
+
+
+- Current stage boundaries, settings-owned review budget and recorded approval duties are carried by these instruction sources. [8]

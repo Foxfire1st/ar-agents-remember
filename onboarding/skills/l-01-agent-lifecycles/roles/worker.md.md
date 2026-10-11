@@ -75,7 +75,7 @@ The Manager prepares Worker, Reviewer and Curator as siblings in one role_start_
 
 ## CCR-R12@v5 Transaction Boundary
 
-This role card follows the transaction-only lifecycle boundary: the role reports its own targeted or scoped evidence with failed and not-run states visible and leaves closeout/integration to the authorized code, memory-content, and ledger Git transaction. Full quality, full tests, certification, and independent review are explicit operations only; curation is the standing exception — the curator always runs it complete — and it is not this seat's to run. Requested reviews retain the sealed finding list and monotonic three-round limit.
+This role card follows the transaction-only lifecycle boundary: the role reports its own targeted or scoped evidence with failed and not-run states visible and leaves closeout/integration to the authorized code, memory-content, and ledger Git transaction. Full quality, full tests, certification, and independent review are explicit operations only; curation is the standing exception — the curator always runs it complete — and it is not this seat's to run. Requested reviews retain the sealed finding list and monotonic finding set under the settings limit.
 
 ## 260928-MIK-L99 — a leaf's agents hand over to each other
 
@@ -89,15 +89,24 @@ With a parent the Worker sends every developer question to it with `role_message
 
 ### Repo-Internal References
 
-- Worker provides one truthful leaf report and uncommitted candidate; checks and turn ending are evidence, not AR acceptance. [1]
+- The worker is one leaf-scoped builder whose terminal state is checks plus report. [1]
+
 - Intake binds writes to the named code worktree and report path. [2]
+
 - Orientation requires current worktree reads and coding guidelines before edits. [3]
+
 - Build produces implementation plus evidence for the separate curator. [4]
+
 - The worker appends authoritative attempts to the single journal and links them from the mandatory turn report. [5]
+
 - The worker emits its requirement-shaped items as one curator hand-off list in the shared producer shape. [6]
+
 - Tool authority excludes lifecycle, gates, task state, and memory writes. [7]
+
 - The worker records the complete acceptance envelope once for every stable requirement ID. [8]
+
 - Checks have their own explicit reportable step. [9]
+
 - The worker builds one leaf in one session and delivers one scoped change set plus one report. [10]
 
 ## Historical R39 Generic Worker Doctrine
@@ -120,3 +129,16 @@ Attempt publication is phase-sensitive: validate before append, and treat append
 review handoff as one formal boundary. A malformed row that never reached review is preserved by a
 non-attempt correction/void record without consuming the next attempt ID; after handoff, only an
 independent reviewer rejection permits a successor.
+
+## Stage Boundary
+
+The Worker ends with a requirement-satisfying candidate, focused tests/lint/types passing on final bytes, and its report with the Reviewer. A failed or unrun check is reported as such only when it cannot be made to pass on its own ground.
+
+Own work/instrument slips and invalid caller input are repaired through the same admitted tool and work continues. Stops remain permission prompts, correct-input product/AR refusals or unowned state, requirement-meaning questions, and effects outside the worktree/scratch/task. An unfinished final turn names what is awaited and from whom. Worker/Reviewer repairs answer the required property and construction, not a succession of examples; extra-round requests carry that account.
+
+The review budget is the settings number `orchestration.loops.defaults.maxRounds`, read at each begin; the effective task limit includes approved extras and is read from `task_doc.reviewState.limit`. CODE and MEMORY retain separate counts under the same setting. Beyond-limit work needs recorded Architect or developer approval; the Manager asks the task Architect, not the developer.
+
+## Current Source Evidence
+
+
+- Current settings-budget, recorded approval and preserved stage/ownership boundaries are carried by this canonical instruction source. [11]

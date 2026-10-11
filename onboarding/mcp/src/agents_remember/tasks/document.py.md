@@ -49,7 +49,7 @@ Seats and `integrationBranch` use `is_sprint`, which also accepts a master retai
 seat roles are unique among planned/active seats (a retired → active
 succession of the same role is the only reading consistent with a `state` field). The role
 altitudes are declared here once — `SPRINT_ROLES` (architect/orchestrator/strategist/designer/
-system-specialist), `MASTER_ROLES` (manager), and `LEAF_ROLES` (worker/reviewer/curator) — while
+investigator), `MASTER_ROLES` (manager), and `LEAF_ROLES` (worker/reviewer/curator) — while
 `REVIEWER_ALTITUDES` explicitly makes reviewer the one polymorphic role across sprint, master, and
 leaf review manifestations. `SprintSeat` consequently permits reviewer alongside the ordinary
 sprint roles. `document_refs` re-exports these definitions (importing from it here would cycle).

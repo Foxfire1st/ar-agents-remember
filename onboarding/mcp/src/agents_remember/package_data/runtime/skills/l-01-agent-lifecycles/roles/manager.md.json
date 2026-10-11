@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "cea879140a9d03d3e55492f6cebf9943fb19b0c4",
-        "content": "sha256:7db158bae9759a77bb55ab71a2e344b58cb0c130c3442fd6c88bd18172c3d922",
+        "blob": "0e257ea17bb8d14a7ae8aea840fd9429558309ba",
+        "content": "sha256:b888be9c022fa12e809146599d3513e9e3a3838d308d17943e62e83f50e4332b",
         "locator": {
           "kind": "file"
         }
@@ -40,7 +40,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3ddb3dd453cf996eb2c34dcb5952386da975c162",
+            "blob": "0e257ea17bb8d14a7ae8aea840fd9429558309ba",
             "content": "sha256:342bdd7c63787cdd02eea07af5179b44e74de818c8185ded11a9086a901b4c42",
             "locator": {
               "end": 8,
@@ -91,7 +91,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3ddb3dd453cf996eb2c34dcb5952386da975c162",
+            "blob": "0e257ea17bb8d14a7ae8aea840fd9429558309ba",
             "content": "sha256:4e568132297bd1cba5578b07d8fd196d1b317e7048f927a07b9ed5290cdd4297",
             "locator": {
               "end": 4,
@@ -108,12 +108,27 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3ddb3dd453cf996eb2c34dcb5952386da975c162",
+            "blob": "0e257ea17bb8d14a7ae8aea840fd9429558309ba",
             "content": "sha256:4e568132297bd1cba5578b07d8fd196d1b317e7048f927a07b9ed5290cdd4297",
             "locator": {
               "end": 4,
               "kind": "line_range",
               "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Current stage boundaries, settings-owned review budget and recorded approval duties are carried by these instruction sources.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e257ea17bb8d14a7ae8aea840fd9429558309ba",
+            "content": "sha256:b888be9c022fa12e809146599d3513e9e3a3838d308d17943e62e83f50e4332b",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"
