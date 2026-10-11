@@ -10,4 +10,9 @@ FakePaseo substitutes npm and native runtime commands while keeping the real tem
 
 ## Evidence
 
-- The scoped current source carries the module/document behavior described above. [1]
+`write_shared_runtime` obtains the shared guard's path before creating the settings parent or writing
+runtime settings. The `settings=None` branch is guarded before unlink too: support cannot remove the
+account's real settings file. Refusal names the temporary `XDG_CONFIG_HOME` remedy. The existing fake
+runtime behavior and settings bytes in a moved configuration folder remain unchanged.
+
+- The source retains the fake-runtime model and guards the shared settings path before both writing and removal. [1]

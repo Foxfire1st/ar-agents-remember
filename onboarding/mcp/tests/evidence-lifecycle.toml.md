@@ -176,6 +176,13 @@ At the landed L71 checkpoint, the catalog holds 13 contract rows and 87 governed
 - The registered-preview comparator's artifact row retains its replacement contract and lists both direct and transitive consumers. [260]
 The admitted lifecycle replacement, landed upstream of L74, replaced the earlier 32-contract catalog with 13 contracts; `tool_log_witness` predates L74 and the river-scale measurement (`l114_e4_river_scale.py`) is also carried upstream content. Earlier per-leaf artifact counts are historical, not the current composed population. L74's rule-test consumers and the landed preview consumers are both retained; the working catalog's final row population must be read from the completed composition, not inferred from either historical count.
 
+## Shared support settings guard
+
+The permanent `_user_settings_guard.py` artifact owns the shared settings-path refusal, with the existing support-write guard test as its replacement node and source-derived exact consumers. The world, structural-seat and Paseo-runtime helpers refuse the account's real settings path before settings-parent creation or mutation; the Paseo unlink branch is guarded too. A moved pytest configuration remains supported. This registration and its derived consumers declare ownership and reachability, not execution or acceptance. Historical landed catalog counts above are not current composition counts.
+
+- The permanent shared settings guard declares its owner, replacement node and exact consumers. [262]
+- The replacement case recursively scans shared support for unguarded settings-path access. [263]
+
 ## 260928-MIK-L74 The derived index sheds the dataset shape
 
 L74 rebinds the `knowledge-identity-branching-fixture` contract and its four artifact references to `test_three_separately_recorded_revisions_stay_independently_addressable`. Its `knowledge_row_codec_test_support.py` consumer reconciliation is source-derived: the prior L74 comparison removed three unsupported consumers and measured 20 declared against 20 derived; this is a dated comparison, not a constant for the later composed consumer set. L74 also adds the permanent `read_boundary_oracle_test_support.py` artifact, shared by the boundary, controls and roster cases, with the existing unauthorized-object control as its replacement contract. The earlier no-artifact-addition claim is superseded by that explicit registration. These declarations do not show that the cases ran or that the read boundary is accepted.

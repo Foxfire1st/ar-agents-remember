@@ -1,14 +1,33 @@
 {
   "path": "mcp/tests/paseo_runtime_test_support.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "b3cb8e0cfe6a4097ac4a7d31fb86e95f21af545c",
+        "content": "sha256:8c3c5d3728d2f34a1a55cb8db5683da7421ccbbbbcd2e3257887fa4d7315b9f8",
+        "locator": {
+          "kind": "symbol",
+          "name": "write_shared_runtime"
+        }
+      },
+      "id": "RLZ-8VGT3J",
+      "invariant": "INV-P3ZYFW",
+      "origin": {
+        "handoffEntry": "MIK-R135@v1 §2",
+        "leaf": "260928-MIK-L135"
+      },
+      "rationale": "The shared runtime writer obtains the guard path before both settings writing and the settings=None unlink.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
-      "note": "The scoped current source carries the module/document behavior described above.",
+      "note": "The source retains the fake-runtime model and guards the shared settings path before both writing and removal.",
       "targets": [
         {
           "anchor": {
-            "blob": "4042d3962d1b461cef6abf7903ddf825c40b349c",
-            "content": "sha256:88bc30c055c617dc76706935a1eb9e7bba94fb4467bc0eef3a1a3d400336efd2",
+            "blob": "b3cb8e0cfe6a4097ac4a7d31fb86e95f21af545c",
+            "content": "sha256:a2e85db120606a5e577e6cae335da26a957858ef6d9fba43343283c38a290ecf",
             "locator": {
               "kind": "file"
             }

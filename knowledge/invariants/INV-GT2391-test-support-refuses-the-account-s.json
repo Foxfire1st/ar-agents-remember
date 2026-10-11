@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Made-up-account tests pin refusal before creation; this prevents shared support from overwriting live user settings and disabling role transport."
+  },
+  "applicability": "Shared test-support operations requesting the product user settings path for mutation.",
+  "conditions": [
+    "The protected path is the account-database home plus .config/agents-remember/settings.json when available; otherwise it is the guard-first-observed home plus that suffix.",
+    "The comparison includes direct and realpath equality and occurs before returning the path."
+  ],
+  "exclusions": [
+    "Product settings readers and migration, which are unchanged.",
+    "Knowledge of a HOME value mutated before guard import when the account database is unreadable."
+  ],
+  "id": "INV-GT2391",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_user_settings_guard.py::test_the_guard_refuses_the_made_up_real_path_and_creates_nothing, ::test_the_guard_without_an_account_database_compares_and_refuses_a_match, ::test_the_guard_reports_the_home_it_actually_observed; worker report attempt3 + evidence/freeze-manifest-r2.md; CODE PASS verdict-code-r4.md on attempt3"
+      ],
+      "path": "knowledge-handoff.json"
+    },
+    "handoffEntry": "MIK-R135-worker-1",
+    "leaf": "260928-MIK-L135",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Test support refuses the account's real settings path before anything is written, returning only provably moved paths.",
+  "status": "proposed",
+  "supersedes": []
+}

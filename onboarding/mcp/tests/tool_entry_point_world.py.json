@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "f4be837b83c0700b9610797cc84a4f26d0590cde",
-        "content": "sha256:4e539c923db0d4a0dc1f73fd61140a55f7f331665ed0b94fc6a0ca2caa99533d",
+        "blob": "1ccfbf29072d91472336f538f2f9820ebf797c6e",
+        "content": "sha256:f4e9e0affcdbfab5659e8b401096111c9fb6fd718f2fda0d691c6c7b343b7148",
         "locator": {
           "kind": "file"
         }
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "f4be837b83c0700b9610797cc84a4f26d0590cde",
+        "blob": "1ccfbf29072d91472336f538f2f9820ebf797c6e",
         "content": "sha256:712b2e176205abbeafbeedddced8f935df28d46cba3ff22638854e17719a45d5",
         "locator": {
           "kind": "symbol",
@@ -38,7 +38,7 @@
     },
     {
       "anchor": {
-        "blob": "f4be837b83c0700b9610797cc84a4f26d0590cde",
+        "blob": "1ccfbf29072d91472336f538f2f9820ebf797c6e",
         "content": "sha256:c4bac9584ff57d79b197e1ae2162e83f182902c091e0956914a3b6bebd602048",
         "locator": {
           "kind": "symbol",
@@ -56,7 +56,7 @@
     },
     {
       "anchor": {
-        "blob": "f4be837b83c0700b9610797cc84a4f26d0590cde",
+        "blob": "1ccfbf29072d91472336f538f2f9820ebf797c6e",
         "content": "sha256:8a6ac22a1cce7a44906d7512d6a7f215f67bedccbfc8f464e5b9f5f0bafa2d09",
         "locator": {
           "kind": "symbol",
@@ -74,7 +74,7 @@
     },
     {
       "anchor": {
-        "blob": "f4be837b83c0700b9610797cc84a4f26d0590cde",
+        "blob": "1ccfbf29072d91472336f538f2f9820ebf797c6e",
         "content": "sha256:6d313994f88c45a47aa5ed5b3b9ccc270d56d86c9e870b1afbe08f97fc9a57e5",
         "locator": {
           "kind": "symbol",
@@ -92,7 +92,7 @@
     },
     {
       "anchor": {
-        "blob": "f4be837b83c0700b9610797cc84a4f26d0590cde",
+        "blob": "1ccfbf29072d91472336f538f2f9820ebf797c6e",
         "content": "sha256:712b2e176205abbeafbeedddced8f935df28d46cba3ff22638854e17719a45d5",
         "locator": {
           "kind": "symbol",
@@ -110,7 +110,7 @@
     },
     {
       "anchor": {
-        "blob": "f4be837b83c0700b9610797cc84a4f26d0590cde",
+        "blob": "1ccfbf29072d91472336f538f2f9820ebf797c6e",
         "content": "sha256:e70868a155b3a04ce2b756d208c0f43673e28f1561ac0d0b6effd9883252c8c7",
         "locator": {
           "end": 28,
@@ -129,7 +129,7 @@
     },
     {
       "anchor": {
-        "blob": "f4be837b83c0700b9610797cc84a4f26d0590cde",
+        "blob": "1ccfbf29072d91472336f538f2f9820ebf797c6e",
         "content": "sha256:e7c7b2d84258ceb6a33176f24b2174a26eab5a126411c2fb03fa0ac8f34d66a1",
         "locator": {
           "kind": "symbol",
@@ -147,7 +147,7 @@
     },
     {
       "anchor": {
-        "blob": "f4be837b83c0700b9610797cc84a4f26d0590cde",
+        "blob": "1ccfbf29072d91472336f538f2f9820ebf797c6e",
         "content": "sha256:37578a1f10cb0bfb736dc16bace943a4034c864a0d510646723f7ba78e95ada6",
         "locator": {
           "kind": "symbol",
@@ -165,7 +165,7 @@
     },
     {
       "anchor": {
-        "blob": "f4be837b83c0700b9610797cc84a4f26d0590cde",
+        "blob": "1ccfbf29072d91472336f538f2f9820ebf797c6e",
         "content": "sha256:37578a1f10cb0bfb736dc16bace943a4034c864a0d510646723f7ba78e95ada6",
         "locator": {
           "kind": "symbol",
@@ -183,7 +183,7 @@
     },
     {
       "anchor": {
-        "blob": "f4be837b83c0700b9610797cc84a4f26d0590cde",
+        "blob": "1ccfbf29072d91472336f538f2f9820ebf797c6e",
         "content": "sha256:c3b7bd4ff2f1d28ae6844906bc176b3ce13a3fed08e6bcf4e89cd09c66741aee",
         "locator": {
           "kind": "symbol",
@@ -201,7 +201,7 @@
     },
     {
       "anchor": {
-        "blob": "f4be837b83c0700b9610797cc84a4f26d0590cde",
+        "blob": "1ccfbf29072d91472336f538f2f9820ebf797c6e",
         "content": "sha256:712b2e176205abbeafbeedddced8f935df28d46cba3ff22638854e17719a45d5",
         "locator": {
           "kind": "symbol",
@@ -219,7 +219,7 @@
     },
     {
       "anchor": {
-        "blob": "f4be837b83c0700b9610797cc84a4f26d0590cde",
+        "blob": "1ccfbf29072d91472336f538f2f9820ebf797c6e",
         "content": "sha256:712b2e176205abbeafbeedddced8f935df28d46cba3ff22638854e17719a45d5",
         "locator": {
           "kind": "symbol",
@@ -237,7 +237,7 @@
     },
     {
       "anchor": {
-        "blob": "f4be837b83c0700b9610797cc84a4f26d0590cde",
+        "blob": "1ccfbf29072d91472336f538f2f9820ebf797c6e",
         "content": "sha256:c3b7bd4ff2f1d28ae6844906bc176b3ce13a3fed08e6bcf4e89cd09c66741aee",
         "locator": {
           "kind": "symbol",
@@ -255,7 +255,7 @@
     },
     {
       "anchor": {
-        "blob": "f4be837b83c0700b9610797cc84a4f26d0590cde",
+        "blob": "1ccfbf29072d91472336f538f2f9820ebf797c6e",
         "content": "sha256:8a6ac22a1cce7a44906d7512d6a7f215f67bedccbfc8f464e5b9f5f0bafa2d09",
         "locator": {
           "kind": "symbol",
@@ -273,7 +273,25 @@
     },
     {
       "anchor": {
-        "blob": "f4be837b83c0700b9610797cc84a4f26d0590cde",
+        "blob": "1ccfbf29072d91472336f538f2f9820ebf797c6e",
+        "content": "sha256:60a3eaef7f215666bc91a3354e002d4ba968e31026d48649bf154b74efb62603",
+        "locator": {
+          "kind": "symbol",
+          "name": "EntryPointWorld.__init__"
+        }
+      },
+      "id": "RLZ-R7XCMX",
+      "invariant": "INV-P3ZYFW",
+      "origin": {
+        "handoffEntry": "MIK-R135@v1 §2",
+        "leaf": "260928-MIK-L135"
+      },
+      "rationale": "The constructor obtains the guard path before creating the settings parent and writing the delegation-policy stub.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "1ccfbf29072d91472336f538f2f9820ebf797c6e",
         "content": "sha256:5051eee79bbddebacb81642153d672e5fa69042a984ac06ee8b17ca76b0582d8",
         "locator": {
           "kind": "symbol",
@@ -291,7 +309,7 @@
     },
     {
       "anchor": {
-        "blob": "f4be837b83c0700b9610797cc84a4f26d0590cde",
+        "blob": "1ccfbf29072d91472336f538f2f9820ebf797c6e",
         "content": "sha256:6d313994f88c45a47aa5ed5b3b9ccc270d56d86c9e870b1afbe08f97fc9a57e5",
         "locator": {
           "kind": "symbol",
@@ -309,7 +327,7 @@
     },
     {
       "anchor": {
-        "blob": "f4be837b83c0700b9610797cc84a4f26d0590cde",
+        "blob": "1ccfbf29072d91472336f538f2f9820ebf797c6e",
         "content": "sha256:616725463860034f01645ef22c9b069790e16605dd50f886654cbdcbdb5299b8",
         "locator": {
           "kind": "symbol",
@@ -327,7 +345,7 @@
     },
     {
       "anchor": {
-        "blob": "f4be837b83c0700b9610797cc84a4f26d0590cde",
+        "blob": "1ccfbf29072d91472336f538f2f9820ebf797c6e",
         "content": "sha256:616725463860034f01645ef22c9b069790e16605dd50f886654cbdcbdb5299b8",
         "locator": {
           "kind": "symbol",
@@ -350,7 +368,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "89e6207e93cb094fac2da57f674af0907f951ac1",
+            "blob": "1ccfbf29072d91472336f538f2f9820ebf797c6e",
             "content": "sha256:8a6ac22a1cce7a44906d7512d6a7f215f67bedccbfc8f464e5b9f5f0bafa2d09",
             "locator": {
               "kind": "symbol",
@@ -366,7 +384,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "89e6207e93cb094fac2da57f674af0907f951ac1",
+            "blob": "1ccfbf29072d91472336f538f2f9820ebf797c6e",
             "content": "sha256:712b2e176205abbeafbeedddced8f935df28d46cba3ff22638854e17719a45d5",
             "locator": {
               "kind": "symbol",
@@ -382,7 +400,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "89e6207e93cb094fac2da57f674af0907f951ac1",
+            "blob": "1ccfbf29072d91472336f538f2f9820ebf797c6e",
             "content": "sha256:37578a1f10cb0bfb736dc16bace943a4034c864a0d510646723f7ba78e95ada6",
             "locator": {
               "kind": "symbol",
@@ -398,12 +416,46 @@
       "targets": [
         {
           "anchor": {
-            "blob": "89e6207e93cb094fac2da57f674af0907f951ac1",
+            "blob": "1ccfbf29072d91472336f538f2f9820ebf797c6e",
             "content": "sha256:cdee253b37027f823794d963e164401d59d8a3df94597f8731eca5d854c71375",
             "locator": {
               "kind": "symbol",
               "name": "_ToolCallTimeout"
             }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The world obtains the guarded settings path before settings-parent creation and stub writing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1ccfbf29072d91472336f538f2f9820ebf797c6e",
+            "content": "sha256:60a3eaef7f215666bc91a3354e002d4ba968e31026d48649bf154b74efb62603",
+            "locator": {
+              "end": 493,
+              "kind": "line_range",
+              "start": 395
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "A fake-account child imports this worktree's world, receives the guard's refusal and leaves the fake configuration home empty.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b92f7935419bd59d0800b55710c876e9c4cbd114",
+            "content": "sha256:d7e7db52a695705d6439ab63d07741d4d444299200e08aabe5ae45bdc99a855b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_building_the_world_with_the_users_own_environment_is_refused"
+            },
+            "path": "mcp/tests/test_user_settings_guard.py"
           },
           "kind": "test"
         }

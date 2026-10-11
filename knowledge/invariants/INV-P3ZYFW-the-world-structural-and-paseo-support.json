@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "Three shared-support writers delegate to one guard; the fake-account world-child assertion independently protects its refusal and source binding."
+  },
+  "applicability": "EntryPointWorld delegation stub, structural-seat role stubs, and shared Paseo runtime settings fixture mutations.",
+  "conditions": [
+    "Each consumer obtains its path through the shared guard before settings-parent creation or settings mutation.",
+    "Pytest continues to provide its existing moved configuration folder."
+  ],
+  "exclusions": [
+    "Earlier disposable EntryPointWorld repository construction, which can precede the settings refusal.",
+    "The product settings path and original isolated-stub bytes, which are not changed."
+  ],
+  "id": "INV-P3ZYFW",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/reviewer/5e0b3a10-7a35-4c5e-9f11-135000000002/r4/candidate-attempt3.json; notes/reports/reviewer/5e0b3a10-7a35-4c5e-9f11-135000000002/r4/guard-tests-r4.log; retained R1/R2 route and actual probe evidence under explicit author rulings"
+      ],
+      "path": "knowledge-handoff.json"
+    },
+    "handoffEntry": "MIK-R135@v1 §2",
+    "leaf": "260928-MIK-L135",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The world, structural and Paseo support obtain their settings path from the same guard before settings-parent creation or settings write, and the Paseo unlink branch is guarded too.",
+  "status": "proposed",
+  "supersedes": []
+}

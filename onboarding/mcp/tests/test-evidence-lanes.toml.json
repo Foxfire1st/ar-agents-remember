@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "42b30f5281205130732ba7365a8632af8e834b46",
+        "blob": "af05acbbf882de6c4ac284d7c3ee707238fb5a08",
         "content": "sha256:5cd042577ebdf51367a272d69b23bf04c0c30cae34914b48cb521233162e663d",
         "locator": {
-          "end": 373,
+          "end": 374,
           "kind": "line_range",
-          "start": 373
+          "start": 374
         }
       },
       "id": "RLZ-NJFH31",
@@ -22,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "42b30f5281205130732ba7365a8632af8e834b46",
+        "blob": "af05acbbf882de6c4ac284d7c3ee707238fb5a08",
         "content": "sha256:2bc4851e806a4d81b457b0153c5968bdd9d936be780b1c20bf8222ffba533e73",
         "locator": {
           "end": 270,
@@ -46,7 +46,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "42b30f5281205130732ba7365a8632af8e834b46",
+            "blob": "af05acbbf882de6c4ac284d7c3ee707238fb5a08",
             "content": "sha256:18493d816ddfe444c965fada22a49da99138e70b2c7d80a72152bd3ef8ea7fd3",
             "locator": {
               "end": 20,
@@ -63,7 +63,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "42b30f5281205130732ba7365a8632af8e834b46",
+            "blob": "af05acbbf882de6c4ac284d7c3ee707238fb5a08",
             "content": "sha256:d7cf84bf950903f2b5bd9eb709520a6cd1fe182a4afec71fcbc3cb138679b6dc",
             "locator": {
               "end": 189,
@@ -143,13 +143,59 @@
       "targets": [
         {
           "anchor": {
-            "blob": "42b30f5281205130732ba7365a8632af8e834b46",
+            "blob": "af05acbbf882de6c4ac284d7c3ee707238fb5a08",
             "content": "sha256:6af2d7f28912ba7425c1cb69a1fa691c5a2c8c17dbc07527bd5c18525ee8f089",
             "locator": {
-              "end": 331,
+              "end": 332,
               "kind": "line_range",
-              "start": 331
+              "start": 332
             }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "842": {
+      "note": "The guard suite is selected in unit-regression; its cases refuse real-path writes on made-up accounts.\n\nAnchor: 323-334",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "af05acbbf882de6c4ac284d7c3ee707238fb5a08",
+            "content": "sha256:773d961a55b66d78a8b5f148e4213a686db9d6c93da204a12002bdded6aea8f2",
+            "locator": {
+              "end": 334,
+              "kind": "line_range",
+              "start": 323
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "843": {
+      "note": "The guard and recursive scanner cases carry the support-settings contract.\n\nAnchor: `test_the_guard_refuses_the_made_up_real_path_and_creates_nothing`, `test_every_support_write_of_the_user_settings_goes_through_the_guard`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b92f7935419bd59d0800b55710c876e9c4cbd114",
+            "content": "sha256:1b3def6ee9edcb760cc16838f2eec1d6866a17808fb93f1637828e217bd8a953",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_guard_refuses_the_made_up_real_path_and_creates_nothing"
+            },
+            "path": "mcp/tests/test_user_settings_guard.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b92f7935419bd59d0800b55710c876e9c4cbd114",
+            "content": "sha256:c2ad6d2f6e9d17270911a608716a8f0ff557d0ad777661491f2165ed41e057f1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_support_write_of_the_user_settings_goes_through_the_guard"
+            },
+            "path": "mcp/tests/test_user_settings_guard.py"
           },
           "kind": "test"
         }

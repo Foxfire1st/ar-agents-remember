@@ -20,7 +20,10 @@ production spawn path without tmux.
 
 ### Conventions
 
-Every fixture is rooted under the test-provided temporary directory. The fake substitutes only the
+Topology and runtime configuration are rooted under the test-provided temporary directory. Shared user
+settings use the product's configuration location, moved by pytest's existing isolation. Before making
+the settings parent or writing role stubs, `write_structural_settings` obtains the path through the
+shared guard and refuses the account's real settings path with the temporary-XDG remedy. The fake substitutes only the
 external terminal host; task, catalog, inbox, settings, and dispatch owners remain production code.
 
 ### Invariants And Boundaries
@@ -42,7 +45,8 @@ No Domain Documentation source is configured; this is repository-local test supp
 ### Repo-Internal References
 
 - The helper writes one canonical sprint/master/leaf topology and returns its three document refs. [1]
-- Settings and runtime configuration remain isolated under the supplied root. [2]
+- Runtime topology uses the supplied root; shared user settings use the guarded, isolated configuration path. [2]
+
 - The fake host records concurrent lifecycle effects without starting tmux. [3]
 
 ### Cross-Repo References

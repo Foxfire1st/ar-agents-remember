@@ -24,6 +24,11 @@ catalog commands use the worktree's own environment as repository tool notes pre
 editable install supplies the candidate source, and test-support imports alone need their
 explicit path.
 
+The shared-support settings guard suite is registered in `unit-regression` too.
+That suite requires refusal of the account's real settings path and verifies the
+recursive support scanner without writing a real account. Its registration is
+selection evidence, not an execution or acceptance claim.
+
 ## Evidence
 
 - Extracted capsule surface suite in unit-regression [835]
@@ -37,3 +42,6 @@ explicit path.
 - The lane catalog with the host module rows. [840]
 
 - The worktree-environment regression module belongs to unit-regression. [841]
+
+- The guard suite is selected in unit-regression; its cases refuse real-path writes on made-up accounts. [842]
+- The guard and recursive scanner cases carry the support-settings contract. [843]

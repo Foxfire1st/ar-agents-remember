@@ -1,0 +1,345 @@
+{
+  "path": "mcp/tests/test_user_settings_guard.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "b92f7935419bd59d0800b55710c876e9c4cbd114",
+        "content": "sha256:c2ad6d2f6e9d17270911a608716a8f0ff557d0ad777661491f2165ed41e057f1",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_every_support_write_of_the_user_settings_goes_through_the_guard"
+        }
+      },
+      "facet": "The derived live support population has no raw-resolver or supported literal-path violations.",
+      "id": "PRF-3EBCWB",
+      "invariant": "INV-W6WXHZ",
+      "origin": {
+        "handoffEntry": "MIK-R135@v1 §4",
+        "leaf": "260928-MIK-L135"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b92f7935419bd59d0800b55710c876e9c4cbd114",
+        "content": "sha256:fd75d20e15d338e251f11c603d26451a59ec3fd74f3b5b83c1d1ea9b200ada4f",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_guard_without_an_account_database_allows_a_moved_folder"
+        }
+      },
+      "facet": "With the database unreadable, a moved configuration path is returned without creation.",
+      "id": "PRF-8RBSTW",
+      "invariant": "INV-GT2391",
+      "origin": {
+        "handoffEntry": "MIK-R135-worker-1",
+        "leaf": "260928-MIK-L135"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b92f7935419bd59d0800b55710c876e9c4cbd114",
+        "content": "sha256:5e3b4c35315950e0037d72419acca75d64666bdf9d6d595ab8423380b8f0503a",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_check_fails_aliased_and_literal_bypasses"
+        }
+      },
+      "facet": "Parsed raw import aliases and literal path rebuilds are detected; a guard alias passes.",
+      "id": "PRF-A9J06N",
+      "invariant": "INV-W6WXHZ",
+      "origin": {
+        "handoffEntry": "MIK-R135@v1 §4",
+        "leaf": "260928-MIK-L135"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b92f7935419bd59d0800b55710c876e9c4cbd114",
+        "content": "sha256:1086f0bca87e96daa6b77117cf0fb82e88510715caa4d639998aef7f4491ce87",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_guard_without_an_account_database_compares_and_refuses_a_match"
+        }
+      },
+      "facet": "An unreadable database and matching first-observed home produce refusal naming that database and home.",
+      "id": "PRF-HHAKQH",
+      "invariant": "INV-GT2391",
+      "origin": {
+        "handoffEntry": "MIK-R135-worker-1",
+        "leaf": "260928-MIK-L135"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b92f7935419bd59d0800b55710c876e9c4cbd114",
+        "content": "sha256:72bbacf0cc5fa7cb85ab1ef99cd5f202732ee74cf6d0c5976002bae193bfdd8e",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_check_fails_a_support_module_that_writes_directly"
+        }
+      },
+      "facet": "Parsed direct writes are detected while a parsed guarded write passes.",
+      "id": "PRF-M5625E",
+      "invariant": "INV-W6WXHZ",
+      "origin": {
+        "handoffEntry": "MIK-R135@v1 §4",
+        "leaf": "260928-MIK-L135"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b92f7935419bd59d0800b55710c876e9c4cbd114",
+        "content": "sha256:d7e7db52a695705d6439ab63d07741d4d444299200e08aabe5ae45bdc99a855b",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_building_the_world_with_the_users_own_environment_is_refused"
+        }
+      },
+      "facet": "The real fake-account child imports the reviewed world, exits nonzero with the XDG remedy, and leaves the fake-home tree empty.",
+      "id": "PRF-MNNATB",
+      "invariant": "INV-P3ZYFW",
+      "origin": {
+        "handoffEntry": "MIK-R135@v1 §2",
+        "leaf": "260928-MIK-L135"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b92f7935419bd59d0800b55710c876e9c4cbd114",
+        "content": "sha256:1b3def6ee9edcb760cc16838f2eec1d6866a17808fb93f1637828e217bd8a953",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_guard_refuses_the_made_up_real_path_and_creates_nothing"
+        }
+      },
+      "facet": "A fake account with no XDG setting is refused with the temporary-XDG remedy and no home created.",
+      "id": "PRF-TQGFYD",
+      "invariant": "INV-GT2391",
+      "origin": {
+        "handoffEntry": "MIK-R135-worker-1",
+        "leaf": "260928-MIK-L135"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b92f7935419bd59d0800b55710c876e9c4cbd114",
+        "content": "sha256:62d86514da1f3753f46102d810f000de013d179562e778006de176ed3339250e",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_guard_reports_the_home_it_actually_observed"
+        }
+      },
+      "facet": "Reloading after HOME movement reports the actual import observation, never a proven process-start home.",
+      "id": "PRF-W3K52H",
+      "invariant": "INV-GT2391",
+      "origin": {
+        "handoffEntry": "MIK-R135-worker-1",
+        "leaf": "260928-MIK-L135"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b92f7935419bd59d0800b55710c876e9c4cbd114",
+        "content": "sha256:4e311444a668db9c6b70d564e6a0575436e87c306576af3d8ec8bf35902d6c6c",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_guard_allows_a_moved_configuration_folder_and_creates_nothing"
+        }
+      },
+      "facet": "A moved XDG path is returned without creating its directory.",
+      "id": "PRF-YG1K3V",
+      "invariant": "INV-GT2391",
+      "origin": {
+        "handoffEntry": "MIK-R135-worker-1",
+        "leaf": "260928-MIK-L135"
+      }
+    }
+  ],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "b92f7935419bd59d0800b55710c876e9c4cbd114",
+        "content": "sha256:e8a2f377a2506f11a5ac57b794351955b13dca866d13907078331b7d03d1ef6b",
+        "locator": {
+          "kind": "symbol",
+          "name": "_support_modules"
+        }
+      },
+      "id": "RLZ-81YJ6H",
+      "invariant": "INV-W6WXHZ",
+      "origin": {
+        "handoffEntry": "MIK-R135@v1 §4",
+        "leaf": "260928-MIK-L135"
+      },
+      "rationale": "This helper recursively derives both support roots without a per-module allowlist.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "b92f7935419bd59d0800b55710c876e9c4cbd114",
+        "content": "sha256:4ce90af7b4d43ccfc6de8c35198f15778c02aa6f6bfc5082c789ce9cd1fb464d",
+        "locator": {
+          "kind": "symbol",
+          "name": "_direct_user_settings_calls"
+        }
+      },
+      "id": "RLZ-VGKH2N",
+      "invariant": "INV-W6WXHZ",
+      "origin": {
+        "handoffEntry": "MIK-R135@v1 §4",
+        "leaf": "260928-MIK-L135"
+      },
+      "rationale": "This helper reports raw/aliased resolver calls and supported literal-path rebuilds; it does not itself enumerate modules.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The guard refuses a made-up real path, permits moved XDG, and creates nothing.\n\nAnchor: `test_the_guard_refuses_the_made_up_real_path_and_creates_nothing`, `test_the_guard_allows_a_moved_configuration_folder_and_creates_nothing`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b92f7935419bd59d0800b55710c876e9c4cbd114",
+            "content": "sha256:1b3def6ee9edcb760cc16838f2eec1d6866a17808fb93f1637828e217bd8a953",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_guard_refuses_the_made_up_real_path_and_creates_nothing"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b92f7935419bd59d0800b55710c876e9c4cbd114",
+            "content": "sha256:4e311444a668db9c6b70d564e6a0575436e87c306576af3d8ec8bf35902d6c6c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_guard_allows_a_moved_configuration_folder_and_creates_nothing"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Unreadable-database cases check comparison and truthful observed-home reporting.\n\nAnchor: `test_the_guard_without_an_account_database_compares_and_refuses_a_match`, `test_the_guard_without_an_account_database_allows_a_moved_folder`, `test_the_guard_reports_the_home_it_actually_observed`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b92f7935419bd59d0800b55710c876e9c4cbd114",
+            "content": "sha256:1086f0bca87e96daa6b77117cf0fb82e88510715caa4d639998aef7f4491ce87",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_guard_without_an_account_database_compares_and_refuses_a_match"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b92f7935419bd59d0800b55710c876e9c4cbd114",
+            "content": "sha256:fd75d20e15d338e251f11c603d26451a59ec3fd74f3b5b83c1d1ea9b200ada4f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_guard_without_an_account_database_allows_a_moved_folder"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b92f7935419bd59d0800b55710c876e9c4cbd114",
+            "content": "sha256:62d86514da1f3753f46102d810f000de013d179562e778006de176ed3339250e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_guard_reports_the_home_it_actually_observed"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The child executes the reviewed world source, refuses, and leaves the fake home empty.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b92f7935419bd59d0800b55710c876e9c4cbd114",
+            "content": "sha256:d7e7db52a695705d6439ab63d07741d4d444299200e08aabe5ae45bdc99a855b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_building_the_world_with_the_users_own_environment_is_refused"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The recursive population and syntactic checker hold the shared-support boundary.\n\nAnchor: `_support_modules`, `_direct_user_settings_calls`, `test_every_support_write_of_the_user_settings_goes_through_the_guard`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b92f7935419bd59d0800b55710c876e9c4cbd114",
+            "content": "sha256:e8a2f377a2506f11a5ac57b794351955b13dca866d13907078331b7d03d1ef6b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_support_modules"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b92f7935419bd59d0800b55710c876e9c4cbd114",
+            "content": "sha256:4ce90af7b4d43ccfc6de8c35198f15778c02aa6f6bfc5082c789ce9cd1fb464d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_direct_user_settings_calls"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b92f7935419bd59d0800b55710c876e9c4cbd114",
+            "content": "sha256:c2ad6d2f6e9d17270911a608716a8f0ff557d0ad777661491f2165ed41e057f1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_support_write_of_the_user_settings_goes_through_the_guard"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Direct, imported-alias and literal rebuild controls fail, while guarded controls pass.\n\nAnchor: `test_the_check_fails_a_support_module_that_writes_directly`, `test_the_check_fails_aliased_and_literal_bypasses`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b92f7935419bd59d0800b55710c876e9c4cbd114",
+            "content": "sha256:72bbacf0cc5fa7cb85ab1ef99cd5f202732ee74cf6d0c5976002bae193bfdd8e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_check_fails_a_support_module_that_writes_directly"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b92f7935419bd59d0800b55710c876e9c4cbd114",
+            "content": "sha256:5e3b4c35315950e0037d72419acca75d64666bdf9d6d595ab8423380b8f0503a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_check_fails_aliased_and_literal_bypasses"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

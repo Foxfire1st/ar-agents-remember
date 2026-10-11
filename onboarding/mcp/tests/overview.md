@@ -14,6 +14,15 @@ environment, and neither that case nor catalog membership proves live sync, clos
 
 - The four-case module protects shipped instruction wording and ignored-environment accounting, with no lifecycle execution. [1708]
 
+### Shared support settings isolation — MIK-R135
+
+Support settings writes use [`_user_settings_guard.py`](_user_settings_guard.py.md) before settings-parent creation or file mutation. The world, structural-seat and Paseo-runtime helpers refuse the account's real settings path and name a temporary `XDG_CONFIG_HOME` remedy; the Paseo removal branch is guarded too. A moved pytest configuration remains supported. The world can create its own disposable fixture repositories before reaching that refusal: the guarantee protects settings, not every temporary-world effect. If the account database cannot supply a home, comparison uses the guard's first observed/import-time home, not a claimed process-start observation.
+
+[`test_user_settings_guard.py`](test_user_settings_guard.py.md) checks the refusal on made-up accounts, including a real child that identifies the reviewed world source. Its bounded recursive static scan includes future nested non-test support modules, rejects raw/aliased resolver calls and supported literal-path rebuilds, and never executes its deliberately unsafe controls. This is the approved `MIK-R135@v1` rule4 support-settings scanner, not arbitrary Python dataflow analysis or another suite execution. The guard suite's `unit-regression` registration declares selection, not execution or independent acceptance.
+
+- The shared support guard refuses protected settings paths before returning a write path. [1709]
+- The world child proves its reviewed source and leaves the fake-account home empty on refusal; the scanner derives its support population recursively. [1710]
+
 ### Superseded inventory
 
 - Pre-repair card claim: Card says sweep pins four lifecycle raisers; current pin is empty and population retains lifecycle_finalize_task. This is superseded archival wording, not a current prescription.
