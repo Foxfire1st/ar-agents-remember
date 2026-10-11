@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "bac606a47fda22f676cda5fa3432702208d5eb10",
-        "content": "sha256:5297d69ae42667e5713b2a25056219f84da232e4f4c0180f2e9f51a49638a820",
+        "blob": "a2b54179f266360b3cafef9118c220617252d77e",
+        "content": "sha256:592befd857c787e394aa30ff2548fa89ffd5f61552da31072f59da7c9db2fac1",
         "locator": {
           "kind": "file"
         }
@@ -15,12 +15,12 @@
         "handoffEntry": "L71-CURRENT242-W-20",
         "leaf": "260928-MIK-L71"
       },
-      "rationale": "The retained shared test world provides the whole-result/delivered-answer classifier and its own memory_quality_check pin. It is separate from the self-contained merged sweep and is never imported or constructed by Curator; current source does not renew its earlier one-change narrative.",
+      "rationale": "The separate shared entry-point world supplies the whole-result/delivered-answer classifier and an explicit empty UNMARKED_NOT_OK pin after the L110 repair. It is distinct from the self-contained merged sweep; source declarations are not fresh execution observations.",
       "role": "support"
     },
     {
       "anchor": {
-        "blob": "bac606a47fda22f676cda5fa3432702208d5eb10",
+        "blob": "a2b54179f266360b3cafef9118c220617252d77e",
         "content": "sha256:712b2e176205abbeafbeedddced8f935df28d46cba3ff22638854e17719a45d5",
         "locator": {
           "kind": "symbol",
@@ -38,7 +38,7 @@
     },
     {
       "anchor": {
-        "blob": "bac606a47fda22f676cda5fa3432702208d5eb10",
+        "blob": "a2b54179f266360b3cafef9118c220617252d77e",
         "content": "sha256:c4bac9584ff57d79b197e1ae2162e83f182902c091e0956914a3b6bebd602048",
         "locator": {
           "kind": "symbol",
@@ -56,7 +56,7 @@
     },
     {
       "anchor": {
-        "blob": "bac606a47fda22f676cda5fa3432702208d5eb10",
+        "blob": "a2b54179f266360b3cafef9118c220617252d77e",
         "content": "sha256:8a6ac22a1cce7a44906d7512d6a7f215f67bedccbfc8f464e5b9f5f0bafa2d09",
         "locator": {
           "kind": "symbol",
@@ -74,8 +74,8 @@
     },
     {
       "anchor": {
-        "blob": "bac606a47fda22f676cda5fa3432702208d5eb10",
-        "content": "sha256:6d313994f88c45a47aa5ed5b3b9ccc270d56d86c9e870b1afbe08f97fc9a57e5",
+        "blob": "a2b54179f266360b3cafef9118c220617252d77e",
+        "content": "sha256:94827d7d82d1ba1109c0607fbd852ede5b7e830d2ac9490d0c7e76402c68cd0c",
         "locator": {
           "kind": "symbol",
           "name": "UNMARKED_NOT_OK"
@@ -87,12 +87,12 @@
         "handoffEntry": "L130-pins-taken",
         "leaf": "260928-MIK-L130"
       },
-      "rationale": "Holds exactly the observed bare refusal with owner L110 and the repair-removes-entry rule, failing the run in both directions on any deviation.",
+      "rationale": "The shared-world UNMARKED_NOT_OK declaration is explicitly empty after L110 repairs its former memory_quality_check pin; the same-change removal/equality obligation remains with the sweep assertions.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "bac606a47fda22f676cda5fa3432702208d5eb10",
+        "blob": "a2b54179f266360b3cafef9118c220617252d77e",
         "content": "sha256:712b2e176205abbeafbeedddced8f935df28d46cba3ff22638854e17719a45d5",
         "locator": {
           "kind": "symbol",
@@ -110,7 +110,7 @@
     },
     {
       "anchor": {
-        "blob": "bac606a47fda22f676cda5fa3432702208d5eb10",
+        "blob": "a2b54179f266360b3cafef9118c220617252d77e",
         "content": "sha256:e70868a155b3a04ce2b756d208c0f43673e28f1561ac0d0b6effd9883252c8c7",
         "locator": {
           "end": 28,
@@ -129,8 +129,8 @@
     },
     {
       "anchor": {
-        "blob": "bac606a47fda22f676cda5fa3432702208d5eb10",
-        "content": "sha256:e7c7b2d84258ceb6a33176f24b2174a26eab5a126411c2fb03fa0ac8f34d66a1",
+        "blob": "a2b54179f266360b3cafef9118c220617252d77e",
+        "content": "sha256:8ebad6cf5a03e40d8ab1c44a97616f90c57847a56f70c0e84d2142e2b0e888b8",
         "locator": {
           "kind": "symbol",
           "name": "_unknown_in_truncated"
@@ -147,7 +147,7 @@
     },
     {
       "anchor": {
-        "blob": "bac606a47fda22f676cda5fa3432702208d5eb10",
+        "blob": "a2b54179f266360b3cafef9118c220617252d77e",
         "content": "sha256:37578a1f10cb0bfb736dc16bace943a4034c864a0d510646723f7ba78e95ada6",
         "locator": {
           "kind": "symbol",
@@ -165,7 +165,7 @@
     },
     {
       "anchor": {
-        "blob": "bac606a47fda22f676cda5fa3432702208d5eb10",
+        "blob": "a2b54179f266360b3cafef9118c220617252d77e",
         "content": "sha256:37578a1f10cb0bfb736dc16bace943a4034c864a0d510646723f7ba78e95ada6",
         "locator": {
           "kind": "symbol",
@@ -183,7 +183,7 @@
     },
     {
       "anchor": {
-        "blob": "bac606a47fda22f676cda5fa3432702208d5eb10",
+        "blob": "a2b54179f266360b3cafef9118c220617252d77e",
         "content": "sha256:c3b7bd4ff2f1d28ae6844906bc176b3ce13a3fed08e6bcf4e89cd09c66741aee",
         "locator": {
           "kind": "symbol",
@@ -201,7 +201,7 @@
     },
     {
       "anchor": {
-        "blob": "bac606a47fda22f676cda5fa3432702208d5eb10",
+        "blob": "a2b54179f266360b3cafef9118c220617252d77e",
         "content": "sha256:712b2e176205abbeafbeedddced8f935df28d46cba3ff22638854e17719a45d5",
         "locator": {
           "kind": "symbol",
@@ -219,7 +219,7 @@
     },
     {
       "anchor": {
-        "blob": "bac606a47fda22f676cda5fa3432702208d5eb10",
+        "blob": "a2b54179f266360b3cafef9118c220617252d77e",
         "content": "sha256:712b2e176205abbeafbeedddced8f935df28d46cba3ff22638854e17719a45d5",
         "locator": {
           "kind": "symbol",
@@ -237,7 +237,7 @@
     },
     {
       "anchor": {
-        "blob": "bac606a47fda22f676cda5fa3432702208d5eb10",
+        "blob": "a2b54179f266360b3cafef9118c220617252d77e",
         "content": "sha256:c3b7bd4ff2f1d28ae6844906bc176b3ce13a3fed08e6bcf4e89cd09c66741aee",
         "locator": {
           "kind": "symbol",
@@ -255,7 +255,7 @@
     },
     {
       "anchor": {
-        "blob": "bac606a47fda22f676cda5fa3432702208d5eb10",
+        "blob": "a2b54179f266360b3cafef9118c220617252d77e",
         "content": "sha256:8a6ac22a1cce7a44906d7512d6a7f215f67bedccbfc8f464e5b9f5f0bafa2d09",
         "locator": {
           "kind": "symbol",
@@ -273,7 +273,7 @@
     },
     {
       "anchor": {
-        "blob": "bac606a47fda22f676cda5fa3432702208d5eb10",
+        "blob": "a2b54179f266360b3cafef9118c220617252d77e",
         "content": "sha256:60a3eaef7f215666bc91a3354e002d4ba968e31026d48649bf154b74efb62603",
         "locator": {
           "kind": "symbol",
@@ -291,7 +291,7 @@
     },
     {
       "anchor": {
-        "blob": "bac606a47fda22f676cda5fa3432702208d5eb10",
+        "blob": "a2b54179f266360b3cafef9118c220617252d77e",
         "content": "sha256:5051eee79bbddebacb81642153d672e5fa69042a984ac06ee8b17ca76b0582d8",
         "locator": {
           "kind": "symbol",
@@ -309,8 +309,8 @@
     },
     {
       "anchor": {
-        "blob": "bac606a47fda22f676cda5fa3432702208d5eb10",
-        "content": "sha256:6d313994f88c45a47aa5ed5b3b9ccc270d56d86c9e870b1afbe08f97fc9a57e5",
+        "blob": "a2b54179f266360b3cafef9118c220617252d77e",
+        "content": "sha256:94827d7d82d1ba1109c0607fbd852ede5b7e830d2ac9490d0c7e76402c68cd0c",
         "locator": {
           "kind": "symbol",
           "name": "UNMARKED_NOT_OK"
@@ -322,12 +322,12 @@
         "handoffEntry": "MIK-R130@v1 rules 4+5 + failure/recovery",
         "leaf": "260928-MIK-L130"
       },
-      "rationale": "The shared-world UNMARKED_NOT_OK declaration retains the named memory_quality_check historical pin, distinct from the empty self-contained merged-sweep pin.",
+      "rationale": "The shared-world UNMARKED_NOT_OK declaration is now empty, as is the separate self-contained merged-sweep unmarked pin; the earlier named memory_quality_check pin remains historical origin evidence only.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "bac606a47fda22f676cda5fa3432702208d5eb10",
+        "blob": "a2b54179f266360b3cafef9118c220617252d77e",
         "content": "sha256:616725463860034f01645ef22c9b069790e16605dd50f886654cbdcbdb5299b8",
         "locator": {
           "kind": "symbol",
@@ -345,7 +345,7 @@
     },
     {
       "anchor": {
-        "blob": "bac606a47fda22f676cda5fa3432702208d5eb10",
+        "blob": "a2b54179f266360b3cafef9118c220617252d77e",
         "content": "sha256:616725463860034f01645ef22c9b069790e16605dd50f886654cbdcbdb5299b8",
         "locator": {
           "kind": "symbol",

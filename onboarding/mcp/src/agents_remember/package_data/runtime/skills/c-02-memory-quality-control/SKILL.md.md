@@ -5,6 +5,8 @@
 The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
 
 - Current skill routes drift through context_packet(include_drift) or memory_quality_check.
+- Coherence preparation supplies counts/digest/file locations; the Curator reads and verifies the
+  complete candidate file before authoring judgments and publishes its exact expectation identities.
 
 ### Superseded inventory
 

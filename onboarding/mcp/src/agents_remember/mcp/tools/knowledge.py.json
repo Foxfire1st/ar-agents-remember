@@ -3,7 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "91582d2f9125dba48448aa71b5cc9ec39517dc98",
+        "blob": "03649cb18d8df9324b340fd55aa8050f73269520",
+        "content": "sha256:1ec5dfa3f9ea1ccc6fcd09c04eec66e644a47a42fcb3e5b58ad2019ec3c7b7e6",
+        "locator": {
+          "kind": "symbol",
+          "name": "_integrity_answer"
+        }
+      },
+      "id": "RLZ-C0EV68",
+      "invariant": "INV-1V9ARB",
+      "origin": {
+        "handoffEntry": "L110-C-status",
+        "leaf": "260928-MIK-L110"
+      },
+      "rationale": "Keeps integrity counts and first violations with complete report custody.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "03649cb18d8df9324b340fd55aa8050f73269520",
         "content": "sha256:c822f8bb3e797ed97516cc27dae6fc0bc0458221a5922f599c5e422e0d11b474",
         "locator": {
           "kind": "symbol",
@@ -21,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "91582d2f9125dba48448aa71b5cc9ec39517dc98",
+        "blob": "03649cb18d8df9324b340fd55aa8050f73269520",
         "content": "sha256:189617cc157fd8b77817e82037d7999046c9984854df77ff9cf2ca58b7ec7f6e",
         "locator": {
           "kind": "symbol",
@@ -39,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "91582d2f9125dba48448aa71b5cc9ec39517dc98",
+        "blob": "03649cb18d8df9324b340fd55aa8050f73269520",
         "content": "sha256:c2d9b84b9b9f3c6ad4ff77b7f5b14ddba22cc17b6415d216141f3e4ce652b709",
         "locator": {
           "kind": "symbol",
@@ -57,7 +75,7 @@
     },
     {
       "anchor": {
-        "blob": "91582d2f9125dba48448aa71b5cc9ec39517dc98",
+        "blob": "03649cb18d8df9324b340fd55aa8050f73269520",
         "content": "sha256:c822f8bb3e797ed97516cc27dae6fc0bc0458221a5922f599c5e422e0d11b474",
         "locator": {
           "kind": "symbol",

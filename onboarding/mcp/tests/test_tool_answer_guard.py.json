@@ -1,0 +1,55 @@
+{
+  "path": "mcp/tests/test_tool_answer_guard.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Shaping and failure preservation are asserted at the choke.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b01fb8d56b3291f61c6851cac325c155c04f02a7",
+            "content": "sha256:0ce05f8cf968c689fb959e6b063cc235a90811338f1f68b1563eddc008562772",
+            "locator": {
+              "kind": "symbol",
+              "name": "ToolAnswerGuardTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Final delivered measurements include bookkeeping.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b01fb8d56b3291f61c6851cac325c155c04f02a7",
+            "content": "sha256:40d1266bae3a91f22931a1a5bf1a33cc3fa138793a107d1a4133f76ebcc1f1ce",
+            "locator": {
+              "kind": "symbol",
+              "name": "ToolAnswerFinalMeasureTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Partial and concurrent writes preserve record boundaries and counted losses.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b01fb8d56b3291f61c6851cac325c155c04f02a7",
+            "content": "sha256:b0d140c68a0a9e968e3524da869d1760741535a90fd3ae144d6f3f1a8386bf1a",
+            "locator": {
+              "kind": "symbol",
+              "name": "ToolPartialWriteTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

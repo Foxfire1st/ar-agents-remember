@@ -1,0 +1,58 @@
+{
+  "path": "mcp/tests/test_memory_quality_coherence_takeover.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "364d796cb0f78370d3505ff5eb13835028d2e2c3",
+        "content": "sha256:cffbd5ac4ed3c5f4587e873152f7f4a891cf08920bb486678e60416dd1854d3d",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_parentless_task_document_answers_with_the_code_and_task_doc"
+        }
+      },
+      "facet": "The missing-parent quality takeover retains its refusal code and task_doc recovery.",
+      "id": "PRF-0NVTQQ",
+      "invariant": "INV-1V9ARB",
+      "origin": {
+        "handoffEntry": "L110-C-status",
+        "leaf": "260928-MIK-L110"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Missing-parent failure keeps code and task_doc action.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "364d796cb0f78370d3505ff5eb13835028d2e2c3",
+            "content": "sha256:cffbd5ac4ed3c5f4587e873152f7f4a891cf08920bb486678e60416dd1854d3d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_parentless_task_document_answers_with_the_code_and_task_doc"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "A parentless fixture retains generic refusal identity/status and a nonempty recovery action; no stale-authority or exact-publish discriminator is asserted.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "364d796cb0f78370d3505ff5eb13835028d2e2c3",
+            "content": "sha256:9d6611335fef935b856dc781b114884f93a428e894b900934e767abed4653bd5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_stale_authority_answers_with_its_status_and_publish"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

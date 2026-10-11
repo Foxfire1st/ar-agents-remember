@@ -24,7 +24,11 @@ cit:([`CuratorQualityAttestation`, `CuratorCoherenceRecord`], mcp/src/agents_rem
 `CuratorQualityAttestation` accepts only the exact `ar-curator-memory-quality/v1` schema and checks
 candidate count and uniqueness. `CuratorCoherenceRecord` keeps semantic requirement revision,
 delivery attempt, and content identities in separate fields and requires the recorded judgment set
-to exactly equal the source-candidate set. `CuratorCoherenceRequest` makes publication a strict
+to exactly equal the source-candidate set. The optional `judgments_file` is a transport for the two content collections, not a tenth required
+publication identity. Read actions refuse it; publication rejects either explicit inline list
+alongside it, including an empty one. Candidate kind counts/set digest/locations and published
+judgment/assessment counts describe status answers; the exact authority and original collections
+remain file-owned. `CuratorCoherenceRequest` makes publication a strict
 compare-and-swap shape, forbids publication-only fields on status, prepare, and validate, and — since
 KS-R24@v1 — refuses by **naming** the member it is refusing on rather than by naming a category: a
 `publish` refusal lists every missing publication member by its request field name, and a read action's

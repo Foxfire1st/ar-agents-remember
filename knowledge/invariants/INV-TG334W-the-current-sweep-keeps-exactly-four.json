@@ -3,7 +3,7 @@
     "criteria": [
       "spans_locations"
     ],
-    "justification": "Spans the lifecycle sweep: exactly four error-arm pins plus one unmarked memory_quality_check pin with exact equality, alongside the original T34 repaired-tool controls, is the pinned inventory the sweep is audited against."
+    "justification": "The self-contained merged sweep declares four named lifecycle envelope-loss pins, empty ambient-state and unmarked-not-ok pins, and memory_baseline_adopt as its one-tool T34 positive population. The separate shared world also has an explicit empty unmarked pin; these declarations are not a renewed observed failure census."
   },
   "applicability": "The serving-build evidence pins carried by the current sweep.",
   "conditions": [
@@ -27,9 +27,9 @@
     "leaf": "260928-MIK-L71",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-invariant/v1",
-  "statement": "The self-contained merged sweep retains four named worktree envelope-loss pins, an empty ambient-state raiser pin and an empty unmarked-not-ok pin; its current T34 positive population is memory_baseline_adopt, not the eight retired search tools. The separate shared entry-point world retains its historical memory_quality_check pin. Exact-equality and same-change repair ownership controls remain; declarations are not a new observed failure census.",
+  "statement": "The self-contained merged sweep retains four named worktree envelope-loss pins, an empty ambient-state raiser pin and an empty unmarked-not-ok pin; its current T34 positive population is memory_baseline_adopt, not the eight retired search tools. The separate shared entry-point world now also has an empty unmarked-not-ok pin after the L110 quality-answer repair. Exact-equality and same-change repair ownership controls remain; declarations are not a new observed failure census.",
   "status": "proposed",
   "supersedes": []
 }

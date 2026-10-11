@@ -13,6 +13,11 @@ memory initialization, baseline, and carryover MCP tools.
 
 L23 adds the flexible `CitationFixResponse` envelope, pinning the public operation discriminator while retaining guarded tool detail.
 
+Memory-quality status/count/blocking/census-location fields and citation selection/repair counts
+are declared explicitly rather than tolerated only as flexible extras. `servingBuild` remains
+whole-result measuring provenance where the controller owns it, not citation status material.
+Registered drift/migration adapters remain retired even where historical model descriptions survive.
+
 cit:([`DriftCheckResponse`], mcp/src/agents_remember/models/memory.py:15-29) is strict because drift summaries have a stable
 status, count, report, and actionable-sample shape. Its cit:(["status: DriftStatus"], mcp/src/agents_remember/models/memory.py:20-20) is
 `DriftStatus`, **imported** from

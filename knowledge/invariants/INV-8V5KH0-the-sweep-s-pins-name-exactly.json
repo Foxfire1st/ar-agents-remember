@@ -3,14 +3,14 @@
     "criteria": [
       "guarded_by_test"
     ],
-    "justification": "The raiser-pin test and the unmarked-aspect subTest check the pins equal to the observed arms in both directions and ran green on the final candidate."
+    "justification": "The raiser-pin and unmarked-aspect assertion units compare their actual observed arms with the declared pins in both directions. Current empty pins and same-change ownership remain explicit; earlier green execution is historical custody, not a fresh run."
   },
-  "applicability": "The sweep's pinned surface while L111 owns the four raisers and L110 owns the bare answer.",
+  "applicability": "The sweep and shared entry-point world after the L110 quality-answer repair.",
   "conditions": [
-    "Each pin entry names its owning leaf and rule."
+    "Each nonempty pin names its owning leaf and rule; empty pins remain explicit."
   ],
   "exclusions": [
-    "The T34 nine, which remain repaired and are guarded separately.",
+    "The original T34 nine are historical provenance; the current retained positive T34 population is memory_baseline_adopt, guarded separately.",
     "Any new raiser or vanished pin, which fails rather than being absorbed."
   ],
   "id": "INV-8V5KH0",
@@ -29,9 +29,9 @@
     "leaf": "260928-MIK-L130",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "The sweep's pins name exactly the currently unrepaired tool surfaces: the four lifecycle raisers owned by L111 and the bare `memory_quality_check` answer owned by L110, checked equal in both directions; a repair removes its entry in the same change, and a tool that still fails after the move returns to the architect with its tool, key and owner while no producer is repaired and no failure is pinned.",
+  "statement": "The sweep pins equal exactly its unrepaired surfaces in both directions; the remaining lifecycle raisers retain their owner, the repaired bare memory_quality_check pin is empty, and each future repair removes its pin in the same change rather than absorbing a new failure.",
   "status": "proposed",
   "supersedes": []
 }

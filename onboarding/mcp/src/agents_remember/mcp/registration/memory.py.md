@@ -5,7 +5,10 @@
 The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
 
 - drift_check is no longer a registered memory tool.
-- citation_migrate registration was deleted while citation_fix remains.
+- citation_migrate registration was deleted while citation_fix remains. Citation fix advertises
+  finite `documents` selection beside singleton `document`; scope validation owns exclusive,
+  empty and shared-bound refusals. Quality, citation and route descriptions advertise status and
+  corpus locations, not a new authority to change their scopes or checks.
 - Typed MQC sync/start/poll, baseline/carryover and citation exclude boundaries survive.
 - `citation_fix` exposes optional `contract_path` and states its two admissions: the ordinary leaf enclosure, or the configured converted root before its attributed baseline with no linked worktree. Route-index apply uses the same measured exception; other unscoped index calls remain read-only previews. Transport declarations do not bypass the application guard.
 

@@ -6,6 +6,12 @@ The application layer composes the exact launched actor/role/canonical task and 
 
 L74 read-boundary qualifications remain with their actual reader owners: a read that cannot preserve its named cache/capture/report/ref permissions refuses without a fallback write location. Converted read identity/index composition and current retained operations are distinct from archival database/seam history below. All original route text, links, references and dated closure statements are preserved rather than promoted into a fresh runtime claim.
 
+Memory response completion separates the full validated result from an optional bounded status
+answer while retaining the whole-result log and delivered-count observer boundary. Quality answer
+projection belongs to `memory_quality/answer.py`; execution/readiness stay with its controller.
+Citation scope admits a finite list only for fixing, preserving singleton behavior and the original
+leaf writer guard. These transport changes confer no semantic or Git acceptance.
+
 ## Historical prior application route — preserved, not the current operative account
 
 <details>

@@ -7,6 +7,11 @@ The current source facts below replace the former operative inventory. The separ
 - Public roster/response registry keep provider and the other retired operations removed while adding role_start_set and native retire_child. Role launch and message response vocabularies admit product-held state, per-seat results, waiting counts and explicit replacement/withdrawal operands without caller-controlled permission policy.
 - Current answer vocabulary adds landed L112 bounds and clears L112 interim ownership.
 
+L110 memory/coherence rows also have final shaped production bounds rather than interim
+allowances. Coherence models retain their nine required publication identities and gain optional
+file transport for judgments/assessments, with status counts and candidate-set locations.
+Transport vocabulary changes no semantic judgment, candidate identity or acceptance authority.
+
 ### Superseded inventory
 
 - Pre-repair card claim: Current compact-context guidance points troubleshooting at provider_diagnostics. This is superseded archival wording, not a current prescription.

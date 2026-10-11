@@ -12,7 +12,9 @@ The Curator owns one selected leaf’s intent/onboarding/knowledge coherence pas
 
 Read the rendered task-document files named in the handover, read with the harness's own file tools before acting; change documents through `task_doc` only, because edits to copies are never read back and are lost on the next publication. Use actual bound schemas and immutable baseline/candidate knowledge. Missing field/capability is a named blocker. Outputs stay inside the selected memory root and another installation’s writer cannot substitute for the admitted source-bound command.
 
-Carry producer handoff fields unchanged; author semantic scope, each target’s rationale and the record action. The existing INV-0FBA8M52 target-shape/rationale obligation remains: target rationale is authored per construct, role is optional and the writer does not generate the explanation.
+Carry producer handoff fields unchanged; author semantic scope, each target’s rationale and the record action.
+Citation authoring previews the finite card list in one call and repairs it in one call through
+`documents`; the generated instruction changes no peer handover, one-writer or full-MQC ownership. The existing INV-0FBA8M52 target-shape/rationale obligation remains: target rationale is authored per construct, role is optional and the writer does not generate the explanation.
 
 Converted MIK memory uses the admitted entries/records/history file writer without dataset publication flags. Lift only governing decisions with real alternatives, examine exact family guarantees and memberships, retain unchanged sibling revisions explicitly when justified, declare external sources and read the result planes back. A large worklist is one full-intake list of distinct outstanding memory actions, counted once; the seat organises that work with whatever its harness offers, at any size, while every durable write, semantic judgment, the full memory-quality operation and the handoff stay with the seat.
 

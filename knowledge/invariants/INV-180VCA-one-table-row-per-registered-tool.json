@@ -8,7 +8,7 @@
   },
   "applicability": "Every registered tool and every task_doc operation.",
   "conditions": [
-    "Each row states answerable fields with caller uses, ordinary/largest cases, its bound and interim ownership.",
+    "Each row states answerable fields with caller uses, ordinary/largest static cases or named production derivation paths, its bound and interim ownership.",
     "Bounds are ceilings set from the largest case; interim rows carry bound 4000 with no fields."
   ],
   "exclusions": [
@@ -27,7 +27,7 @@
     "leaf": "260928-MIK-L108",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "One table row per registered tool and per task_doc operation holds the fields an answer may hold with each field's caller use, measured ordinary/largest case payloads and exact interim ownership; missing authored rows fail and shaped rows validate their cases.",
   "status": "proposed",

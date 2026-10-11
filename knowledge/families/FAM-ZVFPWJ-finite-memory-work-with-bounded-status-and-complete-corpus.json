@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "Finite card selection, preserved complete diagnostic material and exact-set file publication together guarantee an end-to-end curation loop that no one member promises alone."
+  },
+  "guarantee": "A Curator can perform a finite multi-card repair, recover complete diagnostic and candidate material from its named corpus, and publish exact judgments without transferring that corpus into the conversational answer; bounded status and file transport never narrow operation scope or weaken publication authority.",
+  "id": "FAM-ZVFPWJ",
+  "members": [
+    "INV-VH0QZ1",
+    "INV-1V9ARB",
+    "INV-701KQ9"
+  ],
+  "origin": {
+    "handoff": {
+      "path": "knowledge-wave.json"
+    },
+    "handoffEntry": "L110-family-status-corpus",
+    "leaf": "260928-MIK-L110",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "routes": [
+    "mcp/src/agents_remember/application",
+    "mcp/src/agents_remember/cli",
+    "mcp/src/agents_remember/mcp/tools",
+    "mcp/src/agents_remember/worktrees/integration/closeout"
+  ],
+  "schema": "ar-family/v1",
+  "status": "proposed",
+  "title": "Finite memory work with bounded status and complete corpus"
+}

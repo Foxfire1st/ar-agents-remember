@@ -18,7 +18,12 @@ Accepted edits are published as per-document transactions. A projection decline 
 
 `Walk` (class, lines 201-220) is the per-run bundle: the trees, sources, documents, result, plus `histories: provenance.Histories` and an `origins` cache. Its `__post_init__` builds the histories object; `Walk.continuity(document)` memoizes `repair.continuity_for(document, trees, histories)` per document.
 
-`fix_onboarding_root` validates scope and an optional expected snapshot before opening one source-index lease. `candidates` preserves malformed evidence by excluding the complete malformed claim. `_decide` selects repair or scoped normalization, asks `_projection` to bind repaired claims, and only then stores an accepted `Edit` in `Staging.documents` with original bytes and snapshot ID. Each repairing claim is planned with `walk.continuity(one.document)`; the scoped normalization path deliberately passes `None`, because `_scoped_citation`'s empty `Sightings` can never relocate and therefore reaches no cross-file decision that needs continuity authority — passing `None` there is a proof that no relocation is possible, not a gap.
+`fix_onboarding_root` validates scope and an optional expected snapshot before opening one source-index lease.
+Its `only` selector admits a singleton string or finite sequence for the same frozen generation.
+Selected names resolve independently; a missing member is recorded in `refusedDocuments` and
+does not stop the others. Empty sequences refuse. Postcheck totals cover only the admitted selected
+cards, while a detected singleton disappearance remains unavailable rather than a favorable empty
+scan. Each document retains its own publication transaction and unselected bytes stay untouched. `candidates` preserves malformed evidence by excluding the complete malformed claim. `_decide` selects repair or scoped normalization, asks `_projection` to bind repaired claims, and only then stores an accepted `Edit` in `Staging.documents` with original bytes and snapshot ID. Each repairing claim is planned with `walk.continuity(one.document)`; the scoped normalization path deliberately passes `None`, because `_scoped_citation`'s empty `Sightings` can never relocate and therefore reaches no cross-file decision that needs continuity authority — passing `None` there is a proof that no relocation is possible, not a gap.
 
 `_publish` calls `DocumentTransaction.preview` or `publish`. A detected conflict refuses every accepted edit in that document while other document batches may succeed. Repairs and projections enter the result only after a validated preview or completed publication. `documentsWritten` counts actual publications, so it is zero for dry runs; preview projection digests describe prospective bytes.
 

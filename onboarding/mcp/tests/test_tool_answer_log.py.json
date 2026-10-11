@@ -1,0 +1,55 @@
+{
+  "path": "mcp/tests/test_tool_answer_log.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Log fields, redaction and write-failure behavior are checked.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d579599624877743880ab9658fd31f3cdb2eaedf",
+            "content": "sha256:cd3bf0e406cd6d794df8978a8cb46d496462097ee865ee797f041776e440bbd3",
+            "locator": {
+              "kind": "symbol",
+              "name": "ToolAnswerLogTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Raised and refused calls keep real entry logging.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d579599624877743880ab9658fd31f3cdb2eaedf",
+            "content": "sha256:55a294ea804b53d35dd3586e907f035e6fc38c403460d8e6947826d594beef2e",
+            "locator": {
+              "kind": "symbol",
+              "name": "ToolRaisedCallLoggingTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Hermetic enclosure log placement and cleanup are asserted.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d579599624877743880ab9658fd31f3cdb2eaedf",
+            "content": "sha256:1c298fe5368552152f43d345df3d2858aa259f1cbc4fa12ee51bad557ea5591e",
+            "locator": {
+              "kind": "symbol",
+              "name": "ToolAnswerEnclosureTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

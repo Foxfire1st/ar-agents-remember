@@ -8,6 +8,12 @@ The current source facts below replace the former operative inventory. The separ
 - structural_agent.py adapts structural dispatch and the restored native receipt-tracked retirement entry; removed parent/child messaging and rename remain absent. The native retire adapter forwards to original-starter checks, not the removed hosted-seat path. Internal gate/block helpers remain separate.
 - role_agents.py also forwards the Manager’s leaf-set operation through the same payload finalization owner; adding the operation does not broaden caller permissions or move task acceptance into the adapter.
 
+Memory and knowledge-integrity adapters keep a full application result beside the caller-sized
+status projection. The common completion adapter guards the delivered mapping and logs the full
+material; local status projection does not change operation scope or manufacture a report for a
+read. Citation fix advertises finite multi-card selection; retained internal drift/migration
+projection helpers do not restore their removed public adapters.
+
 ### Superseded inventory
 
 - Pre-repair card claim: Current Where Registration Lives Now still lists benchmark/provider/message_parent/message_child builders. This is superseded archival wording, not a current prescription.

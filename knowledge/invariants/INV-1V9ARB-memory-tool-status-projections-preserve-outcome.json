@@ -1,0 +1,38 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "Separate application/transport owners enforce the guarantee and named executable assertion units guard its boundaries."
+  },
+  "applicability": "Ordinary citation fix, memory quality, route refresh and knowledge integrity answers at the common delivery choke.",
+  "conditions": [
+    "The complete result remains distinct from the optional answer projection.",
+    "Failure recovery and truncation totals describe the complete selected populations.",
+    "Existing report writers retain their own names/content; absent reports are not invented."
+  ],
+  "exclusions": [
+    "The configured-contract citation refusal retains its established full refusal contract.",
+    "The retired drift/migration MCP adapters are not restored.",
+    "Successful writes to an unwritable or over-budget log are not promised."
+  ],
+  "id": "INV-1V9ARB",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "MIK-R110@v1 rules and Expected Evidence; original Worker and Reviewer lists plus qualified Attempt-7 verdict preserved in role report; source inspection is not new execution or MEMORY acceptance.",
+        "Same-origin complete19-entry re-presentation for Reviewer sealed MEMORY R1 F03/F04/F05/F07; supersedes only the stronger current resource/facet claims. No fresh test execution or new CODE/MEMORY acceptance."
+      ],
+      "path": "knowledge-wave.json"
+    },
+    "handoffEntry": "L110-C-status",
+    "leaf": "260928-MIK-L110",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Memory-tool status projections preserve outcome, whole-population counts, bounded actionable entries and available corpus locations while keeping the full result for logging; a failed quality takeover retains its owner code and recovery action.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -1,0 +1,49 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "The documented former singleton/material transport was weighed against finite batching/status custody, and the selected boundary governs later tool work."
+  },
+  "alternatives": [
+    {
+      "option": "Admit a finite documents list with singleton-equivalent behavior and shared maximum.",
+      "reason": "Keeps the caller action and complete evidence without avoidable host cuts or scope expansion.",
+      "status": "chosen"
+    },
+    {
+      "option": "Continue one tool round trip per selected card or broaden the operation to the entire tree.",
+      "reason": "The actual singleton/corpus problems made this inadequate for finite curation waves.",
+      "reconsider_when": "A future developer ruling changes conversational transport costs or removes complete external corpus custody.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Future citation authoring retains finite scope, pre-read bound validation and independent member refusals."
+  ],
+  "context": "The former singleton-or-whole-tree selector forced many round trips for a finite repair wave; D125 called the missing list a massive oversight.",
+  "decider": "Developer D125; approved MIK-R110@v1",
+  "id": "DEC-9H93TD",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "INV-VH0QZ1"
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "DEVELOPER-DIRECTION.md D125 and MIK-R110@v1 Problem, Required Behavior and Preservation Boundaries."
+      ],
+      "path": "knowledge-wave.json"
+    },
+    "handoffEntry": "L110-decision-batch-origin",
+    "leaf": "260928-MIK-L110",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

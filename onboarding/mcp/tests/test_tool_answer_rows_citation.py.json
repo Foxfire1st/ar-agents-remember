@@ -1,0 +1,23 @@
+{
+  "path": "mcp/tests/test_tool_answer_rows_citation.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Real citation results supply measured row cases and pathological overflow control.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "02b1f8a6f6b2df533fa520229f3bc64dfe0ee294",
+            "content": "sha256:66918dd753f37bc15deda3bdcc782635649059a8e2586e67fe0733f9c2e649d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "CitationProductionTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

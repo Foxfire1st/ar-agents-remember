@@ -13,27 +13,38 @@ Adapt retained memory quality, citations, route indexes, initialization, baselin
 Quality sync/start/poll wrappers forward their discriminated typed requests to the matching
 controller method. Drift-check and citation-migrate adapters are absent. Citation fix alone
 catches exactly ConfiguredContractAuthorityError and returns configured-contract-authority-invalid
-with developer-decision guidance; unrelated exceptions propagate. Converted citation answers
-bound each named list and expose full count/truncation fields, including authoring lists;
-legacy answers pass through unchanged. A bounded answer is not a reduced operation scope.
+with developer-decision guidance; unrelated exceptions propagate. Ordinary citation-fix results
+have a separate status projection: outcome, dry-run selection count, rewritten/stale/unreadable/refused
+totals and, on failure, bounded document/place/reason work orders. Complete authoring and stale lists
+remain in the whole-result log. The configured-authority refusal deliberately retains its existing
+full refusal rather than using the ordinary success projection. A bounded answer is not a reduced operation scope.
 The source's suggestion to run memory-citations for full lists is legacy CLI wording, not
 permission to evade a checkout execution guard: this leaf's admitted fixer is the scoped
 agents-remember-task citation_fix tool, preview before apply. Full logs can be read as evidence.
 `memory_carryover_plan` is a read: its adapter compacts the result with `report_path=None`,
-files no per-call report and exposes no `reportPath`. Capped path summaries say
-`no report filed`; omitted candidate detail is not promised in a nonexistent report.
+files no per-call report and exposes no `reportPath`. Its path population is not shortened by a
+second per-tool cap; the common delivery choke owns list bounds. Omitted candidate detail is not
+promised in a nonexistent report.
 Only the mutating `memory_carryover_apply` files the full result before compaction and
-returns that report's path with source-path decisions and bounded path summaries.
+returns that report's path with source-path decisions. Quality sync/start/poll results similarly
+retain their full application outcome beside a status projection; route refresh returns counts and
+stale targets rather than the successful full index census. The retained legacy bounding helper is
+not the citation-fix public delivery path.
 Retained response logs are separate custody, not reports filed by the read-plan branch.
 Previews and actual operations retain their separate authority and dry-run semantics.
 
 The citation-fix adapter forwards optional `contract_path` unchanged to the application owner.
-That owner admits the ordinary leaf route or measured pre-baseline route; scalar `admission`
-survives converted-answer bounding. The exact configured-contract-authority catch stays narrow.
+That owner admits the ordinary leaf route or measured pre-baseline route. The application
+result and full-detail log retain scalar `admission`; the ordinary citation status whitelist
+does not currently project it, and completion does not merge omitted fields back into the answer. The exact configured-contract-authority catch stays narrow.
 
 - The retained citation-fix payload forwards the optional contract and translates only configured-contract authority mismatch. [9]
 
 ## Current evidence
+
+- Route refresh delivers counts and stale targets rather than successful index material. [10]
+
+- Citation fix delivers the ordinary status projection while preserving the configured-authority refusal. [11]
 
 - Current source excerpt `def memory_quality_check_payload(` identifies this section's adapter/control owner, not an executed success. [7]
 

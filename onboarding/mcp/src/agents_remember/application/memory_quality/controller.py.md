@@ -24,6 +24,12 @@ observes the same `run-not-found` result as an absent or evicted run.
 `detail_limit`, and the report-publication decision. A full leaf check composes missing-onboarding,
 route-index preview, drift rows, and commit-owned versus curator-owned findings into the one
 enclosure-local checklist. Sync and async paths therefore share one execution implementation.
+Public delivery additionally uses `application.memory_quality.answer`: status/counts, the complete
+blocking total and first actionable work orders, plus retained report locations. The whole result
+keeps complete computed finding populations for logging and internal/CLI consumption; delivery
+sampling does not pre-cut that material. Capacity, absent-run, run-failure and scope-refusal paths
+name code/error and scoped recovery. Coherence takeover retains its own code/action, including
+task_doc for a missing parent, without changing the underlying readiness or repair predicates.
 
 CCR-R08 (260831-CCR-L08) adds the final full catalog seam: after the curator checklist is
 attached, `_attach_final_full_catalog` (444-480) projects the deterministic complete Gate-5
@@ -262,6 +268,8 @@ The curator publication is one of MIK-R09's leaf routes. `_execute_memory_qualit
 - The census blockers, split out. [18]
 
 ## Evidence
+
+- Quality computation retains whole material beside its computed status. [24]
 
 ### Docs References
 

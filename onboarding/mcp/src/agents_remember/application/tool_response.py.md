@@ -16,13 +16,16 @@ Module-level surface:
 
 - `_agent_notifier_banner` (function, lines 127-138) — Return the stale-supervisor banner without blocking a tool response.
 - `_attach_lifecycle_tail` (function, lines 139-158)
-- `complete_tool_response` (function, lines 303-411) — Validate, enrich, count, and observe one application result.
+- `complete_tool_response` — Validate the whole result, shape or receive its status projection, log, measure final delivery, and observe one application result.
 
 The registered response model is selected and validated before final output. Lifecycle hints
 and notifier banners are attached as model fields through the finalizer’s enrichment callback,
-then token counting and serialization cover the complete emitted response. Explicit producer
-recovery guidance takes precedence; cross-task guidance is omitted. Observer tool completion
-receives that same finalized payload rather than an independently reconstructed response.
+then whole-result serialization retains that finalized payload. An optional caller-sized `answer`
+projection is distinct from the whole result; when absent, the choke strips the envelope and caps
+lists itself. Both paths retain the same generic guard, final delivered-token accounting and
+whole-result digest/detail custody. Explicit producer recovery guidance takes precedence;
+cross-task guidance is omitted. Observer tool completion receives the finalized whole payload
+with the delivered answer count, not an independently reconstructed result.
 
 ### 260928-MIK-L114 Event River Feed At The Completion Choke
 
@@ -54,6 +57,8 @@ Module-level definitions follow the package conventions; names prefixed with `_`
 None.
 
 ## Evidence
+
+- Whole-result validation/logging and projected-answer guarding remain distinct. [4]
 
 ### Repo-Internal References
 

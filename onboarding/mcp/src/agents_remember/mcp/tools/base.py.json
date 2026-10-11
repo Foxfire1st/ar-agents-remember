@@ -19,12 +19,28 @@
         }
       ]
     },
+    "10": {
+      "note": "The adapter forwards the whole payload and optional answer to one finalizer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bbd96445dae6e10e1c4052722fab1b614aafedfe",
+            "content": "sha256:c0e54f12b9211f7fb26dd24d118a8562de4972ce6d7beb7a43b920a7fc979f42",
+            "locator": {
+              "kind": "symbol",
+              "name": "_tool_payload"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "The adapter re-exports the roster through `__all__` instead of declaring its own copy.\n\nAnchor: \"__all__ = [\\\"PUBLIC_TOOLS\\\", \\\"RESERVED_TOOLS\\\", \\\"TRANSPORT\\\"]\"",
       "targets": [
         {
           "anchor": {
-            "blob": "cf09680d5bb09436a9d3afb73da9cbd60f1af5fc",
+            "blob": "bbd96445dae6e10e1c4052722fab1b614aafedfe",
             "content": "sha256:b0053d26dc1ddbfeaa7d8e65af358e70b68734e5f38ed18b4c107d6c7d9f9c89",
             "locator": {
               "end": 19,
@@ -41,7 +57,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3ab0d44d1db2a5d0385439309040570f61329bc5",
+            "blob": "5f9986250119015031432880e7c411d6bdf453ea",
             "content": "sha256:2ebc14b18d51623f784392c927ed0622576181781cf21bbf6c445a50ea2d9ae9",
             "locator": {
               "kind": "symbol",
@@ -53,12 +69,12 @@
         },
         {
           "anchor": {
-            "blob": "3ab0d44d1db2a5d0385439309040570f61329bc5",
+            "blob": "5f9986250119015031432880e7c411d6bdf453ea",
             "content": "sha256:8ff5679e907d7c783697590bddca168b76d2d8d0ee7926088784a9b9cd17f011",
             "locator": {
-              "end": 283,
+              "end": 214,
               "kind": "line_range",
-              "start": 222
+              "start": 153
             },
             "path": "mcp/tests/test_tools.py"
           },
@@ -117,7 +133,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cf09680d5bb09436a9d3afb73da9cbd60f1af5fc",
+            "blob": "bbd96445dae6e10e1c4052722fab1b614aafedfe",
             "content": "sha256:ce29b753f5c354c1ae64c4aeed6c4e8047661de316f0b1c0db7560214913beb8",
             "locator": {
               "end": 16,
@@ -134,7 +150,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "aac03e58e85406466eb074f35a87baaad2b51e30",
+            "blob": "87c035014ffba48579ba191d88383f81fbb48973",
             "content": "sha256:1ee50c5e88e29258dcff4296d3ab8ffcbf7cbf0ab83a774c7271bdc490930b3b",
             "locator": {
               "end": 22,
@@ -152,7 +168,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cf09680d5bb09436a9d3afb73da9cbd60f1af5fc",
+            "blob": "bbd96445dae6e10e1c4052722fab1b614aafedfe",
             "content": "sha256:e25b91ef7e59f5708d629d8411b56fd5ec7c03af9f7b3e1ce4a3d5713fbb8cff",
             "locator": {
               "end": 17,

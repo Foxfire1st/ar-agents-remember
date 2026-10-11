@@ -15,7 +15,7 @@ CLI adapter for citation checks and fixes. Fixing uses an ordinary leaf contract
 Module-level surface:
 
 - `add_arguments` (function, lines 53-117) — declares the citation modes plus `--repo`, `--contract`,
-  `--document`, `--expected-snapshot`, `--build-index`, `--fix`, `--migrate`, `--dry-run`, and since
+  repeatable `--document`, `--expected-snapshot`, `--build-index`, `--fix`, `--migrate`, `--dry-run`, and since
   260915-CAPS-L14 the repeatable **`--exclude GLOB`**.
 - `run` (function, lines 120-184) — validates the selected mode, builds the `CitationOperationScope`
   (carrying the caller's excludes), and dispatches to the matching citation tool.
@@ -29,7 +29,11 @@ Converted check/fix validates that syntax but returns before `Trees`, without fo
 globs to converted reference acquisition or repair. Converted fixing is scoped by `--document`
 and internally skips authoring-refused sidecars; neither is a promise that `--exclude` filters it.
 
-- **Converted memory (L37 fix round P1b).** The `--document` help now says that on converted memory `--fix`
+- **Finite selection.** One `--document` preserves the singleton operation; repeated occurrences
+  become the multi-card selection admitted only for `--fix`. Other operations refuse a list.
+  The CLI continues to print the whole result, not the MCP status projection. Each listed card is
+  handled as a singleton and a refused member does not prevent the other members.
+- **Converted memory (L37 fix round P1b).** The `--document` help says that on converted memory `--fix`
   takes `--document` alone (one card and its sidecar), and on unconverted memory it comes with
   `--expected-snapshot`. The behaviour is `application/memory_tools.citation_fix_tool`'s: on a converted tree
   the fixer authors the card's citation rows into sidecar references and re-records moved anchors. The

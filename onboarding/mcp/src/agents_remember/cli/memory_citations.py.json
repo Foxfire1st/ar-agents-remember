@@ -1,6 +1,25 @@
 {
   "path": "mcp/src/agents_remember/cli/memory_citations.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "b502e06348debcf29b00cabca986271b420e80ab",
+        "content": "sha256:6bf72abe8b48323ca7ad920898d16f3c2241a721f18f5c5da8092641bad2f2f7",
+        "locator": {
+          "kind": "symbol",
+          "name": "run"
+        }
+      },
+      "id": "RLZ-RSG7F8",
+      "invariant": "INV-VH0QZ1",
+      "origin": {
+        "handoffEntry": "L110-C-batch",
+        "leaf": "260928-MIK-L110"
+      },
+      "rationale": "Repeated CLI document options select the same finite fix operation, not other citation modes.",
+      "role": "presentation"
+    }
+  ],
   "references": {
     "1": {
       "note": "CLI declarations make --contract optional for the two-admission fixer route and preserve the repeatable per-call exclusion option.",

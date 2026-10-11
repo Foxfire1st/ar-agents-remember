@@ -1,0 +1,55 @@
+{
+  "path": "mcp/tests/tool_answer_l110_rows.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Real output must satisfy its row and enforced production bound.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2c5e275da4e883aba7bf331adeabad6df63380bf",
+            "content": "sha256:75b7ed5a92ef0d7e2459f3a00fa14949169a49c3e1bf392c7d74ddee506a6fe9",
+            "locator": {
+              "kind": "symbol",
+              "name": "assert_production_answer"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Actual delivery guard must preserve an in-bound projection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2c5e275da4e883aba7bf331adeabad6df63380bf",
+            "content": "sha256:7ffeea4af79244d4abd4126047905b151d77c78d3a01cacbd2dceb14e410f6a4",
+            "locator": {
+              "kind": "symbol",
+              "name": "assert_answer_survives_the_guard"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Generic strip-and-cap supplies cases for unprojected tools.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2c5e275da4e883aba7bf331adeabad6df63380bf",
+            "content": "sha256:2890ee446679ca00af8cddbe42d9881687d87e4a3f6717ed347b6f64f1d75c50",
+            "locator": {
+              "kind": "symbol",
+              "name": "delivery_shaped"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

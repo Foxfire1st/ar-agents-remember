@@ -24,8 +24,9 @@ The workflow states, in order:
   `references["n"]`. Target kinds are `code`, `test`, `requirement`, `external` and `unresolved`; anchor locators
   are `symbol`, `line_range` and `file`.
 - **Create a card for a new source file.** Write the Markdown with a citation table (`| Finding | Anchor |
-  Source |`), then run the fixer on that one card (`memory-citations --fix --document <card>`, or `citation_fix`
-  with `document`); on converted memory `--document` needs no `--expected-snapshot`. Read the `authoring` block:
+  Source |`), then preview the finite cards of the change in one citation-fix call and repair them
+  in one call, with `documents` or repeated CLI `--document`; singleton `document` remains valid.
+  Converted selection needs no `--expected-snapshot`. Read the full detail's `authoring` block:
   `authoredReferences`, `createdSidecars`, `unresolvedTargets`, `refused`, `unreadableSidecars`. The refusal reasons
   include two tables with no blank line between them when either is a citation table: a delimiter row (every cell
   three dashes or more) inside a table; the reason names the line, and a blank line above the second header fixes it.
@@ -49,12 +50,13 @@ The workflow states, in order:
 
 - **Never write sidecar JSON by hand.** The fixer authors `references`; the writer authors `realizes` and
   `proves`.
-- The tree-wide fixer run re-records moved anchors across the whole tree, so a curator names one document at a
-  time.
+- Name the finite card list to avoid an unrelated whole-tree sweep; batch selection keeps the same
+  per-card authoring/refresher semantics and does not hand-write sidecar JSON.
 - The statement "Numbers are not reused" has one known exception: a removed highest number is reused by a later
   run.
 - With a document named, the fixer's result lists that document's stale references only, and the MCP
-  `citation_fix` response caps every list at 50 entries with its full count.
+  status answers counts and first actionable entries; complete authoring/stale populations stay
+  in detail. A named list preserves that same selection isolation per card.
 
 ### Todos
 

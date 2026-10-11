@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "1e151bfd9338a57f52c14bca69c5e9cb90e9398f",
-        "content": "sha256:fc7b80ac552e5d77058d2aeba2aa7e1fd27b885acfcdc639d86c41b655f745e4",
+        "blob": "53e03643f0924e44c2a22fc7fa0de4a839762ab9",
+        "content": "sha256:9c1f13e3fd2a094786999c2e1a49910f50a2efd2e422a1ae7335e0631b291048",
         "locator": {
           "kind": "symbol",
           "name": "complete_tool_response"
@@ -21,7 +21,25 @@
     },
     {
       "anchor": {
-        "blob": "1e151bfd9338a57f52c14bca69c5e9cb90e9398f",
+        "blob": "53e03643f0924e44c2a22fc7fa0de4a839762ab9",
+        "content": "sha256:9c1f13e3fd2a094786999c2e1a49910f50a2efd2e422a1ae7335e0631b291048",
+        "locator": {
+          "kind": "symbol",
+          "name": "complete_tool_response"
+        }
+      },
+      "id": "RLZ-REZN43",
+      "invariant": "INV-1V9ARB",
+      "origin": {
+        "handoffEntry": "L110-C-status",
+        "leaf": "260928-MIK-L110"
+      },
+      "rationale": "Validates/logs the whole payload while delivering and guarding the distinct optional status projection.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "53e03643f0924e44c2a22fc7fa0de4a839762ab9",
         "content": "sha256:568c8f952aad4a9f707115d4edc5e3cda9ec0f0901bf01fdefc0cdcc442e794d",
         "locator": {
           "kind": "symbol",
@@ -39,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "1e151bfd9338a57f52c14bca69c5e9cb90e9398f",
+        "blob": "53e03643f0924e44c2a22fc7fa0de4a839762ab9",
         "content": "sha256:568c8f952aad4a9f707115d4edc5e3cda9ec0f0901bf01fdefc0cdcc442e794d",
         "locator": {
           "kind": "symbol",
@@ -62,7 +80,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1e151bfd9338a57f52c14bca69c5e9cb90e9398f",
+            "blob": "53e03643f0924e44c2a22fc7fa0de4a839762ab9",
             "content": "sha256:c53b403544d1af5605724d601825fc96eaf6ec314bd27da5a480f8a235019097",
             "locator": {
               "kind": "symbol",
@@ -78,7 +96,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1e151bfd9338a57f52c14bca69c5e9cb90e9398f",
+            "blob": "53e03643f0924e44c2a22fc7fa0de4a839762ab9",
             "content": "sha256:b9a1f903280fdf70c544924c96f7717d7189f719708eac93720b3b059a8681be",
             "locator": {
               "kind": "symbol",
@@ -96,6 +114,22 @@
           "anchor": {
             "blob": "1e151bfd9338a57f52c14bca69c5e9cb90e9398f",
             "content": "sha256:fc7b80ac552e5d77058d2aeba2aa7e1fd27b885acfcdc639d86c41b655f745e4",
+            "locator": {
+              "kind": "symbol",
+              "name": "complete_tool_response"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Whole-result validation/logging and projected-answer guarding remain distinct.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "53e03643f0924e44c2a22fc7fa0de4a839762ab9",
+            "content": "sha256:9c1f13e3fd2a094786999c2e1a49910f50a2efd2e422a1ae7335e0631b291048",
             "locator": {
               "kind": "symbol",
               "name": "complete_tool_response"

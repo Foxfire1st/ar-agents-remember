@@ -20,12 +20,22 @@ beside the record.
 
 After exact judgment admission and predecessor checks, `_publish` retains the original judgment bytes through the existing custody owner. Once the immutable record/projection and attestation copy exist, their shared generation integrity read must succeed before the stable canonical pointer is replaced. Alias, foreign-path or corrupt-evidence rejection leaves the prior canonical authority intact. Live source and original-input checks remain part of the CAS window.
 
-`prepare` returns all current identities and the raw stable-authority predecessor digest, and its
-summary is `publication_input_statement()` read from the request model's declaration: it names the
+`prepare` writes the complete candidate set and its reading projection beside the enclosure reports,
+and answers with kind counts, digest and locations; it does not enumerate candidate material on
+the wire. The prepared candidate JSON's `expected` object preserves optimistic-concurrency identities
+and the raw stable-authority predecessor digest. The prepare response and its full-result log
+retain counts, the candidate-set digest and file locations; they do not carry those expectation
+values. Read the prepared JSON before composing publication. Its publication statement is derived from the request model,
+not a second handwritten input list: it names the
 per-candidate judgments and every publication member, and marks the two members it does not derive
 (`semantic_requirement_revision`, `delivery_attempt`) as caller-supplied delivery identities. The text
 is a pure function of that declaration, so a member appended to it reaches this response with no edit
 here. `prepare` still invents neither identity and the response still carries no value for either.
+`publish` accepts inline collections or one JSON `judgments_file`. Explicitly supplying either
+collection inline as well as the file, including an empty list, refuses duplicate sourcing.
+The file owner reads once under regular-file/byte bounds and validates the same models and collection
+limits; the exact file digest accompanies the result. Status projections leave full publication
+and validation material in detail, without changing generation integrity or CAS checks.
 `publish` validates caller-supplied expectations and exact judgments before entering the short task
 publication lock. Inside the lock it rereads the contract, rechecks predecessor, source identities,
 and evidence bytes, atomically installs a deterministic content-addressed record/report directory,
@@ -66,6 +76,9 @@ currentness validator re-derives them.
 None recorded.
 
 ## Evidence
+
+- Preparation files the exact candidate set and reading rendering. [9]
+- Optional file-sourced judgments retain exact-set, evidence and CAS validation. [10]
 
 ### Docs References
 

@@ -11,9 +11,10 @@ tuple from its single definition in `models`.
 
 ## Code Commentary
 
-The module is 24 lines. It declares `TRANSPORT`, an empty `RESERVED_TOOLS`, `__all__`, and
-`_tool_payload` — and defines nothing else. `PUBLIC_TOOLS` is imported at L14 and declared as an
-export by `__all__` at L19.
+It declares `TRANSPORT`, an empty `RESERVED_TOOLS`, `__all__`, and `_tool_payload`.
+`PUBLIC_TOOLS` is imported and re-exported rather than redeclared. `_tool_payload` accepts an
+optional `answer` projection beside the whole application `payload` and delegates both to
+`complete_tool_response`: a small status answer never replaces the material recorded in detail.
 
 ### Logic
 
@@ -33,10 +34,14 @@ function-local import trips `ruff PLC0415` with suppressions forbidden in this r
 module-level imports in either direction are circular. `models/worktree.py` now reads the roster to
 enforce the worktree surface's next-move vocabulary; the roster's own card records why.
 
-Structural agent operations are
-`dispatch_agent`, `retire_child`, `rename_child`, `rename_self`, `message_parent`, and
-`message_child`; structural gate names remain `lifecycle_gate`, `gate_decide`, and `gate_list`.
-Removed exact-id/leaf-address agent tools are absent. `_tool_payload`
+The operative roster exposes `dispatch_agent` and native receipt-tracked `retire_child`
+through the structural-agent adapter; `role_start`, `role_start_set` and `role_message`
+provide the separate role-agent start/set/message surface. The incoming MIK-R100
+restoration of native retirement does not restore the removed hosted-seat path.
+`rename_child`, `rename_self`, `message_parent`, `message_child`, `lifecycle_gate`,
+`gate_decide` and `gate_list` remain absent from the current re-exported roster.
+Dated relocation and tool-census counts below describe their historical objects, not the current
+public inventory. The single roster remains the source of truth; this adapter declares no copy. `_tool_payload`
 cit:([`_tool_payload`], mcp/src/agents_remember/mcp/tools/base.py:22-24) passes every
 application result through `application/tool_response.py::complete_tool_response`.
 
@@ -61,6 +66,8 @@ is a change to `models/tools/public_roster.py`, never a second tuple here.
 None.
 
 ## Evidence
+
+- The adapter forwards the whole payload and optional answer to one finalizer. [10]
 
 ### Docs References
 

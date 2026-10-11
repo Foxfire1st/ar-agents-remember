@@ -7,8 +7,8 @@
   },
   "applicability": "The retained `citation_fix` public entry point when configured repository authority contradicts its contract.",
   "conditions": [
-    "The application call raises `ConfiguredContractAuthorityError`.",
-    "The answer passes through `_tool_payload` and `bounded_citation_fix`."
+    "The application call raises ConfiguredContractAuthorityError.",
+    "The answer passes through _tool_payload with its full configured-authority refusal, rather than the ordinary citation status projection."
   ],
   "exclusions": [
     "Every other error, an `AuthorityError` among them, propagates unchanged; only the configured-contract-authority condition is translated.",
@@ -27,7 +27,7 @@
     "leaf": "260928-MIK-L70",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-invariant/v1",
   "statement": "`citation_fix` answers a contract that contradicts configured repository authority with `ok: false`, the status `configured-contract-authority-invalid`, the failing side and name, and the next action `developer-decision`, instead of raising; no other error is translated and `ENVELOPE_LOSING_RAISERS` stays empty. The retired `citation_migrate` MCP adapter is not part of this current response contract.",
   "status": "proposed",

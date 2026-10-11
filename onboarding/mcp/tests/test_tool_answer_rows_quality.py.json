@@ -1,0 +1,42 @@
+{
+  "path": "mcp/tests/test_tool_answer_rows_quality.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "702332c5ff85bb0592c8b1d3b33a564a3b077ade",
+        "content": "sha256:4b31f829a9e66f99017480733838b5c33a01705b4151d94b4e20a9beb8c8fe34",
+        "locator": {
+          "kind": "symbol",
+          "name": "QualityProductionTests.test_blocking_projects_the_populations_in_repair_order"
+        }
+      },
+      "facet": "Missing-only, stale-only, census-only and mixed cases assert projected entries and repair order; the missing-only case also asserts blockingCount=1.",
+      "id": "PRF-A71QVH",
+      "invariant": "INV-1V9ARB",
+      "origin": {
+        "handoffEntry": "L110-C-status",
+        "leaf": "260928-MIK-L110"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Real run states and complete blocking populations derive quality row contracts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "702332c5ff85bb0592c8b1d3b33a564a3b077ade",
+            "content": "sha256:9594f71770090e0addcea51a94e108daa25dfc582047f6bd86b010faa5e761c9",
+            "locator": {
+              "kind": "symbol",
+              "name": "QualityProductionTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

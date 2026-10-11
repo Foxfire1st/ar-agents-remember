@@ -1,0 +1,76 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_judgments_file.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "9150d6ea2188c64e23f747c261ce8ef28cdd1bf4",
+        "content": "sha256:065dff6bed0e70f6aa452c179cbf2c4109b71cddf0e080fdcd5d41b21eb5c1ff",
+        "locator": {
+          "kind": "symbol",
+          "name": "_validate_file_entries"
+        }
+      },
+      "id": "RLZ-4PMN3J",
+      "invariant": "INV-701KQ9",
+      "origin": {
+        "handoffEntry": "L110-C-coherence-transport",
+        "leaf": "260928-MIK-L110"
+      },
+      "rationale": "The same inline entry models and collection maxima validate file collections.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "9150d6ea2188c64e23f747c261ce8ef28cdd1bf4",
+        "content": "sha256:67b9a0e15940babb1423f361efe886d54e5cac4e699f7323638811aba21846dd",
+        "locator": {
+          "kind": "symbol",
+          "name": "_read_judgments_bytes"
+        }
+      },
+      "id": "RLZ-G3H4SH",
+      "invariant": "INV-701KQ9",
+      "origin": {
+        "handoffEntry": "L110-C-coherence-transport",
+        "leaf": "260928-MIK-L110"
+      },
+      "rationale": "Single nonblocking regular-file acquisition and an independent total file-byte cap bound reads; bounded scalar-field serialization expansion is accounted for without promising universal inline-input size parity.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "One descriptor, regular-file and byte-budget checks bound input acquisition.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9150d6ea2188c64e23f747c261ce8ef28cdd1bf4",
+            "content": "sha256:67b9a0e15940babb1423f361efe886d54e5cac4e699f7323638811aba21846dd",
+            "locator": {
+              "kind": "symbol",
+              "name": "_read_judgments_bytes"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "File collections use inline entry models and limits.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9150d6ea2188c64e23f747c261ce8ef28cdd1bf4",
+            "content": "sha256:065dff6bed0e70f6aa452c179cbf2c4109b71cddf0e080fdcd5d41b21eb5c1ff",
+            "locator": {
+              "kind": "symbol",
+              "name": "_validate_file_entries"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

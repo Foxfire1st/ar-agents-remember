@@ -31,15 +31,20 @@ that subject to `CarryoverApplyOptions`; the carryover owner attributes the memo
 refresh the consumer ledger cache. No ledger subject or third commit intent crosses this boundary.
 
 The module defines four parameter objects for separate application contracts:
-`MemoryBranches` carries optional source/work branch overrides for baseline adoption
-(`mcp/src/agents_remember/application/memory_tools.py:336-348`);
-`CarryoverSelection` carries the repository, memory/code refs, base, and replacement choice for
-carryover planning/apply (`mcp/src/agents_remember/application/memory_tools.py:349-368`);
-`CarryoverCommitMessages` carries the memory-content commit subject for apply
-(`mcp/src/agents_remember/application/memory_tools.py:369-376`); and since 260915-CAPS-L14
-`CitationOperationScope` carries the per-call citation selection **including the caller's own
-excludes** (`mcp/src/agents_remember/application/memory_tools.py:44-55`).
+`MemoryBranches` carries optional source/work branch overrides for baseline adoption;
+`CarryoverSelection` carries repository, memory/code refs, base and replacement choice;
+`CarryoverCommitMessages` carries the memory-content commit subject for apply; and
+`CitationOperationScope` carries per-call citation selection and caller exclusions.
 `intent_note` remains a separate apply approval argument.
+
+`CitationOperationScope.documents` admits a finite fix list beside the singleton `document`.
+Both selectors together, an empty list and a list over `MAX_CURATOR_SOURCE_CANDIDATES` refuse
+before resolving trees; that shared constant is the only list bound. Each selected member has
+singleton authoring/refresher semantics, and a refused member does not prevent the other named
+cards from being processed. Converted selections need no snapshot; legacy selections retain
+their existing generation lease. Check, migration and source-index build reject `documents`.
+
+- Finite fix selection is validated before reads with the shared bound. [34]
 
 **One construction point serves the legacy `Trees` branches.** `_citation_trees` builds the
 citation `Trees` for legacy check/fix, source-index build and migration. It validates the caller's
@@ -49,8 +54,8 @@ call-local, and a meaningless pattern is refused by name.
 
 This is not a converted-path filtering guarantee. Converted check/fix returns before constructing
 `Trees`: caller-exclusion syntax is validated, but `operation_scope.excludes` is not forwarded to
-converted reference checking, card authoring or mechanical refresh. Converted fixing forwards the
-named `document` to both stages and excludes authoring-refused sidecars from mechanical refresh;
+converted reference checking, card authoring or mechanical refresh. Converted fixing forwards each
+selected document to both stages and excludes authoring-refused sidecars from mechanical refresh;
 that internal exclusion set is distinct from caller globs. Source-index build and migration remain
 legacy-format operations.
 
@@ -60,8 +65,7 @@ This module no longer implements or wraps that failure family. Its remaining ope
 their existing configured-authority and typed parameter-object boundaries.
 
 `route_index_refresh_tool` then forwards the resolver-owned code root, onboarding root, repository
-identity, and storage authority into `build_route_indexes`
-(`mcp/src/agents_remember/application/memory_tools.py:279-315`).
+identity and storage authority into `build_route_indexes`.
 Ordinary drift reads file no temp report (`DriftSummaryOutput(write_report=False)`). The curator checklist is the
 explicit enclosure-local exception and remains outside both Git worktrees. Baseline and carryover
 entry points preserve their separate service contracts.

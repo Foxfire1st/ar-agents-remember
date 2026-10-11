@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "Separate application/transport owners enforce the guarantee and named executable assertion units guard its boundaries."
+  },
+  "applicability": "Citation-fix finite selections through the application and CLI.",
+  "conditions": [
+    "Converted selections need no source snapshot; legacy selections retain their required snapshot.",
+    "document is a singleton; documents is bounded by MAX_CURATOR_SOURCE_CANDIDATES."
+  ],
+  "exclusions": [
+    "Other citation operations reject documents.",
+    "The no-selector whole-tree form retains its existing scope."
+  ],
+  "id": "INV-VH0QZ1",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "MIK-R110@v1 rules and Expected Evidence; original Worker and Reviewer lists plus qualified Attempt-7 verdict preserved in role report; source inspection is not new execution or MEMORY acceptance.",
+        "Same-origin complete19-entry re-presentation for Reviewer sealed MEMORY R1 F03/F04/F05/F07; supersedes only the stronger current resource/facet claims. No fresh test execution or new CODE/MEMORY acceptance."
+      ],
+      "path": "knowledge-wave.json"
+    },
+    "handoffEntry": "L110-C-batch",
+    "leaf": "260928-MIK-L110",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Citation fix admits a finite list under the shared candidate bound, rejects ambiguous/empty/over-bound selections before tree reads, handles each named card as a singleton and continues other cards after a member refusal.",
+  "status": "proposed",
+  "supersedes": []
+}

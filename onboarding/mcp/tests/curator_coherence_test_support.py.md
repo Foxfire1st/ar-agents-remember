@@ -24,6 +24,12 @@ one explicit judgment per tuple, then performs prepare and publish with all opti
 identities. Repeated exact input may return `already-current`; changed task truth publishes a new
 canonical generation.
 
+`write_curator_attestation` separates the exact fixture report/attestation from publication so
+parentless or stale-source cases can stop before authority creation. `read_prepared_candidate_set`
+reads the prepared file and checks its digest/count agreement with the answer;
+`prepared_publish_inputs` supplies the unchanged expectation fields from that file, not inline
+candidate material. This remains fixture input and production publication, never a parallel writer.
+
 Under CCR-R03@v1 the fixture attestation now stamps the exact code candidate tree
 (`capture_future_code_candidate`) and memory candidate tree (scratch-indexed `worktree_candidate_tree`
 over the memory worktree) and embeds the `memory-quality-attestation/v1` dependency declaration —

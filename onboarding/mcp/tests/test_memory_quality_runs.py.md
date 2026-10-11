@@ -88,9 +88,9 @@ Two classes were added to the end of the module; this card previously described 
   `MemoryQualityCheckResponse.model_fields`, and the stamp validates as the shared `ServingBuildPayload`.
   Red if the declaration is removed, because `FlexibleToolResponse` sets `extra="allow"`, so an
   undeclared key would validate while staying invisible in the tool's own schema.
-- `test_the_citation_repair_response_names_its_ruler` (`:676-696`) — drives `citation_fix_tool` with its
-  scope, its `_citation_trees` and the fixer doubled, and asserts the returned `servingBuild` is the
-  resolved one. Red if the tool's return stops including the stamp.
+- `test_the_citation_repair_response_answers_a_status_without_its_ruler` — drives citation fixing
+  with doubled scope/repair inputs and asserts status counts without servingBuild. The controller's
+  measuring stamp remains in its whole result; status delivery does not re-advertise that material.
 
 `CloseoutOwnedProvenanceRoutingTests` (`:699-731`) carries item 17 half (b). Its single case,
 `test_the_checklists_commit_owned_set_collects_the_checks_own_bucket` (`:719-731`), drives the real

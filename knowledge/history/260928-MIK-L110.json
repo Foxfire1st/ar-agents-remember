@@ -1,0 +1,4278 @@
+{
+  "closed": true,
+  "leaf": "260928-MIK-L110",
+  "rows": [
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-007FXA",
+      "items": [
+        "sha256:8bd39679f3adc0c3c932576b1d906e4dc518e508dd9c115c165dc4b0c1a18cff"
+      ],
+      "reason": "Status projection and removal of a second carryover cap implement the separately recorded answer/detail guarantee without restoring retired MCP adapters; local packing/import changes carry no separate obligation.",
+      "subject": "hunk:sha256:8bd39679f3adc0c3c932576b1d906e4dc518e508dd9c115c165dc4b0c1a18cff"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "8e4d1a648c715b67f34830af9cd622d8471f01ed",
+            "content": "sha256:ff7ac8f5f3233c4d22f27a6185ceca96e8532b11b260d7953cdef9c656557451",
+            "locator": {
+              "kind": "symbol",
+              "name": "ToolEventRiverTests.test_active_lifecycle_writes_its_event_as_today_and_no_second_one"
+            },
+            "path": "mcp/tests/test_tool_event_river.py"
+          },
+          "before": {
+            "blob": "8e4d1a648c715b67f34830af9cd622d8471f01ed",
+            "content": "sha256:ff7ac8f5f3233c4d22f27a6185ceca96e8532b11b260d7953cdef9c656557451",
+            "locator": {
+              "kind": "symbol",
+              "name": "ToolEventRiverTests.test_active_lifecycle_writes_its_event_as_today_and_no_second_one"
+            },
+            "path": "mcp/tests/test_tool_event_river.py"
+          },
+          "id": "PRF-6E54VM"
+        },
+        {
+          "after": {
+            "blob": "8e4d1a648c715b67f34830af9cd622d8471f01ed",
+            "content": "sha256:25267c701e945b77701bdc195b4378de0c9841ec83aa66ef50219e20b017fddb",
+            "locator": {
+              "kind": "symbol",
+              "name": "ToolEventRiverTests.test_bound_first_call_writes_one_workspace_event_with_caller_and_facts"
+            },
+            "path": "mcp/tests/test_tool_event_river.py"
+          },
+          "before": {
+            "blob": "8e4d1a648c715b67f34830af9cd622d8471f01ed",
+            "content": "sha256:25267c701e945b77701bdc195b4378de0c9841ec83aa66ef50219e20b017fddb",
+            "locator": {
+              "kind": "symbol",
+              "name": "ToolEventRiverTests.test_bound_first_call_writes_one_workspace_event_with_caller_and_facts"
+            },
+            "path": "mcp/tests/test_tool_event_river.py"
+          },
+          "id": "PRF-FSFY6F"
+        },
+        {
+          "after": {
+            "blob": "53e03643f0924e44c2a22fc7fa0de4a839762ab9",
+            "content": "sha256:9c1f13e3fd2a094786999c2e1a49910f50a2efd2e422a1ae7335e0631b291048",
+            "locator": {
+              "kind": "symbol",
+              "name": "complete_tool_response"
+            },
+            "path": "mcp/src/agents_remember/application/tool_response.py"
+          },
+          "before": {
+            "blob": "1e151bfd9338a57f52c14bca69c5e9cb90e9398f",
+            "content": "sha256:fc7b80ac552e5d77058d2aeba2aa7e1fd27b885acfcdc639d86c41b655f745e4",
+            "locator": {
+              "kind": "symbol",
+              "name": "complete_tool_response"
+            },
+            "path": "mcp/src/agents_remember/application/tool_response.py"
+          },
+          "id": "RLZ-QZ15KH"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-0696K7",
+      "items": [
+        "sha256:5f2731eb1c5f1bdd1d1a0671eb2e23fe256888e3162c206988fdbf91978cac16"
+      ],
+      "reason": "The optional status projection changes only delivered payload/count, not the active-lifecycle versus workspace-river branch or once-read caller attribution.",
+      "revision": 1,
+      "subject": "INV-P661EM"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-08F1VP",
+      "items": [
+        "sha256:83e4c9900e6332c26807a8be7fa9d52a2a149efb28e4a2d91aa1ce9851613a7e",
+        "sha256:c51396354eed707e61fd3abbff642b4092a4de96144e01cc2d30f3f37e259f78"
+      ],
+      "reason": "Derived instruction carrier or canonical procedure: the verified finite-batch/candidate-file directive is routed to its owning product/onboarding contract; no independent mirror authority, role rerouting or new write lane is introduced.",
+      "subject": "onboarding:.openclaw/workspace/skills/c-02-memory-quality-control/SKILL.md"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-0G75VK",
+      "items": [
+        "sha256:fdba475984799b66a2b728dcb92f3cb07f95176ba8eee0e283934add4672127d"
+      ],
+      "reason": "Optional file transport and result-count fields represent the separately authored coherence transport guarantee without changing the nine required publication expectations.",
+      "subject": "hunk:sha256:fdba475984799b66a2b728dcb92f3cb07f95176ba8eee0e283934add4672127d"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-0H79F0",
+      "items": [
+        "sha256:14c4176eb49a8395564137fd4ba36fa7950b697b95bb46727ea5c87610b763ca",
+        "sha256:884b86f68a622b5ec54fe540b0627ae31c5b2211c0437f38a947fd757bf3b64b"
+      ],
+      "reason": "The removed operation-envelope assertion conforms to the existing shared choke; stdio completion and carryover state/count assertions remain unchanged and no new invocation is claimed.",
+      "subject": "onboarding:mcp/tests/test_mcp_stdio_transport.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "bf1a79f4a160fbd1038927b4869a66fa3abcfcb9",
+            "content": "sha256:e0921179e6256ca12e047d62cdf326f107b2ecd8104764b222de519775d7e927",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_historical_pin"
+            },
+            "path": "mcp/src/agents_remember/application/review_curator_records.py"
+          },
+          "before": {
+            "blob": "bf1a79f4a160fbd1038927b4869a66fa3abcfcb9",
+            "content": "sha256:e0921179e6256ca12e047d62cdf326f107b2ecd8104764b222de519775d7e927",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_historical_pin"
+            },
+            "path": "mcp/src/agents_remember/application/review_curator_records.py"
+          },
+          "id": "RLZ-71BST0AD"
+        },
+        {
+          "after": {
+            "blob": "2396376cd715d4d7b646d44e5d83f4304708a636",
+            "content": "sha256:b80bc966651f313af77137b13fbb72874e1782d1f082b1619850f97df0731593",
+            "locator": {
+              "kind": "symbol",
+              "name": "_publish"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py"
+          },
+          "before": {
+            "blob": "217e5c86649db8bdbc5bf71011f0c8aa5f83f928",
+            "content": "sha256:3fa032a7f9c07b4130573f96b03d1915cd83b075c415f2ffe5987445afafc1dc",
+            "locator": {
+              "kind": "symbol",
+              "name": "_publish"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py"
+          },
+          "id": "RLZ-FGW904R4"
+        },
+        {
+          "after": {
+            "blob": "bf1a79f4a160fbd1038927b4869a66fa3abcfcb9",
+            "content": "sha256:3b3baf556cbf33c307c4aecc76c4752c62c062cb0d80dccfc71d368decb4861e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_historical_records"
+            },
+            "path": "mcp/src/agents_remember/application/review_curator_records.py"
+          },
+          "before": {
+            "blob": "bf1a79f4a160fbd1038927b4869a66fa3abcfcb9",
+            "content": "sha256:3b3baf556cbf33c307c4aecc76c4752c62c062cb0d80dccfc71d368decb4861e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_historical_records"
+            },
+            "path": "mcp/src/agents_remember/application/review_curator_records.py"
+          },
+          "id": "RLZ-Q309E7RB"
+        },
+        {
+          "after": {
+            "blob": "26d81a2aa363bcb074785fd947100dd377220676",
+            "content": "sha256:ca899ecdbfe7dc8b30ca3752c60e8a636c73a7063c9be1aa3188822d5f65dbbc",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_assessment_evidence"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_assessment_evidence.py"
+          },
+          "before": {
+            "blob": "26d81a2aa363bcb074785fd947100dd377220676",
+            "content": "sha256:ca899ecdbfe7dc8b30ca3752c60e8a636c73a7063c9be1aa3188822d5f65dbbc",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_assessment_evidence"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_assessment_evidence.py"
+          },
+          "id": "RLZ-SKSXAFJS"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-0R53F5",
+      "items": [
+        "sha256:d1b88f207ff19e83933d8ea9e2b3661b2fa2b94ba3cebd33b9b1170712359ccb"
+      ],
+      "reason": "File-sourced input is admitted before exact judgment/expectation checks; generation integrity still succeeds before canonical replacement and preserves historical custody.",
+      "revision": 2,
+      "subject": "INV-VXA7SZ0Z"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R110",
+          "packet": "requirements/MIK-R110-v1-the-memory-tools-answer-with-a-status.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "0f76f2674c47bfb50b8c0856a2e2de9d4166f274",
+            "content": "sha256:6674fc42a338ecfd1fdeb59d55c236cff2e3f7cf289fb4666b8a0912aaece1c6",
+            "locator": {
+              "kind": "symbol",
+              "name": "DocumentListRefusalTests.test_a_full_list_is_taken_and_one_more_is_refused_with_bound_and_count"
+            },
+            "path": "mcp/tests/test_citation_fix_documents.py"
+          },
+          "before": "absent",
+          "id": "PRF-MTAD8K"
+        },
+        {
+          "after": {
+            "blob": "0f76f2674c47bfb50b8c0856a2e2de9d4166f274",
+            "content": "sha256:77664dd8cd77d8379753146c3328cd529e54d75681de8b3749202662d42403a7",
+            "locator": {
+              "kind": "symbol",
+              "name": "ConvertedListFixTests.test_one_refused_card_does_not_stop_the_others"
+            },
+            "path": "mcp/tests/test_citation_fix_documents.py"
+          },
+          "before": "absent",
+          "id": "PRF-XX7QZ5"
+        },
+        {
+          "after": {
+            "blob": "536d026ee5c551dea3daf51ed3731520f4b16401",
+            "content": "sha256:e07c88ae05c8a689fa70c027d0e146b9b069b245e945fc5195b544ad73dbe235",
+            "locator": {
+              "kind": "symbol",
+              "name": "_converted_citation_fix"
+            },
+            "path": "mcp/src/agents_remember/application/memory_tools.py"
+          },
+          "before": "absent",
+          "id": "RLZ-FMSZFC"
+        },
+        {
+          "after": {
+            "blob": "b502e06348debcf29b00cabca986271b420e80ab",
+            "content": "sha256:6bf72abe8b48323ca7ad920898d16f3c2241a721f18f5c5da8092641bad2f2f7",
+            "locator": {
+              "kind": "symbol",
+              "name": "run"
+            },
+            "path": "mcp/src/agents_remember/cli/memory_citations.py"
+          },
+          "before": "absent",
+          "id": "RLZ-RSG7F8"
+        },
+        {
+          "after": {
+            "blob": "536d026ee5c551dea3daf51ed3731520f4b16401",
+            "content": "sha256:b0a40b5c6b8ac07cffa80174d81e2d954545f3602139c8a1aebb27c82e5dc4e9",
+            "locator": {
+              "kind": "symbol",
+              "name": "CitationOperationScope"
+            },
+            "path": "mcp/src/agents_remember/application/memory_tools.py"
+          },
+          "before": "absent",
+          "id": "RLZ-ZY3NGB"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-0VQRSF",
+      "items": [],
+      "reason": "Introduces the supported cross-location obligation with scoped realizations and precise assertion facets; no new test execution or intent acceptance is claimed. Same-ID current-cover renewal under Manager084752950136, which adopts Reviewer53a51169’s sealed source answer as origin evidence for repair2afda4b. Optional-contract CLI and refused-sidecar exclusion preserve the finite selector/per-member contract; renewed source tuples are not frozen-code qualification, fresh execution or MEMORY acceptance. MEMORY baseline1 fixed-list reconciliation narrows resource/proof claims and current empty-pin/one-tool explanations to actual retained source/assertion evidence, preserving IDs and historical origin without new execution.",
+      "revision": 1,
+      "subject": "INV-VH0QZ1"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-10PPWF",
+      "items": [
+        "sha256:ffc758cdd27dc79cd428da5a590cf2d3bec5f3162d0c0c02ff988004bf9635cb"
+      ],
+      "reason": "Same-change quality-pin removal implements the already revised pin inventory; delivered-answer classification and residual lifecycle ownership remain unchanged.",
+      "subject": "onboarding:mcp/tests/test_tool_entry_point_sweep.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-16YECZ",
+      "items": [
+        "sha256:1adc913ed353d648fc8f80c924cd4add335c73a8279cfc625d951372be28102f",
+        "sha256:78efad82a62efd4f513f9be51bc0149d3039ee1e489a1f50303284b680ea6b78"
+      ],
+      "reason": "Whole-result violations remain complete beside bounded delivery. The card already distinguishes whole-report totals, refusing-first delivery and validator-not-intent semantics.",
+      "subject": "onboarding:mcp/src/agents_remember/models/tools/knowledge_responses.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-17CMW5",
+      "items": [
+        "sha256:5fae9825bb03225c2fdf0321440de5b284957d50867de549225db2c08e23f00f",
+        "sha256:7876aebecf27a4b81631c73beaaf5541c03e683a51c5ea8caf2c7ae760b2f41b",
+        "sha256:c4e3cba4f1657c68dd1ddc1ac26ccb92afbee9074f2818de9d4fa67f25d28493"
+      ],
+      "reason": "Derived instruction carrier or canonical procedure: the verified finite-batch/candidate-file directive is routed to its owning product/onboarding contract; no independent mirror authority, role rerouting or new write lane is introduced.",
+      "subject": "onboarding:.pi/skills/c-05-create-or-update-onboarding-files/workflows/converted-card-workflow.md"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-1K6AAZ",
+      "items": [
+        "sha256:8f20d77bd07fbd6d920a60a4819efd00f82fa62b596c6ba20f8cf5c826f02481"
+      ],
+      "reason": "Final L110 bounds, status entry/reason ceilings and removal of interim ownership are the implementation of the existing row/guard contract; deleted interim clauses are not new invariants.",
+      "subject": "hunk:sha256:8f20d77bd07fbd6d920a60a4819efd00f82fa62b596c6ba20f8cf5c826f02481"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-1Q9EXF",
+      "items": [
+        "sha256:e11bde7a3acdf59fbcb8ad87e0fcb0dc5d170d3ae3920155eaaddbaa732e3817"
+      ],
+      "reason": "Candidate filing and file-input/status mechanics realize the separately authored coherence transport invariant; deleted response material is retained in its owning corpus, not new knowledge.",
+      "subject": "hunk:sha256:e11bde7a3acdf59fbcb8ad87e0fcb0dc5d170d3ae3920155eaaddbaa732e3817"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-1S3JQ4",
+      "items": [
+        "sha256:ed58ee8cacaac91870efe09def8a37126e2d8d6e193a730339e2d1bd32fbb0bd"
+      ],
+      "reason": "Quality-result composition, recovery fields and uncut internal populations implement the separately authored status/detail guarantee; imports and plumbing introduce no independent semantic obligation.",
+      "subject": "hunk:sha256:ed58ee8cacaac91870efe09def8a37126e2d8d6e193a730339e2d1bd32fbb0bd"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-1YTVFK",
+      "items": [
+        "sha256:c59bcc28f7177912888ac7a9307a1a9eaaa1d1612f2612eb582f0e25a6cb5e74"
+      ],
+      "reason": "Status projection and removal of a second carryover cap implement the separately recorded answer/detail guarantee without restoring retired MCP adapters; local packing/import changes carry no separate obligation.",
+      "subject": "hunk:sha256:c59bcc28f7177912888ac7a9307a1a9eaaa1d1612f2612eb582f0e25a6cb5e74"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-1ZRKP8",
+      "items": [
+        "sha256:09060bbf85fb6ed83b5d1e529731aaf0592cbf530448f6fa9a3705b87f6139cd",
+        "sha256:936cfa2fd266c3b73118551adc729a9c624098d79634e4786c13e4809af909ab"
+      ],
+      "reason": "Derived instruction carrier or canonical procedure: the verified finite-batch/candidate-file directive is routed to its owning product/onboarding contract; no independent mirror authority, role rerouting or new write lane is introduced.",
+      "subject": "onboarding:.claude/skills/c-02-memory-quality-control/SKILL.md"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R110",
+          "packet": "requirements/MIK-R110-v1-the-memory-tools-answer-with-a-status.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "dff86525924cfecf34612baf2bcaba2bfc215986",
+            "content": "sha256:baa25afaeb105e46bbcf68e4b8bbbe34beb68be1306cf22c8ab12c7c5f25eee7",
+            "locator": {
+              "kind": "symbol",
+              "name": "CitationMigrateRegistrationTests.test_citation_tools_propagate_other_authority_errors"
+            },
+            "path": "mcp/tests/test_citation_migrate_registration.py"
+          },
+          "before": {
+            "blob": "b0f0a8f5d35241679c8c7ae2f3266628049542a7",
+            "content": "sha256:baa25afaeb105e46bbcf68e4b8bbbe34beb68be1306cf22c8ab12c7c5f25eee7",
+            "locator": {
+              "kind": "symbol",
+              "name": "CitationMigrateRegistrationTests.test_citation_tools_propagate_other_authority_errors"
+            },
+            "path": "mcp/tests/test_citation_migrate_registration.py"
+          },
+          "id": "PRF-7D1MZH"
+        },
+        {
+          "after": {
+            "blob": "dff86525924cfecf34612baf2bcaba2bfc215986",
+            "content": "sha256:08672d24d93014ad1c5a562857c47567569aeb5a8ab8b41a394fed5b677e8559",
+            "locator": {
+              "kind": "symbol",
+              "name": "CitationMigrateRegistrationTests.test_citation_tools_name_a_configured_contract_authority_refusal"
+            },
+            "path": "mcp/tests/test_citation_migrate_registration.py"
+          },
+          "before": {
+            "blob": "b0f0a8f5d35241679c8c7ae2f3266628049542a7",
+            "content": "sha256:0acd2450a45d829ef37d4b394e7e39548164fd088f47feb6a707ed9d94720b74",
+            "locator": {
+              "kind": "symbol",
+              "name": "CitationMigrateRegistrationTests.test_citation_tools_name_a_configured_contract_authority_refusal"
+            },
+            "path": "mcp/tests/test_citation_migrate_registration.py"
+          },
+          "id": "PRF-B4QVEG"
+        },
+        {
+          "after": {
+            "blob": "6379f4552ea2a65eed09380a580733143e208098",
+            "content": "sha256:be1298f91607ed5f18940f2ac88c6ccee032edc696091d21f4a0541a05e4ee52",
+            "locator": {
+              "kind": "symbol",
+              "name": "citation_fix_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/memory.py"
+          },
+          "before": {
+            "blob": "4f90514bfd9638960c4e5bffe878df58c2e763c8",
+            "content": "sha256:6ee103c8825c424ba619ceb729e8d59ca82a6bfb34444c6959c46c5bc4d171f7",
+            "locator": {
+              "kind": "symbol",
+              "name": "citation_fix_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/memory.py"
+          },
+          "id": "RLZ-HPM03Q"
+        },
+        {
+          "after": {
+            "blob": "6379f4552ea2a65eed09380a580733143e208098",
+            "content": "sha256:d3f622fc4d9f4c5ecba385b0dbf495db20bdefab71304abd6bbdb5033341f253",
+            "locator": {
+              "kind": "symbol",
+              "name": "_citation_authority_refusal"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/memory.py"
+          },
+          "before": {
+            "blob": "4f90514bfd9638960c4e5bffe878df58c2e763c8",
+            "content": "sha256:d3f622fc4d9f4c5ecba385b0dbf495db20bdefab71304abd6bbdb5033341f253",
+            "locator": {
+              "kind": "symbol",
+              "name": "_citation_authority_refusal"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/memory.py"
+          },
+          "id": "RLZ-VVT227"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-26064X",
+      "items": [
+        "sha256:ed6e36f0252e5921a7b24e6243b2298a6f7ee677a9994f90ab3a0ac46e264b01"
+      ],
+      "reason": "Optional contract forwarding and ordinary status composition keep the exact configured-authority catch, complete refusal and unrelated-error propagation; renew the same-ID payload anchor and preserve narrowed record semantics.",
+      "revision": 3,
+      "subject": "INV-ZA39KM"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-2R07KS",
+      "items": [
+        "sha256:cfa31b7240c1bbab959b9145fc7c8fb0304962ca63253b07b61e49a336a40ac1"
+      ],
+      "reason": "Final shaped-row assembly and actual production-path witnesses preserve the governing table invariant; wiring, deleted interim rows and explanatory comments add no separate universal guarantee.",
+      "subject": "hunk:sha256:cfa31b7240c1bbab959b9145fc7c8fb0304962ca63253b07b61e49a336a40ac1"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-2WJ39T",
+      "items": [
+        "sha256:44e10aef8932db8dc09eba668a6b528d4e01b42ffd38452763afcf40b13e3f85"
+      ],
+      "reason": "Candidate filing and file-input/status mechanics realize the separately authored coherence transport invariant; deleted response material is retained in its owning corpus, not new knowledge.",
+      "subject": "hunk:sha256:44e10aef8932db8dc09eba668a6b528d4e01b42ffd38452763afcf40b13e3f85"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-302H7M",
+      "items": [
+        "sha256:03dcbc62b06b04d9fa665619afe9f060fdda8b98ee91bb1f32ab1c968a2e658a"
+      ],
+      "reason": "Optional file transport and result-count fields represent the separately authored coherence transport guarantee without changing the nine required publication expectations.",
+      "subject": "hunk:sha256:03dcbc62b06b04d9fa665619afe9f060fdda8b98ee91bb1f32ab1c968a2e658a"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-3F32PB",
+      "items": [
+        "sha256:4be51a2dc3e28d6b1f31a79221bcbcf9b36813a2f80c4c7f0e79c388397a2df7"
+      ],
+      "reason": "Shared candidate-bound import and singleton helper factoring implement the separately authored finite-selection/status obligations without changing the measured pre-baseline admission. Removed stamps/material are delivered by the owning whole/status result; no separate universal invariant arises from this local plumbing.",
+      "subject": "hunk:sha256:4be51a2dc3e28d6b1f31a79221bcbcf9b36813a2f80c4c7f0e79c388397a2df7"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-3GFFNH",
+      "items": [
+        "sha256:f10ec0d83aa37b4c9df16f8cadaa4825b27cbac1bd91c4a3ada8d725e9271027"
+      ],
+      "reason": "Final L110 bounds, status entry/reason ceilings and removal of interim ownership are the implementation of the existing row/guard contract; deleted interim clauses are not new invariants.",
+      "subject": "hunk:sha256:f10ec0d83aa37b4c9df16f8cadaa4825b27cbac1bd91c4a3ada8d725e9271027"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-3J3AT8",
+      "items": [
+        "sha256:63c246dc22053197957b637da4a1dcc826227ff015d84fac8828a0c5243be5ff"
+      ],
+      "reason": "Lane membership selects the new citation/coherence/answer suites but does not claim execution or acceptance; it is catalog wiring, not an independent semantic obligation.",
+      "subject": "hunk:sha256:63c246dc22053197957b637da4a1dcc826227ff015d84fac8828a0c5243be5ff"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-3NB5CD",
+      "items": [
+        "sha256:a4455eae05bfbaacc77a7bc23f4cecaa7457d6a22ced30925c32e34f4bc3f1ab"
+      ],
+      "reason": "Final shaped-row assembly and actual production-path witnesses preserve the governing table invariant; wiring, deleted interim rows and explanatory comments add no separate universal guarantee.",
+      "subject": "hunk:sha256:a4455eae05bfbaacc77a7bc23f4cecaa7457d6a22ced30925c32e34f4bc3f1ab"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-3S55E0",
+      "items": [
+        "sha256:e3d24094e3fff0da9c8b7e583f51bdfa7bee9097e4bf567aad0542a8c6e9886d"
+      ],
+      "reason": "Candidate filing and file-input/status mechanics realize the separately authored coherence transport invariant; deleted response material is retained in its owning corpus, not new knowledge.",
+      "subject": "hunk:sha256:e3d24094e3fff0da9c8b7e583f51bdfa7bee9097e4bf567aad0542a8c6e9886d"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-4ACPT0",
+      "items": [
+        "sha256:ed27392a41d2d3bf02a643b758fa2086888bcfa54f2ee038be568a188ce996ad"
+      ],
+      "reason": "Integrity projection and removal of the internal listing cap implement the separately recorded status/detail boundary; local mapping/import mechanics require no additional invariant.",
+      "subject": "hunk:sha256:ed27392a41d2d3bf02a643b758fa2086888bcfa54f2ee038be568a188ce996ad"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-4AMMNQ",
+      "items": [
+        "sha256:344880d4240e877ebeb9a0db0a20bdbca3e4789fe333dbe6f4cacb8b108cd308",
+        "sha256:ac827762ea385e0e8c9cecc7373e7150c4f36f8ed55d67c5a97488aa364505a3"
+      ],
+      "reason": "Derived instruction carrier or canonical procedure: the verified finite-batch/candidate-file directive is routed to its owning product/onboarding contract; no independent mirror authority, role rerouting or new write lane is introduced.",
+      "subject": "onboarding:.agents/skills/c-02-memory-quality-control/SKILL.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-4PE3TE",
+      "items": [
+        "sha256:ade8ce3852109331d32f01ac66a0fab4dad977e4e3f233feb20c176ef03ee7c5"
+      ],
+      "reason": "The citation-fix refusal continues to keep the existing fields and same unrelated exception identity; renamed internal helper/status plumbing restores no migration MCP route.",
+      "subject": "onboarding:mcp/tests/test_citation_migrate_registration.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-4YXS3D",
+      "items": [
+        "sha256:b6f0e30cf4294e041d9b9ac6231f3a892bc17b72e83101daaeba3aae1364064c"
+      ],
+      "reason": "Final shaped-row assembly and actual production-path witnesses preserve the governing table invariant; wiring, deleted interim rows and explanatory comments add no separate universal guarantee.",
+      "subject": "hunk:sha256:b6f0e30cf4294e041d9b9ac6231f3a892bc17b72e83101daaeba3aae1364064c"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-53MG2F",
+      "items": [
+        "sha256:b79d5459ce7c2cb7a842543298ac176d4223fa036ceb74007290c4fbd0b9ef37"
+      ],
+      "reason": "Optional file transport and result-count fields represent the separately authored coherence transport guarantee without changing the nine required publication expectations.",
+      "subject": "hunk:sha256:b79d5459ce7c2cb7a842543298ac176d4223fa036ceb74007290c4fbd0b9ef37"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-583RE5",
+      "items": [
+        "sha256:32f6f6dfd73e0e7181600032341b696eb36d9fa2834e9ab4aaced3c52063d2df",
+        "sha256:3b864c99517379a09318244d66682cf2e2dcee30219df8269c2353d96b469ea9",
+        "sha256:45347c18bca50f4ab89f72052a95b746acbc782d6a20b6af16ff464c1734c21b"
+      ],
+      "reason": "Derived instruction carrier or canonical procedure: the verified finite-batch/candidate-file directive is routed to its owning product/onboarding contract; no independent mirror authority, role rerouting or new write lane is introduced.",
+      "subject": "onboarding:.cursor/skills/c-05-create-or-update-onboarding-files/workflows/converted-card-workflow.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-5HV7Y5",
+      "items": [
+        "sha256:1e207925f56f144b6ce43f208bc25c79ac32afd62d093dc3c452e700ce0098fe",
+        "sha256:4fb691dbb1069be7d2f81f41e3be0a77541e5a9e6998146550d77efc8d5ccd4a",
+        "sha256:573734fb65fae1d13c95591e23c6c30ac8eac8ccc903074b2d188bc4b1ca9720",
+        "sha256:a6848f4d34ac2e6dfc19593d41d21205f74a13dce6dfe6b1339dc3278279e150"
+      ],
+      "reason": "The named selector type admits a sequence under the same expected-snapshot lease rule; no census, fallback, generation or source-membership semantics changed.",
+      "subject": "onboarding:mcp/src/agents_remember/memory_quality/style/citations/source_index.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-5ZEN92",
+      "items": [
+        "sha256:5939471efd5e6282925e0577604d168addb029781813e0a4d7f9c26320a51ae2"
+      ],
+      "reason": "Final L110 bounds, status entry/reason ceilings and removal of interim ownership are the implementation of the existing row/guard contract; deleted interim clauses are not new invariants.",
+      "subject": "hunk:sha256:5939471efd5e6282925e0577604d168addb029781813e0a4d7f9c26320a51ae2"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-6MA0K0",
+      "items": [
+        "sha256:e7a7c8afcb9a6e09042935d2949c0b963019074e416547da51aa58e45816c919"
+      ],
+      "reason": "Final shaped-row assembly and actual production-path witnesses preserve the governing table invariant; wiring, deleted interim rows and explanatory comments add no separate universal guarantee.",
+      "subject": "hunk:sha256:e7a7c8afcb9a6e09042935d2949c0b963019074e416547da51aa58e45816c919"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-6PMMPR",
+      "items": [
+        "sha256:129e830ffe6dc7a0e0ca88cc08c63752c05975d2ecf02844929c030365c8d57e",
+        "sha256:61673ae3185ce2fc5669a950b39b349d59b8866f8f1a8b238d77a2ec72f5a5b2",
+        "sha256:b456893bb7a93c3955180e9915ac8cd8faced40a96d038a5d5b164b91f4958e3",
+        "sha256:b4beb8a265255b6e6b3af71d9f00e9d17fd6d58685b208047187a67a052a82b6",
+        "sha256:d84aded3dce7e3a549828c90756f4932538574aabda2dd00e6943712785f5f9c",
+        "sha256:d9784458236c90a95b06901b06e56987961aaaafc89559d1bfc7ec320e461d27",
+        "sha256:f1612c1686583f3cddc64acf1ea810270d37100516aee51012b0439feb27b6a6"
+      ],
+      "reason": "Fixture callers read candidates/expected inputs from the prepared file through shared helpers; retained evidence-byte destination, caller-address, exact coverage and surviving-authority assertions are unchanged.",
+      "subject": "onboarding:mcp/tests/test_curator_review_assessment_publication.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-70D1KB",
+      "items": [
+        "sha256:0b60e7317a12b236f608239d1d469d3f5f0766fa6d59e9e481a3659b26f56d32"
+      ],
+      "reason": "Status projection and removal of a second carryover cap implement the separately recorded answer/detail guarantee without restoring retired MCP adapters; local packing/import changes carry no separate obligation.",
+      "subject": "hunk:sha256:0b60e7317a12b236f608239d1d469d3f5f0766fa6d59e9e481a3659b26f56d32"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7BQWN3",
+      "items": [
+        "sha256:66071ecfe17878e3fb1474904e0ebb0ebd152b0b125c3a6de73ce777cc22f0f4"
+      ],
+      "reason": "Quality-result composition, recovery fields and uncut internal populations implement the separately authored status/detail guarantee; imports and plumbing introduce no independent semantic obligation.",
+      "subject": "hunk:sha256:66071ecfe17878e3fb1474904e0ebb0ebd152b0b125c3a6de73ce777cc22f0f4"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-7EAMYC",
+      "items": [
+        "sha256:0966b09d52f1ccddad8d2c1b3ad90609ce251a87fae69e277ccb4e4e8339276b",
+        "sha256:1199dba023821d9bb80d9740773bc78596fe9c539a5934d10f6251639f30189a"
+      ],
+      "reason": "Added result counters expose the existing generation census without changing source snapshot, eligibility, hot-path derivation or write semantics; the card remains accurate.",
+      "subject": "onboarding:mcp/src/agents_remember/kernel/route_index.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-7GV4PJ",
+      "items": [
+        "sha256:08174bc2a25819cc6f5a3e72995db81625f1dcdfffac27b2354d04b4fc94edb6",
+        "sha256:d60ec0ccfc01961a942283210e9a90df02671722308f7ef4e7749dc708d4f261"
+      ],
+      "reason": "Derived instruction carrier or canonical procedure: the verified finite-batch/candidate-file directive is routed to its owning product/onboarding contract; no independent mirror authority, role rerouting or new write lane is introduced.",
+      "subject": "onboarding:.hermes/skills/c-02-memory-quality-control/SKILL.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-7NSW5N",
+      "items": [
+        "sha256:523ea1686693503ff8607c75e239afac13f5f6008ff0cd25c011e2c1dc060126",
+        "sha256:595937865f1aa73da268794e9d3be358f1859ec49686c19aaeaa2ffe3614a193",
+        "sha256:5d7f98422e02fb91b8ea1efd6d186c38e1724f059b0bf92e7ccea0a2251991a2",
+        "sha256:801fc5fe34e0fad167984e508f5588b0a054fe24a74031d7eabb2c06f8f6338a",
+        "sha256:fb737401a316535cc8ee4189577e40d3ffde91afea8506f81c2a6a6005a46bbc"
+      ],
+      "reason": "Candidate-file helpers replace inline fixture operands; invalid retained-byte/alias rejection before canonical replacement remains the same evidenced assertion contract.",
+      "subject": "onboarding:mcp/tests/test_review_assessment_history_repairs.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-7Q6BCN",
+      "items": [
+        "sha256:07e728c5ae53ab8efd05adf3a2b711c470a9900b4c2d93b41c83a4c55b885222",
+        "sha256:1284f2572849476bcf98ad94f8fa4cc30ead31079fcd84ecc7ad9792e12b400d"
+      ],
+      "reason": "Derived instruction carrier or canonical procedure: the verified finite-batch/candidate-file directive is routed to its owning product/onboarding contract; no independent mirror authority, role rerouting or new write lane is introduced.",
+      "subject": "onboarding:skills/c-02-memory-quality-control/SKILL.md"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7Q8T3H",
+      "items": [
+        "sha256:c76e7a5740fcca0b5a4bb9915a831dcb75835ae74a589a5f9a6e347ec52a4ed8"
+      ],
+      "reason": "Optional file transport and result-count fields represent the separately authored coherence transport guarantee without changing the nine required publication expectations.",
+      "subject": "hunk:sha256:c76e7a5740fcca0b5a4bb9915a831dcb75835ae74a589a5f9a6e347ec52a4ed8"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7QH0EZ",
+      "items": [
+        "sha256:4062b1b6553a853dec72a96ec60547ce7549095e261e8485ae2926069fcf99f1"
+      ],
+      "reason": "Quality-result composition, recovery fields and uncut internal populations implement the separately authored status/detail guarantee; imports and plumbing introduce no independent semantic obligation.",
+      "subject": "hunk:sha256:4062b1b6553a853dec72a96ec60547ce7549095e261e8485ae2926069fcf99f1"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-0MX54D",
+          "revision": 1
+        },
+        {
+          "id": "INV-18B62F",
+          "revision": 1
+        },
+        {
+          "id": "INV-P661EM",
+          "revision": 1
+        },
+        {
+          "id": "INV-PHS9T7",
+          "revision": 1
+        },
+        {
+          "id": "INV-S11488",
+          "revision": 1
+        },
+        {
+          "id": "INV-VSRHV3",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-7QJ4TJ",
+      "items": [
+        "sha256:a86520841cdbec370c45890e02beda0e84b0257fe1fd81afc95cbb711e5fca0b"
+      ],
+      "reason": "Examined every declared member and routed realization. Status/file/batch transport preserves this existing joint guarantee, member intent and route placement; no membership or guarantee revision is justified.",
+      "revision": 1,
+      "subject": "FAM-V8AH28"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7VXCFJ",
+      "items": [
+        "sha256:0ecd00cfb76e9574a82b6c25f0bedd6db86a1d53a19518dd910a667129dd7148"
+      ],
+      "reason": "Final shaped-row assembly and actual production-path witnesses preserve the governing table invariant; wiring, deleted interim rows and explanatory comments add no separate universal guarantee.",
+      "subject": "hunk:sha256:0ecd00cfb76e9574a82b6c25f0bedd6db86a1d53a19518dd910a667129dd7148"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-84PJHF",
+      "items": [
+        "sha256:d52c5b4f1d61ba3293effc19d6f1fd0f4692e9a06ec177a728b9709dcb00d783"
+      ],
+      "reason": "Lane membership selects the new citation/coherence/answer suites but does not claim execution or acceptance; it is catalog wiring, not an independent semantic obligation.",
+      "subject": "hunk:sha256:d52c5b4f1d61ba3293effc19d6f1fd0f4692e9a06ec177a728b9709dcb00d783"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-8CEPT2",
+      "items": [
+        "sha256:69230abf139e5967b91557bb51c5e975d0bf8bdd4dd07cdc75d89179c1bb3af5"
+      ],
+      "reason": "Final L110 bounds, status entry/reason ceilings and removal of interim ownership are the implementation of the existing row/guard contract; deleted interim clauses are not new invariants.",
+      "subject": "hunk:sha256:69230abf139e5967b91557bb51c5e975d0bf8bdd4dd07cdc75d89179c1bb3af5"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-8NX7H3",
+      "items": [
+        "sha256:cb23fc9cd4cb1362ec07430081728c435a5fdc6b3086a5b58df5dbcc31b0a238"
+      ],
+      "reason": "Quality-result composition, recovery fields and uncut internal populations implement the separately authored status/detail guarantee; imports and plumbing introduce no independent semantic obligation.",
+      "subject": "hunk:sha256:cb23fc9cd4cb1362ec07430081728c435a5fdc6b3086a5b58df5dbcc31b0a238"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-8PJ3A3",
+      "items": [
+        "sha256:0deae20b3ad5e052ff35e07354aca7cfd249ad67c83305496b02d1969a6a9f5c"
+      ],
+      "reason": "Final shaped-row assembly and actual production-path witnesses preserve the governing table invariant; wiring, deleted interim rows and explanatory comments add no separate universal guarantee.",
+      "subject": "hunk:sha256:0deae20b3ad5e052ff35e07354aca7cfd249ad67c83305496b02d1969a6a9f5c"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-92YTQS",
+      "items": [
+        "sha256:94b1122b15839763d70beeaa079748aaca9b2ab80f1f3a4cfb189d6edf776802"
+      ],
+      "reason": "Final shaped-row assembly and actual production-path witnesses preserve the governing table invariant; wiring, deleted interim rows and explanatory comments add no separate universal guarantee.",
+      "subject": "hunk:sha256:94b1122b15839763d70beeaa079748aaca9b2ab80f1f3a4cfb189d6edf776802"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-930TS3",
+      "items": [
+        "sha256:783866425177ac606a43b2c52f34337aecdc1e2073654c3b17419bc89bba96b4"
+      ],
+      "reason": "Candidate filing and file-input/status mechanics realize the separately authored coherence transport invariant; deleted response material is retained in its owning corpus, not new knowledge.",
+      "subject": "hunk:sha256:783866425177ac606a43b2c52f34337aecdc1e2073654c3b17419bc89bba96b4"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "97edddb8b77560c1d6dc6addefac91658084452b",
+            "content": "sha256:d0923362030cd8da1d868eec4f241d816ab114445f29ff7d83e456dada3e0fd6",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "before": {
+            "blob": "b5f664cebbb1579f8082617443e5ca9aa7751791",
+            "content": "sha256:3d6a444ab1b6c2c46771ee7f86ccfa05632b06a438cc304a45c20e73e3791a28",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "id": "RLZ-K569QYAK"
+        },
+        {
+          "after": {
+            "blob": "0f1ea4c1ecb7fca8a1343492c4c7b58409f25176",
+            "content": "sha256:97166447dd1b5160dd885672125696654663dcf7080ec284d0a6d6139270c5ec",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
+          },
+          "before": {
+            "blob": "0f1ea4c1ecb7fca8a1343492c4c7b58409f25176",
+            "content": "sha256:97166447dd1b5160dd885672125696654663dcf7080ec284d0a6d6139270c5ec",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
+          },
+          "id": "RLZ-RSTSK683"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-9J41Q3",
+      "items": [
+        "sha256:70fc2433c91f942f6b4c237b51bd5ff77c2daf4d27512ad5395e61f2f66a5510"
+      ],
+      "reason": "Finite citation batching changes neither target rationale ownership nor the canonical handoff element contract; the existing role realization still states the same boundary.",
+      "revision": 1,
+      "subject": "INV-0FBA8M52"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-7FMDAS",
+          "revision": 2
+        },
+        {
+          "id": "INV-82ZTHK",
+          "revision": 2
+        },
+        {
+          "id": "INV-8AMSGV",
+          "revision": 3
+        },
+        {
+          "id": "INV-9S49CW",
+          "revision": 2
+        },
+        {
+          "id": "INV-HGSFJ8",
+          "revision": 2
+        }
+      ],
+      "id": "ROW-9JEZTB",
+      "items": [
+        "sha256:3d0b6faa019a70d343d059a5bc68272104e2a5defc3431c9e7a6ea46d5e5b73b"
+      ],
+      "reason": "Examined every declared member and routed realization. Status/file/batch transport preserves this existing joint guarantee, member intent and route placement; no membership or guarantee revision is justified. Same-ID current-pair renewal after Manager-admitted 96c4eba4/8046c1a4 sync; retain incoming changes and historical qualifications, restore only the three parked empty-pin realization rationales; no execution or acceptance claim.",
+      "revision": 1,
+      "subject": "FAM-7AEA19"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-9YSZ86",
+      "items": [
+        "sha256:af27dd815e881605f49e83a11f81a0867dfe14d2955c5dc23014a7fad0286fc7"
+      ],
+      "reason": "Status projection and removal of a second carryover cap implement the separately recorded answer/detail guarantee without restoring retired MCP adapters; local packing/import changes carry no separate obligation.",
+      "subject": "hunk:sha256:af27dd815e881605f49e83a11f81a0867dfe14d2955c5dc23014a7fad0286fc7"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-ANDRDP",
+      "items": [
+        "sha256:22a8167d90013b00641df125df4719fefa1162f43ae777e2192fe4eb0dc31893",
+        "sha256:3ea19b5ab908db39ca2d09cbb6c2c11eb7e39da18ddc6409419b866b85ec90c2",
+        "sha256:f2e38d0054d60e1d4ddc7ed6d10932c272b63fbe36a2e1565853dfb1af8e486b"
+      ],
+      "reason": "Derived instruction carrier or canonical procedure: the verified finite-batch/candidate-file directive is routed to its owning product/onboarding contract; no independent mirror authority, role rerouting or new write lane is introduced.",
+      "subject": "onboarding:.agents/skills/c-05-create-or-update-onboarding-files/workflows/converted-card-workflow.md"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-AQH1P8",
+      "items": [
+        "sha256:4fa75e18f0dbcebb31efd7f155a946ee59ed6f11d25f7f9132e85a940f5e5ea2"
+      ],
+      "reason": "Candidate filing and file-input/status mechanics realize the separately authored coherence transport invariant; deleted response material is retained in its owning corpus, not new knowledge.",
+      "subject": "hunk:sha256:4fa75e18f0dbcebb31efd7f155a946ee59ed6f11d25f7f9132e85a940f5e5ea2"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ARB6DW",
+      "items": [
+        "sha256:e8ca6e55d586a4f1d4e8edd0dce0339dc2a1909e629b93ea8aa54a73e0285f29"
+      ],
+      "reason": "Final L110 bounds, status entry/reason ceilings and removal of interim ownership are the implementation of the existing row/guard contract; deleted interim clauses are not new invariants.",
+      "subject": "hunk:sha256:e8ca6e55d586a4f1d4e8edd0dce0339dc2a1909e629b93ea8aa54a73e0285f29"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-AVBFBT",
+      "items": [
+        "sha256:9f3bb0f91fd92dbf82c4be1f13735541976f76ecdd6e021e34c562896c07791a"
+      ],
+      "reason": "Optional file transport and result-count fields represent the separately authored coherence transport guarantee without changing the nine required publication expectations.",
+      "subject": "hunk:sha256:9f3bb0f91fd92dbf82c4be1f13735541976f76ecdd6e021e34c562896c07791a"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R110",
+          "packet": "requirements/MIK-R110-v1-the-memory-tools-answer-with-a-status.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "a2b54179f266360b3cafef9118c220617252d77e",
+            "content": "sha256:592befd857c787e394aa30ff2548fa89ffd5f61552da31072f59da7c9db2fac1",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/tool_entry_point_world.py"
+          },
+          "before": {
+            "blob": "bac606a47fda22f676cda5fa3432702208d5eb10",
+            "content": "sha256:5297d69ae42667e5713b2a25056219f84da232e4f4c0180f2e9f51a49638a820",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/tool_entry_point_world.py"
+          },
+          "id": "RLZ-20QKDA"
+        },
+        {
+          "after": {
+            "blob": "155ad7e2e8143abefcd307e8b080c1296054156a",
+            "content": "sha256:534a557df83cbcab5a5cf8a41bc85a33ca4e8e8d829e376fbca13c56df9fe2f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "ENVELOPE_LOSING_RAISERS"
+            },
+            "path": "mcp/tests/test_tool_entry_point_sweep.py"
+          },
+          "before": {
+            "blob": "0bf0bf427bc7174f7f38a04f42947361454a7f62",
+            "content": "sha256:534a557df83cbcab5a5cf8a41bc85a33ca4e8e8d829e376fbca13c56df9fe2f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "ENVELOPE_LOSING_RAISERS"
+            },
+            "path": "mcp/tests/test_tool_entry_point_sweep.py"
+          },
+          "id": "RLZ-F381M7"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-AY4BW8",
+      "items": [
+        "sha256:e427ae5c94ba3ba395c0efddf6a3f92341a14acd0b5e2499e06152205590d1da"
+      ],
+      "reason": "L110 removes the shared memory-quality pin in its repair; self-contained sweep and shared-world populations remain distinct and declarations are not execution observations. MEMORY baseline1 fixed-list reconciliation narrows resource/proof claims and current empty-pin/one-tool explanations to actual retained source/assertion evidence, preserving IDs and historical origin without new execution. Same-ID current-pair renewal after Manager-admitted 96c4eba4/8046c1a4 sync; retain incoming changes and historical qualifications, restore only the three parked empty-pin realization rationales; no execution or acceptance claim.",
+      "revision": 3,
+      "subject": "INV-TG334W"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-AYV8S4",
+      "items": [
+        "sha256:d0b926cd4ea852eaf551c9351243c295656b087bcaa1259f253b27094aaf9b70"
+      ],
+      "reason": "Final L110 bounds, status entry/reason ceilings and removal of interim ownership are the implementation of the existing row/guard contract; deleted interim clauses are not new invariants.",
+      "subject": "hunk:sha256:d0b926cd4ea852eaf551c9351243c295656b087bcaa1259f253b27094aaf9b70"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-B2W8PY",
+      "items": [
+        "sha256:e5bda762e74936896b7782f2ba0c7287bc30f7abbb975d48ff379ebc5122a027"
+      ],
+      "reason": "Quality-result composition, recovery fields and uncut internal populations implement the separately authored status/detail guarantee; imports and plumbing introduce no independent semantic obligation.",
+      "subject": "hunk:sha256:e5bda762e74936896b7782f2ba0c7287bc30f7abbb975d48ff379ebc5122a027"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-BBVQX9",
+      "items": [
+        "sha256:ede19989c6ba0a2ad08b6fa27a9a10a6065a07928cc2e1125f0b32ecdd3cefac"
+      ],
+      "reason": "Quality-result composition, recovery fields and uncut internal populations implement the separately authored status/detail guarantee; imports and plumbing introduce no independent semantic obligation.",
+      "subject": "hunk:sha256:ede19989c6ba0a2ad08b6fa27a9a10a6065a07928cc2e1125f0b32ecdd3cefac"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-BCK1F9",
+      "items": [
+        "sha256:54502637c13fce6dba32114bcf038f2f22c2394ce56b5d0b865ba308a0402fae"
+      ],
+      "reason": "Final shaped-row assembly and actual production-path witnesses preserve the governing table invariant; wiring, deleted interim rows and explanatory comments add no separate universal guarantee.",
+      "subject": "hunk:sha256:54502637c13fce6dba32114bcf038f2f22c2394ce56b5d0b865ba308a0402fae"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R110",
+          "packet": "requirements/MIK-R110-v1-the-memory-tools-answer-with-a-status.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "155ad7e2e8143abefcd307e8b080c1296054156a",
+            "content": "sha256:1e375aa9fbefa7ef55854a0e6e81b6c658903efd95fea7139692bf68de1a2369",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_pinned_raisers_are_exactly_the_ones_that_lose_the_envelope"
+            },
+            "path": "mcp/tests/test_tool_entry_point_sweep.py"
+          },
+          "before": {
+            "blob": "0bf0bf427bc7174f7f38a04f42947361454a7f62",
+            "content": "sha256:1e375aa9fbefa7ef55854a0e6e81b6c658903efd95fea7139692bf68de1a2369",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_pinned_raisers_are_exactly_the_ones_that_lose_the_envelope"
+            },
+            "path": "mcp/tests/test_tool_entry_point_sweep.py"
+          },
+          "id": "PRF-6KBHE8"
+        },
+        {
+          "after": {
+            "blob": "155ad7e2e8143abefcd307e8b080c1296054156a",
+            "content": "sha256:7991154da41374bfca8f6450500696a9e20feb064efc8e791cfde2e12ff52dd4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_public_tool_answers_in_the_products_own_vocabulary"
+            },
+            "path": "mcp/tests/test_tool_entry_point_sweep.py"
+          },
+          "before": {
+            "blob": "0bf0bf427bc7174f7f38a04f42947361454a7f62",
+            "content": "sha256:7991154da41374bfca8f6450500696a9e20feb064efc8e791cfde2e12ff52dd4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_public_tool_answers_in_the_products_own_vocabulary"
+            },
+            "path": "mcp/tests/test_tool_entry_point_sweep.py"
+          },
+          "id": "PRF-J6Z91D"
+        },
+        {
+          "after": {
+            "blob": "155ad7e2e8143abefcd307e8b080c1296054156a",
+            "content": "sha256:534a557df83cbcab5a5cf8a41bc85a33ca4e8e8d829e376fbca13c56df9fe2f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "ENVELOPE_LOSING_RAISERS"
+            },
+            "path": "mcp/tests/test_tool_entry_point_sweep.py"
+          },
+          "before": {
+            "blob": "0bf0bf427bc7174f7f38a04f42947361454a7f62",
+            "content": "sha256:534a557df83cbcab5a5cf8a41bc85a33ca4e8e8d829e376fbca13c56df9fe2f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "ENVELOPE_LOSING_RAISERS"
+            },
+            "path": "mcp/tests/test_tool_entry_point_sweep.py"
+          },
+          "id": "RLZ-25RX8K"
+        },
+        {
+          "after": {
+            "blob": "a2b54179f266360b3cafef9118c220617252d77e",
+            "content": "sha256:94827d7d82d1ba1109c0607fbd852ede5b7e830d2ac9490d0c7e76402c68cd0c",
+            "locator": {
+              "kind": "symbol",
+              "name": "UNMARKED_NOT_OK"
+            },
+            "path": "mcp/tests/tool_entry_point_world.py"
+          },
+          "before": {
+            "blob": "bac606a47fda22f676cda5fa3432702208d5eb10",
+            "content": "sha256:6d313994f88c45a47aa5ed5b3b9ccc270d56d86c9e870b1afbe08f97fc9a57e5",
+            "locator": {
+              "kind": "symbol",
+              "name": "UNMARKED_NOT_OK"
+            },
+            "path": "mcp/tests/tool_entry_point_world.py"
+          },
+          "id": "RLZ-3XS813"
+        },
+        {
+          "after": {
+            "blob": "155ad7e2e8143abefcd307e8b080c1296054156a",
+            "content": "sha256:cf13fcd4aed8c76d143d9756a4c825aace6cb7f067668fe241e8fe04cbb5c49d",
+            "locator": {
+              "end": 115,
+              "kind": "line_range",
+              "start": 109
+            },
+            "path": "mcp/tests/test_tool_entry_point_sweep.py"
+          },
+          "before": {
+            "blob": "0bf0bf427bc7174f7f38a04f42947361454a7f62",
+            "content": "sha256:cf13fcd4aed8c76d143d9756a4c825aace6cb7f067668fe241e8fe04cbb5c49d",
+            "locator": {
+              "end": 115,
+              "kind": "line_range",
+              "start": 109
+            },
+            "path": "mcp/tests/test_tool_entry_point_sweep.py"
+          },
+          "id": "RLZ-6VVBP4"
+        },
+        {
+          "after": {
+            "blob": "155ad7e2e8143abefcd307e8b080c1296054156a",
+            "content": "sha256:534a557df83cbcab5a5cf8a41bc85a33ca4e8e8d829e376fbca13c56df9fe2f3",
+            "locator": {
+              "end": 124,
+              "kind": "line_range",
+              "start": 117
+            },
+            "path": "mcp/tests/test_tool_entry_point_sweep.py"
+          },
+          "before": {
+            "blob": "0bf0bf427bc7174f7f38a04f42947361454a7f62",
+            "content": "sha256:534a557df83cbcab5a5cf8a41bc85a33ca4e8e8d829e376fbca13c56df9fe2f3",
+            "locator": {
+              "end": 124,
+              "kind": "line_range",
+              "start": 117
+            },
+            "path": "mcp/tests/test_tool_entry_point_sweep.py"
+          },
+          "id": "RLZ-B0D6N2"
+        },
+        {
+          "after": {
+            "blob": "155ad7e2e8143abefcd307e8b080c1296054156a",
+            "content": "sha256:1e375aa9fbefa7ef55854a0e6e81b6c658903efd95fea7139692bf68de1a2369",
+            "locator": {
+              "kind": "symbol",
+              "name": "EntryPointProbeTests.test_the_pinned_raisers_are_exactly_the_ones_that_lose_the_envelope"
+            },
+            "path": "mcp/tests/test_tool_entry_point_sweep.py"
+          },
+          "before": {
+            "blob": "0bf0bf427bc7174f7f38a04f42947361454a7f62",
+            "content": "sha256:1e375aa9fbefa7ef55854a0e6e81b6c658903efd95fea7139692bf68de1a2369",
+            "locator": {
+              "kind": "symbol",
+              "name": "EntryPointProbeTests.test_the_pinned_raisers_are_exactly_the_ones_that_lose_the_envelope"
+            },
+            "path": "mcp/tests/test_tool_entry_point_sweep.py"
+          },
+          "id": "RLZ-ET2GC0"
+        },
+        {
+          "after": {
+            "blob": "a2b54179f266360b3cafef9118c220617252d77e",
+            "content": "sha256:94827d7d82d1ba1109c0607fbd852ede5b7e830d2ac9490d0c7e76402c68cd0c",
+            "locator": {
+              "kind": "symbol",
+              "name": "UNMARKED_NOT_OK"
+            },
+            "path": "mcp/tests/tool_entry_point_world.py"
+          },
+          "before": {
+            "blob": "bac606a47fda22f676cda5fa3432702208d5eb10",
+            "content": "sha256:6d313994f88c45a47aa5ed5b3b9ccc270d56d86c9e870b1afbe08f97fc9a57e5",
+            "locator": {
+              "kind": "symbol",
+              "name": "UNMARKED_NOT_OK"
+            },
+            "path": "mcp/tests/tool_entry_point_world.py"
+          },
+          "id": "RLZ-S39TCH"
+        },
+        {
+          "after": {
+            "blob": "155ad7e2e8143abefcd307e8b080c1296054156a",
+            "content": "sha256:534a557df83cbcab5a5cf8a41bc85a33ca4e8e8d829e376fbca13c56df9fe2f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "ENVELOPE_LOSING_RAISERS"
+            },
+            "path": "mcp/tests/test_tool_entry_point_sweep.py"
+          },
+          "before": {
+            "blob": "0bf0bf427bc7174f7f38a04f42947361454a7f62",
+            "content": "sha256:534a557df83cbcab5a5cf8a41bc85a33ca4e8e8d829e376fbca13c56df9fe2f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "ENVELOPE_LOSING_RAISERS"
+            },
+            "path": "mcp/tests/test_tool_entry_point_sweep.py"
+          },
+          "id": "RLZ-WQDNDW"
+        },
+        {
+          "after": {
+            "blob": "155ad7e2e8143abefcd307e8b080c1296054156a",
+            "content": "sha256:17ad49c49bee633b673e5481327505991854f0f36441ebc2266603b65e789608",
+            "locator": {
+              "kind": "symbol",
+              "name": "T34_REPAIRED_TOOLS"
+            },
+            "path": "mcp/tests/test_tool_entry_point_sweep.py"
+          },
+          "before": {
+            "blob": "0bf0bf427bc7174f7f38a04f42947361454a7f62",
+            "content": "sha256:17ad49c49bee633b673e5481327505991854f0f36441ebc2266603b65e789608",
+            "locator": {
+              "kind": "symbol",
+              "name": "T34_REPAIRED_TOOLS"
+            },
+            "path": "mcp/tests/test_tool_entry_point_sweep.py"
+          },
+          "id": "RLZ-Y2XJG0"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-BHHF3Y",
+      "items": [
+        "sha256:1de9b1e4c4db5c775eee235c3389e780785fbfb357de1df57c8686142c1bb0ad"
+      ],
+      "reason": "The same-change L110 repair empties the shared bare-quality pin; exact pin equality and remaining lifecycle-raiser ownership stay operative. Historical five-pin inventory is not a new failure census. MEMORY baseline1 fixed-list reconciliation narrows resource/proof claims and current empty-pin/one-tool explanations to actual retained source/assertion evidence, preserving IDs and historical origin without new execution. Same-ID current-pair renewal after Manager-admitted 96c4eba4/8046c1a4 sync; retain incoming changes and historical qualifications, restore only the three parked empty-pin realization rationales; no execution or acceptance claim.",
+      "revision": 2,
+      "subject": "INV-8V5KH0"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-BHWTXQ",
+      "items": [
+        "sha256:1006ff5afab67891f45d552d79798e072f1cbd027e42960ce282dbb625598c9a"
+      ],
+      "reason": "Integrity projection and removal of the internal listing cap implement the separately recorded status/detail boundary; local mapping/import mechanics require no additional invariant.",
+      "subject": "hunk:sha256:1006ff5afab67891f45d552d79798e072f1cbd027e42960ce282dbb625598c9a"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-BK0DJV",
+      "items": [
+        "sha256:85410cb7fb3a7e049731d8f448992b4a784a0378c80b23f6b767ae614b5b178c"
+      ],
+      "reason": "Candidate filing and file-input/status mechanics realize the separately authored coherence transport invariant; deleted response material is retained in its owning corpus, not new knowledge.",
+      "subject": "hunk:sha256:85410cb7fb3a7e049731d8f448992b4a784a0378c80b23f6b767ae614b5b178c"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-63Z0MN",
+          "revision": 2
+        },
+        {
+          "id": "INV-DKN3CG",
+          "revision": 2
+        },
+        {
+          "id": "INV-NNQR91",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-BQNWRH",
+      "items": [
+        "sha256:d674e7a18b966c0f3c301eefc82efa55c3b050f751af5b660473927286a688ec"
+      ],
+      "reason": "Re-examined all three members after supported L133 landing: INV-63Z0MN revision2 keeps the single launcher and complete feature operands while selected labels/default provenance move to control hovers; INV-DKN3CG revision2 keeps real reader/enforcer/catalog boundaries and INV-NNQR91 revision1 keeps canonical generator/mirror retirement. The family’s propagation guarantee, routes and membership remain unchanged; renew only examined-member revision qualification, no family or invariant revision authored.",
+      "revision": 1,
+      "subject": "FAM-GDXSJG"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-BSM6GQ",
+      "items": [
+        "sha256:ae4129cf4b227db490112e8c1f232bad41b6d8d246f8b391525f10d5fbf4fe72"
+      ],
+      "reason": "Candidate filing and file-input/status mechanics realize the separately authored coherence transport invariant; deleted response material is retained in its owning corpus, not new knowledge.",
+      "subject": "hunk:sha256:ae4129cf4b227db490112e8c1f232bad41b6d8d246f8b391525f10d5fbf4fe72"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-BTHB39",
+      "items": [
+        "sha256:3dedb1c042cbdb58b1d11cc1baf0384d4fe458b8635d520c79820478eb9554ea",
+        "sha256:93240cb7f867d323212b595fe56aae49bc43914909e5aaf9ceb46c03d9e421c0",
+        "sha256:ab1d269753e4fd4f92eb905e41f0086a818a60271d25ba98783bf8d676f5b58b"
+      ],
+      "reason": "Derived instruction carrier or canonical procedure: the verified finite-batch/candidate-file directive is routed to its owning product/onboarding contract; no independent mirror authority, role rerouting or new write lane is introduced.",
+      "subject": "onboarding:.hermes/skills/c-05-create-or-update-onboarding-files/workflows/converted-card-workflow.md"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-C907ZF",
+      "items": [
+        "sha256:f077a6c0f13d19f89b17274e47622de61f6d8bb881e35c3824dbe55cdaae6315"
+      ],
+      "reason": "Candidate filing and file-input/status mechanics realize the separately authored coherence transport invariant; deleted response material is retained in its owning corpus, not new knowledge.",
+      "subject": "hunk:sha256:f077a6c0f13d19f89b17274e47622de61f6d8bb881e35c3824dbe55cdaae6315"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-1V9ARB",
+          "revision": 1
+        },
+        {
+          "id": "INV-701KQ9",
+          "revision": 1
+        },
+        {
+          "id": "INV-VH0QZ1",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-CBD146",
+      "items": [],
+      "reason": "Examined all three new obligations as one joint operational guarantee and assigned routes to the actual realization owners, not by inference from directory labels.",
+      "revision": 1,
+      "subject": "FAM-ZVFPWJ"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-CBJN9F",
+      "items": [
+        "sha256:b24e96fdac2faf0c436e15afcd33e01fc7c267656182e39105067cd67354cb58"
+      ],
+      "reason": "Empty quality pin and shared catalog consumer wiring preserve fixture isolation, whole-result readback and framework-key discrimination; they do not create an independent test-world allowance list.",
+      "subject": "onboarding:mcp/tests/tool_entry_point_world.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-CJGJ3K",
+      "items": [
+        "sha256:7c1392003217fc0d3c144a054e30937fb11f21a92b4357c5b0f7941191cf69e1",
+        "sha256:b7e5f9f843e1e4264eba87c43152f330d2ae604bb009a481e788bebaf8b0c707"
+      ],
+      "reason": "Derived instruction carrier or canonical procedure: the verified finite-batch/candidate-file directive is routed to its owning product/onboarding contract; no independent mirror authority, role rerouting or new write lane is introduced.",
+      "subject": "onboarding:.github-vscode/skills/c-02-memory-quality-control/SKILL.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-CK3F2V",
+      "items": [
+        "sha256:e1f8282d21ac1d4f32edb3e92f078b8987877226132a6d4506036e376e59c149"
+      ],
+      "reason": "Derived instruction carrier or canonical procedure: the verified finite-batch/candidate-file directive is routed to its owning product/onboarding contract; no independent mirror authority, role rerouting or new write lane is introduced.",
+      "subject": "onboarding:.cursor/skills/l-01-agent-lifecycles/roles/curator.md"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-CMWCQ8",
+      "items": [
+        "sha256:14b86a8aed3b87f3416404b8a05b9e52b9ce7eec42a64f0d03dbaa1139ddb368"
+      ],
+      "reason": "Final shaped-row assembly and actual production-path witnesses preserve the governing table invariant; wiring, deleted interim rows and explanatory comments add no separate universal guarantee.",
+      "subject": "hunk:sha256:14b86a8aed3b87f3416404b8a05b9e52b9ce7eec42a64f0d03dbaa1139ddb368"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-D45M1Z",
+      "items": [
+        "sha256:568bece9b3be4fed2f0acc489b37edbde2b6bdc4388951f9d288927463aee4ea"
+      ],
+      "reason": "Lane membership selects the new citation/coherence/answer suites but does not claim execution or acceptance; it is catalog wiring, not an independent semantic obligation.",
+      "subject": "hunk:sha256:568bece9b3be4fed2f0acc489b37edbde2b6bdc4388951f9d288927463aee4ea"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-D68SEW",
+      "items": [
+        "sha256:e7cf54816bfbff5d0aab79fa2d7db7b64522ff2fe98b880ab9e242fc216052a3"
+      ],
+      "reason": "The selected changes alter memory-tool transport, not repository purpose, storage ownership, semantic approval or paired Git authority.",
+      "subject": "onboarding:overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-DA9V78",
+      "items": [
+        "sha256:2387dd000ad1c752d736c983cc3ecaa73d05a2b652c5716d5226ed0e80486b85"
+      ],
+      "reason": "Candidate filing and file-input/status mechanics realize the separately authored coherence transport invariant; deleted response material is retained in its owning corpus, not new knowledge.",
+      "subject": "hunk:sha256:2387dd000ad1c752d736c983cc3ecaa73d05a2b652c5716d5226ed0e80486b85"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-0FBA8M52",
+          "revision": 1
+        },
+        {
+          "id": "INV-CKHJ0M7J",
+          "revision": 2
+        },
+        {
+          "id": "INV-E8655Z54",
+          "revision": 2
+        },
+        {
+          "id": "INV-H6A6JS63",
+          "revision": 2
+        },
+        {
+          "id": "INV-J7179RG5",
+          "revision": 2
+        }
+      ],
+      "id": "ROW-DP0785",
+      "items": [
+        "sha256:8c5f00f1ebcef143a007c87d3002c114510563baadfef7502a3ddd9a98c88096"
+      ],
+      "reason": "Examined every declared member and routed realization. Status/file/batch transport preserves this existing joint guarantee, member intent and route placement; no membership or guarantee revision is justified.",
+      "revision": 3,
+      "subject": "FAM-KQQE74ZT"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-DPZ898",
+      "items": [
+        "sha256:3282ea530f87af3bf0e749e0f62c2e9078006eca681512d8ce4bd707e91cf8a8"
+      ],
+      "reason": "Candidate filing and file-input/status mechanics realize the separately authored coherence transport invariant; deleted response material is retained in its owning corpus, not new knowledge.",
+      "subject": "hunk:sha256:3282ea530f87af3bf0e749e0f62c2e9078006eca681512d8ce4bd707e91cf8a8"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-DSCX6V",
+      "items": [
+        "sha256:777daa605c1bfc47d4985fb962fa14b1a4cf48520c161dac5018f9151f273d2b"
+      ],
+      "reason": "Registration describes the separately recorded file/set publication contract; schema advertisement is not an independent publication authority.",
+      "subject": "hunk:sha256:777daa605c1bfc47d4985fb962fa14b1a4cf48520c161dac5018f9151f273d2b"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-DSM0B7",
+      "items": [
+        "sha256:491517adbbd594dddc0f1ee5113fd295aff481651ac89e8751aaf9078cc4a0ad"
+      ],
+      "reason": "Integrity projection and removal of the internal listing cap implement the separately recorded status/detail boundary; local mapping/import mechanics require no additional invariant.",
+      "subject": "hunk:sha256:491517adbbd594dddc0f1ee5113fd295aff481651ac89e8751aaf9078cc4a0ad"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-DV6220",
+      "items": [
+        "sha256:edbffb7777b228336e61b33a3dd2d25502d698552641be74d938e86d4bd944ed"
+      ],
+      "reason": "Final L110 bounds, status entry/reason ceilings and removal of interim ownership are the implementation of the existing row/guard contract; deleted interim clauses are not new invariants.",
+      "subject": "hunk:sha256:edbffb7777b228336e61b33a3dd2d25502d698552641be74d938e86d4bd944ed"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-DVM30W",
+      "items": [
+        "sha256:8e46b8920913a7ea3cedcc64753a6f2a7a9a138f7860d9ebcb29460bd4818a5c"
+      ],
+      "reason": "New suites enter the existing lane census; the card already makes canonical membership the authority and does not pin totals or infer execution.",
+      "subject": "onboarding:mcp/tests/test-evidence-lanes.toml"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-DWEYV0",
+      "items": [
+        "sha256:19ed1e85a2b28283622a38f324d9c3864375b7cf76f307def37c61e968ac8788",
+        "sha256:6b83e589cc2d125ea9c93f7a1315431cea18c53d64f182aa5f5684ef616bb01d",
+        "sha256:8aee5e755d8bcf4792ee7c06e1e6a9fc4349c25f870a589ccb0a7e1fb57188b6",
+        "sha256:8b3110cbefb6ba03ae43d429c52877eb7184d2865c43d8e8c48c120544d574b6",
+        "sha256:ac44172a53fab870132950429269a06ef311815a539a5303e555c3bdf0ee7639",
+        "sha256:ca908b2106c27ed16d5fdac10c911b79849a33b04a31dd937cfc03b9ed9cdf76",
+        "sha256:d620950b60a4970fe30d85fd86b775dc82ab9902822b33c9f3a07eb7dd461491"
+      ],
+      "reason": "The stub preparation fixture now writes the candidate file and marks judgments_file as optional content, not a tenth required identity; member-derived refusal/discoverability assertions retain their documented contract.",
+      "subject": "onboarding:mcp/tests/test_curator_coherence_publication_discoverability.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-DXEE84",
+      "items": [
+        "sha256:37d1c4c4409faa960cc47d3f46f302c6bc930a37870f92154feec71c16142e67"
+      ],
+      "reason": "Candidate filing and file-input/status mechanics realize the separately authored coherence transport invariant; deleted response material is retained in its owning corpus, not new knowledge.",
+      "subject": "hunk:sha256:37d1c4c4409faa960cc47d3f46f302c6bc930a37870f92154feec71c16142e67"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-E9RZ56",
+      "items": [
+        "sha256:df6568ab1a574deda5c6744cb52a364e93478fd7dc16c2e957c4a3bb143f644c"
+      ],
+      "reason": "Status projection and removal of a second carryover cap implement the separately recorded answer/detail guarantee without restoring retired MCP adapters; local packing/import changes carry no separate obligation.",
+      "subject": "hunk:sha256:df6568ab1a574deda5c6744cb52a364e93478fd7dc16c2e957c4a3bb143f644c"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-EDZFYZ",
+      "items": [
+        "sha256:7355dfea53086c97aff6308090b064547cd73f816a7ad33c4047fe1d4c648b59"
+      ],
+      "reason": "Integrity projection and removal of the internal listing cap implement the separately recorded status/detail boundary; local mapping/import mechanics require no additional invariant.",
+      "subject": "hunk:sha256:7355dfea53086c97aff6308090b064547cd73f816a7ad33c4047fe1d4c648b59"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-EY2JYH",
+      "items": [
+        "sha256:5cd2263b8c4ddf1ae875221e07eb4783c56a3fb0dc85b4db1be0c70f8ed05bec"
+      ],
+      "reason": "Quality-result composition, recovery fields and uncut internal populations implement the separately authored status/detail guarantee; imports and plumbing introduce no independent semantic obligation.",
+      "subject": "hunk:sha256:5cd2263b8c4ddf1ae875221e07eb4783c56a3fb0dc85b4db1be0c70f8ed05bec"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-FJ2N8Z",
+      "items": [
+        "sha256:5f7b260b40c5a6661fcf4150fb09a20c348d05227724e772238bd69695797b57"
+      ],
+      "reason": "Status projection and removal of a second carryover cap implement the separately recorded answer/detail guarantee without restoring retired MCP adapters; local packing/import changes carry no separate obligation.",
+      "subject": "hunk:sha256:5f7b260b40c5a6661fcf4150fb09a20c348d05227724e772238bd69695797b57"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-FJZX6D",
+      "items": [
+        "sha256:fb6654c224ef7c5b56084c8fb525b6da1a1f029cf7dab936fb0e38c0368cbdf8"
+      ],
+      "reason": "Candidate filing and file-input/status mechanics realize the separately authored coherence transport invariant; deleted response material is retained in its owning corpus, not new knowledge.",
+      "subject": "hunk:sha256:fb6654c224ef7c5b56084c8fb525b6da1a1f029cf7dab936fb0e38c0368cbdf8"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-FM3653",
+      "items": [
+        "sha256:9a730335d4e3be742c8f399c919c53d67a4f6f6be6dd8130ea71498ab7a30074"
+      ],
+      "reason": "Quality-result composition, recovery fields and uncut internal populations implement the separately authored status/detail guarantee; imports and plumbing introduce no independent semantic obligation.",
+      "subject": "hunk:sha256:9a730335d4e3be742c8f399c919c53d67a4f6f6be6dd8130ea71498ab7a30074"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-FQR85P",
+      "items": [
+        "sha256:41b3818baab85fd26ad80e4eb6241b2b5e6a29db6d1388e53bafe0b5a8b383c7"
+      ],
+      "reason": "Quality-result composition, recovery fields and uncut internal populations implement the separately authored status/detail guarantee; imports and plumbing introduce no independent semantic obligation.",
+      "subject": "hunk:sha256:41b3818baab85fd26ad80e4eb6241b2b5e6a29db6d1388e53bafe0b5a8b383c7"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-FTXENG",
+      "items": [
+        "sha256:8ea38584607b0107a7e97e4eba47f215bde6047c449965d05200cb2fdc819172"
+      ],
+      "reason": "Candidate filing and file-input/status mechanics realize the separately authored coherence transport invariant; deleted response material is retained in its owning corpus, not new knowledge.",
+      "subject": "hunk:sha256:8ea38584607b0107a7e97e4eba47f215bde6047c449965d05200cb2fdc819172"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "97edddb8b77560c1d6dc6addefac91658084452b",
+            "content": "sha256:d0923362030cd8da1d868eec4f241d816ab114445f29ff7d83e456dada3e0fd6",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "before": {
+            "blob": "b5f664cebbb1579f8082617443e5ca9aa7751791",
+            "content": "sha256:3d6a444ab1b6c2c46771ee7f86ccfa05632b06a438cc304a45c20e73e3791a28",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "id": "RLZ-JFZ5WP"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-G50Z4K",
+      "items": [
+        "sha256:d783fa5253fd0d759b3106348c8f5d5b2c9bdc6d3b515816fd4997b7ce489f52"
+      ],
+      "reason": "Batching changes only citation-call selection; harness freedom, checked/credited helpers, independent review and the one-writer boundary remain untouched.",
+      "revision": 1,
+      "subject": "INV-7VZRZW"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-GA0C3G",
+      "items": [
+        "sha256:071c1bc5d32841f6f1ac3784476be7e928201b41c8a1d11975d984110e926cc3"
+      ],
+      "reason": "Derived instruction carrier or canonical procedure: the verified finite-batch/candidate-file directive is routed to its owning product/onboarding contract; no independent mirror authority, role rerouting or new write lane is introduced.",
+      "subject": "onboarding:.codex/skills/l-01-agent-lifecycles/roles/curator.md"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-GBR85V",
+      "items": [
+        "sha256:b347a47b85b96a1690fff1642bc741ea632069055ae62f41c684a07905a807d7"
+      ],
+      "reason": "Quality-result composition, recovery fields and uncut internal populations implement the separately authored status/detail guarantee; imports and plumbing introduce no independent semantic obligation.",
+      "subject": "hunk:sha256:b347a47b85b96a1690fff1642bc741ea632069055ae62f41c684a07905a807d7"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-GMMYX4",
+      "items": [
+        "sha256:64b7a7d947e550b88381b06232b2bc6fc4418d3c6cb8b543a83614f67f3e5a64"
+      ],
+      "reason": "Attempt8 supplies explicit L100 interim ownership for incoming retire_child and role_start_set and removes the stale retired-tool assertion. The existing authored-row/public-registry exactness contract and L110 final status bounds are unchanged; this is compatibility data within that contract, not a new invariant, test execution or acceptance. The two operative owning cards describe the new declarations; unchanged memory meaning elsewhere is retained.",
+      "subject": "hunk:sha256:64b7a7d947e550b88381b06232b2bc6fc4418d3c6cb8b543a83614f67f3e5a64"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-H65F2E",
+      "items": [
+        "sha256:d02a0d3368e35a4d6a5f733935a6895645cbf547ba5864671511fab583e1464b"
+      ],
+      "reason": "Attempt8 supplies explicit L100 interim ownership for incoming retire_child and role_start_set and removes the stale retired-tool assertion. The existing authored-row/public-registry exactness contract and L110 final status bounds are unchanged; this is compatibility data within that contract, not a new invariant, test execution or acceptance. The two operative owning cards describe the new declarations; unchanged memory meaning elsewhere is retained.",
+      "subject": "hunk:sha256:d02a0d3368e35a4d6a5f733935a6895645cbf547ba5864671511fab583e1464b"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-HPXHXQ",
+      "items": [
+        "sha256:0b92c8454555fb9fae143fd0bcde8a3b9e9883099722e03d5c0de87cb408a482"
+      ],
+      "reason": "The new optional file transport/compact preparation description leaves task-document mutation ownership and exact publication expectations unchanged; the owning coherence card describes the transport, not a new task authoring contract.",
+      "subject": "onboarding:mcp/src/agents_remember/mcp/registration/tasks.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "14959111f43c05e10a07add1c48a333678a3f5f6",
+            "content": "sha256:1bdfe970d6c847e363af37d200da4987e553453a7d14d2a1351ed01f25e51360",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "5ed69e0a7378e36390a2e1ac01542644d28f1039",
+            "content": "sha256:4fc7ddba019c7b8c2310ceaef86e24e25cdc8fb09ea04e863b827f4d4134c143",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-GRTJG0"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-JF597S",
+      "items": [
+        "sha256:4770f1fb52acd1ae9fc22046b0cb9a107e93f66acdc21f9ed1db49c904650b94"
+      ],
+      "reason": "Retired union-resurrection incident remains historical; new catalog rows do not make its exact-two-consumer statement current. Renew the whole-file support anchor without changing the retired record or rationale. Same-ID current-pair renewal after Manager-admitted 96c4eba4/8046c1a4 sync; retain incoming changes and historical qualifications, restore only the three parked empty-pin realization rationales; no execution or acceptance claim.",
+      "revision": 1,
+      "subject": "INV-MSCRAN"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-JRG23A",
+      "items": [
+        "sha256:0a68cc1118a0b0e9a5545fa10dd10a31f6855fc52a8ffe81d1b7aea8825faba2"
+      ],
+      "reason": "Shared candidate-bound import and singleton helper factoring implement the separately authored finite-selection/status obligations without changing the measured pre-baseline admission. Removed stamps/material are delivered by the owning whole/status result; no separate universal invariant arises from this local plumbing.",
+      "subject": "hunk:sha256:0a68cc1118a0b0e9a5545fa10dd10a31f6855fc52a8ffe81d1b7aea8825faba2"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-JRN9DZ",
+      "items": [
+        "sha256:00b7fc8e5eff65e557c573cd23e064f7bb1e6af05dcdd604d513e406c8f24466"
+      ],
+      "reason": "Final shaped-row assembly and actual production-path witnesses preserve the governing table invariant; wiring, deleted interim rows and explanatory comments add no separate universal guarantee.",
+      "subject": "hunk:sha256:00b7fc8e5eff65e557c573cd23e064f7bb1e6af05dcdd604d513e406c8f24466"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "d7bf74bc660d55b477b5698fd496803aea57b3fd",
+            "content": "sha256:d99430e5b69788af75ad2214a5c8fb312c751978f1cfef213aa88f2ce866aa52",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/worker.md"
+          },
+          "before": {
+            "blob": "d7bf74bc660d55b477b5698fd496803aea57b3fd",
+            "content": "sha256:d99430e5b69788af75ad2214a5c8fb312c751978f1cfef213aa88f2ce866aa52",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/worker.md"
+          },
+          "id": "RLZ-02MMZJ"
+        },
+        {
+          "after": {
+            "blob": "59b96abdc86d2d0203bea462255eaee46b8bbd64",
+            "content": "sha256:681308a36b7737e6186bdb5a962918b28a8667253cc967b6c4fbbe4c53b62d20",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
+          },
+          "before": {
+            "blob": "59b96abdc86d2d0203bea462255eaee46b8bbd64",
+            "content": "sha256:681308a36b7737e6186bdb5a962918b28a8667253cc967b6c4fbbe4c53b62d20",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
+          },
+          "id": "RLZ-0GEXHP"
+        },
+        {
+          "after": {
+            "blob": "01c7b20b4f7d9c3f858781923568788fc5e85cef",
+            "content": "sha256:b7d1f3f4eb422b95f6ba892038c59c307cd1037fd239cb7249a982a247e1919e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/bootstrap.md"
+          },
+          "before": {
+            "blob": "01c7b20b4f7d9c3f858781923568788fc5e85cef",
+            "content": "sha256:b7d1f3f4eb422b95f6ba892038c59c307cd1037fd239cb7249a982a247e1919e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/bootstrap.md"
+          },
+          "id": "RLZ-3QBDFJ"
+        },
+        {
+          "after": {
+            "blob": "6a3954f423f0d59e486bd5716e38787d5ef84d61",
+            "content": "sha256:1ade4d5eeecd8a6753efa976feefc6042e50283a991613e583b1a04285c292e9",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "before": {
+            "blob": "6a3954f423f0d59e486bd5716e38787d5ef84d61",
+            "content": "sha256:1ade4d5eeecd8a6753efa976feefc6042e50283a991613e583b1a04285c292e9",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "id": "RLZ-59K606"
+        },
+        {
+          "after": {
+            "blob": "6a3954f423f0d59e486bd5716e38787d5ef84d61",
+            "content": "sha256:1ade4d5eeecd8a6753efa976feefc6042e50283a991613e583b1a04285c292e9",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "before": {
+            "blob": "6a3954f423f0d59e486bd5716e38787d5ef84d61",
+            "content": "sha256:1ade4d5eeecd8a6753efa976feefc6042e50283a991613e583b1a04285c292e9",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "id": "RLZ-5WT1RY"
+        },
+        {
+          "after": {
+            "blob": "7c2c913f067df83ccb08c9f4721828096b4a6b48",
+            "content": "sha256:b2f617cdb552929185c4164ebb8a992f89da1d976317b2eb29e731dccc9b396a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/c-13-install-and-onboard/SKILL.md"
+          },
+          "before": {
+            "blob": "7c2c913f067df83ccb08c9f4721828096b4a6b48",
+            "content": "sha256:b2f617cdb552929185c4164ebb8a992f89da1d976317b2eb29e731dccc9b396a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/c-13-install-and-onboard/SKILL.md"
+          },
+          "id": "RLZ-88JBV4"
+        },
+        {
+          "after": {
+            "blob": "2dc6e77c39a472a0a08577722adc9fea82444fcf",
+            "content": "sha256:937e4443ad8b692e2b461dca009585e63d8ddb41fb1537c960ccd0f51ee74520",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/investigator.md"
+          },
+          "before": {
+            "blob": "2dc6e77c39a472a0a08577722adc9fea82444fcf",
+            "content": "sha256:937e4443ad8b692e2b461dca009585e63d8ddb41fb1537c960ccd0f51ee74520",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/investigator.md"
+          },
+          "id": "RLZ-ABKXPC"
+        },
+        {
+          "after": {
+            "blob": "ca32ef3e0eeeed252761b2c12987922e7a7c8b4e",
+            "content": "sha256:0f2489d541f974517880b7df663c58a70b72e9f3fbeb136da1cdada4e97d5a3a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/strategist.md"
+          },
+          "before": {
+            "blob": "ca32ef3e0eeeed252761b2c12987922e7a7c8b4e",
+            "content": "sha256:0f2489d541f974517880b7df663c58a70b72e9f3fbeb136da1cdada4e97d5a3a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/strategist.md"
+          },
+          "id": "RLZ-BAA5KM"
+        },
+        {
+          "after": {
+            "blob": "c6b847c5c7627c6094bd425abb7559f7ae21e43e",
+            "content": "sha256:10c2683a39e2cd0749f0d56b67466d02117322706907419831ba9da450bc64d7",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "before": {
+            "blob": "c6b847c5c7627c6094bd425abb7559f7ae21e43e",
+            "content": "sha256:10c2683a39e2cd0749f0d56b67466d02117322706907419831ba9da450bc64d7",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "id": "RLZ-BKYWR9"
+        },
+        {
+          "after": {
+            "blob": "c6b847c5c7627c6094bd425abb7559f7ae21e43e",
+            "content": "sha256:10c2683a39e2cd0749f0d56b67466d02117322706907419831ba9da450bc64d7",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "before": {
+            "blob": "c6b847c5c7627c6094bd425abb7559f7ae21e43e",
+            "content": "sha256:10c2683a39e2cd0749f0d56b67466d02117322706907419831ba9da450bc64d7",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "id": "RLZ-CG94JY"
+        },
+        {
+          "after": {
+            "blob": "2dc6e77c39a472a0a08577722adc9fea82444fcf",
+            "content": "sha256:937e4443ad8b692e2b461dca009585e63d8ddb41fb1537c960ccd0f51ee74520",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/investigator.md"
+          },
+          "before": {
+            "blob": "2dc6e77c39a472a0a08577722adc9fea82444fcf",
+            "content": "sha256:937e4443ad8b692e2b461dca009585e63d8ddb41fb1537c960ccd0f51ee74520",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/investigator.md"
+          },
+          "id": "RLZ-D1DKW9"
+        },
+        {
+          "after": {
+            "blob": "44431745a09a4548b3c380f36be3f06e63632a75",
+            "content": "sha256:10e3cad4fa72df4ceb6cfb4ed33b5cdb3eb8dbd9717ac62b24db01c975120fd6",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/implementation.md"
+          },
+          "before": {
+            "blob": "44431745a09a4548b3c380f36be3f06e63632a75",
+            "content": "sha256:10e3cad4fa72df4ceb6cfb4ed33b5cdb3eb8dbd9717ac62b24db01c975120fd6",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/implementation.md"
+          },
+          "id": "RLZ-DRT32D"
+        },
+        {
+          "after": {
+            "blob": "97edddb8b77560c1d6dc6addefac91658084452b",
+            "content": "sha256:d0923362030cd8da1d868eec4f241d816ab114445f29ff7d83e456dada3e0fd6",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "before": {
+            "blob": "b5f664cebbb1579f8082617443e5ca9aa7751791",
+            "content": "sha256:3d6a444ab1b6c2c46771ee7f86ccfa05632b06a438cc304a45c20e73e3791a28",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "id": "RLZ-EK6J3B"
+        },
+        {
+          "after": {
+            "blob": "cea879140a9d03d3e55492f6cebf9943fb19b0c4",
+            "content": "sha256:7db158bae9759a77bb55ab71a2e344b58cb0c130c3442fd6c88bd18172c3d922",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "before": {
+            "blob": "cea879140a9d03d3e55492f6cebf9943fb19b0c4",
+            "content": "sha256:7db158bae9759a77bb55ab71a2e344b58cb0c130c3442fd6c88bd18172c3d922",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "id": "RLZ-EQZH1P"
+        },
+        {
+          "after": {
+            "blob": "d7bf74bc660d55b477b5698fd496803aea57b3fd",
+            "content": "sha256:d99430e5b69788af75ad2214a5c8fb312c751978f1cfef213aa88f2ce866aa52",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/worker.md"
+          },
+          "before": {
+            "blob": "d7bf74bc660d55b477b5698fd496803aea57b3fd",
+            "content": "sha256:d99430e5b69788af75ad2214a5c8fb312c751978f1cfef213aa88f2ce866aa52",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/worker.md"
+          },
+          "id": "RLZ-GRG1X8"
+        },
+        {
+          "after": {
+            "blob": "59b96abdc86d2d0203bea462255eaee46b8bbd64",
+            "content": "sha256:681308a36b7737e6186bdb5a962918b28a8667253cc967b6c4fbbe4c53b62d20",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/curation.md"
+          },
+          "before": {
+            "blob": "59b96abdc86d2d0203bea462255eaee46b8bbd64",
+            "content": "sha256:681308a36b7737e6186bdb5a962918b28a8667253cc967b6c4fbbe4c53b62d20",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/curation.md"
+          },
+          "id": "RLZ-JSEK7Q"
+        },
+        {
+          "after": {
+            "blob": "7c2c913f067df83ccb08c9f4721828096b4a6b48",
+            "content": "sha256:b2f617cdb552929185c4164ebb8a992f89da1d976317b2eb29e731dccc9b396a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md"
+          },
+          "before": {
+            "blob": "7c2c913f067df83ccb08c9f4721828096b4a6b48",
+            "content": "sha256:b2f617cdb552929185c4164ebb8a992f89da1d976317b2eb29e731dccc9b396a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md"
+          },
+          "id": "RLZ-K2M1WN"
+        },
+        {
+          "after": {
+            "blob": "66b580e5158b30270e6f97efbfda840f38d784d7",
+            "content": "sha256:e532ec7587048c7e6b53cf2fe0fa3b78212f5c6fc2431d57e807c1d2296587da",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/orientation.md"
+          },
+          "before": {
+            "blob": "66b580e5158b30270e6f97efbfda840f38d784d7",
+            "content": "sha256:e532ec7587048c7e6b53cf2fe0fa3b78212f5c6fc2431d57e807c1d2296587da",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/orientation.md"
+          },
+          "id": "RLZ-K6HJZY"
+        },
+        {
+          "after": {
+            "blob": "ca32ef3e0eeeed252761b2c12987922e7a7c8b4e",
+            "content": "sha256:0f2489d541f974517880b7df663c58a70b72e9f3fbeb136da1cdada4e97d5a3a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/strategist.md"
+          },
+          "before": {
+            "blob": "ca32ef3e0eeeed252761b2c12987922e7a7c8b4e",
+            "content": "sha256:0f2489d541f974517880b7df663c58a70b72e9f3fbeb136da1cdada4e97d5a3a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/strategist.md"
+          },
+          "id": "RLZ-M42H5N"
+        },
+        {
+          "after": {
+            "blob": "cea879140a9d03d3e55492f6cebf9943fb19b0c4",
+            "content": "sha256:7db158bae9759a77bb55ab71a2e344b58cb0c130c3442fd6c88bd18172c3d922",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "before": {
+            "blob": "cea879140a9d03d3e55492f6cebf9943fb19b0c4",
+            "content": "sha256:7db158bae9759a77bb55ab71a2e344b58cb0c130c3442fd6c88bd18172c3d922",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "id": "RLZ-MA5C8F"
+        },
+        {
+          "after": {
+            "blob": "01c7b20b4f7d9c3f858781923568788fc5e85cef",
+            "content": "sha256:b7d1f3f4eb422b95f6ba892038c59c307cd1037fd239cb7249a982a247e1919e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/bootstrap.md"
+          },
+          "before": {
+            "blob": "01c7b20b4f7d9c3f858781923568788fc5e85cef",
+            "content": "sha256:b7d1f3f4eb422b95f6ba892038c59c307cd1037fd239cb7249a982a247e1919e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/bootstrap.md"
+          },
+          "id": "RLZ-NVBKRR"
+        },
+        {
+          "after": {
+            "blob": "66b580e5158b30270e6f97efbfda840f38d784d7",
+            "content": "sha256:e532ec7587048c7e6b53cf2fe0fa3b78212f5c6fc2431d57e807c1d2296587da",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/orientation.md"
+          },
+          "before": {
+            "blob": "66b580e5158b30270e6f97efbfda840f38d784d7",
+            "content": "sha256:e532ec7587048c7e6b53cf2fe0fa3b78212f5c6fc2431d57e807c1d2296587da",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/orientation.md"
+          },
+          "id": "RLZ-Q1RJX3"
+        },
+        {
+          "after": {
+            "blob": "c9cacfb76a8c15ba282a38df25f56260fb38d116",
+            "content": "sha256:da295c73778501a3940302209902bcc248cf34b05222d4ff8520eee76e1281f0",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/orchestrator.md"
+          },
+          "before": {
+            "blob": "c9cacfb76a8c15ba282a38df25f56260fb38d116",
+            "content": "sha256:da295c73778501a3940302209902bcc248cf34b05222d4ff8520eee76e1281f0",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/orchestrator.md"
+          },
+          "id": "RLZ-RT5KYP"
+        },
+        {
+          "after": {
+            "blob": "cde27c9b473014b9a483a810bfa2ccad9f823d5e",
+            "content": "sha256:2327e63af306b4dc50ad0a04d9e6bf8ae4a456932e0a1a5860a0cb2977c1a2b5",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/designer.md"
+          },
+          "before": {
+            "blob": "cde27c9b473014b9a483a810bfa2ccad9f823d5e",
+            "content": "sha256:2327e63af306b4dc50ad0a04d9e6bf8ae4a456932e0a1a5860a0cb2977c1a2b5",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/designer.md"
+          },
+          "id": "RLZ-V9KYKV"
+        },
+        {
+          "after": {
+            "blob": "97edddb8b77560c1d6dc6addefac91658084452b",
+            "content": "sha256:d0923362030cd8da1d868eec4f241d816ab114445f29ff7d83e456dada3e0fd6",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "before": {
+            "blob": "b5f664cebbb1579f8082617443e5ca9aa7751791",
+            "content": "sha256:3d6a444ab1b6c2c46771ee7f86ccfa05632b06a438cc304a45c20e73e3791a28",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "id": "RLZ-VXHQMN"
+        },
+        {
+          "after": {
+            "blob": "cde27c9b473014b9a483a810bfa2ccad9f823d5e",
+            "content": "sha256:2327e63af306b4dc50ad0a04d9e6bf8ae4a456932e0a1a5860a0cb2977c1a2b5",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/designer.md"
+          },
+          "before": {
+            "blob": "cde27c9b473014b9a483a810bfa2ccad9f823d5e",
+            "content": "sha256:2327e63af306b4dc50ad0a04d9e6bf8ae4a456932e0a1a5860a0cb2977c1a2b5",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/designer.md"
+          },
+          "id": "RLZ-YPZ7CB"
+        },
+        {
+          "after": {
+            "blob": "c9cacfb76a8c15ba282a38df25f56260fb38d116",
+            "content": "sha256:da295c73778501a3940302209902bcc248cf34b05222d4ff8520eee76e1281f0",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md"
+          },
+          "before": {
+            "blob": "c9cacfb76a8c15ba282a38df25f56260fb38d116",
+            "content": "sha256:da295c73778501a3940302209902bcc248cf34b05222d4ff8520eee76e1281f0",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md"
+          },
+          "id": "RLZ-YVX677"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-JSWQ95",
+      "items": [
+        "sha256:1eb8c5b2aea6b7e3928dc8628af9f326f03c382ecaa6b781fae7f42c7c41098c"
+      ],
+      "reason": "Canonical batching/file-reading instructions are propagated to retained mirrors; no new independent mirror authority or retired role/first-read resurrection is introduced. The advanced pair also carries the admitted converted-first install/fixer/adoption order in canonical and package copies; renew its two changed cover anchors without changing mirror authority or the invariant revision. Same-ID current-pair renewal after Manager-admitted 96c4eba4/8046c1a4 sync; retain incoming changes and historical qualifications, restore only the three parked empty-pin realization rationales; no execution or acceptance claim.",
+      "revision": 1,
+      "subject": "INV-NNQR91"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-JVKGV6",
+      "items": [
+        "sha256:472c7c18314dc2991adcc86c8b5953a5db3e415d9704034b2354ed12d5ddbe9e"
+      ],
+      "reason": "Derived instruction carrier or canonical procedure: the verified finite-batch/candidate-file directive is routed to its owning product/onboarding contract; no independent mirror authority, role rerouting or new write lane is introduced.",
+      "subject": "onboarding:.github-vscode/skills/l-01-agent-lifecycles/roles/curator.md"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-JY6G8Z",
+      "items": [
+        "sha256:daa266357e4e23d4a825f32b76206fd6c266795285db59a78ed052055d7b71d3"
+      ],
+      "reason": "Final shaped-row assembly and actual production-path witnesses preserve the governing table invariant; wiring, deleted interim rows and explanatory comments add no separate universal guarantee.",
+      "subject": "hunk:sha256:daa266357e4e23d4a825f32b76206fd6c266795285db59a78ed052055d7b71d3"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-K3S8YW",
+      "items": [
+        "sha256:b77e037ed3c727cccdf23769285da88f372b8309b3b5be8e82beb8e1e5b9f4e9"
+      ],
+      "reason": "Status projection and removal of a second carryover cap implement the separately recorded answer/detail guarantee without restoring retired MCP adapters; local packing/import changes carry no separate obligation.",
+      "subject": "hunk:sha256:b77e037ed3c727cccdf23769285da88f372b8309b3b5be8e82beb8e1e5b9f4e9"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-KH2S9Y",
+      "items": [
+        "sha256:fcdad4be467954cca77f45fc1a9631eadda9dbee6bb5a69c122b49d7250f15ec"
+      ],
+      "reason": "Final shaped-row assembly and actual production-path witnesses preserve the governing table invariant; wiring, deleted interim rows and explanatory comments add no separate universal guarantee.",
+      "subject": "hunk:sha256:fcdad4be467954cca77f45fc1a9631eadda9dbee6bb5a69c122b49d7250f15ec"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-KSWC2T",
+      "items": [
+        "sha256:b01d9cdf8bf84417f3a12e80df3a2fd069dc564bfabbd0c80f829a85acffae82"
+      ],
+      "reason": "Optional judgment-file transport and status fields extend one strict model family but preserve this route’s vocabulary ownership and separation from execution/publication.",
+      "subject": "onboarding:mcp/src/agents_remember/models/lifecycles/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-KXXHFJ",
+      "items": [
+        "sha256:feca05cc0d3bd1cbff8dad429d46bb68c789c75e02e7b97a0072d5aed743703c"
+      ],
+      "reason": "Attempt8 supplies explicit L100 interim ownership for incoming retire_child and role_start_set and removes the stale retired-tool assertion. The existing authored-row/public-registry exactness contract and L110 final status bounds are unchanged; this is compatibility data within that contract, not a new invariant, test execution or acceptance. The two operative owning cards describe the new declarations; unchanged memory meaning elsewhere is retained.",
+      "subject": "hunk:sha256:feca05cc0d3bd1cbff8dad429d46bb68c789c75e02e7b97a0072d5aed743703c"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-M2TWKJ",
+      "items": [
+        "sha256:11cb86fa1533a4a93212488f89db8f7016cd81066cc98ae781c4e98b3c610feb"
+      ],
+      "reason": "The comment records the quality-pin removal governed by the updated exact-pin invariant; it supplies no new measured failure census.",
+      "subject": "hunk:sha256:11cb86fa1533a4a93212488f89db8f7016cd81066cc98ae781c4e98b3c610feb"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-M69THJ",
+      "items": [
+        "sha256:bf5f73f090e70134bc436bfc1fd35e8726308b1dbc6a5e5dcffa4f2059b5f114"
+      ],
+      "reason": "New finite-card/file-transport and production-row suites extend existing unit evidence lanes; shared fixture callers change transport only, leaving hermetic ownership and no-favorable-default boundaries intact.",
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "disposition": "still_rejected",
+      "id": "ROW-MCJS0R",
+      "items": [
+        "sha256:171db61a883473412c31f707290e40e84a6ca33311eced1fbacb7aca06571564"
+      ],
+      "reason": "Finite citation selection and result projection still write only card references/anchors, not Git commits or knowledge records/database; the stated trigger for locking these citation tools is not met.",
+      "subject": "reconsider:DEC-VMMJDN#1"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-MH21DA",
+      "items": [
+        "sha256:87daff859ba556ce6c7eb343207026038eddea86b22451422baca125d6098f3d"
+      ],
+      "reason": "Quality-result composition, recovery fields and uncut internal populations implement the separately authored status/detail guarantee; imports and plumbing introduce no independent semantic obligation.",
+      "subject": "hunk:sha256:87daff859ba556ce6c7eb343207026038eddea86b22451422baca125d6098f3d"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-MRMN7P",
+      "items": [
+        "sha256:1ec6cd7c958b05487f98ad6eea80a7585b449abef71cc1ec397d365308561235",
+        "sha256:7c3e85099b500431c57d4ed6417d50ec1a94671a0513747a7f5b0306c6efaf34"
+      ],
+      "reason": "Derived instruction carrier or canonical procedure: the verified finite-batch/candidate-file directive is routed to its owning product/onboarding contract; no independent mirror authority, role rerouting or new write lane is introduced.",
+      "subject": "onboarding:.cursor/skills/c-02-memory-quality-control/SKILL.md"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-MS5B93",
+      "items": [
+        "sha256:15e78f5c235da3c01639320ada50c48b6d96c742e81336f02f4a1036981a6908"
+      ],
+      "reason": "Final shaped-row assembly and actual production-path witnesses preserve the governing table invariant; wiring, deleted interim rows and explanatory comments add no separate universal guarantee.",
+      "subject": "hunk:sha256:15e78f5c235da3c01639320ada50c48b6d96c742e81336f02f4a1036981a6908"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-MY81ER",
+      "items": [
+        "sha256:6aa6569b05e129885db71b8f55f2aab495c89865a192ad9a8fabf96331c2753b"
+      ],
+      "reason": "Final shaped-row assembly and actual production-path witnesses preserve the governing table invariant; wiring, deleted interim rows and explanatory comments add no separate universal guarantee.",
+      "subject": "hunk:sha256:6aa6569b05e129885db71b8f55f2aab495c89865a192ad9a8fabf96331c2753b"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-N6P8G6",
+      "items": [
+        "sha256:0e78223bfe65e7b67af16a9ab610e440ce5b389d05c8482774d5a93cd3aafd9b"
+      ],
+      "reason": "Status projection and removal of a second carryover cap implement the separately recorded answer/detail guarantee without restoring retired MCP adapters; local packing/import changes carry no separate obligation.",
+      "subject": "hunk:sha256:0e78223bfe65e7b67af16a9ab610e440ce5b389d05c8482774d5a93cd3aafd9b"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "a2b54179f266360b3cafef9118c220617252d77e",
+            "content": "sha256:712b2e176205abbeafbeedddced8f935df28d46cba3ff22638854e17719a45d5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_returned_arm"
+            },
+            "path": "mcp/tests/tool_entry_point_world.py"
+          },
+          "before": {
+            "blob": "bac606a47fda22f676cda5fa3432702208d5eb10",
+            "content": "sha256:712b2e176205abbeafbeedddced8f935df28d46cba3ff22638854e17719a45d5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_returned_arm"
+            },
+            "path": "mcp/tests/tool_entry_point_world.py"
+          },
+          "id": "RLZ-2TZQC9"
+        },
+        {
+          "after": {
+            "blob": "a2b54179f266360b3cafef9118c220617252d77e",
+            "content": "sha256:712b2e176205abbeafbeedddced8f935df28d46cba3ff22638854e17719a45d5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_returned_arm"
+            },
+            "path": "mcp/tests/tool_entry_point_world.py"
+          },
+          "before": {
+            "blob": "bac606a47fda22f676cda5fa3432702208d5eb10",
+            "content": "sha256:712b2e176205abbeafbeedddced8f935df28d46cba3ff22638854e17719a45d5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_returned_arm"
+            },
+            "path": "mcp/tests/tool_entry_point_world.py"
+          },
+          "id": "RLZ-5XEVC4"
+        },
+        {
+          "after": {
+            "blob": "a2b54179f266360b3cafef9118c220617252d77e",
+            "content": "sha256:e70868a155b3a04ce2b756d208c0f43673e28f1561ac0d0b6effd9883252c8c7",
+            "locator": {
+              "end": 28,
+              "kind": "line_range",
+              "start": 25
+            },
+            "path": "mcp/tests/tool_entry_point_world.py"
+          },
+          "before": {
+            "blob": "bac606a47fda22f676cda5fa3432702208d5eb10",
+            "content": "sha256:e70868a155b3a04ce2b756d208c0f43673e28f1561ac0d0b6effd9883252c8c7",
+            "locator": {
+              "end": 28,
+              "kind": "line_range",
+              "start": 25
+            },
+            "path": "mcp/tests/tool_entry_point_world.py"
+          },
+          "id": "RLZ-6BR2QJ"
+        },
+        {
+          "after": {
+            "blob": "a2b54179f266360b3cafef9118c220617252d77e",
+            "content": "sha256:8ebad6cf5a03e40d8ab1c44a97616f90c57847a56f70c0e84d2142e2b0e888b8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_unknown_in_truncated"
+            },
+            "path": "mcp/tests/tool_entry_point_world.py"
+          },
+          "before": {
+            "blob": "bac606a47fda22f676cda5fa3432702208d5eb10",
+            "content": "sha256:e7c7b2d84258ceb6a33176f24b2174a26eab5a126411c2fb03fa0ac8f34d66a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_unknown_in_truncated"
+            },
+            "path": "mcp/tests/tool_entry_point_world.py"
+          },
+          "id": "RLZ-6KD5XY"
+        },
+        {
+          "after": {
+            "blob": "155ad7e2e8143abefcd307e8b080c1296054156a",
+            "content": "sha256:8302a031037ec0811de6b2d01ec3d144c2d51a1eda3e1eb266938d85312aacbf",
+            "locator": {
+              "end": 26,
+              "kind": "line_range",
+              "start": 11
+            },
+            "path": "mcp/tests/test_tool_entry_point_sweep.py"
+          },
+          "before": {
+            "blob": "0bf0bf427bc7174f7f38a04f42947361454a7f62",
+            "content": "sha256:8302a031037ec0811de6b2d01ec3d144c2d51a1eda3e1eb266938d85312aacbf",
+            "locator": {
+              "end": 26,
+              "kind": "line_range",
+              "start": 11
+            },
+            "path": "mcp/tests/test_tool_entry_point_sweep.py"
+          },
+          "id": "RLZ-E6ZJX2"
+        },
+        {
+          "after": {
+            "blob": "a2b54179f266360b3cafef9118c220617252d77e",
+            "content": "sha256:5051eee79bbddebacb81642153d672e5fa69042a984ac06ee8b17ca76b0582d8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_actionable_next"
+            },
+            "path": "mcp/tests/tool_entry_point_world.py"
+          },
+          "before": {
+            "blob": "bac606a47fda22f676cda5fa3432702208d5eb10",
+            "content": "sha256:5051eee79bbddebacb81642153d672e5fa69042a984ac06ee8b17ca76b0582d8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_actionable_next"
+            },
+            "path": "mcp/tests/tool_entry_point_world.py"
+          },
+          "id": "RLZ-S2F966"
+        },
+        {
+          "after": {
+            "blob": "a2b54179f266360b3cafef9118c220617252d77e",
+            "content": "sha256:616725463860034f01645ef22c9b069790e16605dd50f886654cbdcbdb5299b8",
+            "locator": {
+              "kind": "symbol",
+              "name": "refusal_marks"
+            },
+            "path": "mcp/tests/tool_entry_point_world.py"
+          },
+          "before": {
+            "blob": "bac606a47fda22f676cda5fa3432702208d5eb10",
+            "content": "sha256:616725463860034f01645ef22c9b069790e16605dd50f886654cbdcbdb5299b8",
+            "locator": {
+              "kind": "symbol",
+              "name": "refusal_marks"
+            },
+            "path": "mcp/tests/tool_entry_point_world.py"
+          },
+          "id": "RLZ-TZ43E1"
+        },
+        {
+          "after": {
+            "blob": "a2b54179f266360b3cafef9118c220617252d77e",
+            "content": "sha256:616725463860034f01645ef22c9b069790e16605dd50f886654cbdcbdb5299b8",
+            "locator": {
+              "kind": "symbol",
+              "name": "refusal_marks"
+            },
+            "path": "mcp/tests/tool_entry_point_world.py"
+          },
+          "before": {
+            "blob": "bac606a47fda22f676cda5fa3432702208d5eb10",
+            "content": "sha256:616725463860034f01645ef22c9b069790e16605dd50f886654cbdcbdb5299b8",
+            "locator": {
+              "kind": "symbol",
+              "name": "refusal_marks"
+            },
+            "path": "mcp/tests/tool_entry_point_world.py"
+          },
+          "id": "RLZ-X1MNME"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-NFRP27",
+      "items": [
+        "sha256:b7a39dd71472db3305dbadcf80bcbb214089760f3b7fcb7416d92e3936d686fd"
+      ],
+      "reason": "The truncated-wrapper discriminator preserves framework-key ownership and recursive checking; semantic unknown-key and refusal-actionability rules remain unchanged. Same-ID current-pair renewal after Manager-admitted 96c4eba4/8046c1a4 sync; retain incoming changes and historical qualifications, restore only the three parked empty-pin realization rationales; no execution or acceptance claim.",
+      "revision": 1,
+      "subject": "INV-T8FDTX"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-NHHFNB",
+      "items": [
+        "sha256:17882b5c38978cb49cf34f5dd3c38f416bcc250d67d281b7812d558d598c7f30"
+      ],
+      "reason": "Attempt8 supplies explicit L100 interim ownership for incoming retire_child and role_start_set and removes the stale retired-tool assertion. The existing authored-row/public-registry exactness contract and L110 final status bounds are unchanged; this is compatibility data within that contract, not a new invariant, test execution or acceptance. The two operative owning cards describe the new declarations; unchanged memory meaning elsewhere is retained.",
+      "subject": "hunk:sha256:17882b5c38978cb49cf34f5dd3c38f416bcc250d67d281b7812d558d598c7f30"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-453ZPCZ5",
+          "revision": 2
+        },
+        {
+          "id": "INV-53MJW8V0",
+          "revision": 2
+        },
+        {
+          "id": "INV-7W11WKKN",
+          "revision": 4
+        },
+        {
+          "id": "INV-8Q6DZTDB",
+          "revision": 3
+        },
+        {
+          "id": "INV-9NCBGQSY",
+          "revision": 5
+        },
+        {
+          "id": "INV-S26EBC8P",
+          "revision": 3
+        },
+        {
+          "id": "INV-VXA7SZ0Z",
+          "revision": 2
+        }
+      ],
+      "id": "ROW-NP025Q",
+      "items": [
+        "sha256:fafbbb7e93492f52b905234dbd8ca3b4f6c6223cae36fc91952ba3064c60a6e9"
+      ],
+      "reason": "Examined every declared member and routed realization. Status/file/batch transport preserves this existing joint guarantee, member intent and route placement; no membership or guarantee revision is justified.",
+      "revision": 6,
+      "subject": "FAM-XZ5BR65G"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-NT0QB8",
+      "items": [
+        "sha256:4dd9e400c304406a35dce03edfdcbe265c72ab42426aefc2b16ebe55515e99f7"
+      ],
+      "reason": "Final shaped-row assembly and actual production-path witnesses preserve the governing table invariant; wiring, deleted interim rows and explanatory comments add no separate universal guarantee.",
+      "subject": "hunk:sha256:4dd9e400c304406a35dce03edfdcbe265c72ab42426aefc2b16ebe55515e99f7"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-NTQTYG",
+      "items": [
+        "sha256:008ce9d723cf96985fbce037fc591412eea90b41ae4e5ba21e723d259b24421b"
+      ],
+      "reason": "Final shaped-row assembly and actual production-path witnesses preserve the governing table invariant; wiring, deleted interim rows and explanatory comments add no separate universal guarantee.",
+      "subject": "hunk:sha256:008ce9d723cf96985fbce037fc591412eea90b41ae4e5ba21e723d259b24421b"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-PFBA0Q",
+      "items": [
+        "sha256:3b088bce1096c3b1f6f688111286884671d360d0631d1b4bda9b2325e2b57b92"
+      ],
+      "reason": "Derived instruction carrier or canonical procedure: the verified finite-batch/candidate-file directive is routed to its owning product/onboarding contract; no independent mirror authority, role rerouting or new write lane is introduced.",
+      "subject": "onboarding:skills/l-01-agent-lifecycles/roles/overview"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R110",
+          "packet": "requirements/MIK-R110-v1-the-memory-tools-answer-with-a-status.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "364d796cb0f78370d3505ff5eb13835028d2e2c3",
+            "content": "sha256:cffbd5ac4ed3c5f4587e873152f7f4a891cf08920bb486678e60416dd1854d3d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_parentless_task_document_answers_with_the_code_and_task_doc"
+            },
+            "path": "mcp/tests/test_memory_quality_coherence_takeover.py"
+          },
+          "before": "absent",
+          "id": "PRF-0NVTQQ"
+        },
+        {
+          "after": {
+            "blob": "702332c5ff85bb0592c8b1d3b33a564a3b077ade",
+            "content": "sha256:4b31f829a9e66f99017480733838b5c33a01705b4151d94b4e20a9beb8c8fe34",
+            "locator": {
+              "kind": "symbol",
+              "name": "QualityProductionTests.test_blocking_projects_the_populations_in_repair_order"
+            },
+            "path": "mcp/tests/test_tool_answer_rows_quality.py"
+          },
+          "before": "absent",
+          "id": "PRF-A71QVH"
+        },
+        {
+          "after": {
+            "blob": "03649cb18d8df9324b340fd55aa8050f73269520",
+            "content": "sha256:1ec5dfa3f9ea1ccc6fcd09c04eec66e644a47a42fcb3e5b58ad2019ec3c7b7e6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_integrity_answer"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
+          },
+          "before": "absent",
+          "id": "RLZ-C0EV68"
+        },
+        {
+          "after": {
+            "blob": "6379f4552ea2a65eed09380a580733143e208098",
+            "content": "sha256:d71246584d20574f92b906966a05615f44168196fc58b7ccbcfb2860f8cba0fb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_citation_fix_answer"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/memory.py"
+          },
+          "before": "absent",
+          "id": "RLZ-G52W6N"
+        },
+        {
+          "after": {
+            "blob": "6379f4552ea2a65eed09380a580733143e208098",
+            "content": "sha256:d4d8ce5521b5faaf8a62fd9bf5d1f16bcbd5efa38e76d465158f818005c4728b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_route_index_answer"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/memory.py"
+          },
+          "before": "absent",
+          "id": "RLZ-NKTNVE"
+        },
+        {
+          "after": {
+            "blob": "53e03643f0924e44c2a22fc7fa0de4a839762ab9",
+            "content": "sha256:9c1f13e3fd2a094786999c2e1a49910f50a2efd2e422a1ae7335e0631b291048",
+            "locator": {
+              "kind": "symbol",
+              "name": "complete_tool_response"
+            },
+            "path": "mcp/src/agents_remember/application/tool_response.py"
+          },
+          "before": "absent",
+          "id": "RLZ-REZN43"
+        },
+        {
+          "after": {
+            "blob": "f0902aa35cc3bb8ed54b6653d2fdf57956548fd5",
+            "content": "sha256:8e057ae8d82e9b879d5cd089fca06c045de96b21b015f1ba18037f7a2f9ea80d",
+            "locator": {
+              "kind": "symbol",
+              "name": "quality_result_answer"
+            },
+            "path": "mcp/src/agents_remember/application/memory_quality/answer.py"
+          },
+          "before": "absent",
+          "id": "RLZ-T06K6F"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-PKCPX9",
+      "items": [],
+      "reason": "Introduces the supported cross-location obligation with scoped realizations and precise assertion facets; no new test execution or intent acceptance is claimed. MEMORY baseline1 fixed-list reconciliation narrows resource/proof claims and current empty-pin/one-tool explanations to actual retained source/assertion evidence, preserving IDs and historical origin without new execution.",
+      "revision": 1,
+      "subject": "INV-1V9ARB"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-PQ3S23",
+      "items": [
+        "sha256:47159f1693d3f3fc3eb7fb31a38b2a41bb93e18689968fca30bdebbcf1acf650"
+      ],
+      "reason": "Status projection and removal of a second carryover cap implement the separately recorded answer/detail guarantee without restoring retired MCP adapters; local packing/import changes carry no separate obligation.",
+      "subject": "hunk:sha256:47159f1693d3f3fc3eb7fb31a38b2a41bb93e18689968fca30bdebbcf1acf650"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-PVNQ0W",
+      "items": [
+        "sha256:ae0c432898a6e0d2d0f26cab58339dde9dcbe5339453cc285b0477cea97a4c73"
+      ],
+      "reason": "Final L110 bounds, status entry/reason ceilings and removal of interim ownership are the implementation of the existing row/guard contract; deleted interim clauses are not new invariants.",
+      "subject": "hunk:sha256:ae0c432898a6e0d2d0f26cab58339dde9dcbe5339453cc285b0477cea97a4c73"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "97edddb8b77560c1d6dc6addefac91658084452b",
+            "content": "sha256:d0923362030cd8da1d868eec4f241d816ab114445f29ff7d83e456dada3e0fd6",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "before": {
+            "blob": "b5f664cebbb1579f8082617443e5ca9aa7751791",
+            "content": "sha256:3d6a444ab1b6c2c46771ee7f86ccfa05632b06a438cc304a45c20e73e3791a28",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "id": "RLZ-D0XTAP"
+        },
+        {
+          "after": {
+            "blob": "59b96abdc86d2d0203bea462255eaee46b8bbd64",
+            "content": "sha256:681308a36b7737e6186bdb5a962918b28a8667253cc967b6c4fbbe4c53b62d20",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
+          },
+          "before": {
+            "blob": "59b96abdc86d2d0203bea462255eaee46b8bbd64",
+            "content": "sha256:681308a36b7737e6186bdb5a962918b28a8667253cc967b6c4fbbe4c53b62d20",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
+          },
+          "id": "RLZ-K60P42"
+        },
+        {
+          "after": {
+            "blob": "c6b847c5c7627c6094bd425abb7559f7ae21e43e",
+            "content": "sha256:10c2683a39e2cd0749f0d56b67466d02117322706907419831ba9da450bc64d7",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "before": {
+            "blob": "c6b847c5c7627c6094bd425abb7559f7ae21e43e",
+            "content": "sha256:10c2683a39e2cd0749f0d56b67466d02117322706907419831ba9da450bc64d7",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "id": "RLZ-R5RASM"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-PYQMHY",
+      "items": [
+        "sha256:0a3893024fda05d0ee4434802996b9ad0752f1deadb5177508a44f1fa75ef6c0"
+      ],
+      "reason": "Finite batch guidance changes no code-concern transport, no-code-write boundary, independent answer or disputed-finding route.",
+      "revision": 1,
+      "subject": "INV-RKGNF8"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-Q0R1EF",
+      "items": [
+        "sha256:0fdf1aa4928e672358ec279df5b2b664414bf2869365bed82485035589baddbd"
+      ],
+      "reason": "Status projection and removal of a second carryover cap implement the separately recorded answer/detail guarantee without restoring retired MCP adapters; local packing/import changes carry no separate obligation.",
+      "subject": "hunk:sha256:0fdf1aa4928e672358ec279df5b2b664414bf2869365bed82485035589baddbd"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-Q89TXF",
+      "items": [
+        "sha256:382aa88d9ff684cb7b1497769e7231175c79416ef3cefddbfe78803fb60b6a5c"
+      ],
+      "reason": "Integrity projection and removal of the internal listing cap implement the separately recorded status/detail boundary; local mapping/import mechanics require no additional invariant.",
+      "subject": "hunk:sha256:382aa88d9ff684cb7b1497769e7231175c79416ef3cefddbfe78803fb60b6a5c"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-QE7HY6",
+      "items": [
+        "sha256:ace7b389fcb0531b65bb7d96fbc1f86ba27a0d6a82f93373956b327c4e816c33",
+        "sha256:b57ba0105bae5aeff27aed0660ad4a77f75331e2762d8a7a9f7e7aac5e80440e",
+        "sha256:f2d79395edbdca4fdd4938dd02b83f854b4fd51eaf0843c1b553d2bfda0d2cd7"
+      ],
+      "reason": "Derived instruction carrier or canonical procedure: the verified finite-batch/candidate-file directive is routed to its owning product/onboarding contract; no independent mirror authority, role rerouting or new write lane is introduced.",
+      "subject": "onboarding:.github-vscode/skills/c-05-create-or-update-onboarding-files/workflows/converted-card-workflow.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-QFE3F2",
+      "items": [
+        "sha256:2365753ce5d6ff889cb8d689fd022edd3b2607163fb761e3e377bcaddad97f90",
+        "sha256:6b3109d3922ec97d5ec8c9308a935973334f732ad42a4896e8736682299b82cc",
+        "sha256:c36322d48802e0c213d7fdece064f7b384d5794973aa1129701f1a0324869016"
+      ],
+      "reason": "Derived instruction carrier or canonical procedure: the verified finite-batch/candidate-file directive is routed to its owning product/onboarding contract; no independent mirror authority, role rerouting or new write lane is introduced.",
+      "subject": "onboarding:.codex/skills/c-05-create-or-update-onboarding-files/workflows/converted-card-workflow.md"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-QGZWXB",
+      "items": [
+        "sha256:ee3ce577c58da21ac2d72e00dc81bd78a853e85f07700d6f5fc4b67d56062d2b"
+      ],
+      "reason": "Integrity projection and removal of the internal listing cap implement the separately recorded status/detail boundary; local mapping/import mechanics require no additional invariant.",
+      "subject": "hunk:sha256:ee3ce577c58da21ac2d72e00dc81bd78a853e85f07700d6f5fc4b67d56062d2b"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-QSN08J",
+      "items": [
+        "sha256:38a93298267544e32f66c2b12cab89ddf706d423d3a771797be2c1faa7c84636",
+        "sha256:3c22969bd1c7e019fded134bc60307d7024d15f0ad25053e497420f3ece48849",
+        "sha256:d391c47281f848f8a62bc0251057e314a8c4c6a2477789e639d8ac85a5c43140"
+      ],
+      "reason": "Derived instruction carrier or canonical procedure: the verified finite-batch/candidate-file directive is routed to its owning product/onboarding contract; no independent mirror authority, role rerouting or new write lane is introduced.",
+      "subject": "onboarding:skills/c-05-create-or-update-onboarding-files/workflows/converted-card-workflow.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-QT60CX",
+      "items": [
+        "sha256:725a3640500897aed5a8e6aa8889dca842158f441ce4745ef541550f4c51d012",
+        "sha256:9bdc4923dc600b6985a92b36a0941880cfb49e2ac2516517b161cb2861ca4cd0",
+        "sha256:efc6e382babca813a58dfed51f25c70db960e35965dccc9a2efaf0f0b4b4e5d1"
+      ],
+      "reason": "Derived instruction carrier or canonical procedure: the verified finite-batch/candidate-file directive is routed to its owning product/onboarding contract; no independent mirror authority, role rerouting or new write lane is introduced.",
+      "subject": "onboarding:.openclaw/workspace/skills/c-05-create-or-update-onboarding-files/workflows/converted-card-workflow.md"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-QWK8EX",
+      "items": [
+        "sha256:ada734c247efb22ab81a8be09d9c48f0dd9a21407ecae6c4d2030ecd0a866456"
+      ],
+      "reason": "Final shaped-row assembly and actual production-path witnesses preserve the governing table invariant; wiring, deleted interim rows and explanatory comments add no separate universal guarantee.",
+      "subject": "hunk:sha256:ada734c247efb22ab81a8be09d9c48f0dd9a21407ecae6c4d2030ecd0a866456"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-QY0VZG",
+      "items": [
+        "sha256:937d49d14c6204abd6038345b80026cc470cbc8c7dacee36d66af93e49da0951",
+        "sha256:d0d49dc14f441876e8f798a9f455ac59ed92e311ba119f54308794222378a820"
+      ],
+      "reason": "Derived instruction carrier or canonical procedure: the verified finite-batch/candidate-file directive is routed to its owning product/onboarding contract; no independent mirror authority, role rerouting or new write lane is introduced.",
+      "subject": "onboarding:.codex/skills/c-02-memory-quality-control/SKILL.md"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-R05A9T",
+      "items": [
+        "sha256:25ccb21b45dc1143aa8feb60484a304b8ff6a06c0ead8044840ed57191e96eab"
+      ],
+      "reason": "Candidate filing and file-input/status mechanics realize the separately authored coherence transport invariant; deleted response material is retained in its owning corpus, not new knowledge.",
+      "subject": "hunk:sha256:25ccb21b45dc1143aa8feb60484a304b8ff6a06c0ead8044840ed57191e96eab"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-R67YMS",
+      "items": [
+        "sha256:966825d88ebc669b28a74ece978ff9c3626b383912760026bab91eb1f5125066"
+      ],
+      "reason": "Final shaped-row assembly and actual production-path witnesses preserve the governing table invariant; wiring, deleted interim rows and explanatory comments add no separate universal guarantee.",
+      "subject": "hunk:sha256:966825d88ebc669b28a74ece978ff9c3626b383912760026bab91eb1f5125066"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-RAKEVF",
+      "items": [
+        "sha256:0739bb0f616138973b74c6ce502ceba7c38b287fa589724d8cdf86df300de46d"
+      ],
+      "reason": "Derived instruction carrier or canonical procedure: the verified finite-batch/candidate-file directive is routed to its owning product/onboarding contract; no independent mirror authority, role rerouting or new write lane is introduced.",
+      "subject": "onboarding:.claude/skills/l-01-agent-lifecycles/roles/curator.md"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-RD2YX4",
+      "items": [
+        "sha256:f810414bfa0b681806c915cebace629395b809630294886fb3947703d6456fff"
+      ],
+      "reason": "Final L110 bounds, status entry/reason ceilings and removal of interim ownership are the implementation of the existing row/guard contract; deleted interim clauses are not new invariants.",
+      "subject": "hunk:sha256:f810414bfa0b681806c915cebace629395b809630294886fb3947703d6456fff"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-RGB34P",
+      "items": [
+        "sha256:621fbfdf60120ce8f8f2ed9b36c92caaa645e1487fd27e995ac1350148ba0eaa"
+      ],
+      "reason": "Status projection and removal of a second carryover cap implement the separately recorded answer/detail guarantee without restoring retired MCP adapters; local packing/import changes carry no separate obligation.",
+      "subject": "hunk:sha256:621fbfdf60120ce8f8f2ed9b36c92caaa645e1487fd27e995ac1350148ba0eaa"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-RQRSPK",
+      "items": [
+        "sha256:fd2b89352114bdc0e08e886c1a00d0122c353cdd79524efa566d0fcfcfb32a3a"
+      ],
+      "reason": "Shared candidate-bound import and singleton helper factoring implement the separately authored finite-selection/status obligations without changing the measured pre-baseline admission. Removed stamps/material are delivered by the owning whole/status result; no separate universal invariant arises from this local plumbing.",
+      "subject": "hunk:sha256:fd2b89352114bdc0e08e886c1a00d0122c353cdd79524efa566d0fcfcfb32a3a"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-RW95PE",
+      "items": [
+        "sha256:b4cbdb413221ad709fb15f61c642aa5b3993deef9adcbdea2d62741d2eee525d"
+      ],
+      "reason": "Quality-result composition, recovery fields and uncut internal populations implement the separately authored status/detail guarantee; imports and plumbing introduce no independent semantic obligation.",
+      "subject": "hunk:sha256:b4cbdb413221ad709fb15f61c642aa5b3993deef9adcbdea2d62741d2eee525d"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-S342HJ",
+      "items": [
+        "sha256:86604ee64a78a8cdcfda602f2339f18f63da9ce8b49c8c80cac0c581efb4e89a"
+      ],
+      "reason": "Status projection and removal of a second carryover cap implement the separately recorded answer/detail guarantee without restoring retired MCP adapters; local packing/import changes carry no separate obligation.",
+      "subject": "hunk:sha256:86604ee64a78a8cdcfda602f2339f18f63da9ce8b49c8c80cac0c581efb4e89a"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-S5JEAH",
+      "items": [
+        "sha256:9bf2843f0c2074d4443c665f7deece2f7599f1ccc3979306566b191c2cdd3f42"
+      ],
+      "reason": "Optional file transport and result-count fields represent the separately authored coherence transport guarantee without changing the nine required publication expectations.",
+      "subject": "hunk:sha256:9bf2843f0c2074d4443c665f7deece2f7599f1ccc3979306566b191c2cdd3f42"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-SFXVC8",
+      "items": [
+        "sha256:1c0edfd4c33e8ff1b301cb19476ad35c3fa22fdfc64836bde8b172cff751fa4d"
+      ],
+      "reason": "Shared candidate-bound import and singleton helper factoring implement the separately authored finite-selection/status obligations without changing the measured pre-baseline admission. Removed stamps/material are delivered by the owning whole/status result; no separate universal invariant arises from this local plumbing.",
+      "subject": "hunk:sha256:1c0edfd4c33e8ff1b301cb19476ad35c3fa22fdfc64836bde8b172cff751fa4d"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-SJR6MT",
+      "items": [
+        "sha256:4da0df08bcd0dccdfd3a2e638879c73223b3e94083bd4e563bfc9e9c28598cbe"
+      ],
+      "reason": "Final shaped-row assembly and actual production-path witnesses preserve the governing table invariant; wiring, deleted interim rows and explanatory comments add no separate universal guarantee.",
+      "subject": "hunk:sha256:4da0df08bcd0dccdfd3a2e638879c73223b3e94083bd4e563bfc9e9c28598cbe"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-0VAC47",
+          "revision": 1
+        },
+        {
+          "id": "INV-180VCA",
+          "revision": 2
+        },
+        {
+          "id": "INV-ANKVYJ",
+          "revision": 1
+        },
+        {
+          "id": "INV-B7J1PZ",
+          "revision": 1
+        },
+        {
+          "id": "INV-CQSY2Z",
+          "revision": 1
+        },
+        {
+          "id": "INV-E8S0YF",
+          "revision": 1
+        },
+        {
+          "id": "INV-GWG9HD",
+          "revision": 1
+        },
+        {
+          "id": "INV-JRV850",
+          "revision": 1
+        },
+        {
+          "id": "INV-KJFNBQ",
+          "revision": 1
+        },
+        {
+          "id": "INV-MDE1ZN",
+          "revision": 1
+        },
+        {
+          "id": "INV-QN78E9",
+          "revision": 1
+        },
+        {
+          "id": "INV-SYBT3F",
+          "revision": 1
+        },
+        {
+          "id": "INV-XJ7GV5",
+          "revision": 1
+        },
+        {
+          "id": "INV-Y3TD13",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-SMM4MJ",
+      "items": [
+        "sha256:78fb07d9f96f3c350759e346cf88ac67f61b84452e65725f0bb134cc7bd60e63"
+      ],
+      "reason": "Examined every declared member and routed realization. Status/file/batch transport preserves this existing joint guarantee, member intent and route placement; no membership or guarantee revision is justified.",
+      "revision": 1,
+      "subject": "FAM-8SX6BT"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "31872dc970f4edd5f8c5c9216a5a60431105bc8e",
+            "content": "sha256:560c310997b2a7ff934065bb8a489b3e1be52e294cb7e8876cc385b280e4eab1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_question_operations_keep_conditional_routing_and_pending_recovery"
+            },
+            "path": "mcp/tests/test_developer_question_wording.py"
+          },
+          "before": {
+            "blob": "31872dc970f4edd5f8c5c9216a5a60431105bc8e",
+            "content": "sha256:560c310997b2a7ff934065bb8a489b3e1be52e294cb7e8876cc385b280e4eab1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_question_operations_keep_conditional_routing_and_pending_recovery"
+            },
+            "path": "mcp/tests/test_developer_question_wording.py"
+          },
+          "id": "PRF-9P5WRY"
+        },
+        {
+          "after": {
+            "blob": "31872dc970f4edd5f8c5c9216a5a60431105bc8e",
+            "content": "sha256:f1e0c160a5d37c58d17e9940f3c860554276bd061ffde0c3fcd11fc243c2bb10",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_each_parentable_role_has_question_recovery_and_answer_provenance"
+            },
+            "path": "mcp/tests/test_developer_question_wording.py"
+          },
+          "before": {
+            "blob": "31872dc970f4edd5f8c5c9216a5a60431105bc8e",
+            "content": "sha256:f1e0c160a5d37c58d17e9940f3c860554276bd061ffde0c3fcd11fc243c2bb10",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_each_parentable_role_has_question_recovery_and_answer_provenance"
+            },
+            "path": "mcp/tests/test_developer_question_wording.py"
+          },
+          "id": "PRF-Z5CF4R"
+        },
+        {
+          "after": {
+            "blob": "2dc6e77c39a472a0a08577722adc9fea82444fcf",
+            "content": "sha256:937e4443ad8b692e2b461dca009585e63d8ddb41fb1537c960ccd0f51ee74520",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/investigator.md"
+          },
+          "before": {
+            "blob": "2dc6e77c39a472a0a08577722adc9fea82444fcf",
+            "content": "sha256:937e4443ad8b692e2b461dca009585e63d8ddb41fb1537c960ccd0f51ee74520",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/investigator.md"
+          },
+          "id": "RLZ-4JERMG"
+        },
+        {
+          "after": {
+            "blob": "d7bf74bc660d55b477b5698fd496803aea57b3fd",
+            "content": "sha256:d99430e5b69788af75ad2214a5c8fb312c751978f1cfef213aa88f2ce866aa52",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/worker.md"
+          },
+          "before": {
+            "blob": "d7bf74bc660d55b477b5698fd496803aea57b3fd",
+            "content": "sha256:d99430e5b69788af75ad2214a5c8fb312c751978f1cfef213aa88f2ce866aa52",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/worker.md"
+          },
+          "id": "RLZ-6QVTKY"
+        },
+        {
+          "after": {
+            "blob": "c6b847c5c7627c6094bd425abb7559f7ae21e43e",
+            "content": "sha256:10c2683a39e2cd0749f0d56b67466d02117322706907419831ba9da450bc64d7",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "before": {
+            "blob": "c6b847c5c7627c6094bd425abb7559f7ae21e43e",
+            "content": "sha256:10c2683a39e2cd0749f0d56b67466d02117322706907419831ba9da450bc64d7",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "id": "RLZ-AHY1E5"
+        },
+        {
+          "after": {
+            "blob": "66b580e5158b30270e6f97efbfda840f38d784d7",
+            "content": "sha256:e532ec7587048c7e6b53cf2fe0fa3b78212f5c6fc2431d57e807c1d2296587da",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/orientation.md"
+          },
+          "before": {
+            "blob": "66b580e5158b30270e6f97efbfda840f38d784d7",
+            "content": "sha256:e532ec7587048c7e6b53cf2fe0fa3b78212f5c6fc2431d57e807c1d2296587da",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/orientation.md"
+          },
+          "id": "RLZ-CJF248"
+        },
+        {
+          "after": {
+            "blob": "59b96abdc86d2d0203bea462255eaee46b8bbd64",
+            "content": "sha256:681308a36b7737e6186bdb5a962918b28a8667253cc967b6c4fbbe4c53b62d20",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
+          },
+          "before": {
+            "blob": "59b96abdc86d2d0203bea462255eaee46b8bbd64",
+            "content": "sha256:681308a36b7737e6186bdb5a962918b28a8667253cc967b6c4fbbe4c53b62d20",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
+          },
+          "id": "RLZ-E9F3YP"
+        },
+        {
+          "after": {
+            "blob": "cea879140a9d03d3e55492f6cebf9943fb19b0c4",
+            "content": "sha256:7db158bae9759a77bb55ab71a2e344b58cb0c130c3442fd6c88bd18172c3d922",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "before": {
+            "blob": "cea879140a9d03d3e55492f6cebf9943fb19b0c4",
+            "content": "sha256:7db158bae9759a77bb55ab71a2e344b58cb0c130c3442fd6c88bd18172c3d922",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "id": "RLZ-HSZ8FM"
+        },
+        {
+          "after": {
+            "blob": "97edddb8b77560c1d6dc6addefac91658084452b",
+            "content": "sha256:d0923362030cd8da1d868eec4f241d816ab114445f29ff7d83e456dada3e0fd6",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "before": {
+            "blob": "b5f664cebbb1579f8082617443e5ca9aa7751791",
+            "content": "sha256:3d6a444ab1b6c2c46771ee7f86ccfa05632b06a438cc304a45c20e73e3791a28",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "id": "RLZ-Q70RTA"
+        },
+        {
+          "after": {
+            "blob": "dbf343f86d5bf2a3d00ecd6d2c4c255e646cd043",
+            "content": "sha256:5f44de52981907402d31c4456912475ca60726182153bbaf24efecd63e2d3727",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/review.md"
+          },
+          "before": {
+            "blob": "dbf343f86d5bf2a3d00ecd6d2c4c255e646cd043",
+            "content": "sha256:5f44de52981907402d31c4456912475ca60726182153bbaf24efecd63e2d3727",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/review.md"
+          },
+          "id": "RLZ-QBD8GV"
+        },
+        {
+          "after": {
+            "blob": "c9cacfb76a8c15ba282a38df25f56260fb38d116",
+            "content": "sha256:da295c73778501a3940302209902bcc248cf34b05222d4ff8520eee76e1281f0",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/orchestrator.md"
+          },
+          "before": {
+            "blob": "c9cacfb76a8c15ba282a38df25f56260fb38d116",
+            "content": "sha256:da295c73778501a3940302209902bcc248cf34b05222d4ff8520eee76e1281f0",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/orchestrator.md"
+          },
+          "id": "RLZ-WH4X9B"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-SRHE9K",
+      "items": [
+        "sha256:ae4c2f61101cb9ac1d845bc19fe9e7df13d57865836e78d999fa21f9d2b54c0d"
+      ],
+      "reason": "The three-line batching instruction leaves all parent question routing, quoted-answer provenance and retry boundaries unchanged. Same-ID current-pair renewal after Manager-admitted 96c4eba4/8046c1a4 sync; retain incoming changes and historical qualifications, restore only the three parked empty-pin realization rationales; no execution or acceptance claim.",
+      "revision": 2,
+      "subject": "INV-9S49CW"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "68c48a9951b8061bca00a8d8656f503b8100ecd9",
+            "content": "sha256:96e1a404f6667bf5439ebda3b1c333e7e8a55be1c65f5c7763e7777c03fcb944",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_route_index_apply_without_contract_is_refused_after_the_baseline"
+            },
+            "path": "mcp/tests/test_bootstrap_converted_onboarding.py"
+          },
+          "before": {
+            "blob": "68c48a9951b8061bca00a8d8656f503b8100ecd9",
+            "content": "sha256:96e1a404f6667bf5439ebda3b1c333e7e8a55be1c65f5c7763e7777c03fcb944",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_route_index_apply_without_contract_is_refused_after_the_baseline"
+            },
+            "path": "mcp/tests/test_bootstrap_converted_onboarding.py"
+          },
+          "id": "PRF-428BQW"
+        },
+        {
+          "after": {
+            "blob": "68c48a9951b8061bca00a8d8656f503b8100ecd9",
+            "content": "sha256:c40c77bc5ff6c01e2cf5017ce510f6cf2db7d51e04eaaf71dcdc4ba7679d4522",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_refused_reauthor_card_and_sidecar_stay_byte_identical"
+            },
+            "path": "mcp/tests/test_bootstrap_converted_onboarding.py"
+          },
+          "before": {
+            "blob": "68c48a9951b8061bca00a8d8656f503b8100ecd9",
+            "content": "sha256:c40c77bc5ff6c01e2cf5017ce510f6cf2db7d51e04eaaf71dcdc4ba7679d4522",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_refused_reauthor_card_and_sidecar_stay_byte_identical"
+            },
+            "path": "mcp/tests/test_bootstrap_converted_onboarding.py"
+          },
+          "id": "PRF-7AJHGY"
+        },
+        {
+          "after": {
+            "blob": "68c48a9951b8061bca00a8d8656f503b8100ecd9",
+            "content": "sha256:6e5ff03295b12a84cc65ac4ec3535205965c8ee0fb0fbf1267b9c179dbfa2377",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_fixer_without_contract_is_refused_once_the_baseline_exists"
+            },
+            "path": "mcp/tests/test_bootstrap_converted_onboarding.py"
+          },
+          "before": {
+            "blob": "68c48a9951b8061bca00a8d8656f503b8100ecd9",
+            "content": "sha256:6e5ff03295b12a84cc65ac4ec3535205965c8ee0fb0fbf1267b9c179dbfa2377",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_fixer_without_contract_is_refused_once_the_baseline_exists"
+            },
+            "path": "mcp/tests/test_bootstrap_converted_onboarding.py"
+          },
+          "id": "PRF-HEDA55"
+        },
+        {
+          "after": {
+            "blob": "68c48a9951b8061bca00a8d8656f503b8100ecd9",
+            "content": "sha256:b4f38fc73891c4b8d8cb16b30b2ce6b3036060f458df7fa86e5de528d675b7a0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_route_index_apply_without_contract_is_admitted_before_the_baseline"
+            },
+            "path": "mcp/tests/test_bootstrap_converted_onboarding.py"
+          },
+          "before": {
+            "blob": "68c48a9951b8061bca00a8d8656f503b8100ecd9",
+            "content": "sha256:b4f38fc73891c4b8d8cb16b30b2ce6b3036060f458df7fa86e5de528d675b7a0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_route_index_apply_without_contract_is_admitted_before_the_baseline"
+            },
+            "path": "mcp/tests/test_bootstrap_converted_onboarding.py"
+          },
+          "id": "PRF-NDCGFQ"
+        },
+        {
+          "after": {
+            "blob": "68c48a9951b8061bca00a8d8656f503b8100ecd9",
+            "content": "sha256:d2bbebca6d59f7c7e0e64b70af22fc4b2b5741a7c65bea3d87bf06850304b17b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_fixer_without_contract_authors_cards_before_the_baseline"
+            },
+            "path": "mcp/tests/test_bootstrap_converted_onboarding.py"
+          },
+          "before": {
+            "blob": "68c48a9951b8061bca00a8d8656f503b8100ecd9",
+            "content": "sha256:d2bbebca6d59f7c7e0e64b70af22fc4b2b5741a7c65bea3d87bf06850304b17b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_fixer_without_contract_authors_cards_before_the_baseline"
+            },
+            "path": "mcp/tests/test_bootstrap_converted_onboarding.py"
+          },
+          "id": "PRF-WSA1G4"
+        },
+        {
+          "after": {
+            "blob": "291bc4d7b0c07f2ce0ef62152c72d94fc5aa7a89",
+            "content": "sha256:1b676566623ede7fef41052717338fc5b5ff0b89bc0cf883ab16ee803100edb9",
+            "locator": {
+              "kind": "symbol",
+              "name": "fix_references"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/reference_state.py"
+          },
+          "before": {
+            "blob": "291bc4d7b0c07f2ce0ef62152c72d94fc5aa7a89",
+            "content": "sha256:1b676566623ede7fef41052717338fc5b5ff0b89bc0cf883ab16ee803100edb9",
+            "locator": {
+              "kind": "symbol",
+              "name": "fix_references"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/reference_state.py"
+          },
+          "id": "RLZ-3XM7BA"
+        },
+        {
+          "after": {
+            "blob": "536d026ee5c551dea3daf51ed3731520f4b16401",
+            "content": "sha256:5eb51bb0f75bb9bbc4037112040d28689dd7e72f767901e9fed98024bb44dbac",
+            "locator": {
+              "kind": "symbol",
+              "name": "_pre_baseline_official_scope"
+            },
+            "path": "mcp/src/agents_remember/application/memory_tools.py"
+          },
+          "before": {
+            "blob": "197ac9c813cefe56583faa7429ebada46d168acd",
+            "content": "sha256:5eb51bb0f75bb9bbc4037112040d28689dd7e72f767901e9fed98024bb44dbac",
+            "locator": {
+              "kind": "symbol",
+              "name": "_pre_baseline_official_scope"
+            },
+            "path": "mcp/src/agents_remember/application/memory_tools.py"
+          },
+          "id": "RLZ-5KQY0P"
+        },
+        {
+          "after": {
+            "blob": "536d026ee5c551dea3daf51ed3731520f4b16401",
+            "content": "sha256:83e70239fb2fe29685ed990efe29b609d050cf2a0b0b59e99215e570c384646f",
+            "locator": {
+              "kind": "symbol",
+              "name": "citation_fix_tool"
+            },
+            "path": "mcp/src/agents_remember/application/memory_tools.py"
+          },
+          "before": {
+            "blob": "197ac9c813cefe56583faa7429ebada46d168acd",
+            "content": "sha256:92c85531f69abf9a3040ff3c5d72e0f39be116fe5a1488b03ed2ee702f7e9c01",
+            "locator": {
+              "kind": "symbol",
+              "name": "citation_fix_tool"
+            },
+            "path": "mcp/src/agents_remember/application/memory_tools.py"
+          },
+          "id": "RLZ-S74G2D"
+        },
+        {
+          "after": {
+            "blob": "536d026ee5c551dea3daf51ed3731520f4b16401",
+            "content": "sha256:93bef3cbe4b811f19a4cfc92299509d1385cc9a8bb7253481cbff896be99d6d9",
+            "locator": {
+              "kind": "symbol",
+              "name": "route_index_refresh_tool"
+            },
+            "path": "mcp/src/agents_remember/application/memory_tools.py"
+          },
+          "before": {
+            "blob": "197ac9c813cefe56583faa7429ebada46d168acd",
+            "content": "sha256:93bef3cbe4b811f19a4cfc92299509d1385cc9a8bb7253481cbff896be99d6d9",
+            "locator": {
+              "kind": "symbol",
+              "name": "route_index_refresh_tool"
+            },
+            "path": "mcp/src/agents_remember/application/memory_tools.py"
+          },
+          "id": "RLZ-W1WY9N"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-SYD3KB",
+      "items": [
+        "sha256:e02c3d54c034c1004e0abe4048e5fff24952937f90a4335644b678603110e39f"
+      ],
+      "reason": "Finite list/status composition extends only selection/transport; all five measured pre-baseline predicates and ordinary leaf authority remain unchanged, as do the stored proof assertions and same-ID realization rationales.",
+      "revision": 1,
+      "subject": "INV-13QTT2"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-SYFEPA",
+      "items": [
+        "sha256:581570e4673f24a3c567c81ae164333f641bbe3d519ad8b1ab40b1a79a741a2c"
+      ],
+      "reason": "Derived instruction carrier or canonical procedure: the verified finite-batch/candidate-file directive is routed to its owning product/onboarding contract; no independent mirror authority, role rerouting or new write lane is introduced.",
+      "subject": "onboarding:.hermes/skills/l-01-agent-lifecycles/roles/curator.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-T2ST5A",
+      "items": [
+        "sha256:20c26d5fb42c0a05043a686669e5ab3afc9b3a63325a9b5b33c442240af433c5",
+        "sha256:6ca17395f058f43868fc7dc75b6db1584e9ff39a55cc414e8d39d9f5ece598b8",
+        "sha256:82861af795fce54411350af32916450ac85cf6b9ce00a23c0f4eae23e811fd57"
+      ],
+      "reason": "The integrity case now checks the first-entries wrapper and unchanged total counts; read/diff/legacy/index selection contracts and validator-not-intent boundary remain unchanged.",
+      "subject": "onboarding:mcp/tests/test_knowledge_index_surfaces.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-T32A51",
+      "items": [
+        "sha256:bd1221b1d01b41bb59eb9398d2c0515bfbbc72ea988c0a392afd22da96755068"
+      ],
+      "reason": "Attempt8 supplies explicit L100 interim ownership for incoming retire_child and role_start_set and removes the stale retired-tool assertion. The existing authored-row/public-registry exactness contract and L110 final status bounds are unchanged; this is compatibility data within that contract, not a new invariant, test execution or acceptance. The two operative owning cards describe the new declarations; unchanged memory meaning elsewhere is retained.",
+      "subject": "hunk:sha256:bd1221b1d01b41bb59eb9398d2c0515bfbbc72ea988c0a392afd22da96755068"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-TG2VB5",
+      "items": [
+        "sha256:a3584fdf4ec180080d1e68f642be97cd438323828b55cf2a6d2c587670874923"
+      ],
+      "reason": "Status projection and removal of a second carryover cap implement the separately recorded answer/detail guarantee without restoring retired MCP adapters; local packing/import changes carry no separate obligation.",
+      "subject": "hunk:sha256:a3584fdf4ec180080d1e68f642be97cd438323828b55cf2a6d2c587670874923"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-TQJHZ2",
+      "items": [
+        "sha256:9802e43b778605dd1af49e1a6519736a9de34b282984e4ac87a55406015c7bac"
+      ],
+      "reason": "Candidate filing and file-input/status mechanics realize the separately authored coherence transport invariant; deleted response material is retained in its owning corpus, not new knowledge.",
+      "subject": "hunk:sha256:9802e43b778605dd1af49e1a6519736a9de34b282984e4ac87a55406015c7bac"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-TQY46J",
+      "items": [
+        "sha256:ba6ced84bce3e4b3a651395f07c5f88e5fd72e233ec706cccc9af2259c6baf42"
+      ],
+      "reason": "Status projection and removal of a second carryover cap implement the separately recorded answer/detail guarantee without restoring retired MCP adapters; local packing/import changes carry no separate obligation.",
+      "subject": "hunk:sha256:ba6ced84bce3e4b3a651395f07c5f88e5fd72e233ec706cccc9af2259c6baf42"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-TV7BF0",
+      "items": [
+        "sha256:ce660e6a6fbcaf117f54976f4fbf23fa9fd567f8a3434ada2fe62954b1acb786"
+      ],
+      "reason": "Final L110 bounds, status entry/reason ceilings and removal of interim ownership are the implementation of the existing row/guard contract; deleted interim clauses are not new invariants.",
+      "subject": "hunk:sha256:ce660e6a6fbcaf117f54976f4fbf23fa9fd567f8a3434ada2fe62954b1acb786"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-TZ1D98",
+      "items": [
+        "sha256:0f9c8946ac4c426ec772d484213fe85ef1ddc550529e6501878ce706ad71eb8d",
+        "sha256:3ff4e7612742751107c83254a4bfe60c684f72729c28976d6fc902f332f732eb"
+      ],
+      "reason": "Derived instruction carrier or canonical procedure: the verified finite-batch/candidate-file directive is routed to its owning product/onboarding contract; no independent mirror authority, role rerouting or new write lane is introduced.",
+      "subject": "onboarding:.pi/skills/c-02-memory-quality-control/SKILL.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-V47GKH",
+      "items": [
+        "sha256:6111ced22f85b3ca1dc1c53f2ec72f592d9d3d445cfdcc5d34fc23d8167b0654"
+      ],
+      "reason": "Derived instruction carrier or canonical procedure: the verified finite-batch/candidate-file directive is routed to its owning product/onboarding contract; no independent mirror authority, role rerouting or new write lane is introduced.",
+      "subject": "onboarding:.agents/skills/l-01-agent-lifecycles/roles/curator.md"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-V6RH8H",
+      "items": [
+        "sha256:b4303a649c07ab35a1c5bc54192170adb46e7fd1f5f31ed1de8e22bfc339ce46"
+      ],
+      "reason": "Final shaped-row assembly and actual production-path witnesses preserve the governing table invariant; wiring, deleted interim rows and explanatory comments add no separate universal guarantee.",
+      "subject": "hunk:sha256:b4303a649c07ab35a1c5bc54192170adb46e7fd1f5f31ed1de8e22bfc339ce46"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-VC1VYJ",
+      "items": [
+        "sha256:e99f82244e3b567145513d413f43d4e8b7380aaf0289ff71f94bd880917d4d6d"
+      ],
+      "reason": "Integrity projection and removal of the internal listing cap implement the separately recorded status/detail boundary; local mapping/import mechanics require no additional invariant.",
+      "subject": "hunk:sha256:e99f82244e3b567145513d413f43d4e8b7380aaf0289ff71f94bd880917d4d6d"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-VF9B02",
+      "items": [
+        "sha256:41609a6a8682228a57742a1b6f42bae09dd5c3bf39f1b035a5b08bd47aa525ee",
+        "sha256:69b91d6ba1ef957b7c8c09d722390ec4658e5de396d1a5027efbced8b268039f",
+        "sha256:9732e886380440307add76ffc503dd2277ef661efc41e0b490bc0b060826765a",
+        "sha256:c68e775fd0adfed4617069d5da7f9f2fdff7a972b062dfdd9c5702128cae6c3f",
+        "sha256:d39c5eba86b43966963747e100ae3858c9278763a6085d704f98a0ed706e7e5f"
+      ],
+      "reason": "Shared preparation-file helpers replace inline fixture access; subject isolation, retained binding and independent source inventory assertions remain unchanged.",
+      "subject": "onboarding:mcp/tests/test_knowledge_review_subject_isolation.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-VGHCMA",
+      "items": [
+        "sha256:24525506b5077231b959f58befd9a6c8e8199a2ce57c7e11076b7388e7149bb1"
+      ],
+      "reason": "Catalog rows register the new support and consumer files; exact ownership/replacement/consumer scope remains the catalog contract, and membership supplies no execution verdict.",
+      "subject": "onboarding:mcp/tests/evidence-lifecycle.toml"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-VS9P18",
+      "items": [
+        "sha256:f5a3b55b1a26dd984c58c9b66b686cc39039c038c5bfd2fdefabc9cb4e128573"
+      ],
+      "reason": "Quality-result composition, recovery fields and uncut internal populations implement the separately authored status/detail guarantee; imports and plumbing introduce no independent semantic obligation.",
+      "subject": "hunk:sha256:f5a3b55b1a26dd984c58c9b66b686cc39039c038c5bfd2fdefabc9cb4e128573"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-W0DGH1",
+      "items": [
+        "sha256:66706b404f57d1592c01d287a651f86bd6af172ea98a3930ad04ec2e18caf12a"
+      ],
+      "reason": "Derived instruction carrier or canonical procedure: the verified finite-batch/candidate-file directive is routed to its owning product/onboarding contract; no independent mirror authority, role rerouting or new write lane is introduced.",
+      "subject": "onboarding:.openclaw/workspace/skills/l-01-agent-lifecycles/roles/curator.md"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-W9SC62",
+      "items": [
+        "sha256:2b34ab5bb861e335be4fc2ddec69faa2b397a7177f60262bcd7fcba1ca07587d"
+      ],
+      "reason": "Status projection and removal of a second carryover cap implement the separately recorded answer/detail guarantee without restoring retired MCP adapters; local packing/import changes carry no separate obligation.",
+      "subject": "hunk:sha256:2b34ab5bb861e335be4fc2ddec69faa2b397a7177f60262bcd7fcba1ca07587d"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-7E3JNX",
+          "revision": 1
+        },
+        {
+          "id": "INV-RKGNF8",
+          "revision": 1
+        },
+        {
+          "id": "INV-V7M37D",
+          "revision": 1
+        },
+        {
+          "id": "INV-W24J6Q",
+          "revision": 2
+        },
+        {
+          "id": "INV-W58B84",
+          "revision": 1
+        },
+        {
+          "id": "INV-ZNJ14G",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-WEWNGZ",
+      "items": [
+        "sha256:a993bd3a68b3e7b1ea395895f46e0568601f5793df38550a17dabb9794b81045"
+      ],
+      "reason": "Examined every declared member and routed realization. Status/file/batch transport preserves this existing joint guarantee, member intent and route placement; no membership or guarantee revision is justified.",
+      "revision": 1,
+      "subject": "FAM-83BTBD"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-WH0NHB",
+      "items": [
+        "sha256:6af4315cdb35668f03f9fd6d87d5b106c07b0d91fc090ccd40881f16ea6c7b73"
+      ],
+      "reason": "Quality-result composition, recovery fields and uncut internal populations implement the separately authored status/detail guarantee; imports and plumbing introduce no independent semantic obligation.",
+      "subject": "hunk:sha256:6af4315cdb35668f03f9fd6d87d5b106c07b0d91fc090ccd40881f16ea6c7b73"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-WK4JJN",
+      "items": [
+        "sha256:fc69a6d58b14a336daad9c6286aec88742c76244d410e05bdf8b9e5b73df30d9"
+      ],
+      "reason": "Candidate filing and file-input/status mechanics realize the separately authored coherence transport invariant; deleted response material is retained in its owning corpus, not new knowledge.",
+      "subject": "hunk:sha256:fc69a6d58b14a336daad9c6286aec88742c76244d410e05bdf8b9e5b73df30d9"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-WKN8EV",
+      "items": [
+        "sha256:0f91c777d637148cc6f86bae7038ea0ebab2fb1c180d5ff79dac7622edeed0ee",
+        "sha256:c545419934237e2767f6340c2b33bdb447ce366dc1ef52b978fd5c091eb73a29",
+        "sha256:e98f6b8b3bfb86846f0d783d71f4fd6d8ff4abd9865036ac83b1c89a8cf9f8bb"
+      ],
+      "reason": "Derived instruction carrier or canonical procedure: the verified finite-batch/candidate-file directive is routed to its owning product/onboarding contract; no independent mirror authority, role rerouting or new write lane is introduced.",
+      "subject": "onboarding:.claude/skills/c-05-create-or-update-onboarding-files/workflows/converted-card-workflow.md"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R110",
+          "packet": "requirements/MIK-R110-v1-the-memory-tools-answer-with-a-status.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "d7bdf3f8fa8901f8a5b76fe7842cb48b417f4921",
+            "content": "sha256:3a3aca3dd8f1fea4366a262248516bb6437de0c5fe8d9ca18a199654317922f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_valid_shaped_row_passes"
+            },
+            "path": "mcp/tests/test_tool_answer_table.py"
+          },
+          "before": {
+            "blob": "61ba148ac72708a6a905593e874902405cf13d30",
+            "content": "sha256:3a3aca3dd8f1fea4366a262248516bb6437de0c5fe8d9ca18a199654317922f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_valid_shaped_row_passes"
+            },
+            "path": "mcp/tests/test_tool_answer_table.py"
+          },
+          "id": "PRF-MXFH7R"
+        },
+        {
+          "after": {
+            "blob": "d7bdf3f8fa8901f8a5b76fe7842cb48b417f4921",
+            "content": "sha256:383e8f5213fcd363b7ced7c8ada20285f571ee20aeff684afed62503a8e8c0d6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_empty_use_fails"
+            },
+            "path": "mcp/tests/test_tool_answer_table.py"
+          },
+          "before": {
+            "blob": "61ba148ac72708a6a905593e874902405cf13d30",
+            "content": "sha256:383e8f5213fcd363b7ced7c8ada20285f571ee20aeff684afed62503a8e8c0d6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_empty_use_fails"
+            },
+            "path": "mcp/tests/test_tool_answer_table.py"
+          },
+          "id": "PRF-TW1JNF"
+        },
+        {
+          "after": {
+            "blob": "d7bdf3f8fa8901f8a5b76fe7842cb48b417f4921",
+            "content": "sha256:47d672492795b1f68d11b88406c66fe8b88fcc0e1a4b66dc7381eedbc8dcbbbf",
+            "locator": {
+              "kind": "symbol",
+              "name": "validate_row_case"
+            },
+            "path": "mcp/tests/test_tool_answer_table.py"
+          },
+          "before": {
+            "blob": "61ba148ac72708a6a905593e874902405cf13d30",
+            "content": "sha256:47d672492795b1f68d11b88406c66fe8b88fcc0e1a4b66dc7381eedbc8dcbbbf",
+            "locator": {
+              "kind": "symbol",
+              "name": "validate_row_case"
+            },
+            "path": "mcp/tests/test_tool_answer_table.py"
+          },
+          "id": "RLZ-8MJZRK"
+        },
+        {
+          "after": {
+            "blob": "d7bdf3f8fa8901f8a5b76fe7842cb48b417f4921",
+            "content": "sha256:0f91d4a292f929fccefc52925308531a2b421010f85e24682b1785eae7fde84a",
+            "locator": {
+              "kind": "symbol",
+              "name": "ToolAnswerRow"
+            },
+            "path": "mcp/tests/test_tool_answer_table.py"
+          },
+          "before": {
+            "blob": "61ba148ac72708a6a905593e874902405cf13d30",
+            "content": "sha256:f4b2d8d8f7dd941065f4aa1172cf8a4c60c0b3be4ca3439ffa031bee129e03ff",
+            "locator": {
+              "kind": "symbol",
+              "name": "ToolAnswerRow"
+            },
+            "path": "mcp/tests/test_tool_answer_table.py"
+          },
+          "id": "RLZ-G2E5V5"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-WYCJ2W",
+      "items": [
+        "sha256:fe0ca719a716393629b06151c3b1a1101353a54051964d780dc781a48e5c851e"
+      ],
+      "reason": "Final memory rows replace interim ownership and may name actual production derivation paths instead of static payload copies; allowed fields, uses and common row enforcement remain required.",
+      "revision": 2,
+      "subject": "INV-180VCA"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "cea879140a9d03d3e55492f6cebf9943fb19b0c4",
+            "content": "sha256:7db158bae9759a77bb55ab71a2e344b58cb0c130c3442fd6c88bd18172c3d922",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "before": {
+            "blob": "cea879140a9d03d3e55492f6cebf9943fb19b0c4",
+            "content": "sha256:7db158bae9759a77bb55ab71a2e344b58cb0c130c3442fd6c88bd18172c3d922",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "id": "RLZ-7ZK6TT"
+        },
+        {
+          "after": {
+            "blob": "c6b847c5c7627c6094bd425abb7559f7ae21e43e",
+            "content": "sha256:10c2683a39e2cd0749f0d56b67466d02117322706907419831ba9da450bc64d7",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "before": {
+            "blob": "c6b847c5c7627c6094bd425abb7559f7ae21e43e",
+            "content": "sha256:10c2683a39e2cd0749f0d56b67466d02117322706907419831ba9da450bc64d7",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "id": "RLZ-JH0BAQ"
+        },
+        {
+          "after": {
+            "blob": "d7bf74bc660d55b477b5698fd496803aea57b3fd",
+            "content": "sha256:d99430e5b69788af75ad2214a5c8fb312c751978f1cfef213aa88f2ce866aa52",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/worker.md"
+          },
+          "before": {
+            "blob": "d7bf74bc660d55b477b5698fd496803aea57b3fd",
+            "content": "sha256:d99430e5b69788af75ad2214a5c8fb312c751978f1cfef213aa88f2ce866aa52",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/worker.md"
+          },
+          "id": "RLZ-MXJ3HX"
+        },
+        {
+          "after": {
+            "blob": "97edddb8b77560c1d6dc6addefac91658084452b",
+            "content": "sha256:d0923362030cd8da1d868eec4f241d816ab114445f29ff7d83e456dada3e0fd6",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "before": {
+            "blob": "b5f664cebbb1579f8082617443e5ca9aa7751791",
+            "content": "sha256:3d6a444ab1b6c2c46771ee7f86ccfa05632b06a438cc304a45c20e73e3791a28",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "id": "RLZ-VESCVY"
+        },
+        {
+          "after": {
+            "blob": "4b63bc182e0ae8910aee222ede92cb2cc24752d3",
+            "content": "sha256:f101a33fb84bd50fb214be45ae45e604c0b201b72eb52d50dfc062c4c1339f44",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/coordination.md"
+          },
+          "before": {
+            "blob": "4b63bc182e0ae8910aee222ede92cb2cc24752d3",
+            "content": "sha256:f101a33fb84bd50fb214be45ae45e604c0b201b72eb52d50dfc062c4c1339f44",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/coordination.md"
+          },
+          "id": "RLZ-XF8A3Q"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-X1SX9A",
+      "items": [
+        "sha256:cfb2b17d0f82ebaf101b1894239cc3da679cb428bdf566ef26c1a051d47dbc28"
+      ],
+      "reason": "Citation batching adds no intermediary or Manager relay; exact freezes and memory/code concerns remain direct peer handovers. Same-ID current-pair renewal after Manager-admitted 96c4eba4/8046c1a4 sync; retain incoming changes and historical qualifications, restore only the three parked empty-pin realization rationales; no execution or acceptance claim.",
+      "revision": 1,
+      "subject": "INV-ZNJ14G"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-X482KG",
+      "items": [
+        "sha256:f9d02efb55fa7189d26c00635c952eca21ff01fe92b95e14fa9e3cfa6bd26785"
+      ],
+      "reason": "Quality-result composition, recovery fields and uncut internal populations implement the separately authored status/detail guarantee; imports and plumbing introduce no independent semantic obligation.",
+      "subject": "hunk:sha256:f9d02efb55fa7189d26c00635c952eca21ff01fe92b95e14fa9e3cfa6bd26785"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-X4B2BW",
+      "items": [
+        "sha256:9e95c473bcb7ce7477f9c214da54c32461b24810fc085f11ded96eb06dcf258f"
+      ],
+      "reason": "Candidate filing and file-input/status mechanics realize the separately authored coherence transport invariant; deleted response material is retained in its owning corpus, not new knowledge.",
+      "subject": "hunk:sha256:9e95c473bcb7ce7477f9c214da54c32461b24810fc085f11ded96eb06dcf258f"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-XHCAJR",
+      "items": [
+        "sha256:589eee6ff5219b11ba18df5e634c227bd89d421bb3aa45d90cea6dc343d0618f"
+      ],
+      "reason": "Optional file transport and result-count fields represent the separately authored coherence transport guarantee without changing the nine required publication expectations.",
+      "subject": "hunk:sha256:589eee6ff5219b11ba18df5e634c227bd89d421bb3aa45d90cea6dc343d0618f"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-XHZ4AQ",
+      "items": [
+        "sha256:9af0ecb473732570d5bfaad7b57cbe348757c32eada4475e7a7070c8af5d068c"
+      ],
+      "reason": "Integrity projection and removal of the internal listing cap implement the separately recorded status/detail boundary; local mapping/import mechanics require no additional invariant.",
+      "subject": "hunk:sha256:9af0ecb473732570d5bfaad7b57cbe348757c32eada4475e7a7070c8af5d068c"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-XXHZ63",
+      "items": [
+        "sha256:2db0e263bb820d9e363cc0863e62a6c07341f4ff36107a43c93de83228fc154e"
+      ],
+      "reason": "Final L110 bounds, status entry/reason ceilings and removal of interim ownership are the implementation of the existing row/guard contract; deleted interim clauses are not new invariants.",
+      "subject": "hunk:sha256:2db0e263bb820d9e363cc0863e62a6c07341f4ff36107a43c93de83228fc154e"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R110",
+          "packet": "requirements/MIK-R110-v1-the-memory-tools-answer-with-a-status.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "08ac01acc05f13a6ea9558f8eb96d03a90347d30",
+            "content": "sha256:8373c3aa3db2e933309390fb7ea3548d9305133099e8d0e6315046bd3cd71060",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_explicitly_empty_list_with_a_file_is_refused"
+            },
+            "path": "mcp/tests/test_curator_coherence_file_transport.py"
+          },
+          "before": "absent",
+          "id": "PRF-4FMXB2"
+        },
+        {
+          "after": {
+            "blob": "08ac01acc05f13a6ea9558f8eb96d03a90347d30",
+            "content": "sha256:b70465647475fa5b33537d4c6a5eb90d25f310c41df1f40b3a53a34811a3e306",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_publish_from_a_file_leaves_the_same_record_as_the_inline_call"
+            },
+            "path": "mcp/tests/test_curator_coherence_file_transport.py"
+          },
+          "before": "absent",
+          "id": "PRF-AJY73Y"
+        },
+        {
+          "after": {
+            "blob": "08ac01acc05f13a6ea9558f8eb96d03a90347d30",
+            "content": "sha256:a3b829e14a2628cb8a0dfab48e6dc978a038c730f53ad6dc0697516994cc9aa6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_largest_legal_payload_validates"
+            },
+            "path": "mcp/tests/test_curator_coherence_file_transport.py"
+          },
+          "before": "absent",
+          "id": "PRF-CQM6WH"
+        },
+        {
+          "after": {
+            "blob": "9150d6ea2188c64e23f747c261ce8ef28cdd1bf4",
+            "content": "sha256:065dff6bed0e70f6aa452c179cbf2c4109b71cddf0e080fdcd5d41b21eb5c1ff",
+            "locator": {
+              "kind": "symbol",
+              "name": "_validate_file_entries"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_judgments_file.py"
+          },
+          "before": "absent",
+          "id": "RLZ-4PMN3J"
+        },
+        {
+          "after": {
+            "blob": "9150d6ea2188c64e23f747c261ce8ef28cdd1bf4",
+            "content": "sha256:67b9a0e15940babb1423f361efe886d54e5cac4e699f7323638811aba21846dd",
+            "locator": {
+              "kind": "symbol",
+              "name": "_read_judgments_bytes"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_judgments_file.py"
+          },
+          "before": "absent",
+          "id": "RLZ-G3H4SH"
+        },
+        {
+          "after": {
+            "blob": "2396376cd715d4d7b646d44e5d83f4304708a636",
+            "content": "sha256:b80bc966651f313af77137b13fbb72874e1782d1f082b1619850f97df0731593",
+            "locator": {
+              "kind": "symbol",
+              "name": "_publish"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py"
+          },
+          "before": "absent",
+          "id": "RLZ-K6TKTC"
+        },
+        {
+          "after": {
+            "blob": "2396376cd715d4d7b646d44e5d83f4304708a636",
+            "content": "sha256:7d7fe17df0eb2eba57e4a0d4e6835c0a273a3ad49e5ebdd1037d9c813d0e188e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write_candidate_set"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py"
+          },
+          "before": "absent",
+          "id": "RLZ-QQNJDJ"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-Y3WK2N",
+      "items": [],
+      "reason": "Introduces the supported cross-location obligation with scoped realizations and precise assertion facets; no new test execution or intent acceptance is claimed. MEMORY baseline1 fixed-list reconciliation narrows resource/proof claims and current empty-pin/one-tool explanations to actual retained source/assertion evidence, preserving IDs and historical origin without new execution.",
+      "revision": 1,
+      "subject": "INV-701KQ9"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-Y80WVG",
+      "items": [
+        "sha256:138bec2ded5bbadcce7bbf52f5137940995692880f77e5a1b0f50fb543b61343",
+        "sha256:2de4ff2e5b767a8d7eb39991bb24b0cbc7bbc5920b356fd5742575cd35a361a7",
+        "sha256:b59e9187f08acc7abf9d326cf12e0d93d64cc963b25bcf1153948bdf50ef7f52",
+        "sha256:cafe311d849ea2128c6e899e674d3ba3c24ea0c0709cae54074a480066179c26",
+        "sha256:f89411ca9a94007310f0efe7de21f50d0b62244e3690c31595ebfe0b449373c6"
+      ],
+      "reason": "Shared preparation-file helpers replace inline fixture access; measured/unavailable/not-captured channels and historical-generation assertions are unchanged.",
+      "subject": "onboarding:mcp/tests/test_knowledge_review_evidence_channels.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-YD1KSG",
+      "items": [
+        "sha256:97894611e67bfeea9fa142ff079a12a2a846f3b955178bc1bd5ec8838aa26dc7"
+      ],
+      "reason": "Quality-result composition, recovery fields and uncut internal populations implement the separately authored status/detail guarantee; imports and plumbing introduce no independent semantic obligation.",
+      "subject": "hunk:sha256:97894611e67bfeea9fa142ff079a12a2a846f3b955178bc1bd5ec8838aa26dc7"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-YGQ1EB",
+      "items": [
+        "sha256:41dbeff0a1efd9291eca2dd4dc249db7750c36539dbdef25d8559dedd63c8676"
+      ],
+      "reason": "Final L110 bounds, status entry/reason ceilings and removal of interim ownership are the implementation of the existing row/guard contract; deleted interim clauses are not new invariants.",
+      "subject": "hunk:sha256:41dbeff0a1efd9291eca2dd4dc249db7750c36539dbdef25d8559dedd63c8676"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-YMEQ2Z",
+      "items": [
+        "sha256:9ec589cfe4a7903b7d2bc6da2ce798b858ea7ad4290ba14e9a5cb9fc82e30597"
+      ],
+      "reason": "Derived instruction carrier or canonical procedure: the verified finite-batch/candidate-file directive is routed to its owning product/onboarding contract; no independent mirror authority, role rerouting or new write lane is introduced.",
+      "subject": "onboarding:.pi/skills/l-01-agent-lifecycles/roles/curator.md"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-YRMZ9X",
+      "items": [
+        "sha256:deb42e482ad32ce10c7e2363116b08f251fd62c513675d6b63b929ca91a68c3d"
+      ],
+      "reason": "Lane membership selects the new citation/coherence/answer suites but does not claim execution or acceptance; it is catalog wiring, not an independent semantic obligation.",
+      "subject": "hunk:sha256:deb42e482ad32ce10c7e2363116b08f251fd62c513675d6b63b929ca91a68c3d"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-YT9EYM",
+      "items": [
+        "sha256:306d538a4d1ee2a4b5e5dde51809a7b790de9d0e98b716488d8daa1a7de55bb7",
+        "sha256:84e5ea9ed13bf291329e69e0407b2261c2605af08c1f981e658c2dd4a239ac58"
+      ],
+      "reason": "The return mapping now supplies complete repair/missing/index populations for status projection; deterministic checklist rendering, zeroable categories and attestation ownership remain unchanged.",
+      "subject": "onboarding:mcp/src/agents_remember/memory_quality/curator_checklist.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-Z0WT6P",
+      "items": [
+        "sha256:0f4d22a26e1a08096b87a3513791c496cc7ba2d81c99aed900305528d5eaf845"
+      ],
+      "reason": "Final shaped-row assembly and actual production-path witnesses preserve the governing table invariant; wiring, deleted interim rows and explanatory comments add no separate universal guarantee.",
+      "subject": "hunk:sha256:0f4d22a26e1a08096b87a3513791c496cc7ba2d81c99aed900305528d5eaf845"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-ZESNK8",
+      "items": [
+        "sha256:c627c61593ef41707e2f9e638b81013696a5b7ee989353ab13ae410f82a8e156"
+      ],
+      "reason": "Complete diagnostic populations support status projection without changing classification, converted-base validation, legacy repair transactions or the full operation boundary.",
+      "subject": "onboarding:mcp/src/agents_remember/memory_quality/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ZGH5KT",
+      "items": [
+        "sha256:e10b9603251aa465b2f5f9c82ea4b054abf2f7e1d39d826d94dc9aec6dd00514"
+      ],
+      "reason": "Final shaped-row assembly and actual production-path witnesses preserve the governing table invariant; wiring, deleted interim rows and explanatory comments add no separate universal guarantee.",
+      "subject": "hunk:sha256:e10b9603251aa465b2f5f9c82ea4b054abf2f7e1d39d826d94dc9aec6dd00514"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-ZTG8XH",
+      "items": [
+        "sha256:b20c81736456e11ec4ae94974dba9d4b70b5c677b46699f666493448d16e2978"
+      ],
+      "reason": "Finite citation scope and prepared-file/status transport preserve the package’s actor/task/read/write ownership boundaries; detailed transport belongs to the updated application/tool/closeout cards.",
+      "subject": "onboarding:mcp/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ZTM5MF",
+      "items": [
+        "sha256:307ee29c03521b6276107c08c4d1933461e50f6a2133cd99205b3f41034a9c0e"
+      ],
+      "reason": "Final shaped-row assembly and actual production-path witnesses preserve the governing table invariant; wiring, deleted interim rows and explanatory comments add no separate universal guarantee.",
+      "subject": "hunk:sha256:307ee29c03521b6276107c08c4d1933461e50f6a2133cd99205b3f41034a9c0e"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-13QTT2",
+          "revision": 1
+        },
+        {
+          "id": "INV-4XD2ZF",
+          "revision": 1
+        },
+        {
+          "id": "INV-DE9ZZF",
+          "revision": 1
+        },
+        {
+          "id": "INV-QR6DSA",
+          "revision": 1
+        },
+        {
+          "id": "INV-TJADR1",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-ZZZ2AS",
+      "items": [
+        "sha256:bed0985e98cf01e8bf6a6ef3daddb0eab17d6e2cdc2b2ef73af318421cf2290e"
+      ],
+      "reason": "All five members were examined: converted card grammar, measured fixer, baseline legacy-card refusal, ordered foundation setup and truthful handoff retain their stored joint guarantee/routes. Finite selection changes none of the five admission predicates or foundation semantics; no record/member revision is justified.",
+      "revision": 1,
+      "subject": "FAM-VDDPC6"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

@@ -5,7 +5,13 @@
 The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
 
 - Current L112 final bounds are runtime_install=600 and dispatch_agent=1500.
-- interim_leaf_for now returns None without an explicit interim row.
+- The repaired current source explicitly assigns `retire_child` and `role_start_set` to
+  L100 in `INTERIM_TOOL_LEAF` and includes L100 in `INTERIM_LEAVES`; these two declared
+  interim tools retain the interim bound of4000, not L110's final memory/coherence bounds.
+- interim_leaf_for now returns None without an explicit interim row. L110 memory/coherence rows
+  are final shaped bounds, not interim 4000-token allowances. `SHAPED_TOOL_BOUNDS` supplies the
+  production bounds used by the row witnesses and guard; status work-order lists and reasons have
+  their own shared ceilings while full populations remain in the whole result.
 
 ### Superseded inventory
 

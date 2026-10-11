@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "b0f0a8f5d35241679c8c7ae2f3266628049542a7",
+        "blob": "dff86525924cfecf34612baf2bcaba2bfc215986",
         "content": "sha256:baa25afaeb105e46bbcf68e4b8bbbe34beb68be1306cf22c8ab12c7c5f25eee7",
         "locator": {
           "kind": "symbol",
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "b0f0a8f5d35241679c8c7ae2f3266628049542a7",
-        "content": "sha256:0acd2450a45d829ef37d4b394e7e39548164fd088f47feb6a707ed9d94720b74",
+        "blob": "dff86525924cfecf34612baf2bcaba2bfc215986",
+        "content": "sha256:08672d24d93014ad1c5a562857c47567569aeb5a8ab8b41a394fed5b677e8559",
         "locator": {
           "kind": "symbol",
           "name": "CitationMigrateRegistrationTests.test_citation_tools_name_a_configured_contract_authority_refusal"

@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "217e5c86649db8bdbc5bf71011f0c8aa5f83f928",
-        "content": "sha256:3fa032a7f9c07b4130573f96b03d1915cd83b075c415f2ffe5987445afafc1dc",
+        "blob": "2396376cd715d4d7b646d44e5d83f4304708a636",
+        "content": "sha256:b80bc966651f313af77137b13fbb72874e1782d1f082b1619850f97df0731593",
         "locator": {
           "kind": "symbol",
           "name": "_publish"
@@ -17,6 +17,42 @@
       },
       "rationale": "Writes the new content-addressed generation files first, rechecks the source observation and recorded judgments, and runs load_curator_coherence_generation on the new record digest before atomically replacing the canonical authority pointer. A generation that fails that integrity read raises before the pointer is written, so the prior authority stays in place.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "2396376cd715d4d7b646d44e5d83f4304708a636",
+        "content": "sha256:b80bc966651f313af77137b13fbb72874e1782d1f082b1619850f97df0731593",
+        "locator": {
+          "kind": "symbol",
+          "name": "_publish"
+        }
+      },
+      "id": "RLZ-K6TKTC",
+      "invariant": "INV-701KQ9",
+      "origin": {
+        "handoffEntry": "L110-C-coherence-transport",
+        "leaf": "260928-MIK-L110"
+      },
+      "rationale": "Rejects explicitly supplied inline collections with the file and retains all expectation/integrity/CAS checks.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "2396376cd715d4d7b646d44e5d83f4304708a636",
+        "content": "sha256:7d7fe17df0eb2eba57e4a0d4e6835c0a273a3ad49e5ebdd1037d9c813d0e188e",
+        "locator": {
+          "kind": "symbol",
+          "name": "_write_candidate_set"
+        }
+      },
+      "id": "RLZ-QQNJDJ",
+      "invariant": "INV-701KQ9",
+      "origin": {
+        "handoffEntry": "L110-C-coherence-transport",
+        "leaf": "260928-MIK-L110"
+      },
+      "rationale": "Files the exact observed set and its reading projection with a digest.",
+      "role": "propagation-persistence"
     }
   ],
   "references": {
@@ -25,11 +61,27 @@
       "targets": [
         {
           "anchor": {
-            "blob": "217e5c86649db8bdbc5bf71011f0c8aa5f83f928",
+            "blob": "2396376cd715d4d7b646d44e5d83f4304708a636",
             "content": "sha256:a55a599b1c92a8e4c1ec967be5a2291299e44c18285855b7c3cc6bf5b984a9b9",
             "locator": {
               "kind": "symbol",
               "name": "curator_coherence_action"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Optional file-sourced judgments retain exact-set, evidence and CAS validation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2396376cd715d4d7b646d44e5d83f4304708a636",
+            "content": "sha256:b80bc966651f313af77137b13fbb72874e1782d1f082b1619850f97df0731593",
+            "locator": {
+              "kind": "symbol",
+              "name": "_publish"
             }
           },
           "kind": "code"
@@ -90,7 +142,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "217e5c86649db8bdbc5bf71011f0c8aa5f83f928",
+            "blob": "2396376cd715d4d7b646d44e5d83f4304708a636",
             "content": "sha256:8cced7d9a25816cd211a9a19fc4dc6cc0d006be0276453187b76fd0c67b761e1",
             "locator": {
               "kind": "symbol",
@@ -106,7 +158,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "217e5c86649db8bdbc5bf71011f0c8aa5f83f928",
+            "blob": "2396376cd715d4d7b646d44e5d83f4304708a636",
             "content": "sha256:6414afc5363deb35495a27d83c83936c9edecca9178214807f13ba0e904bc69c",
             "locator": {
               "kind": "symbol",
@@ -122,7 +174,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "217e5c86649db8bdbc5bf71011f0c8aa5f83f928",
+            "blob": "2396376cd715d4d7b646d44e5d83f4304708a636",
             "content": "sha256:0766441c3e12b7a252bb998c70fa9331a757930b64f1865fb119090a09bb523b",
             "locator": {
               "kind": "symbol",
@@ -143,6 +195,22 @@
             "locator": {
               "kind": "symbol",
               "name": "_publish"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Preparation files the exact candidate set and reading rendering.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2396376cd715d4d7b646d44e5d83f4304708a636",
+            "content": "sha256:7d7fe17df0eb2eba57e4a0d4e6835c0a273a3ad49e5ebdd1037d9c813d0e188e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write_candidate_set"
             }
           },
           "kind": "code"

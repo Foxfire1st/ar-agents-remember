@@ -16,7 +16,11 @@ Read selects the tree's derived index and delegates through bounded paging, carr
 
 Diff compares knowledge/onboarding Git files, or privately captures working memory when afterRevision is absent. It groups records/entries and cards/sidecars, bounds patches and names every omitted/cut portion; no effect label is inferred. [2]
 
-Integrity runs the knowledge validator and returns the latest leaf worklist for a contract, not a canonical detection run or compatibility verdict. Legacy roots and database files refuse before an open; change/project and selected-run fields are removed. [3] [51] [56]
+Integrity runs the knowledge validator and retains the latest leaf worklist for a contract in its
+whole result, not a canonical detection run or compatibility verdict. Its delivered status
+projection retains whole-report counts, bounded refusing-first violation entries and worklist
+state, while the complete violation population remains in the logged detail. Legacy roots and
+database files refuse before an open; change/project and selected-run fields are removed. [3] [51] [56]
 
 ### Invariants And Boundaries
 

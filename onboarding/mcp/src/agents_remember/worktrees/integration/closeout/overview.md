@@ -22,7 +22,10 @@ Door dependency identity binds task, code and substantive memory candidates. It 
 `prepared_certification.py` (relocated here from `memory_quality/` by commit `deb032fb`) composes the
 actual affected closure and full memory checks against a proved private code view;
 `curator_coherence.py` captures and validates the exact code/memory/task/attestation candidate;
-`curator_coherence_publication.py` publishes the sole live content-addressed authority;
+`curator_coherence_publication.py` publishes the sole live content-addressed authority and files
+the prepared candidate set with a digest and reading projection; its status answers name corpus
+locations rather than enumerating candidates. `curator_judgments_file.py` bounds one regular-file
+input read and validates the inline judgment/assessment models for optional file transport;
 `curator_coherence_judgments.py` binds agent-owned decisions to evidence bytes; and
 `curator_coherence_render.py` produces a one-way human projection. `door_source.py` reconstructs
 the exact waiting source; the operation journal and Git mutation evidence prove code and memory outputs after partial

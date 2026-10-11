@@ -1,0 +1,71 @@
+{
+  "path": "mcp/tests/test_tool_answer_rows_packaging.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Report and no-report carryover retain all forty source paths.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dfbebe8b710b7007acab183966e4cebe0de9f092",
+            "content": "sha256:ee3656b577ac3b41f1bfc9af88c88d654b4a5568766fa73131696d0ac9dd58bb",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_forty_path_population_passes_through_whole"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Refresh and stale-preview results derive the route row.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dfbebe8b710b7007acab183966e4cebe0de9f092",
+            "content": "sha256:162da5204e2b02dabbc9644da169776902466e0ccf2f775570cf33794fdb6fbf",
+            "locator": {
+              "kind": "symbol",
+              "name": "RouteProductionTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Actual validator results derive integrity answer cases.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dfbebe8b710b7007acab183966e4cebe0de9f092",
+            "content": "sha256:90706c87a8c3295a61b9f25bbebcc8e525fc8280d667eb74ce09d6648e4e019f",
+            "locator": {
+              "kind": "symbol",
+              "name": "IntegrityProductionTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Actual coherence actions derive bounded cases.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dfbebe8b710b7007acab183966e4cebe0de9f092",
+            "content": "sha256:f37a402e535a54fbbb7fddecbf6c928c248af5c72b5285329b9847898f2e899e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_coherence_paths_derive_the_row_cases"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

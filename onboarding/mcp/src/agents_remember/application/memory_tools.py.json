@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "197ac9c813cefe56583faa7429ebada46d168acd",
+        "blob": "536d026ee5c551dea3daf51ed3731520f4b16401",
         "content": "sha256:5eb51bb0f75bb9bbc4037112040d28689dd7e72f767901e9fed98024bb44dbac",
         "locator": {
           "kind": "symbol",
@@ -21,8 +21,26 @@
     },
     {
       "anchor": {
-        "blob": "197ac9c813cefe56583faa7429ebada46d168acd",
-        "content": "sha256:92c85531f69abf9a3040ff3c5d72e0f39be116fe5a1488b03ed2ee702f7e9c01",
+        "blob": "536d026ee5c551dea3daf51ed3731520f4b16401",
+        "content": "sha256:e07c88ae05c8a689fa70c027d0e146b9b069b245e945fc5195b544ad73dbe235",
+        "locator": {
+          "kind": "symbol",
+          "name": "_converted_citation_fix"
+        }
+      },
+      "id": "RLZ-FMSZFC",
+      "invariant": "INV-VH0QZ1",
+      "origin": {
+        "handoffEntry": "L110-C-batch",
+        "leaf": "260928-MIK-L110"
+      },
+      "rationale": "Each selected converted card is authored and refreshed independently; refusal is accumulated.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "536d026ee5c551dea3daf51ed3731520f4b16401",
+        "content": "sha256:83e70239fb2fe29685ed990efe29b609d050cf2a0b0b59e99215e570c384646f",
         "locator": {
           "kind": "symbol",
           "name": "citation_fix_tool"
@@ -39,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "197ac9c813cefe56583faa7429ebada46d168acd",
+        "blob": "536d026ee5c551dea3daf51ed3731520f4b16401",
         "content": "sha256:93bef3cbe4b811f19a4cfc92299509d1385cc9a8bb7253481cbff896be99d6d9",
         "locator": {
           "kind": "symbol",
@@ -54,6 +72,24 @@
       },
       "rationale": "The index apply entry point taking the same admission through the same helper.",
       "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "536d026ee5c551dea3daf51ed3731520f4b16401",
+        "content": "sha256:b0a40b5c6b8ac07cffa80174d81e2d954545f3602139c8a1aebb27c82e5dc4e9",
+        "locator": {
+          "kind": "symbol",
+          "name": "CitationOperationScope"
+        }
+      },
+      "id": "RLZ-ZY3NGB",
+      "invariant": "INV-VH0QZ1",
+      "origin": {
+        "handoffEntry": "L110-C-batch",
+        "leaf": "260928-MIK-L110"
+      },
+      "rationale": "The scope validates selectors and derives the only list bound from the coherence model.",
+      "role": "enforcement"
     }
   ],
   "references": {
@@ -111,7 +147,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "197ac9c813cefe56583faa7429ebada46d168acd",
+            "blob": "4f4a46b0bfb3e5f792ffc27edd53b34b85502732",
             "content": "sha256:fb8ceefb686b824a7cb0fa229a36df02de76b9182621156d94032651e48368f0",
             "locator": {
               "kind": "symbol",
@@ -127,7 +163,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "197ac9c813cefe56583faa7429ebada46d168acd",
+            "blob": "4f4a46b0bfb3e5f792ffc27edd53b34b85502732",
             "content": "sha256:a738650c51f142460dc464c4cf913e575a87bdee5b03fbf173184be588845401",
             "locator": {
               "kind": "symbol",
@@ -211,7 +247,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "197ac9c813cefe56583faa7429ebada46d168acd",
+            "blob": "4f4a46b0bfb3e5f792ffc27edd53b34b85502732",
             "content": "sha256:e70224a236d01d2ea1af736d759b241d6eba717fa9b73aa02f1b26da17162fbf",
             "locator": {
               "kind": "symbol",
@@ -272,7 +308,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "197ac9c813cefe56583faa7429ebada46d168acd",
+            "blob": "4f4a46b0bfb3e5f792ffc27edd53b34b85502732",
             "content": "sha256:88d9294a6341261126fa2bd4111f7a9d9401d41930bee82161559219259a0e16",
             "locator": {
               "kind": "symbol",
@@ -321,7 +357,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "197ac9c813cefe56583faa7429ebada46d168acd",
+            "blob": "4f4a46b0bfb3e5f792ffc27edd53b34b85502732",
             "content": "sha256:7b520fc9b22cbf25310bc93079df0b862908d53ceb2833165f870ee544025537",
             "locator": {
               "kind": "symbol",
@@ -449,7 +485,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "197ac9c813cefe56583faa7429ebada46d168acd",
+            "blob": "4f4a46b0bfb3e5f792ffc27edd53b34b85502732",
             "content": "sha256:752848b4867967cdcbbc2e0bbbead222c7bf0b552f0d9e8fe80885e9c83e785d",
             "locator": {
               "kind": "symbol",
@@ -465,7 +501,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "197ac9c813cefe56583faa7429ebada46d168acd",
+            "blob": "4f4a46b0bfb3e5f792ffc27edd53b34b85502732",
             "content": "sha256:a7b0a1176435d908d3ae89aa58f11a71872c9f42db473b2e31b7a6f04ed254a9",
             "locator": {
               "kind": "symbol",
@@ -481,7 +517,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "197ac9c813cefe56583faa7429ebada46d168acd",
+            "blob": "4f4a46b0bfb3e5f792ffc27edd53b34b85502732",
             "content": "sha256:fb8ceefb686b824a7cb0fa229a36df02de76b9182621156d94032651e48368f0",
             "locator": {
               "kind": "symbol",
@@ -513,7 +549,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "197ac9c813cefe56583faa7429ebada46d168acd",
+            "blob": "4f4a46b0bfb3e5f792ffc27edd53b34b85502732",
             "content": "sha256:5eb51bb0f75bb9bbc4037112040d28689dd7e72f767901e9fed98024bb44dbac",
             "locator": {
               "kind": "symbol",
@@ -545,11 +581,27 @@
       "targets": [
         {
           "anchor": {
-            "blob": "197ac9c813cefe56583faa7429ebada46d168acd",
+            "blob": "4f4a46b0bfb3e5f792ffc27edd53b34b85502732",
             "content": "sha256:93bef3cbe4b811f19a4cfc92299509d1385cc9a8bb7253481cbff896be99d6d9",
             "locator": {
               "kind": "symbol",
               "name": "route_index_refresh_tool"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "34": {
+      "note": "Finite fix selection is validated before reads with the shared bound.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4f4a46b0bfb3e5f792ffc27edd53b34b85502732",
+            "content": "sha256:b0a40b5c6b8ac07cffa80174d81e2d954545f3602139c8a1aebb27c82e5dc4e9",
+            "locator": {
+              "kind": "symbol",
+              "name": "CitationOperationScope"
             }
           },
           "kind": "code"
@@ -590,7 +642,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a6eadd9ff1cf0a28a7754688d343ff8f802d2f04",
+            "blob": "f5c17fb7f80b774e5cb4ba1a1d1dd4340013f711",
             "content": "sha256:b9c3b6fbb6f4b5ae523ee6888de143b18da1674d8d42ec868401b25daea26060",
             "locator": {
               "kind": "symbol",
@@ -602,7 +654,7 @@
         },
         {
           "anchor": {
-            "blob": "a6eadd9ff1cf0a28a7754688d343ff8f802d2f04",
+            "blob": "f5c17fb7f80b774e5cb4ba1a1d1dd4340013f711",
             "content": "sha256:44671be30cf39c48813ad1a0aabde13337fac138ae37390c2bbf93dc915da8d4",
             "locator": {
               "kind": "symbol",
@@ -635,7 +687,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c8f46c37a779c2f92a9c7791dec0accee6d61e4d",
+            "blob": "30bbe109d1dc8629712ce577e2a7a055c185e0e1",
             "content": "sha256:8b6b3a7d2b3c16481f3247074408f445f6088cc178e86be22211c87697f569d3",
             "locator": {
               "kind": "symbol",
@@ -652,7 +704,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c8f46c37a779c2f92a9c7791dec0accee6d61e4d",
+            "blob": "30bbe109d1dc8629712ce577e2a7a055c185e0e1",
             "content": "sha256:8b6b3a7d2b3c16481f3247074408f445f6088cc178e86be22211c87697f569d3",
             "locator": {
               "kind": "symbol",
@@ -669,7 +721,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "197ac9c813cefe56583faa7429ebada46d168acd",
+            "blob": "4f4a46b0bfb3e5f792ffc27edd53b34b85502732",
             "content": "sha256:a738650c51f142460dc464c4cf913e575a87bdee5b03fbf173184be588845401",
             "locator": {
               "kind": "symbol",

@@ -7,7 +7,7 @@
 ## Purpose
 
 **MIK-R24 rules 5 and 9: the master line's toolchain reads the text format, and unconverted memory is read
-as legacy-format and refused elsewhere once its official line is converted.** 16 test functions in the
+as legacy-format and refused elsewhere once its official line is converted.** Cases in the
 `unit-regression` lane.
 
 ## Code Commentary
@@ -51,9 +51,9 @@ as legacy-format and refused elsewhere once its official line is converted.** 16
   - `test_authoring_numbers_after_existing_references_dry_runs_and_validates` (R3-2);
   - `test_the_fixer_checks_every_card_first_and_refuses_by_name` (R3-3);
   - `test_a_leftover_evidence_line_is_refused_and_only_the_named_card_loses_references` (R3-3);
-  - `test_one_documents_fix_reports_its_own_stale_references_and_the_response_is_bounded`: a fix of one
-    document lists that document's stale references, and the MCP response caps every list at 50 with its full
-    count, while an unconverted tree's result passes through;
+  - `test_one_documents_fix_reports_its_own_stale_references_and_the_status_counts`: a named fix
+    reports only its selected references; status counts and first actionable entries are delivered,
+    while authoring/rewritten material stays in the whole result rather than a fifty-entry wire list;
   - `test_two_tables_with_no_blank_line_between_them_are_refused_by_name`: a card is refused, naming the line,
     when a second table starts inside one and either holds citations; nothing is written; a card whose
     tables hold no citations is left alone; a body row of single dashes is a placeholder.
