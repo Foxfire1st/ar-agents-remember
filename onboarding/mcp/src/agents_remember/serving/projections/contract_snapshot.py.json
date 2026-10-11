@@ -1,13 +1,32 @@
 {
   "path": "mcp/src/agents_remember/serving/projections/contract_snapshot.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "5d189d61e389595069824d0be1f8fbde0bade9af",
+        "content": "sha256:2e30414d0e5676ee52b7538f321f94fdefb8f8af39d63e6bf44893f940e06ca1",
+        "locator": {
+          "kind": "symbol",
+          "name": "ContractSnapshotCache.build"
+        }
+      },
+      "id": "RLZ-7E8QD6",
+      "invariant": "INV-BWW1N1",
+      "origin": {
+        "handoffEntry": "L134-R2",
+        "leaf": "260928-MIK-L134"
+      },
+      "rationale": "Excludes foreign parsed/cache-hit contracts from the immutable mapping, evicts their cache entry and names their path in skipped.",
+      "role": "propagation-persistence"
+    }
+  ],
   "references": {
     "1": {
       "note": "Module docstring: one pass per tick, three prior walks, stat-identity cache, and the serialized-tick concurrency discipline.\n\nAnchor: \"One immutable leaf-enclosure-contract snapshot per projection tick\"",
       "targets": [
         {
           "anchor": {
-            "blob": "ab4a26c25c915c33b0d791651543c8607283ff77",
+            "blob": "5d189d61e389595069824d0be1f8fbde0bade9af",
             "content": "sha256:2ce48d9c51070d983eb0732f571cff3737c40cf3123e183e07ce2c3f26f5307e",
             "locator": {
               "end": 1,
@@ -20,16 +39,26 @@
       ]
     },
     "2": {
-      "note": "`ContractSnapshot`: frozen read-only contracts mapping in enumeration order plus the `skipped` parse-failure set.\n\nAnchor: \"class ContractSnapshot:\"",
+      "note": "The immutable snapshot and builder hold only admitted members and name read/parse failures or foreign nonmembers in skipped.\n\nAnchor: `ContractSnapshot`, `build`",
       "targets": [
         {
           "anchor": {
-            "blob": "ab4a26c25c915c33b0d791651543c8607283ff77",
-            "content": "sha256:8d1efc19c36180f62c59d70753c8e50dc619df01d31668cbc9bef341503534f8",
+            "blob": "5d189d61e389595069824d0be1f8fbde0bade9af",
+            "content": "sha256:e2084926cf923c0f10655025803960784c6289f7ea2eb9605ad5c137d00c903c",
             "locator": {
-              "end": 38,
-              "kind": "line_range",
-              "start": 38
+              "kind": "symbol",
+              "name": "ContractSnapshot"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5d189d61e389595069824d0be1f8fbde0bade9af",
+            "content": "sha256:2e30414d0e5676ee52b7538f321f94fdefb8f8af39d63e6bf44893f940e06ca1",
+            "locator": {
+              "kind": "symbol",
+              "name": "build"
             }
           },
           "kind": "code"
@@ -37,16 +66,15 @@
       ]
     },
     "3": {
-      "note": "`ContractSnapshotCache`: `(mtime_ns, size, ctime_ns)` identity with the chmod/utime rationale, failure-never-cached retry, and live-set pruning; `build` implements the single pass.\n\nAnchor: \"class ContractSnapshotCache\"",
+      "note": "The cache retains stat-identity reuse but evicts failures and foreign nonmembers before publishing one shared pass.",
       "targets": [
         {
           "anchor": {
-            "blob": "ab4a26c25c915c33b0d791651543c8607283ff77",
-            "content": "sha256:4af54dd7631f74c83b674b709ed706d4d15df2f3d3272d4aa685133b616c1a5e",
+            "blob": "5d189d61e389595069824d0be1f8fbde0bade9af",
+            "content": "sha256:113e8645faa0d638108e5d43da58cbeb162494e04f411fecc8d14549488d9f00",
             "locator": {
-              "end": 60,
-              "kind": "line_range",
-              "start": 60
+              "kind": "symbol",
+              "name": "ContractSnapshotCache"
             }
           },
           "kind": "code"
@@ -58,12 +86,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ab4a26c25c915c33b0d791651543c8607283ff77",
+            "blob": "5d189d61e389595069824d0be1f8fbde0bade9af",
             "content": "sha256:d522b541eb43142ec423fcfe15db51017db1afd723e4203e43c97aead7cac722",
             "locator": {
-              "end": 139,
+              "end": 144,
               "kind": "line_range",
-              "start": 139
+              "start": 144
             }
           },
           "kind": "code"
@@ -71,14 +99,14 @@
       ]
     },
     "5": {
-      "note": "The enumeration and contract parser this module reuses (one parser per surface, owned by its producer).\n\nAnchor: \"import iter_leaf_enclosure_contracts\"",
+      "note": "Snapshot construction uses the shared enclosure iterator and contract parser, rather than reimplementing either.\n\nAnchor: \"from agents_remember.tasks.task_paths import (\", \"from agents_remember.worktrees.worktree_contract import (\"",
       "targets": [
         {
           "anchor": {
-            "blob": "ab4a26c25c915c33b0d791651543c8607283ff77",
-            "content": "sha256:432cad66d55d4dd162fa566b9c89e2b5132025ad9b4d7aa7c7fff3ed01330428",
+            "blob": "5d189d61e389595069824d0be1f8fbde0bade9af",
+            "content": "sha256:d693f84da45ee44d36475a8dab24c4323e4a3f7475a1b63f076a0e058e56f10b",
             "locator": {
-              "end": 29,
+              "end": 37,
               "kind": "line_range",
               "start": 29
             }
@@ -106,16 +134,16 @@
       ]
     },
     "7": {
-      "note": "`ProjectionInputState` holds the injected cache, builds the snapshot once per tasks refresh, and hands that one `ContractSnapshot` to `read_enclosures`, `read_engine_process_facts`/`refresh_engine_process_landing`, and drift-snapshot pruning.\n\nAnchor: \"class ProjectionInputState\"",
+      "note": "Task-domain refresh, first use or pending retry builds one snapshot; unaffected ticks retain it.\n\nAnchor: `ProjectionInputState._refresh_tasks`",
       "targets": [
         {
           "anchor": {
             "blob": "6d39fb7ec35853b95ab1cf2d3a521da95a2912a8",
-            "content": "sha256:9d7fae0b7f6986ebf177635e8ec7e4307c02bdc92c838c751d20672582296085",
+            "content": "sha256:bdffc67512ed2bc2934b76b9e771aa5c32b1c164dee37c616624b30ee383717d",
             "locator": {
-              "end": 197,
+              "end": 297,
               "kind": "line_range",
-              "start": 197
+              "start": 278
             },
             "path": "mcp/src/agents_remember/serving/projections/projection_inputs.py"
           },

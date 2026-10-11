@@ -18,7 +18,7 @@ The model, the reader and the writer of a series contract and of a leaf enclosur
 
 **Writing.** `validate_contract` is the write gate and the read path runs it too: missing required fields, an off-vocabulary cell, a leaf without `leaf_id`, and an external-memory leaf without memory repository, worktree, or ledger path are all refused naming the file. `unknown_cells` is not written back, so a rewrite heals a quarantined cell to the value in force.
 
-`worktree_group_for` is `<coordination root>/worktrees/<repository>/<slug>-ar`. Leaf-id healing (`normalize_contract_leaf_id`, `heal_contract_leaf_ids`) is a one-shot sweep, never a per-read side effect.
+`worktree_group_for` is `<coordination root>/worktrees/<repository>/<slug>-ar`. Leaf-id healing (`normalize_contract_leaf_id`, `heal_contract_leaf_ids`) is a one-shot sweep, never a per-read side effect. Its shared enclosure walk excludes notes and archives. `_load_sweep_contract` records unreadable or malformed files in `errors`; a loaded contract whose task artifact resolves outside the positional repository tasks folder instead goes to `skipped`, with its path and reason, and is never healed. Successful healing, canonical and unchanged counts retain their separate meanings.
 
 ## Evidence
 
@@ -29,3 +29,5 @@ The model, the reader and the writer of a series contract and of a leaf enclosur
 - Write path is external-only by type [68]
 - Read record carries the readable vocabulary [69]
 - Runtime vocabulary set is external-only [70]
+
+- Healing reports foreign contracts as skipped and unreadable contracts as errors without treating either as a healable enclosure. [71]

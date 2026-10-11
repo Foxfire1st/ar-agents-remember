@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "57af6ea2e6a4cfde077654f5044cb625dcc5d4ff",
+        "blob": "8d83e9ec73c4091ac69e5118a1ca7b080efb19a2",
         "content": "sha256:deffa6a40689dd41cf6286fad081e7f5fb0ea18ee97ec96610c63adf73cd86e6",
         "locator": {
           "kind": "symbol",
@@ -21,8 +21,80 @@
     },
     {
       "anchor": {
-        "blob": "57af6ea2e6a4cfde077654f5044cb625dcc5d4ff",
-        "content": "sha256:ee8555108058a663a87f194368291ab4b51a08870f547c9f4a0cbb330b8b6188",
+        "blob": "8d83e9ec73c4091ac69e5118a1ca7b080efb19a2",
+        "content": "sha256:7d8a3842914592b8d0d375b28f3d85f48f8e34317603d0407dc19c619ffda3bc",
+        "locator": {
+          "kind": "symbol",
+          "name": "refresh_task_document_copies"
+        }
+      },
+      "id": "RLZ-8HTZPK",
+      "invariant": "INV-85JCY6",
+      "origin": {
+        "handoffEntry": "L134-R1",
+        "leaf": "260928-MIK-L134"
+      },
+      "rationale": "Derives only written-task roots and routes selected contracts into copy staging; readable siblings never enter full loading.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "8d83e9ec73c4091ac69e5118a1ca7b080efb19a2",
+        "content": "sha256:7d8a3842914592b8d0d375b28f3d85f48f8e34317603d0407dc19c619ffda3bc",
+        "locator": {
+          "kind": "symbol",
+          "name": "refresh_task_document_copies"
+        }
+      },
+      "id": "RLZ-E9J9BW",
+      "invariant": "INV-BWW1N1",
+      "origin": {
+        "handoffEntry": "L134-R2",
+        "leaf": "260928-MIK-L134"
+      },
+      "rationale": "Names foreign exclusions independently of worktree-group existence and stages no foreign copies.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "8d83e9ec73c4091ac69e5118a1ca7b080efb19a2",
+        "content": "sha256:1bd9ef7e652806e2424a6513bcec31f3fe01ed91ee38650b05c51d9a5be35d81",
+        "locator": {
+          "kind": "symbol",
+          "name": "_select_refresh_contract"
+        }
+      },
+      "id": "RLZ-EW4A2G",
+      "invariant": "INV-VDT24F",
+      "origin": {
+        "handoffEntry": "L134-RULING-A",
+        "leaf": "260928-MIK-L134"
+      },
+      "rationale": "Classifies unreadable or missing-hint files as unparsed so their ownership-dependent outcome is deferred.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "8d83e9ec73c4091ac69e5118a1ca7b080efb19a2",
+        "content": "sha256:1bd9ef7e652806e2424a6513bcec31f3fe01ed91ee38650b05c51d9a5be35d81",
+        "locator": {
+          "kind": "symbol",
+          "name": "_select_refresh_contract"
+        }
+      },
+      "id": "RLZ-QKM0F2",
+      "invariant": "INV-85JCY6",
+      "origin": {
+        "handoffEntry": "L134-R1",
+        "leaf": "260928-MIK-L134"
+      },
+      "rationale": "Reads the artifact hint and excludes readable unrelated contracts before load_contract.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "8d83e9ec73c4091ac69e5118a1ca7b080efb19a2",
+        "content": "sha256:7d8a3842914592b8d0d375b28f3d85f48f8e34317603d0407dc19c619ffda3bc",
         "locator": {
           "kind": "symbol",
           "name": "refresh_task_document_copies"
@@ -39,7 +111,7 @@
     },
     {
       "anchor": {
-        "blob": "57af6ea2e6a4cfde077654f5044cb625dcc5d4ff",
+        "blob": "8d83e9ec73c4091ac69e5118a1ca7b080efb19a2",
         "content": "sha256:4fef8b0785d912b8f457a056d30f518ec2228d777028daddaacee2a79443903c",
         "locator": {
           "kind": "symbol",
@@ -54,6 +126,24 @@
       },
       "rationale": "This owner selects the agent own leaf and prepares its regular-file copy and single index entry outside both Git trees.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "8d83e9ec73c4091ac69e5118a1ca7b080efb19a2",
+        "content": "sha256:dfc75805de9637418bf788acd2a96d2a193400b375047e184bb84be87f0d3cdf",
+        "locator": {
+          "kind": "symbol",
+          "name": "_RefreshWork.finish"
+        }
+      },
+      "id": "RLZ-Z7587E",
+      "invariant": "INV-VDT24F",
+      "origin": {
+        "handoffEntry": "L134-RULING-A",
+        "leaf": "260928-MIK-L134"
+      },
+      "rationale": "Uses staged-own membership to warn/skip unrecognized files or raise their named error when no own writes were staged.",
+      "role": "enforcement"
     }
   ],
   "references": {
@@ -62,7 +152,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "57af6ea2e6a4cfde077654f5044cb625dcc5d4ff",
+            "blob": "8d83e9ec73c4091ac69e5118a1ca7b080efb19a2",
             "content": "sha256:4fef8b0785d912b8f457a056d30f518ec2228d777028daddaacee2a79443903c",
             "locator": {
               "kind": "symbol",
@@ -74,12 +164,12 @@
       ]
     },
     "2": {
-      "note": "Public writes rendering the own leaf refresh copies atomically.",
+      "note": "Public writes select the written task's copies before staging and atomic publication.",
       "targets": [
         {
           "anchor": {
-            "blob": "57af6ea2e6a4cfde077654f5044cb625dcc5d4ff",
-            "content": "sha256:ee8555108058a663a87f194368291ab4b51a08870f547c9f4a0cbb330b8b6188",
+            "blob": "8d83e9ec73c4091ac69e5118a1ca7b080efb19a2",
+            "content": "sha256:7d8a3842914592b8d0d375b28f3d85f48f8e34317603d0407dc19c619ffda3bc",
             "locator": {
               "kind": "symbol",
               "name": "refresh_task_document_copies"
@@ -94,11 +184,44 @@
       "targets": [
         {
           "anchor": {
-            "blob": "57af6ea2e6a4cfde077654f5044cb625dcc5d4ff",
+            "blob": "8d83e9ec73c4091ac69e5118a1ca7b080efb19a2",
             "content": "sha256:deffa6a40689dd41cf6286fad081e7f5fb0ea18ee97ec96610c63adf73cd86e6",
             "locator": {
               "kind": "symbol",
               "name": "_publish_copy_writes"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Raw artifact selection excludes readable siblings and foreign nonmembers before full contract loading.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8d83e9ec73c4091ac69e5118a1ca7b080efb19a2",
+            "content": "sha256:1bd9ef7e652806e2424a6513bcec31f3fe01ed91ee38650b05c51d9a5be35d81",
+            "locator": {
+              "kind": "symbol",
+              "name": "_select_refresh_contract"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Unrecognized files are tolerated only past staged own copies; otherwise their error is raised.\n\nAnchor: `_RefreshWork.finish`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8d83e9ec73c4091ac69e5118a1ca7b080efb19a2",
+            "content": "sha256:dfc75805de9637418bf788acd2a96d2a193400b375047e184bb84be87f0d3cdf",
+            "locator": {
+              "end": 165,
+              "kind": "line_range",
+              "start": 161
             }
           },
           "kind": "code"

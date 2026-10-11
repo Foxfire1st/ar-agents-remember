@@ -268,7 +268,7 @@
       ]
     },
     "16": {
-      "note": "The sync driver retains conflicts for continuation, exposes explicit cancellation, and now carries the authored reconcile route through the same continuation.",
+      "note": "The sync driver retains content conflicts for continuation, permits only continue or cancel as resolution actions, and validates a staged retained merge before completing it; knowledge content is resolved in the memory worktree, not through an authored-reconcile action.",
       "targets": [
         {
           "anchor": {
@@ -284,8 +284,8 @@
         },
         {
           "anchor": {
-            "blob": "21e174242087f49b6154f2303db0338c546d0bd8",
-            "content": "sha256:cac61766f61bf0b65942531cdb197cef0e377af45211ec0baf7bdfb65c21b689",
+            "blob": "929da2b32893d67c1250150e62b82677f1556231",
+            "content": "sha256:1aa70f6f5944ba4764b0db71e424337932290a52b4f5365d33771736b650de3e",
             "locator": {
               "kind": "symbol",
               "name": "_continue_resolution"
@@ -296,11 +296,23 @@
         },
         {
           "anchor": {
-            "blob": "21e174242087f49b6154f2303db0338c546d0bd8",
-            "content": "sha256:7adfb3efe3f9349b41c85f22d5c575846463c84be426418e52ca6fd1a62ce578",
+            "blob": "929da2b32893d67c1250150e62b82677f1556231",
+            "content": "sha256:a80333450aa234831dc2da47c2f60b196054b232b1439b05643750d03dfaf4b2",
             "locator": {
               "kind": "symbol",
               "name": "_finish_retained_merge"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "929da2b32893d67c1250150e62b82677f1556231",
+            "content": "sha256:3474f6117cc9dda982d19d77ab73e840fcdfb94704416d82a3db2c61815cc2ed",
+            "locator": {
+              "kind": "symbol",
+              "name": "sync_input_refusal"
             },
             "path": "mcp/src/agents_remember/worktrees/sync_transaction.py"
           },
@@ -1571,7 +1583,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ba58fbaeceea3ba8048de3c5168fe7f90d3458df",
+            "blob": "10fc96becf7770c443afcc8cee7888254836cc69",
             "content": "sha256:dfa776e8c904c68a07307656bf919d2e921a20cdbe101c1ecec2079130988058",
             "locator": {
               "kind": "symbol",
@@ -1656,7 +1668,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e11a2d5cec5eaa45cbe97ddf3444c5dcff666da8",
+            "blob": "1052a563780ee71a5917ad475556a86011ea53b6",
             "content": "sha256:7d724964b494ab897ee122054392a6164bf5da21692be99a161da38e85572c96",
             "locator": {
               "kind": "symbol",

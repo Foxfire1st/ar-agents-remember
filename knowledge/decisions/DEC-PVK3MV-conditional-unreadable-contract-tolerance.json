@@ -1,0 +1,69 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "Three real ownership/error strategies were weighed; the conditional choice continues to constrain future refresh repairs and makes the deferred roster design explicit."
+  },
+  "alternatives": [
+    {
+      "option": "A: tolerate and name an unrecognized file only when an own enclosure staged copy writes; otherwise fail and restore sources.",
+      "reason": "Keeps unrelated-file isolation and a named failure when no own copy ownership is established.",
+      "status": "chosen"
+    },
+    {
+      "option": "B: fail every publication whenever an unreadable contract is encountered.",
+      "reason": "A broken unrelated file can again stop every task-document write.",
+      "reconsider_when": "A new owning ruling changes the requirement that unrelated files must not block an own publication.",
+      "status": "rejected"
+    },
+    {
+      "option": "C: record an own-enclosure roster at creation so ownership survives corruption without reading the contract.",
+      "reason": "A cleaner ownership construction, explicitly outside this corrective leaf.",
+      "reconsider_when": "The owning hierarchy admits the roster design, or a damaged own enclosure remains stale without a named outcome.",
+      "status": "deferred"
+    }
+  ],
+  "consequences": [
+    "No roster or new store is introduced.",
+    "At least one staged own enclosure does not establish the ownership of every unreadable neighbor.",
+    "Matching readable own-contract parse errors and copy-publication failures retain rollback."
+  ],
+  "context": "An unparseable enclosure-position file cannot say whether it is own or unrelated; unconditional failure recreates the unrelated-file publication outage, while unconditional tolerance could silently abandon own copies.",
+  "decider": "architect 97e0320d-431f-4f4c-8c86-66a6dca880a7 under D47; L134 ruling A",
+  "id": "DEC-PVK3MV",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "INV-VDT24F"
+    },
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "8d83e9ec73c4091ac69e5118a1ca7b080efb19a2",
+        "content": "sha256:dfc75805de9637418bf788acd2a96d2a193400b375047e184bb84be87f0d3cdf",
+        "locator": {
+          "kind": "symbol",
+          "name": "_RefreshWork.finish"
+        },
+        "path": "mcp/src/agents_remember/worktrees/task_document_copies.py"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_task_document_copies.py::TaskDocumentCopyMembershipTests::test_unreadable_file_beside_refreshed_own_is_named_not_raised, test_unreadable_only_enclosure_fails_and_names_the_file"
+      ],
+      "path": "l134-knowledge-ingest.json"
+    },
+    "handoffEntry": "L134-RULING-A",
+    "leaf": "260928-MIK-L134",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

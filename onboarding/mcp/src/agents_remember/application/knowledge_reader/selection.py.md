@@ -39,7 +39,10 @@ Three spellings are accepted:
   `pinnedCommit` = that `HEAD`; the dashboard offers it as "pin this view to memory …", so a shared view is
   reproducible. A dirty tree offers none. A commit selection is its own pin.
 - **Leaves.** `_leaf_selection` accepts only a scope listed by `_leaves`, which reads the active enclosure
-  contracts directly (not abandoned, with a code worktree present), not the files catalog's cache.
+  contracts directly, not the files catalog's cache. The shared walk excludes notes and archives.
+  Read/parse failures are skipped; a parsed contract whose task artifact resolves outside the
+  repository tasks folder derived from its physical enclosure position is skipped with a warning
+  naming the contract. Repository, abandoned and missing-code-worktree filters remain unchanged.
 - **The selector's choices.** `selection_options` returns the published tree (and whether it is converted),
   the last 40 memory commits of `HEAD` each marked converted or not (one `cat-file --batch-check` probe), and
   the live leaves. A commit list that cannot be read is `commitsState: unavailable` with the reason, never
@@ -97,7 +100,7 @@ No configured live documentation source was available for this pass.
 - A commit: the layout marker, the Git-tree index, the paired code tree. [9]
 - `HEAD` of the checkout, with the leaf note; the `Code-Commit` pairing, or the reason there is none. [10]
 - The selector's choices, and a commit list that cannot be read named. [11]
-- The active leaves, read from their contracts. [12]
+- Active leaves exclude foreign task-document nonmembers with a named warning before the existing repository and liveness filters. [12]
 - The selection cases: hexadecimal only, published with a pin, a leaf, and a partial index with no code tree. [13]
 
 ### Cross-Repo References

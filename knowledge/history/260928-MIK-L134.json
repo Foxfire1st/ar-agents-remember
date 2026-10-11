@@ -1,0 +1,679 @@
+{
+  "closed": true,
+  "leaf": "260928-MIK-L134",
+  "rows": [
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-16GDSS",
+      "items": [
+        "sha256:9c9e93d7c356d4bb80023635180890a8efa4d3be65f26a68ad09ad9188aedb72"
+      ],
+      "reason": "MIK-R134 preserves existing authority and publication obligations; this uncovered fragment supplies imports, logging, shared path re-exports or helper structure. Its enclosing functional selection/foreign-membership contract is reconciled in the affected cards and scoped invariants; this fragment introduces no independent guarantee.",
+      "subject": "hunk:sha256:9c9e93d7c356d4bb80023635180890a8efa4d3be65f26a68ad09ad9188aedb72"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "a03a160b6fd2cbab0cdcf9b7f41ffca58a0fd582",
+            "content": "sha256:898fd592ef91b6208261f81b776a1cc92dbb8791fab3ade846f2792fecd96b19",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskDocumentCopyScopeTests.test_refresh_loads_only_the_changed_tasks_contracts"
+            },
+            "path": "mcp/tests/test_task_document_copies.py"
+          },
+          "before": "absent",
+          "id": "PRF-N8B3DE"
+        },
+        {
+          "after": {
+            "blob": "a03a160b6fd2cbab0cdcf9b7f41ffca58a0fd582",
+            "content": "sha256:765add8b9fa6fdd6d38f7c9d8ea6daca56065feeaa3ce261f3133936b1c8fd03",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskDocumentCopyMembershipTests.test_sibling_leaf_contract_is_never_loaded"
+            },
+            "path": "mcp/tests/test_task_document_copies.py"
+          },
+          "before": "absent",
+          "id": "PRF-X9PXV9"
+        },
+        {
+          "after": {
+            "blob": "8d83e9ec73c4091ac69e5118a1ca7b080efb19a2",
+            "content": "sha256:7d8a3842914592b8d0d375b28f3d85f48f8e34317603d0407dc19c619ffda3bc",
+            "locator": {
+              "kind": "symbol",
+              "name": "refresh_task_document_copies"
+            },
+            "path": "mcp/src/agents_remember/worktrees/task_document_copies.py"
+          },
+          "before": "absent",
+          "id": "RLZ-8HTZPK"
+        },
+        {
+          "after": {
+            "blob": "8d83e9ec73c4091ac69e5118a1ca7b080efb19a2",
+            "content": "sha256:1bd9ef7e652806e2424a6513bcec31f3fe01ed91ee38650b05c51d9a5be35d81",
+            "locator": {
+              "kind": "symbol",
+              "name": "_select_refresh_contract"
+            },
+            "path": "mcp/src/agents_remember/worktrees/task_document_copies.py"
+          },
+          "before": "absent",
+          "id": "RLZ-QKM0F2"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-1WZA98",
+      "items": [],
+      "reason": "New scoped, evidenced selection/membership obligation; the source constructs and precise test facets support its boundaries.",
+      "revision": 1,
+      "subject": "INV-85JCY6"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-27QE06",
+      "items": [
+        "sha256:d34603c9db58062ff23e266d64b2715cbeef9472a9327935258716b7138f26b5"
+      ],
+      "reason": "MIK-R134 preserves existing authority and publication obligations; this uncovered fragment supplies imports, logging, shared path re-exports or helper structure. Its enclosing functional selection/foreign-membership contract is reconciled in the affected cards and scoped invariants; this fragment introduces no independent guarantee.",
+      "subject": "hunk:sha256:d34603c9db58062ff23e266d64b2715cbeef9472a9327935258716b7138f26b5"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-31GKQ6",
+      "items": [
+        "sha256:b417b4dc80dc2ccf48e5e85784caa1d18bd6e79477ca773cd8faa990a041d96c"
+      ],
+      "reason": "MIK-R134 preserves existing authority and publication obligations; this uncovered fragment supplies imports, logging, shared path re-exports or helper structure. Its enclosing functional selection/foreign-membership contract is reconciled in the affected cards and scoped invariants; this fragment introduces no independent guarantee.",
+      "subject": "hunk:sha256:b417b4dc80dc2ccf48e5e85784caa1d18bd6e79477ca773cd8faa990a041d96c"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-3281ME",
+      "items": [
+        "sha256:3c64e15fce5d41726bec2fb04063062cc28c5d11c7bcd3ac096dbbc509f1ed92"
+      ],
+      "reason": "MIK-R134 preserves existing authority and publication obligations; this uncovered fragment supplies imports, logging, shared path re-exports or helper structure. Its enclosing functional selection/foreign-membership contract is reconciled in the affected cards and scoped invariants; this fragment introduces no independent guarantee.",
+      "subject": "hunk:sha256:3c64e15fce5d41726bec2fb04063062cc28c5d11c7bcd3ac096dbbc509f1ed92"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-3EFQAP",
+      "items": [
+        "sha256:a423b6fe988b203f6127aee035ee90f43d011fbe8235d699f59cc1a115fa191e"
+      ],
+      "reason": "Application-level task/repository/root authority is unchanged; concrete leaf eligibility is updated in its owning selection card.",
+      "subject": "onboarding:mcp/src/agents_remember/application/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-57EWHR",
+      "items": [
+        "sha256:b365f55786fb3b4414bdefea9910c84b93f94f1102814f820505039d0845155f"
+      ],
+      "reason": "MIK-R134 preserves existing authority and publication obligations; this uncovered fragment supplies imports, logging, shared path re-exports or helper structure. Its enclosing functional selection/foreign-membership contract is reconciled in the affected cards and scoped invariants; this fragment introduces no independent guarantee.",
+      "subject": "hunk:sha256:b365f55786fb3b4414bdefea9910c84b93f94f1102814f820505039d0845155f"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "8d83e9ec73c4091ac69e5118a1ca7b080efb19a2",
+            "content": "sha256:deffa6a40689dd41cf6286fad081e7f5fb0ea18ee97ec96610c63adf73cd86e6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_publish_copy_writes"
+            },
+            "path": "mcp/src/agents_remember/worktrees/task_document_copies.py"
+          },
+          "before": {
+            "blob": "57af6ea2e6a4cfde077654f5044cb625dcc5d4ff",
+            "content": "sha256:deffa6a40689dd41cf6286fad081e7f5fb0ea18ee97ec96610c63adf73cd86e6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_publish_copy_writes"
+            },
+            "path": "mcp/src/agents_remember/worktrees/task_document_copies.py"
+          },
+          "id": "RLZ-6JFDVN"
+        },
+        {
+          "after": {
+            "blob": "8d83e9ec73c4091ac69e5118a1ca7b080efb19a2",
+            "content": "sha256:7d8a3842914592b8d0d375b28f3d85f48f8e34317603d0407dc19c619ffda3bc",
+            "locator": {
+              "kind": "symbol",
+              "name": "refresh_task_document_copies"
+            },
+            "path": "mcp/src/agents_remember/worktrees/task_document_copies.py"
+          },
+          "before": {
+            "blob": "57af6ea2e6a4cfde077654f5044cb625dcc5d4ff",
+            "content": "sha256:ee8555108058a663a87f194368291ab4b51a08870f547c9f4a0cbb330b8b6188",
+            "locator": {
+              "kind": "symbol",
+              "name": "refresh_task_document_copies"
+            },
+            "path": "mcp/src/agents_remember/worktrees/task_document_copies.py"
+          },
+          "id": "RLZ-QRVA80"
+        },
+        {
+          "after": {
+            "blob": "8d83e9ec73c4091ac69e5118a1ca7b080efb19a2",
+            "content": "sha256:4fef8b0785d912b8f457a056d30f518ec2228d777028daddaacee2a79443903c",
+            "locator": {
+              "kind": "symbol",
+              "name": "prepare_task_document_copies"
+            },
+            "path": "mcp/src/agents_remember/worktrees/task_document_copies.py"
+          },
+          "before": {
+            "blob": "57af6ea2e6a4cfde077654f5044cb625dcc5d4ff",
+            "content": "sha256:4fef8b0785d912b8f457a056d30f518ec2228d777028daddaacee2a79443903c",
+            "locator": {
+              "kind": "symbol",
+              "name": "prepare_task_document_copies"
+            },
+            "path": "mcp/src/agents_remember/worktrees/task_document_copies.py"
+          },
+          "id": "RLZ-RMYPGR"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-5C03RB",
+      "items": [
+        "sha256:fab77516b9df0382527452c6033cdaa4b2140bc96ada4b94b083d299d0232fb3"
+      ],
+      "reason": "The existing full statement, scope and entry set remain unchanged. Refresh selection and added tests preserve own rendered-file/atomic publication and controller-file read obligations; covers renew every touched/carried entry without narrowing the stored statement.",
+      "revision": 1,
+      "subject": "INV-J3PYB0"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "2a87bf2f4ab23fd1d42e0004271ba5fb857924be",
+            "content": "sha256:e41abed441671a85b892d5fe420194995b25d8848c83adf97e81323afd6b6adc",
+            "locator": {
+              "kind": "symbol",
+              "name": "_task_document_read_metadata"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "before": {
+            "blob": "2a87bf2f4ab23fd1d42e0004271ba5fb857924be",
+            "content": "sha256:e41abed441671a85b892d5fe420194995b25d8848c83adf97e81323afd6b6adc",
+            "locator": {
+              "kind": "symbol",
+              "name": "_task_document_read_metadata"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "id": "RLZ-091N3N"
+        },
+        {
+          "after": {
+            "blob": "a03a160b6fd2cbab0cdcf9b7f41ffca58a0fd582",
+            "content": "sha256:f5309fb01870b784bb0925d9be57f25190fe21e2806bf1bdb7b8bce5be52fcd9",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_task_document_copies.py"
+          },
+          "before": {
+            "blob": "e042f8836ccaeee5839abd31d9abd007b43823f9",
+            "content": "sha256:1c9eba9e274ba69a2b3fc479fe02baeda4f737d5b20a7c37514eeec4f1d7b780",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_task_document_copies.py"
+          },
+          "id": "RLZ-9RY83B"
+        },
+        {
+          "after": {
+            "blob": "9a09d000e7ce185b3e976285c531ec3e782f596a",
+            "content": "sha256:dbb212d4fbd5b79f65de1e419cdf3ef11ac208d34f6cdeef532acccccff16172",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "docs/reference/settings-json.md"
+          },
+          "before": {
+            "blob": "9a09d000e7ce185b3e976285c531ec3e782f596a",
+            "content": "sha256:dbb212d4fbd5b79f65de1e419cdf3ef11ac208d34f6cdeef532acccccff16172",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "docs/reference/settings-json.md"
+          },
+          "id": "RLZ-GS9JTC"
+        },
+        {
+          "after": {
+            "blob": "2a87bf2f4ab23fd1d42e0004271ba5fb857924be",
+            "content": "sha256:bf7fb1d3c4fc65eca2cbd20b0200d3ff56ca18a052a31c8d869eeb5f55fb85bc",
+            "locator": {
+              "kind": "symbol",
+              "name": "_compile_handover"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "before": {
+            "blob": "2a87bf2f4ab23fd1d42e0004271ba5fb857924be",
+            "content": "sha256:bf7fb1d3c4fc65eca2cbd20b0200d3ff56ca18a052a31c8d869eeb5f55fb85bc",
+            "locator": {
+              "kind": "symbol",
+              "name": "_compile_handover"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "id": "RLZ-KABSJ7"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-5N2ZZ6",
+      "items": [
+        "sha256:5566f12c671c67afcea0a6ce522d6e02cbe09bae76608fa1473dea63a448adeb"
+      ],
+      "reason": "The existing full statement, scope and entry set remain unchanged. Refresh selection and added tests preserve own rendered-file/atomic publication and controller-file read obligations; covers renew every touched/carried entry without narrowing the stored statement.",
+      "revision": 1,
+      "subject": "INV-QZP9PM"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-5X3G1J",
+      "items": [
+        "sha256:58dd8ea83e5749495ca85470309d9619f83d7677fd7c5ab22019f29f58163dd4"
+      ],
+      "reason": "MIK-R134 preserves existing authority and publication obligations; this uncovered fragment supplies imports, logging, shared path re-exports or helper structure. Its enclosing functional selection/foreign-membership contract is reconciled in the affected cards and scoped invariants; this fragment introduces no independent guarantee.",
+      "subject": "hunk:sha256:58dd8ea83e5749495ca85470309d9619f83d7677fd7c5ab22019f29f58163dd4"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-6A3ZDM",
+      "items": [
+        "sha256:bf2ad7ce57c7b0a79bccf3212f4af0c8ec88dbc544cf644e90639ded76ae8af7"
+      ],
+      "reason": "MIK-R134 preserves existing authority and publication obligations; this uncovered fragment supplies imports, logging, shared path re-exports or helper structure. Its enclosing functional selection/foreign-membership contract is reconciled in the affected cards and scoped invariants; this fragment introduces no independent guarantee.",
+      "subject": "hunk:sha256:bf2ad7ce57c7b0a79bccf3212f4af0c8ec88dbc544cf644e90639ded76ae8af7"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-6T79QE",
+      "items": [
+        "sha256:f4fa9ea7210805ce21e31dcde5e165c21caa5639e3a186df85afc9883268dab0"
+      ],
+      "reason": "Genuine member integration/journal/ref authority and collision refusals remain unchanged; positional nonmembers are documented in the concrete collision card.",
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/integration/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-76V7XP",
+      "items": [
+        "sha256:f018b0d57d6dbc8b3a35a103e51e54d8ac5b662305a967616cd285aa642b2788"
+      ],
+      "reason": "MIK-R134 preserves existing authority and publication obligations; this uncovered fragment supplies imports, logging, shared path re-exports or helper structure. Its enclosing functional selection/foreign-membership contract is reconciled in the affected cards and scoped invariants; this fragment introduces no independent guarantee.",
+      "subject": "hunk:sha256:f018b0d57d6dbc8b3a35a103e51e54d8ac5b662305a967616cd285aa642b2788"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7ZCPFZ",
+      "items": [
+        "sha256:97b644dbb1bee4197c3b852811139fef4cbe129ca147f7f89bf67636b486b2ec"
+      ],
+      "reason": "MIK-R134 preserves existing authority and publication obligations; this uncovered fragment supplies imports, logging, shared path re-exports or helper structure. Its enclosing functional selection/foreign-membership contract is reconciled in the affected cards and scoped invariants; this fragment introduces no independent guarantee.",
+      "subject": "hunk:sha256:97b644dbb1bee4197c3b852811139fef4cbe129ca147f7f89bf67636b486b2ec"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-83S1VH",
+      "items": [
+        "sha256:bd2ea13dbee34e91898d3a68d7218e4a78185fa2f014d76933cb0691f1240599"
+      ],
+      "reason": "MIK-R134 preserves existing authority and publication obligations; this uncovered fragment supplies imports, logging, shared path re-exports or helper structure. Its enclosing functional selection/foreign-membership contract is reconciled in the affected cards and scoped invariants; this fragment introduces no independent guarantee.",
+      "subject": "hunk:sha256:bd2ea13dbee34e91898d3a68d7218e4a78185fa2f014d76933cb0691f1240599"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-885HFX",
+      "items": [
+        "sha256:29c845df16b789415d92010f73cb1688158ecec808e27bd923cf62e60a62a3e6"
+      ],
+      "reason": "MIK-R134 preserves existing authority and publication obligations; this uncovered fragment supplies imports, logging, shared path re-exports or helper structure. Its enclosing functional selection/foreign-membership contract is reconciled in the affected cards and scoped invariants; this fragment introduces no independent guarantee.",
+      "subject": "hunk:sha256:29c845df16b789415d92010f73cb1688158ecec808e27bd923cf62e60a62a3e6"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-8X2CQ6",
+      "items": [
+        "sha256:4774f6d43dc580047a18f9c4fd034af52520ab300c6d27f5b0bcca5da239451e"
+      ],
+      "reason": "MIK-R134 preserves existing authority and publication obligations; this uncovered fragment supplies imports, logging, shared path re-exports or helper structure. Its enclosing functional selection/foreign-membership contract is reconciled in the affected cards and scoped invariants; this fragment introduces no independent guarantee.",
+      "subject": "hunk:sha256:4774f6d43dc580047a18f9c4fd034af52520ab300c6d27f5b0bcca5da239451e"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-9WF1HZ",
+      "items": [
+        "sha256:b8b757024e41686cc0fb4960532cb8646057a8803d05f83679905cada47b5015"
+      ],
+      "reason": "Confined read-only scope resolution, HTTP error mapping and serving ownership remain unchanged; the concrete scope card carries foreign-enclosure exclusion.",
+      "subject": "onboarding:mcp/src/agents_remember/serving/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-9ZXSJ2",
+      "items": [
+        "sha256:ceab27e7011cc922f7b1c13cdcb3afff5afac01bcb8a71708f4808d90ad6bd50"
+      ],
+      "reason": "MIK-R134 preserves existing authority and publication obligations; this uncovered fragment supplies imports, logging, shared path re-exports or helper structure. Its enclosing functional selection/foreign-membership contract is reconciled in the affected cards and scoped invariants; this fragment introduces no independent guarantee.",
+      "subject": "hunk:sha256:ceab27e7011cc922f7b1c13cdcb3afff5afac01bcb8a71708f4808d90ad6bd50"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-AYCQE8",
+      "items": [
+        "sha256:9eae1b07b0bafeac02b187acd816ecfc1034df4bebacadc9d9616cbcf235b99c"
+      ],
+      "reason": "MIK-R134 preserves existing authority and publication obligations; this uncovered fragment supplies imports, logging, shared path re-exports or helper structure. Its enclosing functional selection/foreign-membership contract is reconciled in the affected cards and scoped invariants; this fragment introduces no independent guarantee.",
+      "subject": "hunk:sha256:9eae1b07b0bafeac02b187acd816ecfc1034df4bebacadc9d9616cbcf235b99c"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-C0N9ZE",
+      "items": [
+        "sha256:041295399eed2ce008fa39451f6b82e12af4e68ca0fdcfd0e374520802e243b4"
+      ],
+      "reason": "Existing-file case additions preserve route populations, isolation, catalog ownership and registration; no new source/test route or governed artifact is introduced.",
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-E16TEZ",
+      "items": [
+        "sha256:e30b0bd020030bea717eba3e8a86005905e779d27233762f8fb2a88b0bb3b863"
+      ],
+      "reason": "MIK-R134 preserves existing authority and publication obligations; this uncovered fragment supplies imports, logging, shared path re-exports or helper structure. Its enclosing functional selection/foreign-membership contract is reconciled in the affected cards and scoped invariants; this fragment introduces no independent guarantee.",
+      "subject": "hunk:sha256:e30b0bd020030bea717eba3e8a86005905e779d27233762f8fb2a88b0bb3b863"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "10fc96becf7770c443afcc8cee7888254836cc69",
+            "content": "sha256:bef19cd9b469e0f45b6c0ba56e168e79e15ecab7b48c5a8576f5bd68aaf7a506",
+            "locator": {
+              "kind": "symbol",
+              "name": "_memory_mode_fallback"
+            },
+            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
+          },
+          "before": {
+            "blob": "ba58fbaeceea3ba8048de3c5168fe7f90d3458df",
+            "content": "sha256:bef19cd9b469e0f45b6c0ba56e168e79e15ecab7b48c5a8576f5bd68aaf7a506",
+            "locator": {
+              "kind": "symbol",
+              "name": "_memory_mode_fallback"
+            },
+            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
+          },
+          "id": "RLZ-3SJ7K7"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-EJ4CRA",
+      "items": [],
+      "reason": "The invariant already distinguishes recorded external topology from the neither-worktree-nor-ledger fallback. Qualify the carried fallback realization to those same branches without changing its identity, role, origin, anchor or the governing statement.",
+      "revision": 1,
+      "subject": "INV-V3N6NW"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-GXJ88P",
+      "items": [
+        "sha256:4349cec7ca6ccc6d45df82ebd63e49a6ebe9bd00b6f88a3c404baa17ab0e2e68"
+      ],
+      "reason": "The whole operative card describes bounded background/final observation, unchanged by excluding foreign task-document nonmembers before landing eligibility. Its moved evidence is renewed separately.",
+      "subject": "onboarding:mcp/src/agents_remember/serving/projections/landing_state.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-HT85VS",
+      "items": [
+        "sha256:44ecfdd31dbe336605fe458b2f73d59fb536a09d09d4b2df7a245afbbd02882f"
+      ],
+      "reason": "MIK-R134 preserves existing authority and publication obligations; this uncovered fragment supplies imports, logging, shared path re-exports or helper structure. Its enclosing functional selection/foreign-membership contract is reconciled in the affected cards and scoped invariants; this fragment introduces no independent guarantee.",
+      "subject": "hunk:sha256:44ecfdd31dbe336605fe458b2f73d59fb536a09d09d4b2df7a245afbbd02882f"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-1Q4W04",
+          "revision": 1
+        },
+        {
+          "id": "INV-QZP9PM",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-HW9YSW",
+      "items": [
+        "sha256:f73fe831d168e5d5fb032f061ede1763c0976c73bed31e02fbc40bad0dfda51d"
+      ],
+      "reason": "Examined both members and the recorded guarantee. The family remains retired: canonical controller file reads are independent of instruction-authority preservation, so this corrective selection change does not revive the rejected joint guarantee.",
+      "revision": 1,
+      "subject": "FAM-XX4TGY"
+    },
+    {
+      "disposition": "assigned",
+      "examined": [
+        {
+          "id": "INV-85JCY6",
+          "revision": 1
+        },
+        {
+          "id": "INV-BWW1N1",
+          "revision": 1
+        },
+        {
+          "id": "INV-J3PYB0",
+          "revision": 1
+        },
+        {
+          "id": "INV-VDT24F",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-KXR5G7",
+      "items": [],
+      "reason": "Examined the atomic-copy and three scoped isolation/unknown-file members jointly. Their realizations are covered by these five owning source directories; tests do not broaden the routes. The explicit-directory preflight case is not a typed conditional-refresh rollback proof; removing that unsupported witness preserves the family guarantee, four members and five routes, with successful-own tolerance still proved and refusal/atomic publication owned by their actual source branches.",
+      "revision": 1,
+      "subject": "FAM-4RPJEY"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-PNV22Q",
+      "items": [
+        "sha256:3edb8f9b01da04b15ad527f86818a8947fe3cb664a1201be070a187cbe4a9053"
+      ],
+      "reason": "MIK-R134 preserves existing authority and publication obligations; this uncovered fragment supplies imports, logging, shared path re-exports or helper structure. Its enclosing functional selection/foreign-membership contract is reconciled in the affected cards and scoped invariants; this fragment introduces no independent guarantee.",
+      "subject": "hunk:sha256:3edb8f9b01da04b15ad527f86818a8947fe3cb664a1201be070a187cbe4a9053"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-SCYVQS",
+      "items": [
+        "sha256:26aadb0b3794f2d6d4fe3bb215ba360914728472c82486c5aa07cd5c35e79728"
+      ],
+      "reason": "MIK-R134 preserves existing authority and publication obligations; this uncovered fragment supplies imports, logging, shared path re-exports or helper structure. Its enclosing functional selection/foreign-membership contract is reconciled in the affected cards and scoped invariants; this fragment introduces no independent guarantee.",
+      "subject": "hunk:sha256:26aadb0b3794f2d6d4fe3bb215ba360914728472c82486c5aa07cd5c35e79728"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-T6152F",
+      "items": [
+        "sha256:467a92c087ded8c480bd37c4e9ed767b2468572af66bb92829bc7d400c004cbe"
+      ],
+      "reason": "MIK-R134 preserves existing authority and publication obligations; this uncovered fragment supplies imports, logging, shared path re-exports or helper structure. Its enclosing functional selection/foreign-membership contract is reconciled in the affected cards and scoped invariants; this fragment introduces no independent guarantee.",
+      "subject": "hunk:sha256:467a92c087ded8c480bd37c4e9ed767b2468572af66bb92829bc7d400c004cbe"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "a03a160b6fd2cbab0cdcf9b7f41ffca58a0fd582",
+            "content": "sha256:315e5b68edc6457dfff3f31d6d7f4f5cafb8182dc63794f36e2c2bfdb7abe845",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskDocumentCopyMembershipTests.test_foreign_contract_is_not_a_snapshot_enclosure"
+            },
+            "path": "mcp/tests/test_task_document_copies.py"
+          },
+          "before": "absent",
+          "id": "PRF-3MDCF6"
+        },
+        {
+          "after": {
+            "blob": "a03a160b6fd2cbab0cdcf9b7f41ffca58a0fd582",
+            "content": "sha256:71ac5c83dd1bfddfc1c50e9d05f1a0338138ce066ccd27406b555150ef495607",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskDocumentCopyMembershipTests.test_foreign_gone_group_is_still_named_in_refresh"
+            },
+            "path": "mcp/tests/test_task_document_copies.py"
+          },
+          "before": "absent",
+          "id": "PRF-AYWGA5"
+        },
+        {
+          "after": {
+            "blob": "a03a160b6fd2cbab0cdcf9b7f41ffca58a0fd582",
+            "content": "sha256:7e0b4d4b380e0a3e28309188b55b623713b5d2255cffd783bdede6bd4ee28dbc",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskDocumentCopyMembershipTests.test_dotdot_alias_escaping_repo_tasks_is_still_foreign"
+            },
+            "path": "mcp/tests/test_task_document_copies.py"
+          },
+          "before": "absent",
+          "id": "PRF-HM9BBD"
+        },
+        {
+          "after": {
+            "blob": "a03a160b6fd2cbab0cdcf9b7f41ffca58a0fd582",
+            "content": "sha256:83520b7e05764949cf70b994de2ade53aa408a3a0d979af9427faec9411054f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskDocumentCopyScopeTests.test_foreign_contract_in_own_enclosures_is_skipped_and_named"
+            },
+            "path": "mcp/tests/test_task_document_copies.py"
+          },
+          "before": "absent",
+          "id": "PRF-KSGEGC"
+        },
+        {
+          "after": {
+            "blob": "5d189d61e389595069824d0be1f8fbde0bade9af",
+            "content": "sha256:2e30414d0e5676ee52b7538f321f94fdefb8f8af39d63e6bf44893f940e06ca1",
+            "locator": {
+              "kind": "symbol",
+              "name": "ContractSnapshotCache.build"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/contract_snapshot.py"
+          },
+          "before": "absent",
+          "id": "RLZ-7E8QD6"
+        },
+        {
+          "after": {
+            "blob": "8d83e9ec73c4091ac69e5118a1ca7b080efb19a2",
+            "content": "sha256:7d8a3842914592b8d0d375b28f3d85f48f8e34317603d0407dc19c619ffda3bc",
+            "locator": {
+              "kind": "symbol",
+              "name": "refresh_task_document_copies"
+            },
+            "path": "mcp/src/agents_remember/worktrees/task_document_copies.py"
+          },
+          "before": "absent",
+          "id": "RLZ-E9J9BW"
+        },
+        {
+          "after": {
+            "blob": "ea5a1d83e55e71447ccf114937714f3e9275c8fe",
+            "content": "sha256:7af2dac10d7434f8621789de8fc5a0d8702e8516937d049045121f540150f87b",
+            "locator": {
+              "kind": "symbol",
+              "name": "is_foreign_enclosure_contract"
+            },
+            "path": "mcp/src/agents_remember/tasks/task_paths.py"
+          },
+          "before": "absent",
+          "id": "RLZ-GTQ5CQ"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-XGZDET",
+      "items": [],
+      "reason": "New scoped, evidenced selection/membership obligation; the source constructs and precise test facets support its boundaries.",
+      "revision": 1,
+      "subject": "INV-BWW1N1"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "a03a160b6fd2cbab0cdcf9b7f41ffca58a0fd582",
+            "content": "sha256:59e06a2130583601992858a69d131e0c10de697769ee7c2d8324fe5ddf6beedd",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskDocumentCopyMembershipTests.test_unreadable_file_beside_refreshed_own_is_named_not_raised"
+            },
+            "path": "mcp/tests/test_task_document_copies.py"
+          },
+          "before": "absent",
+          "id": "PRF-XK9Z5B"
+        },
+        {
+          "after": {
+            "blob": "8d83e9ec73c4091ac69e5118a1ca7b080efb19a2",
+            "content": "sha256:1bd9ef7e652806e2424a6513bcec31f3fe01ed91ee38650b05c51d9a5be35d81",
+            "locator": {
+              "kind": "symbol",
+              "name": "_select_refresh_contract"
+            },
+            "path": "mcp/src/agents_remember/worktrees/task_document_copies.py"
+          },
+          "before": "absent",
+          "id": "RLZ-EW4A2G"
+        },
+        {
+          "after": {
+            "blob": "8d83e9ec73c4091ac69e5118a1ca7b080efb19a2",
+            "content": "sha256:dfc75805de9637418bf788acd2a96d2a193400b375047e184bb84be87f0d3cdf",
+            "locator": {
+              "kind": "symbol",
+              "name": "_RefreshWork.finish"
+            },
+            "path": "mcp/src/agents_remember/worktrees/task_document_copies.py"
+          },
+          "before": "absent",
+          "id": "RLZ-Z7587E"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-YS2M2J",
+      "items": [],
+      "reason": "Preserve the scoped conditional refresh obligation and all supported realizations/tolerance proof. Withdraw the explicit-directory preflight proof from this invariant: unchanged initial source bytes do not demonstrate published-source rollback or the no-own-refresh finish branch. Admission now identifies the surviving successful-own tolerance facet rather than claiming a typed rollback proof.",
+      "revision": 1,
+      "subject": "INV-VDT24F"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

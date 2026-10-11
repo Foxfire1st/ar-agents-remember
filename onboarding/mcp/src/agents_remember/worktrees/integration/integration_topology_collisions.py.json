@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "21b13a0dd840d0839a291fe0ef9e9d46ba53e7fd",
+            "blob": "87d7fb0298654e26ce42a6e52cc8a0d68aef28e5",
             "content": "sha256:e4b807afb65d221132828b3f13460704dada4e9a5da39dbf35869df59cb04777",
             "locator": {
               "kind": "symbol",
@@ -23,7 +23,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "21b13a0dd840d0839a291fe0ef9e9d46ba53e7fd",
+            "blob": "87d7fb0298654e26ce42a6e52cc8a0d68aef28e5",
             "content": "sha256:e4b807afb65d221132828b3f13460704dada4e9a5da39dbf35869df59cb04777",
             "locator": {
               "kind": "symbol",
@@ -39,11 +39,27 @@
       "targets": [
         {
           "anchor": {
-            "blob": "21b13a0dd840d0839a291fe0ef9e9d46ba53e7fd",
+            "blob": "87d7fb0298654e26ce42a6e52cc8a0d68aef28e5",
             "content": "sha256:e4b807afb65d221132828b3f13460704dada4e9a5da39dbf35869df59cb04777",
             "locator": {
               "kind": "symbol",
               "name": "TopologyCollisionServices"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The live-leaf census names and excludes foreign task-document nonmembers before retaining its collision checks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "87d7fb0298654e26ce42a6e52cc8a0d68aef28e5",
+            "content": "sha256:1e29b932e56969ad7d1383c81dd5748174855885df379e466960ba4c370c3806",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_no_live_leaf_collisions"
             }
           },
           "kind": "code"

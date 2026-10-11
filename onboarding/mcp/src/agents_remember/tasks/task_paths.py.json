@@ -1,13 +1,32 @@
 {
   "path": "mcp/src/agents_remember/tasks/task_paths.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "ea5a1d83e55e71447ccf114937714f3e9275c8fe",
+        "content": "sha256:7af2dac10d7434f8621789de8fc5a0d8702e8516937d049045121f540150f87b",
+        "locator": {
+          "kind": "symbol",
+          "name": "is_foreign_enclosure_contract"
+        }
+      },
+      "id": "RLZ-GTQ5CQ",
+      "invariant": "INV-BWW1N1",
+      "origin": {
+        "handoffEntry": "L134-R2",
+        "leaf": "260928-MIK-L134"
+      },
+      "rationale": "Computes positional filesystem-resolved repository membership and rejects outside artifacts, including resolution failures.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "The two constants and the slug rule that decide the enclosure directory name.",
       "targets": [
         {
           "anchor": {
-            "blob": "4a28c7892ba5c9c680f2935747fb0edd11dab426",
+            "blob": "ea5a1d83e55e71447ccf114937714f3e9275c8fe",
             "content": "sha256:f886850d232d85690cf363d56a55cd5feac0c1b02ea185fed4318bade95f87f8",
             "locator": {
               "kind": "symbol",
@@ -18,7 +37,7 @@
         },
         {
           "anchor": {
-            "blob": "4a28c7892ba5c9c680f2935747fb0edd11dab426",
+            "blob": "ea5a1d83e55e71447ccf114937714f3e9275c8fe",
             "content": "sha256:501358120e6e399516bcd301f90a84f7a658c6f0aa9bcd3472f6c49a299b6d02",
             "locator": {
               "kind": "symbol",
@@ -29,7 +48,7 @@
         },
         {
           "anchor": {
-            "blob": "4a28c7892ba5c9c680f2935747fb0edd11dab426",
+            "blob": "ea5a1d83e55e71447ccf114937714f3e9275c8fe",
             "content": "sha256:01dae166890935fa3f4d09ee9ca49ad0e76ba24d84cb6d5808a25c3722b9a554",
             "locator": {
               "kind": "symbol",
@@ -40,7 +59,7 @@
         },
         {
           "anchor": {
-            "blob": "4a28c7892ba5c9c680f2935747fb0edd11dab426",
+            "blob": "ea5a1d83e55e71447ccf114937714f3e9275c8fe",
             "content": "sha256:a56d6a17d3f53e4ab8cd35b02e630b86c15f5fd41b4afe5eb80489f13cd09b45",
             "locator": {
               "kind": "symbol",
@@ -56,7 +75,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4a28c7892ba5c9c680f2935747fb0edd11dab426",
+            "blob": "ea5a1d83e55e71447ccf114937714f3e9275c8fe",
             "content": "sha256:07aa32c0e77d63c049371f15d5886529004d1e17196a290f9ee4b2fd00c8539b",
             "locator": {
               "kind": "symbol",
@@ -67,7 +86,7 @@
         },
         {
           "anchor": {
-            "blob": "4a28c7892ba5c9c680f2935747fb0edd11dab426",
+            "blob": "ea5a1d83e55e71447ccf114937714f3e9275c8fe",
             "content": "sha256:5a6fa392e1f7610062dd278030098648d72aabda7cf4cacb138194006dfed9b2",
             "locator": {
               "kind": "symbol",
@@ -78,7 +97,7 @@
         },
         {
           "anchor": {
-            "blob": "4a28c7892ba5c9c680f2935747fb0edd11dab426",
+            "blob": "ea5a1d83e55e71447ccf114937714f3e9275c8fe",
             "content": "sha256:468dab315dedf798ee9bcaa4564f178effddecf0072eadc49a84465f03a93d45",
             "locator": {
               "kind": "symbol",
@@ -90,11 +109,11 @@
       ]
     },
     "3": {
-      "note": "The predicates and the leaf-contract enumerator the resolution and catalogue paths rely on.",
+      "note": "The archive/enclosure-position predicates remain, while the iterator excludes notes and archives before descent.\n\nAnchor: `is_archived_path`, `is_enclosure_contract`, `iter_leaf_enclosure_contracts`",
       "targets": [
         {
           "anchor": {
-            "blob": "4a28c7892ba5c9c680f2935747fb0edd11dab426",
+            "blob": "ea5a1d83e55e71447ccf114937714f3e9275c8fe",
             "content": "sha256:e07e641d796aeeb13604649d1ecb9e06d86bd62be213e0871a97dcb5537226b7",
             "locator": {
               "kind": "symbol",
@@ -105,7 +124,7 @@
         },
         {
           "anchor": {
-            "blob": "4a28c7892ba5c9c680f2935747fb0edd11dab426",
+            "blob": "ea5a1d83e55e71447ccf114937714f3e9275c8fe",
             "content": "sha256:b1fc657481ff3d993c7c2dde2401eb14736d0560ba8f6baf96e92931ec2a0b2b",
             "locator": {
               "kind": "symbol",
@@ -116,8 +135,8 @@
         },
         {
           "anchor": {
-            "blob": "4a28c7892ba5c9c680f2935747fb0edd11dab426",
-            "content": "sha256:47e5201e5b1d133febcbb89eefa6f0ca7e1473347442477513ad46e266e91d2b",
+            "blob": "ea5a1d83e55e71447ccf114937714f3e9275c8fe",
+            "content": "sha256:3694617e0ce7715963085263eb45c152a95fe8c57f1250bc25db3e4cbd7c9b3e",
             "locator": {
               "kind": "symbol",
               "name": "iter_leaf_enclosure_contracts"
@@ -128,12 +147,12 @@
       ]
     },
     "4": {
-      "note": "The re-export surface that keeps every existing caller working while the definition sits here.\n\nAnchor: \"from agents_remember.tasks.task_paths import (\"",
+      "note": "The explicit re-export list and imports keep the path rules single-defined in the task domain.\n\nAnchor: `__all__`, \"from agents_remember.tasks.task_paths import (\"",
       "targets": [
         {
           "anchor": {
-            "blob": "e11a2d5cec5eaa45cbe97ddf3444c5dcff666da8",
-            "content": "sha256:6c1455ed80efdc58adedd62a93333653587b02e905f52689b874aae4a43bf67b",
+            "blob": "1052a563780ee71a5917ad475556a86011ea53b6",
+            "content": "sha256:8a8e10fe5aace37ca8171b2085e64aad8e981c7be9cdcc0092946525f084f437",
             "locator": {
               "kind": "symbol",
               "name": "__all__"
@@ -144,10 +163,10 @@
         },
         {
           "anchor": {
-            "blob": "e11a2d5cec5eaa45cbe97ddf3444c5dcff666da8",
-            "content": "sha256:3505eff900ef40ec541972cf9ee4826a2b43cc18aeaa6191d00ce97b770e85e3",
+            "blob": "1052a563780ee71a5917ad475556a86011ea53b6",
+            "content": "sha256:fa03b8dd3ff6624e5f6dcf676751ab7e7f04e048423a466d1b48f75dbff06d97",
             "locator": {
-              "end": 30,
+              "end": 55,
               "kind": "line_range",
               "start": 19
             },
@@ -216,6 +235,38 @@
               "name": "_layering_step"
             },
             "path": "mcp/test_support/agents_remember_test_support/code_quality/quality_plan.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The traversal prunes notes and archive descent but preserves a leaf directory named notes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ea5a1d83e55e71447ccf114937714f3e9275c8fe",
+            "content": "sha256:f9dbf0d9e59eea5cbe98bd7ee90dc76703dfade8cb1314057e56b7cb4a0cadaa",
+            "locator": {
+              "kind": "symbol",
+              "name": "_iter_enclosure_contract_candidates"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Physical, filesystem-resolved task membership rejects foreign artifacts and resolution failures.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ea5a1d83e55e71447ccf114937714f3e9275c8fe",
+            "content": "sha256:7af2dac10d7434f8621789de8fc5a0d8702e8516937d049045121f540150f87b",
+            "locator": {
+              "kind": "symbol",
+              "name": "is_foreign_enclosure_contract"
+            }
           },
           "kind": "code"
         }

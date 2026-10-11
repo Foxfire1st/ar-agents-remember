@@ -28,7 +28,7 @@ and drives the atomic projection write.
 engine-process facts); `projection_store.py::project_and_write` ties reading, reduction, and the
 atomic write together; `projection_inputs.py` retains bounded domain inputs; `landing_state.py`
 owns bounded background landing observation; `contract_snapshot.py` caches one immutable
-enclosure snapshot per tick. `paths.py` resolves the observer store roots (shared with the
+enclosure snapshot per task-domain refresh, retaining it on unaffected ticks. `paths.py` resolves the observer store roots (shared with the
 observer write side through `kernel/primitives/observer_paths.py`).
 
 ## What Belongs Here
@@ -36,7 +36,7 @@ observer write side through `kernel/primitives/observer_paths.py`).
 | Path | Role |
 | --- | --- |
 | `paths.py` | Observer store-root resolution (thin wrapper over kernel primitives). |
-| `contract_snapshot.py` | One immutable leaf-enclosure contract snapshot per tick. |
+| `contract_snapshot.py` | One immutable member-enclosure snapshot per task-domain refresh. |
 | `snapshots.py` | File-surface readers (providers, enclosures, analytical surfaces). |
 | `snapshots_impl/` | Split reader implementations: analytics, runtime/enclosures, task docs, shared helpers. |
 | `drift_snapshots.py` | Projection-side drift-snapshot pruning policy. |
@@ -78,12 +78,16 @@ observer write side through `kernel/primitives/observer_paths.py`).
 | --- | --- | --- | --- |
 | `snapshots.py` | reader hub | All named-state surfaces feed the projection. | covered |
 | `projection_store.py` | I/O edge | Atomic publication and lifecycle-log reads. | covered |
-| `contract_snapshot.py` | cache | One contract parse per tick, reused by three readers. | covered |
+| `contract_snapshot.py` | cache | Stat-identity parse reuse and one shared snapshot on task refresh. | covered |
 | `landing_state.py` | background observer | Bounded landing facts without blocking the tick. | covered |
 
 ## Local Invariants And Traps
 
 - Readers reuse the producing subsystem's own parser rather than re-parsing.
+- Enclosure enumeration prunes notes and archives. Snapshot construction names parsed contracts
+  whose task artifact resolves outside the positional repository tasks folder in `skipped`, and
+  does not admit them to the immutable mapping or parse cache. Landing observation owns a separate
+  pass and names the same foreign exclusion in its warning; it does not share the snapshot cache.
 - **A projection reader must not delete durable truth over one unknown field.** These readers consume
   documents written by other, independently versioned processes, so an unknown key is a version skew,
   not corruption: the reader tolerates it (260913-LCA-L10, `snapshots_impl/_task_documents.py`), while

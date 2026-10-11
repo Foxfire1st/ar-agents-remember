@@ -15,28 +15,31 @@ and normalization live in `worktrees/leaf_refs.py`.
 Since 260913-LCA-L5 it is also the **published import site** for the task-layout path vocabulary, not its
 owner: the rules themselves (`SERIES_CONTRACT_FILENAME`, `ARCHIVE_DIR`, `ENCLOSURES_DIR`, `slugify`,
 `series_contract_path`, `leaf_enclosure_dir`, `leaf_enclosure_path`, `is_archived_path`,
-`is_enclosure_contract`, `iter_leaf_enclosure_contracts`) are defined in
-`agents_remember.tasks.task_paths` and re-exported here under an explicit `__all__` (`:29-49`), so no
+`is_enclosure_contract`, `iter_leaf_enclosure_contracts`, `NOTES_DIR`, `is_below_notes`,
+`enclosure_repository_tasks` and `is_foreign_enclosure_contract`) are defined in
+`agents_remember.tasks.task_paths` and re-exported here under an explicit `__all__`, so no
 existing caller changes and there is still exactly one definition of each rule.
 
 ## Code Commentary
 
 ### Logic
 
-The module **re-exports** the filesystem vocabulary for the task layout rather than defining it
-(`:16-27`, `__all__` at `:29-49`): `series-contract.md`, `0_archive`, `enclosures/`, `slugify()`, the two
-path builders and the two predicates now live in `tasks/task_paths.py`. What this module still defines is
+The module **re-exports** the filesystem vocabulary for the task layout rather than defining it:
+`series-contract.md`, `0_archive`, `enclosures/`, `notes`, `slugify()`, path builders,
+enumeration and membership predicates live in `tasks/task_paths.py`. The shared enclosure iterator
+prunes notes/archive descent; the shared foreign guard uses filesystem-resolved positional membership.
+What this module still defines is
 task-*name* resolution: `task_folder_name()` / `legacy_task_folder_name()` and `task_root_candidates()`
 keep legacy `-ar` task folders discoverable while the active schema moves to task-name folders.
 
-`iter_active_series_contracts()` (`:79-85`) walks a repository's task tree for root-level
+`iter_active_series_contracts()` (`:90-96`) walks a repository's task tree for root-level
 `series-contract.md` files and deliberately excludes archived paths and leaf enclosure contracts.
-`resolve_active_task_root()` (`:88-114`) uses that iterator to resolve by `task_name`, optionally
-constrained by `parent_task` for nested task folders. It raises `TaskResolutionError` (`:52-53`) when
+`resolve_active_task_root()` (`:99-125`) uses that iterator to resolve by `task_name`, optionally
+constrained by `parent_task` for nested task folders. It raises `TaskResolutionError` (`:63-64`) when
 multiple active task roots share the same name and falls back to the current/legacy deterministic path
 only when no active contract exists and fallback is enabled.
 
-`resolve_leaf_enclosure_contract()` (`:117-144`) resolves the parent task root first, then either returns
+`resolve_leaf_enclosure_contract()` (`:128-155`) resolves the parent task root first, then either returns
 the requested raw leaf contract path or auto-selects the only leaf contract. Alias-aware legacy lookup
 belongs to `leaf_refs.resolve_leaf_enclosure_contract_for_ref()` so this module stays focused on root and
 contract path mechanics. Multiple leaves without an explicit `leaf_id` raise `TaskResolutionError`,
@@ -68,7 +71,7 @@ reviewable and a name cannot silently disappear from it.
 - Leaf contracts live under `enclosures/<leaf-id>/series-contract.md`; root series contracts live directly
   under their task root.
 - **The path vocabulary is defined in `tasks/task_paths.py`, not here.** This module imports and
-  re-exports it and redefines none of it: verified with `ast`, each of the ten moved names has exactly
+  re-exports it and redefines none of it: the public path rules each have exactly
   one definition site in all of `mcp/src` and it is in `tasks/task_paths.py`. The move exists to keep
   `layers.toml`'s `tasks`(9) < `worktrees`(10) order intact while the task package derives its own paths;
   changing a path rule is a change to `task_paths.py`, with this file following.
@@ -90,8 +93,8 @@ No relevant external documentation is needed for the local task resolver.
 
 Same-repository source and tests define the supported task-folder and series-contract behavior.
 
-- The re-export surface: this module publishes the task-layout vocabulary without defining it. [1]
-- The single definition of every path rule, which this module imports and redefines none of. [2]
+- The explicit import/re-export surface publishes the task-layout vocabulary without defining it. [1]
+- The existing slug, path-builder and enclosure/archive rules remain single-defined; the iterator now excludes notes as well. [2]
 - Task-name resolution, which this module still owns: current and legacy folder names plus the candidate list. [3]
 - The error a resolution failure raises, and the current/legacy root builders. [4]
 - Active series discovery excludes archived task folders and leaf enclosure contracts; active task resolution can be constrained by `parent_task` and errors on ambiguous task names. [5]

@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "The retained PRF-XK9Z5B guards successful own-copy staging beside an unreadable neighbor by checking the warning and updated rendered copy. No typed proof is claimed here for post-publication rollback or the no-own-refresh failure: the explicit-directory case refuses during target preflight and preserves initial bytes. The production selection/finish branches keep the conditional tolerance and named fail-closed boundary, preventing an unrelated unreadable contract from blocking publication or tolerance without staged own copies."
+  },
+  "applicability": "Task-document refresh when an enclosure-position file is unreadable or carries no artifact cell and cannot be parsed.",
+  "conditions": [
+    "An own enclosure counts for tolerance only when copy writes have been staged from it.",
+    "The subsequent atomic copy publisher still governs successful publication and rollback."
+  ],
+  "exclusions": [
+    "A readable matching own contract whose parse fails remains a direct failure.",
+    "No roster is added to identify every damaged own enclosure.",
+    "This rule does not change other consumers’ parse-failure policies."
+  ],
+  "id": "INV-VDT24F",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_task_document_copies.py::TaskDocumentCopyMembershipTests::test_unreadable_file_beside_refreshed_own_is_named_not_raised, test_unreadable_only_enclosure_fails_and_names_the_file"
+      ],
+      "path": "l134-knowledge-ingest.json"
+    },
+    "handoffEntry": "L134-RULING-A",
+    "leaf": "260928-MIK-L134",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "An unreadable contract beside a refreshed own one is skipped and named while the write succeeds; with no own contract refreshed the refresh fails and names the file.",
+  "status": "accepted",
+  "supersedes": []
+}

@@ -112,7 +112,11 @@ together.
 - `task_paths.py` — the on-disk task-root path vocabulary and the predicates over it
   (`SERIES_CONTRACT_FILENAME`, `ARCHIVE_DIR`, `ENCLOSURES_DIR`, `slugify`, `series_contract_path`,
   `leaf_enclosure_dir`, `leaf_enclosure_path`, `is_archived_path`, `is_enclosure_contract`,
-  `iter_leaf_enclosure_contracts`). Task-domain rules, single definition, no import from `worktrees`:
+  `iter_leaf_enclosure_contracts`, `NOTES_DIR`, `is_below_notes`, `enclosure_repository_tasks`,
+  `is_foreign_enclosure_contract`). Enumeration prunes notes/archive descent while preserving real
+  enclosure positions, including a leaf directory named `notes`. Membership resolves the task
+  artifact against the repository tasks folder derived from the contract's physical position;
+  consumers own the warning or skipped-list detail. Task-domain rules, single definition, no import from `worktrees`:
   `worktrees/task_resolver.py` re-exports every name so the rules can live below `worktrees` where
   `layers.toml` requires them.
 - `semantic_topology.py` — the strict `semantic-topology/v2` candidate identity: exact refs, one

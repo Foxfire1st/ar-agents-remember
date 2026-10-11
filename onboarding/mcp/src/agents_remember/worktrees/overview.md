@@ -58,6 +58,16 @@ The retention module measures custody and releases refs earlier freezes created;
 
 ## What This Area Is
 
+Task-document copy publication belongs to `task_document_copies.py`. It retains the own-leaf
+rendered file and index outside both Git worktrees. After canonical publication, refresh walks
+only the written documents' parent task folders, uses the task-domain iterator to exclude
+notes/archive evidence, and selects readable own-document contracts before loading them.
+Foreign filesystem-resolved positional nonmembers are skipped and named. An indeterminate file
+that cannot be read or parsed is tolerated only when an own enclosure has staged copy writes;
+otherwise its named error reaches the canonical publisher's rollback. This does not introduce
+a roster able to identify every damaged own enclosure. Copy bytes and the atomic copy/source
+rollback retain their existing owners.
+
 This route owns the durable worktree-enclosure and protected-source coordination primitives beneath
 the public lifecycle modules. The current architecture adds two related but distinct owners:
 contract-scoped atomic-series activation decides whether each live master may expose implementation
@@ -194,9 +204,11 @@ memory-carryover vehicle.
 ### Resolve Or Cancel Retained Sync Conflict
 
 1. Read the stable enclosure-root journal and pinned Git authority.
-2. Resolve and stage the retained merge in the reported code or memory worktree. A **knowledge dataset** on
-   the memory side is not the agent's to resolve by hand: the transaction settles it through the knowledge
-   merge adapter before it reports the conflict, and only the paths the adapter declined are handed over.
+2. Resolve the retained content conflict in the reported code or memory worktree. Knowledge is text
+   in the memory worktree; its content resolution belongs to the Curator. For a merge with a converted
+   side, the structural plan runs through the crossing/converted-memory path before unresolved files
+   are retained; it is not a dataset-adapter or authored-reconcile operation. The Manager captures,
+   verifies and stages the admitted resolution; this overview grants no Curator staging or transaction authority.
 3. Call the same contract-addressed sync with `resolution_action="continue"`, or call it with
    `resolution_action="cancel"` to restore the pinned pre-sync pair.
 4. Fail closed for missing/malformed identity; explicit cancellation may recover from complete
@@ -311,7 +323,9 @@ concurrent staged edits by construction.
 - Selection observation treats absence as vacant and refuses a record that is not this exact contract rather than inferring from task or queue state; the record address is the contract's own digest. [13]
 - Selecting admission publishes reconciling, delegates exact sync, and publishes active only after the current source pair is proven; the public admission explanation stays contract-grounded and never names a foreign master as a precondition. [14]
 - The stable journal lives at `.lifecycle/sync-operation.json` and projects recovery without reading task text. [15]
-- The sync driver retains conflicts for continuation, exposes explicit cancellation, and now carries the authored reconcile route through the same continuation. [16]
+
+- The sync driver retains content conflicts for continuation, permits only continue or cancel as resolution actions, and validates a staged retained merge before completing it; knowledge content is resolved in the memory worktree, not through an authored-reconcile action. [16]
+
 - Cancellation restores only operation-owned heads; malformed or missing journals recover only through explicit pinned-ref proof. [17]
 - Every sync proof is Git state — the admitted head, the already-current decision, the staged resolution (validated by the MIK-R22 knowledge validator before its commit when the memory is converted, after a crossing sync's history file is closed), and the completed branch — and none of them reads a ledger row list. [18]
 - A mid-flight selection reports the stuck contract and both exits, and a succeeding pass beside it never reports its own success state. [19]

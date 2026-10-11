@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "ba58fbaeceea3ba8048de3c5168fe7f90d3458df",
+        "blob": "10fc96becf7770c443afcc8cee7888254836cc69",
         "content": "sha256:bef19cd9b469e0f45b6c0ba56e168e79e15ecab7b48c5a8576f5bd68aaf7a506",
         "locator": {
           "kind": "symbol",
@@ -16,7 +16,7 @@
         "handoffEntry": "L50-MIK-R50-rule-2-vocabulary-removed",
         "leaf": "260928-MIK-L50"
       },
-      "rationale": "Still reads an empty or unknown mode cell as disabled, so contracts written before the removal stay readable.",
+      "rationale": "Reads an empty or unknown memory_mode through the recorded memory topology: either a worktree or ledger yields external; neither yields disabled. This keeps older contracts readable without inventing an external memory repository.",
       "role": "unclassified"
     }
   ],
@@ -26,7 +26,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ba58fbaeceea3ba8048de3c5168fe7f90d3458df",
+            "blob": "10fc96becf7770c443afcc8cee7888254836cc69",
             "content": "sha256:26996662d674c421b52338842395974ccfa281719b1c53aa3b4c60babf6a7a80",
             "locator": {
               "kind": "symbol",
@@ -42,7 +42,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ba58fbaeceea3ba8048de3c5168fe7f90d3458df",
+            "blob": "10fc96becf7770c443afcc8cee7888254836cc69",
             "content": "sha256:bef19cd9b469e0f45b6c0ba56e168e79e15ecab7b48c5a8576f5bd68aaf7a506",
             "locator": {
               "kind": "symbol",
@@ -58,7 +58,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ba58fbaeceea3ba8048de3c5168fe7f90d3458df",
+            "blob": "10fc96becf7770c443afcc8cee7888254836cc69",
             "content": "sha256:4ad4ee1d7ce035aa8b4626b3e4c1274f186852a2b51da62504c9f51ba31b40e7",
             "locator": {
               "kind": "symbol",
@@ -74,7 +74,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ba58fbaeceea3ba8048de3c5168fe7f90d3458df",
+            "blob": "10fc96becf7770c443afcc8cee7888254836cc69",
             "content": "sha256:a3d0016bafded923b7c8e95b298c527eb9c7e9503f9af0aacda3455973a9b78d",
             "locator": {
               "kind": "symbol",
@@ -90,7 +90,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ba58fbaeceea3ba8048de3c5168fe7f90d3458df",
+            "blob": "10fc96becf7770c443afcc8cee7888254836cc69",
             "content": "sha256:81837d1072d78bda8af3de79925baa82d5f7044b97d3863d87534344dfa02a4a",
             "locator": {
               "kind": "symbol",
@@ -106,7 +106,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ba58fbaeceea3ba8048de3c5168fe7f90d3458df",
+            "blob": "10fc96becf7770c443afcc8cee7888254836cc69",
             "content": "sha256:38d624acd3e04b9a21161f22f18e389bd0052af14896728bdf9976d8361182c6",
             "locator": {
               "kind": "symbol",
@@ -122,11 +122,27 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ba58fbaeceea3ba8048de3c5168fe7f90d3458df",
+            "blob": "10fc96becf7770c443afcc8cee7888254836cc69",
             "content": "sha256:7b1dc695e21f8e0c8ec7876b57111bf6c08266b9ed061d4098bda640d4088dc8",
             "locator": {
               "kind": "symbol",
               "name": "VALID_MEMORY_MODES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "71": {
+      "note": "Healing reports foreign contracts as skipped and unreadable contracts as errors without treating either as a healable enclosure.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "10fc96becf7770c443afcc8cee7888254836cc69",
+            "content": "sha256:1f6c875b482db31158a77efe39670ab2ecbd390dbee7dd4e75071c723ab2ac80",
+            "locator": {
+              "kind": "symbol",
+              "name": "_load_sweep_contract"
             }
           },
           "kind": "code"
